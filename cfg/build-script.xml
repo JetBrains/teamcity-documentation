@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root
+        SYSTEM "http://helpserver.labs.intellij.net/help/build-script.dtd">
+<root>
+    <builds>
+        <product id="tc" master="project.ihp" family="idea">
+            <artifact type="web2" platform="primary" local-update="true" local-update-path="teamcity" image-bundle="true" local-update-images="true"/>
+        </product>
+    </builds>
+</root>

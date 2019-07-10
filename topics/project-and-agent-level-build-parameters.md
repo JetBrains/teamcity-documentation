@@ -1,0 +1,53 @@
+[//]: # (title: Project and Agent Level Build Parameters)
+[//]: # (auxiliary-id: Project and Agent Level Build Parameters)
+In addition to defining [build parameters](configuring-build-parameters.md) in Build Configuration settings, you can define them on the project or build agent level.
+
+On this page:
+
+<tag-list of="chapter" mode="tree" depth="4"/>
+
+## Project Level Build Parameters
+
+TeamCity allows you to define build parameters for a project, __all__ its subprojects and build configurations in one place: __Project Settings__ \> __Parameters__ tab.
+
+Note that if a build parameter P is defined in a build configuration and a build parameter with the same name exists on the project level, the following heuristics applies:
+
+__Case 1__: Project A, Build Configuration from project A.   
+Parameters defined in the build configuration have priority over the parameters with the same names defined on project level.
+
+__Case 2__: Project A, Template T from project A, build configuration from project A inherited from template T.   
+Parameters of the build configuration have priority over the parameters with the same name defined in project A, and project\-level parameters have priority over parameters with the same name defined in the template.
+
+__Case 3__: Project A1, Project A2, Template T from project A1, build configuration from project A2 inherited from template T.   
+Parameters of project A2 (the one build configuration belongs to) have priority over the parameters with the same names defined in the template.
+
+You can also define parameters for only those build configurations of the project that use __the same VCS root__. To do that, create a text file named `teamcity.default.properties`, and check it into the VCS root. Ensure that the file appears directly in the [build working directory](build-working-directory.md) by specifying the appropriate [checkout rules](configuring-vcs-settings.md). The name and path to the file can be customized via the `teamcity.default.properties` property of a build configuration.
+
+The properties defined this way are not visible in the TeamCity web UI, but are passed directly to the build process.
+
+<anchor name="agentSpecific"/>
+
+## Agent Level Build Parameters
+[//]: # (AltHead: agentSpecific)
+
+To define agent\-specific properties, edit the Build Agent's `buildAgent.properties` file (`<agent home>/conf/buildAgent.properties`). Refer to the [Agent-Specific Properties](predefined-build-parameters.md) page for more information.
+
+When defining system properties and environment variables in the `teamcity.default.properties` or `buildAgent.properties` file, use the following format:
+
+
+```Plain Text
+[env|system].<property_name>=<property_value>
+
+```
+
+
+
+For example: `env.CATALINA_HOME=C:\tomcat_6.0.13`.
+
+
+
+__  __
+
+__See also:__
+
+__Administrator's Guide__: [Configuring Build Parameters](configuring-build-parameters.md) | [Defining and Using Build Parameters in Build Configuration](configuring-build-parameters.md) | [Predefined Build Parameters](predefined-build-parameters.md)
