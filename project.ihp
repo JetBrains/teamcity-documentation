@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ihp
+        SYSTEM "http://helpserver.labs.intellij.net/help/ihp.dtd">
+<ihp version="2.0">
+    <settings>
+        <caps for="toc-element">sentence</caps>
+    </settings>
+    <module name="teamcity-docs"/>
+    <vars src="v.list"/>
+    <topics dir="topics"/>
+    <images dir="images" version="2019.1"
+            web-path="/img/teamcity/2019.1/"/>
+    <categories src="c.list"/>
+    <tags src="g.list"/>
+    <product src="tc.tree" web-path="/teamcity/2019.1/"
+             teamcity-build-path="Documentation_Teamware_TeamCity" version="2019.1" keymaps-mode="none"/>
+</ihp>
