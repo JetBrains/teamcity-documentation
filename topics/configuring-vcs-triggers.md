@@ -55,11 +55,13 @@ Note that when a build is triggered by a trigger with the VCS quiet period set, 
 
 <include src="configuring-schedule-triggers.md" include-id="queue-optimization"/>
 
-<chunk include-id="vcs-trigger-rules">
+
 
 ## VCS Trigger Rules
 
-If no trigger rules specified, a build is triggered upon any detected change displayed for the build configuration. You can affect the changes detected by changing the VCS root settings and specifying [Checkout Rules](vcs-checkout-rules.md).
+<chunk include-id="vcs-trigger-rules">
+
+If no trigger rules are specified, a build is triggered upon any change detected for the build configuration. You can control what changes are detected by changing the VCS root settings and specifying [Checkout Rules](vcs-checkout-rules.md).
 
 To limit the changes that trigger the build, use the VCS trigger rules. You can add these rules manually in the text area (one per line), or use the __Add new rule__ option to generate them.
 
@@ -67,7 +69,11 @@ To limit the changes that trigger the build, use the VCS trigger rules. You can 
 
 Each rule is ether an "include" (starts with "`+`") or an "exclude" (starts with "`-`").
 
+</chunk>
+
 ### General Syntax
+
+<chunk include-id="general-syntax">
 
 The general syntax for a single rule is:
 
@@ -81,8 +87,8 @@ The general syntax for a single rule is:
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
 where:
-* __Ant\_like\_wildcard__: A [wildcard](wildcards.md) to match the changed file path. Only "`*`" and "`**`" patterns are supported, the "?" pattern is __not__ supported. The file paths in the rule can be relative (not started with "`/`" or "`\ `") to match resulting paths on the agent or absolute (started with "`/`") to match VCS paths relative to a VCS root. For each file in a change the most specific rule is found (the rule matching the longest file path). The build is triggered if there is at least one file with a matching "include" rule or a file with no matching "exclude" rules.   
-* [VCS_username](managing-users-and-user-groups.md): if specified, limits the rule only to the changes made by a user with the corresponding [VCS username ](managing-users-and-user-groups.md).
+* __Ant\_like\_wildcard__: A [wildcard](wildcards.md) to match the changed file path. Only `*` and `**` patterns are supported, the `?` pattern is __not__ supported. The file paths in the rule can be relative (not started with `/` or `\ `) to match resulting paths on the agent or absolute (started with `/`) to match VCS paths relative to a VCS root. For each file in a change the most specific rule is found (the rule matching the longest file path). The build is triggered if there is at least one file with a matching "include" rule or a file with no matching "exclude" rules.   
+* __[VCS_username](managing-users-and-user-groups.md)__: if specified, limits the rule only to the changes made by a user with the corresponding [VCS username ](managing-users-and-user-groups.md).
 * __VCS\_root\_id__: if specified, limits the rule only to the changes from the corresponding VCS root.
 * __VCS\_comment\_regexp__: if specified, limits the rule only to the changes that contain specified text in the VCS comment. Use the [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) pattern for matching the text in a comment (see examples below). The rule matches if the comment text contains a matched text portion; to match the entire text, include the `^` and `$` special characters.
 
@@ -94,7 +100,11 @@ To include all the files, use `+:.` rule.
 Also, rules are sorted according to path specificity. If you have an explicit inclusion rule for `/some/path`, and exclusion rule `-:user=some_user:.` for all paths, commits to the `/some/path` from `some_user` will be __included__ unless you add a specific exclusion rule for this user and this path at once, like `-:user=some_user:/some/path/**`
 </tip>
 
+</chunk>
+
 #### Trigger Rules Examples
+
+<chunk include-id="trigger-rules-examples">
 
 
 <table>
@@ -120,7 +130,7 @@ Description
  
 <td>
  
-includes all files
+Includes all files
  
 </td></tr><tr>
  
@@ -132,7 +142,7 @@ includes all files
  
 <td>
  
-excludes all `.html` files from triggering a build.
+Excludes all `.html` files from triggering a build.
  
 </td></tr>
  
@@ -146,7 +156,7 @@ excludes all `.html` files from triggering a build.
  
 <td>
  
-excludes builds being triggered by `.xml` files checked in by the [VCS user](managing-users-and-user-groups.md) "techwriter" to the `misc/doc` directory of the VCS root named Internal SVN (as defined in the VCS Settings). Note that the path is absolute (starts with "/"), thus the file path is matched from the VCS root.
+Excludes builds being triggered by `.xml` files checked in by the [VCS user](managing-users-and-user-groups.md) "techwriter" to the `misc/doc` directory of the VCS root named _Internal SVN_ (as defined in the VCS Settings). Note that the path is absolute (starts with "/"), thus the file path is matched from the VCS root.
  
 </td></tr>
  
@@ -159,7 +169,7 @@ excludes builds being triggered by `.xml` files checked in by the [VCS user](man
  </td>
  <td>
  
-prevents the build from triggering by updates to the `lib` directory of the build sources (as it appears on the agent). Note that the path is relative, so all files placed into the directory (by processing VCS root [checkout rules](vcs-checkout-rules.md)) will not cause the build to be triggered.
+Prevents the build from triggering by updates to the `lib` directory of the build sources (as it appears on the agent). Note that the path is relative, so all files placed into the directory (by processing VCS root [checkout rules](vcs-checkout-rules.md)) will not cause the build to be triggered.
 
 </td></tr><tr>
  
@@ -170,7 +180,7 @@ prevents the build from triggering by updates to the `lib` directory of the buil
 </td>
 <td>
  
-prevents the build from triggering, if the changes check in comment contains word "minor".
+Prevents the build from triggering, if the changes check contains the word "minor" in the comment.
 
 </td></tr><tr>
 <td>
@@ -180,7 +190,7 @@ prevents the build from triggering, if the changes check in comment contains wor
 </td>
 <td>
  
-no triggering if the comment consists of the only word "oops" (according to [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) principles `^` and `$` in pattern stand for string beginning and ending)
+No triggering if the comment consists of the word "oops" only (according to [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) principles `^` and `$` in pattern stand for string beginning and ending).
 
 </td></tr>
 </table>
