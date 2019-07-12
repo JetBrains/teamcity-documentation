@@ -502,7 +502,7 @@ A schedule trigger can watch a build in a different build configuration and run 
 
 For example, build configuration A has a schedule trigger that starts each 5 minutes and watches the _last successful build_ in configuration B. If the trigger detects a new build B that has finished successfully in the last 5 minutes, it runs build A.
 
-<img src="schedule-trigger-watch.png" width="350" alt="Triggered on a watched build"/>
+<img src="schedule-trigger-watch.png" width="500" alt="Triggered on a watched build"/>
 
 In the __Watching Different Build__ section, enable the _Trigger only if the watched build changes_ option and specify the build configuration and the type of build to watch.
 
