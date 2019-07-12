@@ -492,13 +492,21 @@ You can restrict a schedule trigger to start builds only if there are pending ch
 
 <include src="configuring-vcs-triggers.md" include-id="trigger-rules-examples"/>
 
-### Build Changes
+### Watching Different Build
 
-A schedule trigger can watch a build in a different build configuration and trigger a build if the watched build changes.
+A schedule trigger can watch a build in a different build configuration and run a build in the trigger's configuration if a watched build configuration changes. You can select one of the following changes as the condition for triggering:
+* Last finished build
+* Last successful build
+* Last [pinned build](pinned-build.md)
+* Last finished build with a specified [build tag](build-tag.md)
 
-In the __Build Changes__ section, select the corresponding box and specify the build configuration and the type of build to watch: last successful build, last [pinned build](pinned-build.md), last finished build, or the last finished build with a specified tag.
+For example, build configuration A has a schedule trigger that starts each 5 minutes and watches the _last successful build_ in configuration B. If the trigger detects a new build B that has finished successfully in the last 5 minutes, it runs build A.
 
-TeamCity can [promote](triggering-a-custom-build.md) the watched build if there is a dependency (snapshot or artifact) on its build configuration.
+<img src="schedule-trigger-watch.png" width="350" alt="Triggered on a watched build"/>
+
+In the __Watching Different Build__ section, enable the _Trigger only if the watched build changes_ option and specify the build configuration and the type of build to watch.
+
+If the triggered build depends on the watched build via a [snapshot](dependent-build.md#Snapshot+Dependency) or [artifact](dependent-build.md#Artifact+Dependency) dependency, select the _Promote the watched build_ option so TeamCity can automatically [promote](triggering-a-custom-build.md#Promoting+Build) the watched build to the triggered build.
 
 ## Additional Options
 
