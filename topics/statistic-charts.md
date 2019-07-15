@@ -92,7 +92,7 @@ You can also find some useful statistics for a particular test: __Test duration_
 
 ## Custom Charts
 
-It is possible to [customize project-level charts](customizing-statistics-charts.md) or/and configure your own statistical charts, e g. to display the total build duration, including the checkout time, the duration of all build stages, artifact resolving and artifact publishing or  a chart displaying the duration of each build stage, and so on. See a [dedicated page](https://confluence.jetbrains.com/display/TCD18/Custom+Statistics) for details
+It is possible to [customize project-level charts](customizing-statistics-charts.md) or/and configure your own statistical charts, e g. to display the total build duration, including the checkout time, the duration of all build stages, artifact resolving and artifact publishing or  a chart displaying the duration of each build stage, and so on. See a [dedicated page](https://plugins.jetbrains.com/docs/teamcity/custom-statistics.html) for details
 
  
 
