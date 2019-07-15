@@ -388,13 +388,13 @@ Some of the files can have `.N` extensions \- that are files with previous loggi
 
 Users with System Administrator role can view and download the server logs right from the TeamCity UI using __Administration | Diagnostics | Server Logs__.
 
-The debug logging can be enabled via "Active logging preset" under the __Administration | Diagnostics__ page, __Troubleshooting__, __Debug logging__ subsection. Choosing a preset changes logging configuration immediately and the preset is preserved after a server restart, until changed on the page again. It is recommended to return to the "&lt;Default&gt;" once the necessary logs were collected.
-
-The available presets are stored in the files with .xml extension under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging` directory. New files can be added into the directory and existing files can be modified (using [.dist convention](teamcity-data-directory.md)). New presets can also be uploaded via __Diagnostics | Logging Presets__.
-
 ## Changing Logging Configuration
 
-While TeamCity is running, logging configuration for the server can be switched to a logging preset.
+While TeamCity is running, active logging settings can be changed by selecting between available `logging presets`.
+
+The active logging preset is changed in the __Administration | Diagnostics__ page, __Troubleshooting__, __Debug logging__ subsection. Choosing a preset changes logging configuration immediately and the preset is preserved after a server restart, until changed on the page again. It is recommended to return to the "&lt;Default&gt;" once the necessary logs were collected.
+
+The available presets are stored in the files with .xml extension under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging` directory. New files can be added into the directory and existing files can be modified (using [.dist convention](teamcity-data-directory.md)). New presets can also be uploaded via __Diagnostics | Logging Presets__.
 
 If it is not possible to enable debug logging mode via logging presets (for example, to get the logging during server initialization) or to make persistent changes to the logging, you can backup the `conf/teamcity-server-log4j.xml` file and copy/rename the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging/debug-general.xml` file over `conf/teamcity-server-log4j.xml` before the server start.
 
