@@ -494,11 +494,13 @@ You can restrict a schedule trigger to start builds only if there are pending ch
 
 ### Watching Different Build
 
-A schedule trigger can watch a build in a different build configuration and run a build in the trigger's configuration if a watched build configuration changes. You can select one of the following changes as the condition for triggering:
+A schedule trigger can watch a build in a different build configuration and run a build in the trigger's configuration based on one of the following triggering conditions:
 * Last finished build
 * Last successful build
 * Last [pinned build](pinned-build.md)
 * Last finished build with a specified [build tag](build-tag.md)
+
+If a trigger starts and finds a new build in the watched configuration that satisfies the selected condition, it runs a build in the trigger's configuration.
 
 For example, build configuration A has a schedule trigger that starts each 5 minutes and watches the _last successful build_ in configuration B. If the trigger detects a new build B that has finished successfully in the last 5 minutes, it runs build A.
 
