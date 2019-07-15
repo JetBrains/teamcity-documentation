@@ -302,16 +302,13 @@ Once you start using TeamCity for [production](#Configuring+Server+for+Productio
 To __change the memory settings__, refer to [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md#JVM+Options), or to the documentation of your application server, if you run TeamCity using the .war distribution.   
 Generally this means setting `TEAMCITY_SERVER_MEM_OPTS` environment variable to the value like `-Xmx750m`
 
-<note>
-
-The Permanent Generation (PermGen) space [has been replaced with metaspace](http://javaeesupportpatterns.blogspot.ru/2013/02/java-8-from-permgen-to-metaspace.html) memory allocation. It is recommended to remove the  `-XX:MaxPermSize` JVM option from `TEAMCITY_SERVER_MEM_OPTS` environment variable, if previously configured.
-</note>
+It is recommended to remove the `-XX:MaxPermSize` JVM option from `TEAMCITY_SERVER_MEM_OPTS` environment variable, if previously configured since it is ignored in Java 8.
 
 If slowness, OutOfMemory errors occur, or you consistently see a memory\-related warning in the TeamCity UI, increase the setting to the next level.
 * __minimum setting__ (the 32\-bit Java should be used (bundled in .exe distribution)): `-Xmx750m `
 * __recommended setting__ for __medium__ server use (the 32\-bit Java should be used): `-Xmx1024m`.  Greater settings with the 32\-bit Java can cause an OutOfMemoryError with "Native memory allocation (malloc) failed" JVM crashes or "unable to create new native thread" messages
-* __recommended setting__ for __large__ server use ([64-bit Java](#Using+64+bit+Java+to+Run+TeamCity+Server) should be used): `-Xmx4g -XX:ReservedCodeCacheSize=350m`.  These settings should be suitable for an installation with up to two hundreds of agents and thousands of build configurations. Custom plugins installed might require increasing the values defined via the Xmx parameter.
-* __maximum settings__ for large\-scale server use ([64-bit Java](#Using+64+bit+Java+to+Run+TeamCity+Server) should be used): `-Xmx10g -XX:ReservedCodeCacheSize=512m.` Greater values can be used for larger TeamCity installations. However, generally it is not recommended to use values greater than 10g without consulting TeamCity support.
+* __recommended setting__ for __large__ server use ([64-bit Java](#Using+64+bit+Java+to+Run+TeamCity+Server) should be used): `-Xmx4g -XX:ReservedCodeCacheSize=350m`.  These settings should be suitable for an installation with up to two hundreds of agents and thousands of build configurations. Custom plugins installed might require increasing the value defined via the Xmx parameter.
+* __maximum settings__ for large\-scale server use ([64-bit Java](#Using+64+bit+Java+to+Run+TeamCity+Server) should be used): `-Xmx10g -XX:ReservedCodeCacheSize=512m`. Greater values can be used for larger TeamCity installations. However, generally it is not recommended to use values greater than 10g without consulting TeamCity support.
 
 __Tips__:
 * the 32\-bit JVM can reliably work with up to 1Gb heap memory (`Xmx1024m`). (This can be increased to `-Xmx1200m`, but JVM under Windows might crash occasionally with this setting.) If more memory is necessary, the 64\-bit JVM should be used with not less than 2.5Gb assigned (`-Xmx2500m`). Unless the TeamCity server runs with more than 100 agents or serves very active builds / thousands of users, it's unlikely that you will need to dedicate more than 4Gb of memory to the TeamCity process.
