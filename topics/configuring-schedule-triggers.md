@@ -492,6 +492,21 @@ You can restrict a schedule trigger to start builds only if there are pending ch
 
 <include src="configuring-vcs-triggers.md" include-id="trigger-rules-examples"/>
 
+### Build Changes
+
+A Schedule Trigger can watch a build in any specified build configuration and trigger a build only if the watched build has changed since the previous triggering. You can select one of the following build types to watch:
+* Last finished build
+* Last successful build
+* Last [pinned build](pinned-build.md)
+* Last finished build with a specified [build tag](build-tag.md)
+
+If a new build of the selected type is detected in the watched configuration, the trigger queues a new build in own configuration.
+ 
+The trigger watches only regular (not [personal](personal-build.md) or [history](history-build.md)) builds in the default branch.
+ 
+If the triggered build depends on the watched build via a snapshot or artifact dependency, select the "_Promote watched build_" option so TeamCity can automatically [promote](triggering-a-custom-build.md#Promoting+Build) the detected build to the triggered build. Otherwise, the build will be triggered as usual and will have no relation to the detected build.
+
+
 ### Watching Different Build
 
 A schedule trigger can watch a build in a different build configuration and run a build in the trigger's configuration based on one of the following triggering conditions:
