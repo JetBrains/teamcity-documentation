@@ -15,17 +15,17 @@ Following these guidelines will ensure timely response and effective issue resol
 
 <note>
 
-* if you have issue with your build logic, make sure it is a TeamCity\-related issue (i.e. it does not [reproduce in the same environment](common-problems.md) without TeamCity) and include details of your investigation
+* if you have issue with your build logic, make sure it is a TeamCity\-related issue (i.e. it does not [reproduce in the same environment](common-problems.md#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) without TeamCity) and include details of your investigation
 * note the __TeamCity version__ in use, including the build number (can be found in the footer and the teamcity\-server.log). Consider checking if the issue is still relevant in the most recent TeamCity version;
 * update previous postings of yours on the topic instead of creating new ones, if you still create a duplicate make sure to note all previous postings on the same topic you have made or found;
 * post one issue per submission, post the most important issue first, or post several issues noting others if they are related;
 * note the pattern of issue occurrence (first time, recurring), how it was mitigated before, whether there were any recent environment changes;
-* be specific: note exact times, error messages, etc.;
+* be specific: note exact times, error messages, and so on;
 * describe the expected and actual behavior;
 * detail the related settings configured in TeamCity (include screenshots, settings files, actual values, [REST API](rest-api.md) entity representations);
 * include related __screenshots__ of the TeamCity UI (always include the entire page and the browser URL in the capture);
 * include related text messages as text (not as image), include the messages with all the details;
-* when reporting build procedure issues, try to [reproduce](common-problems.md) them without TeamCity on the agent machine in the same environment and let us know the results;
+* when reporting build procedure issues, try to [reproduce](common-problems.md#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) them without TeamCity on the agent machine in the same environment and let us know the results;
 * do not include large portions (above 10Kb) of the textual data into the email text, rather attach it in a file;
 * attach/[upload](#Uploading+Large+Data+Archives) archive with TeamCity __server logs__ (see [details](teamcity-server-logs.md), ideally, the entire &lt;server home&gt;\logs directory with all the directories inside. If impractical, all the files updated around or later than the issue time); if related to the build\-time or agent behavior, attach the entire &lt;agent home&gt;\logs directory;
 * if specific builds are affected, include the build logs (downloaded via dedicated link from the build results' Build Log tab);
@@ -55,17 +55,17 @@ Investigate the system resources (CPU, memory, IO) load. If there is a high load
 
 If it is the TeamCity server that is loading the CPU/IO or there is no substantial CPU/IO load and everything runs just fine except for TeamCity, then this is to be investigated further.
 
-Check if you have any [Conflicting Software](known-issues.md) like anti\-virus running on the machine and disable/uninstall it.
+Check if you have any [Conflicting Software](known-issues.md#Conflicting+Software) like anti\-virus running on the machine and disable/uninstall it.
 
 Check that the database used by TeamCity and the file storage of the TeamCity Data Directory do not have performance issues.
 
-If you have a substantial TeamCity installation, check your [memory settings](installing-and-configuring-the-teamcity-server.md) as the first step.
+If you have a substantial TeamCity installation, check your [memory settings](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) as the first step.
 
 #### Collect Data
 
-During the slow operation, take several thread dumps of the slow process (see below for thread dump taking approaches) with 5\-10 seconds interval. If the slowness continues, take several more thread dumps (e.g. 3\-5 within several minutes) and then repeat after some time (e.g. 10 minutes) while the process is still being slow.
+During the slow operation, take several thread dumps of the slow process (see below for thread dump taking approaches) with 5\-10 seconds interval. If the slowness continues, take several more thread dumps (for example, 3\-5 within several minutes) and then repeat after some time (for example, 10 minutes) while the process is still being slow.
 
-Then [send](https://confluence.jetbrains.com/display/TW/Feedback) us a detailed description of the issue accompanied with the thread dumps and full server (or agent) [logs](#Logging+events) covering the issue. Unless it is undesirable for some reason, the preferred way is to file an issue into our [issue tracker](http://youtrack.jetbrains.com/issues/TW) and let us know via support email. Please include all the relevant details of investigation, including the CPU/IO load information, what specifically is slow and what is not, note affected URLs, visible effects, etc. For large amounts of data, use [our file upload](#Uploading+Large+Data+Archives) service to share the archives with us.
+Then [send](https://confluence.jetbrains.com/display/TW/Feedback) us a detailed description of the issue accompanied with the thread dumps and full server (or agent) [logs](#Logging+events) covering the issue. Unless it is undesirable for some reason, the preferred way is to file an issue into our [issue tracker](http://youtrack.jetbrains.com/issues/TW) and let us know via support email. Please include all the relevant details of investigation, including the CPU/IO load information, what specifically is slow and what is not, note affected URLs, visible effects, and so on. For large amounts of data, use [our file upload](#Uploading+Large+Data+Archives) service to share the archives with us.
 
 ### Server Thread Dump
 
@@ -75,7 +75,7 @@ It is recommended that you take a thread dump of the TeamCity server from the We
 
 If the UI is not accessible (or the server is not yet fully started), you can take a server thread dump manually using the approaches described [below](#Taking+Thread+Dump).
 
-You can also adjust the `teamcity.diagnostics.requestTime.threshold.ms=30000` [internal property](configuring-teamcity-server-startup-properties.md) to change the timeout after which a thread dump is automatically created in the `threadDumps-<date>` directory under TeamCity logs whenever there is a user\-originated web request taking longer than timeout.
+You can also adjust the `teamcity.diagnostics.requestTime.threshold.ms=30000` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to change the timeout after which a thread dump is automatically created in the `threadDumps-<date>` directory under TeamCity logs whenever there is a user\-originated web request taking longer than timeout.
 
 ### Collecting CPU Profiling Data on Server
 
@@ -118,7 +118,7 @@ Another approach is to figure out the process id of the TeamCity server process 
 
 Note that if the hanging process is run as a service, the thread dumping tool must be run from a console with elevated permissions (using Run as Administrator). If the service is run under System account, you might also need to launch the thread dumping tools via [`PsExec.exe`](http://technet.microsoft.com/en-us/sysinternals/bb897553.aspx)` -s <path to the tool>\<tool> <options>`. When the service is run under a regular user, wrapping the tool invocation in "` PsExec.exe -u <user> -p <password> <path to the tool>\<tool> <options>` might also help.
 
-If neither of these work for the server running as a service, try [running the server](installing-and-configuring-the-teamcity-server.md) from console and not as a service. This way the first (Ctrl\+Break) option can be used.
+If neither of these work for the server running as a service, try [running the server](installing-and-configuring-the-teamcity-server.md#Starting+TeamCity+server) from console and not as a service. This way the first (Ctrl\+Break) option can be used.
 
 #### Under Linux
 
@@ -130,11 +130,11 @@ See also [Server Performance](#Determine+Which+Process+Is+Slow) section above.
 
 When the server is slow, check if the problem is caused by database operations.It is recommended to use database\-specific tools.
 
-You can also use the `debug-sql` server [logging preset](teamcity-server-logs.md). Upon enabling, all the queries which take longer 1 second will be logged into the teamcity\-sql.log file. The time can be changed by setting the `teamcity.sqlLog.slowQuery.threshold` [internal property](configuring-teamcity-server-startup-properties.md). The value should be set in milliseconds and is 1000 by default.
+You can also use the `debug-sql` server [logging preset](teamcity-server-logs.md#Logging-related+Diagnostics+UI). Upon enabling, all the queries which take longer 1 second will be logged into the `teamcity-sql.log` file. The time can be changed by setting the `teamcity.sqlLog.slowQuery.threshold` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). The value should be set in milliseconds and is 1000 by default.
 
 #### MySQL
 
-Along with the server thread dump,  make sure to attach the output of the `show processlist;` SQL command executed in MySQL console. Like with thread dumps, it makes sense to execute the command several times if slowness occurred and send us the output. Also, MySQL can be set up to keep a log of long queries executed with the changes in `my.ini`:
+Along with the server thread dump, make sure to attach the output of the `show processlist;` SQL command executed in MySQL console. Like with thread dumps, it makes sense to execute the command several times if slowness occurred and send us the output. Also, MySQL can be set up to keep a log of long queries executed with the changes in `my.ini`:
 
 
 ```Shell
@@ -146,15 +146,13 @@ long_query_time=15
 
 ```
 
-
-
 The log can also be sent to us for analysis.
 
 ## OutOfMemory Problems
 
 If you experience problems with TeamCity "eating" too much memory or OutOfMemoryError/"Java heap space" errors in the log, do the following:
 * Determine what process encounters the error (the actual building process, the TeamCity server, or the TeamCity agent). You can track memory and CPU usage by TeamCity with the charts on the __Administration__ | __Server Administration__ | __Diagnostics__ page of your TeamCity web UI.
-* If the server is to blame, check you have increased memory settings from the default ones for using the server in production (see [the section](installing-and-configuring-the-teamcity-server.md)).
+* If the server is to blame, check you have increased memory settings from the default ones for using the server in production (see the [section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server)).
 * If the build process is to blame, set "JVM Command Line Parameters" settings in the build runner.  Increase value for `'-Xmx'` JVM option, like __\-Xmx1200m,__ e.g. Java Inspections builds may specifically need to increase `-Xmx` value.
 * If the TeamCity server is to blame and increasing the memory size does not help, please report the case for us to investigate. For this, while the server is high on memory consumption, take several server thread dumps as described [above](#Taking+Thread+Dump), get the memory dump (see below) and all the server logs including `threadDumps-*` sub\-directories, archive the results and [send them](#Uploading+Large+Data+Archives) to us for further analysis. Make sure that Xmx setting is less than 8Gb before getting the dump:
   * if a memory dump (hprof file) is created automatically the `java\_xxx.hprof` file is be created in the process startup directory (\<[TeamCity Home](teamcity-home-directory.md)\>\/bin or \<[TeamCity Agent home](agent-home-directory.md)\>\/bin`);
@@ -168,13 +166,13 @@ If you experience problems with TeamCity "eating" too much memory or OutOfMemory
   
   
 
-See how to change JVM options for the [server](configuring-teamcity-server-startup-properties.md) and for [agents](configuring-build-agent-startup-properties.md).
+See how to change JVM options for the [server](configuring-teamcity-server-startup-properties.md#JVM+Options) and for [agents](configuring-build-agent-startup-properties.md#Agent+Propertiesg).
 
 
 ## "Too many open files" Error
 1. Determine what computer it occurs on
 2. Determine the process which has opened a lot of files and the files list (on Linux use `lsof`, on Windows you can use [handle](http://technet.microsoft.com/en-us/sysinternals/bb896655) or [TCPView](http://technet.microsoft.com/en-us/sysinternals/bb897437.aspx) for listing sockets)
-3. If the number is under thousands, check the OS and the process limits on the file handles (on Linux use `ulimit -n`) and increase them if necessary. Note that default Linux 1024 handles per process is way too small for a server application like TeamCity. Increase the number to at least 16000. Check the actual process limits after the change as there are different settings in the OS for settings global and per\-session limits (e.g. see [the post](http://stackoverflow.com/questions/13988780/too-many-open-files-ulimit-already-changed))
+3. If the number is under thousands, check the OS and the process limits on the file handles (on Linux use `ulimit -n`) and increase them if necessary. Note that default Linux 1024 handles per process is way too small for a server application like TeamCity. Increase the number to at least 16000. Check the actual process limits after the change as there are different settings in the OS for settings global and per\-session limits (e.g. see the [post](http://stackoverflow.com/questions/13988780/too-many-open-files-ulimit-already-changed))
 
 If the number of files is large and looks suspicious and the locking process is a TeamCity one (the TeamCity agent or server with no other web applications running), then, while the issue is still occurring, grab the list of open handles several times with several minutes interval and send the result to us for investigation together with the relevant details.
 
@@ -182,7 +180,7 @@ Note that you will most probably need to reboot the machine with the error after
 
 ## Agent does not connect to the server
 
-Please refer to [Common Problems](common-problems.md)
+Please refer to [Common Problems](common-problems.md#Started+Build+Agent+is+not+available+on+the+server+to+run+builds)
 
 ## Logging events
 
@@ -207,7 +205,7 @@ For detailed information, refer to the corresponding sections:
 To enable VCS logging on the server side, [switch logging preset](teamcity-server-logs.md) to "debug\-vcs" in administration web UI and then retrieve `logs/teamcity-vcs.log` log file.
 </note>
 
-Most VCS operations occur on the TeamCity server, but if you're using the [agent-side checkout](vcs-checkout-mode.md), VCS checkout occurs on the build agents.
+Most VCS operations occur on the TeamCity server, but if you're using the [agent-side checkout](vcs-checkout-mode.md#agent-checkout), VCS checkout occurs on the build agents.
 
 For the agent and the server, you can change the Log4j configuration manually in `<`[`TeamCity Home`](teamcity-home-directory.md)`>/conf/teamcity-server-log4j.xml` or `<`[`BuildAgent home`](agent-home-directory.md)`>/conf/teamcity-agent-log4j.xml` files to include the following fragment:
 
@@ -253,7 +251,7 @@ An alternative manual approach is also necessary for agent\-side logging.
 
 First, enable the generic VCS debug logging, as described [above](#Version+Control+debug+logging).
 
-Uncomment the SVN\-related parts (the `SVN.LOG` appender and `javasvn.output` category) of the Log4j configuration file on the server and on the agent (if the [agent-side checkout](vcs-checkout-mode.md) is used). The log will be saved to the `logs/teamcity-svn.log` file. Generic VCS log should be also taken from `logs/teamcity-vcs.log`
+Uncomment the SVN\-related parts (the `SVN.LOG` appender and `javasvn.output` category) of the Log4j configuration file on the server and on the agent (if the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used). The log will be saved to the `logs/teamcity-svn.log` file. Generic VCS log should be also taken from `logs/teamcity-vcs.log`
 
 #### ClearCase
 
@@ -261,14 +259,14 @@ Uncomment the Clearcase\-related lines in the `<`[`TeamCity Home`](teamcity-home
 
 ## Patch Application Problems
 
-In case the [server-side checkout](vcs-checkout-mode.md) is used, the "patch" that is passed from the server to the agent can be retrieved by:
+In case the [server-side checkout](vcs-checkout-mode.md#server-checkout) is used, the "patch" that is passed from the server to the agent can be retrieved by:
 * add the property `system.agent.save.patch=true` to the build configuration.
 * trigger the build.
 the build log and the agent log will contain the line "Patch is saved to file $\{file.name\}"Get the file and supply it with the problem description.
 
 ## Logging for .NET Runners
 
-To investigate process launch issues for [.Net-related runners](supported-platforms-and-environments.md), enable debugging as described below. The detailed information will then be printed into the build log. It is recommended not to have the debug logging for a long time and revert the settings after investigation.
+To investigate process launch issues for [.NET-related runners](supported-platforms-and-environments.md#Supported+.NET+platform+build+runners), enable debugging as described below. The detailed information will then be printed into the build log. It is recommended not to have the debug logging for a long time and revert the settings after investigation.
 
 Aa alternative way to enable the logging is as follows:
 Add the `teamcity.agent.dotnet.debug=true` [configuration parameter](configuring-build-parameters.md) in the build configuration or on the agent and run the build.
@@ -326,7 +324,7 @@ To enable debug logging for the [IntelliJ Platform-based IDE plugin](intellij-pl
 
 
 
-After changing this file, restart the IDE. The TeamCity plugin debug logs are saved into `idea-teamcity\*` files and will appear in the logs directory of [the IDE settings](http://www.jetbrains.com/idea/webhelp/project-and-ide-settings.html#d1270417e197)`/data directory>/system/log` directory.
+After changing this file, restart the IDE. The TeamCity plugin debug logs are saved into `idea-teamcity\*` files and will appear in the logs directory of the [IDE settings](http://www.jetbrains.com/idea/webhelp/project-and-ide-settings.html#d1270417e197)`/data directory>/system/log` directory.
 
 ### Open in IDE Functionality Logging
 
@@ -339,7 +337,7 @@ The logging related to the __open in IDE__ functionality will appear in the IDE 
 
 First of all, check that your [VCS settings in IDEA](http://www.jetbrains.com/idea/webhelp/configuring-general-vcs-settings.html) correspond to the [VCS settings](configuring-vcs-settings.md) in TeamCity. If they do not, change them and it should fix the problem.
 
-Secondly, check that the build configurations you expect to be suitable with your IDEA project has either [server-side VCS checkout mode](vcs-checkout-mode.md) or [agent-side checkout](vcs-checkout-mode.md) and NOT manual VCS checkout mode (it is not possible to apply a personal patch for a build with the manual checkout mode because TeamCity must apply that patch after the VCS checkout is done, but it does not know or manage the time when it is performed).
+Secondly, check that the build configurations you expect to be suitable with your IDEA project has either [server-side VCS checkout mode](vcs-checkout-mode.md#server-checkout) or [agent-side checkout](vcs-checkout-mode.md#agent-checkout) and NOT manual VCS checkout mode (it is not possible to apply a personal patch for a build with the manual checkout mode because TeamCity must apply that patch after the VCS checkout is done, but it does not know or manage the time when it is performed).
 
 If the settings are the same and you do not use the manual checkout mode but the problem is there, do the following:
 * Provide us with your IDEA VCS settings and TeamCity VCS settings (for the build configurations you expect to be suitable with your IDEA project)
@@ -350,7 +348,7 @@ If the settings are the same and you do not use the manual checkout mode but the
 
 ## Logging in TeamCity Eclipse plugin
 
-To enable tracing for [the plugin](eclipse-plugin.md), run Eclipse IDE with the `-debug` `<filename>` command line parameter. The `<filename>` portion of the argument should be a properties file containing key\-value pairs. The name of each property corresponds to the plugin module and the value is either '`true`' (to enable debug) or '`false`'. Here is an example of enabling most common tracing options:
+To enable tracing for the [plugin](eclipse-plugin.md), run Eclipse IDE with the `-debug` `<filename>` command line parameter. The `<filename>` portion of the argument should be a properties file containing key\-value pairs. The name of each property corresponds to the plugin module and the value is either '`true`' (to enable debug) or '`false`'. Here is an example of enabling most common tracing options:
 
 
 ```Shell
@@ -393,7 +391,7 @@ To troubleshoot common Visual Studio, run Microsoft Visual Studio executable `IN
 
 ## dotCover Issues
 
-To collect additional logs generated by [JetBrains dotCover](jetbrains-dotcover.md), add the `teamcity.agent.dotCover.log` [configuration parameter ](configuring-build-parameters.md)to the build configuration with a path to an empty directory on the agent.All dotCover log files will be placed there and TeamCity will publish zipped logs as hidden build artifact `.teamcity/.NETCoverage/dotCoverLogs.zip`.
+To collect additional logs generated by [JetBrains dotCover](jetbrains-dotcover.md), add the `teamcity.agent.dotCover.log` [configuration parameter](configuring-build-parameters.md) to the build configuration with a path to an empty directory on the agent.All dotCover log files will be placed there and TeamCity will publish zipped logs as hidden build artifact `.teamcity/.NETCoverage/dotCoverLogs.zip`.
 
 
 [//]: # (Internal note. Do not delete. "Reporting Issuesd267e1133.txt")    
@@ -406,9 +404,9 @@ To collect additional logs generated by [JetBrains dotCover](jetbrains-dotcover.
 On a rare occasion of the TeamCity server or agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually `<`[`TeamCity server`](teamcity-home-directory.md)`>` or [`agent home`](agent-home-directory.md)`>/bin`.   
 Under Windows when running as a service, it can be other like `C:\Windows\SysWOW64`. You can also search the disk for the recent files with "hs_err_pid" in the name. See also the related Fatal Error Log section in this [document](http://www.oracle.com/technetwork/java/javase/felog-138657.html).
 
-Please send this file to us for investigation and consider updating the JVM for [the server](installing-and-configuring-the-teamcity-server.md) (or for [agents](setting-up-and-running-additional-build-agents.md)) to the latest version available.
+Please send this file to us for investigation and consider updating the JVM for the [server](installing-and-configuring-the-teamcity-server.md#Java+Installation) (or for [agents](setting-up-and-running-additional-build-agents.md#Configuring+Java)) to the latest version available.
 
-If you get the "There is insufficient memory for the Java Runtime Environment to continue. Native memory allocation (malloc) failed to allocate ..." message with the crash or in the crash report file, make sure to [switch to 64 bits JVM](installing-and-configuring-the-teamcity-server.md) or reduce \-Xmx setting not to increase 1024m, see details in the [memory configuration section](installing-and-configuring-the-teamcity-server.md).
+If you get the "There is insufficient memory for the Java Runtime Environment to continue. Native memory allocation (malloc) failed to allocate ..." message with the crash or in the crash report file, make sure to [switch to 64 bits JVM](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server) or reduce \-Xmx setting not to increase 1024m, see details in the [memory configuration section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server).
 
 ## Build Log Issues
 
@@ -420,9 +418,9 @@ The inspections result from a TeamCity build may not match inspections from a lo
 
 To help us investigate issues with inspections, do the following:
 1. Add `system.teamcity.dont.delete.temp.result.dir=true` to the [configuration parameters](configuring-build-parameters.md)
-2. Add `%system.teamcity.build.tempDir%/inspection*result/** => inspections-reports-data-%build.number%.zip` rule to [Artifact paths](configuring-general-settings.md)
-3. Add `%system.teamcity.build.tempDir%/idea-logs/** => inspections-reports-idea-logs-%build.number%.zip` rule to [Artifact paths](configuring-general-settings.md)
-4. Add `-Didea.log.path=%system.teamcity.build.tempDir%/idea-logs/` to the runner's [JVM command line parameters](inspections.md) field.
+2. Add `%system.teamcity.build.tempDir%/inspection*result/** => inspections-reports-data-%build.number%.zip` rule to [Artifact paths](configuring-general-settings.md#Artifact+Paths)
+3. Add `%system.teamcity.build.tempDir%/idea-logs/** => inspections-reports-idea-logs-%build.number%.zip` rule to [Artifact paths](configuring-general-settings.md#Artifact+Paths)
+4. Add `-Didea.log.path=%system.teamcity.build.tempDir%/idea-logs/` to the runner's [JVM command line parameters](inspections.md#Java+Parameters) field.
 5. Run a  new build.
 6. Send us `inspections-reports-*.zip` files.
  
@@ -434,11 +432,11 @@ You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrain
 
 __FTP__
 
-If the file is over 10 MB, you can upload the archived files to [ftp://ftp.intellij.net/.uploads](ftp://ftp.intellij.net/.uploads) and let us know the exact file name. If you receive the permission denied error on an upload attempt, rename the file. It's OK that you do not see the file listing on the FTP.    
+If the file is over 10 MB, you can upload the archived files to [`ftp://ftp.intellij.net/.uploads`](ftp://ftp.intellij.net/.uploads) and let us know the exact file name. If you receive the permission denied error on an upload attempt, rename the file. It's OK that you do not see the file listing on the FTP.    
 The FTP accepts standard anonymous credentials: username: "anonymous", password: "&lt;your email&gt;".   
 In addition to usual, unencrypted connections, TLS ones are also supported.
 
-In case of access issues, time\-out errors, etc. please try using passive FTP mode.
+In case of access issues, time\-out errors, and so on, please try using passive FTP mode.
 
 
 [//]: # (Internal note. Do not delete. "Reporting Issuesd267e1305.txt")    
@@ -446,6 +444,6 @@ In case of access issues, time\-out errors, etc. please try using passive FTP mo
 
 __HTTP__
 
-You can upload a file via [https://uploads.services.jetbrains.com/](https://uploads.services.jetbrains.com/) form and let us know the exact file name.
+You can upload a file via [`https://uploads.services.jetbrains.com/`](https://uploads.services.jetbrains.com/) form and let us know the exact file name.
 
 If you cannot upload a large file in one go, try splitting the file into parts and upload them separately.

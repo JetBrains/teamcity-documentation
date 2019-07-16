@@ -50,6 +50,8 @@ TeamCity falls back to the server\-side checkout in the following cases:
 
 <td>
 
+<anchor name="server-checkout"/>
+
  Always checkout files on server
 
 
@@ -70,6 +72,8 @@ The TeamCity server will [export the sources](build-checkout-directory.md) and p
 </td></tr><tr>
 
 <td>
+
+<anchor name="agent-checkout"/>
 
  Always checkout files on agent
 
