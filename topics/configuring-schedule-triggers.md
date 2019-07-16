@@ -4,7 +4,7 @@
 <tag-list of="chapter" mode="tree" depth="4"/>
 
 
-The _Schedule Trigger_ allows you to set the time when a build of the configuration will be run. The __[Builds Schedule](builds-schedule.md)__ page of the current project settings displays the configured build times. More than one schedule trigger can be added to a build configuration.
+The _Schedule Trigger_ allows you to set the time when a build of the configuration will be run. The __[Builds Schedule](builds-schedule.md)__ page of the current project settings displays the configured build times. More than one Schedule Trigger can be added to a build configuration.
 
 ## Triggering Conditions
 
@@ -478,7 +478,7 @@ For the description of the special characters, please refer to [Quartz CronTrigg
 
 ### VCS Changes
 
-You can restrict a schedule trigger to start builds only if there are pending changes in your version control by enabling the __Trigger only if there are pending changes__ option. This option considers only newly detected pending changes: if there were pending changes before the trigger was created, the build is not triggered. 
+You can restrict a Schedule Trigger to start builds only if there are pending changes in your version control by enabling the __Trigger only if there are pending changes__ option. This option considers only newly detected pending changes: if there were pending changes before the Trigger was created, the build is not triggered. 
 
 ### VCS Trigger Rules
 
@@ -500,37 +500,18 @@ A Schedule Trigger can watch a build in any specified build configuration and tr
 * Last [pinned build](pinned-build.md)
 * Last finished build with a specified [build tag](build-tag.md)
 
-If a new build of the selected type is detected in the watched configuration, the trigger queues a new build in own configuration.
+If a new build of the selected type is detected in the watched configuration, the Trigger queues a new build in own configuration.
  
-The trigger watches only regular (not [personal](personal-build.md) or [history](history-build.md)) builds in the default branch.
+The Trigger watches only regular (not [personal](personal-build.md) or [history](history-build.md)) builds in the default branch.
  
 If the triggered build depends on the watched build via a snapshot or artifact dependency, select the "_Promote watched build_" option so TeamCity can automatically [promote](triggering-a-custom-build.md#Promoting+Build) the detected build to the triggered build. Otherwise, the build will be triggered as usual and will have no relation to the detected build.
-
-
-### Watching Different Build
-
-A schedule trigger can watch a build in a different build configuration and run a build in the trigger's configuration based on one of the following triggering conditions:
-* Last finished build
-* Last successful build
-* Last [pinned build](pinned-build.md)
-* Last finished build with a specified [build tag](build-tag.md)
-
-If a trigger starts and finds a new build in the watched configuration that satisfies the selected condition, it runs a build in the trigger's configuration.
-
-For example, build configuration A has a schedule trigger that starts every 5 minutes and watches the _last successful build_ in configuration B. If the trigger detects a new build B that has finished successfully in the last 5 minutes, it runs build A.
-
-<img src="schedule-trigger-watch.png" width="500" alt="Triggered on a watched build"/>
-
-In the __Watching Different Build__ section, enable the _Trigger only if the watched build changes_ option and specify the build configuration and the type of build to watch.
-
-If the triggered build depends on the watched build via a [snapshot](dependent-build.md#Snapshot+Dependency) or [artifact](dependent-build.md#Artifact+Dependency) dependency, select the _Promote the watched build_ option so TeamCity can automatically [promote](triggering-a-custom-build.md#Promoting+Build) the watched build to the triggered build.
 
 ## Additional Options
 
 ### Enforce Clean Checkout 
 
 Enable the _Delete all files in the checkout directory before the build_ option to force TeamCity to clean all files in the checkout directory before running a build.   
-This option can also be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use [clean checkout](clean-checkout.md). The option also enables rebuilding all dependencies (unless custom dependencies are provided via the custom build dialog or the schedule trigger promotes a build).
+This option can also be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use [clean checkout](clean-checkout.md). The option also enables rebuilding all dependencies (unless custom dependencies are provided via the custom build dialog or a Schedule Trigger promotes a build).
 
 ### Trigger Build on All Enabled and Compatible Agents
 
@@ -548,7 +529,7 @@ By default, TeamCity [optimizes the build queue](build-queue.md): already queued
 
 ### Branch Filter
 
-By default, the schedule trigger works for all branches.
+By default, a Schedule Trigger works for all branches.
 
 Read more in [Branch Filter](branch-filter.md).
 
