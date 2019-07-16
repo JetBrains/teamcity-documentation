@@ -166,7 +166,7 @@ If you experience problems with TeamCity "eating" too much memory or OutOfMemory
   
   
 
-See how to change JVM options for the [server](configuring-teamcity-server-startup-properties.md#JVM+Options) and for [agents](configuring-build-agent-startup-properties.md#Agent+Propertiesg).
+See how to change JVM options for the [server](configuring-teamcity-server-startup-properties.md#JVM+Options) and for [agents](configuring-build-agent-startup-properties.md#Agent+Properties).
 
 
 ## "Too many open files" Error
