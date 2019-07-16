@@ -7,7 +7,7 @@ On this page:
 
 ## Overview
 
-TeamCity allows the two\-way synchronization of the project settings with the version control repository. Supported VCSs are Git, Mercurial, Perforce, Subversion, and TFS.
+TeamCity allows the two\-way synchronization of the project settings with the version control repository. Supported VCSs are Git, Mercurial, Perforce, Subversion, and Azure DevOps Server (formerly TFS).
 
 You can store settings in the XML format and in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [kotlin-based DSL](kotlin-dsl.md). 
 
@@ -161,13 +161,13 @@ Q. Can I apply the settings from a TeamCity server of a different version?
 A. No, because just like with the TeamCity Data Directory, the format of the settings differs from one TeamCity version to another.
 
 Q. Where are the settings stored?   
-A. The settings are stored in the `.teamcity` folder in the root of the VCS root\-configured repository path. For Git and Mercurial this is always the root of the repository. The default branch configured in the VCS root is used with [Git](git.md), [Mercurial](mercurial.md). You can create a dedicated VCS root to change the branch (or a repository path in case of Perforce, Subversion or TFS).
+A. The settings are stored in the `.teamcity` folder in the root of the VCS root\-configured repository path. For Git and Mercurial this is always the root of the repository. The default branch configured in the VCS root is used with [Git](git.md), [Mercurial](mercurial.md). You can create a dedicated VCS root to change the branch (or a repository path in case of Perforce, Subversion, or Azure DevOps – formerly TFS).
 
 Q. Why is there a delay before a build is run after I changed to the settings in the UI?   
 A. When the settings are changed via the UI, TeamCity will wait for the changes to be completed with a commit to the VCS before running a build with the latest changes.
 
 Q. Who are the changes authored by?   
-A. If the settings are changed via the user interface, in Git and Mercurial a commit in the VCS will be performed on behalf of the user who actually made the change via the UI. For Perforce as well as TFS, the name of the user  specified in the VCS root  is used, and in Subversion the commit message will also contain the username of the TeamCity user who actually made the change via the UI.
+A. If the settings are changed via the user interface, in Git and Mercurial a commit in the VCS will be performed on behalf of the user who actually made the change via the UI. For Perforce as well as Azure DevOps Server (formerly TFS), the name of the user  specified in the VCS root  is used, and in Subversion the commit message will also contain the username of the TeamCity user who actually made the change via the UI.
 
 
 

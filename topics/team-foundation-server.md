@@ -1,6 +1,12 @@
 [//]: # (title: Team Foundation Server)
 [//]: # (auxiliary-id: Team Foundation Server)
 
+<note>
+
+In 2019, Team Foundation Server has been renamed to Azure DevOps Server. The content of this page is applicable to Azure DevOps Server.
+
+</note>
+
 This page contains descriptions of the fields and options available when setting up a [VCS root](vcs-root.md) to connect to Microsoft Team Foundation Server Version Control.
 
 Common VCS Root properties are described [here](configuring-vcs-roots.md).

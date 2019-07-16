@@ -165,7 +165,7 @@ vcsRoot:(type:perforce,count:99999),property:(name:client-mapping,value:<some un
 
 ## Setting up service hook on Team Foundation Server for TFVC and Git
 
-The latest TFS 2015 and Azure DevOps Services provides service hooks for code commit events. To create a hook, perform the following steps:
+The latest Azure DevOps Server (formerly, Team Foundation Server) and Azure DevOps Services provide service hooks for code commit events. To create a hook, perform the following steps:
 
 1\. Open the admin page for a team project in web access.
 

@@ -17,7 +17,7 @@ There are several options to create a project:
 * [From GitHub.com](#Creating+project+pointing+to+GitHub.com+repository)
 * [From Bitbucket Cloud](#Creating+project+pointing+to+Bitbucket+Cloud)
 * [From GitLab](#Creating+project+pointing+to+GitLab.com)
-* [From Azure DevOps Services](#Creating+project+pointing+to+Azure+DevOps+Services)
+* [From Azure DevOps Services](#Creating+project+pointing+to+Azure+DevOps+Services), or formerly Visual Studio Team Services
 * [Manually](#Creating+project+manually)
  
 Note that only two options are available by default: _From a repository URL_ and _Manually_. If a [connection](integrating-teamcity-with-vcs-hosting-services.md) to some VCS hosting service is configured in the Root project (or a parent project of the project to be created), the corresponding option becomes available, so you can create a project using an existing VCS connection specification.
@@ -143,6 +143,13 @@ If no steps found, you will have to [configure build steps manually](configuring
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
 
 ### Creating project pointing to Azure DevOps Services
+
+<note>
+
+In 2019, Visual Studio Team Services have been renamed to Azure DevOps Services. Depending on your version of TeamCity, the Services might be named differently (and interchangeably) in the TeamCity UI.
+
+</note>
+
 1. On the __Create project__ page, select to create project __from Azure DevOps Services__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__.

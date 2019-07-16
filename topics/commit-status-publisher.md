@@ -41,7 +41,13 @@ Commit Status Publisher in TeamCity 2018.1 supports Gerrit versions 2.6\+. For c
 
 __TFS/VSTS__
 
-Personal Access Tokens can be used for authentication. If a [VSTS connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Visual+Studio+Team+Services) is configured, the personal access token can be automatically filled from the project connection.
+<note>
+
+In 2019, Visual Studio Team Services and Team Foundation Server have been renamed to Azure DevOps Services and Azure DevOps Server.
+
+</note>
+
+Personal Access Tokens can be used for authentication. If a [VSTS connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps+Services) is configured, the personal access token can be automatically filled from the project connection.
 
 </note>
 

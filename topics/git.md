@@ -3,7 +3,7 @@
 [//]: # (Internal note. Do not delete. "Gitd153e3.txt" "Git \(JetBrains\)d152e3.txt")  
  
 
-TeamCity supports Git out of the box. Git source control with Azure DevOps Services is supported (see authentication notes [below](#Authenticating+to+Visual+Studio+Team+Services)).
+TeamCity supports Git out of the box. Git source control with Azure DevOps Services is supported (see authentication notes [below](#Authenticating+to+Azure+DevOps+Services)).
 
 This page contains description of the Git\-specific fields of the VCS root settings.    
 For common VCS Root properties, see [this section](configuring-vcs-roots.md#Common+VCS+Root+Properties).
@@ -1018,7 +1018,7 @@ An __unsupported__ rule example is  `+:some/dir=>some/otherDir`.
 ## Known Issues
 
 * `java.lang.OutOfMemoryError` while fetch repository. Usually occurs when there are large files in the repository. By default, TeamCity runs fetch in a separate process. To increase memory available to this process, change the teamcity.git.fetch.process.max.memory internal property (see description of this property [above](#Internal+Properties)).
-* Teamcity run as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using teamcity\-server.bat.
+* Teamcity run as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using `teamcity-server.bat`.
 * inflation using streams in JGit prevents `OutOfMemoryError`, but can be time\-consuming (see the related thread at [jgit-dev](http://dev.eclipse.org/mhonarc/lists/jgit-dev/msg00687.html) for details and the [TW-14947](http://youtrack.jetbrains.net/issue/TW-14947) issue related to the problem). If you meet conditions similar to those described in the issue, try to increase `teamcity.git.stream.file.threshold.mb`. Additionally, it is recommended to increase the overall amount of memory dedicated for TeamCity to prevent `OutOfMemoryError`.
 
 ## Development Links

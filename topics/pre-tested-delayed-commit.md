@@ -30,7 +30,7 @@ If TeamCity cannot match the changes with the builds, a message "Submitted chang
 The VCS integration should be correctly configured in the IDE, and TeamCity should be able to match the files on the developer workstation to the build configurations present on the TeamCity server. In order to be able to do that, VCS should be configured in the same way on the developer's workstation and on the server.
 
 This includes:
-* for CVS, TFS and Perforce version control systems \- use exactly the same URLs to the version control server
+* for CVS, TFS, and Perforce version control systems \- use exactly the same URLs to the version control server
 * for VSS \- use exactly the same path to the VSS database (machine and path)
 * for Subversion \- use the same server (TeamCity matches [server UUID](http://svnbook.red-bean.com/en/1.7/svn.reposadmin.maint.html#svn.reposadmin.maint.uuids))
 * for Git \- the current checked out branch should have "remote" set to the server/branch monitored by the TeamCity server and should have common commits in the history with the server\-monitored branch.

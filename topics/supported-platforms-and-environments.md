@@ -215,7 +215,7 @@ See also details on [the integrations](teamcity-integration-with-cloud-solutions
 
    * [GitHub / GitHub Enterprise](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub)
    * [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket)
-   * [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps+Services)
+   * [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps+Services), or formerly Visual Studio Team Services
 
 ## Issue Tracker Integration
 
@@ -224,7 +224,7 @@ See also details on [the integrations](teamcity-integration-with-cloud-solutions
    * [Bugzilla](http://www.bugzilla.org) 3.0 and later (tested with Bugzilla 5.0.1)
    * [GitHub](github.md)
    * [Bitbucket](github.md)
-   * [TFS](team-foundation-work-items.md)(Microsoft Visual Studio Team Foundation Server 2012 or later, and Azure DevOps Services are supported)
+   * [Azure DevOps Server](team-foundation-work-items.md) (formerly Visual Studio Team Foundation Server – supported version 2012 or later, and Azure DevOps Services are supported)
    
 Additional requirements are listed in [Integrating TeamCity with Issue Tracker](integrating-teamcity-with-issue-tracker.md).
 
@@ -292,7 +292,7 @@ Supported VCS
    * Subversion
    * Perforce
    * Git (remote run only)
-   * Team Foundation Server (__since TeamCity 2017.1__, the plugin update is required)
+   * Azure DevOps Server, or formerly Team Foundation Server (__since TeamCity 2017.1__, the plugin update is required)
    * ClearCase
 
 
@@ -309,7 +309,7 @@ Supported VCS
 
 
    * Subversion 1.4\-1.11 (the command\-line client is required); note that 1.10-1.11 is supported __since ReSharper 2018.3__.
-   * Team Foundation Server 2005 and later. Installed Team Explorer is required.
+   * Azure DevOps Server (formerly Team Foundation Server – supported version 2005 or later). Installed Team Explorer is required.
    * Perforce 2008.2 and later (the command\-line client is required).
 
 

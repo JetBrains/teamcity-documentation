@@ -1,5 +1,12 @@
 [//]: # (title: Team Foundation Work Items)
 [//]: # (auxiliary-id: Team Foundation Work Items)
+
+<note>
+
+In 2019, Team Foundation Server has been renamed to Azure DevOps Server. The content of this page is applicable to Azure DevOps Server.
+
+</note>
+
 Team Foundation Work Items tracking is integrated with TeamCity. Supported versions are Microsoft Visual Studio Team Foundation Server 2012 or later, and Azure DevOps Services.
 
 TFS work items support can be configured on the [Issue trackers](integrating-teamcity-with-issue-tracker.md) page for a project. If a project has a [TFVC](team-foundation-server.md) root configured, TeamCity will suggest configuring the issue tracker as well.

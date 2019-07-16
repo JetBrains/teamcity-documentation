@@ -17,7 +17,7 @@ There are several options to create a project:
     * __GitHub.com__ (see example [below](#Create+a+project+pointing+to+GitHub.com+repository))
     * __Bitbucket Cloud__
     * __GitLab CE/EE__ and __GitLab.com__
-    * __Azure DevOps__ (Azure DevOps Services)
+    * __Azure DevOps__, or formerly __Visual Studio Team Services__
 * [Manually](#Create+a+project+manually)
 
 ### Create a project from a repository URL
