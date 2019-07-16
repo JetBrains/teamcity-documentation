@@ -1,6 +1,6 @@
 [//]: # (title: Team Foundation Work Items)
 [//]: # (auxiliary-id: Team Foundation Work Items)
-__Since TeamCity 10.0__, Team Foundation Work Items tracking is integrated with TeamCity. Supported versions are Microsoft Visual Studio Team Foundation Server 2010\-2017, and Visual Studio Team Services.
+Team Foundation Work Items tracking is integrated with TeamCity. Supported versions are Microsoft Visual Studio Team Foundation Server 2012 or later, and Azure DevOps Services.
 
 TFS work items support can be configured on the [Issue trackers](integrating-teamcity-with-issue-tracker.md) page for a project. If a project has a [TFVC](team-foundation-server.md) root configured, TeamCity will suggest configuring the issue tracker as well.
 
@@ -51,7 +51,7 @@ Team Foundation Server URL in the following format:
 
 __TFS 2010\+__: `http[s]://<host>:<port>/tfs/<collection>/<project>`
 
-__Visual Studio Team Services__: `https://<account>.visualstudio.com/<project>`
+__Azure DevOps Services__: `https://<account>.visualstudio.com/<project>`
 
 
 </td></tr><tr>
@@ -65,7 +65,8 @@ Username
 <td>
 
 
-Specify a user to access Team Foundation Server. This can be a user name or `DOMAIN\UserName` string.Use blank to let TFS select a user account that is used to run the TeamCity Server. For VSTS use [alternate credentials or tokens](team-foundation-server.md).
+Specify a user to access Team Foundation Server. This can be a user name or `DOMAIN\UserName` string.   
+Use blank to let TFS select a user account that is used to run the TeamCity Server. For VSTS use [alternate credentials or tokens](team-foundation-server.md).
 
 
 </td></tr><tr>
@@ -94,7 +95,7 @@ Specify the work item id format in changeset comments in the form of regexp.
 
 </td></tr></table>
 
-Learn more about authentication in [Visual Studio Team Services](team-foundation-server.md).
+[Learn more](team-foundation-server.md) about authentication in Azure DevOps Services.
 
 ## Custom Resolved States
 

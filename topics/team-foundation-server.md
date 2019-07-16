@@ -20,7 +20,7 @@ On this page:
 
 ## Cross-Platform TFS Integration
 
-TeamCity features the  [cross-platform TFS integration](https://blog.jetbrains.com/teamcity/2015/12/teamcity-cross-platform-tfs-support/), which works on Linux, macOS, and Windows platforms. Without installing additional software, TeamCity servers and build agents can interact with Team Foundation Servers 2010 \- 2018 and Visual Studio Team Services.
+TeamCity features the  [cross-platform TFS integration](https://blog.jetbrains.com/teamcity/2015/12/teamcity-cross-platform-tfs-support/), which works on Linux, macOS, and Windows platforms. Without installing additional software, TeamCity servers and build agents can interact with Team Foundation Servers 2012 or later, and Azure DevOps Services.
 
 The built\-in TFS plugin can work in two modes: the default and cross\-platform. The working mode is based on the availability of Team Explorer (default mode): if it is not present, the plugin falls back from the default to cross\-platform mode. 
 

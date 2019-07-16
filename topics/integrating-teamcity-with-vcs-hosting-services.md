@@ -3,7 +3,7 @@
 
 If you have an organization account in [GitHub](https://github.com/), [GitHub Enterprise](https://enterprise.github.com/), [Bitbucket Cloud](https://bitbucket.org/), [GitLab.com](https://about.gitlab.com/), or [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/), you can connect TeamCity to these source code hosting services making it easier for the organization users to create new projects, [Git](https://confluence.jetbrains.com/display/TCD10/Git) or [Mercurial](https://confluence.jetbrains.com/display/TCD10/Mercurial) VCS roots, [GitHub](https://confluence.jetbrains.com/display/TCD10/GitHub) or [Bitbucket](https://confluence.jetbrains.com/display/TCD10/Bitbucket) issue tracker, which are now now supported out of the box.
 
-It is also possible to connect TeamCity to [Visual Studio Team Services](https://visualstudio.microsoft.com/team-services/) making it really simple to set up projects which use VSTS repositories or issue tracker.
+It is also possible to connect TeamCity to [Azure DevOps Services](https://visualstudio.microsoft.com/team-services/) making it really simple to set up projects which use VSTS repositories or issue tracker.
 
 On this page:
 
@@ -75,20 +75,20 @@ When creating a VCS root URL for GitLab, note that TeamCity will not extract cre
 
 </note>
 
-### Connecting to Visual Studio Team Services
+### Connecting to Azure DevOps Services
 
-You can configure a connection to your Visual Studio Team Services to create a [project from URL](creating-and-editing-projects.md), create a [VCS root from URL](guess-settings-from-repository-url.md), create [TFS](team-foundation-server.md) VCS root, or create [Team Foundation Work Items](team-foundation-work-items.md) tracker.
+You can configure a connection to your Azure DevOps Services to create a [project from URL](creating-and-editing-projects.md), create a [VCS root from URL](guess-settings-from-repository-url.md), create [TFS](team-foundation-server.md) VCS root, or create [Team Foundation Work Items](team-foundation-work-items.md) tracker.
 
-To configure a connection to Visual Studio Team Services, follow these steps:
+To configure a connection to Azure DevOps Services, follow these steps:
 1. In __Project Administration | Connections__, click __Add Connection__.
-2. Select `_Visual Studio Team Services_` as the connection type.   
-The page that opens provides the parameters to be used when connecting TeamCity to Visual Studio Team Services.
-3. Log in to your Visual Studio Team Services account to create a personal access token with All scopes as described in the [Microsoft documentation](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
-4. Continue configuring the connection in TeamCity: on the Add Connection page that is open, specify
+2. Select `_Azure DevOps Services_` as the connection type.   
+The page that opens provides the parameters to be used when connecting TeamCity to Azure DevOps Services.
+3. Log in to your Azure DevOps Services account to create a personal access token with All scopes as described in the [Microsoft documentation](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
+4. Continue configuring the connection in TeamCity: on the __Add Connection__ page that is open, specify
    * the server URL in the `https://{account}.visualstudio.com` format or your Team Foundation Server web portal as `https://{server}:8080/tfs/`
    * your personal access token
 5. Save the connection settings. 
-6. The connection is configured, and now a small Visual Studio Team Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [TFS](team-foundation-server.md) VCS root, create [Team Foundation Work Items](team-foundation-work-items.md) tracker. Click the icon, log in to Visual Studio Team Services and authorize TeamCity. TeamCity will be granted full access to all of the resources that are available to you.   
+6. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [TFS](team-foundation-server.md) VCS root, create [Team Foundation Work Items](team-foundation-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all of the resources that are available to you.   
 __Since TeamCity 2017.2 EAP1__, when configuring Commit Status Publisher for Git repositories hosted in TFS/VSTS, the personal access token can be filled out automatically if a VSTS project connection is configured.
 
 <tip>

@@ -3,7 +3,7 @@
 [//]: # (Internal note. Do not delete. "Gitd153e3.txt" "Git \(JetBrains\)d152e3.txt")  
  
 
-TeamCity supports Git out of the box. Git source control with Visual Studio Team Services is supported (see authentication notes [below](#Authenticating+to+Visual+Studio+Team+Services)).
+TeamCity supports Git out of the box. Git source control with Azure DevOps Services is supported (see authentication notes [below](#Authenticating+to+Visual+Studio+Team+Services)).
 
 This page contains description of the Git\-specific fields of the VCS root settings.    
 For common VCS Root properties, see [this section](configuring-vcs-roots.md#Common+VCS+Root+Properties).
@@ -265,9 +265,9 @@ Available __Private Key__ options:
 
 For all available options to connect to GitHub, see the [comment](http://youtrack.jetbrains.com/issue/TW-16194#comment=27-475793).
 
-## Authenticating to Visual Studio Team Services
+## Authenticating to Azure DevOps Services
 
-If you use Git source control with Visual Studio Team Services, the following options are available to you:
+If you use Git source control with Azure DevOps Services, the following options are available to you:
 
 <include src="team-foundation-server.md" include-id="azure-authentication"/>
 

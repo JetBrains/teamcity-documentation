@@ -299,10 +299,10 @@ As a JVM application, TeamCity main server process only utilizes memory devoted 
 
 Once you start using TeamCity for [production](#Configuring+Server+for+Production+Use) purposes or you want to load the server during evaluation, you should manually set the appropriate memory settings for the TeamCity server.
 
-To __change the memory settings__, refer to [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md#JVM+Options), or to the documentation of your application server, if you run TeamCity using the .war distribution.   
+To __change the memory settings__, refer to [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md#JVM+Options), or to the documentation of your application server, if you run TeamCity using the `.war` distribution.   
 Generally this means setting `TEAMCITY_SERVER_MEM_OPTS` environment variable to the value like `-Xmx750m`
 
-It is recommended to remove the `-XX:MaxPermSize` JVM option from `TEAMCITY_SERVER_MEM_OPTS` environment variable, if previously configured since it is ignored in Java 8.
+We recommend removing the `-XX:MaxPermSize` JVM option from the `TEAMCITY_SERVER_MEM_OPTS` environment variable, if previously configured, since it is ignored in Java 8.
 
 If slowness, OutOfMemory errors occur, or you consistently see a memory\-related warning in the TeamCity UI, increase the setting to the next level.
 * __minimum setting__ (the 32\-bit Java should be used (bundled in .exe distribution)): `-Xmx750m `
