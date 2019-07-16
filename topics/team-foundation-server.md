@@ -177,6 +177,14 @@ It is recommended to use checkout rules of the format below to differentiate loc
 
 ## Authentication Notes
 
+<anchor name="azure-devops"/>
+
+<anchor name="VisualStudioOnline"/>
+
+<anchor name="vsts"/>
+
+<anchor name="teamFoundationServerLive"/>
+
 The following authentication options are available in Azure DevOps.
 
 <chunk include-id="azure-authentication">
