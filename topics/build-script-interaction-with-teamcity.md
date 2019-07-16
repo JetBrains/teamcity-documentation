@@ -752,7 +752,7 @@ When specifying a build parameter's name, mind the prefix:
 
 In TeamCity, it is possible to configure a build script to report statistical data and then display the charts based on the data. Refer to the [Customizing Statistics Charts](customizing-statistics-charts.md) page for a guide to displaying the charts on the web UI. This section describes how to report the statistical data from the build script via service messages. You can publish the build statics values in two ways:
 * Using a service message in a build script directly
-* [Providing data using the teamcity-info.xml file](#Providing+data+using+the+teamcity-info.xml+file)
+* [Providing data using the teamcity-info.xml file] (#Providing+data+using+the+teamcity-info.xml+file)
 To report build statistics using service messages: Specify a '`buildStatisticValue`' service message with the following format for each statistics value you want to report:
 
 
