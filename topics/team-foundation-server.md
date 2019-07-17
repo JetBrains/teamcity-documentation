@@ -193,6 +193,12 @@ The following authentication options are available in Azure DevOps.
 
 To use access tokens, you need to create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account, where you have to set some __Code__ [access scope](#Required+Access+Scope) in your repositories and use it when configuring a VCS root.
 
+<note>
+
+You can authenticate with a personal access token to Azure DevOps Services only. TeamCity does not support token authentication to hosted [Azure DevOps Server](https://azure.microsoft.com/en-in/services/devops/server/) (formerly, Team Foundation Server) installations.
+
+</note>
+
 <table><tr>
 
 <td>

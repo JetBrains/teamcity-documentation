@@ -77,13 +77,13 @@ When creating a VCS root URL for GitLab, note that TeamCity will not extract cre
 
 ### Connecting to Azure DevOps Services
 
-You can configure a connection to your Azure DevOps Services to create a [project from URL](creating-and-editing-projects.md), create a [VCS root from URL](guess-settings-from-repository-url.md), create [TFS](team-foundation-server.md) VCS root, or create [Team Foundation Work Items](team-foundation-work-items.md) tracker.
+You can configure a connection to your Azure DevOps Services (or Azure DevOps Server, formerly Team Foundation Server) to create a [project from URL](creating-and-editing-projects.md), create a [VCS root from URL](guess-settings-from-repository-url.md), create [TFS](team-foundation-server.md) VCS root, or create [Team Foundation Work Items](team-foundation-work-items.md) tracker.
 
 To configure a connection to Azure DevOps Services, follow these steps:
 1. In __Project Administration | Connections__, click __Add Connection__.
 2. Select `_Azure DevOps Services_` as the connection type.   
 The page that opens provides the parameters to be used when connecting TeamCity to Azure DevOps Services.
-3. Log in to your Azure DevOps Services account to create a personal access token with All scopes as described in the [Microsoft documentation](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
+3. Log in to your Azure DevOps Services account to create a personal access token with _All scopes_ as described in the [Microsoft documentation](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
 4. Continue configuring the connection in TeamCity: on the __Add Connection__ page that is open, specify
    * the server URL in the `https://{account}.visualstudio.com` format or your Team Foundation Server web portal as `https://{server}:8080/tfs/`
    * your personal access token

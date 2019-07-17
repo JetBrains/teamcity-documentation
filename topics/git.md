@@ -238,8 +238,10 @@ Select this option to clone a repository with anonymous read access.
 <anchor name="passwordAuth"/>
 
 Specify a valid __username__ (if there is no username in the clone URL; the username specified here overrides the username from the URL) and a __password__ to be used to clone the repository.    
-For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if git 1.7.3\+ client__ is installed on the agent. See [TW-18711](http://youtrack.jetbrains.com/issue/TW-18711).    
+For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](http://youtrack.jetbrains.com/issue/TW-18711).    
 For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
+
+You can use a personal access token instead of a password to authenticate to Azure DevOps Services. Note that TeamCity does not support token authentication to hosted [Azure DevOps Server](https://azure.microsoft.com/en-in/services/devops/server/) (formerly, Team Foundation Server) installations.
 
 
 </td></tr><tr>

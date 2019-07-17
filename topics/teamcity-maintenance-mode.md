@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: TeamCity Maintenance Mode)
 If you see the TeamCity Maintenance page on the TeamCity startup, that means this TeamCity instance requires technical maintenance. For security reasons it is to be performed by a __system administrator__ who has access to the computer where the TeamCity server is installed. In most cases this page appears if the data format doesn't correspond to the required format; for example, during [Upgrade](upgrade.md) TeamCity will display this page before converting the data to a newer format. If you do __not__ have access to the computer where TeamCity is installed, inform your system administrator that TeamCity requires technical maintenance.
 
-If you are a TeamCity system administrator, to confirm that enter the _Token_ into the corresponding field on this page. This token can be found in the `teamcity-server.log` file under `<`[TeamCity home>/logs`](teamcity-server-logs.md).
+If you are a TeamCity system administrator, to confirm that enter the _Token_ into the corresponding field on this page. This token can be found in the `teamcity-server.log` file under `<`[`TeamCity home>/logs`](teamcity-server-logs.md).
 
  After you have provided this token, you can review the details on what kind of maintenance is required. The need in technical maintenance may be caused, for example, by one of the following:
 * [TeamCity Data Upgrade](#TeamCity+Data+Upgrade)
