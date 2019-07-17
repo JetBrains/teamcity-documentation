@@ -105,4 +105,4 @@ To configure this build failure condition, specify:
 
 ### Stopping build immediately
 
-Since __TeamCity 2017.1, __you can now stop a build immediately on encountering a specified text in the build log or when a certain build metric, specified using the __Fail build on metric change__ condition, is exceeded. 
+You can stop a build immediately on encountering a specified text in the build log or when a certain build metric, specified using the __Fail build on metric change__ condition, is exceeded. 

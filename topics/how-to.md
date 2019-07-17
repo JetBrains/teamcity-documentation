@@ -511,7 +511,7 @@ shared_buffers=512MB
 
 For write\-intensive applications such as TeamCity, it is recommended to change some of the [checkpoint-related parameters](http://www.postgresql.org/docs/current/static/runtime-config-wal.html#RUNTIME-CONFIG-WAL-CHECKPOINTS):
 
-For__ PostgreSQL 9.5 and later:__
+For __PostgreSQL 9.5 and later__:
 
 ```Shell
 

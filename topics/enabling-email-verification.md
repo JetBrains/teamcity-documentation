@@ -8,8 +8,8 @@ Verified email addresses will be marked with a green check on the __Administrati
 
 __To enable email verification in TeamCity:__
 1. Navigate to the __Administration | Authentication__ page.
-2. Select the ____Enable email verification__ __option __(off by default)__ .
-3. Save your changes.
+2. Select the __Enable email verification__ option __(off by default)__.
+3. Save your changes.   
 During the [Projects Import](projects-import.md) TeamCity will take verified emails into account. If there are two users with different usernames, but the same verified email, TeamCity will provide a possibility to merge these users.
 
 __  __

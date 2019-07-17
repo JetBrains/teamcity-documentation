@@ -176,7 +176,7 @@ Search for tests
 
 <td>
 
-In IDEA project, a user can mark a source code folder as either `_sources_` or `_test_` root. This drop\-down list allows you to specify directories to look for tests: 
+In IDEA project, a user can mark a source code folder as either _`sources`_ or _`test`_ root. This drop\-down list allows you to specify directories to look for tests: 
 
 
 * __Throughout all project sources__: look for tests in both `sources` and `test` folders of your IDEA project.

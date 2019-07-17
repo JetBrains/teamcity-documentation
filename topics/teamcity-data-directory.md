@@ -64,7 +64,7 @@ The `config` subdirectory of TeamCity Data Directory contains the configuration 
       * `buildNumbers` – a directory which contains `<buildConfigurationID>.buildNumbers.properties` files which store the current build number counter for the corresponding build configuration
       * `buildTypes` – a directory with `<buildConfiguration or template ID>.xml` files with corresponding build configuration or template settings
       * `pluginData` – a directory to store optional and plugin\-related project\-level settings. Bundled plugins settings and auxiliary project settings like custom project tabs are stored in _plugin\-settings.xml_ file in the directory. Credentials stored outside of VCS per Versioned settings are stored in `secure/credentials.json` file
-      * `vcsRoots` – a directory which contains project's VCS roots settings in the files `_<VcsRootID>.xml`
+      * `vcsRoots` – a directory which contains project's VCS roots settings in the files `<VcsRootID>.xml`
       * `project-config.xml` – the project configuration file containing the project settings, such as [parameters](configuring-build-parameters.md) and [clean-up rules](clean-up.md).
   * `main-config.xml` – server\-wide configuration settings
   * `database.properties` – database connection settings, see more at [Setting up an External Database](setting-up-an-external-database.md)

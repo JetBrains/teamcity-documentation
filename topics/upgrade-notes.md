@@ -453,7 +453,11 @@ AWS SDK has been updated to 1.11.66 to support new instance types (r4.4xlarge, f
 
 ### Amazon EBS–Optimized Instances
 
-The behavior of [EBS-optimization](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html), enabled by default since TeamCity 10.0, is changed similarly to what EC2 console offers:1) EBS\-optimization is turned on by default for c4.\*__, __m4.\* and d2.\* (non\-configurable)2) EBS\-optimization is turned off by default for any other instance types. 3) EBS\-optimization can be turned on for instances that support it (such as c3.xlarge, etc.) by checking the appropriate box when configuring the image of the Amazon cloud profile
+The behavior of [EBS optimization](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html), enabled by default since TeamCity 10.0, is changed similarly to what EC2 console offers:
+
+1. EBS optimization is turned on by default for `c4.*`, `m4.*`, and `d2.*` (non-configurable).
+2. EBS optimization is turned off by default for any other instance types.
+3. EBS optimization can be turned on for instances that support it (such as `c3.xlarge`) by checking the appropriate box when configuring the image of the Amazon cloud profile.
 
 ### Bundled tools updates
 
@@ -534,7 +538,7 @@ Agent requirements and artifact dependencies can be disabled now. TeamCity plugi
 
 ### Visual Studio Online Work Items plugin 
 
-Visual Studio Online Work Items plugin__ is obsolete since TeamCity 10.0 __and can be safely removed. TeamCity 10.0 has a built\-in integration with [Team Foundation Work Items](https://confluence.jetbrains.com/display/TCD10/Team+Foundation+Work+Items) which supports TFS 2010\+ and Visual Studio Team Services. After upgrade, TeamCity will detect the existing issue tracker connections of this plugin and convert them into TFS Work Items.
+Visual Studio Online Work Items plugin is __obsolete since TeamCity 10.0__ and can be safely removed. TeamCity 10.0 has a built\-in integration with [Team Foundation Work Items](https://confluence.jetbrains.com/display/TCD10/Team+Foundation+Work+Items) which supports TFS 2010\+ and Visual Studio Team Services. After upgrade, TeamCity will detect the existing issue tracker connections of this plugin and convert them into TFS Work Items.
 
 ### Default Checkout mode for newly created build configurations
 
@@ -555,7 +559,7 @@ Existing installations are not affected by this change in order not to change th
 
 #### Server Administration UI
 
-The new__ Administration__ | __Tools__ page allows setting up tools to be used by appropriate plugins. Tools are automatically distributed to all build agents and can be used in related runners.
+The new __Administration | Tools__ page allows setting up tools to be used by appropriate plugins. Tools are automatically distributed to all build agents and can be used in related runners.
 
 #### New Create project / Create build configuration buttons
 

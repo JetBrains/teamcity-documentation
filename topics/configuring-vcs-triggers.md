@@ -17,7 +17,7 @@ You can adjust a VCS trigger to your needs using the options described below:
 
 ## Trigger a build on changes in snapshot dependencies
 
-If you have a [build chain](build-chain.md) (i.e. a number of builds interconnected by [snapshot dependencies](dependent-build.md)),  the triggers are to be configured in the final build in the chain. This is _pack setup__ in the image below.
+If you have a [build chain](build-chain.md) (i.e. a number of builds interconnected by [snapshot dependencies](dependent-build.md)),  the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
 
 <include src="build-dependencies-setup.md" include-id="trigger-on-ssdep-chngs"/>
 

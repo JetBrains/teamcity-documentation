@@ -160,7 +160,7 @@ We can close the wizard after this step, and save the publish settings just crea
 
 
 
-This is just an XML file and we can edit it if needed. And actually we should, to make our life easier later on. Open the XML file and find the _&lt;DesktopBuildPackageLocation&gt;_ element. When running the WebDeploy packaging step from the command line (which TeamCity will effectively do), this location will not be found. To resolve this, change the element value and prefix the path with \_$(SolutionDir)\_. Here's an example of what this element could look like:
+This is just an XML file and we can edit it if needed. And actually we should, to make our life easier later on. Open the XML file and find the `<DesktopBuildPackageLocation>` element. When running the WebDeploy packaging step from the command line (which TeamCity will effectively do), this location will not be found. To resolve this, change the element value and prefix the path with `_$(SolutionDir)_`. Here's an example of what this element could look like:
 
 
 ```XML
