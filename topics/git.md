@@ -308,24 +308,6 @@ Description
 Convert line\-endings of all text files to CRLF (works as setting `core.autocrlf=true` in a repository config). When not selected, no line\-endings conversion is performed (works as setting `core.autocrlf=false`). Affects the server\-side checkout only. A change to this property causes a clean checkout.
 
 
-</td></tr><tr>
-
-<td>
-
-Custom clone directory on server
-
-
-</td>
-
-<td>
-
-
-<anchor name="customCloneDir"/>
-
-
-To interact with the remote git repository, its bare clone is created on the TeamCity server machine. By default, the cloned repository is placed under `<TeamCity Data Directory>/system/caches/git` and `<TeamCity Data Directory>/system/caches/git/map`. The field specifies the mapping between repository url and its directory on the TeamCity server. Leave this field blank to use the default location.
-
-
 </td></tr></table>
 
 ## Agent Settings
@@ -402,9 +384,6 @@ If you __disable__ this option, TeamCity will clone the repository directly unde
 To configure a connection from a TeamCity server running behind a proxy to a remote Git repository, see [this section](how-to.md#Configure+TeamCity+to+Use+Proxy+Server+for+Outgoing+Connections).
 </tip>
 
- 
-
-
 ### Git executable on the agent
 
 <anchor name="agentGitPath"/>
@@ -430,9 +409,9 @@ If `TEAMCITY_GIT_PATH` is not defined, the Git agent plugin tries to detect the 
 If git is not found in any of these locations, it tries to run the git accessible via the `PATH` environment variable.   
 If a compatible git (1.6.4\+) is found, it is reported in the `TEAMCITY_GIT_PATH` environment variable. This variable can be used in the __Path to git__ field in the [VCS root](vcs-root.md) settings. As a result, the configuration with such a VCS root will run only on the agents where git was detected or specified in the agent properties.
 
-## Configuring Git Garbage Collection on Server
-
 <anchor name="Git_gc"/>
+
+## Configuring Git Garbage Collection on Server
 
 TeamCity server maintains a clone for every Git repository it works with, so the process which collects changes in the large Git repository may cause memory problems on the TeamCity server if the Git garbage collection for the repository was not run for a long time.   
 TeamCity can automatically run git gc periodically when native Git client can be found on the server.
@@ -445,6 +424,8 @@ When TeamCity runs Git garbage collection, the details are logged into the [`tea
 
 TeamCity executes Git garbage collection until the total time doesn't exceed 60 minutes quota; the quota can be changed using the `teamcity.server.git.gc.quota.minutes` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).   
 Git garbage collection is executed every night at 2 a.m., this can be changed by specifying the internal property with a cron expression like this: `teamcity.git.cleanupCron=0 0 2 * * ?` (restart the server for the property to take effect). If the `git gc` process works slowly and cannot be completed in the allotted time, check the `git-repack` configuration in the default Git configuration files (for example, you can increase `--window-memory` to improve the `git gc` performance).
+
+If the local Git clones need some kind of manual maintenance, you can find them under `<TeamCity Data Directory>/system/caches/git` directory. The `map` file in the directory contains mapping between the repository URL and the subdirectory storing the bare clone of the repository.
 
 ## Git LFS
 
