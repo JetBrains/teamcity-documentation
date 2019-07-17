@@ -174,7 +174,7 @@ TeamCity uses the primary character set (char, varchar, text) for storing intern
 
 #### On TeamCity server side (with MS SQL)
 
-1. Download the [`Microsoft JDBC driver v6.4+`](https://www.microsoft.com/en-us/download/details.aspx?id=56615) (`sqljdbc_6.*.x` package) from the Microsoft Download Center.
+1. Download the [`Microsoft JDBC driver v6.4+`](https://www.microsoft.com/en-us/download/details.aspx?id=56615) (`sqljdbc_6.*.x` package) from the Microsoft [`Download Center`](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server).
 2. Unpack the downloaded package into a temporary directory.
 3. Copy the `mssql-jdbc-*.jre8.jar` from the just downloaded package into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/lib\/jdbc directory (remove the existing files there, if any). MS SQL integrated security (Windows authentication) requires installing `sqljdbc_auth.dll` from the driver package as per [instructions](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
 4. Proceed with the TeamCity setup.
