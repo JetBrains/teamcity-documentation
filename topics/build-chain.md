@@ -66,7 +66,7 @@ Build Chains are visible in various places in the TeamCity Web UI:
 
 If a build configuration is a part of a build chain, the corresponding information is displayed in the __Build Configuration settings | Dependencies | Snapshot dependencies__. Clicking the build chain link opens the preview of the build chain and its configuration in a separate window. The preview shows builds of the chain; the builds with automatic triggering configured are marked with ths icon: ![v.png](v.png).
 
-![snapshotDepPreview.png](snapshotDepPreview.png)
+<img src="snapshotDepPreview.png" alt="Preview of snapshot dependencies"/>
 
 <note>
 
@@ -82,7 +82,7 @@ The tab displays the list of build chains that contain builds of this project or
 
 The pie\-chart icon displays the ratio of the statuses for builds that are parts of the chains. On hovering over the pie chart, the details are displayed:
 
- ![buildChainsCollapsed.png](buildChainsCollapsed.png)
+<img src="buildChainsCollapsed.png" alt="Collapsed build chains"/>
 
 When a chain is expanded, the following information is also available:
 
@@ -101,7 +101,7 @@ From this page you can also:
    * Continue a chain, if there are yet "not triggered" builds. Click the __Run__ button and a new build will be started on the chain revisions and associated with builds from this chain.
    * Click ![custom_build(1).png](custom_build_1.png)  to open the [custom build dialog](triggering-a-custom-build.md) with build chain revisions preselected. This action can be used if you want to re\-run some build in the chain.
 
-### Build Chains tab of project home and build configuration home page
+### Dependencies tab of build results page
 
 If dependencies are configured, you can view their details on the build results page, the __Dependencies__ tab. This tab also displays indirect dependencies, for example, if a build A depends on a build B which depends on builds C and D, then these builds C and D are indirect dependencies for build A.   
 The tab also displays artifacts downloaded and delivered by the builds of the chain. It also allows grouping/ungrouping builds and highlighting the builds reused from previous chains ([suitable builds](snapshot-dependencies.md#Suitable+Builds)).

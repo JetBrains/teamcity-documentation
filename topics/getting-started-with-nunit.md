@@ -28,7 +28,7 @@ To do that, use one of the following options:
     
     To run tests, in the next NUnit build step, specify the NUnit path in the NUnit settings as `packages\NUnit.ConsoleRunner.3.6.0\tools\nunit3-console.exe`. 
 
-* Another approach is to install NUnit manually on all of the agents in some standard place, and configure the path to nunit\-console.exe in your NUnit build step. 
+* Another approach is to install NUnit manually on all of the agents in some standard place, and configure the path to `nunit-console.exe` in your NUnit build step. 
 
 
 
@@ -36,16 +36,16 @@ To do that, use one of the following options:
 
 What can be simpler than the command line? Starting from version 3, NUnit supports TeamCity out\-of\-the\-box, which allows running tests from the command line, preserving the basic features TeamCity\-NUnit integration. NUnit automatically detects if it is run by TeamCity, and if so, it switches to the integration mode.
 
-In addition to auto-detection, the NUnit 3 console handles the special `--teamcity argument`, which also includes the integration with TeamCity. This argument can be used for the purposes of debugging, when you need to see which information NUnit sends to TeamCity: detailed test information, the order of tests, etc.  
+In addition to auto-detection, the NUnit 3 console handles the special `--teamcity argument`, which also includes the integration with TeamCity. This argument can be used for the purposes of debugging, when you need to see which information NUnit sends to TeamCity: detailed test information, the order of tests, and so on.  
 
 As mentioned earlier, using the NUnit console from the command line is the simplest way to run tests. And even in this case TeamCity will provide the following basic features of integration:
 * reporting the test run information in Build Log while the tests are executing
-
 * TeamCity will report the test results upon the tests finish
-
 * all the [investigation](investigating-and-muting-build-problems.md) features will be available in TeamCity.
 
-This is what the TeamCity build step to run tests from the command line looks like: ![nunitCmd.png](nunitCmd.png)
+This is what the TeamCity build step to run tests from the command line looks like:
+
+<img src="nunit-cmd.png" alt="Build step: Command Line" width="780"/>
 
 To sum up, with this simple use case you can avail yourself to the basic features of the TeamCity\-NUnit 3 integration. 
 
@@ -74,13 +74,11 @@ The [project file](https://github.com/JetBrains/teamcity-nunit-samples/blob/mast
 
 ```
 
-
-
- 
-
 The NUnit console returns the number of failed tests as the positive exit code and, in case of the NUnit test infrastructure failure, as the negative exit code.
 
-TeamCity controls the test execution progress, but the NUnit infrastructure exceptions may not allow TeamCity to collect the required information. That is why the IgnoreExitCode="True" attribute needs to be set, which will ignore the positive exit codes and will not interrupt the build due to several failed tests. The [Error](https://msdn.microsoft.com/en-us/library/8b08t3s4.aspx) task will stop the build in case of the test infrastructure errors for the negative exit codes. ![nunitBuildStep.png](nunitBuildStep.png)
+TeamCity controls the test execution progress, but the NUnit infrastructure exceptions may not allow TeamCity to collect the required information. That is why the IgnoreExitCode="True" attribute needs to be set, which will ignore the positive exit codes and will not interrupt the build due to several failed tests. The [Error](https://msdn.microsoft.com/en-us/library/8b08t3s4.aspx) task will stop the build in case of the test infrastructure errors for the negative exit codes.
+
+<img src="nunit-msbuild.png" alt="Build step: MSBuild" width="830"/>
 
 Besides the project file, you can define the MSBuild version and platform, the target, you can use profiles and other settings.
 
@@ -116,14 +114,16 @@ The following project files contain some examples: [sample2adv.proj](https://git
 ## Case 3. NUnit Build Step
 
 The [NUnit](nunit.md)  build step in probably the simplest and yet the most powerful way to launch NUnit tests in TeamCity.   
-In most cases its sufficient to set only the 2 parameters: the path to the NUnit console runner and the list of assemblies to be tested: ![nunitBuildStep3.png](nunitBuildStep3.png)
+In most cases its sufficient to set only the 2 parameters: the path to the NUnit console runner and the list of assemblies to be tested:
+
+<img src="nunit-step.png" alt="Build step: NUnit" width="1005"/>
 
  
 Look at the __NUnit runner__ field which defines the NUnit version used to run tests. When configuring your build step for NUnit 3, the __Path to NUnit console runner__ field is required to contain the path to the NUnit console: prior to TeamCity 9.1.4 specify the _directory_ containing the console executable file, in the later TeamCity versions specify _the path to the console executable file including the file name_.
 
 In all the examples the NuGet package manager provides the NUnit infrastructure. Using NuGet enables the user to conveniently manage the test environment, update NUnit, run test locally as they will be run by TeamCity.
 
-The NUnit build step is a is straightforward and user\-friendly way to run NUnit tests in TeamCity. It provides the maximum range of options simultaneously concealing the specifics of running tests on different OSs by using  [Mono](http://www.mono-project.com/).
+The NUnit build step is a is straightforward and user\-friendly way to run NUnit tests in TeamCity. It provides the maximum range of options simultaneously concealing the specifics of running tests on different OSs by using [Mono](http://www.mono-project.com/).
 
 
 
@@ -131,7 +131,9 @@ The NUnit build step is a is straightforward and user\-friendly way to run NUnit
 
 The NUnit build step requires the Path to NUnit console runner to be set when configuring the step for  NUnit 3: this is a mandatory field.
 
-The other fields provide a lot of useful options, and this section discusses some of them.  ![nunitBuildStep4.png](nunitBuildStep4.png)
+The other fields provide a lot of useful options, and this section discusses some of them.  
+
+<img src="nunit-step-advanced.png" alt="Build step: NUnit, advanced options" width="1056"/>
 
  
 One of the options is defining the __application configuration file__. Sometimes tests obtain data from a configuration file and to facilitate this, you need to define the path to the application configuration file to be used when running tests in the __Path to application configuration file__ field. The path can be absolute or relative to the [Build Checkout Directory](build-checkout-directory.md). Unfortunately, NUnit is limited by allowing only one configuration file per build step. Due to this limitation, if you need to test several assemblies with different configurations in one build step, youll have to aggregate several application configuration files into a common configuration file. If it is not possible, the test launch can be split into several steps and define a configuration file in each of the steps.
@@ -181,7 +183,7 @@ These are contained in [hidden build artifacts](build-artifact.md#Hidden+Artifac
 
 In this case `5Oqkbf9J2qJNkUK4KEtKvxs8TFFnlrno.nunit` is the NUnit project file, which can be downloaded from [Build Artifact](build-artifact.md):
 
-![NUNithiddenArtFacts.png](NUNithiddenArtFacts.png)
+<img src="nunit-hidden-artifacts.png" alt="NUnit hidden artifacts" width="692"/>
 
 
 __  __
