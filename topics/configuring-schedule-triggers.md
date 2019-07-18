@@ -4,7 +4,7 @@
 <tag-list of="chapter" mode="tree" depth="4"/>
 
 
-The _Schedule Trigger_ allows you to set the time when a build of the configuration will be run. The __[Builds Schedule](builds-schedule.md)__ page of the current project settings displays the configured build times. More than one Schedule Trigger can be added to a build configuration.
+A _Schedule Trigger_ allows you to set the time when a build of the configuration will be run. The __[Builds Schedule](builds-schedule.md)__ page of the current project settings displays the configured build times. More than one Schedule Trigger can be added to a build configuration.
 
 ## Triggering Conditions
 
@@ -492,15 +492,17 @@ You can restrict a Schedule Trigger to start builds only if there are pending ch
 
 <include src="configuring-vcs-triggers.md" include-id="trigger-rules-examples"/>
 
+<anchor name="ConfiguringScheduleTriggers-BuildChanges"/>
+
 ### Build Changes
 
-A Schedule Trigger can watch a build in any specified build configuration and trigger a build only if the watched build has changed since the previous triggering. You can select one of the following build types to watch:
+A Schedule Trigger can watch a build in any specified build configuration and trigger a build only if the watched build has changed since the previous triggering. You can select which build to watch:
 * Last finished build
 * Last successful build
 * Last [pinned build](pinned-build.md)
 * Last finished build with a specified [build tag](build-tag.md)
 
-If a new build of the selected type is detected in the watched configuration, the Trigger queues a new build in own configuration.
+If the Trigger detects a new build that satisfies the selected characteristic in the watched configuration, it queues a new build in own configuration.
  
 The Trigger watches only regular (not [personal](personal-build.md) or [history](history-build.md)) builds in the default branch.
  
