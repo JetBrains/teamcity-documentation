@@ -6,7 +6,7 @@
 ### Bundled Tools Updates
 
 * The bundled IntelliJ IDEA has been updated to 2019.1.3.
-* The bundled ReSharper tools (Inspections and Duplicates finder) have been upgraded to the latest released version, 2019.1.2.
+* The bundled ReSharper tools (Inspections and Duplicates Finder) have been upgraded to the latest released version, 2019.1.0-eap08d.
 
 ## Changes from 2018.2.x to 2019.1
 
