@@ -94,8 +94,8 @@ If the agent is not connected within that time, check the name of the agent (as 
 * the agent is under Unauthorized \- all the agents connected to the server for the first time should be authorized by a server administrator
 
 If the agent stays in the state for more than 10 minutes and you have a fast network connection between the agent and the server, do the following:
-* check the agent process is running and the serverURL in conf\buildAgent.properties is correct;
-* check that all the [requirements](setting-up-and-running-additional-build-agents.md) are met;
+* check the related agent machine to ensure that the agent process is running and the serverURL in conf\buildAgent.properties is correct (and that the server is reachable by that URL from the machine);
+* check that all the related environment [requirements](setting-up-and-running-additional-build-agents.md) are met;
 * check [agent logs](viewing-build-agent-logs.md) (teamcity\-agent.log, launcher.log, upgrade.log) for any related messages/errors;
 * check [server logs](teamcity-server-logs.md) (teamcity\-server.log) for any messages/errors mentioning agent name or IP.
 
