@@ -20,7 +20,9 @@ __Since TeamCity 2019.1__, if you change or reset your password, TeamCity will a
 
 ## Managing Access Tokens
 
-If _Token-Based Authentication_ is enabled, you can use personal access tokens for authentication. On the __Access Tokens__ tab of the __My Settings &amp; Tools__ page, you can see the list of your personal access tokens. You can create access tokens and use them later in scripts or authenticate by providing a token through a login form instead of a password. You can also delete access tokens that you don\'t need.
+If [Token-Based Authentication](configuring-authentication-settings.md#Token-Based+Authentication) is enabled on the TeamCity server, you can create access tokens and use them for authentication either intead of your password (e.g. in scripts or IDE plugin login) or as the value of the 'Authorization: Bearer' HTTP header (e.g. for REST API requests).
+
+You can manage to tokens under __Access Tokens__ tab of the __My Settings &amp; Tools__ page. Note that the token value is only available during token creation and is not possible to retrieve afterwards.
 
 ## Managing Version Control Username Settings
 

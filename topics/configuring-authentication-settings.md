@@ -99,7 +99,8 @@ By default, the users are allowed to change their password on their profile page
 
 ### Token-Based Authentication
 
-__Since TeamCity 2019.1__, by default, TeamCity allows users to authentication using the [personal access tokens](managing-your-user-account.md#Managing+Access+Tokens).
+Allows users to authenticate using the [access tokens](managing-your-user-account.md#Managing+Access+Tokens) that they can create and invalidate themselves.
+This authentication module is enabled by defualt.
 
 ### Windows Domain Authentication
 
