@@ -9,13 +9,13 @@ TeamCity comes with Docker Support, implemented as a bundled [plugin](https://pl
 
 ## Requirements
 
-The integration requires [Docker](https://docs.docker.com/engine/installation/) installed on the build agents. [Docker Compose](https://docs.docker.com/compose/install/) also needs to be installed to use the [Docker Compose](docker-compose.md) build runner.
+The integration requires [Docker](https://docs.docker.com/engine/installation/) installed on the build agents. To use the [Docker Compose](docker-compose.md) build runner, install [Docker Compose](https://docs.docker.com/compose/install/) as well.
 
 <chunk include-id="reqs-supported-env">
 
 ## Supported Environments
 
-TeamCity\-Docker support can run on Mac, Linux, and Windows build agents. It uses the `docker` executable on the build agent machine, so it should be runnable by the build agent user. 
+TeamCity Docker Support can run on Mac, Linux, and Windows build agents. It uses the `docker` executable on the build agent machine, so it should be runnable by the build agent user. 
 
 <note>
 
@@ -55,7 +55,7 @@ Description
 
 <td>
 
-The [Docker CLI](https://docs.docker.com/engine/reference/commandline/docker/) version
+[Docker CLI](https://docs.docker.com/engine/reference/commandline/docker/) version
 
 </td></tr><tr>
 
@@ -67,7 +67,7 @@ The [Docker CLI](https://docs.docker.com/engine/reference/commandline/docker/) v
 
 <td>
 
-The Docker Compose file version if the [Docker Compose](docker-compose.md) build step is used
+The Docker Compose file version, if the [Docker Compose](docker-compose.md) build step is used.
 
 </td></tr><tr>
 
@@ -79,7 +79,7 @@ The Docker Compose file version if the [Docker Compose](docker-compose.md) build
 
 <td>
 
-The [Docker Engine](https://docs.docker.com/engine/reference/commandline/dockerd/) version
+[Docker Engine](https://docs.docker.com/engine/reference/commandline/dockerd/) version
 
 </td></tr><tr>
 
@@ -91,15 +91,15 @@ The [Docker Engine](https://docs.docker.com/engine/reference/commandline/dockerd
 
 <td>
 
-The Docker Engine OS platform, can have the `linux` or `windows` value
+The Docker Engine OS platform, can have the `linux` or `windows` value.
 
 </td></tr></table>
 
- If you are using the Command Line Build step (and not the TeamCity\-provided docker steps), these parameters can be used as [agent requirements](agent-requirements.md) to ensure your build is run only on the agents with Docker installed. 
+If you are using the [Command Line](command-line.md) build step (and not the TeamCity-provided Docker steps), these parameters can be used as [agent requirements](agent-requirements.md) to ensure your build is run only on the agents with Docker installed. 
 
 ## Features
 
-TeamСity\-Docker integration provides the following features which facilitate working with Docker under TeamCity:
+TeamСity-Docker integration provides the following features which facilitate working with Docker under TeamCity:
 
 ### Docker Support Build Feature
 
@@ -140,8 +140,8 @@ TeamCity provides the Docker Wrapper extension for [Command Line](command-line.m
 
 Docker Disk Space Cleaner is an extension to the [Free Disk Space](free-disk-space.md) build feature ensuring a certain amount of disk space for a build.   
 
-__Since 2018.2__ TeamCity performs regular clean\-up of Docker images, related to TeamCity:
-* The TeamCity agent tracks docker images tagged or pulled during builds (the list of images is stored in the `buildAgent/system/docker-used-images.dat` file). 
+TeamCity performs regular clean-up of Docker images, related to TeamCity:
+* The TeamCity agent tracks Docker images tagged or pulled during builds (the list of images is stored in the `buildAgent/system/docker-used-images.dat` file). 
 * During cleanup / freeing disk space, TeamCity agent tries to remove these images if they were not used within 3 days, 1 day, 0 on subsequent attempts to free disk space.  
 
 Besides that, TeamCity cleans local Docker Caches using the command:
@@ -151,7 +151,7 @@ Besides that, TeamCity cleans local Docker Caches using the command:
 
 ### Service Message to Report Pushed Image
 
-If TeamCity (for some reason) cannot determine that an image was pushed, a user can send a special [Service Message](build-script-interaction-with-teamcity.md) to report this information to the TeamCity server:
+If TeamCity (for some reason) cannot determine that an image has been pushed, a user can send a special [Service Message](build-script-interaction-with-teamcity.md) to report this information to the TeamCity server:
 
 
 ```Shell

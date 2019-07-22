@@ -1,7 +1,7 @@
 [//]: # (title: Docker Wrapper)
 [//]: # (auxiliary-id: Docker Wrapper)
 
-TeamCity provides the Docker Wrapper extension for [Command Line](command-line.md), [Maven](maven.md), [Ant](ant.md), [Gradle](gradle.md), and __since TeamCity 2018.1__, [.NET CLI (dotnet)](net-cli-dotnet.md) and [PowerShell](powershell.md) runners. This extension allows running a build step inside the specified Docker image. Each of the supported runners has the dedicated Docker settings section.
+TeamCity provides the Docker Wrapper extension for [Command Line](command-line.md), [Maven](maven.md), [Ant](ant.md), [Gradle](gradle.md), [.NET CLI (dotnet)](net-cli-dotnet.md), and [PowerShell](powershell.md) runners. This extension allows running a build step inside the specified Docker image. Each of the supported runners has the dedicated Docker settings section.
 
 ## Requirements
 
@@ -75,7 +75,7 @@ Additional docker run arguments
 
 <td>
 
-The __Edit arguments__ field allows specifying additional options for `docker run`. The default argument is `--rm`, but you can provide more, for instance, to add an additional volume mapping. 
+The _Edit arguments_ field allows specifying additional options for `docker run`. The default argument is `--rm`, but you can provide more, for instance, to add an additional volume mapping. 
 
 <note>
      
@@ -102,7 +102,7 @@ Technically, the command of the build runner is wrapped in a shell script, and t
 
 The [checkout directory](build-checkout-directory.md) and most build agent directories are mapped inside the Docker process.
 
-At end of the build step with the Docker wrapper, a build agent runs the `chown` command to restore access of the `buildAgent` user to the checkout directory. This mitigates a possible problem when the files from a Docker container are created with the `root` ownership and cannot be removed by the build agent later.
+At the end of the build step with the Docker wrapper, a build agent runs the `chown` command to restore access of the `buildAgent` user to the checkout directory. This mitigates a possible problem when the files from a Docker container are created with the `root` ownership and cannot be removed by the build agent later.
 
 If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment variable set by the previous [Docker Compose](docker-compose.md) build step, this network is passed to the started `docker run` command with the `--network` switch. 
 
@@ -112,7 +112,7 @@ If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment va
 
 <chunk include-id="docker-settings-env-var">
 
-TeamCity passes environment variables from the [build configuration](build-configuration.md) into the docker process, but it does not pass environment variables from the [build agent](build-agent.md), as they may be not relevant to docker container environment. The list of the passed environment variables can be seen in [Verbose mode](build-log.md) in the build log.
+TeamCity passes environment variables from the [build configuration](build-configuration.md) into the Docker process, but it does not pass environment variables from the [build agent](build-agent.md), as they may not be relevant to the Docker container environment. The list of the passed environment variables can be seen in [Verbose mode](build-log.md) in the build log.
 
 
  </chunk>
