@@ -21,30 +21,14 @@ For production installations, it is recommended to adjust the [Agent's JVM param
 
 Before the installation, review the [Conflicting Software section](known-issues.md#Conflicting+Software). In case of any issues, make sure no conflicting software is used.
 
-Note that in order to run a TeamCity build agent, the user account used to run the Agent requires the following privileges:
+Note that in order to run a TeamCity build agent, the environment and user account used to run the Agent need to comply to the following requirements:
 
-#### Network
-
-* An agent must be able to open connections to the server using the server address specified in the `serverUrl` property (usually the same URL as the server web UI). Specific URLs which can be used for requests to the server should not be limited. See also the recommended [reverse proxy settings](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server).
-
-#### Legacy bidirectional communication notes
-
-By default, [unidirectional](#Unidirectional+Agent-to-Server+Communication) agent-to-server connection via polling protocol is used by TeamCity.
-
-If you need to use legacy [bidirectional communication](#Bidirectional+Communication) (not recommended), in addition for the agent to server connections, the server must be able to open HTTP connections to the agent. The agent port is determined using the `ownPort` property of the [`buildAgent.properties`](build-agent-configuration.md) file as the starting port (9090 by default, next port is used if the specified port is busy), and the following IP addresses are tried:
-
-* Address specified in the `ownAddress` property of the [`buildAgent.properties`](build-agent-configuration.md) file (if any).
-* Source IP of the HTTP request received by the server when the agent establishes a connection to the server. If a proxying server is used, it must be [correctly configured](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server).
-* Addresses of the network interfaces on the agent machine.
-
-If the agent is behind NAT and cannot be accessed by any of addresses of the agent machine network interfaces, specify the `ownAddress` property in the [`buildAgent.properties`](build-agent-configuration.md) file.
-
-Ensure that any firewalls installed on the agent, server machine, or in the network and network configuration comply with these requirements.
+<a name="Network"/>
 
 #### Common
 
 The agent process (java) should:
-* be able to open outbound HTTP connections to the server address (the same address you use in the browser to view the TeamCity UI, configured in the [`buildAgent.properties`](build-agent-configuration.md) file)
+* be able to open outbound HTTP connections to the server URL  configured via the `serverUrl` property in the [`buildAgent.properties`](build-agent-configuration.md) file (typically the same address you use in the browser to view the TeamCity UI). Sending requests to the paths under the configured URL should not be limited. See also the recommended [reverse proxy settings](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server). Ensure that any firewalls installed on the agent or server machines, network configuration and proxies (if any) comply with these requirements.
 * have full permissions (read/write/delete) to the following directories recursively: [`<agent home>`](agent-home-directory.md) (necessary for automatic agent upgrade and agent tools support), [`<agent work>`](agent-work-directory.md), [`<agent temp>`](agent-home-directory.md#Agent+Directories), and agent system directory (set by `workDir`, `tempDir`, and `systemDir` parameters in the `buildAgent.properties` file)
 * be able to launch processes (to run builds).
 * be able to launch nested processes with the following parent process exit (this is used during agent upgrade)
