@@ -56,7 +56,7 @@ Since TeamCity 10.0.2, if the System Administrator creates users without passwor
 
  It is possible to use a combination of internal and external authentication. The recommended approach is to configure [LDAP Integration](ldap-integration.md) for your internal employees first and then to add [Built-in](#Built-in+Authentication) authentication for external users.
  
-1. Switch to advanced mode with the corresponding link on the __Administration__ | __Authentication__ page.
+1. Switch to advanced mode with the corresponding link on the __Administration | Authentication__ page.
 2. Click __Add Module__ and select a module from the drop\-down.
 3. Use the properties available for modules by selecting/deselecting checkboxes in the __Add Module__ dialog.
 4. Click __Apply__ and __Save__ your changes.
@@ -99,8 +99,9 @@ By default, the users are allowed to change their password on their profile page
 
 ### Token-Based Authentication
 
-Allows users to authenticate using the [access tokens](managing-your-user-account.md#Managing+Access+Tokens) that they can create and invalidate themselves.
-This authentication module is enabled by defualt.
+Allows users to authenticate via [access tokens](managing-your-user-account.md#Managing+Access+Tokens) that they can create and invalidate themselves.
+
+This authentication module is enabled by default.
 
 ### Windows Domain Authentication
 

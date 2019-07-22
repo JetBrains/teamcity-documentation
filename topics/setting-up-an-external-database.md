@@ -168,7 +168,7 @@ TeamCity uses the primary character set (char, varchar, text) for storing intern
 
 1. Create a new database. As the primary collation, use the case\-sensitive collation (collation name ending with `_CS_AS`) corresponding to your locale.
 2. Create a TeamCity user and ensure that this user is the owner of the database (grant the user dbo rights), which will give the user the ability to modify the database schema. For SSL connections, ensure that the version of MS SQL server and the TeamCity version of java are compatible. We recommend using the latest update of SQL server.
-3. Allocate sufficient transaction log space depending on how intensively the server will be used. The recommended setup is not less then 1Gb.
+3. Allocate sufficient transaction log space depending on how intensively the server will be used. The recommended setup is not less than 1Gb.
 4. Make sure SQL Server Browser is running.
 5. Make sure TCP/IP protocol is enabled for SQL Server instance.
 
@@ -183,7 +183,7 @@ TeamCity uses the primary character set (char, varchar, text) for storing intern
 
 It is not recommended to use jTDS JDBC driver. There are at least known issues with using Unicode characters when the driver is in use.
 
-If you use the driver ("`jtds`" text appears in the `connectionUrl` of `database.properties`), it is highly recommended to switch the native driver.
+If you use the driver (`jtds` text appears in the `connectionUrl` of `database.properties`), it is highly recommended to switch the native driver.
 
 The due procedure for the switch is to:
 * create the server [backup](teamcity-data-backup.md) including the database

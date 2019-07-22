@@ -20,9 +20,9 @@ __Since TeamCity 2019.1__, if you change or reset your password, TeamCity will a
 
 ## Managing Access Tokens
 
-If [Token-Based Authentication](configuring-authentication-settings.md#Token-Based+Authentication) is enabled on the TeamCity server, you can create access tokens and use them for authentication either intead of your password (e.g. in scripts or IDE plugin login) or as the value of the 'Authorization: Bearer' HTTP header (e.g. for REST API requests).
+If [Token-Based Authentication](configuring-authentication-settings.md#Token-Based+Authentication) is enabled on the TeamCity server, you can create access tokens and use them for authentication either instead of your password (for example, in scripts or IDE plugin login) or as the value of the `Authorization: Bearer` HTTP header (for example, in REST API requests).
 
-You can manage to tokens under __Access Tokens__ tab of the __My Settings &amp; Tools__ page. Note that the token value is only available during token creation and is not possible to retrieve afterwards.
+You can manage tokens in __My Settings &amp; Tools | Access Tokens__. Note that the token value is only available during token creation and is not possible for retrieval afterwards.
 
 ## Managing Version Control Username Settings
 
