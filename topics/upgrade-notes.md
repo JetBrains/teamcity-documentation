@@ -1,6 +1,10 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2019.1.1 to 2019.1.2
+
+No noteworthy changes.
+
 ## Changes from 2019.1 to 2019.1.1
 
 ### Bundled Tools Updates
@@ -15,7 +19,7 @@
   After [this fix](https://youtrack.jetbrains.com/issue/TW-41341) this is no longer the case. Now, when a build chain is triggered, all `reverse.dep` parameters specified in all nodes of the build chain will be processed.
 * On upgrading to 2019.1, the Token-Based Authentication module will be enabled by default, so you can generate [access tokens](managing-your-user-account.md#Managing+Access+Tokens) and start using them right away.
 * Now TeamCity Web UI uses more restrictive value for the [`Content-Security-Policy`](https://content-security-policy.com/) HTTP header. This provides extra security at the expense of prohibiting usage of the web resources not hosted on the TeamCity server.   
-If you rely on external resources (e.g. in the build report tabs content or by using not yet updated plugins), you can specify new header value in the `teamcity.web.header.Content-Security-Policy.protectedValue=<full header value>` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (and `teamcity.web.header.Content-Security-Policy.adminUI.protectedValue` property for the web pages in Administration area). Plugins can use [`ContentSecurityPolicyConfig`](http://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) open API interface to add to the value configured.
+If you rely on external resources (for example, in the build report tabs content or by using not yet updated plugins), you can specify new header value in the `teamcity.web.header.Content-Security-Policy.protectedValue=<full header value>` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (and `teamcity.web.header.Content-Security-Policy.adminUI.protectedValue` property for the web pages in Administration area). Plugins can use [`ContentSecurityPolicyConfig`](http://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) open API interface to add to the value configured.
 * The requirements for the .NET Framework version used by ReSharper tools have changed. Now, if you use ReSharper tools (dotCover and ReSharper Inspections) of version 2018.2 or newer (including the version bundled with TeamCity 2019.1) in your build configuration, the requirements to build agents will change to .NET Framework 4.6.1 or newer. Make sure to update .NET Framework on agents.
 * The `dotCover.dcvr` hidden artifact is no longer published by default. It is now created in the build temporary folder and removed when the build finishes.   
  If you use dotCover and rely on this artifact, specify the path to the `%system.teamcity.build.tempDir%\..\agentTmp\dotNetCoverageResults\dotCover.dcvr` file explicitly in the [Artifact paths](configuring-general-settings.md#Artifact+Paths).
