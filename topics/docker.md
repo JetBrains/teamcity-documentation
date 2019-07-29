@@ -217,6 +217,19 @@ Additional arguments that will be passed to the Docker command.
 
 </td></tr></table>
 
+#### Docker sudo commands
+
+__Since TeamCity 2019.1.2__, you can enable `sudo` commands for Docker. Add the `teamcity.docker.use.sudo=true` setting in the [build agent configuration file](build-agent-configuration.md) or as an agent's system property. On an agent start, the TeamCity agent log will inform that the `sudo` prefix is used to run Docker commands.
+
+To configure the `sudoers` file for the `sudo` command, use [`visudo`](https://www.sudo.ws/man/1.8.17/visudo.man.html) as follows:
+
+```Shell
+buildagentuser ALL=(ALL) NOPASSWD:SETENV:<full_path_to_docker>
+
+```
+
+We recommend removing (or commenting out) the `Defaults requiretty` line from the `sudoers` file to prevent the [problem with `docker login`](https://youtrack.jetbrains.com/issue/TW-60990).
+
 </chunk>
  
 
