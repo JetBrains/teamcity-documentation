@@ -1,6 +1,6 @@
 [//]: # (title: MSBuild)
 [//]: # (auxiliary-id: MSBuild)
-This page contains reference information for the __MSBuild__ Build Runner fields.
+This page contains reference information for the __MSBuild__ build runner fields.
 
 On this page:
 

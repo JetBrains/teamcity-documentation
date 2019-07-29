@@ -21,19 +21,19 @@ For production installations, it is recommended to adjust the [Agent's JVM param
 
 Before the installation, review the [Conflicting Software section](known-issues.md#Conflicting+Software). In case of any issues, make sure no conflicting software is used.
 
-Note that in order to run a TeamCity build agent, the environment and user account used to run the Agent need to comply to the following requirements:
+Note that to run a TeamCity build agent, the environment and user account used to run the Agent need to comply with the following requirements:
 
-<a name="Network"/>
+<anchor name="Network"/>
 
 #### Common
 
-The agent process (java) should:
-* be able to open outbound HTTP connections to the server URL  configured via the `serverUrl` property in the [`buildAgent.properties`](build-agent-configuration.md) file (typically the same address you use in the browser to view the TeamCity UI). Sending requests to the paths under the configured URL should not be limited. See also the recommended [reverse proxy settings](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server). Ensure that any firewalls installed on the agent or server machines, network configuration and proxies (if any) comply with these requirements.
+The agent process (java) must
+* be able to open outbound HTTP connections to the server URL configured via the `serverUrl` property in the [`buildAgent.properties`](build-agent-configuration.md) file (typically the same address you use in the browser to view the TeamCity UI). Sending requests to the paths under the configured URL should not be limited. See also the recommended [reverse proxy settings](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server). Ensure that any firewalls installed on the agent or server machines, network configuration and proxies (if any) comply with these requirements.
 * have full permissions (read/write/delete) to the following directories recursively: [`<agent home>`](agent-home-directory.md) (necessary for automatic agent upgrade and agent tools support), [`<agent work>`](agent-work-directory.md), [`<agent temp>`](agent-home-directory.md#Agent+Directories), and agent system directory (set by `workDir`, `tempDir`, and `systemDir` parameters in the `buildAgent.properties` file)
 * be able to launch processes (to run builds).
 * be able to launch nested processes with the following parent process exit (this is used during agent upgrade)
 
-<a name="Windows"/>
+<anchor name="Windows"/>
 
 #### Windows
 * Log on as a service (to run as Windows service)
