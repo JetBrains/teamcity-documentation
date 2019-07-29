@@ -23,7 +23,7 @@ To overcome these restrictions, run TeamCity agent [via console](setting-up-and-
 
 #### Issues with automated GUI and browser testing
 
-These problems include errors running tests headless, issues with the interaction of the TeamCity agent with the Windows desktop, etc.
+These problems include errors running tests headless, issues with the interaction of the TeamCity agent with the Windows desktop, and so on.
 
 To resolve / avoid these:
 1. Run TeamCity agent [via console](setting-up-and-running-additional-build-agents.md).
@@ -394,7 +394,7 @@ Problems common to TeamCity Docker container images
 
 * When starting a TeamCity server from a Windows Docker image, make sure to grant `Authenticated Users` __Full control__ over the directories used as volumes. [See the related issue](https://github.com/docker/for-win/issues/1058).
 
-* When starting a Windows Docker container with the directory `C:/BuildAgent/work` mapped as a volume to the container host, Git for Windows fails with a following error: "`Invalid path '/ContainerMappedDirectories': No such file or directory`". The workaround is not to add `C:/BuildAgent/work` as a volume.
+* When starting a Windows Docker container with the directory `C:/BuildAgent/work` mapped as a volume to the container host, Git for Windows fails with a following error: "Invalid path '/ContainerMappedDirectories': No such file or directory". The workaround is not to add `C:/BuildAgent/work` as a volume.
 
 To analyze the script output, refer to the [following documents](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/master/windows-server-container-tools/Debug-ContainerHost). If it shows that there are problems with the container network subsystem, try resetting it using the [cleanup scripts](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/master/windows-server-container-tools/CleanupContainerHostNetworking).
 

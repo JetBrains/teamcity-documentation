@@ -24,7 +24,7 @@ After you have selected one of the [TeamCity installation options](installation.
 * Docker image \- check the instructions at the [image page](https://hub.docker.com/r/jetbrains/teamcity-server/);
 * [.war distribution](#Installing+TeamCity+into+Existing+J2EE+Container) \- for experienced users who want to run TeamCity in a separately installed Web application server. Consider using `.tar.gz` distribution instead. `.war` is not recommended to use unless really required (please [let us know](https://confluence.jetbrains.com/display/TW/Feedback) the reasons).
 
-Compared to the .war distribution, the `.exe` and `.tar.gz` distributions:
+Compared to the `.war` distribution, the `.exe` and `.tar.gz` distributions:
 * include a Tomcat version which TeamCity is tested with, so it is known to be a working combination. This might not be the case with an external Tomcat.
 * define additional JRE options which are usually recommended for running the server
 * have the [teamcity-server startup script](#Starting+TeamCity+server) which provides several convenience options (e.g. separate environment variable for memory settings) and configures TeamCity correctly (e.g. log4j configuration)
@@ -125,7 +125,7 @@ Under Windows, if TeamCity server is installed as a Windows service, follow the 
 
 If TeamCity is installed using the `.exe` or `.tar.gz` distributions, the TeamCity server can be started and stopped by the `teamcity-server` scripts provided in the \<[TeamCity Home](teamcity-home-directory.md)\>\/bin directory. The script accepts `run` (run in the same console), `start` (start new detached process and exit from the script), and `stop` commands.
 
-* __(evaluation only) To start/stop the TeamCity server and one default agent at the same time__, use the `runAll` script, e.g.:
+* __(evaluation only) To start/stop the TeamCity server and one default agent at the same time__, use the `runAll` script, for example:
    * Use `runAll.bat start` to start the server and the default agent
    * Use `runAll.bat stop` to stop the server and the default agent
   
@@ -258,7 +258,7 @@ Note that after this change [automatic update](upgrade.md#Automatic+Update) will
 
 The TeamCity server is a web application that runs in an J2EE application server (a JVM application). TeamCity server requires a Java SE JRE installation to run.
 
-The TeamCity server __requires__ JRE 8 to operate, the agent can run with Java 6\-10, but Java 8 __is recommended__. The recommended Java download is [AdoptOpenJDK](https://adoptopenjdk.net). It is recommended to use the 32\-bit installation unless you need to [dedicate more memory](#Setting+Up+Memory+settings+for+TeamCity+Server) to TeamCity server. Please check [the 64-bit Java notes](#Using+64+bit+Java+to+Run+TeamCity+Server) before upgrade. If you configured any native libraries for use with TeamCity (like a `.dll` for using Microsoft SQL database Integrated Security option), you need to update the libraries to match the JVM x86/x64 platform.
+The TeamCity server __requires__ JRE 8 to operate, the agent can run with Java 6-10, but Java 8 __is recommended__. The recommended Java download is [AdoptOpenJDK](https://adoptopenjdk.net). It is recommended to use the 32\-bit installation unless you need to [dedicate more memory](#Setting+Up+Memory+settings+for+TeamCity+Server) to TeamCity server. Please check the [64-bit Java notes](#Using+64+bit+Java+to+Run+TeamCity+Server) before upgrade. If you configured any native libraries for use with TeamCity (like a `.dll` for using Microsoft SQL database Integrated Security option), you need to update the libraries to match the JVM x86/x64 platform.
 
 For TeamCity agent Java requirements, check [Setting up and Running Additional Build Agents](setting-up-and-running-additional-build-agents.md).
 
@@ -284,18 +284,18 @@ Note that on upgrade, TeamCity will overwrite the existing JRE with the bundled 
 
 ### Using 64 bit Java to Run TeamCity Server
 
-TeamCity server can run under both the 32\- and 64\-bit JVM. It is recommended to use the 32\-bit JVM unless you need to dedicate more than 1Gb of memory (via `-Xmx` JVM option) to the TeamCity process (see [details](#Setting+Up+Memory+settings+for+TeamCity+Server)) or your [database requirements](setting-up-an-external-database.md) are different.
+TeamCity server can run under both the 32- and 64-bit JVM. It is recommended to use the 32-bit JVM unless you need to dedicate more than 1Gb of memory (via `-Xmx` JVM option) to the TeamCity process (see [details](#Setting+Up+Memory+settings+for+TeamCity+Server)) or your [database requirements](setting-up-an-external-database.md) are different.
 
-If you choose to use the 64\-bit JVM, note that the memory usage is almost doubled when switching from the 32\- to 64\-bit JVM, so make sure you specify at least twice as much memory as for 32\-bit JVM, see [Setting Up Memory settings for TeamCity Server](#Setting+Up+Memory+settings+for+TeamCity+Server).
+If you choose to use the 64-bit JVM, note that the memory usage is almost doubled when switching from the 32- to 64-bit JVM, so make sure you specify at least twice as much memory as for 32-bit JVM, see [Setting Up Memory settings for TeamCity Server](#Setting+Up+Memory+settings+for+TeamCity+Server).
 
-__To update to the 64\-bit Java__:
+__To update to the 64-bit Java__:
 * [update](#Java+Installation) Java to be used by the server
 * [set JVM memory options](configuring-teamcity-server-startup-properties.md). It is recommended to set the following options for the 64\-bit JVM: `-Xmx4g -XX:ReservedCodeCacheSize=350m`
 
 ### Setting Up Memory settings for TeamCity Server
 
 TeamCity server has the main process which can also launch child processes. Child processes use available memory on the machine, this section covers the memory settings of the main TeamCity server process only as it requires special configuration.   
-As a JVM application, TeamCity main server process only utilizes memory devoted to the JVM. The required memory may depend on the JVM used (32 bit or 64 bit). The memory used by JVM usually consists of: heap (configured via `-Xmx`) and metaspace (limited by the amount of available native memory), internal JVM (usually tens of Mb), and OS\-dependent memory features like memory\-mapped files. TeamCity mostly depends on the heap memory and this settings can be configured for the TeamCity application manually by [passing](configuring-teamcity-server-startup-properties.md#JVM+Options) `-Xmx` (heap space) option to the JVM running the TeamCity server.
+As a JVM application, TeamCity main server process only utilizes memory devoted to the JVM. The required memory may depend on the JVM used (32 bit or 64 bit). The memory used by JVM usually consists of: heap (configured via `-Xmx`) and metaspace (limited by the amount of available native memory), internal JVM (usually tens of Mb), and OS-dependent memory features like memory-mapped files. TeamCity mostly depends on the heap memory and this settings can be configured for the TeamCity application manually by [passing](configuring-teamcity-server-startup-properties.md#JVM+Options) `-Xmx` (heap space) option to the JVM running the TeamCity server.
 
 Once you start using TeamCity for [production](#Configuring+Server+for+Production+Use) purposes or you want to load the server during evaluation, you should manually set the appropriate memory settings for the TeamCity server.
 
@@ -317,7 +317,7 @@ __Tips__:
 
 
 
-The recommended approach is to start with initial settings and monitor for the percentage of used memory using the __Administration__ | __Diagnostics__ page. If the server uses more than 80% of memory consistently without drops for tens of minutes, that is probably a sign to increase the `-Xmx` memory value by another 20%.
+The recommended approach is to start with initial settings and monitor for the percentage of used memory using the __Administration | Diagnostics__ page. If the server uses more than 80% of memory consistently without drops for tens of minutes, that is probably a sign to increase the `-Xmx` memory value by another 20%.
 
 
 [//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e1122.txt")    

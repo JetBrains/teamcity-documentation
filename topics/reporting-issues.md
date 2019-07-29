@@ -150,13 +150,13 @@ The log can also be sent to us for analysis.
 
 ## OutOfMemory Problems
 
-If you experience problems with TeamCity "eating" too much memory or OutOfMemoryError/"Java heap space" errors in the log, do the following:
-* Determine what process encounters the error (the actual building process, the TeamCity server, or the TeamCity agent). You can track memory and CPU usage by TeamCity with the charts on the __Administration__ | __Server Administration__ | __Diagnostics__ page of your TeamCity web UI.
+If you experience problems with TeamCity consuming too much memory or "OutOfMemoryError"/"Java heap space" errors in the log, do the following:
+* Determine what process encounters the error (the actual building process, the TeamCity server, or the TeamCity agent). You can track memory and CPU usage by TeamCity with the charts on the __Administration | Server Administration | Diagnostics__ page of your TeamCity web UI.
 * If the server is to blame, check you have increased memory settings from the default ones for using the server in production (see the [section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server)).
-* If the build process is to blame, set "JVM Command Line Parameters" settings in the build runner.  Increase value for `'-Xmx'` JVM option, like __\-Xmx1200m,__ e.g. Java Inspections builds may specifically need to increase `-Xmx` value.
-* If the TeamCity server is to blame and increasing the memory size does not help, please report the case for us to investigate. For this, while the server is high on memory consumption, take several server thread dumps as described [above](#Taking+Thread+Dump), get the memory dump (see below) and all the server logs including `threadDumps-*` sub\-directories, archive the results and [send them](#Uploading+Large+Data+Archives) to us for further analysis. Make sure that Xmx setting is less than 8Gb before getting the dump:
-  * if a memory dump (hprof file) is created automatically the `java\_xxx.hprof` file is be created in the process startup directory (\<[TeamCity Home](teamcity-home-directory.md)\>\/bin or \<[TeamCity Agent home](agent-home-directory.md)\>\/bin`);
-  * for the server, you can also take memory dump manually when the memory usage is at its peak. Go to the __Administration__ | __Server Administration__ | __Diagnostics__ page of your TeamCity web UI and click __Dump Memory Snapshot__.
+* If the build process is to blame, set "JVM Command Line Parameters" settings in the build runner. Increase the value for the `-Xmx` JVM option: for instance, `-Xmx1200m`. Note that Java Inspections builds may specifically need increasing the `-Xmx` value.
+* If the TeamCity server is to blame and increasing the memory size does not help, please report the case for us to investigate. For this, while the server is high on memory consumption, take several server thread dumps as described [above](#Taking+Thread+Dump), get the memory dump (see below) and all the server logs including `threadDumps-*` sub-directories, archive the results, and [send them](#Uploading+Large+Data+Archives) to us for further analysis. Make sure that the `-Xmx` setting is less than 8Gb before getting the dump:
+  * if a memory dump (`hprof` file) is created automatically, the `java\_xxx.hprof` file is created in the process startup directory (\<[TeamCity Home](teamcity-home-directory.md)\>\/bin or \<[TeamCity Agent home](agent-home-directory.md)\>\/bin`);
+  * for the server, you can also take memory dump manually when the memory usage is at its peak. Go to the __Administration | Server Administration | Diagnostics__ page of your TeamCity web UI and click __Dump Memory Snapshot__.
   * another approach to take a memory dump manually is to use the `jmap` standard JVM command line utility of the full JVM installation of the same version as the Java used by the process. Example command line is:   
     
     ```Shell
@@ -348,7 +348,7 @@ If the settings are the same and you do not use the manual checkout mode but the
 
 ## Logging in TeamCity Eclipse plugin
 
-To enable tracing for the [plugin](eclipse-plugin.md), run Eclipse IDE with the `-debug` `<filename>` command line parameter. The `<filename>` portion of the argument should be a properties file containing key\-value pairs. The name of each property corresponds to the plugin module and the value is either '`true`' (to enable debug) or '`false`'. Here is an example of enabling most common tracing options:
+To enable tracing for the [plugin](eclipse-plugin.md), run Eclipse IDE with the `-debug <filename>` command line parameter. The `<filename>` portion of the argument should be a properties file containing key\-value pairs. The name of each property corresponds to the plugin module and the value is either `true` (to enable debug) or `false`. Here is an example of enabling most common tracing options:
 
 
 ```Shell
@@ -406,7 +406,7 @@ Under Windows when running as a service, it can be other like `C:\Windows\SysWOW
 
 Please send this file to us for investigation and consider updating the JVM for the [server](installing-and-configuring-the-teamcity-server.md#Java+Installation) (or for [agents](setting-up-and-running-additional-build-agents.md#Configuring+Java)) to the latest version available.
 
-If you get the "There is insufficient memory for the Java Runtime Environment to continue. Native memory allocation (malloc) failed to allocate ..." message with the crash or in the crash report file, make sure to [switch to 64 bits JVM](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server) or reduce \-Xmx setting not to increase 1024m, see details in the [memory configuration section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server).
+If you get the "There is insufficient memory for the Java Runtime Environment to continue. Native memory allocation (malloc) failed to allocate ..." message with the crash or in the crash report file, make sure to [switch to 64 bits JVM](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server) or reduce the `-Xmx` setting below `1024m`, see details in the [memory configuration section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server).
 
 ## Build Log Issues
 
