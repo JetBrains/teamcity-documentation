@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: VCS Checkout Rules)
 VCS Checkout Rules allow you to check out a part of the configured VCS root and to map directories from the version control to subdirectories in the [build checkout directory](build-checkout-directory.md) on a build agent. Thus, you can define a VCS root for the entire repository and make each build configuration checkout only the relevant part of it.
 
-The Checkout Rules affect the changes displayed in the TeamCity for the build and the files checked out for the build on agent. To display changes, but not to trigger a build for a change, use [VCS Trigger Rules](configuring-vcs-triggers.md).
+The Checkout Rules affect the changes displayed in the TeamCity for the build and the files checked out for the build on agent. To display changes, but not to trigger a build for a change, use [VCS Trigger Rules](configuring-vcs-triggers.md#VCS+Trigger+Rules).
 
 The general recommendation is to have a small number of VCS roots (pointing to the root of the repository) and define what is checked out by a specific build configuration via checkout rules.
 
