@@ -4,7 +4,7 @@ In TeamCity an _agent tool_ (i.e. a set of files/a binary distribution) is a typ
 
 TeamCity allows you to install/remove additional tools on all the agents, which is especially useful in the environments with many build agents as you can distribute tools to or remove them from all build agents at once, centralize configuration files distribution (for example, you want to distribute a custom configuration file/library to all agents), and so on.
 
-The __Administration | Tools__ page provides a unified interface to set up tools to be used by appropriate plugins. You can install different versions of any tool and/or change the default one. The tools will be automatically distributed to all build agents to be used in the related runners. 
+The __Administration | Tools__ page provides a unified interface to set up tools to be used by appropriate plugins. You can install different versions of a tool and/or change the default one. The tools will be automatically distributed to all build agents to be used in the related runners.
 
 The following types of tools can be managed up via the __Administration | Tools__ page:
 * __IntelliJ Inspections and Duplicates Engine__ with the bundled version of IntelliJ IDEA set as default.
@@ -16,7 +16,7 @@ The following types of tools can be managed up via the __Administration | Tools_
 * __Sysinternals handle.exe__ used to determine processes which hold files in the checkout directory on Windows agents.
 * __Sysinternals psexec.exe__ required for installing a TeamCity agent from a Windows server to a Windows host using Agent push
 * You can also upload __your own tool as a .zip archive__: the structure of the tool plugin is described on the [Plugins Packaging page](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#Tools). TeamCity will use the name of the zip file as the tool name on all agents. The zip file will be automatically unpacked on the agents to the directory with the same name.   
-When a tool is installed, a separate section appears on the page displaying the installed version(s), the tool usages, the default version or the ability to change the default. You can also remove an installed tool/version.
+When the first custom tool is installed, the __Zip Archive__ section appears on the page. In this section, you can see all the tool usages, remove the tool, or install a new one.
 
 You can see that the tool appears on the agent in the TeamCity Web UI by checking [configuration parameters reported by the agent](predefined-build-parameters.md#Agent+Properties) in the form `teamcity.tool.<the installed tool id>`. You can use this parameter in your build: reference this parameter in the TeamCity Web UI (anywhere where the `%parameter%` format is supported) or refer to this parameter in your build as an environment or a system [parameter](configuring-build-parameters.md).
 
