@@ -11,11 +11,7 @@ __To add a checkout rule__, go to the build configuration's __Version Control Se
 
 <chunk include-id="note-perforce-vcs">
 
-<tip>
-
-Note that Perforce support in TeamCity treats checkout rules as case\-sensitive. Case\-insensitivity for Perforce\-based build configurations can be enabled on the VCS settings page by adding the following comment in the Edit Checkout Rules field:   
-`##teamcity ignore-case` 
-</tip>
+Note that Perforce support in TeamCity treats checkout rules as case-sensitive. Case-insensitivity for Perforce-based build configurations can be enabled on the VCS settings page by adding the following comment in the Edit Checkout Rules field: `##teamcity ignore-case`.
 
 </chunk>
 
