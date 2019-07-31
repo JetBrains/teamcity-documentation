@@ -180,7 +180,7 @@ JVM command line parameters
 
 <td>
 
-Specify the desired Java Virtual Machine parameters, such as maximum heap size or parameters that enable remote debugging. These settings are passed to the JVM used to run your build. 
+Specify the desired Java Virtual Machine parameters, such as maximum heap size or parameters that enable remote debugging. These settings are passed to the JVM used to run your build.   
  Example:
 
 

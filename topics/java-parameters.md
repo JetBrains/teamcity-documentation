@@ -3,7 +3,6 @@
 This page describes general parameters for Java\-based runners. For other settings of an individual runner, refer to the following pages:
 
 * [Ant](ant.md)
-
 * [Maven](maven.md)
 * [Gradle](gradle.md)
 * [Duplicates Finder (Java)](duplicates-finder-java.md)  
@@ -41,7 +40,7 @@ JDK
 
 <td>
 
-Select a JDK. [This section](predefined-build-parameters.md) details the available options. The default is JAVA\_HOME environment variable or the agent's own Java.
+Select a JDK. [This section](predefined-build-parameters.md) details the available options. The default is `JAVA_HOME` environment variable or the agent's own Java.
 
 
 </td></tr><tr>
@@ -55,7 +54,7 @@ JDK home path
 
 <td>
 
-_The option is available when &lt;Custom&gt; is selected above._ Use this field to specify the path to your custom JDK used to run the build. If the field is left blank, the path to JDK Home is read either from the __JAVA\_HOME__ environment variable on agent the computer, or from the __env.JAVA\_HOME__ property specified in the [build agent configuration](build-agent-configuration.md) file (buildAgent.properties). If these values are not specified, TeamCity uses the Java home of the build agent process itself.
+_The option is available when &lt;Custom&gt; is selected above._ Use this field to specify the path to your custom JDK used to run the build. If the field is left blank, the path to JDK Home is read either from the `JAVA_HOME` environment variable on agent the computer, or from the `env.JAVA_HOME` property specified in the [build agent configuration](build-agent-configuration.md) file (`buildAgent.properties`). If these values are not specified, TeamCity uses the Java home of the build agent process itself.
 
 
 </td></tr><tr>
@@ -69,7 +68,8 @@ JVM command line parameters
 
 <td>
 
-You can specify such JVM command line parameters, e.g. _maximum heap size_ or parameters enabling _remote debugging_. These values are passed by the JVM used to run your build.  Example:
+You can specify such JVM command line parameters, for example, _maximum heap size_ or parameters enabling _remote debugging_. These values are passed by the JVM used to run your build.   
+Example:
 
 
 ```Shell
