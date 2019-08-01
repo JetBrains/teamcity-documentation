@@ -259,7 +259,7 @@ Use the corresponding item from the __Actions__ menu in the top right of the pro
 
 Projects can be copied and moved to another project by project administrators.
 
-A copy duplicates all the settings, [subprojects](project.md), [build configurations](build-configuration.md) and [templates](build-configuration-template.md) of the original project, but no data related to builds is preserved. The copy is created with the empty [build history](build-history.md) and no [statistics](statistic-charts.md).
+A copy duplicates all the settings, [subprojects](project.md#Project+Hierarchy), [build configurations](build-configuration.md), and [templates](build-configuration-template.md) of the original project, but no data related to builds is preserved. The copy is created with the empty [build history](build-history.md) and no [statistics](statistic-charts.md).
 
 You can copy a project into the same or another parent.
 
@@ -285,7 +285,7 @@ Before moving the project, consider the following:
 
 To move a project, use the corresponding item from the __Actions__ menu in the top right of the project settings page or the more button ![moreButton.PNG](moreButton.PNG) next to the project on the parent project settings page.
 
-When moving a project, TeamCity preserves all its settings, [subprojects](project.md), [build configurations](build-configuration.md)/[templates](build-configuration-template.md), and associated data, as well as the [build history](build-history.md).
+When moving a project, TeamCity preserves all its settings, [subprojects](project.md#Project+Hierarchy), [build configurations](build-configuration.md)/[templates](build-configuration-template.md), and associated data, as well as the [build history](build-history.md).
 
 ### Archiving Project
 
@@ -303,7 +303,7 @@ Care must be taken when performing this action. Modifying the ID will change all
 3. Click __Submit__.
 ### Pausing / Activating Triggers
 
-You can [pause triggers](build-configuration.md) for all or selected build configurations of a project. Use the corresponding item from the __Actions__ menu in the top right of the project settings page or the more button ![moreButton.PNG](moreButton.PNG) next to the project on the parent project settings page.
+You can [pause triggers](build-configuration.md#Pausing+%2F+Activating+several+build+configurations+of+a+project) for all or selected build configurations of a project. Use the corresponding item from the __Actions__ menu in the top right of the project settings page or the more button ![moreButton.PNG](moreButton.PNG) next to the project on the parent project settings page.
 
 ### Exporting Project 
 
@@ -313,7 +313,7 @@ You can [export configuration files](project-export.md) of a project with its ch
 
 Use the corresponding item from the __Actions__ menu in the top right of the project settings page or the more button ![moreButton.PNG](moreButton.PNG) next to the project on the parent project settings page.
 
-When you delete a project, TeamCity will remove its .xml configuration files. After the deletion, the project is moved to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/.ProjectID.projectN directory. There is a [configurable](clean-up.md) timeout (5 days by default) before all project\-related data stored in the database (build history, artifacts, and so on) of the deleted project is completely removed during the next build history clean\-up. You can [restore](how-to.md) a deleted project before the clean\-up is run.
+When you delete a project, TeamCity will remove its .xml configuration files. After the deletion, the project is moved to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/.ProjectID.projectN directory. There is a [configurable](clean-up.md#Deleted+Build+Configurations+Cleanup) timeout (5 days by default) before all project\-related data stored in the database (build history, artifacts, and so on) of the deleted project is completely removed during the next build history clean\-up. You can [restore](how-to.md#Restore+Just+Deleted+Project) a deleted project before the clean\-up is run.
 
 The \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/ directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects. 
 

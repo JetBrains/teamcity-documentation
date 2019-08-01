@@ -9,7 +9,7 @@ This document describes how to configure various TeamCity server clients to use 
 
 <note>
 
-If you need to connect the TeamCity server to a service behind a self\-signed certificate (e.g. Git) or if  you need to connect a TeamCity agent to the TeamCity server using the self\-signed certificate, use [trusted certificates configuration](uploading-ssl-certificates.md).
+If you need to connect the TeamCity server to a service behind a self\-signed certificate (for example, Git) or if  you need to connect a TeamCity agent to the TeamCity server using the self\-signed certificate, use [trusted certificates configuration](uploading-ssl-certificates.md).
 </note>
 
 We assume that you have [already configured HTTPS](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) in your TeamCity web server. The most common and recommended approach for this is to set up a reverse proxy server like Nginx or Apache that provides HTTPS access for HTTP\-only TeamCity server's Tomcat port. In the setup make sure that the reverse proxy has correct configuration as per [Set Up TeamCity behind a Proxy Server](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) section.
@@ -26,7 +26,7 @@ __If your certificate is not valid (is self\-signed):__ (i.e. is not signed by a
 
 ### Configuring client JVM for trusting server certificate
 
-__If your certificate is valid__ (i.e. it was issues and signed by a well-known Certificate Authority like Verisign), then the Java clients should work with HTTPS without any additional configuration. To use Let's Encrypt\-issued certificates, make sure to upgrade the JVM used by the client to the latest.
+__If your certificate is valid__ (that is it was issues and signed by a well-known Certificate Authority like Verisign), then the Java clients should work with HTTPS without any additional configuration. To use Let's Encrypt\-issued certificates, make sure to upgrade the JVM used by the client to the latest.
 
 __If your certificate is not valid (is self\-signed):__
 

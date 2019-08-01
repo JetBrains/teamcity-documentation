@@ -19,11 +19,11 @@ You can find all agent pools configured in TeamCity at the __Agents | Pools__ ta
 
 ## Required Permissions
 
-To be able to add/remove pools and set maximum number of agents in the pool, you need to have the "Manage agent pools" permission granted to the System administrator and Agent manager [roles](role-and-permission.md) in the default TeamCity [per-project authorization mode](role-and-permission.md).
+To be able to add/remove pools and set maximum number of agents in the pool, you need to have the "Manage agent pools" permission granted to the System administrator and Agent manager [roles](role-and-permission.md) in the default TeamCity [per-project authorization mode](role-and-permission.md#Per-Project+Authorization+Mode).
 
 Assigning and un\-assigning projects and agents to/from pools is restricted by the "_Change agent pools associated with project_" permission, which by default is a part of the Project administrator role. A user can perform the operations on the pool only if he/she has "Change agent pools associated with project" for __all projects__ associated with __all pools__ affected by the operation.
 
-See also related [agent management permissions](role-and-permission.md).
+See also related [agent management permissions](role-and-permission.md#Agent+Management+Permissions).
 
 ## Managing Agent Pools
 

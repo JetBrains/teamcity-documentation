@@ -24,8 +24,8 @@ The user exporting the project settings must have the 'view build configuration 
 Currently only the settings export is supported.
 
 External dependencies for build configurations are exported as well. A build configuration defined in one project can depend on other projects in a number of ways: it can
-* be associated with a [template](build-configuration-template.md) defined in the [parent projects](project.md),
-* use [vcs roots](vcs-root.md) or an [SSH key](ssh-keys-management.md) defined higher in the [project hierarchy](project.md),
+* be associated with a [template](build-configuration-template.md) defined in the [parent projects](project.md#Settings+Propagation),
+* use [vcs roots](vcs-root.md) or an [SSH key](ssh-keys-management.md) defined higher in the [project hierarchy](project.md#Project+Hierarchy),
 * use some external build configuration as a snapshot dependency.
 
 The `report.log` file included in the archive details reasons for exporting external entities. 

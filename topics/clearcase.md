@@ -20,7 +20,7 @@ If you plan to use the agent\-side [VCS Checkout Mode](vcs-checkout-mode.md), ma
 ## ClearCase Settings
 
 
-Common VCS Root properties [Configuring VCS Roots](configuring-vcs-roots.md). The section below contains a description of the fields and options specific to the ClearCase Version Control System. 
+Common VCS Root properties [are described here](configuring-vcs-roots.md#Common+VCS+Root+Properties). The section below contains a description of the fields and options specific to the ClearCase Version Control System. 
 
 
 

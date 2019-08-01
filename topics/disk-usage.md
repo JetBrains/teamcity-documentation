@@ -10,7 +10,7 @@ By default, the report displays data on the builds run from build configurations
 
 The report allows you to see which projects consume most of disk space and configure the [clean-up rules](clean-up.md); the link to the report is also available from the build history clean\-up page. This page also displays disk usage information for the selected project or build configuration when managing [clean-up rules](clean-up.md) in the __Configure Clean\-up__ section.
 
-You can also see which configurations produce [large build logs](server-health.md) and adjust the settings accordingly.
+You can also see which configurations produce [large build logs](server-health.md#Configurations+with+Large+Build+Logs) and adjust the settings accordingly.
 
 The report is automatically updated when a new build is run or removed: only the data pertaining to this build is analyzed and the corresponding information is reflected in the report. The report is completely updated when TeamCity performs a full disk scan: by default, after a build history clean\-up is run. You can force TeamCity to scan the disk on demand using the __Rescan now__ button, but it may be time\-consuming.
 

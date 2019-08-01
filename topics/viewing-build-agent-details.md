@@ -31,7 +31,7 @@ For each connected agent TeamCity provides the following information:
 
 Agent reboot is performed by executing an OS-specific command. Under certain circumstances the command might need customization specific to the OS environment. Additional configuration might be required if the default reboot command fails.
 
-To tweak the agent reboot, add the `teamcity.agent.reboot.command` agent configuration parameter to the [Build Agent Configuration](build-agent-configuration.md) file with the command to execute when reboot is required. Example configuration:
+To tweak the agent reboot, add the `teamcity.agent.reboot.command` agent configuration parameter to the [`buildagent.properties`](build-agent-configuration.md) file with the command to execute when reboot is required. Example configuration:
 
 ```Shell
 teamcity.agent.reboot.command=sudo shutdown -r 60

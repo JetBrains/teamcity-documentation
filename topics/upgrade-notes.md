@@ -1351,6 +1351,8 @@ If any of your agents are running under JDK version less than 1.6, the agents wi
 __Project/Template parameters override__   
 In TeamCity 7.0 project parameters have higher priority than parameters defined in template, i.e. if there is a parameter with some name and value in the project and there is parameter with the same name and different value in template of the same project, value from the project will be used. This was not so in TeamCity 6.5 and was [changed](http://youtrack.jetbrains.com/issue/TW-17247) to be more flexible when template belongs to anohter project.Build configuration parameters have the highest priority, as usual.
 
+<anchor name="no-sybase-support"/>
+
 __Support for Sybase is discontinued__   
   From this version support for Sybase as external database is shifted back into "experimental" state.   
   The reason for this decision is that it does not seem like the database is actively used with TeamCity, and supporting it requires a significant effort from TeamCity team which otherwise can be directed to improving more important areas of the product.   

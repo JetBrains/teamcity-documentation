@@ -16,7 +16,7 @@ A _VCS root_ defines a [connection to a version control system](configuring-vcs-
 
 <anchor name="SharedVCSRoots"/>
 
-VCS roots are created in a project and are available to all the Build Configurations defined in that project or its [subprojects](project.md).
+VCS roots are created in a project and are available to all the Build Configurations defined in that project or its [subprojects](project.md#Settings+Propagation).
 
 You can view all VCS roots configured within the project and create/edit/delete/detach them using the __VCS Roots__ page under the project settings in the Administration UI.If someone attempts to modify a VCS root that is used in more than one project or build configuration, TeamCity will issue a warning that the changes to the VCS root could potentially affect other projects or build configurations. The user is then prompted to either save the changes and apply them to all the affected projects and build configurations, or to make a copy of the VCS root to be used by either a specific build configuration or project.
 
@@ -97,7 +97,7 @@ Repository URL
 
 <td>
 
-URL to VCS repository. Supports URLs in [different formats](guess-settings-from-repository-url.md), like: `http(s)://`, `svn://`, `ssh://git@`, `git://` and others as well as URLs in Maven format.
+URL to VCS repository. Supports URLs in [different formats](guess-settings-from-repository-url.md#VCS+URL+Formats), like: `http(s)://`, `svn://`, `ssh://git@`, `git://` and others as well as URLs in Maven format.
 
 </td></tr><tr>
 

@@ -9,13 +9,13 @@ TeamCity Server keeps a log of internal activities that can be examined to inves
 
 The logs are stored in plain text files in a disk directory on the TeamCity server machine (usually in `<`[`TeamCity Server home`](teamcity-home-directory.md)`>/logs`). The files are appended with messages when TeamCity is running.
 
-While the server is running, the logs can be viewed in the web UI on the `Server Logs` tab of __Administration__ | __Diagnostics__ section.
+While the server is running, the logs can be viewed in the web UI on the `Server Logs` tab of __Administration | Diagnostics__ section.
 
 <tip>
 
 __Enable Debug in Server Logs__
 
-In the web UI, go to __Administration__ | __Diagnostics__ page. On the __Troubleshooting__ tab, choose a logging preset, view logs under __Server Logs__ subsection.   
+In the web UI, go to __Administration | Diagnostics__ page. On the __Troubleshooting__ tab, choose a logging preset, view logs under __Server Logs__ subsection.   
 
 If it is not possible to enable debug logging mode from the TeamCity web UI, refer to [Changing Logging Configuration](#Changing+Logging+Configuration) section to learn how to adjust logging options manually.
 </tip>
@@ -125,7 +125,7 @@ contains [clean-up](clean-up.md)\-related log
 
 <td>
 
-(off by default) Log of SQL queries, see [details](reporting-issues.md)
+(off by default) Log of SQL queries, see [details](reporting-issues.md#Database-related+Slowdowns)
 
 
 </td></tr><tr>
@@ -321,7 +321,7 @@ contains [clean-up](clean-up.md)\-related log
 
 <td>
 
-(off by default) logs of back\-up/ restore/ migration performed with [maintainDB tool](migrating-to-an-external-database.md)
+(off by default) logs of back\-up/ restore/ migration performed with [maintainDB tool](migrating-to-an-external-database.md#Full+Migration)
 
 
 </td></tr><tr>
@@ -363,7 +363,7 @@ contains [clean-up](clean-up.md)\-related log
 
 <td>
 
-logs related to communication between browsers and the TeamCity server using the [WebSocket connection](server-health.md)
+logs related to communication between browsers and the TeamCity server using the [WebSocket connection](server-health.md#WebSocket+connection+issues)
 
 
 </td></tr><tr>
@@ -394,7 +394,7 @@ While TeamCity is running, active logging settings can be changed by selecting b
 
 The active logging preset is changed in the __Administration | Diagnostics__ page, __Troubleshooting__, __Debug logging__ subsection. Choosing a preset changes logging configuration immediately and the preset is preserved after a server restart, until changed on the page again. It is recommended to return to the "&lt;Default&gt;" once the necessary logs were collected.
 
-The available presets are stored in the files with .xml extension under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging` directory. New files can be added into the directory and existing files can be modified (using [.dist convention](teamcity-data-directory.md)). New presets can also be uploaded via __Diagnostics | Logging Presets__.
+The available presets are stored in the files with .xml extension under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging` directory. New files can be added into the directory and existing files can be modified (using [.dist convention](teamcity-data-directory.md#.dist+Template+Configuration+Files)). New presets can also be uploaded via __Diagnostics | Logging Presets__.
 
 If it is not possible to enable debug logging mode via logging presets (for example, to get the logging during server initialization) or to make persistent changes to the logging, you can backup the `conf/teamcity-server-log4j.xml` file and copy/rename the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging/debug-general.xml` file over `conf/teamcity-server-log4j.xml` before the server start.
 

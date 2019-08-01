@@ -5,7 +5,7 @@ Various aspects of TeamCity behavior can be customized through a set options pas
 
 <note>
 
-You do not need to specify any of the options unless you are advised to do by the TeamCity support team or you know what you are doing.
+You do not need to specify any of the options unless you are advised to do by the TeamCity support team or you are confident in what you are doing.
 </note>
 
 In this section:

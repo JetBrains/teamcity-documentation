@@ -13,7 +13,7 @@ An individual project can be added to / removed from to the Projects Overview pa
 
 <img src="eye-button.png" width="986" alt="Disk usage in details"/>
 
-Note that if a project has [archived subprojects](archiving-projects.md) / [paused build configurations](build-configuration.md), they will also be displayed on the overview page and will be marked correspondingly.
+Note that if a project has [archived subprojects](archiving-projects.md) / [paused build configurations](build-configuration.md#Pausing+%2F+Activating+several+build+configurations+of+a+project), they will also be displayed on the overview page and will be marked correspondingly.
 
 
 In this section:

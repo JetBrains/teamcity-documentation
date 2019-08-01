@@ -55,13 +55,13 @@ However, it is __recommended__ to make the following adjustments to benefit from
 
 #### Proxy Server Configuration
 
-If a reverse proxy is used in front of the TeamCity server, it needs to be [configured](how-to.md) to support the WebSocket protocol.
+If a reverse proxy is used in front of the TeamCity server, it needs to be [configured](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) to support the WebSocket protocol.
 
 All URLs used by browsers that do not support the WebSocket connection are listed in the corresponding health report.
 
 #### BIO Connector Adjustment
 
-If Tomcat is configured to use the [BIO connector](http://tomcat.apache.org/tomcat-7.0-doc/config/http.html), the WebSocket protocol is [automatically disabled](http://tomcat.apache.org/tomcat-7.0-doc/web-socket-howto.html#Production_usage). It is recommended to change the Tomcat Connector settings [to use the NIO connector](known-issues.md).
+If Tomcat is configured to use the [BIO connector](http://tomcat.apache.org/tomcat-7.0-doc/config/http.html), the WebSocket protocol is [automatically disabled](http://tomcat.apache.org/tomcat-7.0-doc/web-socket-howto.html#Production_usage). It is recommended to change the Tomcat Connector settings [to use the NIO connector](known-issues.md#Slow+download+from+TeamCity+server).
 
 
 [//]: # (Internal note. Do not delete. "Server Healthd280e163.txt")    
@@ -79,7 +79,7 @@ This category shows the following errors:
 
 TeamCity will warn you if the server currently uses the internal database. [A standalone database is recommended as the storage engine](setting-up-an-external-database.md).
 
-As [TeamCity does not support Sybase as an external database](upgrade-notes.md), a warning message will be displayed if you are using Sybase.
+As [TeamCity does not support Sybase as an external database](upgrade-notes.md#no-sybase-support), a warning message will be displayed if you are using Sybase.
 
 ### Build Configuration Items
 
@@ -121,14 +121,14 @@ The general recommendation is to use parameter references for root settings, thu
 
 #### Trigger Rules for Unattached VCS roots
 
-TeamCity displays a warning if a rule of a [VCS Trigger or Schedule Trigger](configuring-vcs-triggers.md) references a VCS root which is not attached to any build configuration.
+TeamCity displays a warning if a rule of a [VCS Trigger or Schedule Trigger](configuring-vcs-triggers.md#VCS+Trigger+Rules) references a VCS root which is not attached to any build configuration.
 
 #### Redundant Trigger
 
 The report will show cases when a build trigger is redundant, for example:
 * There are two build configurations __A__ and __B__
 * __A__ snapshot depends on __B__
-* Both have VCS triggers, __A__ with the [Trigger on changes in snapshot dependencies](configuring-vcs-triggers.md) option enabled.
+* Both have VCS triggers, __A__ with the [Trigger on changes in snapshot dependencies](configuring-vcs-triggers.md#Trigger+a+build+on+changes+in+snapshot+dependencies) option enabled.
 In this case, the VCS trigger in __B__ is redundant and causes builds of __A__ to be put into the queue several times.
 
  
@@ -158,7 +158,7 @@ This section of the report will show possible frequent [clean checkout](clean-ch
 
 #### Custom Checkout Directory 
 
-Build configurations having different [VCS settings](configuring-vcs-settings.md) but the same [custom checkout directory](build-checkout-directory.md) may lead to frequent clean checkouts, slowing down the performance and hindering the consistency of incremental sources updates.
+Build configurations having different [VCS settings](configuring-vcs-settings.md) but the same [custom checkout directory](build-checkout-directory.md#Custom+checkout+directory) may lead to frequent clean checkouts, slowing down the performance and hindering the consistency of incremental sources updates.
 
 #### Build Files Cleaner (Swabra) Settings 
 
@@ -205,7 +205,7 @@ The report is displayed for the agents not used for 3 days and more, if
 
 The report displays  detected misconfiguration of the proxy server that is used to access the TeamCity web interface.
 
-See our [recommendations](how-to.md) how to set up a proxy server with TeamCity.
+See our [recommendations](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) how to set up a proxy server with TeamCity.
 
 ### Suggested Settings
 

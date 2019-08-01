@@ -173,7 +173,7 @@ To turn it off, make the line `<priority value="INFO"/>`.
 
 You can configure location of the logs by altering the value of the `teamcity_logs `property (passed to JVM via `-D` option). You can also change the Log4j configuration file location by changing the value of the `log4j.configuration` property. See the corresponding documentation [section](configuring-build-agent-startup-properties.md) on how to pass the options.
 
-For additional options on tweaking logging, consult the [TeamCity Server Logs](teamcity-server-logs.md#Changing+Logging+Configuration) section.
+For additional options on tweaking logging, refer to the [TeamCity Server Logs](teamcity-server-logs.md#Changing+Logging+Configuration) page.
 
 
 

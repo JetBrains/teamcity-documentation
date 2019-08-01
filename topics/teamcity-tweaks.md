@@ -4,7 +4,7 @@
 
 This page lists some of the the [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md) which can be used to tweak certain aspects of TeamCity behavior.
 It is not recommended to use any of these unless you face an issue which you expect to address by using the properties.
-Please note that the support for any of these properties can be abandoned in the future versions of TeamCity without any notice. Thus, if you find a property useful in your environment please let us know about that: detail your case and the properties/values used in an email sent to our [Feedback](https://confluence.jetbrains.com/display/TW/Feedback).
+Please note that the support for any of these properties can be abandoned in the future versions of TeamCity without any notice. Thus, if you find a property useful in your environment please let us know about that: detail your case and the properties/values used in an email sent to our [support email address](https://confluence.jetbrains.com/display/TW/Feedback).
 
 
 ## Web Page Refresh Interval
@@ -96,9 +96,9 @@ teamcity.ui.events.pollInterval
 The delay between an event (received via polling or WebSockets) and the ajax request to update the UI.
 
 	
-* With WebSocket, a client receives the event immediately, but reacts to it after the specified interval; as a result, e.g. a started build appears on the Overview page with a delay.
+* With WebSocket, a client receives the event immediately, but reacts to it after the specified interval; as a result, for example, a started build appears on the Overview page with a delay.
 	
-* With polling, a client receives the event during the polling request determined by `teamcity.ui.events.pollInterval` and reacts to it after the delay defined by `teamcity.ui.events.pollInterval`: e.g. a started build appears on the Overview page after `teamcity.ui.events.pollInterval` \+ `teamcity.ui.events.pollInterval` seconds
+* With polling, a client receives the event during the polling request determined by `teamcity.ui.events.pollInterval` and reacts to it after the delay defined by `teamcity.ui.events.pollInterval`: for example, a started build appears on the Overview page after `teamcity.ui.events.pollInterval` \+ `teamcity.ui.events.pollInterval` seconds
 
 
 </td>

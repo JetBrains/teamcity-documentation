@@ -4,7 +4,7 @@ This section covers how to set up the Google Mail and Google Talk as notificatio
 
 ## Google Mail
 
-On the __Administration__ | __Email Notifier__ page set the options as described below:
+On the __Administration | Email Notifier__ page set the options as described below:
 
 <table><tr>
 
@@ -112,7 +112,7 @@ SSL
 
 Thee settings were working with Google Talk and can still continue to work with Google Hangouts. However, since Google discontinues Jabber/XMPP support, they might stop working.
 
-On the __Administration__ | __Jabber Notifier__ page set the options as described below:
+On the __Administration | Jabber Notifier__ page set the options as described below:
 
 <table><tr>
 

@@ -10,7 +10,7 @@ For common VCS Root properties, see [this section](configuring-vcs-roots.md#Comm
 
 <note>
 
-Git command line client needs to be installed on the agents if the [agent-side checkout](vcs-checkout-mode.md) is used.
+Git command line client needs to be installed on the agents if the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used.
 </note>
 
 __Important notes__:

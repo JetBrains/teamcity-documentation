@@ -15,7 +15,7 @@ TeamCity always monitors the repositories from the server\-side to detect change
 
 TeamCity performs VCS\-related operations per each VCS root separately, thus it is advised to reuse VCS roots with same settings.
 
-When [parameter references](configuring-build-parameters.md) are used in a VCS root, TeamCity performs VCS\-related operations per each "VCS root instance", where "instance" is a unique set of VCS root parameters after references resolution. Adding parameters to the VCS roots does not reduce the number of VCS operations performed, it just allows sharing settings more effectively.
+When [parameter references](configuring-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) are used in a VCS root, TeamCity performs VCS\-related operations per each "VCS root instance", where "instance" is a unique set of VCS root parameters after references resolution. Adding parameters to the VCS roots does not reduce the number of VCS operations performed, it just allows sharing settings more effectively.
 
 ## Attach VCS Root
 
@@ -108,7 +108,7 @@ Show changes from snapshot dependencies
 
 <td>
 
-Configure whether TeamCity will __[show changes from snapshot dependencies](build-dependencies-setup.md)__. This also affects treatment of pending changes in schedule trigger.
+Configure whether TeamCity will __[show changes from snapshot dependencies](build-dependencies-setup.md#show-changes-from-dependencies)__. This also affects treatment of pending changes in schedule trigger.
 
 </td></tr><tr>
 
@@ -120,7 +120,7 @@ Exclude default branch changes from other branches
 
 <td>
 
-By default, when displaying pending changes in a feature branch or changes of a build on a branch, TeamCity includes changes in the [default branch](working-with-feature-branches.md) (till a build in the default branch) as well. This allows tracking the cases when a commit that broke a build was fixed in the default branch, but not in a feature branch.
+By default, when displaying pending changes in a feature branch or changes of a build on a branch, TeamCity includes changes in the [default branch](working-with-feature-branches.md#Default+branch) (till a build in the default branch) as well. This allows tracking the cases when a commit that broke a build was fixed in the default branch, but not in a feature branch.
 
 However, for large projects with multiple teams simultaneously working on lots of different branches this means that all the project committers (regardless of the branch they are committing to) will be notified when, for example, a commit in the default branch broke the build or if a force push was performed.
 
