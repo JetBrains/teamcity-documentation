@@ -20,7 +20,7 @@ TeamCity directly supports the following _testing frameworks_:
 
 __Ruby testing frameworks__, [Test::Unit](http://ruby-doc.org/stdlib/libdoc/test/unit/rdoc/classes/Test/Unit.html), [Test-Spec](http://search.cpan.org/~philip/Test-Spec-0.48/lib/Test/Spec.pm), [Shoulda](http://github.com/thoughtbot/shoulda), [RSpec](http://rspec.info/), [Cucumber](http://cukes.info), are supported by the TeamCity [Rake](rake.md) runner. The [minitest](https://rubygems.org/gems/minitest) framework requires the `minitest-reporters` gem to be additionally installed.
 
-There are also testing frameworks that have embedded support for TeamCity. e.g. [Gallio](net-testing-frameworks-support.md) and [xUnit](net-testing-frameworks-support.md).
+There are also testing frameworks that have embedded support for TeamCity: for example, [Gallio](net-testing-frameworks-support.md#Gallio) and [xUnit](net-testing-frameworks-support.md#xUnit).
 
 See also external [plugins](https://plugins.jetbrains.com/teamcity). 
 
@@ -28,9 +28,9 @@ Also, you can import test run XML reports of supported formats with [XML Report 
 
 ### Custom Testing Frameworks
 
-If there is no TeamCity support yet for your testing framework, you can report tests progress to TeamCity from the build via [service messages](build-script-interaction-with-teamcity.md) or generate one of the supported [XML reports](xml-report-processing.md) in the build.
+If there is no TeamCity support yet for your testing framework, you can report tests progress to TeamCity from the build via [service messages](build-script-interaction-with-teamcity.md#Reporting+Tests) or generate one of the supported [XML reports](xml-report-processing.md) in the build.
 
-Also, see [notes](how-to.md) on integrating with various reporting/metric tools.
+Also, see [notes](how-to.md#Integrate+with+Build+and+Reporting+Tools) on integrating with various reporting/metric tools.
 
 
 

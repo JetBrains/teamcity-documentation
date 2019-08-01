@@ -17,11 +17,11 @@ On this page:
 
 ## Adding Builds to Favorites
 
-To manually add a build to your favorites, use the appropriate option from the __Actions__ menu on the [Build results](working-with-build-results.md) page. Your favorite build will be marked with a star symbol ![star_filled.png](star_filled.png).
+To manually add a build to your favorites, use the appropriate option from the __Actions__ menu on the [Build Results](working-with-build-results.md) page. Your favorite build will be marked with a star symbol ![star_filled.png](star_filled.png).
 
 Any of your manually triggered builds and [personal builds](personal-build.md) can be added to your favorites automatically if you enable the corresponding setting in your [user profile settings](managing-your-user-account.md).
 
-You can also add a custom build to favorites by checking [the corresponding box](triggering-a-custom-build.md).
+You can also add a custom build to favorites by checking the [corresponding box](triggering-a-custom-build.md#Comment+and+Tags).
 
 ## Viewing Your Favorites
 

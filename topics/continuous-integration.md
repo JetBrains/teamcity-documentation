@@ -4,11 +4,11 @@ Continuous integration is a software engineering term describing a process that 
 
 
 	
-* Monitors a file system or version control system (e.g. CVS) for changes.
+* Monitors a file system or version control system (for example, CVS) for changes.
 	
-* Runs the build process (e.g. a make script or Ant\-style build script).
+* Runs the build process (for example, a make script or Ant\-style build script).
 	
-* Runs test scripts (e.g. JUnit or NUnit).
+* Runs test scripts (for example, JUnit or NUnit).
 
 
 

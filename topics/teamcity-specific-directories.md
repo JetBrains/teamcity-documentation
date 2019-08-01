@@ -140,7 +140,7 @@
 
 <td>
 
- If you have installed TeamCity using the __.exe__ or __tar.gz__ distribution, the path to the directory is \<[TeamCity Home](teamcity-home-directory.md)\>/webapps/ROOT`, by default. For the __.war__ distribution, the path to the directory would depend on where you have deployed TeamCity. 
+ If you have installed TeamCity using the `.exe` or `tar.gz` distribution, the path to the directory is \<[TeamCity Home](teamcity-home-directory.md)\>/webapps/ROOT, by default. For the `.war` distribution, the path to the directory would depend on where you have deployed TeamCity. 
 
 
 </td>

@@ -16,7 +16,7 @@ Each user account:
 
 
 
-In addition to logged in users, there is a special user account for non\-registered users called __Guest User__, that allows monitoring TeamCity projects without authorization. By default, guest login is disabled. Learn more at [Guest User](guest-user.md) section.
+In addition to logged in users, there is a special user account for non\-registered users called __Guest User__, that allows monitoring TeamCity projects without authorization. By default, guest login is disabled. Learn more on the [Guest User](guest-user.md) page.
 
 
 

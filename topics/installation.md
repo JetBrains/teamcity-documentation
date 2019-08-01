@@ -8,7 +8,7 @@ On this page:
 
 ## Check System Requirements
 
-Before you install TeamCity, please familiarize yourself with [Supported Platforms and Environments](supported-platforms-and-environments.md).  Additionally, read the [hardware requirements for TeamCity](how-to.md#Estimate-Hardware-Requirements-for-TeamCity). Note that these requirements differ significantly depending on the server load and the number of builds run.
+Before you install TeamCity, please read about the [Supported Platforms and Environments](supported-platforms-and-environments.md). Additionally, read the [hardware requirements for TeamCity](how-to.md#Estimate-Hardware-Requirements-for-TeamCity). Note that these requirements differ significantly depending on the server load and the number of builds run.
 
 ## Select TeamCity Installation Package
 

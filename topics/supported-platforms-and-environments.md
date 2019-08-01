@@ -1,6 +1,6 @@
 [//]: # (title: Supported Platforms and Environments)
 [//]: # (auxiliary-id: Supported Platforms and Environments)
-This page covers software\-related environments TeamCity works with. For hardware\-related notes, see [this section](how-to.md).
+This page covers software\-related environments TeamCity works with. For hardware\-related notes, see [this section](how-to.md#Estimate+Hardware+Requirements+for+TeamCity).
 
 __In this section:__
 
@@ -10,14 +10,14 @@ __In this section:__
 
 ### TeamCity Server
 
-Core features of TeamCity server are platform\-independent. See [considerations](how-to.md) on choosing server platform.   
+Core features of TeamCity server are platform\-independent. See [considerations](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server) on choosing server platform.   
 
 TeamCity server is a web application that runs within a capable J2EE servlet container.
 
 Requirements:
 
-* Java (JRE), see configuration [notes](installing-and-configuring-the-teamcity-server.md). Supported are: 
-   * OpenJDK or Oracle Java 8 (32 or 64 bit). Using latest available version of JDK 1.8 is recommended, Java versions before 1.8.0\_16 are not supported. Using [64 bit Java](installing-and-configuring-the-teamcity-server.md) is recommended for non\-trivial production usage.
+* Java (JRE), see configuration [notes](installing-and-configuring-the-teamcity-server.md#Java+Installation). Supported are: 
+   * OpenJDK or Oracle Java 8 (32 or 64 bit). Using latest available version of JDK 1.8 is recommended, Java versions before 1.8.0\_16 are not supported. Using [64 bit Java](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server) is recommended for non\-trivial production usage.
    * __Since TeamCity 2018.2__ OpenJDK 8 (by [AdoptOpenJDK](https://adoptopenjdk.net/)) is included in the Windows `.exe` TeamCity distribution (before 2018.2 Oracle Java was bundled with TeamCity Windows distribution). 
 
 For the `.war` distribution, note that the`.war` distribution is going to be discontinued, and it is highly recommended to use the `.tar.gz` distribution, which has Tomcat bundled. It is not advised to customize Tomcat settings unless absolutely necessary.   
@@ -56,7 +56,7 @@ The TeamCity Agent is a standalone Java application.
 
 Requirements:
 
-   * Java (JRE), see configuration [notes](setting-up-and-running-additional-build-agents.md). Supported are:
+   * Java (JRE), see configuration [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java). Supported are:
      * OpenJDK or Oracle Java 8 \- 10. Using latest available version of JDK 1.8 is recommended. Support for running agents under Java 1.6 and 1.7 is deprecated.
      * __Since TeamCity 2018.2__ OpenJDK 8 (by [AdoptOpenJDK](https://adoptopenjdk.net/)) is included in the Windows `.exe` TeamCity distribution (before 2018.2 Oracle Java was bundled with TeamCity Windows distribution). 
 
@@ -205,11 +205,10 @@ The requirements noted are for agent environment and are additional to those for
 
 ## Cloud Agents Integration
 
-
    * [Amazon EC2](setting-up-teamcity-for-amazon-ec2.md)
    * [VMWare vSphere](setting-up-teamcity-for-vmware-vsphere-and-vcenter.md)
 
-See also details on [the integrations](teamcity-integration-with-cloud-solutions.md) and non\-bundled and third\-party [cloud integration plugins](https://plugins.jetbrains.com/category/102-cloud-support/teamcity).
+See also details on the [cloud integrations](teamcity-integration-with-cloud-solutions.md) and non\-bundled and third\-party [cloud integration plugins](https://plugins.jetbrains.com/category/102-cloud-support/teamcity).
 
 ## VCS Hosting Services Integration
 
@@ -236,7 +235,7 @@ TeamCity provides productivity plugins for the following IDEs:
 
    * [Eclipse](eclipse-plugin.md): Eclipse versions 3.8 and 4.2\-4.6 are supported. Eclipse must be run under JDK 1.5\+
    * [IntelliJ Platform Plugin](intellij-platform-plugin.md): compatible with IntelliJ IDEA 15.0.x \- 2018.3.x (Ultimate and Community editions); as well as other IDEs based on the same version of the platform, including JetBrains RubyMine 6.3\+, JetBrains PyCharm 3.1\+, JetBrains PhpStorm/WebStorm 7.1\+, AppCode 2.1\+. See [more information](intellij-platform-plugin-compatibility.md) on compatibility.
-   * [Microsoft Visual Studio](visual-studio-addin.md) 2010, 2012, 2013, 2015, 2017 is supported by the TeamCity Visual Studio [Add-in shipped as a part of ReSharper Ultimate](visual-studio-addin.md). Installed .NET Framework is required. 
+   * [Microsoft Visual Studio](visual-studio-addin.md) 2010, 2012, 2013, 2015, 2017 is supported by the TeamCity Visual Studio [Add-in shipped as a part of ReSharper Ultimate](visual-studio-addin.md#Installing+Add-in). Installed .NET Framework is required. 
 
 ### Remote Run and Pre-tested Commit
 

@@ -127,7 +127,7 @@ __Project Viewer__
 
 <td>
 
-Project Viewer has read\-only access to projects and can only _view_ the project, its parent and subprojects. Project Viewer does not have permissions to [view agent details](build-agents-configuration-and-maintenance.md).
+Project Viewer has read\-only access to projects and can only _view_ the project, its parent and subprojects. Project Viewer does not have permissions to [view agent details](build-agents-configuration-and-maintenance.md#Viewing+TeamCity+agents+details).
 
 </td></tr><tr>
 
@@ -168,9 +168,9 @@ __Agent Manager__
 
 <td>
 
-The Agent Manager role grants a user permissions for customizing and managing [Build Agents](build-agent.md); changing the run configuration policy, [enabling/disabling](build-agents-configuration-and-maintenance.md) build agents, and [pausing/resuming build queue](build-queue.md).
+The Agent Manager role grants a user permissions for customizing and managing [Build Agents](build-agent.md); changing the run configuration policy, [enabling/disabling](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) build agents, and [pausing/resuming build queue](build-queue.md#Pausing%2FResuming+Build+Queue).
 
-__Prior to TeamCity 10.0__, this role is included in the Project Administrator role.      
+__Prior to TeamCity 10.0__, this role is included in the _Project Administrator_ role.      
 __Since TeamCity 10__, new agent management permissions have been introduced. See the [section below](#Agent+Management+Permissions).
 
 

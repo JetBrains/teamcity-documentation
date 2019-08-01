@@ -26,8 +26,9 @@ Other testing frameworks (for example, MbUnit, NBehave, NUnit, xUnit.Net, and cs
 As for coverage, Gallio supports NCover, to include coverage HTML reports to TeamCity build tab. See [Including Third-Party Reports in the Build Results](including-third-party-reports-in-the-build-results.md).
 
 <anchor name="xUnitSupport"/>
+<anchor name="SupportxUnit"/>
 
-## xUnitSupportxUnit
+## xUnit
 [//]: # (AltHead: xUnitSupport)
 
 [General information](http://xunit.github.io/docs/getting-test-results-in-teamcity.html) about xUnit support from its authors. Also a related [blog post](http://blog.benhall.me.uk/2008/09/xunit-teamcity-integration.html).

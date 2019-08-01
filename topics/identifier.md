@@ -13,16 +13,16 @@ Each entity has two identifiers:
 
 ## External IDs
 
-The so\-called 'external' identifiers are configured in the TeamCity web UI (e.g. Project ID) and must be unique within all the objects of the same type on the entire server; note that build configurations and templates share the same ID space.
+The so\-called 'external' identifiers are configured in the TeamCity web UI (for example, Project ID) and must be unique within all the objects of the same type on the entire server; note that build configurations and templates share the same ID space.
 
 IDs can contain only alpha\-numeric characters and underscores ("\_") \- maximum 80 characters \- and should start with a Latin letter.
 
 ### Using IDs
 
 External IDs are used:
-* in URLs of the web interface (including [RSS feeds](syndication-feed.md), [NuGet](nuget.md) feed), see [https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains](https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains).
-* in [dep.](predefined-build-parameters.md) and [vcsRoot.](predefined-build-parameters.md) parameter references
-* in [REST API](rest-api.md) and build scripts used to automate actions with TeamCity (e.g. download artifacts via direct URLs or Ivy)
+* in URLs of the web interface (including [RSS feeds](syndication-feed.md), [NuGet](nuget.md) feed), for example, [`https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains`](https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains).
+* in the [`dep.`](predefined-build-parameters.md#Dependencies+Properties) and [`vcsRoot.`](predefined-build-parameters.md#VCS+Properties) parameter references
+* in [REST API](rest-api.md) and build scripts used to automate actions with TeamCity (for example, download artifacts via direct URLs or Ivy)
 * in the configuration files storing settings of projects and build configurations under `<`[`TeamCity data directory`](teamcity-data-directory.md)`>/config`
 * in file and directory names under `<`[`TeamCity data directory`](teamcity-data-directory.md)`>/system` (e.g. build artifacts storage)
 

@@ -41,7 +41,7 @@ __IDE Notifier__
 
 <td>
 
-Displays the status of the specified build configurations and/or the status of the user changes in the user's IDE. Requires a corresponding TeamCity plugin: IntelliJ Platform plugin, Addin for Visual Studio or Eclipse Plugin; which can be downloaded from the [My Settings&amp;Tools ](subscribing-to-notifications.md)page. Refer to the [Installing Tools](installing-tools.md) section. 
+Displays the status of the specified build configurations and/or the status of the user changes in the user's IDE. Requires a corresponding TeamCity plugin: IntelliJ Platform plugin, Addin for Visual Studio or Eclipse Plugin; which can be downloaded from the [My Settings&amp;Tools](subscribing-to-notifications.md) page. Refer to the [Installing Tools](installing-tools.md) section. 
 
 
 </td></tr><tr>
@@ -83,7 +83,7 @@ __Atom/RSS Feed Notifier__
 
 <td>
 
-Notifications regarding specified events are sent via an Atom/RSS feed. See [this section](customizing-notifications.md).
+Notifications regarding specified events are sent via an Atom/RSS feed. See [this section](customizing-notifications.md#Syndication+Feed+Template).
 
 
 </td></tr></table>
@@ -96,5 +96,5 @@ __See also:__
 
 
 
-__User's Guide__: [Subscribing to Notifications](subscribing-to-notifications.md)  
+__User's Guide__: [Subscribing to Notifications](subscribing-to-notifications.md)   
 __Administrator's Guide__: [Customizing Notifications](customizing-notifications.md)
