@@ -9,7 +9,7 @@ In 2019, Team Foundation Server has been renamed to Azure DevOps Server. The con
 
 This page contains descriptions of the fields and options available when setting up a [VCS root](vcs-root.md) to connect to Microsoft Team Foundation Server Version Control.
 
-Common VCS Root properties are described [here](configuring-vcs-roots.md).
+Common VCS Root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
 When connecting to an Azure DevOps Git repository, select [Git](git.md) as Type of VCS. 
 
@@ -26,7 +26,7 @@ On this page:
 
 ## Cross-Platform TFS Integration
 
-TeamCity features the  [cross-platform TFS integration](https://blog.jetbrains.com/teamcity/2015/12/teamcity-cross-platform-tfs-support/), which works on Linux, macOS, and Windows platforms. Without installing additional software, TeamCity servers and build agents can interact with Team Foundation Servers 2012 or later, and Azure DevOps Services.
+TeamCity features the [cross-platform TFS integration](https://blog.jetbrains.com/teamcity/2015/12/teamcity-cross-platform-tfs-support/), which works on Linux, macOS, and Windows platforms. Without installing additional software, TeamCity servers and build agents can interact with Team Foundation Servers 2012 or later, and Azure DevOps Services.
 
 The built\-in TFS plugin can work in two modes: the default and cross\-platform. The working mode is based on the availability of Team Explorer (default mode): if it is not present, the plugin falls back from the default to cross\-platform mode. 
 
@@ -35,7 +35,7 @@ When detecting the Team Explorer version, TeamCity checks [.NET GAC](https://msd
 * `Windows x64: %CommonProgramFiles(x86)%\Microsoft Shared\Team Foundation Server\%version_number%`
 
 
-To enforce the cross\-platform mode on TeamCity, set the `teamcity.tfs.mode=java ` [internal property](configuring-teamcity-server-startup-properties.md) or [build configuration parameter](configuring-build-parameters.md).
+To enforce the cross\-platform mode on TeamCity, set the `teamcity.tfs.mode=java` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) or [build configuration parameter](configuring-build-parameters.md).
 
 ## TFS Settings
 
@@ -122,7 +122,7 @@ Learn more about authentication in [Azure DevOps](#Authentication+Notes).
 
 ## Agent-Side Checkout
 
-The [agent-side](vcs-checkout-mode.md) checkout is supported on Windows, as well as Linux and Mac agent machines.
+The [agent-side](vcs-checkout-mode.md#agent-checkout) checkout is supported on Windows, as well as Linux and Mac agent machines.
 
 TeamCity automatically creates a TFS workspace for each [checkout directory](build-checkout-directory.md) used. The workspace is created on behalf of the user account specified in the VCS root settings.
 

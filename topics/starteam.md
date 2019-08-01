@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: StarTeam)
 This page describes the fields and options available when setting up VCS roots using StarTeam.
 
-Common VCS Root properties are described [here](configuring-vcs-roots.md).
+Common VCS Root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
 On this page:
 

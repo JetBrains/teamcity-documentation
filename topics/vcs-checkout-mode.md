@@ -1,6 +1,6 @@
 [//]: # (title: VCS Checkout Mode)
 [//]: # (auxiliary-id: VCS Checkout Mode)
-The Version Control Settings page for a build configuration allows configuring how project source code is retrieved from VCS: you can [attach a VCS Root here](configuring-vcs-settings.md) and configure checkout options.
+The Version Control Settings page for a build configuration allows configuring how project source code is retrieved from VCS: you can [attach a VCS Root here](configuring-vcs-settings.md#Configuring+Checkout+Options+for+Build+Configuration) and configure checkout options.
 
 The VCS Checkout mode is a setting that affects how project sources reach an agent. This mode affects only sources checkout. The current revision and changes data retrieving logic is executed by the TeamCity server and thus TeamCity server needs to access the VCS server in any mode.
 
@@ -61,7 +61,7 @@ TeamCity falls back to the server\-side checkout in the following cases:
 
 <td>
 
-The TeamCity server will [export the sources](build-checkout-directory.md) and pass them to an agent before each build. Since the sources are exported rather than checked out, no administrative data is stored in the agent's file system and version control operations (like check\-in, label or update) cannot be performed from the agent. TeamCity optimizes communications with the VCS servers by [caching the sources](clean-checkout.md) and retrieving from the VCS server only the necessary changes. Unless [clean checkout](clean-checkout.md) is performed, the server sends to the agent incremental patches to update only the files changed since the last build on the agent in the given checkout directory.
+The TeamCity server will [export the sources](build-checkout-directory.md) and pass them to an agent before each build. Since the sources are exported rather than checked out, no administrative data is stored in the agent's file system and version control operations (like check\-in, label or update) cannot be performed from the agent. TeamCity optimizes communications with the VCS servers by [caching the sources](clean-checkout.md#Enforcing+Clean+Checkout) and retrieving from the VCS server only the necessary changes. Unless [clean checkout](clean-checkout.md) is performed, the server sends to the agent incremental patches to update only the files changed since the last build on the agent in the given checkout directory.
 
 <note>
 
@@ -94,7 +94,7 @@ VCS client software has to be installed on the agent (applicable to Perforce, Me
 * Machine\-specific settings (like configuring SSL communications, and so on) have to be configured on each machine using agent\-side checkout.
 * "Exclude" [VCS Checkout Rules](vcs-checkout-rules.md) in most cases cannot improve agent checkout performance because an agent checks out the entire top\-level directory included into a build, then deletes the files that were excluded. Perforce and Azure DevOps Server (formerly TFS) are exceptions to the rule, because before performing checkout, specific client mapping(Perforce)/workspace(TFS) is created based on checkout rules. "Exclude" checkout rules are not supported for Git and Mercurial when using checkout on an agent due to these DVCS limitations.    
 There is a [known issue](https://youtrack.jetbrains.com/issue/TW-43648) with CVS VCS root ignoring exclude checkout rules when using checkout on an agent.
-* Integration with certain version controls can provide additional options when agent\-side checkout is used. For example, [Subversion](subversion.md).
+* Integration with certain version controls can provide additional options when agent\-side checkout is used. For example, [Subversion](subversion.md#Checkout+on+agent+settings).
 
 </note>
 
@@ -112,9 +112,9 @@ Do not check out files automatically
 
 <td>
 
-TeamCity will not check out any sources automatically, the [default build checkout directory](build-checkout-directory.md) will still be created so that you could use it to check out the sources via a build script. Note that TeamCity will accurately report changes only if the checkout is performed on the revision specified by the [`build.vcs.number.*`](predefined-build-parameters.md) properties passed into the build.
+TeamCity will not check out any sources automatically, the [default build checkout directory](build-checkout-directory.md#Custom+checkout+directory) will still be created so that you could use it to check out the sources via a build script. Note that TeamCity will accurately report changes only if the checkout is performed on the revision specified by the [`build.vcs.number.*`](predefined-build-parameters.md#Server+Build+Properties) properties passed into the build.
 
-The build checkout directory will __not__ be cleaned automatically, unless the directory expiration period is [configured.](build-checkout-directory.md)
+The build checkout directory will __not__ be cleaned automatically, unless the directory expiration period is [configured](build-checkout-directory.md#Automatic+Checkout+Directory+Cleaning).
 
 
 </td></tr></table>

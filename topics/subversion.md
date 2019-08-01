@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Subversion)
 This page contains descriptions of Subversion\-specific fields and options available when setting up a VCS root.
 
-Common VCS Root properties are described [here](configuring-vcs-roots.md).
+Common VCS Root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
 You do not need Subversion client to be installed on the TeamCity server or agents. TeamCity bundles the Java implementation of SVN client ([SVNKit](http://svnkit.com/)).
 
@@ -237,7 +237,7 @@ Working copy format
 <td>
 
 Select the format of the working copy. Available values for this option are 1.4 through 1.8 (current default).   
-This option defines the format version of Subversion files located in `.svn` directories, when [VCS Checkout Mode](vcs-checkout-mode.md) is used. The specified format is important in two cases:
+This option defines the format version of Subversion files located in `.svn` directories, when [the checkout on agent mode](vcs-checkout-mode.md#agent-checkout) is used. The specified format is important in two cases:
 
 * If you run command\-line `svn` commands on the files checked out by TeamCity. For example, if your working copy has version 1.5, you will not be able to use Subversion 1.4 binaries to work with it.
 * If you use new Subversion features; for example, file\-based externals which were added in Subversion 1.6. Thus, unless you set the working copy format to 1.6, the file\-based externals will not be available in the __checkout on agent__ mode.
@@ -287,7 +287,7 @@ Labeling rules
 
 <td>
 
-Specify a newline\-delimited set of rules that defines the structure of the repository. See the [detailed format description](vcs-labeling.md) for more details.
+Specify a newline\-delimited set of rules that defines the structure of the repository. See the [detailed format description](vcs-labeling.md#Subversion+Labeling+Rules) for more details.
 
 
 </td></tr></table>
@@ -311,8 +311,8 @@ Sometimes, the SVN checkout operation for remote SVN servers may fail with a err
 ### Connection timeout
 
 Connection timeout is applied when TeamCity creates a connection to the SVN server. The default timeout for this operation is __60 seconds__, and can be specified via the TeamCity internal property `teamcity.svn.connect.timeout`, in seconds. The value of the property is set differently for server\-side checkout and agent\-side checkout:
-* Server\-side operations – [configure internal property](configuring-teamcity-server-startup-properties.md)
-* Agent\-side checkout – [add start-up property](configuring-build-agent-startup-properties.md)
+* Server\-side operations – [configure internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties)
+* Agent\-side checkout – [add start-up property](configuring-build-agent-startup-properties.md#Agent+Properties)
 
 ### Read timeout
 
@@ -327,8 +327,8 @@ If not specified, the default value for the timeout is 1 hour.
 #### Subversion server access via svn:// or svn+ssh://
 
 In this case the read timeout can be specified in seconds via the TeamCity internal property `teamcity.svn.read.timeout`. The default value is 30 minutes. The value of the property is set differently for server\-side checkout and agent\-side checkout:
-* Server\-side operations \- [configure internal property](configuring-teamcity-server-startup-properties.md)
-* Agent\-side checkout \- [add start-up property](configuring-build-agent-startup-properties.md)
+* Server\-side operations – [configure internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties)
+* Agent\-side checkout – [add start-up property](configuring-build-agent-startup-properties.md#Agent+Properties)
 
 ## Miscellaneous
 

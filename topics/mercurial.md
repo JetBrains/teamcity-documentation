@@ -5,13 +5,13 @@ TeamCity uses the typical Mercurial command line client: hg command. Mercurial 1
 
 <note>
 
-Mercurial is to be installed on the server machine and, if the [agent-side checkout](vcs-checkout-mode.md) is used, on the agents.
+Mercurial is to be installed on the server machine and, if the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used, on the agents.
 </note>
 
 Note that:
 * __Remote Run__ from IDE is not supported. Please use [Branch Remote Run Trigger](branch-remote-run-trigger.md) instead.
 * Checkout rules for agent\-side checkout are not supported except for the `.=><target_dir>` rule.
-For common VCS Root properties, see [this section](configuring-vcs-roots.md). The section below contains the description of Mercurial\-specific fields and options.
+For common VCS Root properties, see [this section](configuring-vcs-roots.md#Common+VCS+Root+Properties). The section below contains the description of Mercurial\-specific fields and options.
 
 TeamCity supports Mercurial out of the box.
 
@@ -178,13 +178,13 @@ The plugin tries to run the `hg version` command using the path specified by the
 
 If this parameter is not set, the plugin uses `hg` as a path to the command, assuming it is somewhere in the $PATH. If the command is executed successfully and mercurial has an appropriate version (1.5.2\+), then the hg\-plugin reports the path to hg in the `teamcity.hg.agent.path` parameter.
 
-During the build, the plugin uses the hg specified in the __HG command path__ field of a VCS root settings. To use the detected hg, put `%teamcity.hg.agent.path%` in this field. Configurations with such settings will be run only on agents which report the path to hg.
+During the build, the plugin uses the hg specified in the _HG command path_ field of a VCS root settings. To use the detected hg, put `%teamcity.hg.agent.path%` in this field. Configurations with such settings will be run only on agents which report the path to hg.
 
 The server side of the plugin checks the value of the `teamcity.hg.customServerHgPathWhitelist` [internal property](configuring-teamcity-server-startup-properties.md). The property contains the `;`-separated list of allowed hg paths to use on the server.  If the path specified in VCS root is in whitelist, then it is used on the server. If not, the path specified in the `teamcity.hg.server.path` [internal property](configuring-teamcity-server-startup-properties.md) is used. If this property is not set, TeamCity server uses `hg` from the `$PATH`.
 
 ## Agent Settings
 
-These are the settings used in case of the agent\-side checkout ([default mode](vcs-checkout-mode.md)), which requires Mercurial installed on all agents.
+These are the settings used in case of the agent\-side checkout ([default mode](vcs-checkout-mode.md#prefer-agent-checkout)), which requires Mercurial installed on all agents.
 
 <table><tr>
 

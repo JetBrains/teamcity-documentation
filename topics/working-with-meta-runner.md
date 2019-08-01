@@ -5,7 +5,7 @@ A _Meta\-Runner_ allows you to extract build steps, requirements and parameters 
 
 Basically, a meta\-runner is a set of build steps from one build configuration that you can reuse in another; it is an xml definition containing build steps, requirements and parameters that you can utilize in xml definitions of other build configurations. TeamCity allows extracting meta\-runners using the web UI.
 
-With a meta\-runner, you can easily reuse existing runners, create new runners for typical tasks (e.g. publish to FTP, delete directory, etc.), you can simplify your build configuration and decrease a number of build steps.
+With a meta\-runner, you can easily reuse existing runners, create new runners for typical tasks (for example, publish to FTP, delete directory), you can simplify your build configuration and decrease a number of build steps.
 
 All meta\-runners are stored on a project level, so they are available within this project and its subprojects only, and are not visible outside. If a meta\-runner is stored on the __&lt;Root project&gt;__ level, it is available globally (in all projects).
 
@@ -18,7 +18,7 @@ On this page:
 
 ## Using Meta-Runners Power Pack
 
-[Meta-runners Power Pack for TeamCity ](https://github.com/jetbrains/meta-runner-power-pack) available on GitHub is a collection of meta\-runners for various tasks like downloading a file, triggering a build, tagging a build, changing a build status, running PHP tasks, etc.
+[Meta-runners Power Pack for TeamCity](https://github.com/jetbrains/meta-runner-power-pack) available on GitHub is a collection of meta\-runners for various tasks like downloading a file, triggering a build, tagging a build, changing a build status, running PHP tasks, and so on.
 
 Each file called `*MRPP_\<some text\>.xml*` contains a definition of a single Meta\-runner. Download the required meta\-runner (or copy its definition to a file) and install it as described in the section below.
 
@@ -50,7 +50,7 @@ To create a meta\-runner, follow these steps (described below in more detail):
 2. [Make sure the build configuration is working](#Verifying+Build+Configuration+Works+Properly).
 3. [Extract a meta-runner to the desired project](#Extracting+and+Using+Meta-Runner).
 
-In this example, we will create a meta\-runner to publish some artifacts to TeamCity with the help of corresponding [service message](build-script-interaction-with-teamcity.md).
+In this example, we will create a meta\-runner to publish some artifacts to TeamCity with the help of corresponding [service message](build-script-interaction-with-teamcity.md#Publishing+Artifacts+while+the+Build+is+Still+in+Progress).
 
 Usually artifacts configured in a build configuration are published when the build finishes. However, sometimes for long builds with multiple build steps we need artifacts faster. In this example, we will create a runner which can be inserted between any build steps and can be configured to publish artifacts produced by previous steps.
 

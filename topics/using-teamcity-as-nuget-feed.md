@@ -99,7 +99,7 @@ Current References
 
 By default, TeamCity will not add .nupkg artifacts published by builds into the project NuGet feed. You can select one of the following options:
 * to index packages published by selected build configurations only, add the [NuGet packages indexer](nuget-packages-indexer.md) build feature to these build configurations
-* to index all .nupkg files published as build artifacts in the project, enable __Automatic NuGet Packages Indexing__ on the NuGet Feed page of the project settings
+* to index all `.nupkg` files published as build artifacts in the project, enable __Automatic NuGet Packages Indexing__ on the NuGet Feed page of the project settings
 * use the [NuGet Pack](nuget-pack.md) build step with the _Publish created packages to build artifacts_ checkbox.  
 Besides, the `.nupkg` files indexing is performed by the agent itself while publishing build artifacts.
 

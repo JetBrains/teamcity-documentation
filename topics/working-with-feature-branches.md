@@ -12,7 +12,7 @@ On this page:
 
 ## Supported version control systems
 
-[Git](git.md) and [Mercurial](mercurial.md) feature branches are supported as well as Perforce [branch streams support](perforce.md).
+[Git](git.md) and [Mercurial](mercurial.md) feature branches are supported as well as Perforce [branch streams support](perforce.md#branch-support).
 
 <anchor name="branchSpec"/>
 
@@ -21,7 +21,7 @@ On this page:
 To start working with DVCS branches, you need to configure which branches need to be watched for changes. This is done in the __General Settings__ section of a [Git](git.md) or [Mercurial](mercurial.md) VCS root via the __Branch Specification__ field.    
 With Perforce, check the corresponding box to enable feature branches support, which will display the branch specification field. The field accepts a list of branch names or patterns. TeamCity monitors the branches matched by the branch specification in addition to the [default branch](#Default+branch).
 
-Once you've configured the branch specification, TeamCity will start to monitor these branches for changes. If your build configuration has [a VCS trigger and a change is found in some branch](configuring-vcs-triggers.md), TeamCity will trigger a build in this branch. From the build configuration home page you'll also be able to filter the history, change log, pending changes and issue log by the branch name. Branch names will also appear in the custom build dialog, so you'll be able to manually trigger a custom build on a branch too.
+Once you've configured the branch specification, TeamCity will start to monitor these branches for changes. If your build configuration has [a VCS trigger and a change is found in some branch](configuring-vcs-triggers.md#Branch+Filter), TeamCity will trigger a build in this branch. From the build configuration home page you'll also be able to filter the history, change log, pending changes and issue log by the branch name. Branch names will also appear in the custom build dialog, so you'll be able to manually trigger a custom build on a branch too.
 
 The syntax of the branch specification field is newline\-delimited list of "`+|-:branch_name`" rules.       
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
@@ -80,11 +80,10 @@ To run builds on GitHub pull request branches, use the [Pull Requests](pull-requ
 
 When configuring a VCS root for DVCS, you need to specify the branch name to be used as the default one. The default branch has special meaning:
 * It is a fallback branch to use when the branch is not specified or the specified branch is not included by the branch specification (for example, when someone just clicks on the __Run__ button without selecting a branch).
-* It can be used when displaying sequences of builds and changes and reaching the moment of the branch creation (see "[Exclude default branch changes from other branches](configuring-vcs-settings.md)" option).
+* It can be used when displaying sequences of builds and changes and reaching the moment of the branch creation.
 * The default branch allows using different branches in different VCS roots (for example, if one of the roots is Git and another is Mercurial) and in different builds when they are linked by a snapshot dependency. When the top chain build is triggered in the default branch, all its dependencies will be built in their respective default branches as well.
 
-It is possible to [disable builds in the default branch](configuring-vcs-settings.md) if you only need to build branches matched by the branch specification.    
-Unless disabled, the default branch is always implicitly included into the branch specification. In the TeamCity UI the default branch is marked with the darker background of the branch marker.
+Unless disabled via a [branch filter](branch-filter.md), the default branch is always implicitly included into the branch specification. In the TeamCity UI the default branch is marked with the darker background of the branch marker.
 
 ## My branches
 
@@ -137,7 +136,8 @@ You can also filter history by a branch name if you're interested in a particula
 
 ## Changes
 
-For each build TeamCity shows changes included in it. For builds from branches the changes calculation process takes the branch into account and presents you with the changes relevant to the build branch. The changes for a build in a branch are calculated as the changes from the build's revision to the previous build in the branch or a build in the default branch. There is an [option](configuring-vcs-settings.md) to exclude default branch changes, though. The change log with its graph of commits will help you understand what is going on in the monitored branches.
+For each build TeamCity shows changes included in it. For builds from branches the changes calculation process takes the branch into account and presents you with the changes relevant to the build branch. The changes for a build in a branch are calculated as the changes from the build's revision to the previous build in the branch or a build in the default branch.   
+The change log with its graph of commits will help you understand what is going on in the monitored branches.
 
 ![branchesChange.png](branchesChange.png)
 
@@ -151,7 +151,7 @@ In a build configuration with configured branches, most UI pages show active bra
 
 An _active branch_ is a branch with the recent activity: it has recent builds or exists in the repository with recent commits.    
 
-The threshold for activity can be configured via build configuration parameters. The parameters can be changed either in a build configuration (this will affect one build configuration only), project, or in the [internal properties](configuring-teamcity-server-startup-properties.md) (this defines defaults for the entire server). A parameter in the configuration overrides a parameter in the [internal properties](configuring-teamcity-server-startup-properties.md).
+The threshold for activity can be configured via build configuration parameters. The parameters can be changed either in a build configuration (this will affect one build configuration only), project, or in the [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (this defines defaults for the entire server). A parameter in the configuration overrides a parameter in the [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
 A branch is considered active if:
 * it is present in the VCS repository and has recent commits (i.e. commits with the age less than the value of the `teamcity.activeVcsBranch.age.days` parameter, 7 days by default).
@@ -263,7 +263,7 @@ If you need to get the branch name in the build script or use it in other build 
 
 ## Clean-up
 
-Clean\-up rules are applied [independently](clean-up.md) to each [active branch](#Active+branches).
+Clean\-up rules are applied [independently](clean-up.md#Clean-up+in+Build+Configurations+with+Feature+Branches) to each [active branch](#Active+branches).
 
 ## Manual branch merging
 

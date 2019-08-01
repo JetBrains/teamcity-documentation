@@ -35,7 +35,7 @@ Once the key is uploaded, a VCS root can be configured to use this uploaded key.
 
 See [SSH Agent](ssh-agent.md) for usage from within the build scripts.
 
-The uploaded key can be used in a VCS root. SSH key is used on the server and is also passed to the agent in case [agent-side checkout](vcs-checkout-mode.md) is configured.
+The uploaded key can be used in a VCS root. SSH key is used on the server and is also passed to the agent in case [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is configured.
 
 During the build with agent\-side checkout, the Git plugin downloads the key from the server to the agent. It temporarily saves the key on the agent's file system and removes it after `git fetch/clone` is completed.
 

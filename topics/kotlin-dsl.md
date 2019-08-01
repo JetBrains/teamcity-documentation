@@ -249,7 +249,7 @@ In __TeamCity 2018.2__ we introduced a new option in the UI to help those using 
 
 ### Why portable DSL requires the same prefix for all IDs?
 
-In TeamCity projects, templates, build configurations and VCS roots all have [unique IDs](identifier.md). These IDs usually look like: `<parent project id>_<entity id>`.
+In TeamCity projects, templates, build configurations and VCS roots all have [unique IDs](identifier.md#Universally+Unique+IDs). These IDs usually look like: `<parent project id>_<entity id>`.
 
 Since these IDs must be unique, there cannot be two different entities in the system with the same ID. 
 

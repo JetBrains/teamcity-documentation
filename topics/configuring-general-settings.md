@@ -71,7 +71,7 @@ Optional description for the build configuration.
 
 <td>
 
-A pattern which is resolved and assigned to the Build Number on the build start.
+A pattern which is resolved and assigned to the [Build Number](#Build+Number+Format) on the build start.
 
 
 </td></tr><tr>
@@ -225,7 +225,7 @@ the revision used for the build of the VCS root with `<VCS_root_name>` name. [Re
 
 <td>
 
-a value of the build property with the corresponding name. All the [Predefined Build Parameters](predefined-build-parameters.md) are supported (including [Reference-only server properties](predefined-build-parameters.md)).
+a value of the build property with the corresponding name. All the [Predefined Build Parameters](predefined-build-parameters.md) are supported (including [Reference-only server properties](predefined-build-parameters.md#Configuration+Parameters)).
 
 
 </td></tr></table>
@@ -237,7 +237,7 @@ __A build number format example:__
 `1.0.%build.counter%.%build.vcs.number.My_Project_svn%`
 </tip>
 
-Though not required, it is still highly recommended to ensure the build numbers are unique. Please include the build counter in the build number and do not reset the build counter to lesser values. It is also possible to change the build number from within your build script. For details, refer to [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md).
+Though not required, it is still highly recommended to ensure the build numbers are unique. Please include the build counter in the build number and do not reset the build counter to lesser values. It is also possible to change the build number from within your build script. For details, refer to [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md#Reporting+Build+Number).
 
 ### Artifact Paths
 
@@ -278,7 +278,7 @@ Note that although absolute paths are supported in the source part, it is recomm
 The optional part starting with the `=>` symbols and followed by the target directory name can be used to publish the files into the specified target directory. If the target directory is omitted, the files are published in the root of the build artifacts. You can use "`.`" (dot) as a reference to the build checkout directory.   
 The target paths cannot be absolute. Non\-relative paths will produce errors during the build. 
 * `target_directory` — (optional) the directory in the resulting build's artifacts that will contain the files determined by the left part of the pattern. 
-* `target_archive` —  (optional) the path to the archive to be created by TeamCity by packing build artifacts determined in the left part of the pattern. TeamCity treats the right part of the pattern as `target\_archive` whenever it ends with a [supported archive extension](patterns-for-accessing-build-artifacts.md), i.e. `.zip`, `.7z`, `.jar`, `.tar.gz`, or `.tgz`.
+* `target_archive` —  (optional) the path to the archive to be created by TeamCity by packing build artifacts determined in the left part of the pattern. TeamCity treats the right part of the pattern as `target\_archive` whenever it ends with a [supported archive extension](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+an+Archive), i.e. `.zip`, `.7z`, `.jar`, `.tar.gz`, or `.tgz`.
 
 #### Examples:
 
@@ -312,11 +312,11 @@ You can restrict running [personal builds](personal-build.md) by unchecking the 
 
 This option enables retrieving the status and basic details of the last build in the build configuration without requiring any user authentication. Note that this also allows getting the status of any specific build in the build configuration (however, builds cannot be listed and no other information except the build status (`success/failure/internal error/cancelled`) is available).
 
-The status can be retrieved via the HTML status widget described below, or via a single icon with the help of [REST API](rest-api.md).
+The status can be retrieved via the HTML status widget described below, or via a single icon with the help of [REST API](rest-api.md#Build+Status+Icon).
 
 #### HTML Status Widget
 
-This feature allows you to get an overview of the current project status on your company's website, wiki, Confluence or any other web page.When the __Enable status widget__ option is enabled, an HTML snippet can be included into an external web page and will display the current build configuration status.For build status icon as a single image, check [REST build status icon](rest-api.md).
+This feature allows you to get an overview of the current project status on your company's website, wiki, Confluence or any other web page.When the __Enable status widget__ option is enabled, an HTML snippet can be included into an external web page and will display the current build configuration status.For build status icon as a single image, check [REST build status icon](rest-api.md#Build+Status+Icon).
 
 The following build process information is provided by the status widget:
 * The latest build results,

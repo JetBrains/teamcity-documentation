@@ -6,7 +6,7 @@ On this page:
 <tag-list of="chapter" mode="tree" depth="4"/>
 
 
-This section details creating build configurations via the TeamCity web UI. Other options include the [REST API](rest-api.md) and using TeamCity project configuration in [DSL based on the Kotlin language](storing-project-settings-in-version-control.md).
+This section details creating build configurations via the TeamCity web UI. Other options include the [REST API](rest-api.md#Build+Configuration+And+Template+Settings) and using TeamCity project configuration in [DSL based on the Kotlin language](storing-project-settings-in-version-control.md).
 
 To create a build configuration, open __General Settings__ of a project and click __Create build configuration__ under the __Build Configurations__ section.
 
@@ -31,9 +31,10 @@ When build configurations are created, you can:
 1. On the __Administration &gt; Projects__ page, select the desired project in the list. (Alternatively, open the project using the __Projects__ popup, and click the __Edit Project Settings__ link on the right).  The __Project Settings__ page opens.
 2. On the Project Settings page, __Build Configurations__ section, click __Create build configuration.__
 3. In the Create Build Configuration dialog, specify the name, id and (optionally) description for the build configuration, click __Create__.
-4. Proceed with creating other settings: * [Create/edit VCS roots and specify VCS-specific settings](configuring-vcs-settings.md)
- * On the __Build Steps__ page, configure build steps discovered by the automatic detection. ro create them manually by selecting a desired build runner from the drop\-down list. Click __Save__. You can add as many build steps as you need within one build configuration. Note that they will be executed sequentially. In the end, the build gets the merged status and the output goes into the same build log. If some step fails, the rest is executed or not, depending on their [step execution policy](configuring-build-steps.md).
- * Additionally, configure [build triggering options](configuring-build-triggers.md), [dependencies](configuring-dependencies.md), [properties and variables](configuring-build-parameters.md) and [agent requirements](configuring-agent-requirements.md).
+4. Proceed with creating other settings:   
+   * [Create/edit VCS roots and specify VCS-specific settings](configuring-vcs-settings.md)
+   * On the __Build Steps__ page, configure build steps discovered by the automatic detection. ro create them manually by selecting a desired build runner from the drop\-down list. Click __Save__. You can add as many build steps as you need within one build configuration. Note that they will be executed sequentially. In the end, the build gets the merged status and the output goes into the same build log. If some step fails, the rest is executed or not, depending on their [step execution policy](configuring-build-steps.md#Execution+policy).
+   * Additionally, configure [build triggering options](configuring-build-triggers.md), [dependencies](configuring-dependencies.md), [properties and variables](configuring-build-parameters.md), and [agent requirements](configuring-agent-requirements.md).
 
 ## Creating New Build Configuration from URL
 
@@ -47,7 +48,7 @@ You can create a build configuration using a VCS URL:
 4. TeamCity will suggest the build configuration name and will configure the rest of settings for you.
    * it will determine the type of the VCS repository and create a [VCS root](vcs-root.md). 
    * TeamCity will attempt to auto\-detect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects. If none found, you will have to [configure build steps manually](http://Configuring Build Steps).
-   * Next, TeamCity UI will display suggestion icons with prompts to create [build triggers](configuring-build-triggers.md), [failure conditions](build-failure-conditions.md) and [build features](adding-build-features.md). Depending on the build configuration settings, it may suggest some additional configuration options.
+   * Next, TeamCity UI will display suggestion icons with prompts to create [build triggers](configuring-build-triggers.md), [failure conditions](build-failure-conditions.md), and [build features](adding-build-features.md). Depending on the build configuration settings, it may suggest some additional configuration options.
 5. After the build configuration is created, you can run a build and/or tweak the settings.
 
 ## Creating  New Build Configuration pointing to GitHub.com repository
@@ -74,7 +75,7 @@ On the __Auto\-detected Build Steps__ __page__ select the step(s) to use in your
 Creating a new [build configuration template](build-configuration-template.md) is similar to creating a new configuration:
 1. On the __Administration | Projects__ page, select the desired project in the list. (Alternatively, open the project using the __Projects__ popup, and click the __Edit Project Settings__ link on the right).  The __Project Settings__ page opens.
 
-2. On the Project Settings page, __Build Configuration Templates__ section, click the __Create template__ button and proceed with configuring [general settings](configuring-general-settings.md), [VCS settings](configuring-vcs-settings.md) and [build steps](configuring-build-steps.md).
+2. On the Project Settings page, __Build Configuration Templates__ section, click the __Create template__ button and proceed with configuring [general settings](configuring-general-settings.md), [VCS settings](configuring-vcs-settings.md), and [build steps](configuring-build-steps.md).
 
 Alternatively, you can create a build configuration template from an existing build configuration:
 1. Open the existing build configuration settings page, click __Actions__ at the top right corner of the screen, and select the __Extract Template__ option.
@@ -90,7 +91,7 @@ To create a build configuration based on a template:
 
 <note>
 
-The settings specified in the template cannot be edited in a configuration created from this template. However, some of them can be [redefined in a build configuration](build-configuration-template.md). Note that modifying the settings of the template itself will affect __all configurations__ based on this template.
+The settings specified in the template cannot be edited in a configuration created from this template. However, some of them can be [redefined in a build configuration](build-configuration-template.md#Redefining+settings+inherited+from+template). Note that modifying the settings of the template itself will affect __all configurations__ based on this template.
 </note>
 
 Alternatively, you can create a build configuration based on a template as follows:

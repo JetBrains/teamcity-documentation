@@ -177,7 +177,7 @@ JDK
 
 <td>
 
-Select a JDK. [This section](predefined-build-parameters.md) details the available options. The default is `JAVA_HOME` environment variable or the agent's own Java.
+Select a JDK. [This section](predefined-build-parameters.md#Defining+Java-related+Environment+Variables) details the available options. The default is `JAVA_HOME` environment variable or the agent's own Java.
 
 
 </td></tr><tr>

@@ -18,8 +18,8 @@ Note that the status of the build step and the build can be different. A build s
 ### Execution policy
 
 You can specify the step execution policy via the __Execute step__ option:
-* __Only if build status is successful__ \- before starting the step, the build agent requests the build status from the server, and skips the step if the status is failed. This considers the failure conditions processed by the server, like failure on test failures or on metric change. Note that this still can be not exact as some failure conditions are processed on the server asynchronously ([TW-17015](https://youtrack.jetbrains.com/issue/TW-17015))
-* __If all previous steps finished successfully__ \- the build analyzes only the build step status on the build agent, and doesn't send a request to the server to check the build status and considers only important step failures.
+* __Only if build status is successful__: before starting the step, the build agent requests the build status from the server, and skips the step if the status is failed. This considers the failure conditions processed by the server, like failure on test failures or on metric change. Note that this still can be not exact as some failure conditions are processed on the server asynchronously ([TW-17015](https://youtrack.jetbrains.com/issue/TW-17015))
+* __If all previous steps finished successfully__: the build analyzes only the build step status on the build agent, and doesn't send a request to the server to check the build status and considers only important step failures.
 * __Even if some of previous steps failed__: select to make TeamCity execute this step regardless of the status of previous steps and status of the build.
 * __Always, even if build stop command was issued__: select to ensure this step is always executed, even if the build was canceled by a user. For example, if you have two steps with this option configured, stopping the build during the first step execution will interrupt this step, while the second step will still run. Issuing the stop command for the second time will result in ignoring the execution policy: the build will be terminated.
 

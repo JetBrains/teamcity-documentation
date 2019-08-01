@@ -24,7 +24,7 @@ By default, the synchronization of the project settings with the version control
 
 To enable it, go to __Project Settings | Versioned Settings__.
 
-The "_Enable/disable versioned settings_" permission is required (default for the [System Administrator](role-and-permission.md) role).
+The "_Enable/disable versioned settings_" permission is required (default for the [System Administrator](role-and-permission.md#Per-Project+Authorization+Mode) role).
 
 The __Configuration__ tab is used to define
 * whether the synchronization settings are the same as in the parent project;
@@ -53,8 +53,8 @@ Before starting a build, TeamCity stores configuration for this build in build i
 
 To define which settings to take __when build starts__, open the __Project Settings | Versioned Settings__ page click _Show advanced options_ and select one of the following options:
 * __always use current settings__: all builds use current project settings from the TeamCity server. Settings changes in branches, history, and personal builds are ignored. Users cannot run a build with custom project settings.
-* __use current settings by default__: a build uses the latest project settings from the TeamCity server. Users can run a build with older project settings via the [custom build dialog](triggering-a-custom-build.md).
-* __use settings from VCS__: builds in branches and history builds, which use settings from VCS, load settings from the versioned settings revision calculated for the build. Users can change configuration settings in [personal builds from IDE](remote-run.md) or can run a build with project settings current on the TeamCity server via the [custom build dialog](triggering-a-custom-build.md).
+* __use current settings by default__: a build uses the latest project settings from the TeamCity server. Users can run a build with older project settings via the [custom build dialog](triggering-a-custom-build.md#Changes).
+* __use settings from VCS__: builds in branches and history builds, which use settings from VCS, load settings from the versioned settings revision calculated for the build. Users can change configuration settings in [personal builds from IDE](remote-run.md) or can run a build with project settings current on the TeamCity server via the [custom build dialog](triggering-a-custom-build.md#Changes).
    * changes in the following settings will __affect__ the build:
      * build number pattern
      * build steps (build steps parameters and their order)
@@ -90,7 +90,7 @@ If this option is disabled, the [security implications](#Implications+of+Storing
 If you need to add a password into the versioned settings not via the TeamCity UI (for example, adding settings with Kotlin\-based `DSL`), add the password to the project in TeamCity and get the corresponding token to use in the settings (select _Generate token for a secure value_ in the __Actions__ drop-down menu). 
 
 At this time passwords are not inheritable by projects hierarchy. If a setting in a project (a VCS root, OAuth connection, cloud profile) requires a password, the token generated for this password can be used in this project only. For instance, it is not possible to take a generated token and use it in a similar setting in a subproject. A new token should be generated in this case.   
-If you need to use a secure value in the nested projects, consider adding a [password parameter](typed-parameters.md) with the secure value and using a [reference](configuring-build-parameters.md) to the parameter in the nested projects.
+If you need to use a secure value in the nested projects, consider adding a [password parameter](typed-parameters.md#Adding+Parameter+Specification) with the secure value and using a [reference](configuring-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) to the parameter in the nested projects.
 
 
 ### Implications of Storing Security Data in VCS 
