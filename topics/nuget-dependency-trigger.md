@@ -15,7 +15,7 @@ For a TeamCity server running on __Linux__, the NuGet dependency trigger will re
 
 
 ## Configuring NuGet Dependency Trigger
-1. Select the NuGet version to use from the __NuGet.exe__ drop\-down list (if you have [installed NuGet beforehand](nuget.md)), or specify a custom path to `NuGet.exe`;
+1. Select the NuGet version to use from the __NuGet.exe__ drop\-down list (if you have [installed NuGet beforehand](nuget.md#Installing+NuGet+to+TeamCity+agents)), or specify a custom path to `NuGet.exe`;
 2. Specify the NuGet package source, if it is different from `nuget.org`;
 3. Specify the credentials to access NuGet feed if required
 4. Enter the package Id to check for updates.

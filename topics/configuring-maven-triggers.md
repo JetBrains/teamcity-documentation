@@ -138,8 +138,8 @@ Maven repository URL
 
 Specify a URL to the Maven repository. Note that this parameter is optional. If the URL is not specified, then:
 
-* For a Maven project the repository URL is determined from the POM and the server\-side [Maven Settings](maven-server-side-settings.md)
-* For a non\-Maven project the repository URL is determined from the server\-side [Maven Settings](maven-server-side-settings.md) only
+* For a Maven project the repository URL is determined from the POM and the server\-side [Maven Settings](maven-server-side-settings.md#Maven+Settings+Resolution+on+the+Server+Side)
+* For a non\-Maven project the repository URL is determined from the server\-side [Maven Settings](maven-server-side-settings.md#Maven+Settings+Resolution+on+the+Server+Side) only
 
 
 </td></tr><tr>
@@ -201,7 +201,7 @@ User settings selection
 
 <td>
 
-Allows selecting effective settings. The same as [User Settings](maven.md) of the Maven runner.
+Allows selecting effective settings. The same as [User Settings](maven.md#User+Settings) of the Maven runner.
 
 
 </td></tr></table>

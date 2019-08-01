@@ -26,7 +26,7 @@ All `coverage.*` files are removed in the beginning of the build, so you have to
 To configure code coverage by means of EMMA engine, follow these steps:
 	
 1. While creating/editing Build Configuration, go to the __Build Step__ page.
-2. Select [Ant](ant.md), or [Ipr (deprecated)](ipr-deprecated.md) build runner.
+2. Select the [Ant](ant.md) build runner.
 3. In the __Code Coverage__ section, choose __EMMA__ as a coverage tool in the drop\-down.
 4. Set up the coverage options \- refer to the description of the available options below.
 

@@ -7,7 +7,7 @@ On this page:
 
 ## NUnit runner
 
-The easiest way to set up NUnit tests reporting in TeamCity is to add [NUnit build runner](nunit.md) as one of the steps to your [build configuration](creating-and-editing-build-configurations.md) making sure the [requirements](nunit.md) are met and specify there all the required parameters.
+The easiest way to set up NUnit tests reporting in TeamCity is to add [NUnit build runner](nunit.md) as one of the steps to your [build configuration](creating-and-editing-build-configurations.md) making sure the [requirements](nunit.md#NUnit+3+Requirements) are met and specify there all the required parameters.
 
 
 <tip include-id="supported-versions">
@@ -36,7 +36,7 @@ If using NUnit build runner is inapplicable, TeamCity provides the following way
 * TeamCity provides its own NUnit Test Launcher that can be configured [in the MSBuild build script](nunit-for-msbuild.md) or launched from the [command line](teamcity-nunit-test-launcher.md).
 * [TeamCity Addin for NUnit](teamcity-addin-for-nunit.md) is available to turn on reporting on the NUnit level without build procedure modifications. 
 * The bundled [XML Test Reporting plugin](xml-report-processing.md) allows importing any xml report to TeamCity. In this case it is not always possible to track results on the fly.   
-    You can add the __XML Report Processing__ build feature to your build configuration, or use the following service message: `##teamcity[importData type='sometype' path='<path to the xml file>'`. Learn more: [XML Report Processing](xml-report-processing.md), [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md).
+    You can add the __XML Report Processing__ build feature to your build configuration, or use the following service message: `##teamcity[importData type='sometype' path='<path to the xml file>'`. Learn more: [XML Report Processing](xml-report-processing.md), [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md#Importing+XML+Reports).
 * TeamCity allows configuring tests reporting manually via [service messages](build-script-interaction-with-teamcity.md).
 
 ## Comparison matrix:

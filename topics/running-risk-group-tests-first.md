@@ -15,7 +15,7 @@ Supported environments:
 
 <tip>
 
-TeamCity also allows [implementing tests reordering feature for a custom build runner](https://confluence.jetbrains.com/display/TCD18/Risk+Tests+Reordering+in+Custom+Test+Runner).
+TeamCity also allows [implementing tests reordering feature for a custom build runner](https://plugins.jetbrains.com/docs/teamcity/risk-tests-reordering-in-custom-test-runner.html).
 </tip>
 
 You can instruct TeamCity to run some tests before others. You can do this on the build runner settings page. Currently there are two groups of tests that TeamCity can run first:

@@ -13,7 +13,7 @@ _File Content Replacer_ should be used with the [automatic checkout](vcs-checkou
 </tip>
  
 
-The common case of using File Content Replacer is replacing one attribute at a time in particular files, e.g. it can be used to patch files with the build number.   
+The common case of using File Content Replacer is replacing one attribute at a time in particular files, for example, it can be used to patch files with the build number.   
 
 You can add more than one File Content Replacer build feature if you wish to:
 * replace more than one attribute
@@ -72,7 +72,7 @@ Process files
 <anchor name="Wildcards"/>
 
 Click Edit file list and specify paths to files where the values to be replaced will be searched. Provide a newline\- or comma\-separated set of rules in the form of `+|-:[path relative to the checkout directory]`.   
-[Ant-like wildcards](wildcards.md) are supported, for example, `dir/**/*.cs`.
+[Ant-like wildcards](wildcards.md#Antlike+Wildcards) are supported, for example, `dir/**/*.cs`.
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
@@ -197,7 +197,7 @@ This section lists the available replacement templates.
 
 #### .NET templates
 
-The templates for replacing the following [Assembly attributes](https://msdn.microsoft.com/en-us/library/4w8c1y2s(v=vs.110).aspx?cs-save-lang=1&amp;cs-lang=csharp#code-snippet-2) are provided (see [this section](file-content-replacer.md) for comparison with [AssemblyInfo Patcher](assemblyinfo-patcher.md)):
+The templates for replacing the following [Assembly attributes](https://msdn.microsoft.com/en-us/library/4w8c1y2s(v=vs.110).aspx?cs-save-lang=1&amp;cs-lang=csharp#code-snippet-2) are provided (see [this section](file-content-replacer.md#Templates) for comparison with [AssemblyInfo Patcher](assemblyinfo-patcher.md)):
 
 * [`AssemblyTitle`](http://msdn.microsoft.com/en-us/library/system.reflection.assemblytitleattribute.aspx)
 * [`AssemblyDescription`](http://msdn.microsoft.com/en-us/library/system.reflection.assemblydescriptionattribute.aspx)

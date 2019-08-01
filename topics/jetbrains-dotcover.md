@@ -97,13 +97,13 @@ Note that dotCover coverage engine reports statement coverage instead of line co
 
 ## Compile and Test in Different Builds
 
-To build a consistent coverage report, dotCover has to be able to find source files under the build checkout directory which should be easy if you build binaries and collect coverage in the same build, or if you use different builds, but they use a [snapshot dependency](build-dependencies-setup.md) and the same agent as well as the same [VCS settings](configuring-vcs-settings.md).
+To build a consistent coverage report, dotCover has to be able to find source files under the build checkout directory which should be easy if you build binaries and collect coverage in the same build, or if you use different builds, but they use a [snapshot dependency](build-dependencies-setup.md#Snapshot+Dependencies) and the same agent as well as the same [VCS settings](configuring-vcs-settings.md).
 
 If you need to build binaries in one build and collect code coverage in another one using different [checkout settings](vcs-checkout-rules.md), some additional properties are required. It is assumed that:
 * Build configuration __A__ compiles code with debugging information and creates an artifact with assemblies and `.pdb` files
-* Build configuration __B__ runs tests with dotCover enabled and has [a snapshot dependency](build-dependencies-setup.md) on A.
+* Build configuration __B__ runs tests with dotCover enabled and has a [snapshot dependency](build-dependencies-setup.md#Snapshot+Dependencies) on A.
 
-To display the source code in the [Code Coverage tab](working-with-build-results.md) of build results of B, you need to point B to the same [VCS root](configuring-vcs-roots.md) as A to get your source code in an appropriate location ([the checkout root](build-checkout-directory.md)) and add [an artifact dependency](build-dependencies-setup.md) on __build from the same chain__ of A (for dotCover to get the paths to the sources from the `.pdb` files).
+To display the source code in the [Code Coverage tab](working-with-build-results.md#Code+Coverage+Results) of build results of B, you need to point B to the same [VCS root](configuring-vcs-roots.md) as A to get your source code in an appropriate location (the [checkout root](build-checkout-directory.md)) and add an [artifact dependency](build-dependencies-setup.md#Artifact+Dependencies) on __build from the same chain__ of A (for dotCover to get the paths to the sources from the `.pdb` files).
 
 You also need to tell TeamCity where to find the source code. To do this, perform the following:
 1. Add the `teamcity.dotCover.sourceBase` configuration parameter with the value `%teamcity.build.checkoutDir%` to the compiling build configuration A.

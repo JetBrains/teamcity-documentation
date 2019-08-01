@@ -7,7 +7,7 @@ Check [SSH Keys Management](ssh-keys-management.md) for SSH key upload notes.
 
 ## Agent Setup
 
-_TeamCity SSH Agent_ uses a native ssh agent from the OpenSSH included with Linux and Mac OS X, so the feature works out of the box for these OS's. For Windows, OpenSSH needs to be installed (e.g. as a part of CygWin, MinGW or a part of Git distribution for Windows).
+_TeamCity SSH Agent_ uses a native ssh agent from the OpenSSH included with Linux and Mac OS X, so the feature works out of the box for these OS's. For Windows, OpenSSH needs to be installed (for example, as a part of CygWin, MinGW or a part of Git distribution for Windows).
 
 The SSH agent must be added to `$PATH` on Unix\-like OS's and to `%PATH%` on Windows.
 

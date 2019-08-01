@@ -3,7 +3,7 @@
 
 The _Finish build trigger_ triggers a build of the current build configuration when a build of the selected build configuration is finished. If the "_Trigger after successful build only_" checkbox is enabled, a build is triggered only after a successful build of the selected configuration.
 
-To monitor builds in other build configurations and trigger a build if these builds change, please see [this option](configuring-schedule-triggers.md) of the Schedule build trigger.
+To monitor builds in other build configurations and trigger a build if these builds change, please see [this option](configuring-schedule-triggers.md#Build+Changes) of the Schedule build trigger.
 
 
 In most of the cases the Finish Build Trigger should be used with snapshot dependencies, i.e. the current build configuration where the trigger is defined should have a direct or an indirect snapshot dependency on the build configuration selected in the trigger. If there is no snapshot dependency, the following limitations exist:

@@ -8,7 +8,7 @@ Supported NUnit versions: __2.2.10__, __2.4.1__, __2.4.6__, __2.4.7__, __2.4.8__
 
 This section assumes, that you already have a NAnt build script with configured `nunit2` task in it, and want TeamCity to track test reports without making any changes to the existing build script. Otherwise, consider adding [NUnit build runner](nunit.md) as one of the steps for your build configuration.
 
-In order to track tests defined in NAnt build via standard `nunt2` task, TeamCity provides custom  [task](http://nant.sourceforge.net/nightly/latest/help/tasks/nunit2.html) implementation, and automatically replaces the original `<nunit2>` task with its own task. Thus when the build is triggered, TeamCity starts TeamCity NUnit Test Launcher using own implementation of `<nunit2>`. This allows you to leave your build script without changes and receive on\-the\-fly test reports in the TeamCity.
+In order to track tests defined in NAnt build via standard `nunt2` task, TeamCity provides custom [task](http://nant.sourceforge.net/nightly/latest/help/tasks/nunit2.html) implementation, and automatically replaces the original `<nunit2>` task with its own task. Thus when the build is triggered, TeamCity starts TeamCity NUnit Test Launcher using own implementation of `<nunit2>`. This allows you to leave your build script without changes and receive on\-the\-fly test reports in the TeamCity.
 
 
 If you don't want TeamCity to replace the original `nunit2` task, consider the following options:

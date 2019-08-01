@@ -12,11 +12,11 @@ Due to specifics of MSTest tool, TeamCity does __not__ support on\-the\-fly test
 
 There are two ways to report test results to TeamCity:
 * Add the [Visual Studio Tests](visual-studio-tests.md) runner as one of your build steps.
-* Configure [XML Report Processing](xml-report-processing.md) via build feature or via [service message](build-script-interaction-with-teamcity.md) to parse the `.trx` reports that are produced by your build procedure.
+* Configure [XML Report Processing](xml-report-processing.md) via build feature or via [service message](build-script-interaction-with-teamcity.md#Service+Messages) to parse the `.trx` reports that are produced by your build procedure.
 
 The easiest way to set up MSTest tests reporting in TeamCity is to add the [Visual Studio Tests](visual-studio-tests.md) build runner as one of the steps to your build configuration and specify there all required parameters.
 
-If the tests are already run within your build script and MSTest generates `.trx` reports, you can configure [service messages](build-script-interaction-with-teamcity.md) to parse the reports.
+If the tests are already run within your build script and MSTest generates `.trx` reports, you can configure [service messages](build-script-interaction-with-teamcity.md#Service+Messages) to parse the reports.
 
 ## Autodetection of MSTest
 

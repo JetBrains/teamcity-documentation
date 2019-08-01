@@ -3,11 +3,11 @@
 
 VCS triggers automatically start a new build each time TeamCity detects new changes in the configured [VCS roots](vcs-root.md) and displays the change in the pending changes. Only one VCS trigger can be added to a build configuration.
 
-A new VCS trigger with the default settings triggers a build once there are pending changes in the build configuration: the version control is polled for changes according to the [checking for changes interval](configuring-vcs-roots.md) of a VCS root honoring a [VCS commit hook](configuring-vcs-post-commit-hooks-for-teamcity.md) if configured. Only the changes matched by the [checkout rules](vcs-checkout-rules.md) are displayed as pending and thus are processed by the trigger. If several check\-ins are made within short time frame and discovered by TeamCity together, only __one build will be triggered__.
+A new VCS trigger with the default settings triggers a build once there are pending changes in the build configuration: the version control is polled for changes according to the [checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) of a VCS root honoring a [VCS commit hook](configuring-vcs-post-commit-hooks-for-teamcity.md) if configured. Only the changes matched by the [checkout rules](vcs-checkout-rules.md) are displayed as pending and thus are processed by the trigger. If several check\-ins are made within short time frame and discovered by TeamCity together, only __one build will be triggered__.
 
 After the last change is detected, a [quiet period](#Quiet+Period+Settings) can be configured to wait for some time without changes before the build is queued.
 
-The global default value for both options is 60 seconds and can be configured for the server on the __Administration__ | __Global Settings__ page.
+The global default value for both options is 60 seconds and can be configured for the server on the __Administration | Global Settings__ page.
 
 You can adjust a VCS trigger to your needs using the options described below:
 
@@ -17,7 +17,7 @@ You can adjust a VCS trigger to your needs using the options described below:
 
 ## Trigger a build on changes in snapshot dependencies
 
-If you have a [build chain](build-chain.md) (i.e. a number of builds interconnected by [snapshot dependencies](dependent-build.md)),  the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
+If you have a [build chain](build-chain.md) (i.e. a number of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency)),  the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
 
 <include src="build-dependencies-setup.md" include-id="trigger-on-ssdep-chngs"/>
 
@@ -44,7 +44,7 @@ A __quiet period__ is a period (in seconds) that TeamCity maintains between the 
 [//]: # (Internal note. Do not delete. "Configuring VCS Triggersd93e129.txt")    
 
 
-Note that the actual quiet period will not be less than the maximum [checking for changes interval](configuring-vcs-roots.md) among the VCS roots of a build configuration, as TeamCity must ensure that changes were collected at least once during the quiet period. 
+Note that the actual quiet period will not be less than the maximum [checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) among the VCS roots of a build configuration, as TeamCity must ensure that changes were collected at least once during the quiet period. 
 
 The quiet period can be set to the default value (60 seconds, can be changed globally at the __Administration__ | __Global Settings__ page) or to a custom value for a build configuration.
 
@@ -88,7 +88,7 @@ The general syntax for a single rule is:
 
 where:
 * __Ant\_like\_wildcard__: A [wildcard](wildcards.md) to match the changed file path. Only `*` and `**` patterns are supported, the `?` pattern is __not__ supported. The file paths in the rule can be relative (not started with `/` or `\ `) to match resulting paths on the agent or absolute (started with `/`) to match VCS paths relative to a VCS root. For each file in a change the most specific rule is found (the rule matching the longest file path). The build is triggered if there is at least one file with a matching "include" rule or a file with no matching "exclude" rules.   
-* __[VCS_username](managing-users-and-user-groups.md)__: if specified, limits the rule only to the changes made by a user with the corresponding [VCS username ](managing-users-and-user-groups.md).
+* __[VCS_username](managing-users-and-user-groups.md)__: if specified, limits the rule only to the changes made by a user with the corresponding [VCS username ](managing-users-and-user-groups.md#VCS+Usernames).
 * __VCS\_root\_id__: if specified, limits the rule only to the changes from the corresponding VCS root.
 * __VCS\_comment\_regexp__: if specified, limits the rule only to the changes that contain specified text in the VCS comment. Use the [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) pattern for matching the text in a comment (see examples below). The rule matches if the comment text contains a matched text portion; to match the entire text, include the `^` and `$` special characters.
 
@@ -156,7 +156,7 @@ Excludes all `.html` files from triggering a build.
  
 <td>
  
-Excludes builds being triggered by `.xml` files checked in by the [VCS user](managing-users-and-user-groups.md) "techwriter" to the `misc/doc` directory of the VCS root named _Internal SVN_ (as defined in the VCS Settings). Note that the path is absolute (starts with "/"), thus the file path is matched from the VCS root.
+Excludes builds being triggered by `.xml` files checked in by the [VCS user](managing-users-and-user-groups.md#VCS+Usernames) "techwriter" to the `misc/doc` directory of the VCS root named _Internal SVN_ (as defined in the VCS Settings). Note that the path is absolute (starts with "/"), thus the file path is matched from the VCS root.
  
 </td></tr>
  

@@ -1,6 +1,6 @@
 [//]: # (title: Artifact Dependencies)
 [//]: # (auxiliary-id: Artifact Dependencies)
-This page details configuration of the TeamCity [Artifact Dependencies](dependent-build.md).
+This page details configuration of the TeamCity [Artifact Dependencies](dependent-build.md#Artifact+Dependency).
 
 On this page:
 
@@ -76,7 +76,7 @@ Build number
 <td>
 
 _This field appears if you have selected_ ___build with specific build number___ _in the_ ___Get artifacts from___ _list_.   
-Specify here the exact [build number](configuring-general-settings.md) of the artifact.
+Specify here the exact [build number](configuring-general-settings.md#Build+Number+Format) of the artifact.
 
 
 </td></tr><tr>
@@ -135,7 +135,7 @@ Basic examples:
  * Use `a/b/**=>lib` to download all files from `a/b` directory of the source build to the `lib` directory. If there is a `a/b/c/file.txt` file in the source build artifacts, it will be downloaded into the file `lib/c/file.txt`.
  * At the same time, artifact dependency `**/*.txt=>lib` will preserve the directories structure: the `a/b/c/file.txt` file from source build artifacts will be downloaded to `lib/a/b/c/file.txt`.
 
- _ArchivePath_ is used to extract downloaded [compressed](configuring-general-settings.md) artifacts. Zip, 7\-zip, jar, tar and tar.gz are supported.   
+ _ArchivePath_ is used to extract downloaded [compressed](configuring-general-settings.md#Artifact+Paths) artifacts. Zip, 7\-zip, jar, tar and tar.gz are supported.   
  _ArchivePath_ follows general rules for _SourcePath_: ant\-like wildcards are allowed, the files matched inside the archive will be placed in the directory corresponding to the first wildcard match (relative to destination path)     
  For example: `release.zip!*.dll` command will extract all .dll files residing in the root of the `release.zip` artifact.
 
@@ -162,7 +162,7 @@ Exclusive patterns examples:
 Click the ![ArtifactsBrowserIcon.png](ArtifactsBrowserIcon.png) icon to invoke the Artifact Browser. TeamCity will try to locate artifacts according to the specified settings and show them in a tree. Select the required artifacts from the tree and TeamCity will place the paths to them into the input field.
 </tip>
 
-The artifacts placed under the `.teamcity` directory are considered [hidden](build-artifact.md). These artifacts are ignored by wildcards by default.   
+The artifacts placed under the `.teamcity` directory are considered [hidden](build-artifact.md#Hidden+Artifacts). These artifacts are ignored by wildcards by default.   
 If you want to include files from the `.teamcity` directory for any purpose, be sure to add the artifact path starting with `.teamcity` explicitly.
 
 Example of accessing hidden artifacts:
@@ -172,7 +172,7 @@ Example of accessing hidden artifacts:
 
  
 
-By default, downloading artifact dependencies to the [agent work directory](agent-work-directory.md) is allowed, the [agent home directory](agent-home-directory.md) is prohibited. To override the defaults, set custom rules to download artifacts by specifying the comma\-separated paths in the [buildAgent.properties](build-agent-configuration.md): `teamcity.artifactDependenciesResolution.blackList` and `teamcity.artifactDependenciesResolution.whiteList`. Blacklisting a path forbids artifacts download to the directory unless it is whitelisted.
+By default, downloading artifact dependencies to the [agent work directory](agent-work-directory.md) is allowed, the [agent home directory](agent-home-directory.md) is prohibited. To override the defaults, set custom rules to download artifacts by specifying the comma\-separated paths in the [`buildAgent.properties`](build-agent-configuration.md): `teamcity.artifactDependenciesResolution.blackList` and `teamcity.artifactDependenciesResolution.whiteList`. Blacklisting a path forbids artifacts download to the directory unless it is whitelisted.
 
 
 </td></tr><tr>
@@ -191,7 +191,7 @@ Check this option to delete the content of the destination directories before co
 
 </td></tr></table>
 
-At any point you can launch a build with [custom artifact dependencies](triggering-a-custom-build.md).
+At any point you can launch a build with [custom artifact dependencies](triggering-a-custom-build.md#Promoting+Build).
 
 ## Configuring Artifact Dependencies Using Ant Build Script
 
@@ -257,7 +257,7 @@ TeamCity itself acts as an Ivy repository. You can read more about the Ivy depen
 where:
 * `YOUR_ORGANIZATION` replace with the name of your organization.
 * `YOUR_MODULE` replace with the name of your project or module where artifacts will be used.
-* `BUILD_TYPE_EXT_ID` replace with the [external ID](build-configuration.md) of the build configuration whose artifacts are downloaded.
+* `BUILD_TYPE_EXT_ID` replace with the [external ID](build-configuration.md#Status+Display+for+Set+of+Build+Configurations) of the build configuration whose artifacts are downloaded.
 * `BUILD_REVISION` can be either a build number or one of the following strings: * `latest.lastFinished`
   * `latest.lastSuccessful`
   * `latest.lastPinned`
@@ -295,7 +295,7 @@ where:
 
 <note>
 
-* `commons-httpclient`, `commons-logging` and `commons-codec` are to be in the `classpath` of Ivy tasks.
+* `commons-httpclient`, `commons-logging`, and `commons-codec` are to be in the `classpath` of Ivy tasks.
 * To clean the Ivy cache directory before retrieving dependencies, uncomment the `<ivy:cleancache />` element in the example above.
 
 </note>

@@ -14,7 +14,7 @@ On this page:
 In the Common Failure Conditions, specify how TeamCity will fail builds by selecting appropriate options from in the __Fail build if__ area:
 * __it runs longer than ... minutes__: Enter a value in minutes to enable execution timeout for a build.  If the specified amount of time is exceeded, the build is automatically canceled.
    * Unless set to 0, this build configuration setting overrides the [server-wide](teamcity-configuration-and-maintenance.md) default execution timeout specified in Administration \-&gt; Global settings.
-   * The default value of 0 means that no limit is set by the build configuration. If there is a  [server-wide](teamcity-configuration-and-maintenance.md) default execution timeout, this default will be used.   
+   * The default value of 0 means that no limit is set by the build configuration. If there is a [server-wide](teamcity-configuration-and-maintenance.md) default execution timeout, this default will be used.   
 This option helps to deal with builds that hang and maintains agent efficiency.
 * __the build process exit code is not zero__: Check this option to mark the build as failed if the build process doesn't exit successfully.
 * __at least one test failed__: Check this option to mark the build as failed if the build fails at least one test. If this option is not checked, the build can be marked successful even if it fails to pass a number of tests. Regardless of this option, TeamCity will run all build steps.
@@ -42,9 +42,9 @@ When using code examining tools in your build, like code coverage, duplicates fi
 
 In general there are two ways to configure this build fail condition:
 * A _build metric_ exceeds or is less than the specified constant value (threshold).   
-e.g.: __Fail build if__ `build duration (secs)` compared to constant value is `more` than `300`. In this case a build will fail if it runs more than 300 seconds. 
+For example, __Fail build if__ `build duration (secs)` compared to constant value is `more` than `300`. In this case a build will fail if it runs more than 300 seconds. 
 * A _build metric_ has changed comparing to a specific build by a specified value.   
-e.g.: __Fail build if__ its `build duration (secs)` compared to a value from another build is `more` by at least `300` default units for this metric than the value in the `Last successful build`. In this case a build will fail if it runs 300 seconds longer than the last successful build. If [Branch specification](working-with-feature-branches.md) is configured, then [the following logic](working-with-feature-branches.md) is applied.
+For example, __Fail build if__ its `build duration (secs)` compared to a value from another build is `more` by at least `300` default units for this metric than the value in the `Last successful build`. In this case a build will fail if it runs 300 seconds longer than the last successful build. If a [branch specification](working-with-feature-branches.md) is configured, then the [following logic](working-with-feature-branches.md) is applied.
 
 Values from the following builds can be used as the basis for comparing build metics:
 * last successful build
@@ -54,7 +54,7 @@ Values from the following builds can be used as the basis for comparing build me
 * last finished build with specified tag.
 
 By default, TeamCity provides the wide range of _build metrics_:
-* artifacts size(bytes) \- size of artifacts excluding [internal artifacts](build-artifact.md) under `.teamcity` directory
+* artifacts size(bytes) \- size of artifacts excluding [internal artifacts](build-artifact.md#Hidden+Artifacts) under `.teamcity` directory
 * build duration (secs)
 * number of classes
 * number of code duplicated
@@ -75,7 +75,7 @@ By default, TeamCity provides the wide range of _build metrics_:
 * percentage of method coverage
 * percentage of statement coverage
 * test duration (secs)
-* total artifacts size (bytes) \- size of all artifacts including [internal ones](build-artifact.md)
+* total artifacts size (bytes) \- size of all artifacts including [internal ones](build-artifact.md#Hidden+Artifacts)
 
 Note that __since TeamCity 9.0__, the way TeamCity counts tests [has changed](https://confluence.jetbrains.com/display/TW/Hajipur+9.0+EAP1+(build+31423)+Release+Notes).
 

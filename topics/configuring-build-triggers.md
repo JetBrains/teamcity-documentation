@@ -1,7 +1,7 @@
 [//]: # (title: Configuring Build Triggers)
 [//]: # (auxiliary-id: Configuring Build Triggers)
 
-Once a build configuration is created, builds can be triggered manually by clicking the [Run button](triggering-a-custom-build.md) or initiated automatically with the help of Triggers.
+Once a build configuration is created, builds can be triggered manually by clicking the [Run button](triggering-a-custom-build.md#Run+Custom+Build+dialog) or initiated automatically with the help of Triggers.
 
 A _build trigger_ is a rule which initiates a new build on certain events. The build is put into the [build queue](build-queue.md) and is started when there are agents available to run it.
 
@@ -11,8 +11,8 @@ For each build configuration the following triggers can be configured:
 * [VCS trigger](configuring-vcs-triggers.md): the build is triggered when changes are detected in the version control system roots attached to the build configuration.
 * [Schedule trigger](configuring-schedule-triggers.md): the build is triggered at a specified time.
 * [Finish Build trigger](configuring-finish-build-trigger.md): the build is triggered after a build of the selected configuration is finished.
-* [Maven Artifact Dependency trigger](configuring-maven-triggers.md): the build is triggered if there is a content modification of the specified Maven artifact which is detected by the checksum change.
-* [Maven Snapshot Dependency trigger](configuring-maven-triggers.md): the build is triggered if there is a modification of the snapshot dependency content in the remote repository which is detected by the checksum change.
+* [Maven Artifact Dependency trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger): the build is triggered if there is a content modification of the specified Maven artifact which is detected by the checksum change.
+* [Maven Snapshot Dependency trigger](configuring-maven-triggers.md#Maven+Snapshot+Dependency+Trigger): the build is triggered if there is a modification of the snapshot dependency content in the remote repository which is detected by the checksum change.
 * __Retry build trigger__: the build is triggered if the last build failed or failed to start.
 * [Branch Remote Run Trigger](branch-remote-run-trigger.md): personal build is triggered automatically each time TeamCity detects new changes in particular branches of the VCS roots of the build configuration. Supports Git and Mercurial.
 * [NuGet Dependency Trigger](nuget-dependency-trigger.md): starts a build if there is a NuGet package update detected in the NuGet repository.
@@ -21,4 +21,4 @@ For each build configuration the following triggers can be configured:
 Note that if you create a build configuration from a template, it inherits build triggers defined in the template, and they cannot be edited or deleted. However, you can specify additional triggers or disable a trigger permanently or temporarily.
 </tip>
 
-In addition to the triggers defined for the build configuration, you can also trigger a build by an [HTTP GET request](accessing-server-by-http.md), or manually by running a custom build.
+In addition to the triggers defined for the build configuration, you can also trigger a build by an [HTTP GET request](accessing-server-by-http.md#Triggering+a+Build+From+Script), or manually by running a custom build.

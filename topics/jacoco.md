@@ -108,7 +108,7 @@ The code coverage results can be viewed on the __Overview__ tab of the Build Res
 
 ## Importing JaCoCo coverage data to TeamCity
 
-TeamCity can parse JaCoCo coverage data and generate a report using a [service message](build-script-interaction-with-teamcity.md) of the following format:
+TeamCity can parse JaCoCo coverage data and generate a report using a [service message](build-script-interaction-with-teamcity.md#Service+Messages) of the following format:
 
 
 ```Plain Text
