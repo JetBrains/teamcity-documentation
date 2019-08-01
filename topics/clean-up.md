@@ -12,7 +12,7 @@ The server clean\-up configuration is available in the server __Administration |
 
 It is recommended to configure clean\-up rules to remove obsolete builds and their artifacts, purge unnecessary data from database and caches in order to free disk space, remove builds from the TeamCity UI and reduce the TeamCity workload.
 
-Clean\-up deletes the data stored under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system` and in the database. Also, during the clean\-up time the server performs various maintenance tasks (e.g. resets VCS full patch caches).
+Clean\-up deletes the data stored under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system` and in the database. Also, during the clean\-up time the server performs various maintenance tasks (for example, resets VCS full patch caches).
 
 
 ## Server Clean-up Settings
@@ -54,7 +54,7 @@ The following inheritance rules apply:
 In each rule, you can define a number of successful builds to preserve, and/or the period of time to keep builds in history (e.g. keep builds for 7 days).
 
 The following clean\-up levels are available:
-* __Artifacts__ (all other data including build logs is preserved. [Hidden Artifacts](build-artifact.md) are also preserved);
+* __Artifacts__ (all other data including build logs is preserved. [Hidden Artifacts](build-artifact.md#Hidden+Artifacts) are also preserved);
 * __History__ (all the build data is deleted except for builds statistics values that are visible in the [statistics charts](statistic-charts.md));
 * __Everything__ (no build data remains in TeamCity).Each level includes the one(s) listed above it.
 
@@ -84,7 +84,7 @@ There are builds that preserve all their data and are not affected during cleanu
 
 The settings in the __Dependencies__ section of the __Edit Clean Up Rules__ dialog affect clean\-up of artifacts in builds that the builds of the current build configuration depend on.
 
-TeamCity always preserves builds which are used as [snapshot dependencies](dependent-build.md) in other builds. These builds are not deleted from builds history by the clean\-up procedure until dependent builds are deleted. Artifacts of these builds can be deleted based on the option below.TeamCity can optionally preserve builds and their artifacts which are used in other builds by [artifact dependencies](dependent-build.md).
+TeamCity always preserves builds which are used as [snapshot dependencies](dependent-build.md#Snapshot+Dependency) in other builds. These builds are not deleted from builds history by the clean\-up procedure until dependent builds are deleted. Artifacts of these builds can be deleted based on the option below.TeamCity can optionally preserve builds and their artifacts which are used in other builds by [artifact dependencies](dependent-build.md#Artifact+Dependency).
 * __Use default__ choice uses the option configured in the default cleanup rule.
 * __Prevent clean\-up__ choice protects builds (and their artifacts) which were used as a source of artifact or snapshot dependencies for the builds of the current build configuration.
 * __Do not prevent clean\-up__ (default) choice makes cleanup\-related processing of the dependency builds disregard the fact that they are used by the builds of the current build configuration.
@@ -99,7 +99,7 @@ There is a [known issue](https://youtrack.jetbrains.com/issue/TW-59344): when a 
 
 ### Clean-up in Build Configurations with Feature Branches
 
-If a build configuration has builds from several [branches](working-with-feature-branches.md), before applying clean\-up rules, TeamCity splits the build history of this configuration into several groups. TeamCity creates one group per each [active branch](working-with-feature-branches.md), and a single group for all builds from inactive branches. Then clean\-up rules are applied to each group independently.
+If a build configuration has builds from several [branches](working-with-feature-branches.md), before applying clean\-up rules, TeamCity splits the build history of this configuration into several groups. TeamCity creates one group per each [active branch](working-with-feature-branches.md#Active+branches), and a single group for all builds from inactive branches. Then clean\-up rules are applied to each group independently.
 
 ### Clean-up of Personal Builds
 
@@ -107,7 +107,7 @@ Clean\-up rules are applied separately for the non\-personal builds and then for
 
 ### Deleted Build Configurations Cleanup
 
-When a project or a build configuration is deleted, the corresponding builds data is removed during the cleanup, but only if 5 days (432, 000 seconds) have passed since the deletion. To change the timeout, set the `teamcity.deletedBuildTypes.cleanupTimeout` [internal property](configuring-teamcity-server-startup-properties.md) to the required number of seconds to protect the data from deletion.
+When a project or a build configuration is deleted, the corresponding builds data is removed during the cleanup, but only if 5 days (432, 000 seconds) have passed since the deletion. To change the timeout, set the `teamcity.deletedBuildTypes.cleanupTimeout` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to the required number of seconds to protect the data from deletion.
 
 
 

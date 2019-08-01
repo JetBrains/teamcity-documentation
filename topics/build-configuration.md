@@ -8,7 +8,7 @@ It is recommended to have a separate build configuration for each sequence of bu
 
 To tackle an increased number of build configurations you can use [Build Configuration Templates](build-configuration-template.md) and project\-level [parameters](configuring-build-parameters.md).
 
-In this section:
+On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
 
@@ -179,11 +179,11 @@ It is possible to filter out the build configurations whose status you want to b
 
 To display the status of selected build configurations in __TeamCity__:
 * configure visible projects on the Projects Overview page to display the status of build configurations belonging to these projects only
-* implement [a custom Java plugin](https://confluence.jetbrains.com/display/TCD18/Developing+TeamCity+Plugins) for TeamCity to make the page available as a part of  the TeamCity web application
+* implement a [custom Java plugin](https://confluence.jetbrains.com/display/TCD18/Developing+TeamCity+Plugins) for TeamCity to make the page available as a part of  the TeamCity web application
 
-To display the status for a set of build configurations __externally__ (e.g. on your company's website, wiki, Confluence or any other web page), you can:
-* use [the external status widget](configuring-general-settings.md)
-* use [the build status icon](rest-api.md)
+To display the status for a set of build configurations __externally__ (on your company's website, wiki, Confluence, or any other web page), you can:
+* use the [external status widget](configuring-general-settings.md#HTML+Status+Widget)
+* use the [build status icon](rest-api.md#Build+Status+Icon)
 * use any of the available [visualization plugins](https://plugins.jetbrains.com/search?correctionAllowed=true&pr=teamcity&orderBy=relevance&tags=Notification%2FVisualizers&search=)
 * implement a separate page or application which will get the build configuration status via the TeamCity [REST API](rest-api.md)
 

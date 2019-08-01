@@ -11,14 +11,14 @@ Before backing up data, it is recommended to shut down the TeamCity server to in
 
 ## Backup File Location and Format
 
-The default directory for backup files is the `<>\backup`.
+The default directory for backup files is the `<TeamCity Data Directory>\backup`.
 
 <note>
 
 If not specified otherwise with the `-A` option, TeamCity will read the TeamCity Data Directory path from the `TEAMCITY_DATA_PATH` environment variable, or the default path (`$HOME\.Buildserver`) will be used.
 </note>
 
-The default format of the backup file name is `TeamCity_Backup_<timestamp>.zip`; the `<timestamp>` suffix is added in the` 'YYYYMMDD_HHMMSS'` format.
+The default format of the backup file name is `TeamCity_Backup_<timestamp>.zip`; the `<timestamp>` suffix is added in the `YYYYMMDD_HHMMSS` format.
 
 ## Performing TeamCity Data Backup with maintainDB Utility
 

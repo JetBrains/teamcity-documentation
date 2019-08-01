@@ -17,7 +17,7 @@ If you set a specific folder as the Build Checkout Directory (instead of using d
 
 
 
-TeamCity maintains an internal cache for the sources to optimize communications with the VCS server. The caches are reset during the [cleanup time](clean-up.md). To resolve problems with sources update, the caches may need to be reset manually using the __[Diagnostics | Caches](teamcity-monitoring-and-diagnostics.md)__ tab in the Web UI or by deleting the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)>`/system/caches` directory.
+TeamCity maintains an internal cache for the sources to optimize communications with the VCS server. The caches are reset during the [cleanup time](clean-up.md). To resolve problems with sources update, the caches may need to be reset manually using the __[Diagnostics | Caches](teamcity-monitoring-and-diagnostics.md#Caches)__ tab in the Web UI or by deleting the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)>`/system/caches` directory.
 
 ## Automatic Clean Checkout
 
@@ -28,7 +28,7 @@ TeamCity tries to detect if the sources in the checkout directory are not corres
 Here is the summary of cases when TeamCity performs automatic clean checkout:
 * if it is enabled using the __Clean all files in the checkout directory before the build__ option in the "Version Control Settings" of the build configuration
 * build checkout directory was not found or is empty (either the build configuration is started on the agent for the first time or the directory has disappeared since the last build). This also covers the following: 
-  * no builds were run in a specific checkout directory for a configured (or default) time and the directory became empty. See more at [automatic checkout directory cleaning](build-checkout-directory.md)
+  * no builds were run in a specific checkout directory for a configured (or default) time and the directory became empty. See more at [automatic checkout directory cleaning](build-checkout-directory.md#Automatic+Checkout+Directory+Cleaning)
   * there was not enough [free space on disk](free-disk-space.md) in one of the earlier builds and the directory was deleted
 * a user invoked "Enforce clean checkout" action from the web UI for a build configuration or agent
 * the build was triggered via Custom Run Build dialog with "Clean all files in the checkout directory before build" option selected or by a trigger with the corresponding option

@@ -87,7 +87,8 @@ If you did not change the default port (`80`) during the installation, the TeamC
     
     The archive can be used for installation on Windows as well.
 
-4. The TeamCity web server and one build agent will be installed on the same machine.
+4. The TeamCity web server and one build agent will be installed on the same machine.   
+__Note__ that for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) it is recommended to set up the TeamCity Server and Agent on separate machines.
 
 __To start/stop the TeamCity server and one default agent at the same time__, use the `runAll` script, provided in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>/bin` directory.
 * To __start__ the server and the default agent, use 

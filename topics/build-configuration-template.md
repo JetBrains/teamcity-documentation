@@ -16,7 +16,7 @@ Build configuration templates support project hierarchy: once created, available
 ## Creating build configuration template
 
 There are several ways to create a build configuration template:
-* __Manually__, like a [regular build configuration](creating-and-editing-build-configurations.md).
+* __Manually__, like a [regular build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+Template).
 * __Extract__ from an existing build configuration: there is the __Extract template__ option available from the __Actions__ button at the top right corner of the screen. Note that if you extract a template from a build configuration, the original configuration automatically becomes [associated](#Associating+build+configurations+with+templates) with the newly created template.
 
 ## Defining default template for project
@@ -59,7 +59,7 @@ object Project : Project({
  
 
 ## Associating build configurations with templates
-* You can [create new build configurations based on a template](creating-and-editing-build-configurations.md)
+* You can [create new build configurations based on a template](creating-and-editing-build-configurations.md#Creating+Build+Configuration+From+Template)
 * You can associate/attach any number of existing build configurations with/to a template: there's the __Attach to template...__ option available from the __Actions__ button at the top right corner of the screen.
  
 When you associate an existing build configuration with a template, the build configuration inherits __all the settings__ defined in the template, and if there's a conflict, the template settings supersede the settings of the build configuration (except dependencies, parameters, and requirements). The settings inherited from a template [can be overridden](#Redefining+settings+inherited+from+template).
@@ -108,7 +108,7 @@ A build configuration associated with a template inherits all its settings (mark
 
 Modifying settings in the template will influence __all configurations__ associated with this template; however, it is possible to redefine most settings in an associated build configuration.
 
-__Since TeamCity 2018.1__, it is possible to redefine all build configuration settings (e.g. build steps, [parameters](configuring-build-parameters.md), [build options](configuring-general-settings.md), etc.) the only exceptions being snapshot dependecies and checkout rules which __cannot be redefined__.
+__Since TeamCity 2018.1__, it is possible to redefine all build configuration settings (for example, build steps, [parameters](configuring-build-parameters.md), [build options](configuring-general-settings.md#Build+Options)) the only exceptions being snapshot dependecies and checkout rules which __cannot be redefined__.
 
  Modified settings are highlighted with a yellow border and the __Reset__ button appears on the right of the modified settings enabling you to revert the changes to the original settings of the template.
 
@@ -154,7 +154,7 @@ You can still customise the order of build steps in a template\-based build conf
 ## Enforcing settings inherited from template
 [//]: # ([//]: # (AltHead:Enforced settings)
 
-If you want to enforce some settings on all the build configurations in the project so that other users could not redefine them, TeamCity provides this ability for all of the build configurations in a project hierarchy. For instance, using enforced settings it is possible to set [agent side checkout](vcs-checkout-mode.md) everywhere, or make sure that all build configurations have some strict [execution timeout](build-failure-conditions.md).  Currently it is possible to enforce build features, options, and parameters. Build steps and build requirements can also be enforced.
+If you want to enforce some settings on all the build configurations in the project so that other users could not redefine them, TeamCity provides this ability for all of the build configurations in a project hierarchy. For instance, using enforced settings it is possible to set [agent side checkout](vcs-checkout-mode.md) everywhere, or make sure that all build configurations have some strict [execution timeout](build-failure-conditions.md#Common+build+failure+conditions). Currently it is possible to enforce build features, options, and parameters. Build steps and build requirements can also be enforced.
 
 To enforce some settings in the project hierarchy, create a template with these settings. After that, a system administrator can set this template as the enforced settings template in the project:
 

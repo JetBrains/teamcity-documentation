@@ -1,6 +1,6 @@
 [//]: # (title: Difference Viewer)
 [//]: # (auxiliary-id: Difference Viewer)
-TeamCity Difference Viewer allows reviewing the differences between two versions of a file modified in the source control and navigating between these differences. You can access the viewer from almost any place in the TeamCity UI where the changes lists appear, for example, the Projects page, Build Configuration Home Page, or the [Changes](working-with-build-results.md) tab of the build results page. Comparing images in the GIF, PNG or JPG file formats are also supported.
+TeamCity Difference Viewer allows reviewing the differences between two versions of a file modified in the source control and navigating between these differences. You can access the viewer from almost any place in the TeamCity UI where the changes lists appear, for example, the Projects page, Build Configuration Home Page, or the [Changes](working-with-build-results.md#Changes) tab of the build results page. Comparing images in the GIF, PNG or JPG file formats are also supported.
 
 Clicking the name of a modified file opens the viewer:
 

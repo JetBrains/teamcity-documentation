@@ -29,7 +29,7 @@ Description
 
 <td>
 
-Database:
+Database
 
 </td>
 
@@ -41,7 +41,7 @@ The [database](setting-up-an-external-database.md) used by the running TeamCity 
 
 <td>
 
-Data directory:
+Data directory
 
 </td>
 
@@ -54,8 +54,9 @@ The \<[TeamCity Data Directory](teamcity-data-directory.md)\> path with the abil
 
 <td>
 
+<anchor name="artifact-directories"/>
 
-Artifact directories:
+Artifact directories
 
 
 </td>

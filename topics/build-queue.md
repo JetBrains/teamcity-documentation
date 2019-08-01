@@ -31,25 +31,25 @@ This tab displays the following information:
 
       <img src="unpredictableDuration.png" alt="Unpredictable build duration" width="234"/>
         
-* __Triggered by__ \- a brief description of [the event that triggered the build](configuring-build-triggers.md).
+* __Triggered by__ \- a brief description of the [event that triggered the build](configuring-build-triggers.md).
 * __Can run on__ \- the number of agents compatible with this build configuration. You can click an agent's name link to open the [Agents page](viewing-build-agent-details.md), or use the down arrow to quickly view the list of compatible agents in the pop\-up window.
 
 ### Agent Selection for Queued Build
 
 When there are several idle agents that can run a queued build, TeamCity tries to select the fastest one as follows:
-1. If no builds have previously run on agents, the [CPU rank](viewing-build-agent-details.md) is used to select an agent.
-2. If builds have previously run on agents, the estimated build duration for the given build configuration is used to select an agent.  The estimate is made based on the heuristics of the latest builds in the history of the build configuration; for estimating, the execution time of the more recent builds has more weight than that of the earlier builds. [Personal](personal-build.md) and [canceled](build-state.md) builds are not taken into account, neither are any individual builds whose duration differs significantly from the rest of the builds for this build configuration.
+1. If no builds have previously run on agents, the [CPU rank](viewing-build-agent-details.md#Agent+Summary) is used to select an agent.
+2. If builds have previously run on agents, the estimated build duration for the given build configuration is used to select an agent.  The estimate is made based on the heuristics of the latest builds in the history of the build configuration; for estimating, the execution time of the more recent builds has more weight than that of the earlier builds. [Personal](personal-build.md) and [canceled](build-state.md#Canceled%2FStopped+build) builds are not taken into account, neither are any individual builds whose duration differs significantly from the rest of the builds for this build configuration.
 ### Ordering Build Queue
 
 You can do the following:
 * [reorder](ordering-build-queue.md) the builds in the queue manually.
-* [remove](ordering-build-queue.md) build configurations or personal builds from the queue.
-* If you have System Administrator permissions, you can [assign different priorities to build configurations](ordering-build-queue.md), which will affect their position in the queue.
+* [remove](ordering-build-queue.md#Removing+Builds+From+Build+Queue) build configurations or personal builds from the queue.
+* If you have System Administrator permissions, you can [assign different priorities to build configurations](ordering-build-queue.md#Managing+Build+Priorities), which will affect their position in the queue.
 ### Pausing/Resuming Build Queue
 
 The build queue can be paused manually or automatically.
 
-Users with the _Enable/disable agent_ permission (included in the [Agent Manager](role-and-permission.md) role by default) can manually Pause/Resume the Build Queue (since pausing the queue is equivalent to disabling all the agents on the server). 
+Users with the _Enable/disable agent_ permission (included in the [Agent Manager](role-and-permission.md#Per-Project+Authorization+Mode) role by default) can manually Pause/Resume the Build Queue (since pausing the queue is equivalent to disabling all the agents on the server). 
 
 The build queue can be paused automatically [if the TeamCity Server runs out of disk space](teamcity-disk-space-watcher.md). The queue will be automatically resumed when sufficient space is available.
 

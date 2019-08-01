@@ -30,7 +30,7 @@ Entities defined in a project become available to all the build configurations r
 * [Issue Trackers](integrating-teamcity-with-issue-tracker.md) 
 * [Shared Resources](shared-resources.md)
 * [SSH keys](ssh-keys-management.md)
-* [Maven Settings](maven-server-side-settings.md)
+* [Maven Settings](maven-server-side-settings.md#User-Level+Settings)
 * [Meta-Runners](working-with-meta-runner.md)
 
 For example, if you want to share a VCS root among several projects, you have to move it to the common parent of all these projects. If a VCS root must be shared among all projects, it must be created in the __&lt;Root project&gt;__.

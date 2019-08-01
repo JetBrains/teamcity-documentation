@@ -28,6 +28,8 @@ Description
 
 <td>
 
+<anchor name="prefer-agent-checkout"/>
+
 Prefer to checkout files on agent
 
 </td>
@@ -100,6 +102,8 @@ There is a [known issue](https://youtrack.jetbrains.com/issue/TW-43648) with CVS
 </td></tr><tr>
 
 <td>
+
+<anchor name="do-not-checkout-files-automatically"/>
 
 Do not check out files automatically
 

@@ -5,9 +5,9 @@
 
 
 The _build checkout directory_ is a directory on the TeamCity agent machine where all of the sources of all builds are checked out into.
-    * If you use the [agent-side checkout mode](vcs-checkout-mode.md), the build agent checks out the sources into this directory before the build.
-    * In case you use the [server-side checkout mode](vcs-checkout-mode.md), the TeamCity server sends incremental patches to the agent to update only the files changed since the last build in the given checkout directory.
-    * With the [manual checkout](vcs-checkout-mode.md) mode, no sources will be checked out but the default build checkout directory will still be created to check out the sources via a build script. The directory will not be cleaned automatically unless as its expiration period is configured as [described below](#Automatic+Checkout+Directory+Cleaning).
+    * If you use the [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout), the build agent checks out the sources into this directory before the build.
+    * In case you use the [server-side checkout mode](vcs-checkout-mode.md#server-checkout), the TeamCity server sends incremental patches to the agent to update only the files changed since the last build in the given checkout directory.
+    * With the [manual checkout](vcs-checkout-mode.md#do-not-checkout-files-automatically) mode, no sources will be checked out, but the default build checkout directory will still be created to check out the sources via a build script. The directory will not be cleaned automatically unless as its expiration period is configured as [described below](#Automatic+Checkout+Directory+Cleaning).
 
 The sources are placed into the checkout directory according to the mapping defined in the [VCS Checkout Rules](vcs-checkout-rules.md).
 
@@ -21,7 +21,7 @@ In your [build script](build-script-interaction-with-teamcity.md) you can refer 
 
 ## Checkout Process
 
-For checkout handled by TeamCity (the [server-side](vcs-checkout-mode.md) or [agent-side](vcs-checkout-mode.md) checkout mode), TeamCity keeps track of the last revision checked out into each checkout directory on the agent and for the new build applies an incremental patch from the last used revision to the revision of the current build.The revisions used can be looked up on the __[Changes](working-with-build-results.md)__ tab of the build results page.
+For checkout handled by TeamCity (the [server-side](vcs-checkout-mode.md#server-checkout) or [agent-side](vcs-checkout-mode.md#agent-checkout) checkout mode), TeamCity keeps track of the last revision checked out into each checkout directory on the agent and for the new build applies an incremental patch from the last used revision to the revision of the current build.The revisions used can be looked up on the __[Changes](working-with-build-results.md#Changes)__ tab of the build results page.
 
 Incremental checkouts mean that any files not created or modified by TeamCity (e.g. by the previous build scripts) are preserved in their modified state (unless dedicated VCS root\-specific reset options are used).That is why it is recommended to:
 * make sure the builds perform a clean procedure as the first step of the build for all the files that affect the build and might have been produced by previous builds. Typical files are compilation output, tests reports, build produce artifacts.
@@ -41,13 +41,13 @@ If for some reason you need to specify a custom checkout directory (for example,
 It is __not__ recommended that a custom checkout directory contain the [agent's working directory](build-working-directory.md) because of the potential undesirable side effects.
 </warning>
 
- Note that the content of the checkout directory can be deleted by TeamCity under [certain circumstances](clean-checkout.md).
+ Note that the content of the checkout directory can be deleted by TeamCity under [certain circumstances](clean-checkout.md#Automatic+Clean+Checkout).
 
 ## Automatic Checkout Directory Cleaning
 
-With the [server-side](vcs-checkout-mode.md) and [agent-side checkout](vcs-checkout-mode.md) modes, checkout directories are automatically deleted from the disk if not used (no builds were run on the agent using the directory as the checkout directory) for a specified period of time (8 days by default) or when another build requires more free disk space than available. With [manual checkout](vcs-checkout-mode.md) mode, automatic directory cleaning is not performed unless the directory expiration period is configured.
+With the [server-side](vcs-checkout-mode.md#server-checkout) and [agent-side checkout](vcs-checkout-mode.md#agent-checkout) modes, checkout directories are automatically deleted from the disk if not used (no builds were run on the agent using the directory as the checkout directory) for a specified period of time (8 days by default) or when another build requires more free disk space than available. With [manual checkout](vcs-checkout-mode.md#do-not-checkout-files-automatically) mode, automatic directory cleaning is not performed unless the directory expiration period is configured.
 
-It is recommended to use the [Free disk space](free-disk-space.md) build feature to ensure the build gets enough disk free space on the build agent.
+It is recommended to use the [Free Disk Space](free-disk-space.md) build feature to ensure the build gets enough disk free space on the build agent.
 
 
 [//]: # (Internal note. Do not delete. "Build Checkout Directoryd30e211.txt")    

@@ -7,7 +7,7 @@ TeamCity suggests several ways to view changes:
 * Pending changes are accessible from the __Projects__ page, build configuration page, or the [build results](working-with-build-results.md) page.
 
 Viewing and analyzing changes involves the following possibilities:
-* Observing actual changes that are already included in the build using the __Changes__ link on the __Projects__ page or on the __Changes__ tab of [the build results](working-with-build-results.md).
+* Observing actual changes that are already included in the build using the __Changes__ link on the __Projects__ page or on the __Changes__ tab of the [build results](working-with-build-results.md#Changes).
 * Observing pending changes in the __Pending Changes__ tab of the Build Configuration Home Page.
 * Viewing the [revision](revision.md) of the sources corresponding to each change
 * Ability to modify the change comment in TeamCity available to project administrators by default (changing the comment in the VCS  as well is recommended for consistency)

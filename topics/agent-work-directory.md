@@ -7,10 +7,10 @@ To modify the default directory location, see `workDir` parameter in [Build Agen
 
 <note>
 
-Note that TeamCity assumes full control over the directory and can [delete subdirectories](build-checkout-directory.md) if they do not correspond to checkout directories of the recent builds.
+Note that TeamCity assumes full control over the directory and can [delete subdirectories](build-checkout-directory.md#Automatic+Checkout+Directory+Cleaning) if they do not correspond to checkout directories of the recent builds.
 </note>
 
-For more information on handling the directories inside the agent work directory, please refer to [Build Checkout Directory](build-checkout-directory.md) section.
+For more information on handling the directories inside the agent work directory, refer to [Build Checkout Directory](build-checkout-directory.md) section.
 
 
 [//]: # (Internal note. Do not delete. "Agent Work Directoryd10e43.txt")    
