@@ -38,7 +38,7 @@ __To change the character set of an existing MySQL database to utf8:__
     maintainDB backup -D -F database_backup
     ```
 
-    More details on this backup are [here](creating-backup-via-maintaindb-command-line-tool.md).
+    More details on this backup are [here](creating-backup-via-maintaindb-command-line-tool.md#Performing+TeamCity+Data+Backup+with+maintainDB+Utility).
 	
 6. Create a new database with utf8 as the default character set, as described above.
 	

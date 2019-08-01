@@ -38,7 +38,7 @@ Any changes made to authentication in the UI will be reflected in the `<`[`TeamC
 ### Simple Mode
 
 Simple mode (default) allows you to select presets created for the most common use cases. To override the existing authentication settings, use the __Load preset...__ button, select one of the options and __Save__ your changes. The following presets are available:
-* Default ([built-in authentication](#Built-in+Authentication) \- [Token-Based Authentication](rest-api.md) and [Basic HTTP](rest-api.md))
+* Default ([built-in authentication](#Built-in+Authentication) \- [Token-Based Authentication](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
 * [LDAP](ldap-integration.md)
 * Active directory ([LDAP](ldap-integration.md) with [NTLM](ntlm-http-authentication.md) and [Token-Based Authentication](rest-api.md))
 * Microsoft Windows Domain ([NTLM](ntlm-http-authentication.md), [Token-Based Authentication](rest-api.md) and [Basic HTTP](rest-api.md))
@@ -65,7 +65,7 @@ Also, TeamCity plugins can provide [additional authentication modules](https://p
 
 ## User Authentication Settings
 
-The very first time TeamCity server starts with no users (and no administrator) so you will be prompted for the administrator account. If you are not prompted for the administrator account, refer to [How To Retrieve Administrator Password](how-to.md) for a resolution.
+The very first time TeamCity server starts with no users (and no administrator) so you will be prompted for the administrator account. If you are not prompted for the administrator account, refer to [How To Retrieve Administrator Password](how-to.md#Retrieve+Administrator+Password) for a resolution.
 
 The TeamCity administrator can modify the authentication settings for every user on their profile page.
 
@@ -93,7 +93,7 @@ By default, TeamCity uses the built\-in authentication, meaning that users and t
 
 When logging to TeamCity for the first time, the user will be prompted to create the TeamCity username and password which will be stored in TeamCity and used for authentication. If you installed TeamCity and logged into it, it means that built\-in authentication is enabled and all user data is stored in TeamCity.
 
-In the beginning the user database is empty and new users are either [added by the TeamCity administrator](managing-users-and-user-groups.md) or users are self\-registered: the default settings allow the users to register from the login page. All newly created users belong to the [All Users](user-group.md) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles should [be granted](managing-roles.md) via the __All Users__ group.
+In the beginning the user database is empty and new users are either [added by the TeamCity administrator](managing-users-and-user-groups.md#Creating+New+User) or users are self\-registered: the default settings allow the users to register from the login page. All newly created users belong to the [All Users](user-group.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles should [be granted](managing-roles.md) via the __All Users__ group.
 
 By default, the users are allowed to change their password on their profile page.
 
@@ -108,7 +108,7 @@ This authentication module is enabled by default.
 Allows user login using Windows domain name and password.The credential check is performed on the TeamCity server side, so the server should be aware of the domain(s) users use to log in.The supported syntax for the username is `DOMAIN\user.name` as well as `<username>@<domain>`.
 
 In addition to logging in using the login form, you can enable [NTLM HTTP Authentication](ntlm-http-authentication.md) single sign\-on.    
-If you select the "Microsoft Windows Domain" preset, in addition to the login via a Windows domain, the [Basic HTTP ](#Basic+HTTP+Authentication) and [NTLM](ntlm-http-authentication.md) authentication modules are enabled by default.
+If you select the "Microsoft Windows Domain" preset, in addition to the login via a Windows domain, the [Basic HTTP](#Basic+HTTP+Authentication) and [NTLM](ntlm-http-authentication.md) authentication modules are enabled by default.
 
 #### Specifying Default Domain
 
@@ -121,7 +121,7 @@ To enable users to enter the system using the login form without specifying the 
 #### Registering New Users on Login
 
 The default settings allow users to register from the login page and TeamCity user names for the new users will be the same as their Windows domain account.   
-All newly created users belong to the [All Users](user-group.md) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles should [be granted](managing-roles.md) via the __All Users__ group.
+All newly created users belong to the [All Users](user-group.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles should [be granted](managing-roles.md) via the __All Users__ group.
 
 To disable new user registration on login:
 1. Go to the __Administration | Authentication__ page.

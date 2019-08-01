@@ -27,7 +27,7 @@ After you have selected one of the [TeamCity installation options](installation.
 Compared to the `.war` distribution, the `.exe` and `.tar.gz` distributions:
 * include a Tomcat version which TeamCity is tested with, so it is known to be a working combination. This might not be the case with an external Tomcat.
 * define additional JRE options which are usually recommended for running the server
-* have the [teamcity-server startup script](#Starting+TeamCity+server) which provides several convenience options (e.g. separate environment variable for memory settings) and configures TeamCity correctly (e.g. log4j configuration)
+* have the [teamcity-server startup script](#Starting+TeamCity+server) which provides several convenience options (for example, separate environment variable for memory settings) and configures TeamCity correctly (for example,. log4j configuration)
 * (at least under Windows) provide better error reporting for some cases (like a missing Java installation)
 * under Windows, allow running TeamCity as a service with the ability to use the same configuration as if run from the console
 * come bundled with a build agent distribution and single startup script which allows for easy TeamCity server evaluation with one agent
@@ -51,9 +51,9 @@ For the Windows platform, run the executable file and follow the installation in
 
 If you opted to install the services, use the standard Windows `Services` applet to manage the service.Otherwise, use standard [scripts](#Starting+TeamCity+server).
 
-If you did not change the default port (80) during the installation, the TeamCity web UI can be accessed via [`http://localhost/`](http://localhost/) in a web browser running on the same machine where the server is installed. Note that port 80 can be used by other programs (e.g. Skype, or other web servers like IIS). In this case you can specify another port during the installation and use [`http://localhost:<port>/`](http://localhost:<port>/) address in the browser.
+If you did not change the default port (80) during the installation, the TeamCity web UI can be accessed via [`http://localhost/`](http://localhost/) in a web browser running on the same machine where the server is installed. Note that port 80 can be used by other programs (for example, Skype, or other web servers like IIS). In this case you can specify another port during the installation and use [`http://localhost:<port>/`](http://localhost:<port>/) address in the browser.
 
-If you want to edit the TeamCity server's service parameters, memory settings or system properties after the installation, refer to the [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md) section.
+If you want to edit the TeamCity server's service parameters, memory settings or system properties after the installation, refer to the [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md) page.
 
 <warning>
 

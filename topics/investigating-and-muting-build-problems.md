@@ -23,12 +23,12 @@ To investigate a problem in more than one build configuration, click __more__ an
 
 
 __To assign an investigation / mute a particular build problem__:
-1. Navigate to the __Overview__ tab of the [Build Results page](working-with-build-results.md), click the arrow next to the build problem, click the _Investigate..._ link.
+1. Navigate to the __Overview__ tab of the [Build Results page](working-with-build-results.md), click the arrow next to the build problem, click the _Investigate_ link.
 2. The _Investigate / Mute Build problem_ dialog opens. Select the investigation or muting options and save them:   
 
    <img src="investigating-muting-build-problem.png" width="1166" alt="Investigate/mute a build problem"/>
 
-__To assign an investigation / mute a particular test__, navigate to the __Tests__ tab, __Current Problems__ tab or __Problematic Tests__ of the __Build Results__ page, click the arrow next to the test name and select __Investigate__.
+__To assign an investigation / mute a particular test__, navigate to the __[Tests](working-with-build-results.md#Tests)__ tab, __[Current Problems](viewing-tests-and-configuration-problems.md)__ tab or __Problematic Tests__ of the __Build Results__ page, click the arrow next to the test name and select __Investigate__.
 
 ## Viewing Investigations and Mutes
 

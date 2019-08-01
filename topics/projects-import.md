@@ -10,7 +10,7 @@ You can import projects with all their data and user accounts from a backup file
 ## Projects Import or Server Move
 
 Projects Import should be used only when some projects need to be added to an existing server containing some other projects, i.e. when you need to merge two servers into a single one. That is because the import is a disruptive operation and [not all data is imported](#Data+not+included+into+import).   
-If you need to move all the server data to a different machine, use [server move](how-to.md).
+If you need to move all the server data to a different machine, use [server move](how-to.md#Move+TeamCity+Installation+to+a+New+Machine).
 
 ## Importing projects
 
@@ -38,11 +38,11 @@ After selecting a backup file, you need to specify which projects will be import
 TeamCity will analyze the selected projects to see if they will be imported, merged or skipped.
 
 * The project will be __imported__ if it is new for the target server. All its entities (Build Configurations, Templates, Builds, etc) and their data will be created on the target server.
-* The project will be __merged__ if the same project already exists on the target server (if the source and target project have the same [UUID](identifier.md) and [external ID](identifier.md)).   
+* The project will be __merged__ if the same project already exists on the target server (if the source and target project have the same [UUID](identifier.md#Universally+Unique+IDs) and [external ID](identifier.md#External+IDs)).   
    During merging the existing entities will remain intact and only the entities new for the target will be imported with the related data.    
-   The data for the existing entities will not be imported or merged: new data will not be added to the existing entities (e.g. changes will not added to an existing VCS root), the existing files will not be changed (e.g. if the same template exists on both servers with different settings, the target file will be preserved).   
+   The data for the existing entities will not be imported or merged: new data will not be added to the existing entities (for example, changes will not added to an existing VCS root), the existing files will not be changed (for example, if the same template exists on both servers with different settings, the target file will be preserved).   
    It means, for example, that you cannot import missing builds to the existing build configuration. If you need to add the missing data to the existing entities, for example, import new builds into an already imported build configuration, then you should remove this build configuration using the UI and re\-import its project.
-* The project will be __skipped__ if a [conflict](#Conflicts) occurs: either the project's [UUID](identifier.md) is new but its [external ID](identifier.md) already exists on the target; or if the source and target projects have the same [UUID](identifier.md) but different [external IDs](identifier.md).
+* The project will be __skipped__ if a [conflict](#Conflicts) occurs: either the project's [UUID](identifier.md) is new but its [external ID](identifier.md#External+IDs) already exists on the target; or if the source and target projects have the same [UUID](identifier.md#Universally+Unique+IDs) but different [external IDs](identifier.md#External+IDs).
 
 ### Defining import scope
 
@@ -62,8 +62,8 @@ The following files are imported:
 When users are selected for import, TeamCity will analyze the usernames to see if users will be __imported__ or __merged__.
 
 TeamCity users must have unique usernames. 
-* A user account whose username is new for the target server will be __imported__. Such users appear on the target server in a separate group marked _Imported &lt;Import Date Time&gt;_. All the related data (personal builds, changes, test mutes and investigations) will be created on the target server. The [user account settings](managing-your-user-account.md) (roles, permissions, VCS names, notification settings, etc.: system\-wide settings as well as the settings related to the imported projects) are preserved during import.   
-* User accounts with the same username on the source and the target servers can be __merged__. During merging the existing data will remain intact and only the data new for the target will be added: all the new user\-related data (personal builds, changes, test mutes and investigations) and the [user account settings](managing-your-user-account.md) (roles, permissions, VCS names, notification settings, etc.: system\-wide settings as well as the settings related to the imported projects) will be added to the user on the target server.    
+* A user account whose username is new for the target server will be __imported__. Such users appear on the target server in a separate group marked _Imported &lt;Import Date Time&gt;_. All the related data (personal builds, changes, test mutes and investigations) will be created on the target server. The [user account settings](managing-your-user-account.md) (roles, permissions, VCS names, notification settings, and so on: system\-wide settings as well as the settings related to the imported projects) are preserved during import.   
+* User accounts with the same username on the source and the target servers can be __merged__. During merging the existing data will remain intact and only the data new for the target will be added: all the new user\-related data (personal builds, changes, test mutes and investigations) and the [user account settings](managing-your-user-account.md) (roles, permissions, VCS names, notification settings, and so on: system\-wide settings as well as the settings related to the imported projects) will be added to the user on the target server.    
   (!) Merging may cause a problem if the same username belongs to different users on the source and the target server: during import the user information will be merged anyway.       
   __Note__ that the scope of user permissions on the target may change after import, for example:
    * if a user has the system administrator role on the source, this role will be added to the user on the target after import,   
@@ -79,15 +79,15 @@ Import of user groups works the same way: new groups are imported, while the exi
 
 If a [conflict](#Conflicts) occurs (the groups exists on both the source and the target, but the group roles are different), after import the group on the target server may get additional roles. As a result, a member of this group on the target will get additional roles and permissions as well. 
 
-The __Project Import__ page | __Import scope__ section | __Groups__ will display how many conflicting groups are found. You can view all the groups that have the same group key and decide if you want to merge them. Note that ["All Users" group](user-group.md) is always listed as a conflicting one because it is a default group on all TeamCity servers.
+The __Project Import__ page | __Import scope__ section | __Groups__ will display how many conflicting groups are found. You can view all the groups that have the same group key and decide if you want to merge them. Note that ["All Users" group](user-group.md#%22All+Users%22+Group) is always listed as a conflicting one because it is a default group on all TeamCity servers.
 
 ### Conflicts
 
 TeamCity does not import entities from the backup file if they conflict with some entity on the target server. Before import, TeamCity analyzes the backup file and displays all detected conflicts on the __Import Scope__ configuration page.
 
-It is __highly recommended to resolve all conflicts__ before proceeding with the import, as unresolved conflicts may result in unpredictable behavior after the import, e.g.:
+It is __highly recommended to resolve all conflicts__ before proceeding with the import, as unresolved conflicts may result in unpredictable behavior after the import, for example:
 * Critical errors can be shown if, for example, some VCS Root was skipped, but a Build Configuration depending on it was imported.
-* Imported Build Configurations may refer to the wrong Template if there was an unresolved conflict of [external IDs](identifier.md) between the templates from the source and target servers.
+* Imported Build Configurations may refer to the wrong Template if there was an unresolved conflict of [external IDs](identifier.md#External+IDs) between the templates from the source and target servers.
 
 If the conflicts have not been resolved before importing, you can find the conflicting files in the `conflictingFiles` directory under the import results logs.
 

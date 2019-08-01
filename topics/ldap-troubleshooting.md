@@ -26,7 +26,8 @@ The first reason means that the login can't be used for signing in because it do
 
 The second error can be caused by various things, for example:
 	
-* You are trying to login with your username, but LDAP server accepts only full DNsIf all users are stored in one LDAP branch,  you should use  the `teamcity.auth.formatDN` property. Otherwise see the section below.
+* You are trying to login with your username, but LDAP server accepts only full DNs.   
+If all users are stored in one LDAP branch, use the `teamcity.auth.formatDN` property. Otherwise, see the section below.
 	
 * Check your DN and the actual principal from the logs, probably there is a typo or an unescaped sequence. Try to log in with this principal using another LDAP tool.
 	
@@ -38,4 +39,4 @@ The second error can be caused by various things, for example:
 
 
 
-This feature is available from version 5.0. You should specify how you want to find the user (`teamcity.users.login.filter`), for example, by the username or email. On each login TeamCity finds the user in LDAP _before_ logging in, fetches the user DN and then performs the bind. Thus you should also define the credentials for TeamCity to perform search operations (`java.naming.security.principal` and `java.naming.security.credentials`). 
+This feature is available from version 5.0. You should specify how you want to find the user (`teamcity.users.login.filter`), for example, by the username or email. On each login TeamCity finds the user in LDAP _before_ logging in, fetches the user DN and then performs the bind. Thus, you must also define the credentials for TeamCity to perform search operations (`java.naming.security.principal` and `java.naming.security.credentials`). 

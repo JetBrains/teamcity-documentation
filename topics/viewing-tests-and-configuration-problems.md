@@ -18,10 +18,10 @@ To view problematic build configurations and tests in your project, open the Pro
 By default, the __Current Problems__ tab displays data for all build configurations within a project. To limit the data displayed, use the __Filter by build configuration__ drop\-down.
 
 From this page you can view problems in your project divided into the following groups:
-* build configuration problems,
-* failed tests,
-* [muted test failures](muting-test-failures.md),
-* build problems.
+* build configuration problems
+* failed tests
+* [muted test failures](muting-test-failures.md)
+* build problems
 
 Each of the sections is expandable and you can further drill down to the smallest relevant item using the up and down arrows ![UpDownArrows.PNG](UpDownArrows.PNG).
 

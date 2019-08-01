@@ -150,7 +150,7 @@ The list of supported user settings:
 * `teamcity.users.property.plugin:notificator:jabber:jabber-account`
 * `teamcity.users.property.plugin:vcs:<VCS type>:anyVcsRoot` – VCS username for all &lt;VCS type&gt; roots. The following VCS types are supported: svn, perforce, jetbrains.git, cvs, tfs, vss, clearcase, starteam.
 
-Example properties can be seen by configuring them for a user in the web UI and then listing the properties via [REST API](rest-api.md).
+Example properties can be seen by configuring them for a user in the web UI and then listing the properties via [REST API](rest-api.md#Users).
 
 __Since TeamCity 8.0__, there is an __experimental__ feature which allows mapping user profile properties in TeamCity to a formatted combination of LDAP properties rather than to a specific property on user synchronization.   
 To enable the mapping, add `teamcity.users.properties.resolve=true` to `ldap-config.properties`.   
@@ -170,7 +170,7 @@ TeamCity can automatically update users membership in groups based on the LDAP\-
 
 __To configure Group membership:__
 1. Create groups in TeamCity manually.
-2. Specify the mapping of LDAP groups to TeamCity groups in the `<TeamCity data directory>/config/ldap\-mapping.xml` file. Use the `ldap-mapping.xml`.[`dist file`](teamcity-data-directory.md) as an example: TeamCity user groups are determined by the [Group Key](managing-users-and-user-groups.md), LDAP groups are specified by the group DN.
+2. Specify the mapping of LDAP groups to TeamCity groups in the `<TeamCity data directory>/config/ldap\-mapping.xml` file. Use the `ldap-mapping.xml`.[`dist file`](teamcity-data-directory.md) as an example: TeamCity user groups are determined by the [Group Key](managing-users-and-user-groups.md#Managing+User+Groups), LDAP groups are specified by the group DN.
 3. Set the required properties in the `ldap-config.properties` file, the __groups settings__ section:
    * `teamcity.options.groups.synchronize` \- enables user group membership synchronization
    * `teamcity.groups.base` and `teamcity.groups.filter` \- specifies the LDAP base node and filter to find the groups in LDAP (those configured in the `ldap-mapping.xml` file should be a subset of the groups found by these settings)
@@ -187,7 +187,7 @@ __To map nested LDAP groups to TeamCity__:
 
 If either an LDAP group or a TeamCity group that is configured in the mapping is not found, an error is reported. You can review the errors found during the last synchronization run in the __Administration | LDAP Synchronization__ section of the [server settings](teamcity-configuration-and-maintenance.md).
 
-See also [example settings](typical-ldap-configurations.md) for Active Directory synchronization.
+See also [example settings](typical-ldap-configurations.md#Active+Directory+With+Group+Synchronization) for Active Directory synchronization.
 
 ### Creating and Deleting Users
 
@@ -257,5 +257,5 @@ Note that scrambling is not encryption: it protects the password from being easi
 
 Internal LDAP logs are stored in `logs/teamcity-ldap.log*` files in the [server logs](teamcity-server-logs.md). If you encounter an issue with LDAP configuration, it is advised that you look into the logs as the issue can often be figured out from the messages in there. To get detailed logs of LDAP login and synchronization processes, use the "debug\-ldap" [logging preset](teamcity-server-logs.md).
 
-If you want to [report an LDAP issue to us](https://confluence.jetbrains.com/display/TW/Feedback), make sure to include LDAP settings (`<TeamCity data directory>/config/ldap-config.properties` and `ldap-mapping.xml` files, with password in `ldap-config.properties` masked) and debug LDAP logs fully covering a login/synchronization sequence (include all `teamcity-ldap.log*` files). Make sure to describe the related structure of your LDAP (noting the attributes of related LDAP entities) and detail expected/actual behavior. The archive with the data can be sent to us via [one of the supported ways](reporting-issues.md).
+If you want to [report an LDAP issue to us](https://confluence.jetbrains.com/display/TW/Feedback), make sure to include LDAP settings (`<TeamCity data directory>/config/ldap-config.properties` and `ldap-mapping.xml` files, with password in `ldap-config.properties` masked) and debug LDAP logs fully covering a login/synchronization sequence (include all `teamcity-ldap.log*` files). Make sure to describe the related structure of your LDAP (noting the attributes of related LDAP entities) and detail expected/actual behavior. The archive with the data can be sent to us via [one of the supported ways](reporting-issues.md#Uploading+Large+Data+Archives).
 

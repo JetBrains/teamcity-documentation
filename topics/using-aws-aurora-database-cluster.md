@@ -18,7 +18,7 @@ It will take some time for the JVM\-specific cache in TeamCity to expire and for
 ## General Recommendations 
 
 When working with a failover cluster, it is recommended you decrease the JVM\-specific DNS caching on TeamCity [by setting the TTL to 60](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-jvm-ttl.html):
-1. Add the `-Dsun.net.inetaddr.ttl=60`JVM option to [the environment variable](configuring-teamcity-server-startup-properties.md#JVM+Options).
+1. Add the `-Dsun.net.inetaddr.ttl=60`JVM option to the [environment variable](configuring-teamcity-server-startup-properties.md#JVM+Options).
 
 2. Restart TeamCity for the changes to take effect.
 
@@ -44,7 +44,7 @@ The following options may affect your TeamCity server performance.
 </note>
 
 Configure the database connection pool to use a special validation query, so that the connections to the DB instance are tested before and/or after use and if a connection to the read\-only database is detected, they are evicted from the pool.
-1. Add the following lines to the `<TeamCity Data Directory>/config/` [file](https://confluence.jetbrains.com/display/TCD10/Setting+up+an+External+Database#SettingupanExternalDatabase-DatabaseConfigurationProperties):
+1. Add the following lines to the `<TeamCity Data Directory>/config/` [file](setting-up-an-external-database.md#Database+Configuration+Properties):
 
 
     ```Shell

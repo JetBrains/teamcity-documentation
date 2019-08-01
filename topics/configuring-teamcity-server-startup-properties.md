@@ -23,7 +23,7 @@ Many properties do not require the server restart, but some do.
 
 The properties are stored in the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/internal.properties` file. The file is a Java [properties file](http://en.wikipedia.org/wiki/.properties). Create the file and add a required property `<property name>=<property value>` on a separate line.
 
-An alternative but obsolete way to add an internal property is to pass it as a `-D<name>=<value>` JVM option (see [the section below](https://confluence.jetbrains.com/display/TCD10/Configuring+TeamCity+Server+Startup+Properties#ConfiguringTeamCityServerStartupProperties-JVMOptions)).
+An alternative but obsolete way to add an internal property is to pass it as a `-D<name>=<value>` JVM option (see the [section below](#JVM+Options)).
 
 ### JVM Options
 
@@ -38,8 +38,8 @@ You will need to [restart](installing-and-configuring-the-teamcity-server.md) th
 #### Standard TeamCity Startup Scripts
 
 If you run the server using the `runAll` or `teamcity-server` scripts or as a Windows service, you need to set the options via the OS __[environment variables](http://en.wikipedia.org/wiki/Environment_variable)__ passed to the TeamCity server process:
-* `TEAMCITY_SERVER_MEM_OPTS` — server JVM memory options (e.g. `-Xmx750m`)
-* `TEAMCITY_SERVER_OPTS` — additional server JVM options (e.g. `-Dteamcity.git.fetch.separate.process=false`)
+* `TEAMCITY_SERVER_MEM_OPTS` – server JVM memory options (for example, `-Xmx750m`)
+* `TEAMCITY_SERVER_OPTS` – additional server JVM options (for example, `-Dteamcity.git.fetch.separate.process=false`)
 
 Make sure the environment variables are set for the user whose account is used to run TeamCity or as global environment variables. You might need to reboot the machine after the environment change for the changes to have effect.
 

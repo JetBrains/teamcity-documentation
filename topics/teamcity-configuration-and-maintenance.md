@@ -3,7 +3,7 @@
 
 <tip>
 
-Server configuration is only available to the [System Administrators](role-and-permission.md).
+Server configuration is only available to the [System Administrators](role-and-permission.md#Per-Project+Authorization+Mode).
 </tip>
 
 
@@ -66,7 +66,7 @@ Artifact directories
 
 The list of the root directories used by the TeamCity server to store [Build Artifact](build-artifact.md), build logs and other build data. The default location is `/system/artifacts`. Note that artifacts can also be stored on [external storage](configuring-artifacts-storage.md).
 
-The list can be changed by specifying a new\-line delimited list of paths. Absolute and relative (to TeamCity Data Directory) paths are supported.All the specified directories use the same [structure](teamcity-data-directory.md).
+The list can be changed by specifying a new\-line delimited list of paths. Absolute and relative (to TeamCity Data Directory) paths are supported.All the specified directories use the same [structure](teamcity-data-directory.md#artifacts).
 
 When looking for build artifacts, the specified locations are searched for the directory corresponding to the build. The search is done in the order the root directories are specified. The first found build artifacts directory is used as the source of artifacts of this build.
 
@@ -83,7 +83,7 @@ Caches directory:
 
 <td>
 
-The directory containing TeamCity internal caches (of the VCS repository contents, search index, other), which be manually deleted to clear [caches](teamcity-monitoring-and-diagnostics.md).
+The directory containing TeamCity internal caches (of the VCS repository contents, search index, other), which be manually deleted to clear [caches](teamcity-monitoring-and-diagnostics.md#Caches).
 
 </td></tr><tr>
 
@@ -138,7 +138,7 @@ Default build execution timeout:
 
 <td>
 
-Maximum time for a build. Can be overridden when defining  [build failure conditions](build-failure-conditions.md).
+Maximum time for a build. Can be overridden when defining [build failure conditions](build-failure-conditions.md).
 
 </td></tr></table>
 

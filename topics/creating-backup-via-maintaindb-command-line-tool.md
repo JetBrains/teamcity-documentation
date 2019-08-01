@@ -33,7 +33,7 @@ maintainDB.[cmd|sh] backup
 
 
 
-TeamCity data backup has [some limitations](teamcity-data-backup.md). By default, if you run `maintainDB` utility with no optional parameters,  only the database, server settings, projects and builds configurations, plugins and supplementary data (settings history, triggers states, plugins data, etc.) will be backed up, omitting build logs and personal changes.
+TeamCity data backup has [some limitations](teamcity-data-backup.md#Backing+up+Data). By default, if you run `maintainDB` utility with no optional parameters,  only the database, server settings, projects and builds configurations, plugins and supplementary data (settings history, triggers states, plugins data, and so on) will be backed up, omitting build logs and personal changes.
 
 ### Configuring backup scope
 
