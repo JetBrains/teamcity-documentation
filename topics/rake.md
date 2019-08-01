@@ -281,7 +281,7 @@ Attached reporters
 
 <td>
 
-If you want TeamCity to display the test results on a dedicated [Tests tab](working-with-build-results.md) of the __Build Results__ page, select here the testing framework you use: Test::Unit, Test\-Spec, Shoulda, RSpec or Cucumber.
+If you want TeamCity to display the test results on a dedicated [Tests tab](working-with-build-results.md#All+Tests) of the __Build Results__ page, select here the testing framework you use: Test::Unit, Test\-Spec, Shoulda, RSpec or Cucumber.
 
 <note>
 

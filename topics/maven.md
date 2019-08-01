@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Maven)
 
 
-Note that you can create a new Maven\-based build configuration [automatically from URL](creating-and-editing-projects.md), and set up a [dependency build trigger](configuring-maven-triggers.md), if a specific Maven artifact has changed.
+Note that you can create a new Maven\-based build configuration [automatically from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), and set up a [dependency build trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger), if a specific Maven artifact has changed.
 
 <note>
 
@@ -347,8 +347,8 @@ Check the following:
 
 In the [Perforce VCS Root](perforce.md) Settings of your build configuration in TeamCity:
 
-1. Enable the [checkout on agent.](perforce.md).
-2. Enable [Use ticket-based authentication](perforce.md) in Perforce VCS root settings.
+1. Enable the [checkout on agent](perforce.md#Checkout+On+Agent+Settings).
+2. Enable [Use ticket-based authentication](perforce.md#P4+Connection+Settings) in Perforce VCS root settings.
 3. Make sure your build agent environment doesn't have any occasional P4 variables which can interfere with the execution of Maven Release Plugin.
 4. Specify `release:prepare` in the __Goals__ field of the Maven build step and run the build.
 

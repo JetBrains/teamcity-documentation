@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: SSH Exec)
 SSH Exec enables TeamCity to execute arbitrary remote commands using SSH.
 
-The settings common for all runners are described on a [separate page](configuring-build-steps.md); this page details the SSH Exec runner settings.
+The settings common for all runners are described in [Configuring Build Steps](configuring-build-steps.md); this page details the SSH Exec runner settings.
 
 The fields below support [parameter references](predefined-build-parameters.md): any text between percentage signs (`%`) is considered a reference to a property by TeamCity. To prevent TeamCity from treating the text in the percentage signs as reference to a property, use two percentage signs to escape them: for example, if you want to pass "`%Y%m%d%H%M%S`" into the build, change it to "`%%Y%%m%%d%%H%%M%%S`".
 
@@ -104,7 +104,7 @@ Select an SSH authentication method.
  * __Default private key__ will try to perform private key authentication using the `~/.ssh/config` settings. If no settings file exists, will try to use the `~/.ssh/rsa_pub` public key file. No passphrases should be set.
  * __Custom private key__ will try to perform private key authentication using the given public key file with given passphrase
  * __Password__ – simple password authentication.
- * __SSH\-Agent__ – use ssh\-agent for authentication, the [SSH-Agent build feature ](ssh-agent.md) must be enabled.
+ * __SSH\-Agent__ – use ssh\-agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
 
 
 <note>

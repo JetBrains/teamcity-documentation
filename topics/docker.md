@@ -69,7 +69,7 @@ Path to file
 
 <td>
 
-_Available if File is selected as the source_. Specify the path to the Docker file. The path should be relative to the [checkout directory.](build-checkout-directory.md)
+_Available if File is selected as the source_. Specify the path to the Docker file. The path should be relative to the [checkout directory](build-checkout-directory.md).
 
 
 </td></tr><tr>

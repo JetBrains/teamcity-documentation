@@ -144,7 +144,7 @@ Script
 Select whether you want to enter the script right in TeamCity, or specify a path to the script:
 
 * __File__: Enter the path to a PowerShell file. The path has to be relative to the checkout directory.
-* __Source__: Enter the PowerShell script source. Note that TeamCity [parameter references](configuring-build-parameters.md) will be replaced in the code.
+* __Source__: Enter the PowerShell script source. Note that TeamCity [parameter references](configuring-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) will be replaced in the code.
 
 <note>
 
@@ -211,7 +211,7 @@ Specify parameters to be passed to `powershell.exe`.
 
 ## Docker Settings
 
-To enable support for Docker in PowerShell steps, run the TeamCity server with the `-Dteamcity.docker.runners=jetbrains_powershell` [internal property](configuring-teamcity-server-startup-properties.md).
+To enable support for Docker in PowerShell steps, run the TeamCity server with the `-Dteamcity.docker.runners=jetbrains_powershell` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
 In this section, you can specify a Docker image which will be [used to run the build step](docker-wrapper.md). 
 
@@ -265,9 +265,9 @@ The PowerShell plugin does not use the cmd wrapper around `powershell.exe`. It m
 
 
 * _Setting  to  and adding a build failure condition_:   
-In case syntax errors and exceptions are present, PowerShell writes them to `stderr`. To make TeamCity fail the build, set __Error Output__ option to `Error` and add a [build failure condition](build-failure-conditions.md) that will fail the build on any error output.
+In case syntax errors and exceptions are present, PowerShell writes them to `stderr`. To make TeamCity fail the build, set __Error Output__ option to `Error` and add a [build failure condition](build-failure-conditions.md#Common+build+failure+conditions) that will fail the build on any error output.
 * _Failing build on certain message in build log_:   
-Add a [build failure condition](build-failure-conditions.md) that will fail the build on a certain message (say "POWERSHELL ERROR") in the build log.
+Add a [build failure condition](build-failure-conditions.md#Common+build+failure+conditions) that will fail the build on a certain message (say "POWERSHELL ERROR") in the build log.
 
 
     ```Shell

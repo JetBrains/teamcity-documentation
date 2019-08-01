@@ -16,11 +16,11 @@ Before the build and before each build preparation stage, the agent will check t
 If the amount is less than required, the agent will try to delete the data of other builds before proceeding.
 
 The data cleaned includes:
-* the checkout directories that were marked for [deletion](build-checkout-directory.md)
+* the checkout directories that were marked for [deletion](build-checkout-directory.md#Automatic+Checkout+Directory+Cleaning)
 * contents of other build's checkout directories in the reversed most recently used order
 * the cache of previously downloaded artifacts (that were downloaded to the agent via TeamCity artifact dependencies)
-* cleaning the local [Docker caches](integrating-teamcity-with-docker.md) 
-* cleaning the local [NuGet packages caches](nuget.md)
+* cleaning the local [Docker caches](integrating-teamcity-with-docker.md#Docker+Disk+Space+Cleaner) 
+* cleaning the local [NuGet packages caches](nuget.md#NuGet+Packages+Cache+Clean-up+on+Agents)
 
 If you need to make sure a checkout directory is never deleted while freeing disk space, set the `system.teamcity.build.checkoutDir.expireHours` property to `never`. See more at [Build Checkout Directory](build-checkout-directory.md).
 
@@ -72,7 +72,7 @@ Check the box to add the corresponding build failure condition.
 For compatibility reasons  the free disk space value can be specified via the properties below. However, using the Free disk space build feature is recommended as the properties can be removed in the future TeamCity versions.
 
 The properties can be defined:
-* globally for a build agent (in agent's [buildAgent.properties](build-agent-configuration.md) file)
+* globally for a build agent (in agent's [`buildAgent.properties`](build-agent-configuration.md) file)
 * for a particular build configuration by specifying its system properties.
 
 The required free space value is defined with the following properties:
@@ -100,17 +100,5 @@ If caching artifacts is undesirable (for example, when the artifacts are large a
 __See also:__
 
 __Administrator's Guide__: [TeamCity Server Disk Space Watcher](teamcity-disk-space-watcher.md) | [Build Failure Conditions](build-failure-conditions.md)
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
 
  

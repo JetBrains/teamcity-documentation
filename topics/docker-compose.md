@@ -29,6 +29,6 @@ If the checkbox __pull image explicitly__ is enabled, `docker-compose pull` will
 
 When using Docker Compose with images which support [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck), TeamCity will wait for the `healthy` status of all containers that support this parameter.
 
-If the start of Docker Compose was successful, the TeamCity agent will register the `TEAMCITY_DOCKER_NETWORK` environment variable containing the name of the Docker Compose default network. This network will be passed transparently to the [Docker Wrapper](integrating-teamcity-with-docker.md) when used in some build runners. 
+If the start of Docker Compose was successful, the TeamCity agent will register the `TEAMCITY_DOCKER_NETWORK` environment variable containing the name of the Docker Compose default network. This network will be passed transparently to the [Docker Wrapper](integrating-teamcity-with-docker.md#Docker+Wrapper) when used in some build runners. 
 
 </chunk>

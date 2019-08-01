@@ -3,7 +3,7 @@
 
 The _Automatic Merge_ build feature tracks builds in branches matched by the configured filter and merges them into a specified destination branch if the build satisfies the condition configured (for example, the build is successful).   
 The feature is supported for Git and Mercurial VCS roots for build configurations with enabled [feature branches](working-with-feature-branches.md).   
-TeamCity also allows merging branches [manually](working-with-feature-branches.md).
+TeamCity also allows merging branches [manually](working-with-feature-branches.md#Manual+branch+merging).
 
 On this page:
 
@@ -43,7 +43,7 @@ Merge into branch
 
 </td><td>
 
-A [logical name](working-with-feature-branches.md) of the destination branch the sources will be merged to. Parameter references are supported here. The branch __must__ be present in a repository and included into the __Branch Specification__.
+A [logical name](working-with-feature-branches.md#Logical+branch+name) of the destination branch the sources will be merged to. Parameter references are supported here. The branch __must__ be present in a repository and included into the __Branch Specification__.
 
 </td>
 </tr><tr>

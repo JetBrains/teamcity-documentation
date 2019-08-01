@@ -217,7 +217,7 @@ Include categories
 <td>
 
 Specify NUnit categories of tests to be run. Multiple entries are comma\-separated.    
-[Category expressions](teamcity-nunit-test-launcher.md) are supported here as well; commas, semicolons, and new\-lines are treated as global __or__ operations (prior to the expression parsing). Since NUnit 3.0 __category expressions are not supported__ and must be set via the command line as [described in the NUNit documentation](https://github.com/nunit/docs/wiki/Test-Selection-Language).
+[Category expressions](teamcity-nunit-test-launcher.md#Category+Expression) are supported here as well; commas, semicolons, and new\-lines are treated as global __or__ operations (prior to the expression parsing). Since NUnit 3.0 __category expressions are not supported__ and must be set via the command line as [described in the NUNit documentation](https://github.com/nunit/docs/wiki/Test-Selection-Language).
 
 
 </td></tr><tr>
@@ -232,7 +232,7 @@ Exclude categories
 <td>
 
 Specify NUnit categories to be excluded from the tests to be run. Multiple entries are comma\-separated.    
-[Category expressions](teamcity-nunit-test-launcher.md) are supported here as well; commas, semicolons, and new\-lines are treated as global __or__ operations (prior to the expression parsing). Since NUnit 3.0 __category expressions are not supported__ and must be set via the command line as [described in the NUNit documentation](https://github.com/nunit/docs/wiki/Test-Selection-Language).
+[Category expressions](teamcity-nunit-test-launcher.md#Category+Expression) are supported here as well; commas, semicolons, and new\-lines are treated as global __or__ operations (prior to the expression parsing). Since NUnit 3.0 __category expressions are not supported__ and must be set via the command line as [described in the NUNit documentation](https://github.com/nunit/docs/wiki/Test-Selection-Language).
 
 
 </td></tr><tr>

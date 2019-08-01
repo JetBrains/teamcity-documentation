@@ -43,9 +43,9 @@ Select a `dotnet` command from the drop\-down. Depending on the selected command
 * [`vstest`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-vstest)
 * [`msbuild`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild)
 * [`nuget delete`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-delete)    
- (requires .NET CLI 2.1.500\+ for [authentication in private feeds](net-cli-dotnet.md))
+ (requires .NET CLI 2.1.500\+ for [authentication in private feeds](net-cli-dotnet.md#Authentication+in+private+NuGet+Feeds))
 * [`nuget push`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push)    
-(requires .NET CLI 2.1.500\+ for [authentication in private feeds](net-cli-dotnet.md))
+(requires .NET CLI 2.1.500\+ for [authentication in private feeds](net-cli-dotnet.md#Authentication+in+private+NuGet+Feeds))
 
 
 </td></tr><tr>

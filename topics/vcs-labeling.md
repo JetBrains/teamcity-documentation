@@ -8,9 +8,9 @@ On this page:
 
 ## Automatic VCS labeling
 
-You can set TeamCity to label the sources of a build depending on the build status automatically. The process takes place in the background after the build finishes and does not affect the build status, which means that a labeling failure is not a standard [notification event](subscribing-to-notifications.md). However, the users subscribed for [notifications about failed builds](subscribing-to-notifications.md) of the current build configuration will be notified about a labeling failure.
+You can set TeamCity to label the sources of a build depending on the build status automatically. The process takes place in the background after the build finishes and does not affect the build status, which means that a labeling failure is not a standard [notification event](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications). However, the users subscribed for [notifications about failed builds](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications) of the current build configuration will be notified about a labeling failure.
 
-Any errors encountered during labeling are reported on the [Changes tab](working-with-build-results.md) of the build results page.
+Any errors encountered during labeling are reported on the [Changes tab](working-with-build-results.md#Changes) of the build results page.
 
 Labeling is configured for a build configuration/template.
 
@@ -35,7 +35,7 @@ For an example of using the Teamcity VCS labeling feature to automate tag creati
 
 To label the sources manually:
 
-Navigate to [the build results](working-with-build-results.md) page, click __Actions__ and select __Label this build sources__ from the drop\-down.
+Navigate to the [build results](working-with-build-results.md) page, click __Actions__ and select __Label this build sources__ from the drop\-down.
 
 Manual labeling uses the VCS settings actual for the build.
 
@@ -44,7 +44,7 @@ Manual labeling uses the VCS settings actual for the build.
 ## Subversion Labeling Rules
 [//]: # (AltHead: SubversionLabelingRules)
 
-To label Subversion VCS roots, additional configuration – [labeling rules](subversion.md) defining the SVN repository structure – is required.
+To label Subversion VCS roots, additional configuration – [labeling rules](subversion.md#Labeling+settings) defining the SVN repository structure – is required.
 
 Labeling rules are specified as newline\-delimited rules in the following format:
 

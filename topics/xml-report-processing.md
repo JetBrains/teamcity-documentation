@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: XML Report Processing)
 The _XML Report processing_ [build feature](adding-build-features.md) allows using report files produced by an external tool in TeamCity. TeamCity will parse the specified files on the disk and report the results as the build results.
 
-The report parsing can also be initiated from within the build via [service messages](build-script-interaction-with-teamcity.md).
+The report parsing can also be initiated from within the build via [service messages](build-script-interaction-with-teamcity.md#Importing+XML+Reports).
 
 XML Report Processing supports the following testing frameworks:
 * JUnit Ant task
@@ -50,7 +50,7 @@ TeamCity loads generated reports once when they are created: make sure your buil
 
 ## Development Links
 
-See plugin page at [XML Test Reporting](https://confluence.jetbrains.com/display/TW/XML+Test+Reporting).
+See plugin page at [XML Test Reporting](https://plugins.jetbrains.com/plugin/8908-xml-test-reporting).
 
 
 

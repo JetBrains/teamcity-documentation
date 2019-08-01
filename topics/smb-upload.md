@@ -3,11 +3,11 @@
 
 SMB upload enables TeamCity to upload files/directories to Windows shares via Server Message Block (SMB) protocol. 
 
-The settings common for all runners are described [on a separate page](configuring-build-steps.md); this page details the SMB Upload settings.
+The settings common for all runners are described in [Configuring Build Steps](configuring-build-steps.md); this page details the SMB Upload settings.
 
 <tip>
 
-The fields below support [parameter references](predefined-build-parameters.md): any text between percentage signs (%) is considered a reference to a property by TeamCity. To prevent TeamCity from treating the text in the percentage signs as a property reference, use two percentage signs to escape them: e.g. if you want to pass `"%Y%m%d%H%M%S"` into the build, change it to `"%%Y%%m%%d%%H%%M%%S"`
+The fields below support [parameter references](predefined-build-parameters.md): any text between percentage signs (%) is considered a reference to a property by TeamCity. To prevent TeamCity from treating the text in the percentage signs as a property reference, use two percentage signs to escape them: for example, if you want to pass `"%Y%m%d%H%M%S"` into the build, change it to `"%%Y%%m%%d%%H%%M%%S"`
 </tip>
 
 <table><tr>
