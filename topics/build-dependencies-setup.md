@@ -96,7 +96,7 @@ An _artifact dependency_ allows reusing the output of one build (or a part of it
 
 If build configuration __A__ has an artifact dependency on __B__, then the artifacts of __B__ are downloaded to a build agent before a build of __A__ starts. Note that you can flexibly adjust [artifact rules](artifact-dependencies.md) to configure which artifacts should be taken and where exactly they should be placed.    
 
-If for some reason you need to store artifact dependency information together with your codebase and not in TeamCity, you can configure [Ivy Ant tasks](artifact-dependencies.md) to get the artifacts in your build script.     
+If for some reason you need to store artifact dependency information together with your codebase and not in TeamCity, you can configure [Ivy Ant tasks](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Ant+Build+Script) to get the artifacts in your build script.     
 
 If both snapshot and artifact dependency are configured, and the '_Build from the same chain_' option is selected in the artifact dependency settings, TeamCity ensures that artifacts are downloaded from the same\-sources build.
 
@@ -138,8 +138,8 @@ Let's assume we have the following [build chain](build-chain.md) with no extra o
 
 1. TeamCity resolves the whole build chain and queues all builds \- A, B and C. TeamCity knows that the builds are to run in a strict order, so it won't run build A until build B is successfully finished, and it won't run build B until build C is successfully finished.   
 2. When the builds are added to the queue, TeamCity starts checking for changes in the entire build chain and synchronizes them \- all builds have to start with the same sources snapshot.   
-   Note that if the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.    
-3. Once build C has finished, build B starts, and so on. If build C failed, TeamCity won't further execute builds from the chain by default, but this behavior is [configurable](snapshot-dependencies.md).
+   Note that if the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md#VCS+Roots+in+TeamCity), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.    
+3. Once build C has finished, build B starts, and so on. If build C failed, TeamCity won't further execute builds from the chain by default, but this behavior is [configurable](snapshot-dependencies.md#on-failed-dependency).
 
 #### What Happens When Build B is Triggered
 
@@ -149,13 +149,14 @@ The same process will take place for build chain B\-&gt;C. Build A won't be affe
 
 <img src="B1-B2-A.png" width="160"/>
 
-When the final build A is triggered, TeamCity resolves the build chain and queues all builds \- A, B1 and B2. Build A won't start until both B1 and B2 are ready.In this case it doesn't matter which build \- B1 or B2 \- starts first. As in the first example, when all builds are added to the queue, TeamCity checks for changes in the entire build chain and synchronizes them.
+When the final build A is triggered, TeamCity resolves the build chain and queues all builds \- A, B1 and B2. Build A won't start until both B1 and B2 are ready.   
+In this case it doesn't matter which build \- B1 or B2 \- starts first. As in the first example, when all builds are added to the queue, TeamCity checks for changes in the entire build chain and synchronizes them.
 
 ### Advanced Snapshot Dependencies Setup
 
 #### Reusing builds
 
-All builds belonging to the [build chain](build-chain.md) are placed in the [queue](build-queue.md). But, instead of enforcing the run of all builds from a build chain, TeamCity can check whether there are already suitable builds, i.e. finished builds that used the required sources snapshot. The matching queued builds will not be run and will be [dropped from the queue](build-queue.md), and TeamCity will link the dependency to the "suitable" builds. To enable this, select '_Do not run new build if there is a suitable one_' when configuring snapshot dependency options.
+All builds belonging to the [build chain](build-chain.md) are placed in the [queue](build-queue.md). But, instead of enforcing the run of all builds from a build chain, TeamCity can check whether there are already suitable builds, i.e. finished builds that used the required sources snapshot. The matching queued builds will not be run and will be [dropped from the queue](build-queue.md#Build+Queue+Optimization+by+TeamCity), and TeamCity will link the dependency to the "suitable" builds. To enable this, select '_Do not run new build if there is a suitable one_' when configuring snapshot dependency options.
 
 Another option that allows you to control how builds are re\-used is called "_Only use successful builds from suitable ones_" and it may help when there's a suitable build, but it isn't successful. Normally, when there's a failed build in a chain, TeamCity doesn't proceed with the rest of the chain. However, with this option enabled, TeamCity will run this failed build on these sources one more time. When is this helpful? For example, when the build failure was caused by a problem when connecting to a VCS.
 
@@ -199,19 +200,19 @@ This option was designed for the cases when a build from the build chain modifie
 
 #### Build behavior if dependency has failed
 
-It is possible to [configure](snapshot-dependencies.md) the final build behavior if its dependency has failed.
+It is possible to [configure](snapshot-dependencies.md#on-failed-dependency) the final build behavior if its dependency has failed.
 
 #### Trigger on changes in snapshot dependencies
 
 <chunk include-id="trigger-on-ssdep-chngs">
 
-The VCS build trigger has another [option](configuring-vcs-triggers.md) that alters triggering behavior for a build chain. With this options enabled, the whole build chain will be triggered even if changes are detected in dependencies, not in the final build.   
+The VCS build trigger has another [option](configuring-vcs-triggers.md#Trigger+a+build+on+changes+in+snapshot+dependencies) that alters triggering behavior for a build chain. With this options enabled, the whole build chain will be triggered even if changes are detected in dependencies, not in the final build.   
 
 Let's take a build chain from the example: `pack setup` – depends on – `tests` – depends on – `compile`.
 
 <img src="compile-test-pack.png" width="300"/>
 
-With the VCS Trigger set up in the `pack setup` configuration,  the whole build chain is usually triggered when TeamCity detects changes in `pack setup`; changes in `compile` will trigger `compile` only and not the whole chain. If you want the whole chain to be triggered on a VCS change in `compile`, add a VCS trigger with the "_Trigger on changes in snapshot dependencies_" [option](configuring-vcs-triggers.md) enabled to the final build configuration of the chain, `pack setup`. This will not change the order in which builds are executed, but will only trigger the whole build chain, if there is a change in any of snapshot dependencies. In this setup, no VCS triggers are required for the `compile` or `tests` build configuration. 
+With the VCS Trigger set up in the `pack setup` configuration,  the whole build chain is usually triggered when TeamCity detects changes in `pack setup`; changes in `compile` will trigger `compile` only and not the whole chain. If you want the whole chain to be triggered on a VCS change in `compile`, add a VCS trigger with the "_Trigger on changes in snapshot dependencies_" [option](configuring-vcs-triggers.md#Trigger+a+build+on+changes+in+snapshot+dependencies) enabled to the final build configuration of the chain, `pack setup`. This will not change the order in which builds are executed, but will only trigger the whole build chain, if there is a change in any of snapshot dependencies. In this setup, no VCS triggers are required for the `compile` or `tests` build configuration. 
  
 </chunk>
  
@@ -230,7 +231,7 @@ With this setting enabled, the [Schedule Trigger](configuring-schedule-triggers.
 #### Parameters in dependent builds
 
 TeamCity provides the ability to use properties provided by the builds the current build depends on (via a snapshot or artifact dependency). When build A depends on build B, you can pass properties from build B to build A, i.e. properties can be passed only in the direction of the build chain flow and not vice versa.   
-For the details on how to use parameters of the previous build in chain, refer to the [Dependencies Properties](predefined-build-parameters.md) page.
+For the details on how to use parameters of the previous build in chain, refer to the [Dependencies Properties](predefined-build-parameters.md#Dependencies+Properties) section.
 
 ## Miscellaneous Notes on Using Dependencies
 

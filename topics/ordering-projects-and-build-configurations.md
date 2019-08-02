@@ -5,4 +5,4 @@ Project administrators can apply custom ordering to subprojects and build config
 
 __To enable reordering__, use the corresponding button above the list.
 
-Individual users can still manually tweak the display using the up\-down button in the [Managing Projects and Build Configurations](managing-projects-and-build-configurations.md) pop\-up on the __Projects Overview__ page.
+Individual users can still manually tweak the display using the up\-down button in the [Configure Visible Projects](managing-projects-and-build-configurations.md#Configuring+Visibility) pop-up window on the __Projects Overview__ page.

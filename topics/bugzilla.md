@@ -3,7 +3,7 @@
 ## Converting Strings into Links to Issues
 
 
-When [Integrating TeamCity with Issue Tracker](integrating-teamcity-with-issue-tracker.md) in addition to general settings, you need to specify which strings are to be recognized as references to issues in your tracker.   
+When [enabling issue tracker integration](integrating-teamcity-with-issue-tracker.md#Enabling+Issue+Tracker+Integration) in addition to general settings, you need to specify which strings are to be recognized as references to issues in your tracker.   
 For Bugzilla, you need to specify the __Issue Id Pattern__: a [Java Regular Expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to find the issue ID in the text. The matched text (or the first group if there are groups defined) is used as the issue number.  The most common case seems to be `#(\d+)` \- this will extract 1234 as issue ID from text "Fix for #1234".
 
 

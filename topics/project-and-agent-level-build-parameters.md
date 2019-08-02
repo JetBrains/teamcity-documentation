@@ -21,7 +21,7 @@ Parameters of the build configuration have priority over the parameters with the
 __Case 3__: Project A1, Project A2, Template T from project A1, build configuration from project A2 inherited from template T.   
 Parameters of project A2 (the one build configuration belongs to) have priority over the parameters with the same names defined in the template.
 
-You can also define parameters for only those build configurations of the project that use __the same VCS root__. To do that, create a text file named `teamcity.default.properties`, and check it into the VCS root. Ensure that the file appears directly in the [build working directory](build-working-directory.md) by specifying the appropriate [checkout rules](configuring-vcs-settings.md). The name and path to the file can be customized via the `teamcity.default.properties` property of a build configuration.
+You can also define parameters for only those build configurations of the project that use __the same VCS root__. To do that, create a text file named `teamcity.default.properties`, and check it into the VCS root. Ensure that the file appears directly in the [build working directory](build-working-directory.md) by specifying the appropriate [checkout rules](configuring-vcs-settings.md#Configure+Checkout+Rules). The name and path to the file can be customized via the `teamcity.default.properties` property of a build configuration.
 
 The properties defined this way are not visible in the TeamCity web UI, but are passed directly to the build process.
 
@@ -30,7 +30,7 @@ The properties defined this way are not visible in the TeamCity web UI, but are 
 ## Agent Level Build Parameters
 [//]: # (AltHead: agentSpecific)
 
-To define agent\-specific properties, edit the Build Agent's `buildAgent.properties` file (`<agent home>/conf/buildAgent.properties`). Refer to the [Agent-Specific Properties](predefined-build-parameters.md) page for more information.
+To define agent\-specific properties, edit the Build Agent's `buildAgent.properties` file (`<agent home>/conf/buildAgent.properties`). Refer to the [Agent-Specific Properties](predefined-build-parameters.md#Agent+Properties) page for more information.
 
 When defining system properties and environment variables in the `teamcity.default.properties` or `buildAgent.properties` file, use the following format:
 

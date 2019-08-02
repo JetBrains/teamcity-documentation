@@ -25,7 +25,7 @@ The parameters can be defined at different levels (in order of precedence):
 * Project settings (the __Parameters__ page of the Project settings). These affect all the Build Configurations and Templates of the project and its subprojects.
 * an agent (the `<`[`Agent home`](agent-home-directory.md)`>/conf/buildAgent.properties` file on the agent)
 
-Any textual setting can reference a parameter which makes the string in the format of `%parameter.name%` be substituted with the actual value at the time of build. If there is a reference to a parameter which is not defined, it is considered an [implicit agent requirement](agent-requirements.md) so the build will only run on the agents with the parameter defined.
+Any textual setting can reference a parameter which makes the string in the format of `%parameter.name%` be substituted with the actual value at the time of build. If there is a reference to a parameter which is not defined, it is considered an [implicit agent requirement](agent-requirements.md#Implicit+Requirements) so the build will only run on the agents with the parameter defined.
 
 ## Parameter name restrictions
 
@@ -35,7 +35,7 @@ __Since 2018.1__, the name of a configuration parameter should satisfy the follo
 
 TeamCity will show warning on edit parameters page if a parameter name does not satisfy these requirements.
 
-The references to parameters which names do not satisfy the above restrictions do not create an [implicit requirement](agent-requirements.md).
+The references to parameters which names do not satisfy the above restrictions do not create an [implicit requirement](agent-requirements.md#Implicit+Requirements).
 
 ## Defining Build Parameters in Build Configuration
 
@@ -171,11 +171,12 @@ If you reference a build parameter in a build configuration, and it is not defin
 
 Password fields can also contain references to parameters, though in this case you cannot see the reference as it is masked as any password value.
 
-For details on using and overriding parameters from dependencies, please refer to [this section](predefined-build-parameters.md).
+For details on using and overriding parameters from dependencies, please refer to [this section](predefined-build-parameters.md#Dependencies+Properties).
 
 ## Using Build Parameters in VCS Labeling Pattern and Build Number
 
-In Build number pattern and VCS labeling pattern, you can use the `%[env|system].property_name%` syntax to reference the properties that are known on the server\-side. These are [server](predefined-build-parameters.md) and [reference](predefined-build-parameters.md) predefined properties and properties defined in the settings of the build configuration on the __Parameters__ page.For example, VCS revision number: `%build.vcs.number%`.
+In Build number pattern and VCS labeling pattern, you can use the `%[env|system].property_name%` syntax to reference the properties that are known on the server\-side. These are [server](predefined-build-parameters.md#Server+Build+Properties) and [reference](predefined-build-parameters.md#Configuration+Parameters) predefined properties and properties defined in the settings of the build configuration on the __Parameters__ page.   
+For example, VCS revision number: `%build.vcs.number%`.
 
 ## Using Build Parameters in the Build Scripts
 
@@ -183,7 +184,7 @@ All build parameters starting with `env.` prefix (environment variables) are pas
 
 All build parameters starting with `system.` prefix (system properties) are passed to the supported __build script engines and can be referenced there by the property name__, without `system.` prefix.   
 Note that this syntax will work __in the build script__ (__not__ in TeamCity settings):
-* For [Ant](ant.md), [Maven](maven.md) and [NAnt,](nant.md) use `$(<property name>)`
+* For [Ant](ant.md), [Maven](maven.md) and [NAnt](nant.md), use `$(<property name>)`
 * For [MSBuild](msbuild.md) (Visual Studio 2005/2008 Project Files), use `$(<property name>)`. Note that MSBuild does not support names with dots ("`.`"), so you need to replace "`.`" with "`_`" when using the property inside a build script.
 * For [Gradle](gradle.md): the TeamCity system properties can be accessed as Gradle properties (similar to the ones defined in the `gradle.properties` file) and are to be referenced as follows:   
     a) name allowed as Groovy identifier (the property name does not contain dots):
@@ -205,7 +206,7 @@ Using `teamcity["<property name>"]` is not recommended, although still supported
 
 When TeamCity starts a build process, the following precedence of the build parameters is used (those on top have higher priority):
  * parameters from the [Project and Agent Level Build Parameters](project-and-agent-level-build-parameters.md) file.
- * [pre-defined](predefined-build-parameters.md) parameters.
+ * [predefined](predefined-build-parameters.md) parameters.
  * parameters defined in the Run Custom Build dialog.
  * parameters defined in the Build Configuration.
  * parameters defined in the Project (the parameters defined for a project will be inherited by all its subprojects and build configurations. If required, you can redefine them in a build configuration).

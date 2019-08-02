@@ -1,7 +1,7 @@
 [//]: # (title: Snapshot Dependencies)
 [//]: # (auxiliary-id: Snapshot Dependencies)
 
-By setting a [snapshot dependency](dependent-build.md) of a build (e.g. build B) on other build's (build A's) sources, you can ensure that build B will start only after the one it depends on (build A) is run and finished. We call build A a _dependency_ build, whereas build B is a _dependent_ build.
+By setting a [snapshot dependency](dependent-build.md#Snapshot+Dependency) of a build (for example, build B) on other build's (build A's) sources, you can ensure that build B will start only after the one it depends on (build A) is run and finished. We call build A a _dependency_ build, whereas build B is a _dependent_ build.
 
 The Dependencies page of the build configuration settings displays the configured dependencies and __since TeamCity 2017.1__, the Snapshot dependencies section of the page allows previewing the build chain and its configuration. The preview shows builds of the chain; the builds with automatic triggering configured are marked with this icon ![v.png](v.png).
 
@@ -126,6 +126,8 @@ Before starting a build chain having __run on the same agent__ dependencies, Tea
 
 <td>
 
+<anchor name="on-failed-dependency"/>
+
 On failed dependency/  On failed to start/canceled dependency
 
 
@@ -163,7 +165,7 @@ For a build to be considered "suitable", it should comply with all of the condit
 * have no VCS settings preventing effective revision calculation, see [below](#VCS+Settings+Disabling+Builds+Reuse)
 * there is no other build configuration snapshot\-depending on the current one with "Do not run new build if there is a suitable one" option set to "off"
 * the running build is not "hanging"
-* settings of the build configuration were not changed since the build (that is, the build was run with the current build configuration settings). This also includes no changes to the parameters of all the parent projects of the build configuration. You can check if the settings were changed between several builds by comparing `.teamcity/settings/digest.txt` file in the [hidden build's artifacts](build-artifact.md)
+* settings of the build configuration were not changed since the build (that is, the build was run with the current build configuration settings). This also includes no changes to the parameters of all the parent projects of the build configuration. You can check if the settings were changed between several builds by comparing `.teamcity/settings/digest.txt` file in the [hidden build's artifacts](build-artifact.md#Hidden+Artifacts)
 * if there is also an artifact dependency in addition to snapshot one, the suitable build should have artifacts
 * all the dependency builds (the builds the current one depends on) are "suitable" and are appropriately merged
 

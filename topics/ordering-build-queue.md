@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Ordering Build Queue)
 
 
-This page lists the options to manage the queue builds manually. Automatic build queue optimization is detailed in the [separate section](build-queue.md).
+This page lists the options to manage the queue builds manually. Automatic build queue optimization is detailed in the [separate section](build-queue.md#Build+Queue+Optimization+by+TeamCity).
 
 On this page:
 
@@ -10,7 +10,7 @@ On this page:
 
 ## Manually Reordering Builds in Queue
 
-To reorder builds in the [Build Queue](build-queue.md), you can simply drag them to the desired position.
+To reorder builds in the [Build Queue](build-queue.md), you can drag them to the desired position.
 
 ### Moving Builds to Top
 
@@ -44,15 +44,15 @@ This setting is taken into account only when a build is added to the queue. The 
 
 ## Removing Builds From Build Queue
 
-To remove build(s) from the Queue, check the __Remove__ box next to the selected build and confirm the deletion. If a build to be removed from the queue is a part of a build chain, TeamCity shows the following message below comment field: "This build is a part of a build chain". Refer to the [Build Chain](build-chain.md) description for details.
+To remove build(s) from the Queue, check the __Remove__ box next to the selected build and confirm the deletion. If a build to be removed from the queue is a part of a build chain, TeamCity shows the following message below comment field: "This build is a part of a build chain". Refer to the [Build Chain](build-chain.md#Stopping%2FRemoving+From+Queue+Builds+from+Build+Chain) description for details.
 
 Also you can remove all your personal builds from the queue at once from the __Actions__ menu.
 
-__Since TeamCity 10.0__, it is possible to remove several builds of [paused build configurations](build-configuration.md) from the queue.
+You can also remove several builds of [paused build configurations](build-configuration.md#Pausing+%2F+Activating+several+build+configurations+of+a+project) from the queue.
 
 ## Limiting Maximum Size of Build Queue
 
-It is possible to limit the maximum number of builds in the queue. By default, the limit is set to 3000 builds. The default value can be changed using the `teamcity.buildTriggersChecker.queueSizeLimit` [internal property](configuring-teamcity-server-startup-properties.md).
+It is possible to limit the maximum number of builds in the queue. By default, the limit is set to 3000 builds. The default value can be changed using the `teamcity.buildTriggersChecker.queueSizeLimit` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
 When the queue size reaches the limit, TeamCity will pause [Configuring Build Triggers](configuring-build-triggers.md). Automatic build triggering will be re\-enabled once the queue size gets below limit. While triggering is paused, a warning message is shown to all of the users.
 

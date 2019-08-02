@@ -181,7 +181,7 @@ Is set to `true` if the build is a [personal one](personal-build.md). Is not def
 
 <td>
 
-The build number assigned to the build by TeamCity using the build number format. The property is assigned based on the [build number format](configuring-general-settings.md).
+The build number assigned to the build by TeamCity using the build number format. The property is assigned based on the [build number format](configuring-general-settings.md#Build+Number+Format).
 
 
 </td></tr><tr>
@@ -223,7 +223,7 @@ none
 
 <td>
 
-A generated username that can be used to [download artifacts](configuring-dependencies.md) of other build configurations. Valid only during the build. [Details](artifact-dependencies.md)
+A generated username that can be used to [download artifacts](configuring-dependencies.md) of other build configurations. Valid only during the build. [Details](artifact-dependencies.md#Build-level+authentication)
 
 
 </td></tr><tr>
@@ -244,7 +244,7 @@ none
 
 <td>
 
-A generated password that can be used to download artifacts of other build configurations. Valid only during the build. [Details](artifact-dependencies.md) 
+A generated password that can be used to download artifacts of other build configurations. Valid only during the build. [Details](artifact-dependencies.md#Build-level+authentication) 
 
 
 </td></tr><tr>
@@ -332,9 +332,9 @@ If build configurations A and B are trying to set different values for the same 
    * `conflict.<btA>.<property name>=<valueA>`
    * `conflict.<btB>.<property name>=<valueB>`
 
-The `reverse.dep.` parameters are processed on queuing of the build where the parameters are defined. As the parameters' values should be known at that stage, they can only be defined either as [build configuration parameters](configuring-build-parameters.md) or in the [custom build dialog](triggering-a-custom-build.md). Setting the parameter during the build has no effect.
+The `reverse.dep.` parameters are processed on queuing of the build where the parameters are defined. As the parameters' values should be known at that stage, they can only be defined either as [build configuration parameters](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) or in the [custom build dialog](triggering-a-custom-build.md#Run+Custom+Build+dialog). Setting the parameter during the build has no effect.
 
-Pushing a new parameter into the build will supersede the ["Do not run new build if there is a suitable one"](snapshot-dependencies.md) snapshot dependency option and may trigger a new build if the parameter is set to a non\-default value.
+Pushing a new parameter into the build will supersede the ["Do not run new build if there is a suitable one"](snapshot-dependencies.md#Suitable+Builds) snapshot dependency option and may trigger a new build if the parameter is set to a non\-default value.
 
 Note that the values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without reference resolution. %\-references, if any, will be resolved in the context of the build where the parameters are pushed to.   
 `<property name>` is the name of the property to set in the noted build configuration. To set system property, `<property name>` should contain the `system.` prefix.
@@ -365,7 +365,7 @@ Properties marked by the VCS support as `secure` (for example, passwords) are no
 
 ### Branch-Related Parameters
 
-When TeamCity starts a build in a build configuration where [Branch specification](working-with-feature-branches.md) is configured, it adds a branch label to each build. This logical branch name is also available as a configuration parameter:
+When TeamCity starts a build in a build configuration where a [branch specification](working-with-feature-branches.md) is configured, it adds a branch label to each build. This logical branch name is also available as a configuration parameter:
 
 
 ```XML
@@ -446,7 +446,7 @@ If the build was triggered by a user, the username of this user is reported. Whe
 
 Agent\-specific properties are defined on each build agent and vary depending on its environment. Aside from standard properties (for example, `teamcity.agent.jvm.os.name` or `teamcity.agent.jvm.os.arch`, etc. – these are provided by the JVM running on agent) agents also have properties based on installed applications. TeamCity automatically detects a number of applications including the presence of .NET Framework, Visual Studio and adds the corresponding system properties and environment variables. A complete list of predefined agent\-specific properties is provided in the [table](#Agent+Properties) below.
 
-If additional applications/libraries are available in the environment, the administrator can manually define the property in the `<agent home>/conf/buildAgent.properties` file. These properties can be used for setting various build configuration options, for defining build configuration requirements (for example, existence or absence of some property) and inside build scripts. For more information on how to reference these properties, see the [Defining and Using Build Parameters in Build Configuration](configuring-build-parameters.md) page.
+If additional applications/libraries are available in the environment, the administrator can manually define the property in the `<agent home>/conf/buildAgent.properties` file. These properties can be used for setting various build configuration options, for defining build configuration requirements (for example, existence or absence of some property) and inside build scripts. For more information on how to reference these properties, see the [Defining and Using Build Parameters in Build Configuration](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) section.
 
 In the TeamCity Web UI, the actual properties defined on the agent can be reviewed by going to the __Agents__ tab at the top navigation bar __&lt;Agent&gt; | &lt;Agent&gt;__ page | the __Agent Parameters__ tab:
 
@@ -916,7 +916,7 @@ The [agent port](build-agent-configuration.md) used by the TeamCity server to co
 
 <td>
 
-The [protocol](setting-up-and-running-additional-build-agents.md) used for data transfers between the agent and the server
+The [protocol](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers) used for data transfers between the agent and the server
 
 </td></tr><tr>
 
@@ -928,7 +928,7 @@ The [protocol](setting-up-and-running-additional-build-agents.md) used for data 
 
 <td>
 
-[CPU benchmarking](viewing-build-agent-details.md) result for the agent
+[CPU benchmarking](viewing-build-agent-details.md#Agent+Summary) result for the agent
 
 </td></tr><tr>
 
@@ -991,7 +991,7 @@ The following locations are searched (a number of locations is common for all op
 
 * If defined, a custom directory on the agent is searched for Java installations. Defining a custom directory to search for Java is described [below](#Defining+Custom+directory+to+Search+for+Java).
 * The [agent tools](installing-agent-tools.md) directory, `<Agent Home Directory>/tools,` is checked for containing a jre or jdk. By default, the subdirectories of `/tools` are not scanned. To search the subdirectories, define `teamcity.agent.java.search.path=%agent.tools.NAME%/INNER_PATH` in the `buildAgent.properties` file.    
-For Unix and Mac OS, remember to [set the executable bit](https://confluence.jetbrains.com/display/TCD18/Plugins+Packaging) on the files for TeamCity to be able to launch the discovered Java. 
+For Unix and Mac OS, remember to [set the executable bit](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html) on the files for TeamCity to be able to launch the discovered Java. 
 * It is checked whether the `JAVA_HOME`, `JDK_HOME`, `JRE_HOME` variables are defined
 * The OS\-specific locations, listen in the next section, are checked
 * The `PATH` environment variables are searched and the discovered directories are checked for containing Java
@@ -1017,7 +1017,7 @@ __Mac OS__ The following directories are searched:
 
 #### Defining Custom directory to Search for Java
 
-You can define a custom directory on an agent to search for Java installations in by adding the `teamcity.agent.java.search.path` property to the [Build Agent Configuration](build-agent-configuration.md) file.
+You can define a custom directory on an agent to search for Java installations in by adding the `teamcity.agent.java.search.path` property to the [`buildAgent.properties`](build-agent-configuration.md) file.
 
 You can define a list of directories separated by an OS\-dependent character.
 

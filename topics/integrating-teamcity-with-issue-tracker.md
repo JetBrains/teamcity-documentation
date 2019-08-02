@@ -13,13 +13,13 @@ On this page:
 ## Dedicated Support for Issue Trackers
 
 
-TeamCity supports [JIRA](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md) and __since TeamCity 10.0__ [GitHub](https://confluence.jetbrains.com/display/TCD10/GitHub), [Bitbucket Cloud](bitbucket-cloud.md) and [TFS](team-foundation-work-items.md) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md) page lists supported versions.
+TeamCity supports [JIRA](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md) and __since TeamCity 10.0__ [GitHub](https://confluence.jetbrains.com/display/TCD10/GitHub), [Bitbucket Cloud](bitbucket-cloud.md), and [TFS](team-foundation-work-items.md) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Tracker+Integration) page lists supported versions.
 
-When an integration is configured, TeamCity automatically transforms an issue ID (=issue key in JIRA, work item id in TFS) mentioned in the VCS commit comment into a link to the corresponding issue and the basic issue details are displayed in the TeamCity Web UI when hovering over the icon next to the issue ID (e.g. on the [Changes](working-with-build-results.md) tab of the build results).
+When an integration is configured, TeamCity automatically transforms an issue ID (=issue key in JIRA, work item id in TFS) mentioned in the VCS commit comment into a link to the corresponding issue and the basic issue details are displayed in the TeamCity Web UI when hovering over the icon next to the issue ID (for example, on the __[Changes](working-with-build-results.md#Changes)__ tab of the build results).
 
 <img src="issue-tracker-integration.png" width="661" alt="Issue tracker integration"/>
 
-Issues fixed in the build can also be viewed on the [Issues](working-with-build-results.md) tab of the build results. You can filter the list to a particular range of builds and view issues mentioned in comments with their states.
+Issues fixed in the build can also be viewed on the __[Issues](working-with-build-results.md#Related+Issues)__ tab of the build results. You can filter the list to a particular range of builds and view issues mentioned in comments with their states.
 
 <img src="issue-log.png" width="1426" alt="Issue log"/>
 
@@ -119,7 +119,7 @@ Additional authentication information or/and the details on how to specify strin
 * [YouTrack](youtrack.md)
 * [JIRA](jira.md)
 * [Bugzilla](bugzilla.md)
-* [GitHub](https://confluence.jetbrains.com/display/TCD10/GitHub)
+* [GitHub](github.md)
 * [Bitbucket Cloud](bitbucket-cloud.md)
 * [TFS](team-foundation-work-items.md)
 

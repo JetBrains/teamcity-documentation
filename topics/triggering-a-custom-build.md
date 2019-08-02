@@ -12,8 +12,8 @@ On this page:
 
 There are several ways of launching a custom build in TeamCity:
 * Click the ellipsis on the __Run__ button, and specify the options in the __Run Custom Build__ dialog described [below](#General+Options).
-* To run a custom build with specific changes, open the build results page, go to the [Working with Build Results](working-with-build-results.md), expand the required change, click the __Run build with this change__ and proceed with the [options](#General+Options) in the __Run Custom Build__ dialog.
-* Use [HTTP request](accessing-server-by-http.md) or [REST API request](rest-api.md) to TeamCity to trigger a build.
+* To run a custom build with specific changes, open the build results page, go to the [Changes](working-with-build-results.md#Changes) tab, expand the required change, click the __Run build with this change__, and proceed with the [options](#General+Options) in the __Run Custom Build__ dialog.
+* Use [HTTP request](accessing-server-by-http.md) or [REST API request](rest-api.md#Triggering+a+Build) to TeamCity to trigger a build.
 * Promote a build \- see the section [below](#Promoting+Build).
 
 ## Run Custom Build dialog
@@ -38,7 +38,7 @@ On the __General__ options you can also specify whether
 ### Dependencies
 
 _This tab is available only for builds that have dependencies on other builds_.   
-You can enforce rebuilding of all dependencies and select a particular build whose artifacts will be taken. By default, the last 20 builds are displayed. To increase the number of builds displayed in the drop\-down to 50, use the `teamcity.runCustomBuild.buildsLimit=50` [internal property](configuring-teamcity-server-startup-properties.md).
+You can enforce rebuilding of all dependencies and select a particular build whose artifacts will be taken. By default, the last 20 builds are displayed. To increase the number of builds displayed in the drop\-down to 50, use the `teamcity.runCustomBuild.buildsLimit=50` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
 ### Changes
 
@@ -67,7 +67,7 @@ If your project has [versioned settings](storing-project-settings-in-version-con
 
 If changes are selected in the [step above](#Include+changes), the revision of the project settings corresponding to the selected changes will be loaded.
 
-To define which settings to take, use one of the corresponding options from the __Use settings__ drop\-down (the option here will override the [project-level setting](storing-project-settings-in-version-control.md)).
+To define which settings to take, use one of the corresponding options from the __Use settings__ drop\-down (the option here will override the [project-level setting](storing-project-settings-in-version-control.md#Defining+Settings+to+Apply+to+Builds)).
 
 ### Parameters
 

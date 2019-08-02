@@ -147,7 +147,7 @@ The __Enterprise edition__ requires a license key, has no limit on the number of
 
 <note>
 
-An additional server in a [high availability set-up](configuring-secondary-node.md) uses the license from the main server and does not require a separate license at this time.
+An additional server in a [high availability set-up](multinode-setup.md) uses the license from the main server and does not require a separate license at this time.
 </note>
 
  
@@ -173,7 +173,7 @@ TeamCity Professional edition comes bundled with 3 [build agents](build-agent.md
 
 A server license key might include more agent licenses then the default 3. The number of agents stated for the server license on jetbrains.com site notes the total number of agents which will be available. Separate agent license keys can be used with either TeamCity edition (Enterprise and Professional). For more information about purchasing agent licenses, refer to the [product page](http://www.jetbrains.com/teamcity/buy/).
 
-The number of agent licenses limits the number of agents which can be [authorized](build-agent.md) in TeamCity. The license keys are not bound to specific agents, they just limit the maximum number of functional agents. The licensing makes no difference between local (installed on the TeamCity server machine) and remote agents.   
+The number of agent licenses limits the number of agents which can be [authorized](build-agent.md#Build+Agent+Status) in TeamCity. The license keys are not bound to specific agents, they just limit the maximum number of functional agents. The licensing makes no difference between local (installed on the TeamCity server machine) and remote agents.   
 When there are more authorized agents than the agent licenses available, the server stops to start any builds and displays a warning message to all users in the web browser.
 
 ## Managing Licenses

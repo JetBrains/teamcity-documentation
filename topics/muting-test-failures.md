@@ -2,13 +2,13 @@
 [//]: # (auxiliary-id: Muting Test Failures)
 
 TeamCity provides a way to "mute" any of the currently failing tests so they will not affect build status for future builds.   
-Muting will only affect builds which fail on "at least one test failed" [build failure condition](build-failure-conditions.md) but not others: if any of the other failure conditions apply to your build (non\-zero exit code, etc.), it will still fail even if failing tests are muted.
+Muting will only affect builds which fail on "at least one test failed" [build failure condition](build-failure-conditions.md) but not others: if any of the other failure conditions apply to your build (non\-zero exit code, and so on), it will still fail even if failing tests are muted.
 
 This feature is useful when some tests fail for some known reason, but it is currently not possible to fix them. For example, the responsible developer is on vacation, or you are waiting for the system administrators to fix the environment, or the test is failing intentionally, for example, if the required functionality is not yet written (TDD). In these cases you can mute such failures and avoid unnecessary disturbance of other developers.
 
 When a test is muted, it is __still run__ in the future builds, but its failure does not affect the build status. The test can be unmuted manually on a specific date or after a successful run. Also, tests can be muted only in a single build configuration or in all the build configurations of a specific TeamCity project.
 
-Your build script might need adjustment to make the build green when there are failing but muted tests. Make sure that the build does not fail because of other build failure conditions (e.g. "Fail if build process exit code is not zero") in case the only errors encountered were tests failures. See also the related issue [TW-16784](http://youtrack.jetbrains.net/issue/TW-16784).
+Your build script might need adjustment to make the build green when there are failing but muted tests. Make sure that the build does not fail because of other build failure conditions (for example, _"Fail if build process exit code is not zero"_) in case the only errors encountered were tests failures. See also the related issue [TW-16784](http://youtrack.jetbrains.net/issue/TW-16784).
 
 ### How to mute tests
 

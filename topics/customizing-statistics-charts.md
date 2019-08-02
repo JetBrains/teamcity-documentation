@@ -1,7 +1,7 @@
 [//]: # (title: Customizing Statistics Charts)
 [//]: # (auxiliary-id: Customizing Statistics Charts)
 
-To help you track the condition of your projects and individual build configurations over time, TeamCity gathers statistical data across all their history and displays it as visual charts. This page describes how to modify the [pre-defined](statistic-charts.md) project-level charts.
+To help you track the condition of your projects and individual build configurations over time, TeamCity gathers statistical data across all their history and displays it as visual charts. This page describes how to modify the [predefined](statistic-charts.md) project-level charts.
 
 On this page:
 
@@ -106,7 +106,7 @@ To show the code coverage chart related only to a particular build configuration
 
 
 
-where __myConf1__ and __myConf2__ values are [build configuration IDs](configuring-general-settings.md). However, note that build configurations specified should contain code coverage data for the charts to be shown. If the data is available, two charts will be shown (one for each specified build configuration).
+where __myConf1__ and __myConf2__ values are [build configuration IDs](configuring-general-settings.md#Build+Configuration+ID). However, note that build configurations specified should contain code coverage data for the charts to be shown. If the data is available, two charts will be shown (one for each specified build configuration).
 
 
 
