@@ -9,7 +9,7 @@ In 2019, Team Foundation Server has been renamed to Azure DevOps Server. The con
 
 Team Foundation Work Items tracking is integrated with TeamCity. Supported versions are Microsoft Visual Studio Team Foundation Server 2012 or later, and Azure DevOps Services.
 
-TFS work items support can be configured on the [Issue trackers](integrating-teamcity-with-issue-tracker.md) page for a project. If a project has a [TFVC](team-foundation-server.md) root configured, TeamCity will suggest configuring the issue tracker as well.
+TFS work items support can be configured on the [Issue Trackers](integrating-teamcity-with-issue-tracker.md) page for a project. If a project has a [TFVC](team-foundation-server.md) root configured, TeamCity will suggest configuring the issue tracker as well.
 
 ## Integration
 
@@ -106,4 +106,4 @@ Specify the work item id format in changeset comments in the form of regexp.
 
 ## Custom Resolved States
 
-In addition, resolved states in TeamCity can be customized by using the `teamcity.tfs.workItems.resolvedStates` [internal property](configuring-teamcity-server-startup-properties.md) set to `Closed?|Done|Fixed|Resolved?|Removed?` by default.
+In addition, resolved states in TeamCity can be customized by using the `teamcity.tfs.workItems.resolvedStates` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) set to `Closed?|Done|Fixed|Resolved?|Removed?` by default.

@@ -4,7 +4,7 @@
 
 <warning>
 
-It is recommended to use the TeamCity [REST API](rest-api.md) for accessing artifacts from scripts, as the REST API provides build selection facilities and allows listing artifacts.
+It is recommended to use the TeamCity [REST API](rest-api.md#Build+Artifacts) for accessing artifacts from scripts, as the REST API provides build selection facilities and allows listing artifacts.
 </warning>
 
 This section is preserved for __backward\-compatibility__ with the previous TeamCity versions and for some specific functionality.
@@ -12,8 +12,8 @@ This section is preserved for __backward\-compatibility__ with the previous Team
  
 
 Check the following information as well:
-* If you need to access the artifacts in your builds, consider using the TeamCity's built\-in [Artifact Dependency](dependent-build.md) feature. 
-* You can also download artifacts from TeamCity using the [Ivy](artifact-dependencies.md) dependency manager. 
+* If you need to access the artifacts in your builds, consider using the TeamCity's built\-in [Artifact Dependency](dependent-build.md#Artifact+Dependency) feature. 
+* You can also download artifacts from TeamCity using the [Ivy](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Ant+Build+Script) dependency manager. 
 * For artifact downloads from outside TeamCity builds, consider using [REST API](rest-api.md).
 * See also [Accessing Server by HTTP](accessing-server-by-http.md) on basic rules covering HTTP access from scripts.
 
@@ -38,7 +38,7 @@ __To download artifacts of the latest builds (last finished, successful or pinne
 
 
 
-__To download artifacts by the [build id](working-with-build-results.md)__, use:
+__To download artifacts by the [build id](working-with-build-results.md#Internal+Build+ID)__, use:
 
 
 ```Shell
@@ -81,8 +81,8 @@ __To download all artifacts in a .zip archive__, use:
 
 where
 * __BUILD\_TYPE\_EXT\_ID__ is a [build configuration ID](configuring-general-settings.md).
-* __BUILD\_SPECIFICATION__ can be `.lastFinished`, `.lastSuccessful` or `.lastPinned`, specific `buildNumber` or [build id](working-with-build-results.md) in format `BUILD_ID:id`.
-* __ARTIFACT\_PATH__ is a path to the artifact on the TeamCity server. This path can contain a `{build.number}` pattern (`%7Bbuild.number%7D`) which will be replaced by TeamCity with the build number of the build whose artifact is retrieved. By default, the archive with all artifacts does not include [hidden artifact](build-artifact.md). To include them, add "`?showAll=true`" at the end of the corresponding URL.
+* __BUILD\_SPECIFICATION__ can be `.lastFinished`, `.lastSuccessful` or `.lastPinned`, specific `buildNumber` or [build id](working-with-build-results.md#Internal+Build+ID) in format `BUILD_ID:id`.
+* __ARTIFACT\_PATH__ is a path to the artifact on the TeamCity server. This path can contain a `{build.number}` pattern (`%7Bbuild.number%7D`) which will be replaced by TeamCity with the build number of the build whose artifact is retrieved. By default, the archive with all artifacts does not include [hidden artifact](build-artifact.md#Hidden+Artifacts). To include them, add "`?showAll=true`" at the end of the corresponding URL.
 To download artifact from the last finished, last successful, last pinned or tagged build in a specific branch, add the "`?branch=<branch_name>`" parameter at the end of the corresponding URL.
 
 ## Obtaining Artifacts from an Archive
@@ -97,7 +97,7 @@ TeamCity allows obtaining a file from an archive from the build artifacts direct
 
 
 * __BUILD\_TYPE\_EXT\_ID__ is a [build configuration ID](configuring-general-settings.md).
-* __BUILD\_SPECIFICATION__ can be `.lastFinished`, `.lastPinned`, `.lastSuccessful`, specific `buildNumber` or [build id](working-with-build-results.md) in format `BUILD_ID:id`.
+* __BUILD\_SPECIFICATION__ can be `.lastFinished`, `.lastPinned`, `.lastSuccessful`, specific `buildNumber` or [build id](working-with-build-results.md#Internal+Build+ID) in format `BUILD_ID:id`.
 * __PATH\_WITHIN\_ARCHIVE__ is a path to a file within a zip/7\-zip/jar/tar.gz archive on TeamCity server.
  Following archive types are supported (case\-insensitive):
 * .zip

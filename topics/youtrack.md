@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: YouTrack)
 ## Converting Strings into Links to Issues
 
-When [enabling issue tracker integration](integrating-teamcity-with-issue-tracker.md), in addition to general settings, you need to specify which patterns are to be recognized as references to issues in your tracker.
+When [enabling issue tracker integration](integrating-teamcity-with-issue-tracker.md#Enabling+Issue+Tracker+Integration), in addition to general settings, you need to specify which patterns are to be recognized as references to issues in your tracker.
 
 For YouTrack, you need to provide the parameters for authentication (a [permanent token](https://www.jetbrains.com/help/youtrack/incloud/authentication-with-permanent-token.html), or username/password) and a space\-separated list of __Project IDs__. You can also load all project IDs automatically: check _Use all YouTrack ids automatically_ and test connection to your YouTrack server. If the connection is successful, the __Project IDs__ field will be automatically populated. Newly created projects in YouTrack will be detected by TeamCity, and the project IDs list will be automatically synchronized.
 

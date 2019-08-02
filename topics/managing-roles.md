@@ -1,6 +1,6 @@
 [//]: # (title: Managing Roles)
 [//]: # (auxiliary-id: Managing Roles)
-If [per-project permissions](role-and-permission.md) are enabled in your installation, you can view the existing roles, modify them  and create new ones in the TeamCity Web UI using the __Administration__ | __Roles__ link (in the __User Management__ section of __Settings__).
+If [per-project permissions](role-and-permission.md) are enabled in your installation, you can view the existing roles, modify them  and create new ones in the TeamCity Web UI using the __Administration | Roles__ link (in the __User Management__ section of __Settings__).
 
 Using the __Roles__ page you can:
 * create new roles

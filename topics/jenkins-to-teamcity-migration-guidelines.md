@@ -210,8 +210,8 @@ The Build Environment section of the Freestyle project in Jenkins specifies addi
 
 Examples:
 
-* To clean the workspace before the build, enable the [Clean build](configuring-vcs-settings.md) checkbox in Version Control Settings of a Build Configuration.
-* To cancel the build if the process is stuck, configure [failure conditions](build-failure-conditions.md) of a Build Configuration. What is more, TeamCity provides [hanging build detection](configuring-general-settings.md) out of the box.
+* To clean the workspace before the build, enable the [Clean build](configuring-vcs-settings.md#Checkout+Settings) checkbox in Version Control Settings of a Build Configuration.
+* To cancel the build if the process is stuck, configure [failure conditions](build-failure-conditions.md) of a Build Configuration. What is more, TeamCity provides [hanging build detection](configuring-general-settings.md#Build+Options) out of the box.
 * Environment variables can be accessed by specifying a special `%env.<environment variable name>%` pattern (example: `%env.JAVA_HOME%`) in various places of the configuration.
 
 ### Triggers
@@ -226,7 +226,7 @@ This is where the real work happens. This part is mostly identical in Jenkins an
 
 ### Building Maven project
 
-A Jenkins Maven project doesnt have a direct counterpart in TeamCity. Instead, an appropriate build step is selected to perform the work. In fact, [TeamCity automates](maven.md) a lot of the setup for Maven projects and provides an additional build triggering [option based on dependencies](configuring-maven-triggers.md).
+A Jenkins Maven project doesnt have a direct counterpart in TeamCity. Instead, an appropriate build step is selected to perform the work. In fact, [TeamCity automates](maven.md) a lot of the setup for Maven projects and provides an additional build triggering [option based on dependencies](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger).
 
 ### Post-build Actions
 

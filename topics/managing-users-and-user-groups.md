@@ -7,15 +7,15 @@ On this page:
 
 ## Creating New User
 
-The __Administration__ | __Users__ page provides the __Create user account__ option.
+The __Administration | Users__ page provides the _Create user account_ option.
 
-When creating a user account when [several authentication modes enabled](configuring-authentication-settings.md) on the server, only a username is required.
+When creating a user account when [several authentication modes enabled](configuring-authentication-settings.md#Advanced+Mode) on the server, only a username is required.
 
-If only the [default authentication](authentication-modules.md) is used, the password is required as well. Any new user is automatically added to the [All Users group](user-group.md) and inherits the roles and permissions defined for this group. If you do not use [per-project permissions](role-and-permission.md), you can specify here whether a user should have administrative permissions or not. Otherwise, you can assign roles to this user [later](#Assigning+Roles+to+Users).
+If only the [default authentication](authentication-modules.md) is used, the password is required as well. Any new user is automatically added to the [All Users group](user-group.md#%22All+Users%22+Group) and inherits the roles and permissions defined for this group. If you do not use [per-project permissions](role-and-permission.md), you can specify here whether a user should have administrative permissions or not. Otherwise, you can assign roles to this user [later](#Assigning+Roles+to+Users).
 
 ### Editing User Account
 
-To edit/delete a user account, click its name on the __Users__ tab of the __Administration__ | __Users__ page and use the corresponding option. The page provides several tabs allowing you to modify various user account settings
+To edit/delete a user account, click its name on the __Users__ tab of the __Administration | Users__ page and use the corresponding option. The page provides several tabs allowing you to modify various user account settings
 
 ### General
 
@@ -37,8 +37,8 @@ Multiple usernames are supported for a VCS root type and for a separate VCS root
 
 The names set here will be used to:
 * show builds with changes committed by a user with such a VCS username on the [Changes](viewing-your-changes.md) page
-* highlight such builds on the Projects page if the appropriate [option is selected](managing-your-user-account.md),
-* notify the user on such builds when the __Builds affected by my changes__ option is selected in [notifications settings](subscribing-to-notifications.md).
+* highlight such builds on the Projects page if the appropriate [option is selected](managing-your-user-account.md#Customizing+UI),
+* notify the user on such builds when the __Builds affected by my changes__ option is selected in [notifications settings](subscribing-to-notifications.md#What+Will+Be+Watched).
 
 ## Groups
 
@@ -88,7 +88,7 @@ This section displays the rules inherited by the user from the groups they belon
 
 ### Creating New Group
 
-Open the __Administration__ | __Groups__ page and сlick __Create new group__. In the dialog, specify the group name. TeamCity will create an editable Group Key, which is a unique group identifier.
+Open the __Administration | Groups__ page and сlick __Create new group__. In the dialog, specify the group name. TeamCity will create an editable Group Key, which is a unique group identifier.
 
 When creating a group, you can select the parent group(s) for it. All roles and notification rules configured for the parent group will be automatically assigned to the current group. To place the current group to the top level, deselect all groups in the list.
 

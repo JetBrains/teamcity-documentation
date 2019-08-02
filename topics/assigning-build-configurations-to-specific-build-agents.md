@@ -5,7 +5,7 @@ It is sometimes necessary to manage the [Build Agents](build-agent.md)' workload
 1. [Establish a run configuration policy](#Agent+pools) for an agent, which defines the build configurations to run on this agent.
 2. Define special [Agent Requirements](agent-requirements.md), to restrict the pool of agents, on which a build configuration can run the builds. These requirements are:			
    * [Build Agent name](#Agent+pools). If the name of a build agent is made a requirement, the build configuration will run builds on this agent only.		
-   * [Build Agent property](#Agent+pools). If a certain property, for example, a capability to run builds of a certain configuration, an operating system etc., is made a requirement, the build configuration will run builds on the agents that meet this requirement.
+   * [Build Agent property](#Agent+pools). If a certain property, for example, a capability to run builds of a certain configuration or an operating system, is made a requirement, the build configuration will run builds on the agents that meet this requirement.
 
 
 * You can modify these parameters when setting up the project or build configuration, or at any moment you need. The changes you make to the build configurations are applied on the fly.	

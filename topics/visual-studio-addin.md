@@ -10,7 +10,7 @@ On this page:
 The TeamCity add\-in for Microsoft Visual Studio provides the following features:
 * [Remote Run](remote-run.md) for TFS, Subversion and Perforce (for remote run for Mercurial and Git see [Branch Remote Run Trigger](branch-remote-run-trigger.md))
 * [Pre-Tested (Delayed) Commit](pre-tested-delayed-commit.md) for TFS, Subversion and Perforce
-* fetching [JetBrains dotCover](http://www.jetbrains.com/dotcover/index.html) coverage analysis data from the TeamCity server (see [more](jetbrains-dotcover.md)) to MS Visual Studio (requires dotCover of the [supported version](supported-platforms-and-environments.md) installed in Visual Studio)
+* fetching [JetBrains dotCover](http://www.jetbrains.com/dotcover/index.html) coverage analysis data from the TeamCity server (see [more](jetbrains-dotcover.md)) to MS Visual Studio (requires dotCover of the [supported version](supported-platforms-and-environments.md#Code+Coverage) installed in Visual Studio)
 * viewing recently committed changes and personal builds with their build status in the __My Changes__ tool window
 * opening build failure details in MS Visual Studio from the TeamCity web UI
 * viewing failed tests' details for a build
@@ -44,7 +44,7 @@ The Legacy version of the TeamCity VS Add\-in for Visual Studio versions from 20
 
 ## Requirements
 
-See the [Supported Platforms and Environment](supported-platforms-and-environments.md) page for the system requirements to configure integration with different version control systems or coverage tools.
+See the [Supported Platforms and Environment](supported-platforms-and-environments.md#IDE+Integration) page for the system requirements to configure integration with different version control systems or coverage tools.
 
 
 

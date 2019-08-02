@@ -18,7 +18,7 @@ The global values of `M2_HOME` environment variable and` maven.home` JVM option 
 
 ### User-Level Settings
 
-Maven _user\-level_ settings are defined in the __User settings selection__ [section](maven.md) of the Maven build step of the build configuration (if there are several Maven steps, settings from the first one are used).
+Maven _user\-level_ settings are defined in the __User settings selection__ [section](maven.md#User+Settings) of the Maven build step of the build configuration (if there are several Maven steps, settings from the first one are used).
 
 The following options are available: 
 
@@ -78,9 +78,9 @@ The settings are available in the current project and its subprojects. To overri
 
 </td></tr></table>
 
-For the logic of Maven settings, please refer to the related Maven [documentation](http://maven.apache.org/settings.html).
+For the logic of Maven settings, refer to the related Maven [documentation](http://maven.apache.org/settings.html).
 
-User\-level settings can be configured in the [Maven Artifact Dependency Trigger](configuring-maven-triggers.md).
+User\-level settings can be configured in the [Maven Artifact Dependency Trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger).
 
  __  __
  

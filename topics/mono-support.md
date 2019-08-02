@@ -9,7 +9,7 @@ For more information refer to the [Mono official site](http://www.mono-project.c
 
 TeamCity supports running .NET builds using [NAnt](nant.md) and [MSBuild](msbuild.md) runners under Mono framework as well as under .NET Frameworks. (MSBuild as xbuild in Mono). 
 
-Since TeamCity 2017.1, [NuGet ](nuget.md)runners support Linux and macOS when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent. Note that only NuGet CLI 3.2\+ on Mono 4.4.2\+ is supported. 
+[NuGet](nuget.md) runners support Linux and macOS when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent. Note that only NuGet CLI 3.2\+ on Mono 4.4.2\+ is supported. 
 
 [Tests reporting tasks](net-testing-frameworks-support.md) are also supported under Mono.
 
@@ -28,7 +28,7 @@ When Mono is detected automatically on the agent side, the following properties 
 * __MonoX.Z\_x64__ — set to `MONO_ROOT/lib/mono/X.Z` if exists and Mono architecture is x64
 * __MonoX.Z\_x86__ — set to `MONO_ROOT/lib/mono/X.Z` if exists and Mono architecture is x86
 
-If the Mono installation cannot be detected automatically (for example, you have installed Mono framework into a custom directory), you can make these properties available to build runners by setting them manually in the [agent configuration file](project-and-agent-level-build-parameters.md).
+If the Mono installation cannot be detected automatically (for example, you have installed Mono framework into a custom directory), you can make these properties available to build runners by setting them manually in the [agent configuration file](project-and-agent-level-build-parameters.md#Agent+Level+Build+Parameters).
 
 #### Windows Specifics
 

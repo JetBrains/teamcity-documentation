@@ -11,8 +11,8 @@ On this page:
 
 TeamCity supports a set of events that can generate user notifications (such as build failures, investigation state changes, etc). On an event occurrence, for each notifier type, TeamCity processes notification settings for all the users to determine which users to notify.
 
-When the set of users is determined, TeamCity fills the notification model (the objects relevant to the notification, such as "build", investigation data, etc.) and evaluates a notification template that corresponds to the notification event.   
-The template uses the data model objects to generate the output values (e.g. notification message text). The output values are then used by the notifier to send the message. Each notifier supports a specific set of output values.
+When the set of users is determined, TeamCity fills the notification model (the objects relevant to the notification, such as "build", investigation data, and so on) and evaluates a notification template that corresponds to the notification event.   
+The template uses the data model objects to generate the output values (for example, notification message text). The output values are then used by the notifier to send the message. Each notifier supports a specific set of output values.
 
 Note that the template is evaluated once for an event which means that notification properties cannot be adjusted on a per\-user basis.
 
@@ -22,9 +22,9 @@ The output values defined by the template are then used by the notifier to send 
 
 ### Notification Templates Location
 
-Each of the bundled [notifiers](notifier.md) has a directory in \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config_notifications/, which stores [FreeMarker](http://freemarker.sourceforge.net/) (`.ftl`) templates. There are also [.dist](teamcity-data-directory.md) files that store the default templates. Each notification type evaluates a template file with a corresponding name. The template files can be modified while the server is running.
+Each of the bundled [notifiers](notifier.md) has a directory in \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config_notifications/, which stores [FreeMarker](http://freemarker.sourceforge.net/) (`.ftl`) templates. There are also [`.dist`](teamcity-data-directory.md#.dist+Template+Configuration+Files) files that store the default templates. Each notification type evaluates a template file with a corresponding name. The template files can be modified while the server is running.
 
-By default, the server checks for changes in the files every 60 seconds, but this can be changed by setting the `teamcity.notification.template.update.interval` [internal property](configuring-teamcity-server-startup-properties.md) to the desired number of seconds.
+By default, the server checks for changes in the files every 60 seconds, but this can be changed by setting the `teamcity.notification.template.update.interval` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to the desired number of seconds.
 
 If an error occurs during the template evaluation, TeamCity logs the error details to `teamcity-notifications.log`. There can be non\-critical errors that result in ignoring part of the template or critical errors that result in the inability to send notification at all. Whenever you make changes to the notification templates ensure the notification can still be sent.
 
@@ -214,7 +214,7 @@ The default template is stored in the file: `<TeamCity data directory>/config/de
 
 The template is a [FreeMarker](http://freemarker.org/docs/dgui.html) template and can be freely edited.
 
-You can use several templates on a single server. The template name can be passed as a [URL parameter](subscribing-to-notifications.md) of the feed URL.
+You can use several templates on a single server. The template name can be passed as a [URL parameter](subscribing-to-notifications.md#Additional+Supported+URL+Parameters) of the feed URL.
 
 During feed rendering, the template is evaluated to get the feed content. The resultant content is defined by the global variables defined in the template.
 

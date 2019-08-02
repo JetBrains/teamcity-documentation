@@ -98,7 +98,7 @@ The _Edit arguments_ field allows specifying additional options for `docker run`
 
 <chunk include-id="docker-settings-how">
 
-Technically, the command of the build runner is wrapped in a shell script, and this script is executed inside a Docker container with the `docker run` command. All the details about the started process, text of the script etc. are written into the build log (the _Verbose_ mode enables viewing them).
+Technically, the command of the build runner is wrapped in a shell script, and this script is executed inside a Docker container with the `docker run` command. All the details about the started process, text of the script, and so on, are written into the build log (the _Verbose_ mode enables viewing them).
 
 The [checkout directory](build-checkout-directory.md) and most build agent directories are mapped inside the Docker process.
 
@@ -112,7 +112,7 @@ If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment va
 
 <chunk include-id="docker-settings-env-var">
 
-TeamCity passes environment variables from the [build configuration](build-configuration.md) into the Docker process, but it does not pass environment variables from the [build agent](build-agent.md), as they may not be relevant to the Docker container environment. The list of the passed environment variables can be seen in [Verbose mode](build-log.md) in the build log.
+TeamCity passes environment variables from the [build configuration](build-configuration.md) into the Docker process, but it does not pass environment variables from the [build agent](build-agent.md), as they may not be relevant to the Docker container environment. The list of the passed environment variables can be seen in [Verbose mode](build-log.md#Viewing+Build+Log) in the build log.
 
 
  </chunk>

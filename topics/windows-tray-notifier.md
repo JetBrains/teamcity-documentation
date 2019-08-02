@@ -1,11 +1,12 @@
 [//]: # (title: Windows Tray Notifier)
 [//]: # (auxiliary-id: Windows Tray Notifier)
 
+The Windows Tray Notifier is an utility which allows monitoring the status of specific build configurations in the system tray via popup alerts and status icons.
+
 On this page:
 
 <tag-list of="chapter" mode="tree" depth="5"/>
 
-The Windows Tray Notifier is an utility which allows monitoring the status of specific build configurations in the system tray via popup alerts and status icons.
 
 ## Installing Windows Tray Notifier
 
@@ -24,7 +25,7 @@ When the application started, you need to connect and log in to your server:
 
    <img src="windows-tray-notifier.png" width="1419" alt="Windows Tray Notifier"/>
 
-3. When Windows Tray Notifier is launched, [the status icon](#Status+Icons) in the Windows System Tray appears.
+3. When Windows Tray Notifier is launched, the [status icon](#Status+Icons) in the Windows System Tray appears.
 
 ## Windows Tray Notifier UI
 
@@ -161,7 +162,7 @@ Displays the __Quick View__ window.
 
 <td>
 
-Go to "Projects" Page...
+Go to "Projects" Page
 
 
 </td>
@@ -175,7 +176,7 @@ Opens the __Projects__ tab.
 
 <td>
 
-Go to "My Changes" Page...
+Go to "My Changes" Page
 
 
 </td>
@@ -189,7 +190,7 @@ Opens the __My Changes__ tab.
 
 <td>
 
-Configure Watched Builds...
+Configure Watched Builds
 
 
 </td>
@@ -296,7 +297,7 @@ __Since TeamCity 2017.2__  Windows Tray Notifier logs events and warnings to the
 *  `teamcity-update.log` with update details.
  
 
-You can tune the logger verbosity via the `/verbosity`  command line switch: debug logs can be enabled using the following command: 
+You can tune the logger verbosity via the `/verbosity` command line switch: debug logs can be enabled using the following command: 
 
 
 ```Shell

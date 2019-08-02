@@ -11,6 +11,6 @@ When the configuration file is created, links to the external viewer (![extChang
 
    <img src="externalChangesViewer.png" width="600" alt="Viewing external changes"/>
    
-* the [Changes](working-with-build-results.md) tab of the build results page
-* the Change details page available by clicking the link when hovering over the changes on the __Overview__ and __Change Log__ tabs for a project and build configurations and on the __Changes__ tab of the build results page
-* the [TeamCity file diff page](difference-viewer.md)
+* __[Changes](working-with-build-results.md#Changes)__ tab of the build results page
+* __Change Details__ page available by clicking the link when hovering over the changes on the __Overview__ and __Change Log__ tabs for a project and build configurations and on the __Changes__ tab of the build results page
+* [TeamCity file diff page](difference-viewer.md)

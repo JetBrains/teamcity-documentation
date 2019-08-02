@@ -371,11 +371,11 @@ where:
 
 #### Reporting Tests
 
-To use the TeamCity on\-the\-fly test reporting, a testing framework needs dedicated support for this feature to work (alternatively, [XML Report Processing](xml-report-processing.md) can be used). If TeamCity doesn't support your testing framework natively, it is possible to modify your build script to report test runs to the TeamCity server using service messages. This makes it possible to display test results in real\-time, make test information available on the [Working with Build Results](working-with-build-results.md).
+To use the TeamCity on\-the\-fly test reporting, a testing framework needs dedicated support for this feature to work (alternatively, [XML Report Processing](xml-report-processing.md) can be used). If TeamCity doesn't support your testing framework natively, it is possible to modify your build script to report test runs to the TeamCity server using service messages. This makes it possible to display test results in real\-time, make test information available on the [Tests tab of the Build Results page](working-with-build-results.md#All+Tests).
 
 ##### Supported test service messages
 
-__Test suite messages:__ Test suites are used to group tests. TeamCity displays tests grouped by suites on [Working with Build Results](working-with-build-results.md) and in other places.
+__Test suite messages:__ Test suites are used to group tests. TeamCity displays tests grouped by suites on the [Tests tab of the Build Results page](working-with-build-results.md#All+Tests) and in other places.
 
 
 ```Shell
@@ -530,7 +530,7 @@ You can configure .NET coverage processing by means of service messages. To lear
 
 You can report inspections from a custom tool to TeamCity using the service messages described below.
 
-Among other uses, the number of inspections can be used as a build metric to [fail a build on](build-failure-conditions.md).
+Among other uses, the number of inspections can be used as a build metric to [fail a build on](build-failure-conditions.md#Fail+build+on+metric+change).
 
 ##### Inspection type
 
@@ -617,11 +617,11 @@ To do this, you need to output the following line:
 
 
 
-The `<path>` has to adhere to the same rules as the [Build Artifact specification](configuring-general-settings.md) of the Build Configuration settings. The files matching the `<path>` will be uploaded and visible as the artifacts of the running build.
+The `<path>` has to adhere to the same rules as the [Build Artifact specification](configuring-general-settings.md#Artifact+Paths) of the Build Configuration settings. The files matching the `<path>` will be uploaded and visible as the artifacts of the running build.
 
 The message should be printed after all the files are ready and no file is locked for reading.
 
-Artifacts are uploaded in the background, which can take time. Make sure the matching files are not deleted till the end of the build (for example, you can put them in a directory that is cleaned on the next build start, in a [temp directory](how-to.md), or use [Swabra](build-files-cleaner-swabra.md) to clean them after the build).
+Artifacts are uploaded in the background, which can take time. Make sure the matching files are not deleted till the end of the build (for example, you can put them in a directory that is cleaned on the next build start, in a [temp directory](how-to.md#Make+Temporary+Build+Files+Erased+between+the+Builds), or use [Swabra](build-files-cleaner-swabra.md) to clean them after the build).
 
 <note>
 
@@ -691,7 +691,7 @@ where:
 
 TeamCity allows changing the __build status text__ from the build script. Unlike [progress messages](#Reporting+Build+Progress), this change persists even after a build has finished. You can also change the build status of a failing build to __success__.
 
-Prior to TeamCity 7.1, this service message could be used for changing the build status to __failed__. In the later TeamCity versions, the [buildProblem ](#Reporting+Build+Problems) service message is to be used for that.
+Prior to TeamCity 7.1, this service message could be used for changing the build status to __failed__. In the later TeamCity versions, the [buildProblem](#Reporting+Build+Problems) service message is to be used for that.
 
 To set the status and/or change the text of the build status (for example, note the number of failed tests if the test framework is not supported by TeamCity), use the `buildStatus` message with the following format:
 
@@ -733,7 +733,7 @@ In the &lt;new build number&gt; value, you can use the \{`build.number`\} substi
 
 #### Adding or Changing a Build Parameter
 
-By using a dedicated service message in your build script, you can dynamically update build parameters of the build right from a build step (the parameters need to be defined in the [Parameters section](configuring-build-parameters.md) of the build configuration). The changed build parameters will be available in the build steps following the modifying one. They will also be available as build parameters and can be used in the dependent builds via [Predefined Build Parameters](predefined-build-parameters.md), e.g.
+By using a dedicated service message in your build script, you can dynamically update build parameters of the build right from a build step (the parameters need to be defined in the [Parameters section](configuring-build-parameters.md) of the build configuration). The changed build parameters will be available in the build steps following the modifying one. They will also be available as build parameters and can be used in the dependent builds via [` %dep.*% parameter references`](predefined-build-parameters.md#Dependencies+Properties), for example:
 
 
 ```Shell
@@ -750,9 +750,9 @@ When specifying a build parameter's name, mind the prefix:
 
 #### Reporting Build Statistics
 
-In TeamCity, it is possible to configure a build script to report statistical data and then display the charts based on the data. Refer to the [Customizing Statistics Charts](customizing-statistics-charts.md) page for a guide to displaying the charts on the web UI. This section describes how to report the statistical data from the build script via service messages. You can publish the build statics values in two ways:
+In TeamCity, it is possible to configure a build script to report statistical data and then display the charts based on the data. Refer to the [Customizing Statistics Charts](customizing-statistics-charts.md#Modifying+Pre-defined+Project-level+Charts) page for a guide to displaying the charts on the web UI. This section describes how to report the statistical data from the build script via service messages. You can publish the build statics values in two ways:
 * Using a service message in a build script directly
-* [Providing data using the teamcity-info.xml file] (#Providing+data+using+the+teamcity-info.xml+file)
+* [Providing data using the teamcity-info.xml file](#Providing+data+using+the+teamcity-info.xml+file)   
 To report build statistics using service messages: Specify a '`buildStatisticValue`' service message with the following format for each statistics value you want to report:
 
 
@@ -762,7 +762,7 @@ To report build statistics using service messages: Specify a '`buildStatisticVal
 ```
 
 where
-* The `key` should not be equal to any of [predefined keys](custom-chart.md).
+* The `key` should not be equal to any of [predefined keys](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity).
 * The `value` should be a positive/negative integer of up to 13 digits; float values with up to 6 decimal places are also supported.
 
 #### Disabling Service Messages Processing
@@ -1224,7 +1224,7 @@ The `teamcity-info.xml` file is to contain the code in the following format (you
 
 
 
-The `key` should not be equal to any of [predefined keys](customizing-statistics-charts.md). The `value` should be a positive/negative integer of up to 13 digits. Float values with up to 6 decimal places are supported.
+The `key` should not be equal to any of [predefined keys](customizing-statistics-charts.md#Modifying+Pre-defined+Project-level+Charts). The `value` should be a positive/negative integer of up to 13 digits. Float values with up to 6 decimal places are supported.
 
 The key here relates to the key of the __valueType__ tag used when describing the chart.
 
