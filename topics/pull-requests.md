@@ -376,3 +376,9 @@ You can automate your setup further, so TeamCity:
 * merges the pull request in GitHub if the build finishes successfully, with the [Automatic Merge](automatic-merge.md) build feature
 
 
+__ __
+
+__See also__:
+
+__TeamCity Blog__: [Building GitHub pull requests with TeamCity](https://blog.jetbrains.com/teamcity/2019/08/building-github-pull-requests-with-teamcity/)
+
