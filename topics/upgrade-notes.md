@@ -5,7 +5,7 @@
 
 ### Known issues
 
-If you use "dotnet" steps under Windows, you can get ".NET SDK was not found" error on running the steps if you have "`c:\Program Files (x86)\dotnet`" directory on the system ([details](https://youtrack.jetbrains.com/issue/TW-61413)).
+If you use the .NET steps under Windows, you can get the _".NET SDK was not found"_ error on running these steps if you have the `c:\Program Files (x86)\dotnet` directory on your system (see [details](https://youtrack.jetbrains.com/issue/TW-61413)).
 
 ## Changes from 2019.1 to 2019.1.1
 
