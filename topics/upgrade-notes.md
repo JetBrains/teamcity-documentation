@@ -5,7 +5,7 @@
 
 ### Known issues
 
-If you use the .NET steps under Windows, you can get the _".NET SDK was not found"_ error on running these steps if you have the `c:\Program Files (x86)\dotnet` directory on your system (see [details](https://youtrack.jetbrains.com/issue/TW-61413)).
+If you use the .NET Core ("dotnet") steps on Windows agents, you can get the _".NET SDK was not found"_ error if you have .NET Core runtime (not SDK) installed on the agent in the location like `C:\Program Files (x86)\dotnet`. As a workaround, set env.DOTNET_HOME parameter to the  location of .NET Core SDK. Related [issue](https://youtrack.jetbrains.com/issue/TW-61413).
 
 ## Changes from 2019.1 to 2019.1.1
 

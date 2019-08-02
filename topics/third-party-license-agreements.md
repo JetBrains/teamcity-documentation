@@ -1864,6 +1864,19 @@ License
 
 <td>
 
+[clipboard-js](https://github.com/zenorocha/clipboard.js/)
+
+</td>
+
+<td>
+
+[MIT](https://zenorocha.mit-license.org/)
+
+</td></tr>
+<tr>
+
+<td>
+
 [clipboard-polyfill](https://www.npmjs.com/package/clipboard-polyfill)
 
 </td>

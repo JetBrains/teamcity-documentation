@@ -1002,18 +1002,18 @@ GET http://teamcity:8111/app/rest/builds/aggregated/strob:(branch:(buildType:(id
  
 For request `/app/rest/builds/aggregated/<build locator>` the status is calculated by list of the builds: `app/rest/builds?locator=<build locator>`. This allows embedding a build status icon into any HTML page with a simple `img` tag:
  
-For build configuration with the internal `btXXX` ID:
+For build configuration with the `BUILD_CONF_ID` ID:
  
 Status of the last build:
  
 ```HTML
-<img src="http://teamcity:8111/app/rest/builds/buildType:(id:btXXX)/statusIcon"/>
+<img src="http://teamcity:8111/app/rest/builds/buildType:(id:BUILD_CONF_ID)/statusIcon"/>
  
 ```
  
 Status of the last build tagged with the `myTag` tag:
 ```HTML
-<img src="http://teamcity:8111/app/rest/builds/buildType:(id:btXXX),tag:myTag/statusIcon"/>
+<img src="http://teamcity:8111/app/rest/builds/buildType:(id:BUILD_CONF_ID),tag:myTag/statusIcon"/>
  
 ```
  
