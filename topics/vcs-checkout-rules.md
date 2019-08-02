@@ -30,8 +30,13 @@ The general syntax of a single checkout rule is as follows:
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
+<note>
 
-To include all the files, use `+:.` rule.
+If no rule is specified, all files are included.
+When you start entering a rule, note that as soon as you enter any `+:` rule, TeamCity will remove the default "include all" setting.
+To include all the files explicitly, use `+:.` rule.
+
+</note>
 
 <note>
 
