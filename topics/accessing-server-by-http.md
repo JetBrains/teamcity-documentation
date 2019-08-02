@@ -12,7 +12,7 @@ Use the TeamCity [REST API](rest-api.md) for accessing the server from scripts. 
 
 </warning>
 
-The examples below assume that your server web UI is accessible via [http://teamcity.jetbrains.com:8111/](http://teamcity.jetbrains.com:8111/) URL.
+The examples below assume that your server web UI is accessible via [`http://teamcity.jetbrains.com:8111/`](http://teamcity.jetbrains.com:8111/) URL.
 
 The TeamCity server supports basic HTTP authentication allowing users to access certain web server pages and perform actions from various scripts. Consult the manual for the client tool/library on how to supply basic HTTP credentials when issuing a request.
 
@@ -31,7 +31,7 @@ http://teamcity.jetbrains.com:8111/httpAuth/action.html?add2Queue=MyBuildConf
 
 ``` 
 
-The HTTP authentication can be useful when [downloading build artifacts](patterns-for-accessing-build-artifacts.md) and triggering a build.
+The HTTP authentication can be useful when [downloading build artifacts](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+a+Build+Script) and triggering a build.
 
 If you have _Guest_ user enabled, it can be used to perform the action too. Use "`/guestAuth`" before the URL path to perform the action on Guest user behalf. For example:
 
@@ -52,11 +52,11 @@ Make sure the user used to perform the authentication (or _Guest_ user) has appr
 <warning>
 
 
-Use the TeamCity [REST API](rest-api.md) to trigger a build. The section below is __obsolete__ and preserved for compatibility purposes only.
+Use the TeamCity [REST API](rest-api.md#Triggering+a+Build) to trigger a build. The section below is __obsolete__ and preserved for compatibility purposes only.
 
 </warning>
  
-To trigger a build, send the __HTTP POST__ request for the URL performing basic HTTP authentication:
+To trigger a build, send the `HTTP POST` request for the URL performing basic HTTP authentication:
 
 ```Shell
 

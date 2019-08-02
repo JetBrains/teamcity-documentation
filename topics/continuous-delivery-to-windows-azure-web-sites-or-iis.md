@@ -244,7 +244,7 @@ Now let's see if we can set up the actual deployment as well!
 
 
 
-The strategy we'll be using for our deployments is described in the [How To...](how-to.md). We will be creating a new build configuration for every target environment we want to deploy to. These new build configurations will:
+The strategy we'll be using for our deployments is described in the [How To](how-to.md#Set+up+Deployment+for+My+Application+in+TeamCity). We will be creating a new build configuration for every target environment we want to deploy to. These new build configurations will:
 
 
 	

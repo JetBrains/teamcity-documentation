@@ -31,7 +31,7 @@ To upgrade the server:
    * [Upgrading Using Windows Installer](#Using+Windows+Installer)
    * [Manual Upgrading on Linux and for WAR Distributions](#Manual+Upgrading+using+.tar.gz+or+.war+Distributions)
 
-If you plan to upgrade a production TeamCity installation, it is recommended to install a [test server](how-to.md) and check its functioning in your environment before upgrading the main one.
+If you plan to upgrade a production TeamCity installation, it is recommended to install a [test server](how-to.md#Test-drive+Newer+TeamCity+Version+before+Upgrade) and check its functioning in your environment before upgrading the main one.
 
 ### Licensing
 Before upgrading, make sure the maintenance period of your licenses is not yet elapsed (use __Administration | Licenses__ TeamCity server web UI page to list your license keys). The licenses are valid only for the versions of TeamCity with the effective release date within the maintenance period. Check the effective release date on the [releases list](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads).   
@@ -50,7 +50,7 @@ The general policy is that bugfix updates (indicated by changes in the `Z` part 
 
 On upgrade, all the TeamCity configuration settings and other data are preserved unless noted in [Upgrade Notes](upgrade-notes.md). If you have customized TeamCity installation (like Tomcat server settings change), you will need to repeat the customization after the upgrade.
 
-The general approach to upgrade is to remove all the files of the previous installation in the TeamCity server home and place the new files into the same location. Make sure to preserve the [TeamCity Data Directory ](teamcity-data-directory.md)and the database intact (making a backup beforehand), backing up and restoring previously customized settings (for example, in `...\conf\server.xml`, `...\conf\web.xml` files) is also necessary. The logs directory (`...\logs`) can be left with the old installation files.
+The general approach to upgrade is to remove all the files of the previous installation in the TeamCity server home and place the new files into the same location. Make sure to preserve the [TeamCity Data Directory](teamcity-data-directory.md) and the database intact (making a backup beforehand), backing up and restoring previously customized settings (for example, in `...\conf\server.xml`, `...\conf\web.xml` files) is also necessary. The logs directory (`...\logs`) can be left with the old installation files.
 
 Agents connected to the server are upgraded [automatically](#Automatic+Build+Agent+Upgrading).
 

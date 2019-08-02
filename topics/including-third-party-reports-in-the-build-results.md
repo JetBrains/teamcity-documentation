@@ -8,7 +8,7 @@ The general flow is as follows:
 * configure the __Report Tab__ to make the report available as an extra tab on the build or project level  (see below)
 
 Report tabs support project hierarchy. There are two types of tabs available:
-* __Build\-level__: appears on the [build results](working-with-build-results.md) page for each build that produced an artifact with the specified name. These report tabs are defined in a project and are inherited in its subprojects. To override an inherited Report tab in a subproject, create a new report tab with the same name as the inherited one in the subproject.
+* __Build\-level__: appears on the [Build Results](working-with-build-results.md) page for each build that produced an artifact with the specified name. These report tabs are defined in a project and are inherited in its subprojects. To override an inherited Report tab in a subproject, create a new report tab with the same name as the inherited one in the subproject.
 * __Project\-level__: appears on the Project home page for a particular project only if a build within the project produces the specified reports artifact.
 
 To configure a report tab, go to the __Project Settings | Report Tabs__ and select the type of report tab you want to add.
@@ -69,9 +69,9 @@ Start page
 <td>
 
 Specify the path to the artifacts to be displayed as the contents of the report page. The path must be relative to the root of the build artifact directory.    
-To use a file from an archive, use the `path-to-archive!relative-path` syntax, for example: `javadoc.zip!/index.html`. See the list of [supported archives](patterns-for-accessing-build-artifacts.md).
+To use a file from an archive, use the `path-to-archive!relative-path` syntax, for example: `javadoc.zip!/index.html`. See the list of [supported archives](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+a+Build+Script).
 
-You can use the file browser ![chechoutdirBrowser.png](chechoutdirBrowser.png) next to the field to select artifacts. [Parameter references](configuring-build-parameters.md) are supported here, e.g. `%\parameter%.zip!index.htm`
+You can use the file browser ![chechoutdirBrowser.png](chechoutdirBrowser.png) next to the field to select artifacts. [Parameter references](configuring-build-parameters.md) are supported here, for example, `%\parameter%.zip!index.htm`
 
 
 </td></tr></table>
@@ -118,9 +118,9 @@ Start page
 <td>
 
 Specify the path to the artifacts to be displayed as the contents of the report page. The path must be relative to the root of the build artifact directory.    
-To use a file from an archive, use the `path-to-archive!relative-path` syntax, for example: `javadoc.zip!/index.html`. See the list of [supported archives](patterns-for-accessing-build-artifacts.md).
+To use a file from an archive, use the `path-to-archive!relative-path` syntax, for example: `javadoc.zip!/index.html`. See the list of [supported archives](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+a+Build+Script).
 
-You can use the file browser ![chechoutdirBrowser.png](chechoutdirBrowser.png) next to the field to select artifacts. [Parameter references](configuring-build-parameters.md) are supported here, e.g. `%\parameter%.zip!index.htm`
+You can use the file browser ![chechoutdirBrowser.png](chechoutdirBrowser.png) next to the field to select artifacts. [Parameter references](configuring-build-parameters.md) are supported here, for example, `%\parameter%.zip!index.htm`
 
 
 </td></tr></table>

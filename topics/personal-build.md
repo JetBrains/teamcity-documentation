@@ -1,16 +1,16 @@
 [//]: # (title: Personal Build)
 [//]: # (auxiliary-id: Personal Build)
-A personal build is a build\-out of the common builds sequence and which typically uses the changes not yet committed into the version control. Personal builds are usually initiated from one of the [supported IDEs](supported-platforms-and-environments.md) via the [Remote Run](remote-run.md) procedure.
+A _Personal Build_ is a build-out of the common builds sequence and which typically uses the changes not yet committed into the version control. Personal Builds are usually initiated from one of the [supported IDEs](supported-platforms-and-environments.md#Remote+Run+and+Pre-tested+Commit) via the [Remote Run](remote-run.md) procedure.
 
-The build uses the current VCS repository sources plus the changed files identified during the remote run initiation. The results of the Personal Build can be seen in the "My Changes" view of the corresponding IDE plugin and on the __[Changes](viewing-your-changes.md)__ page. Finished personal builds are listed in the builds history, but only for the users who initiated them.   
-See more at [Pre-Tested (Delayed) Commit](pre-tested-delayed-commit.md).
+A Personal Build uses the current VCS repository sources plus the changed files identified during the remote run initiation. The results of a Personal Build can be seen in the "My Changes" view of the corresponding IDE plugin and on the __[Changes](viewing-your-changes.md)__ page in TeamCity. Finished Personal Builds are listed in the builds history, but only for the users who initiated them.   
+Read more about running commits via Remote Run in [Pre-Tested (Delayed) Commit](pre-tested-delayed-commit.md).
 
-By default, users only see their own personal builds in the builds lists, but this can be changed on the [user profile page](managing-your-user-account.md).
+By default, users only see their own Personal Builds in the builds lists, but this can be changed via the "_Show all personal builds_" option in __My Settings \& Tools | General | UI settings__ of the [user profile](managing-your-user-account.md).
 
-One can also mark a build as personal using the corresponding option of the [Run](triggering-a-custom-build.md) dialog.   
-By default, only users with the [Project Developer role](role-and-permission.md) can initiate a personal build.
+One can also mark a build as Personal using the corresponding option of the [Run](triggering-a-custom-build.md) dialog.   
+By default, only users with the [Project Developer role](role-and-permission.md) can initiate a Personal Build.
 
-__Since TeamCity 9.1__, it is possible to [restrict running personal builds](configuring-general-settings.md).
+It is possible to [restrict running Personal Builds](configuring-general-settings.md#Allow+Triggering+Personal+Builds) in the General Settings of a build configuration.
 
  __  __
 

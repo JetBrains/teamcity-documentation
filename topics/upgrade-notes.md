@@ -944,7 +944,7 @@ __Since TeamCity 9.0__, the issue trackers are configured on the project level i
 
 #### WebSocket connections and proxy servers
 
-__Since 9.0__, TeamCity tries to establish WebSocket connections between the browser and the server for the UI updates. If you have a proxy server (like nginx) in front of the TeamCity web UI, make sure that the proxy is [configured](how-to.md) properly to support WebSocket connections.
+__Since 9.0__, TeamCity tries to establish WebSocket connections between the browser and the server for the UI updates. If you have a proxy server (like nginx) in front of the TeamCity web UI, make sure that the proxy is [configured](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) properly to support WebSocket connections.
 
 If the proxy is misconfigured or does not support the WebSocket protocol, a server health item will be shown for TeamCity system administrators. In this case TeamCity will use plain old polling for the UI updates as before.
 

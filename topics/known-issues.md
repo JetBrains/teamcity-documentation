@@ -12,30 +12,30 @@ When a TeamCity build agent is installed as a Windows service, there may appear 
 ### Security-related issues
 
 The user account used by the service is required to have sufficient permissions to perform the build and [manage the service](setting-up-and-running-additional-build-agents.md). If you run the TeamCity agent service under the SYSTEM account, do the following:
-1. [Change](setting-up-and-running-additional-build-agents.md) SYSTEM for a usual user account with necessary permissions granted.
+1. [Change](setting-up-and-running-additional-build-agents.md#Changing+Communication+Protocol) SYSTEM for a usual user account with necessary permissions granted.
 2. Restart the service.
 
 ### Windows service limitations
 
 As a Windows service, the TeamCity agent and the build processes are not able to access network shares and mapped drives.
 
-To overcome these restrictions, run TeamCity agent [via console](setting-up-and-running-additional-build-agents.md).
+To overcome these restrictions, run TeamCity agent [via console](setting-up-and-running-additional-build-agents.md#Starting+the+Build+Agent).
 
 #### Issues with automated GUI and browser testing
 
 These problems include errors running tests headless, issues with the interaction of the TeamCity agent with the Windows desktop, and so on.
 
 To resolve / avoid these:
-1. Run TeamCity agent [via console](setting-up-and-running-additional-build-agents.md).
+1. Run TeamCity agent [via console](setting-up-and-running-additional-build-agents.md#Starting+the+Build+Agent).
 2. Configure the build agent machine not to launch a screensaver locking the desktop.
 
     <tip>
 
-    Note that there is a Windows limitation to accessing a remote computer via mstsc: the desktop of the remote machine will be locked on RDP disconnect, which will cause issues running tests. The VNC protocol allows you to remote control another machine without locking it.To run GUI tests and be able to use RDP, see the [workaround ](#Running+automated+GUI+tests+and+using+RDP) below.
+    Note that there is a Windows limitation to accessing a remote computer via mstsc: the desktop of the remote machine will be locked on RDP disconnect, which will cause issues running tests. The VNC protocol allows you to remote control another machine without locking it.To run GUI tests and be able to use RDP, see the [workaround](#Running+automated+GUI+tests+and+using+RDP) below.
     </tip>
-3. Configure the TeamCity agent to start [automatically](setting-up-and-running-additional-build-agents.md) (e.g. configure an automatic user logon on Windows start and then configure the TeamCity agent start (via agent.bat start) on the user logon).  
+3. Configure the TeamCity agent to start [automatically](setting-up-and-running-additional-build-agents.md#Starting+the+Build+Agent) (for example, configure an automatic user logon on Windows start and then configure the TeamCity agent start (via agent.bat start) on the user logon).  
     
-    For graphical tests the build agent cannot be started as a service and it is recommended to configure the build agent launch with a 1 minute delay after the user auto\-logon, e.g. using the "`bin\agent.bat start"` command in the task scheduler and configuring the delay there.
+    For graphical tests the build agent cannot be started as a service and it is recommended to configure the build agent launch with a 1 minute delay after the user auto\-logon, e.g. using the `bin\agent.bat start` command in the task scheduler and configuring the delay there.
 
 #### Running automated GUI tests and using RDP 
 
@@ -61,14 +61,14 @@ An unsupervised computer with a running desktop permanently logged into a user s
 
 #### Issues with . Net Selenium 
 
-When a TeamCity agent is started as a Windows service and automated tests for .Net applications use Selenium WebDriver, the tests may fail due to browser drivers limitations. As a solution, consider starting the agent [manually](setting-up-and-running-additional-build-agents.md).
+When a TeamCity agent is started as a Windows service and automated tests for .Net applications use Selenium WebDriver, the tests may fail due to browser drivers limitations. As a solution, consider starting the agent [manually](setting-up-and-running-additional-build-agents.md#Manual+Start).
 
 
 ### Early start of the service before other resources are initialized
 
 To handle this, consider using the __Automatic (Delayed Start)__ option of the service settings or configure [service dependencies](http://youtrack.jetbrains.com/issue/TW-32987#comment=27-608269).
 
- For more investigation steps, see the [Common Problems](common-problems.md) page.
+ For more investigation steps, see the [Common Problems](common-problems.md#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) page.
  
  
 
@@ -409,7 +409,7 @@ On Windows 10, the Docker server depends on Hyper\-V service and its start may t
 
 Since __TeamCity 2017.2,__ the [Docker Wrapper](docker-wrapper.md) works on Windows when Windows\-based containers are started.
 
-If a Linux container is started on a Windows machine, TeamCity displays the error message "Starting Linux Docker containers under Windows is not supported. To avoid this problem, add the [teamcity.agent.jvm.os.name](integrating-teamcity-with-docker.md) does not contain Windows [agent requirement](agent-requirements.md).
+If a Linux container is started on a Windows machine, TeamCity displays the error message "Starting Linux Docker containers under Windows is not supported. To avoid this problem, add the [`teamcity.agent.jvm.os.name`](integrating-teamcity-with-docker.md#Parameters+Reported+by+Agent) does not contain Windows [agent requirement](agent-requirements.md).
 
 If you need to support a use case when the Docker wrapper runs Linux containers under Windows platform, vote for the /comment on [TW-51820](https://youtrack.jetbrains.com/issue/TW-51820).
 

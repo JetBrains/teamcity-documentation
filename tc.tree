@@ -361,7 +361,7 @@
       </toc-element>
       <toc-element id="extending-teamcity.md">
          <toc-element id="build-script-interaction-with-teamcity.md"/>
-         <toc-element id="reporting-test-metadata.md"/>
+            <toc-element id="reporting-test-metadata.md"/>
          <toc-element id="accessing-server-by-http.md"/>
          <toc-element id="rest-api.md"/>
          <toc-element id="including-third-party-reports-in-the-build-results.md"/>

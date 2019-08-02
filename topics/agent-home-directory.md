@@ -54,6 +54,8 @@ The content of directories storing agent auxiliary data can be deleted (but only
 * __/system__ 
     * `.artifacts_cache` — cache for all build's artifacts; can be [configured](free-disk-space.md#Configuring+artifacts+cache)
 
+<anchor name="temp-dir"/>
+
 * __/temp__: temporary folder; the path can be overridden in the [`buildAgent.properties`](build-agent-configuration.md) file
     * `agentTmp` — temporary folder that is used by the build agent to store build\-related files during the build. Is cleaned after each build.
     * `buildTmp` — temporary folder that is set as the default temp directory for the build process and is cleaned after each build

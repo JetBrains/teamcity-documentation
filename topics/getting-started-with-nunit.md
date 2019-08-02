@@ -113,7 +113,7 @@ The following project files contain some examples: [sample2adv.proj](https://git
 
 ## Case 3. NUnit Build Step
 
-The [NUnit](nunit.md)  build step in probably the simplest and yet the most powerful way to launch NUnit tests in TeamCity.   
+The [NUnit](nunit.md) build step is probably the simplest and yet the most powerful way to launch NUnit tests in TeamCity.   
 In most cases its sufficient to set only the 2 parameters: the path to the NUnit console runner and the list of assemblies to be tested:
 
 <img src="nunit-step.png" alt="Build step: NUnit" width="1005"/>
@@ -138,7 +138,7 @@ The other fields provide a lot of useful options, and this section discusses som
  
 One of the options is defining the __application configuration file__. Sometimes tests obtain data from a configuration file and to facilitate this, you need to define the path to the application configuration file to be used when running tests in the __Path to application configuration file__ field. The path can be absolute or relative to the [Build Checkout Directory](build-checkout-directory.md). Unfortunately, NUnit is limited by allowing only one configuration file per build step. Due to this limitation, if you need to test several assemblies with different configurations in one build step, youll have to aggregate several application configuration files into a common configuration file. If it is not possible, the test launch can be split into several steps and define a configuration file in each of the steps.
 
-The NUnit 3 console has a great number of settings defined by command line arguments. The __[Additional command line parameters](nunit.md)__ field allows setting many of the [nunit.md#NUnit-cmdParameters](nunit.md#NUnit-cmdParameters) for the NUnit console, but there are some limitations:
+The NUnit 3 console has a great number of settings defined by command line arguments. The __[Additional command line parameters](nunit.md#NUnit+Test+Settings)__ field allows setting many of the command line parameters for the NUnit console, but there are some limitations:
 * The `--where` command line argument is used as the priority test filtering setting. When it is used simultaneously with the __NUnit categories include__ or/ and __NUnit categories exclude__ fields to filter tests by category, TeamCity will ignore these options: a warning will be displayed and only the `--where` argument will be used.
 * Using the parameters below in the __Additional command line parameters__ field may cause your build to fail: 
   * the list of assemblies to be tested, as the NUnit build step determines the list of assemblies from the NUnit project file due to the command line size limitations
@@ -181,7 +181,7 @@ These are contained in [hidden build artifacts](build-artifact.md#Hidden+Artifac
 ...\nunit3\-console.exe ...\5Oqkbf9J2qJNkUK4KEtKvxs8TFFnlrno.nunit
 ```
 
-In this case `5Oqkbf9J2qJNkUK4KEtKvxs8TFFnlrno.nunit` is the NUnit project file, which can be downloaded from [Build Artifact](build-artifact.md):
+In this case `5Oqkbf9J2qJNkUK4KEtKvxs8TFFnlrno.nunit` is the NUnit project file, which can be downloaded from [hidden build artifacts](build-artifact.md#Hidden+Artifacts):
 
 <img src="nunit-hidden-artifacts.png" alt="NUnit hidden artifacts" width="692"/>
 

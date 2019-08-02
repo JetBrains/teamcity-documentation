@@ -69,7 +69,7 @@ phpunit \-c phpunit.xml
 
 
 
-By default, TeamCity will import the test results provided by PHPUnit. However we can also report real\-time test results to TeamCity, so that we can already see results during a build run before it's even finished. Using [a wrapper around PHPUnit](https://github.com/maartenba/phpunit-runner-teamcity) which uses [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md) to report build results. Locate the wrapper somewhere on the build agent or have the build agent download it from the above GitHub repository directly using a second VCS root.
+By default, TeamCity will import the test results provided by PHPUnit. However we can also report real\-time test results to TeamCity, so that we can already see results during a build run before it's even finished. Using [a wrapper around PHPUnit](https://github.com/maartenba/phpunit-runner-teamcity) which uses [service messages](build-script-interaction-with-teamcity.md) to report build results. Locate the wrapper somewhere on the build agent or have the build agent download it from the above GitHub repository directly using a second VCS root.
 
 
 <img src="test-running.png" width="700px"/>
@@ -163,7 +163,7 @@ Using TeamCity, we can view build history, VCS history, commits and so on. We ha
 
 
 
-When working with an environment based on the IntelliJ Platform, like PhpStorm or WebStorm, it's easy to link TeamCity with the IDE. After [IntelliJ Platform Plugin](intellij-platform-plugin.md) you'll notice that there are some useful little things like opening a unit test in the IDE from within TeamCity:
+When working with an environment based on the IntelliJ Platform, like PhpStorm or WebStorm, it's easy to link TeamCity with the IDE. After [installing the TeamCity plugin into your IDE](intellij-platform-plugin.md) you'll notice that there are some useful little things like opening a unit test in the IDE from within TeamCity:
 
 
 

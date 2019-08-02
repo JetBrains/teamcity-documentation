@@ -5,7 +5,8 @@ On this page:
 
 <tag-list of="chapter" mode="tree" depth="5"/>
 
-__Since TeamCity 2018.2__, a test run in TeamCity can be associated with some additional information (metadata), complementing test status, execution time, and output. This information can be used to provide extra logs, screenshots, numeric values, tags etc.You can now use service messages to report this kind of additional test data in TeamCity and then view it in the TeamCity Web UI.
+__Since TeamCity 2018.2__, a test run in TeamCity can be associated with some additional information (metadata), complementing test status, execution time, and output. This information can be used to provide extra logs, screenshots, numeric values, tags, and so on.   
+You can now use service messages to report this kind of additional test data in TeamCity and then view it in the TeamCity Web UI.
 
 ## Reporting additional test data
 

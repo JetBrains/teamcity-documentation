@@ -24,7 +24,7 @@ It is possible to manage custom charts using the TeamCity Web UI.
 * The __Statistics__ tab for a project or build configuration provides an option to create a new chart. Note that only one build configuration can be currently added as the data source. More configurations can be added manually.
 * On the __Parameters__ tab of the [build results](working-with-build-results.md) page, the list of __Reported statistic values__ provides checkboxes to select the statistics type for a new [project- or build-configuration-level](statistic-charts.md) chart. 
     * A project\-level chart will be added to the selected target project. The [root project](project.md) cannot be selected as the target.
-    * A build\-configuration\-level chart will be added to all build configurations of the selected target project and its subprojects. Specifying the [root project](project.md) as the target will add the chart to all build configurations available on the server.
+    * A build\-configuration\-level chart will be added to all build configurations of the selected target project and its subprojects. Specifying the [root project](project.md#Root+Project) as the target will add the chart to all build configurations available on the server.
 
 ### Modifying Custom Charts
 
@@ -107,7 +107,7 @@ __Custom build configuration\-level chart in project\-config.xml__
 
 
 
-This chart will be shown on the __Statistics__ tabs of the Build Configurations of the project where the `project-config.xml` file is located and all its subprojects. To display a chart for all Build Configurations, add it to the `project\-config.xml` of the [Root Project](project.md).
+This chart will be shown on the __Statistics__ tabs of the Build Configurations of the project where the `project-config.xml` file is located and all its subprojects. To display a chart for all Build Configurations, add it to the `project\-config.xml` of the [Root Project](project.md#Root+Project).
 
 #### Parameters Reference
 
@@ -161,8 +161,8 @@ The title above the list of series used on the chart (in the singular form). The
 
 The list of comma\-separated options to be checked by default. Can include the following:
 
-* `showFailed` — include results from failed builds by default.
-* `averaged` — by default, show averaged values on the chart.
+* `showFailed` – include results from failed builds by default.
+* `averaged` – by default, show averaged values on the chart.
 
 </td></tr><tr>
 
@@ -176,11 +176,12 @@ The list of comma\-separated options to be checked by default. Can include the f
 
 The list of comma\-separated filter names that will not be shown next to the chart:
 
-* `all` — hide all filters.
-* `series` — hide series filter (you won't be able to show only data from specific valueType specified for the chart.)
-* `range` — hide the date range filter.
-* `showFailed` — hide the checkbox which allows including data for failed builds.
-* `averaged` — hide the checkbox which allows viewing averaged values.  `Defaults` — empty (all filters are shown).
+* `all` – hide all filters.
+* `series` – hide series filter (you won't be able to show only data from specific valueType specified for the chart.)
+* `range` – hide the date range filter.
+* `showFailed` – hide the checkbox which allows including data for failed builds.
+* `averaged` – hide the checkbox which allows viewing averaged values.
+`Defaults`– empty (all filters are shown).
 
 </td></tr><tr>
 
@@ -202,7 +203,6 @@ The format of the y\-axis values. Supported formats are:
 </td></tr></table>
 
 ____
-
 
 
 
@@ -1065,8 +1065,8 @@ Milliseconds
 #### Custom Build Metrics
 
 If the predefined build metrics do not cover your needs, you can report custom metrics to TeamCity from your build script and use them to create a custom chart. There are two ways to report custom metrics to TeamCity:
-* using [service messages](build-script-interaction-with-teamcity.md) from your build,
-* or (obsolete approach) using the [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md) file.
+* using [service messages](build-script-interaction-with-teamcity.md#Reporting+Build+Statistics) from your build,
+* or (obsolete approach) using the [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md#Providing+data+using+the+teamcity-info.xml+file) file.
 Note that custom value keys should be unique and should not interfere with value keys predefined by TeamCity.
 
 
@@ -1075,4 +1075,4 @@ __ __
 
 __See also:__
 
-__Concepts__: [Code Coverage](code-coverage.md) | [Code Inspection](code-inspection.md) | [Code Duplicates](code-duplicates.md) __User's Guide__: [Statistic Charts](statistic-charts.md) __Extending TeamCity__: [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md) | [Custom Statistics](https://confluence.jetbrains.com/display/TCD18/Custom+Statistics) 
+__Concepts__: [Code Coverage](code-coverage.md) | [Code Inspection](code-inspection.md) | [Code Duplicates](code-duplicates.md) __User's Guide__: [Statistic Charts](statistic-charts.md)  __Extending TeamCity__: [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md) | [Custom Statistics](https://confluence.jetbrains.com/display/TCD18/Custom+Statistics) 
