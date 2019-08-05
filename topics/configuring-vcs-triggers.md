@@ -34,6 +34,8 @@ To do that, select the __Trigger a build on each check\-in__ option. If you sele
 
 This helps to figure out whose change broke a build or caused a new test failure, should such issue arise.
 
+<anchor name="quietPeriod"/>
+
 ### Quiet Period Settings
 
 By specifying the quiet period you can ensure the build is not triggered in the middle of non\-atomic check\-ins consisting of several VCS check\-ins.
@@ -55,7 +57,7 @@ Note that when a build is triggered by a trigger with the VCS quiet period set, 
 
 <include src="configuring-schedule-triggers.md" include-id="queue-optimization"/>
 
-
+<anchor name="buildTriggerRules"/>
 
 ## VCS Trigger Rules
 
