@@ -8,11 +8,11 @@ Various aspects of TeamCity behavior can be customized through a set options pas
 You do not need to specify any of the options unless you are advised to do by the TeamCity support team or you are confident in what you are doing.
 </note>
 
-In this section:
+On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
 
-### TeamCity internal properties 
+## TeamCity internal properties 
 
 TeamCity server has some configuration properties that are visible in the UI only to the Server Administrators. These are normally meant for debugging, changing internal constants or enabling an experimental behavior. Please do not change the internal properties unless asked by TeamCity support.
 
@@ -35,7 +35,7 @@ For general notes on the memory settings, please refer to [Setting Up Memory set
 
 You will need to [restart](installing-and-configuring-the-teamcity-server.md) the server for the changes to take effect.
 
-#### Standard TeamCity Startup Scripts
+### Standard TeamCity Startup Scripts
 
 If you run the server using the `runAll` or `teamcity-server` scripts or as a Windows service, you need to set the options via the OS __[environment variables](http://en.wikipedia.org/wiki/Environment_variable)__ passed to the TeamCity server process:
 * `TEAMCITY_SERVER_MEM_OPTS` – server JVM memory options (for example, `-Xmx750m`)
