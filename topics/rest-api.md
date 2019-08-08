@@ -41,9 +41,9 @@ Suppose you want to know more on the agents and see (in  the `/app/rest/server` 
  
  
 You can authenticate yourself for the REST API in the following ways:
-* Since __Teamcity 2019.1__, the preferred way to access REST API is by using the [token-based HTTP authentication](configuring-authentication-settings.md#Token-Based+Authentication). Provide your personal TeamCity access token generated on __My Settings &amp; Tools | Access Tokens__ in the HTTP header `Authorization: Bearer <token>`. For example:
+* Since __Teamcity 2019.1__, the preferred way to access REST API is by using the [token-based HTTP authentication](configuring-authentication-settings.md#Token-Based+Authentication). Provide your personal TeamCity access token generated on __My Settings &amp; Tools | Access Tokens__ in the HTTP header `Authorization: Bearer <token-value>`. For example:
     ```Shell
-    curl --header "Authorization: Bearer tokenValue" http://teamcity:8111/app/rest/builds
+    curl --header "Authorization: Bearer <token-value>" http://teamcity:8111/app/rest/builds
     ```
 * Using basic HTTP authentication (it can be slow with certain authentications, see below). Provide a valid TeamCity username and password with the request. You can force basic auth by including `httpAuth` before the `/app/rest` part, e.g. [`http://teamcity:8111/httpAuth/app/rest/builds`](http://teamcity:8111/httpAuth/app/rest/builds).
 * Using access to the server as a [guest user](guest-user.md) (if enabled) include `guestAuth` before the `/app/rest` part, e.g. [`http://teamcity:8111/guestAuth/app/rest/builds`](http://teamcity:8111/guestAuth/app/rest/builds).

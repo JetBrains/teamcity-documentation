@@ -14,13 +14,19 @@ If _Built-in Authentication_ is configured, TeamCity server maintains passwords 
 
 The password can only be changed for the built-in authentication. If you don't see these fields, this means that TeamCity is configured to use external authentication and the password should be changed in the corresponding external system. 
 
-You can reset your built\-in authentication password using the "Reset password" link on the login page.
+You can reset your built-in authentication password using the "Reset password" link on the login page.
 
 __Since TeamCity 2019.1__, if you change or reset your password, TeamCity will automatically sign you out of all sessions.
 
 ## Managing Access Tokens
 
-If [Token-Based Authentication](configuring-authentication-settings.md#Token-Based+Authentication) is enabled on the TeamCity server, you can create access tokens and use them for authentication either instead of your password (for example, in scripts or IDE plugin login) or as the value of the `Authorization: Bearer` HTTP header (for example, in REST API requests).
+If [Token-Based Authentication](configuring-authentication-settings.md#Token-Based+Authentication) is enabled on the TeamCity server, you can create access tokens and use them for authentication:
+
+* instead of your password (for example, in scripts or IDE plugin login), _or_
+* as the value of the `Authorization: Bearer <token-value>` HTTP header. For instance, in REST API requests:   
+   ```Shell
+   curl --header "Authorization: Bearer <token-value>" http://<host>:<port>/app/rest/builds
+   ```
 
 You can manage tokens in __My Settings &amp; Tools | Access Tokens__. Note that the token value is only available during token creation and is not possible for retrieval afterwards.
 
