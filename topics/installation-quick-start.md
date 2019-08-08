@@ -2,6 +2,8 @@
 [//]: # (auxiliary-id: Installation Quick Start)
 This page covers the __evaluation__ setup of a TeamCity server with a default build agent running on the same machine for the most popular operating systems.
 
+On this page:
+
 <tag-list of="chapter" mode="tree" depth="4"/>
 
 <note>
@@ -17,7 +19,7 @@ You can also use the [TeamCity Server](https://hub.docker.com/r/jetbrains/teamci
 
 ## Download TeamCity
 
-__[Download](https://www.jetbrains.com/teamcity/download/) the free Professional Edition of TeamCity__, the full\-featured TeamCity bundled with 3 build agents with a limit of 100 build configurations (or 20, for versions earlier than TeamCity 2017.2).   
+__[Download](https://www.jetbrains.com/teamcity/download/) the free Professional Edition of TeamCity__, the full-featured TeamCity bundled with 3 build agents with a limit of 100 build configurations (or 20, for versions earlier than TeamCity 2017.2).   
 After evaluation, you can __switch to the Enterprise Edition__: [Licensing Policy](licensing-policy.md) provides details. The pricing is available on the [JetBrains website](https://www.jetbrains.com/teamcity/buy/).
 
 Earlier versions are available on the [Previous Releases Downloads](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads) page.
@@ -31,29 +33,23 @@ Run the downloaded `.exe` file and follow the instructions of the TeamCity Setup
 During installation, you can configure the following:
 * The [TeamCity Home Directory](teamcity-home-directory.md) where TeamCity will be installed.
 * Whether the TeamCity server and agent will run as Windows services.   
-   
    <img src="installAsWinServicepng.png" alt="TeamCity server and agent as Windows services"/>
    
 * The server port: `80` is the default port, which can be already used by other applications (for example, Skype). Change the server port if it is already in use. In the example below, we've set the port to `8111`.
 * The agent port: `9090` is the default for incoming connections from the server. If this port is already in use, you'll be asked to change it by setting the `ownPort` property to a different value.   
-   
    <img src="configure-agent-port.png" alt="Configure a build agent port" width="750"/>
 
-If the TeamCity server is installed as a Windows service, follow the [usual procedure](https://technet.microsoft.com/en-us/library/cc736564(v=ws.10).aspx) of starting and stopping services.
+If the TeamCity server is installed as a Windows service, follow the [usual procedure](https://bit.ly/2yJF87R) of starting and stopping services.
 
-Otherwise, to start/stop the TeamCity server and one default agent at the same time, use the `runAll` script, provided in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>/bin` directory:
-* To __start__ the server and the default agent, use   
+Otherwise, to start/stop the TeamCity server and one default agent at the same time, use the `runAll` script, provided in the `<TeamCity Home>/bin` directory:
 
+* To __start__ the server and the default agent, use
     ```Shell
-    
     runAll.bat start
     ```
-
 * To __stop__ the server and the default agent, use
-
     ```Shell
-    
-    runAll.bat stop    
+    runAll.bat stop
     ```
 
 If you did not change the default port (`80`) during the installation, the TeamCity web UI can be accessed at [`http://localhost`](http://localhost/) in a web browser running on the same machine where the TeamCity server is installed. Otherwise, use `http://localhost:<port>` ([`http://localhost:8111`](http://localhost:8111/) in our case).
@@ -63,71 +59,54 @@ If you did not change the default port (`80`) during the installation, the TeamC
 ### on Linux and OS X
 
 1. Make sure you have Java 8 installed (for example, use OpenJDK 8 by [AdoptOpenJDK](https://adoptopenjdk.net/)).   
-    Open a command\-line terminal and run the following command:
-
+    Open a command-line terminal and run the following command:   
     ```Shell
-
-    java -version 
+    java -version
     ```
 
-2. Make sure the `JAVA_HOME` environment variable is pointing to the Java installation directory. Run the following command in the command\-line terminal:
-
+2. Make sure the `JAVA_HOME` environment variable is pointing to the Java installation directory. Run the following command in the command-line terminal:   
     ```Shell
-    
     echo $JAVA_HOME
     ```
 
 3. Use the `TeamCity<version number>.tar.gz` archive to manually install TeamCity bundled with Tomcat servlet container.   
-   Unpack the archive. For example, under Linux use
-
+   Unpack the archive. For example, under Linux use   
     ```Shell
-    
     tar xfz TeamCity<version number>.tar.gz
     ```
     
-    The archive can be used for installation on Windows as well.
+   The archive can be used for installation on Windows as well.
 
 4. The TeamCity web server and one build agent will be installed on the same machine.   
 __Note__ that for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) it is recommended to set up the TeamCity Server and Agent on separate machines.
 
-__To start/stop the TeamCity server and one default agent at the same time__, use the `runAll` script, provided in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>/bin` directory.
-* To __start__ the server and the default agent, use 
+__To start/stop the TeamCity server and one default agent at the same time__, use the `runAll` script, provided in the `<TeamCity Home>/bin` directory.
 
+* To __start__ the server and the default agent, use
     ```Shell
-     
-     runAll.sh start 
+    runAll.sh start
     ```
-
-
-
-* To __stop__ the server and the default agent, use  
-
+* To __stop__ the server and the default agent, use
     ```Shell
-    
     runAll.sh stop
     ```
 
-By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/) and has one registered build agent that runs on the same computer. If another application uses the same port as the TeamCity server, the TeamCity server (Tomcat server) will not start with the "_Address already in use_" errors in the server logs or server console. 
+By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/) and has one registered build agent that runs on the same computer. If another application uses the same port as the TeamCity server, the TeamCity server (Tomcat server) will not start with the _"Address already in use"_ errors in the server logs or server console. 
 
-To change the server port, locate the `<`[`TeamCity Home`](teamcity-home-directory.md)`>/conf/server.xml` and modify the port in the `<Connector>` XML node, for example:
-
+To change the server port, locate the `<TeamCity Home>/conf/server.xml` and modify the port in the `<Connector>` XML node, for example:
 
 ```Shell
-<Connector port="8111" ...
+<Connector port="8111" ...>
 
 ```
-
- 
 
 ## Start TeamCity for the First Time
 
 On the first TeamCity start, do the following:
 1. Review the [location of the TeamCity Data Directory](teamcity-data-directory.md#Configuring+the+Location), where all the configuration information is stored. Click __Proceed__.
 2. TeamCity stores build history, users, build results, and some runtime data in an SQL database and allows you to select the database type.   
-For now, keep the default internal database. Click __Proceed__.   
-   
+   For now, keep the default internal database. Click __Proceed__.   
    <img src="default-DB.png" alt="Select the database type"/>
-   
    It will take some time for TeamCity to configure the necessary components.
 3. On the next screen, accept the License Agreement to proceed with the launch. Click __Continue__.
 4. TeamCity displays the __Create Administrator Account__ page. Specify the administrator credentials and click __Create Account__.  
