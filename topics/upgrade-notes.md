@@ -5,7 +5,7 @@
 
 <anchor name="running-builds-node-deprecated"/>
 
-* The [running build node type](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is deprecated and will be discontinued in TeamCity 2019.2. In a [multinode setup](multinode-setup.md), you can instead [configure a secondary node](configuring-secondary-node.md) with the _"Processing data produced by running builds"_ responsibility.
+* The [running builds node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is deprecated and will be discontinued in TeamCity 2019.2. In a [multinode setup](multinode-setup.md), you can instead [configure a secondary node](configuring-secondary-node.md) with the _"Processing data produced by running builds"_ responsibility.
 
 ### Known issues
 
