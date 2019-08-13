@@ -5,7 +5,7 @@ On this page:
 
 <tag-list of="chapter" mode="tree" depth="5"/>
 
-If TeamCity doesn't support your testing framework or build runner out of the box, you can still avail yourself of many TeamCity benefits by customizing your build scripts to interact with the TeamCity server. This makes a wide range of features available to any team regardless of their testing frameworks and runners. Some of these features include displaying real\-time test results and customized statistics, changing the build status, and publishing artifacts before the build is finished. The build script interaction can be implemented by means of:
+If TeamCity doesn't support your testing framework or build runner out of the box, you can still avail yourself of many TeamCity benefits by customizing your build scripts to interact with the TeamCity server. This makes a wide range of features available to any team regardless of their testing frameworks and runners. Some of these features include displaying real-time test results and customized statistics, changing the build status, and publishing artifacts before the build is finished. The build script interaction can be implemented by means of:
 * service messages in the build script
 * `teamcity-info.xml` file (obsolete approach, consider using service messages instead)
 
@@ -534,7 +534,7 @@ Among other uses, the number of inspections can be used as a build metric to [fa
 
 ##### Inspection type
 
-Each specific warning or an error in code (inspection instance) has an inspection type \- the unique description of the conducted inspection, which can be reported via
+Each specific warning or an error in code (inspection instance) has an inspection type – the unique description of the conducted inspection, which can be reported via
 
 
 ```Shell
@@ -667,7 +667,7 @@ The same message should be used for both `progressStart` and `progressFinish`. T
 
 #### Reporting Build Problems
 
-To fail a build directly from the build script, a build problem has be reported. Build problems appear on the [Build Results](working-with-build-results.md) page and also affect the build status text. To add a build problem to a build, use:
+To fail a build directly from the build script, a build problem must be reported. Build problems appear on the [Build Results](working-with-build-results.md) page and also affect the build status text. To add a build problem to a build, use:
 
 
 ```Shell
@@ -675,13 +675,9 @@ To fail a build directly from the build script, a build problem has be reported.
 
 ```
 
-
-
-
 where:
- *  `description` \- (mandatory) a human\-readable plain text describing the build problem. By default, the `description` appears in the build status text and in the list of build's problems. The text is limited to 4000 symbols, and will be truncated if the limit is exceeded.
- * `identity` \- (optional) a unique problem id. Different problems must have different identity, same problems \- same identity, which should not change throughout builds if the same problem occurs, e.g. the same compilation error. It should be a valid Java id up to 60 characters. If omitted, the `identity` is calculated based on the `description` text.
- 
+ *  `description` (mandatory): a human-readable plain text describing the build problem. By default, the `description` appears in the build status text and in the list of build's problems. The text is limited to 4000 symbols, and will be truncated if the limit is exceeded.
+ * `identity` (optional): a unique problem ID. Different problems must have different identity, same problems – same identity, which should not change throughout builds if the same problem, for example, the same compilation error occurs. It must be a valid Java ID up to 60 characters. If omitted, the `identity` is calculated based on the `description` text.
 
 
 [//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e948.txt")    
@@ -689,24 +685,27 @@ where:
 
 #### Reporting Build Status
 
-TeamCity allows changing the __build status text__ from the build script. Unlike [progress messages](#Reporting+Build+Progress), this change persists even after a build has finished. You can also change the build status of a failing build to __success__.
+TeamCity allows changing the __build status text__ from the build script. Unlike [progress messages](#Reporting+Build+Progress), this change persists even after a build has finished.   
+You can also change the build status of a failing build to `SUCCESS`.
 
-Prior to TeamCity 7.1, this service message could be used for changing the build status to __failed__. In the later TeamCity versions, the [buildProblem](#Reporting+Build+Problems) service message is to be used for that.
+<tip>
+
+Prior to TeamCity 7.1, this service message could be also used for changing the build status to `FAILURE`. In the later TeamCity versions, the [`buildProblem`](#Reporting+Build+Problems) service message must be used for that.
+
+</tip>
 
 To set the status and/or change the text of the build status (for example, note the number of failed tests if the test framework is not supported by TeamCity), use the `buildStatus` message with the following format:
 
 
 ```Shell
-##teamcity[buildStatus status='<status value>' text='{build.status.text} and some aftertext']
+##teamcity[buildStatus status='<status_value>' text='{build.status.text} and some aftertext']
 
 ```
 
-
-
-
 where:
- * the `status` attribute is optional and may take the value `SUCCESS`.
- * the `text` attribute sets the new build status text. Optionally, the text can use \{`build.status.text`\} substitution pattern which represents the status calculated by TeamCity automatically using passed test count, compilation messages, and so on.
+ * `status` (optional): use the `SUCCESS` value to change the build status to _Success_.
+ * `text` (mandatory): set the new build status text.    
+ Optionally, the text can use the `{build.status.text}` substitution pattern, which represents the status calculated by TeamCity automatically using passed test count, compilation messages, and so on.   
 The status set will be presented while the build is running and will also affect the final build results.
 
 #### Reporting Build Number
@@ -722,7 +721,7 @@ To set a custom build number directly, specify a `buildNumber` message using the
 
 
 
-In the &lt;new build number&gt; value, you can use the \{`build.number`\} substitution to use the current build number automatically generated by TeamCity. For example:
+In the &lt;new build number&gt; value, you can use the `{build.number}` substitution to use the current build number automatically generated by TeamCity. For example:
 
 
 
@@ -776,7 +775,7 @@ If you need for some reason to disable searching for service messages in the out
 
 ```
 
-Any messages that appear between these two are not parsed as service messages and are effectively ignored. For server\-side processing of service messages, enable/disable service messages also supports the flowId attribute and will ignore only the messages with the same flowId.
+Any messages that appear between these two are not parsed as service messages and are effectively ignored. For server-side processing of service messages, enable/disable service messages also supports the flowId attribute and will ignore only the messages with the same flowId.
 
 
 [//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1141.txt")    
@@ -1119,7 +1118,7 @@ If not specially noted, the report types support Ant\-like wildcards in the `pat
 
 * `whenNoDataPublished=<action>` (where &lt;action&gt; is one of the following: `info` (default), `nothing`, `warning`, `error`) will change output level if no reports matching the path specified were found.
 
-* (__deprecated, use__ __[Build Failure Conditions](build-failure-conditions.md)__ __instead__)   
+* (__deprecated, use [Build Failure Conditions](build-failure-conditions.md) instead__)   
   `findBugs`, `pmd` or `checkstyle` importData messages also take optional `errorLimit` and `warningLimit` attributes specifying errors and warnings limits, exceeding which will cause the build failure.
 
 <note>
