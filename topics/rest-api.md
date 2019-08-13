@@ -97,7 +97,7 @@ In a number of places, you can specify a filter string which defines what entiti
  
 The locators formats can be:
 * single value: a string without the following symbols: `,:-( )`
-* dimension allowing you to filter entities using multiple criteria: `<dimension1>:<value1>,<dimension2>:<value2>,<dimension3>:(<dimension3.1>:<value3.1>,<dimension3.2>:<value3.2>)`
+* dimension allowing you to filter entities using multiple criteria: `<dimension1>:<value1>,<dimension2>:<value2>,<dimension3>:(<dimension3.1>:<value3.1>,<dimension3.2>:<value3.2>)`   
 Refer to each entity description below for the most popular locator descriptions. If in doubt what a specific locator supports, send a request with "$help" as the locator value. In response you will get a textual description of what the locator supports. If a request with invalid locators is sent, the error messages often hint at the error and list the supported locator dimensions as well.
  
 <note>
@@ -445,7 +445,7 @@ curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>
  
 The most frequently used values for `<buildTypeLocator>` are `id:<buildConfigurationOrTemplate_id>` and `name:<Build%20Configuration%20name>`.
  
-__Since TeamCity 2017.2__, the _experimental_ [type](build-configuration.md#Build+Configuration+Types) locator is supported with one of the values: `regular`, `composite`, or `deployment`
+__Since TeamCity 2017.2__, the _experimental_ [type](build-configuration.md#Build+Configuration+Types) locator is supported with one of the values: `regular`, `composite`, or `deployment`.
  
 Other supported [dimensions](#Locator) are (these are in _experimental_ state):
 * `internalId` – internal ID of the build configuration.

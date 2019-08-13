@@ -3,7 +3,7 @@
 
 TeamCity allows configuring and starting one or more secondary server instances (nodes) in addition to the main one. The main and secondary nodes operate under the same license and share the TeamCity data directory and the database.
 
-Using the several nodes setup, you can:
+Using the multinode setup, you can:
 * Set up a high-availability TeamCity installation that will have zero read downtime. A secondary node will allow users read operations during the downtime of the main server (for example, during the upgrade)
 * Improve the performance of the main server by delegating tasks to the secondary nodes. A secondary node can detect new commits and process data produced by running builds (build logs, artifacts, statistic values).
 
@@ -13,7 +13,7 @@ On this page:
 
 ## Prerequisites for Multinode Setup
 
-This section describes configuration requirements for setting up several TeamCity nodes.
+This section describes configuration requirements for setting up multiple TeamCity nodes.
 
 ### Shared Data Directory
 

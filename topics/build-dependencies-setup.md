@@ -9,7 +9,7 @@ On this page:
 
 ## Introduction
 
-In many cases it is convenient to use the output of one build in another, as well as to run a number of builds sequentially on the same sources. Consider a typical example: you have a cross\-platform project that has to be tested under Windows and macOS before you get the production build. The best workflow for this simple case will be to:
+In many cases it is convenient to use the output of one build in another, as well as to run a number of builds sequentially on the same sources. Consider a typical example: you have a cross-platform project that has to be tested under Windows and macOS before you get the production build. The best workflow for this simple case will be to:
 
 1. Compile your project.
 2. Run tests under Windows and macOS simultaneously on the same sources
@@ -23,7 +23,7 @@ Where _compile_, _tests (win)_, _tests (mac)_, and _pack setup_ are build config
 
 ## Basics
 
-Generally known as the "build pipeline", in TeamCity a similar concept is referred to as a "[build chain](build-chain.md)". Before getting into details on how this works in TeamCity, let's clarify the legend behind diagrams given here (including the one in the introduction):
+Generally known as the _build pipeline_, in TeamCity a similar concept is referred to as a _[build chain](build-chain.md)_. Before getting into details on how this works in TeamCity, let's clarify the legend behind diagrams given here (including the one in the introduction):
 
 <table>
 
