@@ -382,4 +382,5 @@
       <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md"/>
    </toc-element>
    <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
+   <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
 </product-profile>
