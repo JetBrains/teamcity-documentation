@@ -239,7 +239,7 @@ By target branch
 <td></td>
 <td>
 
-Specify names of target branches. If left blank, no filters apply.
+Specify the name of the target branch. If left blank, no filters apply.
 
 </td>
 </tr>
@@ -303,7 +303,7 @@ By target branch
 
 <td>
 
-Specify names of target branches. If left blank, no filters apply.
+Specify the name of the target branch. If left blank, no filters apply.
 
 </td>
 </tr>
