@@ -16,8 +16,8 @@ On this page:
 
 ## Cross-Platform PowerShell
 
-* Cross\-platform PowerShell ([PowerShell Core](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/)) is supported on Windows, MacOS, and Linux: [download a PowerShell package](https://github.com/PowerShell/PowerShell#get-powershell) for your platform and install it on the TeamCity agent.
-* Side\-by\-side installations of PowerShell Desktop and PowerShell Core is supported under Windows.
+* Cross-platform PowerShell ([PowerShell Core](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/)) is supported on Windows, MacOS, and Linux: [download a PowerShell package](https://github.com/PowerShell/PowerShell#get-powershell) for your platform and install it on the TeamCity agent.
+* Side-by-side installation of PowerShell Desktop and PowerShell Core is supported under Windows.
 
 ## Detection of Installed PowerShell on Build Agents
 

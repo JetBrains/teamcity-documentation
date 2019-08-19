@@ -31,7 +31,7 @@ where
 
 ### Secondary Node Memory Settings
 
-The secondary node requires the same memory settings as the main node. If you already configured `TEAMCITY_SERVER_MEM_OPTS` [environment variable](configuring-teamcity-server-startup-properties.md) environment variable for the main node, make sure you're using the same variable for the secondary node. And if your main node uses a 64-bit JVM, make sure you're using the 64-bit JVM for the secondary node too.
+The secondary node requires the same memory settings as the main node. If you have already configured the `TEAMCITY_SERVER_MEM_OPTS` [environment variable](configuring-teamcity-server-startup-properties.md) for the main node, make sure to use the same variable for the secondary node. If your main node uses a 64-bit JVM, the secondary node must use a 64-bit JVM as well.
 
 ## Startup & Shutdown
 

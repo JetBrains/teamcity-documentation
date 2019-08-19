@@ -258,7 +258,9 @@ Note that after this change [automatic update](upgrade.md#Automatic+Update) will
 
 The TeamCity server is a web application that runs in an J2EE application server (a JVM application). TeamCity server requires a Java SE JRE installation to run.
 
-The TeamCity server __requires__ JRE 8 to operate. The recommended Java download is [AdoptOpenJDK](https://adoptopenjdk.net). It is recommended to use the 32\-bit installation unless you need to [dedicate more memory](#Setting+Up+Memory+settings+for+TeamCity+Server) to TeamCity server. Please check the [64-bit Java notes](#Using+64+bit+Java+to+Run+TeamCity+Server) before upgrade. If you configured any native libraries for use with TeamCity (like a `.dll` for using Microsoft SQL database Integrated Security option), you need to update the libraries to match the JVM x86/x64 platform.
+The TeamCity server __requires__ JRE 8 to operate. The recommended Java distribution is [AdoptOpenJDK](https://adoptopenjdk.net).
+We recommend using the 32-bit installation unless you need to [dedicate more memory](#Setting+Up+Memory+settings+for+TeamCity+Server) to the TeamCity server. Please check the [64-bit Java notes](#Using+64+bit+Java+to+Run+TeamCity+Server) before upgrading.
+If you have configured any native libraries for use with TeamCity (like `.dll` for using the Integrated Security option of the Microsoft SQL database), you need to update the libraries to match the JVM x86/x64 platform.
 
 TeamCity selects the Java to run the server process as follows:
 * If your TeamCity installation has a bundled JRE (there is the \<[TeamCity Home](teamcity-home-directory.md)\>\jre  directory), it will __always__ be used to run the TeamCity server process.
