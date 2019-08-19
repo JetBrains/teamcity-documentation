@@ -29,6 +29,10 @@ where
 * `<path_to_node_data_directory>` is the path to the node data directory (see [Node-Specific Data Directory](multinode-setup.md#Node-Specific+Data+Directory)).
 * `<node url>` is the secondary node root URL. Make sure this URL is accessible from the main server and agents.
 
+### Secondary Node Memory Settings
+
+The secondary node requires the same memory settings as the main node. If you already configured `TEAMCITY_SERVER_MEM_OPTS` [environment variable](configuring-teamcity-server-startup-properties.md) environment variable for the main node, make sure you're using the same variable for the secondary node. And if your main node uses a 64-bit JVM, make sure you're using the 64-bit JVM for the secondary node too.
+
 ## Startup & Shutdown
 
 A secondary node can be started\/stopped using regular TeamCity scripts (`teamcity-server.bat`, `teamcity-server.sh`) or Windows services.
