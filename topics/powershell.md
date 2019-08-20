@@ -180,13 +180,16 @@ Script arguments
 
 <td>
 
-_Available if "Script execution mode" option is set to "Execute .ps1 script from external file"._ Specify here arguments to be passed into PowerShell script.
+_Available if "Script execution mode" option is set to "Execute .ps1 script from external file"._
+
+Specify build parameters to be passed as arguments into the PowerShell script.   
+When using named arguments, follow this pattern: `-<script_argument1> %build_parameter1% -<script_argument2> %build_parameter2%`.
 
 <note>
 
 __Escaping special symbols__
 
-TeamCity calls powershell.exe from the console of your operating system (command prompt on Windows, bash or other on Linux).
+TeamCity calls `powershell.exe` from the console of your operating system (command prompt on Windows, bash or other on Linux).
 
 If parameters containing special symbols are passed to your PowerShell script in double quotes, make sure these characters are properly escaped: use the escape rules depending on your interpreter, for example, on Windows, if a PowerShell script argument ends with a backslash, use the backslash as the escape symbol for TeamCity to correctly interpret it: `"foo\\"`.
 </note>
