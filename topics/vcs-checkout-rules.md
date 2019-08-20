@@ -15,6 +15,13 @@ Note that Perforce support in TeamCity treats checkout rules as case-sensitive. 
 
 </chunk>
 
+
+<note>
+
+Checkout rules can only be set to directories, files are __not__ supported.
+
+</note>
+
 ## Syntax
 
 In the examples below the paths in the repository (`VCSPath`) are relative to the configured VCS root, the paths on the agent (`AgentPath`) are relative to the build checkout directory.
@@ -32,9 +39,9 @@ The general syntax of a single checkout rule is as follows:
 
 <note>
 
-If no rule is specified, all files are included.
-When you start entering a rule, note that as soon as you enter any `+:` rule, TeamCity will remove the default "include all" setting.
-To include all the files explicitly, use `+:.` rule.
+If no rule is specified, all files are included.   
+When you start entering a rule, note that as soon as you enter any `+:` rule, TeamCity will remove the default "include all" setting.   
+To include all the files explicitly, use the `+:.` rule.
 
 </note>
 
@@ -93,7 +100,7 @@ Checks out the root into the `Path` directory on a build agent.
 
 <td>
 
-Excludes `VCSPath` (note: the path must be a directory and not a filename).
+Excludes `VCSPath` (the path must be a directory and not a filename).
 
 
 </td></tr><tr>
@@ -139,6 +146,7 @@ Maps the `VCSPath` from the VCS to the same\-named directory (`VCSPath`) on a bu
 
 
 </td></tr></table>
+
 
 An example with three VCS checkout rules:
 
