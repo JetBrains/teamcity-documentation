@@ -1,7 +1,7 @@
 [//]: # (title: Using TeamCity as NuGet Feed)
 [//]: # (auxiliary-id: Using TeamCity as NuGet Feed)
 
-If you want to publish your NuGet packages to a limited audience, for example, to use them internally, you can use TeamCity as a [NuGet feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview).        
+If you want to publish your NuGet packages to a limited audience, for example, to use them internally, you can use [TeamCity as a NuGet feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview).        
 __Since TeamCity 2018.2__, you can configure multiple NuGet feeds for a project in TeamCity.
 
 <note>
@@ -18,7 +18,7 @@ On this page:
 To start using TeamCity as a NuGet Server, you need to enable the NuGet Feed at the project level.
 
 Go to the __NuGet Feed__ page on the Project Settings page and enable the feed.      
-__Since TeamCity 2018.2__, the built\-in TeamCity NuGet feed supports API v1/v2/v3. 
+__Since TeamCity 2018.2__, the built-in TeamCity NuGet feed supports API v1/v2/v3. 
 
 On the page you will see the following feed endpoints:
     
