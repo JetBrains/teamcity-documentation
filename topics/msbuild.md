@@ -86,7 +86,7 @@ Specify here the version of tools that will be used to compile (equivalent to th
 
 <note>
 
-MSBuild supports compilation to older versions, thus you may set __MSBuild version__ as 4.0 with __MSBuild ToolsVersion__ set to 2.0 to produce .NET 2.0 assemblies while running MSBuild from .NET Framework 4.0. For more information, refer to [this article](http://msdn.microsoft.com/en-us/library/bb383796(VS.100).aspx)
+MSBuild supports compilation to older versions, thus you may set __MSBuild version__ as 4.6.1 with __MSBuild ToolsVersion__ set to 2.0 to produce .NET 2.0 assemblies while running MSBuild from .NET Framework 4.6.1. For more information, refer to [this article](http://msdn.microsoft.com/en-us/library/bb383796(VS.100).aspx)
 </note>
 
 

@@ -87,7 +87,7 @@ JetBrains.CommandLine.*
 
 <note>
 
-In order to launch inspection analysis, you should have __.NET Framework 4.0__ (or higher) installed on an agent where builds will run.
+In order to launch inspection analysis, you should have __.NET Framework 4.6.1__ (or higher) installed on an agent where builds will run.
 </note>
 
 <table><tr>
