@@ -45,17 +45,18 @@ NuGet build runners are supported on build agents running Windows OS by default.
 
 The NuGet trigger and the NuGet-related build runners require the NuGet command line binary configured on the server. They are automatically distributed to agents once configured. Several versions can be installed and a version of your choice can be set as the default one.
 
-To install NuGet.exe on TeamCity:
+<tip>
+It is recommended to use release versions of NuGet.
+</tip>
+
+To install `NuGet.exe` on TeamCity:
 1. Go to the __Administration | Tools__ tab.
 2. Click __Install tool and select NuGet.exe__.
 3. Select whether you want to download (default) NuGet from the public feed or upload your own NuGet package containing `NuGet.exe`.   
-    * If the __Download__ radio button is selected, specify the NuGet version to install on all build agents.   
-     <tip>
-     It is recommended to use release versions of NuGet.
-     </tip>   
-    * If the __Upload__ radio button is selected, specify your own NuGet package.   
-6. Specify whether this NuGet version will be default using the related check\-box. 
-7. Click __Add__ to install the selected NuGet version.
+   * If the __Download__ radio button is selected, specify the NuGet version to install on all build agents.
+   * If the __Upload__ radio button is selected, specify your own NuGet package.
+4. Specify whether this NuGet version will be default using the related checkbox. 
+5. Click __Add__ to install the selected NuGet version.
  
 
 <tip>
