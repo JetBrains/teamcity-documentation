@@ -111,17 +111,12 @@ TeamCity supports a wide range of build tools, enabling both Java and .NET softw
 
 ### Supported .NET platform build runners
 
-   * [MSBuild](msbuild.md). Requires .Net Framework or Mono installed on the build agent. Microsoft Build Tools 2013, 2015 and 2017 are also supported.
-   * [NAnt](nant.md) versions 0.85 \- 0.91 alpha 2. Requires .NET Framework or Mono installed on the build agent.
-   * [Microsoft Visual Studio Solutions](visual-studio-sln.md) ([2003](visual-studio-2003.md) \- 2015 and 2017).  Requires a corresponding version of Microsoft Visual Studio installed on the build agent.
    * [MSBuild](msbuild.md). Requires .NET Framework or Mono installed on the build agent. Microsoft Build Tools 2013, 2015, 2017, and 2019 are also supported.
    * [NAnt](nant.md) versions 0.85 \- 0.91 alpha 2. Requires .NET Framework or Mono installed on the build agent.
    * [Microsoft Visual Studio Solutions](visual-studio-sln.md) ([2003](visual-studio-2003.md) \- 2015, 2017, and 2019). Requires a corresponding version of Microsoft Visual Studio installed on the build agent.
    * [FxCop](fxcop.md). Requires FxCop installed on the build agent.
-   * [Duplicates Finder for C# and VB.NET code](duplicates-finder-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html). Supported languages are C# up to version 4.0 and VB.NET version 8.0 \- 10.0. Requires .Net Framework 4.0\+ installed on the build agent.
-   * [Inspections for .NET](inspections-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html). Requires .Net Framework 4.0\+ installed on the build agent.
-   * [Duplicates Finder for C# and VB.NET code](duplicates-finder-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html). Supported languages are C# up to version 4.0 and VB.NET version 8.0 \- 10.0. Requires .NET Framework 4.0\+ installed on the build agent.
-   * [Inspections for .NET](inspections-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html). Requires .NET Framework 4.0\+ installed on the build agent.
+   * [Duplicates Finder for C# and VB.NET code](duplicates-finder-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html). Supported languages are C# up to version 4.0 and VB.NET version 8.0 \- 10.0. Requires .NET Framework 4.6.1\+ installed on the build agent.
+   * [Inspections for .NET](inspections-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html). Requires .NET Framework 4.6.1\+ installed on the build agent.
    * [.NET Process Runner](net-process-runner.md) for running any .NET application (requires .NET installed on the build agent)
    * [NuGet](nuget.md) runners under Windows, Linux macOS. Require NuGet.exe Command Line tool installed on the agents. Supported NuGet versions under Windows are 1.4\+. 
       * Windows: NuGet versions prior to 2.8.6 require .NET Framework 4.0\+ installed on the build agent
