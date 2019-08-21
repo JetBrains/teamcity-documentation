@@ -56,7 +56,7 @@ The following [NGINX](https://docs.nginx.com/nginx/admin-guide/load-balancer/htt
 http {
     upstream backend {
         server teamcity-main.local:8111 max_fails=0; # full internal address of the main server;
-        server teamcity-ro.local:8111 backup; # full internal address of the secondary  node;
+        server teamcity-ro.local:8111 backup; # full internal address of the secondary node;
     }
   
     server {

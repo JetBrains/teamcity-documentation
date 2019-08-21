@@ -10,10 +10,10 @@ On this page:
 TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager and when [NuGet is installed](#Installing+NuGet+to+TeamCity+agents) provides the following capabilities:
 * [Private NuGet feeds](using-teamcity-as-nuget-feed.md) based on the builds' published artifacts.
 * A set of NuGet runners to be used in builds on Windows OS, as well as on Linux and MacOS when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent. 
-    * the [NuGet Installer](nuget-installer.md) build runner, which installs and updates NuGet packages
-    * the [NuGet Pack](nuget-pack.md) build runner, which builds NuGet packages
-    * the [NuGet Publish](nuget-publish.md) build runner, which publishes packages to a feed of your choice
-* The [NuGet Dependency](nuget-dependency-trigger.md) Trigger, which allows triggering builds on NuGet feed updates.
+    * [NuGet Installer](nuget-installer.md) build runner, which installs and updates NuGet packages.
+    * [NuGet Pack](nuget-pack.md) build runner, which builds NuGet packages.
+    * [NuGet Publish](nuget-publish.md) build runner, which publishes packages to a feed of your choice.
+* [NuGet Dependency](nuget-dependency-trigger.md) Trigger, which allows triggering builds on NuGet feed updates.
 
 
 <note include-id="nuget-OS">
@@ -27,8 +27,8 @@ NuGet build runners are supported on build agents running Windows OS by default.
 <note>
 
 * NuGet build runners require an appropriate version on .NET Framework installed on the agent machine depending on the NuGet.exe version: 
-    * NuGet versions 2.8.6\+ require .NET 4.5\+
-    * NuGet versions /<2.8.6 require .NET 4.0.
+    * NuGet versions 2.8.6+ require .NET 4.5+
+    * NuGet versions \< 2.8.6 require .NET 4.0.
 * To use packages from an authenticated feed, see the [NuGet Feed Credentials](nuget-feed-credentials.md) build feature.
 </note>
 
@@ -43,18 +43,17 @@ NuGet build runners are supported on build agents running Windows OS by default.
 
 [//]: # (AltHead:installNuGet)
 
-The NuGet trigger and the NuGet\-related build runners require the NuGet command line binary configured on the server. They are automatically distributed to agents once configured. Several versions can be installed and a version of your choice can be set as the default one.
+The NuGet trigger and the NuGet-related build runners require the NuGet command line binary configured on the server. They are automatically distributed to agents once configured. Several versions can be installed and a version of your choice can be set as the default one.
 
 To install NuGet.exe on TeamCity:
-1. Go to the __Administration__ | __Tools__ tab.
-2. Click __Install tool __and select__ NuGet.exe.__
-3. Select whether you want to download (default) NuGet from the public feed or upload your own NuGet package containing `NuGet.exe`. 
-    * If the __Download__ radio button is chosen, select the NuGet version to install on all build agents.
+1. Go to the __Administration | Tools__ tab.
+2. Click __Install tool and select NuGet.exe__.
+3. Select whether you want to download (default) NuGet from the public feed or upload your own NuGet package containing `NuGet.exe`.   
+    * If the __Download__ radio button is selected, specify the NuGet version to install on all build agents.   
      <tip>
-    
      It is recommended to use release versions of NuGet.
-     </tip>
-    * If the __Upload__ radio button is selected, select your own NuGet package.
+     </tip>   
+    * If the __Upload__ radio button is selected, specify your own NuGet package.   
 6. Specify whether this NuGet version will be default using the related check\-box. 
 7. Click __Add__ to install the selected NuGet version.
  

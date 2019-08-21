@@ -52,7 +52,7 @@ If you have implemented a custom authentication based on client certificates in 
 
 __Importing client certificate__
 
-If you need to use a client certificate to access a server via https (e.g. from IntelliJ IDEA, Eclipse or the build agents), you will need to add the certificate to the Java keystore and supply the keystore to the JVM used by the connecting process.
+If you need to use a client certificate to access a server via https (for example, from IntelliJ IDEA, Eclipse or the build agents), you will need to add the certificate to the Java keystore and supply the keystore to the JVM used by the connecting process.
 
 1\. If you have your certificate in a __p12__ file, you can use the following command to convert it to a Java keystore. Make sure you use `keytool` from JDK 1.6\-1.8: earlier versions may not understand p12 format.
 
