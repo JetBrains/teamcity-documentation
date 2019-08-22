@@ -557,13 +557,13 @@ The default setting for the VCS checkout mode on creating new build configuratio
 
 ### Project-based Agent Management Permissions
 
-New TeamCity installations now have different agent management permissions assignments: Project Administrator role does not include (global) Agent Manager role. Instead, Project administrator role has [agent-project permissions](role-and-permission.md) which allow managing agents from the agent pools with only projects where user has Project Administrator role.
+New TeamCity installations now have different agent management permissions assignments: Project Administrator role does not include (global) Agent Manager role. Instead, Project administrator role has [agent-project permissions](role-and-permission.md#Project-level+Agent+Management+Permissions) which allow managing agents from the agent pools with only projects where user has Project Administrator role.
 
 Existing installations are not affected by this change in order not to change the user permissions. However, it is recommended to review the Project Administrator role and consider excluding "Agent Manager" role and adding the following permissions:
 * Enable / disable agents associated with project
 * Start / Stop cloud agent for project
 * Change agent run configuration policy for project
-* Administer project agent machines (e.g. reboot, view agent logs, etc.)
+* Administer project agent machines (for example, reboot, view agent logs)
 * Remove project agent
 * Authorize project agent
 ### UI Changes

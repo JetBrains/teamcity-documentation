@@ -33,5 +33,4 @@ You may want to mark a build as failed when:
 
 ## Permissions
 
-
 By default, the permission to change the build status is granted to __Project Administrator__. 
