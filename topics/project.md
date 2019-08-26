@@ -9,12 +9,12 @@ In TeamCity, user [roles and permissions](role-and-permission.md) are managed on
 <tag-list of="chapter" mode="tree" depth="4"/>
 
 
-### Project Hierarchy
+## Project Hierarchy
 
 Projects can be nested and organized into a tree allowing for hierarchical display and settings propagation. The hierarchy is defined by the project administrators and is the same for all the TeamCity users.   
 You can view the hierarchy on the overview page, in the __Projects__ popup, and in breadcrumbs.
 
-#### Settings Propagation
+### Settings Propagation
 
 The projects hierarchy is used in the following ways:
 
@@ -43,7 +43,7 @@ A setting referencing a project affects the project and all its subprojects. The
 
 Note that associating a project with an [agent pool](agent-pools.md) is not propagated to its subprojects and affects only the build configurations residing directly in the project.
 
-#### Root Project
+### Root Project
 
 TeamCity always has a __&lt;Root project&gt;__ as the top of the projects hierarchy. The root project has most of the properties of a usual project and the settings configured in the root project are available to all the other projects on the server.
 

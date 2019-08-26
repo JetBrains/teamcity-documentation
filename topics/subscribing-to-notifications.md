@@ -25,7 +25,7 @@ Note that TeamCity comes with a default notification rule. It will send you an e
 </tip>
 
  * __IDE Notifier__: to receive notifications right in your IDE, the required TeamCity plugin must be installed in your IDE. For the details on installing TeamCity IDE plugins, refer to [Installing Tools](installing-tools.md).
- * __Jabber Notifier__: to receive notifications of this type, specify your Jabber account either on the __Notification Rules__ | __Jabber notifier__ page, or the __My Settings &amp; Tools__ page in the __Watched Builds and Notifications__ area. Note that instead of Jabber you can specify your Google Talk account here if this option is configured by the System Administrator.
+ * __Jabber Notifier__: to receive notifications of this type, specify your Jabber account either on the __Notification Rules | Jabber notifier__ page, or the __My Settings &amp; Tools__ page in the __Watched Builds and Notifications__ area. Note that instead of Jabber you can specify your Google Talk account here if this option is configured by the System Administrator.
  * __Windows Tray Notifier__: to receive this type of notifications, [Windows Tray Notifier](windows-tray-notifier.md) must be installed.
 
 3\. Click __Add new rule__ and specify the rule in the dialog. The notification rules are comprised of two parts: [what you will watch](#What+Will+Be+Watched) and [which events you will be notified about](#Which+Events+Will+Trigger+Notifications). See the details below.

@@ -13,7 +13,7 @@ On this page:
 ## Investigating or Muting Build Problems
 
 __To assign an investigation of a failed build__:
-1. Navigate to the __Overview__ tab of the __Build Configuration Home__ page, or the __Overview__ tab of the [Build Results page](working-with-build-results.md), click the _Start investigation..._ link.
+1. Navigate to the __Overview__ tab of the __Build Configuration Home__ page, or the __Overview__ tab of the [Build Results page](working-with-build-results.md), click the _Start investigation_ link.
 2. Select a team member's name from the __User__ drop-down menu.
 3. Select the condition to remove the investigation: when the build configuration becomes green or the test passes (default) or specify that an investigation should be resolved manually.   
 Manual resolution is useful with so called "flickering tests", i.e. when a test fails from time to time and the "green" status of a build is not an indicator of the problem resolution.

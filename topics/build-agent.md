@@ -8,7 +8,8 @@ A TeamCity build agent contains [two processes](configuring-build-agent-startup-
 * Agent Launcher — a Java process that launches the agent process
 * Agent — the main process for a Build Agent; runs as a child process for the agent launcher
 
-An Agent typically checks out the source code, downloads artifacts of other builds and runs the build process. An agent can run a single build at a time. The number of agents basically limits the number of parallel builds and environments in which your build processes are run.An Agent can run builds of any compatible build configuration.
+An Agent typically checks out the source code, downloads artifacts of other builds and runs the build process. An agent can run a single build at a time. The number of agents basically limits the number of parallel builds and environments in which your build processes are run.   
+An Agent can run builds of any compatible build configuration.
 
 The TeamCity server monitors all the connected agents and assigns queued builds to the agents based on [compatibility requirements](agent-requirements.md), [Agent Pools](agent-pools.md), Build Configuration restrictions configured for an agent and the selection algorithm described [here](build-queue.md).
 
@@ -48,6 +49,8 @@ An agent is connected if it is registered on the TeamCity server and responds to
 
 <td>
 
+<anchor name="agent-authorization"/>
+
 __Authorized/ Unauthorized__
 
 
@@ -64,7 +67,9 @@ Agents are manually authorized via the web UI on the __Agents__ page (except for
 
 <td>
 
- __Enabled/ Disabled__
+<anchor name="enable-agent"/>
+
+__Enabled/ Disabled__
 
 
 </td>

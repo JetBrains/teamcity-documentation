@@ -96,6 +96,8 @@ When creating a group, you can select the parent group(s) for it. All roles and 
 
 To edit a group, click its name on the __Groups__ tab. You can modify the group name and description as well as parent group(s), and change the list of users, roles and permissions, and notification settings for the group.
 
+To delete a group, click __Delete__ next to its name in the list. This action will only delete the group itself and won't affect the users of this group.
+
 <tip>
 
 The __All Users__ group includes all users and cannot be deleted. However, you can modify its roles and notification settings.

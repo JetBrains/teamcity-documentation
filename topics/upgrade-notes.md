@@ -596,7 +596,7 @@ Note that the installer will remove the pre\-bundle products versions: TeamCity 
 
 ### IntelliJ IDEA Compatibility
 
-IntelliJ IDEA 12.1 and older as long as other IntelliJ\-based products released prior to year 2013 no longer supported by    [ ](https://confluence.jetbrains.com/) . 
+IntelliJ IDEA 12.1 and older, as well as other IntelliJ\-based products released prior to year 2013, is no longer supported by [IntelliJ Platform Plugin](https://confluence.jetbrains.com/) . 
 
 ### Snapshot dependencies builds rebuilding
 
@@ -622,7 +622,7 @@ Java inspections and duplicates: the bundled IntelliJ IDEA is updated to 2016.2
 
 ### GitHub Issue Tracker
 
-If you were using the TeamCity\-GitHub  [third-party plugin](https://github.com/milgner/TeamCityGithub)  prior to TeamCity 10.0, you can safely  [remove](installing-additional-plugins.md)  it: the built\-in TeamCity integration will detect the existing connection to GitHub issue tracker and pick up your settings automatically. 
+If you were using the TeamCity\-GitHub  [third-party plugin](https://github.com/milgner/TeamCityGithub)  prior to TeamCity 10.0, you can safely [remove](installing-additional-plugins.md)  it: the built\-in TeamCity integration will detect the existing connection to GitHub issue tracker and pick up your settings automatically. 
 
 ### NuGet Support
 
