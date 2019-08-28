@@ -26,8 +26,6 @@ TeamCity Docker Support can run on Mac, Linux, and Windows build agents. It uses
 
 </note>
 
- __Since version 2018.2__, TeamCity has switched from Oracle Java to OpenJDK 8 (by AdoptOpenJDK). All Docker images have been updated to support OpenJDK.
-
 </chunk>
 
 ## Parameters Reported by Agent
