@@ -22,7 +22,6 @@ You could split agents into pools. Each project could be associated to a number 
 ## Establishing a Run Configuration Policy
 
 __To establish a Build Agent's run configuration policy:__
-
 	
 1. Click the __Agents__ and select the desired build agent.
 2. Click the __Compatible Configurations__ tab.
@@ -30,7 +29,6 @@ __To establish a Build Agent's run configuration policy:__
 
 
 ## Making Build Agent Name and Property a Build Configuration Requirement
-
 
 __To make a build configuration run the builds on a build agent with the specified name and properties:__
 	
