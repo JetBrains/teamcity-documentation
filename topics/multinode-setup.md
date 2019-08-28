@@ -4,8 +4,15 @@
 TeamCity allows configuring and starting one or more secondary server instances (nodes) in addition to the main one. The main and secondary nodes operate under the same license and share the TeamCity data directory and the database.
 
 Using the multinode setup, you can:
-* Set up a high-availability TeamCity installation that will have zero read downtime. A secondary node will allow users read operations during the downtime of the main server (for example, during the upgrade)
+* Set up a high-availability TeamCity installation that will have zero read downtime. A secondary node will allow users read operations during the downtime of the main server (for example, during the upgrade).
 * Improve the performance of the main server by delegating tasks to the secondary nodes. A secondary node can detect new commits and process data produced by running builds (build logs, artifacts, statistic values).
+
+<note>
+
+Since TeamCity 2019.1.2, the [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is deprecated, and it will be discontinued in TeamCity 2019.2. If you have Running Builds Nodes set up in your TeamCity installation, we highly recommend replacing these nodes with the regular secondary nodes. If you assign the "[Processing data produced by running builds](configuring-secondary-node.md#Processing+Data+Produced+by+Builds+on+Secondary+Node)" responsibility to a secondary node, this node will be processing traffic coming from TeamCity agents, similarly to Running Builds Node.   
+Note that the secondary node offers more features than the Running Builds Node and thus might require as many hardware resources as a regular TeamCity server. Refer to [Estimate Hardware Requirements for TeamCity](how-to.md#Estimate+Hardware+Requirements+for+TeamCity) for notes on the recommended hardware.
+
+</note>
 
 On this page:
 
