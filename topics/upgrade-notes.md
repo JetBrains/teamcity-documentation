@@ -1,6 +1,12 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2019.1.2 to 2019.1.3
+
+### Bundled Tools Updates
+
+* The bundled ReSharper Command Line Tools (Inspections and Duplicates Finder) have been upgraded to version 2019.2.1.
+
 ## Changes from 2019.1.1 to 2019.1.2
 
 <anchor name="running-builds-node-deprecated"/>
