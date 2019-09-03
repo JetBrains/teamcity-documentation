@@ -22,7 +22,6 @@ If the format of the service message is incorrect, a corresponding note about it
 
 
 ```Shell
-
 ##teamcity[testMetadata testName='package.Test.testName' name='setUp time' type='number' value='434.5']
 ```
 
@@ -43,7 +42,7 @@ You can see a graph of changes for a numeric value, from build to build for the 
 
 
 ```Shell
- ##teamcity[testMetadata testName='test.name' name='JetBrains' type='link' value='https://jetbrains.com']
+##teamcity[testMetadata testName='test.name' name='JetBrains' type='link' value='https://jetbrains.com']
 ```
 
 
@@ -52,7 +51,7 @@ You can see a graph of changes for a numeric value, from build to build for the 
 
 
 ```Shell
- ##teamcity[testMetadata testName='test.name' type='artifact' value='path/to/catalina.out']
+##teamcity[testMetadata testName='test.name' type='artifact' value='path/to/catalina.out']
 ```
 
 
@@ -61,7 +60,7 @@ The path to the artifact should be relative to the [build artifacts directory](b
 
 
 ```Shell
- ##teamcity[testMetadata testName='test.name' type='artifact' value='logs.zip!/testTyping/full-log.txt']
+##teamcity[testMetadata testName='test.name' type='artifact' value='logs.zip!/testTyping/full-log.txt']
 ```
 
 
