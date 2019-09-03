@@ -937,6 +937,14 @@ Create a group: `POST` [`http://teamcity:8111/app/rest/userGroups`](http://teamc
  
 Delete a group: `DELETE` [`http://teamcity:8111/app/rest/userGroups/key:Group_Key`](http://teamcity:8111/app/rest/userGroups/key:Group_Key).
 
+### User Access Tokens
+
+List of access tokens: `GET` [`http://teamcity:8111/app/rest/users/<userLocator>/tokens`](http://teamcity:8111/app/rest/users/<userLocator>/tokens).
+
+Create an access token:  `POST` [`http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>`](http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>).
+
+Delete an access token:  `DELETE` [`http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>`](http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>).
+
 ### Audit Records
 
 To access the records of user actions, also available on the __[Audit](tracking-user-actions.md)__ page in TeamCity, use the following request:
