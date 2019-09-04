@@ -301,6 +301,7 @@ Care must be taken when performing this action. Modifying the ID will change all
 1. Use the corresponding item from the __Actions__ menu in the top right of the project settings page or the more button ![moreButton.PNG](moreButton.PNG) next to the project on the parent project settings page.
 2. The current project and build configuration [IDs](identifier.md) are displayed. You can modify or reset the IDs for all subproject, VCS roots, build configurations and templates. Click __Regenerate__ to get new Ids automatically or edit them manually.
 3. Click __Submit__.
+
 ### Pausing / Activating Triggers
 
 You can [pause triggers](build-configuration.md#Pausing+%2F+Activating+several+build+configurations+of+a+project) for all or selected build configurations of a project. Use the corresponding item from the __Actions__ menu in the top right of the project settings page or the more button ![moreButton.PNG](moreButton.PNG) next to the project on the parent project settings page.

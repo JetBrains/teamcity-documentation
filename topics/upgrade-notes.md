@@ -258,7 +258,7 @@ The Inspections (.NET) and Duplicates Finder (.NET) build steps were renamed to 
 
 ### Build revisions
 
-In all the build configurations, the builds run before the upgrade will not be reused in the chains and will run anew (only the last build on the default branch is affected if branches are used). This may also result in a clean checkout in the first run build for VCSs like Perforce. The behavior is similar tothat after VCS root editing.____
+In all the build configurations, the builds run before the upgrade will not be reused in the chains and will run anew (only the last build on the default branch is affected if branches are used). This may also result in a clean checkout in the first run build for VCSs like Perforce. The behavior is similar to that after VCS root editing.
 
 __Security__
 

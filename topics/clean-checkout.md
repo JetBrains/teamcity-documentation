@@ -8,7 +8,7 @@ _Clean Checkout_ (also referred to as "Clean Sources") is an operation that ensu
 
 Clean checkout is recommended if the checkout directory content was modified by an external process by adding new, modifying or deleting existing files.
 
-You can enforce clean sources action for a build configuration from the Build Configuration home page (__Actions__ drop\-down in the top right corner), or for an agent from the [Agent Details](viewing-build-agent-details.md) page using the __Miscellaneous__ section, the Clean sources on this agent option. The action opens a list of agents/build configurations to clean sources for.
+You can enforce clean sources action for a build configuration from the Build Configuration Home page (__Actions__ drop-down in the top right corner), or for an agent from the [Agent Details](viewing-build-agent-details.md) page using the __Miscellaneous__ section, the Clean sources on this agent option. The action opens a list of agents/build configurations to clean sources for.
 
 <note>
 

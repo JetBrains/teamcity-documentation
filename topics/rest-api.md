@@ -941,9 +941,9 @@ Delete a group: `DELETE` [`http://teamcity:8111/app/rest/userGroups/key:Group_Ke
 
 List of access tokens: `GET` [`http://teamcity:8111/app/rest/users/<userLocator>/tokens`](http://teamcity:8111/app/rest/users/<userLocator>/tokens).
 
-Create an access token:  `POST` [`http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>`](http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>).
+Create an access token: `POST` [`http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>`](http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>).
 
-Delete an access token:  `DELETE` [`http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>`](http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>).
+Delete an access token: `DELETE` [`http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>`](http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>).
 
 ### Audit Records
 
