@@ -428,7 +428,7 @@ tail -f buildAgent/logs/teamcity-agent.log
 ```
 
 
-5\. When the build agen upgrades and successfully connects to TeamCity server, stop the agent:
+5\. When the build agent upgrades and successfully connects to TeamCity server, stop the agent:
 
 
 ```Shell
@@ -462,7 +462,8 @@ If you want to start several build agents, repeat the procedure of installing an
   * Edit the `$HOME/Library/LaunchAgents/jetbrains.teamcity.BuildAgent2.plist` file and set the following parameters:
     * the `Label` parameter to `jetbrains.teamcity.BuildAgent2`
     * the `WorkingDirectory` parameter to the correct path to the second build agent home
-  * In `$HOME/start_build_agent.command` (see details [above](#Automatic+Agent+Start+under+macOS)), add a line to start the second build agent.
+  * Start the second agent with the command `launchctl load $HOME/Library/LaunchAgents/jetbrains.teamcity.BuildAgent2.plist`
+
 
 To check that both build agents are running, use the following command:
 
