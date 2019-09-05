@@ -25,17 +25,18 @@ To overcome these restrictions, run TeamCity agent [via console](setting-up-and-
 
 These problems include errors running tests headless, issues with the interaction of the TeamCity agent with the Windows desktop, and so on.
 
+
+<tip>
+
+Note that there is a Windows limitation to accessing a remote computer via mstsc: the desktop of the remote machine will be locked on RDP disconnect, which will cause issues running tests. The VNC protocol allows you to remote control another machine without locking it.To run GUI tests and be able to use RDP, see the [workaround](#Running+automated+GUI+tests+and+using+RDP) below.
+</tip>
+
 To resolve / avoid these:
 1. Run TeamCity agent [via console](setting-up-and-running-additional-build-agents.md#Starting+the+Build+Agent).
 2. Configure the build agent machine not to launch a screensaver locking the desktop.
-
-    <tip>
-
-    Note that there is a Windows limitation to accessing a remote computer via mstsc: the desktop of the remote machine will be locked on RDP disconnect, which will cause issues running tests. The VNC protocol allows you to remote control another machine without locking it.To run GUI tests and be able to use RDP, see the [workaround](#Running+automated+GUI+tests+and+using+RDP) below.
-    </tip>
-3. Configure the TeamCity agent to start [automatically](setting-up-and-running-additional-build-agents.md#Starting+the+Build+Agent) (for example, configure an automatic user logon on Windows start and then configure the TeamCity agent start (via agent.bat start) on the user logon).  
+3. Configure the TeamCity agent to start [automatically](setting-up-and-running-additional-build-agents.md#Starting+the+Build+Agent) (for example, configure an automatic user logon on Windows start and then configure the TeamCity agent start (via agent.bat start) on the user logon).
     
-    For graphical tests the build agent cannot be started as a service and it is recommended to configure the build agent launch with a 1 minute delay after the user auto\-logon, e.g. using the `bin\agent.bat start` command in the task scheduler and configuring the delay there.
+For graphical tests the build agent cannot be started as a service and it is recommended to configure the build agent launch with a 1 minute delay after the user auto\-logon, e.g. using the `bin\agent.bat start` command in the task scheduler and configuring the delay there.
 
 #### Running automated GUI tests and using RDP 
 

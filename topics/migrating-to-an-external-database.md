@@ -55,22 +55,26 @@ If an error occurs during migration, do not use the new database as it may resul
 </note>
 
 __To migrate all your existing data to a new external database:__
-1. [Create and configure an external database](setting-up-an-external-database.md#Supported+Databases) to be used by TeamCity and install the database driver into TeamCity. __Do not modify any TeamCity settings at this stage__.
-2. Shut down the TeamCity server.
-3. Create a temporary properties file with a custom name (for example, `database.<database_type>.properties`) for the target database using the corresponding template (\<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/database.\<database\_type\>.properties.dist). Configure the properties and place the file into any temporary directory. __Do not modify the original `database.<database_type>.properties` file__.
-4. Run the `maintainDB` tool with the `migrate` command and specify the absolute path to the newly created target database properties file with the `-T` option:
-    ```Shell
-    maintainDB.[cmd|sh] migrate [-A <path to TeamCity Data Directory>] -T <path to database.properties file>
-    
-    ```
-    <tip>
-    
-    If you have the `TEAMCITY_DATA_PATH` environment set (pointing to the [TeamCity Data Directory](teamcity-data-directory.md)), you do not need the `-A <path to TeamCity Data Directory>` parameter of the tool.
-    </tip>
 
-    Upon the successful completion of the database migration, the temporary file will be copied to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/database.properties file which will be used by TeamCity. The temporary file can be safely deleted. If you are migrating between external databases, the original `database.properties` file for the source database will be replaced with the file specified via the `-T` option. The original `database.properties` file will be automatically re\-named to `database.properties.before.<timestamp>`.
+1\. [Create and configure an external database](setting-up-an-external-database.md#Supported+Databases) to be used by TeamCity and install the database driver into TeamCity. __Do not modify any TeamCity settings at this stage__.
 
-5. Start the TeamCity server. This must be the same TeamCity version that was run last time (TeamCity [upgrade](upgrade.md) must be performed as a separate procedure).
+2\. Shut down the TeamCity server.
+
+3\. Create a temporary properties file with a custom name (for example, `database.<database_type>.properties`) for the target database using the corresponding template (\<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/database.\<database\_type\>.properties.dist). Configure the properties and place the file into any temporary directory. __Do not modify the original `database.<database_type>.properties` file__.
+
+4\. Run the `maintainDB` tool with the `migrate` command and specify the absolute path to the newly created target database properties file with the `-T` option:
+ ```Shell
+ maintainDB.[cmd|sh] migrate [-A <path to TeamCity Data Directory>] -T <path to database.properties file>
+
+ ```
+Upon the successful completion of the database migration, the temporary file will be copied to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/database.properties file which will be used by TeamCity. The temporary file can be safely deleted. If you are migrating between external databases, the original `database.properties` file for the source database will be replaced with the file specified via the `-T` option. The original `database.properties` file will be automatically renamed to `database.properties.before.<timestamp>`.
+
+<tip>
+
+If you have the `TEAMCITY_DATA_PATH` environment set (pointing to the [TeamCity Data Directory](teamcity-data-directory.md)), you do not need the `-A <path to TeamCity Data Directory>` parameter of the tool.
+</tip>
+
+5\. Start the TeamCity server. This must be the same TeamCity version that was run last time (TeamCity [upgrade](upgrade.md) must be performed as a separate procedure).
 
 After you make sure the migration succeeded, you __may__ delete the old HSQLDB files: `buildserver.*` to remove the no longer needed internal storage data.
 

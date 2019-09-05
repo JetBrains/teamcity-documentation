@@ -44,20 +44,19 @@ See also the related "Trigger on changes in snapshot dependencies" [setting](con
 Let's consider an example to illustrate how snapshot dependencies work.
 
 Let's assume that we have two build configurations, A and B, and configuration A has a snapshot dependency on configuration B and revisions synchronization is enforced.
+
+   
+<tip>
+If the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.
+</tip>
+
 1. When a build of configuration A is triggered, it automatically triggers a build of configuration B, and both builds will be placed into the Build Queue. Build B starts first and build A will wait in the queue till build B is finished ([if no other specific options are set](snapshot-dependencies.md)).
 2. When builds B and A are added to the queue, TeamCity adjusts the sources to include in these builds. All builds will be run with the sources taken at the moment the builds were added to the queue.   
-
-   <tip>
-   
-   If the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.
-   </tip>
-
 3. When the build B has finished and if it finished successfully, TeamCity will start to run build A.   
 
-   <tip>
-
-   Note that the changes to be included in build A could have become not the latest ones by the moment the build started to run. In this case, build A becomes a [history build](history-build.md).
-   </tip>
+<tip>
+Note that the changes to be included in build A could have become not the latest ones by the moment the build started to run. In this case, build A becomes a [history build](history-build.md).
+</tip>
 
 The example above shows the core basics of snapshot dependencies as a straightforward process without any additional options. For snapshot dependency options, refer to the [Snapshot Dependencies](snapshot-dependencies.md) page.
 
