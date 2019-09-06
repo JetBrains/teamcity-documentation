@@ -1,6 +1,6 @@
 [//]: # (title: Running TeamCity Stack in AWS)
 [//]: # (auxiliary-id: Running TeamCity Stack in AWS)
-The _Run on AWS_ option for TeamCity available on the [JetBrains site](https://www.jetbrains.com/teamcity/download/#section=aws) lets you run the TeamCity stack in AWS using the official CloudFormation template.
+The _Run on AWS_ option for TeamCity, available on the [JetBrains site](https://www.jetbrains.com/teamcity/download/#section=aws), lets you run the TeamCity stack in AWS using the official CloudFormation template.
 
 See also a related [blog post](https://blog.jetbrains.com/teamcity/2017/10/teamcity-aws/).
 
@@ -34,8 +34,6 @@ To create a TeamCity stack and connect to it, you will need:
 2\.  Specify the stack name and parameters provided by the template:
 
 ### Template Parameters
-
-__  __
 
 <table><tr>
 
