@@ -4,7 +4,7 @@ When for some reason a build fails, TeamCity provides handy means of figuring ou
 
 You can __assign__ some of your team members __to investigate__ what caused the failure of this build or to start the investigation yourself. When an investigator is set, he/she receives the corresponding notification.
 
-TeamCity also provides a way to mute a build problem (similarly to [muting failed tests](muting-test-failures.md)) so that it not affect build status for future builds.
+TeamCity also provides a way to mute a build problem (similarly to [muting failed tests](muting-test-failures.md)) so that it does not affect build status for future builds.
 
 On this page:
 
