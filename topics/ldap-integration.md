@@ -248,9 +248,7 @@ java -cp serviceMessages.jar:common-api.jar:commons-codec.jar:commons-codec-1.3.
 Note that scrambling is not encryption: it protects the password from being easily remembered when seen occasionally, but it does not protect against getting the real password value when someone gets the scrambled password value.
 
 
-[//]: # (Internal note. Do not delete. "LDAP Integrationd195e594.txt")    
-
-
+[//]: # (Internal note. Do not delete. "LDAP Integrationd195e594.txt")
 
 
 ### Debugging LDAP Integration

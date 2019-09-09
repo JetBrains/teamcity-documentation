@@ -18,6 +18,4 @@ When contacting us make sure to:
 
 __See also:__
 
-
-
 __Troubleshooting__: [Known Issues](known-issues.md) | [Reporting Issues](reporting-issues.md)

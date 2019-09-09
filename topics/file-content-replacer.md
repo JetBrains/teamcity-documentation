@@ -330,8 +330,6 @@ Suppose, your `AssemblyVersion` in `AssemblyInfo.cs` is `Major.Minor.Revision.Bu
    ```
 
 
-
-
 <note>
 
 Make sure your `%build.number%` [format](configuring-general-settings.md) contains just a decimal number without any dots, or you may end up with a non\-standard version like `1.2.3.4.5.6.2600` (i.e. `%build.counter%` _is_ a valid value here while `4.5.6.%build.counter%` is _not_).

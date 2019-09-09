@@ -61,6 +61,5 @@ In the top right corner of the screen, click the arrow next to your username, an
 
 __See also:__
 
-__Concepts__: [Role and Permission](role-and-permission.md)
-  
+__Concepts__: [Role and Permission](role-and-permission.md)   
 __User's Guide__: [Viewing Your Changes](viewing-your-changes.md) | [Subscribing to Notifications](subscribing-to-notifications.md) 

@@ -149,8 +149,6 @@ Generally snapshot file is deleted after files collection. Set the `swabra.prese
 [//]: # (Internal note. Do not delete. "Build Files Cleaner Swabra d36e260.txt")    
 
 
-
-
 ## Clean Checkout
 
 Note that Swabra may sometimes cause [clean checkout](clean-checkout.md) to restore clean checkout directory state.   

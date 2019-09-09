@@ -542,8 +542,6 @@ http://teamcity.server:8111/httpAuth/feed.html?buildTypeId=bt1&itemsType=builds&
 
 ```
 
-
-
  __  __
 
 __See also:__

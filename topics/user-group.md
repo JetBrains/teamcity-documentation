@@ -3,9 +3,7 @@
 
 To help you manage user accounts more efficiently, TeamCity provides User Groups configured using the __Adminstration | Groups__ page.
 
-Here you can add, delete, edit groups, view parent groups, roles and all users belonging to the group.
-
- 
+Here you can add, delete, edit groups, view parent groups, roles and all users belonging to the group. 
 
 A user group allows you to:
 * Assign [roles](role-and-permission.md) to all users included in the group at once: users get all the roles of the groups they belong to.
@@ -24,32 +22,12 @@ All the newly registered users get roles and notification rules inherited from t
 
 The [Guest User](guest-user.md) does not belong to the All Users group so roles and notification rules can be managed for the user separately.
 
- 
-
- 
-
  __  __
 
 __See also:__
 
-
-
-__Concepts__: [User Account](user-account.md) | [Role and Permission](role-and-permission.md)
-
+__Concepts__: [User Account](user-account.md) | [Role and Permission](role-and-permission.md)   
 __Administrator's Guide__: [Managing User Accounts, Groups and Permissions](managing-user-accounts-groups-and-permissions.md)
-
- 
-
- 
-
- 
-
- 
-
- 
 
 
 [//]: # (Internal note. Do not delete. "User Groupd338e93.txt")    
-
-
-

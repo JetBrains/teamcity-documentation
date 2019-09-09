@@ -296,14 +296,9 @@ If checked, in the first place TeamCity will run tests failed in previous finish
 
 To learn about configuring code coverage options, refer to the [Configuring .NET Code Coverage](configuring-.net-code-coverage.md) page.
 
-
-
 __ __
 
 __See also:__
 
-
-
-__Concepts__: [Build Runner](build-runner.md) | [Build Checkout Directory](build-checkout-directory.md) | [Build Working Directory](build-working-directory.md)
-
+__Concepts__: [Build Runner](build-runner.md) | [Build Checkout Directory](build-checkout-directory.md) | [Build Working Directory](build-working-directory.md)   
 __Administrator's Guide__: [Configuring Build Parameters](configuring-build-parameters.md)

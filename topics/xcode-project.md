@@ -353,8 +353,6 @@ Other command line parameters to be passed to the `xcodebuild` utility.
 </td></tr></table>
 
 
-
-
 __  __
 
 __See also:__

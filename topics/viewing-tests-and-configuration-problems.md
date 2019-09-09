@@ -86,12 +86,9 @@ __Since TeamCity 2019.1__, Investigation Auto Assigner can [delay automatic assi
 
 Note that if [branches](working-with-feature-branches.md#Configuring+branches) are configured for a VCS Root, flaky tests are detected for the default branch only.
 
- 
-
 __  __
 
 __See also:__
 
-__Concepts__: [Testing Frameworks](testing-frameworks.md)
-
+__Concepts__: [Testing Frameworks](testing-frameworks.md)   
 __User's Guide__: [Working with Build Results](working-with-build-results.md)

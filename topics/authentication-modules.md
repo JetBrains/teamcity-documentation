@@ -30,7 +30,5 @@ __  __
 
 __See also:__
 
-
-__Administrator's Guide__: [Accessing Server by HTTP](accessing-server-by-http.md) | [LDAP Integration](ldap-integration.md) | [Configuring Authentication Settings](configuring-authentication-settings.md) 
-
+__Administrator's Guide__: [Accessing Server by HTTP](accessing-server-by-http.md) | [LDAP Integration](ldap-integration.md) | [Configuring Authentication Settings](configuring-authentication-settings.md)    
 __Developing TeamCity Plugins__: [Custom Authentication Module](https://plugins.jetbrains.com/docs/teamcity/custom-authentication-module.html)

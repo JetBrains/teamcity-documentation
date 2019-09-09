@@ -52,13 +52,8 @@ Automatic detection of Mono framework under Unix has the following specifics:
 You can force Mono to be detected from a custom location by adding the `PREFIX/bin` directory to the beginning of the `PATH` and updating `PKG_CONFIG_PATH` (described in `pkg-config(1)`) with `PREFIX/lib/pkgconfig.`
 
  
-
- 
-
 __  __
 
 __See also:__
-
-
 
 __Administrator's Guide__: [NAnt](nant.md) | [MSBuild](msbuild.md) | [NuGet](nuget.md)

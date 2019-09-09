@@ -12,9 +12,6 @@ On this page:
 
 [//]: # (Internal note. Do not delete. "Favorite Buildd142e4.txt")    
 
-
-
-
 ## Adding Builds to Favorites
 
 To manually add a build to your favorites, use the appropriate option from the __Actions__ menu on the [Build Results](working-with-build-results.md) page. Your favorite build will be marked with a star symbol ![star_filled.png](star_filled.png).

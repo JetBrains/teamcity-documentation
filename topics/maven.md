@@ -393,6 +393,5 @@ __See also:__
 
 
 
-__Concepts__: [Build Runner](build-runner.md)  
-
+__Concepts__: [Build Runner](build-runner.md)    
 __Administrator's Guide__: [Maven Artifact Dependency Trigger](configuring-maven-triggers.md) | [Creating Maven Build Configuration](creating-and-editing-build-configurations.md)

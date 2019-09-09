@@ -46,14 +46,9 @@ The Legacy version of the TeamCity VS Add\-in for Visual Studio versions from 20
 
 See the [Supported Platforms and Environment](supported-platforms-and-environments.md#IDE+Integration) page for the system requirements to configure integration with different version control systems or coverage tools.
 
-
-
 __  __
 
 __See also:__
 
-
-
-__Related blog post__: [TeamCity plugin for Visual Studio@TeamCity blog](http://blogs.jetbrains.com/teamcity/2013/03/13/teamcity-plugin-for-visual-studio/)
-
+__Related blog post__: [TeamCity plugin for Visual Studio@TeamCity blog](http://blogs.jetbrains.com/teamcity/2013/03/13/teamcity-plugin-for-visual-studio/)   
 __Troubleshooting__: [TeamCity Visual Studio Add-in issues](reporting-issues.md)

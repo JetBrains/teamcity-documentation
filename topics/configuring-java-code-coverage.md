@@ -12,6 +12,5 @@ __ __
 __See also:__
 
 
-__Concepts__: [Code Coverage](code-coverage.md)
-
+__Concepts__: [Code Coverage](code-coverage.md)   
 __Administrator's Guide__: [IntelliJ IDEA](intellij-idea.md) | [EMMA](emma.md)

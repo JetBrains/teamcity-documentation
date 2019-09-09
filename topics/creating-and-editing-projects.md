@@ -318,10 +318,6 @@ When you delete a project, TeamCity will remove its .xml configuration files. Af
 
 The \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/ directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects. 
 
- 
-
- 
-
 <tip>
 
 If you attempt to delete a project with [dependent build configurations](dependent-build.md) from other projects, TeamCity will warn you about it. If you proceed with the deletion, the dependencies will no longer function.
@@ -330,7 +326,5 @@ If you attempt to delete a project with [dependent build configurations](depende
  __  __
 
 __See also:__
-
-
 
 __Administrator's Guide__: [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md) 

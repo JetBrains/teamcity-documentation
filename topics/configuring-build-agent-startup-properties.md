@@ -70,12 +70,9 @@ Make sure to renumber all lines after the inserted ones.
 [//]: # (Internal note. Do not delete. "Configuring Build Agent Startup Propertiesd71e106.txt")    
 
 
-
-
 __  __
 
 __See also:__
 
-__Concepts__: [Agent Home Directory](agent-home-directory.md)  
-
+__Concepts__: [Agent Home Directory](agent-home-directory.md)   
 __Administrator's Guide__: [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md)

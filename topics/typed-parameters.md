@@ -171,24 +171,8 @@ If you start editing a parameter that has a specification, you can see a link to
 
 You can also view/edit typed parameters specification via [REST API](rest-api.md#Typed+Parameters+Specification).
 
-
-
  __  __
 
 __See also:__
 
-
-
 __Administrator's Guide__: [Configuring Build Parameters](configuring-build-parameters.md) | [Defining and Using Build Parameters in Build Configuration](configuring-build-parameters.md) | [Predefined Build Parameters](predefined-build-parameters.md)
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 

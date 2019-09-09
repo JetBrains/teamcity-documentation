@@ -104,24 +104,6 @@ Typically, an agent upgrade happens when:
 __See also:__
 
 
-__Concepts__: [Build Grid](build-grid.md) | [Agent Work Directory](agent-work-directory.md) | [Role and Permission](role-and-permission.md) 
-
-__Installation and Upgrade__: [Installing and Running Build Agents](installation.md) | [Setting up and Running Additional Build Agents](setting-up-and-running-additional-build-agents.md) |  
-
+__Concepts__: [Build Grid](build-grid.md) | [Agent Work Directory](agent-work-directory.md) | [Role and Permission](role-and-permission.md)   
+__Installation and Upgrade__: [Installing and Running Build Agents](installation.md) | [Setting up and Running Additional Build Agents](setting-up-and-running-additional-build-agents.md)   
 __Administrator's Guide__: [Agent Pools](agent-pools.md) | [Assigning Build Configurations to Specific Build Agents](assigning-build-configurations-to-specific-build-agents.md) | [Licensing Policy](licensing-policy.md)
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 

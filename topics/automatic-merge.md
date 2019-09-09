@@ -96,8 +96,6 @@ Choose when to merge:
 It is possible to define a cascade of merge operations by adding several such build features to a build configuration.
 
 For example, you want to automatically merge all feature branches into an `integration` branch, and then configure another merge from the `integration` to the default branch. To achieve this, you can add two _Automatic Merge_ build features: one watching `+:feature-*` branches and merging into `integration` branch and the second watching `+:integration` branch and merging into `default` branch. The build configuration should then allow for building `feature-*` and `integration` branches.
-
-
     
 See also a related [TeamCity blog post](http://blog.jetbrains.com/teamcity/2013/10/automatic-merge/).
 

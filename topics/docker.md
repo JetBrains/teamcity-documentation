@@ -232,7 +232,3 @@ We recommend removing (or commenting out) the `Defaults requiretty` line from th
 
 </chunk>
  
-
- 
-
- 

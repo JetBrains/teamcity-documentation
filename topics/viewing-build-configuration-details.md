@@ -33,26 +33,17 @@ Provides information on:
 
 Displays [Build History](build-history.md) on a separate page and allows filtering builds by build agents, [tagging builds](build-tag.md) and filtering them by tags (if available).
 
-
-
 ## Change Log
-
 
 By default, lists changes from builds finished during the last 14 active days. Use the show all link to view the complete change log.
 
 The page shows the change log with its graph of commits to the [monitored branches](working-with-feature-branches.md#Changes) of all VCS repositories used by the current build configurations and the repositories used by the [dependencies and dependent configurations](dependent-build.md) of the current configuration.
 
-
-
 ## Statistics
-
 
 Displays the collected statistical data as [visual charts](statistic-charts.md#Build+Configuration+Statistics).
 
-
-
 ## Compatible Agents
-
 
 Lists all authorized agents. Agents meeting [Agent Requirements](agent-requirements.md) are listed as compatible. For each incompatible agent, the reason is provided.   
 The agents belonging to the [pool(s)](agent-pools.md) associated with the current project are listed first. 
@@ -61,10 +52,7 @@ The agents belonging to the [pool(s)](agent-pools.md) associated with the curren
 
 ## Pending Changes
 
-
 Lists [changes](change-state.md) waiting to be included in the next build on a separate page.
-
-
 
 ## Settings
 

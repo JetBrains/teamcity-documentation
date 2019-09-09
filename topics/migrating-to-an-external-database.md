@@ -108,4 +108,4 @@ __See also:__
 
 __Installation and Upgrade__: [Common database-related problems](common-problems.md) | [Setting up an External Database](setting-up-an-external-database.md)  
 __Concepts__: [TeamCity Data Directory](teamcity-data-directory.md)  
-__Administrator's Guide__: [TeamCity Data Backup](teamcity-data-backup.md)  
+__Administrator's Guide__: [TeamCity Data Backup](teamcity-data-backup.md)

@@ -65,6 +65,4 @@ If your build configuration has more than one VCS root which support branch remo
 
 __See also:__
 
-
-
 __Administrator's Guide__: [Git](git.md) | [Mercurial](mercurial.md)

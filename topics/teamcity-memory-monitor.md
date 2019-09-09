@@ -34,15 +34,10 @@ Several [internal properties](configuring-teamcity-server-startup-properties.md#
 
 [//]: # (Internal note. Do not delete. "TeamCity Memory Monitord317e56.txt")    
 
-
- 
-
 __  __
 
 __See also:__
 
 
-
-__Reporting Issues__: [Out Of Memory Problems](reporting-issues.md)
-
+__Reporting Issues__: [Out Of Memory Problems](reporting-issues.md)   
 __Increasing Server Memory__: [Installing and Configuring the TeamCity Server](installing-and-configuring-the-teamcity-server.md)

@@ -217,15 +217,11 @@ When TeamCity starts a build process, the following precedence of the build para
 
 The resultant set of parameters is also saved into a file which can be accessed by the build script. See `teamcity.build.properties.file` system property or `TEAMCITY_BUILD_PROPERTIES_FILE` environment variable description in [Predefined Build Parameters](predefined-build-parameters.md) for details.
 
-
-
  __  __
  
 __See also:__
 
 __Administrator's Guide__: [Project and Agent Level Build Parameters](project-and-agent-level-build-parameters.md) | [Predefined Build Parameters](predefined-build-parameters.md) | [Configuring Agent Requirements](configuring-agent-requirements.md) 
-
-
 
 
 [//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e417.txt")    

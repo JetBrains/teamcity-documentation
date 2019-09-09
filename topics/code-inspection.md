@@ -15,7 +15,5 @@ TeamCity can also [be integrated with external reporting tools](how-to.md#Integr
 __See also:__
 
 
-
-__Concepts__: [Build Runner](build-runner.md) 
- 
+__Concepts__: [Build Runner](build-runner.md)   
 __Administrator's Guide__: [Inspections (IntelliJ IDEA)](inspections.md) | [Inspections (ReSharper)](inspections-resharper.md)

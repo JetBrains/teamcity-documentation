@@ -170,6 +170,5 @@ __  __
 
 __See also:__
 
-__Concepts__: [Build Runner](build-runner.md) | [Build Checkout Directory](build-checkout-directory.md)
-
+__Concepts__: [Build Runner](build-runner.md) | [Build Checkout Directory](build-checkout-directory.md)   
 __Administrator's Guide__: [NUnit for MSBuild](nunit-for-msbuild.md) | [MSBuild Service Tasks](msbuild-service-tasks.md)

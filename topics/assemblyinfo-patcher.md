@@ -15,6 +15,3 @@ Note that this feature will work only for standard projects, i.e. created by mea
 For replacing a wider range of values in a larger number of files, consider using the [File Content Replacer](file-content-replacer.md) build feature.
 </note>
 
- 
-
- 

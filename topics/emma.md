@@ -102,20 +102,14 @@ The corresponding `emma.jar` file can be taken from `buildAgent/plugins/coverage
 
 To exclude classes from compilation, use settings for EMMA instrumentation task. TeamCity UI has a field to pass these parameters to EMMA, labeled "Coverage instrumentation parameters". To exclude some package from instrumenting, use the following syntax: `-ix -com.foo.task.*,+com.foo.*,-*Test*`, where the package `com.foo.task.*` contains files for your custom task.
 
-
-
 #### EMMA coverage results are unstable
 
 Please make sure that your junit task has the `fork=true` attribute. The recommended combination of attributes is "`fork=true forkmode=once`".
-
-
 
  __  __
  
 __See also:__
 
 
-
-__Concepts__: [Build Runner](build-runner.md) | [Code Coverage](code-coverage.md)
-
+__Concepts__: [Build Runner](build-runner.md) | [Code Coverage](code-coverage.md)   
 __Administrator's Guide__: [Configuring Java Code Coverage](configuring-java-code-coverage.md) | [IntelliJ IDEA](intellij-idea.md)

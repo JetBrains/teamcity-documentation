@@ -32,12 +32,9 @@ You will find this feature helpful in:
 * locating and eliminating the gap between the most frequently used computers and those which are often idle
 * reducing the cost of your hardware resources ownership
 
-
-
 __  __
 
 __See also:__
 
-__Concepts__: [Build Agent](build-agent.md)
-
+__Concepts__: [Build Agent](build-agent.md)   
 __Installation and Upgrade__: [Installing and Running Additional Build Agents](installation.md)

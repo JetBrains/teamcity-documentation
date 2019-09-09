@@ -29,6 +29,5 @@ __See also:__
 
 
 
-__Concepts__: [Build Agent](build-agent.md) | [Build Configuration](build-configuration.md)
-
+__Concepts__: [Build Agent](build-agent.md) | [Build Configuration](build-configuration.md)   
 __Administrator's Guide__: [Assigning Build Configurations to Specific Build Agents](assigning-build-configurations-to-specific-build-agents.md) | [Configuring Build Agent Startup Properties](configuring-build-agent-startup-properties.md) | [Configuring Build Parameters](configuring-build-parameters.md) | [Configuring Agent Requirements](configuring-agent-requirements.md) 

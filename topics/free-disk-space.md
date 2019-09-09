@@ -91,9 +91,7 @@ A TeamCity build agent maintains a cache of published and downloaded build artif
 If caching artifacts is undesirable (for example, when the artifacts are large and not used within TeamCity, or if the artifacts cache directory is located not on the same disk as the build checkout directory, or if the builds do not define the _Free disk space_ build feature and the default 3Gb is not sufficient for a build), caching artifacts on the agent can be __turned off__ by adding the `teamcity.agent.filecache.publishing.disabled=true` configuration parameter to a project or one of the build configurations of a project. However, the agent will still cache artifacts downloaded as artifact dependencies.
 
 
-[//]: # (Internal note. Do not delete. "Free disk spaced145e166.txt")    
-
- 
+[//]: # (Internal note. Do not delete. "Free disk spaced145e166.txt")
 
  __  __
 

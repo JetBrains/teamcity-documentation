@@ -47,10 +47,6 @@ Any of these steps may solve your issue. Feel free to leave feedback of you expe
 	
 * Specify the `VCBuildAdditionalOptions` property with value `/useenv` in the build configuration settings to instruct msbuild to add the `/useenv` commandline argument for spawned vcbuild processes.
 
-
-
-
-
 __ __
  
  __See also:__

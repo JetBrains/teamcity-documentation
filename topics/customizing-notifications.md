@@ -224,6 +224,4 @@ See the default template for an example of available input variables and output 
 
 __See also:__
 
-
-
 __User's Guide__: [Subscribing to Notifications](subscribing-to-notifications.md)

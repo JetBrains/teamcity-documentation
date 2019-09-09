@@ -71,8 +71,6 @@ All additional information on how to work with the TeamCity plugin is available 
 3. Set "Check for updates" to "Daily".
 4. Press __Apply__, then __Check Now__.
 
-
-
 __  __
  
 __See also:__

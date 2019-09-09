@@ -265,7 +265,5 @@ The change was integrated into a personal build that failed.
 __See also:__
 
 
-
-__Concepts__: [Build Configuration Status](build-configuration.md) | [Build State](build-state.md) | [Change](change.md)  
-
+__Concepts__: [Build Configuration Status](build-configuration.md) | [Build State](build-state.md) | [Change](change.md)   
 __User's Guide__: [Viewing Your Changes](viewing-your-changes.md)

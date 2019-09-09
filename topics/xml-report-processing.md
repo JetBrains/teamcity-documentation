@@ -52,8 +52,6 @@ TeamCity loads generated reports once when they are created: make sure your buil
 
 See plugin page at [XML Test Reporting](https://plugins.jetbrains.com/plugin/8908-xml-test-reporting).
 
-
-
 __  __
 
 __See also:__

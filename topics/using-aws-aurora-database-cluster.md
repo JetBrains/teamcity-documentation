@@ -45,8 +45,6 @@ The following options may affect your TeamCity server performance.
 
 Configure the database connection pool to use a special validation query, so that the connections to the DB instance are tested before and/or after use and if a connection to the read\-only database is detected, they are evicted from the pool.
 1. Add the following lines to the `<TeamCity Data Directory>/config/` [file](setting-up-an-external-database.md#Database+Configuration+Properties):
-
-
     ```Shell
     testOnBorrow=true
     testOnReturn=true
@@ -55,14 +53,9 @@ Configure the database connection pool to use a special validation query, so tha
     validationQuery=select case when @@read_only + @@innodb_read_only \= 0 then 1 else (select table_name from information_schema.tables) end as `1`
     
     ```
-
-
-
 2. Restart TeamCity. Once you do that, the following SQL query:
-
-
     ```Shell
     
     select case when @@read_only + @@innodb_read_only = 0 then 1 else (select table_name from information_schema.tables) end as `1`
     ```
-will be executed for all connections whenever they are borrowed from or returned to the pool, and also every 1 minute (60000 milliseconds) for idle connections, raising [error 1242 (ER_SUBSELECT_NO_1_ROW )](https://dev.mysql.com/doc/refman/5.6/en/subquery-errors.html) for each connection to the read\-only database.
+   will be executed for all connections whenever they are borrowed from or returned to the pool, and also every 1 minute (60000 milliseconds) for idle connections, raising [error 1242 (ER_SUBSELECT_NO_1_ROW )](https://dev.mysql.com/doc/refman/5.6/en/subquery-errors.html) for each connection to the read\-only database.

@@ -158,11 +158,7 @@ An example with three VCS checkout rules:
 +:src/samples=>./samples
 ```
 
-
-
 In the above example, the first rule excludes the `src/help` directory and its contents from checkout. The third rule is more specific than the second rule and maps the `src/samples` path to the `samples` path in the build agent's default work directory. The second rule maps the contents of the `src` path to the `production/sources` on the build agent, except `src/help` which was excluded by the first rule and `src/samples` which was mapped to a different location by the third rule.
-
-
 
  __  __
 

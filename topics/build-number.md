@@ -8,8 +8,6 @@ This number is displayed in the UI and passed into the build as a [Predefined Bu
 
 A build number can be:
 
-
-	
 * [Used to download artifacts](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts) 	
 * [Referenced as a property](predefined-build-parameters.md)
 * [Shared for builds connected by a dependency](how-to.md#Share+the+Build+number+for+Builds+in+a+Chain+Build)	
@@ -17,13 +15,8 @@ A build number can be:
 * [Set with help of service messages](build-script-interaction-with-teamcity.md#Reporting+Build+Number)
 
 
-
-
-
  __  __
 
 __See also:__
-
-
 
 __Administrator's Guide__: [Configuring General Settings](configuring-general-settings.md)

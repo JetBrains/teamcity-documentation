@@ -104,6 +104,5 @@ More details are available in the [related blog-post](http://blog.jetbrains.com/
 __See also:__
 
 
-__Concepts__: [Build Queue](build-queue.md) | [Dependent Build](dependent-build.md) | [Personal Build](personal-build.md)
-
+__Concepts__: [Build Queue](build-queue.md) | [Dependent Build](dependent-build.md) | [Personal Build](personal-build.md)   
 __Administrator's Guide__: [Configuring Build Triggers](configuring-build-triggers.md)

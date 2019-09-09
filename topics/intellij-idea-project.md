@@ -570,8 +570,6 @@ Ant and Build Artifacts tasks specified in the [Before launch](https://www.jetbr
 
 Specify code coverage options, for the details, refer to [IntelliJ IDEA Code Coverage](intellij-idea.md) page.
 
-
-
 __  __
 
 __See also:__

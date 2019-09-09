@@ -239,8 +239,5 @@ __  __
 
 __See also:__
 
-
-
-__Concepts__: [TeamCity Data Directory](teamcity-data-directory.md)
-
+__Concepts__: [TeamCity Data Directory](teamcity-data-directory.md)   
 __Administrator's Guide__: [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) | [TeamCity Data Backup](teamcity-data-backup.md)

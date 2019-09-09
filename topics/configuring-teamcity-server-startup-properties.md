@@ -48,6 +48,5 @@ Make sure the environment variables are set for the user whose account is used t
 __See also:__
 
 
-__Concepts__: [TeamCity Data Directory](teamcity-data-directory.md)  
-
+__Concepts__: [TeamCity Data Directory](teamcity-data-directory.md)    
 __Administrator's Guide__: [Configuring Build Agent Startup Properties](configuring-build-agent-startup-properties.md) 

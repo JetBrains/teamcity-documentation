@@ -135,6 +135,5 @@ __  __
 __See also:__
 
 
-__Concepts__: [Build Runner](build-runner.md) | [Build Checkout Directory](build-checkout-directory.md) | [Build Working Directory](build-working-directory.md) 
-  
+__Concepts__: [Build Runner](build-runner.md) | [Build Checkout Directory](build-checkout-directory.md) | [Build Working Directory](build-working-directory.md)   
 __Administrator's Guide__: [Configuring Build Steps](configuring-build-steps.md)

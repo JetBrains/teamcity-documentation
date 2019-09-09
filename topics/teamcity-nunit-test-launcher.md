@@ -302,16 +302,12 @@ Run tests from an assembly with NUnit categories filter
 
 ```
 
-
-
 Run tests from assemblies:
 
 ```Shell
 %teamcity.dotnet.nunitlauncher% v2.0 x64 NUnit-2.5.0 /addin:Addin1.dll;Addin2.dll Assembly.dll Assebly2.dll
 
 ```
-
-
 
 [//]: # (Internal note. Do not delete. "TeamCity NUnit Test Launcherd319e337.txt")    
 

@@ -14,13 +14,10 @@ In this tutorial:
 <tag-list of="chapter" mode="tree" depth="4"/>
 
 
-
 ## Configuration Transforms
 
 
-
 ![01-aside.png](01-aside.png)
-
 
 
 One of the things that typically have to happen during deployment is making changes to the configuration. Changing the database connection string, changing ASP.NET settings to no longer show us YSOD's and so on. Don't hard\-code these things or write a big if\-else statement based on the server's hostname to figure out the configuration. Instead, use something like configuration transforms.
@@ -402,10 +399,6 @@ For a build configuration with snapshot dependencies, we can enable showing of c
 
 ## Conclusion
 
-
-
 By thinking of a deployment as a chain of builds, doing deployments from TeamCity is not too hard. In this tutorial, we've used WebDeploy as an example means of transferring build artifacts to a target environment, but this could also have been another solution (like xcopy).
-
-
 
 Using VCS labeling, it's also possible to label sources when a specific deployment happens. By pinning builds (optionally through the TeamCity API), we can make sure that build cleanup does not remove certain builds and artifacts.

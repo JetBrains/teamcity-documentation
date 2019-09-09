@@ -256,6 +256,5 @@ __See also:__
 
 
 
-__Concepts__: [Build Agent](build-agent.md) 
-
+__Concepts__: [Build Agent](build-agent.md)   
 __Licensing__: [Licensing &amp; Upgrade](http://www.jetbrains.com/teamcity/buy/index.html)

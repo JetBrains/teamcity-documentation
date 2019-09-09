@@ -24,6 +24,4 @@ If you need to dearchive a project, you can do it using the __Actions__ menu in 
 
 __See also:__
 
-
-
 __Concepts__: [Project](project.md) | [Build Configuration](build-configuration.md)

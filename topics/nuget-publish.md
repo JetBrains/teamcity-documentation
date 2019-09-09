@@ -124,6 +124,4 @@ Enter additional parameters to use when calling the `nuget push` command.
 
 __See also:__
 
-
-
 __Administrator's Guide__: [NuGet Installer](nuget-installer.md) | [NuGet Pack](nuget-pack.md)

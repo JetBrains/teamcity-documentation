@@ -51,15 +51,10 @@ For each failed test, you can monitor a lot of information instantly, without le
 
 The investigations assigned to you are also highlighted in the Web UI if you enable the "_Highlight my changes and investigations_" option in your [profile settings](managing-your-user-account.md).
 
-
-
-
 __  __
 
 __See also:__
 
 
-
-__Concepts__: [Build Configuration Status](build-configuration.md) | [Muting Test Failures](muting-test-failures.md)
-
+__Concepts__: [Build Configuration Status](build-configuration.md) | [Muting Test Failures](muting-test-failures.md)   
 __User's Guide__: [Viewing Tests and Configuration Problems](viewing-tests-and-configuration-problems.md)

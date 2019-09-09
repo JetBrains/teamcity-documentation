@@ -107,6 +107,5 @@ __  __
 
 __See also:__
 
-__Concepts__: [Build Agent](build-agent.md)  
-
+__Concepts__: [Build Agent](build-agent.md)   
 __Administrator's Guide__: [Predefined Build Parameters](predefined-build-parameters.md) | [Configuring Agent Requirements](configuring-agent-requirements.md) | [Configuring Build Parameters](configuring-build-parameters.md)

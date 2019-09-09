@@ -109,8 +109,6 @@ The __History__ tab of the __Administration | Backup__ page  allows reviewing th
 
 __See also:__
 
-__Installation and Upgrade__: [Upgrade](upgrade.md) 
-
-__Concepts__: [TeamCity Data Directory](teamcity-data-directory.md)  
-
+__Installation and Upgrade__: [Upgrade](upgrade.md)   
+__Concepts__: [TeamCity Data Directory](teamcity-data-directory.md)   
 __Administrator's Guide__: [TeamCity Data Backup](teamcity-data-backup.md)

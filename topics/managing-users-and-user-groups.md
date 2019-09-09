@@ -121,6 +121,4 @@ On the __Users__ page, select users, click the __Add to groups__ button at the b
 
 __See also:__
 
-
-
 __Concepts__: [User Account](user-account.md) | [User Group](user-group.md) | [Role and Permission](role-and-permission.md)

@@ -85,7 +85,6 @@ __  __
 
 __See also:__
 
-__Concepts__: [Build Artifact](build-artifact.md) | [Build Dependencies Setup](build-dependencies-setup.md) 
-
+__Concepts__: [Build Artifact](build-artifact.md) | [Build Dependencies Setup](build-dependencies-setup.md)   
 __Administrator's Guide__: [Configuring Dependencies](configuring-dependencies.md)
 

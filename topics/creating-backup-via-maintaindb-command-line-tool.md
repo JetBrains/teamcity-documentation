@@ -107,5 +107,4 @@ If you customize TeamCity server startup options via `TEAMCITY_SERVER_OPTS/TEAMC
 __See also:__
 
 
-
 __Installation and Upgrade__: [Setting up an External Database](setting-up-an-external-database.md) | [Migrating to an External Database](migrating-to-an-external-database.md) 

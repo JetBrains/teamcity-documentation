@@ -1123,6 +1123,5 @@ __\+__
 __Notes:__   
 \* – Plugin from version 2017.2 could be used
 
- 
 
 [More information](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html) about the IntelliJ Platform versions and IDE's (PhpStorm, RubyMine, and so on) versions.

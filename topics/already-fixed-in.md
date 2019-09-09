@@ -16,8 +16,6 @@ This is the build where this initially failed test was successful and which was 
 
 So, if you run [History Build](history-build.md), TeamCity won't consider it as a candidate for "Already Fixed In" for test failures in later builds (in term of changes).
 
-
-
 Tests are considered the same when they have the same name. If there are several tests with the same name within the build, TeamCity counts order number of the test with the same name and considers it as well. 
 
 Note that __since TeamCity 9.0__, the way TeamCity counts tests [Hajipur 9.0 EAP1 (build 31423) Release Notes](http://confluence.jetbrains.com/TW/Hajipur+9.0+EAP1+(build+31423)+Release+Notes).

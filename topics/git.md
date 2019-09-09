@@ -1015,6 +1015,4 @@ __  __
 
 __See also:__
 
-
-
 __Administrator's Guide__: [Branch Remote Run Trigger](branch-remote-run-trigger.md)

@@ -71,6 +71,5 @@ __  __
 
 __See also:__
 
-__Concepts__: [Build Agent](build-agent.md) | [Run Configuration Policy](run-configuration-policy.md) 
-
+__Concepts__: [Build Agent](build-agent.md) | [Run Configuration Policy](run-configuration-policy.md)   
 __Installation and Upgrade__: [Installing and Running Additional Build Agents](installation.md)

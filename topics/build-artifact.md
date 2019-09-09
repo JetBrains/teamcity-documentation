@@ -48,6 +48,5 @@ __  __
 __See also:__
 
 
-__Concepts__: [Dependent Build](dependent-build.md)  
-
+__Concepts__: [Dependent Build](dependent-build.md)   
 __Administrator's Guide__: [Configuring General Settings](configuring-general-settings.md) | [Configuring Dependencies](configuring-dependencies.md) | [Patterns For Accessing Build Artifacts](patterns-for-accessing-build-artifacts.md) 

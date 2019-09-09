@@ -9,7 +9,6 @@ Build tags are labels that can help you to:
 You can assign any number of tags for a single build, for example, "EAP" or "release" using the __Edit tags__ dialog by entering several tags separated by a space, comma, semi\-colon, and so on.
 
 Clicking a tag filters out all builds in the history: only the builds marked with the tag are displayed. Additionally, you can search for builds with particular tags using the [search field](search.md).
-
  
 
 __To tag a build:__
@@ -33,6 +32,4 @@ The TeamCity Web UI provides the following ways to tag a particular build:
 
 
 [//]: # (Internal note. Do not delete. "Build Tagd46e113.txt")    
-
-
 

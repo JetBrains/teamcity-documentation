@@ -67,16 +67,7 @@ To configure code coverage  using IntelliJ IDEA engine, follow these steps:
 </td></tr></table>
 
 
-
-
-
-
-
-
 __See also:__
 
-
-
-__Concepts__: [Build Runner](build-runner.md) | [Code Coverage](code-coverage.md)
-
+__Concepts__: [Build Runner](build-runner.md) | [Code Coverage](code-coverage.md)   
 __Administrator's Guide__: [Configuring Java Code Coverage](configuring-java-code-coverage.md) | [EMMA](emma.md)

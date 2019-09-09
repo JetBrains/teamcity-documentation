@@ -310,16 +310,11 @@ For each Maven build the TeamCity agent gathers Maven specific build details, wh
 
 In the URL of the build result page you can find the parameter `buildId` with a numeric value. This number is internal build id uniquely identifying the build in the TeamCity installation. You might need this ID when constructing URL manually. For example for [REST API](rest-api.md), [downloading artifacts](patterns-for-accessing-build-artifacts.md).
 
-
-
-
 __  __
 
 __See also:__
 
 
 __Concepts__: [Build Log](build-log.md) | [Build Artifact](build-artifact.md) | [Change](change.md) | [Code Coverage](code-coverage.md)    
-
 __User's Guide__: [Investigating and Muting Build Problems](investigating-and-muting-build-problems.md) | [Viewing Tests and Configuration Problems](viewing-tests-and-configuration-problems.md)   
- 
 __Administrator's Guide__: [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md)

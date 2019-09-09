@@ -6,16 +6,11 @@ This is the build where TeamCity detected the first failure of this test for the
 
 "Back throughout the history" means that builds are analyzed with regard to changes as detected by TeamCity, i.e. [History Build](history-build.md)s will be processed correctly.
 
-A test which is run several times within a single build is counted as one test (i.e. all invocations of the same test are counted as 1). 
-
-
-
+A test which is run several times within a single build is counted as one test (i.e. all invocations of the same test are counted as 1).
 
 
 __  __
 
 __See also:__
-
-
 
 __Concepts__: [Already Fixed In](already-fixed-in.md)

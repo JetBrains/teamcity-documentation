@@ -21,6 +21,4 @@ You can also configure roles and permissions using the `roles-config.xml` file s
 
 __See also:__
 
-
-
 __Concepts__: [Role and Permission](role-and-permission.md)

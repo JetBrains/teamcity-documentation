@@ -362,8 +362,6 @@ Out-of-the-box TeamCity server installation is suitable for evaluation purposes.
 Make sure to review the [notes on configuring the server for performance](how-to.md#Configuring+TeamCity+Server+for+Performance) and [security notes](how-to.md#TeamCity+Security+Notes).
 
 
-
-
 __  __
 
 __See also:__

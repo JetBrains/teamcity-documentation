@@ -107,8 +107,6 @@ clean-up rules are applied separately for the non\-personal builds and then for 
 
 When a project or a build configuration is deleted, the corresponding builds data is removed during the cleanup, but only if 5 days (432, 000 seconds) have passed since the deletion. To change the timeout, set the `teamcity.deletedBuildTypes.cleanupTimeout` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to the required number of seconds to protect the data from deletion.
 
-
-
  __  __
  
 __See also:__

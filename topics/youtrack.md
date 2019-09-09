@@ -20,8 +20,5 @@ To use these features, [configure YouTrack](https://www.jetbrains.com/help/youtr
 
 __See also:__
 
-
-
-__Concepts__: [Supported Issue Trackers](supported-platforms-and-environments.md)  
-
+__Concepts__: [Supported Issue Trackers](supported-platforms-and-environments.md)   
 __Administrator's Guide__: [Integrating TeamCity with Issue Tracker](integrating-teamcity-with-issue-tracker.md)

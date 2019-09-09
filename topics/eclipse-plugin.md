@@ -48,8 +48,6 @@ __To install the TeamCity plugin for Eclipse:__
 7. Click __Next__ and follow the installation instructions.
 For detailed instructions on how to work with the plugin, refer to the TeamCity section of the Eclipse help system after the plugin installation.
 
-
-
 __  __
 
 __See also:__

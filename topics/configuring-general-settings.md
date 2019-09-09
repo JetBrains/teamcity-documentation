@@ -375,6 +375,4 @@ Specify the number of builds of the same configuration that can run simultaneous
 
 __See also:__
 
-
-
 __Concepts__: [Build Configuration ](build-configuration.md)

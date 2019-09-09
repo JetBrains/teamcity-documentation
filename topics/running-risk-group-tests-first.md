@@ -102,14 +102,9 @@ If risk tests reordering option is enabled, the feature for NUnit test runner wo
 * Tests reordering feature applies to an NUnit task. That is, for NAnt and MSBuild runners, tests reordering feature will be initiated as many times as many NUnit tasks you have in your build script.
 </note>
 
-
-
  __  __
 
 __See also:__
 
-
-
-__Concepts__: [Build Runner](build-runner.md)
-
+__Concepts__: [Build Runner](build-runner.md)   
 __Developing TeamCity Plugins__: [Risk Tests Reordering in Custom Test Runner](https://plugins.jetbrains.com/docs/teamcity/risk-tests-reordering-in-custom-test-runner.html)

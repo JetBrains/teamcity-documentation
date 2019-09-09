@@ -276,8 +276,6 @@ If checked, in the first place TeamCity will run tests failed in previous finish
 
 </td></tr></table>
 
-
-
 __  __
 
 __See also:__

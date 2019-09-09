@@ -46,6 +46,5 @@ If you see this screen when [settings up TeamCity with an external database](set
 __See also:__
 
 
-
-__Installation and Upgrade__: [Upgrade](upgrade.md)  
+__Installation and Upgrade__: [Upgrade](upgrade.md)   
 __Administrator's Guide__: [TeamCity Data Backup](teamcity-data-backup.md)

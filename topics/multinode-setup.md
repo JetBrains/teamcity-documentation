@@ -34,8 +34,6 @@ The typical data directory mounting options are SMB and NFS. TeamCity uses the d
 
 We recommend tuning storage and network performance: make sure to review performance guidelines for your storage solution. For example, increasing MTU for the network connection between the server and the storage usually increases the artifacts transferring speed.
 
-
-
 Note that on Windows, a node might not be able to access the TeamCity data directory via a mapped network drive if TeamCity is running as a service. This happens because Windows services cannot work with mapped network drives, and TeamCity does not support the UNC format (`\\host\directory`) for the data directory path. To workaround this problem, you can use `mklink` as it allows making a symbolic link on a network drive:
 
 ```Plain Text
@@ -122,8 +120,6 @@ To upgrade nodes in a multinode setup, follow these steps:
 5. Upgrade the TeamCity installation on the secondary nodes to the same version.
 6. Start the secondary nodes and check that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main server.
 
-   
-      
       
 To __downgrade__ nodes in a multinode setup, follow these steps:
 

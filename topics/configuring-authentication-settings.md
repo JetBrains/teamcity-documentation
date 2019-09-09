@@ -162,9 +162,6 @@ For information on configuring Basic HTTP Authentication directly in the `<`[`Te
 Please refer to the [dedicated page](ntlm-http-authentication.md).
 
 
-
-
-
  __  __
 
 __See also:__

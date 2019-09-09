@@ -7,5 +7,4 @@ The build grid employs currently\-unused resources from multiple computers, any 
 
 __See also:__
 
-
 __Concepts__: [Build Agents](build-agent.md) | [Build Queue](build-queue.md)

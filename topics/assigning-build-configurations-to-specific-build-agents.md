@@ -51,8 +51,5 @@ You can also use the condition __contains__, however, it may include more than o
  
 __See also:__
 
-
-
-__Concepts__: [Build Agent](build-agent.md) | [Agent Requirements](agent-requirements.md) | [Run Configuration Policy](run-configuration-policy.md)   
-
+__Concepts__: [Build Agent](build-agent.md) | [Agent Requirements](agent-requirements.md) | [Run Configuration Policy](run-configuration-policy.md)    
 __Administrator's Guide__: [Triggering a Custom Build](triggering-a-custom-build.md)

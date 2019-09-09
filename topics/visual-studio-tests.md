@@ -399,12 +399,3 @@ If you need to generate your results file in the checkout directory, consider ad
 
 </td></tr></table>
 
- 
-
- 
-
- 
-
- 
-
- 

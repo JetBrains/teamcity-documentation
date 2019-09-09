@@ -11,8 +11,6 @@ When setting up [integration](integrating-teamcity-with-issue-tracker.md#Enablin
 For Bitbucket Cloud team accounts, it is possible to use the team name as the username, and the [API key](https://developer.atlassian.com/bitbucket/api/2/reference/meta/authentication#api-key) as the password.
 </tip>
 
- 
-
 ## Authentication
 
 TeamCity allows you to select whether you want to connect to Bitbucket  issue tracker anonymously or to be authenticated via username/password.

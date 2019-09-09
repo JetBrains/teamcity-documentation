@@ -317,5 +317,3 @@ An example of a complete service message:
 ##teamcity[jacocoReport dataPath='jacoco.exec' includes='com.package.core.*' classpath='classes/lib/some.jar' reportDir='temp/jacocoReport']
 
 ```
-
-

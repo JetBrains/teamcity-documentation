@@ -171,11 +171,7 @@ Note that if you select checkout by label or promotion state, change detection w
 When checking out sources TeamCity (just as StarTeam native client) forms local directory structure using _working folder_ names instead of just a folder name. By default, the working folder name for a particular StarTeam folder equals the folder's name.
 For example, your project has a folder named "A" with a subfolder named "B". By default, their working folders are "A" and "B" correspondingly, and the local directory structure will look like `<checkout dir>/A/B`. But if the working folder for folder "A" is set to something different (for example, `Foo`), the directory structure will also be different: `<checkout dir>/Foo/B`.
 
-
-
 StarTeam allows specifying absolute paths as working folders. However, TeamCity supports only relative working folders. This is done by design; all files retrieved from the source control must reside under the checkout directory. The build will fail if TeamCity detects the presence of absolute working folders.
-
-
 
 You need to ensure that all the folders under the VCS root have relative working folder names.
 
