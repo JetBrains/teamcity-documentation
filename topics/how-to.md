@@ -45,7 +45,7 @@ The database size requirements naturally vary based on the amount of data stored
 __Overview of the TeamCity hardware resources usage:__      
 * CPU: TeamCity utilizes multiple cores of the CPU, so increasing number of cores makes sense. For non\-trivial TeamCity usage at least 4 CPU cores are recommended.
 * Memory: used by the TeamCity server main process and child processes (used for Maven integration, version control integration, Kotlin DSL execution). See the [notes](installing-and-configuring-the-teamcity-server.md#Setting-Up-Memory-settings-for-TeamCity-Server) on the main process memory usage. Generally, you will probably not need to dedicate more than 4G of memory to TeamCity server if you do not plan to run more then 100 concurrent builds (agents), support more then 200 online users or work with large repositories.
-* HDD/disk usage: This sums up mainly from the temp directory usage (`<`[`TeamCity Home`](teamcity-home-directory.md)`>/temp` and OS temp directory) and `.BuildServer/system` usage. Performance of the TeamCity server highly depends on the disk system performance. As TeamCity stores large amounts of data under `.BuildServer/system` (most notably, VCS caches and build results) it is important that the access to the disk is fast (in particular reading/writing files in multiple threads, listing files with attributes). Ensuring disk has good performance is especially important if you plan to store the data directory on a network drive.
+* HDD/disk usage: This sums up mainly from the temp directory usage (`<`[`TeamCity Home`](teamcity-home-directory.md)`>/temp` and OS temp directory) and `.BuildServer/system` usage. Performance of the TeamCity server highly depends on the disk system performance. As TeamCity stores large amounts of data under `.BuildServer/system` (most notably, VCS caches and build results) it is important that the access to the disk is fast (in particular reading/writing files in multiple threads, listing files with attributes). Ensuring disk has good performance is especially important if you plan to store the Data Directory on a network drive.
 * Network: This mainly sums up from the traffic from VCS servers, to clients (web browsers, IDE, etc.) and to/from build agents (send sources, receive build results, logs and artifacts).
 
 __The load on the server depends on:__   
@@ -180,7 +180,7 @@ The following factors are to be taken into account:
 * number of web pages opened by all users
 * [clean-up](clean-up.md) rules (retention policy)
 
-It is advised to place the [`TeamCity Data directory`](teamcity-data-directory.md) and database data files on physically different hard disks (even when both the TeamCity server and RDBMS share the same host).
+It is advised to place the [`TeamCity Data Directory`](teamcity-data-directory.md) and database data files on physically different hard disks (even when both the TeamCity server and RDBMS share the same host).
 
 Placing redo logs on a separate physical disk is also recommended especially in case of the high number of agents (50 and more).
 
@@ -288,8 +288,8 @@ TeamCity only supports a single instance of the main server, but it is possible 
 
 To address fast disaster recovery scenarios, TeamCity supports active \- failover (cold standby) approach: the data that the TeamCity server uses can be replicated and a solution put in place to start a new server using the same data if the currently active server malfunctions.
 
-As to the data, the TeamCity server uses both database and file storage (Data Directory). You can browse through [TeamCity Data Backup](teamcity-data-backup.md) and [TeamCity Data Directory](teamcity-data-directory.md) pages in to get more information on TeamCity data storing.Basically, both TeamCity data directory on the disk and the database which TeamCity uses must remain in a consistent state and thus must be replicated together.   
-Only a single TeamCity server instance should use the database and data directory at any time.
+As to the data, the TeamCity server uses both database and file storage (Data Directory). You can browse through [TeamCity Data Backup](teamcity-data-backup.md) and [TeamCity Data Directory](teamcity-data-directory.md) pages in to get more information on TeamCity data storing.Basically, both the TeamCity Data Directory on the disk and the database which TeamCity uses must remain in a consistent state and thus must be replicated together.   
+Only a single TeamCity server instance should use the database and Data Directory at any time.
 
 Ensure that the distribution of the TeamCity failover/backup server is of exactly the same version as the main server. It is also important to ensure the same server environment/startup options like memory settings, etc.
 
@@ -934,7 +934,7 @@ A single TeamCity license __cannot be used on two running servers__ at the same 
 ### Copied Server Checklist
 
 If you are creating a copy (as opposed to moving the server this way), it is important to go through the checklist below:
-* ensure the new server is configured to use another data directory and another database than the original server; check also "Artifact directories" setting on server's Global Settings;
+* ensure the new server is configured to use another Data Directory and another database than the original server; check also "Artifact directories" setting on server's Global Settings;
 * change server unique id by removing "uuid" attribute from XML of `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>\config\main-config.xml` file before the first start;
 * ensure the same license keys are not used on several servers ([more on licensing](#Licensing+issues));
 * update [Server URL](configuring-server-url.md) on __Administration__ | __Global Settings__ page to the actual URL of the server;
@@ -1248,13 +1248,13 @@ In order to achieve similar experience with these tools you can:
 You should not publish values CodeCoverageB, CodeCoverageL, CodeCoverageM, CodeCoverageC standing for block/line/method/class coverage percentage. TeamCity will calculate these values using their absolute parts. E.g. CodeCoverageL will be calculated as CodeCoverageAbsLCovered divided by CodeCoverageAbsLTotal. You could publish these values but in this case they will lack decimal parts and will not be useful.
 </note>
 
-## Recover from "Data format of the data directory (NNN) and the database (MMM) do not match" error
+## Recover from "Data format of the Data Directory (NNN) and the database (MMM) do not match" error
 
-If you get "Data format of the data directory (NNN) and the database (MMM) do not match." error on starting TeamCity, it means either the database or the TeamCity Data Directory were recently changed to an inconsistent state so they cannot be used together.Double\-check the database and data directory locations and change them if they are not those where the server used to store the data.
+If you get "Data format of the Data Directory (NNN) and the database (MMM) do not match." error on starting TeamCity, it means either the database or the TeamCity Data Directory were recently changed to an inconsistent state so they cannot be used together.Double\-check the database and Data Directory locations and change them if they are not those where the server used to store the data.
 
-If they are right, most probably it means that the server was upgraded with another database or data directory and the [consistent upgrade](upgrade.md#Upgrading+TeamCity+Server) requirement was not met for your main data directory and the database.
+If they are right, most probably it means that the server was upgraded with another database or Data Directory and the [consistent upgrade](upgrade.md#Upgrading+TeamCity+Server) requirement was not met for your main Data Directory and the database.
 
-To recover from the state you will need backup of the consistent state made prior to the upgrade. You will need to restore that backup, ensure the right locations are used for the data directory and the database and perform the TeamCity upgrade.
+To recover from the state you will need backup of the consistent state made prior to the upgrade. You will need to restore that backup, ensure the right locations are used for the Data Directory and the database and perform the TeamCity upgrade.
 
 ## Debug a Build on a Specific Agent
 
@@ -1357,7 +1357,7 @@ TeamCity internal logs can also record some unstructured user\-related informati
 
 When you want to delete personal data of a specific user, the best way to do it is to delete the user in TeamCity. This way all the references to the user will continue to store the numeric user id, while all the other user information will not be stored anymore. Note that [Audit](tracking-user-actions.md) records will mention internal numeric user id after the user deletion.
 
-If the user triggered any builds (i.e. had the "Run build" permission in any of the projects which are still present on the server), the user's username and full name were be recorded in the build's "teamcity.build.triggeredBy" parameters as text values as those were part of the build's "environment". If you need to remove those, you can either delete the related builds (and all the builds which artifact\- or snapshot\-depend on them), or delete parameters of those affected builds (the parameters are stored in archived files under &lt;TeamCity Data directory&gt;\system\artifacts\*\*\*\.teamcity\properties directories).
+If the user triggered any builds (i.e. had the "Run build" permission in any of the projects which are still present on the server), the user's username and full name were be recorded in the build's "teamcity.build.triggeredBy" parameters as text values as those were part of the build's "environment". If you need to remove those, you can either delete the related builds (and all the builds which artifact\- or snapshot\-depend on them), or delete parameters of those affected builds (the parameters are stored in archived files under &lt;TeamCity Data Directory&gt;\system\artifacts\*\*\*\.teamcity\properties directories).
 
 After the user deletion and other data cleaning, make sure to [reset search index](search.md#Resetting+Search+Index) to prune possibly cached data of the deleted user from the search index.
 

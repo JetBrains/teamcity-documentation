@@ -41,7 +41,7 @@ The [database](setting-up-an-external-database.md) used by the running TeamCity 
 
 <td>
 
-Data directory
+Data Directory
 
 </td>
 

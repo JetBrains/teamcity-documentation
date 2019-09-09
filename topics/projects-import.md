@@ -50,7 +50,7 @@ You can select the import scope: choose among project settings, builds and chang
 
 ### Configuration files import
 
-For each imported or merged project, the configuration files are imported to the [data directory](teamcity-data-directory.md) on the target server, provided they are new for the target. The existing files will not be changed.
+For each imported or merged project, the configuration files are imported to the [Data Directory](teamcity-data-directory.md) on the target server, provided they are new for the target. The existing files will not be changed.
 
 The following files are imported:
 * Configuration xml files for the Project with its Build Configurations, Templates, and VCS Roots as well as its subprojects.

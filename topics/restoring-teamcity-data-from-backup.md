@@ -19,9 +19,9 @@ A newer version of TeamCity can be used to restore the backup created with any p
 
 During database restoration you might want to configure database\-specific settings to make the bulk data changes faster (like setting SQL Server "Recovery Model" to "Simple").
 
-A TeamCity backup file __does not contain build artifacts__, so to get the server with all the same important data you need to restore from a backup file (at least settings and database) and copy the build logs and artifacts (located in `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system/artifacts` by [default](build-artifact.md)) from an old to the new data directory manually. The general compatibility rule of the data under `system/artifacts` is that files created by older TeamCity versions can be read by newer versions, but not necessarily vice versa.
+A TeamCity backup file __does not contain build artifacts__, so to get the server with all the same important data you need to restore from a backup file (at least settings and database) and copy the build logs and artifacts (located in `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system/artifacts` by [default](build-artifact.md)) from an old to the new Data Directory manually. The general compatibility rule of the data under `system/artifacts` is that files created by older TeamCity versions can be read by newer versions, but not necessarily vice versa.
 
-When [external artifacts storage](configuring-artifacts-storage.md#External+Artifacts+Storage) is enabled, the [artifacts directory](teamcity-configuration-and-maintenance.md#artifact-directories) of the TeamCity Data directory contains metadata about artifacts mappings, so make sure they are restored.
+When [external artifacts storage](configuring-artifacts-storage.md#External+Artifacts+Storage) is enabled, the [artifacts directory](teamcity-configuration-and-maintenance.md#artifact-directories) of the TeamCity Data Directory contains metadata about artifacts mappings, so make sure they are restored.
 
 See also details on the directories in the [TeamCity Data Directory](teamcity-data-directory.md) description.
 
@@ -83,7 +83,7 @@ To get the reference for the available options of `maintainDB`, run the utility 
 
 ### Restoring database only
 
-When restoring the database but preserving the more recent TeamCity Data directory, it is important to make sure the data is consistent:
+When restoring the database but preserving the more recent TeamCity Data Directory, it is important to make sure the data is consistent:
 * \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/pluginData (_supplementary data_) should be restored as well to be consistent with the data stored in the database
 * \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/caches should be cleared before the server start
 

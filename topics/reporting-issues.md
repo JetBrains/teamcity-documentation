@@ -324,7 +324,7 @@ To enable debug logging for the [IntelliJ Platform-based IDE plugin](intellij-pl
 
 
 
-After changing this file, restart the IDE. The TeamCity plugin debug logs are saved into `idea-teamcity\*` files and will appear in the logs directory of the [IDE settings](http://www.jetbrains.com/idea/webhelp/project-and-ide-settings.html#d1270417e197)`/data directory>/system/log` directory.
+After changing this file, restart the IDE. The TeamCity plugin debug logs are saved into `idea-teamcity\*` files and will appear in the logs directory of the [IDE settings](http://www.jetbrains.com/idea/webhelp/project-and-ide-settings.html#d1270417e197) (`<IDE settings/Data Directory>/system/log` directory).
 
 ### Open in IDE Functionality Logging
 

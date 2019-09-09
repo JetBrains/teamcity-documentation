@@ -16,32 +16,32 @@ On this page:
 
 ## Location of the TeamCity Data Directory
 
-The currently used data directory location can be seen on the __Administration | Global Settings__ page for a running TeamCity server instance. Clicking the __Browse__ link opens the __Administration | Global Settings | Browse Data Directory__ tab allowing the user to upload new/modify the existing files in the directory.
+The currently used Data Directory location can be seen on the __Administration | Global Settings__ page for a running TeamCity server instance. Clicking the __Browse__ link opens the __Administration | Global Settings | Browse Data Directory__ tab allowing the user to upload new/modify the existing files in the directory.
 
-The current data directory location is also available in the `logs/teamcity-server.log` file (look for "_TeamCity data directory:_" line on the server startup).
+The current Data Directory location is also available in the `logs/teamcity-server.log` file (look for "_TeamCity Data Directory:_" line on the server startup).
 
-If you are upgrading, note that prior to TeamCity 7.1 the data directory could be specified [in a different way](https://confluence.jetbrains.com/display/TCD7/TeamCity+Data+Directory).
+If you are upgrading, note that prior to TeamCity 7.1 the Data Directory could be specified [in a different way](https://confluence.jetbrains.com/display/TCD7/TeamCity+Data+Directory).
 
 ### Configuring the Location
 
-There are several ways to configure the location of the TeamCity Data directory:
-* on the first server startup screens (only when TeamCity `.tar.gz` or `.exe` distribution is used). The specified data directory is then saved into `<`[`TeamCity home directory`](teamcity-home-directory.md)`>/conf/teamcity-startup.properties` file. The screen to specify the data directory location does not appear if the data directory location is configured using one of the options below.
+There are several ways to configure the location of the TeamCity Data Directory:
+* on the first server startup screens (only when TeamCity `.tar.gz` or `.exe` distribution is used). The specified Data Directory is then saved into `<`[`TeamCity home directory`](teamcity-home-directory.md)`>/conf/teamcity-startup.properties` file. The screen to specify the Data Directory location does not appear if the Data Directory location is configured using one of the options below.
 * manually using the `TEAMCITY_DATA_PATH` environment variable. The variable can be either system\-wide or defined for the user under whom TeamCity server is started. After setting/changing the variable, you might need to restart the computer for the changes to take effect.
 * If the `TEAMCITY_DATA_PATH` environment variable is not set and the `<`[`TeamCity home directory`](teamcity-home-directory.md)`>/conf/teamcity-startup.properties` file does not define it either, the default TeamCity Data Directory location is in the user's home directory (for example, it is `$HOME/.BuildServer` under Linux and `%USERPROFILE%.BuildServer` under Windows).
 
 
 <tip>
 
-__Prior to TeamCity 9.1__, the TeamCity Windows installer configured the TeamCity data directory during installation by setting the `TEAMCITY_DATA_PATH` environment variable. The default path suggested for the directory was: `%\ALLUSERSPROFILE%\JetBrains\TeamCity`. In the later TeamCity versions, the installer does not ask for the TeamCity data directory and it can be configured on the first TeamCity start.
+__Prior to TeamCity 9.1__, the TeamCity Windows installer configured the TeamCity Data Directory during installation by setting the `TEAMCITY_DATA_PATH` environment variable. The default path suggested for the directory was: `%\ALLUSERSPROFILE%\JetBrains\TeamCity`. In the later TeamCity versions, the installer does not ask for the TeamCity Data Directory and it can be configured on the first TeamCity start.
 </tip>
 
 ### Recommendations as to choosing Data Directory Location
 
-Since the data directory stores all the server and configured projects settings, it is important that it is not available for reading and writing to the OS users without the corresponding level of access. See the related [security notes](how-to.md#TeamCity+Security+Notes).
+Since the Data Directory stores all the server and configured projects settings, it is important that it is not available for reading and writing to the OS users without the corresponding level of access. See the related [security notes](how-to.md#TeamCity+Security+Notes).
 
 Note that by default the `system` directory stores all the [artifacts](build-artifact.md) and build logs of the builds in the history and can be quite large, so it is recommended to place TeamCity Data Directory on a non\-system disk. Refer to [Clean-Up](clean-up.md) section to configure automatic cleaning of older builds. If a single local disk cannot store all of the artifacts, you can add another disk and configure [multiple artifacts paths](teamcity-configuration-and-maintenance.md).
 
-Note that TeamCity assumes reliable and persistent read/write access to TeamCity Data Directory and can malfunction if data directory becomes inaccessible. This malfunctions can affect TeamCity functioning while the directory is unavailable and may also corrupt data of the currently running builds. While TeamCity should tolerate occasional data directory inaccessibility, still under rare circumstances the data stored in the directory can be corrupted and be partially lost.
+Note that TeamCity assumes reliable and persistent read/write access to the TeamCity Data Directory and can malfunction if the Data Directory becomes inaccessible. This malfunctions can affect TeamCity functioning while the directory is unavailable and may also corrupt data of the currently running builds. While TeamCity should tolerate occasional Data Directory inaccessibility, still under rare circumstances the data stored in the directory can be corrupted and be partially lost.
 
  
 

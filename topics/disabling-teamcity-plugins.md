@@ -14,7 +14,7 @@ __To disable plugins via config files:__
 This is applicable to versions __prior to TeamCity 2017.2__. Starting from this version, it is recommended to disable plugins __via the web UI.__
 </note>
 
-1. Create the `disabled_plugins.txt` file in `<TeamCity data directory>/config`.
+1. Create the `disabled_plugins.txt` file in `<TeamCity Data Directory>/config`.
 2. Provide a new-line separated list of the plugin names (as specified in the `teamcity-plugin.xml` file of every plugin, the file is usually located in the default directory for bundled TeamCity plugins `<TeamCity web application>/WEB-INF/plugins/<plugin>/teamCity-plugin.xml`).
 3. Restart the server. The plugin names are displayed as the strikethrough text on the __Administration | Plugins List__ page noting the file where the plugins were disabled.
  

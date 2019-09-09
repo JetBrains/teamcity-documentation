@@ -1,7 +1,7 @@
 [//]: # (title: Configuring Secondary Node)
 [//]: # (auxiliary-id: Configuring Secondary Node)
 
-In addition to the main TeamCity server, you can start a secondary server (node) sharing the data directory and database with the main one. Read more in [Multinode Setup](multinode-setup.md).
+In addition to the main TeamCity server, you can start a secondary server (node) sharing the Data Directory and database with the main one. Read more in [Multinode Setup](multinode-setup.md).
 
 This page describes how to configure a secondary node.
 
@@ -14,7 +14,7 @@ On this page:
 To install a secondary node, follow these steps:
 
 1. On the secondary node machine, [install](installing-and-configuring-the-teamcity-server.md) the TeamCity software as usual: download the distribution package and follow the installation wizard.
-2. Provide path to the shared data directory via the `TEAMCITY_DATA_PATH` environment variable.
+2. Provide path to the shared Data Directory via the `TEAMCITY_DATA_PATH` environment variable.
 3. Add additional arguments to the `TEAMCITY_SERVER_OPTS` [environment variable](configuring-teamcity-server-startup-properties.md):
 
 
@@ -26,7 +26,7 @@ TEAMCITY_SERVER_OPTS = -Dteamcity.server.nodeId=<nodeID> -Dteamcity.node.data.pa
 where
 
 * `<nodeID>` is the ID of the node that will be displayed on the __Administration | Nodes Configuration__ page.
-* `<path_to_node_data_directory>` is the path to the node data directory (see [Node-Specific Data Directory](multinode-setup.md#Node-Specific+Data+Directory)).
+* `<path_to_node_data_directory>` is the path to the node Data Directory (see [Node-Specific Data Directory](multinode-setup.md#Node-Specific+Data+Directory)).
 * `<node url>` is the secondary node root URL. Make sure this URL is accessible from the main server and agents.
 
 ### Secondary Node Memory Settings
@@ -111,6 +111,6 @@ The TeamCity [cleanup](clean-up.md) task runs on the main TeamCity server only. 
 
 The [backup](teamcity-data-backup.md) through the TeamCity web interface can be done on the main TeamCity server only. The backup from the command line can be done on both the main server and the secondary nodes.
 
-The [restore](restoring-teamcity-data-from-backup.md) operation can be done on either of the nodes, but only if all servers using the TeamCity database and data directory are stopped.
+The [restore](restoring-teamcity-data-from-backup.md) operation can be done on either of the nodes, but only if all servers using the TeamCity database and Data Directory are stopped.
 
 

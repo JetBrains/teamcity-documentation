@@ -210,7 +210,7 @@ The following [properties](configuring-teamcity-server-startup-properties.md) ca
 
 The template uses a configuration approach different from other notification engines.
 
-The default template is stored in the file: `<TeamCity data directory>/config/default-feed-item-template.ftl`. This file should never be edited: it is overwritten on every server startup with the default copy. To specify a new template to use, copy the file named `feed-item-template.ftl` into the same directory. This file can be edited and will not be overwritten. It will be used by the engine if present.
+The default template is stored in the file: `<TeamCity Data Directory>/config/default-feed-item-template.ftl`. This file should never be edited: it is overwritten on every server startup with the default copy. To specify a new template to use, copy the file named `feed-item-template.ftl` into the same directory. This file can be edited and will not be overwritten. It will be used by the engine if present.
 
 The template is a [FreeMarker](http://freemarker.org/docs/dgui.html) template and can be freely edited.
 

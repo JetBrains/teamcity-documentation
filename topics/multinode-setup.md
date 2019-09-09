@@ -1,7 +1,7 @@
 [//]: # (title: Multinode Setup)
 [//]: # (auxiliary-id: Multinode Setup)
 
-TeamCity allows configuring and starting one or more secondary server instances (nodes) in addition to the main one. The main and secondary nodes operate under the same license and share the TeamCity data directory and the database.
+TeamCity allows configuring and starting one or more secondary server instances (nodes) in addition to the main one. The main and secondary nodes operate under the same license and share the TeamCity Data Directory and the database.
 
 Using the multinode setup, you can:
 * Set up a high-availability TeamCity installation that will have zero read downtime. A secondary node will allow users read operations during the downtime of the main server (for example, during the upgrade).
@@ -24,17 +24,17 @@ This section describes configuration requirements for setting up multiple TeamCi
 
 ### Shared Data Directory
 
-The main TeamCity server and secondary nodes require access to the same [TeamCity data directory](teamcity-data-directory.md) (which must be shared) and to the same database.
+The main TeamCity server and secondary nodes require access to the same [TeamCity Data Directory](teamcity-data-directory.md) (which must be shared) and to the same database.
 
-For a high availability setup, we recommend storing the TeamCity data directory on a separate machine. In this case, even if the main server goes down, the secondary nodes will be able to connect to the shared data directory.
+For a high availability setup, we recommend storing the TeamCity Data Directory on a separate machine. In this case, even if the main server goes down, the secondary nodes will be able to connect to the shared Data Directory.
 
-Ensure that all machines where TeamCity server nodes will be installed can access the data directory in the read\/write mode. Using a dedicated network file storage with good performance is recommended.
+Ensure that all machines where TeamCity server nodes will be installed can access the Data Directory in the read\/write mode. Using a dedicated network file storage with good performance is recommended.
 
-The typical data directory mounting options are SMB and NFS. TeamCity uses the data directory as a regular file system so all basic file system operations should be supported. The backing storage and way of mounting should not impose strict I\/O operations count or I\/O volume limits.
+The typical Data Directory mounting options are SMB and NFS. TeamCity uses the Data Directory as a regular file system so all basic file system operations should be supported. The backing storage and way of mounting should not impose strict I\/O operations count or I\/O volume limits.
 
 We recommend tuning storage and network performance: make sure to review performance guidelines for your storage solution. For example, increasing MTU for the network connection between the server and the storage usually increases the artifacts transferring speed.
 
-Note that on Windows, a node might not be able to access the TeamCity data directory via a mapped network drive if TeamCity is running as a service. This happens because Windows services cannot work with mapped network drives, and TeamCity does not support the UNC format (`\\host\directory`) for the data directory path. To workaround this problem, you can use `mklink` as it allows making a symbolic link on a network drive:
+Note that on Windows, a node might not be able to access the TeamCity Data Directory via a mapped network drive if TeamCity is running as a service. This happens because Windows services cannot work with mapped network drives, and TeamCity does not support the UNC format (`\\host\directory`) for the Data Directory path. To workaround this problem, you can use `mklink` as it allows making a symbolic link on a network drive:
 
 ```Plain Text
 mklink /d "C:\<path to mount point>" "\\<host>\<shared directory name>\"
@@ -43,11 +43,11 @@ mklink /d "C:\<path to mount point>" "\\<host>\<shared directory name>\"
 
 #### Node-Specific Data Directory
 
-Besides the data directory shared with the main server, a secondary node requires a _local_ data directory where it stores some caches, unpacked external plugins, and other configuration.
+Besides the Data Directory shared with the main server, a secondary node requires a _local_ Data Directory where it stores some caches, unpacked external plugins, and other configuration.
 
-On the first start of the node, the local data directory is automatically created as `<TeamCity Data Directory>/nodes/<node_ID>`. This is usually the location of the shared data directory, the directory used by all nodes.
+On the first start of the node, the local Data Directory is automatically created as `<TeamCity Data Directory>/nodes/<node_ID>`. This is usually the location of the shared Data Directory, the directory used by all nodes.
 
-To reduce the load caused by extra IO requests from all nodes to the shared TeamCity data directory and to speed up the nodes' access to data, we highly recommend redefining the location of the node-specific data directory to use the node\'s local disk.
+To reduce the load caused by extra IO requests from all nodes to the shared TeamCity Data Directory and to speed up the nodes' access to data, we highly recommend redefining the location of the node-specific Data Directory to use the node\'s local disk.
 
 To define a new path to a local directory, use the `-Dteamcity.node.data.path` property in the TeamCity [start-up scripts](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts). Read more in [Configuring Secondary Node](configuring-secondary-node.md#Installing+Secondary+Node).
 

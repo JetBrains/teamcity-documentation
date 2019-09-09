@@ -19,7 +19,7 @@ TeamCity provides a pluggable API to enable external storage for TeamCity build 
 
 Note that when an external storage for artifacts is enabled, the TeamCity [internal](build-artifact.md#Hidden+Artifacts) artifacts (including build logs) will still be published to the TeamCity server and stored in the TeamCity Data Directory in the built\-in artifacts storage.
 
-The same applies to the metadata about artifacts mappings, which will be published to the [artifacts directory](teamcity-configuration-and-maintenance.md) of the TeamCity Data directory. When restoring from a backup, make sure they are restored for the external artifact plugin to work properly.
+The same applies to the metadata about artifacts mappings, which will be published to the [artifacts directory](teamcity-configuration-and-maintenance.md) of the TeamCity Data Directory. When restoring from a backup, make sure they are restored for the external artifact plugin to work properly.
 
 ### Amazon S3 Support
 

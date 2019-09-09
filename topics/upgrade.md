@@ -58,12 +58,12 @@ Agents connected to the server are upgraded [automatically](#Automatic+Build+Age
 
 __Important note on TeamCity data structure upgrade__
 
-TeamCity server stores its data in the database and in [TeamCity Data Directory](teamcity-data-directory.md) on the file system. Different TeamCity versions use different data structure of the database and data directory. Upon starting newer version of TeamCity, the data is kept in the old format until you confirm the upgrade and data conversion on the Maintenance page in the web UI. Until you do so, you can back up the old data; however, once the upgrade is complete, the data is updated to a newer format.  
+TeamCity server stores its data in the database and in [TeamCity Data Directory](teamcity-data-directory.md) on the file system. Different TeamCity versions use different data structure of the database and Data Directory. Upon starting newer version of TeamCity, the data is kept in the old format until you confirm the upgrade and data conversion on the Maintenance page in the web UI. Until you do so, you can back up the old data; however, once the upgrade is complete, the data is updated to a newer format.  
 __Once the data is converted, downgrade to the previous TeamCity versions which uses different data format is not possible!__   
 There are several important issues with data format upgrade:
 
-* Data structure downgrade is not possible. Once newer TeamCity version changes the data format of database and data directory, you cannot use this data to run an older TeamCity version. Please ensure you [backup](teamcity-data-backup.md) the data before upgrading TeamCity.
-* Both the database and the data directory should be upgraded simultaneously. Ensure that during the first start of the newer server it uses the correct [TeamCity Data Directory](teamcity-data-directory.md) that in its turn has the correct database [configured](setting-up-an-external-database.md) in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\config\database.properties file. Also make sure the data directory is complete (for example, all the build logs and artifacts are in place), no data directory content supports copying from the data directory of the older server versions.
+* Data structure downgrade is not possible. Once newer TeamCity version changes the data format of database and Data Directory, you cannot use this data to run an older TeamCity version. Please ensure you [backup](teamcity-data-backup.md) the data before upgrading TeamCity.
+* Both the database and the Data Directory should be upgraded simultaneously. Ensure that during the first start of the newer server it uses the correct [TeamCity Data Directory](teamcity-data-directory.md) that in its turn has the correct database [configured](setting-up-an-external-database.md) in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\config\database.properties file. Also make sure the Data Directory is complete (for example, all the build logs and artifacts are in place), no Data Directory content supports copying from the Data Directory of the older server versions.
 
 </note>
 

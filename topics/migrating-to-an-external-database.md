@@ -93,7 +93,7 @@ You can [create a backup](teamcity-data-backup.md) and then [restore it](restori
 
     ```Java
     java -Xmx256M -cp ..\webapps\ROOT\WEB-INF\lib\hsqldb.jar org.hsqldb.Server -database.0
-    <TeamCity data directory>\system\buildserver -dbname.0 buildserver
+    <TeamCity Data Directory>\system\buildserver -dbname.0 buildserver
     ```
 
     and then run the Migration tool pointing to the database as the source: `jdbc:hsqldb:hsql://localhost/buildserver sa ''`

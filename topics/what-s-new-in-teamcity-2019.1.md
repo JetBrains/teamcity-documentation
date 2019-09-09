@@ -66,8 +66,8 @@ As a result, it is possible to start a single secondary node and assign several 
 
 ### Cached configuration files on nodes
 
-In a multinode setup, the TeamCity data directory is shared among secondary nodes via network. When a secondary node launches, it reads configuration files located in the shared data directory. In large setups with thousands of projects and build configurations, downloading lots of files from network storage can take a lot of time.      
-In TeamCity 2019.1, we have optimized this operation by creating a cache of configuration files stored under the node local data directory. The files are cached on the first node launch and then updated in runtime which makes the next launches faster.   
+In a multinode setup, the TeamCity Data Directory is shared among secondary nodes via network. When a secondary node launches, it reads configuration files located in the shared Data Directory. In large setups with thousands of projects and build configurations, downloading lots of files from network storage can take a lot of time.      
+In TeamCity 2019.1, we have optimized this operation by creating a cache of configuration files stored under the node local Data Directory. The files are cached on the first node launch and then updated in runtime which makes the next launches faster.   
 
 ## Improvements for Amazon spot instances
 

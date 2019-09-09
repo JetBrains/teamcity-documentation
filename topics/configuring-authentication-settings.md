@@ -32,7 +32,7 @@ When you first log in to TeamCity, the default authentication including the Buil
 
 <tip>
 
-Any changes made to authentication in the UI will be reflected in the `<`[`TeamCity data directory`](teamcity-data-directory.md)`>/config/auth-config.xml` file, which can be used to configure authentication if editing via the Web UI is not suitable for some reason. The detailed description is available in the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
+Any changes made to authentication in the UI will be reflected in the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/auth-config.xml` file, which can be used to configure authentication if editing via the Web UI is not suitable for some reason. The detailed description is available in the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
 </tip>
 
 ### Simple Mode
@@ -153,7 +153,7 @@ Please refer to [Accessing Server by HTTP](accessing-server-by-http.md) for deta
 
 <tip>
 
-For information on configuring Basic HTTP Authentication directly in the `<`[`TeamCity data directory`](teamcity-data-directory.md)`>/config/auth-config.xml`, refer to the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
+For information on configuring Basic HTTP Authentication directly in the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/auth-config.xml`, refer to the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
 </tip>
 
 

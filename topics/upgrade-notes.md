@@ -313,7 +313,7 @@ The bundled Java used in Docker images has been updated to 8u151.
 
 (Fixed 2017.2.1) TFS in Java working mode (when Team Explorer is not installed on the machine) report "TFS subsystem was destroyed" errors. See [TW-52685](https://youtrack.jetbrains.com/issue/TW-52685) for details.
 
-Upgrading using Windows installer can take significant time if your TeamCity installation directory contains lots of nested directories (e.g. TeamCity Data Directory is under it). The long stage can occur after "Extract: Uninstall.exe..." progress message. In you encounter this long step, please wait for the completion of the operation (the installer runs icacls.exe utility as a nested process). To prevent the issue it is recommendd to [move the data directory](https://confluence.jetbrains.com/display/TCD10/TeamCity+Data+Directory) out of TeamCity server installation home.
+Upgrading using Windows installer can take significant time if your TeamCity installation directory contains lots of nested directories (e.g. TeamCity Data Directory is under it). The long stage can occur after "Extract: Uninstall.exe..." progress message. In you encounter this long step, please wait for the completion of the operation (the installer runs icacls.exe utility as a nested process). To prevent the issue it is recommendd to move the [Data Directory](teamcity-data-directory.md) out of TeamCity server installation home.
 
 ### Perforce branch specification change
 
@@ -1282,7 +1282,7 @@ No noteworthy changes.
 ## Changes from 7.0.x to 7.1
 
 __Windows service configuration__   
-Since version 7.1, TeamCity uses its own service wrapping solution for the TeamCity server as opposed to that of default Tomcat one in previous versions.This changes the way TeamCity service is configured (data directory and server startup options including memory settings) and makes it unified between service and console startup.   
+Since version 7.1, TeamCity uses its own service wrapping solution for the TeamCity server as opposed to that of default Tomcat one in previous versions.This changes the way TeamCity service is configured (Data Directory and server startup options including memory settings) and makes it unified between service and console startup.   
 Please refer to the updated [section](configuring-teamcity-server-startup-properties.md) on configuring the server startup properties.
 
 Agent windows service started to use OS\-provided environment variables. Once Agent server (and JVM) are x86 processes, agent will report x86 environment variables. The change may affect your CPU bitness checks. See [MSDN Blog](http://blogs.msdn.com/b/david.wang/archive/2006/03/26/howto-detect-process-bitness.aspx) on how to check if machine supports x64 by reported environment variables
@@ -1820,7 +1820,7 @@ When upgrading from TeamCity 1.x/2.x/3.x Professional to 3.x Enterprise for the 
 ## Changes from 1.x to 2.0
 
 __Database Settings Move__   
-Move your database settings from the `<TeamCity installation folder>/ROOT/WEB-INF/buildServerSpring.xml` file to the `database.properties` file located in the TeamCity configuration data directory (`<TeamCity Data Directory>/config`).
+Move your database settings from the `<TeamCity installation folder>/ROOT/WEB-INF/buildServerSpring.xml` file to the `database.properties` file located in the TeamCity configuration Data Directory (`<TeamCity Data Directory>/config`).
 
   
 

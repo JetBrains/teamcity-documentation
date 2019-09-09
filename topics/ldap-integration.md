@@ -30,9 +30,9 @@ TeamCity stores user accounts and details in its own database. For information o
 
 ### ldap-config.properties Configuration
 
-LDAP integration settings are configured in the `<TeamCity data directory>/config/ldap-config.properties` file on the server.
+LDAP integration settings are configured in the `<TeamCity Data Directory>/config/ldap-config.properties` file on the server.
 
-Create the file by copying `<TeamCity data directory>/config/ldap-config.properties.dist` file and renaming it to the `<TeamCity data directory>/config/ldap-config.properties`; follow the comments in the file to edit the default settings as required.
+Create the file by copying `<TeamCity Data Directory>/config/ldap-config.properties.dist` file and renaming it to the `<TeamCity Data Directory>/config/ldap-config.properties`; follow the comments in the file to edit the default settings as required.
 
 The file uses the standard Java properties file syntax, so all the values in the file must be properly [escaped](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)). The file is re\-read on any modification so you do not need to restart the server to apply changes in the file.
 
@@ -170,7 +170,7 @@ TeamCity can automatically update users membership in groups based on the LDAP\-
 
 __To configure Group membership:__
 1. Create groups in TeamCity manually.
-2. Specify the mapping of LDAP groups to TeamCity groups in the `<TeamCity data directory>/config/ldap\-mapping.xml` file. Use the `ldap-mapping.xml`.[`dist file`](teamcity-data-directory.md) as an example: TeamCity user groups are determined by the [Group Key](managing-users-and-user-groups.md#Managing+User+Groups), LDAP groups are specified by the group DN.
+2. Specify the mapping of LDAP groups to TeamCity groups in the `<TeamCity Data Directory>/config/ldap\-mapping.xml` file. Use the `ldap-mapping.xml`.[`dist file`](teamcity-data-directory.md) as an example: TeamCity user groups are determined by the [Group Key](managing-users-and-user-groups.md#Managing+User+Groups), LDAP groups are specified by the group DN.
 3. Set the required properties in the `ldap-config.properties` file, the __groups settings__ section:
    * `teamcity.options.groups.synchronize` \- enables user group membership synchronization
    * `teamcity.groups.base` and `teamcity.groups.filter` \- specifies the LDAP base node and filter to find the groups in LDAP (those configured in the `ldap-mapping.xml` file should be a subset of the groups found by these settings)
@@ -255,5 +255,5 @@ Note that scrambling is not encryption: it protects the password from being easi
 
 Internal LDAP logs are stored in `logs/teamcity-ldap.log*` files in the [server logs](teamcity-server-logs.md). If you encounter an issue with LDAP configuration, it is advised that you look into the logs as the issue can often be figured out from the messages in there. To get detailed logs of LDAP login and synchronization processes, use the "debug\-ldap" [logging preset](teamcity-server-logs.md).
 
-If you want to [report an LDAP issue to us](https://confluence.jetbrains.com/display/TW/Feedback), make sure to include LDAP settings (`<TeamCity data directory>/config/ldap-config.properties` and `ldap-mapping.xml` files, with password in `ldap-config.properties` masked) and debug LDAP logs fully covering a login/synchronization sequence (include all `teamcity-ldap.log*` files). Make sure to describe the related structure of your LDAP (noting the attributes of related LDAP entities) and detail expected/actual behavior. The archive with the data can be sent to us via [one of the supported ways](reporting-issues.md#Uploading+Large+Data+Archives).
+If you want to [report an LDAP issue to us](https://confluence.jetbrains.com/display/TW/Feedback), make sure to include LDAP settings (`<TeamCity Data Directory>/config/ldap-config.properties` and `ldap-mapping.xml` files, with password in `ldap-config.properties` masked) and debug LDAP logs fully covering a login/synchronization sequence (include all `teamcity-ldap.log*` files). Make sure to describe the related structure of your LDAP (noting the attributes of related LDAP entities) and detail expected/actual behavior. The archive with the data can be sent to us via [one of the supported ways](reporting-issues.md#Uploading+Large+Data+Archives).
 

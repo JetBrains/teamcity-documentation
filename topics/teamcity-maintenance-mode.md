@@ -15,7 +15,7 @@ If you are a TeamCity system administrator, to confirm that enter the _Token_ in
 
 ## TeamCity Data Upgrade
 
-When upgrading your TeamCity instance, the newly installed version of TeamCity checks if the TeamCity data directory and database use the old data format when it is started for the first time. If the newer version requires data conversion, this page is displayed with data format details. Please, review them carefully.
+When upgrading your TeamCity instance, the newly installed version of TeamCity checks if the TeamCity Data Directory and database use the old data format when it is started for the first time. If the newer version requires data conversion, this page is displayed with data format details. Please, review them carefully.
 
  If you haven't backed up your data, do it at this point. Once TeamCity converts the data, downgrade won't be possible. If you need to return to an earlier TeamCity version, you will be able to do that only by restoring the data from a corresponding backup. Please refer to the [TeamCity Data Backup](teamcity-data-backup.md) section for instructions. When you are sure you have backed up your data, click __Upgrade__. When upgrading from TeamCity 6.0 (or higher), this page contains an option to perform backup automatically.
 

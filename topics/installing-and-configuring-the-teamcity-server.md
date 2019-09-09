@@ -330,12 +330,12 @@ The recommended approach is to start with initial settings and monitor for the p
 <note>
 
 * If you have a lot of projects or build configurations, we recommend you avoid using the __Default agent__ in order to free up the TeamCity server resources. The TeamCity Administrator can [disable](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) the default agent on the __Agents__ page of the web UI.
-* When changing the TeamCity data directory or database, make sure they do not get out of sync.
+* When changing the TeamCity Data Directory or database, make sure they do not get out of sync.
 </note>
 
 ### Configuring TeamCity Data Directory
 
-The default placement of the TeamCity data directory can be changed. See [TeamCity Data Directory](teamcity-data-directory.md) for details.
+The default placement of the TeamCity Data Directory can be changed. See [TeamCity Data Directory](teamcity-data-directory.md) for details.
 
 ### Editing Server Configuration
 

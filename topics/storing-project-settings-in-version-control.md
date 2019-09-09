@@ -75,7 +75,7 @@ To define which settings to take __when build starts__, open the __Project Setti
 
 It is recommended to store security data outside the VCS. The __Project Settings | Versioned Settings | Configuration__ page has an option to __store passwords, API tokens, and other secure settings outside of VCS__. This option is enabled by default if versioned settings are enabled for a project for the first time, and not enabled for projects already storing their settings in the VCS.
 
-If this option is enabled, TeamCity stores a random generated IDs in XML configuration files instead of the scrambled passwords. Actual passwords are stored on the disk under the TeamCity data directory and are not checked into the version control system.
+If this option is enabled, TeamCity stores a random generated IDs in XML configuration files instead of the scrambled passwords. Actual passwords are stored on the disk under the TeamCity Data Directory and are not checked into the version control system.
 
 <warning>
 
