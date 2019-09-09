@@ -67,7 +67,7 @@ There are several important issues with data format upgrade:
 
 </note>
 
-If you accidentally performed an inconsistent upgrade, check the [recovery instructions](how-to.md#Recover+from+%22Data+format+of+the+data+directory+%28NNN%29+and+the+database+%28MMM%29+do+not+match%22+error).
+If you accidentally performed an inconsistent upgrade, check the [recovery instructions](how-to.md#Recover+from+%22Data+format+of+the+Data+Directory+%28NNN%29+and+the+database+%28MMM%29+do+not+match%22+error).
 
 ### Automatic Update
 
