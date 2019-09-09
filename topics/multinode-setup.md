@@ -49,7 +49,7 @@ Besides the data directory shared with the main server, a secondary node require
 
 On the first start of the node, the local data directory is automatically created as `<TeamCity Data Directory>/nodes/<node_ID>`. This is usually the location of the shared data directory, the directory used by all nodes.
 
-To reduce the load caused by extra requests from all nodes to the shared TeamCity data directory and to speed up the nodes' access to data, we highly recommend redefining the default location of the node\'s local directory and storing it on the node\'s disk.
+To reduce the load caused by extra IO requests from all nodes to the shared TeamCity data directory and to speed up the nodes' access to data, we highly recommend redefining the location of the node-specific data directory to use the node\'s local disk.
 
 To define a new path to a local directory, use the `-Dteamcity.node.data.path` property in the TeamCity [start-up scripts](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts). Read more in [Configuring Secondary Node](configuring-secondary-node.md#Installing+Secondary+Node).
 
