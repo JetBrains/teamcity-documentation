@@ -2,6 +2,8 @@
 [//]: # (auxiliary-id: Installation Quick Start)
 This page covers the __evaluation__ setup of a TeamCity server with a default build agent running on the same machine for the most popular operating systems.
 
+For more details, see [Installation and Upgrade](installation-and-upgrade.md).
+
 On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
@@ -30,24 +32,25 @@ Earlier versions are available on the [Previous Releases Downloads](https://conf
 
 Run the downloaded `.exe` file and follow the instructions of the TeamCity Setup wizard. The TeamCity web server and one build agent will be installed on the same machine.
 
-During installation, you can configure the following:
-* The [TeamCity Home Directory](teamcity-home-directory.md) where TeamCity will be installed.
-* Whether the TeamCity server and agent will run as Windows services.   
+During installation, you can configure:
+* [TeamCity Home Directory](teamcity-home-directory.md) where TeamCity will be installed
+* whether the TeamCity server and agent will run as Windows services    
    <img src="installAsWinServicepng.png" alt="TeamCity server and agent as Windows services"/>
    
-* The server port: `80` is the default port, which can be already used by other applications (for example, Skype). Change the server port if it is already in use. In the example below, we've set the port to `8111`.
-* The agent port: `9090` is the default for incoming connections from the server. If this port is already in use, you'll be asked to change it by setting the `ownPort` property to a different value.   
-   <img src="configure-agent-port.png" alt="Configure a build agent port" width="750"/>
+* ports:      
+   * Server port: `80` is the default port, which can be already used by other applications (for example, Skype). Change the server port if it is already in use. In the example below, we've set the port to `8111`.
+   * Agent port: `9090` is the default for incoming connections from the server. If this port is already in use, you'll be asked to change it by setting the `ownPort` property to a different value.   
+   <img src="configure-agent-port.png" alt="Configure a build agent port" width="650"/>
 
 If the TeamCity server is installed as a Windows service, follow the [usual procedure](https://bit.ly/2yJF87R) of starting and stopping services.
 
 Otherwise, to start/stop the TeamCity server and one default agent at the same time, use the `runAll` script, provided in the `<TeamCity Home>/bin` directory:
 
-* To __start__ the server and the default agent, use
+* to __start__ the server and the default agent, use
     ```Shell
     runAll.bat start
     ```
-* To __stop__ the server and the default agent, use
+* to __stop__ the server and the default agent, use
     ```Shell
     runAll.bat stop
     ```
@@ -78,20 +81,20 @@ If you did not change the default port (`80`) during the installation, the TeamC
    The archive can be used for installation on Windows as well.
 
 4. The TeamCity web server and one build agent will be installed on the same machine.   
-__Note__ that for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) it is recommended to set up the TeamCity Server and Agent on separate machines.
+__Note__ that for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) it is recommended to set up the TeamCity server and agent on separate machines.
 
 __To start/stop the TeamCity server and one default agent at the same time__, use the `runAll` script, provided in the `<TeamCity Home>/bin` directory.
 
-* To __start__ the server and the default agent, use
+* to __start__ the server and the default agent, use
     ```Shell
     runAll.sh start
     ```
-* To __stop__ the server and the default agent, use
+* to __stop__ the server and the default agent, use
     ```Shell
     runAll.sh stop
     ```
 
-By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/) and has one registered build agent that runs on the same computer. If another application uses the same port as the TeamCity server, the TeamCity server (Tomcat server) will not start with the _"Address already in use"_ errors in the server logs or server console. 
+By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/) and has one registered build agent that runs on the same computer. If another application uses the same port as the TeamCity server, the TeamCity server (Tomcat server) will not start with the _"Address already in use"_ errors in the server logs or server console.
 
 To change the server port, locate the `<TeamCity Home>/conf/server.xml` and modify the port in the `<Connector>` XML node, for example:
 
@@ -102,7 +105,7 @@ To change the server port, locate the `<TeamCity Home>/conf/server.xml` and modi
 
 ## Start TeamCity for the First Time
 
-On the first TeamCity start, do the following:
+On the first TeamCity start:
 1. Review the [location of the TeamCity Data Directory](teamcity-data-directory.md#Configuring+the+Location), where all the configuration information is stored. Click __Proceed__.
 2. TeamCity stores build history, users, build results, and some runtime data in an SQL database and allows you to select the database type.   
    For now, keep the default internal database. Click __Proceed__.   
@@ -111,5 +114,4 @@ On the first TeamCity start, do the following:
 3. On the next screen, accept the License Agreement to proceed with the launch. Click __Continue__.
 4. TeamCity displays the __Create Administrator Account__ page. Specify the administrator credentials and click __Create Account__.  
 
-You are logged to TeamCity: now you can configure your user settings and [create and run your first build](configure-and-run-your-first-build.md).
-
+You are signed in to TeamCity: now you can configure your user settings and [create and run your first build](configure-and-run-your-first-build.md).
