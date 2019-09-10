@@ -41,6 +41,9 @@ mklink /d "C:\<path to mount point>" "\\<host>\<shared directory name>\"
 
 ```
 
+__Important!__ If data directory is shared via SMB protocol, and main and secondary servers are installed on Windows, make sure that all registry keys mentioned in this article are set to 0 on all of the TeamCity nodes: https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10). Otherwise you can observe some stability issues, like build log corruption, etc.
+
+
 #### Node-Specific Data Directory
 
 Besides the Data Directory shared with the main server, a secondary node requires a _local_ Data Directory where it stores some caches, unpacked external plugins, and other configuration.
