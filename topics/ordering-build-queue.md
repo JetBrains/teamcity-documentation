@@ -44,7 +44,7 @@ This setting is taken into account only when a build is added to the queue. The 
 
 ## Removing Builds From Build Queue
 
-To remove build(s) from the Queue, check the __Remove__ box next to the selected build and confirm the deletion. If a build to be removed from the queue is a part of a build chain, TeamCity shows the following message below comment field: "This build is a part of a build chain". Refer to the [Build Chain](build-chain.md#Stopping%2FRemoving+From+Queue+Builds+from+Build+Chain) description for details.
+To remove build(s) from the queue, check the __Remove__ box next to the selected build and confirm the deletion. If a build to be removed from the queue is a part of a build chain, TeamCity shows the following message below comment field: "This build is a part of a build chain". Refer to the [Build Chain](build-chain.md#Stopping%2FRemoving+From+Queue+Builds+from+Build+Chain) description for details.
 
 Also you can remove all your personal builds from the queue at once from the __Actions__ menu.
 

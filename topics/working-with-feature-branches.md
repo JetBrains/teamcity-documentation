@@ -271,7 +271,7 @@ You can merge branches in TeamCity manually, for example, if you want to merge b
 
 __To merge sources manually__: 
 
-Open the [build results page](working-with-build-results.md), click the __Actions__ menu in the top\-right corner and select "__Merge this build sources__".   
+Open the [build results page](working-with-build-results.md), click the __Actions__ menu in the upper right corner and select "__Merge this build sources__".   
  The dialog that appears enables you to select the destination branch and add a commit message (required).
 
 It is also possible to merge branches [automatically](automatic-merge.md).

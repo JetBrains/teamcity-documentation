@@ -1,20 +1,15 @@
 [//]: # (title: Working with Build Results)
 [//]: # (auxiliary-id: Working with Build Results)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 In TeamCity a build goes through several states:
-* upon some event the build trigger adds the build to the queue where the build stays waiting for a free agent
-* the build starts on the agent and performs all configured build steps
-* the build finishes and becomes a part of the build history of this build configuration.
-
+* Upon some event the build trigger adds the build to the queue where the build stays waiting for a free agent.
+* The build starts on the agent and performs all configured build steps.
+* The build finishes and becomes a part of the build history of this build configuration.
 
 In TeamCity all information about a particular build, whether it is queued, running or finished, is accumulated on the __build results__ page. The page can be accessed by clicking the build number or build status link.
 
 Besides providing the build information, this page enables you to:
-* [run a custom build](triggering-a-custom-build.md) using the __Run...__ button
+* [run a custom build](triggering-a-custom-build.md) using the __Run__ button
 * use the __Actions__ menu to do the following: 
   * add a build to [favorites](favorite-build.md)
   * add a comment
@@ -24,6 +19,10 @@ Besides providing the build information, this page enables you to:
   * [label this build sources](vcs-labeling.md)
   * remove the build
 * [edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+From+Template)
+
+On this page:
+
+<tag-list of="chapter" mode="tree" depth="4"/>
 
 ## Build Details
 
@@ -302,9 +301,6 @@ For each Maven build the TeamCity agent gathers Maven specific build details, wh
 
 
 [//]: # (Internal note. Do not delete. "Working with Build Resultsd371e671.txt")    
-
-
-
 
 ## Internal Build ID
 
