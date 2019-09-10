@@ -214,10 +214,10 @@ All project-level agent management permissions are by default added to the [Proj
 
 A user can perform a task controlled by one of these permissions on all the agents belonging to some [pool](agent-pools.md) provided this permission is granted to the user in all the projects associated with this pool. For example, a user with the _"Enable/disable agents associated with project"_ permission granted in some projects can enable or disable agents which belong to the pools of the related projects if the permission is granted in __all the projects__ associated with the pools. 
 
+<include src="per-project-permissions.md" include-id="permissions"/>
 __  __
 
 __See also:__
 
-__Concepts__: [User Account](user-account.md)
-
+__Concepts__: [User Account](user-account.md)   
 __Administrator's Guide__: [Enabling Guest Login](enabling-guest-login.md) | [Managing Users and User Groups](managing-users-and-user-groups.md) 
