@@ -56,7 +56,7 @@ TeamCity requires the following permissions for Amazon EC2 Resources:
 * `ec2:RebootInstances`
 * `ec2:RunInstances`
 * `ec2:ModifyInstanceAttribute`
-* [`ec2:Tags`](#Tagging+for+TeamCity-launched+instances)
+* [`ec2:*Tags`](#Tagging+for+TeamCity-launched+instances)
  
 
 To use [spot instances](#Amazon+EC2+Spot+Instances+support), the following additional permissions are required:
