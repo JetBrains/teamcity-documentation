@@ -78,7 +78,7 @@ It is recommended that the main TeamCity server and all secondary nodes have the
 
 The main and secondary nodes operate under the same license.
 
-Secondary notes use the same authentication settings as the main server.
+Secondary nodes use the same authentication settings as the main server.
 
 ## Global Settings
 
