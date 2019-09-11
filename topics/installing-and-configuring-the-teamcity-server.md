@@ -49,7 +49,7 @@ During the server setup you can select either an internal database or an existin
 
 For the Windows platform, run the executable file and follow the installation instructions. You have options to install the TeamCity web server and one build agent that can be run as a Windows service.
 
-If you opted to install the services, use the standard Windows `Services` applet to manage the service.Otherwise, use standard [scripts](#Starting+TeamCity+server).
+If you opted to install the services, use the standard Windows `Services` applet to manage the service. Otherwise, use standard [scripts](#Starting+TeamCity+server).
 
 If you did not change the default port (80) during the installation, the TeamCity web UI can be accessed via [`http://localhost/`](http://localhost/) in a web browser running on the same machine where the server is installed. Note that port 80 can be used by other programs (for example, Skype, or other web servers like IIS). In this case you can specify another port during the installation and use [`http://localhost:<port>/`](http://localhost:<port>/) address in the browser.
 
