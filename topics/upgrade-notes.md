@@ -41,12 +41,7 @@ If you rely on external resources (for example, in the build report tabs content
    * Agents upgrade significantly faster than before, but it takes extra time for an agent to download a tool for the first build that requires this tool. Such builds will be processed a little longer than usual.
    * Agents detect and download most of the required tools automatically, but you can request additional tools by referencing them in the [parameters](configuring-build-parameters.md) of the build (or project) configuration. TeamCity now only supports paths defined using a parameter reference (for example, `%teamcity.tool.jdk12%`). If the parameters you use comprise relative or absolute paths to tools, redefine their values via parameter references.   
    * Note that if you are about to specify a path to a tool in the project settings, TeamCity will not propose the path value if the tool has not been yet downloaded by any agent in the project. We are working on enabling the autocomplete feature on the project level, but for now please make sure to enter the proper path manually.
-* If you use Docker images and Windows Server 2019 with process isolation, build agents may fail to start. To work around the issue, use the `hyper-v` isolation for Docker containers:
-
-    ```Shell 
-    
-    docker run --isolation=hyperv …
-    ```
+* If you use Docker images and Windows Server 2019 with process isolation, build agents may fail to start (read more in [Known Issues](known-issues.md#%22Access+is+denied%22+or+%22Access+to+the+path+is+denied%22+problem+on+container+start)). To work around the issue, grant the "Full control" access to the "Authenticated Users" group.
 
 ### Bundled Tools Updates
 

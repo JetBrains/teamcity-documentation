@@ -373,9 +373,8 @@ Try running with antivirus software uninstalled before reporting the issue to Je
 
 ## Windows Docker Containers
 
-Problems common to TeamCity Docker container images
+Problems common to TeamCity Docker container images.
 
-### Windows Docker containers
 * Since Windows 10 version 1803 with [KB4340917](https://support.microsoft.com/en-us/help/4340917/windows-10-update-kb4340917) it's possible to use port mapping from containers to localhost. For previous Windows versions it works for the non\-localhost IP address associated with this machine and you can access a running application via the machine's hostname or determine the IP address via the `ipconfig` command. Note that the `netstat -an` command may not show that the port is open on any IP address, while in fact it can work. This is also a known problem of Docker on Windows.
 
 * On Windows 10, the memory allocated per container is 1GB by default. To increase this value, use the following memory options:
@@ -386,7 +385,7 @@ Problems common to TeamCity Docker container images
     ```
 
 
-* On Windows 10 containers work via Hyper\-V and may experience problems with network and other subsystems. To diagnose these problems, execute the following PowerShell script:
+* On Windows 10 containers work via Hyper-V and may experience problems with network and other subsystems. To diagnose these problems, execute the following PowerShell script:
 
     ```Shell
         Invoke-WebRequest https://aka.ms/Debug-ContainerHost.ps1 -UseBasicParsing | Invoke-Expression
@@ -416,10 +415,22 @@ If you need to support a use case when the Docker wrapper runs Linux containers 
 
 ### Problems with a local time in Windows containers
 
-When using Windows Docker containers, there is an issue with [incorrect time in Windows containers](https://youtrack.jetbrains.com/issue/TW-53474) when the system time in a container goes out of sync with the time on the host machine. It could cause problems in integrations where response time is significant (e.g. OAuth tokens).
+When using Windows Docker containers, there is an issue with [incorrect time in Windows containers](https://youtrack.jetbrains.com/issue/TW-53474) when the system time in a container goes out of sync with the time on the host machine. It could cause problems in integrations where response time is significant (for example, OAuth tokens).
 
 To address it, upgrade your host machine to Windows Server 2019 / Windows 10 1809 and use TeamCity docker images [compatible with Windows containers 1809](https://youtrack.jetbrains.com/issue/TW-58161).
 
-### "Access is denied" or "Access to the path is denied." problem on container start
+### "Access is denied" or "Access to the path is denied" problem on container start
 
-When Docker is starting Windows containers with __process isolation__, it's using the `SERVICE` user account which lacks the write access to the directory with docker volumes. To resolve it, grant the `SERVICE` user "Full control" permission for `%\PROGRAMDATA%\docker\volumes` directory. 
+When Docker is starting Windows containers with __process isolation__, it uses a Windows user account which lacks the write access to the directory with Docker volumes. In this case, build agents may fail to start due to the following error:
+
+ ```Shell
+Move-Item : Access to the path is denied.
+
+...
+
+CategoryInfo : PermissionDenied: (<path to properties file>:FileInfo) [Move-Item], UnauthorizedAccessException
+FullyQualifiedErrorId : MoveFileInfoItemUnauthorizedAccessError,Microsoft.PowerShell.Commands.MoveItemCommand
+
+```
+
+To resolve this issue, grant the "Full control" permission to the "Authenticated Users" group for the `%PROGRAMDATA%docker\volumes` directory.

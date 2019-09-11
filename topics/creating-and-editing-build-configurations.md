@@ -51,7 +51,7 @@ You can create a build configuration using a VCS URL:
    * Next, TeamCity UI will display suggestion icons with prompts to create [build triggers](configuring-build-triggers.md), [failure conditions](build-failure-conditions.md), and [build features](adding-build-features.md). Depending on the build configuration settings, it may suggest some additional configuration options.
 5. After the build configuration is created, you can run a build and/or tweak the settings.
 
-## Creating  New Build Configuration pointing to GitHub.com repository
+## Creating New Build Configuration pointing to GitHub.com repository
 1. Click the __Create build configuration__ button and select __Pointing to GitHub.com repository__.
     * If you do not have a GitHub connection configured, you will be redirected to the __Connections__ page. Set up the connection as [described here](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub), then follow the steps below.
     * If you have a GitHub connection configured, follow the steps below.
@@ -60,7 +60,7 @@ You can create a build configuration using a VCS URL:
 4. TeamCity will add a VCS build trigger and attempt to auto\-detect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.On the __Auto\-detected Build Steps__ __page,__ select the step(s) to use in your build configuration. Click __Use selected__. If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review the suggested settings ![suggestedSettings.PNG](suggestedSettings.PNG) and configure required ones.
 
-## Creating  New Build Configuration pointing to Bitbucket Cloud
+## Creating New Build Configuration pointing to Bitbucket Cloud
 1. Click the __Create build configuration__ button and select __Pointing to Bitbucket Cloud repository__. 
  * If you do not have a Bitbucket connection configured, you will be redirected to the __Connections__ page. Set up the connection as [described here](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket), then follow the steps below.
  * If you have a Bitbucket connection configured, follow the steps below.
