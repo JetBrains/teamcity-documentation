@@ -18,7 +18,7 @@ On this page:
 
 <table><tr>
 
-<td>
+<td width="200">
 
 Option
 
@@ -41,12 +41,14 @@ Port
 
 <td>
 
-Specify the Perforce server address. The format is `host:port`. For specific environments, P4Host can be specified in the Workspace options [below](#Checkout+On+Agent+Settings)for any  type of checkout. 
+Specify the Perforce server address. The format is `host:port`. For specific environments, P4Host can be specified in the Workspace options [below](#Checkout+On+Agent+Settings) for any type of checkout. 
 
 
 </td></tr><tr>
 
 <td>
+
+<anchor name="perforceStreamOptionDescription"/>
 
 Stream
 
