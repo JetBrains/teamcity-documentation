@@ -38,14 +38,13 @@ Note that on Windows, a node might not be able to access the TeamCity Data Direc
 
 ```Plain Text
 mklink /d "C:\<path to mount point>" "\\<host>\<shared directory name>\"
-
 ```
 
-<note>
 
+<note>
 __Important!__
 
-If the Data Directory is shared via the SMB protocol, and main and secondary nodes are installed on Windows, make sure that all registry keys mentioned on this page are set to 0 on all of the TeamCity nodes ([read more](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10))). Otherwise, you can run into stability issues: for example, a build log corruption.
+If the Data Directory is shared via the SMB protocol, and main and secondary nodes are installed on Windows, make sure that all registry keys mentioned in [this article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all of the TeamCity nodes. Otherwise, you can run into stability issues: for example, a build log corruption.
 </note>
 
 
