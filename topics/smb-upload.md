@@ -7,7 +7,7 @@ The settings common for all runners are described in [Configuring Build Steps](c
 
 <tip>
 
-The fields below support [parameter references](predefined-build-parameters.md): any text between percentage signs (%) is considered a reference to a property by TeamCity. To prevent TeamCity from treating the text in the percentage signs as a property reference, use two percentage signs to escape them: for example, if you want to pass `"%Y%m%d%H%M%S"` into the build, change it to `"%%Y%%m%%d%%H%%M%%S"`.investigating-and-muting-build-problems.md
+The fields below support [parameter references](predefined-build-parameters.md): any text between percentage signs (%) is considered a reference to a property by TeamCity. To prevent TeamCity from treating the text in the percentage signs as a property reference, use two percentage signs to escape them: for example, if you want to pass `"%Y%m%d%H%M%S"` into the build, change it to `"%%Y%%m%%d%%H%%M%%S"`.
 </tip>
 
 <table><tr>
@@ -28,11 +28,7 @@ Description
 
 __Deployment Target__
 
-</td>
-
-<td></td>
-
-</tr><tr>
+</td></tr><tr>
 
 <td>
 
@@ -42,7 +38,7 @@ __Target URL__
 
 <td>
 
-The URL should point to a host + share at least. Subdirectories are allowed here and will be created if missing. Valid examples:
+ The URL should point to a host \+ share at least. Subdirectories are allowed here and will be created if missing. Valid examples:
 
 
 ```Shell
@@ -81,9 +77,7 @@ __Name resolution__
 
 __Deployment Credentials__
 
-</td>
-<td></td>
-</tr><tr>
+</td></tr><tr>
 
 <td>
 
@@ -125,8 +119,7 @@ Specify the __domain__
 
 __Deployment Source__
 
-</td>
-<td></td></tr><tr>
+</td></tr><tr>
 
 <td>
 

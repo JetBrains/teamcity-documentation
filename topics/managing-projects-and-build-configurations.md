@@ -7,9 +7,9 @@
 
 ### Configuring Visibility
 
-The __Configure Visible Projects__ pop\-up on the __Projects Overview__ page allows managing projects display.
+The __Configure Visible Projects__ pop-up window on the __Projects Overview__ page allows reordering the projects and change their visibility in the list of projects.
 
-An individual project can be added to / removed from to the Projects Overview page using the "eye" button on the __Project Home__ page:
+To add an individual project to the __Projects Overview__ page or remove it from this page, toggle the "eye" button on the __Project Home__ page:
 
 <img src="eye-button.png" width="986" alt="Disk usage in details"/>
 
