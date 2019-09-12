@@ -247,7 +247,7 @@ The Visual SourceSafe plugin is no longer bundled with TeamCity but is available
 
 ## Changes from 2017.2.3 to 2017.2.4
 
-The Inspections (.NET) and Duplicates Finder (.NET) build steps were renamed to Inspections (ReSharper) and Duplicates finder (ReSharper)
+The Inspections (.NET) and Duplicates Finder (.NET) build steps were renamed to Inspections (ReSharper) and Duplicates finder (ReSharper).
 
 ## Changes from 2017.2.2 to 2017.2.3
 
