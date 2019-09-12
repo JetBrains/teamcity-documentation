@@ -1,12 +1,11 @@
 [//]: # (title: Creating and Editing Build Configurations)
 [//]: # (auxiliary-id: Creating and Editing Build Configurations)
 
+This page details creating build configurations via the TeamCity web UI. Other options include the [REST API](rest-api.md#Build+Configuration+And+Template+Settings) and using TeamCity project configuration in [DSL based on the Kotlin language](storing-project-settings-in-version-control.md).
+
 On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
-
-
-This section details creating build configurations via the TeamCity web UI. Other options include the [REST API](rest-api.md#Build+Configuration+And+Template+Settings) and using TeamCity project configuration in [DSL based on the Kotlin language](storing-project-settings-in-version-control.md).
 
 To create a build configuration, open __General Settings__ of a project and click __Create build configuration__ under the __Build Configurations__ section.
 
@@ -18,7 +17,7 @@ TeamCity provides several ways to create a new [build configuration](build-confi
 
 You can create a new build configuration
 * [Manually](#Creating+New+Build+Configuration+Manually)
-* [Pointing to a repository URL ](#Creating+New+Build+Configuration+from+URL) 
+* [Pointing to a repository URL](#Creating+New+Build+Configuration+from+URL) 
 * Pointing to a GitHub repository
 * Pointing to Bitbucket repository
 * [Create a build configuration template](#Creating+Build+Configuration+Template), and then [create a build configuration based on the template](#Creating+Build+Configuration+From+Template).
@@ -26,6 +25,7 @@ You can create a new build configuration
 When build configurations are created, you can:
 * [change their order](#Ordering+Build+Configurations)
 * [edit their settings](#Configuring+Settings)
+* control them via the [Actions](#Actions+in+Build+Configuration+Settings) menu
 
 ## Creating New Build Configuration Manually
 1. On the __Administration &gt; Projects__ page, select the desired project in the list. (Alternatively, open the project using the __Projects__ popup, and click the __Edit Project Settings__ link on the right).  The __Project Settings__ page opens.
@@ -109,7 +109,19 @@ You can view all build configurations of a project on the __Project Overview__ p
 
 Configuring settings of a build configuration is described on the following pages:
 
- Note that editing via the TeamCity Web UI will be disabled for build configurations created via the [REST API](rest-api.md).
+<toc depth="1"/>
+
+Note that editing via the TeamCity web UI will be disabled for build configurations created via the [REST API](rest-api.md).
+
+## Actions in Build Configuration Settings
+
+Use the __Actions__ menu when editing a build configuration to
+* [pause/activate a build configuration](build-configuration.md#Pausing+%2F+Activating+a+single+build+configuration)
+* [copy/move/delete a build configuration](copy-move-delete-build-configuration.md)
+* [attach a build configuration to a template](build-configuration-template.md#Associating+build+configurations+with+templates)
+* [extract a template from a build configuration](build-configuration-template.md#Creating+build+configuration+template)
+* [extract a meta-runner from a build configuration](working-with-meta-runner.md#Extracting+and+Using+Meta-Runner)
+
  
  __  __
  
