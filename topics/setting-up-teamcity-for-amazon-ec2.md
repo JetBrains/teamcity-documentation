@@ -168,7 +168,7 @@ It is possible to use IAM (Identity and Access Management) profiles with build a
 * `iam:ListInstanceProfiles`
 * `iam:PassRole`
 
-IAM profiles must be [preconfigured](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html) in Amazon EC2. In the TeamCity Web UI, the __IAM profile__ drop-down menu enables you to select a role. Every new launched EC2 instance will assume the [selected IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-usingrole-ec2instance.html).
+IAM profiles must be [preconfigured](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html) in Amazon EC2. In the TeamCity web UI, the __IAM profile__ drop-down menu enables you to select a role. Every new launched EC2 instance will assume the [selected IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-usingrole-ec2instance.html).
 
 #### Amazon EC2 Spot Instances support
 

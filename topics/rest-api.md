@@ -722,9 +722,9 @@ http://teamcity:8111/app/rest/builds?locator=snapshotDependency:(to:(id:XXXX),in
  
 __Since TeamCity 10.0.3__, there is an experimental ability to:
  
-Get all the builds which downloaded artifacts from the build with the given ID (Delivered artifacts in the TeamCity Web UI): `GET http://teamcity:8111/app/rest/builds?locator=artifactDependency:(from:(id:<build ID>),recursive:false)`.
+Get all the builds which downloaded artifacts from the build with the given ID (Delivered artifacts in the TeamCity web UI): `GET http://teamcity:8111/app/rest/builds?locator=artifactDependency:(from:(id:<build ID>),recursive:false)`.
  
-Get all the builds whose artifacts were downloaded by the build with the given ID (Downloaded artifacts in the TeamCity Web UI): `GET http://teamcity:8111/app/rest/builds?locator=artifactDependency:(to:(id:<build ID>),recursive:false)`.
+Get all the builds whose artifacts were downloaded by the build with the given ID (Downloaded artifacts in the TeamCity web UI): `GET http://teamcity:8111/app/rest/builds?locator=artifactDependency:(to:(id:<build ID>),recursive:false)`.
  
  
 ##### Build Parameters

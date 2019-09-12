@@ -11,7 +11,7 @@ Please note that the support for any of these properties can be abandoned in the
 
 
 
-You can configure different polling intervals (in seconds) for different pages in the TeamCity Web UI:
+You can configure different polling intervals (in seconds) for different pages in the TeamCity web UI:
 
 
 

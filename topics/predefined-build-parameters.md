@@ -448,7 +448,7 @@ Agent\-specific properties are defined on each build agent and vary depending on
 
 If additional applications/libraries are available in the environment, the administrator can manually define the property in the `<agent home>/conf/buildAgent.properties` file. These properties can be used for setting various build configuration options, for defining build configuration requirements (for example, existence or absence of some property) and inside build scripts. For more information on how to reference these properties, see the [Defining and Using Build Parameters in Build Configuration](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) section.
 
-In the TeamCity Web UI, the actual properties defined on the agent can be reviewed by going to the __Agents__ tab at the top navigation bar __&lt;Agent&gt; | &lt;Agent&gt;__ page | the __Agent Parameters__ tab:
+In the TeamCity web UI, the actual properties defined on the agent can be reviewed by going to the __Agents__ tab at the top navigation bar __&lt;Agent&gt; | &lt;Agent&gt;__ page | the __Agent Parameters__ tab:
 
 <table><tr>
 

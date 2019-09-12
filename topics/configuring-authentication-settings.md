@@ -45,7 +45,7 @@ Simple mode (default) allows you to select presets created for the most common u
 
 ### Advanced Mode
 
-TeamCity allows enabling several authentication modules simultaneously using the advanced mode in the TeamCity Web UI.
+TeamCity allows enabling several authentication modules simultaneously using the advanced mode in the TeamCity web UI.
 
 When a user attempts to log in, all the modules will be tried one by one. If one of them authenticates the user, the login will be successful; if all of them fail, the user will not be able to log into TeamCity.
 

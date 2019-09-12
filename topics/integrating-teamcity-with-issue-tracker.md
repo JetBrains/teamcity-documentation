@@ -1,6 +1,6 @@
 [//]: # (title: Integrating TeamCity with Issue Tracker)
 [//]: # (auxiliary-id: Integrating TeamCity with Issue Tracker)
-TeamCity can be integrated with your issue tracker to provide a comprehensive view of your development project. TeamCity detects issues mentioned in the comments to version control changes, turning them into links to your issue tracker in the TeamCity Web UI.
+TeamCity can be integrated with your issue tracker to provide a comprehensive view of your development project. TeamCity detects issues mentioned in the comments to version control changes, turning them into links to your issue tracker in the TeamCity web UI.
 
 The integration is configured at the project level: the Project Administrator permissions are required. You can configure integration if you have multiple projects on both the TeamCity and the issue tracker server or if you are using different issue\-trackers for different projects.
 
@@ -15,7 +15,7 @@ On this page:
 
 TeamCity supports [JIRA](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md) and __since TeamCity 10.0__ [GitHub](https://confluence.jetbrains.com/display/TCD10/GitHub), [Bitbucket Cloud](bitbucket-cloud.md), and [TFS](team-foundation-work-items.md) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Tracker+Integration) page lists supported versions.
 
-When an integration is configured, TeamCity automatically transforms an issue ID (=issue key in JIRA, work item id in TFS) mentioned in the VCS commit comment into a link to the corresponding issue and the basic issue details are displayed in the TeamCity Web UI when hovering over the icon next to the issue ID (for example, on the __[Changes](working-with-build-results.md#Changes)__ tab of the build results).
+When an integration is configured, TeamCity automatically transforms an issue ID (=issue key in JIRA, work item id in TFS) mentioned in the VCS commit comment into a link to the corresponding issue and the basic issue details are displayed in the TeamCity web UI when hovering over the icon next to the issue ID (for example, on the __[Changes](working-with-build-results.md#Changes)__ tab of the build results).
 
 <img src="issue-tracker-integration.png" width="661" alt="Issue tracker integration"/>
 

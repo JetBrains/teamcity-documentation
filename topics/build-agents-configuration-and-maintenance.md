@@ -7,7 +7,7 @@ On this page:
 
 ## Viewing TeamCity agents details
 
-The __Agents__ page of the TeamCity Web UI provides the comprehensive information on the TeamCity agents. The number of tabs on the page may differ depending on your agent setup.
+The __Agents__ page of the TeamCity web UI provides the comprehensive information on the TeamCity agents. The number of tabs on the page may differ depending on your agent setup.
 
 ### Connected / Disconnected
 

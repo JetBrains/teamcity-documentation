@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Viewing Your Changes)
 Monitoring the quality of the codebase is essential for a development team: a project developer needs to see whether his/her commit brought a build failure or not; for a project leader it is important to detect the code at fault for a build failure to be able to have the situation rectified early, so other members of the team are not inconvenienced.
 
-The __Changes__ page of the TeamCity Web UI allows you to review the commits made by all TeamCity users and see how they have affected builds. You can filter the results with the user selector on the page.
+The __Changes__ page of the TeamCity web UI allows you to review the commits made by all TeamCity users and see how they have affected builds. You can filter the results with the user selector on the page.
 
 <note>
 

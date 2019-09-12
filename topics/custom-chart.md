@@ -17,7 +17,7 @@ The information in this section refers to __TeamСity 10\+__. For other versions
 
 ## Managing Custom Charts via the TeamCity Web UI
 
-It is possible to manage custom charts using the TeamCity Web UI.
+It is possible to manage custom charts using the TeamCity web UI.
 
 ### Adding Custom Charts
 

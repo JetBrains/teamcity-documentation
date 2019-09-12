@@ -6,7 +6,7 @@ On this page:
 <tag-list of="chapter" mode="tree" depth="5"/>
 
 __Since TeamCity 2018.2__, a test run in TeamCity can be associated with some additional information (metadata), complementing test status, execution time, and output. This information can be used to provide extra logs, screenshots, numeric values, tags, and so on.   
-You can now use service messages to report this kind of additional test data in TeamCity and then view it in the TeamCity Web UI.
+You can now use service messages to report this kind of additional test data in TeamCity and then view it in the TeamCity web UI.
 
 ## Reporting additional test data
 
@@ -81,7 +81,7 @@ The path to the image should be relative to the build artifacts directory. When 
 
 ## Displaying additional test data
 
-You can view additional test data in various places in the TeamCity Web UI.
+You can view additional test data in various places in the TeamCity web UI.
 
 ### Additional test data for a failed test
 

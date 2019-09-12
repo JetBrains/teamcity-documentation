@@ -1,12 +1,13 @@
 [//]: # (title: Build Configuration)
 [//]: # (auxiliary-id: Build Configuration)
-A _Build Configuration_ is a collection of settings used to start a build and group the sequence of the builds in the UI.  Examples of build configurations are _distribution_, _integration tests_, _prepare release distribution_, _"nightly" build_. 
+
+A _Build Configuration_ is a collection of settings used to start a build and group the sequence of the builds in the UI. Examples of build configurations are _distribution_, _integration tests_, _prepare release distribution_, _"nightly" build_. 
 
 A build configuration belongs to a [project](project.md) and contains builds. You can explore details of a build configuration on its [home page](viewing-build-configuration-details.md) and modify its settings on the [editing page](creating-and-editing-build-configurations.md).
 
 It is recommended to have a separate build configuration for each sequence of builds (that is performing a specified task in a dedicated environment). This allows for proper features functioning, like detection of new problems/failed tests, first failed in/fixed in tests status, automatically removed investigations, and so on.
 
-To tackle an increased number of build configurations you can use [Build Configuration Templates](build-configuration-template.md) and project\-level [parameters](configuring-build-parameters.md).
+To tackle an increased number of build configurations you can use [build configuration templates](build-configuration-template.md) and project-level [parameters](configuring-build-parameters.md).
 
 On this page:
 
@@ -16,14 +17,14 @@ On this page:
 
 Build configuration settings include:
 * [General settings](configuring-general-settings.md)
-* [Version control settings](vcs-root.md), defining how the source code is retrieved from VCS, where it is checked out to, etc.
-* [Build steps](configuring-build-steps.md), i.e. actions that are run sequentially: e.g. running msbuild, a script, unit tests, etc.
-* [Triggers](configuring-build-triggers.md), which are rules defining  when to start a new build
+* [Version control settings](vcs-root.md), defining how the source code is retrieved from VCS, where it is checked out to, and so on
+* [Build steps](configuring-build-steps.md), that are sequentially run actions: for example, running msbuild, a script, or unit tests
+* [Triggers](configuring-build-triggers.md), which are rules defining when to start a new build
 * [Failure conditions](build-failure-conditions.md) specifying when a build will be marked as failed
 * Additional [build features](adding-build-features.md)
 * Dependencies:  
     * for [snapshot dependencies](snapshot-dependencies.md), TeamCity will run all dependent builds on the sources taken at the moment the build they depend on starts
-    * For [artifact dependencies](artifact-dependencies.md), before a build is started, all artifacts this build depends on will be downloaded and placed in their configured target locations and then will be used by the build.
+    * for [artifact dependencies](artifact-dependencies.md), before a build is started, all artifacts this build depends on will be downloaded and placed in their configured target locations and then will be used by the build
 * [Parameters](configuring-build-parameters.md) which allow sharing settings
 * Agent requirements specifying whether a [build configuration](build-configuration.md) can run on a particular [build agent](build-agent.md).
 
@@ -37,9 +38,9 @@ Build configuration settings and build behavior may vary depending on the type o
 
 The following build configuration types exist in TeamCity:
 
-* regular build configuration, defining actions and rules to apply to the source code. All the settings above are applicable.
-* [deployment build configuration](deployment-build-configuration.md), which deploys artifacts of other builds to some environment (__since TeamCity 2017.2__)
-* [composite build configuration](composite-build-configuration.md), which aggregates results from several other builds combined by snapshot dependencies and presents them in a single place (__since TeamCity 2017.2__)
+* regular build configuration, defining actions and rules to apply to the source code; all the settings above are applicable
+* [deployment build configuration](deployment-build-configuration.md), which deploys artifacts of other builds to some environment
+* [composite build configuration](composite-build-configuration.md), which aggregates results from several other builds combined by snapshot dependencies and presents them in a single place
 
 ## Build Configuration State
 

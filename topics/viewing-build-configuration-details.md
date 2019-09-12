@@ -7,9 +7,8 @@ The __Build Configuration Home__ page provides the configuration details and ena
   * [pause triggers](build-configuration.md#Build+Configuration+State)		
   * check for [pending changes](change-state.md)		
   * enforce [clean checkout](clean-checkout.md)		
-  * [assign an investigation](investigating-and-muting-build-problems.md)			
+  * [assign an investigation](investigating-and-muting-build-problems.md)
 * [edit the configuration settings](creating-and-editing-build-configurations.md#Configuring+Settings)
-
 
 The build configuration details are separated into several tabs whose number may vary depending on your server or project configuration, for example, [dependencies](dependent-build.md), [TeamCity integration with other tools](integrating-teamcity-with-other-tools.md), and so on. 
 
@@ -25,8 +24,8 @@ Provides information on:
 * __Pending Changes__ also listed as a separate tab, see the details [below](#Pending+Changes)	
 * __Current Status__ of the build configuration, and, if applicable:			
   * number of [queued builds](build-queue.md)		
-  * for a running build \- the progress details with the __Stop__ option to terminate the build		
-  * for a [failed build](build-state.md) \- the number and [agent](build-agent.md), and so on.		
+  * for a running build – the progress details with the __Stop__ option to terminate the build		
+  * for a [failed build](build-state.md) – the number and [agent](build-agent.md), and so on	
 * the [Build History](build-history.md) section lists builds of the current build configuration
 
 ## History
@@ -47,8 +46,6 @@ Displays the collected statistical data as [visual charts](statistic-charts.md#B
 
 Lists all authorized agents. Agents meeting [Agent Requirements](agent-requirements.md) are listed as compatible. For each incompatible agent, the reason is provided.   
 The agents belonging to the [pool(s)](agent-pools.md) associated with the current project are listed first. 
-
-
 
 ## Pending Changes
 

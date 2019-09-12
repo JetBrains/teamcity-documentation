@@ -13,7 +13,7 @@ TFS work items support can be configured on the [Issue Trackers](integrating-tea
 
 ## Integration
 
-By default, the integration works the same way as the other issue tracker integrations: you need to mention the work item ID in the comment message, so the work items can be linked to builds and the links will be displayed in various places in the TeamCity Web UI. 
+By default, the integration works the same way as the other issue tracker integrations: you need to mention the work item ID in the comment message, so the work items can be linked to builds and the links will be displayed in various places in the TeamCity web UI. 
 
 Additionally, if your changeset has related work items, TeamCity can retrieve information about them and display information on the __Issue Log__ tab even if no comment is added to the changeset. Besides, custom states for resolved work items are supported by TeamCity.
 

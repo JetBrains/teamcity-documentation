@@ -7,14 +7,14 @@ On this page:
 
 ## Overview
 
-TeamCity allows the two\-way synchronization of the project settings with the version control repository. Supported VCSs are Git, Mercurial, Perforce, Subversion, and Azure DevOps Server (formerly TFS).
+TeamCity allows the two-way synchronization of the project settings with the version control repository. Supported VCSs are Git, Mercurial, Perforce, Subversion, and Azure DevOps Server (formerly TFS).
 
 You can store settings in the XML format and in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [kotlin-based DSL](kotlin-dsl.md). 
 
-When you enable two\-way settings synchronization:  
-* Each administrative change made to the project settings in the TeamCity Web UI is committed to the version control; the changes are made noting the TeamCity user as the committer.
+When you enable two-way settings synchronization:  
+* Each administrative change made to the project settings in the TeamCity web UI is committed to the version control; the changes are made noting the TeamCity user as the committer.
 * If the settings change is committed to the version control, the TeamCity server will detect the modifications and apply them to the project on the fly.    
-Before applying the newly checked\-in settings, certain constraints are applied. If the constraints are not met (that is, the settings are invalid), the current settings are left intact and an error is shown in the UI. Invalid settings are those that cannot be loaded because of constraints, for instance, a build configuration referencing a non\-existing VCS root, of having a duplicate ID or a duplicate name, and so on.
+Before applying the newly checked-in settings, certain constraints are applied. If the constraints are not met (that is, the settings are invalid), the current settings are left intact and an error is shown in the UI. Invalid settings are those that cannot be loaded because of constraints, for instance, a build configuration referencing a non\-existing VCS root, of having a duplicate ID or a duplicate name, and so on.
 
 The settings in the VCS are stored in the `.teamcity` folder in the root of the repository the same format as in the [TeamCity Data Directory](teamcity-data-directory.md).
 

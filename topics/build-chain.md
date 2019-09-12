@@ -56,7 +56,7 @@ In load/acceptance testing, when you store tests in a version control system and
 
 Basically, each build chain is a [directed acyclic graph](http://en.wikipedia.org/wiki/Directed_acyclic_graph), i.e. it cannot have cycles.
 
-Build Chains are visible in various places in the TeamCity Web UI:
+Build Chains are visible in various places in the TeamCity web UI:
 
 * [Dependencies page of build configuration settings](#Dependencies+page+of+build+configuration+settings)
 * [Build Chains tab of project home and build configuration home page](#Build+Chains+tab+of+project+home+and+build+configuration+home+page)

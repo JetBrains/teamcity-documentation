@@ -312,6 +312,6 @@ To update TeamCity started from the CloudFormation template:
 1. In the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation), from the list of stacks, select the running TeamCity stack and use the [Update Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-direct.html) option.
 2. You will be redirected to the _Select Template_ page: use the _Current Template_ option and click __Next__.
 3. On the template settings page, enter the TeamCity version you want to update to. Note that if you previously used the TeamCity version tagged latest, you will now need to provide the actual version number as the `latest` tag can be applied to the server only once. 
-4. Click __Next__, provide additional options if required, review the new settings and click __Update__. Once the Update is complete, access the TeamCity Web UI from the browser.
+4. Click __Next__, provide additional options if required, review the new settings and click __Update__. Once the Update is complete, access the TeamCity web UI from the browser.
 5. If required, provide the [Super User token](super-user.md): to obtain it, you need to connect to your server instance, get the TeamCity server log as described [above](#Connecting+to+server+and+viewing+logs), and retrieve the maintenance token.
 6. Wait for the server to upgrade, log in to the TeamCity server and wait for the agent to upgrade and connect to the server. 

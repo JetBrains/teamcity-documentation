@@ -11,8 +11,6 @@ It is possible to define a default template in a project for all build configura
 
 Build configuration templates support project hierarchy: once created, available templates include the ones from the current project and its parents. On copying a project or a build configuration, the templates that do not belong to the target project or one of its parents are automatically copied. You can associate a build configuration with a template only if the template belongs to the current project or one of its parents.
 
-
-
 ## Creating build configuration template
 
 There are several ways to create a build configuration template:
@@ -54,9 +52,6 @@ object Project : Project({
 })
 ```
 
-
-
- 
 
 ## Associating build configurations with templates
 * You can [create new build configurations based on a template](creating-and-editing-build-configurations.md#Creating+Build+Configuration+From+Template)
@@ -148,7 +143,7 @@ For a given template, it is possible to define such steps and then define their 
 <img src="reorder-build-steps.png" alt="Reorder build steps" width="544"/>
 
 You can still customise the order of build steps in a template\-based build configuration if necessary:
-* using the TeamCity Web UI, it is possible to change the placement of the build configuration steps in respect to the template steps
+* using the TeamCity web UI, it is possible to change the placement of the build configuration steps in respect to the template steps
 * using [versioned settings](storing-project-settings-in-version-control.md), it is possible to change not only the placement of the build configuration steps in respect to the template steps, but also to reorder the steps of the template itself.
 
 ## Enforcing settings inherited from template

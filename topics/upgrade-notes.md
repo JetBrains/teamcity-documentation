@@ -31,7 +31,7 @@ See the related [issue](https://youtrack.jetbrains.com/issue/TW-61413) for detai
 * Starting with 2019.1, the behavior of `reverse.dep` parameters has been changed, and this change can affect your existing builds. In versions prior to 2019.1, when a build chain is triggered, TeamCity only took into account the `reverse.dep` parameters specified in the top-most build of the chain, i.e. in the build which depends on all other builds. If some intermediate builds of the chain had `reverse.dep` parameters, they were ignored.   
   After [this fix](https://youtrack.jetbrains.com/issue/TW-41341) this is no longer the case. Now, when a build chain is triggered, all `reverse.dep` parameters specified in all nodes of the build chain will be processed.
 * On upgrading to 2019.1, the Token-Based Authentication module will be enabled by default, so you can generate [access tokens](managing-your-user-account.md#Managing+Access+Tokens) and start using them right away.
-* Now TeamCity Web UI uses more restrictive value for the [`Content-Security-Policy`](https://content-security-policy.com/) HTTP header. This provides extra security at the expense of prohibiting usage of the web resources not hosted on the TeamCity server.   
+* Now TeamCity web UI uses more restrictive value for the [`Content-Security-Policy`](https://content-security-policy.com/) HTTP header. This provides extra security at the expense of prohibiting usage of the web resources not hosted on the TeamCity server.   
 If you rely on external resources (for example, in the build report tabs content or by using not yet updated plugins), you can specify new header value in the `teamcity.web.header.Content-Security-Policy.protectedValue=<full header value>` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (and `teamcity.web.header.Content-Security-Policy.adminUI.protectedValue` property for the web pages in Administration area). Plugins can use [`ContentSecurityPolicyConfig`](http://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) open API interface to add to the value configured.
 * The requirements for the .NET Framework version used by ReSharper tools have changed. Now, if you use ReSharper tools (dotCover and ReSharper Inspections) of version 2018.2 or newer (including the version bundled with TeamCity 2019.1) in your build configuration, the requirements to build agents will change to .NET Framework 4.6.1 or newer. Make sure to update .NET Framework on agents.
 * The `dotCover.dcvr` hidden artifact is no longer published by default. It is now created in the build temporary folder and removed when the build finishes.   
@@ -1072,7 +1072,7 @@ If the build takes lock on all values of a resource with custom values, these va
 #### TeamCity Disk Space Watcher
 
 The following [internal properties](configuring-teamcity-server-startup-properties.md) define free disk space thresholds on the TeamCity server machine:
-* `teamcity.diskSpaceWatcher.threshold` set to 500 Mb by default displays a warning on all the pages of the TeamCity Web UI.
+* `teamcity.diskSpaceWatcher.threshold` set to 500 Mb by default displays a warning on all the pages of the TeamCity web UI.
 * `teamcity.pauseBuildQueue.diskSpace.threshold` set to 50 Mb by default pauses the build queue.
 The `teamcity.diskSpaceWatcher.softThreshold` property is removed.
 

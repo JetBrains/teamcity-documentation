@@ -11,7 +11,7 @@ On this page:
 
 ## Configuring Connections
 
-Connections are created on the project level, a configured connection is accessible in the current project and in all of its subprojects. If you use global VCS hosting services like GitHub or Bitbucket Cloud, it makes sense to configure a single connection for the Root project. Or your organization administrator can create a parent project and a configure connection to GitHub there once, and the users will see a list of GitHub repositories URLs in the TeamCity Web UI, which will make setting up subprojects a lot simpler for them.  
+Connections are created on the project level, a configured connection is accessible in the current project and in all of its subprojects. If you use global VCS hosting services like GitHub or Bitbucket Cloud, it makes sense to configure a single connection for the Root project. Or your organization administrator can create a parent project and a configure connection to GitHub there once, and the users will see a list of GitHub repositories URLs in the TeamCity web UI, which will make setting up subprojects a lot simpler for them.  
 
 Connections are configured on the __Project Administration | Connections__ page. 
 

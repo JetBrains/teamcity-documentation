@@ -24,7 +24,7 @@ Each file called `*MRPP_\<some text\>.xml*` contains a definition of a single Me
 
 ## Installing Meta-Runner
 
-You can install a meta\-runner using the TeamCity Web UI. Alternatively, you can do it directly via the file system.
+You can install a meta\-runner using the TeamCity web UI. Alternatively, you can do it directly via the file system.
 * to install a Meta\-runner via the Web UI, go to the Project Settings page, select Meta\-Runners from the list of settings on the left, click __Upload Meta\-Runner__ and select the Meta\-runner definition file. Save you changes.
 * to install a Meta\-runner directly to the file system, 
 take the Meta\-runner definition file and put it into the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`\config\projects\<project ID>\pluginData\metaRunners` directory, 
@@ -39,7 +39,7 @@ A Meta\-runner placed into a project will be available to all its subprojects an
 
 ## Creating Meta-Runner
 
-You can create a build configuration via the TeamCity Web UI and extract a meta\-runner from it or use the xml definition of an existing build configuration as a meta\-runner.
+You can create a build configuration via the TeamCity web UI and extract a meta\-runner from it or use the xml definition of an existing build configuration as a meta\-runner.
 
 ## Creating Your Own Meta-Runner from UI
 

@@ -110,7 +110,7 @@ When the newly installed agent connects to the server for the first time, it app
 The number of authorized agents is limited by the number of agents licenses on the server. See more under [Licensing Policy](licensing-policy.md).
 
 ### Installing via Windows installer
-1. In the TeamCity Web UI, navigate to the __Agents__ tab.
+1. In the TeamCity web UI, navigate to the __Agents__ tab.
 2. Click the __Install Build Agents__ link and select __MS Windows Installer__ to download the installer.
 3. On the agent, run the `agentInstaller.exe` Windows Installer and follow the installation instructions.
 
@@ -120,14 +120,14 @@ Ensure that the user account used to run the agent service has appropriate [perm
 </note>
 
 ### Installing via Docker Agent Image
-1. In the TeamCity Web UI, navigate to the __Agents__ tab.
+1. In the TeamCity web UI, navigate to the __Agents__ tab.
 2. Click the __Install Build Agents__ link and select _Docker Agent Image_.
 3. Follow the instructions on the opened [page](https://hub.docker.com/r/jetbrains/teamcity-agent/).
 
 ### Installing via ZIP File
 1. Make sure a JDK (JRE) 1.8.0\_161 or later (Java 6\-10 are supported, but 1.8.0\_161\+ is recommended) is properly installed on the agent computer.
 2. On the agent computer, make sure the `JRE_HOME` or `JAVA_HOME` environment variables are set (pointing to the installed JRE or JDK directory respectively).
-3. In the TeamCity Web UI, navigate to the __Agents__ tab.
+3. In the TeamCity web UI, navigate to the __Agents__ tab.
 4. Click the __Install Build Agents__ link and select __Zip file distribution__ to download the archive.
 5. Unzip the downloaded file into the desired directory.
 6. Navigate to the `<installation path>\conf` directory, locate the file called `buildAgent.dist.properties` and rename it to `buildAgent.properties`.

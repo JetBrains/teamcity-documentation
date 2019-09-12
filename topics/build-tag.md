@@ -13,7 +13,7 @@ Clicking a tag filters out all builds in the history: only the builds marked wit
 
 __To tag a build:__
 
-The TeamCity Web UI provides the following ways to tag a particular build:
+The TeamCity web UI provides the following ways to tag a particular build:
 * using the [Build Configuration Home Page](viewing-build-configuration-details.md): 
      * go to either the __Overview__ or __History__ tab
      * go to the build history table

@@ -544,7 +544,7 @@ __[Back to top](#Most+frequently+used+documentation+sections)__
 
 ## TeamCity installation problems
 
-If the TeamCity Web UI cannot be accessed after installation, you might be running TeamCity on a port that is already in use by another program. [Check and configure](installing-and-configuring-the-teamcity-server.md#Installation+Configuration) your TeamCity installation.
+If the TeamCity web UI cannot be accessed after installation, you might be running TeamCity on a port that is already in use by another program. [Check and configure](installing-and-configuring-the-teamcity-server.md#Installation+Configuration) your TeamCity installation.
 
 __[Back to top](#Most+frequently+used+documentation+sections)__
 

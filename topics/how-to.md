@@ -1259,7 +1259,7 @@ To recover from the state you will need backup of the consistent state made prio
 ## Debug a Build on a Specific Agent
 
 In case a build fails on some agent, it is possible to debug it on this very agent to investigate agent\-specific issues. Do the following:
-1. Go to the __Agents__ page in the TeamCity Web UI and [select the agent](viewing-build-agent-details.md).
+1. Go to the __Agents__ page in the TeamCity web UI and [select the agent](viewing-build-agent-details.md).
 2. [Disable the agent](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) to temporarily remove it from the [build grid](build-grid.md). Add a comment (optional). To enable the agent automatically after a certain time period, check the corresponding box and specify the time.
 3. [Select the build](working-with-build-results.md) to debug.
 4. Open the [Custom Run](triggering-a-custom-build.md#Run+Custom+Build+dialog) dialog and specify the following options: 
