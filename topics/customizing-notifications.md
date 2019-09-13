@@ -135,7 +135,7 @@ __Current workaround__
 This assumes direct access to disk from the template and ignores external artifacts storage (like S3) as well as artifacts browsing policies (not showing internal artifacts). Also, this way is likely to become deprecated in the future TeamCity versions.
 
 
-```
+```XML
 <p>Build artifacts:</p>
   <#list build.artifactsDirectory.listFiles() as file>
     <a href="${webLinks.getDownloadArtefactUrl(build.buildTypeExternalId, build.buildId, file.name)}">${file.name}</a> (${file.length()}B)<br/>
