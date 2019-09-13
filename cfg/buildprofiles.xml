@@ -19,6 +19,7 @@
         <config-search-scopes-provider>https://data.services.jetbrains.com/search/</config-search-scopes-provider>
         <enable-browser-edits>true</enable-browser-edits>
         <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2019.1/topics/</browser-edits-url>
+        <disable-prev-next-links>true</disable-prev-next-links>
     </variables>
     <layout name="Web help" mode="web2">
         <style>s.css</style>
