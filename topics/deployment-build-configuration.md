@@ -1,7 +1,7 @@
 [//]: # (title: Deployment Build Configuration)
 [//]: # (auxiliary-id: Deployment Build Configuration)
 
-TeamCity provides the _Deployment_ type of build configuration. Build configurations which perform deploying to some environment can be marked with this type: these are usually build configurations which have snapshot or artifact dependencies on the builds, whose results they deploy.  
+TeamCity provides the _Deployment_ type of build configuration. Build configurations which perform deploying to some environment can be marked with this type: these are usually build configurations which have snapshot or artifact dependencies on the builds, whose results they deploy.
 
 You can [create a build configuration](creating-and-editing-build-configurations.md) and use the [General Settings](configuring-general-settings.md) tab to set its type to _Deployment_. The type change does not affect the build configuration functionality but offers some handy features to distinguish the deployment build from other builds.   
 You can change the type back to _Regular_ anytime.
@@ -14,7 +14,7 @@ You can [disable revisions synchronization](build-chain.md#Disabling+Revisions+S
 
 Once a configuration is marked as _Deployment_, TeamCity changes behavior in the following way:
 * The __Run__ button caption for this configuration changes to __Deploy__.
-* If there is a build used as a dependency in a Deployment configuration, then, after the build is run, its [build results page](working-with-build-results.md) will display the __Deployments__ section allowing you to quickly deploy the build.   
+* If there is a build used as a dependency in a deployment configuration, then, after the build is run, its [build results page](working-with-build-results.md) will display the __Deployments__ section allowing you to quickly deploy the build.   
 
    <img src="Deployments.png" alt="Build deployments" width="1557"/>
 
@@ -22,5 +22,5 @@ Once a configuration is marked as _Deployment_, TeamCity changes behavior in the
    
    <img src="ChangeDetails.png" alt="Deployments in Change details" width="1312"/>
    
-* For Deployment configurations, TeamCity always shows the latest started build regardless of the changes it contains; unlike regular build configurations, for which the build with the latest changes is displayed.
+* For deployment configurations, TeamCity always shows the latest started build regardless of the changes it contains; unlike regular build configurations, for which the build with the latest changes is displayed.
 * When setting the build configuration type to _Deployment_, several settings are automatically changed to reflect the best practices: _"Limit the number of simultaneously running builds"_ is set to "1" and the _"Allow triggering personal builds"_ option is turned off.

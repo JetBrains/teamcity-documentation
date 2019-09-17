@@ -76,7 +76,7 @@ Click Edit file list and specify paths to files where the values to be replaced 
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
-_If a [pre-defined template](file-content-replacer.md#Pre-defined templates) is selected, the files associated with that template will be used._
+_If a [pre-defined template](file-content-replacer.md#Templates) is selected, the files associated with that template will be used._
 
 
 </td></tr><tr>
@@ -95,7 +95,7 @@ File encoding
 
 By default, TeamCity will auto\-detect the file encoding. To specify the encoding explicitly, select it from the drop\-down. When specifying a _custom_ encoding, make sure it is [supported](https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html) by the agent.     
 
-_If a [pre-defined template](file-content-replacer.md#Pre-defined templates) is selected, the file encoding associated with that template will be used._
+_If a [pre-defined template](file-content-replacer.md#Templates) is selected, the file encoding associated with that template will be used._
 
 
 </td></tr><tr>
@@ -113,7 +113,7 @@ Find what
 
 Specify a pattern to search for, in the [regular expression](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum) format.    
 The [MULTILINE](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#MULTILINE) mode is on by default.       
-_If a [pre-defined template](file-content-replacer.md#Pre-defined templates) is selected, the pattern associated with that template will be used._
+_If a [pre-defined template](file-content-replacer.md#Templates) is selected, the pattern associated with that template will be used._
 
 You can disable the MULTILINE mode by adding "(?\-m)" at the start of the pattern string.
 
@@ -132,7 +132,7 @@ Match case
 <anchor name="matchCase"/>
 
 By default, the comparison is case\-sensitive. Uncheck for case\-insensitive languages.    
-_If a [pre-defined template](file-content-replacer.md#Pre-defined templates) is selected, the comparison associated with that template will be used._
+_If a [pre-defined template](file-content-replacer.md#Templates) is selected, the comparison associated with that template will be used._
 
 
 </td></tr><tr>
@@ -265,11 +265,8 @@ The templates for replacing the following [Core Foundation Keys](https://develop
 ### Extending an attribute value with a custom suffix
 
 Suppose you do not want to replace your `AssemblyConfiguration` with a fixed literal, but want to preserve your `AssemblyConfiguration` from `AssemblyInfo.cs` and just extend it with a custom suffix, for example,: `[assembly: AssemblyConfiguration("${AssemblyConfiguration} built by TeamCity")])`.
-   
-
 
 Do the following: change the default replacement `$1MyAssemblyConfiguration$7` to `$1$5 built by TeamCity$7`.
-
 
 [//]: # (Internal note. Do not delete. "File Content Replacerd143e622.txt")    
 
@@ -292,45 +289,44 @@ Spaces are usually considered a part of the pattern, unless they follow a comma,
 
 Note that the TeamCity server UI trims leading and trailing spaces in input fields, so a single\-line pattern like `<spaces>foo.bar` will become `foo.bar` upon save. The following workarounds are available:
 
-
 [//]: # (Internal note. Do not delete. "File Content Replacerd143e694.txt")    
-
-
-
 
 ### Changing only the last version part / build number of the AssemblyVersion attribute:
 
 Suppose, your `AssemblyVersion` in `AssemblyInfo.cs` is `Major.Minor.Revision.Build` (set to `1.2.3.*`), and you want to replace the `Build` portion (following the last dot (the `*`) only.
-1. Load the `AssemblyVersion` in AssemblyInfo (C#) template and change the default pattern:   
-   ```Shell
-   (^\s*\[\s*assembly\s*:\s*((System\s*\.)?\s*Reflection\s*\.)?\s*AssemblyVersion(Attribute)?\s*\(\s*@?\")(([0-9\*])+\.?)+(\"\s*\)\s*\])
-   
-   ```
-   
-   to
 
-   ```Shell
+Load the `AssemblyVersion` in AssemblyInfo (C#) template and change the default pattern:
 
-   (^\s*\[\s*assembly\s*:\s*((System\s*\.)?\s*Reflection\s*\.)?\s*AssemblyVersion(Attribute)?\s*\(\s*@?\")(([0-9\*]+\.)+)[0-9\*]+(\"\s*\)\s*\])
+```Shell
+(^\s*\[\s*assembly\s*:\s*((System\s*\.)?\s*Reflection\s*\.)?\s*AssemblyVersion(Attribute)?\s*\(\s*@?\")(([0-9\*])+\.?)+(\"\s*\)\s*\])
 
-   ```
-   and change the default replacement:
+```
 
-   ```Shell
+to
 
-   $1\%build.number%$7
+```Shell
 
-   ```
+(^\s*\[\s*assembly\s*:\s*((System\s*\.)?\s*Reflection\s*\.)?\s*AssemblyVersion(Attribute)?\s*\(\s*@?\")(([0-9\*]+\.)+)[0-9\*]+(\"\s*\)\s*\])
 
-   to
+```
 
-   ```Shell
-   $1$5\%build.number%$7
+and change the default replacement:
 
-   ```
+```Shell
+
+$1\%build.number%$7
+
+```
+
+to
+
+```Shell
+$1$5\%build.number%$7
+
+```
 
 
 <note>
 
-Make sure your `%build.number%` [format](configuring-general-settings.md) contains just a decimal number without any dots, or you may end up with a non\-standard version like `1.2.3.4.5.6.2600` (i.e. `%build.counter%` _is_ a valid value here while `4.5.6.%build.counter%` is _not_).
+Make sure your `%build.number%` [format](configuring-general-settings.md) contains just a decimal number without any dots, or you may end up with a non-standard version like `1.2.3.4.5.6.2600` (i.e. `%build.counter%` _is_ a valid value here while `4.5.6.%build.counter%` is _not_).
 </note>

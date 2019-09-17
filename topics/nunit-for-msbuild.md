@@ -1,8 +1,8 @@
 [//]: # (title: NUnit for MSBuild)
 [//]: # (auxiliary-id: NUnit for MSBuild)
 This page describes how to use NUnit from MS build.
-* To use __NUnit prior to 3.0__ from MSBuild, see [Working with TeamCity-provided NUnit task](#Working+with+NUnit+Task+in+MSBuild+Build)
-* To use __NUnit 3.0 and above__ from MSBuild, see [Working with NUnit 3.0](#Working+with+NUnit+3.0)
+* for __NUnit prior to 3.0__ see [Working with TeamCity-provided NUnit task](#Working+with+NUnit+Task+in+MSBuild+Build)
+* for __NUnit 3.0 and above__ see [Working with NUnit 3.0](#Working+with+NUnit+3.0)
 
 ## Working with NUnit Task in MSBuild Build
 

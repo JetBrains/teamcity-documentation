@@ -67,7 +67,7 @@ Description
 
 <td>
 
- NUnit runner
+NUnit runner
 
 
 </td>
@@ -88,10 +88,9 @@ Path to NUnit console tool:
 
 <td>
 
-_Available if NUnit 3.0 is selected_. Specify the path to nunit3\-console.exe:    
-__prior to TeamCity 9.1.4__ specify the directory containing the console executable file,           
-__since 9.1.4__ specify the path to the console executable file including the file name. 
-
+_Available if NUnit 3.0 is selected_. Specify the path to `nunit3-console.exe`:
+* __prior to TeamCity 9.1.4__, specify the directory containing the console executable file
+* __since 9.1.4__, specify the path to the console executable file including the file name
 
 </td></tr><tr>
 
@@ -131,7 +130,7 @@ Additional command line parameters
 
 <td>
 
-_Available if NUnit 3.0 is selected_. Enter [additional command line parameters](https://github.com/nunit/docs/wiki/Console-Command-Line) to pass to nunit\-console.exe
+_Available if NUnit 3.0 is selected_. Enter [additional command line parameters](https://github.com/nunit/docs/wiki/Console-Command-Line) to pass to `nunit-console.exe`.
 
 
 </td></tr><tr>
@@ -145,10 +144,9 @@ _Available if NUnit 3.0 is selected_. Enter [additional command line parameters]
 
 <td>
 
-From the __Platform__ drop\-down, select the desired execution mode on a x64 machine. Supported values are: `Auto (MSIL)`, `x86`, and `x64`.   
-From the __Version__ drop\-down, select the desired .NET Framework version. Supported values are: `v2.0`, `v4.0`; and `auto`, _available if NUnit 3.0 is selected_.      
+From the __Platform__ drop-down menu, select the desired execution mode on a x64 machine. Supported values are: `Auto (MSIL)`, `x86`, and `x64`.   
+From the __Version__ drop-down menu, select the desired .NET Framework version. Supported values are: `v2.0`, `v4.0`; and `auto`, _available if NUnit 3.0 is selected_.      
 _For NUnit 3.0_, if `auto` is selected, tests will run under the framework they are compiled with.
-
 
 </td></tr><tr>
 
@@ -231,7 +229,7 @@ Exclude categories
 
 <td>
 
-Specify NUnit categories to be excluded from the tests to be run. Multiple entries are comma\-separated.    
+Specify NUnit categories to be excluded from the tests to be run. Multiple entries are comma-separated.    
 [Category expressions](teamcity-nunit-test-launcher.md#Category+Expression) are supported here as well; commas, semicolons, and new\-lines are treated as global __or__ operations (prior to the expression parsing). Since NUnit 3.0 __category expressions are not supported__ and must be set via the command line as [described in the NUNit documentation](https://github.com/nunit/docs/wiki/Test-Selection-Language).
 
 
@@ -241,13 +239,11 @@ Specify NUnit categories to be excluded from the tests to be run. Multiple entri
 
 Run process per assembly
 
-
 </td>
 
 <td>
 
-_Available for versions  prior to _[NUnit 3.0](upgrade-notes.md#UpgradeNotes-Changesfrom9.1.5to9.1.6)only_. Select this option if you want to run each assembly in a new process.
-
+_Available for versions  prior to _[NUnit 3.0](upgrade-notes.md#UpgradeNotes-Changesfrom9.1.5to9.1.6) only_. Select this option if you want to run each assembly in a new process.
 
 </td></tr><tr>
 
@@ -255,13 +251,11 @@ _Available for versions  prior to _[NUnit 3.0](upgrade-notes.md#UpgradeNotes-Cha
 
 Reduce test failure feedback time
 
-
 </td>
 
 <td>
 
 Use this option to instruct TeamCity to run some tests before others.
-
 
 </td></tr></table>
 
@@ -269,9 +263,7 @@ Use this option to instruct TeamCity to run some tests before others.
 
 To learn about configuring code coverage options, refer to the [Configuring .NET Code Coverage](configuring-.net-code-coverage.md) page.
 
-__For NUnit 3.x__, only [JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool.  
- 
- 
+__For NUnit 3.x__, only [JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool.
  
 __  __
 
