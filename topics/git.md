@@ -413,14 +413,16 @@ If a compatible git (1.6.4\+) is found, it is reported in the `TEAMCITY_GIT_PATH
 
 ## Configuring Git Garbage Collection on Server
 
-TeamCity server maintains a clone for every Git repository it works with, so the process which collects changes in the large Git repository may cause memory problems on the TeamCity server if the Git garbage collection for the repository was not run for a long time.   
-TeamCity can automatically run git gc periodically when native Git client can be found on the server.
+TeamCity server maintains a local clone for every Git repository used in the VCS roots configured on the server. Since the server performs fetch in those clones many times a day, the clone needs regular optimization to maintain predictable performance. If the Git garbage collection for the clone was not run for a long time, the process of collecting changes may slow down or start to report memory-related errors.
+TeamCity can automatically run git gc periodically when native Git client can be found on the server. Inability to run Git GC results in a related health report.
 
-When TeamCity runs Git garbage collection, the details are logged into the [`teamcity-cleanup.log`](teamcity-server-logs.md). If git garbage collection fails, a corresponding warning is displayed. To fix the warning / meet automatic git gc requirements, perform the following:
+To fix the warning / meet automatic git gc requirements, perform the following:
 1. Install a native Git client manually on the TeamCity server.
 2. Specify the directory to the Git executable:
    * either add it to  the `Path` environment variable and restart the server, 
    * or set it in the  `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) without the server restart.
+   
+When TeamCity runs Git garbage collection, the details are logged into the [`teamcity-cleanup.log`](teamcity-server-logs.md). If git garbage collection fails, a corresponding warning is displayed.
 
 TeamCity executes Git garbage collection until the total time doesn't exceed 60 minutes quota; the quota can be changed using the `teamcity.server.git.gc.quota.minutes` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).   
 Git garbage collection is executed every night at 2 a.m., this can be changed by specifying the internal property with a cron expression like this: `teamcity.git.cleanupCron=0 0 2 * * ?` (restart the server for the property to take effect). If the `git gc` process works slowly and cannot be completed in the allotted time, check the `git-repack` configuration in the default Git configuration files (for example, you can increase `--window-memory` to improve the `git gc` performance).
