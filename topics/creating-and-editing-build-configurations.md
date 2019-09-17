@@ -121,6 +121,8 @@ Use the __Actions__ menu when editing a build configuration to
 * [attach a build configuration to a template](build-configuration-template.md#Associating+build+configurations+with+templates)
 * [extract a template from a build configuration](build-configuration-template.md#Creating+build+configuration+template)
 * [extract a meta-runner from a build configuration](working-with-meta-runner.md#Extracting+and+Using+Meta-Runner)
+* [attach a history to a build configuration](kotlin-dsl.md#Restoring+Build+History+After+ID+Change)
+
 
  
  __  __
