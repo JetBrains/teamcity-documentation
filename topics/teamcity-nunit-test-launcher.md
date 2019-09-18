@@ -1,14 +1,14 @@
 [//]: # (title: TeamCity NUnit Test Launcher)
 [//]: # (auxiliary-id: TeamCity NUnit Test Launcher)
 
-TeamCity provides its own NUnit tests launcher that can be used from command line. The tests are run according to the passed parameters and, if the process is run inside the TeamCity build agent environment, the results are reported to the TeamCity agent.
+TeamCity provides its own NUnit tests launcher that can be used from the command line. The tests are run according to the passed parameters and, if the process is run inside the TeamCity build agent environment, the results are reported to the TeamCity agent.
 
 <include src="nunit-support.md" include-id="supported-versions"/>
 
 <note>
 
 * If you need to access the path to the TeamCity NUnit launcher from some process, you can add the `%system.teamcity.dotnet.nunitlauncher%` [environment variable](configuring-build-parameters.md).
-* Values surrounded with `%` in custom scripts in the [Command line](command-line.md) runner are treated as TeamCity references.
+* Values surrounded with `%` in custom scripts in the [Command Line runner](command-line.md) are treated as TeamCity references.
 
 </note>
 
