@@ -1,5 +1,6 @@
 [//]: # (title: NUnit for MSBuild)
 [//]: # (auxiliary-id: NUnit for MSBuild)
+
 This page describes how to use NUnit from MS build.
 * for __NUnit prior to 3.0__ see [Working with TeamCity-provided NUnit task](#Working+with+NUnit+Task+in+MSBuild+Build)
 * for __NUnit 3.0 and above__ see [Working with NUnit 3.0](#Working+with+NUnit+3.0)
@@ -16,7 +17,7 @@ TeamCity provides a custom `NUnitTeamCity` task compatible with the `NUnit` task
 
 In order to correctly use the `NUnitTeamCity` task, perform the following steps:
 1. Make sure the `teamcity_dotnet_nunitlauncher` system property is accessible on build agents. Build agents running Windows should automatically detect these properties as environment variables. If you need to set them manually, see defining [agent-specific](project-and-agent-level-build-parameters.md#Agent+Level+Build+Parameters) properties for more information.
-2. Configure your MSBuild build script with `NUnitTeamCity` task using the following syntax:   
+2. Configure your MSBuild build script with the `NUnitTeamCity` task using the following syntax:   
    ```XML
    <UsingTask TaskName="NUnitTeamCity" AssemblyFile="$(teamcity_dotnet_nunitlauncher_msbuild_task)" />
 
@@ -24,15 +25,13 @@ In order to correctly use the `NUnitTeamCity` task, perform the following steps:
 
    ```
 
-
-The following attributes are supported by `NUnitTeamCity` task:
+The `NUnitTeamCity` task supports the following attributes:
 
 <table><tr>
 
-<td>
+<td width="200">
 
-Property name
-
+Property
 
 </td>
 
@@ -40,20 +39,17 @@ Property name
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 `Platform`
 
-
 </td>
 
 <td>
 
-Execution mode on a x64 machine. Supported values are: __x86__, __x64__ and __ANY__.
-
+Execution mode on a x64 machine. Supported values are: __x86__, __x64__, and __ANY__.
 
 </td></tr><tr>
 
@@ -61,13 +57,11 @@ Execution mode on a x64 machine. Supported values are: __x86__, __x64__ and __AN
 
 `RuntimeVersion`
 
-
 </td>
 
 <td>
 
-.NET Framework to use: __v1.1__, __v2.0__, __v4.0__, __ANY__. By default, the MSBuild runtime is used. Default is __v2.0__ for MSBuild 2.0 and 3.5. For MSBuild 4.0 default value is __v4.0__.
-
+.NET Framework to use: __v1.1__, __v2.0__, __v4.0__, __ANY__. By default, the MSBuild runtime is used. Default is __v2.0__ for MSBuild 2.0 and 3.5. For MSBuild 4.0 the default value is __v4.0__.
 
 </td></tr><tr>
 
@@ -75,13 +69,11 @@ Execution mode on a x64 machine. Supported values are: __x86__, __x64__ and __AN
 
 `IncludeCategory`
 
-
 </td>
 
 <td>
 
 As used in the `NUnit` task from [MSBuild Community tasks](http://msbuildtasks.tigris.org/) project.
-
 
 </td></tr><tr>
 
@@ -89,20 +81,17 @@ As used in the `NUnit` task from [MSBuild Community tasks](http://msbuildtasks.t
 
 `ExcludeCategory`
 
-
 </td>
 
 <td>
 
 As used in the `NUnit` task from [MSBuild Community tasks](http://msbuildtasks.tigris.org/) project.
 
-
 </td></tr><tr>
 
 <td>
 
 `NUnitVersion`
-
 
 </td>
 
@@ -112,20 +101,17 @@ Version of NUnit to be used to run the tests. Supported NUnit versions: __2.2.10
 
 To use NUnit 3.0 and above, see the [section below](#Working+with+NUnit+3.0).
 
-
 </td></tr><tr>
 
 <td>
 
 `Addins`
 
-
 </td>
 
 <td>
 
-List of third\-party NUnit addins to be used. For more information on using NUnit addins, refer to [NUnit Addins Support](nunit-addins-support.md) page.
-
+List of third-party NUnit addins to be used. For more information on using NUnit addins, refer to the [NUnit Addins Support](nunit-addins-support.md) page.
 
 </td></tr><tr>
 
@@ -133,13 +119,11 @@ List of third\-party NUnit addins to be used. For more information on using NUni
 
 `HaltIfTestFailed`
 
-
 </td>
 
 <td>
 
 __True__ to fail task, if any test fails.
-
 
 </td></tr><tr>
 
@@ -147,20 +131,17 @@ __True__ to fail task, if any test fails.
 
 `Assemblies`
 
-
 </td>
 
 <td>
 
 List of assemblies to run tests with.
 
-
 </td></tr><tr>
 
 <td>
 
 `RunProcessPerAssembly`
-
 
 </td>
 
@@ -172,9 +153,9 @@ Set __true__, if you want to run each assembly in a new process.
 </td></tr></table>
 
 
-Custom TeamCity `NUnit` task also supports additional attributes. For the list of available attributes refer to the [Using NUnitTeamCity task in MSBuild Build Script](#Using+NUnitTeamCity+task+in+MSBuild+Build+Script) section.
+The custom TeamCity `NUnit` task also supports additional attributes. For the list of available attributes refer to [this section](#Using+NUnitTeamCity+task+in+MSBuild+Build+Script).
 
-If you need the TeamCity test runner to support third\-party NUnit addins, refer to the [NUnit Addins Support](nunit-addins-support.md) section for the details.
+If you need the TeamCity test runner to support third-party NUnit addins, refer to the [NUnit Addins Support](nunit-addins-support.md) section for the details.
 
 Example (part of the MSBuild build script):
 
@@ -189,15 +170,13 @@ Example (part of the MSBuild build script):
 
 ```
 
-
 __Important notes__
-* Be sure to replace "`.`" with "`_`" when [using System Properties](configuring-build-parameters.md#Using+Build+Parameters+in+the+Build+Scripts) in MSBuild scripts. For example, use `teamcity_dotnet_nunitlauncher_msbuild_task` instead of `teamcity.dotnet.nunitlauncher.msbuild.task`
-* TeamCity also provides [Visual Studio Solution Runner](visual-studio-sln.md) for  solution files of Microsoft Visual Studio 2005 and above. It allows you to use MSBuild\-style wildcards for the assemblies to run unit tests on.
+* Be sure to replace "`.`" with "`_`" when [using System Properties](configuring-build-parameters.md#Using+Build+Parameters+in+the+Build+Scripts) in MSBuild scripts. For example, use `teamcity_dotnet_nunitlauncher_msbuild_task` instead of `teamcity.dotnet.nunitlauncher.msbuild.task`.
+* TeamCity also provides [Visual Studio Solution Runner](visual-studio-sln.md) for solution files of Microsoft Visual Studio 2005 and above. It allows you to use MSBuild-style wildcards for the assemblies to run unit tests on.
 
 ### Examples
 
 Run NUnit tests using specific NUnit runner version:
-
 
 ```XML
 <Target Name="build_01">
@@ -210,10 +189,7 @@ Run NUnit tests using specific NUnit runner version:
 
 ```
 
-
-
 Run NUnit tests with custom addins with NUnit 2.4.6:
-
 
 ```XML
 <Target Name="build">
@@ -222,10 +198,7 @@ Run NUnit tests with custom addins with NUnit 2.4.6:
 
 ```
 
-
-
-Run NUnit tests with custom addins with NUnit 2.4.6 __in per\-assembly mode:__
-
+Run NUnit tests with custom addins with NUnit 2.4.6 __in per-assembly mode:__
 
 ```XML
 <Target Name="build">
@@ -234,10 +207,7 @@ Run NUnit tests with custom addins with NUnit 2.4.6 __in per\-assembly mode:__
 
 ```
 
-
-
 To make a TeamCity independent build script, consider the following trick:
-
 
 ```XML
 <NUnitTeamCity ... Condition=" '$(TEAMCITY_VERSION)' != '' "/>
@@ -246,12 +216,11 @@ To make a TeamCity independent build script, consider the following trick:
 
 The MSBuild property `TEAMCITY_VERSION` is added to msbuild when started from TeamCity.
 
-
 ## Working with NUnit 3.0
 
- The information in this section is applicable if you are using NUnit  3.0 and above. For earlier versions of NUnit, refer to the [section above](#Working+with+NUnit+Task+in+MSBuild+Build).
+The information in this section is applicable if you are using NUnit 3.0 and above. For earlier versions of NUnit, refer to the [section above](#Working+with+NUnit+Task+in+MSBuild+Build).
 
-Starting from version 3.0, NUnit supports TeamCity natively, so there is no need to use a special task for MSBuild as it was done for the [earlier NUnit versions](#Working+with+NUnit+Task+in+MSBuild+Build). The simplest way is to run the NUnit console via the standard [Exec task](https://msdn.microsoft.com/en-us/library/x8zx72cd.aspx). For example: 
+Starting from version 3.0, NUnit supports TeamCity natively, so there is no need to use a special task for MSBuild as it was done for the [earlier NUnit versions](#Working+with+NUnit+Task+in+MSBuild+Build). The simplest way is to run the NUnit console via the standard [Exec task](https://msdn.microsoft.com/en-us/library/x8zx72cd.aspx). For example:
 
 <include src="getting-started-with-nunit.md" include-id="msbuild-examples-nunit"/>
 

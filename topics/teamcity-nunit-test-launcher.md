@@ -41,7 +41,7 @@ Description
 
 <td>
 
-Version of .NET Framework to run tests. Acceptable values are __v1.1__, __v2.0__, __v4.0__ or __ANY__.
+Version of .NET Framework to run tests. Acceptable values are __v1.1__, __v2.0__, __v4.0__, and __ANY__.
 
 </td></tr><tr>
 
@@ -54,7 +54,7 @@ Version of .NET Framework to run tests. Acceptable values are __v1.1__, __v2.0__
 
 <td>
 
-Platform to run tests. Acceptable values are __x86__, __x64__ and __MSIL__.
+Platform to run tests. Acceptable values are __x86__, __x64__, and __MSIL__.
 
 <note>
 
