@@ -17,7 +17,7 @@ On this page:
 
 ### Installing NUnit
 
-<chunk includ-id="installing-nunit">
+<chunk include-id="installing-nunit">
 
 To use the TeamCity NUnit build runner, install the [NUnit NuGet package](https://www.nuget.org/packages/NUnit/) on TeamCity agents first __using one of the following options__:
 * Add the NuGet Install build step as the first step of your build configuration.   
