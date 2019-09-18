@@ -152,9 +152,8 @@ Update Options
 
 <td>
 
-* __Include pre\-release packages__: Equivalent to the `-Prerelease` option of the `NuGet.exe update` command
+* __Include pre-release packages__: Equivalent to the `-Prerelease` option of the `NuGet.exe update` command
 * __Perform safe update__: Equivalent to the `-Safe` option of the `NuGet.exe update` command, that looks for updates with the highest version available within the same major and minor version as the installed package.
-
 
 </td></tr></table>
 
@@ -172,8 +171,5 @@ When you add the NuGet Installer runner to your build configuration, each finish
 
 __See also:__
 
-
-
 __Related Blog Post__: [NuGet Package Restore with TeamCity](http://blog.jetbrains.com/teamcity/2013/08/nuget-package-restore-with-teamcity/).  
-
 __Administrator's Guide__: [NuGet Pack](nuget-pack.md) | [NuGet Publish](nuget-publish.md)
