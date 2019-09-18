@@ -1,13 +1,9 @@
 [//]: # (title: TeamCity NUnit Test Launcher)
 [//]: # (auxiliary-id: TeamCity NUnit Test Launcher)
+
 TeamCity provides its own NUnit tests launcher that can be used from command line. The tests are run according to the passed parameters and, if the process is run inside the TeamCity build agent environment, the results are reported to the TeamCity agent.
 
-<tip>
-
-Supported NUnit versions: __2.2.10__, __2.4.1__, __2.4.6__, __2.4.7__, __2.4.8__, __2.5.0__, __2.5.2__, __2.5.3__, __2.5.4__, __2.5.5__, __2.5.6__, __2.5.7__, __2.5.8__, __2.5.9__, __2.5.10__, __2.6.0__, __2.6.1__, __2.6.2__, __2.6.3__. For NUnit __3.x__, use the [NUnit build runner](nunit.md).
-
-It is possible to have several versions of NUnit installed on an agent machine and use any of them in a build.
-</tip>
+<include src="nunit-support.md" include-id="supported-versions"/>
 
 <note>
 
@@ -18,13 +14,10 @@ It is possible to have several versions of NUnit installed on an agent machine a
 
 You can pass the following command line options to the TeamCity NUnit Test Launcher:
 
-
 ```Shell
 ${teamcity.dotnet.nunitlauncher} <.NET Framework> <platform> <NUnit vers.> [/category-include:<list>] [/category-exclude:<list>] [/addin:<list>] <assemblies to test>
 
 ```
-
-
 
 <table><tr>
 
@@ -32,20 +25,17 @@ ${teamcity.dotnet.nunitlauncher} <.NET Framework> <platform> <NUnit vers.> [/cat
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
-&lt;.NET Framework&gt;
-
+\<.NET Framework\>
 
 </td>
 
@@ -53,12 +43,11 @@ Description
 
 Version of .NET Framework to run tests. Acceptable values are __v1.1__, __v2.0__, __v4.0__ or __ANY__.
 
-
 </td></tr><tr>
 
 <td>
 
-&lt;platform&gt;
+\<platform\>
 
 
 </td>
@@ -77,21 +66,33 @@ For .NET Framework 1.1 only __MSIL__ option is available.
 
 <td>
 
-&lt;NUnit vers.&gt;
+\<NUnit vers.\>
 
 
 </td>
 
 <td>
 
-Test framework to use. The value has to be specified in the following format: __NUnit\-&lt;version&gt;__.
-
+Test framework to use. The value has to be specified in the following format: __NUnit-\<version\>__.
 
 </td></tr><tr>
 
 <td>
 
-/category\-include:&lt;list&gt;
+/category-include:\<list\>
+
+
+</td>
+
+<td>
+
+The list of categories separated by "`,`" (optional). Category expression are supported since [NUnit v2.4.6](http://www.nunit.org/index.php?p=consoleCommandLine&amp;r=2.4.6) to NUnit v3.0 not inclusive.
+
+</td></tr><tr>
+
+<td>
+
+/category-exclude:\<list\>
 
 
 </td>
@@ -105,35 +106,21 @@ The list of categories separated by "`,`" (optional). Category expression are su
 
 <td>
 
-/category\-exclude:&lt;list&gt;
+/addin:\<list\>
 
 
 </td>
 
 <td>
 
-The list of categories separated by "`,`" (optional). Category expression are supported since [NUnit v2.4.6](http://www.nunit.org/index.php?p=consoleCommandLine&amp;r=2.4.6) to NUnit v3.0 not inclusive.
+List of third-party NUnit addins to use (optional).
 
 
 </td></tr><tr>
 
 <td>
 
-/addin:&lt;list&gt;
-
-
-</td>
-
-<td>
-
-List of third\-party NUnit addins to use (optional).
-
-
-</td></tr><tr>
-
-<td>
-
-&lt;assemblies to test&gt;
+\<assemblies to test\>
 
 
 </td>
@@ -203,7 +190,7 @@ Selects tests having any of the categories A, B or C.
 
 <td>
 
-A\+B\+C
+A+B+C
 
 </td>
 
@@ -215,7 +202,7 @@ Selects only tests having all three of the categories assigned.
 
 <td>
 
-A\+B|C
+A+B|C
 
 </td>
 
@@ -227,7 +214,7 @@ Selects tests with both A and B OR with category C.
 
 <td>
 
-A\+B\-C
+A+B\-C
 
 </td>
 
@@ -239,7 +226,7 @@ Selects tests with both A and B but not C.
 
 <td>
 
-\-A
+-A
 
 </td>
 
@@ -251,7 +238,7 @@ Selects tests not having category A assigned.
 
 <td>
 
-A\+(B|C)
+A+(B|C)
 
 </td>
 
@@ -263,7 +250,7 @@ Selects tests having both category A and either of B or C.
 
 <td>
 
-A\+B,C
+A+B,C
 
 </td>
 
@@ -276,11 +263,11 @@ Selects tests having both category A and either of B or C.
 __Note:__ As shown by the last two examples, the comma operator (`,`) is equivalent to the pipe (`|`) but has a higher precendence. The order of evaluation is as follows:
 
 1. Unary exclusion operator (`-`)
-2. High\-precendence union operator (`,`)
+2. High-precendence union operator (`,`)
 3. Intersection and set subtraction operators (`+` and binary `-`)
-4. Low\-precedence union operator (`|`)
+4. Low-precedence union operator (`|`)
 
-__Note:__ Since the operator characters have special meaning, you should avoid creating a category that uses any of them in its name. For example, the category `db-tests` could not be used in the command line, as it appears to mean "run category db, except for category tests". The same limitation applies to the characters having a special meaning for the shell you are using.
+__Note:__ Since the operator characters have special meaning, avoid creating a category that uses any of them in its name. For example, the category `db-tests` must not be used in the command line, as it appears to mean "run category db, except for category tests". The same limitation applies to the characters having a special meaning for the shell you are using.
 
 __Examples__
 
@@ -288,14 +275,12 @@ The following examples assume that the `teamcity.dotnet.nunitlauncher` property 
 
 Run tests from an assembly:
 
-
 ```Shell
 %teamcity.dotnet.nunitlauncher% v2.0 x64 NUnit-2.2.10 Assembly.dll
 
 ```
 
 Run tests from an assembly with NUnit categories filter
-
 
 ```Shell
 %teamcity.dotnet.nunitlauncher% v2.0 x64 NUnit-2.2.10 /category-include:C1 /category-exclude:C2 Assembly.dll
@@ -309,7 +294,4 @@ Run tests from assemblies:
 
 ```
 
-[//]: # (Internal note. Do not delete. "TeamCity NUnit Test Launcherd319e337.txt")    
-
-
-
+[//]: # (Internal note. Do not delete. "TeamCity NUnit Test Launcherd319e337.txt")
