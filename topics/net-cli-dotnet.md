@@ -1,11 +1,12 @@
 [//]: # (title: .NET CLI (dotnet))
 [//]: # (auxiliary-id: .NET CLI (dotnet))
-TeamCity comes with built\-in support of .NET CLI toolchain providing .NET CLI (dotnet) build steps, CLI detection on the build agents, and auto\-discovery of build steps in your repository.
+
+TeamCity comes with the built-in support of the .NET CLI toolchain providing .NET CLI (dotnet) build steps, CLI detection on the build agents, and autodiscovery of build steps in your repository.
 
 This page provides details on configuring the .NET CLI (dotnet) runner. Also see the related [blog post](https://blog.jetbrains.com/teamcity/2016/11/teamcity-dotnet-core/).
 
-* [.NET Core SDK](https://dotnet.microsoft.com/download) has to be installed on your build agent machines.
-* The .NET CLI tools path has to be added to the `PATH` environment variable. You can also configure the `DOTNET_HOME` environment variable for your TeamCity build agent user, for example, `DOTNET_HOME=C:\Program Files\dotnet\`
+* [.NET Core SDK](https://dotnet.microsoft.com/download) must be installed on your build agent machines.
+* The .NET CLI tools path must be added to the `PATH` environment variable. You can also configure the `DOTNET_HOME` environment variable for your TeamCity build agent user, for example, `DOTNET_HOME=C:\Program Files\dotnet\`
 
 <table><tr>
 
@@ -25,12 +26,11 @@ Description
 
 Command
 
-
 </td>
 
 <td>
 
-Select a `dotnet` command from the drop\-down. Depending on the selected command, some of the options below will vary. The currently supported commands are:
+Select a `dotnet` command from the drop-down menu. Depending on the selected command, some of the options below will vary. The currently supported commands are:
 
 * [`build`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build)
 * [`clean`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-clean)
@@ -54,7 +54,6 @@ Select a `dotnet` command from the drop\-down. Depending on the selected command
 
 Projects
 
-
 </td>
 
 <td>
@@ -68,13 +67,11 @@ Specify paths to projects and solutions. Wildcards are supported. Parameter refe
 
 Working directory
 
-
 </td>
 
 <td>
 
 Optional, set if differs from the checkout directory. Parameter references are supported. If you have a finished build, you can use the file/directory chooser here.
-
 
 </td></tr><tr>
 
@@ -82,13 +79,11 @@ Optional, set if differs from the checkout directory. Parameter references are s
 
 Framework
 
-
 </td>
 
 <td>
 
 Specify the target framework, for example, netcoreapp or netstandard. Parameter references are supported.
-
 
 </td></tr><tr>
 
@@ -103,7 +98,6 @@ Configuration
 
 Specify the target configuration, for example, Release or Debug. Parameter references are supported.
 
-
 </td></tr><tr>
 
 <td>
@@ -117,13 +111,11 @@ Runtime
 
 Specify the target runtime. Parameter references are supported.
 
-
 </td></tr><tr>
 
 <td>
 
 Output directory
-
 
 </td>
 
@@ -131,13 +123,11 @@ Output directory
 
 The directory where to place outputs. Parameter references are supported. If you have a finished build, you can use the file/directory selector here.
 
-
 </td></tr><tr>
 
 <td>
 
 Version suffix
-
 
 </td>
 
@@ -145,20 +135,17 @@ Version suffix
 
 Defines the value of the `$(VersionSuffix)` property in the project. Parameter references are supported.
 
-
 </td></tr><tr>
 
 <td>
 
 Command line parameters
 
-
 </td>
 
 <td>
 
 Enter [additional command line parameters](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build?tabs=netcore2x) for `dotnet`.
-
 
 </td></tr><tr>
 
@@ -170,8 +157,7 @@ Logging verbosity
 
 <td>
 
-Select from the &lt;Default&gt;, Minimal, Normal, Detailed or Diagnostic.
-
+Select from the \<Default\>, Minimal, Normal, Detailed or Diagnostic.
 
 </td></tr></table>
 
@@ -213,7 +199,7 @@ Description
 
 <td>
 
-The .NET CLI version
+The .NET CLI version.
 
 </td></tr><tr>
 
@@ -225,7 +211,7 @@ The .NET CLI version
 
 <td>
 
-The path to .NET CLI executable
+The path to .NET CLI executable.
 
 </td></tr><tr>
 
@@ -237,6 +223,6 @@ The path to .NET CLI executable
 
 <td>
 
-The .NET Core SDK version
+The .NET Core SDK version.
 
 </td></tr></table>

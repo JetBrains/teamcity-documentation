@@ -3,7 +3,7 @@
 
 TeamCity provides its own NUnit tests launcher that can be used from the command line. The tests are run according to the passed parameters and, if the process is run inside the TeamCity build agent environment, the results are reported to the TeamCity agent.
 
-<include src="nunit-support.md" include-id="supported-versions"/>
+<include src="nunit.md" include-id="supported-versions"/>
 
 <note>
 

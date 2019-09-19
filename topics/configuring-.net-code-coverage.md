@@ -1,5 +1,6 @@
 [//]: # (title: Configuring .NET Code Coverage)
 [//]: # (auxiliary-id: Configuring .NET Code Coverage)
+
 TeamCity supports .NET code coverage using NCover, PartCover, and dotCover coverage engines. Configuration via the TeamCity UI is supported for:
 * [NUnit build runner](nunit.md)
 * NAnt runner: [&lt;nunit2&gt; NAnt task](nunit-for-nant-build-runner.md)
@@ -15,10 +16,8 @@ Details on configuring code coverage can be found on the following pages:
 </toc>
 
  
-
  __  __
 
 __See also:__
-
 
 __Administrator's Guide__: [NUnit Support](nunit-support.md)

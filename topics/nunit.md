@@ -3,8 +3,22 @@
 
 The _NUnit_ build runner is intended to run NUnit tests right on the TeamCity server. However, there are other ways to report NUnit tests results to TeamCity, refer to the [NUnit Support](nunit-support.md) page for the details.
 
-<include src="nunit-support.md" include-id="supported-versions"/> 
-<include src="nunit-support.md" include-id="supported-warning"/>
+<tip include-id="supported-versions">
+    
+Supported NUnit versions: __2.2.10__, __2.4.1__, __2.4.6__, __2.4.7__, __2.4.8__, __2.5.0__, __2.5.2__, __2.5.3__, __2.5.4__, __2.5.5__, __2.5.6__, __2.5.7__, __2.5.8__, __2.5.9__, __2.5.10__, __2.6.0__, __2.6.1__, __2.6.2__, __2.6.3__. 
+
+__Since TeamCity 9.1__, NUnit __3.0 and above__ is also supported.
+
+It is possible to have several versions of NUnit installed on an agent machine and use any of them in a build.
+
+</tip>    
+
+<warning include-id="supported-warning">
+    
+NUnit version __3.4.0__ is __not__ supported by the NUnit build runner due to a problem in [NUnit](https://github.com/nunit/docs/wiki/Release-Notes#issues-resolved-1). Only version 3.4.0 was affected, other NUnit 3.x versions work fine with TeamCity.
+</warning>
+
+Note that the NUnit runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the .NET CLI (dotnet) build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead. Refer to the [NUnit Support](nunit-support.md#Framework+Compatibility) page for details.
 
 On this page:
 
