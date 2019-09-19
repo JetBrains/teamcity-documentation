@@ -6,7 +6,6 @@
 Server configuration is only available to the [System Administrators](role-and-permission.md#Per-Project+Authorization+Mode).
 </tip>
 
-
 __To edit the server configuration:__
 
 On the __Administration__ page, select __Global Settings__. 
@@ -15,7 +14,7 @@ The __TeamCity Configuration__ section of the page displays the following inform
 
 <table><tr>
 
-<td>
+<td width="100">
 
 Setting
 
@@ -58,11 +57,9 @@ The \<[TeamCity Data Directory](teamcity-data-directory.md)\> path with the abil
 
 Artifact directories
 
-
 </td>
 
 <td>
-
 
 The list of the root directories used by the TeamCity server to store [Build Artifact](build-artifact.md), build logs and other build data. The default location is `/system/artifacts`. Note that artifacts can also be stored on [external storage](configuring-artifacts-storage.md).
 
@@ -72,12 +69,11 @@ When looking for build artifacts, the specified locations are searched for the d
 
 Artifacts for the newly starting builds are placed under the first directory in the list.
 
-
 </td></tr><tr>
 
 <td>
 
-Caches directory:
+Caches directory
 
 </td>
 
@@ -99,14 +95,11 @@ The [configurable](configuring-server-url.md) URL of the running TeamCity server
 
 </td></tr></table>
 
- 
-
-
-The __Build Settings section__ allows configuring the following settings:
+The __Build Settings__ section allows configuring the following settings:
 
 <table><tr>
 
-<td>
+<td width="100">
 
 Setting
 
@@ -120,7 +113,7 @@ Description
 
 <td>
 
-Maximum build artifact file size:
+Maximum build artifact file size
 
 </td>
 
@@ -132,7 +125,7 @@ Maximum size in bytes. KB, MB, GB or TB suffixes are allowed. \-1 indicates no l
 
 <td>
 
-Default build execution timeout:
+Default build execution timeout
 
 </td>
 
@@ -142,16 +135,11 @@ Maximum time for a build. Can be overridden when defining [build failure conditi
 
 </td></tr></table>
 
- 
-
-
 The __Version Control Settings__ controls the following:
-
- 
 
 <table><tr>
 
-<td>
+<td width="100">
 
 Setting
 
@@ -165,7 +153,7 @@ Description
 
 <td>
 
-Default VCS changes check interval:
+Default VCS changes check interval
 
 </td>
 
@@ -177,14 +165,12 @@ Set to 60 seconds by default. Specifies how often TeamCity polls the VCS reposit
 
 <td>
 
-Default VCS trigger quiet period:
+Default VCS trigger quiet period
 
 </td>
 
 <td>
 
-Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity maintains between the moment the last VCS change is detected and a build is added into the queue.  Can be overridden when [configuring VCS triggers](configuring-vcs-triggers.md).
+Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity maintains between the moment the last VCS change is detected and a build is added into the queue. Can be overridden when [configuring VCS triggers](configuring-vcs-triggers.md).
 
 </td></tr></table>
-
-

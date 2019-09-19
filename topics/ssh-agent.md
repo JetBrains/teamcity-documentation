@@ -7,9 +7,9 @@ Check [SSH Keys Management](ssh-keys-management.md) for SSH key upload notes.
 
 ## Agent Setup
 
-_TeamCity SSH Agent_ uses a native ssh agent from the OpenSSH included with Linux and Mac OS X, so the feature works out of the box for these OS's. For Windows, OpenSSH needs to be installed (for example, as a part of CygWin, MinGW or a part of Git distribution for Windows).
+_TeamCity SSH Agent_ uses a native ssh agent from the OpenSSH included with Linux and Mac OS X, so the feature works out of the box for these OSs. For Windows, OpenSSH needs to be installed (for example, as a part of CygWin, MinGW or a part of Git distribution for Windows).
 
-The SSH agent must be added to `$PATH` on Unix\-like OS's and to `%PATH%` on Windows.
+The SSH agent must be added to `$PATH` on Unix-like OSs and to `%PATH%` on Windows.
 
 For each TeamCity build agent a separate ssh agent is started, so it is possible to use this feature if several build agents are installed on the same machine.
 
@@ -28,4 +28,3 @@ To avoid such prompts during a build, you need to configure the known hosts data
 * or __for an individual command__ by running an SSH client with the `-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no` options.
 
 See more information in the man pages for [ssh](http://linux.die.net/man/1/ssh), [ssh-agent](http://linux.die.net/man/1/ssh-agent) and [ssh-add](http://linux.die.net/man/1/ssh-add) commands.
-

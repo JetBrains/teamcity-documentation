@@ -190,21 +190,17 @@ Here is an example description of the model (the code can be used in IntelliJ ID
 
 ```
 
-
-
- 
-
 ### TeamCity Notification Properties
 
 The following [properties](configuring-teamcity-server-startup-properties.md) can be useful to customize the notifications behavior:
 
-* `teamcity.notification.template.update.interval` - how often the templates are reread by the system (integer, in seconds, default 60)
-* `teamcity.notification.includeDebugInfo` - include debugging information into the message in case of template processing errors (boolean, default false)
-* `teamcity.notification.maxChangesNum` - max number of changes to list in an e-mail message (integer, default 10)
-* `teamcity.notification.maxCompilationDataSize` - max size (in bytes) of compilation error data to include in an e-mail message (integer, default 20480)
-* `teamcity.notification.maxFailedTestNum` - max number of failed tests to list in an e-mail message (integer, default 50)
-* `teamcity.notification.maxFailedTestStacktraces` - max number of test stacktraces in an e-mail message (integer, default 5)
-* `teamcity.notification.maxFailedTestDataSize` - max size (in bytes) of failed test output data to include in a single e-mail message (integer, default 10240)
+* `teamcity.notification.template.update.interval` – how often the templates are reread by the system (integer, in seconds, default 60)
+* `teamcity.notification.includeDebugInfo` – include debugging information into the message in case of template processing errors (boolean, default false)
+* `teamcity.notification.maxChangesNum` – max number of changes to list in an email message (integer, default 10)
+* `teamcity.notification.maxCompilationDataSize` – max size (in bytes) of compilation error data to include in an email message (integer, default 20480)
+* `teamcity.notification.maxFailedTestNum` – max number of failed tests to list in an email message (integer, default 50)
+* `teamcity.notification.maxFailedTestStacktraces` – max number of test stacktraces in an email message (integer, default 5)
+* `teamcity.notification.maxFailedTestDataSize` – max size (in bytes) of failed test output data to include in a single email message (integer, default 10240)
 
 ### Syndication Feed Template
 
