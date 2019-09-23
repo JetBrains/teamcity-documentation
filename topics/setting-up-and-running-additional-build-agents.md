@@ -520,23 +520,24 @@ For the `.zip` agent installation you need to install the appropriate Java versi
 
 ### Upgrading Java on Agents
 
-If you are trying to launch an agent, and it is not able to find the required Java version (currently Java 6) in any of the [default locations](setting-up-and-running-additional-build-agents.md#java-paths), the agent will not be able to start and will be shown as disconnected.
+If you are trying to launch an agent, and it is not able to find the required Java version (currently Java 6) in any of the [default locations](setting-up-and-running-additional-build-agents.md#java-paths), the agent will report an error on starting, the process will not launch and the agent will be shown as disconnected in TeamCity UI.
 
-If a build agent uses a Java version older than Java 8 (for example, Java 6 or 7), you will see the corresponding warning on the agent's page and a [health item](server-health.md) in the web UI.
+If a build agent uses a Java version older than Java 8, you will see the corresponding warning on the agent's page and a [health item](server-health.md) in the web UI.
 
 <note>
 
 __Support for Java prior to version 8 on agents will be dropped in TeamCity 2019.2__. Consider upgrading Java on the agent if you see the warning.   
-Note that the agents will be able to use older versions of Java for running builds.
+An agent machine can have multiple Java versions installed and the agent can use one Java version while the build tasks can use other Java versions.
 
 Please let us know using any of our [support channels](https://confluence.jetbrains.com/display/TW/Feedback) if your setup depends on the older version of Java and if you will not be able to upgrade to version 8 for some reason.
 </note>
 
-It is recommended to use latest Java 8, 32 bit version. OpenJDK 8 (for example, by [AdoptOpenJDK](https://adoptopenjdk.net/)) 1.8.0_161 or later, 32\-bit is recommended. [Oracle Java 8](http://www.oracle.com/technetwork/java/javase/downloads/) is also supported.
+It is recommended to use latest Java 8, 32 bit version.
+OpenJDK 8 (for example, by [AdoptOpenJDK](https://adoptopenjdk.net/)) 1.8.0_161 or later, 32\-bit is recommended. [Oracle Java 8](http://www.oracle.com/technetwork/java/javase/downloads/) is also supported.
 
 To update Java on agents, do one of the following:
-* Switch to using newer Java: if the appropriate Java version of the same bitness as the current one is detected on the agent, the agent page provides an action to switch to using that Java automatically. Upon the action invocation, the agent process is restarted (once the agent becomes idle, i.e. finishes the current build if there is one) using the new Java.
-* (Windows) Since the build agent `.exe` installation comes bundled with the required Java, you can just manually reinstall the agent using the `.exe` installer obtained from the TeamCity server __Agents__ page.
+* If the agent details page in TeamCity UI displays Java version note with correcponding action then you can switch to using newer Java: if the appropriate Java version of the same bitness as the current one is detected on the agent, the agent page provides an action to switch to using that Java automatically. Upon the action invocation, the agent process is restarted (once the agent becomes idle, i.e. finishes the current build if there is one) using the new Java.
+* (Windows) Since the build agent Windows installer comes bundled with the required Java, you can just manually reinstall the agent using the Windows installer (`.exe`) obtained from the TeamCity server __Agents__ page. See [installation instructions](setting-up-and-running-additional-build-agents.md#InstallingviaWindowsinstaller).
 * Install a required Java on the agent into one of the standard locations, and restart the agent \- the agent should then detect it and provide an action to use a newer Java in the web UI (see above).
 * Install a required Java on the agent and [configure the agent](#Configuring+Java) to use it.
  
