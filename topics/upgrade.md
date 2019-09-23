@@ -26,8 +26,8 @@ Before upgrading TeamCity:
 6. If you have non\-bundled plugins installed, check plugin pages for compatibility with the new version and upgrade/uninstall the plugins if necessary
 
 To upgrade the server:
-1. [Back up the current TeamCity data](teamcity-data-backup.md)
-2. [Perform the upgrade steps](#Upgrading+TeamCity+Server): 
+1. [Back up the current TeamCity data](teamcity-data-backup.md) including settings, database and supplementary data. You will need the backup to roll back to the previous version in the unlikely event of the upgrade failure.
+2. [Perform the upgrade steps](#Upgrading+TeamCity+Server):
    * [Upgrading Using Windows Installer](#Using+Windows+Installer)
    * [Manual Upgrading on Linux and for WAR Distributions](#Manual+Upgrading+using+.tar.gz+or+.war+Distributions)
 
@@ -58,7 +58,7 @@ Agents connected to the server are upgraded [automatically](#Automatic+Build+Age
 
 __Important note on TeamCity data structure upgrade__
 
-TeamCity server stores its data in the database and in [TeamCity Data Directory](teamcity-data-directory.md) on the file system. Different TeamCity versions use different data structure of the database and Data Directory. Upon starting newer version of TeamCity, the data is kept in the old format until you confirm the upgrade and data conversion on the Maintenance page in the web UI. Until you do so, you can back up the old data; however, once the upgrade is complete, the data is updated to a newer format.  
+TeamCity server stores its data in the database and in [TeamCity Data Directory](teamcity-data-directory.md) on the file system. Different TeamCity versions use different data structure of the database and Data Directory. Upon starting newer version of TeamCity, the data is kept in the old format until you confirm the upgrade and data conversion on the Maintenance page in the web UI. Until you do so, you can back up the old data; however, once the upgrade is complete, the data is converted to the new format.
 __Once the data is converted, downgrade to the previous TeamCity versions which uses different data format is not possible!__   
 There are several important issues with data format upgrade:
 
