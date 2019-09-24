@@ -25,6 +25,8 @@ To start working with Kotlin DSL, create an empty sandbox project on your server
 You might not be able to edit a project in the web UI right after enabling Kotlin for the project settings. TeamCity needs to detect its own commit in the repository, and only after that editing will be enabled. Usually it takes a minute or two.
 </note>
 
+<anchor name="portableDSL"/>
+
 ### Project Settings Structure
 
 After the commit to the repository, you will get the `.teamcity` settings directory with the following files:
@@ -79,6 +81,10 @@ project {
   }
 }
 ```
+
+<anchor name="id-or-name"/>
+
+Here, `id` will be used as the value of the _[Build configuration ID](identifier.md)_ field in TeamCity. If `id` is not specified, the value of the `name` parameter will be used as the build configuration ID instead.
 
 After that, you can submit this change to the repository – TeamCity will detect and apply it. If there are no errors during the script execution, you should see a build configuration named "Hello world" in your project.
 
@@ -139,9 +145,24 @@ var deployTarget = if (DslContext.projectId == AbsoluteId("Trunk")) {
 
 ## Advanced Topics
 
+### Restoring Build History After ID Change
+
+To identify a build configuration in a project based on the portable DSL, TeamCity uses the [ID](#id-or-name) appointed to this build configuration in DSL. We recommend keeping this ID constant, so the changes made in the DSL source are consistently applied to the respective build configuration in TeamCity.   
+However, if you need to modify the build configuration ID in the DSL, note that TeamCity will interpret it as if the build configuration with the previous ID is deleted and the new configuration with the new ID is created. In this case, you can still restore the history of builds as described in this section.
+
+When your DSL-based project uses [versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS), TeamCity detects any change in the source DSL and reapplies all the changed settings to affected TeamCity entities. If you modify the ID of a build configuration in the [VCS source](#id-or-name), for TeamCity it looks like the configuration with the previous ID was deleted and a new configuration with the new ID was created.
+
+TeamCity deletes the "old" configuration from the web UI, but it keeps the history of its builds in the database for 5 days and only then cleans it up. TeamCity provides a way to attach this history to any DSL-based build configuration.
+
+To restore the build history after changing the build configuration ID, go to the __Build Configuration Settings__ of the newly created configuration in TeamCity, open the __Actions__ menu, and click __Attach build history__. You will be redirected to the temporary _Attach Build History_ tab. Select the recently deleted build configuration in the list and click __Attach__.
+
+<img src="attach-build-history.png" width="1283" alt="Attaching a build history"/>
+
+TeamCity will restore the history of builds of the selected configuration and attach it to the history of builds of the new configuration.
+
 ### Non-Portable DSL
 
-Versions before 2018.1 used a different format for Kotlin DSL settings. This format can still be enabled by turning off  the __Generate portable DSL scripts__ checkbox on versioned settings page.
+Versions before 2018.1 used a different format for Kotlin DSL settings. This format can still be enabled by turning off the _Generate portable DSL scripts_ checkbox on the __Versioned Settings__ page.
 
 When TeamCity generates a non-portable DSL, the project structure in the `.teamcity` directory looks as follows:
 * `pom.xml`
