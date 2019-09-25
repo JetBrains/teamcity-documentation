@@ -537,7 +537,7 @@ OpenJDK 8 (for example, by [AdoptOpenJDK](https://adoptopenjdk.net/)) 1.8.0_161 
 
 To update Java on agents, do one of the following:
 * If the agent details page in TeamCity UI displays Java version note with correcponding action then you can switch to using newer Java: if the appropriate Java version of the same bitness as the current one is detected on the agent, the agent page provides an action to switch to using that Java automatically. Upon the action invocation, the agent process is restarted (once the agent becomes idle, i.e. finishes the current build if there is one) using the new Java.
-* (Windows) Since the build agent Windows installer comes bundled with the required Java, you can just manually reinstall the agent using the Windows installer (`.exe`) obtained from the TeamCity server __Agents__ page. See [installation instructions](setting-up-and-running-additional-build-agents.md#InstallingviaWindowsinstaller).
+* (Windows) Since the build agent Windows installer comes bundled with the required Java, you can just manually reinstall the agent using the Windows installer (`.exe`) obtained from the TeamCity server __Agents__ page. See [installation instructions](setting-up-and-running-additional-build-agents.md#InstallingviaWindowsinstaller). It is important to unstall previous version of the agent (by invoking Uninstall.exe in the agent home directory and unselecting all the "Remove..." optinos) before installing the updated agent.
 * Install a required Java on the agent into one of the standard locations, and restart the agent \- the agent should then detect it and provide an action to use a newer Java in the web UI (see above).
 * Install a required Java on the agent and [configure the agent](#Configuring+Java) to use it.
  
