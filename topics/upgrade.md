@@ -26,7 +26,7 @@ Before upgrading TeamCity:
 6. If you have non\-bundled plugins installed, check plugin pages for compatibility with the new version and upgrade/uninstall the plugins if necessary
 
 To upgrade the server:
-1. [Back up the current TeamCity data](teamcity-data-backup.md) including settings, database and supplementary data. You will need the backup to roll back to the previous version in the unlikely event of the upgrade failure.
+1. [Back up the current TeamCity data](teamcity-data-backup.md) including settings, database, and supplementary data. You will need the backup to roll back to the previous version in the unlikely event of the upgrade failure.
 2. [Perform the upgrade steps](#Upgrading+TeamCity+Server):
    * [Upgrading Using Windows Installer](#Using+Windows+Installer)
    * [Manual Upgrading on Linux and for WAR Distributions](#Manual+Upgrading+using+.tar.gz+or+.war+Distributions)
