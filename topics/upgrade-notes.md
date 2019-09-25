@@ -27,21 +27,39 @@ See the related [issue](https://youtrack.jetbrains.com/issue/TW-61413) for detai
 
 ## Changes from 2018.2.x to 2019.1
 
-* Tags are now __mandatory__ for all Amazon instances run by TeamCity, which helps identify them. If you use integration with Amazon EC2, make sure to add the [`ec2:CreateTags`](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-supported-iam-actions-resources.html#supported-iam-actions-tagging) resource-level permission in Amazon.
-* Starting with 2019.1, the behavior of `reverse.dep` parameters has been changed, and this change can affect your existing builds. In versions prior to 2019.1, when a build chain is triggered, TeamCity only took into account the `reverse.dep` parameters specified in the top-most build of the chain, i.e. in the build which depends on all other builds. If some intermediate builds of the chain had `reverse.dep` parameters, they were ignored.   
+### Mandatory tags for Amazon instances
+
+Tags are now __mandatory__ for all Amazon instances run by TeamCity, which helps identify them. If you use integration with Amazon EC2, make sure to add the [`ec2:CreateTags`](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-supported-iam-actions-resources.html#supported-iam-actions-tagging) resource-level permission in Amazon.
+
+### Changed behavior of reversed dependencies properties
+
+Starting with 2019.1, the behavior of [`reverse.dep`](predefined-build-parameters.md#Overriding+Dependencies+Properties) parameters has been changed, and this change can affect your existing builds. In versions prior to 2019.1, when a build chain is triggered, TeamCity only took into account the `reverse.dep` parameters specified in the top-most build of the chain, i.e. in the build which depends on all other builds. If some intermediate builds of the chain had `reverse.dep` parameters, they were ignored.   
   After [this fix](https://youtrack.jetbrains.com/issue/TW-41341) this is no longer the case. Now, when a build chain is triggered, all `reverse.dep` parameters specified in all nodes of the build chain will be processed.
-* On upgrading to 2019.1, the Token-Based Authentication module will be enabled by default, so you can generate [access tokens](managing-your-user-account.md#Managing+Access+Tokens) and start using them right away.
-* Now TeamCity web UI uses more restrictive value for the [`Content-Security-Policy`](https://content-security-policy.com/) HTTP header. This provides extra security at the expense of prohibiting usage of the web resources not hosted on the TeamCity server.   
-If you rely on external resources (for example, in the build report tabs content or by using not yet updated plugins), you can specify new header value in the `teamcity.web.header.Content-Security-Policy.protectedValue=<full header value>` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (and `teamcity.web.header.Content-Security-Policy.adminUI.protectedValue` property for the web pages in Administration area). Plugins can use [`ContentSecurityPolicyConfig`](http://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) open API interface to add to the value configured.
-* The requirements for the .NET Framework version used by ReSharper tools have changed. Now, if you use ReSharper tools (dotCover and ReSharper Inspections) of version 2018.2 or newer (including the version bundled with TeamCity 2019.1) in your build configuration, the requirements to build agents will change to .NET Framework 4.6.1 or newer. Make sure to update .NET Framework on agents.
-* The `dotCover.dcvr` hidden artifact is no longer published by default. It is now created in the build temporary folder and removed when the build finishes.   
- If you use dotCover and rely on this artifact, specify the path to the `%system.teamcity.build.tempDir%\\..\agentTmp\dotNetCoverageResults\dotCover.dcvr` file explicitly in the [Artifact paths](configuring-general-settings.md#Artifact+Paths).
-* If you have been using beta versions of PowerShell, make sure to remove all beta versions earlier than v6.0.0-beta.9 before installing any new released PowerShell version. Due to updates in the PowerShell detector, if the old beta version is installed, TeamCity will use it instead of the new released one.
-* Agents now download tools from the server only when starting the first build that requires these tools. Here is how it might affect your existing setup:
-   * Agents upgrade significantly faster than before, but it takes extra time for an agent to download a tool for the first build that requires this tool. Such builds will be processed a little longer than usual.
-   * Agents detect and download most of the required tools automatically, but you can request additional tools by referencing them in the [parameters](configuring-build-parameters.md) of the build (or project) configuration. TeamCity now only supports paths defined using a parameter reference (for example, `%teamcity.tool.jdk12%`). If the parameters you use comprise relative or absolute paths to tools, redefine their values via parameter references.   
-   * Note that if you are about to specify a path to a tool in the project settings, TeamCity will not propose the path value if the tool has not been yet downloaded by any agent in the project. We are working on enabling the autocomplete feature on the project level, but for now please make sure to enter the proper path manually.
-* If you use Docker images and Windows Server 2019 with process isolation, build agents may fail to start (read more in [Known Issues](known-issues.md#%22Access+is+denied%22+or+%22Access+to+the+path+is+denied%22+problem+on+container+start)). To work around the issue, grant the "Full control" access to the "Authenticated Users" group.
+  
+### Lazy agent tool loading
+
+[Agent tools](installing-agent-tools.md) (located under the `<agent_installation>/tools` directory on agents) are now transferred to an agent not on the agent upgrade, but right before the first build that uses the respective tool. You might need to update the build configuration settings so TeamCity knows which tools are required by the builds.  
+Before starting a build on an agent, TeamCity checks for the `%teamcity.tool.<tool_ID>%` configuration parameters to collect the set of tools used by the build. If some tool is referenced via this parameter, TeamCity will make sure this tool is present on the agent before the build logic starts executing.
+If some of your builds reference agent tools via their locations under the `<agent installation>/tools` directory, such references must be changed in the build configurations from `<agent_installation>/tools/<tool_ID>` to `%teamcity.tool.<tool_ID>%`. For example, `../tools/maven3.4.5/bin/mvn` must be replaced with `%teamcity.tool.maven3.4.5%/bin/mvn`.
+
+### Changed .NET build requirements in ReSharper tools
+
+The requirements for the .NET Framework version used by ReSharper tools have changed. Now, if you use ReSharper tools (dotCover and ReSharper Inspections) of version 2018.2 or newer (including the version bundled with TeamCity 2019.1) in your build configuration, the requirements to build agents will change to .NET Framework 4.6.1 or newer. Make sure to update .NET Framework on agents.
+
+### Token-based authentication enabled by default
+
+On upgrading to 2019.1, the Token-Based Authentication module will be enabled by default, so you can generate [access tokens](managing-your-user-account.md#Managing+Access+Tokens) and start using them right away.
+
+### New CSP header value
+
+Now TeamCity web UI uses more restrictive value for the [`Content-Security-Policy`](https://content-security-policy.com/) HTTP header. This provides extra security at the expense of prohibiting usage of the web resources not hosted on the TeamCity server.   
+If you rely on external resources (for example, in the build report tabs content or by using not yet updated plugins), you can specify new header value in the `teamcity.web.header.Content-Security-Policy.protectedValue=<full_header_value>` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (and `teamcity.web.header.Content-Security-Policy.adminUI.protectedValue` property for the web pages in Administration area). Plugins can use [`ContentSecurityPolicyConfig`](http://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) open API interface to add to the value configured.
+
+### Change in dotCover artifacts
+
+The `dotCover.dcvr` hidden artifact is no longer published by default. It is now created in the build temporary folder and removed when the build finishes.   
+If you use dotCover and rely on this artifact, specify the path to the `%system.teamcity.build.tempDir%\\..\agentTmp\dotNetCoverageResults\dotCover.dcvr` file explicitly in the [Artifact paths](configuring-general-settings.md#Artifact+Paths).
+
 
 ### Bundled Tools Updates
 
@@ -51,6 +69,14 @@ If you rely on external resources (for example, in the build report tabs content
      * MySQL 8.0.16
      * MSSQL 7.2.2
      * PostgreSQL 42.2.5
+     
+### Note on beta versions of PowerShell
+
+If you have been using beta versions of PowerShell, make sure to remove all beta versions earlier than `v6.0.0-beta.9` before installing any new released PowerShell version. Due to updates in the PowerShell detector, if the old beta version is installed, TeamCity will use it instead of the new released one.
+
+### Note on using Docker and Windows Server with process isolation
+
+If you use Docker images and Windows Server 2019 with process isolation, build agents may fail to start (read more in [Known Issues](known-issues.md#%22Access+is+denied%22+or+%22Access+to+the+path+is+denied%22+problem+on+container+start)). To work around the issue, grant the "Full control" access to the "Authenticated Users" group.
 
 ## Changes from 2018.2.3 to 2018.2.4
 There is a regression in TeamCity 2018.2.4 related to the data displayed on the unauthorized agents' page: the data on agent authorization, enabling/disabling comments, and the latest activity time has been removed from the page. This data is displayed on the agent details page.
