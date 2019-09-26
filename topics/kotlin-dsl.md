@@ -147,14 +147,12 @@ var deployTarget = if (DslContext.projectId == AbsoluteId("Trunk")) {
 
 ### Restoring Build History After ID Change
 
-To identify a build configuration in a project based on the portable DSL, TeamCity uses the [ID](#id-or-name) appointed to this build configuration in DSL. We recommend keeping this ID constant, so the changes made in the DSL source are consistently applied to the respective build configuration in TeamCity.   
-However, if you need to modify the build configuration ID in the DSL, note that TeamCity will interpret it as if the build configuration with the previous ID is deleted and the new configuration with the new ID is created. In this case, you can still restore the history of builds as described in this section.
+To identify a build configuration in a project based on the portable DSL, TeamCity uses the [ID](#id-or-name) assigned to this build configuration in DSL. We recommend keeping this ID constant, so the changes made in the DSL source are consistently applied to the respective build configuration in TeamCity.   
+However, if you need to modify the build configuration ID in the DSL, note that for TeamCity it looks like the configuration with the previous ID was deleted and a new configuration with the new ID was created. In this case, you can still restore the history of builds of the deleted configuration.
 
-When your DSL-based project uses [versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS), TeamCity detects any change in the source DSL and reapplies all the changed settings to affected TeamCity entities. If you modify the ID of a build configuration in the [VCS source](#id-or-name), for TeamCity it looks like the configuration with the previous ID was deleted and a new configuration with the new ID was created.
+If your DSL-based project uses [versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS), TeamCity detects any change in the source DSL and reapplies all the changed settings to affected TeamCity entities. When you modify the ID of a build configuration in the [VCS source](#id-or-name), TeamCity deletes the "old" configuration from the web UI, but keeps the history of its builds in the database for 5 days and only then cleans it up. TeamCity provides a way to attach this history to any existing DSL-based build configuration.
 
-TeamCity deletes the "old" configuration from the web UI, but it keeps the history of its builds in the database for 5 days and only then cleans it up. TeamCity provides a way to attach this history to any DSL-based build configuration.
-
-To restore the build history after changing the build configuration ID, go to the __Build Configuration Settings__ of the newly created configuration in TeamCity, open the __Actions__ menu, and click __Attach build history__. You will be redirected to the temporary _Attach Build History_ tab. Select the recently deleted build configuration in the list and click __Attach__.
+To restore the build history after changing the build configuration ID, go to the __Build Configuration Settings__ of the newly created configuration in TeamCity, open the __Actions__ menu, and click __Attach build history__. You will be redirected to the temporary __Attach Build History__ tab. Select the recently deleted build configuration in the list and click __Attach__.
 
 <img src="attach-build-history.png" width="1283" alt="Attaching a build history"/>
 
