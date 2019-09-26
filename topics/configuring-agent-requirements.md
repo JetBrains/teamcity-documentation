@@ -89,11 +89,10 @@ Is shown for the conditions which require the value to match against (like "equa
 
  Note that the [Agent Requirements](agent-requirements.md) page also displays the list of compatible and incompatible build agents for this build configuration, which is updated each time you modify the list of requirements. Possible reasons why build agent may be incompatible with this build configuration are [described separately](agent-requirements.md).
 
-
-
  __  __
 
 __See also:__
 
-
 __Concepts__: [Agent Requirements](agent-requirements.md) | [Build Agent](build-agent.md) | [Build Configuration](build-configuration.md)
+
+__ __

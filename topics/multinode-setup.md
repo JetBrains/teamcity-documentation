@@ -150,3 +150,5 @@ A secondary server has a few limitations compared to the main server:
 * A secondary node does not allow changing the server configuration and state. The pages are served in the read-only mode, and not all administration pages and actions are available.
 * Currently, only bundled plugins and a limited set of some other plugins can be loaded by a secondary server. Some functionality provided by external plugins can be missing. Read more in [Configuring Secondary Node](configuring-secondary-node.md#Using+Plugins).
 * Users may need to relogin when they are routed to a secondary node if they did not select the _Remember Me_ option.
+
+__ __

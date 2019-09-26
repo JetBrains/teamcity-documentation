@@ -174,20 +174,14 @@ http://teamcity.yourdomain.com/repository/download/MyConfExtId/.lastFinished/Tea
 
 ```
 
-
-
-
-
-
 [//]: # (Internal note. Do not delete. "Patterns For Accessing Build Artifactsd243e349.txt")    
-
 
  __  __
 
 __See also:__
 
-
-
 __Concepts__: [Build Artifact](build-artifact.md) | [Authentication Modules](authentication-modules.md)  
 __Administrator's Guide__: [Retrieving artifacts in builds](configuring-dependencies.md)  
 __Extending TeamCity__: [Accessing Server by HTTP](accessing-server-by-http.md)
+
+__ __

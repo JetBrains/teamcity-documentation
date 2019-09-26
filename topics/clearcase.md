@@ -15,13 +15,9 @@ An installed ClearCase client on the TeamCity server is required to make TeamCit
 If you plan to use the agent\-side [VCS Checkout Mode](vcs-checkout-mode.md), make sure the ClearCase client (cleartool) is also installed on the agents and is properly configured, i.e. the tool must be in system paths and have access to the ClearCase Registry.
 </tip>
 
-
-
 ## ClearCase Settings
 
-
-Common VCS Root properties [are described here](configuring-vcs-roots.md#Common+VCS+Root+Properties). The section below contains a description of the fields and options specific to the ClearCase Version Control System. 
-
+Common VCS Root properties [are described here](configuring-vcs-roots.md#Common+VCS+Root+Properties). The section below contains a description of the fields and options specific to the ClearCase Version Control System.
 
 
 <table>
@@ -176,3 +172,5 @@ Make sure that the user that runs the TeamCity server process is also a ClearCas
 __See also:__
 
 __Administrator's Guide__: [VCS Checkout Mode](vcs-checkout-mode.md)
+
+__ __

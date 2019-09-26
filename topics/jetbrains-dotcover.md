@@ -179,3 +179,5 @@ __See also:__
 
 __Administrator's Guide__: [Manually Configuring Reporting Coverage](manually-configuring-reporting-coverage.md)   
 __Troubleshooting__: [dotCover issues](reporting-issues.md#dotCover+Issues)
+
+__ __

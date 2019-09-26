@@ -32,3 +32,5 @@ When using Docker Compose with images which support [HEALTHCHECK](https://docs.d
 If the start of Docker Compose was successful, the TeamCity agent will register the `TEAMCITY_DOCKER_NETWORK` environment variable containing the name of the Docker Compose default network. This network will be passed transparently to the [Docker Wrapper](integrating-teamcity-with-docker.md#Docker+Wrapper) when used in some build runners. 
 
 </chunk>
+
+__ __

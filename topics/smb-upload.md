@@ -131,4 +131,6 @@ __Path to sources__
 
 Specify the deployment sources as a newline\- or comma\-separated list of paths to files/directories for deployment. Ant\-style wildcards like `dir/**/*.zip` and target directories like `*.zip => winFiles`,`unix/distro.tgz => linuxFiles`, where `winFiles` and `linuxFiles` are target directories, are supported.  
 
-</td></tr></table> 
+</td></tr></table>
+
+__ __

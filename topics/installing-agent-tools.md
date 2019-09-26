@@ -29,3 +29,5 @@ Once downloaded, the tools are stored on an agent so builds don't spend time on 
 To check that the tool appears on the agent, look for `teamcity.tool.<installed_tool_ID>` in [configuration parameters reported by the agent](predefined-build-parameters.md#Agent+Properties) in the TeamCity web UI.
 
 If you delete a tool in the TeamCity web UI, each agent that have this tool installed will detect this, delete own copy of the tool, and restart.
+
+__ __

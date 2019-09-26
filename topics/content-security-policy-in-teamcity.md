@@ -65,3 +65,5 @@ teamcity.web.header.Content-Security-Policy.adminUI.protectedValue=frame-ancesto
 teamcity.web.header.Content-Security-Policy.protectedValue=frame-ancestors 'self'; default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com; img-src 'self' data: https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net; connect-src 'self' ws: wss: https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net
 
 ```
+
+__ __

@@ -182,3 +182,5 @@ teamcity.users.login.filter=(&(sAMAccountName=$capturedLogin$)(memberOf:1.2.840.
 ```
 
 For more details on the filter syntax refer to the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/aa746475%28v=vs.85%29.aspx). For more details on the AD attributes refer to the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/ms677980(v=vs.85).aspx).
+
+__ __

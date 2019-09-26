@@ -327,4 +327,6 @@ If you attempt to delete a project with [dependent build configurations](depende
 
 __See also:__
 
-__Administrator's Guide__: [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md) 
+__Administrator's Guide__: [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md)
+
+__ __

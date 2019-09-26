@@ -8,3 +8,5 @@ In this section:
 __See also:__
 
 * Enabling test reports for Go with the [Golang](golang.md) build feature
+
+__ __

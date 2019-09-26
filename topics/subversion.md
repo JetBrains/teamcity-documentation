@@ -341,3 +341,5 @@ Directories are not considered changed when they have the `svn:mergeinfo` Subver
 __See also:__
 
 __Administrator's Guide__: [Configuring VCS Settings](configuring-vcs-settings.md) | [VCS Checkout Mode](vcs-checkout-mode.md)
+
+__ __

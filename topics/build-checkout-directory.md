@@ -69,4 +69,6 @@ Expiration-based directory cleaning is performed in the background when the buil
 
 __See also:__
 
-__Administrator's Guide__: [Configuring VCS Settings](configuring-vcs-settings.md) 
+__Administrator's Guide__: [Configuring VCS Settings](configuring-vcs-settings.md)
+
+__ __

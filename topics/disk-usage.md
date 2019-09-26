@@ -17,3 +17,5 @@ The report is automatically updated when a new build is run or removed: only the
 The Disk Usage report allows going deeper in the build history of a specific build configuration and showing some additional statistics for the builds of this configuration. The [clean-up](clean-up.md) rules for this build configuration are also listed allowing you to adjust the settings based on the data displayed:
 
 <img src="DiskUsageDetails.png" width="431" alt="Disk usage in details"/>
+
+__ __

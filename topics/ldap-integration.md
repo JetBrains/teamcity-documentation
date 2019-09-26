@@ -257,3 +257,4 @@ Internal LDAP logs are stored in `logs/teamcity-ldap.log*` files in the [server 
 
 If you want to [report an LDAP issue to us](https://confluence.jetbrains.com/display/TW/Feedback), make sure to include LDAP settings (`<TeamCity Data Directory>/config/ldap-config.properties` and `ldap-mapping.xml` files, with password in `ldap-config.properties` masked) and debug LDAP logs fully covering a login/synchronization sequence (include all `teamcity-ldap.log*` files). Make sure to describe the related structure of your LDAP (noting the attributes of related LDAP entities) and detail expected/actual behavior. The archive with the data can be sent to us via [one of the supported ways](reporting-issues.md#Uploading+Large+Data+Archives).
 
+__ __

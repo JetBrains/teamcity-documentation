@@ -18,10 +18,10 @@ If the parent project of an archived subproject is displayed in the project list
 
 If you need to dearchive a project, you can do it using the __Actions__ menu in the top right of the project settings page or the __More__ menu next to the project on the Root project settings page.
 
-
-
- __  __
+__  __
 
 __See also:__
 
 __Concepts__: [Project](project.md) | [Build Configuration](build-configuration.md)
+
+__ __

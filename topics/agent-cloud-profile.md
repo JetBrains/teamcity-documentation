@@ -150,3 +150,5 @@ The agents' information is displayed on the __Agents | Cloud__ page under the __
 ## Enabling/disabling Cloud Integration in Project
 
 You can enable or disable integration for a project and/or its subprojects via the TeamCity web UI using the _Change cloud integration status_ option on the __Cloud Profiles__ page.
+
+__ __

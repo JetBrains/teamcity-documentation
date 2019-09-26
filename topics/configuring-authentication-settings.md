@@ -166,6 +166,6 @@ Please refer to the [dedicated page](ntlm-http-authentication.md).
 
 __See also:__
 
-
-
 __Concepts__: [Authentication Modules](authentication-modules.md)
+
+__ __

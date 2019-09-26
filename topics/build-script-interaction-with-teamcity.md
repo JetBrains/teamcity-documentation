@@ -1221,8 +1221,6 @@ The `teamcity-info.xml` file is to contain the code in the following format (you
 
 ```
 
-
-
 The `key` should not be equal to any of [predefined keys](customizing-statistics-charts.md#Modifying+Pre-defined+Project-level+Charts). The `value` should be a positive/negative integer of up to 13 digits. Float values with up to 6 decimal places are supported.
 
 The key here relates to the key of the __valueType__ tag used when describing the chart.
@@ -1230,3 +1228,5 @@ The key here relates to the key of the __valueType__ tag used when describing th
 #### Describing custom charts
 
 See [Customizing Statistics Charts](customizing-statistics-charts.md) page for detailed description.
+
+__ __

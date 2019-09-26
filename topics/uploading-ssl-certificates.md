@@ -20,4 +20,6 @@ However, sometimes automatically distributing certificates to all agents may not
 
 This can be useful in the following cases:
 * If the user is running the TeamCity server under a non\-trusted certificate, you need to place the server certificate into this folder on an agent to establish agent\-server connection
-* If the user considers their network connection between the server and agents insecure and does not want to transfer sensitive information. 
+* If the user considers their network connection between the server and agents insecure and does not want to transfer sensitive information.
+
+__ __ 

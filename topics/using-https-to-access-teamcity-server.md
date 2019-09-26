@@ -129,4 +129,4 @@ For IntelliJ IDEA, you can add the lines into the `bin\idea.exe.vmoptions` file 
 
 Online HTTPS server configuration analysis: [https://www.ssllabs.com/ssltest/analyze.html](https://www.ssllabs.com/ssltest/analyze.html)[SSLPoke](https://gist.github.com/4ndrej/4547029) Java class
 
- 
+__ __

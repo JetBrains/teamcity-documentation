@@ -87,3 +87,5 @@ User\-level settings can be configured in the [Maven Artifact Dependency Trigger
 __See also:__
 
 __Administrator's Guide__: [Maven](maven.md) | [Maven Artifact Dependency Trigger](configuring-maven-triggers.md)
+
+__ __

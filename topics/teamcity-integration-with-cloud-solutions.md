@@ -124,3 +124,5 @@ __Usual connections used by the server__:
 ### Running Costs
 
 Cloud providers calculate costs based on the virtual machine uptime, so it is recommended to adjust the timeout setting according to your usual builds length. This reduces the amount of time a virtual machine is running. It is also highly recommended to set an execution timeout for all your builds so that a build hanging does not cause prolonged instance running with no payload.
+
+__ __

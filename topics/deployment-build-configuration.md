@@ -24,3 +24,5 @@ Once a configuration is marked as _Deployment_, TeamCity changes behavior in the
    
 * For deployment configurations, TeamCity always shows the latest started build regardless of the changes it contains; unlike regular build configurations, for which the build with the latest changes is displayed.
 * When setting the build configuration type to _Deployment_, several settings are automatically changed to reflect the best practices: _"Limit the number of simultaneously running builds"_ is set to "1" and the _"Allow triggering personal builds"_ option is turned off.
+
+__ __

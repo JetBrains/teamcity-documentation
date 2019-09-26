@@ -28,3 +28,5 @@ To avoid such prompts during a build, you need to configure the known hosts data
 * or __for an individual command__ by running an SSH client with the `-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no` options.
 
 See more information in the man pages for [ssh](http://linux.die.net/man/1/ssh), [ssh-agent](http://linux.die.net/man/1/ssh-agent) and [ssh-add](http://linux.die.net/man/1/ssh-add) commands.
+
+__ __

@@ -18,4 +18,4 @@ TeamCity has the following limitations with Visual SourceSafe:
   * Set timezone for VSS database: Start VSS admin &gt; Tools &gt; Options &gt; TimeZone and pick one.
   * Use VSS 2005.
 
-
+__ __

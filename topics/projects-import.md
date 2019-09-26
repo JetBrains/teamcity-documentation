@@ -125,4 +125,6 @@ The directory contains the following:
 * conflicting files folder, containing all data which has been merged
 * mappings, containing mapping of the fields in the source and target databases
 * scripts for copying artifacts and logs (see the section [above](#Moving+artifacts+and+logs))
-* import report, listing import results including the information on the data which has not been imported (if any) 
+* import report, listing import results including the information on the data which has not been imported (if any)
+
+__ __

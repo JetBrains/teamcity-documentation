@@ -73,13 +73,9 @@ Artifact Dependencies provide you with a convenient means to use the output ([ar
 To create and configure an artifact dependency, use the __[Dependencies](artifact-dependencies.md)__ build configuration settings page. If you need to download the artifacts inside a build script or locally, you can use the [REST API](rest-api.md) or [Ivy Ant tasks](artifact-dependencies.md) for that.
 
  
- __Notes on Cleaning Up Artifacts__  
+__Notes on Cleaning Up Artifacts__  
  
- Artifacts may not be [cleaned](clean-up.md) if they were downloaded by other builds and these builds are not yet cleaned up. For a build configuration with configured artifact dependencies, you can specify whether the artifacts downloaded by this configuration from other builds can be cleaned or not. This setting is available on the [cleanup policies](clean-up.md) page.
-
-
-
-
+Artifacts may not be [cleaned](clean-up.md) if they were downloaded by other builds and these builds are not yet cleaned up. For a build configuration with configured artifact dependencies, you can specify whether the artifacts downloaded by this configuration from other builds can be cleaned or not. This setting is available on the [cleanup policies](clean-up.md) page.
 
 __  __
 
@@ -88,3 +84,4 @@ __See also:__
 __Concepts__: [Build Artifact](build-artifact.md) | [Build Dependencies Setup](build-dependencies-setup.md)   
 __Administrator's Guide__: [Configuring Dependencies](configuring-dependencies.md)
 
+__ __

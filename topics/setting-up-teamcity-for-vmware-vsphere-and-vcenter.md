@@ -46,5 +46,4 @@ When configuring the TeamCity build agent, be sure to specify the valid TeamCity
 * It is possible to specify unique hostnames for cloud agents: when adding an image, choose a customization spec from the corresponding field. The option is available for Windows and Linux virtual machines.
 * When using the same image in different cloud profiles, to avoid possible conflicts, it is possible to use a custom agent image name when configuring a cloud profile in TeamCity. This can be also useful with naming patterns for agents. When a custom agent image name is specified, the names of cloud agent instances cloned from the image will be based on this name.
  
-
- 
+__ __

@@ -137,3 +137,5 @@ __See also:__
 __Concepts__: [Supported Issue Trackers](supported-platforms-and-environments.md)   
 __Administrator's Guide__: [Mapping External Links in Comments](mapping-external-links-in-comments.md)   
 __Developing TeamCity Plugins__: [Issue Tracker Integration Plugin](https://plugins.jetbrains.com/docs/teamcity/issue-tracker-integration-plugin.html)
+
+__ __

@@ -11,3 +11,4 @@ This guide is intended for anyone using TeamCity. Explore TeamCity and learn how
 * [Create Statistic Charts](statistic-charts.md)
 * [Perform Search](search.md)
 
+__ __

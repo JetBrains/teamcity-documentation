@@ -46,11 +46,10 @@ Build artifacts and logs (if necessary) can be backed up manually by copying fil
 
 Note that for large production TeamCity installations, exporting and importing of data from/to the database may not be an optimal solution and maintaining database backup via replication might be a better option; for example, see the corresponding [documentation](http://dev.mysql.com/doc/refman/5.0/en/replication.html) for MySQL database.
 
-
-
-
  __  __
 
 __See also:__
 
 __Installation and Upgrade__: [Upgrade](upgrade.md)
+
+__ __

@@ -22,3 +22,5 @@ Note that if you create a build configuration from a template, it inherits build
 </tip>
 
 In addition to the triggers defined for the build configuration, you can also trigger a build by an [HTTP GET request](accessing-server-by-http.md#Triggering+a+Build+From+Script), or manually by running a custom build.
+
+__ __

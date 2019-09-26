@@ -8,3 +8,5 @@ Code Duplicates are repetitive blocks of code. The __Duplicates Finder__ [build 
 __See also:__
 
 __Administrator's Guide__: [Duplicates Finder (Java)](duplicates-finder-java.md) | [Duplicates Finder (ReSharper)](duplicates-finder-resharper.md) 
+
+__ __

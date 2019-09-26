@@ -15,16 +15,11 @@ TeamCity supports the following _credentials authentication modules_:
   <anchor name="tokenBasedAuth"/>
 * Since TeamCity 2019.1, __Token-Based Authentication__ (cross\-platform): Authentication via the personal access tokens that are maintained by TeamCity. This enables both an ability to authenticate with login/access-token instead of login/password when using the login form and token-based HTTP authentication.
 
-
 The following _HTTP authentication modules_ are supported:
 * __Basic HTTP__ (cross\-platform): Allows accessing certain web server pages and perform actions from various scripts.
 * __NTLM HTTP__ (only for Windows servers): Allows logging in using NTLM HTTP protocol. Depending on the client's web browser and operating system can provide an ability to log in without typing the user's credentials manually.
 
 Refer to [Configuring Authentication Settings](configuring-authentication-settings.md) for specific _authentication modules_ configuration. See also [Accessing Server by HTTP](accessing-server-by-http.md) page for details about accessing a server from your scripts using _Token-Based Authentication_ or _basic HTTP authentication_.
-
-
-
-
 
 __  __
 
@@ -32,3 +27,5 @@ __See also:__
 
 __Administrator's Guide__: [Accessing Server by HTTP](accessing-server-by-http.md) | [LDAP Integration](ldap-integration.md) | [Configuring Authentication Settings](configuring-authentication-settings.md)    
 __Developing TeamCity Plugins__: [Custom Authentication Module](https://plugins.jetbrains.com/docs/teamcity/custom-authentication-module.html)
+
+__ __

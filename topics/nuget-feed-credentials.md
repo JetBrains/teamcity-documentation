@@ -11,6 +11,4 @@ You can add this build feature to any build configuration, one for every feed th
 
 __Since TeamCity 9.1.4__, when using TeamCity as the [internal Nuget server](using-teamcity-as-nuget-feed.md), the credentials specified via this build feature are ignored; the internal TeamCity authentication is used.
 
- 
-
- 
+__ __

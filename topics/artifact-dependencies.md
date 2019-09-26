@@ -323,9 +323,10 @@ The system properties `teamcity.auth.userId` and `teamcity.auth.password` store 
 
 Using the properties is preferable to using real user credentials since it allows the server to track the artifacts downloaded by your build. If the artifacts were downloaded by the build configuration artifact dependencies or using the supplied properties, the specific artifacts used by the build will be displayed at the __Dependencies__ tab on the build results page. In addition, the builds which were used to get the artifacts from, can be configured to have different [clean-up](clean-up.md) logic.
 
-
  __  __
 
 __See also:__
 
 __Concepts__: [Dependent Build](dependent-build.md)
+
+__ __

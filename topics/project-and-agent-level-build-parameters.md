@@ -44,10 +44,10 @@ When defining system properties and environment variables in the `teamcity.defau
 
 For example: `env.CATALINA_HOME=C:\tomcat_6.0.13`.
 
-
-
 __  __
 
 __See also:__
 
 __Administrator's Guide__: [Configuring Build Parameters](configuring-build-parameters.md) | [Defining and Using Build Parameters in Build Configuration](configuring-build-parameters.md) | [Predefined Build Parameters](predefined-build-parameters.md)
+
+__ __

@@ -17,3 +17,5 @@ To enable Go tests reporting in TeamCity, run them with the `-json` flag using o
 Make sure you use only one of the methods to set the `-json` flag. Setting it in both build parameters and the runner’s script will make Go fail to build.
 
 </note>
+
+__ __

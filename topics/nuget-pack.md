@@ -203,12 +203,10 @@ Set additional command line parameters to be passed to `NuGet.exe`.
 
 </td></tr></table>
 
-
-
 __ __
 
 __See also:__
 
-
-
 __Administrator's Guide__: [NuGet Installer](nuget-installer.md) | [NuGet Publish](nuget-publish.md)
+
+__ __

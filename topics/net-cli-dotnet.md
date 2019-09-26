@@ -226,3 +226,5 @@ The path to .NET CLI executable.
 The .NET Core SDK version.
 
 </td></tr></table>
+
+__ __

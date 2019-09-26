@@ -174,3 +174,5 @@ Default VCS trigger quiet period
 Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity maintains between the moment the last VCS change is detected and a build is added into the queue. Can be overridden when [configuring VCS triggers](configuring-vcs-triggers.md).
 
 </td></tr></table>
+
+__ __

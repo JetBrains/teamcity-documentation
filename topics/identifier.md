@@ -57,3 +57,5 @@ __See also:__
 
 __Concepts__: [Project](project.md) | [Build Configuration](build-configuration.md)   
 __Administrator's Guide__: [Managing Projects and Build Configurations](managing-projects-and-build-configurations.md) | [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md) | [Configuring VCS Roots](configuring-vcs-roots.md) | [Accessing Server by HTTP](accessing-server-by-http.md) | [Patterns For Accessing Build Artifacts](patterns-for-accessing-build-artifacts.md) | [REST API](rest-api.md)
+
+__ __

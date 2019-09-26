@@ -11,13 +11,12 @@ After that TeamCity does not monitor the whole repository but only collects chan
 
 If the settings of a VCS Root get modified since the last detected change, the revision in TeamCity will be different from the last change in the newly configured VCS root. TeamCity does not have any information on the previous change in this new root, so it starts to monitor changes with the new settings and sets the build revision to the first discovered change. Until the change is discovered, there is no way to get any revision other than the current revision of the repository. Therefore, while TeamCity builds the correct revision of the sources, the revision for the first build after a VCS root change will not be equal to the last change under the specified path.
 
-
-
  __  __
 
 __See also:__
 
 
-
 __Concepts__: [Change](change.md), [Build Configuration](build-configuration.md)   
 __User's Guide__: [Investigating and Muting Build Problems](investigating-and-muting-build-problems.md)
+
+__ __

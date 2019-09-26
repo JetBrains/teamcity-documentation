@@ -41,3 +41,4 @@ __To change the character set of an existing MySQL database to utf8:__
     ```
 6. Start the TeamCity server.
 
+__ __

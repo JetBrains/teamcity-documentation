@@ -55,8 +55,6 @@ marked working directory as branch remote-run/my_feature
 
 ```
 
-
-
 ### Limitations
 
 If your build configuration has more than one VCS root which support branch remote\-run, and you push changes to all of them, TeamCity will start several personal builds with changes from one VCS root each.
@@ -66,3 +64,5 @@ If your build configuration has more than one VCS root which support branch remo
 __See also:__
 
 __Administrator's Guide__: [Git](git.md) | [Mercurial](mercurial.md)
+
+__ __

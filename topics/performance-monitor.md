@@ -17,3 +17,4 @@ Clicking on a point in the graph displays the corresponding value (CPU in  scree
 
 <img src="performance-monitor.png" width="1433" alt="Performance monitor"/>
 
+__ __

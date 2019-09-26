@@ -8,3 +8,4 @@ TeamCity supports JUnit and TestNG by means of following build runners:
 	
 * IntelliJ IDEA project: IntelliJ IDEA's JUnit and TestNG run configurations are supported. Note, that such run configurations should be shared and checked in to the version control.
 
+__ __

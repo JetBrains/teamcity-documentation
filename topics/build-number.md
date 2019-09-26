@@ -20,3 +20,5 @@ A build number can be:
 __See also:__
 
 __Administrator's Guide__: [Configuring General Settings](configuring-general-settings.md)
+
+__ __

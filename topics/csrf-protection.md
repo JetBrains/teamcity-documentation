@@ -47,4 +47,6 @@ TeamCity considers the following domains/hosts as trusted:
 When you face problems regarding CSRF protection in TeamCity (for example, you get the "Responding with 403 status code due to failed CSRF check" response from the server), you can follow these steps:
 * If you use a reverse proxy, make sure you correctly configure Host/Origin headers, as described above. In the meantime, you may want to add the public URL of your server to [CORS-enabled origins](rest-api.md#CORS+Support).
 * You can temporary disable CSRF protection at all by setting the `teamcity.csrf.origin.check.enabled=logOnly internal property.`
-* Information about failed CSRF attempts are logged into `TeamCity/logs/teamcity-auth.log` files. For more detailed diagnostics of the requests, enable [debug-auth logging preset](reporting-issues.md#Logging+events). 
+* Information about failed CSRF attempts are logged into `TeamCity/logs/teamcity-auth.log` files. For more detailed diagnostics of the requests, enable [debug-auth logging preset](reporting-issues.md#Logging+events).
+
+__ __

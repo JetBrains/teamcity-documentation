@@ -149,3 +149,5 @@ Note, that default xslt files bundled with PartCover 2.3 are broken and you need
 
 
 If .NET code coverage is collected by the build script and needs to be reported inside TeamCity (for example, [Rake](rake.md), or if you run tests via a test launcher other than TeamCity NUnit Test Launcher), there is a way to let TeamCity know about the coverage data. Read more in [Manually Configuring Reporting Coverage](manually-configuring-reporting-coverage.md).
+
+__ __

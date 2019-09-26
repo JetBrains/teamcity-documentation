@@ -12,8 +12,6 @@
 
 __[Back to top](#Most+frequently+used+documentation+sections)__
 
-
-
 ## Build works locally but fails or misbehaves in TeamCity
 
 If a build fails or otherwise misbehaves in TeamCity but you believe it should not, the first thing to do is to check whether the issue is related to TeamCity or not. 
@@ -23,7 +21,6 @@ To do that, follow this procedure:
 - Find a way to run the task from a command prompt. Make sure it works on the TeamCity agent machine, under the same user as the TeamCity agent runs under, with the same environment the agent receives. If necessary, run the TeamCity agent under a different user or tweak its environment. 
 - When the command runs OK, configure the same command in a TeamCity build using the command\-line runner with the custom script setting. 
 - If that works, try other runner if that feels applicable.
-
 
 Here are details on the approach:
 
@@ -62,8 +59,6 @@ If the command line runner works but the dedicated runner does not while the opt
 
 
 __[Back to top](#Most+frequently+used+documentation+sections)__
-
-
 
 
 ## Build is slow under TeamCity
@@ -603,3 +598,4 @@ There is no simple solution for Extended Validation (EV) code signing as the fea
 
 __[Back to top](#Most+frequently+used+documentation+sections)__
 
+__ __

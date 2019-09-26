@@ -113,4 +113,4 @@ The [backup](teamcity-data-backup.md) through the TeamCity web interface can be 
 
 The [restore](restoring-teamcity-data-from-backup.md) operation can be done on either of the nodes, but only if all servers using the TeamCity database and Data Directory are stopped.
 
-
+__ __

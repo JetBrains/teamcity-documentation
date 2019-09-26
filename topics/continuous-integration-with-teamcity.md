@@ -204,3 +204,5 @@ To understand the data flow between the server and the agents, what is passed to
  5. After finishing the build, the build agent sends [Build Artifacts](build-artifact.md) to the server. 
 
 Now you can proceed with [TeamCity installation](installation-quick-start.md).
+
+__ __

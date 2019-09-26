@@ -20,3 +20,5 @@ Get [information](installation-quick-start.md) required to download, install, an
 ### 3. Run your First Build
 
 Create your [first project](configure-and-run-your-first-build.md) in TeamCity and configure and run your first build.
+
+__ __

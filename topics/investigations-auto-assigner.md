@@ -24,3 +24,5 @@ If you have not configured the build feature, TeamCity will show a suggestion fo
 __Since version 2019.1__, you can delay auto-assignment of investigations.   
 TeamCity needs time after the build finish to detect [flaky tests](viewing-tests-and-configuration-problems.md#Flaky+Tests), and in some cases Investigations Auto Assigner may assign an investigation to a user even if the build fails without any user involvement. When there are many flaky tests in a project, this may be distracting.   
 To prevent this scenario, configure the _Investigations Auto Assigner_ build feature to delay the investigation assignment until the failure repeats itself in the build configuration (in the default branch): select __Assign__: "_On second failure_" when configuring this build feature.
+
+__ __

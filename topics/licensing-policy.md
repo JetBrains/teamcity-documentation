@@ -254,7 +254,7 @@ To check TeamCity upgrade availability for your IntelliJ IDEA licenses and to re
 
 __See also:__
 
-
-
 __Concepts__: [Build Agent](build-agent.md)   
 __Licensing__: [Licensing &amp; Upgrade](http://www.jetbrains.com/teamcity/buy/index.html)
+
+__ __

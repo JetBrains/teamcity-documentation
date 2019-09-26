@@ -321,3 +321,5 @@ __Usual connections served by the server:__
 As Amazon rounds machine uptime to the nearest full hour, adjust timeout setting on the EC2 image setting on TeamCity cloud integration settings according to your usual builds length.
 
 It is also highly recommended to set execution timeout for all your builds so that a build hanging does not cause prolonged instance running with no payload.
+
+__ __

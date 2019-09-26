@@ -351,3 +351,5 @@ __  __
 __See also:__
 
 __Administrator's Guide__: [Configuring Java Code Coverage](configuring-java-code-coverage.md)
+
+__ __

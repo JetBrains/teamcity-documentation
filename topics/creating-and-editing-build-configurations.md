@@ -122,11 +122,11 @@ Use the __Actions__ menu when editing a build configuration to
 * [extract a template from a build configuration](build-configuration-template.md#Creating+build+configuration+template)
 * [extract a meta-runner from a build configuration](working-with-meta-runner.md#Extracting+and+Using+Meta-Runner)
 * [attach a history to a build configuration](kotlin-dsl.md#Restoring+Build+History+After+ID+Change)
-
-
  
  __  __
  
  __See also:__
 
 __Administrator's Guide__: [Configuring Dependencies](configuring-dependencies.md) | [Configuring Build Parameters](configuring-build-parameters.md) | [Configuring VCS Settings](configuring-vcs-settings.md)
+
+__ __

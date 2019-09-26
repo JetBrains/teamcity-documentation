@@ -16,10 +16,8 @@ It is possible to [restrict running Personal Builds](configuring-general-setting
 
 __See also:__
 
-
-
-__Concepts__: [Pre-tested Commit](pre-tested-delayed-commit.md) | [Remote Run](remote-run.md)
-
-__Installing Tools__: [IntelliJ Platform Plugin](intellij-platform-plugin.md) | [Eclipse Plugin](eclipse-plugin.md) | [Visual Studio Addin](visual-studio-addin.md)
-
+__Concepts__: [Pre-tested Commit](pre-tested-delayed-commit.md) | [Remote Run](remote-run.md)   
+__Installing Tools__: [IntelliJ Platform Plugin](intellij-platform-plugin.md) | [Eclipse Plugin](eclipse-plugin.md) | [Visual Studio Addin](visual-studio-addin.md)   
 __Troubleshooting__: [Remote Run Problems](reporting-issues.md)
+
+__ __

@@ -371,8 +371,10 @@ Enabling the status widget also allows non\-logged in users to get the RSS feed 
 
 Specify the number of builds of the same configuration that can run simultaneously on all agents. This option helps avoid the situation, when all of the agents are busy with the builds of a single project. Enter 0 to allow an unlimited number of builds to run simultaneously.
 
- __  __
+__ __
 
 __See also:__
 
 __Concepts__: [Build Configuration ](build-configuration.md)
+
+__ __

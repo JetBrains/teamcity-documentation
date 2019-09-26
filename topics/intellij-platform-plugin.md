@@ -76,3 +76,5 @@ __  __
 __See also:__
 
 __Troubleshooting__: [Logging in IntelliJ IDEA/Platform-based IDEs](reporting-issues.md)
+
+__ __

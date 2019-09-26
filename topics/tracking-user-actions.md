@@ -14,4 +14,4 @@ By default, the audit log keeps records for one year (set to 365 by default) onl
 
 To modify the audit storage period, specify the number of days for the following [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties): `teamcity.audit.cleanupPeriod`.
 
- 
+__ __

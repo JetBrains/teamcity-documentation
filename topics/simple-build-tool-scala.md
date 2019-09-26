@@ -190,10 +190,8 @@ Specify the desired Java Virtual Machine parameters, such as maximum heap size o
 
 ```
 
-
- 
-
 </td>
 </tr>
 </table>
 
+__ __

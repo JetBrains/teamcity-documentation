@@ -218,6 +218,7 @@ __  __
 
 __See also:__
 
-__Concepts__: [User Account](user-account.md)
+__Concepts__: [User Account](user-account.md)   
+__Administrator's Guide__: [Enabling Guest Login](enabling-guest-login.md) | [Managing Users and User Groups](managing-users-and-user-groups.md)
 
-__Administrator's Guide__: [Enabling Guest Login](enabling-guest-login.md) | [Managing Users and User Groups](managing-users-and-user-groups.md) 
+__ __

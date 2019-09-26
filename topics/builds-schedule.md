@@ -7,3 +7,5 @@ You can conveniently view the available schedule and plan your builds optimizing
 From this page it is also possible to [edit](configuring-build-triggers.md), disable or delete the triggers.
 
 The Build Schedule page also displays the information for [paused build configurations](build-configuration.md#Build+Configuration+State).
+
+__ __

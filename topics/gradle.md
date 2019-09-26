@@ -188,10 +188,10 @@ In this section, you can specify a Docker image which will be [used to run the b
 
 Code coverage with [IDEA code coverage engine](intellij-idea.md) and [JaCoCo](jacoco.md) is supported.
 
-
-
 __  __
 
 __See also:__
 
 __Administrator's Guide__: [IntelliJ IDEA Code Coverage](intellij-idea.md)
+
+__ __

@@ -13,3 +13,5 @@ __Concepts__: [Pre-tested (delayed) commit](pre-tested-delayed-commit.md) | [Per
 __Remote Run on Branch:__ [Branch Remote Run Trigger](branch-remote-run-trigger.md)   
 __Installing Tools__: [IntelliJ Platform Plugin](intellij-platform-plugin.md) | [Eclipse Plugin](eclipse-plugin.md) | [Visual Studio Addin](visual-studio-addin.md)   
 __Troubleshooting__ [Reporting Issues](reporting-issues.md)
+
+__ __

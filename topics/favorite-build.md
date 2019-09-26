@@ -35,3 +35,5 @@ When [subscribing to notifications](subscribing-to-notifications.md), you can li
 To remove builds from favorites:
 * On the __Favorite Builds__ page or [Build results](working-with-build-results.md) page, click the star symbol ![star_filled.png](star_filled.png).
 * Alternatively, on the [Build results](working-with-build-results.md) page, use the __Remove Builds from favorites__ option from the __Actions__ menu.
+
+__ __

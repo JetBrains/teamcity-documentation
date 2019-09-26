@@ -14,8 +14,6 @@ Swabra can be added as a build feature to your build configuration regardless of
 Swabra should be used with the [automatic checkout](vcs-checkout-mode.md) only: after this build feature is configured, it will run __before the first build step__ to remember the state of the file tree after the sources checkout and to restore it after the build.
 </tip>
 
- 
-
 The checkout directory state is saved into a file in the caches directory named `<checkout-directory-name-hash>.snapshot` using the DiskDir format. The path to the checkout directory to be cleaned is saved into the `snapshot.map` file. The snapshot is used later (at the end of the build or at the next build start) to determine which files and folders are newly created, modified or deleted. It is done based on the actual files' presence, last modification data and size comparison with the corresponding records in the snapshot.
 
 On this page:
@@ -158,3 +156,5 @@ Build configurations work in the same checkout directory if either the same cust
 ## Development links
 
 See plugin page at [Swabra](https://confluence.jetbrains.com/display/TW/Swabra).
+
+__ __

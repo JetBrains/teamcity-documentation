@@ -1077,4 +1077,6 @@ __See also:__
 
 __Concepts__: [Code Coverage](code-coverage.md) | [Code Inspection](code-inspection.md) | [Code Duplicates](code-duplicates.md)   
 __User's Guide__: [Statistic Charts](statistic-charts.md)   
-__Extending TeamCity__: [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md) | [Custom Statistics](https://confluence.jetbrains.com/display/TCD18/Custom+Statistics) 
+__Extending TeamCity__: [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md) | [Custom Statistics](https://confluence.jetbrains.com/display/TCD18/Custom+Statistics)
+
+__ __

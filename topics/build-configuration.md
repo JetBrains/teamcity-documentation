@@ -190,3 +190,5 @@ To display the status for a set of build configurations __externally__ (on your 
 __See also:__
 
 __Administrator's Guide__: [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md)
+
+__ __

@@ -272,10 +272,10 @@ The [service message](build-script-interaction-with-teamcity.md#Service+Messages
 The TeamCity agent will import the specified xml file in the background. Make sure that the xml file is not deleted right after the `importData` message is sent.
 </note>
 
-
-
 __  __
 
 __See also:__
 
 __Concepts__: [Build Runner](build-runner.md)
+
+__ __

@@ -277,4 +277,4 @@ Use the default Maven repository location. The repository is shared between all 
 
 [What's New in TeamCity 2018.2](https://confluence.jetbrains.com/display/TCD18/What's+New+in+TeamCity+2018.2)
 
- 
+__ __

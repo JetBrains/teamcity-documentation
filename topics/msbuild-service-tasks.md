@@ -9,11 +9,7 @@ On this page:
 
 ## TeamCitySetBuildNumber
 
-
-
 `TeamCitySetBuildNumber` allows user to change BuildNumber:
-
-
 
 ```XML
 <TeamCitySetBuildNumber BuildNumber="1.3_{build.number}" />
@@ -22,10 +18,7 @@ On this page:
 
 It is possible to use `{build.number}` as a placeholder for older build number.
 
-
-
 ## TeamCityProgressMessage
-
 
 `TeamCityProgressMessage` allows you to write progress message.
 
@@ -34,17 +27,9 @@ It is possible to use `{build.number}` as a placeholder for older build number.
 
 ```
 
-
-
-
-
 ## TeamCityPublishArtifacts
 
-
-
 `TeamCityPublishArtifacts` allows you to publish all artifacts taken from MSBuild item group
-
-
 
 ```XML
 <ItemGroup>
@@ -55,15 +40,9 @@ It is possible to use `{build.number}` as a placeholder for older build number.
 ```
 
 
-
-
-
 ## TeamCityReportStatsValue
 
-
-
 `TeamCityReportStatsValue` is a handy task to publish statistic values
-
 
 
 ```XML
@@ -72,26 +51,15 @@ It is possible to use `{build.number}` as a placeholder for older build number.
 ```
 
 
-
-
-
 ## TeamCityBuildProblem
 
-
-
 `TeamCityBuildProblem` task reports a build problem which actually fails the build. Build problems appear on the build results page and also affect build status text.
-
-
 
 
 ```XML
 <TeamCityBuildProblem description="description" identity="identity"/>
 
 ```
-
-
-
-
 
 	
 * Mandatory `description` attribute is a human\-readable text describing the build problem. By default `description` appears in build status text.
@@ -101,12 +69,7 @@ It is possible to use `{build.number}` as a placeholder for older build number.
 
 * `identity` is an optional attribute and characterizes particular build problem instance. Shouldn't change throughout builds if the same problem occurs, e.g. the same compilation error. Should be a valid Java id up to 60 characters. By default `identity` is calculated based on `description`.
 
-
-
-
 ## TeamCitySetStatus
-
-
 
 `TeamCitySetStatus` is a task to change current build status text.   
 Prior to TeamCity 8.0, this task was also used for changing build status to failure. However since TeamCity 7.1 [TeamCityBuildProblem](#TeamCityBuildProblem) task should be used for this purpose.
@@ -120,3 +83,5 @@ Prior to TeamCity 8.0, this task was also used for changing build status to fail
 
 `{build.status.text` is substituted with older status text.   
 Status can have `SUCCESS` value.
+
+__ __

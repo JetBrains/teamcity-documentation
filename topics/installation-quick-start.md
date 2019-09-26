@@ -115,3 +115,5 @@ On the first TeamCity start:
 4. TeamCity displays the __Create Administrator Account__ page. Specify the administrator credentials and click __Create Account__.  
 
 You are signed in to TeamCity: now you can configure your user settings and [create and run your first build](configure-and-run-your-first-build.md).
+
+__ __

@@ -32,6 +32,4 @@ To connect to an insecure registry:
 
 </chunk> 
 
-
-
- 
+__ __

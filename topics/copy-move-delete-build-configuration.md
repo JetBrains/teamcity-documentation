@@ -22,3 +22,5 @@ When running TeamCity in the [Professional mode](licensing-policy.md#Licensing+O
 When you delete a build configuration, TeamCity will remove its `.xml` configuration file. After the deletion, there is a [configurable](clean-up.md#Deleted+Build+Configurations+Cleanup) timeout (5 days by default) before the builds of the deleted configuration are removed during the build history clean-up.
 
 If you attempt to delete a build configuration which has [dependent build configurations](dependent-build.md), TeamCity will warn you about it. If you proceed with deletion, the dependencies will no longer function.
+
+__ __

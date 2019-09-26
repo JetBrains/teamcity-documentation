@@ -96,4 +96,6 @@ __See also:__
 
 
 
-__Administrator's Guide__: [NuGet Installer](nuget-installer.md) | [NuGet Publish](nuget-publish.md) | [NuGet Pack](nuget-pack.md) | [NuGet Dependency Trigger](nuget-dependency-trigger.md) 
+__Administrator's Guide__: [NuGet Installer](nuget-installer.md) | [NuGet Publish](nuget-publish.md) | [NuGet Pack](nuget-pack.md) | [NuGet Dependency Trigger](nuget-dependency-trigger.md)
+
+__ __
