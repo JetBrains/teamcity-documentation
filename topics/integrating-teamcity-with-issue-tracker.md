@@ -36,7 +36,7 @@ To get maximum benefit from the issue tracker integration, do the following:
 
 ### Requirements
 
-Th information about the issues is retrieved by the TeamCity server using the credentials provided and then is displayed to TeamCity users.
+The information about the issues is retrieved by the TeamCity server using the credentials provided and then is displayed to TeamCity users.
 
 This has several implications:
 * The TeamCity server needs direct access to the issue tracker. (Also, TeamCity does not yet [support](http://youtrack.jetbrains.net/issue/TW-8876) proxy for connections to issue trackers).
