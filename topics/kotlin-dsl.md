@@ -35,7 +35,7 @@ After the commit to the repository, you will get the `.teamcity` settings direct
 
 ### Opening Project in IntelliJ IDEA
 
-To open the Kotlin DSL project in IntelliJ IDEA, open the `.teamcity/pom.xml` file as a project. All necessary dependencies will be resolved automatically right away. If all dependencies have been resolved, no errors in red will be visible in `settings.kts`. If you already have an IntelliJ IDEA project and want to add a Kotlin DSL module to it, see [this section](#How+to+Add+.teamcity+as+a+New+Module+to+a+Project%3F).
+To open the Kotlin DSL project in IntelliJ IDEA, open the `.teamcity/pom.xml` file as a project. All necessary dependencies will be resolved automatically right away. If all dependencies have been resolved, no errors in red will be visible in `settings.kts`. If you already have an IntelliJ IDEA project and want to add a Kotlin DSL module to it, follow [related instructions](#How+to+Add+.teamcity+as+a+New+Module+to+a+Project%3F).
 
 <note>
 
@@ -210,7 +210,7 @@ where:
 * `id` is the absolute ID of the project, the same ID you'll see in browser address bar if you navigate to this project
 * `parentId` is the absolute ID of a parent project where this project is attached
 * `uuid` is some unique sequence of characters.    
-The` uuid` is a unique identifier which associates a project, build configuration or VCS root with its data. If the `uuid` is changed, then the data is lost. The only way to restore the data is to revert the `uuid` to the original value. On the other hand, the `id` of an entity can be changed freely, if the `uuid` remains the same. This is the main difference of the non-portable DSL format from portable. The portable format does not require specifying the `uuid`, but if it happened so that a build configuration lost its history, one has to reattach it again via the web interface.
+The` uuid` is a unique identifier which associates a project, build configuration or VCS root with its data. If the `uuid` is changed, then the data is lost. The only way to restore the data is to revert the `uuid` to the original value. On the other hand, the `id` of an entity can be changed freely, if the `uuid` remains the same. This is the main difference of the non-portable DSL format from portable. The portable format does not require specifying the `uuid`, but if it happened so that a build configuration lost its history (e.g. on changing build configuration external id) you can reattach the history to the build configuration using the __Attach build history__ option from the __Actions__ menu. See [details](#Restoring+Build+History+After+ID+Change).
 
 <note>
 
