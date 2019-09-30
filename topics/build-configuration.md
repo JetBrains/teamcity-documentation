@@ -81,7 +81,7 @@ In general, a build configuration status reflects the status of its last finishe
 
 Note that [Personal builds](personal-build.md) do not affect the build configuration status.
 
-You can view the status of all build configurations for all/particular project on the __Projects__ Overview page or Project Home Page, when the details are collapsed.
+You can view the status of all build configurations on the __Projects__ page (for all projects) or __Project Home__ page (for a particular project), when the details are collapsed.
 
 Build configuration status icons:
 
@@ -176,7 +176,7 @@ The build configuration is paused; no builds are triggered for it. Click on the 
 It is possible to filter out the build configurations whose status you want to be displayed in TeamCity or externally.
 
 To display the status of selected build configurations in __TeamCity__:
-* configure visible projects on the Projects Overview page to display the status of build configurations belonging to these projects only
+* configure visible projects on the __Projects__ page to display the status of build configurations belonging to these projects only
 * implement a [custom Java plugin](https://confluence.jetbrains.com/display/TCD18/Developing+TeamCity+Plugins) for TeamCity to make the page available as a part of  the TeamCity web application
 
 To display the status for a set of build configurations __externally__ (on your company's website, wiki, Confluence, or any other web page), you can:

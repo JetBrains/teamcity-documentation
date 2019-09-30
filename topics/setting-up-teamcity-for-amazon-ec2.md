@@ -152,7 +152,7 @@ TeamCity agent auto-upgrades whenever distribution of agent plugins on the serve
 
 ### Configuring an Amazon EC2 cloud profile
 
-You can configure an Amazon EC2 [agent cloud profile](agent-cloud-profile.md) in the __Cloud Profiles__ section of the project settings.
+You can configure an Amazon EC2 [agent cloud profile](agent-cloud-profile.md) in the __Cloud Profiles__ section of the __Project Settings__.
 
 #### Custom Image Name
 

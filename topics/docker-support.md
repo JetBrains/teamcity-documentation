@@ -20,7 +20,7 @@ If you have a build configuration which publishes images, you need to remove the
 
 #### Automatic Login to/Logout of Docker Registry
 
-If you need to log in to a registry requiring authentication before a build, select the corresponding option and a connection to Docker configured in the project settings.   
+If you need to log in to a registry requiring authentication before a build, select the corresponding option and a connection to Docker configured in the __Project Settings__.   
 Automatic logout will be performed after the build finishes.
 
 </chunk>

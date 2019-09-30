@@ -14,7 +14,7 @@ Note that after an upgrade, if you use Kotlin DSL for your TeamCity project sett
 
 ## Configuring Cloud Profile
 
-Cloud profiles are configured in the __Cloud Profiles__ section of the project settings.
+Cloud profiles are configured in the __Cloud Profiles__ section of the __Project Settings__.
 
 ### Specifying profile settings
 

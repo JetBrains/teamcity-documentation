@@ -59,8 +59,7 @@ Basically, each build chain is a [directed acyclic graph](http://en.wikipedia.or
 Build Chains are visible in various places in the TeamCity web UI:
 
 * [Dependencies page of build configuration settings](#Dependencies+page+of+build+configuration+settings)
-* [Build Chains tab of project home and build configuration home page](#Build+Chains+tab+of+project+home+and+build+configuration+home+page)
-* [Build Chains tab of project home and build configuration home page](#Build+Chains+tab+of+project+home+and+build+configuration+home+page)
+* [Build Chains tab of the Project Home and Build Configuration Home pages](#Build+Chains+tab+of+Project+Home+and+Build+Configuration+Home+pages)
 
 ### Dependencies page of build configuration settings
 
@@ -74,7 +73,7 @@ If build configurations in a chain use feature branches, the [logical names](wor
 
 </note>
 
-### Build Chains tab of project home and build configuration home page
+### Build Chains tab of Project Home and Build Configuration Home pages
 
 You can review build chains on both project and build configuration pages: each of those pages has a __Build Chains__ tab appearing when snapshot dependencies are configured. 
 

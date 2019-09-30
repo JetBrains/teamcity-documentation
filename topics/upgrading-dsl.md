@@ -1687,7 +1687,7 @@ These changes should be performed before enabling versioned settings in the proj
 #### Converting cloud profiles
 
 This is only relevant if you use Kotlin DSL for the Root project settings and have cloud profiles.   
-In 2017.1 cloud profiles were moved from the server level to the Root project level. Since they were not defined in the Kotlin DSL, in case you enable the versioned settings the existing cloud profiles will be deleted form he server. Thus before continuing to use Kotlin DSL fr the root project on the server make sure to add the cloud profiles definitions to the root project settings in Kotlin DSL.
+In 2017.1 cloud profiles were moved from the server level to the Root project level. Since they were not defined in the Kotlin DSL, in case you enable the versioned settings the existing cloud profiles will be deleted form he server. Thus before continuing to use Kotlin DSL for the root project on the server make sure to add the cloud profiles definitions to the root project settings in Kotlin DSL.
 
 To update your settings with the cloud profile information, perform the following:
 1. Run the __'Download settings in Kotlin format__' action in the Root project and save the zip with the generated DSL

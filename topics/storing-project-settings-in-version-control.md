@@ -121,7 +121,7 @@ TeamCity stores project settings:
 
 <note>
 
-To test kotlin\-based settings in a sandbox project, you can download the settings as a zip archive without disabling the UI: on the project settings page, click the __Actions__ menu and select __Download settings in kotlin format.__ A zip archive will be downloaded.
+To test kotlin\-based settings in a sandbox project, you can download the settings as a zip archive without disabling the UI: on the __Project Settings__ page, click the __Actions__ menu and select __Download settings in kotlin format.__ A zip archive will be downloaded.
 </note>
 
 <anchor name="ForcingSynch"/>
@@ -134,7 +134,7 @@ To test kotlin\-based settings in a sandbox project, you can download the settin
 Before committing settings to the VCS, consider the recommended approach to storing security settings [described above](#Storing+Secure+Settings).
 </warning>
 
-If you want to commit the current configuration to the VCS (for example, earlier you committed misconfigured settings to the repository and TeamCity was unable to load it displaying errors and warnings), you can use the __Commit current project settings...__ option on the __Versioned Settings | Configuration__ page.
+If you want to commit the current configuration to the VCS (for example, earlier you committed misconfigured settings to the repository and TeamCity was unable to load it displaying errors and warnings), you can use the _Commit current project settings_ option on the __Versioned Settings | Configuration__ page.
 
 When TeamCity commits settings into a VCS, it uses a  standard commit message noting the TeamCity user as the committer and the project whose settings changed. It is possible to add a fixed custom prefix to each settings change committed by TeamCity via the `teamcity.versionedSettings.commitMessagePrefix` [internal property](configuring-teamcity-server-startup-properties.md), for example, `teamcity.versionedSettings.commitMessagePrefix=TC Change\n\n`
 

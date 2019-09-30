@@ -85,7 +85,7 @@ TeamCity agent auto-upgrades whenever distribution of agent (for example, after 
 
 ### Configuring a cloud profile in TeamCity
 
-A cloud profile is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand. __Prior to TeamCity 2017.1__, profiles are configured on the __TeamCity | Administration | Agent Cloud__ page. In the later versions, cloud profiles  are configured at the project level, on the dedicated page of __project settings__.
+A cloud profile is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand. __Prior to TeamCity 2017.1__, profiles are configured on the __TeamCity | Administration | Agent Cloud__ page. In the later versions, cloud profiles are configured in the __Cloud Profiles__ section of the __Project Settings__.
 
 ## Estimating Costs
 

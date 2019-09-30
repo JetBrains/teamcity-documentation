@@ -6,8 +6,8 @@ On this page:
 <tag-list of="chapter" mode="tree" depth="5"/>
 
 To help you track the condition of your projects and individual build configurations over time, TeamCity gathers statistical data across all their history and displays it as visual charts. The statistical charts can be divided into the following categories:
-* [Project-level statistics](#Project+Statistics) available at the __Project home page | Statistics__ tab.
-* [Build Configuration-level statistics](#Build+Configuration+Statistics) available at the __Build Configuration home page__ | __Statistics__ tab.
+* [Project-level statistics](#Project+Statistics) available on the __Project Home | Statistics__ tab.
+* [Build Configuration-level statistics](#Build+Configuration+Statistics) available on the __Build Configuration home page__ | __Statistics__ tab.
 
 Regardless of the selected statistics level in the Statistics tab, you can:
 * Use the branch filter to view the results from the specified branches only 

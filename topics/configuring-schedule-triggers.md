@@ -4,7 +4,7 @@
 <tag-list of="chapter" mode="tree" depth="4"/>
 
 
-A _Schedule Trigger_ allows you to set the time when a build of the configuration will be run. The __[Builds Schedule](builds-schedule.md)__ page of the current project settings displays the configured build times. More than one Schedule Trigger can be added to a build configuration.
+A _Schedule Trigger_ allows you to set the time when a build of the configuration will be run. The __[Builds Schedule](builds-schedule.md)__ section of the current __Project Settings__ displays the configured build times. More than one Schedule Trigger can be added to a build configuration.
 
 ## Triggering Conditions
 

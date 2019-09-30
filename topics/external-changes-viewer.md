@@ -7,7 +7,7 @@ __Since TeamCity 2017.2__, some of the viewers are supported out of the box: com
 To enable other external change viewers, create and configure the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/change-viewers.properties file. These settings should be specified for _each VCS root_ you want to use the external changes viewer for. A detailed example of the configuration file including the description of available formats, variables, and other parameters can be found in the `change-viewers.properties.dist` file in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config directory.
 
 When the configuration file is created, links to the external viewer (![extChangesViewerIcon.png](extChangesViewerIcon.png)) will appear on the following pages:
-* Changes popups on the __Projects__ and project home page, __Overview__ tab and the __Change Log__ tab of the build configuration home page)   
+* Changes popups on the __Projects__ and __Project home__ page, __Overview__ tab and the __Change Log__ tab of the build configuration home page)   
 
    <img src="externalChangesViewer.png" width="600" alt="Viewing external changes"/>
    

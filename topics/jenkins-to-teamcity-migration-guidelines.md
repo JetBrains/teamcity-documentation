@@ -200,13 +200,13 @@ There are some conceptual differences in how the build jobs are configured in Je
 
 ### VCS Roots
 
-Source Code Management (SCM) of a Jenkins build job corresponds to a [VCS root](vcs-root.md) in TeamCitys Project settings. A Project may include an arbitrary number of VCS Roots. Any Build Configuration may use any number of VCS Roots of the Project.
+Source Code Management (SCM) of a Jenkins build job corresponds to a [VCS root](vcs-root.md) in Project Settings in TeamCity. A Project may include an arbitrary number of VCS Roots. Any Build Configuration may use any number of VCS Roots of the Project.
 
 When only a part of the VCS Root is required, it is possible to use [VCS Checkout Rules](vcs-checkout-rules.md). This allows mapping the directories from the configured VCS Root to subdirectories in the [build checkout directory](https://confluence.jetbrains.com/display/TCD10/Build+Checkout+Directory) on a Build Agent.
 
 ### Build Environment
 
-The Build Environment section of the Freestyle project in Jenkins specifies additional features for the project. In TeamCity, the corresponding features may be configured in various sections, depending on the goal: general project settings,  build configuration settings, VCS root settings, etc.
+The Build Environment section of the Freestyle project in Jenkins specifies additional features for the project. In TeamCity, the corresponding features may be configured in various sections, depending on the goal: general project settings, build configuration settings, VCS root settings, and so on.
 
 Examples:
 

@@ -18,7 +18,8 @@ A _VCS root_ defines a [connection to a version control system](configuring-vcs-
 
 VCS roots are created in a project and are available to all the Build Configurations defined in that project or its [subprojects](project.md#Settings+Propagation).
 
-You can view all VCS roots configured within the project and create/edit/delete/detach them using the __VCS Roots__ page under the project settings in the Administration UI.If someone attempts to modify a VCS root that is used in more than one project or build configuration, TeamCity will issue a warning that the changes to the VCS root could potentially affect other projects or build configurations. The user is then prompted to either save the changes and apply them to all the affected projects and build configurations, or to make a copy of the VCS root to be used by either a specific build configuration or project.
+You can view all VCS roots configured within the project and create/edit/delete/detach them using the __VCS Roots__ section of the __Project Settings__.   
+If someone attempts to modify a VCS root that is used in more than one project or build configuration, TeamCity will issue a warning that the changes to the VCS root could potentially affect other projects or build configurations. The user is then prompted to either save the changes and apply them to all the affected projects and build configurations, or to make a copy of the VCS root to be used by either a specific build configuration or project.
 
 On an attempt to create a new VCS root, TeamCity checks whether there are other VCS roots accessible in this project with similar settings. If such VCS roots exist, TeamCity suggests using them.
 

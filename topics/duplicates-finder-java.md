@@ -108,7 +108,7 @@ _This option is available if you use an IntelliJ IDEA project._ Click this butto
 
 <note>
 
-If you update your project settings in IntelliJ IDEA (e.g add new jdks, libraries), remember to update the build runner settings by clicking __Check/Reparse Project__.
+If you update your project settings in IntelliJ IDEA (for example, add new JDKs, libraries), remember to update the build runner settings by clicking __Check/Reparse Project__.
 </note>
 
 

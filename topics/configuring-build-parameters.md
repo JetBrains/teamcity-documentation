@@ -22,8 +22,8 @@ There is a set of [predefined parameters](predefined-build-parameters.md) provid
 
 The parameters can be defined at different levels (in order of precedence):
 * a specific build (via [Run Custom Build](triggering-a-custom-build.md) dialog)
-* Build Configuration settings (the __Parameters__ page of Build Configuration settings) or [Build Configuration Template](build-configuration-template.md)
-* Project settings (the __Parameters__ page of the Project settings). These affect all the Build Configurations and Templates of the project and its subprojects.
+* the __Parameters__ page of __Build Configuration Settings__ or [Build Configuration Template](build-configuration-template.md)
+* the __Parameters__ page of __Project Settings__; these affect all the build configurations and templates of the project and its subprojects
 * an agent (the `<`[`Agent home`](agent-home-directory.md)`>/conf/buildAgent.properties` file on the agent)
 
 Any textual setting can reference a parameter which makes the string in the format of `%parameter.name%` be substituted with the actual value at the time of build. If there is a reference to a parameter which is not defined, it is considered an [implicit agent requirement](agent-requirements.md#Implicit+Requirements) so the build will only run on the agents with the parameter defined.

@@ -1,6 +1,6 @@
 [//]: # (title: Including Third-Party Reports in the Build Results)
 [//]: # (auxiliary-id: Including Third-Party Reports in the Build Results)
-If your reporting tool produces reports in HTML format, you can extend TeamCity with a custom tab to show the information provided by the third\-party reporting tool.  The report provided by your tool can be then displayed either on the build results page, or on the project home page.
+If your reporting tool produces reports in HTML format, you can extend TeamCity with a custom tab to show the information provided by the third\-party reporting tool.  The report provided by your tool can be then displayed either on the build results page, or on the __Project Home__ page.
 
 The general flow is as follows:
 * configure the build script to produce the HTML report (preferably in a zip archive);
@@ -9,7 +9,7 @@ The general flow is as follows:
 
 Report tabs support project hierarchy. There are two types of tabs available:
 * __Build\-level__: appears on the [Build Results](working-with-build-results.md) page for each build that produced an artifact with the specified name. These report tabs are defined in a project and are inherited in its subprojects. To override an inherited Report tab in a subproject, create a new report tab with the same name as the inherited one in the subproject.
-* __Project\-level__: appears on the Project home page for a particular project only if a build within the project produces the specified reports artifact.
+* __Project\-level__: appears on the Project Home page for a particular project only if a build within the project produces the specified reports artifact.
 
 To configure a report tab, go to the __Project Settings | Report Tabs__ and select the type of report tab you want to add.
 

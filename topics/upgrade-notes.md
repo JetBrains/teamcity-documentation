@@ -245,7 +245,7 @@ If you have Built\-in authentication enabled with the "Allow user registration f
   * `teamcity.nuget.feed.server`
   * `system.teamcity.nuget.feed.auth.serverRootUrlBased.server`
   
-  You now need to explicitly specify the URL from the [NuGet Feed](using-teamcity-as-nuget-feed.md) page in the project settings.
+  You now need to explicitly specify the URL from the [NuGet Feed](using-teamcity-as-nuget-feed.md) page in the __Project Settings__.
   
 * The enabled default NuGet feed with all published packages accessed by URL `/app/nuget/v1/FeedService.svc/` is now moved to the Root project feed `/app/nuget/feed/_Root/default/v2/`. It is recommended to switch to new URL in your projects.
 * .nupkg files are now indexed on the agent side instead of the server which could slightly increase the time of builds for projects with the NuGet Feed feature and the automatic package indexing enabled or for builds with NuGet Packages Indexer build feature.
@@ -1081,7 +1081,7 @@ If you have not [switched to 64 bit JVM](installing-and-configuring-the-teamcity
 Some actions has moved under the "Actions" button available at the top\-right of the page, near Run button.   
 These include:"Label this build sources" on Changes tab of a build,   
 "Pause", "Copy", "Move", "Delete", "Associate with Template", "Extract Template", "Extract Meta\-Runner" on build configuration settings administration page,   
-"Copy", "Move", "Delete", "Archive", "Bulk edit IDs" on project settings administration page.
+"Copy", "Move", "Delete", "Archive", "Bulk edit IDs" on the __Project Settings__ administration page.
 
 #### Create Maven build configuration is not available by default
 

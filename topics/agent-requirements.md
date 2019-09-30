@@ -21,7 +21,7 @@ Any reference (a name enclosed in `%` characters) to an unknown parameter is con
 For instance, if you define a build runner parameter as a reference to another property: `%env.JDK_16%/lib/*.jar`, this will implicitly add an agent requirement for the referenced property: that is, `env.JDK_16` must be defined. To define such properties on the agent, you can:
 * Specify them in the [`buildAgent.properties`](build-agent-configuration.md) file.
 * Set the [environment variable](predefined-build-parameters.md#Agent+Environment+Variables) `JDK_16` on the build agent.
-* Specify the value on the __Parameters__ page of a build configuration (or in the project settings). The same value of the property will be used for all build agents.
+* Specify the value on the __Parameters__ page of a build configuration (or in the __Project Settings__). The same value of the property will be used for all build agents.
 
  __  __
 

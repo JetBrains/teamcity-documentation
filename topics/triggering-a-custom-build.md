@@ -67,7 +67,7 @@ If your project has [versioned settings](storing-project-settings-in-version-con
 
 If changes are selected in the [step above](#Include+changes), the revision of the project settings corresponding to the selected changes will be loaded.
 
-To define which settings to take, use one of the corresponding options from the __Use settings__ drop\-down (the option here will override the [project-level setting](storing-project-settings-in-version-control.md#Defining+Settings+to+Apply+to+Builds)).
+To define which settings to take, use one of the corresponding options from the _Use settings_ drop-down menu (the option here will override the [project-level setting](storing-project-settings-in-version-control.md#Defining+Settings+to+Apply+to+Builds)).
 
 ### Parameters
 
