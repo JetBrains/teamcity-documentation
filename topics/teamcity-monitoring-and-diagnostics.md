@@ -61,7 +61,7 @@ This tab allows you to view and download the available [TeamCity server logs](te
 
 ## Internal Properties
 
-This tab displays the internal properties affecting the TeamCity behavior and the JVM system properties. To fine\-tune these aspects, [see this section](configuring-teamcity-server-startup-properties.md).
+This tab displays TeamCity [server internal properties](configuring-teamcity-server-startup-properties.md#TeamCity-internal-properties) and allows to modify them.
 
 ## Logging Presets
 
