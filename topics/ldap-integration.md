@@ -229,7 +229,12 @@ When you add the LDAP authentication module on a TeamCity server which already h
 
 ### Scrambling credentials in ldap-config.properties file
 
-The `java.naming.security.credentials` property can be used to configure either plain\-text or scrambled\-form passwords. To get the scrambled password value, execute the following command (must be executed from the `<TeamCity installation directory>/webapps/ROOT/WEB-INF/lib` directory:
+The `java.naming.security.credentials` property can store the password either in the plain\-text or scrambled form. TeamCity needs the raw password value when authenticating in LDAP server, so the password should be stored in a reversible form.
+You can get the scrambled value using the command below and then set the property to the the scrambled value.
+
+Note that scrambling is not encryption: it protects the password from being easily remembered when seen occasionally, but it does not protect against getting the real password value when someone gets the scrambled password value.
+
+To get the scrambled password value, execute the following command (must be executed from the `<TeamCity installation directory>/webapps/ROOT/WEB-INF/lib` directory:
 
 For Windows:
 
@@ -244,9 +249,6 @@ For Linux:
 java -cp serviceMessages.jar:common-api.jar:commons-codec.jar:commons-codec-1.3.jar:log4j-1.2.12.jar jetbrains.buildServer.serverSide.crypt.ScrambleMain "<text to scramble>"
 
 ```
-
-Note that scrambling is not encryption: it protects the password from being easily remembered when seen occasionally, but it does not protect against getting the real password value when someone gets the scrambled password value.
-
 
 [//]: # (Internal note. Do not delete. "LDAP Integrationd195e594.txt")
 
