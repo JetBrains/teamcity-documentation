@@ -12,14 +12,14 @@ TeamCity supports wildcards in different configuration options.
 
 <td>
 
- Wildcard 
+Wildcard 
 
 </td>
 
 
 <td>
 
- Description 
+Description 
 
 </td>
 </tr>
@@ -28,7 +28,7 @@ TeamCity supports wildcards in different configuration options.
 
 <td>
 
- `*`    
+`*`    
 
 
 </td>
@@ -36,7 +36,7 @@ TeamCity supports wildcards in different configuration options.
 
 <td>
 
- matches any text in the file or directory name excluding directory separator ("/" or "\")
+matches any text in the file or directory name excluding directory separator ("/" or "\")
 
 
 </td>
@@ -54,7 +54,7 @@ TeamCity supports wildcards in different configuration options.
 
 <td>
 
- matches single symbol in the file or directory name excluding directory separator 
+matches single symbol in the file or directory name excluding directory separator 
 
 
 </td>
@@ -64,31 +64,24 @@ TeamCity supports wildcards in different configuration options.
 
 <td>
 
- `**`  
-
+`**`
 
 </td>
 
 
 <td>
 
- matches any symbols including the directory separator 
-
+matches any symbols including the directory separator
 
 </td>
 </tr>
 </table>
 
-
-
-
 You can read more on Ant wildcards in the corresponding [section](http://ant.apache.org/manual/dirtasks.html#patterns) of Ant documentation.
 
+### Examples
 
-
-Examples
-
-For a directory structure:
+See the pattern examples for the following file structure inside the current directory:
 
 ```Shell
 
@@ -103,51 +96,44 @@ For a directory structure:
  -file5.log
 ```
 
+Examples:
+
 <table>
 <tr>
 
 
 <td width="250">
 
- Description            
+Description
 
+</td>
+
+<td>
+
+Pattern
 
 </td>
 
 
 <td>
 
- Pattern           
-
-
-</td>
-
-
-<td>
-
- Matching files 
-
+Matching files
 
 </td>
 </tr>
 <tr>
 
-
 <td>
 
- all the files          
-
+all files inside the current directory
 
 </td>
 
-
 <td>
 
- `**`                 
-
+`**`
 
 </td>
-
 
 <td>
 
@@ -162,7 +148,7 @@ For a directory structure:
    -file4.log
  -file5.log
  
- ```
+```
 
 </td>
 </tr>
@@ -170,17 +156,16 @@ For a directory structure:
 
 <td>
 
- all log files      
+all log files inside the current directory
 
 </td>
 
 
 <td>
 
- `**/*.log`                 
+`**/*.log`
 
 </td>
-
 
 <td>
 
@@ -194,7 +179,6 @@ For a directory structure:
  -file5.log
  ```
 
-
 </td>
 </tr>
 <tr>
@@ -202,14 +186,13 @@ For a directory structure:
 
 <td>
 
- all files in a/b directory incl. those in subfolders 
-
+all files inside the `a/b` directory including those in subdirectories
 
 </td>
 
 <td>
 
- `a/b/**`                 
+`a/b/**`
 
 </td>
 
@@ -222,27 +205,23 @@ For a directory structure:
  -file2.txt
  -file3.log
  
- ```
+```
 
 </td>
 </tr>
 <tr>
 
-
 <td>
 
- files directly in the a/b directory 
+all files inside the `a/b` directory
 
 </td>
 
-
 <td>
 
- `a/b/*`                 
-
+`a/b/*`
 
 </td>
-
 
 <td>
 
