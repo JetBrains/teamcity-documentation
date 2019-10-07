@@ -7,15 +7,15 @@ On this page:
 
 ## Viewing Problems on Project Overview Page
 
-The project overview page also displays the number of tests failed in build configurations as well as other problems. When the data in the problematic build configuration is not expanded, the link under the tests number takes you to the Current Problems page (see [below](#Using+Current+Problems+Tab)).
+The __Project Overview__ page also displays the number of tests failed in build configurations as well as other problems. When the data in the problematic build configuration is not expanded, the link under the tests number takes you to the __Current Problems__ tab (see [below](#Using+Current+Problems+Tab)).
 
 When you expand the build configuration data, the problem summary appears. The presentation of problems is shortened if your browser does not have enough horizontal space.
 
 ## Using Current Problems Tab
 
-To view problematic build configurations and tests in your project, open the Project Home page and go to the __Current Problems__ tab.
+To view problematic build configurations and tests in your project, open the __Project Home__ page and go to the __Current Problems__ tab.
 
-By default, the __Current Problems__ tab displays data for all build configurations within a project. To limit the data displayed, use the __Filter by build configuration__ drop\-down.
+By default, the __Current Problems__ tab displays data for all build configurations within a project. To limit the data displayed, use the _Filter by build configuration_ drop-down menu.
 
 From this page you can view problems in your project divided into the following groups:
 * build configuration problems

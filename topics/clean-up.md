@@ -58,7 +58,9 @@ In each rule, you can define a number of successful builds to preserve, and/or t
 The following clean-up levels are available:
 * __Artifacts__ (all other data including build logs is preserved. [Hidden Artifacts](build-artifact.md#Hidden+Artifacts) are also preserved);
 * __History__ (all the build data is deleted except for builds statistics values that are visible in the [statistics charts](statistic-charts.md));
-* __Everything__ (no build data remains in TeamCity).Each level includes the one(s) listed above it.
+* __Everything__ (no build data remains in TeamCity).
+
+Each level includes the one(s) listed above it.
 
 By default, everything is kept forever. When you select custom settings, for each of the items above you can specify:
 * the number of days. Builds older than the number of days specified will be cleaned with the specified level. The starting point is the date of the last build, not the current date. A day is equivalent to a 24-hour period, not a calendar day;

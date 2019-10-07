@@ -60,7 +60,7 @@ __Authorized/ Unauthorized__
 
 Agents are manually authorized via the web UI on the __Agents__ page (except for the agents from the machines launched by the [cloud integrations](teamcity-integration-with-cloud-solutions.md)). Only authorized build agents can run builds. The number of authorized agents at any given time cannot exceed the number of [agent licenses](licensing-policy.md#Number+of+Agents) entered on the server. When an agent is unauthorized, a license is freed and a different build agent can be authorized. Purchase additional licenses to expand the number of agents that can concurrently run builds. When a new agent is registered on the server for the first time, it is __unauthorized__ by default and requires manual authorization to run the builds.
 
- If a build agent is installed and running on the same computer as the TeamCity build server, it is authorized automatically.
+If a build agent is installed and running on the same computer as the TeamCity build server, it is authorized automatically.
 
 
 </td></tr><tr>

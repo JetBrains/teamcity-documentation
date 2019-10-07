@@ -39,12 +39,9 @@ __Prior to TeamCity 9.1__, the TeamCity Windows installer configured the TeamCit
 
 Since the Data Directory stores all the server and configured projects settings, it is important that it is not available for reading and writing to the OS users without the corresponding level of access. See the related [security notes](how-to.md#TeamCity+Security+Notes).
 
-Note that by default the `system` directory stores all the [artifacts](build-artifact.md) and build logs of the builds in the history and can be quite large, so it is recommended to place TeamCity Data Directory on a non\-system disk. Refer to [Clean-Up](clean-up.md) section to configure automatic cleaning of older builds. If a single local disk cannot store all of the artifacts, you can add another disk and configure [multiple artifacts paths](teamcity-configuration-and-maintenance.md).
+Note that by default the `system` directory stores all the [artifacts](build-artifact.md) and build logs of the builds in the history and can be quite large, so it is recommended to place TeamCity Data Directory on a non\-system disk. Refer to [Clean-Up](clean-up.md) section to configure automatic cleaning of older builds. If a single local disk cannot store all of the artifacts, you can add another disk and configure [multiple artifacts paths](teamcity-configuration-and-maintenance.md#artifact-directories).
 
 Note that TeamCity assumes reliable and persistent read/write access to the TeamCity Data Directory and can malfunction if the Data Directory becomes inaccessible. This malfunctions can affect TeamCity functioning while the directory is unavailable and may also corrupt data of the currently running builds. While TeamCity should tolerate occasional Data Directory inaccessibility, still under rare circumstances the data stored in the directory can be corrupted and be partially lost.
-
- 
-
 
 [//]: # (Internal note. Do not delete. "TeamCity Data Directoryd311e146.txt")    
 
