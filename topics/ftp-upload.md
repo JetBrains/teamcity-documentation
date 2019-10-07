@@ -8,7 +8,7 @@ The fields below support [parameter references](predefined-build-parameters.md):
 
 <table><tr>
 
-<td>
+<td width="200">
 
 Option
 
@@ -24,7 +24,11 @@ Description
 
 __Deployment Target__
 
-</td></tr><tr>
+</td>
+
+<td></td>
+
+</tr><tr>
 
 <td>
 
@@ -63,7 +67,11 @@ Choose between an insecure (FTP) and a secure connection (FTPS, FTPES).
 
 __Deployment Credentials__
 
-</td></tr><tr>
+</td>
+
+<td></td>
+
+</tr><tr>
 
 <td>
 
@@ -81,7 +89,11 @@ Select either _Anonymous_ (will submit username `anonymous` and a single space a
 
 __FTP modes__
 
-</td></tr><tr>
+</td>
+
+<td></td>
+
+</tr><tr>
 
 <td>
 
@@ -111,7 +123,11 @@ Optional. Select an FTP transfer mode to force:  the ASCII or Binary FTP transfe
 
 __Deployment Source__
 
-</td></tr><tr>
+</td>
+
+<td></td>
+
+</tr><tr>
 
 <td>
 
@@ -121,7 +137,10 @@ Paths to sources
 
 <td>
 
-Specify the deployment sources as a newline\- or comma\-separated list of paths to files/direсtories to be deployed. Ant\-style wildcards like `dir/**/*.zip` and target directories like `*.zip => winFiles,unix/distro.tgz => linuxFiles`, where `winFiles` and `linuxFiles` are target directories, are supported.
+Specify the deployment sources as a newline- or comma-separated list of paths to files/directories.
+
+The field supports [Ant-style wildcard patterns](wildcards.md#Antlike+Wildcards) (for example, `dir/**/*.zip`).   
+You can also specify a target directory to be created using the `file => directory` pattern (for example, `*.zip => winFiles,unix/distro.tgz => linuxFiles` will create the `winFiles` and `linuxFiles` directories, and respectively put the declared files inside them).
 
 </td></tr></table>
 

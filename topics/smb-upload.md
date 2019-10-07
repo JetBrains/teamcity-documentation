@@ -12,7 +12,7 @@ The fields below support [parameter references](predefined-build-parameters.md):
 
 <table><tr>
 
-<td>
+<td width="200">
 
 Option
 
@@ -28,17 +28,21 @@ Description
 
 __Deployment Target__
 
-</td></tr><tr>
+</td>
+
+<td></td>
+
+</tr><tr>
 
 <td>
 
-__Target URL__
+Target URL
 
 </td>
 
 <td>
 
- The URL should point to a host \+ share at least. Subdirectories are allowed here and will be created if missing. Valid examples:
+The URL should point to a host \+ share at least. Subdirectories are allowed here and will be created if missing. Valid examples:
 
 
 ```Shell
@@ -54,13 +58,13 @@ __Target URL__
 
 <td>
 
-__Name resolution__
+Name resolution
 
 </td>
 
 <td>
 
- The __DNS only name resolution__ allows switching  JCIFS to "DNS\-only" mode. May fix perfomance or out of memory exceptions (see [this bitbucket issue](https://bitbucket.org/nskvortsov/deployer/issue/20/out-of-memory-exception) for details). Is equivalent to following JCIFS settings:
+The __DNS only name resolution__ allows switching  JCIFS to "DNS\-only" mode. May fix perfomance or out of memory exceptions (see [this bitbucket issue](https://bitbucket.org/nskvortsov/deployer/issue/20/out-of-memory-exception) for details). Is equivalent to following JCIFS settings:
 
 
 ```Shell
@@ -68,20 +72,21 @@ __Name resolution__
 -Djcifs.smb.client.dfs.disabled=true
 ```
 
-
-
-
 </td></tr><tr>
 
 <td>
 
 __Deployment Credentials__
 
-</td></tr><tr>
+</td>
+
+<td></td>
+
+</tr><tr>
 
 <td>
 
-__Username__
+Username
 
 </td>
 
@@ -93,7 +98,7 @@ Specify the username
 
 <td>
 
-__Password__
+Password
 
 </td>
 
@@ -105,7 +110,7 @@ Specify the password
 
 <td>
 
-__Domain__
+Domain
 
 </td>
 
@@ -119,17 +124,24 @@ Specify the __domain__
 
 __Deployment Source__
 
-</td></tr><tr>
+</td>
+
+<td></td>
+
+</tr><tr>
 
 <td>
 
-__Path to sources__
+Path to sources
 
 </td>
 
 <td>
 
-Specify the deployment sources as a newline\- or comma\-separated list of paths to files/directories for deployment. Ant\-style wildcards like `dir/**/*.zip` and target directories like `*.zip => winFiles`,`unix/distro.tgz => linuxFiles`, where `winFiles` and `linuxFiles` are target directories, are supported.  
+Specify the deployment sources as a newline- or comma-separated list of paths to files/directories.
+
+The field supports [Ant-style wildcard patterns](wildcards.md#Antlike+Wildcards) (for example, `dir/**/*.zip`).   
+You can also specify a target directory to be created using the `file => directory` pattern (for example, `*.zip => winFiles,unix/distro.tgz => linuxFiles` will create the `winFiles` and `linuxFiles` directories, and respectively put the declared files inside them).
 
 </td></tr></table>
 

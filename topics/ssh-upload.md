@@ -13,7 +13,7 @@ When strong cryptography is required by the server that receives the deployment,
 
 <table><tr>
 
-<td>
+<td width="200">
 
 Option
 
@@ -110,7 +110,7 @@ Select an authentication method.
 * __Default private key__ will try to perform private key authentication using the `~/.ssh/config` settings. If no settings file exists, will try to use the `~/.ssh/rsa_pub` public key file. No passphrases should be set.
 * __Custom private key__ will try to perform private key authentication using the given public key file with given passphrase
 * __Password__ – simple password authentication.
-* __SSH\-Agent__ – use ssh\-agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
+* __SSH\-Agent__ – use SSH agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
 
 <note>
 
@@ -140,7 +140,10 @@ Paths to sources
 
 <td>
 
-Specify the deployment sources as a newline\- or comma\-separated list of paths to file/directories. Ant\-style wildcards like `dir/**/*.zip` and target directories like `*.zip => winFiles,unix/distro.tgz => linuxFiles`, where `winFiles` and `linuxFiles` are target directories, are supported.
+Specify the deployment sources as a newline- or comma-separated list of paths to files/directories.
+
+The field supports [Ant-style wildcard patterns](wildcards.md#Antlike+Wildcards) (for example, `dir/**/*.zip`).   
+You can also specify a target directory to be created using the `file => directory` pattern (for example, `*.zip => winFiles,unix/distro.tgz => linuxFiles` will create the `winFiles` and `linuxFiles` directories, and respectively put the declared files inside them).
 
 </td></tr></table>
 
