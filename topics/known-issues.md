@@ -369,7 +369,14 @@ Any of the two workarounds listed below will make the connection between TeamCit
 * Fall back to a stream cipher (which is not susceptible to _BEAST_) such as `RC4_128`. This will render the connection vulnerable to [CVE-2015-2808](https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2015-2808).
  
 
-Try running with antivirus software uninstalled before reporting the issue to JetBrains. e.g. see [the issue](http://jetbrains.net/tracker/issue/TW-7138).
+Try running with antivirus software uninstalled before reporting the issue to JetBrains. For example, see [the issue](http://jetbrains.net/tracker/issue/TW-7138).
+
+## Distorted Configuration Window During Agent Reinstallation
+
+When installing a TeamCity agent via a [Windows agent installer](setting-up-and-running-additional-build-agents.md#Installing+via+Windows+installer) on top of the already installed agent with a different version of Java, the "_Configure Build Agent Properties_" installation window might appear distorted.
+
+To workaround this issue, you need to uninstall the previously installed agent version before installing a new agent into the same directory.   
+To uninstall the agent, invoke `Uninstall.exe` in the [Agent Home Directory](agent-home-directory.md), clear all the "_Remove..._" checkboxes to keep the agent logs and configuration, and click __Uninstall__. After the successful uninstallation, you can proceed with installing the new agent version via the agent installer.
 
 ## Windows Docker Containers
 

@@ -111,7 +111,7 @@ The number of authorized agents is limited by the number of agents licenses on t
 
 ### Installing via Windows installer
 1. In the TeamCity web UI, navigate to the __Agents__ tab.
-2. Click the __Install Build Agents__ link and select __MS Windows Installer__ to download the installer.
+2. Click the __Install Build Agents__ link and select __Windows Installer__ to download the installer.
 3. On the agent, run the `agentInstaller.exe` Windows Installer and follow the installation instructions.
 
 <note>

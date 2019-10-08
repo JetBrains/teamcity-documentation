@@ -98,14 +98,14 @@ A TeamCity agent is upgraded automatically when necessary. The process involves 
 Typically, an agent upgrade happens when:
 * the server is [upgraded](upgrade.md#Upgrading+TeamCity+Server)
 * an agent plugin is [added](installing-additional-plugins.md) or [updated](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#PluginsPackaging-AgentUpgradeonUpdatingPlugins) on the server
-* [a new tool is installed ](installing-agent-tools.md)
+* [a new tool is installed](installing-agent-tools.md)
  __  __
 
 __See also:__
 
 
 __Concepts__: [Build Grid](build-grid.md) | [Agent Work Directory](agent-work-directory.md) | [Role and Permission](role-and-permission.md)   
-__Installation and Upgrade__: [Installing and Running Build Agents](installation.md) | [Setting up and Running Additional Build Agents](setting-up-and-running-additional-build-agents.md)   
+__Installation and Upgrade__: [Installing and Running Build Agents](installation.md#Install+Additional+Build+Agents) | [Setting up and Running Additional Build Agents](setting-up-and-running-additional-build-agents.md)   
 __Administrator's Guide__: [Agent Pools](agent-pools.md) | [Assigning Build Configurations to Specific Build Agents](assigning-build-configurations-to-specific-build-agents.md) | [Licensing Policy](licensing-policy.md)
 
 __ __
