@@ -37,8 +37,8 @@ For example, if you want to share a VCS root among several projects, you have to
 
 A setting referencing a project affects the project and all its subprojects. These include:
 * [User and User group roles](role-and-permission.md)
-* [Investigations](investigating-and-muting-build-problems.md)
-* [Muted Problems](muting-test-failures.md)
+* [Investigations](investigating-and-muting-build-failures.md)
+* [Muted Problems](investigating-and-muting-build-failures.md#Muting+Failed+Tests)
 * [Notification rules](subscribing-to-notifications.md)
 
 Note that associating a project with an [agent pool](agent-pools.md) is not propagated to its subprojects and affects only the build configurations residing directly in the project.
