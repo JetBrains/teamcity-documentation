@@ -3,7 +3,7 @@
 
 When a build fails due to some problem or a failed test, TeamCity allows you to _assign an investigation_ of the build failure to some user or to _mute the failure_ so it does not affect the build status.
 
-You can assign an investigation of the whole failed build, or investigate/mute single [build problems and failed tests](viewing-tests-and-configuration-problems.md). The __Investigate/Mute__ functionality works identically for build problems and failed tests.
+You can assign an investigation of the whole failed build configuration, or investigate/mute single [build problems and failed tests](viewing-tests-and-configuration-problems.md). The __Investigate/Mute__ functionality works identically for build problems and failed tests.
 
 On this page:
 
@@ -11,17 +11,22 @@ On this page:
 
 ## Required Permissions
 
-The "_Mute/unmute problems in project_" permission is required to mute build problems and failed tests. The permission is granted to Project Administrators and System Administrators by default.
+To be able to manage and view investigations/mutes in a certain project, the user must have the following permissions granted in this project:
+* "_Mute/unmute problems in project_" for managing mutes
+* "_Assign/unassign investigation_" for managing investigations
+* "_View project and all parent projects_" for viewing investigations/mutes
 
-## Assigning Investigations of Failed Builds
+These permissions are granted to Project Administrators and System Administrators by default.
 
-To assign an investigation of a failed build:
+## Assigning Investigations of Failed Build Configurations
+
+To assign an investigation of a failed build configuration:
 1. Navigate to the __Overview__ tab of the __[Build Configuration Home](viewing-build-configuration-details.md)__ page (or the __Overview__ tab of the __[Build Results](working-with-build-results.md)__ page) and click __Assign investigation__. <img src="assign-investigation-button.png" alt="Assign an investigation of a failed build" width="676"/>
 2. Select a TeamCity user from the __Investigated by__ drop-down menu. <img src="assign-investigation-failed-build.png" width="575" alt="Assigned an investigation of a failed build"/>
 3. Select the condition to resolve the investigation:
    * _When build configuration is successful_
    * or, _Manually_; this mode is recommended for build configurations with [flaky tests](viewing-tests-and-configuration-problems.md#Flaky+Tests), when the "Success" build status does not directly indicate that the problem has been resolved.   
-   The user to whom the investigation is assigned can later _mark the problem as fixed_ in this window.
+   The user to whom the investigation is assigned can later [mark the problem as fixed](#Marking+Problems+as+Fixed) in this window.
 4. Save the investigation.
 
 To assign similar investigations for other failed build configurations in the same project, click __more__ and select the configurations in the list.
@@ -39,7 +44,7 @@ To assign an investigation of a particular build problem:
    * _Automatically when fixed_
    * or, _Manually_   
    
-   The user to whom the investigation is assigned can later _mark the problem as fixed_ in this window.
+   The user to whom the investigation is assigned can later [mark the problem as fixed](#Marking+Problems+as+Fixed) in this window.
 4. Save the investigation.
 
 You can similarly assign an investigation of a failed test on the __Overview__ or __[Tests](working-with-build-results.md#Tests)__ tab of the __Build Results__.
@@ -73,6 +78,12 @@ When a test is muted, it is __still run__ in the future builds, but its failure 
 
 Your build script might need adjustment to make the build successful when there are failing but muted tests. Make sure the build does not fail because of other build failure conditions (for example, _"Fail if build process exit code is not zero"_) in case the only errors encountered were tests failures. See the related issue [TW-16784](http://youtrack.jetbrains.net/issue/TW-16784) for more details.
 
+## Marking Problems as Fixed
+
+A user, to whom the investigation is assigned, can mark the investigated problem as fixed in any _Investigate_ UI dialog corresponding to this problem.    
+ The problem will be marked with ![checkmark.png](checkmark.png) on all TeamCity pages it appears. This allows identifying a potentially fixed problem in the UI, but leaves a possibility to continue the investigation if the problem persists in the following build run. If the author of the investigation has the [respective notifications](subscribing-to-notifications.md#investigation-is-updated) turned on, they will be notified about the fix.   
+TeamCity will remove the investigation in the following build run after the investigation is marked as fixed, if the problem is not reproduced and if this investigation has the "_Automatically when fixed_" resolution condition.
+
 ## Viewing Investigations and Mutes
 
 You can find all the investigations and mutes per project on the __Project Home__ page:
@@ -81,7 +92,7 @@ You can find all the investigations and mutes per project on the __Project Home_
 
 <img src="investigations-muted-tabs.png" width="1304" alt="Investigations and Muted Problems tabs"/>
 
-Here you can unmute problems and tests, and reassign the investigations to another user or mark them as fixed.
+Here you can unmute problems and tests, and reassign the investigations to another user or [mark them as fixed](#Marking+Problems+as+Fixed).
  
 ## Viewing My Investigations
 
