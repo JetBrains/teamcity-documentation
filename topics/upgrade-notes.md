@@ -1,6 +1,13 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2019.1.3 to 2019.1.4
+
+### Bundled Tools Updates
+
+* The bundled 64-bit OpenJDK has been updated to version 8u222 in Linux Docker images, for both TeamCity server and agent.
+* The bundled 32-bit OpenJDK has been updated to version 8u222 in TeamCity server and agent installers.
+
 ## Changes from 2019.1.2 to 2019.1.3
 
 ### Bundled Tools Updates
