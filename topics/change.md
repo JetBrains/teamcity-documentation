@@ -13,13 +13,13 @@ Viewing and analyzing changes involves the following possibilities:
 * Modifying the change comment in TeamCity, available to project administrators by default (we recommend changing the comment in the VCS as well, for consistency).
 * Navigating to the related issues in a bug tracking system.
 * Navigating to the source code and viewing differences.
-* [Starting an investigation](investigating-and-muting-build-problems.md) of a failed build, if your changes have caused a build failure.
+* [Starting an investigation](investigating-and-muting-build-failures.md) of a failed build, if your changes have caused a build failure.
  
 __  __
 
 __See also:__
 
 __Concepts__: [Revision](revision.md) | [Build Configuration](build-configuration.md)   
-__User's Guide__: [Investigating and Muting Build Problems](investigating-and-muting-build-problems.md)
+__User's Guide__: [Investigating and Muting Build Failures](investigating-and-muting-build-failures.md)
 
 __ __

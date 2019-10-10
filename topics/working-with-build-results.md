@@ -58,7 +58,7 @@ If the build has failed tests, you can view them on the __Overview__ tab of the 
 
 Successful or failed tests in this build (if any) are displayed on the __Overview__ tab.
 
-For each failed test, you can view its stacktrace, the diff between the expected and actual values, jump to the test [history](#Test+History), [assign a team member to investigate its failure](investigating-and-muting-build-problems.md), [open the test in your IDE](installing-tools.md) and/or start fixing it right away.
+For each failed test, you can view its stacktrace, the diff between the expected and actual values, jump to the test [history](#Test+History), [assign a team member to investigate its failure](investigating-and-muting-build-failures.md), [open the test in your IDE](installing-tools.md) and/or start fixing it right away.
 
 To view all tests related to the build, use the dedicated __Tests__ tab. [Learn more](#All+Tests).
 
@@ -312,7 +312,7 @@ __See also:__
 
 
 __Concepts__: [Build Log](build-log.md) | [Build Artifact](build-artifact.md) | [Change](change.md) | [Code Coverage](code-coverage.md)    
-__User's Guide__: [Investigating and Muting Build Problems](investigating-and-muting-build-problems.md) | [Viewing Tests and Configuration Problems](viewing-tests-and-configuration-problems.md)   
+__User's Guide__: [Investigating and Muting Build Failures](investigating-and-muting-build-failures.md) | [Viewing Tests and Configuration Problems](viewing-tests-and-configuration-problems.md)   
 __Administrator's Guide__: [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md)
 
 __ __

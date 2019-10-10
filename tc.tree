@@ -104,7 +104,7 @@
          <toc-element id="subscribing-to-notifications.md"/>
          <toc-element id="viewing-your-changes.md"/>
          <toc-element id="working-with-build-results.md"/>
-         <toc-element id="investigating-and-muting-build-problems.md"/>
+         <toc-element id="investigating-and-muting-build-failures.md"/>
          <toc-element id="viewing-tests-and-configuration-problems.md"/>
          <toc-element id="viewing-build-configuration-details.md"/>
          <toc-element id="statistic-charts.md"/>
@@ -312,7 +312,6 @@
             <toc-element id="ordering-projects-and-build-configurations.md"/>
             <toc-element id="archiving-projects.md"/>
             <toc-element id="ordering-build-queue.md"/>
-            <toc-element id="muting-test-failures.md"/>
             <toc-element id="changing-build-status-manually.md"/>
             <toc-element id="customizing-statistics-charts.md"/>
             <toc-element id="configuring-artifacts-storage.md"/>

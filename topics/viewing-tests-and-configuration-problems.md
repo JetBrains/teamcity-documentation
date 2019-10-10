@@ -20,14 +20,14 @@ By default, the __Current Problems__ tab displays data for all build configurati
 From this page you can view problems in your project divided into the following groups:
 * build configuration problems
 * failed tests
-* [muted test failures](muting-test-failures.md)
+* [muted test failures](investigating-and-muting-build-failures.md#Muting+Failed+Tests)
 * build problems
 
 Each of the sections is expandable and you can further drill down to the smallest relevant item using the up and down arrows ![UpDownArrows.PNG](UpDownArrows.PNG).
 
 The links appearing in build configuration problems and build problems sections enable you to monitor a great deal of useful data, for example, you can navigate to build results, view build log and changes. More options are available when you click the arrow next to a link.
 
-The failed test and muted failures sections have grouping options and allow viewing the test stacktrace available when clicking the test name link. You can also view the test history, open the test in the active IDE, start investigating a particular test failure, fix and unmute a test or start investigating a particular test failure.
+The failed test and muted failures sections have grouping options and allow viewing the test stack trace available when clicking the test name link. You can also view the test history, open the test in the active IDE, start investigating a particular test failure, fix and unmute a test or start investigating a particular test failure.
 
 ## Flaky Tests 
 

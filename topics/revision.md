@@ -17,6 +17,6 @@ __See also:__
 
 
 __Concepts__: [Change](change.md), [Build Configuration](build-configuration.md)   
-__User's Guide__: [Investigating and Muting Build Problems](investigating-and-muting-build-problems.md)
+__User's Guide__: [Investigating and Muting Build Failures](investigating-and-muting-build-failures.md)
 
 __ __

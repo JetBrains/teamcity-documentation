@@ -138,7 +138,7 @@ The last build on the default branch executed with errors or one of the currentl
 
 <td>
 
-Indicates that someone has started investigating the problem, or already fixed it. (see [Investigating and Muting Build Problems](investigating-and-muting-build-problems.md)).
+Indicates that someone has started investigating the problem, or already fixed it. (see [Investigating and Muting Build Failures](investigating-and-muting-build-failures.md)).
 
 
 </td></tr><tr>

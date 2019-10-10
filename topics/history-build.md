@@ -15,7 +15,7 @@ As the history build does not reflect the current state of the sources, the foll
 * The status of a history build does not affect the project/build configuration status.
 * A user does not get notifications about history builds unless they subscribed to notifications on all builds in the build configuration.
 * History builds are not shown on the __Projects__ or __Build Configuration__ &gt; __Overview__ page as the last finished build of a configuration.
-* The [Investigation](investigating-and-muting-build-problems.md) option is not available for history builds.
+* The [Investigation](investigating-and-muting-build-failures.md) option is not available for history builds.
 
 
 

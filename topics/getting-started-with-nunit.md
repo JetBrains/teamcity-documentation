@@ -21,7 +21,7 @@ In addition to auto-detection, the NUnit 3 console handles the special `--teamci
 Using the NUnit console from the command line is the simplest way to run tests. TeamCity provides the following basic features of integration for the command line:
 * reporting the test run information in Build Log while the tests are executing
 * reporting the test results upon the tests finish
-* all the [TeamCity investigation features](investigating-and-muting-build-problems.md)
+* all the [TeamCity investigation features](investigating-and-muting-build-failures.md)
 
 This is what the TeamCity build step to run tests from the command line looks like:
 
