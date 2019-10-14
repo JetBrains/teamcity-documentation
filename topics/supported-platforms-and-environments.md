@@ -10,7 +10,7 @@ __In this section:__
 
 ### TeamCity Server
 
-Core features of TeamCity server are platform\-independent. See [considerations](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server) on choosing server platform.   
+Core features of TeamCity server are platform-independent. See [considerations](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server) on choosing server platform.   
 
 TeamCity server is a web application that runs within a capable J2EE servlet container.
 

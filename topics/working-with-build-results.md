@@ -214,7 +214,7 @@ Shows the sequence in which the tests were run. Click the header above this colu
 
 #### Test History
 
-To navigate to the history of a particular test, click the arrow next to the test name and select __Test History__ from the drop\-down.   
+To navigate to the history of a particular test, click the arrow next to the test name and select __Test History__ from the drop-down menu.   
 There are several places where tests are listed and from where you can open Test History.   
 For example:
 * __Project Home__ page | __Current Problems__ tab
@@ -298,7 +298,6 @@ The tab consists of:
 ## Maven Build Info
 
 For each Maven build the TeamCity agent gathers Maven specific build details, which are displayed on the __Maven Build Info__ tab of the build results after the build is finished.
-
 
 [//]: # (Internal note. Do not delete. "Working with Build Resultsd371e671.txt")    
 

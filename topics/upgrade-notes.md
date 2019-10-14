@@ -744,7 +744,7 @@ Bundled IntelliJ IDEA updated to version # 143.1945 (roughly equivalent to 15.0.
 
 #### Performance Monitor  
 
-Note on permissions: to [monitor performance](performance-monitor.md)   of a build agent run as a  as a Windows [service](https://confluence.jetbrains.com/display/TCD9/Setting+up+and+Running+Additional+Build+Agents#SettingupandRunningAdditionalBuildAgents-BuildAgentasaWindowsService), make sure the user starting the agent is member of the Performance Monitor Users group.
+###### Note on permissions: to [monitor performance](performance-monitor.md) of a build agent run as a Windows [service](https://confluence.jetbrains.com/display/TCD9/Setting+up+and+Running+Additional+Build+Agents#SettingupandRunningAdditionalBuildAgents-BuildAgentasaWindowsService), make sure the user starting the agent is member of the Performance Monitor Users group.
 
   
 
@@ -752,7 +752,7 @@ Note on permissions: to [monitor performance](performance-monitor.md)   of a bui
 
 #### Known Issues
 
-There is a [known issue](https://youtrack.jetbrains.com/issue/TW-43731) in the bundled dotCover run on Windows XP and Vista. You can use the [hotfix](https://youtrack.jetbrains.com/issue/TW-43731#comment=27-1286417) or the [workaround ](https://youtrack.jetbrains.com/issue/TW-43731#comment=27-1286522)provided. The issue will be fixed in the next dotCover release.
+There is a [known issue](https://youtrack.jetbrains.com/issue/TW-43731) in the bundled dotCover run on Windows XP and Vista. You can use the [hotfix](https://youtrack.jetbrains.com/issue/TW-43731#comment=27-1286417) or the [workaround](https://youtrack.jetbrains.com/issue/TW-43731#comment=27-1286522) provided. The issue will be fixed in the next dotCover release.
 
 #### Product icons
 
