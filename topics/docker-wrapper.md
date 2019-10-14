@@ -13,7 +13,7 @@ The integration requires [Docker](https://docs.docker.com/engine/installation/) 
 
 <chunk include-id="docker-settings">
 
-In this section, you can specify a Docker image which will be used to run the build step. Once an image is specified, all the following options are available:
+In the _Docker Settings_ section of the build step settings, you can specify a Docker image which will be used to run the build step. Once an image is specified, all the following options become available.
 
 <table><tr>
 
@@ -37,7 +37,9 @@ Run step within Docker container
 
 <td>
 
-Specify a Docker image here. TeamCity will start a container from the specified image and will try to run this build step within this container.
+Specify a Docker image name as stated in the Docker Hub. TeamCity will start a container from the specified image and will try to run this build step within this container.
+
+For example, `ruby:2.4` will run the step within the Ruby container, version 2.4.
 
 
 </td></tr><tr>
@@ -50,7 +52,7 @@ Docker image platform
 
 <td>
 
-Select &lt;Any&gt; (default), Linux or Windows.
+Select &lt;Any&gt; (default), Linux, or Windows.
 
 </td></tr><tr>
 
@@ -62,7 +64,7 @@ Pull image explicitly
 
 <td>
 
-If the checkbox is enabled, `docker pull <imageName>` will be run before the `docker run` command.
+If enabled, the image will be pulled from the Hub repository via `docker pull <imageName>` before the `docker run` command is launched.
 
 
 </td></tr><tr>
@@ -75,17 +77,17 @@ Additional docker run arguments
 
 <td>
 
-The _Edit arguments_ field allows specifying additional options for `docker run`. The default argument is `--rm`, but you can provide more, for instance, to add an additional volume mapping. 
+Allows specifying additional options for `docker run`. The default argument is `--rm`, but you can provide more, for instance, add an additional volume mapping.
 
 <note>
      
-     In this field, you cannot reference environment variables 
-     using `%env.FOO_BAR%` syntax because TeamCity does not pass environment variables
-     from build agent into docker container.
-     
-     If you need to reference an environment variable on agent, 
-     define configuration parameter `system.FOO_BAR=env_var_value` in buildAgent.properties
-     and reference it via `%system.FOO_BAR%` 
+In this field, you cannot reference environment variables 
+using `%env.FOO_BAR%` syntax because TeamCity does not pass environment variables
+from a build agent into a Docker container.
+
+If you need to reference an environment variable on an agent, 
+define the configuration parameter `system.FOO_BAR=env_var_value` in `buildAgent.properties`
+and reference it via `%system.FOO_BAR%`.
      
  </note> 
 
@@ -104,7 +106,7 @@ The [checkout directory](build-checkout-directory.md) and most build agent direc
 
 At the end of the build step with the Docker wrapper, a build agent runs the `chown` command to restore access of the `buildAgent` user to the checkout directory. This mitigates a possible problem when the files from a Docker container are created with the `root` ownership and cannot be removed by the build agent later.
 
-If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment variable set by the previous [Docker Compose](docker-compose.md) build step, this network is passed to the started `docker run` command with the `--network` switch. 
+If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment variable set by the previous [Docker Compose](docker-compose.md) build step, this network is passed to the started `docker run` command with the `--network` switch.
 
 </chunk>
 
