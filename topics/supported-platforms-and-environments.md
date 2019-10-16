@@ -12,13 +12,18 @@ __In this section:__
 
 Core features of TeamCity server are platform-independent. See [considerations](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server) on choosing server platform.   
 
-TeamCity server is a web application that runs within a capable J2EE servlet container.
+The TeamCity server is a web application that runs within a capable J2EE servlet container.
 
-Requirements:
+The server requires a Java SE JRE installation to run. See [notes](installing-and-configuring-the-teamcity-server.md#Java+Installation) on how to install Java on the server.
 
-* Java (JRE), see configuration [notes](installing-and-configuring-the-teamcity-server.md#Java+Installation). Supported are: 
-   * OpenJDK or Oracle Java 8 (32 or 64 bit). Using latest available version of JDK 1.8 is recommended, Java versions before 1.8.0\_16 are not supported. Using [64 bit Java](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server) is recommended for non\-trivial production usage.
-   * __Since TeamCity 2018.2__ OpenJDK 8 (by [AdoptOpenJDK](https://adoptopenjdk.net/)) is included in the Windows `.exe` TeamCity distribution (before 2018.2 Oracle Java was bundled with TeamCity Windows distribution). 
+<note>
+
+__Since TeamCity 2018.2__, OpenJDK 8 (or 1.8) by [AdoptOpenJDK](https://adoptopenjdk.net/) is included in the Windows `.exe` TeamCity distribution (previously, Oracle Java was bundled with the TeamCity Windows distribution). Users of the bundled version of JRE are automatically switched to OpenJDK on upgrading TeamCity to 2018.2.
+
+</note>
+
+Supported Java versions are OpenJDK and Oracle Java 8 (32 or 64 bit), version 8u16 (or 1.8.0_16) or later. We recommend using the latest available version of JDK 8.   
+Using [64 bit Java](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server) is recommended for non-trivial production usage.
 
 For the `.war` distribution, note that the`.war` distribution is going to be discontinued, and it is highly recommended to use the `.tar.gz` distribution, which has Tomcat bundled. It is not advised to customize Tomcat settings unless absolutely necessary.   
 If you still want to use the .war distribution, note that:
@@ -54,12 +59,15 @@ Note that Windows XP/XP x64 are not supported.
 
 The TeamCity Agent is a standalone Java application.
 
-Requirements:
+Build agents require a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
 
-   * Java (JRE), see configuration [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java). Supported are:
-     * OpenJDK or Oracle Java 8 \- 10. Using latest available version of JDK 1.8 is recommended. Support for running agents under Java 1.6 and 1.7 is deprecated.
-     * __Since TeamCity 2018.2__ OpenJDK 8 (by [AdoptOpenJDK](https://adoptopenjdk.net/)) is included in the Windows `.exe` TeamCity distribution (before 2018.2 Oracle Java was bundled with TeamCity Windows distribution). 
+<note>
 
+__Since TeamCity 2018.2__, OpenJDK 8 (or 1.8) by [AdoptOpenJDK](https://adoptopenjdk.net/) is included in the Windows `.exe` TeamCity distribution (previously, Oracle Java was bundled with the TeamCity Windows distribution). Users of the bundled version of JRE are automatically switched to OpenJDK on upgrading TeamCity to 2018.2.
+
+</note>
+
+Supported Java versions are OpenJDK and Oracle Java 8 - 10. We recommend using the latest available version of JDK 8 (or 1.8). Support for running agents under Java 1.6 and 1.7 is deprecated.
 
 TeamCity agent is tested under the following operating systems:
 
@@ -208,6 +216,7 @@ See also details on the [cloud integrations](teamcity-integration-with-cloud-sol
 ## VCS Hosting Services Integration
 
    * [GitHub / GitHub Enterprise](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub)
+   * [GitLab](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitLab)
    * [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket)
    * [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps+Services), or formerly Visual Studio Team Services
 

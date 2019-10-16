@@ -499,13 +499,13 @@ launchctl remove jetbrains.teamcity.BuildAgent
 
 ## Configuring Java
 
-A TeamCity build agent is a Java application and it requires JDK version 6\-10 to work. OpenJDK 8 (for example, by [AdoptOpenJDK](https://adoptopenjdk.net/)) 1.8.0\_161 or later, 32\-bit is recommended. [Oracle Java 8](http://www.oracle.com/technetwork/java/javase/downloads/) is also supported.
+A TeamCity build agent is a Java application that requires JDK version 8-10 to work. OpenJDK 8 (for example, by [AdoptOpenJDK](https://adoptopenjdk.net/)) 1.8.0_161 or later, 32-bit is recommended. [Oracle Java 8](http://www.oracle.com/technetwork/java/javase/downloads/) is also supported.
 
 A build agent contains two processes:
 * Agent Launcher – a Java process that launches the agent process
 * Agent – the main process for a Build Agent; runs as a child process for the agent launcher
 
-The (Windows) `.exe` TeamCity distribution comes bundled with Java 1.8.0\_161.   
+The (Windows) `.exe` TeamCity distribution comes bundled with OpenJDK 1.8.0_161.   
 If you run a previous version of the TeamCity agent, you will need to repeat the agent installation to update the JVM.
 
 Using x32 bit JDK (not JRE) is recommended. JDK is required for some build runners like [IntelliJ IDEA Project](intellij-idea-project.md), Java [Inspections](inspections.md), and [Duplicates](duplicates-finder-java.md). If you do not have Java builds, you can install JRE instead of JDK.   

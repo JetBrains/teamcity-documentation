@@ -112,7 +112,7 @@ No noteworthy changes
 ### Bundled Tools Updates
 * The bundled .NET Tools (dotCover and ReSharper CLT) have been upgraded to the latest released version, 2018.1.4
 * TeamCity 2018.2 comes bundled with IntelliJ IDEA 2018.3.1. The IntelliJ IDEA Project Runner uses JPS 2018.3.1 
-* Since TeamCity 2018.2 OpenJDK is included in the Windows .exe TeamCity distribution (before 2018.2 Oracle Java was bundled with TeamCity Windows distribution). 
+* OpenJDK is bundled in the Windows `.exe` TeamCity distribution instead of Oracle Java. 
 
 ### NuGet feed
 
@@ -289,7 +289,7 @@ __Security__
 
 When upgrading to 2017.2.x versions (please ignore when upgrading to 2018.1 and further versions): It is recommended to add "`teamcity.artifacts.restrictRequestsWithArtifactReferer=true`" [internal property](configuring-teamcity-server-startup-properties.md) to enhance security of the server.
 
-##   Changes from 2017.2.1 to 2017.2.2
+## Changes from 2017.2.1 to 2017.2.2
 
 <anchor name="knownIssues_2017_2_2"/>
 
