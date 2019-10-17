@@ -69,10 +69,10 @@ If you use dotCover and rely on this artifact, specify the path to the `%system.
 
 * The latest JaCoCo version (0.8.4) has been added to TeamCity.
 * The bundled .NET tools (dotCover and ReSharper CLT) have been upgraded to the latest released version, 2019.1.1.
-* Automatically provided JDBC drivers for external databases have been updated to the following versions:
-     * MySQL 8.0.16
-     * MSSQL 7.2.2
-     * PostgreSQL 42.2.5
+* JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
+     * MySQL - 8.0.16
+     * MSSQL - 7.2.2
+     * PostgreSQL - 42.2.5
      
 ### Note on beta versions of PowerShell
 
