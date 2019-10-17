@@ -1,8 +1,7 @@
 [//]: # (title: Running TeamCity Stack in AWS)
 [//]: # (auxiliary-id: Running TeamCity Stack in AWS)
-The _Run on AWS_ option for TeamCity available on the [JetBrains site](https://www.jetbrains.com/teamcity/download/#section=aws) lets you run the TeamCity stack in AWS using the official CloudFormation template.
 
-See also a related [blog post](https://blog.jetbrains.com/teamcity/2017/10/teamcity-aws/).
+You can run the TeamCity stack in AWS using the official [CloudFormation template](https://github.com/JetBrains/teamcity-cloudformation-template). Note that this is an experimental option, which is currently in progress.
 
 On this page:
 
@@ -315,5 +314,12 @@ To update TeamCity started from the CloudFormation template:
 4. Click __Next__, provide additional options if required, review the new settings and click __Update__. Once the Update is complete, access the TeamCity web UI from the browser.
 5. If required, provide the [Super User token](super-user.md): to obtain it, you need to connect to your server instance, get the TeamCity server log as described [above](#Connecting+to+server+and+viewing+logs), and retrieve the maintenance token.
 6. Wait for the server to upgrade, log in to the TeamCity server and wait for the agent to upgrade and connect to the server.
+
+
+__  __
+
+__See also:__
+
+__TeamCity blog__: [The official TeamCity CloudFormation template](https://blog.jetbrains.com/teamcity/2017/10/teamcity-aws/)
 
 __ __

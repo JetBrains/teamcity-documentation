@@ -120,57 +120,27 @@ Docker
 Official JetBrains TeamCity server Docker image
 
 
-</td></tr><tr>
+</td></tr>
 
-<td>
+</table>
 
-[AWS](running-teamcity-stack-in-aws.md)
+You can also install TeamCity using the following __experimental options__:
+* Official [CloudFormation template](https://github.com/JetBrains/teamcity-cloudformation-template) to launch TeamCity in AWS. Read more in [Running TeamCity Stack in AWS](running-teamcity-stack-in-aws.md).
+* TeamCity template on [Azure Marketplace](https://azuremarketplace.microsoft.com/en-en/marketplace/apps/jetbrains.teamcity?tab=Overview). Read more in our [blog post](https://blog.jetbrains.com/teamcity/2018/09/teamcity-on-azure-marketplace/).
+* [Azure Resource Manager template](https://github.com/JetBrains/teamcity-azure-template).
+* [Google Cloud Deployment Manager template](https://github.com/JetBrains/teamcity-google-template).
 
-</td>
+<note>
+Note that we do not guarantee support of experimental versions. For production purposes, we recommend using stable TeamCity distributives and Docker images.
+</note>
 
-<td>
-Launch on AWS
-
-</td>
-
-<td>
-
-Official [CloudFormation template](https://github.com/JetBrains/teamcity-cloudformation-template) to launch TeamCity Stack  
-
-</td></tr><tr>
-
-<td>
-
-Azure
-
-
-</td>
-
-<td>
-
-Deploy to Azure
-
-</td>
-
-<td>
-
-Official template to launch TeamCity on Azure
-
-</td></tr></table>
-
-You can also install TeamCity using
-
-* TeamCity template on [Azure Marketplace](https://portal.azure.com/#create/jetbrains.teamcityteamcity)
-* [Azure Resource Manager template](https://github.com/JetBrains/teamcity-azure-template)
-* [Google Cloud Deployment Manager template](https://github.com/JetBrains/teamcity-google-template)
+For evaluation, we offer a limited cloud version via [TeamCity TestDrive](https://www.jetbrains.com/teamcity/download/#section=testdrive).
 
 ## Install Additional Build Agents
 
 Although the TeamCity server in `.exe` and `.tar.gz` distributions is installed with a default build agent that runs on the same machine as the server, this setup may result in degraded TeamCity web UI performance, and if your builds are CPU\-intensive, it is recommended to install build agents on separate machines or ensure that there is enough CPU/memory/disk throughput on the server machine.
 
 To set up additional build agents, follow the [instructions](setting-up-and-running-additional-build-agents.md).
-
-
 
 __  __
 
