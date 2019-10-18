@@ -5,9 +5,9 @@
 
 
 The _build checkout directory_ is a directory on the TeamCity agent machine where all the sources of all builds are checked out into.
-    * If you use the [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout), the build agent checks out the sources into this directory before the build.
-    * In case you use the [server-side checkout mode](vcs-checkout-mode.md#server-checkout), the TeamCity server sends incremental patches to the agent to update only the files changed since the last build in the given checkout directory.
-    * With the [manual checkout](vcs-checkout-mode.md#do-not-checkout-files-automatically) mode, no sources will be checked out, but the default build checkout directory will still be created to check out the sources via a build script. The directory will not be cleaned automatically unless its expiration period is configured as [described below](#Automatic+Checkout+Directory+Cleaning).
+* If you use the [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout), the build agent checks out the sources into this directory before the build.
+* In case you use the [server-side checkout mode](vcs-checkout-mode.md#server-checkout), the TeamCity server sends incremental patches to the agent to update only the files changed since the last build in the given checkout directory.
+* With the [manual checkout](vcs-checkout-mode.md#do-not-checkout-files-automatically) mode, no sources will be checked out, but the default build checkout directory will still be created to check out the sources via a build script. The directory will not be cleaned automatically unless its expiration period is configured as [described below](#Automatic+Checkout+Directory+Cleaning).
 
 The sources are placed into the checkout directory according to the mapping defined in the [VCS Checkout Rules](vcs-checkout-rules.md).
 

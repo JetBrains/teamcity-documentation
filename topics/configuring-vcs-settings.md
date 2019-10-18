@@ -120,6 +120,8 @@ Exclude default branch changes from other branches
 
 <td>
 
+<anchor name="excludeDefaultBranch"/>
+
 By default, when displaying pending changes in a feature branch or changes of a build on a branch, TeamCity includes changes in the [default branch](working-with-feature-branches.md#Default+branch) (till a build in the default branch) as well. This allows tracking the cases when a commit that broke a build was fixed in the default branch, but not in a feature branch.
 
 However, for large projects with multiple teams simultaneously working on lots of different branches this means that all the project committers (regardless of the branch they are committing to) will be notified when, for example, a commit in the default branch broke the build or if a force push was performed.
