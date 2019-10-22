@@ -291,10 +291,9 @@ The target paths cannot be absolute. Non\-relative paths will produce errors dur
 * The same target_archive name can be used multiple times, for example: 
    * `+:*/*.html => report.zip` 
    * `+:*/*.css => report.zip!/css/`
-   * `-:*/*.txt => report.zip` 
+   * `-:*/*.txt => report.zip`
 
-
- 
+<anchor name="buildOptions"/>
 
 ### Build Options
 
