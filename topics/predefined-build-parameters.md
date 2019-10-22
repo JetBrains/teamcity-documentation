@@ -277,9 +277,6 @@ Note that this value is a VCS\-specific (for example, for SVN the value is a rev
 
 ## Configuration Parameters
 
-
-
-
 [//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e258.txt")    
 
 

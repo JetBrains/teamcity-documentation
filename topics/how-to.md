@@ -547,14 +547,13 @@ synchronous_commit=off
 
 ```
 
-
-
 ## Set Up TeamCity behind a Proxy Server
 
 This section covers the recommended setup of reverse\-proxy servers installed in front of the TeamCity server web UI. Configuring HTTPS on the proxy level is recommended, but is out of the scope of these instructions \- refer to the documentation of the proxy server for that.
 
 Consider the example:   
-TeamCity server is installed at URL (local URL): [http://teamcity.local:8111/tc](http://teamcity.local:8111/tc)It is visible to the outside world as URL (public URL): [http://teamcity.public:400/tc](http://teamcity.public:400/tc)
+TeamCity server is installed at URL (local URL): [`http://teamcity.local:8111/tc`](http://teamcity.local:8111/tc).   
+It is visible to the outside world as URL (public URL): [`http://teamcity.public:400/tc`](http://teamcity.public:400/tc).
 
 You need to set up a reverse proxy (see [Proxy Server Setup](#Proxy+Server+Setup) below) and also configure TeamCity's bundled Tomcat server (see [TeamCity Tomcat Configuration](#TeamCity+Tomcat+Configuration) below) to make sure TeamCity "knows" the actual absolute URL used by the client to access the resources. These URLs are then used to generate absolute URLs in client redirects and other responses.
 
@@ -673,8 +672,9 @@ Check that your reverse proxy (or a similar tool) conforms to the following requ
 * maximum response length / time are not too restrictive (since TeamCity can serve large files to slow clients, the responses can be of Gb in size and hours in time)
 * gzip Content\-Encoding is fully supported. e.g. certain IIS configurations can result in the "Loading data..." in UI and 500 HTTP responses (see the related [issue](https://youtrack.jetbrains.com/issue/TW-56218))
 
+<anchor name="OtherServers"/>
 
-### OtherServers
+### Other servers
 
 Make sure to use a performant proxy with due (high) limits on request (upload) and response (download) size and timeouts (at least tens of minutes and gigabyte, according to the sizes of the codebase and artifacts).
 
