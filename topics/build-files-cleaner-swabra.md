@@ -1,5 +1,5 @@
 [//]: # (title: Build Files Cleaner (Swabra))
-[//]: # (auxiliary-id: Build Files Cleaner (Swabra))
+[//]: # (auxiliary-id: viewpage.actionpageId113084151)
 
 _Swabra_ (originally from the Russian noun '_shvabra_' – a mop, also from the English verb 'swab' \- clean with a mop) is a bundled plugin allowing you to clean files created during the build.
 

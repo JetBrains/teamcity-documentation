@@ -1,5 +1,6 @@
 [//]: # (title: Continuous Delivery to Windows Azure Web Sites (or IIS))
-[//]: # (auxiliary-id: Continuous Delivery to Windows Azure Web Sites (or IIS))
+[//]: # (auxiliary-id: viewpage.actionpageId113084596)
+
 <note>
 
 In this tutorial, we'll go over the basics of these and see how we can deploy an ASP.NET MVC project to IIS or Windows Azure Web Sites from our TeamCity server using WebDeploy.
