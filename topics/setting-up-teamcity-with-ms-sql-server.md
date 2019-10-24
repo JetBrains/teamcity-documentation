@@ -52,13 +52,13 @@ SQL Server supports two ways of authentication: SQL Server authentication and Wi
 
 ### Set up JDBC Driver for SQL Server database
 
-1. Download the [Microsoft JDBC driver v6.0+](https://www.microsoft.com/en-us/download/details.aspx?id=55539) (the `sqljdbc_6.0.x` package, `.exe` or `.tar.gz` depending on your TeamCity server platform) from the Microsoft Download Center.   
+1. Download a [Microsoft JDBC driver version 6.0 or higher](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server) (pick `.exe` or `.tar.gz` depending on your TeamCity server platform) from the Microsoft Download Center.   
 2. Unpack the downloaded package into a temporary directory.   
-3. Copy the `sqljdbc42.jar` package from the just downloaded package into the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/lib/jdbc` directory.
+3. Copy the `sqljdbc42.jar` (or `mssql-jdbc-<version>.jre8.jar` in versions above 6.0) package from the just downloaded package into the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/lib/jdbc` directory.
 
 <note>
 
-Note that Microsoft JDBC driver v6.0\+ has compatibility issues with Microsoft SQL Server 2005. For MS SQL Server 2005, use [JDBC driver v4.0](https://www.microsoft.com/en-us/download/details.aspx?id=54629) (`exe` or `.tar.gz` depending on your TeamCity server platform).
+Note that Microsoft JDBC driver v6.0\+ has compatibility issues with Microsoft SQL Server 2005. For MS SQL Server 2005, use [JDBC driver v4.x](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server) (`exe` or `.tar.gz` depending on your TeamCity server platform).
 
 </note>
 
