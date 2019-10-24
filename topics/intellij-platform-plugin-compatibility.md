@@ -1,5 +1,6 @@
 [//]: # (title: IntelliJ Platform Plugin Compatibility)
 [//]: # (auxiliary-id: IntelliJ Platform Plugin Compatibility)
+
 <table>
 <tr>
 <td>
@@ -21,6 +22,13 @@ TeamCity versions
 <tr>
 <td></td>
 <td></td>
+
+<td>
+
+2019.2
+
+</td>
+
 <td>
 
 2019.1
@@ -82,6 +90,60 @@ TeamCity versions
 
 </td>
 </tr>
+
+<tr>
+<td>
+
+2019.3
+
+</td>
+<td>
+
+193
+
+</td>
+<td>
+
+__\+__
+
+</td>
+<td>
+
+__\+__
+
+</td>
+<td>
+
+__\+__
+
+</td>
+<td>
+
+__\+__
+
+</td>
+<td>
+
+__\+__
+
+</td>
+<td>
+
+__\+__
+
+</td>
+
+<td>
+
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
 <tr>
 <td>
 
@@ -123,6 +185,12 @@ __\+__
 __\+__
 
 </td>
+
+<td>
+
+__\+__
+
+</td>
 <td></td>
 <td></td>
 <td></td>
@@ -139,6 +207,11 @@ __\+__
 <td>
 
 191
+
+</td>
+<td>
+
+__\+__
 
 </td>
 <td>
@@ -267,6 +340,11 @@ __\+__
 __\+__
 
 </td>
+<td>
+
+__\+__
+
+</td>
 <td></td>
 <td></td>
 <td></td>
@@ -283,6 +361,11 @@ __\+__
 <td>
 
 181
+
+</td>
+<td>
+
+__\+__
 
 </td>
 <td>
@@ -372,6 +455,11 @@ __\+__
 __\+__
 
 </td>
+<td>
+
+__\+__
+
+</td>
 <td></td>
 <td></td>
 <td></td>
@@ -387,6 +475,11 @@ __\+__
 <td>
 
 172
+
+</td>
+<td>
+
+__\+__
 
 </td>
 <td>
@@ -471,6 +564,11 @@ __\+__
 __\+__
 
 </td>
+<td>
+
+__\+__
+
+</td>
 <td></td>
 <td></td>
 <td></td>
@@ -487,6 +585,12 @@ __\+__
 <td>
 
 163
+
+</td>
+<td></td>
+<td>
+
+__\+__
 
 </td>
 <td>
@@ -537,6 +641,7 @@ __\+__
 162
 
 </td>
+<td></td>
 <td>
 
 __\+__
@@ -589,6 +694,7 @@ __\+__
 162
 
 </td>
+<td></td>
 <td>
 
 __\+__
@@ -645,6 +751,7 @@ No Info
 145
 
 </td>
+<td></td>
 <td>
 
 __\+__
@@ -701,6 +808,7 @@ No Info
 143
 
 </td>
+<td></td>
 <td>
 
 __\+__
@@ -749,6 +857,7 @@ __9.0.5\+__
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -761,6 +870,7 @@ __9.0.5\+__
 141
 
 </td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -809,6 +919,7 @@ __8.1.5\+__
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 <td>
 
 __\+__
@@ -849,6 +960,7 @@ __8.1.5\+__
 135
 
 </td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -901,6 +1013,7 @@ __\+__
 133
 
 </td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -959,6 +1072,7 @@ __\+__
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 <td>
 
 __\+__
@@ -1003,6 +1117,7 @@ __\+__
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 <td>
 
 __\+__
@@ -1041,6 +1156,7 @@ __\+__
 117
 
 </td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1097,6 +1213,7 @@ __\+__
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 <td>
 
 __\+__
@@ -1124,6 +1241,6 @@ __Notes:__
 \* – Plugin from version 2017.2 could be used
 
 
-[More information](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html) about the IntelliJ Platform versions and IDE's (PhpStorm, RubyMine, and so on) versions.
+[More information](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html) about the IntelliJ Platform versions and IDEs (PhpStorm, RubyMine, and so on) versions.
 
 __ __
