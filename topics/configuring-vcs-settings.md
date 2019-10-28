@@ -7,15 +7,15 @@ On this page:
 
 ## VCS Settings Overview 
 
-A Version Control System (VCS) is a system for tracking the revisions of the project source files. It is also known as SCM (source code management) or a revision control system. The following VCSs are supported by TeamCity out\-of\-the\-box: [Git](git.md), [Subversion](subversion.md), [Mercurial](mercurial.md), [Perforce](perforce.md), [Team Foundation Server, ](team-foundation-server.md)[CVS](cvs.md)[, ](team-foundation-server.md)[StarTeam](starteam.md), [ClearCase](clearcase.md), [SourceGear Vault](sourcegear-vault.md), [Visual SourceSafe](visual-sourcesafe.md).
+A Version Control System (VCS) is a system for tracking the revisions of the project source files. It is also known as SCM (source code management) or a revision control system. The following VCSs are supported by TeamCity out-of-the-box: [Git](git.md), [Subversion](subversion.md), [Mercurial](mercurial.md), [Perforce](perforce.md), [Team Foundation Server](team-foundation-server.md), [CVS](cvs.md), [StarTeam](starteam.md), [ClearCase](clearcase.md), [SourceGear Vault](sourcegear-vault.md), [Visual SourceSafe](visual-sourcesafe.md).
 
-Connection to a version control system is defined by a TeamCity [VCS root](vcs-root.md). A project or a [build configuration](build-configuration.md) in TeamCity can have one or more VCS roots attached; a build configuration and also defines other checkout options like [Checkout Rules](vcs-checkout-rules.md) \- these define the workspace for the build.
+Connection to a version control system is defined by a TeamCity [VCS root](vcs-root.md). A project or a [build configuration](build-configuration.md) in TeamCity can have one or more VCS roots attached; a build configuration can also define the workspace for the builds via other checkout options like [Checkout Rules](vcs-checkout-rules.md).
 
-TeamCity always monitors the repositories from the server\-side to detect changes and display them in the UI. Depending on the specified [VCS Checkout Mode](vcs-checkout-mode.md) the actual repository checkout can also happen on the agent\-side.
+TeamCity always monitors the repositories from the server-side to detect changes and display them in the UI. Depending on the specified [VCS Checkout Mode](vcs-checkout-mode.md) the actual repository checkout can also happen on the agent-side.
 
-TeamCity performs VCS\-related operations per each VCS root separately, thus it is advised to reuse VCS roots with same settings.
+TeamCity performs VCS-related operations per each VCS root separately, thus it is advised to reuse VCS roots with same settings.
 
-When [parameter references](configuring-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) are used in a VCS root, TeamCity performs VCS\-related operations per each "VCS root instance", where "instance" is a unique set of VCS root parameters after references resolution. Adding parameters to the VCS roots does not reduce the number of VCS operations performed, it just allows sharing settings more effectively.
+When [parameter references](configuring-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) are used in a VCS root, TeamCity performs VCS-related operations per each "VCS root instance", where "instance" is a unique set of VCS root parameters after references resolution. Adding parameters to the VCS roots does not reduce the number of VCS operations performed, it just allows sharing settings more effectively.
 
 ## Attach VCS Root
 

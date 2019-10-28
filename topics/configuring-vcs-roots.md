@@ -16,7 +16,7 @@ A _VCS root_ defines a [connection to a version control system](configuring-vcs-
 
 <anchor name="SharedVCSRoots"/>
 
-VCS roots are created in a project and are available to all the Build Configurations defined in that project or its [subprojects](project.md#Settings+Propagation).
+VCS roots are created in a project and are available to all the build configurations defined in that project or its [subprojects](project.md#Settings+Propagation).
 
 You can view all VCS roots configured within the project and create/edit/delete/detach them using the __VCS Roots__ section of the __Project Settings__.   
 If someone attempts to modify a VCS root that is used in more than one project or build configuration, TeamCity will issue a warning that the changes to the VCS root could potentially affect other projects or build configurations. The user is then prompted to either save the changes and apply them to all the affected projects and build configurations, or to make a copy of the VCS root to be used by either a specific build configuration or project.
@@ -55,7 +55,7 @@ Type of VCS
 
 <td>
 
-Type of Version control system supported by TeamCity, for example, Perforce, Subversion, and so on.
+Type of a version control system supported by TeamCity, for example, Perforce, Subversion, and so on.
 
 
 </td></tr><tr>
@@ -112,7 +112,7 @@ Minimum checking interval
 
 <td>
   
-Specifies how often TeamCity polls the VCS repository for VCS changes. By default, the global predefined server setting is used that can be modified on the __Administration | Global Settings__ page. The interval time starts as soon as the last poll is finished on the per\-VCS root basis. Here you can specify a custom interval for the current VCS root.
+Specifies how often TeamCity polls the VCS repository for VCS changes. By default, the global predefined server setting is used that can be modified on the __Administration | Global Settings__ page. The interval time starts as soon as the last poll is finished on the per-VCS root basis. Here you can specify a custom interval for the current VCS root.
 
 <note>
 
@@ -140,17 +140,17 @@ Each VCS root belongs to some project, and in this section the name of this proj
 
 </td></tr></table>
 
-Refer to the following pages for VCS\-specific configuration details:
+Refer to the following pages for VCS-specific configuration details:
 
 <toc>
 </toc>
 
 <note>
 
-Make sure to synchronize the system time at the VCS server, TeamCity server and TeamCity agent (if agent\-side checkout is used) if you use the following version controls:
+Make sure to synchronize the system time at the VCS server, TeamCity server and TeamCity agent (if agent-side checkout is used) if you use the following version control systems:
 * CVS
-* StarTeam (if the audit is disabled or the server version is older than 9.0).
-* Subversion repositories connected through externals to the main repository defined in the VCS root.
+* StarTeam (if the audit is disabled or the server version is older than 9.0)
+* Subversion repositories connected through externals to the main repository defined in the VCS root
 * VSS (all VSS [clients](http://support.microsoft.com/kb/248240) and TeamCity server should have synchronized clocks)
 
 </note>

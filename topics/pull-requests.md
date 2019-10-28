@@ -1,22 +1,24 @@
 [//]: # (title: Pull Requests)
 [//]: # (auxiliary-id: Pull Requests)
 
-The _Pull Requests_ build feature lets you automatically load pull requests information and run builds on pull request branches of the following VCS (Version Control Systems) hosting services:
+The _Pull Requests_ build feature lets you automatically load pull request (or _merge requests_ in case of GitLab) information and run builds on pull request branches of the following VCS (Version Control Systems) hosting services:
 
 * [GitHub](#GitHub+Pull+Requests)
 * [Bitbucket Server](#Bitbucket+Server+Pull+Requests)
 * [GitLab](#GitLab+Merge+Requests)
 
-The feature extends your original branch specification to include pull requests that match the specified filtering criteria.   
-After a build is run on a pull request, TeamCity provides additional details for the pull request branch on the build overview page.
+The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors and triggers builds only on `head` branches (such as `refs/pull/*/head`).    
+After a build is run on a pull request, TeamCity provides additional details for the pull request branch on the Build Overview page.
 
-When adding this build feature, you need to specify a VCS root and select a VCS hosting type.
+<img src="pr-info.png" alt="Pull request details" width="923"/>
 
 <note>
 
-The branch specification of the VCS root __must not__ contain patterns matching pull/merge request branches (such as `refs/pull/*/head`).
+The branch specification of the VCS root __must not__ contain patterns matching pull request branches.
 
 </note>
+
+When adding this build feature, you need to specify a VCS root and select a VCS hosting type.
 
 The build feature parameters depend on the selected VCS hosting type.
 
