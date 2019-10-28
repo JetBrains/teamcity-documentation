@@ -7,6 +7,10 @@
 
 ## Changes from 2019.1.2 to 2019.1.3
 
+### Known issues
+
+* When using versioned settings, build history can be lost on importing settings from VCS. [Details](https://youtrack.jetbrains.com/issue/TW-62106).
+
 ### Bundled Tools Updates
 
 * The bundled ReSharper Command Line Tools (Inspections and Duplicates Finder) have been upgraded to version 2019.2.1.
@@ -19,6 +23,7 @@
 
 ### Known issues
 
+* When using versioned settings, build history can be lost on importing settings from VCS. [Details](https://youtrack.jetbrains.com/issue/TW-62106).
 * If you use the .NET Core ("dotnet") steps on Windows agents, you can get the _".NET SDK was not found"_ error if you have .NET Core runtime (not SDK) installed on the agent in the location like `C:\Program Files (x86)\dotnet`. As a workaround, set the `env.DOTNET_HOME` parameter to the location of .NET Core SDK.   
 See the related [issue](https://youtrack.jetbrains.com/issue/TW-61413) for details.
 
