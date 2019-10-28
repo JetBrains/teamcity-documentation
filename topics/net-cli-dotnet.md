@@ -5,8 +5,25 @@ TeamCity comes with the built-in support of the .NET CLI toolchain providing .NE
 
 This page provides details on configuring the .NET CLI (dotnet) runner. Also see the related [blog post](https://blog.jetbrains.com/teamcity/2016/11/teamcity-dotnet-core/).
 
-* [.NET Core SDK](https://dotnet.microsoft.com/download) must be installed on your build agent machines.
-* The .NET CLI tools path must be added to the `PATH` environment variable. You can also configure the `DOTNET_HOME` environment variable for your TeamCity build agent user, for example, `DOTNET_HOME=C:\Program Files\dotnet\`
+On this page:
+
+<tag-list of="chapter" mode="tree" depth="4"/>
+
+## Requirements
+
+[.NET Core SDK](https://dotnet.microsoft.com/download) must be installed on your build agent machines.
+
+TeamCity searches for the .NET executable files in the following order:
+1. In the directory defined in the environment variable `DOTNET_HOME` for a TeamCity agent. For example, `DOTNET_HOME=D:\SDK\dotnet\`.
+2. In the default directory for the .NET executable file:
+   * Windows: `C:\Program Files\dotnet` or `C:\Program Files (x86)\dotnet`, or other default program files directory (depending on the environment variable `ProgramW6432`)
+   * Unix: `/usr/share/dotnet`
+   * Mac: `/usr/local/share/dotnet`
+3. In paths specified in the `PATH` environment variable.
+
+TeamCity will use the first .NET version it finds. If you have several .NET versions installed, we recommend that you specify the most recent version in the `DOTNET HOME` variable.
+
+## Build Runner Options
 
 <table><tr>
 
@@ -161,19 +178,19 @@ Select from the \<Default\>, Minimal, Normal, Detailed or Diagnostic.
 
 </td></tr></table>
 
-### Docker Settings
+## Docker Settings
 
 __Since TeamCity 2018.1__, the .NET CLI build step can be run in a [specified Docker container](docker-wrapper.md).
 
-### Code Coverage
+## Code Coverage
 
 [JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool for the `msbuild`, `test`, and `vstest` commands.
 
-### Authentication in private NuGet Feeds
+## Authentication in private NuGet Feeds
 
 TeamCity allows you to authenticate using private NuGet feeds. Read more in [NuGet](nuget.md#Authentication+in+private+NuGet+Feeds).
 
-### Parameters Reported by Agent
+## Parameters Reported by Agent
 
 When starting, the build agent reports the following parameters:
 
