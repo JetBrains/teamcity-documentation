@@ -3,7 +3,7 @@
   SYSTEM "http://helpserver.labs.intellij.net/help/product-profile.dtd">
 <product-profile id="tc" name="TeamCity" start-page="teamcity-documentation.md" status="release">
    <toc-element id="teamcity-documentation.md">
-      <toc-element id="what-s-new-in-teamcity-2019.1.md"/>
+      <toc-element id="what-s-new-in-teamcity-2019.2.md"/>
       <toc-element id="getting-started-with-teamcity.md">
          <toc-element id="continuous-integration-with-teamcity.md" />
          <toc-element id="installation-quick-start.md" />
@@ -380,6 +380,7 @@
       <toc-element id="getting-started-with-php.md"/>
       <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md"/>
    </toc-element>
+   <toc-element toc-title="Documentation for previous versions" href="https://confluence.jetbrains.com/display/TW/Documentation"/>
    <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
    <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
 </product-profile>
