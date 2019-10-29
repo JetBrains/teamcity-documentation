@@ -21,7 +21,7 @@ TeamCity searches for the .NET executable files in the following order:
    * Mac: `/usr/local/share/dotnet`
 3. In paths specified in the `PATH` environment variable.
 
-TeamCity will use the first .NET version it finds. If you have several .NET versions installed, we recommend that you specify the most recent version in the `DOTNET HOME` variable.
+TeamCity will use the first .NET version it finds. If you have several .NET versions installed, we recommend that you specify the most recent version in the `DOTNET_HOME` variable.
 
 ## Build Runner Options
 
