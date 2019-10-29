@@ -40,7 +40,7 @@ To create a new priority class:
 2. Specify its name, priority (in the range `-100..100`) and additional description. Click __Create__.
 3. Click the __Add configurations__ link to specify which build configurations should have priority defined in this class.
 
-This setting is taken into account only when a build is added to the queue. The builds with higher priority will have more chances to appear at the top of the queue; however, you shouldn't worry that the build with lower priority won't ever run. If a build spent long enough in the queue, it won't be outrun even by builds with higher priority.
+This setting is taken into account only when a build is added to the queue. To ensure that builds with lower priority always have a chance to run, TeamCity also considers how long each build is staying in the queue. This allows running a long awaiting build with lower priority before the recently added builds with higher priority. For a detailed explanation of this behavior, refer to the [algorithm description](https://confluence.jetbrains.com/display/TW/Build+Queue+Priorities#BuildQueuePriorities-Algorithmdetails).
 
 ## Removing Builds From Build Queue
 
