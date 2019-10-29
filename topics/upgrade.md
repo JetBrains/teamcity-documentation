@@ -18,7 +18,7 @@ On this page:
 
 Before upgrading TeamCity:
 
-1. For a major upgrade, review what you will be getting in [What's New](what-s-new-in-teamcity-2019.1.md) (follow the links at the bottom of What's New if you are upgrading not from the previous major release).
+1. For a major upgrade, review what you will be getting in [What's New](what-s-new-in-teamcity-2019.2.md) (follow the links at the bottom of What's New if you are upgrading not from the previous major release).
 2. [Check your license keys](#Licensing) unless you are upgrading within bugfix releases of the same major `X.X` version.
 3. [Download](http://www.jetbrains.com/teamcity/download/) the new TeamCity version ([extended download options](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads)).
 4. Carefully review the __[Upgrade Notes](upgrade-notes.md)__.
