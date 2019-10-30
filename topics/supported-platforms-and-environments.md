@@ -158,9 +158,9 @@ TeamCity supports a wide range of build tools, enabling both Java and .NET softw
    * [Team Foundation Server](team-foundation-server.md) 2005, 2008, 2010, 2012, 2013, 2015, 2017 are supported. 
    * [Mercurial](mercurial.md) (requires the Mercurial "hg" client v1.5.2\+ installed on the server)
    * [CVS](cvs.md)
-   * [SourceGear Vault](sourcegear-vault.md) 6 and 7 (requires the Vault command line client libraries installed on the TeamCity server)
+   * [SourceGear Vault](sourcegear-vault.md) 6 and 7 (requires the Vault command line client libraries installed on the TeamCity server), _integrated via an additional plugin_
    * [Borland StarTeam](starteam.md) 6 and up (the StarTeam client application must be installed on the TeamCity server)
-   * [IBM Rational ClearCase](clearcase.md), Base and UCM modes (requires the ClearCase client installed and configured on the TeamCity server)
+   * [IBM Rational ClearCase](clearcase.md) Base and UCM modes (requires the ClearCase client installed and configured on the TeamCity server), _integrated via an additional plugin_
    * [Microsoft Visual SourceSafe](visual-sourcesafe.md) 6 and 2005 (requires a SourceSafe client installed on the TeamCity server, available only on Windows platforms)
 
 For support for other VCS please check [external plugins](https://plugins.jetbrains.com/category/93-version-control-systems-support/teamcity) available.
@@ -185,9 +185,9 @@ The requirements noted are for agent environment and are additional to those for
    * Team Foundation Server
    * Mercurial
    * CVS
-   * SourceGear Vault
+   * SourceGear Vault, _integrated via an additional plugin_
    * Borland StarTeam
-   * ClearCase
+   * ClearCase, _integrated via an additional plugin_
    
 ### Remote Run on Branch
 
@@ -276,7 +276,7 @@ Supported VCS
    * Perforce (P4WSAD 2009.2 \- 2010.1, P4Eclipse 2010.1 \- 2015.1)
    * Git (the EGit 2.0\+ Eclipse integration plugin)
    * CVS
-   * ClearCase (the client software is required)
+   * ClearCase (the client software is required), _integrated via an additional plugin_
    * [see also](eclipse-plugin.md)
 
 
@@ -296,8 +296,6 @@ Supported VCS
    * Perforce
    * Git (remote run only)
    * Azure DevOps Server, or formerly Team Foundation Server (__since TeamCity 2017.1__, the plugin update is required)
-   * ClearCase
-
 
 </td></tr><tr>
 

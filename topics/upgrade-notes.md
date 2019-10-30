@@ -1,6 +1,12 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2019.1.x to 2019.2
+
+### Bundled Tools Updates
+
+* The VCS Support plugins for [ClearCase](https://plugins.jetbrains.com/plugin/13210-vcs-support-clearcase) and [SourceGear Vault](https://plugins.jetbrains.com/plugin/8892-vcs-support-sourcegear-vault) have been unbundled. To be able to use any of these [VCS types](configuring-vcs-roots.md#vcs-type) in TeamCity, download and install the required plugin as described [here](installing-additional-plugins.md).
+
 ## Changes from 2019.1.3 to 2019.1.4
 
 * The bundled Java was updated to OpenJDK 8u222 (except for the Docker Windows TeamCity images).

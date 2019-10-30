@@ -279,7 +279,7 @@ contains [clean-up](clean-up.md)\-related log
 
 <td>
 
-(off by default) [ClearCase integration](clearcase.md) log
+(off by default) [ClearCase integration plugin](clearcase.md) log
 
 
 </td></tr><tr>

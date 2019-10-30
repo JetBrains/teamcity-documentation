@@ -1,6 +1,12 @@
 [//]: # (title: ClearCase)
 [//]: # (auxiliary-id: ClearCase)
 
+<note>
+
+__Since TeamCity 2019.2__, the [VCS Support: ClearCase](https://plugins.jetbrains.com/plugin/13210-vcs-support-clearcase) plugin has been unbundled. To integrate TeamCity with ClearCase, download and install the plugin as described [here](installing-additional-plugins.md).
+
+</note>
+
 On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
@@ -17,7 +23,7 @@ If you plan to use the agent\-side [VCS Checkout Mode](vcs-checkout-mode.md), ma
 
 ## ClearCase Settings
 
-Common VCS Root properties [are described here](configuring-vcs-roots.md#Common+VCS+Root+Properties). The section below contains a description of the fields and options specific to the ClearCase Version Control System.
+Common VCS Root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties). The section below contains a description of the fields and options specific to the ClearCase Version Control System.
 
 
 <table>

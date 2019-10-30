@@ -111,36 +111,7 @@ __Perforce__
 
 <td>
 
-__Vault__
-
-
-</td>
-
-<td>
-
-* `http(s)` URLs from Vault SourceCode Control web which contain the `repid` parameter    
-For example: [`http://vault-server.example.net/VaultService/VaultWeb/Default.aspx?repid=1709&path=$`](http://vault-server.example.net/VaultService/VaultWeb/Default.aspx?repid=1709&path=$)
-
-
-</td></tr><tr>
-
-<td>
-
 __CVS__
-
-
-</td>
-
-<td>
-
-no support yet
-
-
-</td></tr><tr>
-
-<td>
-
-__ClearCase__
 
 
 </td>

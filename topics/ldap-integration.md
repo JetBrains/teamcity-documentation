@@ -148,7 +148,7 @@ The list of supported user settings:
 * `teamcity.users.property.displayName`
 * `teamcity.users.property.email`
 * `teamcity.users.property.plugin:notificator:jabber:jabber-account`
-* `teamcity.users.property.plugin:vcs:<VCS type>:anyVcsRoot` – VCS username for all &lt;VCS type&gt; roots. The following VCS types are supported: svn, perforce, jetbrains.git, cvs, tfs, vss, clearcase, starteam.
+* `teamcity.users.property.plugin:vcs:<VCS type>:anyVcsRoot` – VCS username for all &lt;VCS type&gt; roots. The following VCS types are supported: svn, perforce, jetbrains.git, cvs, tfs, vss, starteam.
 
 Example properties can be seen by configuring them for a user in the web UI and then listing the properties via [REST API](rest-api.md#Users).
 

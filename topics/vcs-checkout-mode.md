@@ -65,7 +65,7 @@ The TeamCity server will [export the sources](build-checkout-directory.md) and p
 
 <note>
 
-* The server side checkout simplifies administration overhead. Using this checkout mode, you need to install VCS client software on the server only (applicable to Perforce, Mercurial, TFS, Clearcase, VSS). Network access to VCS repository can also be opened to the server only. Thus, if you want to control who has access to the source repositories, the server side checkout is usually more effective.
+* The server side checkout simplifies administration overhead. Using this checkout mode, you need to install VCS client software on the server only (applicable to Perforce, Mercurial, TFS, VSS). Network access to VCS repository can also be opened to the server only. Thus, if you want to control who has access to the source repositories, the server side checkout is usually more effective.
 * In some cases this checkout mode can lower the load produced on VCS repositories, especially if [Clean Checkout](clean-checkout.md) is performed often, due to the caching of clean patches by the server.
 * Note that in the server checkout mode the administration directories (like `.svn`, `CVS`) are not created on the agent.
 </note>
