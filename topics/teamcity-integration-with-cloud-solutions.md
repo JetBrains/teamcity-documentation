@@ -39,6 +39,7 @@ Also available as non-bundled plugins are:
 * [Windows Azure](https://plugins.jetbrains.com/plugin/9260-azure-resource-manager-cloud-support)
 * [Google Cloud](https://plugins.jetbrains.com/plugin/9704-google-cloud-agents)
 * [Kubernetes](https://plugins.jetbrains.com/plugin/9818-kubernetes-support)
+
 and [others](https://plugins.jetbrains.com/category/102-cloud-support/teamcity). 
 
 New integrations can be implemented as a TeamCity plugin, see [Implementing Cloud support](https://confluence.jetbrains.com/display/TW/Implementing+Cloud+support).
