@@ -3,7 +3,7 @@
 
 TeamCity Amazon EC2 integration allows you to configure TeamCity with your Amazon account and then start and stop images with TeamCity agents on-demand based on the queued builds.
 
-Integrations with other cloud solutions are [availablei](teamcity-integration-with-cloud-solutions.md#Available+Integrations).
+Integrations with other cloud solutions are [available](teamcity-integration-with-cloud-solutions.md#Available+Integrations).
 
 On this page:
 
