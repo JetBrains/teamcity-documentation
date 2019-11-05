@@ -7,6 +7,10 @@
 
 * The VCS Support plugins for [ClearCase](https://plugins.jetbrains.com/plugin/13210-vcs-support-clearcase) and [SourceGear Vault](https://plugins.jetbrains.com/plugin/8892-vcs-support-sourcegear-vault) have been unbundled. To be able to use any of these [VCS types](configuring-vcs-roots.md#vcs-type) in TeamCity, download and install the required plugin as described [here](installing-additional-plugins.md).
 
+## Changes from 2019.1.4 to 2019.1.5
+
+* In the [TeamCity agent Docker image](https://hub.docker.com/r/jetbrains/teamcity-agent/), Docker has been updated to version 19.0.3 and Docker Compose has been updated to version 1.24.1.
+
 ## Changes from 2019.1.3 to 2019.1.4
 
 * The bundled Java was updated to OpenJDK 8u222 (except for the Docker Windows TeamCity images).
@@ -54,8 +58,8 @@ Starting with 2019.1, the behavior of [`reverse.dep`](predefined-build-parameter
 ### Lazy agent tool loading
 
 [Agent tools](installing-agent-tools.md) (located under the `<agent_installation>/tools` directory on agents) are now transferred to an agent not on the agent upgrade, but right before the first build that uses the respective tool. You might need to update the build configuration settings so TeamCity knows which tools are required by the builds.  
-Before starting a build on an agent, TeamCity checks for the `%teamcity.tool.<tool_ID>%` configuration parameters to collect the set of tools used by the build. If some tool is referenced via this parameter, TeamCity will make sure this tool is present on the agent before the build logic starts executing.
-If some of your builds reference agent tools via their locations under the `<agent installation>/tools` directory, such references must be changed in the build configurations from `<agent_installation>/tools/<tool_ID>` to `%teamcity.tool.<tool_ID>%`. For example, `../tools/maven3.4.5/bin/mvn` must be replaced with `%teamcity.tool.maven3.4.5%/bin/mvn`.
+Before starting a build on an agent, TeamCity checks for the references to `teamcity.tool.<tool_ID>` configuration parameters to collect the set of tools used by the build. If some tool is referenced via this parameter, TeamCity will make sure this tool is present on the agent before the build logic starts executing.
+If some of your builds use tools on agent assuming their locations under the `<agent installation>/tools` directory, such references should be changed to a TeamCity-provided parameter reference. Paths like `<agent_installation>/tools/<tool_ID>` used in TeamCity settings should be changed to `%teamcity.tool.<tool_ID>%` parameter reference. For example, `../tools/maven3.4.5/bin/mvn` should be replaced with `%teamcity.tool.maven3.4.5%/bin/mvn`.
 
 ### Changed .NET build requirements in ReSharper tools
 
@@ -549,12 +553,10 @@ See request [TW-46385](https://youtrack.jetbrains.com/issue/TW-46385) for detail
 
 #### Subversion VCS roots with svn+ssh:// protocol can report "Host key (xxx) can not be verified."
 
- See request    [ ](https://youtrack.jetbrains.com/issue/TW-46489)  for details and for the plugin with the fix  
+See request [TW-46385](https://youtrack.jetbrains.com/issue/TW-46489)  for details and for the plugin with the fix  
 
 
 [//]: # (Internal note. Do not delete. "Upgrade Notesd333e995.txt")    
-
-
 
 
 ### Changes in agent properties reporting .NET 4.x runtime

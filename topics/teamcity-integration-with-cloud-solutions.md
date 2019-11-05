@@ -8,7 +8,7 @@ On this page:
 
 TeamCity integration with cloud (IAAS) solutions allows TeamCity to provision virtual machines running TeamCity agents on\-demand based on the build queue state.
 
-This page covers __general information__ about the configuration of integration. For the list of currently supported solutions, refer to [Available Integrations](#Available+Integrations).
+This page covers __general information__ about the configuration of integration. For the list of currently supported solutions, refer to [Available Integrations](#Available+Integrations) below.
 
 
 ## General Description
@@ -31,11 +31,18 @@ The disconnected agent will be removed from the authorized agents list and delet
 
 ## Available Integrations
 
-Integration with cloud solutions is implemented as plugins. The platform\-specific details are covered on the following pages:
+Integrations with cloud solutions are implemented as plugins. The platform\-specific details are covered on the following pages:
 * [Amazon EC2](setting-up-teamcity-for-amazon-ec2.md)
 * [VMWare vSphere](setting-up-teamcity-for-vmware-vsphere-and-vcenter.md)
 
-Also available as separate plugins are [Windows Azure](https://plugins.jetbrains.com/plugin/9260-azure-resource-manager-cloud-support), [Google Cloud Agents](https://plugins.jetbrains.com/plugin/9704-google-cloud-agents), and [others](https://plugins.jetbrains.com/category/102-cloud-support/teamcity). New integrations can be implemented using custom TeamCity plugins, see [Implementing Cloud support](https://confluence.jetbrains.com/display/TW/Implementing+Cloud+support).
+Also available as non-bundled plugins are:
+* [Windows Azure](https://plugins.jetbrains.com/plugin/9260-azure-resource-manager-cloud-support)
+* [Google Cloud](https://plugins.jetbrains.com/plugin/9704-google-cloud-agents)
+* [Kubernetes](https://plugins.jetbrains.com/plugin/9818-kubernetes-support)
+
+and [others](https://plugins.jetbrains.com/category/102-cloud-support/teamcity). 
+
+New integrations can be implemented as a TeamCity plugin, see [Implementing Cloud support](https://confluence.jetbrains.com/display/TW/Implementing+Cloud+support).
 
 ## TeamCity Setup for Cloud Integration
 

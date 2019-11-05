@@ -17,7 +17,7 @@ You can restore backed up data into the same or a different database; from/to an
 
 A newer version of TeamCity can be used to restore the backup created with any previous TeamCity version (provided that the TeamCity version is later than 6.0).
 
-During database restoration you might want to configure database\-specific settings to make the bulk data changes faster (like setting SQL Server "Recovery Model" to "Simple").
+During restoration of a large database you might want to configure database\-specific settings to make the bulk data changes faster (like setting SQL Server "Recovery Model" to "Simple"). Consult your DBA for more details.
 
 A TeamCity backup file __does not contain build artifacts__, so to get the server with all the same important data you need to restore from a backup file (at least settings and database) and copy the build logs and artifacts (located in `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system/artifacts` by [default](build-artifact.md)) from an old to the new Data Directory manually. The general compatibility rule of the data under `system/artifacts` is that files created by older TeamCity versions can be read by newer versions, but not necessarily vice versa.
 

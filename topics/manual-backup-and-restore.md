@@ -73,7 +73,7 @@ You should always restore both the data in the `<`[`TeamCity Data Directory`](te
 
 ### TeamCity Data Directory Restoration
 
-You can simply put the previously backed up files back to their original places. However, it is important that no extra files are present when restoring the backup. The simplest way to achieve this is to restore the backup over a clean installation of TeamCity. If this is not possible, make sure the files created after the backup was done are cleared. Especially the newly created files under the `artifacts`, `messages`, `changes` directories under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system`.
+You can simply put the previously backed up files back to their original places. However, it is important that no extra files are present when restoring the backup. The simplest way to achieve this is to restore the backup into a clean Data Directory. If this is not possible, make sure the files created after the backup was done are cleared. Especially the newly created files under the `artifacts`, `messages`, `changes` directories under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system`.
 
 ### TeamCity Database Restoration
 
