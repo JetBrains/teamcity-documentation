@@ -11,9 +11,14 @@ The following diagram shows an example of a TeamCity installation with one main 
 
 <img src="multinode-setup.png" width="800" alt="TeamCity setup with two nodes"/>
 
+
+<anchor name="running-builds-node-discontinued"/>
+
 <note>
 
-Since TeamCity 2019.1.2, the [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is deprecated, and it will be discontinued in TeamCity 2019.2. If you have Running Builds Nodes set up in your TeamCity installation, we highly recommend replacing these nodes with the regular secondary nodes. If you assign the "[Processing data produced by running builds](configuring-secondary-node.md#Processing+Data+Produced+by+Builds+on+Secondary+Node)" responsibility to a secondary node, this node will be processing traffic coming from TeamCity agents, similarly to Running Builds Node.   
+__Since TeamCity 2019.2__, the [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is discontinued in favor of extended functionality of the secondary node.   
+If you used the Running Builds Node in your setup, note that it will not be able to start after upgrading to 2019.2. Please remove the `teamcity.server.role` parameter from its [startup properties](configuring-teamcity-server-startup-properties.md), so it starts as a regular secondary node. To continue processing traffic from agents on this node, assign the "[Processing data produced by running builds](configuring-secondary-node.md#Processing+Data+Produced+by+Builds+on+Secondary+Node)" responsibility to it.
+
 Note that the secondary node offers more features than the Running Builds Node and thus might require as many hardware resources as a regular TeamCity server. Refer to [Estimate Hardware Requirements for TeamCity](how-to.md#Estimate+Hardware+Requirements+for+TeamCity) for notes on the recommended hardware.
 
 </note>

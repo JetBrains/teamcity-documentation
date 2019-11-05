@@ -3,6 +3,10 @@
 
 ## Changes from 2019.1.x to 2019.2
 
+<anchor name="running-builds-node-discontinued"/>
+
+* The [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is discontinued. In a multinode setup, you can instead [configure a secondary node](configuring-secondary-node.md) with the _"Processing data produced by running builds"_ responsibility. Read more on the [Multinode Setup](multinode-setup.md#running-builds-node-discontinued) page.
+
 ### Bundled Tools Updates
 
 * The VCS Support plugins for [ClearCase](https://plugins.jetbrains.com/plugin/13210-vcs-support-clearcase) and [SourceGear Vault](https://plugins.jetbrains.com/plugin/8892-vcs-support-sourcegear-vault) have been unbundled. To be able to use any of these [VCS types](configuring-vcs-roots.md#vcs-type) in TeamCity, download and install the required plugin as described [here](installing-additional-plugins.md).
