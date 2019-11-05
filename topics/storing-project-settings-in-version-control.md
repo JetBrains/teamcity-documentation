@@ -9,7 +9,7 @@ On this page:
 
 TeamCity allows the two-way synchronization of the project settings with the version control repository. Supported VCSs are Git, Mercurial, Perforce, Subversion, and Azure DevOps Server (formerly TFS).
 
-You can store settings in the XML format and in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [kotlin-based DSL](kotlin-dsl.md). 
+You can store settings in the XML format and in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [kotlin-based DSL](kotlin-dsl.md).
 
 When you enable two-way settings synchronization:  
 * Each administrative change made to the project settings in the TeamCity web UI is committed to the version control; the changes are made noting the TeamCity user as the committer.
@@ -42,7 +42,7 @@ As soon as synchronization is enabled in a project, TeamCity will make an initia
 
 ### Defining Settings to Apply to Builds
 
-There are two sources of build settings: (1) the current settings on the TeamCity server, that is the latest settings changes applied to the server (either made via the UI, or via a commit into the `.teamcity` directory in the VCS root) and (2) the settings in the VCS on the revision selected for a build.  
+There are two possible sources of build settings: (1) the current settings on the TeamCity server, that is the latest settings changes applied to the server (either made via the UI, or via a commit into the `.teamcity` directory in the VCS root), and (2) the settings in the VCS on the revision selected for a build.  
 Therefore, it is possible to start builds with settings different from those currently defined in the build configuration. For projects where versioned settings are enabled, you can tell TeamCity which settings to take __when build starts__.    
 This gives you several possibilities:
 * If you are using TeamCity [feature branches](working-with-feature-branches.md), you can define a branch specification in the VCS root used for versioned settings, and TeamCity will run a build in a branch using the settings from this branch.
@@ -73,9 +73,9 @@ To define which settings to take __when build starts__, open the __Project Setti
 
 ## Storing Secure Settings 
 
-It is recommended to store security data outside the VCS. The __Project Settings | Versioned Settings | Configuration__ page has an option to __store passwords, API tokens, and other secure settings outside of VCS__. This option is enabled by default if versioned settings are enabled for a project for the first time, and not enabled for projects already storing their settings in the VCS.
+It is recommended to store security data outside the VCS. The __Project Settings | Versioned Settings | Configuration__ page has an option to _store passwords, API tokens, and other secure settings outside of VCS_. By default, this option is enabled if versioned settings are enabled for a project for the first time, and disabled for projects already storing their settings in the VCS.
 
-If this option is enabled, TeamCity stores a random generated IDs in XML configuration files instead of the scrambled passwords. Actual passwords are stored on the disk under the TeamCity Data Directory and are not checked into the version control system.
+If this option is enabled, TeamCity stores a random generated IDs in XML configuration files instead of the scrambled passwords. Actual passwords are stored on the disk under the [TeamCity Data Directory](teamcity-data-directory.md) and are not checked into the version control system.
 
 <warning>
 
@@ -87,9 +87,16 @@ If this option is disabled, the [security implications](#Implications+of+Storing
 ### Generating Tokens
 [//]: # (AltHead: tokensGen)
 
-If you need to add a password into the versioned settings not via the TeamCity UI (for example, adding settings with Kotlin\-based `DSL`), add the password to the project in TeamCity and get the corresponding token to use in the settings (select _Generate token for a secure value_ in the __Actions__ drop-down menu). 
+If you need to add a secure value to the versioned settings not via the TeamCity UI (for example, via Kotlin DSL), you can generate a token to be used instead of this secure value.   
+In the __Project Settings__, select _Generate token for a secure value_ in the __Actions__ drop-down menu. Enter the secure value and click __Generate Token__. The generated token will be stored on the server. You can copy and use it in the project configuration files instead of the secure value.
 
-At this time passwords are not inheritable by projects hierarchy. If a setting in a project (a VCS root, OAuth connection, cloud profile) requires a password, the token generated for this password can be used in this project only. For instance, it is not possible to take a generated token and use it in a similar setting in a subproject. A new token should be generated in this case.   
+__Since TeamCity 2019.2__,  you can generate new tokens on the __Tokens__ tab of the project __Versioned Settings__ section. The tab is available for projects with enabled [synchronization of versioned settings](#Synchronizing+Settings+with+VCS).
+
+The __Tokens__ tab allows you to view and copy existing project tokens, or edit their values. This way, if a project uses external configuration files that reference a secure value via its token, and this value gets lost (for example, when moving a project to another place in the hierarchy or when migrating to a new TeamCity server), you can add a new value for the token on this tab.
+
+<img src="tokens-tab.png" alt="Versioned Settings| Tokens" width="1033"/>
+
+Currently, passwords are not inheritable by projects hierarchy. If a setting in a project (VCS root, OAuth connection, cloud profile) requires a password, the token generated for this password can be used in this project only. For instance, it is not possible use a generated token in a similar setting in a subproject. A new token should be generated in this case.   
 If you need to use a secure value in the nested projects, consider adding a [password parameter](typed-parameters.md#Adding+Parameter+Specification) with the secure value and using a [reference](configuring-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) to the parameter in the nested projects.
 
 
@@ -100,7 +107,7 @@ If you are using a version __prior to TeamCity 2017.1__, it is recommended to ca
    * If the project settings are stored in __the same repository as the source code__, anyone with access to the repository will be able to see these scrambled passwords.
    * If the project settings are stored __separately from the source code in a dedicated repository__ and the _Show settings changes in builds_ option is enabled, any user having the "View VCS file content" permission can see all the changes in the TeamCity UI using the [changes difference viewer](difference-viewer.md).
 * Being able to change the settings in an arbitrary manner via a VCS, it is possible to trigger builds of any build configurations and obtain settings of any build configurations irrespective of the build configurations permissions configured in TeamCity.
-* by committing wrong or malicious settings, a user can affect the entire server performance or server presentation to other users.
+* By committing wrong or malicious settings, a user can affect the entire server performance or server presentation to other users.
 
 It is recommended to store passwords, API tokens, and other secure settings outside of VCS using the corresponding option [described above](#Storing+Secure+Settings).
 
@@ -115,9 +122,7 @@ You can select the settings format: on the __Versioned Settings | Configuration_
 
 TeamCity stores project settings:
 * in the XML format
-* in the Kotlin-based DSL format (see a [dedicated page](kotlin-dsl.md)). 
-
- 
+* in the Kotlin-based DSL format (see a [dedicated page](kotlin-dsl.md)).
 
 <note>
 
