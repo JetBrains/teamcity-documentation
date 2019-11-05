@@ -375,7 +375,9 @@ Try running with antivirus software uninstalled before reporting the issue to Je
 
 When installing a TeamCity agent via a [Windows agent installer](setting-up-and-running-additional-build-agents.md#Installing+via+Windows+installer) on top of the already installed agent with a different version of Java, the "_Configure Build Agent Properties_" installation window might appear distorted.
 
-To workaround this issue, you need to uninstall the previously installed agent version before installing a new agent into the same directory.   
+__This issue has been fixed in TeamCity 2019.1.5__.
+
+To workaround this issue without upgrading to 2019.1.5, uninstall the previously installed agent version before installing a new agent into the same directory.   
 To uninstall the agent, invoke `Uninstall.exe` in the [Agent Home Directory](agent-home-directory.md), clear all the "_Remove..._" checkboxes to keep the agent logs and configuration, and click __Uninstall__. After the successful uninstallation, you can proceed with installing the new agent version via the agent installer.
 
 ## Windows Docker Containers
