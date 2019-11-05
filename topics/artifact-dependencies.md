@@ -98,15 +98,14 @@ Specify here the tag of the build whose artifacts are to be used. When resolving
 
 <td>
 
-Build branch
+Build branch filter
 
 
 </td>
 
 <td>
 
-_This field appears if the dependency has a [branch specified](working-with-feature-branches.md#Configuring+branches) in the VCS Root settings_. Allows setting a [branch](working-with-feature-branches.md) to limit source builds only to those with the branch. If not specified, the default branch is used. The logic branch name (shown in the UI for the build) is to be used. Patterns are not supported.
-
+_This field appears if the dependency has a [branch specified](working-with-feature-branches.md#Configuring+branches) in the VCS Root settings_. Allows setting a [branch filter](branch-filter.md) to limit source builds only to those in the matching branches. If not specified, the default branch is used.
 
 </td></tr><tr>
 

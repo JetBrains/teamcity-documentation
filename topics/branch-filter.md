@@ -49,8 +49,25 @@ Limit the set of branches available for the build configuration. This branch fil
 <tr>
 
 <td>
+ 
+[Artifact dependency](artifact-dependencies.md)
 
-[Finish Build Triggers](configuring-finish-build-trigger.md)
+
+</td>
+
+<td>
+
+Limit the set of branches to use artifacts from.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+[Finish build triggers](configuring-finish-build-trigger.md)
 
 </td>
 
@@ -67,7 +84,7 @@ Limit the set of branches to which builds the trigger should be applied to.
 
 <td>
 
-[VCS Triggers](configuring-vcs-triggers.md)
+[VCS triggers](configuring-vcs-triggers.md)
 
 </td>
 
@@ -83,7 +100,7 @@ Limit the set of branches the trigger should be applied to.
 
 <td>
 
-[Schedule Triggers](configuring-schedule-triggers.md)
+[Schedule triggers](configuring-schedule-triggers.md)
 
 </td>
 
@@ -103,7 +120,23 @@ Limit the set of branches the trigger should be applied to.
 
 <td>
 
-[‘VCS labeling’ build feature](vcs-labeling.md)
+Retry build triggers
+
+</td>
+
+<td>
+
+Set a branch filter to rerun failed builds only in branches that match the specified criteria.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+[VCS labeling](vcs-labeling.md) build feature
 
 </td>
 
@@ -119,7 +152,7 @@ Limit the set of branches to which builds the labels will be applied.
 
 <td>
 
-[‘Automatic merge’ build feature](automatic-merge.md#Automatic+Merge+Settings)
+[Automatic merge](automatic-merge.md#Automatic+Merge+Settings) build feature
 
 </td>
 
@@ -142,6 +175,22 @@ Limit the set of branches branches which builds’ sources will be merged.
 <td>
 
 Set a filter to receive alerts only on the builds from the specified branches. By default, only the default branch is monitored.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+[Pull Requests](pull-requests.md) build feature
+
+</td>
+
+<td>
+
+Specify on which branches to monitor and trigger pull requests.
 
 </td>
 
