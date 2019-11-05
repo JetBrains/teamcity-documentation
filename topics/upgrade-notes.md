@@ -1,6 +1,10 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2019.1.4 to 2019.1.5
+
+* In the [TeamCity agent Docker image](https://hub.docker.com/r/jetbrains/teamcity-agent/), Docker has been updated to version 19.0.3 and Docker Compose has been updated to version 1.24.1.
+
 ## Changes from 2019.1.3 to 2019.1.4
 
 * The bundled Java was updated to OpenJDK 8u222 (except for the Docker Windows TeamCity images).
@@ -543,12 +547,10 @@ See request [TW-46385](https://youtrack.jetbrains.com/issue/TW-46385) for detail
 
 #### Subversion VCS roots with svn+ssh:// protocol can report "Host key (xxx) can not be verified."
 
- See request    [ ](https://youtrack.jetbrains.com/issue/TW-46489)  for details and for the plugin with the fix  
+See request [TW-46385](https://youtrack.jetbrains.com/issue/TW-46489)  for details and for the plugin with the fix  
 
 
 [//]: # (Internal note. Do not delete. "Upgrade Notesd333e995.txt")    
-
-
 
 
 ### Changes in agent properties reporting .NET 4.x runtime
