@@ -419,8 +419,8 @@ TeamCity can automatically run git gc periodically when native Git client can be
 To fix the warning / meet automatic git gc requirements, perform the following:
 1. Install a native Git client manually on the TeamCity server.
 2. Specify path to the Git executable:
-   * either add the drectory with the executable to  the `Path` environment variable and restart the server, 
-   * or set the full path to it in the  `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) without the server restart.
+   * add the drectory with the executable to the `Path` environment variable and restart the server, _or_
+   * set the full path to the directory in the `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) without the server restart.
    
 When TeamCity runs Git garbage collection, the details are logged into the [`teamcity-cleanup.log`](teamcity-server-logs.md). If git garbage collection fails, a corresponding warning is displayed.
 
