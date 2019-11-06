@@ -1,11 +1,13 @@
 [//]: # (title: JetBrains dotCover)
 [//]: # (auxiliary-id: JetBrains dotCover)
 
-TeamCity comes bundled with the console runner of [JetBrains dotCover](http://www.jetbrains.com/dotcover/). __Since TeamCity 2017.1__, in addition to the bundled version, it is possible to install another version of JetBrains dotCover Command Line Tools and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
+TeamCity comes bundled with the console runner of [JetBrains dotCover](http://www.jetbrains.com/dotcover/). In addition to the bundled version, you can install another version of JetBrains dotCover Command Line Tools and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
 
-After choosing the appropriate option in the .Net coverage section of a build step, you will be able to collect code coverage for your .Net project and then view the coverage statistics and detailed coverage report inside the [TeamCity web UI](working-with-build-results.md).
+Windows agents can use dotCover in all build runners that support .NET coverage. __Since TeamCity 2019.2__, the [.NET CLI build runner](net-cli-dotnet.md) allows using dotCover 2019.2.3 and later on Linux and macOS.
 
-If you have a license for dotCover and have it installed on a developer machine, TeamCity\-collected coverage results can be downloaded and viewed inside Visual Studio with the help of the [TeamCity Visual Studio Add-in](visual-studio-addin.md).
+After choosing the appropriate option in the _.NET Сoverage_ section of a build step, you will be able to collect code coverage for your .NET project and then view the coverage statistics and detailed coverage report inside the [TeamCity web UI](working-with-build-results.md).
+
+If you have a license for dotCover and have it installed on a developer machine, TeamCity-collected coverage results can be downloaded and viewed inside Visual Studio with the help of the [TeamCity Visual Studio Add-in](visual-studio-addin.md).
 
 <tip>
 
@@ -51,7 +53,7 @@ Filters
 
 <td>
 
-Specify a new\-line separated list of filters for code coverage. Use `+|-:assembly=*;type=**;method=***` to include or exclude assemblies from covered assemblies:
+Specify a new-line separated list of filters for code coverage. Use `+|-:assembly=*;type=**;method=***` to include or exclude assemblies from covered assemblies:
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
@@ -76,20 +78,25 @@ Attribute Filters
 If you do not want to know the coverage data solution\-wide, you can exclude the code marked with an attribute (for example, with `ObsoleteAttribute`) from the coverage statistics. You only need to specify these attribute filters here in the following format: the filters should be a new\-line separated list; the `-:attributeName` syntax should be used to exclude the code marked with the attributes from code coverage. Use the asterisk (`*`) as a wildcard if needed.   
 Supported only for dotCover 2.0 or newer.
 
-
 </td></tr><tr>
 
 <td>
 
-Additional dotCover.exe arguments
+<anchor name="additional-arguments"/>
+
+Additional arguments
 
 
 </td>
 
 <td>
 
-Provide a new\-line separated list of additional commandline parameters to pass to dotCover.exe
+Provide a new-line separated list of additional command-line parameters to pass to dotCover.exe.
 
+<note>
+
+On Linux and macOS, make sure to precede each argument with `--` characters. For example, the `/LogFile` parameter is used to enable the main log on Windows; on Linux and macOS, `--/LogFile` must be used instead.
+</note>
 
 </td></tr></table>
 
@@ -100,7 +107,7 @@ Note that dotCover coverage engine reports statement coverage instead of line co
 To build a consistent coverage report, dotCover has to be able to find source files under the build checkout directory which should be easy if you build binaries and collect coverage in the same build, or if you use different builds, but they use a [snapshot dependency](build-dependencies-setup.md#Snapshot+Dependencies) and the same agent as well as the same [VCS settings](configuring-vcs-settings.md).
 
 If you need to build binaries in one build and collect code coverage in another one using different [checkout settings](vcs-checkout-rules.md), some additional properties are required. It is assumed that:
-* Build configuration __A__ compiles code with debugging information and creates an artifact with assemblies and `.pdb` files
+* Build configuration __A__ compiles code with debugging information and creates an artifact with assemblies and `.pdb` files.
 * Build configuration __B__ runs tests with dotCover enabled and has a [snapshot dependency](build-dependencies-setup.md#Snapshot+Dependencies) on A.
 
 To display the source code in the [Code Coverage tab](working-with-build-results.md#Code+Coverage+Results) of build results of B, you need to point B to the same [VCS root](configuring-vcs-roots.md) as A to get your source code in an appropriate location (the [checkout root](build-checkout-directory.md)) and add an [artifact dependency](build-dependencies-setup.md#Artifact+Dependencies) on __build from the same chain__ of A (for dotCover to get the paths to the sources from the `.pdb` files).
@@ -111,7 +118,7 @@ You also need to tell TeamCity where to find the source code. To do this, perfor
 
 ### Bundled dotCover Versions
 
-This section provides information on the versions of dotCover bundled with TeamCity 10\+ versions. For information on the earlier TeamCity releases, see the [previous documentation version](https://confluence.jetbrains.com/display/TCD9/JetBrains+dotCover#JetBrainsdotCover-BundleddotCoverVersions).
+This section provides information on the versions of dotCover bundled with TeamCity 10+ versions. For information on the earlier TeamCity releases, see the [previous documentation version](https://confluence.jetbrains.com/display/TCD9/JetBrains+dotCover#JetBrainsdotCover-BundleddotCoverVersions).
 
 <table><tr>
 
@@ -163,13 +170,22 @@ dotCover Version
 
 2019.1.1
 
+</td></tr><tr>
+
+<td>
+
+2019.2
+
+</td>
+
+<td>
+
+2019.2.3
+
 </td></tr>
 
 
-
 </table>
-
- 
 
 You can view the installed versions of dotCover on the __Server Administration | Tools__ page. The bundled version is set as default, you can install other versions and change the default settings.
 
