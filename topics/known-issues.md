@@ -430,19 +430,9 @@ To address it, upgrade your host machine to Windows Server 2019 / Windows 10 180
 
 ### "Access is denied" or "Access to the path is denied" problem on container start
 
-When Docker is starting Windows containers with __process isolation__, it uses a Windows user account which lacks the write access to the directory with Docker volumes. In this case, build agents may fail to start due to the following error:
+When Docker is starting Windows containers with __process isolation__, it uses a Windows user account which lacks the write access to the directory with Docker volumes. In this case, build agents may fail to start due to the "_Access to the path is denied_" or "_Access is denied_" error.
 
- ```Shell
-Move-Item : Access to the path is denied.
-
-...
-
-CategoryInfo : PermissionDenied: (<path to properties file>:FileInfo) [Move-Item], UnauthorizedAccessException
-FullyQualifiedErrorId : MoveFileInfoItemUnauthorizedAccessError,Microsoft.PowerShell.Commands.MoveItemCommand
-
-```
-
-To resolve this issue, grant the "Full control" permission to the "Authenticated Users" group for the `%PROGRAMDATA%docker\volumes` directory.
+To resolve this issue, grant the "Full control" permission to the "Authenticated Users" group for the `%\\PROGRAMDATA%\\docker\volumes` directory.
 
 ## 2019.1.4 Known Issues
 
