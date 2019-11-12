@@ -455,3 +455,14 @@ __This issue has been fixed in TeamCity 2019.1.5__.
 To workaround this problem without upgrading to 2019.1.5, download the fixed NuGet Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62545#focus=streamItem-27-3754398.0-0) and upload it on the __Server Administration | Plugins List__ page.
 
 __ __
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
