@@ -22,4 +22,15 @@ This can be useful in the following cases:
 * If the user is running the TeamCity server under a non\-trusted certificate, you need to place the server certificate into this folder on an agent to establish agent\-server connection
 * If the user considers their network connection between the server and agents insecure and does not want to transfer sensitive information.
 
-__ __ 
+__ __
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
