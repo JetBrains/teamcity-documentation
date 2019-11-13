@@ -89,7 +89,7 @@ Unless disabled via a [branch filter](branch-filter.md), the default branch is a
 
 TeamCity can identify and group branches, based on the commits of the current TeamCity user.
 
-Select the _My Branches_ group in the branch filter to display all active branches whose last 100 changes include your commits, based on the defined VSC usernames.
+Select the _My Branches_ group in the branch filter to display all active branches whose last 100 changes include your commits, based on the defined VCS usernames.
 
  <anchor name="logicalBranchName"/>
 
