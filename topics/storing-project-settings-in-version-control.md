@@ -65,11 +65,12 @@ To define which settings to take __when build starts__, open the __Project Setti
      * failure conditions
      * artifact publishing rules
      * artifact dependencies
-  * changes in the following settings will be ignored and __won't affect__ the build:
+  * changes in the following settings coming from a branch will be ignored and __will not affect__ the build:
      * VCS roots and checkout rules
      * snapshot dependencies
      * build triggers
      * build configuration level options, like hanging builds detection, enabling/disabling of triggering of personal builds, or build configuration type
+     * cleanup rules
 
 ## Storing Secure Settings 
 
