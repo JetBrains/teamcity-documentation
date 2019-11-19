@@ -25,13 +25,12 @@ __Since TeamCity 2018.2__, OpenJDK 8 (or 1.8) by [AdoptOpenJDK](https://adoptope
 Supported Java versions are OpenJDK and Oracle Java 8 (32 or 64 bit), version 8u16 (or 1.8.0_16) or later. We recommend using the latest available version of JDK 8.   
 Using [64 bit Java](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server) is recommended for non-trivial production usage.
 
-For the `.war` distribution, note that the`.war` distribution is going to be discontinued, and it is highly recommended to use the `.tar.gz` distribution, which has Tomcat bundled. It is not advised to customize Tomcat settings unless absolutely necessary.   
+Note that the`.war` distribution is going to be discontinued and it is highly recommended to use the `.tar.gz` distribution, which has Tomcat web server bundled. It is not advised to customize Tomcat settings unless absolutely necessary.
 If you still want to use the .war distribution, note that:
 
    * TeamCity is tested only under Apache Tomcat 8.5\+, earlier Tomcat versions are not supported.
    * TeamCity is meant to support J2EE Servlet 3.0\+ and JSP 2.2\+  container based on Apache Jasper.
-   * TeamCity may not work properly if the [Apache Portable Runtime](http://tomcat.apache.org/tomcat-8.5-doc/apr.html) is enabled in Tomcat.
-
+   * TeamCity may not work properly if the [Apache Portable Runtime](http://tomcat.apache.org/tomcat-8.5-doc/apr.html) is enabled in Tomcat due to the issues in APR.
 
 Generally, __all the recent versions of Windows, Linux and macOS are supported__. If you find any compatibility issues with any of the operating systems, make sure to [let us know](https://confluence.jetbrains.com/display/TW/Feedback).
 
