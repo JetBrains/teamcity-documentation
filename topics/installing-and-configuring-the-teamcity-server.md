@@ -79,6 +79,8 @@ Ensure you have JRE or JDK installed and the JAVA\_HOME environment variable is 
 ### Installing TeamCity into Existing J2EE Container
 
 It is __not recommended__ to use .war distribution. Use the [TeamCity .tar.gz](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) distribution (bundled with Tomcat web server) instead. If you have important reasons to deploy TeamCity into existing web server and want to use .war distribution, please [let us know](https://confluence.jetbrains.com/display/TW/Feedback) the reasons.
+See [Supported Platforms and Environments](supported-platforms-and-environments.md#TeamCity+Server) for J2EE container requirements.
+
 1. Make sure your web application server is stopped.
 2. Copy the downloaded `TeamCity<version number>.war` file into the web applications directory of your J2EE container under the `TeamCity.war` name (the name of the file is generally used as a part of the URL) or deploy the .war following the documentation of the web server. Make sure there is no other version of TeamCity deployed (e.g. do not preserve the old TeamCity web application directory under the web server applications directory).
 3. Ensure the TeamCity web application gets sufficient amount of [memory](#Setting+Up+Memory+settings+for+TeamCity+Server). Increase the memory accordingly if you have other web applications running in the same JVM.
@@ -91,12 +93,6 @@ It is __not recommended__ to use .war distribution. Use the [TeamCity .tar.gz](#
 
 9. Restart the server or deploy the application via the servlet container administration interface and access [`http://server:port/TeamCity/`](http://serverport), where `TeamCity` is the name of the `war` file.
 
-TeamCity J2EE container distribution is tested to work with Tomcat 7 servlet container. (See also [Supported Platforms and Environments](supported-platforms-and-environments.md#TeamCity+Server)).
-
-<note>
-
-If you are using __Tomcat__ J2EE container, make sure the [Apache Portable Runtime](http://tomcat.apache.org/tomcat-7.0-doc/apr.html) feature of this container is disabled (actually it is disabled by default). Otherwise due to issues in the [Apache Portable Runtime](http://tomcat.apache.org/tomcat-7.0-doc/apr.html), TeamCity may not work properly.
-</note>
 
 ### Unattended TeamCity server installation
 
