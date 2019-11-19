@@ -1304,17 +1304,7 @@ CVE\-2017\-5638 affects Jakarta Multipart parser in Apache Struts. CVE\-2016\-11
 
 TeamCity bundles IntelliJ IDEA which contains jars from both: Apache Struts 1.x and Apache Struts 2.x. These jars are only used by IntelliJ IDEA Struts plugin when IntelliJ IDEA collects inspections for a project on a TeamCity agent.
 
-But under no circumstances these versions of Apache Struts are used to handle any HTTP requests. Thus neither TeamCity server, not TeamCity agent are affected by these vulnerabilities.
-
-### Tomcat Under Windows
-
-Based on the wording of the description of CVE\-2017\-12615, CVE\-2017\-12616 and CVE\-2017\-12617 TeamCity server installed under Windows is a potential subject for the attack. However, our analysis of the vulnerabilities indicates that these potential vulnerabilities cannot be exploited in the default TeamCity installation as the related configuration of Tomcat is inactive in all the TeamCity versions.
-
-If necessary, Tomcat bundled with TeamCity can be [upgraded](installing-and-configuring-the-teamcity-server.md#Using+another+Version+of+Tomcat) to the version 7.0.82 which also removes the vulnerability form the Tomcat code.
-
-### Tomcat CVE-2018-8037
-
-TeamCity version 2018.1 is not vulnerable to the issue as it was identified and addressed in the TeamCity codebase before the official Tomcat announcement (actually, the issue was found in a TeamCity installation and we worked with the Tomcat team on fixing it). Earlier TeamCity versions are vulnerable, so upgrading to TeamCity 2018.1\+ is necessary.
+Under no circumstances these versions of Apache Struts are used to handle any HTTP requests. Thus neither TeamCity server, not TeamCity agent are affected by these vulnerabilities.
 
 ## Watch Several TeamCity Servers with Windows Tray Notifier
 
