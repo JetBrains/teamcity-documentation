@@ -889,9 +889,11 @@ Delete a build agent: `DELETE` [`http://teamcity:8111/app/rest/agents/<agentLoca
  
 #### Agent Pools
  
-Get/modify/remove agent pools: `GET/PUT/DELETE` [`http://teamcity:8111/app/rest/projects/XXX/agentPools/ID`](http://teamcity:8111/app/rest/projects/XXX/agentPools/ID).
+List all agent pools: `GET` [`http://teamcity:8111/app/rest/agentPools`](http://teamcity:8111/app/rest/agentPools).
+
+Get/modify/remove an agent pool with id "ID": `GET/PUT/DELETE` [`http://teamcity:8111/app/rest/agentPools/id:ID`](http://teamcity:8111/app/rest/agentPools/id:ID).
  
-Add an agent pool: `POST` the `agentPool name='PoolName'` element to [`http://teamcity:8111/app/rest/projects/XXX/agentPools`](http://teamcity:8111/app/rest/projects/XXX/agentPools).
+Add an agent pool: `POST` the `agentPool name='PoolName'` element to [`http://teamcity:8111/app/rest/agentPools`](http://teamcity:8111/app/rest/agentPools).
  
 Move an agent to the pool from the previous pool: `POST <agent id='YYY'/>` to the pool's agents [`http://teamcity.url/app/rest/agentPools/id:XXX/agents`](http://teamcity.url/app/rest/agentPools/id:XXX/agents).
  
