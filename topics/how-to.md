@@ -45,7 +45,7 @@ The database size requirements naturally vary based on the amount of data stored
 __Overview of the TeamCity hardware resources usage:__      
 * CPU: TeamCity utilizes multiple cores of the CPU, so increasing number of cores makes sense. For non\-trivial TeamCity usage at least 4 CPU cores are recommended.
 * Memory: used by the TeamCity server main process and child processes (used for Maven integration, version control integration, Kotlin DSL execution). See the [notes](installing-and-configuring-the-teamcity-server.md#Setting-Up-Memory-settings-for-TeamCity-Server) on the main process memory usage. Generally, you will probably not need to dedicate more than 4G of memory to TeamCity server if you do not plan to run more then 100 concurrent builds (agents), support more then 200 online users or work with large repositories.
-* HDD/disk usage: This sums up mainly from the temp directory usage (`<`[`TeamCity Home`](teamcity-home-directory.md)`>/temp` and OS temp directory) and `.BuildServer/system` usage. Performance of the TeamCity server highly depends on the disk system performance. As TeamCity stores large amounts of data under `.BuildServer/system` (most notably, VCS caches and build results) it is important that the access to the disk is fast (in particular reading/writing files in multiple threads, listing files with attributes). Ensuring disk has good performance is especially important if you plan to store the Data Directory on a network drive.
+* HDD/disk usage: This sums up mainly from the temp directory usage (`<`[`TeamCity Home`](teamcity-home-directory.md)`>/temp` and OS default temp directory) and `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system` usage. Performance of the TeamCity server highly depends on the disk system performance. As TeamCity stores large amounts of data under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system` (most notably, VCS caches and build results) it is important that the access to the disk is fast (in particular reading/writing files in multiple threads, listing files with attributes). Ensuring disk has good performance is especially important if you plan to store the Data Directory on a network drive. It is recommended to use local storage for `TeamCity Data Directory/system/caches` directory. See also [TeamCity Data Directory](teamcity-data-directory.md#Recommendations+as+to+choosing+Data+Directory+Location).
 * Network: This mainly sums up from the traffic from VCS servers, to clients (web browsers, IDE, etc.) and to/from build agents (send sources, receive build results, logs and artifacts).
 
 __The load on the server depends on:__   
@@ -97,7 +97,7 @@ HDD free space requirements are mainly determined by the number of builds stored
 
 If the builds generate large number of data (artifacts/build log/test data), using fast hard disk for storing `.BuildServer/system` directory and fast network between agents and server are recommended.
 
-The general recommendation for deploying large\-scale TeamCity installation is to start with a reasonable hardware while considering hardware upgrade.Then increase the load on the server (e.g. add more projects) gradually, monitoring the performance characteristics and deciding on necessary hardware or software improvements. There is also a [benchmark plugin](https://confluence.jetbrains.com/display/TW/TeamCity+Benchmark) which can be used to estimate the number of simultaneous build the current server installation can handle. Anyway, best administration practices are recommended like keeping adequate disk defragmentation level, and so on.
+The general recommendation for deploying large\-scale TeamCity installation is to start with a reasonable hardware while considering hardware upgrade. Then increase the load on the server (e.g. add more projects) gradually, monitoring the performance characteristics and deciding on necessary hardware or software improvements. There is also a [benchmark plugin](https://confluence.jetbrains.com/display/TW/TeamCity+Benchmark) which can be used to estimate the number of simultaneous build the current server installation can handle. Anyway, best administration practices are recommended like keeping adequate disk defragmentation level, and so on.
 
 Starting with an adequately loaded system, if you then increase the number of concurrently running builds (agents) by some factor, be prepared to increase CPU, database and HDD access speeds, amount of memory by the same factor to achieve the same performance.   
 If you increase the number of builds per day, be prepared to increase the disk size.
@@ -133,7 +133,7 @@ Here are some recommendations to tweak TeamCity server setup for better performa
 * Use a separate server for the external database and monitor the database performance
 * Monitor the server's CPU and IO performance, increase hardware resources as necessary (see also [hardware notes](#Estimate+Hardware+Requirements+for+TeamCity))
 * Make sure clean\-up is configured for all the projects with a due retention policy, make sure clean\-up completely finishes regularly (check Administration / Clean\-Up page)
-* Consider ensuring good IO performance for the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system/caches directory`, e.g. by moving it to a separate local drive (or storing on a local drive you choose to store the TeamCity Data Directory on a network storage)
+* Consider ensuring good IO performance for the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system/caches` directory, e.g. by moving it to a separate local drive (or storing on a local drive you choose to store the TeamCity Data Directory on a network storage)
 * Regularly archive obsolete projects
 * Regularly review the installed not bundled plugins and remove those not essential for the server functioning
 * Consider using agent\-side checkout whenever possible
@@ -288,7 +288,7 @@ TeamCity only supports a single instance of the main server, but it is possible 
 
 To address fast disaster recovery scenarios, TeamCity supports active \- failover (cold standby) approach: the data that the TeamCity server uses can be replicated and a solution put in place to start a new server using the same data if the currently active server malfunctions.
 
-As to the data, the TeamCity server uses both database and file storage (Data Directory). You can browse through [TeamCity Data Backup](teamcity-data-backup.md) and [TeamCity Data Directory](teamcity-data-directory.md) pages in to get more information on TeamCity data storing.Basically, both the TeamCity Data Directory on the disk and the database which TeamCity uses must remain in a consistent state and thus must be replicated together.   
+As to the data, the TeamCity server uses both database and file storage (Data Directory). You can browse through [TeamCity Data Backup](teamcity-data-backup.md) and [TeamCity Data Directory](teamcity-data-directory.md) pages in to get more information on TeamCity data storing. Basically, both the TeamCity Data Directory on the disk and the database which TeamCity uses must remain in a consistent state and thus must be replicated together.   
 Only a single TeamCity server instance should use the database and Data Directory at any time.
 
 Ensure that the distribution of the TeamCity failover/backup server is of exactly the same version as the main server. It is also important to ensure the same server environment/startup options like memory settings, etc.
@@ -370,12 +370,12 @@ Here are some notes on different security\-related aspects:
 
 ## What Encryption is Used by TeamCity
 
-TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024\-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant.TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key.
+TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024\-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key.
 
 
 ## Configure Newly Installed MySQL Server
 
-If MySQL server is going to be used with TeamCity in addition to the [basic setup](setting-up-an-external-database.md#MySQL), you should review and probably change some of the MySQL server settings.If MySQL is installed on Windows, the settings are located in `my.ini` file which usually can be found under MySQL installation directory. For Unix\-like systems the file is called `my.cnf` and can be placed somewhere under `/etc` directory. Read more about configuration file location in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/option-files.html). Note: you'll need to restart MySQL server after changing settings in `my.ini|my.cnf`.
+If MySQL server is going to be used with TeamCity in addition to the [basic setup](setting-up-an-external-database.md#MySQL), you should review and probably change some of the MySQL server settings. If MySQL is installed on Windows, the settings are located in `my.ini` file which usually can be found under MySQL installation directory. For Unix\-like systems the file is called `my.cnf` and can be placed somewhere under `/etc` directory. Read more about configuration file location in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/option-files.html). Note: you'll need to restart MySQL server after changing settings in `my.ini|my.cnf`.
 
 The following settings should be reviewed and/or changed:
 
@@ -438,7 +438,7 @@ innodb_log_file_size=1024M
 
 ### innodb_file_per_table
 
-For better performance you can enable the so\-called [per-table tablespaces](http://dev.mysql.com/doc/refman/5.5/en/innodb-multiple-tablespaces.html). Note that once you add `innodb_file_per_table` option new tables will be created and placed in separate files, but tables created before enabling this option will still be in the shared tablespace.You'll need to re\-import database for them to be placed in separate files.
+For better performance you can enable the so\-called [per-table tablespaces](http://dev.mysql.com/doc/refman/5.5/en/innodb-multiple-tablespaces.html). Note that once you add `innodb_file_per_table` option new tables will be created and placed in separate files, but tables created before enabling this option will still be in the shared tablespace. You'll need to re\-import database for them to be placed in separate files.
 
 ### innodb_flush_log_at_trx_commit
 
@@ -726,7 +726,7 @@ When the public server address is __HTTPS__, use the `secure="true"` and `scheme
 ### "RemoteIpValve" Approach
 [//]: # (AltHead: Proxy-Tomcat-RemoteIpValve)
 
-This approach can be used when the proxy server sets  "X\-Forwarded\-Proto", "X\-Forwarded\-Port" request headers to the values of the original URL.Also, while not critical for the most setups, this approach can be used to make sure the original client IP is passed to the TeamCity server correctly. This is important for legacy agents' [bidirectional communication](setting-up-and-running-additional-build-agents.md#Bidirectional+Communication).
+This approach can be used when the proxy server sets  "X\-Forwarded\-Proto", "X\-Forwarded\-Port" request headers to the values of the original URL. Also, while not critical for the most setups, this approach can be used to make sure the original client IP is passed to the TeamCity server correctly. This is important for legacy agents' [bidirectional communication](setting-up-and-running-additional-build-agents.md#Bidirectional+Communication).
 
 Add the following into the Tomcat main &lt;Host&gt; node of the `conf\server.xml` file (see also Tomcat [doc](http://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/valves/RemoteIpValve.html)):
 
@@ -754,7 +754,7 @@ It is also recommended to specify `internalProxies` attribute with the regular e
 
 ## Configure HTTPS for TeamCity Web UI
 
-TeamCity does not provide out\-of\-the\-box support for HTTPS access (see [TW-12976](http://youtrack.jetbrains.com/issue/TW-12976#comment=27-348823)).It is highly recommended to set up a reverse proxy like Nginx or Apache in front of TeamCity that would handle HTTPS and use HTTP TeamCity server port as the upstream.HTTPS\-related configuration of the proxy is not specific for TeamCity and is generic as for any Web application. Make sure to configure the reverse proxy per [our recommendations](#Set+Up+TeamCity+behind+a+Proxy+Server) below. Generic web application best practices apply (like disabling http access to TeamCity at all).
+TeamCity does not provide out\-of\-the\-box support for HTTPS access (see [TW-12976](http://youtrack.jetbrains.com/issue/TW-12976#comment=27-348823)). It is highly recommended to set up a reverse proxy like Nginx or Apache in front of TeamCity that would handle HTTPS and use HTTP TeamCity server port as the upstream. HTTPS\-related configuration of the proxy is not specific for TeamCity and is generic as for any Web application. Make sure to configure the reverse proxy per [our recommendations](#Set+Up+TeamCity+behind+a+Proxy+Server) below. Generic web application best practices apply (like disabling http access to TeamCity at all).
 
 For small servers, you can set up HTTPS via the internal [Tomcat means](http://tomcat.apache.org/tomcat-7.0-doc/ssl-howto.html), but this is not recommended as it may significantly increase the CPU load.
 
@@ -857,7 +857,7 @@ See [corresponding section](installing-and-configuring-the-teamcity-server.md#Ch
 
 ## Test-drive Newer TeamCity Version before Upgrade
 
-It's advised to try a new TeamCity version before upgrading your production server. The usual procedure is to [create a copy](#Create+a+Copy+of+TeamCity+Server+with+All+Data) of your production TeamCity installation, then [upgrade](upgrade.md) it, try the things out, and, when everything is checked, drop the test server and upgrade the main one.When you start the test server, remember to change the Server URL, disable Email and Jabber notifiers as well as [other features](#Copied+Server+Checklist) on the new server.
+It's advised to try a new TeamCity version before upgrading your production server. The usual procedure is to [create a copy](#Create+a+Copy+of+TeamCity+Server+with+All+Data) of your production TeamCity installation, then [upgrade](upgrade.md) it, try the things out, and, when everything is checked, drop the test server and upgrade the main one. When you start the test server, remember to change the Server URL, disable Email and Jabber notifiers as well as [other features](#Copied+Server+Checklist) on the new server.
 
 ## Create a Copy of TeamCity Server with All Data
 
@@ -1032,7 +1032,7 @@ However, if you need to use another server domain address, you will need to:
 
 ## Move TeamCity Agent to a New Machine
 
-Apart from the binaries, TeamCity agent installation stores its configuration and data left from the builds it run. Usually the data from the previous builds makes preparation for the future builds a bit faster, but it can be deleted if necessary.The configuration is stored under `conf` and `launcher\conf` directories.The data collected by previous build is stored under `work` and `system` directories.
+Apart from the binaries, TeamCity agent installation stores its configuration and data left from the builds it run. Usually the data from the previous builds makes preparation for the future builds a bit faster, but it can be deleted if necessary. The configuration is stored under `conf` and `launcher\conf` directories. The data collected by previous build is stored under `work` and `system` directories.
 
 The most simple way to move agent installation into a new machine or new location is to:
 * stop existing agent
@@ -1224,7 +1224,7 @@ The `config/_trash` directory is not cleaned automatically and can be emptied ma
 
 This is not possible.
 
-Each TeamCity server (Professional and Enterprise) allows using 3 or more agents bound to the server without any agent licenses.In case of the Professional server, by default 3 agents are bound to the server instance: users do not pay for these agents, there is no license key for them.   
+Each TeamCity server (Professional and Enterprise) allows using 3 or more agents bound to the server without any agent licenses. In case of the Professional server, by default 3 agents are bound to the server instance: users do not pay for these agents, there is no license key for them.   
 In case of the Enterprise server, the number of agents depends on your package and the agents are bound to the server license key.
 
 So, the agents bound to the server cannot be transferred to another server.
@@ -1250,7 +1250,7 @@ You should not publish values CodeCoverageB, CodeCoverageL, CodeCoverageM, CodeC
 
 ## Recover from "Data format of the Data Directory (NNN) and the database (MMM) do not match" error
 
-If you get "Data format of the Data Directory (NNN) and the database (MMM) do not match." error on starting TeamCity, it means either the database or the TeamCity Data Directory were recently changed to an inconsistent state so they cannot be used together.Double\-check the database and Data Directory locations and change them if they are not those where the server used to store the data.
+If you get "Data format of the Data Directory (NNN) and the database (MMM) do not match." error on starting TeamCity, it means either the database or the TeamCity Data Directory were recently changed to an inconsistent state so they cannot be used together. Double\-check the database and Data Directory locations and change them if they are not those where the server used to store the data.
 
 If they are right, most probably it means that the server was upgraded with another database or Data Directory and the [consistent upgrade](upgrade.md#Upgrading+TeamCity+Server) requirement was not met for your main Data Directory and the database.
 
@@ -1282,7 +1282,7 @@ This section describes effect and necessary protection steps related to the anno
 
 ### Heartbleed, ShellShock
 
-TeamCity distributions provided by JetBrains do not contain software/libraries and do not use technologies affected by Heart bleed and Shell shock vulnerabilities.What might still need assessment is the specific TeamCity installation implementation which might use the components behind those provided/recommended by JetBrains and which can be vulnerable to the mentioned exploits.
+TeamCity distributions provided by JetBrains do not contain software/libraries and do not use technologies affected by Heart bleed and Shell shock vulnerabilities. What might still need assessment is the specific TeamCity installation implementation which might use the components behind those provided/recommended by JetBrains and which can be vulnerable to the mentioned exploits.
 
 ### POODLE
 
@@ -1304,17 +1304,7 @@ CVE\-2017\-5638 affects Jakarta Multipart parser in Apache Struts. CVE\-2016\-11
 
 TeamCity bundles IntelliJ IDEA which contains jars from both: Apache Struts 1.x and Apache Struts 2.x. These jars are only used by IntelliJ IDEA Struts plugin when IntelliJ IDEA collects inspections for a project on a TeamCity agent.
 
-But under no circumstances these versions of Apache Struts are used to handle any HTTP requests. Thus neither TeamCity server, not TeamCity agent are affected by these vulnerabilities.
-
-### Tomcat Under Windows
-
-Based on the wording of the description of CVE\-2017\-12615, CVE\-2017\-12616 and CVE\-2017\-12617 TeamCity server installed under Windows is a potential subject for the attack. However, our analysis of the vulnerabilities indicates that these potential vulnerabilities cannot be exploited in the default TeamCity installation as the related configuration of Tomcat is inactive in all the TeamCity versions.
-
-If necessary, Tomcat bundled with TeamCity can be [upgraded](installing-and-configuring-the-teamcity-server.md#Using+another+Version+of+Tomcat) to the version 7.0.82 which also removes the vulnerability form the Tomcat code.
-
-### Tomcat CVE-2018-8037
-
-TeamCity version 2018.1 is not vulnerable to the issue as it was identified and addressed in the TeamCity codebase before the official Tomcat announcement (actually, the issue was found in a TeamCity installation and we worked with the Tomcat team on fixing it). Earlier TeamCity versions are vulnerable, so upgrading to TeamCity 2018.1\+ is necessary.
+Under no circumstances these versions of Apache Struts are used to handle any HTTP requests. Thus neither TeamCity server, not TeamCity agent are affected by these vulnerabilities.
 
 ## Watch Several TeamCity Servers with Windows Tray Notifier
 
@@ -1382,7 +1372,7 @@ If you want the users to accept a special agreement before using your TeamCity i
 
 ### Encryption
 
-If you want to encrypt the data used by TeamCity, it is recommended to use generic, non\-TeamCity\-specific tools for this as TeamCity does not provide dedicated functionality.TeamCity stores the data in the SQL database and on the file system.You can configure the database to store the data in encrypted form and use secure JDBC\-backed connection to the database (configured in the [`database.properties`](setting-up-an-external-database.md)).   
+If you want to encrypt the data used by TeamCity, it is recommended to use generic, non\-TeamCity\-specific tools for this as TeamCity does not provide dedicated functionality. TeamCity stores the data in the SQL database and on the file system. You can configure the database to store the data in encrypted form and use secure JDBC\-backed connection to the database (configured in the [`database.properties`](setting-up-an-external-database.md)).   
 Also, you can configure encryption on the disk storage on the OS level.
 
 ### Logs and Debugging Data
@@ -1391,7 +1381,7 @@ If you want to ensure that you do not store the internal TeamCity logs for more 
 
 Per\-day rotation can be configured by adding `<param name="rotateOnDayChange" value="true"/>` line within all required `<appender name="..." class="jetbrains.buildServer.util.TCRollingFileAppender">` appenders. This change should be done to the default `conf\teamcity-server-log4j.xml` and also logging presets stored under `<TeamCity Data Directory>\config\_logging`.
 
-TeamCity can also store diagnostics data like thread dumps which can record user\-related data in unstructured way. It is recommended to review the content of the `<`[`TeamCity Home`](teamcity-home-directory.md)`>\logs` directory regularly and ensure that no old files are preserved in there. Also, the extra logs should be deleted after logging customization sessions like collecting debug logs, etc.There is a [known issue](https://youtrack.jetbrains.com/issue/TW-22596) that `logs\catalina.out` file if not rotated automatically at all. It is recommended to establish an automatic procedure to rotate the file regularly.
+TeamCity can also store diagnostics data like thread dumps which can record user\-related data in unstructured way. It is recommended to review the content of the `<`[`TeamCity Home`](teamcity-home-directory.md)`>\logs` directory regularly and ensure that no old files are preserved in there. Also, the extra logs should be deleted after logging customization sessions like collecting debug logs, etc. There is a [known issue](https://youtrack.jetbrains.com/issue/TW-22596) that `logs\catalina.out` file if not rotated automatically at all. It is recommended to establish an automatic procedure to rotate the file regularly.
 
 ### Customizations
 

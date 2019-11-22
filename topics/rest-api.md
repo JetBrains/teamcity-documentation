@@ -68,8 +68,9 @@ You can use the [super user account](super-user.md) with REST API: just provide 
  
 As REST API evolves from one TeamCity version to another, there can be incompatible changes in the protocol.
  
-Under the [`http://teamcity:8111/app/rest/`](http://teamcity:8111/app/rest/) or [`http://teamcity:8111/app/rest/latest`](http://teamcity:8111/app/rest/latest) URL the latest version is available. Under the [`http://teamcity:8111/app/rest/<version>`](http://teamcity:8111/app/rest/<version>) URL, the current version is available and earlier versions CAN be available. Our general policy is to supply TeamCity with at least one previous version.   
-For example, in TeamCity 2019.1 use `2018.1` instead of `<version>` to get the current version of REST API or `2017.2`, `2017.1`, `10.0`, `9.1`, `9.0`, `8.1`, `8.0` to get earlier versions of the protocol. The protocol version corresponds to the TeamCity version where it was first introduced.
+Under the [`http://teamcity:8111/app/rest/`](http://teamcity:8111/app/rest/) or [`http://teamcity:8111/app/rest/latest`](http://teamcity:8111/app/rest/latest) URL the latest version is available. Under the [`http://teamcity:8111/app/rest/<version>`](http://teamcity:8111/app/rest/<version>) URLs other versions CAN be available. Our general policy is to supply TeamCity with at least one previous version. The REST API protocol version is the TeamCity version where this protocl was first introduced.
+
+For example, in TeamCity 2019.1 you can use `2018.1` instead of `<version>` to get the latest version of REST API or `2017.2`, `2017.1`, `10.0`, `9.1`, `9.0`, `8.1`, `8.0` to get earlier versions of the protocol.
  
 Breaking changes in the API are described in the related [Upgrade Notes](upgrade-notes.md) section. Note that additions to the objects returned (such as new XML attributes or elements) are not considered major changes and do not cause the protocol version to increment. Also, the endpoints marked with `Experimental` comment in `application.wadl` may change without a special notice in future versions.
  
@@ -888,9 +889,11 @@ Delete a build agent: `DELETE` [`http://teamcity:8111/app/rest/agents/<agentLoca
  
 #### Agent Pools
  
-Get/modify/remove agent pools: `GET/PUT/DELETE` [`http://teamcity:8111/app/rest/projects/XXX/agentPools/ID`](http://teamcity:8111/app/rest/projects/XXX/agentPools/ID).
+List all agent pools: `GET` [`http://teamcity:8111/app/rest/agentPools`](http://teamcity:8111/app/rest/agentPools).
+
+Get/modify/remove an agent pool with id "ID": `GET/PUT/DELETE` [`http://teamcity:8111/app/rest/agentPools/id:ID`](http://teamcity:8111/app/rest/agentPools/id:ID).
  
-Add an agent pool: `POST` the `agentPool name='PoolName'` element to [`http://teamcity:8111/app/rest/projects/XXX/agentPools`](http://teamcity:8111/app/rest/projects/XXX/agentPools).
+Add an agent pool: `POST` the `agentPool name='PoolName'` element to [`http://teamcity:8111/app/rest/agentPools`](http://teamcity:8111/app/rest/agentPools).
  
 Move an agent to the pool from the previous pool: `POST <agent id='YYY'/>` to the pool's agents [`http://teamcity.url/app/rest/agentPools/id:XXX/agents`](http://teamcity.url/app/rest/agentPools/id:XXX/agents).
  

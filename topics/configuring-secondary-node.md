@@ -60,13 +60,13 @@ It is possible to use one or more secondary nodes to process traffic from the Te
 
 In general, you do not need a separate node for running builds unless you have more than 400 agents connected to a single server. Using a secondary node allows you to significantly increase the number of agents which the setup can handle.
 
-Once you assign the _Processing data produced by builds_ responsibility for a node, all newly started builds will be routed to this node. The existing running builds will continue being executed on the main server. When you disable the responsibility, only the newly started builds will be switched to the main server. The builds that were already running on the secondary node will continue running there.
+Once you assign the _Processing data produced by builds_ responsibility to a node, all newly started builds will be routed to this node. The existing running builds will continue being executed on the main server. When you disable the responsibility, only the newly started builds will be switched to the main server. The builds that were already running on the secondary node will continue running there.
 
 ### VCS Repositories Polling on Secondary Node
 
 Usually, the main TeamCity server polls the VCS repositories for changes to detect new commits. You can delegate VCS polling to the secondary node thus improving the performance of the main server. Only one secondary node can be assigned to this responsibility.
 
-Once you assign the _VCS repositories polling_ responsibility for a node, it may take some time for the main server to finish the polling activities in progress, and then the secondary node will pick up this task. When you disable the responsibility, the main server will start polling VCS repositories.
+Once you assign the _VCS repositories polling_ responsibility to a node, it may take some time for the main server to finish the polling activities in progress, and then the secondary node will pick up this task. When you disable the responsibility, the main server will start polling VCS repositories.
 
 If you have commit hooks configured on the main server, no changes in hooks are required: the hooks will continue working if the VCS polling is delegated to the secondary node.
 
