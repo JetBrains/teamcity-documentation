@@ -33,7 +33,7 @@ When build configurations are created, you can:
 3. In the Create Build Configuration dialog, specify the name, id and (optionally) description for the build configuration, click __Create__.
 4. Proceed with creating other settings:   
    * [Create/edit VCS roots and specify VCS-specific settings](configuring-vcs-settings.md)
-   * On the __Build Steps__ page, configure build steps discovered by the automatic detection. ro create them manually by selecting a desired build runner from the drop\-down list. Click __Save__. You can add as many build steps as you need within one build configuration. Note that they will be executed sequentially. In the end, the build gets the merged status and the output goes into the same build log. If some step fails, the rest is executed or not, depending on their [step execution policy](configuring-build-steps.md#Execution+policy).
+   * On the __Build Steps__ page, configure build steps discovered by the automatic detection. To create them manually by selecting a desired build runner from the drop\-down list. Click __Save__. You can add as many build steps as you need within one build configuration. Note that they will be executed sequentially. In the end, the build gets the merged status and the output goes into the same build log. If some step fails, the rest is executed or not, depending on their [step execution policy](configuring-build-steps.md#Execution+policy).
    * Additionally, configure [build triggering options](configuring-build-triggers.md), [dependencies](configuring-dependencies.md), [properties and variables](configuring-build-parameters.md), and [agent requirements](configuring-agent-requirements.md).
 
 ## Creating New Build Configuration from URL
