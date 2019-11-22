@@ -81,7 +81,7 @@ This tab allows adding, editing, and deleting new parameters/properties/variable
 When adding/editing/deleting properties and variables, note the following:
 * For a predefined property/variable, only the value is editable.
 * Only newly added properties/variables can be deleted. You cannot delete predefined properties.
-* The parameter value must be no longer than 16,000 characters.
+* Each parameter value must be no longer than 16,000 characters.
 
 ### Comment and Tags
 
