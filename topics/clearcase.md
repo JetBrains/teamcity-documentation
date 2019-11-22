@@ -7,7 +7,7 @@ On this page:
 
 ## Initial Setup
 
-An installed ClearCase client on the TeamCity server is required to make TeamCity ClearCase integration work. You also need to create a ClearCase view on the TeamCity server machine (regardless of whether you plan to use the server\-side or agent\-side checkout). This view will be used for collecting changes in ClearCase VCS roots and for checkout in case of the server\-side checkout mode. In case of the agent\-side checkout mode, the config spec of this view will be also used to automatically create views on agents.
+An installed ClearCase client on the TeamCity server is required to make TeamCity ClearCase integration work. You need to create a ClearCase view on the TeamCity server machine (regardless of whether you plan to use the server\-side or agent\-side checkout) under the same user that TeamCity server runs under. This view will be used for collecting changes in ClearCase VCS roots and for checkout in case of the server\-side checkout mode. In case of the agent\-side checkout mode, the config spec of this view will be also used to automatically create views on agents.
 
 
 <tip>
