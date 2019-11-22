@@ -71,12 +71,17 @@ To define which settings to take, use one of the corresponding options from the 
 
 ### Parameters
 
-_These settings are available only if you have permissions to change system properties and environment variables for the build configuration._    
+<note>
+ 
+These settings are available only if you have permissions to change system properties and environment variables for the build configuration.
+
+</note>
+
 This tab allows adding, editing, and deleting new parameters/properties/variables, or redefining their [predefined values](predefined-build-parameters.md).   
 When adding/editing/deleting properties and variables, note the following:
 * For a predefined property/variable, only the value is editable.
 * Only newly added properties/variables can be deleted. You cannot delete predefined properties.
-* When entering a parameter in a custom build, there is a limitation of 16,000 characters.
+* The parameter value must be no longer than 16,000 characters.
 
 ### Comment and Tags
 
