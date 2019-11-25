@@ -3,9 +3,9 @@
 
 TeamCity comes bundled with the console runner of [JetBrains dotCover](http://www.jetbrains.com/dotcover/). __Since TeamCity 2017.1__, in addition to the bundled version, it is possible to install another version of JetBrains dotCover Command Line Tools and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
 
-After choosing the appropriate option in the .Net coverage section of a build step, you will be able to collect code coverage for your .Net project and then view the coverage statistics and detailed coverage report inside the [TeamCity web UI](working-with-build-results.md).
+After choosing the appropriate option in the .NET coverage section of a build step, you will be able to collect code coverage for your .NET project and then view the coverage statistics and detailed coverage report inside the [TeamCity web UI](working-with-build-results.md).
 
-If you have a license for dotCover and have it installed on a developer machine, TeamCity\-collected coverage results can be downloaded and viewed inside Visual Studio with the help of the [TeamCity Visual Studio Add-in](visual-studio-addin.md).
+If you have a license for dotCover and have it installed on a developer machine, TeamCity-collected coverage results can be downloaded and viewed inside Visual Studio with the help of the [TeamCity Visual Studio Add-in](visual-studio-addin.md).
 
 <tip>
 
@@ -51,7 +51,7 @@ Filters
 
 <td>
 
-Specify a new\-line separated list of filters for code coverage. Use `+|-:assembly=*;type=**;method=***` to include or exclude assemblies from covered assemblies:
+Specify a new-line separated list of filters for code coverage. Use `+|-:assembly=*;type=**;method=***` to include or exclude assemblies from covered assemblies:
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
@@ -73,9 +73,8 @@ Attribute Filters
 
 <td>
 
-If you do not want to know the coverage data solution\-wide, you can exclude the code marked with an attribute (for example, with `ObsoleteAttribute`) from the coverage statistics. You only need to specify these attribute filters here in the following format: the filters should be a new\-line separated list; the `-:attributeName` syntax should be used to exclude the code marked with the attributes from code coverage. Use the asterisk (`*`) as a wildcard if needed.   
+If you do not want to know the coverage data solution-wide, you can exclude the code marked with an attribute (for example, with `ObsoleteAttribute`) from the coverage statistics. You only need to specify these attribute filters here in the following format: the filters should be a new-line separated list; the `-:attributeName` syntax should be used to exclude the code marked with the attributes from code coverage. Use the asterisk (`*`) as a wildcard if needed.   
 Supported only for dotCover 2.0 or newer.
-
 
 </td></tr><tr>
 
