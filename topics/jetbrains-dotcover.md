@@ -81,8 +81,9 @@ Supported only for dotCover 2.0 or newer.
 
 <td>
 
-Additional dotCover.exe arguments
+<anchor name="additional-arguments"/>
 
+Additional arguments
 
 </td>
 
