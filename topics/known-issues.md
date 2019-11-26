@@ -424,13 +424,13 @@ When Docker is starting Windows containers with __process isolation__, it uses a
 
 To resolve this issue, grant the "Full control" permission to the "Authenticated Users" group for the `%\\PROGRAMDATA%\\docker\volumes` directory.
 
-## dotCover doest not support Windows Nano Server
+## dotCover does not support Windows Nano Server
 
-If you try to run dotCover on an agent with the Nano Server OS, the build will fail with an exit error "_Process exited with code -1073741515_". Instead Nano Server, consider using [Server Core](https://docs.microsoft.com/en-us/windows-server/administration/server-core/what-is-server-core) which is an alternative minimal installation option of Windows Server.
+If you try to run dotCover on an agent with the Nano Server OS, the build will fail with an exit error "_Process exited with code -1073741515_". Instead of Nano Server, consider using [Server Core](https://docs.microsoft.com/en-us/windows-server/administration/server-core/what-is-server-core) which is an alternative minimal installation option of Windows Server.
 
 ## Xcode 10 is unable to clean artifacts in custom output directory
 
-If you use a custom output directory for Xcode, note that on upgrading to Xcode 10, TeamCity builds with the Xcode Project build runner might fail with the error: _Could not delete <directory> because it was not created by the build system and it is not a subfolder of derived data._
+If you use a custom output directory for Xcode, note that on upgrading to Xcode 10, TeamCity builds with the Xcode Project build runner might fail with the error: "_Could not delete \<directory\> because it was not created by the build system and it is not a subfolder of derived data."_
 
 This is caused by the following Xcode 10 known issue:   
 When performing `xcodebuild clean` on a project that uses a customized build location outside the derived data directory, and that has older build products produced prior to Xcode 10, Xcode might report an error indicating that it won't delete directories not created by the new build system. (40427159)   
