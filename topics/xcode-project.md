@@ -1,6 +1,6 @@
 [//]: # (title: Xcode Project)
 [//]: # (auxiliary-id: Xcode Project)
-The _Xcode Project Build Runner_ supports Xcode 3 (target\-based build), Xcode 4 (scheme\-based build), Xcode 5\-9.
+The _Xcode Project Build Runner_ supports Xcode 3 (target-based build), Xcode 4 (scheme-based build), Xcode 5-11.
 
 The runner provides structured build log based on Xcode build stages, detects compilation errors, reports tests from the `xcodebuild` utility, adds automatic agent requirements for the appropriate version of tools installed (Xcode, SDKs, and so on) and reporting tools via agent properties.
 
@@ -357,7 +357,7 @@ __  __
 
 __See also:__
 
-
-__Concepts__: [Build Runner](build-runner.md)
+__Xcode Known Issues__: [[1](known-issues.md#Xcode+10+is+unable+to+clean+artifacts+in+custom+output+directory)]   
+__Concepts__: [Build Runner](build-runner.md)   
 
 __ __

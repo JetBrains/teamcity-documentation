@@ -424,9 +424,19 @@ When Docker is starting Windows containers with __process isolation__, it uses a
 
 To resolve this issue, grant the "Full control" permission to the "Authenticated Users" group for the `%\\PROGRAMDATA%\\docker\volumes` directory.
 
-## dotCover issues
+## dotCover doest not support Windows Nano Server
 
-dotCover does not support Windows Nano Server. If you try to run dotCover on an agent with the Nano Server OS, the build will fail with an exit error "_Process exited with code -1073741515_". Instead Nano Server, consider using [Server Core](https://docs.microsoft.com/en-us/windows-server/administration/server-core/what-is-server-core) which is an alternative minimal installation option of Windows Server.
+If you try to run dotCover on an agent with the Nano Server OS, the build will fail with an exit error "_Process exited with code -1073741515_". Instead Nano Server, consider using [Server Core](https://docs.microsoft.com/en-us/windows-server/administration/server-core/what-is-server-core) which is an alternative minimal installation option of Windows Server.
+
+## Xcode 10 is unable to clean artifacts in custom output directory
+
+If you use a custom output directory for Xcode, note that on upgrading to Xcode 10, TeamCity builds with the Xcode Project build runner might fail with the error: _Could not delete <directory> because it was not created by the build system and it is not a subfolder of derived data._
+
+This is caused by the following Xcode 10 known issue:   
+When performing `xcodebuild clean` on a project that uses a customized build location outside the derived data directory, and that has older build products produced prior to Xcode 10, Xcode might report an error indicating that it won't delete directories not created by the new build system. (40427159)   
+See [Xcode documentation](https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes/build_system_release_notes_for_xcode_10) for details.
+
+To resolve this issue, we suggest that you use Xcode 11 instead. To workaround this issue in Xcode 10, you can either clean the output directory manually or try using the previous build system by passing `-UseNewBuildSystem=NO` to command line parameters.
 
 ## Issues per TeamCity versions
 
@@ -434,19 +444,19 @@ dotCover does not support Windows Nano Server. If you try to run dotCover on an 
 
 #### Unavailable Default Credential Provider Chain option for Amazon ECR
 
+_This issue has been fixed in TeamCity 2019.1.5._
+
 Due to recent changes in our Docker Support plugin, the "[Default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default)" option becomes unavailable in the Amazon ECR connection settings.
 
 If this option was previously enabled in some ECR connection and you make any changes to this connection, the state of this option will be automatically set to `false`. When any build will try to use this connection, it will fail to start with the "_Access key cannot be null_" error.
-
-__This issue has been fixed in TeamCity 2019.1.5__.
 
 To workaround this problem without upgrading to 2019.1.5, download the fixed Docker Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62595#focus=streamItem-27-3749459.0-0) and upload it on the __Server Administration | Plugins List__ page.
 
 #### Missing packages in NuGet feed
 
-In certain cases, when a build is supposed to create and publish several NuGet packages to a NuGet feed, and the package indexing is enabled, some packages might not be published to the feed. This problem is caused by recent changes in [NuGet Packages Indexer](nuget-packages-indexer.md).
+_This issue has been fixed in TeamCity 2019.1.5._
 
-__This issue has been fixed in TeamCity 2019.1.5__.
+In certain cases, when a build is supposed to create and publish several NuGet packages to a NuGet feed, and the package indexing is enabled, some packages might not be published to the feed. This problem is caused by recent changes in [NuGet Packages Indexer](nuget-packages-indexer.md).
 
 To workaround this problem without upgrading to 2019.1.5, download the fixed NuGet Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62545#focus=streamItem-27-3754398.0-0) and upload it on the __Server Administration | Plugins List__ page.
 
