@@ -177,7 +177,7 @@ You can view the installed versions of dotCover on the __Server Administration |
 
 __See also:__
 
-__dotCover Known Issues__: [[1](known-issues.md#dotCover+doest+not+support+Windows+Nano+Server)]   
+__dotCover Known Issues__: [[1](known-issues.md#dotCover+does+not+support+Windows+Nano+Server)]   
 __Administrator's Guide__: [Manually Configuring Reporting Coverage](manually-configuring-reporting-coverage.md)   
 __Troubleshooting__: [dotCover issues](reporting-issues.md#dotCover+Issues)
 
