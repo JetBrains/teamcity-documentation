@@ -10,58 +10,44 @@ The supported systems are:
 * Atlassian Bitbucket Server (formerly Stash) and Atlassian Bitbucket Cloud
 * Gerrit Code Review tool 2.6\+
  
+## Provider-specific Confguration
 
-<note>
+### GitLab
 
-__GitLab__
-
-If you use a recent version of GitLab (&gt;= 9.0), it is recommended to use the GitLab URL of the following format: `http[s]://<hostname>[:<port>]/api/v4` as GitLab will [stop supporting](https://about.gitlab.com/2018/01/22/gitlab-10-4-released/#api-v3) the v3 API in GitLab 11. If you have `/api/v3` in your current TeamCity configurations, they may stop working with GitLab 11\+, so consider changing the server URL to `api/v4`.
+If you use a recent version of GitLab (&gt;= 9.0), it is recommended to use the GitLab URL of the following format: `http[s]://<hostname>[:<port>]/api/v4` as GitLab [stops supporting](https://about.gitlab.com/2018/01/22/gitlab-10-4-released/#api-v3) the v3 API in GitLab 11. If you have `/api/v3` in your current TeamCity configurations, they may stop working with GitLab 11\+, so consider changing the server URL to `api/v4`.
 
 For older versions of GitLab, use the GitLab URL of the format `http[s]://<hostname>[:<port>]/api/v3`.
-</note>
 
-<note>
-
-__Bitbucket__
+### Bitbucket
 
 Make sure that the [TeamCity server URL](configuring-server-url.md) is FQDN, for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111). Short names, for example, [`http://myteamcity:8111`](http://myteamcity:8111) are rejected by the Bitbucket API.   
 For Bitbucket Cloud team accounts, it is possible to use the team name as the username, and the API key as the password.
 
-</note>
-
-<note>
-
-__Gerrit__
+### Gerrit
 
 Commit Status Publisher in TeamCity 2018.1 supports Gerrit versions 2.6\+. For configuring integration with earlier Gerrit versions please contact our [support](https://confluence.jetbrains.com/display/TW/Feedback).
 
-</note>
 
-<note>
+### TFS/VSTS
 
-__TFS/VSTS__
-
-<note>
 
 In 2019, Visual Studio Team Services and Team Foundation Server have been renamed to Azure DevOps Services and Azure DevOps Server.
 
-</note>
-
 Personal Access Tokens can be used for authentication. If a [VSTS connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps+Services) is configured, the personal access token can be automatically filled from the project connection.
 
-</note>
+## Using Commit Status Publisher
 
-To use the tool:
 1. [Add the build feature](adding-build-features.md) to your build configuration.
 2. Use the default __All attached VCS roots__ option if you want Commit Status Publisher to attempt publishing statuses for commits in all attached VCS roots or select a single repository for publishing build statuses.
 3. Select your system as the publisher, and specify its connection details and credentials.
 4. Test the connection
 5. Save your settings.
 
-See the example below to configure sending the status of builds with changes included in your pull request from TeamCity to GitHub.
+## Example: Configuring Pull Requests Status Publishing to GitHub
+The example below demonstrates how to configure sending the status of builds with changes included in your pull request from TeamCity to GitHub.
 
-1. Configure the [branch specification](working-with-feature-branches.md) in your VCS Root ensuring that it includes pull requests. Detailed information is available in the Branch specification section of this TeamCity [blog post](http://blog.jetbrains.com/teamcity/2013/02/automatically-building-pull-requests-from-github-with-teamcity/).
-2. [Add the build feature](adding-build-features.md):
+1. Use [pull requests build feature](pull-requests.md) to configure pull requests branches. Alternatively you can make the branches available by configuring the [branch specification](working-with-feature-branches.md) in your VCS Root while ensuring that it includes pull requests branches (see also related [blog post](http://blog.jetbrains.com/teamcity/2013/02/automatically-building-pull-requests-from-github-with-teamcity/)).
+2. [Add](adding-build-features.md) the Commit Status Publisher build feature:
    * Use the default __All attached VCS roots__ option to publish statuses for commits in all attached VCS roots
    * Select GitHub as the publisher and specify its connection details and credentials and test the connection:   
    
