@@ -1,7 +1,6 @@
 [//]: # (title: Typed Parameters)
 [//]: # (auxiliary-id: Typed Parameters)
 
-
 When adding a [build parameter](configuring-build-parameters.md) (system property, environment variable or configuration parameter), you can extend its definition with a specification that will regulate parameter's control presentation and validation. This specification is the parameter's "meta" information that is used to display the parameter in the [Triggering a Custom Build](triggering-a-custom-build.md) dialog. It allows making a custom build run more user\-friendly and usable by non\-developers. Consider a simple example. You have a build configuration in which you have a monstrous\-looking build parameter that regulates if a build has to include a license or not; can be either true or false; and by default is false. It may be clear for a build engineer, which build parameter regulates license generation and which value it is to have, but it may not be obvious to a regular user.
 
 Using the build parameter's specification you can make your parameters more readable in the __Run Custom Build__ dialog.
@@ -31,7 +30,7 @@ The table below provides more details on each control type.
 
 <table><tr>
 
-<td>
+<td width="150">
 
 Type
 
@@ -68,7 +67,7 @@ Checkbox
 
 <td>
 
-True/false option represented by a check box
+True/false option represented by a checkbox
 
 
 </td></tr><tr>
@@ -105,7 +104,7 @@ Depending on the specification's type, there are additional settings.
 
 <table>
 
-<tr><td></td><td></td></tr>
+<tr><td width="150"></td><td></td></tr>
 
 <tr>
 

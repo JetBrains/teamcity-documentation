@@ -60,9 +60,9 @@ The one listed as `rdp-tcp#*` is the remote desktop connection which can be redi
 An unsupervised computer with a running desktop permanently logged into a user session might be considered a network security threat, as access to it can be difficult to trace. Therefore, it is recommended to run automated GUI and browser tests on a virtual machine isolated from sensitive corporate network resources, e.g. on a machine not included in a Windows domain.
 </note>
 
-#### Issues with . Net Selenium 
+#### Issues with .NET Selenium 
 
-When a TeamCity agent is started as a Windows service and automated tests for .Net applications use Selenium WebDriver, the tests may fail due to browser drivers limitations. As a solution, consider starting the agent [manually](setting-up-and-running-additional-build-agents.md#Manual+Start).
+When a TeamCity agent is started as a Windows service and automated tests for .NET applications use Selenium WebDriver, the tests may fail due to browser drivers limitations. As a solution, consider starting the agent [manually](setting-up-and-running-additional-build-agents.md#Manual+Start).
 
 
 ### Early start of the service before other resources are initialized
@@ -70,8 +70,6 @@ When a TeamCity agent is started as a Windows service and automated tests for .N
 To handle this, consider using the __Automatic (Delayed Start)__ option of the service settings or configure [service dependencies](http://youtrack.jetbrains.com/issue/TW-32987#comment=27-608269).
 
  For more investigation steps, see the [Common Problems](common-problems.md#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) page.
- 
- 
 
 ## java.lang.OutOfMemoryError: unable to create new native thread error
 
@@ -81,12 +79,9 @@ Increasing the limit (e.g. to 4096) on the TeamCity server should solve the issu
 
 See also this [external posting](https://www.elastic.co/blog/we-are-out-of-memory-systemd-process-limits).
 
-
-
 ## Clearing Browser Caсhes
 
 There is a web UI\-related issue which some our users have encountered (and it cannot be reproduced on other computers) which is tied to the cached versions of content. If you have come across such problem, make sure your browser does not use cached versions of content by [clearing browser caches](http://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache).
-
 
 ## Logging with Log4j in Your Tests
 
@@ -126,13 +121,11 @@ set ERROR_CODE=1
 
 ```
 
-
-
 ## Conflicting Software
 
 Most common indicators of conflicting software are errors like "Access is denied", "Permission denied" or java.io.FileNotFoundException mentioning the file that is present and is writable by the user the agent/build runs under. Also, certain software running in background (like antiviruses) can significantly slow down build agent operations like sources checkout, artifact publishing or even build running.
 
-Certain antivirus software like Kaspersky Internet Security can result in Java process crashes or other misbehavior like inability to access files. e.g. see [the issue](http://jetbrains.net/tracker/issue/TW-7138).
+Certain antivirus software like Kaspersky Internet Security can result in Java process crashes or other misbehavior like inability to access files. For example, see [the issue](http://jetbrains.net/tracker/issue/TW-7138).
 
 ESET antivirus can also slow down Ant/IntelliJ IDEA project builds a great deal (slowing down TCP connections to localhost on agent).
 
@@ -367,7 +360,6 @@ Any of the two workarounds listed below will make the connection between TeamCit
     The `jsse.enableCBCProtection` Java system property is also available in all _OpenJDK_ 8 versions and _IBM J9_ [8.0.0 SR1](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.security.component.80.doc/security-component/jsse2Docs/beast.html) and later.
     Secure connection between _TeamCity_ and _Microsoft SQL Server_ would be stable but still vulnerable to [CVE-2011-3389](https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3389) also known as _BEAST_.  
 * Fall back to a stream cipher (which is not susceptible to _BEAST_) such as `RC4_128`. This will render the connection vulnerable to [CVE-2015-2808](https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2015-2808).
- 
 
 Try running with antivirus software uninstalled before reporting the issue to JetBrains. For example, see [the issue](http://jetbrains.net/tracker/issue/TW-7138).
 
@@ -393,7 +385,6 @@ Problems common to TeamCity Docker container images.
         
     ```
 
-
 * On Windows 10 containers work via Hyper-V and may experience problems with network and other subsystems. To diagnose these problems, execute the following PowerShell script:
 
     ```Shell
@@ -412,7 +403,6 @@ More details on troubleshooting Docker for Windows are available in the [Docker]
 ### Information about installed Docker server OS on Windows missing on Agent
 
 On Windows 10, the Docker server depends on Hyper\-V service and its start may take a significant amount of time. To resolve the issue, configure the TCBuildAgent Windows service to depend on the Docker for Windows Service, "com.docker.service" by default.
-
 
 ### Linux Docker Containers under Windows
 
@@ -434,23 +424,39 @@ When Docker is starting Windows containers with __process isolation__, it uses a
 
 To resolve this issue, grant the "Full control" permission to the "Authenticated Users" group for the `%\\PROGRAMDATA%\\docker\volumes` directory.
 
-## 2019.1.4 Known Issues
+## dotCover does not support Windows Nano Server
 
-### Unavailable Default Credential Provider Chain option for Amazon ECR
+If you try to run dotCover on an agent with the Nano Server OS, the build will fail with an exit error "_Process exited with code -1073741515_". Instead of Nano Server, consider using [Server Core](https://docs.microsoft.com/en-us/windows-server/administration/server-core/what-is-server-core) which is an alternative minimal installation option of Windows Server.
+
+## Xcode 10 is unable to clean artifacts in custom output directory
+
+If you use a custom output directory for Xcode, note that on upgrading to Xcode 10, TeamCity builds with the Xcode Project build runner might fail with the error: "_Could not delete \<directory\> because it was not created by the build system and it is not a subfolder of derived data."_
+
+This is caused by the following Xcode 10 known issue:   
+When performing `xcodebuild clean` on a project that uses a customized build location outside the derived data directory, and that has older build products produced prior to Xcode 10, Xcode might report an error indicating that it won't delete directories not created by the new build system. (40427159)   
+See [Xcode documentation](https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes/build_system_release_notes_for_xcode_10) for details.
+
+To resolve this issue, we suggest that you use Xcode 11 instead. To workaround this issue in Xcode 10, you can either clean the output directory manually or try using the previous build system by passing `-UseNewBuildSystem=NO` to command line parameters.
+
+## Issues per TeamCity versions
+
+### 2019.1.4 Known Issues
+
+#### Unavailable Default Credential Provider Chain option for Amazon ECR
+
+_This issue has been fixed in TeamCity 2019.1.5._
 
 Due to recent changes in our Docker Support plugin, the "[Default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default)" option becomes unavailable in the Amazon ECR connection settings.
 
 If this option was previously enabled in some ECR connection and you make any changes to this connection, the state of this option will be automatically set to `false`. When any build will try to use this connection, it will fail to start with the "_Access key cannot be null_" error.
 
-__This issue has been fixed in TeamCity 2019.1.5__.
-
 To workaround this problem without upgrading to 2019.1.5, download the fixed Docker Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62595#focus=streamItem-27-3749459.0-0) and upload it on the __Server Administration | Plugins List__ page.
 
-### Missing packages in NuGet feed
+#### Missing packages in NuGet feed
+
+_This issue has been fixed in TeamCity 2019.1.5._
 
 In certain cases, when a build is supposed to create and publish several NuGet packages to a NuGet feed, and the package indexing is enabled, some packages might not be published to the feed. This problem is caused by recent changes in [NuGet Packages Indexer](nuget-packages-indexer.md).
-
-__This issue has been fixed in TeamCity 2019.1.5__.
 
 To workaround this problem without upgrading to 2019.1.5, download the fixed NuGet Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62545#focus=streamItem-27-3754398.0-0) and upload it on the __Server Administration | Plugins List__ page.
 

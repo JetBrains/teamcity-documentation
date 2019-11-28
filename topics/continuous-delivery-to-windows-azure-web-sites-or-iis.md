@@ -1,5 +1,5 @@
 [//]: # (title: Continuous Delivery to Windows Azure Web Sites (or IIS))
-[//]: # (auxiliary-id: viewpage.actionpageId113084596)
+[//]: # (auxiliary-id: viewpage.actionpageId113084596;Continuous Delivery to Windows Azure Web Sites (or IIS))
 
 <note>
 

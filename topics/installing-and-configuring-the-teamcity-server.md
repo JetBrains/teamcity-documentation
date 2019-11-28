@@ -61,8 +61,7 @@ Make sure the user account specified for the service has:
 * log on as service right ([related Microsoft page](https://technet.microsoft.com/en-us/library/cc794944%28v=ws.10%29.aspx))
 * write permissions for the [TeamCity Data Directory](teamcity-data-directory.md),
 * write permissions for the [TeamCity Home](teamcity-home-directory.md), i.e. directory where TeamCity was installed,
-* all the necessary permissions to work with the source controls used. This includes: * access to Microsoft Visual SourceSafe database (if [Visual SourceSafe](visual-sourcesafe.md) integration is used).
-* the user, under whose account the TeamCity server service runs, and ClearCase view owner are the same (if the [ClearCase](clearcase.md) integration is used).
+* all the necessary permissions to work with the external systems like version controls, etc.
 
 By default, the Windows service is installed under the SYSTEM account. To change it, use the Services applet (__Control Panel | Administrative Tools | Services__).
 
