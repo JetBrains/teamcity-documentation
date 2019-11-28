@@ -25,6 +25,7 @@ To start working with Kotlin DSL, create an empty sandbox project on your server
 You might not be able to edit a project in the web UI right after enabling Kotlin for the project settings. TeamCity needs to detect its own commit in the repository, and only after that editing will be enabled. Usually it takes a minute or two.
 </note>
 
+<anchor name="contextParameters"/>
 <anchor name="portableDSL"/>
 
 ### Project Settings Structure
