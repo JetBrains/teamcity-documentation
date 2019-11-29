@@ -317,7 +317,7 @@ mvn -Dtext=<text to scramble> org.jetbrains.teamcity:teamcity-configs-maven-plug
 
 __Since TeamCity 2017.1__
 
-_Solution_: Use tokens instead of passwords. Refer to the [related section](storing-project-settings-in-version-control.md#Generating+Tokens).
+_Solution_: Use tokens instead of passwords. Refer to the [related section](storing-project-settings-in-version-control.md#Managing+Tokens).
 
 
 

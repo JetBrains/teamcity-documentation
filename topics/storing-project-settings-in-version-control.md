@@ -84,21 +84,20 @@ If this option is disabled, the [security implications](#Implications+of+Storing
 
 <anchor name="tokensGen"/>
 
-### Generating Tokens
+### Managing Tokens
 [//]: # (AltHead: tokensGen)
 
 If you need to add a secure value to the versioned settings not via the TeamCity UI (for example, via Kotlin DSL), you can generate a token to be used instead of this secure value.   
 In the __Project Settings__, select _Generate token for a secure value_ in the __Actions__ drop-down menu. Enter the secure value and click __Generate Token__. The generated token will be stored on the server. You can copy and use it in the project configuration files instead of the secure value.
 
-__Since TeamCity 2019.2__,  you can generate new tokens on the __Tokens__ tab of the project __Versioned Settings__ section. The tab is available for projects with enabled [synchronization of versioned settings](#Synchronizing+Settings+with+VCS).
+Since TeamCity 2019.2, you can also generate new secure tokens on the __Tokens__ tab of the project __Versioned Settings__ section. The tab is available for projects with the enabled "_[Store secure values outside of VCS](#Storing+Secure+Settings)_" option.
 
-The __Tokens__ tab allows you to view and copy existing project tokens, or edit their values. This way, if a project uses external configuration files that reference a secure value via its token, and this value gets lost (for example, when moving a project to another place in the hierarchy or when migrating to a new TeamCity server), you can add a new value for the token on this tab.
+The __Tokens__ tab allows viewing and copying all the project tokens, and access unused project tokens. When secure data of a project is stored outside of the Version Control System, it could potentially be detached from the project: for example, when a project with tokens is moved to another place in the hierarchy or created from DSL on the new TeamCity server. As a result, the project will not be able to use tokens detached from their secure values, but now you can specify values for missing tokens on this tab.
 
-<img src="tokens-tab.png" alt="Versioned Settings| Tokens" width="1033"/>
+<img src="tokens-tab.png" alt="Versioned Settings| Tokens" width="1200"/>
 
 Currently, passwords are not inheritable by projects hierarchy. If a setting in a project (VCS root, OAuth connection, cloud profile) requires a password, the token generated for this password can be used in this project only. For instance, it is not possible use a generated token in a similar setting in a subproject. A new token should be generated in this case.   
 If you need to use a secure value in the nested projects, consider adding a [password parameter](typed-parameters.md#Adding+Parameter+Specification) with the secure value and using a [reference](configuring-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) to the parameter in the nested projects.
-
 
 ### Implications of Storing Security Data in VCS 
 
