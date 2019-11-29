@@ -74,7 +74,7 @@ For the __Artifacts__ level you can also specify the patterns for the artifact n
 
 There are builds that preserve all their data and are not affected during cleanup. These are:
 * [pinned builds](pinned-build.md);
-* builds used as an [artifact of shanpshot dependency](configuring-dependencies.md) in other builds when the "Prevent clean-up" option for dependencies is enabled in the build configuration. See [Clean-Up for Dependent Builds](#Clean-up+for+Dependent+Builds) below. Such builds are marked with the ![link.png](link.png) icon in the build history list;
+* builds used as an [artifact of snapshot dependency](configuring-dependencies.md) in other builds when the "Prevent clean-up" option for dependencies is enabled in the build configuration. See [Clean-Up for Dependent Builds](#Clean-up+for+Dependent+Builds) below. Such builds are marked with the ![link.png](link.png) icon in the build history list;
 * builds of build configurations that were deleted less than one day ago.
 
 [//]: # (Internal note. Do not delete. "Clean-Upd55e230.txt")    
