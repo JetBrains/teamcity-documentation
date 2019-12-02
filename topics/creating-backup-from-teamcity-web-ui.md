@@ -1,5 +1,6 @@
 [//]: # (title: Creating Backup from TeamCity Web UI)
 [//]: # (auxiliary-id: Creating Backup from TeamCity Web UI)
+
 TeamCity allows creating a backup of TeamCity data via the Web UI. To create a backup file, navigate to the __Administration | Backup__ page, specify backup parameters as described below, and start the backup process.
 
 <table><tr>
@@ -27,7 +28,7 @@ Backup file
 
 <td>
 
-Specify the name for the backup file, the extention (.zip) will be added automatically. By default, TeamCity will store the backup file in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/backup  folder. For security reasons you cannot explicitly change this path in the UI. To modify this setting, specify an absolute or relative path (the path should be relative to [TeamCity Data Directory](teamcity-data-directory.md)) in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/backup-config.xml file. For example:
+Specify the name for the backup file, the extention (`.zip`) will be added automatically. By default, TeamCity will store the backup file in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/backup directory. For security reasons, you cannot explicitly change this path in the UI. To modify this setting, specify an absolute or relative path (the path should be relative to [TeamCity Data Directory](teamcity-data-directory.md)) in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/backup-config.xml file. For example:
 
 
 ```Shell
@@ -40,15 +41,11 @@ Specify the name for the backup file, the extention (.zip) will be added automat
 </backup-settings>
 ```
 
-
-
-
 </td></tr><tr>
 
 <td>
 
 add timestamp suffix
-
 
 </td>
 
@@ -58,8 +55,8 @@ Check this option to automatically add time stamp suffix to the specified filena
 
 <note>
 
-* If the directory where backup files are stored already contains a file with the name specified above, TeamCity won't run backup \- you will need either to specify another name, or enable _time stamp suffix_ option, which allows you to avoid this.
-* Time stamp suffix has specific format: sorting backup files alphabetically will also sort them chronologically.
+* If the directory where backup files are stored already contains a file with the name specified above, TeamCity won't run backup: you will need either to specify another name, or enable _time stamp suffix_ option, which allows you to avoid this.
+* Time stamp suffix has a specific format: sorting backup files alphabetically will also sort them chronologically.
 </note>
 
 
@@ -68,7 +65,6 @@ Check this option to automatically add time stamp suffix to the specified filena
 <td>
 
 Backup scope
-
 
 </td>
 
@@ -80,12 +76,12 @@ To reduce the resulting file size and the time spent on the backup, select the "
 
 For the full backup suitable for most of the needs, it is recommended to use the Custom scope with all the items selected except for "build logs" and then backup the \<[TeamCity Data Directory](teamcity-data-directory.md)&gt;/system/artifacts location as a usual file system.
 
-Build artifacts are not included into the backup due to their size. It is recommended to either backup the [artifacts directories](teamcity-configuration-and-maintenance.md) separately or use a redundant storage for the artifacts. Build logs are stored as a part of build artifacts, so there is no need to backup the build logs if you implement a separate backup of the artifacts locations.
+Build artifacts are not included into the backup due to their size. It is recommended to either backup the [artifacts directories](teamcity-configuration-and-maintenance.md) separately or use a redundant storage for the artifacts. Build logs are stored as a part of build artifacts, so there is no need to back up the build logs if you implement a separate backup of the artifacts locations.
 
 
 </td></tr></table>
 
-When you start backup, TeamCity will display its status and details of the current process including progress and estimates.
+When you start the backup, TeamCity will display its status and details of the current process including progress and estimates.
 
 <note>
 
@@ -97,13 +93,12 @@ __Important Note__
 
 </note>
 
- 
 
 ### Backup History
 
 The __History__ tab of the __Administration | Backup__ page  allows reviewing the list of created backup files, their size and date when the files were created.
 
- Note that only backup files created from web UI are shown here. Backups created with the [utility](creating-backup-via-maintaindb-command-line-tool.md) are not displayed on the __History__ tab.
+Note that only backup files created from web UI are shown here. Backups created with the [utility](creating-backup-via-maintaindb-command-line-tool.md) are not displayed on the __History__ tab.
 
  __  __
 

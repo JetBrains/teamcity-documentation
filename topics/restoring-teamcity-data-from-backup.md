@@ -1,9 +1,13 @@
 [//]: # (title: Restoring TeamCity Data from Backup)
 [//]: # (auxiliary-id: Restoring TeamCity Data from Backup)
 
-<tag-list of="chapter" mode="tree" />
+TeamCity administrators are able to restore [backed up data](creating-backup-via-maintaindb-command-line-tool.md) via the TeamCity UI or by manually using the `maintainDB` command-line utility.
 
-TeamCity administrators are able to restore [backed up data](creating-backup-via-maintaindb-command-line-tool.md) using the `maintainDB` command\-line utility.
+On this page:
+
+<tag-list of="chapter" mode="tree" depth="4"/>
+
+## Before restoring
 
 <note>
 
@@ -12,12 +16,11 @@ __Server Copying__
 If you are creating a copy of the server, make sure to go through [copied server checklist](how-to.md#Copied+Server+Checklist) after restoration.
 </note>
 
-
 You can restore backed up data into the same or a different database; from/to any of the [supported databases](supported-platforms-and-environments.md#Supported+Databases) (for example, you can restore data from a HSQL database to a PostgreSQL database, as well as restore a backup of a PostgreSQL database to a new PostgreSQL database).
 
 A newer version of TeamCity can be used to restore the backup created with any previous TeamCity version (provided that the TeamCity version is later than 6.0).
 
-During restoration of a large database you might want to configure database\-specific settings to make the bulk data changes faster (like setting SQL Server "Recovery Model" to "Simple"). Consult your DBA for more details.
+During restoration of a large database you might want to configure database-specific settings to make the bulk data changes faster (like setting SQL Server "Recovery Model" to "Simple"). Consult your DBA for more details.
 
 A TeamCity backup file __does not contain build artifacts__, so to get the server with all the same important data you need to restore from a backup file (at least settings and database) and copy the build logs and artifacts (located in `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system/artifacts` by [default](build-artifact.md)) from an old to the new Data Directory manually. The general compatibility rule of the data under `system/artifacts` is that files created by older TeamCity versions can be read by newer versions, but not necessarily vice versa.
 
@@ -25,14 +28,22 @@ When [external artifacts storage](configuring-artifacts-storage.md#External+Arti
 
 See also details on the directories in the [TeamCity Data Directory](teamcity-data-directory.md) description.
 
-### Performing restore
+## Performing restore
 
-This document describes __only some__ of the `maintainDB` options. For the complete list of all available options, run `maintainDB` from the command line with no parameters. See also maintainDB [startup options](creating-backup-via-maintaindb-command-line-tool.md#maintainDB+Startup+Options).
+Since version 2019.2, TeamCity can automatically restore the backed up data. It also relies on the maintainDB utility, but performs all the necessary operations under the hood. To restore the backed up files on the first start of the TeamCity server:
+1. On the _TeamCity First Start_ step of the browser dialog, click __Restore from backup__.
+2. Enter an absolute path to the backup directory or upload a ZIP archive with the backed up data.
+3. Choose the target database and update it to the current version, if proposed by TeamCity. If you use an external database, configure its address and credentials.
+4. Proceed with the restoration.
 
-To perform restore from a backup file:
+TeamCity will restore the data and display the maintainDB utility log.
+
+Alternatively, you can use the maintainDB utility manually. This section describes __only some__ of the `maintainDB` options. For the complete list of all available options, run `maintainDB` from the command line with no parameters. See also maintainDB [startup options](creating-backup-via-maintaindb-command-line-tool.md#maintainDB+Startup+Options).
+
+To perform restore from a backup file via maintainDB:
 1. Install the TeamCity server from a `tar.gz` or `.exe` installation package. Do not start the TeamCity server.
 2. Create a new empty [TeamCity Data Directory](teamcity-data-directory.md).
-3. Select one of the options:   
+3. Choose one of the options:   
     * To restore the backup into a __new external database__, [create and configure an empty database](setting-up-an-external-database.md), configure a `database.properties` file with the database settings to be passed to the `restore` command later on and either place it into the `/config` subdirectory of the newly created [TeamCity Data Directory](teamcity-data-directory.md) or anywhere on your file system outside the TeamCity Data Directory.   
     * To restore the data into the __same database the backup was created from__, proceed to the next step.   
 4. Place the required [database drivers](setting-up-an-external-database.md#Database-specific+Steps) into the `lib/jdbc` subdirectory of the newly created [TeamCity Data Directory](teamcity-data-directory.md) directory.
@@ -40,13 +51,13 @@ To perform restore from a backup file:
 
     a. To restore the backup into a __new external database__
     
-    \- if the  `database.properties` file is in the TeamCity Data Directory:
+    – if the  `database.properties` file is in the TeamCity Data Directory:
     
     ```Plain Text
     maintainDB.[cmd|sh] restore -A <absolute path to the newly created TeamCity Data Directory> -F <path to the TeamCity backup file> -T <config/database.properties>
     ``` 
     
-   \- if the `database.properties` file is outside the TeamCity Data Directory:
+   – if the `database.properties` file is outside the TeamCity Data Directory:
     
     ```Plain Text
     maintainDB.[cmd|sh] restore -A <absolute path to the newly created TeamCity Data Directory> -F <path to the TeamCity backup file> -T <absolute path to the database.properties file of the target database on the file system outside data dir>
@@ -69,7 +80,6 @@ To perform restore from a backup file:
 6. If the process completes successfully, to __complete the restoration__ you need to __copy__ over \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/artifacts from the old directory. The directory stores build artifacts and those are not included into the backup file.
 
  
-
 Notes on the `restore` command options:
 * The `-A` argument can be omitted if you have the [`TEAMCITY_DATA_PATH`](teamcity-data-directory.md) environment variable set.
 * The `-F` argument can be an absolute path or a path relative to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/backup directory.
@@ -81,7 +91,7 @@ Notes on the `restore` command options:
 To get the reference for the available options of `maintainDB`, run the utility without any command or option.
 </tip>
 
-### Restoring database only
+## Restoring database only
 
 When restoring the database but preserving the more recent TeamCity Data Directory, it is important to make sure the data is consistent:
 * \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/pluginData (_supplementary data_) should be restored as well to be consistent with the data stored in the database
@@ -102,11 +112,12 @@ To restore a TeamCity database only from a backup file to an existing server:
 6. See the `maintainDB` utility console output. You may have to copy the `database.properties` file manually if requested.
 7. Delete the contents of the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/caches directory.
 
-### Resuming restore after interruption
+## Resuming restore after interruption
 
 The restore may be interrupted due to the following reasons:
 * Lack of space on the file system or in the database
-* Insufficient permissions to the file system or the database.
+* Insufficient permissions to the file system or the database
+
 The interruption occurs when one of tables or indexes failed to be restored, which is indicated in the `maintainDB` utility console output.   
 __Before resuming the restore__, manually delete the incorrectly restored object from the database.
 

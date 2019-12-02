@@ -1,7 +1,7 @@
 [//]: # (title: Creating Backup via maintainDB command-line tool)
 [//]: # (auxiliary-id: Creating Backup via maintainDB command-line tool)
 
-TeamCity [.tar.gz and .exe distributions](installing-and-configuring-the-teamcity-server.md) provide the `maintainDB.bat|sh` utility located in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>/bin` directory.  This command\-line tool enables you to back up the server data, [restore it](restoring-teamcity-data-from-backup.md), and [migrate between different databases](migrating-to-an-external-database.md). You can also create data backup using [web UI](creating-backup-from-teamcity-web-ui.md).
+TeamCity [.tar.gz and .exe distributions](installing-and-configuring-the-teamcity-server.md) provide the `maintainDB.bat|sh` utility located in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>/bin` directory. This command-line tool enables you to back up the server data, [restore it](restoring-teamcity-data-from-backup.md), and [migrate between different databases](migrating-to-an-external-database.md). You can also create data backup using [web UI](creating-backup-from-teamcity-web-ui.md).
 
 <tag-list of="chapter" mode="tree" depth="4"/>
 
@@ -31,8 +31,6 @@ __To create data backup file__, from the command line start `maintainDB` utility
 maintainDB.[cmd|sh] backup
 ```
 
-
-
 TeamCity data backup has [some limitations](teamcity-data-backup.md#Backing+up+Data). By default, if you run `maintainDB` utility with no optional parameters,  only the database, server settings, projects and builds configurations, plugins and supplementary data (settings history, triggers states, plugins data, and so on) will be backed up, omitting build logs and personal changes.
 
 ### Configuring backup scope
@@ -50,18 +48,11 @@ Specifying different combinations of the above options, you can control the cont
 maintainDB backup -C -D -L -P -U
 ```
 
-
-
-
 [//]: # (Internal note. Do not delete. "Creating Backup via maintainDB command-line toold102e196.txt")    
-
-
-
 
 ### maintainDB Usage Examples for Data Backup
 
 __To create backup file with custom name__, run maintainDB with `-F` or `--backup-file` option and specify desired backup file name without extension:
-
 
 ```Plain Text
 maintainDB.cmd backup -F <backup file custom name>
@@ -70,10 +61,7 @@ maintainDB.cmd backup --backup-file <backup file custom name>
 
 ```
 
-
 Executing the command above will create a new zip\-file with the specified name in the default backup directory.
-
-
 
 __To add the timestamp suffix to a custom filename__, add `-M` or `--timestamp` option:
 
@@ -85,9 +73,7 @@ maintainDB.cmd backup -F <backup file custom name> --timestamp
 
 ```
 
-
 __To create the backup file in a custom directory__, run maintainDB with the `-F` option:
-
 
 ```Plain Text
 maintainDB backup -F <absolute path to the custom backup directory>
@@ -95,12 +81,9 @@ or
 maintainDB backup --data-dir <absolute path to the custom backup directory>
 ```
 
-
-
 ## maintainDB Startup Options
 
 If you customize TeamCity server startup options via `TEAMCITY_SERVER_OPTS/TEAMCITY_SERVER_MEM_OPTS` environment variables or use custom JDK installation to run the server, you might need to run `maintainDB` script with related options added into `TEAMCITY_MAINTAINDB_OPTS/TEAMCITY_MAINTAINDB_MEM_OPTS` environment variables and run the script with all the same environment as the TeamCity server, so that the same JVM is used.
- 
  
  __  __
 
