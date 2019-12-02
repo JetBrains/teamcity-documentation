@@ -1,9 +1,9 @@
 [//]: # (title: Branch Remote Run Trigger)
 [//]: # (auxiliary-id: Branch Remote Run Trigger)
 
-A _Branch Remote Run Trigger_ automatically starts a new [Personal Build](personal-build.md) each time TeamCity detects changes in particular branches of the VCS roots of the build configuration. At the moment, the Trigger supports only Git and Mercurial VCSes.
+The _branch remote run trigger_ automatically starts a new [Personal Build](personal-build.md) each time TeamCity detects changes in particular branches of the VCS roots of the build configuration. At the moment, the branch remote run trigger supports only Git and Mercurial VCSs.
 
-For non-personal builds off branches, see [Working with Feature Branches](working-with-feature-branches.md). When `branch specification` is configured for a VCS root, Branch Remote Run Trigger only processes branches not matched by the specification.
+For non-personal builds off branches, see [Working with Feature Branches](working-with-feature-branches.md). When `branch specification` is configured for a VCS root, the branch remote run trigger only processes branches not matched by the specification.
 
 A trigger monitors branches with names that match specific patterns.    
 Default patterns are:

@@ -120,7 +120,7 @@ Limit the set of branches the trigger should be applied to.
 
 <td>
 
-Retry build triggers
+[Retry build triggers](configuring-retry-build-trigger.md)
 
 </td>
 

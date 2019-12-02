@@ -1,6 +1,7 @@
 [//]: # (title: NuGet Dependency Trigger)
 [//]: # (auxiliary-id: NuGet Dependency Trigger)
-The NuGet Dependency Trigger allows starting a new build if a NuGet packages update is detected in the NuGet repository.
+
+The _NuGet dependency trigger_ allows starting a new build if a NuGet packages update is detected in the NuGet repository.
 
 ## Requirements and limitations
 

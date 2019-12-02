@@ -294,6 +294,7 @@
                   <toc-element id="configuring-maven-triggers.md"/>
                   <toc-element id="nuget-dependency-trigger.md"/>
                   <toc-element id="configuring-finish-build-trigger.md"/>
+                  <toc-element id="configuring-retry-build-trigger.md"/>
                </toc-element>
                <toc-element id="configuring-dependencies.md">
                   <toc-element id="artifact-dependencies.md"/>
