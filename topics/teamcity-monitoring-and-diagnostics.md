@@ -55,6 +55,17 @@ This tab displays the information on the monitored VCS roots, including their ch
 
 You can filter the available VCS roots by the checking for changes duration.
 
+## Metrics
+
+Since version 2019.2, TeamCity provides server load metrics in a [Prometheus](https://prometheus.io/) format, ready for importing to monitoring solutions with a Prometheus support (for example, to [Grafana](https://grafana.com/)). Note that server metrics can be obtained only by a user with the "_View usage statistics_" permission.
+
+
+The __Metrics__ tab displays all supported metrics, their `tag` parameters, and current values.
+
+You can optionally display experimental metrics on this tab. Note that they are still a work in progress – we suggest that you use them for rough estimation only.
+
+By clicking _Server Load Metrics_, you can get to the metrics endpoint: `<teamcity-host>:<port>/app/metrics`. To access experimental metrics, add the `?experimental=true` parameter to the endpoint URL.
+
 ## Server Logs
 
 This tab allows you to view and download the available [TeamCity server logs](teamcity-server-logs.md), as well as saved thread dumps and memory dumps.
