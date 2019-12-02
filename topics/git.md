@@ -2,7 +2,6 @@
 [//]: # (auxiliary-id: Git)
 [//]: # (Internal note. Do not delete. "Gitd153e3.txt" "Git \(JetBrains\)d152e3.txt")  
  
-
 TeamCity supports Git out of the box. Git source control with Azure DevOps Services is supported (see authentication notes [below](#Authenticating+to+Azure+DevOps+Services)).
 
 This page contains description of the Git\-specific fields of the VCS root settings.    
@@ -85,7 +84,7 @@ Configures [default branch](working-with-feature-branches.md#Default+branch). Pa
 
 <note>
 
-You can configure Git\-plugin to fetch all heads by [adding a build configuration parameter](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) `teamcity.git.fetchAllHeads=true`.
+You can configure Git-plugin to fetch all heads by [adding a build configuration parameter](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) `teamcity.git.fetchAllHeads=true`.
 </note>
 
 
@@ -419,8 +418,8 @@ TeamCity can automatically run git gc periodically when native Git client can be
 To fix the warning / meet automatic git gc requirements, perform the following:
 1. Install a native Git client manually on the TeamCity server.
 2. Specify path to the Git executable:
-   * add the drectory with the executable to the `Path` environment variable and restart the server, _or_
-   * set the full path to the directory in the `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) without the server restart.
+   * Add the drectory with the executable to the `Path` environment variable and restart the server, _or_
+   * Set the full path to the directory in the `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) without the server restart.
    
 When TeamCity runs Git garbage collection, the details are logged into the [`teamcity-cleanup.log`](teamcity-server-logs.md). If git garbage collection fails, a corresponding warning is displayed.
 
@@ -500,7 +499,7 @@ The idle timeout for communication with the remote repository. If no data were s
 
 <td>
 
-(deprecated) Override of `teamcity.git.idle.timeout.seconds` for git fetch operation
+(deprecated) Override of `teamcity.git.idle.timeout.seconds` for the `git fetch` operation
 
 
 </td></tr><tr>
@@ -521,15 +520,16 @@ true
 
 <td>
 
-Defines whether TeamCity runs git fetch in a separate process
+Defines whether TeamCity runs `git fetch` in a separate process
 
 
 </td></tr><tr>
 
 <td>
 
-`teamcity.git.fetch.process.max.memory`
+<anchor name="max-memory"/>
 
+`teamcity.git.fetch.process.max.memory`
 
 </td>
 
@@ -537,20 +537,49 @@ Defines whether TeamCity runs git fetch in a separate process
 
 512M
 
+</td>
+
+<td>
+
+<note>
+
+It is recommended to disable this property, so TeamCity can automatically manage the amount of memory used by the `git fecth` process. Instead this option, use [`teamcity.git.fetch.process.max.memory.limit`](#max-memory-limit) to set `-Xmx` for `git fetch`.
+
+</note>
+
+The value of the JVM `-Xmx` parameter for a separate fetch process. Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch`, each using the configured amount of the memory.   
+For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) may be needed.
+
+
+</td></tr>
+
+<tr>
+
+<td>
+
+<anchor name="max-memory-limit"/>
+
+`teamcity.git.fetch.process.max.memory.limit`
 
 </td>
 
 <td>
 
-The value of the JVM \-Xmx parameter for a separate fetch process. You also need to ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing git fetch and each using the configured amount of the memory.
 
-<note>
+</td>
+<td>
 
-For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) may be needed.
-</note>
+The value of the JVM `-Xmx` parameter for a separate fetch process.
+
+TeamCity uses a nested Java process for `git fetch` and automatically selects the memory settings for this process. This property sets a maximum amount of available memory for `get fetch` in each VCS root. It comes into effect only if the `teamcity.git.fetch.process.max.memory` is disabled.
+
+</td>
 
 
-</td></tr><tr>
+</tr>
+
+
+<tr>
 
 <td>
 
@@ -691,7 +720,7 @@ true
 
 <td>
 
-Git\-plugin builds patches in a separate process, set it to false to build patch in the server process. To build patch git\-plugin has to read repository files into memory. To not run out of memory git\-plugin reads only objects of size smaller than the threshold, for larger objects streams are used and they can be slow ([TW-14947](http://youtrack.jetbrains.com/issue/TW-14947)). With patch building in a separate process all objects are read into memory. Patch process uses the memory settings of the separate fetch process.
+Git-plugin builds patches in a separate process, set it to false to build patch in the server process. To build patch, git-plugin has to read repository files into memory. To not run out of memory git-plugin reads only objects of size smaller than the threshold, for larger objects streams are used and they can be slow ([TW-14947](http://youtrack.jetbrains.com/issue/TW-14947)). With patch building in a separate process all objects are read into memory. Patch process uses the memory settings of the separate fetch process.
 
 
 </td></tr><tr>
@@ -887,10 +916,7 @@ false
 
 <td>
 
-
-
-_TeamCity checks the state of this property only if the "_Use mirrors_" option is disabled in the VCS root settings and `teamcity.git.use.local.mirrors` is set to `true`._
-
+_TeamCity checks the state of this property only if the "Use mirrors" option is disabled in the VCS root settings and `teamcity.git.use.local.mirrors` is set to `true`._
 
 If `teamcity.git.use.shallow.clone` is set to `true`, TeamCity will only clone the last version of the repository. This is equal to creating a _shallow_ clone, which means setting the [depth](https://git-scm.com/docs/git-clone#Documentation/git-clone.txt---depthltdepthgt) of the `git clone` operation to `1`.
 
@@ -977,7 +1003,7 @@ When checkout on agent: whether TeamCity should use native SSH implementation.
 
 <td>
 
-The idle timeout for the git fetch operation when the agent\-side checkout is used. The fetch is terminated if there is no output from the fetch process during this time. Prior to 8.0.4 the default was 600.
+The idle timeout for the `git fetch` operation when the agent-side checkout is used. The fetch is terminated if there is no output from the fetch process during this time. Prior to 8.0.4 the default was 600.
 
 
 </td></tr></table>
@@ -998,17 +1024,18 @@ When using checkout on an agent, a limited subset of [checkout rules](vcs-checko
 
 
 
-An __unsupported__ rule example is  `+:some/dir=>some/otherDir`.
+An __unsupported__ rule example is `+:some/dir=>some/otherDir`.
 
 ## Known Issues
 
-* `java.lang.OutOfMemoryError` while fetch repository. Usually occurs when there are large files in the repository. By default, TeamCity runs fetch in a separate process. To increase memory available to this process, change the teamcity.git.fetch.process.max.memory internal property (see description of this property [above](#Internal+Properties)).
-* Teamcity run as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using `teamcity-server.bat`.
-* inflation using streams in JGit prevents `OutOfMemoryError`, but can be time\-consuming (see the related thread at [jgit-dev](http://dev.eclipse.org/mhonarc/lists/jgit-dev/msg00687.html) for details and the [TW-14947](http://youtrack.jetbrains.net/issue/TW-14947) issue related to the problem). If you meet conditions similar to those described in the issue, try to increase `teamcity.git.stream.file.threshold.mb`. Additionally, it is recommended to increase the overall amount of memory dedicated for TeamCity to prevent `OutOfMemoryError`.
+* `java.lang.OutOfMemoryError` while fetching from a repository. Usually occurs when there are large files in the repository and if the [`teamcity.git.fetch.process.max.memory`](#max-memory) internal property is defined. Since TeamCity 2019.2, the recommended approach is to disable this property thus delegating the automatic memory management to TeamCity; you can set a limit for the available memory via the [`teamcity.git.fetch.process.max.memory.limit`](#max-memory-limit) property.   
+In earlier versions of TeamCity, you can increase the value of the `teamcity.git.fetch.process.max.memory` property.
+* Teamcity running as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using `teamcity-server.bat`.
+* Inflation using streams in JGit prevents `OutOfMemoryError`, but can be time-consuming (see the related thread at [jgit-dev](http://dev.eclipse.org/mhonarc/lists/jgit-dev/msg00687.html) for details and the [TW-14947](http://youtrack.jetbrains.net/issue/TW-14947) issue related to the problem). If you meet conditions similar to those described in the issue, try to increase `teamcity.git.stream.file.threshold.mb`. Additionally, it is recommended to increase the overall amount of memory dedicated for TeamCity to prevent `OutOfMemoryError`.
 
 ## Development Links
 
-Git support is implemented as an open\-source plugin. For development links, refer to the [plugin's page](https://plugins.jetbrains.com/plugin/8887-git).
+Git support is implemented as an open-source plugin. For development links, refer to the [plugin's page](https://plugins.jetbrains.com/plugin/8887-git).
 
 __  __
 
