@@ -197,7 +197,7 @@ If the new TeamCity server effective [release date](https://confluence.jetbrains
 
 When a new version is available, TeamCity displays a notification in the web UI and warns you if any of your license keys are incompatible with this new version. A notification on the new TeamCity version is also displayed in the Global Configuration Items of the [Server Health](server-health.md) report, visible to system administrators. System administrators can use the link in the "Some Licenses are incompatible" message to quickly navigate to the [Licenses](#Managing+Licenses) page, where all incompatible licenses will have a warning icon. The information about the license keys installed on your server is secure as it is not sent over the Internet.
 
-Regular upgrades are recommended as new releases contain lots of fixes (and of course new features).
+Regular upgrades are highly recommended not only because each new release includes a lot of improvements and new features, but also as this is the only way to run a supported version with the latest security patch level.
 
 Note that TeamCity [email support](https://confluence.jetbrains.com/display/TW/Feedback) covers only the [recent TeamCity versions](how-to.md#TeamCity+Release+Cycle) and can be provided only to customers with not expired maintenance period of the enterprise server license.
 
