@@ -48,6 +48,8 @@ Description
 
 <td>
 
+<anchor name="vcs-type"/>
+
 Type of VCS
 
 
