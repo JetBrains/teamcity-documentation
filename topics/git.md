@@ -311,8 +311,8 @@ Convert line\-endings of all text files to CRLF (works as setting `core.autocrlf
 
 <anchor name="agentSettings"/>
 
-These are the settings used in case of the agent\-side [checkout](vcs-checkout-mode.md).   
-Note that the agent\-side checkout has limited support for SSH. The only supported authentication methods are "Default Private Key" and "Uploaded Private Key".   
+These are the settings used in case of the agent-side [checkout](vcs-checkout-mode.md).   
+Note that the agent-side checkout has limited support for SSH. The only supported authentication methods are "Default Private Key" and "Uploaded Private Key".   
 If you plan to use the [agent-side checkout](vcs-checkout-mode.md), you need to have Git 1.6.4\+ installed on the agents.
 
 <table><tr>
@@ -539,7 +539,7 @@ Defines whether TeamCity runs `git fetch` in a separate process
 <td>
 
 <note>
- 
+  
 Starting from TeamCity 2019.2, it is recommended to disable this property.   
 By default, TeamCity starts nested Java processes for `git fetch` and `git patch` and automatically selects `-Xmx` for these processes.
 
@@ -547,9 +547,7 @@ By default, TeamCity starts nested Java processes for `git fetch` and `git patch
  
 This property provides the explicit `-Xmx` and disables the automatic `-Xmx` setup.
 
-Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch` and `git patch`, each using the configured amount of the memory.   
-For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) may be needed.
-
+Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch` and `git patch`, each using the configured amount of the memory. For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) may be needed.
 
 </td></tr>
 
