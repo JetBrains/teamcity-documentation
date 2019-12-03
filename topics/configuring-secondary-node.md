@@ -14,7 +14,7 @@ On this page:
 To install a secondary node, follow these steps:
 
 1. On the secondary node machine, [install](installing-and-configuring-the-teamcity-server.md) the TeamCity software as usual: download the distribution package and follow the installation wizard.
-2. Provide path to the shared Data Directory via the `TEAMCITY_DATA_PATH` environment variable.
+2. Provide the path to the shared Data Directory via the `TEAMCITY_DATA_PATH` environment variable.
 3. Add additional arguments to the `TEAMCITY_SERVER_OPTS` [environment variable](configuring-teamcity-server-startup-properties.md):
 
 
@@ -37,7 +37,7 @@ The secondary node requires the same memory settings as the main node. If you ha
 
 A secondary node can be started\/stopped using regular TeamCity scripts (`teamcity-server.bat`, `teamcity-server.sh`) or Windows services.
 
-Before starting more than one secondary node, make sure that the database is configured to accept enough parallel connections to handle requests from all nodes. By default, each node requires 50 connections to the database.
+Before starting more than one secondary node, make sure the database is configured to accept enough parallel connections to handle requests from all nodes. By default, each node requires 50 connections to the database.
 
 The secondary node server uses the same approach to logging as the main server. You can check the state of the startup in the `<TeamCity_installation_directory>/logs/teamcity-server.log` file. Open `<secondary_node_URL>` in your browser to see the regular TeamCity startup screens.
 
@@ -51,6 +51,8 @@ By default, a newly started secondary node provides a read-only user interface a
 * VCS repositories polling
 
 ![Nodes.png](Nodes.png)
+
+A node assigned with any responsibility will allow users to perform the most common actions on builds (read more in [Multinode Setup](multinode-setup.md#user-actions)).
 
 You can enable and disable responsibilities for nodes at any moment.
 
@@ -100,7 +102,7 @@ Currently, the following bundled plugins are disabled on secondary nodes:
 
 <note>
 
-Secondary nodes operate as read-only servers and can use only a limited set of external plugins.
+Secondary nodes can use only a limited set of external plugins.
 </note>
 
 ## Cleanup

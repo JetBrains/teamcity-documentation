@@ -7,7 +7,19 @@ Using the multinode setup, you can:
 * Set up a high-availability TeamCity installation that will have zero read downtime. A secondary node will allow users read operations during the downtime of the main server (for example, during the upgrade).
 * Improve the performance of the main server by delegating tasks to the secondary nodes. A secondary node can detect new commits and process data produced by running builds (build logs, artifacts, statistic values).
 
-The following diagram shows an example of a TeamCity installation with one main node and two secondary nodes, where each secondary node has a certain [responsibility](configuring-secondary-node.md#Assigning+Responsibilities) assigned to it:
+<anchor name="user-actions"/>
+
+After installation, each secondary node runs as a read-only copy of the main server. To extend its functionality, you can assign it to a certain [responsibility](configuring-secondary-node.md#Assigning+Responsibilities). In this case, the secondary node will allow users to perform the most common actions on builds:
+* Triggering a build, including a custom or personal one
+* Stopping a build
+* Pinning/tagging/commenting a builds
+* Deleting a build
+* Assigning investigations and muting build problems and tests
+* Marking a build as successful/failed
+* Merging sources and labeling sources actions
+* and more (see the full list in our [issue tracker](https://youtrack.jetbrains.com/issue/TW-62749))
+
+The following diagram shows an example of a TeamCity installation with one main node and two secondary nodes, where each secondary node has a certain responsibility:
 
 <img src="multinode-setup.png" width="800" alt="TeamCity setup with two nodes"/>
 
@@ -69,7 +81,7 @@ To define a new path to a local directory, use the `-Dteamcity.node.data.path` p
 
 ### Proxy Configuration
 
-To set up a high-availability TeamCity installation, you need to install both the main server and the secondary node behind a reverse proxy and configure it to route requests to the main server while it\'s available and to the secondary one in other cases. If you are about to set up the TeamCity server behind a reverse proxy for the first time, make sure to review our [notes](how-to.md#Proxy+Server+Setup) on this topic.
+To set up a high-availability TeamCity installation, you need to install both the main server and the secondary node behind a reverse proxy and configure it to route requests to the main server while it is available and to the secondary one in other cases. If you are about to set up the TeamCity server behind a reverse proxy for the first time, make sure to review our [notes](how-to.md#Proxy+Server+Setup) on this topic.
 
 The following [NGINX](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-health-check) configuration will route requests to the secondary node only when the main server is unavailable or when the main server responds with the 503 status code (when starting or upgrading).
 
@@ -152,7 +164,7 @@ TeamCity agents will perform upgrade\/downgrade automatically.
 
 A secondary server has a few limitations compared to the main server:
 
-* A secondary node does not allow changing the server configuration and state. The pages are served in the read-only mode, and not all administration pages and actions are available.
+* A secondary node does not allow changing the server configuration and state. The nodes without responsibilities are served in the read-only mode; the nodes with responsibilities provide user-level actions. In both cases, not all administration pages and actions are available.
 * Currently, only bundled plugins and a limited set of some other plugins can be loaded by a secondary server. Some functionality provided by external plugins can be missing. Read more in [Configuring Secondary Node](configuring-secondary-node.md#Using+Plugins).
 * Users may need to relogin when they are routed to a secondary node if they did not select the _Remember Me_ option.
 
