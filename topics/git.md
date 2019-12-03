@@ -17,7 +17,6 @@ __Important notes__:
 * [Remote Run](remote-run.md) and [Pre-Tested Commit](pre-tested-delayed-commit.md) are supported in the [IntelliJ IDEA](intellij-platform-plugin.md) and [Eclipse](eclipse-plugin.md) plugins; with the [Visual Studio Addin](visual-studio-addin.md) use the [Branch Remote Run Trigger](branch-remote-run-trigger.md).
 * Initial Git [checkout](build-checkout-directory.md#Checkout+Process) may take significant time (sometimes hours), depending on the size of your project history, because the whole project history is downloaded during the initial checkout.
 
-
 On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
@@ -159,7 +158,6 @@ A custom username used for [labeling](vcs-labeling.md).
 <anchor name="branchMatchingRules"/>
 
 ### Branch Matching Rules
-
 
 * If the branch matches a line without patterns, the line is used.
 * If the branch matches several lines with patterns, the best matching line is used.
@@ -541,10 +539,13 @@ Defines whether TeamCity runs `git fetch` in a separate process
 <td>
 
 <note>
-Starting from TeamCity 2019.2 it's recommended to disable this property.
-By default TeamCity starts nested Java processes for `git fetch` and `git patch` and automatically selects -Xmx for this processes. This property provides explicit -Xmx and disables automatic -Xmx set-up.
+ 
+Starting from TeamCity 2019.2, it is recommended to disable this property.   
+By default, TeamCity starts nested Java processes for `git fetch` and `git patch` and automatically selects `-Xmx` for these processes.
 
 </note>
+ 
+This property provides the explicit `-Xmx` and disables the automatic `-Xmx` setup.
 
 Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch` and `git patch`, each using the configured amount of the memory.   
 For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) may be needed.
@@ -568,8 +569,9 @@ For large repositories requiring heap memory greater than `-Xmx1024m` for Git fe
 </td>
 <td>
 
+By default, TeamCity starts nested Java processes for `git fetch` and `git patch` and automatically selects `-Xmx` for these processes.
 
-By default TeamCity starts nested Java processes for `git fetch` and `git patch` and automatically selects -Xmx for this processes. This property specifies the maximum possible `git fetch` or `git patch` -Xmx value which can be chosen by TeamCity automatic -Xmx set-up.
+This property specifies the maximum possible `-Xmx` value for `git fetch` or `git patch` that TeamCity can set automatically.
 
 </td>
 
