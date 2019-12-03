@@ -84,7 +84,7 @@ Notes on the `restore` command options:
 * The `-A` argument can be omitted if you have the [`TEAMCITY_DATA_PATH`](teamcity-data-directory.md) environment variable set.
 * The `-F` argument can be an absolute path or a path relative to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/backup directory.
 * The `-T` argument must point to the `database.properties` file created in step 3.
-* If the `-T `argument is not specified and the `database.properties `file is present in the newly created `TeamCity Data Directory/config and the backup file,  the database is restored using the properties file in `TeamCity Data Directory/config.`
+* If the `-T` argument is not specified and the `database.properties` file is present in the newly created `<TeamCity Data Directory>/config` and the backup file, the database is restored using the properties file in `<TeamCity Data Directory>/config`.
 * By default, if no other option except `-F` is specified, all of the backed up scopes will be restored from the backup file. To restore only specific scopes from the backup file, use the corresponding options of the `maintainDB` utility: `-D`, `-C`, `-U`, `-L`, and `-P`.
 <tip>
 
