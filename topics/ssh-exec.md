@@ -71,7 +71,9 @@ Use pty
 
 <td>
 
-Optional. By default, a pty will not be allocated
+Optional. Specify the type of the pty terminal. For example, `vt100`.
+
+If empty, pty will not be allocated (default).
 
 </td></tr><tr>
 
@@ -98,13 +100,11 @@ Authentication method
 
 Select an SSH authentication method.
 
-* Select an authentication method.
-
- * __Uploaded key__ uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
- * __Default private key__ will try to perform private key authentication using the `~/.ssh/config` settings. If no settings file exists, will try to use the `~/.ssh/rsa_pub` public key file. No passphrases should be set.
- * __Custom private key__ will try to perform private key authentication using the given public key file with given passphrase
- * __Password__ – simple password authentication.
- * __SSH\-Agent__ – use ssh\-agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
+* __Uploaded key__ uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
+* __Default private key__ will try to perform private key authentication using the `~/.ssh/config` settings. If no settings file exists, will try to use the `~/.ssh/rsa_pub` public key file. No passphrases should be set.
+* __Custom private key__ will try to perform private key authentication using the given public key file with given passphrase
+* __Password__ – simple password authentication.
+* __SSH\-Agent__ – use ssh\-agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
 
 
 <note>

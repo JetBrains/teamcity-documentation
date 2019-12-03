@@ -6,7 +6,7 @@ In TeamCity a build goes through several states:
 * The build starts on the agent and performs all configured build steps.
 * The build finishes and becomes a part of the build history of this build configuration.
 
-In TeamCity all information about a particular build, whether it is queued, running or finished, is accumulated on the __build results__ page. The page can be accessed by clicking the build number or build status link.
+In TeamCity all information about a particular build, whether it is queued, running or finished, is accumulated on the __Build Results__ page. The page can be accessed by clicking the build number or build status link.
 
 Besides providing the build information, this page enables you to:
 * [run a custom build](triggering-a-custom-build.md) using the __Run__ button
@@ -26,7 +26,7 @@ On this page:
 
 ## Build Details
 
-The build results page can be accessed the Build Configuration home page and from various places in the TeamCity web UI where a build number or build status appears as a link. Some data is accessible only after the build is finished, some details like [Changes](#Changes), [Build parameters](#Parameters), and [Dependencies](#Dependencies) are also applicable to the build while it is waiting in the queue.
+The __Build Results__ page can be accessed from the __Build Configuration Home__ page and from various places in the TeamCity web UI where a build number or build status appears as a link. Some data is accessible only after the build is finished, some details like [Changes](#Changes), [Build Parameters](#Parameters), and [Dependencies](#Dependencies) are also applicable to the build while it is waiting in the queue.
 
 The build information available on the page is described in sections below.
 
@@ -39,8 +39,8 @@ The __Overview__ tab displays general information about the build, such as the b
 If a build is running, the tab displays the build progress. You can also stop a running build using the corresponding link on the __Overview__ tab or the appropriate option from the __Actions__ button drop-down.
 
 If another build of this same build configuration is concurrently running, a small window appears on the __Overview__ tab with the following information:
-* The build results of that build linking to the build results page
-* A changes link with a drop\-down list of changes included in that build
+* The build results of that build linking to the __Build results__ page
+* A changes link with a drop-down list of changes included in that build
 * The build number, time of start, and a link to the agent it is running on.
 
 If a build is probably hanging, the corresponding notification is displayed at the top of the __Overview__ tab. In this case TeamCity provides a link to view the process tree of the running build and the thread dumps of each Java or .NET process in a separate frame. If the process is not Java or .NET, its command line is retrieved. The possibility to view the thread dump is supported for the following platforms:
@@ -52,7 +52,7 @@ The information on the tab may vary depending on the build runners enabled. If c
 
 If there were problems in the build, the __Overview__ tab also displays them.
 
-If the build has failed tests, you can view them on the __Overview__ tab of the build results page.
+If the build has failed tests, you can view them on the __Overview__ tab of the __Build Results__ page.
 
 #### Tests
 
@@ -92,7 +92,7 @@ You can select to view the modified files by checking the __Show files__ box. Cl
 
 ## All Tests
 
-To view all the tests for a particular build, open the build results page, and navigate to the __Tests__ tab.  On this page:
+To view all the tests for a particular build, open the __Build Results__ page, and navigate to the __Tests__ tab. On this page:
 
 <table><tr>
 
@@ -221,7 +221,7 @@ For example:
 * __Project Home__ page | __Current Problems__ tab | __Problematic Tests__
 * __Build Results__ page | __Overview__ tab
 * __Build Results__ page | __Tests__ tab
-* __Projects__ | __&lt;build with failed tests&gt;__ | build results drop\-down
+* __Projects__ | __&lt;build with failed tests&gt;__ | build results drop-down menu
 
 
 Clicking the __Test history__ link opens the __Test details__ page where you can find following information:
@@ -250,13 +250,13 @@ For each build you can view and download its build log. More information on buil
 
 ## Parameters
 
-All system properties and environmental variables which were used by a particular build are listed on the __Parameters__ tab of the build results page. [Learn more about build parameters](configuring-build-parameters.md).
+All system properties and environmental variables which were used by a particular build are listed on the __Parameters__ tab of the __Build Results__ page. [Learn more about build parameters](configuring-build-parameters.md).
 
 The __Reported statistic values__ page shows [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported for the build and displays a statistics chart for each of the values on clicking the _View Trend_ icon ![ViewTrend.PNG](ViewTrend.PNG).
 
 ## Dependencies
 
-If a finished build has artifact and/or snapshot dependencies, the __Dependencies__ tab is displayed on the build results page. Here you can explore builds whose artifacts and/or sources were used for creating this build (Downloaded artifacts) as well as the builds which used the artifacts and/or sources of the current build (Delivered artifacts). Additionally, you can view indirect dependencies for the build. That is, for example, if build A depends on build B which depends on builds C and D, then these builds C and D are indirect dependencies for build A.
+If a finished build has artifact and/or snapshot dependencies, the __Dependencies__ tab is displayed on the __Build Results__ page. Here you can explore builds whose artifacts and/or sources were used for creating this build (Downloaded artifacts) as well as the builds which used the artifacts and/or sources of the current build (Delivered artifacts). Additionally, you can view indirect dependencies for the build. That is, for example, if build A depends on build B which depends on builds C and D, then these builds C and D are indirect dependencies for build A.
 
 ## Related Issues
 
@@ -273,7 +273,7 @@ If the build produced [artifacts](build-artifact.md), they all are displayed on 
 
 ## Code Coverage Results
 
-If you have code coverage configured in your build runner, a dedicated tab with the full HTML code coverage report appears on the build results page.
+If you have code coverage configured in your build runner, a dedicated tab with the full HTML code coverage report appears on the __Build Results__ page.
 
 By clicking the links in the __Coverage Breakdown__ section, you can drill\-down to display statistics for different scopes, for example, Namespace, Assembly, Method, and Source Code.
 
@@ -287,7 +287,7 @@ If configured, the results of the [Code Inspection](code-inspection.md) build st
 
 ## Duplicates
 
-If your build configuration has Duplicates build runner as one of the build steps, you will see the __Duplicates__ tab in the build results.
+If your build configuration has Duplicates build runner as one of the build steps, you will see the __Duplicates__ tab in the __Build Results__.
 
 The tab consists of:
 * A list of duplicates found. The __new only__ option enables you to show only the duplicates that appeared in the latest build.
@@ -297,7 +297,7 @@ The tab consists of:
 
 ## Maven Build Info
 
-For each Maven build the TeamCity agent gathers Maven specific build details, which are displayed on the __Maven Build Info__ tab of the build results after the build is finished.
+For each Maven build the TeamCity agent gathers Maven specific build details, which are displayed on the __Maven Build Info__ tab of the __Build results__ after the build is finished.
 
 [//]: # (Internal note. Do not delete. "Working with Build Resultsd371e671.txt")    
 
