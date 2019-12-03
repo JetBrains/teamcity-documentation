@@ -17,7 +17,6 @@ __Important notes__:
 * [Remote Run](remote-run.md) and [Pre-Tested Commit](pre-tested-delayed-commit.md) are supported in the [IntelliJ IDEA](intellij-platform-plugin.md) and [Eclipse](eclipse-plugin.md) plugins; with the [Visual Studio Addin](visual-studio-addin.md) use the [Branch Remote Run Trigger](branch-remote-run-trigger.md).
 * Initial Git [checkout](build-checkout-directory.md#Checkout+Process) may take significant time (sometimes hours), depending on the size of your project history, because the whole project history is downloaded during the initial checkout.
 
-
 On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
@@ -159,7 +158,6 @@ A custom username used for [labeling](vcs-labeling.md).
 <anchor name="branchMatchingRules"/>
 
 ### Branch Matching Rules
-
 
 * If the branch matches a line without patterns, the line is used.
 * If the branch matches several lines with patterns, the best matching line is used.
@@ -535,21 +533,21 @@ Defines whether TeamCity runs `git fetch` in a separate process
 
 <td>
 
-512M
 
 </td>
 
 <td>
 
 <note>
-
-It is recommended to disable this property, so TeamCity can automatically manage the amount of memory used by the `git fetch` process. Instead of this option, use [`teamcity.git.fetch.process.max.memory.limit`](#max-memory-limit) to set `-Xmx` for `git fetch`.
+  
+Starting from TeamCity 2019.2, it is recommended to disable this property.   
+By default, TeamCity starts nested Java processes for `git fetch` and `git patch` and automatically selects `-Xmx` for these processes.
 
 </note>
+ 
+This property provides the explicit `-Xmx` and disables the automatic `-Xmx` setup.
 
-The obsolete value of the JVM `-Xmx` parameter for a separate fetch process. Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch`, each using the configured amount of the memory.   
-For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) may be needed.
-
+Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch` and `git patch`, each using the configured amount of the memory. For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) may be needed.
 
 </td></tr>
 
@@ -569,9 +567,9 @@ For large repositories requiring heap memory greater than `-Xmx1024m` for Git fe
 </td>
 <td>
 
-The value of the JVM `-Xmx` parameter for a separate fetch process.
+By default, TeamCity starts nested Java processes for `git fetch` and `git patch` and automatically selects `-Xmx` for these processes.
 
-TeamCity uses a nested Java process for `git fetch` and automatically selects the memory settings for this process. This property sets a maximum amount of available memory for `get fetch` in each VCS root. It comes into effect only if the `teamcity.git.fetch.process.max.memory` is disabled.
+This property specifies the maximum possible `-Xmx` value for `git fetch` or `git patch` that TeamCity can set automatically.
 
 </td>
 
@@ -1028,8 +1026,7 @@ An __unsupported__ rule example is `+:some/dir=>some/otherDir`.
 
 ## Known Issues
 
-* `java.lang.OutOfMemoryError` while fetching from a repository. Usually occurs when there are large files in the repository and if the [`teamcity.git.fetch.process.max.memory`](#max-memory) internal property is defined. Since TeamCity 2019.2, the recommended approach is to disable this property thus delegating the automatic memory management to TeamCity; you can set a limit for the available memory via the [`teamcity.git.fetch.process.max.memory.limit`](#max-memory-limit) property.   
-In earlier versions of TeamCity, you can increase the value of the `teamcity.git.fetch.process.max.memory` property.
+* `java.lang.OutOfMemoryError` while fetching from a repository in case [`teamcity.git.fetch.process.max.memory`](#max-memory) property is specified. Since TeamCity 2019.2, the recommended approach is to disable this property thus delegating the automatic memory management to TeamCity.
 * Teamcity running as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using `teamcity-server.bat`.
 * Inflation using streams in JGit prevents `OutOfMemoryError`, but can be time-consuming (see the related thread at [jgit-dev](http://dev.eclipse.org/mhonarc/lists/jgit-dev/msg00687.html) for details and the [TW-14947](http://youtrack.jetbrains.net/issue/TW-14947) issue related to the problem). If you meet conditions similar to those described in the issue, try to increase `teamcity.git.stream.file.threshold.mb`. Additionally, it is recommended to increase the overall amount of memory dedicated for TeamCity to prevent `OutOfMemoryError`.
 
