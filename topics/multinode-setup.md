@@ -49,7 +49,7 @@ mklink /d "C:\<path to mount point>" "\\<host>\<shared directory name>\"
 __Important!__
 
 It is important that all the nodes "see" the current state of the Data Directory without delay. If this is not the case, it is likely to manifest in various unstable behavior and frequent build logs corruption.
-FOr example if TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure that all the registry keys mentioned in the [related article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all of the TeamCity nodes.
+For example if TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure that all the registry keys mentioned in the [related article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all of the TeamCity nodes.
 </note>
 
 
