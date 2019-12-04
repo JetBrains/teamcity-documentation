@@ -53,7 +53,6 @@ TeamCity requires the following permissions for Amazon EC2 Resources:
 * `ec2:RunInstances`
 * `ec2:ModifyInstanceAttribute`
 * [`ec2:*Tags`](#Tagging+for+TeamCity-launched+instances)
- 
 
 To use [spot instances](#Amazon+EC2+Spot+Instances+support), the following additional permissions are required:
 * `ec2:RequestSpotInstances`
@@ -64,12 +63,11 @@ To use [spot fleets](#Amazon+EC2+Spot+Fleet+support), the following additional p
 * `ec2:DescribeSpotFleetRequests`
 * `ec2:CancelSpotFleetRequests`
 
-To launch an [instance with the IAM Role](#Configuring+an+Amazon+EC2+cloud+profile) (applicable to instances cloned from AMI\-s only), the following additional permissions are required:
+To launch an [instance with the IAM Role](#Configuring+an+Amazon+EC2+cloud+profile) (applicable to instances cloned from AMI-s only), the following additional permissions are required:
 * `iam:ListInstanceProfiles`
 * `iam:PassRole`
 
 An example of custom IAM policy definition (allows all EC2 operations from a specified IP address):
-
 
 ```Shell
 {
@@ -89,8 +87,6 @@ An example of custom IAM policy definition (allows all EC2 operations from a spe
     ]
 }
 ```
-
-
 
 #### Optional permissions
 
@@ -137,7 +133,7 @@ Alternatively, you can use the "Automatic (delayed start)" service starting mode
 
 ##### Important note for images based on Windows Server 2016 image
 
-Due to the [bug in the network settings](https://forums.aws.amazon.com/thread.jspa?threadID=242194), instance meta\-data is not available by default. It means the TeamCity agent service cannot retrieve its properties and cloud integration doesn't work (the agent does not connect to the server or is not automatically authorized). To fix this issue, do the following:
+Due to the [bug in the network settings](https://forums.aws.amazon.com/thread.jspa?threadID=242194), instance metadata is not available by default. It means the TeamCity agent service cannot retrieve its properties and cloud integration doesn't work (the agent does not connect to the server or is not automatically authorized). To fix this issue, do the following:
 
 1. Install the [latest EC2Config](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_Install.html?shortFooter=true#ec2config-update-version).
 2. Set the dependency of the `TCBuildAgent` service on both `EC2Config` and `AmazonSSMAgent` via the command: `sc config TCBuildAgent depend=Ec2Config/AmazonSSMAgent`.
@@ -152,10 +148,9 @@ You can configure an Amazon EC2 [agent cloud profile](agent-cloud-profile.md) in
 
 #### Custom Image Name
 
-__Since TeamCity 2019.1__, the value of the _Custom Image Name_ parameter of the image serves as a unique identifier for all TeamCity agents using this image. For example, this value is added as a prefix to agents IDs in the cloud profiles log on the __Agents | Cloud__ tab.
+The value of the _Custom Image Name_ parameter of the image serves as a unique identifier for all TeamCity agents using this image. For example, this value is added as a prefix to agents IDs in the cloud profiles log on the __Agents | Cloud__ tab.
 
 Each image in a cloud profile must have a unique custom name.
-
 
 #### IAM profiles
 
@@ -215,6 +210,14 @@ TeamCity uses own values instead of the following parameters of the JSON config 
 * `Type`: `request`
 
 </note>
+
+#### Amazon EC2 Launch Templates support
+
+TeamCity supports [Amazon EC2 launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html) for cloud instances. Launch templates allow reusing a once defined launch specification for all new instances, which eliminates the need to describe the launch settings every time new instances are requested.
+
+If your cloud profile is connected to the Amazon server, TeamCity will automatically detect launch templates available on this server. When adding an image, select a required template as the _Source_ and specify its version, and TeamCity will request instances based on the template parameters. Optionally, you can also limit the number of launched instances and assign them to a certain [agent pool](agent-pools.md).
+
+When the default/latest version of the template is updated on the server, TeamCity will detect these changes and update the running instances.
 
 #### Amazon EBS-Optimized Instances
 
