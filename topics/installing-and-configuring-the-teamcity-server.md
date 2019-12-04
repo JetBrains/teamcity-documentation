@@ -1,5 +1,6 @@
 [//]: # (title: Installing and Configuring the TeamCity Server)
 [//]: # (auxiliary-id: Installing and Configuring the TeamCity Server)
+
 This page covers a new TeamCity server installation. For __upgrade instructions__, refer to [Upgrade](upgrade.md).
 
 On this page:
@@ -27,7 +28,7 @@ After you have selected one of the [TeamCity installation options](installation.
 Compared to the `.war` distribution, the `.exe` and `.tar.gz` distributions:
 * include a Tomcat version which TeamCity is tested with, so it is known to be a working combination. This might not be the case with an external Tomcat.
 * define additional JRE options which are usually recommended for running the server
-* have the [teamcity-server startup script](#Starting+TeamCity+server) which provides several convenience options (for example, separate environment variable for memory settings) and configures TeamCity correctly (for example,. log4j configuration)
+* have the [teamcity-server startup script](#Starting+TeamCity+server) which provides several convenience options (for example, separate environment variable for memory settings) and configures TeamCity correctly (for example, `.log4j` configuration)
 * (at least under Windows) provide better error reporting for some cases (like a missing Java installation)
 * under Windows, allow running TeamCity as a service with the ability to use the same configuration as if run from the console
 * come bundled with a build agent distribution and single startup script which allows for easy TeamCity server evaluation with one agent
@@ -61,7 +62,7 @@ Make sure the user account specified for the service has:
 * log on as service right ([related Microsoft page](https://technet.microsoft.com/en-us/library/cc794944%28v=ws.10%29.aspx))
 * write permissions for the [TeamCity Data Directory](teamcity-data-directory.md),
 * write permissions for the [TeamCity Home](teamcity-home-directory.md), i.e. directory where TeamCity was installed,
-* all the necessary permissions to work with the external systems like version controls, etc.
+* all the necessary permissions to work with the external systems like version controls, and so on.
 
 By default, the Windows service is installed under the SYSTEM account. To change it, use the Services applet (__Control Panel | Administrative Tools | Services__).
 
@@ -73,11 +74,11 @@ Review [software requirements](supported-platforms-and-environments.md#TeamCity+
 
 Unpack the `TeamCity<version number>.tar.gz` archive (for example, using the `tar xfz TeamCity<version number>.tar.gz` command under Linux, or the WinZip, WinRar or similar utility under Windows). Use GNU tar to unpack (for example, Solaris 10 tar is reported to truncate too long file names and may cause a `ClassNotFoundException` when using the server after such unpacking. Consider getting GNU tar at [Solaris packages](http://sunfreeware.com/) or using the `gtar xfz` command).
 
-Ensure you have JRE or JDK installed and the JAVA\_HOME environment variable is pointing to the Java installation directory. Java JDK 1.8.0\_16 or later is required.
+Ensure you have JRE or JDK installed and the `JAVA_HOME` environment variable is pointing to the Java installation directory. Java JDK 1.8.0_16 or later is required.
 
 ### Installing TeamCity into Existing J2EE Container
 
-It is __not recommended__ to use .war distribution. Use the [TeamCity .tar.gz](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) distribution (bundled with Tomcat web server) instead. If you have important reasons to deploy TeamCity into existing web server and want to use .war distribution, please [let us know](https://confluence.jetbrains.com/display/TW/Feedback) the reasons.
+It is __not recommended__ to use `.war` distribution. Use the [TeamCity `.tar.gz`](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) distribution (bundled with Tomcat web server) instead. If you have important reasons to deploy TeamCity into existing web server and want to use .war distribution, please [let us know](https://confluence.jetbrains.com/display/TW/Feedback) the reasons.
 See [Supported Platforms and Environments](supported-platforms-and-environments.md#TeamCity+Server) for J2EE container requirements.
 
 1. Make sure your web application server is stopped.
@@ -253,72 +254,59 @@ Note that after this change [automatic update](upgrade.md#Automatic+Update) will
 
 The TeamCity server is a web application that runs in an J2EE application server (a JVM application). TeamCity server requires a Java SE JRE installation to run.
 
-The TeamCity server __requires__ JRE 8 to operate. The recommended Java distribution is [AdoptOpenJDK](https://adoptopenjdk.net).
-We recommend using the 32-bit installation unless you need to [dedicate more memory](#Setting+Up+Memory+settings+for+TeamCity+Server) to the TeamCity server. Please check the [64-bit Java notes](#Using+64+bit+Java+to+Run+TeamCity+Server) before upgrading.
+The TeamCity server __requires__ JRE 8 to operate. The recommended Java distribution is [Amazon Coretto](https://aws.amazon.com/corretto/) 64-bit version.   
 If you have configured any native libraries for use with TeamCity (like `.dll` for using the Integrated Security option of the Microsoft SQL database), you need to update the libraries to match the JVM x86/x64 platform.
 
 TeamCity selects the Java to run the server process as follows:
 * If your TeamCity installation has a bundled JRE (there is the \<[TeamCity Home](teamcity-home-directory.md)\>\jre  directory), it will __always__ be used to run the TeamCity server process.
-* If there is no \<[TeamCity Home](teamcity-home-directory.md)\>\jre  directory present, set `JRE_HOME` or `JAVA_HOME` environment variables pointing to the installation directories of JRE or JVM (Java SDK) respectively. JRE will be used if both are present.
+* If there is no \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory present, set `JRE_HOME` or `JAVA_HOME` environment variables pointing to the installation directories of JRE or JVM (Java SDK) respectively. JRE will be used if both are present.
 
 The necessary steps to update the Java installation depend on the distribution used.
-* if your TeamCity installation has a bundled JRE (there is the \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory), update it by installing a newer JRE per installation instructions and copying the content of the resulting directory to replace the content of the existing \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory.   
+* If your TeamCity installation has a bundled JRE (there is the \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory), update it by installing a newer JRE per installation instructions and copying the content of the resulting directory to replace the content of the existing \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory.   
 If you also run a TeamCity agent from the \<[TeamCity Home](teamcity-home-directory.md)\>\buildAgent directory, install JDK (Java SDK) installation instead of JRE and copy content of JDK installation directory into \<[TeamCity Home](teamcity-home-directory.md)\>\jre.
 
-<note>
+[//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e906.txt")
 
-Note that on upgrade, TeamCity will overwrite the existing JRE with the bundled 32\-bit version, so you'll have to update to the 64\-bit JRE again after upgrade.
-</note>
-
-
-[//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e906.txt")    
-
-
-* if there is no \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory present, set `JRE_HOME` or `JAVA_HOME` environment variables to be available for the process launching the TeamCity server (setting global OS environment variables and system restart is recommended). The variables should point to the home directory of the installed JRE or JVM (Java SDK) respectively and if both are present, the installed `JRE` will be used.
-* if you use the `.war` distribution, Java update depends on the application server used. Refer to the manual of your application server.
+* If there is no \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory present, set `JRE_HOME` or `JAVA_HOME` environment variables to be available for the process launching the TeamCity server (setting global OS environment variables and system restart is recommended). The variables should point to the home directory of the installed JRE or JVM (Java SDK) respectively and if both are present, the installed `JRE` will be used.
+* If you use the `.war` distribution, Java update depends on the application server used. Refer to the manual of your application server.
 
 ### Using 64 bit Java to Run TeamCity Server
 
-TeamCity server can run under both the 32- and 64-bit JVM. It is recommended to use the 32-bit JVM unless you need to dedicate more than 1Gb of memory (via `-Xmx` JVM option) to the TeamCity process (see [details](#Setting+Up+Memory+settings+for+TeamCity+Server)) or your [database requirements](setting-up-an-external-database.md) are different.
+TeamCity server is bundled with the 64-bit JVM but can run under both the 32- and 64-bit Java.
 
-If you choose to use the 64-bit JVM, note that the memory usage is almost doubled when switching from the 32- to 64-bit JVM, so make sure you specify at least twice as much memory as for 32-bit JVM, see [Setting Up Memory settings for TeamCity Server](#Setting+Up+Memory+settings+for+TeamCity+Server).
+If you need to update 32-bit Java to the 64-bit JVM, note that the memory usage is almost doubled when switching from the 32- to 64-bit JVM, so make sure you specify at least twice as much memory as for 32-bit JVM, see [Setting Up Memory settings for TeamCity Server](#Setting+Up+Memory+settings+for+TeamCity+Server).
 
-__To update to the 64-bit Java__:
-* [update](#Java+Installation) Java to be used by the server
-* [set JVM memory options](configuring-teamcity-server-startup-properties.md). It is recommended to set the following options for the 64\-bit JVM: `-Xmx4g -XX:ReservedCodeCacheSize=350m`
+To update to the 64-bit Java, either use the bundled version of Java or:
+* [Update](#Java+Installation) Java to be used by the server.
+* [Set JVM memory options](configuring-teamcity-server-startup-properties.md). It is recommended to set the following options for the 64-bit JVM: `-Xmx4g -XX:ReservedCodeCacheSize=350m`.
 
 ### Setting Up Memory settings for TeamCity Server
 
 TeamCity server has the main process which can also launch child processes. Child processes use available memory on the machine, this section covers the memory settings of the main TeamCity server process only as it requires special configuration.   
-As a JVM application, TeamCity main server process only utilizes memory devoted to the JVM. The required memory may depend on the JVM used (32 bit or 64 bit). The memory used by JVM usually consists of: heap (configured via `-Xmx`) and metaspace (limited by the amount of available native memory), internal JVM (usually tens of Mb), and OS-dependent memory features like memory-mapped files. TeamCity mostly depends on the heap memory and this settings can be configured for the TeamCity application manually by [passing](configuring-teamcity-server-startup-properties.md#JVM+Options) `-Xmx` (heap space) option to the JVM running the TeamCity server.
+As a JVM application, the TeamCity main server process only utilizes memory devoted to the JVM. The required memory may depend on the JVM used (32- or 64-bit). The memory used by JVM usually consists of: heap (configured via `-Xmx`) and metaspace (limited by the amount of available native memory), internal JVM (usually tens of Mb), and OS-dependent memory features like memory-mapped files. TeamCity mostly depends on the heap memory, and this setting can be configured for the TeamCity application manually by [passing](configuring-teamcity-server-startup-properties.md#JVM+Options) the `-Xmx` (heap space) option to the JVM running the TeamCity server.
 
-Once you start using TeamCity for [production](#Configuring+Server+for+Production+Use) purposes or you want to load the server during evaluation, you should manually set the appropriate memory settings for the TeamCity server.
+Once you start using TeamCity for [production](#Configuring+Server+for+Production+Use) purposes or if you want to load the server during evaluation, you should manually set the appropriate memory settings for the TeamCity server.
 
 To __change the memory settings__, refer to [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md#JVM+Options), or to the documentation of your application server, if you run TeamCity using the `.war` distribution.   
 Generally this means setting `TEAMCITY_SERVER_MEM_OPTS` environment variable to the value like `-Xmx750m`
 
 We recommend removing the `-XX:MaxPermSize` JVM option from the `TEAMCITY_SERVER_MEM_OPTS` environment variable, if previously configured, since it is ignored in Java 8.
 
-If slowness, OutOfMemory errors occur, or you consistently see a memory\-related warning in the TeamCity UI, increase the setting to the next level.
-* __minimum setting__ (the 32\-bit Java should be used (bundled in .exe distribution)): `-Xmx750m `
-* __recommended setting__ for __medium__ server use (the 32\-bit Java should be used): `-Xmx1024m`.  Greater settings with the 32\-bit Java can cause an OutOfMemoryError with "Native memory allocation (malloc) failed" JVM crashes or "unable to create new native thread" messages
-* __recommended setting__ for __large__ server use ([64-bit Java](#Using+64+bit+Java+to+Run+TeamCity+Server) should be used): `-Xmx4g -XX:ReservedCodeCacheSize=450m`.  These settings should be suitable for an installation with up to two hundreds of agents and thousands of build configurations. Custom plugins installed might require increasing the value defined via the Xmx parameter.
-* __maximum settings__ for large\-scale server use ([64-bit Java](#Using+64+bit+Java+to+Run+TeamCity+Server) should be used): `-Xmx10g -XX:ReservedCodeCacheSize=640m`. Greater values can be used for larger TeamCity installations. However, generally it is not recommended to use values greater than 10g without consulting TeamCity support.
+If slowness, OutOfMemory errors occur, or you consistently see a memory-related warning in the TeamCity UI, increase the setting to the next level.
+* __minimum setting__: for 32-bit Java `-Xmx750m `, for 64-bit Java (bundled) `-Xmx1024m`
+* __recommended setting__ for __medium__ server use: for 32-bit Java `-Xmx1024m`. Greater settings with the 32-bit Java can cause an `OutOfMemoryError` with "Native memory allocation (malloc) failed" JVM crashes or "Unable to create new native thread" messages. For 64-bit Java `-Xmx1536m`.
+* __recommended setting__ for __large__ server use (64-bit Java should be used): `-Xmx4g -XX:ReservedCodeCacheSize=450m`.  These settings should be suitable for an installation with up to two hundreds of agents and thousands of build configurations. Custom plugins installed might require increasing the value defined via the `Xmx` parameter.
+* __maximum settings__ for large-scale server use (64-bit Java should be used): `-Xmx10g -XX:ReservedCodeCacheSize=640m`. Greater values can be used for larger TeamCity installations. However, generally it is not recommended to use values greater than `10g` without consulting TeamCity support.
 
 __Tips__:
-* the 32\-bit JVM can reliably work with up to 1Gb heap memory (`Xmx1024m`). (This can be increased to `-Xmx1200m`, but JVM under Windows might crash occasionally with this setting.) If more memory is necessary, the 64\-bit JVM should be used with not less than 2.5Gb assigned (`-Xmx2500m`). Unless the TeamCity server runs with more than 100 agents or serves very active builds / thousands of users, it's unlikely that you will need to dedicate more than 4Gb of memory to the TeamCity process.
-* A rule of thumb is that the 64\-bit JVM should be assigned twice as much memory as the 32\-bit for the same application. If you switch to the 64\-bit JVM, make sure you adjust the memory setting ( `-Xmx`) accordingly. It does not make sense to switch to 64 bit if you dedicate less than the double amount of memory to the application.
+* the 32-bit JVM can reliably work with up to 1Gb heap memory (`Xmx1024m`). (This can be increased to `-Xmx1200m`, but JVM under Windows might crash occasionally with this setting.) If more memory is necessary, the 64-bit JVM should be used with not less than 2.5Gb assigned (`-Xmx2500m`). Unless the TeamCity server runs with more than 100 agents or serves very active builds / thousands of users, it's unlikely that you will need to dedicate more than 4Gb of memory to the TeamCity process.
+* A rule of thumb is that the 64-bit JVM should be assigned twice as much memory as the 32-bit for the same application. If you switch to the 64-bit JVM (for example, on upgrading a bundled version to TeamCity 2019.2), make sure you adjust the memory setting (`-Xmx`) accordingly. It does not make sense to switch to 64-bit if you dedicate less than the double amount of memory to the application.
 * Large TeamCity installations might benefit from fine-tuning of the memory settings. The amount of memory dedicated to TeamCity server JVM should not regularly exceed 60% of the total available physical memory on the machine (to allow for nested process and OS-level caches usage). Also, with heaps (`–Xmx`) set to more than 8Gb, if the machine has many CPU cores (for example, more than 8) and current CPU usage is below 60%, enabling G1 JVM garbage collector via the `-XX:+UseG1GC` JVM option might reduce the length of stop-the-world GC pauses.
-
-
 
 The recommended approach is to start with initial settings and monitor for the percentage of used memory using the __Administration | Diagnostics__ page. If the server uses more than 80% of memory consistently without drops for tens of minutes, that is probably a sign to increase the `-Xmx` memory value by another 20%.
 
 
 [//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e1122.txt")    
-
-
-
 
 ## Configuring TeamCity Server
 
@@ -346,7 +334,7 @@ After administration account setup you may begin to create Project and Build Con
 Out-of-the-box TeamCity server installation is suitable for evaluation purposes. For production use you will need to perform additional configuration which typically includes:
 * Check that the server is using due [server port](#Changing+Server+Port) and configure [access via https](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI).
 * Make sure server URL, email and (optionally) Jabber server settings are specified and are correct
-* Configuring the server process for OS\-dependent autostart on machine reboot
+* Configuring the server process for OS-dependent autostart on machine reboot
 * Using reliable storage for [TeamCity Data Directory](teamcity-data-directory.md)
 * [Using external database](setting-up-an-external-database.md)
 * [Configuring recommended memory settings](#Setting+Up+Memory+settings+for+TeamCity+Server), use "maximum settings" for active or growing servers

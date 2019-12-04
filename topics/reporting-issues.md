@@ -406,7 +406,7 @@ Under Windows when running as a service, it can be other like `C:\Windows\SysWOW
 
 Please send this file to us for investigation and consider updating the JVM for the [server](installing-and-configuring-the-teamcity-server.md#Java+Installation) (or for [agents](setting-up-and-running-additional-build-agents.md#Configuring+Java)) to the latest version available.
 
-If you get the "There is insufficient memory for the Java Runtime Environment to continue. Native memory allocation (malloc) failed to allocate ..." message with the crash or in the crash report file, make sure to [switch to 64 bits JVM](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server) or reduce the `-Xmx` setting below `1024m`, see details in the [memory configuration section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server).
+If you get the "There is insufficient memory for the Java Runtime Environment to continue. Native memory allocation (malloc) failed to allocate..." message with the crash or in the crash report file, make sure to [switch to 64-bit JVM](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server) or reduce the `-Xmx` setting below `1024m`, see details in the [memory configuration section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server).
 
 ## Build Log Issues
 

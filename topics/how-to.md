@@ -19,8 +19,6 @@ If you have no preference, Linux platforms may be more preferable due to more ef
 
 Final Operating System choice should probably depend more on the available resources and established practices in your organization.
 
-If you choose to install 64 bit OS, TeamCity can run under 64 bit JDK (both server and agent). However, unless you need to provide more than 1Gb memory for TeamCity, the recommended approach is to use 32 bit JVM even under 64 bit OS. Our experience suggests that using 64 bit JVM does not increase performance a great deal. At the same time it does increase memory requirements to almost the scale of 2. See a [note](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) on memory configuration.
-
 ## Estimate Hardware Requirements for TeamCity
 
 The hardware requirements differ for the server and the agents.

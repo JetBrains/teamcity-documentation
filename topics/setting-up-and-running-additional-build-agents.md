@@ -499,16 +499,16 @@ launchctl remove jetbrains.teamcity.BuildAgent
 
 ## Configuring Java
 
-A TeamCity build agent is a Java application that requires JDK version 8-10 to work. OpenJDK 8 (for example, by [AdoptOpenJDK](https://adoptopenjdk.net/)) 1.8.0_161 or later, 32-bit is recommended. [Oracle Java 8](http://www.oracle.com/technetwork/java/javase/downloads/) is also supported.
+A TeamCity build agent is a Java application that requires JDK version 8-10 to work. OpenJDK 8 (for example, bundled [Amazon Corretto](https://aws.amazon.com/corretto/)) 1.8.0_161 or later. [Oracle Java 8](http://www.oracle.com/technetwork/java/javase/downloads/) is also supported.
 
 A build agent contains two processes:
 * Agent Launcher – a Java process that launches the agent process
 * Agent – the main process for a Build Agent; runs as a child process for the agent launcher
 
-The (Windows) `.exe` TeamCity distribution comes bundled with OpenJDK 1.8.0_161.   
+The (Windows) `.exe` TeamCity distribution comes bundled with 64-bit Amazon Corretto 8.   
 If you run a previous version of the TeamCity agent, you will need to repeat the agent installation to update the JVM.
 
-Using x32 bit JDK (not JRE) is recommended. JDK is required for some build runners like [IntelliJ IDEA Project](intellij-idea-project.md), Java [Inspections](inspections.md), and [Duplicates](duplicates-finder-java.md). If you do not have Java builds, you can install JRE instead of JDK.   
+Using 64-bit JDK (not JRE) is recommended. JDK is required for some build runners like [IntelliJ IDEA Project](intellij-idea-project.md), Java [Inspections](inspections.md), and [Duplicates](duplicates-finder-java.md). If you do not have Java builds, you can install JRE instead of JDK.   
 Using of x64 bit Java is possible, but you might need to double the `-Xmx` memory value for the main agent process (see [Configuring Build Agent Startup Properties](configuring-build-agent-startup-properties.md) and alike [section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) for the server).
 
 <anchor name="java-paths"/>
@@ -532,8 +532,8 @@ An agent machine can have multiple Java versions installed, and the agent can us
 Please let us know using any of our [support channels](https://confluence.jetbrains.com/display/TW/Feedback) if your setup depends on the older version of Java and if you will not be able to upgrade to version 8 for some reason.
 </note>
 
-It is recommended to use latest Java 8, 32 bit version.
-OpenJDK 8 (for example, by [AdoptOpenJDK](https://adoptopenjdk.net/)) 1.8.0_161 or later, 32\-bit is recommended. [Oracle Java 8](http://www.oracle.com/technetwork/java/javase/downloads/) is also supported.
+It is recommended to use latest Java 8, 64-bit version.
+OpenJDK 8 (for example, bundled [Amazon Corretto](https://aws.amazon.com/corretto/)) 1.8.0_161 or later. [Oracle Java 8](http://www.oracle.com/technetwork/java/javase/downloads/) is also supported.
 
 To update Java on agents, do one of the following:
 * If the agent details page in the TeamCity UI displays a Java version note with the corresponding action, you can switch to using newer Java: if the appropriate Java version of the same bitness as the current one is detected on the agent, the agent page provides an action to switch to using that Java automatically. Upon the action invocation, the agent process is restarted (once the agent becomes idle, i.e. finishes the current build if there is one) using the new Java.

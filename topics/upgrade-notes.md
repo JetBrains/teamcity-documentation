@@ -1692,10 +1692,10 @@ Database connection properties template files have changed their names and are p
 It is recommended to review your `database.properties` file by comparing it with the new template file for your database and remove any options that you did not customize specifically.
 
 __Default memory options change__   
-We changed the default [memory option](installing-and-configuring-the-teamcity-server.md) for PermGen memory space and if you had `-Xmx` JVM option changed to about 1.3G and are running on 32 bit JVM, the server may fail to start with a message like: `Error occurred during initialization of VM Could not reserve enough space for object heap Could not create the Java virtual machine.` 
+We changed the default [memory option](installing-and-configuring-the-teamcity-server.md) for PermGen memory space and if you had `-Xmx` JVM option changed to about 1.3G and are running on 32-bit JVM, the server may fail to start with a message like: "Error occurred during initialization of VM Could not reserve enough space for object heap Could not create the Java virtual machine".
 
 On this occasion, please consider either:
-* switching to 64 bit JVM. Please consider the [note](installing-and-configuring-the-teamcity-server.md).
+* switching to 64 bit JVM. Please consider the [note](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server).
 * reducing PermGen memory via `-XX:MaxPermSize` [JVM option](configuring-teamcity-server-startup-properties.md) (to previous default 120m)
 * reducing heap memory via `-Xmx` [JVM option](configuring-teamcity-server-startup-properties.md)
 

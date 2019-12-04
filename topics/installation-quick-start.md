@@ -61,7 +61,7 @@ If you did not change the default port (`80`) during the installation, the TeamC
 
 ### on Linux and OS X
 
-1. Make sure you have Java 8 installed (for example, use OpenJDK 8 by [AdoptOpenJDK](https://adoptopenjdk.net/)).   
+1. Make sure you have Java 8 installed (for example, use bundled [Amazon Corretto](https://aws.amazon.com/corretto/)).   
     Open a command-line terminal and run the following command:   
     ```Shell
     java -version
