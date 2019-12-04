@@ -65,7 +65,8 @@ mklink /d "C:\<path to mount point>" "\\<host>\<shared directory name>\"
 <note>
 __Important!__
 
-If the Data Directory is shared via the SMB protocol, and main and secondary nodes are installed on Windows, make sure that all registry keys mentioned in [this article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all of the TeamCity nodes. Otherwise, you can run into stability issues: for example, a build log corruption.
+It is important that all the nodes "see" the current state of the Data Directory without delay. If this is not the case, it is likely to manifest in various unstable behavior and frequent build logs corruption.
+For example if TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure that all the registry keys mentioned in the [related article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all of the TeamCity nodes.
 </note>
 
 

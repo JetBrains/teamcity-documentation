@@ -38,6 +38,6 @@ Here is the summary of cases when TeamCity performs automatic clean checkout:
 * the previous build in this directory was built on more recent revisions then the current one (can only occur for [history builds](history-build.md))
 * there was a critical error while applying or rolling back a patch during the previous build, so TeamCity cannot ensure that checkout directory contains known versions of files
 * [Build Files Cleaner (Swabra)](build-files-cleaner-swabra.md) is enabled with corresponding options and it detected that clean checkout is necessary
-* Custom checkout directory contains agent\-specific parameters, such as `%\teamcity.agent.work.dir% (pre\-8.1)
+* Custom checkout directory contains agent-specific parameters, such as `%teamcity.agent.work.dir%` (pre-8.1)
 
 __ __

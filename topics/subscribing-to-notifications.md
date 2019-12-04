@@ -57,7 +57,7 @@ Select the projects / build configurations whose builds you want to monitor. Not
 Use the following options for granular control over the notifications in the selected projects / build configurations:
 
 * __Branch filter__ – select this option to receive alerts only on the builds from the specified branches. Read more in [Branch Filter](branch-filter.md).
-* __Builds with my changes only (since TeamCity 10.0)__ – select this option to limit notifications to builds containing your changes only. 
+* __Builds with my changes only__ – select this option to limit notifications to builds containing your changes only. 
 
 <note>
 
