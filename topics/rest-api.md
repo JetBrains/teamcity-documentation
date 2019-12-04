@@ -352,6 +352,23 @@ Some supported `<vcsRootInstancesLocator>` from above:
 * `vcsRoot:(<vcsRootLocator>)` – VCS root instances corresponding to the VCS root matched by `<vcsRootLocator>`.
 * `buildType:(<buildTypeLocator>)` – VCS root instances attached to the matching build configuration.
 * `property:(name:<name>,value:<value>,matchType:<matching>)` – VCS root instances with the property of name `<name>` and value matching condition `<matchType>` (for example, equals, contains) by the value `<value>`.
+
+#### Cloud Profiles
+
+TeamCity REST API exposes the same [cloud integration](teamcity-integration-with-cloud-solutions.md) details as those provided in the TeamCity UI.
+
+List all cloud profiles: `GET` [`http://teamcity:8111/app/rest/cloud/profiles`](http://teamcity:8111/app/rest/cloud/profiles).
+
+List all cloud images: `GET` [`http://teamcity:8111/app/rest/cloud/images`](http://teamcity:8111/app/rest/cloud/images).
+
+List all cloud instances: `GET` [`http://teamcity:8111/app/rest/cloud/instances`](http://teamcity:8111/app/rest/cloud/instances).
+
+To filter the listing results, you can add a [locator](#Locator) to the request.
+
+Start a new instance: `POST` [`http://teamcity:8111/app/rest/cloud/instances/<instanceLocator>`](http://teamcity:8111/app/rest/cloud/instances/<locator>).   
+The contents of the `POST` request are the same as in `GET` for one instance.
+
+Stop a running instance: `DELETE` [`http://teamcity:8111/app/rest/cloud/instances/<instanceLocator>`](http://teamcity:8111/app/rest/cloud/instances/<locator>).
  
 ### Build Configuration And Template Settings
  
