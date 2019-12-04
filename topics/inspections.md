@@ -21,7 +21,7 @@ Note that compilation errors are not reported by inspections, so it's a good ide
 
 __Maven projects__
 
-The runner also supports Maven2 or above: to use `pom.xml`, you need to open it in IntelliJ IDEA and configure inspection profiles as described in the [IntelliJ IDEA documentation](https://www.jetbrains.com/help/idea/2016.3/code-inspection.html#profiles). IntelliJ IDEA will save your inspection profiles in [the corresponding folder](https://www.jetbrains.com/help/idea/2016.3/project-and-ide-settings.html#d1962322e174). Make sure you have it checked into your version control. Then specify the paths to the inspection profiles while configuring this runner.
+The runner also supports Maven2 or above: to use `pom.xml`, you need to open it in IntelliJ IDEA and configure inspection profiles as described in the [IntelliJ IDEA documentation](https://www.jetbrains.com/help/idea/2016.3/code-inspection.html#profiles). IntelliJ IDEA will save your inspection profiles in the [corresponding folder](https://www.jetbrains.com/help/idea/2016.3/project-and-ide-settings.html#d1962322e174). Make sure you have it checked into your version control. Then specify the paths to the inspection profiles while configuring this runner.
 
 It is a good idea to execute `mvn install` as the step preceeding the inspecitons step in order to allow projects with dependencies to be resolved successfully.
 </note>

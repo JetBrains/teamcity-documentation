@@ -430,9 +430,9 @@ To resolve this issue, grant the "Full control" permission to the "Authenticated
 
 If you try to run dotCover on an agent with the Nano Server OS, the build will fail with an exit error "_Process exited with code -1073741515_". Instead of Nano Server, consider using [Server Core](https://docs.microsoft.com/en-us/windows-server/administration/server-core/what-is-server-core) which is an alternative minimal installation option of Windows Server.
 
-### Coverage statistics for msbuild command is not supported
+### dotCover does not support сoverage statistics for msbuild
 
-dotCover doesn't support collection of coverage statistics for the `dotnet msbuild /t:vstest` command – use `dotnet test` instead.
+dotCover does not support collection of coverage statistics for the `dotnet msbuild /t:vstest` command – use `dotnet test` instead.
 
 ## Xcode 10 is unable to clean artifacts in custom output directory
 
