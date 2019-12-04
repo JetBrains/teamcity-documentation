@@ -1,16 +1,16 @@
 [//]: # (title: Pull Requests)
 [//]: # (auxiliary-id: Pull Requests)
 
-The _Pull Requests_ build feature lets you automatically load pull request (or _merge requests_ in case of GitLab) information and run builds on pull request branches of the following VCS (Version Control Systems) hosting services:
+The _Pull Requests_ build feature lets you automatically load pull request (or _merge requests_ in case of GitLab) information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), and [GitLab](#GitLab+Merge+Requests).
 
-* [GitHub](#GitHub+Pull+Requests)
-* [Bitbucket Server](#Bitbucket+Server+Pull+Requests)
-* [GitLab](#GitLab+Merge+Requests)
+On this page:
 
-The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors and triggers builds only on `head` branches (such as `refs/pull/*/head`).    
+<tag-list of="chapter" mode="tree" depth="4"/>
+
+The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors and triggers builds only on `head` branches (such as `refs/pull/*/head`).   
 After a build is run on a pull request, TeamCity provides additional details for the pull request branch on the Build Overview page.
 
-<img src="pr-info.png" alt="Pull request details" width="923"/>
+<img src="pr-info.png" alt="Pull request details" width="700"/>
 
 <note>
 
@@ -377,6 +377,19 @@ You can automate your setup further, so TeamCity:
 * sends a build status back to GitHub after the build finishes, with the [Commit Status Publisher](commit-status-publisher.md) build feature
 * merges the pull request in GitHub if the build finishes successfully, with the [Automatic Merge](automatic-merge.md) build feature
 
+## Predefined build parameters for pull requests
+
+TeamCity provides multiple [predefined build parameters](predefined-build-parameters.md) that expose valuable information on pull requests:
+ 
+```Text
+teamcity.pullRequest.number //pull request number
+teamcity.pullRequest.title //pull request title
+teamcity.pullRequest.source.branch //VCS name of the source branch; provided only if the source repository is the same as the target one
+teamcity.pullRequest.target.branch //VCS name of the target branch
+
+```
+
+You can use these parameters in the settings of a build configuration or in build scripts.
 
 __ __
 
