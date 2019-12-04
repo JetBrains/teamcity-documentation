@@ -1,32 +1,6 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
-## Changes from 2019.1.x to 2019.2
-
-### Discontinued Running Builds Node
-
-<anchor name="running-builds-node-discontinued"/>
-
-The [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is discontinued. In a multinode setup, you can instead [configure a secondary node](configuring-secondary-node.md) with the _"Processing data produced by running builds"_ responsibility. Read more on the [Multinode Setup](multinode-setup.md#running-builds-node-discontinued) page.
-
-### Bundled Tools Updates
-
-#### Bundled dotCover upgrade
-
-The bundled [dotCover tool](jetbrains-dotcover.md) has been upgraded to the latest released version, 2019.2.3.
-
-* Version 2019.2.3 is __cross-platform__: dotCover is now available on Linux and macOS agents, in addition to Windows agents. After upgrading to TeamCity 2019.2, Linux and macOS agents will become compatible with build configurations that require dotCover (if bundled dotCover is used and if there are no other incompatibilities).   
-Note that cross-platform integration is currently supported only by the [.NET CLI (dotnet)](net-cli-dotnet.md) build runner.
-* TeamCity agent Docker images (on both Windows and Linux) are now bundled with dotCover.
-* For Linux and macOS agents, all [additional dotCover arguments](jetbrains-dotcover.md#additional-arguments) must be preceded with `--` characters. For example, the `/LogFile` parameter is used to enable the main log on Windows; on Linux and macOS, `--/LogFile` must be used instead.
-* Code Coverage __configuration using Test Settings is deprecated__ in dotCover. [Read more](https://docs.microsoft.com/en-us/previous-versions/dd504821(v=vs.140)) in Microsoft documentation.   
-If you use `.testsettings` files, TeamCity will display a warning message in the log. To prevent this issue, we suggest that you use [`.runsettings`](https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2019) files instead.   
-If, for some reason, you have to continue using `.testsettings`, install dotCover version 2019.1.x or earlier on TeamCity agents, as described [here](installing-agent-tools.md).
-  
-#### Unbundled VCS Support plugins for ClearCase and SourceGear Vault 
-
-The VCS Support plugins for [ClearCase](https://plugins.jetbrains.com/plugin/13210-vcs-support-clearcase) and [SourceGear Vault](https://plugins.jetbrains.com/plugin/8892-vcs-support-sourcegear-vault) have been unbundled. To be able to use any of these [VCS types](configuring-vcs-roots.md#vcs-type) in TeamCity, download and install the required plugin as described [here](installing-additional-plugins.md).
-
 ## Changes from 2019.1.4 to 2019.1.5
 
 * In the [TeamCity agent Docker image](https://hub.docker.com/r/jetbrains/teamcity-agent/), Docker has been updated to version 19.0.3 and Docker Compose has been updated to version 1.24.1.
