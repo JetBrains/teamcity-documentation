@@ -64,6 +64,8 @@ Check this option to automatically add time stamp suffix to the specified filena
 
 <td>
 
+<anchor name="backup-scope"/>
+
 Backup scope
 
 </td>

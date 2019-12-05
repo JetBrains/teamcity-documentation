@@ -30,13 +30,24 @@ See also details on the directories in the [TeamCity Data Directory](teamcity-da
 
 ## Performing restore
 
-Since version 2019.2, TeamCity can automatically restore the backed up data. It also relies on the maintainDB utility, but performs all the necessary operations under the hood. To restore the backed up files on the first start of the TeamCity server:
+Since version 2019.2, TeamCity can automatically restore the backed up data. The automatic restoration process also relies on the maintainDB utility, but performs all the necessary operations under the hood. To restore the backed up files on the first start of the TeamCity server:
 1. On the _TeamCity First Start_ step of the browser dialog, enter the path to the [Data Directory](teamcity-data-directory.md) and click __Restore from backup__.
 2. Enter an absolute path to the backup directory or upload a ZIP archive with the backed up data.
 3. Choose the target database and update it to the current version, if proposed by TeamCity. If you use an external database, configure its address and credentials.
 4. Proceed with the restoration.
 
 TeamCity will restore the data and display the maintainDB utility log.
+
+<note>
+
+__Limitations of automatic restoration__
+
+* Only builds with both database and configuration present in the backup file can be restored automatically. Some backup files with the [custom scope](creating-backup-from-teamcity-web-ui.md#backup-scope) might not be restored properly.
+* In case automatic restoration faces an error (for example, not enough database memory), you will need to clean the database manually and then try restoring again.
+
+In both cases, we suggest that you restore TeamCity manually via maintainDB, as described below.
+
+</note>
 
 Alternatively, you can use the maintainDB utility manually. This section describes __only some__ of the `maintainDB` options. For the complete list of all available options, run `maintainDB` from the command line with no parameters. See also maintainDB [startup options](creating-backup-via-maintaindb-command-line-tool.md#maintainDB+Startup+Options).
 
