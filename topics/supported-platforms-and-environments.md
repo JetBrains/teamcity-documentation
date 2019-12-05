@@ -143,6 +143,7 @@ TeamCity supports a wide range of build tools, enabling both Java and .NET softw
 * [Git](git.md) (for automatic `git gc` support requires Git client installed on the server in order to perform maintenance of Git clones, latest version is recommended)
 * [Subversion](subversion.md) (server versions 1.4\-1.9 and higher as long as the protocol is backward compatible).
 * [Perforce](perforce.md) (requires a Perforce client installed on the TeamCity server). Check [compatibility issues](perforce-vcs-compatibility.md).
+* [Perforce](perforce.md) (requires a Perforce client installed on the TeamCity server). Check [compatibility issues](perforce-vcs-compatibility.md).
 * [Team Foundation Server](team-foundation-server.md) 2005, 2008, 2010, 2012, 2013, 2015, 2017 are supported. 
 * [Mercurial](mercurial.md) (requires the Mercurial "hg" client v1.5.2\+ installed on the server)
 * [CVS](cvs.md)
@@ -226,7 +227,7 @@ Links to issues of any issue tracker can also be recognized in change comments u
 TeamCity provides productivity plugins for the following IDEs:
 
 * [Eclipse](eclipse-plugin.md): Eclipse versions 3.8 and 4.2\-4.6 are supported. Eclipse must be run under JDK 1.5\+
-* [IntelliJ Platform Plugin](intellij-platform-plugin.md): compatible with IntelliJ IDEA 15.0.x \- 2018.3.x (Ultimate and Community editions); as well as other IDEs based on the same version of the platform, including JetBrains RubyMine 6.3\+, JetBrains PyCharm 3.1\+, JetBrains PhpStorm/WebStorm 7.1\+, AppCode 2.1\+. See [more information](intellij-platform-plugin-compatibility.md) on compatibility.
+* [IntelliJ Platform Plugin](intellij-platform-plugin.md): compatible with IntelliJ IDEA 15.0.x \- 2019.3.x (Ultimate and Community editions); as well as other IDEs based on the same version of the platform, including JetBrains RubyMine 6.3\+, JetBrains PyCharm 3.1\+, JetBrains PhpStorm/WebStorm 7.1\+, AppCode 2.1\+. See [more information](intellij-platform-plugin-compatibility.md) on compatibility.
 * [Microsoft Visual Studio](visual-studio-addin.md) 2010, 2012, 2013, 2015, 2017 is supported by the TeamCity Visual Studio [Add-in shipped as a part of ReSharper Ultimate](visual-studio-addin.md#Installing+Add-in). Installed .NET Framework is required. 
 
 ### Remote Run and Pre-tested Commit
