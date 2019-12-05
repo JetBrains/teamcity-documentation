@@ -98,8 +98,8 @@ When secure data of a project is stored outside of the Version Control System, i
 
 <img src="tokens-tab.png" alt="Versioned Settings| Tokens" width="800"/>
 
-Currently, passwords are not inheritable by projects hierarchy. If a setting in a project (VCS root, OAuth connection, cloud profile) requires a password, the token generated for this password can be used in this project only. For instance, it is not possible use a generated token in a similar setting in a subproject. A new token should be generated in this case.   
-If you need to use a secure value in the nested projects, consider adding a [password parameter](typed-parameters.md#Adding+Parameter+Specification) with the secure value and using a [reference](configuring-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) to the parameter in the nested projects.
+Secure values can be inherited by projects hierarchy. If a setting in a project (VCS root, OAuth connection, cloud profile) requires a password, the token generated for this password can be used in this project and in any of its subprojects. To be able to use the inherited password, the subproject must have versioned settings enabled and store settings in the same VCS, as its parent project.   
+Alternatively, you can add a [password parameter](typed-parameters.md#Adding+Parameter+Specification) with the secure value and use a [reference](configuring-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) to the parameter in the nested projects.
 
 ### Implications of Storing Security Data in VCS 
 
