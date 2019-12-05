@@ -1,5 +1,6 @@
 [//]: # (title: SSH Exec)
 [//]: # (auxiliary-id: SSH Exec)
+
 SSH Exec enables TeamCity to execute arbitrary remote commands using SSH.
 
 The settings common for all runners are described in [Configuring Build Steps](configuring-build-steps.md); this page details the SSH Exec runner settings.
@@ -135,7 +136,7 @@ Commands
 
 <td>
 
-Specify a new\-line delimited set of commands that will be executed in the remote shell. The remote shell will be started in the home directory of an authenticated user. The shell output will be available in the TeamCity build log.
+Specify a new-line delimited set of commands that will be executed in the remote shell. The remote shell will be started in the home directory of an authenticated user. The shell output will be available in the TeamCity build log.
 
 </td></tr></table>
 
