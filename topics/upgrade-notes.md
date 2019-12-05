@@ -1773,7 +1773,7 @@ __"importData" service message arguments id__ argument renamed to __type__ and _
 ## Changes from 3.1.2 to 4.0
 
 __Initial startup time__   
-On the very first start of the new version of TeamCity, the database structure will be upgraded. This process can increase the time of the server startup. The first startup can take up to 20 minutes more then regular one. This time depends on the size of your builds history, average number of tests in a build and the server hardware.
+On the very first start of the new version of TeamCity, the database structure will be upgraded. This process can increase the time of the server startup. The first startup can take up to 20 minutes more than regular one. This time depends on the size of your builds history, average number of tests in a build and the server hardware.
 
 __Users re\-login will be forced after upgrade__   
 Upon upgrade, all users will be automatically logged off and will need to re\-login in their browsers to TeamCity web UI. After the first login since upgrade, __Remember me__ functionality will work as usual.
