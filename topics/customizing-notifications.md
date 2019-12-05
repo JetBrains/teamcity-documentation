@@ -1,7 +1,9 @@
 [//]: # (title: Customizing Notifications)
 [//]: # (auxiliary-id: Customizing Notifications)
 
-TeamCity users can [select the events to be notified about](subscribing-to-notifications.md). The default notification messages can be customized globally on a per\-server basis. Customizing notifications received via Atom/RSS syndication feeds requires a [special approach](#TeamCity+Notification+Properties) since the feeds use the "pull" model for receiving notifications instead of "push".
+TeamCity users can [select the events to be notified about](subscribing-to-notifications.md). The default notification messages can be customized globally on a per-server basis. Customizing notifications received via Atom/RSS syndication feeds requires a [special approach](#TeamCity+Notification+Properties) since the feeds use the "pull" model for receiving notifications instead of "push".
+
+Project Administrators with enabled "_Change user / group notification rules in project_" permission can edit notification rules for users and user groups assigned to their projects.
 
 On this page:
 
