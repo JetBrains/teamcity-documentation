@@ -122,7 +122,7 @@ To get an idea of how snapshot dependencies work, think of module dependencies, 
 
 <img src="a1-a2-an.png" width="300"/>
 
-1. If a build of A1 is triggered, the whole build chain A1...AN is added to the [build queue](build-queue.md), but __not vice versa!__ \- if build AN is triggered, it doesn't affect anyhow the build chain, only AN is run.
+1. If a build of A1 is triggered, the whole build chain A1...AN is added to the [build queue](build-queue.md), but __not vice versa!__ \- if build AN is triggered, it doesn't affect anything else in the build chain, only AN is run.
 2. Builds run __sequentially starting from AN to A1__. Build A(k\-1) won't start until build Ak finishes successfully.
 3. All builds in the chain will use the same sources snapshot, i.e. with explicit specification of the sources revision, that is calculated at the moment when the build chain is added to the queue.   
 
