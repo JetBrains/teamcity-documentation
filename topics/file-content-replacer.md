@@ -30,7 +30,7 @@ You can specify the values manually or use value presets for replacement, which 
 
 <table><tr>
 
-<td>
+<td width="250">
 
 Option
 
@@ -55,7 +55,7 @@ Template (optional)
 
 <anchor name="Template"/>
 
-File Content Replacer provides a template for every attribute to be replaced. Clicking the __Load Template...__ button displays the combobox with templates containing value presets for replacement. The templates can be filtered by _language_ (e.g. `C#`), _file_ (e.g. `AssemblyInfo`) or _attribute_ (e.g. `AssemblyVersion`) by typing in the combobox. When a template is selected, the settings are automatically filled with predefined values. See the [section below](#Templates) for template details.
+File Content Replacer provides a template for every attribute to be replaced. Clicking the __Load Template__ button displays the combobox with templates containing value presets for replacement. The templates can be filtered by _language_ (e.g. `C#`), _file_ (e.g. `AssemblyInfo`) or _attribute_ (e.g. `AssemblyVersion`) by typing in the combobox. When a template is selected, the settings are automatically filled with predefined values. See the [section below](#Templates) for template details.
 
 
 </td></tr><tr>
@@ -71,7 +71,7 @@ Process files
 
 <anchor name="Wildcards"/>
 
-Click Edit file list and specify paths to files where the values to be replaced will be searched. Provide a newline\- or comma\-separated set of rules in the form of `+|-:[path relative to the checkout directory]`.   
+Click __Edit file list__ and specify paths to files where the values to be replaced will be searched. Provide a newline- or comma-separated set of rules in the form of `+|-:[path relative to the checkout directory]`.   
 [Ant-like wildcards](wildcards.md#Antlike+Wildcards) are supported, for example, `dir/**/*.cs`.
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
@@ -80,6 +80,24 @@ _If a [pre-defined template](file-content-replacer.md#Templates) is selected, th
 
 
 </td></tr><tr>
+
+<td>
+
+Fail build if no files match pattern
+
+</td>
+
+<td>
+
+Enabled by default. Disable this option to prevent build failure even if no files match the specified pattern.
+
+</td>
+
+
+</tr>
+
+
+<tr>
 
 <td>
 
@@ -139,7 +157,7 @@ _If a [pre-defined template](file-content-replacer.md#Templates) is selected, th
 
 <td>
 
-Regex
+Regex mode
 
 </td>
 
