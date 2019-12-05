@@ -41,7 +41,7 @@ To assign an investigation of a particular build problem:
    The _Investigate/Mute_ dialog opens.
 2. Select a TeamCity user from the __Investigated by__ drop-down menu. <img src="assign-investigation-failed-build.png" width="575" alt="Assigned an investigation of a failed build"/>
 3. Select the condition to resolve the investigation:
-   * _Automatically when fixed_
+   * _Automatically when fixed_ ([read more](#Notes+on+Automatic+Fix+of+Investigations+and+Muted+Problems))
    * or, _Manually_   
    
    The user to whom the investigation is assigned can later [mark the problem as fixed](#Marking+Problems+as+Fixed) in this window.
@@ -58,7 +58,7 @@ To mute a particular build problem:
    * _Project-wide_, that is muting the problem in all configurations in the current project and its subprojects.
    * _Selected build configurations_, which allows you to select particular build configurations from the same project.
 3. Select the condition to unmute the problem:
-   * _Automatically when fixed_
+   * _Automatically when fixed_ ([read more](#Notes+on+Automatic+Fix+of+Investigations+and+Muted+Problems))
    * _On a specific date_
    * or, _Manually_
 4. Click __Save__.
@@ -107,15 +107,21 @@ For each failed test, you can instantly see:
 * current stack trace and the information about the build where the test is currently failing
 * information about the first failure of the test, with the stack trace and the build
 
-The investigations assigned to you are also highlighted in the Web UI if you enable the "_Highlight my changes and investigations_" option in your [profile settings](managing-your-user-account.md).
+The investigations assigned to you are also highlighted in the web UI if you enable the "_Highlight my changes and investigations_" option in your [profile settings](managing-your-user-account.md).
 
+## Notes on Automatic Fix of Investigations and Muted Problems
+
+If the "_Automatically when fixed_" option is select in [Investigation](#Assigning+Investigations+of+Build+Problems+and+Failed+Tests) or [Mute](#Muting+Build+Problems) options, TeamCity will analyze the state of each failure in different branches to resolve the investigation or mute smarter:
+
+* If the failure occurs in the default branch and in another active branch, and an investigation (or mute) is assigned to this failure in any of these branches, it will be resolved as soon as the failure is fixed in the default branch.
+* If the failure occurs in any active branch other than the default one, the assigned investigation (or mute) will be resolved only when it is fixed in all active branches in which it occurs.
 
 __  __
 
 __See also:__
 
 
-__Concepts__: [Build Configuration Status](build-configuration.md) | [Muting Test Failures](investigating-and-muting-build-failures.md#Muting+Failed+Tests)   
+__Concepts__: [Build Configuration Status](build-configuration.md)   
 __User's Guide__: [Viewing Tests and Configuration Problems](viewing-tests-and-configuration-problems.md)
 
 __ __
