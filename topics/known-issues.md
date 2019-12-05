@@ -434,6 +434,12 @@ If you try to run dotCover on an agent with the Nano Server OS, the build will f
 
 dotCover does not support collection of coverage statistics for the `dotnet msbuild /t:vstest` command – use `dotnet test` instead.
 
+### Code coverage configuration using Test Settings is deprecated
+
+Code coverage configuration using Test Settings is deprecated in dotCover. [Read more](https://docs.microsoft.com/en-us/previous-versions/dd504821(v=vs.140)) in Microsoft documentation.
+
+If you use `.testsettings` files, TeamCity will display a warning message in the log. To prevent this issue, we suggest that you use [`.runsettings`](https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2019) files instead. If, for some reason, you have to continue using `.testsettings`, install dotCover version 2019.1.x or earlier on TeamCity agents, as described [here](installing-agent-tools.md).
+
 ## Xcode 10 is unable to clean artifacts in custom output directory
 
 If you use a custom output directory for Xcode, note that on upgrading to Xcode 10, TeamCity builds with the Xcode Project build runner might fail with the error: "_Could not delete \<directory\> because it was not created by the build system and it is not a subfolder of derived data."_
