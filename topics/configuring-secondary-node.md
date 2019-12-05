@@ -5,6 +5,14 @@ In addition to the main TeamCity server, you can start a secondary server (node)
 
 This page describes how to configure a secondary node.
 
+<anchor name="running-builds-node-discontinued"/>
+
+<note>
+
+Note that since TeamCity 2019.2 the [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is discontinued in favor of the secondary node. Read more in [Multinode Setup](multinode-setup.md#running-builds-node-discontinued).
+
+</note>
+
 On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
