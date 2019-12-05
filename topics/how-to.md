@@ -808,7 +808,6 @@ The alternative approach, which will work for any TeamCity version, is to pass a
 
 ```Shell
 
--Dproxyset=true
 -Dhttp.proxyHost=proxy.domain.com
 -Dhttp.proxyPort=8080
 -Dhttp.nonProxyHosts=domain.com
