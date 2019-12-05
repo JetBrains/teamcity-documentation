@@ -152,7 +152,7 @@ __Project Administrator__
 
 Can customize general settings of a project and settings of build configurations, assign roles to the project users, create subprojects. Has all the [Project Developer's](#project-developer) permissions.
 
-With enabled "_Change user / group notification rules in project_" permission, can edit notification rules for users and user groups assigned to their projects.
+With the enabled "_Change user / group notification rules in project_" permission, can edit notification rules for users and user groups assigned to their projects.
 
 __Prior to TeamCity 10__, this role included the [Agent Manager](#agent-manager) role.   
 __Since TeamCity 10__, [project-level agent management permissions](#Project-level+Agent+Management+Permissions) replace the inherited Agent Manager role. If old settings (set prior to TeamCity 10) are preserved in your TeamCity installation after upgrade to version 10 or later, we recommend excluding the Agent Manager role from the Project Administrator role manually and configuring agent management permissions instead.
