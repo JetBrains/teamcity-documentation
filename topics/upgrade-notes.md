@@ -1,6 +1,39 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2019.1.x to 2019.2
+
+### Switch to 64-bit Amazon Corretto JVM in Windows installer and Docker images
+
+The bundled version of Java in TeamCity 2019.2 Windows installer and Docker images is 64-bit Amazon Corretto 8.
+
+Previous versions of TeamCity bundled 32-bit JVM from Oracle and then from AdoptOpenJDK. Given that 64-bit systems are now the most widespread, we decided to switch to 64-bit JVM in our Windows installer. This should simplify the maintenance of the TeamCity server because 32-bit JVM has quite limiting maximum amount of memory which can be used by the server process on Windows (about 1.2 Gb). Previously, when server administrators needed to increase `Xmx` beyond this value, they had to change JVM version as well – this is no longer the case.
+
+In addition, we decided to switch the bundled JVM from AdoptOpenJDK to [Amazon Corretto](https://aws.amazon.com/corretto/) JVM in the Windows installer and in our Docker images. AdoptOpenJDK served us quite well and we did not have problems with it – this decision is a part of the internal unification processes in JetBrains and should not affect TeamCity users anyhow.
+
+### Discontinued Running Builds Node
+
+<anchor name="running-builds-node-discontinued"/>
+
+The [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is discontinued. In a multinode setup, you can instead [configure a secondary node](configuring-secondary-node.md) with the "_Processing data produced by running builds_" responsibility. Read more on the [Multinode Setup](multinode-setup.md#running-builds-node-discontinued) page.
+
+### Automatic management of git fetch memory
+
+TeamCity now can automatically manage the amount of memory used by the `git fetch` process.   
+If you have previously used the `teamcity.git.fetch.process.max.memory` internal property to set the memory amount available for fetching in each VCS root, you can now disable it to delegate the detection of memory consumption to the TeamCity server. To control the limit of available memory, use the `teamcity.git.fetch.process.max.memory.limit` property.
+
+### Bundled Tools Updates
+
+* Bundled IntelliJ IDEA has been updated to version 2019.3.
+* Kotlin, used in TeamCity DSL, has been upgraded to version 1.3.60.
+* The Docker client in the TeamCity Linux agent image has been upgraded to version 19.03.3 to prevent the problems with unexpected Docker stop (see the related [Docker issue](https://github.com/docker/for-linux/issues/517)). 
+* Docker Compose has been updated to version 1.24.1.
+* Bundled dotCover and ReSharper CLT have been upgraded to version 2019.2.3.
+
+#### Unbundled VCS Support plugins for ClearCase and SourceGear Vault 
+
+The VCS Support plugins for [ClearCase](https://plugins.jetbrains.com/plugin/13210-vcs-support-clearcase) and [SourceGear Vault](https://plugins.jetbrains.com/plugin/8892-vcs-support-sourcegear-vault) have been unbundled. To be able to use any of these VCS types in TeamCity, download and install the required plugin as described [here](installing-agent-tools.md).
+
 ## Changes from 2019.1.4 to 2019.1.5
 
 * In the [TeamCity agent Docker image](https://hub.docker.com/r/jetbrains/teamcity-agent/), Docker has been updated to version 19.0.3 and Docker Compose has been updated to version 1.24.1.
