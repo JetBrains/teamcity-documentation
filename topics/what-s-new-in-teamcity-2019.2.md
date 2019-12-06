@@ -45,7 +45,7 @@ To collect the metrics, we suggest that you use a Prometheus database or a combi
 
 Example of TeamCity metrics represented in Grafana:
 
-SCREENSHOT
+<img src="grafana-monitoring-example.png" width="800" alt="Example of TeamCity metrics represented in Grafana"/>
 
 ## Code highlighting in build runners’ scripts
 
@@ -55,7 +55,7 @@ To improve readability, you can now apply soft wraps to the code by clicking ![c
 
 Example of Dockerfile highlighting in TeamCity:
 
-SCREENSHOT
+<img src="code-hl.png" width="500" alt="Example of Dockerfile highlighting in TeamCity"/>
 
 ## Support of EC2 launch templates
 
@@ -153,15 +153,15 @@ TeamCity 2019.2 introduces the redesigned [Build Details](#Experimental+Build+De
 
 In our attempt to rethink the approach to displaying build details, we have redesigned the __Build Details__ page so it provides better visualization and gives quick access to all other projects via the sidebar.
 
-SCREENSHOT
+<img src="exp-build-details.png" width="1000" alt="Experimental Build Details page"/>
 
 You can instantly preview all the previous builds and their details, without leaving the current build page:
 
-SCREENSHOT
+<img src="build-trends-preview.png" width="250" alt="Build trends preview"/>
 
 Visualized build timeline reflects the duration of each stage and indicates build problem:
 
-SCREENSHOT
+<img src="build-timeline.png" width="600" alt="Build timeline"/>
 
 You can click any stage to open the corresponding line of the build log. Note that in the new UI, even a long log can be displayed directly in the preview, with no need to download it.
 
@@ -228,6 +228,6 @@ Full list of fixed issues
 
 ## Previous releases
 
-[What's New in TeamCity 2019.1](what-s-new-in-teamcity-2019.1.md)
+[What's New in TeamCity 2019.1](https://www.jetbrains.com/help/teamcity/2019.1/what-s-new-in-teamcity-2019-1.html)
 
 __ __

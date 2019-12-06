@@ -109,7 +109,7 @@ With context parameters, you can maintain a single Kotlin DSL code and use it in
 
 <note>
 
-Currently, the settings of projects based on Kotlin DSL with context parameters cannot be edited via the TeamCity UI.
+Currently, the settings of projects based on Kotlin DSL with context parameters cannot be edited via the TeamCity UI (see [TW-63565](https://youtrack.jetbrains.com/issue/TW-63565) for the details).
 
 </note>
 
@@ -142,8 +142,6 @@ The following example shows how to use context parameters in DSL:
     ```
 
 Each context parameter is expected to have a value, either the default one, set in the DSL, or a project-specific one, set in the UI. When you create a project from DSL or update the project versioned settings, TeamCity detects all context parameters with missing values and prompts you to set them.
-
-Note that using context parameters makes the project read-only in the UI (see [TW-63565](https://youtrack.jetbrains.com/issue/TW-63565) for the details).
 
 ### Patches
 
