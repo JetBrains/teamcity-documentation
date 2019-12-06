@@ -35,7 +35,7 @@ __To enable external artifact storage in an AWS S3 bucket__
 1. Navigate to the __Project Settings | Artifacts Storage__ tab. The built\-in TeamCity artifacts storage is displayed by default and marked as active.
 2. Click Add new storage. S3 Storage is selected as the storage type (provided there are no other external storage plugins installed).
 3. Provide an optional name for your storage.
-4. Select the AWS environment and provide the required settings (if any).
+4. Select the AWS environment and provide the required settings.
 5. Provide your AWS Security Credentials.
 6. Specify an existing S3 bucket to store artifacts.
 7. Save your settings. 
