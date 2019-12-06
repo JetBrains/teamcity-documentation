@@ -107,6 +107,12 @@ Context parameters are specified as a part of the project [versioned settings](s
 
 With context parameters, you can maintain a single Kotlin DSL code and use it in different projects on the TeamCity server, so each of these projects defines its own values of context parameters.
 
+<note>
+
+Currently, the settings of projects based on Kotlin DSL with context parameters cannot be edited via the TeamCity UI.
+
+</note>
+
 To use a context parameter in a TeamCity project, you need to (1) define it in the project versioned settings in the UI and (2) reference it in the project DSL.
 
 1. __Managing context parameters in UI__   
