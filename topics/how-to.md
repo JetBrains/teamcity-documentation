@@ -1213,7 +1213,7 @@ TeamCity moves deleted projects settings directories (which are named after the 
 To restore a project, find the project directory in the \_trash directory and move it into regular projects settings directory: `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/projects` while removing the `".projectN"` suffix from the directory name.   
 You can do this while server is running, it should pick up the restored project automatically.
 
-Note that TeamCity preserves builds history and other data stored in the database for deleted projects/build configurations for 5 days after the deletion time. All the associated data (builds and test history, changes, etc.) is removed during the next clean\-up after the [configurable](clean-up.md#Deleted+Build+Configurations+Cleanup) (5 days by default) timeout elapses. 
+Note that TeamCity preserves builds history and other data stored in the database for deleted projects/build configurations for 5 days after the deletion time. All the associated data (builds and test history, changes, etc.) is removed during the next clean\-up after the [configurable](clean-up.md#Deleted+Build+Configurations+Clean-up) (5 days by default) timeout elapses. 
 
 The `config/_trash` directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects. No server restart is required.
 

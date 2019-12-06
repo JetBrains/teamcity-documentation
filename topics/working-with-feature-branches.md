@@ -263,7 +263,7 @@ If you need to get the branch name in the build script or use it in other build 
 
 ## Clean-up
 
-Clean\-up rules are applied [independently](clean-up.md#Clean-up+in+Build+Configurations+with+Feature+Branches) to each [active branch](#Active+branches).
+Clean\-up rules are applied [independently](clean-up.md#Base+Rule+Behavior+for+Build+Configurations+with+Feature+Branches) to each [active branch](#Active+branches).
 
 ## Manual branch merging
 

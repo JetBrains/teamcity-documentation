@@ -20,7 +20,7 @@ The projects hierarchy is used in the following ways:
 
 Settings defined on a project level are propagated to all the subprojects (recursively). These include:
 * [Parameters](configuring-build-parameters.md)
-* [Clean-up rules](clean-up.md#Project+Clean-up+Rules)
+* [Clean-up rules](clean-up.md#Clean-up+Rules)
 * [Versioned Settings](storing-project-settings-in-version-control.md) (Settings for synchronizing the project settings with version control) 
 * it is possible to export a project with all its subprojects and external dependencies using the [Settings Export](project-export.md) page.
 

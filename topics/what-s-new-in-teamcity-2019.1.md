@@ -58,7 +58,7 @@ To add a Bitbucket VCS root, select _Bitbucket Server_ as a _VSC hosting type_ a
 ## TeamCity multinode setup improvements
 
 To improve scalability of TeamCity, we're working on the ability to set up a cluster, where the main node distributes different responsibilities among other nodes and also handles such tasks as upgrading, licensing, diagnostics, and server configuration. Such multinode setup implies that all secondary nodes are uniform and can perform all tasks in an interchangeable way.     
-In addition to the tasks that can already be performed by a secondary node, in this version secondary nodes can be assigned the “processing the build lifecycle” responsibility, which releases the main server from the build-related tasks, such as processing builds messages coming from agents, and allows you to significantly increase the number of agents.      
+In addition to the tasks that can already be performed by a secondary node, in this version secondary nodes can be assigned the "processing the build lifecycle" responsibility, which releases the main server from the build-related tasks, such as processing builds messages coming from agents, and allows you to significantly increase the number of agents.      
 As a result, it is possible to start a single secondary node and assign several responsibilities to it or distribute these responsibilities between several secondary nodes:
 * VCS changes collecting
 * running builds processing
