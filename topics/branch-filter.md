@@ -196,6 +196,22 @@ Specify on which branches to monitor and trigger pull requests.
 
 </tr>
 
+<tr>
+
+<td>
+
+[Keep rules for clean-up](clean-up.md#Keep+Rule)
+
+</td>
+
+<td>
+
+Specify a naming pattern for branches to which the clean-up rule will apply. Note that, depending on the "_Apply rule_" settings, it could either apply to a selected number of builds per each matching branch or to a selected number of builds once per set of matching branches.
+
+</td>
+
+</tr>
+
 </table>
 
 ## Branch Filter Format
