@@ -119,32 +119,31 @@ To use a context parameter in a TeamCity project, you need to (1) define it in t
   You can manage project context parameters on the __Versioned Settings | Context Parameters__ tab. <img src="context-dsl-parameters.png" width="800" alt="Kotlin DSL parameters"/>   
   After you add, edit, or delete the parameters and click __Save__, TeamCity will reload the DSL configuration and apply the changed values to the project settings.
 2. __Referencing context parameters in DSL__   
-   To reference a context parameter in the `settings.kts` file, use the `getParameter()` method of the `DslContext` object. You can specify a default value of this parameter as an optional second argument: `getParameter("<parameter-name>", "<default-value>")`.   
+   To reference a context parameter in the DSL code, use the `getParameter()` method of the `DslContext` object. You can specify a default value of this parameter as an optional second argument: `getParameter("<parameter-name>", "<default-value>")`.   
 The following example shows how to use context parameters in DSL:
     ```kotlin
-    Project {
-        buildType(Build)
-    }
      
     object Build : BuildType({
      
         /* a context parameter that defines a build configuration name; its default value is `Test Build` */
         name = "${DslContext.getParameter("BuildName", "Test Build")}"
-     
+        
         script {
             scriptContent = "echo Build Successful"
-    }
+        }
      
-    /* a script that enables or disables the last build step depending on the value of the `environment` parameter */
-    script {
-       scriptContent = "echo Deploy"
-       enabled = DslContext.getParameter(name = "Environment") != "Staging"
-    }
+        /* disable the last build step depending on the value of the `environment` parameter */
+        script {
+           scriptContent = "echo Deploy"
+           enabled = DslContext.getParameter(name = "Environment") != "Staging"
+        }
      
     })
     ```
 
 Each context parameter is expected to have a value, either the default one, set in the DSL, or a project-specific one, set in the UI. When you create a project from DSL or update the project versioned settings, TeamCity detects all context parameters with missing values and prompts you to set them.
+
+Note that using context parameters makes the project read-only in the UI (see [TW-63565](https://youtrack.jetbrains.com/issue/TW-63565) for the details).
 
 ### Patches
 
