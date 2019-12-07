@@ -107,12 +107,6 @@ Now you can also run code coverage analysis with dotCover inside a Docker contai
 
 ## Updates for multinode setup
 
-### Optimized server-side patches download on agents
-
-Since this release, agents can download server-side patches from secondary nodes – not only from the main server, as it was before.
-
-Server-side patches are mostly used when an agent cannot find a VCS client executable (for example, Git or Perforce) on an agent machine. In this case, the agent will request the server to create a patch with VCS changes and send it to the agent. Now, if you assign the "_[VCS repositories polling](configuring-secondary-node.md#Assigning+Responsibilities)_" and "_[Processing data produced by builds](configuring-secondary-node.md#Assigning+Responsibilities)_" responsibilities to a secondary node, the agents will be able to request patches from this node as well, which significantly reduces the load on the main server.
-
 ### User-level actions on secondary nodes
 
 In previous versions of TeamCity, secondary nodes provided a read-only interface. It was not possible to add builds to the queue, tag/pin builds, or perform any other user-level actions. With this release, it changes. Now, if a secondary node is granted any responsibility (that is it does not act as a read-only server), it will enable build actions for users.
@@ -128,6 +122,12 @@ Currently, supported user-level actions are:
 See the full list of supported actions in our tracker: [TW-62749](https://youtrack.jetbrains.com/issue/TW-62749).
 
 Administrator-level actions are not yet available on secondary nodes. Use the main server if you need to change the server configuration.
+
+### Optimized server-side patches download on agents
+
+Since this release, agents can download server-side patches from secondary nodes – not only from the main server, as it was before.
+
+Server-side patches are mostly used when an agent cannot find a VCS client executable (for example, Git or Perforce) on an agent machine. In this case, the agent will request the server to create a patch with VCS changes and send it to the agent. Now, if you assign the "_[VCS repositories polling](configuring-secondary-node.md#Assigning+Responsibilities)_" and "_[Processing data produced by builds](configuring-secondary-node.md#Assigning+Responsibilities)_" responsibilities to a secondary node, the agents will be able to request patches from this node as well, which significantly reduces the load on the main server.
 
 ## Updates for DSL-based projects
 
