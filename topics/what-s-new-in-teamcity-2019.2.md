@@ -7,7 +7,7 @@
 
 Automatic build clean-up has been present in TeamCity since the early versions. It allows conveniently deleting old and no longer necessary build data. While the provided customization options are quite easy to configure, they cover only the most common cases and do not allow for fine-tuning.
 
-With this release, we are introducing more options for flexible control of the clean-up process. In addition to existing "_base rule_" for a project or build configuration, you can now create multiple "_keep rules_" to specify what builds and data to preserve during the clean-up. The keep rules are more fine-grained and can cover cases like keeping all the builds with a certain tag (for example, `release`) or in a certain branch. While using the new keep rules requires a better understanding of different kinds of builds and their data, it also offers greater flexibility. We recommend you try the new rules: as soon as you get used to them, you will be able to turn off the base rules and rely exclusively on the keep rules to configure the clean-up logic.
+With this release, we are introducing more options for flexible control of the clean-up process. In addition to existing "_base rule_" for a project or build configuration, you can now create multiple "_keep rules_" to specify what builds and data to preserve during the clean-up. The keep rules are more fine-grained and can cover cases like keeping all the builds with a certain tag (for example, `release`) or in a certain branch. While using the new keep rules requires a better understanding of different kinds of builds and their data, it also offers greater flexibility. 
 
 The __Clean-up Rules__ section of __Project Settings__ allows managing base and keep rules for the current project and for its subprojects and build configurations.
 
@@ -37,7 +37,7 @@ The metrics include:
 * number of active user sessions,
 * and more
 
-The full list is available via `https://<teamcity-server-host>:<port>/app/metrics`.
+The full list is available via `https://<teamcity-server-host>/app/metrics`.
 
 Some of the metrics are experimental, but you can already access them by adding the `?experimental=true` query string to the endpoint URL or enabling "_Show experimental metrics_" option on the __Metrics__ tab.
 
@@ -107,12 +107,6 @@ Now you can also run code coverage analysis with dotCover inside a Docker contai
 
 ## Updates for multinode setup
 
-### Optimized plugin download on agents
-
-Since this release, agents can download server-side patches from secondary nodes – not only from the main server, as it was before.
-
-Server-side patches are mostly used when an agent cannot find a VCS client executable (for example, Git or Perforce) on an agent machine. In this case, the agent will request the server to create a patch with VCS changes and send it to the agent. Now, if you assign the "_[VCS repositories polling](configuring-secondary-node.md#VCS+Repositories+Polling+on+Secondary+Node)_" responsibility to a secondary node, the agents will be able to request patches from this node as well, which significantly reduces the load on the main server.
-
 ### User-level actions on secondary nodes
 
 In previous versions of TeamCity, secondary nodes provided a read-only interface. It was not possible to add builds to the queue, tag/pin builds, or perform any other user-level actions. With this release, it changes. Now, if a secondary node is granted any responsibility (that is it does not act as a read-only server), it will enable build actions for users.
@@ -128,6 +122,12 @@ Currently, supported user-level actions are:
 See the full list of supported actions in our tracker: [TW-62749](https://youtrack.jetbrains.com/issue/TW-62749).
 
 Administrator-level actions are not yet available on secondary nodes. Use the main server if you need to change the server configuration.
+
+### Optimized server-side patches download on agents
+
+Since this release, agents can download server-side patches from secondary nodes – not only from the main server, as it was before.
+
+Server-side patches are mostly used when an agent cannot find a VCS client executable (for example, Git or Perforce) on an agent machine. In this case, the agent will request the server to create a patch with VCS changes and send it to the agent. Now, if you assign the "_[VCS repositories polling](configuring-secondary-node.md#Assigning+Responsibilities)_" and "_[Processing data produced by builds](configuring-secondary-node.md#Assigning+Responsibilities)_" responsibilities to a secondary node, the agents will be able to request patches from this node as well, which significantly reduces the load on the main server.
 
 ## Updates for DSL-based projects
 
@@ -183,7 +183,7 @@ The experimental __Agents__ page loads faster for a large number of agents and a
 
 * __Comparison of two builds__   
 With the _Compare Builds_ feature, you can select two builds from the same configuration and review information about their parameters, revisions, statistics, and tests side-by-side. This allows for easier monitoring and is especially helpful when multiple users manage and monitor builds. For example, if a build has no changes in the project code but fails for no obvious reason, you can compare this build with the last successful build and analyze their differences to find the most probable cause of the failure.   
-To compare a finished build with another, open the __Actions__ menu of this build, click __Compare with__, and select a build for comparison.
+To compare a build with another, open the __Actions__ menu of this build, click __Compare with__, and select a build for comparison.
  
 * __Expanded build preview in the build list__   
 TeamCity now allows you to preview the most important build results directly in the list of builds. On the __Build Configuration Home__ page, click a build line in the list to see its details.
