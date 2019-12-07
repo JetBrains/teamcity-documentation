@@ -189,7 +189,7 @@ SCREENSHOT
 
 * __Comparison of two builds__   
 With the _Compare Builds_ feature, you can select two builds from the same configuration and review information about their parameters, revisions, statistics, and tests side-by-side. This allows for easier monitoring and is especially helpful when multiple users manage and monitor builds. For example, if a build has no changes in the project code but fails for no obvious reason, you can compare this build with the last successful build and analyze their differences to find the most probable cause of the failure.   
-To compare a finished build with another, open the __Actions__ menu of this build, click __Compare with__, and select a build for comparison.
+To compare a build with another, open the __Actions__ menu of this build, click __Compare with__, and select a build for comparison.
  
 * __Expanded build preview in the build list__   
 TeamCity now allows you to preview the most important build results directly in the list of builds. On the __Build Configuration Home__ page, click a build line in the list to see its details.
