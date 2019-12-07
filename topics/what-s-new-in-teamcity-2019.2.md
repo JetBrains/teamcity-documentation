@@ -37,7 +37,7 @@ The metrics include:
 * number of active user sessions,
 * and more
 
-The full list is available via `https://<teamcity-server-host>:<port>/app/metrics`.
+The full list is available via `https://<teamcity-server-host>/app/metrics`.
 
 Some of the metrics are experimental, but you can already access them by adding the `?experimental=true` query string to the endpoint URL or enabling "_Show experimental metrics_" option on the __Metrics__ tab.
 
