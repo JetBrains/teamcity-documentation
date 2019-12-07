@@ -11,7 +11,7 @@ With this release, we are introducing more options for flexible control of the c
 
 The __Clean-up Rules__ section of __Project Settings__ allows managing base and keep rules for the current project and for its subprojects and build configurations.
 
-SCREENSHOT
+<img src="clean-up-rules.png" width="1000" alt="Clean-Up Rules page"/>
 
 When adding a keep rule, you can specify:
 * __Build data to preserve__: history, artifacts, logs, statistics, or everything.
@@ -21,7 +21,7 @@ You can also choose if the rule is applied per each matching branch individually
 
 Example of a keep rule:
 
-SCREENSHOT
+<img src="keep-rule-example.png" width="350" alt="Keep Rule example"/>
 
 Read more in [Clean-up](clean-up.md).
 
@@ -69,7 +69,7 @@ Read more in [Setting Up TeamCity for Amazon EC2](setting-up-teamcity-for-amazon
 
 If you start the TeamCity server instance for the first time and want to restore the backed up data of your previous TeamCity installation, you can now restore the backup right from the startup screen UI.
 
-SCREENSHOT
+<img src="backup-restore-ui.png" width="400" alt="Automatic backup restore"/>
 
 Read more in [Restoring TeamCity Data from Backup](restoring-teamcity-data-from-backup.md#Performing+restore).
  
@@ -167,23 +167,17 @@ You can click any stage to open the corresponding line of the build log. Note th
 
 Apart from the build timeline and build log, the __Overview__ tab gives quick access to build problems, tests, changes, and dependencies. However, the corresponding tabs have also been updated and now offer new features:
 
-* The __Changes__ tab displays more information about changes in the build. You can separately browse user and artifact changes, and optionally display changes in build settings. Click any change to preview its details.
+* The __Changes__ tab displays more information about changes in the build. You can separately browse user and artifact changes, and optionally display changes in build settings. Click any change to preview its details. <img src="exp-changes-tab.png" width="700" alt="Experimental Changes tab"/>
 
-SCREENSHOT
+* The __Tests__ tab allows quickly switching between failed, ignored, and succeeded tests. Click a test to view its details and assign an investigation. <img src="exp-tests-tab.png" width="700" alt="Experimental Tests tab"/>
 
-* The __Tests__ tab allows quickly switching between failed, ignored, and succeeded tests. Click a test to view its details and assign an investigation.
-
-SCREENSHOT
-
-* The __Dependencies__ tab provides three alternative modes of displaying the build dependencies: structured list, visual timeline, and build chain.
-
-SCREENSHOT
+* The __Dependencies__ tab provides three alternative modes of displaying the build dependencies: visual timeline, structured list, and build chain. <img src="exp-dependencies-tab.png" width="700" alt="Experimental Dependencies tab"/>
 
 ### Experimental Agents page
 
 The experimental __Agents__ page loads faster for a large number of agents and allows quickly switching between agent details. You can use the sidebar to browse the agent pool hierarchy and search agents and pools by name. The __Reports__ section provides statistics about running, idle, and disconnected agents in every pool.
 
-SCREENSHOT
+<img src="exp-agents-page.png" width="700" alt="Experimental Agents page"/>
 
 ### Other new features of experimental UI
 
