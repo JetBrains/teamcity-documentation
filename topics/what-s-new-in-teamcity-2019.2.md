@@ -214,7 +214,7 @@ If you have previously used the `teamcity.git.fetch.process.max.memory` internal
 
 ## Fixed issues
 
-Full list of fixed issues
+[Full list of fixed issues](https://confluence.jetbrains.com/display/TW/TeamCity+2019.2+Release+Notes)
 
 ## Upgrade notes
 
