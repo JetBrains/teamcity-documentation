@@ -3,13 +3,32 @@
 
 Besides [storing settings in version control](storing-project-settings-in-version-control.md) in XML format, TeamCity allows storing the settings in the DSL (based on the [Kotlin language](https://kotlinlang.org/)).
 
-Using the version control-stored DSL enables you to define settings programmatically. Since Kotlin is statically typed, you automatically receive the autocompletion feature in an IDE which makes the discovery of available API options much simpler.
+Using the version control-stored DSL enables you to define settings programmatically. Since Kotlin is statically typed, you automatically receive the auto-completion feature in an IDE which makes the discovery of available API options much simpler.
 
 Check out the [blog post series](https://blog.jetbrains.com/teamcity/2019/03/configuration-as-code-part-1-getting-started-with-kotlin-dsl) on using Kotlin DSL in TeamCity.
 
 On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
+
+## How Kotlin DSL works
+
+When versioned settings in Kotlin format are enabled, TeamCity commits the current settings to the specified settings repository.
+
+When a new commit is detected in a settings repository, TeamCity runs the DSL scripts found in this commit and applies the result to the settings on the TeamCity server or reports
+errors on the 'Versioned Settings' tab in the administration area of the project.
+
+Note: DSL scripts is essentially another way of writing TeamCity configuration files. 
+DSL scripts do not have direct control on how builds are executed. For instance, it is impossible to have a condition 
+and change something depending on the current state of a build. The result of scripts execution is configuration files, 
+which are loaded by TeamCity server and then behavior of the newly triggered builds changes. 
+
+Since DSL is a code in Kotlin programming language, all paradigms supported by this language are available.
+For instance, instead of using TeamCity templates, one can create a function or class which will encapsulate project common settings.
+For those who have programming skills it allows for more natural reuse of build configuration settings.
+
+DSL is also good in case when you need to have a big amount of similar build configurations. In this case they can be generated 
+by some pretty simple code, while without DSL one would need to spend significant time in user interface creating all these configurations. 
 
 ## Getting Started with Kotlin DSL
 
@@ -292,6 +311,54 @@ project {
 ```
 
 Explicit snapshot dependencies can be defined via a `dependsOn()` statement within both `parallel` and `sequential` blocks, with an optional lambda argument that allows setting dependency options. Non-default values of options for implicit snapshot dependencies can be set via the `options` lambda argument of any block.
+
+### Settings validation
+
+The settings using the DSL API version [v2017_2+][jetbrains.buildServer.configs.kotlin.v2017_2] are validated during
+DSL execution on the TeamCity server. You can also perform
+validation locally by running the `mvn org.jetbrains.teamcity:teamcity-configs-maven-plugin:generate` command.
+Validation checks that the mandatory properties are specified, for example a build step like this:
+
+```
+buildType {
+    ...
+    steps {
+        exec {
+        }
+    }
+    ...
+}
+```
+
+will produce a validation error saying that the mandatory [path][jetbrains.buildServer.configs.kotlin.v2017_2.steps.ExecBuildStep.path]
+property is not specified. This is similar to the checks performed by TeamCity when you create a new build step in the UI.
+
+You can also extend the validation in a way relevant for your setup. To do that, you need to override the `validate()`
+method. For example, the following class adds a custom validation to Git VCS roots:
+
+```
+open class MyGit() : GitVcsRoot() {
+    constructor(init: MyGit.() -> Unit): this() {
+        init()
+    }
+
+    override fun validate(consumer: ErrorConsumer) {
+        super.validate(consumer) //perform basic validation
+
+        url?.let {
+            if (it.startsWith("git://") || it.startsWith("http://")) {
+                consumer.consumePropertyError("url", "Insecure protocol, please use https or ssh instead")
+            }
+        }
+
+        authMethod?.let {
+            if (it is AuthMethod.CustomPrivateKey || it is AuthMethod.DefaultPrivateKey) {
+                consumer.consumePropertyError("authMethod", "Prohibited authentication method, please use 'uploadedKey' instead")
+            }
+        }
+    }
+}
+```
 
 ### Restoring Build History After ID Change
 
