@@ -496,6 +496,18 @@ License
 
 <td>
 
+[HdrHistogram](https://github.com/HdrHistogram/HdrHistogram)
+
+</td>
+
+<td>
+
+[BSD](https://github.com/HdrHistogram/HdrHistogram/blob/master/LICENSE.txt)
+
+</td></tr><tr>
+
+<td>
+
 [Highlight.js](http://softwaremaniacs.org/soft/highlight/en/)
 
 
@@ -866,6 +878,20 @@ License
 
 <td>
 
+[LatencyUtils](https://github.com/LatencyUtils/LatencyUtils)
+
+
+</td>
+
+<td>
+
+[BSD](https://github.com/LatencyUtils/LatencyUtils/blob/master/LICENSE)
+
+
+</td></tr><tr>
+
+<td>
+
 [Log4J JSON Layout](https://github.com/szhem/log4j-json-layout)
 
 
@@ -1176,6 +1202,20 @@ License
 <td>
 
 [PostgreSQL License](http://www.postgresql.org/about/licence/)
+
+
+</td></tr><tr>
+
+<td>
+
+[Prometheus JVM Client](https://github.com/prometheus/client_java)
+
+
+</td>
+
+<td>
+
+[Apache](https://github.com/prometheus/client_java/blob/master/LICENSE)
 
 
 </td></tr><tr>
