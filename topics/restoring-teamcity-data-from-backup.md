@@ -32,11 +32,11 @@ See also details on the directories in the [TeamCity Data Directory](teamcity-da
 
 Since version 2019.2, TeamCity can automatically restore the backed up data. The automatic restoration process also relies on the maintainDB utility, but performs all the necessary operations under the hood. To restore the backed up files on the first start of the TeamCity server:
 1. On the _TeamCity First Start_ step of the browser dialog, enter the path to the [Data Directory](teamcity-data-directory.md) and click __Restore from backup__.
-2. Enter an absolute path to the backup directory or upload a ZIP archive with the backed up data.
-3. Choose the target database and update it to the current version, if proposed by TeamCity. If you use an external database, configure its address and credentials.
+2. Enter an absolute path to the backup directory on the TeamCity server or upload a ZIP archive with the backed up data.
+3. Choose the target database. If you use an external database, configure its address and credentials.
 4. Proceed with the restoration.
 
-TeamCity will restore the data and display the maintainDB utility log.
+TeamCity will restore the data and display the maintainDB utility log. If the version of the backed up data format is earlier than the current one, TeamCity will propose to upgrade it.
 
 <note>
 
