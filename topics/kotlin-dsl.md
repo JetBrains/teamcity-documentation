@@ -137,7 +137,7 @@ patches/templates/<relative vcs root id>.kts
 patches/vcsRoots/<relative build configuration id>.kts  
 ``` 
 
-Where <id> is uuid of the entity to which the patch is applied.
+Where `<id>` is the uuid of the entity to which the patch is applied.
 
 #### Patch example
 
