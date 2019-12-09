@@ -221,7 +221,7 @@ project {
     }
 }
 ```
-If a build chain is fully defined this way, no explicit snapshot dependencies must be defined within the build types themselves. 
+If you define a build chain in a pipeline style, ensure there are no explicit snapshot dependencies defined within the referenced build configurations themselves.
 
 In the example above, a build chain references already declared builds. Alternatively, you can register all listed builds after the chain declaration with a simplified syntax:
 
@@ -238,7 +238,7 @@ project {
 }
 ```
 
-Explicit snapshot dependencies can be defined via a `dependsOn()` statement within both `parallel` and `sequential` block, with an optional lambda argument that allows setting dependency options. Non-default values of options for implicit snapshot dependencies can be set via the `options` lambda argument of any block.
+Explicit snapshot dependencies can be defined via a `dependsOn()` statement within both `parallel` and `sequential` blocks, with an optional lambda argument that allows setting dependency options. Non-default values of options for implicit snapshot dependencies can be set via the `options` lambda argument of any block.
 
 ### Restoring Build History After ID Change
 
