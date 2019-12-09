@@ -196,7 +196,7 @@ With context parameters, it is possible to maintain a single Kotlin DSL code and
 
 <note>
 
-Currently, Kotlin DSL uses context parameters then the settings of such projects cannot be edited via the TeamCity UI (see [TW-63565](https://youtrack.jetbrains.com/issue/TW-63565) for the details).
+Currently, if Kotlin DSL uses context parameters then the settings of such projects cannot be edited via the TeamCity UI (see [TW-63565](https://youtrack.jetbrains.com/issue/TW-63565) for the details).
 
 </note>
 
