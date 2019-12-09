@@ -1,13 +1,14 @@
 [//]: # (title: Upgrading DSL)
 [//]: # (auxiliary-id: Upgrading DSL)
 
+The TeamCity XML settings format is usually [changed](storing-project-settings-in-version-control.md#Enabling+Versioned+Settings+after+TeamCity+Upgrade) in the major releases.   
+During the first start after the server update, TeamCity converts XML settings files in the TeamCity Data Directory to the new format.      
+When settings are stored in Kotlin DSL, the Kotlin code might need to be changed to be still functional. It is also recommended to update the Kotlin code to the latest config version with each version.         
+These recommendations are displayed as server health reports on the corresponding pages of the server administration UI.
+
 On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
-
-The TeamCity XML settings format is usually [changed](storing-project-settings-in-version-control.md#Enabling+Versioned+Settings+after+TeamCity+Upgrade) in the major releases. During the first start after the server update, TeamCity converts XML settings files in the TeamCity Data Directory to the new format.      
-When settings are stored in Kotlin DSL, the Kotlin code might need to be changed to be still functional. It is also recommended to update the Kotlin code to the latest config version with each version.         
-These recommendations are displayed as server health reports on the corresponding pages of the server administration UI.
 
 ## TeamCity settings format changes
 
@@ -15,18 +16,29 @@ As far as the DSL is concerned, there are the following types of TeamCity settin
 
 ### Changes which can be performed automatically
 
-These types of settings changes do not require changing the Kotlin DSL as the changes are applied by the server automatically on each settings regeneration from the DSL. It is recommended though to update the DSL to a newer configs version to reduce performance hit and make Kotlin scripts closer to the settings you see in the UI.   
-A lot of changes in TeamCity settings fall into this category. For example, some plugin implementing a build step may rename its parameters. The DSL from the previous TeamCity version generates a parameter with the old name, but TeamCity can automatically replace the old parameter name with the new one after DSL execution.
+These types of settings changes do not require changing the Kotlin DSL as the changes are applied by the server automatically on each settings regeneration from the DSL.   
+It is recommended though to update the DSL to a newer configs version to reduce performance hit and make Kotlin scripts closer to the settings you see in the UI.
+
+A lot of changes in TeamCity settings fall into this category. For example, some plugin implementing a build step may rename its parameters.   
+The DSL from the previous TeamCity version generates a parameter with the old name, but TeamCity can automatically replace the old parameter name with the new one after DSL execution.
 
 ### Changes which cannot be performed automatically
 
-Some TeamCity settings changes require external information and cannot be performed automatically. For example, in TeamCity 10.0 the settings of the cloud integration were stored in a dedicated file which was not committed to a VCS. In TeamCity 2017.1 these settings were moved to the project level. TeamCity cannot perform such a transformation of settings automatically without external data,so manual DSL code update is required.
+Some TeamCity settings changes require external information and cannot be performed automatically. For example, in TeamCity 10.0 the settings of the cloud integration were stored in a dedicated file which was not committed to a VCS.
+
+In TeamCity 2017.1, these settings were moved to the project level. TeamCity cannot perform such a transformation of settings automatically without external data,so manual DSL code update is required.
 
 ## Versions in DSL code
 
 ### Kotlin DSL API version
 
-This is the version included in the Kotlin DSL API package name: `jetbrains.buildServer.configs.kotlin.v2018_2`. New backward\-incompatible API will be provided in a new package and the API from older versions will continue to work.
+The DSL API version is encoded into the package name, for example: `jetbrains.buildServer.configs.kotlin.v2019_2`.   
+The version part there corresponds to TeamCity version when this DSL API was introduced.
+
+The new DSL API version is usually introduced when there are significant incompatible changes in DSL API.
+
+TeamCity preserves backward compatibility, so if you started working with Kotlin DSL in TeamCity 2017.2, 
+you can continue using classes from the [v2017_2][jetbrains.buildServer.configs.kotlin.v2017_2] package even in TeamCity 2019.2. 
 
 ### Configs version
 
@@ -35,30 +47,92 @@ This is the version specified in `settings.kts`, it looks like this:
 ```kotlin
 
 version = "2019.2"
-project(Some_Project)
 
 ```
 
-TeamCity uses this version to perform transformations DSL execution to make settings up\-to\-date.   
-For instance, your DSL scripts could be generated by TeamCity 2017.2 and have the version set to "2017.2". When you upgrade your server to version 2019.2, TeamCity will execute your DSL and apply additional transformations to modify the settings according to the format expected by version 2019.1.
+TeamCity uses this version to perform transformations after DSL execution to make resulting XML configuration files up-to-date with the current TeamCity version where they will be applied.   
+For instance, your DSL scripts could be generated by TeamCity 2017.2 and have the version set to "2017.2". When you upgrade your server to version 2019.2, 
+TeamCity will execute your DSL and apply additional transformations to modify the settings according to the format expected by version 2019.2.
 
-## DSL upgrade procedure
+## Enabling versioned settings after the upgrade
 
-After a TeamCity upgrade, the versioned settings are disabled globally on the whole TeamCity server, and a corresponding health report is shown in the administration UI. This is done to prevent TeamCity from changing the settings in the version control if you upgrade a non\-production copy of the TeamCity server.
+After a TeamCity upgrade, the versioned settings are disabled globally on the whole TeamCity server, and a corresponding health report is shown in the administration UI.   
+This is done to prevent TeamCity from changing the settings in the version control if you upgrade a non-production copy of the TeamCity server.
 
-If the server is a production installation, enable versioned settings using the action in the health report. This will make TeamCity commit converted XML file to the VCS. For settings in Kotlin format the files inside plugin\-settings directory and meta\-runners will be committed.
+If the server is a production installation, enable versioned settings using the action in the health report. This will make TeamCity commit converted XML configuration files to the VCS.   
+If there were any changes to projects configuration via the web interface while versioned settings were disabled, these changes will be committed to the VCS repository too when settings are enabled.
 
-At this point, the version control has the previous version of Kotlin DSL scripts.
+## Kotlin DSL upgrade procedure
 
-If some of the settings conversions cannot be applied automatically, TeamCity will disable the versioned settings for the affected projects and a corresponding health report is shown. You should update the DSL as per the notes below and then the versioned settings can be enabled in the project.
+Usually, after the upgrade, the Kotlin DSL scripts do not require any immediate changes and should produce the same result in the new TeamCity version.   
+However, it is recommended to update the Kotlin DSL scripts to use the most recent _DSL API version_ and up-to-date _configs version_.
 
-For the projects with settings in Kotlin DSL which were not affected by the settings conversions or if the settings can be converted automatically, the Kotlin DSL scripts do not require any immediate changes and you can continue using the projects as usual (versioned settings stay enabled in such projects). However, it is recommended to update the Kotlin scripts to the up\-to\-date configs version. TeamCity displays a health report for each affected project with instructions on how to update DSL. In order to check if DSL code update is required, load the settings from VCS and see the __Current status__ on the __Versioned settings__ tab: it will show a warning if update is required.
+The upgrade procedure involves two steps:
+1. Change all imports in the DSL scripts to the new DSL API package. For instance, imports like:   
+ ```kotlin
+ import jetbrains.buildServer.configs.kotlin.v2018_1.*
+ import jetbrains.buildServer.configs.kotlin.v2018_1.projectFeatures.*
+ ```
+ should be changed to:
+ ```kotlin
+ import jetbrains.buildServer.configs.kotlin.v2019_2.*
+ import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.*
+ ```
+ Usually this can be done with the help of search-and-replace in all import statements. After that, and after fixing all the compilation errors which may occur after this change, the modified Kotlin files can be committed and DSL should continue working as before.
+
+2. Change _configs version_ to the most recent one, for instance, if your DSL scripts were generated by TeamCity 2018.1, your `settings.kts` contains:
+```kotlin
+version = "2018.1"
+```
+ To change it to `2019.2`, you should first review the health reports produced by your TeamCity server after it applied the most recent changes in your DSL scripts. These health reports describe what should be changed in your scripts so no additional transformations are required and you could safely change _configs version_.   
+
+ If you see a message like:
+ ```text
+  Please change the configs version to "2019.2" in projects:
+  <the list of projects> 
+ ```
+
+ then no additional changes to your DSL are required and you can change the config's `version` to `2019.2`.
+ Otherwise, you will receive the following message:
+ 
+ ```text
+ DSL scripts should be updated to produce settings for version 2019.2:
+ change DSL for build configurations:
+ <affected build configurations>
+ to update DSL, do the following:
+ <description of what should be changed>
+ ```
+
+ You should review these suggestions and apply them to your DSL scripts. The _configs version_ can be changed only after all these suggestions are applied.
+
+ <note>
+ Instead of upgrading manually, you can always regenerate all of your Kotlin DSL scripts for your projects, 
+unless you did not change them in the VCS repository since versioned settings were enabled in your project.   
+ To do this, you can disable and enable versioned settings again, and select the "_Overwrite_" option in the confirmation dialog.   
+After that, TeamCity will make a commit to your VCS repository removing all previously generated Kotlin files and 
+adding newly generated files corresponding to the current TeamCity version.
+ </note>
+
+<anchor name="dsl20192"/>
+
+## Update DSL from 2019.1.x to 2019.2.x
+
+The bundled Kotlin version has been updated to 1.3.60.
+
+This release introduces the new DSL API package: __v2019_2__. This package has an updated API for clean-up rules and provides an ability to obtain DSL context parameters' values inside the Kotlin DSL scripts.
+ 
+### Updating project report tab definitions in DSL scripts
+
+Parameters of the _ReportTab_ project features should be changed:
+* The `revisionRuleRevision` parameter should be removed if the value of the `revisionRuleName` parameter is set to `lastFinished`, `lastSuccessful`, or `lastPinned`.
+* The `revisionRuleRevision` parameter should be renamed to `revisionRuleBuildNumber` if the parameter `revisionRuleName` has the `buildNumber` value.
+* The `revisionRuleRevision` parameter should be renamed to `revisionRuleBuildTag` and suffix `.tcbuildtag` should be removed from the parameter's value if the parameter `revisionRuleName` has the value `buildTag`.
 
 <anchor name="dsl20191"/>
 
 ## Update DSL from 2018.2.x to 2019.1.x
 
-This release introduces the new DSL API version, __v2019\_1__, but its package is still `jetbrains.buildServer.configs.kotlin.v2018_2` because there were no significant changes in the DSL between versions 2018.2.x and 2019.1.x.
+This release introduces the new DSL API version, __v2019_1__, but its package is still `jetbrains.buildServer.configs.kotlin.v2018_2` because there were no significant changes in the DSL between versions 2018.2.x and 2019.1.x.
 
 ### Updating Maven build steps
 
