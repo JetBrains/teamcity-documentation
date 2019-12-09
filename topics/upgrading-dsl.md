@@ -119,7 +119,7 @@ adding newly generated files corresponding to the current TeamCity version.
 
 The bundled Kotlin version has been updated to 1.3.60.
 
-This release introduces the new DSL API package: __v2019_2__. This package has an updated API for clean-up rules and provides an ability to obtain DSL context parameters' values inside the Kotlin DSL scripts.
+This release introduces the new DSL API package: __v2019_2__. This package has an updated API for clean-up rules and provides an ability to obtain [DSL context parameters'](kotlin-dsl.md#contextParameters) values inside the Kotlin DSL scripts.
  
 ### Updating project report tab definitions in DSL scripts
 
@@ -127,6 +127,15 @@ Parameters of the _ReportTab_ project features should be changed:
 * The `revisionRuleRevision` parameter should be removed if the value of the `revisionRuleName` parameter is set to `lastFinished`, `lastSuccessful`, or `lastPinned`.
 * The `revisionRuleRevision` parameter should be renamed to `revisionRuleBuildNumber` if the parameter `revisionRuleName` has the `buildNumber` value.
 * The `revisionRuleRevision` parameter should be renamed to `revisionRuleBuildTag` and suffix `.tcbuildtag` should be removed from the parameter's value if the parameter `revisionRuleName` has the value `buildTag`.
+
+### DslContext.baseDir
+
+Since TeamCity 2019.2 to access a file under the `.teamcity` directory from DSL scripts `DslContext.baseDir` property should be used, for example:
+```kotlin
+val dataFile = File(DslContext.baseDir, "data/setup.xml")
+```
+
+This is required because TeamCity 2019.2 no longer guarantees that the current working directory for DSL scripts is `.teamcity` directory. 
 
 <anchor name="dsl20191"/>
 
