@@ -210,32 +210,18 @@ project {
   ... 
 
     sequential  {
-      buildType(Compile) {
-        produces("application.jar") 
-      }
+      buildType(Compile)
       parallel (options = { onDependencyFailure = FailureAction.CANCEL }) { // non-default snapshot dependency options
         dependsOn(Extra) // extra dependency to be defined in all builds in the parallel block
-        buildType(Test1) {
-          produces("test.reports.zip")
-          consumes(Compile, "application.jar")
-        }
-        buildType(Test2) {
-          produces("test.reports.zip")
-          consumes(Compile, "application.jar")
-        }
+        buildType(Test1)
+        buildType(Test2)
       }
-      buildType(Package) {
-        produces("application.zip")
-        consumes(Compile, "application.jar") {
-           cleanDestination = true // non-default artifact dependency options
-        }
-      }
-      buildType(Deploy) {
-        consumes(Package, "application.zip")
-      }
+      buildType(Package)
+      buildType(Deploy)
     }
 }
 ```
+If a build chain is fully defined this way, no explicit snapshot dependencies must be defined within the build types themselves. 
 
 In the example above, a build chain references already declared builds. Alternatively, you can register all listed builds after the chain declaration with a simplified syntax:
 
@@ -248,12 +234,11 @@ project {
   }
 
   // register all build configurations, referenced in the chain, in the current project:
-  buildChains.buildTypes().forEach { buildType(it) }
+  buildChain.buildTypes().forEach { buildType(it) }
 }
 ```
-TeamCity will create all declared build configurations in the current project, if they do not already exist in it or its subprojects, and add all the specified dependencies between them.
 
-Explicit snapshot dependencies can be defined via a `dependsOn()` statement within any chain block (that is `parallel`, `sequential`, or `buildType`), with an optional lambda argument that allows setting dependency options. The options for implicit snapshot dependencies are defined via an optional `dependencySettings` lambda argument of any block, while artifact dependency options are defined within an optional lambda argument of the `consumes()` call.
+Explicit snapshot dependencies can be defined via a `dependsOn()` statement within both `parallel` and `sequential` block, with an optional lambda argument that allows setting dependency options. Non-default values of options for implicit snapshot dependencies can be set via the `options` lambda argument of any block.
 
 ### Restoring Build History After ID Change
 
