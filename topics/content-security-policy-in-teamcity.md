@@ -1,7 +1,7 @@
 [//]: # (title: Content Security Policy in TeamCity)
 [//]: # (auxiliary-id: Content Security Policy in TeamCity)
 
-__Since version 2019.1__, TeamCity implements additional HTTP security with the [Content-Security-Policy](https://content-security-policy.com/) (CSP) header. 
+TeamCity implements additional HTTP security with the [Content-Security-Policy](https://content-security-policy.com/) (CSP) header. 
 
 The header prohibits TeamCity pages from downloading external resources, with some whitelisted exceptions. Downloading from non-whitelisted resources will be blocked.
 

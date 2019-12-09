@@ -9,11 +9,11 @@ You can enable several _credentials authentication modules_ and several _HTTP au
 On an attempt to log in via the login page, TeamCity asks all the available _credentials authentication modules_ in the order they are specified and the first one that can authenticate the user authenticates him/her. And for any HTTP request, if there is no authenticated user yet, TeamCity asks all enabled _HTTP authentication modules_ in the order they are specified and the first one that can authenticate the user, authenticates him/her (if no _HTTP authentication module_ can authenticate the user for the specified HTTP request, TeamCity redirects the user to the login page).
 
 TeamCity supports the following _credentials authentication modules_:
-* __Built\-in__ (cross\-platform): Users and their passwords are maintained by TeamCity. New users are added by the TeamCity administrator (in the Administration area) or they can register themselves if the user registration at the first login is allowed by the administrator.
+* __Built\-in__ (cross-platform): Users and their passwords are maintained by TeamCity. New users are added by the TeamCity administrator (in the Administration area) or they can register themselves if the user registration at the first login is allowed by the administrator.
 * __Microsoft Windows domain__ (cross\-platform): All NT domain users that can log on to the machine running the TeamCity server, can also log in to TeamCity using the same credentials. i.e. to log in to TeamCity users should provide domain and username (__DOMAIN\username__) and their domain password.
-* __LDAP server__ (cross\-platform): Authentication is performed by directly logging into LDAP with credentials entered into the login form.
+* __LDAP server__ (cross-platform): Authentication is performed by directly logging into LDAP with credentials entered into the login form.
   <anchor name="tokenBasedAuth"/>
-* Since TeamCity 2019.1, __Token-Based Authentication__ (cross\-platform): Authentication via the personal access tokens that are maintained by TeamCity. This enables both an ability to authenticate with login/access-token instead of login/password when using the login form and token-based HTTP authentication.
+* __Token-based Authentication__ (cross-platform): Authentication via the personal access tokens that are maintained by TeamCity. This enables both an ability to authenticate with login/access-token instead of login/password when using the login form and token-based HTTP authentication.
 
 The following _HTTP authentication modules_ are supported:
 * __Basic HTTP__ (cross\-platform): Allows accessing certain web server pages and perform actions from various scripts.

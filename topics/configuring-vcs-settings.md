@@ -132,7 +132,7 @@ If you want to see the changes in a feature branch only, check the box to exclud
 
 ### Branch Filter
 
-Since TeamCity 2019.1, you can use a [Branch Filter](branch-filter.md) to limit the set of branches available for the build configuration. By default, no limits are applied.
+You can use a [Branch Filter](branch-filter.md) to limit the set of branches available for the build configuration. By default, no limits are applied.
 
 
 ## Other VCS-Related Settings
