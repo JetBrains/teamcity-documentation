@@ -130,12 +130,12 @@ Parameters of the _ReportTab_ project features should be changed:
 
 ### DslContext.baseDir
 
-Since TeamCity 2019.2 to access a file under the `.teamcity` directory from DSL scripts `DslContext.baseDir` property should be used, for example:
+Since TeamCity 2019.2, use the `DslContext.baseDir` property to access a file under the `.teamcity` directory from DSL scripts. For example:
 ```kotlin
 val dataFile = File(DslContext.baseDir, "data/setup.xml")
 ```
 
-This is required because TeamCity 2019.2 no longer guarantees that the current working directory for DSL scripts is `.teamcity` directory. 
+This is required because TeamCity 2019.2 no longer guarantees that the current working directory for DSL scripts is the `.teamcity` directory. 
 
 <anchor name="dsl20191"/>
 
