@@ -432,8 +432,19 @@ _Solution_:
 
 _Problem_: I want to generate a TeamCity build configuration based on the data in some file residing in the VCS inside the `.teamcity` directory.
 
-_Solution_: TeamCity executes DSL with `.teamcity` as the current directory, so files can be read using the paths relative to the `.teamcity` directory, for example, `File("data/setup.xml")`. 
-Files outside the `.teamcity` directory are not accessible to Kotlin DSL.
+_Solution_: 
+Since TeamCity 2019.2 it is possible to access the location of the `.teamcity` directory from DSL scripts with help of `DslContext.baseDir` property, for example:
+```kotlin
+val dataFile = File(DslContext.baseDir, "data/setup.xml")
+```
+
+Since 2019.2 this is the preferable approach as TeamCity no longer guarantee that the current working directory for DSL scripts is the same as `.teamcity` directory. 
+
+Before 2019.2, the following code could be used:
+```kotlin
+val dataFile = File("data/setup.xml")
+```
+
 
 ### Kotlin DSL API documentation is not initialized yet
 
