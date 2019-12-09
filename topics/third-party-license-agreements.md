@@ -922,14 +922,14 @@ License
 
 <td>
 
-[Metrics](http://www.easyeclipse.org/site/plugins/metrics.html)
+[Micrometer](http://micrometer.io/)
 
 
 </td>
 
 <td>
 
-[CPL-1](http://www.easyeclipse.org/site/licenses/standards/cpl-1.0.html)
+[Apache](https://github.com/micrometer-metrics/micrometer/blob/master/LICENSE)
 
 
 </td></tr><tr>
