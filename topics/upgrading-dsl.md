@@ -124,8 +124,12 @@ will add newly generated files corresponding to the current TeamCity version.
 
 This release introduces the new DSL API package: __v2019\_2__. This package has an updated API for cleanup rules, as well as an ability to obtain DSL context parameters values inside Kotlin DSL scripts.
  
+### Updating project report tab definitions in DSL scripts
 
-### 
+Parameters of _ReportTab_ project features should be changed:
+- parameter with name _revisionRuleRevision_ should be removed if parameter _revisionRuleName_ value is set to _lastFinished_, _lastSuccessful_ or _lastPinned_
+- parameter with name _revisionRuleRevision_ should be renamed to _revisionRuleBuildNumber_ if parameter _revisionRuleName_ has value _buildNumber_
+- parameter with name _revisionRuleRevision_ should be renamed to _revisionRuleBuildTag_ and suffix _.tcbuildtag_ should be removed from the parameter value if parameter _revisionRuleName_ has value _buildTag_
 
 <anchor name="dsl20191"/>
 
