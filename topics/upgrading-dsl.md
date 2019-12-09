@@ -3,7 +3,8 @@
 
 The TeamCity XML settings format is usually [changed](storing-project-settings-in-version-control.md#Enabling+Versioned+Settings+after+TeamCity+Upgrade) in the major releases.   
 During the first start after the server update, TeamCity converts XML settings files in the TeamCity Data Directory to the new format.      
-When settings are stored in Kotlin DSL, the Kotlin code might need to be changed to be still functional. It is also recommended to update the Kotlin code to the latest config version with each version.         
+When settings are stored in Kotlin DSL, the Kotlin code might need to be changed to be still functional. It is also recommended to update the Kotlin code to the latest [DSL API version](#dslAPIVersion) and [config version](#configsVersion).
+         
 These recommendations are displayed as server health reports on the corresponding pages of the server administration UI.
 
 On this page:
