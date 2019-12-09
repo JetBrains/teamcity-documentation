@@ -21,7 +21,7 @@ When the first custom tool is installed, the __Zip Archive__ section appears on 
 
 TeamCity places installed tools into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/plugins/.tools and monitors the content of this folder.
 
-__Since TeamCity 2019.1__, agents download only tools _required_ by builds they run. This way, the agents can run undemanding builds right after the server upgrade, with no need to download all available tools at once, as it was before.   
+Agents download only tools _required_ by builds they run. This way, the agents can run undemanding builds right after the server upgrade, with no need to download all available tools at once, as it was before.   
 To set an installed tool as required in a build configuration, reference it via the `%teamcity.tool.<installed_tool_ID>%` property somewhere inside the build configuration settings or [parameters](configuring-build-parameters.md) (in any field that supports the `%parameter%` format).   
 When you install a tool on the server, build agents restart and pick up the ID of this tool without downloading it. An agent will download the tool only when starting the first build that requests it. This ensures that agents download only required and compatible tools.   
 Once downloaded, the tools are stored on an agent so builds don't spend time on downloading them again.

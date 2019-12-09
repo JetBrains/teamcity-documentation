@@ -80,7 +80,7 @@ As with any failed test, you can assign investigations for a flaky test (or mult
 
 <tip>
 
-__Since TeamCity 2019.1__, Investigation Auto Assigner can [delay automatic assignment of investigations](investigations-auto-assigner.md#delay-auto-assign), which prevents wrong auto assignments in projects with flaky tests.
+Investigation Auto Assigner can [delay automatic assignment of investigations](investigations-auto-assigner.md#delay-auto-assign), which prevents wrong auto assignments in projects with flaky tests.
 
 </tip>
 

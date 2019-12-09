@@ -219,7 +219,7 @@ Additional arguments that will be passed to the Docker command.
 
 #### Running Docker via sudo
 
-__Since TeamCity 2019.1.2__, you can enforce starting Docker commands on a TeamCity agent via `sudo`. Add the `teamcity.docker.use.sudo=true` setting in the [build agent configuration file](build-agent-configuration.md) or as an agent's system property. On an agent start, the TeamCity agent log will inform that the `sudo` prefix is used to run Docker commands.
+You can enforce starting Docker commands on a TeamCity agent via `sudo`. Add the `teamcity.docker.use.sudo=true` setting in the [build agent configuration file](build-agent-configuration.md) or as an agent's system property. On an agent start, the TeamCity agent log will inform that the `sudo` prefix is used to run Docker commands.
 
 To configure the `sudoers` file for the `sudo` command, use [`visudo`](https://www.sudo.ws/man/1.8.17/visudo.man.html) as follows:
 

@@ -44,7 +44,7 @@ If there are no running or queued builds for the build chain (i.e. all other par
 
 ## Disabling Revisions Synchronization Between Chain Parts
 
-__Since TeamCity 2019.1__, you can [disable revisions synchronization](snapshot-dependencies.md#enforce-rev-sync) for a snapshot dependency of a build configuration when promoting a build.   
+You can [disable revisions synchronization](snapshot-dependencies.md#enforce-rev-sync) for a snapshot dependency of a build configuration when promoting a build.   
 This option works if you promote a build from chain part 1 to chain part 2, and the first build configuration of part 2 has this option disabled. In this case, TeamCity can use different sources revisions for builds in part 1 and part 2. See the build setup example in [Build Dependencies Setup](build-dependencies-setup.md#Turned+off+Enforced+Revisions+Synchronization).
 
 This is useful when you need to run a dependent build without synchronizing its code revision with its dependencies (preceding builds in a chain).   

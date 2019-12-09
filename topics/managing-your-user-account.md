@@ -16,7 +16,7 @@ The password can only be changed for the built-in authentication. If you don't s
 
 You can reset your built-in authentication password using the "Reset password" link on the login page.
 
-__Since TeamCity 2019.1__, if you change or reset your password, TeamCity will automatically sign you out of all sessions.
+If you change or reset your password, TeamCity will automatically sign you out of all sessions.
 
 ## Managing Access Tokens
 

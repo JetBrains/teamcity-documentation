@@ -1,7 +1,7 @@
 [//]: # (title: Visual Studio (sln))
 [//]: # (auxiliary-id: viewpage.actionpageId113084096;Visual Studio (sln))
 
-This page contains reference information for the Visual Studio (sln) Build Runner that builds Microsoft Visual Studio 2005\-2017, and __since TeamCity 2019.1__, Microsoft Visual Studio 2019 solution files. To build Microsoft Visual Studio 2003 solution files, use the [Visual Studio 2003](visual-studio-2003.md) runner.
+This page contains reference information for the Visual Studio (sln) Build Runner that builds Microsoft Visual Studio 2005\-2017, and, since TeamCity 2019.1, Microsoft Visual Studio 2019 solution files. To build Microsoft Visual Studio 2003 solution files, use the [Visual Studio 2003](visual-studio-2003.md) runner.
 
 <note>
 

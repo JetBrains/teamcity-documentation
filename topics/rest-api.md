@@ -41,7 +41,7 @@ Suppose you want to know more on the agents and see (in  the `/app/rest/server` 
  
  
 You can authenticate yourself for the REST API in the following ways:
-* Since __Teamcity 2019.1__, the preferred way to access REST API is by using the [token-based HTTP authentication](configuring-authentication-settings.md#Token-Based+Authentication). Provide your personal TeamCity access token generated on __My Settings &amp; Tools | Access Tokens__ in the HTTP header `Authorization: Bearer <token-value>`. For example:
+* The preferred way to access REST API is by using the [token-based HTTP authentication](configuring-authentication-settings.md#Token-Based+Authentication). Provide your personal TeamCity access token generated on __My Settings &amp; Tools | Access Tokens__ in the HTTP header `Authorization: Bearer <token-value>`. For example:
     ```Shell
     curl --header "Authorization: Bearer <token-value>" http://teamcity:8111/app/rest/builds
     ```
@@ -68,9 +68,9 @@ You can use the [super user account](super-user.md) with REST API: just provide 
  
 As REST API evolves from one TeamCity version to another, there can be incompatible changes in the protocol.
  
-Under the [`http://teamcity:8111/app/rest/`](http://teamcity:8111/app/rest/) or [`http://teamcity:8111/app/rest/latest`](http://teamcity:8111/app/rest/latest) URL the latest version is available. Under the [`http://teamcity:8111/app/rest/<version>`](http://teamcity:8111/app/rest/<version>) URLs other versions CAN be available. Our general policy is to supply TeamCity with at least one previous version. The REST API protocol version is the TeamCity version where this protocl was first introduced.
+Under the [`http://teamcity:8111/app/rest/`](http://teamcity:8111/app/rest/) or [`http://teamcity:8111/app/rest/latest`](http://teamcity:8111/app/rest/latest) URL the latest version is available. Under the [`http://teamcity:8111/app/rest/<version>`](http://teamcity:8111/app/rest/<version>) URLs other versions CAN be available. Our general policy is to supply TeamCity with at least one previous version. The REST API protocol version is the TeamCity version where this protocol was first introduced.
 
-For example, in TeamCity 2019.1 you can use `2018.1` instead of `<version>` to get the latest version of REST API or `2017.2`, `2017.1`, `10.0`, `9.1`, `9.0`, `8.1`, `8.0` to get earlier versions of the protocol.
+You can use `2018.1` instead of `<version>` to get the latest version of REST API or `2017.2`, `2017.1`, `10.0`, `9.1`, `9.0`, `8.1`, `8.0` to get earlier versions of the protocol.
  
 Breaking changes in the API are described in the related [Upgrade Notes](upgrade-notes.md) section. Note that additions to the objects returned (such as new XML attributes or elements) are not considered major changes and do not cause the protocol version to increment. Also, the endpoints marked with `Experimental` comment in `application.wadl` may change without a special notice in future versions.
  

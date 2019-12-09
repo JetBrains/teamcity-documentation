@@ -21,10 +21,10 @@ To start working with Kotlin DSL, create an empty sandbox project on your server
 3. Click __Apply__, and TeamCity will commit the generated Kotlin files to your repository.
 
 <note>
-Note: right after the Kotlin DSL settings are enabled in your project, the web UI for this project will become read only until 
-TeamCity server will detect its own commit and apply it back to the project.
 
-Usually it takes a minute or two, depending on the checking for changes interval configured for the VCS root where DSL is located. 
+Note: right after the Kotlin DSL settings are enabled in your project, the web UI for this project will become read-only until the TeamCity server detects its own commit and applies it back to the project.   
+Usually it takes a minute or two, depending on the _Changes Checking_ defined for the [VCS root](vcs-root.md) where the DSL is located.
+
 </note>
 
 <anchor name="portableDSL"/>

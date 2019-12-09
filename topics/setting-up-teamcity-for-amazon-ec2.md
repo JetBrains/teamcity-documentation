@@ -168,7 +168,7 @@ TeamCity supports [Amazon EC2 Spot Instances](https://docs.aws.amazon.com/AWSEC2
 You can enable Spot Instances for an Amazon EC2 image in your [cloud profile settings](agent-cloud-profile.md). Click __Add image__ and select a _Source_, or edit an existing image. Select the __Spot instances__ option, specify a __Bid price__, and save the image.   
 If the bid price is not specified, the default On-Demand price will be used.
 
-__Since version 2019.1__, TeamCity launches a spot instance as soon as the cloud profile is saved. If it is impossible to launch the instance (for example, if there is no available capacity or if your bid price is lower than the current minimum Spot Price in Amazon), TeamCity will be repeating the launch attempt once a minute, as long as there are queued builds which can run on this agent.
+TeamCity launches a spot instance as soon as the cloud profile is saved. If it is impossible to launch the instance (for example, if there is no available capacity or if your bid price is lower than the current minimum Spot Price in Amazon), TeamCity will be repeating the launch attempt once a minute, as long as there are queued builds which can run on this agent.
 
 <note>
 
