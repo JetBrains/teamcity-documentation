@@ -17,12 +17,14 @@ This [Kotlin tutorial](https://play.kotlinlang.org/koans/overview) helps quickly
 
 To start working with Kotlin DSL, create an empty sandbox project on your server and follow these steps:
 1. [Enable versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) for your project.
-2. Select Kotlin as the format. Make sure the _Generate portable DSL scripts_ option is enabled.
-3. Click __Apply__, and TeamCity will commit the settings to your repository.
+2. Select Kotlin as the format.
+3. Click __Apply__, and TeamCity will commit the generated Kotlin files to your repository.
 
 <note>
+Note: right after the Kotlin DSL settings are enabled in your project, the web UI for this project will become read only until 
+TeamCity server will detect its own commit and apply it back to the project.
 
-You might not be able to edit a project in the web UI right after enabling Kotlin for the project settings. TeamCity needs to detect its own commit in the repository, and only after that editing will be enabled. Usually it takes a minute or two.
+Usually it takes a minute or two, depending on the checking for changes interval configured for the VCS root where DSL is located. 
 </note>
 
 <anchor name="portableDSL"/>
@@ -64,8 +66,8 @@ You can create different entities in this project by calling `vcsRoot()`, `build
 The following examples shows how to add a build configuration with a command line script:
 
 ```kotlin
-import jetbrains.buildServer.configs.kotlin.v2018_1.*
-import jetbrains.buildServer.configs.kotlin.v2018_1.buildSteps.script 
+import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
 
 version = "2019.2"
 
@@ -90,7 +92,7 @@ After that, you can submit this change to the repository – TeamCity will detec
 
 <note>
 
-To get familiar with Kotlin API, see the online documentation on your local server, accessible via the link on the __Versioned Settings__ project tab in the UI or by running the `mvn -U dependency:sources` command in the IDE. See the documentation on the public TeamCity server as an [example](https://teamcity.jetbrains.com/app/dsl-documentation/jetbrains.build-server.configs.kotlin.v2018_1/index.html).
+To get familiar with Kotlin API, see the online documentation on your local server, accessible via the link on the __Versioned Settings__ project tab in the UI or by running the `mvn -U dependency:sources` command in the IDE. See the documentation on the public TeamCity server as an [example](https://teamcity.jetbrains.com/app/dsl-documentation/jetbrains.build-server.configs.kotlin.v2019_2/index.html).
 
 The documentation is generated in a separate Java process and might take several minutes to build after the server restart. 
 
@@ -272,7 +274,7 @@ In the non-portable format each project has the following `settings.kts` file:
 
 ```kotlin
 package MyProject
-import jetbrains.buildServer.configs.kotlin.v2018_1.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.*
 /* ... */
 version = "2018.1"
 
@@ -288,8 +290,8 @@ The `Project.kt` file looks as follows:
 
 ```kotlin
 package MyPackage
-import jetbrains.buildServer.configs.kotlin.v2018_1.*
-import jetbrains.buildServer.configs.kotlin.v2018_1.Project
+import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.Project
 
 object Project : Project({
    uuid = "05acd964-b90f-4493-aa09-c2229f8c76c0"
