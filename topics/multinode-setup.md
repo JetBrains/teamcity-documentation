@@ -11,9 +11,7 @@ Using the multinode setup, you can:
 
 After installation, each secondary node runs as a read-only copy of the main server. To extend its functionality, you can assign it to a certain [responsibility](configuring-secondary-node.md#Assigning+Responsibilities). In this case, the secondary node will allow users to perform the most common actions on builds:
 * Triggering a build, including a custom or personal one
-* Stopping a build
-* Pinning/tagging/commenting a builds
-* Deleting a build
+* Stopping/deleting and pinning/tagging/commenting builds
 * Assigning investigations and muting build problems and tests
 * Marking a build as successful/failed
 * Merging sources and labeling sources actions
