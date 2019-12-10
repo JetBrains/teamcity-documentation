@@ -3,13 +3,15 @@
 
 ## Changes from 2019.1.x to 2019.2
 
-### Switch to 64-bit Amazon Corretto JVM in Windows installer and Docker images
+### Switch to 64-bit Bundled Java in Windows installer and Docker images
 
-The bundled version of Java in TeamCity 2019.2 Windows installer and Docker images is 64-bit Amazon Corretto 8.
+The bundled version of Java in Windows installers of TeamCity Server and Agent as well as in the Docker images is now 64-bit [Amazon Corretto](https://aws.amazon.com/corretto/) 8 (previous TeamCity versions bundled 32 bit Java, TeamCity 2019.1 bundled AdoptOpenJDK).
 
-Previous versions of TeamCity bundled 32-bit JVM from Oracle and then from AdoptOpenJDK. Given that 64-bit systems are now the most widespread, we decided to switch to 64-bit JVM in our Windows installer. This should simplify the maintenance of the TeamCity server because 32-bit JVM has quite limiting maximum amount of memory which can be used by the server process on Windows (about 1.2 Gb). Previously, when server administrators needed to increase `Xmx` beyond this value, they had to change JVM version as well – this is no longer the case.
-
-In addition, we decided to switch the bundled JVM from AdoptOpenJDK to [Amazon Corretto](https://aws.amazon.com/corretto/) JVM in the Windows installer and in our Docker images. AdoptOpenJDK served us quite well and we did not have problems with it – this decision is a part of the internal unification processes in JetBrains and should not affect TeamCity users anyhow.
+If you are using Windows and were using the default bundled Java, make sure that:
+* you use 64 bit Windows OS for TeamCity server and agents. If you need to use 32 bit OS, you will need to install and use 32 bit Java to run TeamCity;
+* if the TeamCity server has manually configured [memory settings](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) (`TEAMCITY_SERVER_MEM_OPTS` environment variable defined), that the value in `-Xmx` parameter is increased (recommended to twice as much). Please also make sure that the machine has enough physical memory for that;
+* if Microsoft SQL Server is used as TeamCity database with MS SQL integrated authentication, you will need to make sure that 64 bit sqljdbc_auth.dll native library is [present in the due location](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth);
+* if there was any custom logic executing native tools on the server, that that still works with new process bitness.
 
 ### Discontinued Running Builds Node
 
