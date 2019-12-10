@@ -57,14 +57,13 @@ You can filter the available VCS roots by the checking for changes duration.
 
 ## Metrics
 
-Since version 2019.2, TeamCity provides server load metrics in a [Prometheus](https://prometheus.io/) format, ready for importing to monitoring solutions with a Prometheus support (for example, to [Grafana](https://grafana.com/)). Note that server metrics can be obtained only by a user with the "_View usage statistics_" permission.
-
+TeamCity provides server load metrics which can be used for monitoring TeamCity server health.
 
 The __Metrics__ tab displays all supported metrics, their `tag` parameters, and current values.
 
-You can optionally display experimental metrics on this tab. Note that they are still a work in progress – we suggest that you use them for rough estimation only.
+`<TeamCity server URL>/app/metrics` endpoint provides the metrics in a [Prometheus](https://prometheus.io/) format, ready for importing to monitoring solutions with a Prometheus support (for example, to [Grafana](https://grafana.com/)). Note that server metrics can be obtained only by a user with the "_View usage statistics_" permission.
 
-By clicking _Server Load Metrics_, you can get to the metrics endpoint: `<teamcity-host>:<port>/app/metrics`. To access experimental metrics, add the `?experimental=true` parameter to the endpoint URL.
+Some metrics are marked as experimental which means that we do not provide support for them and they will likely change in the future TeamCity versions. TO get experimental metrics in Prometheus format, add `?experimental=true` parameter to the URL. If you find any of the experimental metrics useful and would want them to be graduated to the supported metrics, let us know via our support channel.
 
 ## Server Logs
 
