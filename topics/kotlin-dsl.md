@@ -50,8 +50,7 @@ After the commit to the repository, you will get the `.teamcity` settings direct
 ### Opening Project in IntelliJ IDEA
 
 To open the Kotlin DSL project in IntelliJ IDEA, open the `.teamcity/pom.xml` file as a project. All necessary dependencies will be resolved automatically right away. 
-If all dependencies have been resolved, no errors in red will be visible in `settings.kts`. If you already have an IntelliJ IDEA project and want to add a Kotlin DSL module to it, 
-follow [related instructions](#How+to+Add+.teamcity+as+a+New+Module+to+a+Project%3F).
+If all dependencies have been resolved, no errors in red will be visible in `settings.kts`. If you already have an IntelliJ IDEA project and want to add a Kotlin DSL module to it, follow [related instructions](#How+to+Add+.teamcity+as+a+New+Module+to+a+Project%3F).
 
 <note>
 
@@ -74,7 +73,7 @@ project {
 
 ```
 
-`project { }` represents the current project whose settings you'll define in the DSL (in DSL code it is sometimes referenced as _Self). This is the same project where you enabled versioned settings on the previous step. This project ID and name can be accessed via a special `DslContext` object but cannot be changed via the DSL code. 
+`project { }` represents the current project whose settings you'll define in the DSL (in DSL code it is sometimes referenced as `_Self`). This is the same project where you enabled versioned settings on the previous step. This project ID and name can be accessed via a special `DslContext` object but cannot be changed via the DSL code. 
 
 You can create different entities in this project by calling `vcsRoot()`, `buildType()`, `template()`, or `subProject()` methods.
 
