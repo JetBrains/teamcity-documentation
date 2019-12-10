@@ -188,20 +188,20 @@ Point TeamCity to your repository, and it will detect the `.teamcity` directory 
 <img src="NewKotlinProjectURL.png" width="638" alt="Importing Kotlin settings when creating a project from URL"/>
 
 <note>
-It seems pointless to keep two projects using the same DSL scripts on one server, as such projects will be identical. All changes to the one project will be replicated to another. But since TeamCity 2019.2 it is possible to customize generation of project settings with help of [DSL context parameters](#contextParameters).
+It seems pointless to keep two projects using the same DSL scripts on one server, as such projects will be identical. All changes to the one project will be replicated to another. But, since TeamCity 2019.2, it is possible to customize generation of project settings with help of [DSL context parameters](#contextParameters).
 </note>
 
 <anchor name="contextParameters"/>
 
 ### Using Context Parameters in DSL
 
-Since TeamCity 2019.2 you can customize the DSL generation behavior using context parameters configured in the TeamCity UI. Context parameters are specified as a part of the project [versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) in the UI. 
+Since TeamCity 2019.2, you can customize the DSL generation behavior using context parameters configured in the TeamCity UI. Context parameters are specified as a part of the project [versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) in the UI. 
 
-With context parameters, it is possible to maintain a single Kotlin DSL code and use it in different projects on the same TeamCity server. Each of these projects can have own values of context parameters and the same DSL code can produce different settings based on values of these parameters.
+With context parameters, it is possible to maintain a single Kotlin DSL code and use it in different projects on the same TeamCity server. Each of these projects can have own values of context parameters, and the same DSL code can produce different settings based on values of these parameters.
 
 <note>
 
-Currently, if Kotlin DSL uses context parameters then the settings of such projects cannot be edited via the TeamCity UI (see [TW-63565](https://youtrack.jetbrains.com/issue/TW-63565) for the details).
+Currently, if Kotlin DSL uses context parameters then the settings of such projects cannot be edited via the TeamCity UI (see [TW-63565](https://youtrack.jetbrains.com/issue/TW-63565) for details).
 
 </note>
 
@@ -430,7 +430,7 @@ where:
 * `id` is the absolute ID of the project, the same ID you'll see in browser address bar if you navigate to this project
 * `parentId` is the absolute ID of a parent project where this project is attached
 * `uuid` is some unique sequence of characters.    
-The` uuid` is a unique identifier which associates a project, build configuration or VCS root with its data. If the `uuid` is changed, then the data is lost. The only way to restore the data is to revert the `uuid` to the original value. On the other hand, the `id` of an entity can be changed freely, if the `uuid` remains the same. This is the main difference of the non-portable DSL format from portable. The portable format does not require specifying the `uuid`, but if it happened so that a build configuration lost its history (e.g. on changing build configuration external id) you can reattach the history to the build configuration using the __Attach build history__ option from the __Actions__ menu. See [details](#Restoring+Build+History+After+ID+Change).
+The `uuid` is a unique identifier which associates a project, build configuration or VCS root with its data. If the `uuid` is changed, then the data is lost. The only way to restore the data is to revert the `uuid` to the original value. On the other hand, the `id` of an entity can be changed freely, if the `uuid` remains the same. This is the main difference of the non-portable DSL format from portable. The portable format does not require specifying the `uuid`, but if it happened so that a build configuration lost its history (e.g. on changing build configuration external id) you can reattach the history to the build configuration using the __Attach build history__ option from the __Actions__ menu. See [details](#Restoring+Build+History+After+ID+Change).
 
 <note>
 
@@ -489,13 +489,13 @@ _Solution_:
 
 _Problem_: I want to generate a TeamCity build configuration based on the data in some file residing in the VCS inside the `.teamcity` directory.
 
-_Solution_: 
-Since TeamCity 2019.2 it is possible to access the location of the `.teamcity` directory from DSL scripts with help of `DslContext.baseDir` property, for example:
+_Solution_:   
+Since TeamCity 2019.2, it is possible to access the location of the `.teamcity` directory from DSL scripts with help of the `DslContext.baseDir` property, for example:
 ```kotlin
 val dataFile = File(DslContext.baseDir, "data/setup.xml")
 ```
 
-Since 2019.2 this is the preferable approach as TeamCity no longer guarantee that the current working directory for DSL scripts is the same as `.teamcity` directory. 
+Since 2019.2, this is the preferable approach as TeamCity no longer guarantee that the current working directory for DSL scripts is the same as the `.teamcity` directory. 
 
 Before 2019.2, the following code could be used:
 ```kotlin
