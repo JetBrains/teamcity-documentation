@@ -3,7 +3,7 @@
 
 <note>
 
-__Since TeamCity 2019.2__, the [VCS Support: ClearCase](https://plugins.jetbrains.com/plugin/13210-vcs-support-clearcase) plugin has been unbundled. To integrate TeamCity with ClearCase, download and install the plugin as described [here](installing-additional-plugins.md).
+__Since TeamCity 2019.2__, the [VCS Support: ClearCase](https://plugins.jetbrains.com/plugin/13210-vcs-support-clearcase) plugin has been unbundled. To integrate TeamCity with ClearCase, download and [install the plugin](installing-additional-plugins.md).
 
 </note>
 
