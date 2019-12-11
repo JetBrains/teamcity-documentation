@@ -5,13 +5,13 @@
 
 ### Switch to 64-bit Bundled Java in Windows installer and Docker images
 
-The bundled version of Java in Windows installers of TeamCity Server and Agent as well as in the Docker images is now 64-bit [Amazon Corretto](https://aws.amazon.com/corretto/) 8 (previous TeamCity versions bundled 32 bit Java, TeamCity 2019.1 bundled AdoptOpenJDK).
+The bundled version of Java in Windows installers of TeamCity Server and Agent as well as in the Docker images is now 64-bit [Amazon Corretto](https://aws.amazon.com/corretto/) 8 (previous TeamCity versions bundled 32-bit Java, and TeamCity 2019.1 bundled AdoptOpenJDK).
 
-If you are using Windows and were using the default bundled Java, make sure that:
-* you use 64 bit Windows OS for TeamCity server and agents. If you need to use 32 bit OS, you will need to install and use 32 bit Java to run TeamCity;
-* if the TeamCity server has manually configured [memory settings](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) (`TEAMCITY_SERVER_MEM_OPTS` environment variable defined), that the value in `-Xmx` parameter is increased (recommended to twice as much). Please also make sure that the machine has enough physical memory for that;
-* if Microsoft SQL Server is used as TeamCity database with MS SQL integrated authentication, you will need to make sure that 64 bit sqljdbc_auth.dll native library is [present in the due location](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth);
-* if there was any custom logic executing native tools on the server, that that still works with new process bitness.
+If you were using the default bundled Java on Windows, make sure the following conditions are satisfied:
+* The TeamCity server and agents operate on the 64-bit Windows OS. If you need to use a 32-bit OS, you need to install and use 32-bit Java to run TeamCity;
+* If the TeamCity server has manually configured [memory settings](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) (the `TEAMCITY_SERVER_MEM_OPTS` environment variable is defined), the value of the `-Xmx` parameter should be increased (recommended to twice the previous value). Before increasing the value, make sure the machine has enough physical memory for that.
+* If you use Microsoft SQL Server as the TeamCity database with the integrated MS SQL authentication, the 64-bit `sqljdbc_auth.dll` native library has to be [present in the due location](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
+* If there was any custom logic executing native tools on the server, check that it still works with the new process bitness.
 
 ### Discontinued Running Builds Node
 
