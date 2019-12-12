@@ -36,7 +36,7 @@ Description
 
 <td>
 
-matches any text in the file or directory name excluding directory separator ("/" or "\")
+matches any text in the file or directory name excluding directory separator (`/` or `\`)
 
 
 </td>
