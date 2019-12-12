@@ -78,20 +78,20 @@ Ensure you have JRE or JDK installed and the `JAVA_HOME` environment variable is
 
 ### Installing TeamCity into Existing J2EE Container
 
-It is __not recommended__ to use `.war` distribution. Use the [TeamCity `.tar.gz`](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) distribution (bundled with Tomcat web server) instead. If you have important reasons to deploy TeamCity into existing web server and want to use .war distribution, please [let us know](https://confluence.jetbrains.com/display/TW/Feedback) the reasons.
+It is __not recommended__ to use the `.war` distribution. Use the [TeamCity `.tar.gz`](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) distribution (bundled with Tomcat web server) instead. If you have important reasons to deploy TeamCity into existing web server and want to use the `.war` distribution, please [let us know](https://confluence.jetbrains.com/display/TW/Feedback) the reasons.   
 See [Supported Platforms and Environments](supported-platforms-and-environments.md#TeamCity+Server) for J2EE container requirements.
 
 1. Make sure your web application server is stopped.
-2. Copy the downloaded `TeamCity<version number>.war` file into the web applications directory of your J2EE container under the `TeamCity.war` name (the name of the file is generally used as a part of the URL) or deploy the .war following the documentation of the web server. Make sure there is no other version of TeamCity deployed (e.g. do not preserve the old TeamCity web application directory under the web server applications directory).
+2. Copy the downloaded `TeamCity<version number>.war` file into the web applications directory of your J2EE container under the `TeamCity.war` name (the name of the file is generally used as a part of the URL) or deploy the `.war` following the documentation of the web server. Make sure there is no other version of TeamCity deployed (e.g. do not preserve the old TeamCity web application directory under the web server applications directory).
 3. Ensure the TeamCity web application gets sufficient amount of [memory](#Setting+Up+Memory+settings+for+TeamCity+Server). Increase the memory accordingly if you have other web applications running in the same JVM.
 4. If you are deploying TeamCity to the __Tomcat__ container, add the `useBodyEncodingForURI="true"` attribute to the main `Connector` tag for the server in the `Tomcat/conf/server.xml` file.
 5. If you are deploying TeamCity to __Jetty__ container version &gt; 7.5.5 (including 8.x.x), make sure the system property `org.apache.jasper.compiler.disablejsr199` is set to `true`
-6. Ensure that the servlet container is configured to unpack the deployed war files. Though for most servlet containers it is the default behavior, for some it is not (for example, Jetty version &gt; 7.0.2) and should be explicitly configured. TeamCity is not able to work from a packed .war: if started this way, there will be a note on this the logs and UI.
+6. Ensure that the servlet container is configured to unpack the deployed war files. Though for most servlet containers it is the default behavior, for some it is not (for example, Jetty version &gt; 7.0.2) and should be explicitly configured. TeamCity is not able to work from a packed `.war`: if started this way, there will be a note on this the logs and UI.
 7. Configure the appropriate [TeamCity Data Directory](teamcity-data-directory.md) to be used by TeamCity. Note that it is recommended to start with an empty TeamCity Data Directory. After completing the installation and performing the first TeamCity server start, the required data (for example, [database settings](setting-up-an-external-database.md#Database+Configuration+Properties) file) can be moved to the directory.
 
 8. Check/configure the TeamCity [logging properties](teamcity-server-logs.md#General+Logging+Configuration) by specifying the `log4j.configuration` and `teamcity_logs` internal properties.
 
-9. Restart the server or deploy the application via the servlet container administration interface and access [`http://server:port/TeamCity/`](http://serverport), where `TeamCity` is the name of the `war` file.
+9. Restart the server or deploy the application via the servlet container administration interface and access [`http://server:port/TeamCity/`](http://serverport), where `TeamCity` is the name of the `.war` file.
 
 
 ### Unattended TeamCity server installation
@@ -138,7 +138,7 @@ By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/).
 
 If you need to pass special properties to the server, refer to [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md).
 
-If TeamCity is installed into an existing web server (.war distribution), start the server according to its documentation. Make sure you configure TeamCity\-specific logging\-related properties and pass suitable [memory options](#Setting+Up+Memory+settings+for+TeamCity+Server).
+If TeamCity is installed into an existing web server (`.war` distribution), start the server according to its documentation. Make sure you configure TeamCity\-specific logging\-related properties and pass suitable [memory options](#Setting+Up+Memory+settings+for+TeamCity+Server).
 
 ### Autostart TeamCity server on macOS
 
