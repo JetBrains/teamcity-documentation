@@ -392,9 +392,9 @@ Problems common to TeamCity Docker container images.
         
     ```
 
-* When starting a TeamCity server from a Windows Docker image, make sure to grant `Authenticated Users` __Full control__ over the directories used as volumes. [See the related issue](https://github.com/docker/for-win/issues/1058).
+* When starting a TeamCity server from a Windows Docker image, make sure to grant "_Authenticated Users_" the _Full Control_ over the directories used as volumes. [See the related issue](https://github.com/docker/for-win/issues/1058).
 
-* When starting a Windows Docker container with the directory `C:/BuildAgent/work` mapped as a volume to the container host, Git for Windows fails with a following error: "Invalid path '/ContainerMappedDirectories': No such file or directory". The workaround is not to add `C:/BuildAgent/work` as a volume.
+* When starting a Windows Docker container with the directory `C:/BuildAgent/work` mapped as a volume to the container host, Git for Windows fails with a following error: "_Invalid path '/ContainerMappedDirectories': No such file or directory_". The workaround is not to add `C:/BuildAgent/work` as a volume.
 
 To analyze the script output, refer to the [following documents](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/master/windows-server-container-tools/Debug-ContainerHost). If it shows that there are problems with the container network subsystem, try resetting it using the [cleanup scripts](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/master/windows-server-container-tools/CleanupContainerHostNetworking).
 
@@ -410,7 +410,7 @@ Since __TeamCity 2017.2,__ the [Docker Wrapper](docker-wrapper.md) works on Wind
 
 If a Linux container is started on a Windows machine, TeamCity displays the error message "Starting Linux Docker containers under Windows is not supported. To avoid this problem, add the [`teamcity.agent.jvm.os.name`](integrating-teamcity-with-docker.md#Parameters+Reported+by+Agent) does not contain Windows [agent requirement](agent-requirements.md).
 
-If you need to support a use case when the Docker wrapper runs Linux containers under Windows platform, vote for the /comment on [TW-51820](https://youtrack.jetbrains.com/issue/TW-51820).
+If you need to support a use case when the Docker wrapper runs Linux containers under Windows platform, vote for the related comment in [TW-51820](https://youtrack.jetbrains.com/issue/TW-51820).
 
 ### Problems with a local time in Windows containers
 
