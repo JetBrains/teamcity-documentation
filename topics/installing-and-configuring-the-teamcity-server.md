@@ -278,7 +278,7 @@ If you need to update 32-bit Java to the 64-bit JVM, note that the memory usage 
 
 To update to the 64-bit Java, either use the bundled version of Java or:
 * [Update](#Java+Installation) Java to be used by the server.
-* [Set JVM memory options](configuring-teamcity-server-startup-properties.md). It is recommended to set the following options for the 64-bit JVM: `-Xmx4g -XX:ReservedCodeCacheSize=350m`.
+* [Set JVM memory options](configuring-teamcity-server-startup-properties.md). It is recommended to set the following options for the 64-bit JVM: `-Xmx4g -XX:ReservedCodeCacheSize=450m`.
 
 ### Setting Up Memory settings for TeamCity Server
 
