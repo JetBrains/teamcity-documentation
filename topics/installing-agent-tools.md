@@ -21,11 +21,20 @@ When the first custom tool is installed, the __Zip Archive__ section appears on 
 
 TeamCity places installed tools into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/plugins/.tools and monitors the content of this folder.
 
-An agent downloads a tool before the first build which requires it is started there. Once downloaded, the tool is stored on the agent so builds don't spend time on downloading it again.
+An agent downloads a tool before starting the first build which requires it. Once downloaded, the tool is stored on the agent so builds don't spend time on downloading it again.
 
-When you edit settings of a build step which depends on some tool, it is enough to select a specific version of a tool from the drop-down to let TeamCity know what tool should be delivered to an agent. But there are also cases when an arbitrary build script requires some tool. In this case a reference to the tool can be specified somewhere in the build step settings, like: `%teamcity.tool.<installed_tool_ID>%`. TeamCity server scans build steps settings, finds all such references and let's agent know what tools are required for the build. Other places where this scan is performed are: [values of build configuration parameters](configuring-build-parameters.md) and [agent requirements](agent-requirements.md). For instance, in case of requirements, one can define a requirement of type `exists` for parameter with name: `%teamcity.tool.<installed_tool_ID>%` and this will also instruct TeamCity that this build requires the referenced tool.
+When editing settings of a build step that directly depends on a tool, you just need to select a specific version of this tool from the drop-down menu to let TeamCity know what exact tool should be delivered to an agent.   
+However, there are cases when an arbitrary build script needs a certain tool. In such case, you can reference a required tool via a `%teamcity.tool.<installed_tool_ID>%` parameter in the build step settings that support the input of parameters. You can also reference a tool in [values of build configuration parameters](configuring-build-parameters.md) or in [agent requirements](agent-requirements.md). For instance, in case with agent requirements, you can define a requirement of the type `exists` for a parameter with the name `%teamcity.tool.<installed_tool_ID>%`, and this will instruct TeamCity that the build requires the referenced tool.
+
+You can reference multiple tools by listing them one by one, comma- or space-separated.
+
+Before starting a build, the TeamCity server scans all build steps' settings, finds all tool references, and informs an agent what tools are required for the build.
+
+<note>
    
-Note: when a new tool is installed on the server, even though agents won't try to download the newly installed tool right away, they still are scheduled for restart when they become idle. This is required because agents should have an up-to-date information about all tools installed on the server and should share this information with different plugins.
+When a new tool is installed on the server, even though agents won't try to download the newly installed tool right away, they are still scheduled for a restart when they become idle. This is required so the agents could receive up-to-date information about all tools installed on the server and share this information with different plugins.
+
+</note>
 
 To check that the tool appears on the agent, look for `teamcity.tool.<installed_tool_ID>` in [configuration parameters reported by the agent](predefined-build-parameters.md#Agent+Properties) in the TeamCity web UI.
 
