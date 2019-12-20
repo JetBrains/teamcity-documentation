@@ -21,10 +21,11 @@ When the first custom tool is installed, the __Zip Archive__ section appears on 
 
 TeamCity places installed tools into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/plugins/.tools and monitors the content of this folder.
 
-Agents download only tools _required_ by builds they run. This way, the agents can run undemanding builds right after the server upgrade, with no need to download all available tools at once, as it was before.   
-To set an installed tool as required in a build configuration, reference it via the `%teamcity.tool.<installed_tool_ID>%` property somewhere inside the build configuration settings or [parameters](configuring-build-parameters.md) (in any field that supports the `%parameter%` format).   
-When you install a tool on the server, build agents restart and pick up the ID of this tool without downloading it. An agent will download the tool only when starting the first build that requests it. This ensures that agents download only required and compatible tools.   
-Once downloaded, the tools are stored on an agent so builds don't spend time on downloading them again.
+An agent downloads a tool before the first build which requires it is started there. Once downloaded, the tool is stored on the agent so builds don't spend time on downloading it again.
+
+When you edit settings of a build step which depends on some tool, it is enough to select a specific version of a tool from the drop-down to let TeamCity know what tool should be delivered to an agent. But there are also cases when an arbitrary build script requires some tool. In this case a reference to the tool can be specified somewhere in the build step settings, like: `%teamcity.tool.<installed_tool_ID>%`. TeamCity server scans build steps settings, finds all such references and let's agent know what tools are required for the build. Other places where this scan is performed are: [build configuration parameters](configuring-build-parameters.md) and [agent requirements](agent-requirements.md). 
+   
+Note: when a new tool is installed on the server, even though agents won't try to download the newly installed tool right away, they still are scheduled for restart when they become idle. This is required because agents should have an up-to-date information about all tools installed on the server and should share this information with different plugins.
 
 To check that the tool appears on the agent, look for `teamcity.tool.<installed_tool_ID>` in [configuration parameters reported by the agent](predefined-build-parameters.md#Agent+Properties) in the TeamCity web UI.
 
