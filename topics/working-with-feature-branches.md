@@ -23,16 +23,16 @@ With Perforce, check the corresponding box to enable feature branches support, w
 
 Once you've configured the branch specification, TeamCity will start to monitor these branches for changes. If your build configuration has [a VCS trigger and a change is found in some branch](configuring-vcs-triggers.md#Branch+Filter), TeamCity will trigger a build in this branch. From the build configuration home page you'll also be able to filter the history, change log, pending changes and issue log by the branch name. Branch names will also appear in the custom build dialog, so you'll be able to manually trigger a custom build on a branch too.
 
-The syntax of the branch specification field is newline\-delimited list of "`+|-:branch_name`" rules.       
+The syntax of the branch specification field is newline-delimited list of `+|-:branch_name` rules.       
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
 Each rule can have one optional `*` placeholder which matches one or more characters.    
 For example, `+:refs/heads/teamcity*` matches all branches starting with `refs/heads/teamcity` __and at least one additional character__.   
 The branch with `refs/heads/teamcity` will not be matched. 
   
-The `branch_name` parameter is VCS\-specific, i.e. `refs/heads/master` in Git: ![branchSpec.png](branchSpec.png) 
+The `branch_name` parameter is VCS-specific, i.e. `refs/heads/master` in Git: ![branchSpec.png](branchSpec.png) 
 
-The part of the branch name matched by the asterisk (`*`) wildcard becomes the short branch name to be displayed in the TeamCity user\-level interface (also known as the [logical branch name](#Logical+branch+name)). The line can also contain optional parentheses which, when present, denote the part of the pattern to be used as the logical name instead of just \*\-matched symbols.
+The part of the branch name matched by the asterisk (`*`) wildcard becomes the short branch name to be displayed in the TeamCity user-level interface (also known as the [logical branch name](#Logical+branch+name)). The line can also contain optional parentheses which, when present, denote the part of the pattern to be used as the logical name instead of just *-matched symbols.
 
 You can use parameters in the branch specification.
 
@@ -176,9 +176,9 @@ Additionally, a [branch filter](branch-filter.md) can be specified for the VCS, 
 
 ## Dependencies
 
-If a build configuration with branches has snapshot dependencies on other build configurations with branches, then when a build in a branch is triggered, the other builds in the chain will also get the branch associated, if the branches in the VCS roots of the builds have the same [logical name](#Logical+branch+name) and this branch is not excluded by the branch specification. The VCS roots of the builds can point to different repositories, but the logical branch name must be the same. 
+If a build configuration with branches has snapshot dependencies on other build configurations with branches, then when a build in a branch is triggered, the other builds in the chain will also get the branch associated, if the branches in the VCS roots of the builds have the same [logical name](#Logical+branch+name) and this branch is not excluded by the branch specification. The VCS roots of the builds can point to different repositories, but the logical branch name must be the same.
 
-If this condition is met, the branches with this name will be checked out and all the builds down the chain (which the build triggered depends on) and all the builds up the chain (depending on the triggered build) will be marked with the same branch.  Otherwise the default branch will be checked out.
+If this condition is met, the branches with this name will be checked out and all the builds down the chain (which the build triggered depends on) and all the builds up the chain (depending on the triggered build) will be marked with the same branch. Otherwise, the default branch will be checked out.
 
 It is possible to configure artifact dependencies to retrieve artifacts from a build from a specific branch: artifact dependencies will use builds from the branch specified. The same applies to the [Schedule](configuring-schedule-triggers.md) and [Finish Build](configuring-finish-build-trigger.md) triggers.
 
@@ -188,7 +188,7 @@ All notification rules except "My changes" will only notify you on builds from t
 
 ## Build configuration status
 
-The Build Configuration status is calculated based on the builds from the default branch only. Consequently, per\-configuration investigation works for builds from the default branch. For example, a successful build from a non\-default branch will not remove a per\-configuration investigation, but a successful build from the default branch will.
+The Build Configuration status is calculated based on the builds from the default branch only. Consequently, per-configuration investigation works for builds from the default branch. For example, a successful build from a non\-default branch will not remove a per-configuration investigation, but a successful build from the default branch will.
 
 ## Multiple VCS roots
 

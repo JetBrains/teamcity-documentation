@@ -260,7 +260,7 @@ Run process per assembly
 
 <td>
 
-_Available for versions prior to _[NUnit 3.0](upgrade-notes.md#UpgradeNotes-Changesfrom9.1.5to9.1.6) only_.
+_Available for versions prior to [NUnit 3.0](upgrade-notes.md#UpgradeNotes-Changesfrom9.1.5to9.1.6) only_.
 
 Select this option if you want to run each assembly in a new process.
 

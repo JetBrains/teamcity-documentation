@@ -20,6 +20,7 @@
         <enable-browser-edits>true</enable-browser-edits>
         <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2019.2/topics/</browser-edits-url>
         <disable-prev-next-links>true</disable-prev-next-links>
+        <disable-variable-interpolation>true</disable-variable-interpolation>
     </variables>
     <layout name="Web help" mode="web2">
         <style>s.css</style>

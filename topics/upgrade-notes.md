@@ -106,7 +106,7 @@ If you rely on external resources (for example, in the build report tabs content
 ### Change in dotCover artifacts
 
 The `dotCover.dcvr` hidden artifact is no longer published by default. It is now created in the build temporary folder and removed when the build finishes.   
-If you use dotCover and rely on this artifact, specify the path to the `%system.teamcity.build.tempDir%\\..\agentTmp\dotNetCoverageResults\dotCover.dcvr` file explicitly in the [Artifact paths](configuring-general-settings.md#Artifact+Paths).
+If you use dotCover and rely on this artifact, specify the path to the `%system.teamcity.build.tempDir%\..\agentTmp\dotNetCoverageResults\dotCover.dcvr` file explicitly in the [Artifact paths](configuring-general-settings.md#Artifact+Paths).
 
 
 ### Bundled Tools Updates
