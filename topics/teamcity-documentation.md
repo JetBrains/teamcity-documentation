@@ -1,6 +1,6 @@
 [//]: # (title: TeamCity Documentation)
 [//]: # (auxiliary-id: TeamCity Documentation)
-Welcome to the documentation space for [TeamCity 2019.x](https://www.jetbrains.com/teamcity/)! If you are using an earlier TeamCity version, please refer to the [documentation for your release](https://confluence.jetbrains.com/display/TW/Documentation).
+Welcome to the documentation for [TeamCity 2019.x](https://www.jetbrains.com/teamcity/)! If you are using an earlier TeamCity version, please refer to the [documentation for your release](https://confluence.jetbrains.com/display/TW/Documentation).
 
 
 <table>
