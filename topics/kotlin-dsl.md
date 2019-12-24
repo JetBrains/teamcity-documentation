@@ -166,11 +166,27 @@ changeBuildType(RelativeId("SampleProject_Build")) { // this part finds the buil
 
 It is implied that you move the changes from the patch file to corresponding .kt or .kts file and delete the patch file. Patches generation allows to continue using the user interface for editing of the project settings and at the same time use the benefits of Kotlin DSL scripts.
 
+### Restoring Build History After ID Change
+
+To identify a build configuration in a project based on the portable DSL, TeamCity uses the [ID](#id-or-name) assigned to this build configuration in the DSL. We recommend keeping this ID constant, so the changes made in the DSL code are consistently applied to the respective build configuration in TeamCity.
+
+However, if you need to modify the build configuration ID in the DSL, note that for TeamCity this modification will look like if the configuration with the previous ID was deleted and a new configuration with the new ID was created. As a result of this change, the build configuration will not contain the builds' history anymore. Even so, TeamCity keeps the history of builds for 5 days until [cleaning it up](clean-up.md), and the history can still be restored during this period.
+
+To restore the builds' history after changing the build configuration ID, go to the __Build Configuration Settings__ of the build configuration whose ID was changed, open the __Actions__ menu, and click __Attach build history__. You will be redirected to the __Attach Build History__ tab. Select the detached build history and click __Attach__.
+
+<tip>
+
+If you are not sure what build history to select, you can look at the __Build Results__ page of the last build in this history.
+
+</tip>
+
+<img src="attach-build-history.png" width="1283" alt="Attaching a build history"/>
+
 ### Viewing DSL in UI
 
 When viewing your build configuration settings in the UI, you can click __View DSL__ in the sidebar: the DSL representation of the current configuration will be displayed and the setting being viewed (for example, a build step, a trigger, dependencies) will be highlighted. To go back, click __Edit in UI__.
 
-This is especially useful if you need to add some build feature or trigger to your DSL scripts and you're not sure how DSL code should look like. 
+This is especially useful if you need to add some build feature or trigger to your DSL scripts and you're not sure how DSL code should look like.
 
 
 ### Sharing Kotlin DSL Scripts
@@ -356,16 +372,6 @@ open class MyGit() : GitVcsRoot() {
     }
 }
 ```
-
-### Restoring Build History After ID Change
-
-To identify a build configuration in a project based on the portable DSL, TeamCity uses the [ID](#id-or-name) assigned to this build configuration in DSL. We recommend keeping this ID constant, so the changes made in the DSL code are consistently applied to the respective build configuration in TeamCity.
-
-However, if you need to modify the build configuration ID in the DSL, note that this modification for TeamCity looks like the configuration with the previous ID was deleted and a new configuration with the new ID was created. So after this change the build configuration will not have the builds history anymore. However, it can still be restored. The builds history will be kept for 5 days until it will be cleaned up by the cleanup process.
-
-To restore the build history after changing the build configuration ID, go to the __Build Configuration Settings__ of the build configuration whose id was changed, open the __Actions__ menu, and click __Attach build history__. You will be redirected to the __Attach Build History__ tab. Select the one of the detached build history and click __Attach__. If you are not sure what build history to use, you can take a look at the build results page for the last build in this history.
-
-<img src="attach-build-history.png" width="1283" alt="Attaching a build history"/>
 
 ### Ability to Use External Libraries
 
