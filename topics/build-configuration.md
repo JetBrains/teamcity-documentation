@@ -68,7 +68,7 @@ __To pause several build configurations of a project__:
 4. To remove all the builds of the paused configurations from the [build queue](build-queue.md), check the _Cancel already queued builds if build configuration is paused_ box.
 5. Click __Apply__. 
 
-__To activate several build configurations of a project:
+__To activate several build configurations of a project__:
 
 1. On the __Project Settings__ page, open the __Actions__ menu and click __Pause/Activate__.
 2. In the dialog that opens, clear the box next to the project to activate all its build configurations or clear the boxes of the configurations selectively: the unselected build configurations will be activated.
