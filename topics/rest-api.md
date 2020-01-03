@@ -212,7 +212,12 @@ application/json
  
 By default, when a list of entities is requested, only basic fields are included into the response. When a single entry is requested, all the fields are returned. The complex field values can be returned in full or basic form, depending on a specific entity.
  
-It is possible to change the set of fields returned for XML and JSON responses for the majority of requests.This is done by supplying the __fields__ request parameter describing the fields of the top\-level entity and sub\-entities to return in the response. An example syntax of the parameter is: `field,field2(field2_subfield1,field2_subfield1)`. This basically means "include `field` and `field2` of the top\-level entity and for `field2` include `field2_subfield1` and `field2_subfield1` fields". The order of the fields specification plays no role.
+It is possible to change the set of fields returned for XML and JSON responses for the majority of requests. This is done by supplying the __fields__ request parameter describing the fields of the top\-level entity and sub\-entities to return in the response. An example syntax of the parameter is: `field,field2(field2_subfield1,field2_subfield1)`. This basically means "include `field` and `field2` of the top\-level entity and for `field2` include `field2_subfield1` and `field2_subfield1` fields".
+
+The order of the fields specification plays no role. Unknown fields do not generate an error and are ignored. List of fileds can include `$long` value which is a shortcut for "all the fields", however it is recommended to list all the fields used by the client explicitly.
+
+There is also limited support for filtering nested element lists by specifying `$locator:(<locator>)` in the list of fields. When supported, the items in the respective list will be filtered according to the `<locator>` provided.
+
  
 Examples:
  
