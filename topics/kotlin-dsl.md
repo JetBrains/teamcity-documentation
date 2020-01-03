@@ -245,6 +245,8 @@ When viewing your build configuration settings in the UI, you can click __View D
 
 ## FAQ and Common Problems
 
+<anchor name="nonUniformIDs"/>
+
 ### Why portable DSL requires the same prefix for all IDs?
 
 Templates, build configurations, and VCS roots have [unique IDs](identifier.md#Universally+Unique+IDs) throughout all the TeamCity projects on the server. These IDs usually look like: `<parent project id>_<entity id>`.
