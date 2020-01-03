@@ -474,6 +474,8 @@ Working with patches is the same as in portable DSL: you need to move the actual
 
 ## FAQ and Common Problems
 
+<anchor name="nonUniformIDs"/>
+
 ### Why portable DSL requires the same prefix for all IDs?
 
 Templates, build configurations, and VCS roots have [unique IDs](identifier.md#Universally+Unique+IDs) throughout all the TeamCity projects on the server. These IDs usually look like: `<parent project id>_<entity id>`.
