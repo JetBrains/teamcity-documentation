@@ -100,9 +100,33 @@ project {
 
 <anchor name="id-or-name"/>
 
-Here, `id` will be used as the value of the _[Build configuration ID](identifier.md)_ field in TeamCity. If `id` is not specified, the value of the `name` parameter will be used as the build configuration ID instead.
+Here, `id` will be used as the value of the _[Build configuration ID](identifier.md)_ field in TeamCity. In the example above the `id` must be specified. If you omit it then there will be a validation error on attempt to generate settings from this script.
 
-After that, you can submit this change to the repository – TeamCity will detect and apply it. If there are no errors during the script execution, you should see a build configuration named "Hello world" in your project.
+But there is also another way to define the same build configuration:
+
+```kotlin
+import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
+
+version = "2019.2"
+
+project {
+  buildType(HelloWorld)
+}
+
+object HelloWorld: BuildType({
+    name = "Hello world"
+    steps {
+        script {
+            scriptContent = "echo 'Hello world!'"
+        }
+    }
+})
+```
+
+In this case the usage of the `id()` function call is optional because TeamCity will generate the id based on the class name (`HelloWorld` in our case).  
+
+After making the necessary changes in `settings.kts` file, you can submit them to the repository – TeamCity will detect and apply them. If there are no errors during the script execution, you should see a build configuration named "Hello world" in your project.
 
 <note>
 
