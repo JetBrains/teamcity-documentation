@@ -9,7 +9,7 @@ This page provides details on using an [Amazon Aurora](http://docs.aws.amazon.co
 When using an AWS Aurora cluster with TeamCity pointing to the [cluster end-point](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html#Aurora.Overview.Endpoints) as the database server, it is important to understand what happens when an AWS Aurora cluster fails over.
 
 Both AWS Aurora DB instances are rebooted (so for a short period of time TeamCity entirely loses connection to the cluster) and
-* the original DB instance is started with [innodb_read_only flag](https://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_read_only) set (the new reader instance);
+* the original DB instance is started in read only mode (the new reader instance);
 * the former failover instance is the new writer and the cluster endpoint DNS record is changed to point to the new writer instance.
 By default, TeamCity JVM caches DNS name lookups, which essentially means that TeamCity will stay connected to the original DB instance until DNS cache expires. This in turn leads to the database connection pool on the TeamCity side to be populated with the connections to the new reader.
 
@@ -18,7 +18,7 @@ It will take some time for the JVM\-specific cache in TeamCity to expire and for
 ## General Recommendations 
 
 When working with a failover cluster, it is recommended you decrease the JVM\-specific DNS caching on TeamCity [by setting the TTL to 60](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-jvm-ttl.html):
-1. Add the `-Dsun.net.inetaddr.ttl=60`JVM option to the [environment variable](configuring-teamcity-server-startup-properties.md#JVM+Options).
+1. Add the `-Dsun.net.inetaddr.ttl=60` JVM option to the [environment variable](configuring-teamcity-server-startup-properties.md#JVM+Options).
 
 2. Restart TeamCity for the changes to take effect.
 
@@ -44,7 +44,10 @@ The following options may affect your TeamCity server performance.
 </note>
 
 Configure the database connection pool to use a special validation query, so that the connections to the DB instance are tested before and/or after use and if a connection to the read\-only database is detected, they are evicted from the pool.
-1. Add the following lines to the `<TeamCity Data Directory>/config/` [file](setting-up-an-external-database.md#Database+Configuration+Properties):
+1. Add the following lines to the `<TeamCity Data Directory>/config/`[database.properties](setting-up-an-external-database.md#Database+Configuration+Properties):
+
+For Aurora MySQL:
+
     ```Shell
     testOnBorrow=true
     testOnReturn=true
@@ -53,11 +56,17 @@ Configure the database connection pool to use a special validation query, so tha
     validationQuery=select case when @@read_only + @@innodb_read_only \= 0 then 1 else (select table_name from information_schema.tables) end as `1`
     
     ```
-2. Restart TeamCity. Once you do that, the following SQL query:
-    ```Shell
-    
-    select case when @@read_only + @@innodb_read_only = 0 then 1 else (select table_name from information_schema.tables) end as `1`
-    ```
-   will be executed for all connections whenever they are borrowed from or returned to the pool, and also every 1 minute (60000 milliseconds) for idle connections, raising [error 1242 (ER_SUBSELECT_NO_1_ROW )](https://dev.mysql.com/doc/refman/5.6/en/subquery-errors.html) for each connection to the read\-only database.
+   
+For Aurora PostgreSQL:
 
-__ __
+    ```Shell
+    testOnBorrow=true
+    testOnReturn=true
+    testWhileIdle=true
+    timeBetweenEvictionRunsMillis=60000
+    validationQuery=select case when not pg_is_in_recovery() then 1 else random() / 0 end
+    
+    ```  
+   
+2. Restart TeamCity. Once you do that, the specified validation query will be executed for all connections whenever they are borrowed from or returned to the pool, and also every 1 minute (60000 milliseconds) for idle connections, raising an error for each connection to the read\-only database.
+
