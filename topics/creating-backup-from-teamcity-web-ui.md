@@ -98,7 +98,7 @@ __Important Note__
 
 ### Backup History
 
-The __History__ tab of the __Administration | Backup__ page  allows reviewing the list of created backup files, their size and date when the files were created.
+The __History__ tab of the __Administration | Backup__ page allows reviewing the list of created backup files, their size and date when the files were created.
 
 Note that only backup files created from web UI are shown here. Backups created with the [utility](creating-backup-via-maintaindb-command-line-tool.md) are not displayed on the __History__ tab.
 
