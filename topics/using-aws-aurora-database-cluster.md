@@ -44,10 +44,10 @@ The following options may affect your TeamCity server performance.
 </note>
 
 Configure the database connection pool to use a special validation query, so that the connections to the DB instance are tested before and/or after use and if a connection to the read\-only database is detected, they are evicted from the pool.
-1. Add the following lines to the `<TeamCity Data Directory>/config/`[database.properties](setting-up-an-external-database.md#Database+Configuration+Properties):
+
+For this, add the following lines to the `<TeamCity Data Directory>/config/`[database.properties](setting-up-an-external-database.md#Database+Configuration+Properties):
 
 For Aurora MySQL:
-
 ```Shell
 testOnBorrow=true
 testOnReturn=true
@@ -58,7 +58,6 @@ validationQuery=select case when @@read_only + @@innodb_read_only \= 0 then 1 el
 ```
    
 For Aurora PostgreSQL:
-
 ```Shell
 testOnBorrow=true
 testOnReturn=true
@@ -68,5 +67,5 @@ validationQuery=select case when not pg_is_in_recovery() then 1 else random() / 
 
 ```  
    
-2. Restart TeamCity. Once you do that, the specified validation query will be executed for all connections whenever they are borrowed from or returned to the pool, and also every 1 minute (60000 milliseconds) for idle connections, raising an error for each connection to the read\-only database.
+After that, restart TeamCity server. Once you do that, the specified validation query will be executed for all connections whenever they are borrowed from or returned to the pool, and also every 1 minute (60000 milliseconds) for idle connections, raising an error for each connection to the read\-only database.
 
