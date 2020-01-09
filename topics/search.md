@@ -330,7 +330,7 @@ Find all builds that include changes with the specified VCS label.
 
 <td>
 
-`label:EAP`
+`labels:EAP`
 
 `l:release`
 
