@@ -48,25 +48,25 @@ Configure the database connection pool to use a special validation query, so tha
 
 For Aurora MySQL:
 
-    ```Shell
-    testOnBorrow=true
-    testOnReturn=true
-    testWhileIdle=true
-    timeBetweenEvictionRunsMillis=60000
-    validationQuery=select case when @@read_only + @@innodb_read_only \= 0 then 1 else (select table_name from information_schema.tables) end as `1`
-    
-    ```
+```Shell
+testOnBorrow=true
+testOnReturn=true
+testWhileIdle=true
+timeBetweenEvictionRunsMillis=60000
+validationQuery=select case when @@read_only + @@innodb_read_only \= 0 then 1 else (select table_name from information_schema.tables) end as `1`
+
+```
    
 For Aurora PostgreSQL:
 
-    ```Shell
-    testOnBorrow=true
-    testOnReturn=true
-    testWhileIdle=true
-    timeBetweenEvictionRunsMillis=60000
-    validationQuery=select case when not pg_is_in_recovery() then 1 else random() / 0 end
-    
-    ```  
+```Shell
+testOnBorrow=true
+testOnReturn=true
+testWhileIdle=true
+timeBetweenEvictionRunsMillis=60000
+validationQuery=select case when not pg_is_in_recovery() then 1 else random() / 0 end
+
+```  
    
 2. Restart TeamCity. Once you do that, the specified validation query will be executed for all connections whenever they are borrowed from or returned to the pool, and also every 1 minute (60000 milliseconds) for idle connections, raising an error for each connection to the read\-only database.
 
