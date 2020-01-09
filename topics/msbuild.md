@@ -7,7 +7,7 @@ On this page:
 <tag-list of="chapter" mode="tree" depth="4"/>
 
 <note>
-
+The link in the documentation below is dead. I think it could be replaced with https://devblogs.microsoft.com/visualstudio/msbuild-is-now-part-of-visual-studio/
 The MSBuild runner requires .NET Framework or Mono installed on the build agent. [Microsoft Build Tools](http://blogs.msdn.com/b/visualstudio/archive/2013/07/24/msbuild-is-now-part-of-visual-studio.aspx) 2013\-2019 are supported.
 
 Before setting up a build configuration to use MSBuild as the build runner, make sure you are using an XML build project file with the MSBuild runner.
