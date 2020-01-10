@@ -13,9 +13,9 @@ The settings in this section define time and other conditions for automatic buil
 
 ### Date and Time
 
-In addition to triggering builds __daily__ or __weekly__ at a specified time for a particular time zone, you can specify advanced time settings using [cron](http://en.wikipedia.org/wiki/Cron#Operators)\-like expressions. This format provides more flexible scheduling options.
+In addition to triggering builds __daily__ or __weekly__ at a specified time for a particular time zone, you can specify advanced time settings using [cron](https://en.wikipedia.org/wiki/Cron#Operators)\-like expressions. This format provides more flexible scheduling options.
 
-TeamCity uses [Quartz](http://www.quartz-scheduler.org/) for working with cron expressions. See the examples below or consider using the [CronMaker](http://www.cronmaker.com/) utility to generate expressions based on the Quartz cron format. 
+TeamCity uses [Quartz](https://www.quartz-scheduler.org/) for working with cron expressions. See the examples below or consider using the [CronMaker](http://www.cronmaker.com/) utility to generate expressions based on the Quartz cron format. 
 
 #### Examples
 
@@ -299,7 +299,7 @@ Year(Optional)
 
 </td></tr></table>
 
-See also [other examples](http://www.quartz-scheduler.org/documentation/quartz-2.2.x/tutorials/tutorial-lesson-06.html).
+See also [other examples](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/tutorial-lesson-06.html).
 
 #### Brief description of the cron format used
 
@@ -475,7 +475,7 @@ empty, 1970\-2099
 
 </td></tr></table>
 
-For the description of the special characters, please refer to [Quartz CronTrigger Tutorial](http://www.quartz-scheduler.org/documentation/quartz-2.2.x/tutorials/crontrigger.html#special-characters).
+For the description of the special characters, please refer to [Quartz CronTrigger Tutorial](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html#special-characters).
 
 ### VCS Changes
 
