@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE product-profile
   SYSTEM "http://helpserver.labs.intellij.net/help/product-profile.dtd">
-<product-profile id="tc" name="TeamCity" start-page="teamcity-documentation.md">
+<product-profile id="tc" name="TeamCity" start-page="teamcity-documentation.md" status="deprecated">
    <toc-element id="teamcity-documentation.md">
       <toc-element id="what-s-new-in-teamcity-2019.1.md"/>
       <toc-element id="getting-started-with-teamcity.md">
