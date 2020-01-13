@@ -110,7 +110,7 @@ When a meta-runner is extracted, all steps are extracted. If you need to reorder
 
 ## Creating Meta-Runner from XML Definition of Build Configuration
 
-Alternatively, you can use the XML definition of an existing build configuration as a meta-runner. To do it, save the definition of this build configuration to a file named as `<runner_id>.xml` where `<runner_id>` is the [ID](identifier.md) of this build runner. Install the meta\-runner as described [above](#Installing+Meta-Runner).
+Alternatively, you can use the XML definition of an existing build configuration as a meta-runner. To do it, save the definition of this build configuration to a file named as `<runner_id>.xml` where `<runner_id>` is the [ID](identifier.md) of this build runner. Install the meta-runner as described [above](#Installing+Meta-Runner).
 
 Since a meta-runner looks and works like any other runner, it is also possible to create another meta-runner on the basis of an existing meta-runner.
 

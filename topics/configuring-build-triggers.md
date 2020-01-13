@@ -13,7 +13,7 @@ For each build configuration the following triggers can be configured:
 * [Finish build trigger](configuring-finish-build-trigger.md): the build is triggered after a build of the selected configuration is finished.
 * [Maven artifact dependency trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger): the build is triggered if there is a content modification of the specified Maven artifact which is detected by the checksum change.
 * [Maven snapshot dependency trigger](configuring-maven-triggers.md#Maven+Snapshot+Dependency+Trigger): the build is triggered if there is a modification of the snapshot dependency content in the remote repository which is detected by the checksum change.
-* __Retry build trigger__: the build is triggered if the last build failed or failed to start.
+* [Retry build trigger](configuring-retry-build-trigger.md): the build is triggered if the last build failed or failed to start.
 * [Branch remote run trigger](branch-remote-run-trigger.md): personal build is triggered automatically each time TeamCity detects new changes in particular branches of the VCS roots of the build configuration. Supports Git and Mercurial.
 * [NuGet dependency trigger](nuget-dependency-trigger.md): starts a build if there is a NuGet package update detected in the NuGet repository.
 <tip>
