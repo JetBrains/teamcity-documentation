@@ -11,6 +11,7 @@ When using an AWS Aurora cluster with TeamCity pointing to the [cluster end-poin
 Both AWS Aurora DB instances are rebooted (so for a short period of time TeamCity entirely loses connection to the cluster) and
 * the original DB instance is started in read only mode (the new reader instance);
 * the former failover instance is the new writer and the cluster endpoint DNS record is changed to point to the new writer instance.
+
 By default, TeamCity JVM caches DNS name lookups, which essentially means that TeamCity will stay connected to the original DB instance until DNS cache expires. This in turn leads to the database connection pool on the TeamCity side to be populated with the connections to the new reader.
 
 It will take some time for the JVM\-specific cache in TeamCity to expire and for the invalid connections to be evicted from the pool.
