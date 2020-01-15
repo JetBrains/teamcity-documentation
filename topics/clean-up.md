@@ -114,7 +114,7 @@ In each keep rule, you can configure the following settings:
 * __Build data to preserve__: history, artifacts, logs, statistics, or everything.
 * To __keep artifacts in dependencies__ or not. This option controls if the builds of the dependency build configurations are also cleaned up. With this option enabled, if some build is preserved by this rule, all artifacts of its dependency builds will also be preserved. The option works similarly to the _[Dependencies](#Base+Rule+Behavior+for+Dependency+Builds)_ option of a base rule.
 * __Builds range__: what time interval or what number of last builds will be affected by the rule.
-* Optionally, you can __filter__ the preserved builds by their __status__, __tags__, and __branches__. You can also restrict the rule only to personal or non-personal builds.
+* Optionally, you can __filter__ the preserved builds by their __status__, __tags__, and __branches__ (a [branch filter](branch-filter.md) with pattern matching is supported). You can also restrict the rule only to personal or non-personal builds.
 
 <anchor name="applies-to"/>
 
