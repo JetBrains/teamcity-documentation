@@ -8,7 +8,7 @@ The fields below support [parameter references](predefined-build-parameters.md):
 
 <table><tr>
 
-<td width="200">
+<td width="300">
 
 Option
 
@@ -38,9 +38,9 @@ Target host
 
 <td>
 
-Specify an FTP server (usehostname or IP address) and a remote directory (relative to the FTP user's home).
+Specify an FTP server (use a hostname or IP address) and a remote directory (relative to the FTP user's home).
 
-To use an absolute `*nix` path, use `%2F` as the forward slash. For example:
+To set an absolute `*nix` path, use `%2F` as the forward slash. For example:
 
 ```Shell
 ftp://hostname.com/hostname.com:34445/subdir127.0.0.1/%2Fetc/
@@ -81,7 +81,7 @@ Authentication method
 
 <td>
 
-Select either _Anonymous_ (will submit username `anonymous` and a single space as the password) or _username/password_ (for custom credentials)
+Select either _Anonymous_ (will submit username `anonymous` and a single space character as the password) or _username/password_ (for custom credentials).
 
 </td></tr><tr>
 
@@ -103,7 +103,7 @@ FTP Mode
 
 <td>
 
-Select the passive or active mode
+Select the passive or active mode.
 
 </td></tr><tr>
 
@@ -115,7 +115,7 @@ Transfer Mode
 
 <td>
 
-Optional. Select an FTP transfer mode to force:  the ASCII or Binary FTP transfer modes (if the automatically detected mode leads to broken files transfer)
+Optional. Select an FTP transfer mode to force: the ASCII or Binary FTP transfer modes (if the automatically detected mode leads to a broken files transfer).
 
 </td></tr><tr>
 

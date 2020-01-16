@@ -1,6 +1,7 @@
 [//]: # (title: VCS Labeling)
 [//]: # (auxiliary-id: VCS Labeling)
-TeamCity can label (tag) sources of a particular build (automatically or manually) in your version control. The list of labels applied and their application status is displayed on the [Changes tab](working-with-build-results.md#Changes) of the build results page.
+
+TeamCity can label (tag) sources of a particular build (automatically or manually) in your version control repositories. The list of labels applied and their application status is displayed on the [Changes tab](working-with-build-results.md#Changes) of the build results page.
 
 On this page:
 
@@ -10,11 +11,11 @@ On this page:
 
 You can set TeamCity to label the sources of a build depending on the build status automatically. The process takes place in the background after the build finishes and does not affect the build status, which means that a labeling failure is not a standard [notification event](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications). However, the users subscribed for [notifications about failed builds](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications) of the current build configuration will be notified about a labeling failure.
 
-Any errors encountered during labeling are reported on the [Changes tab](working-with-build-results.md#Changes) of the build results page.
+Any errors encountered during labeling are reported on the [Changes tab](working-with-build-results.md#Changes) of the __Build Results__ page.
 
 Labeling is configured for a build configuration/template.
 
-Automatic VCS labeling is configured on the [Build Features page](adding-build-features.md) of the Build Configuration settings.
+Automatic VCS labeling is configured on the __Build Configuration Settings | [Build Features](adding-build-features.md)__ page.
 
 To configure automatic labeling, you need to specify the root to label and the labeling pattern. If you have [branches configured](working-with-feature-branches.md) for your build configuration, you can label builds from [branches you select](branch-filter.md).
 
@@ -35,7 +36,7 @@ For an example of using the Teamcity VCS labeling feature to automate tag creati
 
 To label the sources manually:
 
-Navigate to the [build results](working-with-build-results.md) page, click __Actions__ and select __Label this build sources__ from the drop\-down.
+Navigate to the __[Build Results](working-with-build-results.md)__ page, click __Actions__, and select __Label this build sources__ from the drop-down menu.
 
 Manual labeling uses the VCS settings actual for the build.
 
@@ -44,16 +45,16 @@ Manual labeling uses the VCS settings actual for the build.
 ## Subversion Labeling Rules
 [//]: # (AltHead: SubversionLabelingRules)
 
-To label Subversion VCS roots, additional configuration – [labeling rules](subversion.md#Labeling+settings) defining the SVN repository structure – is required.
+To label Subversion VCS roots, it is required to set [labeling rules](subversion.md#Labeling+settings) defining the SVN repository structure.
 
-Labeling rules are specified as newline\-delimited rules in the following format:
+Labeling rules are specified as newline-delimited rules in the following format:
 
 ```Plain Text
 TrunkOrBranchRepositoryPath => tagDirectoryRepositoryPath
 
 ```
 
-The repository paths can be relative and absolute (starting from `/`). Absolute paths are resolved from the SVN repository root (the topmost directory you have in your repository), relative paths are resolved from the TeamCity VCS root.
+The repository paths can be relative and absolute (starting with `/`). Absolute paths are resolved from the SVN repository root (the topmost directory you have in your repository), relative paths are resolved from the TeamCity VCS root.
 
 When creating a label, the sources residing under `TrunkOrBranchRepositoryPath` will be put into the `tagDirectoryRepositoryPath/tagName` directory, where `tagName` is the name of the label as defined by the labeling pattern of the build configuration.   
 If no sources match the `TrunkOrBranchRepositoryPath`, no label will be created.   
@@ -61,7 +62,6 @@ The `tagDirectoryRepositoryPath` path must already exist in the repository.
 If the `tagDirectoryRepositoryPath` directory already contains a subdirectory with the current label name, the labeling process will fail, and the old tag directory won't be deleted or affected.
 
 For example, there is a VCS root with the URL `svn://address/root/project` where `svn://address/root` is the repository root, and the repository has the structure:
-
 
 ```Plain Text
 -project
@@ -72,10 +72,7 @@ For example, there is a VCS root with the URL `svn://address/root/project` where
 
 ```
 
-
-
-In this case the labeling rules should be:
-
+In this case, the labeling rules should be:
 
 ```Plain Text
 /project/trunk=>/project/tags
@@ -84,19 +81,14 @@ In this case the labeling rules should be:
 
 ```
 
-
-
 ## Labeling Rule Examples
 
 You can use variables substitution in both labeling rules and labeling patterns. See a labeling rule example in a VCS root used in different configurations:
-
 
 ```Plain Text
 /projects/%projectName%/trunk => /projects/%projectName%/tags
 
 ```
-
-
 
 This will require you to set the `%projectName%` [configuration parameter](configuring-build-parameters.md) in the build configuration settings.
 
@@ -110,6 +102,6 @@ By default, TeamCity will append the label name to the end of the specified targ
 
 ```
 
-Thus, `%%system.build.label%%` will be replaced with the tag name (note the double `%%` sign at the beginning \- it is important).
+Thus, `%%system.build.label%%` will be replaced with the tag name (note the double `%%` sign at the beginning – it is important).
 
 __ __
