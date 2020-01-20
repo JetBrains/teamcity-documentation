@@ -51,8 +51,7 @@ The URL should point to a host \+ share at least. Subdirectories are allowed her
 \\host\c$\Temp
 ```
 
-
-
+Note that the files with matching names will be rewritten in the target directory.
 
 </td></tr><tr>
 
