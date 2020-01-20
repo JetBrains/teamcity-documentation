@@ -140,7 +140,7 @@ you can find a project that defines some settings that you want to use in your K
 
 ### Generating XML Configuration Files Locally
 
-The `pom.xml` file provided for a Kotlin project has the `generate` task, which can be used to generate TeamCity XML configuration files locally from the DSL scripts. This task can be started from IDE (see __Plugins | teamcity-configs | teamcity-configs:generate__ node in Maven tool window), or from the command line:
+The `pom.xml` file provided for a Kotlin project has the `generate` task which can be used to generate TeamCity XML configuration files locally from the DSL scripts. This task can be started from IDE (see __Plugins | teamcity-configs | teamcity-configs:generate__ node in the Maven tool window), or from the command line:
 
 ```
 mvn teamcity-configs:generate
@@ -273,7 +273,9 @@ Each context parameter is expected to have a value, either the default one, set 
 
 #### Defining DSL Context Parameters in Maven
 
-To define some specific values for [context parameters](#Using+Context+Parameters+in+DSL) add the `<contextParameters>` block to your pom.xml. Example of a Maven plugin with context parameters:
+To define specific values for [context parameters](#Using+Context+Parameters+in+DSL), add the `<contextParameters>` block to your `pom.xml` file.
+
+Example of a Maven plugin with context parameters:
 
 ```kotlin
 
@@ -298,7 +300,9 @@ To define some specific values for [context parameters](#Using+Context+Parameter
 This is useful if you want to [verify locally](#generatingXML) that your DSL scripts produce settings correctly for different values of DSL context parameters.
 
 <note>
-TeamCity server does not Maven for generating settings from your DSL scripts, so the generation of settings on the server will not be affected if you commit pom.xml with some context parameters back to repository.  
+
+The TeamCity server does not use Maven for generating settings from your DSL scripts, so the generation of settings on the server will not be affected if you commit `pom.xml` containing context parameters back to the repository.
+
 </note>
 
 ## Advanced Topics
