@@ -104,7 +104,7 @@ Note that nested locators should be enclosed in parentheses. Refer to each entit
  
 <note>
  
-If the single value contains the "," symbol, it should be enclosed into parentheses: `(<value>)`. The value of a dimension can also be encoded as Base64url ("URL and Filename safe type base64" from RFC4648) and sent as `<dimension>:($base64:<base64-encoded-value>)` instead of `<dimension>: <value>`.
+If a single value contains the `,` or `:` symbols, we suggest that you enclose it into parentheses: `(<value>)`. The value of a dimension can also be encoded as Base64url ("URL and Filename safe type base64" from RFC4648) and sent as `<dimension>:($base64:<base64-encoded-value>)` instead of `<dimension>:<value>`.
 </note>
  
  
