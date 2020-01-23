@@ -257,7 +257,7 @@ The bundled Tomcat has been updated to version 8.5.32.
 ### Known issues
 
 If you're upgrading from 2018.1 to 2018.1.1 and you want to see the NuGet packages missing due to issues [TW-55703](https://youtrack.jetbrains.com/issue/TW-55703) and [TW-55833](https://youtrack.jetbrains.com/issue/TW-55833), do the following:
-* Cleanup `.teamcity/nuget/packages.json` files in the build artifacts. Consider using this PowerShell script:
+* Clean-up `.teamcity/nuget/packages.json` files in the build artifacts. Consider using this PowerShell script:
 
 
 ```Shell
@@ -997,8 +997,8 @@ Due to missing support for national character sets (nvarchar) in Oracle 10.x JDB
 ## Changes from 8.1.x to 9.0
 
 #### Known Issues
-* If you have custom artifact cleanup rules configured which mention ".teamcity" directory, build logs can be deleted by the cleanup procedure. Make sure you have build logs backup before upgrade and remove all the custom artifacts cleanup rules with ".teamcity". Related issue: [TW-40042](https://youtrack.jetbrains.com/issue/TW-40042). This issue is fixed in 9.0.3 release.
-* If you use Microsoft SQL Server database with TeamCity, after the scheduled cleanup background run, TeamCity UI pages can lock until the server restart. See [TW-39549](https://youtrack.jetbrains.com/issue/TW-39549) for details. This issue is fixed in 9.0.2 release.
+* If you have custom artifact clean-up rules configured which mention ".teamcity" directory, build logs can be deleted by the clean-up procedure. Make sure you have build logs backup before upgrade and remove all the custom artifacts cleanup rules with ".teamcity". Related issue: [TW-40042](https://youtrack.jetbrains.com/issue/TW-40042). This issue is fixed in 9.0.3 release.
+* If you use Microsoft SQL Server database with TeamCity, after the scheduled clean-up background run, TeamCity UI pages can lock until the server restart. See [TW-39549](https://youtrack.jetbrains.com/issue/TW-39549) for details. This issue is fixed in 9.0.2 release.
 * If you use LDAP authentication on the server and there are lots of login attempts on the server (e.g. there is an active REST\-using script), OutOfMemory errors can occur and require server restart. Consider installing an LDAP plugin with a fix from the [issue](https://youtrack.jetbrains.com/issue/TW-39316). This issue is fixed in 9.0.1 release.
 * If you have large Maven projects, you can see builds failing with OutOfMemoryError. This is caused by update of back\-end embedded Maven to 3.2.3 which has bigger memory footprint. Consider increasing Build Agent [memory limits](https://confluence.jetbrains.com/display/TCD9/Configuring+Build+Agent+Startup+Properties) Related issue: [TW-41052](https://youtrack.jetbrains.com/issue/TW-41052)
 
@@ -1188,9 +1188,9 @@ No noteworthy changes.
 
 ## Changes from 8.0.3 to 8.0.4
 
-#### First Cleanup
+#### First Clean-up
 
-First Cleanup after server upgrade might take a bit more time then regularly if there are many builds on the server. Following cleanups will then run a bit faster then in previous versions.
+First Clean-up after server upgrade might take a bit more time then regularly if there are many builds on the server. Following clean-ups will then run a bit faster then in previous versions.
 
 ## Changes from 8.0 to 8.0.3
 
@@ -1508,11 +1508,11 @@ Those who after upgrading to 6.5 had problems of not using MAVEN\_OPTS and who h
 
 ## Changes from 6.5 to 6.5.1
 
-__(Fixed known issue) Long upgrade time and slow cleanup under Oracle__
+__(Fixed known issue) Long upgrade time and slow clean-up under Oracle__
 
 ## Changes from 6.0.x to 6.5
 
-__(Known issue) Long upgrade time and slow cleanup under Oracle__   
+__(Known issue) Long upgrade time and slow clean-up under Oracle__   
 On first upgraded server start the database structures are converted and this can take a long time (hours on a large database) if you use Oracle external database ([TW-17094](http://youtrack.jetbrains.net/issue/TW-17094)). This is already fixed in 6.5.1.
 
 __Agent JVM upgrade__   
@@ -1640,7 +1640,7 @@ __Ipr runner is deprecated in favor of IntelliJ IDEA Project runner__
 Runner for IntelliJ IDEA projects was completely rewritten. It is not named "IntelliJ IDEA Project" runner. Previously available Ipr runner is also preserved but is marked as deprecated and will be removed in one of the further major releases of TeamCity. It is highly recommended to migrate your existing build configurations to the new runner.   
 Please note that the new runner uses different approach to run tests: you need to have a shared Run Configuration created in IntelliJ IDEA and reference it in the runner settings.
 
-__Cleanup for Inspection and Duplicates data__    
+__Clean-up for Inspection and Duplicates data__    
 Starting from 6.0 Inspection and Duplicates reports for the builds are cleaned when build is cleaned from history, not when build's artifacts are cleaned as it used to be.
 
 __Inspection and Duplicates runners require Java 1.6__   
@@ -1802,8 +1802,8 @@ If you had LDAP integration configured, several settings will be automatically c
 * `loginFilter` — is renamed to `teamcity.auth.loginFilter`
 ## Changes from 4.0.1 to 4.0.2
 
-__Increased first cleanup time__   
-The first server cleanup after the update can take significantly more time. Further cleanups should return to usual times. During this first cleanup the data associated with deleted build configuration is cleaned. It was not cleaned earlier because of a bug in TeamCity versions 4.0 and 4.0.1.
+__Increased first clean-up time__   
+The first server clean-up after the update can take significantly more time. Further clean-ups should return to usual times. During this first clean-up the data associated with deleted build configuration is cleaned. It was not cleaned earlier because of a bug in TeamCity versions 4.0 and 4.0.1.
 
 ## Changes from 4.0 to 4.0.1
 

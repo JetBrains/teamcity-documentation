@@ -82,7 +82,7 @@ It is also possible to change the logging configuration [manually](teamcity-serv
 ## Caches
 
 This tab shows you the caches of the TeamCity processes stored in \<[TeamCity Data Directory](teamcity-data-directory.md)/>/system/caches/system/caches. Resetting some caches is performed by the server during the clean\-up automatically, but sometimes you might need to clear caches manually using  the reset link.
-* `vcsContentCache` \- TeamCity maintains vcsContentCache cache for the sources to optimize communications with the VCS server. The caches are reset during the cleanup time. To resolve problems with sources update, the caches may need to be reset manually.
+* `vcsContentCache` \- TeamCity maintains vcsContentCache cache for the sources to optimize communications with the VCS server. The caches are reset during the clean-up time. To resolve problems with sources update, the caches may need to be reset manually.
 * `search` \- resetting this cache is required when enabling [search by build log](search.md#Search+by+Build+Log).
 * `git` \- contains the bare clone of the remote [Git](git.md) repository used by TeamCity.
 * `buildsMetadata` \- resetting this cache is required to [reindex the TeamCity NuGet feed](common-problems.md#Problems+with+TeamCity+NuGet+Feed).

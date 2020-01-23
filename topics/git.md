@@ -613,7 +613,7 @@ false
 
 <td>
 
-Whether TeamCity should run `git gc` during the server cleanup (native git is used)
+Whether TeamCity should run `git gc` during the server clean-up (native git is used)
 
 
 </td></tr><tr>
@@ -676,7 +676,7 @@ Maximum amount of time to run `git gc`
 
 <td>
 
-[Cron expression](http://quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger) for the time of a cleanup in git\-plugin, by default \- daily at 2a.m.
+[Cron expression](http://quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger) for the time of a clean-up in git-plugin, by default – daily at 2AM.
 
 
 </td></tr><tr>

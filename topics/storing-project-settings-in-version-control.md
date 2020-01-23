@@ -68,7 +68,7 @@ To define which settings to take __when build starts__, open the __Project Setti
      * snapshot dependencies
      * build triggers
      * build configuration level options, like hanging builds detection, enabling/disabling of triggering of personal builds, or build configuration type
-     * cleanup rules
+     * clean-up rules
 
 ## Storing Secure Settings 
 

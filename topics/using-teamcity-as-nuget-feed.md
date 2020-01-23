@@ -128,7 +128,7 @@ You can use TeamCity NuGet feeds to restore packages in your builds: when the [N
 
 <tip>
 
-The packages available in the feed are bound to the builds' artifacts: they are removed from the feed when the artifacts of the build which produced them are [cleaned up](https://confluence.jetbrains.com/display/TCD18/Clean-Up). To avoid cleanup of artifacts in a specific build, [pin this build](pinned-build.md).
+The packages available in the feed are bound to the builds' artifacts: they are removed from the feed when the artifacts of the build which produced them are [cleaned up](https://confluence.jetbrains.com/display/TCD18/Clean-Up). To avoid clean-up of artifacts in a specific build, [pin this build](pinned-build.md).
 </tip>
 
  Internet Explorer settings may need to be set to trust the TeamCity Server when working in a mixed authentication environment.

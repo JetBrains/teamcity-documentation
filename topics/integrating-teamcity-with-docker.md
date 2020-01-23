@@ -141,7 +141,7 @@ Docker Disk Space Cleaner is an extension to the [Free Disk Space](free-disk-spa
 
 TeamCity performs regular clean-up of Docker images, related to TeamCity:
 * The TeamCity agent tracks Docker images tagged or pulled during builds (the list of images is stored in the `buildAgent/system/docker-used-images.dat` file). 
-* During cleanup / freeing disk space, TeamCity agent tries to remove these images if they were not used within 3 days, 1 day, 0 on subsequent attempts to free disk space.  
+* During clean-up / freeing disk space, TeamCity agent tries to remove these images if they were not used within 3 days, 1 day, 0 on subsequent attempts to free disk space.  
 
 Besides that, TeamCity cleans local Docker Caches using the command:
 

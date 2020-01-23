@@ -239,7 +239,7 @@ Workspace options
 <td>
 
 If needed, you can set here the following options for the [p4 client](http://www.perforce.com/perforce/doc.092/manuals/cmdref/client.html#1040665) command: `Options`, `SubmitOptions`, and `LineEnd`.    
-For specific environments, P4Host can be specified here for any  type of checkout.  
+For specific environments, P4Host can be specified here for any type of checkout.  
 
 
 </td></tr><tr>
@@ -260,7 +260,7 @@ Create non-stream workspace
 
 <td>
 
-Run 'p4 clean' for cleanup
+Run 'p4 clean' for clean-up
 
 
 </td>

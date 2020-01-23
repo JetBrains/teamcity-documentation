@@ -48,7 +48,7 @@ If TeamCity is running slower than you would expect, please use the notes below 
 
 #### Determine Which Process Is Slow
 
-If you experience a slow TeamCity web UI response, checking for changes process, server\-side sources checkout, long cleanup times or other slow server activity, your target should be the machine where the TeamCity server is installed.   
+If you experience a slow TeamCity web UI response, checking for changes process, server\-side sources checkout, long clean-up times or other slow server activity, your target should be the machine where the TeamCity server is installed.   
 If the issue is related only to a single build, you will need to investigate the TeamCity agent machine, which is running the build, and the server. 
 
 Investigate the system resources (CPU, memory, IO) load. If there is a high load, determine the process causing it. If it is not a TeamCity\-related process, that might need addressing outside of the TeamCity scope. Also check for generic slow\-down reasons like anti\-virus software, maintenance time, and so on.

@@ -113,9 +113,9 @@ Currently, the following bundled plugins are disabled on secondary nodes:
 Secondary nodes can use only a limited set of external plugins.
 </note>
 
-## Cleanup
+## Clean-up
 
-The TeamCity [cleanup](clean-up.md) task runs on the main TeamCity server only. In a multinode configuration, as well as in a single node configuration, the task can run while the secondary servers are handling their operations.
+The TeamCity [clean-up](clean-up.md) task runs on the main TeamCity server only. In a multinode configuration, as well as in a single node configuration, the task can run while the secondary servers are handling their operations.
 
 ## Backup & Restore
 

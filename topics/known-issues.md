@@ -396,7 +396,7 @@ Problems common to TeamCity Docker container images.
 
 * When starting a Windows Docker container with the directory `C:/BuildAgent/work` mapped as a volume to the container host, Git for Windows fails with a following error: "_Invalid path '/ContainerMappedDirectories': No such file or directory_". The workaround is not to add `C:/BuildAgent/work` as a volume.
 
-To analyze the script output, refer to the [following documents](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/master/windows-server-container-tools/Debug-ContainerHost). If it shows that there are problems with the container network subsystem, try resetting it using the [cleanup scripts](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/master/windows-server-container-tools/CleanupContainerHostNetworking).
+To analyze the script output, refer to the [following documents](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/master/windows-server-container-tools/Debug-ContainerHost). If it shows that there are problems with the container network subsystem, try resetting it using the [clean-up scripts](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/master/windows-server-container-tools/CleanupContainerHostNetworking).
 
 More details on troubleshooting Docker for Windows are available in the [Docker](https://docs.docker.com/docker-for-windows/troubleshoot/) and [Microsoft](https://docs.microsoft.com/en-us/virtualization/windowscontainers/troubleshooting) documentation.
 

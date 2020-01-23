@@ -40,14 +40,14 @@ Description
 
 <td>
 
-Files cleanup
+Files clean-up
 
 
 </td>
 
 <td>
 
-Select whether you want to perform build files cleanup, and when it will be performed.
+Select whether you want to perform build files clean-up, and when it will be performed.
 
 
 </td></tr><tr>

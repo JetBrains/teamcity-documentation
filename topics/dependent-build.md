@@ -75,7 +75,7 @@ To create and configure an artifact dependency, use the __[Dependencies](artifac
  
 __Notes on Cleaning Up Artifacts__  
  
-Artifacts may not be [cleaned](clean-up.md) if they were downloaded by other builds and these builds are not yet cleaned up. For a build configuration with configured artifact dependencies, you can specify whether the artifacts downloaded by this configuration from other builds can be cleaned or not. This setting is available on the [cleanup policies](clean-up.md) page.
+Artifacts may not be [cleaned](clean-up.md) if they were downloaded by other builds and these builds are not yet cleaned up. For a build configuration with configured artifact dependencies, you can specify whether the artifacts downloaded by this configuration from other builds can be cleaned or not. This setting is available on the [clean-up policies](clean-up.md) page.
 
 __  __
 

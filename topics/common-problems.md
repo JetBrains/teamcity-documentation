@@ -104,12 +104,12 @@ __[Back to top](#Most+frequently+used+documentation+sections)__
 
 ## Artifacts of a build are not cleaned
 
-If you encounter a case when artifacts are preserved while they should have been removed by the server cleanup process, check the following:
-* the cleanup rules of the build configuration in question, artifacts cleanup section
+If you encounter a case when artifacts are preserved while they should have been removed by the server clean-up process, check the following:
+* the clean-up rules of the build configuration, artifacts section
 * presence of the icon "This build is used by other builds" in the build history line (prior to Pin action/icon on Build History)
 * build's Dependencies tab, "Delivered Artifacts" section. For every build configuration, check whether "Prevent dependency artifacts clean\-up" is turned ON (this is default value). If it is, then the build's artifacts are not cleaned because of the setting. 
 
-Read more on [cleanup settings](clean-up.md#Base+Rule+Behavior+for+Dependency+Builds).
+Read more on [clean-up settings](clean-up.md#Base+Rule+Behavior+for+Dependency+Builds).
 
 
 __[Back to top](#Most+frequently+used+documentation+sections)__

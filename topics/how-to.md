@@ -51,7 +51,7 @@ __The load on the server depends on:__
 * number of builds in the history;
 * number of the builds running daily;
 * amount of data consumed and produced by the builds (size of the used sources and artifacts, size of the build log, number and output size of unit tests, number of inspections and duplicates hits, size and number of produced artifacts, and so on);
-* cleanup rules configured
+* clean-up rules configured
 * number of agents and their utilization percentage;
 * number of users having TeamCity web pages open;
 * number of users logged in from IDE plugin;
@@ -164,7 +164,7 @@ The size of the database will depend on:
 * how many builds are started every day
 * how many test are reported from builds
 * [clean-up](clean-up.md) rules (retention policy)
-* cleanup schedule
+* clean-up schedule
 
 We recommend the initial size of data spaces to be 4 GB. When migrating from the internal database, we suggest at least doubling the size of the current internal database. For example, the size of the external database (without the Redo Log files) of the internal TeamCity server in JetBrains is about 50 GB. Setting your database to grow automatically helps to increase file sizes to a pre\-determined limit when necessary, which minimizes the effort to monitor disk space.
 
@@ -947,8 +947,8 @@ If you are creating a __test server__, you need to ensure that the users and pro
 * disable email verification (in the  "Administration &gt; Authentication" section);
 * be sure not to run any builds which change (e.g. deploy to) production environments. This also typically includes Maven builds deploying to non\-local repositories. You can prevent any builds from starting by pausing the [build queue](build-queue.md);
 * disable cloud integration (so that it does not interfere with the main server);
-* disable external artifact storage (as otherwise running/deleting builds and server cleanup will affect the storage which might be used by the production server);
-* disable Git registry cleanup (or just disable cleanup on the server);
+* disable external artifact storage (as otherwise running/deleting builds and server clean-up will affect the storage which might be used by the production server);
+* disable Git registry clean-up (or just disable clean-up on the server);
 * disable Commit Status Publishing;
 *disable any plugins which push data into other non\-copied systems based on the TeamCity events;
 *disable functionality to [store project settings in VCS](storing-project-settings-in-version-control.md): set `teamcity.versionedSettings.enabled=false` internal property;
@@ -986,12 +986,12 @@ From the [`TeamCity Data Directory`](teamcity-data-directory.md), copy the direc
 
 The set of parent projects is to be identifiedmanually based on the web UI or the directory names on disk (which be default will have the same prefix).
 
-Note: It might make sense to keep the settings of the [root project](project.md#Root+Project) synchronized between all the servers (by synchronizing content of `.BuildServer\config\projects_Root` directory). For example, this will ensure same settings for the default cleanup policy on all the servers.
+Note: It might make sense to keep the settings of the [root project](project.md#Root+Project) synchronized between all the servers (by synchronizing content of `.BuildServer\config\projects_Root` directory). For example, this will ensure same settings for the default clean-up policy on all the servers.
 
 Further steps after projects copying might be:
 * delete unused data in the copied parent projects (if any) on the target server
 * use "server health" reports to identify duplicate VCS roots appeared in result of copying, if any
-* archive the projects on the source server and adjust cleanup rules (to be able to see build's history, if necessary)
+* archive the projects on the source server and adjust clean-up rules (to be able to see build's history, if necessary)
 
 What is _not_ copied by the approach above:
 * pausing comment and user of the paused build configurations
