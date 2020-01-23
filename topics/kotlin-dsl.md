@@ -223,8 +223,11 @@ Point TeamCity to your repository, and it will detect the `.teamcity` directory 
 <img src="NewKotlinProjectURL.png" width="638" alt="Importing Kotlin settings when creating a project from URL"/>
 
 <note>
+
 It seems pointless to keep two projects using the same DSL scripts on one server, as such projects will be identical. All changes to the one project will be replicated to another. However, since TeamCity 2019.2, it is possible to customize generation of project settings with help of [DSL context parameters](#contextParameters).
+
 </note>
+
 
 <anchor name="contextParameters"/>
 
@@ -405,6 +408,8 @@ open class MyGit() : GitVcsRoot() {
 You can use external libraries in your Kotlin DSL code, which allows sharing code between different Kotlin DSL-based projects.
 
 To use an external library in your Kotlin DSL code, add a dependency on this library to the `.teamcity/pom.xml` file in the settings repository and commit this change so that TeamCity detects it. Then, before starting the generation process, the TeamCity server will fetch the necessary dependencies from the Maven repository, compile code with them, and then start the settings generator.
+
+Since TeamCity 2019.2.1, you can establish access to external libraries in private repositories. For this, specify all the required credentials in the [Maven settings file](https://maven.apache.org/settings.html) and upload it on the __Maven Settings__ page of the _Root_ project.
 
 ### Non-Portable DSL
 

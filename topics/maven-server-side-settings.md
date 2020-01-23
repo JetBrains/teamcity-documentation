@@ -3,7 +3,7 @@
 
 ## Maven Settings Resolution on the Server Side
 
-The TeamCity server invokes Maven on the server side for functionality like Maven dependency triggers and  the Maven model display on the "Maven" build configuration tab.
+The TeamCity server invokes Maven on the server side for functionality like Maven dependency triggers and  the Maven model display on the __Maven__ build configuration tab.
 
 You can upload Maven settings using the __Administration | Project Settings | Maven Settings__ tab and then select one of the uploaded settings on the [Maven step](maven.md) settings.
 
@@ -11,14 +11,14 @@ During the process, TeamCity uses the usual Maven logic for finding the `setting
 
 ### Global Settings
 
-Maven _global\-level_ settings are used from the `.xml` file in the default Maven location for the TeamCity server process: `${env.M2_HOME}/conf/settings.xml` or `${system.maven.home}/conf/settings.xml`.   
+Maven _global-level_ settings are used from the `.xml` file in the default Maven location for the TeamCity server process: `${env.M2_HOME}/conf/settings.xml` or `${system.maven.home}/conf/settings.xml`.   
 The global values of `M2_HOME` environment variable and` maven.home` JVM option are used set for the TeamCity server process.
 
-
+Since TeamCity 2019.2.1, you can define credentials for accessing Maven repositories in the `settings.xml` file uploaded to the __Maven Settings__ of your _Root_ project. This allows storing custom libraries in private repositories and accessing them from all the subprojects of the _Root_ project.
 
 ### User-Level Settings
 
-Maven _user\-level_ settings are defined in the __User settings selection__ [section](maven.md#User+Settings) of the Maven build step of the build configuration (if there are several Maven steps, settings from the first one are used).
+Maven _user-level_ settings are defined in the __User settings selection__ [section](maven.md#User+Settings) of the Maven build step of the build configuration (if there are several Maven steps, settings from the first one are used).
 
 The following options are available: 
 
