@@ -379,7 +379,7 @@ You can automate your setup further, so TeamCity:
 
 ## Predefined build parameters for pull requests
 
-TeamCity provides multiple [predefined build parameters](predefined-build-parameters.md) that expose valuable information on pull requests:
+TeamCity provides multiple [predefined build parameters](predefined-build-parameters.md) that expose valuable information on pull requests for builds with the enabled Pull Requests [feature](adding-build-features.md):
  
 ```Text
 teamcity.pullRequest.number //pull request number
