@@ -10,7 +10,7 @@ The supported systems are:
 * Atlassian Bitbucket Server (formerly Stash) and Atlassian Bitbucket Cloud
 * Gerrit Code Review tool 2.6\+
  
-## Provider-specific Confguration
+## Provider-specific Configuration
 
 ### GitLab
 
