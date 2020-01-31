@@ -1,6 +1,14 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+<note>
+
+__Java 8 update 240+ incompatibility__
+
+[Do not use](known-issues.md#jdk8_240) Java 8 newer than [update 232](https://github.com/corretto/corretto-8/releases/tag/8.232.09.1) for TeamCity server.
+
+</note>
+
 ## Changes from 2019.2 to 2019.2.1
 
 No noteworthy changes.
