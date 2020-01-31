@@ -10,7 +10,7 @@ This page contains a list of workarounds for known issues in TeamCity.
 ## Incompatibility with JDK 8 update 240+
 TeamCity versions up to 2019.2.1 running under JDK 8u242+ can report "java.lang.NoClassDefFoundError: Could not initialize class XXX" errors for example on Git operations or Windows domain authentication operations.
 
-Until TeamCity 2019.2.3 is released, it is recommended to use Java 8u232 version for TeamCity server.
+Until TeamCity 2019.2.2 is released, it is recommended to use Java 8u232 version for TeamCity server.
 
 ## Agent running as Windows Service Limitations
 
