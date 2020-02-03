@@ -1,7 +1,7 @@
 [//]: # (title: Duplicates Finder (ReSharper))
 [//]: # (auxiliary-id: viewpage.actionpageId113084077;Duplicates Finder (ReSharper))
 
-The __Duplicates finder (ReSharper)__ build runner based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html) is intended to catch similar code fragments and provide a report on  the discovered repetitive blocks of C# and Visual Basic .NET code in Visual Studio 2003, 2005, 2008, 2010, 2012, 2013, and 2015 solutions.
+The __Duplicates finder (ReSharper)__ build runner based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html) is intended to catch similar code fragments and provide a report on the discovered repetitive blocks of C# and Visual Basic .NET code in Visual Studio 2003, 2005, 2008, 2010, 2012, 2013, 2015, 2017, and 2019.
 
 <note>
 
@@ -40,7 +40,7 @@ Include
 
 <td>
 
-Use newline\-delimited Ant\-like wildcards relative to the checkout root to specify the files to be included into the duplicates search.   
+Use newline-delimited Ant-like wildcards relative to the checkout root to specify the files to be included into the duplicates search.   
 Visual Studio solution files are parsed and replaced by all source files from all projects within a solution.   
 Example: `src\MySolution.sln`
 
@@ -56,7 +56,7 @@ Exclude
 
 <td>
 
-Enter newline\-delimited Ant\-like wildcards to exclude files from the duplicates search (for example, `*/generated{*}{}.cs`). The entries should be relative to the checkout root.
+Enter newline-delimited Ant-like wildcards to exclude files from the duplicates search (for example, `*/generated{*}{}.cs`). The entries should be relative to the checkout root.
 
 
 </td></tr></table>
@@ -90,7 +90,6 @@ R# CLT Home Directory
 
 Select the ReSharper Command Line Tools version. You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Administration | Tools](installing-agent-tools.md)__ page. If you want to run ReSharper duplicates using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can use this page to install another version of the tools and can change the default version to be used.
 
-
 </td></tr></table>
 
 ## Duplicate Searcher Settings
@@ -113,8 +112,9 @@ Description
 
 <td>
 
-Code fragments comparison
+<anchor name="fragComp"/>
 
+Code fragments comparison
 
 </td>
 
@@ -166,9 +166,6 @@ myStatusBar.SetText("Logging In...");
 
 ```
 
-
-
-
 </td></tr><tr>
 
 <td>
@@ -188,9 +185,6 @@ int a = 5; a += 6;
 int b = 5; b += 6;
 
 ```
-
-
-
 
 </td></tr><tr>
 
@@ -243,9 +237,6 @@ public void SomeMethod(object[] param);
 
 ```
 
-
-
-
 </td></tr><tr>
 
 <td>
@@ -271,7 +262,7 @@ Skip files by opening comment
 
 <td>
 
-Enter newline\-delimited keywords to exclude files that contain the keyword in the file's opening comments from the duplicates search.
+Enter newline-delimited keywords to exclude files that contain the keyword in the file's opening comments from the duplicates search.
 
 
 </td></tr><tr>
@@ -285,12 +276,14 @@ Skip regions by message substring
 
 <td>
 
-Enter newline\-delimited keywords that exclude regions that contain the keyword in the message substring from the duplicates search. Entering "generated code", for example, will skip regions containing "Windows Form Designer generated code".
+Enter newline-delimited keywords that exclude regions that contain the keyword in the message substring from the duplicates search. Entering "generated code", for example, will skip regions containing "Windows Form Designer generated code".
 
 
 </td></tr><tr>
 
 <td>
+
+<anchor name="debug"/>
 
 Enable debug output
 
@@ -299,10 +292,26 @@ Enable debug output
 
 <td>
 
- Check this option to include debug messages in the build log and publish the file with additional logs (`dotnet-tools-dupfinder.log`) as an artifact.
+Check this option to include debug messages in the build log and publish the file with additional logs (`dotnet-tools-dupfinder.log`) as an artifact.
 
 
-</td></tr></table>
+</td></tr><tr>
+
+<td>
+
+<anchor name="cmdArgs"/>
+
+Additional dupFinder parameters
+
+
+</td>
+
+<td>
+
+Specify newline-separated command line parameters to add to calling `dupFinder.exe`.
+
+</td></tr>
+</table>
 
 ### Build Failure Conditions
 
