@@ -187,7 +187,6 @@ The SCP-like syntax requires a colon after the hostname, while a usual SSH URL d
 
 __Be careful__
 
-The SCP\-like syntax requires a colon after the hostname, while a usual SSH URL does not. This is a common source of errors.
 When you run TeamCity as a Windows service, it cannot access mapped network drives and repositories located on them.
 </note>
 
