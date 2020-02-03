@@ -1,8 +1,9 @@
 [//]: # (title: Using TeamCity as NuGet Feed)
 [//]: # (auxiliary-id: Using TeamCity as NuGet Feed)
 
-If you want to publish your NuGet packages to a limited audience, for example, to use them internally, you can use [TeamCity as a NuGet feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview).        
-__Since TeamCity 2018.2__, you can configure multiple NuGet feeds for a project in TeamCity.
+If you want to publish your NuGet packages to a limited audience, for example, to use them internally, you can use [TeamCity as a NuGet feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview).
+
+The built-in TeamCity NuGet feed supports API v1/v2/v3.
 
 <note>
 
@@ -13,33 +14,29 @@ On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
 
-## Enabling NuGet Feed
+## Adding NuGet Feed
 
-To start using TeamCity as a NuGet Server, you need to enable the NuGet Feed at the project level.
+To start using TeamCity as a NuGet Server, you need to add a NuGet feed at the project level – in __Project Settings | NuGet Feed__. Multiple NuGet feeds can be configured for a project.
 
-Go to the __NuGet Feed__ page on the Project Settings page and enable the feed.      
-__Since TeamCity 2018.2__, the built-in TeamCity NuGet feed supports API v1/v2/v3. 
+Click __Add new NuGet Feed__ to create a feed. Optionally, enable _Automatic packages indexing_ for the current project and its subprojects.
 
-On the page you will see the following feed endpoints:
-    
-
-   * `http://<teamcityUrl>/<authSchema>/app/nuget/feed/<projectName>/<feedName>/v1`
-   * `http://<teamcityUrl>/<authSchema>/app/nuget/feed/<projectName>/<feedName>/v2`
-   * `http://<teamcityUrl>/<authSchema>/app/nuget/feed/<projectName>/<feedName>/v3/index.json`
+The following feed endpoints are available:
+* `http://<teamcityUrl>/<authSchema>/app/nuget/feed/<projectName>/<feedName>/v1`
+* `http://<teamcityUrl>/<authSchema>/app/nuget/feed/<projectName>/<feedName>/v2`
+* `http://<teamcityUrl>/<authSchema>/app/nuget/feed/<projectName>/<feedName>/v3/index.json`
    
+If you have enabled a [guest user](guest-user.md), you will see the toggle between Basic HTTP authentication and Guest authentication for NuGet feed endpoints.
+* __Basic HTTP authentication__ (with httpAuth prefix): to access packages, a user must have the "_View project_" permission.
+* __Guest authentication__ (with guestAuth prefix): if a guest user login is enabled, packages will be visible to all users that have access to the TeamCity server.
 
-If you have enabled [guest user](guest-user.md) you will see the toggle between Basic HTTP authentication and Guest authentication for NuGet feed Endpoints.
-* __Basic HTTP authentication__ (with httpAuth prefix) \- to access packages user should have "View project" permission.
-* __Guest authentication__ (with guestAuth prefix) \- if a guest user login is enabled, packages will be visible to all users that have access to TeamCity server.
-
-To reference TeamCity project feeds, use parameters as follows:
+To reference the TeamCity project feeds, use parameters as follows:
  
 ```Shell  
 `teamcity.nuget.feed.<authSchema>.<projectName>.<feedName>.<apiVersion>
 ```   
 where:
- * `authSchema` could be `guestAuth`/`httpAuth`
- *`apiVersion` is `v1`/`v2`/`v3`, for instance: `teamcity.nuget.feed.httpAuth._Root.default.v2`.
+* `authSchema` could be `guestAuth`/`httpAuth`
+* `apiVersion` is `v1`/`v2`/`v3`, for instance: `teamcity.nuget.feed.httpAuth._Root.default.v2`
 
 On upgrading TeamCity to version 2018.2 or later, the deprecated parameters referencing the global NuGet feed will be automatically converted to the references to the default NuGet feed:
 
@@ -47,13 +44,13 @@ On upgrading TeamCity to version 2018.2 or later, the deprecated parameters refe
 <tr>
 <td>
 
-Deprecated references
+Deprecated reference
 
 </td>
 
 <td>
 
-Current References
+Current reference
 
 </td></tr><tr>
 
@@ -97,22 +94,22 @@ Current References
 
 ### Indexing packages published as artifacts
 
-By default, TeamCity will not add .nupkg artifacts published by builds into the project NuGet feed. You can select one of the following options:
-* to index packages published by selected build configurations only, add the [NuGet packages indexer](nuget-packages-indexer.md) build feature to these build configurations
-* to index all `.nupkg` files published as build artifacts in the project, enable __Automatic NuGet Packages Indexing__ in the __NuGet Feed__ section of the __Project Settings__
-* use the [NuGet Pack](nuget-pack.md) build step with the _Publish created packages to build artifacts_ checkbox.  
-Besides, the `.nupkg` files indexing is performed by the agent itself while publishing build artifacts.
+By default, TeamCity will not add `.nupkg` artifacts published by builds into the project NuGet feed. You can select one of the following options:
+* To index packages published by the selected build configurations only, add the [NuGet packages indexer](nuget-packages-indexer.md) build feature to these build configurations.
+* To index all `.nupkg` files published as build artifacts in the project, enable _Automatic NuGet Packages Indexing_ in the __NuGet Feed__ section of the __Project Settings__.
+* Use the [NuGet Pack](nuget-pack.md) build step with the _Publish created packages to build artifacts_ checkbox.  
+An agent indexes the `.nupkg` files while publishing build artifacts.
 
 <note>
 
-Deleting a NuGet Feed with all its contents from a project will remove all [NuGet Packages Indexer](nuget-packages-indexer.md) features pointing to this feed.
+Deleting a NuGet feed with all its contents from a project will remove all [NuGet Packages Indexer](nuget-packages-indexer.md) features pointing to this feed.
 </note>
 
 ### Using NuGet push command
 
 To publish the `.nupkg` file into TeamCity NuGet feed during the build, you can specify the NuGet feed URL as a package source and the `%teamcity.nuget.feed.api.key%` value as a feed key in the following build steps:
 *  [NuGet Publish](nuget-publish.md)
-* .[NET CLI](net-cli-dotnet.md) with `nuget push` command
+* .[NET CLI](net-cli-dotnet.md) with the `nuget push` command
 
 ### Symbol Packages
 
@@ -122,16 +119,16 @@ Publishing of NuGet [symbol packages](http://docs.nuget.org/ndocs/create-package
 
 ## Using TeamCity NuGet Feed
 
-You can add TeamCity NuGet feeds as package sources package on your developer machine, for example, to use packages during development: use the [`nuget sources`](https://docs.microsoft.com/en-us/nuget/tools/cli-ref-sources) command or NuGet package management in your IDE.
+You can add TeamCity NuGet feeds as package sources on your developer machine. For example, to use packages during development, use the [`nuget sources`](https://docs.microsoft.com/en-us/nuget/tools/cli-ref-sources) command or NuGet package management in your IDE.
 
 You can use TeamCity NuGet feeds to restore packages in your builds: when the [NuGet Installer](nuget-installer.md) or [NuGet Publish](nuget-publish.md) build step is used, TeamCity will use the [credentials provider](https://docs.microsoft.com/en-us/nuget/reference/extensibility/nuget-exe-credential-providers) to automatically authenticate requests to the private TeamCity NuGet feeds.
 
 <tip>
 
-The packages available in the feed are bound to the builds' artifacts: they are removed from the feed when the artifacts of the build which produced them are [cleaned up](https://confluence.jetbrains.com/display/TCD18/Clean-Up). To avoid clean-up of artifacts in a specific build, [pin this build](pinned-build.md).
+The packages available in the feed are bound to the builds' artifacts: they are removed from the feed when the artifacts of the build which produced them are [cleaned up](clean-up.md). To avoid clean-up of artifacts in a specific build, [pin this build](pinned-build.md).
 </tip>
 
- Internet Explorer settings may need to be set to trust the TeamCity Server when working in a mixed authentication environment.
+Internet Explorer settings may need to be set to trust the TeamCity server when working in a mixed authentication environment.
 
 [//]: # (Internal note. Do not delete. "Using TeamCity as NuGet Feedd342e197.txt")
 
