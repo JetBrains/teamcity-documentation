@@ -246,8 +246,8 @@ It is recommended to run TeamCity server with the latest Java 8 x64. The recomme
 If you have configured any native libraries for use with TeamCity (like `.dll` for using the Integrated Security option of the Microsoft SQL database), you need to update the libraries to match the JVM x86/x64 platform.
 
 TeamCity selects the Java to run the server process as follows:
-* If your TeamCity installation has a bundled JRE (there is the \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory), it will __always__ be used to run the TeamCity server process.
-* If there is no \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory present, set `JRE_HOME` or `JAVA_HOME` environment variables pointing to the installation directories of JRE or JVM (Java SDK) respectively. JRE will be used if both are present.
+* By default, if your TeamCity installation has a bundled JRE (the \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory exists), it will be used to run the TeamCity server process. To use a different JRE, specify its path via the `TEAMCITY_JRE` environment variable.
+* If there is no \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory present, TeamCity looks for the `JRE_HOME` or `JAVA_HOME` environment variable pointing to the installation directory of JRE or JVM (Java SDK) respectively. If both variables are declared, JRE will be used.
 
 The necessary steps to update the Java installation depend on the distribution used.
 * If your TeamCity installation has a bundled JRE (there is the \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory), update it by installing a newer JRE per installation instructions and copying the content of the resulting directory to replace the content of the existing \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory.   
