@@ -255,7 +255,7 @@ If you also run a TeamCity agent from the \<[TeamCity Home](teamcity-home-direct
 
 [//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e906.txt")
 
-* If there is no \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory present, set `JRE_HOME` or `JAVA_HOME` environment variables to be available for the process launching the TeamCity server (setting global OS environment variables and system restart is recommended). The variables should point to the home directory of the installed JRE or JVM (Java SDK) respectively and if both are present, the installed `JRE` will be used.
+* If you use a different Java version, specified via an environment variable (`TEAMCITY_JRE`, `JRE_HOME`, or `JAVA_HOME`), make sure it is available for the process launching the TeamCity server (it is recommended to set a global OS environment variable and restart the system). The variable should point to the home directory of the installed JRE or JVM (Java SDK) respectively.
 * If you use the `.war` distribution, Java update depends on the application server used. Refer to the manual of your application server.
 
 ### Using 64 bit Java to Run TeamCity Server
