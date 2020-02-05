@@ -76,9 +76,10 @@ By default, everything is kept forever. When you select custom settings, for eac
 * _Number of days_:   
   Builds older than the number of days specified will be cleaned with the specified level. The starting point is the date of the last build, not the current date. A day is equivalent to a 24-hour period, not a calendar day.
 * _Number of successful builds_:   
-  Only builds older than the last matching successful build will be cleaned with the level specified (all the failed builds between the preserved successful ones are kept). This rule is only taken into account if there are successful builds in the build configuration.
+  Only builds older than the last matching successful build will be cleaned with the level specified (all the failed builds between the preserved successful ones are kept).
 
-When both conditions are specified, only the builds, which must be cleaned according to all applied rules and not preserved by keep rules, will be actually removed: TeamCity finds the oldest build to preserve according to each of the rules and then cleans all builds older than the oldest one of the two found.
+When both conditions are specified, only the builds, which must be cleaned according to all applied rules and not preserved by keep rules, will be actually removed: TeamCity finds the oldest build to preserve according to each of the rules and then cleans all builds older than the oldest one of the two found.   
+Note that if the _Number of successful builds_ limit is specified for the level but there are no successful builds in the history, TeamCity will not clean up any data on this level.
 
 For the _Artifacts_ level you can also specify the patterns for the artifact names: the artifacts matching the specified pattern will be in- or excluded from the clean-up. Use newline-delimited rules following [Ant-like pattern](http://ant.apache.org/manual/dirtasks.html#patterns). For example:
 * To clean-up artifacts with `file` as a part of the name, use the following syntax: `+:**/file*.*`.
