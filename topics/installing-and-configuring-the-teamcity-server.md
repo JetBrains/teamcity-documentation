@@ -7,7 +7,6 @@ On this page:
 
 <tag-list of="chapter" mode="tree" depth="5"/>
 
-
 To install a TeamCity server, perform the following:
 
 1. Choose the appropriate TeamCity distribution (`.exe`, `.tar.gz` or [Docker image](https://hub.docker.com/r/jetbrains/teamcity-server/)) based on the details below. You can also [run TeamCity on AWS](running-teamcity-stack-in-aws.md) stack.
@@ -20,20 +19,20 @@ To install a TeamCity server, perform the following:
 
 After you have selected one of the [TeamCity installation options](installation.md#Select+TeamCity+Installation+Package), proceed with corresponding installation instructions:
 
-* [Windows .exe distribution](#Installing+TeamCity+via+Windows+installation+package) \- the executable which provides the installation wizard for Windows platforms and allows installing the server as a Windows service;
-* [.tar.gz distribution](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) \- the archive with a "portable" version suitable for all platforms;
-* Docker image \- check the instructions at the [image page](https://hub.docker.com/r/jetbrains/teamcity-server/);
-* [.war distribution](#Installing+TeamCity+into+Existing+J2EE+Container) \- for experienced users who want to run TeamCity in a separately installed Web application server. Consider using `.tar.gz` distribution instead. `.war` is not recommended to use unless really required (please [let us know](https://confluence.jetbrains.com/display/TW/Feedback) the reasons).
+* [Windows .exe distribution](#Installing+TeamCity+via+Windows+installation+package) – the executable which provides the installation wizard for Windows platforms and allows installing the server as a Windows service.
+* [.tar.gz distribution](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) – the archive with a "portable" version suitable for all platforms.
+* Docker image – check the instructions at the [image page](https://hub.docker.com/r/jetbrains/teamcity-server/).
+* [.war distribution](#Installing+TeamCity+into+Existing+J2EE+Container) – for experienced users who want to run TeamCity in a separately installed Web application server. Consider using `.tar.gz` distribution instead. `.war` is not recommended to use unless really required (please [let us know](https://confluence.jetbrains.com/display/TW/Feedback) the reasons).
 
 Compared to the `.war` distribution, the `.exe` and `.tar.gz` distributions:
-* include a Tomcat version which TeamCity is tested with, so it is known to be a working combination. This might not be the case with an external Tomcat.
-* define additional JRE options which are usually recommended for running the server
-* have the [teamcity-server startup script](#Starting+TeamCity+server) which provides several convenience options (for example, separate environment variable for memory settings) and configures TeamCity correctly (for example, `.log4j` configuration)
-* (at least under Windows) provide better error reporting for some cases (like a missing Java installation)
-* under Windows, allow running TeamCity as a service with the ability to use the same configuration as if run from the console
-* come bundled with a build agent distribution and single startup script which allows for easy TeamCity server evaluation with one agent
-* come bundled with the devPackage for [TeamCity plugin development](https://confluence.jetbrains.com/display/TCD18/Developing+TeamCity+Plugins).
-* may provide more convenience features in the future
+* Include a Tomcat version which TeamCity is tested with, so it is known to be a working combination. This might not be the case with an external Tomcat.
+* Define additional JRE options which are usually recommended for running the server.
+* Have the [teamcity-server startup script](#Starting+TeamCity+server) which provides several convenience options (for example, separate environment variable for memory settings) and configures TeamCity correctly (for example, `.log4j` configuration).
+* At least under Windows, provide better error reporting for some cases (like a missing Java installation).
+* Under Windows, allow running TeamCity as a service with the ability to use the same configuration as if run from the console.
+* Come bundled with a build agent distribution and single startup script which allows for easy TeamCity server evaluation with one agent.
+* Come bundled with the devPackage for [TeamCity plugin development](https://confluence.jetbrains.com/display/TCD18/Developing+TeamCity+Plugins).
+* May provide more convenience features in the future.
 
 After installation, the TeamCity web UI can be accessed via a web browser. The default addresses are [`http://localhost/`](http://localhost/) for Windows distribution and [`http://localhost:8111/`](http://localhost:8111/) for the `tar.gz` distribution.
 
@@ -60,9 +59,9 @@ If you want to edit the TeamCity server's service parameters, memory settings or
 
 Make sure the user account specified for the service has:
 * log on as service right ([related Microsoft page](https://technet.microsoft.com/en-us/library/cc794944%28v=ws.10%29.aspx))
-* write permissions for the [TeamCity Data Directory](teamcity-data-directory.md),
-* write permissions for the [TeamCity Home](teamcity-home-directory.md), i.e. directory where TeamCity was installed,
-* all the necessary permissions to work with the external systems like version controls, and so on.
+* write permissions for the [TeamCity Data Directory](teamcity-data-directory.md)
+* write permissions for the [TeamCity Home](teamcity-home-directory.md), that is directory where TeamCity was installed
+* all the necessary permissions to work with the external systems like version controls
 
 By default, the Windows service is installed under the SYSTEM account. To change it, use the Services applet (__Control Panel | Administrative Tools | Services__).
 
@@ -82,15 +81,13 @@ It is __not recommended__ to use the `.war` distribution. Use the [TeamCity `.ta
 See [Supported Platforms and Environments](supported-platforms-and-environments.md#TeamCity+Server) for J2EE container requirements.
 
 1. Make sure your web application server is stopped.
-2. Copy the downloaded `TeamCity<version number>.war` file into the web applications directory of your J2EE container under the `TeamCity.war` name (the name of the file is generally used as a part of the URL) or deploy the `.war` following the documentation of the web server. Make sure there is no other version of TeamCity deployed (e.g. do not preserve the old TeamCity web application directory under the web server applications directory).
+2. Copy the downloaded `TeamCity<version number>.war` file into the web applications directory of your J2EE container under the `TeamCity.war` name (the name of the file is generally used as a part of the URL) or deploy the `.war` following the documentation of the web server. Make sure there is no other version of TeamCity deployed (for example, do not preserve the old TeamCity web application directory under the web server applications directory).
 3. Ensure the TeamCity web application gets sufficient amount of [memory](#Setting+Up+Memory+settings+for+TeamCity+Server). Increase the memory accordingly if you have other web applications running in the same JVM.
 4. If you are deploying TeamCity to the __Tomcat__ container, add the `useBodyEncodingForURI="true"` attribute to the main `Connector` tag for the server in the `Tomcat/conf/server.xml` file.
 5. If you are deploying TeamCity to __Jetty__ container version &gt; 7.5.5 (including 8.x.x), make sure the system property `org.apache.jasper.compiler.disablejsr199` is set to `true`
 6. Ensure that the servlet container is configured to unpack the deployed war files. Though for most servlet containers it is the default behavior, for some it is not (for example, Jetty version &gt; 7.0.2) and should be explicitly configured. TeamCity is not able to work from a packed `.war`: if started this way, there will be a note on this the logs and UI.
 7. Configure the appropriate [TeamCity Data Directory](teamcity-data-directory.md) to be used by TeamCity. Note that it is recommended to start with an empty TeamCity Data Directory. After completing the installation and performing the first TeamCity server start, the required data (for example, [database settings](setting-up-an-external-database.md#Database+Configuration+Properties) file) can be moved to the directory.
-
 8. Check/configure the TeamCity [logging properties](teamcity-server-logs.md#General+Logging+Configuration) by specifying the `log4j.configuration` and `teamcity_logs` internal properties.
-
 9. Restart the server or deploy the application via the servlet container administration interface and access [`http://server:port/TeamCity/`](http://serverport), where `TeamCity` is the name of the `.war` file.
 
 
@@ -100,19 +97,19 @@ For automated server installation, use the `.tar.gz` distribution.
 
 Typically, you will need to unpack it and make the script perform the steps noted in the [Configuring Server for Production Use](#Configuring+Server+for+Production+Use) section.
 
-If you want to get a pre\-configured server right away, put files from a previously configured server into the Data Directory. For each new server you will need to ensure it points to a new database (configured in `<Data Directory>\config\database.properties`) and change `<Data Directory>\config\main-config.xml` file not to have the `uuid` attribute in the root XML element (so new one can be generated) and setting appropriate value for "rootURL" attribute.
+If you want to get a preconfigured server right away, put files from a previously configured server into the Data Directory. For each new server you will need to ensure it points to a new database (configured in `<Data Directory>\config\database.properties`) and change `<Data Directory>\config\main-config.xml` file not to have the `uuid` attribute in the root XML element (so new one can be generated) and setting appropriate value for "rootURL" attribute.
 
 ### Using another Version of Tomcat
 
 To use another version of the Tomcat web server instead of the one bundled in the `.tar.gz` and `.exe` distributions), you can either use the [.war TeamCity distribution](#Installing+TeamCity+into+Existing+J2EE+Container) (not recommended) or perform the Tomcat upgrade/patch for TeamCity installed from the `.exe` or `.tar.gz` distributions. 
 
 For the latter, you might want to:
-* backup the current [TeamCity home](teamcity-home-directory.md)
-* delete/move out the directories from the [TeamCity home](teamcity-home-directory.md) which are also present in the Tomcat distribution
-* unpack the Tomcat distribution into the [TeamCity home directory](teamcity-home-directory.md)
-* copy TeamCity\-specific files from the previously backed\-up/moved directories to the [TeamCity home](teamcity-home-directory.md). Namely:
+* Backup the current [TeamCity home](teamcity-home-directory.md).
+* Delete/move out the directories from the [TeamCity home](teamcity-home-directory.md) which are also present in the Tomcat distribution.
+* Unpack the Tomcat distribution into the [TeamCity home directory](teamcity-home-directory.md).
+* Copy TeamCity-specific files from the previously backed-up/moved directories to the [TeamCity home](teamcity-home-directory.md). Namely:
   * files under `bin` which are not present in the Tomcat distribution
-  * review differences between the default Tomcat `conf` directory and one from TeamCity, update Tomcat files with TeamCity\-specific settings (teamcity\-\* files, and portions of `server.xml`)
+  * review differences between the default Tomcat `conf` directory and one from TeamCity, update Tomcat files with TeamCity-specific settings (teamcity-* files, and portions of `server.xml`)
   * delete the default Tomcat `webapps/ROOT` directory and replace it with the one provided by TeamCity
 
 ## Starting TeamCity server
@@ -138,68 +135,58 @@ By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/).
 
 If you need to pass special properties to the server, refer to [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md).
 
-If TeamCity is installed into an existing web server (`.war` distribution), start the server according to its documentation. Make sure you configure TeamCity\-specific logging\-related properties and pass suitable [memory options](#Setting+Up+Memory+settings+for+TeamCity+Server).
+If TeamCity is installed into an existing web server (`.war` distribution), start the server according to its documentation. Make sure you configure TeamCity-specific logging-related properties and pass suitable [memory options](#Setting+Up+Memory+settings+for+TeamCity+Server).
 
 ### Autostart TeamCity server on macOS
 
 Starting up TeamCity server on macOS is quite similar to starting Tomcat on macOS.
 
-1\. Install TeamCity and make sure it works if started from the command line with `bin/teamcity-server.sh start`. We'll assume that TeamCity is installed in the /Library/TeamCity folder
-
-2\. Create the `/Library/LaunchDaemons/jetbrains.teamcity.server.plist` file with the following content:
-
-```XML
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>WorkingDirectory</key>
-	<string>/Library/TeamCity</string>
-	<key>Debug</key>
-	<false/>
-	<key>Label</key>
-	<string>jetbrains.teamcity.server</string>
-	<key>OnDemand</key>
-	<false/>
-	<key>KeepAlive</key>
-	<true/>
-	<key>ProgramArguments</key>
-	<array>
-        <string>/bin/bash</string>
-        <string>--login</string>
-        <string>-c</string>
-        <string>bin/teamcity\-server.sh run</string>
-    </array>
-	<key>RunAtLoad</key>
-	<true/>
-	<key>StandardErrorPath</key>
-	<string>logs/launchd.err.log</string>
-	<key>StandardOutPath</key>
-	<string>logs/launchd.out.log</string>
-</dict>
-</plist>
-
-```
-
-3\. Test your file by running this command:  
-
-
-```Shell
-launchctl load /Library/LaunchDaemons/jetbrains.teamcity.server.plist
-
-```
-This command should start the TeamCity server (you can see this from `logs/teamcity-server.log` and in your browser). 
-
-
-4\. If you don't want TeamCity to start under the root permissions, specify the __UserName__ key in the plist file, for example:
-
-
-```XML
-<key>UserName</key>
-<string>teamcity_user</string>
-
-```
-
+1. Install TeamCity and make sure it works if started from the command line with `bin/teamcity-server.sh start`. We'll assume that TeamCity is installed in the /Library/TeamCity folder
+2. Create the `/Library/LaunchDaemons/jetbrains.teamcity.server.plist` file with the following content:   
+    ```XML
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+        <key>WorkingDirectory</key>
+        <string>/Library/TeamCity</string>
+        <key>Debug</key>
+        <false/>
+        <key>Label</key>
+        <string>jetbrains.teamcity.server</string>
+        <key>OnDemand</key>
+        <false/>
+        <key>KeepAlive</key>
+        <true/>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/bin/bash</string>
+            <string>--login</string>
+            <string>-c</string>
+            <string>bin/teamcity\-server.sh run</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>StandardErrorPath</key>
+        <string>logs/launchd.err.log</string>
+        <key>StandardOutPath</key>
+        <string>logs/launchd.out.log</string>
+    </dict>
+    </plist>
+    
+    ```
+3. Test your file by running this command:     
+    ```Shell
+    launchctl load /Library/LaunchDaemons/jetbrains.teamcity.server.plist
+    
+    ```
+    This command should start the TeamCity server (you can see this from `logs/teamcity-server.log` and in your browser). 
+4. If you don't want TeamCity to start under the root permissions, specify the __UserName__ key in the plist file, for example:   
+    ```XML
+    <key>UserName</key>
+    <string>teamcity_user</string>
+    
+    ```
 The TeamCity server will now start automatically when the machine starts. To configure automatic start of a TeamCity Build Agent, see the [dedicated section](setting-up-and-running-additional-build-agents.md#Automatic+Start).
 
 ## Installation Configuration
@@ -230,7 +217,7 @@ To change the server port, in the \<[TeamCity Home](teamcity-home-directory.md)\
 
 ```
 
-To apply the changes, restart the server. If the server was working with the old port previously, you would need to change the port in all the stored URLs of the server (browser bookmarks, agents' serverUrl [property](build-agent-configuration.md), URL in user's IDEs, `Server URL` setting on the __Administration | Global Settings__ page).
+To apply the changes, restart the server. If the server was working with the old port previously, you would need to change the port in all the stored URLs of the server (browser bookmarks, agents' `serverUrl` [property](build-agent-configuration.md), URL in user's IDEs, `Server URL` setting on the __Administration | Global Settings__ page).
 
 If you run another Tomcat server on the same machine, you might need to also change other Tomcat server service ports (search for `port=` in the `server.xml` file).
 
@@ -259,7 +246,7 @@ It is recommended to run TeamCity server with the latest Java 8 x64. The recomme
 If you have configured any native libraries for use with TeamCity (like `.dll` for using the Integrated Security option of the Microsoft SQL database), you need to update the libraries to match the JVM x86/x64 platform.
 
 TeamCity selects the Java to run the server process as follows:
-* If your TeamCity installation has a bundled JRE (there is the \<[TeamCity Home](teamcity-home-directory.md)\>\jre  directory), it will __always__ be used to run the TeamCity server process.
+* If your TeamCity installation has a bundled JRE (there is the \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory), it will __always__ be used to run the TeamCity server process.
 * If there is no \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory present, set `JRE_HOME` or `JAVA_HOME` environment variables pointing to the installation directories of JRE or JVM (Java SDK) respectively. JRE will be used if both are present.
 
 The necessary steps to update the Java installation depend on the distribution used.
@@ -323,7 +310,7 @@ The default placement of the TeamCity Data Directory can be changed. See [TeamCi
 
 ### Editing Server Configuration
 
-After successful server start, any TeamCity page request will redirect to prompt for the server administrator username and password. Make sure that no one can access the server pages until the administrator account is setup.
+After successful server start, any TeamCity page request will redirect to prompt for the server administrator username and password. Make sure no one can access the server pages until the administrator account is setup.
 
 After administration account setup you may begin to create Project and Build Configurations in the TeamCity server. You may also want to configure the following settings in the Server Administration section:
 * Server URL
@@ -334,14 +321,14 @@ After administration account setup you may begin to create Project and Build Con
 
 Out-of-the-box TeamCity server installation is suitable for evaluation purposes. For production use you will need to perform additional configuration which typically includes:
 * Check that the server is using due [server port](#Changing+Server+Port) and configure [access via https](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI).
-* Make sure server URL, email and (optionally) Jabber server settings are specified and are correct
-* Configuring the server process for OS-dependent autostart on machine reboot
-* Using reliable storage for [TeamCity Data Directory](teamcity-data-directory.md)
-* [Using external database](setting-up-an-external-database.md)
-* [Configuring recommended memory settings](#Setting+Up+Memory+settings+for+TeamCity+Server), use "maximum settings" for active or growing servers
-* Planning for regular [backups](teamcity-data-backup.md)
-* Planning for regular [upgrades](upgrade.md) to the latest TeamCity releases
-* (since TeamCity 10.0.3) Consider adding the `teamcity.installation.completed=true` line into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\conf\teamcity-startup.properties file – this will prevent the server from creating an administrator user if no such user is found
+* Make sure server URL, email and (optionally) Jabber server settings are specified and are correct.
+* Configuring the server process for OS-dependent autostart on machine reboot.
+* Using reliable storage for [TeamCity Data Directory](teamcity-data-directory.md).
+* [Using external database](setting-up-an-external-database.md).
+* [Configuring recommended memory settings](#Setting+Up+Memory+settings+for+TeamCity+Server), use "maximum settings" for active or growing servers.
+* Planning for regular [backups](teamcity-data-backup.md).
+* Planning for regular [upgrades](upgrade.md) to the latest TeamCity releases.
+* (since TeamCity 10.0.3) Consider adding the `teamcity.installation.completed=true` line into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\conf\teamcity-startup.properties file – this will prevent the server from creating an administrator user if no such user is found.
 
 Make sure to review the [notes on configuring the server for performance](how-to.md#Configuring+TeamCity+Server+for+Performance) and [security notes](how-to.md#TeamCity+Security+Notes).
 
