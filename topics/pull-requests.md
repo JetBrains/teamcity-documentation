@@ -89,7 +89,7 @@ Access token
 
 The '_Token_' field appears.
 
-Use a personal access token or obtain a token through an OAuth connection. It must have either the `public_repo` (for public repisotories) or `repo` (for private repositories) scope.
+Use a personal access token or obtain a token through an OAuth connection. It must have either the `public_repo` (for public repositories) or `repo` (for private repositories) scope.
 
 </td>
 </tr>
