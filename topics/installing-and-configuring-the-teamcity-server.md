@@ -228,7 +228,7 @@ If you want to use the `https://` protocol, it should be enabled separately and 
 By default, the TeamCity server is accessible under the root context of the server address (for example, [`http://localhost:8111/`](http://localhost:8111/) ). To make it available under a nested path instead (for example, [`http://localhost:8111/teamcity/`](http://localhost:8111/teamcity/) ), you need to:
 
 1. Stop the TeamCity server.
-2. Rename the \<[TeamCity Home](teamcity-home-directory.md)\>\webapps\ROOT directory to \<[TeamCity Home](teamcity-home-directory.md)\>\teamcity.
+2. Rename the \<[TeamCity Home](teamcity-home-directory.md)\>\webapps\ROOT directory to \<[TeamCity Home](teamcity-home-directory.md)\>\webapps\teamcity.
 3. Start the TeamCity server.
 
 <tip>
