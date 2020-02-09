@@ -491,7 +491,7 @@ To run TeamCity with the required JRE, do one of the following:
 Note that on upgrade, TeamCity will overwrite the existing JRE with the default 32\-bit version, so you'll have to update to the 64\-bit JRE again after upgrade.
 </note>
 
-See also this related [external posting](http://www.mikeobrien.net/blog/teamcity-sqlserver-integrated-security/).
+See also this related [external posting](http://www.mikeobrien.net/blog/teamcity-sqlserver-integrated-security).
 
 
 
