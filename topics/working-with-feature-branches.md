@@ -154,8 +154,8 @@ An _active branch_ is a branch with the recent activity: it has recent builds or
 The threshold for activity can be configured via build configuration parameters. The parameters can be changed either in a build configuration (this will affect one build configuration only), project, or in the [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (this defines defaults for the entire server). A parameter in the configuration overrides a parameter in the [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
 A branch is considered active if:
-* it is present in the VCS repository and has recent commits (i.e. commits with the age less than the value of the `teamcity.activeVcsBranch.age.days` parameter, 7 days by default).
-* or it has recent builds (i.e. builds with the age less than the value of `teamcity.activeBuildBranch.age.hours` parameter, 24 hours by default).   
+* it is present in the VCS repository and has recent commits (i.e. commits with the age less than the value of the integer parameter `teamcity.activeVcsBranch.age.days`, 7 days by default).
+* or it has recent builds (i.e. builds with the age less than the value of the integer parameter `teamcity.activeBuildBranch.age.hours`, 24 hours by default).   
 A closed VCS branch with builds will still be displayed as active during 24 hours after last build. To remove closed branches from display, set `teamcity.activeBuildBranch.age.hours=0`.
 
 ## Tests
