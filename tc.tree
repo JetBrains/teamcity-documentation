@@ -9,6 +9,7 @@
          <toc-element id="continuous-integration-with-teamcity.md" />
          <toc-element id="installation-quick-start.md" />
          <toc-element id="configure-and-run-your-first-build.md"/>
+         <toc-element id="introduction-to-teamcity-terminology.md"/>
       </toc-element>
       <toc-element id="concepts.md">
          <toc-element id="build-artifact.md"/>
