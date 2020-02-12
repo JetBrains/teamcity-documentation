@@ -30,9 +30,8 @@ The __Configuration__ tab is used to define
    * when synchronization is enabled, you can define which settings to use when build starts. See details [below](#Defining+Settings+to+Apply+to+Builds).
 * which VCS Root is used to store the project settings: you can store the settings either in the same repository as the source code, or in a dedicated VCS root.
 
-Enabling synchronization for a project also enables it for all its subprojects. TeamCity synchronizes all changes to the project settings (including modifications of [build configurations](build-configuration.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on) with the exception of [SSH keys](ssh-keys-management.md).
-
-You can override the synchronization settings inherited from a project for a subproject.
+Enabling synchronization for a project also enables it for all its subprojects with the default "_Use settings from a parent project_" option selected. TeamCity synchronizes all changes to the project settings (including modifications of [build configurations](build-configuration.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on) with the exception of [SSH keys](ssh-keys-management.md).   
+However, if for certain subprojects the "_Synchronization disabled_" option is selected, such subprojects will not be synchronized even if this option is enabled for their parent project.
 
 As soon as synchronization is enabled in a project, TeamCity will make an initial commit in the selected repository for the whole project tree (the project with all its subprojects) to store the current settings from the server. If the settings for the given project are found in the specified VCS root (the VCS root for the parent project settings or the user-selected VCS root), a warning will be displayed asking if TeamCity should
 * overwrite the settings in the VCS with the current project settings on the TeamCity server; or
