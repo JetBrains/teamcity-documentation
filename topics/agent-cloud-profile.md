@@ -1,11 +1,12 @@
 [//]: # (title: Agent Cloud Profile)
 [//]: # (auxiliary-id: Agent Cloud Profile)
 
+A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand while distributing a build queue. Configuring a cloud provider profile is one of the steps required to [enable agent cloud integration](teamcity-integration-with-cloud-solutions.md) between TeamCity and a cloud provider. The settings of profiles slightly vary depending on the cloud type.
+
 On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
 
-A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on\-demand while distributing a build queue. Configuring a cloud provider profile is one of the steps required to [enable agent cloud integration](teamcity-integration-with-cloud-solutions.md) between TeamCity and a cloud provider. The settings of profiles slightly vary depending on the cloud type. 
 
 <tip>
 
@@ -139,13 +140,13 @@ You can specify which [agent pool](agent-pools.md) the agents should belong to. 
 TeamCity automatically composes the project pool containing agents from all cloud profiles of the current project and all its subprojects. Thus, the added image will be available to all the subprojects as well. On the __Agents | Pools__ page, this pool is marked as "_\<Project name\> project pool_". Project pools cannot be deleted or modified.
 
 
-After an Agent Cloud profile is created with one or several sources for virtual machines, TeamCity does a test start for all the virtual machines specified in the profile to learn about the agents configured on them. Once agents are connected, TeamCity calculates their build configurations\-to\-agents compatibility and stores this information.
+After an Agent Cloud profile is created with one or several sources for virtual machines, TeamCity does a test start for all the virtual machines specified in the profile to learn about the agents configured on them. Once agents are connected, TeamCity calculates their build configurations-to-agents compatibility and stores this information.
 
 When a cloud profile is changed, TeamCity detects modifications immediately and forces shutdown of the agents started prior to these changes once the agents finish the current build.
 
 ## Viewing Cloud Agent Information
 
-The agents' information is displayed on the __Agents | Cloud__ page under the __&lt;Profile name&gt;__ drop\-down.
+The agents' information is displayed on the __Agents | Cloud__ page under the __&lt;Profile name&gt;__ drop-down menu.
 
 ## Enabling/disabling Cloud Integration in Project
 
