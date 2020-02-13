@@ -1,6 +1,6 @@
 [//]: # (title: Build Agent)
 [//]: # (auxiliary-id: Build Agent)
-A TeamCity _Build Agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. It is [installed and configured](setting-up-and-running-additional-build-agents.md) separately from the TeamCity server. An agent can be installed on the same computer as the server or on a different machine (the latter is a preferred setup for server performance reasons); an agent can run the same operating system (OS) as the TeamCity server or a different OS. 
+A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. It is [installed and configured](setting-up-and-running-additional-build-agents.md) separately from the TeamCity server. An agent can be installed on the same computer as the server or on a different machine (the latter is a preferred setup for server performance reasons); an agent can run the same operating system (OS) as the TeamCity server or a different OS. 
 
 <tag-list of="chapter" mode="tree" depth="4"/>
 

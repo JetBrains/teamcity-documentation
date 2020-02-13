@@ -10,8 +10,8 @@ On this page:
 
 <tip>
 
-If you install TeamCity bundled with a Tomcat servlet container, or use the TeamCity installer for Windows, both the server and one build agent are installed on the same machine. This is not a recommended setup for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) because of [security concerns](how-to.md#TeamCity+Security+Notes) and since the build procedure can slow down the responsiveness of the web UI and overall TeamCity server functioning. If you need more build agents, perform the procedure described below.
-If you need the agent to run an operating system different from the TeamCity server, perform the procedure described below.
+If you install TeamCity bundled with a Tomcat servlet container, or use the TeamCity installer for Windows, both the server and one build agent are installed on the same machine. This is not a recommended setup for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) because of [security concerns](how-to.md#TeamCity+Security+Notes) and since the build procedure can slow down the responsiveness of the web UI and overall TeamCity server functioning. If you need more build agents, perform the procedure described below.   
+If you need the agent to run an operating system different from the TeamCity server, perform the procedure described below.   
 For production installations, it is recommended to adjust the [Agent's JVM parameters](configuring-build-agent-startup-properties.md) to include the `-server` option.
 </tip>
 
@@ -46,7 +46,7 @@ The agent process (java) must
 
 
 For granting necessary permissions for unprivileged users, see [Microsoft documentation](https://support.microsoft.com/en-us/kb/325349).
-You can assign rights to manage services with Microsoft [SubInACL](http://www.microsoft.com/downloads/details.aspx?FamilyID=e8ba3e56-d8fe-4a91-93cf-ed6985e3927b&displaylang=en) utility, a command\-line tool enabling administrators to directly edit security information. The tool uses the following syntax:
+You can assign rights to manage services with Microsoft [SubInACL](http://www.microsoft.com/downloads/details.aspx?FamilyID=e8ba3e56-d8fe-4a91-93cf-ed6985e3927b&displaylang=en) utility, a command-line tool enabling administrators to directly edit security information. The tool uses the following syntax:
 
 ```Shell
 SUBINACL /SERVICE \\MachineName\ServiceName /GRANT=[DomainName]UserName[=Access]
@@ -64,7 +64,7 @@ subinacl.exe /service TCBuildAgent /grant=<user login name>=PTO
 
 #### Linux
 * the user must be able to run the `shutdown` command (for the agent machine reboot functionality and the machine shutdown functionality when running in a cloud environment)
-* when using systemd, it should not kill the processes on the main process exit (use [`RemainAfterExit=yes`](https://serverfault.com/questions/660063/teamcity-build-agent-gets-killed-by-systemd-when-upgrading))
+* if you are using `systemd`, it should not kill the processes on the main process exit (use [`RemainAfterExit=yes`](https://serverfault.com/questions/660063/teamcity-build-agent-gets-killed-by-systemd-when-upgrading))
 
 #### Build-related Permissions
 The build process is launched by a TeamCity agent and thus shares the environment and is executed under the OS user used by the TeamCity agent. Ensure that the TeamCity agent is configured accordingly. See [Known Issues](known-issues.md) for related Windows Service Limitations.

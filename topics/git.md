@@ -369,7 +369,7 @@ Use mirrors
 
 <td>
 
-When __enabled__ (default), TeamCity clones the repository under the agent's `system\git` directory and uses the mirror as an alternate repository when updating the checkout directory for the build. As a result, this speeds\-up clean checkout (because only the working directory is cleaned), and saves disk space (as there is only one clone of the given Git repository on an agent).
+When __enabled__ (default), TeamCity clones the repository under the agent's `system\git` directory and uses the mirror as an alternate repository when updating the checkout directory for the build. As a result, this speeds up clean checkout (because only the working directory is cleaned), and saves disk space (as there is only one clone of the given Git repository on an agent).
 
 If you __disable__ this option, TeamCity will clone the repository directly under the build's working directory, unless the [`teamcity.git.use.local.mirrors`](#use-local-mirrors) property is set to `true`. 
 
