@@ -334,7 +334,8 @@ P4 path on the build agent
 
 Specify the path to the Perforce command\-line client: `p4.exe` file.
 
-This field works only on the agent side for agent\-side checkout (__prior to TeamCity 2017.2.2__ this path was used for both the server\-side checkout and the agent\-side checkout).   
+This field works only on the agent side for agent\-side checkout (__prior to TeamCity 2017.2.2__ this path was used for both the server\-side checkout and the agent\-side checkout). On agent-side, the value of this parameter could be overriden via `TEAMCITY_P4_PATH` environment variable, if such a variable is set in buildAgent.properties or comes from build parameters.
+
 For the server, the p4 binary should be present in the PATH of the TeamCity server or can be specified via the `teamcity.perforce.customP4Path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). 
 
 To restore old behavior, the `teamcity.perforce.p4PathOnServerWhitelist` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) can be used to specify a  semi\-colon\-separated list of allowed p4 paths.
