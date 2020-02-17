@@ -50,43 +50,35 @@ If you are migrating to TeamCity from another CI/CD solution, you might need som
 
 ### Mapping to GitLab CI Terminology
 
-<table><tr>
+<table>
 
-<td>
+<tr><td>
 
 GitLab CI term
 
-</td>
-
-<td>
+</td><td>
 
 TeamCity equivalent
 
-</td></tr><tr>
+</td></tr>
 
-<td>
+<tr><td>
 
 `.gitlab-ci.yml`
 
-</td>
-
-<td>
+</td><td>
 
 [Build steps](configuring-build-steps.md) and [build triggers](configuring-retry-build-trigger.md)
  
- See also: [deployment build configuration type](deployment-build-configuration.md)
+See also: [deployment build configuration type](deployment-build-configuration.md)
 
 </td></tr>
 
-<tr>
-
-<td>
+<tr><td>
 
 Browser Performance Testing
 
-</td>
-
-<td>
+</td><td>
 
 [Prometheus-ready metrics](teamcity-monitoring-and-diagnostics.md#Metrics)
 
@@ -94,203 +86,157 @@ See also: [Performance monitor](performance-monitor.md)
 
 </td></tr>
 
-<tr>
-
-<td>
+<tr><td>
 
 GitLab Code Quality
 
-</td>
-
-<td>
+</td><td>
 
 [Code Quality Tools](code-quality-tools.md) and [Code Coverage](code-coverage.md)
 
-</td></tr><tr>
+</td></tr>
 
-<td>
+<tr><td>
 
 GitLab server
 
-</td>
-
-<td>
+</td><td>
 
 [TeamCity server](installing-and-configuring-the-teamcity-server.md)
 
-</td></tr><tr>
+</td></tr>
 
-<td>
+<tr><td>
 
 GitLab Runner
 
-</td>
-
-<td>
+</td><td>
 
 [Build agent](build-agent.md)
 
-</td></tr><tr>
+</td></tr>
 
-<td>
+<tr><td>
 
 Job
 
-</td>
-
-<td>
+</td><td>
 
 [Build configuration](build-configuration.md)
 
-</td></tr><tr>
+</td></tr>
 
-<td>
+<tr><td>
 
 Pipeline
 
-</td>
-
-<td>
+</td><td>
 
 [Build chain](build-chain.md) (via snapshot dependencies in the UI), or [sequential chain](kotlin-dsl.md#Build+Chain+DSL+Extension) (via DSL)
 
 </td></tr>
 
-<tr>
-
-<td>
+<tr><td>
 
 Stage
 
-</td>
-
-<td>
+</td><td>
 
 [Build step](configuring-build-steps.md)
 
 </td></tr>
 
-<tr>
-
-<td>
+<tr><td>
 
 Tag
 
-</td>
-
-<td>
+</td><td>
 
 [Agent requirements](agent-requirements.md)
 
-</td></tr></table>
+</td></tr>
+
+</table>
 
 ### Mapping to CircleCI Terminology
 
-<table><tr>
+<table>
 
-<td>
+<tr><td>
 
 CircleCI term
 
-</td>
-
-<td>
+</td><td>
 
 TeamCity equivalent
 
-</td></tr><tr>
+</td></tr>
 
-<td>
+<tr><td>
 
 Image (`.circleci/config.yml`)
 
-</td>
-
-<td>
+</td><td>
 
 [Build configuration](creating-and-editing-build-configurations.md) with [build steps](configuring-build-steps.md)
 
 </td></tr>
 
-<tr>
-
-<tr>
-
-<td>
+<tr><td>
 
 Build Agent
 
-</td>
-
-<td>
+</td><td>
 
 [Build agent](build-agent.md)
 
 </td></tr>
 
-<tr>
-
-<td>
+<tr><td>
 
 Cache
 
-</td>
-
-<td>
+</td><td>
 
 [Artifact dependency](artifact-dependencies.md)
 
 </td></tr>
 
-<tr>
-
-<td>
+<tr><td>
 
 Job
 
-</td>
-
-<td>
+</td><td>
 
 [Build configuration](build-configuration.md)
 
 </td></tr>
 
-<tr>
-
-<td>
+<tr><td>
 
 Nomad Server
 
-</td>
-
-<td>
+</td><td>
 
 [TeamCity server](installing-and-configuring-the-teamcity-server.md)
 
 </td></tr>
 
-<tr>
-
-<td>
+<tr><td>
 
 Nomad Client
 
-</td>
-
-<td>
+</td><td>
 
 [Secondary node](configuring-secondary-node.md)
 
-</td></tr></tr>
+</td></tr>
 
 <tr><td>
 
 Project
 
-</td>
-
-<td>
+</td><td>
 
 [Project](project.md)
 
@@ -300,37 +246,27 @@ Project
 
 Step
 
-</td>
-
-<td>
+</td><td>
 
 [Build step](configuring-build-steps.md)
 
 </td></tr>
 
-<tr>
-
-<td>
+<tr><td>
 
 Workflow
 
-</td>
-
-<td>
+</td><td>
 
 [Build Chain](build-chain.md) (via [dependencies](configuring-dependencies.md) in the UI), or [sequential chain](kotlin-dsl.md#Build+Chain+DSL+Extension) (via DSL)
 
 </td></tr>
 
-<tr>
-
-<td>
+<tr><td>
 
 Workspace
 
-</td>
-
-<td>
+</td><td>
 
 [Checkout directory](build-checkout-directory.md)
 
@@ -340,76 +276,59 @@ Workspace
 
 ### Mapping to Travis CI Terminology
 
-<table><tr>
+<table>
 
-<td>
+<tr><td>
 
 Travis CI term
 
-</td>
-
-<td>
+</td><td>
 
 TeamCity equivalent
 
 </td></tr>
 
-<tr>
-
-<tr>
-<td>
+<tr><td>
 
 Build configuration (`.travis.yml`)
 
-</td>
-
-<td>
+</td><td>
 
 [Build configuration](build-configuration.md)
 
 </td></tr>
 
-<tr>
-<td>
+<tr><td>
 
 Build
 
-</td>
-
-<td>
+</td><td>
 
 Build  that belongs to a [build configuration](build-configuration.md)
 
 </td></tr>
 
-<tr>
-<tr>
-
-<td>
+<tr><td>
 
 Job
 
-</td>
-
-<td>
+</td><td>
 
 [Build step](configuring-build-steps.md)
 
-</td></tr><tr>
+</td></tr>
 
-<tr>
-
-<td>
+<tr><td>
 
 Stage
 
-</td>
-
-<td>
+</td><td>
 
 Build in a [build chain](build-chain.md)
 
-</td></tr></table>
+</td></tr>
+
+</table>
 
 
 ### Mapping to Jenkins Terminology
