@@ -63,7 +63,6 @@ GitLab CI term
 TeamCity equivalent
 
 </td></tr><tr>
-<tr>
 
 <td>
 
@@ -78,8 +77,6 @@ TeamCity equivalent
  See also: [deployment build configuration type](deployment-build-configuration.md)
 
 </td></tr>
-
-<tr>
 
 <tr>
 
