@@ -8,7 +8,7 @@ The __NTLM HTTP__ module is configured on the __Administration | Authentication_
 
 <tip>
 
-For information on configuring authentication the settings directly in the `<TeamCity Data Directory&gt;/config/auth\-config.xml`, refer to the [previous documentation version](https://confluence.jetbrains.com/display/TCD8/NTLM+HTTP+Authentication).
+For information on configuring authentication the settings directly in the `<TeamCity Data Directory>/config/auth-config.xml`, refer to the [previous documentation version](https://confluence.jetbrains.com/display/TCD8/NTLM+HTTP+Authentication).
 </tip>
 
 You can enable NTLM login with any login module once the TeamCity username is the same as the Windows domain username or the Windows domain username is specified on the user profile.
