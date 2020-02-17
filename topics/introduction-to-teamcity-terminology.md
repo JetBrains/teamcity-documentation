@@ -17,6 +17,7 @@ In TeamCity terms, it is considered that a build configuration _belongs_ to its 
 Projects can be configured manually or automatically – based on an external repository in any of the supported version control systems. To store connection and checkout settings of a single external repository, TeamCity uses a preset called _VCS root_. All VCS roots, required by build configurations of a project, are stored in the project's settings along with the other shared settings like cloud profile connections, common parameters, clean-up rules, and many others.
 
 Example of object hierarchy in TeamCity:
+
 <img src="ex-hierarchy.png" alt="Example object hierarchy"/>
 
 A build configuration serves as a blueprint for running a certain job, or a _build_, based on the project's source code: from compilation and tests to deployment. It could store settings used to run, for example, a nightly build or integration tests. Sometimes, you need to create multiple similar build configurations that differ only in few aspects: for this purpose, you can first compose a _build configuration template_ – and then use it to generate as many cognate build configurations as needed; this is most helpful for testing and deploying software on different operating systems.
@@ -49,7 +50,6 @@ If you are migrating to TeamCity from another CI/CD solution, you might need som
 
 ### Mapping to GitLab CI Terminology
 
-
 <table><tr>
 
 <td>
@@ -73,25 +73,13 @@ TeamCity equivalent
 
 <td>
 
-[Build steps](configuring-build-steps.md) and [build triggers](configuring-retry-build-trigger.md).
+[Build steps](configuring-build-steps.md) and [build triggers](configuring-retry-build-trigger.md)
  
- See also: [deployment build configuration type](deployment-build-configuration.md).
+ See also: [deployment build configuration type](deployment-build-configuration.md)
 
-</td></tr><tr>
+</td></tr>
 
 <tr>
-
-<td>
-
-GitLab Code Quality
-
-</td>
-
-<td>
-
-[Code Quality Tools](code-quality-tools.md) and [Code Coverage](code-coverage.md).
-
-</td></tr><tr>
 
 <tr>
 
@@ -103,9 +91,23 @@ Browser Performance Testing
 
 <td>
 
-[Prometheus-ready metrics](teamcity-monitoring-and-diagnostics.md#Metrics).
+[Prometheus-ready metrics](teamcity-monitoring-and-diagnostics.md#Metrics)
 
-See also: [Performance monitor](performance-monitor.md).
+See also: [Performance monitor](performance-monitor.md)
+
+</td></tr>
+
+<tr>
+
+<td>
+
+GitLab Code Quality
+
+</td>
+
+<td>
+
+[Code Quality Tools](code-quality-tools.md) and [Code Coverage](code-coverage.md)
 
 </td></tr><tr>
 
@@ -117,7 +119,7 @@ GitLab server
 
 <td>
 
-TeamCity server
+[TeamCity server](installing-and-configuring-the-teamcity-server.md)
 
 </td></tr><tr>
 
@@ -147,27 +149,31 @@ Job
 
 <td>
 
-Stage
-
-</td>
-
-<td>
-
-[Build steps](configuring-build-steps.md)
-
-</td></tr><tr>
-
-<td>
-
 Pipeline
 
 </td>
 
 <td>
 
-[Build Chain](build-chain.md) (via snapshot dependencies in the UI), or [sequential chain](kotlin-dsl.md#Build+Chain+DSL+Extension) (via DSL)
+[Build chain](build-chain.md) (via snapshot dependencies in the UI), or [sequential chain](kotlin-dsl.md#Build+Chain+DSL+Extension) (via DSL)
 
-</td></tr><tr>
+</td></tr>
+
+<tr>
+
+<td>
+
+Stage
+
+</td>
+
+<td>
+
+[Build step](configuring-build-steps.md)
+
+</td></tr>
+
+<tr>
 
 <td>
 
@@ -177,14 +183,246 @@ Tag
 
 <td>
 
-[Agent Requirements](agent-requirements.md)
+[Agent requirements](agent-requirements.md)
 
 </td></tr></table>
 
 ### Mapping to CircleCI Terminology
 
+<table><tr>
+
+<td>
+
+CircleCI term
+
+</td>
+
+<td>
+
+TeamCity equivalent
+
+</td></tr><tr>
+
+<td>
+
+Image (`.circleci/config.yml`)
+
+</td>
+
+<td>
+
+[Build configuration](creating-and-editing-build-configurations.md) with [build steps](configuring-build-steps.md)
+
+</td></tr>
+
+<tr>
+
+<tr>
+
+<td>
+
+Build Agent
+
+</td>
+
+<td>
+
+[Build agent](build-agent.md)
+
+</td></tr>
+
+<tr>
+
+<td>
+
+Cache
+
+</td>
+
+<td>
+
+[Artifact dependency](artifact-dependencies.md)
+
+</td></tr>
+
+<tr>
+
+<td>
+
+Job
+
+</td>
+
+<td>
+
+[Build configuration](build-configuration.md)
+
+</td></tr>
+
+<tr>
+
+<td>
+
+Nomad Server
+
+</td>
+
+<td>
+
+[TeamCity server](installing-and-configuring-the-teamcity-server.md)
+
+</td></tr>
+
+<tr>
+
+<td>
+
+Nomad Client
+
+</td>
+
+<td>
+
+[Secondary node](configuring-secondary-node.md)
+
+</td></tr></tr>
+
+<tr><td>
+
+Project
+
+</td>
+
+<td>
+
+[Project](project.md)
+
+</td></tr>
+
+<tr><td>
+
+Step
+
+</td>
+
+<td>
+
+[Build step](configuring-build-steps.md)
+
+</td></tr>
+
+<tr>
+
+<td>
+
+Workflow
+
+</td>
+
+<td>
+
+[Build Chain](build-chain.md) (via [dependencies](configuring-dependencies.md) in the UI), or [sequential chain](kotlin-dsl.md#Build+Chain+DSL+Extension) (via DSL)
+
+</td></tr>
+
+<tr>
+
+<td>
+
+Workspace
+
+</td>
+
+<td>
+
+[Checkout directory](build-checkout-directory.md)
+
+</td></tr>
+
+</table>
+
 ### Mapping to Travis CI Terminology
+
+<table><tr>
+
+<td>
+
+Travis CI term
+
+</td>
+
+<td>
+
+TeamCity equivalent
+
+</td></tr>
+
+<tr>
+
+<tr>
+<td>
+
+Build configuration (`.travis.yml`)
+
+</td>
+
+<td>
+
+[Build configuration](build-configuration.md)
+
+</td></tr>
+
+<tr>
+<td>
+
+Build
+
+</td>
+
+<td>
+
+Build  that belongs to a [build configuration](build-configuration.md)
+
+</td></tr>
+
+<tr>
+<tr>
+
+<td>
+
+Job
+
+</td>
+
+<td>
+
+[Build step](configuring-build-steps.md)
+
+</td></tr><tr>
+
+<tr>
+
+<td>
+
+Stage
+
+</td>
+
+<td>
+
+Build in a [build chain](build-chain.md)
+
+</td></tr></table>
+
 
 ### Mapping to Jenkins Terminology
 
 Please refer to separate [Jenkins to TeamCity Migration Guidelines](jenkins-to-teamcity-migration-guidelines.md).
+
+<tip>
+
+__Share your insight!__
+
+If you are experienced in working with two or more mentioned CI/CD tools or notice any inaccuracy in the provided mapping, we encourage you to share your [feedback](https://confluence.jetbrains.com/display/TW/Feedback) with us so we can update this page with relevant information.
+
+</tip>
