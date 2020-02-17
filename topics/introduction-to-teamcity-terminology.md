@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Introduction to TeamCity Terminology)
 
 The following guide explains main TeamCity terms and concepts in comparison to their analogues widely used in continuous integration software.   
-This guide gives a general idea on the most common TeamCity concepts and serves as a starting point for users who migrate from different CI/CI software. You can learn more about mentioned TeamCity terms and other notions in the [Concepts](concepts.md) chapter.
+This guide gives a general idea on the most common TeamCity concepts and serves as a starting point for users who migrate from different CI/CI software. You can learn more about mentioned TeamCity terms and other notions in the [Concepts](concepts.md) chapter. For a quick reference, also see [Basic TeamCity concepts](continuous-integration-with-teamcity.md#Basic+TeamCity+concepts).
 
 ## TeamCity Object Hierarchy
 
@@ -35,9 +35,156 @@ By interconnecting builds from different configurations or even projects with de
 
 ## TeamCity Build Environment
 
+The TeamCity server itself stores all the objects' settings, manages _build queue_, monitors the state of running builds, and performs many other tasks. You can install as many additional _secondary servers_ as you need to ensure high availability of your setup.
+
+However, a different piece of software is used for actually running builds – a _build agent_. By default, you get three build agents with your TeamCity server but you can get more if required. A build agent software can be installed on a different machine or alongside the server.
+
+TeamCity can detect changes and run builds on different _branches_ which involves another wide set of functionality like _tags_, _personal builds_, and _status commits to VCS_.
+
+Check out the [basic CI workflow in TeamCity](continuous-integration-with-teamcity.md#Basic+CI+Workflow+in+TeamCity) description to get an idea of how TeamCity agents run builds.
+
 ## Terminology Mapping
 
-Jenkins
-GitLab CI
-CircleCI
-Travis CI
+If you are migrating to TeamCity from another CI/CD solution, you might need some time to get used to the terms and concepts used in the TeamCity environment. The following sections provide you an approximate mapping of general terms between TeamCity and other popular CI/CD platforms.
+
+### Mapping to GitLab CI Terminology
+
+
+<table><tr>
+
+<td>
+
+GitLab CI term
+
+</td>
+
+<td>
+
+TeamCity equivalent
+
+</td></tr><tr>
+<tr>
+
+<td>
+
+`.gitlab-ci.yml`
+
+</td>
+
+<td>
+
+[Build steps](configuring-build-steps.md) and [build triggers](configuring-retry-build-trigger.md).
+ 
+ See also: [deployment build configuration type](deployment-build-configuration.md).
+
+</td></tr><tr>
+
+<tr>
+
+<td>
+
+GitLab Code Quality
+
+</td>
+
+<td>
+
+[Code Quality Tools](code-quality-tools.md) and [Code Coverage](code-coverage.md).
+
+</td></tr><tr>
+
+<tr>
+
+<td>
+
+Browser Performance Testing
+
+</td>
+
+<td>
+
+[Prometheus-ready metrics](teamcity-monitoring-and-diagnostics.md#Metrics).
+
+See also: [Performance monitor](performance-monitor.md).
+
+</td></tr><tr>
+
+<td>
+
+GitLab server
+
+</td>
+
+<td>
+
+TeamCity server
+
+</td></tr><tr>
+
+<td>
+
+GitLab Runner
+
+</td>
+
+<td>
+
+[Build agent](build-agent.md)
+
+</td></tr><tr>
+
+<td>
+
+Job
+
+</td>
+
+<td>
+
+[Build configuration](build-configuration.md)
+
+</td></tr><tr>
+
+<td>
+
+Stage
+
+</td>
+
+<td>
+
+[Build steps](configuring-build-steps.md)
+
+</td></tr><tr>
+
+<td>
+
+Pipeline
+
+</td>
+
+<td>
+
+[Build Chain](build-chain.md) (via snapshot dependencies in the UI), or [sequential chain](kotlin-dsl.md#Build+Chain+DSL+Extension) (via DSL)
+
+</td></tr><tr>
+
+<td>
+
+Tag
+
+</td>
+
+<td>
+
+[Agent Requirements](agent-requirements.md)
+
+</td></tr></table>
+
+### Mapping to CircleCI Terminology
+
+### Mapping to Travis CI Terminology
+
+### Mapping to Jenkins Terminology
+
+Please refer to separate [Jenkins to TeamCity Migration Guidelines](jenkins-to-teamcity-migration-guidelines.md).
