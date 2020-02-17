@@ -15,7 +15,7 @@ Build configuration templates support project hierarchy: once created, available
 
 There are several ways to create a build configuration template:
 * __Manually__, like a [regular build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+Template).
-* __Extract__ from an existing build configuration: there is the __Extract template__ option available from the __Actions__ button at the top right corner of the screen. Note that if you extract a template from a build configuration, the original configuration automatically becomes [associated](#Associating+build+configurations+with+templates) with the newly created template.
+* __Extract__ from an existing build configuration: there is the __Extract template__ option available from the __Actions__ button at the upper right corner of the screen. Note that if you extract a template from a build configuration, the original configuration automatically becomes [associated](#Associating+build+configurations+with+templates) with the newly created template.
 
 ## Defining default template for project
 
@@ -91,7 +91,8 @@ The older `template(...)` method and property __cannot__ be used multiple times 
 
 ## Detaching build configurations from template
 
-When you _detach a build configuration from a template_ using the __Detach from template__ option available in the __Actions__ menu of the __Build Configuration Settings__ page, all settings from the template will be copied to the build configuration and enabled for editing.
+When you _detach a build configuration from a template_ using the __Detach from template__ option available in the __Actions__ menu of the __Build Configuration Settings__ page, all settings from the template will be copied to the build configuration and enabled for editing.   
+Note that if a build configuration is attached to multiple templates, the __Detach from template__ option becomes unavailable – use __[Manage templates](#Associating+build+configuration+with+multiple+templates)__ instead.
 
 ## Redefining settings inherited from template
 
