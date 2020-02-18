@@ -13,7 +13,7 @@ __  __
 
 __See also:__
 
-__User Guide__: [Test History](working-with-build-results.md#Test+History)
+__User Guide__: [Test History](working-with-build-results.md#Test+History)   
 __Concepts__: [Already Fixed In](already-fixed-in.md)
 
 __ __
