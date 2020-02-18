@@ -1,9 +1,9 @@
 [//]: # (title: Deployment Build Configuration)
 [//]: # (auxiliary-id: Deployment Build Configuration)
 
-TeamCity provides the _Deployment_ type of build configuration. Build configurations which perform deploying to some environment can be marked with this type: these are usually build configurations which have snapshot or artifact dependencies on the builds, whose results they deploy.
+TeamCity provides the _Deployment_ type of build configuration. Build configurations which perform deploying to some environment can be marked with this type: these are usually build configurations that have snapshot or artifact dependencies on the builds whose results they deploy.
 
-You can [create a build configuration](creating-and-editing-build-configurations.md) and use the [General Settings](configuring-general-settings.md) tab to set its type to _Deployment_. The type change does not affect the build configuration functionality but offers some handy features to distinguish the deployment build from other builds.   
+After [creating a build configuration](creating-and-editing-build-configurations.md), open its [General Settings](configuring-general-settings.md) and set the _Build configuration type_ to _Deployment_. The type change does not affect the build configuration functionality but offers some handy features to distinguish the deployment build from other builds.   
 You can change the type back to _Regular_ anytime.
 
 <tip>
