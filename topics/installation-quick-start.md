@@ -57,30 +57,24 @@ Otherwise, to start/stop the TeamCity server and one default agent at the same t
 
 If you did not change the default port (`80`) during the installation, the TeamCity web UI can be accessed at [`http://localhost`](http://localhost/) in a web browser running on the same machine where the TeamCity server is installed. Otherwise, use `http://localhost:<port>` ([`http://localhost:8111`](http://localhost:8111/) in our case).
 
- 
-
 ### on Linux and OS X
 
 1. Make sure you have Java 8 installed (for example, use bundled [Amazon Corretto](https://aws.amazon.com/corretto/)).   
-    Open a command-line terminal and run the following command:   
+   Open a command-line terminal and run the following command:   
     ```Shell
     java -version
     ```
-
 2. Make sure the `JAVA_HOME` environment variable is pointing to the Java installation directory. Run the following command in the command-line terminal:   
     ```Shell
     echo $JAVA_HOME
     ```
-
-3. Use the `TeamCity<version number>.tar.gz` archive to manually install TeamCity bundled with Tomcat servlet container.   
+3. Use the `TeamCity<version number>.tar.gz` archive to unpack TeamCity bundled with Tomcat servlet container.   
    Unpack the archive. For example, under Linux use   
-    ```Shell
-    tar xfz TeamCity<version number>.tar.gz
-    ```
-    
-   The archive can be used for installation on Windows as well.
-
-4. The TeamCity web server and one build agent will be installed on the same machine.   
+   ```Shell
+   tar xfz TeamCity<version number>.tar.gz
+   ```
+   The archive can be used on Windows as well.   
+4. After the archive is unpacked, the TeamCity web server and one build agent will be available on the current machine.   
 __Note__ that for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) it is recommended to set up the TeamCity server and agent on separate machines.
 
 __To start/stop the TeamCity server and one default agent at the same time__, use the `runAll` script, provided in the `<TeamCity Home>/bin` directory.
@@ -94,7 +88,7 @@ __To start/stop the TeamCity server and one default agent at the same time__, us
     runAll.sh stop
     ```
 
-By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/) and has one registered build agent that runs on the same computer. If another application uses the same port as the TeamCity server, the TeamCity server (Tomcat server) will not start with the _"Address already in use"_ errors in the server logs or server console.
+By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/) and has one registered build agent that runs on the same computer. If another application uses the same port as the TeamCity server, the TeamCity server (Tomcat server) will not start with the "_Address already in use_" errors in the server logs or server console.
 
 To change the server port, locate the `<TeamCity Home>/conf/server.xml` and modify the port in the `<Connector>` XML node, for example:
 
