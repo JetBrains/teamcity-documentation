@@ -266,6 +266,14 @@ Workspace
 
 </table>
 
+<tip>
+
+__Share your insight!__
+
+If you are experienced in working with two or more mentioned CI/CD tools or notice any inaccuracy in the provided mapping, we encourage you to share your [feedback](https://confluence.jetbrains.com/display/TW/Feedback) with us so we can update this page with relevant information.
+
+</tip>
+
 ### Mapping to Travis CI Terminology
 
 <table>
@@ -296,7 +304,7 @@ Build
 
 </td><td>
 
-Build  that belongs to a [build configuration](build-configuration.md)
+Build that belongs to a [build configuration](build-configuration.md)
 
 </td></tr>
 
@@ -326,13 +334,3 @@ Build in a [build chain](build-chain.md)
 ### Mapping to Jenkins Terminology
 
 Please refer to separate [Jenkins to TeamCity Migration Guidelines](jenkins-to-teamcity-migration-guidelines.md).
-
-__ __
-
-<tip>
-
-__Share your insight!__
-
-If you are experienced in working with two or more mentioned CI/CD tools or notice any inaccuracy in the provided mapping, we encourage you to share your [feedback](https://confluence.jetbrains.com/display/TW/Feedback) with us so we can update this page with relevant information.
-
-</tip>
