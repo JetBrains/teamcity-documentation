@@ -174,7 +174,7 @@ TeamCity Professional edition comes bundled with 3 [build agents](build-agent.md
 A server license key might include more agent licenses then the default 3. The number of agents stated for the server license on jetbrains.com site notes the total number of agents which will be available. Separate agent license keys can be used with either TeamCity edition (Enterprise and Professional). For more information about purchasing agent licenses, refer to the [product page](http://www.jetbrains.com/teamcity/buy/).
 
 The number of agent licenses limits the number of agents which can be [authorized](build-agent.md#Build+Agent+Status) in TeamCity. The license keys are not bound to specific agents, they just limit the maximum number of functional agents. The licensing makes no difference between local (installed on the TeamCity server machine) and remote agents.   
-When there are more authorized agents than the agent licenses available, the server stops to start any builds and displays a warning message to all users in the web browser.
+When there are more authorized agents than the valid agent licenses available, the server stops to start any builds and displays a warning message to all users in the web browser.
 
 ## Managing Licenses
 
@@ -191,6 +191,8 @@ When buying many licenses, you are welcome to [contact](https://www.jetbrains.co
 
 TeamCity licenses are perpetual for the TeamCity versions they cover. This means that you can run a covered TeamCity version with existing licenses for unlimited time and the licenses will stay valid for this TeamCity version.   
 Each TeamCity license (including Enterprise Server and Agent) has a __maintenance period__ (generally 1 year). The license key is valid for any version of TeamCity released before the license purchase as well as for any version released within the maintenance period. Licenses valid for the major/minor release (changes in the first two release numbers) are also considered valid for the corresponding bugfix updates (changes in the third release number).
+
+The set of valid licenses defines if the server works in Enterprise mode and how many agents can run builds on the server. Agent licenses are not bound to specific agents and are only used to determine the maximum number of authorized agents.
 
 Before you [upgrade](upgrade.md) to a newer TeamCity version, check the validity of the existing licenses with the new version.   
 If the new TeamCity server effective [release date](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads) is not covered by the maintenance period of some of the licenses, the corresponding licenses will not be valid with the TeamCity version and would need a [renew](http://www.jetbrains.com/teamcity/buy/index.jsp#upgradeuser). Generally, license renew costs about 50% of the new license price in case the new license date is the same as the end of maintenance of the license being renewed.
