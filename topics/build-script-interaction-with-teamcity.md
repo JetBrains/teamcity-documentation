@@ -62,8 +62,8 @@ Service messages support two formats:
     
     ```
 
-  Multiple attributes message can more formally be described as:
-    ```Shell
+  Multiple attributes message can more formally be described as:   
+  ```Shell
     ##teamcity[messageNameWSPpropertyNameOWSP=OWSP'value'WSPpropertyName_IDOWSP=OWSP'value'...OWSP]
     
     ```
