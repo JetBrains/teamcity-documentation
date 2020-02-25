@@ -10,45 +10,62 @@ In this section:
 <tag-list of="chapter" mode="tree" depth="4"/>
 
 ## Best Practices When Reporting Issues
-Following these guidelines will ensure timely response and effective issue resolution. Check [Feedback](https://confluence.jetbrains.com/display/TW/Feedback) for appropriate ways to contact us. When suggesting an improvement or feature request, describe _why_ you need the feature and the __original goal__ you want to achieve. Suggestions as to _how_ you would like to see the feature implemented are also welcome.
 
-#### When submitting a request for support, include the following general information:
-* The __TeamCity version__ in use, including the build number ( this can be found in the footer and the teamcity\-server.log). It is also  worth including the Operating System and Java version being used.
+Following these guidelines will ensure timely response and effective issue resolution. Check [Feedback](https://confluence.jetbrains.com/display/TW/Feedback) for appropriate ways to contact us. 
 
-* Document any pattern of issue occurrence (first time, recurring, etc...), if it was mitigated in the past, whether there were any recent environment changes. __Be Specific__: note exact times, error messages, and describe both the expected and actual behavior.
+<note>
+ 
+When suggesting an improvement or feature request, describe _why_ you need the feature and the __original goal__ you want to achieve. Suggestions as to _how_ you would like to see the feature implemented are also welcome.
 
-* Whenever possible, include related __screenshots__ of the TeamCity UI (always include the entire page and the browser URL in the capture).
+</note>
+
+__When submitting a request for support, include the following general information__:
+
+* The __TeamCity version__ in use, including the build number (this can be found in the footer and the `teamcity-server.log`). It is also worth including the Operating System and Java version being used.
+
+* Document any pattern of issue occurrence (first time, recurring, and so on), if it was mitigated in the past, whether there were any recent environment changes. __Be Specific__: note exact times, error messages, and describe both the expected and actual behavior.
+
+* Whenever possible, include related __screenshots__ of the TeamCity UI (always include the entire page and the browser URL in the capture) and provide details on the relaited settings files, actual values, [REST API](rest-api.md) entity representations.
 
 * When including an error message or other related text messages (as text, not as an image), __include the complete message__ and where it was/is being observed. If the message is more than a few lines long, please attach it to the ticket as a file.
 
 * If sending more than three files, package the files into a single archive.
 
-* If you are sending a file larger than 10mb, follow the guide for [Uploading Large Data Archives](https://www.jetbrains.com/help/teamcity/reporting-issues.html#ReportingIssues-UploadingLargeDataArchives).
+* If you are sending a file larger than 10Mb, follow the guide for [Uploading Large Data Archives](https://www.jetbrains.com/help/teamcity/reporting-issues.html#ReportingIssues-UploadingLargeDataArchives).
 
 * Please post one issue per submission, the most important issue first. If you do make more than one submission, make a note of the other issues if they are related.
 
-#### Other Helpful Tips for Specific Issues:
+__Other helpful tips for specific issues__:
 
-<note>
+* If necessary, attach/upload an archive with TeamCity server logs (see [details](teamcity-server-logs.md), ideally, the entire `<server home>\logs` directory with all the directories inside. If impractical, all the files updated around or later than the issue time); if related to the build time or agent behavior, attach the entire `<agent home>\logs` directory.
+
+* For performance/slowness/delays issues, take a set of (10+ spread across the issue time) server or agent [thread dumps](#Server-Thread-Dump) during the issue occurrence and make sure to send us the dumps with the related data.
+
+* Consider checking if the issue exists in our [YouTrack Issue Tracker](https://youtrack.jetbrains.com/issues/TW). We identify most of the bugs and edge-conditions here. There is a chance your issue has already been fixed in a later TeamCity version.
  
-* Consider checking if the issue exists in our [YouTrack Issue Tracker](https://youtrack.jetbrains.com/issues/TW). We identify most of the bugs and edge\-conditions here. There is a chance your issue has already been fixed in a later TeamCity version.
- 
-* If you have issue with your build logic, make sure it is a TeamCity\-related issue (i.e. it does not [reproduce in the same environment](common-problems.md#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) without TeamCity) and include details of your investigation.
+* If you have an issue with your build logic, make sure it is a TeamCity-related issue (that is it does not [reproduce in the same environment](common-problems.md#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) without TeamCity) and include details of your investigation.
 
-* When reporting build procedure issues, try to [reproduce](common-problems.md#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) them without TeamCity on the agent machine in the same environment and let us know the results
+* When reporting build procedure issues, try to [reproduce](common-problems.md#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) them without TeamCity on the agent machine in the same environment and let us know the results.
 
-* If specific builds are affected, __include the complete build logs__ (downloaded via dedicated link from the build results' Build Log tab).
+* If specific builds are affected, __include the complete build logs__ (downloaded via a dedicated link from the build results' __Build Log__ tab).
 
 * When replacing or masking sensitive data in logs, note the replacement patterns used.
 
-* If there is an anti\-virus installed and/or if there is a network proxy or reverse proxy in front of the TeamCity server, please include this information in your request.
+* If there is an antivirus installed and/or if there is a network proxy or reverse proxy in front of the TeamCity server, please include this information in your request.
 
-* List any non\-bundled plugins installed.
+* List any non-bundled plugins installed.
 
 * Note any previous modifications of the TeamCity Data Directory or the database.
 
-</note>
+* Do not include large portions (above 10Kb) of the textual data into the email text – rather attach it in a file.
 
+__Consider the following guidelines for posts__:
+
+* When posting new details about the already reported issue, update previous posting on the topic instead of creating new ones. However, if you need to create a duplicate topic, make sure to note all previous postings on the same topic you have made or found.
+
+* Post one issue per submission starting with the most important issue, or post several issues and cross-reference them.
+
+Check the sections below for common cases and specific information to collect and send to us.
 
 ## Slowness, Hangings and Low Performance
 
