@@ -3,7 +3,7 @@
 
 ## Changes from 2019.2.1 to 2019.2.2
 
-* The bundled ReSharper Command Line Tools (Inspections and Duplicates Finder) have been upgraded to version 2019.3.2.
+* TeamCity Visual Studio Add-in Web installer has been updated to ReSharper version 2019.3.2.
 
 ## Changes from 2019.2 to 2019.2.1
 
