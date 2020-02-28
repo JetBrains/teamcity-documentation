@@ -73,7 +73,7 @@ Username
 
 
 Specify a user to access Team Foundation Server. This can be a user name or `DOMAIN\UserName` string.   
-Use blank to let TFS select a user account that is used to run the TeamCity Server. For VSTS use [alternate credentials or tokens](team-foundation-server.md#Authentication+Notes).
+Use blank to let TFS select a user account that is used to run the TeamCity Server. For VSTS use [personal access tokens](team-foundation-server.md#Authentication+Notes).
 
 
 </td></tr><tr>

@@ -303,6 +303,12 @@ Code (status)
 
 ### Alternate Authentication Credentials
 
+<note>
+
+Azure DevOps stops supporting alternate credentials since March 2, 2020. To be able to authenticate in Azure DevOps, please use alternative methods instead (such as personal access tokens).
+
+</note>
+
 To use the login/password pair authentication, you have to enable [alternate credentials](https://www.visualstudio.com/en-us/docs/report/analytics/client-authentication-options#create-an-alternate-access-credential) in your Azure DevOps account, where you can set a secondary username and password to use when configuring a VCS root.
 
 </chunk>
