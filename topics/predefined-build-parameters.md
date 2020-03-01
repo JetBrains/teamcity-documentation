@@ -990,7 +990,7 @@ The following locations are searched (a number of locations is common for all op
 * The [agent tools](installing-agent-tools.md) directory, `<Agent Home Directory>/tools,` is checked for containing a jre or jdk. By default, the subdirectories of `/tools` are not scanned. To search the subdirectories, define `teamcity.agent.java.search.path=%agent.tools.NAME%/INNER_PATH` in the `buildAgent.properties` file.    
 For Unix and Mac OS, remember to [set the executable bit](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html) on the files for TeamCity to be able to launch the discovered Java. 
 * It is checked whether the `JAVA_HOME`, `JDK_HOME`, `JRE_HOME` variables are defined
-* The OS\-specific locations, listen in the next section, are checked
+* The OS\-specific locations, listed in the next section, are checked
 * The `PATH` environment variables are searched and the discovered directories are checked for containing Java
 
 __Windows__
