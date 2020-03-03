@@ -1,6 +1,11 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2019.2.x to 2020.1
+
+### REST API
+Filtering test occurrences by branch (.../app/rest/testOccurrences?locator=branch(XXX) request) has been changed. It used to support only branch name with case-sensitive matching. Now XXX value supports branch locators (the same as when filtering builds), it became case-insensitive by default and started to match "<default>" branch display name.
+
 ## Changes from 2019.2.1 to 2019.2.2
 
 * TeamCity Visual Studio Add-in Web installer has been updated to ReSharper version 2019.3.2.
