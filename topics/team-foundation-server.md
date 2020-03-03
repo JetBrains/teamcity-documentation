@@ -305,7 +305,7 @@ Code (status)
 
 <note>
 
-Azure DevOps stops supporting alternate credentials since March 2, 2020. To be able to authenticate in Azure DevOps, please use alternative methods instead (such as personal access tokens).
+Azure DevOps [stops supporting](https://devblogs.microsoft.com/devops/azure-devops-will-no-longer-support-alternate-credentials-authentication/) alternate credentials since March 2, 2020. To be able to authenticate in Azure DevOps, please use alternative methods instead (such as personal access tokens).
 
 </note>
 
