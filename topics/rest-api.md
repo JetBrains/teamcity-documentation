@@ -1078,7 +1078,7 @@ Other supported [dimensions](#Locator) are (these are in _experimental_ state):
 * `project` – `<projectLocator>` to limit the build configurations to those belonging to a single project.
 * `affectedProject` – `<projectLocator>` to limit the build configurations under a single project (recursively).
 * `template` – `<buildTypeLocator>` of a template to list only build configurations using the template.
-* `templateFlag` – boolean value to get only templates or only non\-templates.
+* `templateFlag` – boolean value to get only templates or only non-templates.
 * `paused` – boolean value to filter paused/not paused build configurations.
  
  
@@ -1086,25 +1086,70 @@ Other supported [dimensions](#Locator) are (these are in _experimental_ state):
  
  
 ### Build Requests
- 
-List builds: `GET` [`http://teamcity:8111/app/rest/builds/?locator=<buildLocator>`](http://teamcity:8111/app/rest/builds/?locator=<buildLocator>).
- 
-Get details of a specific build: `GET` [`http://teamcity:8111/app/rest/builds/<buildLocator>`](http://teamcity:8111/app/rest/builds/<buildLocator>).
- 
-Also supports `DELETE` to delete a build.
- 
-Get the list of build configurations in a project with the status of the last finished build in each build configuration:
- 
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+List builds
+
+</td>
+
+<td>
+
 ```Shell
+
+GET http://teamcity:8111/app/rest/builds/?locator=<buildLocator>
+ 
+```
+
+</td></tr>
+
+<tr><td>
+
+Get details of a specific build
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<buildLocator>
+ 
+```
+
+Also supports `DELETE` to delete a build.
+
+</td></tr>
+
+<tr><td>
+
+Get the list of build configurations in a project with the status of the last finished build in each build configuration
+
+</td>
+
+<td>
+
+```Shell
+
 GET http://teamcity:8111/app/rest/buildTypes?locator=affectedProject:(id:ProjectId)&fields=buildType(id,name,builds($locator(running:false,canceled:false,count:1),build(number,status,statusText)))
  
 ```
+
+</td></tr>
+
+
+</table>
+ 
+
  
 #### Build Locator
  
-Using a [locator](#Locator) in build\-related requests, you can filter the builds to be returned in the build\-related requests. It is referred to as "build locator" in the scope of REST API.
+Using a [locator](#Locator) in build\-related requests, you can filter the builds to be returned in the build-related requests. It is referred to as _build locator_ in the scope of REST API.
  
-For some requests, a default filtering is applied which returns only "normal" builds (finished builds which are not canceled, not failed\-to\-start, not personal, and on default branch (in branched build configurations)), unless those types of builds are specifically requested via the locator. To turn off this default filter and process all builds, add the `defaultFilter:false` dimension to the build locator. Default filtering varies depending on the specified locator dimensions. For example, when `agent` or `user` dimensions are present, personal, canceled, and failed to start builds are included into the results.
+For some requests, a default filtering is applied which returns only "normal" builds (finished builds which are not canceled, not failed-to-start, not personal, and on default branch (in branched build configurations)), unless those types of builds are specifically requested via the locator. To turn off this default filter and process all builds, add the `defaultFilter:false` dimension to the build locator. Default filtering varies depending on the specified locator dimensions. For example, when `agent` or `user` dimensions are present, personal, canceled, and failed to start builds are included into the results.
  
 Examples of supported build locators:
 * `id:<internal build id>` – use [internal build ID](working-with-build-results.md#Internal+Build+ID) when you need to refer to a specific build.
@@ -1112,7 +1157,6 @@ Examples of supported build locators:
 * `<dimension1>:<value1>,<dimension2>:<value2>` – to find builds by multiple criteria.
  
 The list of supported build locator dimensions:
- 
 * `project:<project locator>` – limit the list to the builds of the specified project (belonging to any build type directly under the project).
 * `affectedProject:<project locator>` – limit the list to the builds of the specified project (belonging to any build type directly or indirectly under the project)
 * `buildType:(<buildTypeLocator>),defaultFilter:false` – all the builds of the specified build configuration
@@ -1137,25 +1181,105 @@ The list of supported build locator dimensions:
 * `lookupLimit:<number>` – limit processing to the latest N builds only (the default is 5000). If none of the latest N builds match the other specified criteria of the build locator, 404 response is returned for single build request and empty collection for multiple builds request. See related note in the [section above](#API+Client+Recommendations).
  
 #### Queued Builds
- 
-`GET` [`http://teamcity:8111/app/rest/buildQueue`](http://teamcity:8111/app/rest/buildQueue)
 
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Get a build queue
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/buildQueue
  
+```
+
 Supported locators:
 * `project:<locator>`
 * `buildType:<locator>`
+
+</td></tr>
+
+<tr><td>
+
+Get details of a queued build
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/buildQueue/id:XXX
  
-Get details of a queued build: `GET` [`http://teamcity:8111/app/rest/buildQueue/id:XXX`](http://teamcity:8111/app/rest/buildQueue/id:XXX).
- 
+```
+
 For queued builds with snapshot dependencies, the revisions are available in the `revisions` element of the queued build node if a revision is fixed (for regular builds without snapshot dependencies it is not).
+
+</td></tr>
+
+<tr><td>
+
+Get compatible agents for queued builds (useful for builds having "No agents" to run on)
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/buildQueue/id:XXX/compatibleAgents
  
-Get compatible agents for queued builds (useful for builds having "No agents" to run on): `GET` [`http://teamcity:8111/app/rest/buildQueue/id:XXX/compatibleAgents`](http://teamcity:8111/app/rest/buildQueue/id:XXX/compatibleAgents).
- 
+```
+
+</td></tr>
+
+</table>
+
 __Examples__:
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+List queued builds per project
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/buildQueue?locator=project:<locator>
  
-List queued builds per project: `GET` [`http://teamcity:8111/app/rest/buildQueue?locator=project:<locator>`](http://teamcity:8111/app/rest/buildQueue?locator=project:<locator>).
+```
+
+</td></tr>
+
+<tr><td>
+
+List queued builds per build configuration
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/buildQueue?locator=buildType:<locator>
  
-List queued builds per build configuration: `GET`  [`http://teamcity:8111/app/rest/buildQueue?locator=buildType:<locator>`](http://teamcity:8111/app/rest/buildQueue?locator=buildType:<locator>).
+```
+
+</td></tr>
+
+</table>
+
  
 #### Triggering a Build
  
@@ -1221,63 +1345,268 @@ curl -v -u user:password http://teamcity.server.url:8111/app/rest/buildQueue --r
 ```
  
 #### Build Tags
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Get tags
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<buildLocator>/tags/
  
-Get tags: `GET` [`http://teamcity:8111/app/rest/builds/<buildLocator>/tags/`](http://teamcity:8111/app/rest/builds/<buildLocator>/tags/).
+```
+
+</td></tr>
+
+<tr><td>
+
+Replace tags
+
+</td>
+
+<td>
+
+```Shell
+
+PUT http://teamcity:8111/app/rest/builds/<buildLocator>/tags/
  
-Replace tags: `PUT` [`http://teamcity:8111/app/rest/builds/<buildLocator>/tags/`](http://teamcity:8111/app/rest/builds/<buildLocator>/tags/) (put the same XML or JSON as returned by GET).
+```
+
+Put the same XML or JSON as returned by `GET`.
+
+</td></tr>
+
+<tr><td>
+
+Add tags
+
+</td>
+
+<td>
+
+```Shell
+
+POST http://teamcity:8111/app/rest/builds/<buildLocator>/tags/
  
-Add tags: `POST` [`http://teamcity:8111/app/rest/builds/<buildLocator>/tags/`](http://teamcity:8111/app/rest/builds/<buildLocator>/tags/) (post the same XML or JSON as returned by GET or just a plain\-text tag name; `<buildLocator>` here should match a single build only).
+```
+
+Post the same XML or JSON as returned by GET or just a plain-text tag name; `<buildLocator>` here should match a single build only.
+
+</td></tr>
+
+</table>
+
  
 #### Build Pinning
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Get current pin status
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<buildLocator>/pin/
  
-Get current pin status: `GET` [`http://teamcity:8111/app/rest/builds/<buildLocator>/pin/`](http://teamcity:8111/app/rest/builds/<buildLocator>/pin/) (returns "true" or "false" text).
+```
+
+</td></tr>
+
+<tr><td>
+
+Pin a build
+
+</td>
+
+<td>
+
+```Shell
+
+PUT http://teamcity:8111/app/rest/builds/<buildLocator>/pin/
  
-Pin: `PUT` [`http://teamcity:8111/app/rest/builds/<buildLocator>/pin/`](http://teamcity:8111/app/rest/builds/<buildLocator>/pin/) (the text in the request data is added as a comment for the action).
+```
+
+The text in the request data is added as a comment for the action.
+
+</td></tr>
+
+<tr><td>
+
+Unpin a build
+
+</td>
+
+<td>
+
+```Shell
+
+DELETE http://teamcity:8111/app/rest/builds/<buildLocator>/pin/
  
-Unpin: `DELETE` [`http://teamcity:8111/app/rest/builds/<buildLocator>/pin/`](http://teamcity:8111/app/rest/builds/<buildLocator>/pin/) (the text in the request data is added as a comment for the action; `<buildLocator>` here should match a single build only).
+```
+
+The text in the request data is added as a comment for the action; `<buildLocator>` here should match a single build only.
+
+</td></tr>
+
+
+</table>
+
  
 #### Build Canceling/Stopping
- 
-Cancel a running or a queued build: POST the `<buildCancelRequest comment='CommentText' readdIntoQueue='false'/>` item to the URL of a running or a queued build. Example:
- 
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Cancel a running or a queued build
+
+</td>
+
+<td>
+
+POST the `<buildCancelRequest comment='CommentText' readdIntoQueue='false'/>` item to the URL of a running or a queued build. Example:
+
 ```Shell
+
 curl -v -u user:password --request POST "http://teamcity:8111/app/rest/buildQueue/<buildLocator>" --data "<buildCancelRequest comment='' readdIntoQueue='false' />" --header "Content-Type: application/xml"
  
 ```
- 
-Stop a running build and read it to the queue: POST the `<buildCancelRequest comment='CommentText' readdIntoQueue='true' />` item to the URL of a running build. Example:
- 
+
+</td></tr>
+
+<tr><td>
+
+Stop a running build and read it to the queue
+
+</td>
+
+<td>
+
+POST the `<buildCancelRequest comment='CommentText' readdIntoQueue='true' />` item to the URL of a running build. Example:
+
 ```Shell
+
 curl -v -u user:password --request POST "http://teamcity:8111/app/rest/builds/<buildLocator>" --data "<buildCancelRequest comment='' readdIntoQueue='true' />" --header "Content-Type: application/xml"
  
 ```
- 
-See the `canceledInfo` element of the build item (available via `GET` [`http://teamcity:8111/app/rest/builds/<buildLocator>`](http://teamcity:8111/app/rest/builds/<buildLocator>)).
+
+</td></tr>
+
+<tr><td>
+
+See the `canceledInfo` element of the build item
+
+</td>
+
+<td>
+
+Available via `GET http://teamcity:8111/app/rest/builds/<buildLocator>`.
+
+</td></tr>
+
+</table>
  
 #### Build Artifacts
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Return the content of a build artifact file for a build determined by [`<build_locator>`](#Build+Locator)
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/content/<path>
  
-Return the content of a build artifact file for a build determined by [`<build_locator>`](#Build+Locator): `GET` [`http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/content/<path>`](http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/content/<path>). `<path>` can be empty for the root of build's artifacts or be a path within the build's artifacts. The path can span into the archive content, for example, `dir/path/archive.zip!/path_within_archive`.
+```
+
+`<path>` can be empty for the root of build's artifacts or be a path within the build's artifacts. The path can span into the archive content, for example, `dir/path/archive.zip!/path_within_archive`.
  
-* Media\-Type: application/octet\-stream or a more specific media type (determined from artifact file extension).
+* Media-Type: application/octet-stream or a more specific media type (determined from artifact file extension).
 * Possible error: 400 if the specified path references a directory.
+
+</td></tr>
+
+<tr><td>
+
+Return information about a build artifact
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/metadata/<path>
  
-Return information about a build artifact: `GET` [`http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/metadata/<path>`](http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/metadata/<path>).
+```
+
+* Media-Type: application/xml or application/json.
+
+</td></tr>
+
+<tr><td>
+
+Return the list of artifact children for directories and archives
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/children/<path>
  
-* Media\-Type: application/xml or application/json.
- 
-Return the list of artifact children for directories and archives: `GET` [`http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/children/<path>`](http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/children/<path>).
- 
-* Media\-Type: application/xml or application/json.
+```
+
+* Media-Type: application/xml or application/json.
 * Possible error: 400 if the artifact is neither a directory nor an archive.
+
+</td></tr>
+
+<tr><td>
+
+Return an archive containing the list of artifacts under the path specified
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/archived/<path>?locator=pattern:<wildcard>
  
-Return an archive containing the list of artifacts under the path specified: `GET` [`http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/archived/<path>?locator=pattern:<wildcard>`](http://teamcity:8111/app/rest/builds/<build_locator>/artifacts/archived/<path>?locator=pattern:<wildcard>). The optional `locator` parameter can have file `<wildcard>` to limit the files only to those matching the [wildcard](wildcards.md). `<artifact relative name>` supports referencing files under archives using the `!/` delimiter after the archive name.
+```
+
+The optional `locator` parameter can have file `<wildcard>` to limit the files only to those matching the [wildcard](wildcards.md). `<artifact relative name>` supports referencing files under archives using the `!/` delimiter after the archive name.
  
-* Media\-Type: application/zip.
+* Media-Type: application/zip.
 * Possible error: 400 if the artifact is neither a directory nor an archive.
- 
+
+</td></tr>
+
+</table>
  
 [//]: # (Internal note. Do not delete. "REST APId269e1929.txt")    
- 
  
 __Examples__:
  
@@ -1425,59 +1754,217 @@ The __`<lastChanges>`__ tag contains information about the last commit included 
 ##### Revisions
  
 The `<revisions>` tag the same as revisions table on the build's [Changes](working-with-build-results.md#Changes) tab in TeamCity UI: it lists the revisions of all VCS repositories associated with this build that will be checked out by the build on the agent. A revision might or might not correspond to a change known to TeamCity. For example, for a newly created build configuration and a VCS root, a revision will have no corresponding change.
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Get all builds with the specified revision
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds?locator=revision(version:XXXX)
  
-Get all builds with the specified revision: `http://teamcity:8111/app/rest/builds?locator=revision(version:XXXX)`.
+```
+
+</td></tr>
+
+</table>
  
-__Since TeamCity 10__,`<versionedSettingsRevision>` is added to represent revision of the [versioned settings](storing-project-settings-in-version-control.md) of the build.
+__Since TeamCity 10__, `<versionedSettingsRevision>` is added to represent revision of the [versioned settings](storing-project-settings-in-version-control.md) of the build.
  
 ##### Snapshot dependencies
- 
-It is possible to retrieve the entire build chain (all snapshot\-dependency\-linked builds) for a particular build:
- 
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Retrieve the entire build chain (all snapshot-dependency-linked builds) for a particular build
+
+</td>
+
+<td>
+
 ```Shell
-http://teamcity:8111/app/rest/builds?locator=snapshotDependency:(to:(id:XXXX),includeInitial:true),defaultFilter:false`
+
+GET http://teamcity:8111/app/rest/builds?locator=snapshotDependency:(to:(id:XXXX),includeInitial:true),defaultFilter:false
  
 ```
- 
-This gets all the snapshot dependency builds recursively for the build with ID XXXX.
- 
-It possible to find all the snapshot\-dependent builds for a particular build:
- 
+
+This gets all the snapshot dependency builds recursively for the build with the ID `XXXX`.
+
+</td></tr>
+
+<tr><td>
+
+Find all the snapshot-dependent builds for a particular build
+
+</td>
+
+<td>
+
 ```Shell
-http://teamcity:8111/app/rest/builds?locator=snapshotDependency:(to:(id:XXXX),includeInitial:true),defaultFilter:false`
+
+GET http://teamcity:8111/app/rest/builds?locator=snapshotDependency:(to:(id:XXXX),includeInitial:true),defaultFilter:false
  
 ```
+
+</td></tr>
+
+</table>
  
 ##### Artifact dependencies
  
 __Since TeamCity 10.0.3__, there is an experimental ability to:
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Get all the builds which downloaded artifacts from the build with the given ID (Delivered artifacts in the TeamCity web UI)
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds?locator=artifactDependency:(from:(id:<build ID>),recursive:false)
  
-Get all the builds which downloaded artifacts from the build with the given ID (Delivered artifacts in the TeamCity web UI): `GET http://teamcity:8111/app/rest/builds?locator=artifactDependency:(from:(id:<build ID>),recursive:false)`.
+```
+
+</td></tr>
+
+<tr><td>
+
+Get all the builds whose artifacts were downloaded by the build with the given ID (Downloaded artifacts in the TeamCity web UI)
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds?locator=artifactDependency:(to:(id:<build ID>),recursive:false)
  
-Get all the builds whose artifacts were downloaded by the build with the given ID (Downloaded artifacts in the TeamCity web UI): `GET http://teamcity:8111/app/rest/builds?locator=artifactDependency:(to:(id:<build ID>),recursive:false)`.
+```
+
+</td></tr>
+
+</table>
  
  
 ##### Build Parameters
- 
-Get the [parameters](predefined-build-parameters.md) of a build: [`http://teamcity:8111/app/rest/builds/id:<build_id>/resulting-properties`](http://teamcity:8111/app/rest/builds/id:<build_id>/resulting-properties).
- 
-##### Build Fields
- 
-Get single build's field: `GET` [`http://teamcity:8111/app/rest/builds/<buildLocator>/<field_name>`](http://teamcity:8111/app/rest/builds/<buildLocator>/<field_name>). This accepts/produces text/plain where `<field_name>` is one of `number`, `status`, `id`, `branchName`, and other build's bean attributes.
- 
-##### Statistics
- 
-Get statistics for a single build: `GET` [`http://teamcity:8111/app/rest/builds/<buildLocator>/statistics/`](http://teamcity:8111/app/rest/builds/<buildLocator>/statistics/).
-Only standard/bundled statistic values are listed. See also [Custom Charts](custom-chart.md).
- 
-Get single build statistics value: `GET` [`http://teamcity:8111/app/rest/builds/<buildLocator>/statistics/<value_name>`](http://teamcity:8111/app/rest/builds/<buildLocator>/statistics/<value_name>).
- 
-Get statistics for a list of builds:
- 
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Get the [parameters](predefined-build-parameters.md) of a build
+
+</td>
+
+<td>
+
 ```Shell
-GET http://teamcity:8111/app/rest/builds?locator=BUILDS_LOCATOR&fields=build(id,number,status,buildType(id,name,projectName),statistics(property(name,value)))`
+
+GET http://teamcity:8111/app/rest/builds/id:<build_id>/resulting-properties
  
 ```
+
+</td></tr>
+
+</table>
+
+##### Build Fields
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Get a single build's field
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<buildLocator>/<field_name>
+ 
+```
+
+This accepts/produces text/plain where `<field_name>` is one of `number`, `status`, `id`, `branchName`, and other build's bean attributes.
+
+</td></tr>
+
+</table>
+ 
+##### Statistics
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Get statistics for a single build
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<buildLocator>/statistics/
+ 
+```
+
+Only standard/bundled statistic values are listed. See also [Custom Charts](custom-chart.md).
+
+</td></tr>
+
+<tr><td>
+
+Get single build statistics value
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<buildLocator>/statistics/<value_name>
+ 
+```
+
+</td></tr>
+
+<tr><td>
+
+Get statistics for a list of builds
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds?locator=BUILDS_LOCATOR&fields=build(id,number,status,buildType(id,name,projectName),statistics(property(name,value)))
+ 
+```
+
+</td></tr>
+
+</table>
  
 ##### Build Log
  
@@ -1485,16 +1972,49 @@ Downloading build logs via a REST request is not supported, but there is a way t
  
  
 ## Tests and Build Problems
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+List build problems
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/problemOccurrences?locator=build:(BUILD_LOCATOR)
  
-List build problems: `GET http://teamcity:8111/app/rest/problemOccurrences?locator=build:(BUILD_LOCATOR)`.
+```
+
+</td></tr>
+
+<tr><td>
+
+List tests
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/testOccurrences?locator=<locator dimension>:<value>
  
-List tests: `GET http://teamcity:8111/app/rest/testOccurrences?locator=<locator dimension>:<value>`.
+```
+
+</td></tr>
+
+</table>
  
 __Supported locators__:
 * `build:(<build locator>)` – test run in the build.
 * `build:(<build locator>),muted:true` – failed tests which were muted in the build.
 * `currentlyFailing:true,affectedProject:<project_locator>` – tests currently failing under the project specified (recursively).
-* `currentlyMuted:true,affectedProject:<project_locator>` – tests currently muted under the project specified (recursively). See also project's Muted Problems tab.
+* `currentlyMuted:true,affectedProject:<project_locator>` – tests currently muted under the project specified (recursively). See also the project's __Muted Problems__ tab.
  
 __Examples__:
  
