@@ -74,7 +74,7 @@ Each level includes those listed above it.
 
 By default, everything is kept forever. When you select custom settings, for each of the levels above you can specify:
 * _Number of days_:   
-  Builds older than the number of days specified will be cleaned with the specified level. The starting point is the date of the last build, not the current date. A day is equivalent to a 24-hour period, not a calendar day.
+  Builds older than the number of days specified will be cleaned with the specified level. The starting point is the date of the last successful build build, not the current date. A day is equivalent to a 24-hour period, not a calendar day.
 * _Number of successful builds_:   
   Only builds older than the last matching successful build will be cleaned with the level specified (all the failed builds between the preserved successful ones are kept).
 
