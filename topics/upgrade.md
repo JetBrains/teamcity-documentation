@@ -137,7 +137,7 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 Note that it is recommended to use `.tar.gz` or `.exe` TeamCity distribution. Using `.war` is not a recommended way to install TeamCity.
 1. [Create a backup](teamcity-data-backup.md).
 2. Backup files customized since previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
-3. Remove old installation files (the entire `<&gt; `or `[TOMCAT_HOME]/webapps/TeamCity/*` if you are installing from a `war` file). It's advised to backup the directory beforehand.
+3. Remove old installation files (the entire `<TeamCity Home Directory>` or `[TOMCAT_HOME]/webapps/TeamCity/*` if you are installing from a `war` file). It's advised to backup the directory beforehand.
 4. Unpack the new archive to the location where TeamCity was previously installed.
 5. If you use a Tomcat server (your own or bundled in .tar.gz TeamCity distribution), it is recommended to delete the content of the `work` directory. Note that this may affect other web applications deployed into the same web server.
 6. Restore customized settings backed up in step 2 above. If you have the customized `[TOMCAT_HOME]/conf/server.xml` file, apply your changes into the appropriate sections of the default file.
