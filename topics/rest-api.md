@@ -2017,75 +2017,281 @@ __Supported locators__:
 * `currentlyMuted:true,affectedProject:<project_locator>` – tests currently muted under the project specified (recursively). See also the project's __Muted Problems__ tab.
  
 __Examples__:
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+List all build's tests
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/testOccurrences?locator=build:<buildLocator>
  
-List all build's tests: `GET` [`http://teamcity:8111/app/rest/testOccurrences?locator=build:<buildLocator>`](http://teamcity:8111/app/rest/testOccurrences?locator=build:<buildLocator>).
+```
+
+</td></tr>
+
+<tr><td>
+
+Get individual test history
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/testOccurrences?locator=test:<testLocator>
  
-Get individual test history: `GET` [`http://teamcity:8111/app/rest/testOccurrences?locator=test:<testLocator>`](http://teamcity:8111/app/rest/testOccurrences?locator=test:<testLocator>).
+```
+
+</td></tr>
+
+<tr><td>
+
+List build's tests which were muted when the build ran
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/testOccurrences?locator=build:(id:XXX),muted:true
  
-List build's tests which were muted when the build ran: `GET http://teamcity:8111/app/rest/testOccurrences?locator=build:(id:XXX),muted:true`.
+```
+
+</td></tr>
+
+<tr><td>
+
+List currently muted tests (muted since the failure)
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/testOccurrences?locator=build:(id:XXX),currentlyMuted:true
  
-List currently muted tests (muted since the failure): `GET http://teamcity:8111/app/rest/testOccurrences?locator=build:(id:XXX),currentlyMuted:true`.
+```
+
+</td></tr>
+
+</table>
  
 __Supported test locators__:
 * `id:<internal test id>` available as a part of the URL on the test history page
 * `name:<full test name>`
  
 __Since TeamCity 10__, there is experimental support for exposing single test invocations / runs:
- 
-Get invocations of a test:
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Get invocations of a test
+
+</td>
+
+<td>
 
 ```Shell
-http://teamcity:8111/app/rest/testOccurrences?locator=build:(id:XXX),test:(id:XXX)&fields=$long,testOccurrence($short,invocations($long))
 
+GET http://teamcity:8111/app/rest/testOccurrences?locator=build:(id:XXX),test:(id:XXX)&fields=$long,testOccurrence($short,invocations($long))
+ 
 ```
- 
-List all test runs with all the invocations flattened:
+
+</td></tr>
+
+<tr><td>
+
+List all test runs with all the invocations flattened
+
+</td>
+
+<td>
 
 ```Shell
+
 GET http://teamcity:8111/app/rest/testOccurrences?locator=build:(id:XXX),test:(id:XXX),expandInvocations:true
  
 ```
+
+</td></tr>
+
+
+</table>
+ 
  
 #### Muted Tests and Build Problems
  
 __Since TeamCity 2017.2__
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+List all muted tests and build problems
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/mutes
  
-List all muted tests and build problems: `GET` [`http://teamcity:8111/app/rest/mutes`](http://teamcity:8111/app/rest/mutes).
+```
+
+</td></tr>
+
+<tr><td>
+
+Unmute a test or build problems
+
+</td>
+
+<td>
+
+```Shell
+
+DELETE http://teamcity:81111/app/rest/mutes/id:XXXX
  
-Unmute a test or build problems: `DELETE` [`http://teamcity:81111/app/rest/mutes/id:XXXX`](http://teamcity:81111/app/rest/mutes/id:XXXX).
+```
+
+</td></tr>
+
+<tr><td>
+
+Mute a test or build problems
+
+</td>
+
+<td>
+
+```Shell
+
+POST http://teamcity:8111/app/rest/mutes
  
-Mute a test or build problems: `POST` to [`http://teamcity:8111/app/rest/mutes`](http://teamcity:8111/app/rest/mutes). Use the same XML or JSON as returned by `GET`.
- 
+```
+
+Use the same XML or JSON as returned by `GET`.
+
+</td></tr>
+
+</table>
+
 ### Investigations
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+List investigations in the Root project and its subprojects
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/investigations
  
-List investigations in the Root project and its subprojects: [`http://teamcity:8111/app/rest/investigations`](http://teamcity:8111/app/rest/investigations).
- 
+```
+
 __Supported locators:__
 * `test: (id:TEST_NAME_ID)`
 * `test: (name:FULL_TEST_NAME)`
 * `assignee: (<user_locator>)`
 * `buildType:(id:XXXX)`
- 
-Get investigations for a specific test:
- 
+
+</td></tr>
+
+<tr><td>
+
+Get investigations for a specific test
+
+</td>
+
+<td>
+
 ```Shell
+
 http://teamcity:8111/app/rest/investigations?locator=test:(id:TEST_NAME_ID)
 http://teamcity:8111/app/rest/investigations?locator=test:(name:FULL_TEST_NAME)
  
 ```
+
+</td></tr>
+
+<tr><td>
+
+Get investigations assigned to a user
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/investigations?locator=assignee:(<user locator>)
  
-Get investigations assigned to a user: `http://teamcity:8111/app/rest/investigations?locator=assignee:(<user locator>)`.
+```
+
+</td></tr>
+
+<tr><td>
+
+Get investigations for a build configuration
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/investigations?locator=buildType:(id:XXXX)
  
-Get investigations for a build configuration: `http://teamcity:8111/app/rest/investigations?locator=buildType:(id:XXXX)`.
- 
-To assign/replace investigations: `POST/PUT` to [`http://teamcity:8111/app/rest/investigations`](http://teamcity:8111/app/rest/investigations) (accepts a single investigation) and experimental _support for multiple investigations_: `POST/PUT` to [`http://teamcity:8111/app/rest/investigations/multiple`](http://teamcity:8111/app/rest/investigations/multiple) (accepts a list of investigations). Use the same XML or JSON as returned by GET.
- 
+```
+
+</td></tr>
+
+<tr><td>
+
+To assign/replace investigations
+
+</td>
+
+<td>
+
+A single investigation:
+
+`POST/PUT` to [`http://teamcity:8111/app/rest/investigations`](http://teamcity:8111/app/rest/investigations)
+
+Experimental _support for multiple investigations_: `POST/PUT` to [`http://teamcity:8111/app/rest/investigations/multiple`](http://teamcity:8111/app/rest/investigations/multiple) (accepts a list of investigations).
+
+Use the same XML or JSON as returned by `GET`.
+
+</td></tr>
+
+</table>
  
 ### Agents
  
 <table>
 
-<tr><td width="400"></td><td></td></tr>
+<tr><td width="200"></td><td></td></tr>
 <tr><td>
 
 List agents (only authorized agents are included by default)
@@ -2281,14 +2487,68 @@ curl -v -u user:password --request PUT "http://teamcity:8111/app/rest/agents/id:
 </table>
  
 #### Agent Pools
- 
-List all agent pools: `GET` [`http://teamcity:8111/app/rest/agentPools`](http://teamcity:8111/app/rest/agentPools).
 
-Get/modify/remove an agent pool with id "ID": `GET/PUT/DELETE` [`http://teamcity:8111/app/rest/agentPools/id:ID`](http://teamcity:8111/app/rest/agentPools/id:ID).
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+List all agent pools
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/agentPools
  
-Add an agent pool: `POST` the `agentPool name='PoolName'` element to [`http://teamcity:8111/app/rest/agentPools`](http://teamcity:8111/app/rest/agentPools).
+```
+
+</td></tr>
+
+<tr><td>
+
+Get/modify/remove an agent pool with `ID`
+
+</td>
+
+<td>
+
+```Shell
+
+GET/PUT/DELETE http://teamcity:8111/app/rest/agentPools/id:ID
  
-Move an agent to the pool from the previous pool: `POST <agent id='YYY'/>` to the pool's agents [`http://teamcity.url/app/rest/agentPools/id:XXX/agents`](http://teamcity.url/app/rest/agentPools/id:XXX/agents).
+```
+
+</td></tr>
+
+<tr><td>
+
+Add an agent pool
+
+</td>
+
+<td>
+
+`POST` the `agentPool name='PoolName'` element to [`http://teamcity:8111/app/rest/agentPools`](http://teamcity:8111/app/rest/agentPools).
+
+</td></tr>
+
+<tr><td>
+
+Move an agent to the pool from the previous pool
+
+</td>
+
+<td>
+
+`POST <agent id='YYY'/>` to the pool's agents [`http://teamcity.url/app/rest/agentPools/id:XXX/agents`](http://teamcity.url/app/rest/agentPools/id:XXX/agents).
+
+</td></tr>
+
+
+</table>
  
 Example:
 ```Shell
@@ -2297,88 +2557,436 @@ curl -v -u user:password [http://teamcity.url/app/rest/agentPools/id:XXX/agents]
 ```
  
 #### Assigning Projects to Agent Pools
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Add a project to a pool
+
+</td>
+
+<td>
+
+`POST` the `<project>` node to [`http://teamcity.url/app/rest/agentPools/id:XXX/projects`](http://teamcity.url/app/rest/agentPools/id:XXX/projects).
+
+</td></tr>
+
+<tr><td>
+
+Delete a project from a pool
+
+</td>
+
+<td>
+
+```Shell
+
+DELETE http://teamcity.url/app/rest/agentPools/id:XXX/projects/id:YYY
  
-Add a project to a pool: `POST` the `<project>` node to [`http://teamcity.url/app/rest/agentPools/id:XXX/projects`](http://teamcity.url/app/rest/agentPools/id:XXX/projects).
- 
-Delete a project from a pool: `DELETE` [`http://teamcity.url/app/rest/agentPools/id:XXX/projects/id:YYY`](http://teamcity.url/app/rest/agentPools/id:XXX/projects/id:YYY).
- 
+```
+
+</td></tr>
+
+
+</table>
+
 ### Users
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+List of users
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/users
  
-List of users: `GET` [`http://teamcity:8111/app/rest/users`](http://teamcity:8111/app/rest/users).
+```
+
+</td></tr>
+
+<tr><td>
+
+Get specific user details
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/users/<userLocator>
  
-Get specific user details: `GET` [`http://teamcity:8111/app/rest/users/<userLocator>`](http://teamcity:8111/app/rest/users/<userLocator>).
+```
+
+</td></tr>
+
+<tr><td>
+
+Create a user
+
+</td>
+
+<td>
+
+```Shell
+
+POST http://teamcity:8111/app/rest/users
  
-Create a user: `POST` [`http://teamcity:8111/app/rest/users`](http://teamcity:8111/app/rest/users).
+```
+
+</td></tr>
+
+<tr><td>
+
+Update/remove specific user
+
+</td>
+
+<td>
+
+```Shell
+
+PUT/DELETE http://teamcity:8111/app/rest/users/<userLocator>
  
-Update/remove specific user: `PUT/DELETE` [`http://teamcity:8111/app/rest/users/<userLocator>`](http://teamcity:8111/app/rest/users/<userLocator>).
+```
+
+</td></tr>
+
+</table>
  
-For the `POST` and `PUT` requests for a user, post data in the form retrieved by the corresponding GET request. Only the following attributes/elements are supported: name, username, email, password, roles, groups, properties.
+For the `POST` and `PUT` requests for a user, post data in the form retrieved by the corresponding GET request. Only the following attributes/elements are supported: `name`, `username`, `email`, `password`, `roles`, `groups`, `properties`.
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Work with user roles
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/users/<userLocator>/roles
  
-Work with user roles: [`http://teamcity:8111/app/rest/users/<userLocator>/roles`](http://teamcity:8111/app/rest/users/<userLocator>/roles).
- 
+```
+
 `<userLocator>` can be of a form:
 * `id:<internal user id>` – to reference the user by internal ID
 * `username:<user's username>` – to reference the user by username/login name
+
+</td></tr>
+
+<tr><td>
+
+User's single field
+
+</td>
+
+<td>
+
+```Shell
+
+GET/PUT http://teamcity:8111/app/rest/users/<userLocator>/<field_name>
  
-User's single field: `GET/PUT` [`http://teamcity:8111/app/rest/users/<userLocator>/<field_name>`](http://teamcity:8111/app/rest/users/<userLocator>/<field_name>).
+```
+
+</td></tr>
+
+
+<tr><td>
+
+User's single property
+
+</td>
+
+<td>
+
+```Shell
+
+GET/DELETE/PUT http://teamcity:8111/app/rest/users/<userLocator>/properties/<property_name>
  
-User's single property: `GET/DELETE/PUT` [`http://teamcity:8111/app/rest/users/<userLocator>/properties/<property_name>`](http://teamcity:8111/app/rest/users/<userLocator>/properties/<property_name>).
+```
+
+</td></tr>
+
+</table>
  
 ### User Groups
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+List of groups
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/userGroups
  
-List of groups: `GET` [`http://teamcity:8111/app/rest/userGroups`](http://teamcity:8111/app/rest/userGroups).
+```
+
+</td></tr>
+
+<tr><td>
+
+List of users within a group
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/userGroups/key:Group_Key
  
-List of users within a group: `GET` [`http://teamcity:8111/app/rest/userGroups/key:Group_Key`](http://teamcity:8111/app/rest/userGroups/key:Group_Key).
+```
+
+</td></tr>
+
+<tr><td>
+
+Create a group
+
+</td>
+
+<td>
+
+```Shell
+
+POST http://teamcity:8111/app/rest/userGroups
  
-Create a group: `POST` [`http://teamcity:8111/app/rest/userGroups`](http://teamcity:8111/app/rest/userGroups).
+```
+
+</td></tr>
+
+<tr><td>
+
+Delete a group
+
+</td>
+
+<td>
+
+```Shell
+
+DELETE http://teamcity:8111/app/rest/userGroups/key:Group_Key
  
-Delete a group: `DELETE` [`http://teamcity:8111/app/rest/userGroups/key:Group_Key`](http://teamcity:8111/app/rest/userGroups/key:Group_Key).
+```
+
+</td></tr>
+
+
+</table>
 
 ### User Access Tokens
 
-List of access tokens: `GET` [`http://teamcity:8111/app/rest/users/<userLocator>/tokens`](http://teamcity:8111/app/rest/users/<userLocator>/tokens).
+<table>
 
-Create an access token: `POST` [`http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>`](http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>).
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
 
-Delete an access token: `DELETE` [`http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>`](http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>).
+List of access tokens
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/users/<userLocator>/tokens
+ 
+```
+
+</td></tr>
+
+<tr><td>
+
+Create an access token
+
+</td>
+
+<td>
+
+```Shell
+
+POST http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>
+ 
+```
+
+</td></tr>
+
+<tr><td>
+
+Delete an access token
+
+</td>
+
+<td>
+
+```Shell
+
+DELETE http://teamcity:8111/app/rest/users/<userLocator>/tokens/<tokenName>
+ 
+```
+
+</td></tr>
+
+</table>
+
 
 ### Audit Records
 
-To access the records of user actions, also available on the __[Audit](tracking-user-actions.md)__ page in TeamCity, use the following request:
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+To access the records of user actions, also available on the __[Audit](tracking-user-actions.md)__ page in TeamCity
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/audit
  
-`GET` [`http://teamcity:8111/app/rest/audit`](http://teamcity:8111/app/rest/audit)
+```
+
+</td></tr>
+
+</table>
 
 You can filter records by user, system action, build type, and so on (use `GET` [`http://teamcity:8111/app/rest/audit?locator=$help`](http://teamcity:8111/app/rest/audit?locator=$help) to see all available filters).
  
 ## Other
  
 ### Data Backup
- 
-Start backup:
- 
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Start backup
+
+</td>
+
+<td>
+
 ```Shell
+
 POST http://teamcity:8111/app/rest/server/backup?includeConfigs=true&includeDatabase=true&includeBuildLogs=true&fileName=
  
 ```
 
-where `<fileName>` is the prefix of the file to save backup to. The file will be created in the default backup directory (see [more](creating-backup-from-teamcity-web-ui.md)). Get current backup status (idle/running): `GET` [`http://teamcity:8111/app/rest/server/backup`](http://teamcity:8111/app/rest/server/backup).
+where `<fileName>` is the prefix of the file to save backup to. The file will be created in the default backup directory (see [more](creating-backup-from-teamcity-web-ui.md)).
+
+</td></tr>
+
+<tr><td>
+
+Get current backup status (idle/running)
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/server/backup
+ 
+```
+
+</td></tr>
+
+</table>
+
  
 ### Typed Parameters Specification
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+List [typed parameters](typed-parameters.md)
+
+</td>
+
+<td>
+
+For a project:
+
+```Shell
+
+GET http://teamcity:8111/app/rest/projects/<locator>/parameters
  
-List [typed parameters](typed-parameters.md):
-* For a project: [`http://teamcity:8111/app/rest/projects/<locator>/parameters`](http://teamcity:8111/app/rest/projects/<locator>/parameters)
-* For a build configuration: [`http://teamcity:8111/app/rest/buildTypes/<locator>/parameters`](http://teamcity:8111/app/rest/buildTypes/<locator>/parameters)
+```
+
+For a build configuration:
+
+```Shell
+
+GET http://teamcity:8111/app/rest/buildTypes/<locator>/parameters
  
+```
+
 The information returned is: `parameters count`, `property name`, `value`, and `type`. The `rawValue` of the `type` element is the [parameter specification](typed-parameters.md#Adding+Parameter+Specification) as defined in the UI.
+
+</td></tr>
+
+<tr><td>
+
+Get details of a specific parameter
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/<name>
  
-Get details of a specific parameter: `GET` to [`http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/<name>`](http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/<name>).
- 
-Accepts/returns plain\-text, XML, JSON. Supply [the relevant Content-Type header](#Response+Formats) to the request.
- 
-Create a new parameter: `POST` the same XML or JSON or just plain\-text as returned by `GET` to [`http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/`](http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/). Note that [secure parameters](typed-parameters.md), for example `type=password`, are listed, but the values not included into response, so the result should be amended before POSTing back.
- 
+```
+
+Accepts/returns plain-text, XML, JSON. Supply [the relevant Content-Type header](#Response+Formats) to the request.
+
+</td></tr>
+
+<tr><td>
+
+Create a new parameter
+
+</td>
+
+<td>
+
+`POST` the same XML or JSON or just plain\-text as returned by `GET` to [`http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/`](http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/). Note that [secure parameters](typed-parameters.md), for example `type=password`, are listed, but the values not included into response, so the result should be amended before POSTing back.
+
+</td></tr>
+
+</table>
+
 __Since TeamCity 9.1__, partial updates of a parameter are possible (currently in an experimental state):
- 
+
 * Name: `PUT` the same XML or JSON as returned by `GET` to [`http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/NAME`](http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/NAME)
 * Type: `GET/PUT` accepting XML and JSON as returned by `GET` to the URL [`http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/NAME/type`](http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/NAME/type)
 * Type's rawValue: `GET/PUT` accepting plain text [`http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/NAME/type/rawValue`](http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/NAME/type/rawValue)
@@ -2386,10 +2994,56 @@ __Since TeamCity 9.1__, partial updates of a parameter are possible (currently i
 ### Build Status Icon
  
 Icon that represents a build status:
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+An .svg icon (__recommended__)
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<buildLocator>/statusIcon.svg
  
-* An .svg icon (__recommended__): `GET` [`http://teamcity:8111/app/rest/builds/<buildLocator>/statusIcon.svg`](http://teamcity:8111/app/rest/builds/<buildLocator>/statusIcon.svg)
-* A .png icon: `GET` [`http://teamcity:8111/app/rest/builds/<buildLocator>/statusIcon`](http://teamcity:8111/app/rest/builds/<buildLocator>/statusIcon)
-* Icon that represents build status for several builds (__since TeamCity 10.0__): `GET` request and `strob` build locator dimension.
+```
+
+</td></tr>
+
+<tr><td>
+
+A .png icon
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<buildLocator>/statusIcon
+ 
+```
+
+</td></tr>
+
+<tr><td>
+
+Icon that represents build status for several builds (__since TeamCity 10.0__)
+
+</td>
+
+<td>
+
+`GET` request and `strob` build locator dimension.
+
+</td></tr>
+
+</table>
+ 
  
 __Example request__:
  
@@ -2441,24 +3095,96 @@ If the returned image contains "no permission to get data" text (![no-permission
 ### TeamCity Licensing Information Requests
  
 __Since TeamCity 10__:
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Licensing information
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/server/licensingData
  
-Licensing information: `GET` [`http://teamcity:8111/app/rest/server/licensingData`](http://teamcity:8111/app/rest/server/licensingData).
+```
+
+</td></tr>
+
+<tr><td>
+
+List of license keys
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/server/licensingData/licenseKeys
  
-List of license keys: `GET` [`http://teamcity:8111/app/rest/server/licensingData/licenseKeys`](http://teamcity:8111/app/rest/server/licensingData/licenseKeys).
+```
+
+</td></tr>
+
+<tr><td>
+
+License key details
+
+</td>
+
+<td>
+
+```Shell
+
+GET http://teamcity:8111/app/rest/server/licensingData/licenseKeys/<license_key>
  
-License key details: `GET` [`http://teamcity:8111/app/rest/server/licensingData/licenseKeys/<license_key>`](http://teamcity:8111/app/rest/server/licensingData/licenseKeys/<license_key>).
+```
+
+</td></tr>
+
+<tr><td>
+
+Add license key(s)
+
+</td>
+
+<td>
+
+`POST` text/plain newline-delimited keys to [`http://teamcity:8111/app/rest/server/licensingData/licenseKeys`](http://teamcity:8111/app/rest/server/licensingData/licenseKeys).
+
+</td></tr>
+
+<tr><td>
+
+Delete a license key
+
+</td>
+
+<td>
+
+```Shell
+
+DELETE http://teamcity:8111/app/rest/server/licensingData/licenseKeys/<license_key>
  
-Add license key(s): `POST` text/plain newline-delimited keys to [`http://teamcity:8111/app/rest/server/licensingData/licenseKeys`](http://teamcity:8111/app/rest/server/licensingData/licenseKeys).
- 
-Delete a license key: `DELETE` [`http://teamcity:8111/app/rest/server/licensingData/licenseKeys/<license_key>`](http://teamcity:8111/app/rest/server/licensingData/licenseKeys/<license_key>).
+```
+
+</td></tr>
+
+</table>
+
  
 ### CCTray
  
-CCTray\-compatible XML is available via [`http://teamcity:8111/app/rest/cctray/projects.xml`](http://teamcity:8111/app/rest/cctray/projects.xml).
+CCTray-compatible XML is available via [`http://teamcity:8111/app/rest/cctray/projects.xml`](http://teamcity:8111/app/rest/cctray/projects.xml).
  
 Without authentication (only build configurations available for guest user): [`http://teamcity:8111/guestAuth/app/rest/cctray/projects.xml`](http://teamcity:8111/guestAuth/app/rest/cctray/projects.xml).
  
-The CCTray\-format XML does not include paused build configurations by default. The URL accepts the `locator` parameter instead with standard [build configuration locator](#Build+Configuration+Locator).
+The CCTray-format XML does not include paused build configurations by default. The URL accepts the `locator` parameter instead with standard [build configuration locator](#Build+Configuration+Locator).
  
 ## Request Examples
  
