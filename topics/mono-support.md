@@ -37,7 +37,7 @@ Automatic detection of Mono framework under Windows has the following specifics:
 2. The Frameworks paths are extracted from `HKLM\SOFTWARE\Novell\Mono\%MonoVersion%`.
 3. The platform architecture is detected by analyzing `mono.exe`.
 
-#### Mac OS X Specifics
+#### macOS Specifics
 1. The framework is detected automatically from `/Library/Frameworks/Mono.framework/Versions`.
 2. The highest version is selected.
 3. The frameworks path are extracted from `/Library/Frameworks/Mono.framework/Versions/%MonoVersion%/lib/mono`.

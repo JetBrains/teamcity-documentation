@@ -242,7 +242,7 @@ jre/lib/*.jar
 
 
 
-For Mac OS X, use the following lines:
+For macOS, use the following lines:
 
 
 ```Plain Text

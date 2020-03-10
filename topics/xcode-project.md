@@ -6,7 +6,7 @@ The runner provides structured build log based on Xcode build stages, detects co
 
 <note>
 
-To run an Xcode build, you need to have one or more build agents running Mac OS X with installed Xcode.
+To run an Xcode build, you need to have one or more build agents running macOS with installed Xcode.
 </note>
 
 <anchor name="Xcode 7.x Support"/>
@@ -235,7 +235,7 @@ Target\-based
 
 <td>
 
-Select from the __default__, __iOS__, __Mac OS X__ or __Simulator \- iOS__ or any other platform (if it is provided by the agent) to build your project on.
+Select from the __default__, __iOS__, __macOS__ or __Simulator \- iOS__ or any other platform (if it is provided by the agent) to build your project on.
 
 
 </td></tr><tr>

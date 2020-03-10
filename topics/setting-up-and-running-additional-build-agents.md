@@ -396,7 +396,7 @@ sudo chkconfig buildAgent on
 
 #### Automatic Agent Start under macOS
 
-For macOS/Mac OS X, TeamCity provides the ability to load a build agent automatically when a build user logs in.
+For macOS, TeamCity provides the ability to load a build agent automatically when a build user logs in.
 
 ##### LaunchAgent Approach
 

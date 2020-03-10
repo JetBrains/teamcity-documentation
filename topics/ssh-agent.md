@@ -11,7 +11,7 @@ On this page:
 
 ## Agent Setup
 
-The TeamCity SSH agent uses a native SSH agent from the OpenSSH included with Linux and Mac OS X, so the feature works out of the box for these OSs. For Windows, OpenSSH needs to be installed (for example, as a part of CygWin, MinGW or a part of Git distribution for Windows).
+The TeamCity SSH agent uses a native SSH agent from the OpenSSH included with Linux and macOS, so the feature works out of the box for these OSs. For Windows, OpenSSH needs to be installed (for example, as a part of CygWin, MinGW or a part of Git distribution for Windows).
 
 The SSH agent must be added to `$PATH` on Unix-like OSs and to `%PATH%` on Windows.
 
