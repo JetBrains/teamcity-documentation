@@ -14,7 +14,7 @@ The feature extends the original branch specification of the VCS roots, attached
 
 If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches.
 
-You can find the pull request's details displayed on the __Overview__ tab of the __Build Results__ .
+You can find the pull request's details displayed on the __Overview__ tab of the __Build Results__:
 
 <img src="pr-info.png" alt="Pull request details" width="700"/>
 
