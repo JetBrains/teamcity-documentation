@@ -13,7 +13,7 @@ TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager 
     * [NuGet Installer](nuget-installer.md) build runner, which installs and updates NuGet packages.
     * [NuGet Pack](nuget-pack.md) build runner, which builds NuGet packages.
     * [NuGet Publish](nuget-publish.md) build runner, which publishes packages to a feed of your choice.
-* [NuGet Dependency](nuget-dependency-trigger.md) Trigger, which allows triggering builds on NuGet feed updates.
+* [NuGet dependency trigger](nuget-dependency-trigger.md), which allows triggering builds on NuGet feed updates.
 
 
 <note include-id="nuget-OS">
