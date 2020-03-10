@@ -62,11 +62,11 @@ Usually artifacts configured in a build configuration are published when the bui
 
 The first step is to prepare a build configuration which will work the same way as the meta-runner we would like to produce. Let us use the configuration with a single Ant build step: Ant can be executed on any platform where the TeamCity agent runs; besides, Ant runner in TeamCity supports `build.xml` specified right in the runner settings. This is important because our build configuration must be self-contained – it cannot take `build.xml` from the version control repository. In our case, the Ant step settings will look like this:
 
-<img src="ant-build-step.png" width="1323" alt="Adding Ant build step"/>
+<img src="ant-build-step.png" width="750" alt="Adding Ant build step"/>
 
 where `artifact.paths` is a system property. We need to add it on the __Parameters__ tab of the build configuration settings:
 
-<img src="paths-to-artifacts-parameter.png" width="1224" alt="Paths to artifacts in Build Parameters"/>
+<img src="paths-to-artifacts-parameter.png" width="750" alt="Paths to artifacts in Build Parameters"/>
 
 Note that each parameter can have a specification where we can provide the label, description, type of control, and specify validation conditions. Before version 8.0 this specification was used by the custom build dialog only. Now this specification is used by a meta-runner as well.
 
@@ -79,7 +79,7 @@ Here the Ant build step is used just as an example. In the initial build configu
 
 Once the build steps and parameters are defined, we need to make sure our build configuration works by running a couple of builds through the custom build dialog:
 
-<img src="cutom-build-with-paths-to-artifacts.png" width="652" alt="Running a custom build with paths to artifacts"/>
+<img src="cutom-build-with-paths-to-artifacts.png" width="750" alt="Running a custom build with paths to artifacts"/>
 
 ### Extracting and Using Meta-Runner
 
@@ -100,11 +100,11 @@ Besides build steps and parameters, a meta-runner can also have requirements: if
 
 Once the meta-runner is extracted, it becomes available in the build runners' selector, under the name of the project it belongs to, and can be used in any build step just like any other build runner:
 
-<img src="meta-runner-build-step.png" width="627" alt="Publish Artifacts build step"/>
+<img src="meta-runner-build-step.png" width="750" alt="Publish Artifacts build step"/>
 
 The current meta-runner usages can be seen at the project __Meta-Runners__ page:
 
-<img src="meta-runners.png" width="1418" alt="Meta-Runners"/>
+<img src="meta-runners.png" width="750" alt="Meta-Runners"/>
 
 When a meta-runner is extracted, all steps are extracted. If you need to reorder parameters or make some quick fixes in the runner script, you can edit its raw XML definition in the web browser: go to __Project Administration__ | __Meta-Runners__ and use the __Edit__ option next to the meta-runner. The parameters will be shown in the same order as `<param>` elements in the XML definition. Definitions of meta-runners are stored in the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>\config\projects\<project_ID>\pluginData\metaRunners` directory.
 

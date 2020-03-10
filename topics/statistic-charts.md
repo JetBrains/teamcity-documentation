@@ -17,7 +17,7 @@ Regardless of the selected statistics level in the Statistics tab, you can:
 * Filter the information by data series, for example, by the Agent name or result type.
 * View average values by selecting the __Average__ check box.
 * Filter out failed builds and show only successful builds with the unchecked __Show Failed__ option.
-* View the build summary information when you mouse\-over a build and navigate to the build results page using the build number link.
+* View the build summary information when you mouse-over a build and navigate to the build results page using the build number link.
 
 <note>
 
@@ -39,9 +39,9 @@ You can adjust the project\-level charts in the following ways:
 
 Statistics information is also available at the build configuration level. These charts demonstrate the successful build rate, the build duration, time builds spent in queue, time that took to fix tests, artifact size, and test count. The charts also show code coverage, duplicates and inspection results if these are included in the respective build configuration.
 
-<img src="BCStatistics_8.0.png" width="900" alt="Build statistics"/>
+<img src="BCStatistics_8.0.png" width="750" alt="Build statistics"/>
 
-It is also possible to [add custom charts](customizing-statistics-charts.md). Unlike project\-level charts, pre\-defined charts on the build configuration level cannot be disabled.
+It is also possible to [add custom charts](customizing-statistics-charts.md). Unlike project-level charts, predefined charts on the build configuration level cannot be disabled.
  
 
 The charts generated automatically by TeamCity include the following types:

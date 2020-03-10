@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Integrating TeamCity with Issue Tracker)
 TeamCity can be integrated with your issue tracker to provide a comprehensive view of your development project. TeamCity detects issues mentioned in the comments to version control changes, turning them into links to your issue tracker in the TeamCity web UI.
 
-The integration is configured at the project level: the Project Administrator permissions are required. You can configure integration if you have multiple projects on both the TeamCity and the issue tracker server or if you are using different issue\-trackers for different projects.
+The integration is configured at the project level: the Project Administrator permissions are required. You can configure integration if you have multiple projects on both the TeamCity and the issue tracker server or if you are using different issue trackers for different projects.
 
 Enabling integration for the project also enables it for all its subprojects; if the configuration settings are different in a subproject, its settings have priority over the project's settings.
 
@@ -12,7 +12,6 @@ On this page:
 
 ## Dedicated Support for Issue Trackers
 
-
 TeamCity supports [JIRA](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md) and __since TeamCity 10.0__ [GitHub](https://confluence.jetbrains.com/display/TCD10/GitHub), [Bitbucket Cloud](bitbucket-cloud.md), and [TFS](team-foundation-work-items.md) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Tracker+Integration) page lists supported versions.
 
 When an integration is configured, TeamCity automatically transforms an issue ID (=issue key in JIRA, work item id in TFS) mentioned in the VCS commit comment into a link to the corresponding issue and the basic issue details are displayed in the TeamCity web UI when hovering over the icon next to the issue ID (for example, on the __[Changes](working-with-build-results.md#Changes)__ tab of the build results).
@@ -21,14 +20,14 @@ When an integration is configured, TeamCity automatically transforms an issue ID
 
 Issues fixed in the build can also be viewed on the __[Issues](working-with-build-results.md#Related+Issues)__ tab of the build results. You can filter the list to a particular range of builds and view issues mentioned in comments with their states.
 
-<img src="issue-log.png" width="1426" alt="Issue log"/>
+<img src="issue-log.png" width="750" alt="Issue log"/>
 
 ## Recommendations on Using Issue Tracker Integration
 
 To get maximum benefit from the issue tracker integration, do the following:
 * When committing changes to your version control, __always mention the issue id (issue key)__ related to the fix in the comment to the commit.
 * Resolve issues when they are fixed (the time of resolve does not really matter).
-* Use __Issue Log__ of a build configuration to get issues related to builds; turn on the "Show only resolved issues" option to only display the issues fixed in the builds.
+* Use __Issue Log__ of a build configuration to get issues related to builds; turn on the "_Show only resolved issues_" option to only display the issues fixed in the builds.
 
 ## Enabling Issue Tracker Integration
 

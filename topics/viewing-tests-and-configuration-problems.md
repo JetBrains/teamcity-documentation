@@ -74,7 +74,7 @@ Such tests are displayed on the dedicated project tab, __Flaky Tests__,  along w
 
 You can also see if the test is flaky when viewing the expanded stack trace for a failed test on the build results page.
 
-<img src="flaky-test.png" width="1311" alt="Flaky test in Build Overview"/>
+<img src="flaky-test.png" width="750" alt="Flaky test in Build Overview"/>
 
 As with any failed test, you can assign investigations for a flaky test (or multiple tests). For flaky tests the resolution method is automatically set to "Manual"; otherwise the investigation will be automatically removed once the test is successful, which does not mean that the flaky test has been fixed.
 

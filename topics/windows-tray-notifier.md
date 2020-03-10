@@ -21,10 +21,7 @@ To launch Windows Tray Notifier, run the __Start &gt; Programs &gt; JetBrains Te
 
 When the application started, you need to connect and log in to your server:
 1. Specify your TeamCity server URL and credentials to log in to it.
-2. Wait for the notifier to connect to your TeamCity server. Once the connection is established, you'll be prompted to configure notification rules in the __My Settings &amp; Tools | Notification rules | Windows Tray Notifier__ section:    
-
-   <img src="windows-tray-notifier.png" width="1419" alt="Windows Tray Notifier"/>
-
+2. Wait for the notifier to connect to your TeamCity server. Once the connection is established, you'll be prompted to configure notification rules in the __My Settings &amp; Tools | Notification rules | Windows Tray Notifier__ section: <img src="windows-tray-notifier.png" width="750" alt="Windows Tray Notifier"/>
 3. When Windows Tray Notifier is launched, the [status icon](#Status+Icons) in the Windows System Tray appears.
 
 ## Windows Tray Notifier UI

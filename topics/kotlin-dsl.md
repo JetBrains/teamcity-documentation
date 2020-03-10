@@ -153,7 +153,7 @@ If you are using IntelliJ IDEA, you can easily start debugging of any Maven task
 1. Navigate to __View | Tool Windows | Maven Projects__. The __Maven Projects__ tool window is displayed.
 2. Locate the task node: __Plugins | teamcity-configs | teamcity-configs:generate__, the __Debug__ option is available in the context menu for the task:
 
-<img src="NewKotlinDebug.png" width="1320" alt="Debugging a task in IDEA"/>
+<img src="NewKotlinDebug.png" width="750" alt="Debugging a task in IDEA"/>
 
 
 ### Editing Project Settings via Web UI
@@ -203,7 +203,7 @@ If you are not sure what build history to select, you can look at the __Build Re
 
 </tip>
 
-<img src="attach-build-history.png" width="1283" alt="Attaching a build history"/>
+<img src="attach-build-history.png" width="750" alt="Attaching a build history"/>
 
 ### Viewing DSL in UI
 

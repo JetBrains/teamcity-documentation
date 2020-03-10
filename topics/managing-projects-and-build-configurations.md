@@ -11,7 +11,7 @@ The __Configure Visible Projects__ pop-up menu on the __Projects__ page allows r
 
 To add an individual project to the __Projects__ page or remove it from this page, toggle the "eye" button on the __Project Home__ page:
 
-<img src="eye-button.png" width="986" alt="Disk usage in details"/>
+<img src="eye-button.png" width="750" alt="Disk usage in details"/>
 
 Note that if a project has [archived subprojects](archiving-projects.md) / [paused build configurations](build-configuration.md#Pausing+%2F+Activating+several+build+configurations+of+a+project), they will also be displayed on the overview page and will be marked correspondingly.
 

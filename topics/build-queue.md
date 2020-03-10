@@ -29,7 +29,7 @@ This tab displays the following information:
      * the link to the planned agent page.
      * If the current build is a part of a build chain and the builds it depends on are not finished yet, a corresponding note will be displayed. For some builds, like the builds that have never been run before, TeamCity can't estimate possible duration, so the relevant message will be displayed in the tooltip, for example:    
 
-      <img src="unpredictableDuration.png" alt="Unpredictable build duration" width="234"/>
+      <img src="unpredictableDuration.png" alt="Unpredictable build duration" width="400"/>
         
 * __Triggered by__ \- a brief description of the [event that triggered the build](configuring-build-triggers.md).
 * __Can run on__ \- the number of agents compatible with this build configuration. You can click an agent's name link to open the [Agents page](viewing-build-agent-details.md), or use the down arrow to quickly view the list of compatible agents in the pop\-up window.

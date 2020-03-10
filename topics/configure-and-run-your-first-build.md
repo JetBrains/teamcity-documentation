@@ -29,7 +29,7 @@ If required, specify your repository credentials.
    <img src="CreateProject1.png" alt="Create a project from a repository URL, Step 1" width="1069"/>
 2. Click __Proceed__ and follow the wizard.   
    TeamCity will do the rest for you: it will identify the type of the VCS repository, test the connection, and autoconfigure VCS repository settings, as well as suggest the project and build configuration names.   
-   <img src="CreateProject2.png" alt="Create a project from a repository URL, Step 2" width="800"/>
+   <img src="CreateProject2.png" alt="Create a project from a repository URL, Step 2" width="750"/>
 3. Click __Proceed__.   
    TeamCity will scan your VCS repository and autodetect your build steps.
 4. Check the boxes of the steps and use them in your build configuration.   
@@ -110,11 +110,11 @@ Congratulations! You've configured your first build containing one build step. N
 
 Your build configuration currently has one build step, and you can now launch your first build by clicking __Run__ in the upper right corner of the TeamCity web UI:
 
-<img src="RunBuild.png" alt="Run a build" width="946"/>
+<img src="RunBuild.png" alt="Run a build" width="750"/>
 
 You will be redirected to the build result page, where you can watch the build progress and review its results upon the build finishing. You can also access your build configuration settings from this page and edit them as required:
 
-<img src="BuildResults.PNG" alt="Build results" width="1054"/>
+<img src="BuildResults.PNG" alt="Build results" width="750"/>
 
 <tip>
 
@@ -134,19 +134,19 @@ You might want to configure the following settings:
 
 If your build produces installers, WAR files, reports, log files, and so on, and you want them to be published on the TeamCity server after finishing the build, you can specify the paths to such artifacts in the __General Settings__ section of the build configuration settings. As you have a finished build, the build agent has the checkout sources already and the _Artifact paths_ field has the checkout directory browser. You can select artifacts from the tree:
 
-<img src="artifactPaths.png" alt="Artifact paths" width="1206"/>
+<img src="artifactPaths.png" alt="Artifact paths" width="750"/>
 
 TeamCity will place the paths to them into the input field, so you can modify them as needed:
 
-<img src="artifactPathsArchive.png" alt="Modify the arifact paths" width="915"/>
+<img src="artifactPathsArchive.png" alt="Modify the arifact paths" width="750"/>
 
 Save your settings. Now when you run a build, TeamCity will put the required reports into an archive. The build configuration home page lists all builds that were run and enables you to view the available artifacts:
 
-<img src="artifactsPublished.png" alt="Published artifacts" width="971"/>
+<img src="artifactsPublished.png" alt="Published artifacts" width="750"/>
 
 You can also view and download artifacts from the build results page:
 
-<img src="artifactsPublishedResults.png" alt="Artifacts in build results" width="966"/>
+<img src="artifactsPublishedResults.png" alt="Artifacts in build results" width="750"/>
 
 More details are available in [Artifact Paths](configuring-general-settings.md#Artifact+Paths).
 
@@ -154,7 +154,7 @@ More details are available in [Artifact Paths](configuring-general-settings.md#A
 
 Automatic build triggering on detecting a change in the version control is essential to any CI. TeamCity will add a [VCS trigger](configuring-vcs-triggers.md) automatically when creating a project / build configuration from a URL or repository. You can also do it manually using the _Edit Build Configuration Settings_ drop-down men, the __Triggers__ page:
 
-<img src="addTrigger.png" alt="Add a trigger" width="966"/>
+<img src="addTrigger.png" alt="Add a trigger" width="750"/>
 
 ### Build Number Format
 

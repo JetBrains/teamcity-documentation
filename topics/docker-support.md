@@ -12,7 +12,7 @@ The build feature adds the _Docker Info_ tab to the [build results](working-with
 
 These options require a configured connection to a docker registry:
 
-<img src="docker-support.png" width="1056" alt="Docker Support build feature"/>
+<img src="docker-support.png" width="750" alt="Docker Support build feature"/>
 
 #### Clean-up of images
 
