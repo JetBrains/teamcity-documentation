@@ -795,7 +795,7 @@ The "Run a process per assembly" option of the [NUnit runner](nunit.md) has been
 
 Bundled IntelliJ IDEA updated to version # 143.1945 (roughly equivalent to 15.0.3 with a few additional fixes).
 
- Bundled version of Maven 3.2.x updated to 3.2.5. 
+Bundled version of Maven 3.2.x updated to 3.2.5.
 
 #### Performance Monitor  
 
