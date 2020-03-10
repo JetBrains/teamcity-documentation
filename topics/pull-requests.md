@@ -7,8 +7,12 @@ On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
 
-The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors and triggers builds only on `head` branches (such as `refs/pull/*/head`).   
-After a build is run on a pull request, TeamCity provides additional details for the pull request branch on the Build Overview page.
+The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors and triggers builds only on `head` branches:
+* For GitHub: `refs/pull/*/head`
+* For Bitbucket Server: `refs/pull-requests/*/from`
+* For GitLab: `refs/merge-requests/*/head`
+
+After a build is run on a pull request, TeamCity provides additional details for the pull request branch on the __Build Results__ page.
 
 <img src="pr-info.png" alt="Pull request details" width="700"/>
 
@@ -343,16 +347,17 @@ The `web-app` build configuration must have a VCS trigger enabled.
 </note>
 
 To configure the described pipeline for the `web-app` build configuration in TeamCity:
-1. __Add a [VCS root](vcs-root.md) to the build configuration__:
+1. __Add a [VCS root](vcs-root.md) to the build configuration__:   
    * Go to __Build Configuration Settings | Version Control Settings__ and click __Attach VCS root__.
    * Configure the root parameters:
-      * __Type of VCS__: _Git_
-      * __VCS root name__: _\<unique_root_name\>_
-      * __Fetch URL__: _\<GitHub_repository_URL\>_
-      * __Default branch__: the branch to be monitored; by default, _`refs/heads/master`_ (read more [about feature branches](working-with-feature-branches.md))
-      * __Branch specification__: a filter for additional branches to be monitored (for example, _`+:refs/heads/*`_)
-      * __Authentication parameters__ of the GitHub user that has access rights to the `web-app` repository
-   * Test the connection and, if successful, click __Create__.   
+   
+      - __Type of VCS__: _Git_
+      - __VCS root name__: _\<unique_root_name\>_
+      - __Fetch URL__: _\<GitHub_repository_URL\>_
+      - __Default branch__: the branch to be monitored; by default, _`refs/heads/master`_ (read more [about feature branches](working-with-feature-branches.md))
+      - __Branch specification__: a filter for additional branches to be monitored (for example, _`+:refs/heads/*`_)
+      - __Authentication parameters__ of the GitHub user that has access rights to the `web-app` repository
+   * Test the connection and, if successful, click __Create__.
 2. __Add the _Pull Requests_ [build feature](adding-build-features.md) to the build configuration__:
    * Go to __Build Configuration Settings | Build Features__ and click __Add build feature__.
    * Configure the feature parameters:
