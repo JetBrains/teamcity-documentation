@@ -7,22 +7,24 @@ On this page:
 
 <tag-list of="chapter" mode="tree" depth="4"/>
 
-The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors and triggers builds only on `head` branches:
+The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors builds only on `head` branches:
 * For GitHub: `refs/pull/*/head`
 * For Bitbucket Server: `refs/pull-requests/*/from`
 * For GitLab: `refs/merge-requests/*/head`
 
-After a build is run on a pull request, TeamCity provides additional details for the pull request branch on the __Build Results__ page.
+If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches.
+
+You can find the pull request's details displayed on the __Overview__ tab of the __Build Results__ .
 
 <img src="pr-info.png" alt="Pull request details" width="700"/>
+
+When adding this build feature, you need to specify a VCS root and select a VCS hosting type.
 
 <note>
 
 The branch specification of the VCS root __must not__ contain patterns matching pull request branches.
 
 </note>
-
-When adding this build feature, you need to specify a VCS root and select a VCS hosting type.
 
 The build feature parameters depend on the selected VCS hosting type.
 
@@ -156,7 +158,7 @@ By target branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor and trigger pull requests only on branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left blank, no filters apply.
 
 </td>
 </tr>
@@ -245,7 +247,7 @@ By target branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor and trigger pull requests only on branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left blank, no filters apply.
 
 </td>
 </tr>
@@ -309,7 +311,7 @@ By target branch
 
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor and trigger merge requests only on branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor merge requests only on branches that match the specified criteria. If left blank, no filters apply.
 
 </td>
 </tr>
