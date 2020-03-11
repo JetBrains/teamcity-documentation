@@ -49,7 +49,7 @@ It is recommended to store `<`[`TeamCity Data Directory`](teamcity-data-director
 
 __The Data Directory should not be located under the [TeamCity Home Directory](teamcity-home-directory.md).__
 
-We highly recommend using the Data Directory location outside of the TeamCity installation directory to prevent any data loss.
+We highly recommend placing the Data Directory outside of the TeamCity installation directory to prevent any data loss.
 
 </warning>
 
