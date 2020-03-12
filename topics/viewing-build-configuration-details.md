@@ -12,11 +12,6 @@ The __Build Configuration Home__ page provides the configuration details and ena
 
 The build configuration details are separated into several tabs whose number may vary depending on your server or project configuration, for example, [dependencies](dependent-build.md), [TeamCity integration with other tools](integrating-teamcity-with-other-tools.md), and so on. 
 
-By default, the following tabs are available:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Overview
 
 Provides information on:

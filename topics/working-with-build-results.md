@@ -20,10 +20,6 @@ Besides providing the build information, this page enables you to:
   * remove the build
 * [edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+From+Template)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Build Details
 
 The __Build Results__ page can be accessed from the __Build Configuration Home__ page and from various places in the TeamCity web UI where a build number or build status appears as a link. Some data is accessible only after the build is finished, some details like [Changes](#Changes), [Build Parameters](#Parameters), and [Dependencies](#Dependencies) are also applicable to the build while it is waiting in the queue.

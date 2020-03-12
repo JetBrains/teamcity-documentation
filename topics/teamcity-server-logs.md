@@ -1,10 +1,6 @@
 [//]: # (title: TeamCity Server Logs)
 [//]: # (auxiliary-id: TeamCity Server Logs)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 TeamCity Server keeps a log of internal activities that can be examined to investigate an issue with the server behavior or get internal error details.
 
 The logs are stored in plain text files in a disk directory on the TeamCity server machine (usually in `<`[`TeamCity Server home`](teamcity-home-directory.md)`>/logs`). The files are appended with messages when TeamCity is running.

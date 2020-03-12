@@ -1,15 +1,9 @@
 [//]: # (title: TeamCity Integration with Cloud Solutions)
 [//]: # (auxiliary-id: TeamCity Integration with Cloud Solutions)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 TeamCity integration with cloud (IAAS) solutions allows TeamCity to provision virtual machines running TeamCity agents on\-demand based on the build queue state.
 
 This page covers __general information__ about the configuration of integration. For the list of currently supported solutions, refer to [Available Integrations](#Available+Integrations) below.
-
 
 ## General Description
 

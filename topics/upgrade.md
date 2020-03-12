@@ -10,10 +10,6 @@ TeamCity supports upgrades from any of the previous versions to the later ones. 
 
 It is recommended to plan for regular upgrades to run the latest TeamCity version at least after several bugfix updates are released. This way you run a fully [supported version](how-to.md#TeamCity+Release+Cycle) with the latest fixes and security patches.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Before Upgrade
 
 Before upgrading TeamCity:

@@ -7,10 +7,6 @@ When settings are stored in Kotlin DSL, the Kotlin code might need to be changed
          
 These recommendations are displayed as server health reports on the corresponding pages of the server administration UI.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## TeamCity settings format changes
 
 As far as the DSL is concerned, there are the following types of TeamCity settings changes.

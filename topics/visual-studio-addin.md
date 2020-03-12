@@ -1,10 +1,6 @@
 [//]: # (title: Visual Studio Addin)
 [//]: # (auxiliary-id: Visual Studio Addin)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 ## Add-in Features
 
 The TeamCity add-in for Microsoft Visual Studio provides the following features:

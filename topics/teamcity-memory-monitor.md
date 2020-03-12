@@ -5,8 +5,6 @@ TeamCity server checks available memory on a regular basis and warns you if the 
 
 There are several warning types reported:
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Low pool memory
 
 Is reported when memory usage in a single memory pool exceeds 90% after garbage collection. High server activity may cause such memory usage.

@@ -4,8 +4,6 @@ To view the state and information about an agent, click its name or navigate to 
 
 For each connected agent TeamCity provides the following information:
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Agent Summary
 * __Status__: [learn more about an agent's status](build-agent.md). 
 * __Details__:

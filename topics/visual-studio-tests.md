@@ -5,11 +5,6 @@ The Visual Studio Tests runner integrates functionality of the MSTest framework 
 
 The Visual Studio Test Runner requires Visual Studio Test Agent or Microsoft Visual Studio installed on the build agent.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Visual Studio Tests runner settings
 
 <table><tr>

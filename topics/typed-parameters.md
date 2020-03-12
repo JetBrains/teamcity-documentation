@@ -5,12 +5,6 @@ When adding a [build parameter](configuring-build-parameters.md) (system propert
 
 Using the build parameter's specification you can make your parameters more readable in the __Run Custom Build__ dialog.
 
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Adding Parameter Specification
 
 To add specification to a build parameter, click the __Edit__ button in the __Spec__ area when editing/adding a build parameter.

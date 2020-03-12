@@ -3,11 +3,6 @@
 
 The Windows Tray Notifier is an utility which allows monitoring the status of specific build configurations in the system tray via popup alerts and status icons.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
-
 ## Installing Windows Tray Notifier
 
 To install the Windows Tray Notifier:

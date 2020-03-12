@@ -1,10 +1,6 @@
 [//]: # (title: Viewing Tests and Configuration Problems)
 [//]: # (auxiliary-id: Viewing Tests and Configuration Problems)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Viewing Problems on Project Overview Page
 
 The __Project Overview__ page also displays the number of tests failed in build configurations as well as other problems. When the data in the problematic build configuration is not expanded, the link under the tests number takes you to the __Current Problems__ tab (see [below](#Using+Current+Problems+Tab)).
