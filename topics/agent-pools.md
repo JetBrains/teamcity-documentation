@@ -1,10 +1,6 @@
 [//]: # (title: Agent Pools)
 [//]: # (auxiliary-id: Agent Pools)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Concept
 
 Instead of having one common set of agents, you can break them into separate groups called _agent pools_. A pool is a named set of agents to which you can assign projects.

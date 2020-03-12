@@ -4,8 +4,6 @@ The build queue is a list of builds that were [triggered](configuring-build-trig
 
 When a build is triggered, first it is placed into the build queue, and, when a compatible agent becomes idle, TeamCity will run the build.
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Build Queue Optimization by TeamCity
 
 By default, TeamCity optimizes the build queue as follows:

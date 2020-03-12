@@ -2,11 +2,6 @@
 [//]: # (auxiliary-id: Artifact Dependencies)
 This page details configuration of the TeamCity [Artifact Dependencies](dependent-build.md#Artifact+Dependency).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 The __Build Configuration Settings | Dependencies | Artifact Dependencies__ section allows configuring the dependencies.  It is possible to disable a configured dependency temporarily or permanently using the corresponding option in the last column of the Artifact Dependencies list.
 
 ## Configuring Artifact Dependencies Using Web UI

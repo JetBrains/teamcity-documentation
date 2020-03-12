@@ -1,11 +1,7 @@
 [//]: # (title: Build Chain)
 [//]: # (auxiliary-id: Build Chain)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-A _build chain_ is a sequence of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency). Sometimes the build chain is called a "pipeline". Parts of a build chain linked with snapshot dependencies with enabled revisions synchronization use the same snapshot of the sources. 
+A _build chain_ is a sequence of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency). Sometimes the build chain is called a "pipeline". Parts of a build chain linked with snapshot dependencies with enabled revisions synchronization use the same snapshot of the sources.
 
 ## Common Use Case
 

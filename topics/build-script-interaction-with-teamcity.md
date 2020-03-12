@@ -11,12 +11,6 @@ If you use MSBuild build runner, you can try [MSBuild Service Tasks](msbuild-ser
 
 </tip>
 
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
-
 ## Service Messages
 
 _Service messages_ are specially constructed pieces of text that pass commands/information about the build from the build script to the TeamCity server.
