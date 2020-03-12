@@ -11,10 +11,6 @@ Whether you run a build agent via the `agent.bat|sh` script or as a Windows serv
 You do not need to specify any of the options unless you are advised to do by the TeamCity support team or you know what you are doing.
 </note>
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Agent Properties
 
 For both processes above you can customize the final agent behavior by specifying system properties and variables for the agent to run with.

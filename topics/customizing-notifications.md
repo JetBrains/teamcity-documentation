@@ -5,10 +5,6 @@ TeamCity users can [select the events to be notified about](subscribing-to-notif
 
 Project Administrators with the enabled "_Change user / group notification rules in project_" permission can edit notification rules for users and user groups assigned to their projects.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 ## Notifications Lifecycle
 
 TeamCity supports a set of events that can generate user notifications (such as build failures, investigation state changes, etc). On an event occurrence, for each notifier type, TeamCity processes notification settings for all the users to determine which users to notify.

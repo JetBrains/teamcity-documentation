@@ -3,16 +3,12 @@
 
 To help you track the condition of your projects and individual build configurations over time, TeamCity gathers statistical data across all their history and displays it as visual charts. This page describes how to modify the [predefined](statistic-charts.md) project-level charts.
 
-On this page:
-
- <tag-list of="chapter" mode="tree" depth="4"/>
-
 <note>
 
 Refer to a separate page to add [custom charts](custom-chart.md) on the project or build configuration level.
 </note>
 
-## Modifying Pre-defined Project-level Charts
+## Modifying Predefined Project-level Charts
 
 By default, the __Statistics__ tab on the project level shows charts for all build configurations in the current project, which have coverage, duplicates or inspections data. However, you can disable charts of a particular or specify build configurations to be used in the charts.
 
@@ -77,7 +73,7 @@ inspections-graph
 
 </td></tr></table>
 
-#### Disabling Charts of Particular Type on Project Level
+### Disabling Charts of Particular Type on Project Level
 
 To disable charts of particular type for a project, use the following syntax:
 
@@ -91,7 +87,7 @@ To disable charts of particular type for a project, use the following syntax:
 
 In this example, all code coverage charts will be removed from the Statistics page.
 
-#### Showing Charts Only for Specific Build Configurations on Project Level
+### Showing Charts Only for Specific Build Configurations on Project Level
 
 To show the code coverage chart related only to a particular build configuration, use the following syntax:
 

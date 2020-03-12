@@ -3,10 +3,6 @@
 
 This page details creating build configurations via the TeamCity web UI. Other options include the [REST API](rest-api.md#Build+Configuration+And+Template+Settings) and using TeamCity project configuration in [DSL based on the Kotlin language](storing-project-settings-in-version-control.md).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 To create a build configuration, open __General Settings__ of a project and click __Create build configuration__ under the __Build Configurations__ section.
 
 <img src="create-build-configuration-button.png" alt="Create a build configuration" width="750"/>

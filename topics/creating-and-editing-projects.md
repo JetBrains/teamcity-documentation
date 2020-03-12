@@ -1,10 +1,6 @@
 [//]: # (title: Creating and Editing Projects)
 [//]: # (auxiliary-id: Creating and Editing Projects)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 This section details creating projects via the TeamCity web UI. Other options include the [REST API](rest-api.md#Project+Settings) and using TeamCity project configuration in [DSL based on the Kotlin language](kotlin-dsl.md).
 
 

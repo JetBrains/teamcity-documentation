@@ -3,11 +3,7 @@
 
 The __Project Settings | Artifacts Storage__ tab displays artifact storages configured in this project as well as the storages inherited from parents. 
 
-By default, the built\-in TeamCity artifacts storage is displayed and marked as active. You can activate a different storage using the corresponding link.
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
+By default, the built-in TeamCity artifacts storage is displayed and marked as active. You can activate a different storage using the corresponding link.
 
 ## Built-in Artifacts Storage
 

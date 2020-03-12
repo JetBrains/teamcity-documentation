@@ -1,8 +1,5 @@
-
 [//]: # (title: Common Problems)
 [//]: # (auxiliary-id: Common Problems)
-
-<tag-list of="chapter" mode="tree" depth="4"/>
 
 ## Most frequently used documentation sections
 

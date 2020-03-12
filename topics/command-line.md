@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: Command Line)
 Using this build runner, you can run any script supported by the OS.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Command Line Runner Settings
 
 ### General Settings

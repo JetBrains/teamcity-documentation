@@ -15,7 +15,7 @@ The build step status is considered _failed_ if the build process returned a non
 
 Note that the status of the build step and the build can be different. A build step can be successful, but the build can be failed because of another build failure condition, not based on the exit code (like failing a test or something else). On the other hand, if a build step has failed, the build will be failed too.
 
-### Execution policy
+## Execution policy
 
 You can specify the step execution policy via the __Execute step__ option:
 * __Only if build status is successful__: before starting the step, the build agent requests the build status from the server, and skips the step if the status is failed. This considers the failure conditions processed by the server, like failure on test failures or on metric change. Note that this still can be not exact as some failure conditions are processed on the server asynchronously ([TW-17015](https://youtrack.jetbrains.com/issue/TW-17015))
@@ -30,7 +30,7 @@ You can specify the step execution policy via the __Execute step__ option:
 * You can disable a build step temporarily or permanently, even if it is inherited from a build configuration template using the corresponding option in the last column of the Build Steps list.
 </tip>
 
-### Bundled runners
+## Bundled runners
 
 For the details on configuring individual build steps, refer to:
 
