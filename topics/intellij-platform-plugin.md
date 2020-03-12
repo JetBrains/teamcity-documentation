@@ -7,11 +7,6 @@ TeamCity plugin provides TeamCity integration for IntelliJ Platform-based IDEs, 
 A usage example is provided in the related [blog post](https://blog.jetbrains.com/teamcity/2017/10/teamcity-integration-with-intellij-based-ides/).
 </tip>
 
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Features
 
 TeamCity integration provides the following features:

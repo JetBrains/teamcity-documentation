@@ -1,10 +1,7 @@
 [//]: # (title: Installation)
 [//]: # (auxiliary-id: Installation)
+
 If you are upgrading your existing TeamCity installation, refer to [Upgrade](upgrade.md).
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
 
 ## Check System Requirements
 

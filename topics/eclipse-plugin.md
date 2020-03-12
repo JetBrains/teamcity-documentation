@@ -1,10 +1,6 @@
 [//]: # (title: Eclipse Plugin)
 [//]: # (auxiliary-id: Eclipse Plugin)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Plugin Features
 
 TeamCity integration with Eclipse provides the following features:

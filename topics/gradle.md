@@ -1,11 +1,6 @@
 [//]: # (title: Gradle)
 [//]: # (auxiliary-id: Gradle)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 _The Gradle Build Runner_ runs [Gradle](http://www.gradle.org) projects.
 
 <note>

@@ -1,11 +1,6 @@
 [//]: # (title: Getting started with PHP)
 [//]: # (auxiliary-id: Getting started with PHP)
 
-In this tutorial:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Introduction
 
 TeamCity supports your Continuous Integration (CI) process in many technologies. In this tutorial, we'll configure a Continuous Integration (CI) process for a PHP project. We will be using the open\-source PHP project [PHPExcel](http://www.phpexcel.net) as a sample project we want to provide CI for. This project features a large amount of code, PHPUnit tests and uses Phing to create build artifacts. Using TeamCity, we will automate the build process and make it ready for immediate feedback once the source code on GitHub changes.

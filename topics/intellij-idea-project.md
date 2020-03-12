@@ -3,11 +3,6 @@
 
 IntelliJ IDEA Project runner allows you to build a project created in IntelliJ IDEA. TeamCity versions up to 6.0 had [Ipr (deprecated)](ipr-deprecated.md) which is now superseded by IntelliJ IDEA Project runner.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Supported IntelliJ IDEA features
 
 TeamCity IntelliJ IDEA runner supports subset of IntelliJ IDEA features:

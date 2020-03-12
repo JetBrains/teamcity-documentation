@@ -1,10 +1,6 @@
 [//]: # (title: EMMA)
 [//]: # (auxiliary-id: EMMA)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="3"/>
-
 ## EMMA Integration Notes
 
 The following steps are performed when collecting coverage with EMMA:

@@ -3,15 +3,11 @@
 This runner provides ability to build [IntelliJ IDEA](http://www.jetbrains.com/idea/) projects in TeamCity.   
 It is superseded by [IntelliJ IDEA Project](intellij-idea-project.md) runner. 
 
-This page contains reference information about the __IPR__ build runner fields:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
+This page contains reference information about the __IPR__ build runner fields.
 
 ## Ipr Runner Deprecation
 
-
 Since TeamCity 6.0 Ipr runner is deprecated in favor of [IntelliJ IDEA project](intellij-idea-project.md) runner which uses another implementation approach. In one of the following major TeamCity releases all build configurations with Ipr runner will be automatically converted to IntelliJ IDEA project runner. Since the runners may function differently in specific configurations it is highly recommended to change your current Ipr runner\-based configurations to the new runner and check your settings before the final Ipr runner disabling. Please also use the IntelliJ IDEA project runner for all newly created projects and let us know if you have any issues with it.
-
 
 Apart from differences in the scope of supported IntelliJ IDEA project features, the runners are also different in approach to tests running and coverage.   
 Namely:

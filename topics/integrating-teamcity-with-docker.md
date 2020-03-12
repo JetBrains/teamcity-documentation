@@ -1,12 +1,7 @@
 [//]: # (title: Integrating TeamCity with Docker)
 [//]: # (auxiliary-id: Integrating TeamCity with Docker)
 
-
 TeamCity comes with Docker Support, implemented as a bundled [plugin](https://plugins.jetbrains.com/plugin/10062-docker-support).
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
 
 ## Requirements
 
