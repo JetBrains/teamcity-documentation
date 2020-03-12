@@ -3,9 +3,7 @@
 
 It is possible to export settings of a project with its children to an archive to later import it to a different TeamCity server. Export includes settings (basically everything configured in the project administration area), but does not include builds or any other data visible in the user area. To export a project with all the related data, use [server backup](teamcity-data-backup.md).
 
-<tag-list of="chapter" mode="tree"/>
-
-### Exporting Project Settings
+## Exporting Project Settings
 
 
 To export the project settings, perform the following: 
@@ -14,7 +12,7 @@ To export the project settings, perform the following:
 
 The user exporting the project settings must have the "_View build configuration settings_" permission granted to the project developer role by default. External dependencies are exported only if the user has the required permission there, otherwise a warning will be shown before export.
 
-### Export Scope
+## Export Scope
 
 Currently, only the settings export is supported.
 
@@ -25,7 +23,7 @@ External dependencies for build configurations are exported as well. A build con
 
 The `report.log` file included in the archive details reasons for exporting external entities. 
 
-### Export Limitations
+## Export Limitations
 
 * Builds, changes, and other project-related data cannot be exported.
 * External build configurations that are used in artifact dependencies only are not exported.

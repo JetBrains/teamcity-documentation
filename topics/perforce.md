@@ -10,10 +10,6 @@ If you plan to use the agent\-side [checkout mode](vcs-checkout-mode.md#agent-ch
 Also check [TeamCity and Perforce compatibility](perforce-vcs-compatibility.md).
 </note>
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## P4 Connection Settings
 
 <table><tr>

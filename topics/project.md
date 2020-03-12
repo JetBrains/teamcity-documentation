@@ -4,10 +4,7 @@
 
 A _project_ in TeamCity is a collection of [build configurations](build-configuration.md). A TeamCity project can correspond to a software project, a specific version/release of a project or any other logical group of the build configurations.     
 The project has a name, an [ID](identifier.md), and an optional description.   
-In TeamCity, user [roles and permissions](role-and-permission.md) are managed on a per\-project basis.   
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
+In TeamCity, user [roles and permissions](role-and-permission.md) are managed on a per-project basis.   
 
 ## Project Hierarchy
 
@@ -49,10 +46,9 @@ TeamCity always has a __&lt;Root project&gt;__ as the top of the projects hierar
 
 The root project is special in the following ways:
 * it is present by default and cannot be deleted.
-* it is the top\-level project, so it has no parent project.
+* it is the top-level project, so it has no parent project.
 * it can have no build configurations.
-* it does not appear in the user\-level UI and is mostly present as an entity in Administration UI only.
-
+* it does not appear in the user-level UI and is mostly present as an entity in Administration UI only.
 
  __  __
 

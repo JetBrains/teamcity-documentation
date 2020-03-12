@@ -5,10 +5,6 @@ TeamCity comes with the built-in support of the .NET CLI toolchain providing .NE
 
 This page provides details on configuring the .NET CLI (dotnet) runner. Also see the related [blog post](https://blog.jetbrains.com/teamcity/2016/11/teamcity-dotnet-core/).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Requirements
 
 [.NET Core SDK](https://dotnet.microsoft.com/download) must be installed on your build agent machines.

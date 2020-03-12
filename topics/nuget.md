@@ -1,10 +1,6 @@
 [//]: # (title: NuGet)
 [//]: # (auxiliary-id: NuGet)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Integration Capabilities
 
 TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager and when [NuGet is installed](#Installing+NuGet+to+TeamCity+agents) provides the following capabilities:

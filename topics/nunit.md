@@ -20,10 +20,6 @@ NUnit version __3.4.0__ is __not__ supported by the NUnit build runner due to a 
 
 Note that the NUnit runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the .NET CLI (dotnet) build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead. Refer to the [NUnit Support](nunit-support.md#Framework+Compatibility) page for details.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 <anchor name="NUnit3Extensions"/>
 
 ## NUnit 3 Requirements

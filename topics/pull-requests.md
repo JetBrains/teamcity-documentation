@@ -3,10 +3,6 @@
 
 The _Pull Requests_ build feature lets you automatically load pull request (or _merge requests_ in case of GitLab) information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), and [GitLab](#GitLab+Merge+Requests).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors builds only on `head` branches:
 * For GitHub: `refs/pull/*/head`
 * For Bitbucket Server: `refs/pull-requests/*/from`

@@ -17,13 +17,6 @@ Check the following information as well:
 * For artifact downloads from outside TeamCity builds, consider using [REST API](rest-api.md).
 * See also [Accessing Server by HTTP](accessing-server-by-http.md) on basic rules covering HTTP access from scripts.
 
-
-
-__This page covers__:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Obtaining Artifacts
 
 __To download artifacts of the latest builds (last finished, successful or pinned)__, use the following paths:

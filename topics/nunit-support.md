@@ -7,10 +7,6 @@ There are two most common methods to set up NUnit tests reporting in TeamCity:
 
 Besides that, you can try [alternative approaches](#Alternative+Approaches) or run tests in any other runner (like [PowerShell](powershell.md) or [Command Line](command-line.md)) with the [TeamCity VSTest Adapter](https://github.com/JetBrains/TeamCity.VSTest.TestAdapter).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Framework Compatibility
 
 The [NUnit](nunit.md) build runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the [.NET CLI (dotnet)](net-cli-dotnet.md) build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead.

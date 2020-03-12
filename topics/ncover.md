@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: NCover)
 TeamCity supports code coverage with NCover (1.x and 3.x) for NUnit tests run via TeamCity NUnit test runner, which can be configured in one of the following ways: web UI, [TeamCity NUnit Test Launcher](teamcity-nunit-test-launcher.md), [NUnit for MSBuild](nunit-for-msbuild.md), [NUnit for MSBuild](nunit-for-msbuild.md), [NUnit for NAnt Build Runner](nunit-for-nant-build-runner.md). 
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 __Important Notes__ 
 	
 * To launch coverage, NCover and NCoverExplorer should be installed on the agent where the coverage build will run.

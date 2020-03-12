@@ -1,10 +1,6 @@
 [//]: # (title: Perforce Streams as feature branches)
 [//]: # (auxiliary-id: Perforce Streams as feature branches)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## How to enable
 
 On the VCS Root page, select checkbox "_Enable feature branches support_" after the parent stream name.

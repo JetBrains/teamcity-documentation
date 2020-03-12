@@ -16,13 +16,13 @@ For a TeamCity server running on __Windows__, __.NET 4.0__ is required.
 For a TeamCity server running on __Linux__, the NuGet dependency trigger will reportedly work with the following __limitations__:
 * filtering by Package Version Spec is not supported
 * only HTTP package sources are supported
-* NuGet feed version 1.0 is used, so case-sensitivity issues might occur
+* NuGet feed version 1.0 is used, so case\-sensitivity issues might occur
 * the current trigger implementation on Linux might increase the server load
 * authentication issues might occur
 
 
 ## Configuring NuGet Dependency Trigger
-1. Select the NuGet version to use from the __NuGet.exe__ drop-down menu (if you have [installed NuGet beforehand](nuget.md#Installing+NuGet+to+TeamCity+agents)), or specify a custom path to `NuGet.exe`;
+1. Select the NuGet version to use from the __NuGet.exe__ drop\-down list (if you have [installed NuGet beforehand](nuget.md#Installing+NuGet+to+TeamCity+agents)), or specify a custom path to `NuGet.exe`;
 2. Specify the NuGet package source, if it is different from `nuget.org`;
 3. Specify the credentials to access NuGet feed if required
 4. Enter the package Id to check for updates.
