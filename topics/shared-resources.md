@@ -5,11 +5,6 @@ The _Shared Resources_ [build feature](adding-build-features.md) allows limiting
 
 Some of such resources may be accessed concurrently but allow only a limited number of connections, others require exclusive access. Adding different locks to shared resources addresses these cases: you can define a resource on the project level, configure its parameters (for example, type and quota), and then use this resource in specific build configurations by adding the Shared Resources build feature to them. The build starts once the lock on the resource is acquired; on the build completion, the lock is released. While the builds using the resource are [running](build-state.md), the resource is unavailable, and the other builds requiring locks will be waiting in the [queue](build-queue.md).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Adding and Editing Shared Resources
 
 You can add, edit shared resources, and explore their details (origin of the resource, its usage, and so on) on the __Shared Resources__ tab of the project configuration page.

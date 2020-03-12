@@ -6,9 +6,6 @@ The __Server Health__ report contains results of the server inspection for any c
 
 The Project Administrator [permissions](role-and-permission.md) at least are required to see the report.
 
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Scope and Severity
 
 The report enables you to define the analysis __scope__: you can select to analyze the global configuration or report on project\-related items. The scope available to you depends on the level of the __View Project__ permission granted to you. _Note that the report is not available for archived projects._

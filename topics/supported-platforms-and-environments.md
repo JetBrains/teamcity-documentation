@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: Supported Platforms and Environments)
 This page covers software-related environments TeamCity works with. For hardware-related notes, see [this section](how-to.md#Estimate+Hardware+Requirements+for+TeamCity).
 
-__In this section:__
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Platforms (Operating Systems)
 
 ### TeamCity Server

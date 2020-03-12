@@ -1,7 +1,6 @@
 [//]: # (title: REST API)
 [//]: # (auxiliary-id: REST API)
 
-<tag-list of="chapter" mode="tree" depth="5"/>
 
 ## General information
  
@@ -358,7 +357,7 @@ Some supported `<vcsRootInstancesLocator>` from above:
 * `buildType:(<buildTypeLocator>)` – VCS root instances attached to the matching build configuration.
 * `property:(name:<name>,value:<value>,matchType:<matching>)` – VCS root instances with the property of name `<name>` and value matching condition `<matchType>` (for example, equals, contains) by the value `<value>`.
 
-### Cloud Profiles
+#### Cloud Profiles
 
 TeamCity REST API exposes the same [cloud integration](teamcity-integration-with-cloud-solutions.md) details as those provided in the TeamCity UI.
 

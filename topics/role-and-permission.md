@@ -6,10 +6,6 @@ User access levels are handled by assigning different _roles_ to users thus gran
 A _permission_ is an _authorization_ to perform particular operations, for example, to run a build or modify build configuration settings.   
 A _role_ is a set of _permissions_ that can be granted to a user in one or all projects thus controlling access to the projects and various features in the Web UI.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Authorization Mode
 
 TeamCity authorization supports two modes: __simple__ and __per-project__.

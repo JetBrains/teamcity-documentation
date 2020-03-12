@@ -1,8 +1,5 @@
 [//]: # (title: Running Risk Group Tests First)
 [//]: # (auxiliary-id: Running Risk Group Tests First)
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
 
 <anchor name="testReorderingJUnitAndTestNG"/>
 

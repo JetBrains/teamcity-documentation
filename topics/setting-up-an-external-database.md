@@ -6,10 +6,6 @@ If you evaluated TeamCity with the internal database which is [not recommended f
 
 The current database in use is shown on the __Administration | Global Settings__ page in the _Database_ field and also is mentioned in the teamcity\-server.log on the server startup. `HSQL*` means that the internal database is in use.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Default Internal Database
 
 On the first TeamCity run, using an internal database based on the HSQLDB database engine is suggested by default. The internal database suits evaluation purposes only; it works out of the box and requires no additional setup.
