@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: MSBuild)
 This page contains reference information for the __MSBuild__ build runner fields.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 <note>
 
 The MSBuild runner requires .NET Framework or Mono installed on the build agent. [Microsoft Build Tools](https://devblogs.microsoft.com/visualstudio/msbuild-is-now-part-of-visual-studio/) 2013-2019 are supported.

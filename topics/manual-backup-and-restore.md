@@ -1,10 +1,6 @@
 [//]: # (title: Manual Backup and Restore)
 [//]: # (auxiliary-id: Manual Backup and Restore)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Server Manual Backup
 
 Other ways to create a backup are [available](teamcity-data-backup.md). You can use the instructions on this page if you want fine-grained control over the backup process or need to use a specific procedure for your TeamCity backups. Manual backups can also be the most performant way to create and restore backups as they can be tailored to the specific infrastructure in use.

@@ -13,11 +13,6 @@ For example, you have a configuration A that deploys artifacts to a remote repos
 To avoid this, we recommend not using remote run for build configurations which perform deployment of artifacts.
 </note>
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ##  Maven runner settings
 
 <table><tr>

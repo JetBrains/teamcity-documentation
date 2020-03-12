@@ -33,10 +33,6 @@ Note that the secondary node offers more features than the Running Builds Node a
 
 </note>
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Prerequisites for Multinode Setup
 
 This section describes configuration requirements for setting up multiple TeamCity nodes.

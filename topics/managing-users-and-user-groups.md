@@ -1,10 +1,6 @@
 [//]: # (title: Managing Users and User Groups)
 [//]: # (auxiliary-id: Managing Users and User Groups)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 ## Creating New User
 
 The __Administration | Users__ page provides the _Create user account_ option.

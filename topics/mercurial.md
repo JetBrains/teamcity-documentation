@@ -15,11 +15,6 @@ For common VCS Root properties, see [this section](configuring-vcs-roots.md#Comm
 
 TeamCity supports Mercurial out of the box.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## General Settings
 
 <table><tr>

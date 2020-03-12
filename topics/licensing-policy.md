@@ -4,10 +4,6 @@
 Pricing and new licenses/upgrades purchase are available via the __[official web site](http://www.jetbrains.com/teamcity/buy/)__. If you have any questions on the licensing terms, obtaining or upgrading license key and related, please [contact](https://www.jetbrains.com/support/sales/) JetBrains sales department.   
 You can review TeamCity [license agreement](http://www.jetbrains.com/teamcity/buy/license.html) on the official web site or in the footer of the installed TeamCity server web UI.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 ## Licensing Overview
 
 JetBrains offers several licensing options that allow you to scale TeamCity to your needs.   

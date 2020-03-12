@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: MSpec)
 _The MSpec Test Runner_ is designed specifically to run [MSpec](https://github.com/machine/machine.specifications) tests. 
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 <note>
 
 To run tests using MSpec, you need to install it on at least one build agent.

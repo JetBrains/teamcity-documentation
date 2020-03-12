@@ -3,11 +3,6 @@
 
 To manage your account settings, in the top right corner of the screen, click the arrow next to your username and select __My Settings &amp; Tools__ from the drop\-down list.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
-
 ## Changing Your Password
 
 If _Built-in Authentication_ is configured, TeamCity server maintains passwords for the user authentication. To change the password, on the __General__ tab of the user profile page, type your new password in the __Password__ and __Confirm password__ fields.

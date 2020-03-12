@@ -3,8 +3,6 @@
 
 This page contains a list of workarounds for known issues in TeamCity.
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 <anchor name="jdk8_240"/>
 
 ## Incompatibility with JDK 8 update 242+
@@ -478,16 +476,3 @@ _This issue has been fixed in TeamCity 2019.1.5._
 In certain cases, when a build is supposed to create and publish several NuGet packages to a NuGet feed, and the package indexing is enabled, some packages might not be published to the feed. This problem is caused by recent changes in [NuGet Packages Indexer](nuget-packages-indexer.md).
 
 To workaround this problem without upgrading to 2019.1.5, download the fixed NuGet Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62545#focus=streamItem-27-3754398.0-0) and upload it on the __Server Administration | Plugins List__ page.
-
-__ __
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
