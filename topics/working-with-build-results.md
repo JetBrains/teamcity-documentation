@@ -88,7 +88,7 @@ The graph appears on the left of the list and allows you to get the view of the 
 * If there have been merges between the branches of the repository, the graph displays them. To collapse a bar, navigate to its darker area and click it to hide history of merges. The dotted line will indicate that the bar is expandable.
 * If your VCS root has subrepositories (marked S in the list of changes), navigate to a node in the parent to see which commits in subrepositories are referenced by this revision in the parent.
 
-You can select to view the modified files by checking the __Show files__ box. Clicking a file name opens the diff viewer.
+You can select to view the modified files by checking the __Show files__ box. Clicking a filename opens the diff viewer.
 
 ## All Tests
 

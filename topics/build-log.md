@@ -29,7 +29,7 @@ The display threshold is set to 7M characters by default and can be adjusted usi
 
 ### ANSI-style Coloring in Build Log
 
-TeamCity build logs render clickable hyperlinks and support ANSI\-style escape color codes by default: if your tool produces a colored console output, you will see in the build log in TeamCity. See the related feature request for the [full list of supported sequences](https://youtrack.jetbrains.com/issue/TW-23760#comment=27-1021150).
+TeamCity build logs render clickable hyperlinks and support ANSI-style escape color codes by default: if your tool produces a colored console output, you will see in the build log in TeamCity. See the related feature request for the [full list of supported sequences](https://youtrack.jetbrains.com/issue/TW-23760#comment=27-1021150).
 
 To disable the coloring, set the `teamcity.buildLog.ansiColoring.enabled=false` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
