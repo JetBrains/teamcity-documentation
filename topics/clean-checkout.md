@@ -1,29 +1,32 @@
 [//]: # (title: Clean Checkout)
 [//]: # (auxiliary-id: Clean Checkout)
 
-
-_Clean Checkout_ (also referred to as "Clean Sources") is an operation that ensures that the next build will get a copy of the sources fetched all over from the VCS. All the content of the [Build Checkout Directory](build-checkout-directory.md) is deleted and the sources are re\-fetched from the version control.
+_Clean Checkout_ (also referred to as _Clean Sources_) is an operation that ensures that the next build will get a copy of the sources fetched all over from the VCS. All the content of the [Build Checkout Directory](build-checkout-directory.md) is deleted, and the sources are refetched from the version control.
 
 ## Enforcing Clean Checkout
 
 Clean checkout is recommended if the checkout directory content was modified by an external process by adding new, modifying or deleting existing files.
 
-You can enforce clean sources action for a build configuration from the Build Configuration Home page (__Actions__ drop-down in the top right corner), or for an agent from the [Agent Details](viewing-build-agent-details.md) page using the __Miscellaneous__ section, the Clean sources on this agent option. The action opens a list of agents/build configurations to clean sources for.
+You can enforce the _Clean Sources_ action:
+* for a build configuration – from the __Build Configuration Home__ page, using the __Actions__ drop-down menu in the upper right corner.
+* for an agent – from the __[Agent Details](viewing-build-agent-details.md)__ page, using the __Miscellaneous__ section, the _Clean sources on this agent_ option.
+
+The action opens a list of agents/build configurations to clean sources for.
+
+The _Clean Sources_ is a single action that, after triggered, is performed only once during the next build run of each selected configuration on each selected agent.
 
 <note>
 
-If you set a specific folder as the Build Checkout Directory (instead of using default one), you should remember that all of the content of this directory will be deleted during the clean checkout procedure.
+If you set a specific folder as the Build Checkout Directory (instead of using the default one), remember that all the content of this directory will be deleted during the clean checkout procedure.
 </note>
 
-
-
-TeamCity maintains an internal cache for the sources to optimize communications with the VCS server. The caches are reset during the [clean-up time](clean-up.md). To resolve problems with sources update, the caches may need to be reset manually using the __[Diagnostics | Caches](teamcity-monitoring-and-diagnostics.md#Caches)__ tab in the Web UI or by deleting the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)>`/system/caches` directory.
+TeamCity maintains an internal cache for the sources to optimize communications with the VCS server. The caches are reset during the [clean-up](clean-up.md). To resolve problems with sources update, the caches may need to be reset manually using the __[Diagnostics | Caches](teamcity-monitoring-and-diagnostics.md#Caches)__ tab in the Web UI or by deleting the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)>`/system/caches` directory.
 
 ## Automatic Clean Checkout
 
 You can also enable automatic cleaning the sources before every build, if you check the option __Clean all files before build__ on the __[Create/Edit Build Configuration](creating-and-editing-build-configurations.md)&gt; [Version Control Settings](configuring-vcs-settings.md)__ page. If this option is checked, TeamCity performs a full checkout before each build.If clean checkout is not enabled, TeamCity updates the sources in the checkout directory incrementally to the required state. 
 
-TeamCity tries to detect if the sources in the checkout directory are not corresponding to the expected state and triggers clean checkout in such cases to ensure sources are appropriate. This means that under certain circumstances TeamCity can detect clean checkout is necessary even if it is not enabled in the VCS settings and not requested by the user from web UI. In such cases, all the content of the checkout directory is deleted and it is re\-populated by the sources from scratch. If any details are available on the decision, they are added into the build log before checkout\-related logging.
+TeamCity tries to detect if the sources in the checkout directory are not corresponding to the expected state and triggers clean checkout in such cases to ensure sources are appropriate. This means that under certain circumstances TeamCity can detect clean checkout is necessary even if it is not enabled in the VCS settings and not requested by the user from web UI. In such cases, all the content of the checkout directory is deleted and it is repopulated by the sources from scratch. If any details are available on the decision, they are added into the build log before checkout-related logging.
 
 Here is the summary of cases when TeamCity performs automatic clean checkout:
 * if it is enabled using the __Clean all files in the checkout directory before the build__ option in the "Version Control Settings" of the build configuration
