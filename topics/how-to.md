@@ -754,7 +754,7 @@ It is also recommended to specify `internalProxies` attribute with the regular e
 
 TeamCity does not provide out\-of\-the\-box support for HTTPS access (see [TW-12976](http://youtrack.jetbrains.com/issue/TW-12976#comment=27-348823)). It is highly recommended to set up a reverse proxy like Nginx or Apache in front of TeamCity that would handle HTTPS and use HTTP TeamCity server port as the upstream. HTTPS\-related configuration of the proxy is not specific for TeamCity and is generic as for any Web application. Make sure to configure the reverse proxy per [our recommendations](#Set+Up+TeamCity+behind+a+Proxy+Server) below. Generic web application best practices apply (like disabling http access to TeamCity at all).
 
-For small servers, you can set up HTTPS via the internal [Tomcat means](http://tomcat.apache.org/tomcat-7.0-doc/ssl-howto.html), but this is not recommended as it may significantly increase the CPU load.
+For small servers, you can set up HTTPS via the internal [Tomcat means](https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html), but this is not recommended as it may significantly increase the CPU load.
 
 For configuring clients to access TeamCity server via HTTPS while using self\-signed certificate, check the [related instructions](using-https-to-access-teamcity-server.md).
 
