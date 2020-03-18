@@ -4,7 +4,7 @@
 TeamCity allows configuring and starting one or more secondary server instances (nodes) in addition to the main one. The main and secondary nodes operate under the same license and share the TeamCity Data Directory and the database.
 
 Using the multinode setup, you can:
-* Set up a high-availability TeamCity installation that will have zero read downtime. A secondary node will allow users read operations during the downtime of the main server (for example, during the upgrade).
+* Set up a high-availability TeamCity installation that will have zero downtime. Secondary nodes will operate [as usual](#user-actions) during the downtime of the main server (for example, during the minor upgrades).
 * Improve the performance of the main server by delegating tasks to the secondary nodes. A secondary node can detect new commits and process data produced by running builds (build logs, artifacts, statistic values).
 
 <anchor name="user-actions"/>
@@ -130,34 +130,30 @@ Firewall settings should allow accessing secondary nodes from the agents and fro
 
 ## Upgrade & Downgrade
 
-It is recommended that the main TeamCity server and all secondary nodes have the same version. However, the main server and the secondary nodes can be running different versions, for example, when the main server is being upgraded. When the versions of the secondary node and the main server are different, the corresponding health report will be displayed on both nodes.
+It is recommended that the main TeamCity server and all secondary nodes have the same version. In certain cases, the main server and the secondary nodes can be running different versions for a short period, for example, during the minor upgrade of the main server. When the versions of the secondary node and the main server are different, the corresponding health report will be displayed on both nodes.
 
-When __upgrading to a minor version__ (a bugfix release), the main and the secondary nodes should be running without issues as the TeamCity data has the same format.
+When __upgrading to a minor version__ (a bugfix release), the main and the secondary nodes should be running without issues as the TeamCity data has the same format. You can upgrade the main TeamCity server and then the secondary servers [as usual](upgrade.md).
 
-When __upgrading__ the main server __to the major version__, its TeamCity data format will change. The data will be upgraded while the secondary nodes are running provided they are not performing any write operations. If writing operations are detected on a secondary node, a warning will be displayed, and the main server upgrade will be suspended until the secondary node is stopped.
+When __upgrading the main server to a major version__, its TeamCity data format will change. We recommend stopping all the secondary nodes before starting the upgrade of the main server to avoid any possible data format errors.   
+All secondary nodes must be upgraded after the main server major upgrade to be able to process tasks.
 
-After the main server is upgraded to a new major version, the secondary nodes will detect that the data has been upgraded, show health reports, and stop processing tasks according to their responsibilities. All secondary nodes must be upgraded after the main server upgrade to be able to process tasks.
-
-To upgrade nodes in a multinode setup, follow these steps:
-
-1. Stop all secondary nodes (if you forget to do that, you will be warned during the upgrade).
+To __upgrade__ nodes in a multinode setup to a major version of TeamCity, follow these steps:
+1. Stop all secondary nodes.
 2. Start the [upgrade](upgrade.md) on the main TeamCity server as usual.
 3. Proceed with the upgrade.
-4. Check that everything works properly and agents are connecting (the agents will reroute the data, that was supposed to be routed to the secondary nodes, to the main server).
-5. Upgrade the TeamCity installation on the secondary nodes to the same version.
-6. Start the secondary nodes and check that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main server.
-
+4. Verify that everything works properly and agents are connecting (the agents will reroute the data, that was supposed to be routed to the secondary nodes, to the main server).
+5. Upgrade the TeamCity installations on the secondary nodes to the same version.
+6. Start the secondary nodes and verify that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main server.
       
 To __downgrade__ nodes in a multinode setup, follow these steps:
-
 1. Shutdown the main server and the secondary nodes.
 2. [Restore the data](restoring-teamcity-data-from-backup.md) from backup (only if the data format has been changed during the upgrade).
 3. Downgrade the TeamCity software on the main server.
-4. Start the main TeamCity server and check that everything works properly.
+4. Start the main TeamCity server and verify that everything works properly.
 5. Downgrade the TeamCity software on the secondary nodes to the same version as the main server.
 6. Start the secondary nodes. 
 
-TeamCity agents will perform upgrade\/downgrade automatically.
+TeamCity agents will perform upgrade/downgrade automatically.
 
 ## Secondary Nodes Limitations
 
