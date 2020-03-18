@@ -143,7 +143,6 @@ TeamCity supports a wide range of build tools, enabling both Java and .NET softw
 * [Git](git.md) (for automatic `git gc` support requires Git client installed on the server in order to perform maintenance of Git clones, latest version is recommended)
 * [Subversion](subversion.md) (server versions 1.4\-1.9 and higher as long as the protocol is backward compatible).
 * [Perforce](perforce.md) (requires a Perforce client installed on the TeamCity server). Check [compatibility issues](perforce-vcs-compatibility.md).
-* [Perforce](perforce.md) (requires a Perforce client installed on the TeamCity server). Check [compatibility issues](perforce-vcs-compatibility.md).
 * [Team Foundation Server](team-foundation-server.md) 2005, 2008, 2010, 2012, 2013, 2015, 2017 are supported. 
 * [Mercurial](mercurial.md) (requires the Mercurial "hg" client v1.5.2\+ installed on the server)
 * [CVS](cvs.md)
