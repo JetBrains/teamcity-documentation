@@ -1,9 +1,15 @@
 [//]: # (title: .NET CLI (dotnet))
 [//]: # (auxiliary-id: viewpage.actionpageId113084145;.NET CLI (dotnet))
 
-TeamCity comes with the built-in support of the .NET CLI toolchain providing .NET CLI (dotnet) build steps, CLI detection on the build agents, and autodiscovery of build steps in your repository.
+TeamCity comes with the built-in support of the .NET toolchain providing the .NET build step, .NET detection on the build agents, and autodiscovery of build steps in your repository.
 
-This page provides details on configuring the .NET CLI (dotnet) runner. Also see the related [blog post](https://blog.jetbrains.com/teamcity/2016/11/teamcity-dotnet-core/).
+This page provides details on configuring the .NET runner.
+
+<note>
+
+Since TeamCity 2019.2.2, the .NET CLI (dotnet) build step has been reworked and renamed to __.NET__ thus defining that it now supports all .NET-related operations previously implemented in TeamCity as multiple different build steps.
+
+</note>
 
 On this page:
 
@@ -25,6 +31,30 @@ TeamCity will use the first .NET version it finds. If you have several .NET vers
 
 ## Build Runner Options
 
+The set of available .NET build runner's options depends on the selected .NET command. Currently, the runner supports the following commands:
+
+* CLI commands (read more in the [.NET Core guide](https://docs.microsoft.com/en-us/dotnet/core/tools/)):
+  * Basic commands:
+      * [`build`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build)
+      * [`clean`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-clean)
+      * [`restore`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-restore)   
+      (requires .NET CLI 2.1.400+ for [authentication in private feeds](net-cli-dotnet.md))
+      * [`pack`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-pack)
+      * [`publish`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)
+      * [`run`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run)
+      * [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test)
+   * Advanced commands:
+     * msbuild
+     * vstest
+     * nuget delete
+     * nuget push
+* Visual Studio command-line mode (read more in the [Visual Studio reference](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches)):
+  * devenv
+
+### Basic CLI Commands
+
+The basic .NET CLI commands have the following options:
+
 <table><tr>
 
 <td>
@@ -37,35 +67,17 @@ Option
 
 Description
 
-</td></tr><tr>
-
-<td>
-
-Command
-
 </td>
 
 <td>
 
-Select a `dotnet` command from the drop-down menu. Depending on the selected command, some of the options below will vary. The currently supported commands are:
+Commands
 
-* [`build`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build)
-* [`clean`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-clean)
-* [`pack`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-pack)
-* [`publish`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)
-* [`restore`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-restore)    
-(requires .NET CLI 2.1.400\+ for [authentication in private feeds](net-cli-dotnet.md))
-* [`run`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run)
-* [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test)
-* [`vstest`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-vstest)
-* [`msbuild`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild)
-* [`nuget delete`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-delete)    
- (requires .NET CLI 2.1.500\+ for [authentication in private feeds](net-cli-dotnet.md#Authentication+in+private+NuGet+Feeds))
-* [`nuget push`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push)    
-(requires .NET CLI 2.1.500\+ for [authentication in private feeds](net-cli-dotnet.md#Authentication+in+private+NuGet+Feeds))
+</td>
 
+</tr>
 
-</td></tr><tr>
+<tr>
 
 <td>
 
@@ -75,10 +87,17 @@ Projects
 
 <td>
 
-Specify paths to projects and solutions. Wildcards are supported. Parameter references are supported. If you have a finished build, you can use the file/directory chooser here.
+Paths to projects and solutions. Wildcards are supported. Parameter references are supported. If you have a finished build, you can use the file/directory selector here.
 
+</td>
 
-</td></tr><tr>
+<td>
+
+* All
+
+</td>
+
+</tr><tr>
 
 <td>
 
@@ -88,9 +107,17 @@ Working directory
 
 <td>
 
-Optional, set if differs from the checkout directory. Parameter references are supported. If you have a finished build, you can use the file/directory chooser here.
+Optional, set if differs from the checkout directory. Parameter references are supported. If you have a finished build, you can use the file/directory selector here.
 
-</td></tr><tr>
+</td>
+
+<td>
+
+* All
+
+</td>
+
+</tr><tr>
 
 <td>
 
@@ -100,35 +127,119 @@ Framework
 
 <td>
 
-Specify the target framework, for example, netcoreapp or netstandard. Parameter references are supported.
+Target framework, for example, `netcoreapp` or `netstandard`. Parameter references are supported.
 
-</td></tr><tr>
+</td>
+
+<td>
+
+* `build`
+* `clean`
+* `publish`
+* `run`
+* `test`
+
+</td>
+</tr>
+
+<tr>
 
 <td>
 
 Configuration
 
+</td>
+
+<td>
+
+Target configuration, for example, `Release` or `Debug`. Parameter references are supported.
 
 </td>
 
 <td>
 
-Specify the target configuration, for example, Release or Debug. Parameter references are supported.
+* `build`
+* `clean`
+* `pack`
+* `publish`
+* `run`
+* `test`
 
-</td></tr><tr>
+</td>
+
+</tr><tr>
 
 <td>
 
 Runtime
 
+</td>
+
+<td>
+
+Target runtime. Parameter references are supported.
 
 </td>
 
 <td>
 
-Specify the target runtime. Parameter references are supported.
+* `build`
+* `clean`
+* `pack`
+* `publish`
+* `restore`
+* `run`
 
-</td></tr><tr>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Options
+
+</td>
+
+<td>
+
+Declares not to build the projects before packing or testing.
+
+</td>
+
+<td>
+
+* `pack`
+* `test`
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+NuGet package sources
+
+</td>
+
+<td>
+
+NuGet package sources to use during the restoration.
+
+</td>
+
+<td>
+
+* `restore`
+
+</td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -140,7 +251,19 @@ Output directory
 
 The directory where to place outputs. Parameter references are supported. If you have a finished build, you can use the file/directory selector here.
 
-</td></tr><tr>
+</td>
+
+<td>
+
+* `build`
+* `clean`
+* `pack`
+* `publish`
+* `test`
+
+</td>
+
+</tr><tr>
 
 <td>
 
@@ -152,7 +275,17 @@ Version suffix
 
 Defines the value of the `$(VersionSuffix)` property in the project. Parameter references are supported.
 
-</td></tr><tr>
+</td>
+
+<td>
+
+* `build`
+* `pack`
+* `publish`
+
+</td>
+
+</tr><tr>
 
 <td>
 
@@ -162,7 +295,13 @@ Command line parameters
 
 <td>
 
-Enter [additional command line parameters](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build?tabs=netcore2x) for `dotnet`.
+[Additional command line parameters](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build?tabs=netcore2x) for `dotnet`.
+
+</td>
+
+<td>
+
+* All
 
 </td></tr><tr>
 
@@ -174,13 +313,32 @@ Logging verbosity
 
 <td>
 
-Select from the \<Default\>, Minimal, Normal, Detailed or Diagnostic.
+Available logging modes: `<Default>`, `Minimal`, `Normal`, `Detailed`, or `Diagnostic`.
 
-</td></tr></table>
+</td>
+
+<td>
+
+* All
+
+</td>
+</tr></table>
+
+### Advanced CLI Commands
+
+#### msbuild
+
+#### vstest
+
+#### nuget delete
+
+#### nudget push
+
+### Visual Studio command-line mode
 
 ## Docker Settings
 
-__Since TeamCity 2018.1__, the .NET CLI build step can be run in a [specified Docker container](docker-wrapper.md).
+The .NET CLI build step can be run in a specified [Docker container](docker-wrapper.md).
 
 ## Code Coverage
 
