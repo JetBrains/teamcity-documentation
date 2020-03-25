@@ -51,7 +51,7 @@ Enforce revisions synchronization
 
 For all builds linked by snapshot dependencies with this option __enabled__, TeamCity will use the same sources snapshot (for example, the same revision for the same VCS root). This is a recommended setting for configurations that need to use the same state of the sources to build successfully.
 
-If you __disable__ this option for a snapshot dependency, then when a dependency build is promoted to the current build configuration, the build of the current build configuraiton will use the most recent revision of the sources instead of the revision corresponding to the promoted dependency. This is useful when the builds do not have strict sources dependencies (for example, as with package and deploy steps).
+If you __disable__ this option for a snapshot dependency, then when a dependency build is promoted to the current build configuration, the build of the current build configuration will use the most recent revision of the sources instead of the revision corresponding to the promoted dependency. This is useful when the builds do not have strict sources dependencies (for example, as with package and deploy steps).
 
 Note that the sources snapshot rule is only applied to the [parts of the builds chain](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts)) linked via the snapshot dependencies with the option enabled.
 
