@@ -29,7 +29,7 @@ That is why it is recommended to:
 * make sure the builds perform a clean procedure as the first step of the build for all the files that affect the build and might have been produced by previous builds. Typical files are compilation output, tests reports, build produce artifacts.
 * make sure the builds never modify or delete the files under version control.
 
-If TeamCity detects that it cannot build an incremental patch, a [clean checkout](clean-checkout.md) in enforced. It can also be enforced manually or configured to be performed on each build.
+If TeamCity detects that it cannot build an incremental patch, a [clean checkout](clean-checkout.md) is enforced. It can also be enforced manually or configured to be performed on each build.
 
 ## Custom checkout directory
 
