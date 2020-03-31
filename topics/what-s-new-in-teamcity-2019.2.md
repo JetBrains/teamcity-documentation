@@ -159,13 +159,13 @@ You can instantly preview all the previous builds and their details, without lea
 
 <img src="build-trends-preview.png" width="250" alt="Build trends preview"/>
 
-Visualized build timeline reflects the duration of each stage and indicates build problem:
+A visualized build timeline reflects the duration of each stage and indicates build problems:
 
 <img src="build-timeline.png" width="600" alt="Build timeline"/>
 
-You can click any stage to open the corresponding line of the build log. Note that in the new UI, even a long log can be displayed directly in the preview, with no need to download it.
+Click any build stage to open the corresponding line of the build log. Note that in the new UI, even a long log can be displayed directly in the preview, with no need to download it.
 
-Apart from the build timeline and build log, the __Overview__ tab gives quick access to build problems, tests, changes, and dependencies. However, the corresponding tabs have also been updated and now offer new features:
+Apart from the build timeline and build log, the __Overview__ tab gives quick access to build problems, tests, changes, and dependencies. The corresponding tabs have also been updated and now offer new features:
 
 * The __Changes__ tab displays more information about changes in the build. You can separately browse user and artifact changes, and optionally display changes in build settings. Click any change to preview its details. <img src="exp-changes-tab.png" width="700" alt="Experimental Changes tab"/>
 
