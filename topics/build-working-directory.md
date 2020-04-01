@@ -18,5 +18,6 @@ __  __
 __See also:__
 
 __Concepts__: [Build Checkout Directory](build-checkout-directory.md)
+__Administrator's Guide__: [Build Artifact Paths](configuring-general-settings.md#Artifact+Paths)
 
 __ __

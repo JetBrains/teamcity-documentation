@@ -398,6 +398,8 @@ If it is not possible to enable debug logging mode via logging presets (for exam
 
 If you want to fine\-tune the log4j configuration, you can edit `<`[`TeamCity Server home`](teamcity-home-directory.md)`>/conf/teamcity-server-log4j.xml` file (for `.war` TeamCity distribution, see the [related section](#General+Logging+Configuration)). If the server is running, the log4j configuration file will be reloaded automatically and the logging configuration will be changed on the fly (some log4j restrictions still apply, so for a massive change consider restarting the server).
 
+If you change settings in other preset files, like `debug-all.xml` or `debug-vcs.xml`, the settings won't be picked up automatically. To enforce the change, switch logging preset to some other value, like `<Default>` and then switch back to `debug-all`. 
+
 Most useful settings of log4j configuration:   
 To change the minimum log level to save in the file, tweak the `value` attribute of the `priority` element:
 
