@@ -181,7 +181,7 @@ Linux
 
 <td>
 
-1\. Installed JDK(JRE) 6\-10 (__1.8.0\_161 or later is recommended__). The JVM should be reachable with the `JAVA_HOME` (`JRE_HOME`) global environment variable or be in the global path (i.e. not in user's .bashrc file, and so on)
+1\. Installed JDK(JRE) 6-10 (__1.8.0_161 or later is recommended__). The JVM should be reachable with the `JAVA_HOME` (`JRE_HOME`) global environment variable or be in the global path (that is not in user's `.bashrc` file, and so on)
 
 2\. The `unzip` utility.
 
@@ -408,7 +408,7 @@ To configure an automatic build agent startup via `LaunchAgent`, follow these st
 
 3\. Make sure that all files under the `buildAgent` directory are owned by `your_build_user` to ensure a proper agent upgrade process.
 
-4\. Load the build agent via command:
+4\. Load the build agent via the command:
 
 
 ```Shell
@@ -417,16 +417,15 @@ sh buildAgent/bin/mac.launchd.sh load
 
 ```
 
-Run these commands under `your_build_user` account.
+Run these commands under the `your_build_user` account.
 
-You have to __wait several minutes__ for the build agent to auto\-upgrade from the TeamCity server. You can watch the process in the logs:
+__Wait several minutes__ for the build agent to auto-upgrade from the TeamCity server. You can watch the process in the logs:
 
 
 ```Shell
 tail -f buildAgent/logs/teamcity-agent.log
 
 ```
-
 
 5\. When the build agent upgrades and successfully connects to TeamCity server, stop the agent:
 
@@ -436,7 +435,11 @@ sh buildAgent/bin/mac.launchd.sh unload
 
 ```
 
-6\. After the build agent upgrades from the TeamCity server, copy the `buildAgent/bin/jetbrains.teamcity.BuildAgent.plist` file to `$HOME/Library/LaunchAgents/` directory.
+6\. After the build agent upgrades from the TeamCity server, copy the `buildAgent/bin/jetbrains.teamcity.BuildAgent.plist` file to the `$HOME/Library/LaunchAgents/` directory. If you don't want TeamCity to start under the root permissions, specify the __UserName__ key in the `.plist` file, for example:
+```XML
+<key>UserName</key>
+<string>teamcity_user</string>
+```
 
 7\. Configure your Mac system to __automatically login__ as a build user, as described [here](https://support.apple.com/en-us/HT201476).
 

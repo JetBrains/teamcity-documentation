@@ -181,7 +181,7 @@ Starting up TeamCity server on macOS is quite similar to starting Tomcat on macO
     
     ```
     This command should start the TeamCity server (you can see this from `logs/teamcity-server.log` and in your browser). 
-4. If you don't want TeamCity to start under the root permissions, specify the __UserName__ key in the plist file, for example:   
+4. If you don't want TeamCity to start under the root permissions, specify the __UserName__ key in the `.plist` file, for example:   
     ```XML
     <key>UserName</key>
     <string>teamcity_user</string>
