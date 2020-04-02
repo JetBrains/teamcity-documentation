@@ -89,7 +89,7 @@ By default, TeamCity has a [Super User](super-user.md) account with maximum perm
 
 ### Built-in Authentication
 
-By default, TeamCity uses the built\-in authentication, meaning that users and their passwords are maintained by TeamCity.
+By default, TeamCity uses the built-in authentication, meaning that users and their passwords are maintained by TeamCity.
 
 When logging to TeamCity for the first time, the user will be prompted to create the TeamCity username and password which will be stored in TeamCity and used for authentication. If you installed TeamCity and logged into it, it means that built\-in authentication is enabled and all user data is stored in TeamCity.
 
