@@ -137,6 +137,26 @@ Commands
 
 Specify a new-line delimited set of commands that will be executed in the remote shell. The remote shell will be started in the home directory of an authenticated user. The shell output will be available in the TeamCity build log.
 
+<note>
+
+SSH Exec runs the shell in non-interactive mode which imposes respective restrictions.
+
+</note>
+
+<tip>
+
+__Tip for Linux users__
+
+To use bash aliases in this runner, add the following shell options to your script:
+
+```Shell
+shopt -s expand_aliases
+source /home/user/.bash_profile
+
+```
+
+</tip>
+
 </td></tr></table>
 
 
