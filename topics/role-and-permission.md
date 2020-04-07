@@ -196,6 +196,87 @@ __Prior to TeamCity 10.0__, this role was included into the [Project Administrat
 
 When per-project permissions are enabled, server administrators can modify the roles, delete them, or add new roles with any combination of permissions right in the TeamCity Administration web UI, or by modifying the `roles-config.xml` file stored in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config directory. When assigning roles to users, the _View role permissions_ link in the web UI displays the list of permissions for each role in accordance with their current configuration.
 
+#### Per-Project Permissions
+The following permissions may be assigned to a new or existing per-project role and will only affect the associated project:
+
+* Run build
+* Stop build / remove from queue
+* Stop / remove from queue any personal build
+* Pin / unpin build
+* Tag build
+* Pause / activate build configuration
+* Comment build
+* Clean build configuration sources
+* Assign / unassign investigation
+* View project and all parent projects
+* View build configuration settings
+* View VCS file content
+* Edit VCS change description
+* Edit project
+* Change cleanup rules
+* Customize build parameters
+* Customize build revisions
+* Change user roles in project
+* Change user / group notification rules in project
+* Manually label / merge build sources
+* Archive / dearchive project
+* Mute / unmute problems in project
+* Change build statu* s
+* View build runtime*  parameters and data
+* Create subproject
+* Delete subproject
+* Create / delete VCS root
+* Change agent pools associated with project
+* Remove finished build
+* Enable / disable versioned settings
+* Enable / disable enforced settings in project
+* Enable / disable agents associated with project
+* Start / Stop cloud agent
+* View cloud images and instances
+* Manage project's agent cloud profiles
+* View project agent usage statistics
+* Change agent run configuration policy for project
+* Administer project agent machines (e.g. reboot, view agent logs, etc.)
+* Remove project agent
+* Authorize project agent
+* View project agents details
+
+#### Non-Project Related Permissions
+The following permissions may be applied to a new or existing role, but are not applied per-project:
+
+* Reorder builds in queue
+* Create user account
+* Delete user account
+* Modify user profile and roles
+* Change user / group notification rules
+* Manage server licenses
+* Change server settings
+* Change agent run configuration policy
+* Clean sources on agent
+* Enable / disable agent
+* Authorize agent
+* View agent details
+* Configure server data cleanup
+* Change own profile
+* View agent usage statistics
+* Remove agent
+* Create user group
+* Delete user group
+* Modify user group (name, description and roles)
+* Assign / unassign users to groups or change groups hierarchy
+* Manage roles (create, delete, change permissions)
+* Administer build agent machines (e.g. reboot, view agent logs, etc.)
+* View audit log
+* View server errors
+* View usage statistics
+* Change backup settings and control backup process
+* Import projects
+* Manage agent pools
+* View user profile
+* View all registered users
+* Manage server installation: view logs, restart, etc.
+* View server settings
+
 ## Project-level Agent Management Permissions
 
 TeamCity has the following project-level permissions to perform a task on an agent:
