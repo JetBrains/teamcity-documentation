@@ -459,6 +459,17 @@ To resolve this issue, we suggest that you use Xcode 11 instead. To workaround t
 
 ## Issues per TeamCity versions
 
+### 2019.2 Known Issues
+
+#### Potential issues with restoring NuGet packages in .NET projects
+
+TeamCity might fail to restore NuGet packages if a build comprises at least one .NET CLI (dotnet) step __and__ an [MSBuild](msbuild.md) or [Visual Studio (sln)](visual-studio-sln.md) build step (or both).
+
+This issue is caused by the difference in paths to cache directories between these build runners.   
+The MSBuild and Visual Studio (sln) runners use the default path to the NuGet global cache while the .NET CLI (dotnet) runner redefines this path (for example, when run inside a Docker container).   
+
+The recommended workaround is to use the [NuGet Installer](nuget-installer.md) build runner instead of the .NET CLI (dotnet) runner for restoring packages.
+
 ### 2019.1.4 Known Issues
 
 #### Unavailable Default Credential Provider Chain option for Amazon ECR
