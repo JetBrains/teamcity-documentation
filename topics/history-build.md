@@ -1,7 +1,7 @@
 [//]: # (title: History Build)
 [//]: # (auxiliary-id: History Build)
 
-A _history build_ is a build that starts after a build with more recent changes. That is, a history build is a build that disrupts a normal build flow according to the [order of the source revisions](revision.md#Revision+Order).
+A _history build_ is a build that starts after a build with more recent changes. That is, a history build is a build that disrupts a normal build flow according to the [order of the source revisions](revision.md#Revision+order).
 
 [//]: # (Internal note. Do not delete. "History Buildd159e7.txt")    
 
