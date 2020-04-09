@@ -279,7 +279,6 @@ Note that this value is a VCS\-specific (for example, for SVN the value is a rev
 
 [//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e258.txt")    
 
-
 These are the parameters that other properties can reference (only if defined on the __Parameters__ page), but that are not passed to the build themselves.
 
 You can get the full set of such server properties by adding the `system.teamcity.debug.dump.parameters` property to a build configuration and examining the "Available server properties" section in the build log.
@@ -309,19 +308,19 @@ When using build parameters of type "Password", referencing them from a dependen
 
 ### Overriding Dependencies Properties
 
-It is possible to redefine the [build parameters](configuring-build-parameters.md) in the snapshot\-dependency builds when the current build starts. For example, build configuration A depends on B and B depends on C; when triggering A, there is the ability to change parameters in any of its dependencies using the following format:
+It is possible to redefine the [build parameters](configuring-build-parameters.md) in the snapshot-dependency builds when the current build starts. For example, build configuration A depends on B and B depends on C; on triggering, A can change any parameter used in B or C with the following property:
 
 ```XML
 reverse.dep.<btID>.<property name>
 ```
 
-You can change a parameter in all dependencies at once using this syntax:
+To change a parameter in all dependencies at once, use a wildcard:
 
 ```XML
 reverse.dep.*.<property name>
 ```
 
-Note that if a parameter is redefined in B, but only A is triggered, no parameters change occurs.
+Thus, each dependent build in a chain can redefine parameters in any of its dependency builds.
 
 If build configurations A and B are trying to set different values for the same parameter in the build configuration C, the following rules apply:
 * if A depends on B by a snapshot dependency either directly or transitively, the value proposed by A will be used in C (and vice versa, if B depends on A)
@@ -329,17 +328,15 @@ If build configurations A and B are trying to set different values for the same 
    * `conflict.<btA>.<property name>=<valueA>`
    * `conflict.<btB>.<property name>=<valueB>`
 
-The `reverse.dep.` parameters are processed on queuing of the build where the parameters are defined. As the parameters' values should be known at that stage, they can only be defined either as [build configuration parameters](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) or in the [custom build dialog](triggering-a-custom-build.md#Run+Custom+Build+dialog). Setting the parameter during the build has no effect.
+The `reverse.dep.*` parameters are processed on queuing of the build where the parameters are defined. As the parameters' values should be known at that stage, they can only be defined either as [build configuration parameters](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) or in the [custom build dialog](triggering-a-custom-build.md#Run+Custom+Build+dialog). Setting the parameter during the build has no effect.
 
-Pushing a new parameter into the build will supersede the ["Do not run new build if there is a suitable one"](snapshot-dependencies.md#Suitable+Builds) snapshot dependency option and may trigger a new build if the parameter is set to a non\-default value.
+Pushing a new parameter into the build will supersede the ["Do not run new build if there is a suitable one"](snapshot-dependencies.md#Suitable+Builds) snapshot dependency option and may trigger a new build if the parameter is set to a non-default value.
 
-Note that the values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without reference resolution. %\-references, if any, will be resolved in the context of the build where the parameters are pushed to.   
+Note that the values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without reference resolution. %-references, if any, will be resolved in the context of the build where the parameters are pushed to.   
 `<property name>` is the name of the property to set in the noted build configuration. To set system property, `<property name>` should contain the `system.` prefix.
 
 
 [//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e388.txt")    
-
-
 
 
 ### VCS Properties
