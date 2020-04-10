@@ -1,5 +1,5 @@
-[//]: # (title: .NET CLI (dotnet))
-[//]: # (auxiliary-id: viewpage.actionpageId113084145;.NET CLI (dotnet))
+[//]: # (title: .NET)
+[//]: # (auxiliary-id: .NET;viewpage.actionpageId113084145;.NET CLI (dotnet))
 
 TeamCity comes with the built-in support of the .NET toolchain providing the .NET build step, .NET detection on the build agents, and autodiscovery of build steps in your repository.
 
@@ -38,7 +38,7 @@ The set of available .NET build runner's options depends on the selected .NET co
       * [`build`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build)
       * [`clean`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-clean)
       * [`restore`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-restore)   
-      (requires .NET CLI 2.1.400+ for [authentication in private feeds](net-cli-dotnet.md))
+      (requires .NET CLI 2.1.400+ for authentication in private feeds)
       * [`pack`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-pack)
       * [`publish`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)
       * [`run`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run)

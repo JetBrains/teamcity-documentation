@@ -109,7 +109,7 @@ Deleting a NuGet feed with all its contents from a project will remove all [NuGe
 
 To publish the `.nupkg` file into TeamCity NuGet feed during the build, you can specify the NuGet feed URL as a package source and the `%teamcity.nuget.feed.api.key%` value as a feed key in the following build steps:
 *  [NuGet Publish](nuget-publish.md)
-* .[NET CLI](net-cli-dotnet.md) with the `nuget push` command
+* .[NET CLI](net.md) with the `nuget push` command
 
 ### Symbol Packages
 

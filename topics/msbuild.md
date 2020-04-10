@@ -3,7 +3,7 @@
 
 <note>
 
-Since TeamCity 2019.2.3, we have stopped providing active support for the MSBuild runner. Please use the .NET runner with the `msbuild` command instead. For more details, refer to the [.NET runner description](net-cli-dotnet.md).
+Since TeamCity 2019.2.3, we have stopped providing active support for the MSBuild runner. Please use the .NET runner with the `msbuild` command instead. For more details, refer to the [.NET runner description](net.md).
 
 </note>
 

@@ -5,7 +5,7 @@
 
 Since TeamCity 2019.2.3, the Visual Studio 2003 build runner is deprecated and will be discontinued in TeamCity 2020.2. If you are actively using this runner, we encourage you to let us know about it via any of our [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
 
-We recommend you switching to the [.NET build runner](net-cli-dotnet.md) instead.
+We recommend you switching to the [.NET build runner](net.md) instead.
 
 </note>
 

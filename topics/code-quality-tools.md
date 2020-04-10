@@ -43,7 +43,7 @@ The following code coverage tools are supported for [.NET Process Runner](net-pr
 * [NCover](ncover.md)
 * [PartCover](partcover.md)
 
-For the [.NET CLI (dotnet)](net-cli-dotnet.md) runner and with NUnit version 3.x the only supported coverage tool is [JetBrains dotCover](jetbrains-dotcover.md).
+For the [.NET CLI](net.md) runner and with NUnit version 3.x the only supported coverage tool is [JetBrains dotCover](jetbrains-dotcover.md).
 
  
 

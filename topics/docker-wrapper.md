@@ -1,7 +1,7 @@
 [//]: # (title: Docker Wrapper)
 [//]: # (auxiliary-id: Docker Wrapper)
 
-TeamCity provides the Docker Wrapper extension for [Command Line](command-line.md), [Maven](maven.md), [Ant](ant.md), [Gradle](gradle.md), [.NET CLI (dotnet)](net-cli-dotnet.md), and [PowerShell](powershell.md) runners. This extension allows running a build step inside the specified Docker image. Each of the supported runners has the dedicated Docker settings section.
+TeamCity provides the Docker Wrapper extension for [Command Line](command-line.md), [Maven](maven.md), [Ant](ant.md), [Gradle](gradle.md), [.NET](net.md), and [PowerShell](powershell.md) runners. This extension allows running a build step inside the specified Docker image. Each of the supported runners has the dedicated Docker settings section.
 
 ## Requirements
 
