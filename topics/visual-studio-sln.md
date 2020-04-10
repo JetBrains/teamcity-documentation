@@ -1,7 +1,23 @@
 [//]: # (title: Visual Studio (sln))
 [//]: # (auxiliary-id: viewpage.actionpageId113084096;Visual Studio (sln))
 
-This page contains reference information for the Visual Studio (sln) Build Runner that builds Microsoft Visual Studio 2005\-2017, and, since TeamCity 2019.1, Microsoft Visual Studio 2019 solution files. To build Microsoft Visual Studio 2003 solution files, use the [Visual Studio 2003](visual-studio-2003.md) runner.
+<note>
+
+Since TeamCity 2019.2.3, we have stopped providing active support for the Visual Studio (sln) runner.
+
+Since the Visual Studio (sln) runner uses MSBuild for building projects under its hood, you can softly migrate to using the .NET build runner with the `msbuild` command. Your configured Visual Studio (sln) settings (such as command line parameters) will work similarly with `msbuild`.   
+However, note the .NET runner also supports the VS-native `devenv` command which allows launching Visual Studio in a command-line mode and using its own [switches](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches) for building, debugging, and deploying projects.
+
+For more details, refer to the [.NET runner description](net-cli-dotnet.md).
+
+</note>
+
+<note>
+
+The Visual Studio (sln) build runner requires the proper version of Microsoft Visual Studio installed on the build agent.
+</note>
+
+This page contains reference information for the Visual Studio (sln) Build Runner that builds Microsoft Visual Studio 2005-2017, and, since TeamCity 2019.1, Microsoft Visual Studio 2019 solution files. To build Microsoft Visual Studio 2003 solution files, use the [Visual Studio 2003](visual-studio-2003.md) runner.
 
 <note>
 

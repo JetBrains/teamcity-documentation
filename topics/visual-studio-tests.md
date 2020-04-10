@@ -1,6 +1,15 @@
 [//]: # (title: Visual Studio Tests)
 [//]: # (auxiliary-id: Visual Studio Tests)
 
+<note>
+
+Since TeamCity 2019.2.3, we have stopped providing active support for the Visual Studio Tests runner. Please use the .NET runner with the `vstest` command instead. It offers the same scope of functionality and adds new features such as Docker support.   
+Note that the .NET runner does not support the MSTest engine since all its features are covered by VSTests. If you were using MSTest as the engine of the Visual Studio Tests runner, we suggest that you switch to VSTest when migrating to the .NET runner.
+
+For more details, refer to the [.NET runner description](net-cli-dotnet.md).
+
+</note>
+
 The Visual Studio Tests runner integrates functionality of the MSTest framework and [VSTest console runner](https://plugins.jetbrains.com/plugin/9056-vstest-console-runner). Support for both frameworks enables TeamCity to execute tests and automatically import their test results. 
 
 The Visual Studio Test Runner requires Visual Studio Test Agent or Microsoft Visual Studio installed on the build agent.
