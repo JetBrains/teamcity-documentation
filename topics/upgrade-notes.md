@@ -282,7 +282,7 @@ If you're upgrading from 2018.1 to 2018.1.1 and you want to see the NuGet packag
 
 ### Docker Images
 
-Since 2018.1.1 TeamCity has multi\-platform docker images marked by the "latest" and version number tags published in Docker Hub, e.g. "jetbrains/teamcity\-server", "jetbrains/teamcity\-server:2018.1.1". This allows using the same docker image reference for Linux and Windows docker containers, see [TW-55061](https://youtrack.jetbrains.com/issue/TW-56088) for details.
+Since 2018.1.1 TeamCity has multiplatform Docker images marked by the `latest` and version number tags published in Docker Hub, for example, `jetbrains/teamcity-server` or `jetbrains/teamcity-server:2018.1.1`. This allows using the same Docker image reference for Linux and Windows docker containers: see [TW-55061](https://youtrack.jetbrains.com/issue/TW-55061) for details.
 
 ## Changes from 2017.2.x to 2018.1
 
