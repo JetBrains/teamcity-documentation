@@ -100,7 +100,7 @@ Current automatic update limitations:
 * only manual upgrade is possible if the server is deployed from a [`.war distribution`](#Manual+Upgrading+using+.tar.gz+or+.war+Distributions), or runs under the official [TeamCity Docker container](#Upgrading+TeamCity+started+from+Docker+images), started with [AWS CloudFormation template](running-teamcity-stack-in-aws.md) or  Azure Resource Manager template.
 * the Windows uninstaller is not updated during the upgrade, so after several updates, old TeamCity version will still be noted in Windows lists. During the uninstallation, not all of the TeamCity installation files might be deleted.
 * the bundled Java is not updated
-* with several nodes installation, only the main TeamCity server can be auto\-updated, the Running Builds node needs to be updated manually.
+* in a [multinode setup](multinode-setup.md), only the main TeamCity server can be auto-updated, the secondary nodes need to be updated manually.
 
 ### Manual Upgrade
 
