@@ -14,7 +14,7 @@ __To add a trusted certificate__
 
 ### Delivering certificates to TeamCity agents
 
-All uploaded certificates will be automatically delivered to all TeamCity agents.
+All uploaded certificates will be automatically delivered to TeamCity agent upon running a build, and saved under `<`[`TeamCity Agent Home`](agent-home-directory.md)`>/system/serverTrustedCertificates`.
 
 However, sometimes automatically distributing certificates to all agents may not be needed or may be undesirable. Then you can __manually__ add certificates to a required agent by placing them into the `<`[`TeamCity Agent Home`](agent-home-directory.md)`>/conf/trustedCertificates` folder (one file per certificate, certificates in textual form in one of the supported formats mentioned above).
 
