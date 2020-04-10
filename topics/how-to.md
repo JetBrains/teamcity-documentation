@@ -907,14 +907,14 @@ If you want to do a quick check and do not need to preserve the build history on
 ### Environment transferring
 [//]: # (AltHead: environment_transfer)
 
-Consider transferring relevant environment if it was specially modified for an existing TeamCity installation. This might include:
+Consider transferring the relevant environment if it was specially modified for an existing TeamCity installation. This might include:
 * use the appropriate OS user account for running the TeamCity server process with properly configured settings, global and file system permissions
-* use the same [TeamCity process launching options](configuring-teamcity-server-startup-properties.md), specifically check/copy environment variables starting with `TEAMCITY\_`
+* use the same [TeamCity process launching options](configuring-teamcity-server-startup-properties.md), specifically check/copy environment variables starting with `TEAMCITY_`
 * ensure any files/settings that were configured in the TeamCity web UI with absolute paths are accessible
-* if relying on the OS\-level user/machine settings like default ssh keys, cached VCS access credentials, transfer them as well
-* consider replicating any special settings or exceptions related to the machine in the network configuration, etc.
-* If the TeamCity installation was patched in any way (GrrovyPlug plugin, native driver for MS SQL Server integrated security authentication), apply the same modifications to the installation copy
-* if you run TeamCity with the OS startup (e.g. Windows service), make sure the same configuration is performed on the new machine
+* if relying on the OS-level user/machine settings like default SSH keys, cached VCS access credentials, transfer them as well
+* consider replicating any special settings or exceptions related to the machine in the network configuration, and so on
+* if the TeamCity installation was patched in any way (GroovyPlug plugin, native driver for MS SQL Server integrated security authentication), apply the same modifications to the installation copy
+* if you run TeamCity with the OS startup (for example, Windows service), make sure the same configuration is performed on the new machine
 * review and tranfer settings in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>\conf\teamcity-startup.properties` file
 * consider any custom settings in `<`[`TeamCity Home`](teamcity-home-directory.md)`>\conf\server.xml`
 
