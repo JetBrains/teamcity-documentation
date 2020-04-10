@@ -915,7 +915,7 @@ Consider transferring the relevant environment if it was specially modified for 
 * consider replicating any special settings or exceptions related to the machine in the network configuration, and so on
 * if the TeamCity installation was patched in any way (GroovyPlug plugin, native driver for MS SQL Server integrated security authentication), apply the same modifications to the installation copy
 * if you run TeamCity with the OS startup (for example, Windows service), make sure the same configuration is performed on the new machine
-* review and tranfer settings in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>\conf\teamcity-startup.properties` file
+* review and transfer settings in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>\conf\teamcity-startup.properties` file
 * consider any custom settings in `<`[`TeamCity Home`](teamcity-home-directory.md)`>\conf\server.xml`
 
 <anchor name="copy_server_license"/>
