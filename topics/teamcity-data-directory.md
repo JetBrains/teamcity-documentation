@@ -16,11 +16,11 @@ On this page:
 
 ## Location of the TeamCity Data Directory
 
-The currently used Data Directory location can be seen on the __Administration | Global Settings__ page for a running TeamCity server instance. Clicking the __Browse__ link opens the __Administration | Global Settings | Browse Data Directory__ tab allowing the user to upload new/modify the existing files in the directory.
+The currently used Data Directory location can be seen on the __Administration | Global Settings__ page for a running TeamCity server instance. Clicking the __Browse__ link opens the __Administration | Global Settings | Browse Data Directory__ tab allowing the user to upload new or modify the existing files in the directory.
 
 The current Data Directory location is also available in the `logs/teamcity-server.log` file (look for "_TeamCity Data Directory:_" line on the server startup).
 
-If you are upgrading, note that prior to TeamCity 7.1 the Data Directory could be specified [in a different way](https://confluence.jetbrains.com/display/TCD7/TeamCity+Data+Directory).
+If you are upgrading from one of the early versions of TeamCity, note that prior to TeamCity 7.1 the Data Directory could be specified [in a different way](https://confluence.jetbrains.com/display/TCD7/TeamCity+Data+Directory) than described [below](#Configuring+the+Location).
 
 ### Configuring the Location
 
