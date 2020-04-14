@@ -3,11 +3,13 @@
 
 TeamCity comes with the built-in support of the .NET toolchain providing the .NET build step, .NET detection on the build agents, and autodiscovery of build steps in your repository.
 
-This page provides details on configuring the .NET runner.
+This page gives details on configuring the .NET runner.
 
 <note>
 
-Since TeamCity 2019.2.2, the .NET CLI (dotnet) build step has been reworked and renamed to __.NET__ thus defining that it now supports all .NET-related operations previously implemented in TeamCity as multiple different build steps.
+Since TeamCity 2019.2.2, the .NET CLI (dotnet) build step has been refactored and renamed to __.NET__ thus emphasizing that it now supports all .NET-related operations previously implemented in TeamCity as multiple build steps.
+
+Note that we stop providing active support for [MSBuild](msbuild.md), [Visual Studio (sln)](visual-studio-sln.md), [Visual Studio 2003](visual-studio-2003.md), and [Visual Studio Tests](visual-studio-tests.md) runners. These steps are left for compatibility of existing build configurations with new versions of TeamCity. To receive the following updates and use extra features of our .NET implementation, we suggest that you select the .NET runner instead of any of the listed runners in all corresponding build steps. This page describes the settings of all supported .NET commands and gives guidelines on migration from the obsolete build steps.
 
 </note>
 
@@ -17,7 +19,7 @@ On this page:
 
 ## Requirements
 
-[.NET Core SDK](https://dotnet.microsoft.com/download) must be installed on your build agent machines.
+The .NET runner requires [.NET Core SDK](https://dotnet.microsoft.com/download) to be installed on your build agent machines.
 
 TeamCity searches for the .NET executable files in the following order:
 1. In the directory defined in the environment variable `DOTNET_HOME` for a TeamCity agent. For example, `DOTNET_HOME=D:\SDK\dotnet\`.
@@ -38,22 +40,24 @@ The set of available .NET build runner's options depends on the selected .NET co
       * [`build`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build)
       * [`clean`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-clean)
       * [`restore`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-restore)   
-      (requires .NET CLI 2.1.400+ for authentication in private feeds)
+      (requires .NET CLI 2.1.400+ for authentication in [private feeds](#Authentication+in+Private+NuGet+Feeds))
       * [`pack`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-pack)
       * [`publish`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)
       * [`run`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run)
       * [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test)
    * Advanced commands:
-     * msbuild
-     * vstest
-     * nuget delete
-     * nuget push
+     * [`msbuild`](#msbuild)
+     * [`vstest`](#vstest)
+     * [`nuget delete`](#nuget+delete)   
+     (requires .NET CLI 2.1.500+ for authentication in [private feeds](#Authentication+in+Private+NuGet+Feeds))
+     * [`nuget push`](#nudget+push)   
+     (requires .NET CLI 2.1.500+ for authentication in [private feeds](#Authentication+in+Private+NuGet+Feeds))
 * Visual Studio command-line mode (read more in the [Visual Studio reference](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches)):
-  * devenv
+  * [`devenv`](#Visual+Studio+command-line+mode)
 
 ### Basic CLI Commands
 
-The basic .NET CLI commands have the following options:
+The list of available .NET runner's options depend on the selected command. Available options for basic .NET CLI commands are:
 
 <table><tr>
 
@@ -66,12 +70,6 @@ Option
 <td>
 
 Description
-
-</td>
-
-<td>
-
-Commands
 
 </td>
 
@@ -91,12 +89,6 @@ Paths to projects and solutions. Wildcards are supported. Parameter references a
 
 </td>
 
-<td>
-
-* All
-
-</td>
-
 </tr><tr>
 
 <td>
@@ -107,13 +99,7 @@ Working directory
 
 <td>
 
-Optional, set if differs from the checkout directory. Parameter references are supported. If you have a finished build, you can use the file/directory selector here.
-
-</td>
-
-<td>
-
-* All
+Optional, set if differs from the [checkout directory](build-checkout-directory.md). Parameter references are supported. If you have a finished build, you can use the file/directory selector here.
 
 </td>
 
@@ -127,19 +113,10 @@ Framework
 
 <td>
 
-Target framework, for example, `netcoreapp` or `netstandard`. Parameter references are supported.
+Target framework. For example, `netcoreapp` or `netstandard`. Parameter references are supported.
 
 </td>
 
-<td>
-
-* `build`
-* `clean`
-* `publish`
-* `run`
-* `test`
-
-</td>
 </tr>
 
 <tr>
@@ -156,17 +133,6 @@ Target configuration, for example, `Release` or `Debug`. Parameter references ar
 
 </td>
 
-<td>
-
-* `build`
-* `clean`
-* `pack`
-* `publish`
-* `run`
-* `test`
-
-</td>
-
 </tr><tr>
 
 <td>
@@ -178,17 +144,6 @@ Runtime
 <td>
 
 Target runtime. Parameter references are supported.
-
-</td>
-
-<td>
-
-* `build`
-* `clean`
-* `pack`
-* `publish`
-* `restore`
-* `run`
 
 </td>
 
@@ -208,13 +163,6 @@ Declares not to build the projects before packing or testing.
 
 </td>
 
-<td>
-
-* `pack`
-* `test`
-
-</td>
-
 </tr>
 
 <tr>
@@ -228,12 +176,6 @@ NuGet package sources
 <td>
 
 NuGet package sources to use during the restoration.
-
-</td>
-
-<td>
-
-* `restore`
 
 </td>
 
@@ -253,16 +195,6 @@ The directory where to place outputs. Parameter references are supported. If you
 
 </td>
 
-<td>
-
-* `build`
-* `clean`
-* `pack`
-* `publish`
-* `test`
-
-</td>
-
 </tr><tr>
 
 <td>
@@ -274,14 +206,6 @@ Version suffix
 <td>
 
 Defines the value of the `$(VersionSuffix)` property in the project. Parameter references are supported.
-
-</td>
-
-<td>
-
-* `build`
-* `pack`
-* `publish`
 
 </td>
 
@@ -299,11 +223,7 @@ Command line parameters
 
 </td>
 
-<td>
-
-* All
-
-</td></tr><tr>
+</tr><tr>
 
 <td>
 
@@ -317,24 +237,335 @@ Available logging modes: `<Default>`, `Minimal`, `Normal`, `Detailed`, or `Diagn
 
 </td>
 
-<td>
-
-* All
-
-</td>
 </tr></table>
 
 ### Advanced CLI Commands
 
 #### msbuild
 
+The [`dotnet msbuild`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild) command is used to build a project and all its dependencies with the [Microsoft Build Engine](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild).
+
+The command requires .NET Framework or .NET Core installed on the build agent. [Microsoft Build Tools](https://devblogs.microsoft.com/visualstudio/msbuild-is-now-part-of-visual-studio/) 2013-2019 are supported. Note that Mono is not supported with this runner.
+
+The `msbuild` command shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+CLI+Commands) for more details).
+
+MSBuild-specific fields are:
+
+<table><tr>
+
+<td>
+
+Option
+
+</td>
+
+<td>
+
+Description
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Targets
+
+</td>
+
+<td>
+
+List of targets separated by spaces or semicolons. A target is an arbitrary script for your project purposes. Click the list icon next to the field to view available targets.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<anchor name="msbuild-version"/>
+
+MSBuild version
+
+</td>
+
+<td>
+
+Specify the version of the installed MSBuild engine. TeamCity supports a fully functional MSBuild for both cross-platform .NET Core (since TeamCity 2019.2.3) and Windows-only versions 2013, 2015, 2017, and 2019 (x86 and x64).
+
+</td>
+
+</tr>
+
+</table>
+
+##### Migrating from MSBuild Step
+
+Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine. We have included the `msbuild` command to our refactored .NET runner to ensure a long-term support of the .NET platform development strategy.
+
+You can safely switch your [MSBuild steps](msbuild.md) in build configurations to the .NET runner. Make sure to copy all additional command-line parameters and other important settings to the new runner.
+
+Additional features you will get in the .NET runner are:
+* Support of cross-platform MSBuild for .NET Core projects
+* Ability to build a project for a different platform specified in the _Runtime_ field
+* Ability to run the project in a Docker container with our [Docker Wrapper](docker-wrapper.md) extension
+
+Note that the .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md). If you are actively using NCover or PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
+
+##### Migrating from Visual Studio (sln) Step
+
+The [Visual Studio (sln)](visual-studio-sln.md) build runner is using the MSBuild engine under its hood and provides some tweaks for the VS users to ease their experience with building projects in TeamCity. Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine which makes it a migration option for the users of the Visual Studio (sln) step as well.
+
+In general, to softly switch each Visual Studio (sln) build step to the .NET runner you need to:
+1. Remember/copy the values of your VS settings and command-line parameters.
+2. Switch the Visual Studio (sln) build step to the .NET runner and select the `msbuild` command.
+3. Fill in the fields according to the [`msbuild`] section.   
+Note that certain fields have different analogs in the .NET runner:
+   * The _MSBuild_ version should be specified instead of the _Visual Studio_ version and the _Platform_. See the [reference on versions](https://en.wikipedia.org/wiki/MSBuild#Versions).
+   * Instead of _Solution file path_, you can set a [checkout directory](build-checkout-directory.md).
+   
+Remember that the proper version of Microsoft Visual Studio must be installed on the used build agent.
+   
+Refer to the [respective section](#Migrating+from+MSBuild+Step) for more information on migration to `msbuild`.
+
+<note>
+
+Note that TeamCity provides a new way to run Visual Studio projects. The .NET runner supports a full-featured implementation of the VS command-line mode with the `devenv` command ([read more](#Visual+Studio+Command-line+Mode)).
+
+</note>
+
 #### vstest
+
+The `vstest` command represents the [VSTest console runner](https://plugins.jetbrains.com/plugin/9056-vstest-console-runner) and enables TeamCity to execute tests and automatically import their test results.
+
+The command requires Visual Studio Test Agent or Microsoft Visual Studio installed on the build agent.
+
+The `vstest` command shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+CLI+Commands) for more details).
+
+VSTest-specific fields are:
+
+<table><tr>
+
+<td>
+
+Option
+
+</td>
+
+<td>
+
+Description
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<anchor name="vstest-assemblies"/>
+
+Test assemblies
+
+</td>
+
+<td>
+
+Specify the new-line separated list of paths to assemblies to run tests on in the included assemblies list. [Wildcards](wildcards.md) are supported.   
+Paths to the assemblies must be relative to the [build checkout directory](build-checkout-directory.md).
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<anchor name="vstest-version"/>
+
+VSTest version
+
+</td>
+
+<td>
+
+Specify the installed version of VSTest. TeamCity supports cross-platform VSTest (since TeamCity 2019.2.3) and Windows-only versions 2013, 2015, 2017, and 2019.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<anchor name="vstest-platform"/>
+
+Platform
+
+</td>
+
+<td>
+
+Specify the target platform: x86, x64, or ARM.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<anchor name="vstest-isolation"/>
+
+Run in isolation
+
+</td>
+
+<td>
+
+Select to run the tests in an isolated process.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Test filtration
+
+</td>
+
+<td>
+
+Select the test filtration mode:
+* _Test names_: Of all tests discovered in the included assemblies, only the tests with the names matching the provided values will be run. For multiple values, separate them with a new line.   
+If the field is empty, all tests will be run. See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/jj155800.aspx).
+* _Test case filter_: Run tests that match the given expression. See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/jj155800.aspx).
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Settings file
+
+</td>
+
+<td>
+
+Set the path to the [`.runsettings`](https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file) file.
+
+</td>
+
+</tr>
+
+</table>
+
+##### Migrating from Visual Studio Tests Step
+
+Since TeamCity 2019.2.3, the .NET runner is the recommended method for testing projects with VSTest instead of the [Visual Studio Tests](visual-studio-tests.md) runner. We have included the `vstest` command to our refactored .NET runner to ensure a long-term support of the .NET platform development strategy.
+
+You can safely migrate existing Visual Studio Tests build steps to the .NET runner with the selected `vstest` command. Make sure to copy all additional command-line parameters and other important settings to the new runner.
+
+Consider the following notes before migrating:
+* The .NET runner supports the new [`.runsettings`](https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file) format of the VSTest settings file. However, it does not support the obsolete run configuration file format used in the Visual Studio Tests runner.
+* Instead of the framework version, the .NET runner requests to specify the VSTest version. Note that the cross-platform version is now available.
+* Apart from x86 and x64 platforms, ARM is also available in the .NET runner.
+* Real-time test reporting is currently not available with the new functionality.
+* The .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md). If you are actively using NCover or PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
+
+Note that the .NET runner allows you launching Visual Studio Tests in a Docker container with our [Docker Wrapper](docker-wrapper.md) extension.
+
+<note>
+
+The .NET runner does not support the MSTest framework since all its features are covered by VSTest. If you were using MSTest as the engine of the Visual Studio Tests runner, we suggest that you switch to VSTest when migrating to the .NET runner.
+
+</note>
 
 #### nuget delete
 
-#### nudget push
+TeamCity provides a full support for the [`nuget delete`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-delete) command.
 
-### Visual Studio command-line mode
+#### nuget push
+
+TeamCity provides a full support for the [`nuget push`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push) command.
+
+### Visual Studio Command-line Mode
+
+Since TeamCity 2019.2.3, the .NET runner supports the Visual Studio command-line mode with the [`devenv`](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches) command.
+
+Devenv allows setting custom options for the IDE, build, debug, and deploy projects from the command line using different [switches](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches#devenv-switch-syntax).
+
+The command requires the proper version of Microsoft Visual Studio to be installed on the used build agent.
+
+`devenv` shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+CLI+Commands) for more details).
+
+Devenv-specific fields are:
+
+<table><tr>
+
+<td>
+
+Option
+
+</td>
+
+<td>
+
+Description
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<anchor name="#devenv-build-action"/>
+
+Build action
+
+</td>
+
+<td>
+
+Select one of the supported switches: `clean`, `rebuild`, `build`, or `deploy`.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Visual Studio version
+
+</td>
+
+<td>
+
+Specify the version of the installed Visual Studio. Versions 2013, 2015, 2017, and 2019 are supported.
+
+</td>
+
+</tr>
+
+</table>
 
 ## Docker Settings
 
@@ -344,7 +575,7 @@ The .NET CLI build step can be run in a specified [Docker container](docker-wrap
 
 [JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool for the `msbuild`, `test`, and `vstest` commands.
 
-## Authentication in private NuGet Feeds
+## Authentication in Private NuGet Feeds
 
 TeamCity allows you to authenticate using private NuGet feeds. Read more in [NuGet](nuget.md#Authentication+in+private+NuGet+Feeds).
 

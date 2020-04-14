@@ -4,7 +4,7 @@
 <note>
 
 Since TeamCity 2019.2.3, we have stopped providing active support for the Visual Studio Tests runner. Please use the .NET runner with the `vstest` command instead. It offers the same scope of functionality and adds new features such as Docker support.   
-Note that the .NET runner does not support the MSTest engine since all its features are covered by VSTests. If you were using MSTest as the engine of the Visual Studio Tests runner, we suggest that you switch to VSTest when migrating to the .NET runner.
+Note that the .NET runner does not support the MSTest framework since all its features are covered by VSTest. If you were using MSTest as the engine of the Visual Studio Tests runner, we suggest that you switch to VSTest when migrating to the .NET runner.
 
 For more details, refer to the [.NET runner description](net.md).
 
