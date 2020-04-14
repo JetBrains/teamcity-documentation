@@ -7,9 +7,9 @@ This page gives details on configuring the .NET runner.
 
 <note>
 
-Since TeamCity 2019.2.2, the .NET CLI (dotnet) build step has been refactored and renamed to __.NET__ thus emphasizing that it now supports all .NET-related operations previously implemented in TeamCity as multiple build steps.
+Since TeamCity 2019.2.3, the .NET CLI (dotnet) build step has been refactored and renamed to __.NET__ thus emphasizing that it now supports all .NET-related operations previously implemented in TeamCity as multiple build steps.
 
-Note that we stop providing active support for [MSBuild](msbuild.md), [Visual Studio (sln)](visual-studio-sln.md), [Visual Studio 2003](visual-studio-2003.md), and [Visual Studio Tests](visual-studio-tests.md) runners. These steps are left for compatibility of existing build configurations with new versions of TeamCity. To receive the following updates and use extra features of our .NET implementation, we suggest that you select the .NET runner instead of any of the listed runners in all corresponding build steps. This page describes the settings of all supported .NET commands and gives guidelines on migration from the obsolete build steps.
+Note that we stop providing active support for the [MSBuild](msbuild.md), [Visual Studio (sln)](visual-studio-sln.md), [Visual Studio 2003](visual-studio-2003.md), and [Visual Studio Tests](visual-studio-tests.md) runners. These steps are left for compatibility of existing build configurations with new versions of TeamCity. To receive the following updates and use extra features of our .NET implementation, we suggest that you select the .NET runner instead of any of the listed runners in all corresponding build steps. This page describes the settings of all supported .NET commands and gives guidelines on migration from the obsolete build steps.
 
 </note>
 
@@ -33,7 +33,7 @@ TeamCity will use the first .NET version it finds. If you have several .NET vers
 
 ## Build Runner Options
 
-The set of available .NET build runner's options depends on the selected .NET command. Currently, the runner supports the following commands:
+Currently, the .NET runner supports the following commands:
 
 * CLI commands (read more in the [.NET Core guide](https://docs.microsoft.com/en-us/dotnet/core/tools/)):
   * Basic commands:
@@ -57,7 +57,7 @@ The set of available .NET build runner's options depends on the selected .NET co
 
 ### Basic CLI Commands
 
-The list of available .NET runner's options depend on the selected command. Available options for basic .NET CLI commands are:
+The set of available .NET runner's options depends on the selected command. Available options for basic .NET CLI commands are:
 
 <table><tr>
 
@@ -159,7 +159,7 @@ Options
 
 <td>
 
-Declares not to build the projects before packing or testing.
+The "_Do not build the projects_" checkbox declares whether to build the projects before packing or testing or not.
 
 </td>
 
@@ -175,7 +175,7 @@ NuGet package sources
 
 <td>
 
-NuGet package sources to use during the restoration.
+NuGet package sources to use during restoring.
 
 </td>
 
@@ -205,7 +205,7 @@ Version suffix
 
 <td>
 
-Defines the value of the `$(VersionSuffix)` property in the project. Parameter references are supported.
+The value of the `$(VersionSuffix)` property in the project. Parameter references are supported.
 
 </td>
 
@@ -219,7 +219,7 @@ Command line parameters
 
 <td>
 
-[Additional command line parameters](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build?tabs=netcore2x) for `dotnet`.
+[Additional command line parameters](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build?tabs=netcore2x) for the `dotnet` command.
 
 </td>
 
@@ -249,7 +249,7 @@ The command requires .NET Framework or .NET Core installed on the build agent. [
 
 The `msbuild` command shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+CLI+Commands) for more details).
 
-MSBuild-specific fields are:
+MSBuild-specific settings are:
 
 <table><tr>
 
@@ -277,7 +277,7 @@ Targets
 
 <td>
 
-List of targets separated by spaces or semicolons. A target is an arbitrary script for your project purposes. Click the list icon next to the field to view available targets.
+List of targets separated by a space or semicolon. A target is an arbitrary script for your project purposes. Click the list icon next to the field to view available targets.
 
 </td>
 
@@ -295,7 +295,7 @@ MSBuild version
 
 <td>
 
-Specify the version of the installed MSBuild engine. TeamCity supports a fully functional MSBuild for both cross-platform .NET Core (since TeamCity 2019.2.3) and Windows-only versions 2013, 2015, 2017, and 2019 (x86 and x64).
+Specify the version of the installed MSBuild engine. TeamCity supports a fully functional MSBuild for both cross-platform .NET Core (since TeamCity 2019.2.3) and Windows-only versions 2013, 2015, 2017, and 2019.
 
 </td>
 
@@ -307,7 +307,7 @@ Specify the version of the installed MSBuild engine. TeamCity supports a fully f
 
 Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine. We have included the `msbuild` command to our refactored .NET runner to ensure a long-term support of the .NET platform development strategy.
 
-You can safely switch your [MSBuild steps](msbuild.md) in build configurations to the .NET runner. Make sure to copy all additional command-line parameters and other important settings to the new runner.
+You can safely switch [MSBuild steps](msbuild.md) in your existing build configurations to the .NET runner. Make sure to copy all additional command-line parameters and other important settings to the new runner. See the [`msbuild`](#msbuild) section for more details on the settings available in the .NET runner.
 
 Additional features you will get in the .NET runner are:
 * Support of cross-platform MSBuild for .NET Core projects
@@ -320,13 +320,13 @@ Note that the .NET runner provides code coverage only for [dotCover](jetbrains-d
 
 The [Visual Studio (sln)](visual-studio-sln.md) build runner is using the MSBuild engine under its hood and provides some tweaks for the VS users to ease their experience with building projects in TeamCity. Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine which makes it a migration option for the users of the Visual Studio (sln) step as well.
 
-In general, to softly switch each Visual Studio (sln) build step to the .NET runner you need to:
-1. Remember/copy the values of your VS settings and command-line parameters.
+In general, to softly switch each existing Visual Studio (sln) build step to the .NET runner you need to:
+1. Remember/copy the values of your Visual Studio (sln) runner's settings and command-line parameters.
 2. Switch the Visual Studio (sln) build step to the .NET runner and select the `msbuild` command.
 3. Fill in the fields according to the [`msbuild`] section.   
 Note that certain fields have different analogs in the .NET runner:
-   * The _MSBuild_ version should be specified instead of the _Visual Studio_ version and the _Platform_. See the [reference on versions](https://en.wikipedia.org/wiki/MSBuild#Versions).
-   * Instead of _Solution file path_, you can set a [checkout directory](build-checkout-directory.md).
+   * The MSBuild version should be specified instead of the version and platform of Visual Studio. See the [reference on versions](https://en.wikipedia.org/wiki/MSBuild#Versions).
+   * Instead of _Solution file path_, specify paths to solutions in the _Projects_ field.
    
 Remember that the proper version of Microsoft Visual Studio must be installed on the used build agent.
    
@@ -376,7 +376,7 @@ Test assemblies
 
 <td>
 
-Specify the new-line separated list of paths to assemblies to run tests on in the included assemblies list. [Wildcards](wildcards.md) are supported.   
+Specify the new-line separated list of paths to assemblies to run tests on. [Wildcards](wildcards.md) are supported.   
 Paths to the assemblies must be relative to the [build checkout directory](build-checkout-directory.md).
 
 </td>
@@ -448,9 +448,10 @@ Test filtration
 <td>
 
 Select the test filtration mode:
-* _Test names_: Of all tests discovered in the included assemblies, only the tests with the names matching the provided values will be run. For multiple values, separate them with a new line.   
-If the field is empty, all tests will be run. See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/jj155800.aspx).
-* _Test case filter_: Run tests that match the given expression. See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/jj155800.aspx).
+* _Test names_: Of all tests discovered in the included assemblies, only the tests with the names matching the provided values will be run. For multiple values, separate them with a new line. If the field is empty, all tests will be run.   
+See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/jj155800.aspx).
+* _Test case filter_: Run tests that match the given expression.   
+See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/jj155800.aspx).
 
 </td>
 
@@ -478,7 +479,7 @@ Set the path to the [`.runsettings`](https://docs.microsoft.com/en-us/visualstud
 
 Since TeamCity 2019.2.3, the .NET runner is the recommended method for testing projects with VSTest instead of the [Visual Studio Tests](visual-studio-tests.md) runner. We have included the `vstest` command to our refactored .NET runner to ensure a long-term support of the .NET platform development strategy.
 
-You can safely migrate existing Visual Studio Tests build steps to the .NET runner with the selected `vstest` command. Make sure to copy all additional command-line parameters and other important settings to the new runner.
+You can safely migrate existing Visual Studio Tests build steps to the .NET runner with the selected `vstest` command. Make sure to copy all additional command-line parameters and other important settings to the new runner. See the [`vstest`](#vstest) section for more details on the settings available in the .NET runner.
 
 Consider the following notes before migrating:
 * The .NET runner supports the new [`.runsettings`](https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file) format of the VSTest settings file. However, it does not support the obsolete run configuration file format used in the Visual Studio Tests runner.
@@ -507,7 +508,7 @@ TeamCity provides a full support for the [`nuget push`](https://docs.microsoft.c
 
 Since TeamCity 2019.2.3, the .NET runner supports the Visual Studio command-line mode with the [`devenv`](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches) command.
 
-Devenv allows setting custom options for the IDE, build, debug, and deploy projects from the command line using different [switches](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches#devenv-switch-syntax).
+Devenv allows configuring custom options for the IDE, build, debug, and deploy projects from the command line using different [switches](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches#devenv-switch-syntax).
 
 The command requires the proper version of Microsoft Visual Studio to be installed on the used build agent.
 
