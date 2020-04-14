@@ -944,15 +944,15 @@ If you are creating a copy (as opposed to moving the server this way), it is imp
 
 If you are creating a __test server__, you need to ensure that the users and production systems are not affected. Typically, this means you need to:
 * disable Email, Jabber (in the "Administration &gt; Notifier" sections) and possibly also custom notifiers or change their settings to prevent the new server from sending out notifications;
-* disable email verification (in the  "Administration &gt; Authentication" section);
-* be sure not to run any builds which change (e.g. deploy to) production environments. This also typically includes Maven builds deploying to non\-local repositories. You can prevent any builds from starting by pausing the [build queue](build-queue.md);
+* disable email verification (in the "Administration &gt; Authentication" section);
+* be sure not to run any builds which change (for example, deploy to) production environments. This also typically includes Maven builds deploying to non-local repositories. You can prevent any builds from starting by pausing the [build queue](build-queue.md);
 * disable cloud integration (so that it does not interfere with the main server);
 * disable external artifact storage (as otherwise running/deleting builds and server clean-up will affect the storage which might be used by the production server);
-* disable Git registry clean-up (or just disable clean-up on the server);
+* disable Docker registry clean-up (or just disable clean-up on the server);
 * disable Commit Status Publishing;
-*disable any plugins which push data into other non\-copied systems based on the TeamCity events;
-*disable functionality to [store project settings in VCS](storing-project-settings-in-version-control.md): set `teamcity.versionedSettings.enabled=false` internal property;
-* consider significantly increasing [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (server\-wide default and overridden in the VCS roots) or changing settings of the VCS roots to prevent them from contacting production servers. Since TeamCity 10.0.3, see also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
+* disable any plugins which push data into other non-copied systems based on the TeamCity events;
+* disable functionality to [store project settings in VCS](storing-project-settings-in-version-control.md): set `teamcity.versionedSettings.enabled=false` internal property;
+* consider significantly increasing [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (server-wide default and overridden in the VCS roots) or changing settings of the VCS roots to prevent them from contacting production servers. Since TeamCity 10.0.3, see also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
 
 See also the section below on [moving the server](#Move+TeamCity+Installation+to+a+New+Machine) from one machine to another.
 
