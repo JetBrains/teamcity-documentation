@@ -409,11 +409,11 @@ More details on troubleshooting Docker for Windows are available in the [Docker]
 
 ### Information about installed Docker server OS on Windows missing on Agent
 
-On Windows 10, the Docker server depends on Hyper\-V service and its start may take a significant amount of time. To resolve the issue, configure the TCBuildAgent Windows service to depend on the Docker for Windows Service, "com.docker.service" by default.
+On Windows 10, the Docker server depends on Hyper-V service and its start may take a significant amount of time. To resolve the issue, configure the TCBuildAgent Windows service to depend on the Docker for Windows Service, `com.docker.service` by default.
 
 ### Linux Docker Containers under Windows
 
-Since __TeamCity 2017.2,__ the [Docker Wrapper](docker-wrapper.md) works on Windows when Windows\-based containers are started.
+Since __TeamCity 2017.2,__ the [Docker Wrapper](docker-wrapper.md) works on Windows when Windows-based containers are started.
 
 If a Linux container is started on a Windows machine, TeamCity displays the error message "Starting Linux Docker containers under Windows is not supported. To avoid this problem, add the [`teamcity.agent.jvm.os.name`](integrating-teamcity-with-docker.md#Parameters+Reported+by+Agent) does not contain Windows [agent requirement](agent-requirements.md).
 
