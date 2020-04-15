@@ -22,11 +22,11 @@ Any page that supports the experimental UI has a toggle that allows quickly acce
 ## Available features of experimental UI
 
 Currently, the experimental UI is available for the following pages:
-* __Build Configuration Home__ and __Project Home__ pages: redesigned __Overview__ tab
-* __Build Details__ page: redesigned __Overview__, __Tests__, and __Dependencies__ tabs
-* __Agents__ page
+* __[Project Home](#Experimental+Project+Home+page)__ and __[Build Configuration Home](#Experimental+Build+Configuration+Home+page)__ pages: redesigned __Overview__ tab
+* __[Build Details](#Experimental+Build+Details+page)__ page: redesigned __Overview__, __Tests__, and __Dependencies__ tabs
+* __[Agents](#Experimental+Agents+page)__ page
 
-Each experimental page comes with a handy __sidebar__ that serves for quick navigation and preview of build/agent statuses.
+Each experimental page comes with a handy __[sidebar](#Experimental+sidebar)__ that serves for quick navigation and preview of build/agent statuses.
 
 Below, you can find a recap of these features. Please note that the described functionality is a work in progress. In case you face any unpredictable behavior in the new UI, feel free to contact us via our [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
 
@@ -34,7 +34,7 @@ Below, you can find a recap of these features. Please note that the described fu
 
 The __Overview__ tab of the experimental __Project Home__ page strives to provide more visibility of the project's nested subprojects and build configurations. The page has two main views: __Builds__ and __Trends__.
 
-The __Builds__ view resembles the classic UI and displays a list of last builds in subprojects and build configurations of the current project.
+The __Builds__ view resembles the classic UI and displays a list of the recent builds in subprojects and build configurations of the current project.
 
 The __Trends__ view comprises cards that represent build configurations, grouped by their projects. Each card contains a preview of the most recent builds displayed as bars on a timescale. You can hover over any bar to instantly see more information about the build: its duration, queue statistics, test results, used agent, and more. The card also displays the number of pending changes.
 
@@ -46,15 +46,15 @@ All the classic UI tabs are also available on the experimental page: click __Mor
 
 ### Experimental Build Configuration Home page
 
-The __Overview__ tab of the experimental __Build Configuration Home__ page provides two already familiar views: __Builds__, listing all the last builds of the configuration, and __Branches__, listing the most recent builds in active branches.
+The __Overview__ tab of the experimental __Build Configuration Home__ page provides two already familiar views: __Builds__, listing all the recent builds of the configuration, and __Branches__, listing the recent builds in active branches.
 
-Every build item in the list is expandable: click it to preview the important information about the build and get quick access to any of the __Build Details__ tabs.
+Every build item in the list is expandable: click it to preview the most important information about the build and get quick access to any of the __Build Details__ tabs.
 
 <img src="exp-build-home.png" alt="Experimental Build Home page"/>
 
 Click a specific build problem or failed test to see the related stack trace: <img src="exp-failed-test-preview.png" alt="Failed test preview"/>
 
-Click __Open in build log__ to open the new reworked build log exactly at the line where the problem occurred. 
+Click __Open in build log__ to open the new build log exactly at the line where the problem occurred. 
 
 The _Changes_ pop-up block has also been reworked. Now, build changes are sorted chronologically and grouped by their origin: user commits to the code and changes in artifact dependencies. You can also filter the changes by their author and display changes made in the build configuration settings.
 
@@ -74,7 +74,7 @@ With the __Trends__ block, you can instantly preview all the previous builds and
 
 <img src="build-trends-preview.png" width="250" alt="Build trends preview"/>
 
-A graphic timeline reflects the duration of each build stage and indicates build problems:
+The graphic timeline reflects the duration of each build stage and indicates build problems:
 
 <img src="build-timeline.png" width="600" alt="Build timeline"/>
 
@@ -90,7 +90,7 @@ Apart from the __Overview__ tab, you can use the revamped __Changes__, __Tests__
 
 * The __Changes__ tab displays more information about changes in the build, separately for user commits and artifact changes. You can filter changes by their author and display changes made in the build configuration settings.
 * The __Tests__ tab allows switching between failed, ignored, and succeeded tests. Click a test to quickly view its details or, for example, to assign an investigation.
-* The __Dependencies__ tab provides three alternative modes of displaying the build dependencies: visual timeline, structured list, and build chain. Choose the mode that is the most helpful for your current task.
+* The __Dependencies__ tab provides three alternative modes of displaying the build dependencies: a visual timeline, structured list, and build chain. Choose the mode that is the most helpful for your current task.
 
 Other classic UI tabs are also available: click __More__ and select the required tab in the list.
 
@@ -106,11 +106,14 @@ The page provides better hierarchical view of agent pools and makes it easier to
 
 The experimental sidebar is available for the project hierarchy and agent hierarchy. Depending on the current page, it serves for better navigation between either projects and build configurations, or build agents.
 
+You can change the sidebar width by dragging its frame border and hide/show it anytime by clicking the corresponding button at its bottom.
+
 #### Projects sidebar
 
-The _Projects_ sidebar contains lists all the projects available to the current user of TeamCity and allows searching them by name. You can expand any project to see the statuses of its nested subprojects / build configurations and quickly switch between them.
+The _Projects_ sidebar lists all the projects available to the current user of TeamCity and allows searching them by name. You can expand any project to see its nested subprojects / build configurations and quickly switch between them. If a project is added to your Favorites, you will also the status icons and counters for all its nested objects directly in the sidebar.
 
-Additionally, the sidebar allows accessing the __Favorite projects__ and __Favorite builds__ views with the lists of your favorite projects and favorite build configurations respectively.
+The sidebar allows accessing the __Favorite projects__ and __Favorite builds__ views with the lists of your favorite projects and favorite build configurations respectively.   
+You can also toggle the display of archived projects.
 
 #### Agents sidebar
 
@@ -122,5 +125,3 @@ The next improvements of the experimental UI will address the following areas:
 * Build Queue page
 * Sidebar and Header areas
 * Mutes/Investigations
-
-
