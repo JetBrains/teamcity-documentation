@@ -303,7 +303,7 @@ Specify the version of the installed MSBuild engine. TeamCity supports a fully f
 
 </table>
 
-##### Migrating from MSBuild Step
+##### Migrating from MSBuild Runner
 
 Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine. We have included the `msbuild` command to our refactored .NET runner to ensure a long-term support of the .NET platform development strategy.
 
@@ -316,7 +316,7 @@ Additional features you will get in the .NET runner are:
 
 Note that the .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md). If you are actively using NCover or PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
 
-##### Migrating from Visual Studio (sln) Step
+##### Migrating from Visual Studio (sln) Runner
 
 The [Visual Studio (sln)](visual-studio-sln.md) build runner is using the MSBuild engine under its hood and provides some tweaks for the VS users to ease their experience with building projects in TeamCity. Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine which makes it a migration option for the users of the Visual Studio (sln) step as well.
 
@@ -330,7 +330,7 @@ Note that certain fields have different analogs in the .NET runner:
    
 Remember that the proper version of Microsoft Visual Studio must be installed on the used build agent.
    
-Refer to the [respective section](#Migrating+from+MSBuild+Step) for more information on migration to `msbuild`.
+Refer to the [respective section](#Migrating+from+MSBuild+Runner) for more information on migration to `msbuild`.
 
 <note>
 
@@ -475,7 +475,7 @@ Set the path to the [`.runsettings`](https://docs.microsoft.com/en-us/visualstud
 
 </table>
 
-##### Migrating from Visual Studio Tests Step
+##### Migrating from Visual Studio Tests Runner
 
 Since TeamCity 2019.2.3, the .NET runner is the recommended method for testing projects with VSTest instead of the [Visual Studio Tests](visual-studio-tests.md) runner. We have included the `vstest` command to our refactored .NET runner to ensure a long-term support of the .NET platform development strategy.
 
