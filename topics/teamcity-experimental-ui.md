@@ -100,7 +100,7 @@ The experimental __Agents__ page loads faster for a large number of agents and a
 
 <img src="exp-agents-page.png" alt="Experimental Agents page"/>
 
-The page provides better hierarchical view of agent pools and makes it easier to see all their assigned projects and cloud images.
+The page provides a better hierarchical view of agent pools and makes it easier to see all their assigned projects and cloud images.
 
 ### Experimental sidebar
 
@@ -110,7 +110,7 @@ You can change the sidebar width by dragging its frame border and hide/show it a
 
 #### Projects sidebar
 
-The _Projects_ sidebar lists all the projects available to the current user of TeamCity and allows searching them by name. You can expand any project to see its nested subprojects / build configurations and quickly switch between them. If a project is added to your Favorites, you will also the status icons and counters for all its nested objects directly in the sidebar.
+The _Projects_ sidebar lists all the projects available to the current user of TeamCity and allows searching them by name. You can expand any project to see its nested subprojects / build configurations and quickly switch between them. If a project is added to your Favorites, you will also see the status icons and counters for all its nested objects directly in the sidebar.
 
 The sidebar allows accessing the __Favorite projects__ and __Favorite builds__ views with the lists of your favorite projects and favorite build configurations respectively.   
 You can also toggle the display of archived projects.
