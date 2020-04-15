@@ -115,6 +115,8 @@ The _Projects_ sidebar lists all the projects available to the current user of T
 The sidebar allows accessing the __Favorite projects__ and __Favorite builds__ views with the lists of your favorite projects and favorite build configurations respectively.   
 You can also toggle the display of archived projects.
 
+You can use the __Q__ keyboard shortcut to focus on the projects' search field. When focused, use __↑__ and __↓__ keyboard arrows to navigate between search results. To remove the focus, press __Esc__.
+
 #### Agents sidebar
 
 The _Agents_ sidebar allows browsing the agent pool hierarchy and searching agents and pools by name. The __Overview__ view provides statistics about all the agents on the server.
