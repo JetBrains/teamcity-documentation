@@ -9,6 +9,7 @@ The plugin responsible for PowerShell integration has been open-sourced [on GitH
 
 If you need to run a PowerShell script with elevated permissions, consider using the TeamCity [RunAs plugin](https://github.com/JetBrains/teamcity-runas-plugin).
 </tip>
+</tip>
 
 On this page:
 
@@ -144,6 +145,13 @@ Select whether you want to enter the script right in TeamCity, or specify a path
 
 * __File__: Enter the path to a PowerShell file. The path has to be relative to the checkout directory.
 * __Source__: Enter the PowerShell script source. Note that TeamCity [parameter references](configuring-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) will be replaced in the code.
+
+<note>
+
+If your PowerShell script source is defined via a [Kotlin DSL](kotlin-dsl.md) configuration stored in VCS, note that PowerShell variable references are treated in Kotlin as [string templates](https://kotlinlang.org/docs/reference/basic-types.html#string-templates). To workaround this issue, TeamCity automatically escapes all references entered in the _Source_ field and updates the source code in VCS. However, if you modify the script source directly in the VCS, we suggest that you manually escape variable references as `${'$'}reference_name`.   
+Alternatively, you can store your script in a separate file and reference it in the _File_ field. This way, TeamCity will also properly process references on importing the file.
+
+</note>
 
 <note>
 
