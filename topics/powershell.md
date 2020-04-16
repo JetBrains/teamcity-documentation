@@ -9,7 +9,6 @@ The plugin responsible for PowerShell integration has been open-sourced [on GitH
 
 If you need to run a PowerShell script with elevated permissions, consider using the TeamCity [RunAs plugin](https://github.com/JetBrains/teamcity-runas-plugin).
 </tip>
-</tip>
 
 On this page:
 
