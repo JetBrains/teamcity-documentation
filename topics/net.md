@@ -19,7 +19,84 @@ On this page:
 
 ## Requirements
 
-The .NET runner requires [.NET Core SDK](https://dotnet.microsoft.com/download) to be installed on your build agent machines.
+The .NET runner requires the following software to be installed on a build agent machine:
+
+<table>
+<tr><td>Command</td><td>Required software</td></tr>
+
+<tr>
+<td>
+
+[.NET CLI commands](#Build+Runner+Options)   
+(including cross-platform `msbuild` and `vstest`)
+
+</td>
+<td>
+
+* [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/) (versions 1 – 3.1)   
+   _or_
+* [.NET SDK](https://dotnet.microsoft.com/download/dotnet/5.0) (version 5.0)
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+`msbuild` command via `msbuild.exe`   
+(if Windows-only MSBuild version is selected)
+
+</td>
+
+<td>
+
+* Visual Studio (version 2013 or later)   
+   _or_
+* Visual Studio Build Tools (2013 or later)   
+   _or_
+* .NET Framework Developer Pack (version 4.5 or later) with .NET SDK
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+`vstest` command via `VSTests.Console.exe`   
+(if Windows-only VSTest version is selected)
+
+</td>
+
+<td>
+
+* Visual Studio (version 2013 or later)   
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+`devenv` command
+
+</td>
+
+<td>
+
+* Visual Studio (version 2013 or later)   
+
+</td>
+
+</tr>
+
+</table>
+
+### .NET Version Detection Algorithm
 
 TeamCity searches for the .NET executable files in the following order:
 1. In the directory defined in the environment variable `DOTNET_HOME` for a TeamCity agent. For example, `DOTNET_HOME=D:\SDK\dotnet\`.
@@ -35,29 +112,30 @@ TeamCity will use the first .NET version it finds. If you have several .NET vers
 
 Currently, the .NET runner supports the following commands:
 
-* CLI commands (read more in the [.NET Core guide](https://docs.microsoft.com/en-us/dotnet/core/tools/)):
-  * Basic commands:
-      * [`build`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build)
-      * [`clean`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-clean)
-      * [`restore`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-restore)   
-      (requires .NET CLI 2.1.400+ for authentication in [private feeds](#Authentication+in+Private+NuGet+Feeds))
-      * [`pack`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-pack)
-      * [`publish`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)
-      * [`run`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run)
-      * [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test)
-   * Advanced commands:
-     * [`msbuild`](#msbuild)
-     * [`vstest`](#vstest)
+* Basic .NET CLI commands:
+   * [`build`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build)
+   * [`clean`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-clean)
+  * [`restore`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-restore)   
+  (requires .NET CLI 2.1.400+ for authentication in [private feeds](#Authentication+in+Private+NuGet+Feeds))
+  * [`pack`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-pack)
+  * [`publish`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)
+  * [`run`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run)
+  * [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test)
+* Advanced commands:
+     * [`msbuild`](#msbuild)\*
+     * [`vstest`](#vstest)\*
      * [`nuget delete`](#nuget+delete)   
      (requires .NET CLI 2.1.500+ for authentication in [private feeds](#Authentication+in+Private+NuGet+Feeds))
      * [`nuget push`](#nudget+push)   
      (requires .NET CLI 2.1.500+ for authentication in [private feeds](#Authentication+in+Private+NuGet+Feeds))
 * Visual Studio command-line mode (read more in the [Visual Studio reference](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches)):
   * [`devenv`](#Visual+Studio+command-line+mode)
+  
+\* _`msbuild` and `vstest` are executed as [CLI commands](https://docs.microsoft.com/en-us/dotnet/core/tools/) if cross-platform .NET SDK is used for building a project. Otherwise, they are run using the `msbuild` or `VSTest.Console` tool respectively._
 
-### Basic CLI Commands
+### Basic Commands
 
-The set of available .NET runner's options depends on the selected command. Available options for basic .NET CLI commands are:
+The set of .NET runner's options depends on the selected command. Available options for basic .NET CLI commands are:
 
 <table><tr>
 
@@ -239,15 +317,15 @@ Available logging modes: `<Default>`, `Minimal`, `Normal`, `Detailed`, or `Diagn
 
 </tr></table>
 
-### Advanced CLI Commands
+### Advanced Commands
 
 #### msbuild
 
-The [`dotnet msbuild`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild) command is used to build a project and all its dependencies with the [Microsoft Build Engine](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild).
+The `msbuild` command is used for building a project and all its dependencies with the Microsoft Build Engine. 
+Depending on the selected MSBuild version, `msbuild` can either be run as the [cross-platform .NET CLI command](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild) or as the [Windows-only `msbuild.exe` tool](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild).
 
-The command requires .NET Framework or .NET Core installed on the build agent. [Microsoft Build Tools](https://devblogs.microsoft.com/visualstudio/msbuild-is-now-part-of-visual-studio/) 2013-2019 are supported. Note that Mono is not supported with this runner.
 
-The `msbuild` command shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+CLI+Commands) for more details).
+The `msbuild` command shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+Commands) for more details).
 
 MSBuild-specific settings are:
 
@@ -295,7 +373,7 @@ MSBuild version
 
 <td>
 
-Specify the version of the installed MSBuild engine. TeamCity supports a fully functional MSBuild for both cross-platform .NET Core (since TeamCity 2019.2.3) and Windows-only versions 2013, 2015, 2017, and 2019.
+Specify the version of the installed MSBuild engine. See the [Requirements](#Requirements) section for more details.
 
 </td>
 
@@ -310,15 +388,17 @@ Since TeamCity 2019.2.3, the .NET runner is the recommended method for building 
 You can safely switch [MSBuild steps](msbuild.md) in your existing build configurations to the .NET runner. Make sure to copy all additional command-line parameters and other important settings to the new runner. See the [`msbuild`](#msbuild) section for more details on the settings available in the .NET runner.
 
 Additional features you will get in the .NET runner are:
-* Support of cross-platform MSBuild for .NET Core projects
+* Support of cross-platform MSBuild for .NET projects
 * Ability to build a project for a different platform specified in the _Runtime_ field
 * Ability to run the project in a Docker container with our [Docker Wrapper](docker-wrapper.md) extension
 
-Note that the .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md). If you are actively using NCover or PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
+Consider the following notes before migrating:
+* The .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md). If you are actively using NCover or PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
+* Mono is not supported with this runner.
 
 ##### Migrating from Visual Studio (sln) Runner
 
-The [Visual Studio (sln)](visual-studio-sln.md) build runner is using the MSBuild engine under its hood and provides some tweaks for the VS users to ease their experience with building projects in TeamCity. Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine which makes it a migration option for the users of the Visual Studio (sln) step as well.
+The [Visual Studio (sln)](visual-studio-sln.md) build runner is using the MSBuild engine under its hood and provides a few tweaks for the VS users to ease their experience with building projects in TeamCity. Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine which makes it a migration option for the users of the Visual Studio (sln) step as well.
 
 In general, to softly switch each existing Visual Studio (sln) build step to the .NET runner you need to:
 1. Remember/copy the values of your Visual Studio (sln) runner's settings and command-line parameters.
@@ -326,9 +406,7 @@ In general, to softly switch each existing Visual Studio (sln) build step to the
 3. Fill in the fields according to the [`msbuild`] section.   
 Note that certain fields have different analogs in the .NET runner:
    * The MSBuild version should be specified instead of the version and platform of Visual Studio. See the [reference on versions](https://en.wikipedia.org/wiki/MSBuild#Versions).
-   * Instead of _Solution file path_, specify paths to solutions in the _Projects_ field.
-   
-Remember that the proper version of Microsoft Visual Studio must be installed on the used build agent.
+   * Paths to solutions should be specified in the _Projects_ field.
    
 Refer to the [respective section](#Migrating+from+MSBuild+Runner) for more information on migration to `msbuild`.
 
@@ -340,11 +418,9 @@ Note that TeamCity provides a new way to run Visual Studio projects. The .NET ru
 
 #### vstest
 
-The `vstest` command represents the [VSTest console runner](https://plugins.jetbrains.com/plugin/9056-vstest-console-runner) and enables TeamCity to execute tests and automatically import their test results.
+The `vstest` command is used for testing a project with the VSTest engine and automatically importing the test results. Depending on the selected VSTest version, `vstest` can either be run as the [cross-platform .NET CLI command](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-vstest) or as the [VSTest console](https://plugins.jetbrains.com/plugin/9056-vstest-console-runner).
 
-The command requires Visual Studio Test Agent or Microsoft Visual Studio installed on the build agent.
-
-The `vstest` command shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+CLI+Commands) for more details).
+The `vstest` command shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+Commands) for more details).
 
 VSTest-specific fields are:
 
@@ -395,7 +471,7 @@ VSTest version
 
 <td>
 
-Specify the installed version of VSTest. TeamCity supports cross-platform VSTest (since TeamCity 2019.2.3) and Windows-only versions 2013, 2015, 2017, and 2019.
+Specify the installed version of VSTest. See the [Requirements](#Requirements) section for more details.
 
 </td>
 
@@ -413,7 +489,7 @@ Platform
 
 <td>
 
-Specify the target platform: x86, x64, or ARM.
+If necessary, specify the target platform: x86, x64, or ARM. Leave _\<Auto\>_ to use the platform selected by VSTest.
 
 </td>
 
@@ -481,20 +557,17 @@ Since TeamCity 2019.2.3, the .NET runner is the recommended method for testing p
 
 You can safely migrate existing Visual Studio Tests build steps to the .NET runner with the selected `vstest` command. Make sure to copy all additional command-line parameters and other important settings to the new runner. See the [`vstest`](#vstest) section for more details on the settings available in the .NET runner.
 
+Additional features you will get in the .NET runner are:
+* Support of cross-platform VSTest for .NET projects
+* Real-time test reporting by default
+* Support of ARM platform, along with x86 and x64
+* Ability to run and test the project inside a Docker container with our [Docker Wrapper](docker-wrapper.md) extension
+
 Consider the following notes before migrating:
 * The .NET runner supports the new [`.runsettings`](https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file) format of the VSTest settings file. However, it does not support the obsolete run configuration file format used in the Visual Studio Tests runner.
-* Instead of the framework version, the .NET runner requests to specify the VSTest version. Note that the cross-platform version is now available.
-* Apart from x86 and x64 platforms, ARM is also available in the .NET runner.
-* Real-time test reporting is currently not available with the new functionality.
+* Instead of the framework version, the .NET runner requests to specify the VSTest version.
 * The .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md). If you are actively using NCover or PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
-
-Note that the .NET runner allows you launching Visual Studio Tests in a Docker container with our [Docker Wrapper](docker-wrapper.md) extension.
-
-<note>
-
-The .NET runner does not support the MSTest framework since all its features are covered by VSTest. If you were using MSTest as the engine of the Visual Studio Tests runner, we suggest that you switch to VSTest when migrating to the .NET runner.
-
-</note>
+* The .NET runner does not support the MSTest tool since all features of its framework are covered by VSTest. If you were using MSTest as the engine of the Visual Studio Tests runner, we suggest that you switch to VSTest when migrating to the .NET runner.
 
 #### nuget delete
 
@@ -510,9 +583,7 @@ Since TeamCity 2019.2.3, the .NET runner supports the Visual Studio command-line
 
 Devenv allows configuring custom options for the IDE, build, debug, and deploy projects from the command line using different [switches](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches#devenv-switch-syntax).
 
-The command requires the proper version of Microsoft Visual Studio to be installed on the used build agent.
-
-`devenv` shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+CLI+Commands) for more details).
+`devenv` shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+Commands) for more details).
 
 Devenv-specific fields are:
 
@@ -560,13 +631,21 @@ Visual Studio version
 
 <td>
 
-Specify the version of the installed Visual Studio. Versions 2013, 2015, 2017, and 2019 are supported.
+If necessary, specify the version of the installed Visual Studio. Leave _\<Any\>_ to use the latest installed version.
+
+See the [Requirements](#Requirements) section for more details.
 
 </td>
 
 </tr>
 
 </table>
+
+<note>
+
+Note that Devenv does not provide functionality for displaying a structured build log or providing test reports. Its main purpose is to allow using custom switches and add-ins for Visual Studio.
+
+</note>
 
 ## Docker Settings
 
@@ -630,7 +709,7 @@ The path to .NET CLI executable.
 
 <td>
 
-The .NET Core SDK version.
+The .NET SDK version.
 
 </td></tr></table>
 
