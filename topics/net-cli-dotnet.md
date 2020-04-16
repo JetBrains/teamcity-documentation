@@ -1,5 +1,5 @@
 [//]: # (title: .NET CLI (dotnet))
-[//]: # (auxiliary-id: viewpage.actionpageId113084145;.NET CLI (dotnet))
+[//]: # (auxiliary-id: .NET;viewpage.actionpageId113084145;.NET CLI (dotnet))
 
 TeamCity comes with the built-in support of the .NET CLI toolchain providing .NET CLI (dotnet) build steps, CLI detection on the build agents, and autodiscovery of build steps in your repository.
 
