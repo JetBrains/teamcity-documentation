@@ -381,7 +381,7 @@ Build Configuration/Template details: `GET` [`http://teamcity:8111/app/rest/buil
  
 See details on the [Build Configuration Locator](#Build+Configuration+Locator).
  
-Note that there is no transaction, for example support for settings editing in TeamCity, so all the settings modified via REST API are taken into account at once. This can result in half\-configured builds triggered and other issues. Make sure you pause a build configuration before changing its settings if this aspect is important for your case.
+Note that there is no transaction support for editing build configuration settings in TeamCity to make all the settings modified via REST API taken into account at once. This can result in half\-configured builds triggered and other issues. Make sure you pause a build configuration before changing its settings if this aspect is important for your case.
  
 To get aggregated status for several build configurations, see [Build Status Icon](#Build+Status+Icon)  section.
  
