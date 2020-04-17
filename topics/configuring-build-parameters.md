@@ -185,7 +185,7 @@ All build parameters starting with `env.` prefix (environment variables) are pas
 
 All build parameters starting with `system.` prefix (system properties) are passed to the supported __build script engines and can be referenced there by the property name__, without `system.` prefix.   
 Note that this syntax will work __in the build script__ (__not__ in TeamCity settings):
-* For [Ant](ant.md), [Maven](maven.md) and [NAnt](nant.md), use `$(<property name>)`
+* For [Ant](ant.md), [Maven](maven.md) and [NAnt](nant.md), use `${<property name>}`
 * For [MSBuild](msbuild.md) (Visual Studio 2005/2008 Project Files), use `$(<property name>)`. Note that MSBuild does not support names with dots ("`.`"), so you need to replace "`.`" with "`_`" when using the property inside a build script.
 * For [Gradle](gradle.md): the TeamCity system properties can be accessed as Gradle properties (similar to the ones defined in the `gradle.properties` file) and are to be referenced as follows:   
     a) name allowed as Groovy identifier (the property name does not contain dots):
