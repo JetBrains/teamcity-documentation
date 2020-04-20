@@ -25,7 +25,7 @@ The same applies to the metadata about artifacts mappings, which will be publish
 
 TeamCity comes bundled with [Amazon S3 Artifact Storage](https://plugins.jetbrains.com/plugin/9623-aws-s3-artifact-storage) plugin which allows storing build artifacts in an Amazon S3 bucket.
 
-It is possible to replace the TeamCity built\-in artifacts storage with [AWS S3](https://aws.amazon.com/s3/) at the project level. When S3 artifact storage is configured, it:
+It is possible to replace the TeamCity built-in artifacts storage with [AWS S3](https://aws.amazon.com/s3/) at the project level. When S3 artifact storage is configured, it:
 * allows uploading to, downloading and removing artifacts from S3
 * handles resolution of artifact dependencies as well as clean-up of artifacts
 * displays artifacts located externally in the TeamCity web UI
@@ -41,6 +41,10 @@ __To enable external artifact storage in an AWS S3 bucket__
 7. Save your settings. 
 8. The configured S3 storage will appear on the __Artifacts storage__ page. Make it active using the corresponding link.
 
+<anchor name="forceVirtualHostAddressing"/>
+
+Since TeamCity 2019.2.3, you can force the virtual host addressing for S3 buckets by enabling the `teamcity.internal.storage.s3.forceVirtualHostAddressing` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). Currently, both hosted-style and path-style requests are supported by TeamCity. Note that Amazon will [stop supporting path-style access](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access) for new buckets since September 2020.   
+With this property enabled, you will be able to select the respective option in S3 Parameters.   
 Now new artifacts produced by builds of this project with its subprojects and build configurations will be stored in the specified AWS S3 bucket.
 
 #### Permissions
