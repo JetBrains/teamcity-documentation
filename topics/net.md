@@ -404,7 +404,7 @@ The [Visual Studio (sln)](visual-studio-sln.md) build runner is using the MSBuil
 In general, to softly switch each existing Visual Studio (sln) build step to the .NET runner you need to:
 1. Remember/copy the values of your Visual Studio (sln) runner's settings and command-line parameters.
 2. Switch the Visual Studio (sln) build step to the .NET runner and select the `msbuild` command.
-3. Fill in the fields according to the [`msbuild`] section.   
+3. Fill in the fields according to the [`msbuild`](#msbuild) section.   
 Note that certain fields have different analogs in the .NET runner:
    * The MSBuild version should be specified instead of the version and platform of Visual Studio. See the [reference on versions](https://en.wikipedia.org/wiki/MSBuild#Versions).
    * Paths to solutions should be specified in the _Projects_ field.
@@ -644,7 +644,7 @@ See the [Requirements](#Requirements) section for more details.
 
 <note>
 
-Note that Devenv does not provide functionality for displaying a structured build log or providing test reports. Its main purpose is to allow using custom switches and add-ins for Visual Studio.
+Note that Devenv does not provide functionality for displaying a structured build log or test reports. Its main purpose is to allow using custom switches and add-ins for Visual Studio.
 
 </note>
 
