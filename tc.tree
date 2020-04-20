@@ -237,7 +237,7 @@
                   </toc-element>
                   <toc-element id="docker.md"/>
                   <toc-element id="docker-compose.md"/>
-                  <toc-element id="net-cli-dotnet.md"/>
+                  <toc-element id="net.md"/>
                </toc-element>
                <toc-element id="adding-build-features.md">
                   <toc-element id="vcs-labeling.md"/>

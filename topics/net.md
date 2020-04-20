@@ -54,15 +54,15 @@ Select a `dotnet` command from the drop-down menu. Depending on the selected com
 * [`pack`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-pack)
 * [`publish`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)
 * [`restore`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-restore)    
-(requires .NET CLI 2.1.400\+ for [authentication in private feeds](net-cli-dotnet.md))
+(requires .NET CLI 2.1.400\+ for [authentication in private feeds](net.md))
 * [`run`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run)
 * [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test)
 * [`vstest`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-vstest)
 * [`msbuild`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild)
 * [`nuget delete`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-delete)    
- (requires .NET CLI 2.1.500\+ for [authentication in private feeds](net-cli-dotnet.md#Authentication+in+private+NuGet+Feeds))
+ (requires .NET CLI 2.1.500\+ for [authentication in private feeds](net.md#Authentication+in+private+NuGet+Feeds))
 * [`nuget push`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push)    
-(requires .NET CLI 2.1.500\+ for [authentication in private feeds](net-cli-dotnet.md#Authentication+in+private+NuGet+Feeds))
+(requires .NET CLI 2.1.500\+ for [authentication in private feeds](net.md#Authentication+in+private+NuGet+Feeds))
 
 
 </td></tr><tr>
