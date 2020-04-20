@@ -121,7 +121,7 @@ TeamCity supports a wide range of build tools, enabling both Java and .NET softw
   * Windows: NuGet versions prior to 2.8.6 require .NET Framework 4.0\+ installed on the build agent
   * Windows: NuGet 2.8.6 and later requires .NET 4.5
   * Linux and macOS: require [Mono](http://www.mono-project.com/docs/getting-started/install/) 4.4.2\+ and NuGet CLI 3.2\+ installed on the agent
-* [.NET CLI (dotnet)](net-cli-dotnet.md). Requires the [.NET Core SDK](https://www.microsoft.com/net/core) installed on build agents.
+* [.NET CLI (dotnet)](net.md). Requires the [.NET Core SDK](https://www.microsoft.com/net/core) installed on build agents.
 
 ### Other runners
 

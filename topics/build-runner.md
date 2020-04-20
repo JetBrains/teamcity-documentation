@@ -7,7 +7,7 @@ Each build runner has two parts:
 * the agent\-side part that executes a build on an agent
 
 TeamCity comes bundled with the following runners:
-* [.NET CLI (dotnet)](net-cli-dotnet.md)
+* [.NET CLI (dotnet)](net.md)
 * [.NET Process Runner](net-process-runner.md)
 * [Ant](ant.md)
 * [Command Line](command-line.md) – run an arbitrary command line
