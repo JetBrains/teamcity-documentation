@@ -192,7 +192,7 @@ The dotCover console tool supports profiling of .NETCore.App 2.0+ since version 
 
 Since version 2019.2, TeamCity allows collecting coverage for .NET Core projects on Linux and macOS by supporting cross-platform JetBrains dotCover, version 2019.2.3+.
 
-dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, add the [cross-platform dotCover tool](https://www.nuget.org/packages/JetBrains.dotCover.DotNetCliTool) in __[Administration | Tools](installing-agent-tools.md)__ and enable the dotCover coverage in the [.NET CLI](net.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 1.4.6+ installed.
+dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, add the [cross-platform dotCover tool](https://www.nuget.org/packages/JetBrains.dotCover.DotNetCliTool) in __[Administration | Tools](installing-agent-tools.md)__ and enable the dotCover coverage in the [.NET CLI](net-cli-dotnet.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 1.4.6+ installed.
 
 <note>
 
