@@ -68,11 +68,13 @@ Installing NuGet on agents results in agents upgrade.
 
 NuGet uses several local caches to avoid downloading packages that are already installed, and to provide offline support. If an agent is running out of the space, TeamCity will try to clean NuGet packages cache on the agent.
 
-The caches in the following directories will be cleaned:
+The TeamCity NuGet cleaner cleans caches in the following Windows directories:
 * `%%NUGET_PACKAGES%% environment variable` (must be an absolute path)
 * `%%LOCALAPPDATA%%\NuGet\Cache`
 * `%%LOCALAPPDATA%%\NuGet\v3-cache`
 * `%%user.home%\.nuget\packages`
+
+Since TeamCity 2019.2.3, the new automatic package cleaner has been introduced in addition to the existing NuGet cleaner. If .NET SDK is installed on a build agent, TeamCity will use native .NET SDK commands for cleaning. The new cleaner works across all platforms supporting .NET SDK and operates on several levels. It cleans the temporary cache first, and only then gets to cleaning the `.nupkg` files and HTTP requests, if necessary.
 
 ## Authentication in private NuGet Feeds
 
