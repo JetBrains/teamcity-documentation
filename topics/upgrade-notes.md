@@ -3,9 +3,9 @@
 
 ## Changes from 2019.2.2 to 2019.2.3
 
-### Reworked .NET build step
+### Reworked .NET build runner
 
-The .NET CLI (dotnet) build step has been refactored and renamed to __.NET__ thus emphasizing that now it supports all .NET-related operations previously implemented in TeamCity as multiple build steps.
+The .NET CLI (dotnet) build runner has been refactored and renamed to __.NET__ thus emphasizing that now it supports all .NET-related operations previously implemented in TeamCity as multiple build steps.
 
 All existing .NET CLI (dotnet) steps will continue working as usual under the new _.NET_ name, with no additional tuning required.
 
