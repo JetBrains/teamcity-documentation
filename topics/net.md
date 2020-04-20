@@ -321,9 +321,8 @@ Available logging modes: `<Default>`, `Minimal`, `Normal`, `Detailed`, or `Diagn
 
 #### msbuild
 
-The `msbuild` command is used for building a project and all its dependencies with the Microsoft Build Engine. 
+The `msbuild` command is used for building a project and all its dependencies with the Microsoft Build Engine.   
 Depending on the selected MSBuild version, `msbuild` can either be run as the [cross-platform .NET CLI command](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild) or as the [Windows-only `msbuild.exe` tool](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild).
-
 
 The `msbuild` command shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+Commands) for more details).
 
