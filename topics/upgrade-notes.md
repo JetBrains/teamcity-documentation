@@ -15,11 +15,11 @@ See the [.NET description](net.md) for more information about the new .NET step 
 
 <note>
   
-Since the reworked .NET runner introduces new options and features, you might not be able to use them if downgrading to the earlier versions of TeamCity. We suggest that you [back up your TeamCity data](creating-backup-from-teamcity-web-ui.md) both before upgrading to 2019.2.3 and after migrating steps to the .NET runner in 2019.2.3.
+Since the reworked .NET runner introduces new options and features, you might not be able to use them if downgrading to the earlier versions of TeamCity. In such case, you will have to return to using the obsolete runners after downgrading. To prevent any issues, you can [back up your TeamCity data](creating-backup-from-teamcity-web-ui.md) before upgrading to version 2019.2.3.
   
 </note>
 
-If you face any problems with migration to the .NET step or encounter other related problems, do not hesitate to contact us via any convenient [feedback channel](https://confluence.jetbrains.com/display/TW/Feedback).
+If you face any problems with migration to the .NET runner or encounter other related issues, do not hesitate to contact us via any convenient [feedback channel](https://confluence.jetbrains.com/display/TW/Feedback).
 
 ## Changes from 2019.2.1 to 2019.2.2
 
