@@ -1,5 +1,12 @@
 [//]: # (title: MSBuild)
 [//]: # (auxiliary-id: MSBuild)
+
+<note>
+
+Since TeamCity 2019.2.3, we have stopped providing active support for the MSBuild runner. Please use the .NET runner with the `msbuild` command instead. For more details on migration, refer to the [.NET runner description](net.md#Migrating+from+MSBuild+Runner).
+
+</note>
+
 This page contains reference information for the __MSBuild__ build runner fields.
 
 On this page:
