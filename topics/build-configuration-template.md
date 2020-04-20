@@ -100,7 +100,7 @@ A build configuration associated with a template inherits all its settings (mark
 
 Modifying settings in the template will influence __all configurations__ associated with this template; however, it is possible to redefine most settings in an associated build configuration.
 
-You can redefine almost all the build configuration settings (for example, build steps, [parameters](configuring-build-parameters.md), [build options](configuring-general-settings.md#Build+Options)). The only exceptions are snapshot dependecies and checkout rules which __cannot be redefined__.
+You can redefine almost all the build configuration settings (for example, build steps, [parameters](configuring-build-parameters.md), [build options](configuring-general-settings.md#Build+Options)). The only exceptions are snapshot dependencies and checkout rules which __cannot be redefined__.
 
 Modified settings are highlighted with a yellow border, and the __Reset__ button appears on the right of the modified settings enabling you to revert the changes to the original settings of the template.
 
