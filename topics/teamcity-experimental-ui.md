@@ -23,7 +23,7 @@ Any page that supports the experimental UI has a toggle that allows quickly acce
 
 Currently, the experimental UI is available for the following pages:
 * __[Project Home](#Experimental+Project+Home+page)__ and __[Build Configuration Home](#Experimental+Build+Configuration+Home+page)__ pages: redesigned __Overview__ tab
-* __[Build Details](#Experimental+Build+Details+page)__ page: redesigned __Overview__, __Tests__, and __Dependencies__ tabs
+* __[Build Details](#Experimental+Build+Details+page)__ page: redesigned __Overview__, __Tests__, __Changes__, __Build Log__, and __Dependencies__ tabs
 * __[Agents](#Experimental+Agents+page)__ page
 
 Each experimental page comes with a handy __[sidebar](#Experimental+sidebar)__ that serves for quick navigation and preview of build/agent statuses.
@@ -82,7 +82,8 @@ Click any stage to open the corresponding line of the build log. In the new UI, 
 
 <tip>
 
-The __Actions__ menu offers a handy new option – __Compare with__. Choose this action to compare the parameters and results of the current build with any other selected build side-by-side.
+The __Actions__ menu offers a handy new option – __Compare with__. Choose this action to compare the parameters and results of the current build with any other selected build side-by-side.   
+This option is also available from the build's context menu in the build list.
 
 </tip>
 
