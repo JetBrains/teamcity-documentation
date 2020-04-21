@@ -59,12 +59,15 @@ Note that on Windows, a node might not be able to access the TeamCity Data Direc
 mklink /d "C:\<path to mount point>" "\\<host>\<shared directory name>\"
 ```
 
-
+<anchor name="network-file-systems-caches"/>
 <note>
 __Important!__
 
 It is important that all the nodes "see" the current state of the Data Directory without delay. If this is not the case, it is likely to manifest in various unstable behavior and frequent build logs corruption.
-For example if TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure that all the registry keys mentioned in the [related article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all of the TeamCity nodes.
+
+If TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure that all the registry keys mentioned in the [related article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all of the TeamCity nodes.
+
+If Data Directory is shared via NFS, make sure that all nodes have the following option in their mount settings: `lookupcache=positive`.
 </note>
 
 
