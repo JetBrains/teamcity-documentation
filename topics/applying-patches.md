@@ -84,9 +84,9 @@ __To enable logging from .NET runners:__
 6. You may patch the Log4NET config file if you need.
 7. Pack the files again. Make sure there are no files in the root of the plugin archive.
 8. Create the  `<TeamCity Server>/webapps/ROOT/update/plugins` directory.
-9. Put `dotNetPlugin.zip` file into &lt;`TeamCity Server>/webapps/ROOT/update/plugins.`All build agents will upgrade automatically.
+9. Put the `dotNetPlugin.zip` file into `<TeamCity Server>/webapps/ROOT/update/plugins`. All build agents will upgrade automatically.
 10. Run builds.
 
-By default, all the log files will be stored in the `<TeamCity agent>/temp/buildTmp/TeamCity.NET` folder. Log files are created for each process separately.
+By default, all the log files will be stored in the `<TeamCity agent>/temp/buildTmp/TeamCity.NET` directory. Log files are created for each process separately.
 
 __ __
