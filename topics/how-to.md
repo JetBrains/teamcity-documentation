@@ -1048,7 +1048,7 @@ Please also review the [section](agent-home-directory.md) for a list of director
 
 ## Share the Build number for Builds in a Chain Build
 
-A build number can be shared for builds connected by a [snapshot dependency](dependent-build.md#Snapshot+Dependency) or an [artifact dependency](dependent-build.md#Artifact+Dependency) using a reference to the following dependency property: `%dep.&lt;btID&gt;.system.build.number%`.
+A build number can be shared for builds connected by a [snapshot dependency](dependent-build.md#Snapshot+Dependency) or an [artifact dependency](dependent-build.md#Artifact+Dependency) using a reference to the following dependency property: `%dep.<btID>.system.build.number%`.
 
 For example, you have build configurations A and B that you want to build in sync: use the same sources and take the same build number.   
 Do the following:
