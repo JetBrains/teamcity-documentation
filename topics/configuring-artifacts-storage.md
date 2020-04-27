@@ -49,7 +49,7 @@ Now new artifacts produced by builds of this project with its subprojects and bu
 
 <note>
 
-If you are using the `us-east-1` region in TeamCity 2019.2.3, make sure to read about the related [known issue](known-issues.md#AWS+region+%27us-east-1%27+cannot+be+set+in+S3+artifact+storage+settings).
+If you are using the `us-east-1` region in TeamCity 2019.2.3, make sure to read about the related [known issue](known-issues.md#AWS+region+us-east-1+cannot+be+set+in+S3+artifact+storage+settings).
 
 </note>
 
