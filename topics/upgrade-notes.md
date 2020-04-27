@@ -27,6 +27,15 @@ The bundled version of Java in Windows installers of TeamCity Server and Agent a
 
 ## Changes from 2019.2.1 to 2019.2.2
 
+### Caching Git submodules
+
+To improve performance on agent checkout, TeamCity caches regular Git repositories on agents. Since this version, it also caches Git submodules.   
+If your custom scripts or settings depend on the main alternates source for submodules and it causes Git to operate with errors, consider one of the following workarounds:
+* Disable the new mirroring mechanism by setting the [build parameter](configuring-build-parameters.md) `teamcity.internal.git.agent.submodules.useMirrors` to `false`.
+* Modify your custom settings to point at the parent `git` directory instead of the exact source directory.
+
+### Bundled Tools Updates
+
 * TeamCity Visual Studio Add-in Web installer has been updated to ReSharper version 2019.3.2.
 
 ## Changes from 2019.2 to 2019.2.1
