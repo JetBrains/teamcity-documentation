@@ -47,6 +47,12 @@ Since TeamCity 2019.2.3, you can force the virtual host addressing for S3 bucket
 With this property enabled, you will be able to select the respective option in S3 Parameters.   
 Now new artifacts produced by builds of this project with its subprojects and build configurations will be stored in the specified AWS S3 bucket.
 
+<note>
+
+If you are using the `us-east-1` region in TeamCity 2019.2.3, make sure to read about the related [known issue](known-issues.md#AWS+region+%27us-east-1%27+cannot+be+set+in+S3+artifact+storage+settings).
+
+</note>
+
 #### Permissions
 
 When the "Use Pre\-Signed URLs for upload" option is enabled, the provided AWS credentials or IAM role on the TeamCity server should have permissions: `DeleteObject, ListAllMyBuckets, GetBucketLocation, GetObject, ListBucket, PutObject`.
