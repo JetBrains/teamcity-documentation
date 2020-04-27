@@ -461,11 +461,17 @@ To resolve this issue, we suggest that you use Xcode 11 instead. To workaround t
 
 ### 2019.2.3 Known Issues
 
+### NuGet feed credentials for external repositories do not work with .NET runner
+
+The [.NET build runner](net.md) currently does not support using [NuGet feed credentials](nuget-feed-credentials.md) for authentication in external repositories.
+
+To work around this issue in TeamCity 2019.2.3, download the [patched .NET Packages Support plugin](https://youtrack.jetbrains.com/issue/TW-65581#focus=streamItem-27-4110405.0-0) and install it as any other [additional plugin](installing-additional-plugins.md). The bundled .NET Packages Support plugin will be automatically updated with the fix in our next release.
+
 #### AWS region 'us-east-1' cannot be set in S3 artifact storage settings
 
 If the `us-east-1` region is selected in S3 artifact storage settings, it will be automatically reset to another available region on saving the settings. This is caused by the incorrect bucket location returned for `us-east-1` from AWS.
 
-To work around this issue in TeamCity 2019.2.3, download the [patched TeamCity S3 Storage plugin](https://youtrack.jetbrains.com/issue/TW-64670) and install it as any other [additional plugin](installing-additional-plugins.md). The bundled S3 Storage plugin will be automatically updated in our next release.
+To work around this issue in TeamCity 2019.2.3, download the [patched TeamCity S3 Storage plugin](https://youtrack.jetbrains.com/issue/TW-64670#focus=streamItem-27-4108345.0-0) and install it as any other [additional plugin](installing-additional-plugins.md). The bundled S3 Storage plugin will be automatically updated with the fix in our next release.
 
 ### 2019.2 Known Issues
 
