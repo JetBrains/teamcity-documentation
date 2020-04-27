@@ -461,7 +461,7 @@ To resolve this issue, we suggest that you use Xcode 11 instead. To workaround t
 
 ### 2019.2.3 Known Issues
 
-### NuGet feed credentials for external repositories do not work with .NET runner
+#### NuGet feed credentials for external repositories do not work with .NET runner
 
 The [.NET build runner](net.md) currently does not support using [NuGet feed credentials](nuget-feed-credentials.md) for authentication in external repositories.
 
