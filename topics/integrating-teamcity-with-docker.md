@@ -141,7 +141,13 @@ TeamCity provides the Docker Wrapper extension for [Command Line](command-line.m
 
 Docker Disk Space Cleaner is an extension to the [Free Disk Space](free-disk-space.md) build feature ensuring a certain amount of disk space for a build.   
 
-TeamCity performs regular clean-up of Docker images, related to TeamCity:
+TeamCity performs regular clean-up of Docker images, related to TeamCity. _Related to TeamCity_ image is the one which was tagged/pulled  
+* In a build with [Docker build feature](docker-support.md) configured or
+* In a [Docker command](docker.md) or [Docker compose](docker-compose.md) build step or
+* In a build step with enabled [Docker wrapper](docker-wrapper.md)
+
+For such builds,  
+
 * The TeamCity agent tracks Docker images tagged or pulled during builds (the list of images is stored in the `buildAgent/system/docker-used-images.dat` file). 
 * During clean-up / freeing disk space, TeamCity agent tries to remove these images if they were not used within 3 days, 1 day, 0 on subsequent attempts to free disk space.  
 
