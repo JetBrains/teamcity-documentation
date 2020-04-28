@@ -381,10 +381,10 @@
       <toc-element id="getting-started-with-nunit.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="getting-started-with-php.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
    </toc-element>
-   <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
-   <toc-element toc-title="Documentation for previous versions" href="https://confluence.jetbrains.com/display/TW/Documentation"/>
    <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
    <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
    <toc-element toc-title="TeamCity 2019.1 Help" href="https://www.jetbrains.com/help/teamcity/2019.1/teamcity-documentation.html"/>
+   <toc-element toc-title="Documentation for Previous Versions" href="https://confluence.jetbrains.com/display/TW/Documentation"/>
 </product-profile>
