@@ -42,10 +42,8 @@ Technically, build runners are implemented as plugins.
 
 Build runners are configurable in the [Configuring Build Steps](configuring-build-steps.md) section of the [Create/Edit Build Configuration](creating-and-editing-build-configurations.md) page.
 
- __  __
-
-__See also:__
-
-__Administrator's Guide__: [Configuring Build Steps](configuring-build-steps.md)
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-build-steps.md">Configuring Build Steps</a>
+        </category>
+</seealso>

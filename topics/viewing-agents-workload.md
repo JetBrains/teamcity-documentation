@@ -2,8 +2,6 @@
 [//]: # (auxiliary-id: Viewing Agents Workload)
 TeamCity provides handy ways to estimate build agents efficiency and help you manage your system:
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Load Statistics Matrix
 
 The Matrix available at the __Matrix__ tab on the __Agents__ page provides you with a bird's eye view of the overall Build Agents workload for all finished builds during the time range you selected. By taking a look at the build configurations compatible with a particular agent, you can [assign the build configuration to particular Build Agents](assigning-build-configurations-to-specific-build-agents.md) and significantly lower the idle time. This helps you adjust the hardware resources usage more effectively and fill the discovered productivity gaps.
@@ -32,11 +30,11 @@ You will find this feature helpful in:
 * locating and eliminating the gap between the most frequently used computers and those which are often idle
 * reducing the cost of your hardware resources ownership
 
-__  __
-
-__See also:__
-
-__Concepts__: [Build Agent](build-agent.md)   
-__Installation and Upgrade__: [Installing and Running Additional Build Agents](installation.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-agent.md">Build Agent</a>
+        </category>
+        <category ref="installation">
+            <a href="installation.md">Installing and Running Additional Build Agents</a>
+        </category>
+</seealso>

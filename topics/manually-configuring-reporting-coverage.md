@@ -12,11 +12,6 @@ First, the build script needs to let TeamCity know details on the coverage engin
 Then, the build script can issue one or several "importData" messages to import the actual code coverage data files collected.   
 As a result, TeamCity will display coverage statistics and an HTML report for the coverage.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Configuring Code Coverage Engine
 
 

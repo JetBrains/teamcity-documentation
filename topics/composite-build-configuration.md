@@ -1,9 +1,11 @@
 [//]: # (title: Composite Build Configuration)
 [//]: # (auxiliary-id: Composite Build Configuration)
 
-TeamCity provides the __Composite__ type of build configuration.
+TeamCity provides the _composite_ type of build configuration.
 
-The purpose of the composite build configuration is to aggregate results from several other builds combined by __snapshot dependencies__ and present them in a single place. To some extent, a composite build can be viewed as a build which consists of several parts which can be executed in parallel on different agents. All these parts will have a synchronized snapshot of the source code and the results can be seen in a single place.
+The purpose of the composite build configuration is to aggregate results from several other builds combined by _snapshot dependencies_ and present them in a single place. To some extent, a composite build can be viewed as a build which consists of several parts which can be executed in parallel on different agents. All these parts will have a synchronized snapshot of the source code, and the results can be seen in a single place.
+
+## Creating Composite Configuration
 
 When [creating a build configuration](creating-and-editing-build-configurations.md), you can specify _Composite_ as its type and specify its snapshot dependencies: the build configurations whose builds results the current composite one will aggregate.
 
@@ -18,8 +20,8 @@ There are important differences between composite builds and regular builds with
     * The progress indicator of the composite build reflects all of the dependencies, so it actually shows when the whole chain is going to finish.
 * A composite build does not have its own artifacts. However, you can make it display the artifacts published by its parts (dependencies) via artifact dependencies.
 
-### Clean-up of Composite Build Artifacts
+## Clean-up of Composite Build Artifacts
 
-Composite builds only display the artifacts published by its parts via artifact dependencies, which means сomposite builds do not have their own artifacts (except for internal artifacts). To enforce a certain clean-up policy for artifacts of a composite build,  you need to have the same clean-up rules for all its parts.
+Composite builds only display the artifacts published by its parts via artifact dependencies, which means сomposite builds do not have their own artifacts (except for internal artifacts). To enforce a certain clean-up policy for artifacts of a composite build, you need to have the same clean-up rules for all its parts.
 
 __ __

@@ -11,7 +11,7 @@ To run an Xcode build, you need to have one or more build agents running macOS w
 
 <anchor name="Xcode 7.x Support"/>
 
-## Working with different Xcode setups:
+## Working with different Xcode setups
 *  If only one Xcode version is installed on the agent machine, it will be used by default. The agent restart is required if Xcode was installed/updated.
 *  If several Xcode versions are installed, perform __one of the following__:
    * specify the path to the required version in the "Path to Xcode" setting (see below) of the Xcode Project build step settings
@@ -353,11 +353,11 @@ Other command line parameters to be passed to the `xcodebuild` utility.
 </td></tr></table>
 
 
-__  __
-
-__See also:__
-
-__Xcode Known Issues__: [[1](known-issues.md#Xcode+10+is+unable+to+clean+artifacts+in+custom+output+directory)]   
-__Concepts__: [Build Runner](build-runner.md)   
-
-__ __
+<seealso>
+        <category ref="troubleshooting">
+            <a href="known-issues.md#Xcode+10+is+unable+to+clean+artifacts+in+custom+output+directory">Xcode Known Issues</a>
+        </category>
+        <category ref="concepts">
+            <a href="build-runner.md">Build Runner</a>
+        </category>
+</seealso>

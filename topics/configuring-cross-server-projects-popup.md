@@ -1,10 +1,6 @@
 [//]: # (title: Configuring Cross-Server Projects Popup)
 [//]: # (auxiliary-id: Configuring Cross-Server Projects Popup)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 TeamCity Projects popup allows browsing projects and build configurations on multiple servers, so that when a project or a build configuration is selected, the page is opened on the right server.
 
 The projects popup uses separate REST API requests to get the list of projects to display. If peer servers are configured, REST API calls are made to them as well.   

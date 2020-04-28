@@ -3,8 +3,6 @@
 
 TeamCity can authenticate users via an internal database, or can integrate into your system and use external authentication sources such as Windows Domain or LDAP.
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Configuring Authentication
 
 Authentication is configured on the __Administration | Authentication__ page; the currently used authentication modules are also displayed here.
@@ -162,10 +160,8 @@ For information on configuring Basic HTTP Authentication directly in the `<`[`Te
 Please refer to the [dedicated page](ntlm-http-authentication.md).
 
 
- __  __
-
-__See also:__
-
-__Concepts__: [Authentication Modules](authentication-modules.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="authentication-modules.md">Authentication Modules</a>
+        </category>
+</seealso>

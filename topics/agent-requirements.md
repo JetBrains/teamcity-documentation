@@ -23,11 +23,15 @@ For instance, if you define a build runner parameter as a reference to another p
 * Set the [environment variable](predefined-build-parameters.md#Agent+Environment+Variables) `JDK_16` on the build agent.
 * Specify the value on the __Parameters__ page of a build configuration (or in the __Project Settings__). The same value of the property will be used for all build agents.
 
- __  __
-
-__See also:__
-
-__Concepts__: [Build Agent](build-agent.md) | [Build Configuration](build-configuration.md)   
-__Administrator's Guide__: [Assigning Build Configurations to Specific Build Agents](assigning-build-configurations-to-specific-build-agents.md) | [Configuring Build Agent Startup Properties](configuring-build-agent-startup-properties.md) | [Configuring Build Parameters](configuring-build-parameters.md) | [Configuring Agent Requirements](configuring-agent-requirements.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="build-agent.md">Build Agent</a>
+            <a href="build-configuration.md">Build Configuration</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="assigning-build-configurations-to-specific-build-agents.md">Assigning Build Configurations to Specific Build Agents</a>
+            <a href="configuring-build-agent-startup-properties.md">Configuring Build Agent Startup Properties</a>
+            <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
+            <a href="configuring-agent-requirements.md">Configuring Agent Requirements</a>
+        </category>
+</seealso>

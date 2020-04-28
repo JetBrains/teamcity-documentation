@@ -3,10 +3,6 @@
 
 The _schedule trigger_ allows you to set the time when a build of the configuration will be run. The __[Builds Schedule](builds-schedule.md)__ section of the current __Project Settings__ displays the configured build times. More than one schedule trigger can be added to a build configuration.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Triggering Conditions
 
 The settings in this section define time and other conditions for automatic build triggering. You can schedule a recurring build or set a specific date and time for it.

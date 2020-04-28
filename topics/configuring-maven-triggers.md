@@ -4,9 +4,6 @@
 
 The __Triggers__ page of the Build Configuration Settings allows you to add the following Maven dependency triggers:
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 __Checksum Based Triggering__
 
 The trigger checks if the content of the dependency has actually changed by verifying its checksum from the repository against the locally stored version. Before triggering a build, TeamCity tries to determine the checksum of the required dependency by downloading the file digest (MD5/SHA\-1) associated with that artifact.

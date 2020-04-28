@@ -3,11 +3,6 @@
 
 The Windows Tray Notifier is an utility which allows monitoring the status of specific build configurations in the system tray via popup alerts and status icons.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
-
 ## Installing Windows Tray Notifier
 
 To install the Windows Tray Notifier:
@@ -302,13 +297,14 @@ C:\Program Files (x86)\JetBrains\TeamCity\TrayNotifier\JetBrains.TrayNotifier.ex
 
 ```
 
- __  __
-
-__See also:__
-
-
-__User's Guide__: [Subscribing to Notifications](subscribing-to-notifications.md)   
-__Administrator's Guide__: [Customizing Notifications](customizing-notifications.md)   
-__Installing Tools__: [Working with Windows Tray Notifier](windows-tray-notifier.md)
-
-__ __
+ <seealso>
+        <category ref="installation">
+            <a href="windows-tray-notifier.md">Working with Windows Tray Notifier</a>
+        </category>
+        <category ref="user-guide">
+            <a href="subscribing-to-notifications.md">Subscribing to Notifications</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="customizing-notifications.md">Customizing Notifications</a>
+        </category>
+</seealso>

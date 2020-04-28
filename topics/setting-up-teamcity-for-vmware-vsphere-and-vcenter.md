@@ -4,10 +4,6 @@ TeamCity vSphere integration allows using TeamCity [agent cloud features](teamci
 
 The functionality is implemented as a plugin bundled with TeamCity.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Requirements
 
 <note>

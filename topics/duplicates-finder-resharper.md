@@ -1,17 +1,12 @@
 [//]: # (title: Duplicates Finder (ReSharper))
 [//]: # (auxiliary-id: viewpage.actionpageId113084077;Duplicates Finder (ReSharper))
 
-The __Duplicates finder (ReSharper)__ build runner based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html) is intended to catch similar code fragments and provide a report on the discovered repetitive blocks of C# and Visual Basic .NET code in Visual Studio 2003, 2005, 2008, 2010, 2012, 2013, 2015, 2017, and 2019.
+The __Duplicates finder (ReSharper)__ build runner based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html) is intended to catch similar code fragments and provide a report on  the discovered repetitive blocks of C# and Visual Basic .NET code in Visual Studio 2003, 2005, 2008, 2010, 2012, 2013, and 2015 solutions.
 
 <note>
 
 This runner requires .NET Framework 4.6.1 (or higher) to be installed on the agent where builds will run.
 </note>
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
- 
 
 ## Sources
 
@@ -292,7 +287,7 @@ Enable debug output
 
 <td>
 
-Check this option to include debug messages in the build log and publish the file with additional logs (`dotnet-tools-dupfinder.log`) as an artifact.
+ Check this option to include debug messages in the build log and publish the file with additional logs (`dotnet-tools-dupfinder.log`) as an artifact.
 
 
 </td></tr><tr>

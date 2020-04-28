@@ -1,16 +1,11 @@
 [//]: # (title: Gradle)
 [//]: # (auxiliary-id: Gradle)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 _The Gradle Build Runner_ runs [Gradle](http://www.gradle.org) projects.
 
 <note>
 
-To run builds with Gradle, you need to have Gradle 0.9\-rc\-1 or higher installed on all the agent machines. Alternatively, if you use the [Gradle wrapper](https://docs.gradle.org/3.3/userguide/gradle_wrapper.html), you need to have properly configured Gradle Wrapper scripts checked in to your Version Control.
+To run builds with Gradle, you need to have Gradle 0.9-rc-1 or higher installed on all the agent machines. Alternatively, if you use the [Gradle wrapper](https://docs.gradle.org/3.3/userguide/gradle_wrapper.html), you need to have properly configured Gradle Wrapper scripts checked in to your Version Control.
 </note>
 
 
@@ -83,7 +78,7 @@ Additional Gradle command line parameters
 
 <td>
 
-Optionally, specify the space\-separated list of command line parameters to be passed to Gradle.
+Optionally, specify the space-separated list of command line parameters to be passed to Gradle.
 
 
 </td></tr><tr>
@@ -188,10 +183,8 @@ In this section, you can specify a Docker image which will be [used to run the b
 
 Code coverage with [IDEA code coverage engine](intellij-idea.md) and [JaCoCo](jacoco.md) is supported.
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [IntelliJ IDEA Code Coverage](intellij-idea.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="intellij-idea.md">IntelliJ IDEA Code Coverage</a>
+        </category>
+</seealso>

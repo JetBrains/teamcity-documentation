@@ -12,10 +12,8 @@ The _Pin/Unpin_ build dialog also allows you to tag the build.
 If the build has snapshot dependencies, the _"Apply to all snapshot dependencies"_ box appears. Check this box to apply the actions (pinning/unpinning, adding / removing tags) to all dependency builds of the current build.
 
 
- __  __
-
-__See also:__
-
-__Concepts__: [Clean-up policy](clean-up.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="clean-up.md">Clean-up policy</a>
+        </category>
+</seealso>

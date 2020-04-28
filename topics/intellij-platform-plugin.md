@@ -7,11 +7,6 @@ TeamCity plugin provides TeamCity integration for IntelliJ Platform-based IDEs, 
 A usage example is provided in the related [blog post](https://blog.jetbrains.com/teamcity/2017/10/teamcity-integration-with-intellij-based-ides/).
 </tip>
 
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Features
 
 TeamCity integration provides the following features:
@@ -71,10 +66,8 @@ All additional information on how to work with the TeamCity plugin is available 
 3. Set "Check for updates" to "Daily".
 4. Press __Apply__, then __Check Now__.
 
-__  __
- 
-__See also:__
-
-__Troubleshooting__: [Logging in IntelliJ IDEA/Platform-based IDEs](reporting-issues.md)
-
-__ __
+<seealso>
+        <category ref="troubleshooting">
+            <a href="reporting-issues.md">Logging in IntelliJ IDEA/Platform-based IDEs</a>
+        </category>
+</seealso>

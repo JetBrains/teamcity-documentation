@@ -3,10 +3,6 @@
 
 The _Pull Requests_ build feature lets you automatically load pull request (or _merge requests_ in case of GitLab) information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), and [GitLab](#GitLab+Merge+Requests).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors builds only on `head` branches:
 * For GitHub: `refs/pull/*/head`
 * For Bitbucket Server: `refs/pull-requests/*/from`
@@ -398,10 +394,8 @@ teamcity.pullRequest.target.branch //VCS name of the target branch
 
 You can use these parameters in the settings of a build configuration or in build scripts.
 
-__ __
-
-__See also__:
-
-__TeamCity Blog__: [Building GitHub pull requests with TeamCity](https://blog.jetbrains.com/teamcity/2019/08/building-github-pull-requests-with-teamcity/)
-
-__ __
+<seealso>
+        <category ref="blog">
+            <a href="https://blog.jetbrains.com/teamcity/2019/08/building-github-pull-requests-with-teamcity/">Building GitHub pull requests with TeamCity</a>
+        </category>
+</seealso>

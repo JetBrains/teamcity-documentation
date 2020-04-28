@@ -1,10 +1,6 @@
 [//]: # (title: EMMA)
 [//]: # (auxiliary-id: EMMA)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="3"/>
-
 ## EMMA Integration Notes
 
 The following steps are performed when collecting coverage with EMMA:
@@ -106,12 +102,13 @@ To exclude classes from compilation, use settings for EMMA instrumentation task.
 
 Please make sure that your junit task has the `fork=true` attribute. The recommended combination of attributes is "`fork=true forkmode=once`".
 
- __  __
- 
-__See also:__
-
-
-__Concepts__: [Build Runner](build-runner.md) | [Code Coverage](code-coverage.md)   
-__Administrator's Guide__: [Configuring Java Code Coverage](configuring-java-code-coverage.md) | [IntelliJ IDEA](intellij-idea.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="build-runner.md">Build Runner</a>
+            <a href="code-coverage.md">Code Coverage</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="configuring-java-code-coverage.md">Configuring Java Code Coverage</a>
+            <a href="intellij-idea.md">IntelliJ IDEA</a>
+        </category>
+</seealso>

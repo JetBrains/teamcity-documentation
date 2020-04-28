@@ -1978,11 +1978,9 @@ If you were using the TeamCity\-GitHub [third-party plugin](https://github.com/m
 The [bug with temp tool folders](https://youtrack.jetbrains.com/issue/TW-46648) introduced in the previous version has been fixed.
 
 
-__  __
+<seealso>
+        <category ref="admin-guide">
+            <a href="licensing-policy.md">Licensing Policy</a>
+        </category>
+</seealso>
 
-__See also:__
-
-
-__Administrator's Guide__: [Licensing Policy](licensing-policy.md)
-
-__ __

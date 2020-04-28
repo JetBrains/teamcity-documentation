@@ -1,10 +1,6 @@
 [//]: # (title: Creating and Editing Projects)
 [//]: # (auxiliary-id: Creating and Editing Projects)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 This section details creating projects via the TeamCity web UI. Other options include the [REST API](rest-api.md#Project+Settings) and using TeamCity project configuration in [DSL based on the Kotlin language](kotlin-dsl.md).
 
 
@@ -323,10 +319,8 @@ The \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/ dir
 If you attempt to delete a project with [dependent build configurations](dependent-build.md) from other projects, TeamCity will warn you about it. If you proceed with the deletion, the dependencies will no longer function.
 </tip>
 
- __  __
-
-__See also:__
-
-__Administrator's Guide__: [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md)
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
+        </category>
+</seealso>

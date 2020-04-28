@@ -10,10 +10,6 @@ If you plan to use the agent\-side [checkout mode](vcs-checkout-mode.md#agent-ch
 Also check [TeamCity and Perforce compatibility](perforce-vcs-compatibility.md).
 </note>
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## P4 Connection Settings
 
 <table><tr>
@@ -416,11 +412,8 @@ Refer to a [separate page](perforce-streams-as-feature-branches.md).
 
 
 
-__  __
-
-__See also:__
-
-
-__Administrator's Guide__: [VCS Checkout Mode](vcs-checkout-mode.md) 
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="vcs-checkout-mode.md">VCS Checkout Mode</a>
+        </category>
+</seealso>

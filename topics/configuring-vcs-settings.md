@@ -1,10 +1,6 @@
 [//]: # (title: Configuring VCS Settings)
 [//]: # (auxiliary-id: Configuring VCS Settings)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## VCS Settings Overview 
 
 A Version Control System (VCS) is a system for tracking the revisions of the project source files. It is also known as SCM (source code management) or a revision control system. The following VCSs are supported by TeamCity out-of-the-box: [Git](git.md), [Subversion](subversion.md), [Mercurial](mercurial.md), [Perforce](perforce.md), [Team Foundation Server](team-foundation-server.md), [CVS](cvs.md), [StarTeam](starteam.md), [Visual SourceSafe](visual-sourcesafe.md).
@@ -141,10 +137,11 @@ You can use a [Branch Filter](branch-filter.md) to limit the set of branches ava
  
  
  
- __  __
-
-__See also:__
-
-__Administrator's Guide__: [Configuring VCS Roots](configuring-vcs-roots.md) | [VCS Checkout Rules](vcs-checkout-rules.md) | [VCS Checkout Mode](vcs-checkout-mode.md) | [VCS Labeling](vcs-labeling.md)
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>
+            <a href="vcs-checkout-rules.md">VCS Checkout Rules</a>
+            <a href="vcs-checkout-mode.md">VCS Checkout Mode</a>
+            <a href="vcs-labeling.md">VCS Labeling</a>
+        </category>
+</seealso>

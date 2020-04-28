@@ -22,12 +22,12 @@ http://buildserver:8111/guestAuth/action.html?add2Queue=bt7
 
 ```
 
- __  __
-
-__See also:__
-
-
-__Concepts__: [Role and Permission](role-and-permission.md) | [Super User](super-user.md)   
-__Administrator's Guide__: [Enabling Guest Login](enabling-guest-login.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="role-and-permission.md">Role and Permission</a>
+            <a href="super-user.md">Super User</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="enabling-guest-login.md">Enabling Guest Login</a>
+        </category>
+</seealso>

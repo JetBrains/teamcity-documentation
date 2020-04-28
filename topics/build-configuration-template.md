@@ -1,8 +1,6 @@
 [//]: # (title: Build Configuration Template)
 [//]: # (auxiliary-id: Build Configuration Template)
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Overview
 
 _Build configuration templates_ allow you to eliminate duplication of build configuration settings. If you want to have several similar (not necessarily identical) build configurations and be able to modify their common settings in one place without having to edit each configuration, create a build configuration template with those settings. Modifying template settings affects __all__ build configurations associated with this template.
@@ -157,10 +155,9 @@ The system administrator role is required to associate a project with a specific
 
 If the enforced settings template is specified in a project and a different template is assigned as the enforced settings in a subproject, the template of the subproject will have a higher priority.
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md) | [Configuring Build Parameters](configuring-build-parameters.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
+            <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
+        </category>
+</seealso>

@@ -4,10 +4,6 @@ This page covers the __evaluation__ setup of a TeamCity server with a default bu
 
 For more details, see [Installation and Upgrade](installation-and-upgrade.md).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 <note>
 
 __[For production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use)__, we recommend setting up the TeamCity server and agent on separate machines.

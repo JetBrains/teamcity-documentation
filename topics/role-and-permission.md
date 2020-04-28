@@ -6,10 +6,6 @@ User access levels are handled by assigning different _roles_ to users thus gran
 A _permission_ is an _authorization_ to perform particular operations, for example, to run a build or modify build configuration settings.   
 A _role_ is a set of _permissions_ that can be granted to a user in one or all projects thus controlling access to the projects and various features in the Web UI.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Authorization Mode
 
 TeamCity authorization supports two modes: __simple__ and __per-project__.
@@ -216,11 +212,12 @@ All project-level agent management permissions are by default added to the [Proj
 
 A user can perform a task controlled by one of these permissions on all the agents belonging to some [pool](agent-pools.md) provided this permission is granted to the user in all the projects associated with this pool. For example, a user with the _"Enable/disable agents associated with project"_ permission granted in some projects can enable or disable agents which belong to the pools of the related projects if the permission is granted in __all the projects__ associated with the pools. 
 
-__  __
-
-__See also:__
-
-__Concepts__: [User Account](user-account.md)   
-__Administrator's Guide__: [Enabling Guest Login](enabling-guest-login.md) | [Managing Users and User Groups](managing-users-and-user-groups.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="user-account.md">User Account</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="enabling-guest-login.md">Enabling Guest Login</a>
+            <a href="managing-users-and-user-groups.md">Managing Users and User Groups</a>
+        </category>
+</seealso>

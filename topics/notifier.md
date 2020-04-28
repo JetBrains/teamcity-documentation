@@ -90,13 +90,11 @@ Notifications regarding specified events are sent via an Atom/RSS feed. See [thi
 
 You can configure the notifier settings, create, change and delete notification rules in the Watched Builds and Notifications section of the [My Settings&amp;Tools page](subscribing-to-notifications.md).
 
- __  __
-
-__See also:__
-
-
-
-__User's Guide__: [Subscribing to Notifications](subscribing-to-notifications.md)   
-__Administrator's Guide__: [Customizing Notifications](customizing-notifications.md)
-
-__ __
+ <seealso>
+        <category ref="user-guide">
+            <a href="subscribing-to-notifications.md">Subscribing to Notifications</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="customizing-notifications.md">Customizing Notifications</a>
+        </category>
+</seealso>

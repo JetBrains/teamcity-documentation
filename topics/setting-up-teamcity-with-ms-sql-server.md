@@ -1,10 +1,6 @@
 [//]: # (title: Setting up TeamCity with MS SQL Server)
 [//]: # (auxiliary-id: Setting up TeamCity with MS SQL Server)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Prerequisites
 
 * MS SQL server

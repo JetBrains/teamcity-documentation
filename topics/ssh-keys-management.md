@@ -3,10 +3,6 @@
 
 You can upload an SSH private key into a project via the TeamCity web interface and then use it in VCS roots configuration or in [SSH Agent](ssh-agent.md) build feature.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Supported Key Format
 
 TeamCity supports keys in the __PEM format only__. If your private key uses a different format, it has to be converted to PEM. For example, the Putty private key format (`*.ppk`), not supported by TeamCity, can be converted to the PEM format using [PuTTY Key Generator](https://www.puttygen.com/): use the menu  __Conversions__  | __Export OpenSSH key__.

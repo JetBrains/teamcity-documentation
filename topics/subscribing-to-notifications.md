@@ -6,10 +6,6 @@ Notifications in TeamCity are sent per\-user according to the user's configured 
 
 You can [customize](customizing-notifications.md) notification templates.
 
-On this page:
-
- <tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Subscribing to Notifications
 
 TeamCity allows you to flexibly adjust the notification rules, so that you receive notifications only on the events you are interested in. To subscribe to notifications:
@@ -544,10 +540,8 @@ http://teamcity.server:8111/httpAuth/feed.html?buildTypeId=bt1&itemsType=builds&
 
 ```
 
- __  __
-
-__See also:__
-
-__Administrator's Guide__: [Customizing Notifications](customizing-notifications.md)
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="customizing-notifications.md">Customizing Notifications</a>
+        </category>
+</seealso>

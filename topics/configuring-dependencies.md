@@ -17,10 +17,16 @@ The dependencies of the build can later be viewed on the build results page \- t
 __ __
 
 
-__See also:__
-
-__Concepts__: [Dependent Build](dependent-build.md)   
-__Administrator's Guide__: [Patterns For Accessing Build Artifacts](patterns-for-accessing-build-artifacts.md) | [Snapshot Dependencies](snapshot-dependencies.md) | [Artifact Dependencies](artifact-dependencies.md)   
-__External Resources__: [http://ant.apache.org/ivy/](http://ant.apache.org/ivy/) (additional information on Ivy)
-
-__ __
+<seealso>
+        <category ref="external">
+            <a href="http://ant.apache.org/ivy/">Additional information on Ivy</a>
+        </category>
+        <category ref="concepts">
+            <a href="dependent-build.md">Dependent Build</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="patterns-for-accessing-build-artifacts.md">Patterns For Accessing Build Artifacts</a>
+            <a href="snapshot-dependencies.md">Snapshot Dependencies</a>
+            <a href="artifact-dependencies.md">Artifact Dependencies</a>
+        </category>
+</seealso>

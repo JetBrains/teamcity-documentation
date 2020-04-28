@@ -16,12 +16,13 @@ By default, the guest user can view all the projects. To customize which project
 Click the __Configure guest user roles__ link to configure the [Role and Permission](role-and-permission.md). The link appears when the [per-project authorization mode](role-and-permission.md#Changing+Authorization+Mode) is enabled.
 
 
- __  __
- 
-__See also:__
-
-
-__Concepts__: [User Account](user-account.md) | [Role and Permission](role-and-permission.md)    
-__Administrator's Guide__: [Configuring Authentication Settings](configuring-authentication-settings.md) | [Managing Users and User Groups](managing-users-and-user-groups.md) 
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="user-account.md">User Account</a>
+            <a href="role-and-permission.md">Role and Permission</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="configuring-authentication-settings.md">Configuring Authentication Settings</a>
+            <a href="managing-users-and-user-groups.md">Managing Users and User Groups</a>
+        </category>
+</seealso>

@@ -20,11 +20,12 @@ As the history build does not reflect the current state of the sources, the foll
 
 [//]: # (Internal note. Do not delete. "History Buildd159e60.txt")    
 
- __  __
-
-__See also:__
-
-__Concepts__: [Build History](build-history.md) | [Build Queue](build-queue.md)   
-__Administrator's Guide__: [Triggering a Custom Build](triggering-a-custom-build.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="build-history.md">Build History</a>
+            <a href="build-queue.md">Build Queue</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="triggering-a-custom-build.md">Triggering a Custom Build</a>
+        </category>
+</seealso>

@@ -3,8 +3,6 @@
 
 NUnit addin is an extension that plugs into NUnit core and changes the way it operates. Refer to the [NUnit addins page](http://www.nunit.org/index.php?p=nunitAddins&amp;r=2.6.3) for more information. This section covers description of NUnit addins support for:
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## NAnt Build Runner
 
 To support NUnit addins for NAnt build runner you need to provide in your build script the `teamcity.dotnet.nant.nunit2.addins` property in the following format:

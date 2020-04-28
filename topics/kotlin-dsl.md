@@ -7,10 +7,6 @@ Using the version control-stored DSL enables you to define settings programmatic
 
 Check out the [blog post series](https://blog.jetbrains.com/teamcity/2019/03/configuration-as-code-part-1-getting-started-with-kotlin-dsl) on using Kotlin DSL in TeamCity.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## How Kotlin DSL Works
 
 When versioned settings in Kotlin format are enabled, TeamCity commits the current settings to the specified settings repository.
@@ -63,7 +59,7 @@ To display the hidden files and directories, press `Command` + `Shift` + `.` ins
 
 When creating an empty project, that's what you see in `settings.kts` in your IDE:
 
-```kotlin
+```Kotlin
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 /* some comment text */
 version = "2019.2"
@@ -79,7 +75,7 @@ You can create different entities in this project by calling `vcsRoot()`, `build
 
 The following examples shows how to add a build configuration with a command line script:
 
-```kotlin
+```Kotlin
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
 
@@ -104,7 +100,7 @@ Here, `id` will be used as the value of the _[Build configuration ID](identifier
 
 But there is also another way to define the same build configuration:
 
-```kotlin
+```Kotlin
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
 
@@ -174,7 +170,7 @@ patches/vcsRoots/<relative build configuration id>.kts
 
 The following patch adds the [Build files cleaner (Swabra)](build-files-cleaner-swabra.md) build feature to the build configuration with the ID `SampleProject_Build`:
 
-```kotlin
+```Kotlin
 changeBuildType(RelativeId("SampleProject_Build")) { // this part finds the build configuration where the change has to be done  
     features {
         add {
@@ -251,7 +247,7 @@ To use a context parameter in a TeamCity project, you need to (1) define it in t
 2. __Referencing context parameters in DSL__   
    To reference a context parameter in the DSL code, use the `getParameter()` method of the `DslContext` object. You can specify a default value of this parameter as an optional second argument: `getParameter("<parameter-name>", "<default-value>")`.   
 The following example shows how to use context parameters in DSL:
-    ```kotlin
+    ```Kotlin
      
     object Build : BuildType({
      
@@ -279,7 +275,7 @@ To define specific values for [context parameters](#Using+Context+Parameters+in+
 
 Example of a Maven plugin with context parameters:
 
-```kotlin
+```Kotlin
 
 <plugin>
     <groupId>org.jetbrains.teamcity</groupId>
@@ -317,7 +313,7 @@ In the DSL code, a build chain is declared inside a project by the `sequential` 
 
 The following example illustrates a typical pipeline for compiling and deploying an application:
 
-```kotlin
+```Kotlin
 project {
   buildType(Compile)
   buildType(Test1)
@@ -343,7 +339,7 @@ If you define a build chain in a pipeline style, ensure there are no explicit sn
 
 In the example above, a build chain references already declared builds. Alternatively, you can register all listed builds after the chain declaration with a simplified syntax:
 
-```kotlin
+```Kotlin
 project {
 
  // build chain definition:
@@ -428,7 +424,7 @@ where `<project id>` is the ID of the project where versioned settings are enabl
 
 In the non-portable format each project has the following `settings.kts` file:
 
-```kotlin
+```Kotlin
 package MyProject
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 /* ... */
@@ -444,7 +440,7 @@ This is the entry point for project settings generation. Basically, it represent
 
 The `Project.kt` file looks as follows: 
 
-```kotlin
+```Kotlin
 package MyPackage
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.Project
@@ -526,14 +522,14 @@ _Problem_: I want to generate a TeamCity build configuration based on the data i
 
 _Solution_:   
 Since TeamCity 2019.2, it is possible to access the location of the `.teamcity` directory from DSL scripts with help of the `DslContext.baseDir` property, for example:
-```kotlin
+```Kotlin
 val dataFile = File(DslContext.baseDir, "data/setup.xml")
 ```
 
 Since 2019.2, this is the preferable approach as TeamCity no longer guarantee that the current working directory for DSL scripts is the same as the `.teamcity` directory. 
 
 Before 2019.2, the following code could be used:
-```kotlin
+```Kotlin
 val dataFile = File("data/setup.xml")
 ```
 
@@ -572,11 +568,11 @@ _Solution_: Use tokens instead of passwords. Refer to the [related section](stor
 
 
 
-__  __
- 
-__See also:__
-
-__Administrator's Guide__: [Storing Project Settings in Version Control](storing-project-settings-in-version-control.md)   
-__TeamCity blog__: [Configuration as Code, Part 1: Getting Started with Kotlin DSL](https://blog.jetbrains.com/teamcity/2019/03/configuration-as-code-part-1-getting-started-with-kotlin-dsl/)
-
-__ __
+<seealso>
+        <category ref="blog">
+            <a href="https://blog.jetbrains.com/teamcity/2019/03/configuration-as-code-part-1-getting-started-with-kotlin-dsl/">Configuration as Code, Part 1: Getting Started with Kotlin DSL</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="storing-project-settings-in-version-control.md">Storing Project Settings in Version Control</a>
+        </category>
+</seealso>

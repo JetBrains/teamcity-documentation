@@ -1,14 +1,11 @@
 [//]: # (title: Accessing Server by HTTP)
 [//]: # (auxiliary-id: Accessing Server by HTTP)
 
-
 [//]: # (Internal note. Do not delete. "Accessing Server by HTTPd2e3.txt")
-
-
 
 <warning>
 
-Use the TeamCity [REST API](rest-api.md) for accessing the server from scripts. This section is __obsolete__ and preserved for __backward\-compatibility__ with previous TeamCity versions and for some specific functionality.
+Use the TeamCity [REST API](rest-api.md) for accessing the server from scripts. This section is __obsolete__ and preserved for __backward-compatibility__ with previous TeamCity versions and for some specific functionality.
 
 </warning>
 
@@ -47,7 +44,7 @@ Make sure the user used to perform the authentication (or _Guest_ user) has appr
 
 </tip>
 
-### Triggering a Build From Script
+## Triggering a Build From Script
 
 <warning>
 
@@ -101,7 +98,7 @@ http://testuser:testpassword@teamcity.jetbrains.com:8111/httpAuth/action.html?ad
 
 ``` 
 
-#### Triggering a Custom Build
+### Triggering a Custom Build
 
 TeamCity allows you to trigger a build with customized parameters. You can select particular build agent to run the build, define additional properties and environment variables, and select the particular sources revision (by specifying the last change to include in the build) to run the build with. These customizations will affect only the single triggered build and will not affect other builds of the build configuration.
 

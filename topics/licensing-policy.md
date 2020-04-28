@@ -4,10 +4,6 @@
 Pricing and new licenses/upgrades purchase are available via the __[official web site](http://www.jetbrains.com/teamcity/buy/)__. If you have any questions on the licensing terms, obtaining or upgrading license key and related, please [contact](https://www.jetbrains.com/support/sales/) JetBrains sales department.   
 You can review TeamCity [license agreement](http://www.jetbrains.com/teamcity/buy/license.html) on the official web site or in the footer of the installed TeamCity server web UI.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 ## Licensing Overview
 
 JetBrains offers several licensing options that allow you to scale TeamCity to your needs.   
@@ -254,11 +250,11 @@ To check TeamCity upgrade availability for your IntelliJ IDEA licenses and to re
 [//]: # (Internal note. Do not delete. "Licensing Policyd197e452.txt")    
 
 
- __  __
-
-__See also:__
-
-__Concepts__: [Build Agent](build-agent.md)   
-__Licensing__: [Licensing &amp; Upgrade](http://www.jetbrains.com/teamcity/buy/index.html)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="build-agent.md">Build Agent</a>
+        </category>
+        <category ref="licensing">
+            <a href="http://www.jetbrains.com/teamcity/buy/index.html">Licensing &amp; Upgrade</a>
+        </category>
+</seealso>

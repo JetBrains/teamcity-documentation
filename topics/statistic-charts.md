@@ -1,10 +1,6 @@
 [//]: # (title: Statistic Charts)
 [//]: # (auxiliary-id: Statistic Charts)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 To help you track the condition of your projects and individual build configurations over time, TeamCity gathers statistical data across all their history and displays it as visual charts. The statistical charts can be divided into the following categories:
 * [Project-level statistics](#Project+Statistics) available on the __Project Home | Statistics__ tab.
 * [Build Configuration-level statistics](#Build+Configuration+Statistics) available on the __Build Configuration home page__ | __Statistics__ tab.
@@ -95,11 +91,13 @@ You can also find some useful statistics for a particular test: __Test duration_
 
 It is possible to [customize project-level charts](customizing-statistics-charts.md) or/and configure your own statistical charts, e g. to display the total build duration, including the checkout time, the duration of all build stages, artifact resolving and artifact publishing or a chart displaying the duration of each build stage, and so on. See a [dedicated page](https://plugins.jetbrains.com/docs/teamcity/custom-statistics.html) for details.
 
-__  __
-
-__See also:__
-
-__Concepts__: [Build Configuration](build-configuration.md) | [Build State](build-state.md) | [Change](change.md)   
-__Administrator's Guide__: [Customizing Statistics Charts](customizing-statistics-charts.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-configuration.md">Build Configuration</a>
+            <a href="build-state.md">Build State</a>
+            <a href="change.md">Change</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="customizing-statistics-charts.md">Customizing Statistics Charts</a>
+        </category>
+</seealso>

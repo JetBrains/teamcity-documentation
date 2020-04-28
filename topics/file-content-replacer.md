@@ -3,10 +3,6 @@
 
 _File Content Replacer_ is the [build feature](adding-build-features.md) which processes text files by performing regular expression replacements before a build. After the build, it restores the file content to the original state.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/> 
-
 <tip>
 
 _File Content Replacer_ should be used with the [automatic checkout](vcs-checkout-mode.md) only: after this build feature is configured, it will run __before the first build step__. TeamCity will first perform replacement in the specified files found in the build checkout directory and then run your build. 

@@ -10,10 +10,6 @@ TeamCity supports upgrades from any of the previous versions to the later ones. 
 
 It is recommended to plan for regular upgrades to run the latest TeamCity version at least after several bugfix updates are released. This way you run a fully [supported version](how-to.md#TeamCity+Release+Cycle) with the latest fixes and security patches.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Before Upgrade
 
 Before upgrading TeamCity:
@@ -235,11 +231,12 @@ To upgrade the service wrapper manually, do the following:
 This procedure is applicable ONLY to an agent running with _new_ service wrapper. Make sure you are not running the __agentd__ service.
 </note>
 
-__  __
-
-__See also:__
-
-__Concepts__: [TeamCity Data Directory](teamcity-data-directory.md)   
-__Administrator's Guide__: [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) | [TeamCity Data Backup](teamcity-data-backup.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="teamcity-data-directory.md">TeamCity Data Directory</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="teamcity-maintenance-mode.md">TeamCity Maintenance Mode</a>
+            a href="teamcity-data-backup.md">TeamCity Data Backup</a>
+        </category>
+</seealso>

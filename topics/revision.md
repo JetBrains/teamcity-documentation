@@ -21,12 +21,12 @@ This is used, for example, to set apart a _[history build](history-build.md)_ th
 
 If the settings of a VCS root get modified since the last detected change, the revision in TeamCity will be different from the last change in the newly configured VCS root. TeamCity does not have any information on the previous change in this new root, so it starts to monitor changes with the new settings and sets the build revision to the first discovered change. Until the change is discovered, there is no way to get any revision other than the current revision of the repository. Therefore, while TeamCity builds the correct revision of the sources, the revision for the first build after a VCS root change will not be equal to the last change under the specified path.
 
- __  __
-
-__See also:__
-
-
-__Concepts__: [Change](change.md), [Build Configuration](build-configuration.md)   
-__User's Guide__: [Investigating and Muting Build Failures](investigating-and-muting-build-failures.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="change.md">Change</a>
+            <a href="build-configuration.md">Build Configuration</a>
+        </category>
+        <category ref="user-guide">
+            <a href="investigating-and-muting-build-failures.md">Investigating and Muting Build Failures</a>
+        </category>
+</seealso>

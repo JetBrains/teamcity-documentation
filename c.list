@@ -4,6 +4,14 @@
 <categories>
     <category id="kotlin" name="Kotlin" order="26"/>
     <category id="admin-guide" name="Administrator's Guide" order="54"/>
+    <category id="installation" name="Installation and Upgrade" order="601"/>
+    <category id="blog" name="TeamCity Blog" order="602"/>
+    <category id="user-guide" name="User's Guide" order="603"/>
+    <category id="troubleshooting" name="Troubleshooting" order="604"/>
+    <category id="videos" name="Videos" order="605"/>
+    <category id="licensing" name="Licensing" order="606"/>
+    <category id="inst_tools" name="Installing Tools" order="607"/>
+    <category id="extending_tc" name="Extending TeamCity" order="608"/>
     <category id="pdf_resources" name="PDF Resources" order="500"/>
     <category name="Search" id="search" order="11"/>
     <category id="web_resources" name="Web Resources" order="99"/>

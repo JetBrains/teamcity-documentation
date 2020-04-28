@@ -6,10 +6,6 @@ If you evaluated TeamCity with the internal database which is [not recommended f
 
 The current database in use is shown on the __Administration | Global Settings__ page in the _Database_ field and also is mentioned in the teamcity\-server.log on the server startup. `HSQL*` means that the internal database is in use.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Default Internal Database
 
 On the first TeamCity run, using an internal database based on the HSQLDB database engine is suggested by default. The internal database suits evaluation purposes only; it works out of the box and requires no additional setup.
@@ -202,24 +198,15 @@ TeamCity uses Apache DBCP for database connection pooling. Refer to [Apache Comm
 
 
 
- __  __
- 
-__See also:__
-
- 
-__Installation and Upgrade__: [Common database-related problems](common-problems.md) | [Migrating to an External Database](migrating-to-an-external-database.md)   
-__Concepts__: [TeamCity Data Directory](teamcity-data-directory.md)   
-__Administrator's Guide__: [TeamCity Data Backup](teamcity-data-backup.md)
- 
-__ __
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+ <seealso>
+        <category ref="installation">
+            <a href="common-problems.md">Common database-related problems</a>
+            <a href="migrating-to-an-external-database.md">Migrating to an External Database</a>
+        </category>
+        <category ref="concepts">
+            <a href="teamcity-data-directory.md">TeamCity Data Directory</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="teamcity-data-backup.md">TeamCity Data Backup</a>
+        </category>
+</seealso>

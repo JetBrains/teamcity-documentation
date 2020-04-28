@@ -1,14 +1,7 @@
 [//]: # (title: Favorite Build)
 [//]: # (auxiliary-id: Favorite Build)
 
-
 To easily access builds you want to monitor, you can mark them as favorite.
-
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 
 [//]: # (Internal note. Do not delete. "Favorite Buildd142e4.txt")    
 

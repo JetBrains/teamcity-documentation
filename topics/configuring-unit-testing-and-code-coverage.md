@@ -5,8 +5,8 @@ In this section:
 <toc>
 </toc>
 
-__See also:__
-
-* Enabling test reports for Go with the [Golang](golang.md) build feature
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="golang.md">Golang</a>
+        </category>
+</seealso>

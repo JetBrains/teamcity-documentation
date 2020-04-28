@@ -1,10 +1,6 @@
 [//]: # (title: Agent Pools)
 [//]: # (auxiliary-id: Agent Pools)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Concept
 
 Instead of having one common set of agents, you can break them into separate groups called _agent pools_. A pool is a named set of agents to which you can assign projects.
@@ -44,11 +40,12 @@ When you have configured agent pools, you can:
 * Filter the build queue by pools.
 * Use grouping by pool on the [Agent Matrix and Agent Statistics](viewing-agents-workload.md) pages.
 
-__  __
-
-__See also:__
-
-__Concepts__: [Build Agent](build-agent.md) | [Agent Requirements](agent-requirements.md)   
-__Administrator's Guide__: [Viewing Agents Workload](viewing-agents-workload.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-agent.md">Build Agent</a>
+            <a href="agent-requirements.md">Agent Requirements</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="viewing-agents-workload.md">Viewing Agents Workload</a>
+        </category>
+</seealso>

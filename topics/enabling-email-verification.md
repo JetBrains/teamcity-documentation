@@ -12,11 +12,13 @@ __To enable email verification in TeamCity:__
 3. Save your changes.   
 During the [Projects Import](projects-import.md) TeamCity will take verified emails into account. If there are two users with different usernames, but the same verified email, TeamCity will provide a possibility to merge these users.
 
-__  __
-
-__See also:__
-
-__Concepts__: [User Account](user-account.md) | [Role and Permission](role-and-permission.md)    
-__Administrator's Guide__: [Configuring Authentication Settings](configuring-authentication-settings.md) | [Managing Users and User Groups](managing-users-and-user-groups.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="user-account.md">User Account</a>
+            <a href="role-and-permission.md">Role and Permission</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="configuring-authentication-settings.md">Configuring Authentication Settings</a>
+            <a href="managing-users-and-user-groups.md">Managing Users and User Groups</a>
+        </category>
+</seealso>

@@ -1,11 +1,6 @@
 [//]: # (title: What's New in TeamCity 2019.1)
 [//]: # (auxiliary-id: What's New in TeamCity 2019.1)
 
-
-
-<tag-list of="chapter" mode="tree"/>
-
-
 ## New TeamCity documentation website
 
 We have reworked the documentation for TeamCity 2019.1 to create a better user experience and ensure a common look and feel across the documentation of all company products.  

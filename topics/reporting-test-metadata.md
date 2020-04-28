@@ -4,10 +4,6 @@
 A test run in TeamCity can be associated with some additional information (metadata), complementing test status, execution time, and output. This information can be used to provide extra logs, screenshots, numeric values, tags, and so on.   
 You can now use service messages to report this kind of additional test data in TeamCity and then view it in the TeamCity web UI.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 ## Reporting additional test data
 
 Additional test data is reported using the `testMetadata` service message, with the following attributes:

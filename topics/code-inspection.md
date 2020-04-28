@@ -10,12 +10,12 @@ Inspection results are reported in the [Code Inspection tab](working-with-build-
 TeamCity can also [be integrated with external reporting tools](how-to.md#Integrate+with+Build+and+Reporting+Tools).
 
 
- __  __
-
-__See also:__
-
-
-__Concepts__: [Build Runner](build-runner.md)   
-__Administrator's Guide__: [Inspections (IntelliJ IDEA)](inspections.md) | [Inspections (ReSharper)](inspections-resharper.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="build-runner.md">Build Runner</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="inspections.md">Inspections (IntelliJ IDEA)</a>
+            <a href="inspections-resharper.md">Inspections (ReSharper)</a>
+        </category>
+</seealso>

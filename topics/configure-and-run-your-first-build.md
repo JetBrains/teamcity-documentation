@@ -3,9 +3,7 @@
 
 After you have installed and started TeamCity as described [here](installing-and-configuring-the-teamcity-server.md), the server is accessible locally on the default port (on Windows as [`http://localhost/`](http://localhost:8111/), and on Linux/OS X as [`http://localhost:8111/`](http://localhost:8111/)) and has one registered build agent that runs on the same computer.
 
-Now we can get building! This section describes how you can:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
+Now we can get building!
 
 ## Create your first project
 

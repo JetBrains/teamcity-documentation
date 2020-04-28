@@ -1,10 +1,6 @@
 [//]: # (title: TeamCity Server Logs)
 [//]: # (auxiliary-id: TeamCity Server Logs)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 TeamCity Server keeps a log of internal activities that can be examined to investigate an issue with the server behavior or get internal error details.
 
 The logs are stored in plain text files in a disk directory on the TeamCity server machine (usually in `<`[`TeamCity Server home`](teamcity-home-directory.md)`>/logs`). The files are appended with messages when TeamCity is running.
@@ -458,11 +454,11 @@ If you start TeamCity by the means other than the bundled `teamcity-server` or `
 
 The default `teamcity-server-log4j.xml` file content can be found in the `.exe` and `tar.gz` distributions. The one with debug enabled can be found under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging/debug-general.xml` name after server's first start. See also the sample [`teamcity-server-log4j.xml`](https://confluence.jetbrains.com/download/attachments/113084044/teamcity-server-log4j.xml?version=1&modificationDate=1362486616000&api=v2) file.
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Viewing Build Agent Logs](viewing-build-agent-logs.md)   
-__Troubleshooting__: [Reporting Issues](reporting-issues.md)
-
-__ __
+<seealso>
+        <category ref="troubleshooting">
+            <a href="viewing-build-agent-logs.md">Viewing Build Agent Logs</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="reporting-issues.md">Reporting Issues</a>
+        </category>
+</seealso>

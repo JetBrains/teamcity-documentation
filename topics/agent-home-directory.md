@@ -1,5 +1,5 @@
-[//]: # (title: Agent Home Directory)
-[//]: # (auxiliary-id: Agent Home Directory)
+[//]: # (title: Agent's Home Directory)
+[//]: # (auxiliary-id: Agent's Home Directory)
 
 The _Build Agent Home Directory_ is the directory where the agent is installed.
 

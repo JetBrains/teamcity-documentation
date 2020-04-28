@@ -21,11 +21,13 @@ The following _HTTP authentication modules_ are supported:
 
 Refer to [Configuring Authentication Settings](configuring-authentication-settings.md) for specific _authentication modules_ configuration. See also [Accessing Server by HTTP](accessing-server-by-http.md) page for details about accessing a server from your scripts using _Token-Based Authentication_ or _basic HTTP authentication_.
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Accessing Server by HTTP](accessing-server-by-http.md) | [LDAP Integration](ldap-integration.md) | [Configuring Authentication Settings](configuring-authentication-settings.md)    
-__Developing TeamCity Plugins__: [Custom Authentication Module](https://plugins.jetbrains.com/docs/teamcity/custom-authentication-module.html)
-
-__ __
+<seealso>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/docs/teamcity/custom-authentication-module.html">Developing TeamCity Plugins: Custom Authentication Module</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="accessing-server-by-http.md">Accessing Server by HTTP</a>
+            <a href="ldap-integration.md">LDAP Integration</a>
+            <a href="configuring-authentication-settings.md">Configuring Authentication Settings</a>
+        </category>
+</seealso>

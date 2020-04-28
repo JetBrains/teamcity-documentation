@@ -1,17 +1,9 @@
 [//]: # (title: Changing Build Status Manually)
 [//]: # (auxiliary-id: Changing Build Status Manually)
 
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-## Overview
-
 A user with appropriate permissions can change the status of a build manually, i.e. make it either failed or successful (issue [TW-2529](http://youtrack.jetbrains.com/issue/TW-2529)).
 
 The corresponding action is available in the Actions menu on the [Build Results](working-with-build-results.md) page.
-
 
 ## Marking build as successful
 

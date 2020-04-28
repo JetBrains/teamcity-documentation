@@ -1,10 +1,6 @@
 [//]: # (title: Viewing Tests and Configuration Problems)
 [//]: # (auxiliary-id: Viewing Tests and Configuration Problems)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Viewing Problems on Project Overview Page
 
 The __Project Overview__ page also displays the number of tests failed in build configurations as well as other problems. When the data in the problematic build configuration is not expanded, the link under the tests number takes you to the __Current Problems__ tab (see [below](#Using+Current+Problems+Tab)).
@@ -86,11 +82,11 @@ Investigation Auto Assigner can [delay automatic assignment of investigations](i
 
 Note that if [branches](working-with-feature-branches.md#Configuring+branches) are configured for a VCS Root, flaky tests are detected for the default branch only.
 
-__  __
-
-__See also:__
-
-__Concepts__: [Testing Frameworks](testing-frameworks.md)   
-__User's Guide__: [Working with Build Results](working-with-build-results.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="testing-frameworks.md">Testing Frameworks</a>
+        </category>
+        <category ref="user-guide">
+            <a href="working-with-build-results.md">Working with Build Results</a>
+        </category>
+</seealso>

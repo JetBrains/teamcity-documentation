@@ -16,11 +16,11 @@ YouTrack provides native TeamCity integration, which enhances the set of availab
 * YouTrack allows you to apply commands to issues by specifying them in a comment to a VCS change commit.
 To use these features, [configure YouTrack](https://www.jetbrains.com/help/youtrack/standalone/Integration-with-TeamCity.html).
 
- __  __
-
-__See also:__
-
-__Concepts__: [Supported Issue Trackers](supported-platforms-and-environments.md)   
-__Administrator's Guide__: [Integrating TeamCity with Issue Tracker](integrating-teamcity-with-issue-tracker.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="supported-platforms-and-environments.md">Supported Issue Trackers</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="integrating-teamcity-with-issue-tracker.md">Integrating TeamCity with Issue Tracker</a>
+        </category>
+</seealso>

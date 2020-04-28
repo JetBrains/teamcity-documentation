@@ -1,10 +1,6 @@
 [//]: # (title: CSRF Protection)
 [//]: # (auxiliary-id: CSRF Protection)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 
 ## General information
 

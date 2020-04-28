@@ -77,11 +77,12 @@ __Notes on Cleaning Up Artifacts__
  
 Artifacts may not be [cleaned](clean-up.md) if they were downloaded by other builds and these builds are not yet cleaned up. For a build configuration with configured artifact dependencies, you can specify whether the artifacts downloaded by this configuration from other builds can be cleaned or not. This setting is available on the [clean-up policies](clean-up.md) page.
 
-__  __
-
-__See also:__
-
-__Concepts__: [Build Artifact](build-artifact.md) | [Build Dependencies Setup](build-dependencies-setup.md)   
-__Administrator's Guide__: [Configuring Dependencies](configuring-dependencies.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-artifact.md">Build Artifact</a>
+            <a href="build-dependencies-setup.md">Build Dependencies Setup</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="configuring-dependencies.md">Configuring Dependencies</a>
+        </category>
+</seealso>

@@ -15,7 +15,7 @@ Remote debug for Ant steps requires that the build configuration have the `teamc
 
 </note>
 
-### Prerequisites:
+### Prerequisites
 * IntelliJ IDEA run configuration on the local developer machine with the [TeamCity plugin for IntelliJ IDEA](intellij-platform-plugin.md) installed
 * Build configuration on the TeamCity Server with the [IntelliJ IDEA Project](intellij-idea-project.md) runner as one of the [build steps](configuring-build-steps.md)
 * Remote [TeamCity agent](build-agent.md) to run this build available to the local machine by socket connection
