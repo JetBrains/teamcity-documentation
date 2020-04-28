@@ -1,6 +1,8 @@
 [//]: # (title: Storing Project Settings in Version Control)
 [//]: # (auxiliary-id: Storing Project Settings in Version Control)
 
+## Overview
+
 TeamCity allows the two-way synchronization of the project settings with the version control repository. Supported VCSs are Git, Mercurial, Perforce, Subversion, and Azure DevOps Server (formerly TFS).
 
 You can store settings in the XML format and in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [kotlin-based DSL](kotlin-dsl.md).
@@ -11,10 +13,6 @@ When you enable two-way settings synchronization:
 Before applying the newly checked-in settings, validation constraints are applied. If the constraints are not met (that is, the settings are invalid), the current settings are left intact and an error is shown in the UI. Invalid settings are those that cannot be loaded because of constraints, for instance, a build configuration referencing a non-existing VCS root, of having a duplicate ID or a duplicate name.
 
 The versioned settings are stored in the `.teamcity` directory in the root of the VCS repository, in the same format as in the [TeamCity Data Directory](teamcity-data-directory.md).
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
 
 ## Synchronizing Settings with VCS
 
@@ -172,10 +170,8 @@ A. When the settings are changed via the UI, TeamCity waits for the changes to b
 Q. Who are the changes authored by?   
 A. If the settings are changed via the user interface, in Git and Mercurial a commit in the VCS will be performed on behalf of the user who actually made the change via the UI. For Perforce as well as Azure DevOps Server (formerly TFS), the name of the user specified in the VCS root is used, and in Subversion the commit message will also contain the username of the TeamCity user who actually made the change via the UI.
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Kotlin DSL](kotlin-dsl.md) 
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="kotlin-dsl.md">Kotlin DSL</a>
+        </category>
+</seealso>

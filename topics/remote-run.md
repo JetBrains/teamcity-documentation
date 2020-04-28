@@ -5,11 +5,20 @@ A _remote run_ is a [personal build](personal-build.md) initiated by a developer
 
 For a list of version control systems supported by each IDE, see [Supported Platforms and Environments](supported-platforms-and-environments.md).
 
-__See also:__
-
-__Concepts__: [Pre-tested (delayed) commit](pre-tested-delayed-commit.md) | [Personal Build](personal-build.md)   
-__Remote Run on Branch:__ [Branch Remote Run Trigger](branch-remote-run-trigger.md)   
-__Installing Tools__: [IntelliJ Platform Plugin](intellij-platform-plugin.md) | [Eclipse Plugin](eclipse-plugin.md) | [Visual Studio Addin](visual-studio-addin.md)   
-__Troubleshooting__ [Reporting Issues](reporting-issues.md)
-
-__ __
+<seealso>
+        <category ref="inst_tools">
+            <a href="intellij-platform-plugin.md">IntelliJ Platform Plugin</a>
+            <a href="eclipse-plugin.md">Eclipse Plugin</a>
+            <a href="visual-studio-addin.md">Visual Studio Addin</a>
+        </category>
+        <category ref="concepts">
+            <a href="pre-tested-delayed-commit.md">Pre-tested (delayed) commit</a>
+            <a href="personal-build.md">Personal Build</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="branch-remote-run-trigger.md">Branch Remote Run Trigger</a>
+        </category>
+        <category ref="troubleshooting">
+            <a href="reporting-issues.md">Reporting Issues</a>
+        </category>
+</seealso>

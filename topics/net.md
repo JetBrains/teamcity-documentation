@@ -13,10 +13,6 @@ Note that we stop providing active support for the [MSBuild](msbuild.md), [Visua
 
 </note>
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Requirements
 
 The .NET runner requires the following software to be installed on a build agent machine:

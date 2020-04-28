@@ -14,10 +14,9 @@ When contacting us make sure to:
 * mention all related postings on the topic.
 </tip>
 
- __  __
-
-__See also:__
-
-__Troubleshooting__: [Known Issues](known-issues.md) | [Reporting Issues](reporting-issues.md)
-
-__ __
+ <seealso>
+        <category ref="troubleshooting">
+            <a href="known-issues.md">Known Issues</a>
+            <a href="reporting-issues.md">Reporting Issues</a>
+        </category>
+</seealso>

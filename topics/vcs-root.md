@@ -5,10 +5,16 @@
  <include src="configuring-vcs-roots.md" include-id="VCSRoot"/>
  
  
- __See also:__
-
-
-__Concepts__: [Project](project.md) | [Build Configuration](build-configuration.md)| [Build Configuration Template](build-configuration-template.md)   
-__Administrator's Guide__: [Configuring VCS Roots](configuring-vcs-roots.md) | [VCS Checkout Rules](vcs-checkout-rules.md) | [VCS Checkout Mode](vcs-checkout-mode.md) | [VCS Labeling](vcs-labeling.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="project.md">Project</a>
+            <a href="build-configuration.md">Build Configuration</a>
+            <a href="build-configuration-template.md">Build Configuration Template</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>
+            <a href="vcs-checkout-rules.md">VCS Checkout Rules</a>
+            <a href="vcs-checkout-mode.md">VCS Checkout Mode</a>
+            <a href="vcs-labeling.md">VCS Labeling</a>
+        </category>
+</seealso>

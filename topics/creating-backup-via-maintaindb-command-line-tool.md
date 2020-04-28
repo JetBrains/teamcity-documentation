@@ -3,8 +3,6 @@
 
 TeamCity [.tar.gz and .exe distributions](installing-and-configuring-the-teamcity-server.md) provide the `maintainDB.bat|sh` utility located in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>/bin` directory. This command-line tool enables you to back up the server data, [restore it](restoring-teamcity-data-from-backup.md), and [migrate between different databases](migrating-to-an-external-database.md). You can also create data backup using [web UI](creating-backup-from-teamcity-web-ui.md).
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Before You Backup
 
 Before backing up data, it is recommended to shut down the TeamCity server to include all builds into the backup. If the backup process is started when the TeamCity server is up, running and queued builds are not included into the backup.
@@ -85,11 +83,9 @@ maintainDB backup --data-dir <absolute path to the custom backup directory>
 
 If you customize TeamCity server startup options via `TEAMCITY_SERVER_OPTS/TEAMCITY_SERVER_MEM_OPTS` environment variables or use custom JDK installation to run the server, you might need to run `maintainDB` script with related options added into `TEAMCITY_MAINTAINDB_OPTS/TEAMCITY_MAINTAINDB_MEM_OPTS` environment variables and run the script with all the same environment as the TeamCity server, so that the same JVM is used.
  
- __  __
-
-__See also:__
-
-
-__Installation and Upgrade__: [Setting up an External Database](setting-up-an-external-database.md) | [Migrating to an External Database](migrating-to-an-external-database.md)
-
-__ __
+ <seealso>
+        <category ref="installation">
+            <a href="setting-up-an-external-database.md">Setting up an External Database</a>
+            <a href="migrating-to-an-external-database.md">Migrating to an External Database</a>
+        </category>
+</seealso>

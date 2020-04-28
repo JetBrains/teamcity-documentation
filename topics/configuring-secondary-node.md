@@ -13,10 +13,6 @@ Note that since TeamCity 2019.2 the [Running Builds Node](https://confluence.jet
 
 </note>
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Installing Secondary Node
 
 To install a secondary node, follow these steps:

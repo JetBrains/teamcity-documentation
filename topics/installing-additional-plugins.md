@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: Installing Additional Plugins)
 You can get TeamCity plugins in the [plugin repository](https://plugins.jetbrains.com/?teamcity).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 ## Installing a plugin from JetBrains Plugins repository
 
 __Since TeamCity 2018.2__, you can install plugins from the plugins repository.

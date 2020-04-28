@@ -3,10 +3,6 @@
 
 This is a runner for Ant `build.xml` files.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Testing Frameworks Support
 
 The TeamCity Ant runner supports the JUnit and TestNG frameworks. When tests are run by the `junit` and `testng` tasks directly within the script, TeamCity reports tests on the fly.
@@ -346,10 +342,8 @@ Ant Version
 
 </table>
  
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Configuring Java Code Coverage](configuring-java-code-coverage.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="configuring-java-code-coverage.md">Configuring Java Code Coverage</a>
+        </category>
+</seealso>

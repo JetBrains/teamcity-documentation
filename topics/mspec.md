@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: MSpec)
 _The MSpec Test Runner_ is designed specifically to run [MSpec](https://github.com/machine/machine.specifications) tests. 
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 <note>
 
 To run tests using MSpec, you need to install it on at least one build agent.
@@ -176,8 +172,8 @@ Learn about [Configuring .NET Code Coverage](configuring-.net-code-coverage.md).
 
 __ __
 
-__See also:__
-
-__Administrator's Guide__: [Configuring .NET Code Coverage](configuring-.net-code-coverage.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="configuring-.net-code-coverage.md">Configuring .NET Code Coverage</a>
+        </category>
+</seealso>

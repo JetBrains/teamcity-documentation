@@ -336,10 +336,9 @@ Directories are not considered changed when they have the `svn:mergeinfo` Subver
 
 
 
- __  __
-
-__See also:__
-
-__Administrator's Guide__: [Configuring VCS Settings](configuring-vcs-settings.md) | [VCS Checkout Mode](vcs-checkout-mode.md)
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-vcs-settings.md">Configuring VCS Settings</a>
+            <a href="vcs-checkout-mode.md">VCS Checkout Mode</a>
+        </category>
+</seealso>

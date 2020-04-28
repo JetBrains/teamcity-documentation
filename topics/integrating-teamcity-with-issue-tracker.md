@@ -6,10 +6,6 @@ The integration is configured at the project level: the Project Administrator pe
 
 Enabling integration for the project also enables it for all its subprojects; if the configuration settings are different in a subproject, its settings have priority over the project's settings.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Dedicated Support for Issue Trackers
 
 TeamCity supports [JIRA](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md) and __since TeamCity 10.0__ [GitHub](https://confluence.jetbrains.com/display/TCD10/GitHub), [Bitbucket Cloud](bitbucket-cloud.md), and [TFS](team-foundation-work-items.md) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Tracker+Integration) page lists supported versions.
@@ -128,13 +124,15 @@ To integrate TeamCity with other issue trackers, configure TeamCity to turn any 
 
 Dedicated support for an issue tracker can also be added via a custom [issue tracker integration plugin](https://plugins.jetbrains.com/docs/teamcity/issue-tracker-integration-plugin.html).
 
- __  __
+ <seealso>
+        <category ref="concepts">
+            <a href="supported-platforms-and-environments.md">Supported Issue Trackers</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="mapping-external-links-in-comments.md">Mapping External Links in Comments</a>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/docs/teamcity/issue-tracker-integration-plugin.html">Developing TeamCity Plugins: Issue Tracker Integration Plugin</a>
+        </category>
+</seealso>
 
-__See also:__
-
-
-__Concepts__: [Supported Issue Trackers](supported-platforms-and-environments.md)   
-__Administrator's Guide__: [Mapping External Links in Comments](mapping-external-links-in-comments.md)   
-__Developing TeamCity Plugins__: [Issue Tracker Integration Plugin](https://plugins.jetbrains.com/docs/teamcity/issue-tracker-integration-plugin.html)
-
-__ __

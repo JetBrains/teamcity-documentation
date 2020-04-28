@@ -10,11 +10,6 @@ In this tutorial, we'll go over the basics of these and see how we can deploy an
 Deploying ASP.NET applications can be done in a multitude of ways. Some build the application on a workstation and then xcopy it over to the target server. Some use a build server, download the artifacts, change the configuration files and xcopy those over to the server. The issue with that arises when something bad creeps in: deployments become unpredictable.
 What if there are leftovers of unnecessary or old assemblies on that workstation we're xcopying from? What if we forget to change the database connection string in _Web.config_ and mess up that release? How do we quickly roll back if that happens? The .NET stack has a solution to this: Configuration Transforms and WebDeploy.
 
-In this tutorial:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Configuration Transforms
 
 

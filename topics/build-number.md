@@ -15,10 +15,8 @@ A build number can be:
 * [Set with help of service messages](build-script-interaction-with-teamcity.md#Reporting+Build+Number)
 
 
- __  __
-
-__See also:__
-
-__Administrator's Guide__: [Configuring General Settings](configuring-general-settings.md)
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-general-settings.md">Configuring General Settings</a>
+        </category>
+</seealso>

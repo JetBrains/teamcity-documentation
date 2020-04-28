@@ -14,7 +14,7 @@ This page contains reference information about the following __Duplicates Finder
 
 <toc/>
 
-### IntelliJ IDEA Project Settings
+## IntelliJ IDEA Project Settings
 
 <table><tr>
 
@@ -131,7 +131,7 @@ Optional, specify if differs from the checkout directory.
 
 </td></tr></table>
 
-### Unresolved Project Modules and Path Variables
+## Unresolved Project Modules and Path Variables
 
 This section is displayed, when an IntelliJ IDEA module file (.iml) referenced from an IPR\-file:
 * cannot be found
@@ -172,7 +172,7 @@ This field appears if the project file contains path macros, defined in the Path
 
 <anchor name="projectJdk"/>
 
-### Project JDKs
+## Project JDKs
 
 This section provides the list of JDKs detected in the project.
 
@@ -284,7 +284,7 @@ You can use references to external properties when defining the values, like `%s
 
 <anchor name="duplicatorSearcherSettingsOptionDescription"/>
 
-### Duplicate Finder Settings
+## Duplicate Finder Settings
 
 <table><tr>
 

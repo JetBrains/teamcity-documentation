@@ -360,8 +360,8 @@ Specify the number of builds of the same configuration that can run simultaneous
 
 __ __
 
-__See also:__
-
-__Concepts__: [Build Configuration](build-configuration.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-configuration.md">Build Configuration</a>
+        </category>
+</seealso>

@@ -5,10 +5,6 @@ If you have an organization account in [GitHub](https://github.com/), [GitHub En
 
 It is also possible to connect TeamCity to [Azure DevOps Services](https://visualstudio.microsoft.com/team-services/) making it really simple to set up projects which use VSTS repositories or issue tracker.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="3"/>
-
 ## Configuring Connections
 
 Connections are created on the project level, a configured connection is accessible in the current project and in all of its subprojects. If you use global VCS hosting services like GitHub or Bitbucket Cloud, it makes sense to configure a single connection for the Root project. Or your organization administrator can create a parent project and a configure connection to GitHub there once, and the users will see a list of GitHub repositories URLs in the TeamCity web UI, which will make setting up subprojects a lot simpler for them.  

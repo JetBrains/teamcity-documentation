@@ -7,11 +7,6 @@ The build history, users and their data and some other data are stored in the [d
 
 Note that in this documentation and other TeamCity materials the directory is often referred to as `.BuildServer`. If you have a different name for it, replace `.BuildServer` with the actual name.
 
-On this page:
-
- <tag-list of="chapter" mode="tree" depth="4"/>
-
-
 <anchor name="SpecifyLocationoftheTeamCityDataDirectory"/>
 
 ## Location of the TeamCity Data Directory
@@ -132,11 +127,8 @@ If you plan to modify the configuration manually, note that there are entries in
 
 See also the related [section](how-to.md#Move+TeamCity+Projects+from+One+Server+to+Another) on moving projects between TeamCity servers.
 
-__  __
-
-__See also:__
-
-
-__Installation and Upgrade__: [TeamCity Data Backup](teamcity-data-backup.md)
-
-__ __
+<seealso>
+        <category ref="installation">
+            <a href="teamcity-data-backup.md">TeamCity Data Backup</a>
+        </category>
+</seealso>

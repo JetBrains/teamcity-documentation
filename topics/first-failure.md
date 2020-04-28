@@ -9,11 +9,8 @@ Here, _back throughout the history_ means that builds are analyzed with regard t
 A test which runs several times within a single build is counted as one test (that is all invocations of the same test are counted as one).
 
 
-__  __
-
-__See also:__
-
-__User Guide__: [Test History](working-with-build-results.md#Test+History)   
-__Concepts__: [Already Fixed In](already-fixed-in.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="already-fixed-in.md">Already Fixed In</a>
+        </category>
+</seealso>

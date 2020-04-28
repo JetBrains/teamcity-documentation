@@ -167,11 +167,12 @@ See the [NuGet documentation](http://docs.nuget.org/docs/reference/command-line-
 
 When you add the NuGet Installer runner to your build configuration, each finished build will have the __NuGet Packages__ tab listing the packages used.
 
- __  __
-
-__See also:__
-
-__Related Blog Post__: [NuGet Package Restore with TeamCity](http://blog.jetbrains.com/teamcity/2013/08/nuget-package-restore-with-teamcity/).  
-__Administrator's Guide__: [NuGet Pack](nuget-pack.md) | [NuGet Publish](nuget-publish.md)
-
-__ __
+ <seealso>
+        <category ref="blog">
+            <a href="http://blog.jetbrains.com/teamcity/2013/08/nuget-package-restore-with-teamcity/">NuGet Package Restore with TeamCity</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="nuget-pack.md">NuGet Pack</a>
+            <a href="nuget-publish.md">NuGet Publish</a>
+        </category>
+</seealso>

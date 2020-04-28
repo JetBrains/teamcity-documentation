@@ -37,10 +37,8 @@ See the [general information](http://xunit.github.io/docs/getting-test-results-i
 
 Note that we do not recommend using xUnit in combination with other testing frameworks in TeamCity since it might mix up the test reporting results.
 
-__  __
-
-__See also:__
-
-__Troubleshooting__: [Visual C Build Issues](visual-c-build-issues.md)
-
-__ __
+<seealso>
+        <category ref="troubleshooting">
+            <a href="visual-c-build-issues.md">Visual C Build Issues</a>
+        </category>
+</seealso>

@@ -1,11 +1,7 @@
 [//]: # (title: Running TeamCity Stack in AWS)
 [//]: # (auxiliary-id: Running TeamCity Stack in AWS)
 
-You can run the TeamCity stack in AWS using the [CloudFormation template](https://github.com/JetBrains/teamcity-cloudformation-template). Note that this is an experimental option, which might not yet be fully ready for the production use. You can still use it as a base for your deployment approach.
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
+You can run the TeamCity stack in AWS using the [CloudFormation template](https://github.com/JetBrains/teamcity-cloudformation-template). Note that this is an experimental option, which is currently in progress.
 
 ## Stack Overview
 
@@ -24,7 +20,7 @@ Both subnets are placed into a Virtual Private Cloud (VPC) which is completely s
 To create a TeamCity stack and connect to it, you will need:
 * [EC2 KeyPair](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in the same region as the TeamCity stack
 * Installed SSH client to connect to the TeamCity server and view the logs
-* IAM permissions to create the service\-linked role and apply a policy to it for the IAM entity creating the stack
+* IAM permissions to create the service-linked role and apply a policy to it for the IAM entity creating the stack
 
 ## Using Template
 
@@ -33,8 +29,6 @@ To create a TeamCity stack and connect to it, you will need:
 2\.  Specify the stack name and parameters provided by the template:
 
 ### Template Parameters
-
-__  __
 
 <table><tr>
 
@@ -316,10 +310,9 @@ To update TeamCity started from the CloudFormation template:
 6. Wait for the server to upgrade, log in to the TeamCity server and wait for the agent to upgrade and connect to the server.
 
 
-__  __
 
-__See also:__
-
-__TeamCity blog__: [The official TeamCity CloudFormation template](https://blog.jetbrains.com/teamcity/2017/10/teamcity-aws/)
-
-__ __
+<seealso>
+        <category ref="blog">
+            <a href="https://blog.jetbrains.com/teamcity/2017/10/teamcity-aws/">Official TeamCity CloudFormation template</a>
+        </category>
+</seealso>

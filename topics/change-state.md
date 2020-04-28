@@ -260,12 +260,13 @@ The change was integrated into a personal build that failed.
 
 </td></tr></table>
 
- __  __
-
-__See also:__
-
-
-__Concepts__: [Build Configuration Status](build-configuration.md) | [Build State](build-state.md) | [Change](change.md)   
-__User's Guide__: [Viewing Your Changes](viewing-your-changes.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="build-configuration.md">Build Configuration Status</a>
+            <a href="build-state.md">Build State</a>
+            <a href="change.md">Change</a>
+        </category>
+        <category ref="user-guide">
+            <a href="viewing-your-changes.md">Viewing Your Changes</a>
+        </category>
+</seealso>

@@ -18,10 +18,6 @@ To ensure the coverage data is collected properly, make sure your tests run in (
 
 </note>
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="3"/>
-
 ## Enabling JaCoco coverage
 
 TeamCity supports the java agent coverage mode allowing you to collect coverage without modifying build scripts or binaries. No additional build steps needed \- just choose JaCoCo coverage in a build step which runs tests:

@@ -1,11 +1,6 @@
 [//]: # (title: How To...)
 [//]: # (auxiliary-id: viewpage.actionpageId113084582;How To...)
 
-
-On this page:
-
-<tag-list of="chapter" mode="tree"/>
-
 ## Choose OS/Platform for TeamCity Server
 
 Once the server/OS fulfills the [requirements](supported-platforms-and-environments.md#TeamCity+Server), TeamCity can run on any system. Please also review the [requirements](supported-platforms-and-environments.md) for the integrations you plan to use, for example the following functionality requires or works better when TeamCity server is installed under Windows:
@@ -1399,16 +1394,3 @@ Release stages that we generally have are:
 The dates of previous releases and the sequence of TeamCity versions are listed on the [Previous Releases Downloads](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads) page.
 
 [//]: # (Internal note. Do not delete. "How To...d160e3129.txt")    
-
-__ __
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>

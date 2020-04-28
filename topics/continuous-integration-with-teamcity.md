@@ -1,8 +1,6 @@
 [//]: # (title: Continuous Integration with TeamCity)
 [//]: # (auxiliary-id: Continuous Integration with TeamCity)
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## What is Continuous Integration?
 
 Continuous Integration is a software development practice in which developers commit code changes into a shared repository several times a day. Each commit is followed by an automated build to ensure that new changes integrate well into the existing code base and to detect problems early.    

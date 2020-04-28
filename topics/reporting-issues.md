@@ -5,10 +5,6 @@ If you experience problems running TeamCity and believe they are related to the 
 
 To fix a problem, we may need a wide range of information about your system as well as various logs. The section below explains how to collect such information for different issues.
 
-In this section:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Best Practices When Reporting Issues
 
 Following these guidelines will ensure timely response and effective issue resolution. Check [Feedback](https://confluence.jetbrains.com/display/TW/Feedback) for appropriate ways to contact us. 
@@ -458,16 +454,3 @@ You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrain
 Large files can be uploaded via [`https://uploads.services.jetbrains.com/`](https://uploads.services.jetbrains.com/). Please let us know the exact file name after the upload.
 
 If you cannot upload a large file in one go, try splitting the file into parts and upload them separately.
-
-__ __
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>

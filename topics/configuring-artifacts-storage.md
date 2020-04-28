@@ -5,10 +5,6 @@ The __Project Settings | Artifacts Storage__ tab displays artifact storages conf
 
 By default, the built-in TeamCity artifacts storage is displayed and marked as active. You can activate a different storage using the corresponding link.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Built-in Artifacts Storage
 
 TeamCity stores [artifacts](build-artifact.md) produced by builds on the file system accessible by the TeamCity server. The default location is \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/artifacts but this location can be [redefined](teamcity-configuration-and-maintenance.md).

@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: NAnt)
 TeamCity supports NAnt starting from version 0.85.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 <note>
 
 The TeamCity NAnt runner requires .NET Framework or Mono installed on the build agent.
@@ -292,15 +288,17 @@ If checked, in the first place TeamCity will run tests failed in previous finish
 
 ## Code Coverage
 
-
-
 To learn about configuring code coverage options, refer to the [Configuring .NET Code Coverage](configuring-.net-code-coverage.md) page.
 
 __ __
 
-__See also:__
-
-__Concepts__: [Build Runner](build-runner.md) | [Build Checkout Directory](build-checkout-directory.md) | [Build Working Directory](build-working-directory.md)   
-__Administrator's Guide__: [Configuring Build Parameters](configuring-build-parameters.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-runner.md">Build Runner</a>
+            <a href="build-checkout-directory.md">Build Checkout Directory</a>
+            <a href="build-working-directory.md">Build Working Directory</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
+        </category>
+</seealso>

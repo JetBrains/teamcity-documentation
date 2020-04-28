@@ -21,10 +21,9 @@ In this section:
 <toc>
 </toc>
 
-__  __
-
-__See also:__
-
-__Concepts__: [Project](project.md) | [Build Configuration](build-configuration.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="project.md">Project</a>
+            <a href="build-configuration.md">Build Configuration</a>
+        </category>
+</seealso>

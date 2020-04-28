@@ -30,9 +30,11 @@ If system properties are required for the build, the [mstest-legacy-provider](ht
  
 __ __
 
-__See also:__
-
-__Concepts__: [Testing Frameworks](testing-frameworks.md)   
-__Administrator's Guide__: [NUnit Support](nunit-support.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="testing-frameworks.md">Testing Frameworks</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="nunit-support.md">NUnit Support</a>
+        </category>
+</seealso>

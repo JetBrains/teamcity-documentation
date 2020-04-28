@@ -5,11 +5,6 @@ A build configuration usually has [build triggers](configuring-build-triggers.md
 
 Besides triggering a build automatically, TeamCity allows you to run a build manually whenever you need, and customize this build by adding properties, using specific changes, running the build on a specific agent, and so on.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 There are several ways of launching a custom build in TeamCity:
 * Click the ellipsis on the __Run__ button, and specify the options in the __Run Custom Build__ dialog described [below](#General+Options).
 * To run a custom build with specific changes, open the build results page, go to the [Changes](working-with-build-results.md#Changes) tab, expand the required change, click the __Run build with this change__, and proceed with the [options](#General+Options) in the __Run Custom Build__ dialog.
@@ -105,12 +100,16 @@ More details are available in the [related blog-post](http://blog.jetbrains.com/
 
 
 
- __  __
-
-__See also:__
-
-
-__Concepts__: [Build Queue](build-queue.md) | [Dependent Build](dependent-build.md) | [Personal Build](personal-build.md)   
-__Administrator's Guide__: [Configuring Build Triggers](configuring-build-triggers.md)
-
-__ __
+ <seealso>
+        <category ref="installation">
+            <a href="upgrade.md">Upgrade</a>
+        </category>
+        <category ref="concepts">
+            <a href="build-queue.md">Build Queue</a>
+            <a href="dependent-build.md">Dependent Build</a>
+            <a href="personal-build.md">Personal Build</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="configuring-build-triggers.md">Configuring Build Triggers</a>
+        </category>
+</seealso>

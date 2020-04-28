@@ -3,11 +3,6 @@
 
 This tutorial aims at describing the basic practices of using [NUnit 3](http://www.nunit.org/) in TeamCity. The test project and script samples can be found [here](https://github.com/JetBrains/teamcity-nunit-samples). The order of use cases is based on the number of the TeamCity features involved: the first case is the most basic, more complex cases that follow utilize a larger number of features. We recommend you familiarizing yourself with all features, finding their advantages and disadvantages, and then decide in favor of one or another.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Installing NUnit
 
 <include src="nunit.md" include-id="installing-nunit"/>
@@ -161,10 +156,8 @@ In this case `5Oqkbf9J2qJNkUK4KEtKvxs8TFFnlrno.nunit` is the NUnit project file,
 
 <img src="nunit-hidden-artifacts.png" alt="NUnit hidden artifacts" width="692"/>
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [NUnit Support](nunit-support.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="nunit-support.md">NUnit Support</a>
+        </category>
+</seealso>

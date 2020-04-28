@@ -145,10 +145,8 @@ Specify additional command line parameters to be passed to the build runner. Ins
 
 </td></tr></table>
 
-__  __
-
-__See also:__
-
-__Troubleshooting__: [Visual Studio logging](reporting-issues.md)
-
-__ __
+<seealso>
+        <category ref="troubleshooting">
+            <a href="reporting-issues.md">Visual Studio logging</a>
+        </category>
+</seealso>

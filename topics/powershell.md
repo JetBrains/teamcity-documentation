@@ -10,10 +10,6 @@ The plugin responsible for PowerShell integration has been open-sourced [on GitH
 If you need to run a PowerShell script with elevated permissions, consider using the TeamCity [RunAs plugin](https://github.com/JetBrains/teamcity-runas-plugin).
 </tip>
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Cross-Platform PowerShell
 
 * Cross-platform PowerShell ([PowerShell Core](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/)) is supported on Windows, MacOS, and Linux: [download a PowerShell package](https://github.com/PowerShell/PowerShell#get-powershell) for your platform and install it on the TeamCity agent.

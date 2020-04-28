@@ -5,10 +5,6 @@ The _SSH Agent_ [build feature](adding-build-features.md) runs an SSH agent with
 
 Check [SSH Keys Management](ssh-keys-management.md) for SSH key upload notes.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Agent Setup
 
 The TeamCity SSH agent uses a native SSH agent from the OpenSSH included with Linux and macOS, so the feature works out of the box for these OSs. For Windows, OpenSSH needs to be installed (for example, as a part of CygWin, MinGW or a part of Git distribution for Windows).

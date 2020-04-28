@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: Command Line)
 Using this build runner, you can run any script supported by the OS.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Command Line Runner Settings
 
 ### General Settings
@@ -132,12 +128,14 @@ To learn about configuring code coverage options, refer to the [Configuring Java
 
 
 
-__  __
+<seealso>
+        <category ref="concepts">
+            <a href="build-runner.md">Build Runner</a>
+            <a href="build-checkout-directory.md">Build Checkout Directory</a>
+            <a href="build-working-directory.md">Build Working Directory</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="configuring-build-steps.md">Configuring Build Steps</a>
+        </category>
+</seealso>
 
-__See also:__
-
-
-__Concepts__: [Build Runner](build-runner.md) | [Build Checkout Directory](build-checkout-directory.md) | [Build Working Directory](build-working-directory.md)   
-__Administrator's Guide__: [Configuring Build Steps](configuring-build-steps.md)
-
-__ __

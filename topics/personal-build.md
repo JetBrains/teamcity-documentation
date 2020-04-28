@@ -49,7 +49,7 @@ __To upload a patch and run a personal build via REST API__:
        --data-binary @patch.diff \
        "http://<username>:<password>@<host>:<port>/uploadDiffChanges.html?description=<description-text>&commitType=0"
    ```
-   As a response, you will receive the ID of this change on the server.
+   As a response, you will receive the ID of this change on the server.   
 2. Create an XML file that describes the build node and mentions the build configuration ID and the ID of your personal change:
    ```xml
    <build personal="true">
@@ -60,7 +60,7 @@ __To upload a patch and run a personal build via REST API__:
        <change id="<change_ID>" personal="true"/>
      </lastChanges>
    </build>
-   ```
+   ```   
 3. To trigger a personal build via REST API, post the created file to the `buildQueue` endpoint:
    ```Shell
     curl \
@@ -69,15 +69,20 @@ __To upload a patch and run a personal build via REST API__:
         -H "Origin: <host>:<port>" \
         --data @node.xml \
         "http://<username>:<password>@<host>:<port>/app/rest/buildQueue"
-   ```
+   ```   
    The agent will receive the patch and apply it before running the build. After the build, it will revert the patch, so the checkout directory can be reused by subsequent builds.
 
- __  __
-
-__See also:__
-
-__Concepts__: [Pre-tested Commit](pre-tested-delayed-commit.md) | [Remote Run](remote-run.md)   
-__Installing Tools__: [IntelliJ Platform Plugin](intellij-platform-plugin.md) | [Eclipse Plugin](eclipse-plugin.md) | [Visual Studio Addin](visual-studio-addin.md)   
-__Troubleshooting__: [Remote Run Problems](reporting-issues.md)
-
-__ __
+ <seealso>
+        <category ref="installation">
+            <a href="intellij-platform-plugin.md">IntelliJ Platform Plugin</a>
+            <a href="eclipse-plugin.md">Eclipse Plugin</a>
+            <a href="visual-studio-addin.md">Visual Studio Addin</a>
+        </category>
+        <category ref="concepts">
+            <a href="pre-tested-delayed-commit.md">Pre-tested Commit</a>
+            <a href="remote-run.md">Remote Run</a>
+        </category>
+        <category ref="troubleshooting">
+            <a href="reporting-issues.md">Remote Run Problems</a>
+        </category>
+</seealso>

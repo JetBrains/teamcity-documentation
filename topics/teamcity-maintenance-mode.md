@@ -43,12 +43,11 @@ If on TeamCity startup a critical error was encountered, this page will display 
 If you see this screen when [settings up TeamCity with an external database](setting-up-an-external-database.md) or [after migrating to an external database](migrating-to-an-external-database.md), click __Proceed__ to create a new database for TeamCity.
 
  
- __  __
-
-__See also:__
-
-
-__Installation and Upgrade__: [Upgrade](upgrade.md)   
-__Administrator's Guide__: [TeamCity Data Backup](teamcity-data-backup.md)
-
-__ __
+ <seealso>
+        <category ref="installation">
+            <a href="upgrade.md">Upgrade</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="teamcity-data-backup.md">TeamCity Data Backup</a>
+        </category>
+</seealso>

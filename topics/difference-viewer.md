@@ -15,11 +15,9 @@ To move between changes, use the next and previous change arrows and the red and
 
 If you want to switch to your IDE and explore a change in detail, click the __Open in the IDE__ button in the upper-right corner of the window or select it in the pop\-up next to the file name. The file opens, and you will navigate to this particular change.
 
- __  __
-
-
-__See also:__
-
-__Concepts__: [Project](project.md) | [Build Configuration](build-configuration.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="project.md">Project</a>
+            <a href="build-configuration.md">Build Configuration</a>
+        </category>
+</seealso>

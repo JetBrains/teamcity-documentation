@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: Project and Agent Level Build Parameters)
 In addition to defining [build parameters](configuring-build-parameters.md) in Build Configuration settings, you can define them on the project or build agent level.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Project Level Build Parameters
 
 TeamCity allows you to define build parameters for a project, __all__ its subprojects and build configurations in one place: __Project Settings__ \> __Parameters__ tab.
@@ -40,14 +36,12 @@ When defining system properties and environment variables in the `teamcity.defau
 
 ```
 
-
-
 For example: `env.CATALINA_HOME=C:\tomcat_6.0.13`.
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Configuring Build Parameters](configuring-build-parameters.md) | [Defining and Using Build Parameters in Build Configuration](configuring-build-parameters.md) | [Predefined Build Parameters](predefined-build-parameters.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
+            <a href="configuring-build-parameters.md">Defining and Using Build Parameters in Build Configuration</a>
+            <a href="predefined-build-parameters.md">Predefined Build Parameters</a>
+        </category>
+</seealso>

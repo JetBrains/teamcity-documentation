@@ -4,10 +4,6 @@
 
 This page lists the options to manage the queue builds manually. Automatic build queue optimization is detailed in the [separate section](build-queue.md#Build+Queue+Optimization+by+TeamCity).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Manually Reordering Builds in Queue
 
 To reorder builds in the [Build Queue](build-queue.md), you can drag them to the desired position.
@@ -58,10 +54,8 @@ When the queue size reaches the limit, TeamCity will pause [Configuring Build Tr
 
  While __automatic__ triggering is paused, it is still possible to add builds to the queue [manually](triggering-a-custom-build.md).
 
- __  __
-
-__See also:__
-
-__Concepts__: [Build Queue](build-queue.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="build-queue.md">Build Queue</a>
+        </category>
+</seealso>

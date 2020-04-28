@@ -9,10 +9,6 @@ Since TeamCity 2019.2.3, we have stopped providing active support for the MSBuil
 
 This page contains reference information for the __MSBuild__ build runner fields.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 <note>
 
 The MSBuild runner requires .NET Framework or Mono installed on the build agent. [Microsoft Build Tools](https://devblogs.microsoft.com/visualstudio/msbuild-is-now-part-of-visual-studio/) 2013-2019 are supported.
@@ -173,11 +169,13 @@ MSBuild runner generates an MSBuild script that includes user's script. This scr
   
 
 
-__  __
-
-__See also:__
-
-__Concepts__: [Build Runner](build-runner.md) | [Build Checkout Directory](build-checkout-directory.md)   
-__Administrator's Guide__: [NUnit for MSBuild](nunit-for-msbuild.md) | [MSBuild Service Tasks](msbuild-service-tasks.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-runner.md">Build Runner</a>
+            a href="build-checkout-directory.md">Build Checkout Directory</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="nunit-for-msbuild.md">NUnit for MSBuild</a>
+            <a href="msbuild-service-tasks.md">MSBuild Service Tasks</a>
+        </category>
+</seealso>

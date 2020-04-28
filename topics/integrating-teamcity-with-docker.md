@@ -3,10 +3,6 @@
 
 TeamCity comes with Docker Support, implemented as a bundled [plugin](https://plugins.jetbrains.com/plugin/10062-docker-support).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Requirements
 
 The integration requires [Docker](https://docs.docker.com/engine/installation/) installed on the build agents. To use the [Docker Compose](docker-compose.md) build runner, install [Docker Compose](https://docs.docker.com/compose/install/) as well.

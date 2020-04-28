@@ -9,10 +9,6 @@ It is recommended to have a separate build configuration for each sequence of bu
 
 To tackle an increased number of build configurations you can use [build configuration templates](build-configuration-template.md) and project-level [parameters](configuring-build-parameters.md).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Build Configuration Settings
 
 Build configuration settings include:
@@ -185,10 +181,8 @@ To display the status for a set of build configurations __externally__ (on your 
 * use any of the available [visualization plugins](https://plugins.jetbrains.com/search?correctionAllowed=true&pr=teamcity&orderBy=relevance&tags=Notification%2FVisualizers&search=)
 * implement a separate page or application which will get the build configuration status via the TeamCity [REST API](rest-api.md)
 
- __  __
-
-__See also:__
-
-__Administrator's Guide__: [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md)
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
+        </category>
+</seealso>

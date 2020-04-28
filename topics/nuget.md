@@ -1,10 +1,6 @@
 [//]: # (title: NuGet)
 [//]: # (auxiliary-id: NuGet)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Integration Capabilities
 
 TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager and when [NuGet is installed](#Installing+NuGet+to+TeamCity+agents) provides the following capabilities:
@@ -92,12 +88,11 @@ API support:
 
 NuGet command line client supports proxy server configuration via the `NuGet.config` file parameters or environment variables. See [NuGet documentation](https://docs.microsoft.com/en-us/nuget/schema/nuget-config-file#config-section) for more details.
 
-__  __
-
-__See also:__
-
-
-
-__Administrator's Guide__: [NuGet Installer](nuget-installer.md) | [NuGet Publish](nuget-publish.md) | [NuGet Pack](nuget-pack.md) | [NuGet Dependency Trigger](nuget-dependency-trigger.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="nuget-installer.md">NuGet Installer</a>
+            <a href="nuget-publish.md">NuGet Publish</a>
+            <a href="nuget-pack.md">NuGet Pack</a>
+            <a href="nuget-dependency-trigger.md">NuGet Dependency Trigger</a>
+        </category>
+</seealso>

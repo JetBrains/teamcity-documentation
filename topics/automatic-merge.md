@@ -5,10 +5,6 @@ The _Automatic Merge_ build feature tracks builds in branches matched by the con
 The feature is supported for Git and Mercurial VCS roots for build configurations with enabled [feature branches](working-with-feature-branches.md).   
 TeamCity also allows merging branches [manually](working-with-feature-branches.md#Manual+branch+merging).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Automatic Merge Settings
 
 Check [Adding Build Features](adding-build-features.md) for notes on how to add a build feature.   

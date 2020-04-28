@@ -5,11 +5,6 @@ Feature Branches in distributed version control systems (DVCS) allow you to work
 
 TeamCity support for feature branches is continuously increasing and, among other features, includes [Branch Remote Run Trigger](branch-remote-run-trigger.md) starting a new personal build each time TeamCity detects changes in a particular branches of the VCS roots of the build configuration and [Automatic Merge](automatic-merge.md) to merge a branch into another after a successful build.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Supported version control systems
 
 [Git](git.md) and [Mercurial](mercurial.md) feature branches are supported as well as Perforce [branch streams support](perforce.md#branch-support).
@@ -278,10 +273,9 @@ Open the [build results page](working-with-build-results.md), click the __Action
 
 It is also possible to merge branches [automatically](automatic-merge.md).
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Git](git.md) | [Mercurial](mercurial.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="git.md">Git</a>
+            <a href="mercurial.md">Mercurial</a>
+        </category>
+</seealso>

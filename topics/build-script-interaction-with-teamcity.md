@@ -11,12 +11,6 @@ If you use MSBuild build runner, you can try [MSBuild Service Tasks](msbuild-ser
 
 </tip>
 
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
-
 ## Service Messages
 
 _Service messages_ are specially constructed pieces of text that pass commands/information about the build from the build script to the TeamCity server.
@@ -647,7 +641,7 @@ When specifying a build parameter's name, mind the prefix:
 
 #### Reporting Build Statistics
 
-In TeamCity, it is possible to configure a build script to report statistical data and then display the charts based on the data. Refer to the [Customizing Statistics Charts](customizing-statistics-charts.md#Modifying+Pre-defined+Project-level+Charts) page for a guide to displaying the charts on the web UI. This section describes how to report the statistical data from the build script via service messages. You can publish the build statics values in two ways:
+In TeamCity, it is possible to configure a build script to report statistical data and then display the charts based on the data. Refer to the [Customizing Statistics Charts](customizing-statistics-charts.md#Modifying+Predefined+Project-level+Charts) page for a guide to displaying the charts on the web UI. This section describes how to report the statistical data from the build script via service messages. You can publish the build statics values in two ways:
 * Using a service message in a build script directly
 * [Providing data using the teamcity-info.xml file](#Providing+data+using+the+teamcity-info.xml+file)   
 To report build statistics using service messages: Specify a `buildStatisticValue` service message with the following format for each statistics value you want to report:
@@ -1093,7 +1087,7 @@ The `teamcity-info.xml` file is to contain the code in the following format (you
 
 ```
 
-The `key` must not be equal to any of [predefined keys](customizing-statistics-charts.md#Modifying+Pre-defined+Project-level+Charts). The `value` must be a positive/negative integer of up to 13 digits. Float values with up to 6 decimal places are supported.
+The `key` must not be equal to any of [predefined keys](customizing-statistics-charts.md#Modifying+Predefined+Project-level+Charts). The `value` must be a positive/negative integer of up to 13 digits. Float values with up to 6 decimal places are supported.
 
 The key here relates to the key of the __valueType__ tag used when describing the chart.
 

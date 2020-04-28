@@ -22,14 +22,12 @@ All the newly registered users get roles and notification rules inherited from t
 
 The [Guest User](guest-user.md) does not belong to the All Users group so roles and notification rules can be managed for the user separately.
 
- __  __
-
-__See also:__
-
-__Concepts__: [User Account](user-account.md) | [Role and Permission](role-and-permission.md)   
-__Administrator's Guide__: [Managing User Accounts, Groups and Permissions](managing-user-accounts-groups-and-permissions.md)
-
-
-[//]: # (Internal note. Do not delete. "User Groupd338e93.txt")
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="user-account.md">User Account</a>
+            <a href="role-and-permission.md">Role and Permission</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="managing-user-accounts-groups-and-permissions.md">Managing User Accounts, Groups and Permissions</a>
+        </category>
+</seealso>

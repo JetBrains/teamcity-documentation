@@ -1,10 +1,6 @@
 [//]: # (title: Visual Studio Addin)
 [//]: # (auxiliary-id: Visual Studio Addin)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 ## Add-in Features
 
 The TeamCity add-in for Microsoft Visual Studio provides the following features:
@@ -46,11 +42,11 @@ The Legacy version of the TeamCity VS Add-in for Visual Studio versions from 200
 
 See the [Supported Platforms and Environment](supported-platforms-and-environments.md#IDE+Integration) page for the system requirements to configure integration with different version control systems or coverage tools.
 
-__  __
-
-__See also:__
-
-__Related blog post__: [TeamCity plugin for Visual Studio@TeamCity blog](http://blogs.jetbrains.com/teamcity/2013/03/13/teamcity-plugin-for-visual-studio/)   
-__Troubleshooting__: [TeamCity Visual Studio Add-in issues](reporting-issues.md)
-
-__ __
+<seealso>
+        <category ref="blog">
+            <a href="http://blogs.jetbrains.com/teamcity/2013/03/13/teamcity-plugin-for-visual-studio/">TeamCity plugin for Visual Studio</a>
+        </category>
+        <category ref="troubleshooting">
+            <a href="reporting-issues.md">TeamCity Visual Studio Add-in issues</a>
+        </category>
+</seealso>

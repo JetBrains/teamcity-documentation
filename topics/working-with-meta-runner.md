@@ -16,11 +16,6 @@ All meta-runners are stored on a project level, so they are available within thi
 
 You can use the existing meta-runners from the TeamCity Meta-Runners Power Pack or create your own meta-runner.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Using Meta-Runners Power Pack
 
 [Meta-runners Power Pack for TeamCity](https://github.com/jetbrains/meta-runner-power-pack), available on GitHub, is a collection of meta-runners for various tasks such as downloading a file, triggering a build, tagging a build, changing a build status, running PHP tasks, and so on.

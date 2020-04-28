@@ -15,11 +15,6 @@ For common VCS Root properties, see [this section](configuring-vcs-roots.md#Comm
 
 TeamCity supports Mercurial out of the box.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## General Settings
 
 <table><tr>
@@ -420,10 +415,8 @@ Path to hg executable on the agent (see [Path to hg executable detection](#Path+
 
 </td></tr></table>
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Branch Remote Run Trigger](branch-remote-run-trigger.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="branch-remote-run-trigger.md">Branch Remote Run Trigger</a>
+        </category>
+</seealso>

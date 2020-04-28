@@ -2,11 +2,6 @@
 [//]: # (auxiliary-id: .NET Process Runner)
 The _.NET Process Runner_ is able to run any .NET assembly under the selected .NET Framework version and platform, optionally with .NET code coverage. You can use it to run xUnit, Gallio or other .NET tests, for which there is no dedicated build runner. 
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 <note>
 
 The runner requires .NET Framework installed on the TeamCity Agent.
@@ -117,24 +112,16 @@ If you have an MSIL .NET 2.0/3.5 executable, TeamCity can enforce it to execute 
 </tr>
 </table>
 
-
-
-
 ## Code Coverage
 
-
 If needed, [add code coverage](configuring-.net-code-coverage.md).
-
-
 
 Note that you do not need to write any additional build scripts.
 
 
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Configuring .NET Code Coverage](configuring-.net-code-coverage.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="configuring-.net-code-coverage.md">Configuring .NET Code Coverage</a>
+        </category>
+</seealso>

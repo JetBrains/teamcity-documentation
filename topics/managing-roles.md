@@ -15,10 +15,8 @@ The role settings are global.
 
 You can also configure roles and permissions using the `roles-config.xml` file stored in \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config directory.
 
- __  __
-
-__See also:__
-
-__Concepts__: [Role and Permission](role-and-permission.md)
-
-__ __
+ <seealso>
+       <category ref="concepts">
+            <a href="role-and-permission.md">Role and Permission</a>
+        </category>
+</seealso>

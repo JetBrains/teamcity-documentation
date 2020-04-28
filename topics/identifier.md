@@ -1,10 +1,6 @@
 [//]: # (title: Identifier)
 [//]: # (auxiliary-id: Identifier)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 An _ID_ is an identifier given to TeamCity entities ([projects](project.md), [build configurations](build-configuration.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on).
 
 Each entity has two identifiers:
@@ -51,11 +47,17 @@ TeamCity projects, build configurations, and VCS roots have a UUID which is an a
 
 [//]: # (Internal note. Do not delete. "Identifierd161e161.txt")    
 
-__  __
-
-__See also:__
-
-__Concepts__: [Project](project.md) | [Build Configuration](build-configuration.md)   
-__Administrator's Guide__: [Managing Projects and Build Configurations](managing-projects-and-build-configurations.md) | [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md) | [Configuring VCS Roots](configuring-vcs-roots.md) | [Accessing Server by HTTP](accessing-server-by-http.md) | [Patterns For Accessing Build Artifacts](patterns-for-accessing-build-artifacts.md) | [REST API](rest-api.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="project.md">Project</a>
+            <a href="build-configuration.md">Build Configuration</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="managing-projects-and-build-configurations.md">Managing Projects and Build Configurations</a>
+            <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
+            <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>
+            <a href="accessing-server-by-http.md">Accessing Server by HTTP</a>
+            <a href="patterns-for-accessing-build-artifacts.md">Patterns For Accessing Build Artifacts</a>
+            <a href="rest-api.md">REST API</a>
+        </category>
+</seealso>

@@ -3,10 +3,6 @@
 
 This page is intended to give you the general idea on how dependencies work in TeamCity based on an example. For the dependencies description, see [Dependent Build](dependent-build.md).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Introduction
 
 In many cases it is convenient to use the output of one build in another, as well as to run a number of builds sequentially on the same sources. Consider a typical example: you have a cross-platform project that has to be tested under Windows and macOS before you get the production build. The best workflow for this simple case will be to:

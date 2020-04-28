@@ -175,11 +175,8 @@ Some settings in VCS roots can effectively disable builds reusing. These setting
 
 * Starteam: checkout mode option set to __view label__ or __promotion date__
  
-  __  __
-
-__See also:__
-
-
-__Concepts__: [Dependent Build](dependent-build.md)
-
-__ __
+  <seealso>
+        <category ref="concepts">
+            <a href="dependent-build.md">Dependent Build</a>
+        </category>
+</seealso>

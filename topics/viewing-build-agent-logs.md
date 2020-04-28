@@ -1,10 +1,6 @@
 [//]: # (title: Viewing Build Agent Logs)
 [//]: # (auxiliary-id: Viewing Build Agent Logs)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 To analyze agent-specific cases, there are internal log files saved by the TeamCity agent process into `<TeamCity agent home>/logs` directory on the agent machine.
 
 When the agent is connected to TeamCity server, you can __browse and download__ the agent logs in TeamCity web UI, on the __Agent Logs__ tab for an agent.
@@ -175,11 +171,11 @@ You can configure location of the logs by altering the value of the `teamcity_lo
 
 For additional options on tweaking logging, refer to the [TeamCity Server Logs](teamcity-server-logs.md#Changing+Logging+Configuration) page.
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [TeamCity Server Logs](teamcity-server-logs.md)   
-__Troubleshooting__: [Reporting Issues](reporting-issues.md)
-
-__ __
+<seealso>
+        <category ref="troubleshooting">
+            <a href="reporting-issues.md">Reporting Issues</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="teamcity-server-logs.md">TeamCity Server Logs</a>
+        </category>
+</seealso>

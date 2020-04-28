@@ -36,12 +36,13 @@ The chart for code coverage is also available on the [Statistic Charts](statisti
 
 For the details on configuring code coverage, refer to the dedicated pages: [Configuring Java Code Coverage](configuring-java-code-coverage.md), [Configuring .NET Code Coverage](configuring-.net-code-coverage.md).
 
- __  __
-
-__See also:__
-
-
-__Concepts__: [Build Runner](build-runner.md)   
-__Administrator's Guide__: [Configuring Java Code Coverage](configuring-java-code-coverage.md) | [Configuring .NET Code Coverage](configuring-.net-code-coverage.md) | [How To...](how-to.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="build-runner.md">Build Runner</a>            
+        </category>
+        <category ref="admin-guide">
+            <a href="configuring-java-code-coverage.md">Configuring Java Code Coverage</a>
+            <a href="configuring-.net-code-coverage.md">Configuring .NET Code Coverage</a>
+            <a href="how-to.md#Integrate+with+Build+and+Reporting+Tools">Integrating with External Reporting Tools</a>
+        </category>
+</seealso>

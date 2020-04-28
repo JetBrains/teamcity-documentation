@@ -1,8 +1,6 @@
 [//]: # (title: What's New in TeamCity 2019.2)
 [//]: # (auxiliary-id: What's New in TeamCity 2019.2)
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## New flexible clean-up rules
 
 Automatic build clean-up has been present in TeamCity since the early versions. It allows conveniently deleting old and no longer necessary build data. While the provided customization options are quite easy to configure, they cover only the most common cases and do not allow for fine-tuning.

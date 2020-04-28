@@ -13,11 +13,8 @@ Not all build runners provide the working directory setting.
 
 The path entered in the __Working Directory__ field can be either absolute or relative to the [build checkout directory](build-checkout-directory.md). When using this option, all of the other paths should still be entered relative to the checkout directory.
 
-__  __
-
-__See also:__
-
-__Concepts__: [Build Checkout Directory](build-checkout-directory.md)
-__Administrator's Guide__: [Build Artifact Paths](configuring-general-settings.md#Artifact+Paths)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-checkout-directory.md">Build Checkout Directory</a>
+        </category>
+</seealso>

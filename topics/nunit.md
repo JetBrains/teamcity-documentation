@@ -20,10 +20,6 @@ NUnit version __3.4.0__ is __not__ supported by the NUnit build runner due to a 
 
 Note that the NUnit runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the .NET build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead. Refer to the [NUnit Support](nunit-support.md#Framework+Compatibility) page for details.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 <anchor name="NUnit3Extensions"/>
 
 ## NUnit 3 Requirements
@@ -284,10 +280,10 @@ To learn about configuring code coverage options, refer to the [Configuring .NET
 
 __For NUnit 3.x__, only [JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool.
  
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Configuring Unit Testing and Code Coverage](configuring-unit-testing-and-code-coverage.md) | [NUnit Support](nunit-support.md) | [Getting Started with NUnit](getting-started-with-nunit.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="configuring-unit-testing-and-code-coverage.md">Configuring Unit Testing and Code Coverage</a>
+            <a href="nunit-support.md">NUnit Support</a>
+            <a href="getting-started-with-nunit.md">Getting Started with NUnit</a>
+        </category>
+</seealso>
