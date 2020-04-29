@@ -1,10 +1,6 @@
 [//]: # (title: Using HTTPS to access TeamCity server)
 [//]: # (auxiliary-id: Using HTTPS to access TeamCity server)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 This document describes how to configure Java applications to use HTTPS for communicating with the server.
 
 <note>

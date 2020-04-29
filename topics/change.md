@@ -15,11 +15,12 @@ Viewing and analyzing changes involves the following possibilities:
 * Navigating to the source code and viewing differences.
 * [Starting an investigation](investigating-and-muting-build-failures.md) of a failed build, if your changes have caused a build failure.
  
-__  __
-
-__See also:__
-
-__Concepts__: [Revision](revision.md) | [Build Configuration](build-configuration.md)   
-__User's Guide__: [Investigating and Muting Build Failures](investigating-and-muting-build-failures.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="revision.md">Revision</a>
+            <a href="build-configuration.md">Build Configuration</a>
+        </category>
+        <category ref="user-guide">
+            <a href="investigating-and-muting-build-failures.md">Investigating and Muting Build Failures</a>
+        </category>
+</seealso>

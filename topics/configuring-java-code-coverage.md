@@ -9,10 +9,12 @@ See details in the dedicated sections:
 
 __ __
 
-__See also:__
-
-
-__Concepts__: [Code Coverage](code-coverage.md)   
-__Administrator's Guide__: [IntelliJ IDEA](intellij-idea.md) | [EMMA](emma.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="code-coverage.md">Code Coverage</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="intellij-idea.md">IntelliJ IDEA</a>
+            <a href="emma.md">EMMA</a>
+        </category>
+</seealso>

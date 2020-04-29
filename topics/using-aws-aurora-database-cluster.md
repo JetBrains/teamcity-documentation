@@ -1,9 +1,6 @@
 [//]: # (title: Using AWS Aurora Database Cluster)
 [//]: # (auxiliary-id: Using AWS Aurora Database Cluster)
-
 This page provides details on using an [Amazon Aurora](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Overview.html) cluster as the TeamCity database server.
-
-<tag-list of="chapter" mode="tree" depth="4"/>
 
 ## Overview
 

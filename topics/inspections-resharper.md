@@ -11,9 +11,7 @@ The __Inspections (ReSharper)__ build runner allows you to use the benefits of t
 
 ReSharper command line tools 2018.2 or newer require .NET Framework 4.6.1 or newer.
 
-If you want to run ReSharper inspections using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can install another version of the tools and change the default version to be used on the __[Administration | Tools](installing-agent-tools.md)__ page. This page contains reference information about the __Inspections (.NET)__ Build Runner fields:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
+If you want to run ReSharper inspections using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can install another version of the tools and change the default version to be used on the __[Administration | Tools](installing-agent-tools.md)__ page. This page contains reference information about the __Inspections (.NET)__ Build Runner fields.
 
 You can also refer to the [ReSharper documentation](https://www.jetbrains.com/help/resharper/Detect_code_issues_in_a_build_using_ReSharper_and_TeamCity.html) for more details.
 
@@ -249,7 +247,7 @@ If a build has too many inspection errors or warnings, you can configure it to f
 
 ## Build before analyze
 
-In order to have adequate inspections execution results, you may need to _build your solution before running analysis_. This pre-step is especially actual when you use (implicitly or explicitly) _code generation_ in your project.
+In order to have adequate inspections execution results, you may need to __build your solution before running analysis__. This pre\-step is especially actual when you use (implicitly or explicitly) __code generation__ in your project.
 
 ### Bundled ReSharper Versions
 

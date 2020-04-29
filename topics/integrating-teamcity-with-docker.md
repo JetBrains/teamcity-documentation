@@ -1,16 +1,14 @@
 [//]: # (title: Integrating TeamCity with Docker)
 [//]: # (auxiliary-id: Integrating TeamCity with Docker)
 
-
 TeamCity comes with Docker Support, implemented as a bundled [plugin](https://plugins.jetbrains.com/plugin/10062-docker-support).
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
 
 ## Requirements
 
 The integration requires [Docker](https://docs.docker.com/engine/installation/) installed on the build agents. To use the [Docker Compose](docker-compose.md) build runner, install [Docker Compose](https://docs.docker.com/compose/install/) as well.
+
+Since version 2019.2.1, TeamCity periodically checks if Docker is available on active build agents. Based on the `docker.server.version` and `docker.version` variables received from the agents, TeamCity distributes builds that use Docker only between agents with the installed Docker engine.   
+If a build configuration uses the [Docker runner](docker.md) or the [Docker Wrapper extension](docker-wrapper.md), TeamCity automatically adds the `docker.server.version` [agent compatibility requirement](configuring-agent-requirements.md) for this configuration.
 
 <chunk include-id="reqs-supported-env">
 
@@ -140,9 +138,9 @@ TeamCity provides the Docker Wrapper extension for [Command Line](command-line.m
 Docker Disk Space Cleaner is an extension to the [Free Disk Space](free-disk-space.md) build feature ensuring a certain amount of disk space for a build.   
 
 TeamCity regularly cleans up its related Docker images which were tagged/pulled:
-* In a build with [Docker build feature](docker-support.md) configured or	* in a build with the [Docker Support](docker-support.md) build feature, __or__
-* In a [Docker command](docker.md) or [Docker compose](docker-compose.md) build step or	* in a [Docker](docker.md) or [Docker Compose](docker-compose.md) build step, __or__
-* In a build step with enabled [Docker wrapper](docker-wrapper.md)	* in a build step with the enabled [Docker Wrapper](docker-wrapper.md) extension
+* in a build with the [Docker Support](docker-support.md) build feature, __or__
+* in a [Docker](docker.md) or [Docker Compose](docker-compose.md) build step, __or__
+* in a build step with the enabled [Docker Wrapper](docker-wrapper.md) extension
 
 For such builds,  
 

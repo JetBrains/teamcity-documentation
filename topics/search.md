@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: Search)
 After you have installed and started running TeamCity, it collects the information on builds, tests and so on and indexes it. You can search builds by build number, tag, build configuration name and other different parameters specifying one or several keywords. You can also search for builds by text in build logs, and by the [external id](identifier.md#External+IDs) of a build configuration.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Search Query
 
 In TeamCity you can search for builds using the [Lucene query syntax](http://lucene.apache.org/); however, a TeamCity search query has two major differences described [below](#Differences+from+Lucene+Syntax).

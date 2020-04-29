@@ -3,11 +3,6 @@
 
 IntelliJ IDEA Project runner allows you to build a project created in IntelliJ IDEA. TeamCity versions up to 6.0 had [Ipr (deprecated)](ipr-deprecated.md) which is now superseded by IntelliJ IDEA Project runner.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Supported IntelliJ IDEA features
 
 TeamCity IntelliJ IDEA runner supports subset of IntelliJ IDEA features:
@@ -430,7 +425,7 @@ jre/lib/*.jar
 
 
 
-For Mac OS X, use the following lines:
+For macOS, use the following lines:
 
 
 ```Shell
@@ -570,10 +565,8 @@ Ant and Build Artifacts tasks specified in the [Before launch](https://www.jetbr
 
 Specify code coverage options, for the details, refer to [IntelliJ IDEA Code Coverage](intellij-idea.md) page.
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [IntelliJ IDEA Code Coverage](intellij-idea.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="intellij-idea.md">IntelliJ IDEA Code Coverage</a>
+        </category>
+</seealso>

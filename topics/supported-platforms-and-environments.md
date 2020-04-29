@@ -2,10 +2,6 @@
 [//]: # (auxiliary-id: Supported Platforms and Environments)
 This page covers software-related environments TeamCity works with. For hardware-related notes, see [this section](how-to.md#Estimate+Hardware+Requirements+for+TeamCity).
 
-__In this section:__
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Platforms (Operating Systems)
 
 ### TeamCity Server
@@ -121,7 +117,7 @@ TeamCity supports a wide range of build tools, enabling both Java and .NET softw
   * Windows: NuGet versions prior to 2.8.6 require .NET Framework 4.0\+ installed on the build agent
   * Windows: NuGet 2.8.6 and later requires .NET 4.5
   * Linux and macOS: require [Mono](http://www.mono-project.com/docs/getting-started/install/) 4.4.2\+ and NuGet CLI 3.2\+ installed on the agent
-* [.NET CLI (dotnet)](net-cli-dotnet.md). Requires the [.NET Core SDK](https://www.microsoft.com/net/core) installed on build agents.
+* [.NET CLI (dotnet)](net.md). Requires the [.NET Core SDK](https://www.microsoft.com/net/core) installed on build agents.
 
 ### Other runners
 
@@ -142,7 +138,6 @@ TeamCity supports a wide range of build tools, enabling both Java and .NET softw
 
 * [Git](git.md) (for automatic `git gc` support requires Git client installed on the server in order to perform maintenance of Git clones, latest version is recommended)
 * [Subversion](subversion.md) (server versions 1.4\-1.9 and higher as long as the protocol is backward compatible).
-* [Perforce](perforce.md) (requires a Perforce client installed on the TeamCity server). Check [compatibility issues](perforce-vcs-compatibility.md).
 * [Perforce](perforce.md) (requires a Perforce client installed on the TeamCity server). Check [compatibility issues](perforce-vcs-compatibility.md).
 * [Team Foundation Server](team-foundation-server.md) 2005, 2008, 2010, 2012, 2013, 2015, 2017 are supported. 
 * [Mercurial](mercurial.md) (requires the Mercurial "hg" client v1.5.2\+ installed on the server)
@@ -370,8 +365,8 @@ See more at [Setting up an External Database](setting-up-an-external-database.md
 
 * HSQLDB 2.3.2   
 The internal database suits __evaluation purposes only__; we strongly recommend using an external database in a production environment.
-* MySQL 5.0.33\+, 5.1.49\+, 5.5\+, 5.6\+, 5.7\+, 8\+ (Note that due to bugs in MySQL, versions 5.0.20, 5.0.22 and 5.1 up to 5.1.48 are not compatible with TeamCity)
-* Microsoft SQL Server 2005, 2008, 2012, 2014, 2016 and newer (including Express editions), SQL Azure; SSL connections support might require [these updates](http://blogs.msdn.com/b/jdbcteam/archive/2012/01/19/patch-available-for-sql-server-and-java-6-update-30.aspx).
+* MySQL 5.0.33+, 5.1.49+, 5.5+, 5.6+, 5.7+, 8+ (Note that due to bugs in MySQL, versions 5.0.20, 5.0.22 and 5.1 up to 5.1.48 are not compatible with TeamCity)
+* Microsoft SQL Server 2005 or later (including Express editions), SQL Azure; SSL connections support might require [these updates](http://blogs.msdn.com/b/jdbcteam/archive/2012/01/19/patch-available-for-sql-server-and-java-6-update-30.aspx).
 * PostgreSQL 8.2 and newer
 * Oracle 10g and newer (TeamCity is tested with [driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1)
  

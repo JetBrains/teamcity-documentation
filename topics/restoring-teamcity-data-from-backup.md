@@ -3,10 +3,6 @@
 
 TeamCity administrators are able to restore [backed up data](creating-backup-via-maintaindb-command-line-tool.md) via the TeamCity UI or by manually using the `maintainDB` command-line utility.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Before restoring
 
 <note>
@@ -146,8 +142,8 @@ maintainDB.[cmd|sh] restore <all previously used restore options> --continue
 
 __ __
 
-__See also:__
-
-__Administrator's Guide__: [Creating Backup via maintainDB command-line tool](creating-backup-via-maintaindb-command-line-tool.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="creating-backup-via-maintaindb-command-line-tool.md">Creating Backup via maintainDB command-line tool</a>
+        </category>
+</seealso>

@@ -10,10 +10,6 @@ TeamCity supports upgrades from any of the previous versions to the later ones. 
 
 It is recommended to plan for regular upgrades to run the latest TeamCity version at least after several bugfix updates are released. This way you run a fully [supported version](how-to.md#TeamCity+Release+Cycle) with the latest fixes and security patches.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Before Upgrade
 
 Before upgrading TeamCity:
@@ -100,7 +96,7 @@ Current automatic update limitations:
 * only manual upgrade is possible if the server is deployed from a [`.war distribution`](#Manual+Upgrading+using+.tar.gz+or+.war+Distributions), or runs under the official [TeamCity Docker container](#Upgrading+TeamCity+started+from+Docker+images), started with [AWS CloudFormation template](running-teamcity-stack-in-aws.md) or  Azure Resource Manager template.
 * the Windows uninstaller is not updated during the upgrade, so after several updates, old TeamCity version will still be noted in Windows lists. During the uninstallation, not all of the TeamCity installation files might be deleted.
 * the bundled Java is not updated
-* with several nodes installation, only the main TeamCity server can be auto\-updated, the Running Builds node needs to be updated manually.
+* in a [multinode setup](multinode-setup.md), only the main TeamCity server can be auto-updated, the secondary nodes need to be updated manually.
 
 ### Manual Upgrade
 
@@ -137,7 +133,7 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 Note that it is recommended to use `.tar.gz` or `.exe` TeamCity distribution. Using `.war` is not a recommended way to install TeamCity.
 1. [Create a backup](teamcity-data-backup.md).
 2. Backup files customized since previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
-3. Remove old installation files (the entire `<&gt; `or `[TOMCAT_HOME]/webapps/TeamCity/*` if you are installing from a `war` file). It's advised to backup the directory beforehand.
+3. Remove old installation files (the entire `<TeamCity Home Directory>` or `[TOMCAT_HOME]/webapps/TeamCity/*` if you are installing from a `war` file). It's advised to backup the directory beforehand.
 4. Unpack the new archive to the location where TeamCity was previously installed.
 5. If you use a Tomcat server (your own or bundled in .tar.gz TeamCity distribution), it is recommended to delete the content of the `work` directory. Note that this may affect other web applications deployed into the same web server.
 6. Restore customized settings backed up in step 2 above. If you have the customized `[TOMCAT_HOME]/conf/server.xml` file, apply your changes into the appropriate sections of the default file.
@@ -235,11 +231,12 @@ To upgrade the service wrapper manually, do the following:
 This procedure is applicable ONLY to an agent running with _new_ service wrapper. Make sure you are not running the __agentd__ service.
 </note>
 
-__  __
-
-__See also:__
-
-__Concepts__: [TeamCity Data Directory](teamcity-data-directory.md)   
-__Administrator's Guide__: [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) | [TeamCity Data Backup](teamcity-data-backup.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="teamcity-data-directory.md">TeamCity Data Directory</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="teamcity-maintenance-mode.md">TeamCity Maintenance Mode</a>
+            a href="teamcity-data-backup.md">TeamCity Data Backup</a>
+        </category>
+</seealso>

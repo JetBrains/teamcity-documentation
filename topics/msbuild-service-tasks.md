@@ -2,11 +2,6 @@
 [//]: # (auxiliary-id: MSBuild Service Tasks)
 For MSBuild, TeamCity provides the following service tasks that implement the same options as the [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md):
 
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## TeamCitySetBuildNumber
 
 `TeamCitySetBuildNumber` allows user to change BuildNumber:

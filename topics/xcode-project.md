@@ -6,12 +6,12 @@ The runner provides structured build log based on Xcode build stages, detects co
 
 <note>
 
-To run an Xcode build, you need to have one or more build agents running Mac OS X with installed Xcode.
+To run an Xcode build, you need to have one or more build agents running macOS with installed Xcode.
 </note>
 
 <anchor name="Xcode 7.x Support"/>
 
-## Working with different Xcode setups:
+## Working with different Xcode setups
 *  If only one Xcode version is installed on the agent machine, it will be used by default. The agent restart is required if Xcode was installed/updated.
 *  If several Xcode versions are installed, perform __one of the following__:
    * specify the path to the required version in the "Path to Xcode" setting (see below) of the Xcode Project build step settings
@@ -235,7 +235,7 @@ Target\-based
 
 <td>
 
-Select from the __default__, __iOS__, __Mac OS X__ or __Simulator \- iOS__ or any other platform (if it is provided by the agent) to build your project on.
+Select from the __default__, __iOS__, __macOS__ or __Simulator \- iOS__ or any other platform (if it is provided by the agent) to build your project on.
 
 
 </td></tr><tr>
@@ -353,11 +353,11 @@ Other command line parameters to be passed to the `xcodebuild` utility.
 </td></tr></table>
 
 
-__  __
-
-__See also:__
-
-__Xcode Known Issues__: [[1](known-issues.md#Xcode+10+is+unable+to+clean+artifacts+in+custom+output+directory)]   
-__Concepts__: [Build Runner](build-runner.md)   
-
-__ __
+<seealso>
+        <category ref="troubleshooting">
+            <a href="known-issues.md#Xcode+10+is+unable+to+clean+artifacts+in+custom+output+directory">Xcode Known Issues</a>
+        </category>
+        <category ref="concepts">
+            <a href="build-runner.md">Build Runner</a>
+        </category>
+</seealso>

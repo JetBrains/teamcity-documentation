@@ -2,12 +2,7 @@
 [//]: # (auxiliary-id: Configuring Build Parameters)
 [//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")    
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 _Build Parameters_ provide you with flexible means of sharing settings and a convenient way of passing settings into the build.
-
 
 ## Types of Build Parameters
 
@@ -185,7 +180,7 @@ All build parameters starting with `env.` prefix (environment variables) are pas
 
 All build parameters starting with `system.` prefix (system properties) are passed to the supported __build script engines and can be referenced there by the property name__, without `system.` prefix.   
 Note that this syntax will work __in the build script__ (__not__ in TeamCity settings):
-* For [Ant](ant.md), [Maven](maven.md) and [NAnt](nant.md), use `$(<property name>)`
+* For [Ant](ant.md), [Maven](maven.md) and [NAnt](nant.md), use `${<property name>}`
 * For [MSBuild](msbuild.md) (Visual Studio 2005/2008 Project Files), use `$(<property name>)`. Note that MSBuild does not support names with dots ("`.`"), so you need to replace "`.`" with "`_`" when using the property inside a build script.
 * For [Gradle](gradle.md): the TeamCity system properties can be accessed as Gradle properties (similar to the ones defined in the `gradle.properties` file) and are to be referenced as follows:   
     a) name allowed as Groovy identifier (the property name does not contain dots):
@@ -217,13 +212,10 @@ When TeamCity starts a build process, the following precedence of the build para
 
 The resultant set of parameters is also saved into a file which can be accessed by the build script. See `teamcity.build.properties.file` system property or `TEAMCITY_BUILD_PROPERTIES_FILE` environment variable description in [Predefined Build Parameters](predefined-build-parameters.md) for details.
 
- __  __
- 
-__See also:__
-
-__Administrator's Guide__: [Project and Agent Level Build Parameters](project-and-agent-level-build-parameters.md) | [Predefined Build Parameters](predefined-build-parameters.md) | [Configuring Agent Requirements](configuring-agent-requirements.md) 
-
-
-[//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e417.txt")    
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="project-and-agent-level-build-parameters.md">Project and Agent Level Build Parameters</a>
+            <a href="predefined-build-parameters.md">Predefined Build Parameters</a>
+            <a href="configuring-agent-requirements.md">Configuring Agent Requirements</a>
+        </category>
+</seealso>

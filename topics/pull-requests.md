@@ -3,22 +3,24 @@
 
 The _Pull Requests_ build feature lets you automatically load pull request (or _merge requests_ in case of GitLab) information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), and [GitLab](#GitLab+Merge+Requests).
 
-On this page:
+The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors builds only on `head` branches:
+* For GitHub: `refs/pull/*/head`
+* For Bitbucket Server: `refs/pull-requests/*/from`
+* For GitLab: `refs/merge-requests/*/head`
 
-<tag-list of="chapter" mode="tree" depth="4"/>
+If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches.
 
-The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors and triggers builds only on `head` branches (such as `refs/pull/*/head`).   
-After a build is run on a pull request, TeamCity provides additional details for the pull request branch on the Build Overview page.
+You can find the pull request's details displayed on the __Overview__ tab of the __Build Results__:
 
 <img src="pr-info.png" alt="Pull request details" width="700"/>
+
+When adding this build feature, you need to specify a VCS root and select a VCS hosting type.
 
 <note>
 
 The branch specification of the VCS root __must not__ contain patterns matching pull request branches.
 
 </note>
-
-When adding this build feature, you need to specify a VCS root and select a VCS hosting type.
 
 The build feature parameters depend on the selected VCS hosting type.
 
@@ -152,7 +154,7 @@ By target branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor and trigger pull requests only on branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left blank, no filters apply.
 
 </td>
 </tr>
@@ -241,7 +243,7 @@ By target branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor and trigger pull requests only on branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left blank, no filters apply.
 
 </td>
 </tr>
@@ -305,7 +307,7 @@ By target branch
 
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor and trigger merge requests only on branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor merge requests only on branches that match the specified criteria. If left blank, no filters apply.
 
 </td>
 </tr>
@@ -343,16 +345,17 @@ The `web-app` build configuration must have a VCS trigger enabled.
 </note>
 
 To configure the described pipeline for the `web-app` build configuration in TeamCity:
-1. __Add a [VCS root](vcs-root.md) to the build configuration__:
+1. __Add a [VCS root](vcs-root.md) to the build configuration__:   
    * Go to __Build Configuration Settings | Version Control Settings__ and click __Attach VCS root__.
    * Configure the root parameters:
-      * __Type of VCS__: _Git_
-      * __VCS root name__: _\<unique_root_name\>_
-      * __Fetch URL__: _\<GitHub_repository_URL\>_
-      * __Default branch__: the branch to be monitored; by default, _`refs/heads/master`_ (read more [about feature branches](working-with-feature-branches.md))
-      * __Branch specification__: a filter for additional branches to be monitored (for example, _`+:refs/heads/*`_)
-      * __Authentication parameters__ of the GitHub user that has access rights to the `web-app` repository
-   * Test the connection and, if successful, click __Create__.   
+   
+      - __Type of VCS__: _Git_
+      - __VCS root name__: _\<unique_root_name\>_
+      - __Fetch URL__: _\<GitHub_repository_URL\>_
+      - __Default branch__: the branch to be monitored; by default, _`refs/heads/master`_ (read more [about feature branches](working-with-feature-branches.md))
+      - __Branch specification__: a filter for additional branches to be monitored (for example, _`+:refs/heads/*`_)
+      - __Authentication parameters__ of the GitHub user that has access rights to the `web-app` repository
+   * Test the connection and, if successful, click __Create__.
 2. __Add the _Pull Requests_ [build feature](adding-build-features.md) to the build configuration__:
    * Go to __Build Configuration Settings | Build Features__ and click __Add build feature__.
    * Configure the feature parameters:
@@ -391,10 +394,8 @@ teamcity.pullRequest.target.branch //VCS name of the target branch
 
 You can use these parameters in the settings of a build configuration or in build scripts.
 
-__ __
-
-__See also__:
-
-__TeamCity Blog__: [Building GitHub pull requests with TeamCity](https://blog.jetbrains.com/teamcity/2019/08/building-github-pull-requests-with-teamcity/)
-
-__ __
+<seealso>
+        <category ref="blog">
+            <a href="https://blog.jetbrains.com/teamcity/2019/08/building-github-pull-requests-with-teamcity/">Building GitHub pull requests with TeamCity</a>
+        </category>
+</seealso>

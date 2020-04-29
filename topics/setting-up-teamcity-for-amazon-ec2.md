@@ -5,10 +5,6 @@ TeamCity Amazon EC2 integration allows you to configure TeamCity with your Amazo
 
 Integrations with other cloud solutions are [available](teamcity-integration-with-cloud-solutions.md#Available+Integrations).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## General Description
 
 It is assumed that the machine images are preconfigured to start TeamCity agent on boot (see details [below](#Preparing+Image+with+Installed+TeamCity+Agent)).

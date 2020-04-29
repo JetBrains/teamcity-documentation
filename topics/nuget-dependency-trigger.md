@@ -3,6 +3,12 @@
 
 The _NuGet dependency trigger_ allows starting a new build if a NuGet packages update is detected in the NuGet repository.
 
+<note>
+
+Currently, the NuGet dependency trigger supports only API versions 1 and 2 due to specifics of the Nuget.CommandLine tool.
+
+</note>
+
 ## Requirements and limitations
 
 For a TeamCity server running on __Windows__, __.NET 4.0__ is required.
@@ -22,13 +28,11 @@ For a TeamCity server running on __Linux__, the NuGet dependency trigger will re
 4. Enter the package Id to check for updates.
 5. Optionally, you can specify [package version range](https://docs.microsoft.com/en-us/nuget/reference/package-versioning#version-ranges-and-wildcards) to check for. If not specified, TeamCity will check for latest version.
 
-You can also opt to trigger build if pre\-release package version is detected by selecting corresponding checkbox. Note that this is only supported for NuGet version 1.8 or newer.
+You can also opt to trigger build if pre-release package version is detected by selecting corresponding checkbox. Note that this is only supported for NuGet version 1.8 or newer.
 
- __  __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="nuget.md">NuGet</a>
+        </category>
+</seealso>
 
-__See also:__
-
-
-__Administrator's Guide__: [NuGet](nuget.md)
-
-__ __

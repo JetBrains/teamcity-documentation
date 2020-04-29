@@ -13,11 +13,6 @@ For example, you have a configuration A that deploys artifacts to a remote repos
 To avoid this, we recommend not using remote run for build configurations which perform deployment of artifacts.
 </note>
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ##  Maven runner settings
 
 <table><tr>
@@ -297,7 +292,8 @@ Use the default Maven repository location. The repository is shared between all 
 
 ### Incremental Building
 
-Select the __Build only modules affected by changes__ check box to enable incremental building of Maven modules. The general idea is that if you have a number of modules interconnected by dependencies, a change most probably affects (directly or transitively) only some of them; so if we build only the affected modules and take the result of building the rest of the modules from the previous build, we will get the overall result equal to the result of building the whole project from scratch with less effort and time.
+Select the _Build only modules affected by changes_ checkbox to enable incremental building of Maven modules.   
+The general idea of incremental building is to process only changed modules without spending time on reprocessing unchanged modules they are connected with. TeamCity utilizes this method to run tests only for changed Maven modules thus saving time when rerunning a build or a build chain.
 
 Since Maven itself has very limited support for incremental builds, TeamCity uses its own change impact analysis algorithm for determining the set of affected modules and uses a special preliminary phase for making dependencies of the affected modules.
 
@@ -307,7 +303,7 @@ The first Maven execution called preparation phase is intended for building the 
 
 The second Maven execution called main phase executes the main goal (for example, `test`), thus performing only those tests affected by the change.
 
-Also check a related [blog post](http://blogs.jetbrains.com/teamcity/2012/03/14/incremental-building-with-maven-and-teamcity/) on the topic.
+Also, check the related [blog post](http://blogs.jetbrains.com/teamcity/2012/03/14/incremental-building-with-maven-and-teamcity/) on the topic.
 
 ### Docker Settings
 
@@ -386,11 +382,12 @@ _In the settings for your build configuration in TeamCity_:
 5\. Specify `release:prepare` in the __Goals__ field of the Maven build step and run the build.
 
 
-__  __
-
-__See also:__
-
-__Concepts__: [Build Runner](build-runner.md)    
-__Administrator's Guide__: [Maven Artifact Dependency Trigger](configuring-maven-triggers.md) | [Creating Maven Build Configuration](creating-and-editing-build-configurations.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-runner.md">Build Runner</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="configuring-maven-triggers.md">Maven Artifact Dependency Trigger</a>
+            <a href="creating-and-editing-build-configurations.md">Creating Maven Build Configuration</a>
+        </category>
+</seealso>

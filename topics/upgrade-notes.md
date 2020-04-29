@@ -3,10 +3,44 @@
 
 ## Changes from 2019.2.x to 2020.1
 
-### REST API
-Filtering test occurrences by branch (.../app/rest/testOccurrences?locator=branch(XXX) request) has been changed. It used to support only branch name with case-sensitive matching. Now XXX value supports branch locators (the same as when filtering builds), it became case-insensitive by default and started to match "<default>" branch display name.
+### REST API changes
+
+Filtering test occurrences by branch (`.../app/rest/testOccurrences?locator=branch(XXX)` request) has been changed. It used to support only branch names with case-sensitive matching. Now, the `XXX` value supports branch locators (the same as when filtering builds): it is case-insensitive by default and matches the `<default>` branch display name.
+
+## Changes from 2019.2.2 to 2019.2.3
+
+### Reworked .NET build runner
+
+The .NET CLI (dotnet) build runner has been refactored and renamed to __.NET__ thus emphasizing that now it supports all .NET-related operations previously implemented in TeamCity as multiple build steps.
+
+All existing .NET CLI (dotnet) steps will continue working as usual under the new _.NET_ name, with no additional tuning required.
+
+We stop providing active support for the [MSBuild](msbuild.md), [Visual Studio (sln)](visual-studio-sln.md), [Visual Studio 2003](visual-studio-2003.md), and [Visual Studio Tests](visual-studio-tests.md) runners. These steps are left for compatibility of existing build configurations with new versions of TeamCity. We recommend switching all your affected build steps to the .NET runner to receive new features and support in our following versions.
+
+See the [.NET description](net.md) for more information about the new .NET step and migration notes.
+
+<note>
+  
+Since the reworked .NET runner introduces new options and features, you might not be able to use them if downgrading to the earlier versions of TeamCity. In such case, you will have to return to using the obsolete runners after downgrading. To prevent any issues, you can [back up your TeamCity data](creating-backup-from-teamcity-web-ui.md) before upgrading to version 2019.2.3.
+  
+</note>
+
+If you face any problems with migration to the .NET runner or encounter other related issues, do not hesitate to contact us via any convenient [feedback channel](https://confluence.jetbrains.com/display/TW/Feedback).
+
+### Bundled Java for Windows installers is updated
+
+The bundled version of Java in Windows installers of TeamCity Server and Agent as well as in the Docker images is updated to [Amazon Corretto 8.252.09.1](https://github.com/corretto/corretto-8/blob/release-8.252.09.1/CHANGELOG.md).
 
 ## Changes from 2019.2.1 to 2019.2.2
+
+### Caching Git submodules
+
+To improve performance on agent checkout, TeamCity caches regular Git repositories on agents. Since this version, it also caches Git submodules.   
+If your custom scripts or settings depend on the main alternates source for submodules and it causes Git to operate with errors, consider one of the following workarounds:
+* Disable the new mirroring mechanism by setting the [build parameter](configuring-build-parameters.md) `teamcity.internal.git.agent.submodules.useMirrors` to `false`.
+* Modify your custom settings to point at the parent `git` directory instead of the exact source directory.
+
+### Bundled Tools Updates
 
 * TeamCity Visual Studio Add-in Web installer has been updated to ReSharper version 2019.3.2.
 
@@ -287,7 +321,7 @@ If you're upgrading from 2018.1 to 2018.1.1 and you want to see the NuGet packag
 
 ### Docker Images
 
-Since 2018.1.1 TeamCity has multi\-platform docker images marked by the "latest" and version number tags published in Docker Hub, e.g. "jetbrains/teamcity\-server", "jetbrains/teamcity\-server:2018.1.1". This allows using the same docker image reference for Linux and Windows docker containers, see [TW-55061](https://youtrack.jetbrains.com/issue/TW-56088) for details.
+Since 2018.1.1 TeamCity has multiplatform Docker images marked by the `latest` and version number tags published in Docker Hub, for example, `jetbrains/teamcity-server` or `jetbrains/teamcity-server:2018.1.1`. This allows using the same Docker image reference for Linux and Windows docker containers: see [TW-55061](https://youtrack.jetbrains.com/issue/TW-55061) for details.
 
 ## Changes from 2017.2.x to 2018.1
 
@@ -800,7 +834,7 @@ The "Run a process per assembly" option of the [NUnit runner](nunit.md) has been
 
 Bundled IntelliJ IDEA updated to version # 143.1945 (roughly equivalent to 15.0.3 with a few additional fixes).
 
- Bundled version of Maven 3.2.x updated to 3.2.5. 
+Bundled version of Maven 3.2.x updated to 3.2.5.
 
 #### Performance Monitor  
 
@@ -1950,11 +1984,9 @@ If you were using the TeamCity\-GitHub [third-party plugin](https://github.com/m
 The [bug with temp tool folders](https://youtrack.jetbrains.com/issue/TW-46648) introduced in the previous version has been fixed.
 
 
-__  __
+<seealso>
+        <category ref="admin-guide">
+            <a href="licensing-policy.md">Licensing Policy</a>
+        </category>
+</seealso>
 
-__See also:__
-
-
-__Administrator's Guide__: [Licensing Policy](licensing-policy.md)
-
-__ __

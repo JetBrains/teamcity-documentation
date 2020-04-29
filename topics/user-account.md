@@ -13,12 +13,15 @@ In addition to logged in users, there is a special user account for non\-registe
 
 
 
-__  __
-
-__See also:__
-
-
-__Concepts__: [User Group](user-group.md) | [Role and Permission](role-and-permission.md) | [Authentication Modules](authentication-modules.md)   
-__Administrator's Guide__: [Enabling Guest Login](enabling-guest-login.md) | [LDAP Integration](ldap-integration.md) | [Managing User Accounts, Groups and Permissions](managing-user-accounts-groups-and-permissions.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="user-group.md">User Group</a>
+            <a href="role-and-permission.md">Role and Permission</a>
+            <a href="authentication-modules.md">Authentication Modules</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="enabling-guest-login.md">Enabling Guest Login</a>
+            <a href="ldap-integration.md">LDAP Integration</a>
+            <a href="managing-user-accounts-groups-and-permissions.md">Managing User Accounts, Groups and Permissions</a>
+        </category>
+</seealso>

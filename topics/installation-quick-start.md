@@ -4,10 +4,6 @@ This page covers the __evaluation__ setup of a TeamCity server with a default bu
 
 For more details, see [Installation and Upgrade](installation-and-upgrade.md).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 <note>
 
 __[For production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use)__, we recommend setting up the TeamCity server and agent on separate machines.
@@ -40,7 +36,7 @@ During installation, you can configure:
 * ports:      
    * Server port: `80` is the default port, which can be already used by other applications (for example, Skype). Change the server port if it is already in use. In the example below, we've set the port to `8111`.
    * Agent port: `9090` is the default for incoming connections from the server. If this port is already in use, you'll be asked to change it by setting the `ownPort` property to a different value.   
-   <img src="configure-agent-port.png" alt="Configure a build agent port" width="650"/>
+   <img src="configure-agent-port.png" alt="Configure a build agent port" width="450"/>
 
 If the TeamCity server is installed as a Windows service, follow the [usual procedure](https://bit.ly/2yJF87R) of starting and stopping services.
 
@@ -103,7 +99,7 @@ On the first TeamCity start:
 1. Review the [location of the TeamCity Data Directory](teamcity-data-directory.md#Configuring+the+Location), where all the configuration information is stored. Click __Proceed__.
 2. TeamCity stores build history, users, build results, and some runtime data in an SQL database and allows you to select the database type.   
    For now, keep the default internal database. Click __Proceed__.   
-   <img src="default-DB.png" alt="Select the database type"/>
+   <img src="default-DB.png" alt="Select the database type" width="450"/>
    It will take some time for TeamCity to configure the necessary components.
 3. On the next screen, accept the License Agreement to proceed with the launch. Click __Continue__.
 4. TeamCity displays the __Create Administrator Account__ page. Specify the administrator credentials and click __Create Account__.  

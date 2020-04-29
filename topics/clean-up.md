@@ -3,10 +3,6 @@
 
 TeamCity clean-up functionality allows an automatic deletion of old and no longer necessary build data.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 The server clean-up configuration is available in __Administration | Server Administration | Clean-up Settings__. It allows setting clean-up schedule and shows general clean-up information.
 
 Clean-up rules, related to specific projects, are configured in __Project Settings | Clean-up Rules__. These rules define what data to clean and what to preserve. They can be assigned to a project or build configuration.   
@@ -74,7 +70,7 @@ Each level includes those listed above it.
 
 By default, everything is kept forever. When you select custom settings, for each of the levels above you can specify:
 * _Number of days_:   
-  Builds older than the number of days specified will be cleaned with the specified level. The starting point is the date of the last build, not the current date. A day is equivalent to a 24-hour period, not a calendar day.
+  Builds older than the number of days specified will be cleaned with the specified level. The starting point is the date of the last successful build build, not the current date. A day is equivalent to a 24-hour period, not a calendar day.
 * _Number of successful builds_:   
   Only builds older than the last matching successful build will be cleaned with the level specified (all the failed builds between the preserved successful ones are kept).
 
@@ -145,10 +141,8 @@ There are builds that preserve all their data and are not affected during clean-
 
 [//]: # (Internal note. Do not delete. "Clean-Upd55e230.txt")    
 
-__  __
- 
-__See also:__
-
-__Concepts__: [Dependent Build](dependent-build.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="dependent-build.md">Dependent Build</a>
+        </category>
+</seealso>

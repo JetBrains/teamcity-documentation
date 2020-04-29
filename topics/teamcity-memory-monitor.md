@@ -5,8 +5,6 @@ TeamCity server checks available memory on a regular basis and warns you if the 
 
 There are several warning types reported:
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Low pool memory
 
 Is reported when memory usage in a single memory pool exceeds 90% after garbage collection. High server activity may cause such memory usage.
@@ -34,12 +32,11 @@ Several [internal properties](configuring-teamcity-server-startup-properties.md#
 
 [//]: # (Internal note. Do not delete. "TeamCity Memory Monitord317e56.txt")    
 
-__  __
-
-__See also:__
-
-
-__Reporting Issues__: [Out Of Memory Problems](reporting-issues.md)   
-__Increasing Server Memory__: [Installing and Configuring the TeamCity Server](installing-and-configuring-the-teamcity-server.md)
-
-__ __
+<seealso>
+        <category ref="troubleshooting">
+            <a href="reporting-issues.md#OutOfMemory+Problems">Out Of Memory Problems</a>
+        </category>
+        <category ref="installation">
+            <a href="installing-and-configuring-the-teamcity-server.md">Installing and Configuring the TeamCity Server</a>
+        </category>
+</seealso>

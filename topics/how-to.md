@@ -1,11 +1,6 @@
 [//]: # (title: How To...)
 [//]: # (auxiliary-id: viewpage.actionpageId113084582;How To...)
 
-
-On this page:
-
-<tag-list of="chapter" mode="tree"/>
-
 ## Choose OS/Platform for TeamCity Server
 
 Once the server/OS fulfills the [requirements](supported-platforms-and-environments.md#TeamCity+Server), TeamCity can run on any system. Please also review the [requirements](supported-platforms-and-environments.md) for the integrations you plan to use, for example the following functionality requires or works better when TeamCity server is installed under Windows:
@@ -754,7 +749,7 @@ It is also recommended to specify `internalProxies` attribute with the regular e
 
 TeamCity does not provide out\-of\-the\-box support for HTTPS access (see [TW-12976](http://youtrack.jetbrains.com/issue/TW-12976#comment=27-348823)). It is highly recommended to set up a reverse proxy like Nginx or Apache in front of TeamCity that would handle HTTPS and use HTTP TeamCity server port as the upstream. HTTPS\-related configuration of the proxy is not specific for TeamCity and is generic as for any Web application. Make sure to configure the reverse proxy per [our recommendations](#Set+Up+TeamCity+behind+a+Proxy+Server) below. Generic web application best practices apply (like disabling http access to TeamCity at all).
 
-For small servers, you can set up HTTPS via the internal [Tomcat means](http://tomcat.apache.org/tomcat-7.0-doc/ssl-howto.html), but this is not recommended as it may significantly increase the CPU load.
+For small servers, you can set up HTTPS via the internal [Tomcat means](https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html), but this is not recommended as it may significantly increase the CPU load.
 
 For configuring clients to access TeamCity server via HTTPS while using self\-signed certificate, check the [related instructions](using-https-to-access-teamcity-server.md).
 
@@ -880,26 +875,26 @@ In order to ensure complete server transfer, it is recommended to copy the entir
 
 ### Copy Manually
 
-If you do not want to use bundled backup functionality or need manual control over the process, here is a description of the general steps one would need to perform to manually create copy of the server:
-1. Create a [backup](teamcity-data-backup.md) so that you can restore it if anything goes wrong,
-2. Ensure the server is not running,
-3. Either perform clean [installation](installing-and-configuring-the-teamcity-server.md) or copy the TeamCity binaries ([`TeamCity Home Directory`](teamcity-home-directory.md)) into a new place (the `temp` and `work` subdirectories can be omitted during copying).  Use exactly the same TeamCity version. If you plan to upgrade after copying, perform the upgrade only after you have the existing version up and running.
-4. Copy `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>`. If you do not need the full copy, refer to the items below for options. 
+If you do not want to use the bundled backup functionality or need manual control over the process, here is a general instruction on how to manually create a copy of the server:
+1. Create a [backup](teamcity-data-backup.md) so that you can restore it if anything goes wrong.
+2. Ensure the server is not running.
+3. Either perform clean [installation](installing-and-configuring-the-teamcity-server.md) or copy the TeamCity binaries ([`TeamCity Home Directory`](teamcity-home-directory.md)) into a new place (the `temp` and `work` subdirectories can be omitted during copying). Use exactly the same TeamCity version. If you plan to upgrade after copying, perform the upgrade only after you have the existing version up and running.
+4. Copy `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>`. If you do not need the full copy, refer to the items below for options.
     * `.BuildServer/config` to preserve projects and build configurations settings
     * `.BuildServer/lib` and `.BuildServer/plugins` if you have them
-    * files from the root of `.BuildServer/system` if you use internal database and you do not want to perform database move.
-    * `.BuildServer/system/artifacts` (optional) if you want build artifacts and build logs (including tests failure details) preserved on the new server
-    * `.BuildServer/system/changes` (optional) if you want personal changes preserved on the new server
-    * `.BuildServer/system/pluginData` (optional) if you want to preserve state of various plugins, build triggers and settings audit diff
-    * `.BuildServer/system/caches` and `.BuildServer/system/caches` (optional) are not necessary to copy to the new server, they will be recreated on startup, but can take some time to be rebuilt (expect some slow down).
-5. Artifacts directory is usually large and if you need to minimize the downtime of the server in case of the server move, you can use the generic approach for copying the data: use rsync, robocopy or alike tool to copy the data while the original server is running. Repeat the sync run several times until the amount of data synced reduces. Run the final sync after the original server shut down. Alternative solution for the server move is to make the old data artifacts directory accessible to the new server and configure it as second [location of artifacts](teamcity-configuration-and-maintenance.md). Then copy the files over from this second location to the main one while the server is running, restart the server after copying completion.
-6. Create copy of the [database](setting-up-an-external-database.md) that your TeamCity installation is using in new schema or new database server. This can be done with database\-specific tools or with the bundled maintainDB tool by [backing up](creating-backup-via-maintaindb-command-line-tool.md) database data and then [restoring](restoring-teamcity-data-from-backup.md) it.
-7. Configure new TeamCity installation to use proper `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>` and [database](setting-up-an-external-database.md) (`.BuildServer/config/database.properties` points to a copy of the database)
+    * files from the root of `.BuildServer/system` if you use an internal database and you do not want to move this database
+    * `.BuildServer/system/artifacts` (optional) if you want build artifacts and build logs (including tests failure details) to be preserved on the new server
+    * `.BuildServer/system/changes` (optional) if you want personal changes to be preserved on the new server
+    * `.BuildServer/system/pluginData` (optional) if you want to preserve the state of various plugins, build triggers, and settings audit diff
+    * `.BuildServer/system/caches` and `.BuildServer/system/caches` (optional) are not necessary to copy to the new server, they will be recreated on startup, but can take some time to be rebuilt (expect some slow down)
+5. Artifacts directory is usually large. If you need to minimize the downtime of the server when moving it, you can use the generic approach for copying the data: use rsync, robocopy or alike tool to copy the data while the original server is running. Repeat the sync run several times until the amount of synced data reduces. Run the final sync after the original server shutdown. Alternative solution for the server move is to make the old data artifacts directory accessible to the new server and configure it as a second [location of artifacts](teamcity-configuration-and-maintenance.md). Then copy the files over from this second location to the main one while the server is running. Restart the server after copying completion.
+6. Create a copy of the [database](setting-up-an-external-database.md), which your TeamCity installation is using, in a new schema or new database server. This can be done with database-specific tools or with the bundled maintainDB tool by [backing up](creating-backup-via-maintaindb-command-line-tool.md) database data and then [restoring](restoring-teamcity-data-from-backup.md) it.
+7. Configure the new TeamCity installation to use proper `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>` and [database](setting-up-an-external-database.md) (`.BuildServer/config/database.properties` points to a copy of the database)
 8. Perform the necessary [environment transfer](#Environment+transferring).
 
 <tip>
 
-If you want to do a quick check and do not want to preserve builds history on the new server you can skip step 6 (cloning database) and all items of the step 5 marked as optional.
+If you want to do a quick check and do not need to preserve the build history on the new server, you can skip Step 6 (cloning database) and all the optional items of Step 4.
 </tip>
 
 <anchor name="environment_transfer"/>
@@ -907,15 +902,15 @@ If you want to do a quick check and do not want to preserve builds history on th
 ### Environment transferring
 [//]: # (AltHead: environment_transfer)
 
-Consider transferring relevant environment if it was specially modified for an existing TeamCity installation. This might include:
+Consider transferring the relevant environment if it was specially modified for an existing TeamCity installation. This might include:
 * use the appropriate OS user account for running the TeamCity server process with properly configured settings, global and file system permissions
-* use the same [TeamCity process launching options](configuring-teamcity-server-startup-properties.md), specifically check/copy environment variables starting with `TEAMCITY\_`
+* use the same [TeamCity process launching options](configuring-teamcity-server-startup-properties.md), specifically check/copy environment variables starting with `TEAMCITY_`
 * ensure any files/settings that were configured in the TeamCity web UI with absolute paths are accessible
-* if relying on the OS\-level user/machine settings like default ssh keys, cached VCS access credentials, transfer them as well
-* consider replicating any special settings or exceptions related to the machine in the network configuration, etc.
-* If the TeamCity installation was patched in any way (GrrovyPlug plugin, native driver for MS SQL Server integrated security authentication), apply the same modifications to the installation copy
-* if you run TeamCity with the OS startup (e.g. Windows service), make sure the same configuration is performed on the new machine
-* review and tranfer settings in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>\conf\teamcity-startup.properties` file
+* if relying on the OS-level user/machine settings like default SSH keys, cached VCS access credentials, transfer them as well
+* consider replicating any special settings or exceptions related to the machine in the network configuration, and so on
+* if the TeamCity installation was patched in any way (GroovyPlug plugin, native driver for MS SQL Server integrated security authentication), apply the same modifications to the installation copy
+* if you run TeamCity with the OS startup (for example, Windows service), make sure the same configuration is performed on the new machine
+* review and transfer settings in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>\conf\teamcity-startup.properties` file
 * consider any custom settings in `<`[`TeamCity Home`](teamcity-home-directory.md)`>\conf\server.xml`
 
 <anchor name="copy_server_license"/>
@@ -944,15 +939,15 @@ If you are creating a copy (as opposed to moving the server this way), it is imp
 
 If you are creating a __test server__, you need to ensure that the users and production systems are not affected. Typically, this means you need to:
 * disable Email, Jabber (in the "Administration &gt; Notifier" sections) and possibly also custom notifiers or change their settings to prevent the new server from sending out notifications;
-* disable email verification (in the  "Administration &gt; Authentication" section);
-* be sure not to run any builds which change (e.g. deploy to) production environments. This also typically includes Maven builds deploying to non\-local repositories. You can prevent any builds from starting by pausing the [build queue](build-queue.md);
+* disable email verification (in the "Administration &gt; Authentication" section);
+* be sure not to run any builds which change (for example, deploy to) production environments. This also typically includes Maven builds deploying to non-local repositories. You can prevent any builds from starting by pausing the [build queue](build-queue.md);
 * disable cloud integration (so that it does not interfere with the main server);
 * disable external artifact storage (as otherwise running/deleting builds and server clean-up will affect the storage which might be used by the production server);
-* disable Git registry clean-up (or just disable clean-up on the server);
+* disable Docker registry clean-up (or just disable clean-up on the server);
 * disable Commit Status Publishing;
-*disable any plugins which push data into other non\-copied systems based on the TeamCity events;
-*disable functionality to [store project settings in VCS](storing-project-settings-in-version-control.md): set `teamcity.versionedSettings.enabled=false` internal property;
-* consider significantly increasing [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (server\-wide default and overridden in the VCS roots) or changing settings of the VCS roots to prevent them from contacting production servers. Since TeamCity 10.0.3, see also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
+* disable any plugins which push data into other non-copied systems based on the TeamCity events;
+* disable functionality to [store project settings in VCS](storing-project-settings-in-version-control.md): set `teamcity.versionedSettings.enabled=false` internal property;
+* consider significantly increasing [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (server-wide default and overridden in the VCS roots) or changing settings of the VCS roots to prevent them from contacting production servers. Since TeamCity 10.0.3, see also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
 
 See also the section below on [moving the server](#Move+TeamCity+Installation+to+a+New+Machine) from one machine to another.
 
@@ -1048,7 +1043,7 @@ Please also review the [section](agent-home-directory.md) for a list of director
 
 ## Share the Build number for Builds in a Chain Build
 
-A build number can be shared for builds connected by a [snapshot dependency](dependent-build.md#Snapshot+Dependency) or an [artifact dependency](dependent-build.md#Artifact+Dependency) using a reference to the following dependency property: `%dep.&lt;btID&gt;.system.build.number%`.
+A build number can be shared for builds connected by a [snapshot dependency](dependent-build.md#Snapshot+Dependency) or an [artifact dependency](dependent-build.md#Artifact+Dependency) using a reference to the following dependency property: `%dep.<btID>.system.build.number%`.
 
 For example, you have build configurations A and B that you want to build in sync: use the same sources and take the same build number.   
 Do the following:
@@ -1399,16 +1394,3 @@ Release stages that we generally have are:
 The dates of previous releases and the sequence of TeamCity versions are listed on the [Previous Releases Downloads](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads) page.
 
 [//]: # (Internal note. Do not delete. "How To...d160e3129.txt")    
-
-__ __
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>

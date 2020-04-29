@@ -5,10 +5,6 @@ If you experience problems running TeamCity and believe they are related to the 
 
 To fix a problem, we may need a wide range of information about your system as well as various logs. The section below explains how to collect such information for different issues.
 
-In this section:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Best Practices When Reporting Issues
 
 Following these guidelines will ensure timely response and effective issue resolution. Check [Feedback](https://confluence.jetbrains.com/display/TW/Feedback) for appropriate ways to contact us. 
@@ -453,33 +449,8 @@ To help us investigate issues with inspections, do the following:
 Files under 10 MB in size can be attached right into the [tracker issue](http://youtrack.jetbrains.net/issues/TW) (if you do not want the attachments to be publicly accessible, limit the attachment visibility to "teamcity\-developers" user group only).    
 You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrains.com](mailto:teamcity-support@jetbrains.com) or via [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) (up to 20 MB). Please do not forget to mention your TeamCity version and environment and archive the files before attaching.
 
-__FTP__
-
-If the file is over 10 MB, you can upload the archived files to [`ftp://ftp.intellij.net/.uploads`](ftp://ftp.intellij.net/.uploads) and let us know the exact file name. If you receive the permission denied error on an upload attempt, rename the file. It's OK that you do not see the file listing on the FTP.    
-The FTP accepts standard anonymous credentials: username: "anonymous", password: "&lt;your email&gt;".   
-In addition to usual, unencrypted connections, TLS ones are also supported.
-
-In case of access issues, time\-out errors, and so on, please try using passive FTP mode.
-
-
 [//]: # (Internal note. Do not delete. "Reporting Issuesd267e1305.txt")    
 
-
-__HTTP__
-
-You can upload a file via [`https://uploads.services.jetbrains.com/`](https://uploads.services.jetbrains.com/) form and let us know the exact file name.
+Large files can be uploaded via [`https://uploads.services.jetbrains.com/`](https://uploads.services.jetbrains.com/). Please let us know the exact file name after the upload.
 
 If you cannot upload a large file in one go, try splitting the file into parts and upload them separately.
-
-__ __
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>

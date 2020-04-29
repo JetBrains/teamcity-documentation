@@ -16,10 +16,6 @@ Swabra should be used with the [automatic checkout](vcs-checkout-mode.md) only: 
 
 The checkout directory state is saved into a file in the caches directory named `<checkout-directory-name-hash>.snapshot` using the DiskDir format. The path to the checkout directory to be cleaned is saved into the `snapshot.map` file. The snapshot is used later (at the end of the build or at the next build start) to determine which files and folders are newly created, modified or deleted. It is done based on the actual files' presence, last modification data and size comparison with the corresponding records in the snapshot.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Configuring Swabra Options
 
 <table><tr>

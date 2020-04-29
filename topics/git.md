@@ -17,11 +17,6 @@ __Important notes__:
 * [Remote Run](remote-run.md) and [Pre-Tested Commit](pre-tested-delayed-commit.md) are supported in the [IntelliJ IDEA](intellij-platform-plugin.md) and [Eclipse](eclipse-plugin.md) plugins; with the [Visual Studio Addin](visual-studio-addin.md) use the [Branch Remote Run Trigger](branch-remote-run-trigger.md).
 * Initial Git [checkout](build-checkout-directory.md#Checkout+Process) may take significant time (sometimes hours), depending on the size of your project history, because the whole project history is downloaded during the initial checkout.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## General Settings
 
 <table><tr>
@@ -414,8 +409,8 @@ TeamCity can automatically run git gc periodically when native Git client can be
 
 To fix the warning / meet automatic git gc requirements, perform the following:
 1. Install a native Git client manually on the TeamCity server.
-2. Specify path to the Git executable:
-   * Add the drectory with the executable to the `Path` environment variable and restart the server, _or_
+2. Specify the path to the Git executable:
+   * Add the directory with the executable to the `PATH` environment variable and restart the server, _or_
    * Set the full path to the executable in the `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) without the server restart.
    
 When TeamCity runs Git garbage collection, the details are logged into the [`teamcity-cleanup.log`](teamcity-server-logs.md). If git garbage collection fails, a corresponding warning is displayed.
@@ -1033,10 +1028,8 @@ An __unsupported__ rule example is `+:some/dir=>some/otherDir`.
 
 Git support is implemented as an open-source plugin. For development links, refer to the [plugin's page](https://plugins.jetbrains.com/plugin/8887-git).
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Branch Remote Run Trigger](branch-remote-run-trigger.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="branch-remote-run-trigger.md">Branch Remote Run Trigger</a>
+        </category>
+</seealso>

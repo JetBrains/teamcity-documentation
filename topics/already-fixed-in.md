@@ -20,10 +20,8 @@ Tests are considered the same when they have the same name. If there are several
 
 Note that __since TeamCity 9.0__, the way TeamCity counts tests [Hajipur 9.0 EAP1 (build 31423) Release Notes](http://confluence.jetbrains.com/TW/Hajipur+9.0+EAP1+(build+31423)+Release+Notes).
 
-__  __
- 
-__See also:__
-
-__Concepts__: [First Failure](first-failure.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="first-failure.md">First Failure</a>
+        </category>
+</seealso>

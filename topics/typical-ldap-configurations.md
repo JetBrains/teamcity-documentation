@@ -2,11 +2,6 @@
 [//]: # (auxiliary-id: Typical LDAP Configurations)
 This page contains samples of the `ldap-config.properties` file for different configuration cases.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Basic LDAP Login
 
 The examples of minimal working configurations are given below.

@@ -1,8 +1,7 @@
 [//]: # (title: Build Agent)
 [//]: # (auxiliary-id: Build Agent)
-A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. It is [installed and configured](setting-up-and-running-additional-build-agents.md) separately from the TeamCity server. An agent can be installed on the same computer as the server or on a different machine (the latter is a preferred setup for server performance reasons); an agent can run the same operating system (OS) as the TeamCity server or a different OS. 
 
-<tag-list of="chapter" mode="tree" depth="4"/>
+A TeamCity _Build Agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. It is [installed and configured](setting-up-and-running-additional-build-agents.md) separately from the TeamCity server. An agent can be installed on the same computer as the server or on a different machine (the latter is a preferred setup for server performance reasons); an agent can run the same operating system (OS) as the TeamCity server or a different OS. 
 
 A TeamCity build agent contains [two processes](configuring-build-agent-startup-properties.md):   
 * Agent Launcher — a Java process that launches the agent process
@@ -13,7 +12,7 @@ An Agent can run builds of any compatible build configuration.
 
 The TeamCity server monitors all the connected agents and assigns queued builds to the agents based on [compatibility requirements](agent-requirements.md), [Agent Pools](agent-pools.md), Build Configuration restrictions configured for an agent and the selection algorithm described [here](build-queue.md).
 
-### Build Agent Status
+## Build Agent Status
 
 In TeamCity, a build agent can have following statuses:
 
@@ -91,7 +90,7 @@ Only users with certain roles can manage agents. See [Role and Permission](role-
 
 For a build agent configuration, refer to the [Build Agent Configuration](build-agent-configuration.md) section.
 
-### Agent Upgrade
+## Agent Upgrade
 
 A TeamCity agent is upgraded automatically when necessary. The process involves downloading new agent files from the TeamCity server and restarting the agent on the new files. In order to successfully accomplish this, the user under whose account the agent runs should have [enough](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) permissions.
 
@@ -99,13 +98,19 @@ Typically, an agent upgrade happens when:
 * the server is [upgraded](upgrade.md#Upgrading+TeamCity+Server)
 * an agent plugin is [added](installing-additional-plugins.md) or [updated](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#PluginsPackaging-AgentUpgradeonUpdatingPlugins) on the server
 * [a new tool is installed](installing-agent-tools.md)
- __  __
-
-__See also:__
-
-
-__Concepts__: [Build Grid](build-grid.md) | [Agent Work Directory](agent-work-directory.md) | [Role and Permission](role-and-permission.md)   
-__Installation and Upgrade__: [Installing and Running Build Agents](installation.md#Install+Additional+Build+Agents) | [Setting up and Running Additional Build Agents](setting-up-and-running-additional-build-agents.md)   
-__Administrator's Guide__: [Agent Pools](agent-pools.md) | [Assigning Build Configurations to Specific Build Agents](assigning-build-configurations-to-specific-build-agents.md) | [Licensing Policy](licensing-policy.md)
-
-__ __
+ <seealso>
+        <category ref="installation">
+            <a href="installation.md#Install+Additional+Build+Agents">Installing and Running Build Agents</a>
+            <a href="setting-up-and-running-additional-build-agents.md">Setting up and Running Additional Build Agents</a>
+        </category>
+        <category ref="concepts">
+            <a href="build-grid.md">Build Grid</a>
+            <a href="agent-work-directory.md">Agent Work Directory</a>
+            <a href="role-and-permission.md">Role and Permission</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="agent-pools.md">Agent Pools</a>
+            <a href="assigning-build-configurations-to-specific-build-agents.md">Assigning Build Configurations to Specific Build Agents</a>
+            <a href="licensing-policy.md">Licensing Policy</a>
+        </category>
+</seealso>

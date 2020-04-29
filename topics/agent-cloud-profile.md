@@ -1,12 +1,7 @@
 [//]: # (title: Agent Cloud Profile)
 [//]: # (auxiliary-id: Agent Cloud Profile)
 
-A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand while distributing a build queue. Configuring a cloud provider profile is one of the steps required to [enable agent cloud integration](teamcity-integration-with-cloud-solutions.md) between TeamCity and a cloud provider. The settings of profiles slightly vary depending on the cloud type.
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
+A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on\-demand while distributing a build queue. Configuring a cloud provider profile is one of the steps required to [enable agent cloud integration](teamcity-integration-with-cloud-solutions.md) between TeamCity and a cloud provider. The settings of profiles slightly vary depending on the cloud type. 
 
 <tip>
 
@@ -125,7 +120,6 @@ Specify how many minutes before the full hour an idle instance should be stopped
 * _After the first build_:   
 Select this option if you want TeamCity to stop the virtual machine immediately after the first build finishes. TeamCity will disable the build agents, and no more builds will be run on the same machine.
 
-
 </td></tr></table>
 
 Next, you need to provide the cloud access information which will differ depending on the provider. After that, you can check the connection and add an image to be used as a source for TeamCity cloud agents.
@@ -139,8 +133,7 @@ Click __Add Image__ and configure the required options for the image.
 You can specify which [agent pool](agent-pools.md) the agents should belong to. You can only select the pool that contains this project and/or its subprojects. Pools containing projects other than the current one and its subprojects will not be available for assignment. If the selected agent pool is changed in the future so that the criteria are not met or if the agent pool is not specified, TeamCity will automatically assign the cloud agents to the _project agent pool_. You can also select the _\<Project pool\>_ in the drop-down menu manually.   
 TeamCity automatically composes the project pool containing agents from all cloud profiles of the current project and all its subprojects. Thus, the added image will be available to all the subprojects as well. On the __Agents | Pools__ page, this pool is marked as "_\<Project name\> project pool_". Project pools cannot be deleted or modified.
 
-
-After an Agent Cloud profile is created with one or several sources for virtual machines, TeamCity does a test start for all the virtual machines specified in the profile to learn about the agents configured on them. Once agents are connected, TeamCity calculates their build configurations-to-agents compatibility and stores this information.
+After an Agent Cloud profile is created with one or several sources for virtual machines, TeamCity does a test start for all the virtual machines specified in the profile to learn about the agents configured on them. Once agents are connected, TeamCity calculates their build configurations\-to\-agents compatibility and stores this information.
 
 When a cloud profile is changed, TeamCity detects modifications immediately and forces shutdown of the agents started prior to these changes once the agents finish the current build.
 

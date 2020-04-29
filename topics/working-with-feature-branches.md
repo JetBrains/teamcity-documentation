@@ -5,11 +5,6 @@ Feature Branches in distributed version control systems (DVCS) allow you to work
 
 TeamCity support for feature branches is continuously increasing and, among other features, includes [Branch Remote Run Trigger](branch-remote-run-trigger.md) starting a new personal build each time TeamCity detects changes in a particular branches of the VCS roots of the build configuration and [Automatic Merge](automatic-merge.md) to merge a branch into another after a successful build.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 ## Supported version control systems
 
 [Git](git.md) and [Mercurial](mercurial.md) feature branches are supported as well as Perforce [branch streams support](perforce.md#branch-support).
@@ -30,7 +25,9 @@ Each rule can have one optional `*` placeholder which matches one or more charac
 For example, `+:refs/heads/teamcity*` matches all branches starting with `refs/heads/teamcity` __and at least one additional character__.   
 The branch with `refs/heads/teamcity` will not be matched. 
   
-The `branch_name` parameter is VCS-specific, i.e. `refs/heads/master` in Git: ![branchSpec.png](branchSpec.png) 
+The `branch_name` parameter is VCS-specific, i.e. `refs/heads/master` in Git:
+ 
+<img src="branchSpec.png" alt="Branch specification" width="750"/>
 
 The part of the branch name matched by the asterisk (`*`) wildcard becomes the short branch name to be displayed in the TeamCity user-level interface (also known as the [logical branch name](#Logical+branch+name)). The line can also contain optional parentheses which, when present, denote the part of the pattern to be used as the logical name instead of just *-matched symbols.
 
@@ -130,7 +127,7 @@ You do not need to include the default branch into the branch specification as i
 
 Builds from branches are easily recognizable in the TeamCity UI, because they are marked with a special label:
 
-![branches.png](branches.png)
+<img src="branches.png" alt="Builds from branches" width="750"/>
 
 You can also filter history by a branch name if you're interested in a particular branch. TeamCity assigns a branch label to the builds from the default branch too.
 
@@ -139,7 +136,7 @@ You can also filter history by a branch name if you're interested in a particula
 For each build TeamCity shows changes included in it. For builds from branches the changes calculation process takes the branch into account and presents you with the changes relevant to the build branch. The changes for a build in a branch are calculated as the changes from the build's revision to the previous build in the branch or a build in the default branch.   
 The change log with its graph of commits will help you understand what is going on in the monitored branches.
 
-![branchesChange.png](branchesChange.png)
+<img src="branchesChange.png" alt="Build changes" width="750"/>
 
 With the __Show graph__ option enabled by default TeamCity displays build markers on the graph.
 
@@ -276,10 +273,9 @@ Open the [build results page](working-with-build-results.md), click the __Action
 
 It is also possible to merge branches [automatically](automatic-merge.md).
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Git](git.md) | [Mercurial](mercurial.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="git.md">Git</a>
+            <a href="mercurial.md">Mercurial</a>
+        </category>
+</seealso>

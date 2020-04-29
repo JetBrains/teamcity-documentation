@@ -119,10 +119,8 @@ The build checkout directory will __not__ be cleaned automatically, unless the d
 
 </td></tr></table>
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [VCS Checkout Rules](vcs-checkout-rules.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="vcs-checkout-rules.md">VCS Checkout Rules</a>
+        </category>
+</seealso>

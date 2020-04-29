@@ -19,11 +19,6 @@ TeamCity can also [automatically configure the project / VCS root](guess-setting
 If you have a TFVC root configured, TeamCity will suggest configuring the [Team Foundation Work Items](team-foundation-work-items.md) as well.
 </tip>
 
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Cross-Platform TFS Integration
 
 TeamCity features the [cross-platform TFS integration](https://blog.jetbrains.com/teamcity/2015/12/teamcity-cross-platform-tfs-support/), which works on Linux, macOS, and Windows platforms. Without installing additional software, TeamCity servers and build agents can interact with Team Foundation Servers 2012 or later, and Azure DevOps Services.
@@ -305,7 +300,7 @@ Code (status)
 
 <note>
 
-Azure DevOps stops supporting alternate credentials since March 2, 2020. To be able to authenticate in Azure DevOps, please use alternative methods instead (such as personal access tokens).
+Azure DevOps [stops supporting](https://devblogs.microsoft.com/devops/azure-devops-will-no-longer-support-alternate-credentials-authentication/) alternate credentials since March 2, 2020. To be able to authenticate in Azure DevOps, please use alternative methods instead (such as personal access tokens).
 
 </note>
 

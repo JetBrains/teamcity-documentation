@@ -7,28 +7,25 @@ The build history, users and their data and some other data are stored in the [d
 
 Note that in this documentation and other TeamCity materials the directory is often referred to as `.BuildServer`. If you have a different name for it, replace `.BuildServer` with the actual name.
 
-On this page:
-
- <tag-list of="chapter" mode="tree" depth="4"/>
-
-
 <anchor name="SpecifyLocationoftheTeamCityDataDirectory"/>
 
 ## Location of the TeamCity Data Directory
 
-The currently used Data Directory location can be seen on the __Administration | Global Settings__ page for a running TeamCity server instance. Clicking the __Browse__ link opens the __Administration | Global Settings | Browse Data Directory__ tab allowing the user to upload new/modify the existing files in the directory.
+The currently used Data Directory location can be seen on the __Administration | Global Settings__ page for a running TeamCity server instance. Clicking the __Browse__ link opens the __Administration | Global Settings | Browse Data Directory__ tab allowing the user to upload new or modify the existing files in the directory.
 
 The current Data Directory location is also available in the `logs/teamcity-server.log` file (look for "_TeamCity Data Directory:_" line on the server startup).
 
-If you are upgrading, note that prior to TeamCity 7.1 the Data Directory could be specified [in a different way](https://confluence.jetbrains.com/display/TCD7/TeamCity+Data+Directory).
+If you are upgrading from one of the early versions of TeamCity, note that prior to TeamCity 7.1 the Data Directory could be specified [in a different way](https://confluence.jetbrains.com/display/TCD7/TeamCity+Data+Directory) than described [below](#Configuring+the+Location).
 
 ### Configuring the Location
 
-There are several ways to configure the location of the TeamCity Data Directory:
-* on the first server startup screens (only when TeamCity `.tar.gz` or `.exe` distribution is used). The specified Data Directory is then saved into `<`[`TeamCity home directory`](teamcity-home-directory.md)`>/conf/teamcity-startup.properties` file. The screen to specify the Data Directory location does not appear if the Data Directory location is configured using one of the options below.
-* manually using the `TEAMCITY_DATA_PATH` environment variable. The variable can be either system-wide or defined for the user under whom TeamCity server is started. After setting/changing the variable, you might need to restart the computer for the changes to take effect.
-* If the `TEAMCITY_DATA_PATH` environment variable is not set and the `<`[`TeamCity home directory`](teamcity-home-directory.md)`>/conf/teamcity-startup.properties` file does not define it either, the default TeamCity Data Directory location is in the user's home directory (for example, it is `$HOME/.BuildServer` under Linux and `%USERPROFILE%.BuildServer` under Windows).
+There are two ways to configure the location of the TeamCity Data Directory:
+* __by selecting it in the UI form on the first server startup__ (only for TeamCity `.tar.gz` or `.exe` distributions). The specified Data Directory is then saved into `<`[`TeamCity home directory`](teamcity-home-directory.md)`>/conf/teamcity-startup.properties` file.
+* __manually__, using the `TEAMCITY_DATA_PATH` environment variable. The variable can be either system-wide or defined for the user under whom the TeamCity server is started. After setting/changing the variable, you might need to restart the computer for the changes to take effect.
 
+If during the first startup TeamCity finds the Data Directory location configured as the environment variable, it skips the related startup screen and uses the detected path.
+
+If the `TEAMCITY_DATA_PATH` environment variable is not set and the `<`[`TeamCity home directory`](teamcity-home-directory.md)`>/conf/teamcity-startup.properties` file does not define it either, the default TeamCity Data Directory location will be the user's home directory (for example, it is `$HOME/.BuildServer` under Linux and `%USERPROFILE%.BuildServer` under Windows).
 
 <tip>
 
@@ -49,7 +46,7 @@ It is recommended to store `<`[`TeamCity Data Directory`](teamcity-data-director
 
 __The Data Directory should not be located under the [TeamCity Home Directory](teamcity-home-directory.md).__
 
-We highly recommend using the Data Directory location outside of the TeamCity installation directory to prevent any data loss.
+We highly recommend placing the Data Directory outside of the TeamCity installation directory to prevent any data loss.
 
 </warning>
 
@@ -130,11 +127,8 @@ If you plan to modify the configuration manually, note that there are entries in
 
 See also the related [section](how-to.md#Move+TeamCity+Projects+from+One+Server+to+Another) on moving projects between TeamCity servers.
 
-__  __
-
-__See also:__
-
-
-__Installation and Upgrade__: [TeamCity Data Backup](teamcity-data-backup.md)
-
-__ __
+<seealso>
+        <category ref="installation">
+            <a href="teamcity-data-backup.md">TeamCity Data Backup</a>
+        </category>
+</seealso>

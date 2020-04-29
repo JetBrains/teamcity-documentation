@@ -1,10 +1,7 @@
 [//]: # (title: Installation)
 [//]: # (auxiliary-id: Installation)
+
 If you are upgrading your existing TeamCity installation, refer to [Upgrade](upgrade.md).
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
 
 ## Check System Requirements
 
@@ -142,10 +139,9 @@ Although the TeamCity server in `.exe` and `.tar.gz` distributions is installed 
 
 To set up additional build agents, follow the [instructions](setting-up-and-running-additional-build-agents.md).
 
-__  __
-
-__See also:__
-
-__Installation and Upgrade__: [Installing and Configuring the TeamCity Server](installing-and-configuring-the-teamcity-server.md) | [Setting up and Running Additional Build Agents](setting-up-and-running-additional-build-agents.md)
-
-__ __
+<seealso>
+        <category ref="installation">
+            <a href="installing-and-configuring-the-teamcity-server.md">Installing and Configuring the TeamCity Server</a>
+            <a href="setting-up-and-running-additional-build-agents.md">Setting up and Running Additional Build Agents</a>
+        </category>
+</seealso>

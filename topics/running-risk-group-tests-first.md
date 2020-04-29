@@ -1,8 +1,5 @@
 [//]: # (title: Running Risk Group Tests First)
 [//]: # (auxiliary-id: Running Risk Group Tests First)
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
 
 <anchor name="testReorderingJUnitAndTestNG"/>
 
@@ -102,11 +99,11 @@ If risk tests reordering option is enabled, the feature for NUnit test runner wo
 * Tests reordering feature applies to an NUnit task. That is, for NAnt and MSBuild runners, tests reordering feature will be initiated as many times as many NUnit tasks you have in your build script.
 </note>
 
- __  __
-
-__See also:__
-
-__Concepts__: [Build Runner](build-runner.md)   
-__Developing TeamCity Plugins__: [Risk Tests Reordering in Custom Test Runner](https://plugins.jetbrains.com/docs/teamcity/risk-tests-reordering-in-custom-test-runner.html)
-
-__ __
+ <seealso>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/docs/teamcity/risk-tests-reordering-in-custom-test-runner.html">Developing TeamCity Plugins: Risk Tests Reordering in Custom Test Runner</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="build-runner.md">Build Runner</a>
+        </category>
+</seealso>

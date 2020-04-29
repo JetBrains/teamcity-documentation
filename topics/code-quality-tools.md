@@ -1,10 +1,7 @@
 [//]: # (title: Code Quality Tools)
 [//]: # (auxiliary-id: Code Quality Tools)
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 TeamCity comes bundled with a number of tools capable of analyzing the quality of your code and reporting the obtained data. If you are using the tools which are currently not supported, TeamCity can be configured to run them and display their report results.
-
 
 ## Bundled Tools
 
@@ -43,7 +40,7 @@ The following code coverage tools are supported for [.NET Process Runner](net-pr
 * [NCover](ncover.md)
 * [PartCover](partcover.md)
 
-For the [.NET CLI (dotnet)](net-cli-dotnet.md) runner and with NUnit version 3.x the only supported coverage tool is [JetBrains dotCover](jetbrains-dotcover.md).
+For the [.NET CLI (dotnet)](net.md) runner and with NUnit version 3.x the only supported coverage tool is [JetBrains dotCover](jetbrains-dotcover.md).
 
  
 

@@ -3,7 +3,7 @@
 
 ## Maven Settings Resolution on the Server Side
 
-The TeamCity server invokes Maven on the server side for functionality like Maven dependency triggers and  the Maven model display on the __Maven__ build configuration tab.
+The TeamCity server invokes Maven on the server side for functionality like Maven dependency triggers and the Maven model display on the __Maven__ build configuration tab.
 
 You can upload Maven settings using the __Administration | Project Settings | Maven Settings__ tab and then select one of the uploaded settings on the [Maven step](maven.md) settings.
 
@@ -14,7 +14,7 @@ During the process, TeamCity uses the usual Maven logic for finding the `setting
 Maven _global-level_ settings are used from the `.xml` file in the default Maven location for the TeamCity server process: `${env.M2_HOME}/conf/settings.xml` or `${system.maven.home}/conf/settings.xml`.   
 The global values of `M2_HOME` environment variable and` maven.home` JVM option are used set for the TeamCity server process.
 
-Since TeamCity 2019.2.1, you can define credentials for accessing Maven repositories in the `settings.xml` file uploaded to the __Maven Settings__ of your _Root_ project. This allows storing custom libraries in private repositories and accessing them from all the subprojects of the _Root_ project.
+Since TeamCity 2019.2.1, you can also define credentials for accessing Maven repositories in the `mavenSettingsDsl.xml` file and upload it to the __Maven Settings__ of your _Root_ project. This allows storing custom libraries in private repositories and accessing them from all the subprojects of the _Root_ project using the predefined credentials.
 
 ### User-Level Settings
 
@@ -82,10 +82,9 @@ For the logic of Maven settings, refer to the related Maven [documentation](http
 
 User\-level settings can be configured in the [Maven Artifact Dependency Trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger).
 
- __  __
- 
-__See also:__
-
-__Administrator's Guide__: [Maven](maven.md) | [Maven Artifact Dependency Trigger](configuring-maven-triggers.md)
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="maven.md">Maven</a>
+            <a href="configuring-maven-triggers.md">Maven Artifact Dependency Trigger</a>
+        </category>
+</seealso>

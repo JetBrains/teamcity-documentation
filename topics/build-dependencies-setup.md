@@ -3,10 +3,6 @@
 
 This page is intended to give you the general idea on how dependencies work in TeamCity based on an example. For the dependencies description, see [Dependent Build](dependent-build.md).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Introduction
 
 In many cases it is convenient to use the output of one build in another, as well as to run a number of builds sequentially on the same sources. Consider a typical example: you have a cross-platform project that has to be tested under Windows and macOS before you get the production build. The best workflow for this simple case will be to:
@@ -114,7 +110,9 @@ Another case is when your tests take too long to run, so you have to extract the
 
 ### Build Chains in TeamCity UI
 
-Once you have snapshot dependencies defined and at least one [build chain](build-chain.md) was triggered, the __Build Chains__ tab appears on the __Project Home__ page and on the __Home__ pages of the related build configurations, providing a visual representation of all build chains and a way to re\-run any chain step manually, using the same set of sources pulled originally. ![Build-Chains1.png](Build-Chains1.png) [Learn more](build-chain.md)
+Once you have snapshot dependencies defined and at least one [build chain](build-chain.md) was triggered, the __Build Chains__ tab appears on the __Project Home__ page and on the __Home__ pages of the related build configurations, providing a visual representation of all build chains and a way to re\-run any chain step manually, using the same set of sources pulled originally.
+
+<img src="Build-Chains1.png" width="750" alt="Build chain example"/>
 
 ### How Snapshot Dependencies Work
 

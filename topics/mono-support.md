@@ -37,7 +37,7 @@ Automatic detection of Mono framework under Windows has the following specifics:
 2. The Frameworks paths are extracted from `HKLM\SOFTWARE\Novell\Mono\%MonoVersion%`.
 3. The platform architecture is detected by analyzing `mono.exe`.
 
-#### Mac OS X Specifics
+#### macOS Specifics
 1. The framework is detected automatically from `/Library/Frameworks/Mono.framework/Versions`.
 2. The highest version is selected.
 3. The frameworks path are extracted from `/Library/Frameworks/Mono.framework/Versions/%MonoVersion%/lib/mono`.
@@ -52,10 +52,10 @@ Automatic detection of Mono framework under Unix has the following specifics:
 You can force Mono to be detected from a custom location by adding the `PREFIX/bin` directory to the beginning of the `PATH` and updating `PKG_CONFIG_PATH` (described in `pkg-config(1)`) with `PREFIX/lib/pkgconfig.`
 
  
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [NAnt](nant.md) | [MSBuild](msbuild.md) | [NuGet](nuget.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="nant.md">NAnt</a>
+            <a href="msbuild.md">MSBuild</a>
+            <a href="nuget.md">NuGet</a>
+        </category>
+</seealso>

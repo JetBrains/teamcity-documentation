@@ -3,13 +3,9 @@
 
 This page details creating build configurations via the TeamCity web UI. Other options include the [REST API](rest-api.md#Build+Configuration+And+Template+Settings) and using TeamCity project configuration in [DSL based on the Kotlin language](storing-project-settings-in-version-control.md).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 To create a build configuration, open __General Settings__ of a project and click __Create build configuration__ under the __Build Configurations__ section.
 
-<img src="create-build-configuration-button.png" alt="Create a build configuration" width="804"/>
+<img src="create-build-configuration-button.png" alt="Create a build configuration" width="750"/>
 
 TeamCity provides several ways to create a new [build configuration](build-configuration.md) for a project:
 
@@ -123,10 +119,10 @@ Use the __Actions__ menu when editing a build configuration to
 * [extract a meta-runner from a build configuration](working-with-meta-runner.md#Extracting+and+Using+Meta-Runner)
 * [attach a history to a build configuration](kotlin-dsl.md#Restoring+Build+History+After+ID+Change)
  
- __  __
- 
- __See also:__
-
-__Administrator's Guide__: [Configuring Dependencies](configuring-dependencies.md) | [Configuring Build Parameters](configuring-build-parameters.md) | [Configuring VCS Settings](configuring-vcs-settings.md)
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-dependencies.md">Configuring Dependencies</a>
+            <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
+            <a href="configuring-vcs-settings.md">Configuring VCS Settings</a>
+        </category>
+</seealso>

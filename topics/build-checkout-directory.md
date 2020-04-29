@@ -1,9 +1,6 @@
 [//]: # (title: Build Checkout Directory)
 [//]: # (auxiliary-id: Build Checkout Directory)
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
-
 The _build checkout directory_ is a directory on the TeamCity agent machine where all the sources of all builds are checked out into.
 * If you use the [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout), the build agent checks out the sources into this directory before the build.
 * In case you use the [server-side checkout mode](vcs-checkout-mode.md#server-checkout), the TeamCity server sends incremental patches to the agent to update only the files changed since the last build in the given checkout directory.
@@ -29,7 +26,7 @@ That is why it is recommended to:
 * make sure the builds perform a clean procedure as the first step of the build for all the files that affect the build and might have been produced by previous builds. Typical files are compilation output, tests reports, build produce artifacts.
 * make sure the builds never modify or delete the files under version control.
 
-If TeamCity detects that it cannot build an incremental patch, a [clean checkout](clean-checkout.md) in enforced. It can also be enforced manually or configured to be performed on each build.
+If TeamCity detects that it cannot build an incremental patch, a [clean checkout](clean-checkout.md) is enforced. It can also be enforced manually or configured to be performed on each build.
 
 ## Custom checkout directory
 
@@ -65,10 +62,8 @@ The time frame for automatic directory expiration can be changed by specifying a
 
 Expiration-based directory cleaning is performed in the background when the build agent is idle (no builds are running).
 
- __  __
-
-__See also:__
-
-__Administrator's Guide__: [Configuring VCS Settings](configuring-vcs-settings.md)
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-vcs-settings.md">Configuring VCS Settings</a>
+        </category>
+</seealso>

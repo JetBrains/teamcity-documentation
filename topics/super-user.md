@@ -18,11 +18,8 @@ Instead of using an empty username, you can also go to the `<Your TeamCity serve
 
 The super user login is enabled by default, but it can be disabled by specifying the `teamcity.superUser.disable=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
- __  __
-
-__See also:__
-
-
-__Concepts__: [Guest User](guest-user.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="guest-user.md">Guest User</a>
+        </category>
+</seealso>

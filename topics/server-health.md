@@ -6,9 +6,6 @@ The __Server Health__ report contains results of the server inspection for any c
 
 The Project Administrator [permissions](role-and-permission.md) at least are required to see the report.
 
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Scope and Severity
 
 The report enables you to define the analysis __scope__: you can select to analyze the global configuration or report on project\-related items. The scope available to you depends on the level of the __View Project__ permission granted to you. _Note that the report is not available for archived projects._
@@ -61,7 +58,7 @@ All URLs used by browsers that do not support the WebSocket connection are liste
 
 #### BIO Connector Adjustment
 
-If Tomcat is configured to use the [BIO connector](http://tomcat.apache.org/tomcat-7.0-doc/config/http.html), the WebSocket protocol is [automatically disabled](http://tomcat.apache.org/tomcat-7.0-doc/web-socket-howto.html#Production_usage). It is recommended to change the Tomcat Connector settings [to use the NIO connector](known-issues.md#Slow+download+from+TeamCity+server).
+If Tomcat is configured to use the [BIO connector](https://tomcat.apache.org/tomcat-8.5-doc/config/http.html), the WebSocket protocol is [automatically disabled](http://tomcat.apache.org/tomcat-7.0-doc/web-socket-howto.html#Production_usage). It is recommended to change the Tomcat Connector settings [to use the NIO connector](known-issues.md#Slow+download+from+TeamCity+server).
 
 
 [//]: # (Internal note. Do not delete. "Server Healthd280e163.txt")    

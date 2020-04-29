@@ -5,10 +5,6 @@ TeamCity provides a variety of diagnostic tools and indicators to monitor and tr
 
 The tools make it easier to identify and investigate problems and, if needed, [report issues](reporting-issues.md) on your server.
 
-The following options are available to you:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Troubleshooting
 
 This tab provides a number of indicators helping you to detect and address issues with the TeamCity server performance.

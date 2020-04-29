@@ -3,10 +3,6 @@
 
 If a VCS Root has branches configured, you can use the _Branch Filter_ option.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Branch Filter Usage
 
 The Branch Filter allows limiting branches used by TeamCity in various operations. Currently, the Branch Filter is available on the following TeamCity settings pages:

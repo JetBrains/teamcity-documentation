@@ -4,8 +4,6 @@ The build queue is a list of builds that were [triggered](configuring-build-trig
 
 When a build is triggered, first it is placed into the build queue, and, when a compatible agent becomes idle, TeamCity will run the build.
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Build Queue Optimization by TeamCity
 
 By default, TeamCity optimizes the build queue as follows:
@@ -29,7 +27,7 @@ This tab displays the following information:
      * the link to the planned agent page.
      * If the current build is a part of a build chain and the builds it depends on are not finished yet, a corresponding note will be displayed. For some builds, like the builds that have never been run before, TeamCity can't estimate possible duration, so the relevant message will be displayed in the tooltip, for example:    
 
-      <img src="unpredictableDuration.png" alt="Unpredictable build duration" width="234"/>
+      <img src="unpredictableDuration.png" alt="Unpredictable build duration" width="400"/>
         
 * __Triggered by__ \- a brief description of the [event that triggered the build](configuring-build-triggers.md).
 * __Can run on__ \- the number of agents compatible with this build configuration. You can click an agent's name link to open the [Agents page](viewing-build-agent-details.md), or use the down arrow to quickly view the list of compatible agents in the pop\-up window.
@@ -56,11 +54,11 @@ The build queue can be paused automatically [if the TeamCity Server runs out of 
 
 When the queue is paused, every page in TeamCity will contain a message with information on the reasons for pausing.
 
- __  __
-
-__See also:__
-
-__Concepts__: [Build Chain](build-chain.md)    
-__Administrator's Guide__: [Ordering Build Queue](ordering-build-queue.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="build-chain.md">Build Chain</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="ordering-build-queue.md">Ordering Build Queue</a>
+        </category>
+</seealso>

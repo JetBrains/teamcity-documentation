@@ -120,10 +120,9 @@ Enter additional parameters to use when calling the `nuget push` command.
 
 </td></tr></table>
 
- __  __
-
-__See also:__
-
-__Administrator's Guide__: [NuGet Installer](nuget-installer.md) | [NuGet Pack](nuget-pack.md)
-
-__ __
+ <seealso>
+        <category ref="admin-guide">
+            <a href="nuget-installer.md">NuGet Installer</a>
+            <a href="nuget-pack.md">NuGet Pack</a>
+        </category>
+</seealso>

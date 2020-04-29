@@ -3,8 +3,6 @@
 
 TeamCity can authenticate users via an internal database, or can integrate into your system and use external authentication sources such as Windows Domain or LDAP.
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Configuring Authentication
 
 Authentication is configured on the __Administration | Authentication__ page; the currently used authentication modules are also displayed here.
@@ -89,7 +87,7 @@ By default, TeamCity has a [Super User](super-user.md) account with maximum perm
 
 ### Built-in Authentication
 
-By default, TeamCity uses the built\-in authentication, meaning that users and their passwords are maintained by TeamCity.
+By default, TeamCity uses the built-in authentication, meaning that users and their passwords are maintained by TeamCity.
 
 When logging to TeamCity for the first time, the user will be prompted to create the TeamCity username and password which will be stored in TeamCity and used for authentication. If you installed TeamCity and logged into it, it means that built\-in authentication is enabled and all user data is stored in TeamCity.
 
@@ -162,10 +160,8 @@ For information on configuring Basic HTTP Authentication directly in the `<`[`Te
 Please refer to the [dedicated page](ntlm-http-authentication.md).
 
 
- __  __
-
-__See also:__
-
-__Concepts__: [Authentication Modules](authentication-modules.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="authentication-modules.md">Authentication Modules</a>
+        </category>
+</seealso>

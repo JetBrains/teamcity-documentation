@@ -26,10 +26,9 @@ From this page you can:
 
 Note that problems which have an investigator/responsible are not considered critical (unless you are the investigator).
 
- __  __
-
-__See also:__
-
-__Concepts__: [Build State](build-state.md) | [Change](change.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="build-state.md">Build State</a>
+            <a href="change.md">Change</a>
+        </category>
+</seealso>

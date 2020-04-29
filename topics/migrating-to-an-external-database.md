@@ -101,13 +101,15 @@ You can [create a backup](teamcity-data-backup.md) and then [restore it](restori
 * If you get "The input line is too long." error while running the tool (e.g. this may happen on Windows 2000), change the script to use an alternative classpath method.    
     For `maintainDB.bat`, remove the lines below "Add all JARs from WEB\-INF\lib to classpath" comment and uncomment the lines below "Alternative classpath: Add only necessary JARs" comment.
 
- __  __
-
-__See also:__
-
-
-__Installation and Upgrade__: [Common database-related problems](common-problems.md) | [Setting up an External Database](setting-up-an-external-database.md)  
-__Concepts__: [TeamCity Data Directory](teamcity-data-directory.md)  
-__Administrator's Guide__: [TeamCity Data Backup](teamcity-data-backup.md)
-
-__ __
+ <seealso>
+        <category ref="installation">
+            <a href="common-problems.md">Common database-related problems</a>
+            <a href="setting-up-an-external-database.md">Setting up an External Database</a>
+        </category>
+        <category ref="concepts">
+            <a href="teamcity-data-directory.md">TeamCity Data Directory</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="teamcity-data-backup.md">TeamCity Data Backup</a>
+        </category>
+</seealso>

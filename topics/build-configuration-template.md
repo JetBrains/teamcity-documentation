@@ -1,8 +1,6 @@
 [//]: # (title: Build Configuration Template)
 [//]: # (auxiliary-id: Build Configuration Template)
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Overview
 
 _Build configuration templates_ allow you to eliminate duplication of build configuration settings. If you want to have several similar (not necessarily identical) build configurations and be able to modify their common settings in one place without having to edit each configuration, create a build configuration template with those settings. Modifying template settings affects __all__ build configurations associated with this template.
@@ -100,7 +98,7 @@ A build configuration associated with a template inherits all its settings (mark
 
 Modifying settings in the template will influence __all configurations__ associated with this template; however, it is possible to redefine most settings in an associated build configuration.
 
-You can redefine almost all the build configuration settings (for example, build steps, [parameters](configuring-build-parameters.md), [build options](configuring-general-settings.md#Build+Options)). The only exceptions are snapshot dependecies and checkout rules which __cannot be redefined__.
+You can redefine almost all the build configuration settings (for example, build steps, [parameters](configuring-build-parameters.md), [build options](configuring-general-settings.md#Build+Options)). The only exceptions are snapshot dependencies and checkout rules which __cannot be redefined__.
 
 Modified settings are highlighted with a yellow border, and the __Reset__ button appears on the right of the modified settings enabling you to revert the changes to the original settings of the template.
 
@@ -157,10 +155,9 @@ The system administrator role is required to associate a project with a specific
 
 If the enforced settings template is specified in a project and a different template is assigned as the enforced settings in a subproject, the template of the subproject will have a higher priority.
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md) | [Configuring Build Parameters](configuring-build-parameters.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
+            <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
+        </category>
+</seealso>

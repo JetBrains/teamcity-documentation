@@ -16,11 +16,11 @@ Once a configuration is marked as _Deployment_, TeamCity changes behavior in the
 * The __Run__ button caption for this configuration changes to __Deploy__.
 * If there is a build used as a dependency in a deployment configuration, then, after the build is run, its [build results page](working-with-build-results.md) will display the __Deployments__ section allowing you to quickly deploy the build.   
 
-   <img src="Deployments.png" alt="Build deployments" width="1557"/>
+   <img src="Deployments.png" alt="Build deployments" width="750"/>
 
 * The __Change details__ page (the page where you can see which configurations are affected by the change, and which builds have been executed with this change) has the __Deployments__ tab that shows builds in Deployment configurations where this change was deployed for the first time.   
    
-   <img src="ChangeDetails.png" alt="Deployments in Change details" width="1312"/>
+   <img src="ChangeDetails.png" alt="Deployments in Change details" width="750"/>
    
 * For deployment configurations, TeamCity always shows the latest started build regardless of the changes it contains; unlike regular build configurations, for which the build with the latest changes is displayed.
 * When setting the build configuration type to _Deployment_, several settings are automatically changed to reflect the best practices: _"Limit the number of simultaneously running builds"_ is set to "1" and the _"Allow triggering personal builds"_ option is turned off.

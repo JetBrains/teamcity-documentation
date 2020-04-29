@@ -1,10 +1,6 @@
 [//]: # (title: NuGet)
 [//]: # (auxiliary-id: NuGet)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Integration Capabilities
 
 TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager and when [NuGet is installed](#Installing+NuGet+to+TeamCity+agents) provides the following capabilities:
@@ -13,7 +9,7 @@ TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager 
     * [NuGet Installer](nuget-installer.md) build runner, which installs and updates NuGet packages.
     * [NuGet Pack](nuget-pack.md) build runner, which builds NuGet packages.
     * [NuGet Publish](nuget-publish.md) build runner, which publishes packages to a feed of your choice.
-* [NuGet Dependency](nuget-dependency-trigger.md) Trigger, which allows triggering builds on NuGet feed updates.
+* [NuGet dependency trigger](nuget-dependency-trigger.md), which allows triggering builds on NuGet feed updates.
 
 
 <note include-id="nuget-OS">
@@ -68,11 +64,13 @@ Installing NuGet on agents results in agents upgrade.
 
 NuGet uses several local caches to avoid downloading packages that are already installed, and to provide offline support. If an agent is running out of the space, TeamCity will try to clean NuGet packages cache on the agent.
 
-The caches in the following directories will be cleaned:
+The TeamCity NuGet cleaner cleans caches in the following Windows directories:
 * `%%NUGET_PACKAGES%% environment variable` (must be an absolute path)
 * `%%LOCALAPPDATA%%\NuGet\Cache`
 * `%%LOCALAPPDATA%%\NuGet\v3-cache`
 * `%%user.home%\.nuget\packages`
+
+Since TeamCity 2019.2.3, the new automatic package cleaner has been introduced in addition to the existing NuGet cleaner. If .NET SDK is installed on a build agent, TeamCity will use native .NET SDK commands for cleaning. The new cleaner works across all platforms supporting .NET SDK and operates on several levels. It cleans the temporary cache first, and only then gets to cleaning the `.nupkg` files and HTTP requests, if necessary.
 
 ## Authentication in private NuGet Feeds
 
@@ -90,12 +88,11 @@ API support:
 
 NuGet command line client supports proxy server configuration via the `NuGet.config` file parameters or environment variables. See [NuGet documentation](https://docs.microsoft.com/en-us/nuget/schema/nuget-config-file#config-section) for more details.
 
-__  __
-
-__See also:__
-
-
-
-__Administrator's Guide__: [NuGet Installer](nuget-installer.md) | [NuGet Publish](nuget-publish.md) | [NuGet Pack](nuget-pack.md) | [NuGet Dependency Trigger](nuget-dependency-trigger.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="nuget-installer.md">NuGet Installer</a>
+            <a href="nuget-publish.md">NuGet Publish</a>
+            <a href="nuget-pack.md">NuGet Pack</a>
+            <a href="nuget-dependency-trigger.md">NuGet Dependency Trigger</a>
+        </category>
+</seealso>

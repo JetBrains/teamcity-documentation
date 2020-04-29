@@ -1,10 +1,6 @@
 [//]: # (title: Build Agents Configuration and Maintenance)
 [//]: # (auxiliary-id: Build Agents Configuration and Maintenance)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Viewing TeamCity agents details
 
 The __Agents__ page of the TeamCity web UI provides the comprehensive information on the TeamCity agents. The number of tabs on the page may differ depending on your agent setup.

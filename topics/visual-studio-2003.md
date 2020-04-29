@@ -1,6 +1,15 @@
 [//]: # (title: Visual Studio 2003)
 [//]: # (auxiliary-id: Visual Studio 2003)
-__Visual Studio 2003__ Build Runner supports building Microsoft Visual Studio 2003 .NET projects. To build Microsoft Visual Studio 2005\-2017 projects, see [Visual Studio (sln)](visual-studio-sln.md) Build Runner.
+
+<note>
+
+Since TeamCity 2019.2.3, the Visual Studio 2003 build runner is deprecated and will be discontinued in TeamCity 2020.2. If you are actively using this runner, we encourage you to let us know about it via any of our [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
+
+We recommend you switching to the [.NET build runner](net.md) instead.
+
+</note>
+
+__Visual Studio 2003__ Build Runner supports building Microsoft Visual Studio 2003 .NET projects. To build Microsoft Visual Studio 2005-2017 projects, see [Visual Studio (sln)](visual-studio-sln.md) Build Runner.
 
 <note>
 
@@ -276,10 +285,8 @@ If checked, in the first place TeamCity will run tests failed in previous finish
 
 </td></tr></table>
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [NUnit for MSBuild](nunit-for-msbuild.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="nunit-for-msbuild.md">NUnit for MSBuild</a>
+        </category>
+</seealso>

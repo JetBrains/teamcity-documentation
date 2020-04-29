@@ -10,8 +10,10 @@ On the top of the Users and Groups page there's search panel, which allows you t
 * To narrow down the search you can also restrict it to particular user group, role, or role in specific project using corresponding drop\-down lists. By selecting the _Invert roles filter_ option, you can invert seach results to show the list of users that do not have the specified role assigned.
 
 
-__See also:__
-
-__Concepts__: [User Account](user-account.md) | [User Group](user-group.md) | [Role and Permission](role-and-permission.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="user-account.md">User Account</a>
+            <a href="user-group.md">User Group</a>
+            <a href="role-and-permission.md">Role and Permission</a>
+        </category>
+</seealso>

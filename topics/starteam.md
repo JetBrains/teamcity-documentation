@@ -4,11 +4,6 @@ This page describes the fields and options available when setting up VCS roots u
 
 Common VCS Root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/> 
-
-
 ## StarTeam Connection Settings
 
 

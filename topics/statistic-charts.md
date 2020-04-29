@@ -1,27 +1,23 @@
 [//]: # (title: Statistic Charts)
 [//]: # (auxiliary-id: Statistic Charts)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 To help you track the condition of your projects and individual build configurations over time, TeamCity gathers statistical data across all their history and displays it as visual charts. The statistical charts can be divided into the following categories:
 * [Project-level statistics](#Project+Statistics) available on the __Project Home | Statistics__ tab.
 * [Build Configuration-level statistics](#Build+Configuration+Statistics) available on the __Build Configuration home page__ | __Statistics__ tab.
 
 Regardless of the selected statistics level in the Statistics tab, you can:
-* Use the branch filter to view the results from the specified branches only 
-* Download each chart data in the CSV format using the ![Download.PNG](Download.PNG) icon
-* Configure the Y\-axis settings for each chart using the ![Cog.PNG](Cog.PNG) icon in the upper left corner
-* Select a time range for each type of statistics from the __Range__ drop\-down list.
+* Use the branch filter to view the results from the specified branches only.
+* Download each chart data in the CSV format using the ![Download.PNG](Download.PNG) icon.
+* Configure the Y-axis settings for each chart using the ![Cog.PNG](Cog.PNG) icon in the upper left corner.
+* Select a time range for each type of statistics from the __Range__ drop\-down menu.
 * Filter the information by data series, for example, by the Agent name or result type.
-* View average values by selecting the __Average__ check box.
+* View average values by selecting the __Average__ checkbox.
 * Filter out failed builds and show only successful builds with the unchecked __Show Failed__ option.
-* View the build summary information when you mouse\-over a build and navigate to the build results page using the build number link.
+* View the build summary information when you mouse-over a build and navigate to the build results page using the build number link.
 
 <note>
 
-Statistics include information about all the builds across all its history. However, according to the clean\-up policy, some of the build results may be removed. In this case, you can only view the summary information about the build, but cannot jump to the build results page.
+Statistics include information about all the builds across all its history. However, according to the clean-up policy, some of the build results may be removed. In this case, you can only view the summary information about the build, but cannot jump to the build results page.
 
 </note>
 
@@ -37,12 +33,13 @@ You can adjust the project\-level charts in the following ways:
 
 ## Build Configuration Statistics
 
-Statistics information is also available at the build configuration level. These charts demonstrate the successful build rate, the build duration, time builds spent in queue, time that took to fix tests, artifact size, and test count. The charts also show code coverage, duplicates and inspection results if these are included in the respective build configuration.
+Statistics information is also available at the build configuration level. These charts demonstrate the successful build rate, the build duration, time builds spent in queue, time spent on fixing tests, artifact size, and test count. The charts also show code coverage, duplicates and inspection results if these are included in the respective build configuration.
 
-<img src="BCStatistics_8.0.png" width="900" alt="Build statistics"/>
+<img src="BCStatistics_8.0.png" width="750" alt="Build statistics"/>
 
-It is also possible to [add custom charts](customizing-statistics-charts.md). Unlike project\-level charts, pre\-defined charts on the build configuration level cannot be disabled.
- 
+It is also possible to [add custom charts](customizing-statistics-charts.md). Unlike project-level charts, predefined charts on the build configuration level cannot be disabled.
+
+If the "_Show all personal builds_" option is enabled in your user profile, you can toggle the display of [personal builds](personal-build.md) on the graph by clicking the "_Show personal_" option.
 
 The charts generated automatically by TeamCity include the following types:
 
@@ -92,13 +89,15 @@ You can also find some useful statistics for a particular test: __Test duration_
 
 ## Custom Charts
 
-It is possible to [customize project-level charts](customizing-statistics-charts.md) or/and configure your own statistical charts, e g. to display the total build duration, including the checkout time, the duration of all build stages, artifact resolving and artifact publishing or  a chart displaying the duration of each build stage, and so on. See a [dedicated page](https://plugins.jetbrains.com/docs/teamcity/custom-statistics.html) for details
+It is possible to [customize project-level charts](customizing-statistics-charts.md) or/and configure your own statistical charts, e g. to display the total build duration, including the checkout time, the duration of all build stages, artifact resolving and artifact publishing or a chart displaying the duration of each build stage, and so on. See a [dedicated page](https://plugins.jetbrains.com/docs/teamcity/custom-statistics.html) for details.
 
-__  __
-
-__See also:__
-
-__Concepts__: [Build Configuration](build-configuration.md) | [Build State](build-state.md) | [Change](change.md)   
-__Administrator's Guide__: [Customizing Statistics Charts](customizing-statistics-charts.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-configuration.md">Build Configuration</a>
+            <a href="build-state.md">Build State</a>
+            <a href="change.md">Change</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="customizing-statistics-charts.md">Customizing Statistics Charts</a>
+        </category>
+</seealso>

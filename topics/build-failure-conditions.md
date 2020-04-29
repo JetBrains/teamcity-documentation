@@ -4,11 +4,6 @@
 In TeamCity you can adjust the conditions when a build should be marked as failed in the __Failure Conditions__ section of the of the [Build Configuration Settings](creating-and-editing-build-configurations.md) page.     
 To fail a build if sufficient disk space cannot be freed for the build, see the [Free disk space](free-disk-space.md) build feature.
 
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Common build failure conditions
 
 In the Common Failure Conditions, specify how TeamCity will fail builds by selecting appropriate options from in the __Fail build if__ area:

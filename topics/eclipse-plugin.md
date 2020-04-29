@@ -1,10 +1,6 @@
 [//]: # (title: Eclipse Plugin)
 [//]: # (auxiliary-id: Eclipse Plugin)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Plugin Features
 
 TeamCity integration with Eclipse provides the following features:
@@ -48,10 +44,8 @@ __To install the TeamCity plugin for Eclipse:__
 7. Click __Next__ and follow the installation instructions.
 For detailed instructions on how to work with the plugin, refer to the TeamCity section of the Eclipse help system after the plugin installation.
 
-__  __
-
-__See also:__
-
-__Troubleshooting__: [Logging in TeamCity Eclipse plugin](reporting-issues.md)
-
-__ __
+<seealso>
+        <category ref="troubleshooting">
+            <a href="reporting-issues.md#Logging+in+TeamCity+Eclipse+plugin">Logging in TeamCity Eclipse plugin</a>
+        </category>
+</seealso>

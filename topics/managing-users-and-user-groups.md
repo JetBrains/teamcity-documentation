@@ -1,10 +1,6 @@
 [//]: # (title: Managing Users and User Groups)
 [//]: # (auxiliary-id: Managing Users and User Groups)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
 ## Creating New User
 
 The __Administration | Users__ page provides the _Create user account_ option.
@@ -117,10 +113,10 @@ To learn more about notification rules, refer to [Subscribing to Notifications](
 
 On the __Users__ page, select users, click the __Add to groups__ button at the bottom, and specify the groups  to add the users to. Note that all these users will inherit the roles defined for the group.
 
- __  __
-
-__See also:__
-
-__Concepts__: [User Account](user-account.md) | [User Group](user-group.md) | [Role and Permission](role-and-permission.md)
-
-__ __
+ <seealso>
+        <category ref="concepts">
+            <a href="user-account.md">User Account</a>
+            <a href="user-group.md">User Group</a>
+            <a href="role-and-permission.md">Role and Permission</a>
+        </category>
+</seealso>

@@ -36,14 +36,17 @@ Also, see [notes](how-to.md#Integrate+with+Build+and+Reporting+Tools) on integra
 
 
 
- __  __
-
-__See also:__
-
-
-
-__Concepts__: [Build State](build-state.md) | [Build Runner](build-runner.md)  
-__User's Guide__: [Viewing Tests and Configuration Problems](viewing-tests-and-configuration-problems.md)  
-__Administrator's Guide__: [NUnit Support](nunit-support.md) | [MSTest Support](mstest-support.md) | [NAnt](nant.md)
-
-__ __
+ <seealso>
+        <category ref="user-guide">
+            <a href="viewing-tests-and-configuration-problems.md">Viewing Tests and Configuration Problems</a>
+        </category>
+        <category ref="concepts">
+            <a href="build-state.md">Build State</a>
+            <a href="build-runner.md">Build Runner</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="nunit-support.md">NUnit Support</a>
+            <a href="mstest-support.md">MSTest Support</a>
+            <a href="nant.md">NAnt</a>
+        </category>
+</seealso>

@@ -5,10 +5,6 @@ When a build fails due to some problem or a failed test, TeamCity allows you to 
 
 You can assign an investigation of the whole failed build configuration, or investigate/mute single [build problems and failed tests](viewing-tests-and-configuration-problems.md). The __Investigate/Mute__ functionality works identically for build problems and failed tests.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## Required Permissions
 
 To be able to manage and view investigations/mutes in a certain project, the user must have the following permissions granted in this project:
@@ -116,14 +112,11 @@ If the "_Automatically when fixed_" option is select in [Investigation](#Assigni
 * If the failure occurs in the default branch and in another active branch, and an investigation (or mute) is assigned to this failure in any of these branches, it will be resolved as soon as the failure is fixed in the default branch.
 * If the failure occurs in any active branch other than the default one, the assigned investigation (or mute) will be resolved only when it is fixed in all active branches in which it occurs.
 
-__  __
-
-__See also:__
-
-
-__Concepts__: [Build Configuration Status](build-configuration.md)   
-__User's Guide__: [Viewing Tests and Configuration Problems](viewing-tests-and-configuration-problems.md)
-
-__ __
-
-[//]: # (Internal note. Do not delete. "Muting Test Failuresd219e77.txt")
+<seealso>
+        <category ref="concepts">
+            <a href="build-configuration.md">Build Configuration Status</a>
+        </category>
+        <category ref="user-guide">
+            <a href="viewing-tests-and-configuration-problems.md">Viewing Tests and Configuration Problems</a>
+        </category>
+</seealso>

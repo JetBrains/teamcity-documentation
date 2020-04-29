@@ -1,11 +1,6 @@
 [//]: # (title: Jenkins to TeamCity Migration Guidelines)
 [//]: # (auxiliary-id: Jenkins to TeamCity Migration Guidelines)
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
-
-
 ## Introduction
 
 This document provides the basics you need to know when migrating from Jenkins to a TeamCity CI server. TeamCity is quite different from Jenkins in terms of concepts related to managing CI and CD. If you just want to jump in and get started, try to [this guide](getting-started-with-teamcity.md).

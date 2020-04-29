@@ -3,8 +3,6 @@
 
 This page contains a list of workarounds for known issues in TeamCity.
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 <anchor name="jdk8_240"/>
 
 ## Incompatibility with JDK 8 update 242+
@@ -409,11 +407,11 @@ More details on troubleshooting Docker for Windows are available in the [Docker]
 
 ### Information about installed Docker server OS on Windows missing on Agent
 
-On Windows 10, the Docker server depends on Hyper\-V service and its start may take a significant amount of time. To resolve the issue, configure the TCBuildAgent Windows service to depend on the Docker for Windows Service, "com.docker.service" by default.
+On Windows 10, the Docker server depends on Hyper-V service and its start may take a significant amount of time. To resolve the issue, configure the TCBuildAgent Windows service to depend on the Docker for Windows Service, `com.docker.service` by default.
 
 ### Linux Docker Containers under Windows
 
-Since __TeamCity 2017.2,__ the [Docker Wrapper](docker-wrapper.md) works on Windows when Windows\-based containers are started.
+Since __TeamCity 2017.2,__ the [Docker Wrapper](docker-wrapper.md) works on Windows when Windows-based containers are started.
 
 If a Linux container is started on a Windows machine, TeamCity displays the error message "Starting Linux Docker containers under Windows is not supported. To avoid this problem, add the [`teamcity.agent.jvm.os.name`](integrating-teamcity-with-docker.md#Parameters+Reported+by+Agent) does not contain Windows [agent requirement](agent-requirements.md).
 
@@ -459,6 +457,31 @@ To resolve this issue, we suggest that you use Xcode 11 instead. To workaround t
 
 ## Issues per TeamCity versions
 
+### 2019.2.3 Known Issues
+
+#### NuGet feed credentials for external repositories do not work with .NET runner
+
+The [.NET build runner](net.md) currently does not support using [NuGet feed credentials](nuget-feed-credentials.md) for authentication in external repositories.
+
+To work around this issue in TeamCity 2019.2.3, download the [patched .NET Packages Support plugin](https://youtrack.jetbrains.com/issue/TW-65581#focus=streamItem-27-4110405.0-0) and install it as any other [additional plugin](installing-additional-plugins.md). The bundled .NET Packages Support plugin will be automatically updated with the fix in our next release.
+
+#### AWS region us-east-1 cannot be set in S3 artifact storage settings
+
+If the `us-east-1` region is selected in S3 artifact storage settings, it will be automatically reset to another available region on saving the settings. This is caused by the incorrect bucket location returned for `us-east-1` from AWS.
+
+To work around this issue in TeamCity 2019.2.3, download the [patched TeamCity S3 Storage plugin](https://youtrack.jetbrains.com/issue/TW-64670#focus=streamItem-27-4108345.0-0) and install it as any other [additional plugin](installing-additional-plugins.md). The bundled S3 Storage plugin will be automatically updated with the fix in our next release.
+
+### 2019.2 Known Issues
+
+#### Potential issues with restoring NuGet packages in .NET projects
+
+TeamCity might fail to restore NuGet packages if a build comprises at least one .NET CLI (dotnet) step __and__ an [MSBuild](msbuild.md) or [Visual Studio (sln)](visual-studio-sln.md) build step (or both).
+
+This issue is caused by the difference in paths to cache directories between these build runners.   
+The MSBuild and Visual Studio (sln) runners use the default path to the NuGet global cache while the .NET CLI (dotnet) runner redefines this path (for example, when run inside a Docker container).   
+
+The recommended workaround is to use the [NuGet Installer](nuget-installer.md) build runner instead of the .NET CLI (dotnet) runner for restoring packages.
+
 ### 2019.1.4 Known Issues
 
 #### Unavailable Default Credential Provider Chain option for Amazon ECR
@@ -478,16 +501,3 @@ _This issue has been fixed in TeamCity 2019.1.5._
 In certain cases, when a build is supposed to create and publish several NuGet packages to a NuGet feed, and the package indexing is enabled, some packages might not be published to the feed. This problem is caused by recent changes in [NuGet Packages Indexer](nuget-packages-indexer.md).
 
 To workaround this problem without upgrading to 2019.1.5, download the fixed NuGet Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62545#focus=streamItem-27-3754398.0-0) and upload it on the __Server Administration | Plugins List__ page.
-
-__ __
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>

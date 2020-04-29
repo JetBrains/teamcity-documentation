@@ -11,10 +11,6 @@ The global default value for both options is 60 seconds and can be configured fo
 
 You can adjust a VCS trigger to your needs using the options described below:
 
-
-<tag-list of="chapter" mode="tree"/>
-
-
 ## Trigger a build on changes in snapshot dependencies
 
 If you have a [build chain](build-chain.md) (i.e. a number of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency)),  the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.

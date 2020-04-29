@@ -1,8 +1,6 @@
 [//]: # (title: What's New in TeamCity 2019.2)
 [//]: # (auxiliary-id: What's New in TeamCity 2019.2)
 
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 ## New flexible clean-up rules
 
 Automatic build clean-up has been present in TeamCity since the early versions. It allows conveniently deleting old and no longer necessary build data. While the provided customization options are quite easy to configure, they cover only the most common cases and do not allow for fine-tuning.
@@ -101,7 +99,7 @@ teamcity.pullRequest.target.branch //VCS name of the target branch
 
 TeamCity now allows collecting code coverage for .NET Core projects on Linux and macOS by supporting cross-platform JetBrains dotCover, version 2019.2.3+.
 
-dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, add the cross-platform dotCover tool under __Administration | Tools__ and enable the dotCover coverage in the [.NET CLI](net-cli-dotnet.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 4.6.1+ installed.
+dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, add the cross-platform dotCover tool under __Administration | Tools__ and enable the dotCover coverage in the [.NET CLI](net.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 4.6.1+ installed.
 
 Now you can also run code coverage analysis with dotCover inside a Docker container, with the [Docker Wrapper](docker-wrapper.md) extension.
 
@@ -159,13 +157,13 @@ You can instantly preview all the previous builds and their details, without lea
 
 <img src="build-trends-preview.png" width="250" alt="Build trends preview"/>
 
-Visualized build timeline reflects the duration of each stage and indicates build problem:
+A visualized build timeline reflects the duration of each stage and indicates build problems:
 
 <img src="build-timeline.png" width="600" alt="Build timeline"/>
 
-You can click any stage to open the corresponding line of the build log. Note that in the new UI, even a long log can be displayed directly in the preview, with no need to download it.
+Click any build stage to open the corresponding line of the build log. Note that in the new UI, even a long log can be displayed directly in the preview, with no need to download it.
 
-Apart from the build timeline and build log, the __Overview__ tab gives quick access to build problems, tests, changes, and dependencies. However, the corresponding tabs have also been updated and now offer new features:
+Apart from the build timeline and build log, the __Overview__ tab gives quick access to build problems, tests, changes, and dependencies. The corresponding tabs have also been updated and now offer new features:
 
 * The __Changes__ tab displays more information about changes in the build. You can separately browse user and artifact changes, and optionally display changes in build settings. Click any change to preview its details. <img src="exp-changes-tab.png" width="700" alt="Experimental Changes tab"/>
 

@@ -72,10 +72,10 @@ pauses the build queue
 You can use [Disk Usage](disk-usage.md) report to evaluate what projects use the most of the disk space and adjust the [clean-up](clean-up.md) rules if required. 
 
 
-__  __
-
-__See also:__
-
-__Administrator's Guide__: [Free disk space on agent](free-disk-space.md) | [Disk Usage](disk-usage.md) | [Clean-up](clean-up.md)
-
-__ __
+<seealso>
+        <category ref="admin-guide">
+            <a href="free-disk-space.md">Free disk space on agent</a>
+            <a href="disk-usage.md">[Disk Usage</a>
+            <a href="clean-up.md">Clean-up</a>
+        </category>
+</seealso>

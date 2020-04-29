@@ -3,10 +3,6 @@
 
 TeamCity comes bundled with the console runner of [JetBrains dotCover](http://www.jetbrains.com/dotcover/). In addition to the bundled version, you can install another version of JetBrains dotCover Command Line Tools and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
 
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="4"/>
-
 After choosing the appropriate option in the .NET coverage section of a build step, you will be able to collect code coverage for your .NET project and then view the coverage statistics and detailed coverage report inside the [TeamCity web UI](working-with-build-results.md).
 
 If you have a license for dotCover and have it installed on a developer machine, TeamCity-collected coverage results can be downloaded and viewed inside Visual Studio with the help of the [TeamCity Visual Studio Add-in](visual-studio-addin.md).
@@ -192,7 +188,7 @@ The dotCover console tool supports profiling of .NETCore.App 2.0+ since version 
 
 Since version 2019.2, TeamCity allows collecting coverage for .NET Core projects on Linux and macOS by supporting cross-platform JetBrains dotCover, version 2019.2.3+.
 
-dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, add the [cross-platform dotCover tool](https://www.nuget.org/packages/JetBrains.dotCover.DotNetCliTool) in __[Administration | Tools](installing-agent-tools.md)__ and enable the dotCover coverage in the [.NET CLI](net-cli-dotnet.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 1.4.6+ installed.
+dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, add the [cross-platform dotCover tool](https://www.nuget.org/packages/JetBrains.dotCover.DotNetCliTool) in __[Administration | Tools](installing-agent-tools.md)__ and enable the dotCover coverage in the [.NET CLI](net.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 1.4.6+ installed.
 
 <note>
 
@@ -203,12 +199,12 @@ For Linux and macOS agents, all [additional dotCover arguments](#additional-argu
 Starting from this version, you can also run dotCover code coverage analysis inside a Docker container, with the [Docker Wrapper](docker-wrapper.md) extension.
 
 
- __  __
-
-__See also:__
-
-__Known Issues__: [dotCover issues](known-issues.md#dotCover+known+issues)   
-__Administrator's Guide__: [Manually Configuring Reporting Coverage](manually-configuring-reporting-coverage.md)   
-__Troubleshooting__: [dotCover issues](reporting-issues.md#dotCover+Issues)
-
-__ __
+ <seealso>
+        <category ref="troubleshooting">
+            <a href="known-issues.md#dotCover+known+issues">dotCover Known Issues</a>
+            <a href="known-issues.md#dotCover+known+issues">Reporting Issues with dotCover</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="manually-configuring-reporting-coverage.md">Manually Configuring Reporting Coverage</a>
+        </category>
+</seealso>

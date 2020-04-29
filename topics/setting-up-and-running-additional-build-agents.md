@@ -1,12 +1,7 @@
 [//]: # (title: Setting up and Running Additional Build Agents)
 [//]: # (auxiliary-id: Setting up and Running Additional Build Agents)
 
-
 Before you can start customizing projects and creating build configurations, you need to configure [build agents](build-agent.md). Review the [agent-server communication](#Agent-Server+Data+Transfers) and [Prerequisites](#Prerequisites) sections before proceeding with agent installation.
-
-On this page:
-
-<tag-list of="chapter" mode="tree" depth="5"/>
 
 <tip>
 
@@ -181,7 +176,7 @@ Linux
 
 <td>
 
-1\. Installed JDK(JRE) 6\-10 (__1.8.0\_161 or later is recommended__). The JVM should be reachable with the `JAVA_HOME` (`JRE_HOME`) global environment variable or be in the global path (i.e. not in user's .bashrc file, and so on)
+1\. Installed JDK(JRE) 6-10 (__1.8.0_161 or later is recommended__). The JVM should be reachable with the `JAVA_HOME` (`JRE_HOME`) global environment variable or be in the global path (that is not in user's `.bashrc` file, and so on)
 
 2\. The `unzip` utility.
 
@@ -396,7 +391,7 @@ sudo chkconfig buildAgent on
 
 #### Automatic Agent Start under macOS
 
-For macOS/Mac OS X, TeamCity provides the ability to load a build agent automatically when a build user logs in.
+For macOS, TeamCity provides the ability to load a build agent automatically when a build user logs in.
 
 ##### LaunchAgent Approach
 
@@ -408,7 +403,7 @@ To configure an automatic build agent startup via `LaunchAgent`, follow these st
 
 3\. Make sure that all files under the `buildAgent` directory are owned by `your_build_user` to ensure a proper agent upgrade process.
 
-4\. Load the build agent via command:
+4\. Load the build agent via the command:
 
 
 ```Shell
@@ -417,16 +412,15 @@ sh buildAgent/bin/mac.launchd.sh load
 
 ```
 
-Run these commands under `your_build_user` account.
+Run these commands under the `your_build_user` account.
 
-You have to __wait several minutes__ for the build agent to auto\-upgrade from the TeamCity server. You can watch the process in the logs:
+__Wait several minutes__ for the build agent to auto-upgrade from the TeamCity server. You can watch the process in the logs:
 
 
 ```Shell
 tail -f buildAgent/logs/teamcity-agent.log
 
 ```
-
 
 5\. When the build agent upgrades and successfully connects to TeamCity server, stop the agent:
 
@@ -436,7 +430,11 @@ sh buildAgent/bin/mac.launchd.sh unload
 
 ```
 
-6\. After the build agent upgrades from the TeamCity server, copy the `buildAgent/bin/jetbrains.teamcity.BuildAgent.plist` file to `$HOME/Library/LaunchAgents/` directory.
+6\. After the build agent upgrades from the TeamCity server, copy the `buildAgent/bin/jetbrains.teamcity.BuildAgent.plist` file to the `$HOME/Library/LaunchAgents/` directory. If you don't want TeamCity to start under the root permissions, specify the __UserName__ key in the `.plist` file, for example:
+```XML
+<key>UserName</key>
+<string>teamcity_user</string>
+```
 
 7\. Configure your Mac system to __automatically login__ as a build user, as described [here](https://support.apple.com/en-us/HT201476).
 
@@ -580,10 +578,8 @@ After the second agent is installed, register a new service for it as mentioned 
 For step-by-step instructions on installing a second Windows agent as a service, see a related [external blog post](https://handcraftsman.wordpress.com/2010/07/20/multiple-teamcity-build-agents-on-one-server/).
 </tip>
 
-__  __
-
-__See also:__
-
-__Concepts__: [Build Agent](build-agent.md)
-
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-agent.md">Build Agent</a>
+        </category>
+</seealso>
