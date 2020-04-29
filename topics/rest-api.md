@@ -1482,7 +1482,7 @@ curl -v -u user:password --request POST "http://teamcity:8111/app/rest/buildQueu
 
 <tr><td>
 
-Stop a running build and read it to the queue
+Stop a running build and re-add it to the queue
 
 </td>
 

@@ -120,7 +120,7 @@ The _Agents_ sidebar allows browsing the agent pool hierarchy and searching agen
 
 ## Roadmap
 
-The next improvements of the experimental UI will address the following areas:
+The next improvements of the experimental UI will affect the following areas:
 * Build Queue page
 * Sidebar and Header areas
 * Mutes/Investigations
