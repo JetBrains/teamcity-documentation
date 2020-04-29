@@ -459,6 +459,12 @@ To resolve this issue, we suggest that you use Xcode 11 instead. To workaround t
 
 ### 2019.2.3 Known Issues
 
+#### Handshake failure on establishing SSL connection
+
+Some users might get the "_Received fatal alert: handshake_failure_" error when the TeamCity server attempts to establish an SSL connection. The problem is caused by the broken `sunec.dll` in JRE bundled with TeamCity 2019.2.3.
+
+To check if this problem has affected your installation, open the `<TeamCity_installation_directory>/jre/bin/sunec.dll` file. If there is a JSON code in this file, your server is affected. To work around the problem, please follow the steps described in the [related issue](https://youtrack.jetbrains.com/issue/TW-65566#focus=streamItem-27-4119621.0-0).
+
 #### NuGet feed credentials for external repositories do not work with .NET runner
 
 The [.NET build runner](net.md) currently does not support using [NuGet feed credentials](nuget-feed-credentials.md) for authentication in external repositories.
