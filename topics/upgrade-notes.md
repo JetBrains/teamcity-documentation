@@ -1,6 +1,12 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2019.2.x to 2020.1
+
+### REST API changes
+
+Filtering test occurrences by branch (`.../app/rest/testOccurrences?locator=branch(XXX)` request) has been changed. It used to support only branch names with case-sensitive matching. Now, the `XXX` value supports branch locators (the same as when filtering builds): it is case-insensitive by default and matches the `<default>` branch display name.
+
 ## Changes from 2019.2.2 to 2019.2.3
 
 ### Reworked .NET build runner
@@ -23,7 +29,7 @@ If you face any problems with migration to the .NET runner or encounter other re
 
 ### Bundled Java for Windows installers is updated
 
-The bundled version of Java in Windows installers of TeamCity Server and Agent as well as in the Docker images is updated to [Amazon Corretto 8.252.09.1](https://github.com/corretto/corretto-8/blob/release-8.252.09.1/CHANGELOG.md). 
+The bundled version of Java in Windows installers of TeamCity Server and Agent as well as in the Docker images is updated to [Amazon Corretto 8.252.09.1](https://github.com/corretto/corretto-8/blob/release-8.252.09.1/CHANGELOG.md).
 
 ## Changes from 2019.2.1 to 2019.2.2
 
