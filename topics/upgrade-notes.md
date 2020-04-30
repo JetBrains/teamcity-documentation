@@ -7,6 +7,10 @@
 
 Filtering test occurrences by branch (`.../app/rest/testOccurrences?locator=branch(XXX)` request) has been changed. It used to support only branch names with case-sensitive matching. Now, the `XXX` value supports branch locators (the same as when filtering builds): it is case-insensitive by default and matches the `<default>` branch display name.
 
+### Other changes
+
+* TeamCity has dropped support for Internet Explorer. Please use Microsoft Edge instead.
+
 ## Changes from 2019.2.2 to 2019.2.3
 
 ### Reworked .NET build runner
