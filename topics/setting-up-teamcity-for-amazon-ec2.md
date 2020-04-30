@@ -233,11 +233,11 @@ In the absence of tagging permissions, TeamCity will still launch Amazon AMI and
 
 ##### Automatic tags
 
-TeamCity enables users to get instance launch information by marking the created instances with the `teamcity:TeamcityData` tag containing `<server UUID>:-<cloud profile ID>:-<image reference>.`
+TeamCity enables users to get instance launch information by marking the created instances with the `teamcity:TeamcityData` tag containing `<server UUID>:-<cloud profile ID>:-<image reference>`. __This tag is necessary for TeamCity integration with EC2 and must not be deleted.__
 
 ##### Custom tags
 
-Custom tags can be applied to EC2 cloud agent instances: when configuring Cloud profile settings, in the __Add Image/Edit Image__ dialog use the __Instance tags__: field to specify tags in the format of `<key1>=<value1>,<key2>=<value2>`.  [Amazon tag restrictions](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions) need to be considered.
+Custom tags can be applied to EC2 cloud agent instances: when configuring Cloud profile settings, in the __Add Image/Edit Image__ dialog use the __Instance tags__: field to specify tags in the format of `<key1>=<value1>,<key2>=<value2>`. [Amazon tag restrictions](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions) need to be considered.
 
 When using the equal(=) sign in the tag value, no escaping is needed. For instance, the string `extraParam=name=John` will be parsed into `<key=extraParam>` and value `<name=John>.`
 
