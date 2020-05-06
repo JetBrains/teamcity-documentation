@@ -4,11 +4,11 @@
 
 An approach which prevents committing defective code into a build, so the entire team's process is not affected. The [diagrams](http://www.jetbrains.com/teamcity/features/delayed_commit.html) on the JetBrains TeamCity web pages provide visualization of the TeamCity approach described below. 
 
-The submitted code changes go through testing first. If the code passes all of the tests, TeamCity can automatically submit the changes to the version control. From there, the changes will automatically be integrated into the next build. If any test fails, the code is not committed, and the submitting developer is notified.
+The submitted code changes go through testing first. If the code passes all the tests, TeamCity can automatically submit the changes to the version control. From there, the changes will automatically be integrated into the next build. If any test fails, the code is not committed, and the submitting developer is notified.
 
-Developers test their changes by performing a [Remote Run](remote-run.md). A pre\-tested commit is enabled when the __commit changes if successful__ option is selected.
+Developers test their changes by performing a [Remote Run](remote-run.md). A pre-tested commit is enabled when the __commit changes if successful__ option is selected.
 
-The pre\-tested commit is initiated via a plugin to one of [supported IDEs](supported-platforms-and-environments.md#IDE+Integration). For remote run a command\-line tool is also [available](https://confluence.jetbrains.com/display/TW/Command+Line+Remote+Run+Tool).
+The pre-tested commit is initiated via a plugin to one of [supported IDEs](supported-platforms-and-environments.md#IDE+Integration). For remote run a command-line tool is also [available](https://confluence.jetbrains.com/display/TW/Command+Line+Remote+Run+Tool).
 
 For Git and Mercurial the recommended way to use [Branch Remote Run Trigger](branch-remote-run-trigger.md) approach to run personal builds off branches.
 
