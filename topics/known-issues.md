@@ -479,11 +479,6 @@ If the `us-east-1` region is selected in S3 artifact storage settings, it will b
 
 To work around this issue in TeamCity 2019.2.3, download the [patched TeamCity S3 Storage plugin](https://youtrack.jetbrains.com/issue/TW-64670#focus=streamItem-27-4108345.0-0) and install it as any other [additional plugin](installing-additional-plugins.md). The bundled S3 Storage plugin will be automatically updated with the fix in our next release.
 
-#### Custom report tab is unavailable if number signs are present in artifact paths
-
-Due to recent changes in the parsing of artifact paths, TeamCity fails to properly encode artifact filenames containing `#` symbols (number signs). If you use [third-party reporting tools](including-third-party-reports-in-the-build-results.md) that generate pages with anchors comprising `#`, note that the custom report tab will be unavailable.   
-To work around this issue, you can roll back to the previous parsing mechanism by enabling the respective internal property, as described in [this issue](https://youtrack.jetbrains.com/issue/TW-65662#focus=streamItem-27-4122627.0-0).
-
 ### 2019.2 Known Issues
 
 #### Potential issues with restoring NuGet packages in .NET projects
