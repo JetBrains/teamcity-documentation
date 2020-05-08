@@ -281,6 +281,12 @@ jacocoReport
 
 </td></tr></table>
 
+<tip>
+
+Use `\` (backslash) to escape space characters in paths.
+
+</tip>
+
 An example of a complete service message:
 
 ```Plain Text
