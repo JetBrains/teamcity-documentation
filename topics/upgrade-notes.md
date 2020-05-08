@@ -1,7 +1,7 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
-### Changes from 2019.2.3 to 2019.2.4
+## Changes from 2019.2.3 to 2019.2.4
 
 No noteworthy changes.
 
