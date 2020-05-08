@@ -1,5 +1,6 @@
 [//]: # (title: JaCoCo)
 [//]: # (auxiliary-id: JaCoCo)
+
 TeamCity supports [JaCoCo](http://www.eclemma.org/jacoco), a Java Code Coverage tool allowing you to measure a wide set of coverage metrics and code complexity.
 
 JaCoCo is available for the following build runners: [Ant](ant.md), [IntelliJ IDEA Project](intellij-idea-project.md), [Gradle](gradle.md), and [Maven](maven.md).
@@ -20,10 +21,10 @@ To ensure the coverage data is collected properly, make sure your tests run in (
 
 ## Enabling JaCoco coverage
 
-TeamCity supports the java agent coverage mode allowing you to collect coverage without modifying build scripts or binaries. No additional build steps needed \- just choose JaCoCo coverage in a build step which runs tests:
+TeamCity supports the Java agent coverage mode allowing you to collect coverage without modifying build scripts or binaries. No additional build steps needed - just choose JaCoCo coverage in a build step which runs tests:
 
-1. In the __Code Coverage__ section, select __JaCoCo__ as a coverage tool in the __Choose coverage runner__ drop\-down.
-2. Set up the coverage options \- refer to the description of the available options below.
+1. In the __Code Coverage__ section, select __JaCoCo__ as a coverage tool in the __Choose coverage runner__ drop-down menu.
+2. Set up the coverage options - refer to the description of the available options below.
 
 <table><tr>
 
@@ -57,15 +58,13 @@ __Classfile directories or jars__
 
 <td>
 
-
-Newline\-delimited set of path patterns in the form of `+|-:[path]` relative to the [checkout directory](build-checkout-directory.md) to scan for classfiles to be analyzed. Libraries and test classfiles don't have to be listed unless their coverage is wanted.
+Newline-delimited set of path patterns in the form of `+|-:[path]` relative to the [checkout directory](build-checkout-directory.md) to scan for classfiles to be analyzed. Libraries and test classfiles don't have to be listed unless their coverage is wanted.
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
 </td>
 
 <td>
-
 
 `+:target/main/java/**`
 
@@ -80,13 +79,11 @@ __Classes to instrument__
 
 <td>
 
-
-Newline\-delimited set of classname patterns in the form of `+|-:[path]`. Allows filtering out unwanted classes listed in "__Classfile directories or jars__" field. Useful in case test classes are compiled.
+Newline-delimited set of classname patterns in the form of `+|-:[path]`. Allows filtering out unwanted classes listed in "__Classfile directories or jars__" field. Useful in case test classes are compiled.
 
 </td>
 
 <td>
-
 
 `+:com.package.core.*`
 
@@ -96,11 +93,12 @@ Newline\-delimited set of classname patterns in the form of `+|-:[path]`. Allows
 
 <tip>
 
-By default, in TeamCity the jacoco.sources property is set to "." , which means that TeamCity will scan whole checkout directory including all subdirectories for your sources.Check that your classfiles are compiled with debug information (including the source file info) to see with highlighted source code in the report.
+By default, in TeamCity the `jacoco.sources` property is set to `.` , which means that TeamCity will scan whole checkout directory including all subdirectories for your sources.   
+Check that your classfiles are compiled with debug information (including the source file info) to see with highlighted source code in the report.
 
 </tip>
 
-The code coverage results can be viewed on the __Overview__ tab of the Build Results page; detailed report is displayed on the dedicated __Code Coverage__ tab.
+The code coverage results can be viewed on the __Overview__ tab of the __Build Results__ page; detailed report is displayed on the dedicated __Code Coverage__ tab.
 
 ## Importing JaCoCo coverage data to TeamCity
 
@@ -118,11 +116,9 @@ TeamCity can parse JaCoCo coverage data and generate a report using a [service m
 
 Attribute name
 
-
 </td>
 
 <td>
-
 
 Description
 
@@ -130,13 +126,11 @@ Description
 
 <td>
 
-
 Default value
 
 </td>
 
 <td>
-
 
 Example
 
@@ -151,18 +145,16 @@ dataPath
 
 <td>
 
-
-Space\-delimited set of paths relative to the checkout directory to read the jacoco data file
-
-</td>
-
-<td>
-
+Space-delimited set of paths relative to the checkout directory to read the jacoco data file
 
 </td>
 
 <td>
 
+
+</td>
+
+<td>
 
 `jacocoResults/jacoco.exec jacocoResults/anotherJacocoRun.exec`
 
@@ -176,8 +168,7 @@ includes
 
 <td>
 
-
-Space\-delimited set of classname include patterns
+Space-delimited set of classname include patterns
 
 </td>
 
@@ -185,13 +176,11 @@ Space\-delimited set of classname include patterns
 
 `*`
 
-
 </td>
 
 <td>
 
 `com.package.core.* com.package.api.*`
-
 
 </td></tr><tr>
 
@@ -199,19 +188,15 @@ Space\-delimited set of classname include patterns
 
 excludes
 
-
 </td>
 
 <td>
 
-Space\-delimited set of classname exclude patterns
-
+Space-delimited set of classname exclude patterns
 
 </td>
 
 <td>
-
- 
 
 
 </td>
@@ -226,12 +211,11 @@ Space\-delimited set of classname exclude patterns
 
 sources
 
-
 </td>
 
 <td>
 
-Space\-delimited set of paths relative to the checkout directory to read sources from. Does not need to be listed by default.
+Space-delimited set of paths relative to the checkout directory to read sources from. Does not need to be listed by default.
 
 
 </td>
@@ -240,13 +224,11 @@ Space\-delimited set of paths relative to the checkout directory to read sources
 
 `.`
 
-
 </td>
 
 <td>
 
 `src`
-
 
 </td></tr><tr>
 
@@ -254,13 +236,11 @@ Space\-delimited set of paths relative to the checkout directory to read sources
 
 classpath
 
-
 </td>
 
 <td>
 
-Space\-delimited set of path patterns in the form of `+|-:[path]` to scan for classfiles to be analyzed. Libraries and test classfiles do not need to be listed unless their coverage is wanted.
-
+Space-delimited set of path patterns in the form of `+|-:[path]` to scan for classfiles to be analyzed. Libraries and test classfiles do not need to be listed unless their coverage is wanted.
 
 </td>
 
@@ -268,13 +248,11 @@ Space\-delimited set of path patterns in the form of `+|-:[path]` to scan for cl
 
 `+:**/*`
 
-
 </td>
 
 <td>
 
 `+:target/main/java/**`
-
 
 </td></tr><tr>
 
@@ -282,20 +260,17 @@ Space\-delimited set of path patterns in the form of `+|-:[path]` to scan for cl
 
 reportDir
 
-
 </td>
 
 <td>
 
 Path to the directory to store temporary files. The report will be generated as coverage `.zip` under this directory. Check that there is no existing directory with the same name.
 
-
 </td>
 
 <td>
 
 A random directory under Agent's temp directory
-
 
 </td>
 
@@ -307,7 +282,6 @@ jacocoReport
 </td></tr></table>
 
 An example of a complete service message:
-
 
 ```Plain Text
 ##teamcity[jacocoReport dataPath='jacoco.exec' includes='com.package.core.*' classpath='classes/lib/some.jar' reportDir='temp/jacocoReport']
