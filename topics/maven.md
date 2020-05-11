@@ -146,7 +146,7 @@ The path to Maven installation is taken from the `M2_HOME` environment variable,
 
 <td>
 
-The bundled version 3.0.5 is used as default. __Since TeamCity 2017.1__, you can [change the defaults](installing-agent-tools.md).
+The bundled version 3.2.5 is used as default. __Since TeamCity 2017.1__, you can [change the defaults](installing-agent-tools.md).
 
 
 </td></tr><tr>

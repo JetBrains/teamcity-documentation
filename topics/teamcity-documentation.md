@@ -1,6 +1,7 @@
 [//]: # (title: TeamCity Documentation)
 [//]: # (auxiliary-id: TeamCity Documentation)
-Welcome to the documentation for [TeamCity 2019.x](https://www.jetbrains.com/teamcity/)! If you are using an earlier TeamCity version, please refer to the [documentation for your release](https://confluence.jetbrains.com/display/TW/Documentation).
+
+Welcome to the documentation for [TeamCity 2020.x](https://www.jetbrains.com/teamcity/)! If you are using an earlier TeamCity version, please refer to the [documentation for your release](https://confluence.jetbrains.com/display/TW/Documentation).
 
 
 <table>
@@ -85,7 +86,7 @@ Welcome to the documentation for [TeamCity 2019.x](https://www.jetbrains.com/tea
 
  
 
-## TeamCity 2019.x Supported Platforms and Environments
+## TeamCity 2020.x Supported Platforms and Environments
 
 The core features of TeamCity are platform-independent. See details at [Supported Platforms and Environments](supported-platforms-and-environments.md). 
 

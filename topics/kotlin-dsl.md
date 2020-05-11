@@ -60,9 +60,9 @@ To display the hidden files and directories, press `Command` + `Shift` + `.` ins
 When creating an empty project, that's what you see in `settings.kts` in your IDE:
 
 ```Kotlin
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2020_1.*
 /* some comment text */
-version = "2019.2"
+version = "2020.1"
  
 project {
 }
@@ -79,7 +79,7 @@ The following examples shows how to add a build configuration with a command lin
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
 
-version = "2019.2"
+version = "2020.1"
 
 project {
   buildType {
@@ -104,7 +104,7 @@ But there is also another way to define the same build configuration:
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
 
-version = "2019.2"
+version = "2020.1"
 
 project {
   buildType(HelloWorld)
@@ -426,9 +426,9 @@ In the non-portable format each project has the following `settings.kts` file:
 
 ```Kotlin
 package MyProject
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2020_1.*
 /* ... */
-version = "2019.2"
+version = "2020.1"
 
 project(MyProjectId.Project)
 
