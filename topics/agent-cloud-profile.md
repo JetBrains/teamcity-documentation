@@ -106,6 +106,8 @@ Leave empty for no timeout.
 
 <td>
 
+<anchor name="agent-terminate-condition"/>
+
 Additional terminate conditions
 
 

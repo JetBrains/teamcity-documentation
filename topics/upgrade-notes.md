@@ -1,15 +1,9 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
-## Changes from 2019.2.x to 2020.1
+## Changes from 2019.2.3 to 2019.2.4
 
-### REST API changes
-
-Filtering test occurrences by branch (`.../app/rest/testOccurrences?locator=branch(XXX)` request) has been changed. It used to support only branch names with case-sensitive matching. Now, the `XXX` value supports branch locators (the same as when filtering builds): it is case-insensitive by default and matches the `<default>` branch display name.
-
-### Other changes
-
-* TeamCity has dropped support for Internet Explorer. Please use Microsoft Edge instead.
+No noteworthy changes.
 
 ## Changes from 2019.2.2 to 2019.2.3
 
