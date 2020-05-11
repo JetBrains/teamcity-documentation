@@ -8,6 +8,8 @@ The extension is available for Mozilla Firefox, Opera, and Google Chrome (includ
 
 Browser Notifier aims at replacing the obsolete [Windows Tray Notifier](windows-tray-notifier.md) and automatically uses all rules configured for it, if any. The __My Settings & Tools | Notification Rules | Windows Tray Notifier__ tab in TeamCity is renamed to __Browser Notifier__.
 
+We recommend switching to the new Notifier as it covers the Windows Tray Notifier functionality and is overall more convenient. However, if you are using Mozilla Firefox or Opera, note that the Browser Notifier will work only when your browser is open.
+
 </note>
 
 ## Main features
