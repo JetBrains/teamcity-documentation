@@ -33,7 +33,8 @@ The extension will automatically detect the TeamCity session and change the icon
 
 ## Working with Browser Notifier
 
-After detecting an active TeamCity session, the Notifier will be monitoring the server and reporting events in real time similarly to how regular notifications work in your OS and browser.
+After detecting an active TeamCity session, the Notifier will be monitoring the server and reporting events in real time similarly to how regular notifications work in your OS and browser.   
+Chromium-based browsers (such as Google Chrome and Microsoft Edge) are able to send notifications even when working in a background mode after closing. Mozilla Firefox and Opera send notifications only when open.
 
 Click the notification to get to the related TeamCity build page.
 
