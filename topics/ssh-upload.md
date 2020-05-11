@@ -1,7 +1,7 @@
 [//]: # (title: SSH Upload)
 [//]: # (auxiliary-id: SSH Upload)
 
-SSH Upload allows uploading files/directories via SSH (using SCP or SFTP protocols).
+The _SSH Upload_ build runner allows uploading files/directories via SSH (using SCP or SFTP protocols).
 
 The settings common for all runners are described in [Configuring Build Steps](configuring-build-steps.md); this page details the SSH Deployer settings.
 

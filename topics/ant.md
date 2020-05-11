@@ -1,7 +1,7 @@
 [//]: # (title: Ant)
 [//]: # (auxiliary-id: Ant)
 
-This is a runner for Ant `build.xml` files.
+The _Ant_ build runner can process Ant `build.xml` files.
 
 ## Testing Frameworks Support
 

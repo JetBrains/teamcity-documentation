@@ -1,7 +1,7 @@
 [//]: # (title: Inspections (ReSharper))
 [//]: # (auxiliary-id: viewpage.actionpageId113084113;Inspections (ReSharper))
 
-The __Inspections (ReSharper)__ build runner allows you to use the benefits of the [JetBrains ReSharper code quality analysis](http://www.jetbrains.com/resharper/webhelp/Code_Analysis__Index.html) feature right in TeamCity, with the help of the bundled JetBrains ReSharper Command Line Tools. You can use the tools within TeamCity without any additional ReSharper license.   
+The _Inspections (ReSharper)_ build runner allows you to use the benefits of the [JetBrains ReSharper code quality analysis](http://www.jetbrains.com/resharper/webhelp/Code_Analysis__Index.html) feature right in TeamCity, with the help of the bundled JetBrains ReSharper Command Line Tools. You can use the tools within TeamCity without any additional ReSharper license.   
 [ReSharper](http://www.jetbrains.com/resharper) analyzes your C#, VB.NET, XAML, XML, ASP.NET, ASP.NET MVC, JavaScript, HTML, CSS code, and allows you to:
 * Find probable bugs
 * Eliminate errors and code smells
@@ -11,7 +11,7 @@ The __Inspections (ReSharper)__ build runner allows you to use the benefits of t
 
 ReSharper command line tools 2018.2 or newer require .NET Framework 4.6.1 or newer.
 
-If you want to run ReSharper inspections using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can install another version of the tools and change the default version to be used on the __[Administration | Tools](installing-agent-tools.md)__ page. This page contains reference information about the __Inspections (.NET)__ Build Runner fields.
+If you want to run ReSharper inspections using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can install another version of the tools and change the default version to be used on the __[Administration | Tools](installing-agent-tools.md)__ page. This page contains reference information about the _Inspections (.NET)_ build runner's fields.
 
 You can also refer to the [ReSharper documentation](https://www.jetbrains.com/help/resharper/Detect_code_issues_in_a_build_using_ReSharper_and_TeamCity.html) for more details.
 

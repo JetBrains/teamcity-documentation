@@ -3,7 +3,7 @@
 
 TeamCity comes with the built-in support of the .NET toolchain providing the .NET build step, .NET detection on the build agents, and autodiscovery of build steps in your repository.
 
-This page gives details on configuring the .NET runner.
+This page gives details on configuring the _.NET_ runner.
 
 <note>
 

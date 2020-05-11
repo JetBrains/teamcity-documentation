@@ -1,12 +1,13 @@
 [//]: # (title: Maven)
 [//]: # (auxiliary-id: Maven)
 
+The _Maven_ build runner allows using [Apache Maven](https://maven.apache.org/) for automating builds.
 
-Note that you can create a new Maven\-based build configuration [automatically from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), and set up a [dependency build trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger), if a specific Maven artifact has changed.
+Note that you can create a new Maven-based build configuration [automatically from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), and set up a [dependency build trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger), if a specific Maven artifact has changed.
 
 <note>
 
-__Remote Run Limitations related to Maven runner__    
+__Remote Run Limitations related to the Maven runner__    
 As a rule, a personal build in TeamCity doesn't affect any "regular" builds run on the TeamCity server, and its results are visible to its initiator only. However, in case of using Maven runner, this behavior may differ.   
 TeamCity doesn't interfere anyhow with the Maven dependencies model. Hence, if your Maven configuration deploys artifacts to a remote repository, __they will be deployed there even if you run a personal build__. Thereby, a personal build may affect builds that depend on your configuration.   
 For example, you have a configuration A that deploys artifacts to a remote repository, and these artifacts are used by configuration B. When a personal build for A has finished, your personal artifacts will appear in B. This can be especially injurious, if configuration A is to produce release\-version artifacts, because proper artifacts will be replaced with developer's ones, which will be hard to investigate because of Maven versioning model. Plus these artifacts will become available to all dependent builds, not only to those managed by TeamCity.   

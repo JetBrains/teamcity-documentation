@@ -9,7 +9,7 @@ We recommend you switching to the [.NET build runner](net.md) instead.
 
 </note>
 
-__Visual Studio 2003__ Build Runner supports building Microsoft Visual Studio 2003 .NET projects. To build Microsoft Visual Studio 2005-2017 projects, see [Visual Studio (sln)](visual-studio-sln.md) Build Runner.
+The _Visual Studio 2003_ build runner supports building Microsoft Visual Studio 2003 .NET projects. To build Microsoft Visual Studio 2005-2017 projects, see [Visual Studio (sln)](visual-studio-sln.md) Build Runner.
 
 <note>
 

@@ -1,5 +1,8 @@
 [//]: # (title: NAnt)
 [//]: # (auxiliary-id: NAnt)
+
+The _NAnt_ build runner allows using [NAnt](http://nant.sourceforge.net/) build files.
+
 TeamCity supports NAnt starting from version 0.85.
 
 <note>
@@ -10,7 +13,7 @@ The TeamCity NAnt runner requires .NET Framework or Mono installed on the build 
 ## MSBuild Task for NAnt
 
 
-TeamCity NAnt runner includes a task called `msbuild` that allows NAnt to start MSBuild scripts. TeamCity `msbuild` task for NAnt has the same set of attributes as the [NAntContrib package](http://nantcontrib.sourceforge.net) `msbuild` task. The MSBuild build processes started by NAnt will behave exactly as if they were launched by TeamCity MSBuild/SLN2005 build runner (that is `NUnit` and/or `NUnitTeamCity` MSBuild tasks will be added to build scripts and logs and error reports will be sent directly to the build server).
+The TeamCity NAnt runner includes a task called `msbuild` that allows NAnt to start MSBuild scripts. TeamCity `msbuild` task for NAnt has the same set of attributes as the [NAntContrib package](http://nantcontrib.sourceforge.net) `msbuild` task. The MSBuild build processes started by NAnt will behave exactly as if they were launched by TeamCity MSBuild/SLN2005 build runner (that is `NUnit` and/or `NUnitTeamCity` MSBuild tasks will be added to build scripts and logs and error reports will be sent directly to the build server).
 
 
 <note>

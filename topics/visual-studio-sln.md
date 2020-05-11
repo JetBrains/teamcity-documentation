@@ -17,7 +17,7 @@ For more details on migration, refer to the [.NET runner description](net.md#Mig
 The Visual Studio (sln) build runner requires the proper version of Microsoft Visual Studio installed on the build agent.
 </note>
 
-This page contains reference information for the Visual Studio (sln) Build Runner that builds Microsoft Visual Studio 2005-2017, and, since TeamCity 2019.1, Microsoft Visual Studio 2019 solution files. To build Microsoft Visual Studio 2003 solution files, use the [Visual Studio 2003](visual-studio-2003.md) runner.
+This page contains reference information for the _Visual Studio (sln)_ build runner that builds Microsoft Visual Studio 2005-2017, and, since TeamCity 2019.1, Microsoft Visual Studio 2019 solution files. To build Microsoft Visual Studio 2003 solution files, use the [Visual Studio 2003](visual-studio-2003.md) runner.
 
 <note>
 

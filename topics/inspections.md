@@ -1,6 +1,7 @@
 [//]: # (title: Inspections)
 [//]: # (auxiliary-id: Inspections)
-The __Inspections (IntelliJ IDEA)__ Build Runner is intended to run code analysis based on [IntelliJ IDEA inspections](https://www.jetbrains.com/help/idea/2016.3/code-inspection.html) for your project. __Since TeamCity 2017.1__, in addition to the bundled version, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
+
+The _Inspections (IntelliJ IDEA)_ build runner is intended to run code analysis based on [IntelliJ IDEA inspections](https://www.jetbrains.com/help/idea/2016.3/code-inspection.html) for your project. In addition to the bundled version, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
 
 IntelliJ IDEA's code analysis engine is capable of inspecting your Java, JavaScript, HTML, XML and other code and allows you to:
 * Find probable bugs
@@ -23,7 +24,7 @@ __Maven projects__
 
 The runner also supports Maven2 or above: to use `pom.xml`, you need to open it in IntelliJ IDEA and configure inspection profiles as described in the [IntelliJ IDEA documentation](https://www.jetbrains.com/help/idea/2016.3/code-inspection.html#profiles). IntelliJ IDEA will save your inspection profiles in the [corresponding folder](https://www.jetbrains.com/help/idea/2016.3/project-and-ide-settings.html#d1962322e174). Make sure you have it checked into your version control. Then specify the paths to the inspection profiles while configuring this runner.
 
-It is a good idea to execute `mvn install` as the step preceeding the inspecitons step in order to allow projects with dependencies to be resolved successfully.
+It is a good idea to execute `mvn install` as the step preceding the Inspections step in order to allow projects with dependencies to be resolved successfully.
 </note>
 
 
@@ -56,7 +57,7 @@ Project file type
 
 <td>
 
-To be able to run IntelliJ IDEA inspections on your code, TeamCity requires either an IntelliJ IDEA project file\directory, Maven `pom.xml` or Gradle `build.gradle` to be specified here.
+To be able to run IntelliJ IDEA inspections on your code, TeamCity requires either an IntelliJ IDEA project file/directory, Maven `pom.xml` or Gradle `build.gradle` to be specified here.
 
 
 </td></tr><tr>
@@ -86,7 +87,7 @@ The specified path should be relative to the checkout directory.
 
 <td>
 
-Detect global libraries and module\-based JDK in the `*.iml` files
+Detect global libraries and module-based JDK in the `*.iml` files
 
 
 </td>
@@ -147,7 +148,7 @@ Optional, specify if differs from the checkout directory.
 
 This section is displayed when an IntelliJ IDEA module file (`.iml`) referenced from an IntelliJ IDEA project file:
 * cannot be found
-* allows you to enter the values of path variables used in the IPR\-file.
+* allows you to enter the values of path variables used in the IPR-file.
 
 To refresh the values in this section, click __Check/Reparse Project__.
 
@@ -176,7 +177,7 @@ Description
 
 <td>
 
-This field appears if the project file contains path macros, defined in the Path Variables dialog of IntelliJ IDEA's Settings dialog. In __Set value to field__, specify a path to the project resources to be used on different build agents.
+This field appears if the project file contains path macros, defined in the _Path Variables_ dialog of the IntelliJ IDEA settings. In __Set value to field__, specify a path to the project resources to be used on different build agents.
 
 
 </td></tr></table>
@@ -293,7 +294,7 @@ You can use references to external properties when defining the values, like `%s
 ## Inspection Parameters
 
 In IntelliJ IDEA\-based IDEs, the code inspections reported are configured by an [inspection profile](http://www.jetbrains.com/idea/webhelp/code-inspection.html#d559109e437).    
-When running the inspections in TeamCity, you can specify the inspection profile to use: first you need to configure the inspection profile in IntelliJ IDEA\-based IDE and then specify it in TeamCity.
+When running the inspections in TeamCity, you can specify the inspection profile to use: first you need to configure the inspection profile in IntelliJ IDEA-based IDE and then specify it in TeamCity.
 
 Follow these rules when preparing inspection profiles:
 * if your inspection profile uses scopes, make sure the scopes are shared;
@@ -372,7 +373,7 @@ Optional, specify to restrict the sources scope to run Inspections on.
 
 
 
-Include/exclude patterns are newline\-delimited set of rules of the form:
+Include/exclude patterns are newline-delimited set of rules of the form:
 
 
 ```Plain Text
@@ -382,7 +383,7 @@ Include/exclude patterns are newline\-delimited set of rules of the form:
 
 
 where the pattern must satisfy the following rules:
-* must end with either `**` or `*` (this effectively limits the patterns to only the directories level, they do not support file\-level patterns);
+* must end with either `**` or `*` (this effectively limits the patterns to only the directories level, they do not support file-level patterns);
 * references to modules can be included as `[<IDEA_module_name>]/<path_within_module>`. If you have a Maven project configured, you can use Maven module's artifactId as `<IDEA_module_name>`;
 * the configured paths are treated as relative paths within content roots of the IDEA project modules. That is, the paths should be relative to the module's roots.
 
@@ -412,8 +413,8 @@ For Maven inspections run, to ensure correct Java is used for the project JDK, d
 
 The code inspections reported by IntelliJ IDEA and TeamCity Java Code Inspections build depend on a number of factors. You would need to ensure equal settings in IntelliJ IDEA and the build to get the same reports. The relevant settings include:
 * [inspections profile](#Inspection+Parameters) used in IntelliJ IDEA and TeamCity build;
-* environment\-specific project dependencies (files not in version control, and so on);
-* IDE\-level settings, like defined SDKs, path variables, and so on;
+* environment-specific project dependencies (files not in version control, and so on);
+* IDE-level settings, like defined SDKs, path variables, and so on;
 * generated files: should be present in the TeamCity agent if they are present when working with the project in IntelliJ IDEA;
 * IntelliJ IDEA version. It is recommended to use the same IntelliJ IDEA version that is used in the TeamCity build. TeamCity bundled an installation of IntelliJ IDEA. The version is written in the Inspections build log;
 * the set and versions of the IntelliJ IDEA plugins that the project relies on.
