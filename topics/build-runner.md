@@ -16,11 +16,12 @@ TeamCity comes bundled with the following runners:
   * [FTP Upload](ftp-upload.md)
   * [SMB Upload](smb-upload.md)
   * [SSH Upload](ssh-upload.md)
-  * [SSH Exec](ssh-upload.md)
+  * [SSH Exec](ssh-exec.md)
 * [Duplicates Finder (ReSharper)](duplicates-finder-resharper.md)
 * [Duplicates Finder (Java)](duplicates-finder-java.md)
 * [FxCop](fxcop.md)
 * [Gradle](gradle.md)
+* [Helm](helm.md)
 * [Inspections (IntelliJ IDEA)](inspections.md) – a set of IntelliJ IDEA inspections
 * [Inspections (ReSharper)](inspections-resharper.md) – a set of ReSharper inspections
 * [IntelliJ IDEA Project](intellij-idea-project.md), and its earlier version: [Ipr (deprecated)](ipr-deprecated.md)
@@ -32,7 +33,7 @@ TeamCity comes bundled with the following runners:
 * [NUnit](nunit.md)
 * [PowerShell](powershell.md)
 * [Rake](rake.md)
-* [Simple Build Tool (Scala)](https://confluence.jetbrains.com/pages/viewpage.action?pageId=74844978)
+* [Simple Build Tool (Scala)](simple-build-tool-scala.md)
 * [Visual Studio (sln)](visual-studio-sln.md) – Microsoft Visual Studio 2005/2008/2010/2012/2013/2015 solutions
 * [Visual Studio 2003](visual-studio-2003.md) – Microsoft Visual Studio 2003 solutions
 * [Visual Studio Tests](visual-studio-tests.md) (with integrated MSTest)

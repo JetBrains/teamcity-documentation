@@ -3,7 +3,7 @@
 
 ## Integration Capabilities
 
-TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager and when [NuGet is installed](#Installing+NuGet+to+TeamCity+agents) provides the following capabilities:
+TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager and, when [NuGet is installed on agents](#Installing+NuGet+to+TeamCity+agents), provides the following capabilities:
 * [Private NuGet feeds](using-teamcity-as-nuget-feed.md) based on the builds' published artifacts.
 * A set of NuGet runners to be used in builds on Windows OS, as well as on Linux and MacOS when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent. 
     * [NuGet Installer](nuget-installer.md) build runner, which installs and updates NuGet packages.

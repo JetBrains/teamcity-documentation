@@ -1,6 +1,7 @@
 [//]: # (title: Command Line)
 [//]: # (auxiliary-id: Command Line)
-Using this build runner, you can run any script supported by the OS.
+
+Using the _Command Line_ build runner, you can run any script supported by the OS.
 
 ## Command Line Runner Settings
 

@@ -1,7 +1,7 @@
 [//]: # (title: Gradle)
 [//]: # (auxiliary-id: Gradle)
 
-_The Gradle Build Runner_ runs [Gradle](http://www.gradle.org) projects.
+The _Gradle_ build runner runs [Gradle](http://www.gradle.org) projects.
 
 <note>
 

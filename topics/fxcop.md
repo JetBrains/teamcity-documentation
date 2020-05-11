@@ -1,7 +1,7 @@
 [//]: # (title: FxCop)
 [//]: # (auxiliary-id: FxCop)
 
-The [FxCop](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-3.0/bb429476(v=vs.80)) _Build Runner_ is intended for inspecting .NET assemblies and reporting possible design, localization, performance, and security improvements. If you want TeamCity to display FxCop reports, you can either configure the corresponding build runner, or import XML reports by means of service messages if you prefer to run the FxCop tool directly from the script.
+The _[FxCop](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-3.0/bb429476(v=vs.80))_ build runner is intended for inspecting .NET assemblies and reporting possible design, localization, performance, and security improvements. If you want TeamCity to display FxCop reports, you can either configure the corresponding build runner, or import XML reports by means of service messages if you prefer to run the FxCop tool directly from the script.
 
 <note>
 

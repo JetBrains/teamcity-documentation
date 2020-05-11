@@ -7,7 +7,7 @@ Since TeamCity 2019.2.3, we have stopped providing active support for the MSBuil
 
 </note>
 
-This page contains reference information for the __MSBuild__ build runner fields.
+This page contains reference information for the _MSBuild_ build runner fields.
 
 <note>
 

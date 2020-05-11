@@ -1,7 +1,7 @@
 [//]: # (title: IntelliJ IDEA Project)
 [//]: # (auxiliary-id: IntelliJ IDEA Project)
 
-IntelliJ IDEA Project runner allows you to build a project created in IntelliJ IDEA. TeamCity versions up to 6.0 had [Ipr (deprecated)](ipr-deprecated.md) which is now superseded by IntelliJ IDEA Project runner.
+The _IntelliJ IDEA Project_ build runner allows you to build a project created in IntelliJ IDEA. TeamCity versions up to 6.0 had [Ipr (deprecated)](ipr-deprecated.md) which is now superseded by IntelliJ IDEA Project runner.
 
 ## Supported IntelliJ IDEA features
 

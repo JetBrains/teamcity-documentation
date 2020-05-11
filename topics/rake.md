@@ -1,9 +1,7 @@
 [//]: # (title: Rake)
 [//]: # (auxiliary-id: Rake)
-<tip>
 
-TeamCity Rake runner supports the Test::Unit, Test\-Spec, [Shoulda](http://github.com/thoughtbot/shoulda), [RSpec](http://rspec.info/), [Cucumber](http://cukes.info/) test frameworks. It is compatible with Ruby interpreters installed using Ruby Version Manager (MRI Ruby, JRuby, IronRuby, REE, MacRuby, and so on) with Rake 0.7.3 gem or higher.
-</tip>
+The _Rake_ build runner supports the Test::Unit, Test-Spec, [Shoulda](http://github.com/thoughtbot/shoulda), [RSpec](http://rspec.info/), [Cucumber](http://cukes.info/) test frameworks. It is compatible with Ruby interpreters installed using Ruby Version Manager (MRI Ruby, JRuby, IronRuby, REE, MacRuby, and so on) with Rake 0.7.3 gem or higher.
 
 ## Prerequisites
 

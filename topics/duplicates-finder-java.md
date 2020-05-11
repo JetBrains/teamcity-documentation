@@ -1,16 +1,16 @@
 [//]: # (title: Duplicates Finder (Java))
 [//]: # (auxiliary-id: viewpage.actionpageId113084078;Duplicates Finder (Java))
 
-The __Duplicates Finder (Java)__ build runner is intended for catching similar code fragments and providing a report on discovered repetitive blocks of Java code. This runner is based on IntelliJ IDEA capabilities, so an IntelliJ IDEA project file (.ipr) or directory (`.idea`) is required to configure the runner. __Since TeamCity 2017.1__, in addition to the bundled version, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
+The _Duplicates Finder (Java)_ build runner is intended for catching similar code fragments and providing a report on discovered repetitive blocks of Java code. This runner is based on IntelliJ IDEA capabilities, so an IntelliJ IDEA project file (`.ipr`) or directory (`.idea`) is required to configure the runner. In addition to the bundled version, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
 
-The __Duplicates Finder (Java)__ can also find Java duplicates in projects built by Maven2 or above.
+The Duplicates Finder (Java) runner can also find Java duplicates in projects built by Maven2 or above.
 
 <note>
 
 In order to run inspections for your project you should have either an IntelliJ IDEA project file (.ipr)/project directory (`.idea`), or Maven2 or above pom.xml of your project checked into your version control.
 </note>
 
-This page contains reference information about the following __Duplicates Finder (Java)__ Build Runner fields:
+This page contains reference information about the following Duplicates Finder (Java) build runner's fields:
 
 <toc/>
 
@@ -41,7 +41,7 @@ Project file type
 
 <td>
 
-To be able to run IntelliJ IDEA inspections on your code, TeamCity requires either an IntelliJ IDEA project file\directory, Maven pom.xml or Gradle build.gradle to be specified here.
+To be able to run IntelliJ IDEA inspections on your code, TeamCity requires either an IntelliJ IDEA project file/directory, Maven `pom.xml` or Gradle `build.gradle` to be specified here.
 
 
 </td></tr><tr>
@@ -57,7 +57,7 @@ Path to the project
 
 Depending on the type of project selected in the __Project file type__, specify here:
 
- * __For IntelliJ IDEA project__: the path to the project file (.ipr) or the path to the project directory the root directory of the project containing the `.idea` folder).
+ * __For IntelliJ IDEA project__: the path to the project file (`.ipr`) or the path to the project directory the root directory of the project containing the `.idea` folder).
  * __For Maven project__: the path to the `pom.xml` file. 
  * __For Gradle project__: the path to the `.gradle` file.
 
@@ -75,14 +75,14 @@ The specified path should be relative to the checkout directory.
 
 <td>
 
-Detect global libraries and module\-based JDK in the \*.iml files
+Detect global libraries and module-based JDK in the `*.iml` files
 
 
 </td>
 
 <td>
 
-_This option is available if you use an IntelliJ IDEA project._ In IntelliJ IDEA, the module settings are stored in \*.iml files, thus, if this option is checked, all the module files will be automatically scanned for references to the global libraries and module JDKs when saved. This helps ensure that all references will be properly resolved.
+_This option is available if you use an IntelliJ IDEA project._ In IntelliJ IDEA, the module settings are stored in `*.iml` files, thus, if this option is checked, all the module files will be automatically scanned for references to the global libraries and module JDKs when saved. This helps ensure that all references will be properly resolved.
 
 <warning>
 
@@ -133,11 +133,11 @@ Optional, specify if differs from the checkout directory.
 
 ## Unresolved Project Modules and Path Variables
 
-This section is displayed, when an IntelliJ IDEA module file (.iml) referenced from an IPR\-file:
-* cannot be found
-* allows you to enter the values of path variables used in the IPR\-file.   
+This section is displayed, when an IntelliJ IDEA module file (`.iml`) referenced from an IPR-file:
+* cannot be found;
+* allows you to enter the values of path variables used in the IPR-file.   
 
-To refresh values in this section click __Check/Reparse Project__.
+To refresh values in this section, click __Check/Reparse Project__.
 
 <table><tr>
 
@@ -164,7 +164,7 @@ Description
 
 <td>
 
-This field appears if the project file contains path macros, defined in the Path Variables dialog of IntelliJ IDEA's Settings dialog. In __Set value to field__, specify a path to the project resources to be used on different build agents.
+This field appears if the project file contains path macros, defined in the _Path Variables_ dialog of the IntelliJ IDEA settings. In __Set value to field__, specify a path to the project resources to be used on different build agents.
 
 
 </td></tr></table>
@@ -381,9 +381,6 @@ public static void main(String[] args) {
 
 ```
 
-
-
-
 </td></tr><tr>
 
 <td>
@@ -455,9 +452,7 @@ public void buildCanceled(Build build, SessionData data) {
 
 ```
 
-
-
- After analysiing code for duplicates without distinguishing methods, the duplicated fragments can be extracted:
+After analyzing code for duplicates without distinguishing methods, the duplicated fragments can be extracted:
 
 
 ```Java
@@ -534,7 +529,7 @@ Distinguish literals
 
 <td>
 
-If this option is checked, similar line of code with different litarels will be considered different If this option is not checked, such lines will be recognized as duplicates.
+If this option is checked, similar line of code with different literals will be considered different If this option is not checked, such lines will be recognized as duplicates.
 
 
 ```Java
@@ -566,7 +561,7 @@ Ignore duplicates with complexity lower than
 
 <td>
 
-Complexity of the source code is defined by the amount of statements, expressions, declarations and method calls. Complexity of each of them is defined by its cost. Summarized costs of all these elements of the source code fragment yields the total complexity.  Use this field to specify the lowest level of complexity of the source code to be taken into consideration when detecting duplicates. For meaningful results start with value 10.
+Complexity of the source code is defined by the amount of statements, expressions, declarations and method calls. Complexity of each of them is defined by its cost. Summarized costs of all these elements of the source code fragment yields the total complexity. Use this field to specify the lowest level of complexity of the source code to be taken into consideration when detecting duplicates. For meaningful results start with value 10.
 
 
 </td></tr><tr>
@@ -607,7 +602,7 @@ If this option is checked, the duplicated subexpressions can be extracted.
 
 <anchor name="IdeaPatterns"/>
 
-Include / exclude patterns are newline\-delimited set of rules of the form:
+Include / exclude patterns are newline-delimited set of rules of the form:
 
 
 ```Shell
@@ -617,7 +612,7 @@ Include / exclude patterns are newline\-delimited set of rules of the form:
 ```
 
 Where the pattern must satisfy these rules:
-* must end with either \*\* or \* (this effectively limits the patterns to only the directories level, they do not support file\-level patterns)
+* must end with either `**` or `*` (this effectively limits the patterns to only the directories level, they do not support file-level patterns)
 * references to modules can be included as `[module_name]/<path_within_module>`
 Some notes on patterns processing:
 * excludes have precedence over includes

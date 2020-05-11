@@ -1,6 +1,7 @@
 [//]: # (title: MSpec)
 [//]: # (auxiliary-id: MSpec)
-_The MSpec Test Runner_ is designed specifically to run [MSpec](https://github.com/machine/machine.specifications) tests. 
+
+The _MSpec_ build runner is designed specifically to run [MSpec](https://github.com/machine/machine.specifications) tests. 
 
 <note>
 

@@ -1,7 +1,7 @@
 [//]: # (title: SMB Upload)
 [//]: # (auxiliary-id: SMB Upload)
 
-SMB upload enables TeamCity to upload files/directories to Windows shares via Server Message Block (SMB) protocol. 
+The _SMB Upload_ build runner enables TeamCity to upload files/directories to Windows shares via Server Message Block (SMB) protocol. 
 
 The settings common for all runners are described in [Configuring Build Steps](configuring-build-steps.md); this page details the SMB Upload settings.
 
