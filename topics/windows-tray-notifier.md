@@ -3,7 +3,7 @@
 
 <note>
 
-The Windows Tray Notifier is deprecated in favor of the Browser Notifier extension. The extension is available for Google Chrome, Microsoft Edge, Mozilla Firefox, and Opera. See the related [blog post](https://blog.jetbrains.com/teamcity/2020/05/new-teamcity-notifier-browser-extension/) on how to enable and use the extension.
+The Windows Tray Notifier is deprecated in favor of the [Browser Notifier extension](browser-notifier.md).
 
 </note>
 
