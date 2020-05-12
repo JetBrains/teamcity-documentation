@@ -154,7 +154,7 @@ Limit the set of branches to which builds the labels will be applied.
 
 <td>
 
-Limit the set of branches branches which builds’ sources will be merged.
+Limit the set of branches which builds’ sources will be merged.
 
 </td>
 
@@ -164,7 +164,7 @@ Limit the set of branches branches which builds’ sources will be merged.
 
 <td>
 
-[Notification rules](subscribing-to-notifications.md)
+[Notification rules](subscribing-to-notifications.md) and the [Notifications](notifications.md) build feature
 
 </td>
 

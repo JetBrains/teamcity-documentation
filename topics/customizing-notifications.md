@@ -7,12 +7,12 @@ Project Administrators with the enabled "_Change user / group notification rules
 
 ## Notifications Lifecycle
 
-TeamCity supports a set of events that can generate user notifications (such as build failures, investigation state changes, etc). On an event occurrence, for each notifier type, TeamCity processes notification settings for all the users to determine which users to notify.
+TeamCity supports a set of events that can generate user notifications (such as build failures, investigation state changes, and so on). On an event occurrence, for each notifier type, TeamCity processes notification settings for all the users to determine which users to notify.
 
 When the set of users is determined, TeamCity fills the notification model (the objects relevant to the notification, such as "build", investigation data, and so on) and evaluates a notification template that corresponds to the notification event.   
 The template uses the data model objects to generate the output values (for example, notification message text). The output values are then used by the notifier to send the message. Each notifier supports a specific set of output values.
 
-Note that the template is evaluated once for an event which means that notification properties cannot be adjusted on a per\-user basis.
+Note that the template is evaluated once for an event which means that notification properties cannot be adjusted on a per-user basis.
 
 The output values defined by the template are then used by the notifier to send alerts to the selected users.
 
@@ -34,10 +34,10 @@ TeamCity notifiers use templates to evaluate output values (global template vari
 
 __Email Notifier__
 
-* __subject__ \- subject of the email message to send
-* __body__ \- plain text of the email message to send
-* __bodyHtml__ \- This is the optional HTML text of the email message to send. It will be included together with plain text part of the message. However, if it is present in the template, it should be customized as well.
-* __headers__ \- (optional) Raw list of additional headers to include into an email. One header per line. For example:
+* __subject__ – subject of the email message to send
+* __body__ – plain text of the email message to send
+* __bodyHtml__ – (optional) HTML text of the email message to send. It will be included together with plain text part of the message. However, if it is present in the template, it should be customized as well.
+* __headers__ – (optional) raw list of additional headers to include into an email. One header per line. For example:
 
 
 ```XML
@@ -50,10 +50,10 @@ __Email Notifier__
 
 __Jabber__
 
-* __message__ \- plain text of the message to send
+* __message__ – plain text of the message to send
 __IDE Notifications__ and __Windows Tray Notifications__
-* __message__ \- plain text of the message to send
-* __link__ \- URL of the TeamCity page that contains detailed information about the event
+* __message__ – plain text of the message to send
+* __link__ – URL of the TeamCity page that contains detailed information about the event
 (i)The Atom/RSS feeds template differs from the others. Refer to the [dedicated section](#TeamCity+Notification+Properties) for details.
 
 ### Customization Examples
@@ -214,8 +214,11 @@ During feed rendering, the template is evaluated to get the feed content. The re
 
 See the default template for an example of available input variables and output variables.
 
- <seealso>
+<seealso>
         <category ref="user-guide">
             <a href="subscribing-to-notifications.md">Subscribing to Notifications</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="notifications.md">Notifications</a>
         </category>
 </seealso>

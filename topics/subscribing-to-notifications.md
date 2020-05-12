@@ -1,34 +1,43 @@
 [//]: # (title: Subscribing to Notifications)
 [//]: # (auxiliary-id: Subscribing to Notifications)
-TeamCity provides a wide range of notification possibilities to keep developers informed about the status of their projects. Notifications can be sent by email, Jabber/XMPP instant messages or can be displayed in the IDE (with the help of TeamCity plugins) or the Windows system tray (using TeamCity Windows Tray Notifier). Notifications can also be received via Atom/RSS syndication feeds.
 
-Notifications in TeamCity are sent per\-user according to the user's configured notification rules. Notification rules can also be configured at the user group level, in which case they will apply to all the users in the group.
+TeamCity provides a wide range of notification possibilities to keep developers informed about the status of their projects. Notifications can be sent by email and instant messages, or can be displayed in the IDE (with the help of TeamCity plugins) or in the web browser. Notifications can also be received via Atom/RSS syndication feeds.
 
-You can [customize](customizing-notifications.md) notification templates.
+Notifications in TeamCity are sent per-user according to the user's configured notification rules. Notification rules can also be configured at the user group level, in which case they will apply to all the users in the group.
 
-## Subscribing to Notifications
+__Since version 2020.1__, TeamCity also allows configuring [notifications on a build configuration level](notifications.md).
 
-TeamCity allows you to flexibly adjust the notification rules, so that you receive notifications only on the events you are interested in. To subscribe to notifications:
+<tip>
+
+You can [customize notification templates](customizing-notifications.md).
+
+</tip>
+
+## Subscribing to Project-level Notifications
+
+TeamCity allows you to flexibly adjust the notification rules, so that you receive notifications only on the events you are interested in. To subscribe to project-level notifications:
 
 1\. In the top right corner of the screen, click the arrow next to your username, and select __My Settings &amp; Tools__ from the drop-down menu. Open the __Notification Rules__ tab.
 
-2\. Click the required notifications type: 
- * __Email Notifier__: to be able to receive email notifications, your email address must be specified in the __General__ area on the __My Settings &amp; Tools__ page.
+2\. Click the required notifications type and configure the required settings: 
+ * __Email Notifier__*: relies on the email address specified in __My Settings &amp; Tools | General__.
 
 <tip>
 
 Note that TeamCity comes with a default notification rule. It will send you an email notification if a build with your changes has failed. This rule starts working after you enter the email address.
 </tip>
 
- * __IDE Notifier__: to receive notifications right in your IDE, the required TeamCity plugin must be installed in your IDE. For the details on installing TeamCity IDE plugins, refer to [Installing Tools](installing-tools.md).
- * __Jabber Notifier__: to receive notifications of this type, specify your Jabber account either on the __Notification Rules | Jabber notifier__ page, or the __My Settings &amp; Tools__ page in the __Watched Builds and Notifications__ area. Note that instead of Jabber you can specify your Google Talk account here if this option is configured by the System Administrator.
- * __Windows Tray Notifier__: to receive this type of notifications, [Windows Tray Notifier](windows-tray-notifier.md) must be installed.
+ * __IDE Notifier__: the required TeamCity plugin must be installed in your IDE. For the details on installing TeamCity IDE plugins, refer to [Installing Tools](installing-tools.md).
+ * __Jabber Notifier__*: expects entering a Jabber account name. Note that instead of Jabber you can specify your Google Talk account here if this option is [configured by the System Administrator](setting-up-google-mail-and-google-talk-as-notification-servers.md#Google+Talk).
+ * __Slack Notifier__: requires signing in to Slack and relies on the Slack connection configured in the project settings. Read more on how to configure the connection to Slack in [Notifications](notifications.md#Configuring+Slack+Connection). 
+ * (obsolete) __Windows Tray Notifier__: [Windows Tray Notifier](windows-tray-notifier.md) must be installed.
+ * __Browser Notifier__: aims at replacing Windows Tray Notifier and requires installing the [web browser extension](browser-notifier.md).
 
 3\. Click __Add new rule__ and specify the rule in the dialog. The notification rules are comprised of two parts: [what you will watch](#What+Will+Be+Watched) and [which events you will be notified about](#Which+Events+Will+Trigger+Notifications). See the details below.
 
 <note>
 
-Email and Jabber notifications are sent only if the System Administrator has configured the TeamCity server email and Jabber settings. System Administrators can also [change the templates](customizing-notifications.md) used for notifications.
+* Email and Jabber notifications are sent only if the System Administrator has configured the SMTP and Jabber servers respectively in __Administration | Server Administration__. System Administrators can also [change the templates](customizing-notifications.md) used for notifications.
 </note>
 
 ### What Will Be Watched
@@ -543,5 +552,6 @@ http://teamcity.server:8111/httpAuth/feed.html?buildTypeId=bt1&itemsType=builds&
  <seealso>
         <category ref="admin-guide">
             <a href="customizing-notifications.md">Customizing Notifications</a>
+            <a href="notifications.md">Notifications</a>
         </category>
 </seealso>

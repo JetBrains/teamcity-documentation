@@ -1,5 +1,6 @@
 [//]: # (title: Notifier)
 [//]: # (auxiliary-id: Notifier)
+
 TeamCity supports the following notifiers:
 
 <table><tr>
@@ -27,10 +28,26 @@ __Email Notifier__
 
 <td>
 
-Notifications regarding specified events are sent via email.
+Notifications regarding specified events are sent via email. Email Notifier can operate on a [project](subscribing-to-notifications.md#Subscribing+to+Project-level+Notifications) and [build configuration](notifications.md) level.
+
+</td></tr>
+
+<tr>
+
+<td>
+
+__Slack Notifier__
 
 
-</td></tr><tr>
+</td>
+
+<td>
+
+Notifications regarding specified events are sent to the Slack messenger. Slack Notifier can operate on a [project](subscribing-to-notifications.md#Subscribing+to+Project-level+Notifications) and [build configuration](notifications.md) level.
+
+</td></tr>
+
+<tr>
 
 <td>
 
@@ -69,7 +86,7 @@ __System Tray Notifier__
 
 <td>
 
-Displays the status of the build configurations you want to watch in the Windows system tray, and displays pop\-up notifications on the specified events.
+Displays the status of the build configurations you want to watch in the Windows system tray, and displays pop-up notifications on the specified events.
 
 
 </td></tr><tr>
@@ -88,7 +105,7 @@ Notifications regarding specified events are sent via an Atom/RSS feed. See [thi
 
 </td></tr></table>
 
-You can configure the notifier settings, create, change and delete notification rules in the Watched Builds and Notifications section of the [My Settings&amp;Tools page](subscribing-to-notifications.md).
+You can configure the notifier settings, create, change, and delete notification rules in __My Settings \& Tools | [Notification Rules](subscribing-to-notifications.md)__.
 
  <seealso>
         <category ref="user-guide">
