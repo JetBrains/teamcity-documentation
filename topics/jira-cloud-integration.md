@@ -11,7 +11,7 @@ To set up this feature:
 
 1. Select the required [connection to Jira Cloud](jira.md) from those available among all parent projects.
 2. Select an environment type (for example, _testing_ or _production_).
-3. Enter an environment name to display in Jira.
+3. Enter an environment name.
 
 The environment options are required to show the deployment information in Jira Cloud.
 
@@ -21,6 +21,6 @@ If you mention a Jira task ID in the commit message in VCS, TeamCity will detect
 
 The build status will be displayed in the Jira task details:
 
-<img src="jira-cloud-integration.png" alt="TeamCity build status in Jira Cloud"/>
+<img src="jira-cloud-integration.png" alt="TeamCity build status in Jira Cloud" width="900"/>
 
 You can click the status to see more information on __Builds__ (for regular and [composite](composite-build-configuration.md) builds) or __Deployments__ (for [deployment](deployment-build-configuration.md) builds) tabs.
