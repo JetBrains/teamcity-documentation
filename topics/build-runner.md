@@ -21,7 +21,6 @@ TeamCity comes bundled with the following runners:
 * [Duplicates Finder (Java)](duplicates-finder-java.md)
 * [FxCop](fxcop.md)
 * [Gradle](gradle.md)
-* [Helm](helm.md)
 * [Inspections (IntelliJ IDEA)](inspections.md) – a set of IntelliJ IDEA inspections
 * [Inspections (ReSharper)](inspections-resharper.md) – a set of ReSharper inspections
 * [IntelliJ IDEA Project](intellij-idea-project.md), and its earlier version: [Ipr (deprecated)](ipr-deprecated.md)
