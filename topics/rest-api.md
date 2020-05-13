@@ -1963,7 +1963,7 @@ GET http://teamcity:8111/app/rest/builds?locator=BUILDS_LOCATOR&fields=build(id,
 Downloading build logs via a REST request is not supported, but there is a way to download the log files described [here](build-log.md#Viewing+Build+Log).
  
  
-## Tests and Build Problems
+### Tests and Build Problems
 
 <table>
 
