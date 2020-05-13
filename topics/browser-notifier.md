@@ -8,6 +8,8 @@ The extension is available for Mozilla Firefox, Opera, and Google Chrome (includ
 
 Browser Notifier aims at replacing the obsolete [Windows Tray Notifier](windows-tray-notifier.md) and automatically uses all rules configured for it, if any. The __My Settings & Tools | Notification Rules | Windows Tray Notifier__ tab in TeamCity is renamed to __Browser Notifier__.
 
+We recommend switching to the new Notifier as it covers the Windows Tray Notifier functionality and is overall more convenient. However, if you are using Mozilla Firefox or Opera, note that Browser Notifier will work only when your browser is open.
+
 </note>
 
 ## Main features
@@ -33,7 +35,8 @@ The extension will automatically detect the TeamCity session and change the icon
 
 ## Working with Browser Notifier
 
-After detecting an active TeamCity session, the Notifier will be monitoring the server and reporting events in real time similarly to how regular notifications work in your OS and browser.
+After detecting an active TeamCity session, the Notifier will be monitoring the server and reporting events in real time similarly to how regular notifications work in your OS and browser.   
+Chromium-based browsers (such as Google Chrome and Microsoft Edge) are able to send notifications even when working in a background mode after closing. Mozilla Firefox and Opera send notifications only when open.
 
 Click the notification to get to the related TeamCity build page.
 
