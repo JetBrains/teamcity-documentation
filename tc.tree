@@ -260,6 +260,7 @@
                   <toc-element id="investigations-auto-assigner.md"/>
                   <toc-element id="golang.md" show-structure-for="chapter"/>
                   <toc-element id="notifications.md" show-structure-for="chapter"/>
+                  <toc-element id="jira-cloud-integration.md" show-structure-for="chapter"/>
                </toc-element>
                <toc-element id="configuring-unit-testing-and-code-coverage.md">
                   <toc-element id="net-testing-frameworks-support.md">
