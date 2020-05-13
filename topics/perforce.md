@@ -6,7 +6,7 @@ Common VCS Root properties are described [here](configuring-vcs-roots.md#Common+
 <note>
 
 A Perforce client must be installed on the TeamCity server and it should be present in `PATH`. Alternatively, a full path to `p4` could be set via the [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.perforce.customP4Path`.
-If you plan to use the agent\-side [checkout mode](vcs-checkout-mode.md#agent-checkout), note that a Perforce client must be installed on the agents, and the path to the p4 executable must be added to the PATH environment variable.
+If you plan to use the agent-side [checkout mode](vcs-checkout-mode.md#agent-checkout), note that a Perforce client must be installed on the agents, and the path to the p4 executable must be added to the PATH environment variable.
 Also check [TeamCity and Perforce compatibility](perforce-vcs-compatibility.md).
 </note>
 
@@ -29,6 +29,8 @@ Description
 </td></tr><tr>
 
 <td>
+
+<anchor name="perforcePortOptionDescription"/>
 
 Port
 
@@ -75,6 +77,7 @@ When Perforce Streams are used with the [VCS Checkout Mode](vcs-checkout-mode.md
 </note>
 
 <anchor name="branch-support"/>
+<anchor name="branchStreams"/>
 
 __Enable feature branches support (experimental)__ – select this checkbox to specify branch streams you want to be monitored for changes in addition to the default one. Enter / Edit the branch specification as a newline\-delimited set of rules. The syntax is  `+|-:stream_name` (with the optional `*` placeholder).
 
@@ -91,6 +94,8 @@ When task streams are used for feature branches, TeamCity may miss some changes 
 </td></tr><tr>
 
 <td>
+
+<anchor name="perforceClientOptionDescription"/>
 
 Client
 
@@ -112,6 +117,8 @@ When this option is used with the [VCS Checkout Mode](vcs-checkout-mode.md) mode
 </td></tr><tr>
 
 <td>
+
+<anchor name="perforceClientMappingOptionDescription"/>
 
 Client Mapping
 
@@ -136,7 +143,7 @@ Example:
 
 ```
 
- __Prior to TeamCity 10.0__, editing the client mapping for a Perforce VCS root resulted in a [Clean Checkout](clean-checkout.md) before the next build. A [workaround](https://youtrack.jetbrains.com/issue/TW-25344#comment=27-821321) was provided.
+__Prior to TeamCity 10.0__, editing the client mapping for a Perforce VCS root resulted in a [Clean Checkout](clean-checkout.md) before the next build. A [workaround](https://youtrack.jetbrains.com/issue/TW-25344#comment=27-821321) was provided.
 
 Now [Clean Checkout](clean-checkout.md) on a client mapping change __is not__ enforced for the agent\-side checkout in the following cases:
 
@@ -149,6 +156,8 @@ If the direct client mapping is changed, a clean checkout __will be forced__ unl
 </td></tr><tr>
 
 <td>
+
+<anchor name="perforceUserOptionDescription"/>
 
 Username
 
@@ -163,6 +172,8 @@ Specify the user login name.
 </td></tr><tr>
 
 <td>
+
+<anchor name="perforcePasswordOptionDescription"/>
 
 Password or Ticket
 
@@ -187,16 +198,15 @@ The ticket file, should be present on all build agents where TeamCity runs perfo
 
 <td>
 
-Ticket\-based authentication
+<anchor name="perforceTicketBasedAuthenticationOptionDescription"/>
 
- 
-
+Ticket-based authentication
 
 </td>
 
 <td>
 
-Check this option to enable ticket\-based authentication.  This option is enabled by default and not displayed.
+Check this option to enable ticket-based authentication. This option is enabled by default and not displayed.
 
 
 </td></tr></table>
@@ -226,6 +236,8 @@ Description
 </td></tr><tr>
 
 <td>
+
+<anchor name="perforceWorkspaceOptions"/>
 
 Workspace options
 
@@ -321,6 +333,8 @@ To allow using Perforce proxy with the [agent-side checkout](vcs-checkout-mode.m
 
 <td>
 
+<anchor name="perforcePathtop4ExecutableOptionDescription"/>
+
 P4 path on the build agent
 
 
@@ -341,7 +355,9 @@ To restore old behavior, the `teamcity.perforce.p4PathOnServerWhitelist` [intern
 
 <td>
 
- Label/changelist to sync
+<anchor name="perforceLabelToCheckout"/>
+
+Label/changelist to sync
 
 
 </td>
@@ -360,6 +376,8 @@ It is recommended to use the [agent-side checkout](vcs-checkout-mode.md#agent-ch
 
 <td>
 
+<anchor name="perforceCharsetOptionDescription"/>
+
 Charset
 
 
@@ -374,7 +392,9 @@ Select the character set used on the client computer.
 
 <td>
 
-Support UTF\-16 encoding
+<anchor name="utf16"/>
+
+Support UTF-16 encoding
 
 
 </td>
