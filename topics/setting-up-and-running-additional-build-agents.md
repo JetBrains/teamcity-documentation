@@ -535,7 +535,7 @@ If a build agent uses a Java version older than Java 8, you will see the corresp
 
 <note>
 
-__Support for Java prior to version 8 on agents will be dropped in TeamCity 2019.2__. Consider upgrading Java on the agent if you see the warning.   
+__Support for Java prior to version 8 on agents has been dropped in TeamCity 2019.2__. Consider upgrading Java on the agent if you see the warning.   
 An agent machine can have multiple Java versions installed, and the agent can use one Java version while the build tasks use other Java versions.
 
 Please let us know using any of our [support channels](https://confluence.jetbrains.com/display/TW/Feedback) if your setup depends on the older version of Java and if you will not be able to upgrade to version 8 for some reason.
