@@ -105,6 +105,12 @@ For each failed test, you can instantly see:
 
 The investigations assigned to you are also highlighted in the web UI if you enable the "_Highlight my changes and investigations_" option in your [profile settings](managing-your-user-account.md).
 
+## Viewing Investigation History
+
+Since TeamCity 2020.1, you can view the history of actions applied to each investigation. This is most helpful for big teams and projects when it is not as easy to determine who and when changed or resolved the investigation.
+
+To see the history of an investigation, open any UI page where this [investigation is available](#Viewing+Investigations+and+Mutes) and click __Show Investigation History__ in its context menu. 
+
 ## Notes on Automatic Fix of Investigations and Muted Problems
 
 If the "_Automatically when fixed_" option is select in [Investigation](#Assigning+Investigations+of+Build+Problems+and+Failed+Tests) or [Mute](#Muting+Build+Problems) options, TeamCity will analyze the state of each failure in different branches to resolve the investigation or mute smarter:
