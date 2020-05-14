@@ -202,6 +202,7 @@
                   <toc-element id="using-teamcity-as-nuget-feed.md" show-structure-for="chapter" show-structure-depth="4"/>
                </toc-element>
                <toc-element id="configuring-build-steps.md" show-structure-for="chapter" show-structure-depth="4">
+                  <toc-element id="build-step-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="working-with-meta-runner.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="net-process-runner.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="ant.md" show-structure-for="chapter" show-structure-depth="4"/>
