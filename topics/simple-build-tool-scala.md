@@ -1,52 +1,42 @@
 [//]: # (title: Simple Build Tool (Scala))
 [//]: # (auxiliary-id: viewpage.actionpageId113084133;Simple Build Tool (Scala))
 
-The _Simple Build Tool (Scala)_ build runner natively supports [SBT](http://www.scala-sbt.org/) builds: you can build your code, run tests and see the results in a handy way in TeamCity. The supported SBT version 0.13.+.   
-The runner, formerly provided as [SBT Runner Plugin](https://confluence.jetbrains.com/display/TW/SBT+Runner+Plugin), is bundled __since TeamCity 9.1__.
+The _Simple Build Tool (Scala)_ build runner natively supports [SBT](http://www.scala-sbt.org/) builds: you can build your code, run tests and see the results in a handy way in TeamCity.
 
+TeamCity supports SBT versions up to 1.3.x.
 
+The runner, formerly provided as [SBT Runner Plugin](https://confluence.jetbrains.com/display/TW/SBT+Runner+Plugin), is bundled since TeamCity 9.1.
 
 ## SBT runner settings
 
-
 ### SBT parameters
-
-
 
 <table>
 <tr>
-
 
 <td>
 
 Option 
 
-
 </td>
-
 
 <td>
 
 Description 
 
-
 </td>
 </tr>
 <tr>
-
 
 <td>
 
 SBT commands 
 
-
 </td>
-
 
 <td>
 
 Commands to execute, for example, `clean "set scalaVersion:="2.11.6"" compile test` or `;clean;set scalaVersion:="2.11.6";compile;test`. 
-
 
 </td>
 </tr>
@@ -56,7 +46,6 @@ Commands to execute, for example, `clean "set scalaVersion:="2.11.6"" compile te
 <td>
 
 SBT installation mode 
-
 
 </td>
 
