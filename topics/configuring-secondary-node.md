@@ -53,10 +53,11 @@ By default, a newly started secondary node provides a read-only user interface a
 
 * Processing data produced by builds
 * VCS repositories polling
+* Processing build triggers
 
-![Nodes.png](Nodes.png)
+<img src="Nodes.png" alt="Secondary node responsibilities"/>
 
-A node assigned with any responsibility will allow users to perform the most common actions on builds (read more in [Multinode Setup](multinode-setup.md#user-actions)).
+A node assigned with any responsibility will allow users to perform the [most common actions](#User-level+Actions+on+Secondary+Node) on builds.
 
 You can enable and disable responsibilities for nodes at any moment.
 
@@ -76,9 +77,32 @@ Once you assign the _VCS repositories polling_ responsibility to a node, it may 
 
 If you have commit hooks configured on the main server, no changes in hooks are required: the hooks will continue working if the VCS polling is delegated to the secondary node.
 
+### Processing Triggers on Secondary Node
+
+In setups with many build agents, a significant amount of the main server’s CPU is allocated to constant processing of build triggers. By enabling the _Processing build trigger_ responsibility for one or more secondary nodes, you can distribute the trigger processing tasks and CPU load between the main node and the responsible secondary ones.
+
+## User-level Actions on Secondary Node
+
+If at least one responsibility is assigned to a secondary node, it will allow performing the most common user-level actions:
+* Triggering a build, including a custom or personal one
+* Stopping/deleting and pinning/tagging/commenting builds
+* Assigning investigations and muting build problems and tests
+* Marking a build as successful/failed
+* Editing build changes' descriptions
+* Merging sources and labeling sources actions
+* Adding builds to favorites
+* Changing settings of user profiles, including general settings, groups and roles, access tokens, VCS usernames, and notification rules
+* Reordering and hiding projects and build configurations
+* Checking for pending changes
+* Agent-related actions (see the [list of actions](https://youtrack.jetbrains.com/issue/TW-65199))
+
+See the related tasks in our issue tracker for the full list of available actions: [TW-62749](https://youtrack.jetbrains.com/issue/TW-62749), [TW-63346](https://youtrack.jetbrains.com/issue/TW-63346).
+
+Administrator-level actions are not yet available on secondary nodes. Use the main server if you need to change the server configuration.
+
 ## Upgrade & Downgrade
 
-It is recommended that the main TeamCity server and all secondary nodes have the same version. Read more in [Multinode Setup](multinode-setup.md#Upgrade+%26+Downgrade).
+We recommend running the main server and all secondary nodes on the same version of TeamCity. Read more in [Multinode Setup](multinode-setup.md#Upgrade+%26+Downgrade).
 
 ## Authentication & License
 
@@ -89,6 +113,12 @@ Secondary nodes use the same authentication settings as the main server.
 ## Global Settings
 
 Secondary notes use the same [global settings](teamcity-configuration-and-maintenance.md) (path to artifacts, version control settings, and so on) as the main server.
+
+## Internal Properties
+
+All secondary nodes rely both on common [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties), stored in the [shared data directory](multinode-setup.md#Shared+Data+Directory), and specific properties, configured separately for each node. The node-specific properties have a higher priority and overwrite the common values in case of a conflict.
+
+To disable any common property on a given secondary node, pass it using the following syntax: `-<property_name>`.
 
 ## Project Import
 

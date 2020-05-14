@@ -9,13 +9,7 @@ Using the multinode setup, you can:
 
 <anchor name="user-actions"/>
 
-After installation, each secondary node runs as a read-only copy of the main server. To extend its functionality, you can assign it to a certain [responsibility](configuring-secondary-node.md#Assigning+Responsibilities). In this case, the secondary node will allow users to perform the most common actions on builds:
-* Triggering a build, including a custom or personal one
-* Stopping/deleting and pinning/tagging/commenting builds
-* Assigning investigations and muting build problems and tests
-* Marking a build as successful/failed
-* Merging sources and labeling sources actions
-* and more (see the full list in our [issue tracker](https://youtrack.jetbrains.com/issue/TW-62749))
+After installation, each secondary node runs as a read-only copy of the main server. To extend its functionality, you can assign it to a certain [responsibility](configuring-secondary-node.md#Assigning+Responsibilities). In this case, the secondary node will allow users to perform the [most common actions](configuring-secondary-node.md#User-level+Actions+on+Secondary+Node) on builds.
 
 The following diagram shows an example of a TeamCity installation with one main node and two secondary nodes, where each secondary node has a certain responsibility:
 
@@ -59,7 +53,7 @@ mklink /d "C:\<path to mount point>" "\\<host>\<shared directory name>\"
 
 It is important that all the nodes "see" the current state of the shared Data Directory without delay. If this is not the case, it is likely to manifest in various unstable behavior and frequent build logs corruption.
 
-If TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure that all the registry keys mentioned in the [related article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all of the TeamCity nodes.
+If TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure that all the registry keys mentioned in the [related article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all the TeamCity nodes.
 
 If Data Directory is shared via NFS, make sure that all nodes have the following option in their mount settings: `lookupcache=positive`.
 
@@ -127,7 +121,7 @@ Firewall settings should allow accessing secondary nodes from the agents and fro
 
 It is recommended that the main TeamCity server and all secondary nodes have the same version. In certain cases, the main server and the secondary nodes can be running different versions for a short period, for example, during the minor upgrade of the main server. When the versions of the secondary node and the main server are different, the corresponding health report will be displayed on both nodes.
 
-When __upgrading to a minor version__ (a bugfix release), the main and the secondary nodes should be running without issues as the TeamCity data has the same format. You can upgrade the main TeamCity server and then the secondary servers [as usual](upgrade.md).
+When __upgrading to a minor version__ (a bugfix release), the main and the secondary nodes should be running without issues as the TeamCity data has the same format. You can upgrade the main TeamCity server and then the secondary servers [manually](upgrade.md), or using the [automatic update](upgrade.md#Automatic+Update).
 
 When __upgrading the main server to a major version__, its TeamCity data format will change. We recommend stopping all the secondary nodes before starting the upgrade of the main server to avoid any possible data format errors.   
 All secondary nodes must be upgraded after the main server major upgrade to be able to process tasks.
