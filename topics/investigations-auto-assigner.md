@@ -11,18 +11,18 @@ When configuring the build feature, you can specify:
 * the TeamCity username of the default user whom investigations will be assigned to in case it is not clear whose changes actually broke the build
 * the list of usernames to exclude from assigning investigations (for example, system users or the users no longer working on the project)
 
-After the build feature is added to a build configuration, the user is assigned to investigate a failure on the basis of the following heuristics:
+After this build feature is added to a build configuration, the user is assigned to investigate a failure on the basis of the following heuristics:
 * If a user is the only committer to the build.
 * If a user is the only one who changed the suspicious file. The suspicious file is the one which probably caused this failure, i.e. its name appears in the test or build problem error text.
 * If a user was responsible for this problem the previous time.
 * If a user is set as the default responsible user.
 
-If you have not configured the build feature, TeamCity will show a suggestion for investigation assignment with the reason for the possible assignment.
+If you have not configured this build feature, TeamCity will show a suggestion for investigation assignment with the reason for the possible assignment.
 
 <anchor name="delay-auto-assign"/>
 
-You can delay auto-assignment of investigations.   
+If necessary, you can delay auto-assignment of investigations.   
 TeamCity needs time after the build finish to detect [flaky tests](viewing-tests-and-configuration-problems.md#Flaky+Tests), and in some cases Investigations Auto Assigner may assign an investigation to a user even if the build fails without any user involvement. When there are many flaky tests in a project, this may be distracting.   
-To prevent this scenario, configure the _Investigations Auto Assigner_ build feature to delay the investigation assignment until the failure repeats itself in the build configuration (in the default branch): select __Assign__: "_On second failure_" when configuring this build feature.
+To prevent this scenario, select __Assign__: "_On second failure_" when configuring this build feature. Investigations Auto Assigner will be delaying the assignment until the problem repeats in a build configuration twice in a row (in the default branch). This option affects only failed tests and "Exit code" build problems; any compilation errors will be assigned with an investigation right on the first failure.
 
 __ __
