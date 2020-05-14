@@ -5,9 +5,11 @@ Before you can start customizing projects and creating build configurations, you
 
 <tip>
 
-If you install TeamCity bundled with a Tomcat servlet container, or use the TeamCity installer for Windows, both the server and one build agent are installed on the same machine. This is not a recommended setup for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) because of [security concerns](how-to.md#TeamCity+Security+Notes) and since the build procedure can slow down the responsiveness of the web UI and overall TeamCity server functioning. If you need more build agents, perform the procedure described below.   
-If you need the agent to run an operating system different from the TeamCity server, perform the procedure described below.   
-For production installations, it is recommended to adjust the [Agent's JVM parameters](configuring-build-agent-startup-properties.md) to include the `-server` option.
+__Tips__
+
+* If you install TeamCity bundled with a Tomcat servlet container, or use the TeamCity installer for Windows, both the server and one build agent are installed on the same machine. This is not a recommended setup for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) because of [security concerns](how-to.md#TeamCity+Security+Notes) and since the build procedure can slow down the responsiveness of the web UI and overall TeamCity server functioning. If you need more build agents, perform the procedure described below.   
+* If you need the agent to run an operating system different from the TeamCity server, perform the procedure described below.   
+* For production installations, it is recommended to adjust the [Agent's JVM parameters](configuring-build-agent-startup-properties.md) to include the `-server` option.
 </tip>
 
 ## Prerequisites
@@ -22,7 +24,7 @@ Note that to run a TeamCity build agent, the environment and user account used t
 
 #### Common
 
-The agent process (java) must
+The agent process (Java) must
 * be able to open outbound HTTP connections to the server URL configured via the `serverUrl` property in the [`buildAgent.properties`](build-agent-configuration.md) file (typically the same address you use in the browser to view the TeamCity UI). Sending requests to the paths under the configured URL should not be limited. See also the recommended [reverse proxy settings](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server). Ensure that any firewalls installed on the agent or server machines, network configuration and proxies (if any) comply with these requirements.
 * have full permissions (read/write/delete) to the following directories recursively: [`<agent home>`](agent-home-directory.md) (necessary for automatic agent upgrade and agent tools support), [`<agent work>`](agent-work-directory.md), [`<agent temp>`](agent-home-directory.md#Agent+Directories), and agent system directory (set by `workDir`, `tempDir`, and `systemDir` parameters in the `buildAgent.properties` file)
 * be able to launch processes (to run builds).
@@ -92,9 +94,9 @@ The communication protocol used by TeamCity agents is determined by the value of
 
 ## Installing Additional Build Agents
 1\. Install a build agent using any of the following options:
- * [Using Windows installer](#Installing+via+Windows+installer) (Windows only)
- * [By downloading a zip file and installing manually](#Installing+via+ZIP+File) (any platform)
- * Via the [Docker Agent Image](#Installing+via+Docker+Agent+Image) option to prepare a Docker container based on the official [TeamCity Agent image](https://hub.docker.com/r/jetbrains/teamcity-agent/)
+ * [using Windows installer](#Installing+via+Windows+installer) (Windows only)
+ * [by downloading a ZIP file and installing manually](#Installing+via+ZIP+File) (any platform): minimal and full-packed ZIP archives ara available
+ * via the [Docker Agent Image](#Installing+via+Docker+Agent+Image) option to prepare a Docker container based on the official [TeamCity Agent image](https://hub.docker.com/r/jetbrains/teamcity-agent/)
 
 2\. After installation, configure the agent specifying its name and the address of the TeamCity server in the [`conf/buildAgent.properties`](build-agent-configuration.md) file.
 
@@ -120,25 +122,34 @@ Ensure that the user account used to run the agent service has appropriate [perm
 3. Follow the instructions on the opened [page](https://hub.docker.com/r/jetbrains/teamcity-agent/).
 
 ### Installing via ZIP File
-1. Make sure a JDK (JRE) 1.8.0\_161 or later (Java 6\-10 are supported, but 1.8.0\_161\+ is recommended) is properly installed on the agent computer.
+1. Make sure a JDK (JRE) 1.8.0_161 or later (Java 6-10 are supported, but 1.8.0_161+ is recommended) is properly installed on the agent computer.
 2. On the agent computer, make sure the `JRE_HOME` or `JAVA_HOME` environment variables are set (pointing to the installed JRE or JDK directory respectively).
 3. In the TeamCity web UI, navigate to the __Agents__ tab.
-4. Click the __Install Build Agents__ link and select __Zip file distribution__ to download the archive.
-5. Unzip the downloaded file into the desired directory.
+4. Click the __Install Build Agents__ link and select one of the two options to download the archive:
+   * __Minimal ZIP file distribution__: a regular build agent with no plugins
+   * (since TeamCity 2020.1) __Full ZIP file distribution*__: a full build agent prepacked with all plugins currently enabled on the server
+5. Extract the downloaded file into the desired directory.
 6. Navigate to the `<installation path>\conf` directory, locate the file called `buildAgent.dist.properties` and rename it to `buildAgent.properties`.
-7. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see the [notes](#Agent-Server+Data+Transfers)) and the name of the agent. Refer to the [Build Agent Configuration](build-agent-configuration.md) section for details on agent configuration.
+7. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see the [notes](#Agent-Server+Data+Transfers)) and the name of the agent. Refer to the [Build Agent Configuration](build-agent-configuration.md) page for details on agent configuration.
 8. Under Linux, you may need to give execution permissions to the `bin/agent.sh` shell script.
+
+On Windows, you may also want to install the [build agent Windows service](#Build+Agent+as+a+Windows+Service) instead of using the manual agent startup.
 
 <tip>
 
-On Windows you may also want to install the [build agent windows service](#Build+Agent+as+a+Windows+Service) instead of the manual agent startup.
+\* A minimal TeamCity agent distribution does not contain plugins: the agent downloads them on the first start. The full agent contains all enabled plugins and automatically stays relevant with the current TeamCity server state. This makes its distribution archive larger but significantly reduces the time spent on the first agent run.
+
+The full agent is the most convenient if you use scripts for creating and cloning agent images (for example, [in cloud](agent-cloud-profile.md)). Each cloned instance will be synchronized with the server from the start and can instantly run a build.
+
+Note that after starting, the full agent behaves like a regular agent. If you modify the state of plugins on the TeamCity server, all active agents will need to restart to sync with the server.
+
 </tip>
 
 ### Installing via Agent Push
 
 TeamCity provides functionality that allows installing a build agent to a remote host. Currently supported combinations of the server host platform and targets for build agents are:
-* from the Unix\-based TeamCity server, build agents can be installed to Unix hosts only (via SSH)
-* from the Windows\-based TeamCity server, build agents can be installed to Unix (via SSH) or Windows (via psexec) hosts
+* from the Unix-based TeamCity server, build agents can be installed to Unix hosts only (via SSH)
+* from the Windows-based TeamCity server, build agents can be installed to Unix (via SSH) or Windows (via psexec) hosts
 
 <note>
 
@@ -194,7 +205,7 @@ Windows
 
 <td>
 
-1\. Installed JDK/JRE 6\-10 (__1.8.0\_161 or later__ __is recommended__).
+1\. Installed JDK/JRE 6-10 (__1.8.0\_161 or later__ __is recommended__).
 
 [//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e644.txt")
 
@@ -204,7 +215,7 @@ Windows
 </td></tr></table>
 
 #### Installation
-1. In the TeamCity Server web UI navigate to the __Agents__ | __Agent Push__ tab, and click __Install Agent...__.   
+1. In the TeamCity Server web UI navigate to the __Agents__ | __Agent Push__ tab, and click __Install Agent__.   
 If you are going to use same settings for several target hosts, you can __create a preset__ with these settings, and use it each time when installing an agent to another remote host.
 2. In the __Install agent__ dialog, either select a saved preset or choose "Use custom settings", specify the target host platform and configure corresponding settings. Agent push to a Linux system via SSH supports custom ports (the default is 22) specified as the __SSH port__ parameter. The port specified in a preset can be overridden in the host name, e.g. `hostname.domain:2222`, during the actual agent installation.
 3. You may need to download `Sysinternals psexec.exe`, in which case you will see the corresponding warning and a link to the __Administration__ | __Tools__ page where you can download it.
@@ -225,7 +236,7 @@ __To start the agent manually__, run the following script:
 
 To configure the agent to be __started automatically__, see the corresponding sections:
 * [Windows](#Automatic+Agent+Start+under+Windows)
-* [Linux](#Automatic+Agent+Start+under+Linux): configure daemon process with `agent.sh start` command to start it and `agent.sh stop` command to stop it.
+* [Linux](#Automatic+Agent+Start+under+Linux): configure daemon process with the `agent.sh start` command to start it and the `agent.sh stop` command to stop it.
 * [macOS](#Automatic+Agent+Start+under+macOS)
 
 #### Automatic Agent Start under Windows
@@ -549,7 +560,7 @@ In a rare case of updating the Java for the process that launches the TeamCity a
 
 ## Installing Several Build Agents on the Same Machine
 
-You can install several TeamCity agents on the same machine if the machine is capable of running several builds at the same time. However, we recommend running a single agent per (virtual) machine to minimize builds cross\-influence and making builds more predictable. When installing several agents, it is recommended to install them under different OS users so that user\-level resources (like Maven/Gradle/NuGet local artifact caches) do not conflict.
+You can install several TeamCity agents on the same machine if the machine is capable of running several builds at the same time. However, we recommend running a single agent per (virtual) machine to minimize builds cross-influence and making builds more predictable. When installing several agents, it is recommended to install them under different OS users so that user\-level resources (like Maven/Gradle/NuGet local artifact caches) do not conflict.
 
 TeamCity treats all agents equally regardless of whether they are installed on the same or on different machines.   
 When installing several TeamCity build agents on the same machine, consider the following:
