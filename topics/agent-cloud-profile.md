@@ -1,7 +1,7 @@
 [//]: # (title: Agent Cloud Profile)
 [//]: # (auxiliary-id: Agent Cloud Profile)
 
-A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on\-demand while distributing a build queue. Configuring a cloud provider profile is one of the steps required to [enable agent cloud integration](teamcity-integration-with-cloud-solutions.md) between TeamCity and a cloud provider. The settings of profiles slightly vary depending on the cloud type. 
+A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand while distributing a build queue. Configuring a cloud provider profile is one of the steps required to [enable agent cloud integration](teamcity-integration-with-cloud-solutions.md) between TeamCity and a cloud provider. The settings of profiles slightly vary depending on the cloud type. 
 
 <tip>
 
@@ -121,6 +121,12 @@ Specify the working time (in minutes) for the agent after which the instance wil
 Specify how many minutes before the full hour an idle instance should be stopped: this allows avoiding charges for partial hours if your virtual machines are billed in whole hours, for example, when using Amazon EC2 instances.
 * _After the first build_:   
 Select this option if you want TeamCity to stop the virtual machine immediately after the first build finishes. TeamCity will disable the build agents, and no more builds will be run on the same machine.
+
+<note>
+
+TeamCity will not terminate __disabled__ cloud agents on matching the terminate condition. This allows for easier diagnostics of cloud instances: you can disable a required agent to inspect its behavior without interruption.
+
+</note>
 
 </td></tr></table>
 
