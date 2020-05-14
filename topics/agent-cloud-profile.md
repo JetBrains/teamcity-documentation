@@ -124,7 +124,7 @@ Select this option if you want TeamCity to stop the virtual machine immediately 
 
 <note>
 
-TeamCity will not terminate __disabled__ cloud agents on matching the terminate condition. This allows for easier diagnostics of cloud instances: you can disable a required agent to inspect its behavior without interruption.
+TeamCity will not terminate __disabled__ cloud agents on matching a terminate condition. This allows for easier diagnostics of cloud instances: you can disable a required agent to inspect its behavior without interruption.
 
 </note>
 
