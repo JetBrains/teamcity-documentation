@@ -30,7 +30,7 @@ Start typing the user ID, and TeamCity will suggest it automatically based on yo
 
 To configure a connection to Slack, go to __Project Settings | Connections__ and click __Add Connection__. In the opened form select the _Slack_ type and give a connection any convenient name.
 
-To be able to integrate TeamCity with Slack, you need to create a respective [Slack app](https://api.slack.com/apps) with the following scopes: `channels:read`, `chat:write`, `im:read`, `im:write`, `users:read`.
+To be able to integrate TeamCity with Slack, you need to create a respective [Slack app](https://api.slack.com/apps) with the following scopes: `channels:read`, `chat:write`, `im:read`, `im:write`, `users:read`, `team:read`.
 
 When configuring the app in Slack, set the __Redirect URL__ in __OAuth & Permissions | App Management__ to `<teamcity-server-address>`.
 
