@@ -1015,7 +1015,7 @@ Only several reports of different types can be included in a build. Processing r
 If you need to cancel a build from a script, for example, if a build cannot proceed normally due to the environment, or a build should be canceled form a subprocess, you can use the following service message:
 
 ```Shell
-echo ##teamcity[buildStop comment='canceling comment' readdToQueue='true']
+echo "##teamcity[buildStop comment='canceling comment' readdToQueue='true']"
 ```
 
 If required, you can re-add the build to the queue after canceling it.
