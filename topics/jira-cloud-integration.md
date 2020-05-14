@@ -7,13 +7,8 @@ It uses the [Jira Software Cloud REST API](https://developer.atlassian.com/cloud
 
 ## Jira Cloud Integration Settings
 
-To set up this feature:
-
-1. Select the required [connection to Jira Cloud](jira.md) from those available among all parent projects.
-2. Select an environment type (for example, _testing_ or _production_).
-3. Enter an environment name.
-
-The environment options are required to show the deployment information in Jira Cloud.
+To set up this feature, select the required [connection to Jira Cloud](jira.md) from those available among all parent projects.   
+For a deployment build configuration, specify an environment type (for example, _testing_ or _production_) and an environment name. These options are required to show the deployment information in Jira Cloud.
 
 ## Viewing Build Statuses in Jira Cloud
 
