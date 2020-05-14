@@ -1,12 +1,13 @@
 [//]: # (title: Pull Requests)
 [//]: # (auxiliary-id: Pull Requests)
 
-The _Pull Requests_ build feature lets you automatically load pull request (or _merge requests_ in case of GitLab) information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), and [GitLab](#GitLab+Merge+Requests).
+The _Pull Requests_ build feature lets you automatically load pull request (or _merge requests_ in case of GitLab) information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [GitLab](#GitLab+Merge+Requests), and (since version 2020.1) [Azure DevOps](#Azure+DevOps+Pull+Requests).
 
 The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors builds only on `head` branches:
 * For GitHub: `refs/pull/*/head`
 * For Bitbucket Server: `refs/pull-requests/*/from`
 * For GitLab: `refs/merge-requests/*/head`
+* For Azure DevOps: `refs/pull/*/merge`
 
 If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches.
 
@@ -323,6 +324,71 @@ Server URL
 Specify a GitLab URL for connection.
 
 If left blank, the URL will be extracted from the VCS root fetch URL.
+
+</td>
+  </tr>
+</table>
+
+### Azure DevOps Pull Requests
+
+<note>
+
+In case with Azure DevOps, TeamCity detects requests on a merge branch – not on the pull request itself as in other VCSs. Because of that, your builds will contain both the commit with changes and the virtual merge commit.
+
+</note>
+
+The following parameters are available for the [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) hosting type:
+
+<table>
+<tr>
+<td width="150">
+
+Parameter
+
+</td>
+
+<td>
+
+Description
+
+</td>
+</tr>
+<tr>
+<td>
+
+Access token
+
+</td>
+
+<td>
+
+Use a personal access token for connection. The token must have the `Code (read)` [scope](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops#scopes).
+
+</td>
+</tr>
+<tr>
+<td>
+
+By target branch
+
+</td>
+
+<td>
+
+Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left blank, no filters apply.
+
+</td>
+</tr>
+<tr>
+<td>
+
+Project URL
+
+</td>
+
+<td>
+
+Specify a project URL for synchronization with the remote Azure DevOps server. This field is recommended for on-premises Azure DevOps installations. If left blank, the URL will be composed based on the VCS root fetch URL.
 
 </td>
   </tr>
