@@ -1,6 +1,50 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2019.2.x to 2020.1
+
+### Changes in Java support on server and agents
+
+* Java 11 has been bundled with the TeamCity server Windows installer and server Docker images instead of Java 8. 
+* TeamCity agents stop supporting Java versions earlier than 8.
+
+### Deprecated Windows Tray Notifier
+
+TeamCity Windows Tray Notifier has been deprecated in favor of the new [Browser Notifier extension](browser-notifier.md). The __My Settings & Tools | Notification Rules | Windows Tray Notifier__ tab in TeamCity is renamed to __Browser Notifier__.
+
+### Bundled Kubernetes Support plugin does not contain Helm runner
+
+The [Kubernetes Support plugin](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) is now bundled with TeamCity. On upgrade, it will replace the external plugin if it is installed on your TeamCity server. Note that the bundled plugin does not contain the Helm build runner. To continue using this runner in your build configuration, please install the [new version]() of this plugin.
+
+### Limitation of CORS support for writing operations
+
+TeamCity improves the security of REST API integration mechanisms by introducing CSRF tokens. This change will not affect the behavior of custom integration scripts unless they rely on Cross-Origin Resource Sharing (CORS) in writing operations and the `rest.cors.origins` internal property is [enabled in TeamCity](rest-api.md#CORS+Support) (it is disabled by default).
+
+Previously, CSRF protection was presented in TeamCity with the verification of `Origin/Referer` headers of HTTP requests. To improve TeamCity CSRF protection, this method has been disabled in favor of a more secure one – CSRF tokens. Since this release, TeamCity stops supporting the CORS mechanism for `POST/PUT/DELETE` REST API requests. Cross-origin GET requests' headers are processed as before and still require [CORS configuration](rest-api.md#CORS+Support).
+
+If necessary, you can enforce verification of `Origin/Referer` headers for writing CORS operations by setting the `teamcity.csrf.paranoid=false` internal property. Note that this is a transitory and less secure solution: we strongly recommend refactoring your existing requests so they comply with the new security policy and provide a token within a CSRF header or parameter. A CSRF token can be obtained via the `GET https://your-server/authenticationTest.html?csrf` request and provided via the `X-TC-CSRF-Token` HTTP header to the write CORS requests.
+
+### Bundled tools updates
+
+* Bundled __IntelliJ IDEA__ has been updated to version __2020.1.1__.
+* Bundled __Ant__ has been updated to version __1.9.14__.
+* Bundled __Tomcat__ has been updated to version __8.5.54__.
+* Bundled __Maven__ has been updated to version __3.6.3__.
+* __Kotlin__, used in TeamCity DSL, has been updated to version __1.3.70__.
+* JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
+     * MySQL - 8.0.20
+     * MSSQL - 8.2.2
+     * PostgreSQL - 42.2.12
+
+### REST API changes
+
+Filtering test occurrences by a branch (`.../app/rest/testOccurrences?locator=branch(XXX)` request) has been changed. It used to support only branch names with case-sensitive matching. Now, the `XXX` value supports branch locators (the same as when filtering builds): it is case-insensitive by default and matches the `<default>` branch display name.
+
+### Other changes
+
+* TeamCity has dropped support for Internet Explorer. Please use Microsoft Edge instead.
+* To comply with recommended security practices, the TeamCity agent Docker images now run under a non-root user.
+
 ## Changes from 2019.2.3 to 2019.2.4
 
 No noteworthy changes.
