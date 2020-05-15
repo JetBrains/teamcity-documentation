@@ -179,18 +179,19 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 
 ## Encryption Settings
 
-In this block, you can choose between using the default TeamCity encryption key and generating a custom one.
+In this block, you can choose how TeamCity will process secure values: either using the default _scrambling strategy_ or by _encrypting them with a custom key_.
 
-TeamCity [stores all secure values](storing-project-settings-in-version-control.md#Storing+Secure+Settings), used in project configuration files, in a scrambled form. The initial values are stored in the [TeamCity Data Directory](teamcity-data-directory.md), and their safety primarily depends on the security of your environment. As an extra security level, TeamCity supports custom encryption keys for scrambling secure values. By using a custom key instead of a default one, you can minimize the risk of potential malicious actions.
+By default, TeamCity [stores all secure values](storing-project-settings-in-version-control.md#Storing+Secure+Settings), used in project configuration files, in a scrambled form. The initial values are stored in the [TeamCity Data Directory](teamcity-data-directory.md), and their safety primarily depends on the security of your environment. To minimize the risk of potential malicious actions, TeamCity can encrypt secure values with your custom key.
 
-If you choose to use the custom key and save the encryption settings, TeamCity will perform all new scrambling operations with the AES encryption using this key.   
-Any existing secure values will remain encrypted with the previous key – you can rescramble them manually using the __Actions__ menu of the project settings, if necessary. Note that when you change the project settings anyhow, all the project’s secure values are reencrypted automatically using the current key.
+To use the custom encryption, select the respective option and enter an encryption key. Click __Generate__ to randomly generate it, or enter your own key (128-bit keys encoded with Base64 are supported). After you save the settings, TeamCity will change the strategy from _scrambling secure values_ to _encrypting them with your custom key using the AES algorithm_.
 
-You can change the custom key or go back to using the default one anytime.
+Any existing secure values will remain scrambled – you can encrypt them manually using the __Actions__ menu of the project settings, if necessary. Note that when you change the project settings anyhow, all the project’s secure values are reencrypted automatically using the current key.
+
+You can change the custom key or go back to using the default strategy anytime.
 
 <note>
 
-During backup (or project export), your custom keys will be exported along with their projects and automatically available after restoring from backup (or after project import). Since keys will be stored in the exported files in an open form, make sure the export/backup files are well-protected.
+During backup, your custom keys will be exported along with their projects and automatically available after restoring from backup. Since keys will be stored in the exported files in an open form, make sure the backup files are well-protected.
 
 </note>
 
