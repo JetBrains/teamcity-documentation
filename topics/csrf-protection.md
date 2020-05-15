@@ -1,34 +1,48 @@
 [//]: # (title: CSRF Protection)
 [//]: # (auxiliary-id: CSRF Protection)
 
+
 ## General information
 
-Сross-Site Request Forgery (CSRF) protection in TeamCity has been implemented since version 2017.1 ([issue](https://youtrack.jetbrains.com/issue/TW-17762)). This protection implies a number of requirements on HTTP requests.
+CSRF protection in TeamCity has been implemented since TeamCity 2017.1 ([issue](https://youtrack.jetbrains.com/issue/TW-17762)). This protection implies a number of requirements on HTTP requests.
 
-Since version 2020.1, TeamCity uses only CSRF tokens as a protection measure. In previous versions of TeamCity, `Origin/Referer` headers were also used.
+## Implications for reverse proxy configuration
 
-To obtain a security token, send the `GET https://your-server/authenticationTest.html?csrf` request.   
-To pass the token, use the `X-TC-CSRF-Token` HTTP request header or the `tc-csrf-token` HTTP parameter.
+When a TeamCity server has a reverse proxy in front of it (Nginx, IIS, Apache), this proxy should be configured to pass headers from the original request to the TeamCity server.
+
+The `Origin` and `Referer` headers must be passed unmodified, when present.
+
+The  `Host` header should be passed as well, and if it is not possible due to some reason, `X-Forwarded-Host` must be set to the value of the original `Host` header. 
+
+Here are our recommendations for [reverse proxy configuration for TeamCity](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server).
+
+## Implications for non-browser HTTP clients
+
+Non\-browser HTTP clients which reuse authentication for REST scripting by supplying the `TCSESSIONID` cookie with the request need to be updated to supply the `Origin` HTTP header with the same value as the host the request is being sent to. 
 
 ## CSRF checks for HTTP request
 
 When considering HTTP request safety from the TeamCity perspective, the following checks are sequentially made:
-1. If an HTTP request is a non-modifying one (such as `GET`), it is considered safe.
+1. If an HTTP request is a non\-modifying one (such as `GET`), it is considered safe.
 2. If an HTTP request has a secure CSRF token either in the parameter or in the HTTP header and this token matches the one stored in user session, it is considered safe.
+3. If an HTTP request has the `Origin` header, it __must__ match a host from a _trusted domain_ (see below), otherwise, the request is rejected without further processing.
+4. If an HTTP request has the `Referer` header which matches the `Host` header or `X-Forwarded-Host` header, it is considered safe.
+5. If an HTTP request has the `X-Requested-With=XMLHttpRequest` header, it is considered safe.
+6. If an HTTP request uses token-based authentication and there is no user in TeamCity session/cookies, the request is considered safe.
+7. If an HTTP request uses basic authentication and there is no user in TeamCity session/cookies, the request is considered safe.
 
-## Implications for non-browser HTTP clients
+### Trusted domain
 
-For non-browser API access, we recommend using [token-based authentication](managing-your-user-account.md#Managing+Access+Tokens) of the request and disabling cookie support in your HTTP client.
-
-If you need to use cookies, your API will have to obtain a CSRF token first and provide it with your cookie-enabled requests.
+TeamCity considers the following domains/hosts as trusted:
+* `Host` header value
+* `X-Forwarded-Host` header value (can be set separately in case of proxy configuration)
+* One of the CORS origins, [configured](rest-api.md#CORS+Support) for REST access. 
 
 ## Troubleshooting
 
-When you face problems regarding CSRF protection in TeamCity (for example, you get the "_Responding with 403 status code due to failed CSRF check_" response from the server), you can try these steps:
-* Enforce verification of `Origin/Referer` headers for CORS operations by setting the `teamcity.csrf.paranoid=false` internal property, similarly to how it worked in TeamCity versions prior to 2020.1 (read our [Upgrade Notes](upgrade-notes.md#Limitation+of+CORS+support+for+writing+operations)) for more details).
-* Temporary disable CSRF protection at all by setting the `teamcity.csrf.origin.check.enabled=logOnly` internal property.
-* Information about failed CSRF attempts is logged into `TeamCity/logs/teamcity-auth.log` files. For more detailed diagnostics of the requests, enable the [debug-auth logging preset](reporting-issues.md#Logging+events).
-
-In case none of the listed steps help to resolve your problem, please contact our [support](https://confluence.jetbrains.com/display/TW/Feedback) and provide your `teamcity-auth.log` logs with the enabled teamcity-auth [logging preset](reporting-issues.md#Logging+events)
+When you face problems regarding CSRF protection in TeamCity (for example, you get the "Responding with 403 status code due to failed CSRF check" response from the server), you can follow these steps:
+* If you use a reverse proxy, make sure you correctly configure Host/Origin headers, as described above. In the meantime, you may want to add the public URL of your server to [CORS-enabled origins](rest-api.md#CORS+Support).
+* You can temporary disable CSRF protection at all by setting the `teamcity.csrf.origin.check.enabled=logOnly internal property.`
+* Information about failed CSRF attempts are logged into `TeamCity/logs/teamcity-auth.log` files. For more detailed diagnostics of the requests, enable [debug-auth logging preset](reporting-issues.md#Logging+events).
 
 __ __
