@@ -22,6 +22,11 @@ For non-browser API access, we recommend using [token-based authentication](mana
 
 If you need to use cookies, your API will have to obtain a CSRF token first and provide it with your cookie-enabled requests.
 
+## Implications for CORS clients
+
+To use CORS request, configure the CORS support as described [here](rest-api.md#CORS+Support). This configuration will be enough for `GET` requests.   
+If you need to send `POST/PUT/DELETE` requests via CORS, you should obtain a CSRF token using the `authenticationTest.html?csrf` call, and then provide this token with your modifying HTTP requests.
+
 ## Troubleshooting
 
 When you face problems regarding CSRF protection in TeamCity (for example, you get the "_Responding with 403 status code due to failed CSRF check_" response from the server), you can try these steps:
@@ -29,6 +34,6 @@ When you face problems regarding CSRF protection in TeamCity (for example, you g
 * Temporary disable CSRF protection at all by setting the `teamcity.csrf.origin.check.enabled=logOnly` internal property.
 * Information about failed CSRF attempts is logged into `TeamCity/logs/teamcity-auth.log` files. For more detailed diagnostics of the requests, enable the [debug-auth logging preset](reporting-issues.md#Logging+events).
 
-In case none of the listed steps help to resolve your problem, please contact our [support](https://confluence.jetbrains.com/display/TW/Feedback) and provide your `teamcity-auth.log` logs with the enabled teamcity-auth [logging preset](reporting-issues.md#Logging+events)
+In case none of the listed steps help to resolve your problem, please contact our [support](https://confluence.jetbrains.com/display/TW/Feedback) and provide your `teamcity-auth.log` logs with the enabled teamcity-auth [logging preset](reporting-issues.md#Logging+events).
 
 __ __
