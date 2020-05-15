@@ -3,7 +3,7 @@
 
 When creating a build configuration, it is important to configure the sequence of build steps to be executed.
 
-Build steps are configured on the __Build Steps__ section of the [Build Configuration Settings](creating-and-editing-build-configurations.md) page: the steps can be auto\-detected by TeamCity or added manually.
+Build steps are configured on the __Build Steps__ section of the [Build Configuration Settings](creating-and-editing-build-configurations.md) page: the steps can be auto-detected by TeamCity or added manually.
 
 Each build step is represented by a [build runner](build-runner.md) and provides integration with a specific build or test tool. You can add as many build steps to your build configuration as needed. For example, call a NAnt script before compiling VS solutions.
 
@@ -11,9 +11,9 @@ Build steps are invoked sequentially.
 
 The decision whether to run the next build step may depend on the exit status of the previous build steps and the current build status.
 
-The build step status is considered _failed_ if the build process returned a non\-zero exit code and the __Fail build if build process exit code is not zero__ build failure condition is enabled (see [Build Failure Conditions](build-failure-conditions.md)); otherwise build step is _successful_.
+The build step status is considered _failed_ if (1) the build process returned a non-zero exit code and (2) the "_Fail build if build process exit code is not zero_" build failure condition is enabled (see [Build Failure Conditions](build-failure-conditions.md)); otherwise build step is _successful_.
 
-Note that the status of the build step and the build can be different. A build step can be successful, but the build can be failed because of another build failure condition, not based on the exit code (like failing a test or something else). On the other hand, if a build step has failed, the build will be failed too.
+Note that the status of the build step and the build can be different. A build step can be successful, but the build can be failed because of another build failure condition, not based on the exit code (like failing a test). On the other hand, if a build step has failed, the build will fail too.
 
 ## Execution policy
 
@@ -25,10 +25,17 @@ You can specify the step execution policy via the __Execute step__ option:
 
 <tip>
 
+__Tips:__
+
 * You can copy a build step from one build configuration to another from the original build configuration settings page.
 * You can reorder build steps as needed. Note, that if you have a build configuration inherited from a template, you cannot reorder inherited build steps. However, you can insert custom build steps (not inherited) at any place and in any order, even before or between inherited build steps. Inherited build steps can be reordered in the original template only.
-* You can disable a build step temporarily or permanently, even if it is inherited from a build configuration template using the corresponding option in the last column of the Build Steps list.
+* You can disable a build step temporarily or permanently, even if it is inherited from a build configuration template, using the corresponding option in the last column of the __Build Steps__ list.
+
 </tip>
+
+<anchor name=""/>
+
+Since TeamCity 2020.1, you can also add granular [execution conditions](build-step-conditions.md) for build steps.
 
 ## Bundled runners
 
