@@ -34,7 +34,7 @@ Basic TeamCity EC2 setup involves:
 Note that the number of EC2 agents is limited by the total number of agent licenses you have in TeamCity.
 </note>
 
-Make sure the server URL specified on the __Administration | Global Settings__ page is correct since agents will use it to connect to the server, if a custom server URL is not specified in the [cloud profile settings](agent-cloud-profile.md#Specifying+profile+settings).
+Make sure the server URL specified on the __Administration | Global Settings__ page is correct since agents will use it to connect to the server, if a custom server URL is not specified in the [cloud profile settings](agent-cloud-profile.md#Specifying+Profile+Settings).
 
 If you need TeamCity to use a proxy to access EC2 services, please read on a current workaround in the dedicated [issue](http://youtrack.jetbrains.com/issue/TW-23637#comment=27-380892).
 

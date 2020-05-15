@@ -85,6 +85,7 @@
             </toc-element>
             <toc-element id="teamcity-integration-with-cloud-solutions.md" show-structure-for="chapter" show-structure-depth="4">
                <toc-element id="setting-up-teamcity-for-amazon-ec2.md" show-structure-for="chapter" show-structure-depth="4"/>
+               <toc-element id="setting-up-teamcity-for-kubernetes.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
             <toc-element id="disabling-teamcity-plugins.md"/>
