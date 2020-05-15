@@ -135,6 +135,12 @@ To get details about each processed request, turn on debug logging (for example,
 The TeamCity REST API can be configured to allow [cross-origin requests](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) using the `rest.cors.origins` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
  
 To allow requests from a page loaded from a specific domain, add the page address (including the __protocol and port__, __wildcards are not supported__) to the comma-separated [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `rest.cors.origins`. For example, `rest.cors.origins=http://myinternalwebpage.org.com:8080,https://myinternalwebpage.org.com`.
+
+<note>
+
+Since version 2020.1, TeamCity uses CSRF tokens to improve the security of REST API integration mechanisms. This change will affect the behavior of your existing custom integration scripts __only__ if you had enabled the `rest.cors.origins` internal property and if these scripts rely on CORS in writing operations. Refer to [upgrade notes](upgrade-notes.md#Limitation+of+CORS+support+for+writing+operations) for details.
+
+</note>
  
 To enable support for a [preflight OPTIONS request](https://youtrack.jetbrains.com/issue/TW-27606):
 1. Add the `rest.cors.optionsRequest.allowUnauthorized=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
