@@ -187,7 +187,7 @@ The requirements noted are for agent environment and are additional to those for
 
 * [AccuRev](https://plugins.jetbrains.com/plugin/8885?pr=teamcity)
 * [Bazaar](https://plugins.jetbrains.com/plugin/8886?pr=teamcity)
-* [PlasticSCM](https://plugins.jetbrains.com/plugin/9152?pr=teamcity) (related [details](http://www.plasticscm.com/infocenter/technical-articles/kb-how-to-integrate-plastic-scm-with-teamcity-ci.aspx))
+* [PlasticSCM](https://plugins.jetbrains.com/plugin/8889-plastic-scm?pr=teamcity) (related [details](http://www.plasticscm.com/infocenter/technical-articles/kb-how-to-integrate-plastic-scm-with-teamcity-ci.aspx))
 
 
 ## Cloud Agents Integration
