@@ -79,7 +79,7 @@ If you have commit hooks configured on the main server, no changes in hooks are 
 
 ### Processing Triggers on Secondary Node
 
-In setups with many build agents, a significant amount of the main server’s CPU is allocated to constant processing of build triggers. By enabling the _Processing build trigger_ responsibility for one or more secondary nodes, you can distribute the trigger processing tasks and CPU load between the main node and the responsible secondary ones.
+In setups with many build agents, a significant amount of the main server’s CPU is allocated to constant processing of build triggers. By enabling the _Processing build trigger_ responsibility for one or more secondary nodes, you can distribute the trigger processing tasks and CPU load between the main node and the responsible secondary ones. TeamCity distributes the triggers automatically but you can see what triggers are currently assigned to each node.
 
 ## User-level Actions on Secondary Node
 

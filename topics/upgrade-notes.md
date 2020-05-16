@@ -14,7 +14,7 @@ TeamCity Windows Tray Notifier has been deprecated in favor of the new [Browser 
 
 ### Bundled Kubernetes Support plugin does not contain Helm runner
 
-The [Kubernetes Support plugin](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) is now bundled with TeamCity. On upgrade, it will replace the external plugin if it is installed on your TeamCity server. Note that the bundled plugin does not contain the Helm build runner. To continue using this runner in your build configuration, please install the [new version]() of this plugin.
+The [Kubernetes Support plugin](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) is now bundled with TeamCity. On upgrade, it will replace the external plugin if it is installed on your TeamCity server. Note that the bundled plugin does not contain the Helm build runner. To continue using this runner in your build configuration, please install the [new version](https://plugins.jetbrains.com/plugin/14315-helm-support) of this plugin.
 
 ### Limitation of CORS support for writing operations
 
