@@ -106,3 +106,12 @@ Run a new pod based on a [deployment](https://kubernetes.io/docs/concepts/worklo
 Run a single [container](https://kubernetes.io/docs/concepts/containers/overview/) based on any given agent Docker image.
 * __Use custom pod template__   
 Enter your own [pod template](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/#pod-templates) in a YAML format. This option is recommended for accessing images located in private repositories: you can specify authentication parameters inside the template code.
+
+<seealso>
+        <category ref="concepts">
+            <a href="agent-cloud-profile.md">Agent Cloud Profile</a>
+        </category>
+        <category ref="installation">
+            <a href="teamcity-integration-with-cloud-solutions.md">TeamCity Integration with Cloud Solutions</a>
+        </category>
+</seealso>
