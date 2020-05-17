@@ -31,9 +31,16 @@ Note that the secondary node offers more features than the Running Builds Node a
 
 This section describes configuration requirements for setting up multiple TeamCity nodes.
 
+<tip>
+
+Before switching to the multinode setup, we recommend that your read how to [configure the TeamCity server for better performance](how-to.md#Configuring+TeamCity+Server+for+Performance).
+
+</tip>
+
+
 ### Shared Data Directory
 
-The main TeamCity server and secondary nodes require access to the same [TeamCity Data Directory](teamcity-data-directory.md) (which must be shared) and to the same database.
+The main TeamCity server and secondary nodes require access to the same [TeamCity Data Directory](teamcity-data-directory.md), which must be shared, and to the same database.
 
 For a high availability setup, we recommend storing the TeamCity Data Directory on a separate machine. In this case, even if the main server goes down, the secondary nodes will be able to connect to the shared Data Directory.
 
@@ -45,8 +52,26 @@ We recommend tuning storage and network performance: make sure to review perform
 
 Note that on Windows, a node might not be able to access the TeamCity Data Directory via a mapped network drive if TeamCity is running as a service. This happens because Windows services cannot work with mapped network drives, and TeamCity does not support the UNC format (`\\host\directory`) for the Data Directory path. To workaround this problem, you can use `mklink` as it allows making a symbolic link on a network drive:
 
-```Plain Text
+```Console
+
 mklink /d "C:\<path to mount point>" "\\<host>\<shared directory name>\"
+
+```
+
+Make sure remote-to-local symbolic link evaluations are enabled in your OS:
+
+```Console
+
+fsutil behavior query SymlinkEvaluation
+
+```
+
+To enable them, use the following command:
+
+```Console
+
+fsutil behavior set SymlinkEvaluation R2L:1
+
 ```
 
 #### Disabling network client caches on Data Directory mounts
