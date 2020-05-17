@@ -6,15 +6,17 @@
 ### Changes in Java support on server and agents
 
 * Java 11 has been bundled with the TeamCity server Windows installer and server Docker images instead of Java 8. 
-* TeamCity agents stop supporting Java versions earlier than 8.
+* TeamCity agents stop supporting Java versions earlier than 8. If any of your agents run on earlier versions of Java, make sure to upgrade their JRE so you can continue running builds on these agents.
 
 ### Deprecated Windows Tray Notifier
 
-TeamCity Windows Tray Notifier has been deprecated in favor of the new [Browser Notifier extension](browser-notifier.md). The __My Settings & Tools | Notification Rules | Windows Tray Notifier__ tab in TeamCity is renamed to __Browser Notifier__.
+TeamCity Windows Tray Notifier has been deprecated in favor of the new [Browser Notifier extension](browser-notifier.md).
+
+Windows Tray Notifier will continue working with the new version of TeamCity but we recommend you trying the new extension instead. Note that since version 2020.1, the __My Settings & Tools | Notification Rules | Windows Tray Notifier__ tab in TeamCity has been renamed to __Browser Notifier__.
 
 ### Bundled Kubernetes Support plugin does not contain Helm runner
 
-The [Kubernetes Support plugin](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) is now bundled with TeamCity. On upgrade, it will replace the external plugin if it is installed on your TeamCity server. Note that the bundled plugin does not contain the Helm build runner. To continue using this runner in your build configuration, please install the [new version](https://plugins.jetbrains.com/plugin/14315-helm-support) of this plugin.
+The [Kubernetes Support plugin](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) is now bundled with TeamCity. On upgrade, it will replace the external plugin if it is installed on your TeamCity server. Note that the bundled plugin does not contain the Helm build runner. To continue using this runner in your build configuration, please install the [new external plugin](https://plugins.jetbrains.com/plugin/14315-helm-support).
 
 ### Limitation of CORS support for writing operations
 
