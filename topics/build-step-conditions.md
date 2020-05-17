@@ -8,16 +8,16 @@ Execution conditions make builds more flexible and address many common use cases
 * running the step only in the `release` branch
 * skipping the step in [personal builds](personal-build.md)
 
-This three cases are instantly available in the build step __Add condition__ menu:
+You can quickly select any of the available common options in the build step __Add condition__ menu:
 
 <img src="execution-conditions.png" alt="Build step execution condition"/>
 
-Alternatively, you can select the __Other condition__ option to add the _parameter-based execution condition_, which is a logical condition that takes on input any [build parameter](configuring-build-parameters.md) provided by the TeamCity server or agent.
+Alternatively, select the __Other condition__ option to add the _parameter-based execution condition_, which is a logical condition that takes on input any [build parameter](configuring-build-parameters.md) provided by the TeamCity server or agent.
 
 A build step will be executed only if all its execution conditions are satisfied in the current build run.
 
 <tip>
 
-When triggering a [custom build](triggering-a-custom-build.md), you can change the values of parameters responsible for steps' execution. This way, you can flexibly control a single build run: for example, run a quick build without engaging tests or other optional steps.
+When triggering a [custom build](triggering-a-custom-build.md), you can change the values of the parameters responsible for steps' execution. This way, you can flexibly control a single build run: for example, run a quick build without engaging tests or other optional steps.
 
 </tip>
