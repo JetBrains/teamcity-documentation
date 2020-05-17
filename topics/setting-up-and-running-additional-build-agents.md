@@ -137,9 +137,9 @@ On Windows, you may also want to install the [build agent Windows service](#Buil
 
 <tip>
 
-\* A minimal TeamCity agent distribution does not contain plugins: the agent downloads them on the first start. The full agent contains all enabled plugins and automatically stays relevant with the current TeamCity server state. This makes its distribution archive larger but significantly reduces the time spent on the first agent run.
+__\*__ A __minimal TeamCity agent__ distribution does not contain plugins: the agent downloads them on the first start. The __full agent__ contains all enabled plugins and automatically stays relevant with the current TeamCity server state. This makes its distribution archive larger but significantly reduces the time spent on the first agent run.
 
-The full agent is the most convenient if you use scripts for creating and cloning agent images (for example, [in cloud](agent-cloud-profile.md)). Each cloned instance will be synchronized with the server from the start and can instantly run a build.
+The full agent is the most convenient if you use scripts for creating agent images (for example, [in cloud](agent-cloud-profile.md)). All instances will be synchronized with the server from the start and can instantly run a build.
 
 Note that after starting, the full agent behaves like a regular agent. If you modify the state of plugins on the TeamCity server, all active agents will need to restart to sync with the server.
 
