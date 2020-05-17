@@ -8,11 +8,11 @@ It uses the [Jira Software Cloud REST API](https://developer.atlassian.com/cloud
 ## Jira Cloud Integration Settings
 
 To set up this feature, select the required [connection to Jira Cloud](jira.md) from those available among all parent projects.   
-For a deployment build configuration, specify an environment type (for example, _testing_ or _production_) and an environment name. These options are required to show the deployment information in Jira Cloud.
+For a deployment build configuration, you need to also specify an environment type (for example, _testing_ or _production_) and an environment name. These options are required to show the deployment information in Jira Cloud.
 
 ## Viewing Build Statuses in Jira Cloud
 
-If you mention a Jira task ID in the commit message in VCS, TeamCity will detect this message during the build containing this commit and send information about the build to Jira Cloud.
+If you mention a Jira task ID in a commit message in VCS, TeamCity will detect this message during the build containing this commit and send information about the build to Jira Cloud.
 
 The build status will be displayed in the Jira task details:
 
