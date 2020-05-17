@@ -391,6 +391,6 @@
    </toc-element>
    <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
    <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
-   <toc-element toc-title="TeamCity 2019.1 Help" href="https://www.jetbrains.com/help/teamcity/2019.1/teamcity-documentation.html"/>
+   <toc-element toc-title="TeamCity 2019.2 Help" href="https://www.jetbrains.com/help/teamcity/2019.2/teamcity-documentation.html"/>
    <toc-element toc-title="Documentation for Previous Versions" href="https://confluence.jetbrains.com/display/TW/Documentation"/>
 </product-profile>
