@@ -33,7 +33,7 @@ If necessary, you can enforce verification of `Origin/Referer` headers for writi
 * Bundled __Tomcat__ has been updated to version __8.5.54__.
 * Bundled __Maven__ has been updated to version __3.6.3__.
 * __Kotlin__, used in TeamCity DSL, has been updated to version __1.3.70__.
-* JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
+* JDBC drivers for external databases, suggested on the fresh TeamCity installation, have been updated to the following versions:
      * MySQL - 8.0.20
      * MSSQL - 8.2.2
      * PostgreSQL - 42.2.12
