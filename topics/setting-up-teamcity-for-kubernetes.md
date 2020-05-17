@@ -1,7 +1,13 @@
 [//]: # (title: Setting Up TeamCity for Kubernetes)
 [//]: # (auxiliary-id: Setting Up TeamCity for Kubernetes)
 
-Since version 2020.1, the [Kubernetes Support](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) plugin is bundled with TeamCity. The plugin adds the Kubernetes type of [cloud profile](agent-cloud-profile.md) and allows running [build agents](build-agent.md) in your K8S cluster. If you are using Kubernetes in your production pipeline, you can utilize its wide toolset for automatic orchestration and scheduling of TeamCity build agents.
+Since version 2020.1, the [Kubernetes Support](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) plugin is bundled with TeamCity. The plugin adds the Kubernetes type of [cloud profile](agent-cloud-profile.md) and allows running [build agents](build-agent.md) in your K8S cluster.
+
+<note>
+
+If you were using the Helm build runner, included in the external Kubernetes Support plugin, note that the built-in integration does not comprise the Helm runner. Refer to our [upgrade notes](upgrade-notes.md#Bundled+Kubernetes+Support+plugin+does+not+contain+Helm+runner) for more details.
+
+</note>
 
 ## Requirements
 
