@@ -459,6 +459,20 @@ To resolve this issue, we suggest that you use Xcode 11 instead. To workaround t
 
 ## Issues per TeamCity versions
 
+### 2020.1 Known Issues
+
+#### Problems with built-in authentication in upgraded 2020.1 EAP1 installations
+
+If you had installed the 2020.1 EAP1 build in terms of our Early Access Program, you might experience problems with signing in to TeamCity via the [built-in authentication](configuring-authentication-settings.md#Built-in+Authentication). This issue might occur after upgrading from any 2020.1 EAP version (EAP1 or any later version to which it was upgraded) to the release 2020.1 build.
+
+To workaround this problem, please send the following query to the TeamCity database:
+
+```Console
+
+UPDATE users SET algorithm = 'BCRYPT' WHERE password like '$2a$07$%' and algorithm = 'MD5';
+
+```
+
 ### 2019.2.3 Known Issues
 
 #### Handshake failure on establishing SSL connection
