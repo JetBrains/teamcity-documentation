@@ -14,7 +14,7 @@ You can quickly select any of the available common options in the build step __A
 
 Alternatively, select the __Other condition__ option to add the _parameter-based execution condition_, which is a logical condition that takes on input any [build parameter](configuring-build-parameters.md) provided by the TeamCity server or agent.
 
-A build step will be executed only if all its execution conditions are satisfied in the current build run.
+If you declare multiple execution conditions, the build step will be executed only if __all__ of them are satisfied in the current build run.
 
 <tip>
 

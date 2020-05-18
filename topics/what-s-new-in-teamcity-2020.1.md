@@ -3,7 +3,7 @@
 
 ## Conditional build steps
 
-Now, you get granular control over build steps with the new __execution conditions__. When running a build, TeamCity will execute each step only if all its preconditions, configured by you, are satisfied in the current run.
+Now, you get granular control over build steps with the new __[execution conditions](build-step-conditions.md)__. When running a build, TeamCity will execute each step only if __all__ its preconditions, configured by you, are satisfied in the current run.
 
 In the advanced build step settings, click __Add condition__ and specify a logical condition for any build parameter provided by the TeamCity server or agent. You can quickly select among the example conditions, such as:
 * _Run the step only in the default branch_
@@ -70,6 +70,14 @@ Example of a TeamCity notification in Slack:
 
 <img src="wn-slack-notification.png" alt="TeamCity notification in Slack"/>
 
+## New Browser Notifier
+
+In the scope of our 2020.1 release, we have presented the new TeamCity Browser Notifier extension. It automatically detects the active TeamCity session in a browser and sends real-time notifications about build statuses and events, based on your custom rules. The extension is available for Mozilla Firefox, Opera, and Google Chrome (including all Chromium-based browsers such as Microsoft Edge).
+
+The new Browser Notifier aims at replacing the deprecated Windows Tray Notifier and automatically uses all rules configured for it, if any.
+
+Read more about the Notifier's handy features in [our blog](https://blog.jetbrains.com/teamcity/2020/05/new-teamcity-notifier-browser-extension/).
+
 ## Downloading full agent with plugins
 
 You can now access a full TeamCity agent, packed with all plugins currently enabled on the server. This option is the most convenient if you use scripts for creating agent images (for example, in cloud).
@@ -112,8 +120,6 @@ In setups with many projects and build configurations, a significant amount of t
 Secondary nodes now allow changing user settings, checking for pending changes, performing various agent-related actions, and more. Refer to [our documentation](configuring-secondary-node.md#User-level+Actions+on+Secondary+Node) for the full list of available actions.
 * __Automatic update via web UI__.   
 Use our [autoupdate](upgrade.md#Automatic+Update) on secondary nodes, similarly to the main server experience.
-* __Improved support of internal properties__.   
-Secondary nodes now rely both on common internal properties, shared between all nodes, and node-specific properties that have a higher priority over common. Refer to the [Configuring secondary node](configuring-secondary-node.md#Internal+Properties) page for more details.
 * __Agent | Cloud tab__.   
 You can now monitor cloud agents right on a secondary node.
 
