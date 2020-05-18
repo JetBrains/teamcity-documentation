@@ -100,6 +100,12 @@ The upgrade procedure involves two steps:
 Instead of upgrading manually, you can always regenerate all of your Kotlin DSL scripts for your projects, unless you did not change them in the VCS repository since versioned settings were enabled in your project. To do this, you can disable and enable versioned settings again, and select the "_Overwrite_" option in the confirmation dialog. After that, TeamCity will make a commit to your VCS repository removing all previously generated Kotlin files and adding newly generated files corresponding to the current TeamCity version.
     </note>
 
+<anchor name="dsl20201"/>
+
+## Update DSL from 2019.2.x to 2020.1.x
+
+* The bundled Kotlin version has been updated to 1.3.70.
+
 <anchor name="dsl20192"/>
 
 ## Update DSL from 2019.1.x to 2019.2.x
