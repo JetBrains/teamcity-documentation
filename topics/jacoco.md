@@ -5,7 +5,7 @@ TeamCity supports [JaCoCo](http://www.eclemma.org/jacoco), a Java Code Coverage 
 
 JaCoCo is available for the following build runners: [Ant](ant.md), [IntelliJ IDEA Project](intellij-idea-project.md), [Gradle](gradle.md), and [Maven](maven.md).
 
-TeamCity 2019.2 offers three bundled versions of JaCoCo:
+TeamCity 2020.1 offers three bundled versions of JaCoCo:
 * 0.7.5 (default)
 * 0.8.2
 * 0.8.4

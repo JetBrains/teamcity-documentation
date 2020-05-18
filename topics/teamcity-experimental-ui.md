@@ -5,7 +5,7 @@ In version 2019.1, TeamCity introduced an experimental UI option as an alternati
  
 Our goal is to provide a support for all the important classic features in the new UI before making it a default option. However, many users of TeamCity have successfully switched to the new UI already and use it in terms of their production pipeline.
 
-We encourage you to try the TeamCity experimental UI and leave your feedback via our [UI survey](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2019.2).
+We encourage you to try the TeamCity experimental UI and leave your feedback via our [UI survey](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2020.1).
   
 ## Enabling and disabling experimental UI
 
