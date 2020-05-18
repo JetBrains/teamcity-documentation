@@ -8,6 +8,17 @@
 * Java 11 has been bundled with the TeamCity server Windows installer and server Docker images instead of Java 8. 
 * TeamCity agents stop supporting Java versions earlier than 8. If any of your agents run on earlier versions of Java, make sure to upgrade their JRE so you can continue running builds on these agents.
 
+#### New format of env.JDK_ environment variables
+ 
+To better align with current and future Java versions we've introduced a new format of `env.JDK_` environment variables.
+Starting with 2020.1 the format is as follows: `env.JDK_<major>_<minor>[_x64]`, for example: `env.JDK_1_6`, `env.JDK_1_7`, `env.JDK_1_8`, `env_JDK_11_0_x64` etc.
+So in case of pretty old Java 1.4, the proper variable is `env.JDK_1_4`, while `env.JDK_14_0` will be used for Java 14.0.
+
+For backward compatibility previous environment variables, like `env.JDK_16` or `env.JDK_18` will be generated too, but these variables will be no longer shown in TeamCity auto-completion popups.
+If you're using these environment variables in your build scripts, we encourage you to migrate to the new format.
+
+Related [issue](https://youtrack.jetbrains.com/issue/TW-64998)
+
 ### Deprecated Windows Tray Notifier
 
 TeamCity Windows Tray Notifier has been deprecated in favor of the new [Browser Notifier extension](browser-notifier.md).
