@@ -99,11 +99,15 @@ The experimental __Agents__ page loads faster for a large number of agents and a
 
 The page provides a better hierarchical view of agent pools and makes it easier to see all their assigned projects and cloud images.
 
+The __All Agents__ view gives a quick preview of all agents' statuses and allows managing them side by side, on a single dashboard.
+
 ### Experimental sidebar
 
 The experimental sidebar is available for the project hierarchy and agent hierarchy. Depending on the current page, it serves for better navigation between either projects and build configurations, or build agents.
 
 You can change the sidebar width by dragging its frame border and hide/show it anytime by clicking the corresponding button at its bottom.
+
+To customize a sidebar, click ![wn-pencil.png](wn-pencil.png) in its upper-right corner. In the customization menu, you can move a project or build configuration in the list via a keyboard or using the arrow UI button, or mark/clear projects as favorite.
 
 #### Projects sidebar
 
