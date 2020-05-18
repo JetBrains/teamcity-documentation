@@ -3,7 +3,7 @@
     <variables>
         <download-page/>
         <search-scope/>
-        <fallback-url>https://confluence.jetbrains.com/display/TCD18/</fallback-url>
+        <fallback-url>https://www.jetbrains.com/help/teamcity/</fallback-url>
         <help-app-version>3</help-app-version>
         <config-feedbackRequireEmail>false</config-feedbackRequireEmail>
         <hide-last-modified>true</hide-last-modified>
