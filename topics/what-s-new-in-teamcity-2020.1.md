@@ -1,12 +1,6 @@
 [//]: # (title: What's New in TeamCity 2020.1)
 [//]: # (auxiliary-id: What's New in TeamCity 2020.1)
 
-<note>
-
-You are viewing the trial version of the documentation. The new version of TeamCity is still in progress.
-
-</note>
-
 ## Conditional build steps
 
 Now, you get granular control over build steps with the new __execution conditions__. When running a build, TeamCity will execute each step only if all its preconditions, configured by you, are satisfied in the current run.
