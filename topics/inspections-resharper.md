@@ -317,6 +317,20 @@ ReSharper Version
 
 </td></tr>
 
+<tr>
+
+<td>
+
+2020.1
+
+</td>
+
+<td>
+
+2019.2.3
+
+</td></tr>
+
 
 
 </table>

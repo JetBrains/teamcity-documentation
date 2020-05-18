@@ -174,6 +174,20 @@ dotCover Version
 
 </td></tr>
 
+<tr>
+
+<td>
+
+2020.1
+
+</td>
+
+<td>
+
+2019.2.3
+
+</td></tr>
+
 </table>
 
 You can view the installed versions of dotCover on the __Server Administration | Tools__ page. The bundled version is set as default, you can install other versions and change the default settings.
