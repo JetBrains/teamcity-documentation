@@ -283,6 +283,36 @@ In case the [server-side checkout](vcs-checkout-mode.md#server-checkout) is used
 * trigger the build.
 the build log and the agent log will contain the line "Patch is saved to file $\{file.name\}"Get the file and supply it with the problem description.
 
+## VCS trigger debug logging
+
+To enable debug logging in a VCS trigger in a specific build configuration please do the following:
+
+1. Take a default logging preset file ``<TeamCity installation directory>/conf/teamcity-server-log4j.xml`` and save it with some other name under the ``<TeamCity data directory>/config/_logging/`` directory.
+2. Modify the resulting file as follows:
+   * add a new appender to log VCS trigger related events to a separate file: 
+   ```XML
+     <appender name="ROLL.VCS.TRIGGER" class="jetbrains.buildServer.util.TCRollingFileAppender">
+       <param name="file" value="${teamcity_logs}/teamcity-vcs-trigger.log"/>
+       <param name="maxBackupIndex" value="20"/>
+       <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="[%d] %6p [%15.15t] - %30.30c - %m%n"/>
+        </layout>
+     </appender>
+    ```
+    * add a new category with name ``jetbrains.buildServer.buildTriggers.vcs.AllBranchesVcsTrigger_<build configuration id>``:
+    ```XML
+      <category name="jetbrains.buildServer.buildTriggers.vcs.AllBranchesVcsTrigger_MyBuildConfigurationId">
+        <priority value="DEBUG"/>
+        <appender-ref ref="ROLL.VCS.TRIGGER"/>
+      </category>
+   ```
+   Note: in the example above ``MyBuildConfigurationId`` is an ID of the build configuration with a VCS trigger which we want to debug.
+
+3. Select modified logging preset on the Administration -> Diagnostics page
+
+No server restart is required. If configuration is correct, then after a few minutes ``teamcity-vcs-trigger.log`` log file will be created and it will have debug logging related to the selected configuration only.
+
+
 ## Logging for .NET Runners
 
 To investigate process launch issues for [.NET-related runners](supported-platforms-and-environments.md#Supported+.NET+platform+build+runners), enable debugging as described below. The detailed information will then be printed into the build log. It is recommended not to have the debug logging for a long time and revert the settings after investigation.
