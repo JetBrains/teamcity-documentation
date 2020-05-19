@@ -161,7 +161,6 @@ The __Project Home__ page, introduced in the experimental UI in TeamCity 2019.1,
 ## Other improvements
 
 * Java 11 has been bundled with the TeamCity server Windows installer and server Docker images instead of Java 8.
-* Disabled cloud agents will not be terminated on matching the [terminate condition](agent-cloud-profile.md#agent-terminate-condition). This allows for easier diagnostics of cloud instances: you can disable a required agent and inspect its behavior without worrying that TeamCity will terminate it automatically.
 * Automatic assignment of investigations on second failure has been optimized (read more in [our documentation](investigations-auto-assigner.md#delay-auto-assign)).
 * TeamCity now uses the BCrypt algorithm to make user password storage safer.
 * The __Project Settings | Build Schedule__ tab now has an alternative filter option: hide triggers with the enabled "_Trigger only if there are pending changes_" option. This helps to quickly find all triggers where this option is disabled if you need to investigate the builds' behavior.

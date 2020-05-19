@@ -122,12 +122,6 @@ Specify how many minutes before the full hour an idle instance should be stopped
 * _After the first build_:   
 Select this option if you want TeamCity to stop the virtual machine immediately after the first build finishes. TeamCity will disable the build agents, and no more builds will be run on the same machine.
 
-<note>
-
-TeamCity will not terminate __disabled__ cloud agents on matching a terminate condition. This allows for easier diagnostics of cloud instances: you can disable a required agent to inspect its behavior without interruption.
-
-</note>
-
 </td></tr></table>
 
 Next, you need to provide the cloud access information which will differ depending on the provider. After that, you can check the connection and add an image to be used as a source for TeamCity cloud agents.
