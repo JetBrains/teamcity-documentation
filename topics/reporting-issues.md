@@ -308,7 +308,7 @@ To enable debug logging in a VCS trigger in a specific build configuration pleas
    ```
    Note: in the example above `MyBuildConfigurationId` is an ID of the build configuration with a VCS trigger which we want to debug.
 
-3. [Switch the logging preset](teamcity-server-logs.md) to the newly created logging preset file
+3. Switch the logging preset on the __Administration | Diagnostics page__ to the newly created logging preset file
 
 No server restart is required. If configuration is correct, then after a few minutes `teamcity-vcs-trigger.log` log file will be created and it will have debug logging related to the selected configuration only.
 
