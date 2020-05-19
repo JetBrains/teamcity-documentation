@@ -60,7 +60,7 @@ To display the hidden files and directories, press `Command` + `Shift` + `.` ins
 When creating an empty project, that's what you see in `settings.kts` in your IDE:
 
 ```Kotlin
-import jetbrains.buildServer.configs.kotlin.v2020_1.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.*
 /* some comment text */
 version = "2020.1"
  
@@ -426,7 +426,7 @@ In the non-portable format each project has the following `settings.kts` file:
 
 ```Kotlin
 package MyProject
-import jetbrains.buildServer.configs.kotlin.v2020_1.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.*
 /* ... */
 version = "2020.1"
 

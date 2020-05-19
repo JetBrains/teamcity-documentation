@@ -31,7 +31,7 @@ In TeamCity 2017.1, these settings were moved to the project level. TeamCity can
 
 ### Kotlin DSL API version
 
-The DSL API version is encoded into the package name, for example: `jetbrains.buildServer.configs.kotlin.v2020_1`. The version part there corresponds to TeamCity version when this DSL API was introduced.
+The DSL API version is encoded into the package name, for example: `jetbrains.buildServer.configs.kotlin.v2019_2`. The version part there corresponds to TeamCity version when this DSL API was introduced.
 
 The new DSL API version is usually introduced when there are significant incompatible changes in DSL API.
 
@@ -67,8 +67,8 @@ The upgrade procedure involves two steps:
      ```
      should be changed to:
      ```Kotlin
-     import jetbrains.buildServer.configs.kotlin.v2020_1.*
-     import jetbrains.buildServer.configs.kotlin.v2020_1.projectFeatures.*
+     import jetbrains.buildServer.configs.kotlin.v2019_2.*
+     import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.*
      ```
      Usually this can be done with the help of search-and-replace in all import statements. After that, and after fixing all the compilation errors which may occur after this change, the modified Kotlin files can be committed and DSL should continue working as before.
 
