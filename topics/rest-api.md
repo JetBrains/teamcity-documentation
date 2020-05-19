@@ -72,9 +72,10 @@ You can use the [super user account](super-user.md) with REST API: just provide 
  
 As REST API evolves from one TeamCity version to another, there can be incompatible changes in the protocol.
  
-Under the [`http://teamcity:8111/app/rest/`](http://teamcity:8111/app/rest/) or [`http://teamcity:8111/app/rest/latest`](http://teamcity:8111/app/rest/latest) URL the latest version is available. Under the [`http://teamcity:8111/app/rest/<version>`](http://teamcity:8111/app/rest/<version>) URLs other versions CAN be available. Our general policy is to supply TeamCity with at least one previous version. The REST API protocol version is the TeamCity version where this protocol was first introduced.
+Under the [`http://teamcity:8111/app/rest/`](http://teamcity:8111/app/rest/) or [`http://teamcity:8111/app/rest/latest`](http://teamcity:8111/app/rest/latest) URL the latest version is available.
 
-You can use `2018.1` instead of `<version>` to get the latest version of REST API or `2017.2`, `2017.1`, `10.0`, `9.1`, `9.0`, `8.1`, `8.0` to get earlier versions of the protocol.
+Earlier versions might be available under the [`http://teamcity:8111/app/rest/<version>`](http://teamcity:8111/app/rest/<version>) URL. Our general policy is to supply TeamCity with at least one previous version. The REST API protocol version is the TeamCity version where this protocol was first introduced.   
+The latest legacy version of the protocol is 2018.1: use `2018.1` instead of `<version>` to access it. Other bundled versions are: `2017.2`, `2017.1`, `10.0`, `9.1`, `9.0`, `8.1`, `8.0`.
  
 Breaking changes in the API are described in the related [Upgrade Notes](upgrade-notes.md) section. Note that additions to the objects returned (such as new XML attributes or elements) are not considered major changes and do not cause the protocol version to increment. Also, the endpoints marked with `Experimental` comment in `application.wadl` may change without a special notice in future versions.
  
