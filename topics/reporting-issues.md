@@ -287,7 +287,7 @@ the build log and the agent log will contain the line "Patch is saved to file $\
 
 To enable debug logging in a VCS trigger in a specific build configuration please do the following:
 
-1. Take a default logging preset file ``<TeamCity installation directory>/conf/teamcity-server-log4j.xml`` and save it with some other name under the ``<TeamCity data directory>/config/_logging/`` directory.
+1. Take a default logging preset file `<`[`TeamCity Home`](teamcity-home-directory.md)`>/conf/teamcity-server-log4j.xml` and save it with some other name under the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging/` directory.
 2. Modify the resulting file as follows:
    * add a new appender to log VCS trigger related events to a separate file: 
    ```XML
@@ -299,18 +299,18 @@ To enable debug logging in a VCS trigger in a specific build configuration pleas
         </layout>
      </appender>
     ```
-    * add a new category with name ``jetbrains.buildServer.buildTriggers.vcs.AllBranchesVcsTrigger_<build configuration id>``:
+    * add a new category with name `jetbrains.buildServer.buildTriggers.vcs.AllBranchesVcsTrigger_<build configuration id>`:
     ```XML
       <category name="jetbrains.buildServer.buildTriggers.vcs.AllBranchesVcsTrigger_MyBuildConfigurationId">
         <priority value="DEBUG"/>
         <appender-ref ref="ROLL.VCS.TRIGGER"/>
       </category>
    ```
-   Note: in the example above ``MyBuildConfigurationId`` is an ID of the build configuration with a VCS trigger which we want to debug.
+   Note: in the example above `MyBuildConfigurationId` is an ID of the build configuration with a VCS trigger which we want to debug.
 
-3. Select modified logging preset on the Administration -> Diagnostics page
+3. [Switch the logging preset](teamcity-server-logs.md) to the newly created logging preset file
 
-No server restart is required. If configuration is correct, then after a few minutes ``teamcity-vcs-trigger.log`` log file will be created and it will have debug logging related to the selected configuration only.
+No server restart is required. If configuration is correct, then after a few minutes `teamcity-vcs-trigger.log` log file will be created and it will have debug logging related to the selected configuration only.
 
 
 ## Logging for .NET Runners
