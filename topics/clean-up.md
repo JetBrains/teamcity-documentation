@@ -10,6 +10,13 @@ It is recommended to configure clean-up rules to remove obsolete builds and thei
 
 Clean-up deletes the data stored under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system` and in the database. Also, during the clean-up, the server performs various maintenance tasks (for example, resets VCS full patch caches).
 
+<note>
+
+Note that in case of any critical configuration errors on the server, TeamCity will not clean up the data of deleted projects and build configurations.   
+To see all the current server warnings and errors, go to __Administration | Project-related Settings | Server Health__.
+
+</note>
+
 ## Server Clean-up Settings
 
 The _server clean-up settings_ are configured in __Administration | Server Administration | Clean-up Settings__.
