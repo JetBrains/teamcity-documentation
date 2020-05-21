@@ -1,7 +1,7 @@
 [//]: # (title: Notifications)
 [//]: # (auxiliary-id: Notifications)
 
-The _Notifications_ build feature is responsible for sending notifications about the build statuses and events to external services. Currently, the feature comprises __Email Notifier__ and __Slack Notifier__.
+The _Notifications_ build feature is responsible for sending notifications about build statuses and events to external services. Currently, the feature comprises __Email Notifier__ and __Slack Notifier__.
 
 This feature compliments the functionality of [project-level notifications](subscribing-to-notifications.md) that can be assigned to a particular user or user group.   
 The Notifications feature allows configuring _notifications per build configuration_. This approach does not require referencing a specific TeamCity user and works better for group notifications.
@@ -14,11 +14,13 @@ For each type of Notifier you can select [events to watch](subscribing-to-notifi
 
 ## Email Notifier
 
-Email Notifier requires entering a target email only. For example, you can specify an email list address, and all its subscribers will be receiving build notifications automatically.
+The Email Notifier feature requires entering a target email only. For example, you can specify an email list address, and all its subscribers will be receiving build notifications automatically.
+
+Note that TeamCity Email Notifier relies on the SMTP server settings configured in __Administration | Server Administration__.
 
 ## Slack Notifier
 
-Slack Notifier relies on a [Slack connection](#Configuring+Slack+Connection), preconfigured in the parent project's settings, and requires an ID of a channel or user who will be receiving notifications.
+The Slack Notifier feature relies on a [Slack connection](#Configuring+Slack+Connection), preconfigured in the parent project's settings, and requires entering an ID of a channel or user who will be receiving notifications.
 
 <tip>
 
@@ -44,6 +46,6 @@ After creating the app, enter its parameters in the _Add connection_ form in Tea
             <a href="subscribing-to-notifications.md">Subscribing to Notifications</a>
         </category>
         <category ref="admin-guide">
-            <a href="notifications.md">Customizing Notifications</a>
+            <a href="customizing-notifications.md">Customizing Notifications</a>
         </category>
 </seealso>
