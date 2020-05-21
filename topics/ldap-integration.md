@@ -50,10 +50,7 @@ The general login sequence is as follows:
 
 When users log in via LDAP, TeamCity does not store the user passwords. On each user login, authentication is performed by a direct login into LDAP with the credentials based on the values entered in the login form.
 
-Note that in certain configurations (for example, with `java.naming.security.authentication=simple`) the login information will be sent to the LDAP server in the unencrypted form. For securing the connection, refer to [Sun documentation](http://java.sun.com/products/jndi/tutorial/ldap/security/sasl.html). Another option is to configure communications via the ldaps protocol.
-
-Also read on [How To Set Up Secure LDAP Authentication with TeamCity](http://www.therightstuff.de/2009/02/02/How-To-Set-Up-Secure-LDAP-Authentication-With-TeamCity.aspx).
-
+Note that in certain configurations (for example, with `java.naming.security.authentication=simple`) the login information will be sent to the LDAP server in the unencrypted form. For securing the connection, refer to [Sun documentation](http://java.sun.com/products/jndi/tutorial/ldap/security/sasl.html). Another option is to configure communications via the LDAPS protocol.
 
 [//]: # (Internal note. Do not delete. "LDAP Integrationd195e199.txt")    
 
