@@ -24,5 +24,6 @@ For example, if a project key is `WEB`, an issue key like `WEB-101`, mentioned i
         </category>
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-issue-tracker.md">Integrating TeamCity with Issue Tracker</a>
+            <a href="jira-cloud-integration.md">Jira Cloud Integration</a>
         </category>
 </seealso>

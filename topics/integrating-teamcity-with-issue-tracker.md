@@ -115,7 +115,7 @@ Credentials to log in to the issue tracker, if it requires authorization.
 
 Additional authentication information or/and the details on how to specify strings to be recognized by TeamCity and converted to your tracker issue links is provided in the corresponding sections:
 * [YouTrack](youtrack.md)
-* [JIRA](jira.md)
+* [Jira](jira.md)
 * [Bugzilla](bugzilla.md)
 * [GitHub](github.md)
 * [Bitbucket Cloud](bitbucket-cloud.md)
@@ -129,7 +129,7 @@ Dedicated support for an issue tracker can also be added via a custom [issue tra
 
  <seealso>
         <category ref="concepts">
-            <a href="supported-platforms-and-environments.md">Supported Issue Trackers</a>
+            <a href="supported-platforms-and-environments.md#Issue+Tracker+Integration">Supported Issue Trackers</a>
         </category>
         <category ref="admin-guide">
             <a href="mapping-external-links-in-comments.md">Mapping External Links in Comments</a>
