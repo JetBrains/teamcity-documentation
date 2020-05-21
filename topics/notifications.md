@@ -38,7 +38,7 @@ When configuring the app in Slack, make sure to add all possible endpoint addres
 
 <tip>
 
-If you use nginx to configure the URL of your TeamCity server, you might need to update the Tomcat settings as described [here](how-to.md#Proxy-Tomcat-RemoteIpValve).
+If you use nginx to set up TeamCity behind a proxy server, you might also need to update the Tomcat settings as described [here](how-to.md#Proxy-Tomcat-RemoteIpValve).
 
 </tip>
 
