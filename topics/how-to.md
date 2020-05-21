@@ -719,7 +719,7 @@ When the public server address is __HTTPS__, use the `secure="true"` and `scheme
 ### "RemoteIpValve" Approach
 [//]: # (AltHead: Proxy-Tomcat-RemoteIpValve)
 
-This approach can be used when the proxy server sets  "X\-Forwarded\-Proto", "X\-Forwarded\-Port" request headers to the values of the original URL. Also, while not critical for the most setups, this approach can be used to make sure the original client IP is passed to the TeamCity server correctly. This is important for legacy agents' [bidirectional communication](setting-up-and-running-additional-build-agents.md#Bidirectional+Communication).
+This approach can be used when the proxy server sets `X-Forwarded-Proto`, `X-Forwarded-Port` request headers to the values of the original URL. Also, while not critical for the most setups, this approach can be used to make sure the original client IP is passed to the TeamCity server correctly. This is important for legacy agents' [bidirectional communication](setting-up-and-running-additional-build-agents.md#Bidirectional+Communication).
 
 Add the following into the Tomcat main &lt;Host&gt; node of the `conf\server.xml` file (see also Tomcat [doc](http://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/valves/RemoteIpValve.html)):
 
@@ -735,19 +735,14 @@ Add the following into the Tomcat main &lt;Host&gt; node of the `conf\server.xml
 
 ```
 
-
-
-It is also recommended to specify `internalProxies` attribute with the regular expression matching only IP address of the proxy server. e.g. `internalProxies="192\.168\.0\.1"`
+It is also recommended to specify the `internalProxies` attribute with the regular expression matching only the IP address of the proxy server. For example, `internalProxies="192\.168\.0\.1"`.
 
 
 [//]: # (Internal note. Do not delete. "How To...d160e1383.txt")    
 
-
-
-
 ## Configure HTTPS for TeamCity Web UI
 
-TeamCity does not provide out\-of\-the\-box support for HTTPS access (see [TW-12976](http://youtrack.jetbrains.com/issue/TW-12976#comment=27-348823)). It is highly recommended to set up a reverse proxy like Nginx or Apache in front of TeamCity that would handle HTTPS and use HTTP TeamCity server port as the upstream. HTTPS\-related configuration of the proxy is not specific for TeamCity and is generic as for any Web application. Make sure to configure the reverse proxy per [our recommendations](#Set+Up+TeamCity+behind+a+Proxy+Server) below. Generic web application best practices apply (like disabling http access to TeamCity at all).
+TeamCity does not provide out-of-the-box support for HTTPS access (see [TW-12976](http://youtrack.jetbrains.com/issue/TW-12976#comment=27-348823)). It is highly recommended to set up a reverse proxy like Nginx or Apache in front of TeamCity that would handle HTTPS and use HTTP TeamCity server port as the upstream. HTTPS\-related configuration of the proxy is not specific for TeamCity and is generic as for any Web application. Make sure to configure the reverse proxy per [our recommendations](#Set+Up+TeamCity+behind+a+Proxy+Server) below. Generic web application best practices apply (like disabling http access to TeamCity at all).
 
 For small servers, you can set up HTTPS via the internal [Tomcat means](https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html), but this is not recommended as it may significantly increase the CPU load.
 
