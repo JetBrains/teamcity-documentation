@@ -19,3 +19,9 @@ The build status will be displayed in the Jira task details:
 <img src="jira-cloud-integration.png" alt="TeamCity build status in Jira Cloud" width="800"/>
 
 You can click the status to see more information on __Builds__ (for regular and [composite](composite-build-configuration.md) builds) or __Deployments__ (for [deployment](deployment-build-configuration.md) builds) tabs.
+
+<seealso>
+        <category ref="troubleshooting">
+            <a href="known-issues.md#2020.1+Known+Issues">Jira Cloud known issues in TeamCity 2020.1</a>
+        </category>
+</seealso>

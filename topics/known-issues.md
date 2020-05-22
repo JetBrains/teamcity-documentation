@@ -461,6 +461,20 @@ To resolve this issue, we suggest that you use Xcode 11 instead. To workaround t
 
 ### 2020.1 Known Issues
 
+#### Jira Cloud Integration build feature requires specific VCS URL
+
+The Jira Cloud API, used by the new [Jira Cloud integration](jira-cloud-integration.md) build feature, requires sending a server URL in a specific format. Because of that, the build feature does not support VCSs like Perforce, TFS, and SVN out of the box.
+
+To address this issue, we have updated the responsible plugin, and you can find it attached to the related [issue](https://youtrack.jetbrains.com/issue/TW-66118) in our tracker. Please download the fixed plugin and install it as described [here](installing-additional-plugins.md).   
+The bundled Jira Cloud plugin will be automatically updated with this fix in our next release.
+
+The feature might also fail to resolve some Git paths that do not correspond to the format expected by the Jira Cloud API. In this case, you can either change the URL manually (for example, from `git@<vcs_address>:<workspace_ID>/<repo_name>.git` to `ssh://git@<vcs_address>/<workspace_ID>/<repo_name>.git`) or download the fixed plugin as described above.
+
+#### Jira Cloud Integration feature does not support legacy Jira Cloud domain
+
+Currently, the new [Jira Cloud integration](jira-cloud-integration.md) build feature supports only `atlassian.net` domains. We have added the support of the legacy `jira.com` domain in the fixed version of the responsible plugin. If your Jira Cloud server resides on the `jira.com` domain, you can download the plugin, attached to the [related issue](https://youtrack.jetbrains.com/issue/TW-66103#focus=streamItem-27-4154698.0-0), and install it as described [here](installing-additional-plugins.md).   
+The bundled Jira Cloud plugin will be automatically updated with this fix in our next release.
+
 #### Problems with built-in authentication in upgraded 2020.1 EAP1 installations
 
 If you had installed the 2020.1 EAP1 build in terms of our Early Access Program, you might experience problems with signing in to TeamCity via the [built-in authentication](configuring-authentication-settings.md#Built-in+Authentication). This issue might occur after upgrading from any 2020.1 EAP version (EAP1 or any later version to which it was upgraded) to the release 2020.1 build.
