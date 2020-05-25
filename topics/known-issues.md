@@ -475,6 +475,14 @@ The feature might also fail to resolve some Git paths that do not correspond to 
 Currently, the new [Jira Cloud integration](jira-cloud-integration.md) build feature supports only `atlassian.net` domains. We have added the support of the legacy `jira.com` domain in the fixed version of the responsible plugin. If your Jira Cloud server resides on the `jira.com` domain, you can download the plugin, attached to the [related issue](https://youtrack.jetbrains.com/issue/TW-66103#focus=streamItem-27-4154698.0-0), and install it as described [here](installing-additional-plugins.md).   
 The bundled Jira Cloud plugin will be automatically updated with this fix in our next release.
 
+#### Bad Redirect URI error when authenticating in Slack
+
+To be able to sign in to Slack from TeamCity, you need to specify all the possible URIs of the TeamCity server as _Redirect URLs_ in the [Slack app's](notifications.md#Configuring+Slack+Connection) settings.   
+If you use nginx to set up TeamCity behind a proxy server, you might still get the `bad_redirect_uri` error when trying to establish a connection with Slack. This error is caused by the mismatch between the nginx and Tomcat configuration.
+
+To workaround this issue, download the fixed plugin, attached to the [related issue](https://youtrack.jetbrains.com/issue/TW-66113), and install it as described [here](installing-additional-plugins.md). Alternatively, you can try [updating the Tomcat settings](how-to.md#RemoteIpValve).   
+The bundled Slack plugin will be automatically updated with this fix in our next release.
+
 #### Problems with built-in authentication in upgraded 2020.1 EAP1 installations
 
 If you had installed the 2020.1 EAP1 build in terms of our Early Access Program, you might experience problems with signing in to TeamCity via the [built-in authentication](configuring-authentication-settings.md#Built-in+Authentication). This issue might occur after upgrading from any 2020.1 EAP version (EAP1 or any later version to which it was upgraded) to the release 2020.1 build.

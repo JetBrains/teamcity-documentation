@@ -36,12 +36,6 @@ To be able to integrate TeamCity with Slack, you need to create a respective [Sl
 
 When configuring the app in Slack, make sure to add all possible endpoint addresses of your TeamCity server as __Redirect URLs__ in __OAuth & Permissions | App Management__.
 
-<tip>
-
-If you use nginx to set up TeamCity behind a proxy server, you might also need to update the Tomcat settings as described [here](how-to.md#Proxy-Tomcat-RemoteIpValve).
-
-</tip>
-
 After creating the app, enter its parameters in the _Add connection_ form in TeamCity:
 * _Client ID_ and _Secret_ from the app's __Basic Information__ page
 * [bot user token](https://api.slack.com/docs/token-types#bot)
