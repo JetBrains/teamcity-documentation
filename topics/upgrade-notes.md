@@ -5,7 +5,7 @@
 
 ### Changes in Java support on server and agents
 
-* Java 11 has been bundled with the TeamCity server Windows installer and server Docker images instead of Java 8. 
+* Java 11 has been bundled with the TeamCity server Windows installer and server Docker images instead of Java 8.
 * TeamCity agents stop supporting Java versions earlier than 8. If any of your agents run on earlier versions of Java, make sure to upgrade their JRE so you can continue running builds on these agents.
 
 #### New format of env.JDK_ environment variables
@@ -17,7 +17,19 @@ This way, if you are using rather old Java 1.4, the proper variable is `env.JDK_
 For backward compatibility, previous environment variables, such as `env.JDK_16` or `env.JDK_18`, will be generated too, but these variables will no longer be shown in TeamCity auto-completion popup menus.
 If you are using these environment variables in your build scripts, we encourage you to migrate to the new format.
 
-Related [issue](https://youtrack.jetbrains.com/issue/TW-64998)
+See the [related issue](https://youtrack.jetbrains.com/issue/TW-64998).
+
+### Agent Docker images run under non-root user
+
+To comply with recommended security practices, the TeamCity agent Docker images now run under a non-root user.
+
+This change might affect the following use cases:
+
+* To create/update a custom image based on the standard TeamCity agent image, you might need to switch to the `root` user first (see the [related issue](https://github.com/JetBrains/teamcity-docker-agent/issues/65) for details).
+* If you mount a host directory to a container, you might get the "_Permission denied_" error. To prevent this issue, try any of the following workarounds:
+   * Set the UID of the directories' owner to `1000` with the `chown` command.
+   * Send the `--user` argument with the `docker run` command to set the same UID for the Docker user as that of the host machine. For example, use `docker run -it --user $(id -u) ...`.
+   * Note that TeamCity automatically creates volumes for writable directories, and there is usually no need to map them explicitly. Consider omitting any explicit references to prevent the permission issues.
 
 ### Deprecated Windows Tray Notifier
 
@@ -56,7 +68,6 @@ Filtering test occurrences by a branch (`.../app/rest/testOccurrences?locator=br
 ### Other changes
 
 * TeamCity has dropped support for Internet Explorer. Please use Microsoft Edge instead.
-* To comply with recommended security practices, the TeamCity agent Docker images now run under a non-root user.
 
 ## Changes from 2019.2.3 to 2019.2.4
 
