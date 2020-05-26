@@ -1,20 +1,25 @@
 [//]: # (title: Typed Parameters)
 [//]: # (auxiliary-id: Typed Parameters)
 
-When adding a [build parameter](configuring-build-parameters.md) (system property, environment variable or configuration parameter), you can extend its definition with a specification that will regulate parameter's control presentation and validation. This specification is the parameter's "meta" information that is used to display the parameter in the [Triggering a Custom Build](triggering-a-custom-build.md) dialog. It allows making a custom build run more user\-friendly and usable by non\-developers. Consider a simple example. You have a build configuration in which you have a monstrous\-looking build parameter that regulates if a build has to include a license or not; can be either true or false; and by default is false. It may be clear for a build engineer, which build parameter regulates license generation and which value it is to have, but it may not be obvious to a regular user.
+When adding a [build parameter](configuring-build-parameters.md) (system property, environment variable or configuration parameter), you can extend its definition with a specification that will regulate the parameter's control presentation and validation. This specification is the parameter's _meta-information_ that is used to display the parameter in the _[Triggering a Custom Build](triggering-a-custom-build.md) dialog_. It allows making a custom build run more user-friendly and usable by non-developers.
 
-Using the build parameter's specification you can make your parameters more readable in the __Run Custom Build__ dialog.
+Consider a simple example. You have a build configuration in which you have a hard-to-read build parameter that regulates if a build has to include a license or not. The parameter can be either true or false, and is false by default. It may be clear for a build engineer, which build parameter regulates license generation and which value it is to have, but it may not be obvious to a regular user.
+
+Using the build parameter's specification you can make your parameters more readable in the _Run Custom Build_ dialog.
 
 ## Adding Parameter Specification
 
 To add specification to a build parameter, click the __Edit__ button in the __Spec__ area when editing/adding a build parameter.
 
 All parameters specifications support a number of common properties, such as:
-* __Label__: some text that is shown near the control in the Run Custom Build dialog.
+* __Label__: some text that is shown near the control in the _Run Custom Build_ dialog.
 * __Description__: some text that is shown below the control containing an explanatory note of the control use.
-* __Display__: If _hidden_ is specified, the parameter will not be shown in the __Run Custom Build__ dialog, but will be sent to a build; if _prompt_ is specified, TeamCity will always require a review of the parameter value when clicking the __Run__ button (won't require the parameter if build is triggered automatically); if _normal_ is selected, the parameter will be shown as usual.
-* __Read\-only__: if the box if checked, it will be impossible to override the parameter with a different value  
-* __Type__: Currently you can present parameters in following forms:
+* __Display__:
+   * if _hidden_ is selected, the parameter will not be shown in the _Run Custom Build_ dialog, but will be sent to a build;
+   * if _prompt_ is selected, TeamCity will always require a review of the parameter value when clicking the __Run__ button (won't require the parameter if build is triggered automatically);
+   * if _normal_ is selected, the parameter will be shown as usual.
+* __Read-only__: if the box is checked, it will be impossible to override the parameter with a different value.
+* __Type__:
    * a simple text field with the ability to validate its value using regular expression;
    * a checkbox;
    * a select control;
@@ -28,13 +33,11 @@ The table below provides more details on each control type.
 
 Type
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -42,13 +45,11 @@ Description
 
 Text
 
-
 </td>
 
 <td>
 
-The default. Represents a usual text string without any extra handling
-
+The default option. Represents a usual text string without any extra handling
 
 </td></tr><tr>
 
@@ -56,13 +57,11 @@ The default. Represents a usual text string without any extra handling
 
 Checkbox
 
-
 </td>
 
 <td>
 
 True/false option represented by a checkbox
-
 
 </td></tr><tr>
 
@@ -70,13 +69,11 @@ True/false option represented by a checkbox
 
 Select
 
-
 </td>
 
 <td>
 
-"Select one" or "select many" control to set the value to one of predefined settings
-
+"Select one" or "select many" control to set the value to one of predefined settings.
 
 </td></tr><tr>
 
@@ -84,13 +81,11 @@ Select
 
 Password
 
-
 </td>
 
 <td>
 
- This is designed to store passwords or other secure data in TeamCity settings. TeamCity makes the value of the password parameter never appear in the TeamCity web UI: it affects the settings screens and the __Run Custom Build__ dialog where password fields appear. Also, the value is replaced in the build's __Parameters__ tab and build log. The value is stored scrambled in the configuration files under TeamCity Data Directory. Please note that build log value hiding is implemented with simple search\-and\-replace, so if you have a trivial password of "123", all occurrences of "123" will be replaced, potentially exposing the password. Setting the parameter to type password does not guarantee that the raw value cannot be retrieved. Any project administrator can retrieve it and also any developer who can change the build script can in theory write malicious code to get the password.
-
+This is designed to store passwords or other secure data in TeamCity settings. TeamCity makes the value of the password parameter never appear in the TeamCity web UI: it affects the settings screens and the _Run Custom Build_ dialog where password fields appear. Also, the value is replaced in the build's __Parameters__ tab and build log. The value is stored scrambled in the configuration files under TeamCity Data Directory. Please note that build log value hiding is implemented with simple search-and-replace, so if you have a trivial password of "123", all occurrences of "123" will be replaced, potentially exposing the password. Setting the parameter to type password does not guarantee that the raw value cannot be retrieved. Any project administrator can retrieve it and also any developer who can change the build script can in theory write malicious code to get the password.
 
 </td></tr></table>
 
@@ -111,7 +106,7 @@ Text
 
 <td>
 
-__Allowed value__ \- choose the allowed value. For the __Regex__ option, specify __Pattern__, a Java\-style regular expression to validate the field value, as well as a __validation message__.
+__Allowed value__ - choose the allowed value. For the __Regex__ option, specify __Pattern__, a Java-style regular expression to validate the field value, as well as a __validation message__.
 
 
 </td></tr><tr>
@@ -146,7 +141,7 @@ Select
 
 <td>
 
-Check the __Allow multiple__ box to enable multiple selection. In the __Items__ field specify a newline\-separated list of items. Use the following syntax `label => value` or `value`.
+Check the __Allow multiple__ box to enable multiple selection. In the __Items__ field specify a newline-separated list of items. Use the following syntax `label => value` or `value`.
 
 
 </td></tr></table>
@@ -154,11 +149,11 @@ Check the __Allow multiple__ box to enable multiple selection. In the __Items__ 
 ## Manually Configuring Parameter Specification
 
 Alternatively, you can manually configure a specification using a specially formatted string with the syntax similar to the one used in service messages (`typeName key='value'`).   
-For example, for text: `text label='some label' regex='some pattern'`.
+For example, for the text label: `text label='some label' regex='some pattern'`.
 
 ## Copying Parameter Specification
 
-If you start editing a parameter that has a specification, you can see a link to its raw value in the "Edit parameter" dialog. Click it to view the specification in its raw form (in the service message format). To use this specification in another build configuration, just copy it from here, and paste in another configuration.
+If you start editing a parameter that has a specification, you can see a link to its raw value in the _Edit parameter_ dialog. Click it to view the specification in its raw form (in the service message format). To use this specification in another build configuration, just copy it from here, and paste in another configuration.
 
 ## Modifying Parameter Specification via REST API
 
