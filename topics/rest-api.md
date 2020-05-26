@@ -740,11 +740,11 @@ Start a new instance
 
 ```Shell
 
-POST http://teamcity:8111/app/rest/cloud/instances/<instanceLocator>
+POST http://teamcity:8111/app/rest/cloud/instances
  
 ```
 
-The contents of the `POST` request are the same as in `GET` for one instance.
+The posted XML/JSON contents are the same as received via `GET` for one instance.
 
 </td></tr>
 
