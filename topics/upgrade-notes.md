@@ -68,7 +68,7 @@ Filtering test occurrences by a branch (`.../app/rest/testOccurrences?locator=br
 ### Other changes
 
 * TeamCity has dropped support for Internet Explorer. Please use Microsoft Edge instead.
-* Since this version, the new .NET runner, introduced in TeamCity 2019.2.3, is not compatible with the obsolete external [.NET CLI Support](https://plugins.jetbrains.com/plugin/9190--net-cli-support) plugin (used in versions 2017.1 and earlier). To be able to use the .NET runner, [uninstall the obsolete plugin](installing-additional-plugins.md#Uninstalling+a+plugin+via+Web+UI) from your server.
+* Since this version, the new .NET runner, introduced in TeamCity 2019.2.3, is not compatible with the obsolete external [.NET CLI Support](https://plugins.jetbrains.com/plugin/9190--net-cli-support) plugin (used in versions 2017.1 and earlier). If you have previously installed this plugin, please [uninstall](installing-additional-plugins.md#Uninstalling+a+plugin+via+Web+UI) it from your server to be able to use the new .NET runner.
 
 ## Changes from 2019.2.3 to 2019.2.4
 
