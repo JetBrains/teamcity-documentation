@@ -461,6 +461,12 @@ To resolve this issue, we suggest that you use Xcode 11 instead. To workaround t
 
 ### 2020.1 Known Issues
 
+#### .NET runner is not compatible with obsolete external .NET CLI Support plugin
+
+The reworked [.NET build runner](net.md) is not compatible with the obsolete external [.NET CLI Support](https://plugins.jetbrains.com/plugin/9190--net-cli-support) plugin (used in versions 2017.1 and earlier). If the obsolete plugin is installed on your server, you will get the _Error creating bean with name "jetbrains.buildServer.dotnet.DotnetRunnerRunType"_ after updating to TeamCity 2020.1. To solve this issue, please [uninstall the obsolete plugin](installing-additional-plugins.md#Uninstalling+a+plugin+via+Web+UI) from your server.
+
+Note that all the existing .NET CLI Support build steps are automatically switched to the new .NET runner on updating to TeamCity 2019.2.3 or later. For more information, refer to our [upgrade notes](upgrade-notes.md#Reworked+.NET+build+runner).
+
 #### Jira Cloud Integration build feature requires specific VCS URL
 
 The Jira Cloud API, used by the new [Jira Cloud integration](jira-cloud-integration.md) build feature, requires sending a server URL in a specific format. Because of that, the build feature does not support VCSs like Perforce, TFS, and SVN out of the box.
