@@ -7,7 +7,7 @@ You can run the TeamCity stack in AWS using the [CloudFormation template](https:
 
 The current setup uses 2 subnets, a public and a private one.
 * The private subnet includes all the essential items:
-  * ECS cluster of a CoreOS EC2 instance with the official TeamCity server of the specified version from Docker Hub and one TeamCity Build Agent. The official Docker images with the TeamCity server and build agent are used.
+  * ECS cluster of a Amazon ECS Optimized Linux EC2 instance with the official TeamCity server of the specified version from Docker Hub and one TeamCity Build Agent. The official Docker images with the TeamCity server and build agent are used.
   * RDS MySQL database
 * The public subnet includes:
   * Application Load Balancer
