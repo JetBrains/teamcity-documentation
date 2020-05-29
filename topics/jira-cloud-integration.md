@@ -14,6 +14,12 @@ For a deployment build configuration, you need to also specify an environment ty
 
 If you mention a Jira task ID in a commit message in VCS, TeamCity will detect this message during the build containing this commit and send information about the build to Jira Cloud.
 
+<note>
+
+Currently, Jira Cloud API for [Builds](https://developer.atlassian.com/cloud/jira/software/rest/#api-group-Builds) limits the number of issues per build ID to 100. If your build references more than 100 Jira issues, TeamCity will only report the first 100.
+
+</note>
+
 The build status will be displayed in the Jira task details:
 
 <img src="jira-cloud-integration.png" alt="TeamCity build status in Jira Cloud" width="800"/>
