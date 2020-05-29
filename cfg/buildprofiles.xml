@@ -11,8 +11,8 @@
         <config-disqus-id>jetbrains</config-disqus-id>
         <config-disqus-show>false</config-disqus-show>
         <config-feedback-url>https://data.services.jetbrains.com/feedback</config-feedback-url>
-        <config-feedback-enabled>false</config-feedback-enabled>
-        <config-feedback-widget>false</config-feedback-widget>
+        <config-feedback-enabled>true</config-feedback-enabled>
+        <config-feedback-widget>true</config-feedback-widget>
         <config-webmaster>https://confluence.jetbrains.com/display/TW/Feedback</config-webmaster>
         <config-feedback-support>https://teamcity-support.jetbrains.com/</config-feedback-support>
         <config-sideblocks>true</config-sideblocks>
