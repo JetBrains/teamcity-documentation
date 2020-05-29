@@ -118,7 +118,8 @@ Publishing of NuGet [symbol packages](http://docs.nuget.org/ndocs/create-package
 
 You can add TeamCity NuGet feeds as package sources on your developer machine. For example, to use packages during development, use the [`nuget sources`](https://docs.microsoft.com/en-us/nuget/tools/cli-ref-sources) command or NuGet package management in your IDE.
 
-You can use TeamCity NuGet feeds to restore packages in your builds: when the [NuGet Installer](nuget-installer.md) or [NuGet Publish](nuget-publish.md) build step is used, TeamCity will use the [credentials provider](https://docs.microsoft.com/en-us/nuget/reference/extensibility/nuget-exe-credential-providers) to automatically authenticate requests to the private TeamCity NuGet feeds.
+You can use TeamCity NuGet feeds to restore packages in your builds via the [NuGet Installer](nuget-installer.md) and [NuGet Publish](nuget-publish.md) build runners, or the [.NET](net.md) runner with the MSBuild `restore` target. Obsolete [MSBuild](msbuild.md) and [Visual Studio (sln)](visual-studio-sln.md) runners are also supported.   
+TeamCity uses own [credential provider](https://docs.microsoft.com/en-us/nuget/reference/extensibility/nuget-exe-credential-providers) to automatically authenticate requests to the private TeamCity NuGet feeds.
 
 <tip>
 
