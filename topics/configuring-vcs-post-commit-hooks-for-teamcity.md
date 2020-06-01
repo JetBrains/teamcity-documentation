@@ -130,7 +130,7 @@ chmod 755 /path/to/teamcity-trigger.sh /path/to/svn_repository_root/hooks/post-c
 
 ## Setting up post-commit trigger on Perforce server
 
-Set up a `change-commit` trigger by adding one or several lines when [editing specification](https://www.perforce.com/perforce/r15.1/manuals/p4sag/chapter.scripting.html#scripting.trigger.table.fields) (the text below must be placed in one line, one line per a VCS Root):
+Set up a `change-commit` trigger by adding one or several lines when [editing specification](https://www.perforce.com/perforce/r15.1/manuals/p4sag/chapter.scripting.html#scripting.trigger.table.fields) (the text below must be placed in one line, one line per trigger):
 
 
 ```Shell
@@ -161,7 +161,12 @@ vcsRoot:(type:perforce,count:99999),property:(name:client,value:<client name>,ma
 vcsRoot:(type:perforce,count:99999),property:(name:client-mapping,value:<some unique part of client mapping>,matchType:contains,ignoreCase:true),count:99999
 
 ```
- 
+
+Where `<some unique part of client mapping>` should match the 
+Perforce depot path in TeamCity VCS Root after all parameter resolution. 
+For the rule `check-for-changes-teamcity change-commit //depot/project1/...` it should probably be `//depot/project1/`.
+
+Each such `check-for-changes-teamcity` rule line describes an association between path with commit (`//depot/project1`) and a set of VCS Roots in TeamCity which should be checked for changes.
 
 ## Setting up service hook on Team Foundation Server for TFVC and Git
 
