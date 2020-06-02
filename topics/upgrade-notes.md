@@ -23,10 +23,9 @@ See the [related issue](https://youtrack.jetbrains.com/issue/TW-64998).
 
 Plugins which implement some build runners might need to be recompiled/upgraded.
 
-A corresponding error might look like `java.lang.NoSuchMethodError: jetbrains.buildServer.controllers.admin.projects.BuildRunnerBean.getPropertiesBean`
-when a new build step for the corresponding custom build runner is created or updated. 
+The corresponding error might look like `java.lang.NoSuchMethodError: jetbrains.buildServer.controllers.admin.projects.BuildRunnerBean.getPropertiesBean` when a new build step for the corresponding custom build runner is created or updated.
 
-See the related issues about [Checkmarx plugin](https://youtrack.jetbrains.com/issue/TW-66311) and 
+See the related issues about the [Checkmarx plugin](https://youtrack.jetbrains.com/issue/TW-66311) and the
 [SonarQube Runner plugin](https://youtrack.jetbrains.com/issue/TW-66106).
 
 ### Agent Docker images run under non-root user
