@@ -19,6 +19,16 @@ If you are using these environment variables in your build scripts, we encourage
 
 See the [related issue](https://youtrack.jetbrains.com/issue/TW-64998).
 
+### Need for plugin recompilation 
+
+Plugins which implement some build runners might need to be recompiled/upgraded.
+
+A corresponding error might look like `java.lang.NoSuchMethodError: jetbrains.buildServer.controllers.admin.projects.BuildRunnerBean.getPropertiesBean`
+when a new build step for the corresponding custom build runner is created or updated. 
+
+See the related issues about [Checkmarx plugin](https://youtrack.jetbrains.com/issue/TW-66311) and 
+[SonarQube Runner plugin](https://youtrack.jetbrains.com/issue/TW-66106).
+
 ### Agent Docker images run under non-root user
 
 To comply with recommended security practices, the TeamCity agent Docker images now run under a non-root user.
