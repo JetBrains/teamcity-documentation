@@ -19,7 +19,7 @@ If running timeout is configured on the cloud profile and it is reached, the ins
 
 On the instance terminating/stopping, its disconnected agent is removed from the authorized agents list and is deleted from the system.
 
-TeamCity supports Amazon EC2 [Spot Instances](#Amazon+EC2+Spot+Instances+support) and [Spot Fleets](#Amazon+EC2+Spot+Fleet+support).
+TeamCity supports Amazon EC2 [spot instances](#Amazon+EC2+Spot+Instances+support) and [spot fleets](#Amazon+EC2+Spot+Fleet+support).
 
 ## Configuration
 
@@ -159,42 +159,42 @@ IAM profiles must be [preconfigured](http://docs.aws.amazon.com/IAM/latest/UserG
 
 #### Amazon EC2 Spot Instances support
 
-TeamCity supports [Amazon EC2 Spot Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html) which allows you to place your bid on unused EC2 capacity and use it, as long as your suggested price exceeds the current _Spot price_.
+TeamCity supports [Amazon EC2 spot instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html) which allows you to place your bid on unused EC2 capacity and use it, as long as your suggested price exceeds the current _Spot price_.
 
-You can enable Spot Instances for an Amazon EC2 image in your [cloud profile settings](agent-cloud-profile.md). Click __Add image__ and select a _Source_, or edit an existing image. Select the __Spot instances__ option, specify a __Bid price__, and save the image.   
+You can enable spot instances for an Amazon EC2 image in your [cloud profile settings](agent-cloud-profile.md). Click __Add image__ and select a _Source_, or edit an existing image. Select the __Spot instances__ option, specify a __Bid price__, and save the image.   
 If the bid price is not specified, the default On-Demand price will be used.
 
 TeamCity launches a spot instance as soon as the cloud profile is saved. If it is impossible to launch the instance (for example, if there is no available capacity or if your bid price is lower than the current minimum Spot Price in Amazon), TeamCity will be repeating the launch attempt once a minute, as long as there are queued builds which can run on this agent.
 
 <note>
 
-It is not recommended to use spot instances for production\-critical builds due to the possibility of an [unexpected spot instance termination by Amazon](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#using-spot-instances-managing-interruptions).
+It is not recommended to use spot instances for production-critical builds due to the possibility of an [unexpected spot instance termination by Amazon](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#using-spot-instances-managing-interruptions).
 
 </note>
 
 #### Amazon EC2 Spot Fleet support
 
-A _Spot Fleet_ is a set of [Spot Instances](#Amazon+EC2+Spot+Instances+support) launched based on the predefined criteria. You can request a Spot Fleet instead of regular Spot Instances, and TeamCity will be able to select and launch Spot Instances with the lowest price in the availability zones you specify.
+A _spot fleet_ is a set of [spot instances](#Amazon+EC2+Spot+Instances+support) launched based on the predefined criteria. You can request a spot fleet instead of regular spot instances, and TeamCity will be able to select and launch spot instances with the lowest price in the availability zones you specify.
 
-To use a Spot Fleet in your project:
+To use a spot fleet in your project:
 
-1. In [AWS Management Console](https://aws.amazon.com/console/), generate a Spot Fleet request:
+1. In [AWS Management Console](https://aws.amazon.com/console/), generate a spot fleet request:
    * Go to __Instances | Spot Requests | Request Spot Instances__.    
    * Specify the required AMI, minimum compute unit, availability zones, and other request details.
-   * Click __JSON config__ to download a JSON file with the Spot Fleet configuration parameters.    
+   * Click __JSON config__ to download a JSON file with the spot fleet configuration parameters.    
 
    <img src="SpotFleetConfigButton.png" width="600" alt="Spot fleet config generation button in Amazon"/>
    
-2. In TeamCity, add a Spot Fleet to a cloud profile:
+2. In TeamCity, add a spot fleet to a cloud profile:
    * On the __Cloud Profile__ page click __Add image__.
-   * In the _Source_ drop-down menu, select _Spot Instance Fleet_. Enter the maximum number of required Spot Instances (_Max instances_) in a Fleet and select an _[agent pool](agent-pools.md)_.    
+   * In the _Source_ drop-down menu, select _Spot Instance Fleet_. Enter the maximum number of required spot instances (_Max instances_) in a fleet and select an _[agent pool](agent-pools.md)_.    
    * In the _Spot Fleet Config_ field, insert the JSON configuration file generated in AWS Management Console.    
 
-   <img src="SpotFleetConfig.png" width="550" alt="Spot Fleet configuration in TeamCity"/>
+   <img src="SpotFleetConfig.png" width="550" alt="Spot fleet configuration in TeamCity"/>
    
    * Save the image.
    
-To run the image, TeamCity will launch spot instances matching the allocation strategy specified in the Spot Fleet configuration.
+To run the image, TeamCity will launch spot instances matching the allocation strategy specified in the spot fleet configuration.
 
 <note>
 
@@ -217,9 +217,9 @@ When the default/latest version of the template is updated on the server, TeamCi
 
 #### Amazon EBS-Optimized Instances
 
-The behavior of [EBS-optimization](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html) in TeamCity is similar to that offered by EC2 console. When configuring an image of the Amazon [cloud profile](agent-cloud-profile.md), the optimization can be set using the corresponding box of the Instance Type. Note that
-* EBS\-optimization is turned on by default for `c4.*`, `d2.*`, and `m4.*` (non-configurable)
-* EBS\-optimization is turned off by default for any other instance types and  can be turned on for instances that support it (such as `c3.xlarge`, and so on)
+The behavior of [EBS optimization](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html) in TeamCity is similar to that offered by EC2 console. When configuring an image of the Amazon [cloud profile](agent-cloud-profile.md), the optimization can be set using the corresponding box of the Instance Type. Note that
+* EBS optimization is turned on by default for `c4.*`, `d2.*`, and `m4.*` (non-configurable)
+* EBS optimization is turned off by default for any other instance types and  can be turned on for instances that support it (such as `c3.xlarge`, and so on)
 
 #### Tagging for TeamCity-launched instances
 
@@ -229,7 +229,7 @@ The following requirements must be met for tagging instances launched by TeamCit
 * you have the `ec2:*Tags` permissions
 * the [maximum number of tags (50)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions) for your Amazon EC2 resource is not reached
 
-In the absence of tagging permissions, TeamCity will still launch Amazon AMI and EBS images with no tags applied; Amazon EC2 Spot Instances will not be launched.
+In the absence of tagging permissions, TeamCity will still launch Amazon AMI and EBS images with no tags applied; Amazon EC2 spot instances will not be launched.
 
 ##### Automatic tags
 
