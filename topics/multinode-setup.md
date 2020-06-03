@@ -50,7 +50,7 @@ The typical Data Directory mounting options are SMB and NFS. TeamCity uses the D
 
 We recommend tuning storage and network performance: make sure to review performance guidelines for your storage solution. For example, increasing MTU for the network connection between the server and the storage usually increases the artifacts transferring speed.
 
-Note that on Windows, a node might not be able to access the TeamCity Data Directory via a mapped network drive if TeamCity is running as a service. This happens because Windows services cannot work with mapped network drives, and TeamCity does not support the UNC format (`\\host\directory`) for the Data Directory path. To workaround this problem, you can use `mklink` as it allows making a symbolic link on a network drive:
+Note that on Windows, a node might not be able to access the TeamCity Data Directory via a mapped network drive if TeamCity is running as a service. This happens because Windows services cannot work with mapped network drives, and TeamCity does not support the UNC format (`\\host\directory`) for the Data Directory path. To workaround this problem, you can use [`mklink`](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mklink) as it allows making a symbolic link on a network drive:
 
 ```Console
 
