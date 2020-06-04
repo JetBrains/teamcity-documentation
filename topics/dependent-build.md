@@ -80,9 +80,9 @@ Artifacts may not be [cleaned](clean-up.md) if they were downloaded by other bui
 <seealso>
         <category ref="concepts">
             <a href="build-artifact.md">Build Artifact</a>
-            <a href="build-dependencies-setup.md">Build Dependencies Setup</a>
         </category>
         <category ref="admin-guide">
             <a href="configuring-dependencies.md">Configuring Dependencies</a>
+            <a href="build-dependencies-setup.md">Build Dependencies Setup</a>
         </category>
 </seealso>

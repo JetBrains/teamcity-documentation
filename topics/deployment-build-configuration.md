@@ -18,11 +18,20 @@ Once a configuration is marked as _Deployment_, TeamCity changes behavior in the
 
    <img src="Deployments.png" alt="Build deployments" width="750"/>
 
-* The __Change details__ page (the page where you can see which configurations are affected by the change, and which builds have been executed with this change) has the __Deployments__ tab that shows builds in Deployment configurations where this change was deployed for the first time.   
+* The __Change details__ page (the page where you can see which configurations are affected by the change and which builds have been executed with this change) has the __Deployments__ tab that shows builds in Deployment configurations where this change was deployed for the first time.   
    
    <img src="ChangeDetails.png" alt="Deployments in Change details" width="750"/>
    
 * For deployment configurations, TeamCity always shows the latest started build regardless of the changes it contains; unlike regular build configurations, for which the build with the latest changes is displayed.
 * When setting the build configuration type to _Deployment_, several settings are automatically changed to reflect the best practices: _"Limit the number of simultaneously running builds"_ is set to "1" and the _"Allow triggering personal builds"_ option is turned off.
 
-__ __
+<seealso>
+        <category ref="concepts">
+            <a href="build-chain.md">Build Chain</a>
+            <a href="dependent-build.md">Dependent Build</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="snapshot-dependencies.md">Snapshot Dependencies</a>
+            <a href="build-dependencies-setup.md">Build Dependencies Setup</a>
+        </category>
+</seealso>
