@@ -8,6 +8,12 @@ The server clean-up configuration is available in __Administration | Server Admi
 Clean-up rules, related to specific projects, are configured in __Project Settings | Clean-up Rules__. These rules define what data to clean and what to preserve. They can be assigned to a project or build configuration.   
 It is recommended to configure clean-up rules to remove obsolete builds and their artifacts, purge unnecessary data from the database and caches in order to free disk space, remove builds from the TeamCity UI and reduce the TeamCity workload.
 
+<tip>
+
+If you want to apply one simple clean-up rule to all projects on the server, you can create it on a Root project level. To get predictable clean-up results, make sure to read about the [rules' specifics](#Clean-up+Rules) before configuring them.
+
+</tip>
+
 Clean-up deletes the data stored under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system` and in the database. Also, during the clean-up, the server performs various maintenance tasks (for example, resets VCS full patch caches).
 
 <note>
