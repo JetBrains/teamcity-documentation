@@ -159,7 +159,7 @@ Projects
 
 <td>
 
-Paths to projects and solutions. Wildcards are supported. Parameter references are supported. If you have a finished build, you can use the file/directory selector here.
+Paths to projects and solutions, new-line separated. Wildcards are supported. Parameter references are supported. If you have a finished build, you can use the file/directory selector here.
 
 </td>
 
@@ -569,11 +569,11 @@ Consider the following notes before migrating:
 
 #### nuget delete
 
-TeamCity provides a full support for the [`nuget delete`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-delete) command.
+TeamCity provides full support for the [`nuget delete`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-delete) command.
 
 #### nuget push
 
-TeamCity provides a full support for the [`nuget push`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push) command.
+TeamCity provides full support for the [`nuget push`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push) command.
 
 ### Visual Studio Command-Line Mode
 
