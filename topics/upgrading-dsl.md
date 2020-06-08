@@ -104,6 +104,7 @@ Instead of upgrading manually, you can always regenerate all of your Kotlin DSL 
 
 ## Update DSL from 2019.2.x to 2020.1.x
 
+* This release __does not__ introduce a new DSL API package, so __v2019_2__ remains the latest one 
 * The bundled Kotlin version has been updated to 1.3.70.
 
 <anchor name="dsl20192"/>
