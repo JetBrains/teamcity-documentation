@@ -75,10 +75,7 @@ The example below demonstrates how to configure sending the status of builds wit
 1. Use [pull requests build feature](pull-requests.md) to configure pull requests branches. Alternatively you can make the branches available by configuring the [branch specification](working-with-feature-branches.md) in your VCS Root while ensuring that it includes pull requests branches (see also a related [blog post](http://blog.jetbrains.com/teamcity/2013/02/automatically-building-pull-requests-from-github-with-teamcity/)).
 2. [Add](adding-build-features.md) the Commit Status Publisher build feature:
    * Use the default __All attached VCS roots__ option to publish statuses for commits in all attached VCS roots
-   * Select GitHub as the publisher and specify its connection details and credentials and test the connection:   
-   
-   <img src="CommitStatusPublisher.png" width="556" alt="Testing connection to GitHub"/>
-   
+   * Select GitHub as the publisher and specify its connection details and credentials and test the connection: <img src="CommitStatusPublisher.png" width="556" alt="Testing connection to GitHub"/>
 3. Save your settings.
 4. Commit changes to your source code and create a pull request in GitHub, then run a build with your changes in TeamCity. The Commit Status Publisher will inform you on the status of the build with your pull request changes:
    * It will show you whether the check is:
