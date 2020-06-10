@@ -129,6 +129,8 @@ Currently, the .NET runner supports the following commands:
   
 \* _`msbuild` and `vstest` are executed as [CLI commands](https://docs.microsoft.com/en-us/dotnet/core/tools/) if cross-platform .NET SDK is used for building a project. Otherwise, they are run using the `msbuild` or `VSTest.Console` tool respectively._
 
+You can also specify any __[custom .NET command](#Custom+Commands)__, and TeamCity will run it _as is_.
+
 ### Basic Commands
 
 The set of .NET runner's options depends on the selected command. Available options for basic .NET CLI commands are:
@@ -166,6 +168,8 @@ Paths to projects and solutions. Wildcards are supported. Parameter references a
 </tr><tr>
 
 <td>
+
+<anchor name="working-directory"/>
 
 Working directory
 
@@ -645,13 +649,185 @@ Note that Devenv does not provide functionality for displaying a structured buil
 
 </note>
 
+### Custom Commands
+
+Since TeamCity 2020.1, the .NET runner allows launching any custom .NET command or executable file as is.
+
+The runner provides the following settings for the _\<custom\>_ command option:
+* _Executables_
+* _Command line parameters_
+* [Working directory](#working-directory)
+* [.NET coverage](#Code+Coverage)
+* [Docker settings](#Docker+Settings)
+
+The _Executables_ field expects files with `.com`, `.exe`, `.cmd`, `.bat`, `.sh`, `.dll` extension as well as files with no extension. You can specify multiple executable files, separated by a new line.
+
+The _Command line parameters_ field allows entering any custom command or arguments to compliment the specified executable.
+
+Depending on the entered settings, the .NET runner will transparently treat each custom command. Refer to the following list for common use case examples:
+
+<table>
+
+<tr>
+<td>Use case</td>
+<td>Executables</td>
+<td>Command line parameters</td>
+<td>Result</td>
+</tr>
+
+<tr>
+<td>
+
+[Install](https://docs.microsoft.com/ru-ru/dotnet/core/tools/dotnet-tool-install) the specified .NET Core tool on your machine
+
+</td>
+<td>
+
+</td>
+<td>
+
+`tool install <toolname>`
+
+</td>
+
+<td>
+
+Runs `dotnet` with the specified parameters. For example, on Windows, `dotnet.exe tool install <toolname>`.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+Run a .NET application with arguments
+
+</td>
+<td>
+
+`MyApp.dll`
+
+</td>
+<td>
+
+`-- arg1 arg2 arg3`
+
+</td>
+
+
+<td>
+
+Runs `MyApp.dll -- arg1 arg2 arg3`.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Display a user](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/whoami)
+
+</td>
+<td>
+
+`whoami.exe`
+
+</td>
+<td>
+
+</td>
+
+<td>
+
+Runs the Windows `whoami.exe` process.
+
+</td>
+</tr>
+
+
+<tr>
+<td>
+
+Run XUnit tests via console
+
+</td>
+<td>
+
+`C:\XUnit\xunit.console.exe`
+
+</td>
+<td>
+
+`C:\TestAssemblies\MyTests.dll -xml C:\TestResults\MyTests.xml`
+
+</td>
+<td>
+
+Runs XUnit tests on Windows via `xunit.console.exe`. This case if often used to collect code coverage statistics.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+Run all CMD files in the `scripts` directory with the same arguments
+
+</td>
+<td>
+
+`scripts/*.cmd`
+
+</td>
+<td>
+
+`arg1 arg2`
+
+</td>
+<td>
+
+Uses the default Windows command-line interpreter `cmd.exe` to run all `.cmd` scripts in the specified directory with the same set of parameters `arg1 arg2`.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+Run SH files with the same arguments
+
+</td>
+<td>
+
+```Text
+
+build_src.sh
+build_doc.sh
+
+```
+
+</td>
+<td>
+
+`-c release`
+
+</td>
+<td>
+
+Uses `/bin/sh` to run both specified `.sh` scripts with the similar set of parameters `-c release`.
+
+</td>
+</tr>
+
+
+</table>
+
 ## Docker Settings
 
 The .NET CLI build step can be run in a specified [Docker container](docker-wrapper.md).
 
 ## Code Coverage
 
-[JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool for the `msbuild`, `test`, and `vstest` commands.
+[JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool for `msbuild`, `test`, `vstest`, and a number of custom commands.
 
 ## Authentication in Private NuGet Feeds
 
