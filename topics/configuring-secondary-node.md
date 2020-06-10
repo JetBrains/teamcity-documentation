@@ -133,8 +133,9 @@ Secondary nodes have access to all plugins enabled on the main server. If you en
 Currently, the following bundled plugins are disabled on secondary nodes:
 * Investigations Auto Assigner
 * Jira Cloud integration
-* Kubernetes
+* Kubernetes support
 * Install Agent on remote host (agent push)
+* WebHooks support
 
 <note>
 
