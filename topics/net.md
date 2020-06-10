@@ -651,7 +651,7 @@ Note that Devenv does not provide functionality for displaying a structured buil
 
 ### Custom Commands
 
-Since TeamCity 2020.1, the .NET runner allows launching any custom .NET command or executable file as is.
+Since TeamCity 2020.1.1, the .NET runner allows launching any custom .NET command or executable file as is.
 
 The runner provides the following settings for the _\<custom\>_ command option:
 * _Executables_
