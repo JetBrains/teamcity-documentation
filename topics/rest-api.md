@@ -744,7 +744,17 @@ POST http://teamcity:8111/app/rest/cloud/instances
  
 ```
 
-The posted XML/JSON contents are the same as received via `GET` for one instance.
+The posted XML/JSON contents are the same as returned by `GET` for one instance.
+
+Example of XML for an instance:
+
+```Shell
+
+<cloudInstance id="profileId:<profileId>,imageId:<imageId>,id:<instanceId>" name="<instanceName>">
+	<image id="profileId:<profileId>,id:<imageId>" name="<imageName>"/>
+</cloudInstance>
+
+```
 
 </td></tr>
 
@@ -1396,7 +1406,17 @@ POST http://teamcity:8111/app/rest/builds/<buildLocator>/tags/
  
 ```
 
-Post the same XML or JSON as returned by GET or just a plain-text tag name; `<buildLocator>` here should match a single build only.
+Post the same XML or JSON as returned by `GET` or just a plain-text tag name; `<buildLocator>` here should match a single build only.
+
+Example of XML for two tags:
+
+```Shell
+
+<tags>
+    <tag name="<tag1>"/>
+    <tag name="<tag2>"/>
+</tags>
+```
 
 </td></tr>
 
@@ -2186,6 +2206,17 @@ POST http://teamcity:8111/app/rest/mutes
 
 Use the same XML or JSON as returned by `GET`.
 
+Example of XML for muting a test:
+
+```Shell
+
+<mute>
+    <scope><project id="<projectID>"/></scope>
+    <target><tests><test name="<testName>"/></tests></target>
+    <resolution type="whenFixed"/>
+</mute>
+```
+
 </td></tr>
 
 </table>
@@ -2281,6 +2312,18 @@ A single investigation:
 Experimental _support for multiple investigations_: `POST/PUT` to [`http://teamcity:8111/app/rest/investigations/multiple`](http://teamcity:8111/app/rest/investigations/multiple) (accepts a list of investigations).
 
 Use the same XML or JSON as returned by `GET`.
+
+Example of XML for assigning an investigation:
+
+```Shell
+
+<investigation state="TAKEN">
+    <assignee username="<username>"/>
+    <scope><buildType id="<buildTypeID>"/></scope>
+    <target anyProblem="true"/>
+    <resolution type="whenFixed"/>
+</investigation>
+```
 
 </td></tr>
 
@@ -2978,6 +3021,15 @@ Create a new parameter
 <td>
 
 `POST` the same XML or JSON or just plain-text as returned by `GET` to [`http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/`](http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/). Note that [secure parameters](typed-parameters.md), for example `type=password`, are listed, but the values not included into response, so the result should be amended before POSTing back.
+
+Example of XML for setting a property:
+
+```Shell
+
+<property name="<parameterName>" value="">
+    <type rawValue="password"/>
+</property>
+```
 
 </td></tr>
 
