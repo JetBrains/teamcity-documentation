@@ -417,7 +417,7 @@ Here is a longer example of test reporting with service messages:
 
 ##### Interpreting test names
 
-A full test name can have a form of: `<suite name>:<package/namespace name>.<class name>.<test method>(<test parameters>)`, where `<class name>` and `<test method>` cannot have dots in the names. Only `<test method>` is a mandatory part of a full test name.
+A full test name can have a form of: `<suite name>: <package/namespace name>.<class name>.<test method>(<test parameters>)`, where `<class name>` and `<test method>` cannot have dots in the names. Only `<test method>` is a mandatory part of a full test name.
 
 The full test name is used to compare tests between consequent builds or match tests across different build configurations.
 
