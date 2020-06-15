@@ -136,7 +136,8 @@ Make sure TeamCity user has quota for accessing table space.
     Supported driver versions are 11.1 and higher. 
     Place the following files:
    * `ojdbc8.jar` (or `ojdbc6.jar`, `ojdbc7.jar` depending on your database version)
-   * `orai18n.jar` (can be omitted if missing in the driver version) into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/lib\/jdbc directory (remove the existing files there, if any).
+   * `orai18n.jar` (can be omitted if missing in the driver version)
+into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/lib\/jdbc directory (remove the existing files there, if any).
 
   <note>
 
