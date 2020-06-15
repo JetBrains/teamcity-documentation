@@ -137,6 +137,7 @@ To learn about configuring code coverage options, refer to the [Configuring Java
         </category>
         <category ref="admin-guide">
             <a href="configuring-build-steps.md">Configuring Build Steps</a>
+            <a href="build-failure-conditions.md">Build Failure Conditions</a>
         </category>
 </seealso>
 
