@@ -9,7 +9,8 @@ To avoid background polling, it is possible to set up a post\-commit hook on the
 
 Even with commit hooks configured and working properly TeamCity still makes requests for changes on the server start and on each build queuing (or starting) to ensure the latest changes are used even if commit hooks stopped to function.
 
-When a commit hook call comes in, TeamCity automatically increases the [VCS polling interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (the minimum after the increase is 15 minutes, maximum is 4 hours, increased by 2 times on each successful check). If the commit hook stops working (for example, TeamCity finds a change in a VCS root which it did not receive a commit hook call for), the [VCS polling interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) value is reset to default.
+When a commit hook call comes in, TeamCity starts checking for changes in VCS Roots which match the request.
+If a change is found during the check, TeamCity automatically increases the [VCS polling interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (the minimum after the increase is 15 minutes, maximum is 4 hours, increased by 2 times on each successful check). If the commit hook stops working (for example, TeamCity finds a change in a VCS root which it did not receive a commit hook call for), the [VCS polling interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) value is reset to default.
 
 Commit hooks are received via TeamCity REST API [requests](rest-api.md#VCS+Roots) which should typically be configured to in the post\-commit repository triggers:
 
