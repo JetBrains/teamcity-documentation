@@ -3,7 +3,10 @@
 
 <note>
 
-Since TeamCity 2019.2.3, we have stopped providing active support for the MSBuild runner. Please use the .NET runner with the `msbuild` command instead. For more details on migration, refer to the [.NET runner description](net.md#Migrating+from+MSBuild+Runner).
+Since TeamCity 2019.2.3, we have stopped providing active support for the MSBuild runner. We recommend using the .NET runner with the `msbuild` command instead as it provides more features and is actively updated. For more details on migration, refer to the [.NET runner description](net.md#Migrating+from+MSBuild+Runner).
+
+For compatibility, the MSBuild runner will be bundled with the nearest future versions of TeamCity. You can continue using it if migration to the .NET runner is too time-consuming for your setup.   
+However, we will unbundle this runner after a sufficient transition period. In this case, you will still be able to install it as an external plugin. Remember to check our [upgrade notes](upgrade-notes.md) before upgrading to each following version.
 
 </note>
 
