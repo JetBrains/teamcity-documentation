@@ -307,7 +307,7 @@ Convert line\-endings of all text files to CRLF (works as setting `core.autocrlf
 
 These are the settings used in case of the agent-side [checkout](vcs-checkout-mode.md).   
 Note that the agent-side checkout has limited support for SSH. The only supported authentication methods are "Default Private Key" and "Uploaded Private Key".   
-If you plan to use the [agent-side checkout](vcs-checkout-mode.md), you need to have Git 1.6.4\+ installed on the agents.
+If you plan to use the [agent-side checkout](vcs-checkout-mode.md), you need to have Git 1.6.4+ installed on the agents.
 
 <table><tr>
 
@@ -334,7 +334,7 @@ Path to git
 
 <td>
 
-Provide the path to a git executable to be used on the agent. When set to `%env.TEAMCITY_GIT_PATH%`, the automatically detected git will be used, see [Git executable on the agent](#Git+executable+on+the+agent) for details
+Provide the path to a Git executable to be used on the agent. When set to `%env.TEAMCITY_GIT_PATH%`, the automatically detected Git will be used, see [Git executable on the agent](#Git+executable+on+the+agent) for details.
 
 
 </td></tr><tr>
@@ -349,6 +349,8 @@ Clean Policy/Clean Files Policy
 <td>
 
 Specify here when the `git clean` command is to run on the agent, and which files are to be removed.
+
+If a build configuration depends on multiple VCS roots, we suggest that you configure separate agent checkout directories for each of these roots, using [VCS checkout rules](vcs-checkout-rules.md). This way, `git clean` will never delete these checkout directories during cleaning.
 
 
 </td></tr><tr>
@@ -366,7 +368,7 @@ Use mirrors
 
 When __enabled__ (default), TeamCity clones the repository under the agent's `system\git` directory and uses the mirror as an alternate repository when updating the checkout directory for the build. As a result, this speeds up clean checkout (because only the working directory is cleaned), and saves disk space (as there is only one clone of the given Git repository on an agent).
 
-If you __disable__ this option, TeamCity will clone the repository directly under the build's working directory, unless the [`teamcity.git.use.local.mirrors`](#use-local-mirrors) property is set to `true`. 
+If you __disable__ this option, TeamCity will clone the repository directly under the build's working directory, unless the [`teamcity.git.use.local.mirrors`](#use-local-mirrors) property is set to `true`.
 
 </td></tr></table>
 
