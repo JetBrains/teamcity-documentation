@@ -4,7 +4,7 @@
  
 TeamCity supports Git out of the box. Git source control with Azure DevOps Services is supported (see authentication notes [below](#Authenticating+to+Azure+DevOps+Services)).
 
-This page contains description of the Git\-specific fields of the VCS root settings.    
+This page contains description of the Git-specific fields of the VCS root settings.    
 For common VCS Root properties, see [this section](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
 <note>
@@ -1005,18 +1005,33 @@ The idle timeout for the `git fetch` operation when the agent-side checkout is u
 
 ## Limitations
 
-When using checkout on an agent, a limited subset of [checkout rules](vcs-checkout-rules.md) is supported. Git\-plugin translates some of the checkout rules to the sparse checkout patterns. Only the __rules which do not remap files are supported__:
+The Git plugin uses [`git sparce-checkout`](https://git-scm.com/docs/git-sparse-checkout#_sparse_checkout) to check out Git files on an agent. The plugin is able to perform only simple file mapping operations which limits the set of supported [VCS checkout rules](vcs-checkout-rules.md) for Git.
 
+The following rules are supported:
 
-```Shell
+```Text
 
-+:some/dir
--:some/dir/subDir
++:dirA/dirA1
+-:dirA/dirA1/dirA2
+
++:. => dirA/dirA1/dirA2
+
++:dirA => dirA
+
++:dirA/dirA1 => dirA/dirA1
+
++:dirA/dirB/dirC => dirD/dirE/dirA/dirB/dirC
+
 ```
 
+If you specify multiple checkout rules for one root, make sure their checkout directories (the right part of the rule) have a common parent directory. For example:
 
+```Text
 
-An __unsupported__ rule example is `+:some/dir=>some/otherDir`.
++:dirA/dirB/dirC => dirG/dirH/dirA/dirB/dirC
++:dirD/dirE/dirF => dirG/dirH/dirD/dirE/dirF
+
+```
 
 ## Known Issues
 
