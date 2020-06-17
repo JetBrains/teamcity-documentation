@@ -87,7 +87,7 @@ Password
 
 This is designed to store passwords or other secure data in TeamCity settings. TeamCity makes the value of the password parameter never appear in the TeamCity web UI: it affects the settings' screens and the _Run Custom Build_ dialog where password fields appear. Also, the value is replaced in the build's __Parameters__ tab and build log.
 
-The password value is stored scrambled in the configuration files under TeamCity Data Directory. Depending on the server [Encryption Settings](teamcity-configuration-and-maintenance.md#Encryption+Settings), the value is either scrambled or encrypted with a custom key.
+The password value is stored in the configuration files under TeamCity Data Directory. Depending on the server [Encryption Settings](teamcity-configuration-and-maintenance.md#Encryption+Settings), the value is either scrambled or encrypted with a custom key.
 
 The build log value is hidden with a simple search-and-replace algorithm, so if you have a trivial password of "123", all occurrences of "123" will be replaced, potentially exposing the password. Setting the parameter to the _password_ type does not guarantee that the raw value cannot be retrieved. Any project administrator can retrieve it, and any developer who can change the build script could potentially write malicious code to get the password.
 
