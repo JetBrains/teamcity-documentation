@@ -129,7 +129,7 @@ Currently, the .NET runner supports the following commands:
   
 \* _`msbuild` and `vstest` are executed as [CLI commands](https://docs.microsoft.com/en-us/dotnet/core/tools/) if cross-platform .NET SDK is used for building a project. Otherwise, they are run using the `msbuild` or `VSTest.Console` tool respectively._
 
-You can also specify any __[custom .NET command](#Custom+Commands)__, and TeamCity will run it _as is_.
+Alternatively, you can specify any __[custom .NET command](#Custom+Commands)__, and TeamCity will run it _as is_.
 
 ### Basic Commands
 
@@ -660,9 +660,9 @@ The runner provides the following settings for the _\<custom\>_ command option:
 * [.NET coverage](#Code+Coverage)
 * [Docker settings](#Docker+Settings)
 
-The _Executables_ field expects files with `.com`, `.exe`, `.cmd`, `.bat`, `.sh`, `.dll` extension as well as files with no extension. You can specify multiple executable files, separated by a new line.
+The _Executables_ field expects files with the `.com`, `.exe`, `.cmd`, `.bat`, `.sh`, `.dll` extensions as well as files with no extension. You can specify multiple executable files, separated by a new line.
 
-The _Command line parameters_ field allows entering any custom command or arguments to compliment the specified executable.
+The _Command line parameters_ field allows entering any custom command or arguments to complement the specified executable.
 
 Depending on the entered settings, the .NET runner will transparently treat each custom command. Refer to the following list for common use case examples:
 
@@ -813,7 +813,7 @@ build_doc.sh
 </td>
 <td>
 
-Uses `/bin/sh` to run both specified `.sh` scripts with the similar set of parameters `-c release`.
+Uses `/bin/sh` to run both specified `.sh` scripts with the same parameters `-c release`.
 
 </td>
 </tr>
