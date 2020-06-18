@@ -3,7 +3,7 @@
 
 ## Changes from 2020.1 to 2020.1.1
 
-* The Linux version used in the TeamCity server Docker images has been updated to 4.19.76-linuxkit.
+* The Linux version used in the TeamCity server and agent Docker images has been updated to 4.19.76-linuxkit.
 
 ## Changes from 2019.2.x to 2020.1
 
