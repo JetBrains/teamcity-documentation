@@ -1,11 +1,6 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
-## Changes from 2020.1 to 2020.1.1
-
-* The .NET runner introduces the [custom command](net.md#Custom+Commands) option. Note that if you downgrade TeamCity to the preivous version after configuring the custom .NET command, the respective build steps will be ignored during the build.
-* The Linux version used in the TeamCity server and agent Docker images has been updated to 4.19.76-linuxkit.
-
 ## Changes from 2019.2.x to 2020.1
 
 ### Changes in Java support on server and agents
