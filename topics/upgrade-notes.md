@@ -1,6 +1,10 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2020.1 to 2020.1.1
+
+* The Linux version used in the TeamCity server and agent Docker images has been updated to 4.19.76-linuxkit.
+
 ## Changes from 2019.2.x to 2020.1
 
 ### Changes in Java support on server and agents
@@ -1490,7 +1494,7 @@ This is only relevant for fresh TeamCity installations with Windows installer. E
 Windows installer now uses `%ALLUSERSPROFILE%\JetBrains\TeamCity` location as default one for [TeamCity Data Directory](teamcity-data-directory.md). In TeamCity 7.0 and previous versions that used to be `%USERPROFILE%\.BuildServer`.
 
 __Windows domain login module__   
-When TeamCity server runs under Windows and Windows domain user authentication is used, TeamCity now uses another library (Waffle) to talk to the Windows domain.Under Linux the behavior is unchanged: jCIFS library is used as it were.
+When TeamCity server runs under Windows and Windows domain user authentication is used, TeamCity now uses another library (Waffle) to talk to the Windows domain. Under Linux the behavior is unchanged: jCIFS library is used as it were.
 
 Unless you specified specific settings for jCIFS library in ntlm\-config.properties file, your installation should not be affected.   
 If you experience any issues with login into TeamCity with your Windows username/password after upgrade, please provide details [to us](https://confluence.jetbrains.com/display/TW/Feedback). In the mean time you can switch to using old jCIFS library. For this, add `teamcity.ntlm.use.jcifs=true` line into [internal properties file](configuring-teamcity-server-startup-properties.md).   
