@@ -508,7 +508,7 @@ launchctl remove jetbrains.teamcity.BuildAgent
 
 ## Configuring Java
 
-A TeamCity build agent is a Java application that requires JDK version 8-10 to work. OpenJDK 8 (for example, bundled [Amazon Corretto](https://aws.amazon.com/corretto/)) 1.8.0_161 or later. [Oracle Java 8](http://www.oracle.com/technetwork/java/javase/downloads/) is also supported.
+A TeamCity build agent is a Java application ([supported Java versions](supported-platforms-and-environments.md#Build+Agents)).
 
 A build agent contains two processes:
 * Agent Launcher – a Java process that launches the agent process

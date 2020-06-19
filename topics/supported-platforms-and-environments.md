@@ -56,13 +56,13 @@ The TeamCity Agent is a standalone Java application.
 
 Build agents require a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
 
+Supported Java versions are OpenJDK and Oracle Java 8 - 11. We recommend using the latest available version of JDK. Support for running agents under Java 1.6 and 1.7 is deprecated.
+
 <note>
 
 __Since TeamCity 2019.2__, 64-bit [Amazon Corretto](https://aws.amazon.com/corretto/) 8 is included in the Windows `.exe` TeamCity distribution (previously, 32-bit Oracle Java and then AdoptOpenJDK were bundled with the TeamCity Windows distribution). Users of the bundled version of JRE are automatically switched to 64-bit Amazon Corretto on upgrading TeamCity to 2019.2 or later.
 
 </note>
-
-Supported Java versions are OpenJDK and Oracle Java 8 - 11. We recommend using the latest available version of JDK. Support for running agents under Java 1.6 and 1.7 is deprecated.
 
 The TeamCity agent is tested under the following operating systems:
 * Linux
