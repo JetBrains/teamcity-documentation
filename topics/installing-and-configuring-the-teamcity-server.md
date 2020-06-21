@@ -237,7 +237,7 @@ Note that after this change [automatic update](upgrade.md#Automatic+Update) will
 
 The TeamCity server is a JVM web application that runs in Tomcat application server. TeamCity server requires a Java SE JRE installation to run. Compatible JRE is bundled in TeamCity Windows installer but needs to be installed separately when using other distributions.
 
-It is recommended to run TeamCity server with the latest Java 11 x64. The recommended Java distribution is [Amazon Coretto](https://aws.amazon.com/corretto/).   
+It is recommended to run TeamCity server with the latest Java 11 x64. The recommended Java distribution is [Amazon Corretto](https://aws.amazon.com/corretto/).   
 Supported Java versions are OpenJDK and Oracle Java 8 (8u16 or later) and 11 (32 or 64 bit).
 
 If you have configured any native libraries for use with TeamCity (like `.dll` for using the Integrated Security option of the Microsoft SQL database), you need to update the libraries to match the JVM x86/x64 platform.
