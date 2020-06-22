@@ -91,6 +91,8 @@ The password value is stored in the configuration files under TeamCity Data Dire
 
 The build log value is hidden with a simple search-and-replace algorithm, so if you have a trivial password of "123", all occurrences of "123" will be replaced, potentially exposing the password. Setting the parameter to the _password_ type does not guarantee that the raw value cannot be retrieved. Any project administrator can retrieve it, and any developer who can change the build script could potentially write malicious code to get the password.
 
+Note that if you switch an existing parameter from the _password_ type to any other type, the original password value will be lost.
+
 </td></tr></table>
 
 Depending on the specification's type, there are additional settings.
