@@ -82,7 +82,7 @@ If TeamCity nodes run on Windows with Data Directory shared via SMB protocol, ma
 
 If Data Directory is shared via NFS, make sure that all nodes have the following option in their mount settings: `lookupcache=positive`.
 
-### Main Node Caches Directory
+#### Main Node Caches Directory
 
 If main node accesses the data directory via a network location than it is highly recommended to move `system/caches` directory to a [local disk](teamcity-data-directory.md#caches_folder).
 
