@@ -41,7 +41,12 @@ By default, the `system` directory stores all the [artifacts](build-artifact.md)
 Note that TeamCity assumes reliable and persistent read/write access to the TeamCity Data Directory and can malfunction if the Data Directory becomes inaccessible. This malfunction can affect TeamCity operation while the directory is unavailable and may also corrupt data of the currently running builds. While TeamCity should be able to tolerate occasional Data Directory inaccessibility, under rare circumstances the data stored in the directory might still be corrupted or partially lost.
 
 <anchor name="caches_folder"/>
-It is recommended to store `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system/caches` on a local disk or even a separate dedicated disk, especially if TeamCity Data Directory is located on a network storage. You can either create a symlink to the `caches` directory from the main directory or, since TeamCity 2020.1.1, redefine its path via the `teamcity.caches.path` [startup property](configuring-teamcity-server-startup-properties.md).   
+It is recommended to store `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system/caches` on a local disk or even a separate dedicated disk, especially if TeamCity Data Directory is located on a network storage. You can either create a symlink to the `caches` directory from the main directory or, since TeamCity 2020.1.1, redefine its path via the `teamcity.caches.path` JVM system property which can be specified in TEAMCITY_SERVER_OPTS environment variable, for instance:
+
+```
+TEAMCITY_SERVER_OPTS=-Dteamcity.caches.path=<path to local caches directory>
+```
+  
 The `caches` directory stores local clones of the VCS repositories, and it is important to provide good performance for it. If the directory content is lost, it will be rebuilt and no data will be lost.
 
 <warning>
