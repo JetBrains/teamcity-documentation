@@ -738,7 +738,11 @@ Add the following into the Tomcat main &lt;Host&gt; node of the `conf\server.xml
 It is also recommended to specify the `internalProxies` attribute with the regular expression matching only the IP address of the proxy server. For example, `internalProxies="192\.168\.0\.1"`.
 
 
-[//]: # (Internal note. Do not delete. "How To...d160e1383.txt")    
+[//]: # (Internal note. Do not delete. "How To...d160e1383.txt")
+
+## Enforce hiding stacktrace
+
+If a user with access to your TeamCity server submits an invalid cross-site scripting (XSS) payload, the server will display the "Unexpected error" page containing a related stacktrace. To prevent exposing any sensible information about your environment via this stacktrace, you might want to disable its display. For this, set the `teamcity.web.runtimeError.showStacktrace` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to `false`.
 
 ## Configure HTTPS for TeamCity Web UI
 
