@@ -459,6 +459,15 @@ To resolve this issue, we suggest that you use Xcode 11 instead. To workaround t
 
 ## Issues per TeamCity versions
 
+### 2020.1.1 Known Issues
+
+#### Missing Expand button for project list
+
+In the TeamCity classic UI, the _Projects_ link in the header is missing the expand button.
+
+To workaround this issue, please follow the instruction described [here](https://youtrack.jetbrains.com/issue/TW-66577#focus=streamItem-27-4216533.0-0).
+
+
 ### 2020.1 Known Issues
 
 #### .NET runner is not compatible with obsolete external .NET CLI Support plugin
