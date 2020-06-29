@@ -130,7 +130,7 @@ Image name:tag
 
 <td>
 
-Provide a newline-separated list of image name:tag(s)
+Provide a newline-separated list of image name:[tag(s)](https://docs.docker.com/engine/reference/commandline/tag/)
 
 
 </td></tr><tr>
