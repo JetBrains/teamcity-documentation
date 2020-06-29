@@ -480,6 +480,6 @@ You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrain
 
 [//]: # (Internal note. Do not delete. "Reporting Issuesd267e1305.txt")    
 
-Large files can be uploaded via [`https://uploads.services.jetbrains.com/`](https://uploads.services.jetbrains.com/). Please let us know the exact file name after the upload.
+Large files can be uploaded via [`https://uploads.jetbrains.com/`](https://uploads.jetbrains.com/). Please let us know the exact file name after the upload.
 
 If you cannot upload a large file in one go, try splitting the file into parts and upload them separately.
