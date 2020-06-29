@@ -386,7 +386,7 @@
       </toc-element>
       <toc-element id="ci-tutorials.md">
          <toc-element id="getting-started-with-nunit.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="getting-started-with-php.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="getting-started-with-php.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
          <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
