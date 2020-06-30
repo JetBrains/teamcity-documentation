@@ -252,7 +252,7 @@ function Set-PSConsole {
 
 ## Error Handling
 
-Due to [this issue](http://connect.microsoft.com/PowerShell/feedback/details/777375/powershell-exe-does-not-set-an-exit-code-when-file-is-used) in PowerShell itself that causes zero exit code to be always returned to a caller, TeamCity cannot always detect whether the script has executed correctly or not. We recommend several approaches that can help in detecting script execution failures:
+Due to the PowerShell issue that causes zero exit code to be always returned to a caller, TeamCity cannot always detect whether the script has executed correctly or not. We recommend several approaches that can help in detecting script execution failures:
 
 * _Manually catching exceptions and explicitly returning exit code_   
 The PowerShell plugin does not use the cmd wrapper around `powershell.exe`. It makes returning the explicit exit code possible.
@@ -289,8 +289,8 @@ Add a [build failure condition](build-failure-conditions.md#Common+build+failure
 
 ## Handling Output
 
-To properly handle non\-ASCII output from PowerShell, the correct encoding must be set both on the PowerShell side and on the TeamCity side.
-* To set the output encoding for PowerShell to UTF\-8, add the following line to the beginning of your PowerShell script:
+To properly handle non-ASCII output from PowerShell, the correct encoding must be set both on the PowerShell side and on the TeamCity side.
+* To set the output encoding for PowerShell to UTF-8, add the following line to the beginning of your PowerShell script:
 
 
     ```Shell
@@ -305,7 +305,7 @@ The TeamCity PowerShell plugin uses temporary files as an entry point; these fil
 
 ## Development Links
 
-The PowerShell support is implemented as an open\-source plugin. For development links refer to the [plugin's page](https://plugins.jetbrains.com/plugin/9041-powershell-runner).
+The PowerShell support is implemented as an open-source plugin. For development links refer to the [plugin's page](https://plugins.jetbrains.com/plugin/9041-powershell-runner).
 
 
 [//]: # (Internal note. Do not delete. "PowerShelld255e514.txt")    
