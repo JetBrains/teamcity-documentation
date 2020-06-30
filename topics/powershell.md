@@ -218,16 +218,22 @@ Specify parameters to be passed to `powershell.exe`.
 
 To enable support for Docker in PowerShell steps, run the TeamCity server with the `-Dteamcity.docker.runners=jetbrains_powershell` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
-In this section, you can specify a Docker image which will be [used to run the build step](docker-wrapper.md). 
+In this section, you can specify a Docker image which will be [used to run the build step](docker-wrapper.md).
+
 
 ### Current Limitations
 
-* Execution under Docker requires the PowerShell executable to be added to PATH
-* When using Docker to run the build step, only Docker\-related build agent requirements are applied to the build
-* Selection of Edition in PowerShell build step affects the executable being used (powershell.exe for Desktop, pwsh for Core)
-* &lt;Auto&gt; defaults to `pwsh` (Core)
-* To specify a custom PowerShell executable, the `teamcity.powershell.virtual.executable` configuration parameter must be set to the full path of this executable inside the provided image
-* Current limitations of the Docker wrapper do not allow Linux containers running under Windows systems
+* Execution under Docker requires the PowerShell executable to be added to PATH.
+* When using Docker to run the build step, only Docker-related build agent requirements are applied to the build.
+* Selection of Edition in PowerShell build step affects the executable being used (`powershell.exe` for Desktop, `pwsh` for Core).
+* &lt;Auto&gt; defaults to `pwsh` (Core).
+* To specify a custom PowerShell executable, the `teamcity.powershell.virtual.executable` configuration parameter must be set to the full path of this executable inside the provided image.
+* Current limitations of the Docker wrapper do not allow Linux containers running under Windows systems.
+
+### Known Issues
+
+* If the `docker-compose` command is run via PowerShell Desktop version 5.1.17763 or later, the PowerShell script could potentially fail with an error despite having only false positive warnings in the build log.   
+To workaround this problem, we suggest using PowerShell Core instead. Alternatively, you can limit the logging level for the `docker-compose` command by adding the `--log-level ERROR` attribute to it.
 
 ## Interaction with TeamCity
 
