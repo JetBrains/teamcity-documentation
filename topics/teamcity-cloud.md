@@ -23,13 +23,13 @@ We plan to officially release our Cloud version at the end of 2020. All users of
 
 To start TeamCity in cloud, __[create a Cloud Beta account](https://www.jetbrains.com/lp/teamcity/cloud-new/)__. In a matter of seconds, your server will be available under the `beta.teamcity.com` domain.
 
-After the server is ready, sign in as the administrator, and everything is ready to build!
+After the server is ready, an invitation link will be sent to your email. Proceed via this link to get to your administrative account. Everything is ready to build!
 
 ## TeamCity Cloud Maintenance
 
 ### TeamCity Cloud Server Administration
 
-The Cloud server has a limited administration functionality, comparing to the On-premise server.
+In case with TeamCity Cloud, the TeamCity team is responsible for handling all hardware and infrastructure maintenance of cloud servers. Because of that, the Cloud server has a limited administration functionality, comparing to the On-premise server.
 
 The __Administration__ pages comprises the following sections:
 * Under __Project-related Settings__, you can create projects and monitor server health and disk usage.
@@ -38,9 +38,16 @@ The __Administration__ pages comprises the following sections:
 
 ### Build Agents in Cloud
 
-In TeamCity Cloud Beta, only Windows and Linux [build agents](build-agent.md) are available. We are about to introduce macOS agents later in Beta.
+In TeamCity Cloud, you can either use self-hosted [build agents](build-agent.md) or request SaaS cloud agents.
 
-From the start, you get one Windows and one Linux images available in your default [pool](agent-pools.md). As soon as you run a build, TeamCity will automatically start an instance of the first suitable image. After the build is finished, the instance will be terminated by the idle timeout.
+<tip>
+
+TeamCity Cloud supports agents hosted on Windows, Linux, and macOS. SaaS agents are available for Windows and Linux from the start, and macOS cloud agents will be introduced later in Beta.
+
+</tip>
+ 
+
+From the start, you get one Windows and two Linux images available in your default [pool](agent-pools.md). As soon as you run a build, TeamCity will automatically start an instance of the first suitable image. After the build is finished, the instance will be terminated by the idle timeout.
 
 You can get extra agents by clicking __Install Build Agents__ in the upper right corner of the __Agents__ page. The number of available agents is limited by your license.   
 We recommend using tokens to authenticate build agents on the TeamCity server. Click __Use authentication token__ and choose one of the two options: _Generate plain-text token_, or _Download config_ to create a ready-to-use [agent config file](build-agent-configuration.md).
@@ -106,11 +113,10 @@ All the listed features will be introduced in our On-premise version in the near
 
 TeamCity Cloud has the following limitations comparing to On-premise:
 * Limited server configuration.
-* No automatic [backup](creating-backup-from-teamcity-web-ui.md).
 * No automatic server [diagnostics](teamcity-monitoring-and-diagnostics.md).
-* No automatic [clean-up](clean-up.md).
 * No plugin management. Some bundled plugins (such as Notifiers) are absent in the Cloud version.
 * No Service Level Agreement (SLA).
+* Data is backed up and cleaned up automatically. The set of available configuration options may differ from the On-premise installations.
 
 Some listed features might be implemented or receive their Cloud equivalents in terms of the Public Beta or first released versions of TeamCity Cloud.
 
