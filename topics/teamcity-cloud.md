@@ -11,7 +11,7 @@ This page describes the current state of the TeamCity Cloud option, its Beta lim
 
 ## About TeamCity Cloud
 
-TeamCity is a CI/CD server which key features are a powerful toolset and universality. With our Cloud version, we address the user demand in the most powerful CI/CD solution and make it available for you in a couple of minutes, with no need to maintain a server on-premise.
+TeamCity is a CI/CD server which key features are a powerful toolset and universality. With our Cloud version, we address the user demand in the most powerful CI/CD solution and make it available to you in a couple of minutes, with no need to maintain a server on-premise.
 
 __If you are new to TeamCity__, the Cloud Beta is a great starting point as it automatically resolves the task of installing and configuring the server. After your [cloud TeamCity server is ready](#Starting+TeamCity+Cloud), you can proceed to our [_Configure and run your first build_](configure-and-run-your-first-build.md) guide.
 
