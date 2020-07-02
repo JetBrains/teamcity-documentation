@@ -96,9 +96,6 @@ Software
 
 </table>
 
-### Billing
-
-[TO DO]
 
 ## Differences between TeamCity Cloud and On-premise
 
@@ -106,31 +103,22 @@ We plan to provide equal CI/CD experience to users of our Cloud and On-premise v
 
 Comparing to On-premise, TeamCity Cloud offers the following features:
 * For improved security, you can generate authentication tokens for build agents in advance.
-* The __Administration | Invitations__ page allows automatically inviting users to the server.
-* [TO DO]
+* Authorization via GitHub and Bitbucket is available. If you authenticate via any of these services, the respective [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections) will be preconfigured automatically.
+* The __Administration | Invitations__ page allows automatically inviting users to the server. By default, you can add new users only via invitations. An invited user will be able to authenticate via GitHub or Bitbucket.
 
 All the listed features will be introduced in our On-premise version in the nearest future.
 
 TeamCity Cloud has the following limitations comparing to On-premise:
 * Limited server configuration.
-* No automatic server [diagnostics](teamcity-monitoring-and-diagnostics.md).
-* No plugin management. Some bundled plugins (such as Notifiers) are absent in the Cloud version.
-* No Service Level Agreement (SLA).
+* No automatic [server diagnostics](teamcity-monitoring-and-diagnostics.md).
+* No plugin management.
 * Data is backed up and cleaned up automatically. The set of available configuration options may differ from the On-premise installations.
+* Some settings are unavailable to Cloud admins: for example, cloud profile configuration or changing the location for storing external artifacts.
 
 Some listed features might be implemented or receive their Cloud equivalents in terms of the Public Beta or first released versions of TeamCity Cloud.
 
-### What to choose?
-
-[TO DO] Maybe describe what use cases are better in On-premise and what in Cloud?
 
 ## Troubleshooting and Feedback
-
-<tip>
-
-TeamCity Cloud Beta does not comply with the JetBrains licensing and SLA policies applied to [TeamCity On-premise](https://www.jetbrains.com/help/teamcity/licensing-policy.html).
-
-</tip>
 
 To send your feedback or report issues, use our [YouTrack issue tracker](https://youtrack.jetbrains.com/issues/TW). You are welcome to discuss TeamCity Cloud in our [community forum](https://teamcity-support.jetbrains.com/hc/en-us/community/topics/).
 
