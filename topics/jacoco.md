@@ -10,14 +10,16 @@ TeamCity 2020.1 offers three bundled versions of JaCoCo:
 * 0.8.2
 * 0.8.4
 
-<note>
+<tip>
 
 To ensure the coverage data is collected properly, make sure your tests run in (one or more) separate JVMs.
 * Ant and Intellij Idea Project runners: this is the default setting for [TestNG](http://testng.org/doc/ant.html), for [Junit test task](http://ant.apache.org/manual/Tasks/junit.html), set `fork=true`.
 * Maven runner: set `forkCount` to a value [higher than](http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html).
 * Gradle runner: this is the default setting for [Gradle tests](https://gradle.org/docs/current/dsl/org.gradle.api.tasks.testing.Test.html).
 
-</note>
+</tip>
+
+
 
 ## Enabling JaCoco coverage
 
@@ -25,6 +27,14 @@ TeamCity supports the Java agent coverage mode allowing you to collect coverage 
 
 1. In the __Code Coverage__ section, select __JaCoCo__ as a coverage tool in the __Choose coverage runner__ drop-down menu.
 2. Set up the coverage options - refer to the description of the available options below.
+
+
+<note>
+
+Note that this runner does not currently support automatic JaCoCo coverage configured for Android projects.   
+To provide JaCoCo coverage in Android projects, the build script should generate the `.exec` files and import them as described in the [this section](#Importing+JaCoCo+coverage+data+to+TeamCity).
+
+</note>
 
 <table><tr>
 
