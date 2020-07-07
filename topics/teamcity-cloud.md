@@ -5,23 +5,25 @@
 
 __TeamCity Cloud Public Beta is open!__
 
-This page describes the current state of the TeamCity Cloud option, its Beta limitations, and target functionality. Please make sure to read it before joining our Public Beta program.
+This document describes the current state of the TeamCity Cloud option, its Beta limitations, and target functionality. Please make sure to read it before joining our Public Beta program.
 
 </tip>
 
 ## About TeamCity Cloud
 
-TeamCity is a CI/CD server which key features are a powerful toolset and universality. With our Cloud version, we address the user demand in the most powerful CI/CD solution and make it available to you in a couple of minutes, with no need to maintain a server on-premise.
+TeamCity is a CI/CD server which key features are a powerful toolset and universality. With our Cloud version, we address the user demand in the full-featured CI/CD solution and make it available to you in a couple of minutes, with no need to maintain a server on-premise.
 
 __If you are new to TeamCity__, the Cloud Beta is a great starting point as it automatically resolves the task of installing and configuring the server. After your [cloud TeamCity server is ready](#Starting+TeamCity+Cloud), you can proceed to our [_Configure and run your first build_](configure-and-run-your-first-build.md) guide.
 
-When you register a TeamCity Cloud account, your own TeamCity server is automatically created in Amazon Web Services. The server operates on the newest version of TeamCity and currently provides Windows and Linux cloud agents out of the box.
+When you register a TeamCity Cloud account, your own TeamCity server is automatically created in Amazon Web Services. The server operates on the newest version of TeamCity and currently provides Windows and Linux cloud agents out of the box (self-hosted agents for Windows, Linux, and macOS are also supported).
 
-We plan to officially release our Cloud version at the end of 2020. All users of the Beta program will receive an opportunity to migrate their TeamCity data to the released Cloud version.
+We plan to officially release our Cloud version at the end of 2020 but the target date may change depending on the progress of Beta.
+
+__Users of the Beta program will be able to migrate their TeamCity data to the released Cloud version.__
 
 ## Starting TeamCity Cloud
 
-To start TeamCity in cloud, __[create a Cloud Beta account](https://www.jetbrains.com/lp/teamcity/cloud-new/)__. In a matter of seconds, your server will be available under the `beta.teamcity.com` domain.
+To start TeamCity in cloud, __[register a Cloud Beta account](https://www.jetbrains.com/lp/teamcity/cloud-new/)__. In a matter of seconds, your server will be available under the `beta.teamcity.com` domain.
 
 After the server is ready, an invitation link will be sent to your email. Proceed via this link to get to your administrative account. Everything is ready to build!
 
@@ -29,11 +31,11 @@ After the server is ready, an invitation link will be sent to your email. Procee
 
 ### TeamCity Cloud Server Administration
 
-In case with TeamCity Cloud, the TeamCity team is responsible for handling all hardware and infrastructure maintenance of cloud servers. Because of that, the Cloud server has a limited administration functionality, comparing to the On-premise server.
+In case with TeamCity Cloud, the TeamCity team is responsible for maintaining all hardware and infrastructure of cloud servers. Because of that, the Cloud server has a limited administration functionality comparing to the On-premise server.
 
 The __Administration__ pages comprises the following sections:
 * Under __Project-related Settings__, you can create projects and monitor server health and disk usage.
-* Under __User Management__, you can add users, user groupes and roles, and assign permissions to users. Use the new _Invitations_ page to invite TeamCity users via email.
+* Under __User Management__, you can add users, user groups and roles, and assign permissions to users. Use the new _Invitations_ page to invite TeamCity users via email. An invited user will be able to register a new user account or authenticate via GitHub or Bitbucket.
 * Under __Server Administration__, you can import projects (for example, exported from your On-premise server), view usage statistics, and control general settings.
 
 ### Build Agents in Cloud
@@ -101,22 +103,27 @@ Software
 
 We plan to provide equal CI/CD experience to users of our Cloud and On-premise versions. However, the Cloud version is an automatically configured server and thus does not provide the same server settings as our On-premise solution.
 
-Comparing to On-premise, TeamCity Cloud offers the following features:
-* For improved security, you can generate authentication tokens for build agents in advance.
+Comparing to On-premise, TeamCity Cloud Beta offers the following new features:
+* For better security, you can generate authentication tokens for build agents in advance.
 * Authorization via GitHub and Bitbucket is available. If you authenticate via any of these services, the respective [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections) will be preconfigured automatically.
-* The __Administration | Invitations__ page allows automatically inviting users to the server. By default, you can add new users only via invitations. An invited user will be able to authenticate via GitHub or Bitbucket.
+* The __Administration | Invitations__ page allows automatically inviting users to the server. By default, you can add new users only via invitations. An invited user will be able to register a new user account or authenticate via GitHub or Bitbucket.
 
 All the listed features will be introduced in our On-premise version in the nearest future.
 
-TeamCity Cloud has the following limitations comparing to On-premise:
+TeamCity Cloud Beta has the following limitations comparing to On-premise:
 * Limited server configuration.
 * No automatic [server diagnostics](teamcity-monitoring-and-diagnostics.md).
-* No plugin management.
 * Data is backed up and cleaned up automatically. The set of available configuration options may differ from the On-premise installations.
-* Some settings are unavailable to Cloud admins: for example, cloud profile configuration or changing the location for storing external artifacts.
+* Some settings are unavailable to TeamCity Cloud administrators: for example, cloud profiles' configuration or changing the location for storing external artifacts.
+* No plugin management. The following bundled plugins are currently disabled:
+    * LDAP support
+    * Microsoft Windows Domain authentication
+    * VCS Support: CVS and VCS Support: StarTeam
+    * RSS feed support
+    * Build Agent JVM updater
+    * NuGet Support
 
 Some listed features might be implemented or receive their Cloud equivalents in terms of the Public Beta or first released versions of TeamCity Cloud.
-
 
 ## Troubleshooting and Feedback
 
@@ -126,4 +133,8 @@ Before inquiring, please refer to the F.A.Q. page on our website.
 
 ### Known Issues
 
-[TO DO]
+The following issues can be currently observed in the TeamCity Cloud Beta version:
+
+* It is impossible to [restore a just deleted project](how-to.md#Restore+Just+Deleted+Project).
+* When running a custom build, you might see an irrelevant warning about no compatible agents available for this build. Please check the build real-time status to see the actual number of available agents.
+* 
