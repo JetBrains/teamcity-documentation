@@ -56,48 +56,71 @@ We recommend using tokens to authenticate build agents on the TeamCity server. C
 
 In terms of Beta, cloud agents come with the following characteristics:
 
-<table>
+### Windows Cloud Agents
 
-<tr>
+Hardware:
+* CPU: 4 vCPU (Intel Xeon (Cascade Lake))
+* RAM: 8 Gb ram
+* SSD: 20 Gb
 
-<td>
+Software:
+* Image: `Windows_Server-2012-R2_RTM-English-64Bit-Base`
+* Java (6.45, 7.79, 7.79, 8u181, 8u181, 9.0.4)
+* .NET Framework (3.5 (3.0, 2,0 included), 4.5, 4.6.2, 4.7.1)
+* .NET Core (1.1.7, 2.1.4, 3.1.102)
+* Visual Studio 2019 Build Tools
+* Ruby (2.4.3.1, 2.5.1.1, 4.7.2.2913922492)
+* Perforce CLI (2020.1)
+* NUnit (3.11.1)
+* Sysinternals Suite
+* Mono (4.2.3)
+* Android SDK (3859397 +update)
+* Python (2.7, 3.8 + pip)
+* Git (2.21.0-64)
+* Mercurial (tortoisehg-4.0.2)
+* Subversion (1.9.7)
+* Gradle (5.5.1)
+* NodeJS (12.16.1)
+* Yarn (1.22.4)
+* CMake (3.14.3)
+* 7-Zip (19.0)
+* Unity (2019.3.14)
+* MSYS2 (base 20200517)
+* AWS CLI (1.16.144)
 
-Hardware
+### Linux Cloud Agents
 
-</td>
+Hardware:
+* Medium agent:
+    * CPU: 4 vCPU (Intel Xeon (Cascade Lake))
+    * RAM: 8 Gb ram
+    * SSD: 20 Gb
+* Small agent:
+    * CPU: 2 vCPU (Intel Xeon (Cascade Lake))
+    * RAM: 4 Gb ram
+    * SSD: 20 Gb
 
-<td>
-
-Software
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-
-* CPU:
-* RAM:
-* [TO DO]
-
-</td>
-
-<td>
-
-* Java: Amazon Corretto 11
-* Bundled plugins:
-  * [TO DO]
-* [TO DO]
-
-</td>
-
-</tr>
-
-
-</table>
-
+Software:
+* Image: `ubuntu-bionic-18.04-amd64-server`
+* Java (java-1.8.0-amazon-corretto-jdk_8.252.09-1_amd64)
+* .NET Core (3.1.301, 3.0.103, 2.1.807, 2.2.402, 1.1.13)
+* Git (2.26.2)
+* Python (3.6.7, 2.7.15; pip 20.1.1)
+* Mono (6.8.0.123)
+* Perforce (helix-cli latest)
+* Mercurial (4.5.3)
+* NAnt (latest)
+* Ant (latest)
+* Android SDK (4333796 +update)
+* Gradle (5.5.1)
+* RVM (Ruby 2.5.8)
+* Go (1.14.1)
+* NodeJS (0.33.11) 4, 5, 6, 7, 8.12 (default)
+* Docker (19.03.9)
+* Docker Compose (1.23.1)
+* Ansible (2.9.10)
+* Native development tools (automake 1.15.1, autoconf 2.69, gettext, libtool 2.4.6, m4 1.4.18, clang, cmake 3.10.2, libglib2.0-dev, libcairo2-dev, libjpeg-dev, libexif-dev, libgif-dev, libc++-dev)
+* Yarn (1.22.4)
 
 ## Differences between TeamCity Cloud and On-premise
 
