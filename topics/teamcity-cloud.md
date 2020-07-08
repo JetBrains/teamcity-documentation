@@ -23,7 +23,7 @@ __Users of the Beta program will be able to migrate their TeamCity data to the r
 
 ## Starting TeamCity Cloud
 
-To start TeamCity in cloud, __[register a Cloud Beta account](https://www.jetbrains.com/lp/teamcity/cloud-new/)__. In a matter of seconds, your server will be available under the `beta.teamcity.com` domain.
+To start TeamCity in cloud, __[register a Cloud Beta account](https://www.jetbrains.com/teamcity/cloud/)__. In a matter of seconds, your server will be available under the `beta.teamcity.com` domain.
 
 After the server is ready, an invitation link will be sent to your email. Proceed via this link to get to your administrative account. Everything is ready to build!
 
