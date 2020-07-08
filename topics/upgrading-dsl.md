@@ -96,9 +96,9 @@ The upgrade procedure involves two steps:
     
      You should review these suggestions and apply them to your DSL scripts. The _configs version_ can be changed only after all these suggestions are applied.
     
-    <note>
-Instead of upgrading manually, you can always regenerate all of your Kotlin DSL scripts for your projects, unless you did not change them in the VCS repository since versioned settings were enabled in your project. To do this, you can disable and enable versioned settings again, and select the "_Overwrite_" option in the confirmation dialog. After that, TeamCity will make a commit to your VCS repository removing all previously generated Kotlin files and adding newly generated files corresponding to the current TeamCity version.
-    </note>
+    <tip>
+Instead of upgrading manually, you can always regenerate all the Kotlin DSL scripts for your projects, unless you changed them in the VCS repository since the versioned settings had been enabled in your project. To do this, you can disable and enable versioned settings again, and select the "_Overwrite_" option in the confirmation dialog. After that, TeamCity will make a commit to your VCS repository removing all previously generated Kotlin files and adding newly generated files corresponding to the current TeamCity version.
+    </tip>
 
 <anchor name="dsl20201"/>
 
