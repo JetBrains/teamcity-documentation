@@ -396,7 +396,7 @@ show table status like '%';
 
 ### max_connections
 
-You should ensure `max_connections` parameter has bigger value than the one specified in TeamCity `<`[`TeamCity Home Directory`](teamcity-home-directory.md)`>/config/database.properties` file.
+You should ensure `max_connections` parameter has a bigger value than the one specified in TeamCity `<`[`TeamCity Home Directory`](teamcity-home-directory.md)`>/config/database.properties` file.
 
 ### innodb_buffer_pool_size and innodb_log_file_size
 
