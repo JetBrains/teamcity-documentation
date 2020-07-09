@@ -1,6 +1,10 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2020.1.1 to 2020.1.2
+
+* Mercurial support has been dropped for our Windows Server Core agent Docker images. If you need to use Mercurial on Windows Server Core agents, consider pulling the previous version of the agent Docker image – 2020.1.1.
+
 ## Changes from 2020.1 to 2020.1.1
 
 * The .NET runner introduces the [custom command](net.md#Custom+Commands) option. Note that if you downgrade TeamCity to the preivous version after configuring the custom .NET command, the respective build steps will be ignored during the build.
