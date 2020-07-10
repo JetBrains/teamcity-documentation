@@ -159,7 +159,7 @@ Some listed features might be implemented or receive their Cloud equivalents in 
 
 ## Troubleshooting and Feedback
 
-To send your feedback or report issues, use our [YouTrack issue tracker](https://youtrack.jetbrains.com/issues/TW). You are welcome to discuss TeamCity Cloud in our [community forum](https://teamcity-support.jetbrains.com/hc/en-us/community/topics/).
+To send your feedback or report issues, use our [YouTrack issue tracker](https://youtrack.jetbrains.com/issues/TCC). You are welcome to discuss TeamCity Cloud in our [community forum](https://teamcity-support.jetbrains.com/hc/en-us/community/topics/).
 
 Before inquiring, please refer to the [F.A.Q.](https://www.jetbrains.com/teamcity/cloud/) on our website.
 
