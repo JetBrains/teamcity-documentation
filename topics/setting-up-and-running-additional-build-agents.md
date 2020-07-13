@@ -147,7 +147,7 @@ Note that after starting, the full agent behaves like a regular agent. If you mo
 
 ### Installing via Agent Push
 
-TeamCity provides functionality that allows installing a build agent to a remote host. Currently supported combinations of the server host platform and targets for build agents are:
+TeamCity provides the Agent Push functionality that allows installing a build agent to a remote host. Currently, supported combinations of the server host platform and targets for build agents are:
 * from the Unix-based TeamCity server, build agents can be installed to Unix hosts only (via SSH)
 * from the Windows-based TeamCity server, build agents can be installed to Unix (via SSH) or Windows (via psexec) hosts
 
@@ -155,7 +155,7 @@ TeamCity provides functionality that allows installing a build agent to a remote
 
 __SSH note__
 
-Make sure the "Password" or "Public key" authentication is enabled on the target host according to preferred authentication method.
+Make sure the "Password" or "Public key" authentication is enabled on the target host according to a preferred authentication method.
 </note>
 
 #### Remote Host Requirements
@@ -187,11 +187,11 @@ Linux
 
 <td>
 
-1\. Installed JDK(JRE) 6-10 (__1.8.0_161 or later is recommended__). The JVM should be reachable with the `JAVA_HOME` (`JRE_HOME`) global environment variable or be in the global path (that is not in user's `.bashrc` file, and so on)
+* Installed JDK (JRE) 6-10 (__1.8.0_161 or later is recommended__). The JVM should be reachable via the `JAVA_HOME` (`JRE_HOME`) global environment variable or be in the global path (instead of being specified in, for example, user's `.bashrc` file)
 
-2\. The `unzip` utility.
+* The `unzip` utility.
 
-3\. Either `wget` or `curl`.
+* Either `wget` or `curl`.
 
 
 </td></tr><tr>
@@ -205,22 +205,38 @@ Windows
 
 <td>
 
-1\. Installed JDK/JRE 6-10 (__1.8.0\_161 or later__ __is recommended__).
+* Installed JDK/JRE 6-10 (__1.8.0\_161 or later__ __is recommended__).
 
 [//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e644.txt")
 
-2\. `Sysinternals psexec.exe` on the TeamCity server. It has to be accessible in paths. You can install it using the __Administration__ | __Tools__ page. Note that PsExec applies additional requirements to a remote Windows host (for example, [administrative share on remote host](http://en.wikipedia.org/wiki/Administrative_share#How_to_enable_in_Windows_Vista_and_Windows_7) must be accessible). Read more about [PsExec](http://technet.microsoft.com/en-us/sysinternals/bb897553).
+* `Sysinternals psexec.exe` has to be installed on the TeamCity server and accessible in paths. You can install it on the __Administration__ | __Tools__ page.   
+Note that [PsExec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec) applies additional requirements to a remote Windows host. Make sure the following preconditions are satisfied:
+  * [Administrative share](https://en.wikipedia.org/wiki/Administrative_share) on a remote host is enabled and accessible.
+  * Remote services work (MMC snap-in can connect to the machine).
+  * Remote registry works (`regedit` can connect to the machine via `services.msc`).
+  * Server and workstation services are running (check via `services.msc`).
+  * [Classic network authentication](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-access-sharing-and-security-model-for-local-accounts) is enabled.   
+ 
+ You can test the connection with the following commands:   
+  ```Console
+    net use \\target\Admin$ /user:Administrator 
+    dir \\target\Admin$ 
+   ```
 
 
 </td></tr></table>
 
 #### Installation
 1. In the TeamCity Server web UI navigate to the __Agents__ | __Agent Push__ tab, and click __Install Agent__.   
-If you are going to use same settings for several target hosts, you can __create a preset__ with these settings, and use it each time when installing an agent to another remote host.
-2. In the __Install agent__ dialog, either select a saved preset or choose "Use custom settings", specify the target host platform and configure corresponding settings. Agent push to a Linux system via SSH supports custom ports (the default is 22) specified as the __SSH port__ parameter. The port specified in a preset can be overridden in the host name, e.g. `hostname.domain:2222`, during the actual agent installation.
+If you are going to use same settings for several target hosts, you can __create a preset__ with these settings and use it each time when installing an agent to another remote host.
+2. In the _Install agent_ dialog, either select a saved preset or choose "_Use custom settings_", specify the target host platform, and configure corresponding settings. Agent Push to a Linux system via SSH supports custom ports (the default is 22) specified as the __SSH port__ parameter. The port specified in a preset can be overridden in the host name (for example, `hostname.domain:2222`), during the actual agent installation.
 3. You may need to download `Sysinternals psexec.exe`, in which case you will see the corresponding warning and a link to the __Administration__ | __Tools__ page where you can download it.
 
+<tip>
+
 You can use Agent Push presets in [Agent Cloud profile](agent-cloud-profile.md) settings to automatically install a build agent to a started cloud instance.
+
+</tip>
 
 ## Starting the Build Agent
 
