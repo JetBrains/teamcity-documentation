@@ -3,14 +3,6 @@
 
 Welcome to the documentation for [TeamCity 2020.x](https://www.jetbrains.com/teamcity/)! If you are using an earlier TeamCity version, please refer to the [documentation for your release](https://confluence.jetbrains.com/display/TW/Documentation).
 
-<tip>
-
-__TeamCity Cloud Beta is open!__
-
-Learn more on [our website](https://www.jetbrains.com/teamcity/cloud/) or in the [documentation](teamcity-cloud.md).
-
-</tip>
-
 
 <table>
 <tr>
