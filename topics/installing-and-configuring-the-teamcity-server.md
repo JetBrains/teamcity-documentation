@@ -67,6 +67,12 @@ By default, the Windows service is installed under the SYSTEM account. To change
 
 Review [software requirements](supported-platforms-and-environments.md#TeamCity+Server) before the installation.
 
+<tip>
+
+We recommend running the TeamCity server under a dedicated user account.
+
+</tip>
+
 Unpack the `TeamCity<version number>.tar.gz` archive (for example, using the `tar xfz TeamCity<version number>.tar.gz` command under Linux, or the WinZip, WinRar or similar utility under Windows). Use GNU tar to unpack (for example, Solaris 10 tar is reported to truncate too long file names and may cause a `ClassNotFoundException` when using the server after such unpacking. Consider getting GNU tar at [Solaris packages](http://sunfreeware.com/) or using the `gtar xfz` command).
 
 Ensure you have JRE or JDK installed and the `JAVA_HOME` environment variable is pointing to the Java installation directory. Java JDK 1.8.0_16 or later is required.
