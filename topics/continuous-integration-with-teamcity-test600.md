@@ -193,6 +193,8 @@ Files produced by a build, for example, installers, WAR files, reports, log file
 
 ### Basic CI Workflow in TeamCity
 
+<img src="cicd-flow-test600.png" width="600" alt="Diagram 600px"/>
+
 To understand the data flow between the server and the agents, what is passed to the agents, how and when TeamCity gets the results, let's take a look at a simple build lifecycle.
 
  1. The TeamCity server detects a change in your VCS Root and stores it in the database.
