@@ -164,7 +164,7 @@ There are several requirements for the remote host:
 
 <table><tr>
 
-<td>
+<td width="150">
 
 Platform
 

@@ -21,3 +21,9 @@ If you declare multiple execution conditions, the build step will be executed on
 When triggering a [custom build](triggering-a-custom-build.md), you can change the values of the parameters responsible for steps' execution. This way, you can flexibly control a single build run: for example, run a quick build without engaging tests or other optional steps.
 
 </tip>
+
+<seealso>
+        category ref="external">
+                    <a href="https://blog.jetbrains.com/teamcity/2020/07/new-in-2020-1-conditional-build-steps/">Blog post: Conditional build steps</a>
+                </category>
+</seealso>
