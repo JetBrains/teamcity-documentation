@@ -56,7 +56,7 @@ Service messages support two formats:
     
     ```
 
-  Multiple attributes message can more formally be described as:   
+  Multiple-attribute message can more formally be described as:   
   ```Shell
     ##teamcity[messageNameWSPpropertyNameOWSP=OWSP'value'WSPpropertyName_IDOWSP=OWSP'value'...OWSP]
     
@@ -213,7 +213,7 @@ Escape as
 
 ### Common Properties
 
-Any message and multiple attribute supports the optional attributes `timestamp` and `flowId`. In the following examples, `<messageName>` is the name of the specific service message.
+Any message supports the optional attributes `timestamp` and `flowId`. In the following examples, `<messageName>` is the name of the specific service message.
 
 #### Message Creation Timestamp
 
@@ -248,14 +248,14 @@ will result in
 
 #### Message FlowId
 
-`flowId` is a unique identifier of the messages flow in a build. Flow tracking is necessary, for example, to distinguish separate processes running in parallel. The identifier is a string that must be unique in the scope of individual build.
+`flowId` is a unique identifier of the messages flow in a build. Flow tracking is necessary, for example, to distinguish separate processes running in parallel. The identifier is a string that must be unique in the scope of an individual build.
 
 ```Shell
 ##teamcity[<messageName> flowId='flowId' ...]
 
 ```
 
-### Reporting Messages For Build Log
+### Reporting Messages for Build Log
 
 You can report messages for a build log in the following way:
 
@@ -275,12 +275,11 @@ This message fails the build in case its status is `ERROR` and the "_Fail build 
 
 #### Blocks of Service Messages
 
-Blocks are used to group several messages in the build log.  
+Blocks are used to group several messages in the build log.
 
 Block opening:
 
 The `blockOpened` system message has the `name` attribute, and you can also add its description: 
-
 
 ```Shell
  ##teamcity[blockOpened name='<blockName>' description='<this is the description of blockName>']
@@ -303,7 +302,7 @@ Note that when you close the block, all inner blocks are closed automatically.
 #### Reporting Compilation Messages
 
 ```Shell
-##teamcity[compilationStarted compiler='<compiler name>']
+##teamcity[compilationStarted compiler='<compiler_name>']
 ...
 ##teamcity[message text='compiler output']
 ##teamcity[message text='compiler output']
@@ -314,7 +313,7 @@ Note that when you close the block, all inner blocks are closed automatically.
 ```
 
 where:
-* `compiler name` is an arbitrary name of the compiler performing compilation, for example, `javac` or `groovyc`. Currently, it is used as a block name in the build log.
+* `compiler_name` is an arbitrary name of the compiler performing compilation, for example, `javac` or `groovyc`. Currently, it is used as a block name in the build log.
 * Any message with status `ERROR` reported between `compilationStarted` and `compilationFinished` will be treated as a compilation error.
 
 #### Reporting Tests
@@ -337,7 +336,7 @@ All the individual test messages are to appear between `testSuiteStarted` and `t
 
 ###### Nested test reporting
 
-__Prior to TeamCity 9.1__, one test could have been reported from within another test (see the example at the end of this section). In the later versions, starting another test finishes the currently started test in the same "flow". To still report tests from within other tests, you will need to specify another [`flowId`](#Message+FlowId) in the nested test service messages.
+Prior to TeamCity 9.1, one test could have been reported from within another test (see the example at the end of this section). In the later versions, starting another test finishes the currently started test in the same _flow_. To still report tests from within other tests, you will need to specify another [`flowId`](#Message+FlowId) in the nested test service messages.
 
 __Test start/stop messages:__
 

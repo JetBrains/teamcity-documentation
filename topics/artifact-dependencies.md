@@ -1,8 +1,9 @@
 [//]: # (title: Artifact Dependencies)
 [//]: # (auxiliary-id: Artifact Dependencies)
-This page details configuration of the TeamCity [Artifact Dependencies](dependent-build.md#Artifact+Dependency).
 
-The __Build Configuration Settings | Dependencies | Artifact Dependencies__ section allows configuring the dependencies.  It is possible to disable a configured dependency temporarily or permanently using the corresponding option in the last column of the Artifact Dependencies list.
+This page details configuration of the TeamCity [_artifact dependencies_](dependent-build.md#Artifact+Dependency).
+
+The __Build Configuration Settings | Dependencies | Artifact Dependencies__ section allows configuring the dependencies. It is possible to disable a configured dependency temporarily or permanently using the corresponding option in the last column of the _Artifact Dependencies_ list.
 
 ## Configuring Artifact Dependencies Using Web UI
 
@@ -54,7 +55,7 @@ Specify the type of build whose artifacts are to be taken: last successful build
 <note>
 
  * When selecting the build configuration, take your [clean-up policy settings](clean-up.md) into account.   
-   Builds are cleaned and deleted on a regular basis, thus the build configuration could become dependent on a non\-existent build. When artifacts are taken from a build with a specific number, then the specific build will not be deleted during clean\-up.
+   Builds are cleaned and deleted on a regular basis, thus the build configuration could become dependent on a non-existent build. When artifacts are taken from a build with a specific number, then the specific build will not be deleted during clean-up.
  * If both a dependency by sources and a dependency by artifacts on the last finished build are configured for a build configuration, then artifacts will be taken from the build with the same sources.
 </note>
 
@@ -70,7 +71,7 @@ Build number
 
 <td>
 
-_This field appears if you have selected_ ___build with specific build number___ _in the_ ___Get artifacts from___ _list_.   
+_This field appears if you have selected build with specific build number in the_ __Get artifacts from__ list_.   
 Specify here the exact [build number](configuring-general-settings.md#Build+Number+Format) of the artifact.
 
 
@@ -85,7 +86,7 @@ Build tag
 
 <td>
 
-_This field appears if you have selected_ ___last finished build with specified tag___ _in the_ ___Get artifacts from___ _list_.    
+_This field appears if you have selected_ _last finished build with specified tag in the __Get artifacts from__ list_.    
 Specify here the tag of the build whose artifacts are to be used. When resolving the dependency, TeamCity will look for the last successful build with the given tag and use its artifacts.
 
 
@@ -115,12 +116,12 @@ Artifacts Rules
 
 Here you specify the artifacts of the source build to be downloaded and the location on the agent they will be downloaded to before the dependent build starts.
 
- A newline\-delimited set of rules. Each rule must have the following syntax:
+A newline-delimited set of rules. Each rule must have the following syntax:
 
 `[+:|-:]SourcePath[!ArchivePath][=>DestinationPath]`
 
 
-Each rule specifies the files to be downloaded from the "source" build. The _SourcePath_ should be relative to the artifacts directory of the "source" build. The path can either identify a specific file, directory, or use wildcards to match multiple files. [Ant-like wildcards](wildcards.md) are supported.   
+Each rule specifies the files to be downloaded from the "source" build. The _SourcePath_ should be relative to the artifacts' directory of the "source" build. The path can either identify a specific file, directory, or use wildcards to match multiple files. [Ant-like wildcards](wildcards.md) are supported.   
 Downloaded artifacts will keep the "source" directory structure starting with the first `*` or `?`.   
 _DestinationPath_ specifies the destination directory on the agent where downloaded artifacts are to be placed. If the path is relative (which is recommended), it will be resolved against the build checkout directory. If needed, the destination directories can be cleaned before downloading artifacts. If the destination path is empty, artifacts will be downloaded directly to the checkout root.
 
@@ -129,24 +130,24 @@ Basic examples:
  * Use `a/b/**=>lib` to download all files from `a/b` directory of the source build to the `lib` directory. If there is a `a/b/c/file.txt` file in the source build artifacts, it will be downloaded into the file `lib/c/file.txt`.
  * At the same time, artifact dependency `**/*.txt=>lib` will preserve the directories structure: the `a/b/c/file.txt` file from source build artifacts will be downloaded to `lib/a/b/c/file.txt`.
 
- _ArchivePath_ is used to extract downloaded [compressed](configuring-general-settings.md#Artifact+Paths) artifacts. Zip, 7\-zip, jar, tar and tar.gz are supported.   
- _ArchivePath_ follows general rules for _SourcePath_: ant\-like wildcards are allowed, the files matched inside the archive will be placed in the directory corresponding to the first wildcard match (relative to destination path)     
+ _ArchivePath_ is used to extract downloaded [compressed](configuring-general-settings.md#Artifact+Paths) artifacts. `zip`, `7zip`, `jar`, `tar`, and `tar.gz` are supported.   
+ _ArchivePath_ follows general rules for _SourcePath_: ant-like wildcards are allowed, the files matched inside the archive will be placed in the directory corresponding to the first wildcard match (relative to destination path)   
  For example: `release.zip!*.dll` command will extract all .dll files residing in the root of the `release.zip` artifact.
 
 Archive processing examples:
 
- * `release-*.zip!*.dll=>dlls` will extract \*.dll from all archives matching the `release-*.zip` pattern to the `dlls` directory.
+ * `release-*.zip!*.dll=>dlls` will extract `*.dll` from all archives matching the `release-*.zip` pattern to the `dlls` directory.
  * `a.zip!**=>destination` will unpack the entire archive saving the path information.
- * `a.zip!a/b/c/**/*.dll=>dlls` will extract all .dll files from `a/b/c` and its subdirectories into the `dlls` directory, without the `a/b/c` prefix.
+ * `a.zip!a/b/c/**/*.dll=>dlls` will extract all `.dll` files from `a/b/c` and its subdirectories into the `dlls` directory, without the `a/b/c` prefix.
 
- `+:` and `-:` can be used to include or exclude specific files from download or unpacking. As `+:` prefix can be omitted: rules are inclusive by default, and at least one inclusive rule is required. The order of rules is unimportant. For each artifact the most specific rule (the one with the longest prefix before the first wildcard symbol) is applied. When excluding a file, _DestinationPath_ is ignored: the file won't be downloaded at all. Files can also be excluded from archive unpacking. The set of rules applied to the archive content is determined by the set of rules matched by the archive itself.
+ `+:` and `-:` can be used to include or exclude specific files from the download or unpacking. As `+:` prefix can be omitted: rules are inclusive by default, and at least one inclusive rule is required. The order of rules is unimportant. For each artifact the most specific rule (the one with the longest prefix before the first wildcard symbol) is applied. When excluding a file, _DestinationPath_ is ignored: the file won't be downloaded at all. Files can also be excluded from archive unpacking. The set of rules applied to the archive content is determined by the set of rules matched by the archive itself.
 
 Exclusive patterns examples:
 
  * `**/*.txt=>texts`  
-   `-:bad/exclude.txt`  Will download all *.txt files from all directories, excluding `exclude.txt` from the `bad` directory
+   `-:bad/exclude.txt`  Will download all `*.txt` files from all directories, excluding `exclude.txt` from the `bad` directory
  * `+:release-*.zip!**/*.dll=>dlls` 
-   `-:release-0.0.1.zip!Bad.dll`  Will download and unpack all dlls from `release-*.zip` files to the `dlls` directory. The `Bad.dll` file from `release-0.0.1.zip` will be skipped
+   `-:release-0.0.1.zip!Bad.dll`  Will download and unpack all `*.dll` files from `release-*.zip` files to the `*.dll`s' directory. The `Bad.dll` file from `release-0.0.1.zip` will be skipped
  * `**/*.*=>target`    
    `-:excl/**/*.*`  
    `+:excl/must_have.txt=>target`  Will download all artifacts to the `target` directory. Will not download anything from the `excl` directory, but the file called `must_have.txt`
@@ -161,12 +162,10 @@ If you want to include files from the `.teamcity` directory for any purpose, be 
 
 Example of accessing hidden artifacts:
 
- * `.teamcity/properties/*.properties`
- * `.teamcity/*.*`
+* `.teamcity/properties/*.properties`
+* `.teamcity/*.*`
 
- 
-
-By default, downloading artifact dependencies to the [agent work directory](agent-work-directory.md) is allowed, the [agent home directory](agent-home-directory.md) is prohibited. To override the defaults, set custom rules to download artifacts by specifying the comma\-separated paths in the [`buildAgent.properties`](build-agent-configuration.md): `teamcity.artifactDependenciesResolution.blackList` and `teamcity.artifactDependenciesResolution.whiteList`. Blacklisting a path forbids artifacts download to the directory unless it is whitelisted.
+By default, downloading artifact dependencies to the [agent work directory](agent-work-directory.md) is allowed, the [agent home directory](agent-home-directory.md) is prohibited. To override the defaults, set custom rules to download artifacts by specifying the comma-separated paths in the [`buildAgent.properties`](build-agent-configuration.md): `teamcity.artifactDependenciesResolution.blackList` and `teamcity.artifactDependenciesResolution.whiteList`. Blacklisting a path forbids artifacts download to the directory unless it is whitelisted.
 
 
 </td></tr><tr>
@@ -180,7 +179,7 @@ Clean destination paths before downloading artifacts
 
 <td>
 
-Check this option to delete the content of the destination directories before copying artifacts. It will be applied to all inclusive rules
+Check this option to delete the content of the destination directories before copying artifacts. It will be applied to all inclusive rules.
 
 
 </td></tr></table>
