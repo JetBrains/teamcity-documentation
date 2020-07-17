@@ -248,12 +248,28 @@ will result in
 
 #### Message FlowId
 
-`flowId` is a unique identifier of the messages flow in a build. Flow tracking is necessary, for example, to distinguish separate processes running in parallel. The identifier is a string that must be unique in the scope of an individual build.
+`flowId` is a unique identifier of the message flow in a build. Flow tracking is necessary, for example, to distinguish separate processes running in parallel. The identifier is a string that must be unique in the scope of an individual build.
 
 ```Shell
 ##teamcity[<messageName> flowId='flowId' ...]
 
 ```
+
+To start a flow inside a given existing flow, use the `flowStarted` parameter and specify the parent flow ID as the `parent` parameter. Flows without the specified parent start inside the flow of the current step.
+
+To end a flow, use the `flowFinished` parameter. Ending a parent flow automatically closes all its subflows, but we recommend declaring the flow order explicitly:
+
+```Shell
+##teamcity[<messageName> flowStarted flowId='MainFlow' ...]
+##teamcity[<messageName> flowStarted flowId='SubFlow1' parent='MainFlow' ...]
+##teamcity[<messageName> flowFinished flowId='SubFlow1' ...]
+##teamcity[<messageName> flowStarted flowId='SubFlow2' parent='MainFlow' ...]
+##teamcity[<messageName> flowFinished flowId='SubFlow2' ...]
+##teamcity[<messageName> flowFinished flowId='MainFlow' ...]
+
+```
+
+The flow order affects the sequence of reports in a build log and allows reporting results as subtrees.
 
 ### Reporting Messages for Build Log
 
