@@ -23,7 +23,7 @@ When triggering a [custom build](triggering-a-custom-build.md), you can change t
 </tip>
 
 <seealso>
-        category ref="external">
-                    <a href="https://blog.jetbrains.com/teamcity/2020/07/new-in-2020-1-conditional-build-steps/">Blog post: Conditional build steps</a>
-                </category>
+        <category ref="external">
+        <a href="https://blog.jetbrains.com/teamcity/2020/07/new-in-2020-1-conditional-build-steps/">Blog post: Conditional build steps</a>
+        </category>
 </seealso>
