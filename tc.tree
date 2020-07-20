@@ -220,9 +220,9 @@
                   <toc-element id="msbuild.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="mspec.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="nant.md" show-structure-for="chapter" show-structure-depth="4"/>
-                  <toc-element id="nuget-pack.md" show-structure-for="chapter" />
-                  <toc-element id="nuget-publish.md" show-structure-for="chapter" />
-                  <toc-element id="nuget-installer.md" show-structure-for="chapter" />
+                  <toc-element id="nuget-pack.md" show-structure-for="chapter" show-structure-depth="4"/>
+                  <toc-element id="nuget-publish.md" show-structure-for="chapter" show-structure-depth="4"/>
+                  <toc-element id="nuget-installer.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="nunit.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="powershell.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="rake.md" show-structure-for="chapter" show-structure-depth="4"/>
