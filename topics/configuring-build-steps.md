@@ -1,19 +1,23 @@
 [//]: # (title: Configuring Build Steps)
 [//]: # (auxiliary-id: Configuring Build Steps)
 
-When creating a build configuration, it is important to configure the sequence of build steps to be executed.
+When creating a build configuration, it is important to configure the sequence of _build steps_ to be executed.
 
-Build steps are configured on the __Build Steps__ section of the [Build Configuration Settings](creating-and-editing-build-configurations.md) page: the steps can be auto-detected by TeamCity or added manually.
+Build steps are configured in the __Build Steps__ section of the [__Build Configuration Settings__](creating-and-editing-build-configurations.md) page. Here, you can:
+* add new steps manually;
+* autodetect steps by scanning the source VCS repository;
+* copy and delete steps;
+* temporarily enable/disable steps.
 
-Each build step is represented by a [build runner](build-runner.md) and provides integration with a specific build or test tool. You can add as many build steps to your build configuration as needed. For example, call a NAnt script before compiling VS solutions.
+Each build step is represented by a [build runner](build-runner.md) and provides integration with a specific build or test tool. For example, call a NAnt script before compiling VS solutions. You can add as many build steps to your build configuration as needed.
 
 Build steps are invoked sequentially.
 
-The decision whether to run the next build step may depend on the exit status of the previous build steps and the current build status.
+The decision whether to run the next build step may depend on the exit status of the previous build steps, the current build status, or [execution conditions](build-step-conditions.md).
 
-The build step status is considered _failed_ if (1) the build process returned a non-zero exit code and (2) the "_Fail build if build process exit code is not zero_" build failure condition is enabled (see [Build Failure Conditions](build-failure-conditions.md)); otherwise build step is _successful_.
+The build step is considered _failed_ if (1) the build process returned a non-zero exit code and (2) the "_Fail build if build process exit code is not zero_" build failure condition is enabled (see [Build Failure Conditions](build-failure-conditions.md)); otherwise, the build step is considered _successful_.
 
-Note that the status of the build step and the build can be different. A build step can be successful, but the build can be failed because of another build failure condition, not based on the exit code (like failing a test). On the other hand, if a build step has failed, the build will fail too.
+Note that the status of a build step and the build itself can be different. All build steps can be successful, but the build can fail because of another build failure condition – not based on the exit code (like failing a test). On the other hand, if a build step has failed, the build will fail too.
 
 ## Execution policy
 
