@@ -15,11 +15,11 @@ Note that since TeamCity 2019.2 the [Running Builds Node](https://confluence.jet
 
 ## Installing Secondary Node
 
-To install a secondary node, follow these steps:
+To install a secondary node, follow these steps on the secondary node machine:
 
-1. On the secondary node machine, [install](installing-and-configuring-the-teamcity-server.md) the TeamCity software as usual: download the distribution package and follow the installation wizard.
-2. Provide the path to the shared Data Directory via the `TEAMCITY_DATA_PATH` environment variable.
-3. Add additional arguments to the `TEAMCITY_SERVER_OPTS` [environment variable](configuring-teamcity-server-startup-properties.md):
+1. [Install](installing-and-configuring-the-teamcity-server.md) the TeamCity software as usual: download the distribution package and follow the installation wizard.
+2. Provide the path to the shared Data Directory via the `TEAMCITY_DATA_PATH` [environment variable](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts).
+3. Add additional arguments to the `TEAMCITY_SERVER_OPTS` environment variable:
 
 
 ```Plain Text
