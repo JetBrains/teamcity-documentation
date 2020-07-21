@@ -101,7 +101,7 @@ URL to VCS repository. Supports URLs in [different formats](guess-settings-from-
 
 <td>
 
-Minimum checking interval
+Minimum polling interval
 
 <anchor name="checkingInterval"/>
 
@@ -117,7 +117,7 @@ Some public servers may block access if polled too frequently.
 
 </note>
 
-If TeamCity detects that a [VCS commit hook](configuring-vcs-post-commit-hooks-for-teamcity.md) is used to trigger checking for changes, this interval is automatically increased up to the predefined value (4 hours). If the periodical check finds changes undetected via the commit hook, the checking interval is reset to the specified minimum.
+If TeamCity detects that a [VCS commit hook](configuring-vcs-post-commit-hooks-for-teamcity.md) is used to trigger checking for changes, this interval is automatically increased up to the predefined value (4 hours). If the periodical check finds changes undetected via the commit hook, the polling interval is reset to the specified minimum.
 
 
 </td></tr><tr>
