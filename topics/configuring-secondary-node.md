@@ -1,7 +1,7 @@
 [//]: # (title: Configuring Secondary Node)
 [//]: # (auxiliary-id: Configuring Secondary Node)
 
-In addition to the main TeamCity server, you can start a secondary server (node) sharing the Data Directory and database with the main one. Read more in [Multinode Setup](multinode-setup.md).
+In addition to the main TeamCity server, you can start a secondary server (node) sharing the Data Directory and external database with the main one. Read more in [Multinode Setup](multinode-setup.md).
 
 This page describes how to configure a secondary node.
 
@@ -39,7 +39,7 @@ The secondary node requires the same memory settings as the main node. If you ha
 
 ## Startup & Shutdown
 
-A secondary node can be started\/stopped using regular TeamCity scripts (`teamcity-server.bat`, `teamcity-server.sh`) or Windows services.
+A secondary node can be started/stopped using regular TeamCity scripts (`teamcity-server.bat`, `teamcity-server.sh`) or Windows services.
 
 Before starting more than one secondary node, make sure the database is configured to accept enough parallel connections to handle requests from all nodes. By default, each node requires 50 connections to the database.
 

@@ -40,7 +40,7 @@ Before switching to the multinode setup, we recommend that your read how to [con
 
 ### Shared Data Directory
 
-The main TeamCity server and secondary nodes require access to the same [TeamCity Data Directory](teamcity-data-directory.md), which must be shared, and to the same database.
+The main TeamCity server and secondary nodes require access to the same [TeamCity Data Directory](teamcity-data-directory.md), which must be shared, and to the same external database.
 
 For a high availability setup, we recommend storing the TeamCity Data Directory on a separate machine. In this case, even if the main server goes down, the secondary nodes will be able to connect to the shared Data Directory.
 
