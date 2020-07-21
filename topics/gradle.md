@@ -3,11 +3,15 @@
 
 The _Gradle_ build runner runs [Gradle](http://www.gradle.org) projects.
 
-<note>
+To run builds with Gradle, Gradle 0.9-rc-1 or later must be installed on all the agent machines. Alternatively, if you use the [Gradle wrapper](https://docs.gradle.org/3.3/userguide/gradle_wrapper.html), you need to have properly configured Gradle Wrapper scripts checked in to your Version Control.
 
-To run builds with Gradle, you need to have Gradle 0.9-rc-1 or higher installed on all the agent machines. Alternatively, if you use the [Gradle wrapper](https://docs.gradle.org/3.3/userguide/gradle_wrapper.html), you need to have properly configured Gradle Wrapper scripts checked in to your Version Control.
-</note>
+The runner supports all Gradle build configurations, including `build.gradle` and `build.gradle.kts`.
 
+<tip>
+
+To use the TeamCity server as an external dependency repository for Gradle builds, try the external [TeamCity-Gradle plugin](https://github.com/jk1/TeamCity-dependencies-gradle-plugin).
+
+</tip>
 
 ## Gradle Parameters
 
@@ -50,7 +54,7 @@ Incremental building
 
 <td>
 
-TeamCity can make use of the Gradle `:buildDependents` [feature](http://www.gradle.org/docs/current/userguide/userguide_single.html#sec:multiproject_build_and_test). If the __Incremental building__ checkbox is enabled, TeamCity will detect Gradle modules affected by changes in the build, and start the `:buildDependents` command for them only. This will cause Gradle to fully build and test only the modules affected by changes.
+TeamCity can make use of the Gradle `:buildDependents` [feature](http://www.gradle.org/docs/current/userguide/userguide_single.html#sec:multiproject_build_and_test). If the _Incremental building_ checkbox is enabled, TeamCity will detect Gradle modules affected by changes in the build, and start the `:buildDependents` command for them only. This will cause Gradle to fully build and test only the modules affected by changes.
 
 
 </td></tr><tr>
@@ -141,7 +145,7 @@ Stacktrace
 
 <td>
 
-Selecting the __Print stacktrace__ check box is equivalent to adding the `-s` Gradle command line parameter.
+Selecting the __Print stacktrace__ checkbox is equivalent to adding the `-s` Gradle command line parameter.
 
 
 </td></tr></table>
@@ -154,8 +158,10 @@ The TeamCity system parameters can be accessed in Gradle build scripts in the [s
 
 
 ```Shell
-task printProperty << {
-    println "${project.ext['teamcity.build.id']}"
+task printProperty {
+    doLast {
+        println "${teamcity['teamcity.build.id']}"
+    }
 }
 
 ```
@@ -164,13 +170,13 @@ or if the system property's name is a legal Groovy name identifier (for example,
 
 
 ```Shell
-task printProperty << {
-     println "$myPropertyName"
+task printProperty {
+     doLast {
+          println "$myPropertyName"
+     }
 }
 
 ```
-
-
 
 ### Docker Settings
 
@@ -182,6 +188,7 @@ In this section, you can specify a Docker image which will be [used to run the b
 [//]: # (AltHead: coverage)
 
 Code coverage with [IDEA code coverage engine](intellij-idea.md) and [JaCoCo](jacoco.md) is supported.
+
 
 <seealso>
         <category ref="admin-guide">
