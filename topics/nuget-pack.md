@@ -38,11 +38,11 @@ NuGet.exe
 
 <td>
 
-Select a NuGet version to use from the drop\-down list (you need to have [NuGet installed](nuget.md)), or specify a custom path to `NuGet.exe`.
+Select a NuGet version to use from the drop-down menu ([NuGet](nuget.md) must be installed), or specify a custom path to `NuGet.exe`.
 
 <note>
 
-An appropriate version of .NET Framework installed on the agent machine is required depending on the NuGet.exe version used: NuGet 2.8.6\+ requires .NET 4.5\+, earlier NuGet versions require .NET 4.0.
+An appropriate version of .NET Framework must be installed on the agent machine, depending on the used `NuGet.exe` version: NuGet 2.8.6+ requires .NET 4.5+, earlier NuGet versions require .NET 4.0.
 </note>
 
 
@@ -52,13 +52,11 @@ An appropriate version of .NET Framework installed on the agent machine is requi
 
 Specification files
 
-
 </td>
 
 <td>
 
-Enter path(s) to `csproj` or `nuspec` file(s). You can specify as many specification files here as you need. Wildcards are supported. If you specify here a csproj file, you won't have to redefine the version number and copyright information in the spec file.
-
+Enter path(s) to `csproj` or `nuspec` file(s). You can specify as many specification files here as you need. Wildcards are supported. If you specify here a `csproj` file, you won't have to redefine the version number and copyright information in the spec file.
 
 </td></tr><tr>
 
@@ -66,13 +64,11 @@ Enter path(s) to `csproj` or `nuspec` file(s). You can specify as many specifica
 
 Prefer project files to .nuspec
 
-
 </td>
 
 <td>
 
-Check the box to use the project file (if exists, i.e. `.csproj` or `.vbproj`) for every matched `.nuspec` file.
-
+Check the box to use the project file (if exists,that is `.csproj` or `.vbproj`) for every matched `.nuspec` file.
 
 </td></tr><tr>
 
@@ -80,13 +76,11 @@ Check the box to use the project file (if exists, i.e. `.csproj` or `.vbproj`) f
 
 Version
 
-
 </td>
 
 <td>
 
 Specify the package version. Overrides the version number from the `nuspec` file. You can use the TeamCity variable `%build.number%` here.
-
 
 </td></tr><tr>
 
@@ -94,26 +88,24 @@ Specify the package version. Overrides the version number from the `nuspec` file
 
 Base Directory
 
-
 </td>
 
 <td>
 
-Select an option from the drop down list to specify the directory where the files defined in the `nuspec` file are located (the directory against which the paths in `<files></files>` from `nuspec` are resolved, usually some `bin` directory). If __Use explicit directory__ is set and the field is left blank, TeamCity will use the build checkout directory as the base directory.
-
+Select an option from the drop-down menu to specify the directory where the files defined in the `nuspec` file are located (the directory against which the paths in `<files></files>` from `nuspec` are resolved; usually some `bin` directory). If _Use explicit directory_ is enabled and this field is left blank, TeamCity will use the build checkout directory as the base directory.
 
 </td></tr><tr>
 
 <td>
 
-Output Directory
+Output directory
 
 
 </td>
 
 <td>
 
-Specify the path where the generated NuGet package is to be put.
+Specify the path where to put the generated NuGet package.
 
 
 </td></tr><tr>
@@ -127,7 +119,7 @@ Specify the path where the generated NuGet package is to be put.
 
 <td>
 
-Check the box to clean the directory before packing.
+Clean the directory before packing.
 
 
 </td></tr><tr>
@@ -136,13 +128,11 @@ Check the box to clean the directory before packing.
 
 Publish created packages to build artifacts
 
-
 </td>
 
 <td>
 
-Check the box if you're using TeamCity as a NuGet repository to publish packages to the TeamCity's NuGet server and be able to use them as regular TeamCity artifacts.
-
+If you are using TeamCity as a NuGet repository, select this option to publish packages to the TeamCity's NuGet server and be able to use them as regular TeamCity artifacts.
 
 </td></tr><tr>
 
@@ -150,13 +140,11 @@ Check the box if you're using TeamCity as a NuGet repository to publish packages
 
 Exclude files
 
-
 </td>
 
 <td>
 
-Specify one or more wildcard patterns to exclude when creating a package. Equivalent to the NuGet.exe `-Exclude` argument.
-
+Specify one or more wildcard patterns to exclude when creating a package. Equivalent to the `-Exclude` argument of `NuGet.exe`.
 
 </td></tr><tr>
 
@@ -164,13 +152,11 @@ Specify one or more wildcard patterns to exclude when creating a package. Equiva
 
 Properties
 
-
 </td>
 
 <td>
 
-Semicolon or new\-line separated list of package creation properties. For example, to make a release build, you define here `Configuration=Release`.
-
+Semicolon or new-line separated list of package creation properties. For example, to make a release build, you define here `Configuration=Release`.
 
 </td></tr><tr>
 
@@ -183,9 +169,8 @@ Options
 
 <td>
 
-__Create tool package__ – check the box to place the output files of the project to the __tool__ folder.    
+__Create tool package__ – check the box to place the output files of the project to the `tool` folder.    
 __Include sources and symbols__ – check the box to create a package containing sources and symbols. When specified with a nuspec, it creates a regular NuGet package file and the corresponding symbols package (needed for publishing the sources to [Symbolsource](http://www.symbolsource.org/) )
-
 
 </td></tr><tr>
 
@@ -193,13 +178,11 @@ __Include sources and symbols__ – check the box to create a package containing
 
 Command line parameters
 
-
 </td>
 
 <td>
 
 Set additional command line parameters to be passed to `NuGet.exe`.
-
 
 </td></tr></table>
 

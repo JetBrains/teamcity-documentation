@@ -40,8 +40,7 @@ Gradle tasks
 
 <td>
 
-Specify Gradle task names separated by spaces. For example: `:myproject:clean :myproject:build` or `clean build`. If this field is left blank, the 'default' task is used. Note that TeamCity currently supports building Java projects with Gradle. Building Groovy/Scala/etc. projects has not been tested.
-
+Specify Gradle task names separated by spaces. For example, `:myproject:clean :myproject:build` or `clean build`. If this field is left blank, the 'default' task is used. Note that TeamCity currently supports building Java projects with Gradle. Building Groovy, Scala, and other projects has not been tested.
 
 </td></tr><tr>
 
@@ -54,8 +53,7 @@ Incremental building
 
 <td>
 
-TeamCity can make use of the Gradle `:buildDependents` [feature](http://www.gradle.org/docs/current/userguide/userguide_single.html#sec:multiproject_build_and_test). If the _Incremental building_ checkbox is enabled, TeamCity will detect Gradle modules affected by changes in the build, and start the `:buildDependents` command for them only. This will cause Gradle to fully build and test only the modules affected by changes.
-
+TeamCity can make use of the Gradle `:buildDependents` [feature](http://www.gradle.org/docs/current/userguide/userguide_single.html#sec:multiproject_build_and_test). If the _Incremental building_ option is enabled, TeamCity will detect Gradle modules affected by changes in the build and start the `:buildDependents` command for them only. This will cause Gradle to fully build and test only the modules affected by changes.
 
 </td></tr><tr>
 
@@ -68,8 +66,7 @@ Gradle home path
 
 <td>
 
-Specify here the path to the Gradle home directory (the parent of the `bin` directory). If not specified, TeamCity will use the Gradle from an agent's `GRADLE_HOME` environment variable. If you don't have Gradle installed on agents, you can use Gradle wrapper instead.
-
+Specify here the path to the Gradle home directory (the parent of the `bin` directory). If not specified, TeamCity will use Gradle specified in the agent's `GRADLE_HOME` environment variable. If you don't have Gradle installed on agents, you can use a Gradle wrapper instead.
 
 </td></tr><tr>
 
@@ -77,13 +74,11 @@ Specify here the path to the Gradle home directory (the parent of the `bin` dire
 
 Additional Gradle command line parameters
 
-
 </td>
 
 <td>
 
 Optionally, specify the space-separated list of command line parameters to be passed to Gradle.
-
 
 </td></tr><tr>
 
@@ -96,8 +91,7 @@ Gradle Wrapper
 
 <td>
 
-If this checkbox is selected, TeamCity will look for Gradle Wrapper scripts in the checkout directory, and launch the appropriate script with Gradle tasks and additional command line parameters specified in the fields above. In this case, the Gradle specified in __Gradle home path__ and the one installed on agent, are ignored.
-
+If enabled, TeamCity will look for Gradle Wrapper scripts in the checkout directory, and launch the appropriate script with Gradle tasks and additional command line parameters specified in the fields above. In this case, Gradle specified in _Gradle home path_ and Gradle installed on the agent are ignored.
 
 </td></tr></table>
 
@@ -131,8 +125,7 @@ Debug
 
 <td>
 
-Selecting the __Log debug messages__ checkbox is equivalent to adding the `-d` Gradle command line parameter.
-
+Selecting the _Log debug messages_ checkbox is equivalent to adding the `-d` Gradle command-line parameter.
 
 </td></tr><tr>
 
@@ -145,7 +138,7 @@ Stacktrace
 
 <td>
 
-Selecting the __Print stacktrace__ checkbox is equivalent to adding the `-s` Gradle command line parameter.
+Selecting the _Print stacktrace_ checkbox is equivalent to adding the `-s` Gradle command-line parameter.
 
 
 </td></tr></table>
@@ -155,7 +148,6 @@ Selecting the __Print stacktrace__ checkbox is equivalent to adding the `-s` Gra
 ### Build properties
 
 The TeamCity system parameters can be accessed in Gradle build scripts in the [same way](upgrade-notes.md#Gradle%3A+Breaking+change+compared+to+9.1.2) as Gradle properties. The recommended way to reference properties is as follows:
-
 
 ```Shell
 task printProperty {

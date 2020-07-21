@@ -11,14 +11,13 @@ TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager 
     * [NuGet Publish](nuget-publish.md) build runner, which publishes packages to a feed of your choice.
 * [NuGet dependency trigger](nuget-dependency-trigger.md), which allows triggering builds on NuGet feed updates.
 
-
-<note include-id="nuget-OS">
+<chunk include-id="nuget-OS">
 
 __Supported Operating Systems__
 
-NuGet build runners are supported on build agents running Windows OS by default. Linux and macOS are supported when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent (only NuGet 3.3\+ on Mono 4.4.2\+ is supported).
+NuGet build runners are supported on build agents running Windows OS by default. Linux and macOS are supported when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent (only NuGet 3.3+ on Mono 4.4.2+ is supported).
 
-</note>
+</chunk>
 
 <note>
 
