@@ -44,11 +44,12 @@ You can do the following:
 * [reorder](ordering-build-queue.md) the builds in the queue manually.
 * [remove](ordering-build-queue.md#Removing+Builds+From+Build+Queue) build configurations or personal builds from the queue.
 * If you have System Administrator permissions, you can [assign different priorities to build configurations](ordering-build-queue.md#Managing+Build+Priorities), which will affect their position in the queue.
+
 ### Pausing/Resuming Build Queue
 
 The build queue can be paused manually or automatically.
 
-Users with the _Enable/disable agent_ permission (included in the [Agent Manager](role-and-permission.md#Per-Project+Authorization+Mode) role by default) can manually Pause/Resume the Build Queue (since pausing the queue is equivalent to disabling all the agents on the server). 
+Users with the _Enable/disable agent_ permission (included in the [Agent Manager](role-and-permission.md#Per-Project+Authorization+Mode) role by default) can manually pause/resume the build queue (since pausing the queue is equivalent to disabling all agents on the server). This action is available in the upper right corner of the __Build Queue__ page.
 
 The build queue can be paused automatically [if the TeamCity Server runs out of disk space](teamcity-disk-space-watcher.md). The queue will be automatically resumed when sufficient space is available.
 
