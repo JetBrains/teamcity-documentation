@@ -15,8 +15,15 @@ All these limitations __do not apply__ if a build configuration with the finish 
 
 Note that if a build configuration with the finish build trigger __has__ a snapshot dependency on the selected build configuration, the trigger will be able to detect if the last monitored build has already been promoted to the current build configuration (either manually or by another trigger). In this case, the trigger will not run a new build.
 
-### Branch Filter
-
 In a build configuration with branches, you can use the [branch filter](branch-filter.md) to limit the branches in which finished builds will trigger new builds of the current configuration.
 
 __ __
+
+<seealso>
+        <category ref="admin-guide">
+            <a href="build-dependencies-setup.md">Build Dependencies Setup</a>
+        </category>
+        <category ref="concepts">
+            <a href="build-chain.md">Build Chain</a>
+        </category>
+</seealso>
