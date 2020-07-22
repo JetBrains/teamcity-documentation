@@ -149,7 +149,9 @@ Selecting the _Print stacktrace_ checkbox is equivalent to adding the `-s` Gradl
 
 The TeamCity system parameters can be accessed in Gradle build scripts in the [same way](upgrade-notes.md#Gradle%3A+Breaking+change+compared+to+9.1.2) as Gradle properties. The recommended way to reference properties is as follows:
 
-```Shell
+<tabs>
+
+```Groovy
 task printProperty {
     doLast {
         println "${teamcity['teamcity.build.id']}"
@@ -158,10 +160,21 @@ task printProperty {
 
 ```
 
-or if the system property's name is a legal Groovy name identifier (for example, `system.myPropertyName = myPropertyValue`):
+```Kotlin
 
+tasks.register("printProperty") {
+    doLast {
+        val teamcity: Map<*,*> by project
+        println("${teamcity["teamcity.build.id"]}")
+    }
+}
+```
 
-```Shell
+</tabs>
+
+or if the system property's name is a legal name identifier (for example, `system.myPropertyName = myPropertyValue`):
+
+```Groovy
 task printProperty {
      doLast {
           println "$myPropertyName"
@@ -169,6 +182,17 @@ task printProperty {
 }
 
 ```
+
+```Kotlin
+
+tasks.register("printProperty") {
+    doLast {
+        val myPropertyName: String by project
+        println("$myPropertyName")
+    }
+}
+```
+
 
 ### Docker Settings
 
@@ -179,7 +203,7 @@ In this section, you can specify a Docker image which will be [used to run the b
 ### Code Coverage
 [//]: # (AltHead: coverage)
 
-Code coverage with [IDEA code coverage engine](intellij-idea.md) and [JaCoCo](jacoco.md) is supported.
+The Gradle build runner supports code coverage with based on the [IDEA code coverage engine](intellij-idea.md) and [JaCoCo](jacoco.md).
 
 
 <seealso>

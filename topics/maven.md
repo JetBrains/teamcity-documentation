@@ -223,7 +223,7 @@ Predefined settings
 
 <td>
 
-If there are settings files uploaded to the TeamCity server via the administration UI, you can select one of the available options here. To upload settings file to TeamCity, click _Manage settings files_.  Maven settings are defined on the project level. You can see the settings files defined in the current project or upload files on the __Project Settings__ page using __Maven Settings__. The files will be available in the project and its subprojects. The uploaded files are stored in the &lt;TeamCity Data Directory&gt;/config/projects/%projectID%/pluginData/mavenSettings directory. If necessary, they can be edited right there. The uploaded files are used both for the agent and server\-side Maven functionality.   
+If there are settings files uploaded to the TeamCity server via the administration UI, you can select one of the available options here. To upload settings file to TeamCity, click _Manage settings files_.  Maven settings are defined on the project level. You can see the settings files defined in the current project or upload files on the __Project Settings__ page using __Maven Settings__. The files will be available in the project and its subprojects. The uploaded files are stored in the &lt;TeamCity Data Directory&gt;/config/projects/%projectID%/pluginData/mavenSettings directory. If necessary, they can be edited right there. The uploaded files are used both for the agent and server-side Maven functionality.   
 If Custom or Predefined settings are used, the path to the effective user settings file is available inside the maven process as the `teamcity.maven.userSettings.path` system property.
 
 
@@ -286,6 +286,8 @@ Maven default
 
 Use the default Maven repository location. The repository is shared between all build configurations and all agents on the machine.
 
+The runner will use the location specified in the additional command-line parameter `-Dmaven.repo.local`. If the parameter is not specified, it will search for values set in `settings.xml`.
+
 </td>
 </tr>
 
@@ -312,7 +314,7 @@ In this section, you can specify a Docker image which will be [used to run the b
 
 ### Code Coverage
 
-Coverage support based on IDEA coverage engine is added to Maven runner. To learn about configuring code coverage options, refer to the [Configuring Java Code Coverage](configuring-java-code-coverage.md) page.
+The Maven build runner supports code coverage based on the IDEA coverage engine. To learn about configuring code coverage options, refer to the [Configuring Java Code Coverage](configuring-java-code-coverage.md) page.
 
 <note>
 
