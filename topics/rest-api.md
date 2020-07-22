@@ -1804,7 +1804,7 @@ __Since TeamCity 10__, `<versionedSettingsRevision>` is added to represent revis
 <tr><td width="200"></td><td></td></tr>
 <tr><td>
 
-Retrieve the entire build chain (all snapshot-dependency-linked builds) for a particular build
+Find all the snapshot depenency builds in the build chain upstream for the build with the ID `XXXX`.
 
 </td>
 
@@ -1816,13 +1816,11 @@ GET http://teamcity:8111/app/rest/builds?locator=snapshotDependency:(to:(id:XXXX
  
 ```
 
-This gets all the snapshot dependency builds recursively for the build with the ID `XXXX`.
-
 </td></tr>
 
 <tr><td>
 
-Find all the snapshot-dependent builds for a particular build
+Find all the snapshot-dependent builds in all build chains downstream for the build with the ID `XXXX`
 
 </td>
 
@@ -1830,7 +1828,7 @@ Find all the snapshot-dependent builds for a particular build
 
 ```Shell
 
-GET http://teamcity:8111/app/rest/builds?locator=snapshotDependency:(to:(id:XXXX),includeInitial:true),defaultFilter:false
+GET http://teamcity:8111/app/rest/builds?locator=snapshotDependency:(from:(id:XXXX),includeInitial:true),defaultFilter:false
  
 ```
 
