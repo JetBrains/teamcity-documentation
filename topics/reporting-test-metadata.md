@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Reporting Test Metadata)
 
 A test run in TeamCity can be associated with some additional information (metadata), complementing test status, execution time, and output. This information can be used to provide extra logs, screenshots, numeric values, tags, and so on.   
-You can now use service messages to report this kind of additional test data in TeamCity and then view it in the TeamCity web UI.
+You can now use [service messages](build-script-interaction-with-teamcity.md#Service+Messages) to report this kind of additional test data in TeamCity and then view it in the TeamCity web UI.
 
 ## Reporting additional test data
 
@@ -12,7 +12,9 @@ Additional test data is reported using the `testMetadata` service message, with 
 * `value` (mandatory) contains the metadata value associated with the test. The max value length is 1024.
 * `type` (optional) defaults to text unless otherwise specified. The type affects how metadata is stored and how its value is shown in the TeamCity UI.
 
-If the format of the service message is incorrect, a corresponding note about it is written into build log.The types of data which can be recognised by TeamCity are as follows:
+If the format of the service message is incorrect, a corresponding note about it is written into build log.
+
+The types of data which can be recognised by TeamCity are as follows:
 
 ### Numbers
 
