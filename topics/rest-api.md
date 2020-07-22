@@ -1812,6 +1812,7 @@ Retrieve the entire build chain (all snapshot-dependency-linked builds) for a pa
 
 ```Shell
 
+GET http://teamcity:8111/app/rest/builds?locator=snapshotDependency:(from:(id:XXXX),includeInitial:true),defaultFilter:false
 GET http://teamcity:8111/app/rest/builds?locator=snapshotDependency:(to:(id:XXXX),includeInitial:true),defaultFilter:false
  
 ```
