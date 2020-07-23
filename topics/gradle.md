@@ -174,6 +174,8 @@ tasks.register("printProperty") {
 
 or if the system property's name is a legal name identifier (for example, `system.myPropertyName = myPropertyValue`):
 
+<tabs>
+
 ```Groovy
 task printProperty {
      doLast {
@@ -193,6 +195,7 @@ tasks.register("printProperty") {
 }
 ```
 
+</tabs>
 
 ### Docker Settings
 
