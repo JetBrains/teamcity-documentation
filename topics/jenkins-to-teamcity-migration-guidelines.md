@@ -261,7 +261,7 @@ TeamCity server doesnt run any builds itself. Instead, it always delegates the j
 
 The active agents count is visible at the top of the TeamCity server UI:
 
-<img src="agentCount.png" width="300px"/>
+<img src="agentCount.png" width="300"/>
 
 You can break the agents into separate groups called [agent pools](agent-pools.md) and assign those to the specific projects. In Build Configuration settings, it is possible to specify a number of [Agent Requirements](agent-requirements.md) needed for the build.
 

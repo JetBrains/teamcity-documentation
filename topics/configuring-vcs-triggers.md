@@ -86,7 +86,7 @@ The general syntax for a single rule is:
 
 where:
 * __Ant\_like\_wildcard__: A [wildcard](wildcards.md) to match the changed file path. Only `*` and `**` patterns are supported, the `?` pattern is __not__ supported. The file paths in the rule can be relative (not started with `/` or `\ `) to match resulting paths on the agent or absolute (started with `/`) to match VCS paths relative to a VCS root. For each file in a change the most specific rule is found (the rule matching the longest file path). The build is triggered if there is at least one file with a matching "include" rule or a file with no matching "exclude" rules.   
-* __[VCS_username](managing-users-and-user-groups.md)__: if specified, limits the rule only to the changes made by a user with the corresponding [VCS username ](managing-users-and-user-groups.md#VCS+Usernames).
+* __[VCS_username](managing-users-and-user-groups.md)__: if specified, limits the rule only to the changes made by a user with the corresponding [VCS username](managing-users-and-user-groups.md#VCS+Usernames).
 * __VCS\_root\_id__: if specified, limits the rule only to the changes from the corresponding VCS root.
 * __VCS\_comment\_regexp__: if specified, limits the rule only to the changes that contain specified text in the VCS comment. Use the [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) pattern for matching the text in a comment (see examples below). The rule matches if the comment text contains a matched text portion; to match the entire text, include the `^` and `$` special characters.
 

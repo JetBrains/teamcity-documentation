@@ -16,7 +16,7 @@ The [documentation for previous versions](https://confluence.jetbrains.com/displ
 
 The new TeamCity version comes with the reworked UI aiming at improving your experience with the product.
 
-<img src="SakuraUI.png" width="1000px"/>
+<img src="SakuraUI.png" width="1000"/>
 
 * __New Sidebar__: You can now easily access and search all your projects and build configurations from the sidebar, tag build configurations or whole projects as your favorites to see them at the top of the sidebar. New changes, build status, new tests, and running builds: all are now visible. 
 * The reworked __Project Home__ page provides a dashboard-style view over your build configurations. Each configuration gets its own card which displays a histogram with up to 14 of the latest builds. The status, the build time as well as the time in the queue are also available. Clicking an individual card takes you to the overview of this build configuration.
@@ -134,7 +134,7 @@ Now there is a new option in your user profile, __Log out of all sessions__, for
 In addition to basic authentication via credentials, TeamCity now supports authentication based on permanent access tokens. With tokens, you don't need to expose a user login and password in scripts. Tokens are also useful for the REST API authentication.   
 You can enable/disable the Token-Based Authentication module in the advanced mode of the __Authentication__ page:
 
-<img src="TokenAuth.png" width="1000px"/>
+<img src="TokenAuth.png" width="1000"/>
 
  
 ## Permanent token for authentication in TeamCity-YouTrack integration
