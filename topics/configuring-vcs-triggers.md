@@ -102,6 +102,7 @@ Also, rules are sorted according to path specificity. If you have an explicit in
 </chunk>
 
 #### Trigger Rules Examples
+{id="trigger-rules-examples-1"}
 
 <chunk include-id="trigger-rules-examples">
 

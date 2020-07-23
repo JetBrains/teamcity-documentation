@@ -1263,7 +1263,7 @@ The TeamCity Add\-in installed as a part of [ReSharper Ultimate ](https://www.je
 Besides, it will not use the settings provided by the 8.1 version. The traditional add\-in downloaded from TeamCity server can still use settings from previous version.
 
 #### Other
-{id="other-1"}
+{id="other-2"}
 
 TeamCity agent installation via the Java web start installation package is no longer available.
 

@@ -97,6 +97,7 @@ and reference it via `%system.FOO_BAR%`.
 </chunk>
 
 ### How It Works
+{id="how-it-works-1"}
 
 <chunk include-id="docker-settings-how">
 
