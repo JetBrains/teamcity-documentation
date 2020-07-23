@@ -107,8 +107,6 @@ This chart will be shown on the __Statistics__ tabs of the Build Configurations 
 
 #### Parameters Reference
 
-____
-
 <table><tr>
 
 <td>
@@ -198,14 +196,8 @@ The format of the y\-axis values. Supported formats are:
 
 </td></tr></table>
 
-____
-
-
-
 The `<series>` parameter uses JSON format to list series of data shown on the chart. Each series is drawn in a separate color and you can choose one or another series using a filter.
 
-
-____
 <table><tr>
 
 <td>
@@ -298,8 +290,6 @@ The color of a series to be used in the chart. Standard web color formats can be
 Pattern for names of the Value Types (or series) to be shown on the chart. The asterisk (\*) sign is allowed to filter Value Types (or series) either predefined by TeamCity, like `BuildDuration` or `ArtifactsSize` (see [below](#Default+Statistics+Values+Provided+by+TeamCity) for the complete list of predefined statistic values), or your own data can be provided by reporting it from the build script.
 
 </td></tr></table>
-____
-
  
 
 #### Chart Dimensions
@@ -311,8 +301,6 @@ You can set the custom chart width/height in pixels using the `properties.width`
 You can also customize the default axis settings for a chart via parameter names starting with `properties`, e.g. "`properties.axis.y.type`"
 
 Supported properties:
-
-____
 
 <table><tr>
 
@@ -380,8 +368,6 @@ An integer value to use as the maximum for the Y axis value .
 
 </td></tr></table>
 
-____
-
 <anchor name="listOfDefaultStatisticValues"/>
 
 <anchor name="Build Metrics Provided by TeamCity"/>
@@ -397,8 +383,6 @@ The table below lists the predefined value providers that can be used to configu
 <anchor name=" reportedStatValues"/>
 
 You can view the all statistic values reported by the build on the __Build Results | Parameters | Reported statistic values__ tab. For each of the values, a statistics chart is available on clicking the _View Trend_ icon ![ViewTrend.PNG](ViewTrend.PNG).
-
-____
 
 <table><tr>
 
