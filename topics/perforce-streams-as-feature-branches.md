@@ -24,5 +24,3 @@ For instance, if a file path in the working copy starts with `//depot/stream1/so
 But if you modified a file from another stream (imported into the working copy) and want to enforce build in a particular stream, you should specify a configuration parameter `teamcity.build.branch` when triggering the remote run.
 
 <img src="perforce-stream.png" width="367" alt="Remote run of Perforce stream"/>
-
-__ __

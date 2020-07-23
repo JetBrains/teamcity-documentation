@@ -1065,10 +1065,6 @@ If the predefined build metrics do not cover your needs, you can report custom m
 * or (obsolete approach) using the [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md#Providing+data+using+the+teamcity-info.xml+file) file.
 Note that custom value keys should be unique and should not interfere with value keys predefined by TeamCity.
 
-
-
-__ __
-
 <seealso>
         <category ref="concepts">
             <a href="code-coverage.md">Code Coverage</a>

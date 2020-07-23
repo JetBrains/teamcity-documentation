@@ -181,7 +181,3 @@ The __Project Home__ page, introduced in the experimental UI in TeamCity 2019.1,
 
 * [What's New in TeamCity 2019.2](https://www.jetbrains.com/help/teamcity/2019.2/what-s-new-in-teamcity-2019-2.html)
 * [What's New in TeamCity 2019.1](https://www.jetbrains.com/help/teamcity/2019.1/what-s-new-in-teamcity-2019-1.html)
-
-__ __
-
-

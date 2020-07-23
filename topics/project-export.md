@@ -27,5 +27,3 @@ The `report.log` file included in the archive details reasons for exporting exte
 
 * Builds, changes, and other project-related data cannot be exported.
 * External build configurations that are used in artifact dependencies only are not exported.
-
-__ __

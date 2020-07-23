@@ -78,5 +78,3 @@ Prior to TeamCity 8.0, this task was also used for changing build status to fail
 
 `{build.status.text` is substituted with older status text.   
 Status can have `SUCCESS` value.
-
-__ __

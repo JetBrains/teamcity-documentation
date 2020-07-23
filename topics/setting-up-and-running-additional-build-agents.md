@@ -205,7 +205,7 @@ Windows
 
 <td>
 
-* Installed JDK/JRE 6-10 (__1.8.0\_161 or later__ __is recommended__).
+* Installed JDK/JRE 6-10 (__1.8.0_161 or later is recommended__).
 
 [//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e644.txt")
 

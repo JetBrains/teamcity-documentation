@@ -171,8 +171,6 @@ Enter additional commandline parameters for `mspec.exe`.
 
 Learn about [Configuring .NET Code Coverage](configuring-.net-code-coverage.md).
 
-__ __
-
 <seealso>
         <category ref="admin-guide">
             <a href="configuring-.net-code-coverage.md">Configuring .NET Code Coverage</a>

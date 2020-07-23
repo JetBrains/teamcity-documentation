@@ -81,4 +81,3 @@ __To enable logging from .NET runners:__
 
 By default, all the log files will be stored in the `<TeamCity agent>/temp/buildTmp/TeamCity.NET` directory. Log files are created for each process separately.
 
-__ __

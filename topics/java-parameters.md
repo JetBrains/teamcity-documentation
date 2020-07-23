@@ -80,5 +80,3 @@ Example:
 </td></tr></table>
 
 </chunk>
- 
-__ __

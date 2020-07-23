@@ -156,4 +156,3 @@ Make sure to synchronize the system time at the VCS server, TeamCity server and 
 [//]: # (Internal note. Do not delete. "Configuring VCS Rootsd91e181.txt")    
 [//]: # (Internal note. Do not delete. "Configuring VCS Rootsd91e186.txt")    
 
-__ __

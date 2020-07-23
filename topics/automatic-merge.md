@@ -95,4 +95,3 @@ For example, you want to automatically merge all feature branches into an `integ
     
 See also a related [TeamCity blog post](http://blog.jetbrains.com/teamcity/2013/10/automatic-merge/).
 
-__ __

@@ -474,7 +474,4 @@ Check this option, if the generated JUnit task has to produce verbose output in 
 
 ## Code Coverage
 
-
 To learn about configuring code coverage options, refer to the [Configuring Java Code Coverage](configuring-java-code-coverage.md) page.
-
-__ __

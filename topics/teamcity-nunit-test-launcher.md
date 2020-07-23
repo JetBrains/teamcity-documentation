@@ -295,5 +295,3 @@ Run tests from assemblies:
 ```
 
 [//]: # (Internal note. Do not delete. "TeamCity NUnit Test Launcherd319e337.txt")
-
-__ __

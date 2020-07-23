@@ -31,5 +31,3 @@ The TeamCity web UI provides the following ways to tag a particular build:
 Alternatively, you can add and modify build tags using [TeamCity REST API](rest-api.md#Build+Tags).
 
 [//]: # (Internal note. Do not delete. "Build Tagd46e113.txt")    
-
-__ __

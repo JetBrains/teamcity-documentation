@@ -19,5 +19,3 @@ In this section:
 * [Managing Users and User Groups](managing-users-and-user-groups.md)
 * [Viewing Users and User Groups](viewing-users-and-user-groups.md)
 * [Managing Roles](managing-roles.md)
-
-__ __

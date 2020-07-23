@@ -117,10 +117,6 @@ Check the option to fail a build if the Ruby environment configurator cannot pas
 </tr>
 </table>
 
-
-
-__ __
-
 <seealso>
         <category ref="admin-guide">
             <a href="configuring-build-steps.md">Configuring Build Steps</a>

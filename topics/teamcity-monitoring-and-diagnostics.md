@@ -90,5 +90,3 @@ Displays information on the TeamCity data index related to the [search](search.m
 ## Browse Data Directory
 
 This tab shows the files in the [TeamCity Data Directory](teamcity-data-directory.md) and allows you to upload new files.
-
-__ __

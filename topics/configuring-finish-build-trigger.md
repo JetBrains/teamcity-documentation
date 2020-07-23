@@ -17,7 +17,6 @@ Note that if a build configuration with the finish build trigger __has__ a snaps
 
 In a build configuration with branches, you can use the [branch filter](branch-filter.md) to limit the branches in which finished builds will trigger new builds of the current configuration.
 
-__ __
 
 <seealso>
         <category ref="admin-guide">

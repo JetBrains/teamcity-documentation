@@ -63,5 +63,3 @@ You can also [import code coverage results in TeamCity](how-to.md#Import+coverag
 ## Integration with External Tools
 
 TeamCity can also [be integrated](how-to.md#Integrate+with+Build+and+Reporting+Tools) with external build tools or tools generating some report/providing code metrics which are not yet supported by TeamCity. The integration tasks involved are collecting the data in the scope of a build and then reporting the data to TeamCity.
-
-__ __

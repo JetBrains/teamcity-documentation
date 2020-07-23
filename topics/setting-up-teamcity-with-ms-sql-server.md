@@ -84,5 +84,3 @@ For the [64-bit JVM](installing-and-configuring-the-teamcity-server.md) used to 
 ## Post-Setup notes
 
 It is recommended to monitor the database performance regularly. For example, perform [reindexing](https://msdn.microsoft.com/en-us/library/ms189858.aspx#Fragmentation) every several months.
-
-__ __

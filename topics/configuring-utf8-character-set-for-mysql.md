@@ -40,5 +40,3 @@ __To change the character set of an existing MySQL database to utf8:__
     maintainDB restore -D -F database_backup -T <TeamCity Data Directory>/config/database.properties
     ```
 6. Start the TeamCity server.
-
-__ __

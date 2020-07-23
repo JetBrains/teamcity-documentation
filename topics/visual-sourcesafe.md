@@ -17,5 +17,3 @@ TeamCity has the following limitations with Visual SourceSafe:
   * Sync client machines via timeserver: [http://support.microsoft.com/kb/131715/EN-US](http://support.microsoft.com/kb/131715/EN-US).
   * Set timezone for VSS database: Start VSS admin &gt; Tools &gt; Options &gt; TimeZone and pick one.
   * Use VSS 2005.
-
-__ __

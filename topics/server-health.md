@@ -211,5 +211,3 @@ TeamCity analyzes the current settings of a build configuration and suggests add
 ## Extensibility
 
 The default Server Health report provided by TeamCity might cover either too many, or not all the items required by you. Depending on your infrastructure, configuration, performance aspects, and so on. that you need to analyze, a custom Server Health report can be needed. TeamCity enables you to write a [plugin](https://confluence.jetbrains.com/display/TCD18/Custom+Server+Health+Report) which will report on specific items.
-
-__ __

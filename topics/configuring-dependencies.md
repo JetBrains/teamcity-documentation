@@ -14,8 +14,6 @@ For _[artifact dependencies](artifact-dependencies.md)_, before a build is start
 The dependencies of the build can later be viewed on the build results page \- the Dependencies tab. This tab also displays indirect dependencies, e.g. if a build A depends on a build B which depends on builds C and D, then these builds C and D are indirect dependencies for build A.
 </tip>
 
-__ __
-
 
 <seealso>
         <category ref="external">

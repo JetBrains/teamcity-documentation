@@ -1110,4 +1110,3 @@ The key here relates to the key of the __valueType__ tag used when describing th
 
 See [Customizing Statistics Charts](customizing-statistics-charts.md) page for detailed description.
 
-__ __

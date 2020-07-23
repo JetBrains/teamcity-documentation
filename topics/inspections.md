@@ -418,5 +418,3 @@ The code inspections reported by IntelliJ IDEA and TeamCity Java Code Inspection
 * generated files: should be present in the TeamCity agent if they are present when working with the project in IntelliJ IDEA;
 * IntelliJ IDEA version. It is recommended to use the same IntelliJ IDEA version that is used in the TeamCity build. TeamCity bundled an installation of IntelliJ IDEA. The version is written in the Inspections build log;
 * the set and versions of the IntelliJ IDEA plugins that the project relies on.
-
-__ __

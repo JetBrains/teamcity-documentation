@@ -19,5 +19,3 @@ You can group the build configuration by project to display the duration of buil
 Without grouping the report shows the build time for individual build configurations with the percentage in relation to the total server build time. It is possible to include archived projects in the report.
 
 Clicking the column headers allows sorting the report results.
-
-__ __

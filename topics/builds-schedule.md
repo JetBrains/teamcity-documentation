@@ -10,5 +10,3 @@ From this page it is also possible to [edit](configuring-build-triggers.md), dis
 The __Build Schedule__ page also displays the information for [paused build configurations](build-configuration.md#Build+Configuration+State).
 
 Since TeamCity 2020.1, __Build Schedule__ offers an alternative filter option: to hide triggers with the enabled "_Trigger only if there are pending changes_" option. This helps to quickly find all triggers where this option is disabled if you need to investigate the builds' behavior.
-
-__ __

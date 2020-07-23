@@ -8,7 +8,6 @@ See details in the dedicated sections:
 </toc>
 
 
-__ __
 
 <seealso>
         <category ref="concepts">

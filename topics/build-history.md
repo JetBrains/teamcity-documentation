@@ -14,5 +14,3 @@ __History__ tab:
 <img src="build-history.png" alt="Build history" width="1312"/>
 
 [//]: # (Internal note. Do not delete. "Build Historyd38e30.txt")
-
-__ __

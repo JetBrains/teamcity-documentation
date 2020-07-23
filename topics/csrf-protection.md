@@ -36,4 +36,3 @@ When you face problems regarding CSRF protection in TeamCity (for example, you g
 
 In case none of the listed steps help to resolve your problem, please contact our [support](https://confluence.jetbrains.com/display/TW/Feedback) and provide your `teamcity-auth.log` logs with the enabled teamcity-auth [logging preset](reporting-issues.md#Logging+events).
 
-__ __

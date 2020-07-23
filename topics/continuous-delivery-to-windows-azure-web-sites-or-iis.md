@@ -384,19 +384,13 @@ Because of the snapshot dependencies we created, we can now also go to any build
 
 ![18.png](18.png)
 
-
-
 <tip>
 
 For a build configuration with snapshot dependencies, we can enable showing of changes from these dependencies using the ___Show changes from snapshot dependencies___ version control setting. This enables us to see exactly which changes are deployed. See [Build Dependencies Setup](build-dependencies-setup.md) for more information.
 </tip>
-
-
 
 ## Conclusion
 
 By thinking of a deployment as a chain of builds, doing deployments from TeamCity is not too hard. In this tutorial, we've used WebDeploy as an example means of transferring build artifacts to a target environment, but this could also have been another solution (like xcopy).
 
 Using VCS labeling, it's also possible to label sources when a specific deployment happens. By pinning builds (optionally through the TeamCity API), we can make sure that build clean-up does not remove certain builds and artifacts.
-
-__ __

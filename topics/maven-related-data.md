@@ -9,5 +9,3 @@ In TeamCity you can find information about settings specified in your Maven proj
 
 For each Maven build TeamCity agent gathers Maven specific build details, that are displayed on the __Maven Build Info__ tab of the build results after the build is finished.   
 This page can be useful for build engineers when adjusting build configurations. 
-
-__ __

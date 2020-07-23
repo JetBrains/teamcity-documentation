@@ -36,5 +36,3 @@ __Since TeamCity 2018.2__, to enable the plugin after installation, click the pl
 ## Uninstalling a plugin manually
 
 Remove the plugin package from the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/plugins directory and restart the TeamCity server.
-
-__ __

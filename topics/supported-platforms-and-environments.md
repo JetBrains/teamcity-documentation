@@ -371,5 +371,4 @@ The internal database suits __evaluation purposes only__; we strongly recommend 
 * Microsoft SQL Server 2005 or later (including Express editions), SQL Azure; SSL connections support might require [these updates](http://blogs.msdn.com/b/jdbcteam/archive/2012/01/19/patch-available-for-sql-server-and-java-6-update-30.aspx).
 * PostgreSQL 8.2 and newer
 * Oracle 10g and newer (TeamCity is tested with [driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1)
- 
-__ __
+

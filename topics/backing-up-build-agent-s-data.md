@@ -14,5 +14,3 @@ If you need build agent log files (mainly used for problem solving or debug purp
 
 You may also wish to back up the build agent's Windows Service settings, if they were modified.
 </note>
-
-__ __

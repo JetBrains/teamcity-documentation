@@ -157,5 +157,3 @@ Automatic build triggering on detecting a change in the version control is essen
 ### Build Number Format
 
 Each build in TeamCity has a build number, which is a string identifier composed according to the pattern specified on the __General Settings__ page of your build configuration (the field is available on clicking the _Show advanced options_ link). You can leave the default value here, in which case the build number format will be maintained by TeamCity and will be resolved into a next integer value on each new build start. More details are available in the [dedicated section](configuring-general-settings.md#Build+Number+Format) of our documentation.
-
-__ __

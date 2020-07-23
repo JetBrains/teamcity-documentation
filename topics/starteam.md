@@ -169,5 +169,3 @@ For example, your project has a folder named "A" with a subfolder named "B". By 
 StarTeam allows specifying absolute paths as working folders. However, TeamCity supports only relative working folders. This is done by design; all files retrieved from the source control must reside under the checkout directory. The build will fail if TeamCity detects the presence of absolute working folders.
 
 You need to ensure that all the folders under the VCS root have relative working folder names.
-
-__ __

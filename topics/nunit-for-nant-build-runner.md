@@ -162,5 +162,3 @@ Note, that in this case, the following property should be added __before__ the `
 <nunit2> <!--....--> </nunit2>
 
 ```
-
-__ __

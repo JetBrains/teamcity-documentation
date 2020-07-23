@@ -41,5 +41,3 @@ The key is removed for security reasons: for example, the tests executed by the 
 </note>
 
 To transfer the key from the server to the agent, TeamCity encrypts it with a DES symmetric cipher. For a more secure way, configure an [HTTPS connection between agents and the server](using-https-to-access-teamcity-server.md).
-
-__ __

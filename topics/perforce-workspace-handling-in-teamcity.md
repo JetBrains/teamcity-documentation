@@ -69,5 +69,3 @@ When using a custom checkout path, TeamCity will not clean the checkout director
 The same applies to the broken personal builds. When the sources become dirty and the option is set, TeamCity will fail the build instead of running a clean checkout. You can clean the working copy via `p4 clean`, for instance, and try to continue with the `ignoreAndContinue` value after this (you can run a custom build with the specified [configuration parameter](configuring-build-parameters.md)).
 
 The corresponding TeamCity issue is [TW-33168](https://youtrack.jetbrains.com/issue/TW-33168).
-
-__ __

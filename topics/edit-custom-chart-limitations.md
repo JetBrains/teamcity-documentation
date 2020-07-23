@@ -8,5 +8,3 @@ Currently editing a custom chart from the TeamCity UI is limited:
 * A statistic value can be added only if it contains some data
 * The width and height of a chart are not configurable
 * A [patterned statistic value](custom-chart.md#patternedValues) cannot be added or removed.
-
-__ __

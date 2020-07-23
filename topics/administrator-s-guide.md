@@ -4,5 +4,3 @@
 __In this section__:
 
 <toc/>
-
-__ __

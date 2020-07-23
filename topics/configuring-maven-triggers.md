@@ -363,4 +363,3 @@ The trigger will check the latest snapshot version for updates
 
 [//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e322.txt")    
 
-__ __

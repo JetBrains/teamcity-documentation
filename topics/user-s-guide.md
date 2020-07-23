@@ -1,5 +1,6 @@
 [//]: # (title: User's Guide)
 [//]: # (auxiliary-id: User's Guide)
+
 This guide is intended for anyone using TeamCity. Explore TeamCity and learn how you can
 
 * [Manage your User Account](managing-your-user-account.md)
@@ -10,5 +11,3 @@ This guide is intended for anyone using TeamCity. Explore TeamCity and learn how
 * [Investigate and Mute Build Problems](investigating-and-muting-build-failures.md)
 * [Create Statistic Charts](statistic-charts.md)
 * [Perform Search](search.md)
-
-__ __

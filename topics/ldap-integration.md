@@ -250,5 +250,3 @@ java -cp serviceMessages.jar:common-api.jar:commons-codec.jar:commons-codec-1.3.
 Internal LDAP logs are stored in `logs/teamcity-ldap.log*` files in the [server logs](teamcity-server-logs.md). If you encounter an issue with LDAP configuration, it is advised that you look into the logs as the issue can often be figured out from the messages in there. To get detailed logs of LDAP login and synchronization processes, use the "debug\-ldap" [logging preset](teamcity-server-logs.md).
 
 If you want to [report an LDAP issue to us](https://confluence.jetbrains.com/display/TW/Feedback), make sure to include LDAP settings (`<TeamCity Data Directory>/config/ldap-config.properties` and `ldap-mapping.xml` files, with password in `ldap-config.properties` masked) and debug LDAP logs fully covering a login/synchronization sequence (include all `teamcity-ldap.log*` files). Make sure to describe the related structure of your LDAP (noting the attributes of related LDAP entities) and detail expected/actual behavior. The archive with the data can be sent to us via [one of the supported ways](reporting-issues.md#Uploading+Large+Data+Archives).
-
-__ __

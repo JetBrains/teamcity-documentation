@@ -74,5 +74,3 @@ Apply a [branch filter](branch-filter.md) to rerun failed builds only in branche
 
 </table>
 
-
-__ __

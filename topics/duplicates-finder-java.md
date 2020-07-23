@@ -636,5 +636,3 @@ Example:
 
 For the file paths to be reported correctly, "References to resources outside project/module file directory" option for the project and all modules should be set to "Relative" in IDEA project.
 </tip>
-
-__ __

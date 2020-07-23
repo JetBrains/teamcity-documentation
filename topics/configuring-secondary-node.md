@@ -151,5 +151,3 @@ The TeamCity [clean-up](clean-up.md) task runs on the main TeamCity server only.
 The [backup](teamcity-data-backup.md) through the TeamCity web interface can be done on the main TeamCity server only. The backup from the command line can be done on both the main server and the secondary nodes.
 
 The [restore](restoring-teamcity-data-from-backup.md) operation can be done on either of the nodes, but only if all servers using the TeamCity database and Data Directory are stopped.
-
-__ __

@@ -221,5 +221,3 @@ If you have previously used the `teamcity.git.fetch.process.max.memory` internal
 ## Previous releases
 
 [What's New in TeamCity 2019.1](https://www.jetbrains.com/help/teamcity/2019.1/what-s-new-in-teamcity-2019-1.html)
-
-__ __

@@ -152,5 +152,3 @@ Build configurations work in the same checkout directory if either the same cust
 ## Development links
 
 See plugin page at [Swabra](https://confluence.jetbrains.com/display/TW/Swabra).
-
-__ __

@@ -122,5 +122,3 @@ no support yet
 
 
 </td></tr></table>
-
-__ __

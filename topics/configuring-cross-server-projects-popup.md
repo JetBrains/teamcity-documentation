@@ -22,5 +22,3 @@ When configuring the popup on both servers, they need to have [CORS configured](
 ## Server Versions Compatibility
 
 It is possible to configure the cross\-server projects popup between servers running different TeamCity versions.
-
-__ __

@@ -52,4 +52,3 @@ While in transfer and while stored, the data can be kept on third-party servers 
 Read more [on JetBrains Privacy Policy](https://www.jetbrains.com/company/privacy.html).
 
 __Thank you for providing feedback on TeamCity!__
-__ __

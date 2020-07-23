@@ -67,5 +67,4 @@ When the "Use Pre\-Signed URLs for upload" option is disabled:
 #### Google Cloud Artifact Storage
 
  Google Cloud Artifact Storage is implemented as a [plugin](https://plugins.jetbrains.com/plugin/9634-google-artifact-storage) by JetBrains.
- 
-__ __ 
+

@@ -84,5 +84,3 @@ Helpful links:
 * [http://waffle.codeplex.com/wikipage?title=Frequently%20Asked%20Questions](http://waffle.codeplex.com/wikipage?title=Frequently%20Asked%20Questions)
 * [http://waffle.codeplex.com/discussions/254748](http://waffle.codeplex.com/discussions/254748)
 * [http://waffle.codeplex.com/wikipage?title=Troubleshooting%20Negotiate&amp;referringTitle=Documentation](http://waffle.codeplex.com/wikipage?title=Troubleshooting%20Negotiate&amp;referringTitle=Documentation)
-
-__ __

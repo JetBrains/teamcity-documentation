@@ -538,4 +538,3 @@ Trigger rules and branch filter are combined by __AND__, which means that the bu
 
 For example, if you specify a comment text in the trigger rules field and provide the branch specification, the build will be triggered only if a commit has the specified text and is also in a branch matched by the branch filter.
 
-__ __

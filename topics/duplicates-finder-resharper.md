@@ -311,5 +311,3 @@ Specify newline-separated command line parameters to add to calling `dupFinder.e
 ### Build Failure Conditions
 
 If a build has too many duplicates, you can configure it to fail by setting a [build failure condition](build-failure-conditions.md).
-
-__ __

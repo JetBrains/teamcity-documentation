@@ -36,9 +36,6 @@ If none of the steps is helpful for your case, please contact us via any [feedba
 * Set `VCBuildUserEnvironment=true` in the runner properties.
 * Specify the `VCBuildAdditionalOptions` property with the value `/useenv` in the build configuration settings to instruct MSBuild to add the `/useenv` command-line argument for spawned VCBuild processes.
 
-__ __
- 
  __See also:__
 
 __Administrator's Guide__: [.NET Testing Frameworks Support](net-testing-frameworks-support.md) | [NUnit support](nunit-support.md)
-__ __

@@ -4,5 +4,3 @@
 In this part you will learn how to install and upgrade TeamCity. 
 
 <toc/>
-
-__ __

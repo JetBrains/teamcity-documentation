@@ -213,5 +213,3 @@ The VCS trigger is fully aware of branches and will trigger a build once a check
 When changes are merged / fast\-forwarded from one branch to another, strictly speaking there are no actual changes in the code. By default, the VCS trigger behaves in the following way:
 * When merging/fast forwarding of two non\-default branches: the changes in a build are calculated with regard to previous builds in the same branch, so if there is a build on same commit in a different branch, the trigger will start a build in another branch pointing to the same commit.
 *  If the default branch is one of the branches in the merging/fast\-forwarding, the changes are always calculated against the default branch, if there is a build on same revision in the default branch, TeamCity will not run a new build on the same revision.
-
-__ __

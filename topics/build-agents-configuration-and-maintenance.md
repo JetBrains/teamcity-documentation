@@ -35,5 +35,3 @@ Lists all configured [agent cloud profiles](agent-cloud-profile.md).
 ### Diff 
 
 Compare two agents and see their differences highlighted.
-
-__ __

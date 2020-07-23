@@ -9,5 +9,3 @@ The currently available build features are:
 
 <toc>
 </toc>
-
-__ __

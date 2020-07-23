@@ -317,4 +317,3 @@ As Amazon rounds machine uptime to the nearest full hour, adjust timeout setting
 
 It is also highly recommended to set execution timeout for all your builds so that a build hanging does not cause prolonged instance running with no payload.
 
-__ __

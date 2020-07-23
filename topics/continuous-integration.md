@@ -10,4 +10,3 @@ Continuous integration is also associated with _Extreme Programming_ and other _
 
 Following the principles of _Continuous Integration_, TeamCity allows users to monitor the software development process of the company, while improving communication and facilitating the integration of changes without breaking any established practices.
 
-__ __

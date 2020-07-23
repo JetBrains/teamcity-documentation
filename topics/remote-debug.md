@@ -27,5 +27,3 @@ Remote debug for Ant steps requires that the build configuration have the `teamc
 4. After that, a build is added to the queue and the standard IntelliJ IDEA debug tool window appears: ![remote_debug_tool_window.png](remote_debug_tool_window.png)The debug tool window works in the listening mode, i.e. it waits for the agent to connect to it. Once the agent connects, the Java process on the agent is paused and the Agent Attached notification appears in the IDE: ![agent_attached_popup.png](agent_attached_popup.png)
 5. Now we can set some breakpoints and actually start the debug session by clicking __Start__ either in the notification popup or in the debug tool window.   
 Once JVM process exits, another notification popup appears in the IDE: ![repeat_debug_notification.png](repeat_debug_notification.png)The debug session is not finished yet, it is possible to either repeat or finish it. Selecting __Repeat__ will rerun the same build step again, which is much faster than starting a new debug session.
-
-__ __

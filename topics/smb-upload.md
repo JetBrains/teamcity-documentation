@@ -143,5 +143,3 @@ The field supports [Ant-style wildcard patterns](wildcards.md#Antlike+Wildcards)
 You can also specify a target directory to be created using the `file => directory` pattern (for example, `*.zip => winFiles,unix/distro.tgz => linuxFiles` will create the `winFiles` and `linuxFiles` directories, and respectively put the declared files inside them).
 
 </td></tr></table>
-
-__ __

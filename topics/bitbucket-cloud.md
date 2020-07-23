@@ -21,4 +21,3 @@ You also need to specify which strings should be recognized as references to iss
 
 TeamCity will resolve the issue number mentioned in a VCS comment  and will display a link to this issue in the Web UI ( for example, on the [Changes](working-with-build-results.md#Changes) Page, [Issues](working-with-build-results.md#Related+Issues) tab of the [build results](working-with-build-results.md) page).
 
-__ __

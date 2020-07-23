@@ -53,7 +53,7 @@ You can create a build configuration using a VCS URL:
     * If you have a GitHub connection configured, follow the steps below.
 2. On the __Create  Build Configuration From GitHub__ page, select a repository. TeamCity will verify the repository connection. If the Connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required,  modify the names and click __Proceed__.
-4. TeamCity will add a VCS build trigger and attempt to auto\-detect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.On the __Auto\-detected Build Steps__ __page,__ select the step(s) to use in your build configuration. Click __Use selected__. If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
+4. TeamCity will add a VCS build trigger and attempt to auto\-detect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects. On the __Auto\-detected Build Steps__ page, select the step(s) to use in your build configuration. Click __Use selected__. If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review the suggested settings ![suggestedSettings.PNG](suggestedSettings.PNG) and configure required ones.
 
 ## Creating New Build Configuration pointing to Bitbucket Cloud
@@ -63,7 +63,7 @@ You can create a build configuration using a VCS URL:
 2. On the Create  Build Configuration From Bitbucket Cloud page, select a repository. TeamCity will verify the repository connection. If the Connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required,  modify the names and click __Proceed__.
 4. TeamCity will add a VCS build trigger and attempt to auto\-detect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
-On the __Auto\-detected Build Steps__ __page__ select the step(s) to use in your build configuration. Click __Use selected__. If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
+On the __Auto-detected Build Steps__ page, select the step(s) to use in your build configuration. Click __Use selected__. If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review the suggested settings ![suggestedSettings.PNG](suggestedSettings.PNG) and configure required ones.
 
 ## Creating Build Configuration Template

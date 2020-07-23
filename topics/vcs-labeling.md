@@ -98,5 +98,3 @@ By default, TeamCity will append the label name to the end of the specified targ
 ```
 
 Thus, `%%system.build.label%%` will be replaced with the tag name (note the double `%%` sign at the beginning – it is important).
-
-__ __

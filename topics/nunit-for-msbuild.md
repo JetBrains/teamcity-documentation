@@ -230,5 +230,3 @@ The MSBuild runner option [Reduce test failure feedback time](msbuild.md#General
 </note>
 
 [Getting Started with NUnit](getting-started-with-nunit.md) contains details and more examples.
-
-__ __

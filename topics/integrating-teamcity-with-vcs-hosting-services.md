@@ -101,5 +101,3 @@ Now creating entities from a URL in TeamCity is extremely easy: on clicking the 
 <img src="ProjectConnectionBitbucket.png" width="587" alt="Available Bitbucket repositories"/>
 
 You can select the URL and proceed with the configuration.
-
-__ __

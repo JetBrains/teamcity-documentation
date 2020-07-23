@@ -23,5 +23,3 @@ There are important differences between composite builds and regular builds with
 ## Clean-up of Composite Build Artifacts
 
 Composite builds only display the artifacts published by its parts via artifact dependencies, which means сomposite builds do not have their own artifacts (except for internal artifacts). To enforce a certain clean-up policy for artifacts of a composite build, you need to have the same clean-up rules for all its parts.
-
-__ __

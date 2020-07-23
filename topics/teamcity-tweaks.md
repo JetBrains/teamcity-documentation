@@ -185,10 +185,4 @@ teamcity.ui.buildQueueEstimates.pollInterval
 </tr>
 </table>
 
-
-
-
-
 [//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e181.txt")    
-
-__ __

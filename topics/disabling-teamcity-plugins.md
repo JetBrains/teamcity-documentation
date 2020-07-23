@@ -21,5 +21,3 @@ This is applicable to versions __prior to TeamCity 2017.2__. Starting from this 
 __To disable plugins via Web UI:__
 
 Аny plugin can be disabled using the TeamCity UI: on the __Administration | Plugins List__ page every external plugins has a button, clicking which opens a popup with the corresponding option; the bundled plugins have a link which can be used to disable them. On disabling a plugin, a warning is displayed that this may impact other TeamCity components (for example, other plugins). During the next server restart, the disabled plugin is not loaded. If there are other plugins depending on the disabled one, they will not be loaded either. Disabled plugins are greyed out in the list. 
-
-__ __

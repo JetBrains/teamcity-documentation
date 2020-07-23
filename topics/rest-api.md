@@ -3277,5 +3277,3 @@ More examples (for TeamCity 8.0) are available in this [external posting](https:
 </tip>
  
 [//]: # (Internal note. Do not delete. "REST APId269e3252.txt")  
-
-__ __

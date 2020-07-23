@@ -48,5 +48,3 @@ When authenticating to a host, an SSH agent remembers and henceforth uses the ve
 However, some setups might require using more than one key when authenticating to the same host: for example, if there are several GitHub repositories on one host that require different [deploy keys](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys). In such cases, we suggest that you create different build configurations for each repository and connect them into a [build chain](build-chain.md).
 
 </note>
-
-__ __

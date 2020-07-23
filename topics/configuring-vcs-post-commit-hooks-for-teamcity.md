@@ -274,5 +274,3 @@ It is recommended to set up a commit hook per a VCS repository. In this case on 
 
 By default, the number of VCS roots matched by a commit hook in TeamCity is limited by 100. If you want to match more than 100 VCS roots, add the count parameter: `<locator>,count:1000`. Check the corresponding [request description](rest-api.md#VCS+Roots).
 </note>
-
-__ __

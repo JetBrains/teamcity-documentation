@@ -27,8 +27,6 @@ __Since TeamCity 9.1__ system parameters of the `%system.MSTest.xx.yy%` format w
 If system properties are required for the build, the [mstest-legacy-provider](https://youtrack.jetbrains.com/issue/TW-41845) plugin can be used.
 
  TeamCity auto\-detects MSTest based on the registry values that describe the Visual Studio installation path. If Visual Studio is installed in a non\-standard location, or the registry key is corrupted, or the TeamCity agent has no access to the VisualStudio directory, TeamCity may not be able to detect MSTest. In this case, the corresponding configuration parameter of the `%teamcity.dotnet.mstest.xx.yy%` format must be added to the build manually. It should contain the full path including the `MSTest.exe` executable, for example, the default path for MSTest 2013 is `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\MSTest.exe`.
- 
-__ __
 
 <seealso>
         <category ref="concepts">

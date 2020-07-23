@@ -35,5 +35,3 @@ TeamCity can apply several patterns to a single piece of text, if they do not in
 
 Search &amp; replace patterns have [`java.util.regex.Pattern`](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) syntax.
 </note>
-
-__ __

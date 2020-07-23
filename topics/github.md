@@ -28,5 +28,3 @@ Authentication via login/password is still supported but will be deprecated by G
 You also need to specify which strings should be recognized as references to issues in your tracker. For GitHub, you need to use the regex syntax, for example, `#(\d+)`.
 
 TeamCity will resolve the issue number mentioned in a VCS comment and will display a link to this issue in the web UI (for example, on the [Changes](working-with-build-results.md#Changes) page, [Issues](working-with-build-results.md#Related+Issues) tab of the [Build Results](working-with-build-results.md) page).
-
-__ __

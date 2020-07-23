@@ -49,5 +49,3 @@ Lists [changes](change-state.md) waiting to be included in the next build on a s
 ## Settings
 
 Lists the current [build configuration settings](creating-and-editing-build-configurations.md#Configuring+Settings) on a separate page.
-
-__ __

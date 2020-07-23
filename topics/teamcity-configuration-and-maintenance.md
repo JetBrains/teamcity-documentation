@@ -194,5 +194,3 @@ You can change the custom key or go back to using the default strategy anytime.
 During backup, your custom keys will be exported along with their projects and automatically available after restoring from backup. Since keys will be stored in the exported files in an open form, make sure the backup files are well-protected.
 
 </note>
-
-__ __

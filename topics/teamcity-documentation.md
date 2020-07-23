@@ -104,5 +104,3 @@ The core features of TeamCity are platform-independent. See details at [Supporte
 ## Copyright and Trademark Notice
 
 The software described in this documentation is furnished under a software license agreement.  _JetBrains_, _IntelliJ_, _IntelliJ IDEA_, _YouTrack_ and _TeamCity_ are trademarks or registered trademarks of _JetBrains, s.r.o._  _Windows_ is a registered trademark of _Microsoft Corporation_ in the United States and other countries. _Mac,_ _Mac OS, macOS_ are trademarks of _Apple Inc._, registered in the U.S. and other countries. _Linux_ is a registered trademark of _Linus Torvalds_. All other trademarks are the properties of their respective owners.
-
-__ __

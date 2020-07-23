@@ -1728,5 +1728,3 @@ XStream Copyright © 2003\-2006, Joe Walnes, Copyright © 2006\-2015, XStream Co
 JBoss Byteman Copyright © 2008\-9, Red Hat Middleware LLC, and individual contributors by the @authors tag. See the copyright.txt in the distribution for a full listing of individual contributors
 
 exenv BSD\-3\-Clause
-
-__ __

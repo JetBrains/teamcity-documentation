@@ -395,11 +395,6 @@ To save the test run results to a named non\-default file, enter a value for the
 If you need to generate your results file in the checkout directory, consider adding the [Swabra](build-files-cleaner-swabra.md) build feature to your configuration.
 </note>
 
-
  * If the path specified is absolute, it will be used "as is".
 
-
-
 </td></tr></table>
-
-__ __

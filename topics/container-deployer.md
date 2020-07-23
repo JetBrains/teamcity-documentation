@@ -119,5 +119,3 @@ Path to war archive
 Specify the source war archive to be deployed.
 
 </td></tr></table>
-
-__ __

@@ -5,4 +5,3 @@ TeamCity has a number of add-ons that provide seamless integration with various 
 
 <toc/>
 
-__ __

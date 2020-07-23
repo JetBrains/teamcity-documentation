@@ -111,5 +111,3 @@ When working with an environment based on the IntelliJ Platform, like PhpStorm o
 As we've seen in this tutorial, it's very straightforward to run builds for PHP and provide Continuous Integration for your PHP projects!
 
 Happy building!
-
-__ __

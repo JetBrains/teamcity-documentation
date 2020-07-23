@@ -31,5 +31,3 @@ To connect to an insecure registry:
 2. To connect to an insecure registry over HTTPS with a self-signed certificate, in addition to the step above, import the self-signed certificate to the JVM of the TeamCity server as described [here](using-https-to-access-teamcity-server.md#Configuring+client+JVM+for+trusting+server+certificate). You can consult the Docker documentation on [using self-signed certificates](https://docs.docker.com/registry/insecure/#using-self-signed-certificates). 
 
 </chunk> 
-
-__ __

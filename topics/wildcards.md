@@ -234,5 +234,3 @@ all files inside the `a/b` directory
 </td>
 </tr>
 </table>
-
-__ __

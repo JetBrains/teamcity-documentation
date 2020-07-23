@@ -23,5 +23,3 @@ If all users are stored in one LDAP branch, use the `teamcity.auth.formatDN` pro
 ## Users in LDAP are stored in different branches, so the teamcity.auth.formatDN property can't be applied. How can the users login with their usernames?
 
 This feature is available from version 5.0. You should specify how you want to find the user (`teamcity.users.login.filter`), for example, by the username or email. On each login TeamCity finds the user in LDAP _before_ logging in, fetches the user DN and then performs the bind. Thus, you must also define the credentials for TeamCity to perform search operations (`java.naming.security.principal` and `java.naming.security.credentials`).
-
-__ __

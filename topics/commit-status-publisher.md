@@ -95,5 +95,3 @@ The example below demonstrates how to configure sending the status of builds wit
    
     <img src="BuildResults.PNG" width="1054" alt="Build results"/>
 
-
-__ __

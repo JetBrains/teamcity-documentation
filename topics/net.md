@@ -884,5 +884,3 @@ The path to .NET CLI executable.
 The .NET SDK version.
 
 </td></tr></table>
-
-__ __

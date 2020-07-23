@@ -158,7 +158,3 @@ source /home/user/.bash_profile
 </tip>
 
 </td></tr></table>
-
-
-
-__ __

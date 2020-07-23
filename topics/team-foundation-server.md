@@ -346,5 +346,3 @@ http.proxyUser
 http.proxyPassword
 
 ```
-
-__ __
