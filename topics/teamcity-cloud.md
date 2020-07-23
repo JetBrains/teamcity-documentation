@@ -115,7 +115,7 @@ Software:
 * Gradle (5.5.1)
 * RVM (Ruby 2.5.8)
 * Go (1.14.1)
-* NodeJS (0.33.11) 4, 5, 6, 7, 8.12 (default)
+* NodeJS (4, 5, 6, 7, 8.12 (default))
 * Docker (19.03.9)
 * Docker Compose (1.23.1)
 * Ansible (2.9.10)
