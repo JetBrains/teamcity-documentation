@@ -304,9 +304,6 @@ C:\Program Files (x86)\JetBrains\TeamCity\TrayNotifier\JetBrains.TrayNotifier.ex
 ```
 
  <seealso>
-        <category ref="installation">
-            <a href="windows-tray-notifier.md">Working with Windows Tray Notifier</a>
-        </category>
         <category ref="user-guide">
             <a href="subscribing-to-notifications.md">Subscribing to Notifications</a>
         </category>
