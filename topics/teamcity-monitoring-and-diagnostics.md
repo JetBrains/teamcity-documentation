@@ -25,7 +25,8 @@ __Memory usage__
 * __Total heap__  displays the total amount of memory used by TeamCity to store all data, including temporary data about to be collected. Represents all heap memory pools (young and old generations) in terms of java. Garbage collection runs quickly and frequently.
 * __Data__ shows the amount of memory used by TeamCity to store persistent data. Represents old generations only in terms of java. Garbage collection runs slowly and infrequently.
 
-### Troubleshooting 
+### Troubleshooting
+{id="troubleshooting-1"}
 
 #### Debug Logging
 

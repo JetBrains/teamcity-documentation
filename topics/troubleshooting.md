@@ -1,5 +1,6 @@
 [//]: # (title: Troubleshooting)
 [//]: # (auxiliary-id: Troubleshooting)
+
 When a problem occurs, you have a number of places to look for information after you've found out the problem isn't in setup:
 * Check the [Known Issues](known-issues.md) and [Common Problems](common-problems.md) sections, collect relevant information using the [Reporting Issues](reporting-issues.md) guidelines.
 * [The TeamCity Forum](http://jb.gg/teamcity-forum) \- Search the forum to see if anyone else has experienced your problem. Our forum's user base is quite active and is a good place to find support. If you cannot find any relevant information either in the forums or in tracker and you are not sure whether you faced a bug or it's just a result of misconfiguration, the right way to start is to create a new thread in the forums.

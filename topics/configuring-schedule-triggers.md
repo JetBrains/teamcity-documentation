@@ -482,10 +482,12 @@ You can restrict a schedule trigger to start builds only if there are pending ch
 <include src="configuring-vcs-triggers.md" include-id="vcs-trigger-rules"/>
 
 #### General Syntax
+{id="general-syntax-1"}
 
 <include src="configuring-vcs-triggers.md" include-id="general-syntax"/>
 
 #### Trigger Rules Examples
+{id="trigger-rules-examples-1"}
 
 <include src="configuring-vcs-triggers.md" include-id="trigger-rules-examples"/>
 

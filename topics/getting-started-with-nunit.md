@@ -4,6 +4,7 @@
 This tutorial aims at describing the basic practices of using [NUnit 3](http://www.nunit.org/) in TeamCity. The test project and script samples can be found [here](https://github.com/JetBrains/teamcity-nunit-samples). The order of use cases is based on the number of the TeamCity features involved: the first case is the most basic, more complex cases that follow utilize a larger number of features. We recommend you familiarizing yourself with all features, finding their advantages and disadvantages, and then decide in favor of one or another.
 
 ## Installing NUnit
+{id="installing-nunit-1"}
 
 <include src="nunit.md" include-id="installing-nunit"/>
 

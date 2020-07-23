@@ -56,6 +56,7 @@ Note that when a build is triggered by a trigger with the VCS quiet period set, 
 <anchor name="buildTriggerRules"/>
 
 ## VCS Trigger Rules
+{id="vcs-trigger-rules-1"}
 
 <chunk include-id="vcs-trigger-rules">
 
@@ -85,10 +86,10 @@ The general syntax for a single rule is:
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
 where:
-* __Ant\_like\_wildcard__: A [wildcard](wildcards.md) to match the changed file path. Only `*` and `**` patterns are supported, the `?` pattern is __not__ supported. The file paths in the rule can be relative (not started with `/` or `\ `) to match resulting paths on the agent or absolute (started with `/`) to match VCS paths relative to a VCS root. For each file in a change the most specific rule is found (the rule matching the longest file path). The build is triggered if there is at least one file with a matching "include" rule or a file with no matching "exclude" rules.   
-* __[VCS_username](managing-users-and-user-groups.md)__: if specified, limits the rule only to the changes made by a user with the corresponding [VCS username](managing-users-and-user-groups.md#VCS+Usernames).
-* __VCS\_root\_id__: if specified, limits the rule only to the changes from the corresponding VCS root.
-* __VCS\_comment\_regexp__: if specified, limits the rule only to the changes that contain specified text in the VCS comment. Use the [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) pattern for matching the text in a comment (see examples below). The rule matches if the comment text contains a matched text portion; to match the entire text, include the `^` and `$` special characters.
+* `Ant_like_wildcard`: A [wildcard](wildcards.md) to match the changed file path. Only `*` and `**` patterns are supported, the `?` pattern is __not__ supported. The file paths in the rule can be relative (not started with `/` or `\ `) to match resulting paths on the agent or absolute (started with `/`) to match VCS paths relative to a VCS root. For each file in a change the most specific rule is found (the rule matching the longest file path). The build is triggered if there is at least one file with a matching "include" rule or a file with no matching "exclude" rules.   
+* [`VCS_username`](managing-users-and-user-groups.md): if specified, limits the rule only to the changes made by a user with the corresponding [VCS username](managing-users-and-user-groups.md#VCS+Usernames).
+* `VCS_root_id`: if specified, limits the rule only to the changes from the corresponding VCS root.
+* `VCS_comment_regexp`: if specified, limits the rule only to the changes that contain specified text in the VCS comment. Use the [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) pattern for matching the text in a comment (see examples below). The rule matches if the comment text contains a matched text portion; to match the entire text, include the `^` and `$` special characters.
 
 <tip>
 
@@ -197,10 +198,12 @@ No triggering if the comment consists of the word "oops" only (according to [Jav
 
 
 ### Branch Filter
+{id="server-api-changes-1"}
 
 Read more in [Branch Filter](branch-filter.md).
 
 ### Trigger Rules and Branch Filter Combined
+{id="trigger-rules-and-branch-filter-combined-1"}
 
 Trigger rules and branch filter are combined by __AND__, which means that the build is triggered __only when both conditions are satisfied__.
 

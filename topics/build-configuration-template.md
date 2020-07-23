@@ -73,6 +73,8 @@ The settings from all templates the build configuration is attached to are inher
 When a build configuration is detached from some of its templates, all the effective (that is not overridden in the config and not overlapped by some higher priority template) settings inherited from them are copied to the configuration. The copying build configuration logic is the same as extracting a template. On moving a build configuration/project, the logic checks all templates to which the build configuration is attached.
 
 #### Related settings changes
+{id="related-settings-changes-1"}
+
 * XML: If a build configuration is attached to a single template, the resulting config XML format stays the same as it was before (`ref` attribute of the `settings` element). If it is attached to a number of templates, then references to them are stored in a separate element under the `settings` node, as follows:
 
 ```Shelll

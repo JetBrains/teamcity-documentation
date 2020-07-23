@@ -111,6 +111,8 @@ TeamСity-Docker integration provides the following features which facilitate wo
 <include src="docker.md" include-id="docker-runner"/>
 
 ### Docker Command
+{id="docker-command-1"}
+
 <include src="docker.md" include-id="docker-command"/>
 
 ### Docker Compose Runner
@@ -118,10 +120,12 @@ TeamСity-Docker integration provides the following features which facilitate wo
 <include src="docker-compose.md" include-id="docker-compose"/>
 
 ### Docker Wrapper
+{id="docker-wrapper-1"}
 
 TeamCity provides the Docker Wrapper extension for [Command Line](command-line.md), [Maven](maven.md), [Ant](ant.md), and [Gradle](gradle.md) runners. Each of the supported runners has the dedicated Docker settings section.
 
 #### Docker Settings
+{id="docker-settngs-1"}
 
 <include src="docker-wrapper.md" include-id="docker-settings"/>
 
@@ -130,6 +134,7 @@ TeamCity provides the Docker Wrapper extension for [Command Line](command-line.m
 <include src="docker-wrapper.md" include-id="docker-settings-how"/>
 
 ##### Environment Variables Handling
+{id="environment-variables-handling-1"}
 
 <include src="docker-wrapper.md" include-id="docker-settings-env-var"/>
 

@@ -236,6 +236,7 @@ Use the default Maven repository location. The repository is shared between all 
 
 
 ## Other improvements
+{id="other-improvements-1"}
 
 * If the '_Docker Support_' feature is added to a build configuration, the TeamCity server will automatically add an agent requirement for an installed Docker, so the builds will run on compatible agents only. 
 * Starting from this version, TeamCity supports Visual Studio 2019 in the related runners: [Visual Studio(sln)](visual-studio-sln.md), [MSBuild](msbuild.md), [Visual Studio Test](visual-studio-tests.md), [Inspections(ReSharper)](inspections-resharper.md), [Duplicates Finder(ReSharper)](duplicates-finder-resharper.md).

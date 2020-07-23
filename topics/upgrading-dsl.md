@@ -330,6 +330,7 @@ Once you switch the project to new API and check in the changes, TeamCity will d
 To use the new DSL API in a repository with an existing `pom.xml`, the maven dependency version has to be updated to `2017.2`.
 
 ### Updating Docker parameters
+{id="updating-docker-parameters-1"}
 
 If you used Kotlin DSL with TeamCity 2017.1 for Docker plugin configurations, you may need to perform some changes in your kotlin configuration scripts to make your code compatible with TeamCity 2017.2. Basically, TeamCity provides a converter for Kotlin configuration scripts to perform those changes automatically, but if it does not work due to some reason, the following changes need to be made manually:
 * rename the build runner step with the __Docker Build__ runType to __DockerBuild__

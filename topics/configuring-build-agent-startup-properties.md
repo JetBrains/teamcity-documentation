@@ -43,10 +43,12 @@ Make sure to renumber all lines after the inserted ones.
 It's rare that you would ever need these. Most probably you would need affecting main agent process properties described above.
 
 ### Build Agent Is Run Via Script
+{id="build-agent-is-run-via-script-1"}
 
 Before you run the `<Agent Home>\bin\agent.bat|sh` script, set the `TEAMCITY_LAUNCHER_OPTS` environment variable.
 
 ### Build Agent Is Run As Service
+{id="build-agent-is-run-as-service-1"}
 
 In the `<Agent Home>\launcher\conf\wrapper.conf` file, add the following lines (one per option, the `N` number should increase):
 
