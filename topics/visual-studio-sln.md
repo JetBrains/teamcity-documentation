@@ -8,7 +8,7 @@ Since TeamCity 2019.2.3, we have stopped providing active support for the Visual
 Since the Visual Studio (sln) runner uses MSBuild for building projects under its hood, you can softly migrate to using the .NET build runner with the `msbuild` command. Your configured Visual Studio (sln) settings (such as command line parameters) will work similarly with `msbuild`.   
 Note the .NET runner also supports the VS-native `devenv` command which allows launching Visual Studio in a command-line mode and using its own [switches](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches) for building, debugging, and deploying projects.
 
-For more details on migration, refer to the [.NET runner description](net.md#Migrating+from+Visual+Studio+(sln)+Runner).
+For more details on migration, refer to the [.NET runner description](net.md#migrating-to-net-from-sln).
 
 For compatibility, the Visual Studio (sln) runner will be bundled with the nearest future versions of TeamCity. You can continue using it if migration to the .NET runner is too time-consuming for your setup.   
 However, we will unbundle this runner after a sufficient transition period. In this case, you will still be able to install it as an external plugin. Remember to check our [upgrade notes](upgrade-notes.md) before upgrading to each following version.

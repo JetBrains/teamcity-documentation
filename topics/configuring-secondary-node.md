@@ -79,7 +79,7 @@ If you have commit hooks configured on the main server, no changes in hooks are 
 
 ### Processing Triggers on Secondary Node
 
-In setups with many build agents, a significant amount of the main server’s CPU is allocated to constant processing of build triggers. By enabling the _Processing build trigger_ responsibility for one or more secondary nodes, you can distribute the trigger processing tasks and CPU load between the main node and the responsible secondary ones. TeamCity distributes the triggers automatically but you can see what triggers are currently assigned to each node.
+In setups with many build agents, a significant amount of the main server\'s CPU is allocated to constant processing of build triggers. By enabling the _Processing build trigger_ responsibility for one or more secondary nodes, you can distribute the trigger processing tasks and CPU load between the main node and the responsible secondary ones. TeamCity distributes the triggers automatically but you can see what triggers are currently assigned to each node.
 
 ## User-level Actions on Secondary Node
 
@@ -88,7 +88,7 @@ If at least one responsibility is assigned to a secondary node, it will allow pe
 * Stopping/deleting and pinning/tagging/commenting builds
 * Assigning investigations and muting build problems and tests
 * Marking a build as successful/failed
-* Editing build changes' descriptions
+* Editing build changes\' descriptions
 * Merging sources and labeling sources actions
 * Adding builds to favorites
 * Changing settings of user profiles, including general settings, groups and roles, access tokens, VCS usernames, and notification rules
@@ -134,12 +134,13 @@ Currently, the following bundled plugins are disabled on secondary nodes:
 * Investigations Auto Assigner
 * Jira Cloud integration
 * Kubernetes support
-* Install Agent on remote host (agent push)
+* Install Agent on a remote host (agent push)
 * WebHooks support
 
 <note>
 
 Secondary nodes can use only a limited set of external plugins.
+
 </note>
 
 ## Clean-up

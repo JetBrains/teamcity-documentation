@@ -80,11 +80,11 @@ It is important that all the nodes "see" the current state of the shared Data Di
 
 If TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure that all the registry keys mentioned in the [related article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all the TeamCity nodes.
 
-If Data Directory is shared via NFS, make sure that all nodes have the following option in their mount settings: `lookupcache=positive`.
+If Data Directory is shared via NFS, make sure all nodes have the following option in their mount settings: `lookupcache=positive`.
 
 #### Main Node Caches Directory
 
-If main node accesses the data directory via a network location than it is highly recommended to move `system/caches` directory to a [local disk](teamcity-data-directory.md#caches_folder).
+If main node accesses the data directory via a network location than it is highly recommended moving `system/caches` directory to a [local disk](teamcity-data-directory.md#caches_folder).
 
 #### Node-Specific Data Directory
 
@@ -92,7 +92,7 @@ Besides the Data Directory shared with the main server, a secondary node require
 
 On the first start of the node, the local Data Directory is automatically created as `<TeamCity Data Directory>/nodes/<node_ID>`. This is usually the location of the shared Data Directory, the directory used by all nodes.
 
-To reduce the load caused by extra IO requests from all nodes to the shared TeamCity Data Directory and to speed up the nodes' access to data, we highly recommend redefining the location of the node-specific Data Directory to use the node\'s local disk.
+To reduce the load caused by extra IO requests from all nodes to the shared TeamCity Data Directory and to speed up the nodes\' access to data, we highly recommend redefining the location of the node-specific Data Directory to use the node\'s local disk.
 
 To define a new path to a local directory, use the `-Dteamcity.node.data.path` property in the TeamCity [start-up scripts](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts). Read more in [Configuring Secondary Node](configuring-secondary-node.md#Installing+Secondary+Node).
 

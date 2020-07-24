@@ -122,10 +122,10 @@ Currently, the .NET runner supports the following commands:
      * [`vstest`](#vstest)\*
      * [`nuget delete`](#nuget+delete)   
      (requires .NET CLI 2.1.500+ for authentication in [private feeds](#Authentication+in+Private+NuGet+Feeds))
-     * [`nuget push`](#nudget+push)   
+     * [`nuget push`](#nuget+push)   
      (requires .NET CLI 2.1.500+ for authentication in [private feeds](#Authentication+in+Private+NuGet+Feeds))
 * Visual Studio command-line mode (read more in the [Visual Studio reference](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches)):
-  * [`devenv`](#Visual+Studio+command-Line+mode)
+  * [`devenv`](#Visual+Studio+Command-Line+Mode)
   
 \* _`msbuild` and `vstest` are executed as [CLI commands](https://docs.microsoft.com/en-us/dotnet/core/tools/) if cross-platform .NET SDK is used for building a project. Otherwise, they are run using the `msbuild` or `VSTest.Console` tool respectively._
 
@@ -399,6 +399,7 @@ Consider the following notes before migrating:
 If you are actively using either Mono or NCover/PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
 
 ##### Migrating from Visual Studio (sln) Runner
+{id="migrating-to-net-from-sln"}
 
 The [Visual Studio (sln)](visual-studio-sln.md) build runner is using the MSBuild engine under its hood and provides a few tweaks for the VS users to ease their experience with building projects in TeamCity. Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine which makes it a migration option for the users of the Visual Studio (sln) step as well.
 

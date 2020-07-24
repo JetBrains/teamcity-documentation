@@ -1,7 +1,6 @@
 [//]: # (title: Server Health)
 [//]: # (auxiliary-id: Server Health)
 
-
 The __Server Health__ report contains results of the server inspection for any configuration issues which impact or could potentially impact the performance. Such issues, the so called server _health items_, are collectively reported by TeamCity on the __Server Health__ page in the __Administration__ area.
 
 The Project Administrator [permissions](role-and-permission.md) at least are required to see the report.
@@ -118,7 +117,7 @@ The general recommendation is to use parameter references for root settings, thu
 
 #### Trigger Rules for Unattached VCS roots
 
-TeamCity displays a warning if a rule of a [VCS Trigger or Schedule Trigger](configuring-vcs-triggers.md#VCS+Trigger+Rules) references a VCS root which is not attached to any build configuration.
+TeamCity displays a warning if a rule of a [VCS Trigger or Schedule Trigger](configuring-vcs-triggers.md#vcs-trigger-rules-1) references a VCS root which is not attached to any build configuration.
 
 #### Redundant Trigger
 

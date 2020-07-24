@@ -34,7 +34,7 @@ If required, specify your repository credentials.
    <img src="CreateProject3.png" alt="Create a project from a repository URL, Step 3" width="925"/>   
    The selected build step is added to the build configuration.
 
-Congratulations! You've configured your first build containing one build step. Now you can [run your build](#Run-your-first-build) and [tweak its settings](#Tweak-your-build-configuration-settings) if necessary.
+Congratulations! You've configured your first build containing one build step. Now you can [run your build](#Run+your+first+build) and [tweak its settings](#Tweak+your+build+configuration+settings) if necessary.
 
 ### Create a project pointing to GitHub.com repository
 
@@ -70,7 +70,7 @@ The connection is configured: you can continue with creating your project in Tea
 8. TeamCity will scan your VCS repository and autodetect your build steps (it may take some time). Check the boxes of the steps and use them in your build configuration.
 9. The selected build step is added to the build configuration.
 
-Congratulations! You've configured the GitHub connection and your first build containing one build step. Now you can [run your build](#Run-your-first-build) and [tweak its settings](#Tweak-your-build-configuration-settings) if necessary.
+Congratulations! You've configured the GitHub connection and your first build containing one build step. Now you can [run your build](#Run+your+first+build) and [tweak its settings](#Tweak+your+build+configuration+settings) if necessary.
 
 <tip>
 
@@ -102,7 +102,7 @@ The configurations can be created automatically (similarly to creating projects)
 If your project resides in several version control systems, you can attach as many VCS Roots to it as you need. For example, if you store a part of your project in Perforce, and the rest in Git, you need to create and attach two VCS roots: one for Perforce, another for Git. [Learn more about configuring VCS roots](configuring-vcs-roots.md).
 </tip>
 
-Congratulations! You've configured your first build containing one build step. Now you can [run your build](#Run-your-first-build) and [tweak its settings](#Tweak+your+build+configuration+settings) if necessary.
+Congratulations! You've configured your first build containing one build step. Now you can [run your build](#Run+your+first+build) and [tweak its settings](#Tweak+your+build+configuration+settings) if necessary.
 
 ## Run your first build
 

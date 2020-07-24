@@ -32,7 +32,7 @@ To achieve this, enable and configure the Pull Requests and [Automatic Merge](au
 
 </tip>
 
-See the [example](#Workflow+example+for+the+Pull+Requests+build+feature) on how to set up TeamCity to run builds on pull requests.
+See the [example](#Pull+Requests+workflow+example) on how to set up TeamCity to run builds on pull requests.
 
 ## VCS-specific settings
 

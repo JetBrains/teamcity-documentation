@@ -51,7 +51,7 @@ After a build configuration is created, its ID can be changed, and it is highly 
 <td>
 
 ##### Description
-
+{id="description-1"}
 
 </td>
 
@@ -160,6 +160,7 @@ Specify additional options for the builds of this build configuration.
 </td></tr></table>
 
 ### Build Number Format
+{id="build-number-format-1"}
 
 In the __Build number format__ field you can specify a pattern which is resolved and assigned to the [Build Number](build-number.md) on the build start.
 

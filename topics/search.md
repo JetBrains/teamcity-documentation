@@ -1,12 +1,13 @@
 [//]: # (title: Search)
 [//]: # (auxiliary-id: Search)
+
 After you have installed and started running TeamCity, it collects the information on builds, tests and so on and indexes it. You can search builds by build number, tag, build configuration name and other different parameters specifying one or several keywords. You can also search for builds by text in build logs, and by the [external id](identifier.md#External+IDs) of a build configuration.
 
 ## Search Query
 
 In TeamCity you can search for builds using the [Lucene query syntax](http://lucene.apache.org/); however, a TeamCity search query has two major differences described [below](#Differences+from+Lucene+Syntax).
 
-To narrow your search and get more precise results, use the available search fields \- indexed parameters of each build. For complete list of available search fields (keywords), refer to this [section of the page](#Complete+List+of+Available+Search+Fields,+Shortcuts,+and+Keywords).
+To narrow your search and get more precise results, use the available search fields - indexed parameters of each build. For complete list of available search fields (keywords), refer to the [related section](#search-fields-list).
 
 ### Differences from Lucene Syntax
 
@@ -34,6 +35,7 @@ You can combine multiple terms with Boolean operators to create more complex sea
 TeamCity also supports the `*` and `?` wildcards in a query.  It is not recommended to use the asterisk (`*`) at the beginning of the search term as it may require a significant amount of time for TeamCity to search its database. For example, the `*onfiguration` search term is incorrect.
 
 ## Complete List of Available Search Fields, Shortcuts, and Keywords
+{id="search-fields-list"}
 
 ### Search Fields
 

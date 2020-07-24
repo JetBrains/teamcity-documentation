@@ -17,7 +17,7 @@ If you have a [build chain](build-chain.md) (i.e. a number of builds interconnec
 
 <include src="build-dependencies-setup.md" include-id="trigger-on-ssdep-chngs"/>
 
-If triggering rules are specified (described [below](#VCS+Trigger+Rules)), they are applied to all the changes (including changes from snapshot dependencies) and only the changes matching the rules trigger the build chain.
+If triggering rules are specified (described [below](#vcs-trigger-rules-1)), they are applied to all the changes (including changes from snapshot dependencies) and only the changes matching the rules trigger the build chain.
 
 See also details at the [Build Dependencies](build-dependencies-setup.md) page.
 
@@ -199,7 +199,7 @@ No triggering if the comment consists of the word "oops" only (according to [Jav
 
 
 ### Branch Filter
-{id="server-api-changes-1"}
+{id="branch-filter-1"}
 
 Read more in [Branch Filter](branch-filter.md).
 

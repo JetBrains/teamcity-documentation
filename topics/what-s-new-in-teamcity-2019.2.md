@@ -147,7 +147,7 @@ __Try out the TeamCity experimental UI and leave your feedback via our [UI surve
  
 TeamCity 2019.2 introduces the redesigned [Build Details](#Experimental+Build+Details+Page) and [Agents](#Experimental+Agents+page) pages, as well as other [experimental features](#Other+new+features+of+experimental+UI).
 
-### Experimental Build Details page
+### Experimental Build Details Page
 
 In our attempt to rethink the approach to displaying build details, we have redesigned the __Build Details__ page so it provides better visualization and gives quick access to all other projects via the sidebar.
 

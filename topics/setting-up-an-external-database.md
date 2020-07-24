@@ -1,10 +1,11 @@
 [//]: # (title: Setting up an External Database)
 [//]: # (auxiliary-id: Setting up an External Database)
+
 TeamCity stores build history, users, build results, and some run time data in an SQL database. See also the description of what is stored where on the [Manual Backup and Restore](manual-backup-and-restore.md) page.
 
 If you evaluated TeamCity with the internal database which is [not recommended for production](#Default+Internal+Database), refer to [Migrating to an External Database](migrating-to-an-external-database.md).
 
-The current database in use is shown on the __Administration | Global Settings__ page in the _Database_ field and also is mentioned in the teamcity\-server.log on the server startup. `HSQL*` means that the internal database is in use.
+The current database in use is shown on the __Administration | Global Settings__ page in the _Database_ field and also is mentioned in `teamcity-server.log` on the server startup. `HSQL*` means that the internal database is in use.
 
 ## Default Internal Database
 
@@ -108,7 +109,7 @@ For TeamCity prior to 2018.1.2, set the `connectionProperties.autosave=conservat
 
 ### Oracle
 
-[Supported versions](supported-platforms-and-environments.md#Supported-Databases)
+[Supported versions](supported-platforms-and-environments.md#Supported+Databases)
 
 #### On Oracle server side
 Create an Oracle user account/schema for TeamCity.
