@@ -4,6 +4,7 @@
 <ihp version="2.0">
     <settings>
         <caps for="toc-element">sentence</caps>
+        <id-generator-method>URL_ENCODE_PLUS</id-generator-method>
     </settings>
     <module name="teamcity-docs"/>
     <vars src="v.list"/>
