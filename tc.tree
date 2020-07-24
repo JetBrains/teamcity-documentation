@@ -394,6 +394,7 @@
    </toc-element>
    <toc-element id="staging-test-documents.md">
             <toc-element id="continuous-integration-with-teamcity-test600.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="continuous-integration-with-teamcity-test700.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="continuous-integration-with-teamcity-test800.md" show-structure-for="chapter" show-structure-depth="4"/>
    </toc-element>
    <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
