@@ -69,7 +69,7 @@ Merge policy
 
 </td><td>
 
-Select to create a merge commit or do a fast\-forward merge.
+Select to create a merge commit or do a fast-forward merge.
 
 </td>
 </tr><tr>

@@ -14,7 +14,7 @@ Let's see how the build chain mechanism works in details. On triggering a depend
 
 ## Configuring Build Chains
 
-__To specify dependencies in your build configuration__:
+To specify dependencies in your build configuration:
 1. On the __Build Configuration Settings__ page, select __Dependencies__.
 2. On the __Dependencies__ page, click the __Add new snapshot dependency__ link.
 
@@ -59,7 +59,7 @@ Build Chains are visible in various places in the TeamCity web UI:
 
 ### Dependencies page of build configuration settings
 
-If a build configuration is a part of a build chain, the corresponding information is displayed in the __Build Configuration settings | Dependencies | Snapshot dependencies__. Clicking the build chain link opens the preview of the build chain and its configuration in a separate window. The preview shows builds of the chain; the builds with automatic triggering configured are marked with ths icon: ![v.png](v.png).
+If a build configuration is a part of a build chain, the corresponding information is displayed in __Build Configuration Settings | Dependencies | Snapshot Dependencies__. Clicking the build chain link opens the preview of the build chain and its configuration in a separate window. The preview shows builds of the chain; the builds with automatic triggering configured are marked with ths icon: ![v.png](v.png).
 
 <img src="snapshotDepPreview.png" alt="Preview of snapshot dependencies"/>
 
@@ -75,7 +75,7 @@ You can review build chains on both project and build configuration pages: each 
 
 The tab displays the list of build chains that contain builds of this project or this build configuration with the ability to filter them. Note that build chains are sorted so that the build chain with the last finished build appears at the top of the list.
 
-The pie\-chart icon displays the ratio of the statuses for builds that are parts of the chains. On hovering over the pie chart, the details are displayed:
+The pie-chart icon displays the ratio of the statuses for builds that are parts of the chains. On hovering over the pie chart, the details are displayed:
 
 <img src="buildChainsCollapsed.png" alt="Collapsed build chains"/>
 
@@ -94,7 +94,7 @@ Clicking a build in a chain highlights the selected build and all its direct dep
 
 From this page you can also:
    * Continue a chain, if there are yet "not triggered" builds. Click the __Run__ button and a new build will be started on the chain revisions and associated with builds from this chain.
-   * Click ![custom_build(1).png](custom_build_1.png)  to open the [custom build dialog](triggering-a-custom-build.md) with build chain revisions preselected. This action can be used if you want to re\-run some build in the chain.
+   * Click ![custom_build(1).png](custom_build_1.png)  to open the [custom build dialog](triggering-a-custom-build.md) with build chain revisions preselected. This action can be used if you want to rerun some build in the chain.
 
 ### Dependencies tab of build results page
 

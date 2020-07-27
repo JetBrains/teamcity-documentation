@@ -98,7 +98,7 @@ Terminate instance idle time
 
 <td>
 
-Instruct TeamCity to stop a cloud agent machine using this setting and the __Additional terminate condition__ options. Specify the period (in minutes) for TeamCity to wait before stopping an idle build agent.   
+Instruct TeamCity to stop a cloud agent machine using this setting and the _Additional terminate conditions_ options. Specify the period (in minutes) for TeamCity to wait before stopping an idle build agent.   
 Leave empty for no timeout.
 
 
@@ -126,7 +126,7 @@ Select this option if you want TeamCity to stop the virtual machine immediately 
 
 Next, you need to provide the cloud access information which will differ depending on the provider. After that, you can check the connection and add an image to be used as a source for TeamCity cloud agents.
 
-You can limit the number of instances across all images in the cloud profile (__Maximum instances count__) and/or set the limit per image (in [image settings](#Adding+Agent+Image)).
+You can limit the number of instances across all images in the cloud profile (_Maximum instances count_) and/or set the limit per image (in [image settings](#Adding+Agent+Image)).
 
 ### Adding Agent Image
 

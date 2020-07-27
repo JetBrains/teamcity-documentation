@@ -26,7 +26,7 @@ For example, for Maven builds, TeamCity creates the `maven-build-info.xml` file 
 * Hidden artifacts are placed under the `.teamcity` directory in the root of the build artifacts.
 * Hidden artifacts are not listed on the __Artifacts__ tab of the build results by default. However, below the list of the artifacts there's a link that allows you to view hidden artifacts if any. When hidden artifacts are displayed, clicking the _Download all_ link will result in downloading all artifacts including hidden ones.
 * Artifacts dependencies do not download hidden artifacts unless they explicitly have "`.teamcity`" in the pattern.
-* Hidden artifacts are not deleted by the artifacts clean-up unless ".`teamcity`" is explicitly specified in the pattern.
+* Hidden artifacts are not deleted by the artifacts clean-up unless `.teamcity` is explicitly specified in the pattern.
 
 You can configure publishing some builds artifacts under the `.teamcity` directory to make them hidden.
 

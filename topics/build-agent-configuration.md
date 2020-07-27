@@ -12,7 +12,7 @@ The file is a [Java properties](http://java.sun.com/j2se/1.5.0/docs/api/java/uti
 A quick guide is:
 * use `property_name=value<newline>` syntax
 * use `#` in the first position of the line for a comment
-* use `/` instead of `\ ` as the path separator. If you need to include `\ `, escape it with another `\ `.
+* use `/` instead of `\` as the path separator. If you need to include `\`, escape it with another `\`.
 * whitespaces within a line matter
 
 Example of the file:
@@ -49,8 +49,6 @@ authorizationToken=1234567890abcdefghijklml
 
 ```
 
-
-
 <note>
 
 Make sure that the file is writable for the build agent process itself. For example, the file is updated to store its authorization token that is generated on the server\-side.
@@ -79,17 +77,12 @@ ownPort=9090
 If more than one build agent is hosted on the same machine, different ports must be assigned to them via the `ownPort` property in the `buildAgent.properties` file of every agent.
 </tip>
 
- 
-
 The IP address used by TeamCity server to connect to the build agent is automatically detected by the server when the agent first connects to TeamCity, unless the ownAddress property is defined. If the machine has several network interfaces, automatic detection may fail and it is recommended to specify the `ownAddress` property:
-
 
 ```Shell
 ownAddress=<own IP address or server-accessible domain name>
 
 ```
-
-
 
 ## Set up Agent behind Proxy
 

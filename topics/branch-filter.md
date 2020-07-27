@@ -48,7 +48,6 @@ Limit the set of branches available for the build configuration. This branch fil
  
 [Artifact dependency](artifact-dependencies.md)
 
-
 </td>
 
 <td>
@@ -69,7 +68,6 @@ Limit the set of branches to use artifacts from.
 
 <td>
 
- 
 Limit the set of branches to which builds the trigger should be applied to.
 
 </td>

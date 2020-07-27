@@ -1,7 +1,7 @@
 [//]: # (title: Build Agent)
 [//]: # (auxiliary-id: Build Agent)
 
-A TeamCity _Build Agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. It is [installed and configured](setting-up-and-running-additional-build-agents.md) separately from the TeamCity server. An agent can be installed on the same computer as the server or on a different machine (the latter is a preferred setup for server performance reasons); an agent can run the same operating system (OS) as the TeamCity server or a different OS. 
+A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. It is [installed and configured](setting-up-and-running-additional-build-agents.md) separately from the TeamCity server. An agent can be installed on the same computer as the server or on a different machine (the latter is a preferred setup for server performance reasons); an agent can run the same operating system (OS) as the TeamCity server or a different OS. 
 
 A TeamCity build agent contains [two processes](configuring-build-agent-startup-properties.md):   
 * Agent Launcher — a Java process that launches the agent process
@@ -61,7 +61,6 @@ Agents are manually authorized via the web UI on the __Agents__ page (except for
 
 If a build agent is installed and running on the same computer as the TeamCity build server, it is authorized automatically.
 
-
 </td></tr><tr>
 
 <td>
@@ -79,7 +78,7 @@ Agents are manually enabled/disabled via the [web UI](build-agents-configuration
 
  Agent disabling does not affect (stop) the build which is currently running on the agent.
 
-__Disabled__ agents can still run builds when the build is assigned to a special agent (for example, by [triggering a custom build](triggering-a-custom-build.md)). This feature is generally used to temporarily remove agents from the build grid to investigate agent\-specific issues.
+__Disabled__ agents can still run builds when the build is assigned to a special agent (for example, by [triggering a custom build](triggering-a-custom-build.md)). This feature is generally used to temporarily remove agents from the build grid to investigate agent-specific issues.
 
 
 </td></tr></table>
@@ -98,7 +97,8 @@ Typically, an agent upgrade happens when:
 * the server is [upgraded](upgrade.md#Upgrading+TeamCity+Server)
 * an agent plugin is [added](installing-additional-plugins.md) or [updated](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#PluginsPackaging-AgentUpgradeonUpdatingPlugins) on the server
 * [a new tool is installed](installing-agent-tools.md)
- <seealso>
+
+<seealso>
         <category ref="installation">
             <a href="installation.md#Install+Additional+Build+Agents">Installing and Running Build Agents</a>
             <a href="setting-up-and-running-additional-build-agents.md">Setting up and Running Additional Build Agents</a>

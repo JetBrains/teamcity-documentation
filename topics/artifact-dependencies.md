@@ -7,7 +7,7 @@ The __Build Configuration Settings | Dependencies | Artifact Dependencies__ sect
 
 ## Configuring Artifact Dependencies Using Web UI
 
-__To add an artifact dependency to a build configuration:__
+To add an artifact dependency to a build configuration:
 1. When [creating/editing a build configuration](creating-and-editing-build-configurations.md), open the __Dependencies__ page.
 2. Click the __Add new artifact dependency__ link and specify the following settings:
 
@@ -17,13 +17,11 @@ __To add an artifact dependency to a build configuration:__
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -31,20 +29,17 @@ Description
 
 Depend on
 
-
 </td>
 
 <td>
 
 Specify the build configuration for the current build configuration to depend on. A dependency can be configured on a previous build of the same build configuration.
 
-
 </td></tr><tr>
 
 <td>
 
 Get artifacts from
-
 
 </td>
 
@@ -59,13 +54,11 @@ Specify the type of build whose artifacts are to be taken: last successful build
  * If both a dependency by sources and a dependency by artifacts on the last finished build are configured for a build configuration, then artifacts will be taken from the build with the same sources.
 </note>
 
-
 </td></tr><tr>
 
 <td>
 
 Build number
-
 
 </td>
 
@@ -73,7 +66,6 @@ Build number
 
 _This field appears if you have selected build with specific build number in the_ __Get artifacts from__ list_.   
 Specify here the exact [build number](configuring-general-settings.md#Build+Number+Format) of the artifact.
-
 
 </td></tr><tr>
 
@@ -86,7 +78,7 @@ Build tag
 
 <td>
 
-_This field appears if you have selected_ _last finished build with specified tag in the __Get artifacts from__ list_.    
+_This field appears if you have selected last finished build with specified tag in the __Get artifacts from__ list_.   
 Specify here the tag of the build whose artifacts are to be used. When resolving the dependency, TeamCity will look for the last successful build with the given tag and use its artifacts.
 
 
@@ -140,7 +132,7 @@ Archive processing examples:
  * `a.zip!**=>destination` will unpack the entire archive saving the path information.
  * `a.zip!a/b/c/**/*.dll=>dlls` will extract all `.dll` files from `a/b/c` and its subdirectories into the `dlls` directory, without the `a/b/c` prefix.
 
- `+:` and `-:` can be used to include or exclude specific files from the download or unpacking. As `+:` prefix can be omitted: rules are inclusive by default, and at least one inclusive rule is required. The order of rules is unimportant. For each artifact the most specific rule (the one with the longest prefix before the first wildcard symbol) is applied. When excluding a file, _DestinationPath_ is ignored: the file won't be downloaded at all. Files can also be excluded from archive unpacking. The set of rules applied to the archive content is determined by the set of rules matched by the archive itself.
+`+:` and `-:` can be used to include or exclude specific files from the download or unpacking. As `+:` prefix can be omitted: rules are inclusive by default, and at least one inclusive rule is required. The order of rules is unimportant. For each artifact the most specific rule (the one with the longest prefix before the first wildcard symbol) is applied. When excluding a file, _DestinationPath_ is ignored: the file won't be downloaded at all. Files can also be excluded from archive unpacking. The set of rules applied to the archive content is determined by the set of rules matched by the archive itself.
 
 Exclusive patterns examples:
 
@@ -167,20 +159,17 @@ Example of accessing hidden artifacts:
 
 By default, downloading artifact dependencies to the [agent work directory](agent-work-directory.md) is allowed, the [agent home directory](agent-home-directory.md) is prohibited. To override the defaults, set custom rules to download artifacts by specifying the comma-separated paths in the [`buildAgent.properties`](build-agent-configuration.md): `teamcity.artifactDependenciesResolution.blackList` and `teamcity.artifactDependenciesResolution.whiteList`. Blacklisting a path forbids artifacts download to the directory unless it is whitelisted.
 
-
 </td></tr><tr>
 
 <td>
 
 Clean destination paths before downloading artifacts
 
-
 </td>
 
 <td>
 
 Check this option to delete the content of the destination directories before copying artifacts. It will be applied to all inclusive rules.
-
 
 </td></tr></table>
 
@@ -192,7 +181,7 @@ This section describes how to download TeamCity build artifacts inside the build
 
 To handle artifact dependencies between builds, this solution is more complicated then configuring dependencies in the TeamCity UI but allows for greater flexibility. For example, managing dependencies this way will allow you to start a personal build and verify that your build is still compatible with dependencies.
 
-__To configure dependencies via Ant build script:__
+To configure dependencies via Ant build script:
 
 1\. Download Ivy.
 
@@ -245,8 +234,6 @@ TeamCity itself acts as an Ivy repository. You can read more about the Ivy depen
 
 ```
 
-
-
 where:
 * `YOUR_ORGANIZATION` replace with the name of your organization.
 * `YOUR_MODULE` replace with the name of your project or module where artifacts will be used.
@@ -254,15 +241,13 @@ where:
 * `BUILD_REVISION` can be either a build number or one of the following strings: * `latest.lastFinished`
   * `latest.lastSuccessful`
   * `latest.lastPinned`
-* `TAG_NAME.tcbuildtag` \- last build tagged with the TAG\_NAME tag
+* `TAG_NAME.tcbuildtag` - last build tagged with the TAG\_NAME tag
 
 
 [//]: # (Internal note. Do not delete. "Artifact Dependenciesd15e580.txt")    
 
-
-
-* `ARTIFACT_FILE_NAME_WITHOUT_EXTENSION` file name or regular expression of the artifact without the extension part.
-* `ARTIFACT_FILE_NAME_EXTENSION` the extension part of the artifact file name.
+* `ARTIFACT_FILE_NAME_WITHOUT_EXTENSION` filename or regular expression of the artifact without the extension part.
+* `ARTIFACT_FILE_NAME_EXTENSION` the extension part of the artifact filename.
 
 7\. Modify your `build.xml` file and add tasks for downloading artifacts, for example (applicable for Ant 1.6 and later):
 
@@ -284,8 +269,6 @@ where:
 
 ```
 
-
-
 <note>
 
 * `commons-httpclient`, `commons-logging`, and `commons-codec` are to be in the `classpath` of Ivy tasks.
@@ -305,14 +288,12 @@ Artifacts repository is protected by a basic authentication. To access the artif
 
 ```
 
-
-
 where `TEAMCITY_HOST` is hostname or IP address of your TeamCity server (without port and servlet context).   
 As `USER_ID/PASSWORD` you can use either username/password of a regular TeamCity user (the user should have corresponding permissions to access artifacts of the source build configuration) or system properties `teamcity.auth.userId/teamcity.auth.password`.
 
 ## Build-level authentication
 
-The system properties `teamcity.auth.userId` and `teamcity.auth.password` store automatically generated build\-unique values which can be used to authenticate on TeamCity server. The values are valid only during the time the build is running. This generated user has limited permissions which allow build\-related operations. The primary intent for the user is to use the authentication to download artifacts from other TeamCity builds within the build script.
+The system properties `teamcity.auth.userId` and `teamcity.auth.password` store automatically generated build-unique values which can be used to authenticate on TeamCity server. The values are valid only during the time the build is running. This generated user has limited permissions which allow build-related operations. The primary intent for the user is to use the authentication to download artifacts from other TeamCity builds within the build script.
 
 Using the properties is preferable to using real user credentials since it allows the server to track the artifacts downloaded by your build. If the artifacts were downloaded by the build configuration artifact dependencies or using the supplied properties, the specific artifacts used by the build will be displayed at the __Dependencies__ tab on the build results page. In addition, the builds which were used to get the artifacts from, can be configured to have different [clean-up](clean-up.md) logic.
 

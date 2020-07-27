@@ -1,13 +1,14 @@
 [//]: # (title: Bugzilla)
 [//]: # (auxiliary-id: Bugzilla)
+
 ## Converting Strings into Links to Issues
 
 When [enabling issue tracker integration](integrating-teamcity-with-issue-tracker.md#Enabling+Issue+Tracker+Integration) in addition to general settings, you need to specify which strings are to be recognized as references to issues in your tracker.   
-For Bugzilla, you need to specify the __Issue Id Pattern__: a [Java Regular Expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to find the issue ID in the text. The matched text (or the first group if there are groups defined) is used as the issue number.  The most common case seems to be `#(\d+)` \- this will extract 1234 as issue ID from text "Fix for #1234".
+For Bugzilla, you need to specify the __Issue Id Pattern__: a [Java Regular Expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to find the issue ID in the text. The matched text (or the first group if there are groups defined) is used as the issue number.  The most common case seems to be `#(\d+)` - this will extract 1234 as issue ID from text "Fix for #1234".
 
 ## Requirements
 
-If the username and password are specified, you need to have Bugzilla XML\-RPC interface switched on. This is not required if you use anonymous access to Bugzilla without the username and password.
+If the username and password are specified, you need to have Bugzilla XML-RPC interface switched on. This is not required if you use anonymous access to Bugzilla without the username and password.
 
 ## Known Issues
 

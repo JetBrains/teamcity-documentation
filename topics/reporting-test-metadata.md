@@ -75,19 +75,19 @@ You can view additional test data in various places in the TeamCity web UI.
 
 ### Additional test data for a failed test
 
-To view additional data for a test, expand the stacktrace: TeamCity shows it before test failure details in a separate Test Metadata section. 
+To view additional data for a test, expand the stacktrace: TeamCity shows it before the test failure details in a separate Test Metadata section. 
 
 <img src="add-test-data-failed-test.png" width="800" alt="Additional test data for a failed test"/>
 
 ### Additional test data graph for numeric values
 
-To view the test data graph, expand the stacktrace: TeamCity shows it before test failure details in a separate Test Metadata section.
+To view the test data graph, expand the stacktrace: TeamCity shows it before the test failure details in a separate Test Metadata section.
 
 <img src="add-test-data-num-val.png" width="800" alt="Additional test data graph for numeric values"/>
 
 ### Additional data for successful tests
 
-To view additional data for a successful test, go to the Tests tab or the Test History tab: the OK status for a test is now clickable if additional test data is present:
+To view additional data for a successful test, go to the Tests tab or the __Test History__ tab: the OK status for a test is now clickable if additional test data is present:
 
 
 <img src="add-test-data-success.png" width="800" alt="Additional data for successful tests"/>

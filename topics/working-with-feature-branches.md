@@ -55,7 +55,7 @@ If a branch specification has several patterns with the `*` wildcard, then TeamC
 
 
 
-will include the `refs/heads/v1/hotfix` branch (because "`v1`" is shorter than "`hotfix`").    
+will include the `refs/heads/v1/hotfix` branch (because `v1` is shorter than `hotfix`).    
 If 2 patterns with `*` wildcard produce logical names of the same length, then the last pattern wins.
 
 The branch specification supports comments as lines beginning with "`#"`.
@@ -92,7 +92,7 @@ Select the _My Branches_ group in the branch filter to display all active branch
 
 ## Logical branch name
 
-A logical branch name is a branch name shown in the user interface for the builds and on build configuration level. A logical branch name is regularly a part of the full VCS\-specific branch name. It is calculated by applying a [branch specification](#Configuring+branches) to the branch name from the version control.
+A logical branch name is a branch name shown in the user interface for the builds and on build configuration level. A logical branch name is regularly a part of the full VCS-specific branch name. It is calculated by applying a [branch specification](#Configuring+branches) to the branch name from the version control.
 
 For example, if the branch specification is defined like this:
 
@@ -100,8 +100,6 @@ For example, if the branch specification is defined like this:
 ```Plain Text
 +:refs/heads/*
 ```
-
-
 
 then the part matched by `*` (for example, `master`) is a logical branch name. 
 
@@ -112,16 +110,11 @@ If the branch specification pattern uses parentheses, the logical name then is m
 +:refs/heads/(v8.1/*)
 ```
 
-
-
 You do not need to include the default branch into the branch specification as it is already included there implicitly. But, if you want to have some short logical branch name for the default branch in the UI, for example, `master`, you can include it in the branch specification and use the parentheses:
-
 
 ```Plain Text
 +:refs/heads/(master)
 ```
-
-
 
 ## Builds
 
@@ -167,7 +160,7 @@ If a build failure condition is configured as follows:  _build metric has change
 
 ## Triggers
 
-The VCS trigger is fully aware of branches and will trigger a build once a check\-in is detected in a branch. All VCS trigger options like per\-checkin triggering, quiet period, and triggering rules are directly available for builds from branches. By default, the Schedule and Finish build trigger will watch for builds in the default branch only.
+The VCS trigger is fully aware of branches and will trigger a build once a check-in is detected in a branch. All VCS trigger options like per-checkin triggering, quiet period, and triggering rules are directly available for builds from branches. By default, the Schedule and Finish build trigger will watch for builds in the default branch only.
 
 Additionally, a [branch filter](branch-filter.md) can be specified for the VCS, Schedule and Finish build triggers.
 
@@ -185,7 +178,7 @@ All notification rules except "My changes" will only notify you on builds from t
 
 ## Build configuration status
 
-The Build Configuration status is calculated based on the builds from the default branch only. Consequently, per-configuration investigation works for builds from the default branch. For example, a successful build from a non\-default branch will not remove a per-configuration investigation, but a successful build from the default branch will.
+The Build Configuration status is calculated based on the builds from the default branch only. Consequently, per-configuration investigation works for builds from the default branch. For example, a successful build from a non-default branch will not remove a per-configuration investigation, but a successful build from the default branch will.
 
 ## Multiple VCS roots
 
@@ -264,11 +257,11 @@ Clean\-up rules are applied [independently](clean-up.md#Base+Rule+Behavior+for+B
 
 ## Manual branch merging
 
-You can merge branches in TeamCity manually, for example, if you want to merge branches only after a code review / approval, or if you want to perform the merge despite the tests failure in a branch.
+You can merge branches in TeamCity manually, for example, if you want to merge branches only after a code review / approval, or if you want to perform the merge despite the test failure in a branch.
 
 __To merge sources manually__: 
 
-Open the [build results page](working-with-build-results.md), click the __Actions__ menu in the upper right corner and select "__Merge this build sources__".   
+Open the [build results page](working-with-build-results.md), click the __Actions__ menu in the upper right corner and select __Merge this build sources__.   
  The dialog that appears enables you to select the destination branch and add a commit message (required).
 
 It is also possible to merge branches [automatically](automatic-merge.md).
