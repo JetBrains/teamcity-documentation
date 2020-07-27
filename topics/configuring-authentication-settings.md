@@ -30,7 +30,7 @@ When you first log in to TeamCity, the default authentication including the Buil
 
 <tip>
 
-Any changes made to authentication in the UI will be reflected in the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/auth-config.xml` file, which can be used to configure authentication if editing via the Web UI is not suitable for some reason. The detailed description is available in the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
+Any changes made to authentication in the UI will be reflected in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml` file, which can be used to configure authentication if editing via the Web UI is not suitable for some reason. The detailed description is available in the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
 </tip>
 
 ### Simple Mode
@@ -128,7 +128,7 @@ To disable new user registration on login:
 
 #### Linux-Specific Configuration
 
-If your TeamCity server runs under Linux, JCIFS library is used for the Windows domain login. This only supports Windows domain servers with SMB (SMBv1) enabled. SMB2 is not supported.The library is configured using the properties specified in the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/ntlm-config.properties` file. Changes to the file take effect immediately without the server restart.
+If your TeamCity server runs under Linux, JCIFS library is used for the Windows domain login. This only supports Windows domain servers with SMB (SMBv1) enabled. SMB2 is not supported.The library is configured using the properties specified in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/ntlm-config.properties` file. Changes to the file take effect immediately without the server restart.
 
 JCIFS library settings which cannot be changed in run\-time or settings to affect HTTP NTLM settings can only be set via a properties file passed via `-Djcifs.properties` JVM option.
 
@@ -151,7 +151,7 @@ Please refer to [Accessing Server by HTTP](accessing-server-by-http.md) for deta
 
 <tip>
 
-For information on configuring Basic HTTP Authentication directly in the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/auth-config.xml`, refer to the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
+For information on configuring Basic HTTP Authentication directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml`, refer to the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
 </tip>
 
 

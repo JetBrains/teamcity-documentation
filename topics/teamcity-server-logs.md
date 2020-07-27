@@ -3,7 +3,7 @@
 
 TeamCity Server keeps a log of internal activities that can be examined to investigate an issue with the server behavior or get internal error details.
 
-The logs are stored in plain text files in a disk directory on the TeamCity server machine (usually in `<`[`TeamCity Server home`](teamcity-home-directory.md)`>/logs`). The files are appended with messages when TeamCity is running.
+The logs are stored in plain text files in a disk directory on the TeamCity server machine (usually in `<[TeamCity Server home](teamcity-home-directory.md)>/logs`). The files are appended with messages when TeamCity is running.
 
 While the server is running, the logs can be viewed in the web UI on the `Server Logs` tab of __Administration | Diagnostics__ section.
 
@@ -22,7 +22,7 @@ If it is not possible to enable debug logging mode from the TeamCity web UI, ref
 
 TeamCity uses [log4j library](http://logging.apache.org/log4j) for the logging and its settings can be [customized](#Changing+Logging+Configuration).
 
-By default, log files are located under the `<`[`TeamCity Server home`](teamcity-home-directory.md)`>/logs` directory.
+By default, log files are located under the `<[TeamCity Server home](teamcity-home-directory.md)>/logs` directory.
 
 The most important log files are:
 
@@ -390,13 +390,13 @@ While TeamCity is running, active logging settings can be changed by selecting b
 
 The active logging preset is changed in the __Administration | Diagnostics__ page, __Troubleshooting__, __Debug logging__ subsection. Choosing a preset changes logging configuration immediately and the preset is preserved after a server restart, until changed on the page again. It is recommended to return to the "&lt;Default&gt;" once the necessary logs were collected.
 
-The available presets are stored in the files with .xml extension under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging` directory. New files can be added into the directory and existing files can be modified (using [.dist convention](teamcity-data-directory.md#.dist+Template+Configuration+Files)). New presets can also be uploaded via __Diagnostics | Logging Presets__.
+The available presets are stored in the files with .xml extension under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging` directory. New files can be added into the directory and existing files can be modified (using [.dist convention](teamcity-data-directory.md#.dist+Template+Configuration+Files)). New presets can also be uploaded via __Diagnostics | Logging Presets__.
 
-If it is not possible to enable debug logging mode via logging presets (for example, to get the logging during server initialization) or to make persistent changes to the logging, you can backup the `conf/teamcity-server-log4j.xml` file and copy/rename the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging/debug-general.xml` file over `conf/teamcity-server-log4j.xml` before the server start.
+If it is not possible to enable debug logging mode via logging presets (for example, to get the logging during server initialization) or to make persistent changes to the logging, you can backup the `conf/teamcity-server-log4j.xml` file and copy/rename the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging/debug-general.xml` file over `conf/teamcity-server-log4j.xml` before the server start.
 
 ### Changing Logging Settings
 
-If you want to fine\-tune the log4j configuration, you can edit `<`[`TeamCity Server home`](teamcity-home-directory.md)`>/conf/teamcity-server-log4j.xml` file (for `.war` TeamCity distribution, see the [related section](#General+Logging+Configuration)). If the server is running, the log4j configuration file will be reloaded automatically and the logging configuration will be changed on the fly (some log4j restrictions still apply, so for a massive change consider restarting the server).
+If you want to fine\-tune the log4j configuration, you can edit `<[TeamCity Server home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` file (for `.war` TeamCity distribution, see the [related section](#General+Logging+Configuration)). If the server is running, the log4j configuration file will be reloaded automatically and the logging configuration will be changed on the fly (some log4j restrictions still apply, so for a massive change consider restarting the server).
 
 If you change settings in other preset files, like `debug-all.xml` or `debug-vcs.xml`, the settings won't be picked up automatically. To enforce the change, switch logging preset to some other value, like `<Default>` and then switch back to `debug-all`. 
 
@@ -444,7 +444,7 @@ Example:
 
 ### General Logging Configuration
 
-By defaul,t TeamCity searches for log4j configuration in the `.../conf/teamcity-server-log4j.xml` file (this resolves to `<`[`TeamCity Server home`](teamcity-home-directory.md)`>/conf/teamcity-server-log4j.xml` for TeamCity `.exe` and `.tar.gz` distributions when run from `bin`). If no such file is present, the default log4j configuration is used. The logs are saved to the `../logs` directory by default.
+By defaul,t TeamCity searches for log4j configuration in the `.../conf/teamcity-server-log4j.xml` file (this resolves to `<[TeamCity Server home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` for TeamCity `.exe` and `.tar.gz` distributions when run from `bin`). If no such file is present, the default log4j configuration is used. The logs are saved to the `../logs` directory by default.
 
 The configuration options values can be changed via the corresponding `log4j.configuration` and `teamcity_logs` JVM options or [internal properties](configuring-teamcity-server-startup-properties.md).   
 For example: `log4j.configuration=file:../conf/teamcity-server-log4j.xml` and `teamcity_logs=../logs/`.   
@@ -452,7 +452,7 @@ Default values can be looked up in the `bin/teamcity-server` script available in
 
 If you start TeamCity by the means other than the bundled `teamcity-server` or `runAll` scripts, make sure to pass the above\-mentioned options to the server JVM. See also the [recommendations](installing-and-configuring-the-teamcity-server.md) on installing TeamCity into not bundled web server.
 
-The default `teamcity-server-log4j.xml` file content can be found in the `.exe` and `tar.gz` distributions. The one with debug enabled can be found under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging/debug-general.xml` name after server's first start. See also the sample [`teamcity-server-log4j.xml`](https://confluence.jetbrains.com/download/attachments/113084044/teamcity-server-log4j.xml?version=1&modificationDate=1362486616000&api=v2) file.
+The default `teamcity-server-log4j.xml` file content can be found in the `.exe` and `tar.gz` distributions. The one with debug enabled can be found under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging/debug-general.xml` name after server's first start. See also the sample [`teamcity-server-log4j.xml`](https://confluence.jetbrains.com/download/attachments/113084044/teamcity-server-log4j.xml?version=1&modificationDate=1362486616000&api=v2) file.
 
 <seealso>
         <category ref="troubleshooting">

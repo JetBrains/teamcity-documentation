@@ -18,7 +18,7 @@ If you have internal properties customized, make sure to note this when you turn
 Server administrators can review and edit internal properties in the TeamCity web UI: go to the __Administration | Server Administration | Diagnostics__ page, select the __Internal Properties__ tab, and click __Edit internal properties__.   
 Many properties do not require the server restart, but some do. When the restart is required we usually note that specifically.
 
-The properties are stored in the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/internal.properties` file. The file is a Java [properties file](http://en.wikipedia.org/wiki/.properties). If necessary, you can edit the file manually and add each required property `<property_name>=<property_value>` on a separate line.
+The properties are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/internal.properties` file. The file is a Java [properties file](http://en.wikipedia.org/wiki/.properties). If necessary, you can edit the file manually and add each required property `<property_name>=<property_value>` on a separate line.
 
 An alternative but obsolete method of adding an internal property is to pass it as a `-D<name>=<value>` JVM option (see the [section below](#JVM+Options)).
 

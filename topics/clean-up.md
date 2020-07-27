@@ -14,7 +14,7 @@ If you want to apply one simple clean-up rule to all projects on the server, you
 
 </tip>
 
-Clean-up deletes the data stored under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system` and in the database. Also, during the clean-up, the server performs various maintenance tasks (for example, resets VCS full patch caches).
+Clean-up deletes the data stored under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` and in the database. Also, during the clean-up, the server performs various maintenance tasks (for example, resets VCS full patch caches).
 
 <note>
 

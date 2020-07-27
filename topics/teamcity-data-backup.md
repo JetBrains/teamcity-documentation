@@ -18,9 +18,9 @@ We strongly urge you to make the backup of TeamCity data before upgrading. Note 
 
 TeamCity __allows backing up__ the following data:
 * [Data stored in the database](manual-backup-and-restore.md#Database+Data)
-* Server settings, settings of projects and builds configurations (everything stored in `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config`)
-* Custom plugins (installed under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>\plugins`) and and database drivers (from `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/lib` directory)
-* Supplementary data: settings history, triggers states, plugins data, and so on (everything under the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/system/pluginData` directory)
+* Server settings, settings of projects and builds configurations (everything stored in `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`)
+* Custom plugins (installed under `<[TeamCity Data Directory](teamcity-data-directory.md)>\plugins`) and and database drivers (from `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib` directory)
+* Supplementary data: settings history, triggers states, plugins data, and so on (everything under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` directory)
 * Build logs
 * Personal changes   
 
@@ -32,9 +32,9 @@ The following data is __not included__ into backup:
 [//]: # (Internal note. Do not delete. also https://youtrack.jetbrains.com/issue/TW-43056)
 
 * For backup taken from UI: __running builds and build queue state__.  If you want to back up these, use the command line [maintainDB tool](creating-backup-via-maintaindb-command-line-tool.md) while the TeamCity server is not running.
-* TeamCity application manual customizations under `<`[`TeamCity Home`](teamcity-home-directory.md)`>`, including used server port number which are stored in `<`[`TeamCity Home`](teamcity-home-directory.md)`>/conf/server.xml` file.
-* TeamCity application logs (they also reside under `<`[`TeamCity Home`](teamcity-home-directory.md)`>/logs`)
-* Any manually created files under `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>` that do not fall into previously mentioned items.   
+* TeamCity application manual customizations under `<[TeamCity Home](teamcity-home-directory.md)>`, including used server port number which are stored in `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file.
+* TeamCity application logs (they also reside under `<[TeamCity Home](teamcity-home-directory.md)>/logs`)
+* Any manually created files under `<[TeamCity Data Directory](teamcity-data-directory.md)>` that do not fall into previously mentioned items.   
 
 __The recommended approach__ is either to perform the backup process described under [Manual Backup and Restore](manual-backup-and-restore.md) or run a backup from the [web UI](creating-backup-from-teamcity-web-ui.md) regularly (for example, automated via [REST API](rest-api.md#Data+Backup)) with the "Basic" level – this will ensure backing up all important data except build artifacts and build logs.
 

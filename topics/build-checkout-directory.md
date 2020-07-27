@@ -10,7 +10,7 @@ The sources are placed into the checkout directory according to the mapping defi
 
 The checkout directory is configured in the __Checkout Settings__ section on the [Version Control Settings](configuring-vcs-triggers.md) page; the default __Auto (recommended)__ value is strongly advised, but it is possible to configure a custom checkout directory as described [below](#Custom+checkout+directory).
 
-If you want to investigate an issue and need to know the directory used by the build configuration, you can get the directory from the build log, or you can refer to the `<`[`Agent Work Directory`](agent-work-directory.md)`>/directory.map` generated file which lists build configurations with the directories they used last.
+If you want to investigate an issue and need to know the directory used by the build configuration, you can get the directory from the build log, or you can refer to the `<[Agent Work Directory](agent-work-directory.md)>/directory.map` generated file which lists build configurations with the directories they used last.
 
 In your [build script](build-script-interaction-with-teamcity.md) you can refer to the effective value of the build checkout directory via the `teamcity.build.checkoutDir` [property](configuring-build-parameters.md) provided by TeamCity.
 
@@ -30,7 +30,7 @@ If TeamCity detects that it cannot build an incremental patch, a [clean checkout
 
 ## Custom checkout directory
 
-In most cases, the default __Auto (recommended)__ setting will cover your needs. With this default checkout directory, TeamCity ensures the best performance and consistent incremental sources updates. The name of the default automatically created directory is generated as follows: `<`[`Agent Work Directory`](agent-work-directory.md)`>/<VCS settings hash code>`. The VCS settings hash code is calculated based on the set of VCS roots, their checkout rules and VCS settings used by the build configuration (checkout mode). Effectively, this means that the directory is shared between all the build configurations with the same VCS settings.
+In most cases, the default __Auto (recommended)__ setting will cover your needs. With this default checkout directory, TeamCity ensures the best performance and consistent incremental sources updates. The name of the default automatically created directory is generated as follows: `<[Agent Work Directory](agent-work-directory.md)>/<VCS settings hash code>`. The VCS settings hash code is calculated based on the set of VCS roots, their checkout rules and VCS settings used by the build configuration (checkout mode). Effectively, this means that the directory is shared between all the build configurations with the same VCS settings.
 
 If for some reason you need to specify a custom checkout directory (for example, the process of creating builds depends on some particular directory), make sure that the following conditions are met:
 * the checkout directory is not shared between build configurations with different VCS settings (otherwise, TeamCity will perform [clean checkout](clean-checkout.md) each time another build configuration is built in the directory);

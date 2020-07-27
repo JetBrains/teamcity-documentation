@@ -88,9 +88,9 @@ Then [send](https://confluence.jetbrains.com/display/TW/Feedback) us a detailed 
 
 ### Server Thread Dump
 
-When an operation on the server is slow, take a set of the server thread dumps (10\+) spread over the time of the slowness. TeamCity automatically saves thread dumps on super slow operations, so there might already be some saved in `logs/threadDumps-<date>` directories. It is recommended to send us an archive of the entire content of server's  `<`[`TeamCity Home`](teamcity-home-directory.md)`>/logs/threadDumps-<date>` directories for all the recent dates.
+When an operation on the server is slow, take a set of the server thread dumps (10\+) spread over the time of the slowness. TeamCity automatically saves thread dumps on super slow operations, so there might already be some saved in `logs/threadDumps-<date>` directories. It is recommended to send us an archive of the entire content of server's  `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directories for all the recent dates.
 
-It is recommended that you take a thread dump of the TeamCity server from the Web UI if the hanging is local and you can still open the TeamCity __Administration__ pages: go to the __Administration__ | __Server Administration__ | __Diagnostics__ page and click the __Save Thread Dump__ button to save a dump under the `<`[`TeamCity Home`](teamcity-home-directory.md)`>/logs/threadDumps-<date>` directory (where you can later download the files from "Server Logs"). If the server is fully started but the web UI is not responsive, try the [direct URL](http://YOUR_TEAMCITY_SERVER_URL/admin/diagnostic.html?actionName=threadDump&amp;save=false) using the actual URL of your TeamCity server.
+It is recommended that you take a thread dump of the TeamCity server from the Web UI if the hanging is local and you can still open the TeamCity __Administration__ pages: go to the __Administration | Server Administration | Diagnostics__ page and click the __Save Thread Dump__ button to save a dump under the `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directory (where you can later download the files from "Server Logs"). If the server is fully started but the web UI is not responsive, try the [direct URL](http://YOUR_TEAMCITY_SERVER_URL/admin/diagnostic.html?actionName=threadDump&amp;save=false) using the actual URL of your TeamCity server.
 
 If the UI is not accessible (or the server is not yet fully started), you can take a server thread dump manually using the approaches described [below](#Taking+Thread+Dump).
 
@@ -141,7 +141,7 @@ If neither of these work for the server running as a service, try [running the s
 
 #### Under Linux
 
-* run `jstack <pid_of_java_process>` (using jstack from the Java installation as used by the process) or `kill -3 <pid_of_java_process>`. In the latter case output will appear in `<`[`TeamCity Home`](teamcity-home-directory.md)`>logs/catalina.out` or `<`[`TeamCity agent home`](agent-home-directory.md)`>/logs/error.log`.   
+* run `jstack <pid_of_java_process>` (using jstack from the Java installation as used by the process) or `kill -3 <pid_of_java_process>`. In the latter case output will appear in `<[TeamCity Home](teamcity-home-directory.md)>logs/catalina.out` or `<[TeamCity agent home](agent-home-directory.md)>/logs/error.log`.   
 
 See also [Server Performance](#Determine+Which+Process+Is+Slow) section above.
 
@@ -226,7 +226,7 @@ To enable VCS logging on the server side, [switch logging preset](teamcity-serve
 
 Most VCS operations occur on the TeamCity server, but if you're using the [agent-side checkout](vcs-checkout-mode.md#agent-checkout), VCS checkout occurs on the build agents.
 
-For the agent and the server, you can change the Log4j configuration manually in `<`[`TeamCity Home`](teamcity-home-directory.md)`>/conf/teamcity-server-log4j.xml` or `<`[`BuildAgent home`](agent-home-directory.md)`>/conf/teamcity-agent-log4j.xml` files to include the following fragment:
+For the agent and the server, you can change the Log4j configuration manually in `<[TeamCity Home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` or `<[BuildAgent home](agent-home-directory.md)>/conf/teamcity-agent-log4j.xml` files to include the following fragment:
 
 
 ```Shell
@@ -274,7 +274,7 @@ Uncomment the SVN\-related parts (the `SVN.LOG` appender and `javasvn.output` ca
 
 #### ClearCase
 
-Uncomment the Clearcase\-related lines in the `<`[`TeamCity Home`](teamcity-home-directory.md)`>/conf/teamcity-server-log4j.xml` file. The log will be saved to `logs/teamcity-clearcase.log` directory.
+Uncomment the Clearcase-related lines in the `<[TeamCity Home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` file. The log will be saved to `logs/teamcity-clearcase.log` directory.
 
 ## Patch Application Problems
 
@@ -287,7 +287,7 @@ the build log and the agent log will contain the line "Patch is saved to file $\
 
 To enable debug logging in a VCS trigger in a specific build configuration:
 
-1. Take a default logging preset file `<`[`TeamCity Home`](teamcity-home-directory.md)`>/conf/teamcity-server-log4j.xml` and save it with some other name under the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/_logging/` directory.
+1. Take a default logging preset file `<[TeamCity Home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` and save it with some other name under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging/` directory.
 2. Modify the resulting file as follows:
    * add a new appender to log VCS trigger related events to a separate file: 
    ```XML
@@ -318,7 +318,7 @@ To investigate process launch issues for [.NET-related runners](supported-platfo
 
 Aa alternative way to enable the logging is as follows:
 Add the `teamcity.agent.dotnet.debug=true` [configuration parameter](configuring-build-parameters.md) in the build configuration or on the agent and run the build.
-1. Open the `<`[`agent home`](agent-home-directory.md)`>/plugins/dotnetPlugin/bin` folder.
+1. Open the `<[agent home](agent-home-directory.md)>/plugins/dotnetPlugin/bin` folder.
 2. Make a backup copy of `teamcity-log4net.xml`
 3. Replace `teamcity-log4net.xml` with the content of `teamcity-log4net-debug.xml`
 
@@ -449,7 +449,7 @@ To collect additional logs generated by [JetBrains dotCover](jetbrains-dotcover.
 
 ## JVM Crashes
 
-On a rare occasion of the TeamCity server or agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually `<`[`TeamCity server`](teamcity-home-directory.md)`>` or [`agent home`](agent-home-directory.md)`>/bin`.   
+On a rare occasion of the TeamCity server or agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually `<[TeamCity server](teamcity-home-directory.md)>` or [`agent home`](agent-home-directory.md)`>/bin`.   
 Under Windows when running as a service, it can be other like `C:\Windows\SysWOW64`. You can also search the disk for the recent files with "hs_err_pid" in the name. See also the related Fatal Error Log section in this [document](http://www.oracle.com/technetwork/java/javase/felog-138657.html).
 
 Please send this file to us for investigation and consider updating the JVM for the [server](installing-and-configuring-the-teamcity-server.md#Java+Installation) (or for [agents](setting-up-and-running-additional-build-agents.md#Configuring+Java)) to the latest version available.

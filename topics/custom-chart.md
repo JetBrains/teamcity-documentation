@@ -41,19 +41,19 @@ __To reorder custom charts__ for a project/build configuration, click the __Reor
 __Since TeamCity 10__, manual editing of custom charts has changed. For earlier versions, see this page in the corresponding [documentation](https://confluence.jetbrains.com/display/TW/Documentation).
 </note>
 
-To manually create custom charts to be displayed in the TeamCity web UI, configure the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/projects/<`[`ProjectID`](identifier.md)`>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>`  element is added.
+To manually create custom charts to be displayed in the TeamCity web UI, configure the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>`  element is added.
 
 ### Displaying Custom Chart in TeamCity Web UI
 
-To make TeamCity display a custom chart in the web UI, update the `<`[`TeamCity Data Directory`](teamcity-data-directory.md)`>/config/projects/<`[`ProjectID`](identifier.md)`>/project-config.xml` configuration file adding a new `<extention>` sub\-element to the `<project-extensions>` element.
+To make TeamCity display a custom chart in the web UI, update the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` configuration file adding a new `<extention>` sub-element to the `<project-extensions>` element.
 
 Each extension must have a unique `id` in the project.
 
 The `type` attribute is set to 
-* `<project-graphs>` for Project\-level chart
-* `<buildType-graphs>` for Build Configuration\-level chart.
+* `<project-graphs>` for Project-level chart
+* `<buildType-graphs>` for Build Configuration-level chart.
 
-Each chart is described by the `<param>` element. It must contain the `<param>` sub\-elements with data shown in the chart in `name/value` pairs; the "__`series"`__ parameter uses the JSON format to list series of data shown on the chart. 
+Each chart is described by the `<param>` element. It must contain the `<param>` sub-elements with data shown in the chart in `name/value` pairs; the "__`series"`__ parameter uses the JSON format to list series of data shown on the chart. 
 
 See the example below:
 
