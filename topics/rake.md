@@ -13,7 +13,7 @@ gem install <gem_name>
 
 ```
 
-You can refer to the [Ruby Gems Manuals](http://docs.rubygems.org/) for more information.
+You can refer to the [Ruby Gems Manuals](https://guides.rubygems.org/) for more information.
 
 Instead of the `gem` command, you can install gems using the [Bundler gem](http://bundler.io/).
 
@@ -24,7 +24,7 @@ If you use Ruby 1.9 for Shoulda, Test\-Spec and Test::Unit frameworks to operate
 
 <note>
 
-To use the [minitest](https://rubygems.org/gems/minitest) framework, the `minitest-reporters` gem must be installed. See details in the [RubyMine webhelp](http://www.jetbrains.com/ruby/webhelp/minitest.html).
+To use the [minitest](https://rubygems.org/gems/minitest) framework, the `minitest-reporters` gem must be installed. See details in the [RubyMine webhelp](https://www.jetbrains.com/help/ruby/testing-frameworks.html#supported_frameworks).
 </note>
 
 ## Important Notes
