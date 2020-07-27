@@ -1,11 +1,11 @@
 [//]: # (title: Uploading SSL Certificates)
 [//]: # (auxiliary-id: Uploading SSL Certificates)
 
-It is possible to upload an SSL certificate which TeamCity considers trusted when establishing connection by HTTPS or SSL protocols. These can be self\-signed certificates or certificates signed by a not well\-known certificate authority (CA).
+It is possible to upload an SSL certificate which TeamCity considers trusted when establishing connection by HTTPS or SSL protocols. These can be self\-signed certificates or certificates signed by a not well-known certificate authority (CA).
 
 ## Adding trusted certificates to TeamCity server
 
-The trusted certificates storage is global for the whole server and affects all server projects.
+The trusted certificate storage is global for the whole server and affects all server projects.
 
 __To add a trusted certificate__
 1. Navigate to the Root project __Administration__ area and select the __SSL / HTTPS Certificates__ menu item in the sidebar
@@ -16,7 +16,7 @@ __To add a trusted certificate__
 
 All uploaded certificates will be automatically delivered to all TeamCity agents.
 
-However, sometimes automatically distributing certificates to all agents may not be needed or may be undesirable. Then you can __manually__ add certificates to a required agent by placing them into the `<[TeamCity Agent Home](agent-home-directory.md)>/conf/trustedCertificates` folder (one file per certificate, certificates in textual form in one of the supported formats mentioned above).
+However, sometimes automatically distributing certificates to all agents may not be needed or may be undesirable. Then you can __manually__ add certificates to a required agent by placing them into the `<[TeamCity Agent Home](agent-home-directory.md)>/conf/trustedCertificates` directory (one file per certificate, certificates in textual form in one of the supported formats mentioned above). Note that this directory is used for storing manually added certificates only; automatically distributed certificates are stored separately, alongside other system files.
 
 This can be useful in the following cases:
 * If the user is running the TeamCity server under a non-trusted certificate, you need to place the server certificate into this folder on an agent to establish agent-server connection
