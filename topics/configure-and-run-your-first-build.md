@@ -150,7 +150,7 @@ More details are available in [Artifact Paths](configuring-general-settings.md#A
 
 ### Automatic Build Trigger
 
-Automatic build triggering on detecting a change in the version control is essential to any CI. TeamCity will add a [VCS trigger](configuring-vcs-triggers.md) automatically when creating a project / build configuration from a URL or repository. You can also do it manually using the _Edit Build Configuration Settings_ drop-down men, the __Triggers__ page:
+Automatic build triggering on detecting a change in the version control is essential to any CI. TeamCity will add a [VCS trigger](configuring-vcs-triggers.md) automatically when creating a project / build configuration from a URL or repository. You can also do it manually using the _Edit Build Configuration Settings_ drop-down menu, the __Triggers__ page:
 
 <img src="addTrigger.png" alt="Add a trigger" width="750"/>
 
