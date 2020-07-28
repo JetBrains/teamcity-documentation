@@ -255,9 +255,10 @@ will result in
 
 ```
 
-To start a flow inside a given existing flow, use the `flowStarted` parameter and specify the parent flow ID as the `parent` parameter. Flows without the specified parent start inside the flow of the current step.
+In most cases, `flowId` is the only attribute required to start a message flow.
 
-To end a flow, use the `flowFinished` parameter. Ending a parent flow automatically closes all its subflows, but we recommend declaring the flow order explicitly:
+When you absolutely need to start a flow not inside the root flow but as a subflow inside a given existing flow, add the `flowStarted` parameter. Specify the parent flow ID as the `parent` parameter. Flows without the specified parent start inside the root flow of the current step.   
+To end a subflow, use the `flowFinished` parameter. Ending a parent flow automatically closes all its subflows, but we recommend declaring the flow order explicitly:
 
 ```Shell
 ##teamcity[<messageName> flowStarted flowId='MainFlow' ...]
@@ -269,7 +270,7 @@ To end a flow, use the `flowFinished` parameter. Ending a parent flow automatica
 
 ```
 
-The flow order affects the sequence of reports in a build log and allows reporting results as subtrees.
+This custom subflow order affects the sequence of reports in a build log and allows reporting results as subtrees.
 
 ### Reporting Messages for Build Log
 
