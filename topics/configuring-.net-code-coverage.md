@@ -9,12 +9,6 @@ TeamCity supports .NET code coverage using NCover, PartCover, and dotCover cover
 For the [.NET CLI (dotnet)](net.md) runner and with NUnit version 3.x the only supported coverage tool is [JetBrains dotCover](jetbrains-dotcover.md).
 
 If you use a test framework other than NUnit, you can configure coverage analysis manually using the [JetBrains dotCover](http://www.jetbrains.com/dotcover/) console runner and TeamCity service messages as described in [Manually Configuring Reporting Coverage](manually-configuring-reporting-coverage.md).
-
-Details on configuring code coverage can be found on the following pages:
-
-<toc>
-</toc>
-
  
  <seealso>
         <category ref="admin-guide">

@@ -1,5 +1,6 @@
 [//]: # (title: Managing Projects and Build Configurations)
 [//]: # (auxiliary-id: Managing Projects and Build Configurations)
+
 [Projects](project.md) and their entities in TeamCity can be configured:
 * via the web UI
 * using the [REST API](rest-api.md)
@@ -13,13 +14,7 @@ To add an individual project to the __Projects__ page or remove it from this pag
 
 <img src="eye-button.png" width="750" alt="Disk usage in details"/>
 
-Note that if a project has [archived subprojects](archiving-projects.md) / [paused build configurations](build-configuration.md#Pausing+%2F+Activating+several+build+configurations+of+a+project), they will also be displayed on the overview page and will be marked correspondingly.
-
-
-In this section:
-
-<toc>
-</toc>
+Note that if a project has [archived subprojects](archiving-projects.md) / [paused build configurations](build-configuration.md#Pausing+%2F+Activating+several+build+configurations+of+a+project), they will also be displayed on the __Overview__ page and will be marked correspondingly.
 
 <seealso>
         <category ref="concepts">

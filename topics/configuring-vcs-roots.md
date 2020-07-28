@@ -137,10 +137,7 @@ Each VCS root belongs to some project, and in this section the name of this proj
 
 </td></tr></table>
 
-Refer to the following pages for VCS-specific configuration details:
-
-<toc>
-</toc>
+Refer to the pages inside this section for VCS-specific configuration details.
 
 <note>
 

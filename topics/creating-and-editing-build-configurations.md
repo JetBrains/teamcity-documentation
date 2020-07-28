@@ -103,9 +103,7 @@ You can view all build configurations of a project on the __Project Overview__ p
 
 ## Configuring Settings
 
-Configuring settings of a build configuration is described on the following pages:
-
-<toc depth="1"/>
+Build configuration settings are described on the respective pages inside this section.
 
 Note that editing via the TeamCity web UI will be disabled for build configurations created via the [REST API](rest-api.md).
 

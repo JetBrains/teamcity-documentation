@@ -41,11 +41,7 @@ __Tips:__
 
 Since TeamCity 2020.1, you can also add granular [execution conditions](build-step-conditions.md) for build steps.
 
-## Bundled runners
-
-For the details on configuring individual build steps, refer to:
-
-<toc/>
+For the details on configuring individual build steps, refer to the respective pages inside this section.
 
  <seealso>
         <category ref="concepts">

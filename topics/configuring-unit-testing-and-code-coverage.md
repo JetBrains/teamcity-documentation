@@ -1,9 +1,7 @@
 [//]: # (title: Configuring Unit Testing and Code Coverage)
 [//]: # (auxiliary-id: Configuring Unit Testing and Code Coverage)
-In this section:
 
-<toc>
-</toc>
+Please use the sidebar navigation to browse articles from this section.
 
 <seealso>
         <category ref="admin-guide">

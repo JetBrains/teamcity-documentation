@@ -10,9 +10,7 @@ The Duplicates Finder (Java) runner can also find Java duplicates in projects bu
 In order to run inspections for your project you should have either an IntelliJ IDEA project file (.ipr)/project directory (`.idea`), or Maven2 or above pom.xml of your project checked into your version control.
 </note>
 
-This page contains reference information about the following Duplicates Finder (Java) build runner's fields:
-
-<toc/>
+This page contains reference information about the following Duplicates Finder (Java) build runner's fields.
 
 ## IntelliJ IDEA Project Settings
 
