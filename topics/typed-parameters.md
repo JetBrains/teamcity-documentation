@@ -163,7 +163,7 @@ If you start editing a parameter that has a specification, you can see a link to
 
 ## Modifying Parameter Specification via REST API
 
-You can also view/edit typed parameters specification via [REST API](rest-api.md#Typed+Parameters+Specification).
+You can also view/edit typed parameters specification via [REST API](rest-api-reference.md#Typed+Parameters+Specification).
 
  <seealso>
         <category ref="admin-guide">

@@ -5,11 +5,11 @@ A _build log_ is an enhanced console output of a build. It is represented by a s
 
 ## Viewing Build Log
 
-The log of a specific build is available for browsing at the [Build Results page](working-with-build-results.md#Build+Log). 
+The log of a specific build is available for browsing on the [__Build Results__](working-with-build-results.md#Build+Log) page. 
 
-The __Tree view__ is the most capable view provided in the web UI. By default, all messages are displayed. Using the View drop\-down, you can switch from all messages to viewing __errors__ separately, or you can choose __Important messages__ to see the log filtered by "error" and "warning" statuses. You can also use the "Verbose" view level and download a raw build log using the corresponding link.
+The __Tree view__ is the most capable view provided in the web UI. By default, all messages are displayed. Using the _View_ drop-down menu, you can switch from all messages to viewing __errors__ separately, or you can choose __Important messages__ to see the log filtered by "error" and "warning" statuses. You can also use the "Verbose" view level and download a raw build log using the corresponding link.
 
-__Since TeamCity 10.0__, it is possible to enable the dark theme in the build log by selecting the  __Use console view__ check\-box.
+__Since TeamCity 10.0__, it is possible to enable the dark theme in the build log by selecting the  __Use console view__ checkbox.
 
 You can download a full build log in the textual form or as a .zip archive  from the Build Results page by clicking the _Download full build log_ link at the top right corner. Alternatively, you can use the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=<id>`. It is also possible to download the build log as a `.zip` file using the corresponding link in the UI or via the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=&archived=true`. 
 

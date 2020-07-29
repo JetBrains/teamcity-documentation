@@ -368,9 +368,11 @@
       </toc-element>
       <toc-element id="extending-teamcity.md">
          <toc-element id="build-script-interaction-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="reporting-test-metadata.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="reporting-test-metadata.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="accessing-server-by-http.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="rest-api.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="rest-api.md" show-structure-for="chapter" show-structure-depth="4">
+            <toc-element id="rest-api-reference.md" show-structure-for="chapter" show-structure-depth="4"/>
+         </toc-element>
          <toc-element id="including-third-party-reports-in-the-build-results.md"/>
          <toc-element id="custom-chart.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="edit-custom-chart-limitations.md"/>

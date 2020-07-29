@@ -302,11 +302,11 @@ You can restrict running [personal builds](personal-build.md) by unchecking the 
 
 This option enables retrieving the status and basic details of the last build in the build configuration without requiring any user authentication. Note that this also allows getting the status of any specific build in the build configuration (however, builds cannot be listed and no other information except the build status (`success/failure/internal error/cancelled`) is available).
 
-The status can be retrieved via the HTML status widget described below, or via a single icon with the help of [REST API](rest-api.md#Build+Status+Icon).
+The status can be retrieved via the HTML status widget described below, or via a single icon with the help of [REST API](rest-api-reference.md#Build+Status+Icon).
 
 #### HTML Status Widget
 
-This feature allows you to get an overview of the current project status on your company's website, wiki, Confluence or any other web page.When the __Enable status widget__ option is enabled, an HTML snippet can be included into an external web page and will display the current build configuration status.For build status icon as a single image, check [REST build status icon](rest-api.md#Build+Status+Icon).
+This feature allows you to get an overview of the current project status on your company's website, wiki, Confluence or any other web page.When the __Enable status widget__ option is enabled, an HTML snippet can be included into an external web page and will display the current build configuration status.For build status icon as a single image, check [REST build status icon](rest-api-reference.md#Build+Status+Icon).
 
 The following build process information is provided by the status widget:
 * The latest build results

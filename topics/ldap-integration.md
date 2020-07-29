@@ -142,7 +142,7 @@ The list of supported user settings:
 * `teamcity.users.property.plugin:notificator:jabber:jabber-account`
 * `teamcity.users.property.plugin:vcs:<VCS type>:anyVcsRoot` – VCS username for all &lt;VCS type&gt; roots. The following VCS types are supported: svn, perforce, jetbrains.git, cvs, tfs, vss, starteam.
 
-Example properties can be seen by configuring them for a user in the web UI and then listing the properties via [REST API](rest-api.md#Users).
+Example properties can be seen by configuring them for a user in the web UI and then listing the properties via [REST API](rest-api-reference.md#Users).
 
 __Since TeamCity 8.0__, there is an __experimental__ feature which allows mapping user profile properties in TeamCity to a formatted combination of LDAP properties rather than to a specific property on user synchronization.   
 To enable the mapping, add `teamcity.users.properties.resolve=true` to `ldap-config.properties`.   

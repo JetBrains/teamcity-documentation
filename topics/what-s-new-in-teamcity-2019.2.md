@@ -83,7 +83,7 @@ Note that this is an experimental feature. TeamCity provides a stable parsing of
 
 ## Extended REST API for cloud profiles
 
-TeamCity REST API now provides the `.../app/rest/cloud/profiles`, `.../app/rest/cloud/images`, and `.../app/rest/cloud/instances` endpoints that expose the same cloud integration details as those provided in the TeamCity UI. Read more in [REST API](rest-api.md#Cloud+Profiles).
+TeamCity REST API now provides the `.../app/rest/cloud/profiles`, `.../app/rest/cloud/images`, and `.../app/rest/cloud/instances` endpoints that expose the same cloud integration details as those provided in the TeamCity UI. Read more in [REST API](rest-api-reference.md#Cloud+Profiles).
 
 ## Predefined build parameters for pull requests
 
