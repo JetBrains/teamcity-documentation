@@ -174,7 +174,7 @@ MSBuild runner generates an MSBuild script that includes user's script. This scr
 <seealso>
         <category ref="concepts">
             <a href="build-runner.md">Build Runner</a>
-            a href="build-checkout-directory.md">Build Checkout Directory</a>
+            <a href="build-checkout-directory.md">Build Checkout Directory</a>
         </category>
         <category ref="admin-guide">
             <a href="nunit-for-msbuild.md">NUnit for MSBuild</a>
