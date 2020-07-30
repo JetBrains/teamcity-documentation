@@ -25,6 +25,7 @@ TeamCity allows you to flexibly adjust the notification rules, so that you recei
 <tip>
 
 Note that TeamCity comes with a default notification rule. It will send you an email notification if a build with your changes has failed. This rule starts working after you enter the email address.
+
 </tip>
 
  * __IDE Notifier__: the required TeamCity plugin must be installed in your IDE. For the details on installing TeamCity IDE plugins, refer to [Installing Tools](installing-tools.md).
@@ -38,6 +39,7 @@ Note that TeamCity comes with a default notification rule. It will send you an e
 <note>
 
 * Email and Jabber notifications are sent only if the System Administrator has configured the SMTP and Jabber servers respectively in __Administration | Server Administration__. System Administrators can also [change the templates](customizing-notifications.md) used for notifications.
+
 </note>
 
 ### What Will Be Watched
@@ -67,6 +69,7 @@ Use the following options for granular control over the notifications in the sel
 <note>
 
 Make sure your [Version Control Username](managing-users-and-user-groups.md#VCS+Usernames) Settings are correct.
+
 </note>
 
 * __My favorite builds only__ – limit notifications to your [favorite builds](favorite-build.md).

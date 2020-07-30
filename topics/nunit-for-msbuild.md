@@ -224,9 +224,8 @@ Starting from version 3.0, NUnit supports TeamCity natively, so there is no need
 
 <include src="getting-started-with-nunit.md" include-id="msbuild-examples-nunit"/>
 
-<note>
-
-The MSBuild runner option [Reduce test failure feedback time](msbuild.md#General+Build+Runner+Options) __will not work__ out of the box in this case. To use this feature, configure the [NUnit](nunit.md) build step.
-</note>
+>The MSBuild runner option [Reduce test failure feedback time](msbuild.md#General+Build+Runner+Options) __will not work__ out of the box in this case. To use this feature, configure the [NUnit](nunit.md) build step.
+>
+{type="note"}
 
 [Getting Started with NUnit](getting-started-with-nunit.md) contains details and more examples.

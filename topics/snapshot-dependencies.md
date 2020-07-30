@@ -71,16 +71,10 @@ If the option is enabled, TeamCity will not run a dependency build, if another r
 <note>
 
 Note: if there is more than one snapshot dependency on some build configuration, then for builds reusing to work, all of them must have the "Do not run new build if there is a suitable one" option enabled.
+
 </note>
 
-
-
-
 [//]: # (Internal note. Do not delete. "Snapshot Dependenciesd292e62.txt")    
-
-
-
-
 
 </td></tr><tr>
 
@@ -114,6 +108,7 @@ When enabled, and B snapshot\-depends on A, then builds of B are run on the same
 <note>
 
 Before starting a build chain having __run on the same agent__ dependencies, TeamCity forms groups of builds combined by __run on the same agent__ dependency, and for each starting build participating in such a group TeamCity chooses agents which can be used by any build of the group. Thus this option makes sense for [composite builds](composite-build-configuration.md) too, even though composite build does not occupy an agent, it still can form a group of builds combined by such dependencies. For instance, composite build B having __run on the same agent__ dependencies on A and C will cause both A and C use the same agent.
+
 </note>
 
 
@@ -142,10 +137,6 @@ If a dependency fails, you can manage the status of the dependent build by selec
 </td></tr></table>
 
 ### Suitable Builds
-
-
-
-
 [//]: # (Internal note. Do not delete. "Snapshot Dependenciesd292e145.txt")    
 
 

@@ -20,11 +20,11 @@ A snapshot dependency of build configuration A on build configuration B ensures 
 The build results page of a build with snapshot dependencies allows reviewing all the dependency builds and their errors, if there are any.
 
 A snapshot dependency alters the builds behavior in the following way:
-* when a build is queued, so are the builds from all the Build Configurations it snapshot\-depends on, transitively; TeamCity then determines the revisions to be used by the builds ("checking for changes" process).
+* when a build is queued, so are the builds from all the Build Configurations it snapshot-depends on, transitively; TeamCity then determines the revisions to be used by the builds ("checking for changes" process).
 * if some of the build configurations already have started builds with matching changes ("suitable builds") and the snapshot dependency has the "_Do not run new build if there is a suitable one_" option ON, TeamCity optimizes the queued builds by using an already finished builds instead of the queued ones. Corresponding queued builds are then silently removed. This procedure can be performed several times, because, while builds of the chain remain in the queue, new builds may start and finish;
 * all builds linked via snapshot dependencies are started by TeamCity with explicit specification of the sources revision. The revision is calculated so that it corresponds to the same moment in time (for the same VCS root it is the same revision number). For a queued build chain (all builds linked with a snapshot dependency), the revision to use is determined after adding builds to the queue. At this time, all the VCS roots of the chain are checked for changes and the current revision is fixed in the builds;
-* if there is a snapshot dependency and artifact dependency on the __Build from the same chain__ pointing to the same build configuration, TeamCity ensures the download of artifacts from the same\-sources build.
-* by default, builds that are a part of a build chain are preserved from clean\-up, but this can be switched on a per\-build configuration basis. Refer to the [Clean-Up](clean-up.md) description for more details.
+* if there is a snapshot dependency and artifact dependency on the __Build from the same chain__ pointing to the same build configuration, TeamCity ensures the download of artifacts from the same-sources build.
+* by default, builds that are a part of a build chain are preserved from clean-up, but this can be switched on a per-build configuration basis. Refer to the [Clean-Up](clean-up.md) description for more details.
 
 Depending on the dependencies, topology builds can run sequentially or in parallel.
 
@@ -47,7 +47,9 @@ Let's assume that we have two build configurations, A and B, and configuration A
 
    
 <tip>
+
 If the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.
+
 </tip>
 
 1. When a build of configuration A is triggered, it automatically triggers a build of configuration B, and both builds will be placed into the Build Queue. Build B starts first and build A will wait in the queue till build B is finished ([if no other specific options are set](snapshot-dependencies.md)).
@@ -55,16 +57,19 @@ If the build configurations connected with a snapshot dependency [share the same
 3. When the build B has finished and if it finished successfully, TeamCity will start to run build A.   
 
 <tip>
+
 Note that the changes to be included in build A could have become not the latest ones by the moment the build started to run. In this case, build A becomes a [history build](history-build.md).
+
 </tip>
 
 The example above shows the core basics of snapshot dependencies as a straightforward process without any additional options. For snapshot dependency options, refer to the [Snapshot Dependencies](snapshot-dependencies.md) page.
 
 ## Artifact Dependency
 
- <tip>
+<tip>
  
  Note that if both a snapshot dependency and an artifact dependency are configured for the same build configuration, in order for it to take artifacts from the build with the same sources, the __Build from the same chain__ option must be selected in the artifact dependency.
+ 
 </tip>
  
 

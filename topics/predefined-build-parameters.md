@@ -15,6 +15,7 @@ There is also a special type of server-side build parameters that can be referen
 <tip>
 
 To see the up-to-date list of available properties when defining a text-value parameter, either click ![paramsPopupHover.gif](paramsPopupHover.gif) next to the text field, or enter `%` in the text field.
+
 </tip>
 
 ## Server Build Properties
@@ -953,6 +954,7 @@ The name of the build agent host.
 use `teamcity_dotnet_nunitlauncher_msbuild_task` instead of `teamcity.dotnet.nunitlauncher.msbuild.task`
 * `_x86` and `_x64` property suffixes are used to designate the specific version of the framework.
 * `teamcity.dotnet.nunitlauncher` properties cannot be hidden or disabled.
+
 </note>
 
 [//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e948.txt")    
@@ -969,6 +971,7 @@ When a build agent starts, first the installed JDK and JRE are detected; when th
 <note>
 
 The environment variables are defined only if they are not already present in the environment: if a started agent already has the Java-related environment variables set, they are not redefined.
+
 </note>
 
 #### Detecting Java on Agent

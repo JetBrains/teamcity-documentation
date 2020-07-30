@@ -37,7 +37,7 @@ This tab displays the following information:
 
 When there are several idle agents that can run a queued build, TeamCity tries to select the fastest one as follows:
 1. If no builds have previously run on agents, the [CPU rank](viewing-build-agent-details.md#Agent+Summary) is used to select an agent.
-2. If builds have previously run on agents, the estimated build duration for the given build configuration is used to select an agent.  The estimate is made based on the heuristics of the latest builds in the history of the build configuration; for estimating, the execution time of the more recent builds has more weight than that of the earlier builds. [Personal](personal-build.md) and [canceled](build-state.md#Canceled%2FStopped+build) builds are not taken into account, neither are any individual builds whose duration differs significantly from the rest of the builds for this build configuration.
+2. If builds have previously run on agents, the estimated build duration for the given build configuration is used to select an agent. The estimate is made based on the heuristics of the latest builds in the history of the build configuration; for estimating, the execution time of the more recent builds has more weight than that of the earlier builds. [Personal](personal-build.md) and [canceled](build-state.md#Canceled%2FStopped+build) builds are not taken into account, neither are any individual builds whose duration differs significantly from the rest of the builds for this build configuration.
 
 ### Ordering Build Queue
 
