@@ -60,7 +60,7 @@ Command executable
 
 <td>
 
-_The option is available if "Executable with parameters" is selected in the __Run__ dropdown._
+_The option is available if "Executable with parameters" is selected in the __Run__ drop-down menu._
 
 Specify the path to an executable to be started.
 
@@ -76,9 +76,9 @@ Command parameters
 
 <td>
 
-_The option is available if "Executable with parameters" is selected in the __Run__ dropdown._
+_The option is available if "Executable with parameters" is selected in the __Run__ drop-down menu._
 
-Specify space\-separated parameters to pass to the executable. If a parameter contains a space, it can be enclosed in double quotes. For non-trivial parameters it is recommended to use "Custom script" option instead.
+Specify space-separated parameters to pass to the executable. If a parameter contains a space, it can be enclosed in double quotes. For non-trivial parameters it is recommended to use "Custom script" option instead.
 
 
 </td></tr><tr>
@@ -91,9 +91,11 @@ Custom script
 </td>
 
 <td>
-_The option is available if "Custom script" is selected in the __Run__ dropdown._
 
-A platform\-specific script which will be executed as an executable script in Unix\-like environments and as a `*.cmd` batch file on Windows. Under Unix\-like OS the script is saved with the executable bit set and is then executed by OS. This defaults to /bin/sh interpreter on the most systems. If you need a specific interpreter to be used, specify shebang (e.g. "#!/bin/bash") as the first line of the script.
+_The option is available if "Custom script" is selected in the __Run__ drop-down menu._
+
+A platform-specific script which will be executed as an executable script in Unix-like environments and as a `*.cmd` batch file on Windows. Under Unix-like OS the script is saved with the executable bit set and is then executed by OS. This defaults to /bin/sh interpreter on the most systems. If you need a specific interpreter to be used, specify shebang (for example, `#!/bin/bash`) as the first line of the script.
+
 </td></tr><tr>
 
 <td>
@@ -109,14 +111,12 @@ Specify how the error output is handled by the runner:
 * __error__: any output to `stderr` is handled as an error
 * __warning__: default; any output to `stderr` is handled as a warning
 
-
-
 </td></tr></table>
 
 
->TeamCity treats a string surrounded by percentage signs (`%`) in the script as a [parameter reference](predefined-build-parameters.md). To prevent TeamCity from treating the text in the percentage signs as a property reference, use double percentage signs to escape them: for example, if you want to pass "`%Y%m%d%H%M%S`" into the build, change it to "`%%Y%%m%%d%%H%%M%%S`".
+>TeamCity treats a string surrounded by percentage signs (`%`) in the script as a [parameter reference](predefined-build-parameters.md). To prevent TeamCity from treating the text in the percentage signs as a property reference, use double percentage signs to escape them: for example, if you want to pass "`%Y%m%d%H%M%S`" into the build, change it to `%%Y%%m%%d%%H%%M%%S`.
 >
-
+{type="note"}
 
 ### Docker Settings
 
@@ -125,8 +125,6 @@ In this section, you can specify a Docker image which will be [used to run this 
 ### Code Coverage
 
 To learn about configuring code coverage options, refer to the [Configuring Java Code Coverage](configuring-java-code-coverage.md) page.
-
-
 
 <seealso>
         <category ref="concepts">
