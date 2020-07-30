@@ -5,10 +5,9 @@ The _build working directory_ is the directory set as current for the build proc
 
 If a build script needs to run from a location other than the checkout directory, you can specify the location explicitly using the __Working Directory__ field of the _Advanced options_ in the __Build Runner__ settings.
 
-<note>
-
-Not all build runners provide the working directory setting.
-</note>
+>Not all build runners provide the working directory setting.
+>
+{type="note"}
 
 
 The path entered in the __Working Directory__ field can be either absolute or relative to the [build checkout directory](build-checkout-directory.md). When using this option, all of the other paths should still be entered relative to the checkout directory.

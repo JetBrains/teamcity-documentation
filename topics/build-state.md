@@ -135,7 +135,7 @@ A build was cancelled.
 
 ### Canceled/Stopped build
 
-Stopping a running build results in the build status displayed as cancelled. You can stop a running build from the [build results page](working-with-build-results.md), [build configuration home page](viewing-build-configuration-details.md) or using the __Stop__ option from the __Actions__ drop\-down.
+Stopping a running build results in the build status displayed as cancelled. You can stop a running build from the [build results page](working-with-build-results.md), [build configuration home page](viewing-build-configuration-details.md) or using the __Stop__ option from the __Actions__ drop-down menu.
 
 When a build is started, the build process calls the runner process and listens to its output. The stop command kills the runner process, then the build process stops.
 

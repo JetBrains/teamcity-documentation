@@ -1,6 +1,7 @@
 [//]: # (title: Build Queue)
 [//]: # (auxiliary-id: Build Queue)
-The build queue is a list of builds that were [triggered](configuring-build-triggers.md) and are waiting to be started. TeamCity will distribute them to [compatible](agent-requirements.md) build agents as soon as the agents become idle. A queued build is assigned to an agent at the moment when it is started on the agent; no pre\-assignment is made while the build is waiting in the build queue.
+
+The build queue is a list of builds that were [triggered](configuring-build-triggers.md) and are waiting to be started. TeamCity will distribute them to [compatible](agent-requirements.md) build agents as soon as the agents become idle. A queued build is assigned to an agent at the moment when it is started on the agent; no preassignment is made while the build is waiting in the build queue.
 
 When a build is triggered, first it is placed into the build queue, and, when a compatible agent becomes idle, TeamCity will run the build.
 
@@ -29,8 +30,8 @@ This tab displays the following information:
 
       <img src="unpredictableDuration.png" alt="Unpredictable build duration" width="400"/>
         
-* __Triggered by__ \- a brief description of the [event that triggered the build](configuring-build-triggers.md).
-* __Can run on__ \- the number of agents compatible with this build configuration. You can click an agent's name link to open the [Agents page](viewing-build-agent-details.md), or use the down arrow to quickly view the list of compatible agents in the pop\-up window.
+* __Triggered by__ - a brief description of the [event that triggered the build](configuring-build-triggers.md).
+* __Can run on__ - the number of agents compatible with this build configuration. You can click an agent's name link to open the [Agents page](viewing-build-agent-details.md), or use the down arrow to quickly view the list of compatible agents in the pop-up menu.
 
 ### Agent Selection for Queued Build
 
