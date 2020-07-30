@@ -103,7 +103,7 @@ Run build on the same agent
 
 <td>
 
-When enabled, and B snapshot\-depends on A, then builds of B are run on the same agent where the build of A from the same build chain was run.
+When enabled, and B snapshot-depends on A, then builds of B are run on the same agent where the build of A from the same build chain was run.
 
 <note>
 
@@ -149,7 +149,7 @@ For a build to be considered "suitable", it should comply with all of the condit
 * have no customized parameters, also considering those set via `reverse.dep.` parameters (related feature request: [TW-23700](http://youtrack.jetbrains.com/issue/TW-23700))
 * the original build should not be triggered selecting "rebuild" option for the dependency build configuration in question
 * have no VCS settings preventing effective revision calculation, see [below](#VCS+Settings+Disabling+Builds+Reuse)
-* there is no other build configuration snapshot\-depending on the current one with "Do not run new build if there is a suitable one" option set to "off"
+* there is no other build configuration snapshot-depending on the current one with "Do not run new build if there is a suitable one" option set to "off"
 * the running build is not "hanging"
 * settings of the build configuration were not changed since the build (that is, the build was run with the current build configuration settings). This also includes no changes to the parameters of all the parent projects of the build configuration. You can check if the settings were changed between several builds by comparing `.teamcity/settings/digest.txt` file in the [hidden build's artifacts](build-artifact.md#Hidden+Artifacts)
 * if there is also an artifact dependency in addition to snapshot one, the suitable build should have artifacts
@@ -166,7 +166,7 @@ Some settings in VCS roots can effectively disable builds reusing. These setting
 
 * Starteam: checkout mode option set to __view label__ or __promotion date__
  
-  <seealso>
+<seealso>
         <category ref="concepts">
             <a href="dependent-build.md">Dependent Build</a>
         </category>

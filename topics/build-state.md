@@ -142,6 +142,7 @@ When a build is started, the build process calls the runner process and listens 
 <note>
 
 It is possible to configure your build so that it will continue executing build steps after the build was stopped. To do it, can add a build step with the __Always, even if build stop command was issued__ option selected. See [Configuring Build Steps](configuring-build-steps.md).
+
 </note>
 
 ## Personal Build States
@@ -268,7 +269,8 @@ If such an error occurs, TeamCity:
 * doesn't show such build as the last finished build on the overview page
 * such builds will not affect the build configuration status and the status of developer changes
 * shows a "configuration error" stripe for a build configuration with such a build
-  <seealso>
+
+<seealso>
         <category ref="concepts">
             <a href="build-configuration.md">Build Configuration Status</a>
             <a href="change.md">Change</a>

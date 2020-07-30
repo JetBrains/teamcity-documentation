@@ -19,6 +19,7 @@ The MSBuild runner requires .NET Framework or Mono installed on the build agent.
 Before setting up a build configuration to use MSBuild as the build runner, make sure you are using an XML build project file with the MSBuild runner.
 
 To build a Microsoft Visual Studio solution file, you can use the [Visual Studio (sln)](visual-studio-sln.md) build runner.
+
 </note>
 
 ## General Build Runner Options
@@ -93,8 +94,8 @@ Specify here the version of tools that will be used to compile (equivalent to th
 <note>
 
 MSBuild supports compilation to older versions, thus you may set __MSBuild version__ as 4.6.1 with __MSBuild ToolsVersion__ set to 2.0 to produce .NET 2.0 assemblies while running MSBuild from .NET Framework 4.6.1. For more information, refer to [this article](http://msdn.microsoft.com/en-us/library/bb383796(VS.100).aspx)
-</note>
 
+</note>
 
 </td></tr><tr>
 
@@ -168,9 +169,7 @@ To learn about configuring code coverage options, refer to the [Configuring .NET
 
 ## Implementation notes
 
-MSBuild runner generates an MSBuild script that includes user's script. This script is used to add TeamCity\-provided MSBuild tasks. Your MSBuild script will be included with the &lt;Import&gt; task. If you specified a Visual Studio solution file, it will be called from the &lt;MSBuild&gt; task. To disable it, set `teamcity.msbuild.generateWrappingScript` to `false`.
-  
-
+MSBuild runner generates an MSBuild script that includes user's script. This script is used to add TeamCity-provided MSBuild tasks. Your MSBuild script will be included with the &lt;Import&gt; task. If you specified a Visual Studio solution file, it will be called from the &lt;MSBuild&gt; task. To disable it, set `teamcity.msbuild.generateWrappingScript` to `false`.
 
 <seealso>
         <category ref="concepts">
