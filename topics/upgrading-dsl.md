@@ -96,9 +96,8 @@ The upgrade procedure involves two steps:
     
      You should review these suggestions and apply them to your DSL scripts. The _configs version_ can be changed only after all these suggestions are applied.
     
-    <tip>
-Instead of upgrading manually, you can always regenerate all the Kotlin DSL scripts for your projects, unless you changed them in the VCS repository since the versioned settings had been enabled in your project. To do this, you can disable and enable versioned settings again, and select the "_Overwrite_" option in the confirmation dialog. After that, TeamCity will make a commit to your VCS repository removing all previously generated Kotlin files and adding newly generated files corresponding to the current TeamCity version.
-    </tip>
+
+>Instead of upgrading manually, you can always regenerate all the Kotlin DSL scripts for your projects, unless you changed them in the VCS repository since the versioned settings had been enabled in your project. To do this, you can disable and enable versioned settings again, and select the "_Overwrite_" option in the confirmation dialog. After that, TeamCity will make a commit to your VCS repository removing all previously generated Kotlin files and adding newly generated files corresponding to the current TeamCity version.
 
 <anchor name="dsl20201"/>
 
@@ -292,10 +291,11 @@ features {
 
 This release introduces the new DSL API version, `v2017_2`. The previous API version works and you can keep using it if you do not need the [features provided by the new API](https://confluence.jetbrains.com/display/TCD10/What's+New+in+TeamCity+2017.2).
 
-<note>
 
-To get sample DSL code for the newly supported features without switching a project to the Kotlin format, use the __Download settings in Kotlin format__ action on the project administration page.
-</note>
+
+>To get sample DSL code for the newly supported features without switching a project to the Kotlin format, use the __Download settings in Kotlin format__ action on the project administration page.
+>
+{type="note"}
 
 If you used 2017.2 EAPs and tested changing DSL settings via the UI, you need to apply all the UI patches created by TeamCity before upgrading as some API is changed in an incompatible way.
 
