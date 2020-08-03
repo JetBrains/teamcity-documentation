@@ -114,7 +114,7 @@ Specify how the error output is handled by the runner:
 </td></tr></table>
 
 
->TeamCity treats a string surrounded by percentage signs (`%`) in the script as a [parameter reference](predefined-build-parameters.md). To prevent TeamCity from treating the text in the percentage signs as a property reference, use double percentage signs to escape them: for example, if you want to pass "`%Y%m%d%H%M%S`" into the build, change it to `%%Y%%m%%d%%H%%M%%S`.
+>TeamCity treats a string surrounded by percentage signs (`%`) in the script as a [parameter reference](predefined-build-parameters.md). To prevent TeamCity from treating the text in the percentage signs as a property reference, use double percentage signs to escape them: for example, if you want to pass `%Y%m%d%H%M%S` into the build, change it to `%%Y%%m%%d%%H%%M%%S`.
 >
 {type="note"}
 
