@@ -1528,7 +1528,9 @@ GET http://teamcity:8111/app/rest/builds?locator=revision(version:XXXX)
 </table>
  
 __Since TeamCity 10__, `<versionedSettingsRevision>` is added to represent revision of the [versioned settings](storing-project-settings-in-version-control.md) of the build.
- 
+
+<anchor name="snapshot_dependencies"/>
+
 #### Snapshot dependencies
 
 <table>
