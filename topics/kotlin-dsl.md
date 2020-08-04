@@ -25,8 +25,9 @@ This [Kotlin tutorial](https://play.kotlinlang.org/koans/overview) helps quickly
 
 To start working with Kotlin DSL in TeamCity, create an empty sandbox project on your server and follow these steps:
 1. [Enable versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) for your project.
-2. Select Kotlin as the format.
-3. Click __Apply__, and TeamCity will commit the generated Kotlin files to your repository.
+2. Select a required VCS root. Make user it specifies correct credentials; TeamCity won't be able to commit changes if anonymous authentication is used.
+3. Select Kotlin as the format.
+4. Click __Apply__, and TeamCity will commit the generated Kotlin files to your repository.
 
 <note>
 
