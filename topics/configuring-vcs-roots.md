@@ -3,8 +3,6 @@
 
 <anchor name="VCSRoots"/>
 
-## VCS Roots in TeamCity
-
 <chunk include-id="VCSRoot">
 
 A _VCS root_ in TeamCity defines a [connection to a version control system](configuring-vcs-settings.md) and consists of a set of settings (paths to sources, username, password, and other settings) that defines how TeamCity communicates with a version control (SCM) system to [monitor changes](configuring-vcs-roots.md#Common+VCS+Root+Properties) and get sources for a build. A VCS root can be attached to a build configuration or template. You can add several VCS Roots to a build configuration or a template and specify portions of the repository to checkout and target paths via [VCS Checkout Rules](vcs-checkout-rules.md).
@@ -25,7 +23,7 @@ Once a VCS root is configured, TeamCity regularly queries the version control sy
 </chunk>
 
 
-### Common VCS Root Properties
+## Common VCS Root Properties
 
 <table><tr>
 
