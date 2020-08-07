@@ -7,9 +7,9 @@ This page covers __general information__ about the configuration of integration.
 
 ## General Description
 
-In a large TeamCity setup with many projects, it can be difficult to predict the load on build agents, and the number of agents we need to be running. With the cloud agent integration configured, TeamCity will leverage clouds elasticity to provision additional build agents on-demand.
+In a large TeamCity setup with many projects, it can be difficult to predict the load on build agents and what number of agents will be sufficient. With the cloud agent integration configured, TeamCity will leverage clouds elasticity to provide additional build agents on-demand.
 
-For each queued build TeamCity first tries to start it on one of the regular, non-cloud agents. If there are no usual agents available, TeamCity finds a matching cloud image with a compatible agent and starts a new instance for the image. TeamCity ensures that number of running cloud instances limit is not exceeded.
+For each queued build, TeamCity first tries to start it on one of the regular, non-cloud agents. If there are no usual agents available, TeamCity finds a matching cloud image with a compatible agent and starts a new instance for this image. TeamCity ensures that the number of running cloud instances limit is not exceeded.
 
 The integration requires:
 * a configured virtual machine with an installed TeamCity agent in your cloud preconfigured to start the TeamCity agent on boot
