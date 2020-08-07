@@ -136,7 +136,7 @@ Let's assume we have the following [build chain](build-chain.md) with no extra o
 
 1. TeamCity resolves the whole build chain and queues all builds \- A, B and C. TeamCity knows that the builds are to run in a strict order, so it won't run build A until build B is successfully finished, and it won't run build B until build C is successfully finished.   
 2. When the builds are added to the queue, TeamCity starts checking for changes in the entire build chain and synchronizes them \- all builds have to start with the same sources snapshot.   
-   Note that if the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md#VCS+Roots+in+TeamCity), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.    
+   Note that if the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.    
 3. Once build C has finished, build B starts, and so on. If build C failed, TeamCity won't further execute builds from the chain by default, but this behavior is [configurable](snapshot-dependencies.md#on-failed-dependency).
 
 #### What Happens When Build B is Triggered
