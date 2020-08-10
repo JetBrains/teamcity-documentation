@@ -155,6 +155,8 @@ Description
 
 <td>
 
+<anchor name="projects"/>
+
 Projects
 
 </td>
@@ -215,13 +217,17 @@ Target configuration, for example, `Release` or `Debug`. Parameter references ar
 
 <td>
 
+<anchor name="runtime"/>
+
 Runtime
 
 </td>
 
 <td>
 
-Target runtime. Parameter references are supported.
+Target runtime.
+
+Parameter references are supported. If the specified [project file](#projects) mentions any [runtime ID](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog), you can quickly select this runtime by clicking the ![magic-wand.png](magic-wand.png) button.
 
 </td>
 
