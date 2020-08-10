@@ -85,6 +85,8 @@ Filtering test occurrences by a branch (`.../app/rest/testOccurrences?locator=br
 
 ### Other changes
 
+* Now, a user cannot assign a role to another user, if this role has more permissions than the role of the current user.   
+If you experience troubles with certain roles being unavailable to users after upgrading to 2020.1, make sure these roles don't comprise any permissions that exceed the rights of the respective project administrators.
 * TeamCity has dropped support for Internet Explorer. Please use Microsoft Edge instead.
 * Since this version, the new .NET runner, introduced in TeamCity 2019.2.3, is not compatible with the obsolete external [.NET CLI Support](https://plugins.jetbrains.com/plugin/9190--net-cli-support) plugin (used in versions 2017.1 and earlier). If you have previously installed this plugin, please [uninstall](installing-additional-plugins.md#Uninstalling+a+plugin+via+Web+UI) it from your server to be able to use the new .NET runner.
 
