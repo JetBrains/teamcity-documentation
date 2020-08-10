@@ -167,7 +167,7 @@ Where `<some unique part of client mapping>` should match the
 Perforce depot path in TeamCity VCS Root after all parameter resolution. 
 For the rule `check-for-changes-teamcity change-commit //depot/project1/...` it should probably be `//depot/project1/`.
 
-Each such `check-for-changes-teamcity` rule line describes an association between path with commit (`//depot/project1`) and a set of VCS Roots in TeamCity which should be checked for changes.
+Each such `check-for-changes-teamcity` rule line describes an association between path with commit (`//depot/project1`) and a set of VCS roots which should be checked for changes.
 
 ## Setting up service hook on Team Foundation Server for TFVC and Git
 
