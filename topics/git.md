@@ -447,8 +447,7 @@ If the local Git clones need some kind of manual maintenance, you can find them 
 
 ## Git LFS
 
-TeamCity supports Git LFS for agent\-side checkout. To use it, install git 1.8.5\+ and Git LFS on the build agent machine. Git LFS should be enabled using the `git lfs install` command (on Windows an elevated command prompt may be needed). More information is available in [Git LFS documentation](https://git-lfs.github.com/). 
-
+TeamCity supports Git LFS for agent-side checkout. To use it, install git 1.8.\+ and Git LFS on the build agent machine. Git LFS should be enabled using the `git lfs install` command (on Windows an elevated command prompt may be needed). More information is available in [Git LFS documentation](https://git-lfs.github.com/). 
 
 <anchor name="internalProperties"/>
 

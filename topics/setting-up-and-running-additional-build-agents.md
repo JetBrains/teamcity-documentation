@@ -16,7 +16,7 @@ __Tips__
 
 ### Necessary OS and environment permissions
 
-Before the installation, review the [Conflicting Software section](known-issues.md#Conflicting+Software). In case of any issues, make sure no conflicting software is used.
+Before the installation, review the [Conflicting Software](known-issues.md#Conflicting+Software) section. In case of any issues, make sure no conflicting software is used.
 
 Note that to run a TeamCity build agent, the environment and user account used to run the Agent need to comply with the following requirements:
 
@@ -24,11 +24,11 @@ Note that to run a TeamCity build agent, the environment and user account used t
 
 #### Common
 
-The agent process (Java) must
+The agent process (Java) must:
 * be able to open outbound HTTP connections to the server URL configured via the `serverUrl` property in the [`buildAgent.properties`](build-agent-configuration.md) file (typically the same address you use in the browser to view the TeamCity UI). Sending requests to the paths under the configured URL should not be limited. See also the recommended [reverse proxy settings](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server). Ensure that any firewalls installed on the agent or server machines, network configuration and proxies (if any) comply with these requirements.
-* have full permissions (read/write/delete) to the following directories recursively: [`<agent home>`](agent-home-directory.md) (necessary for automatic agent upgrade and agent tools support), [`<agent work>`](agent-work-directory.md), [`<agent temp>`](agent-home-directory.md#Agent+Directories), and agent system directory (set by `workDir`, `tempDir`, and `systemDir` parameters in the `buildAgent.properties` file)
+* have full permissions (read/write/delete) to the following directories recursively: [`<agent home>`](agent-home-directory.md) (necessary for automatic agent upgrade and agent tools support), [`<agent work>`](agent-work-directory.md), [`<agent temp>`](agent-home-directory.md#Agent+Directories), and agent system directory (set by `workDir`, `tempDir`, and `systemDir` parameters in the `buildAgent.properties` file).
 * be able to launch processes (to run builds).
-* be able to launch nested processes with the following parent process exit (this is used during agent upgrade)
+* be able to launch nested processes with the following parent process exit (this is used during agent upgrade).
 
 <anchor name="Windows"/>
 
@@ -42,7 +42,7 @@ The agent process (Java) must
 <note>
 
 
-For granting necessary permissions for unprivileged users, see [Microsoft documentation](https://support.microsoft.com/en-us/kb/325349).
+For granting necessary permissions for unprivileged users, see [Microsoft documentation](https://support.microsoft.com/en-us/kb/325349).   
 You can assign rights to manage services with Microsoft [SubInACL](http://www.microsoft.com/downloads/details.aspx?FamilyID=e8ba3e56-d8fe-4a91-93cf-ed6985e3927b&displaylang=en) utility, a command-line tool enabling administrators to directly edit security information. The tool uses the following syntax:
 
 ```Shell
@@ -60,8 +60,8 @@ subinacl.exe /service TCBuildAgent /grant=<user login name>=PTO
 </note>
 
 #### Linux
-* the user must be able to run the `shutdown` command (for the agent machine reboot functionality and the machine shutdown functionality when running in a cloud environment)
-* if you are using `systemd`, it should not kill the processes on the main process exit (use [`RemainAfterExit=yes`](https://serverfault.com/questions/660063/teamcity-build-agent-gets-killed-by-systemd-when-upgrading))
+* The user must be able to run the `shutdown` command (for the agent machine reboot functionality and the machine shutdown functionality when running in a cloud environment)
+* If you are using `systemd`, it should not kill the processes on the main process exit (use [`RemainAfterExit=yes`](https://serverfault.com/questions/660063/teamcity-build-agent-gets-killed-by-systemd-when-upgrading))
 
 #### Build-related Permissions
 The build process is launched by a TeamCity agent and thus shares the environment and is executed under the OS user used by the TeamCity agent. Ensure that the TeamCity agent is configured accordingly. See [Known Issues](known-issues.md) for related Windows Service Limitations.
@@ -69,7 +69,7 @@ The build process is launched by a TeamCity agent and thus shares the environmen
 ### Agent-Server Data Transfers
 [//]: # (AltHead: Server-Agent Data Transfers)
 
-A TeamCity agent connects to the TeamCity server via the URL configured as the `serverUrl` agent property. This is called [unidirectional](#Unidirectional+Agent-to-Server+Communication) agent-to-server connection. If specifically configured, TeamCity agent can use legacy [bidirectional communication](#Bidirectional+Communication) which also requires establishing a connection from the server to the agents. To view whether the agent\-server communication is unidirectional or bidirectional for a particular agent, navigate to __Agents | &lt;Agent Name&gt; | Agent Summary__ tab, the __Details__ section, __Communication Protocol__.
+A TeamCity agent connects to the TeamCity server via the URL configured as the `serverUrl` agent property. This is called [unidirectional](#Unidirectional+Agent-to-Server+Communication) agent-to-server connection. If specifically configured, TeamCity agent can use legacy [bidirectional communication](#Bidirectional+Communication) which also requires establishing a connection from the server to the agents. To view whether the agent-server communication is unidirectional or bidirectional for a particular agent, navigate to __Agents | &lt;Agent Name&gt; | Agent Summary__ tab, the __Details__ section, __Communication Protocol__.
 
 #### Unidirectional Agent-to-Server Communication
 Agents use unidirectional agent-to-server connection via the polling protocol: the agent establishes an HTTP(S) connection to the TeamCity Server, and polls the server periodically for server commands.
@@ -82,13 +82,13 @@ The bidirectional communication is a legacy connection between the agent and the
 
 The data that is transferred via the connections established by the server to agents is passed via an unsecured HTTP channel and thus is potentially exposed to any third party that may listen to the traffic between the server and the agents. Moreover, since the agent and server can send "commands" to each other, an attacker that can send HTTP requests and capture responses may in theory trick the agent into executing an arbitrary command and perform other actions with a security impact.
 
-The communication protocol used by TeamCity agents is determined by the value of the `teamcity.agent.communicationProtocols` server [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). The property accepts a comma-separated ordered list of protocols (`polling`  and `xml-rpc` are supported protocol names) and is set to `teamcity.agent.communicationProtocols=polling` by default. If several protocols are specified, the agent tries to connect using the first protocol from this list and if it fails, it will try to connect via the second protocol in the list. `polling` means unidirectional protocol, `xml-rpc` \- older, bidirectional communication.
+The communication protocol used by TeamCity agents is determined by the value of the `teamcity.agent.communicationProtocols` server [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). The property accepts a comma-separated ordered list of protocols (`polling`  and `xml-rpc` are supported protocol names) and is set to `teamcity.agent.communicationProtocols=polling` by default. If several protocols are specified, the agent tries to connect using the first protocol from this list and if it fails, it will try to connect via the second protocol in the list. `polling` means unidirectional protocol, `xml-rpc` - older, bidirectional communication.
 
 ##### Changing Communication Protocol
 
 * To change the communication protocol __for all agents__, set the TeamCity server `teamcity.agent.communicationProtocols` server [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). The new setting will be used by all agents which will connect to the server after the change. To change the protocol for the existing connections, restart the TeamCity server.
 * By default, the agent's property is not configured; when the agent first connects to the server, it receives it from the TeamCity server. To change the protocol __for an individual agent__ after the initial agent configuration, change the value of the `teamcity.agent.communicationProtocols` property in the [agent's properties](build-agent-configuration.md). The agent's property overrides the server property. After the change the agent will restart automatically upon finishing a running build, if any.
-* When connecting TeamCity agents of version 2018.1\+ to TeamCity server of version before 9.1 (e.g. after roll back following an upgrade), the agents will need to be updated to use `xml-rpc` protocol (or they can be reinstalled) to be able to connect to an older server to perform the self\-update procedure.
+* When connecting TeamCity agents of version 2018.1+ to TeamCity server of version before 9.1 (e.g. after roll back following an upgrade), the agents will need to be updated to use `xml-rpc` protocol (or they can be reinstalled) to be able to connect to an older server to perform the self-update procedure.
 
 [//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e376.txt")    
 

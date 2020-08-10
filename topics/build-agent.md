@@ -4,13 +4,13 @@
 A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. It is [installed and configured](setting-up-and-running-additional-build-agents.md) separately from the TeamCity server. An agent can be installed on the same computer as the server or on a different machine (the latter is a preferred setup for server performance reasons); an agent can run the same operating system (OS) as the TeamCity server or a different OS. 
 
 A TeamCity build agent contains [two processes](configuring-build-agent-startup-properties.md):   
-* Agent Launcher — a Java process that launches the agent process
-* Agent — the main process for a Build Agent; runs as a child process for the agent launcher
+* Agent launcher — a Java process that launches the agent process.
+* Agent — the main process for a build agent; runs as a child process for the agent launcher.
 
-An Agent typically checks out the source code, downloads artifacts of other builds and runs the build process. An agent can run a single build at a time. The number of agents basically limits the number of parallel builds and environments in which your build processes are run.   
-An Agent can run builds of any compatible build configuration.
+An agent typically checks out the source code, downloads artifacts of other builds and runs the build process. An agent can run a single build at a time. The number of agents basically limits the number of parallel builds and environments in which your build processes are run.   
+An agent can run builds of any compatible build configuration.
 
-The TeamCity server monitors all the connected agents and assigns queued builds to the agents based on [compatibility requirements](agent-requirements.md), [Agent Pools](agent-pools.md), Build Configuration restrictions configured for an agent and the selection algorithm described [here](build-queue.md).
+The TeamCity server monitors all the connected agents and assigns queued builds to the agents based on [compatibility requirements](agent-requirements.md), [agent pools](agent-pools.md), build configuration restrictions configured for an agent and the selection algorithm described [here](build-queue.md).
 
 ## Build Agent Status
 
