@@ -1,13 +1,17 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2020.1.2 to 2020.1.3
+
+* The [.NET] build runner now supports earlier versions of Visual Studio and MSBuild. Currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.
+
 ## Changes from 2020.1.1 to 2020.1.2
 
 * Mercurial support has been dropped for our Windows Server Core agent Docker images. If you need to use Mercurial on Windows Server Core agents, consider pulling the previous version of the agent Docker image – 2020.1.1.
 
 ## Changes from 2020.1 to 2020.1.1
 
-* The .NET runner introduces the [custom command](net.md#Custom+Commands) option. Note that if you downgrade TeamCity to the preivous version after configuring the custom .NET command, the respective build steps will be ignored during the build.
+* The .NET runner introduces the [custom command](net.md#Custom+Commands) option. Note that if you downgrade TeamCity to the previous version after configuring the custom .NET command, the respective build steps will be ignored during the build.
 * The Linux version used in the TeamCity server and agent Docker images has been updated to 4.19.76-linuxkit.
 
 ## Changes from 2019.2.x to 2020.1
