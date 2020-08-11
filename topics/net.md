@@ -47,9 +47,9 @@ The .NET runner requires the following software to be installed on a build agent
 
 <td>
 
-* Visual Studio (version 2013 or later)   
+* Visual Studio (version 2010 or later)   
    _or_
-* Visual Studio Build Tools (2013 or later)   
+* Visual Studio Build Tools (2010 or later)   
    _or_
 * .NET Framework Developer Pack (version 4.5 or later) with .NET SDK
 
@@ -68,7 +68,7 @@ The .NET runner requires the following software to be installed on a build agent
 
 <td>
 
-* Visual Studio (version 2013 or later)   
+* Visual Studio (version 2010 or later)   
 
 </td>
 
@@ -84,7 +84,7 @@ The .NET runner requires the following software to be installed on a build agent
 
 <td>
 
-* Visual Studio (version 2013 or later)   
+* Visual Studio (version 2010 or later)   
 
 </td>
 
@@ -332,6 +332,8 @@ Depending on the selected MSBuild version, `msbuild` can either be run as the [c
 
 The `msbuild` command shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+Commands) for more details).
 
+Supported MSBuild versions: 4 or later / 12 or later.
+
 MSBuild-specific settings are:
 
 <table><tr>
@@ -428,6 +430,8 @@ Note that TeamCity provides a new way to run Visual Studio projects. The .NET ru
 #### vstest
 
 The `vstest` command is used for testing a project with the VSTest engine and automatically importing the test results. Depending on the selected VSTest version, `vstest` can either be run as the [cross-platform .NET CLI command](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-vstest) or as the [VSTest console](https://plugins.jetbrains.com/plugin/9056-vstest-console-runner).
+
+Supported VSTest versions: 2013 or later.
 
 The `vstest` command shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+Commands) for more details).
 
