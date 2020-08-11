@@ -3,7 +3,7 @@
 
 ## Changes from 2020.1.2 to 2020.1.3
 
-* The [.NET] build runner now supports earlier versions of Visual Studio and MSBuild. Currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.
+* The [.NET](net.md) build runner now supports earlier versions of Visual Studio and MSBuild. Currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.
 
 ## Changes from 2020.1.1 to 2020.1.2
 
