@@ -13,15 +13,14 @@ TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager 
 
 <chunk include-id="nuget-OS">
 
-__Supported Operating Systems__
-
+__Supported Operating Systems__:   
 NuGet build runners are supported on build agents running Windows OS by default. Linux and macOS are supported when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent (only NuGet 3.3+ on Mono 4.4.2+ is supported).
 
 </chunk>
 
 <note>
 
-* NuGet build runners require an appropriate version on .NET Framework installed on the agent machine depending on the NuGet.exe version: 
+* NuGet build runners require an appropriate version on .NET Framework installed on the agent machine depending on the `NuGet.exe` version: 
     * NuGet versions 2.8.6+ require .NET 4.5+
     * NuGet versions \< 2.8.6 require .NET 4.0.
 * To use packages from an authenticated feed, see the [NuGet Feed Credentials](nuget-feed-credentials.md) build feature.
@@ -53,7 +52,6 @@ To install `NuGet.exe` on TeamCity:
 4. Specify whether this NuGet version will be default using the related checkbox. 
 5. Click __Add__ to install the selected NuGet version.
  
-
 <tip>
 
 Installing NuGet on agents results in agents upgrade.

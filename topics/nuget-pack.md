@@ -13,6 +13,11 @@ To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __V
 
 Configure the following options of the NuGet Pack runner:
 
+<tabs>
+
+<tab title="Description">
+
+
 <table><tr>
 
 <td>
@@ -185,6 +190,16 @@ Command line parameters
 Set additional command line parameters to be passed to `NuGet.exe`.
 
 </td></tr></table>
+
+</tab>
+
+<tab title="Example">
+
+<img src="nuget-pack-form-example.png" alt="Example of the NuGet Pack settings"/>
+
+</tab>
+
+</tab>
 
 
 <seealso>
