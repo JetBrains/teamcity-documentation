@@ -12,7 +12,7 @@ If you need to run a PowerShell script with elevated permissions, consider using
 
 ## Cross-Platform PowerShell
 
-* Cross-platform PowerShell ([PowerShell Core](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/)) is supported on Windows, MacOS, and Linux: [download a PowerShell package](https://github.com/PowerShell/PowerShell#get-powershell) for your platform and install it on the TeamCity agent.
+* Cross-platform PowerShell ([PowerShell Core](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/)) is supported on Windows, macOS, and Linux: [download a PowerShell package](https://github.com/PowerShell/PowerShell#get-powershell) for your platform and install it on the TeamCity agent.
 * Side-by-side installation of PowerShell Desktop and PowerShell Core is supported under Windows.
 
 ## Detection of Installed PowerShell on Build Agents
@@ -123,9 +123,6 @@ Working directory
 <td>
 
 Specify the path to the [build working directory](build-working-directory.md).
-
-Note that the PowerShell runner always searches for the script in the [build checkout directory](build-checkout-directory.md) (default working directory) and only then in the custom working directory, specified in this field.
-
 
 </td></tr><tr>
 
