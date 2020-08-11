@@ -28,12 +28,14 @@ On the __General__ options you can also specify whether
 * this particular build will be run as a [personal](personal-build.md) one
 * this particular build will be put at the top of the [build queue](build-queue.md)
 * all files in the [build checkout directory](build-checkout-directory.md) will be cleaned before this build.
-   * __Since TeamCity 2017.1__, if snapshot dependencies are configured, this option can be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use clean checkout. The option also enables rebuilding all dependencies (unless custom dependencies are provided via this dialog or the schedule trigger promotes a build).
+   * __Since TeamCity 2017.1__, if snapshot dependencies are configured, this option can be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use clean checkout.
 
 ### Dependencies
 
 _This tab is available only for builds that have dependencies on other builds_.   
-You can enforce rebuilding of all dependencies and select a particular build whose artifacts will be taken. By default, the last 20 builds are displayed. To increase the number of builds displayed in the drop\-down to 50, use the `teamcity.runCustomBuild.buildsLimit=50` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+You can enforce rebuilding of all dependencies and select a particular build whose artifacts will be taken. By default, the last 20 builds are displayed. To increase the number of builds displayed in the drop-down menu to 50, use the `teamcity.runCustomBuild.buildsLimit=50` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+
+Note that if you re-run a dependent build, TeamCity will try to rebuild all dependency builds, including failed ones, by default.
 
 ### Changes
 
