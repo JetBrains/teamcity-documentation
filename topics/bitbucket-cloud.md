@@ -16,6 +16,6 @@ For Bitbucket Cloud team accounts, it is possible to use the team name as the us
 
 ## Converting Strings into Links to Issues
 
-You also need to specify which strings should be recognized as references to issues in your tracker. For Bitbucket, you need to use the regex syntax, for example, `#(\d\+)`.  
+You also need to specify which strings should be recognized as references to issues in your tracker. For Bitbucket, you need to use the regex syntax, for example, `#(\d\+)`.
 
 TeamCity will resolve the issue number mentioned in a VCS comment  and will display a link to this issue in the web UI ( for example, on the [Changes](working-with-build-results.md#Changes) Page, [Issues](working-with-build-results.md#Related+Issues) tab of the [build results](working-with-build-results.md) page).

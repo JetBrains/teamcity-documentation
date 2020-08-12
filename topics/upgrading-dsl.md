@@ -31,7 +31,7 @@ In TeamCity 2017.1, these settings were moved to the project level. TeamCity can
 
 ### Kotlin DSL API version
 
-The DSL API version is encoded into the package name, for example: `jetbrains.buildServer.configs.kotlin.v2019_2`. The version part there corresponds to TeamCity version when this DSL API was introduced.
+The DSL API version is encoded into the package name, for example: `jetbrains.buildServer.configs.kotlin.v2019_2`. The version part there corresponds to the TeamCity version when this DSL API was introduced.
 
 The new DSL API version is usually introduced when there are significant incompatible changes in DSL API.
 
@@ -1766,9 +1766,9 @@ This is only relevant if you use Kotlin DSL for the Root project settings and ha
 In 2017.1 cloud profiles were moved from the server level to the Root project level. Since they were not defined in the Kotlin DSL, in case you enable the versioned settings the existing cloud profiles will be deleted form he server. Thus before continuing to use Kotlin DSL for the root project on the server make sure to add the cloud profiles definitions to the root project settings in Kotlin DSL.
 
 To update your settings with the cloud profile information, perform the following:
-1. Run the __'Download settings in Kotlin format__' action in the Root project and save the zip with the generated DSL
-2. Copy project features of type `CloudIntegration` and `CloudProfile` from the `.teamcity/_Root/Project.kt` file to the root project config in your settings
-3. Commit your changes to the VCS
+1. Run the __'Download settings in Kotlin format__' action in the Root project and save the zip with the generated DSL.
+2. Copy project features of type `CloudIntegration` and `CloudProfile` from the `.teamcity/_Root/Project.kt` file to the root project config in your settings.
+3. Commit your changes to the VCS.
 4. Enable versioned settings on the __Versioned Settings__ tab of the Root project.
 
 #### Names in entities
