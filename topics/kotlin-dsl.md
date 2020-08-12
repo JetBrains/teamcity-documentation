@@ -460,7 +460,7 @@ where:
 * `id` is the absolute ID of the project, the same ID you'll see in browser address bar if you navigate to this project
 * `parentId` is the absolute ID of a parent project where this project is attached
 * `uuid` is some unique sequence of characters.    
-The `uuid` is a unique identifier which associates a project, build configuration or VCS root with its data. If the `uuid` is changed, then the data is lost. The only way to restore the data is to revert the `uuid` to the original value. On the other hand, the `id` of an entity can be changed freely, if the `uuid` remains the same. This is the main difference of the non-portable DSL format from portable. The portable format does not require specifying the `uuid`, but if it happened so that a build configuration lost its history (e.g. on changing build configuration external id) you can reattach the history to the build configuration using the __Attach build history__ option from the __Actions__ menu. See [details](#Restoring+Build+History+After+ID+Change).
+The `uuid` is a unique identifier which associates a project, build configuration or VCS root with its data. If the `uuid` is changed, then the data is lost. The only way to restore the data is to revert the `uuid` to the original value. On the other hand, the `id` of an entity can be changed freely, if the `uuid` remains the same. This is the main difference of the non-portable DSL format from portable. The portable format does not require specifying the `uuid`, but if it happened so that a build configuration lost its history (for example, on changing build configuration external id) you can reattach the history to the build configuration using the __Attach build history__ option from the __Actions__ menu. See [details](#Restoring+Build+History+After+ID+Change).
 
 <note>
 
@@ -477,7 +477,36 @@ In case of a non-portable DSL, patches are stored under the project _patches_ di
 
 Working with patches is the same as in portable DSL: you need to move the actual settings from the patch to your script and remove the patch.
 
+### Working with secure values in DSL
+
+In general, TeamCity processes a DSL parameter as a string. To mark a DSL value as secure, you can assign it to a parameter of the `password` type:
+
+```Kotlin
+
+params {
+    password("<parameter_name>", "credentialsJSON:<token>")
+}
+
+```
+
+where `<parameter_name>` is a unique name which can be used as a key for accessing the secure value via DSL (for example, in the [File Content Replacer](file-content-replacer.md) build feature); `<token>` is the token corresponding to the target secure value.
+
+Example:
+
+```Kotlin
+
+params {
+    password("pass-to-bucket", "credentialsJSON:12a3b456-c7de-890f-123g-4hi567890123")
+}
+
+```
+
+>To generate a token for a secure value, follow [this instruction](storing-project-settings-in-version-control.md#Managing+Tokens).
+>
+{type="tip"}
+
 ## FAQ and Common Problems
+
 
 <anchor name="nonUniformIDs"/>
 
@@ -542,31 +571,6 @@ _Problem_:
 * `OutOfMemoryError` during TeamCity startup with `org.jetbrains.dokka` in stack trace
  
  _Solution_: set the internal property `teamcity.kotlinConfigsDsl.docsGenerationXmx=768m`.
-
-### Passwords-Related Questions
-
-__Prior to TeamCity 2017.1__
-
-_Problem_: I do not want the passwords to be committed to the VCS, even in a scrambled form.
-
-_Solution_: You can move the passwords to the parent project whose settings are not committed to a VCS.
-
-
-_Problem_: I want to change passwords after the settings have been generated.
-
-_Solution_: The passwords will have to be scrambled manually using the following command in the Maven project with settings:
-
-
-
-```Shell
-mvn -Dtext=<text to scramble> org.jetbrains.teamcity:teamcity-configs-maven-plugin:scramble
-```
- 
-
-__Since TeamCity 2017.1__
-
-_Solution_: Use tokens instead of passwords. Refer to the [related section](storing-project-settings-in-version-control.md#Managing+Tokens).
-
 
 
 <seealso>
