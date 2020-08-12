@@ -70,9 +70,7 @@ Default branch
 
 </td>
 
-<td>
-
-<anchor name="defaultBranch"/>
+<td id="defaultBranch">
 
 Configures [default branch](working-with-feature-branches.md#Default+branch). Parameter references are supported here. Default value is `refs/heads/master`.
 
@@ -150,9 +148,8 @@ A custom username used for [labeling](vcs-labeling.md).
 
 </td></tr></table>
 
-<anchor name="branchMatchingRules"/>
-
 ### Branch Matching Rules
+{id="branchMatchingRules"}
 
 * If the branch matches a line without patterns, the line is used.
 * If the branch matches several lines with patterns, the best matching line is used.
@@ -224,9 +221,7 @@ Select this option to clone a repository with anonymous read access.
 
 </td>
 
-<td>
-
-<anchor name="passwordAuth"/>
+<td id="passwordAuth">
 
 Specify a valid __username__ (if there is no username in the clone URL; the username specified here overrides the username from the URL) and a __password__ to be used to clone the repository.    
 For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](http://youtrack.jetbrains.com/issue/TW-18711).    
@@ -285,25 +280,22 @@ Description
 
 </td></tr><tr>
 
-<td>
+<td id="serverAutoCRLF">
 
-<anchor name="serverAutoCRLF"/>
-
- Convert line\-endings to CRLF
+Convert line-endings to CRLF
 
 
 </td>
 
 <td>
 
-Convert line\-endings of all text files to CRLF (works as setting `core.autocrlf=true` in a repository config). When not selected, no line\-endings conversion is performed (works as setting `core.autocrlf=false`). Affects the server\-side checkout only. A change to this property causes a clean checkout.
+Convert line-endings of all text files to CRLF (works as setting `core.autocrlf=true` in a repository config). When not selected, no line-endings conversion is performed (works as setting `core.autocrlf=false`). Affects the server-side checkout only. A change to this property causes a clean checkout.
 
 
 </td></tr></table>
 
 ## Agent Settings
-
-<anchor name="agentSettings"/>
+{id="agentSettings"}
 
 These are the settings used in case of the agent-side [checkout](vcs-checkout-mode.md).   
 Note that the agent-side checkout has limited support for SSH. The only supported authentication methods are "Default Private Key" and "Uploaded Private Key".   
@@ -355,9 +347,7 @@ If a build configuration depends on multiple VCS roots, we suggest that you conf
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="use-alternates"/>
+<td id="use-alternates">
 
 Use mirrors
 
@@ -383,10 +373,9 @@ To configure a connection from a TeamCity server running behind a proxy to a rem
 </tip>
 
 ### Git executable on the agent
+{id="agentGitPath"}
 
-<anchor name="agentGitPath"/>
-
-TeamCity needs Git command line client version 1.6.4\+ on the agent in order to use the agent\-side checkout.
+TeamCity needs Git command line client version 1.6.4\+ on the agent in order to use the agent-side checkout.
 
 The recommended approach is to ensure that the git client is available in `PATH` of the TeamCity agent and leave the "Path to git" setting in the VCS root blank.   
 If you only have the git command line on some machines, set "Path to git" setting in the VCS root to the `%env.TEAMCITY_GIT_PATH%` value.
@@ -424,10 +413,8 @@ Comparing to self-hosted TeamCity agents, cloud agents require extra steps to ad
 When starting a build, a cloud agent will check the mirrors specified in the `map` file and fetch the difference between the required origin and its mirror. The origin URL in the `map` file must match the URL set in the VCS root.   
 This way, builds will run significantly faster, with no need to check out the whole remote repository every time the new cloud agent starts.
 
-
-<anchor name="Git_gc"/>
-
 ## Configuring Git Garbage Collection on Server
+{id="Git_gc"}
 
 TeamCity server maintains a local clone for every Git repository used in the VCS roots configured on the server. Since the server performs fetch in those clones many times a day, the clone needs regular optimization to maintain predictable performance. If the Git garbage collection for the clone was not run for a long time, the process of collecting changes may slow down or start to report memory-related errors.
 TeamCity can automatically run git gc periodically when native Git client can be found on the server. Inability to run Git GC results in a related health report.
@@ -449,9 +436,8 @@ If the local Git clones need some kind of manual maintenance, you can find them 
 
 TeamCity supports Git LFS for agent-side checkout. To use it, install git 1.8.\+ and Git LFS on the build agent machine. Git LFS should be enabled using the `git lfs install` command (on Windows an elevated command prompt may be needed). More information is available in [Git LFS documentation](https://git-lfs.github.com/). 
 
-<anchor name="internalProperties"/>
-
 ## Internal Properties
+{id="internalProperties"}
 
 For Git VCS it is possible to configure the following [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties):
 
@@ -541,9 +527,7 @@ Defines whether TeamCity runs `git fetch` in a separate process
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="max-memory"/>
+<td id="max-memory">
 
 `teamcity.git.fetch.process.max.memory`
 
@@ -571,9 +555,7 @@ Ensure the server machine has enough memory as the memory configured will be use
 
 <tr>
 
-<td>
-
-<anchor name="max-memory-limit"/>
+<td id="max-memory-limit">
 
 `teamcity.git.fetch.process.max.memory.limit`
 
@@ -882,9 +864,7 @@ Interval in seconds between connection attempts
 
 <tr>
 
-<td>
-
-<anchor name="use-local-mirrors"/>
+<td id="use-local-mirrors">
 
 `teamcity.git.use.local.mirrors`
 
@@ -997,10 +977,8 @@ The idle timeout for the `git fetch` operation when the agent-side checkout is u
 
 </td></tr></table>
 
-
-<anchor name="limitations"/>
-
 ## Limitations
+{id="limitations"}
 
 The Git plugin uses [`git sparce-checkout`](https://git-scm.com/docs/git-sparse-checkout#_sparse_checkout) to check out Git files on an agent. The plugin is able to perform only simple file mapping operations which limits the set of supported [VCS checkout rules](vcs-checkout-rules.md) for Git.
 
