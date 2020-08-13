@@ -373,7 +373,7 @@ To configure a connection from a TeamCity server running behind a proxy to a rem
 </tip>
 
 ### Git executable on the agent
-{id="agentGitPath"}
+{id="agentGitPath" auxiliary-id="Git+executable+on+the+agent"}
 
 TeamCity needs Git command line client version 1.6.4\+ on the agent in order to use the agent-side checkout.
 
@@ -978,7 +978,7 @@ The idle timeout for the `git fetch` operation when the agent-side checkout is u
 </td></tr></table>
 
 ## Limitations
-{id="limitations"}
+{id="Limitations"}
 
 The Git plugin uses [`git sparce-checkout`](https://git-scm.com/docs/git-sparse-checkout#_sparse_checkout) to check out Git files on an agent. The plugin is able to perform only simple file mapping operations which limits the set of supported [VCS checkout rules](vcs-checkout-rules.md) for Git.
 
