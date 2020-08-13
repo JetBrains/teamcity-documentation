@@ -326,7 +326,7 @@ Path to git
 
 <td>
 
-Provide the path to a Git executable to be used on the agent. When set to `%env.TEAMCITY_GIT_PATH%`, the automatically detected Git will be used, see [Git executable on the agent](#Git+executable+on+the+agent) for details.
+Provide the path to a Git executable to be used on the agent. When set to `%env.TEAMCITY_GIT_PATH%`, the automatically detected Git will be used, see [Git executable on the agent](#agentGitPath) for details.
 
 
 </td></tr><tr>
