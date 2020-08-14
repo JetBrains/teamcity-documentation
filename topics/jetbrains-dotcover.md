@@ -76,9 +76,7 @@ Supported only for dotCover 2.0 or newer.
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="additional-arguments"/>
+<td id="additional-arguments">
 
 Additional arguments
 

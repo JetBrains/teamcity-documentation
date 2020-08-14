@@ -149,7 +149,7 @@ A custom username used for [labeling](vcs-labeling.md).
 </td></tr></table>
 
 ### Branch Matching Rules
-{id="branchMatchingRules"}
+{id="branchMatchingRules" auxiliary-id="Branch Matching Rules"}
 
 * If the branch matches a line without patterns, the line is used.
 * If the branch matches several lines with patterns, the best matching line is used.
@@ -166,18 +166,14 @@ The following protocols are supported for Git repository URL:
 
 <note>
 
-__Be careful__
-
 The SCP-like syntax requires a colon after the hostname, while a usual SSH URL does not. This is a common source of errors.
 </note>
 
-* git: (for example, [`git://git.kernel.org/pub/scm/git/git.git`](git://git.kernel.org/pub/scm/git/git.git))
-* http: (for example, [`http://git.somewhere.org/projects/test.git`](http://git.somewhere.org/projects/test.git))
+* Git: (for example, [`git://git.kernel.org/pub/scm/git/git.git`](git://git.kernel.org/pub/scm/git/git.git))
+* HTTP: (for example, [`http://git.somewhere.org/projects/test.git`](http://git.somewhere.org/projects/test.git))
 * file: (for example, [`file:///c:/projects/myproject/.git`](file:///c:/projects/myproject/.git))
 
 <note>
-
-__Be careful__
 
 When you run TeamCity as a Windows service, it cannot access mapped network drives and repositories located on them.
 </note>
@@ -295,7 +291,7 @@ Convert line-endings of all text files to CRLF (works as setting `core.autocrlf=
 </td></tr></table>
 
 ## Agent Settings
-{id="agentSettings"}
+{id="agentSettings" auxiliary-id="Agent Settings"}
 
 These are the settings used in case of the agent-side [checkout](vcs-checkout-mode.md).   
 Note that the agent-side checkout has limited support for SSH. The only supported authentication methods are "Default Private Key" and "Uploaded Private Key".   
@@ -415,7 +411,7 @@ When starting a build, a cloud agent will check the mirrors specified in the `ma
 This way, builds will run significantly faster, with no need to check out the whole remote repository every time the new cloud agent starts.
 
 ## Configuring Git Garbage Collection on Server
-{id="Git_gc"}
+{id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server"}
 
 TeamCity server maintains a local clone for every Git repository used in the VCS roots configured on the server. Since the server performs fetch in those clones many times a day, the clone needs regular optimization to maintain predictable performance. If the Git garbage collection for the clone was not run for a long time, the process of collecting changes may slow down or start to report memory-related errors.
 TeamCity can automatically run git gc periodically when native Git client can be found on the server. Inability to run Git GC results in a related health report.
@@ -438,7 +434,7 @@ If the local Git clones need some kind of manual maintenance, you can find them 
 TeamCity supports Git LFS for agent-side checkout. To use it, install git 1.8.\+ and Git LFS on the build agent machine. Git LFS should be enabled using the `git lfs install` command (on Windows an elevated command prompt may be needed). More information is available in [Git LFS documentation](https://git-lfs.github.com/). 
 
 ## Internal Properties
-{id="internalProperties"}
+{id="internalProperties" auxiliary-id="Internal Properties"}
 
 For Git VCS it is possible to configure the following [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties):
 

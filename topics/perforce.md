@@ -28,12 +28,9 @@ Description
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="perforcePortOptionDescription"/>
+<td id="perforcePortOptionDescription">
 
 Port
-
 
 </td>
 
@@ -44,9 +41,7 @@ Specify the Perforce server address. The format is `host:port`. For specific env
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="perforceStreamOptionDescription"/>
+<td id="perforceStreamOptionDescription">
 
 Stream
 
@@ -93,18 +88,15 @@ When task streams are used for feature branches, TeamCity may miss some changes 
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="perforceClientOptionDescription"/>
+<td id="perforceClientOptionDescription">
 
 Client
-
 
 </td>
 
 <td>
 
-Click this radio button to directly specify the client workspace name. The workspace must be already created by a Perforce client application like P4V or P4Win. Only the mapping rules from the configured client workspace are used. The client name is ignored.
+Click this radiobutton to directly specify the client workspace name. The workspace must be already created by a Perforce client application like P4V or P4Win. Only the mapping rules from the configured client workspace are used. The client name is ignored.
 
 <warning>
 
@@ -116,18 +108,15 @@ When this option is used with the [VCS Checkout Mode](vcs-checkout-mode.md) mode
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="perforceClientMappingOptionDescription"/>
+<td id="perforceClientMappingOptionDescription">
 
 Client Mapping
-
 
 </td>
 
 <td>
 
-Click this radio button to specify the mapping of the depot to the client computer. If you have __Client mapping__ selected, TeamCity handles file separators according to the OS/platform of the build agent where a build is run. To enforce specific line separator for all build agents, use __Client__ or __Stream__ with the `LineEnd` option specified in Perforce instead of __Client mapping__. Alternatively, you can add an [agent requirement](configuring-agent-requirements.md) to run builds only on a specific platform.
+Click this radiobutton to specify the mapping of the depot to the client computer. If you have __Client mapping__ selected, TeamCity handles file separators according to the OS/platform of the build agent where a build is run. To enforce specific line separator for all build agents, use __Client__ or __Stream__ with the `LineEnd` option specified in Perforce instead of __Client mapping__. Alternatively, you can add an [agent requirement](configuring-agent-requirements.md) to run builds only on a specific platform.
 
 <tip>
 
@@ -155,12 +144,9 @@ If the direct client mapping is changed, a clean checkout __will be forced__ unl
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="perforceUserOptionDescription"/>
+<td id="perforceUserOptionDescription">
 
 Username
-
 
 </td>
 
@@ -171,12 +157,9 @@ Specify the user login name.
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="perforcePasswordOptionDescription"/>
+<td id="perforcePasswordOptionDescription">
 
 Password or Ticket
-
 
 </td>
 
@@ -196,9 +179,7 @@ The ticket file, should be present on all build agents where TeamCity runs perfo
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="perforceTicketBasedAuthenticationOptionDescription"/>
+<td id="perforceTicketBasedAuthenticationOptionDescription">
 
 Ticket-based authentication
 
@@ -235,12 +216,9 @@ Description
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="perforceWorkspaceOptions"/>
+<td id="perforceWorkspaceOptions">
 
 Workspace options
-
 
 </td>
 
@@ -331,12 +309,9 @@ To allow using Perforce proxy with the [agent-side checkout](vcs-checkout-mode.m
 
 <tr>
 
-<td>
-
-<anchor name="perforcePathtop4ExecutableOptionDescription"/>
+<td id="perforcePathtop4ExecutableOptionDescription">
 
 P4 path on the build agent
-
 
 </td>
 
@@ -353,12 +328,9 @@ To restore old behavior, the `teamcity.perforce.p4PathOnServerWhitelist` [intern
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="perforceLabelToCheckout"/>
+<td id="perforceLabelToCheckout">
 
 Label/changelist to sync
-
 
 </td>
 
@@ -374,12 +346,9 @@ It is recommended to use the [agent-side checkout](vcs-checkout-mode.md#agent-ch
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="perforceCharsetOptionDescription"/>
+<td id="perforceCharsetOptionDescription">
 
 Charset
-
 
 </td>
 
@@ -390,12 +359,9 @@ Select the character set used on the client computer.
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="utf16"/>
+<td id="utf16">
 
 Support UTF-16 encoding
-
 
 </td>
 

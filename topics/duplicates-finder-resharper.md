@@ -105,9 +105,7 @@ Description
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="fragComp"/>
+<td id="fragComp">
 
 Code fragments comparison
 
@@ -276,9 +274,7 @@ Enter newline-delimited keywords that exclude regions that contain the keyword i
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="debug"/>
+<td id="debug">
 
 Enable debug output
 
@@ -292,12 +288,9 @@ Enable debug output
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="cmdArgs"/>
+<td id="cmdArgs">
 
 Additional dupFinder parameters
-
 
 </td>
 

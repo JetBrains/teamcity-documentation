@@ -47,12 +47,9 @@ Template (optional)
 
 </td>
 
-<td>
-
-<anchor name="Template"/>
+<td id="Template">
 
 File Content Replacer provides a template for every attribute to be replaced. Clicking the __Load Template__ button displays the combobox with templates containing value presets for replacement. The templates can be filtered by _language_ (e.g. `C#`), _file_ (e.g. `AssemblyInfo`) or _attribute_ (e.g. `AssemblyVersion`) by typing in the combobox. When a template is selected, the settings are automatically filled with predefined values. See the [section below](#Templates) for template details.
-
 
 </td></tr><tr>
 
@@ -63,9 +60,7 @@ Process files
 
 </td>
 
-<td>
-
-<anchor name="Wildcards"/>
+<td id="Wildcards">
 
 Click __Edit file list__ and specify paths to files where the values to be replaced will be searched. Provide a newline- or comma-separated set of rules in the form of `+|-:[path relative to the checkout directory]`.   
 [Ant-like wildcards](wildcards.md#Antlike+Wildcards) are supported, for example, `dir/**/*.cs`.
@@ -102,10 +97,7 @@ File encoding
 
 </td>
 
-<td>
-
-<anchor name="Fileencoding"/>
-
+<td id="Fileencoding">
 
 By default, TeamCity will auto\-detect the file encoding. To specify the encoding explicitly, select it from the drop\-down. When specifying a _custom_ encoding, make sure it is [supported](https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html) by the agent.     
 
@@ -121,9 +113,7 @@ Find what
 
 </td>
 
-<td>
-
- <anchor name="Pattern"/>
+<td id="Pattern">
 
 Specify a pattern to search for, in the [regular expression](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum) format.    
 The [MULTILINE](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#MULTILINE) mode is on by default.       
@@ -141,13 +131,10 @@ Match case
 
 </td>
 
-<td>
+<td id="matchCase">
 
-<anchor name="matchCase"/>
-
-By default, the comparison is case\-sensitive. Uncheck for case\-insensitive languages.    
+By default, the comparison is case-sensitive. Uncheck for case-insensitive languages.    
 _If a [pre-defined template](file-content-replacer.md#Templates) is selected, the comparison associated with that template will be used._
-
 
 </td></tr><tr>
 
@@ -157,15 +144,11 @@ Regex mode
 
 </td>
 
-<td>
+<td id="Regex">
 
-<anchor name="Regex"/>
+Enabled by default and applies to both the search and replacement strings. Uncheck to use fixed strings.
 
-The box is checked by default and applies to both the search and replacement strings. Uncheck to use fixed strings.
-
-<anchor name="RegexMixed"/>
-
-<note>
+<note id="RegexMixed">
 
 If you use [versioned settings](storing-project-settings-in-version-control.md) (_XML_ or _Kotlin DSL_), in addition to the default `REGEX` and non\-default `FIXED_STRINGS` mode, the `REGEX_MIXED` mode is available. In this mode, the search pattern is interpreted as a regular expression, but the replacement text will be [quoted](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#quoteReplacement-java.lang.String-) (the `\`and `$` characters have no special meaning).
 
@@ -193,13 +176,11 @@ Replace with
 
 </td>
 
-<td>
-
- <anchor name="Replacement"/>
+<td id="Replacement">
 
 Type the text to be used for replacing the characters in the __Find what__ box. To delete the characters in the __Find what__ box from your file, leave this box blank.
 
-$N sequence references N\-th capturing group. All backslashes (`\`) and dollar signs (`$`) without a special meaning should be quoted (as `\\` and `\$`, respectively).
+$N sequence references N-th capturing group. All backslashes (`\`) and dollar signs (`$`) without a special meaning should be quoted (as `\\` and `\$`, respectively).
 
 </td></tr></table>
 

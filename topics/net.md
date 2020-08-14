@@ -153,9 +153,7 @@ Description
 
 <tr>
 
-<td>
-
-<anchor name="projects"/>
+<td id="projects">
 
 Projects
 
@@ -169,9 +167,7 @@ Paths to projects and solutions, new-line separated. Wildcards are supported. Pa
 
 </tr><tr>
 
-<td>
-
-<anchor name="working-directory"/>
+<td id="working-directory">
 
 Working directory
 
@@ -215,9 +211,7 @@ Target configuration, for example, `Release` or `Debug`. Parameter references ar
 
 </tr><tr>
 
-<td>
-
-<anchor name="runtime"/>
+<td id="runtime">
 
 Runtime
 
@@ -370,9 +364,7 @@ List of targets separated by a space or semicolon. A target is an arbitrary scri
 
 <tr>
 
-<td>
-
-<anchor name="msbuild-version"/>
+<td id="msbuild-version">
 
 MSBuild version
 
@@ -455,9 +447,7 @@ Description
 
 <tr>
 
-<td>
-
-<anchor name="vstest-assemblies"/>
+<td id="vstest-assemblies">
 
 Test assemblies
 
@@ -474,9 +464,7 @@ Paths to the assemblies must be relative to the [build checkout directory](build
 
 <tr>
 
-<td>
-
-<anchor name="vstest-version"/>
+<td id="vstest-version">
 
 VSTest version
 
@@ -492,9 +480,7 @@ Specify the installed version of VSTest. See the [Requirements](#Requirements) s
 
 <tr>
 
-<td>
-
-<anchor name="vstest-platform"/>
+<td id="vstest-platform">
 
 Platform
 
@@ -510,9 +496,7 @@ If necessary, specify the target platform: x86, x64, or ARM. Leave _\<Auto\>_ to
 
 <tr>
 
-<td>
-
-<anchor name="vstest-isolation"/>
+<td id="vstest-isolation">
 
 Run in isolation
 
@@ -618,9 +602,7 @@ Description
 
 <tr>
 
-<td>
-
-<anchor name="#devenv-build-action"/>
+<td id="devenv-build-action">
 
 Build action
 

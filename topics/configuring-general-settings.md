@@ -93,9 +93,7 @@ Specify the counter to be used in build numbering. Each build increases the buil
 
 <tr>
 
-<td>
-
-<anchor name="publish-artifacts"/>
+<td id="publish-artifacts">
 
 ##### Publish Artifacts
 

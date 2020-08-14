@@ -298,12 +298,9 @@ Description
 
 </td></tr><tr>
 
-<td>
+<td id="duplicatorTestSourcesOptionDescription">
 
-<anchor name="duplicatorTestSourcesOptionDescription"/>
-
-  Test sources
-
+Test sources
 
 </td>
 
@@ -331,12 +328,9 @@ Optional, specify to restrict the sources scope to run duplicates analysis on. F
 
 </td></tr><tr>
 
-<td>
+<td id="duplicatorDetalizationLevelOptionDescription">
 
-<anchor name="duplicatorDetalizationLevelOptionDescription"/>
-
-  Detalization level
-
+Detalization level
 
 </td>
 
@@ -347,12 +341,9 @@ Use these options to define which elements of the source code should be distingu
 
 </td></tr><tr>
 
-<td>
+<td id="duplicatorDistinguishVariablesOptionDescription">
 
-<anchor name="duplicatorDistinguishVariablesOptionDescription"/>
- 
-  Distinguish variables
-
+Distinguish variables
 
 </td>
 
@@ -381,9 +372,7 @@ public static void main(String[] args) {
 
 </td></tr><tr>
 
-<td>
-
- <anchor name="duplicatorDistinguishFieldsOptionDescription"/>
+<td id="duplicatorDistinguishFieldsOptionDescription">
 
 Distinguish fields
 
@@ -418,12 +407,9 @@ myTree.addSelectionListener(new SelectionListener() {
 
 </td></tr><tr>
 
-<td>
+<td id="duplicatorDistinguishMethodsOptionDescription">
 
-   <anchor name="duplicatorDistinguishMethodsOptionDescription"/>
-
-  Distinguish methods
-
+Distinguish methods
 
 </td>
 
@@ -489,12 +475,9 @@ public void buildCanceled(final Build build, final SessionData data) {
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="duplicatorDistinguishTypeOptionDescription"/>
+<td id="duplicatorDistinguishTypeOptionDescription">
 
 Distinguish types
-
 
 </td>
 
@@ -516,12 +499,9 @@ new TheirIDE().updateStatus()
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="duplicatorDistinguishLiteralesOptionDescription"/>
+<td id="duplicatorDistinguishLiteralesOptionDescription">
 
 Distinguish literals
-
 
 </td>
 
@@ -548,12 +528,9 @@ myWatchedLabel.setToolTipText("Logging In...");
 
 </td></tr><tr>
 
-<td>
-
-   <anchor name="duplicatorIgnoreComplexityOptionDescription"/>
+<td id="duplicatorIgnoreComplexityOptionDescription">
 
 Ignore duplicates with complexity lower than
-
 
 </td>
 
@@ -564,12 +541,9 @@ Complexity of the source code is defined by the amount of statements, expression
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="duplicatorDistinguishSubexprOptionDescription"/>
+<td id="duplicatorDistinguishSubexprOptionDescription">
 
 Ignore duplicate subexpressions with complexity lower than
-
 
 </td>
 
@@ -580,12 +554,9 @@ Use this field to specify the lowest level of complexity of subexpressions to be
 
 </td></tr><tr>
 
-<td>
-
- <anchor name="duplicatorDistinguishSubexprOptionDescription"/>
+<td id="duplicatorDistinguishSubexprOptionDescription">
 
 Check if Subexpression Can be Extracted
-
 
 </td>
 

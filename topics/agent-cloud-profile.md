@@ -104,9 +104,7 @@ Leave empty for no timeout.
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="agent-terminate-condition"/>
+<td id="agent-terminate-condition">
 
 Additional terminate conditions
 

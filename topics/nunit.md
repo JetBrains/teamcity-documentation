@@ -76,9 +76,7 @@ Description
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="runner"/>
+<td id="runner">
 
 NUnit runner
 
@@ -91,9 +89,7 @@ Select the NUnit version to be used to run the tests. The set of available setti
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="pathToNUnitConsoleTool"/>
+<td id="pathToNUnitConsoleTool">
 
 NUnit Console
 
@@ -109,9 +105,7 @@ Select a preinstalled console tool or specify a custom path to `nunit3-console.e
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="workingDirectory"/>
+<td id="workingDirectory>
 
 Working directory
 
@@ -125,9 +119,7 @@ Specify the path to the [build working directory](build-working-directory.md) if
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="appConfigFile"/>
+<td id="appConfigFile">
 
 Path to application configuration file
 
@@ -141,9 +133,7 @@ Specifу the path to the application configuration file to be used when running 
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="NUnit-cmdParameters"/>
+<td id="NUnit-cmdParameters">
 
 Additional command line parameters
 

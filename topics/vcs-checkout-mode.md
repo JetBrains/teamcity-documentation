@@ -26,9 +26,7 @@ Description
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="prefer-agent-checkout"/>
+<td id="prefer-agent-checkout">
 
 Prefer to checkout files on agent
 
@@ -50,12 +48,9 @@ TeamCity falls back to the server-side checkout in the following cases:
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="server-checkout"/>
+<td id="server-checkout">
 
 Always checkout files on server
-
 
 </td>
 
@@ -73,12 +68,9 @@ The TeamCity server will [export the sources](build-checkout-directory.md) and p
 
 </td></tr><tr>
 
-<td>
+<td id="agent-checkout">
 
-<anchor name="agent-checkout"/>
-
- Always checkout files on agent
-
+Always checkout files on agent
 
 </td>
 
@@ -101,12 +93,9 @@ There is a [known issue](https://youtrack.jetbrains.com/issue/TW-43648) with CVS
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="do-not-checkout-files-automatically"/>
+<td id="do-not-checkout-files-automatically">
 
 Do not check out files automatically
-
 
 </td>
 
