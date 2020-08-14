@@ -443,7 +443,7 @@ For Git VCS it is possible to configure the following [internal properties](conf
 
 <table><tr>
 
-<td width="300">
+<td>
 
 Property
 
