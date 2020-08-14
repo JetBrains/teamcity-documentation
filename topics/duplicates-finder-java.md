@@ -554,7 +554,7 @@ Use this field to specify the lowest level of complexity of subexpressions to be
 
 </td></tr><tr>
 
-<td id="duplicatorDistinguishSubexprOptionDescription">
+<td>
 
 Check if Subexpression Can be Extracted
 

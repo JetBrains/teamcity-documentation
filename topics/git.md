@@ -447,7 +447,7 @@ Property
 
 </td>
 
-<td width="100">
+<td width="20%">
 
 Default
 

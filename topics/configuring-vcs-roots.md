@@ -73,7 +73,7 @@ VCS root ID
 
 </td>
 
-<td id="VCSRootID">
+<td>
 
 Unique [ID](identifier.md) of VCS root across all VCS roots in the system. VCS root ID can be used in parameter references to VCS root parameters and [REST API](rest-api.md). If not specified, will be generated automatically from VCS root parameters.
 
