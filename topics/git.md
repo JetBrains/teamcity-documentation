@@ -373,7 +373,7 @@ To configure a connection from a TeamCity server running behind a proxy to a rem
 </tip>
 
 ### Git executable on the agent
-{id="agentGitPath" auxiliary-id="Git+executable+on+the+agent"}
+{id="agentGitPath" auxiliary-id="Git executable on the agent"}
 
 TeamCity needs Git command line client version 1.6.4\+ on the agent in order to use the agent-side checkout.
 
@@ -397,6 +397,7 @@ If Git is not found in any of these locations, it tries to run the git accessibl
 If a compatible git (1.6.4\+) is found, it is reported in the `TEAMCITY_GIT_PATH` environment variable. This variable can be used in the __Path to git__ field in the [VCS root](vcs-root.md) settings. As a result, the configuration with such a VCS root will run only on the agents where Git was detected or specified in the agent properties.
 
 ### Git mirrors on cloud agents
+{auxiliary-id="Git mirrors on cloud agents"}
 
 By default, TeamCity creates a [mirror](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository), that is a copy, of your Git repository under the agent's `system\git` directory. To save time and disk space on fetching source files, TeamCity points to this mirror via the Git alternate mechanism when updating the checkout directory for a build.
 
