@@ -3,7 +3,7 @@
 
 TeamCity allows the two-way synchronization of the project settings with the version control repository. Supported VCSs are Git, Mercurial, Perforce, Subversion, and Azure DevOps Server (formerly TFS).
 
-You can store settings in the XML format and in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [kotlin-based DSL](kotlin-dsl.md).
+You can store settings in the XML format and in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [Kotlin-based DSL](kotlin-dsl.md).
 
 When you enable two-way settings' synchronization:  
 * Each administrative change made to the project settings in the TeamCity web UI is committed to the version control; the changes are made noting the TeamCity user as the committer.
@@ -24,7 +24,7 @@ The __Configuration__ tab is used to define
 * whether the synchronization settings are the same as in the parent project;
 * whether the synchronization is enabled;
    * when synchronization is enabled, you can define which settings to use when build starts. See details [below](#Defining+Settings+to+Apply+to+Builds).
-* which VCS Root is used to store the project settings: you can store the settings either in the same repository as the source code, or in a dedicated VCS root.
+* which VCS root is used to store the project settings: you can store the settings either in the same repository as the source code, or in a dedicated VCS root.
 
 Enabling synchronization for a project also enables it for all its subprojects with the default "_Use settings from a parent project_" option selected. TeamCity synchronizes all changes to the project settings (including modifications of [build configurations](build-configuration.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on) with the exception of [SSH keys](ssh-keys-management.md).   
 However, if for certain subprojects the "_Synchronization disabled_" option is selected, such subprojects will not be synchronized even if this option is enabled for their parent project.
