@@ -100,7 +100,7 @@ Alternatively, you can add a [password parameter](typed-parameters.md#Adding+Par
 
 ### Implications of Storing Security Data in VCS 
 
-If you are using a version __prior to TeamCity 2017.1__, it is recommended to carefully consider the implications of storing security settings in a VCS.
+If you decide to store secure settings in VCS (for example, if you use TeamCity version 2017.1 and earlier), it is recommended to carefully consider the following implications:
 * If the projects or build configurations with settings in a VCS have __password fields defined__, the values appear in the settings committed into the VCS (though, in scrambled form).
    * If the project settings are stored in __the same repository as the source code__, anyone with access to the repository will be able to see these scrambled passwords.
    * If the project settings are stored __separately from the source code in a dedicated repository__ and the "_Show settings changes in builds_" option is enabled, any user with the "_View VCS file content_" permission will be able to see all the changes in the TeamCity UI using the [changes difference viewer](difference-viewer.md).
