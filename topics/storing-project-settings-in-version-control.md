@@ -1,8 +1,6 @@
 [//]: # (title: Storing Project Settings in Version Control)
 [//]: # (auxiliary-id: Storing Project Settings in Version Control)
 
-## Overview
-
 TeamCity allows the two-way synchronization of the project settings with the version control repository. Supported VCSs are Git, Mercurial, Perforce, Subversion, and Azure DevOps Server (formerly TFS).
 
 You can store settings in the XML format and in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [kotlin-based DSL](kotlin-dsl.md).
