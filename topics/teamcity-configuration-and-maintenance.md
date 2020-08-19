@@ -174,6 +174,7 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 </td></tr></table>
 
 ## Encryption Settings
+{id="encryption-settings" auxiliary-id="Encryption Settings"}
 
 In this block, you can choose how TeamCity will process secure values: either using the default _scrambling strategy_ or by _encrypting them with a custom key_.
 
