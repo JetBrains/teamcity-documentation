@@ -1,7 +1,7 @@
 [//]: # (title: VCS Labeling)
 [//]: # (auxiliary-id: VCS Labeling)
 
-TeamCity can label (tag) sources of a particular build (automatically or manually) in your Version Control System. The list of applied labels and their application status is displayed on the __[Changes__](working-with-build-results.md#Changes) tab of the __Build Results__ page.
+TeamCity can label (tag) sources of a particular build (automatically or manually) in your Version Control System. The list of applied labels and their application status is displayed on the __[Changes](working-with-build-results.md#Changes)__ tab of the __Build Results__ page.
 
 ## Automatic VCS labeling
 
