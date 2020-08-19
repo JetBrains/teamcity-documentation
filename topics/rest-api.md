@@ -129,7 +129,7 @@ If you get an error in response to your request and want to investigate the reas
 To get details about each processed request, turn on debug logging (for example, set Logging Preset to `debug-rest` on the [Administration/Diagnostics](teamcity-monitoring-and-diagnostics.md#Debug+Logging) page or modify the Log4J `jetbrains.buildServer.server.rest` category).
  
 ## CORS Support
-{id="cors-support" auxiliary-id="CORS Support"}
+{id="CORS-support" auxiliary-id="CORS Support"}
  
 The TeamCity REST API can be configured to allow [cross-origin requests](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) using the `rest.cors.origins` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
  
