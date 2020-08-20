@@ -903,6 +903,7 @@ The list of supported build locator dimensions:
 * `affectedProject:<project locator>` – limit the list to the builds of the specified project (belonging to any build type directly or indirectly under the project)
 * `buildType:(<buildTypeLocator>),defaultFilter:false` – all the builds of the specified build configuration
 * `tag:<tag>` – __since TeamCity 10__, get tagged builds. If a list of tags is specified, for example `tag:<tag1>`, `tag:<tag2>`, only the builds containing all the specified tags are returned. The legacy `tags:<tags>` locator is supported for compatibility.
+* `not:tag:<tag>` – list builds without the given tag. Note: Only one 'not:tag:' clause is supported per query.
 * `status:<SUCCESS/FAILURE/UNKNOWN>` – list builds with the specified status only.
 * `user:(<userLocator>)` – limit builds to only those triggered by the user specified.
 * `personal:<true/false/any>` – limit builds by the personal flag. By default, personal builds are not included.
