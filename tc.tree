@@ -393,6 +393,11 @@
       <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
    </toc-element>
    <toc-element id="staging-test-documents.md">
+            <toc-element id="continuous-integration-with-teamcity-test600.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="continuous-integration-with-teamcity-test700.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="continuous-integration-with-teamcity-test800.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-chain-test-diag.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="multinode-setup-test-diag.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="multinode-setup_12_40.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="multinode-setup_15_40.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="multinode-setup_15_50.md" show-structure-for="chapter" show-structure-depth="4"/>
