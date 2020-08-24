@@ -80,7 +80,7 @@ Note that since TeamCity 9.0, the way TeamCity counts tests [has changed](https:
 
 ### Adding custom build metric
 
-You can add your own build metric. To do so, you need to modify the TeamCity configuration file `<[TeamCity_Data_Directory](teamcity-server-directory.md)>/config/main-config.xml` and add the following section under the `server` node there:
+You can add your own build metric. To do so, you need to modify the TeamCity configuration file `<[TeamCity_Data_Directory](teamcity-data-directory.md)>/config/main-config.xml` and add the following section under the `server` node there:
 
 
 ```XML
