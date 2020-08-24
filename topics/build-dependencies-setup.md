@@ -13,7 +13,7 @@ In many cases it is convenient to use the output of one build in another, as wel
 
 This can be easily achieved by configuring dependencies between your build configurations in TeamCity that would look like this:
 
-<img src="compile-test-pack.png" width="350"/>
+<img src="compile-test-pack.png" width="401"/>
 
 Where _compile_, _tests (win)_, _tests (mac)_, and _pack setup_ are build configurations, and naturally the tests __depend on__ the compilation, which means they should wait till the compilation is ready.
 
@@ -24,7 +24,7 @@ Generally known as the _build pipeline_, in TeamCity a similar concept is referr
 <table>
 
 <tr>
-<td width="150px"></td>
+<td width="200"></td>
 <td></td>
 </tr>
 
@@ -32,7 +32,7 @@ Generally known as the _build pipeline_, in TeamCity a similar concept is referr
 
 <td>
 
-<img src="buildConfiguration.png" width="70"/>
+<img src="buildConfiguration.png" width="81" alt="Build configuration"/>
 
 </td>
 
@@ -45,14 +45,13 @@ A build configuration.
 
 <td>
 
-![dependency.png](dependency.png)
-
+<img src="dependency.png" width="191" alt="Snapshot dependency"/>
 
 </td>
 
 <td>
 
-[Snapshot dependency](#Snapshot+Dependencies) between 2 build configurations. Note that the arrow shows the sequence of triggering build configurations, the [build chain](build-chain.md) flow, meaning that B is executed before A. However, the dependencies are configured in the opposite direction (A snapshot\-depends on B). The arrows are drawn this way because in the [TeamCity UI](#Build+Chains+in+TeamCity+UI) you can find the visual representation of build chains which are always displayed according to the build chain flow.   
+[Snapshot dependency](#Snapshot+Dependencies) between 2 build configurations. Note that the arrow shows the sequence of triggering build configurations, the [build chain](build-chain.md) flow, meaning that B is executed before A. However, the dependencies are configured in the opposite direction (A snapshot-depends on B). The arrows are drawn this way because in the [TeamCity UI](#Build+Chains+in+TeamCity+UI) you can find the visual representation of build chains which are always displayed according to the build chain flow.   
 Typically, when adding a snapshot dependency, you also add an artifact dependency with the "build from the same chain" option from the same configuration to transfer the previous build results and use them in the build as well.
 
 
@@ -60,7 +59,7 @@ Typically, when adding a snapshot dependency, you also add an artifact dependenc
 
 <td>
 
-![artifactDependency.png](artifactDependency.png)
+<img src="artifactDependency.png" width="191" alt="Artifact dependency"/>
 
 
 </td>
@@ -87,14 +86,14 @@ Now, let's see what you can do with artifact and snapshot dependencies, and how 
 An _artifact dependency_ allows reusing the output of one build (or a part of it) in another.
  
  
-<img src="artifactDependency.png" width="150"/>
+<img src="artifactDependency.png" width="191" alt="Artifact dependency"/>
 
 
 If build configuration __A__ has an artifact dependency on __B__, then the artifacts of __B__ are downloaded to a build agent before a build of __A__ starts. Note that you can flexibly adjust [artifact rules](artifact-dependencies.md) to configure which artifacts should be taken and where exactly they should be placed.    
 
 If for some reason you need to store artifact dependency information together with your codebase and not in TeamCity, you can configure [Ivy Ant tasks](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Ant+Build+Script) to get the artifacts in your build script.     
 
-If both snapshot and artifact dependency are configured, and the '_Build from the same chain_' option is selected in the artifact dependency settings, TeamCity ensures that artifacts are downloaded from the same\-sources build.
+If both snapshot and artifact dependency are configured, and the '_Build from the same chain_' option is selected in the artifact dependency settings, TeamCity ensures that artifacts are downloaded from the same-sources build.
 
 ## Snapshot Dependencies
 
@@ -118,23 +117,23 @@ Once you have snapshot dependencies defined and at least one [build chain](build
 
 To get an idea of how snapshot dependencies work, think of module dependencies, because these concepts are similar. However, let's start with the basics. Let's assume, we have a [build chain](build-chain.md):
 
-<img src="a1-a2-an.png" width="300"/>
+<img src="a1-a2-an.png" width="311" alt="Build chain"/>
 
-1. If a build of A1 is triggered, the whole build chain A1...AN is added to the [build queue](build-queue.md), but __not vice versa!__ \- if build AN is triggered, it doesn't affect anything else in the build chain, only AN is run.
-2. Builds run __sequentially starting from AN to A1__. Build A(k\-1) won't start until build Ak finishes successfully.
+1. If a build of A1 is triggered, the whole build chain A1...AN is added to the [build queue](build-queue.md), but __not vice versa!__ - if build AN is triggered, it doesn't affect anything else in the build chain, only AN is run.
+2. Builds run __sequentially starting from AN to A1__. Build A(k-1) won't start until build Ak finishes successfully.
 3. All builds in the chain will use the same sources snapshot, i.e. with explicit specification of the sources revision, that is calculated at the moment when the build chain is added to the queue.   
 
 Now let's go into details and examples.
 
 ### Example 1
 
-Let's assume we have the following [build chain](build-chain.md) with no extra options \- plain snapshot dependencies.
+Let's assume we have the following [build chain](build-chain.md) with no extra options - plain snapshot dependencies.
 
-<img src="ABC.png" width="250"/>
+<img src="ABC.png" width="311" alt="Example 1"/>
 
 #### What Happens When Build A is Triggered
 
-1. TeamCity resolves the whole build chain and queues all builds \- A, B and C. TeamCity knows that the builds are to run in a strict order, so it won't run build A until build B is successfully finished, and it won't run build B until build C is successfully finished.   
+1. TeamCity resolves the whole build chain and queues all builds - A, B, and C. TeamCity knows that the builds are to run in a strict order, so it won't run build A until build B is successfully finished, and it won't run build B until build C is successfully finished.   
 2. When the builds are added to the queue, TeamCity starts checking for changes in the entire build chain and synchronizes them \- all builds have to start with the same sources snapshot.   
    Note that if the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.    
 3. Once build C has finished, build B starts, and so on. If build C failed, TeamCity won't further execute builds from the chain by default, but this behavior is [configurable](snapshot-dependencies.md#on-failed-dependency).
@@ -145,10 +144,10 @@ The same process will take place for build chain B\-&gt;C. Build A won't be affe
 
 ### Example 2
 
-<img src="B1-B2-A.png" width="160"/>
+<img src="B1-B2-A.png" width="126" alt="Example 2"/>
 
 When the final build A is triggered, TeamCity resolves the build chain and queues all builds \- A, B1 and B2. Build A won't start until both B1 and B2 are ready.   
-In this case it doesn't matter which build \- B1 or B2 \- starts first. As in the first example, when all builds are added to the queue, TeamCity checks for changes in the entire build chain and synchronizes them.
+In this case it doesn't matter which build - B1 or B2 - starts first. As in the first example, when all builds are added to the queue, TeamCity checks for changes in the entire build chain and synchronizes them.
 
 ### Advanced Snapshot Dependencies Setup
 
@@ -164,7 +163,7 @@ If you disable the "_[Enforce revisions synchronization](snapshot-dependencies.m
 
 Let's explore the example of a [deployment chain](deployment-build-configuration.md):
 
-<img src="dis-enf-rev-sync.png" width="350"/>
+<img src="dis-enf-rev-sync.png" width="331" alt="Forced revision synchronization"/>
 
 with the following build configurations:
 * D: compilation
@@ -185,11 +184,11 @@ Use the following valid chains instead:
 
 1\. Synchronization is enabled for the D-B-A build flow but disabled for D-C-A. 
 
-<img src="valid-snap-flow1.png" width="240"/>
+<img src="valid-snap-flow1.png" width="211" alt="Valid flow 1"/>
 
 2\. Synchronization is enabled for D-B and D-C but disabled for B-A and C-A. 
 
-<img src="valid-snap-flow2.png" width="240"/>
+<img src="valid-snap-flow2.png" width="211" alt="Valid flow 2"/>
 
 
 #### Run build on the same agent
@@ -208,7 +207,7 @@ The VCS build trigger has another [option](configuring-vcs-triggers.md#Trigger+a
 
 Let's take a build chain from the example: `pack setup` – depends on – `tests` – depends on – `compile`.
 
-<img src="compile-test-pack.png" width="300"/>
+<img src="compile-test-pack.png" width="401"/>
 
 With the VCS Trigger set up in the `pack setup` configuration,  the whole build chain is usually triggered when TeamCity detects changes in `pack setup`; changes in `compile` will trigger `compile` only and not the whole chain. If you want the whole chain to be triggered on a VCS change in `compile`, add a VCS trigger with the "_Trigger on changes in snapshot dependencies_" [option](configuring-vcs-triggers.md#Trigger+a+build+on+changes+in+snapshot+dependencies) enabled to the final build configuration of the chain, `pack setup`. This will not change the order in which builds are executed, but will only trigger the whole build chain, if there is a change in any of snapshot dependencies. In this setup, no VCS triggers are required for the `compile` or `tests` build configuration. 
  
@@ -234,11 +233,11 @@ For the details on how to use parameters of the previous build in chain, refer t
 
 ## Miscellaneous Notes on Using Dependencies
 
-__Build chain and clean\-up__
+__Build chain and clean-up__
 
-By default, TeamCity preserves builds that are a part of a chain from clean\-up, but you can switch off the option. Refer to the [Clean-Up](clean-up.md) description for more details.
+By default, TeamCity preserves builds that are a part of a chain from clean-up, but you can switch off the option. Refer to the [Clean-Up](clean-up.md) description for more details.
 
-__Artifact dependency and clean\-up__   
+__Artifact dependency and clean-up__   
 
 Artifacts may not be [cleaned](clean-up.md) if they were downloaded by other builds and these builds are not yet cleaned up. For a build configuration with configured artifact dependencies, you can specify whether the artifacts downloaded by this configuration from other builds can be cleaned or not. This setting is available on the [clean-up policies](clean-up.md) page.
 
