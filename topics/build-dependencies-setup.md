@@ -1,7 +1,7 @@
 [//]: # (title: Build Dependencies Setup)
 [//]: # (auxiliary-id: Build Dependencies Setup)
 
-This page is intended to give you the general idea on how dependencies work in TeamCity based on an example. For the dependencies description, see [Dependent Build](dependent-build.md).
+This page gives the general idea on how dependencies work in TeamCity based on an example. For the dependencies' description, see [Dependent Build](dependent-build.md).
 
 ## Introduction
 
@@ -110,7 +110,7 @@ Another case is when your tests take too long to run, so you have to extract the
 
 ### Build Chains in TeamCity UI
 
-Once you have snapshot dependencies defined and at least one [build chain](build-chain.md) was triggered, the __Build Chains__ tab appears on the __Project Home__ page and on the __Home__ pages of the related build configurations, providing a visual representation of all build chains and a way to re\-run any chain step manually, using the same set of sources pulled originally.
+Once you have snapshot dependencies defined and at least one [build chain](build-chain.md) was triggered, the __Build Chains__ tab appears on the __Project Home__ page and on the __Home__ pages of the related build configurations, providing a visual representation of all build chains and a way to rerun any chain step manually, using the same set of sources pulled originally.
 
 <img src="Build-Chains1.png" width="750" alt="Build chain example"/>
 
