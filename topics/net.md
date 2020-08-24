@@ -679,7 +679,7 @@ Depending on the entered settings, the .NET runner will transparently treat each
 </td>
 <td>
 
-`tool install <toolname>`
+tool install \<toolname\>
 
 </td>
 
@@ -698,12 +698,12 @@ Run a .NET application with arguments
 </td>
 <td>
 
-`MyApp.dll`
+MyApp.dll
 
 </td>
 <td>
 
-`-- arg1 arg2 arg3`
+-- arg1 arg2 arg3
 
 </td>
 
@@ -722,7 +722,7 @@ Runs `MyApp.dll -- arg1 arg2 arg3`.
 </td>
 <td>
 
-`whoami.exe`
+whoami.exe
 
 </td>
 <td>
@@ -745,12 +745,12 @@ Run XUnit tests via console
 </td>
 <td>
 
-`C:\XUnit\xunit.console.exe`
+C:\XUnit\xunit.console.exe
 
 </td>
 <td>
 
-`C:\TestAssemblies\MyTests.dll -xml C:\TestResults\MyTests.xml`
+C:\TestAssemblies\MyTests.dll -xml C:\TestResults\MyTests.xml
 
 </td>
 <td>
@@ -768,12 +768,12 @@ Run all CMD files in the `scripts` directory with the same arguments
 </td>
 <td>
 
-`scripts/*.cmd`
+scripts/\*.cmd
 
 </td>
 <td>
 
-`arg1 arg2`
+arg1 arg2
 
 </td>
 <td>
@@ -791,15 +791,13 @@ Run SH files with the same arguments
 </td>
 <td>
 
-```Text
-build_src.sh
+build_src.sh   
 build_doc.sh
-```
 
 </td>
 <td>
 
-`-c release`
+-c release
 
 </td>
 <td>

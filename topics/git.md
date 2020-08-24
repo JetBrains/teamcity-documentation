@@ -463,7 +463,7 @@ Description
 
 <td>
 
-`teamcity.git.idle.timeout.seconds`
+teamcity.git.idle.timeout.seconds
 
 
 </td>
@@ -484,7 +484,7 @@ The idle timeout for communication with the remote repository. If no data were s
 
 <td>
 
-`teamcity.git.fetch.timeout`
+teamcity.git.fetch.timeout
 
 
 </td>
@@ -505,7 +505,7 @@ The idle timeout for communication with the remote repository. If no data were s
 
 <td>
 
-`teamcity.git.fetch.separate.process`
+teamcity.git.fetch.separate.process
 
 
 </td>
@@ -526,7 +526,7 @@ Defines whether TeamCity runs `git fetch` in a separate process
 
 <td id="max-memory">
 
-`teamcity.git.fetch.process.max.memory`
+teamcity.git.fetch.process.max.memory
 
 </td>
 
@@ -554,7 +554,7 @@ Ensure the server machine has enough memory as the memory configured will be use
 
 <td id="max-memory-limit">
 
-`teamcity.git.fetch.process.max.memory.limit`
+teamcity.git.fetch.process.max.memory.limit
 
 </td>
 
@@ -578,8 +578,7 @@ This property specifies the maximum possible `-Xmx` value for `git fetch` or `gi
 
 <td>
 
-`teamcity.git.monitoring.expiration.timeout.hours`
-
+teamcity.git.monitoring.expiration.timeout.hours
 
 </td>
 
@@ -596,8 +595,7 @@ This property specifies the maximum possible `-Xmx` value for `git fetch` or `gi
 
 <td>
 
-`teamcity.server.git.gc.enabled`
-
+teamcity.server.git.gc.enabled
 
 </td>
 
@@ -617,8 +615,7 @@ Whether TeamCity should run `git gc` during the server clean-up (native git is u
 
 <td>
 
-`teamcity.server.git.executable.path`
-
+teamcity.server.git.executable.path
 
 </td>
 
@@ -638,8 +635,7 @@ The path to the native git executable on the server
 
 <td>
 
-`teamcity.server.git.gc.quota.minutes`
-
+teamcity.server.git.gc.quota.minutes
 
 </td>
 
@@ -659,8 +655,7 @@ Maximum amount of time to run `git gc`
 
 <td>
 
-`teamcity.git.cleanupCron`
-
+teamcity.git.cleanupCron
 
 </td>
 
@@ -680,8 +675,7 @@ Maximum amount of time to run `git gc`
 
 <td>
 
-`teamcity.git.stream.file.threshold.mb`
-
+teamcity.git.stream.file.threshold.mb
 
 </td>
 
@@ -701,8 +695,7 @@ Threshold in megabytes after which JGit uses streams to inflate objects. Increas
 
 <td>
 
-`teamcity.git.buildPatchInSeparateProcess`
-
+teamcity.git.buildPatchInSeparateProcess
 
 </td>
 
@@ -722,8 +715,7 @@ Git-plugin builds patches in a separate process, set it to false to build patch 
 
 <td>
 
-`teamcity.git.mirror.expiration.timeout.days`
-
+teamcity.git.mirror.expiration.timeout.days
 
 </td>
 
@@ -743,8 +735,7 @@ The number of days after which an unused clone of the repository will be removed
 
 <td>
 
-`teamcity.git.commit.debug.info`
-
+teamcity.git.commit.debug.info
 
 </td>
 
@@ -764,8 +755,7 @@ Defines whether to log additional debug info on each found commit
 
 <td>
 
-`teamcity.git.sshProxyType`
-
+teamcity.git.sshProxyType
 
 </td>
 
@@ -782,8 +772,7 @@ Type of ssh proxy, supported values: `http`, `socks4`, `socks5`. Keep in mind th
 
 <td>
 
-`teamcity.git.sshProxyHost`
-
+teamcity.git.sshProxyHost
 
 </td>
 
@@ -800,8 +789,7 @@ SSH proxy host
 
 <td>
 
-`teamcity.git.sshProxyPort`
-
+teamcity.git.sshProxyPort
 
 </td>
 
@@ -818,8 +806,7 @@ SSH proxy port
 
 <td>
 
-`teamcity.git.connectionRetryAttempts`
-
+teamcity.git.connectionRetryAttempts
 
 </td>
 
@@ -839,8 +826,7 @@ Number of attempts to establish connection to the remote host for testing connec
 
 <td>
 
-`teamcity.git.connectionRetryIntervalSeconds`
-
+teamcity.git.connectionRetryIntervalSeconds
 
 </td>
 
@@ -863,8 +849,7 @@ Interval in seconds between connection attempts
 
 <td id="use-local-mirrors">
 
-`teamcity.git.use.local.mirrors`
-
+teamcity.git.use.local.mirrors
 
 </td>
 
@@ -924,8 +909,7 @@ Description
 
 <td>
 
-`teamcity.git.use.native.ssh`
-
+teamcity.git.use.native.ssh
 
 </td>
 
@@ -955,8 +939,7 @@ When checkout on agent: whether TeamCity should use native SSH implementation.
 
 <td>
 
-`teamcity.git.idle.timeout.seconds`
-
+teamcity.git.idle.timeout.seconds
 
 </td>
 
