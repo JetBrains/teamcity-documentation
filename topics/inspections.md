@@ -3,12 +3,12 @@
 
 The _Inspections (IntelliJ IDEA)_ build runner is intended to run code analysis based on [IntelliJ IDEA inspections](https://www.jetbrains.com/help/idea/2016.3/code-inspection.html) for your project. In addition to the bundled version, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
 
-IntelliJ IDEA's code analysis engine is capable of inspecting your Java, JavaScript, HTML, XML and other code and allows you to:
-* Find probable bugs
-* Locate "dead" code
-* Detect performance issues
-* Improve the code structure and maintainability
-* Ensure the code conforms to guidelines, standards and specifications
+IntelliJ IDEA's code analysis engine is capable of inspecting your Java, JavaScript, HTML, XML and other code and allows you to
+* find probable bugs;
+* locate "dead" code;
+* detect performance issues;
+* improve the code structure and maintainability;
+* ensure the code conforms to guidelines, standards, and specifications.
 
 Refer to [IntelliJ IDEA documentation](http://www.jetbrains.com/idea/documentation/inspections.jsp) for more details.
 
@@ -28,7 +28,7 @@ It is a good idea to execute `mvn install` as the step preceding the Inspections
 </note>
 
 
-This page contains reference information about the following __Inspections (IntelliJ IDEA)__ Build Runner fields:
+This page contains reference information about the following __Inspections (IntelliJ IDEA)__ build runner fields:
 
 ## IntelliJ IDEA Project Settings
 
@@ -73,7 +73,7 @@ Path to the project
 
 Depending on the type of project selected in the __Project file type__, specify here:
 
-* __For IntelliJ IDEA project__: the path to the project file (.ipr) or the path to the project directory the root directory of the project containing the `.idea` folder).
+* __For IntelliJ IDEA project__: the path to the project file (`.ipr`) or the path to the project directory the root directory of the project containing the `.idea` folder).
 * __For Maven project__: the path to the `pom.xml` file. 
 * __For Gradle project__: the path to the `.gradle` or `.gradle.kts` file.    
 This information is required by this build runner to understand the structure of the project.
@@ -99,7 +99,7 @@ _This option is available if you use an IntelliJ IDEA project to run the inspect
 <warning>
 
 
-When this option is selected, the process of opening and saving the build runner settings may become time\-consuming, because it involves loading and parsing all project module files.
+When this option is selected, the process of opening and saving the build runner settings may become time-consuming, because it involves loading and parsing all project module files.
 </warning>
 
 
@@ -118,7 +118,7 @@ _This option is available if you use an IntelliJ IDEA project to run the inspect
 
 <note>
 
-If you update your project settings in IntelliJ IDEA (for example, add new jdks, libraries), remember to update the build runner settings by clicking __Check/Reparse Project__.
+If you update your project settings in IntelliJ IDEA (for example, add new JDKs, libraries), remember to update the build runner settings by clicking __Check/Reparse Project__.
 </note>
 
 
@@ -404,7 +404,7 @@ Example:
 
 <tip>
 
-For the file paths to be reported correctly, the "References to resources outside project/module file directory" option for the project and all modules should be set to "Relative" in IDEA project.
+For the file paths to be reported correctly, the "_References to resources outside project/module file directory_" option for the project and all modules should be set to "Relative" in IDEA project.
 </tip>
 
 For Maven inspections run, to ensure correct Java is used for the project JDK, define `env.JAVA_HOME` configuration parameter pointing to the JDK to be used as the project JDK.

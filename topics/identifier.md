@@ -11,16 +11,16 @@ Each entity has two identifiers:
 
 The so-called _external identifiers_ are configured in the TeamCity web UI (for example, Project ID) and must be unique within all the objects of the same type on the entire server. Build configurations and templates share the same ID space.
 
-IDs can contain only alphanumeric characters and underscores ("\_") – maximum 80 characters – and should start with a Latin letter.
+IDs can contain only alphanumeric characters and underscores (`_`) – maximum 80 characters – and should start with a Latin letter.
 
 ### Using External IDs
 
 External IDs are used:
-* in URLs of the web interface (including [RSS feeds](syndication-feed.md), [NuGet](nuget.md) feed), for example, [`https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains`](https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains)
-* in the [`dep.`](predefined-build-parameters.md#Dependencies+Properties) and [`vcsRoot.`](predefined-build-parameters.md#VCS+Properties) parameter references
-* in [REST API](rest-api.md) and build scripts used to automate actions with TeamCity (for example, download artifacts via direct URLs or Ivy)
-* in the configuration files storing settings of projects and build configurations under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`
-* in file and directory names under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` (for example, build artifacts storage)
+* in URLs of the web interface (including [RSS feeds](syndication-feed.md), [NuGet](nuget.md) feed), for example, [`https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains`](https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains);
+* in the [`dep.`](predefined-build-parameters.md#Dependencies+Properties) and [`vcsRoot.`](predefined-build-parameters.md#VCS+Properties) parameter references;
+* in [REST API](rest-api.md) and build scripts used to automate actions with TeamCity (for example, download artifacts via direct URLs or Ivy);
+* in the configuration files storing settings of projects and build configurations under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`;
+* in file and directory names under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` (for example, build artifacts storage).
 
  <anchor name="AssigningIDs"/>
 
@@ -34,7 +34,7 @@ If you consider moving projects between several TeamCity server installations, i
 
 <note>
 
-On changing the ID of a project or build configuration, all the related URLs (including the web UI, artifact download links, [RSS feeds](syndication-feed.md), and REST API) will change. If any of the URLs containing the old IDs were bookmarked or hard-coded in the scripts, they will stop to function and will need update. At the moment of the ID change, the correspondingly named directories under TeamCity Data Directory (including directories storing settings and artifacts) are renamed, and this can consume some time.
+On changing the ID of a project or build configuration, all the related URLs (including the web UI, artifact download links, [RSS feeds](syndication-feed.md), and REST API) will change. If any of the URLs containing the old IDs were bookmarked or hardcoded in the scripts, they will stop to function and will need update. At the moment of the ID change, the correspondingly named directories under TeamCity Data Directory (including directories storing settings and artifacts) are renamed, and this can consume some time.
 </note>
 
 To reset the IDs to match the default scheme for all projects, VCS roots, build configurations, and templates, use the __Bulk Edit IDs__ action on the __Administration__ page of the parent [project](project.md). To use the automatically generated ID after it has been modified or after you change an existing object name, you can regenerate ID using the __Regenerate ID__ action.

@@ -140,7 +140,7 @@ Another great feature of the NUnit build step is the fact that it executes tests
 
 All the actions performed by TeamCity to run tests a user can reproduce in the command line. This allows for quick and effective resolution of the potential issues with configuring a build.
 
-TeamCity records all the data related to running tests into the [Build Log](build-log.md). Thus the commands that TeamCity uses to run tests can be copied from the build log and can be run from the command line locally or on agents.
+TeamCity records all the data related to running tests into the [build log](build-log.md). Thus, the commands that TeamCity uses to run tests can be copied from the build log and can be run from the command line locally or on agents.
 
 When running tests, besides commands, TeamCity creates temporary files:
 * NUnit project files
