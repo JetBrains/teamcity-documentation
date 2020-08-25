@@ -34,7 +34,7 @@ The build history clean-up is run as a background process, which means that ther
 If you use the default HSQL database, there is a short period of server unavailability when the HSQL database is being compacted.
 </note>
 
-Depending on the amount of data to clean up, the process may take significant time, during which the server might be less performant. Therefore, it is recommended to schedule clean-up for off-peak hours. By default, TeamCity will start cleaning up daily at 3:00 AM. You can change the daily start time, or configure a custom cron expression to launch clean-up with necessary regularity.   
+Depending on the amount of data to clean up, the process may take significant time, during which the server might be less performant. Therefore, it is recommended to schedule clean-up for off-peak hours. By default, TeamCity will start cleaning up daily at 3:00 AM. You can change the daily start time, or configure a custom [cron expression](cron-expressions-in-teamcity.md) to launch clean-up with necessary regularity.   
 It is also possible to [start clean-up manually](#Manual+Clean-up+Launch).
 
 You can also specify the time limit for the clean-up process. In case not all the data is purged within the specified time frame, the remaining data will be removed during the next clean-up process.

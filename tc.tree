@@ -358,6 +358,7 @@
          <toc-element id="mono-support.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="maven-server-side-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="tracking-user-actions.md"/>
+         <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="jenkins-to-teamcity-migration-guidelines.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="installing-tools.md">
