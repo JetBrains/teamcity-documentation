@@ -49,9 +49,7 @@ The \<[TeamCity Data Directory](teamcity-data-directory.md)\> path with the abil
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="artifact-directories"/>
+<td id="artifact-directories">
 
 Artifact directories
 
@@ -155,9 +153,7 @@ Default VCS changes check interval
 
 </td>
 
-<td>
-
-<anchor name="default-vcs-check-interval"/>
+<td id="default-vcs-check-interval">
 
 Set to 60 seconds by default. Specifies how often TeamCity polls the VCS repository for VCS changes. Can be overridden when [configuring VCS roots](configuring-vcs-roots.md).
 
@@ -178,6 +174,7 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 </td></tr></table>
 
 ## Encryption Settings
+{id="encryption-settings" auxiliary-id="Encryption Settings"}
 
 In this block, you can choose how TeamCity will process secure values: either using the default _scrambling strategy_ or by _encrypting them with a custom key_.
 

@@ -76,12 +76,9 @@ Description
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="runner"/>
+<td id="runner">
 
 NUnit runner
-
 
 </td>
 
@@ -91,9 +88,7 @@ Select the NUnit version to be used to run the tests. The set of available setti
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="pathToNUnitConsoleTool"/>
+<td id="pathToNUnitConsoleTool">
 
 NUnit Console
 
@@ -105,13 +100,11 @@ _Available if NUnit 3.0 is selected_.
 
 Select a preinstalled console tool or specify a custom path to `nunit3-console.exe`:
 * __prior to TeamCity 9.1.4__, specify the directory containing the console executable file
-* __since 9.1.4__, specify the path to the console executable file including the file name
+* __since 9.1.4__, specify the path to the console executable file including the filename
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="workingDirectory"/>
+<td id="workingDirectory">
 
 Working directory
 
@@ -125,9 +118,7 @@ Specify the path to the [build working directory](build-working-directory.md) if
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="appConfigFile"/>
+<td id="appConfigFile">
 
 Path to application configuration file
 
@@ -141,9 +132,7 @@ Specifу the path to the application configuration file to be used when running 
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="NUnit-cmdParameters"/>
+<td id="NUnit-cmdParameters">
 
 Additional command line parameters
 

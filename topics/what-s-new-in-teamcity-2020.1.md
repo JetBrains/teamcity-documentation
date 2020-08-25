@@ -108,7 +108,7 @@ You can also add a new token directly on this page by clicking __Scramble secure
 
 TeamCity stores all secure values, used in project configuration files, in a scrambled form. The initial values are stored in the TeamCity Data Directory, and their safety primarily depends on the security of your environment. As an extra security level, TeamCity now supports custom encryption keys for protecting secure values. By using the custom encryption instead of the default scrambling strategy, you can minimize the risk of potential malicious actions.
 
-Read more about this new option in [our documentation](teamcity-configuration-and-maintenance.md#Encryption+Settings).
+Read more about this new option in [our documentation](teamcity-configuration-and-maintenance.md#encryption-settings).
 
 ## Improvements for secondary nodes
 

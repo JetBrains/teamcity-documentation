@@ -107,9 +107,7 @@ Description
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="system-administrator"/>
+<td id="system-administrator">
 
 __System Administrator__
 
@@ -122,9 +120,7 @@ Has no restrictions in permissions, and has all of the [Project Administrator's]
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="project-viewer"/>
+<td id="project-viewer">
 
 __Project Viewer__
 
@@ -136,9 +132,7 @@ Has read-only access to projects and can only _view_ the project, its parent, an
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="project-administrator"/>
+<td id="project-administrator">
 
 __Project Administrator__
 
@@ -156,9 +150,7 @@ __Since TeamCity 10__, [project-level agent management permissions](#Project-lev
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="project-developer"/>
+<td id="project-developer">
 
 __Project developer__
 
@@ -172,12 +164,9 @@ Usually commits changes to a project. Can start/stop builds, reorder builds in t
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="agent-manager"/>
+<td id="agent-manager">
 
 __Agent manager__
-
 
 </td>
 

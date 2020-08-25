@@ -242,12 +242,9 @@ Check this option to receive notifications when TeamCity identifies a build as [
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="investigation-is-updated"/>
+<td id="investigation-is-updated">
 
 __Investigation is updated__
-
 
 </td>
 

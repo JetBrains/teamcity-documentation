@@ -62,9 +62,7 @@ Check this option to automatically add time stamp suffix to the specified filena
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="backup-scope"/>
+<td id="backup-scope">
 
 Backup scope
 

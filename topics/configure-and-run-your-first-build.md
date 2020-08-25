@@ -5,6 +5,8 @@ After you have installed and started TeamCity as described [here](installing-and
 
 Now we can get building!
 
+<img src="run-first-build.png" width="611" alt="Run your first build"/>
+
 ## Create your first project
 
 In TeamCity, there is the default \<Root project\> containing all other projects in TeamCity. To create a project, click the __Administration__ link in the upper right corner and then click __Create project__. The __Create Project__ page is displayed.

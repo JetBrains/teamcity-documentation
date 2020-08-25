@@ -39,9 +39,7 @@ Specify the build configuration for the current build configuration to depend on
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="enforce-rev-sync"/>
+<td id="enforce-rev-sync">
 
 Enforce revisions synchronization
 
@@ -92,12 +90,9 @@ A new triggered build will only "use" successfully finished suitable builds as d
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="RunOnTheSameAgent"/>
+<td id="RunOnTheSameAgent">
 
 Run build on the same agent
-
 
 </td>
 
@@ -114,12 +109,9 @@ Before starting a build chain having __run on the same agent__ dependencies, Tea
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="on-failed-dependency"/>
+<td id="on-failed-dependency">
 
 On failed dependency/  On failed to start/canceled dependency
-
 
 </td>
 

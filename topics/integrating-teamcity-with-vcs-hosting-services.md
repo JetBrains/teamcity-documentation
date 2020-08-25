@@ -23,7 +23,7 @@ To configure a GitHub connection:
 1. In __Project Administration | Connections__, click __Add Connection__.
 2. Select _GitHub_ as the connection type. The page that opens provides the parameters to be used when registering your TeamCity application in GitHub service.
 3. Click the _register application_ link. The GitHub page opens.   
-You need to register TeamCity as an [OAuth application](https://developer.github.com/v3/oauth/) in GitHub.   
+You need to register TeamCity as an [OAuth application](https://docs.github.com/en/developers/apps/authorizing-oauth-apps) in GitHub.   
 The following steps are performed in your GitHub account:
    * Log into your GitHub account. On the Register a new OAuth application page specify the name and an optional description, the homepage URL and the callback URL as provided by TeamCity.
    * Click __Register application__.  The page is updated with Client ID and the client secret information for your TeamCity application. 

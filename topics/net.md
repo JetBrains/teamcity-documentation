@@ -153,9 +153,7 @@ Description
 
 <tr>
 
-<td>
-
-<anchor name="projects"/>
+<td id="projects">
 
 Projects
 
@@ -169,9 +167,7 @@ Paths to projects and solutions, new-line separated. Wildcards are supported. Pa
 
 </tr><tr>
 
-<td>
-
-<anchor name="working-directory"/>
+<td id="working-directory">
 
 Working directory
 
@@ -215,9 +211,7 @@ Target configuration, for example, `Release` or `Debug`. Parameter references ar
 
 </tr><tr>
 
-<td>
-
-<anchor name="runtime"/>
+<td id="runtime">
 
 Runtime
 
@@ -370,9 +364,7 @@ List of targets separated by a space or semicolon. A target is an arbitrary scri
 
 <tr>
 
-<td>
-
-<anchor name="msbuild-version"/>
+<td id="msbuild-version">
 
 MSBuild version
 
@@ -455,9 +447,7 @@ Description
 
 <tr>
 
-<td>
-
-<anchor name="vstest-assemblies"/>
+<td id="vstest-assemblies">
 
 Test assemblies
 
@@ -474,9 +464,7 @@ Paths to the assemblies must be relative to the [build checkout directory](build
 
 <tr>
 
-<td>
-
-<anchor name="vstest-version"/>
+<td id="vstest-version">
 
 VSTest version
 
@@ -492,9 +480,7 @@ Specify the installed version of VSTest. See the [Requirements](#Requirements) s
 
 <tr>
 
-<td>
-
-<anchor name="vstest-platform"/>
+<td id="vstest-platform">
 
 Platform
 
@@ -510,9 +496,7 @@ If necessary, specify the target platform: x86, x64, or ARM. Leave _\<Auto\>_ to
 
 <tr>
 
-<td>
-
-<anchor name="vstest-isolation"/>
+<td id="vstest-isolation">
 
 Run in isolation
 
@@ -618,9 +602,7 @@ Description
 
 <tr>
 
-<td>
-
-<anchor name="#devenv-build-action"/>
+<td id="devenv-build-action">
 
 Build action
 
@@ -697,7 +679,7 @@ Depending on the entered settings, the .NET runner will transparently treat each
 </td>
 <td>
 
-`tool install <toolname>`
+tool install \<toolname\>
 
 </td>
 
@@ -716,12 +698,12 @@ Run a .NET application with arguments
 </td>
 <td>
 
-`MyApp.dll`
+MyApp.dll
 
 </td>
 <td>
 
-`-- arg1 arg2 arg3`
+-- arg1 arg2 arg3
 
 </td>
 
@@ -740,7 +722,7 @@ Runs `MyApp.dll -- arg1 arg2 arg3`.
 </td>
 <td>
 
-`whoami.exe`
+whoami.exe
 
 </td>
 <td>
@@ -763,12 +745,12 @@ Run XUnit tests via console
 </td>
 <td>
 
-`C:\XUnit\xunit.console.exe`
+C:\XUnit\xunit.console.exe
 
 </td>
 <td>
 
-`C:\TestAssemblies\MyTests.dll -xml C:\TestResults\MyTests.xml`
+C:\TestAssemblies\MyTests.dll -xml C:\TestResults\MyTests.xml
 
 </td>
 <td>
@@ -786,12 +768,12 @@ Run all CMD files in the `scripts` directory with the same arguments
 </td>
 <td>
 
-`scripts/*.cmd`
+scripts/\*.cmd
 
 </td>
 <td>
 
-`arg1 arg2`
+arg1 arg2
 
 </td>
 <td>
@@ -809,15 +791,13 @@ Run SH files with the same arguments
 </td>
 <td>
 
-```Text
-build_src.sh
+build_src.sh   
 build_doc.sh
-```
 
 </td>
 <td>
 
-`-c release`
+-c release
 
 </td>
 <td>

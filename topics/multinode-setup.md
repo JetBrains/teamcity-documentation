@@ -13,7 +13,7 @@ After installation, each secondary node runs as a read-only copy of the main ser
 
 The following diagram shows an example of a TeamCity installation with one main node and two secondary nodes, where each secondary node has a certain responsibility:
 
-<img src="multinode-setup.png" width="800" alt="TeamCity setup with two nodes"/>
+<img src="multinode-setup.png" width="702" alt="TeamCity setup with two nodes"/>
 
 
 <anchor name="running-builds-node-discontinued"/>

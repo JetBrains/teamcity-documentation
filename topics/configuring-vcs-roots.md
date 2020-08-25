@@ -39,9 +39,7 @@ Description
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="vcs-type"/>
+<td id="vcs-type">
 
 Type of VCS
 
@@ -68,9 +66,7 @@ Unique name of VCS root across all VCS roots of the project.
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="VCSRootID"/>
+<td id="VCSRootID">
 
 VCS root ID
 
@@ -78,8 +74,6 @@ VCS root ID
 </td>
 
 <td>
-
-<anchor name="VCSRootID"/>
 
 Unique [ID](identifier.md) of VCS root across all VCS roots in the system. VCS root ID can be used in parameter references to VCS root parameters and [REST API](rest-api.md). If not specified, will be generated automatically from VCS root parameters.
 
@@ -120,9 +114,7 @@ If TeamCity detects that a [VCS commit hook](configuring-vcs-post-commit-hooks-f
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="svnRootSharing"/>
+<td id="svnRootSharing">
 
 Belongs to project
 

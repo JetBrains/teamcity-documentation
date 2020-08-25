@@ -1,10 +1,9 @@
 [//]: # (title: Project)
 [//]: # (auxiliary-id: Project)
 
-
-A _project_ in TeamCity is a collection of [build configurations](build-configuration.md). A TeamCity project can correspond to a software project, a specific version/release of a project or any other logical group of the build configurations.     
+A _project_ in TeamCity is a collection of [build configurations](build-configuration.md). A TeamCity project can correspond to a software project, a specific version/release of a project or any other logical group of the build configurations.   
 The project has a name, an [ID](identifier.md), and an optional description.   
-In TeamCity, user [roles and permissions](role-and-permission.md) are managed on a per-project basis.   
+In TeamCity, user [roles and permissions](role-and-permission.md) are managed on a per-project basis.
 
 ## Project Hierarchy
 
@@ -13,7 +12,7 @@ You can view the hierarchy on the overview page, in the __Projects__ popup, and 
 
 ### Settings Propagation
 
-The projects hierarchy is used in the following ways:
+The project hierarchy is used in the following ways:
 
 Settings defined on a project level are propagated to all the subprojects (recursively). These include:
 * [Parameters](configuring-build-parameters.md)
@@ -42,7 +41,7 @@ Note that associating a project with an [agent pool](agent-pools.md) is not prop
 
 ### Root Project
 
-TeamCity always has a __&lt;Root project&gt;__ as the top of the projects hierarchy. The root project has most of the properties of a usual project and the settings configured in the root project are available to all the other projects on the server.
+TeamCity always has a __&lt;Root project&gt;__ as the top of the projects hierarchy. The root project has most of the properties of a usual project, and the settings configured in the root project are available to all the other projects on the server.
 
 The root project is special in the following ways:
 * it is present by default and cannot be deleted.

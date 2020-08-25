@@ -98,9 +98,7 @@ Description
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="targetFramework"/>
+<td id="targetFramework">
 
 Target Frameworks
 
@@ -184,12 +182,9 @@ Description
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="settings"/>
+<td id="settings">
 
 Custom settings profile path
-
 
 </td>
 
@@ -204,12 +199,9 @@ For additional information about the ReSharper settings system, see [ReSharper W
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="debug"/>
+<td id="debug">
 
 Enable debug output
-
 
 </td>
 
@@ -220,9 +212,7 @@ Check this option to include debug messages in the build log and publish the fil
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="cmdArgs"/>
+<td id="cmdArgs">
 
 Additional inspectCode.exe arguments
 

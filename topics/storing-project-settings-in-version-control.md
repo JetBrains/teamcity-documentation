@@ -1,11 +1,9 @@
 [//]: # (title: Storing Project Settings in Version Control)
 [//]: # (auxiliary-id: Storing Project Settings in Version Control)
 
-## Overview
-
 TeamCity allows the two-way synchronization of the project settings with the version control repository. Supported VCSs are Git, Mercurial, Perforce, Subversion, and Azure DevOps Server (formerly TFS).
 
-You can store settings in the XML format and in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [kotlin-based DSL](kotlin-dsl.md).
+You can store settings in the XML format and in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [Kotlin-based DSL](kotlin-dsl.md).
 
 When you enable two-way settings' synchronization:  
 * Each administrative change made to the project settings in the TeamCity web UI is committed to the version control; the changes are made noting the TeamCity user as the committer.
@@ -26,7 +24,7 @@ The __Configuration__ tab is used to define
 * whether the synchronization settings are the same as in the parent project;
 * whether the synchronization is enabled;
    * when synchronization is enabled, you can define which settings to use when build starts. See details [below](#Defining+Settings+to+Apply+to+Builds).
-* which VCS Root is used to store the project settings: you can store the settings either in the same repository as the source code, or in a dedicated VCS root.
+* which VCS root is used to store the project settings: you can store the settings either in the same repository as the source code, or in a dedicated VCS root.
 
 Enabling synchronization for a project also enables it for all its subprojects with the default "_Use settings from a parent project_" option selected. TeamCity synchronizes all changes to the project settings (including modifications of [build configurations](build-configuration.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on) with the exception of [SSH keys](ssh-keys-management.md).   
 However, if for certain subprojects the "_Synchronization disabled_" option is selected, such subprojects will not be synchronized even if this option is enabled for their parent project.
@@ -102,7 +100,7 @@ Alternatively, you can add a [password parameter](typed-parameters.md#Adding+Par
 
 ### Implications of Storing Security Data in VCS 
 
-If you are using a version __prior to TeamCity 2017.1__, it is recommended to carefully consider the implications of storing security settings in a VCS.
+If you decide to store secure settings in VCS (for example, if you use TeamCity version 2017.1 and earlier), it is recommended to carefully consider the following implications:
 * If the projects or build configurations with settings in a VCS have __password fields defined__, the values appear in the settings committed into the VCS (though, in scrambled form).
    * If the project settings are stored in __the same repository as the source code__, anyone with access to the repository will be able to see these scrambled passwords.
    * If the project settings are stored __separately from the source code in a dedicated repository__ and the "_Show settings changes in builds_" option is enabled, any user with the "_View VCS file content_" permission will be able to see all the changes in the TeamCity UI using the [changes difference viewer](difference-viewer.md).

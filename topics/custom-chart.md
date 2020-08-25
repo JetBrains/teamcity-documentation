@@ -277,9 +277,7 @@ The color of a series to be used in the chart. Standard web color formats can be
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="patternedValues"/>
+<td id="patternedValues">
 
 `pattern`
 

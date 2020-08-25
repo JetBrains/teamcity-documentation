@@ -186,7 +186,6 @@ Set additional command line parameters to be passed to `NuGet.exe`.
 
 </td></tr></table>
 
-
 <seealso>
         <category ref="admin-guide">
             <a href="nuget-installer.md">NuGet Installer</a>
