@@ -171,9 +171,8 @@ It is recommended to use checkout rules of the format below to differentiate loc
 </note>
 
 ## Authentication Notes
-{id="TeamFoundationServer-azure-devops;Authentication+Notes"}
 
-<anchor name="azure-devops"/>
+<anchor name="TeamFoundationServer-azure-devops"/>
 
 <anchor name="VisualStudioOnline"/>
 
