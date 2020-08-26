@@ -15,6 +15,8 @@ You can download a full build log in the textual form or as a .zip archive  from
 
 ## Build Log Size
 
+<anchor name="BuildLog-LargeBuildLogsInspection"/>
+
 It is recommend to keep the build log small and tune build scripts not to print too much into the output. Large build logs are hard to view in the browser and are loading TeamCity infrastructure piping build messages from the agent to the server while the build is running.
 
 It is recommended to print into the output only the messages required to understand the build progress and build failures. The rest of the information should be streamed into a log file and the file should be published as a build artifact. A "good" build log size is megabytes at most.

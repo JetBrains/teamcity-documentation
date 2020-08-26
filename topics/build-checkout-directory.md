@@ -30,6 +30,8 @@ If TeamCity detects that it cannot build an incremental patch, a [clean checkout
 
 ## Custom checkout directory
 
+<anchor name="BuildCheckoutDirectory-Customcheckoutdirectory"/>
+
 In most cases, the default __Auto (recommended)__ setting will cover your needs. With this default checkout directory, TeamCity ensures the best performance and consistent incremental sources updates. The name of the default automatically created directory is generated as follows: `<[Agent Work Directory](agent-work-directory.md)>/<VCS settings hash code>`. The VCS settings hash code is calculated based on the set of VCS roots, their checkout rules and VCS settings used by the build configuration (checkout mode). Effectively, this means that the directory is shared between all the build configurations with the same VCS settings.
 
 If for some reason you need to specify a custom checkout directory (for example, the process of creating builds depends on some particular directory), make sure the following conditions are met:

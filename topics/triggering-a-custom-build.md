@@ -57,6 +57,8 @@ The __Build branch__ drop\-down, available if you have branches in your build co
 
 ### Use settings
 
+<anchor name="TriggeringCustomBuild-UsesettingsfromVCS"/>
+
 If your project has [versioned settings](storing-project-settings-in-version-control.md) enabled, you can tell TeamCity to run a build:
 * with the settings defined for the project, either the current settings on the server or the settings from VCS
 * with the project settings currently defined on the server

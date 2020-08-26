@@ -16,7 +16,7 @@ If someone attempts to modify a VCS root that is used in more than one project o
 
 On an attempt to create a new VCS root, TeamCity checks whether there are other VCS roots accessible in this project with similar settings. If such VCS roots exist, TeamCity suggests using them.
 
-<anchor name="CommonVCSRootProps"/>
+<anchor name="ConfiguringVCSRoots-CommonVCSRootProps"/>
 
 Once a VCS root is configured, TeamCity regularly queries the version control system for new changes and displays the changes in the [Build Configurations](build-configuration.md) that have the root attached. You can set up your build configuration to trigger a new build each time TeamCity detects changes in any of the build configuration's VCS roots, which suits most cases. When a build starts, TeamCity gets the changed files from the version control and applies the changes to the [Build Checkout Directory](build-checkout-directory.md).
 

@@ -138,6 +138,8 @@ Here are some recommendations to tweak TeamCity server setup for better performa
 
 ## Retrieve Administrator Password
 
+<anchor name="HowTo-RetrieveAdministratorPassword"/>
+
 On the first start with the empty database, TeamCity displays the Administrator Setup page which allows creating a user with full administrative permissions (assigning the [System Administrator](role-and-permission.md#Per-Project+Authorization+Mode) role).
 
 If you want to regain access to the system and you cannot log in as a user with the System Administrator role, you can log in as a [super user](super-user.md) and change the existing administrator account password or create a new account with the System Administrator role.

@@ -13,6 +13,8 @@ You can adjust a VCS trigger to your needs using the options described below:
 
 ## Trigger a build on changes in snapshot dependencies
 
+<anchor name="ConfiguringVCSTriggers-Triggerabuildonchangesinsnapshotdependencies"/>
+
 If you have a [build chain](build-chain.md) (i.e. a number of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency)),  the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
 
 <include src="build-dependencies-setup.md" include-id="trigger-on-ssdep-chngs"/>
@@ -34,6 +36,8 @@ This helps to figure out whose change broke a build or caused a new test failure
 
 ### Quiet Period Settings
 
+<anchor name="ConfiguringVCSTriggers-quietPeriod"/>
+
 By specifying the quiet period you can ensure the build is not triggered in the middle of non\-atomic check\-ins consisting of several VCS check\-ins.
 
 A __quiet period__ is a period (in seconds) that TeamCity maintains between the moment the last VCS change is detected and a build is added into the queue. If new VCS change is detected in the Build Configuration within the period, the period starts over from the new change detection time. The build is added into the queue only if there were no new VCS changes detected within the quiet period.
@@ -54,6 +58,8 @@ Note that when a build is triggered by a trigger with the VCS quiet period set, 
 <include src="configuring-schedule-triggers.md" include-id="queue-optimization"/>
 
 <anchor name="buildTriggerRules"/>
+
+<anchor name="ConfiguringVCSTriggers-buildTriggerRules"/>
 
 ## VCS Trigger Rules
 {id="vcs-trigger-rules-1"}

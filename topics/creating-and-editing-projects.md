@@ -3,7 +3,6 @@
 
 This section details creating projects via the TeamCity web UI. Other options include the [REST API](rest-api-reference.md#Project+Settings) and using TeamCity project configuration in [DSL based on the Kotlin language](kotlin-dsl.md).
 
-
 ## Creating Project
 
 To create a project, use the __Administration__ link at the upper right corner and click __Create project__. The __Create project__ page is displayed.
@@ -270,6 +269,8 @@ When running TeamCity in the [Professional mode](licensing-policy.md), the __Cop
 </note>
 
 ### Moving Project
+
+<anchor name="CreatingandEditingProjects-MovingProject"/>
 
 <warning>
 

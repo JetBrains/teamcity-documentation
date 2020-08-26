@@ -9,6 +9,8 @@ The settings in this section define time and other conditions for automatic buil
 
 ### Date and Time
 
+<anchor name="ConfiguringScheduleTriggers"/>
+
 In addition to triggering builds __daily__ or __weekly__ at a specified time for a particular time zone, you can specify advanced time settings using [cron](https://en.wikipedia.org/wiki/Cron#Operators)\-like expressions. This format provides more flexible scheduling options.
 
 TeamCity uses [Quartz](https://www.quartz-scheduler.org/) for working with cron expressions. See the examples below or consider using the [CronMaker](http://www.cronmaker.com/) utility to generate expressions based on the Quartz cron format. 
@@ -479,6 +481,8 @@ You can restrict a schedule trigger to start builds only if there are pending ch
 
 ### VCS Trigger Rules
 
+<anchor name="ConfiguringScheduleTriggers-buildTriggerRules"/>
+
 <include src="configuring-vcs-triggers.md" include-id="vcs-trigger-rules"/>
 
 #### General Syntax
@@ -493,6 +497,8 @@ You can restrict a schedule trigger to start builds only if there are pending ch
 <anchor name="ConfiguringScheduleTriggers-WatchedBuild"/>
 
 ### Build Changes
+
+<anchor name="ConfiguringScheduleTriggers-BuildChanges"/>
 
 A schedule trigger can watch a build in any specified build configuration and trigger a build only if the watched build has changed since the previous triggering. You can select which build to watch:
 * Last finished build

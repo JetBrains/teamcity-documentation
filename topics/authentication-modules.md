@@ -13,6 +13,7 @@ TeamCity supports the following _credentials authentication modules_:
 * __Microsoft Windows domain__ (cross-platform): All NT domain users that can log on to the machine running the TeamCity server, can also log in to TeamCity using the same credentials. i.e. to log in to TeamCity users should provide domain and username (__DOMAIN\username__) and their domain password.
 * __LDAP server__ (cross-platform): Authentication is performed by directly logging into LDAP with credentials entered into the login form.
   <anchor name="tokenBasedAuth"/>
+  <anchor name="AuthenticationModules-tokenBasedAuth"/>
 * __Token-based Authentication__ (cross-platform): Authentication via the personal access tokens that are maintained by TeamCity. This enables both an ability to authenticate with login/access-token instead of login/password when using the login form and token-based HTTP authentication.
 
 The following _HTTP authentication modules_ are supported:

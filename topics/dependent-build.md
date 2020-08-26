@@ -11,6 +11,8 @@ A snapshot dependency influences the way builds are processed and implies that t
 
 ## Snapshot Dependency
 
+<anchor name="DependentBuild-SnapshotDependency"/>
+
 _Snapshot Dependency_ is a powerful concept that allows expressing source\-level dependencies between build configurations in TeamCity. The primary goal is to allow complex build procedures via creating different build configurations linked with snapshot dependencies. This, in particular, allows dividing a single monolith build into a set of interlinked builds ([Build Chain](build-chain.md)) with flexible reuse rules. TeamCity follows the declarative style of defining the build structure on this level (declaring dependencies rather than adding build triggers) as it allows for more flexible and powerful features.
 
 See [Build Dependencies Setup](build-dependencies-setup.md) for a description of typical snapshot dependencies usages and related blog posts: [September 2019](https://blog.jetbrains.com/teamcity/2019/09/build-chains-teamcitys-blend-of-pipelines-part-1-getting-started/), [March 2016](http://blog.jetbrains.com/teamcity/2016/03/teamcity-take-on-build-pipelines/), [April 2012](http://blog.jetbrains.com/teamcity/2012/04/teamcity-build-dependencies-2/).

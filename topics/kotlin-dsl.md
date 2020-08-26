@@ -38,6 +38,8 @@ Usually it takes a minute or two, depending on the _Changes Checking Interval_ d
 
 <anchor name="portableDSL"/>
 
+<anchor name="KotlinDSL-portableDSL"/>
+
 ### Project Settings Structure
 
 After the commit to the repository, you will get the `.teamcity` settings directory with the following files:
@@ -227,6 +229,8 @@ It seems pointless to keep two projects using the same DSL scripts on one server
 
 
 <anchor name="contextParameters"/>
+
+<anchor name="KotlinDSL-contextParameters"/>
 
 ### Using Context Parameters in DSL
 
