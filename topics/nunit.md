@@ -62,6 +62,8 @@ The extensions can be installed in bulk using the [NUnit Console Version 3](http
 
 ## NUnit Test Settings
 
+<anchor name="NUnit-settings"/>
+
 <table><tr>
        
 <td>
@@ -78,6 +80,8 @@ Description
 
 <td id="runner">
 
+<anchor name="NUnit-runner"/>
+
 NUnit runner
 
 </td>
@@ -89,6 +93,8 @@ Select the NUnit version to be used to run the tests. The set of available setti
 </td></tr><tr>
 
 <td id="pathToNUnitConsoleTool">
+
+<anchor name="NUnit-pathToNUnitConsoleTool"/>
 
 NUnit Console
 
@@ -106,6 +112,8 @@ Select a preinstalled console tool or specify a custom path to `nunit3-console.e
 
 <td id="workingDirectory">
 
+<anchor name="NUnit-workingDirectory"/>
+
 Working directory
 
 </td>
@@ -119,6 +127,8 @@ Specify the path to the [build working directory](build-working-directory.md) if
 </td></tr><tr>
 
 <td id="appConfigFile">
+
+<anchor name="NUnit-appConfigFile"/>
 
 Path to application configuration file
 

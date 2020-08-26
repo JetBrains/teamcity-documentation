@@ -15,6 +15,8 @@ The Visual Studio Test runner requires Visual Studio Test Agent or Microsoft Vis
 
 ## Visual Studio Tests runner settings
 
+<anchor name="VisualStudioTests-runnersettings"/>
+
 <table><tr>
 
 <td>
@@ -47,6 +49,8 @@ Select the tool used to run tests: VSTest or MSTest.
 
 <td>
 
+<anchor name="VisualStudioTests-engines"/>
+
 Test engine version
 
 
@@ -54,10 +58,10 @@ Test engine version
 
 <td>
 
-Select the version of the tool from the drop\-down. By default, the available VSTest and MSTest installations are autodetected by TeamCity:
+Select the version of the tool from the drop-down menu. By default, the available VSTest and MSTest installations are autodetected by TeamCity:
 
-* MSTest versions 2005\-2017 are supported
-* VSTest versions 2012\-2017 are supported
+* MSTest versions 2005-2017 are supported
+* VSTest versions 2012-2017 are supported
 
 You can specify a custom path to the test runner here as well. TeamCity parameters are supported.
 
@@ -122,7 +126,7 @@ The rest of settings will vary depending on the engine to run tests with:
  
 ### VSTest Settings
 
- 
+<anchor name="VisualStudioTests-VSTestSettings"/>
 
 <table><tr>
 
@@ -236,6 +240,8 @@ When using this option, it is recommended to check the number of tests in the pr
 </td></tr></table>
 
 #### Custom test logger
+
+<anchor name="VisualStudioTests-Customtestlogger"/>
 
 `VSTest.Console` supports custom loggers, i.e. libraries that can handle events that occur when tests are being executed.   
 TeamCity 9.0\+ has a custom logger that provides real\-time test reporting.   
