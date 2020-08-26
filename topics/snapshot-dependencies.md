@@ -92,6 +92,8 @@ A new triggered build will only "use" successfully finished suitable builds as d
 
 <td id="RunOnTheSameAgent">
 
+<anchor name="SnapshotDependencies-RunOnTheSameAgent"/>
+
 Run build on the same agent
 
 </td>

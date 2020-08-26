@@ -386,6 +386,8 @@ Users with System Administrator role can view and download the server logs right
 
 ## Changing Logging Configuration
 
+<anchor name="TeamCityServerLogs-loggingPreset"/>
+
 While TeamCity is running, active logging settings can be changed by selecting between available `logging presets`.
 
 The active logging preset is changed in the __Administration | Diagnostics__ page, __Troubleshooting__, __Debug logging__ subsection. Choosing a preset changes logging configuration immediately and the preset is preserved after a server restart, until changed on the page again. It is recommended to return to the "&lt;Default&gt;" once the necessary logs were collected.
