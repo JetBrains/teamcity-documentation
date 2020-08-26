@@ -91,7 +91,7 @@ Username
 
 <td>
 
-Specify a user to access Team Foundation Server. This can be a user name or `DOMAIN\UserName` string.   
+Specify a user to access Team Foundation Server. This can be a username or `DOMAIN\UserName` string.   
 Use blank to let TFS select a user account that is used to run the TeamCity Server (or Agent for the agent\-side checkout).
 
 
@@ -111,7 +111,7 @@ Enter the password of the user entered above
 
 </td></tr></table>
 
-Learn more about authentication in [Azure DevOps](#Authentication+Notes).
+Learn more about authentication in [Azure DevOps](#teamFoundationServerLive).
 
 
 
@@ -172,7 +172,7 @@ It is recommended to use checkout rules of the format below to differentiate loc
 
 ## Authentication Notes
 
-<anchor name="azure-devops"/>
+<anchor name="TeamFoundationServer-azure-devops"/>
 
 <anchor name="VisualStudioOnline"/>
 

@@ -92,6 +92,8 @@ A new triggered build will only "use" successfully finished suitable builds as d
 
 <td id="RunOnTheSameAgent">
 
+<anchor name="SnapshotDependencies-RunOnTheSameAgent"/>
+
 Run build on the same agent
 
 </td>
@@ -131,6 +133,7 @@ If a dependency fails, you can manage the status of the dependent build by selec
 ### Suitable Builds
 [//]: # (Internal note. Do not delete. "Snapshot Dependenciesd292e145.txt")    
 
+<anchor name="SnapshotDependencies-SuitableBuilds"/>
 
 A "suitable" build in terms of snapshot dependencies is a build which can be used instead a queued dependency build within a [build chain](build-chain.md). That is, a queued build which is a part of a build chain can be dropped and the builds depending on it can be made dependent on another queued, running or already finished "suitable" build. This behavior only works when the "_Do not run new build if there is a suitable one_" option of a corresponding snapshot dependency is selected.
 

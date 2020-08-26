@@ -372,13 +372,13 @@ An integer value to use as the maximum for the Y axis value .
  
 <anchor name="predefinedStatisticsKeys"/>
 
- 
-
 #### Default Statistics Values Provided by TeamCity
+
+<anchor name="CustomChart-DefaultStatisticsValuesProvidedbyTeamCity"/>
 
 The table below lists the predefined value providers that can be used to configure a custom chart. The values reported for each build differ depending on your build configuration settings.
 
-<anchor name=" reportedStatValues"/>
+<anchor name="reportedStatValues"/>
 
 You can view the all statistic values reported by the build on the __Build Results | Parameters | Reported statistic values__ tab. For each of the values, a statistics chart is available on clicking the _View Trend_ icon ![ViewTrend.PNG](ViewTrend.PNG).
 

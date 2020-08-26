@@ -64,6 +64,8 @@ Check this option to automatically add time stamp suffix to the specified filena
 
 <td id="backup-scope">
 
+<anchor name="CreatingBackupfromTeamCityWebUI-backup_scope"/>
+
 Backup scope
 
 </td>

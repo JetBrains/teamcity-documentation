@@ -272,6 +272,8 @@ If your project uses the IDEA JDK, specify the location of the IDEA home directo
 
 <td>
 
+<anchor name="Inspections-IdeaPatterns"/>
+
 IDEA Jar Files Patterns
 
 

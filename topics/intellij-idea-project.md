@@ -267,6 +267,8 @@ Description
 
 <td>
 
+<anchor name="IntelliJIDEAProject-projectPath"/>
+
 Path to the project
 
 </td>
@@ -500,6 +502,8 @@ Select whether to compile all classes in the project or only those classes which
 
 ## Artifacts
 
+<anchor name="IntelliJIDEAProject-Artifacts"/>
+
 <table><tr>
 
 <td>
@@ -527,6 +531,8 @@ Specify here names of the artifacts to be built that are configured in the Intel
 </td></tr></table>
 
 ## Run configurations
+
+<anchor name="IntelliJIDEAProject-Runconfigurations"/>
 
 <table><tr>
 

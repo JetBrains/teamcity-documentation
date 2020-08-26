@@ -37,6 +37,8 @@ The configuration name.
 
 ##### Build Configuration ID
 
+<anchor name="ConfiguringGeneralSettings-BuildconfigurationID"/>
+
 </td>
 
 <td>
@@ -66,6 +68,8 @@ An optional description for the build configuration.
 
 ##### Build Number Format
 
+<anchor name="ConfiguringGeneralSettings-BuildNumberFormat"/>
+
 
 </td>
 
@@ -79,6 +83,8 @@ A pattern which is resolved and assigned to the [Build Number](#Build+Number+For
 <td>
 
 ##### Build Counter
+
+<anchor name="ConfiguringGeneralSettings-buildCounter"/>
 
 
 </td>
@@ -94,6 +100,8 @@ Specify the counter to be used in build numbering. Each build increases the buil
 <tr>
 
 <td id="publish-artifacts">
+
+<anchor name="ConfiguringGeneralSettings-PublishArtifacts"/>
 
 ##### Publish Artifacts
 
@@ -126,6 +134,8 @@ If the `stop` command is issued during the artifacts publishing, the publishing 
 
 <td>
 
+<anchor name="ConfiguringGeneralSettings-ArtifactPaths"/>
+
 [Artifact Paths](#Artifact+Paths)
 
 
@@ -139,6 +149,8 @@ Patterns to define artifacts of a build. After the first build is run, you can b
 </td></tr><tr>
 
 <td>
+
+<anchor name="ConfiguringGeneralSettings-buildOptions"/>
 
 [Build Options](#Build+Options)
 
@@ -297,6 +309,8 @@ Select the _Enable hanging build detection_ option to detect probably "hanging" 
 You can restrict running [personal builds](personal-build.md) by unchecking the __allow triggering personal builds__ option (on by default).
 
 #### Enable Status Widget
+
+<anchor name="ConfiguringGeneralSettings-EnableStatusWidget"/>
 
 This option enables retrieving the status and basic details of the last build in the build configuration without requiring any user authentication. Note that this also allows getting the status of any specific build in the build configuration (however, builds cannot be listed and no other information except the build status (`success/failure/internal error/cancelled`) is available).
 

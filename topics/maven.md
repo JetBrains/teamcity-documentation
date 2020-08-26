@@ -233,6 +233,8 @@ If Custom or Predefined settings are used, the path to the effective user settin
 
 ### Local Artifact Repository Settings
 
+<anchor name="Maven-LocalArtifactRepositorySettings"/>
+
 Select one of the following options:
 
 <table>

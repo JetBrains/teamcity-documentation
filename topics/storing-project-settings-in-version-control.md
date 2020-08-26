@@ -14,6 +14,9 @@ The versioned settings are stored in the `.teamcity` directory in the root of th
 
 ## Synchronizing Settings with VCS
 
+<anchor name="
+StoringProjectSettingsinVersionControl-SynchronizingSettingswithVCS"/>
+
 By default, the synchronization of the project settings with the version control is disabled.
 
 To enable it, go to __Project Settings | Versioned Settings__.
@@ -34,6 +37,8 @@ As soon as synchronization is enabled in a project, TeamCity will make an initia
 * import the settings from the VCS replacing the current project settings on the TeamCity server with those from version control.
 
 ### Defining Settings to Apply to Builds
+
+<anchor name="StoringProjectSettingsinVersionControl-DefiningSettingstoApplytoBuilds"/>
 
 There are two possible sources of build settings: (1) the current settings on the TeamCity server, that is the latest settings' changes applied to the server (either made via the UI, or via a commit to the `.teamcity` directory in the VCS root), and (2) the settings in the VCS on the revision selected for a build.  
 Therefore, it is possible to start builds with settings different from those currently defined in the build configuration. For projects with enabled versioned settings, you can instruct TeamCity which settings to take __when build starts__.    

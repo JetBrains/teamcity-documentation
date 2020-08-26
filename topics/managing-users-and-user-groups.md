@@ -11,6 +11,8 @@ If only the [default authentication](authentication-modules.md) is used, the pas
 
 ### Editing User Account
 
+<anchor name="ManagingUsersandUserGroups-EditingUserAccount"/>
+
 To edit/delete a user account, click its name on the __Users__ tab of the __Administration | Users__ page and use the corresponding option. The page provides several tabs allowing you to modify various user account settings
 
 ### General
@@ -27,6 +29,7 @@ The __Authentication Settings__ section appears if several authentication module
 
 ### VCS Usernames
 
+<anchor name="ManagingUsersandUserGroups-vcsUsername"/>
 
 This tab allows viewing and editing default usernames for different VCSs used by the current user.   
 Multiple usernames are supported for a VCS root type and for a separate VCS root: several newline\-separated values can be used for each VCS username.
@@ -50,6 +53,8 @@ Use this tab to view the roles assigned to the user directly and those inherited
 <anchor name="assigningRoles"/>
 
 ### Assigning Roles to Users
+
+<anchor name="ManagingUsersandUserGroups-Assigningrolestousers"/>
 
 [//]: # (AltHead: assigningRoles)
 

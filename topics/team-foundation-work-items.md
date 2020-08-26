@@ -73,7 +73,7 @@ Username
 
 
 Specify a user to access Team Foundation Server. This can be a user name or `DOMAIN\UserName` string.   
-Use blank to let TFS select a user account that is used to run the TeamCity Server. For VSTS use [personal access tokens](team-foundation-server.md#Authentication+Notes).
+Use blank to let TFS select a user account that is used to run the TeamCity Server. For VSTS use [personal access tokens](team-foundation-server.md#teamFoundationServerLive).
 
 
 </td></tr><tr>
@@ -102,7 +102,7 @@ Specify the work item id format in changeset comments in the form of regexp.
 
 </td></tr></table>
 
-[Learn more](team-foundation-server.md#Authentication+Notes) about authentication in Azure DevOps Services.
+[Learn more](team-foundation-server.md#teamFoundationServerLive) about authentication in Azure DevOps Services.
 
 ## Custom Resolved States
 

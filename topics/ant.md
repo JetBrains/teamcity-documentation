@@ -31,6 +31,8 @@ TeamCity collects detailed data from  Ant as to the performed activities, provid
 ### Ant Parameters
 [//]: # (AltHead: antAntParamsOptionDescription)
 
+<anchor name="Ant-AntParameters"/>
+
 <table><tr>
 
 <td>
@@ -135,6 +137,8 @@ To use the tool, specify `-lib "%teamcity.tool.ant-net-tasks%"` in [Additional A
 
  
 ### Java Parameters
+
+<anchor name="Ant-JavaParameters"/>
 
 <table><tr>
 
