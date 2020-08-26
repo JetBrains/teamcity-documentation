@@ -539,17 +539,19 @@ To do this, you need to output the following line:
 
 ```
 
-The `<path>` has to adhere to the same rules as the [Build Artifact specification](configuring-general-settings.md#Artifact+Paths) of the Build Configuration settings. The files matching the `<path>` will be uploaded and visible as the artifacts of the running build.
+The `<path>` has to adhere to the same rules as the [Build Artifact specification](configuring-general-settings.md#Artifact+Paths) of the __Build Configuration Settings__. The files matching the `<path>` will be uploaded and visible as the artifacts of the running build.
 
 The message should be printed after all the files are ready and no file is locked for reading.
+
+>To publish multiple artifact files in one archive, you need to configure the [_Artifact paths_](configuring-general-settings.md#Artifact+Paths) in __General Settings__ of a build configuration. If you use service messages, only artifacts for the last rule will be published to the archive.
+>
+{type="tip"}
 
 Artifacts are uploaded in the background, which can take time. Make sure the matching files are not deleted till the end of the build (for example, you can put them in a directory that is cleaned on the next build start, in a [temp directory](how-to.md#Make+Temporary+Build+Files+Erased+between+the+Builds), or use [Swabra](build-files-cleaner-swabra.md) to clean them after the build).
 
 <note>
 
-__Notes__:
-* If several `publishArtifacts` service messages are specified, only artifacts defined in the last message will be published. To configure publishing of multiple artifact files in one archive, use the [_Artifact paths_](configuring-general-settings.md#Artifact+Paths) field of the __General Settings__ page.
-* The process of publishing artifacts can affect the build, because it consumes network traffic, and some disk/CPU resources (should be pretty negligible for not large files/directories).
+The process of publishing artifacts can affect the build, because it consumes network traffic, and some disk/CPU resources (should be pretty negligible for not large files/directories).
 
 </note>
 
