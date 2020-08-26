@@ -66,6 +66,8 @@ The example above shows the core basics of snapshot dependencies as a straightfo
 
 ## Artifact Dependency
 
+<anchor name="DependentBuild-ArtifactDependency"/>
+
 <tip>
  
  Note that if both a snapshot dependency and an artifact dependency are configured for the same build configuration, in order for it to take artifacts from the build with the same sources, the __Build from the same chain__ option must be selected in the artifact dependency.

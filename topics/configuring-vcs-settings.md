@@ -110,6 +110,8 @@ Configure whether TeamCity will __[show changes from snapshot dependencies](buil
 
 <td>
 
+<anchor name="ConfiguringVCSSettings-excludeDefaultBranch"/>
+
 Exclude default branch changes from other branches
 
 </td>

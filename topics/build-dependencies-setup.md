@@ -214,7 +214,7 @@ With the VCS Trigger set up in the `pack setup` configuration,  the whole build 
 </chunk>
  
 <anchor name="show-changes-from-dependencies"/>
-<anchor name="ShowChangesfromDeps"/>
+<anchor name="BuildDependenciesSetup-ShowChangesfromDeps"/>
 
 __Changes from Dependencies__
  

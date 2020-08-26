@@ -17,6 +17,8 @@ There are several ways to create a build configuration template:
 
 ## Defining default template for project
 
+<anchor name="BuildConfigurationTemplate-Definingdefaulttemplateforproject"/>
+
 Default templates allow affecting all build configurations in this project and its subprojects.
 
 You can associate all the build configurations of the project with a default template using the __General Settings__ page of the project administration, by selecting a template from the  __Default template__ drop-down menu. The option is available if at least one template is defined in the project or its parent. All new build configurations will inherit the default template settings.
@@ -144,6 +146,8 @@ You can still customize the order of build steps in a template-based build confi
 
 ## Enforcing settings inherited from template
 [//]: # ([//]: # (AltHead:Enforced settings)
+
+<anchor name="BuildConfigurationTemplate-Enforcingsettingsinheritedfromtemplate"/>
 
 If you want to enforce some settings on all the build configurations in the project so that other users could not redefine them, TeamCity provides this ability for all of the build configurations in a project hierarchy. For instance, using enforced settings it is possible to set [agent side checkout](vcs-checkout-mode.md) everywhere, or ensure that all build configurations have some strict [execution timeout](build-failure-conditions.md#Common+build+failure+conditions). Currently, it is possible to enforce build features, options, and parameters. Build steps and build requirements can also be enforced.
 

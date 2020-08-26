@@ -131,6 +131,8 @@ a license key is required, [price options](https://www.jetbrains.com/teamcity/bu
 
 ## Editions
 
+<anchor name="LicensingPolicy-editions"/>
+
 There are two editions of TeamCity: __Professional__ and __Enterprise__.   
 The editions are equal in all the features except for the maximum number of build configurations allowed.   
 The same TeamCity distribution and installation are used for both editions. You can switch to the Enterprise edition by entering the appropriate license key. All the data is preserved when the edition is switched.
@@ -217,11 +219,13 @@ Once sufficient valid license keys are entered which cover the server configurat
 
 ## Ways to Obtain a License
 
+<anchor name="LicensingPolicy-WaystoObtainaLicense"/>
+
 The following ways to switch your server into the Enterprise mode exist:
 * [buy](http://www.jetbrains.com/teamcity/buy/) an Enterprise Server license;
-* request a 60\-days evaluation license on the [download page](http://www.jetbrains.com/teamcity/download/) (see details [above](#Editions));
-* use a TeamCity [EAP release](https://confluence.jetbrains.com/display/TW/TeamCity+EAP) (not stable, but comes bundled with a 60\-day nonrestrictive license);
-* use TeamCity for open\-source projects only and [request an open-source license](https://www.jetbrains.com/buy/opensource/?product=teamcity).
+* request a 60-days evaluation license on the [download page](http://www.jetbrains.com/teamcity/download/) (see details [above](#Editions));
+* use a TeamCity [EAP release](https://confluence.jetbrains.com/display/TW/TeamCity+EAP) (not stable, but comes bundled with a 60-day nonrestrictive license);
+* use TeamCity for open-source projects only and [request an open-source license](https://www.jetbrains.com/buy/opensource/?product=teamcity).
 
 ## Upgrading From Previous Versions
 

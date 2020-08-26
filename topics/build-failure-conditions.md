@@ -21,6 +21,8 @@ This option helps to deal with hanging builds and maintains agent efficiency.
 
 ## Additional Failure Conditions
 
+<anchor name="BuildFailureConditions-AdditionalFailureConditions"/>
+
 You can instruct TeamCity to mark a build as failed if some of its metrics (for example, code coverage or artifacts size) have changed compared to another build. For instance, you can mark a build as failed if the code duplicates number is higher than in the previous build.
 
 Another build failure condition causes TeamCity to mark build as failed when a certain text is present in the build log.
@@ -34,6 +36,8 @@ To add such failure condition, click __Add build failure condition__ and select 
 {type="tip"}
 
 ### Fail build on metric change
+
+<anchor name="BuildFailureConditions-Failbuildonmetricchange"/>
 
 When your build uses code examining tools like code coverage, duplicates finders, or inspections, it generates various numeric metrics. For these metrics, you can specify a threshold which, when exceeded, will fail a build.
 
@@ -93,6 +97,8 @@ You can add your own build metric. To do so, you need to modify the TeamCity con
 If your build publishes the `myMetric` value, you can use it as a criterion for a build failure.
 
 ### Fail build on specific text in build log
+
+<anchor name="BuildFailureConditions-Failbuildonspecifictextinbuildlog"/>
 
 TeamCity can inspect all lines in a build log for some particular text occurrence that indicates a build failure. When matching lines, the time and block name prefixes preceding each log message are ignored.
 
