@@ -736,6 +736,8 @@ This property is defined if the corresponding version(s) of .NET Framework runti
 
 This property value is set to the corresponding framework runtime version(s) path(s).
 
+Note that this parameter is defined only for the latest installed version per major release.   
+For example, if you have 3.5, 4.5, and 4.8 versions installed, this property will only be defined for 3.5 and 4.8. 4.5 will be ommitted as there is a later available version of .NET Framework 4. To explicitly define such a version, consider using the [`DotNetFrameworkTargetingPack<version>_Path`](#DotNetFrameworkTargetingPack) property instead.
 
 </td></tr><tr>
 
@@ -768,6 +770,8 @@ This property value is the path of the corresponding framework SDK version.
 </td></tr><tr>
 
 <td>
+
+<anchor name="DotNetFrameworkTargetingPack"/>
 
 `DotNetFrameworkTargetingPack<version>_Path`
 
