@@ -134,6 +134,8 @@ Maximum number of artifacts per build
 Limits the number of artifacts published per build.   
 This helps prevent memory consumption problems in case multiple builds publish many artifacts in parallel.
 
+The limit does not consider [hidden artifacts](build-artifact.md#Hidden+Artifacts).
+
 </td></tr>
 
 
