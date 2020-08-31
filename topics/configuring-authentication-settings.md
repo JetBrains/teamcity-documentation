@@ -7,23 +7,25 @@ TeamCity can authenticate users via an internal database, or can integrate into 
 
 Authentication is configured on the __Administration | Authentication__ page; the currently used authentication modules are also displayed here.
 
-TeamCity provides several preconfigured authentication options (presets) to cover the most common use\-case described [below](#Simple+Mode). The presets are combinations of authentication modules supported by TeamCity: three credentials authentication modules and two HTTP authentication modules:
+TeamCity provides several preconfigured authentication options (presets) to cover the most common [use case](#Simple+Mode). The presets are combinations of authentication modules supported by TeamCity. These are three credentials authentication modules and two HTTP authentication modules:
 
 * [Credentials Authentication Modules](#Credentials+Authentication+Modules)
   * [Built-in](#Built-in+Authentication)
   * [Windows Domain Authentication](#Windows+Domain+Authentication)
-  * [LDAP Integration](ldap-integration.md) (separate page)
+  * [LDAP Integration](ldap-integration.md)
   * [Token-Based Authentication](#Token-Based+Authentication)
 * [HTTP Authentication Modules](#HTTP+Authentication+Modules)
   * [Basic HTTP Authentication](#Basic+HTTP+Authentication)
-  * [NTLM HTTP Authentication](ntlm-http-authentication.md) (separate page)
+  * [NTLM HTTP Authentication](ntlm-http-authentication.md)
+  
+In terms of 2020.2 EAP, TeamCity also provides the GitHub.com OAuth and Bitbucket Cloud OAuth modules.
 
 <tip>
 
-If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure single sign\-on (SSO) via JetBrains Hub from TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).
+If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure single sign-on (SSO) via JetBrains Hub from the TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).
 </tip>
 
-When you first log in to TeamCity, the default authentication including the Built\-in and Basic HTTP Authentication modules is enabled and editing authentication settings in the [simple mode](#Simple+Mode) is active.
+When you first sign in to TeamCity, the default authentication including the Built-in and Basic HTTP Authentication modules is enabled and editing authentication settings in the [simple mode](#Simple+Mode) is active.
 
 * To modify the existing settings, click the __Edit__ link in the table next to the description of the enabled authentication module.
 * To switch to a different preconfigured scheme, use the __Load preset__ button. For more options, switch to the [Advanced mode](#Advanced+Mode).
@@ -35,8 +37,8 @@ Any changes made to authentication in the UI will be reflected in the `<[TeamCit
 
 ### Simple Mode
 
-Simple mode (default) allows you to select presets created for the most common use cases. To override the existing authentication settings, use the __Load preset...__ button, select one of the options and __Save__ your changes. The following presets are available:
-* Default ([built-in authentication](#Built-in+Authentication) \- [Token-Based Authentication](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
+The Simple mode (default) allows you to select presets created for the most common use cases. To override the existing authentication settings, use the __Load preset__ button, select one of the options and __Save__ your changes. The following presets are available:
+* Default ([built-in authentication](#Built-in+Authentication) - [Token-Based Authentication](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
 * [LDAP](ldap-integration.md)
 * Active directory ([LDAP](ldap-integration.md) with [NTLM](ntlm-http-authentication.md) and [Token-Based Authentication](rest-api.md))
 * Microsoft Windows Domain ([NTLM](ntlm-http-authentication.md), [Token-Based Authentication](rest-api.md) and [Basic HTTP](rest-api.md))
@@ -55,7 +57,7 @@ Since TeamCity 10.0.2, if the System Administrator creates users without passwor
  It is possible to use a combination of internal and external authentication. The recommended approach is to configure [LDAP Integration](ldap-integration.md) for your internal employees first and then to add [Built-in](#Built-in+Authentication) authentication for external users.
  
 1. Switch to advanced mode with the corresponding link on the __Administration | Authentication__ page.
-2. Click __Add Module__ and select a module from the drop\-down.
+2. Click __Add Module__ and select a module from the drop-down menu.
 3. Use the properties available for modules by selecting/deselecting checkboxes in the __Add Module__ dialog.
 4. Click __Apply__ and __Save__ your changes.
 
@@ -71,13 +73,13 @@ The TeamCity list of users and authentication modules just map external credenti
 
 Handling of the user mapping by the bundled authentication modules:
 
-* Built\-in authentication stores a TeamCity\-maintained password for each user
+* Built\-in authentication stores a TeamCity-maintained password for each user
 * Windows Domain authentication allows specifying the default domain and assumes the Domain account name is equal to the TeamCity user. The domain account can be edited on the user profile page
 * LDAP Integration allows setting LDAP property to get TeamCity username from user's LDAP entry
 
 Care should be taken when modifying authentication settings: there can be a case when the administrator cannot login after changing authentication modules:
    
-Let's imagine that the administrator had the "jsmith" TeamCity username and used the default authentication. Then the authentication module was changed to Windows domain authentication (i.e. Windows domain authentication module was added and the default one was removed). If, for example, the Windows domain username of that administrator is "john.smith", he/she is not able to login anymore: he/she cannot login using the default authentication since it is disabled, and cannot login using Windows domain authentication since his/her Windows domain username is not equal to TeamCity username. The solution nevertheless is quite simple: the administrator can login using the super user account and change his/her TeamCity username or specify his/her Windows domain username on his/her own profile page.
+Let's imagine that the administrator had the "jsmith" TeamCity username and used the default authentication. Then the authentication module was changed to Windows domain authentication (i.e. Windows domain authentication module was added and the default one was removed). If, for example, the Windows domain username of that administrator is "john.smith", they will not able to sign in anymore: they cannot login using the default authentication since it is disabled and cannot login using Windows domain authentication since their Windows domain username is not equal to the TeamCity username. The solution nevertheless is quite simple: the administrator can sign in using the superuser account and change their TeamCity username or specify their Windows domain username on their own profile page.
 
 ### Special User Accounts
 
@@ -89,7 +91,7 @@ By default, TeamCity has a [Super User](super-user.md) account with maximum perm
 
 By default, TeamCity uses the built-in authentication, meaning that users and their passwords are maintained by TeamCity.
 
-When logging to TeamCity for the first time, the user will be prompted to create the TeamCity username and password which will be stored in TeamCity and used for authentication. If you installed TeamCity and logged into it, it means that built\-in authentication is enabled and all user data is stored in TeamCity.
+When logging to TeamCity for the first time, the user will be prompted to create the TeamCity username and password which will be stored in TeamCity and used for authentication. If you installed TeamCity and logged into it, it means that built-in authentication is enabled and all user data is stored in TeamCity.
 
 In the beginning the user database is empty and new users are either [added by the TeamCity administrator](managing-users-and-user-groups.md#Creating+New+User) or users are self\-registered: the default settings allow the users to register from the login page. All newly created users belong to the [All Users](user-group.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles should [be granted](managing-roles.md) via the __All Users__ group.
 
@@ -105,7 +107,7 @@ This authentication module is enabled by default.
 
 Allows user login using Windows domain name and password.The credential check is performed on the TeamCity server side, so the server should be aware of the domain(s) users use to log in.The supported syntax for the username is `DOMAIN\user.name` as well as `<username>@<domain>`.
 
-In addition to logging in using the login form, you can enable [NTLM HTTP Authentication](ntlm-http-authentication.md) single sign\-on.    
+In addition to logging in using the login form, you can enable [NTLM HTTP Authentication](ntlm-http-authentication.md) single sign-on.    
 If you select the "Microsoft Windows Domain" preset, in addition to the login via a Windows domain, the [Basic HTTP](#Basic+HTTP+Authentication) and [NTLM](ntlm-http-authentication.md) authentication modules are enabled by default.
 
 #### Specifying Default Domain
@@ -130,7 +132,7 @@ To disable new user registration on login:
 
 If your TeamCity server runs under Linux, JCIFS library is used for the Windows domain login. This only supports Windows domain servers with SMB (SMBv1) enabled. SMB2 is not supported.The library is configured using the properties specified in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/ntlm-config.properties` file. Changes to the file take effect immediately without the server restart.
 
-JCIFS library settings which cannot be changed in run\-time or settings to affect HTTP NTLM settings can only be set via a properties file passed via `-Djcifs.properties` JVM option.
+JCIFS library settings which cannot be changed in runtime or settings to affect HTTP NTLM settings can only be set via a properties file passed via `-Djcifs.properties` JVM option.
 
 If the default settings do not work for your environment, refer to [http://jcifs.samba.org/src/docs/api/](http://jcifs.samba.org/src/docs/api/) for all available configuration properties.   
 If the library does not find the domain controller to authenticate against, consider adding the `jcifs.netbios.wins` property to the `ntlm-config.properties` file with the address of your WINS server. For other domain services locating properties, see [http://jcifs.samba.org/src/docs/resolver.html](http://jcifs.samba.org/src/docs/resolver.html).
