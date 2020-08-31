@@ -159,7 +159,7 @@ Besides that, TeamCity cleans local Docker Caches using the command:
 
 ### Service Message to Report Pushed Image
 
-If TeamCity (for some reason) cannot determine that an image has been pushed, a user can send a special [Service Message](build-script-interaction-with-teamcity.md) to report this information to the TeamCity server:
+If TeamCity (for some reason) cannot determine that an image has been pushed, a user can send a special [service message](service-messages.md) to report this information to the TeamCity server:
 
 
 ```Shell

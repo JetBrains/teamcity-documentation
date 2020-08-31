@@ -1101,7 +1101,7 @@ __Since TeamCity 9.1__, the locations are exposed via `teamcity.dotnet.mstest.N.
 
 #### Nested test reporting
 
-Previously TeamCity supported a case when one test could have been reported from within another test using [service messages](build-script-interaction-with-teamcity.md). Now, after the fix of [TW-40319](https://youtrack.jetbrains.com/issue/TW-40319), starting another test finishes the currently started test in the same "flow". To still report tests from within other tests, you will need to specify another [flowId](build-script-interaction-with-teamcity.md) in the nested test service messages.
+Previously TeamCity supported a case when one test could have been reported from within another test using [service messages](service-messages.md). Now, after the fix of [TW-40319](https://youtrack.jetbrains.com/issue/TW-40319), starting another test finishes the currently started test in the same "flow". To still report tests from within other tests, you will need to specify another [flowId](build-script-interaction-with-teamcity.md) in the nested test service messages.
 
 #### REST API
 {id="rest-api-4"}

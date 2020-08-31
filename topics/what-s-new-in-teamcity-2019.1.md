@@ -152,7 +152,7 @@ Now TeamCity offers a more elegant way of using a service message to do that jus
 echo ##teamcity[buildStop comment='canceling comment' readdToQueue='true']
 ```
 
-Read more about [TeamCity service messages](build-script-interaction-with-teamcity.md).
+Read more about [TeamCity service messages](service-messages.md).
 
 
 ## Faster agents upgrade

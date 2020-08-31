@@ -49,7 +49,7 @@ To create a meta-runner, follow these steps (described below in more detail):
 2. [Make sure the build configuration is working](#Verifying+Build+Configuration+Works+Properly).
 3. [Extract a meta-runner to the desired project](#Extracting+and+Using+Meta-Runner).
 
-In this example, we will create a meta-runner to publish some artifacts to TeamCity with the help of the corresponding [service message](build-script-interaction-with-teamcity.md#Publishing+Artifacts+while+the+Build+is+Still+in+Progress).
+In this example, we will create a meta-runner to publish some artifacts to TeamCity with the help of the corresponding [service message](service-messages.md#Publishing+Artifacts+while+the+Build+is+Still+in+Progress).
 
 Usually artifacts configured in a build configuration are published when the build finishes. However, sometimes for long builds with multiple build steps we need artifacts faster. In this example, we will create a runner which can be inserted between any build steps and can be configured to publish artifacts produced by previous steps.
 

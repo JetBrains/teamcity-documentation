@@ -1043,8 +1043,8 @@ Milliseconds
 #### Custom Build Metrics
 
 If the predefined build metrics do not cover your needs, you can report custom metrics to TeamCity from your build script and use them to create a custom chart. There are two ways to report custom metrics to TeamCity:
-* using [service messages](build-script-interaction-with-teamcity.md#Reporting+Build+Statistics) from your build,
-* or (obsolete approach) using the [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md#Providing+data+using+the+teamcity-info.xml+file) file.
+* using [service messages](service-messages.md) from your build,
+* or (obsolete approach) using the [`teamcity-info.xml`](teamcity-info-xml.md) file.
 Note that custom value keys should be unique and should not interfere with value keys predefined by TeamCity.
 
 <seealso>

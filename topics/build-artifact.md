@@ -17,7 +17,7 @@ You can automate artifacts downloading as described in the [Patterns For Accessi
 In case of the built-in storage, TeamCity keeps artifacts on the disk in a directory structure that can be accessed directly (for example, by configuring the operating system to share the directory over the network). The storage format is described in [TeamCity Data Directory](teamcity-data-directory.md#artifacts). The artifacts are stored on the server "as is" without additional compression. By default, the artifacts are stored under the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/artifacts directory which [can be changed](teamcity-configuration-and-maintenance.md).   
 You can [configure an external artifacts](configuring-artifacts-storage.md#External+Artifacts+Storage) storage to replace the built-in one.
 
-Build artifacts can also be uploaded to the server while the build is still running. To instruct TeamCity to upload the artifacts, the build script should be modified to send [service messages](build-script-interaction-with-teamcity.md#Publishing+Artifacts+while+the+Build+is+Still+in+Progress).
+Build artifacts can also be uploaded to the server while the build is still running. To instruct TeamCity to upload the artifacts, the build script should be modified to send [service messages](service-messages.md#Publishing+Artifacts+while+the+Build+is+Still+in+Progress).
 
 ## Hidden Artifacts
 

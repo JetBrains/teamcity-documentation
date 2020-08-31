@@ -12,7 +12,7 @@ A build number can be:
 * [Referenced as a property](predefined-build-parameters.md)
 * [Shared for builds connected by a dependency](how-to.md#Share+the+Build+number+for+Builds+in+a+Chain+Build)	
 * [Used in artifact dependencies](artifact-dependencies.md)	
-* [Set with help of service messages](build-script-interaction-with-teamcity.md#Reporting+Build+Number)
+* [Set with help of service messages](service-messages.md#Reporting+Build+Number)
 
 
  <seealso>

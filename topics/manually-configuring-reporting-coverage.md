@@ -6,7 +6,7 @@ For other cases, when the .NET code coverage is collected by the build script an
 
 Make sure the build script actually collects the code coverage according to the coverage engine documentation.
 
-Report the collected data to TeamCity via [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md).   
+Report the collected data to TeamCity via [Build Script Interaction](build-script-interaction-with-teamcity.md).   
 
 First, the build script needs to let TeamCity know details on the coverage engine with the "dotNetCoverage" message.   
 Then, the build script can issue one or several "importData" messages to import the actual code coverage data files collected.   
