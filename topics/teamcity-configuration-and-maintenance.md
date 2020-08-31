@@ -117,7 +117,28 @@ Maximum build artifact file size
 
 Maximum size in bytes. KB, MB, GB or TB suffixes are allowed. \-1 indicates no limit
 
-</td></tr><tr>
+</td></tr>
+
+<tr>
+
+<td>
+
+Maximum number of artifacts per build
+
+</td>
+
+<td>
+
+(In terms of 2020.2 EAP)
+
+Limits the number of artifacts published per build.   
+This helps prevent memory consumption problems in case multiple builds publish many artifacts in parallel.
+
+</td></tr>
+
+
+
+<tr>
 
 <td>
 
