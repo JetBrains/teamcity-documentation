@@ -17,9 +17,9 @@ This option helps to deal with hanging builds and maintains agent efficiency.
 * _if the build process exit code is not zero_: Mark the build as failed if the build process doesn't exit successfully.
 * _if at least one test failed_: Mark the build as failed if the build fails at least one test. If this option is disabled, the build can be marked successful even if it fails to pass a number of tests. Regardless of this option, TeamCity will run all build steps.
   <anchor name="test-retry"/>
-  * _support test retry: successful test run mutes previous test failure_ – if enabled, TeamCity will mute a test if it fails and then succeeds within the same build. Such tests will not affect the build status. This is convenient for configurations with flaky tests that alternately fail and succeed when applied to the same source revision. 
+  * (in terms of 2020.2 EAP) _support test retry: successful test run mutes previous test failure_ – if enabled, TeamCity will mute a test if it fails and then succeeds within the same build. Such tests will not affect the build status. This is convenient for configurations with flaky tests that alternately fail and succeed when applied to the same source revision. 
 * _if an error message is logged by build runner_: Mark the build as failed if the build runner reports an error while building.
-* __if an out-of-memory problem or crash is detected (Java only)_: Mark the build as failed if a crash of the JVM is detected, or Java has out of memory problems. If possible, TeamCity will upload crash logs and memory dumps as artifacts for such builds.
+* _if an out-of-memory problem or crash is detected (Java only)_: Mark the build as failed if a crash of the JVM is detected, or Java has out of memory problems. If possible, TeamCity will upload crash logs and memory dumps as artifacts for such builds.
 
 ## Additional Failure Conditions
 
