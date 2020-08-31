@@ -459,6 +459,14 @@ To resolve this issue, we suggest that you use Xcode 11 instead. To workaround t
 
 ## Issues per TeamCity versions
 
+### 2020.1.3 Known Issues
+
+#### Hanging Re-run Build dialog for chained builds with no snapshot dependencies
+
+If you try to re-run a build that has an artifact dependency but not snapshot dependency on another build, the _Re-run build_ dialog will not load.
+
+This issue will be fixed in TeamCity 2020.1.4. To workaround it in version 2020.1.3, follow [this instruction](https://youtrack.jetbrains.com/issue/TW-67351#focus=Comments-27-4355962.0-0).
+
 ### 2020.1.1 Known Issues
 
 #### Missing Expand button for project list

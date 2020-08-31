@@ -1188,9 +1188,9 @@ For an advanced integration a custom [TeamCity plugin](https://plugins.jetbrains
 
 __Presenting data in TeamCity__
 
-The build progress can be reported to TeamCity via [service messages](build-script-interaction-with-teamcity.md#Reporting+Build+Progress) and build status text can also be [updated](build-script-interaction-with-teamcity.md#Reporting+Build+Status).
+The build progress can be reported to TeamCity via [service messages](service-messages.md#Reporting+Build+Progress) and build status text can also be [updated](service-messages.md#Reporting+Build+Status).
 
-For testing tools, if they are not yet [supported](testing-frameworks.md) you can report tests progress to TeamCity from the build via [test-related service messages](build-script-interaction-with-teamcity.md#Reporting+Tests) or generate one of the supported [XML reports](xml-report-processing.md) in the build and let it be imported via a service message of configured XML Report Processing build feature.
+For testing tools, if they are not yet [supported](testing-frameworks.md) you can report tests progress to TeamCity from the build via [test-related service messages](service-messages.md#Reporting+Tests) or generate one of the supported [XML reports](xml-report-processing.md) in the build and let it be imported via a service message of configured XML Report Processing build feature.
 
 To present the results for a generic report, the approach might be to generate HTML report in the build script, pack it into archive and publish as a build artifact. Then configure a [report tab](including-third-party-reports-in-the-build-results.md) to display the HTML report as a tab on build's results.
 
@@ -1234,7 +1234,7 @@ However, there are plenty of other coverage tools out there, like [Cobertura](ht
 
 In order to achieve similar experience with these tools you can:
 * publish coverage HTML report as TeamCity artifact: most of the tools produce coverage report in HTML format, you can publish it as artifact and [configure report tab](including-third-party-reports-in-the-build-results.md) to show it in TeamCity. If artifact is published in the root artifact directory and its name is `coverage.zip` and there is `index.html` file in it, report tab will be shown automatically. As to running an external tool, check [Integrate with Build and Reporting Tools](#Integrate+with+Build+and+Reporting+Tools).
-* extract coverage statistics from coverage report and publish [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) to TeamCity with help of [service message](build-script-interaction-with-teamcity.md#Reporting+Build+Statistics): if you do so, you'll see coverage chart on build configuration Statistics tab and also you'll be able to fail a build with the help of a build failure condition on a metric change (for example, you can fail build if the coverage drops).
+* extract coverage statistics from coverage report and publish [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) to TeamCity with help of [service message](service-messages.md#Reporting+Build+Statistics): if you do so, you'll see coverage chart on build configuration Statistics tab and also you'll be able to fail a build with the help of a build failure condition on a metric change (for example, you can fail build if the coverage drops).
 
 <note>
 

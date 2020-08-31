@@ -115,7 +115,7 @@ Select when to publish artifacts:
 * "_Only if build status is successful_": publish artifacts at the last step of a build if all previous steps have been completed successfully. TeamCity checks the current build status on the server before publishing artifacts.
 * "_Always, even if build stop command was issued_": publish artifacts for all builds, even for interrupted ones (for example, after the `stop` command was issued or after the time-out, specified in the build failure conditions).
 
-This setting does not affect artifacts publishing configured in a [build script](build-script-interaction-with-teamcity.md#Publishing+Artifacts+while+the+Build+is+Still+in+Progress).
+This setting does not affect artifacts publishing configured in a [build script](service-messages.md#Publishing+Artifacts+while+the+Build+is+Still+in+Progress).
 
 <note>
 
@@ -242,7 +242,7 @@ A build number format example:
 `1.0.%build.counter%.%build.vcs.number.My_Project_svn%`
 </tip>
 
-Though not required, it is still highly recommended to ensure the build numbers are unique. Please include the build counter in the build number and do not reset the build counter to lesser values. It is also possible to change the build number from within your build script. For details, refer to [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md#Reporting+Build+Number).
+Though not required, it is still highly recommended to ensure the build numbers are unique. Please include the build counter in the build number and do not reset the build counter to lesser values. It is also possible to change the build number from within your build script. For details, refer to [Build Script Interaction with TeamCity](service-messages.md#Reporting+Build+Number).
 
 ### Artifact Paths
 

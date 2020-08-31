@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Reporting Test Metadata)
 
 A test run in TeamCity can be associated with some additional information (metadata), complementing test status, execution time, and output. This information can be used to provide extra logs, screenshots, numeric values, tags, and so on.   
-You can now use [service messages](build-script-interaction-with-teamcity.md#Service+Messages) to report this kind of additional test data in TeamCity and then view it in the TeamCity web UI.
+You can now use [service messages](service-messages.md) to report this kind of additional test data in TeamCity and then view it in the TeamCity web UI.
 
 ## Reporting additional test data
 

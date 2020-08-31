@@ -39,7 +39,7 @@ We want to run the PHPUnit configuration that's provided with PHPExcel source co
 phpunit \-c phpunit.xml
 ```
 
-By default, TeamCity will import the test results provided by PHPUnit. However we can also report real\-time test results to TeamCity, so that we can already see results during a build run before it's even finished. Using [a wrapper around PHPUnit](https://github.com/maartenba/phpunit-runner-teamcity) which uses [service messages](build-script-interaction-with-teamcity.md) to report build results. Locate the wrapper somewhere on the build agent or have the build agent download it from the above GitHub repository directly using a second VCS root.
+By default, TeamCity will import the test results provided by PHPUnit. However we can also report real\-time test results to TeamCity, so that we can already see results during a build run before it's even finished. Using a [wrapper around PHPUnit](https://github.com/maartenba/phpunit-runner-teamcity) which uses [service messages](service-messages.md) to report build results. Locate the wrapper somewhere on the build agent or have the build agent download it from the above GitHub repository directly using a second VCS root.
 
 
 <img src="test-running.png" width="700"/>

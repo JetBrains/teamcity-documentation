@@ -8,7 +8,7 @@ TeamCity NUnit Addin supports __NUnit prior to version 3.0__. For later versions
 
 If you run NUnit tests via the [NUnit console](http://www.nunit.org/index.php?p=nunit-console&amp;r=2.2.10) and want TeamCity to track the test results without having to launch the TeamCity test runner, the best solution is to use TeamCity Addin for NUnit. You can plug this addin into NUnit, and the tests will be automatically reported to the TeamCity server.
 
-Alternatively, you can opt to use the [XML Report Processing](xml-report-processing.md) build feature, or manually configure reporting tests by means of [service messages](build-script-interaction-with-teamcity.md#Service+Messages).
+Alternatively, you can opt to use the [XML Report Processing](xml-report-processing.md) build feature, or manually configure reporting tests by means of [service messages](service-messages.md).
 
 To be able to review test results in TeamCity, do the following:
 1. In your build, set the path to the TeamCity Addin to the system property `teamcity.dotnet.nunitaddin` (for MSBuild it would be `teamcity_dotnet_nunitaddin`), and add the version of NUnit at the end of this path. For example:
