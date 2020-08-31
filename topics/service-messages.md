@@ -346,7 +346,7 @@ __Test suite messages:__ Test suites are used to group tests. TeamCity displays 
 
 All the individual test messages are to appear between `testSuiteStarted` and `testSuiteFinished` (in that order) with the same `name` attributes.
 
-##### Nested test reporting
+#### Nested test reporting
 
 Prior to TeamCity 9.1, one test could have been reported from within another test (see the example at the end of this section). In the later versions, starting another test finishes the currently started test in the same _flow_. To still report tests from within other tests, you will need to specify another [`flowId`](#Message+FlowId) in the nested test service messages.
 
@@ -424,6 +424,15 @@ Here is a longer example of test reporting with service messages:
 ##teamcity[testSuiteFinished name='nestedSuiteName']
 ##teamcity[testSuiteFinished name='suiteName']
 
+```
+
+#### Enabling test retry
+
+In terms of 2020.2 EAP, you can enable the support of _test retry_ for a build configuration. With this option enabled, the successful run of a test will mute its previous failure, which means that TeamCity will mute a test if it fails and then succeeds within the same build.   
+Such tests will not affect the build status.
+
+```Shell
+##teamcity[testRetrySupport enabled=’true’]
 ```
 
 #### Interpreting test names
