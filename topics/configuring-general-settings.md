@@ -7,37 +7,37 @@ When creating a build configuration, specify the following settings:
 
 <td>
 
-##### Setting
+Setting
 
 
 </td>
 
 <td>
 
-##### Description
+Description
 
 
 </td></tr><tr>
 
 <td>
 
-##### Name
+Name
 
 
 </td>
 
 <td>
 
-The configuration name.
+The build configuration name.
 
 
 </td></tr><tr>
 
-<td>
-
-##### Build Configuration ID
+<td id="build-configuration-id">
 
 <anchor name="ConfiguringGeneralSettings-BuildconfigurationID"/>
+
+Build Configuration ID
 
 </td>
 
@@ -47,13 +47,13 @@ A unique [ID](identifier.md) of the configuration across all build configuration
 Make sure you give a globally unique id to the build configuration and prefix it with the project ID.   
 After a build configuration is created, its ID can be changed, and it is highly recommended to make corresponding changes to the bookmarked links to the web UI and calls to [REST API](rest-api.md) using the ID.
 
-
 </td></tr><tr>
 
 <td>
 
-##### Description
-{id="description-1"}
+<anchor name="build-config-description"/>
+
+Description
 
 </td>
 
@@ -66,26 +66,24 @@ An optional description for the build configuration.
 
 <td>
 
-##### Build Number Format
-
 <anchor name="ConfiguringGeneralSettings-BuildNumberFormat"/>
 
+Build Number Format
 
 </td>
 
 <td>
 
-A pattern which is resolved and assigned to the [Build Number](#Build+Number+Format) on the build start.
+A pattern which is resolved and assigned to the [build number](#Build+Number+Format) on the build start.
 
 
 </td></tr><tr>
 
-<td>
-
-##### Build Counter
+<td id="build-counter">
 
 <anchor name="ConfiguringGeneralSettings-buildCounter"/>
 
+Build Counter
 
 </td>
 
@@ -103,7 +101,7 @@ Specify the counter to be used in build numbering. Each build increases the buil
 
 <anchor name="ConfiguringGeneralSettings-PublishArtifacts"/>
 
-##### Publish Artifacts
+Publish Artifacts
 
 </td>
 
@@ -170,7 +168,6 @@ Specify additional options for the builds of this build configuration.
 </td></tr></table>
 
 ### Build Number Format
-{id="build-number-format-1"}
 
 In the __Build number format__ field you can specify a pattern which is resolved and assigned to the [Build Number](build-number.md) on the build start.
 
@@ -202,7 +199,7 @@ Description
 
 <td>
 
-The build counter unique for each build configuration. It is maintained by TeamCity and will resolve to a next integer value on each new build start. The current value of the counter can be edited in the [Build counter](#Build+Counter) field.
+The build counter unique for each build configuration. It is maintained by TeamCity and will resolve to a next integer value on each new build start. The current value of the counter can be edited in the [Build counter](#build-counter) field.
 
 
 </td></tr><tr>
@@ -281,7 +278,7 @@ The target paths cannot be absolute. Non-relative paths will produce errors duri
 * `target_directory` — (optional) the directory in the resulting build's artifacts that will contain the files determined by the left part of the pattern. 
 * `target_archive` — (optional) the path to the archive to be created by TeamCity by packing build artifacts determined in the left part of the pattern. TeamCity treats the right part of the pattern as `target\_archive` whenever it ends with a [supported archive extension](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+an+Archive), that is `.zip`, `.7z`, `.jar`, `.tar.gz`, or `.tgz`.
 
-#### Examples:
+Examples:
 
 * `install.zip` — publish a file named `install.zip` in the build artifacts.
 * `dist` — publish the content of the dist directory.

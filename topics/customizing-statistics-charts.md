@@ -100,7 +100,7 @@ To show the code coverage chart related only to a particular build configuration
 
 ```
 
-where __myConf1__ and __myConf2__ values are [build configuration IDs](configuring-general-settings.md#Build+Configuration+ID). However, note that build configurations specified should contain code coverage data for the charts to be shown. If the data is available, two charts will be shown (one for each specified build configuration).
+where __myConf1__ and __myConf2__ values are [build configuration IDs](configuring-general-settings.md#build-configuration-id). However, note that build configurations specified should contain code coverage data for the charts to be shown. If the data is available, two charts will be shown (one for each specified build configuration).
 
  <seealso>
         <category ref="concepts">
