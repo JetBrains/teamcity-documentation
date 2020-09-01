@@ -1377,7 +1377,7 @@ If you download artifacts from within a TeamCity build, consider [using values](
  
 #### Changes
  
-__`<changes>`__ is meant to represent changes the same way as displayed in the build's [Changes](working-with-build-results.md#Changes) in TeamCity UI. In the most cases these are the commits between the current and previous build. The `<changes>` tag is not included into the build by default, it has the href attribute only. If you execute the request specified in the href, you'll get the required changes.
+__`<changes>`__ is meant to represent changes the same way as displayed in the build's [Changes](working-with-build-results.md#Changes) in TeamCity UI. In the most cases these are the commits between the current and previous build. The `<changes>` tag is not included into the build by default, it has the `href` attribute only. If you execute the request specified in `href`, you'll get the required changes.
 
 <table>
 
@@ -1604,6 +1604,58 @@ Get all the builds whose artifacts were downloaded by the build with the given I
 GET http://teamcity:8111/app/rest/builds?locator=artifactDependency:(to:(id:<build ID>),recursive:false)
  
 ```
+
+</td></tr>
+
+</table>
+
+#### VCS Labels
+
+
+<table>
+
+<tr><td width="200"></td><td></td></tr>
+<tr><td>
+
+Get [VCS labels](vcs-labeling.md) of a build
+
+</td>
+
+<td>
+
+by adding the `vcsLabels` field:
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds?locator=<buildLocator>&fields=build(id,vcsLabels:$long)
+
+```
+
+or via a separate request:
+
+```Shell
+
+GET http://teamcity:8111/app/rest/builds/<buildLocator>/vcsLabels?fields=status,text
+
+```
+
+</td></tr>
+
+<tr><td>
+
+Add a VCS label to a build
+
+</td>
+
+<td>
+
+```Shell
+
+POST http://teamcity:8111/app/rest/builds/<buildLocator>/vcsLabels?locator=<vcsRootInstanceLocator>&fields=build(id,vcsLabels)
+
+```
+
+where `locator` is optional and specifies where to put labels; if not specified, a label will be added to all instances of a VCS root.
 
 </td></tr>
 
