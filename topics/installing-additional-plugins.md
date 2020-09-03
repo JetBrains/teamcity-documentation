@@ -1,7 +1,7 @@
 [//]: # (title: Installing Additional Plugins)
 [//]: # (auxiliary-id: Installing Additional Plugins)
 
-You can get TeamCity plugins in the [plugin repository](https://plugins.jetbrains.com/?teamcity).
+You can get TeamCity plugins in the [plugin repository](https://plugins.jetbrains.com/teamcity).
 
 ## Installing a plugin from JetBrains Plugins repository
 
