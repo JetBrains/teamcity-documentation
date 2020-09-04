@@ -14,7 +14,7 @@ TeamCity 2020.1 offers three bundled versions of JaCoCo:
 
 To ensure the coverage data is collected properly, make sure your tests run in (one or more) separate JVMs.
 * Ant and Intellij Idea Project runners: this is the default setting for [TestNG](http://testng.org/doc/ant.html), for [Junit test task](http://ant.apache.org/manual/Tasks/junit.html), set `fork=true`.
-* Maven runner: set `forkCount` to a value [higher than](http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html).
+* Maven runner: set `forkCount` to a value [higher than 0](http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html).
 * Gradle runner: this is the default setting for [Gradle tests](https://gradle.org/docs/current/dsl/org.gradle.api.tasks.testing.Test.html).
 
 </tip>
