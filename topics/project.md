@@ -8,7 +8,11 @@ In TeamCity, user [roles and permissions](role-and-permission.md) are managed on
 ## Project Hierarchy
 
 Projects can be nested and organized into a tree allowing for hierarchical display and settings propagation. The hierarchy is defined by the project administrators and is the same for all the TeamCity users.   
-You can view the hierarchy on the overview page, in the __Projects__ popup, and in breadcrumbs.
+You can view the hierarchy on the overview page, in the __Projects__ pop-up menu, and in breadcrumbs.
+
+>To see the Projects menu, click the arrow button next to the _Projects_ link in the upper left corner, or use the "P" keyboard shortcut.
+>
+{type="tip"}
 
 ### Settings Propagation
 
