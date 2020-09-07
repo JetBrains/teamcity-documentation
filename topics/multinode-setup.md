@@ -144,6 +144,12 @@ backend tc-ha
 
 ```
 
+<tip>
+    
+After configuring the proxy, remember to update the _Server URL_ on the __Administration | Global Settings__ page.
+    
+</tip>
+
 ### Firewall Settings
 
 Firewall settings should allow accessing secondary nodes from the agents and from the main TeamCity server (the main server also communicates with the nodes by HTTP).
