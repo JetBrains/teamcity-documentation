@@ -124,7 +124,7 @@ If a dependency fails, you can manage the status of the dependent build by selec
 
 * __Run build, but add problem__: the dependent build will be run and the problem will be added to it, changing its status to failed (if problem was not muted earlier)
 * __Run build, but do not add problem__: the dependent build will be run and no problems will be added
-* __Make build failed to start__: the dependent build will not run and will be marked as "Failed to start"
+* __Mark build as failed to start__: the dependent build will not run and will be marked as "Failed to start"
 * __Cancel build__: the dependent build will not run and will be marked as "Canceled".
 
 
