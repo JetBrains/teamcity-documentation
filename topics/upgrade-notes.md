@@ -1,6 +1,14 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2020.1.3 to 2020.1.4
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2020-1-4"}
+
+* Bundled Amazon Corretto Java has been updated to version 11.0.8 in the TeamCity server installers and Docker images.
+* Mercurial, dropped in [version 2020.1.2](#Changes+from+2020.1.1+to+2020.1.2), is again supported in the Windows Server Core agent Docker images.
+
 ## Changes from 2020.1.2 to 2020.1.3
 
 * The [.NET](net.md) build runner now supports earlier versions of Visual Studio and MSBuild. Currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.

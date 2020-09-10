@@ -1,7 +1,11 @@
 [//]: # (title: Configuring Cross-Server Projects Pop-up Menu)
-[//]: # (auxiliary-id: Configuring Cross-Server Projects Pop-up Menu)
+[//]: # (auxiliary-id: Configuring Cross-Server Projects Pop-up Menu;Configuring Cross-Server Projects Popup)
 
 The TeamCity _Projects_ pop-up menu allows browsing projects and build configurations on multiple servers, so that when a project or a build configuration is selected, the page is opened on the right server.
+
+>To see the Projects menu, click the arrow button next to the _Projects_ link in the upper left corner, or use the "P" keyboard shortcut.
+>
+{type="tip"}
 
 The Projects pop-up menu uses separate REST API requests to get the list of projects to display. If peer servers are configured, REST API calls are made to them as well.   
 For these REST API calls to work, the servers [need to be configured](rest-api.md#CORS-support) to allow CORS requests from all of their peers. Besides, they must be accessible from the user's browser and the user must be logged in on those servers.

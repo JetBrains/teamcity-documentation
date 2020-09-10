@@ -33,7 +33,7 @@ Depending on the dependencies, topology builds can run sequentially or in parall
 Behavior on the build chain continuation in case of a build failure is customizable via the snapshot dependency options. For each failed or failed to start dependency you can select one of the four options:
  * __Run build, but add problem__: the dependent build will be run and the problem will be added to it, changing its status to failed (if a problem was not muted earlier)
  * __Run build, but do not add problem__: the dependent build will be run and no problems will be added
- * __Make build failed to start__: the dependent build will not run and will be marked as "Failed to start"
+ * __Mark build as failed to start__: the dependent build will not run and will be marked as "Failed to start"
  * __Cancel build__: the dependent build will not run and will be marked as "Canceled".
 
 A build of a chain can [reference parameters](predefined-build-parameters.md#Dependencies+Properties) from the preceding builds via `dep.<configurationId>.<parameterName>` syntax.

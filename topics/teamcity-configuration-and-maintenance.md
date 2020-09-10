@@ -196,6 +196,8 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 
 </td></tr></table>
 
+<anchor name="TeamCityConfigurationandMaintenance-EncryptionSettings"/>
+
 ## Encryption Settings
 {id="encryption-settings" auxiliary-id="Encryption Settings"}
 
