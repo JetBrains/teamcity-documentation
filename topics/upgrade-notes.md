@@ -4,6 +4,7 @@
 ## Changes from 2020.1.3 to 2020.1.4
 
 ### Bundled Tools Updates
+{id="bundled-tools-updates-2020-1-4"}
 
 * Bundled Amazon Corretto Java has been updated to version 11.0.8 in the TeamCity server installers and Docker images.
 * Mercurial, dropped in [version 2020.1.2](#Changes+from+2020.1.1+to+2020.1.2), is again supported in the Windows Server Core agent Docker images.
