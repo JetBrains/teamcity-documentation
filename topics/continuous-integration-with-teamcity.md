@@ -5,16 +5,21 @@
 
 Continuous Integration is a software development practice in which developers commit code changes into a shared repository several times a day. Each commit is followed by an automated build to ensure that new changes integrate well into the existing code base and to detect problems early.    
 
-To learn more about continuous integration basics, refer to [Martin Fowlers article](http://www.martinfowler.com/articles/continuousIntegration.html).
+To learn more about continuous integration basics, refer to [Martin Fowler's article](http://www.martinfowler.com/articles/continuousIntegration.html).
 
 ## What is TeamCity?
 
-JetBrains TeamCity is a user\-friendly continuous integration (CI) server for developers and build engineers [free of charge with the Professional Server License](http://www.jetbrains.com/teamcity/buy/index.jsp) and easy to set up!
+JetBrains TeamCity is a user-friendly continuous integration (CI) server for developers and build engineers [free of charge with the Professional Server License](http://www.jetbrains.com/teamcity/buy/index.jsp) and easy to set up!
+
+This video gives a general overview of the main TeamCity features and explains the [licensing policy](licensing-policy.md):
+
+<video href="s68u2shSo6o"
+       title="General TeamCity overview"/>
 
 ### What can you do with TeamCity?
 * Run parallel builds simultaneously on different platforms and environments
 * Optimize the code integration cycle and be sure you never get broken code in the repository
-* Review on\-the\-fly test results reporting with intelligent tests re\-ordering
+* Review on-the-fly test results reporting with intelligent tests reordering
 * Run code coverage and duplicates finder for Java and .NET
 * Customize statistics on build duration, success rate, code quality, and custom metrics
 * and much more.
@@ -52,7 +57,7 @@ __Build Agent__
 <td>
 
 A piece of software that actually executes a build process. It is installed and configured separately from the TeamCity server, i.e. the agent can be installed on a separate machine (physical or virtual, and it can run the same operating system (OS) as the server or a different OS. 
-Build Agents in TeamCity can have different platforms, operating systems, and pre\-configured environments that you may want to test your software on. Different types of tests can be run under different platforms simultaneously so the developers get faster feedback and more reliable testing results.
+Build Agents in TeamCity can have different platforms, operating systems, and preconfigured environments that you may want to test your software on. Different types of tests can be run under different platforms simultaneously so the developers get faster feedback and more reliable testing results.
 
 <note>
 
@@ -70,7 +75,7 @@ __TeamCity Server__
 
 <td>
 
-The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build\-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, etc. are stored in a [database](setting-up-an-external-database.md).
+The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, etc. are stored in a [database](setting-up-an-external-database.md).
 
 <note>
 
@@ -172,7 +177,7 @@ __Build Queue__
 
 <td>
 
-A list of builds that were [triggered](configuring-build-triggers.md) and are waiting to be started. TeamCity will distribute them to [compatible](agent-requirements.md) build agents as soon as the agents become idle. A queued build is assigned to an agent at the moment when it is started on the agent; no pre\-assignment is made while the build is waiting in the build queue.
+A list of builds that were [triggered](configuring-build-triggers.md) and are waiting to be started. TeamCity will distribute them to [compatible](agent-requirements.md) build agents as soon as the agents become idle. A queued build is assigned to an agent at the moment when it is started on the agent; no preassignment is made while the build is waiting in the build queue.
 
 
 </td></tr><tr>
