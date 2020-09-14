@@ -1223,13 +1223,13 @@ The text in the request data is added as a comment for the action; `<buildLocato
 <tr><td width="200"></td><td></td></tr>
 <tr><td>
 
-Cancel a running or a queued build
+Cancel a queued build
 
 </td>
 
 <td>
 
-POST the `<buildCancelRequest comment='CommentText' readdIntoQueue='false'/>` item to the URL of a running or a queued build. Example:
+POST the `<buildCancelRequest comment='CommentText' readdIntoQueue='false'/>` item to the URL of a queued build. Example:
 
 ```Shell
 
@@ -1241,7 +1241,7 @@ curl -v -u user:password --request POST "http://teamcity:8111/app/rest/buildQueu
 
 <tr><td>
 
-Stop a running build and re-add it to the queue
+Stop a running build and readd it to the queue
 
 </td>
 
@@ -1254,6 +1254,8 @@ POST the `<buildCancelRequest comment='CommentText' readdIntoQueue='true' />` it
 curl -v -u user:password --request POST "http://teamcity:8111/app/rest/builds/<buildLocator>" --data "<buildCancelRequest comment='' readdIntoQueue='true' />" --header "Content-Type: application/xml"
  
 ```
+
+Set `readdIntoQueue` to `false` to stop the build without readding it to the queue.
 
 </td></tr>
 
