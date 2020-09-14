@@ -24,7 +24,11 @@ This video gives a general overview of the main TeamCity features and explains t
 * Customize statistics on build duration, success rate, code quality, and custom metrics
 * and much more.
 
-To learn more about major TeamCity features, refer to the [official JetBrains site](http://www.jetbrains.com/teamcity/features/index.html).    
+To learn more about major TeamCity features, refer to the [official JetBrains site](http://www.jetbrains.com/teamcity/features/index.html).
+
+TeamCity works great not only for admins and build engineers, but also for developers. Watch this video to see some of the signature features it provides:
+<video href="icuhBgEFtVM"
+       title="TeamCity for developers"/>
 
 The complete list of supported platforms and environments can be found [here](supported-platforms-and-environments.md).
 

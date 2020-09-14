@@ -9,6 +9,11 @@ It is recommended to have a separate build configuration for each sequence of bu
 
 To tackle an increased number of build configurations you can use [build configuration templates](build-configuration-template.md) and project-level [parameters](configuring-build-parameters.md).
 
+This video tutorial illustrates how to work with a build configuration in TeamCity and gives a few extra tips:
+
+<video href="fttWwJG7C38"
+       title="Improving your first build configuration"/>
+
 ## Build Configuration Settings
 
 Build configuration settings include:

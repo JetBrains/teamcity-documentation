@@ -91,4 +91,7 @@ Note that if [branches](working-with-feature-branches.md#Configuring+branches) a
         <category ref="user-guide">
             <a href="working-with-build-results.md">Working with Build Results</a>
         </category>
+        <category ref="external">
+            <a href="https://youtu.be/icuhBgEFtVM">Video tutorial: TeamCity for developers</a>
+        </category>
 </seealso>

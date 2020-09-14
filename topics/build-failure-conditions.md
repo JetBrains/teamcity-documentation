@@ -109,3 +109,10 @@ To configure this build failure condition, specify:
 ### Stopping build immediately
 
 You can stop a build immediately on encountering a specified text in the build log or when a certain build metric, specified using the _Fail build on metric change_ condition, is exceeded.
+
+<seealso>
+    <category ref="external">
+        <a href="https://youtu.be/fttWwJG7C38">Video tutorial: Improving your first build configuration</a>
+    </category>
+        
+</seealso>
