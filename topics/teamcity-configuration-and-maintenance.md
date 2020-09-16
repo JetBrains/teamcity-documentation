@@ -184,7 +184,7 @@ By default, TeamCity [stores all secure values](storing-project-settings-in-vers
 
 To use the custom encryption, select the respective option and enter an encryption key. Click __Generate__ to randomly generate it, or enter your own key (128-bit keys encoded with Base64 are supported). After you save the settings, TeamCity will change the strategy from _scrambling secure values_ to _encrypting them with your custom key using the AES algorithm_.
 
-Any existing secure values will remain scrambled. Note that when you change the project settings anyhow, all the project’s secure values are reencrypted automatically using the current key.
+Any existing secure values will remain scrambled. Note that when you change any project parameters, all the project’s secure values are reencrypted automatically using the current key.
 
 You can change the custom key or go back to using the default strategy anytime.
 
