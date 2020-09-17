@@ -270,5 +270,6 @@ It is also possible to merge branches [automatically](automatic-merge.md).
         <category ref="admin-guide">
             <a href="git.md">Git</a>
             <a href="mercurial.md">Mercurial</a>
+            <a href="vcs-root.md">VCS Root</a>
         </category>
 </seealso>
