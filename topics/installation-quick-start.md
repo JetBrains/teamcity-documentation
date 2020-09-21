@@ -1,18 +1,21 @@
 [//]: # (title: Installation Quick Start)
 [//]: # (auxiliary-id: Installation Quick Start)
+
 This page covers the __evaluation__ setup of a TeamCity server with a default build agent running on the same machine for the most popular operating systems.
 
-For more details, see [Installation and Upgrade](installation-and-upgrade.md).
+To get a general idea of how to install TeamCity for evaluation, you can watch our video tutorial:
+
+<video href="5Akqy-vEFr0"
+       title="TeamCity Installation and initial setup"/>
+
+For more details about the production setup, see the [Installation and Upgrade](installation-and-upgrade.md) section.
 
 <note>
 
 __[For production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use)__, we recommend setting up the TeamCity server and agent on separate machines.
 </note>
 
-<tip>
-
 You can also use the [TeamCity Server](https://hub.docker.com/r/jetbrains/teamcity-server/) and [TeamCity Build Agent](https://hub.docker.com/r/jetbrains/teamcity-agent/) Docker images.
-</tip>
 
 
 ## Download TeamCity

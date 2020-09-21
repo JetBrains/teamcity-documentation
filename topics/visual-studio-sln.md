@@ -1,5 +1,5 @@
 [//]: # (title: Visual Studio (sln))
-[//]: # (auxiliary-id: viewpage.actionpageId113084096;Visual Studio (sln))
+[//]: # (auxiliary-id: viewpage.actionpageId113084096;Visual Studio \(sln\))
 
 <note>
 

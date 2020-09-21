@@ -9,6 +9,8 @@ The feature extends the original branch specification of the VCS roots, attached
 * For GitLab: `refs/merge-requests/*/head`
 * For Azure DevOps: `refs/pull/*/merge`
 
+In case with Azure DevOps, TeamCity [detects requests on a merge branch](#Azure+DevOps+Pull+Requests). In other VCSs, it checks out the code from the source branch.
+
 If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches.
 
 You can find the pull request's details displayed on the __Overview__ tab of the __Build Results__:
@@ -102,7 +104,7 @@ Use a personal access token or obtain a token through an OAuth connection. It mu
 By authors
 
 
-__The filter applies to public repositories only.__
+_The filter applies to public repositories only._
 
 </td>
 <td>
@@ -388,6 +390,20 @@ Specify a project URL for synchronization with the remote Azure DevOps server. T
   </tr>
 </table>
 
+## Predefined build parameters for pull requests
+
+TeamCity provides multiple [predefined build parameters](predefined-build-parameters.md) that expose valuable information on pull requests for builds with the enabled Pull Requests [feature](adding-build-features.md):
+ 
+```Text
+teamcity.pullRequest.number //pull request number
+teamcity.pullRequest.title //pull request title
+teamcity.pullRequest.source.branch //VCS name of the source branch; provided only if the source repository is the same as the target one
+teamcity.pullRequest.target.branch //VCS name of the target branch
+
+```
+
+You can use these parameters in the settings of a build configuration or in build scripts.
+
 ## Pull Requests workflow example
 
 Let's say you have the following environment set up:
@@ -400,7 +416,7 @@ TeamCity can detect each pull request sent to the `master` branch and build the 
 
 <note>
 
-The `web-app` build configuration must have a VCS trigger enabled.
+The `web-app` build configuration must have a [VCS trigger](configuring-vcs-triggers.md) enabled.
 
 </note>
 
@@ -427,7 +443,7 @@ To configure the described pipeline for the `web-app` build configuration in Tea
            * __By target branch__: leave blank to apply no filters and monitor all new pull requests in the repository, or explicitly specify the target branch (in this example, _`master`_)
    * Test the connection and, if successful, click __Save__.   
 
-That's it! Now, when a member of your GitHub organization sends a pull request to the `master` branch, TeamCity acts as follows:
+That's it! Now, whenever a member of your GitHub organization sends a pull request to the `master` branch, TeamCity acts as follows:
 1. Detects the pull request sent to the `master` branch.
 2. Runs the `web-app` build configuration: collects sources, builds and tests the app according to your predefined build steps.
 3. Displays information about the processed pull request on the build configuration __Overview__ page. You can instantly see the pull request status (1) and refresh the information about its state (2).   
@@ -440,19 +456,6 @@ You can automate your setup further, so TeamCity:
 * sends a build status back to GitHub after the build finishes, with the [Commit Status Publisher](commit-status-publisher.md) build feature
 * merges the pull request in GitHub if the build finishes successfully, with the [Automatic Merge](automatic-merge.md) build feature
 
-## Predefined build parameters for pull requests
-
-TeamCity provides multiple [predefined build parameters](predefined-build-parameters.md) that expose valuable information on pull requests for builds with the enabled Pull Requests [feature](adding-build-features.md):
- 
-```Text
-teamcity.pullRequest.number //pull request number
-teamcity.pullRequest.title //pull request title
-teamcity.pullRequest.source.branch //VCS name of the source branch; provided only if the source repository is the same as the target one
-teamcity.pullRequest.target.branch //VCS name of the target branch
-
-```
-
-You can use these parameters in the settings of a build configuration or in build scripts.
 
 <seealso>
         <category ref="blog">

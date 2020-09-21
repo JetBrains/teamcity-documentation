@@ -234,9 +234,11 @@ It seems pointless to keep two projects using the same DSL scripts on one server
 
 ### Using Context Parameters in DSL
 
-Since TeamCity 2019.2, you can customize the DSL generation behavior using context parameters configured in the TeamCity UI. Context parameters are specified as a part of the project [versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) in the UI. 
+Since TeamCity 2019.2, you can customize the DSL generation behavior using context parameters configured in the TeamCity UI. Context parameters are specified as a part of the project [versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) in the UI.
 
 With context parameters, it is possible to maintain a single Kotlin DSL code and use it in different projects on the same TeamCity server. Each of these projects can have own values of context parameters, and the same DSL code can produce different settings based on values of these parameters.
+
+Visit [our blog](https://blog.jetbrains.com/teamcity/2020/09/creating-teamcity-project-templates-with-kotlin-dsl-context-parameters/) to watch a tutorial and learn how to use context parameters in your projects.
 
 <note>
 

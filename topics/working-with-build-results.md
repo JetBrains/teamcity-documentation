@@ -315,4 +315,7 @@ In the URL of the build result page you can find the parameter `buildId` with a 
         <category ref="admin-guide">
             <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
         </category>
+        <category ref="external">
+            <a href="https://youtu.be/icuhBgEFtVM">Video tutorial: TeamCity for developers</a>
+        </category>
 </seealso>

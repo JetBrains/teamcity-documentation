@@ -17,4 +17,7 @@
             <a href="vcs-checkout-mode.md">VCS Checkout Mode</a>
             <a href="vcs-labeling.md">VCS Labeling</a>
         </category>
+        <category ref="external">
+            <a href="https://youtu.be/fttWwJG7C38">Video tutorial: Improving your first build configuration</a>
+        </category>
 </seealso>

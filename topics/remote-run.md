@@ -21,4 +21,7 @@ For a list of version control systems supported by each IDE, see [Supported Plat
         <category ref="troubleshooting">
             <a href="reporting-issues.md">Reporting Issues</a>
         </category>
+        <category ref="external">
+            <a href="https://youtu.be/icuhBgEFtVM">Video tutorial: TeamCity for developers</a>
+        </category>
 </seealso>

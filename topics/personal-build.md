@@ -85,4 +85,7 @@ __To upload a patch and run a personal build via REST API__:
         <category ref="troubleshooting">
             <a href="reporting-issues.md">Remote Run Problems</a>
         </category>
+        <category ref="external">
+            <a href="https://youtu.be/icuhBgEFtVM">Video tutorial: TeamCity for developers</a>
+        </category>
 </seealso>

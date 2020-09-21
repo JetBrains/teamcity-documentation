@@ -125,4 +125,7 @@ If the "_Automatically when fixed_" option is select in [Investigation](#Assigni
         <category ref="user-guide">
             <a href="viewing-tests-and-configuration-problems.md">Viewing Tests and Configuration Problems</a>
         </category>
+        <category ref="external">
+            <a href="https://youtu.be/icuhBgEFtVM">Video tutorial: TeamCity for developers</a>
+        </category>
 </seealso>
