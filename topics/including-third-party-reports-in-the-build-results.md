@@ -3,10 +3,12 @@
 
 If your reporting tool produces reports in HTML format, you can extend TeamCity with a custom tab to show the information provided by the third-party reporting tool. The report provided by your tool can be then displayed either on the __Build Results__ page, or on the __Project Home__ page.
 
+<img src="custom-tab.png" width="775" alt="Example of a custom report tab"/>
+
 The general flow is as follows:
 1. Configure the build script to produce the HTML report (preferably in a zip archive).
 2. Configure publishing the report as the [build artifact](build-artifact.md) to the server: at this point you can check that the archive is available in the build artifacts.
-3. Configure the __Report__ tab to make the report available as an extra tab on the build or project level  (see below).
+3. Configure the __Report__ tab to make the report available as an extra tab on the build or project level (see below).
 
 Report tabs support project hierarchy. There are two types of tabs available:
 * __Build-level__: appears on the __[Build Results](working-with-build-results.md)__ page for each build that produced an artifact with the specified name. These report tabs are defined in a project and are inherited in its subprojects. To override an inherited __Report__ tab in a subproject, create a new report tab with the same name as the inherited one in the subproject.
