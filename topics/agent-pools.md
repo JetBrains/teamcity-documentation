@@ -9,7 +9,7 @@ Instead of having one common set of agents, you can break them into separate gro
 
 The number of agents authorized by the TeamCity server is limited by the number of [agent licenses](licensing-policy.md#Number+of+Agents). By default, all newly authorized agents are included into the _Default pool_. 
 
-With the help of agent pools you can bind specific agents to specific projects. Project builds can be run only on build agents from the pools assigned to the project. Agent pools can also help to calculate the required agents capacity.
+With the help of agent pools you can bind specific agents to specific projects. Project builds can be run only on build agents from the pools assigned to the project. Agent pools can also help to calculate the required agents' capacity.
 
 You can find all agent pools configured in TeamCity on the __Agents | Pools__ tab.
 

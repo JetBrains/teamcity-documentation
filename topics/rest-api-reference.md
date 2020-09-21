@@ -907,7 +907,7 @@ The list of supported build locator dimensions:
 * `user:(<userLocator>)` – limit builds to only those triggered by the user specified.
 * `personal:<true/false/any>` – limit builds by the personal flag. By default, personal builds are not included.
 * `canceled:<true/false/any>` – limit builds by the canceled flag. By default, canceled builds are not included.
-* `failedToStart:<true/false/any>` – limit builds by the failed to start flag. By default, canceled builds are not included.
+* `failedToStart:<true/false/any>` – limit builds by the failed to start flag. By default, failed to start builds are not included.
 * `state:<queued/running/finished>` – limit builds by the specified state.
 * `running:<true/false/any>` – limit builds by the running flag. By default, running builds are not included.
 * `state:running,hanging:true` – fetch hanging builds (__since TeamCity 10.0__).
