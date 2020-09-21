@@ -43,6 +43,7 @@ When you have configured agent pools, you can:
 <seealso>
         <category ref="concepts">
             <a href="build-agent.md">Build Agent</a>
+            <a href="build-queue.md">Build Queue</a>
             <a href="agent-requirements.md">Agent Requirements</a>
         </category>
         <category ref="admin-guide">
