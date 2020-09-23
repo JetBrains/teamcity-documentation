@@ -457,6 +457,18 @@ See [Xcode documentation](https://developer.apple.com/documentation/xcode_releas
 
 To resolve this issue, we suggest that you use Xcode 11 instead. To workaround this issue in Xcode 10, you can either clean the output directory manually or try using the previous build system by passing `-UseNewBuildSystem=NO` to command line parameters.
 
+## Cross-server Projects pop-up menu may not work in latest browsers
+
+Due to the recent updates in the [SameSite cookie](https://web.dev/samesite-cookies-explained/) support, the __Projects__ pop-up menu may not display [cross-server projects](configuring-cross-server-projects-pop-up-menu.md) in some latest web browsers (see [more details](https://www.chromestatus.com/feature/5088147346030592) for Chrome Platform).
+ 
+If you cannot access the cross-server __Projects__ menu, you can try to temporarily workaround this issue:
+
+* In Google Chrome, open the `chrome://flags` page and disable the "_SameSite by default cookies_" option.
+* In Mozilla Firefox, open the `about:config` page and disable the `network.cookie.sameSite.laxByDefault` option.
+* In Safari, go to __Preferences | Privacy__ and disable the "_Prevent cross-site tracking_" option.
+ 
+This problem will be resolved in the TeamCity 2020.1.5 update. See the [related issue](https://youtrack.jetbrains.com/issue/TW-67644) for more details.
+
 ## Issues per TeamCity versions
 
 ### 2020.1.3 Known Issues
