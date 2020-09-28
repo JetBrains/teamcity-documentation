@@ -544,26 +544,34 @@ synchronous_commit=off
 
 ## Set Up TeamCity behind a Proxy Server
 
-This section covers the recommended setup of reverse\-proxy servers installed in front of the TeamCity server web UI. Configuring HTTPS on the proxy level is recommended, but is out of the scope of these instructions \- refer to the documentation of the proxy server for that.
+This section covers the recommended setup of reverse proxy servers installed in front of the TeamCity server web UI.
+
+>We also recommend configuring HTTPS on the proxy level. Refer to your proxy server documentation for more details.
+>
+{type="tip"}
 
 Consider the example:   
-TeamCity server is installed at URL (local URL): [`http://teamcity.local:8111/tc`](http://teamcity.local:8111/tc).   
-It is visible to the outside world as URL (public URL): [`http://teamcity.public:400/tc`](http://teamcity.public:400/tc).
+TeamCity server is installed at a _local_ URL [`http://teamcity.local:8111/tc`](http://teamcity.local:8111/tc).   
+It is visible to the outside world as a _public_ URL [`http://teamcity.public:400/tc`](http://teamcity.public:400/tc).
 
-You need to set up a reverse proxy (see [Proxy Server Setup](#Proxy+Server+Setup) below) and also configure TeamCity's bundled Tomcat server (see [TeamCity Tomcat Configuration](#TeamCity+Tomcat+Configuration) below) to make sure TeamCity "knows" the actual absolute URL used by the client to access the resources. These URLs are then used to generate absolute URLs in client redirects and other responses.
+To make sure TeamCity "knows" the actual absolute URLs used by the client to access the resources, you need to:
+* set up a [reverse proxy](#Proxy+Server+Setup);
+* configure the [Tomcat server](#TeamCity+Tomcat+Configuration) bundled with TeamCity.
 
-Note: An internal TeamCity server should work under the __same context__ (i.e. part of the URL after the host name) as it is visible from outside by an external address. See also TeamCity server [context changing instructions](installing-and-configuring-the-teamcity-server.md#Changing+Server+Context). If you still need to run the server under a different context, note that context changing proxy should conceal this fact from the TeamCity: e.g. it should map server redirect URLs as well as cookies setting paths to the original (external) context.
+These URLs are used to generate absolute URLs in the client redirects and other responses.
+
+Note: An internal TeamCity server should work under the __same context__ (that is part of the URL after the host name) as it is visible from outside by an external address. See also the TeamCity server [context changing instructions](installing-and-configuring-the-teamcity-server.md#Changing+Server+Context).   
+If you need to run the server under a different context, note that the context-changing proxy should conceal this fact from the TeamCity: for example, it should map server redirect URLs as well as cookies setting paths to the original (external) context.
 
 ### Proxy Server Setup
 
-The proxy should be configured with generic web security in mind. e.g. headers like Referer and Origin should usually be passed to the TeamCity web application in the unmodified form. Also, unknown HTTP request headers should be passed to the TeamCity web application unmodified. For example TeamCity relies on "X\-TC\-CSRF\-Token" header added by the clients.
+The proxy should be configured with the generic web security in mind. Headers like `Referer` and `Origin` and all unknown headers should be passed to the TeamCity web application in the unmodified form. For example, TeamCity relies on the `X-TC-CSRF-Token` header added by the clients.
 
 ### Apache
 
-Versions 2.4.5\+ are recommended. Earlier versions do not support the WebSocket protocol, so use the settings noted in [the previous documentation version](https://confluence.jetbrains.com/display/TCD8/How+To...).
+Versions 2.4.5 or later are recommended. Earlier versions do not support the WebSocket protocol, so you should use the settings described in the [previous documentation version](https://confluence.jetbrains.com/display/TCD8/How+To...).
 
 When using Apache, make sure to use the [Dedicated "Connector" node approach](#Dedicated+%22Connector%22+Node+Approach) for configuring TeamCity server.
-
 
 ```Shell
 
@@ -582,15 +590,11 @@ ProxyPassReverse    /tc http://teamcity.local:8111/tc
 
 ```
 
+Note the order of the [ProxyPass rules](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#proxypass): conflicting ProxyPass rules must be sorted starting with the longest URLs first.
 
+By default, Apache allows only a limited number of parallel connections that may be insufficient when using the WebSocket protocol. For instance, it may result in the TeamCity server not responding when a lot of clients open the web UI. To fix it, you may need to fine-tune the Apache configuration.
 
-Note the order of [ProxyPass rules](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#proxypass): conflicting ProxyPass rules must be sorted starting with the longest URLs first.
-
- Note that by default Apache allows only a limited number of parallel connections that may be insufficient when using the WebSocket protocol. For instance, it may result in the TeamCity server not responding when a lot of clients open the Web UI.To fix it, you may need to fine\-tune the Apache configuration.
-
-For example, on Unix you should switch to [mpm_worker](http://httpd.apache.org/docs/2.4/mod/worker.html) and configure the maximum number of simultaneous connections:
-
-
+For example, on Unix, you should switch to [mpm_worker](http://httpd.apache.org/docs/2.4/mod/worker.html) and configure the maximum number of simultaneous connections:
 
 ```Shell
 <IfModule mpm_worker_module>
@@ -606,15 +610,13 @@ For example, on Unix you should switch to [mpm_worker](http://httpd.apache.org/d
 
 ```
 
-
-
-On Windows you may need to increase the [ThreadsPerChild](http://httpd.apache.org/docs/2.4/mod/mpm_common.html#threadsperchild) value as described [in the Apache documentation](http://httpd.apache.org/docs/2.4/platform/windows.html).
+On Windows, you may need to increase the [ThreadsPerChild](http://httpd.apache.org/docs/2.4/mod/mpm_common.html#threadsperchild) value as described in the [Apache documentation](http://httpd.apache.org/docs/2.4/platform/windows.html).
 
 ### NGINX
 
-For the NGINX configuration below, use the ["RemoteIpValve" Approach](#Proxy-Tomcat-RemoteIpValve) for configuring TeamCity server.
+For the NGINX configuration below, use the ["RemoteIpValve" Approach](#Proxy-Tomcat-RemoteIpValve) for configuring the TeamCity server.
 
-Versions 1.3\+ are recommended. Earlier versions do not support the WebSocket protocol, so use the settings noted in [the previous documentation version](https://confluence.jetbrains.com/display/TCD8/How+To...).
+Versions 1.3 or later are recommended. Earlier versions do not support the WebSocket protocol, so you should use the settings described in the [previous documentation version](https://confluence.jetbrains.com/display/TCD8/How+To...).
 
 
 ```Java
@@ -649,23 +651,15 @@ http {
 
 ```
 
-
-
-
-
-
 [//]: # (Internal note. Do not delete. "How To...d160e1234.txt")    
-
-
-
 
 ### Common misconfigurations
 
 Check that your reverse proxy (or a similar tool) conforms to the following requirements:
-* URLs with paths starting with a dot (the "." symbol) are supported (path to hidden artifacts start contain the ".teamcity" directory)
-* URLs with a colon (":" symbol) are supported (many TeamCity resources use the colon). Related [IIS setting](https://docs.microsoft.com/en-us/dotnet/api/system.web.configuration.httpruntimesection.requestpathinvalidcharacters?view=netframework-4.7.2). Symptom: build has no artifacts with "No user\-defined artifacts in this build." text even if there are artifacts.
-* maximum response length / time are not too restrictive (since TeamCity can serve large files to slow clients, the responses can be of Gb in size and hours in time)
-* gzip Content\-Encoding is fully supported. e.g. certain IIS configurations can result in the "Loading data..." in UI and 500 HTTP responses (see the related [issue](https://youtrack.jetbrains.com/issue/TW-56218))
+* URLs with paths starting with a dot (`.`) are supported (path to hidden artifacts start contain the `.teamcity` directory).
+* URLs with a colon (`:`) are supported (many TeamCity resources use the colon). Related [IIS setting](https://docs.microsoft.com/en-us/dotnet/api/system.web.configuration.httpruntimesection.requestpathinvalidcharacters?view=netframework-4.7.2). Symptom: build has no artifacts with the "_No user-defined artifacts in this build_" text even if there are artifacts.
+* Maximum response length / time are not too restrictive (since TeamCity can serve large files to slow clients, the responses can be of Gb in size and hours in time).
+* gzip Content-Encoding is fully supported. For example, certain IIS configurations can result in the "Loading data..." in the UI and 500 HTTP responses (see the related [issue](https://youtrack.jetbrains.com/issue/TW-56218)).
 
 <anchor name="OtherServers"/>
 
@@ -673,28 +667,27 @@ Check that your reverse proxy (or a similar tool) conforms to the following requ
 
 Make sure to use a performant proxy with due (high) limits on request (upload) and response (download) size and timeouts (at least tens of minutes and gigabyte, according to the sizes of the codebase and artifacts).
 
-It is recommended to use a proxy capable of working with the WebSocket protocol as that helps UI to refresh sooner.
+It is recommended to use a proxy capable of working with the WebSocket protocol as this helps the UI to refresh quicker.
 
-Generally, you need to configure the TeamCity server so that it "knows" about the original URL used by the client and it can generate correct absolute URLs accessible for the client. Preferred way to achieve that is to pass original "Host" header to TeamCity. Alternative is to set "X\-Forwarded\-Host" header to the original "Host" header value.
+Generally, you need to configure the TeamCity server so that it "knows" about the original URL used by the client and can generate correct absolute URLs accessible for the client. The preferred way to achieve that is to pass the original `Host` header to TeamCity. An alternative method is to set `X-Forwarded-Host` header to the original `Host` header's value.
 
-Note that whenever the value of the "Host" header is changed by the proxy (while it is recommended to preserve original Host header value) and no "X\-Forwarded\-Host" header with the original Host value is provided, the values of the Origin and Referer headers should be mapped correspondingly if they contain the original Host header value (if they do not, they should not be set in order not to circumvent TeamCity [CSRF protection](csrf-protection.md)).
+Note that whenever the value of the `Host` header is changed by the proxy (while it is recommended to preserve the original `Host` header value) and no `X-Forwarded-Host` header with the original `Host` value is provided, the values of the `Origin` and `Referer` headers should be mapped correspondingly if they contain the original `Host` header value (if they do not, they should not be set in order not to circumvent TeamCity [CSRF protection](csrf-protection.md)).
 
 Select a proper approach from the section below and configure the proxy accordingly.
 
 ### TeamCity Tomcat Configuration
 
-For a due TeamCity Tomcat configuration, there are two options:
-* use a __dedicated "Connector" node__ in the server configuration with hard\-coded public URL details and make sure that the port configured in the connector is used only by the requests to the public URL configured.
-* configure proxy to pass due request headers: "Host" or "X\-Forwarded\-Host" (original request host), "X\-Forwarded\-Proto" (original request protocol), "X\-Forwarded\-Port" (original request port) and __configure "RemoteIpValve"__ for the TeamCity Tomcat configuration.
+For a TeamCity Tomcat configuration, there are two options:
+* Use a __dedicated "Connector" node__ in the server configuration with hard-coded public URL details and make sure the port configured in the connector is used only by the requests to the public URL configured.
+* Configure the proxy to pass due request headers: `Host` or `X-Forwarded-Host` (original request host), `X-Forwarded-Proto` (original request protocol), `X-Forwarded-Port` (original request port) and __configure "RemoteIpValve"__ for the TeamCity Tomcat configuration.
 
 <anchor name="Proxy-Tomcat-Connector"/>
 
 ### Dedicated "Connector" Node Approach
 
-
 This approach can be used with any proxy configuration, provided the configured port is receiving requests only to the configured public URL.
 
-Set up the proxying server to redirect all requests to `teamcity.public:400` to a dedicated port on the TeamCity server (`8111` in the example below) and change "Connector" node in `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file as below. Note that the "Connector" port configured this way should only be accessible via the configured proxy's address. If you also want to make TeamCity port accessible directly, use a separate "Connector" node with a dedicated `port` value for that.
+Set up the proxying server to redirect all requests to `teamcity.public:400` to a dedicated port on the TeamCity server (`8111` in the example below) and change the "Connector" node in `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file as below. Note that the "Connector" port configured this way should only be accessible via the configured proxy's address. If you also want to make TeamCity port accessible directly, use a separate "Connector" node with a dedicated `port` value for that.
 
 
 ```Shell
@@ -712,8 +705,6 @@ Set up the proxying server to redirect all requests to `teamcity.public:400` to 
                />
 ```
 
-
-
 When the public server address is __HTTPS__, use the `secure="true"` and `scheme="https"` attributes.
 
 <anchor name="Proxy-Tomcat-RemoteIpValve"/>
@@ -723,7 +714,7 @@ When the public server address is __HTTPS__, use the `secure="true"` and `scheme
 
 This approach can be used when the proxy server sets `X-Forwarded-Proto`, `X-Forwarded-Port` request headers to the values of the original URL. Also, while not critical for the most setups, this approach can be used to make sure the original client IP is passed to the TeamCity server correctly. This is important for legacy agents' [bidirectional communication](setting-up-and-running-additional-build-agents.md#Bidirectional+Communication).
 
-Add the following into the Tomcat main &lt;Host&gt; node of the `conf\server.xml` file (see also Tomcat [doc](http://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/valves/RemoteIpValve.html)):
+Add the following into the Tomcat main `<Host>` node of the `conf\server.xml` file (see also Tomcat [doc](http://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/valves/RemoteIpValve.html)):
 
 
 ```Shell
