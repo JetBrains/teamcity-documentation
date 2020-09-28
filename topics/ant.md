@@ -11,10 +11,10 @@ By using the `<parallel>` tag in your Ant script, it is possible to have the JUn
 
 ## Reporting and Logging
 
-TeamCity collects detailed data from  Ant as to the performed activities, provides structured error reporting, and reports tests. However, you can start a build with no specific reporting or to turn off TeamCity-specific logging:
+TeamCity collects detailed data from Ant as to the performed activities, provides structured error reporting, and reports tests. However, you can start a build with no specific reporting or to turn off TeamCity-specific logging:
 * To disable TeamCity-specific reporting in Ant, use `teamcity.ant.listener.enabled=false` [build configuration parameter](configuring-build-parameters.md)
 * To disable JUnit reporting, use the `teamcity.ant.junit-support.enabled=false` [system property](configuring-build-parameters.md)
-* To disable TestNG reporting,  use `teamcity.ant.testng-support.enabled=false` [system property](configuring-build-parameters.md)
+* To disable TestNG reporting, use `teamcity.ant.testng-support.enabled=false` [system property](configuring-build-parameters.md)
 
 
 ## Ant Runner Settings

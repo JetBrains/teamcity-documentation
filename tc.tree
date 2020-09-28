@@ -11,7 +11,8 @@
          <toc-element id="installation-quick-start.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="configure-and-run-your-first-build.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
-      <toc-element id="concepts.md">
+      <toc-element id="concepts.md" hidden="true"/>
+      <toc-element toc-title="Concepts">
          <toc-element id="build-artifact.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="composite-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>

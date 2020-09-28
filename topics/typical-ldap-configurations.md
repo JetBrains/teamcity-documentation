@@ -1,5 +1,6 @@
 [//]: # (title: Typical LDAP Configurations)
 [//]: # (auxiliary-id: Typical LDAP Configurations)
+
 This page contains samples of the `ldap-config.properties` file for different configuration cases.
 
 ## Basic LDAP Login
@@ -114,7 +115,7 @@ There should be `ldap-mapping.xml` file with one or more group mappings defined.
 
 `ldap-config.properties` file:
 
-```
+```Shell
 java.naming.provider.url=ldap://example.com:389/DC=example,DC=com
 java.naming.security.principal=CN=teamcity,CN=Users,DC=example,DC=com
 java.naming.security.credentials=secret
