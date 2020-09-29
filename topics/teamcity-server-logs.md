@@ -388,17 +388,21 @@ Users with System Administrator role can view and download the server logs right
 
 <anchor name="TeamCityServerLogs-loggingPreset"/>
 
-While TeamCity is running, active logging settings can be changed by selecting between available `logging presets`.
+While TeamCity is running, active logging settings can be changed by selecting between available _logging presets_.
 
-The active logging preset is changed in the __Administration | Diagnostics__ page, __Troubleshooting__, __Debug logging__ subsection. Choosing a preset changes logging configuration immediately and the preset is preserved after a server restart, until changed on the page again. It is recommended to return to the "&lt;Default&gt;" once the necessary logs were collected.
+>We highly recommend using the Default debug logging preset unless otherwise is suggested by a TeamCity support engineer. Using a different preset creates an extra load on the file system and might slow down various TeamCity operations.
+>
+{type="note"}
 
-The available presets are stored in the files with .xml extension under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging` directory. New files can be added into the directory and existing files can be modified (using [.dist convention](teamcity-data-directory.md#.dist+Template+Configuration+Files)). New presets can also be uploaded via __Diagnostics | Logging Presets__.
+The active logging preset is changed in the __Administration | Diagnostics | Troubleshooting | Debug logging__ section. Choosing a preset changes logging configuration immediately, and the preset is preserved after a server restart, until manually changed on this page again. It is strongly advised to return to the Default preset once the necessary logs were collected.
 
-If it is not possible to enable debug logging mode via logging presets (for example, to get the logging during server initialization) or to make persistent changes to the logging, you can backup the `conf/teamcity-server-log4j.xml` file and copy/rename the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging/debug-general.xml` file over `conf/teamcity-server-log4j.xml` before the server start.
+The available presets are stored in the files with the `.xml` extension under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging` directory. New files can be added into the directory and existing files can be modified (using the [`.dist` convention](teamcity-data-directory.md#.dist+Template+Configuration+Files)). New presets can also be uploaded via __Diagnostics | Logging Presets__.
+
+If it is not possible to enable debug logging mode via logging presets (for example, to get the logging during server initialization) or to make persistent changes to the logging, you can back up the `conf/teamcity-server-log4j.xml` file and copy/rename the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging/debug-general.xml` file over `conf/teamcity-server-log4j.xml` before the server start.
 
 ### Changing Logging Settings
 
-If you want to fine\-tune the log4j configuration, you can edit `<[TeamCity Server home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` file (for `.war` TeamCity distribution, see the [related section](#General+Logging+Configuration)). If the server is running, the log4j configuration file will be reloaded automatically and the logging configuration will be changed on the fly (some log4j restrictions still apply, so for a massive change consider restarting the server).
+If you want to fine-tune the log4j configuration, you can edit `<[TeamCity Server home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` file (for `.war` TeamCity distribution, see the [related section](#General+Logging+Configuration)). If the server is running, the log4j configuration file will be reloaded automatically and the logging configuration will be changed on the fly (some log4j restrictions still apply, so for a massive change consider restarting the server).
 
 If you change settings in other preset files, like `debug-all.xml` or `debug-vcs.xml`, the settings won't be picked up automatically. To enforce the change, switch logging preset to some other value, like `<Default>` and then switch back to `debug-all`. 
 
@@ -415,7 +419,7 @@ To change the minimum log level to save in the file, tweak the `value` attribute
 
 
 
- The logs are rotated by default. When debug is enabled, it makes sense to increase the `value` attribute of `maxBackupIndex` element to affect the number of preserved log files. While doing so, ensure there is sufficient free disk space available.
+The logs are rotated by default. When debug is enabled, it makes sense to increase the `value` attribute of `maxBackupIndex` element to affect the number of preserved log files. While doing so, ensure there is sufficient free disk space available.
 
 
 ```Plain Text
