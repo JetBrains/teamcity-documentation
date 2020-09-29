@@ -322,7 +322,7 @@ __Short checklist__ (see below for full notes)
 * If you have external authentication configured (such as LDAP), the [built-in authentication](configuring-authentication-settings.md#Built-in+Authentication) module is disabled
 * Passwords are not printed into the build log, not stored in build artifacts, nor are they stored in non-[password parameters](typed-parameters.md#Adding+Parameter+Specification)
 
-
+<anchor name="HowTo...-Security-relatedRisksEvaluation"/>
 
 ### Security-related Risks Evaluation
 
@@ -365,7 +365,7 @@ Here are some notes on different security\-related aspects:
 
 ## What Encryption is Used by TeamCity
 
-TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key, or using a [custom key](teamcity-configuration-and-maintenance.md#encryption-settings).
+TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key, or using a [custom key](teamcity-configuration-and-maintenance.md#encryption-settings).
 
 
 ## Configure Newly Installed MySQL Server
