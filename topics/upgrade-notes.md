@@ -929,10 +929,10 @@ The `artifact-dependencies` sub\-element of the `buildType` element now uses tex
 The `agent-requirements` sub\-element of the `buildType` element now uses generated ids instead of the parameter name as id. This also affects requests for agent requirements modification.
 
 __Editing agent requirements__ (`.../app/rest/buildTypes/.../artifact-requirements/...` URL)   
-Previously, on adding  a new agent requirement for the same parameter, the existing one was overridden by the new one; now a new one is added.Previously, on adding  a new agent requirement, the parameter name was derived from the `id` attribute of the `agent-requirement` node. Since TeamCity 10, the parameter name is derived from the "`property-name`" property.
+Previously, on adding  a new agent requirement for the same parameter, the existing one was overridden by the new one; now a new one is added. Previously, on adding  a new agent requirement, the parameter name was derived from the `id` attribute of the `agent-requirement` node. Since TeamCity 10, the parameter name is derived from the "`property-name`" property.
 
 __Test and problem occurrences__ (`.../app/rest/testOccurrences`,` .../app/rest/problemOccurrences` URL)   
-The sorting of the returned results is changed for some of the queries compared to the previous versions. For example, the`"../app/rest/testOccurrences?locator=build:(xxx)`" request now returns the tests in the order they were run in the build.   
+The sorting of the returned results is changed for some of the queries compared to the previous versions. For example, the "`../app/rest/testOccurrences?locator=build:(xxx)`" request now returns the tests in the order they were run in the build.   
 Previously, test occurrences were sorted by the new status and then by name. Problem occurrences were sorted by problem id.   
 Also, the `build` dimension in the test/problem\-related locators now supports multiple builds so for the requests which matched several builds via the "`build`" dimension, all the builds will be processed; previously only the first matching build was processed.
 
