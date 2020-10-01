@@ -363,7 +363,7 @@
       </toc-element>
       <toc-element id="installing-tools.md">
          <toc-element id="intellij-platform-plugin.md" show-structure-for="chapter" show-structure-depth="4">
-            <toc-element id="intellij-platform-plugin-compatibility.md"/>
+            <toc-element id="intellij-platform-plugin-compatibility.md" hidden="true"/>
          </toc-element>
          <toc-element id="browser-notifier.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="eclipse-plugin.md" show-structure-for="chapter" show-structure-depth="4"/>
