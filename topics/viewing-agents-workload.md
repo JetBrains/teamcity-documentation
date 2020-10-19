@@ -1,6 +1,7 @@
 [//]: # (title: Viewing Agents Workload)
 [//]: # (auxiliary-id: Viewing Agents Workload)
-TeamCity provides handy ways to estimate build agents efficiency and help you manage your system:
+
+TeamCity provides handy ways to estimate build agents efficiency and help you manage your system.
 
 ## Load Statistics Matrix
 
@@ -15,7 +16,7 @@ agent-matrix.png
 3. Individual agents. Clicking a link opens the [agent's details](viewing-build-agent-details.md) page.
 4. Total build duration during the specified time.
 5. Total build duration for a particular build configuration during the specified time range.
-6. Total duration for a particular build configurationof builds that were run on the particular build agent during the specified time period.
+6. Total duration for a particular build configuration of builds that were run on the particular build agent during the specified time period.
 7. The build agent is compatible with the build configuration, but no builds were run during the specified time range.
 8. The build agent is incompatible with the configuration, or disconnected.
 
