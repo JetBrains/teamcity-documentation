@@ -12,7 +12,7 @@ The Matrix available at the __Matrix__ tab on the __Agents__ page provides you w
 agent-matrix.png
 
 1. Specified time range. Click __Update__ to reload the matrix.
-2. [Agent pool](agent-pools.md). Clicking a link opens the pool's page.
+2. [Agent pool](configuring-agent-pools.md). Clicking a link opens the pool's page.
 3. Individual agents. Clicking a link opens the [agent's details](viewing-build-agent-details.md) page.
 4. Total build duration during the specified time.
 5. Total build duration for a particular build configuration during the specified time range.

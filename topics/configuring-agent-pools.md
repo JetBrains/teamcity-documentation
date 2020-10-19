@@ -1,23 +1,13 @@
-[//]: # (title: Agent Pools)
-[//]: # (auxiliary-id: Agent Pools)
+[//]: # (title: Configuring Agent Pools)
+[//]: # (auxiliary-id: Configuring Agent Pools;Agent Pools)
 
-## Concept
-
-Instead of having one common set of agents, you can break them into separate groups called _agent pools_. A pool is a named set of agents to which you can assign projects.
-* An agent can belong to _one pool only_.
-* A project can use _several pools_ for its builds.
-
-The number of agents authorized by the TeamCity server is limited by the number of [agent licenses](licensing-policy.md#Number+of+Agents). By default, all newly authorized agents are included into the _Default pool_. 
-
-With the help of agent pools you can bind specific agents to specific projects. Project builds can be run only on build agents from the pools assigned to the project. Agent pools can also help to calculate the required agents' capacity.
-
-You can find all agent pools configured in TeamCity on the __Agents | Pools__ tab.
+To manage build agents efficiently, you can group them into multiple [agent pools](agent-pool.md).
 
 ## Required Permissions
 
 To be able to add/remove pools and set maximum number of agents in the pool, you need to have the "_Manage agent pools_" permission granted to the System Administrator and Agent Manager [roles](role-and-permission.md) in the default TeamCity [per-project authorization mode](role-and-permission.md#Per-Project+Authorization+Mode).
 
-Assigning and unassigning projects and agents to/from pools is restricted by the "_Change agent pools associated with project_" permission, which by default is a part of the Project administrator role. Users can perform the operations on the pool only if they have the "_Change agent pools associated with project_" permission for _all projects_ associated with _all pools_ affected by the operation.
+Assigning and unassigning projects and agents to/from pools is restricted by the "_Change agent pools associated with project_" permission, which by default is a part of the Project Administrator role. Users can perform the operations on the pool only if they have the "_Change agent pools associated with project_" permission for _all projects_ associated with _all pools_ affected by the operation.
 
 See also related [agent management permissions](role-and-permission.md#Project-level+Agent+Management+Permissions).
 
@@ -42,6 +32,7 @@ When you have configured agent pools, you can:
 
 <seealso>
         <category ref="concepts">
+            <a href="agent-pool.md">Agent Pool</a>
             <a href="build-agent.md">Build Agent</a>
             <a href="build-queue.md">Build Queue</a>
             <a href="agent-requirements.md">Agent Requirements</a>

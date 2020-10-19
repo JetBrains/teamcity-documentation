@@ -41,7 +41,7 @@ A setting referencing a project affects the project and all its subprojects. The
 * [Muted Problems](investigating-and-muting-build-failures.md#Muting+Failed+Tests)
 * [Notification rules](subscribing-to-notifications.md)
 
-Note that associating a project with an [agent pool](agent-pools.md) is not propagated to its subprojects and affects only the build configurations residing directly in the project.
+Note that associating a project with an [agent pool](configuring-agent-pools.md) is not propagated to its subprojects and affects only the build configurations residing directly in the project.
 
 ### Root Project
 
