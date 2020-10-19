@@ -392,7 +392,7 @@ Additional features you will get in the .NET runner are:
 * Ability to run the project in a Docker container with our [Docker Wrapper](docker-wrapper.md) extension
 
 Consider the following notes before migrating:
-* The .NET runner uses x64 run platform by default. If the x64 version is not available, it will use x86. To force using x86 even when x64 is present, you can set the respective [system property](configuring-build-parameters.md) in the build configuration or add the `/p:Platform=x86` command-line parameter in the build step's settings.
+* The .NET runner uses x86 run platform by default. If the x86 version is not available, it will use x64.
 * The .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md).
 * Mono is not supported with this runner.
 
