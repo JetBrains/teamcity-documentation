@@ -1,10 +1,13 @@
 [//]: # (title: Subversion)
 [//]: # (auxiliary-id: Subversion)
-This page contains descriptions of Subversion\-specific fields and options available when setting up a VCS root.
 
-Common VCS Root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
+This page contains descriptions of Subversion-specific fields and options available when setting up a VCS root.
 
-You do not need Subversion client to be installed on the TeamCity server or agents. TeamCity bundles the Java implementation of SVN client ([SVNKit](http://svnkit.com/)).
+Common VCS root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
+
+>You do not need a Subversion client to be installed on the TeamCity server or agents. TeamCity bundles the Java implementation of SVN client ([SVNKit](http://svnkit.com/)).
+>
+type="tip"
 
 ## SVN Connection Settings
 
@@ -47,7 +50,7 @@ Username
 
 <td>
 
-Specify the SVN user name.
+Specify the SVN username.
 
 
 </td></tr><tr>
@@ -68,81 +71,78 @@ Specify the SVN password.
 
 <td>
 
-Configuration Directory
+Configuration directory
 
 
 </td>
 
 <td>
 
-You can specify an alternative subversion configuration directory, or use the default one (recommended). This setting also applies to agent\-side checkout. TeamCity does not store authentication in SVN configuration directory, but can read settings stored there.
+You can specify an alternative subversion configuration directory, or use the default one (recommended). This setting also applies to agent-side checkout. TeamCity does not store authentication in SVN configuration directory, but can read settings stored there.
 
 
 </td></tr><tr>
 
 <td>
+
 Use default configuration directory
 
 </td>
 
 <td>
-Check this option to make this the default configuration directory for the SVN connection.
+
+Enable this option to make this the default configuration directory for the SVN connection.
 
 </td></tr><tr>
 
 <td>
 
-Externals Support
+Externals support
 
 
 </td>
 
 <td>
 
-Check one of the following options to control the SVN externals processing.
+Select one of the following options to control the SVN externals processing.
 
-* Full support (load changes and checkout) \- when the option is selected, TeamCity will check out all configuration's sources (including the sources from the externals) and will gather and display information about externals' changes on the [Changes](viewing-your-changes.md) tab.
-* Checkout, but ignore changes \- when the option is selected, TeamCity will check out the sources from externals but any changes in externals' source files will not be gathered and displayed on the [Changes](viewing-your-changes.md) tab. You can use this option if you have several SVN externals and do not want to get information about any changes made in the externals' source files.    
-<note>
+* _Full support (load changes and checkout)_: TeamCity will check out all configuration's sources (including the sources from the externals) and will gather and display information about externals' changes on the [Changes](viewing-your-changes.md) tab.
+* _Checkout, but ignore changes_: TeamCity will check out the sources from externals but any changes in externals' source files will not be gathered and displayed on the [Changes](viewing-your-changes.md) tab. You can use this option if you have several SVN externals and do not want to get information about any changes made in the externals' source files.   
+    
+   <note>
 
-__Build revision number impact__
+   __Build revision number impact__
 
-If you use the "_Checkout, but ignore changes_" option, TeamCity will always use the latest repository revision as the revision for checkout (the same revision will be used for the `build.vcs.number` parameter). For other two options, TeamCity takes the revision of the latest detected change as the revision for checkout.
-</note>
+   If you use the "_Checkout, but ignore changes_" option, TeamCity will always use the latest repository revision as the revision for a checkout (the same revision will be used for the `build.vcs.number` parameter). For other two options, TeamCity takes the revision of the latest detected change as the revision for a checkout.
+   </note>
 
-* Ignore externals \- when the option is selected, TeamCity will ignore any configured `svn:externals` property, and thus TeamCity will not check for changes or check out any source file from the SVN externals.    
- 
+* _Ignore externals_: TeamCity will ignore any configured `svn:externals` property, and thus TeamCity will not check for changes or check out any source file from the SVN externals.   
 
-<note>
+   <note>
 
-__Subversion Repository UUID__
+   __Subversion Repository UUID__
 
-TeamCity relies on Subversion repository UUID as an unique identifier of a repository. If you have 2 different repositories with the same UUID (due to repository copy) TeamCity may function incorrectly, for instance, wrong HEAD revision of an external repository can be checked out.
-</note>
-
-
+   TeamCity relies on Subversion repository UUID as an unique identifier of a repository. If you have 2 different repositories with the same UUID (due to repository copy) TeamCity may function incorrectly, for instance, wrong HEAD revision of an external repository can be checked out.
+   </note>
 
 </td></tr><tr>
 
 <td>
 
-HTTPS Connections: Accept non\-trusted SSL certificates
-
-(Enable non\-trusted SSL certificate in 10.0)
-
+HTTPS Connections: Accept non-trusted SSL certificates
 
 </td>
 
 <td>
 
-When this option is enabled, TeamCity is able to connect to SVN servers without properly signed SSL certificate.
+If enabled, TeamCity is able to connect to SVN servers without properly signed SSL certificate.
 
 
 </td></tr></table>
 
 <note>
 
-Note that if you have anonymous access for some path within SVN,the entered username will never be used to authenticate when accessing any of its subfolders. Anonymous access will be used instead. This rule only applies for `svn://` and `http(s)://` protocols; i.e. if you have a build configuration which uses a combination of this VCS Root \+ [VCS Checkout Rules](vcs-checkout-rules.md) referencing a non\-restricted path above the restricted one for another build configuration, changes under the restricted path will be ignored _even_ if you specify correct username/password for the VCS Root itself.
+Note that if you have anonymous access for some path within SVN,the entered username will never be used to authenticate when accessing any of its subfolders. Anonymous access will be used instead. This rule only applies for `svn://` and `http(s)://` protocols; i.e. if you have a build configuration which uses a combination of this VCS Root \+ [VCS Checkout Rules](vcs-checkout-rules.md) referencing a non-restricted path above the restricted one for another build configuration, changes under the restricted path will be ignored _even_ if you specify correct username/password for the VCS Root itself.
 </note>
 
 ## SSH settings
@@ -207,7 +207,7 @@ Specify the port used by SSH.
 
 </td></tr></table>
 
-Only the OpenSSH format is supported for the key. The key in a format unsupported by TeamCity has to be converted to the OpenSSH format (for example, a Putty private key  (`*.ppk`) can be converted using `PuTTYgen.exe`: see Conversions \> Export OpenSSH key). 
+Only the OpenSSH format is supported for the key. The key in a format unsupported by TeamCity has to be converted to the OpenSSH format (for example, a Putty private key  (`*.ppk`) can be converted using `PuTTYgen.exe`: see __Conversions | Export OpenSSH key__). 
 
 ## Checkout on agent settings
 
@@ -239,8 +239,8 @@ Working copy format
 Select the format of the working copy. Available values for this option are 1.4 through 1.8 (current default).   
 This option defines the format version of Subversion files located in `.svn` directories, when [the checkout on agent mode](vcs-checkout-mode.md#agent-checkout) is used. The specified format is important in two cases:
 
-* If you run command\-line `svn` commands on the files checked out by TeamCity. For example, if your working copy has version 1.5, you will not be able to use Subversion 1.4 binaries to work with it.
-* If you use new Subversion features; for example, file\-based externals which were added in Subversion 1.6. Thus, unless you set the working copy format to 1.6, the file\-based externals will not be available in the __checkout on agent__ mode.
+* If you run command-line `svn` commands on the files checked out by TeamCity. For example, if your working copy has version 1.5, you will not be able to use Subversion 1.4 binaries to work with it.
+* If you use new Subversion features; for example, file-based externals which were added in Subversion 1.6. Thus, unless you set the working copy format to 1.6, the file-based externals will not be available in the __checkout on agent__ mode.
 
 
 </td></tr><tr>
@@ -255,7 +255,7 @@ Revert before update
 <td>
 
 If the option is selected, then TeamCity always runs the `svn revert` command before updating sources; that is, it will revert all changes in versioned files located in the checkout directory. When the option is disabled and local modifications are detected during the update process, TeamCity runs the `svn revert` after the update.   
-TeamCity does not delete non\-versioned files in the working directory during the revert. For deleting non\-versioned files, consider using [Swabra](build-files-cleaner-swabra.md).
+TeamCity does not delete non-versioned files in the working directory during the revert. For deleting non-versioned files, consider using [Swabra](build-files-cleaner-swabra.md).
 
 
 </td></tr></table>
@@ -287,7 +287,7 @@ Labeling rules
 
 <td>
 
-Specify a newline\-delimited set of rules that defines the structure of the repository. See the [detailed format description](vcs-labeling.md#Subversion+Labeling+Rules) for more details.
+Specify a newline-delimited set of rules that defines the structure of the repository. See the [detailed format description](vcs-labeling.md#Subversion+Labeling+Rules) for more details.
 
 
 </td></tr></table>
@@ -310,9 +310,9 @@ Sometimes, the SVN checkout operation for remote SVN servers may fail with a err
 
 ### Connection timeout
 
-Connection timeout is applied when TeamCity creates a connection to the SVN server. The default timeout for this operation is __60 seconds__, and can be specified via the TeamCity internal property `teamcity.svn.connect.timeout`, in seconds. The value of the property is set differently for server\-side checkout and agent\-side checkout:
-* Server\-side operations – [configure internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties)
-* Agent\-side checkout – [add start-up property](configuring-build-agent-startup-properties.md#Agent+Properties)
+Connection timeout is applied when TeamCity creates a connection to the SVN server. The default timeout for this operation is __60 seconds__, and can be specified via the TeamCity internal property `teamcity.svn.connect.timeout`, in seconds. The value of the property is set differently for server-side checkout and agent-side checkout:
+* Server-side operations – [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+* Agent-side checkout – [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
 
 ### Read timeout
 
@@ -326,15 +326,13 @@ If not specified, the default value for the timeout is 1 hour.
 
 #### Subversion server access via svn:// or svn+ssh://
 
-In this case the read timeout can be specified in seconds via the TeamCity internal property `teamcity.svn.read.timeout`. The default value is 30 minutes. The value of the property is set differently for server\-side checkout and agent\-side checkout:
-* Server\-side operations – [configure internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties)
-* Agent\-side checkout – [add start-up property](configuring-build-agent-startup-properties.md#Agent+Properties)
+In this case the read timeout can be specified in seconds via the TeamCity internal property `teamcity.svn.read.timeout`. The default value is 30 minutes. The value of the property is set differently for a server-side checkout and agent-side checkout:
+* Server-side operations – [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+* Agent-side checkout – [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
 
 ## Miscellaneous
 
 Directories are not considered changed when they have the `svn:mergeinfo` Subversion property changes only. See [details](http://youtrack.jetbrains.com/issue/TW-11452#comment=27-509638).
-
-
 
  <seealso>
         <category ref="admin-guide">
