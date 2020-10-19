@@ -5,12 +5,12 @@ TeamCity comes with built-in [Docker integration](integrating-teamcity-with-dock
 
 <chunk include-id="docker-support">
 
-[Adding this build feature](adding-build-features.md) will enable Docker events monitoring: such operations as `docker pull` and `docker run` will be detected.   
+Adding this [build feature](adding-build-features.md) will enable Docker events monitoring: such operations as `docker pull` and `docker run` will be detected.   
 The build feature adds the _Docker Info_ tab to the [build results](working-with-build-results.md) page providing information on Docker-related operations. It also provides the following options:
 * ability to clean up the images
 * automatic login to an authenticated registry before the build and logout of it after the build
 
-These options require a configured connection to a Docker registry:
+These options require a configured [connection to a Docker registry](configuring-connections-to-docker.md):
 
 <img src="docker-support.png" width="750" alt="Docker Support build feature"/>
 
