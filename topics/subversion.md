@@ -5,7 +5,7 @@ This page contains descriptions of Subversion-specific fields and options availa
 
 Common VCS root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
->You do not need a Subversion client to be installed on the TeamCity server or agents. TeamCity bundles the Java implementation of SVN client ([SVNKit](http://svnkit.com/)).
+>You do not need a Subversion client to be installed on the TeamCity server or agents. TeamCity bundles the Java implementation of an SVN client ([SVNKit](http://svnkit.com/)).
 >
 type="tip"
 
@@ -142,7 +142,7 @@ If enabled, TeamCity is able to connect to SVN servers without properly signed S
 
 <note>
 
-Note that if you have anonymous access for some path within SVN,the entered username will never be used to authenticate when accessing any of its subfolders. Anonymous access will be used instead. This rule only applies for `svn://` and `http(s)://` protocols; i.e. if you have a build configuration which uses a combination of this VCS Root \+ [VCS Checkout Rules](vcs-checkout-rules.md) referencing a non-restricted path above the restricted one for another build configuration, changes under the restricted path will be ignored _even_ if you specify correct username/password for the VCS Root itself.
+Note that if you have anonymous access for some path within SVN, the entered username will never be used to authenticate when accessing any of its subfolders. Anonymous access will be used instead. This rule only applies for `svn://` and `http(s)://` protocols; i.e. if you have a build configuration which uses a combination of this VCS Root \+ [VCS Checkout Rules](vcs-checkout-rules.md) referencing a non-restricted path above the restricted one for another build configuration, changes under the restricted path will be ignored _even_ if you specify correct username/password for the VCS Root itself.
 </note>
 
 ## SSH settings
@@ -330,9 +330,10 @@ In this case the read timeout can be specified in seconds via the TeamCity inter
 * Server-side operations – [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 * Agent-side checkout – [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
 
-## Miscellaneous
+## Ignored properties
 
-Directories are not considered changed when they have the `svn:mergeinfo` Subversion property changes only. See [details](http://youtrack.jetbrains.com/issue/TW-11452#comment=27-509638).
+By default, TeamCity ignores changes in the `svn:mergeinfo` properties and does not consider a directory _changed_ if only these properties are modified in a given commit.   
+You can alter the list of ignored SVN properties via the TeamCity [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.svn.ignorable.properties`. The value of this property is a comma-separated list of SVN properties; the default value is `svn:mergeinfo`.
 
  <seealso>
         <category ref="admin-guide">
