@@ -131,8 +131,6 @@ You can also install TeamCity using the following __experimental options__:
 Note that we do not guarantee support of experimental versions. For production purposes, we recommend using stable TeamCity distributives and Docker images.
 </note>
 
-For evaluation, we offer a limited cloud version via [TeamCity TestDrive](https://www.jetbrains.com/teamcity/download/#section=testdrive).
-
 ## Install Additional Build Agents
 
 Although the TeamCity server in `.exe` and `.tar.gz` distributions is installed with a default build agent that runs on the same machine as the server, this setup may result in degraded TeamCity web UI performance, and if your builds are CPU\-intensive, it is recommended to install build agents on separate machines or ensure that there is enough CPU/memory/disk throughput on the server machine.
