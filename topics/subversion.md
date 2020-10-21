@@ -330,7 +330,7 @@ In this case the read timeout can be specified in seconds via the TeamCity inter
 * Server-side operations – [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 * Agent-side checkout – [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
 
-## Ignored properties
+## Ignored changes
 
 By default, TeamCity ignores changes in the `svn:mergeinfo` properties and does not consider a directory _changed_ if only these properties are modified in a given commit.   
 You can alter the list of ignored SVN properties via the TeamCity [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.svn.ignorable.properties`. The value of this property is a comma-separated list of SVN properties; the default value is `svn:mergeinfo`.
