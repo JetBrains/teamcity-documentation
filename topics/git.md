@@ -156,13 +156,13 @@ A custom username used for [labeling](vcs-labeling.md).
 * If there are several lines with equal matching, the one below takes precedence.    
 Everything that is matched by the wildcard will be shown as a branch name in the TeamCity interface. For example, `+:refs/heads/*` will match `refs/heads/feature1` branch, but in the TeamCity interface you'll see only `feature1` as a branch name.    
 The short name of the branch is determined as follows:
-* if the line contains no brackets, then full line is used, if there are no patterns or part of line starting with the first pattern\-matched character to the last pattern\-matched character.
+* if the line contains no brackets, then full line is used, if there are no patterns or part of line starting with the first pattern-matched character to the last pattern-matched character.
 * if the line contains brackets, then part of the line within brackets is used. When branches are specified here, and if your build configuration has a VCS trigger and a change is found in some branch, TeamCity will trigger a build in this branch.
 
 ### Supported Git Protocols
 
 The following protocols are supported for Git repository URL:
-* ssh: (for example, `ssh://git.somwhere.org/repos/test.git`, `ssh://git@git.somwhereElse.org/repos/test.git`, scp\-like syntax: `git@git.somwhere.org:repos/test.git`)
+* ssh: (for example, `ssh://git.somwhere.org/repos/test.git`, `ssh://git@git.somwhereElse.org/repos/test.git`, SCP-like syntax: `git@git.somwhere.org:repos/test.git`)
 
 <note>
 
@@ -223,8 +223,8 @@ Specify a valid __username__ (if there is no username in the clone URL; the user
 For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](http://youtrack.jetbrains.com/issue/TW-18711).    
 For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
 
-You can use a personal access token instead of a password to authenticate to Azure DevOps Services. Note that TeamCity does not support token authentication to hosted [Azure DevOps Server](https://azure.microsoft.com/en-in/services/devops/server/) (formerly, Team Foundation Server) installations.
-
+You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, and Bitbucket.   
+Note that TeamCity does not support token authentication to hosted [Azure DevOps Server](https://azure.microsoft.com/en-in/services/devops/server/) (formerly, Team Foundation Server) installations.
 
 </td></tr><tr>
 
@@ -258,7 +258,7 @@ If you use Git source control with Azure DevOps Services, the following options 
 
 ## Server Settings
 
-These are the settings used in case of the server\-side [checkout](vcs-checkout-mode.md).
+These are the settings used in case of the server-side [checkout](vcs-checkout-mode.md).
 
 <table><tr>
 

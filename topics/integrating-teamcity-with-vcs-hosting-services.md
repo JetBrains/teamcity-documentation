@@ -1,7 +1,7 @@
 [//]: # (title: Integrating TeamCity with VCS Hosting Services)
 [//]: # (auxiliary-id: Integrating TeamCity with VCS Hosting Services)
 
-If you have an organization account in [GitHub](https://github.com/), [GitHub Enterprise](https://enterprise.github.com/), [Bitbucket Cloud](https://bitbucket.org/), [GitLab.com](https://about.gitlab.com/), or [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/), you can connect TeamCity to these source code hosting services making it easier for the organization users to create new projects, [Git](https://confluence.jetbrains.com/display/TCD10/Git) or [Mercurial](https://confluence.jetbrains.com/display/TCD10/Mercurial) VCS roots, [GitHub](https://confluence.jetbrains.com/display/TCD10/GitHub) or [Bitbucket](https://confluence.jetbrains.com/display/TCD10/Bitbucket) issue tracker, which are now now supported out of the box.
+If you have an organization account in [GitHub](https://github.com/), [GitHub Enterprise](https://enterprise.github.com/), [Bitbucket Cloud](https://bitbucket.org/), [GitLab.com](https://about.gitlab.com/), or [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/), you can connect TeamCity to these source code hosting services making it easier for the organization users to create new projects, [Git](https://confluence.jetbrains.com/display/TCD10/Git) or [Mercurial](https://confluence.jetbrains.com/display/TCD10/Mercurial) VCS roots, [GitHub](https://confluence.jetbrains.com/display/TCD10/GitHub) or [Bitbucket](https://confluence.jetbrains.com/display/TCD10/Bitbucket) issue tracker, which are supported out of the box.
 
 It is also possible to connect TeamCity to [Azure DevOps Services](https://visualstudio.microsoft.com/team-services/) making it really simple to set up projects which use VSTS repositories or issue tracker.
 
@@ -25,9 +25,9 @@ To configure a GitHub connection:
 3. Click the _register application_ link. The GitHub page opens.   
 You need to register TeamCity as an [OAuth application](https://docs.github.com/en/developers/apps/authorizing-oauth-apps) in GitHub.   
 The following steps are performed in your GitHub account:
-   * Log into your GitHub account. On the Register a new OAuth application page specify the name and an optional description, the homepage URL and the callback URL as provided by TeamCity.
-   * Click __Register application__.  The page is updated with Client ID and the client secret information for your TeamCity application. 
-4. Continue configuring the connection in TeamCity: on the Add Connection page that is open, specify the Client ID and the client secret.
+   * Log into your GitHub account. On the __Register a new OAuth application__ page, specify the name and an optional description, the homepage URL and the callback URL as provided by TeamCity.
+   * Click __Register application__. The page is updated with Client ID and the client secret information for your TeamCity application. 
+4. Continue configuring the connection in TeamCity: on the __Add Connection__ page that is open, specify the Client ID and the client secret.
 5. Save the connection settings. 
 6. The connection is configured, and now a small GitHub icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Git](git.md) VCS root, create [GitHub](github.md) issue tracker. Click the icon, log in to GitHub and authorize TeamCity. The authorized application will be granted full control of private repositories and the _Write repository hooks_ permission.
 
@@ -91,8 +91,6 @@ __Since TeamCity 2017.2 EAP1__, when configuring Commit Status Publisher for Git
 
  It is possible to configure several VSTS connections. In this case the server URL will be displayed next to the VSTS icon to distinguish the server in use. 
 </tip>
-
-
 
 ## Creating Entities from URL in TeamCity
 

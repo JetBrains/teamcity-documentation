@@ -7,7 +7,7 @@ Common VCS root properties are described [here](configuring-vcs-roots.md#Common+
 
 >You do not need a Subversion client to be installed on the TeamCity server or agents. TeamCity bundles the Java implementation of an SVN client ([SVNKit](http://svnkit.com/)).
 >
-type="tip"
+{type="tip"}
 
 ## SVN Connection Settings
 

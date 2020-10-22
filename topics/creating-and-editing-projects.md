@@ -51,7 +51,7 @@ Parent Project
 
 <td>
 
-Select the parent project form the drop\-down.
+Select the parent project from the drop-down menu.
 
 
 </td></tr><tr>
@@ -80,7 +80,7 @@ Username
 
 <td>
 
-Provide username if access to repository requires authentication
+Provide a username if access to the repository requires authentication.
 
 
 </td></tr><tr>
@@ -94,7 +94,7 @@ Password
 
 <td>
 
-Provide username if access to repository requires authentication
+Provide a password or token if access to the repository requires authentication.
 
 
 </td></tr></table>
@@ -103,9 +103,9 @@ Provide username if access to repository requires authentication
  * it will determine the type of the VCS repository, auto\-configure VCS repository settings, and suggest the project and build configuration names:
  * the project, build configuration and VCS root will be created automatically
  * TeamCity will add a VCS build trigger.
- * TeamCity will attempt to auto\-detect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.
+ * TeamCity will attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.
 
-4\. On the __Auto\-detected Build Steps__ page select the detected step(s) to use in your build configuration. Click __Use selected__. If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
+4\. On the __Auto-detected Build Steps__ page select the detected step(s) to use in your build configuration. Click __Use selected__. If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
 
 5\. Your project and a build configuration are configured. Click the __Run__ button to start the build.   
 Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review Suggestions at the end of the settings list and configure required ones.
@@ -114,8 +114,8 @@ Depending on the build configuration settings, TeamCity can suggest some additio
 1. On the __Create project__ page, select to create a project __from GitHub.com__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__.
-4. TeamCity will add a VCS build trigger and attempt to auto\-detect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
-    On the __Auto\-detected Build Steps__ page, select the detected step(s) to use in your build configuration. Click __Use selected__.   
+4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
+    On the __Auto-detected Build Steps__ page, select the detected step(s) to use in your build configuration. Click __Use selected__.   
     If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
 
@@ -123,7 +123,7 @@ Depending on the build configuration settings, TeamCity can suggest some additio
 1. On the __Create project__ page, select to create a project __from Bitbucket Cloud__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__.
-4. TeamCity will add a VCS build trigger and attempt to auto\-detect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
+4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
 On the __Auto-detected Build Steps__ page, select the detected step(s) to use in your build configuration. Click __Use selected__.   
 If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
@@ -132,7 +132,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 1. On the __Create project__ page, select to create a project __from GitLab.com__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__.
-4. TeamCity will add a VCS build trigger and attempt to auto\-detect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
+4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
 On the __Auto-detected Build Steps__ page, select the detected step(s) to use in your build configuration. Click __Use selected__.   
 If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
@@ -148,7 +148,7 @@ In 2019, Visual Studio Team Services have been renamed to Azure DevOps Services.
 1. On the __Create project__ page, select to create project __from Azure DevOps Services__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__.
-4. TeamCity will add a VCS build trigger and attempt to auto\-detect build steps.   
+4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   
 On the __Auto\-detected Build Steps page__ select the detected step(s) to use in your build configuration. Click __Use selected__.   
 If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
 5. Your project and a build configuration are configured. Click __Run__ to start the build.   
@@ -184,7 +184,7 @@ Parent Project
 
 <td>
 
-Select the parent project form the drop\-down.
+Select the parent project from the drop-down menu.
 
 
 </td></tr><tr>
@@ -259,7 +259,7 @@ A copy duplicates all the settings, [subprojects](project.md#Project+Hierarchy),
 You can copy a project into the same or another parent.
 
 On copying, TeamCity automatically assigns a new name and [ID](identifier.md) to the copy. It is also possible to change the name and ID manually.   
-Selecting the __Copy project\-associated user, agent and other settings__ option makes sure that all the settings like notification rules or agent's compatibility are exactly the same for the copied and original projects for all the users and agents affected.
+Selecting the __Copy project-associated user, agent and other settings__ option makes sure that all the settings like notification rules or agent's compatibility are exactly the same for the copied and original projects for all the users and agents affected.
 
 You can also opt to copy build configurations build numbers.
 
