@@ -7,9 +7,9 @@ _Agentless builds_ are builds that can run virtually, without an [agent](build-a
 
 A build agent is usually required to run a build from start to finish. However, if a running build does not need its agent for some remaining operations, it can send an instruction to "release" the agent. This agent becomes available and can be instantly assigned to another build.
 
-This approach allow saving agents' worktime and is optimal for configurations that use third-party tools for finalizing a build: for example, to deploy a project. Such build can finish outside of TeamCity, and the TeamCity server will detect its status reports directly, without using an agent as a mediator.
+This approach allows saving agents' work time and is optimal for configurations that use third-party tools for finalizing a build: for example, to deploy a project. Such a build can finish outside of TeamCity, and the TeamCity server will detect its status reports directly, without using an agent as a mediator.
 
-Let's compare a regular build that consists of three steps: compilation, testing, and deployment. All of them are processed by an agent even though the deployment step is actually performed by the external software. The agent passes is reporting result to a TeamCity server and stays assigned to the build until it is finished.
+Let's compare a regular build that consists of three steps: compilation, testing, and deployment. All of them are processed by an agent even though the deployment step is actually performed by the external software. The agent is reporting results to the TeamCity server and stays assigned to the build until it is finished.
 
 <img src="../images/agent-depend-build.png" alt="Regular build"/>
 
