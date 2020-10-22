@@ -31,6 +31,7 @@
          <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-requirements.md"/>
          <toc-element id="agent-work-directory.md"/>
+         <toc-element id="agentless-build.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="authentication-modules.md"/>
          <toc-element id="build-chain.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-checkout-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -155,6 +156,7 @@
                <toc-element id="viewing-agents-workload.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="viewing-build-agent-details.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="configuring-agent-pools.md" show-structure-for="chapter" show-structure-depth="4"/>
+               <toc-element id="managing-agentless-builds.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
             <toc-element id="teamcity-memory-monitor.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="disk-usage.md"/>
