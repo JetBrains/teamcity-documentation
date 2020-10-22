@@ -43,7 +43,7 @@ POST /app/rest/builds/id:TestBuild/log
 
 >To structure service messages in the build log, use [_flow tracking_](service-messages.md#Message+FlowId).
 
-## Finishing build
+### Finishing build
 
 It is important to ensure that an agentless build delivers a finishing request to the server. If the server is temporarily unavailable and cannot receive this request on time, the build should retry until this operation is successful. Without the finishing request, the build will be running on the TeamCity server indefinitely, until reaching its specified timeout, if any.
 
@@ -59,4 +59,10 @@ In `--data ''`, you can send the build finish timestamp in the `yyyyMMdd'T'HHmms
 ## Agentless builds' licensing
 
 The number of agentless builds is limited by the number of your active [agent licenses](licensing-policy.md#Number+of+Agents).
+
+<seealso>
+        <category ref="concepts">
+            <a href="agentless-build.md">Agentless Build</a>
+        </category>
+</seealso>
 
