@@ -56,6 +56,8 @@ PUT /app/rest/builds/id:<build_id>/finishDate
 
 In `--data ''`, you can send the build finish timestamp in the `yyyyMMdd'T'HHmmssZ` format. Leave the value empty to use the current time.
 
+<anchor name="agentless-licensing"/>
+
 ## Agentless builds' licensing
 
 The number of agentless builds is limited by the number of your active [agent licenses](licensing-policy.md#Number+of+Agents).
