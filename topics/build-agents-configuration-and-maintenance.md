@@ -7,7 +7,7 @@ The __Agents__ page of the TeamCity web UI provides the comprehensive informatio
 
 ### Connected / Disconnected
 
-The __Connected__ and __Disconnected__ tabs display the agents by [Agent pool](agent-pools.md) (default). To view the agents alphabetically, uncheck the __Group by agent pool__ box.   
+The __Connected__ and __Disconnected__ tabs display the agents by [Agent pool](configuring-agent-pools.md) (default). To view the agents alphabetically, uncheck the __Group by agent pool__ box.   
 For each pool TeamCity displays the status of its build agents. Clicking the arrow next to the pool displays the list of the pools agents with their statuses.
 
 #### Enabling/Disabling Agents via UI
@@ -18,7 +18,7 @@ TeamCity distributes builds only among the enabled agents. Agents can be manuall
 
 ### Pools 
 
-Refer to a [separate page](agent-pools.md) for information on configuring agent pools in TeamCity.
+Refer to a [separate page](configuring-agent-pools.md) for information on configuring agent pools in TeamCity.
 
 ### Parameters report
 

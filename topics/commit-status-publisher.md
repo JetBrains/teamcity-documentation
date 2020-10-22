@@ -39,11 +39,11 @@ For older versions of GitLab, use the GitLab URL of the format `http[s]://<hostn
 
 To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111). Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111), are rejected by the Bitbucket API.
 
-In the Commit Status Publisher settings, specify a username and password for authentication. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password.
+In the Commit Status Publisher settings, specify a username and password (or token) for authentication. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password.
 
 ### Bitbucket Server
 
-Commit Status Publisher supports the Bitbucket Server URL in the following format: `http[s]://<hostname>:<port>`. Apart from the URL, you need to specify a username and password for authentication.
+Commit Status Publisher supports the Bitbucket Server URL in the following format: `http[s]://<hostname>:<port>`. Apart from the URL, you need to specify a username and password (or token) for authentication.
 
 ### Gerrit
 
@@ -58,7 +58,7 @@ In 2019, Visual Studio Team Services and Team Foundation Server have been rename
 
 </note>
 
-Personal Access Tokens can be used for authentication. If a [VSTS connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps+Services) is configured, the personal access token can be automatically filled from the project connection.
+Personal access tokens can be used for authentication. If a [VSTS connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps+Services) is configured, the personal access token can be automatically filled from the project connection.
 
 ## Using Commit Status Publisher
 

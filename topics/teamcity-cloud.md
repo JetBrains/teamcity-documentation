@@ -49,7 +49,7 @@ TeamCity Cloud supports agents hosted on Windows, Linux, and macOS. SaaS agents 
 </tip>
  
 
-From the start, you get one Windows and two Linux images available in your default [pool](agent-pools.md). As soon as you run a build, TeamCity will automatically start an instance of the first suitable image. After the build is finished, the instance will be terminated by the idle timeout.
+From the start, you get one Windows and two Linux images available in your default [pool](configuring-agent-pools.md). As soon as you run a build, TeamCity will automatically start an instance of the first suitable image. After the build is finished, the instance will be terminated by the idle timeout.
 
 You can get extra agents by clicking __Install Build Agents__ in the upper right corner of the __Agents__ page. In terms of Beta, we provide 10 parallel agents.   
 We recommend using tokens to authenticate build agents on the TeamCity server. Click __Use authentication token__ and choose one of the two options: _Generate plain-text token_, or _Download config_ to create a ready-to-use [agent config file](build-agent-configuration.md).

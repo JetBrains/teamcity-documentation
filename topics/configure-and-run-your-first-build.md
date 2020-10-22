@@ -1,7 +1,7 @@
 [//]: # (title: Configure and Run Your First Build)
 [//]: # (auxiliary-id: Configure and Run Your First Build)
 
-After you have installed and started TeamCity as described [here](installing-and-configuring-the-teamcity-server.md), the server is accessible locally on the default port (on Windows as [`http://localhost/`](http://localhost:8111/), and on Linux/OS X as [`http://localhost:8111/`](http://localhost:8111/)) and has one registered build agent that runs on the same computer.
+After you have installed and started TeamCity as described [here](installing-and-configuring-the-teamcity-server.md), the server is accessible locally on the default port (on Windows as [`http://localhost/`](http://localhost:8111/), and on Linux/OS X as [`http://localhost:8111/`](http://localhost:8111/)) and has one registered [build agent](build-agent.md) that runs on the same computer.
 
 Now we can get building!
 
@@ -14,7 +14,7 @@ For a quick tutorial, you can also watch this video:
 
 ## Create your first project
 
-In TeamCity, there is the default \<Root project\> containing all other projects in TeamCity. To create a project, click the __Administration__ link in the upper right corner and then click __Create project__. The __Create Project__ page is displayed.
+In TeamCity, there is the default _Root project_ containing all other projects in TeamCity. To create a project, click the __Administration__ link in the upper right corner and then click __Create project__. The __Create Project__ page is displayed.
 
 There are several options to create a project:
 * [From a repository URL](#Create+a+project+from+a+repository+URL) (default)
@@ -117,7 +117,9 @@ Your build configuration currently has one build step, and you can now launch yo
 
 <img src="RunBuild.png" alt="Run a build" width="750"/>
 
-You will be redirected to the build result page, where you can watch the build progress and review its results upon the build finishing. You can also access your build configuration settings from this page and edit them as required:
+TeamCity will assign the build to the first available and [suitable](agent-requirements.md) [build agent](build-agent.md).
+
+You will be redirected to the __Build Results__ page where you can watch the build progress and review its results upon the build finishing. You can also access your build configuration settings from this page and edit them as required:
 
 <img src="BuildResults.PNG" alt="Build results" width="750"/>
 

@@ -311,7 +311,7 @@ The user account used to run the build agent service must have enough rights to 
 
 #### Automatic Agent Start under Linux
 
-To run an agent automatically on the machine boot under Linux, configure daemon process with the `agent.sh start` command to start it and `agent.sh stop` command to stop it.
+To run an agent automatically on the machine boot under Linux, configure a daemon process with the `agent.sh start` command to start it and `agent.sh stop` command to stop it.
 
 For systemd, see the example `teamcityagent.service` configuration file:
 

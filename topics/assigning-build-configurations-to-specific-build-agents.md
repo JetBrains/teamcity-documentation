@@ -17,7 +17,7 @@ It is sometimes necessary to manage the [Build Agents](build-agent.md)' workload
 
 ## Agent pools
 
-You could split agents into pools. Each project could be associated to a number of pools. See [Agent Pools](agent-pools.md).
+You could split agents into pools. Each project could be associated to a number of pools. See [Agent Pools](configuring-agent-pools.md).
 
 ## Establishing a Run Configuration Policy
 

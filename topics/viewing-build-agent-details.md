@@ -13,7 +13,7 @@ For each connected agent TeamCity provides the following information:
   * the communication [protocol](setting-up-and-running-additional-build-agents.md) used for data transfers between the agent and the server
   * the agent operating system
   * CPU rank: the result of the bundled CPU benchmark. Note that the benchmark results can depend on the JVM version and options used by the agent. For example, `-server` JVM option has a significant influence on the results. CPU benchmark also affects the way how the server distributes builds among agents. If a build duration estimate cannot be calculated for an agent (there were no builds in the history ran on this agent), TeamCity chooses the fastest agent basing on the CPU benchmark value.
-  * the [pool](agent-pools.md) the agent belongs to
+  * the [pool](configuring-agent-pools.md) the agent belongs to
   * the agent launcher version
 * If there is a __running build__ on the agent, the page displays information on the build with the link to the [build results](working-with-build-results.md).
 * __Miscellaneous__: this section provides the options to

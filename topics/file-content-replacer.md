@@ -67,7 +67,7 @@ Click __Edit file list__ and specify paths to files where the values to be repla
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
-_If a [pre-defined template](file-content-replacer.md#Templates) is selected, the files associated with that template will be used._
+_If a [predefined template](#Templates) is selected, the files associated with that template will be used._
 
 
 </td></tr><tr>
@@ -185,6 +185,7 @@ $N sequence references N-th capturing group. All backslashes (`\`) and dollar si
 </td></tr></table>
 
 <anchor name="Pre-defined templates"/>
+<anchor name="FileContentReplacer-Predefinedtemplates"/>
 
 ### Templates
 
@@ -215,7 +216,7 @@ The templates for replacing the following [Assembly attributes](https://msdn.mic
 * [`AllowPartiallyTrustedCallers`](http://msdn.microsoft.com/en-us/library/system.security.allowpartiallytrustedcallersattribute.aspx)
 * [`NeutralResourcesLanguageAttribute`](http://msdn.microsoft.com/en-us/library/system.resources.neutralresourceslanguageattribute.aspx)
 
-#### .Net Core [csproj](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/csproj) templates
+#### .NET Core [csproj](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/csproj) templates
 
 * `AssemblyName`
 * `AssemblyTitle`

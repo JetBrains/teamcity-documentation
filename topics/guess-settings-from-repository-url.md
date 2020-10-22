@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Guess Settings from Repository URL)
 TeamCity can automatically discover the VCS type and settings from the repository URL.
 
-When configuring a [VCS root](vcs-root.md), select the __Guess from Repository URL__ option from the drop\-down and specify the URL. TeamCity will recognize the URL for a supported version control and will create a VCS root automatically. After the VCS Root is created, you can [modify its settings](configuring-vcs-roots.md) using the Project Settings or Build Configuration Settings page.
+When configuring a [VCS root](vcs-root.md), select the __Guess from Repository URL__ option from the drop-down menu and specify the URL. TeamCity will recognize the URL for a supported version control and will create a VCS root automatically. After the VCS Root is created, you can [modify its settings](configuring-vcs-roots.md) using the Project Settings or Build Configuration Settings page.
 
 ### VCS URL Formats
 
@@ -33,7 +33,7 @@ __Git__
 
 * `http(s)` URLs
 * `git://`
-* Maven\-like URLs: [`http://maven.apache.org/scm/git.html`](http://maven.apache.org/scm/git.html)
+* Maven-like URLs: [`http://maven.apache.org/scm/git.html`](http://maven.apache.org/scm/git.html)
 
 For SSH authentication, create a VCS Root from a URL first and then open its settings to [specify the SSH key](ssh-keys-management.md) to be used. Alternatively, create a Git VCS Root manually.
 
@@ -50,7 +50,7 @@ __Mercurial__
 <td>
 
 * `http(s)` URLs
-* Maven\-like URLs: [`http://maven.apache.org/scm/mercurial.html`](http://maven.apache.org/scm/mercurial.html)
+* Maven-like URLs: [`http://maven.apache.org/scm/mercurial.html`](http://maven.apache.org/scm/mercurial.html)
 
 
 </td></tr><tr>
@@ -65,7 +65,7 @@ __Subversion__
 <td>
 
 * `http(s)` URLs
-* \+Maven\-like URLs: [`http://maven.apache.org/scm/subversion.html`](http://maven.apache.org/scm/subversion.html)
+* \+Maven-like URLs: [`http://maven.apache.org/scm/subversion.html`](http://maven.apache.org/scm/subversion.html)
 * `svn://`
 
 
@@ -103,7 +103,7 @@ __Perforce__
 
 <td>
 
-* Maven\-like URLs: [`http://maven.apache.org/scm/perforce.html`](http://maven.apache.org/scm/perforce.html)
+* Maven-like URLs: [`http://maven.apache.org/scm/perforce.html`](http://maven.apache.org/scm/perforce.html)
 * same as Maven but without the `scm` prefix, for example: `perforce://main:1666/myproject/`
 
 

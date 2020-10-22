@@ -27,6 +27,7 @@
          <toc-element id="difference-viewer.md"/>
          <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="agent-pool.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-requirements.md"/>
          <toc-element id="agent-work-directory.md"/>
@@ -153,7 +154,7 @@
                <toc-element id="configuring-build-agent-startup-properties.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="viewing-agents-workload.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="viewing-build-agent-details.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="agent-pools.md" show-structure-for="chapter" show-structure-depth="4"/>
+               <toc-element id="configuring-agent-pools.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
             <toc-element id="teamcity-memory-monitor.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="disk-usage.md"/>
@@ -364,7 +365,7 @@
       </toc-element>
       <toc-element id="installing-tools.md">
          <toc-element id="intellij-platform-plugin.md" show-structure-for="chapter" show-structure-depth="4">
-            <toc-element id="intellij-platform-plugin-compatibility.md"/>
+            <toc-element id="intellij-platform-plugin-compatibility.md" hidden="true"/>
          </toc-element>
          <toc-element id="browser-notifier.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="eclipse-plugin.md" show-structure-for="chapter" show-structure-depth="4"/>

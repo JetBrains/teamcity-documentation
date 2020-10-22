@@ -12,6 +12,8 @@ If the checksum can be retrieved, and it matches a locally stored one, no build 
 
 If the checksum cannot be retrieved from the remote server, the dependency will be downloaded, TeamCity will calculate its checksum and follow the build triggering mechanism described above.
 
+<anchor name="ConfiguringMavenTriggers-MavenSnapshotDependencyTrigger"/>
+
 ## Maven Snapshot Dependency Trigger
 
 Maven snapshot dependency trigger adds a new build to the queue when there is a real modification of the snapshot dependency content in the remote repository which is detected by the checksum change.
@@ -31,6 +33,8 @@ Note that since Maven deploys artifacts to remote repositories sequentially duri
 __Simultaneous usage of snapshot dependency and dependency trigger for a build__
  Assume build A depends on build B by both snapshot and trigger dependency. Then, after the build B finishes, build A will be added into the queue, only if build B is not a part of the build chain containing A.
 </note>
+
+<anchor name="ConfiguringMavenTriggers-MavenArtifactDependencyTrigger"/>
 
 ## Maven Artifact Dependency Trigger
 

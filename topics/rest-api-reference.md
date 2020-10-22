@@ -912,7 +912,7 @@ The list of supported build locator dimensions:
 * `running:<true/false/any>` – limit builds by the running flag. By default, running builds are not included.
 * `state:running,hanging:true` – fetch hanging builds (__since TeamCity 10.0__).
 * `pinned:<true/false/any>` – limit builds by the pinned flag.
-* `branch:<branch locator>` – limit the builds by branch. `<branch locator>` can be the branch name displayed in the UI, or `(name:<name>,default:<true/false/any>,unspecified:<true/false/any>,branched:<true/false/any>`). By default only builds from the default branch are returned. To retrieve all builds, add the following `locator: branch:default:any`. The whole path will look like this: `/app/rest/builds/?locator=buildType:One_Git,branch:default:any`.
+* `branch:<branch locator>` – limit the builds by branch. `<branch locator>` can be the branch name displayed in the UI, or `(name:<name>,default:<true/false/any>,unspecified:<true/false/any>,branched:<true/false/any>)`. By default only builds from the default branch are returned. To retrieve all builds, add the following `locator: branch:default:any`. The whole path will look like this: `/app/rest/builds/?locator=buildType:One_Git,branch:default:any`.
 * `revision:<REVISION>` – find builds by revision, for example all builds of the given build configuration with the revision: `/app/rest/builds?locator=revision:(REVISION),buildType:(id:BUILD_TYPE_ID)`. See more information [below](#Revisions).
 * `agentName:<name>` – agent name to return only builds ran on the agent with the specified name.
 * `sinceBuild:(<buildLocator>)` – limit the list of builds only to those after the one specified

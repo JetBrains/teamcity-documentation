@@ -93,6 +93,7 @@ Since TeamCity 2017.1 it is possible to configure a forward proxy server for age
  
 <seealso>
         <category ref="concepts">
+            <a href="agent-pool.md">Agent Pool</a>
             <a href="build-agent.md">Build Agent</a>
         </category>
         <category ref="admin-guide">

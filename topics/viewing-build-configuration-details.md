@@ -40,7 +40,7 @@ Displays the collected statistical data as [visual charts](statistic-charts.md#B
 ## Compatible Agents
 
 Lists all authorized agents. Agents meeting [Agent Requirements](agent-requirements.md) are listed as compatible. For each incompatible agent, the reason is provided.   
-The agents belonging to the [pool(s)](agent-pools.md) associated with the current project are listed first. 
+The agents belonging to the [pool(s)](configuring-agent-pools.md) associated with the current project are listed first. 
 
 ## Pending Changes
 

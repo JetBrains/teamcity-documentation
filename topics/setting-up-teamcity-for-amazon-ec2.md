@@ -187,7 +187,7 @@ To use a spot fleet in your project:
    
 2. In TeamCity, add a spot fleet to a cloud profile:
    * On the __Cloud Profile__ page click __Add image__.
-   * In the _Source_ drop-down menu, select _Spot Instance Fleet_. Enter the maximum number of required spot instances (_Max instances_) in a fleet and select an _[agent pool](agent-pools.md)_.    
+   * In the _Source_ drop-down menu, select _Spot Instance Fleet_. Enter the maximum number of required spot instances (_Max instances_) in a fleet and select an _[agent pool](configuring-agent-pools.md)_.    
    * In the _Spot Fleet Config_ field, insert the JSON configuration file generated in AWS Management Console.    
 
    <img src="SpotFleetConfig.png" width="550" alt="Spot fleet configuration in TeamCity"/>
@@ -211,7 +211,7 @@ TeamCity uses own values instead of the following parameters of the JSON config 
 
 TeamCity supports [Amazon EC2 launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html) for cloud instances. Launch templates allow reusing a once defined launch specification for all new instances, which eliminates the need to describe the launch settings every time new instances are requested.
 
-If your cloud profile is connected to the Amazon server, TeamCity will automatically detect launch templates available on this server. When adding an image, select a required template as the _Source_ and specify its version, and TeamCity will request instances based on the template parameters. Optionally, you can also limit the number of launched instances and assign them to a certain [agent pool](agent-pools.md).
+If your cloud profile is connected to the Amazon server, TeamCity will automatically detect launch templates available on this server. When adding an image, select a required template as the _Source_ and specify its version, and TeamCity will request instances based on the template parameters. Optionally, you can also limit the number of launched instances and assign them to a certain [agent pool](configuring-agent-pools.md).
 
 When the default/latest version of the template is updated on the server, TeamCity will detect these changes and update the running instances.
 

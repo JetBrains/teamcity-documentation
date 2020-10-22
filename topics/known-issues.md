@@ -461,11 +461,15 @@ To resolve this issue, we suggest that you use Xcode 11 instead. To workaround t
 
 Due to the recent updates in the [SameSite cookie](https://web.dev/samesite-cookies-explained/) support, the __Projects__ pop-up menu may not display [cross-server projects](configuring-cross-server-projects-pop-up-menu.md) in some latest web browsers (see [more details](https://www.chromestatus.com/feature/5088147346030592) for Chrome Platform).
  
-If you cannot access the cross-server __Projects__ menu, you can try to temporarily workaround this issue:
+If you cannot access the cross-server __Projects__ menu, you can try to temporarily workaround this issue by changing your browser settings:
 
 * In Google Chrome, open the `chrome://flags` page and disable the "_SameSite by default cookies_" option.
 * In Mozilla Firefox, open the `about:config` page and disable the `network.cookie.sameSite.laxByDefault` option.
 * In Safari, go to __Preferences | Privacy__ and disable the "_Prevent cross-site tracking_" option.
+
+>By disabling this setting, you reduce the overall security of your browser. Use this workaround only if necessary. We highly recommend that you wait until this issue is fixed in the next version of TeamCity.
+>
+{type="note"}
  
 This problem will be resolved in the TeamCity 2020.1.5 update. See the [related issue](https://youtrack.jetbrains.com/issue/TW-67644) for more details.
 
