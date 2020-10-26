@@ -43,21 +43,22 @@ The general syntax of a single checkout rule is as follows:
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
-<note>
 
 If no rule is specified, all files are included.   
 When you start entering a rule, note that as soon as you enter any `+:` rule, TeamCity will remove the default "include all" setting.   
 To include all the files explicitly, use the `+:.` rule.
 
-</note>
-
-<note>
-
 Note that exclude checkout rules (in the form of `-:`) will generally only speed up server-side checkouts, unless you use [Perforce](perforce.md) and [TFS](team-foundation-server.md) agent-side checkout, where exclude rules are processed effectively.   
 With other version control systems, agent-side checkouts may emulate the exclude checkout rules by checking out all the root directories mentioned as include rules and deleting the excluded directories. With such systems, exclude checkout rules should generally be avoided for the agent-side checkout. Refer to the [VCS Checkout Mode](vcs-checkout-mode.md) page for more information.   
-
 With Git agent-side checkout, TeamCity translates some checkout rules to the sparse checkout patterns. See the details in [Git](git.md#Limitations).
-</note>
+
+If there are multiple VCS roots with intersecting checkout rules (for example, two VCS roots have the checkout rule `+: foo => bar`) attached to a build configuration and the files are checked out on the [agent](vcs-checkout-mode.md#agent-checkout), some files might be skipped during the checkout. The following warning will be shown in the UI:
+ 
+ ```
+ The paths specified in the checkout rules of one VCS root conflict (intersect) with checkout rules of another VCS root. This may cause problems in "checkout on agent" mode.
+ ```
+ 
+To workaround this issue, resolve the conflicts between the checkout rules or change the checkout mode to "[server-side](vcs-checkout-mode.md#server-checkout)".
 
 When entering rules, note the following:
 * To enter multiple rules, each rule should be entered on a separate line.
