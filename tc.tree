@@ -31,7 +31,7 @@
          <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-requirements.md"/>
          <toc-element id="agent-work-directory.md"/>
-         <toc-element id="agentless-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="authentication-modules.md"/>
          <toc-element id="build-chain.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-checkout-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -156,7 +156,6 @@
                <toc-element id="viewing-agents-workload.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="viewing-build-agent-details.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="configuring-agent-pools.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="managing-agentless-builds.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
             <toc-element id="teamcity-memory-monitor.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="disk-usage.md"/>
@@ -169,7 +168,6 @@
          <toc-element id="multinode-setup.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="configuring-secondary-node.md" show-structure-for="chapter" show-structure-depth="4"/>
          </toc-element>
-         <toc-element id="configuring-cross-server-projects-pop-up-menu.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="managing-projects-and-build-configurations.md">
             <toc-element id="creating-and-editing-projects.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configuring-vcs-settings.md" show-structure-for="chapter" show-structure-depth="4">
@@ -359,6 +357,8 @@
          </toc-element>
          <toc-element id="customizing-notifications.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="assigning-build-configurations-to-specific-build-agents.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="detaching-build-from-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="configuring-cross-server-projects-pop-up-menu.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="patterns-for-accessing-build-artifacts.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="mono-support.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="maven-server-side-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
