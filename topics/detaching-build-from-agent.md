@@ -61,7 +61,7 @@ PUT /app/rest/builds/id:<build_id>/finishDate
 (curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finishDate --data "20201231T235959+0000" --header "Content-Type: text/plain")
 ```
 
-<anchor name="agentless-licensing"/>
+<anchor name="DetachingBuildfromAgent-agentless-licensing"/>
 
 ## Agentless builds' licensing
 
