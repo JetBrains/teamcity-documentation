@@ -51,17 +51,15 @@ To finish a build, use the following call:
 
 ```shell script
 PUT /app/rest/builds/id:<build_id>/finish
-(curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finishDate --header "Content-Type: text/plain")
+(curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finish --header "Content-Type: text/plain")
 ```
 
-Alternatively, you can finish it by sending the exact finish date:
+Alternatively, you can finish it by sending the exact finish date in the `yyyyMMdd'T'HHmmssZ` format:
 
 ```shell script
 PUT /app/rest/builds/id:<build_id>/finishDate
-(curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finishDate --data '' --header "Content-Type: text/plain")
+(curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finishDate --data "20201231T235959+0000" --header "Content-Type: text/plain")
 ```
-
-In `--data ''`, specify the build finish timestamp in the `yyyyMMdd'T'HHmmssZ` format. Leave the value empty to use the current time.
 
 <anchor name="agentless-licensing"/>
 
