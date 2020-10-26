@@ -59,6 +59,16 @@ With other version control systems, agent-side checkouts may emulate the exclude
 With Git agent-side checkout, TeamCity translates some checkout rules to the sparse checkout patterns. See the details in [Git](git.md#Limitations).
 </note>
 
+<note>
+If there are multiple VCS Roots with intersecting checkout rules (e.g. both VCS Roots have the checkout rule `+: foo => bar`) attached to a build configuration, and the files are checked out on the [agent-side](vcs-checkout-mode.md#agent-checkout), that may cause some files to not checkout. The following warning will be shown in the UI:
+ 
+ ```
+ The paths specified in the checkout rules of one VCS root conflict (intersect) with checkout rules of another VCS root. This may cause problems in "checkout on agent" mode.
+ ```
+ 
+ To avoid such an issue, the checkout rules must not conflict or the files need to be checked out on the [server-side](vcs-checkout-mode.md#server-checkout).
+</note>
+
 When entering rules, note the following:
 * To enter multiple rules, each rule should be entered on a separate line.
 * For each file, the most specific rule will apply if the file is included, regardless of what order the rules are listed in.
