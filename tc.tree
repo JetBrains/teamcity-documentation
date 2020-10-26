@@ -232,6 +232,7 @@
                   <toc-element id="nuget-installer.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="nunit.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="powershell.md" show-structure-for="chapter" show-structure-depth="4"/>
+                  <toc-element id="python.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="rake.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="simple-build-tool-scala.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="visual-studio-2003.md"/>
