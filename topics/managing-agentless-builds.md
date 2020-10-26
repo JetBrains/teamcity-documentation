@@ -50,11 +50,18 @@ It is important to ensure that an agentless build delivers a finishing request t
 To finish a build, use the following call:
 
 ```shell script
+PUT /app/rest/builds/id:<build_id>/finish
+(curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finishDate --header "Content-Type: text/plain")
+```
+
+Alternatively, you can finish it by sending the exact finish date:
+
+```shell script
 PUT /app/rest/builds/id:<build_id>/finishDate
 (curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finishDate --data '' --header "Content-Type: text/plain")
 ```
 
-In `--data ''`, you can send the build finish timestamp in the `yyyyMMdd'T'HHmmssZ` format. Leave the value empty to use the current time.
+In `--data ''`, specify the build finish timestamp in the `yyyyMMdd'T'HHmmssZ` format. Leave the value empty to use the current time.
 
 <anchor name="agentless-licensing"/>
 
