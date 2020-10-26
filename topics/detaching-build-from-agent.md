@@ -1,19 +1,19 @@
 [//]: # (title: Detaching Build from Agent)
 [//]: # (auxiliary-id: Detaching Build from Agent)
 
-If a build does not require an [agent](build-agent.md) at the final steps, it can release its agent, and this agent will become available to other builds. During such [_agentless steps_](agentless-build-step.md), the build runs in an external software and reports directly to the TeamCity server.
+If a build does not require its [agent](build-agent.md) at the final steps, it can release this agent so it becomes available to other builds. During such [_agentless steps_](agentless-build-step.md), the build runs in an external software and reports directly to the TeamCity server.
 
-## Detaching build agent
+## Releasing build agent
 
-To release its current build agent, a build needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md) (for example, via a [REST API request](#Logging+messages)). We highly recommend detaching the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require a build agent.
+To release its current build agent, a build needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md) (for example, via a [REST API request](#Logging+messages)). We highly recommend releasing the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require a build agent.
 
 After receiving this message, the agent detaches and skips all the following agentless steps, unless they have the "[_Always, even if build stop command was issued_](configuring-build-steps.md#Execution+policy)" execution policy enabled. If necessary, you can enable it for mandatory final steps – the agent will be released only after completing them.
                         
-A detached agent instantly becomes available to other builds. During agentless steps, the build should report all status information directly to the TeamCity server.
+A released agent instantly becomes available to other builds. During agentless steps, the build should report all status information directly to the TeamCity server.
 
 ## Logging build data
 
-Without an agent, a build can send its logs and perform any other requests to TeamCity via [REST API](rest-api.md).
+Without an agent, a build can send its logs and any other requests to TeamCity via [REST API](rest-api.md).
 
 To perform a request, it needs to provide:
 
