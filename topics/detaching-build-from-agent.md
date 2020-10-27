@@ -56,7 +56,7 @@ PUT /app/rest/builds/id:<build_id>/finish
 (curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finish)
 ```
 
-Alternatively, you can finish it by sending the exact finish date in the `yyyyMMdd'T'HHmmssZ` format:
+Alternatively, you can finish it by sending the exact finish date as a non-empty in the `yyyyMMdd'T'HHmmssZ` format:
 
 ```shell script
 PUT /app/rest/builds/id:<build_id>/finishDate
