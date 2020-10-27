@@ -34,7 +34,7 @@ POST /app/rest/builds/id:<build_id>/log
 (curl -v --basic --user <username>:<password> --request POST http://<teamcity.url>/app/rest/builds/id:<build_id>/log --data <message> --header "Content-Type: text/plain")
 ```
 
-Here, you can send the [`detach`](#Detaching+build+agent) or any other service message as `<message>`.
+Here, you can send the [`detach`](#Releasing+build+agent) or any other service message as `<message>`.
 
 An example request to send a warning:
 
