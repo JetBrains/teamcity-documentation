@@ -23,6 +23,7 @@ The following _HTTP authentication modules_ are supported:
 The following HTTP modules are provided in terms of 2020.2 EAP:
 * GitHub.com OAuth: Allows authenticating using an existing GitHub user account. Allows limiting access to members of a [GitHub organization](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-organizations).
 * Bitbucket Cloud OAuth: Allows authenticating using an existing Bitbucket Cloud account.
+* GitLab.com OAuth: Allows authenticating using an existing GitLab.com account. Allows limiting access to members of a [GitLab group](https://docs.gitlab.com/ee/user/group/).
 
 Refer to [Configuring Authentication Settings](configuring-authentication-settings.md) for specific _authentication modules_ configuration. See also [Accessing Server by HTTP](accessing-server-by-http.md) page for details about accessing a server from your scripts using _Token-Based Authentication_ or _basic HTTP authentication_.
 

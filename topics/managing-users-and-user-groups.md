@@ -23,7 +23,7 @@ The _General_ tabs allows modifying the user's name, email address and password 
 
 The __Authentication Settings__ section appears if several authentication modules are enabled on the server. Here you can edit usernames for different authentication modules such as LDAP and Windows Domain.   
   
-
+In terms of TeamCity 2020.2 EAP, you can map external OAuth usernames with an existing TeamCity user. If a user with the respective username signs into TeamCity via OAuth, TeamCity will be able to recognize them.
 
  <anchor name="vcsUsername"/>
 
@@ -32,7 +32,7 @@ The __Authentication Settings__ section appears if several authentication module
 <anchor name="ManagingUsersandUserGroups-vcsUsername"/>
 
 This tab allows viewing and editing default usernames for different VCSs used by the current user.   
-Multiple usernames are supported for a VCS root type and for a separate VCS root: several newline\-separated values can be used for each VCS username.
+Multiple usernames are supported for a VCS root type and for a separate VCS root: several newline-separated values can be used for each VCS username.
 
 The names set here will be used to:
 * show builds with changes committed by a user with such a VCS username on the [Changes](viewing-your-changes.md) page
