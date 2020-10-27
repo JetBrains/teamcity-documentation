@@ -7,7 +7,7 @@ If a build does not require its [agent](build-agent.md) at the final steps, it c
 
 ## Releasing build agent
 
-To release its current build agent, a build needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md) (for example, via a [REST API request](#Logging+messages)). We highly recommend releasing the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require a build agent.
+To release its current build agent, a build needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md) by the means of the external software where it is running (for example, via a [REST API request](#Logging+messages)). We highly recommend releasing the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require a build agent.
 
 After receiving this message, the agent detaches and skips all the following agentless steps, unless they have the "[_Always, even if build stop command was issued_](configuring-build-steps.md#Execution+policy)" execution policy enabled. If necessary, you can enable it for mandatory final steps – the agent will be released only after completing them.
                         
@@ -67,7 +67,7 @@ PUT /app/rest/builds/id:<build_id>/finishDate
 
 ## Agentless builds' licensing
 
-The number of builds that can simultaneously run without an agent is limited by the number of your active [agent licenses](licensing-policy.md#Number+of+Agents).
+The number of builds that can simultaneously run without an agent is limited by the number of your active [agent licenses](licensing-policy.md#Number+of+Agents). For example, if you have 10 agent licenses, you can run in parallel 10 agents and 10 agentless builds.
 
 <seealso>
         <category ref="concepts">
