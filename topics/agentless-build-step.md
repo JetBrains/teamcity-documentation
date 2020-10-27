@@ -1,5 +1,5 @@
-[//]: # (title: Agentless Build)
-[//]: # (auxiliary-id: Agentless Build)
+[//]: # (title: Agentless Build Step)
+[//]: # (auxiliary-id: Agentless Build Step)
 
 >This functionality is introduced in terms of TeamCity 2020.2 Early Access Program.
 
