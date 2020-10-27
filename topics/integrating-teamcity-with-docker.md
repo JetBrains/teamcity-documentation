@@ -14,7 +14,7 @@ If a build configuration uses the [Docker runner](docker.md) or the [Docker Wrap
 
 ## Supported Environments
 
-TeamCity Docker Support can run on Mac, Linux, and Windows build agents. It uses the `docker` executable on the build agent machine, so it should be runnable by the build agent user. 
+TeamCity Docker Support can run on Windows, Linux, and macOS build agents. It uses the `docker` executable on the build agent machine, so it should be runnable by the build agent user. 
 
 <note>
 
@@ -96,13 +96,13 @@ If you are using the [Command Line](command-line.md) build step (and not the Tea
 
 ## Features
 
-TeamСity-Docker integration provides the following features which facilitate working with Docker under TeamCity:
+The TeamСity-Docker integration provides the following features which facilitate working with Docker under TeamCity:
 
 ### Docker Support Build Feature
 
 <include src="docker-support.md" include-id="docker-support"/>
 
-### Docker Connection for a Project
+### Docker Connection for Project
 
 <include src="configuring-connections-to-docker.md" include-id="docker-connection"/>
 
@@ -122,10 +122,10 @@ TeamСity-Docker integration provides the following features which facilitate wo
 ### Docker Wrapper
 {id="docker-wrapper-1"}
 
-TeamCity provides the Docker Wrapper extension for [Command Line](command-line.md), [Maven](maven.md), [Ant](ant.md), and [Gradle](gradle.md) runners. Each of the supported runners has the dedicated Docker settings section.
+TeamCity provides the Docker Wrapper extension for [Command Line](command-line.md), [Maven](maven.md), [Ant](ant.md), and [Gradle](gradle.md) runners. Each of the supported runners has the dedicated Docker Settings section.
 
 #### Docker Settings
-{id="docker-settngs-1"}
+{id="docker-settings-1"}
 
 <include src="docker-wrapper.md" include-id="docker-settings"/>
 
@@ -174,3 +174,22 @@ For example:
 
 ##teamcity[dockerMessage type='dockerImage.push' value='myRegistry/repo-test:17,size:2632,digest:sha256:8dc5a195c3dcdc7c288d16288ff3f9ab1d8a5a230e09afb9c8dc9215e861aa55']
 ```
+
+## Conforming with Docker download rate limits
+
+Since November 1st 2020, Docker Hub introduces [download rate limits](https://docs.docker.com/docker-hub/download-rate-limit/) for public image pulls.
+
+If your TeamCity builds use [Docker Wrapper](docker-wrapper.md) or [Docker Compose](docker-compose.md) to pull images from Docker Hub, make sure these pulls do not exceed the following limits:
+
+* Anonymous Docker users: 100 pulls per 6 hours
+* Docker users with the Free plan: 200 pulls per 6 hours
+
+If you have a Team or Pro Docker account, the number of pulls stays unlimited.
+
+A regular TeamCity agent stores a once pulled image in its cache. This allows running an indefinite number of builds using the same pulled image on a regular basis.   
+However, there are few cases to consider:
+* If you are using cloud agents, all required images will be downloaded every time a new cloud agent is launched.
+* If the _Pull image explicitly_ option is enabled in the build step settings, the image will be downloaded in every new build run, even on a local agent. We recommend that you disable this option to prevent reaching the rate limit.
+* During the [Free Disk Space](free-disk-space.md) stage of the build, TeamCity may clean up old unused Docker images from the local cache.
+
+If previously your builds were accessing Docker Hub anonymously, you can double the number of allowed pulls by creating a Free Docker user profile and configuring a [Docker connection](configuring-connections-to-docker.md) in your TeamCity project. TeamCity agents will be able to use this connection to authenticate in Docker Hub before each build.
