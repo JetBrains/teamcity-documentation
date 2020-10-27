@@ -1,6 +1,8 @@
 [//]: # (title: Python)
 [//]: # (auxiliary-id: Python)
 
+>This functionality is introduced in terms of TeamCity 2020.2 Early Access Program.
+
 The Python build runner automatically detects Python on agents and allows running Python scripts on Windows, Linux, and macOS.
 
 >Since TeamCity 2020.2, this bundled runner replaces the obsolete [Python Runner plugin](https://plugins.jetbrains.com/plugin/9042-python-runner). The new runner offers support for virtual environments, Docker, TeamCity Kotlin DSL, and provides more extra features like full test coverage.

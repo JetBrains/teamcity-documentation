@@ -1,6 +1,8 @@
 [//]: # (title: Detaching Build from Agent)
 [//]: # (auxiliary-id: Detaching Build from Agent)
 
+>This functionality is introduced in terms of TeamCity 2020.2 Early Access Program.
+
 If a build does not require its [agent](build-agent.md) at the final steps, it can release this agent so it becomes available to other builds. During such [_agentless steps_](agentless-build-step.md), the build runs in an external software and reports directly to the TeamCity server.
 
 ## Releasing build agent
