@@ -67,7 +67,7 @@ PUT /app/rest/builds/id:<build_id>/finishDate
 
 ## Agentless builds' licensing
 
-The number of builds that can simultaneously run without an agent is limited by the number of your active [agent licenses](licensing-policy.md#Number+of+Agents). For example, if you have 10 agent licenses, you can run in parallel 10 agents and 10 agentless builds.
+The number of builds that can simultaneously run without an agent is limited by the number of your active [agent licenses](licensing-policy.md#Number+of+Agents). For example, if you have 10 agent licenses, you can run in parallel up to 10 agents plus up to 10 agentless builds.
 
 <seealso>
         <category ref="concepts">
