@@ -358,10 +358,9 @@ Here are some notes on different security\-related aspects:
   * TeamCity agent is fully controlled by the TeamCity server: since TeamCity agents support automatic updates download from the server, agents should only connect to a trusted server. An administrator of the server computer can force execution of arbitrary code on a connected agent.
   * Binaries of the agent plugins installed on the server are available to anyone who can access the server URL
 
-
-
 [//]: # (Internal note. Do not delete. "How To...d160e890.txt")    
 
+<anchor name="HowTo...-WhatEncryptionisUsedbyTeamCity"/>
 
 ## What Encryption is Used by TeamCity
 
