@@ -528,7 +528,7 @@ For the `.zip` agent installation you need to install the appropriate Java versi
 
 <anchor name="SettingupandRunningAdditionalBuildAgents-UpgradingJavaonAgents"/>
 
-If you are trying to launch an agent, and it is not able to find the required Java version (currently Java 6) in any of the [default locations](setting-up-and-running-additional-build-agents.md#java-paths), the agent will report an error on starting, the process will not launch, and the agent will be shown as disconnected in the TeamCity UI.
+If you are trying to launch an agent, and it is not able to find the required Java version (currently Java 8) in any of the [default locations](setting-up-and-running-additional-build-agents.md#java-paths), the agent will report an error on starting, the process will not launch, and the agent will be shown as disconnected in the TeamCity UI.
 
 If a build agent uses a Java version older than Java 8, you will see the corresponding warning on the agent's page and a [health item](server-health.md) in the web UI.
 
