@@ -126,7 +126,7 @@ Ensure that the user account used to run the agent service has appropriate [perm
 3. Follow the instructions on the opened [page](https://hub.docker.com/r/jetbrains/teamcity-agent/).
 
 ### Installing via ZIP File
-1. Make sure a JDK (JRE) 1.8.0_161 or later (Java 8-10 are supported, but 1.8.0_161+ is recommended) is properly installed on the agent computer.
+1. Make sure a JDK (JRE) 1.8.0_161 or later (Java 8-11 are supported, but 1.8.0_161+ is recommended) is properly installed on the agent computer.
 2. On the agent computer, make sure the `JRE_HOME` or `JAVA_HOME` environment variables are set (pointing to the installed JRE or JDK directory respectively).
 3. In the TeamCity web UI, navigate to the __Agents__ tab.
 4. Click the __Install Build Agents__ link and select one of the two options to download the archive:
@@ -191,7 +191,7 @@ Linux
 
 <td>
 
-* Installed JDK (JRE) 8-10 (__1.8.0_161 or later is recommended__). The JVM should be reachable via the `JAVA_HOME` (`JRE_HOME`) global environment variable or be in the global path (instead of being specified in, for example, user's `.bashrc` file)
+* Installed JDK (JRE) 8-11 (__1.8.0_161 or later is recommended__). The JVM should be reachable via the `JAVA_HOME` (`JRE_HOME`) global environment variable or be in the global path (instead of being specified in, for example, user's `.bashrc` file)
 
 * The `unzip` utility.
 
@@ -209,7 +209,7 @@ Windows
 
 <td>
 
-* Installed JDK/JRE 8-10 (__1.8.0_161 or later is recommended__).
+* Installed JDK/JRE 8-11 (__1.8.0_161 or later is recommended__).
 
 [//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e644.txt")
 
