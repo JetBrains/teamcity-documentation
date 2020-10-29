@@ -60,8 +60,8 @@ subinacl.exe /service TCBuildAgent /grant=<user login name>=PTO
 </note>
 
 #### Linux
-* The user must be able to run the `shutdown` command (for the agent machine reboot functionality and the machine shutdown functionality when running in a cloud environment)
-* If you are using `systemd`, it should not kill the processes on the main process exit (use [`RemainAfterExit=yes`](https://serverfault.com/questions/660063/teamcity-build-agent-gets-killed-by-systemd-when-upgrading))
+* The user must be able to run the `shutdown` command (for the agent machine reboot functionality and the machine shutdown functionality when running in a cloud environment).
+* If you are using `systemd`, it should not kill the processes on the main process exit (use [`RemainAfterExit=yes`](https://serverfault.com/questions/660063/teamcity-build-agent-gets-killed-by-systemd-when-upgrading)). See also [how to set up automatic agent start under Linux](#Automatic+Agent+Start+under+Linux).
 
 #### Build-related Permissions
 The build process is launched by a TeamCity agent and thus shares the environment and is executed under the OS user used by the TeamCity agent. Ensure that the TeamCity agent is configured accordingly. See [Known Issues](known-issues.md) for related Windows Service Limitations.
@@ -254,7 +254,7 @@ __To start the agent manually__, run the following script:
 
 To configure the agent to be __started automatically__, see the corresponding sections:
 * [Windows](#Automatic+Agent+Start+under+Windows)
-* [Linux](#Automatic+Agent+Start+under+Linux): configure daemon process with the `agent.sh start` command to start it and the `agent.sh stop` command to stop it.
+* [Linux](#Automatic+Agent+Start+under+Linux): configure a daemon process with the `agent.sh start` command to start it and the `agent.sh stop` command to stop it.
 * [macOS](#Automatic+Agent+Start+under+macOS)
 
 #### Automatic Agent Start under Windows
@@ -311,7 +311,7 @@ The user account used to run the build agent service must have enough rights to 
 
 #### Automatic Agent Start under Linux
 
-To run an agent automatically on the machine boot under Linux, configure a daemon process with the `agent.sh start` command to start it and `agent.sh stop` command to stop it.
+To run an agent automatically on the machine boot under Linux, configure a daemon process with the `agent.sh start` command to start it and the `agent.sh stop` command to stop it.
 
 For systemd, see the example `teamcityagent.service` configuration file:
 

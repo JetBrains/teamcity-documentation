@@ -42,7 +42,24 @@ Gradle tasks
 
 Specify Gradle task names separated by spaces. For example, `:myproject:clean :myproject:build` or `clean build`. If this field is left blank, the 'default' task is used. Note that TeamCity currently supports building Java projects with Gradle. Building Groovy, Scala, and other projects has not been tested.
 
-</td></tr><tr>
+</td></tr>
+
+<tr>
+
+<td>
+
+Gradle build file
+
+
+</td>
+
+<td>
+
+A path to the [Gradle build file](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world), relative to the working directory.
+
+</td></tr>
+
+<tr>
 
 <td>
 
