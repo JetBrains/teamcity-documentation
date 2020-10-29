@@ -45,6 +45,8 @@ TeamCity supports the following databases:
 See [additional information](using-aws-aurora-database-cluster.md) if Amazon Aurora DB Cluster is used as the TeamCity database server.
 </note>
 
+<anchor name="SettingupanExternalDatabase-DatabasespecificSteps"/>
+
 ## Database-specific Steps
 
 The section below describes the required configuration on the database server and the TeamCity server. 

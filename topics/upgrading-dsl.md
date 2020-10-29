@@ -199,6 +199,7 @@ This release introduces the new DSL API version, __v2018\_2__, its package is `j
 This release introduces the new DSL API version, v2018\_1, its package is __jetbrains.buildServer.configs.kotlin.v2018\_1__. The previous API versions work and you can keep using them if you don't want to use portable DSL scripts.
 
 <anchor name="dslConverter850"/>
+<anchor name="UpgradingDSL-UpdatingDockerparameters"/>
 
 ### Updating Docker parameters
 [//]: # (AltHead: dslConverter850)

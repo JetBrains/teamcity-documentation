@@ -66,6 +66,8 @@ subinacl.exe /service TCBuildAgent /grant=<user login name>=PTO
 #### Build-related Permissions
 The build process is launched by a TeamCity agent and thus shares the environment and is executed under the OS user used by the TeamCity agent. Ensure that the TeamCity agent is configured accordingly. See [Known Issues](known-issues.md) for related Windows Service Limitations.
 
+<anchor name="SettingupandRunningAdditionalBuildAgents-ServerDataTransfers"/>
+
 ### Agent-Server Data Transfers
 [//]: # (AltHead: Server-Agent Data Transfers)
 
