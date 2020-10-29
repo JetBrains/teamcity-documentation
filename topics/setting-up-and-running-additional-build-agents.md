@@ -60,11 +60,13 @@ subinacl.exe /service TCBuildAgent /grant=<user login name>=PTO
 </note>
 
 #### Linux
-* The user must be able to run the `shutdown` command (for the agent machine reboot functionality and the machine shutdown functionality when running in a cloud environment)
-* If you are using `systemd`, it should not kill the processes on the main process exit (use [`RemainAfterExit=yes`](https://serverfault.com/questions/660063/teamcity-build-agent-gets-killed-by-systemd-when-upgrading))
+* The user must be able to run the `shutdown` command (for the agent machine reboot functionality and the machine shutdown functionality when running in a cloud environment).
+* If you are using `systemd`, it should not kill the processes on the main process exit (use [`RemainAfterExit=yes`](https://serverfault.com/questions/660063/teamcity-build-agent-gets-killed-by-systemd-when-upgrading)). See also [how to set up automatic agent start under Linux](#Automatic+Agent+Start+under+Linux).
 
 #### Build-related Permissions
 The build process is launched by a TeamCity agent and thus shares the environment and is executed under the OS user used by the TeamCity agent. Ensure that the TeamCity agent is configured accordingly. See [Known Issues](known-issues.md) for related Windows Service Limitations.
+
+<anchor name="SettingupandRunningAdditionalBuildAgents-ServerDataTransfers"/>
 
 ### Agent-Server Data Transfers
 [//]: # (AltHead: Server-Agent Data Transfers)
@@ -124,7 +126,7 @@ Ensure that the user account used to run the agent service has appropriate [perm
 3. Follow the instructions on the opened [page](https://hub.docker.com/r/jetbrains/teamcity-agent/).
 
 ### Installing via ZIP File
-1. Make sure a JDK (JRE) 1.8.0_161 or later (Java 8-10 are supported, but 1.8.0_161+ is recommended) is properly installed on the agent computer.
+1. Make sure a JDK (JRE) 1.8.0_161 or later (Java 8-11 are supported, but 1.8.0_161+ is recommended) is properly installed on the agent computer.
 2. On the agent computer, make sure the `JRE_HOME` or `JAVA_HOME` environment variables are set (pointing to the installed JRE or JDK directory respectively).
 3. In the TeamCity web UI, navigate to the __Agents__ tab.
 4. Click the __Install Build Agents__ link and select one of the two options to download the archive:
@@ -189,7 +191,7 @@ Linux
 
 <td>
 
-* Installed JDK (JRE) 8-10 (__1.8.0_161 or later is recommended__). The JVM should be reachable via the `JAVA_HOME` (`JRE_HOME`) global environment variable or be in the global path (instead of being specified in, for example, user's `.bashrc` file)
+* Installed JDK (JRE) 8-11 (__1.8.0_161 or later is recommended__). The JVM should be reachable via the `JAVA_HOME` (`JRE_HOME`) global environment variable or be in the global path (instead of being specified in, for example, user's `.bashrc` file)
 
 * The `unzip` utility.
 
@@ -207,7 +209,7 @@ Windows
 
 <td>
 
-* Installed JDK/JRE 8-10 (__1.8.0_161 or later is recommended__).
+* Installed JDK/JRE 8-11 (__1.8.0_161 or later is recommended__).
 
 [//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e644.txt")
 
@@ -254,7 +256,7 @@ __To start the agent manually__, run the following script:
 
 To configure the agent to be __started automatically__, see the corresponding sections:
 * [Windows](#Automatic+Agent+Start+under+Windows)
-* [Linux](#Automatic+Agent+Start+under+Linux): configure daemon process with the `agent.sh start` command to start it and the `agent.sh stop` command to stop it.
+* [Linux](#Automatic+Agent+Start+under+Linux): configure a daemon process with the `agent.sh start` command to start it and the `agent.sh stop` command to stop it.
 * [macOS](#Automatic+Agent+Start+under+macOS)
 
 #### Automatic Agent Start under Windows
@@ -311,7 +313,7 @@ The user account used to run the build agent service must have enough rights to 
 
 #### Automatic Agent Start under Linux
 
-To run an agent automatically on the machine boot under Linux, configure a daemon process with the `agent.sh start` command to start it and `agent.sh stop` command to stop it.
+To run an agent automatically on the machine boot under Linux, configure a daemon process with the `agent.sh start` command to start it and the `agent.sh stop` command to stop it.
 
 For systemd, see the example `teamcityagent.service` configuration file:
 
@@ -526,7 +528,7 @@ For the `.zip` agent installation you need to install the appropriate Java versi
 
 <anchor name="SettingupandRunningAdditionalBuildAgents-UpgradingJavaonAgents"/>
 
-If you are trying to launch an agent, and it is not able to find the required Java version (currently Java 6) in any of the [default locations](setting-up-and-running-additional-build-agents.md#java-paths), the agent will report an error on starting, the process will not launch, and the agent will be shown as disconnected in the TeamCity UI.
+If you are trying to launch an agent, and it is not able to find the required Java version (currently Java 8) in any of the [default locations](setting-up-and-running-additional-build-agents.md#java-paths), the agent will report an error on starting, the process will not launch, and the agent will be shown as disconnected in the TeamCity UI.
 
 If a build agent uses a Java version older than Java 8, you will see the corresponding warning on the agent's page and a [health item](server-health.md) in the web UI.
 

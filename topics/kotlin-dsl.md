@@ -154,6 +154,7 @@ If you are using IntelliJ IDEA, you can easily start debugging of any Maven task
 
 <img src="NewKotlinDebug.png" width="750" alt="Debugging a task in IDEA"/>
 
+<anchor name="KotlinDSL-EditingKotlinsettingsinUI"/>
 
 ### Editing Project Settings via Web UI
 
@@ -514,6 +515,7 @@ params {
 ## FAQ and Common Problems
 
 
+<anchor name="KotlinDSL-nonUniformIDs"/>
 <anchor name="nonUniformIDs"/>
 
 ### Why portable DSL requires the same prefix for all IDs?
