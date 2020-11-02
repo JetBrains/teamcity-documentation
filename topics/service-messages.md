@@ -639,7 +639,7 @@ In the &lt;new build number&gt; value, you can use the `{build.number}` substitu
 
 ### Adding or Changing a Build Parameter
 
-By using a dedicated service message in your build script, you can dynamically update build parameters of the build right from a build step (the parameters need to be defined in the [Parameters section](configuring-build-parameters.md) of the build configuration). The changed build parameters will be available in the build steps following the modifying one. They will also be available as build parameters and can be used in the dependent builds via [` %dep.*% parameter references`](predefined-build-parameters.md#Dependencies+Properties), for example:
+By using a dedicated service message in your build script, you can dynamically update build parameters of the build right from a build step (the parameters need to be defined in the [__Parameters__](configuring-build-parameters.md) section of the build configuration). The changed build parameters will be available in the build steps following the modifying one. They will also be available as build parameters and can be used in the dependent builds via [` %dep.*% parameter references`](predefined-build-parameters.md#Dependencies+Properties), for example:
 
 ```Shell
 ##teamcity[setParameter name='ddd' value='fff']
@@ -648,9 +648,13 @@ By using a dedicated service message in your build script, you can dynamically u
 When specifying a build parameter's name, mind the prefix:
 * `system` for system properties.
 * `env` for environment variables.
-* No prefix for configuration parameter.
+* No prefix for configuration parameters.
 
 [Read more](configuring-build-parameters.md) about build parameters and their prefixes.
+
+>Since the `setParameter` mechanism does not publish anything to the server until the build if finished, it is not possible to update parameters during the build via REST API.
+>
+{type="note"}
 
 ### Reporting Build Statistics
 
