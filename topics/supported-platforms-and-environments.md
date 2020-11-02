@@ -202,7 +202,7 @@ See also details on the [cloud integrations](teamcity-integration-with-cloud-sol
 
 * [GitHub / GitHub Enterprise](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub)
 * [GitLab](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitLab)
-* [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket)
+* [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket+Cloud)
 * [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps+Services), or formerly Visual Studio Team Services
 
 ## Issue Tracker Integration
