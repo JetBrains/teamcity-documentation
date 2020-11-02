@@ -139,7 +139,7 @@ Currently, the following bundled plugins are disabled on secondary nodes:
 
 <note>
 
-Secondary nodes can use only a limited set of external plugins.
+Secondary nodes can use only a limited set of external plugins. See the [Plugins F.A.Q.](https://plugins.jetbrains.com/docs/teamcity/plugin-development-faq.html#How+to+adapt+plugin+for+secondary+node) for details.
 
 </note>
 
