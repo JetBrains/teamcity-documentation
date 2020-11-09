@@ -1,23 +1,13 @@
 [//]: # (title: Pull Requests)
 [//]: # (auxiliary-id: Pull Requests)
 
-The _Pull Requests_ build feature lets you automatically load pull request (or _merge requests_ in case of GitLab) information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [GitLab](#GitLab+Merge+Requests), and (since version 2020.1) [Azure DevOps](#Azure+DevOps+Pull+Requests).
+The _Pull Requests_ build feature lets you automatically load pull request (or _merge requests_ in case of GitLab) information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [GitLab](#GitLab+Merge+Requests), and [Azure DevOps](#Azure+DevOps+Pull+Requests).   
+In terms of TeamCity 2020.2 EAP, it also supports [Bitbucket Cloud](#Bitbucket+Cloud+Pull+Requests).
 
-The feature extends the original branch specification of the VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria. It monitors builds only on `head` branches:
-* For GitHub: `refs/pull/*/head`
-* For Bitbucket Server: `refs/pull-requests/*/from`
-* For GitLab: `refs/merge-requests/*/head`
-* For Azure DevOps: `refs/pull/*/merge`
+When adding this build feature, you need to specify a VCS root and select a VCS hosting type. 
+Other settings depend on the selected VCS hosting type.
 
-In case with Azure DevOps, TeamCity [detects requests on a merge branch](#Azure+DevOps+Pull+Requests). In other VCSs, it checks out the code from the source branch.
-
-If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches.
-
-You can find the pull request's details displayed on the __Overview__ tab of the __Build Results__:
-
-<img src="pr-info.png" alt="Pull request details" width="700"/>
-
-When adding this build feature, you need to specify a VCS root and select a VCS hosting type.
+This feature extends the original branch specification of VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria.
 
 <note>
 
@@ -25,7 +15,12 @@ The branch specification of the VCS root __must not__ contain patterns matching 
 
 </note>
 
-The build feature parameters depend on the selected VCS hosting type.
+You can find the pull request's details displayed on the __Overview__ tab of the __Build Results__:
+
+<img src="pr-info.png" alt="Pull request details" width="700"/>
+
+If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches.
+
 
 <tip>
 
@@ -34,13 +29,13 @@ To achieve this, enable and configure the Pull Requests and [Automatic Merge](au
 
 </tip>
 
-See the [example](#Pull+Requests+workflow+example) on how to set up TeamCity to run builds on pull requests.
+See the [example](#Pull+Requests+workflow+example) on how to set up TeamCity to run builds on GitHub pull requests.
 
 ## VCS-specific settings
 
 ### GitHub Pull Requests
 
-TeamCity supports [GitHub](https://github.com/) and [GitHub Enterprise](https://github.com/enterprise).
+This feature supports [GitHub](https://github.com/) and [GitHub Enterprise](https://github.com/enterprise). It monitors builds only on the `refs/pull/*/head` branch.
 
 The following parameters are available for the GitHub hosting type:
 
@@ -174,8 +169,9 @@ If left blank, the URL will be extracted from the VCS root fetch URL.
   </tr>
 </table>
 
-
 ### Bitbucket Server Pull Requests
+
+This feature monitors builds only on the `refs/pull-requests/*/from` branch.
 
 The following parameters are available for the [Bitbucket Server](https://www.atlassian.com/software/bitbucket/enterprise/data-center) hosting type:
 
@@ -263,10 +259,86 @@ If left blank, the URL will be extracted from the VCS root fetch URL.
   </tr>
 </table>
 
+### Bitbucket Cloud Pull Requests
+
+Since Bitbucket Cloud does not create dedicated branches for pull requests, this build feature monitors directly the source branch. Only the source branch name (not the pull request number) is displayed in the build results.   
+If more than one pull request is submitted to the same source branch at the moment of the build start, TeamCity will display all these requests in the build results. However, only commits from the open PRs matching the filtering criteria will be displayed as the build changes.
+
+The following parameters are available for the [Bitbucket Cloud](https://bitbucket.org/) hosting type:
+
+<table>
+<tr>
+<td width="150">
+
+Parameter
+
+</td>
+<td width="150">
+
+Options
+    
+</td>
+<td>
+
+Description
+
+</td>
+</tr>
+<tr>
+<td>
+
+Authentication Type
+
+</td>
+<td>
+
+Use VCS root credentials
+
+</td>
+<td>
+
+TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL.
+
+This option will not work if the VCS root employs anonymous authentication.
+
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+
+Username/password
+
+</td>
+<td>
+
+The '_Username_' and '_Password_' fields appear.
+
+Specify a username and password for connection to Bitbucket Cloud. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the "read" Pull Requests scope.
+
+</td>
+</tr>
+<tr>
+<td>
+
+By target branch
+
+</td>
+<td></td>
+<td>
+
+Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left blank, no filters apply.
+
+</td>
+</tr>
+
+</table>
 
 ### GitLab Merge Requests
 
 TeamCity processes GitLab [merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/index.html) similarly to how it processes pull requests in other hosting services. Currently, TeamCity detects only merge requests submitted after this build feature is enabled.
+
+This feature monitors builds only on the `refs/merge-requests/*/head` branch.
 
 The following parameters are available for the [GitLab](https://gitlab.com/) hosting type:
 
@@ -328,6 +400,8 @@ If left blank, the URL will be extracted from the VCS root fetch URL.
 </table>
 
 ### Azure DevOps Pull Requests
+
+This feature monitors builds only on the `refs/pull/*/merge` branch.
 
 In case with [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/), TeamCity detects requests on a merge branch – not on the pull request itself as with other VCSs. Each build will be launched on a virtual branch showing an actual result of the build after merging the PR. Thus, the build will contain both the commit with changes and the virtual merge commit.
 
