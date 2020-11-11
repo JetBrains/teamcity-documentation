@@ -51,7 +51,7 @@ GET http://teamcity:8111/app/rest/buildTypes
 
 ```Shell
 
-GET http://teamcity:8111/app/rest/projects/<projectLocator>buildTypes
+GET http://teamcity:8111/app/rest/projects/<projectLocator>/buildTypes
  
 ```
 
