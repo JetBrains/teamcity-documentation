@@ -17,7 +17,7 @@ Note that since TeamCity 2019.2 the [Running Builds Node](https://confluence.jet
 
 To install a secondary node, follow these steps on the secondary node machine:
 
-1. [Install](installing-and-configuring-the-teamcity-server.md) the TeamCity software as usual: download the distribution package and follow the installation wizard.
+1. [Install](installing-and-configuring-the-teamcity-server.md) the TeamCity software as usual: download the distribution package and follow the installation wizard. Please note: when installing a secondary node using the installation wizard, it is important not to start the TeamCity Server service until the environment variables in step 2 and 3 are configured.
 2. Provide the path to the shared Data Directory via the `TEAMCITY_DATA_PATH` [environment variable](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts).
 3. Add additional arguments to the `TEAMCITY_SERVER_OPTS` environment variable:
 
@@ -139,7 +139,7 @@ Currently, the following bundled plugins are disabled on secondary nodes:
 
 <note>
 
-Secondary nodes can use only a limited set of external plugins.
+Secondary nodes can use only a limited set of external plugins. See the [Plugins F.A.Q.](https://plugins.jetbrains.com/docs/teamcity/plugin-development-faq.html#How+to+adapt+plugin+for+secondary+node) for details.
 
 </note>
 

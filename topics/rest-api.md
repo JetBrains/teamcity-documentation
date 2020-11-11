@@ -116,7 +116,7 @@ Examples:
 ### Supported HTTP Methods
 
 * __`GET`__: retrieves the requested data. For example, `.../app/rest/entities` usually retrieves a list of entities, `.../app/rest/entities/<entity locator>` retrieves a single entity
-* __`POST`__: creates the entity from the payload submitted. To create a new entity, one regularly needs to post a single entity data (i.e. as retrieved via GET) to the `.../app/rest/entities` URL. When posting XML, be sure to specify the "`Content-Type: application/xml`" HTTP header.
+* __`POST`__: creates the entity from the payload submitted. To create a new entity, one regularly needs to post a single entity data (i.e. as retrieved via GET) to the `.../app/rest/entities` URL. When posting XML, be sure to specify the `Content-Type: application/xml` HTTP header.
 * __`PUT`__: updates the data from the payload submitted. Accepts the same data format as retrieved via GET request to the same URL. Supported for some entities for URLs like `.../app/rest/entities/<entity locator>`
 * __`DELETE`__: removes the data at the URL, for example, for the `.../app/rest/entities/<entity locator>`
  

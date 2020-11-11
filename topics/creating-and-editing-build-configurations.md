@@ -58,7 +58,7 @@ You can create a build configuration using a VCS URL:
 
 ## Creating New Build Configuration pointing to Bitbucket Cloud
 1. Click the __Create build configuration__ button and select __Pointing to Bitbucket Cloud repository__. 
- * If you do not have a Bitbucket connection configured, you will be redirected to the __Connections__ page. Set up the connection as [described here](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket), then follow the steps below.
+ * If you do not have a Bitbucket connection configured, you will be redirected to the __Connections__ page. Set up the connection as [described here](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket+Cloud), then follow the steps below.
  * If you have a Bitbucket connection configured, follow the steps below.
 2. On the __Create Build Configuration From Bitbucket Cloud__ page, select a repository. TeamCity will verify the repository [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections). If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__.

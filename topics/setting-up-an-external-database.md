@@ -78,8 +78,8 @@ grant process on *.* to <user-name>;
 #### On TeamCity server side (with MySQL)
 
 JDBC driver installation:
-1. Download the MySQL JDBC driver from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/). Make sure that you use a version compatible with your server. For versions above 8, driver version 8 should be used. If the MySQL server version is 5.5 or newer, the JDBC driver version should be at least 5.1.23.
-2. Place `mysql-connector-java-*-bin.jar` from the downloaded archive into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/lib\/jdbc directory (remove the existing files there, if any). Proceed with the TeamCity setup.
+1. Download the MySQL JDBC driver from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/). Make sure you use a version compatible with your server. If the MySQL server version is 5.5 or newer, the JDBC driver version should be at least 5.1.23. For versions above 8, driver version 8 should be used.
+2. Place `mysql-connector-java-*-bin.jar` from the downloaded archive into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any). Proceed with the TeamCity setup.
 
 ### PostgreSQL
 
