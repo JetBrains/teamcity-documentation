@@ -346,7 +346,7 @@ __Test suite messages:__ Test suites are used to group tests. TeamCity displays 
 
 All the individual test messages are to appear between `testSuiteStarted` and `testSuiteFinished` (in that order) with the same `name` attributes.
 
-##### Nested test reporting
+#### Nested test reporting
 
 Prior to TeamCity 9.1, one test could have been reported from within another test (see the example at the end of this section). In the later versions, starting another test finishes the currently started test in the same _flow_. To still report tests from within other tests, you will need to specify another [`flowId`](#Message+FlowId) in the nested test service messages.
 
