@@ -10,14 +10,16 @@ The Python build runner automatically detects Python on agents and allows runnin
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
 
 ## Python autodetection
+{id="pythonVersion" auxiliary-id="Python autodetection"}
 
 The Python runner automatically detects Python versions installed on a [build agent](build-agent.md).
 
 On Windows, it checks (1) the default install paths, (2) the system register, (3) the `PATH` variable. On Linux and macOS, it checks (1) the default install paths, (2) the `PATH` variable.
 
-The runner sets the first detected versions of Python 2.x and 3.x as the agent's configuration parameters.
+The runner sets the first detected versions of Python 2.x and 3.x as the agent's configuration parameters. Alternatively, you can provide a path to any installed version manually.
 
-## Command settings
+## Сommand settings
+{id="pythonCommandSettings" auxiliary-id="Сommand settings"}
 
 You can choose one of the following Python commands:
 
@@ -335,6 +337,7 @@ Arguments that will be passed to the Python interpreter if a custom command is s
 In this block of settings, you can choose a Python version to run. TeamCity can autodetect an installed 2.x or 3.x version, or you can enter a custom path to the Python executable. You can also specify arguments that will be passed to the interpreter in every Python run of this build step (for example, a custom environment tool run or reporting run).
 
 ## Environment tool settings
+{id="pythonEnvTool" auxiliary-id="Environment tool settings"}
 
 Optionally, you can run a Python build step in a virtual environment. The Python runner supports the following tools:
 * [Pipenv](https://pipenv.pypa.io/en/latest/)
