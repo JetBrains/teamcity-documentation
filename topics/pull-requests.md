@@ -89,8 +89,6 @@ Access token
 </td>
 <td>
 
-The '_Token_' field appears.
-
 Use a personal access token or obtain a token through an OAuth connection. It must have either the `public_repo` (for public repositories) or `repo` (for private repositories) scope.
 
 </td>
@@ -99,7 +97,6 @@ Use a personal access token or obtain a token through an OAuth connection. It mu
 <td>
 
 By authors
-
 
 _The filter applies to public repositories only._
 
@@ -144,13 +141,26 @@ Detects all pull requests. Be aware that selecting this option may allow arbitra
 <tr>
 <td>
 
+By source branch
+
+</td>
+<td></td>
+<td>
+
+Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left blank, no filters apply.
+
+</td>
+</tr>
+<tr>
+<td>
+
 By target branch
 
 </td>
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left blank, no filters apply.
 
 </td>
 </tr>
@@ -234,13 +244,26 @@ Specify a username and password for connection to Bitbucket Server.
 <tr>
 <td>
 
+By source branch
+
+</td>
+<td></td>
+<td>
+
+Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left blank, no filters apply.
+
+</td>
+</tr>
+<tr>
+<td>
+
 By target branch
 
 </td>
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left blank, no filters apply.
 
 </td>
 </tr>
@@ -374,13 +397,26 @@ Use a personal access token for connection. The token must have the `api` scope.
 <tr>
 <td>
 
+By source branch
+
+</td>
+<td></td>
+<td>
+
+Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left blank, no filters apply.
+
+</td>
+</tr>
+<tr>
+<td>
+
 By target branch
 
 </td>
-
+<td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor merge requests only on branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left blank, no filters apply.
 
 </td>
 </tr>
@@ -441,13 +477,26 @@ Use a personal access token for connection. The token must have the `Code (read)
 <tr>
 <td>
 
+By source branch
+
+</td>
+<td></td>
+<td>
+
+Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left blank, no filters apply.
+
+</td>
+</tr>
+<tr>
+<td>
+
 By target branch
 
 </td>
-
+<td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left blank, no filters apply.
 
 </td>
 </tr>
