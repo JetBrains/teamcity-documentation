@@ -3,7 +3,9 @@
 
 _Service messages_ are specially constructed pieces of text that pass commands/information about the build from the build script to the TeamCity server.
 
-To be processed by TeamCity, __they need to be written to the standard output stream of the build, that is printed or echoed from a build step__. It is recommended to output a single service message per line (that is divide messages with newline symbols).
+To be processed by TeamCity, __they need to be written to the standard output stream of the build, that is printed or echoed from a build step__.
+
+>It is recommended to output one message per line (by dividing them with `\n` symbols) and flush the standard output buffer with the `fflush(stdout)` command after every output call.
 
 Examples:
 
