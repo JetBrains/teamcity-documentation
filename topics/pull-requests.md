@@ -1,8 +1,10 @@
 [//]: # (title: Pull Requests)
 [//]: # (auxiliary-id: Pull Requests)
 
-The _Pull Requests_ build feature lets you automatically load pull request (or _merge requests_ in case of GitLab) information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [GitLab](#GitLab+Merge+Requests), and [Azure DevOps](#Azure+DevOps+Pull+Requests).   
+The _Pull Requests_ build feature lets you automatically load pull request\* information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [GitLab](#GitLab+Merge+Requests), and [Azure DevOps](#Azure+DevOps+Pull+Requests).   
 In terms of TeamCity 2020.2 EAP, it also supports [Bitbucket Cloud](#Bitbucket+Cloud+Pull+Requests).
+
+\* Or _merge requests_ in case of GitLab.
 
 When adding this build feature, you need to specify a VCS root and select a VCS hosting type. 
 Other settings depend on the selected VCS hosting type.
@@ -261,8 +263,8 @@ If left blank, the URL will be extracted from the VCS root fetch URL.
 
 ### Bitbucket Cloud Pull Requests
 
-Since Bitbucket Cloud does not create dedicated branches for pull requests, this build feature monitors directly the source branch. Only the source branch name (not the pull request number) is displayed in the build results.   
-If more than one pull request is submitted to the same source branch at the moment of the build start, TeamCity will display all these requests in the build results. However, only commits from the open PRs matching the filtering criteria will be displayed as the build changes.
+Since Bitbucket Cloud does not create dedicated branches for pull requests, this build feature monitors directly source branches.   
+If more than one pull request is submitted from the same source branch at the moment of the build start, TeamCity will display all these requests in the build results. However, only commits from the open PRs matching the filtering criteria will be displayed as _Changes_ of the build.
 
 The following parameters are available for the [Bitbucket Cloud](https://bitbucket.org/) hosting type:
 
@@ -299,7 +301,7 @@ Use VCS root credentials
 
 TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL.
 
-This option will not work if the VCS root employs anonymous authentication.
+This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
 
 </td>
 </tr>
