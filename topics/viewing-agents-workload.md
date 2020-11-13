@@ -9,8 +9,6 @@ The Matrix available at the __Matrix__ tab on the __Agents__ page provides you w
 
 <img src="agent-matrix.png" width="750" alt="Agents matrix"/>
 
-agent-matrix.png
-
 1. Specified time range. Click __Update__ to reload the matrix.
 2. [Agent pool](configuring-agent-pools.md). Clicking a link opens the pool's page.
 3. Individual agents. Clicking a link opens the [agent's details](viewing-build-agent-details.md) page.
