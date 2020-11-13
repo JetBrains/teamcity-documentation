@@ -271,7 +271,7 @@ If the build produced [artifacts](build-artifact.md), they all are displayed on 
 
 If you have code coverage configured in your build runner, a dedicated tab with the full HTML code coverage report appears on the __Build Results__ page.
 
-By clicking the links in the __Coverage Breakdown__ section, you can drill\-down to display statistics for different scopes, for example, Namespace, Assembly, Method, and Source Code.
+By clicking the links in the __Coverage Breakdown__ section, you can drill-down to display statistics for different scopes, for example, Namespace, Assembly, Method, and Source Code.
 
 ## Code Inspection Results
 
