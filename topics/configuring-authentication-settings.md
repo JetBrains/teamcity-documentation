@@ -17,8 +17,11 @@ TeamCity provides several preconfigured authentication options (presets) to cove
 * [HTTP Authentication Modules](#HTTP+Authentication+Modules)
   * [Basic HTTP Authentication](#Basic+HTTP+Authentication)
   * [NTLM HTTP Authentication](ntlm-http-authentication.md)
-  
-In terms of 2020.2 EAP, TeamCity also provides the GitHub.com OAuth and Bitbucket Cloud OAuth modules.
+  * [Bitbucket Cloud](#Bitbucket+Cloud)
+  * [GitHub.com](#GitHub.com)
+  * [GitHub Enterprise](#GitHub+Enterprise)
+  * [GitLab.com](#GitLab.com)
+  * [GitLab CE/EE](#GitLab+CE%2FEE)
 
 <tip>
 
@@ -38,7 +41,7 @@ Any changes made to authentication in the UI will be reflected in the `<[TeamCit
 ### Simple Mode
 
 The Simple mode (default) allows you to select presets created for the most common use cases. To override the existing authentication settings, use the __Load preset__ button, select one of the options and __Save__ your changes. The following presets are available:
-* Default ([built-in authentication](#Built-in+Authentication) - [Token-Based Authentication](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
+* Default ([built-in authentication](#Built-in+Authentication) – [Token-Based Authentication](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
 * [LDAP](ldap-integration.md)
 * Active directory ([LDAP](ldap-integration.md) with [NTLM](ntlm-http-authentication.md) and [Token-Based Authentication](rest-api.md))
 * Microsoft Windows Domain ([NTLM](ntlm-http-authentication.md), [Token-Based Authentication](rest-api.md) and [Basic HTTP](rest-api.md))
@@ -51,10 +54,10 @@ When a user attempts to log in, all the modules will be tried one by one. If one
 
 <note>
 
-Since TeamCity 10.0.2, if the System Administrator creates users without password with several authentication modes enabled on the server including the [Built-in](#Built-in+Authentication) one, and later changes authorization from mixed one to the build\-in one, users with no password will be unable to log in to TeamCity.
+If the System Administrator creates users without a password with several authentication modes enabled on the server including the [Built-in](#Built-in+Authentication) one, and later changes authorization from mixed one to the build-in one, users with no password will be unable to sign in to TeamCity.
 </note>
 
- It is possible to use a combination of internal and external authentication. The recommended approach is to configure [LDAP Integration](ldap-integration.md) for your internal employees first and then to add [Built-in](#Built-in+Authentication) authentication for external users.
+It is possible to use a combination of internal and external authentication. The recommended approach is to configure [LDAP Integration](ldap-integration.md) for your internal employees first and then to add [Built-in](#Built-in+Authentication) authentication for external users.
  
 1. Switch to advanced mode with the corresponding link on the __Administration | Authentication__ page.
 2. Click __Add Module__ and select a module from the drop-down menu.
@@ -73,12 +76,11 @@ The TeamCity list of users and authentication modules just map external credenti
 
 Handling of the user mapping by the bundled authentication modules:
 
-* Built\-in authentication stores a TeamCity-maintained password for each user
-* Windows Domain authentication allows specifying the default domain and assumes the Domain account name is equal to the TeamCity user. The domain account can be edited on the user profile page
-* LDAP Integration allows setting LDAP property to get TeamCity username from user's LDAP entry
+* Built-in authentication stores a TeamCity-maintained password for each user.
+* Windows Domain authentication allows specifying the default domain and assumes the Domain account name is equal to the TeamCity user. The domain account can be edited on the user profile page.
+* LDAP Integration allows setting LDAP property to get TeamCity username from user's LDAP entry.
 
-Care should be taken when modifying authentication settings: there can be a case when the administrator cannot login after changing authentication modules:
-   
+Be cautious when modifying authentication settings: there can be a case when the administrator cannot login after changing authentication modules.      
 Let's imagine that the administrator had the "jsmith" TeamCity username and used the default authentication. Then the authentication module was changed to Windows domain authentication (i.e. Windows domain authentication module was added and the default one was removed). If, for example, the Windows domain username of that administrator is "john.smith", they will not able to sign in anymore: they cannot login using the default authentication since it is disabled and cannot login using Windows domain authentication since their Windows domain username is not equal to the TeamCity username. The solution nevertheless is quite simple: the administrator can sign in using the superuser account and change their TeamCity username or specify their Windows domain username on their own profile page.
 
 ### Special User Accounts
@@ -112,7 +114,7 @@ If you select the "Microsoft Windows Domain" preset, in addition to the login vi
 
 #### Specifying Default Domain
 
-To enable users to enter the system using the login form without specifying the domain as a part of the user name, do the following:
+To enable users to enter the system using the login form without specifying the domain as a part of the username, do the following:
 1. Go to the __Administration | Authentication__ page.
 2. Click the __edit__ link in the table next to the __Microsoft Windows domain__ authentication description.
 3. Set the name in the __Default domain:__ field.
@@ -161,6 +163,294 @@ For information on configuring Basic HTTP Authentication directly in the `<[Team
 
 Please refer to the [dedicated page](ntlm-http-authentication.md).
 
+### Bitbucket Cloud
+
+In terms of 2020.2 EAP, users can sign in to TeamCity with a Bitbucket Cloud account.
+
+To sign in, click the Bitbucket icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in Bitbucket and a user with this email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with Bitbucket Cloud profiles.
+
+Before enabling this module, you need to configure a [Bitbucket Cloud connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
+
+<table>
+
+<tr>
+<td>Setting</td>
+<td>Description</td>
+</tr>
+
+<tr>
+
+<td>
+
+Allow creating new users on the first login
+
+</td>
+
+<td>
+
+Enabled by default.  
+If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available Bitbucket Cloud repo but want to limit access to the TeamCity server.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Restrict authentication
+
+</td>
+
+<td>
+
+A comma-separated list of [workspaces'](https://support.atlassian.com/bitbucket-cloud/docs/what-is-a-workspace/) IDs.
+
+This list limits a set of users who can register or authenticate in TeamCity with their Bitbucket Cloud account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+
+Leave empty to allow all Bitbucket Cloud users to access the TeamCity server.
+
+</td>
+
+</tr>
+
+</table>
+
+### GitHub.com
+
+In terms of 2020.2 EAP, users can sign in to TeamCity with a GitHub.com account.
+
+To sign in, click the GitHub icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitHub and a user with this email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitHub.com profiles.
+
+Before enabling this module, you need to configure a [GitHub.com connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
+
+<table>
+
+<tr>
+<td>Setting</td>
+<td>Description</td>
+</tr>
+
+<tr>
+
+<td>
+
+Allow creating new users on the first login
+
+</td>
+
+<td>
+
+Enabled by default.  
+If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available GitHub.com repo but want to limit access to the TeamCity server.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Restrict authentication
+
+</td>
+
+<td>
+
+A comma-separated list of [organizations'](https://support.atlassian.com/bitbucket-cloud/docs/what-is-a-workspace/) IDs.
+
+This list limits a set of users who can register or authenticate in TeamCity with their GitHub account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+
+Leave empty to allow all GitHub users to access the TeamCity server.
+
+</td>
+
+</tr>
+
+</table>
+
+### GitHub Enterprise
+
+In terms of 2020.2 EAP, users can sign in to TeamCity with a GitHub Enterprise account.
+
+To sign in, click the GitHub icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitHub and a user with this email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitHub Enterprise profiles.
+
+Before enabling this module, you need to configure a [GitHub Enterprise connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
+
+<table>
+
+<tr>
+<td>Setting</td>
+<td>Description</td>
+</tr>
+
+<tr>
+
+<td>
+
+Allow creating new users on the first login
+
+</td>
+
+<td>
+
+Enabled by default.  
+If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available GitHub Enterprise server but want to limit access to the TeamCity server.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Restrict authentication
+
+</td>
+
+<td>
+
+A comma-separated list of [organizations'](https://support.atlassian.com/bitbucket-cloud/docs/what-is-a-workspace/) IDs.
+
+This list limits a set of users who can register or authenticate in TeamCity with their GitHub account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+
+Leave empty to allow all GitHub users to access the TeamCity server.
+
+</td>
+
+</tr>
+
+</table>
+
+>If you reconnect a TeamCity server from one GitHub Enterprise server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](https://confluence.jetbrains.com/display/TW/Feedback).
+>
+{type="warning"}
+
+### GitLab.com
+
+In terms of 2020.2 EAP, users can sign in to TeamCity with a GitLab.com account.
+
+To sign in, click the GitLab icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitLab and a user with this email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitLab.com profiles.
+
+>If you want to be recognized in TeamCity by your email, make sure this email is set as _public_ in GitLab.
+
+Before enabling this module, you need to configure a [GitLab.com connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
+
+<table>
+
+<tr>
+<td>Setting</td>
+<td>Description</td>
+</tr>
+
+<tr>
+
+<td>
+
+Allow creating new users on the first login
+
+</td>
+
+<td>
+
+Enabled by default.  
+If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available GitLab.com repo but want to limit access to the TeamCity server.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Restrict authentication
+
+</td>
+
+<td>
+
+A comma-separated list of [groups'](https://docs.gitlab.com/ee/user/group/) IDs.
+
+This list limits a set of users who can register or authenticate in TeamCity with their GitLab account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+
+Leave empty to allow all GitLab users to access the TeamCity server.
+
+</td>
+
+</tr>
+
+</table>
+
+### GitLab CE/EE
+
+In terms of 2020.2 EAP, users can sign in to TeamCity with a GitLab CE/EE account.
+
+To sign in, click the GitLab icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitLab and a user with this email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitLab CE/EE profiles.
+
+>If you want to be recognized in TeamCity by your email, make sure this email is set as _public_ in GitLab.
+
+Before enabling this module, you need to configure a [GitLab CE/EE connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
+
+<table>
+
+<tr>
+<td>Setting</td>
+<td>Description</td>
+</tr>
+
+<tr>
+
+<td>
+
+Allow creating new users on the first login
+
+</td>
+
+<td>
+
+Enabled by default.  
+If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available GitLab CE/EE server but want to limit access to the TeamCity server.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Restrict authentication
+
+</td>
+
+<td>
+
+A comma-separated list of [groups'](https://docs.gitlab.com/ee/user/group/) IDs.
+
+This list limits a set of users who can register or authenticate in TeamCity with their GitLab account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+
+Leave empty to allow all GitLab users to access the TeamCity server.
+
+</td>
+
+</tr>
+
+</table>
+
+>If you reconnect a TeamCity server from one GitLab CE/EE server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](https://confluence.jetbrains.com/display/TW/Feedback).
+>
+{type="warning"}
+
+## Mapping users
+
+Each TeamCity user can connect own profile to one or more external Git hostings for authentication.   
+You can connect to a VCS hosting in  __My settings & Tools | General | Authentication Settings__, if the respective authentication module is enabled on the server. After successful authorization, TeamCity will map your external account with the current user profile. Now, you can sign in to TeamCity with your VCS account.
+
+Administrators who have a permission to change user profiles, can also map existing users with external accounts in __Administration | User Management | Users__.
 
  <seealso>
         <category ref="concepts">
