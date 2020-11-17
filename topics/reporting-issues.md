@@ -27,7 +27,7 @@ __When submitting a request for support, include the following general informati
 
 * If sending more than three files, package the files into a single archive.
 
-* If you are sending a file larger than 10Mb, follow the guide for [Uploading Large Data Archives](https://www.jetbrains.com/help/teamcity/reporting-issues.html#ReportingIssues-UploadingLargeDataArchives).
+* If you are sending a file larger than 10Mb, follow the guide for [Uploading Large Data Archives](#Uploading+Large+Data+Archives).
 
 __Other helpful tips for specific issues__:
 

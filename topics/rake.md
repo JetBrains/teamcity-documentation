@@ -300,7 +300,7 @@ Description
 
 <td>
 
-`system.teamcity.rake.runner.gem.rake.version`
+system.teamcity.rake.runner.gem.rake.version
 
 
 </td>
@@ -314,21 +314,21 @@ Allows specifying which rake gem to use for launching a rake build.
 
 <td>
 
-`system.teamcity.rake.runner.gem.testunit.version`
+system.teamcity.rake.runner.gem.testunit.version
 
 
 </td>
 
 <td>
 
-If your application uses the test-unit gem version other than the latest installed (in Ruby sdk), specify it here. Otherwise the Test::Unit test reporter may try to load the incorrect gem version and affect the runtime behavior. If the test-unit gem is installed but your application uses Test::Unit bundled in Ruby 1.8.x SDK, set the version value to 'built-in'.
+If your application uses the test-unit gem version other than the latest installed (in Ruby sdk), specify it here. Otherwise, the Test::Unit test reporter may try to load the incorrect gem version and affect the runtime behavior. If the test-unit gem is installed but your application uses Test::Unit bundled in Ruby 1.8.x SDK, set the version value to 'built-in'.
 
 
 </td></tr><tr>
 
 <td>
 
-`system.teamcity.rake.runner.gem.bundler.version`
+system.teamcity.rake.runner.gem.bundler.version
 
 
 </td>
@@ -342,7 +342,7 @@ Launches bundler emulation for the specified bundler gem version (the gem should
 
 <td>
 
-`system.teamcity.rake.runner.custom.gemfile`
+system.teamcity.rake.runner.custom.gemfile
 
 
 </td>
@@ -356,7 +356,7 @@ Customizes Gemfile if it isn't located in the checkout directory root.
 
 <td>
 
-`system.teamcity.rake.runner.custom.bundle.path`
+system.teamcity.rake.runner.custom.bundle.path
 
 
 </td>

@@ -761,7 +761,7 @@ teamcity.http.proxyHost=proxy.domain.com
 teamcity.http.proxyPort=8080
  
 ## The hosts that should be accessed without going through the proxy, usually internal hosts. Provide a list of hosts, separated by the '|' character. The wildcard '*' can be used:
-teamcity.http.nonProxyHosts=localhost|*.mydomain.com)
+teamcity.http.nonProxyHosts=localhost|*.mydomain.com
  
 ## For an authenticated proxy add the following properties:
 ### Authentication type. "basic" and "ntlm" values are supported. The default is basic.
