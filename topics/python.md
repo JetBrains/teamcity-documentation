@@ -305,7 +305,7 @@ Test reporting
 
 </td><td>
 
-Enables test reporting via the [`teamcity-messages`](https://pypi.python.org/pypi/teamcity-messages) package. TeamCity receives test reports via [service messages](service-messages.md) and displays them in the build log.
+Enables test reporting via the automatically installed [`teamcity-messages`](https://pypi.python.org/pypi/teamcity-messages) package. TeamCity receives test reports via [service messages](service-messages.md) and displays them in the build log.
 
 </td></tr>
 
