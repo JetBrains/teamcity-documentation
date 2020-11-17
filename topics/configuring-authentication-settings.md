@@ -167,7 +167,7 @@ Please refer to the [dedicated page](ntlm-http-authentication.md).
 
 In terms of 2020.2 EAP, users can sign in to TeamCity with a Bitbucket Cloud account.
 
-To sign in, click the Bitbucket icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in Bitbucket and a user with this email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with Bitbucket Cloud profiles.
+To sign in, click the Bitbucket icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in Bitbucket and [in TeamCity](enabling-email-verification.md), you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with Bitbucket Cloud profiles.
 
 Before enabling this module, you need to configure a [Bitbucket Cloud connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
 
@@ -211,6 +211,10 @@ This list limits a set of users who can register or authenticate in TeamCity wit
 
 Leave empty to allow all Bitbucket Cloud users to access the TeamCity server.
 
+>If you delete a user from an organization, remember to restrict their access or delete this user in TeamCity as well. Otherwise, they might be able to sign in to TeamCity with a preliminary created access token.
+>
+{type="warning"}
+
 </td>
 
 </tr>
@@ -221,7 +225,7 @@ Leave empty to allow all Bitbucket Cloud users to access the TeamCity server.
 
 In terms of 2020.2 EAP, users can sign in to TeamCity with a GitHub.com account.
 
-To sign in, click the GitHub icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitHub and a user with this email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitHub.com profiles.
+To sign in, click the GitHub icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitHub and [in TeamCity](enabling-email-verification.md), you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitHub.com profiles.
 
 Before enabling this module, you need to configure a [GitHub.com connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
 
@@ -265,6 +269,10 @@ This list limits a set of users who can register or authenticate in TeamCity wit
 
 Leave empty to allow all GitHub users to access the TeamCity server.
 
+>If you delete a user from an organization, remember to restrict their access or delete this user in TeamCity as well. Otherwise, they might be able to sign in to TeamCity with a preliminary created access token.
+>
+{type="warning"}
+
 </td>
 
 </tr>
@@ -275,7 +283,7 @@ Leave empty to allow all GitHub users to access the TeamCity server.
 
 In terms of 2020.2 EAP, users can sign in to TeamCity with a GitHub Enterprise account.
 
-To sign in, click the GitHub icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitHub and a user with this email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitHub Enterprise profiles.
+To sign in, click the GitHub icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitHub and [in TeamCity](enabling-email-verification.md), you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitHub Enterprise profiles.
 
 Before enabling this module, you need to configure a [GitHub Enterprise connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
 
@@ -319,6 +327,10 @@ This list limits a set of users who can register or authenticate in TeamCity wit
 
 Leave empty to allow all GitHub users to access the TeamCity server.
 
+>If you delete a user from an organization, remember to restrict their access or delete this user in TeamCity as well. Otherwise, they might be able to sign in to TeamCity with a preliminary created access token.
+>
+{type="warning"}
+
 </td>
 
 </tr>
@@ -333,7 +345,7 @@ Leave empty to allow all GitHub users to access the TeamCity server.
 
 In terms of 2020.2 EAP, users can sign in to TeamCity with a GitLab.com account.
 
-To sign in, click the GitLab icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitLab and a user with this email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitLab.com profiles.
+To sign in, click the GitLab icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitLab and [in TeamCity](enabling-email-verification.md), you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitLab.com profiles.
 
 >If you want to be recognized in TeamCity by your email, make sure this email is set as _public_ in GitLab.
 
@@ -379,6 +391,10 @@ This list limits a set of users who can register or authenticate in TeamCity wit
 
 Leave empty to allow all GitLab users to access the TeamCity server.
 
+>If you delete a user from an organization, remember to restrict their access or delete this user in TeamCity as well. Otherwise, they might be able to sign in to TeamCity with a preliminary created access token.
+>
+{type="warning"}
+
 </td>
 
 </tr>
@@ -389,7 +405,7 @@ Leave empty to allow all GitLab users to access the TeamCity server.
 
 In terms of 2020.2 EAP, users can sign in to TeamCity with a GitLab CE/EE account.
 
-To sign in, click the GitLab icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitLab and a user with this email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitLab CE/EE profiles.
+To sign in, click the GitLab icon above the login form and, after the redirect, enter your VCS credentials. If your email is verified in GitLab and [in TeamCity](enabling-email-verification.md), you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled. It is also possible to [map existing TeamCity users](#Mapping+users) with GitLab CE/EE profiles.
 
 >If you want to be recognized in TeamCity by your email, make sure this email is set as _public_ in GitLab.
 
@@ -434,6 +450,10 @@ A comma-separated list of [groups'](https://docs.gitlab.com/ee/user/group/) IDs.
 This list limits a set of users who can register or authenticate in TeamCity with their GitLab account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
 
 Leave empty to allow all GitLab users to access the TeamCity server.
+
+>If you delete a user from an organization, remember to restrict their access or delete this user in TeamCity as well. Otherwise, they might be able to sign in to TeamCity with a preliminary created access token.
+>
+{type="warning"}
 
 </td>
 
