@@ -29,7 +29,7 @@ If [token-based authentication](configuring-authentication-settings.md#Token-Bas
    curl --header "Authorization: Bearer <token-value>" http://<host>:<port>/app/rest/builds
    ```
   
-In terms of 2020.2 EAP2, you can also add time-limited tokens which will be revoked after their expiration.
+Since TeamCity 2020.2, you can also add time-limited tokens which will be revoked after their expiration.
 
 You can manage tokens in __My Settings & Tools | Access Tokens__. Note that the token value is only available during token creation and is not possible for retrieval afterwards.
 
