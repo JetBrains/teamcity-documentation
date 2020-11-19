@@ -1,22 +1,11 @@
 [//]: # (title: Python)
 [//]: # (auxiliary-id: Python)
 
->This functionality is introduced in terms of TeamCity 2020.2 Early Access Program.
-
 The Python build runner automatically detects Python on agents and allows running Python scripts on Windows, Linux, and macOS.
 
->Since TeamCity 2020.2, this bundled runner replaces the obsolete [Python Runner plugin](https://plugins.jetbrains.com/plugin/9042-python-runner). The new runner offers support for virtual environments, Docker, TeamCity Kotlin DSL, and provides more extra features like full test coverage.
+>Since TeamCity 2020.2, this bundled runner replaces the obsolete [Python Runner plugin](https://plugins.jetbrains.com/plugin/9042-python-runner). The new runner offers support for virtual environments, Docker, Kotlin DSL, and provides extra features like full test coverage.
 
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
-
-## Python autodetection
-{id="pythonVersion" auxiliary-id="Python autodetection"}
-
-The Python runner automatically detects Python versions installed on a [build agent](build-agent.md).
-
-On Windows, it checks (1) the default install paths, (2) the system register, (3) the `PATH` variable. On Linux and macOS, it checks (1) the default install paths, (2) the `PATH` variable.
-
-The runner sets the first detected versions of Python 2.x and 3.x as the agent's configuration parameters. Alternatively, you can provide a path to any installed version manually.
 
 ## Сommand settings
 {id="pythonCommandSettings" auxiliary-id="Python command settings"}
@@ -27,7 +16,7 @@ You can choose one of the following Python commands:
 
 <tr>
 
-<td>
+<td width="100">
 
 Command
 
@@ -132,7 +121,7 @@ Unittest
 
 <td>
 
-Launch the [unittest](https://docs.python.org/3/library/unittest.html) framework. The unit test results will be displayed on the [Tests](working-with-build-results.md#Tests) tab of __Build Results__.
+Launch the [unittest](https://docs.python.org/3/library/unittest.html) framework. The unit test results will be displayed on the [__Tests__](working-with-build-results.md#Tests) tab of __Build Results__.
 
 To filter the scope of processed files, you can specify a path to the unit test file(s) in the additional arguments.
 
@@ -156,7 +145,7 @@ Pytest
 
 <td>
 
-Launch the [pytest](https://docs.pytest.org/en/stable/index.html) framework. The test results will be displayed on the [Tests](working-with-build-results.md#Tests) tab of __Build Results__.
+Launch the [pytest](https://docs.pytest.org/en/stable/index.html) framework. The test results will be displayed on the [__Tests__](working-with-build-results.md#Tests) tab of __Build Results__.
 
 To filter the scope of processed files, you can specify a path to the pytest file(s) in the additional arguments.
 
@@ -180,7 +169,7 @@ Flake8
 
 <td>
 
-Launch the [Flake8](https://pypi.org/project/flake8/) wrapper. The code inspection results will be displayed on the [Code Inspection](working-with-build-results.md#Code+Inspection+Results) tab of __Build Results__.
+Launch the [Flake8](https://pypi.org/project/flake8/) wrapper. The code inspection results will be displayed on the [__Code Inspection__](working-with-build-results.md#Code+Inspection+Results) tab of __Build Results__.
 
 To filter the scope of processed files, you can specify a path to the Python file(s) in the additional arguments.
 
@@ -204,7 +193,7 @@ Pylint
 
 <td>
 
-Launch the [Pylint](https://pypi.org/project/pylint/) tool. The code inspection results will be displayed on the [Code Inspection](working-with-build-results.md#Code+Inspection+Results) tab of __Build Results__.
+Launch the [Pylint](https://pypi.org/project/pylint/) tool. The code inspection results will be displayed on the [__Code Inspection__](working-with-build-results.md#Code+Inspection+Results) tab of __Build Results__.
 
 To filter the scope of processed files, specify a path to the Python file(s) in the additional arguments.
 
@@ -315,7 +304,7 @@ Coverage
 
 </td><td>
 
-Enable code coverage collecting via [Coverage.py](https://coverage.readthedocs.io/en/coverage-5.3/). TeamCity displays the produced test report on the __Coverage__ tab.
+Enable code coverage collecting via [Coverage.py](https://coverage.readthedocs.io/en/coverage-5.3/). TeamCity displays the produced test report on the [__Code Coverage__](working-with-build-results.md#Code+Coverage+Results) tab.
 
 </td></tr>
 
@@ -333,8 +322,15 @@ Arguments that will be passed to the Python interpreter if a custom command is s
 </table>
 
 ## Python executable settings
+{id="pythonVersion" auxiliary-id="Python autodetection"}
 
-In this block of settings, you can choose a Python version to run. TeamCity can autodetect an installed 2.x or 3.x version, or you can enter a custom path to the Python executable. You can also specify arguments that will be passed to the interpreter in every Python run of this build step (for example, a custom environment tool run or reporting run).
+In this block of settings, you can choose a Python version to run.
+
+The Python runner automatically detects Python versions installed on a [build agent](build-agent.md). On Windows, it checks (1) the default install paths, (2) the system register, (3) the `PATH` variable. On Linux and macOS, it checks (1) the default install paths, (2) the `PATH` variable.
+
+The runner sets the first detected versions of Python 2.x and 3.x as the agent's configuration parameters. Alternatively, you can provide a path to any installed version manually.
+
+You can also specify arguments that will be passed to the interpreter in every Python run of this build step (for example, a custom environment tool run or reporting run).
 
 ## Environment tool settings
 {id="pythonEnvTool" auxiliary-id="Python environment tool settings"}
