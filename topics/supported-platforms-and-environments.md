@@ -107,6 +107,9 @@ TeamCity supports a wide range of build tools, enabling both Java and .NET softw
 
 ### Supported .NET platform build runners
 
+For a unified [.NET](net.md) runner, see a [dedicated section](net.md#Requirements).
+
+Other runners:
 * [MSBuild](msbuild.md). Requires .NET Framework or Mono installed on the build agent. Microsoft Build Tools 2013, 2015, 2017, and 2019 are also supported.
 * [NAnt](nant.md) versions 0.85 - 0.91 alpha 2. Requires .NET Framework or Mono installed on the build agent.
 * [Microsoft Visual Studio Solutions](visual-studio-sln.md) ([2003](visual-studio-2003.md) - 2015, 2017, and 2019). Requires a corresponding version of Microsoft Visual Studio installed on the build agent.
@@ -118,14 +121,14 @@ TeamCity supports a wide range of build tools, enabling both Java and .NET softw
   * Windows: NuGet versions prior to 2.8.6 require .NET Framework 4.0+ installed on the build agent
   * Windows: NuGet 2.8.6 and later requires .NET 4.5
   * Linux and macOS: require [Mono](http://www.mono-project.com/docs/getting-started/install/) 4.4.2+ and NuGet CLI 3.2+ installed on the agent
-* [.NET CLI (dotnet)](net.md). Requires the [.NET Core SDK](https://www.microsoft.com/net/core) installed on build agents.
 
 ### Other runners
 
+* [Python](python.md), requires installing Python version 2.0 or later on agents
 * [Rake](rake.md)
-* [Command Line](command-line.md) Runner for running any build process using a shell script
-* [PowerShell](powershell.md) versions 1.0 through 5.0 are supported. 
-* [Xcode](xcode-project.md) versions 3-8 are [supported](xcode-project.md) (requires Xcode installed on the build agent)
+* [Command Line](command-line.md) for running any build process using a shell script
+* [PowerShell](powershell.md), versions 1.0 - 5.0
+* [Xcode](xcode-project.md), versions 3-8 (requires [Xcode](xcode-project.md) installed on the build agent)
 
 ## Testing Frameworks 
 

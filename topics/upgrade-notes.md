@@ -1,6 +1,14 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2020.1.x to 2020.2
+
+* The [external Python build runner](https://plugins.jetbrains.com/plugin/9042-python-runner) is no longer supported. We recommend switching existing Python steps to the new [bundled](python.md) runner.
+
+## Changes from 2020.1.4 to 2020.1.5
+
+No noteworthy updates.
+
 ## Changes from 2020.1.3 to 2020.1.4
 
 ### Bundled Tools Updates
