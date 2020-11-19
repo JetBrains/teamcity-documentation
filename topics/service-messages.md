@@ -456,7 +456,7 @@ Integration Tests: Backend: org.jetbrains.teamcity.LoginPageController.testBadPa
 // test parameters = ("incorrect password", false)
 ```
 
-The [Tests tab of the Build Results page](working-with-build-results.md#Tests) allows grouping by suites, packages/namespaces, classes, and tests. Usually the attribute values are provides as they are reported by your test framework and TeamCity is able to interpret test names correctly.
+The [__Tests__](working-with-build-results.md#Tests) tab of the __Build Results__ page allows grouping by suites, packages/namespaces, classes, and tests. Usually the attribute values are provides as they are reported by your test framework and TeamCity is able to interpret test names correctly.
 
 If a test cannot be parsed in the form above, TeamCity still tries to extract `<suite name>` from the full test name for the filtering on the Tests tab, and treats everything after the suite a non-parsable test name.
 
@@ -563,6 +563,11 @@ The process of publishing artifacts can affect the build, because it consumes ne
 </note>
 
 Artifacts that are specified in the build configuration setting will be published as usual.
+
+### Passing NuGet Packages between Steps
+
+If you need to publish NuGet packages and then use their contents within one build, you want to guarantee they are packed and published on time – and not at the build finish.   
+For this, you can use a [NuGet Publish](nuget-publish.md) runner or send the `##teamcity[publishNuGetPackage]` service message in any step instead. This ensures the NuGet packages are published in all configured NuGet feeds right at the end of the current step and are available in the following build steps.
 
 ### Reporting Build Progress
 

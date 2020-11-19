@@ -3,13 +3,10 @@
 
 The _NuGet Publish_ build runner is intended to publish (`push`) your NuGet packages to a given feed (custom or default).
 
-<tip>
-
-When using TeamCity as a NuGet server, there are two ways to publish packages to the feed:
-* as build artifacts of the [NuGet Pack](nuget-pack.md) build step using the _Publish created packages to build artifacts_ checkbox \- in this case you do not need the NuGet Publish build step
+When using TeamCity as a NuGet server, there are three ways to publish packages to the feed:
+* as build artifacts of the [NuGet Pack](nuget-pack.md) build step using the _Publish created packages to build artifacts_ checkbox - in this case you do not need the NuGet Publish build step
 * via the NuGet Publish build step
-</tip>
-
+* via the `##teamcity[publishNuGetPackage]` service message, which ensures the packages are published in all configured NuGet feeds at the end of the current build step and are available in the following build steps
 
 <include src="nuget.md" include-id="nuget-OS"/>
  
@@ -65,7 +62,7 @@ Packages
 
 <td>
 
-Specify a newline\-separated list of NuGet package files (.nupkg) to publish to the NuGet feed. List packages individually or use wildcards.
+Specify a newline-separated list of NuGet package files (`.nupkg`) to publish to the NuGet feed. List packages individually or use wildcards.
 
 
 </td></tr><tr>
