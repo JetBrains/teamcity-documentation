@@ -219,7 +219,7 @@ To change the server port, in the \<[TeamCity Home](teamcity-home-directory.md)\
 
 ```
 
-To apply the changes, restart the server. If the server was working with the old port previously, you would need to change the port in all the stored URLs of the server (browser bookmarks, agents' `serverUrl` [property](build-agent-configuration.md), URL in user's IDEs, `Server URL` setting on the __Administration | Global Settings__ page).
+To apply the changes, restart the server. If the server was working with the old port previously, you would need to change the port in all the stored URLs of the server (browser bookmarks, agents' `serverUrl` [property](build-agent-configuration.md), URL in user's IDEs, the _Server URL_ setting on the __Administration | Global Settings__ page).
 
 If you run another Tomcat server on the same machine, you might need to also change other Tomcat server service ports (search for `port=` in the `server.xml` file).
 

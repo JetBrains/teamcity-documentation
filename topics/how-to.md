@@ -704,7 +704,7 @@ Set up the proxying server to redirect all requests to `teamcity.public:400` to 
                />
 ```
 
-When the public server address is __HTTPS__, use the `secure="true"` and `scheme="https"` attributes.
+When the public server address is __HTTPS__, use the `secure="true"` and `scheme="https"` attributes. If these attributes are missing, TeamCity will show a respective health report.
 
 <anchor name="Proxy-Tomcat-RemoteIpValve"/>
 

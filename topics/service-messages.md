@@ -430,7 +430,7 @@ Here is a longer example of test reporting with service messages:
 
 #### Enabling test retry
 
-In terms of 2020.2 EAP, you can enable the support of _test retry_ for a build configuration. With this option enabled, the successful run of a test will mute its previous failure, which means that TeamCity will mute a test if it fails and then succeeds within the same build.   
+You can enable the support of _test retry_ for a build configuration. With this option enabled, the successful run of a test will mute its previous failure, which means that TeamCity will mute a test if it fails and then succeeds within the same build.   
 Such tests will not affect the build status.
 
 ```Shell

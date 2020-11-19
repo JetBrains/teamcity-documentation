@@ -129,8 +129,6 @@ Maximum number of artifacts per build
 
 <td>
 
-(In terms of 2020.2 EAP)
-
 Limits the number of artifacts published per build.   
 This helps prevent memory consumption problems in case multiple builds publish many artifacts in parallel.
 
