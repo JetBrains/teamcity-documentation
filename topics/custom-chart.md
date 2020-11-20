@@ -15,6 +15,8 @@ The information in this section refers to __TeamСity 10\+__. For other versions
 
 It is possible to manage custom charts using the TeamCity web UI.
 
+<anchor name="CustomChart-AddingCustomCharts"/>
+
 ### Adding Custom Charts
 
 * The __Statistics__ tab for a project or build configuration provides an option to create a new chart. Note that only one build configuration can be currently added as the data source. More configurations can be added manually.

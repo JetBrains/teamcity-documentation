@@ -241,6 +241,8 @@ A build number format example:
 
 Though not required, it is still highly recommended to ensure the build numbers are unique. Please include the build counter in the build number and do not reset the build counter to lesser values. It is also possible to change the build number from within your build script. For details, refer to [Build Script Interaction with TeamCity](service-messages.md#Reporting+Build+Number).
 
+<anchor name="ConfiguringGeneralSettings-artifactPaths"/>
+
 ### Artifact Paths
 
 [Build artifacts](build-artifact.md) are files produced by the build which are stored on TeamCity server and can be downloaded from the TeamCity web UI or used as artifact dependencies by other builds. On the __General Settings__ page of the build configuration, you can specify patterns for the files on the agent which will be uploaded to the server after the build.
