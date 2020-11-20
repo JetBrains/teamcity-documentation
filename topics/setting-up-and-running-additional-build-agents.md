@@ -67,11 +67,10 @@ subinacl.exe /service TCBuildAgent /grant=<user login name>=PTO
 The build process is launched by a TeamCity agent and thus shares the environment and is executed under the OS user used by the TeamCity agent. Ensure that the TeamCity agent is configured accordingly. See [Known Issues](known-issues.md) for related Windows Service Limitations.
 
 <anchor name="SettingupandRunningAdditionalBuildAgents-ServerDataTransfers"/>
+<anchor name="SettingupandRunningAdditionalBuildAgents-Agent-ServerDataTransfers"/>
 
 ### Agent-Server Data Transfers
 [//]: # (AltHead: Server-Agent Data Transfers)
-
-<anchor name="SettingupandRunningAdditionalBuildAgents-Agent-ServerDataTransfers"/>
 
 A TeamCity agent connects to the TeamCity server via the URL configured as the `serverUrl` agent property. This is called [unidirectional](#Unidirectional+Agent-to-Server+Communication) agent-to-server connection. If specifically configured, TeamCity agent can use legacy [bidirectional communication](#Bidirectional+Communication) which also requires establishing a connection from the server to the agents. To view whether the agent-server communication is unidirectional or bidirectional for a particular agent, navigate to __Agents | &lt;Agent Name&gt; | Agent Summary__ tab, the __Details__ section, __Communication Protocol__.
 
@@ -524,9 +523,9 @@ For the `.zip` agent installation you need to install the appropriate Java versi
 * in the directory pointed to by the `TEAMCITY_JRE`, `JAVA_HOME` or `JRE_HOME` environment variables (check that you only have one of the variables defined).
 * if you plan to run the agent via Windows service, make sure to set the `wrapper.java.command` property in the `<agent home>\launcher\conf\wrapper.conf` file to a valid path to the Java executable
 
-### Upgrading Java on Agents
-
 <anchor name="SettingupandRunningAdditionalBuildAgents-UpgradingJavaonAgents"/>
+
+### Upgrading Java on Agents
 
 If you are trying to launch an agent, and it is not able to find the required Java version (currently Java 8) in any of the [default locations](setting-up-and-running-additional-build-agents.md#java-paths), the agent will report an error on starting, the process will not launch, and the agent will be shown as disconnected in the TeamCity UI.
 

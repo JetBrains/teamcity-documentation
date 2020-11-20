@@ -136,9 +136,9 @@ Here are some recommendations to tweak TeamCity server setup for better performa
 * When regularly exceeding 500 concurrently running builds which log a lot of data, consider using [Several Nodes Setup](multinode-setup.md)
 
 
-## Retrieve Administrator Password
-
 <anchor name="HowTo-RetrieveAdministratorPassword"/>
+
+## Retrieve Administrator Password
 
 On the first start with the empty database, TeamCity displays the Administrator Setup page which allows creating a user with full administrative permissions (assigning the [System Administrator](role-and-permission.md#Per-Project+Authorization+Mode) role).
 
@@ -907,7 +907,6 @@ Consider transferring the relevant environment if it was specially modified for 
 <anchor name="copy_server_license"/>
 
 ### Licensing issues
-
 
 A single TeamCity license __cannot be used on two running servers__ at the same time.
 * A copy of the server created for redundancy/backup purposes can use the same license as only one of the servers will be running at a time.

@@ -11,9 +11,9 @@ The global default value for both options is 60 seconds and can be configured fo
 
 You can adjust a VCS trigger to your needs using the options described below:
 
-## Trigger a build on changes in snapshot dependencies
-
 <anchor name="ConfiguringVCSTriggers-Triggerabuildonchangesinsnapshotdependencies"/>
+
+## Trigger a build on changes in snapshot dependencies
 
 If you have a [build chain](build-chain.md) (i.e. a number of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency)),  the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
 
@@ -33,10 +33,9 @@ To do that, select the __Trigger a build on each check\-in__ option. If you sele
 This helps to figure out whose change broke a build or caused a new test failure, should such issue arise.
 
 <anchor name="quietPeriod"/>
+<anchor name="ConfiguringVCSTriggers-quietPeriod"/>
 
 ### Quiet Period Settings
-
-<anchor name="ConfiguringVCSTriggers-quietPeriod"/>
 
 By specifying the quiet period you can ensure the build is not triggered in the middle of non\-atomic check\-ins consisting of several VCS check\-ins.
 

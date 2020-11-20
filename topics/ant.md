@@ -16,9 +16,6 @@ TeamCity collects detailed data from Ant as to the performed activities, provide
 * To disable JUnit reporting, use the `teamcity.ant.junit-support.enabled=false` [system property](configuring-build-parameters.md)
 * To disable TestNG reporting, use `teamcity.ant.testng-support.enabled=false` [system property](configuring-build-parameters.md)
 
-
-## Ant Runner Settings
-
 <anchor name="antAntParamsOptionDescription"/>
 
 <anchor name="Path to build.xml file"/>
@@ -28,10 +25,12 @@ TeamCity collects detailed data from Ant as to the performed activities, provide
 <anchor name="Ant home path"/>
 <anchor name="Additional Ant command line parameters"/>
 
-### Ant Parameters
-[//]: # (AltHead: antAntParamsOptionDescription)
+## Ant Runner Settings
 
 <anchor name="Ant-AntParameters"/>
+
+### Ant Parameters
+[//]: # (AltHead: antAntParamsOptionDescription)
 
 <table><tr>
 
@@ -135,10 +134,9 @@ To use the tool, specify `-lib "%teamcity.tool.ant-net-tasks%"` in [Additional A
 
 <chunk include-id="java-param">
 
- 
-### Java Parameters
-
 <anchor name="Ant-JavaParameters"/>
+
+### Java Parameters
 
 <table><tr>
 

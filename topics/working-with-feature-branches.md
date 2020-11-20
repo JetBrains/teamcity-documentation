@@ -133,7 +133,7 @@ The change log with its graph of commits will help you understand what is going 
 
 With the __Show graph__ option enabled by default TeamCity displays build markers on the graph.
 
-  <anchor name="ActiveBranches"/>
+<anchor name="ActiveBranches"/>
 
 ## Active branches
 

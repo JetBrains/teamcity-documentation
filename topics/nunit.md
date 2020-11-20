@@ -60,9 +60,9 @@ Starting from version 3.4.1, NUnit requires the `NUnit.Extension.TeamCityEventLi
 The NUnit runner checks for the extensions, and if they are not found, in versions 3.2.0 and 3.2.1 the build will fail without a warning; since version 3.4.1 a message is displayed suggesting you install them.   
 The extensions can be installed in bulk using the [NUnit Console Version 3](https://www.nuget.org/packages/NUnit.Console) NuGet package or as separate packages: `NUnit.Extension.TeamCityEventListener` and `NUnit.Extension.NUnitProjectLoader`.
 
-## NUnit Test Settings
-
 <anchor name="NUnit-settings"/>
+
+## NUnit Test Settings
 
 <table><tr>
        

@@ -12,10 +12,9 @@ Before applying the newly checked-in settings, validation constraints are applie
 
 The versioned settings are stored in the `.teamcity` directory in the root of the VCS repository, in the same format as in the [TeamCity Data Directory](teamcity-data-directory.md).
 
-## Synchronizing Settings with VCS
+<anchor name="StoringProjectSettingsinVersionControl-SynchronizingSettingswithVCS"/>
 
-<anchor name="
-StoringProjectSettingsinVersionControl-SynchronizingSettingswithVCS"/>
+## Synchronizing Settings with VCS
 
 By default, the synchronization of the project settings with the version control is disabled.
 
@@ -36,9 +35,9 @@ As soon as synchronization is enabled in a project, TeamCity will make an initia
 * overwrite the settings in the VCS with the current project settings on the TeamCity server; or
 * import the settings from the VCS replacing the current project settings on the TeamCity server with those from version control.
 
-### Defining Settings to Apply to Builds
-
 <anchor name="StoringProjectSettingsinVersionControl-DefiningSettingstoApplytoBuilds"/>
+
+### Defining Settings to Apply to Builds
 
 There are two possible sources of build settings: (1) the current settings on the TeamCity server, that is the latest settings' changes applied to the server (either made via the UI, or via a commit to the `.teamcity` directory in the VCS root), and (2) the settings in the VCS on the revision selected for a build.  
 Therefore, it is possible to start builds with settings different from those currently defined in the build configuration. For projects with enabled versioned settings, you can instruct TeamCity which settings to take __when build starts__.    
@@ -155,6 +154,7 @@ By default, the VCS trigger will ignore such changes. To enable build triggering
 All changes in the VCS root, where project settings are stored, are listed on the __Versioned Settings | Change log__ tab.
 
 <anchor name="enableAfterUpgrade"/>
+<anchor name="StoringProjectSettingsinVersionControl-enableAfterUpgrade"/>
 
 ## Enabling Versioned Settings after TeamCity Upgrade
 [//]: # (AltHead: enableAfterUpgrade)

@@ -39,6 +39,7 @@ The new DSL API version is usually introduced when there are significant incompa
 
 TeamCity preserves backward compatibility, so if you started working with Kotlin DSL in TeamCity 2017.2, you can continue using classes from the `jetbrains.buildServer.configs.kotlin.v2017_2` package even in TeamCity 2020.1. 
 
+<anchor name="UpgradingDSL-configsVersion"/>
 <anchor name="configsVersion"/>
 
 ### Configs version
