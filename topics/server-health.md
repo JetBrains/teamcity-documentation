@@ -182,9 +182,9 @@ If the default agent\-side checkout is not possible, TeamCity will display a cor
 * If a project or build configuration has secured parameters and is configured to build GitHub pull requests, this report will raise the warning, because malicious code submitted via the pull request can obtain these secured parameters
 * If a VCS root points to GitHub or Bitbucket, a suggestion to configure a corresponding issue tracker is displayed.
 
-### Agents Health
-
 <anchor name="agentUpgradeFailed"/>
+
+### Agents Health
 
 #### Some agents cannot upgrade
 [//]: # (AltHead: agentUpgradeFailed)

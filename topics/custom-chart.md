@@ -367,14 +367,11 @@ An integer value to use as the maximum for the Y axis value .
 </td></tr></table>
 
 <anchor name="listOfDefaultStatisticValues"/>
-
 <anchor name="Build Metrics Provided by TeamCity"/>
- 
 <anchor name="predefinedStatisticsKeys"/>
+<anchor name="CustomChart-DefaultStatisticsValuesProvidedbyTeamCity"/>
 
 #### Default Statistics Values Provided by TeamCity
-
-<anchor name="CustomChart-DefaultStatisticsValuesProvidedbyTeamCity"/>
 
 The table below lists the predefined value providers that can be used to configure a custom chart. The values reported for each build differ depending on your build configuration settings.
 

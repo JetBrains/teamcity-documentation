@@ -31,9 +31,9 @@ If you decide to skip backing up data under `<[TeamCity Data Directory](teamcity
 
 The `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.*` files store the internal database (HSQLDB) data. You need to back them up if you use HSQLDB (the default setting not suitable for production use).
 
-### Database Data
-
 <anchor name="database_data"/>
+
+### Database Data
 
 The database stores all information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, and so on.
 * If you use the HSQLDB, the internal database (default setting, not recommended for production), the database is stored in the files residing directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` folder. All files from the directory can be backed up. You may also refer to the [HSQLDB backup notes](http://hsqldb.org/doc/guide/ch05.html#N10F02).

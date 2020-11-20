@@ -13,9 +13,9 @@ __Since TeamCity 10.0__, it is possible to enable the dark theme in the build lo
 
 You can download a full build log in the textual form or as a .zip archive  from the Build Results page by clicking the _Download full build log_ link at the top right corner. Alternatively, you can use the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=<id>`. It is also possible to download the build log as a `.zip` file using the corresponding link in the UI or via the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=&archived=true`. 
 
-## Build Log Size
-
 <anchor name="BuildLog-LargeBuildLogsInspection"/>
+
+## Build Log Size
 
 It is recommend to keep the build log small and tune build scripts not to print too much into the output. Large build logs are hard to view in the browser and are loading TeamCity infrastructure piping build messages from the agent to the server while the build is running.
 

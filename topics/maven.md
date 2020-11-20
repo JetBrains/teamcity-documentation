@@ -231,9 +231,9 @@ If Custom or Predefined settings are used, the path to the effective user settin
 
 <include src="ant.md" include-id="java-param"/>
 
-### Local Artifact Repository Settings
-
 <anchor name="Maven-LocalArtifactRepositorySettings"/>
+
+### Local Artifact Repository Settings
 
 Select one of the following options:
 

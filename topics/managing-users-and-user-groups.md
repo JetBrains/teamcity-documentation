@@ -9,9 +9,9 @@ When creating a user account when [several authentication modes enabled](configu
 
 If only the [default authentication](authentication-modules.md) is used, the password is required as well. Any new user is automatically added to the [All Users group](user-group.md#%22All+Users%22+Group) and inherits the roles and permissions defined for this group. If you do not use [per-project permissions](role-and-permission.md#Authorization+Mode), you can specify here whether a user should have administrative permissions or not. Otherwise, you can assign roles to this user [later](#Assigning+Roles+to+Users).
 
-### Editing User Account
-
 <anchor name="ManagingUsersandUserGroups-EditingUserAccount"/>
+
+### Editing User Account
 
 To edit/delete a user account, click its name on the __Users__ tab of the __Administration | Users__ page and use the corresponding option. The page provides several tabs allowing you to modify various user account settings
 
@@ -27,9 +27,9 @@ In terms of TeamCity 2020.2 EAP, you can map external OAuth usernames with an ex
 
  <anchor name="vcsUsername"/>
 
-### VCS Usernames
-
 <anchor name="ManagingUsersandUserGroups-vcsUsername"/>
+
+### VCS Usernames
 
 This tab allows viewing and editing default usernames for different VCSs used by the current user.   
 Multiple usernames are supported for a VCS root type and for a separate VCS root: several newline-separated values can be used for each VCS username.
@@ -48,13 +48,11 @@ Use this tab to review the groups the user belongs to, and add/remove the user f
 _This tab is available only if per\-project permissions are enabled on the server Administration / Authentication page_.    
 Use this tab to view the roles assigned to the user directly and those inherited from groups. The roles assigned directly can be modified/removed here. See also [Assigning Roles to Users](#Assigning+Roles+to+Users) below.
 
-
-
 <anchor name="assigningRoles"/>
 
-### Assigning Roles to Users
-
 <anchor name="ManagingUsersandUserGroups-Assigningrolestousers"/>
+
+### Assigning Roles to Users
 
 [//]: # (AltHead: assigningRoles)
 

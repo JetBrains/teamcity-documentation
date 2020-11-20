@@ -74,9 +74,9 @@ fsutil behavior set SymlinkEvaluation R2L:1
 
 ```
 
-#### Disabling network client caches on Data Directory mounts
-
 <anchor name="MultinodeSetup-MultinodeSetupDisabling-networkclientcachesonDataDirectorymounts"/>
+
+#### Disabling network client caches on Data Directory mounts
 
 It is important that all the nodes "see" the current state of the shared Data Directory without delay. If this is not the case, it is likely to manifest in various unstable behavior and frequent build logs corruption.
 
