@@ -9,7 +9,7 @@ This page gives details on configuring the _.NET_ runner.
 
 Since TeamCity 2019.2.3, the .NET CLI (dotnet) build runner has been refactored and renamed to __.NET__ thus emphasizing that now it supports all .NET-related operations previously implemented in TeamCity as multiple build runners.
 
-Note that we stop providing active support for the [MSBuild](msbuild.md), [Visual Studio (sln)](visual-studio-sln.md), [Visual Studio 2003](visual-studio-2003.md), and [Visual Studio Tests](visual-studio-tests.md) runners. These runners are left for compatibility of existing build configurations with new versions of TeamCity. To receive the following updates and use extra features of our .NET implementation, we suggest that you select the .NET runner instead of any of the listed runners in all corresponding build steps. This page describes the settings of all supported .NET commands and gives guidelines on migration from the obsolete build runners.
+Note that we stop providing active support for the [MSBuild](msbuild.md), [Visual Studio (sln)](visual-studio-sln.md), [Visual Studio 2003](visual-studio-2003.md), and [Visual Studio Tests](visual-studio-tests.md) runners. These runners are left for compatibility of existing build configurations with new versions of TeamCity. To receive the following updates and use extra features of our .NET implementation, we suggest that you select the .NET runner instead of any listed runner in all corresponding build steps. This page describes the settings of all supported .NET commands and gives guidelines on migration from the obsolete build runners.
 
 </note>
 

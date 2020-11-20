@@ -122,7 +122,7 @@ The TeamСity-Docker integration provides the following features which facilitat
 ### Docker Wrapper
 {id="docker-wrapper-1"}
 
-TeamCity provides the Docker Wrapper extension for [Command Line](command-line.md), [Maven](maven.md), [Ant](ant.md), and [Gradle](gradle.md) runners. Each of the supported runners has the dedicated Docker Settings section.
+TeamCity provides the Docker Wrapper extension for [Command Line](command-line.md), [Maven](maven.md), [Ant](ant.md), [Gradle](gradle.md), and [Python](python.md) runners. Each of the supported runners has the dedicated Docker Settings section.
 
 #### Docker Settings
 {id="docker-settings-1"}

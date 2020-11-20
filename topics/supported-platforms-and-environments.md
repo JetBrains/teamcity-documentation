@@ -117,7 +117,7 @@ Other runners:
 * [Duplicates Finder for C# and VB.NET code](duplicates-finder-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html). Supported languages are C# up to version 4.0 and VB.NET version 8.0 - 10.0. Requires .NET Framework 4.6.1+ installed on the build agent.
 * [Inspections for .NET](inspections-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html). Requires .NET Framework 4.6.1+ installed on the build agent.
 * [.NET Process Runner](net-process-runner.md) for running any .NET application (requires .NET installed on the build agent)
-* [NuGet](nuget.md) runners under Windows, Linux macOS. Require NuGet.exe Command Line tool installed on the agents. Supported NuGet versions under Windows are 1.4+. 
+* [NuGet](nuget.md) runners under Windows, Linux, macOS. Require NuGet.exe Command Line tool installed on the agents. Supported NuGet versions under Windows are 1.4+. 
   * Windows: NuGet versions prior to 2.8.6 require .NET Framework 4.0+ installed on the build agent
   * Windows: NuGet 2.8.6 and later requires .NET 4.5
   * Linux and macOS: require [Mono](http://www.mono-project.com/docs/getting-started/install/) 4.4.2+ and NuGet CLI 3.2+ installed on the agent
@@ -135,7 +135,7 @@ Other runners:
 * JUnit 3.8.1+, 4.x
 * [NUnit](nunit-support.md) 2.2.10, 2.4.x, 2.5.x, 2.6.x, 3.0.x are supported (dedicated build runner). 
 * TestNG 5.3+
-* MSTest 8.x-12.x, 14.x, 15.x, 19.x and VSTest are supported by the [Visual Studio Tests](visual-studio-tests.md) runner; requires the appropriate Microsoft Visual Studio edition or Visual Studio Test Agent installed on the build agent.
+* MSTest 8.x-12.x, 14.x, 15.x, 19.x and VSTest are supported by the [.NET](net.md) runner; requires the appropriate Microsoft Visual Studio edition or Visual Studio Test Agent installed on the build agent.
 * [MSpec](mspec.md) (requires MSpec installed on the build agent)
 
 ## Version Control Systems
