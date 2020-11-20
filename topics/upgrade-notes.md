@@ -172,6 +172,8 @@ If you were using the default bundled Java on Windows, make sure the following c
 
 <anchor name="running-builds-node-discontinued"/>
 
+<anchor name="upgrade-notes-running-builds-node-discontinued"/>
+
 <anchor name="UpgradeNotes-running-builds-node-discontinued"/>
 
 The [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is discontinued. In a multinode setup, you can instead [configure a secondary node](configuring-secondary-node.md) with the "_Processing data produced by running builds_" responsibility. Read more on the [Multinode Setup](multinode-setup.md#running-builds-node-discontinued) page.
