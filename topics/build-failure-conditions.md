@@ -21,9 +21,9 @@ This option helps to deal with hanging builds and maintains agent efficiency.
 * _if an error message is logged by build runner_: Mark the build as failed if the build runner reports an error while building.
 * _if an out-of-memory problem or crash is detected (Java only)_: Mark the build as failed if a crash of the JVM is detected, or Java has out of memory problems. If possible, TeamCity will upload crash logs and memory dumps as artifacts for such builds.
 
-## Additional Failure Conditions
-
 <anchor name="BuildFailureConditions-AdditionalFailureConditions"/>
+
+## Additional Failure Conditions
 
 You can instruct TeamCity to mark a build as failed if some of its metrics (for example, code coverage or artifacts size) have changed compared to another build. For instance, you can mark a build as failed if the code duplicates number is higher than in the previous build.
 
@@ -37,9 +37,9 @@ To add such failure condition, click __Add build failure condition__ and select 
 >
 {type="tip"}
 
-### Fail build on metric change
-
 <anchor name="BuildFailureConditions-Failbuildonmetricchange"/>
+
+### Fail build on metric change
 
 When your build uses code examining tools like code coverage, duplicates finders, or inspections, it generates various numeric metrics. For these metrics, you can specify a threshold which, when exceeded, will fail a build.
 
@@ -98,9 +98,9 @@ You can add your own build metric. To do so, you need to modify the TeamCity con
 
 If your build publishes the `myMetric` value, you can use it as a criterion for a build failure.
 
-### Fail build on specific text in build log
-
 <anchor name="BuildFailureConditions-Failbuildonspecifictextinbuildlog"/>
+
+### Fail build on specific text in build log
 
 TeamCity can inspect all lines in a build log for some particular text occurrence that indicates a build failure. When matching lines, the time and block name prefixes preceding each log message are ignored.
 

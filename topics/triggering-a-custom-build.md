@@ -55,9 +55,9 @@ The __Include changes__ drop\-down allows selecting the changes in the VCS roots
 
 The __Build branch__ drop\-down, available if you have branches in your build configuration (or in snapshot dependencies of this build configuration), allows choosing a branch to be used for the custom build.
 
-### Use settings
-
 <anchor name="TriggeringCustomBuild-UsesettingsfromVCS"/>
+
+### Use settings
 
 If your project has [versioned settings](storing-project-settings-in-version-control.md) enabled, you can tell TeamCity to run a build:
 * with the settings defined for the project, either the current settings on the server or the settings from VCS

@@ -384,9 +384,9 @@ Some of the files can have `.N` extensions \- that are files with previous loggi
 
 Users with System Administrator role can view and download the server logs right from the TeamCity UI using __Administration | Diagnostics | Server Logs__.
 
-## Changing Logging Configuration
-
 <anchor name="TeamCityServerLogs-loggingPreset"/>
+
+## Changing Logging Configuration
 
 While TeamCity is running, active logging settings can be changed by selecting between available _logging presets_.
 

@@ -15,9 +15,9 @@ There are several ways to create a build configuration template:
 * __Manually__, like a [regular build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+Template).
 * __Extract__ from an existing build configuration: there is the __Extract template__ option available from the __Actions__ button at the upper right corner of the screen. Note that if you extract a template from a build configuration, the original configuration automatically becomes [associated](#Associating+build+configurations+with+templates) with the newly created template.
 
-## Defining default template for project
-
 <anchor name="BuildConfigurationTemplate-Definingdefaulttemplateforproject"/>
+
+## Defining default template for project
 
 Default templates allow affecting all build configurations in this project and its subprojects.
 
@@ -144,10 +144,10 @@ You can still customize the order of build steps in a template-based build confi
 * Using the TeamCity web UI, it is possible to change the placement of the build configuration steps in respect to the template steps.
 * Using [versioned settings](storing-project-settings-in-version-control.md), it is possible to change not only the placement of the build configuration steps in respect to the template steps, but also to reorder the steps of the template itself.
 
+<anchor name="BuildConfigurationTemplate-Enforcingsettingsinheritedfromtemplate"/>
+
 ## Enforcing settings inherited from template
 [//]: # ([//]: # (AltHead:Enforced settings)
-
-<anchor name="BuildConfigurationTemplate-Enforcingsettingsinheritedfromtemplate"/>
 
 If you want to enforce some settings on all the build configurations in the project so that other users could not redefine them, TeamCity provides this ability for all of the build configurations in a project hierarchy. For instance, using enforced settings it is possible to set [agent side checkout](vcs-checkout-mode.md) everywhere, or ensure that all build configurations have some strict [execution timeout](build-failure-conditions.md#Common+build+failure+conditions). Currently, it is possible to enforce build features, options, and parameters. Build steps and build requirements can also be enforced.
 

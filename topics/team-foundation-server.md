@@ -170,8 +170,6 @@ It is recommended to use checkout rules of the format below to differentiate loc
 
 </note>
 
-## Authentication Notes
-
 <anchor name="TeamFoundationServer-azure-devops"/>
 
 <anchor name="VisualStudioOnline"/>
@@ -179,6 +177,8 @@ It is recommended to use checkout rules of the format below to differentiate loc
 <anchor name="vsts"/>
 
 <anchor name="teamFoundationServerLive"/>
+
+## Authentication Notes
 
 The following authentication options are available in Azure DevOps.
 

@@ -217,9 +217,9 @@ Build Agent Licenses work the same way as the Server Licenses. If you upgrade th
 
 Once sufficient valid license keys are entered which cover the server configuration, the builds begin to be started again.
 
-## Ways to Obtain a License
-
 <anchor name="LicensingPolicy-WaystoObtainaLicense"/>
+
+## Ways to Obtain a License
 
 The following ways to switch your server into the Enterprise mode exist:
 * [buy](http://www.jetbrains.com/teamcity/buy/) an Enterprise Server license;

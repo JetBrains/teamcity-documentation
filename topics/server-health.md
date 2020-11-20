@@ -49,9 +49,9 @@ However, it is __recommended__ to make the following adjustments to benefit from
 * Proxy Server Configuration
 * BIO Connector Adjustment
 
-#### Proxy Server Configuration
-
 <anchor name="ServerHealth-ProxyServerConfiguration"/>
+
+#### Proxy Server Configuration
 
 If a reverse proxy is used in front of the TeamCity server, it needs to be [configured](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) to support the WebSocket protocol.
 
@@ -121,9 +121,9 @@ The general recommendation is to use parameter references for root settings, thu
 
 TeamCity displays a warning if a rule of a [VCS Trigger or Schedule Trigger](configuring-vcs-triggers.md#vcs-trigger-rules-1) references a VCS root which is not attached to any build configuration.
 
-#### Redundant Trigger
-
 <anchor name="ServerHealth-RedundantTrigger"/>
+
+#### Redundant Trigger
 
 The report will show cases when a build trigger is redundant, for example:
 * There are two build configurations __A__ and __B__
@@ -137,9 +137,9 @@ In this case, the VCS trigger in __B__ is redundant and causes builds of __A__ t
 
 The warning is displayed if there are two or more enabled triggers of the same type with identical sets of parameter values. Disabled triggers are not taken into account.
 
-#### Effective Quiet Period is Bigger Than Specified
-
 <anchor name="ServerHealth-TooSmallQuietPeriod"/>
+
+#### Effective Quiet Period is Bigger Than Specified
 
 When a [VCS trigger](configuring-vcs-triggers.md) for a build configuration has a quiet period, TeamCity will wait the specified time after the last detected change before triggering the build. During this time, all VCS Roots which affect this build configuration are checked for changes. If other VCS Roots have checking for changes interval bigger than the quiet period, the effective quiet period will be equal to the maximum checking for changes interval of the involved VCS Roots (it could be a VCS Roots from the dependencies).
 
@@ -183,7 +183,6 @@ If the default agent\-side checkout is not possible, TeamCity will display a cor
 * If a VCS root points to GitHub or Bitbucket, a suggestion to configure a corresponding issue tracker is displayed.
 
 ### Agents Health
-
 
 <anchor name="agentUpgradeFailed"/>
 
