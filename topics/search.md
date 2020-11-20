@@ -1,7 +1,7 @@
 [//]: # (title: Search)
 [//]: # (auxiliary-id: Search)
 
-After you have installed and started running TeamCity, it collects the information on builds, tests and so on and indexes it. You can search builds by build number, tag, build configuration name and other different parameters specifying one or several keywords. You can also search for builds by text in build logs, and by the [external id](identifier.md#External+IDs) of a build configuration.
+After you have installed and started running TeamCity, it collects the information on builds, tests and so on and indexes it. You can search builds by build number, tag, build configuration name, and other different parameters specifying one or several keywords. You can also search for builds by text in build logs, and by the [external ID](identifier.md#External+IDs) of a build configuration.
 
 ## Search Query
 
