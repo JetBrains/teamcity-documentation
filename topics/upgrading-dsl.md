@@ -29,9 +29,9 @@ In TeamCity 2017.1, these settings were moved to the project level. TeamCity can
 
 <anchor name="dslAPIVersion"/>
 
-### Kotlin DSL API version
-
 <anchor name="UpgradingDSL-KotlinDSLAPIversion"/>
+
+### Kotlin DSL API version
 
 The DSL API version is encoded into the package name, for example: `jetbrains.buildServer.configs.kotlin.v2019_2`. The version part there corresponds to the TeamCity version when this DSL API was introduced.
 

@@ -168,13 +168,13 @@ If you were using the default bundled Java on Windows, make sure the following c
 * If you use Microsoft SQL Server as the TeamCity database with the integrated MS SQL authentication, the 64-bit `sqljdbc_auth.dll` native library has to be [present in the due location](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
 * If there was any custom logic executing native tools on the server, check that it still works with the new process bitness.
 
-### Discontinued Running Builds Node
-
 <anchor name="running-builds-node-discontinued"/>
 
 <anchor name="upgrade-notes-running-builds-node-discontinued"/>
 
 <anchor name="UpgradeNotes-running-builds-node-discontinued"/>
+
+### Discontinued Running Builds Node
 
 The [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is discontinued. In a multinode setup, you can instead [configure a secondary node](configuring-secondary-node.md) with the "_Processing data produced by running builds_" responsibility. Read more on the [Multinode Setup](multinode-setup.md#running-builds-node-discontinued) page.
 

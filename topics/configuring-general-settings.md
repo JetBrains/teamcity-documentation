@@ -305,9 +305,9 @@ Select the _Enable hanging build detection_ option to detect probably "hanging" 
 
 You can restrict running [personal builds](personal-build.md) by unchecking the __allow triggering personal builds__ option (on by default).
 
-#### Enable Status Widget
-
 <anchor name="ConfiguringGeneralSettings-EnableStatusWidget"/>
+
+#### Enable Status Widget
 
 This option enables retrieving the status and basic details of the last build in the build configuration without requiring any user authentication. Note that this also allows getting the status of any specific build in the build configuration (however, builds cannot be listed and no other information except the build status (`success/failure/internal error/cancelled`) is available).
 

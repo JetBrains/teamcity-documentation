@@ -9,9 +9,9 @@ In TeamCity, one build configuration can depend on one or more configurations. T
 An _artifact dependency_ is just a way to get artifacts produced by one build into another. Without a corresponding _snapshot dependency_, it is mainly used when the build configurations are not related in terms of sources. For example, one build provides a reusable component for others.   
 A snapshot dependency influences the way builds are processed and implies that the builds are deeply related, one build being a logic part of another.
 
-## Snapshot Dependency
-
 <anchor name="DependentBuild-SnapshotDependency"/>
+
+## Snapshot Dependency
 
 _Snapshot Dependency_ is a powerful concept that allows expressing source\-level dependencies between build configurations in TeamCity. The primary goal is to allow complex build procedures via creating different build configurations linked with snapshot dependencies. This, in particular, allows dividing a single monolith build into a set of interlinked builds ([Build Chain](build-chain.md)) with flexible reuse rules. TeamCity follows the declarative style of defining the build structure on this level (declaring dependencies rather than adding build triggers) as it allows for more flexible and powerful features.
 
@@ -66,9 +66,9 @@ Note that the changes to be included in build A could have become not the latest
 
 The example above shows the core basics of snapshot dependencies as a straightforward process without any additional options. For snapshot dependency options, refer to the [Snapshot Dependencies](snapshot-dependencies.md) page.
 
-## Artifact Dependency
-
 <anchor name="DependentBuild-ArtifactDependency"/>
+
+## Artifact Dependency
 
 <tip>
  

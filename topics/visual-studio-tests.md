@@ -13,9 +13,9 @@ The _Visual Studio Tests_ build runner integrates functionality of the MSTest fr
 
 The Visual Studio Test runner requires Visual Studio Test Agent or Microsoft Visual Studio installed on the build agent.
 
-## Visual Studio Tests runner settings
-
 <anchor name="VisualStudioTests-runnersettings"/>
+
+## Visual Studio Tests runner settings
 
 <table><tr>
 
@@ -124,9 +124,9 @@ The rest of settings will vary depending on the engine to run tests with:
 * [VSTest Settings](#VSTest+Settings)
 * [MSTest Settings](#MSTest+settings)
  
-### VSTest Settings
-
 <anchor name="VisualStudioTests-VSTestSettings"/>
+
+### VSTest Settings
 
 <table><tr>
 
@@ -239,9 +239,9 @@ When using this option, it is recommended to check the number of tests in the pr
 
 </td></tr></table>
 
-#### Custom test logger
-
 <anchor name="VisualStudioTests-Customtestlogger"/>
+
+#### Custom test logger
 
 `VSTest.Console` supports custom loggers, i.e. libraries that can handle events that occur when tests are being executed.   
 TeamCity 9.0\+ has a custom logger that provides real\-time test reporting.   

@@ -7,9 +7,9 @@ The _schedule trigger_ allows you to set the time when a build of the configurat
 
 The settings in this section define time and other conditions for automatic build triggering. You can schedule a recurring build or set a specific date and time for it.
 
-### Date and Time
-
 <anchor name="ConfiguringScheduleTriggers"/>
+
+### Date and Time
 
 In addition to triggering builds __daily__ or __weekly__ at a specified time for a particular time zone, you can specify advanced time settings using [cron](https://en.wikipedia.org/wiki/Cron#Operators)\-like expressions. This format provides more flexible scheduling options.
 
@@ -477,11 +477,11 @@ For the description of the special characters, please refer to [Quartz CronTrigg
 
 ### VCS Changes
 
-You can restrict a schedule trigger to start builds only if there are pending changes in your version control by enabling the __Trigger only if there are pending changes__ option. This option considers only newly detected pending changes: if there were pending changes before the Trigger was created, the build is not triggered. 
-
-### VCS Trigger Rules
+You can restrict a schedule trigger to start builds only if there are pending changes in your version control by enabling the __Trigger only if there are pending changes__ option. This option considers only newly detected pending changes: if there were pending changes before the Trigger was created, the build is not triggered.
 
 <anchor name="ConfiguringScheduleTriggers-buildTriggerRules"/>
+
+### VCS Trigger Rules
 
 <include src="configuring-vcs-triggers.md" include-id="vcs-trigger-rules"/>
 
@@ -490,15 +490,15 @@ You can restrict a schedule trigger to start builds only if there are pending ch
 
 <include src="configuring-vcs-triggers.md" include-id="general-syntax"/>
 
+<anchor name="ConfiguringScheduleTriggers-WatchedBuild"/>
+
 #### Trigger Rules Examples
 
 <include src="configuring-vcs-triggers.md" include-id="trigger-rules-examples"/>
 
-<anchor name="ConfiguringScheduleTriggers-WatchedBuild"/>
+<anchor name="ConfiguringScheduleTriggers-BuildChanges"/>
 
 ### Build Changes
-
-<anchor name="ConfiguringScheduleTriggers-BuildChanges"/>
 
 A schedule trigger can watch a build in any specified build configuration and trigger a build only if the watched build has changed since the previous triggering. You can select which build to watch:
 * Last finished build
