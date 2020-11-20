@@ -487,6 +487,10 @@ In rare cases, if an early build of Visual Studio 2017 is installed on your buil
 
 To workaround this problem, you can upgrade Visual Studio 2017 to the latest build or, alternatively, install any later version of .NET Framework.
 
+## Cannot use multiline parameters in PowerShell
+
+Earlier versions of the [PowerShell](powershell.md) runner don't support passing multiline arguments. Since version 2020.1.4, you can enable this support by setting the `teamcity.powershell.arguments.multiline=true` [configuration parameter](configuring-build-parameters.md).
+
 ## Issues per TeamCity versions
 
 ### 2020.1.3 Known Issues
