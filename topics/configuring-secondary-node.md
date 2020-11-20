@@ -54,10 +54,11 @@ By default, a newly started secondary node provides a read-only user interface a
 * Processing data produced by builds
 * VCS repositories polling
 * Processing build triggers
+* Processing user requests to modify data
 
 <img src="Nodes.png" alt="Secondary node responsibilities"/>
 
-A node assigned with any responsibility will allow users to perform the [most common actions](#User-level+Actions+on+Secondary+Node) on builds.
+A node assigned to any responsibility will allow users to perform the [most common actions](#User-level+Actions+on+Secondary+Node) on builds.
 
 You can enable and disable responsibilities for nodes at any moment.
 
@@ -80,6 +81,10 @@ If you have commit hooks configured on the main server, no changes in hooks are 
 ### Processing Triggers on Secondary Node
 
 In setups with many build agents, a significant amount of the main server\'s CPU is allocated to constant processing of build triggers. By enabling the _Processing build trigger_ responsibility for one or more secondary nodes, you can distribute the trigger processing tasks and CPU load between the main node and the responsible secondary ones. TeamCity distributes the triggers automatically but you can see what triggers are currently assigned to each node.
+
+### Processing User Requests to Modify Data on Secondary Node
+
+This responsibility allows creating new projects and build configurations and changing their settings right from the secondary node’s interface. It is especially useful when the main server is down or goes through maintenance.
 
 ## User-level Actions on Secondary Node
 
