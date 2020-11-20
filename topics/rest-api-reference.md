@@ -1817,6 +1817,7 @@ __Supported locators__:
 * `build:(<build locator>),muted:true` – failed tests which were muted in the build.
 * `currentlyFailing:true,affectedProject:<project_locator>` – tests currently failing under the project specified (recursively).
 * `currentlyMuted:true,affectedProject:<project_locator>` – tests currently muted under the project specified (recursively). See also the project's __Muted Problems__ tab.
+* `includePersonal:true` - include tests from [personal builds](personal-build.md).
  
 __Examples__:
 
@@ -1890,10 +1891,10 @@ GET http://teamcity:8111/app/rest/testOccurrences?locator=build:(id:XXX),current
 </table>
  
 __Supported test locators__:
-* `id:<internal test id>` available as a part of the URL on the test history page
+* `id:<internal test id>` available as a part of the URL on the __Test History__ page
 * `name:<full test name>`
  
-__Since TeamCity 10__, there is experimental support for exposing single test invocations / runs:
+There is  anexperimental support for exposing single test invocations / runs:
 
 <table>
 
