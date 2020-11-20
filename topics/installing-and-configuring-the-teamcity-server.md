@@ -271,6 +271,8 @@ To update to the 64-bit Java, either use the bundled version of Java or:
 * [Update](#Java+Installation) Java to be used by the server.
 * [Set JVM memory options](configuring-teamcity-server-startup-properties.md). It is recommended to set the following options for the 64-bit JVM: `-Xmx4g -XX:ReservedCodeCacheSize=450m`.
 
+<anchor name="InstallingandConfiguringtheTeamCityServer-SettingUpMemorysettingsforTeamCityServer"/>
+
 ### Setting Up Memory settings for TeamCity Server
 
 TeamCity server has the main process which can also launch child processes. Child processes use available memory on the machine, this section covers the memory settings of the main TeamCity server process only as it requires special configuration.   
