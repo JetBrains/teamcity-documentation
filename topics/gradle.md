@@ -55,7 +55,7 @@ Gradle build file
 
 <td>
 
-A path to the [Gradle build file](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world), relative to the working directory.
+A path to the [Gradle build file](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world), relative to the working directory. If empty (default), Gradle uses own settings to determine it.
 
 </td></tr>
 
