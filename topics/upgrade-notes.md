@@ -3,14 +3,16 @@
 
 ## Changes from 2020.1.x to 2020.2
 
-* The [external Python build runner](https://plugins.jetbrains.com/plugin/9042-python-runner) is no longer supported. We recommend switching existing Python steps to the new [bundled](python.md) runner.
-* TeamCity has dropped support for Internet Explorer. It is recommended to use Microsoft Edge or any other supported browser instead.
-* The [.NET](net.md) build runner now supports earlier versions of Visual Studio and MSBuild. Currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.
+* The new header is enabled in both classic and experimental UIs. Some plugins developed for the previous header might not work in the new one. With [our new API](https://blog.jetbrains.com/teamcity/2020/09/teamcity-2020-2-updated-plugin-development/), you can make your custom plugins compatible with the new header or write new ones using modern web technologies.  
+If you have troubles displaying valuable information or actions in this header and updating plugins is not a convenient option, you can set the `teamcity.ui.useClassicHeader=true` internal property – this will switch your TeamCity header to the previous view. Please note that this is not a recommended solution as we might disable the obsolete header in the future versions.
+* The [external Python build runner](https://plugins.jetbrains.com/plugin/9042-python-runner) is no longer supported. All existing build steps will continue to work normally, but we recommend switching existing Python steps to the new [bundled](python.md) runner.
 * Docker images of the TeamCity Windows agents are now based on version 1909 instead of 1809. Currently, Windows agents are published for versions 1903 and 1909.
 * Addressing the [deprecation of TLS 1.0 and 1.1](https://docs.microsoft.com/en-us/microsoft-365/compliance/prepare-tls-1.2-in-office-365?view=o365-worldwide) in Office 365, [Email Notifier](notifications.md#Email+Notifier) now uses TLS 1.2 by default.
 * Previously, the _Build file_ field of the [Gradle](gradle.md) runner was set to `build.gradle` by default. We have removed this default value as some users rely on custom names of build files and prefer to let Gradle decide what file to choose.   
 If you use `build.gradle` as your build file, all will continue to work as before this update.
 * The [Gradle](gradle.md) runner now displays test names based on the `displayName` properties assigned to the respective test methods. If you were relying on the `Name` properties in your Gradle builds, you might lose their test and investigation history on upgrading. To prevent this, consider switching the behavior back with the `teamcity.internal.gradle.testNameFormat=name` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+* Since version 2019.2, a secondary node allows user actions if at least one responsibility is assigned to it. In 2020.2, we have added a new responsibility – "Processing user requests to modify data". Nodes with this responsibility can process all currently supported user actions and allow changing project settings. Without it, a node will provide a read-only interface.   
+On upgrading, this responsibility will be automatically enabled on all your secondary nodes that have at least one other responsibility. This will ensure no current functionality of these nodes is affected. To allow user actions on new secondary nodes, you have to manually enable the new responsibility in __Administration | Server Configuration__.
  
 ### Bundled tools updates
  
@@ -23,8 +25,8 @@ If you use `build.gradle` as your build file, all will continue to work as befor
 * The Windows image in the TeamCity server Docker containers has been updated to version 2004 (SAC) and 1809 (LTS).
 * The Linux image in TeamCity server Docker containers has been updated to version 20.04 (LTS).
 * Bundled dotCover and ReSharper CLT have been upgraded to version 2020.2.4.
-* The deprecated [Visual Studio 2003](visual-studio-2003.md) build runner is unbundled from TeamCity. We recommend using the [.NET](net.md) runner instead.
-* Lucene version in [TeamCity search](search.md) has been updated to 8.5.1.
+* The deprecated Visual Studio 2003 build runner is unbundled from TeamCity. We recommend using the [.NET](net.md) runner instead.
+* Lucene version in [TeamCity search](search.md) has been updated to 8.5.1. On upgrading, TeamCity will reindex all builds on the server which might take some time and load the CPU. During reindexation, some builds might not be present in the search results.
 
 ## Changes from 2020.1.4 to 2020.1.5
 
