@@ -25,7 +25,8 @@ On upgrading, this responsibility will be automatically enabled on all your seco
 * The Windows image in the TeamCity server Docker containers has been updated to version 2004 (SAC) and 1809 (LTS).
 * The Linux image in TeamCity server Docker containers has been updated to version 20.04 (LTS).
 * Bundled dotCover and ReSharper CLT have been upgraded to version 2020.2.4.
-* The deprecated Visual Studio 2003 build runner is unbundled from TeamCity. We recommend using the [.NET](net.md) runner instead.
+* The deprecated Visual Studio 2003 build runner is disabled in TeamCity. We recommend using the [.NET](net.md) runner instead.   
+If you were actively using the VS 2003 runner and cannot easily migrate to the .NET runner, please let us know about it via any of our [feedback channels](https://teamcity-support.jetbrains.com/hc/en-us).
 * Lucene version in [TeamCity search](search.md) has been updated to 8.5.1. On upgrading, TeamCity will reindex all builds on the server which might take some time and load the CPU. During reindexation, some builds might not be present in the search results.
 
 ## Changes from 2020.1.4 to 2020.1.5

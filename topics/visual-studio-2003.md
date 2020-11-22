@@ -3,9 +3,9 @@
 
 <note>
 
-Since version 2020.2, the Visual Studio 2003 build runner is discontinued and unbundled from TeamCity. If you are actively using this runner, we encourage you to let us know about it via any of our [feedback channels](https://teamcity-support.jetbrains.com/hc/en-us).
+Since version 2020.2, the Visual Studio 2003 build runner is discontinued and disabled in TeamCity.
 
-We recommend you switching to the [.NET build runner](net.md) instead.
+We recommend switching to the [.NET build runner](net.md) instead. If you were actively using the VS 2003 runner and cannot easily migrate to the .NET runner, please let us know about it via any of our [feedback channels](https://teamcity-support.jetbrains.com/hc/en-us).
 
 </note>
 
