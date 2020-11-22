@@ -84,11 +84,11 @@ In setups with many build agents, a significant amount of the main server\'s CPU
 
 ### Processing User Requests to Modify Data on Secondary Node
 
-This responsibility allows creating new projects and build configurations and changing their settings right from the secondary node’s interface. It is especially useful when the main server is down or goes through maintenance.
+This responsibility is responsible for allowing [user actions on a secondary node](#User-level+Actions+on+Secondary+Node). It is especially useful when the main server is down or goes through maintenance.
 
 ## User-level Actions on Secondary Node
 
-If at least one responsibility is assigned to a secondary node, it will allow performing the most common user-level actions:
+If the "_Processing user requests to modify data_" responsibility is enabled on a secondary node, it will allow performing the most common user-level actions:
 * Triggering a build, including a custom or personal one
 * Stopping/deleting and pinning/tagging/commenting builds
 * Assigning investigations and muting build problems and tests
@@ -100,6 +100,7 @@ If at least one responsibility is assigned to a secondary node, it will allow pe
 * Reordering and hiding projects and build configurations
 * Checking for pending changes
 * Agent-related actions (see the [list of actions](https://youtrack.jetbrains.com/issue/TW-65199))
+* Editing projects and build configurations
 
 See the related tasks in our issue tracker for the full list of available actions: [TW-62749](https://youtrack.jetbrains.com/issue/TW-62749), [TW-63346](https://youtrack.jetbrains.com/issue/TW-63346).
 
