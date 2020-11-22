@@ -5,7 +5,7 @@ _Agentless build steps_ are [steps](configuring-build-steps.md) that can run wit
 
 Normally, a running build occupies a build agent until the very finish, even if its final steps are executed outside TeamCity. However, if a build does not need its agent for some remaining steps, it can send an instruction to detach this agent. The agent becomes available and can be instantly assigned to another build.
 
-This approach allows saving cloud agents' work time and is optimal for configurations that use third-party tools for finalizing a build: for example, to run numerous tests or deploy a project. Such a build can finish outside TeamCity; the TeamCity server will detect its status reports directly, without using an agent as a mediator.
+This approach allows saving agents' work time and is optimal for configurations that use third-party tools for finalizing a build: for example, to run numerous tests or deploy a project. Such a build can finish outside TeamCity; the TeamCity server will detect its status reports directly, without using an agent as a mediator.
 
 Let's consider an example build that consists of three steps: compilation, testing, and deployment. All of them are processed by an agent even though the deployment step is actually performed by the external software. The agent is reporting results to the TeamCity server and stays assigned to the build until its finish.
 
