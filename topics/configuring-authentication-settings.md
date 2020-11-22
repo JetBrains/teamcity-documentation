@@ -192,7 +192,7 @@ Before enabling this module, you need to configure a [Bitbucket Cloud connection
 <td>
 
 Enabled by default.  
-If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available Bitbucket Cloud repo but want to limit access to the TeamCity server.
+If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>
 
@@ -248,7 +248,7 @@ Before enabling this module, you need to configure a [GitHub.com connection](int
 <td>
 
 Enabled by default.  
-If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available GitHub.com repo but want to limit access to the TeamCity server.
+If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>
 
@@ -304,7 +304,7 @@ Before enabling this module, you need to configure a [GitHub Enterprise connecti
 <td>
 
 Enabled by default.  
-If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available GitHub Enterprise server but want to limit access to the TeamCity server.
+If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>
 
@@ -366,7 +366,7 @@ Before enabling this module, you need to configure a [GitLab.com connection](int
 <td>
 
 Enabled by default.  
-If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available GitLab.com repo but want to limit access to the TeamCity server.
+If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>
 
@@ -424,7 +424,7 @@ Before enabling this module, you need to configure a [GitLab CE/EE connection](i
 <td>
 
 Enabled by default.  
-If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available GitLab CE/EE server but want to limit access to the TeamCity server.
+If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>
 
