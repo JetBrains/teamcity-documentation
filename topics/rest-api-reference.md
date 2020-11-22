@@ -1894,7 +1894,7 @@ __Supported test locators__:
 * `id:<internal test id>` available as a part of the URL on the __Test History__ page
 * `name:<full test name>`
  
-There is  anexperimental support for exposing single test invocations / runs:
+There is an experimental support for exposing single test invocations / runs:
 
 <table>
 
