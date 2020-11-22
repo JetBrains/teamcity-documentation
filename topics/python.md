@@ -211,7 +211,7 @@ Enter `scripts/*.py` as an argument to check all Python files in the `scripts` d
 
 <td>
 
-Arguments
+Custom
 
 </td>
 
