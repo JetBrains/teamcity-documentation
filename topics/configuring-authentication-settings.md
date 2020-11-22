@@ -170,9 +170,9 @@ Please refer to the [dedicated page](ntlm-http-authentication.md).
 
 Since version 2020.2, users can sign in to TeamCity with a Bitbucket Cloud account.
 
-To sign in, click the Bitbucket icon above the login form and, after the redirect, approve the TeamCity application. If a user with your Bitbucket email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in Bitbucket, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with Bitbucket Cloud profiles.
+Before enabling this module, you need to configure a [Bitbucket Cloud connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket+Cloud) in the Root project's settings and a dedicated application in Bitbucket.
 
-Before enabling this module, you need to configure a [Bitbucket Cloud connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
+To sign in, click the Bitbucket icon above the login form and, after the redirect, approve the TeamCity application. If a user with your Bitbucket email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in Bitbucket, this Bitbucket account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with Bitbucket Cloud profiles.
 
 <table>
 
@@ -226,9 +226,9 @@ Leave empty to allow all Bitbucket Cloud users to access the TeamCity server.
 
 Since version 2020.2, users can sign in to TeamCity with a GitHub.com account.
 
-To sign in, click the GitHub icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitHub email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitHub, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitHub.com profiles.
+Before enabling this module, you need to configure a [GitHub.com connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub) in the Root project's settings and a dedicated application in GitHub.
 
-Before enabling this module, you need to configure a [GitHub.com connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
+To sign in, click the GitHub icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitHub email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitHub, this GitHub account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitHub.com profiles.
 
 <table>
 
@@ -282,9 +282,9 @@ Leave empty to allow all GitHub users to access the TeamCity server.
 
 Since version 2020.2, users can sign in to TeamCity with a GitHub Enterprise account.
 
-To sign in, click the GitHub icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitHub email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitHub, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitHub Enterprise profiles.
+Before enabling this module, you need to configure a [GitHub Enterprise connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub) in the Root project's settings and a dedicated application in GitHub.
 
-Before enabling this module, you need to configure a [GitHub Enterprise connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
+To sign in, click the GitHub icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitHub email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitHub, this GitHub account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitHub Enterprise profiles.
 
 <table>
 
@@ -342,11 +342,11 @@ Leave empty to allow all GitHub users to access the TeamCity server.
 
 Since version 2020.2, users can sign in to TeamCity with a GitLab.com account.
 
-To sign in, click the GitLab icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitLab email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitLab, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitLab.com profiles.
+Before enabling this module, you need to configure a [GitLab.com connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitLab) in the Root project's settings and a dedicated application in GitLab.
+
+To sign in, click the GitLab icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitLab email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitLab, this GitLab account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitLab.com profiles.
 
 >If you want to be recognized in TeamCity by your email, make sure this email is set as _public_ in GitLab.
-
-Before enabling this module, you need to configure a [GitLab.com connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
 
 <table>
 
@@ -400,11 +400,11 @@ Leave empty to allow all GitLab users to access the TeamCity server.
 
 Since version 2020.2, users can sign in to TeamCity with a GitLab CE/EE account.
 
-To sign in, click the GitLab icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitLab email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitLab, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitLab CE/EE profiles.
+Before enabling this module, you need to configure a [GitLab CE/EE connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings and a dedicated application in GitLab.
+
+To sign in, click the GitLab icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitLab email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitLab, this GitLab account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitLab CE/EE profiles.
 
 >If you want to be recognized in TeamCity by your email, make sure this email is set as _public_ in GitLab.
-
-Before enabling this module, you need to configure a [GitLab CE/EE connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings.
 
 <table>
 
