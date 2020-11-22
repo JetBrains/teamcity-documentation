@@ -97,7 +97,7 @@ By default, TeamCity uses the built-in authentication and maintains users and th
 
 When signing in to TeamCity for the first time, the user will be prompted to create the TeamCity username and password which will be stored in TeamCity and used for authentication. If you installed TeamCity and signed in to it, it means that built-in authentication is enabled and all user data is stored in TeamCity.
 
-In the beginning, the user database is empty. New users are either [added by the TeamCity administrator](managing-users-and-user-groups.md#Creating+New+User), or users register themselves: the default settings allow the users to register from the login page. All newly created users belong to the [All Users](user-group.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles should [be granted](managing-roles.md) via the __All Users__ group.
+In the beginning, the user database is empty. New users are either [added by the TeamCity administrator](managing-users-and-user-groups.md#Creating+New+User), or users register themselves if the corresponding option is enabled in authentication module settings. All newly created users belong to the [All Users](user-group.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles should [be granted](managing-roles.md) via the __All Users__ group.
 
 By default, the users are allowed to change their password on their profile page.
 
