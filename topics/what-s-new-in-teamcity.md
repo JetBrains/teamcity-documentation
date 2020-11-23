@@ -3,7 +3,7 @@
 
 ## New header
 
-TeamCity 2020.2 comes with a more modern and responsive header in both classic and experimental UI.
+TeamCity 2020.2 comes with a more modern header in both classic and experimental UI.
 
 <img src="header.png" alt="New header 2020.2"/>
 
@@ -12,7 +12,7 @@ TeamCity 2020.2 comes with a more modern and responsive header in both classic a
 TeamCity 2020.2 comes with a new bundled [Python](python.md) runner. It automatically detects Python on build agents and allows running Python scripts on all supported platforms.
 
 Comparing to the now obsolete [Python Runner](https://plugins.jetbrains.com/plugin/9042-python-runner) plugin, the new runner tightly integrates with TeamCity and introduces extra possibilities, such as:
-* Automatic test reports and inspections
+* Automatic test reports (via unittest and pytest) and inspections (via flake8 and pylint)
 * Using virtual environments
 * Launching a build step inside a Docker container
 
@@ -26,14 +26,15 @@ Read [how to configure the new runner](python.md).
 
 Since this release, last steps of a build can finish without a build agent, in an external software.
 
-Normally, a running build occupies a build agent until all its steps finish. In some cases, a build needs to wait for a process executed by some external system, outside of the build agent. For example, when the last step is responsible by deploying via a third-party software, an agent would simply do nothing until this step finishes.
+Normally, a running build occupies a build agent until all its steps finish. In some cases, a build needs to wait for a process executed by some external system, outside of the build agent. For example, when the last step is responsible for deploying via a third-party software, an agent would simply do nothing until this step finishes.
 
-Now, an agent can be detached from its current build. This agent becomes available to other builds, while the build continues running in the "agentless" mode. 
+Now, a build can be detached from its current agent. This agent becomes available to other builds, while the build continues running in the "agentless" mode. 
 
-To detach an agent, a build should send the `##teamcity[detachedFromAgent]` [service message](service-messages.md). Once the agent receives it, it tells the server that its build is detached and the agent is now free.   
+To detach an agent, a build should send the `##teamcity[detachedFromAgent]` [service message](service-messages.md).     
 There are dedicated REST API endpoints which can be used to report the progress of the agentless build and end it once the external process finishes. You can read more about them [in the documentation](detaching-build-from-agent.md).
 
-There is a limit for a number of agentless builds running simultaneously. It is equal to the maximum number of authorized agents in your installation. If the limit is exceeded, the build won't be detached from the agent.
+There is a limit for a number of agentless builds running simultaneously. It is equal to the maximum number of authorized agents in your installation. This way, if you have 10 agent licenses, you can run in parallel up to 10 agents _plus_ up to 10 agentless builds.  
+If the limit is exceeded, a build won't be able to detach from its agent until some of the running agentless builds finish.
 
 ## Authentication with GitHub.com, GitHub Enterprise, GitLab.com, GitLab CE/EE, Bitbucket Cloud
 
@@ -42,13 +43,13 @@ Now, users can authenticate in TeamCity with their external accounts in:
 * [GitLab.com](https://about.gitlab.com/) / [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/)
 * [Bitbucket Cloud](https://bitbucket.org/product/)
 
-This integration requires creating a dedicated application on the VCS provider's side and a _connection_ in TeamCity. You can find detailed instructions on how to configure a connection [here](integrating-teamcity-with-vcs-hosting-services.md).   
+This integration requires creating a dedicated application on the VCS hosting provider's side and a _connection_ in TeamCity. You can find detailed instructions on how to configure a connection [here](integrating-teamcity-with-vcs-hosting-services.md).   
 To enable authentication with each of the listed providers, a system administrator needs to activate a respective [authentication module](authentication-modules.md). If any of these modules is enabled on your server, users will see its icon above the login form:
 
 <img src="oauth.png" alt="Authentication with VCS hosting provider"/>
 
 To sign in as an external user, you need to click this icon and, after the redirect, approve the TeamCity application in your external account. If successful, you will be signed in back to TeamCity.   
-If a user with your VCS account's email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile (unless this option is manually disabled).   
+If a user with your external account's email is registered in TeamCity, you will be authenticated as this user. Otherwise, TeamCity will create a new user profile (unless this option is manually disabled).   
 To be automatically recognized by TeamCity, users can also connect their profiles to external accounts in __My Settings & Tools__.
 
 Admins can map TeamCity users with external accounts and limit providers' groups/organizations/workspaces whose members can access the server.
@@ -173,7 +174,7 @@ Now, if test retry is enabled, TeamCity will mute a failed test if it eventually
 
 <img src="test-retry.png" alt="Muted by test retry"/>
 
-See more details in the [documentation](service-messages.md#Enabling+test+retry).
+See more details in the [documentation](build-failure-conditions.md#common-build-failure-conditions).
 
 ## Other improvements
 
@@ -197,7 +198,7 @@ If you need to publish NuGet packages and then use their contents within one bui
 * __Updated pull request icons__   
    Icons representing pull requests in build results are now larger and change color depending on the pull request state, helping you to identify its status quicker.
 * __Health report about insecure Tomcat connection configuration__   
-   If the server is installed behind a reverse proxy providing HTTPS access to TeamCity HTTP proxy, TeamCity now checks if the `secure="true"` and `scheme="https"` attributes are present in the Tomcat connection. If these attributes are missing, TeamCity will display the respective health report.
+   If the server is installed behind a reverse proxy providing HTTPS access to the TeamCity server, TeamCity now checks if the `secure="true"` and `scheme="https"` attributes are present in the Tomcat connection. If these attributes are missing, TeamCity will display the respective health report.
 * __No default Gradle build file value__   
    Previously, the _Build file_ field of the [Gradle](gradle.md) runner was set to `build.gradle` by default. We have removed this default value as some users rely on custom names of build files and prefer to let Gradle decide what file to choose.   
    If you use `build.gradle` as your build file, all will continue to work as before this update.
