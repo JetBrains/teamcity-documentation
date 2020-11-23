@@ -1,23 +1,22 @@
 [//]: # (title: Detaching Build from Agent)
 [//]: # (auxiliary-id: Detaching Build from Agent)
 
-If a build does not require its [agent](build-agent.md) at the final steps, it can release this agent so it becomes available to other builds. During such [_agentless steps_](agentless-build-step.md), the build runs in an external software and reports directly to the TeamCity server.
+If at a final step a build triggers some external service and does not require TeamCity [agent](build-agent.md) any more, a runner can detach the build from the agent. This makes the agent available to other builds. The build then continues running on the TeamCity server and the external service reports its progress directly to it. We call such build steps [_agentless steps_](agentless-build-step.md).
 
 ## Releasing build agent
 
-To release its current build agent, a build needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md): for example, by a remote task of the [Command Line](command-line.md) step or via REST API. After receiving this message, the server decides if the agent can be released. If the [limit of agentless builds](#DetachingBuildfromAgent-agentless-licensing) is not exceeded, it releases the agent and it instantly becomes available to other builds. Otherwise, the agent stays attached to the build until some of the running agentless builds finish. 
+To release its current build agent, a runner needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md). After recieving this message, the agent skips all the following steps of the build, unless they have the "[_Always, even if build stop command was issued_](configuring-build-steps.md#Execution+policy)" execution policy enabled. If necessary, you can enable it for mandatory final steps – the agent will be released only after completing them.
 
-After being detached, the agent skips all the following steps of the build, unless they have the "[_Always, even if build stop command was issued_](configuring-build-steps.md#Execution+policy)" execution policy enabled. If necessary, you can enable it for mandatory final steps – the agent will be released only after completing them.
+If the [limit of agentless builds](#DetachingBuildfromAgent-agentless-licensing) is not exceeded, the server releases the agent and it instantly becomes available to other builds. Otherwise, the agent stays attached to the build until some of the running agentless builds finish. 
 
->We highly recommend releasing the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require a build agent.
+>We highly recommend releasing the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require the build agent.
                         
-During agentless steps, the external tool should report all build status information directly to the TeamCity server.
 
 ## Logging build data
 
-Without an agent, a build can send its logs and any other requests to TeamCity via [REST API](rest-api.md).
+During agentless steps, the external tool should report all build status information and send any other types of requests directly to the TeamCity server via [REST API](rest-api.md).
 
-To perform a request, it needs to pass:
+To perform a request, it needs to provide:
 * [build-level authentication](artifact-dependencies.md#Build-level+authentication) credentials specified as [build system properties](configuring-build-parameters.md):
    * username: `%system.teamcity.auth.userId%`
    * password: `%system.teamcity.auth.password%`
@@ -48,7 +47,7 @@ POST /app/rest/builds/id:TestBuild/log
 
 ### Finishing build
 
-It is important to ensure that a build, executed externally, delivers a finishing request to the TeamCity server. If the server is temporarily unavailable and cannot receive this request on time, the build should retry until this operation is successful. Without the finishing request, the build will be running on the TeamCity server indefinitely, until reaching its specified timeout, if any.
+It is important to ensure that a build, executed externally, delivers a finishing request to the TeamCity server. If the server is temporarily unavailable and cannot receive this request, the external tool should retry until this operation is successful. Without the finishing request, the build will be running on the TeamCity server indefinitely, until reaching its specified timeout, if any.
 
 To finish a build, use the following call:
 
@@ -68,7 +67,7 @@ PUT /app/rest/builds/id:<build_id>/finishDate
 
 ## Agentless builds' licensing
 
-The number of builds that can simultaneously run without an agent is limited by the number of your active [agent licenses](licensing-policy.md#Number+of+Agents). For example, if you have 10 agent licenses, you can run in parallel up to 10 agents plus up to 10 agentless builds. As soon as you rich the limit of running agentless builds, TeamCity will not detach steps in the following builds until some of the current agentless builds finish.
+The number of builds that can simultaneously run without an agent is limited by the number of your active [agent licenses](licensing-policy.md#Number+of+Agents). For example, if you have 10 agent licenses, you can run in parallel up to 10 regular build on agents plus up to 10 agentless builds. As soon as you rich the limit of running agentless builds, TeamCity will not detach steps in the following builds until some of the current agentless builds finish.
 
 <seealso>
         <category ref="concepts">
