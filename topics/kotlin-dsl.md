@@ -65,7 +65,7 @@ When creating an empty project, that's what you see in `settings.kts` in your ID
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 /* some comment text */
-version = "2020.1"
+version = "2020.2"
  
 project {
 }
@@ -82,7 +82,7 @@ The following examples shows how to add a build configuration with a command lin
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
 
-version = "2020.1"
+version = "2020.2"
 
 project {
   buildType {
@@ -107,7 +107,7 @@ But there is also another way to define the same build configuration:
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
 
-version = "2020.1"
+version = "2020.2"
 
 project {
   buildType(HelloWorld)
@@ -436,7 +436,7 @@ In the non-portable format each project has the following `settings.kts` file:
 package MyProject
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 /* ... */
-version = "2020.1"
+version = "2020.2"
 
 project(MyProjectId.Project)
 
