@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE product-profile
   SYSTEM "http://helpserver.labs.intellij.net/help/product-profile.dtd">
-<product-profile id="tc" name="TeamCity" start-page="teamcity-documentation.md" status="eap">
+<product-profile id="tc" name="TeamCity" start-page="teamcity-documentation.md" status="release">
    <toc-element id="teamcity-documentation.md">
       <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2020-2.html"/>
       <toc-element id="what-s-new-in-teamcity-2019.2.md" hidden="true"/>
@@ -410,6 +410,6 @@
    </toc-element>
    <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
    <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
-   <toc-element toc-title="TeamCity 2019.2 Help" href="https://www.jetbrains.com/help/teamcity/2019.2/teamcity-documentation.html"/>
+   <toc-element toc-title="TeamCity 2020.1 Help" href="https://www.jetbrains.com/help/teamcity/2020.1/teamcity-documentation.html"/>
    <toc-element toc-title="Documentation for Previous Versions" href="https://confluence.jetbrains.com/display/TW/Documentation"/>
 </product-profile>
