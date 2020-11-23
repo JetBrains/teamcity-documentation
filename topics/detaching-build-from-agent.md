@@ -5,18 +5,13 @@ If a build does not require its [agent](build-agent.md) at the final steps, it c
 
 ## Releasing build agent
 
-To release its current build agent, a build needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md): for example, by a remote task of the [Command Line](command-line.md) step or via REST API. After receiving this message, the server decides if the agent can be released. If the [limit of agentless builds](#Agentless+builds'+licensing) is not exceeded, it releases the agent so it instantly becomes available to other builds. Otherwise, the agent stays attached to the build until some of the running agentless build finish. 
+To release its current build agent, a build needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md): for example, by a remote task of the [Command Line](command-line.md) step or via REST API. After receiving this message, the server decides if the agent can be released. If the [limit of agentless builds](#Agentless+builds'+licensing) is not exceeded, it releases the agent and it instantly becomes available to other builds. Otherwise, the agent stays attached to the build until some of the running agentless builds finish. 
 
 After being detached, the agent skips all the following steps of the build, unless they have the "[_Always, even if build stop command was issued_](configuring-build-steps.md#Execution+policy)" execution policy enabled. If necessary, you can enable it for mandatory final steps – the agent will be released only after completing them.
 
 >We highly recommend releasing the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require a build agent.
                         
 During agentless steps, the external tool should report all build status information directly to the TeamCity server.
-
-To release its current build agent, a build needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md) by the means of the external software where it is running (for example, via a [REST API request](#Logging+messages)). Or, the agent can send this message preliminary: for example, by the [Command Line](command-line.md) step which starts a remote task to echo the message from the external tool.  
-We highly recommend releasing the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require a build agent.
-
-
 
 ## Logging build data
 
