@@ -1,7 +1,7 @@
 [//]: # (title: Detaching Build from Agent)
 [//]: # (auxiliary-id: Detaching Build from Agent)
 
-If at a final step a build triggers some external service and does not require TeamCity [agent](build-agent.md) any more, a runner can detach the build from the agent. This makes the agent available to other builds. The build then continues running on the TeamCity server and the external service reports its progress directly to it. We call such build steps [_agentless steps_](agentless-build-step.md).
+If a final step of a build triggers some external service and the build does not require a [build agent](build-agent.md) anymore, the respective runner can detach the build from the agent. This makes this agent available to other builds. The build then continues running on the TeamCity server, and the external service reports its progress directly to the server. Such build steps are called [_agentless steps_](agentless-build-step.md).
 
 ## Releasing build agent
 
@@ -10,7 +10,6 @@ To release its current build agent, a runner needs to send the `##teamcity[detac
 If the [limit of agentless builds](#DetachingBuildfromAgent-agentless-licensing) is not exceeded, the server releases the agent and it instantly becomes available to other builds. Otherwise, the agent stays attached to the build until some of the running agentless builds finish. 
 
 >We highly recommend releasing the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require the build agent.
-                        
 
 ## Logging build data
 
