@@ -5,24 +5,25 @@ If a build does not require its [agent](build-agent.md) at the final steps, it c
 
 ## Releasing build agent
 
-To release its current build agent, a build needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md) by the means of the external software where it is running (for example, via a [REST API request](#Logging+messages)).   
+To release its current build agent, a build needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md) by the means of the external software where it is running (for example, via a [REST API request](#Logging+messages)). Or, the agent can send this message preliminary: for example, by the [Command Line](command-line.md) step which starts a remote task to echo the message from the external tool.  
 We highly recommend releasing the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require a build agent.
 
 After receiving this message, the agent detaches and skips all the following steps, unless they have the "[_Always, even if build stop command was issued_](configuring-build-steps.md#Execution+policy)" execution policy enabled. If necessary, you can enable it for mandatory final steps – the agent will be released only after completing them.
                         
-A released agent instantly becomes available to other builds. During agentless steps, the build should report all status information directly to the TeamCity server.
+A released agent instantly becomes available to other builds. During agentless steps, the external tool should report all build status information directly to the TeamCity server.
 
 ## Logging build data
 
 Without an agent, a build can send its logs and any other requests to TeamCity via [REST API](rest-api.md).
 
-To perform a request, it needs to provide:
-
+To perform a request, it needs to pass:
 * [build-level authentication](artifact-dependencies.md#Build-level+authentication) credentials specified as [build system properties](configuring-build-parameters.md):
-   * `%system.teamcity.auth.userId%`
-   * `%system.teamcity.auth.password%`
+   * username: `%system.teamcity.auth.userId%`
+   * password: `%system.teamcity.auth.password%`
 * [build ID](working-with-build-results.md#Internal+Build+ID): `%teamcity.build.id%`
 * TeamCity server URL: `%teamcity.serverUrl%`
+
+An agent should send these parameters to the external software in advance, before being released.
 
 ### Logging messages
 
@@ -33,7 +34,7 @@ POST /app/rest/builds/id:<build_id>/log
 (curl -v --basic --user <username>:<password> --request POST http://<teamcity.url>/app/rest/builds/id:<build_id>/log --data <message> --header "Content-Type: text/plain")
 ```
 
-Here, you can send the [`detach`](#Releasing+build+agent) or any other service message as `<message>`.
+Here, you can send any [service message](service-messages.md) as `<message>`.
 
 An example request to send a warning:
 
