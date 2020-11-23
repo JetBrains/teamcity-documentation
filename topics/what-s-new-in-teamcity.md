@@ -169,12 +169,12 @@ Click the link in the hint to open the related tab of build results.
 
 ## Muting failed tests after successful retry
 
-The _test retry_ functionality is convenient for builds with flaky tests. Such tests can alternately fail and succeed when applied to the same source revision, and you might want to exclude their influence on the build status.   
-Now, if test retry is enabled, TeamCity will mute a failed test if it eventually succeeds during the same build run. This test will not affect the build status, and the build will finish successfully given it has no other problems.
+Some builds can retry tests if they fail. This is most convenient for _flaky tests_. Such tests can alternately fail and succeed when applied to the same source revision, and you might want to exclude their influence on the build status.   
+Now, if _test retry_ is enabled in your build, TeamCity will mute a failed test if it eventually succeeds during the same build run. This test will not affect the build status, and the build will finish successfully given it has no other problems.
 
 <img src="test-retry.png" alt="Muted by test retry"/>
 
-See more details in the [documentation](build-failure-conditions.md#common-build-failure-conditions).
+See more details in the [documentation](build-failure-conditions.md#Common+build+failure+conditions).
 
 ## Other improvements
 
