@@ -5,7 +5,7 @@
 
 TeamCity 2020.2 comes with a more modern and responsive header in both classic and experimental UI.
 
-<img src="header.png" alt="New header 2020.2"/>
+<img src="header.png" alt="New header 2020.2" width="510"/>
 
 ## Python support out of the box
 
@@ -80,8 +80,8 @@ Our [experimental UI](teamcity-experimental-ui.md) is a work in progress: we int
 In version 2020.2, we added the __Test History__ and __Build Queue__ pages, implemented the full-text search in the build log, and improved the __Dependencies__ tab of the build results.
 
 If any of the familiar features are missing, you can switch an experimental page to the classic UI with the ![mammoth.png](mammoth.png) button, or turn off the experimental UI on the server completely in __My Settings & Tools__.
->
-__You can leave feedback about your experience with the experimental UI via [this survey](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2020.2)!__
+
+>__You can leave feedback about your experience with the experimental UI via [this survey](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2020.2)!__
 
 ### Experimental Test History page
 
@@ -93,7 +93,7 @@ The highly demanded __Test History__ page gets a fresh look in this release. Now
 
 You can now search through a build log regardless of how much of it is already loaded in the UI.
 
-<img src="search-log.png" alt="Search in experimental build log"/>
+<img src="search-log.png" alt="Search in experimental build log" width="650"/>
 
 ## Updated Dependencies display
 
@@ -101,7 +101,7 @@ We received lots of requests to show queued builds in the experimental UI repres
 * The __Dependencies | Timeline__ view shows all dependencies of the current build, including queued ones.
 * The __Dependencies | Chain__ view displays a full build chain. You can see all builds that depend on the current one and promote the current build to them, as in the classic UI. If a build is [composite](composite-build-configuration.md), you can also group it right from this view.
 
-<img src="exp-buildchain.png" alt="Experimental build chain"/>
+<img src="exp-buildchain.png" alt="Experimental build chain" width="527"/>
 
 ### Plugin support in Experimental UI
 
@@ -115,7 +115,7 @@ The new sidebar is of great help to our users on the __Projects__ and __Agents__
 
 You can also click any build in the queue to see its details:
 
-<img src="exp-queue.png" alt="Experimental build queue"/>
+<img src="exp-queue.png" alt="Experimental build queue" width="668"/>
 
 In our future releases, we will polish the new queue representation and enable it by default in the experimental UI.
 
@@ -123,7 +123,7 @@ In our future releases, we will polish the new queue representation and enable i
 
 TeamCity server clean-up becomes more flexible with the support of [cron-like expressions](cron-expressions-in-teamcity.md). You can customize the schedule so the clean-up starts with any necessary regularity: for example, on weekends or twice a day.
 
-<img src="clean-up-cron.png" alt="Cron expressions in clean-up"/>
+<img src="clean-up-cron.png" alt="Cron expressions in clean-up" width="443"/>
 
 Remember that too frequent clean-ups might extensively load the CPU, and too rare clean-ups take more time and might lead to garbage accumulation. We recommend keeping the clean-up schedule balanced. In most cases, a daily clean-up would be enough, but highly-loaded installations might require running clean-up more frequently.
 
@@ -150,13 +150,13 @@ The [Disk Usage](disk-usage.md) report now supports external [artifact storage](
 
 On the __Administration | Disk Usage__ page, you can switch between the detected storages and see detailed reports:
 
-<img src="disk-usage.png" alt="External storage in Disk Usage report"/>
+<img src="disk-usage.png" alt="External storage in Disk Usage report" width="527"/>
 
 ## Identifying builds with custom settings
 
 It is now easier to distinguish "custom" builds from regular ones. If a build was run with custom parameters or artifact dependencies, or not on the latest commit, TeamCity will visually mark such build. It will show the respective icon and hint opposite this build in the build list:
 
-<img src="custom-build-hint.png" alt="Custom build hint"/>
+<img src="custom-build-hint.png" alt="Custom build hint" width="594"/>
 
 and in the build results:
 
