@@ -129,7 +129,7 @@ Description
  
 <td>
  
-`+:.`
++:.
  
 </td>
  
@@ -141,7 +141,7 @@ Includes all files
  
 <td>
  
-`-:**.html`
+-:\*\*.html
  
 </td>
  
@@ -155,7 +155,7 @@ Excludes all `.html` files from triggering a build.
  
 <td>
  
-`-:user=techwriter;root=InternalSVN:/misc/doc/*.xml` 
+-:user=techwriter;root=InternalSVN:/misc/doc/\*.xml 
  
 </td>
  
@@ -169,7 +169,7 @@ Excludes builds being triggered by `.xml` files checked in by the [VCS user](man
  
 <td>
  
-`-:lib/**`
+-:lib/\*\*
  
  </td>
  <td>
@@ -180,7 +180,7 @@ Prevents the build from triggering by updates to the `lib` directory of the buil
  
 <td>
  
-`-:comment=minor:**` 
+-:comment=minor:\*\* 
 
 </td>
 <td>
@@ -190,7 +190,7 @@ Prevents the build from triggering, if the changes check contains the word "mino
 </td></tr><tr>
 <td>
  
-`-:comment=^oops$:**` 
+-:comment=^oops$:\*\*
 
 </td>
 <td>
@@ -219,6 +219,6 @@ For example, if you specify a comment text in the trigger rules field and provid
 
 The VCS trigger is fully aware of branches and will trigger a build once a check\-in is detected in a branch.
 
-When changes are merged / fast\-forwarded from one branch to another, strictly speaking there are no actual changes in the code. By default, the VCS trigger behaves in the following way:
+When changes are merged / fast-forwarded from one branch to another, strictly speaking there are no actual changes in the code. By default, the VCS trigger behaves in the following way:
 * When merging/fast forwarding of two non\-default branches: the changes in a build are calculated with regard to previous builds in the same branch, so if there is a build on same commit in a different branch, the trigger will start a build in another branch pointing to the same commit.
 *  If the default branch is one of the branches in the merging/fast\-forwarding, the changes are always calculated against the default branch, if there is a build on same revision in the default branch, TeamCity will not run a new build on the same revision.
