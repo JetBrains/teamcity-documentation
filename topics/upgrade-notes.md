@@ -14,8 +14,14 @@ If `build.gradle` was selected as a build file in your Gradle steps, this settin
 * The [Gradle](gradle.md) runner now displays test names based on the `displayName` properties assigned to the respective test methods. If your Gradle tests are annotated with a custom `displayName` property (for example, a JUnit 5 test with the `@DisplayName` annotation), their names will change in TeamCity on upgrading. This might break test and investigation history in respective builds. To prevent this, consider switching the behavior back with the `teamcity.internal.gradle.testNameFormat=name` internal property.
 * Since version 2019.2, a secondary node allows user actions if at least one responsibility is assigned to it. In 2020.2, we have added a new responsibility – "Processing user requests to modify data". Nodes with this responsibility can process all currently supported user actions and allow changing project settings. Without it, a node will provide a read-only interface.   
 On upgrading, this responsibility will be automatically enabled on all your secondary nodes that have at least one other responsibility. This will ensure no current functionality of these nodes is affected. To allow user actions on new secondary nodes, you have to manually enable the new responsibility in __Administration | Server Configuration__.
+
+### Known Issues
+{id="known-issues-20202"}
+
+* If upgrade fails with an error in OptimizeAndCleanupIdsGroupsTableConverter, please apply the workaround described in [this issue](https://youtrack.jetbrains.com/issue/TW-68938#focus=Comments-27-4538713.0-0).
  
 ### Bundled tools updates
+{id="bundled-tools-updates-202020"}
  
 * .NET in TeamCity server and agent Docker images (both Windows and Linux) have been updated to version 3.1.403.
 * Java in TeamCity Docker images has been updated:
