@@ -18,7 +18,7 @@ If you have troubles displaying valuable information or actions in this header a
 
 Lucene version in [TeamCity search](search.md) has been updated to 8.5.1. On upgrading, TeamCity will reindex all builds on the server which might take some time and load the CPU. During reindexing, some builds might not be present in the search results.
 
-### Bundles Python runner
+### Bundled Python runner
 
 The [external Python build runner](https://plugins.jetbrains.com/plugin/9042-python-runner) is no longer supported. All existing build steps will continue to work normally, but we recommend switching existing Python steps to the new [bundled](python.md) runner.
 
