@@ -566,7 +566,7 @@ Artifacts that are specified in the build configuration setting will be publishe
 
 ### Passing NuGet Packages between Steps
 
-If you need to publish NuGet packages and then use their contents within one build, you want to guarantee they are packed and published on time – and not at the build finish.   
+If you need to publish NuGet packages and then use their contents within one build, you want to guarantee they are published and indexed on time – and not at the build finish.   
 For this, you can use a [NuGet Publish](nuget-publish.md) runner or send the `##teamcity[publishNuGetPackage]` service message in any step instead. This ensures the NuGet packages are published in all configured NuGet feeds right at the end of the current step and are available in the following build steps.
 
 ### Reporting Build Progress
