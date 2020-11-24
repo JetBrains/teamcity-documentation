@@ -3,22 +3,35 @@
 
 ## Changes from 2020.1.x to 2020.2
 
-* The new header is enabled in both classic and experimental UIs. Some plugins developed for the previous header might not work in the new one. With [our new API](https://blog.jetbrains.com/teamcity/2020/09/teamcity-2020-2-updated-plugin-development/), you can make your custom plugins compatible with the new header or write new ones using modern web technologies.  
-If you have troubles displaying valuable information or actions in this header and updating plugins is not a convenient option, you can set the `teamcity.ui.useClassicHeader=true` internal property – this will switch your TeamCity header to the previous view. Please note that this is not a recommended solution as we might disable the obsolete header in the future versions.
-* Lucene version in [TeamCity search](search.md) has been updated to 8.5.1. On upgrading, TeamCity will reindex all builds on the server which might take some time and load the CPU. During reindexation, some builds might not be present in the search results.
-* The [external Python build runner](https://plugins.jetbrains.com/plugin/9042-python-runner) is no longer supported. All existing build steps will continue to work normally, but we recommend switching existing Python steps to the new [bundled](python.md) runner.
-* Docker images of the TeamCity Windows agents are now based on version 1909 instead of 1809. Currently, Windows agents are published for versions 1903 and 1909.
-* [Email Notifier](notifications.md#Email+Notifier) now uses the same versions of the TLS protocol as supported by the current TeamCity server's JVM.
-* Previously, the _Build file_ field of the [Gradle](gradle.md) runner was set to `build.gradle` by default. We have removed this default value as some users rely on custom names of build files and prefer to let Gradle decide what file to choose.   
-If `build.gradle` was selected as a build file in your Gradle steps, this setting will remain. In projects whose settings are stored in VCS, TeamCity will prompt to commit the respective change so the `build.gradle` property is explicitly specified in the versioned project settings.
-* The [Gradle](gradle.md) runner now displays test names based on the `displayName` properties assigned to the respective test methods. If your Gradle tests are annotated with a custom `displayName` property (for example, a JUnit 5 test with the `@DisplayName` annotation), their names will change in TeamCity on upgrading. This might break test and investigation history in respective builds. To prevent this, consider switching the behavior back with the `teamcity.internal.gradle.testNameFormat=name` internal property.
-* Since version 2019.2, a secondary node allows user actions if at least one responsibility is assigned to it. In 2020.2, we have added a new responsibility – "Processing user requests to modify data". Nodes with this responsibility can process all currently supported user actions and allow changing project settings. Without it, a node will provide a read-only interface.   
-On upgrading, this responsibility will be automatically enabled on all your secondary nodes that have at least one other responsibility. This will ensure no current functionality of these nodes is affected. To allow user actions on new secondary nodes, you have to manually enable the new responsibility in __Administration | Server Configuration__.
-
 ### Known Issues
 {id="known-issues-20202"}
 
 * If upgrade fails with an error in OptimizeAndCleanupIdsGroupsTableConverter, please apply the workaround described in [this issue](https://youtrack.jetbrains.com/issue/TW-68938#focus=Comments-27-4538713.0-0).
+
+### New Header by Default
+
+The new header is enabled in both classic and experimental UIs. Some plugins developed for the previous header might not work in the new one. With [our new API](https://blog.jetbrains.com/teamcity/2020/09/teamcity-2020-2-updated-plugin-development/), you can make your custom plugins compatible with the new header or write new ones using modern web technologies.
+
+If you have troubles displaying valuable information or actions in this header and updating plugins is not a convenient option, you can set the `teamcity.ui.useClassicHeader=true` internal property – this will switch your TeamCity header to the previous view. Please note that this is not a recommended solution as we might disable the obsolete header in the future versions.
+
+### Reindexing build search
+
+Lucene version in [TeamCity search](search.md) has been updated to 8.5.1. On upgrading, TeamCity will reindex all builds on the server which might take some time and load the CPU. During reindexing, some builds might not be present in the search results.
+
+### Bundles Python runner
+
+The [external Python build runner](https://plugins.jetbrains.com/plugin/9042-python-runner) is no longer supported. All existing build steps will continue to work normally, but we recommend switching existing Python steps to the new [bundled](python.md) runner.
+
+### Gradle updates
+
+* Previously, the _Build file_ field of the [Gradle](gradle.md) runner was set to `build.gradle` by default. We have removed this default value as some users rely on custom names of build files and prefer to let Gradle decide what file to choose.   
+If `build.gradle` was selected as a build file in your Gradle steps, this setting will remain. In projects whose settings are stored in VCS, TeamCity will prompt to commit the respective change so the `build.gradle` property is explicitly specified in the versioned project settings.
+* The [Gradle](gradle.md) runner now displays test names based on the `displayName` properties assigned to the respective test methods. If your Gradle tests are annotated with a custom `displayName` property (for example, a JUnit 5 test with the `@DisplayName` annotation), their names will change in TeamCity on upgrading. This might break test and investigation history in respective builds. To prevent this, consider switching the behavior back with the `teamcity.internal.gradle.testNameFormat=name` internal property.
+
+### New responsibility for secondary nodes
+
+Since version 2019.2, a secondary node allows user actions if at least one responsibility is assigned to it. In 2020.2, we have added a new responsibility – "Processing user requests to modify data". Nodes with this responsibility can process all currently supported user actions and allow changing project settings. Without it, a node will provide a read-only interface.   
+On upgrading, this responsibility will be automatically enabled on all your secondary nodes that have at least one other responsibility. This will ensure no current functionality of these nodes is affected. To allow user actions on new secondary nodes, you have to manually enable the new responsibility in __Administration | Server Configuration__.
  
 ### Bundled tools updates
 {id="bundled-tools-updates-202020"}
@@ -34,6 +47,11 @@ On upgrading, this responsibility will be automatically enabled on all your seco
 * Bundled dotCover and ReSharper CLT have been upgraded to version 2020.2.4.
 * The deprecated Visual Studio 2003 build runner is disabled in TeamCity. We recommend using the [.NET](net.md) runner instead.   
 If you were actively using the VS 2003 runner and cannot easily migrate to the .NET runner, please let us know about it via any of our [feedback channels](https://teamcity-support.jetbrains.com/hc/en-us).
+
+### Other updates
+
+* Docker images of the TeamCity Windows agents are now based on version 1909 instead of 1809. Currently, Windows agents are published for versions 1903 and 1909.
+* [Email Notifier](notifications.md#Email+Notifier) now uses the same versions of the TLS protocol as supported by the current TeamCity server's JVM.
 
 ## Changes from 2020.1.4 to 2020.1.5
 
@@ -51,6 +69,12 @@ No noteworthy updates.
 
 * The [.NET](net.md) build runner now supports earlier versions of Visual Studio and MSBuild. Currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.
 
+### Known Issues
+{id="known-issues-202013"}
+
+* If you try to re-run a build that has an artifact dependency but not snapshot dependency on another build, the _Re-run build_ dialog will not load.   
+This issue will be fixed in TeamCity 2020.1.4. To workaround it in version 2020.1.3, follow [this instruction](https://youtrack.jetbrains.com/issue/TW-67351#focus=Comments-27-4355962.0-0).
+
 ## Changes from 2020.1.1 to 2020.1.2
 
 * Mercurial support has been dropped for our Windows Server Core agent Docker images. If you need to use Mercurial on Windows Server Core agents, consider pulling the previous version of the agent Docker image – 2020.1.1.
@@ -60,7 +84,50 @@ No noteworthy updates.
 * The .NET runner introduces the [custom command](net.md#Custom+Commands) option. Note that if you downgrade TeamCity to the previous version after configuring the custom .NET command, the respective build steps will be ignored during the build.
 * The Linux version used in the TeamCity server and agent Docker images has been updated to 4.19.76-linuxkit.
 
+### Known Issues
+{id="known-issues-202011"}
+
+* In the TeamCity classic UI, the _Projects_ link in the header is missing the expand button.  
+To workaround this issue, please follow the instruction described [here](https://youtrack.jetbrains.com/issue/TW-66577#focus=streamItem-27-4216533.0-0).
+
 ## Changes from 2019.2.x to 2020.1
+
+### Known Issues
+{id="known-issues-20201"}
+
+#### Jira Cloud Integration build feature requires specific VCS URL
+
+The Jira Cloud API, used by the new [Jira Cloud integration](jira-cloud-integration.md) build feature, requires sending a server URL in a specific format. Because of that, the build feature does not support VCSs like Perforce, TFS, and SVN out of the box.
+
+To address this issue, we have updated the responsible plugin, and you can find it attached to the related [issue](https://youtrack.jetbrains.com/issue/TW-66118) in our tracker. Please download the fixed plugin and install it as described [here](installing-additional-plugins.md).   
+The bundled Jira Cloud plugin will be automatically updated with this fix in our next release.
+
+The feature might also fail to resolve some Git paths that do not correspond to the format expected by the Jira Cloud API. In this case, you can either change the URL manually (for example, from `git@<vcs_address>:<workspace_ID>/<repo_name>.git` to `ssh://git@<vcs_address>/<workspace_ID>/<repo_name>.git`) or download the fixed plugin as described above.
+
+#### Jira Cloud Integration feature does not support legacy Jira Cloud domain
+
+Currently, the new [Jira Cloud integration](jira-cloud-integration.md) build feature supports only `atlassian.net` domains. We have added the support of the legacy `jira.com` domain in the fixed version of the responsible plugin. If your Jira Cloud server resides on the `jira.com` domain, you can download the plugin, attached to the [related issue](https://youtrack.jetbrains.com/issue/TW-66103#focus=streamItem-27-4154698.0-0), and install it as described [here](installing-additional-plugins.md).   
+The bundled Jira Cloud plugin will be automatically updated with this fix in our next release.
+
+#### Bad Redirect URI error when authenticating in Slack
+
+To be able to sign in to Slack from TeamCity, you need to specify all the possible URIs of the TeamCity server as _Redirect URLs_ in the [Slack app's](notifications.md#Configuring+Slack+Connection) settings.   
+If you use nginx to set up TeamCity behind a proxy server, you might still get the `bad_redirect_uri` error when trying to establish a connection with Slack. This error is caused by the mismatch between the nginx and Tomcat configuration.
+
+To workaround this issue, download the fixed plugin, attached to the [related issue](https://youtrack.jetbrains.com/issue/TW-66113), and install it as described [here](installing-additional-plugins.md). Alternatively, you can try [updating the Tomcat settings](how-to.md#Proxy-Tomcat-RemoteIpValve).   
+The bundled Slack plugin will be automatically updated with this fix in our next release.
+
+#### Problems with built-in authentication in upgraded 2020.1 EAP1 installations
+
+If you had installed the 2020.1 EAP1 build in terms of our Early Access Program, you might experience problems with signing in to TeamCity via the [built-in authentication](configuring-authentication-settings.md#Built-in+Authentication). This issue might occur after upgrading from any 2020.1 EAP version (EAP1 or any later version to which it was upgraded) to the release 2020.1 build.
+
+To workaround this problem, please send the following query to the TeamCity database:
+
+```Console
+
+UPDATE users SET algorithm = 'BCRYPT' WHERE password like '$2a$07$%' and algorithm = 'MD5';
+
+```
 
 ### Changes in Java support on server and agents
 
@@ -164,6 +231,27 @@ Since the reworked .NET runner introduces new options and features, you might no
 
 If you face any problems with migration to the .NET runner or encounter other related issues, do not hesitate to contact us via any convenient [feedback channel](https://confluence.jetbrains.com/display/TW/Feedback).
 
+### Known Issues
+{id="known-issues-201923"}
+
+#### Handshake failure on establishing SSL connection
+
+Some users might get the "_Received fatal alert: handshake_failure_" error when the TeamCity server attempts to establish an SSL connection. The problem is caused by the broken `sunec.dll` in JRE bundled with TeamCity 2019.2.3.
+
+To check if this problem has affected your installation, open the `<TeamCity_installation_directory>/jre/bin/sunec.dll` file. If there is a JSON code in this file, your server is affected. To work around the problem, please follow the steps described in the [related issue](https://youtrack.jetbrains.com/issue/TW-65566#focus=streamItem-27-4119621.0-0).
+
+#### NuGet feed credentials for external repositories do not work with .NET runner
+
+The [.NET build runner](net.md) currently does not support using [NuGet feed credentials](nuget-feed-credentials.md) for authentication in external repositories.
+
+To work around this issue in TeamCity 2019.2.3, download the [patched .NET Packages Support plugin](https://youtrack.jetbrains.com/issue/TW-65581#focus=streamItem-27-4110405.0-0) and install it as any other [additional plugin](installing-additional-plugins.md). The bundled .NET Packages Support plugin will be automatically updated with the fix in our next release.
+
+#### AWS region us-east-1 cannot be set in S3 artifact storage settings
+
+If the `us-east-1` region is selected in S3 artifact storage settings, it will be automatically reset to another available region on saving the settings. This is caused by the incorrect bucket location returned for `us-east-1` from AWS.
+
+To work around this issue in TeamCity 2019.2.3, download the [patched TeamCity S3 Storage plugin](https://youtrack.jetbrains.com/issue/TW-64670#focus=streamItem-27-4108345.0-0) and install it as any other [additional plugin](installing-additional-plugins.md). The bundled S3 Storage plugin will be automatically updated with the fix in our next release.
+
 ### Bundled Java for Windows installers is updated
 
 The bundled version of Java in Windows installers of TeamCity Server and Agent as well as in the Docker images is updated to [Amazon Corretto 8.252.09.1](https://github.com/corretto/corretto-8/blob/release-8.252.09.1/CHANGELOG.md).
@@ -195,6 +283,19 @@ For versions 2019.2.1 and earlier, please __[do not use](known-issues.md#jdk8_24
 No noteworthy changes.
 
 ## Changes from 2019.1.x to 2019.2
+
+### Known Issues
+{id="known-issues-20192"}
+
+#### Potential issues with restoring NuGet packages in .NET projects
+
+TeamCity might fail to restore NuGet packages if a build comprises at least one .NET CLI (dotnet) step __and__ an [MSBuild](msbuild.md) or [Visual Studio (sln)](visual-studio-sln.md) build step (or both).
+
+This issue is caused by the difference in paths to cache directories between these build runners.   
+The MSBuild and Visual Studio (sln) runners use the default path to the NuGet global cache while the .NET CLI (dotnet) runner redefines this path (for example, when run inside a Docker container).   
+
+The recommended workaround is to use the [NuGet Installer](nuget-installer.md) build runner instead of the .NET CLI (dotnet) runner for restoring packages.
+
 
 ### Switch to 64-bit Bundled Java in Windows installer and Docker images
 
@@ -241,6 +342,27 @@ The VCS Support plugins for [ClearCase](https://plugins.jetbrains.com/plugin/132
 ## Changes from 2019.1.3 to 2019.1.4
 
 * The bundled Java was updated to OpenJDK 8u222 (except for the Docker Windows TeamCity images).
+
+### Known Issues
+{id="known-issues-201914"}
+
+#### Unavailable Default Credential Provider Chain option for Amazon ECR
+
+_This issue has been fixed in TeamCity 2019.1.5._
+
+Due to recent changes in our Docker Support plugin, the "[Default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default)" option becomes unavailable in the Amazon ECR connection settings.
+
+If this option was previously enabled in some ECR connection and you make any changes to this connection, the state of this option will be automatically set to `false`. When any build will try to use this connection, it will fail to start with the "_Access key cannot be null_" error.
+
+To workaround this problem without upgrading to 2019.1.5, download the fixed Docker Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62595#focus=streamItem-27-3749459.0-0) and upload it on the __Server Administration | Plugins List__ page.
+
+#### Missing packages in NuGet feed
+
+_This issue has been fixed in TeamCity 2019.1.5._
+
+In certain cases, when a build is supposed to create and publish several NuGet packages to a NuGet feed, and the package indexing is enabled, some packages might not be published to the feed. This problem is caused by recent changes in [NuGet Packages Indexer](nuget-packages-indexer.md).
+
+To workaround this problem without upgrading to 2019.1.5, download the fixed NuGet Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62545#focus=streamItem-27-3754398.0-0) and upload it on the __Server Administration | Plugins List__ page.
 
 ## Changes from 2019.1.2 to 2019.1.3
 
