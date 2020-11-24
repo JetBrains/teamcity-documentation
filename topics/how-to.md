@@ -368,6 +368,8 @@ TeamCity tries not to pass password values via the web UI (from a browser to the
 
 <anchor name="HowTo...-ConfigureNewlyInstalledMySQLServer"/>
 
+<anchor name="HowTo-ConfigureNewlyInstalledMySQLServer"/>
+
 ## Configure Newly Installed MySQL Server
 
 If MySQL server is going to be used with TeamCity in addition to the [basic setup](setting-up-an-external-database.md#MySQL), you should review and probably change some of the MySQL server settings. If MySQL is installed on Windows, the settings are located in `my.ini` file which usually can be found under MySQL installation directory. For Unix\-like systems the file is called `my.cnf` and can be placed somewhere under `/etc` directory. Read more about configuration file location in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/option-files.html). Note: you'll need to restart MySQL server after changing settings in `my.ini|my.cnf`.
@@ -485,7 +487,7 @@ GRANT PROCESS ON *.* TO <teamcity-user-name>;
 
 ```
 
-
+<anchor name="HowTo-ConfigureNewlyInstalledPostgreSQLServer"/>
 
 ## Configure Newly Installed PostgreSQL Server
 
