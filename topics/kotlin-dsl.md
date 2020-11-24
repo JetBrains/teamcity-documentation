@@ -541,7 +541,39 @@ _Solution_: In your existing project in  IntelliJ IDEA:
 * Go to __File | Project Structure__, or press __Ctrl+Shift+Alt+S__.
 * Select __Modules__ under the __Project Settings__ section.
 * Click the plus sign, select __Import module__ and choose the folder containing your project settings. Click __Ok__ and follow the wizard.
-* Click __Apply__. The new module is added to your project structure.
+* Click __Apply__. The new module is added to your project structure.\
+
+### How to Access Auxiliary Scripts from DSL Settings
+
+To keep your settings files neat, it is convenient to store lengthy code instructions in separate files. Such auxiliary scripts can be put in the `.teamcity` directory alongside the settings files. You can refer to them by their relative paths.
+
+For example, this part of `settings.kts` creates a function `readScript` which reads the contents of the file it receives on input:
+
+```Kotlin
+
+fun readScript(path: String): String {
+    val bufferedReader: BufferedReader = File(path).bufferedReader()
+    return bufferedReader.use { it.readText() }.trimIndent()
+}
+```
+
+In the build step, we call this function, so it reads the `scripts\test.sh` file located under the `.teamcity` directory:
+
+```Kotlin
+object CommandLineRunnerTest : BuildType({
+    name = "Command Line Runner Test"
+    steps {
+        script {
+            name = "Imported from a file"
+            id = "script.from.file.1"
+            scriptContent = readScript("scripts\\test.sh")
+        }
+        stepsOrder = arrayListOf("script.from.file.1")
+    }
+})
+```
+
+As a result, your Command Line build step will run a custom script with the body specified in `scripts\simple.sh`.
 
 ### New URL of Settings VCS Root (Non portable format)
 
