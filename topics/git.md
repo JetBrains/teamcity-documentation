@@ -438,7 +438,7 @@ We recommend using Git LFS version 2.12.1 or later as earlier versions come with
 ## Internal Properties
 {id="internalProperties" auxiliary-id="Internal Properties"}
 
-For Git VCS it is possible to configure the following [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties):
+For Git VCS, it is possible to configure the following [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties):
 
 <table><tr>
 
@@ -480,6 +480,8 @@ teamcity.git.idle.timeout.seconds
 <td>
 
 The idle timeout for communication with the remote repository. If no data were sent or received during this timeout, the plugin throws a timeout error to prevent hanging of the process forever.
+
+>The idle timeout can also be set [on the agent side](#git-agent-config).
 
 
 </td></tr><tr>
@@ -884,6 +886,8 @@ Copying a repository from a directory located on the same machine is faster than
 
 </table>
 
+<anchor name="git-agent-config"/>
+
 [Agent configuration](build-agent-configuration.md) for Git:
 
 <table><tr>
@@ -947,14 +951,14 @@ teamcity.git.idle.timeout.seconds
 
 <td>
 
-1800
+3600
 
 
 </td>
 
 <td>
 
-The idle timeout for the `git fetch` operation when the agent-side checkout is used. The fetch is terminated if there is no output from the fetch process during this time. Prior to 8.0.4 the default was 600.
+The idle timeout for the `git fetch` operation when the agent-side checkout is used. The fetch is terminated if there is no output from the fetch process during this time.
 
 
 </td></tr></table>
