@@ -5,8 +5,6 @@ TeamCity-[Docker integration](integrating-teamcity-with-docker.md) includes the 
 
 <include src="integrating-teamcity-with-docker.md" include-id="reqs-supported-env"/>
 
-## Docker Compose
-
 <chunk include-id="docker-compose">
 
 The runner allows starting [Docker Compose](https://docs.docker.com/compose/) build services and shutting down those services at the end of the build.
