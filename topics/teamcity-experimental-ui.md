@@ -5,7 +5,7 @@ In version 2019.1, TeamCity introduced an experimental UI option as an alternati
  
 Our goal is to provide a support for all the important classic features in the new UI before making it a default option. However, many users of TeamCity have successfully switched to the new UI already and use it in terms of their production pipeline.
 
-We encourage you to try the TeamCity experimental UI and leave your feedback via our [UI survey](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2020.1).
+We encourage you to try the TeamCity experimental UI and leave your feedback via our [UI survey](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2020.2).
   
 ## Enabling and disabling experimental UI
 
@@ -19,8 +19,9 @@ Any page that supports the experimental UI has a toggle that allows quickly acce
 
 Currently, the experimental UI is available for the following pages:
 * __[Project Home](#Experimental+Project+Home+page)__ and __[Build Configuration Home](#Experimental+Build+Configuration+Home+page)__ pages: redesigned __Overview__ tab
-* __[Build Details](#Experimental+Build+Details+page)__ page: redesigned __Overview__, __Tests__, __Changes__, __Build Log__, and __Dependencies__ tabs
+* __[Build Details](#Experimental+Build+Details+page)__ page: redesigned __Overview__, __Tests__ (and __Test History__, __Changes__, __Build Log__, and __Dependencies__ tabs
 * __[Agents](#Experimental+Agents+page)__ page
+* __[Queue](#Experimental+Queue+page)__ page
 
 Each experimental page comes with a handy __[sidebar](#Experimental+sidebar)__ that serves for quick navigation and preview of build/agent statuses.
 
@@ -86,7 +87,7 @@ This option is also available from the build's context menu in the build list.
 Apart from the __Overview__ tab, you can use the revamped __Changes__, __Tests__, and __Dependencies__ tabs:
 
 * The __Changes__ tab displays more information about changes in the build, separately for user commits and artifact changes. You can filter changes by their author and display changes made in the build configuration settings.
-* The __Tests__ tab allows switching between failed, ignored, and succeeded tests. Click a test to quickly view its details or, for example, to assign an investigation.
+* The __Tests__ tab allows switching between failed, ignored, and succeeded tests. Click a test to quickly view its details or, for example, to assign an investigation. Since version 2020.2, you can also see a [new __Test History__ page](what-s-new-in-teamcity.md#Experimental+Test+History+page).
 * The __Dependencies__ tab provides three alternative modes of displaying the build dependencies: a visual timeline, structured list, and build chain. Choose the mode that is the most helpful for your current task.
 
 Other classic UI tabs are also available: click __More__ and select the required tab in the list.
@@ -100,6 +101,16 @@ The experimental __Agents__ page loads faster for a large number of agents and a
 The page provides a better hierarchical view of agent pools and makes it easier to see all their assigned projects and cloud images.
 
 The __All Agents__ view gives a quick preview of all agents' statuses and allows managing them side by side, on a single dashboard.
+
+### Experimental Queue page
+
+We are actively working on the new representation of the build queue. It is still in progress and not displayed by default yet, but you can already switch to it by clicking the test-tube icon in the upper right corner of the screen.
+
+You can click any build in the queue to see its details:
+
+<img src="exp-queue.png" alt="Experimental build queue"/>
+
+In our future releases, we will polish the new queue representation and enable it by default in the experimental UI.
 
 ### Experimental sidebar
 
@@ -121,10 +132,3 @@ You can use the __Q__ keyboard shortcut to focus on the projects' search field. 
 #### Agents sidebar
 
 The _Agents_ sidebar allows browsing the agent pool hierarchy and searching agents and pools by name. The __Overview__ view provides statistics about all the agents on the server.
-
-## Roadmap
-
-The next improvements of the experimental UI will affect the following areas:
-* Build Queue page
-* Sidebar and Header areas
-* Mutes/Investigations
