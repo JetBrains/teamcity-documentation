@@ -875,3 +875,11 @@ The path to .NET CLI executable.
 The .NET SDK version.
 
 </td></tr></table>
+
+## .NET runner F.A.Q.
+
+### How to pass parameters containing spaces
+
+The best way to pass a parameter value containing space characters is to use [system properties](configuring-build-parameters.md#Types+of+Build+Parameters). For example, you can add the `system.Platform` parameter with the `Any CPU` value in __Build Configuration Settings | Parameters__ and then refer to this value as `%system.Platform%` inside the .NET step.   
+An alternative approach is to wrap the command-line parameter as follows: `"/p:Platform=Any CPU"`.
+
