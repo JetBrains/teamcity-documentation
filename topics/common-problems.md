@@ -545,16 +545,13 @@ __[Back to top](#Most+frequently+used+documentation+sections)__
 
 ## Problems with TeamCity NuGet Feed
 
-If you are experiencing issues with partial TeamCity NuGet Feed, i.e. missing NuGet packages etc., you might have to reindex the TeamCity NuGet Feed.
+If you are experiencing issues with partial TeamCity NuGet Feed (for example, missing NuGet packages), you might have to reindex the TeamCity NuGet Feed.
 
 To force TeamCity to reindex all available packages and reset the NuGet package list, navigate to the server __Administration | Diagnostics | Caches__ and use the [buildsMetadata Reset](teamcity-monitoring-and-diagnostics.md#Caches) link.
 
 For earlier versions, refer to [this section](https://confluence.jetbrains.com/display/TCD8/Common+Problems).
 
 __[Back to top](#Most+frequently+used+documentation+sections)__
-
-
- 
 
 ## Problems with .Net-related TeamCity Tools
 
