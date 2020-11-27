@@ -232,3 +232,12 @@ We recommend removing (or commenting out) the `Defaults requiretty` line from th
 
 </chunk>
  
+<seealso>
+        <category ref="admin-guide">
+            <a href="integrating-teamcity-with-docker.md">Integrating TeamCity with Docker</a>
+            <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
+            <a href="docker-support.md">Docker Support build feature</a>
+            <a href="docker-compose.md">Docker Compose runner</a>
+            <a href="docker-wrapper.md">Docker Wrapper extension</a>
+        </category>
+</seealso>
