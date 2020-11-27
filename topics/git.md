@@ -769,7 +769,7 @@ teamcity.git.sshProxyType
 
 <td>
 
-Type of ssh proxy, supported values: `http`, `socks4`, `socks5`. Keep in mind that socks4 proxy cannot resolve remote host names, so if you get an UnknownHostException, either switch to socks5 or add an entry for your git server into the hosts file on the TeamCity server machine.
+Type of SSH proxy, supported values: `http`, `socks4`, `socks5`. Keep in mind that socks4 proxy cannot resolve remote host names, so if you get an UnknownHostException, either switch to socks5 or add an entry for your git server into the hosts file on the TeamCity server machine.
 
 
 </td></tr><tr>
@@ -888,7 +888,7 @@ Copying a repository from a directory located on the same machine is faster than
 
 <anchor name="git-agent-config"/>
 
-[Agent configuration](build-agent-configuration.md) for Git:
+[Build parameters](configuring-build-parameters.md) for Git:
 
 <table><tr>
 
@@ -936,9 +936,6 @@ When checkout on agent: whether TeamCity should use native SSH implementation.
 <td>
 
 [//]: # (Internal note. Do not delete. "Gitd153e964.txt")    
-
-
-
 
 
 </td></tr><tr>
