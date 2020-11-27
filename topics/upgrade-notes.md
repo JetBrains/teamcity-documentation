@@ -55,6 +55,8 @@ If you were actively using the VS 2003 runner and cannot easily migrate to the .
 ### Other updates
 
 * Docker images of the TeamCity Windows agents are now based on version 1909 instead of 1809. Currently, Windows agents are published for versions 1903 and 1909.
+* Since version 2020.1, TeamCity agent Docker images with the `latest` tag run under a non-root user. As it is not possible to launch Docker on these images, preinstalled Docker has been removed since version 2020.2.    
+To be able to run Docker, download the `teamcity-agent` image with the `{TEAMCITY_VERSION}-linux-sudo` tag instead. More information is available in our [Docker Hub documentation](https://hub.docker.com/r/jetbrains/teamcity-agent/).
 * [Email Notifier](notifications.md#Email+Notifier) now uses the same versions of the TLS protocol as supported by the current TeamCity server's JVM.
 
 ## Changes from 2020.1.4 to 2020.1.5
