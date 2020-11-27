@@ -47,6 +47,10 @@ On upgrading, this responsibility will be automatically enabled on all your seco
 * Bundled dotCover and ReSharper CLT have been upgraded to version 2020.2.4.
 * The deprecated Visual Studio 2003 build runner is disabled in TeamCity. We recommend using the [.NET](net.md) runner instead.   
 If you were actively using the VS 2003 runner and cannot easily migrate to the .NET runner, please let us know about it via any of our [feedback channels](https://teamcity-support.jetbrains.com/hc/en-us).
+* JDBC drivers for external databases, suggested on the fresh TeamCity installation, have been updated to the following versions:
+     * MySQL - 8.0.22
+     * MSSQL - 8.4.1
+     * PostgreSQL - 42.2.18
 
 ### Other updates
 
