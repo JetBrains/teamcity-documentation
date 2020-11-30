@@ -1,7 +1,9 @@
 [//]: # (title: Projects Import)
 [//]: # (auxiliary-id: Projects Import)
 
-You can import projects with all their data and user accounts from a backup file to an existing TeamCity server, that is to add projects from one server to the target server that is normally used. 
+You can import projects with all their data and user accounts from a backup file to an existing TeamCity server, that is to add projects from one server to the target server that is normally used.
+
+<anchor name="ProjectsImport-ProjectsImportorServerMove"/>
 
 ## Projects Import or Server Move
 
@@ -85,6 +87,8 @@ It is __highly recommended to resolve all conflicts__ before proceeding with the
 * Imported Build Configurations may refer to the wrong Template if there was an unresolved conflict of [external IDs](identifier.md#External+IDs) between the templates from the source and target servers.
 
 If the conflicts have not been resolved before importing, you can find the conflicting files in the `conflictingFiles` directory under the import results logs.
+
+<anchor name="ProjectsImport-Dataexcludedfromimport"/>
 
 ## Data not included into import
 

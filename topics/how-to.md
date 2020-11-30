@@ -544,6 +544,8 @@ synchronous_commit=off
 
 ```
 
+<anchor name="HowTo-SetUpTeamCitybehindaProxyServer"/>
+
 ## Set Up TeamCity behind a Proxy Server
 
 This section covers the recommended setup of reverse proxy servers installed in front of the TeamCity server web UI.

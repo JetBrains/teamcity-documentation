@@ -1250,7 +1250,7 @@ Bundled Jacoco coverage library updated to version 0.7.5
 Perforce VCS Roots with disabled ticket authentication won't run 'p4 login' operation anymore if password authentication is disabled on the Perforce server.   
 I.e. if password authentication is disabled, "Use ticked\-based authentication" option must be enabled on the VCS Root. [TW-42818](https://youtrack.jetbrains.com/issue/TW-42818)
 
- 
+<anchor name="UpgradeNotes-Changesfrom9.0.xto9.1"/>
 
 ## Changes from 9.0.x to 9.1
 

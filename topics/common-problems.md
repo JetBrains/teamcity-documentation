@@ -178,6 +178,8 @@ Setting a client\-side value (via `maxAllowedPacket` [connection property](https
 
 ### Database character set/collation-related problems
 
+<anchor name="CommonProblems-Characterset%2Fcollationmismatch"/>
+
 #### Character set/collation mismatch
 
 TeamCity reports character set/collation mismatch error: database tables/columns have a character set or collation that is not the same as the default character set or collation in your database schema. You may see this message if you are using a non\-unicode character set as default for your database as TeamCity enforces unicode charset for some of the `varchar` fields. Make sure you configured the database according to our [recommendations](setting-up-an-external-database.md).
