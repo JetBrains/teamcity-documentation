@@ -99,7 +99,7 @@ In a number of places, you can specify a filter string which defines what entiti
 The locators formats can be:
 * single value: text without the following symbols: `,:-( )`
 * dimension allowing you to filter entities using multiple criteria: `<dimension1>:<value1>,<dimension2>:<value2>,<dimension3>:(<dimension3.1>:<value3.1>,<dimension3.2>:<value3.2>)`   
-Note that nested locators should be enclosed in parentheses. Refer to each entity description below for the most popular locator descriptions. If in doubt what a specific locator supports, send a request with "$help" as the locator value. In the response, you will get a textual description of what the locator supports. If a request with invalid locators is sent, the error messages often hint at the error and list the supported locator dimensions as well.
+Note that nested locators should be enclosed in parentheses. See entity descriptions in the [REST API reference](rest-api-reference.md) for the most popular locator descriptions. If in doubt what a specific locator supports, send a request with "$help" as the locator value. In the response, you will get a textual description of what the locator supports. If a request with invalid locators is sent, the error messages often hint at the error and list the supported locator dimensions as well.
  
 <note>
  
