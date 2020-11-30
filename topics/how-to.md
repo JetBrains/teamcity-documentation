@@ -1372,18 +1372,4 @@ TeamCity can also store diagnostics data like thread dumps which can record user
 
 These notes only address bundled TeamCity functionality with the most common documented settings. You should assess your specific TeamCity installation considering customizations like the configured build scripts, installed plugins, external systems communicating with TeamCity via API, etc.
 
-## TeamCity Release Cycle
-
-The information below can be used for reference purposes only.
-
-"major" release below means any release with a change in first or second version number (e.g. X in X.X.Z)"bugfix" release means releases with a change in the third version number (e.g. Z in X.X.Z)
-
-Release stages that we generally have are:
-* __Available under EAP (Early Access Program)__ \- usually available only for major releases, starts several months after previous major release and usually months before the next major release. Typically new EAP releases are [published](https://confluence.jetbrains.com/display/TW/TeamCity+EAP) on monthly or bi\-monthly basis.
-* __General Availability__ \- as a rule, there is a major release each 8 months. There are multiple bugfix releases following the major release. Bugfix releases and support patches for critical issues (if applicable) are provided until "End of Sale" of the release.
-* __End of Sale__ \- occurs with the release of a new major version. After this time no bugfix updates or patches are usually provided (Exceptions are critical issues without a workaround which at the same time allow for relatively simple fix and inability for the customer to upgrade for an important reason). Only limited support is provided for these versions.
-* __End of Support__ \- occurs with the release of two newer major versions. At this point we stop providing regular technical support for the release.
-
-The dates of previous releases and the sequence of TeamCity versions are listed on the [Previous Releases Downloads](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads) page.
-
 [//]: # (Internal note. Do not delete. "How To...d160e3129.txt")    
