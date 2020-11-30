@@ -42,7 +42,7 @@ On upgrading, this responsibility will be automatically enabled on all your seco
    * On Linux server images: to Amazon Corretto x64 v.11.0.9.11.
    * On Windows and Linux agent images: to Amazon Corretto x64 v.8.272.10.3
 * Java bundled in the TeamCity server and agent Windows installers has been updated to version 11.0.9.11.2.
-* The Windows image in the TeamCity server Docker containers has been updated to version 2004 (SAC) and 1809 (LTS).
+* The SAC Windows image in the TeamCity server Docker containers has been updated to version 2004. Windows LTS version is 1809, as in TeamCity 2020.1.
 * The Linux image in TeamCity server Docker containers has been updated to version 20.04 (LTS).
 * Bundled dotCover and ReSharper CLT have been upgraded to version 2020.2.4.
 * The deprecated Visual Studio 2003 build runner is disabled in TeamCity. We recommend using the [.NET](net.md) runner instead.   
@@ -54,7 +54,6 @@ If you were actively using the VS 2003 runner and cannot easily migrate to the .
 
 ### Other updates
 
-* Docker images of the TeamCity Windows agents are now based on version 1909 instead of 1809. Currently, Windows agents are published for versions 1903 and 1909.
 * Since version 2020.1, TeamCity agent Docker images with the `latest` tag run under a non-root user. As it is not possible to launch Docker on these images, preinstalled Docker has been removed since version 2020.2.    
 To be able to run Docker, download the `teamcity-agent` image with the `{TEAMCITY_VERSION}-linux-sudo` tag instead. More information is available in our [Docker Hub documentation](https://hub.docker.com/r/jetbrains/teamcity-agent/).
 * [Email Notifier](notifications.md#Email+Notifier) now uses the same versions of the TLS protocol as supported by the current TeamCity server's JVM.
