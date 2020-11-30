@@ -20,8 +20,6 @@ Build 85487
 
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.2+Release+Notes)
 
-----
-
 ## TeamCity 2020.1.5
 
 Release date: 8 October 2020  

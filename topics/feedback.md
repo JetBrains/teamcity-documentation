@@ -16,11 +16,11 @@ Contact us about:
 
 When submitting a request, make sure:
 * to provide all necessary information by reviewing the [Reporting Issues guidelines](reporting-issues.md#Best+Practices+When+Reporting+Issues);
-* you use a [recent TeamCity version](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads). Generally, we do not provide regular support for [non-current major versions](how-to.md#TeamCity+Release+Cycle) / more than one-year-old versions.
+* you use a [recent TeamCity version](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads). Generally, we do not provide regular support for [non-current major versions](teamcity-release-cycle.md) / more than one-year-old versions.
 
 ### Licensed Users Support
 
-You can contact us via the [online support form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) if you own a TeamCity Enterprise server license with the active maintenance period and need the error report not to be publicly available. Only [two latest major TeamCity releases](how-to.md#TeamCity+Release+Cycle) and their bugfix updates are covered by our support.   
+You can contact us via the [online support form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) if you own a TeamCity Enterprise server license with the active maintenance period and need the error report not to be publicly available. Only [two latest major TeamCity releases](teamcity-release-cycle.md) and their bugfix updates are covered by our support.   
 However, we would appreciate if you post your question in the forums as this way other users can share their experience. If, for some reason, there is a delay in responding to the question in the forum, feel free to ping us via email noting the forum post you have created.
 
 We prefer to keep our support efforts as close to the development team as possible, and you will often get answers from the actual developer of the related TeamCity feature.   

@@ -8,7 +8,7 @@ Unless specifically noted, TeamCity does not support downgrade between major/min
 
 TeamCity supports upgrades from any of the previous versions to the later ones. All the settings and data are preserved unless noted in the [Upgrade Notes](upgrade-notes.md).
 
-It is recommended to plan for regular upgrades to run the latest TeamCity version at least after several bugfix updates are released. This way you run a fully [supported version](how-to.md#TeamCity+Release+Cycle) with the latest fixes and security patches.
+It is recommended to plan for regular upgrades to run the latest TeamCity version at least after several bugfix updates are released. This way you run a fully [supported version](teamcity-release-cycle.md) with the latest fixes and security patches.
 
 ## Before Upgrade
 
