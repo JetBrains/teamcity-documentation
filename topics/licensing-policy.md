@@ -259,5 +259,6 @@ To check TeamCity upgrade availability for your IntelliJ IDEA licenses and to re
         </category>
         <category ref="licensing">
             <a href="http://www.jetbrains.com/teamcity/buy/index.html">Licensing &amp; Upgrade</a>
+            <a href="teamcity-release-cycle.md">TeamCity Release Cycle</a>
         </category>
 </seealso>
