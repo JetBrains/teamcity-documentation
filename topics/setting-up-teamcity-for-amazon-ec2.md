@@ -241,7 +241,7 @@ When launching Amazon EC2 instances, TeamCity tags all the resources (for exampl
 
 #### Sharing single EBS instance between several TeamCity servers
 
-As mentioned [above](#Automatic+tags), TeamCity tags every instance it launches with the `teamcity:TeamcityData` tag that represents a server, cloud profile, and source (AMI or EBS\-instance). So, when several TeamCity servers try to use the same EBS instance, the second one will see the following message "Instance is used by another TeamCity server. Unable to start/stop it". If you are sure that no other TeamCity servers are working with this instance, you can delete the `teamcity:TeamcityData` tag and the instance will become available for all TeamCity servers again.
+As mentioned [above](#Tagging+for+TeamCity-launched+instances), TeamCity tags every instance it launches with the `teamcity:TeamcityData` tag that represents a server, cloud profile, and source (AMI or EBS\-instance). So, when several TeamCity servers try to use the same EBS instance, the second one will see the following message "Instance is used by another TeamCity server. Unable to start/stop it". If you are sure that no other TeamCity servers are working with this instance, you can delete the `teamcity:TeamcityData` tag and the instance will become available for all TeamCity servers again.
 
 ### New instance types
 
