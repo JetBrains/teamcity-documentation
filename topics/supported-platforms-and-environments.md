@@ -23,14 +23,7 @@ Supported Java versions are OpenJDK and Oracle Java 8 (8u16 or later) and 11 (32
 
 The TeamCity server Windows installer and server Docker images come bundled with 64-bit Java 11.
 
-Note that the `.war` distribution is going to be discontinued, and it is highly recommended using the `.tar.gz` distribution which has Tomcat web server bundled. It is not advised to customize Tomcat settings unless absolutely necessary.   
-If you still want to use the `.war` distribution, note that:
-
-* TeamCity is tested only under Apache Tomcat 8.5+, earlier Tomcat versions are not supported.
-* TeamCity is meant to support J2EE Servlet 3.0+ and JSP 2.2+ container based on Apache Jasper.
-* TeamCity may not work properly if the [Apache Portable Runtime](http://tomcat.apache.org/tomcat-8.5-doc/apr.html) is enabled in Tomcat due to the issues in APR.
-
-Generally, __all the recent versions of Windows, Linux and macOS are supported__. If you find any compatibility issues with any of the operating systems, make sure to [let us know](https://confluence.jetbrains.com/display/TW/Feedback).
+Generally, __all the recent versions of Windows, Linux, and macOS are supported__. If you find any compatibility issues with any of the operating systems, make sure to [let us know](https://confluence.jetbrains.com/display/TW/Feedback).
 
 The TeamCity server is tested under the following operating systems:
 * Linux (Ubuntu, Debian, RedHat, SUSE, and others)

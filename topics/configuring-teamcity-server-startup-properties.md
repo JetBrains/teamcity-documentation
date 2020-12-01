@@ -26,9 +26,6 @@ An alternative but obsolete method of adding an internal property is to pass it 
 
 If you need to pass additional JVM options to a TeamCity server (for example, `-D` options mentioned in [Reporting Issues](reporting-issues.md) or any other options like `-X...`), the approach will depend on the way the server is run.
 
-* If you are using the `.war` distribution, please refer to the manual of your Web Application Server.    
-* In all other cases, refer to the [next section](#Standard+TeamCity+Startup+Scripts).
-
 For general notes on the memory settings, refer to [Setting Up Memory settings for TeamCity Server](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server).
 
 You will need to [restart](installing-and-configuring-the-teamcity-server.md#Starting+TeamCity+server) the server for the changes to take effect.

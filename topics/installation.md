@@ -80,27 +80,6 @@ Archive for manual installation bundled with Tomcat servlet container
 
 <td>
 
-[J2EE container](installing-and-configuring-the-teamcity-server.md#Installing+TeamCity+into+Existing+J2EE+Container)
-
-
-</td>
-
-<td>
-
-TeamCity&lt;version number&gt;.war
-
-
-</td>
-
-<td>
-
-Package for installation into an existing J2EE container (not recommended, use .tar.gz instead)
-
-
-</td></tr><tr>
-
-<td>
-
 [Docker (Linux, Windows)](https://hub.docker.com/r/jetbrains/teamcity-server/)
 
 </td>
