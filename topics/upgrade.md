@@ -109,10 +109,7 @@ Current automatic update limitations:
 
 #### Using Windows Installer
 
-<tip>
-
-The main server configuration file \<[TeamCity Home Directory](teamcity-home-directory.md)\>/conf/server.xml is updated automatically when there were no changes to it since the last installation. If modification were made, the installer will detect them and backup the old `server.xml` file displaying a warning about the overwrite and the backup file location. Other files under `conf` can be overwitten to their default content as well, so if you have made manual modifications in those, check them after the upgrade.
-</tip>
+>The main server configuration file \<[TeamCity Home Directory](teamcity-home-directory.md)\>/conf/server.xml is updated automatically when there were no changes to it since the last installation. If modification were made, the installer will detect them and backup the old `server.xml` file displaying a warning about the overwrite and the backup file location. Other files under `conf` can be overwitten to their default content as well, so if you have made manual modifications in those, check them after the upgrade.
 
 1. [Create a backup](teamcity-data-backup.md). When upgrading from TeamCity 6.0\+ you will also have a chance to create a backup with the "basic" profile on the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page on the updated TeamCity start.
 2. Note the username used to run the TeamCity server. You will need it during the new version installation.
