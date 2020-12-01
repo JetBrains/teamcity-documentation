@@ -129,16 +129,7 @@ TeamCity provides the Docker Wrapper extension for [Command Line](command-line.m
 #### Docker Settings
 {id="docker-settings-1"}
 
-<include src="docker-wrapper.md" include-id="docker-settings"/>
-
-##### How It Works
-
-<include src="docker-wrapper.md" include-id="docker-settings-how"/>
-
-##### Environment Variables Handling
-{id="environment-variables-handling-1"}
-
-<include src="docker-wrapper.md" include-id="docker-settings-env-var"/>
+See the [Docker Wrapper](docker-wrapper.md) description.
 
 ### Docker Disk Space Cleaner
 

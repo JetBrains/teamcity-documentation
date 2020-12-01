@@ -72,7 +72,7 @@ If you accidentally performed an inconsistent upgrade, check the [recovery instr
 
 ### Automatic Update
 
-Since TeamCity 2017.2 automatic update option is available. For that to function, TeamCity server should be able to contact [https://www.jetbrains.com](https://www.jetbrains.com/) site.   
+To be able to update automatically, the TeamCity server should be able to contact [https://www.jetbrains.com](https://www.jetbrains.com/) site.   
 When a new version of TeamCity is detected, the server displays the corresponding health item for system administrators. The item points to the server's __Administration | Updates__ page, where all the versions available for the update are listed. The page contains notes about licenses compatibility, the new version description and controls to perform the automatic upgrade if you want to use that instead of performing the manual updating procedure.
 
 The automatic update procedure is as follows:

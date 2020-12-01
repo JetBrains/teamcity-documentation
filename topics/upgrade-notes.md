@@ -1146,9 +1146,7 @@ Bundled version of Maven 3.2.x updated to 3.2.5.
 
 #### Performance Monitor  
 
-###### Note on permissions: to [monitor performance](performance-monitor.md) of a build agent run as a Windows [service](https://confluence.jetbrains.com/display/TCD9/Setting+up+and+Running+Additional+Build+Agents#SettingupandRunningAdditionalBuildAgents-BuildAgentasaWindowsService), make sure the user starting the agent is member of the Performance Monitor Users group.
-
-  
+Note on permissions: to [monitor performance](performance-monitor.md) of a build agent run as a Windows [service](https://confluence.jetbrains.com/display/TCD9/Setting+up+and+Running+Additional+Build+Agents#SettingupandRunningAdditionalBuildAgents-BuildAgentasaWindowsService), make sure the user starting the agent is member of the Performance Monitor Users group.
 
 ## Changes from 9.1.4 to 9.1.5
 

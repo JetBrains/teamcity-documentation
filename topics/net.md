@@ -131,7 +131,7 @@ Currently, the .NET runner supports the following commands:
 
 Alternatively, you can specify any __[custom .NET command](#Custom+Commands)__, and TeamCity will run it _as is_.
 
-### Basic Commands
+## Basic Commands
 
 The set of .NET runner's options depends on the selected command. Available options for basic .NET CLI commands are:
 
@@ -317,9 +317,9 @@ Available logging modes: `<Default>`, `Minimal`, `Normal`, `Detailed`, or `Diagn
 
 </tr></table>
 
-### Advanced Commands
+## Advanced Commands
 
-#### msbuild
+### msbuild
 
 The `msbuild` command is used for building a project and all its dependencies with the Microsoft Build Engine.   
 Depending on the selected MSBuild version, `msbuild` can either be run as the [cross-platform .NET CLI command](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild) or as the [Windows-only `msbuild.exe` tool](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild).
@@ -380,7 +380,7 @@ Specify the version of the installed MSBuild engine. See the [Requirements](#Req
 
 </table>
 
-##### Migrating from MSBuild Runner
+#### Migrating from MSBuild Runner
 
 Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine. We have included the `msbuild` command to our refactored .NET runner to ensure a long-term support of the .NET platform development strategy.
 
@@ -398,7 +398,7 @@ Consider the following notes before migrating:
 
 If you are actively using either Mono or NCover/PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
 
-##### Migrating from Visual Studio (sln) Runner
+#### Migrating from Visual Studio (sln) Runner
 {id="migrating-to-net-from-sln"}
 
 The [Visual Studio (sln)](visual-studio-sln.md) build runner is using the MSBuild engine under its hood and provides a few tweaks for the VS users to ease their experience with building projects in TeamCity. Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine which makes it a migration option for the users of the Visual Studio (sln) step as well.
@@ -419,7 +419,7 @@ Note that TeamCity provides a new way to run Visual Studio projects. The .NET ru
 
 </note>
 
-#### vstest
+### vstest
 
 The `vstest` command is used for testing a project with the VSTest engine and automatically importing the test results. Depending on the selected VSTest version, `vstest` can either be run as the [cross-platform .NET CLI command](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-vstest) or as the [VSTest console](https://plugins.jetbrains.com/plugin/9056-vstest-console-runner).
 
@@ -548,7 +548,7 @@ Set the path to the [`.runsettings`](https://docs.microsoft.com/en-us/visualstud
 
 </table>
 
-##### Migrating from Visual Studio Tests Runner
+#### Migrating from Visual Studio Tests Runner
 
 Since TeamCity 2019.2.3, the .NET runner is the recommended method for testing projects with VSTest instead of the [Visual Studio Tests](visual-studio-tests.md) runner. We have included the `vstest` command to our refactored .NET runner to ensure a long-term support of the .NET platform development strategy.
 
@@ -566,11 +566,11 @@ Consider the following notes before migrating:
 * The .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md). If you are actively using NCover or PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
 * The .NET runner does not support the MSTest tool since all features of its framework are covered by VSTest. If you were using MSTest as the engine of the Visual Studio Tests runner, we suggest that you switch to VSTest when migrating to the .NET runner.
 
-#### nuget delete
+### nuget delete
 
 TeamCity provides full support for the [`nuget delete`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-delete) command.
 
-#### nuget push
+### nuget push
 
 TeamCity provides full support for the [`nuget push`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push) command.
 
@@ -882,4 +882,3 @@ The .NET SDK version.
 
 The best way to pass a parameter value containing space characters is to use [system properties](configuring-build-parameters.md#Types+of+Build+Parameters). For example, you can add the `system.Platform` parameter with the `Any CPU` value in __Build Configuration Settings | Parameters__ and then refer to this value as `%system.Platform%` inside the .NET step.   
 An alternative approach is to wrap the command-line parameter as follows: `"/p:Platform=Any CPU"`.
-
