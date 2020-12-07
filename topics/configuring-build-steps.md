@@ -5,7 +5,7 @@ When creating a build configuration, it is important to configure the sequence o
 
 Build steps are configured in the __Build Steps__ section of the [__Build Configuration Settings__](creating-and-editing-build-configurations.md) page. Here, you can:
 * add new steps manually;
-* autodetect steps by scanning the source VCS repository;
+* [autodetect steps](#Autodetecting+build+steps) by scanning the source VCS repository;
 * copy and delete steps;
 * temporarily enable/disable steps.
 
@@ -18,6 +18,8 @@ The decision whether to run the next build step may depend on the exit status of
 The build step is considered _failed_ if (1) the build process returned a non-zero exit code and (2) the "_Fail build if build process exit code is not zero_" build failure condition is enabled (see [Build Failure Conditions](build-failure-conditions.md)); otherwise, the build step is considered _successful_.
 
 Note that the status of a build step and the build itself can be different. All build steps can be successful, but the build can fail because of another build failure condition – not based on the exit code (like failing a test). On the other hand, if a build step has failed, the build will fail too.
+
+For the details on configuring individual build steps, refer to the respective pages inside this section.
 
 ## Execution policy
 
@@ -41,7 +43,18 @@ __Tips:__
 
 Since TeamCity 2020.1, you can also add granular [execution conditions](build-step-conditions.md) for build steps.
 
-For the details on configuring individual build steps, refer to the respective pages inside this section.
+## Autodetecting build steps
+
+TeamCity can scan the source VCS repository of a project and autodetect build steps in Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.
+
+In __Build Steps__, click __Auto-detect build steps__, and then select the proposed steps you want to add to the current build configuration. You can change their settings afterwards.
+
+When scanning the repository, TeamCity progressively searches for project files on the two highest levels of the source tree. When searching, it takes into consideration the extension of the files. For example:
+* [PowerShell](powershell.md): `.ps1`
+* [.NET](net.md): `project.json`, `.proj`, `.csproj`, `.vbproj`, `.sln`
+
+If the detected steps have already been added to this configuration manually, TeamCity will skip those.
+
 
  <seealso>
         <category ref="concepts">
