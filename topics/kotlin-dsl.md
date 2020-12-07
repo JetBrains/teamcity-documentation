@@ -21,7 +21,7 @@ DSL is also good in case when you need to have a big amount of similar build con
 
 ## Getting Started with Kotlin DSL
 
-This [Kotlin tutorial](https://play.kotlinlang.org/koans/overview) helps quickly learn most Kotlin features.
+This [Kotlin tutorial](https://play.kotlinlang.org/koans/overview) helps quickly learn most Kotlin features. The Kotlin DSL API documentation is available at `<teamcityserver:port>/app/dsl-documentation/index.html`.
 
 To start working with Kotlin DSL in TeamCity, create an empty sandbox project on your server and follow these steps:
 1. [Enable versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) for your project.
@@ -609,7 +609,7 @@ _Problem_:
 * `app/dsl-documentation/index.html` on our Teamcity server displays "Kotlin DSL API documentation is not initialized yet"
 * `OutOfMemoryError` during TeamCity startup with `org.jetbrains.dokka` in stack trace
  
- _Solution_: set the internal property `teamcity.kotlinConfigsDsl.docsGenerationXmx=768m`.
+ _Solution_: set the [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.kotlinConfigsDsl.docsGenerationXmx=768m` and restart the server.
 
 
 <seealso>
