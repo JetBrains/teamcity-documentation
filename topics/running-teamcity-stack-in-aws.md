@@ -1,7 +1,7 @@
 [//]: # (title: Running TeamCity Stack in AWS)
 [//]: # (auxiliary-id: Running TeamCity Stack in AWS)
 
-You can run the TeamCity stack in AWS using the [CloudFormation template](https://github.com/JetBrains/teamcity-cloudformation-template). Note that this is an experimental option, which is currently in progress.
+You can run the TeamCity stack in AWS using the [CloudFormation template](https://github.com/JetBrains/teamcity-cloudformation-template). Note that this is an experimental option, which is currently a work in progress.
 
 ## Stack Overview
 
