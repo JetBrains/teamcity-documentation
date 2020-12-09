@@ -12,7 +12,7 @@ Basically, a meta-runner is a set of build steps from one build configuration th
 
 TeamCity allows extracting meta-runners using the web UI.
 
-All meta-runners are stored on a project level, so they are available within this project and its subprojects only, and are not visible outside. If a meta-runner is stored on the __&lt;Root project&gt;__ level, it is available globally (in all projects).
+All meta-runners are stored on a project level, so they are available within this project and its subprojects only, and are not visible outside. If a meta-runner is stored on the __&lt;Root&gt;__  project level, it is available globally (in all projects).
 
 You can use the existing meta-runners from the TeamCity Meta-Runners Power Pack or create your own meta-runner.
 
