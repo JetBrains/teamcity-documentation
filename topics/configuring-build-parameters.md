@@ -12,12 +12,9 @@ _Build parameters_ provide you with flexible means of sharing settings and a con
 Build parameters are name-value pairs, defined by a user or provided by TeamCity, which can be used in a build.
 
 There are three types of build parameters:
-
-_Environment variables_ (defined using the `env.` prefix) are passed into the spawned build process as environment.
-
-_System properties_ (defined using the `system.` prefix) are passed into the build scripts of the supported runners (for example, Ant, MSBuild) as variables specific to a build tool.
-
-_Configuration parameters_ (no prefix) are not passed into the build and are only meant to share settings within a build configuration. They are the primary means for customizing a build configuration which is based on a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md).
+* _Environment variables_ (defined using the `env.` prefix) are passed into the spawned build process as environment.
+* _System properties_ (defined using the `system.` prefix) are passed into the build scripts of the supported runners (for example, Ant, MSBuild) as variables specific to a build tool.
+* _Configuration parameters_ (no prefix) are not passed into the build and are only meant to share settings within a build configuration. They are the primary means for customizing a build configuration which is based on a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md).
 
 TeamCity provides a set of [predefined parameters](predefined-build-parameters.md), and administrators can add custom parameters.
 
