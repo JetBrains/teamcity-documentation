@@ -5,7 +5,7 @@ To analyze agent-specific cases, there are internal log files saved by the TeamC
 
 When the agent is connected to TeamCity server, you can __browse and download__ the agent logs in TeamCity web UI, on the __Agent Logs__ tab for an agent.
 
-If you need to customize the logigng, see below.
+If you need to customize the logging, see below.
 
 ## Log Files
 
