@@ -42,6 +42,7 @@ On upgrading, this responsibility will be automatically enabled on all your seco
    * On Linux server images: to Amazon Corretto x64 v.11.0.9.11.
    * On Windows and Linux agent images: to Amazon Corretto x64 v.8.272.10.3
 * Java bundled in the TeamCity server and agent Windows installers has been updated to version 11.0.9.11.2.
+* Bundled Tomcat has been updated to version 8.5.57.
 * The SAC Windows image in the TeamCity server Docker containers has been updated to version 2004. Windows LTS version is 1809, as in TeamCity 2020.1.
 * The Linux image in TeamCity server Docker containers has been updated to version 20.04 (LTS).
 * Bundled dotCover and ReSharper CLT have been upgraded to version 2020.2.4.
