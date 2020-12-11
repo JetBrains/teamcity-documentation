@@ -214,7 +214,7 @@ This list limits a set of users who can register or authenticate in TeamCity wit
 
 Leave empty to allow all Bitbucket Cloud users to access the TeamCity server.
 
->If you delete a user from a workspace, remember to restrict their access or delete this user in TeamCity as well. Otherwise, they might be able to sign in to TeamCity with a preliminary created access token.
+>Once registered on the TeamCity server, a user can create a password or token which will allow them to sign in to this server directly, bypassing the Bitbucket verification. If you delete a user from a workspace in Bitbucket, remember to restrict their access or delete their user profile in TeamCity.
 
 </td>
 
@@ -270,7 +270,7 @@ This list limits a set of users who can register or authenticate in TeamCity wit
 
 Leave empty to allow all GitHub users to access the TeamCity server.
 
->If you delete a user from an organization, remember to restrict their access or delete this user in TeamCity as well. Otherwise, they might be able to sign in to TeamCity with a preliminary created access token.
+>Once registered on the TeamCity server, a user can create a password or token which will allow them to sign in to this server directly, bypassing the GitHub verification. If you delete a user from an organization in GitHub, remember to restrict their access or delete their user profile in TeamCity.
 
 </td>
 
@@ -326,7 +326,7 @@ This list limits a set of users who can register or authenticate in TeamCity wit
 
 Leave empty to allow all GitHub users to access the TeamCity server.
 
->If you delete a user from an organization, remember to restrict their access or delete this user in TeamCity as well. Otherwise, they might be able to sign in to TeamCity with a preliminary created access token.
+>Once registered on the TeamCity server, a user can create a password or token which will allow them to sign in to this server directly, bypassing the GitHub verification. If you delete a user from an organization in GitHub, remember to restrict their access or delete their user profile in TeamCity.
 
 </td>
 
@@ -388,7 +388,7 @@ This list limits a set of users who can register or authenticate in TeamCity wit
 
 Leave empty to allow all GitLab users to access the TeamCity server.
 
->If you delete a user from a group, remember to restrict their access or delete this user in TeamCity as well. Otherwise, they might be able to sign in to TeamCity with a preliminary created access token.
+>Once registered on the TeamCity server, a user can create a password or token which will allow them to sign in to this server directly, bypassing the GitLab verification. If you delete a user from an organization in GitLab, remember to restrict their access or delete their user profile in TeamCity.
 
 </td>
 
@@ -446,7 +446,7 @@ This list limits a set of users who can register or authenticate in TeamCity wit
 
 Leave empty to allow all GitLab users to access the TeamCity server.
 
->If you delete a user from a group, remember to restrict their access or delete this user in TeamCity as well. Otherwise, they might be able to sign in to TeamCity with a preliminary created access token.
+>Once registered on the TeamCity server, a user can create a password or token which will allow them to sign in to this server directly, bypassing the GitLab verification. If you delete a user from an organization in GitLab, remember to restrict their access or delete their user profile in TeamCity.
 
 </td>
 
