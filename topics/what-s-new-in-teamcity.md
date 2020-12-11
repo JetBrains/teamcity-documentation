@@ -30,7 +30,7 @@ Normally, a running build occupies a build agent until all its steps finish. In 
 
 Now, a build can be detached from its current agent. This agent becomes available to other builds, while the build continues running in the "agentless" mode. 
 
-To detach an agent, a build should send the `##teamcity[detachedFromAgent]` [service message](service-messages.md).     
+To detach an agent, a build should send the `##teamcity[buildDetachedFromAgent]` [service message](service-messages.md).     
 There are dedicated REST API endpoints which can be used to report the progress of the agentless build and end it once the external process finishes. You can read more about them [in the documentation](detaching-build-from-agent.md).
 
 There is a limit for a number of agentless builds running simultaneously. It is equal to the maximum number of authorized agents in your installation. This way, if you have 10 agent licenses, you can run in parallel up to 10 agents _plus_ up to 10 agentless builds.  
