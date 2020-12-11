@@ -209,15 +209,15 @@ If you need to publish NuGet packages and then use their contents within one bui
 * To see all bundled tool updates, read our [upgrade notes](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
 * Version 2020.2 comes with ~30 performance fixes in various pieces of functionality (for example, in the Custom Run dialog).
 
-## Fixed issues﻿
+## Fixed issues
 
-See [TeamCity 2020.2 release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.2+Release+Notes).
+See [TeamCity 2020.2 release notes](teamcity-2020-2-release-notes.md).
 
-## Upgrade notes﻿
+## Upgrade notes
 
 Before upgrading, we highly recommend reading about important changes in [version 2020.2 comparing to 2020.1.x](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
 
-## Previous releases﻿
+## Previous releases
 * [What's New in TeamCity 2020.1](https://www.jetbrains.com/help/teamcity/2020.1/what-s-new-in-teamcity.html)
 * [What's New in TeamCity 2019.2](https://www.jetbrains.com/help/teamcity/2019.2/what-s-new-in-teamcity-2019-2.html)
 * [What's New in TeamCity 2019.1](https://www.jetbrains.com/help/teamcity/2019.1/what-s-new-in-teamcity-2019-1.html)
