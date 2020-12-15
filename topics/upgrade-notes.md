@@ -1,6 +1,31 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2020.2 to 2020.2.1
+
+### TeamCity Server Docker images for Linux: non-root user by default
+
+Following the security practices we've applied to our [Agent Docker images](#Agent+Docker+images+run+under+non-root+user), the __TeamCity Server Docker images for Linux now run under a non-root user by default__.
+
+This change affects the following use cases:
+
+* To create/update a custom image based on the standard TeamCity Server image, you might need to switch to the `root` user first.
+* If you mount a host directory to a container, you might get the "_Permission denied_" error. To prevent this issue, try any of the following workarounds:
+   * Set the UID of the directories' owner to `1000` with the `chown` command. __If applied to large directories, this operation may take a long time and slow down the disk performance__.
+   * Send the `--user` argument with the `docker run` command to set the same UID for the Docker user as that of the host machine. For example, use `docker run -it --user $(id -u) ...`. Or, use the root profile (`--user 0`).
+   * Note that TeamCity automatically creates volumes for writable directories, and there is usually no need to map them explicitly. Consider omitting any explicit references to prevent the permission issues.
+
+### No auto prefix for .NET command line parameters
+
+Since this version, the [.NET](net.md) build runner __does not apply `--` before the command line parameters__. Previously, the runner added this prefix automatically. To give our users more control over how they pass command parameters, we've disabled this behavior.  
+If any of your .NET build steps specify extra command options in the __Command line parameters__ field, please make sure to alter these steps and prepend these parameters with `--`.
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-202021"}
+
+* Bundled Tomcat has been updated to version 8.5.61.
+* Bundled JaCoCo version has been updated to 0.8.6.
+
 ## Changes from 2020.1.x to 2020.2
 
 ### Known Issues
