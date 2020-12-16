@@ -30,7 +30,7 @@ Normally, a running build occupies a build agent until all its steps finish. In 
 
 Now, a build can be detached from its current agent. This agent becomes available to other builds, while the build continues running in the "agentless" mode. 
 
-To detach an agent, a build should send the `##teamcity[detachedFromAgent]` [service message](service-messages.md).     
+To detach an agent, a build should send the `##teamcity[buildDetachedFromAgent]` [service message](service-messages.md).     
 There are dedicated REST API endpoints which can be used to report the progress of the agentless build and end it once the external process finishes. You can read more about them [in the documentation](detaching-build-from-agent.md).
 
 There is a limit for a number of agentless builds running simultaneously. It is equal to the maximum number of authorized agents in your installation. This way, if you have 10 agent licenses, you can run in parallel up to 10 agents _plus_ up to 10 agentless builds.  
@@ -209,15 +209,15 @@ If you need to publish NuGet packages and then use their contents within one bui
 * To see all bundled tool updates, read our [upgrade notes](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
 * Version 2020.2 comes with ~30 performance fixes in various pieces of functionality (for example, in the Custom Run dialog).
 
-## Fixed issues﻿
+## Fixed issues
 
-See [TeamCity 2020.2 release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.2+Release+Notes).
+See [TeamCity 2020.2 release notes](teamcity-2020-2-release-notes.md).
 
-## Upgrade notes﻿
+## Upgrade notes
 
 Before upgrading, we highly recommend reading about important changes in [version 2020.2 comparing to 2020.1.x](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
 
-## Previous releases﻿
+## Previous releases
 * [What's New in TeamCity 2020.1](https://www.jetbrains.com/help/teamcity/2020.1/what-s-new-in-teamcity.html)
 * [What's New in TeamCity 2019.2](https://www.jetbrains.com/help/teamcity/2019.2/what-s-new-in-teamcity-2019-2.html)
 * [What's New in TeamCity 2019.1](https://www.jetbrains.com/help/teamcity/2019.1/what-s-new-in-teamcity-2019-1.html)

@@ -5,7 +5,7 @@ If a final step of a build triggers some external service and the build does not
 
 ## Releasing build agent
 
-To release its current build agent, a runner needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md). After recieving this message, the agent skips all the following steps of the build, unless they have the "[_Always, even if build stop command was issued_](configuring-build-steps.md#Execution+policy)" execution policy enabled. If necessary, you can enable it for mandatory final steps – the agent will be released only after completing them.
+To release its current build agent, a runner needs to send the `##teamcity[buildDetachedFromAgent]` [service message](service-messages.md). After recieving this message, the agent skips all the following steps of the build, unless they have the "[_Always, even if build stop command was issued_](configuring-build-steps.md#Execution+policy)" execution policy enabled. If necessary, you can enable it for mandatory final steps – the agent will be released only after completing them.
 
 If the [limit of agentless builds](#DetachingBuildfromAgent-agentless-licensing) is not exceeded, the server releases the agent and it instantly becomes available to other builds. Otherwise, the agent stays attached to the build until some of the running agentless builds finish. 
 
