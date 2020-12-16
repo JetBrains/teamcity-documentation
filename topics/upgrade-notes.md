@@ -3,22 +3,17 @@
 
 ## Changes from 2020.2 to 2020.2.1
 
-### TeamCity Server Docker images for Linux: non-root user by default
+### Breaking change for Linux Docker images of TeamCity Server: non-root user by default
 
 Following the security practices we've applied to our [Agent Docker images](#Agent+Docker+images+run+under+non-root+user), the __TeamCity Server Docker images for Linux now run under a non-root user by default__.
 
-This change affects the following use cases:
+When trying to run a Linux image under a default user, you will get the "_Permission denied_" error. To prevent it, you need to change the ownership over the host data directories: run `chown -R 1000:1000` applied to the required volumes. __For large directories, this operation may take a long time and slow down the disk performance__.   
+Alternatively, you can start the container under the root user by passing the `-u 0` parameter to the `docker run` command. This is a quick workaround which allows saving time on changing the directories' ownership. However, we suggest that you stick to the `chown` approach in the long term.
 
-* To create/update a custom image based on the standard TeamCity Server image, you might need to switch to the `root` user first.
-* If you mount a host directory to a container, you might get the "_Permission denied_" error. To prevent this issue, try any of the following workarounds:
-   * Set the UID of the directories' owner to `1000` with the `chown` command. __If applied to large directories, this operation may take a long time and slow down the disk performance__.
-   * Send the `--user` argument with the `docker run` command to set the same UID for the Docker user as that of the host machine. For example, use `docker run -it --user $(id -u) ...`. Or, use the root profile (`--user 0`).
-   * Note that TeamCity automatically creates volumes for writable directories, and there is usually no need to map them explicitly. Consider omitting any explicit references to prevent the permission issues.
+### No auto prefix for dotnet run command line parameters
 
-### No auto prefix for .NET command line parameters
-
-Since this version, the [.NET](net.md) build runner __does not apply `--` before the command line parameters__. Previously, the runner added this prefix automatically. To give our users more control over how they pass command parameters, we've disabled this behavior.  
-If any of your .NET build steps specify extra command options in the __Command line parameters__ field, please make sure to alter these steps and prepend these parameters with `--`.
+Since this version, the [.NET](net.md) build runner __does not apply `--` before the `dotnet run` parameters__. Previously, the runner added this prefix automatically which made it impossible to pass the custom options to the `run` command. To fix this, we've disabled thr previous behavior.  
+Unfortunately, the affected .NET build steps cannot be converted automatically on upgrading. If any of your steps pass arguments to the running .NET application, please make sure to alter these steps and prepend the respective parameters with `--`.
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-202021"}
