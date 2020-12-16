@@ -14,8 +14,7 @@ __16 December 2020__
 [**TW-60700**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-60700) — Report progress of publishing to S3   
 [**TW-60401**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-60401) — TeamCity S3 Artifact Storage - S3 timeout - Enhancement Request   
 [**TW-68890**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68890) — Chain view: group composite builds by default   
-[**TW-65251**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-65251) — &#39;Promote&#39; action in dependencies list   
-[**TW-68508**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68508) — .NET 5 in docker images   
+[**TW-65251**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-65251) — &#39;Promote&#39; action in dependencies list
 [**TW-68158**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68158) — Agent compatible configurations tab: design how should agent incompatibilities look like
 
 ### Usability Problem
