@@ -104,8 +104,8 @@ Under Windows, if TeamCity server is installed as a Windows service, follow the 
 If TeamCity is installed using the `.exe` or `.tar.gz` distributions, the TeamCity server can be started and stopped by the `teamcity-server` scripts provided in the \<[TeamCity Home](teamcity-home-directory.md)\>\/bin directory. The script accepts `run` (run in the same console), `start` (start new detached process and exit from the script), and `stop` commands.
 
 * __(evaluation only) To start/stop the TeamCity server and one default agent at the same time__, use the `runAll` script, for example:
-   * Use `runAll.bat start` to start the server and the default agent
-   * Use `runAll.bat stop` to stop the server and the default agent
+   * Use `.\runAll.bat start` to start the server and the default agent
+   * Use `.\runAll.bat stop` to stop the server and the default agent
   
 * __To start/stop the TeamCity server only__, use the `teamcity-server` scripts and pass the required parameters. Start the script without parameters to see the usage instructions. The `teamcity-server` scripts support the following options for the `stop` command:
    * `stop n` – sends the stop command to the TeamCity server and waits up to n seconds for the process to end.
