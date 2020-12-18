@@ -25,7 +25,7 @@ The "_Enable/disable versioned settings_" permission is required (default for th
 The __Configuration__ tab is used to define
 * whether the synchronization settings are the same as in the parent project;
 * whether the synchronization is enabled;
-   * when synchronization is enabled, you can define which settings to use when build starts. See details [below](#Defining+Settings+to+Apply+to+Builds).
+   * when synchronization is enabled, you can define which settings to use when the build starts. See details [below](#Defining+Settings+to+Apply+to+Builds).
 * which VCS root is used to store the project settings: you can store the settings either in the same repository as the source code, or in a dedicated VCS root.
 
 Enabling synchronization for a project also enables it for all its subprojects with the default "_Use settings from a parent project_" option selected. TeamCity synchronizes all changes to the project settings (including modifications of [build configurations](build-configuration.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on) with the exception of [SSH keys](ssh-keys-management.md).   
@@ -34,6 +34,9 @@ However, if for certain subprojects the "_Synchronization disabled_" option is s
 As soon as synchronization is enabled in a project, TeamCity will make an initial commit in the selected repository for the whole project tree (the project with all its subprojects) to store the current settings from the server. If the settings for the given project are found in the specified VCS root (the VCS root for the parent project settings or the user-selected VCS root), a warning will be displayed asking if TeamCity should
 * overwrite the settings in the VCS with the current project settings on the TeamCity server; or
 * import the settings from the VCS replacing the current project settings on the TeamCity server with those from version control.
+
+>If you choose to generate [portable DSL scripts](kotlin-dsl.md#Project+Settings+Structure) and the current project comprises less than 20 entities, TeamCity will create one `settings.kts` file to describe them all. Individual entities include _projects_, _build configurations_, _templates_, and _VCS roots_.  
+>If there are more than 20 entities in the project, TeamCity will create a hierarchy of separate `.kt` files to describe and group these entities.
 
 <anchor name="StoringProjectSettingsinVersionControl-DefiningSettingstoApplytoBuilds"/>
 
@@ -137,7 +140,6 @@ To test Kotlin-based settings in a sandbox project, you can download the setting
 [//]: # (AltHead: settingsFormat)
 
 <warning>
-
 Before committing settings to the VCS, consider the recommended approach to storing security settings [described above](#Storing+Secure+Settings).
 </warning>
 
