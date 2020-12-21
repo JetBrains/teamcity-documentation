@@ -35,8 +35,8 @@ As soon as synchronization is enabled in a project, TeamCity will make an initia
 * overwrite the settings in the VCS with the current project settings on the TeamCity server; or
 * import the settings from the VCS replacing the current project settings on the TeamCity server with those from version control.
 
->If you choose to generate [portable DSL scripts](kotlin-dsl.md#Project+Settings+Structure) and the current project comprises less than 20 entities, TeamCity will create one `settings.kts` file to describe them all. Individual entities include _projects_, _build configurations_, _templates_, and _VCS roots_.  
->If there are more than 20 entities in the project, TeamCity will create a hierarchy of separate `.kt` files to describe and group these entities.
+>If you choose to generate [portable DSL scripts](kotlin-dsl.md#Project+Settings+Structure) and the current project comprises less than 20 entities, TeamCity will create one `settings.kts` file to define them all. Individual entities include _projects_, _build configurations_, _templates_, and _VCS roots_.  
+>If there are more than 20 entities in the project, TeamCity will create a hierarchy of separate `.kt` files to define and group these entities.
 
 <anchor name="StoringProjectSettingsinVersionControl-DefiningSettingstoApplytoBuilds"/>
 
