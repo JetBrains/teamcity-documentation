@@ -36,8 +36,6 @@ Note that the number of EC2 agents is limited by the total number of agent licen
 
 Make sure the server URL specified on the __Administration | Global Settings__ page is correct since agents will use it to connect to the server, if a custom server URL is not specified in the [cloud profile settings](agent-cloud-profile.md#Specifying+Profile+Settings).
 
-If you need TeamCity to use a proxy to access EC2 services, please read on a current workaround in the dedicated [issue](http://youtrack.jetbrains.com/issue/TW-23637#comment=27-380892).
-
 ### Required IAM permissions
 
 TeamCity requires the following permissions for Amazon EC2 Resources:
@@ -55,7 +53,7 @@ To use [spot instances](#Amazon+EC2+Spot+Instances+support), the following addit
 * `ec2:CancelSpotInstanceRequests`
 
 To use [spot fleets](#Amazon+EC2+Spot+Fleet+support), the following additional permissions are required:
-* `ec2:ec2:RequestSpotFleet`
+* `ec2:RequestSpotFleet`
 * `ec2:DescribeSpotFleetRequests`
 * `ec2:CancelSpotFleetRequests`
 
@@ -127,7 +125,7 @@ Recommended image (for example, Amazon AMI) preparation steps:
 _To ensure proper TeamCity agent communication with EC2 API (including access to additional drives) on Windows_, add a dependency from the TeamCity Build Agent service on the [AmazonSSMAgent](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) or [EC2Launch/EC2Config](http://docs.amazonwebservices.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html) service (the service which ensures the machine is fully initialized in regard to AWS infrastructure use). This can be done, for example, via the [Registry](https://support.microsoft.com/en-us/kb/193888) or using [sc config](https://technet.microsoft.com/en-us/library/cc990290(v=ws.11).aspx) (for instance, `sc config TCBuildAgent depend=EC2Config`).   
 Alternatively, you can use the "Automatic (delayed start)" service starting mode.
 
-##### Important note for images based on Windows Server 2016 image
+__Important note for images based on Windows Server 2016 image__:
 
 Due to the [bug in the network settings](https://forums.aws.amazon.com/thread.jspa?threadID=242194), instance metadata is not available by default. It means the TeamCity agent service cannot retrieve its properties and cloud integration doesn't work (the agent does not connect to the server or is not automatically authorized). To fix this issue, do the following:
 
@@ -181,7 +179,7 @@ To use a spot fleet in your project:
 1. In [AWS Management Console](https://aws.amazon.com/console/), generate a spot fleet request:
    * Go to __Instances | Spot Requests | Request Spot Instances__.    
    * Specify the required AMI, minimum compute unit, availability zones, and other request details.
-   * Click __JSON config__ to download a JSON file with the spot fleet configuration parameters.    
+   * Click __JSON config__ to download a JSON file with the spot fleet configuration parameters. Note that only fields from the [`SpotFleetRequestConfigData`](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html) class are supported.    
 
    <img src="SpotFleetConfigButton.png" width="600" alt="Spot fleet config generation button in Amazon"/>
    
@@ -223,19 +221,13 @@ The behavior of [EBS optimization](http://docs.aws.amazon.com/AWSEC2/latest/User
 
 #### Tagging for TeamCity-launched instances
 
-##### Requirements
-
 The following requirements must be met for tagging instances launched by TeamCity:
 * you have the `ec2:*Tags` permissions
 * the [maximum number of tags (50)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions) for your Amazon EC2 resource is not reached
 
 In the absence of tagging permissions, TeamCity will still launch Amazon AMI and EBS images with no tags applied; Amazon EC2 spot instances will not be launched.
 
-##### Automatic tags
-
 TeamCity enables users to get instance launch information by marking the created instances with the `teamcity:TeamcityData` tag containing `<server UUID>:-<cloud profile ID>:-<image reference>`. __This tag is necessary for TeamCity integration with EC2 and must not be deleted.__
-
-##### Custom tags
 
 Custom tags can be applied to EC2 cloud agent instances: when configuring Cloud profile settings, in the __Add Image/Edit Image__ dialog use the __Instance tags__: field to specify tags in the format of `<key1>=<value1>,<key2>=<value2>`. [Amazon tag restrictions](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions) need to be considered.
 
@@ -247,7 +239,7 @@ When launching Amazon EC2 instances, TeamCity tags all the resources (for exampl
 
 #### Sharing single EBS instance between several TeamCity servers
 
-As mentioned [above](#Automatic+tags), TeamCity tags every instance it launches with the `teamcity:TeamcityData` tag that represents a server, cloud profile, and source (AMI or EBS\-instance). So, when several TeamCity servers try to use the same EBS instance, the second one will see the following message "Instance is used by another TeamCity server. Unable to start/stop it". If you are sure that no other TeamCity servers are working with this instance, you can delete the `teamcity:TeamcityData` tag and the instance will become available for all TeamCity servers again.
+As mentioned [above](#Tagging+for+TeamCity-launched+instances), TeamCity tags every instance it launches with the `teamcity:TeamcityData` tag that represents a server, cloud profile, and source (AMI or EBS\-instance). So, when several TeamCity servers try to use the same EBS instance, the second one will see the following message "Instance is used by another TeamCity server. Unable to start/stop it". If you are sure that no other TeamCity servers are working with this instance, you can delete the `teamcity:TeamcityData` tag and the instance will become available for all TeamCity servers again.
 
 ### New instance types
 
