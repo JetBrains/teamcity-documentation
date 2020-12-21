@@ -77,6 +77,7 @@ If you were actively using the VS 2003 runner and cannot easily migrate to the .
 
 ### Other updates
 
+* When detecting [GitHub issues](github.md), TeamCity now filters out pull requests that have no issues assigned to them. If you need to display such independent pull requests in the issue log, you can disable this filter by setting the `teamcity.issues.github.filter.pull.requests=false` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 * [Email Notifier](notifications.md#Email+Notifier) now uses the same versions of the TLS protocol as supported by the current TeamCity server's JVM.
 
 ## Changes from 2020.1.4 to 2020.1.5
