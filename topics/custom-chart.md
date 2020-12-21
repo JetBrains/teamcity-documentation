@@ -1,9 +1,9 @@
 [//]: # (title: Custom Chart)
 [//]: # (auxiliary-id: Custom Chart)
 
-In addition to statistic charts generated automatically by TeamCity on the Statistics tab, it is possible to configure your own statistical charts based on the set of [statistic values provided by TeamCity](#Default+Statistics+Values+Provided+by+TeamCity) or values reported from a build script. In the latter case you will need to configure your build script to report custom statistical data to TeamCity.
+In addition to statistic charts generated automatically by TeamCity on the __Statistics__ tab, it is possible to configure your own statistical charts based on the set of [statistic values provided by TeamCity](#Default+Statistics+Values+Provided+by+TeamCity) or values reported from a build script. In the latter case you will need to configure your build script to report custom statistical data to TeamCity.
 
-You can view statistic values reported by the build on the Build parameters page.
+You can view statistic values reported by the build on the __Build Parameters__ page.
 
 <tip>
 
@@ -43,11 +43,11 @@ __To reorder custom charts__ for a project/build configuration, click the __Reor
 __Since TeamCity 10__, manual editing of custom charts has changed. For earlier versions, see this page in the corresponding [documentation](https://confluence.jetbrains.com/display/TW/Documentation).
 </note>
 
-To manually create custom charts to be displayed in the TeamCity web UI, configure the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>`  element is added.
+To manually create custom charts to be displayed in the TeamCity web UI, configure the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>`  element is added.
 
 ### Displaying Custom Chart in TeamCity Web UI
 
-To make TeamCity display a custom chart in the web UI, update the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` configuration file adding a new `<extention>` sub-element to the `<project-extensions>` element.
+To make TeamCity display a custom chart in the web UI, update the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` configuration file adding a new `<extention>` sub-element to the `<project-extensions>` element.
 
 Each extension must have a unique `id` in the project.
 
@@ -59,7 +59,7 @@ Each chart is described by the `<parameters>` element. It must contain the `<par
 
 See the example below:
 
-__Custom build configuration\-level chart in project\-config.xml__
+__Custom build configuration-level chart in `project-config.xml`__
 
 
 ```XML
@@ -190,10 +190,13 @@ Default: empty (all filters are shown).
 
 The format of the y-axis values. Supported formats are:
 
+* `text`, value is treated as float;
+* `integer`, only integer values;
 * `duration`, data should be in milliseconds;
 * `percent`, data should be in percents (from 0 to 100);
 * `percentby1`, the format will show data between 0 and 1 as percents (from 0 to 100);
-* `size`, data should be in bytes.  If no format is specified, the numeric format is used.
+* `size`, data should be in bytes.  
+If no format is specified, the numeric format is used.
 
 </td></tr></table>
 
