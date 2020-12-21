@@ -3,6 +3,11 @@
 
 ## Changes from 2020.2 to 2020.2.1
 
+### Known Issues
+{id="known-issues-202021"}
+
+* Windows Docker images of the TeamCity server don't allow restarting the server from the UI. See how to [stop and start the server](installing-and-configuring-the-teamcity-server.md#Starting+TeamCity+server) via the command line.
+
 ### Breaking change for Linux Docker images of TeamCity Server: non-root user by default
 
 Following the security practices we've applied to our [Agent Docker images](#Agent+Docker+images+run+under+non-root+user), the __TeamCity Server Docker images for Linux now run under a non-root user by default__.
