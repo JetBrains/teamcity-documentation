@@ -179,7 +179,7 @@ To use a spot fleet in your project:
 1. In [AWS Management Console](https://aws.amazon.com/console/), generate a spot fleet request:
    * Go to __Instances | Spot Requests | Request Spot Instances__.    
    * Specify the required AMI, minimum compute unit, availability zones, and other request details.
-   * Click __JSON config__ to download a JSON file with the spot fleet configuration parameters.    
+   * Click __JSON config__ to download a JSON file with the spot fleet configuration parameters. Note that only fields from the [`SpotFleetRequestConfigData`](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html) class are supported.    
 
    <img src="SpotFleetConfigButton.png" width="600" alt="Spot fleet config generation button in Amazon"/>
    
