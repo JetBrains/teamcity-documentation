@@ -23,14 +23,13 @@ If you have a TFVC root configured, TeamCity will suggest configuring the [Team 
 
 TeamCity features the [cross-platform TFS integration](https://blog.jetbrains.com/teamcity/2015/12/teamcity-cross-platform-tfs-support/), which works on Linux, macOS, and Windows platforms. Without installing additional software, TeamCity servers and build agents can interact with Team Foundation Servers 2012 or later, and Azure DevOps Services.
 
-The built\-in TFS plugin can work in two modes: the default and cross\-platform. The working mode is based on the availability of Team Explorer (default mode): if it is not present, the plugin falls back from the default to cross\-platform mode. 
+The built-in TFS plugin can work in two modes: the default and cross-platform. The working mode is based on the availability of Team Explorer (default mode): if it is not present, the plugin falls back from the default to cross-platform mode. 
 
 When detecting the Team Explorer version, TeamCity checks [.NET GAC](https://msdn.microsoft.com/en-us/library/yf1d93sz.aspx) and the following paths:
 * `Windows x86: %CommonProgramFiles%\Microsoft Shared\Team Foundation Server\%version_number%`
 * `Windows x64: %CommonProgramFiles(x86)%\Microsoft Shared\Team Foundation Server\%version_number%`
 
-
-To enforce the cross\-platform mode on TeamCity, set the `teamcity.tfs.mode=java` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) or [build configuration parameter](configuring-build-parameters.md).
+To enforce the cross-platform mode on TeamCity, set the `teamcity.tfs.mode=java` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) or [build configuration parameter](configuring-build-parameters.md).
 
 ## TFS Settings
 
@@ -92,7 +91,7 @@ Username
 <td>
 
 Specify a user to access Team Foundation Server. This can be a username or `DOMAIN\UserName` string.   
-Use blank to let TFS select a user account that is used to run the TeamCity Server (or Agent for the agent\-side checkout).
+Use blank to let TFS select a user account that is used to run the TeamCity Server (or Agent for the agent-side checkout).
 
 
 </td></tr><tr>
@@ -108,12 +107,9 @@ Password
 
 Enter the password of the user entered above
 
-
 </td></tr></table>
 
 Learn more about authentication in [Azure DevOps](#teamFoundationServerLive).
-
-
 
 ## Agent-Side Checkout
 
@@ -157,18 +153,14 @@ When the option is enabled, TeamCity will call TFS to update workspace rewriting
 
 Normally, there is no need to do a forced update for every build. But, if you suspect that TeamCity is not getting the latest version from the repository, you can use this option.
 
-<note>
-
-TFS does not allow several workspaces on a machine mapped to the same directory. If it happens, the TeamCity TFS agent\-side checkout will attempt to remove intersecting workspaces to create a new workspace that matches the specified VCS root and checkout rules.
+TFS does not allow several workspaces on a machine mapped to the same directory. If it happens, the TeamCity TFS agent-side checkout will attempt to remove intersecting workspaces to create a new workspace that matches the specified VCS root and checkout rules.
 
 Note that it can fail to remove workspaces created by another user, and in this case you need to remove such workspaces manually.
 
-It is recommended to use checkout rules of the format below to differentiate local mappings:
+To differentiate local mappings, it is recommended to use checkout rules in the following format:
 
 * `$/root1 => /root1`
 * `$/root2 => /root2`
-
-</note>
 
 <anchor name="TeamFoundationServer-azure-devops"/>
 
@@ -319,11 +311,8 @@ To enable usage of [Team Foundation Proxy](https://www.visualstudio.com/en-us/do
 Example:
 
 ```Plain Text
- TFSPROXY=https://tfs-proxy:8081
- 
+TFSPROXY=https://tfs-proxy:8081
 ```
-
-
 
 ## HTTP Proxy Server Configuration
 
@@ -333,7 +322,7 @@ To interact with the TFS server, the proxy server settings specified for the use
 
 ### Cross-Platform Working Mode
 
-The default Java proxy server settings specified for the TeamCity server or agent will be used in the TFS integration. On the TeamCity server, [internal properties or Java options](configuring-teamcity-server-startup-properties.md) can be used. On the TeamCity agent, [build agent configuration](build-agent-configuration.md) or [Java options](configuring-build-agent-startup-properties.md) can be used. The TeamCity\-TFS integration supports the following options:
+The default Java proxy server settings specified for the TeamCity server or agent will be used in the TFS integration. On the TeamCity server, [internal properties or Java options](configuring-teamcity-server-startup-properties.md) can be used. On the TeamCity agent, [build agent configuration](build-agent-configuration.md) or [Java options](configuring-build-agent-startup-properties.md) can be used. The TeamCity-TFS integration supports the following options:
 
 
 ```Plain Text
@@ -344,5 +333,4 @@ https.proxyHost
 https.proxyPort
 http.proxyUser
 http.proxyPassword
-
 ```

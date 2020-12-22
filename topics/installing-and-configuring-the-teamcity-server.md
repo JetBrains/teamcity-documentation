@@ -112,7 +112,6 @@ If TeamCity is installed using the `.exe` or `.tar.gz` distributions, the TeamCi
    * `stop n -force` – sends the stop command to the TeamCity server, waits up to n seconds for the process to end, and terminates the server process if it did not stop.
 
 <tip>
-
 The TeamCity server will restart automatically if the server process exits (crashes or is killed) without invoking `teamcity-server stop` script.
 </tip>
 
