@@ -8,11 +8,8 @@ The server clean-up configuration is available in __Administration | Server Admi
 Clean-up rules, related to specific projects, are configured in __Project Settings | Clean-up Rules__. These rules define what data to clean and what to preserve. They can be assigned to a project or build configuration.   
 It is recommended to configure clean-up rules to remove obsolete builds and their artifacts, purge unnecessary data from the database and caches in order to free disk space, remove builds from the TeamCity UI and reduce the TeamCity workload.
 
-<tip>
 
-If you want to apply one simple clean-up rule to all projects on the server, you can create it on a Root project level. To get predictable clean-up results, make sure to read about the [rules' specifics](#Clean-up+Rules) before configuring them.
-
-</tip>
+>If you want to apply one simple clean-up rule to all projects on the server, you can create it on a Root project level. To get predictable clean-up results, make sure to read about the [rules' specifics](#Clean-up+Rules) before configuring them.
 
 Clean-up deletes the data stored under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` and in the database. Also, during the clean-up, the server performs various maintenance tasks (for example, resets VCS full patch caches).
 
@@ -53,7 +50,7 @@ During clean-up, TeamCity reports the progress. If you need, you can stop the cl
 
 The _clean-up rules_ define how to clean data in the current project, its subprojects and build configurations.
 
-The __Project Settings | Clean-up Rules__ page of the project settings allows viewing and managing the clean-up rules of the current project and its build configurations. If this project has subprojects, you can optionally display their rules as well.
+The __Clean-up Rules__ page of the [project settings](creating-and-editing-projects.md) allows viewing and managing the clean-up rules of the current project and its build configurations. If this project has subprojects, you can optionally display their rules as well.
 
 There are two types of project clean-up rules:
 
@@ -142,7 +139,7 @@ TeamCity processes a keep rule in the following order:
 
 Notes on the keep rule behavior:
 * If several tags are entered, the rule will apply to all builds marked with any of these tags.
-* In all "_Days since..._" range options, TeamCity doesn't consider fractional hours of a certain date and applies a rule only to builds that started in a time interval from the selected day (from midnight until 11:59 PM) and back to the starting day of the affected range (the selected day minus the configured limit of days).
+* In all "_Days since_" range options, TeamCity doesn't consider fractional hours of a certain date and applies a rule only to builds that started in a time interval from the selected day (from midnight until 11:59 PM) and back to the starting day of the affected range (the selected day minus the configured limit of days).
 
 ## Deleted Build Configurations Clean-up
 
