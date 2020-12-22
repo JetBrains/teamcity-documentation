@@ -162,6 +162,8 @@ To differentiate local mappings, it is recommended to use checkout rules in the 
 * `$/root1 => /root1`
 * `$/root2 => /root2`
 
+>Depending on the [working mode](#HTTP+Proxy+Server+Configuration), TFS checkout rules can be either case-sensitive (Java) or case-insensitive (.NET).
+
 <anchor name="TeamFoundationServer-azure-devops"/>
 
 <anchor name="VisualStudioOnline"/>
