@@ -195,7 +195,8 @@ The format of the y-axis values. Supported formats are:
 * `duration`, data should be in milliseconds;
 * `percent`, data should be in percents (from 0 to 100);
 * `percentby1`, the format will show data between 0 and 1 as percents (from 0 to 100);
-* `size`, data should be in bytes.  
+* `size`, data should be in bytes.
+
 If no format is specified, the numeric format is used.
 
 </td></tr></table>
@@ -1040,7 +1041,8 @@ Milliseconds
 
 If the predefined build metrics do not cover your needs, you can report custom metrics to TeamCity from your build script and use them to create a custom chart. There are two ways to report custom metrics to TeamCity:
 * using [service messages](service-messages.md) from your build,
-* or (obsolete approach) using the [`teamcity-info.xml`](teamcity-info-xml.md) file.   
+* or (obsolete approach) using the [`teamcity-info.xml`](teamcity-info-xml.md) file.
+
 Note that custom value keys should be unique and should not interfere with value keys predefined by TeamCity.
 
 <seealso>

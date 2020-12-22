@@ -103,13 +103,15 @@ You can view all build configurations of a project on the __Project Overview__ p
 
 ## Configuring Settings
 
-Build configuration settings are described on the respective pages inside this section.
+When you select a build configuration from the list of build configurations, TeamCity displays the __Build Configuration Home__ page where you can preview its recent build results. To access the build configuration's settings, click __Edit Configuration Settings__ in the upper right corner of the screen.
 
-Note that editing via the TeamCity web UI will be disabled for build configurations created via the [REST API](rest-api.md).
+Different build configuration settings are described in the respective articles inside this section.
+
+>Note that editing via the TeamCity web UI will be disabled for build configurations created via the [REST API](rest-api.md).
 
 ## Actions in Build Configuration Settings
 
-Use the __Actions__ menu when editing a build configuration to
+Use the __Actions__ menu, located in the upper right corner of the screen, when editing a build configuration to
 * [pause/activate a build configuration](build-configuration.md#Pausing+%2F+Activating+a+single+build+configuration)
 * [copy/move/delete a build configuration](copy-move-delete-build-configuration.md)
 * [attach a build configuration to a template](build-configuration-template.md#Associating+build+configurations+with+templates)
