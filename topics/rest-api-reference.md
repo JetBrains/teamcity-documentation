@@ -1,5 +1,8 @@
 [//]: # (title: REST API Reference)
 [//]: # (auxiliary-id: REST API Reference)
+
+>This document is no longer supported. Please see the new version of the REST API documentation [here](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).
+{type="warning"}
  
 ## Projects and Build Configuration/Templates Lists
 
@@ -508,7 +511,6 @@ DELETE http://teamcity:8111/app/rest/cloud/instances/<instanceLocator>
 
 </table>
 
-
 ## Build Configuration And Template Settings
 
 <table>
@@ -829,6 +831,7 @@ Other supported [dimensions](rest-api.md#Locator) are (these are in _experimenta
  
 [//]: # (Internal note. Do not delete. "REST APId269e1377.txt")    
  
+
 ## Build Requests
 
 <table>
@@ -2833,7 +2836,7 @@ Icon that represents a build status:
 <tr><td width="200"></td><td></td></tr>
 <tr><td>
 
-An .svg icon (__recommended__)
+An `.svg` icon (__recommended__)
 
 </td>
 
@@ -2849,7 +2852,7 @@ GET http://teamcity:8111/app/rest/builds/<buildLocator>/statusIcon.svg
 
 <tr><td>
 
-A .png icon
+A `.png` icon
 
 </td>
 
