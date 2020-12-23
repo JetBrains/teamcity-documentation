@@ -2,6 +2,7 @@
 [//]: # (auxiliary-id: REST API)
 
 >This document is no longer supported. Please see the new version of the REST API documentation [here](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).
+>
 {type="warning"}
 
 TeamCity provides a REST API for integrating external applications and creating script interactions with the TeamCity server.

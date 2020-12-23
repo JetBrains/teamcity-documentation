@@ -2,6 +2,7 @@
 [//]: # (auxiliary-id: REST API Reference)
 
 >This document is no longer supported. Please see the new version of the REST API documentation [here](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).
+>
 {type="warning"}
  
 ## Projects and Build Configuration/Templates Lists
