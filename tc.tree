@@ -389,8 +389,9 @@
          </toc-element>
          <toc-element id="reporting-test-metadata.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="accessing-server-by-http.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="rest-api.md" show-structure-for="chapter" show-structure-depth="4">
-            <toc-element id="rest-api-reference.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element toc-title="REST API Documentation" href="https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html"/>
+         <toc-element id="rest-api.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
+            <toc-element id="rest-api-reference.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
          </toc-element>
          <toc-element id="including-third-party-reports-in-the-build-results.md"/>
          <toc-element id="custom-chart.md" show-structure-for="chapter" show-structure-depth="4">
