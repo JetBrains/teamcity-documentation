@@ -53,7 +53,7 @@ Learn more on [our website](https://www.jetbrains.com/teamcity/cloud/) or in the
  ### Extend and Develop 
      
 * [Customize your TeamCity](extending-teamcity.md) 
-* [REST API](rest-api.md)
+* [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
 * [Available TeamCity Plugins](https://plugins.jetbrains.com/?teamcity) 
 * [Develop your Own Plugin](https://plugins.jetbrains.com/docs/teamcity/)
     

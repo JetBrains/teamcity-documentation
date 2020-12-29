@@ -107,7 +107,7 @@ When you select a build configuration from the list of build configurations, Tea
 
 Different build configuration settings are described in the respective articles inside this section.
 
->Note that editing via the TeamCity web UI will be disabled for build configurations created via the [REST API](rest-api.md).
+>Note that editing via the TeamCity web UI will be disabled for build configurations created via the [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).
 
 ## Actions in Build Configuration Settings
 

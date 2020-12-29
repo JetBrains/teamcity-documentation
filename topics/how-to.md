@@ -1068,7 +1068,7 @@ Also there is an ability to delete many builds from the build queue in a single 
 ## Automatically create or change TeamCity build configuration settings
 
 If you need a level of automation and web administration UI does not suite your needs, there several possibilities:
-* use [REST API](rest-api.md)
+* use [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
 * change configuration files directly on disk (see more at `<[TeamCity Data Directory](teamcity-data-directory.md)>`)
 * write a TeamCity Java plugin that will perform the tasks using [open API](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).
 ## Attach Cucumber Reporter to Ant Build
@@ -1123,7 +1123,7 @@ http://<your TeamCity server>/app/rest/buildTypes/id:<ID of build configuration>
 
 The build number will be returned as a plain\-text response.   
 For `<ID of build configuration>`, see [Identifier](identifier.md).   
-This functionality is provided by [REST API](rest-api.md)
+This functionality is provided by [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
 
 ## Set up Deployment for My Application in TeamCity
 

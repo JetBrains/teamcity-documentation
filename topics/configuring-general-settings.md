@@ -45,7 +45,7 @@ Build Configuration ID
 
 A unique [ID](identifier.md) of the configuration across all build configurations and templates in the system automatically generated from the build configuration name, but can also be set manually.    
 Make sure you give a globally unique id to the build configuration and prefix it with the project ID.   
-After a build configuration is created, its ID can be changed, and it is highly recommended to make corresponding changes to the bookmarked links to the web UI and calls to [REST API](rest-api.md) using the ID.
+After a build configuration is created, its ID can be changed, and it is highly recommended to make corresponding changes to the bookmarked links to the web UI and calls to [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) using the ID.
 
 </td></tr><tr>
 

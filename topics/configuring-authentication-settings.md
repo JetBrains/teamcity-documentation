@@ -44,7 +44,7 @@ The simple mode (default) allows you to select presets created for the most comm
 * Default ([built-in authentication](#Built-in+Authentication) – [Token-based](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
 * [LDAP](ldap-integration.md)
 * Active directory ([LDAP](ldap-integration.md) with [NTLM](ntlm-http-authentication.md) and [Token-based](rest-api-reference.md#User+Access+Tokens))
-* Microsoft Windows Domain ([NTLM](ntlm-http-authentication.md), [Token-based](rest-api-reference.md#User+Access+Tokens) and [Basic HTTP](rest-api.md#REST+Authentication))
+* Microsoft Windows Domain ([NTLM](ntlm-http-authentication.md), [Token-based](rest-api-reference.md#User+Access+Tokens) and [Basic HTTP](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#REST+Authentication))
 
 ### Advanced Mode
 

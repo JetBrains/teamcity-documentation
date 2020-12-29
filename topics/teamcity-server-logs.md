@@ -177,7 +177,7 @@ contains [clean-up](clean-up.md)\-related log
 
 <td>
 
-(off by default) [REST-API](rest-api.md) related logging
+(off by default) [REST-API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) related logging
 
 
 </td></tr><tr>

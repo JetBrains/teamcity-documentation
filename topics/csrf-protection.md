@@ -22,7 +22,7 @@ If you need to use cookies, your API will have to obtain a CSRF token first and 
 
 ## Implications for CORS clients
 
-To use CORS request, configure the CORS support as described [here](rest-api.md#CORS-support). This configuration will be enough for `GET` requests.   
+To use CORS request, configure the CORS support as described [here](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#CORS-support). This configuration will be enough for `GET` requests.   
 If you need to send `POST/PUT/DELETE` requests via CORS, you should obtain a CSRF token using the `authenticationTest.html?csrf` call, and then provide this token with your modifying HTTP requests.
 
 ## Troubleshooting

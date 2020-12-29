@@ -460,7 +460,7 @@ GET http://teamcity:8111/app/rest/cloud/instances
 
 <tip>
 
-To filter the listing results, you can add a [locator](rest-api.md#Locator) to the request.
+To filter the listing results, you can add a [locator](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#Locator) to the request.
 
 </tip>
 
@@ -822,7 +822,7 @@ The most frequently used values for `<buildTypeLocator>` are `id:<buildConfigura
  
 __Since TeamCity 2017.2__, the _experimental_ [type](build-configuration.md#Build+Configuration+Types) locator is supported with one of the values: `regular`, `composite`, or `deployment`.
  
-Other supported [dimensions](rest-api.md#Locator) are (these are in _experimental_ state):
+Other supported [dimensions](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#Locator) are (these are in _experimental_ state):
 * `internalId` – internal ID of the build configuration.
 * `project` – `<projectLocator>` to limit the build configurations to those belonging to a single project.
 * `affectedProject` – `<projectLocator>` to limit the build configurations under a single project (recursively).
@@ -893,7 +893,7 @@ GET http://teamcity:8111/app/rest/buildTypes?locator=affectedProject:(id:Project
  
 ### Build Locator
  
-Using a [locator](rest-api.md#Locator) in build-related requests, you can filter the builds to be returned in the build-related requests. It is referred to as _build locator_ in the scope of REST API.
+Using a [locator](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#Locator) in build-related requests, you can filter the builds to be returned in the build-related requests. It is referred to as _build locator_ in the scope of REST API.
  
 For some requests, a default filtering is applied which returns only "normal" builds (finished builds which are not canceled, not failed-to-start, not personal, and on default branch (in branched build configurations)), unless those types of builds are specifically requested via the locator. To turn off this default filter and process all builds, add the `defaultFilter:false` dimension to the build locator. Default filtering varies depending on the specified locator dimensions. For example, when `agent` or `user` dimensions are present, personal, canceled, and failed to start builds are included into the results.
  
@@ -924,7 +924,7 @@ The list of supported build locator dimensions:
 * `queuedDate/startDate/finishDate:(date:<time-date>,build:<build locator>,condition:<before/after>)` – filter builds based on the time specified by the build locator, for example for the builds finished after November 23, 2017, 20:34:46, GMT\+1 timezone use: `finishDate:(date:20171123T203446%2B0100,condition:after)`.
 * `count:<number>` – serve only the specified number of builds.
 * `start:<number>` – list the builds from the list starting from the position specified (zero\-based).
-* `lookupLimit:<number>` – limit processing to the latest N builds only (the default is 5000). If none of the latest N builds match the other specified criteria of the build locator, 404 response is returned for single build request and empty collection for multiple builds request. See the [related note](rest-api.md#API+Client+Recommendations).
+* `lookupLimit:<number>` – limit processing to the latest N builds only (the default is 5000). If none of the latest N builds match the other specified criteria of the build locator, 404 response is returned for single build request and empty collection for multiple builds request. See the [related note](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#API+Client+Recommendations).
  
 ### Queued Builds
 
@@ -1377,7 +1377,7 @@ GET http://teamcity:8111/app/rest/builds/buildType:(id:Build_Intallers),tag:rele
  
 #### Authentication
  
-If you download artifacts from within a TeamCity build, consider [using values](rest-api.md#REST+Authentication) of `teamcity.auth.userId/teamcity.auth.password` system properties as credentials for the download artifacts request: this way TeamCity will have a way to record that one build used artifacts of another and will display it on the build's __Dependencies__ tab.
+If you download artifacts from within a TeamCity build, consider [using values](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#REST+Authentication) of `teamcity.auth.userId/teamcity.auth.password` system properties as credentials for the download artifacts request: this way TeamCity will have a way to record that one build used artifacts of another and will display it on the build's __Dependencies__ tab.
  
 ### Other Build Requests
  
@@ -2795,7 +2795,7 @@ GET http://teamcity:8111/app/rest/buildTypes/<locator>/parameters/<name>
  
 ```
 
-Accepts/returns plain-text, XML, JSON. Supply the [relevant Content-Type header](rest-api.md#Response+Formats) to the request.
+Accepts/returns plain-text, XML, JSON. Supply the [relevant Content-Type header](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#Response+Formats) to the request.
 
 </td></tr>
 
