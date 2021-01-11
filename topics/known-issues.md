@@ -183,7 +183,7 @@ Make sure you use the latest update for Java 8 installation available for your p
 
 ## Upgrading IntelliJ IDEA May Affect Active Pre-Tested Commits
 
-Before you upgrade to IntelliJ IDEA X (or other IntelliJ X platform products), make sure you do not have active pre\-tested commits, otherwise they will not be able to be committed after upgrade. This is only relevant if you use directory\-based IDEA project (project files are stored under `.idea` directory).
+Before you upgrade to IntelliJ IDEA X (or other IntelliJ X platform products), make sure you do not have active pre-tested commits, otherwise they will not be able to be committed after upgrade. This is only relevant if you use directory-based IDEA project (project files are stored under `.idea` directory).
 
 ## Other Java Applications Running on the Same Server
 
@@ -353,7 +353,7 @@ Any of the workarounds listed below will make the connection between TeamCity an
     The `jsse.enableCBCProtection` Java system property is also available in all _OpenJDK_ 8 versions and _IBM J9_ [8.0.0 SR1](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.security.component.80.doc/security-component/jsse2Docs/beast.html) and later.   
     Secure connection between _TeamCity_ and _Microsoft SQL Server_ would be stable but still vulnerable to [CVE-2011-3389](https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3389) also known as _BEAST_.
 * Fall back to a stream cipher (which is not susceptible to _BEAST_) such as `RC4_128`. This will render the connection vulnerable to [CVE-2015-2808](https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2015-2808).
-* Consider running with the temporarily disabled antivirus software, but ensure it doesn't compromise the security of your setup. For example, see [this issue](http://jetbrains.net/tracker/issue/TW-7138).
+* Consider running with the temporarily disabled antivirus software, but ensure this doesn't compromise the security of your setup. For example, see [this issue](http://jetbrains.net/tracker/issue/TW-7138).
 
 ## Distorted Configuration Window During Agent Reinstallation
 
