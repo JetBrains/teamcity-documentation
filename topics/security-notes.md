@@ -1,11 +1,11 @@
 [//]: # (title: Security Notes)
 [//]: # (auxiliary-id: Security Notes)
 
->The following notes are provided for a reference only and are not meant to be complete or accurate in their entirety.
+>The following notes are provided for a reference only and are not guaranteed to be complete or entirely accurate. We suggest that you follow the best security practices when using TeamCity for production purposes. This document contains our recommendations and points to consider when configuring your CI/CD pipeline with TeamCity.
 >
 {type="warning"}
 
-TeamCity is developed with security concerns in mind, and reasonable efforts are made to ensure the system invulnerable to different types of attacks. We work with third parties on assessing TeamCity security using security scanners and penetration tests.   
+TeamCity is developed with security concerns in mind, and reasonable efforts are made to ensure the system is invulnerable to different types of attacks. We work with third parties on assessing TeamCity security using security scanners and penetration tests.   
 We aim to promptly address newly discovered security issues in the nearest bugfix releases for the most recent TeamCity major version. It is recommended to upgrade to newly released TeamCity versions as soon as they become available as they can contain security-related fixes.  
 However, the general assumption and __recommended setup is to deploy TeamCity in a trusted environment__ with no possibility for it to be accessed by malicious users.
 
