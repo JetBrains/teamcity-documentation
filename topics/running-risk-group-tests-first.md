@@ -45,19 +45,17 @@ Some cases when automatic tests reordering will not work:
 
 #### TestNG
 
-##### TestNG versions less than 5.14:
+__TestNG versions earlier than 5.14__:
 1. TeamCity provides tests that should be run first (test classes).
 2. When a TestNG task starts, TeamCity checks whether it includes these tests.
 3. If at least one test is included, TeamCity generates a new xml file with suite containing included tests only and processes it before all other files. It also patches other files to exclude tests added to the automatically generated file.
 4. After that TestNG starts and runs as usual.
 
-<note>
-
-Some cases when automatic tests reordering will not work
+<note>Some cases when automatic tests reordering will not work
 if &lt;package/&gt; element is used in the TestNG XML suite.
 </note>
 
-##### TestNG versions 5.14 or newer:
+__TestNG versions 5.14 or later__:
 1. TeamCity provides tests that should be run first (test classes).
 2. When a TestNG starts, TeamCity injects custom listener which will reorder tests if needed.
 3. Before starting tests TestNG asks listener to reorder tests execution order list. If some test requires reordering, TeamCity listener moves it to to the start of the list.

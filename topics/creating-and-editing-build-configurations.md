@@ -53,7 +53,7 @@ You can create a build configuration using a VCS URL:
     * If you have a GitHub connection configured, follow the steps below.
 2. On the __Create Build Configuration From GitHub__ page, select a repository. TeamCity will verify the repository [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections). If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required,  modify the names and click __Proceed__.
-4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects. On the __Auto-detected Build Steps__ page, select the step(s) to use in your build configuration. Click __Use selected__. If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
+4. TeamCity will add a VCS build trigger and attempt to [autodetect build steps](configuring-build-steps.md#Autodetecting+build+steps): Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects. On the __Auto-detected Build Steps__ page, select the step(s) to use in your build configuration. Click __Use selected__. If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review the suggested settings ![suggestedSettings.PNG](suggestedSettings.PNG) and configure required ones.
 
 ## Creating New Build Configuration pointing to Bitbucket Cloud
@@ -103,13 +103,15 @@ You can view all build configurations of a project on the __Project Overview__ p
 
 ## Configuring Settings
 
-Build configuration settings are described on the respective pages inside this section.
+When you select a build configuration from the list of build configurations, TeamCity displays the __Build Configuration Home__ page where you can preview its recent build results. To access the build configuration's settings, click __Edit Configuration Settings__ in the upper right corner of the screen.
 
-Note that editing via the TeamCity web UI will be disabled for build configurations created via the [REST API](rest-api.md).
+Different build configuration settings are described in the respective articles inside this section.
+
+>Note that editing via the TeamCity web UI will be disabled for build configurations created via the [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).
 
 ## Actions in Build Configuration Settings
 
-Use the __Actions__ menu when editing a build configuration to
+Use the __Actions__ menu, located in the upper right corner of the screen, when editing a build configuration to
 * [pause/activate a build configuration](build-configuration.md#Pausing+%2F+Activating+a+single+build+configuration)
 * [copy/move/delete a build configuration](copy-move-delete-build-configuration.md)
 * [attach a build configuration to a template](build-configuration-template.md#Associating+build+configurations+with+templates)

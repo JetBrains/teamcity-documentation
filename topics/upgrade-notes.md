@@ -1,12 +1,39 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2020.2 to 2020.2.1
+
+### Known Issues
+{id="known-issues-202021"}
+
+* Windows Docker images of the TeamCity server don't allow restarting the server from the UI. See how to [stop and start the server](installing-and-configuring-the-teamcity-server.md#Starting+TeamCity+server) via the command line.
+
+### Breaking change for Linux Docker images of TeamCity Server: non-root user by default
+
+Following the security practices we've applied to our [Agent Docker images](#Agent+Docker+images+run+under+non-root+user), the __TeamCity Server Docker images for Linux now run under a non-root user by default__.
+
+When trying to run a Linux image under a default user, you will get the "_Permission denied_" error. To prevent it, you need to change the ownership over the host data directories: run `chown -R 1000:1000` applied to the required volumes. __For large directories, this operation may take a long time and slow down the disk performance__.   
+Alternatively, you can start the container under the root user by passing the `-u 0` parameter to the `docker run` command. This is a quick workaround which allows saving time on changing the directories' ownership. However, we suggest that you stick to the `chown` approach in the long term.
+
+### No auto prefix for dotnet run command line parameters
+
+Since this version, the [.NET](net.md) build runner __does not apply `--` before the `dotnet run` parameters__. Previously, the runner added this prefix automatically which made it impossible to pass the custom options to the `run` command. To fix this, we've disabled thr previous behavior.  
+Unfortunately, the affected .NET build steps cannot be converted automatically on upgrading. If any of your steps pass arguments to the running .NET application, please make sure to alter these steps and prepend the respective parameters with `--`.
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-202021"}
+
+* Bundled Tomcat has been updated to version 8.5.61.
+* Bundled JaCoCo version has been updated to 0.8.6.
+
 ## Changes from 2020.1.x to 2020.2
 
 ### Known Issues
 {id="known-issues-20202"}
 
 * If upgrade fails with an error in OptimizeAndCleanupIdsGroupsTableConverter, please apply the workaround described in [this issue](https://youtrack.jetbrains.com/issue/TW-68938#focus=Comments-27-4538713.0-0).
+* TeamCity agent Docker images with the `latest` tag do not bundle Docker.  
+  To be able to run Docker in a TeamCity 2020.2 agent, download the `teamcity-agent` image with the `{TEAMCITY_VERSION}-linux-sudo` tag instead. More information is available in our [Docker Hub documentation](https://hub.docker.com/r/jetbrains/teamcity-agent/).
 
 ### New Header by Default
 
@@ -42,6 +69,7 @@ On upgrading, this responsibility will be automatically enabled on all your seco
    * On Linux server images: to Amazon Corretto x64 v.11.0.9.11.
    * On Windows and Linux agent images: to Amazon Corretto x64 v.8.272.10.3
 * Java bundled in the TeamCity server and agent Windows installers has been updated to version 11.0.9.11.2.
+* Bundled Tomcat has been updated to version 8.5.57.
 * The SAC Windows image in the TeamCity server Docker containers has been updated to version 2004. Windows LTS version is 1809, as in TeamCity 2020.1.
 * The Linux image in TeamCity server Docker containers has been updated to version 20.04 (LTS).
 * Bundled dotCover and ReSharper CLT have been upgraded to version 2020.2.4.
@@ -54,8 +82,7 @@ If you were actively using the VS 2003 runner and cannot easily migrate to the .
 
 ### Other updates
 
-* Since version 2020.1, TeamCity agent Docker images with the `latest` tag run under a non-root user. As it is not possible to launch Docker on these images, preinstalled Docker has been removed since version 2020.2.    
-To be able to run Docker, download the `teamcity-agent` image with the `{TEAMCITY_VERSION}-linux-sudo` tag instead. More information is available in our [Docker Hub documentation](https://hub.docker.com/r/jetbrains/teamcity-agent/).
+* When detecting [GitHub issues](github.md), TeamCity now filters out pull requests that have no issues assigned to them. If you need to display such independent pull requests in the issue log, you can disable this filter by setting the `teamcity.issues.github.filter.pull.requests=false` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 * [Email Notifier](notifications.md#Email+Notifier) now uses the same versions of the TLS protocol as supported by the current TeamCity server's JVM.
 
 ## Changes from 2020.1.4 to 2020.1.5
@@ -183,9 +210,9 @@ The [Kubernetes Support plugin](https://plugins.jetbrains.com/plugin/9818-kubern
 
 ### Limitation of CORS support for writing operations
 
-TeamCity improves the security of REST API integration mechanisms by introducing CSRF tokens. This change will not affect the behavior of custom integration scripts unless they rely on Cross-Origin Resource Sharing (CORS) in writing operations and the `rest.cors.origins` internal property is [enabled in TeamCity](rest-api.md#CORS-support) (it is disabled by default).
+TeamCity improves the security of REST API integration mechanisms by introducing CSRF tokens. This change will not affect the behavior of custom integration scripts unless they rely on Cross-Origin Resource Sharing (CORS) in writing operations and the `rest.cors.origins` internal property is [enabled in TeamCity](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#CORS-support) (it is disabled by default).
 
-Previously, CSRF protection was presented in TeamCity with the verification of `Origin/Referer` headers of HTTP requests. To improve TeamCity CSRF protection, this method has been disabled in favor of a more secure one – CSRF tokens. Since this release, TeamCity stops supporting the CORS mechanism for `POST/PUT/DELETE` REST API requests. Cross-origin GET requests' headers are processed as before and still require [CORS configuration](rest-api.md#CORS-support).
+Previously, CSRF protection was presented in TeamCity with the verification of `Origin/Referer` headers of HTTP requests. To improve TeamCity CSRF protection, this method has been disabled in favor of a more secure one – CSRF tokens. Since this release, TeamCity stops supporting the CORS mechanism for `POST/PUT/DELETE` REST API requests. Cross-origin GET requests' headers are processed as before and still require [CORS configuration](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#CORS-support).
 
 If necessary, you can enforce verification of `Origin/Referer` headers for writing CORS operations by setting the `teamcity.csrf.paranoid=false` internal property. Note that this is a transitory and less secure solution: we strongly recommend refactoring your existing requests so they comply with the new security policy and provide a token within a CSRF header or parameter. A CSRF token can be obtained via the `GET https://your-server/authenticationTest.html?csrf` request and provided via the `X-TC-CSRF-Token` HTTP header to the write CORS requests.
 
@@ -1146,9 +1173,7 @@ Bundled version of Maven 3.2.x updated to 3.2.5.
 
 #### Performance Monitor  
 
-###### Note on permissions: to [monitor performance](performance-monitor.md) of a build agent run as a Windows [service](https://confluence.jetbrains.com/display/TCD9/Setting+up+and+Running+Additional+Build+Agents#SettingupandRunningAdditionalBuildAgents-BuildAgentasaWindowsService), make sure the user starting the agent is member of the Performance Monitor Users group.
-
-  
+Note on permissions: to [monitor performance](performance-monitor.md) of a build agent run as a Windows [service](https://confluence.jetbrains.com/display/TCD9/Setting+up+and+Running+Additional+Build+Agents#SettingupandRunningAdditionalBuildAgents-BuildAgentasaWindowsService), make sure the user starting the agent is member of the Performance Monitor Users group.
 
 ## Changes from 9.1.4 to 9.1.5
 
@@ -1250,7 +1275,7 @@ Bundled Jacoco coverage library updated to version 0.7.5
 Perforce VCS Roots with disabled ticket authentication won't run 'p4 login' operation anymore if password authentication is disabled on the Perforce server.   
 I.e. if password authentication is disabled, "Use ticked\-based authentication" option must be enabled on the VCS Root. [TW-42818](https://youtrack.jetbrains.com/issue/TW-42818)
 
- 
+<anchor name="UpgradeNotes-Changesfrom9.0.xto9.1"/>
 
 ## Changes from 9.0.x to 9.1
 

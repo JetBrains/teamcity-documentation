@@ -38,6 +38,8 @@ TeamCity displays a notification on the availability of the new TeamCity version
 
 TeamCity displays a notification if agents are not running the recommended Java 8: this report shows all of the agents running under Java earlier than version 1.8.
 
+<anchor name="ServerHealth-WebSocketconnectionissues"/>
+
 ### WebSocket connection issues
 
 The WebSocket protocol is used to get web UI updated for events, running builds updates and statistics counters.

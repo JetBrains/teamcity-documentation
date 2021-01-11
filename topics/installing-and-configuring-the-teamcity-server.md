@@ -18,9 +18,8 @@ After you have selected one of the [TeamCity installation options](installation.
 * [Windows .exe distribution](#Installing+TeamCity+via+Windows+installation+package) – the executable which provides the installation wizard for Windows platforms and allows installing the server as a Windows service.
 * [.tar.gz distribution](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) – the archive with a "portable" version suitable for all platforms.
 * Docker image – check the instructions at the [image page](https://hub.docker.com/r/jetbrains/teamcity-server/).
-* [.war distribution](#Installing+TeamCity+into+Existing+J2EE+Container) – for experienced users who want to run TeamCity in a separately installed Web application server. Consider using `.tar.gz` distribution instead. `.war` is not recommended to use unless really required (please [let us know](https://confluence.jetbrains.com/display/TW/Feedback) the reasons).
 
-Compared to the `.war` distribution, the `.exe` and `.tar.gz` distributions:
+The `.exe` and `.tar.gz` distributions:
 * Include a Tomcat version which TeamCity is tested with, so it is known to be a working combination. This might not be the case with an external Tomcat.
 * Define additional JRE options which are usually recommended for running the server.
 * Have the [teamcity-server startup script](#Starting+TeamCity+server) which provides several convenience options (for example, separate environment variable for memory settings) and configures TeamCity correctly (for example, `.log4j` configuration).
@@ -75,23 +74,7 @@ We recommend running the TeamCity server under a dedicated user account.
 
 Unpack the `TeamCity<version number>.tar.gz` archive (for example, using the `tar xfz TeamCity<version number>.tar.gz` command under Linux, or the WinZip, WinRar or similar utility under Windows). Use GNU tar to unpack (for example, Solaris 10 tar is reported to truncate too long file names and may cause a `ClassNotFoundException` when using the server after such unpacking. Consider getting GNU tar at [Solaris packages](http://sunfreeware.com/) or using the `gtar xfz` command).
 
-Ensure you have JRE or JDK installed and the `JAVA_HOME` environment variable is pointing to the Java installation directory. Java JDK 1.8.0_16 or later is required.
-
-### Installing TeamCity into Existing J2EE Container
-
-It is __not recommended__ to use the `.war` distribution. Use the [TeamCity `.tar.gz`](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) distribution (bundled with Tomcat web server) instead. If you have important reasons to deploy TeamCity into existing web server and want to use the `.war` distribution, please [let us know](https://confluence.jetbrains.com/display/TW/Feedback) the reasons.   
-See [Supported Platforms and Environments](supported-platforms-and-environments.md#TeamCity+Server) for J2EE container requirements.
-
-1. Make sure your web application server is stopped.
-2. Copy the downloaded `TeamCity<version number>.war` file into the web applications directory of your J2EE container under the `TeamCity.war` name (the name of the file is generally used as a part of the URL) or deploy the `.war` following the documentation of the web server. Make sure there is no other version of TeamCity deployed (for example, do not preserve the old TeamCity web application directory under the web server applications directory).
-3. Ensure the TeamCity web application gets sufficient amount of [memory](#Setting+Up+Memory+settings+for+TeamCity+Server). Increase the memory accordingly if you have other web applications running in the same JVM.
-4. If you are deploying TeamCity to the __Tomcat__ container, add the `useBodyEncodingForURI="true"` attribute to the main `Connector` tag for the server in the `Tomcat/conf/server.xml` file.
-5. If you are deploying TeamCity to __Jetty__ container version &gt; 7.5.5 (including 8.x.x), make sure the system property `org.apache.jasper.compiler.disablejsr199` is set to `true`
-6. Ensure that the servlet container is configured to unpack the deployed war files. Though for most servlet containers it is the default behavior, for some it is not (for example, Jetty version &gt; 7.0.2) and should be explicitly configured. TeamCity is not able to work from a packed `.war`: if started this way, there will be a note on this the logs and UI.
-7. Configure the appropriate [TeamCity Data Directory](teamcity-data-directory.md) to be used by TeamCity. Note that it is recommended to start with an empty TeamCity Data Directory. After completing the installation and performing the first TeamCity server start, the required data (for example, [database settings](setting-up-an-external-database.md#Database+Configuration+Properties) file) can be moved to the directory.
-8. Check/configure the TeamCity [logging properties](teamcity-server-logs.md#General+Logging+Configuration) by specifying the `log4j.configuration` and `teamcity_logs` internal properties.
-9. Restart the server or deploy the application via the servlet container administration interface and access [`http://server:port/TeamCity/`](http://serverport), where `TeamCity` is the name of the `.war` file.
-
+Ensure you have JRE or JDK installed and the `JAVA_HOME` environment variable is pointing to the Java installation directory. Java JDK 1.8.0_161 or later is required.
 
 ### Unattended TeamCity server installation
 
@@ -103,7 +86,7 @@ If you want to get a preconfigured server right away, put files from a previousl
 
 ### Using another Version of Tomcat
 
-To use another version of the Tomcat web server instead of the one bundled in the `.tar.gz` and `.exe` distributions), you can either use the [.war TeamCity distribution](#Installing+TeamCity+into+Existing+J2EE+Container) (not recommended) or perform the Tomcat upgrade/patch for TeamCity installed from the `.exe` or `.tar.gz` distributions. 
+To use another version of the Tomcat web server instead of the one bundled in the `.tar.gz` and `.exe` distributions), you can perform the Tomcat upgrade/patch. 
 
 For the latter, you might want to:
 * Backup the current [TeamCity home](teamcity-home-directory.md).
@@ -129,15 +112,12 @@ If TeamCity is installed using the `.exe` or `.tar.gz` distributions, the TeamCi
    * `stop n -force` – sends the stop command to the TeamCity server, waits up to n seconds for the process to end, and terminates the server process if it did not stop.
 
 <tip>
-
 The TeamCity server will restart automatically if the server process exits (crashes or is killed) without invoking `teamcity-server stop` script.
 </tip>
 
 By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/). See the information [below](#Changing+Server+Port) for changing the server port.
 
 If you need to pass special properties to the server, refer to [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md).
-
-If TeamCity is installed into an existing web server (`.war` distribution), start the server according to its documentation. Make sure you configure TeamCity-specific logging-related properties and pass suitable [memory options](#Setting+Up+Memory+settings+for+TeamCity+Server).
 
 ### Autostart TeamCity server on macOS
 
@@ -258,8 +238,7 @@ If you also run a TeamCity agent from the \<[TeamCity Home](teamcity-home-direct
 
 [//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e906.txt")
 
-* If you use a different Java version, specified via an environment variable (`TEAMCITY_JRE`, `JRE_HOME`, or `JAVA_HOME`), make sure it is available for the process launching the TeamCity server (it is recommended to set a global OS environment variable and restart the system). The variable should point to the home directory of the installed JRE or JVM (Java SDK) respectively.
-* If you use the `.war` distribution, Java update depends on the application server used. Refer to the manual of your application server.
+>If you use a different Java version, specified via an environment variable (`TEAMCITY_JRE`, `JRE_HOME`, or `JAVA_HOME`), make sure it is available for the process launching the TeamCity server (it is recommended to set a global OS environment variable and restart the system). The variable should point to the home directory of the installed JRE or JVM (Java SDK) respectively.
 
 ### Using 64 bit Java to Run TeamCity Server
 
@@ -280,7 +259,7 @@ As a JVM application, the TeamCity main server process only utilizes memory devo
 
 Once you start using TeamCity for [production](#Configuring+Server+for+Production+Use) purposes or if you want to load the server during evaluation, you should manually set the appropriate memory settings for the TeamCity server.
 
-To __change the memory settings__, refer to [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md#JVM+Options), or to the documentation of your application server, if you run TeamCity using the `.war` distribution.   
+To __change the memory settings__, refer to [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md#JVM+Options).   
 Generally this means setting `TEAMCITY_SERVER_MEM_OPTS` environment variable to the value like `-Xmx750m`
 
 We recommend removing the `-XX:MaxPermSize` JVM option from the `TEAMCITY_SERVER_MEM_OPTS` environment variable, if previously configured, since it is ignored in Java 8.

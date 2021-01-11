@@ -7,7 +7,7 @@ If you cannot find relevant information here, have questions or want to share yo
 
 ## Customizing TeamCity without Plugins
 * [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md)
-* [REST API](rest-api.md) and [Accessing Server by HTTP](accessing-server-by-http.md)
+* [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) and [Accessing Server by HTTP](accessing-server-by-http.md)
 * [Including Third-Party Reports in the Build Results](including-third-party-reports-in-the-build-results.md)
 
 ## Plugin Development

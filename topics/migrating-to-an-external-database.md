@@ -40,7 +40,7 @@ If you see the __TeamCity Maintenance__ screen, click the _"Im a server administ
 
 These steps describe switching to another database preserving all data. The TeamCity migration tool, the `maintainDB` command line utility, is available for this purpose.
 
- The `maintainDB.[cmd|sh]` shell/batch script is located in the \<[TeamCity Home  Directory](teamcity-home-directory.md)\>\/bin directory and is used for migrating as well as for [backing up](creating-backup-via-maintaindb-command-line-tool.md) and [restoring](restoring-teamcity-data-from-backup.md) TeamCity data. The utility is only available in the TeamCity `.tar.gz` and .`exe` distributions. If you installed TeamCity using the `.war distribution` and need to perform data migration, use the tool from the `.tar.gz` distribution.
+ The `maintainDB.[cmd|sh]` shell/batch script is located in the \<[TeamCity Home  Directory](teamcity-home-directory.md)\>\/bin directory and is used for migrating as well as for [backing up](creating-backup-via-maintaindb-command-line-tool.md) and [restoring](restoring-teamcity-data-from-backup.md) TeamCity data. The utility is only available in the TeamCity `.tar.gz` and .`exe` distributions.
 
 TeamCity supports __HSQLDB__, __MySQL__, __Oracle__, __PostgreSQL__ and __Microsoft SQL Server__; the migration is possible between any of these databases.
 

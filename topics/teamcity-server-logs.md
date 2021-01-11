@@ -177,7 +177,7 @@ contains [clean-up](clean-up.md)\-related log
 
 <td>
 
-(off by default) [REST-API](rest-api.md) related logging
+(off by default) [REST-API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) related logging
 
 
 </td></tr><tr>
@@ -402,7 +402,7 @@ If it is not possible to enable debug logging mode via logging presets (for exam
 
 ### Changing Logging Settings
 
-If you want to fine-tune the log4j configuration, you can edit `<[TeamCity Server home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` file (for `.war` TeamCity distribution, see the [related section](#General+Logging+Configuration)). If the server is running, the log4j configuration file will be reloaded automatically and the logging configuration will be changed on the fly (some log4j restrictions still apply, so for a massive change consider restarting the server).
+If you want to fine-tune the log4j configuration, you can edit `<[TeamCity Server home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` file. If the server is running, the log4j configuration file will be reloaded automatically and the logging configuration will be changed on the fly (some log4j restrictions still apply, so for a massive change consider restarting the server).
 
 If you change settings in other preset files, like `debug-all.xml` or `debug-vcs.xml`, the settings won't be picked up automatically. To enforce the change, switch logging preset to some other value, like `<Default>` and then switch back to `debug-all`. 
 
@@ -450,7 +450,7 @@ Example:
 
 ### General Logging Configuration
 
-By defaul,t TeamCity searches for log4j configuration in the `.../conf/teamcity-server-log4j.xml` file (this resolves to `<[TeamCity Server home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` for TeamCity `.exe` and `.tar.gz` distributions when run from `bin`). If no such file is present, the default log4j configuration is used. The logs are saved to the `../logs` directory by default.
+By default, TeamCity searches for log4j configuration in the `.../conf/teamcity-server-log4j.xml` file (this resolves to `<[TeamCity Server home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` for TeamCity `.exe` and `.tar.gz` distributions when run from `bin`). If no such file is present, the default log4j configuration is used. The logs are saved to the `../logs` directory by default.
 
 The configuration options values can be changed via the corresponding `log4j.configuration` and `teamcity_logs` JVM options or [internal properties](configuring-teamcity-server-startup-properties.md).   
 For example: `log4j.configuration=file:../conf/teamcity-server-log4j.xml` and `teamcity_logs=../logs/`.   

@@ -173,7 +173,7 @@ Specify the password or ticket.
 If this field is specified, TeamCity
 
 * sets this value as P4PASSWD environment variable for executed perforce commands
-* uses this field as a password for `p4 login` command if password\-based authentication is disabled on the perforce server
+* uses this field as a password for `p4 login` command if password-based authentication is disabled on the perforce server
 
 If the password is not specified at all, TeamCity relies on an existing p4 ticket for the current user (`p4ticket.txt`), and if the ticket is not present, it will fail.
 

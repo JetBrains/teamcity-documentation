@@ -21,7 +21,7 @@ __When submitting a request for support, include the following general informati
 
 * Document any pattern of issue occurrence (first time, recurring, and so on), if it was mitigated in the past, whether there were any recent environment changes. __Be Specific__: note exact times, error messages, and describe both the expected and actual behavior.
 
-* Whenever possible, include related __screenshots__ of the TeamCity UI (always include the entire page and the browser URL in the capture) and provide details on the related settings files, actual values, [REST API](rest-api.md) entity representations.
+* Whenever possible, include related __screenshots__ of the TeamCity UI (always include the entire page and the browser URL in the capture) and provide details on the related settings files, actual values, [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) entity representations.
 
 * When including an error message or other related text messages (as text, not as an image), __include the complete message__ and where it was/is being observed. If the message is more than a few lines long, attach it to the ticket as a file.
 

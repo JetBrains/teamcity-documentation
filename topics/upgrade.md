@@ -25,7 +25,7 @@ To upgrade the server:
 1. [Back up the current TeamCity data](teamcity-data-backup.md) including settings, database, and supplementary data. You will need the backup to roll back to the previous version in the unlikely event of the upgrade failure.
 2. [Perform the upgrade steps](#Upgrading+TeamCity+Server):
    * [Upgrading Using Windows Installer](#Using+Windows+Installer)
-   * [Manual Upgrading on Linux and for WAR Distributions](#Manual+Upgrading+using+.tar.gz+or+.war+Distributions)
+   * [Manual Upgrading on Linux](#Manual+Upgrading+using+.tar.gz+Distributions)
 
 If you plan to upgrade a production TeamCity installation, it is recommended to install a [test server](how-to.md#Test-drive+Newer+TeamCity+Version+before+Upgrade) and check its functioning in your environment before upgrading the main one.
 
@@ -72,7 +72,7 @@ If you accidentally performed an inconsistent upgrade, check the [recovery instr
 
 ### Automatic Update
 
-Since TeamCity 2017.2 automatic update option is available. For that to function, TeamCity server should be able to contact [https://www.jetbrains.com](https://www.jetbrains.com/) site.   
+To be able to update automatically, the TeamCity server should be able to contact [https://www.jetbrains.com](https://www.jetbrains.com/) site.   
 When a new version of TeamCity is detected, the server displays the corresponding health item for system administrators. The item points to the server's __Administration | Updates__ page, where all the versions available for the update are listed. The page contains notes about licenses compatibility, the new version description and controls to perform the automatic upgrade if you want to use that instead of performing the manual updating procedure.
 
 The automatic update procedure is as follows:
@@ -98,7 +98,7 @@ In case of an automatic update failure, perform the following to restore your Te
 
 Current automatic update limitations:
 * some customizations, for example, installations with [changed server context](installing-and-configuring-the-teamcity-server.md#Changing+Server+Context), are not supported by automatic update
-* only manual upgrade is possible if the server is deployed from a [`.war distribution`](#Manual+Upgrading+using+.tar.gz+or+.war+Distributions), or runs under the official [TeamCity Docker container](#Upgrading+TeamCity+started+from+Docker+images), started with [AWS CloudFormation template](running-teamcity-stack-in-aws.md) or  Azure Resource Manager template.
+* only manual upgrade is possible if the server runs under the official [TeamCity Docker container](#Upgrading+TeamCity+started+from+Docker+images), started with Azure Resource Manager template.
 * the Windows uninstaller is not updated during the upgrade, so after several updates, old TeamCity version will still be noted in Windows lists. During the uninstallation, not all of the TeamCity installation files might be deleted.
 * the bundled Java is not updated
 * in a [multinode setup](multinode-setup.md), only the main TeamCity server can be auto-updated, the secondary nodes need to be updated manually.
@@ -109,10 +109,7 @@ Current automatic update limitations:
 
 #### Using Windows Installer
 
-<tip>
-
-The main server configuration file \<[TeamCity Home Directory](teamcity-home-directory.md)\>/conf/server.xml is updated automatically when there were no changes to it since the last installation. If modification were made, the installer will detect them and backup the old `server.xml` file displaying a warning about the overwrite and the backup file location. Other files under `conf` can be overwitten to their default content as well, so if you have made manual modifications in those, check them after the upgrade.
-</tip>
+>The main server configuration file \<[TeamCity Home Directory](teamcity-home-directory.md)\>/conf/server.xml is updated automatically when there were no changes to it since the last installation. If modification were made, the installer will detect them and backup the old `server.xml` file displaying a warning about the overwrite and the backup file location. Other files under `conf` can be overwitten to their default content as well, so if you have made manual modifications in those, check them after the upgrade.
 
 1. [Create a backup](teamcity-data-backup.md). When upgrading from TeamCity 6.0\+ you will also have a chance to create a backup with the "basic" profile on the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page on the updated TeamCity start.
 2. Note the username used to run the TeamCity server. You will need it during the new version installation.
@@ -131,13 +128,11 @@ The main server configuration file \<[TeamCity Home Directory](teamcity-home-dir
 
 If you encounter errors which cannot be resolved, make sure old TeamCity is not running/does not start on boot, restart the machine, and repeat the installation procedure.
 
+#### Manual Upgrading using .tar.gz Distributions
 
-#### Manual Upgrading using .tar.gz or .war Distributions
-
-Note that it is recommended to use `.tar.gz` or `.exe` TeamCity distribution. Using `.war` is not a recommended way to install TeamCity.
 1. [Create a backup](teamcity-data-backup.md).
 2. Backup files customized since previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
-3. Remove old installation files (the entire `<TeamCity Home Directory>` or `[TOMCAT_HOME]/webapps/TeamCity/*` if you are installing from a `war` file). It's advised to backup the directory beforehand.
+3. Remove old installation files (the entire `<TeamCity Home Directory>`). It's advised to backup the directory beforehand.
 4. Unpack the new archive to the location where TeamCity was previously installed.
 5. If you use a Tomcat server (your own or bundled in .tar.gz TeamCity distribution), it is recommended to delete the content of the `work` directory. Note that this may affect other web applications deployed into the same web server.
 6. Restore customized settings backed up in step 2 above. If you have the customized `[TOMCAT_HOME]/conf/server.xml` file, apply your changes into the appropriate sections of the default file.
@@ -148,10 +143,6 @@ Note that it is recommended to use `.tar.gz` or `.exe` TeamCity distribution. Us
 #### Upgrading TeamCity started from Docker images
 
 If you made no changes to the container, you can just stop the running container, pull the new version of the [official TeamCity image](https://hub.docker.com/r/jetbrains/teamcity-server/) and the server in it via the usual command. If you changed the image, you will need to replicate the changes to the new TeamCity server image.
-
-#### Upgrading TeamCity started from AWS CloudFormation template
-
-Please see the [dedicated page](running-teamcity-stack-in-aws.md#Upgrading+TeamCity+in+AWS).
 
 ## IDE Plugins
 

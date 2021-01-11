@@ -1,9 +1,9 @@
 [//]: # (title: Custom Chart)
 [//]: # (auxiliary-id: Custom Chart)
 
-In addition to statistic charts generated automatically by TeamCity on the Statistics tab, it is possible to configure your own statistical charts based on the set of [statistic values provided by TeamCity](#Default+Statistics+Values+Provided+by+TeamCity) or values reported from a build script. In the latter case you will need to configure your build script to report custom statistical data to TeamCity.
+In addition to statistic charts generated automatically by TeamCity on the __Statistics__ tab, it is possible to configure your own statistical charts based on the set of [statistic values provided by TeamCity](#Default+Statistics+Values+Provided+by+TeamCity) or values reported from a build script. In the latter case you will need to configure your build script to report custom statistical data to TeamCity.
 
-You can view statistic values reported by the build on the Build parameters page.
+You can view statistic values reported by the build on the __Build Parameters__ page.
 
 <tip>
 
@@ -20,21 +20,21 @@ It is possible to manage custom charts using the TeamCity web UI.
 ### Adding Custom Charts
 
 * The __Statistics__ tab for a project or build configuration provides an option to create a new chart. Note that only one build configuration can be currently added as the data source. More configurations can be added manually.
-* On the __Parameters__ tab of the [build results](working-with-build-results.md) page, the list of __Reported statistic values__ provides checkboxes to select the statistics type for a new [project- or build-configuration-level](statistic-charts.md) chart. 
-    * A project\-level chart will be added to the selected target project. The [root project](project.md) cannot be selected as the target.
-    * A build\-configuration\-level chart will be added to all build configurations of the selected target project and its subprojects. Specifying the [root project](project.md#Root+Project) as the target will add the chart to all build configurations available on the server.
+* On the __Parameters__ tab of the [build results](working-with-build-results.md) page, the list of __Reported statistic values__ provides checkboxes to select the statistics type for a new [project- or build-configuration-level](statistic-charts.md) chart.
+    * A project-level chart will be added to the selected target project. The [root project](project.md) cannot be selected as the target.
+    * A build-configuration-level chart will be added to all build configurations of the selected target project and its subprojects. Specifying the [root project](project.md#Root+Project) as the target will add the chart to all build configurations available on the server.
 
 ### Modifying Custom Charts
 
-Use the pencil ![pencil.JPG](pencil.JPG) icon to edit or delete a custom chart. Note that the __Add Statistic Values__ drop\-down displays all statistic values registered on the server without filtering them by build. If you select a value non\-existent in the current build configuration or project when editing a chart, the chart will not be saved.
+Use the pencil ![pencil.JPG](pencil.JPG) icon to edit or delete a custom chart. Note that the __Add Statistic Values__ drop-down menu displays all statistic values registered on the server without filtering them by build. If you select a value non-existent in the current build configuration or project when editing a chart, the chart will not be saved.
 
-Using the cog ![cog.JPG](cog.JPG) icon, you can also configure the Y\-axis settings and save them as defaults for all users.
+Using the cog ![cog.JPG](cog.JPG) icon, you can also configure the Y-axis settings and save them as defaults for all users.
 
 Note that there is a number of [limitations](edit-custom-chart-limitations.md) to editing charts from the TeamCity UI.
 
 ### Reordering Custom Charts
 
-__To reorder custom charts__ for a project/build configuration, click the __Reorder__ button and drag\-and\-drop the charts to arrange them as required and apply your changes.
+__To reorder custom charts__ for a project/build configuration, click the __Reorder__ button and drag-and-drop the charts to arrange them as required and apply your changes.
 
 ## Managing Custom Charts Manually
 
@@ -43,23 +43,23 @@ __To reorder custom charts__ for a project/build configuration, click the __Reor
 __Since TeamCity 10__, manual editing of custom charts has changed. For earlier versions, see this page in the corresponding [documentation](https://confluence.jetbrains.com/display/TW/Documentation).
 </note>
 
-To manually create custom charts to be displayed in the TeamCity web UI, configure the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>`  element is added.
+To manually create custom charts to be displayed in the TeamCity web UI, configure the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>`  element is added.
 
 ### Displaying Custom Chart in TeamCity Web UI
 
-To make TeamCity display a custom chart in the web UI, update the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` configuration file adding a new `<extention>` sub-element to the `<project-extensions>` element.
+To make TeamCity display a custom chart in the web UI, update the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` configuration file adding a new `<extention>` sub-element to the `<project-extensions>` element.
 
 Each extension must have a unique `id` in the project.
 
 The `type` attribute is set to 
-* `<project-graphs>` for Project-level chart
-* `<buildType-graphs>` for Build Configuration-level chart.
+* `project-graphs` for project-level chart
+* `buildType-graphs` for build configuration-level chart
 
-Each chart is described by the `<param>` element. It must contain the `<param>` sub-elements with data shown in the chart in `name/value` pairs; the "__`series"`__ parameter uses the JSON format to list series of data shown on the chart. 
+Each chart is described by the `<parameters>` element. It must contain the `<param>` sub-elements with data shown in the chart in `name/value` pairs; the "__`series"`__ parameter uses the JSON format to list series of data shown on the chart. 
 
 See the example below:
 
-__Custom build configuration\-level chart in project\-config.xml__
+__Custom build configuration-level chart in `project-config.xml`__
 
 
 ```XML
@@ -103,9 +103,7 @@ __Custom build configuration\-level chart in project\-config.xml__
 </project-extensions>
 ```
 
-
-
-This chart will be shown on the __Statistics__ tabs of the Build Configurations of the project where the `project-config.xml` file is located and all its subprojects. To display a chart for all Build Configurations, add it to the `project\-config.xml` of the [Root Project](project.md#Root+Project).
+This chart will be shown on the __Statistics__ tabs of the build configurations of the project where the `project-config.xml` file is located and all its subprojects. To display a chart for all build configurations, add it to the `project-config.xml` of the [Root project](project.md#Root+Project).
 
 #### Parameters Reference
 
@@ -143,7 +141,7 @@ The title above the chart.
 
 <td>
 
-The title above the list of series used on the chart (in the singular form). The default is "Serie".
+The title above the list of series used on the chart (in the singular form). The default is `Serie`.
 
 </td></tr><tr>
 
@@ -155,7 +153,7 @@ The title above the list of series used on the chart (in the singular form). The
 
 <td>
 
-The list of comma\-separated options to be checked by default. Can include the following:
+The list of comma-separated options to be checked by default. Can include the following:
 
 * `showFailed` – include results from failed builds by default.
 * `averaged` – by default, show averaged values on the chart.
@@ -170,14 +168,15 @@ The list of comma\-separated options to be checked by default. Can include the f
 
 <td>
 
-The list of comma\-separated filter names that will not be shown next to the chart:
+The list of comma-separated filter names that will not be shown next to the chart:
 
 * `all` – hide all filters.
 * `series` – hide series filter (you won't be able to show only data from specific valueType specified for the chart.)
 * `range` – hide the date range filter.
 * `showFailed` – hide the checkbox which allows including data for failed builds.
 * `averaged` – hide the checkbox which allows viewing averaged values.
-`Defaults`– empty (all filters are shown).
+
+Default: empty (all filters are shown).
 
 </td></tr><tr>
 
@@ -189,16 +188,20 @@ The list of comma\-separated filter names that will not be shown next to the cha
 
 <td>
 
-The format of the y\-axis values. Supported formats are:
+The format of the y-axis values. Supported formats are:
 
+* `text`, value is treated as float;
+* `integer`, only integer values;
 * `duration`, data should be in milliseconds;
 * `percent`, data should be in percents (from 0 to 100);
 * `percentby1`, the format will show data between 0 and 1 as percents (from 0 to 100);
-* `size`, data should be in bytes.  If no format is specified, the numeric format is used.
+* `size`, data should be in bytes.
+
+If no format is specified, the numeric format is used.
 
 </td></tr></table>
 
-The `<series>` parameter uses JSON format to list series of data shown on the chart. Each series is drawn in a separate color and you can choose one or another series using a filter.
+The `series` parameter uses JSON format to list series of data shown on the chart. Each series is drawn in a separate color and you can choose one or another series using a filter.
 
 <table><tr>
 
@@ -263,7 +266,7 @@ This field allows you to explicitly specify a build configuration to use the dat
 
 1. if the `sourceBuildTypeId` is set within the `valueType`, the data is taken from this build configuration even if it belongs to a different project.
 2. if the `sourceBuildTypeId` is not set within current the `valueType`, but it is set in the `valueType` above the current one within the chart, the data from the build configuration referenced above will be taken. See example for the `plugin-settings.xml` file above.
-3. if the `sourceBuildTypeId` is not set within current the `valueType` and is not set above, the chart will show data for the current build configuration, i.e. this chart will work only for build configurations.
+3. if the `sourceBuildTypeId` is not set within current the `valueType` and is not set above, the chart will show data for the current build configuration, that is this chart will work only for build configurations.
 
 </td></tr><tr>
 
@@ -275,7 +278,7 @@ This field allows you to explicitly specify a build configuration to use the dat
 
 <td>
 
-The color of a series to be used in the chart. Standard web color formats can be used \- "#RRGGBB", color names, etc. For more information see [HTML Colors reference](http://www.w3schools.com/html/html_colors.asp) and [HTML Color Names reference](http://www.w3schools.com/html/html_colornames.asp). If not specified, an automatic color will be assigned based on the series title.
+The color of a series to be used in the chart. Standard web color formats can be used - "#RRGGBB", color names, and so on. For more information see [HTML Colors reference](http://www.w3schools.com/html/html_colors.asp) and [HTML Color Names reference](http://www.w3schools.com/html/html_colornames.asp). If not specified, an automatic color will be assigned based on the series title.
 
 </td></tr><tr>
 
@@ -298,7 +301,7 @@ You can set the custom chart width/height in pixels using the `properties.width`
 
 #### Chart Axis Settings
 
-You can also customize the default axis settings for a chart via parameter names starting with `properties`, e.g. "`properties.axis.y.type`"
+You can also customize the default axis settings for a chart via parameter names starting with `properties`: for example, `properties.axis.y.type`.
 
 Supported properties:
 
@@ -427,7 +430,7 @@ Bytes
 
 <td>
 
-The sum of all [artifact](build-artifact.md) file sizes excluding hidden artifacts (those placed under .teamcity directory)
+The sum of all [artifact](build-artifact.md) file sizes excluding hidden artifacts (those placed under the `.teamcity` directory)
 
 </td>
 
@@ -535,7 +538,7 @@ Milliseconds
 
 <td>
 
-The build steps duration (excluding the checkout and artifact publishing time, etc.)
+The build steps' duration (excluding the checkout, artifact publishing time, and so on)
 
 </td>
 
@@ -553,7 +556,7 @@ Milliseconds
 
 <td>
 
-Block\-level code coverage
+Block-level code coverage
 
 </td>
 
@@ -571,7 +574,7 @@ Block\-level code coverage
 
 <td>
 
-Class\-level code coverage
+Class-level code coverage
 
 </td>
 
@@ -589,7 +592,7 @@ Class\-level code coverage
 
 <td>
 
-Line\-level code coverage
+Line-level code coverage
 
 </td>
 
@@ -607,7 +610,7 @@ Line\-level code coverage
 
 <td>
 
-Method\-level code coverage
+Method-level code coverage
 
 </td>
 
@@ -625,7 +628,7 @@ Method\-level code coverage
 
 <td>
 
-Branch Coverage
+Branch coverage
 
 </td>
 
@@ -643,7 +646,7 @@ Branch Coverage
 
 <td>
 
-Statement Coverage
+Statement coverage
 
 </td>
 
@@ -1009,7 +1012,7 @@ An indicator whether the build was successful
 
 <td>
 
-0 \- failed, 1 \- successful
+0 - failed, 1 - successful
 
 </td></tr><tr>
 
@@ -1021,7 +1024,7 @@ An indicator whether the build was successful
 
 <td>
 
-How long the build was queued
+For how long the build was staying in the queue
 
 </td>
 
@@ -1031,12 +1034,7 @@ Milliseconds
 
 </td></tr></table>
 
-
-
-
 [//]: # (Internal note. Do not delete. "Custom Chartd106e1036.txt")    
-
-
 
 
 #### Custom Build Metrics
@@ -1044,6 +1042,7 @@ Milliseconds
 If the predefined build metrics do not cover your needs, you can report custom metrics to TeamCity from your build script and use them to create a custom chart. There are two ways to report custom metrics to TeamCity:
 * using [service messages](service-messages.md) from your build,
 * or (obsolete approach) using the [`teamcity-info.xml`](teamcity-info-xml.md) file.
+
 Note that custom value keys should be unique and should not interfere with value keys predefined by TeamCity.
 
 <seealso>

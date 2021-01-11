@@ -5,7 +5,7 @@
 
 <warning>
 
-Use the TeamCity [REST API](rest-api.md) for accessing the server from scripts. This section is __obsolete__ and preserved for __backward-compatibility__ with previous TeamCity versions and for some specific functionality.
+Use the TeamCity [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) for accessing the server from scripts. This section is __obsolete__ and preserved for __backward-compatibility__ with previous TeamCity versions and for some specific functionality.
 
 </warning>
 
@@ -21,7 +21,7 @@ You may want to [configure](using-https-to-access-teamcity-server.md) the server
 
 </tip>
 
-To force using a basic HTTP authentication instead of redirecting to the login page if no credentials are supplied, prepend a path in the usual TeamCity URL with "`/httpAuth`". For example:
+To force using a basic HTTP authentication instead of redirecting to the login page if no credentials are supplied, prepend a path in the usual TeamCity URL with `/httpAuth`. For example:
 
 ```Shell
 http://teamcity.jetbrains.com:8111/httpAuth/action.html?add2Queue=MyBuildConf
@@ -30,7 +30,7 @@ http://teamcity.jetbrains.com:8111/httpAuth/action.html?add2Queue=MyBuildConf
 
 The HTTP authentication can be useful when [downloading build artifacts](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+a+Build+Script) and triggering a build.
 
-If you have _Guest_ user enabled, it can be used to perform the action too. Use "`/guestAuth`" before the URL path to perform the action on Guest user behalf. For example:
+If you have _Guest_ user enabled, it can be used to perform the action too. Use `/guestAuth` before the URL path to perform the action on Guest user behalf. For example:
 
 
 ```Shell
@@ -77,7 +77,7 @@ http://testuser:testpassword@teamcity.jetbrains.com:8111/httpAuth/action.html?ad
 
 ```
  
-You can trigger a build on a specific agent passing additional `agentId` parameter with the agent's Id. You can get the agent Id from the URL of the Agent's details page: __Agents | \<agent name\>__. For example, you can infer that agent's Id equals "2", if its details page has the following URL:
+You can trigger a build on a specific agent passing additional `agentId` parameter with the agent's ID. You can get the agent Id from the URL of the Agent's details page: __Agents | \<agent name\>__. For example, you can infer that agent's Id equals "2", if its details page has the following URL:
 
 ```Shell
 http://teamcity.jetbrains.com:8111/agentDetails.html?id=2

@@ -341,7 +341,7 @@ Here are some notes on different security\-related aspects:
   * can download artifacts from any build on the server.   
   Hence, it is advised to run TeamCity agents under an OS account with only [necessary set of permissions](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) and use the [agent pools](configuring-agent-pools.md) feature to ensure that projects requiring a different set of access are not built on the same agents.
 * users with the "View build configuration settings" permission (the "Project developer" TeamCity role by default) can view all the projects on the server, but since TeamCity 9.0 there is a way to restrict this, see details in the corresponding issue [TW-24904](https://youtrack.jetbrains.com/issue/TW-24904#comment=27-731107).
-* users with the "Edit project" permission (the "Project Administrator" TeamCity role by default) in one project, by changing settings can retrieve artifacts and trigger builds from any build configuration they have only the view permission for ([TW-39209](https://youtrack.jetbrains.com/issue/TW-39209)). The users might also be able to make the TeamCity server run any executable located on the server.
+* users with the "Edit project" permission (the "Project Administrator" TeamCity role by default) in one project, by changing settings can retrieve artifacts and trigger builds from any build configuration they have only the view permission for ([TW-39209](https://youtrack.jetbrains.com/issue/TW-39209)). 
 * users with the "Change server settings" permission (the "System Administrator" TeamCity role by default): It is assumed that the users also have access to the computer on which the TeamCity server is running under the user account used to run the server process. Thus, the users can get full access to the machine under that OS user account: browse file system, change files, run arbitrary commands, etc.
 * TeamCity server computer administrators: have full access to TeamCity stored data and can affect TeamCity executed processes. Passwords that are necessary to authenticate in external systems (like VCS, issue trackers, etc.) are stored in a scrambled form in [TeamCity Data Directory](teamcity-data-directory.md) and can also be stored in the database. However, the values are only scrambled, which means they can be retrieved by any user who has access to the server file system or database.
 * Users who have read access to the TeamCity server logs (TeamCity server home directory) can escalate their access to TeamCity server administrator.
@@ -543,6 +543,8 @@ If TeamCity is the only application using the PostgreSQL database, we recommend 
 synchronous_commit=off
 
 ```
+
+<anchor name="HowTo-SetUpTeamCitybehindaProxyServer"/>
 
 ## Set Up TeamCity behind a Proxy Server
 
@@ -1066,7 +1068,7 @@ Also there is an ability to delete many builds from the build queue in a single 
 ## Automatically create or change TeamCity build configuration settings
 
 If you need a level of automation and web administration UI does not suite your needs, there several possibilities:
-* use [REST API](rest-api.md)
+* use [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
 * change configuration files directly on disk (see more at `<[TeamCity Data Directory](teamcity-data-directory.md)>`)
 * write a TeamCity Java plugin that will perform the tasks using [open API](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).
 ## Attach Cucumber Reporter to Ant Build
@@ -1121,7 +1123,7 @@ http://<your TeamCity server>/app/rest/buildTypes/id:<ID of build configuration>
 
 The build number will be returned as a plain\-text response.   
 For `<ID of build configuration>`, see [Identifier](identifier.md).   
-This functionality is provided by [REST API](rest-api.md)
+This functionality is provided by [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
 
 ## Set up Deployment for My Application in TeamCity
 

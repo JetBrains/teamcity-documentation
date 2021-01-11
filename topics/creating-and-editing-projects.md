@@ -246,6 +246,8 @@ To configure an existing project, select the desired project in the list, and cl
 
 You can view all available projects and subprojects on the __Projects__ page listed in the alphabetical order by default. Administrators can [customize the default order](ordering-projects-and-build-configurations.md).
 
+When you select a project from the list, TeamCity displays the __Project Home__ page where you can preview its nested build configurations and recent build results. To access the project's settings, click __Edit Project Settings__ in the upper right corner of the screen.
+
 To copy, move, delete or [archive](archiving-projects.md) a project, use the __Actions__ menu in the upper right corner of the __Project Settings__ page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent __Project Settings__ page. These options are not available for the Root project.
 
 ### Copying Project

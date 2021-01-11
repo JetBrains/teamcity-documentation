@@ -11,7 +11,7 @@ Check out the [blog post series](https://blog.jetbrains.com/teamcity/2019/03/con
 
 When versioned settings in Kotlin format are enabled, TeamCity commits the current settings to the specified settings repository.
 
-When a new commit is detected in a settings repository, TeamCity runs the DSL scripts found in this commit and applies the result to the settings on the TeamCity server or reports errors on the 'Versioned Settings' tab in the administration area of the project.
+When a new commit is detected in a settings repository, TeamCity runs the DSL scripts found in this commit and applies the result to the settings on the TeamCity server or reports errors on the project's __Versioned Settings__ tab.
 
 Note: DSL scripts is essentially another way of writing TeamCity configuration files. DSL scripts do not have direct control on how builds are executed. For instance, it is impossible to have a condition and change something depending on the current state of a build. The result of scripts execution is configuration files, which are loaded by TeamCity server and then behavior of the newly triggered builds changes. 
 
@@ -21,7 +21,7 @@ DSL is also good in case when you need to have a big amount of similar build con
 
 ## Getting Started with Kotlin DSL
 
-This [Kotlin tutorial](https://play.kotlinlang.org/koans/overview) helps quickly learn most Kotlin features.
+This [Kotlin tutorial](https://play.kotlinlang.org/koans/overview) helps quickly learn most Kotlin features. The Kotlin DSL API documentation is available at `<teamcityserver:port>/app/dsl-documentation/index.html`.
 
 To start working with Kotlin DSL in TeamCity, create an empty sandbox project on your server and follow these steps:
 1. [Enable versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) for your project.
@@ -99,7 +99,7 @@ project {
 
 <anchor name="id-or-name"/>
 
-Here, `id` will be used as the value of the _[Build configuration ID](identifier.md)_ field in TeamCity. In the example above the `id` must be specified. If you omit it then there will be a validation error on attempt to generate settings from this script.
+Here, `id` will be used as the value of the _[Build configuration ID](identifier.md)_ field in TeamCity. In the example above the `id` must be specified. If you omit it, there will be a validation error on an attempt to generate settings from this script.
 
 But there is also another way to define the same build configuration:
 
@@ -187,7 +187,7 @@ changeBuildType(RelativeId("SampleProject_Build")) { // this part finds the buil
 }
 ```
 
-It is implied that you move the changes from the patch file to corresponding .kt or .kts file and delete the patch file. Patches generation allows to continue using the user interface for editing of the project settings and at the same time use the benefits of Kotlin DSL scripts.
+It is implied that you move the changes from the patch file to the corresponding `.kt` or `.kts` file and delete the patch file. Patches generation allows you to continue using the user interface for editing of the project settings and at the same time use the benefits of Kotlin DSL scripts.
 
 ### Restoring Build History After ID Change
 
@@ -514,7 +514,6 @@ params {
 
 ## FAQ and Common Problems
 
-
 <anchor name="KotlinDSL-nonUniformIDs"/>
 <anchor name="nonUniformIDs"/>
 
@@ -603,6 +602,32 @@ Before 2019.2, the following code could be used:
 val dataFile = File("data/setup.xml")
 ```
 
+### How to reorder projects and build configurations
+
+To reorder subprojects or build configurations inside a project via DSL, similarly to the [respective UI option](ordering-projects-and-build-configurations.md), pass their lists to `subProjectsOrder` or `buildTypesOrder` respectively. For example,
+
+```Kotlin
+project {
+    buildType(BuildA)
+    buildType(BuildB)
+    buildType(BuildC)
+    buildTypesOrder = arrayListOf(BuildC, BuildA, BuildB)
+}
+
+object BuildA: buildType ({
+...
+})
+
+object BuildB: buildType ({
+...
+})
+
+object BuildC: buildType ({
+...
+})
+```
+
+With these settings, the build configurations will be displayed in the UI in the following order: C, A, B.
 
 ### Kotlin DSL API documentation is not initialized yet
 
@@ -610,7 +635,7 @@ _Problem_:
 * `app/dsl-documentation/index.html` on our Teamcity server displays "Kotlin DSL API documentation is not initialized yet"
 * `OutOfMemoryError` during TeamCity startup with `org.jetbrains.dokka` in stack trace
  
- _Solution_: set the internal property `teamcity.kotlinConfigsDsl.docsGenerationXmx=768m`.
+ _Solution_: set the [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.kotlinConfigsDsl.docsGenerationXmx=768m` and restart the server.
 
 
 <seealso>

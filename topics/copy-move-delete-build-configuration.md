@@ -1,7 +1,7 @@
 [//]: # (title: Copy, Move, Delete Build Configuration)
 [//]: # (auxiliary-id: Copy, Move, Delete Build Configuration)
 
-To copy, move or delete a build configuration, use the __Actions__ menu on the right of the build configuration settings pages.
+To copy, move or delete a build configuration, use the __Actions__ menu in the upper right corner of __[Build Configuration Settings](creating-and-editing-build-configurations.md#Configuring+Settings)__.
 
 ## Copy and Move Build Configuration
 
@@ -11,11 +11,11 @@ Build configurations can be copied and moved to another project by project admin
 
 On copying, TeamCity automatically assigns a new [ID](configuring-general-settings.md#build-configuration-id) to the copy. It is also possible to change the ID manually. Selecting the __Copy associated user, agent and other settings__ option makes sure that all the settings like notification rules or agent's compatibility are exactly the same for the copied and original build configurations for all the users and agents affected.
 
-If the build configuration uses VCS Roots or is associated with a template, which is not accessible in the target project (does not belong to the target project or one of its parent projects), the copies of these VCS roots and the template will be created in the target project (also see the related issue [TW-28550](http://youtrack.jetbrains.com/issue/TW-28550)).
+If the build configuration uses VCS roots or is associated with a template, which is not accessible in the target project (does not belong to the target project or one of its parent projects), the copies of these VCS roots and the template will be created in the target project (also see the related issue [TW-28550](http://youtrack.jetbrains.com/issue/TW-28550)).
 
 <note>
 
-When running TeamCity in the [Professional mode](licensing-policy.md#Licensing+Overview) with the maximum allowed number of build configurations (100 build configurations and prior to TeamCity 2017.2 \- 20) unless you purchased additional Build Agent licenses), the __Copy__ option will not be displayed for build configurations.
+When running TeamCity in the [Professional mode](licensing-policy.md#Licensing+Overview) with the maximum allowed number of build configurations (100 build configurations and prior to TeamCity 2017.2 - 20) unless you purchased additional Build Agent licenses), the __Copy__ option will not be displayed for build configurations.
 </note>
 
 ## Delete Build Configuration

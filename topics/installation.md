@@ -80,27 +80,6 @@ Archive for manual installation bundled with Tomcat servlet container
 
 <td>
 
-[J2EE container](installing-and-configuring-the-teamcity-server.md#Installing+TeamCity+into+Existing+J2EE+Container)
-
-
-</td>
-
-<td>
-
-TeamCity&lt;version number&gt;.war
-
-
-</td>
-
-<td>
-
-Package for installation into an existing J2EE container (not recommended, use .tar.gz instead)
-
-
-</td></tr><tr>
-
-<td>
-
 [Docker (Linux, Windows)](https://hub.docker.com/r/jetbrains/teamcity-server/)
 
 </td>
@@ -122,7 +101,6 @@ Official JetBrains TeamCity server Docker image
 </table>
 
 You can also install TeamCity using the following __experimental options__:
-* AWS [CloudFormation template](running-teamcity-stack-in-aws.md).
 * TeamCity template on [Azure Marketplace](https://azuremarketplace.microsoft.com/en-en/marketplace/apps/jetbrains.teamcity?tab=Overview). Read more in our [blog post](https://blog.jetbrains.com/teamcity/2018/09/teamcity-on-azure-marketplace/).
 * [Azure Resource Manager template](https://github.com/JetBrains/teamcity-azure-template).
 * [Google Cloud Deployment Manager template](https://github.com/JetBrains/teamcity-google-template).

@@ -183,10 +183,10 @@ To display the status of selected build configurations in __TeamCity__:
 To display the status for a set of build configurations __externally__ (on your company's website, wiki, Confluence, or any other web page), you can:
 * use the [external status widget](configuring-general-settings.md#HTML+Status+Widget)
 * use the [build status icon](rest-api-reference.md#Build+Status+Icon)
-* use any of the available [visualization plugins](https://plugins.jetbrains.com/search?correctionAllowed=true&pr=teamcity&orderBy=relevance&tags=Notification%2FVisualizers&search=)
-* implement a separate page or application which will get the build configuration status via the TeamCity [REST API](rest-api.md)
+* use any of the available [visualization plugins](https://plugins.jetbrains.com/search?products=teamcity&tags=Notification%2FVisualizers)
+* implement a separate page or application which will get the build configuration status via the TeamCity [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
 
- <seealso>
+<seealso>
         <category ref="admin-guide">
             <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
         </category>

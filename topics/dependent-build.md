@@ -79,7 +79,7 @@ The example above shows the core basics of snapshot dependencies as a straightfo
 
 Artifact Dependencies provide you with a convenient means to use the output ([artifacts](build-artifact.md)) of one build in another build. When an artifact dependency is configured, the necessary artifacts are downloaded to the agent before the build starts. You can then review what artifacts were used in the build or what build used the artifacts of the current build using the __Dependencies__ tab of build results.
 
-To create and configure an artifact dependency, use the __[Dependencies](artifact-dependencies.md)__ build configuration settings page. If you need to download the artifacts inside a build script or locally, you can use the [REST API](rest-api.md) or [Ivy Ant tasks](artifact-dependencies.md) for that.
+To create and configure an artifact dependency, use the __[Dependencies](artifact-dependencies.md)__ build configuration settings page. If you need to download the artifacts inside a build script or locally, you can use the [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) or [Ivy Ant tasks](artifact-dependencies.md) for that.
 
  
 __Notes on Cleaning Up Artifacts__  

@@ -43,15 +43,15 @@ During installation, you can configure:
 
 If the TeamCity server is installed as a Windows service, follow the [usual procedure](https://bit.ly/2yJF87R) of starting and stopping services.
 
-Otherwise, to start/stop the TeamCity server and one default agent at the same time, use the `runAll` script, provided in the `<TeamCity Home>/bin` directory:
+Otherwise, to start/stop the TeamCity server and one default agent at the same time, use the `runAll` script, provided in the `<TeamCity Home>\bin` directory:
 
 * to __start__ the server and the default agent, use
     ```Shell
-    runAll.bat start
+    .\runAll.bat start
     ```
 * to __stop__ the server and the default agent, use
     ```Shell
-    runAll.bat stop
+    .\runAll.bat stop
     ```
 
 If you did not change the default port (`80`) during the installation, the TeamCity web UI can be accessed at [`http://localhost`](http://localhost/) in a web browser running on the same machine where the TeamCity server is installed. Otherwise, use `http://localhost:<port>` ([`http://localhost:8111`](http://localhost:8111/) in our case).
@@ -80,11 +80,11 @@ __To start/stop the TeamCity server and one default agent at the same time__, us
 
 * to __start__ the server and the default agent, use
     ```Shell
-    runAll.sh start
+    ./runAll.sh start
     ```
 * to __stop__ the server and the default agent, use
     ```Shell
-    runAll.sh stop
+    ./runAll.sh stop
     ```
 
 By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/) and has one registered build agent that runs on the same computer. If another application uses the same port as the TeamCity server, the TeamCity server (Tomcat server) will not start with the "_Address already in use_" errors in the server logs or server console.

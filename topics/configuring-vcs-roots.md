@@ -75,7 +75,7 @@ VCS root ID
 
 <td>
 
-Unique [ID](identifier.md) of VCS root across all VCS roots in the system. VCS root ID can be used in parameter references to VCS root parameters and [REST API](rest-api.md). If not specified, will be generated automatically from VCS root parameters.
+Unique [ID](identifier.md) of VCS root across all VCS roots in the system. VCS root ID can be used in parameter references to VCS root parameters and [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html). If not specified, will be generated automatically from VCS root parameters.
 
 </td></tr><tr>
 

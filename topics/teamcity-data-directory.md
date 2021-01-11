@@ -118,7 +118,7 @@ The files under the `config` directory can be edited manually (unless explicitly
 
 Note that the format of the files can change with newer TeamCity versions, so the files updating procedure might need adjustments after an upgrade.
 
-The [REST API](rest-api.md) has means for most common settings editing and is more stable in terms of functioning after the server upgrade.
+The [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) has means for most common settings editing and is more stable in terms of functioning after the server upgrade.
 
   
 <anchor name="distfiles"/>

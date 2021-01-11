@@ -49,7 +49,7 @@ For example, _Fail build if_ its "_build duration (secs)_", compared to the cons
 In this case, a build will fail if it runs more than 300 seconds. 
 * A _build metric_ has changed comparing to a specific build by a specified value.   
 For example, _Fail build if_ its "_build duration (secs)_" compared to a value from another build is "_more_" by at least "_300_" default units for this metric than the value in the "_Last successful build_".   
-In this case, a build will fail if it runs 300 seconds longer than the last successful build. If a [branch specification](working-with-feature-branches.md) is configured, the [following logic](working-with-feature-branches.md) is applied.
+In this case, a build will fail if it runs 300 seconds longer than the last successful build. If a [branch specification](working-with-feature-branches.md) is configured, the [following logic](working-with-feature-branches.md#Failure+Conditions) is applied.
 
 Values from the following builds can be used as the basis for comparing build metrics:
 * last successful build

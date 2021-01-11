@@ -87,7 +87,7 @@ The data that is transferred via the connections established by the server to ag
 
 The communication protocol used by TeamCity agents is determined by the value of the `teamcity.agent.communicationProtocols` server [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). The property accepts a comma-separated ordered list of protocols (`polling`  and `xml-rpc` are supported protocol names) and is set to `teamcity.agent.communicationProtocols=polling` by default. If several protocols are specified, the agent tries to connect using the first protocol from this list and if it fails, it will try to connect via the second protocol in the list. `polling` means unidirectional protocol, `xml-rpc` - older, bidirectional communication.
 
-##### Changing Communication Protocol
+#### Changing Communication Protocol
 
 * To change the communication protocol __for all agents__, set the TeamCity server `teamcity.agent.communicationProtocols` server [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). The new setting will be used by all agents which will connect to the server after the change. To change the protocol for the existing connections, restart the TeamCity server.
 * By default, the agent's property is not configured; when the agent first connects to the server, it receives it from the TeamCity server. To change the protocol __for an individual agent__ after the initial agent configuration, change the value of the `teamcity.agent.communicationProtocols` property in the [agent's properties](build-agent-configuration.md). The agent's property overrides the server property. After the change the agent will restart automatically upon finishing a running build, if any.
@@ -423,7 +423,7 @@ sudo chkconfig buildAgent on
 
 For macOS, TeamCity provides the ability to load a build agent automatically when a build user logs in.
 
-##### LaunchAgent Approach
+The `LaunchAgent` approach:
 
 To configure an automatic build agent startup via `LaunchAgent`, follow these steps:
 

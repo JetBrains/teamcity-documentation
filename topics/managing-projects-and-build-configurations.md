@@ -3,7 +3,7 @@
 
 [Projects](project.md) and their entities in TeamCity can be configured:
 * via the web UI
-* using the [REST API](rest-api.md)
+* using the [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
 * programmatically using DSL based on the Kotlin language if the [versioned settings](storing-project-settings-in-version-control.md) feature is enabled
 
 ### Configuring Visibility

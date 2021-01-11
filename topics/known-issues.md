@@ -32,7 +32,6 @@ To overcome these restrictions, run TeamCity agent [via console](setting-up-and-
 
 These problems include errors running tests headless, issues with the interaction of the TeamCity agent with the Windows desktop, and so on.
 
-
 <tip>
 
 Note that there is a Windows limitation to accessing a remote computer via mstsc: the desktop of the remote machine will be locked on RDP disconnect, which will cause issues running tests. The VNC protocol allows you to remote control another machine without locking it.To run GUI tests and be able to use RDP, see the [workaround](#Running+automated+GUI+tests+and+using+RDP) below.
@@ -41,9 +40,9 @@ Note that there is a Windows limitation to accessing a remote computer via mstsc
 To resolve / avoid these:
 1. Run TeamCity agent [via console](setting-up-and-running-additional-build-agents.md#Starting+the+Build+Agent).
 2. Configure the build agent machine not to launch a screensaver locking the desktop.
-3. Configure the TeamCity agent to start [automatically](setting-up-and-running-additional-build-agents.md#Starting+the+Build+Agent) (for example, configure an automatic user logon on Windows start and then configure the TeamCity agent start (via agent.bat start) on the user logon).
+3. Configure the TeamCity agent to start [automatically](setting-up-and-running-additional-build-agents.md#Starting+the+Build+Agent) (for example, configure an automatic user logon on Windows start and then configure the TeamCity agent start (via `agent.bat start`) on the user logon).
     
-For graphical tests the build agent cannot be started as a service and it is recommended to configure the build agent launch with a 1 minute delay after the user auto\-logon, e.g. using the `bin\agent.bat start` command in the task scheduler and configuring the delay there.
+For graphical tests the build agent cannot be started as a service and it is recommended to configure the build agent launch with a 1 minute delay after the user auto-logon, e.g. using the `bin\agent.bat start` command in the task scheduler and configuring the delay there.
 
 #### Running automated GUI tests and using RDP 
 
@@ -57,8 +56,8 @@ if ($sessionInfo[1] -like "rdp-tcp*") { tscon $sessionInfo[2] /dest:console }
 
 
 
-where "`quser [current username]`" lists all the connections to that machine for the user, either console or graphical.  
-The one listed as `rdp-tcp#*` is the remote desktop connection which can be redirected to the console using "`tscon [connection id] /dest:console`".
+where `quser [current username]` lists all the connections to that machine for the user, either console or graphical.  
+The one listed as `rdp-tcp#*` is the remote desktop connection which can be redirected to the console using `tscon [connection id] /dest:console`.
 
  
 
@@ -88,7 +87,7 @@ See also this [external posting](https://www.elastic.co/blog/we-are-out-of-memor
 
 ## Clearing Browser Caсhes
 
-There is a web UI\-related issue which some our users have encountered (and it cannot be reproduced on other computers) which is tied to the cached versions of content. If you have come across such problem, make sure your browser does not use cached versions of content by [clearing browser caches](http://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache).
+There is a web UI-related issue which some our users have encountered (and it cannot be reproduced on other computers) which is tied to the cached versions of content. If you have come across such problem, make sure your browser does not use cached versions of content by [clearing browser caches](http://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache).
 
 ## Logging with Log4j in Your Tests
 
@@ -130,19 +129,19 @@ set ERROR_CODE=1
 
 ## Conflicting Software
 
-Most common indicators of conflicting software are errors like "Access is denied", "Permission denied" or java.io.FileNotFoundException mentioning the file that is present and is writable by the user the agent/build runs under. Also, certain software running in background (like antiviruses) can significantly slow down build agent operations like sources checkout, artifact publishing or even build running.
+Most common indicators of conflicting software are errors like "Access is denied", "Permission denied" or _java.io.FileNotFoundException_ mentioning the file that is present and is writable by the user the agent/build runs under. Also, certain software running in the background (like antivirus) can significantly slow down such build agent operations as sources checkout, artifact publishing or even build running.
 
-Certain antivirus software like Kaspersky Internet Security can result in Java process crashes or other misbehavior like inability to access files. For example, see [the issue](http://jetbrains.net/tracker/issue/TW-7138).
+Certain antivirus software like Kaspersky Internet Security can result in Java process crashes or other misbehavior like inability to access files. For example, see [this issue](http://jetbrains.net/tracker/issue/TW-7138).
 
-ESET antivirus can also slow down Ant/IntelliJ IDEA project builds a great deal (slowing down TCP connections to localhost on agent).
+ESET antivirus can also slow down Ant/IntelliJ IDEA project builds a great deal (slowing down TCP connections to localhost on an agent).
 
-If you run antivirus on the TeamCity server or agent machines and get disk access errors or experience degraded performance, disable or better completely uninstall the antivirus software before investigating the issue and reporting the issue to JetBrains.
+If you run antivirus on the TeamCity server or agent machines and get disk access errors or experience degraded performance, you may consider temporarily disabling the antivirus software before investigating the issue and reporting it to JetBrains. Note that disabling the antivirus can make your setup more vulnerable to potential external attacks – ensure you take proper security measures before doing this.
 
-It is recommended to exclude entire TeamCity server home and [TeamCity Data Directory](teamcity-data-directory.md) from the background checks and perform periodical checks there in the well\-known maintenance window so that those do not affect server performance much. On TeamCity agent, it is recommended to exclude TeamCity agent home from the background checks.
+It is recommended to exclude entire TeamCity server home and [TeamCity Data Directory](teamcity-data-directory.md) from the background checks and perform periodical checks there in the well-known maintenance window so that those do not affect server performance much. On TeamCity agent, it is recommended to exclude TeamCity agent home from the background checks.
 
 There might be problems with the Windows Indexing Service, so disable various indexing services. See [the related issue](http://youtrack.jetbrains.net/issue/TW-10033#comment=27-82484) for more details. Windows System Restore Feature might also need disabling.
 
-Do not install software with background indexing like WinCVS, TortoiseCVS, TortoiseSVN, and other Tortoise\* products. This applies to server and also to agents if you use agent\-side checkout.
+Do not install software with background indexing like WinCVS, TortoiseCVS, TortoiseSVN, and other Tortoise\* products. This applies to server and also to agents if you use agent-side checkout.
 
 Skype software is known to:
 *   use port 80 on the system so you might not be able to utilize a TeamCity server on the default port 80.
@@ -184,11 +183,11 @@ Make sure you use the latest update for Java 8 installation available for your p
 
 ## Upgrading IntelliJ IDEA May Affect Active Pre-Tested Commits
 
-Before you upgrade to IntelliJ IDEA X (or other IntelliJ X platform products), make sure you do not have active pre\-tested commits, otherwise they will not be able to be committed after upgrade. This is only relevant if you use directory\-based IDEA project (project files are stored under `.idea` directory).
+Before you upgrade to IntelliJ IDEA X (or other IntelliJ X platform products), make sure you do not have active pre-tested commits, otherwise they will not be able to be committed after upgrade. This is only relevant if you use directory-based IDEA project (project files are stored under `.idea` directory).
 
 ## Other Java Applications Running on the Same Server
 
-If other web applications are available via the same hostname, a session cookie conflict can occur. This usually is visible via random user logouts or losing session\-level data. (e.g. [TW-12654](http://youtrack.jetbrains.net/issue/TW-12654)). To resolve this, you can use different host names when accessing the applications.
+If other web applications are available via the same hostname, a session cookie conflict can occur. This usually is visible via random user logouts or losing session-level data. (e.g. [TW-12654](http://youtrack.jetbrains.net/issue/TW-12654)). To resolve this, you can use different host names when accessing the applications.
 
 ## The Server Does Not Start Claiming the Database is in Use
 
@@ -264,11 +263,7 @@ This problem is only relevant to configurations that involve an IIS reverse prox
 [11:16:16][Publishing artifacts] Sending toZip/**
 
 ```
-
-
-
-meanwhile teamcity\-agent.log is filled with 404 responses from IIS:
-
+meanwhile, `teamcity-agent.log` is filled with 404 responses from IIS:
 
 ```Shell
 [2012-08-01 12:04:55,514]   WARN -    jetbrains.buildServer.AGENT - <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -282,8 +277,6 @@ body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;b
 fieldset{padding:0 15px 10px 15px;}
 
 ```
-
-
 
 The most common cause for this is `maxAllowedContentLength` setting (in IIS) is either
 
@@ -317,31 +310,25 @@ teamcity.buildIndexer.packSleepDurationMs=10
 
 To check the metadata indexing progress, look for lines similar to the ones below in the [teamcity-server.log](teamcity-server-logs.md) file:
 
-
 ```Shell
 INFO - .index.BuildIndexer (metadata) - Enqueued next 100 builds for indexing, builds left: 7064, last build id: 8142
 
 ```
 
-
-
-After re\-indexing is complete, remove these internal properties. 
+After reindexing is complete, remove these internal properties. 
 
 
 ## SSL problems when connecting to HTTPS from TeamCity (handshake alert: unrecognized_name)
 
 This problem may happen when changing JVM from 1.6 to 1.7 and connecting some incorrectly configured HTTPS servers. 
-The problem and workaround for it are described [in this issue](http://youtrack.jetbrains.com/issue/TW-30210).
+The problem and workaround for it are described in [this issue](http://youtrack.jetbrains.com/issue/TW-30210).
 
-
-[//]: # (Internal note. Do not delete. "Known Issuesd193e619.txt")    
-
-
+[//]: # (Internal note. Do not delete. "Known Issuesd193e619.txt")
  
 
 ## SSL problems connecting MS SQL Server and TeamCity
 
-Since MS SQL Server always establishes an SSL connection between the jdbc client (the TeamCity application) and the server, connection problems may occur (SQL exception: Connection reset). 
+Since MS SQL Server always establishes an SSL connection between the JDBC client (the TeamCity application) and the server, connection problems may occur (_SQL exception: Connection reset_). 
 
 __Affected  MS SQL versions__ 
 
@@ -350,25 +337,23 @@ Any version _prior to the ones listed below_:
 * SQL Server 2008 Service Pack 3 Cumulative Update 4
 * SQL Server 2008R2 Service Pack 1 Cumulative Update 6
 * SQL Server 2008R2 Service Pack 2
- 
 
 __Cause__: The problem is caused by the Java 1.6 update addressing [this security vulnerability](https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3389).
 
 __Solution__: Microsoft SQL Server upgrade is recommended.
 
-__Workarounds:__ If Microsoft SQL Server upgrade is not possible for some reason, TeamCity can be set up to use older Microsoft SQL Server versions with the database connection still SSL\- or TLS\-encrypted.
+__Workarounds:__ If Microsoft SQL Server upgrade is not possible for some reason, TeamCity can be set up to use older Microsoft SQL Server versions with the database connection still SSL- or TLS-encrypted.
 
 <warning>
 
-Any of the two workarounds listed below will make the connection between TeamCity and the database server vulnerable
+Any of the workarounds listed below will make the connection between TeamCity and the database server vulnerable. Make sure to take proper security measures before trying them.
 </warning>
 
-* Continue using a block cipher such as `AES_128_CBC` or `3DES_EDE_CBC`, but disable CBC protection via `-Djsse.enableCBCProtection=false` Java command\-line option (that can be added to `TEAMCITY_SERVER_OPTS` environment variable, as described [here](configuring-teamcity-server-startup-properties.md#JVM+Options). 
-    The `jsse.enableCBCProtection` Java system property is also available in all _OpenJDK_ 8 versions and _IBM J9_ [8.0.0 SR1](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.security.component.80.doc/security-component/jsse2Docs/beast.html) and later.
-    Secure connection between _TeamCity_ and _Microsoft SQL Server_ would be stable but still vulnerable to [CVE-2011-3389](https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3389) also known as _BEAST_.  
+* Continue using a block cipher such as `AES_128_CBC` or `3DES_EDE_CBC`, but disable CBC protection via `-Djsse.enableCBCProtection=false` Java command-line option (that can be added to `TEAMCITY_SERVER_OPTS` environment variable, as described [here](configuring-teamcity-server-startup-properties.md#JVM+Options).  
+    The `jsse.enableCBCProtection` Java system property is also available in all _OpenJDK_ 8 versions and _IBM J9_ [8.0.0 SR1](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.security.component.80.doc/security-component/jsse2Docs/beast.html) and later.   
+    Secure connection between _TeamCity_ and _Microsoft SQL Server_ would be stable but still vulnerable to [CVE-2011-3389](https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3389) also known as _BEAST_.
 * Fall back to a stream cipher (which is not susceptible to _BEAST_) such as `RC4_128`. This will render the connection vulnerable to [CVE-2015-2808](https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2015-2808).
-
-Try running with antivirus software uninstalled before reporting the issue to JetBrains. For example, see [the issue](http://jetbrains.net/tracker/issue/TW-7138).
+* Consider running with the temporarily disabled antivirus software, but ensure this doesn't compromise the security of your setup. For example, see [this issue](http://jetbrains.net/tracker/issue/TW-7138).
 
 ## Distorted Configuration Window During Agent Reinstallation
 

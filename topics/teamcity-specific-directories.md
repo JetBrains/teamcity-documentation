@@ -33,7 +33,7 @@
 
 <td>
 
- This is TeamCity installation directory chosen in Windows installer, used to unpack TeamCity _.zip_ distribution or Tomcat home directory for _.war_ TeamCity distribution. 
+ This is TeamCity installation directory chosen in Windows installer, used to unpack the TeamCity _.zip_ distribution. 
 
 
 </td>
@@ -141,7 +141,7 @@
 
 <td>
 
- If you have installed TeamCity using the `.exe` or `tar.gz` distribution, the path to the directory is \<[TeamCity Home](teamcity-home-directory.md)\>/webapps/ROOT, by default. For the `.war` distribution, the path to the directory would depend on where you have deployed TeamCity. 
+ If you have installed TeamCity using the `.exe` or `tar.gz` distribution, the path to the directory is \<[TeamCity Home](teamcity-home-directory.md)\>/webapps/ROOT, by default.
 
 
 </td>

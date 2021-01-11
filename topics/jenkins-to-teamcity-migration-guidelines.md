@@ -213,7 +213,7 @@ Examples:
 
 A Freestyle project allows configuring optional triggers to control when Jenkins will start the builds. In most cases, a trigger in a Jenkins project will be a counterpart in TeamCity.
 
-A [number of options](configuring-build-triggers.md) for triggering builds in TeamCity are available. It is possible to watch for changes in a source control repository, monitor an external resource, or even a Maven dependency. It is possible to schedule builds periodically, besides, the [REST API](rest-api.md) is available to trigger builds externally.
+A [number of options](configuring-build-triggers.md) for triggering builds in TeamCity are available. It is possible to watch for changes in a source control repository, monitor an external resource, or even a Maven dependency. It is possible to schedule builds periodically, besides, the [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) is available to trigger builds externally.
 
 ### Build
 
