@@ -1,6 +1,5 @@
-[//]: # (title: Pre-Tested (Delayed) Commit)
-[//]: # (auxiliary-id: Pre-Tested (Delayed) Commit)
-
+[//]: # (title: Pre-Tested \(Delayed\) Commit)
+[//]: # (auxiliary-id: Pre-Tested \(Delayed\) Commit)
 
 An approach which prevents committing defective code into a build, so the entire team's process is not affected. The [diagrams](http://www.jetbrains.com/teamcity/features/delayed_commit.html) on the JetBrains TeamCity web pages provide visualization of the TeamCity approach described below. 
 
