@@ -28,7 +28,7 @@ Build 78938
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2020.1.5.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2020.1.5.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2020.2+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.2+Release+Notes)
 
 ## TeamCity 2020.1.4
 
@@ -38,7 +38,7 @@ Build 78906
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2020.1.4.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2020.1.4.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2020.1.4+%28build+78906%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1.4+%28build+78906%29+Release+Notes)
 
 ## TeamCity 2020.1.3
 
@@ -48,7 +48,7 @@ Build 78866
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2020.1.3.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2020.1.3.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2020.1.3+%28build+78866%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1.3+%28build+78866%29+Release+Notes)
 
 ## TeamCity 2020.1.2
 
@@ -58,7 +58,7 @@ Build 78726
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2020.1.2.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2020.1.2.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2020.1.2+%28build+78726%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1.2+%28build+78726%29+Release+Notes)
 
 ## TeamCity 2020.1.1
 
@@ -69,7 +69,7 @@ Build 78657
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2020.1.1.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2020.1.1.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2020.1.1+%28build+78657%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1.1+%28build+78657%29+Release+Notes)
 
 ## TeamCity 2020.1
 
@@ -79,7 +79,7 @@ Build 78475
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2020.1.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2020.1.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2020.1+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1+Release+Notes)
 
 ## TeamCity 2019.2.4
 
@@ -89,7 +89,7 @@ Build 72059
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2019.2.4.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2019.2.4.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2019.2.4+%28build+72059%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.2.4+%28build+72059%29+Release+Notes)
 
 ## TeamCity 2019.2.3
 
@@ -99,7 +99,7 @@ Build 72031
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2019.2.3.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2019.2.3.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2019.2.3+%28build+72031%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.2.3+%28build+72031%29+Release+Notes)
 
 ## TeamCity 2019.2.2
 
@@ -109,7 +109,7 @@ Build 71923
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2019.2.2.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2019.2.2.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2019.2.2+%28build+71923%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.2.2+%28build+71923%29+Release+Notes)
 
 ## TeamCity 2019.2.1
 
@@ -119,7 +119,7 @@ Build 71758
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2019.2.1.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2019.2.1.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2019.2.1+%28build+71758%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.2.1+%28build+71758%29+Release+Notes)
 
 ## TeamCity 2019.2
 
@@ -129,7 +129,7 @@ Build 71499
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2019.2.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2019.2.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2019.2+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.2+Release+Notes)
 
 ## TeamCity 2019.1.5
 
@@ -139,7 +139,7 @@ Build 66605
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2019.1.5.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2019.1.5.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2019.1.5+%28build+66605%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.1.5+%28build+66605%29+Release+Notes)
 
 ## TeamCity 2019.1.4
 
@@ -149,7 +149,7 @@ Build 66526
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2019.1.4.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2019.1.4.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2019.1.4+%28build+66526%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.1.4+%28build+66526%29+Release+Notes)
 
 ## TeamCity 2019.1.3
 
@@ -159,7 +159,7 @@ Build 66439
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2019.1.3.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2019.1.3.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2019.1.3+%28build+66439%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.1.3+%28build+66439%29+Release+Notes)
 
 ## TeamCity 2019.1.2
 
@@ -169,7 +169,7 @@ Build 66342
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2019.1.2.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2019.1.2.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2019.1.2+%28build+66342%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.1.2+%28build+66342%29+Release+Notes)
 
 ## TeamCity 2019.1.1
 
@@ -179,7 +179,7 @@ Build 66192
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2019.1.1.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2019.1.1.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2019.1.1+%28build+66192%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.1.1+%28build+66192%29+Release+Notes)
 
 ## TeamCity 2019.1
 
@@ -189,7 +189,7 @@ Build 66192
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2019.1.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2019.1.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2019.1+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.1+Release+Notes)
 
 ## TeamCity 2018.2.4
 
@@ -199,7 +199,7 @@ Build 61678
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2018.2.4.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2018.2.4.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2018.2.4+%28build+61678%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.2.4+%28build+61678%29+Release+Notes)
 
 ## TeamCity 2018.2.3
 
@@ -209,7 +209,7 @@ Build 61544
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2018.2.3.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2018.2.3.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2018.2.3+%28build+61544%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.2.3+%28build+61544%29+Release+Notes)
 
 ## TeamCity 2018.2.2
 
@@ -219,7 +219,7 @@ Build 61245
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2018.2.2.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2018.2.2.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2018.2.2+%28build+61245%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.2.2+%28build+61245%29+Release+Notes)
 
 ## TeamCity 2018.2.1
 
@@ -229,7 +229,7 @@ Build 61078
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2018.2.1.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2018.2.1.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2018.2.1+%28build+61078%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.2.1+%28build+61078%29+Release+Notes)
 
 ## TeamCity 2018.2
 
@@ -239,7 +239,7 @@ Build 60925
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2018.2.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2018.2.tar.gz)
 
-[Release notes](/display/TW/TeamCity+2018.2+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.2+Release+Notes)
 
 ## TeamCity 2018.1.5
 
@@ -250,7 +250,7 @@ Build 58744
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.5.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.5.war) - not recommended, use distribution with bundled Tomcat instead
 
-[Release notes](/display/TW/TeamCity+2018.1.4+%28build+58724%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.1.4+%28build+58724%29+Release+Notes)
 
 ## TeamCity 2018.1.4
 
@@ -261,7 +261,7 @@ Build 58724
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.4.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.4.war) - not recommended, use distribution with bundled Tomcat instead
 
-[Release notes](/display/TW/TeamCity+2018.1.4+%28build+58724%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.1.4+%28build+58724%29+Release+Notes)
 
 ## TeamCity 2018.1.3
 
@@ -272,7 +272,7 @@ Build 58658
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.3.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.3.war) - not recommended, use distribution with bundled Tomcat instead
 
-[Release notes](/display/TW/TeamCity+2018.1.3+%28build+58658%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.1.3+%28build+58658%29+Release+Notes)
 
 ## TeamCity 2018.1.2
 
@@ -283,7 +283,7 @@ Build 58537
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.2.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.2.war) - not recommended, use distribution with bundled Tomcat instead
 
-[Release notes](/display/TW/TeamCity+2018.1.1+%28build+58406%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.1.1+%28build+58406%29+Release+Notes)
 
 ## TeamCity 2018.1.1
 
@@ -294,7 +294,7 @@ Build 58406
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.1.war) - not recommended, use distribution with bundled Tomcat instead
 
-[Release notes](/display/TW/TeamCity+2018.1.1+%28build+58406%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.1.1+%28build+58406%29+Release+Notes)
 
 ## TeamCity 2018.1
 
@@ -305,7 +305,7 @@ Build 58245
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2018.1.war) - not recommended, use distribution with bundled Tomcat instead
 
-[Release notes](/display/TW/TeamCity+2018.1+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.1+Release+Notes)
 
 ## TeamCity 2017.2.4
 
@@ -316,7 +316,7 @@ Build 51228
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2017.2.4.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2017.2.4.war) - not recommended, use distribution with bundled Tomcat instead
 
-[Release notes](/display/TW/TeamCity+2017.2.4+%28build+51228%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.2.4+%28build+51228%29+Release+Notes)
 
 ## TeamCity 2017.2.3
 
@@ -327,7 +327,7 @@ Build 51047
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2017.2.3.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2017.2.3.war) - not recommended, use distribution with bundled Tomcat instead
 
-[Release notes](/display/TW/TeamCity+2017.2.3+%28build+51047%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.2.3+%28build+51047%29+Release+Notes)
 
 ## TeamCity 2017.2.2
 
@@ -338,7 +338,7 @@ Build 50909
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2017.2.2.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2017.2.2.war) - not recommended, use distribution with bundled Tomcat instead
 
-[Release notes](/display/TW/TeamCity+2017.2.2+%28build+50909%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.2.2+%28build+50909%29+Release+Notes)
 
 ## TeamCity 2017.2.1
 
@@ -349,7 +349,7 @@ Build 50732
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2017.2.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2017.2.1.war) - not recommended, use distribution with bundled Tomcat instead
 
-[Release notes](/display/TW/TeamCity+2017.2.1+%28build+50732%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.2.1+%28build+50732%29+Release+Notes)
 
 ## TeamCity 2017.2
 
@@ -360,7 +360,7 @@ Build 50574
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2017.2.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2017.2.war) - not recommended, use distribution with bundled Tomcat instead
 
-Release notes](/display/TW/TeamCity+2017.2+Release+Notes)
+Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.2+Release+Notes)
 
 ## TeamCity 2017.1.5
 
@@ -371,7 +371,7 @@ Build 47175
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.5.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.5.war)
 
-[Release notes](/display/TW/TeamCity+2017.1.5+%28build+47175%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.1.5+%28build+47175%29+Release+Notes)
 
 ## TeamCity 2017.1.4
 
@@ -381,7 +381,7 @@ Build 47070
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.4.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.4.war)
 
-[Release notes](/display/TW/TeamCity+2017.1.4+%28build+47070%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.1.4+%28build+47070%29+Release+Notes)
 
 ## TeamCity 2017.1.3
 
@@ -392,7 +392,7 @@ Build 46961
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.3.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.3.war)
 
-[Release notes](/display/TW/TeamCity+2017.1.3+%28build+46961%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.1.3+%28build+46961%29+Release+Notes)
 
 ## TeamCity 2017.1.2
 
@@ -403,7 +403,7 @@ Build 46812
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.2.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.2.war)
 
-[Release notes](/display/TW/TeamCity+2017.1.2+%28build+46812%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.1.2+%28build+46812%29+Release+Notes)
 
 ## TeamCity 2017.1.1
 
@@ -414,7 +414,7 @@ Build 46654
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.1.war)
 
-[Release notes](/display/TW/Indore+2017.1.1+%28build+46654%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/Indore+2017.1.1+%28build+46654%29+Release+Notes)
 
 ## TeamCity 2017.1
 
@@ -425,7 +425,7 @@ Build 46533
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-2017.1.war)
 
-[Release notes](/display/TW/TeamCity+2017.1+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.1+Release+Notes)
 
 ## TeamCity 10.0.5
 
@@ -436,7 +436,7 @@ Build 42677
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-10.0.5.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-10.0.5.war)
 
-[Release notes](/display/TW/TeamCity+10.0.5+%28build+42677%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+10.0.5+%28build+42677%29+Release+Notes)
 
 ## TeamCity 10.0.4
 
@@ -447,7 +447,7 @@ Build 42538
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-10.0.4.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-10.0.4.war)
 
-[Release notes](/display/TW/TeamCity+10.0.4+%28build+42538%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+10.0.4+%28build+42538%29+Release+Notes)
 
 ## TeamCity 10.0.3
 
@@ -458,7 +458,7 @@ Build 42434
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-10.0.3.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-10.0.3.war)
 
-[Release notes](/display/TW/TeamCity+10.0.3+%28build+42434%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+10.0.3+%28build+42434%29+Release+Notes)
 
 ## TeamCity 10.0.2
 
@@ -469,7 +469,7 @@ Build 42234
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-10.0.2.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-10.0.2.war)
 
-[Release notes](/display/TW/TeamCity+10.0.2+%28build+42234%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+10.0.2+%28build+42234%29+Release+Notes)
 
 ## TeamCity 10.0.1
 
@@ -480,7 +480,7 @@ Build 42078
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-10.0.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-10.0.1.war)
 
-[Release notes](/display/TW/TeamCity+10.0.1+%28build+42078%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+10.0.1+%28build+42078%29+Release+Notes)
 
 ## TeamCity 10.0
 
@@ -491,7 +491,7 @@ Build 42002
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-10.0.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-10.0.war)
 
-[Release notes](/display/TW/TeamCity+10.0+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+10.0+Release+Notes)
 
 ## TeamCity 9.1.7
 
@@ -502,7 +502,7 @@ Build 37573
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.1.7.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.1.7.war)
 
-[Release notes](/display/TW/TeamCity+9.1.7+%28build+37573%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.1.7+%28build+37573%29+Release+Notes)
 
 ## TeamCity 9.1.6
 
@@ -513,7 +513,7 @@ Build 37459
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.1.6.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.1.6.war)
 
-[Release notes](/display/TW/TeamCity+9.1.6+%28build+37459%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.1.6+%28build+37459%29+Release+Notes)
 
 ## TeamCity 9.1.5
 
@@ -524,7 +524,7 @@ Build 37377
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.1.5.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.1.5.war)
 
-[Release notes](/display/TW/TeamCity+9.1.5+%28build+37377%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.1.5+%28build+37377%29+Release+Notes)
 
 ## TeamCity 9.1.4
 
@@ -535,7 +535,7 @@ Build 37293
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.1.4.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.1.4.war)
 
-[Release notes](/display/TW/TeamCity+9.1.4+%28build+37293%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.1.4+%28build+37293%29+Release+Notes)
 
 ## TeamCity 9.1.3
 
@@ -546,7 +546,7 @@ Build 37176
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.1.3.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.1.3.war)
 
-[Release notes](/display/TW/TeamCity+9.1.3+%28build+37176%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.1.3+%28build+37176%29+Release+Notes)
 
 ## TeamCity 9.1.2
 
@@ -557,7 +557,7 @@ Build 37168
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.1.2.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.1.2.war)
 
-[Release notes](/display/TW/TeamCity+9.1.2+%28build+37168%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.1.2+%28build+37168%29+Release+Notes)
 
 ## TeamCity 9.1.1
 
@@ -568,7 +568,7 @@ Build 36973
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.1.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.1.1.war)
 
-[Release notes](/display/TW/TeamCity+9.1.1+%28build+37059%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.1.1+%28build+37059%29+Release+Notes)
 
 ## TeamCity 9.1
 
@@ -579,7 +579,7 @@ Build 36973
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.1.war)
 
-[Release notes](/display/TW/TeamCity+9.1+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.1+Release+Notes)
 
 ## TeamCity 9.0.5
 
@@ -590,7 +590,7 @@ Build 32523
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.0.5.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.0.5.war)
 
-[Release notes](/display/TW/TeamCity+9.0.5+%28build+32523%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.0.5+%28build+32523%29+Release+Notes)
 
 ## TeamCity 9.0.4
 
@@ -601,7 +601,7 @@ Build 32407
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.0.4.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.0.4.war)
 
-[Release notes](/display/TW/TeamCity+9.0.4+%28build+32407%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.0.4+%28build+32407%29+Release+Notes)
 
 ## TeamCity 9.0.3
 
@@ -612,7 +612,7 @@ Build 32334
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.0.3.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.0.3.war)
 
-[Release notes](/display/TW/TeamCity+9.0.3+%28build+32334%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.0.3+%28build+32334%29+Release+Notes)
 
 ## TeamCity 9.0.2
 
@@ -623,7 +623,7 @@ Build 32195
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.0.2.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.0.2.war)
 
-[Release notes](/display/TW/TeamCity+9.0.2+%28build+32195%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.0.2+%28build+32195%29+Release+Notes)
 
 ### TeamCity 9.0.1
 
@@ -634,7 +634,7 @@ Build 32116
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.0.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.0.1.war)
 
-[Release notes](/display/TW/TeamCity+9.0.1+%28build+32116%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.0.1+%28build+32116%29+Release+Notes)
 
 ### TeamCity 9.0
 
@@ -645,7 +645,7 @@ Build 32060
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-9.0.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-9.0.war)
 
-[Release notes](/display/TW/TeamCity+9.0+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+9.0+Release+Notes)
 
 ### TeamCity 8.1.5
 
@@ -656,7 +656,7 @@ Build 30240
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.1.5.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.1.5.war)
 
-[Release notes](/display/TW/TeamCity+8.1.5+%28build+30240%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.1.5+%28build+30240%29+Release+Notes)
 
 ### TeamCity 8.1.4
 
@@ -667,7 +667,7 @@ Build 30168
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.1.4.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.1.4.war)
 
-[Release notes](/display/TW/TeamCity+8.1.4+%28build+30168%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.1.4+%28build+30168%29+Release+Notes)
 
 ### TeamCity 8.1.3
 
@@ -678,7 +678,7 @@ Build 30101
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.1.3.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.1.3.war)
 
-[Release notes](/display/TW/TeamCity+8.1.3+%28build+30101%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.1.3+%28build+30101%29+Release+Notes)
 
 ### TeamCity 8.1.2
 
@@ -689,7 +689,7 @@ Build 29993
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.1.2.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.1.2.war)
 
-[Release notes](/display/TW/TeamCity+8.1.2+%28build+29993%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.1.2+%28build+29993%29+Release+Notes)
 
 ### TeamCity 8.1.1
 
@@ -700,7 +700,7 @@ Build 29939
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.1.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.1.1.war)
 
-[Release notes](/display/TW/TeamCity+8.1.1+%28build+29939%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.1.1+%28build+29939%29+Release+Notes)
 
 ### TeamCity 8.1
 
@@ -711,7 +711,7 @@ Build 29879
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.1.war)
 
-[Release notes](/display/TW/TeamCity+8.1+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.1+Release+Notes)
 
 ### TeamCity 8.0.6
 
@@ -722,7 +722,7 @@ Build 27767
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.0.6.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.0.6.war)
 
-[Release notes](/display/TW/TeamCity+8.0.6+%28build+27767%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.0.6+%28build+27767%29+Release+Notes)
 
 ### TeamCity 8.0.5
 
@@ -733,7 +733,7 @@ Build 27692
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.0.5.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.0.5.war)
 
-[Release notes](/display/TW/TeamCity+8.0.5+%28build+27692%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.0.5+%28build+27692%29+Release+Notes)
 
 ### TeamCity 8.0.4
 
@@ -744,7 +744,7 @@ Build 27540
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.0.4.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.0.4.war)
 
-[Release notes](/display/TW/TeamCity+8.0.4+%28build+27616%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.0.4+%28build+27616%29+Release+Notes)
 
 ### TeamCity 8.0.3
 
@@ -755,7 +755,7 @@ Build 27540
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.0.3.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.0.3.war)
 
-[Release notes](/display/TW/TeamCity+8.0.3+%28build+27540%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.0.3+%28build+27540%29+Release+Notes)
 
 ### TeamCity 8.0.2
 
@@ -766,7 +766,7 @@ Build 27482
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.0.2.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.0.2.war)
 
-[Release notes](/display/TW/Gaya+8.0.2+%28build+27482%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/Gaya+8.0.2+%28build+27482%29+Release+Notes)
 
 ### TeamCity 8.0.1
 
@@ -777,7 +777,7 @@ Build 27435
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.0.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.0.1.war)
 
-[Release notes](/display/TW/TeamCity+8.0.1+%28build+27435%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.0.1+%28build+27435%29+Release+Notes)
 
 ### TeamCity 8.0
 
@@ -788,7 +788,7 @@ Build 27402
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-8.0.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-8.0.war)
 
-[Release notes](/display/TW/TeamCity+8.0+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+8.0+Release+Notes)
 
 ### TeamCity 7.1.5
 
@@ -799,7 +799,7 @@ Build 24400
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-7.1.5.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-7.1.5.war)
 
-[Release notes](/display/TW/TeamCity+7.1.5+%28build+24400%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+7.1.5+%28build+24400%29+Release+Notes)
 
 ### TeamCity 7.1.4
 
@@ -810,7 +810,7 @@ Build 24331
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-7.1.4.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-7.1.4.war)
 
-[Release notes](/display/TW/TeamCity+7.1.4+%28build+24331%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+7.1.4+%28build+24331%29+Release+Notes)
 
 ### TeamCity 7.1.3
 
@@ -821,7 +821,7 @@ Build 24266
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-7.1.3.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-7.1.3.war)
 
-[Release notes](/display/TW/TeamCity+7.1.3+%28build+24266%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+7.1.3+%28build+24266%29+Release+Notes)
 
 ### TeamCity 7.1.2
 
@@ -832,7 +832,7 @@ Build 24170
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-7.1.2.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-7.1.2.war)
 
-[Release notes](/display/TW/TeamCity+7.1.2+%28build+24170%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+7.1.2+%28build+24170%29+Release+Notes)
 
 ### TeamCity 7.1.1
 
@@ -843,7 +843,7 @@ Build 24074
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-7.1.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-7.1.1.war)
 
-[Release notes](/display/TW/TeamCity+7.1.1+%28build+24074%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+7.1.1+%28build+24074%29+Release+Notes)
 
 ### TeamCity 7.1
 
@@ -854,7 +854,7 @@ Build 23907
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-7.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-7.1.war)
 
-[Release notes](/display/TW/TeamCity+7.1+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+7.1+Release+Notes)
 
 ### TeamCity 7.0.4
 
@@ -865,7 +865,7 @@ Build 21474
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-7.0.4.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-7.0.4.war)
 
-[Release notes](/display/TW/Faradi+7.0.4+%28build+21474%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/Faradi+7.0.4+%28build+21474%29+Release+Notes)
 
 ### TeamCity 7.0.3
 
@@ -876,7 +876,7 @@ Build 21424
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-7.0.3.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-7.0.3.war)
 
-[Release notes](/display/TW/Farady+7.0.3+%28build+21424%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/Farady+7.0.3+%28build+21424%29+Release+Notes)
 
 ### TeamCity 7.0.2
 
@@ -887,7 +887,7 @@ Build 21349
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-7.0.2.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-7.0.2.war)
 
-[Release notes](/display/TW/Faradi+7.0.2+%28build+21349%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/Faradi+7.0.2+%28build+21349%29+Release+Notes)
 
 ### TeamCity 7.0.1
 
@@ -898,7 +898,7 @@ Build 21326
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-7.0.1.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-7.0.1.war)
 
-[Release notes](/display/TW/Faradi+7.0.1+%28build+21326%29+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/Faradi+7.0.1+%28build+21326%29+Release+Notes)
 
 ### TeamCity 7.0
 
@@ -909,7 +909,7 @@ Build 21241
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-7.0.tar.gz)  
 [Java EE container (war)](https://download.jetbrains.com/teamcity/TeamCity-7.0.war)
 
-[Release notes](/display/TW/TeamCity+7.0+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+7.0+Release+Notes)
 
 ### TeamCity 6.5.6
 
