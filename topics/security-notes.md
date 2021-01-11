@@ -1,18 +1,15 @@
 [//]: # (title: Security Notes)
 [//]: # (auxiliary-id: Security Notes)
 
->The following notes are provided for your reference only and are not meant to be complete or accurate in their entirety.
+>The following notes are provided for a reference only and are not meant to be complete or accurate in their entirety.
 >
 {type="note"}
 
-TeamCity is developed with security concerns in mind, and reasonable efforts are made to make the system invulnerable to different types of attacks. We work with third-parties on assessing TeamCity security using security scanners and penetration tests.   
-We aim to promptly address newly discovered security issues in the nearest bugfix releases for the most recent TeamCity major version.  
+TeamCity is developed with security concerns in mind, and reasonable efforts are made to make the system invulnerable to different types of attacks. We work with third parties on assessing TeamCity security using security scanners and penetration tests.   
+We aim to promptly address newly discovered security issues in the nearest bugfix releases for the most recent TeamCity major version. It is recommended to upgrade to newly released TeamCity versions as soon as they become available as they can contain security-related fixes.  
 However, the general assumption and __recommended setup is to deploy TeamCity in a trusted environment__ with no possibility for it to be accessed by malicious users.
 
-Along with these guidelines, please review [notes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) on configuring the TeamCity server for production use. For the list of disclosed security-related issues, see our [public issue tracker](https://youtrack.jetbrains.com/issues/TW?q=project:TeamCity%20type:%20%7BSecurity%20Problem%7D%20sort%20by:%20%7BFix%20versions%7D%20desc) and the "Security" section in the release notes. It is recommended to upgrade to newly released TeamCity versions as soon as they become available as they can contain security-related fixes.
-
-Note that __since TeamCity 2017.2__ the TeamCity Windows installer modifies permissions of the [TeamCity installation directory](teamcity-home-directory.md) not to use inheritable permissions and explicitly grants access to the directory to the Administrators user group and the account under which the service is configured to run.   
-It is strongly recommended to restrict permissions to the [`TeamCity Data Directory`](teamcity-data-directory.md) in the same way.
+Along with these guidelines, please review [notes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) on configuring the TeamCity server for production use. For the list of disclosed security-related issues, see our [public issue tracker](https://youtrack.jetbrains.com/issues/TW?q=project:TeamCity%20type:%20%7BSecurity%20Problem%7D%20sort%20by:%20%7BFix%20versions%7D%20desc) and the "Security" section in the release notes.
 
 ## Security Self-Checklist
 
@@ -41,12 +38,12 @@ Here are some notes on different security-related aspects:
     * can do everything the system user, under whom the TeamCity agent is running, can do; have access to OS resources and other applications installed on the agent machines where their builds can run.
     * can access and change source code of other projects built on the same agent, modify the TeamCity agent code, publish any files as artifacts for the builds run on the agent (which means the files can be then displayed in the TeamCity web UI and expose web vulnerabilities or can be used in other builds), and so on.
     * can impersonate a TeamCity agent (run a new agent looking the same to the TeamCity server).
-    * can do everything that users with the "View build configuration settings" permission for all the projects on the server can do (see [below](view-build-config-settings)).
+    * can do everything that users with the "View build configuration settings" permission for all the projects on the server can do (see [below](#view-build-config-settings)).
     * can retrieve settings of the build configurations where the builds are run, including the values of the password fields.
     * can download artifacts from any build on the server.   
       Hence, it is advised to run TeamCity agents under an OS account with only a [necessary set of permissions](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) and use the [agent pools](configuring-agent-pools.md) feature to ensure that projects requiring a different set of access are not built on the same agents.
 <anchor name="view-build-config-settings"/>
-* Users with the "View build configuration settings" permission (the "Project developer" TeamCity role by default) can view all the projects on the server, but since TeamCity 9.0 there is a way to restrict this, see details in the corresponding issue [TW-24904](https://youtrack.jetbrains.com/issue/TW-24904#comment=27-731107).
+* Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server. Since TeamCity 9.0, this can be disabled by setting the [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.buildAuth.enableStrictMode=true`.
 * Users with the "Edit project" permission (the "Project Administrator" TeamCity role by default) in one project, by changing settings can retrieve artifacts and trigger builds from any build configuration they have only the view permission for ([TW-39209](https://youtrack.jetbrains.com/issue/TW-39209)).
 * Users with the "Change server settings" permission (the "System Administrator" TeamCity role by default): It is assumed that the users also have access to the computer on which the TeamCity server is running under the user account used to run the server process. Thus, the users can get full access to the machine under that OS user account: browse file system, change files, run arbitrary commands, and so on.
 * TeamCity server computer administrators: have full access to TeamCity stored data and can affect TeamCity executed processes. Passwords that are necessary to authenticate in external systems (like VCS, issue trackers, and so on) are stored in a scrambled form in [TeamCity Data Directory](teamcity-data-directory.md) and can also be stored in the database. However, the values are only scrambled, which means they can be retrieved by any user who has access to the server file system or database.
@@ -68,6 +65,11 @@ Here are some notes on different security-related aspects:
 
 [//]: # (Internal note. Do not delete. "How To...d160e890.txt")
 
+## Restricting Permissions to TeamCity Data Directory
+
+__Since TeamCity 2017.2__, the TeamCity Windows installer modifies permissions of the [TeamCity installation directory](teamcity-home-directory.md) not to use inheritable permissions and explicitly grants access to the directory to the Administrators user group and the account under which the service is configured to run.   
+It is strongly recommended to restrict permissions to the [`TeamCity Data Directory`](teamcity-data-directory.md) in the same way.
+
 ## Preventing First-User Access to Empty Database
 
 Consider adding the `teamcity.installation.completed=true` line into the `<[TeamCity Home Directory](teamcity-home-directory.md)>\conf\teamcity-startup.properties` file - this will prevent the server started with the empty database from granting access to the machine for the first coming user.
@@ -80,7 +82,7 @@ TeamCity has no built-in protection against DoS (Denial-of-service) attack: high
 
 TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key, or using a custom key.
 
-## Thirt-party Software Vulnerabilities
+## Third-party Software Vulnerabilities
 
 This section describes the effect and necessary protection steps related to the announced security vulnerabilities.
 
