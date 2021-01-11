@@ -98,7 +98,7 @@ In case of an automatic update failure, perform the following to restore your Te
 
 Current automatic update limitations:
 * some customizations, for example, installations with [changed server context](installing-and-configuring-the-teamcity-server.md#Changing+Server+Context), are not supported by automatic update
-* only manual upgrade is possible if the server runs under the official [TeamCity Docker container](#Upgrading+TeamCity+started+from+Docker+images), started with [AWS CloudFormation template](running-teamcity-stack-in-aws.md) or Azure Resource Manager template.
+* only manual upgrade is possible if the server runs under the official [TeamCity Docker container](#Upgrading+TeamCity+started+from+Docker+images), started with Azure Resource Manager template.
 * the Windows uninstaller is not updated during the upgrade, so after several updates, old TeamCity version will still be noted in Windows lists. During the uninstallation, not all of the TeamCity installation files might be deleted.
 * the bundled Java is not updated
 * in a [multinode setup](multinode-setup.md), only the main TeamCity server can be auto-updated, the secondary nodes need to be updated manually.
@@ -143,10 +143,6 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 #### Upgrading TeamCity started from Docker images
 
 If you made no changes to the container, you can just stop the running container, pull the new version of the [official TeamCity image](https://hub.docker.com/r/jetbrains/teamcity-server/) and the server in it via the usual command. If you changed the image, you will need to replicate the changes to the new TeamCity server image.
-
-#### Upgrading TeamCity started from AWS CloudFormation template
-
-Please see the [dedicated page](running-teamcity-stack-in-aws.md#Upgrading+TeamCity+in+AWS).
 
 ## IDE Plugins
 
