@@ -16,7 +16,7 @@
     <category name="Search" id="search" order="11"/>
     <category id="web_resources" name="Web Resources" order="99"/>
     <category id="procedures" name="Procedures" order="4"/>
-    <category id="howto" name="How tos" order="5"/>
+    <category id="howto" name="How to's" order="5"/>
     <category id="get_started" name="Getting Started" order="8"/>
     <category id="javaee" name="Java EE and Web Development" order="220"/>
     <category id="data_access" name="Data Access Support" order="130"/>

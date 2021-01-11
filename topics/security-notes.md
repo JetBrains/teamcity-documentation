@@ -3,9 +3,9 @@
 
 >The following notes are provided for a reference only and are not meant to be complete or accurate in their entirety.
 >
-{type="note"}
+{type="warning"}
 
-TeamCity is developed with security concerns in mind, and reasonable efforts are made to make the system invulnerable to different types of attacks. We work with third parties on assessing TeamCity security using security scanners and penetration tests.   
+TeamCity is developed with security concerns in mind, and reasonable efforts are made to ensure the system invulnerable to different types of attacks. We work with third parties on assessing TeamCity security using security scanners and penetration tests.   
 We aim to promptly address newly discovered security issues in the nearest bugfix releases for the most recent TeamCity major version. It is recommended to upgrade to newly released TeamCity versions as soon as they become available as they can contain security-related fixes.  
 However, the general assumption and __recommended setup is to deploy TeamCity in a trusted environment__ with no possibility for it to be accessed by malicious users.
 
@@ -13,7 +13,7 @@ Along with these guidelines, please review [notes](installing-and-configuring-th
 
 ## Security Self-Checklist
 
-Here are the main security recommendations to follow when using TeamCity:
+This checklist contains the main security recommendations to follow when using TeamCity:
 
 * You are running the latest released TeamCity version and are ready to upgrade to the newly released versions within weeks.
 * An access to the TeamCity web interface is secured with HTTPS (for example, with the help a [proxy server](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) like NGINX). Best practices for securing web applications are employed for the TeamCity web interface: for example, it is not possible to access the server using HTTP the protocol. The reverse proxy does not strip the _Referer_ request header.
@@ -28,7 +28,7 @@ Here are the main security recommendations to follow when using TeamCity:
 
 ## Security Risks Evaluation
 
-Here are some notes on different security-related aspects:
+Here are the notes on different security-related aspects:
 * [Man-in-the middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) concerns:
     * Between the TeamCity server and the user's web browser: It is advised to [use HTTPS](using-https-to-access-teamcity-server.md) for the TeamCity server. During login, TeamCity transmits the user login password in an encrypted form with a moderate encryption level.
     * Between a TeamCity agent and the TeamCity server: see [this section](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).
@@ -46,7 +46,7 @@ Here are some notes on different security-related aspects:
 * Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server.
 * Users with the "Edit project" permission (the "Project Administrator" TeamCity role by default) in one project, by changing settings can retrieve artifacts and trigger builds from any build configuration they have only the view permission for ([TW-39209](https://youtrack.jetbrains.com/issue/TW-39209)).
 * Users with the "Change server settings" permission (the "System Administrator" TeamCity role by default): It is assumed that the users also have access to the computer on which the TeamCity server is running under the user account used to run the server process. Thus, the users can get full access to the machine under that OS user account: browse file system, change files, run arbitrary commands, and so on.
-* TeamCity server computer administrators: have full access to TeamCity stored data and can affect TeamCity executed processes. Passwords that are necessary to authenticate in external systems (like VCS, issue trackers, and so on) are stored in a scrambled form in [TeamCity Data Directory](teamcity-data-directory.md) and can also be stored in the database. However, the values are only scrambled, which means they can be retrieved by any user who has access to the server file system or database.
+* The TeamCity server computer administrators: have full access to TeamCity stored data and can affect TeamCity executed processes. Passwords that are necessary to authenticate in external systems (like VCS, issue trackers, and so on) are stored in a scrambled form in [TeamCity Data Directory](teamcity-data-directory.md) and can also be stored in the database. However, the values are only scrambled, which means they can be retrieved by any user who has access to the server file system or database.
 * Users who have read access to the TeamCity server logs (TeamCity server home directory) can escalate their access to the TeamCity server administrator.
 * Users who have read access to `<[TeamCity Data Directory](teamcity-data-directory.md)>` can access all the settings on the server, including configured passwords.
 * Users who have read access to the build artifacts in `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` get the same permissions as users with the "View build runtime parameters and data" permission (in particular, with access to the values of all the password parameters used in the build).
@@ -56,11 +56,11 @@ Here are some notes on different security-related aspects:
     * Any user who can access the settings repository (including users with "View file content" permission for the build configurations using the same VCS root) can see the settings and retrieve the actual passwords based on their stored scrambled form.
     * Any user who can modify settings in VCS for a single build configuration built on the server, via changing settings can retrieve artifacts and trigger builds from any build configuration they have only view permission for ([TW-39192](https://youtrack.jetbrains.com/issue/TW-39192)).
     * Users who can customize build configuration settings on a per-build basis (for example, one who can run personal builds when versioned settings are set to "use settings from VCS") via changing settings in a build can retrieve artifacts and trigger builds from any build configuration they have only view permission for ([TW-46065](https://youtrack.jetbrains.com/issue/TW-46065)).
-* Other:
+* Other notes:
     * TeamCity web application vulnerabilities: the TeamCity development team makes a reasonable effort to fix any significant vulnerabilities (like cross-site scripting possibilities) once they are uncovered. Please note that any user who can affect build files ("users who can change code that is used in the builds run by TeamCity" or "TeamCity agent computer administrators") can make a malicious file available as a build artifact that will then exploit cross-site scripting vulnerability. ([TW-27206](http://youtrack.jetbrains.com/issue/TW-27206))
     * TeamCity agent is fully controlled by the TeamCity server: since TeamCity agents support automatic updates download from the server, agents should only connect to a trusted server. An administrator of the server computer can force execution of arbitrary code on a connected agent.
     * Binaries of the agent plugins installed on the server are available to anyone who can access the server URL.
-    * If any of the OAuth authentication modules (Bitbucket Cloud, GitHub.com, GitHub Enterprise, GitLab.com, GitLab CE/EE) are enabled on your server __and__ you restrict authentication to members of a specific Bitbucket workspace, GitHub organization, or GitLab group, note the following:  
+    * If any of the OAuth [authentication modules](configuring-authentication-settings.md) (Bitbucket Cloud, GitHub.com, GitHub Enterprise, GitLab.com, GitLab CE/EE) are enabled on your server __and__ you restrict authentication to members of a specific Bitbucket workspace, GitHub organization, or GitLab group, note the following:  
       Once signed in to the TeamCity server with an external account, a user can create a password or token which will allow them to sign in to this server directly, bypassing the VCS hosting provider verification. If you delete a user from a workspace/organization/group, remember to restrict their access or delete their user profile in TeamCity as well.
 
 [//]: # (Internal note. Do not delete. "How To...d160e890.txt")
@@ -84,7 +84,7 @@ TeamCity tries not to pass password values via the web UI (from a browser to the
 
 ## Third-party Software Vulnerabilities
 
-This section describes the effect and necessary protection steps related to the announced security vulnerabilities.
+This section describes the effect and necessary protection steps related to the announced security vulnerabilities of third-party software.
 
 ### Heartbleed, ShellShock
 
