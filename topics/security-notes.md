@@ -26,7 +26,7 @@ Here are the main security recommendations to follow when using TeamCity:
 
 <anchor name="HowTo...-Security-relatedRisksEvaluation"/>
 
-### Security Risks Evaluation
+## Security Risks Evaluation
 
 Here are some notes on different security-related aspects:
 * [Man-in-the middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) concerns:
