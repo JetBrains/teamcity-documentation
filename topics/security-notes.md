@@ -80,7 +80,7 @@ TeamCity has no built-in protection against DoS (Denial-of-service) attack: high
 
 ## Encryption Used by TeamCity
 
-TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key, or [using a custom key](teamcity-configuration-and-maintenance.md#Encryption+Settings).
+TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key, or [using a custom key](teamcity-configuration-and-maintenance.md#encryption-settings).
 
 ## Third-party Software Vulnerabilities
 
