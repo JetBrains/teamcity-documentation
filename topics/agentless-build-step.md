@@ -9,11 +9,11 @@ This approach allows saving agents' work time and is optimal for configurations 
 
 Let's consider an example build that consists of three steps: compilation, testing, and deployment. All of them are processed by an agent even though the deployment step is actually performed by the external software. The agent is just polling the external software and reporting build statuses to the TeamCity server.
 
-<img src="agent-depend-build.png" alt="Regular build" width="556"/>
+<img src="agent-depend-build.png" alt="Regular build"/>
 
 With the agentless approach, the agent does not need to handle the final deployment step and can run other builds from the queue. The TeamCity server will catch the following reports directly from the external tool.
 
-<img src="agentless-build.png" alt="Build with agentless step" width="518"/>
+<img src="agentless-build.png" alt="Build with agentless step"/>
 
 <seealso>
         <category ref="admin-guide">
