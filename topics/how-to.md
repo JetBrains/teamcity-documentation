@@ -281,17 +281,21 @@ See also [notes](#Estimate+Hardware+Requirements+for+TeamCity) on maximum suppor
 
 It is possible to add a [secondary TeamCity node](configuring-secondary-node.md) to ensure high availability and offload some operations from the main server. All nodes need to be connected to the same [`TeamCity Data Directory`](teamcity-data-directory.md) and the database.
 
-To address fast disaster recovery scenarios, TeamCity supports active \- failover (cold standby) approach: the data that the TeamCity server uses can be replicated and a solution put in place to start a new server using the same data if the currently active server malfunctions.
+To address fast disaster recovery scenarios, TeamCity supports active - failover (cold standby) approach: the data that the TeamCity server uses can be replicated and a solution put in place to start a new server using the same data if the currently active server malfunctions.
 
 As to the data, the TeamCity server uses both database and file storage (Data Directory). You can browse through [TeamCity Data Backup](teamcity-data-backup.md) and [TeamCity Data Directory](teamcity-data-directory.md) pages in to get more information on TeamCity data storing. Basically, both the TeamCity Data Directory on the disk and the database which TeamCity uses must remain in a consistent state and thus must be replicated together.   
 Only a single TeamCity server instance should use the database and Data Directory at any time.
 
-Ensure that the distribution of the TeamCity failover/backup server is of exactly the same version as the main server. It is also important to ensure the same server environment/startup options like memory settings, etc.
+Ensure that the distribution of the TeamCity failover/backup server is of exactly the same version as the main server. It is also important to ensure the same server environment/startup options like memory settings, and so on.
 
 TeamCity agents farm can be reused between the main and the failover servers. Agents will automatically connect to the new server if you make the failover server to be resolved via the old server DNS name and agents connect to the server using the DNS name. See also information on [switching](#Switching+from+one+server+to+another) from one server to another.   
-If appropriate, the agents can be replicated just as the server. However, there is no need to replicate any TeamCity\-specific data on the agents except for the conf\buildAgent.properties file as all the rest of the data can typically be renewed from the server. In case of replicated agents farm, the replica agents just need to be connected to the failover server.
+If appropriate, the agents can be replicated just as the server. However, there is no need to replicate any TeamCity-specific data on the agents except for the conf\buildAgent.properties file as all the rest of the data can typically be renewed from the server. In case of replicated agents farm, the replica agents just need to be connected to the failover server.
 
 In case of two servers installations for redundancy purposes, they can use the same set of licenses as only one of them is running at any given moment.
+
+## TeamCity Security Notes
+
+The contents of this section have been moved to the [dedicated article](security-notes.md).
 
 <anchor name="HowTo...-ConfigureNewlyInstalledMySQLServer"/>
 
@@ -1168,7 +1172,7 @@ To recover from the state you will need backup of the consistent state made prio
 
 ## Debug a Build on a Specific Agent
 
-In case a build fails on some agent, it is possible to debug it on this very agent to investigate agent\-specific issues. Do the following:
+In case a build fails on some agent, it is possible to debug it on this very agent to investigate agent-specific issues. Do the following:
 1. Go to the __Agents__ page in the TeamCity web UI and [select the agent](viewing-build-agent-details.md).
 2. [Disable the agent](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) to temporarily remove it from the [build grid](build-grid.md). Add a comment (optional). To enable the agent automatically after a certain time period, check the corresponding box and specify the time.
 3. [Select the build](working-with-build-results.md) to debug.
