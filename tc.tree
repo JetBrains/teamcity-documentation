@@ -171,6 +171,7 @@
             <toc-element id="uploading-ssl-certificates.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="content-security-policy-in-teamcity.md"/>
          </toc-element>
+         <toc-element id="security-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="multinode-setup.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="configuring-secondary-node.md" show-structure-for="chapter" show-structure-depth="4"/>
          </toc-element>

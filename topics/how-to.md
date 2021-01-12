@@ -281,90 +281,21 @@ See also [notes](#Estimate+Hardware+Requirements+for+TeamCity) on maximum suppor
 
 It is possible to add a [secondary TeamCity node](configuring-secondary-node.md) to ensure high availability and offload some operations from the main server. All nodes need to be connected to the same [`TeamCity Data Directory`](teamcity-data-directory.md) and the database.
 
-To address fast disaster recovery scenarios, TeamCity supports active \- failover (cold standby) approach: the data that the TeamCity server uses can be replicated and a solution put in place to start a new server using the same data if the currently active server malfunctions.
+To address fast disaster recovery scenarios, TeamCity supports active - failover (cold standby) approach: the data that the TeamCity server uses can be replicated and a solution put in place to start a new server using the same data if the currently active server malfunctions.
 
 As to the data, the TeamCity server uses both database and file storage (Data Directory). You can browse through [TeamCity Data Backup](teamcity-data-backup.md) and [TeamCity Data Directory](teamcity-data-directory.md) pages in to get more information on TeamCity data storing. Basically, both the TeamCity Data Directory on the disk and the database which TeamCity uses must remain in a consistent state and thus must be replicated together.   
 Only a single TeamCity server instance should use the database and Data Directory at any time.
 
-Ensure that the distribution of the TeamCity failover/backup server is of exactly the same version as the main server. It is also important to ensure the same server environment/startup options like memory settings, etc.
+Ensure that the distribution of the TeamCity failover/backup server is of exactly the same version as the main server. It is also important to ensure the same server environment/startup options like memory settings, and so on.
 
 TeamCity agents farm can be reused between the main and the failover servers. Agents will automatically connect to the new server if you make the failover server to be resolved via the old server DNS name and agents connect to the server using the DNS name. See also information on [switching](#Switching+from+one+server+to+another) from one server to another.   
-If appropriate, the agents can be replicated just as the server. However, there is no need to replicate any TeamCity\-specific data on the agents except for the conf\buildAgent.properties file as all the rest of the data can typically be renewed from the server. In case of replicated agents farm, the replica agents just need to be connected to the failover server.
+If appropriate, the agents can be replicated just as the server. However, there is no need to replicate any TeamCity-specific data on the agents except for the conf\buildAgent.properties file as all the rest of the data can typically be renewed from the server. In case of replicated agents farm, the replica agents just need to be connected to the failover server.
 
 In case of two servers installations for redundancy purposes, they can use the same set of licenses as only one of them is running at any given moment.
 
 ## TeamCity Security Notes
 
-The following notes are provided for your reference only and are not meant to be complete or accurate in their entirety.
-
-TeamCity is developed with security concerns in mind, and reasonable efforts are made to make the system invulnerable to different types of attacks. We work with third\-parties on assessing TeamCity security using security scanners and penetration tests.   
-We aim to promptly address newly discovered security issues in the nearest bug\-fix releases for the most recent TeamCity major version.   
-However, the general assumption and recommended setup is to deploy TeamCity in a trusted environment with no possibility for it to be accessed by malicious users. 
-
-Along with these guidelines, please review [notes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) on configuring the TeamCity server for production use. For the list of disclosed security\-related issues, see our [public issue tracker](https://youtrack.jetbrains.com/issues/TW?q=project:TeamCity%20type:%20%7BSecurity%20Problem%7D%20sort%20by:%20%7BFix%20versions%7D%20desc) and the "Security" section in the release notes. It is recommended to upgrade to newly released TeamCity versions as soon as they become available as they can contain security\-related fixes.
-
-Note that __since TeamCity 2017.2__ the TeamCity Windows installer modifies permisisons of the [TeamCity installation directory](teamcity-home-directory.md) not to use inheritable permissions and explicitly grants access to the directory to the Administrators user group and the accrount under which the service is configured to run.   
-It is strongly recommended to restrict permissions to the [`TeamCity Data Directory`](teamcity-data-directory.md) in the same way.
-
-### Additional security-related settings
-
-Consider adding the `teamcity.installation.completed=true` line into the `<[TeamCity Home Directory](teamcity-home-directory.md)>\conf\teamcity-startup.properties` file \- this will prevent the server started with the empty database from granting access to the machine for the first coming user. 
-
-TeamCity has no built\-in protection against DoS (Denial\-of\-service) attack: high rate of requests can overload the server and make it not responsive. If your TeamCity instance is deployed in the environment which allows such service abuse, implement the protection on the reverse proxy level.
-
-__Short checklist__ (see below for full notes)
-* You are running the latest released TeamCity version and are ready to upgrade to the newly released versions within weeks
-* Access to the TeamCity web interface is secured using HTTPS (e.g. with the help a [proxying server](#Configure+HTTPS+for+TeamCity+Web+UI) like NGINX). Best practices for securing web applications are employed for the TeamCity web interface. e.g.: It is not possible to access the server using HTTP protocol. Reverse proxy does not strip Referer request header
-* The TeamCity server machine does not run agents (at least under the user permitted to read the  `<[TeamCity server's home directory](teamcity-home-directory.md)>` and `<[TeamCity Data Directory](teamcity-data-directory.md)>`)   
-* TeamCity server and agents processes run under limited users with minimal required permissions. Installation directories are readable and writable only by a limited set of OS users. The `conf\buildAgent.properties` file and server logs as well as the Data Directory are only readable by OS users who represent administrators of the services, because reading those locations may allow taking over the agent or server respectively.
-* Guest user and user registration is disabled or roles are reviewed for guest and the [All Users](user-group.md#%22All+Users%22+Group) group
-* TeamCity users with administrative permissions have non-trivial passwords
-* If you have external authentication configured (such as LDAP), the [built-in authentication](configuring-authentication-settings.md#Built-in+Authentication) module is disabled
-* Passwords are not printed into the build log, not stored in build artifacts, nor are they stored in non-[password parameters](typed-parameters.md#Adding+Parameter+Specification)
-
-<anchor name="HowTo...-Security-relatedRisksEvaluation"/>
-
-### Security-related Risks Evaluation
-
-Here are some notes on different security\-related aspects:
-* man\-in\-the middle concerns 
-  * between the TeamCity server and the user's web browser: It is advised to [use HTTPS](using-https-to-access-teamcity-server.md) for the TeamCity server. During login, TeamCity transmits the user login password in an encrypted form with a moderate encryption level.
-  * between a TeamCity agent and the TeamCity server: see [this section](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).
-  * between the TeamCity server and other external servers (version control, issue tracker, etc.): the general rules apply as for a client (the TeamCity server in the case) connecting to the external server, see the guidelines for the server in question.
-* users that have access to the TeamCity web UI: the specific information accessible to the user is defined via TeamCity [user roles](role-and-permission.md).
-* users who can change the code that is used in the builds run by TeamCity (including committers in any branches/pull requests if they are built on TeamCity): 
-  * can do everything the system user, under whom the TeamCity agent is running, can do; have access to OS resources and other applications installed on the agent machines where their builds can run.
-  * can access and change source code of other projects built on the same agent, modify the TeamCity agent code, publish any files as artifacts for the builds run on the agent (which means the files can be then displayed in the TeamCity web UI and expose web vulnerabilities or can be used in other builds), etc.
-  * can impersonate a TeamCity agent (run a new agent looking the same to the TeamCity server).
-  * can do everything that users with the "View build configuration settings" permission for all the projects on the server can do (see below).
-  * can retrieve settings of the build configurations where the builds are run, including the values of the password fields.
-  * can download artifacts from any build on the server.   
-  Hence, it is advised to run TeamCity agents under an OS account with only [necessary set of permissions](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) and use the [agent pools](configuring-agent-pools.md) feature to ensure that projects requiring a different set of access are not built on the same agents.
-* users with the "View build configuration settings" permission (the "Project developer" TeamCity role by default) can view all the projects on the server, but since TeamCity 9.0 there is a way to restrict this, see details in the corresponding issue [TW-24904](https://youtrack.jetbrains.com/issue/TW-24904#comment=27-731107).
-* users with the "Edit project" permission (the "Project Administrator" TeamCity role by default) in one project, by changing settings can retrieve artifacts and trigger builds from any build configuration they have only the view permission for ([TW-39209](https://youtrack.jetbrains.com/issue/TW-39209)). 
-* users with the "Change server settings" permission (the "System Administrator" TeamCity role by default): It is assumed that the users also have access to the computer on which the TeamCity server is running under the user account used to run the server process. Thus, the users can get full access to the machine under that OS user account: browse file system, change files, run arbitrary commands, etc.
-* TeamCity server computer administrators: have full access to TeamCity stored data and can affect TeamCity executed processes. Passwords that are necessary to authenticate in external systems (like VCS, issue trackers, etc.) are stored in a scrambled form in [TeamCity Data Directory](teamcity-data-directory.md) and can also be stored in the database. However, the values are only scrambled, which means they can be retrieved by any user who has access to the server file system or database.
-* Users who have read access to the TeamCity server logs (TeamCity server home directory) can escalate their access to TeamCity server administrator.
-* Users who have read access to `<[TeamCity Data Directory](teamcity-data-directory.md)>` can access all the settings on the server, including configured passwords.
-* Users who have read access to the build artifacts in `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` get the same permissions as users with the "View build runtime parameters and data" permission (in particular, with access to the values of all the password parameters used in the build).
-* TeamCity agent computer administrators: same as "users who can change code that is used in the builds run by TeamCity".
-* It is recommended to distribute projects among agents, so that one TeamCity agent would not run builds of several projects whose developers and administrators should not get access to each other's projects. The recommended way to distribute projects is to use the [agent pools](configuring-agent-pools.md) feature and make sure that the "Default" agent pool has no agents as a project can be assigned to the Default pool after a certain reconfiguration (i.e. when there is no other pool the project is assigned to).
-* When [storing settings in VCS](storing-project-settings-in-version-control.md) is enabled: 
-  * any user who can access the settings repository (including users with "View file content" permission for the build configurations using the same VCS root) can see the settings and retrieve the actual passwords based on their stored scrambled form
-  * any user who can modify settings in VCS for a single build configuration built on the server, via changing settings can retrieve artifacts and trigger builds from any build configuration they have only view permission for ([TW-39192](https://youtrack.jetbrains.com/issue/TW-39192)).
-  * users who can customize build configuration settings on a per\-build basis (e.g. one who can run personal builds when versioned settings are set to "use settings from VCS") via changing settings in a build can retrieve artifacts and trigger builds from any build configuration they have only view permission for ([TW-46065](https://youtrack.jetbrains.com/issue/TW-46065)).
-* Other: 
-  * TeamCity web application vulnerabilities: the TeamCity development team makes a reasonable effort to fix any significant vulnerabilities (like cross\-site scripting possibilities) once they are uncovered. Please note that any user that can affect build files ("users who can change code that is used in the builds run by TeamCity" or "TeamCity agent computer administrators") can make a malicious file available as a build artifact that will then exploit cross\-site scripting vulnerability. ([TW-27206](http://youtrack.jetbrains.com/issue/TW-27206))
-  * TeamCity agent is fully controlled by the TeamCity server: since TeamCity agents support automatic updates download from the server, agents should only connect to a trusted server. An administrator of the server computer can force execution of arbitrary code on a connected agent.
-  * Binaries of the agent plugins installed on the server are available to anyone who can access the server URL
-
-[//]: # (Internal note. Do not delete. "How To...d160e890.txt")    
-
-<anchor name="HowTo...-WhatEncryptionisUsedbyTeamCity"/>
-
-## What Encryption is Used by TeamCity
-
-TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key, or using a [custom key](teamcity-configuration-and-maintenance.md#encryption-settings).
+The contents of this section have been moved to the [dedicated article](security-notes.md).
 
 <anchor name="HowTo...-ConfigureNewlyInstalledMySQLServer"/>
 
@@ -743,7 +674,7 @@ If a user with access to your TeamCity server submits an invalid cross-site scri
 
 ## Configure HTTPS for TeamCity Web UI
 
-TeamCity does not provide out-of-the-box support for HTTPS access (see [TW-12976](http://youtrack.jetbrains.com/issue/TW-12976#comment=27-348823)). It is highly recommended to set up a reverse proxy like Nginx or Apache in front of TeamCity that would handle HTTPS and use HTTP TeamCity server port as the upstream. HTTPS\-related configuration of the proxy is not specific for TeamCity and is generic as for any Web application. Make sure to configure the reverse proxy per [our recommendations](#Set+Up+TeamCity+behind+a+Proxy+Server) below. Generic web application best practices apply (like disabling http access to TeamCity at all).
+TeamCity does not provide out-of-the-box support for HTTPS access (see [TW-12976](http://youtrack.jetbrains.com/issue/TW-12976#comment=27-348823)). It is highly recommended to set up a reverse proxy like Nginx or Apache in front of TeamCity that would handle HTTPS and use HTTP TeamCity server port as the upstream. HTTPS-related configuration of the proxy is not specific for TeamCity and is generic as for any Web application. Make sure to configure the reverse proxy per [our recommendations](#Set+Up+TeamCity+behind+a+Proxy+Server). Generic web application best practices apply (like disabling http access to TeamCity at all).
 
 For small servers, you can set up HTTPS via the internal [Tomcat means](https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html), but this is not recommended as it may significantly increase the CPU load.
 
@@ -792,9 +723,7 @@ teamcity.https.proxyPassword=password
 
 ```
 
-
-
-The alternative approach, which will work for any TeamCity version, is to pass additional space\-delimited [additional JVM options](configuring-teamcity-server-startup-properties.md#JVM+Options) to the TeamCity server on the start up:
+The alternative approach, which will work for any TeamCity version, is to pass additional space-delimited [additional JVM options](configuring-teamcity-server-startup-properties.md#JVM+Options) to the TeamCity server on the start up:
 
 
 ```Shell
@@ -806,8 +735,6 @@ The alternative approach, which will work for any TeamCity version, is to pass a
 -Dhttps.proxyPort=8080
 -Dhttps.nonProxyHosts=domain.com
 ```
-
-
 
 ## Configure TeamCity Agent to Use Proxy To Connect to TeamCity Server
 
@@ -1245,7 +1172,7 @@ To recover from the state you will need backup of the consistent state made prio
 
 ## Debug a Build on a Specific Agent
 
-In case a build fails on some agent, it is possible to debug it on this very agent to investigate agent\-specific issues. Do the following:
+In case a build fails on some agent, it is possible to debug it on this very agent to investigate agent-specific issues. Do the following:
 1. Go to the __Agents__ page in the TeamCity web UI and [select the agent](viewing-build-agent-details.md).
 2. [Disable the agent](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) to temporarily remove it from the [build grid](build-grid.md). Add a comment (optional). To enable the agent automatically after a certain time period, check the corresponding box and specify the time.
 3. [Select the build](working-with-build-results.md) to debug.
@@ -1262,36 +1189,7 @@ If a build containing several steps fails at a certain step, it is possible to d
 1. Go to the build configuration and disable the build steps up to the one you want to debug.
 2. [Select the build](working-with-build-results.md) to debug.
 3. Open the [Custom Run](triggering-a-custom-build.md#Run+Custom+Build+dialog) dialog and select the __put the build to the [queue top](build-queue.md)__ to give you build the priority.
-4. When debugging is complete, re\-enable the build steps.
-## Vulnerabilities
-
-This section describes effect and necessary protection steps related to the announced security vulnerabilities.
-
-### Heartbleed, ShellShock
-
-TeamCity distributions provided by JetBrains do not contain software/libraries and do not use technologies affected by Heart bleed and Shell shock vulnerabilities. What might still need assessment is the specific TeamCity installation implementation which might use the components behind those provided/recommended by JetBrains and which can be vulnerable to the mentioned exploits.
-
-### POODLE
-
-If you configured HTTPS access to the TeamCity server, inspect the solution used for HTTPS as that might be affected (e.g. Tomcat seems to be [affected](http://wiki.apache.org/tomcat/Security/POODLE)). At this time none of TeamCity distributions include HTTPS access by default and investigating/eliminating HTTPS\-related vulnerability is out of scope of TeamCity.
-
-Depending on the settings used, TeamCity server (and agent) can establish HTTPS connections to other servers (e.g. Subversion). Depending on the server settings, those connections might fall back to using SSL 3.0 protocol. The recommended solution is not TeamCity specific and it is to disable SSLv3 on the target SSL\-server side.
-
-### GHOST
-
-CVE\-2015\-0235 vulnerability is found in glibc library which is not directly used by TeamCity code. It is used by the Java/JRE used by TeamCity under \*nix platforms. As Java is not bundled with TeamCity distributions, you should apply the security measures recommended by the vendor of the Java you use. At this time there are no related Java\-specific security advisories released, so updating the OS should be enough to eliminate the risk of the vulnerability exploitation.
-
-### FREAK
-
-CVE\-2015\-0204 vulnerability is found in the OpenSSL implementation. TeamCity does not bundle any parts of OpenSSL product and so is not vulnerable. You might still need to review the environment in which the TeamCity server and agents are set up, as well as the tools installed in addition to TeamCity for possible vulnerability mitigation steps.
-
-### Apache Struts
-
-CVE\-2017\-5638 affects Jakarta Multipart parser in Apache Struts. CVE\-2016\-1181 also affects multipart requests processing in some older versions of Apache Struts.
-
-TeamCity bundles IntelliJ IDEA which contains jars from both: Apache Struts 1.x and Apache Struts 2.x. These jars are only used by IntelliJ IDEA Struts plugin when IntelliJ IDEA collects inspections for a project on a TeamCity agent.
-
-Under no circumstances these versions of Apache Struts are used to handle any HTTP requests. Thus neither TeamCity server, not TeamCity agent are affected by these vulnerabilities.
+4. When debugging is complete, reenable the build steps.
 
 ## Watch Several TeamCity Servers with Windows Tray Notifier
 

@@ -34,7 +34,7 @@ __Prior to TeamCity 9.1__, the TeamCity Windows installer configured the TeamCit
 
 ### Recommendations as to choosing Data Directory Location
 
-Since the Data Directory stores all the server and configured projects settings, it is important that it is not available for reading and writing to the OS users without the corresponding level of access. See the related [security notes](how-to.md#TeamCity+Security+Notes).
+Since the Data Directory stores all the server and configured projects settings, it is important that it is not available for reading and writing to the OS users without the corresponding level of access. See the related [security notes](security-notes.md).
 
 By default, the `system` directory stores all the [artifacts](build-artifact.md) and build logs of the builds in the history and can be quite large, so it is recommended to place TeamCity Data Directory on a non-system disk. Refer to the [Clean-Up](clean-up.md) page to configure automatic cleaning of older builds. If a single local disk cannot store all the artifacts, you can add another disk and configure [multiple artifacts paths](teamcity-configuration-and-maintenance.md#artifact-directories).
 
