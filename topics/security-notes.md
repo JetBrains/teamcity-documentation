@@ -40,7 +40,7 @@ Here are the notes on different security-related aspects:
     * can impersonate a TeamCity agent (run a new agent looking the same to the TeamCity server).
     * can do everything that users with the "View build configuration settings" permission for all the projects on the server can do (see [below](#view-build-config-settings)).
     * can retrieve settings of the build configurations where the builds are run, including the values of the password fields.
-    * can download artifacts from any build on the server.   
+    * can download artifacts from any build on the server.
 * It is advised to run TeamCity agents under an OS account with only a [necessary set of permissions](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) and use the [agent pools](configuring-agent-pools.md) feature to ensure that projects requiring a different set of access are not built on the same agents.
 <anchor name="view-build-config-settings"/>
 * Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server. To restrict this, you can use the `teamcity.buildAuth.enableStrictMode=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
