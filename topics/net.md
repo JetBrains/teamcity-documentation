@@ -3,7 +3,7 @@
 
 TeamCity comes with the built-in support of the .NET toolchain providing the .NET build step, .NET detection on the build agents, and autodiscovery of build steps in your repository.
 
-This page gives details on configuring the _.NET_ runner.
+This page gives details on configuring the _.NET_ runner. For a tutorial and demo, see this [blog post series](https://blog.jetbrains.com/teamcity/2020/12/teamcity-integration-with-net-part-1-new-approach-and-demo/).
 
 <note>
 
@@ -882,3 +882,4 @@ The .NET SDK version.
 
 The best way to pass a parameter value containing space characters is to use [system properties](configuring-build-parameters.md#Types+of+Build+Parameters). For example, you can add the `system.Platform` parameter with the `Any CPU` value in __Build Configuration Settings | Parameters__ and then refer to this value as `%system.Platform%` inside the .NET step.   
 An alternative approach is to wrap the command-line parameter as follows: `"/p:Platform=Any CPU"`.
+
