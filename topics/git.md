@@ -410,6 +410,8 @@ Comparing to self-hosted TeamCity agents, cloud agents require extra steps to ad
 When starting a build, a cloud agent will check the mirrors specified in the `map` file and fetch the difference between the required origin and its mirror. The origin URL in the `map` file must match the URL set in the VCS root.   
 This way, builds will run significantly faster, with no need to check out the whole remote repository every time the new cloud agent starts.
 
+Over time, the delta between the Git remote and the mirror in the agent image will increase. If the checkout becomes noticeably slower after time, the local Git mirror inside the agent image will need to be updated with the recent commits. It is worth performing such an update when the agent image is rebuilt due to OS and other upgrades.
+
 ## Configuring Git Garbage Collection on Server
 {id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server"}
 
