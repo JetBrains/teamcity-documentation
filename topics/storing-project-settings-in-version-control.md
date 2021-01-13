@@ -140,6 +140,7 @@ To test Kotlin-based settings in a sandbox project, you can download the setting
 [//]: # (AltHead: settingsFormat)
 
 <warning>
+
 Before committing settings to the VCS, consider the recommended approach to storing security settings [described above](#Storing+Secure+Settings).
 </warning>
 
