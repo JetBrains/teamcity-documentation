@@ -222,7 +222,7 @@ When you add the LDAP authentication module on a TeamCity server which already h
 ### Scrambling credentials in ldap-config.properties file
 
 The `java.naming.security.credentials` property can store the password either in the plain\-text or scrambled form. TeamCity needs the raw password value when authenticating in LDAP server, so the password should be stored in a reversible form.
-You can get the scrambled value using the command below and then set the property to the the scrambled value.
+You can get the scrambled value using the command below and then set the property to the the scrambled value. When adding the scrambled value to the `java.naming.security.credentials` property, it is necessary to include the complete output of the commands below. The scrambled entry should look something like: `java.naming.security.credentials=scrambled:1234567890abcdef`.
 
 Note that scrambling is not encryption: it protects the password from being easily remembered when seen occasionally, but it does not protect against getting the real password value when someone gets the scrambled password value.
 
