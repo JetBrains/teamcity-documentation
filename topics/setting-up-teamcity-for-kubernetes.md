@@ -18,7 +18,7 @@ Make sure the TeamCity user is allowed to perform writing operations in the [Kub
 You might also require to configure the following privileges for your Kubernetes user role:
 * Pods: `get`, `create`, `list`, `delete`.
 * Deployments: `list`, `get` – if you want to create an agent [from a deployment](#Use+pod+template+from+deployment).
-* Namespaces: `list` – to allow TeamCity suggesting you namespaces available on your server.
+* Namespaces: `list` – to allow TeamCity to suggest you namespaces available on your server.
 
 ## Kubernetes Cloud Profile Configuration
 
@@ -105,9 +105,9 @@ Depending on the selected strategy, the set of extra options will vary. Refer to
 
 ## Adding Kubernetes Cloud Image
 
-After configuring the general Kubernetes settings, you can proceed with [adding a new Kubernetes image](agent-cloud-profile.md#Adding+Agent+Image) for build agents.
+After configuring the general Kubernetes settings, you can proceed with [adding a new build agent image](agent-cloud-profile.md#Adding+Agent+Image).
 
-Click __Add image__ and configure the image:
+Click __Add image__ and configure its options:
 
 <table>
 
@@ -142,7 +142,7 @@ Agent pool
 
 <td>
 
-Assign launched instances to a specific [agent pool](agent-pool.md).
+Assign the launched instances to a specific [agent pool](agent-pool.md).
 
 </td>
 
@@ -158,7 +158,7 @@ Agent name prefix
 
 <td>
 
-(Optional) Show the same prefix for all instances of this image.
+(Optional) Show the same prefix for all instances of this image, when displaying them in TeamCity.
 
 </td>
 
@@ -174,7 +174,7 @@ Max number of instances
 
 <td>
 
-Set this number if you want to limit how much instances are launched based on this image.
+(Optional) Set this number if you want to limit how many instances are launched based on this image.
 
 </td>
 
@@ -186,7 +186,7 @@ Set this number if you want to limit how much instances are launched based on th
 
 ### Use pod template from deployment
 
-Select to run a new pod based on a specific [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) created in your Kubernetes cluster. If you are using Kubernetes Dashboard, you can find the list of the available deployments under __Workloads | Deployments__.
+Select this option to run a new pod based on a specific [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) created in your Kubernetes cluster. If you are using Kubernetes Dashboard, you can find the list of the available deployments under __Workloads | Deployments__.
 
 >You can create a simple deployment from the latest TeamCity agent image as follows:
 >```Shell
@@ -198,7 +198,7 @@ Select to run a new pod based on a specific [deployment](https://kubernetes.io/d
 
 ### Run single container
 
-Select to run a single [container](https://kubernetes.io/docs/concepts/containers/overview/) based on any given agent Docker image from the [Docker Hub](https://hub.docker.com/). You'll need to specify:
+Select this option to run a single [container](https://kubernetes.io/docs/concepts/containers/overview/) based on any given agent Docker image from [Docker Hub](https://hub.docker.com/). You'll need to specify:
 
 <table>
 
@@ -217,7 +217,7 @@ Docker image name
 
 <td>
 
-Name of the image on [Docker Hub](https://hub.docker.com/) (for example, `jetbrains/teamcity-agent/`).
+Name of the image in [Docker Hub](https://hub.docker.com/) (for example, `jetbrains/teamcity-agent/`).
 
 </td>
 
@@ -278,7 +278,7 @@ Command arguments
 
 Enter your own [pod template](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/#pod-templates) in a YAML format. This option is recommended for accessing images located in private repositories, as it allows you to specify authentication parameters inside the template code.
 
-Example of the template:
+Example of a simple template:
 
 ```yaml
 apiVersion: v1
