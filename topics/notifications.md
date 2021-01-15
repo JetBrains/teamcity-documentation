@@ -1,12 +1,11 @@
 [//]: # (title: Notifications)
 [//]: # (auxiliary-id: Notifications)
 
-The _Notifications_ build feature is responsible for sending notifications about build statuses and events to external services. Currently, the feature comprises __Email Notifier__ and __Slack Notifier__.
+The _Notifications_ [build feature](adding-build-features.md) is responsible for sending notifications about build statuses and events to external services. Currently, the feature provides __Email Notifier__ and __Slack Notifier__.
 
-This feature compliments the functionality of [project-level notifications](subscribing-to-notifications.md) that can be assigned to a particular user or user group.   
-The Notifications feature allows configuring _notifications per build configuration_. This approach does not require referencing a specific TeamCity user and works better for group notifications.
+This feature adds to the functionality of [project-level notifications](subscribing-to-notifications.md) that can be assigned to a particular user or user group, but it allows configuring _notifications per build configuration_. This approach does not require referencing a specific TeamCity user and works better for group notifications.
 
-To set up similar notifications for several build configurations, use a [build configuration template](build-configuration-template.md).
+>To set up similar notifications for several build configurations, use a [build configuration template](build-configuration-template.md).
 
 ## Common Settings
 
@@ -20,26 +19,28 @@ Note that TeamCity Email Notifier relies on the SMTP server settings configured 
 
 ## Slack Notifier
 
-The Slack Notifier feature relies on a [Slack connection](#Configuring+Slack+Connection), preconfigured in the parent project's settings, and requires entering an ID of a channel or user who will be receiving notifications.
+The Slack Notifier feature relies on a [Slack connection](#Configuring+Slack+Connection) that should be preconfigured in the parent project's settings.
 
-<tip>
+After configuring this connection, go to the settings of the build configuration you want to receive notifications for. In __Build Features__, add the _Notifications_ feature and select _Slack Notifier_. Choose the created connection and enter the ID of a channel or user who will be receiving notifications.
 
-Start typing the user ID, and TeamCity will suggest it automatically based on your connection settings. Alternatively, you can copy this ID from your Slack user profile options.
+>Start typing the user ID, and TeamCity will automcomplete it. Alternatively, you can copy this ID from your Slack user profile options (__Profile | More | Copy member ID__).
 
-</tip>
+Configure the [common settings](#Common+Settings) to choose the cases to be notified about. To change the text of the notifications, try [editing notification templates](customizing-notifications.md).
 
 ### Configuring Slack Connection
 
-To configure a connection to Slack, go to __Project Settings | Connections__ and click __Add Connection__. In the opened form select the _Slack_ type and give a connection any convenient name.
+The TeamCity integration with Slack requires creating a [Slack app](https://api.slack.com/apps) with the following [bot token scopes](https://api.slack.com/scopes): `channels:read`, `chat:write`, `im:read`, `im:write`, `users:read`, `team:read`, `groups:read`. You can add these in __Features | OAuth & Permissions | Scopes__.   
+To ensure your TeamCity server can connect to Slack, specify all the possible endpoint addresses of the server as __Redirect URLs__ in __Features | OAuth & Permissions__. In most cases, it would be enough to specify the Server URL set in __[Global Settings](configuring-server-url.md)__. However, if you access the server bypassing the proxy, the authentication in Slack might not work unless the server's IP address is also specified in __Redirect URLs__.
 
-To be able to integrate TeamCity with Slack, you need to create a respective [Slack app](https://api.slack.com/apps) with the following scopes: `channels:read`, `chat:write`, `im:read`, `im:write`, `users:read`, `team:read`, `groups:read`.
+>See this [Basic app setup](https://api.slack.com/authentication/basics) guide for more details.
 
-When configuring the app in Slack, make sure to add all possible endpoint addresses of your TeamCity server as __Redirect URLs__ in __OAuth & Permissions | App Management__.
+Now you can return to TeamCity and configure a connection to Slack. Go to __Project Settings | Connections__ and click __Add Connection__. In the opened form, select the _Slack_ type and give a connection any convenient name.
 
-After creating the app, enter its parameters in the _Add connection_ form in TeamCity:
+Enter the app parameters:
 * _Client ID_ and _Secret_ from the app's __Basic Information__ page
-* [bot user token](https://api.slack.com/docs/token-types#bot)
+* a [bot user token](https://api.slack.com/docs/token-types#bot) of your app
 
+Save the connection and proceed with [adding the Notifier feature](#Slack+Notifier).
 
 <seealso>
         <category ref="user-guide">
