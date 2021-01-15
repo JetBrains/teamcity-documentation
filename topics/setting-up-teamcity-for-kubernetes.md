@@ -18,7 +18,7 @@ Make sure the TeamCity user is allowed to perform writing operations in the [Kub
 You might also require to configure the following privileges for your Kubernetes user role:
 * Pods: `get`, `create`, `list`, `delete`.
 * Deployments: `list`, `get` – if you want to create an agent [from a deployment](#Use+pod+template+from+deployment).
-* Namespaces: `list` – to allow TeamCity to suggest you namespaces available on your server.
+* Namespaces: `list` – to allow TeamCity to suggest the namespaces available on your server.
 
 ## Kubernetes Cloud Profile Configuration
 
