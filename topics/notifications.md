@@ -25,7 +25,7 @@ After configuring this connection, go to the settings of the build configuration
 
 >Start typing the user ID, and TeamCity will automcomplete it. Alternatively, you can copy this ID from your Slack user profile options (__Profile | More | Copy member ID__).
 
-Configure the [common settings](#Common+Settings) to choose the cases to be notified about. To change the text of the notifications, try [editing notification templates](customizing-notifications.md).
+Configure the [common settings](#Common+Settings) to choose the cases to be notified about.
 
 ### Configuring Slack Connection
 
@@ -45,8 +45,5 @@ Save the connection and proceed with [adding the Notifier feature](#Slack+Notifi
 <seealso>
         <category ref="user-guide">
             <a href="subscribing-to-notifications.md">Subscribing to Notifications</a>
-        </category>
-        <category ref="admin-guide">
-            <a href="customizing-notifications.md">Customizing Notifications</a>
         </category>
 </seealso>
