@@ -156,6 +156,10 @@ __16 December 2020__
 [**TW-68967**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68967) — Slow admin UI on the secondary node because of read only projects filtering in AdminPermissionsUtil.getAllEditableProjects   
 [**TW-68831**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68831) — Improve threading in Background Build Indexer
 
+### Task
+
+[**TW-66361**](https://youtrack.jetbrains.com/issue/TW-66361) — Start teamcity-server docker container under non-root user by default
+
 ### Cosmetics
 
 [**TW-66856**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-66856) — Improve wording for the Incorrect Proxy Configuration health report   
