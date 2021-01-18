@@ -118,24 +118,24 @@ __[Back to top](#Most+frequently+used+documentation+sections)__
 
 ### "out of memory" error with internal (HSQLDB) database
 
-If during the TeamCity server start\-up you encounter errors like: _"error in script file line: ... out of memory"_, _"java.sql.SQLException: out of memory"_, perform the following:
+If during the TeamCity server start-up you encounter errors like: _"error in script file line: ... out of memory"_, _"java.sql.SQLException: out of memory"_, perform the following:
 
 * try [increasing server memory](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server). If this does not help, most probably this means that you have encountered __internal database corruption__. You can try to deal with this corruption using the [notes](http://www.hsqldb.org/doc/1.8/guide/apc.html) based on the HSQLDB documentation.
 
 Here is a way to attempt a manual database restore:
 * stop the TeamCity server
 * backup the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/buildserver.data file
-* remove the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/buildserver.data file and replace it with zero\-size file of the same name
+* remove the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/buildserver.data file and replace it with zero-size file of the same name
 * start the TeamCity server
 
 However, if the database does not recover automatically, chances that it can be fixed manually are minimal.
 
-The internal (HSQL) database is not stable enough for production use and we highly recommend using an [external database](setting-up-an-external-database.md) for TeamCity non\-evaluation usage. 
+The internal (HSQL) database is not stable enough for production use and we highly recommend using an [external database](setting-up-an-external-database.md) for TeamCity non-evaluation usage.  
 If you encountered database corruption, you can restore the last good backup or drop builds history and users, but preserve the settings, see [Migrating to an External Database](migrating-to-an-external-database.md#Switch+with+No+Data+Migration).
 
 ### The transaction... log is full
 
-This error can occur with an MS SQL or Sybase database. In this case we recommend increasing the transaction log for the TeamCity database. The log size can be 1 \- 16 GB depending on the number of build agents in the system and the number of tests all agents report daily.
+This error can occur with an MS SQL or Sybase database. In this case we recommend increasing the transaction log for the TeamCity database. The log size can be 1 - 16 GB depending on the number of build agents in the system and the number of tests all agents report daily.
 
 ### The table 'table_name' is full
 
