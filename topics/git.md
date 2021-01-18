@@ -395,7 +395,7 @@ If a compatible git (1.6.4\+) is found, it is reported in the `TEAMCITY_GIT_PATH
 ### Git mirrors on cloud agents
 {auxiliary-id="Git mirrors on cloud agents"}
 
-By default, TeamCity creates a [mirror](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository), that is a copy, of your Git repository under the agent's `system\git` directory. To save time and disk space on fetching source files, TeamCity points to this mirror via the Git alternate mechanism when updating the checkout directory for a build.
+By default, TeamCity creates a [mirror](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository), that is a copy, of your Git repository under the agent's `system/git` directory. To save time and disk space on fetching source files, TeamCity points to this mirror via the Git alternate mechanism when updating the checkout directory for a build.
 
 Comparing to self-hosted TeamCity agents, cloud agents require extra steps to add a Git mirror:
 
@@ -410,7 +410,8 @@ Comparing to self-hosted TeamCity agents, cloud agents require extra steps to ad
 When starting a build, a cloud agent will check the mirrors specified in the `map` file and fetch the difference between the required origin and its mirror. The origin URL in the `map` file must match the URL set in the VCS root.   
 This way, builds will run significantly faster, with no need to check out the whole remote repository every time the new cloud agent starts.
 
->Over time, the Git remote origin accumulates many new commits comparing to its mirror in the agent image. If the checkout becomes noticeably slower, try updating the local mirror with the recent commits. It is also worth updating when the agent image is rebuilt due to OS or other upgrades.
+>Over time, the Git remote origin accumulates many new commits comparing to its mirror in the agent image. If the checkout becomes noticeably slower, try updating the local mirror with the recent commits. It is also worth updating when the agent image is rebuilt due to OS or other upgrades.   
+> Alternatively, you can store the `system/git` directory in a persistent volume, so it keeps all the updates even when a cloud agent is destroyed, and configure its automatic mounting on each newly created agent.
 
 ## Configuring Git Garbage Collection on Server
 {id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server"}
