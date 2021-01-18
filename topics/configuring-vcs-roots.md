@@ -3,7 +3,7 @@
 
 <anchor name="VCSRoots"/>
 
-<include src="configuring-vcs-roots.md" include-id="VCSRoot"/>
+<include src="vcs-root.md" include-id="VCSRoot"/>
 
 ## Common VCS Root Properties
 
