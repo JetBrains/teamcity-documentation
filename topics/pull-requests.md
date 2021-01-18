@@ -8,11 +8,12 @@ The _Pull Requests_ build feature lets you automatically load pull request\* inf
 When adding this build feature, you need to specify a VCS root and select a VCS hosting type.  
 Other settings depend on the selected VCS hosting type.
 
-This feature extends the original branch specification of VCS roots, attached to the current build configuration, to include pull requests that match the specified filtering criteria.
+This feature extends the original branch specification of [VCS roots](vcs-root.md), attached to the current build configuration, to include pull requests that match the specified filtering criteria.
 
 <note>
 
-The branch specification of the VCS root __must not__ contain patterns matching pull request branches.
+* The branch specification of the VCS root __must not__ contain patterns matching pull request branches.
+* If you want to trigger builds __only__ on pull requests, leave the branch specification of the VCS root empty.
 
 </note>
 
