@@ -18,7 +18,7 @@ Build 85487
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2020.2.exe)   
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2020.2.tar.gz)
 
-[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.2+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1.5+%28build+78938%29+Release+Notes)
 
 ## TeamCity 2020.1.5
 
@@ -28,7 +28,7 @@ Build 78938
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2020.1.5.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2020.1.5.tar.gz)
 
-[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.2+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1.5+Release+Notes)
 
 ## TeamCity 2020.1.4
 
