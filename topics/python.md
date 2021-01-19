@@ -7,6 +7,9 @@ The Python build runner automatically detects Python on agents and allows runnin
 
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
 
+<video href="DOLY1K5e8hQ"
+title="New in TeamCity 2020.2: Python Build Runner"/>
+
 ## Сommand settings
 {id="pythonCommandSettings" auxiliary-id="Python command settings"}
 

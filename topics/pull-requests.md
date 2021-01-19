@@ -283,6 +283,9 @@ If left blank, the URL will be extracted from the VCS root fetch URL.
 
 ### Bitbucket Cloud Pull Requests
 
+<video href="M2wi6l0pZe4"
+title="New in TeamCity 2020.2: Bitbucket Cloud Pull Request Support"/>
+
 Since Bitbucket Cloud does not create dedicated branches for pull requests, this build feature monitors directly source branches in a source repository (forks are not supported).   
 If more than one pull request is submitted from the same source branch at the moment of the build start, TeamCity will display all these requests in the build results. However, only commits from the open PRs matching the filtering criteria will be displayed as _Changes_ of the build.
 

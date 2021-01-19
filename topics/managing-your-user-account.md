@@ -31,6 +31,9 @@ If [token-based authentication](configuring-authentication-settings.md#Token-Bas
   
 Since TeamCity 2020.2, you can also add time-limited tokens which will be revoked after their expiration.
 
+<video href="_3oKTnYwKa8"
+title="New in TeamCity 2020.2: Short-lived Access Tokens"/>
+
 You can manage tokens in __My Settings & Tools | Access Tokens__. Note that the token value is only available during token creation and is not possible for retrieval afterwards.
 
 ## Managing Version Control Username Settings

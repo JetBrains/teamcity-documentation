@@ -7,6 +7,9 @@ Using the version control-stored DSL enables you to define settings programmatic
 
 Check out the [blog post series](https://blog.jetbrains.com/teamcity/2019/03/configuration-as-code-part-1-getting-started-with-kotlin-dsl) on using Kotlin DSL in TeamCity.
 
+<video href="AEYjAnR2-MY"
+title="Getting Started With Kotlin DSL in TeamCity: From Zero to Hero"/>
+
 ## How Kotlin DSL Works
 
 When versioned settings in Kotlin format are enabled, TeamCity commits the current settings to the specified settings repository.
