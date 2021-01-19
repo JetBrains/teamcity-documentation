@@ -20,7 +20,7 @@ If you declare multiple execution conditions, the build step will be executed on
 
 In this demo, we explore a use case when you need to run a given step only if the build runs in the specific environment. This can be easily achieved with build step conditions.
 
-<video href="2muXXD2-0j"
+<video href="2muXXD2-0jg"
 title="New in TeamCity 2020.2: Bitbucket Cloud Pull Request Support"/>
 
 You can also read a recap of this tutorial in [this blog post](https://blog.jetbrains.com/teamcity/2020/07/new-in-2020-1-conditional-build-steps/).
