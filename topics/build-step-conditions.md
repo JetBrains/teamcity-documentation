@@ -16,14 +16,11 @@ Alternatively, select the __Other condition__ option to add the _parameter-based
 
 If you declare multiple execution conditions, the build step will be executed only if __all__ of them are satisfied in the current build run.
 
-<tip>
+>When triggering a [custom build](triggering-a-custom-build.md), you can change the values of the parameters responsible for steps' execution. This way, you can flexibly control a single build run: for example, run a quick build without engaging tests or other optional steps.
 
-When triggering a [custom build](triggering-a-custom-build.md), you can change the values of the parameters responsible for steps' execution. This way, you can flexibly control a single build run: for example, run a quick build without engaging tests or other optional steps.
+In this demo, we explore a use case when you need to run a given step only if the build runs in the specific environment. This can be easily achieved with build step conditions.
 
-</tip>
+<video href="M2wi6l0pZe4"
+title="New in TeamCity 2020.2: Bitbucket Cloud Pull Request Support"/>
 
-<seealso>
-        <category ref="external">
-        <a href="https://blog.jetbrains.com/teamcity/2020/07/new-in-2020-1-conditional-build-steps/">Blog post: Conditional build steps</a>
-        </category>
-</seealso>
+You can also read a recap of this tutorial in [this blog post](https://blog.jetbrains.com/teamcity/2020/07/new-in-2020-1-conditional-build-steps/).
