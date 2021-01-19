@@ -7,7 +7,7 @@ The Duplicates Finder (Java) runner can also find Java duplicates in projects bu
 
 <note>
 
-In order to run inspections for your project you should have either an IntelliJ IDEA project file (.ipr)/project directory (`.idea`), or Maven2 or above pom.xml of your project checked into your version control.
+In order to run inspections for your project you should have either an IntelliJ IDEA project file (`.ipr`)/project directory (`.idea`), or Maven2 or above `pom.xml` of your project checked into your version control.
 </note>
 
 This page contains reference information about the following Duplicates Finder (Java) build runner's fields.
@@ -55,7 +55,7 @@ Path to the project
 
 Depending on the type of project selected in the __Project file type__, specify here:
 
- * __For IntelliJ IDEA project__: the path to the project file (`.ipr`) or the path to the project directory the root directory of the project containing the `.idea` folder).
+ * __For IntelliJ IDEA project__: the path to the project file (`.ipr`) or the path to the project directory the root directory of the project containing the `.idea` directory).
  * __For Maven project__: the path to the `pom.xml` file. 
  * __For Gradle project__: the path to the `.gradle` file.
 
@@ -84,7 +84,7 @@ _This option is available if you use an IntelliJ IDEA project._ In IntelliJ IDEA
 
 <warning>
 
-When this option is selected, the process of opening and saving the build runner settings may become time\-consuming, because it involves loading and parsing all project module files.
+When this option is selected, the process of opening and saving the build runner settings may become time-consuming, because it involves loading and parsing all project module files.
 </warning>
 
 

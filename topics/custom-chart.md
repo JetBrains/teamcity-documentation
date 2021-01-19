@@ -55,7 +55,7 @@ The `type` attribute is set to
 * `project-graphs` for project-level chart
 * `buildType-graphs` for build configuration-level chart
 
-Each chart is described by the `<parameters>` element. It must contain the `<param>` sub-elements with data shown in the chart in `name/value` pairs; the "__`series"`__ parameter uses the JSON format to list series of data shown on the chart. 
+Each chart is described by the `<parameters>` element. It must contain the `<param>` sub-elements with data shown in the chart in `name/value` pairs; the `series` parameter uses the JSON format to list series of data shown on the chart. 
 
 See the example below:
 
@@ -290,14 +290,14 @@ The color of a series to be used in the chart. Standard web color formats can be
 
 <td>
 
-Pattern for names of the Value Types (or series) to be shown on the chart. The asterisk (\*) sign is allowed to filter Value Types (or series) either predefined by TeamCity, like `BuildDuration` or `ArtifactsSize` (see [below](#Default+Statistics+Values+Provided+by+TeamCity) for the complete list of predefined statistic values), or your own data can be provided by reporting it from the build script.
+Pattern for names of the Value Types (or series) to be shown on the chart. The asterisk (`*`) sign is allowed to filter Value Types (or series) either predefined by TeamCity, like `BuildDuration` or `ArtifactsSize` (see [below](#Default+Statistics+Values+Provided+by+TeamCity) for the complete list of predefined statistic values), or your own data can be provided by reporting it from the build script.
 
 </td></tr></table>
  
 
 #### Chart Dimensions
 
-You can set the custom chart width/height in pixels using the `properties.width` and` properties.height` attributes for the `param` elements: `<param name="properties.width" value="300"/>.`
+You can set the custom chart width/height in pixels using the `properties.width` and `properties.height` attributes for the `param` elements: `<param name="properties.width" value="300"/>.`
 
 #### Chart Axis Settings
 
@@ -342,7 +342,7 @@ Description
 
 Whether the zero value is included on the Y axis:
 
-*  `true` (default)
+* `true` (default)
 * `false` (zero is not included)
 
 </td></tr><tr>
@@ -466,7 +466,7 @@ Milliseconds
 
 <td>
 
-The duration of each step. The build step names are generated automatically to avoid issues when a build step name is too long or a build step is renamed. The ID of each step can be found in the xml file of the build configuration.
+The duration of each step. The build step names are generated automatically to avoid issues when a build step name is too long or a build step is renamed. The ID of each step can be found in the XML file of the build configuration.
 
 </td>
 

@@ -6,11 +6,7 @@ TeamCity provides the _Deployment_ type of build configuration. Build configurat
 After [creating a build configuration](creating-and-editing-build-configurations.md), open its [General Settings](configuring-general-settings.md) and set the _Build configuration type_ to _Deployment_. The type change does not affect the build configuration functionality but offers some handy features to distinguish the deployment build from other builds.   
 You can change the type back to _Regular_ anytime.
 
-<tip>
-
-You can [disable revisions synchronization](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts) between some parts of a build chain to make your deployment setup more flexible.
-
-</tip>
+>You can [disable revisions synchronization](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts) between some parts of a build chain to make your deployment setup more flexible.
 
 Once a configuration is marked as _Deployment_, TeamCity changes behavior in the following way:
 * The __Run__ button caption for this configuration changes to __Deploy__.
