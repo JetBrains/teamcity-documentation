@@ -3,19 +3,19 @@
 
 TeamCity provides a wide range of notification possibilities to keep developers informed about the status of their projects. Notifications can be sent by email and instant messages, or can be displayed in the IDE (with the help of TeamCity plugins) or in the web browser. Notifications can also be received via Atom/RSS syndication feeds.
 
-Notifications in TeamCity are sent per-user according to the user's configured notification rules. Notification rules can also be configured at the user group level, in which case they will apply to all the users in the group.
+Notifications in TeamCity can be sent:
+* __Per user__, according to the user's configured notification rules. These rules can also be set at the user-group level, so they are applied to all the users in the TeamCity group.  
+  You can create a user-level notification rule for a specific project or multiple projects and build configurations. These notifications are also available in a wider range of software than the build-level ones: IDE, browsers, Slack, Jabber, and email.
+* __Per build configuration__, with the [Notifications](notifications.md) build feature. Currently, these notifications are available only for email and Slack.   
+  Choose build-level notifications if you want to notify many people at once about a specific build configuration. You can enter an email list address or a Slack channel ID, and whoever is subscribed to this list or channel will be notified when the selected build events occur.
 
-__Since version 2020.1__, TeamCity also allows configuring [notifications on a build configuration level](notifications.md).
+This article explains how to configure user-level notifications and describes the events that can trigger notifications. To read about build-level notifications, refer to the [respective article](notifications.md.)
 
-<tip>
+>You can [customize notification templates](customizing-notifications.md).
 
-You can [customize notification templates](customizing-notifications.md).
+## Subscribing to User-level Notifications
 
-</tip>
-
-## Subscribing to Project-level Notifications
-
-TeamCity allows you to flexibly adjust the notification rules, so that you receive notifications only on the events you are interested in. To subscribe to project-level notifications:
+TeamCity allows you to flexibly adjust the notification rules, so that you receive notifications only on the events you are interested in. To subscribe to user-level notifications:
 
 1\. In the top right corner of the screen, click the arrow next to your username, and select __My Settings &amp; Tools__ from the drop-down menu. Open the __Notification Rules__ tab.
 
@@ -113,20 +113,12 @@ Check this option to receive notifications about all of _finished_ failed builds
 Note that if __Builds with my changes only__ is selected in the __Watch__ area, TeamCity will notify you if a build with your changes fails, and will keep sending notifications on each 'incomplete' build afterwards until a successful one. An incomplete build is a finished build which failed with at least one of the following errors: 
 
 * Execution timeout
-
 * JVM crashed
-
 * JVM Out of memory error
-
 * Unable to collect changes
-
 * Compilation error
-
 * Artifacts publishing failed
-
 * Unknown Failure reason
-
-
 
 </td></tr><tr>
 
@@ -160,9 +152,6 @@ Check this option to be notified only if a build fails with a new build problem 
 
 __Build is successful__
 
- 
-
-
 </td>
 
 <td>
@@ -176,13 +165,11 @@ Check this option to receive notifications when a build of the specified project
 
 Only notify on the first successful build after failed
 
-
 </td>
 
 <td>
 
 Check this option to receive notifications when only the first successful build occurs after a failed build. Notifications about subsequent successful builds will _not_ be sent.
-
 
 </td></tr><tr>
 
@@ -190,13 +177,11 @@ Check this option to receive notifications when only the first successful build 
 
 __The first error occurs__
 
-
 </td>
 
 <td>
 
 Check this option to receive notifications about a "failing" build as soon as the first build error is detected, even before the build has finished.
-
 
 </td></tr><tr>
 

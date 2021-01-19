@@ -24,9 +24,9 @@ Each of the bundled [notifiers](notifier.md) has a directory in \<[TeamCity Data
 
 By default, the server checks for changes in the files every 60 seconds, but this can be changed by setting the `teamcity.notification.template.update.interval` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to the desired number of seconds.
 
-If an error occurs during the template evaluation, TeamCity logs the error details to `teamcity-notifications.log`. There can be non\-critical errors that result in ignoring part of the template or critical errors that result in the inability to send notification at all. Whenever you make changes to the notification templates ensure the notification can still be sent.
+If an error occurs during the template evaluation, TeamCity logs the error details to `teamcity-notifications.log`. There can be non-critical errors that result in ignoring part of the template or critical errors that result in the inability to send notification at all. Whenever you make changes to the notification templates ensure the notification can still be sent.
 
-This document doesn't describe the FreeMarker template language, so if you need guidance on the FreeMarker syntax, refer to the corresponding template manual at [http://freemarker.org/docs/dgui.html](http://freemarker.org/docs/dgui.html).
+This document doesn't describe the FreeMarker template language, so if you need guidance on the FreeMarker syntax, refer to the corresponding [template manual](http://freemarker.org/docs/dgui.html).
 
 ### Supported Output Values
 
@@ -72,10 +72,7 @@ This section provides Freemaker code snippets that can be used for customization
 
 ```
 
-
-
-The example below shows the snippet included into the `build_failed.ftl` template: the errors will be listed in both the plain text and the html part of the e\-mail:
-
+The example below shows the snippet included into the `build_failed.ftl` template: the errors will be listed in both the plain text and the html part of the email:
 
 ```XML
 <#-- Uses FreeMarker template syntax, template guide can be found at http://freemarker.org/docs/dgui.html -->
@@ -123,7 +120,6 @@ ${var.buildCompilationErrors}${var.buildFailedTestsErrors}${var.buildChanges}
 
 ```
 
-
 #### Listing build artifacts
 
 There is no default way of listing build artifacts in an email template at the moment. See a [related issue](https://youtrack.jetbrains.com/issue/TW-50431) with a simple plugin allowing you to list artifacts via a relevant API.
@@ -132,7 +128,6 @@ __Current workaround__
 
 This assumes direct access to disk from the template and ignores external artifacts storage (like S3) as well as artifacts browsing policies (not showing internal artifacts). Also, this way is likely to become deprecated in the future TeamCity versions.
 
-
 ```XML
 <p>Build artifacts:</p>
   <#list build.artifactsDirectory.listFiles() as file>
@@ -140,7 +135,6 @@ This assumes direct access to disk from the template and ignores external artifa
   </#list>
 
 ```
-
 
 This will list only the root artifacts and include the `.teamcity` directory, which can be changed by modifications to the code.
 
@@ -155,8 +149,6 @@ This will list only the root artifacts and include the `.teamcity` directory, wh
 
 ```
 
-
-
 This will list the parameters that are passed to the build from the server.
 
 ### Default Data Model
@@ -164,8 +156,7 @@ This will list the parameters that are passed to the build from the server.
 For the template evaluation, TeamCity provides the default data model that can be used inside the template. The objects exposed in the model are instances of the corresponding classes from [TeamCity server-side open API](https://plugins.jetbrains.com/docs/teamcity/server-side-object-model.html).   
 The set of available objects model differs for different events.You can also add your own objects into the model via a plugin. See [Extending Notification Templates Model](https://plugins.jetbrains.com/docs/teamcity/extending-notification-templates-model.html)) for details.
 
-Here is an example description of the model (the code can be used in IntelliJ IDEA to edit the template with completion). Note that not all entities listed below will be available in any template, for example, all test responsibilities are assigned in the project scope and notifications on test responsibilities can be configured to point to a project where an investigation was assigned (not to a build configuration). 
-
+Here is an example description of the model (the code can be used in IntelliJ IDEA to edit the template with completion). Note that not all entities listed below will be available in any template, for example, all test responsibilities are assigned in the project scope and notifications on test responsibilities can be configured to point to a project where an investigation was assigned (not to a build configuration).
 
 ```XML
 <#-- @ftlvariable name="project" type="jetbrains.buildServer.serverSide.SProject" -->

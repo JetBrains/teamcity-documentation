@@ -28,7 +28,7 @@ __Email Notifier__
 
 <td>
 
-Notifications regarding specified events are sent via email. Email Notifier can operate on a [project](subscribing-to-notifications.md#Subscribing+to+Project-level+Notifications) and [build configuration](notifications.md) level.
+Notifications regarding specified events are sent via email. Email Notifier can operate on a [user](subscribing-to-notifications.md#Subscribing+to+User-level+Notifications) and [build configuration](notifications.md) level.
 
 </td></tr>
 
@@ -43,7 +43,7 @@ __Slack Notifier__
 
 <td>
 
-Notifications regarding specified events are sent to the Slack messenger. Slack Notifier can operate on a [project](subscribing-to-notifications.md#Subscribing+to+Project-level+Notifications) and [build configuration](notifications.md) level.
+Notifications regarding specified events are sent to the Slack messenger. Slack Notifier can operate on a [user](subscribing-to-notifications.md#Subscribing+to+User-level+Notifications) and [build configuration](notifications.md) level.
 
 </td></tr>
 
