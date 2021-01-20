@@ -54,4 +54,5 @@
     </layout>
 
     <build-profile product="tc"/>
+    <build-profile product="tcc"/>
 </buildprofiles>
