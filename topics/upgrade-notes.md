@@ -2107,7 +2107,7 @@ On this occasion, please consider either:
 * reducing heap memory via `-Xmx` [JVM option](configuring-teamcity-server-startup-properties.md)
 
 __Vault Plugin is bundled__   
-In this version we bundled [SourceGear Vault VCS plugin](https://confluence.jetbrains.com/display/TW/Vault) (with experimental status). Please make sure to uninstall the plugin from .BuildServer/plugins (just delete plugin's zip) if you installed it previously.
+In this version we bundled [SourceGear Vault VCS plugin](https://confluence.jetbrains.com/display/TW/Vault) (with experimental status). Please make sure to uninstall the plugin from `.BuildServer/plugins` (just delete the plugin's ZIP) if you installed it previously.
 
 __Path to executable in Command line runner__ A [bug](http://youtrack.jetbrains.net/issue/TW-11840) was introduced that requires changing the path to executable if working directory is specified in the runner.The bug is partly fixed in 5.1.1 and fully fixed in 5.1.3.
 
@@ -2142,7 +2142,7 @@ __Pre\-5.0 Enterprise Server Licenses and Agent Licenses need upgrade__
 With the version 5.0, we announce changes to the upgrade policy: Upgrade to 5.0 is not free. Every license (server and agent) bought since 5.0 will work with any TeamCity version released within one year since the license purchase. Please review the detailed information at [Licensing and Upgrade](http://www.jetbrains.com/teamcity/buy/index.jsp) section of the official site.
 
 __Bundled plugins__   
-If you used standalone plugins that are now bundled in 5.0, do not forget to remove the plugins from `.BuildServer/plugins` directory.The newly bundled plugins are:
+If you used standalone plugins that are now bundled in 5.0, do not forget to remove the plugins from the `.BuildServer/plugins` directory.The newly bundled plugins are:
 * Mercurial
 * Git (JetBrains)
 * REST API (was provided with YouTrack previously)

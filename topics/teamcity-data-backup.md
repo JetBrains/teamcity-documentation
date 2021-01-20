@@ -38,9 +38,8 @@ The following data is __not included__ into backup:
 
 __The recommended approach__ is either to perform the backup process described under [Manual Backup and Restore](manual-backup-and-restore.md) or run a backup from the [web UI](creating-backup-from-teamcity-web-ui.md) regularly (for example, automated via [REST API](rest-api-reference.md#Data+Backup)) with the "Basic" level – this will ensure backing up all important data except build artifacts and build logs.
 
-Build artifacts and logs (if necessary) can be backed up manually by copying files under `.BuildServer/system/artifacts` (prior to TeamCity 9.0 in `.BuildServer/system/messages`).    
-* See [TeamCity Data Directory](teamcity-data-directory.md#artifacts) for details.    
-* If logs are selected for backup, TeamCity will search for them in [all artifact directories](build-artifact.md) currently specified on the server.
+Build artifacts and logs (if necessary) can be backed up manually by copying files under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` (prior to TeamCity 9.0 in `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/messages`).   
+If logs are selected for backup, TeamCity will search for them in [all artifact directories](build-artifact.md) currently specified on the server.
 
 Note that for large production TeamCity installations, exporting and importing of data from/to the database may not be an optimal solution and maintaining database backup via replication might be a better option; for example, see the corresponding [documentation](http://dev.mysql.com/doc/refman/5.0/en/replication.html) for MySQL database.
 
