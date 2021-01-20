@@ -16,7 +16,7 @@ Contact us about:
 
 When submitting a request, make sure:
 * to provide all necessary information by reviewing the [Reporting Issues guidelines](reporting-issues.md#Best+Practices+When+Reporting+Issues);
-* you use a [recent TeamCity version](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads). Generally, we do not provide regular support for [non-current major versions](teamcity-release-cycle.md) / more than one-year-old versions.
+* you use a [recent TeamCity version](previous-releases-downloads.md). Generally, we do not provide regular support for [non-current major versions](teamcity-release-cycle.md) / more than one-year-old versions.
 
 ### Licensed Users Support
 

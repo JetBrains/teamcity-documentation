@@ -137,7 +137,7 @@ There are two editions of TeamCity: __Professional__ and __Enterprise__.
 The editions are equal in all the features except for the maximum number of build configurations allowed.   
 The same TeamCity distribution and installation are used for both editions. You can switch to the Enterprise edition by entering the appropriate license key. All the data is preserved when the edition is switched.
 
-The current edition in use is noted in the footer of every TeamCity web UI page and on on the __Administration__ &gt; __Licenses__ page as well as in teamcity\-server.log on the server startup.
+The current edition in use is noted in the footer of every TeamCity web UI page and on on the __Administration__ &gt; __Licenses__ page as well as in `teamcity-server.log` on the server startup.
 
 The __Professional edition__ does not require any license key and can be used free of charge. The only functional difference from the Enterprise edition is a limitation of the maximum number of [build configurations](build-configuration.md). The limit is 100 build configurations (prior to TeamCity 2017.2 it was 20). It can be extended by 10 with each agent license key added. You can install several servers with the Professional license.
 
@@ -148,14 +148,12 @@ The __Enterprise edition__ requires a license key, has no limit on the number of
 An additional server in a [high availability set-up](multinode-setup.md) uses the license from the main server and does not require a separate license at this time.
 </note>
 
- 
-
 Each TeamCity edition comes bundled with 3 or more [build agents](build-agent.md). To use more agents than the bundled number, separate build agent license keys can be entered. Additional agents can be added to both editions.
 
 Besides the Professional and Enterprise licenses, there are two more license types:
 * __Evaluation__ — has an expiration date and provides an unlimited number of agents and build configurations. To obtain the evaluation license, use the link on [TeamCity download page](http://www.jetbrains.com/teamcity/download/). The evaluation license can be obtained only once for each major TeamCity version. A second evaluation license key from the site is not accepted by the same major version of TeamCity server. If you need to extend/repeat the evaluation, please [contact](https://www.jetbrains.com/support/sales/) our sales department.   
-Each [EAP](https://confluence.jetbrains.com/display/TW/TeamCity+EAP) (preview, not stable) release of TeamCity comes bundled with a 60\-day evaluation license.
-* __Open Source__ — this is a special type of license granted for open source projects, it is time\-based, and provides an unlimited number of agents. Refer to the details on [the page](https://www.jetbrains.com/teamcity/buy/choose_edition.jsp?license=OPEN_SOURCE)
+Each [EAP](https://confluence.jetbrains.com/display/TW/TeamCity+EAP) (preview, not stable) release of TeamCity comes bundled with a 60-day evaluation license.
+* __Open Source__ — this is a special type of license granted for open source projects, it is time-based, and provides an unlimited number of agents. Refer to the details on [the page](https://www.jetbrains.com/teamcity/buy/choose_edition.jsp?license=OPEN_SOURCE)
 
 The TeamCity Licensing Policy does not impose any limitations on the number of instances for any of the IDE plugins or the Windows Tray Notifiers.
 
@@ -188,12 +186,12 @@ When buying many licenses, you are welcome to [contact](https://www.jetbrains.co
 ## Valid TeamCity Versions
 
 TeamCity licenses are perpetual for the TeamCity versions they cover. This means that you can run a covered TeamCity version with existing licenses for unlimited time and the licenses will stay valid for this TeamCity version.   
-Each TeamCity license (including Enterprise Server and Agent) has a __maintenance period__ (generally 1 year). The license key is valid for any version of TeamCity released before the license purchase as well as for any version released within the maintenance period. Licenses valid for the major/minor release (changes in the first two release numbers) are also considered valid for the corresponding bugfix updates (changes in the third release number).
+Each TeamCity license (including Enterprise Server and Agent) has a __maintenance period__ (generally 1 year). The license key is valid for any version of TeamCity released before the license purchase as well as for any version released within the maintenance period. Licenses valid for the major release (changes in the first two release numbers) are also considered valid for the corresponding minor (bugfix) updates (changes in the third release number).
 
 The set of valid licenses defines if the server works in Enterprise mode and how many agents can run builds on the server. Agent licenses are not bound to specific agents and are only used to determine the maximum number of authorized agents.
 
 Before you [upgrade](upgrade.md) to a newer TeamCity version, check the validity of the existing licenses with the new version.   
-If the new TeamCity server effective [release date](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads) is not covered by the maintenance period of some of the licenses, the corresponding licenses will not be valid with the TeamCity version and would need a [renew](http://www.jetbrains.com/teamcity/buy/index.jsp#upgradeuser). Generally, license renew costs about 50% of the new license price in case the new license date is the same as the end of maintenance of the license being renewed.
+If the new TeamCity server effective [release date](previous-releases-downloads.md) is not covered by the maintenance period of some of the licenses, the corresponding licenses will not be valid with the TeamCity version and would need a [renew](http://www.jetbrains.com/teamcity/buy/index.jsp#upgradeuser). Generally, license renew costs about 50% of the new license price in case the new license date is the same as the end of maintenance of the license being renewed.
 
 When a new version is available, TeamCity displays a notification in the web UI and warns you if any of your license keys are incompatible with this new version. A notification on the new TeamCity version is also displayed in the Global Configuration Items of the [Server Health](server-health.md) report, visible to system administrators. System administrators can use the link in the "Some Licenses are incompatible" message to quickly navigate to the [Licenses](#Managing+Licenses) page, where all incompatible licenses will have a warning icon. The information about the license keys installed on your server is secure as it is not sent over the Internet.
 

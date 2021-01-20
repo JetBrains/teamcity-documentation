@@ -3,7 +3,7 @@
 
 <warning>
 
-Unless specifically noted, TeamCity does not support downgrade between major/minor releases (changes in first two numbers of the version). It is strongly recommended to [back up your data](teamcity-data-backup.md) before any upgrade.
+Unless specifically noted, TeamCity does not support downgrade between major releases (changes in the first two numbers of the version). It is strongly recommended to [back up your data](teamcity-data-backup.md) before any upgrade.
 </warning>
 
 TeamCity supports upgrades from any of the previous versions to the later ones. All the settings and data are preserved unless noted in the [Upgrade Notes](upgrade-notes.md).
@@ -14,12 +14,12 @@ It is recommended to plan for regular upgrades to run the latest TeamCity versio
 
 Before upgrading TeamCity:
 
-1. For a major upgrade, review what you will be getting in [What's New](what-s-new-in-teamcity-2020-1.md) (follow the links at the bottom of What's New if you are upgrading not from the previous major release).
-2. [Check your license keys](#Licensing) unless you are upgrading within bugfix releases of the same major `X.X` version.
-3. [Download](http://www.jetbrains.com/teamcity/download/) the new TeamCity version ([extended download options](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads)).
+1. For a major upgrade, review what you will be getting in [What's New](what-s-new-in-teamcity.md) (follow the links at the bottom of What's New if you are upgrading not from the previous major release).
+2. [Check your license keys](#Licensing) unless you are upgrading within bugfix releases of the same major `YYYY.N` version.
+3. [Download](http://www.jetbrains.com/teamcity/download/) the new TeamCity version ([extended download options](previous-releases-downloads.md)).
 4. Carefully review the __[Upgrade Notes](upgrade-notes.md)__.
 5. Consider probing the upgrade on a [test server](how-to.md#Test-drive+Newer+TeamCity+Version+before+Upgrade)
-6. If you have non\-bundled plugins installed, check plugin pages for compatibility with the new version and upgrade/uninstall the plugins if necessary
+6. If you have non-bundled plugins installed, check plugin pages for compatibility with the new version and upgrade/uninstall the plugins if necessary
 
 To upgrade the server:
 1. [Back up the current TeamCity data](teamcity-data-backup.md) including settings, database, and supplementary data. You will need the backup to roll back to the previous version in the unlikely event of the upgrade failure.
@@ -30,8 +30,9 @@ To upgrade the server:
 If you plan to upgrade a production TeamCity installation, it is recommended to install a [test server](how-to.md#Test-drive+Newer+TeamCity+Version+before+Upgrade) and check its functioning in your environment before upgrading the main one.
 
 ### Licensing
-Before upgrading, make sure the maintenance period of your licenses is not yet elapsed (use __Administration | Licenses__ TeamCity server web UI page to list your license keys). The licenses are valid only for the versions of TeamCity with the effective release date within the maintenance period. Check the effective release date on the [releases list](https://confluence.jetbrains.com/display/TW/Previous+Releases+Downloads).   
-Typically all the bugfix updates (indicated by changes in the `Z` part of the `X.Y.Z` TeamCity version) use the same effective release date (that of the major/minor release).   
+
+Before upgrading, make sure the maintenance period of your licenses is not yet elapsed (use the __Administration | Licenses__ web UI page to see your license keys). The licenses are valid only for the versions of TeamCity with the effective release date within the maintenance period. Check the effective release date on the [release list](previous-releases-downloads.md).   
+Typically all the minor updates (indicated by changes in the `M` part of the `YYYY.N.M` TeamCity version) use the same effective release date (that of the major release).   
 If not all the licenses cover the target version release date, consider [renewing the licenses](https://www.jetbrains.com/teamcity/buy/#license-type=renewal) before the upgrade (you can replace the old license keys with the renewed ones even before the upgrade).
 
 If you are only evaluating a newer version, you can get an evaluation license on the [download page](http://www.jetbrains.com/teamcity/download/). Note that each TeamCity version can be evaluated only once. To extend the evaluation period, [contact](http://www.jetbrains.com/company/contacts/#contactSales) the JetBrains sales department.
@@ -43,9 +44,9 @@ When upgrading from TeamCity 4.x or earlier, note that the licensing policy in T
 ## Upgrading TeamCity Server
 
 TeamCity supports upgrades from any of the previous versions to the current one.   
-Unless specifically noted, downgrades with preserving the data are not possible with changing `major.minor` version and are possible within bugfix releases (without changing `major.minor` version).
+Unless specifically noted, downgrades with preserving the data are not possible with changing the major version and are possible within bugfix releases.
 
-The general policy is that bugfix updates (indicated by changes in the `Z` part of the `X.Y.Z` TeamCity version) do not change data format, so you can freely upgrade/downgrade within the bugfix versions. However, when upgrading to the next major or minor version (changed `X` or `Y` in `X.Y.Z` TeamCity version), you will not be able to downgrade with the data preservation: you will need to [restore a backup](restoring-teamcity-data-from-backup.md) of the appropriate version.
+The general policy is that bugfix updates (indicated by changes in the `M` part of the `YYYY.N.M` TeamCity version) do not change data format, so you can freely upgrade/downgrade within the bugfix versions. However, when upgrading to the next major version (changed `YYYY.N`), you will not be able to downgrade with the data preservation: you will need to [restore a backup](restoring-teamcity-data-from-backup.md) of the appropriate version. [Read more](teamcity-release-cycle.md#Version+Numbers) about the release numbering.
 
 On upgrade, all the TeamCity configuration settings and other data are preserved unless noted in [Upgrade Notes](upgrade-notes.md). If you have customized TeamCity installation (like Tomcat server settings change), you will need to repeat the customization after the upgrade.
 
@@ -147,8 +148,8 @@ If you made no changes to the container, you can just stop the running container
 ## IDE Plugins
 
 It is recommended for all users to regularly update their IDE plugins to the latest version compatible with the TeamCity server version in use. At least to the version available from the TeamCity server's Tools section on user profile.   
-Generally, versions of the IntelliJ IDEA TeamCity plugin, Eclipse TeamCity plugin, and Visual Studio TeamCity Addin have to be the same as the TeamCity server version. Users with non\-matching plugin versions get a message on an attempt to log in to the TeamCity server with a non\-matching version.   
-The only exception is TeamCity versions 9.0 \- 9.1.x, which use a compatible protocol, and any plugin of these versions can be used with any server of these versions. Updating IDE plugins to the matching server version is still recommended.
+Generally, versions of the IntelliJ IDEA TeamCity plugin, Eclipse TeamCity plugin, and Visual Studio TeamCity Addin have to be the same as the TeamCity server version. Users with non-matching plugin versions get a message on an attempt to log in to the TeamCity server with a non-matching version.   
+The only exception is TeamCity versions 9.0 - 9.1.x, which use a compatible protocol, and any plugin of these versions can be used with any server of these versions. Updating IDE plugins to the matching server version is still recommended.
 
 ## Upgrading Build Agents
 
@@ -183,7 +184,7 @@ As TeamCity agent does not hold any unique information, the easiest way to upgra
 
 If you need to preserve all the agent data (for example, to eliminate clean checkouts after the upgrade), you can:
 * stop the agent.
-* delete all the directories in the agent installation present in the agent .zip distribution except `conf`.
+* delete all the directories in the agent installation present in the agent `.zip` distribution except `conf`.
 * unpack the `.zip` distribution to the agent installation directory, skipping the "conf" directory.
 * start the agent.
 
