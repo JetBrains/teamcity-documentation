@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE product-profile
         SYSTEM "http://helpserver.labs.intellij.net/help/product-profile.dtd">
-<product-profile id="tcc" name="TeamCity Cloud" start-page="teamcity-documentation.md" status="release">
+<product-profile id="tcc" name="TeamCity Cloud" start-page="teamcity-documentation.md" status="eap">
     <toc-element id="teamcity-documentation.md">
         <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2020-2.html">
             <toc-element id="teamcity-2020-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -412,11 +412,9 @@
             <toc-element id="getting-started-with-php.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
             <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
-        <toc-element id="teamcity-cloud.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
     </toc-element>
     <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
     <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
-    <toc-element toc-title="TeamCity 2020.1 Help" href="https://www.jetbrains.com/help/teamcity/2020.1/teamcity-documentation.html"/>
-    <toc-element toc-title="Documentation for Previous Versions" href="https://confluence.jetbrains.com/display/TW/Documentation"/>
+    <toc-element toc-title="TeamCity On-Premises Documentation" href="https://www.jetbrains.com/help/teamcity/teamcity-documentation.html"/>
 </product-profile>
