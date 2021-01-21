@@ -3,7 +3,7 @@
 
 LDAP integration in TeamCity has two levels: authentication (login) and users synchronization:
 * __authentication__ allows you to login in to TeamCity using LDAP server credentials.
-* once LDAP authentication is configured, you can enable LDAP __synchronization__ which allows the TeamCity user\-set to be automatically populated with the user data from LDAP.
+* once LDAP authentication is configured, you can enable LDAP __synchronization__ which allows the TeamCity user-set to be automatically populated with the user data from LDAP.
 LDAP integration is generic and can be configured for Active Directory or other LDAP servers.
 
 <note>
@@ -19,7 +19,7 @@ To allow logging into TeamCity with LDAP credentials, you need to configure LDAP
 
 If you need to configure authentication without access to web UI refer to the [corresponding section](https://confluence.jetbrains.com/display/TCD8/LDAP+Integration) in the previous documentation version.
 
-When the `Allow creating new users on the first login` option is selected (this is the default) a new user account will be created on the first successful login. The TeamCity user names for the new users will be derived from their LDAP data based on the configured setting. All newly created users belong to the [User Group](user-group.md) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles can [be granted](managing-roles.md) via the __All Users__ group.
+When the "_Allow creating new users on the first login_" option is selected (by default) a new user account will be created on the first successful login. The TeamCity user names for the new users will be derived from their LDAP data based on the configured setting. All newly created users belong to the [User Group](user-group.md) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles can [be granted](managing-roles.md) via the __All Users__ group.
 
 TeamCity stores user accounts and details in its own database. For information on automatic user creation and automatic population of user details from LDAP, refer to the [Synchronization](#Synchronization) section.
 
@@ -29,11 +29,11 @@ LDAP integration settings are configured in the `<TeamCity Data Directory>/confi
 
 Create the file by copying `<TeamCity Data Directory>/config/ldap-config.properties.dist` file and renaming it to the `<TeamCity Data Directory>/config/ldap-config.properties`; follow the comments in the file to edit the default settings as required.
 
-The file uses the standard Java properties file syntax, so all the values in the file must be properly [escaped](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)). The file is re\-read on any modification so you do not need to restart the server to apply changes in the file.
+The file uses the standard Java properties file syntax, so all the values in the file must be properly [escaped](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)). The file is reread on any modification so you do not need to restart the server to apply changes in the file.
 
 It is strongly recommended to back up the previous version of the file: if you misconfigure LDAP integration, you may no longer be able to log in into TeamCity. The users who are already logged in are not affected by the modified LDAP integration settings because users are authenticated only on login.
 
-The mandatory property in the `ldap-config.properties` file is `java.naming.provider.url` that configures the server and root DN. The property stores the URL to the LDAP server node that is used in following LDAP queries. For example, `ldap://dc.example.com:389/CN=Users,DC=Example,DC=Com`. Note that the value of the property should use URL\-escaping if necessary. For example, use `%20` if you need the space character.
+The mandatory property in the `ldap-config.properties` file is `java.naming.provider.url` that configures the server and root DN. The property stores the URL to the LDAP server node that is used in following LDAP queries. For example, `ldap://dc.example.com:389/CN=Users,DC=Example,DC=Com`. Note that the value of the property should use URL-escaping if necessary. For example, use `%20` if you need the space character.
 
 <note>
 
@@ -45,7 +45,7 @@ The supported configuration properties are documented in comments in the `ldap-c
 
 The general login sequence is as follows:
 * based on the username entered in the login form by the user, an LDAP search is performed (defined by the `teamcity.users.login.filter` LDAP filter where the user\-entered username is referenced via the `$login$` or `$capturedLogin$` substring within the users base LDAP node (defined by `teamcity.users.base`),
-* if the search is successful, authentication (LDAP bind) is performed using the DN found during the search and the user\-entered password,
+* if the search is successful, authentication (LDAP bind) is performed using the DN found during the search and the user-entered password,
 * if the authentication is successful, TeamCity user is created if necessary and the user is logged in. The name of the TeamCity user is retrieved from an attribute of the found LDAP entry (the attribute name is defined via the `teamcity.users.username` property)
 
 When users log in via LDAP, TeamCity does not store the user passwords. On each user login, authentication is performed by a direct login into LDAP with the credentials based on the values entered in the login form.
@@ -81,7 +81,7 @@ java.naming.referral=follow
 
 ### Advanced Configuration
 
-If you need to fine\-tune LDAP connection settings, you can add the `java.naming` options to the `ldap-config.properties` file: they will be passed to the underlying Java library. The default options are retrieved using `java.naming.factory.initial=com.sun.jndi.ldap.LdapCtxFactory`. Refer to the Java [documentation page](http://docs.oracle.com/javase/1.5.0/docs/guide/jndi/jndi-ldap.html) for more information about property names and values.
+If you need to fine-tune LDAP connection settings, you can add the `java.naming` options to the `ldap-config.properties` file: they will be passed to the underlying Java library. The default options are retrieved using `java.naming.factory.initial=com.sun.jndi.ldap.LdapCtxFactory`. Refer to the Java [documentation page](http://docs.oracle.com/javase/1.5.0/docs/guide/jndi/jndi-ldap.html) for more information about property names and values.
 
 You can use an LDAP explorer to browse LDAP directory and verify the settings (for example, [http://www.jxplorer.org/](http://www.jxplorer.org/) or [http://www.ldapbrowser.com/softerra-ldap-browser.htm](http://www.ldapbrowser.com/softerra-ldap-browser.htm)).
 
@@ -93,8 +93,6 @@ java.naming.provider.url=ldap://ldap.mycompany.com:389 ldap://ldap2.mycompany.co
 
 ```
 
-
-
 The servers are contacted until any of them responds. There is no particular order in which the address list is processed.
 
 ## Synchronization
@@ -104,9 +102,9 @@ Synchronization with LDAP in TeamCity allows you to:
 * Update the user groups membership based on LDAP groups
 * Automatically create and remove users in TeamCity based on information retrieved from LDAP
 
-TeamCity supports one\-way synchronization with LDAP: the data is retrieved from LDAP and stored in the TeamCity database. Periodically, TeamCity fetches data from LDAP and updates users in TeamCity.
+TeamCity supports one-way synchronization with LDAP: the data is retrieved from LDAP and stored in the TeamCity database. Periodically, TeamCity fetches data from LDAP and updates users in TeamCity.
 
-When synchronization is enabled, you can review the related data and run on\-demand synchronization in the __Administration | LDAP Synchronization__ section of the [server settings](teamcity-configuration-and-maintenance.md).
+When synchronization is enabled, you can review the related data and run on-demand synchronization in the __Administration | LDAP Synchronization__ section of the [server settings](teamcity-configuration-and-maintenance.md).
 
 ### Common Configuration
 
@@ -123,15 +121,15 @@ teamcity.options.users.synchronize=true
 
 
 You also need to specify the following mandatory properties:
-* `java.naming.security.principal` and `java.naming.security.credentials` \- they specify the user credentials which are used by TeamCity to connect to LDAP and retrieve data,
-* `teamcity.users.base` and `teamcity.users.filter` \- these specify the settings to search for users
-* `teamcity.users.username` \- the name of the LDAP attribute containing the TeamCity user's username. Based on this setting LDAP entries are mapped to the TeamCity users.
+* `java.naming.security.principal` and `java.naming.security.credentials` – they specify the user credentials which are used by TeamCity to connect to LDAP and retrieve data,
+* `teamcity.users.base` and `teamcity.users.filter` - these specify the settings to search for users
+* `teamcity.users.username` - the name of the LDAP attribute containing the TeamCity user's username. Based on this setting LDAP entries are mapped to the TeamCity users.
 
 No users are created or deleted on enabling user's synchronization. Check the [Creating and Deleting Users](#Creating+and+Deleting+Users) section for the related configuration.
 
 ### User Profile Data
 
-When synchronization is properly configured, TeamCity can retrieve user\-related information from LDAP (e\-mail, full name, or any custom property) and store it as TeamCity user's details. If updated in LDAP, the data will be updated in the user's profile in TeamCity. If modified in user's profile in TeamCity, the data will no longer be updated from LDAP for the modified fields. All the user fields synchronization properties store the name of LDAP field to retrieve the information from.
+When synchronization is properly configured, TeamCity can retrieve user-related information from LDAP (email, full name, or any custom property) and store it as TeamCity user's details. If updated in LDAP, the data will be updated in the user's profile in TeamCity. If modified in user's profile in TeamCity, the data will no longer be updated from LDAP for the modified fields. All the user fields synchronization properties store the name of LDAP field to retrieve the information from.
 
 The user's profile synchronization is performed on user creation and also periodically for all users.
 
@@ -140,7 +138,7 @@ The list of supported user settings:
 * `teamcity.users.property.displayName`
 * `teamcity.users.property.email`
 * `teamcity.users.property.plugin:notificator:jabber:jabber-account`
-* `teamcity.users.property.plugin:vcs:<VCS type>:anyVcsRoot` – VCS username for all &lt;VCS type&gt; roots. The following VCS types are supported: svn, perforce, jetbrains.git, cvs, tfs, vss, starteam.
+* `teamcity.users.property.plugin:vcs:<VCS type>:anyVcsRoot` – VCS username for all &lt;VCS type&gt; roots. The following VCS types are supported: `svn`, `perforce`, `jetbrains.git`, `cvs`, `tfs`, `vss`, `starteam`.
 
 Example properties can be seen by configuring them for a user in the web UI and then listing the properties via [REST API](rest-api-reference.md#Users).
 
@@ -162,10 +160,10 @@ TeamCity can automatically update users membership in groups based on the LDAP\-
 
 __To configure Group membership:__
 1. Create groups in TeamCity manually.
-2. Specify the mapping of LDAP groups to TeamCity groups in the `<TeamCity Data Directory>/config/ldap\-mapping.xml` file. Use the `ldap-mapping.xml`.[`dist file`](teamcity-data-directory.md) as an example: TeamCity user groups are determined by the [Group Key](managing-users-and-user-groups.md#Managing+User+Groups), LDAP groups are specified by the group DN.
+2. Specify the mapping of LDAP groups to TeamCity groups in the `<TeamCity Data Directory>/config/ldap-mapping.xml` file. Use the `ldap-mapping.xml`.[`dist file`](teamcity-data-directory.md) as an example: TeamCity user groups are determined by the [Group Key](managing-users-and-user-groups.md#Managing+User+Groups), LDAP groups are specified by the group DN.
 3. Set the required properties in the `ldap-config.properties` file, the __groups settings__ section:
-   * `teamcity.options.groups.synchronize` \- enables user group membership synchronization
-   * `teamcity.groups.base` and `teamcity.groups.filter` \- specifies the LDAP base node and filter to find the groups in LDAP (those configured in the `ldap-mapping.xml` file should be a subset of the groups found by these settings)
+   * `teamcity.options.groups.synchronize` - enables user group membership synchronization
+   * `teamcity.groups.base` and `teamcity.groups.filter` - specifies the LDAP base node and filter to find the groups in LDAP (those configured in the `ldap-mapping.xml` file should be a subset of the groups found by these settings)
    * `teamcity.groups.property.member` specifies the LDAP attribute holding the members of the group. LDAP groups should have all their members listed in the specified attribute.
 
 Note that TeamCity only operates with the users matched by `teamcity.users.base` and `teamcity.users.filter `settings, so only the users found by these properties will be processed during the group membership synchronization process.
@@ -193,7 +191,6 @@ TeamCity can automatically delete users in TeamCity if they cannot be found in L
 
 The username for the existing users can be updated upon first successful login. For instance, suppose the user previously logged in using 'DOMAIN\user' name, thus the string `DOMAIN\user` was stored in TeamCity as the username. To synchronize the data with LDAP, the user can change the username to 'user' using the following options:
 
-
 ```Shell
 teamcity.users.login.capture=DOMAIN\\\\(.*)
 teamcity.users.login.filter=(cn=$login$)
@@ -201,12 +198,9 @@ teamcity.users.previousUsername=DOMAIN\\$login$
 
 ```
 
-
-
 The first property allows you to capture the username from the input login and use it to authenticate the user (can be particularly useful when the domain 'DOMAIN' isn't stored anywhere in LDAP). The second property `teamcity.users.login.filter` allows you to fetch the username from LDAP by specifying the search filter to find this user (other mandatory properties to use this feature: `teamcity.users.base` and `teamcity.users.username`). The third property allows you to find the `DOMAIN\user` username when login with just 'user', and replace it with either the captured login, or with the username from LDAP.
 
 Note that if any of these properties are not set or cannot be applied, the username isn't changed (the input login name is used).
-
 
 [//]: # (Internal note. Do not delete. "LDAP Integrationd195e537.txt")    
 
@@ -221,32 +215,42 @@ When you add the LDAP authentication module on a TeamCity server which already h
 
 ### Scrambling credentials in ldap-config.properties file
 
-The `java.naming.security.credentials` property can store the password either in the plain\-text or scrambled form. TeamCity needs the raw password value when authenticating in LDAP server, so the password should be stored in a reversible form.
-You can get the scrambled value using the command below and then set the property to the the scrambled value. When adding the scrambled value to the `java.naming.security.credentials` property, it is necessary to include the complete output of the commands below. The scrambled entry should look something like: `java.naming.security.credentials=scrambled:1234567890abcdef`.
+The `java.naming.security.credentials` property can store the password either in the plain-text or scrambled form. TeamCity needs the raw password value when authenticating in a LDAP server, so the password should be stored in a reversible form.   
+You can get the scrambled value using the command below and then set the property to the scrambled value. When adding the scrambled value to the `java.naming.security.credentials` property, it is necessary to include the complete output of the commands below. The scrambled entry should look like: `java.naming.security.credentials=scrambled:1234567890abcdef`.
 
-Note that scrambling is not encryption: it protects the password from being easily remembered when seen occasionally, but it does not protect against getting the real password value when someone gets the scrambled password value.
+>Scrambling is not encryption: it protects the password from being easily remembered when seen occasionally, but it does not protect against getting the real password value when someone gets the scrambled password value.
+{type="warning"}
 
 To get the scrambled password value, execute the following command (must be executed from the `<TeamCity installation directory>/webapps/ROOT/WEB-INF/lib` directory:
 
-For Windows:
+<tabs>
+
+<tab title="Windows">
 
 ```Shell
 java -cp serviceMessages.jar;common-api.jar;commons-codec.jar;commons-codec-1.3.jar;log4j-1.2.12.jar jetbrains.buildServer.serverSide.crypt.ScrambleMain "<text to scramble>"
 
 ```
 
-For Linux:
+</tab>
+
+<tab title="Linux">
 
 ```Shell
 java -cp serviceMessages.jar:common-api.jar:commons-codec.jar:commons-codec-1.3.jar:log4j-1.2.12.jar jetbrains.buildServer.serverSide.crypt.ScrambleMain "<text to scramble>"
 
 ```
 
-[//]: # (Internal note. Do not delete. "LDAP Integrationd195e594.txt")
+</tab>
 
+</tabs>
+
+>Note that this approach is relevant only for LDAP configurations. To get a scrambled value in other configurations, you can use the [`addSecureToken`](https://www.jetbrains.com/help/teamcity/rest/projectapi.html#addSecureToken) REST API method. When used for a project with disabled versioned settings, this method returns a string with the encrypted password. When used for a project with enabled versioned settings, it creates a new secure token and returns the token ID.
+
+[//]: # (Internal note. Do not delete. "LDAP Integrationd195e594.txt")
 
 ### Debugging LDAP Integration
 
-Internal LDAP logs are stored in `logs/teamcity-ldap.log*` files in the [server logs](teamcity-server-logs.md). If you encounter an issue with LDAP configuration, it is advised that you look into the logs as the issue can often be figured out from the messages in there. To get detailed logs of LDAP login and synchronization processes, use the "debug\-ldap" [logging preset](teamcity-server-logs.md).
+Internal LDAP logs are stored in `logs/teamcity-ldap.log*` files in the [server logs](teamcity-server-logs.md). If you encounter an issue with LDAP configuration, it is advised that you look into the logs as the issue can often be figured out from the messages in there. To get detailed logs of LDAP login and synchronization processes, use the "debug-ldap" [logging preset](teamcity-server-logs.md).
 
-If you want to [report an LDAP issue to us](https://confluence.jetbrains.com/display/TW/Feedback), make sure to include LDAP settings (`<TeamCity Data Directory>/config/ldap-config.properties` and `ldap-mapping.xml` files, with password in `ldap-config.properties` masked) and debug LDAP logs fully covering a login/synchronization sequence (include all `teamcity-ldap.log*` files). Make sure to describe the related structure of your LDAP (noting the attributes of related LDAP entities) and detail expected/actual behavior. The archive with the data can be sent to us via [one of the supported ways](reporting-issues.md#Uploading+Large+Data+Archives).
+If you want to [report an LDAP issue to us](https://confluence.jetbrains.com/display/TW/Feedback), make sure to include LDAP settings (`<TeamCity Data Directory>/config/ldap-config.properties` and `ldap-mapping.xml` files, with the password masked in `ldap-config.properties`) and debug LDAP logs fully covering a login/synchronization sequence (include all `teamcity-ldap.log*` files). Make sure to describe the related structure of your LDAP (noting the attributes of the related LDAP entities) and detail expected/actual behavior. The archive with the data can be sent to us via [one of these methods](reporting-issues.md#Uploading+Large+Data+Archives).
