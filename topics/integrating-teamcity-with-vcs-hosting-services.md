@@ -1,7 +1,7 @@
 [//]: # (title: Integrating TeamCity with VCS Hosting Services)
 [//]: # (auxiliary-id: Integrating TeamCity with VCS Hosting Services)
 
-If you have an organization account in [GitHub](https://github.com/), [GitHub Enterprise](https://enterprise.github.com/), [Bitbucket Cloud](https://bitbucket.org/), [GitLab.com](https://about.gitlab.com/), or [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/), you can connect TeamCity to these source code hosting services making it easier for the organization users to create new projects, [Git](git.md) or [Mercurial](mercurial.md) VCS roots, [GitHub](github.md) or [Bitbucket](integrating-teamcity-with-issue-tracker.md) issue trackers, which are supported out of the box.
+If you have an organization account in [GitHub.com](https://github.com/), [GitHub Enterprise](https://enterprise.github.com/), [Bitbucket Cloud](https://bitbucket.org/), [GitLab.com](https://about.gitlab.com/), or [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/), you can connect TeamCity to these source code hosting services making it easier for the organization users to create new projects, [Git](git.md) or [Mercurial](mercurial.md) VCS roots, [GitHub](github.md) or [Bitbucket](integrating-teamcity-with-issue-tracker.md) issue trackers, which are supported out of the box.
 
 It is also possible to connect TeamCity to [Azure DevOps Services](https://visualstudio.microsoft.com/team-services/) making it really simple to set up projects which use VSTS repositories or issue tracker.
 
@@ -49,7 +49,7 @@ You need to create an [OAuth consumer](https://confluence.atlassian.com/bitbucke
    2. Click __OAuth__ from the menu bar. On the __Add OAuth consumer__ page, specify the name and an optional description, the callback URL and the URL as provided by TeamCity.
    3. Specify the set of permissions: TeamCity requires "_read_" access to your account and your repositories.
    4. Save your settings.
-   5. On the page that opens, in the __OAth consumers__ section, click the name of your TeamCity application to display the key and the secret.
+   5. On the page that opens, in the __OAuth consumers__ section, click the name of your TeamCity application to display the key and the secret.
 3. Continue configuring the connection in TeamCity: on the __Add Connection__ page that is open, specify the key and secret.
 4. Save the connection settings. 
 5. The connection is configured, and now a small Bitbucket icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Mercurial](mercurial.md) VCS root, create [Bitbucket](bitbucket-cloud.md) issue tracker. Click the icon, log in to Bitbucket  and authorize TeamCity. TeamCity will be granted access to your public repositories. For __private__ repositories you'll still have to provide Bitbucket credentials to be used for authentication by TeamCity, as Bitbucket Cloud doesn't provide non-expiring access tokens. See the [related discussion](https://bitbucket.org/site/master/issues/11774/application-specific-passwords-or-tokens).
