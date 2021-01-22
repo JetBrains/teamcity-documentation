@@ -7,7 +7,7 @@ Welcome to the documentation for [TeamCity 2020.x](https://www.jetbrains.com/tea
 
 __TeamCity Cloud Beta is open!__	
 
-Learn more on [our website](https://www.jetbrains.com/teamcity/cloud/) or in the [documentation](teamcity-cloud.md).	
+Learn more on [our website](https://www.jetbrains.com/teamcity/cloud/).	
 </tip>
 
 

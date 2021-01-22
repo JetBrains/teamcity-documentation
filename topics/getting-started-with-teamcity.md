@@ -11,7 +11,7 @@ Check the full list of [supported platforms and environments](supported-platform
 
 ### 1. Learn about CI with TeamCity
 
-Understand the idea behind Continuous integration, learn [basic TeamCity concepts and build lifecycle](continuous-integration-with-teamcity.md).
+Understand the idea behind continuous integration, learn [basic TeamCity concepts and build lifecycle](continuous-integration-with-teamcity.md).
 
 ### 2. Install and Start TeamCity
 
