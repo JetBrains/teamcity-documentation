@@ -56,7 +56,9 @@ Resources with custom values support three types of locks:
 * Locks on __all__ values: a build will lock all the values of the resource. No other builds that use this resource will start until the current one is finished.
 * Locks on a __specific__ value: only a specific value of the resource will be passed to the build. If the value is already taken by a running build, the new build will wait in the [queue](build-queue.md) until the value becomes available.
 
-When the resource is defined and the locks are added, the build gets a configuration parameter with the name of the lock and with the value of the resource string (`teamcity.locks.readLock.<lockName>` or `teamcity.locks.writeLock.<lockName>`), for example, the parameter name can be `teamcity.locks.readLock.databaseUrl`.
+<anchor name="resource-locks"/>
+
+Each defined lock is represented inside a build with a configuration parameter `teamcity.locks.readLock.<lockName>` or `teamcity.locks.writeLock.<lockName>`, whose value is the resource string. An example of a parameter name: `teamcity.locks.readLock.databaseUrl`.
 
 <note>
 
