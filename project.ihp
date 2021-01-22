@@ -16,5 +16,5 @@
     <product src="tc.tree" web-path="/teamcity/2020.2/"
              teamcity-build-path="Documentation_Teamware_TeamCity" version="2020.2" keymaps-mode="none"/>
     <product src="tcc.tree" web-path="/teamcity/cloud/2020.2/"
-             teamcity-build-path="Documentation_Teamware_TeamCityCloud" version="2020.2" keymaps-mode="none"/>
+             teamcity-build-path="Documentation_Teamware_TeamCityCloud" keymaps-mode="none"/>
 </ihp>

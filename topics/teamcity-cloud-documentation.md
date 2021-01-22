@@ -61,7 +61,7 @@ Welcome to the documentation for [TeamCity Cloud](https://www.jetbrains.com/team
 </td></tr>
 </table>
 
-## TeamCity Cloud 2020.x Supported Platforms and Environments
+## TeamCity Cloud Supported Platforms and Environments
 
 The core features of TeamCity are platform-independent. See details at [Supported Platforms and Environments](supported-platforms-and-environments.md).
 
