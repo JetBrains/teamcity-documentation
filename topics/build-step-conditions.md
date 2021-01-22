@@ -16,7 +16,9 @@ Alternatively, select the __Other condition__ option to add the _parameter-based
 
 If you declare multiple execution conditions, the build step will be executed only if __all__ of them are satisfied in the current build run.
 
->When triggering a [custom build](triggering-a-custom-build.md), you can change the values of the parameters responsible for steps' execution. This way, you can flexibly control a single build run: for example, run a quick build without engaging tests or other optional steps.
+If you use parameter-based execution conditions in a build which belongs to a [build chain](build-chain.md), note that the parameter, used in a step condition, might change own value during the build. This might cause an unexpected source reuse in the whole build chain. To prevent this, consider disabling the "_Do not run new build if there is a suitable one_" option in the [snapshot dependency](snapshot-dependencies.md) of the build configuration that depends on the build with such condition. If this option is enabled, TeamCity will show the corresponding health report for the affected build configuration.
+
+>When triggering a [custom build](triggering-a-custom-build.md), you can change the values of the parameters responsible for the steps' execution. This way, you can flexibly control a single build run: for example, run a quick build without engaging tests or other optional steps.
 
 In this demo, we explore a use case when you need to run a given step only if the build runs in the specific environment. This can be easily achieved with build step conditions.
 
