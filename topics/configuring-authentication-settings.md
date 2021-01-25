@@ -268,6 +268,9 @@ A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-t
 
 This list limits a set of users who can register or authenticate in TeamCity with their GitHub account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
 
+>To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub.com connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub) is approved for each specified organization.
+{type="note"}
+
 Leave empty to allow all GitHub users to access the TeamCity server.
 
 >Once registered on the TeamCity server, a user can create a password or token which will allow them to sign in to this server directly, bypassing the GitHub verification. If you delete a user from an organization in GitHub, remember to restrict their access or delete their user profile in TeamCity.
@@ -323,6 +326,9 @@ Restrict authentication
 A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams/about-organizations) IDs.
 
 This list limits a set of users who can register or authenticate in TeamCity with their GitHub account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+
+>To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub Enterprise connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub) is approved for each specified organization.
+{type="note"}
 
 Leave empty to allow all GitHub users to access the TeamCity server.
 

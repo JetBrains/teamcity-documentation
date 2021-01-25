@@ -27,6 +27,7 @@ You need to register TeamCity as an [OAuth application](https://docs.github.com/
 The following steps are performed in your GitHub account:
    * Sign in to your GitHub account. On the __Register a new OAuth application__ page, specify the name and an optional description, the homepage URL and the callback URL as provided by TeamCity.
    * Click __Register application__. The page is updated with Client ID and the client secret information for your TeamCity application. 
+   >If you use the [GitHub authentication](configuring-authentication-settings.md#GitHub.com) module and want to restrict access to TeamCity to users of specific GitHub organizations, you need to ensure that your OAuth app is allowed by all these organizations. By default, GitHub does not allow OAuth apps to access the organizations. You can either disable this restriction for all apps or approve only the TeamCity app in each of the required organizations. Please refer to the [GitHub documentation](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-oauth-app-access-restrictions) for more details.
 4. Continue configuring the connection in TeamCity. On the __Add Connection__ page, specify:   
       * _Application ID_
       * _Secret_
