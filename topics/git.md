@@ -278,6 +278,8 @@ Description
 
 <td id="serverAutoCRLF">
 
+<anchor name="Git-serverAutoCRLF"/>
+
 Convert line-endings to CRLF
 
 
@@ -289,6 +291,8 @@ Convert line-endings of all text files to CRLF (works as setting `core.autocrlf=
 
 
 </td></tr></table>
+
+<anchor name="Git-agentSettings"/>
 
 ## Agent Settings
 {id="agentSettings" auxiliary-id="Agent Settings"}
