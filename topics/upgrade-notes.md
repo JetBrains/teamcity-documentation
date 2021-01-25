@@ -8,6 +8,11 @@
 
 IntelliJ IDEA version 2019.2 and earlier, as well as other IntelliJ-based products released prior to IntelliJ platform version 193, is no longer supported by the [IntelliJ Platform plugin](intellij-platform-plugin.md). See the [version compatibility table](intellij-platform-plugin-compatibility.md) for details.
 
+### Bundled Tools Updates
+{id="bundled-tools-updates-202022"}
+
+* __Kotlin__, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version __1.4.21__.
+
 ### Other Updates
 {id="other-202022"}
 
