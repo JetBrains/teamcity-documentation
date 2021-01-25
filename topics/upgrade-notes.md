@@ -1,6 +1,13 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2020.2.1 to 2020.2.2
+
+### IntelliJ IDEA Compatibility
+{id="intellij-202022"}
+
+IntelliJ IDEA version 2019.2 and earlier, as well as other IntelliJ-based products released prior to IntelliJ platform version 193, is no longer supported by the [IntelliJ Platform plugin](intellij-platform-plugin.md). See the [version compatibility table](intellij-platform-plugin-compatibility.md) for details.
+
 ## Changes from 2020.2 to 2020.2.1
 
 ### Known Issues
@@ -1055,7 +1062,7 @@ Note that the installer will remove the pre\-bundle products versions: TeamCity 
 
 ### IntelliJ IDEA Compatibility
 
-IntelliJ IDEA 12.1 and older, as well as other IntelliJ\-based products released prior to year 2013, is no longer supported by [IntelliJ Platform Plugin](https://confluence.jetbrains.com/) . 
+IntelliJ IDEA 12.1 and older, as well as other IntelliJ-based products released prior to year 2013, is no longer supported by [IntelliJ Platform Plugin](intellij-platform-plugin.md). 
 
 ### Snapshot dependencies builds rebuilding
 
