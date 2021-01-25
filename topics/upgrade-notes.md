@@ -3,7 +3,7 @@
 
 ## Changes from 2020.2.1 to 2020.2.2
 
-### IntelliJ IDEA Compatibility
+### IntelliJ Platform Compatibility
 {id="intellij-202022"}
 
 IntelliJ IDEA version 2019.2 and earlier, as well as other IntelliJ-based products released prior to IntelliJ platform version 193, is no longer supported by the [IntelliJ Platform plugin](intellij-platform-plugin.md). See the [version compatibility table](intellij-platform-plugin-compatibility.md) for details.
