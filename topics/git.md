@@ -295,7 +295,7 @@ Convert line-endings of all text files to CRLF (works as setting `core.autocrlf=
 <anchor name="Git-agentSettings"/>
 
 ## Agent Settings
-{id="agentSettings" auxiliary-id="Agent Settings"}
+{id="GitAgentSettings" auxiliary-id="Git Agent Settings"}
 
 These are the settings used in case of the agent-side [checkout](vcs-checkout-mode.md).   
 Note that the agent-side checkout has limited support for SSH. The only supported authentication methods are "Default Private Key" and "Uploaded Private Key".   
