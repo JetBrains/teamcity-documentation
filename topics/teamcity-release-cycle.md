@@ -2,6 +2,7 @@
 [//]: # (auxiliary-id: TeamCity Release Cycle)
 
 >The information on this page can be used for reference purposes only.
+> 
 {type="note"}
 
 TeamCity is systematically and frequently updated with new features and optimizations. __We highly recommend upgrading your server and agents as soon as the new version is released__. Each release introduces the following key improvements:

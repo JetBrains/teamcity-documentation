@@ -3,7 +3,8 @@
 
 Welcome to the documentation for [TeamCity Cloud Beta](https://www.jetbrains.com/teamcity/cloud/).
 
->This documentation is a work in progress and might contain sections relevant only for TeamCity On-premises. Please refer to the [following section](#Differences+between+TeamCity+Cloud+and+On-premises) to learn about the current differences between TeamCity Cloud and On-premises versions.
+>This documentation is a work in progress and might contain sections relevant only to TeamCity On-premises. Please refer to the [following section](#Differences+between+TeamCity+Cloud+and+On-premises) to learn about the current differences between TeamCity Cloud and On-premises versions.
+>
 {type="warning"}
 
 <table>

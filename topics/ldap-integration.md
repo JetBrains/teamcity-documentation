@@ -219,6 +219,7 @@ The `java.naming.security.credentials` property can store the password either in
 You can get the scrambled value using the command below and then set the property to the scrambled value. When adding the scrambled value to the `java.naming.security.credentials` property, it is necessary to include the complete output of the commands below. The scrambled entry should look like: `java.naming.security.credentials=scrambled:1234567890abcdef`.
 
 >Scrambling is not encryption: it protects the password from being easily remembered when seen occasionally, but it does not protect against getting the real password value when someone gets the scrambled password value.
+> 
 {type="warning"}
 
 To get the scrambled password value, execute the following command (must be executed from the `<TeamCity installation directory>/webapps/ROOT/WEB-INF/lib` directory:
