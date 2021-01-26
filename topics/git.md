@@ -276,7 +276,7 @@ Description
 
 </td></tr><tr>
 
-<td auxiliary-id="serverAutoCRLF">
+<td auxiliary-id="serverAutoCRLF" id="serverAutoCRLF">
 
 <anchor name="Git-serverAutoCRLF"/>
 
