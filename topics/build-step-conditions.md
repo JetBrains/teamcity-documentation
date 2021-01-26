@@ -12,7 +12,7 @@ You can quickly select any of the available common options in the build step __A
 
 <img src="execution-conditions.png" alt="Build step execution condition"/>
 
-Alternatively, select the __Other condition__ option to add the _parameter-based execution condition_, which is a logical condition that takes on input any [build parameter](configuring-build-parameters.md) provided by the TeamCity server or agent.
+Alternatively, select the __Other condition__ option to add the _parameter-based execution condition_, which is a logical condition that takes on input any [build parameter](configuring-build-parameters.md) provided by the TeamCity server or agent. For example, select the `teamcity.agent.jvm.os.name` parameter and set the condition to "contains `Windows`" to run the current build step only on agents that run on Windows.
 
 If you declare multiple execution conditions, the build step will be executed only if __all__ of them are satisfied in the current build run.
 
