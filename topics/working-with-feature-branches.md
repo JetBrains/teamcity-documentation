@@ -68,19 +68,18 @@ There is also a special escaping syntax defined via `#! escape: CHARACTER` synta
 +:release-\(7.1\)
 ```
 
-<tip>
-
-To run builds on GitHub pull request branches, use the [Pull Requests](pull-requests.md) build feature.
-</tip>
+>To run builds on GitHub pull request branches, use the [Pull Requests](pull-requests.md) build feature.
 
 ## Default branch
 
 When configuring a VCS root for DVCS, you need to specify the branch name to be used as the default one. The default branch has special meaning:
-* It is a fallback branch to use when the branch is not specified or the specified branch is not included by the branch specification (for example, when someone just clicks on the __Run__ button without selecting a branch).
+* It is a fallback branch to use when the branch is not specified or the specified branch is not included by the branch specification (for example, when someone just clicks __Run__ without selecting a branch).
 * It can be used when displaying sequences of builds and changes and reaching the moment of the branch creation.
 * The default branch allows using different branches in different VCS roots (for example, if one of the roots is Git and another is Mercurial) and in different builds when they are linked by a snapshot dependency. When the top chain build is triggered in the default branch, all its dependencies will be built in their respective default branches as well.
 
-Unless disabled via a [branch filter](branch-filter.md), the default branch is always implicitly included into the branch specification. In the TeamCity UI the default branch is marked with the darker background of the branch marker.
+Unless disabled via a [branch filter](branch-filter.md), the default branch is always implicitly included into the branch specification. In the TeamCity UI, the default branch is marked with a darker background of the branch marker.
+
+>Note that unlike the _Branch specification_ field, _Default branch_ does not support parentheses.
 
 ## My branches
 
@@ -103,14 +102,14 @@ For example, if the branch specification is defined like this:
 
 then the part matched by `*` (for example, `master`) is a logical branch name. 
 
-If the branch specification pattern uses parentheses, the logical name then is made up of the part of the name within the parentheses; to see the `v8.1/feature1` logical name displayed in the UI for the VCS branch `refs/heads/v8.1/feature1`, use this:
+If the branch specification pattern uses parentheses, the logical name is made up of the part of the name within the parentheses; to see the `v8.1/feature1` logical name displayed in the UI for the VCS branch `refs/heads/v8.1/feature1`, use this:
 
 
 ```Plain Text
 +:refs/heads/(v8.1/*)
 ```
 
-You do not need to include the default branch into the branch specification as it is already included there implicitly. But, if you want to have some short logical branch name for the default branch in the UI, for example, `master`, you can include it in the branch specification and use the parentheses:
+You do not need to include the default branch into the branch specification as it is already included there implicitly. However, if you want to have some short logical branch name for the default branch in the UI, for example, `master`, you can include it in the branch specification and use the parentheses:
 
 ```Plain Text
 +:refs/heads/(master)
