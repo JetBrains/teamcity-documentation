@@ -13,7 +13,7 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 __Current TeamCity Version is 2020.2.2__
 
 Release date: __28 January 2021__   
-Build 85487
+Build 85882
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2020.2.2.exe)   
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2020.2.2.tar.gz)
