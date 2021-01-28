@@ -104,7 +104,7 @@ The __All Agents__ view gives a quick preview of all agents' statuses and allows
 
 ### Experimental Queue page
 
-We are actively working on the new representation of the build queue. It is still in progress and not displayed by default yet, but you can already switch to it by clicking the test-tube icon in the upper right corner of the screen.
+We are actively working on the new representation of the build queue. Since TeamCity 2020.2.2, the new queue is displayed by default. In earlier versions, you can switch to it by clicking the test-tube icon in the upper right corner of the screen.
 
 You can click any build in the queue to see its details:
 
