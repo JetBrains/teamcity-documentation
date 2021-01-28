@@ -130,7 +130,7 @@ __28 January 2021__
 [**TW-69749**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69749) — TeamСity Idea plugin requires IntelliJ 2019.3   
 [**TW-69296**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69296) — Web-socket support of the create, update and delete agent pool events   
 [**TW-69610**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69610) — Add more debug logging to Commit Status Publisher   
-[**TW-69366**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69366) — Update copyright (2020 -\&gt; 2021)   
+[**TW-69366**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69366) — Update copyright (2020 -\> 2021)   
 [**TW-69227**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69227) — Add some logging about too long-executing persist tasks   
 [**TW-67231**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67231) — Scalability: review all server configs persisting, add ability to change them from different nodes
 
