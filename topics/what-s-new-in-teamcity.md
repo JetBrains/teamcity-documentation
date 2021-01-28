@@ -110,15 +110,13 @@ Now, you can write plugins for the experimental UI using modern web technologies
 
 ### Experimental Build Queue page
 
-We are actively working on the new representation of the build queue. Since TeamCity 2020.2.2, the new queue is displayed by default. In earlier versions, you can switch to it by clicking the test-tube icon in the upper right corner of the screen.
+We are actively working on the new representation of the build queue. __Since TeamCity 2020.2.2, the new queue is displayed by default.__ In earlier versions, you can switch to it by clicking the test-tube icon in the upper right corner of the screen.
 
 The new sidebar is of great help to our users on the __Projects__ and __Agents__ pages. Now, it is available for the __Queue page__ as well, which is most helpful for big installations with many agent pools.   
 
 You can also click any build in the queue to see its details:
 
 <img src="exp-queue.png" alt="Experimental build queue"/>
-
-In our future releases, we will polish the new queue representation and enable it by default in the experimental UI.
 
 ## Customizable clean-up schedule
 
