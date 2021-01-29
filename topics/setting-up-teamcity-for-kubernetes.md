@@ -188,13 +188,12 @@ Max number of instances
 
 Select this option to run a new pod based on a specific [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) created in your Kubernetes cluster. If you are using Kubernetes Dashboard, you can find the list of available deployments under __Workloads | Deployments__.
 
->You can create a simple deployment from the latest TeamCity agent image as follows:
->```Shell
->create deployment simpledep --image="jetbrains/teamcity-agent:latest"
->deployment.apps/simpledep created
->```
+You can create a simple deployment from the latest TeamCity agent image as follows:
 
-
+```Shell
+create deployment simpledep --image="jetbrains/teamcity-agent:latest"
+deployment.apps/simpledep created
+```
 
 ### Run single container
 
