@@ -1,14 +1,13 @@
 [//]: # (title: TeamCity 2020.2.2 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2020.2.2 Release Notes)
 
-__Build: 85882__   
-__28 January 2021__
+__Build: 85899__   
+__29 January 2021__
 
 ### Feature
 
-[**TW-62901**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-62901) — Create agent pool in the new UI   
 [**TW-64315**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-64315) — New Queue page   
-[**TW-69146**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69146) — API for counters in queue page sidebar   
+[**TW-62901**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-62901) — Create agent pool in the new UI   
 [**TW-68467**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68467) — Allow support for multline values in Secret Tokens   
 [**TW-69226**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69226) — Add an ability to cancel long-executing tasks on the &#39;Settings Persist Status&#39; tab of the Diagnostics page   
 [**TW-67635**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67635) — Support connections in the usage statistics reports   
@@ -43,17 +42,17 @@ __28 January 2021__
 
 ### Bug
 
+[**TW-69492**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69492) — Python is not detected on Linux agent. IllegalStateException: System.getenv(&quot;path&quot;) must not be null   
+[**TW-68809**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68809) — Add processing of test absence on the test history page (page 404)   
+[**TW-67440**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67440) — re-run build not restoring Dependencies used   
 [**TW-62246**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-62246) — Build log is empty for passed tests in experimental UI   
 [**TW-69777**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69777) — S3 Artifact storage upload intermittent 403 failure   
 [**TW-69705**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69705) — Re-run build dialogue: failed dependencies isn&#39;t re-used by default   
-[**TW-67440**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67440) — re-run build not restoring Dependencies used   
 [**TW-69050**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69050) — Warning &quot;This node cannot modify configuration files on disk&quot; is displayed on the secondary node after copying a value for a token from another project   
 [**TW-69019**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69019) — Agent page: support &quot;Show date/time in my timezone&quot; setting   
-[**TW-68809**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68809) — Add processing of test absence on the test history page (page 404)   
 [**TW-69765**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69765) — TeamCity `docker events` processes may be not terminated   
 [**TW-50931**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-50931) — Don&#39;t mark tests as passed when build is cancelled   
 [**TW-68432**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68432) — Add checksum verification to Windows-based docker images   
-[**TW-69492**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69492) — Python is not detected on Linux agent. IllegalStateException: System.getenv(&quot;path&quot;) must not be null   
 [**TW-68919**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68919) — NaN build is running, undefined agent is idle is shown in the header during agents update   
 [**TW-68213**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68213) — $commented magic word search doesn&#39;t work for non-pinned builds   
 [**TW-68721**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68721) — Queued build page. Reasons are endlessly loading in Build Details.   
@@ -68,7 +67,6 @@ __28 January 2021__
 [**TW-69572**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69572) — 2020.2.1 agent Docker image doesn&#39;t upgrade properly against 2020.2.1 server with changes   
 [**TW-69697**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69697) — Perform schedule trigger invocation after server restart   
 [**TW-69462**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69462) — Issues tab is absent on build   
-[**TW-68880**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68880) — Build queue pager shows wrong number of builds and wrong link, if requested page does not exist (too few builds)   
 [**TW-69570**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69570) — Build can consistently take obsolete revision if branch pointer was moved and VCS settings changed   
 [**TW-69089**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69089) — Reset all button in the Dependencies tab of the custom build dialog doesn&#39;t work   
 [**TW-69506**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69506) — Possible general changes collection slow-down because of retry for git roots   
@@ -102,7 +100,6 @@ __28 January 2021__
 [**TW-67529**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67529) — Improve warning message in the server log when Perforce server is down   
 [**TW-69184**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69184) — VCS root from GitHub OAuth connection sometimes auto-populates credentials password, sometimes doesn&#39;t   
 [**TW-68367**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68367) — Whitespace triggers Kotlin DSL patch generation   
-[**TW-69337**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69337) — Custom Chart documentation is faulty   
 [**TW-69356**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69356) — Calling the backup rest api results with an error: Responding with error, status code: 415 (Unsupported Media Type).   
 [**TW-69360**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69360) — VCS trigger triggers builds in non default branches on old commits   
 [**TW-69140**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69140) — User without global permission to edit group cannot edit group if it has no roles assigned   
@@ -126,6 +123,7 @@ __28 January 2021__
 
 ### Task
 
+[**TW-69146**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69146) — API for counters in queue page sidebar   
 [**TW-68436**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68436) — Update Kotlin version used in TeamCity DSL projects to 1.4.21   
 [**TW-69749**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69749) — TeamСity Idea plugin requires IntelliJ 2019.3   
 [**TW-69296**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69296) — Web-socket support of the create, update and delete agent pool events   
@@ -136,4 +134,8 @@ __28 January 2021__
 
 ### Security Problem
 
-10 security problems have been fixed.
+11 security problems have been fixed, including:
+* TeamCity IntelliJ Plugin SSRF. A vulnerability that could have potentially exposed credentials of users who sign in to TeamCity from the IntelliJ plugin.
+* TeamCity IntelliJ Plugin DOS. A vulnerability that could have made DoS possible.
+* Risk of potential TeamCity server DoS via server integration.
+* Risk of potential XSS on several pages.
