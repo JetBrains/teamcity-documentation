@@ -237,7 +237,13 @@ Private Key
 
 <td>
 
-Valid only for SSH protocol. A private key must be in the __OpenSSH format__. Select one of the options from the __Private Key__ list and specify a valid username (if there is no username in the clone URL; the username specified here overrides the username from the URL).    
+Valid only for SSH protocol. A private key must be in the __OpenSSH format__.
+
+>Recent versions of OpenSSH no longer generate keys in PEM format by default. The new OpenSSH format is not yet supported by TeamCity (see [TW-53615](https://youtrack.jetbrains.com/issue/TW-53615)). Use the following command to generate TeamCity-compatible keys: `ssh-keygen -t rsa -m PEM`.
+>
+{type="note"}
+
+Select one of the options from the __Private Key__ list and specify a valid username (if there is no username in the clone URL; the username specified here overrides the username from the URL).    
 Available __Private Key__ options:
 
 * __Uploaded Key__ – uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
