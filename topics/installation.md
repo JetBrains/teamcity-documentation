@@ -2,6 +2,7 @@
 [//]: # (auxiliary-id: Installation)
 
 >If you are upgrading your existing TeamCity installation, refer to [Upgrade](upgrade.md).
+> 
 {product="tc"}
 
 ## Check System Requirements
@@ -119,6 +120,7 @@ Although the TeamCity server in `.exe` and `.tar.gz` distributions is installed 
 To set up additional build agents, follow the [instructions](setting-up-and-running-additional-build-agents.md).
 
 Your instance of TeamCity Cloud is installed automatically after your register an account: no extra actions are required. After the server is ready, an invitation link will be sent to your email.
+{product="tcc"}
 
 <seealso product="tc">
         <category ref="installation">
