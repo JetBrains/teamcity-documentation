@@ -682,12 +682,11 @@ For configuring clients to access TeamCity server via HTTPS while using self\-si
 
 ## Configure TeamCity to Use Proxy Server for Outgoing Connections
 
-This section describes configuring TeamCity to use proxy server for certain outgoing HTTP connections. To connect TeamCity behind a proxy to Amazon EC2 cloud agents, see [this section](setting-up-teamcity-for-amazon-ec2.md#Proxy+settings).
+This section describes configuring TeamCity to use a proxy server for outgoing HTTP connections. To connect TeamCity behind a proxy to Amazon EC2 cloud agents, see [this section](setting-up-teamcity-for-amazon-ec2.md#Proxy+settings).
 
-TeamCity can use proxy server for certain outgoing HTTP connections made by the TeamCity server to other services like issues trackers, and so on.
+A TeamCity server can use a proxy server for certain outgoing HTTP connections to other services like issues trackers.
 
-To point TeamCity to your proxy server: __Since TeamCity 2017.1.5__ the following server [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) are available (see the alternative approach below for the previous version):
-
+To point TeamCity to your proxy server, set the following [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties):
 
 ```Shell
 
@@ -721,19 +720,6 @@ teamcity.https.proxyAuthenticationType=basic
 teamcity.https.proxyLogin=login
 teamcity.https.proxyPassword=password
 
-```
-
-The alternative approach, which will work for any TeamCity version, is to pass additional space-delimited [additional JVM options](configuring-teamcity-server-startup-properties.md#JVM+Options) to the TeamCity server on the start up:
-
-
-```Shell
-
--Dhttp.proxyHost=proxy.domain.com
--Dhttp.proxyPort=8080
--Dhttp.nonProxyHosts=domain.com
--Dhttps.proxyHost=proxy.domain.com
--Dhttps.proxyPort=8080
--Dhttps.nonProxyHosts=domain.com
 ```
 
 ## Configure TeamCity Agent to Use Proxy To Connect to TeamCity Server
