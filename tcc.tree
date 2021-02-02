@@ -406,6 +406,7 @@
             <toc-element id="reporting-issues.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="applying-patches.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="visual-c-build-issues.md"/>
+            <toc-element id="feedback.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
         <toc-element id="ci-tutorials.md">
             <toc-element id="getting-started-with-nunit.md" show-structure-for="chapter" show-structure-depth="4"/>
