@@ -32,5 +32,5 @@ When you face problems regarding CSRF protection in TeamCity (for example, you g
 * Temporary disable CSRF protection at all by setting the `teamcity.csrf.origin.check.enabled=logOnly` internal property.
 * Information about failed CSRF attempts is logged into `TeamCity/logs/teamcity-auth.log` files. For more detailed diagnostics of the requests, enable the [debug-auth logging preset](reporting-issues.md#Logging+events).
 
-In case none of the listed steps help to resolve your problem, please contact our [support](https://confluence.jetbrains.com/display/TW/Feedback) and provide your `teamcity-auth.log` logs with the enabled teamcity-auth [logging preset](reporting-issues.md#Logging+events).
+In case none of the listed steps help to resolve your problem, please contact our [support](feedback.md) and provide your `teamcity-auth.log` logs with the enabled teamcity-auth [logging preset](reporting-issues.md#Logging+events).
 

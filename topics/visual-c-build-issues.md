@@ -5,7 +5,7 @@ If you experience any problems running a Visual C++ build on a build agent, you 
 
 <note>
 
-If none of the steps is helpful for your case, please contact us via any [feedback channel](https://confluence.jetbrains.com/display/TW/Feedback).
+If none of the steps is helpful for your case, please contact us via any [feedback channel](feedback.md).
 </note>
 	
 * Make sure you are not using mapped network drives.

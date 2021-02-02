@@ -78,7 +78,7 @@ support via [community forum](http://jb.gg/teamcity-forum)
 
 <td>
 
-priority [support](https://confluence.jetbrains.com/display/TW/Feedback) for the [supported releases](teamcity-release-cycle.md)
+priority [support](feedback.md) for the [supported releases](teamcity-release-cycle.md)
 
 
 </td></tr><tr>
@@ -141,7 +141,7 @@ The current edition in use is noted in the footer of every TeamCity web UI page 
 
 The __Professional edition__ does not require any license key and can be used free of charge. The only functional difference from the Enterprise edition is a limitation of the maximum number of [build configurations](build-configuration.md). The limit is 100 build configurations (prior to TeamCity 2017.2 it was 20). It can be extended by 10 with each agent license key added. You can install several servers with the Professional license.
 
-The __Enterprise edition__ requires a license key, has no limit on the number of build configurations and entitles you to TeamCity [support](https://confluence.jetbrains.com/display/TW/Feedback) from JetBrains for the maintenance period of the license, provided you use a [recent TeamCity version](teamcity-release-cycle.md).
+The __Enterprise edition__ requires a license key, has no limit on the number of build configurations and entitles you to TeamCity [support](feedback.md) from JetBrains for the maintenance period of the license, provided you use a [recent TeamCity version](teamcity-release-cycle.md).
 
 <note>
 
@@ -199,7 +199,7 @@ When a new version is available, TeamCity displays a notification in the web UI 
 
 Regular upgrades are highly recommended not only because each new release includes a lot of improvements and new features, but also as this is the only way to run a supported version with the latest security patch level.
 
-Note that TeamCity [email support](https://confluence.jetbrains.com/display/TW/Feedback) covers only the [recent TeamCity versions](teamcity-release-cycle.md) and can be provided only to customers with not expired maintenance period of the enterprise server license.
+Note that TeamCity [email support](feedback.md) covers only the [recent TeamCity versions](teamcity-release-cycle.md) and can be provided only to customers with not expired maintenance period of the enterprise server license.
 
 
 [//]: # (Internal note. Do not delete. "Licensing Policyd197e369.txt")    

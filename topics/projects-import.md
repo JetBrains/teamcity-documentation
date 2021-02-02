@@ -25,7 +25,7 @@ To complete the import, you need to copy the artifacts from the old server to th
 
 <tip>
 
-The Projects Import functionality does not support an external artifacts' storage. If you use an external artifacts' storage, you will need to move the externally stored artifacts manually to new locations using the build ids mapping generated during the import. Contact [TeamCity support](https://confluence.jetbrains.com/display/TW/Feedback) for details.
+The Projects Import functionality does not support an external artifacts' storage. If you use an external artifacts' storage, you will need to move the externally stored artifacts manually to new locations using the build ids mapping generated during the import. Contact [TeamCity support](feedback.md) for details.
 </tip>
 
 ### Selecting projects for import

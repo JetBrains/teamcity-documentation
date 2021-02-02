@@ -60,7 +60,7 @@ The __Metrics__ tab displays all supported metrics, their `tag` parameters, and 
 
 The `<TeamCity_server_URL>/app/metrics` endpoint provides the metrics in a [Prometheus](https://prometheus.io/) format, ready for importing to monitoring solutions with a Prometheus support (for example, to [Grafana](https://grafana.com/)). Note that server metrics can be obtained only by a user with the "_View usage statistics_" permission.
 
-Some metrics are marked as experimental which means that we do not provide support for them and they will likely change in the future TeamCity versions. To get experimental metrics in the Prometheus format, add the `?experimental=true` parameter to the URL. If you find any of the experimental metrics useful and would want them to be graduated to the supported metrics, let us know via our [support channel](https://confluence.jetbrains.com/display/TW/Feedback).
+Some metrics are marked as experimental which means that we do not provide support for them and they will likely change in the future TeamCity versions. To get experimental metrics in the Prometheus format, add the `?experimental=true` parameter to the URL. If you find any of the experimental metrics useful and would want them to be graduated to the supported metrics, let us know via our [support channel](feedback.md).
 
 ## Server Logs
 

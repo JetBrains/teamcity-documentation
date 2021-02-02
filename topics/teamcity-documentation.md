@@ -80,7 +80,7 @@ Learn more on [our website](https://www.jetbrains.com/teamcity/cloud/).
    
 * [TeamCity Official Site](http://www.jetbrains.com/teamcity)
 * [Official TeamCity Blog](http://blogs.jetbrains.com/teamcity/)
-* [Feedback](https://confluence.jetbrains.com/display/TW/Feedback)
+* [Feedback](feedback.md)
     
 </td></tr>
 </table>

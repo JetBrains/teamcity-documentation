@@ -25,7 +25,7 @@ Currently, the experimental UI is available for the following pages:
 
 Each experimental page comes with a handy __[sidebar](#Experimental+sidebar)__ that serves for quick navigation and preview of build/agent statuses.
 
-Below, you can find a recap of these features. Please note that the described functionality is a work in progress. In case you face any unpredictable behavior in the new UI, feel free to contact us via our [feedback channels](https://confluence.jetbrains.com/display/TW/Feedback).
+Below, you can find a recap of these features. Please note that the described functionality is a work in progress. In case you face any unpredictable behavior in the new UI, feel free to contact us via our [feedback channels](feedback.md).
 
 ### Experimental Project Home page
 

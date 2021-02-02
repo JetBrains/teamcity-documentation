@@ -86,7 +86,7 @@ Now, whenever you run a build in this configuration, TeamCity will report the bu
 
 ### Gerrit
 
-Commit Status Publisher in TeamCity 2018.1 and later supports Gerrit versions 2.6+. For configuring integration with earlier Gerrit versions, contact our [support](https://confluence.jetbrains.com/display/TW/Feedback).
+Commit Status Publisher in TeamCity 2018.1 and later supports Gerrit versions 2.6+. For configuring integration with earlier Gerrit versions, contact our [support](feedback.md).
 
 ## Using Commit Status Publisher
 

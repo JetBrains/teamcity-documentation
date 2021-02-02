@@ -278,7 +278,7 @@ Since the reworked .NET runner introduces new options and features, you might no
   
 </note>
 
-If you face any problems with migration to the .NET runner or encounter other related issues, do not hesitate to contact us via any convenient [feedback channel](https://confluence.jetbrains.com/display/TW/Feedback).
+If you face any problems with migration to the .NET runner or encounter other related issues, do not hesitate to contact us via any convenient [feedback channel](feedback.md).
 
 ### Known Issues
 {id="known-issues-201923"}
@@ -702,11 +702,11 @@ Requests which used "value:&lt;text&gt;" locators (e.g. for matching properties)
 
 ### VSS plugin is unbundled
 
-The Visual SourceSafe plugin is no longer bundled with TeamCity but is available as a [separate download](https://plugins.jetbrains.com/plugin/10902-vcs-support-vss). Please contact our [support](https://confluence.jetbrains.com/display/TW/Feedback), if you still use this VSS for your builds.
+The Visual SourceSafe plugin is no longer bundled with TeamCity but is available as a [separate download](https://plugins.jetbrains.com/plugin/10902-vcs-support-vss). Please contact our [support](feedback.md), if you still use this VSS for your builds.
 
 ### Other
 
-* Commit Status Publisher supports Gerrit 2.6\+ versions. For support for older Gerrit versions, please turn to our [support](https://confluence.jetbrains.com/display/TW/Feedback).
+* Commit Status Publisher supports Gerrit 2.6\+ versions. For support for older Gerrit versions, please turn to our [support](feedback.md).
 * When upgrading from TeamCity versions before 9.1, if TeamCity 2018.1 starts and agents are upgraded, but then you decide to roll back the server to the previous TeamCity version, the agents will not be able to connect back to the old server and will need to be reinstalled manually.
 * Make sure that no HTTP requests from the agents to the server are blocked (e.g. requests to .../app/agents/... URLs)
 * Since 2018.1, TeamCity uses the full project name with "/" instead of "::" as the separator for Project \- Subproject wherever the full project name is present.
@@ -819,7 +819,7 @@ __build entity__ No longer expose boolean "running" attribute, textual "state" a
 
 ### Windows Versions Support
 
-Windows XP and Vista are no longer the supported versions of Windows for the TeamCity Server and Agent. While the server and agent will still most probably work on these old versions, we do not target the versions during our development. [Let us know](https://confluence.jetbrains.com/display/TW/Feedback) if the support for the versions is important for your TeamCity usage or you find any issues with the systems support.
+Windows XP and Vista are no longer the supported versions of Windows for the TeamCity Server and Agent. While the server and agent will still most probably work on these old versions, we do not target the versions during our development. [Let us know](feedback.md) if the support for the versions is important for your TeamCity usage or you find any issues with the systems support.
 
 ### J2EE Servlet 2.5 container is no longer supported
 
@@ -1588,7 +1588,7 @@ Password properties of the VCS roots are now included into the responses, just w
 
 CCTray\-format XML (`app/rest/cctray/projects.xml`) does not include paused build configurations now.
 
-Response to the experimental request `/app/rest/buildTypes/XXX/investigations` has changed the format and got additional fields to cover tests and problem investigations. There is an internal property `rest.beans.buildTypeInvestigationCompatibility` to include removed sub\-items. Please let us know via [support email](https://confluence.jetbrains.com/display/TW/Feedback) if you need to use the internal property.
+Response to the experimental request `/app/rest/buildTypes/XXX/investigations` has changed the format and got additional fields to cover tests and problem investigations. There is an internal property `rest.beans.buildTypeInvestigationCompatibility` to include removed sub\-items. Please let us know via [support email](feedback.md) if you need to use the internal property.
 
 #### Eclipse plugin
 
@@ -1665,7 +1665,7 @@ TFS now prefers Team Explorer 2012 to Team Explorer 2010 (if both are installed)
 #### Compatibility with YouTrack
 
 If you use JetBrains YouTrack and use its TeamCity integration features, please note that only YouTrack version 4.2.4 and later are compatible with TeamCity 8.0.   
-If you need earlier YouTrack versions to work with TeamCity 8.0, please [let us know](https://confluence.jetbrains.com/display/TW/Feedback).
+If you need earlier YouTrack versions to work with TeamCity 8.0, please [let us know](feedback.md).
 
 
 [//]: # (Internal note. Do not delete. "Upgrade Notesd333e2793.txt")    
@@ -1781,7 +1781,7 @@ __Windows domain login module__
 When TeamCity server runs under Windows and Windows domain user authentication is used, TeamCity now uses another library (Waffle) to talk to the Windows domain. Under Linux the behavior is unchanged: jCIFS library is used as it were.
 
 Unless you specified specific settings for jCIFS library in ntlm\-config.properties file, your installation should not be affected.   
-If you experience any issues with login into TeamCity with your Windows username/password after upgrade, please provide details [to us](https://confluence.jetbrains.com/display/TW/Feedback). In the mean time you can switch to using old jCIFS library. For this, add `teamcity.ntlm.use.jcifs=true` line into [internal properties file](configuring-teamcity-server-startup-properties.md).   
+If you experience any issues with login into TeamCity with your Windows username/password after upgrade, please provide details [to us](feedback.md). In the mean time you can switch to using old jCIFS library. For this, add `teamcity.ntlm.use.jcifs=true` line into [internal properties file](configuring-teamcity-server-startup-properties.md).   
 Please note that jCIFS library approach can be depricated in future versions of TeamCity, so the property specification is not recommended if you can go without it.
 
 __Checkout directory change for Git and Mercurial__   
