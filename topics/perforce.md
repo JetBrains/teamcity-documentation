@@ -69,7 +69,7 @@ When this option is used with the [checkout on the server](vcs-checkout-mode.md#
 
 __Checkout rules limitations__
 
-When Perforce Streams are used with the [VCS Checkout Mode](vcs-checkout-mode.md#agent-checkout), simple [checkout rules](vcs-checkout-rules.md) like `. => sub/directory` are supported. Exclude checkout rules, multiple include rules, or rules like `aaa=>bbb` are not supported.
+When Perforce Streams are used with the [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout), simple [checkout rules](vcs-checkout-rules.md) like `. => sub/directory` are supported. Exclude checkout rules, multiple include rules, or rules like `aaa=>bbb` are supported only when the 'Create non-stream workspace' option is enabled (see below)
 </note>
 
 <anchor name="branch-support"/>
@@ -103,7 +103,7 @@ Click this radiobutton to directly specify the client workspace name. The worksp
 
 __Performance impact__
 
-When this option is used with the [VCS Checkout Mode](vcs-checkout-mode.md) mode, the internal TeamCity source caching on the server side is disabled, which may worsen the performance of [clean checkouts](clean-checkout.md). Also, with this option, snapshot dependencies builds are not [reused](snapshot-dependencies.md). ([TW-41898](https://youtrack.jetbrains.com/issue/TW-41898) \- fixed in TeamCity 2017.1) 
+When this option is used with the [checkout on the server](vcs-checkout-mode.md#server-checkout) mode, the internal TeamCity source caching on the server side is disabled, which may worsen the performance of [clean checkouts](clean-checkout.md). Also, with this option, snapshot dependencies builds are not [reused](snapshot-dependencies.md). ([TW-41898](https://youtrack.jetbrains.com/issue/TW-41898) \- fixed in TeamCity 2017.1) 
 </warning>
 
 
@@ -296,10 +296,10 @@ Specify additional `p4 sync` options, like `--parallel`. See [command reference]
 ### Perforce Workspace Parameters
 
 With checkout on agent, TeamCity provides environment variables describing the Perforce workspace created during the checkout process.   
-If several Perforce VCS Roots are used for the checkout, the variables are created for the first VCS root.The variables are:
-* __P4USER__ \- same as `vcsroot.<VCS root ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
-* __P4PORT__ \- same as `vcsroot.<VCS root ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
-* __P4CLIENT__ \- name of the generated P4 workspace on the agent
+If several Perforce VCS Roots are used for the checkout, the variables are created for the first VCS root. The variables are:
+* __P4USER__  \- same as `vcsroot.<VCS root ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
+* __P4PORT__  \- same as `vcsroot.<VCS root ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
+* __P4CLIENT__  \- name of the generated P4 workspace on the agent
 These variables can be used to perform custom p4 commands after the checkout.
 
 More information: [Perforce Workspace Handling in TeamCity](perforce-workspace-handling-in-teamcity.md)
