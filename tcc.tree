@@ -110,7 +110,6 @@
             <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="viewing-build-configuration-details.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="statistic-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="search.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="maven-related-data.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
         <toc-element id="administrator-s-guide.md" hidden="true"/>
