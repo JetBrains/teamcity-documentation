@@ -9,10 +9,10 @@ Before requesting support, we suggest that you check if the answer is already av
 * [community forum](http://jb.gg/teamcity-forum)
 
 Contact us about:
-* _a technical question or an idea_ – [community forum](http://jb.gg/teamcity-forum), "New Post" action (public)
-* _a bug or a feature request_ – [issue tracker](https://youtrack.jetbrains.com/issues/TW) (public, with an option of private comments/attachments)
-* _a license/purchase question_ – JetBrains [sales department](http://www.jetbrains.com/company/contacts/#contactSales) (private)
-* _not a public question, and you have an active TeamCity Enterprise server license_ – [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) (private, faster response times)
+* _a technical question or an idea_ — [community forum](http://jb.gg/teamcity-forum), "New Post" action (public)
+* _a bug or a feature request_ — [issue tracker](https://youtrack.jetbrains.com/issues/TW) (public, with an option of private comments/attachments)
+* _a license/purchase question_ — JetBrains [sales department](http://www.jetbrains.com/company/contacts/#contactSales) (private)
+* _not a public question, and you have an active TeamCity Enterprise server license_ — [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) (private, faster response times)
 
 When submitting a request, make sure:
 * to provide all necessary information by reviewing the [Reporting Issues guidelines](reporting-issues.md#Best+Practices+When+Reporting+Issues);
