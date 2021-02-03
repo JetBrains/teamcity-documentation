@@ -69,7 +69,7 @@ When this option is used with the [checkout on the server](vcs-checkout-mode.md#
 
 __Checkout rules limitations__
 
-When Perforce Streams are used with the [VCS Checkout Mode](vcs-checkout-mode.md#agent-checkout), simple [checkout rules](vcs-checkout-rules.md) like `. => sub/directory` are supported. Exclude checkout rules, multiple include rules, or rules like `aaa=>bbb` are not supported.
+When Perforce Streams are used with the [Agent-side Checkout Mode](vcs-checkout-mode.md#agent-checkout), simple [checkout rules](vcs-checkout-rules.md) like `. => sub/directory` are supported. Exclude checkout rules, multiple include rules, or rules like `aaa=>bbb` are not supported.
 </note>
 
 <anchor name="branch-support"/>
