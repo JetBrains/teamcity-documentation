@@ -37,7 +37,7 @@ Port
 
 <td>
 
-Specify the Perforce server address. The format is `host:port`. For specific environments, P4Host can be specified in the Workspace options [below](#Checkout+on+Agent+Settings) for any type of checkout. 
+Specify the Perforce server address. The format is `host:port`. For specific environments, P4Host can be specified in the Workspace options [below](#checkout-on-agent-settings) for any type of checkout. 
 
 
 </td></tr><tr>
@@ -56,7 +56,7 @@ Click this radio button to specify an existing Perforce stream. TeamCity will us
 TeamCity supports deeper directory structure within the root depot: depots with a depth of `//DEPOTNAME/1/2/n` can be specified in this field.    
 __Prior to TeamCity 2017.2__, TeamCity supports streams stored one level below the depot name: the format is `//streamdepot/streamname`.
 
-[Parameters](configuring-build-parameters.md) are supported. For the `StreamAtChange` option, use the [Label to checkout](#Checkout+on+Agent+Settings) field.
+[Parameters](configuring-build-parameters.md) are supported. For the `StreamAtChange` option, use the [Label to checkout](#checkout-on-agent-settings) field.
 
 
 <note>
