@@ -357,7 +357,7 @@ innodb_buffer_pool_size=2000M
 We recommend to start with 2Gb and increase it if you experience slowness and have enough memory. After increasing buffer pool size you should also change size of the [`innodb_log_file_size`](http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_log_file_size) setting (its value can be calculated as `innodb_log_file_size/N`, where N is the number of log files in the group (2 by default)):
 
 
-```
+```Shell
 innodb_log_file_size=1024M
 
 ```
