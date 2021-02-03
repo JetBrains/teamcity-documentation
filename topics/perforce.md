@@ -191,6 +191,7 @@ Check this option to enable ticket-based authentication. This option is enabled 
 <include src="vcs-checkout-rules.md" include-id="note-perforce-vcs"/>
 
 <anchor name="Perforce-perforceLabelToCheckout"/>
+<anchor name="checkout-on-agent-settings"/>
 
 ## Checkout on Agent Settings
 
