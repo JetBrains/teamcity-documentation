@@ -348,7 +348,7 @@ Check the following:
 
 In the [Perforce VCS Root](perforce.md) Settings of your build configuration in TeamCity:
 
-1. Enable the [checkout on agent](perforce.md#Checkout+On+Agent+Settings).
+1. Enable the [checkout on agent](perforce.md#Checkout+on+Agent+Settings).
 2. Enable [Use ticket-based authentication](perforce.md#P4+Connection+Settings) in Perforce VCS root settings.
 3. Make sure your build agent environment doesn't have any occasional P4 variables which can interfere with the execution of Maven Release Plugin.
 4. Specify `release:prepare` in the __Goals__ field of the Maven build step and run the build.
