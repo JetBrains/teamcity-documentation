@@ -17,7 +17,7 @@ Make sure the TeamCity user is allowed to perform writing operations in the [Kub
 
 You might also require to configure the following privileges for your Kubernetes user role:
 * Pods: `get`, `create`, `list`, `delete`.
-* Deployments: `list`, `get` – if you want to create an agent [from a deployment](#Use+pod+template+from+deployment).
+* Deployments: `list`, `get` – if you want to create an agent pod using [a deployment configuration](#Use+pod+template+from+deployment).
 * Namespaces: `list` – to allow TeamCity to suggest the namespaces available on your server.
 
 ## Kubernetes Cloud Profile Configuration
@@ -95,7 +95,7 @@ Select the required authentication strategy.
 
 Depending on the selected strategy, the set of extra options will vary. Refer to the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#authentication-strategies) for details on available options.
 
->The _Token_ field accepts any token supported by Kubernetes.
+>The _Token_ strategy accepts any token types supported by Kubernetes.
 
 </td>
 
@@ -186,7 +186,7 @@ Max number of instances
 
 ### Use pod template from deployment
 
-Select this option to run a new pod based on a specific [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) created in your Kubernetes cluster. If you are using Kubernetes Dashboard, you can find the list of available deployments under __Workloads | Deployments__.
+Select this option to run a new pod based on a specific [deployment configuration](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) created in your Kubernetes cluster. If you are using Kubernetes Dashboard, you can find the list of available deployments under __Workloads | Deployments__.
 
 You can create a simple deployment from the latest TeamCity agent image as follows:
 
@@ -275,7 +275,7 @@ Command arguments
 
 ### Use custom pod template
 
-Enter your own [pod template](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/#pod-templates) in a YAML format. This option is recommended for accessing images located in private repositories, as it allows you to specify authentication parameters inside the template code.
+Enter your own [pod template](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/#pod-templates) in a YAML format. Use this option when you need to specify additional configuration for a launched pod, such as resources' requests/limits or credentials. This option is alternative to the _template from deployment_ specification and allows editing the configuration directly in the TeamCity UI/DSL.
 
 Example of a simple template:
 
