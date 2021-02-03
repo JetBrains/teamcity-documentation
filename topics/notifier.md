@@ -61,7 +61,7 @@ __IDE Notifier__
 Displays the status of the specified build configurations and/or the status of the user changes in the user's IDE. Requires a corresponding TeamCity plugin: IntelliJ Platform plugin, Addin for Visual Studio or Eclipse Plugin; which can be downloaded from the [My Settings&amp;Tools](subscribing-to-notifications.md) page. Refer to the [Installing Tools](installing-tools.md) section. 
 
 
-</td></tr><tr>
+</td></tr><tr product="tc">
 
 <td>
 
@@ -75,21 +75,7 @@ __Jabber Notifier__
 Notifications regarding specified events are sent via Jabber.
 
 
-</td></tr><tr>
-
-<td>
-
-__System Tray Notifier__
-
-
-</td>
-
-<td>
-
-Displays the status of the build configurations you want to watch in the Windows system tray, and displays pop-up notifications on the specified events.
-
-
-</td></tr><tr>
+</td></tr><tr product="tc">
 
 <td>
 
@@ -111,7 +97,7 @@ You can configure the notifier settings, create, change, and delete notification
         <category ref="user-guide">
             <a href="subscribing-to-notifications.md">Subscribing to Notifications</a>
         </category>
-        <category ref="admin-guide">
+        <category ref="admin-guide" product="tc">
             <a href="customizing-notifications.md">Customizing Notifications</a>
         </category>
 </seealso>

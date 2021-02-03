@@ -46,7 +46,6 @@
             <toc-element id="build-runner.md"/>
             <toc-element id="build-working-directory.md"/>
             <toc-element id="clean-checkout.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="clean-up.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="code-coverage.md"/>
             <toc-element id="code-duplicates.md"/>
             <toc-element id="code-inspection.md"/>
@@ -62,7 +61,6 @@
             <toc-element id="role-and-permission.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="run-configuration-policy.md"/>
             <toc-element id="teamcity-data-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="teamcity-specific-directories.md"/>
             <toc-element id="user-account.md"/>
             <toc-element id="user-group.md"/>
             <toc-element id="wildcards.md"/>
@@ -74,7 +72,6 @@
             <toc-element id="remote-debug.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="favorite-build.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="teamcity-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="revision.md"/>
             <toc-element id="mapping-teamcity-concepts-to-other-ci-terms.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
