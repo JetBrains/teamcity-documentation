@@ -11,6 +11,7 @@ Projects Import should be used only when some projects need to be added to an ex
 If you need to move all the server data to a different machine, use [server move](how-to.md#Move+TeamCity+Installation+to+a+New+Machine).
 
 ## Importing projects
+{product="tc"}
 
 On the source TeamCity server:
 * [Create a usual backup](creating-backup-from-teamcity-web-ui.md) file containing the projects to be imported (note that the __[major version](upgrade.md#Upgrading+TeamCity+Server) of the source and target TeamCity servers has to be the same__)
