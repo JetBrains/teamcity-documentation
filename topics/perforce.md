@@ -58,13 +58,6 @@ __Prior to TeamCity 2017.2__, TeamCity supports streams stored one level below t
 
 [Parameters](configuring-build-parameters.md) are supported. For the `StreamAtChange` option, use the [Label to checkout](#Checkout+On+Agent+Settings) field.
 
-<warning>
-
-__Performance impact__
-
-When this option is used with the [checkout on the server](vcs-checkout-mode.md#server-checkout) mode, the internal TeamCity source caching on the server side is disabled, which may worsen the performance of [clean checkouts](clean-checkout.md). Also, with this option, snapshot dependencies builds are not [reused](snapshot-dependencies.md). ([TW-41898](https://youtrack.jetbrains.com/issue/TW-41898) \- fixed in TeamCity 2017.1) 
-</warning>
-
 <note>
 
 __Checkout rules limitations__
@@ -98,13 +91,6 @@ Client
 <td>
 
 Click this radiobutton to directly specify the client workspace name. The workspace must be already created by a Perforce client application like P4V or P4Win. Only the mapping rules from the configured client workspace are used. The client name is ignored.
-
-<warning>
-
-__Performance impact__
-
-When this option is used with the [VCS Checkout Mode](vcs-checkout-mode.md) mode, the internal TeamCity source caching on the server side is disabled, which may worsen the performance of [clean checkouts](clean-checkout.md). Also, with this option, snapshot dependencies builds are not [reused](snapshot-dependencies.md). ([TW-41898](https://youtrack.jetbrains.com/issue/TW-41898) \- fixed in TeamCity 2017.1) 
-</warning>
 
 
 </td></tr><tr>
@@ -296,10 +282,10 @@ Specify additional `p4 sync` options, like `--parallel`. See [command reference]
 ### Perforce Workspace Parameters
 
 With checkout on agent, TeamCity provides environment variables describing the Perforce workspace created during the checkout process.   
-If several Perforce VCS Roots are used for the checkout, the variables are created for the first VCS root.The variables are:
-* __P4USER__ \- same as `vcsroot.<VCS root ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
-* __P4PORT__ \- same as `vcsroot.<VCS root ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
-* __P4CLIENT__ \- name of the generated P4 workspace on the agent
+If several Perforce VCS Roots are used for the checkout, the variables are created for the first VCS root. The variables are:
+* __P4USER__  \- same as `vcsroot.<VCS root ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
+* __P4PORT__  \- same as `vcsroot.<VCS root ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
+* __P4CLIENT__  \- name of the generated P4 workspace on the agent
 These variables can be used to perform custom p4 commands after the checkout.
 
 More information: [Perforce Workspace Handling in TeamCity](perforce-workspace-handling-in-teamcity.md)
@@ -343,7 +329,7 @@ Label/changelist to sync
 
 <td>
 
-If you need to check out sources not with the latest revision, but with a specific Perforce label (with selective changes), you can specify this label here. For instance, this can be useful to produce a milestone/release build, or a reproduce build. If the field is left blank, the latest changelist will be used for sync.
+If you need to check out sources not with the latest revision, but with a specific Perforce label (with selective changes), you can specify this label here. For instance, this can be useful to produce a milestone/release build, or to reproduce a build. If the field is left blank, the latest changelist will be used for sync.
 
 <warning>
 
