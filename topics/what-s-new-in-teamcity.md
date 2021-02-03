@@ -54,7 +54,7 @@ To be automatically recognized by TeamCity, users can also connect their profile
 
 Admins can map TeamCity users with external accounts and limit providers' groups/organizations/workspaces whose members can access the server.
 
-Learn [how to enable and manage authentication modules](configuring-authentication-settings.md#HTTP+Authentication+Modules).
+Learn [how to enable and manage authentication modules](configuring-authentication-settings.md).
 
 ## Support for Bitbucket Cloud pull requests
 
