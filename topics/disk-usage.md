@@ -2,12 +2,21 @@
 [//]: # (auxiliary-id: Disk Usage)
 
 TeamCity analyses disk space and provides the __Disk Usage__ report. It detects all local and remote [artifact directories](configuring-artifacts-storage.md) configured on the server and analyses the disk space occupied by builds in these storages.
+{product="tc"}
+
+TeamCity analyses disk space and provides the __Disk Usage__ report. It analyses the disk space occupied by builds in the artifact storage.
+{product="tcc"}
 
 To see the report, open __Administration| Disk Usage__.
 
 <img src="DiskUsage.png" width="527" alt="Disk usage"/>
 
-The report contains information on the total free disk space and the amount of space taken by build artifacts and build logs. The default location for these directories is `<[TeamCity Data Directory](teamcity-data-directory.md)>/system`. If build logs and artifacts directories are [located on different disks](teamcity-data-directory.md#Recommendations+as+to+choosing+Data+Directory+Location), free space is reported for each of the disks. The report also displays [pinned builds](pinned-build.md), if available, and the space taken by their logs and artifacts.
+The report contains information on the total free disk space and the amount of space taken by build artifacts and build logs.
+
+The default location for these directories is `<[TeamCity Data Directory](teamcity-data-directory.md)>/system`. If build logs and artifacts directories are [located on different disks](teamcity-data-directory.md#Recommendations+as+to+choosing+Data+Directory+Location), free space is reported for each of the disks.
+{product="tc"}
+
+The report also displays [pinned builds](pinned-build.md), if available, and the space taken by their logs and artifacts.
 
 By default, the report displays data on the builds run from build configurations grouped by projects. You can choose to view the ungrouped list of build configurations or to show archived projects if required using the corresponding checkboxes. You can sort the information by clicking the column name.
 

@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Licensing Policy)
 
 Pricing and new licenses/upgrades purchase are available via the __[official web site](http://www.jetbrains.com/teamcity/buy/)__. If you have any questions on the licensing terms, obtaining or upgrading license key and related, please [contact](https://www.jetbrains.com/support/sales/) JetBrains sales department.   
-You can review TeamCity [license agreement](http://www.jetbrains.com/teamcity/buy/license.html) on the official web site or in the footer of the installed TeamCity server web UI.
+You can review TeamCity [license agreement](http://www.jetbrains.com/teamcity/buy/license.html) on the official website or in the footer of the installed TeamCity server web UI.
 
 ## Licensing Overview
 
@@ -143,7 +143,7 @@ The __Professional edition__ does not require any license key and can be used fr
 
 The __Enterprise edition__ requires a license key, has no limit on the number of build configurations and entitles you to TeamCity [support](https://confluence.jetbrains.com/display/TW/Feedback) from JetBrains for the maintenance period of the license, provided you use a [recent TeamCity version](teamcity-release-cycle.md).
 
-<note>
+<note product="tc">
 
 An additional server in a [high availability set-up](multinode-setup.md) uses the license from the main server and does not require a separate license at this time.
 </note>

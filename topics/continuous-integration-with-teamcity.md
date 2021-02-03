@@ -208,6 +208,4 @@ To understand the data flow between the server and the agents, what is passed to
  2. The build trigger sees the change in the database and adds a build to the queue.
  3. The server finds an idle compatible build agent and assigns the queued build to this agent.
  4. The agent executes the Build Steps. While the build steps are being executed, the build agent reports the build progress to the TeamCity server sending all the log messages, test reports, code coverage results, etc. to the server on the fly, so you can monitor the build process in real time.
- 5. After finishing the build, the build agent sends [Build Artifacts](build-artifact.md) to the server. 
-
-Now you can proceed with [TeamCity installation](installation-quick-start.md).
+ 5. After finishing the build, the build agent sends [Build Artifacts](build-artifact.md) to the server.

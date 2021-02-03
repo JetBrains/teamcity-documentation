@@ -2,9 +2,12 @@
 [//]: # (auxiliary-id: Common Problems)
 
 Most user issues are related to the following topics. Before reporting your problem, check if any of these Help pages contains the solution already:
+{product="tc"}
 
-* [Configuring server memory settings](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server)  
+* [Configuring server memory settings](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server)
+{product="tc"}
 * [Reporting server slowness issues](reporting-issues.md#Collect+Data)
+{product="tc"}
 
 ## Build works locally but fails or misbehaves in TeamCity
 
@@ -448,7 +451,7 @@ To solve the problem, do the following:
 
 To run TeamCity with the required JRE, do one of the following:
     * either set the `TEAMCITY_JRE` environment variable
-    * or remove the JRE bundled with TeamCity from  \<[TeamCity home](teamcity-home-directory.md)\>\jre and set `JAVA_HOME`.  
+    * or remove the JRE bundled with TeamCity from \<[TeamCity home](teamcity-home-directory.md)\>\jre and set `JAVA_HOME`.  
     
 <note>
 

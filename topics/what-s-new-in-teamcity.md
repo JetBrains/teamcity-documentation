@@ -54,7 +54,7 @@ To be automatically recognized by TeamCity, users can also connect their profile
 
 Admins can map TeamCity users with external accounts and limit providers' groups/organizations/workspaces whose members can access the server.
 
-Learn [how to enable and manage authentication modules](configuring-authentication-settings.md#HTTP+Authentication+Modules).
+Learn [how to enable and manage authentication modules](configuring-authentication-settings.md).
 
 ## Support for Bitbucket Cloud pull requests
 
@@ -143,6 +143,7 @@ Disabling this responsibility will switch a secondary node to a read-only mode.
 See also [upgrade notes](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
 
 ## Monitoring disk usage in external storage
+{product="tc"}
 
 An increasing number of our users prefer storing build artifacts in cloud – for example, in Amazon S3. However, it was not previously possible to see what amount of data is stored there.
 

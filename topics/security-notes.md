@@ -49,7 +49,7 @@ Here are the notes on different security-related aspects:
 <anchor name="view-build-config-settings"/>
 * Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server. To restrict this, you can use the `teamcity.buildAuth.enableStrictMode=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 {product="tc"}
-* Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server. To restrict this, you can use the `teamcity.buildAuth.enableStrictMode=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+* Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server.
 {product="tcc"}
 * Users with the "Edit project" permission (the "Project Administrator" TeamCity role by default) in one project, by changing settings can retrieve artifacts and trigger builds from any build configuration they have only the view permission for ([TW-39209](https://youtrack.jetbrains.com/issue/TW-39209)).
 * Users with the "Change server settings" permission (the "System Administrator" TeamCity role by default): It is assumed that the users also have access to the computer on which the TeamCity server is running under the user account used to run the server process. Thus, the users can get full access to the machine under that OS user account: browse file system, change files, run arbitrary commands, and so on.
