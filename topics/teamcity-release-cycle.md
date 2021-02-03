@@ -13,6 +13,10 @@ TeamCity is systematically and frequently updated with new features and optimiza
 * __bug fixes__: thanks to our QA team and active user feedback, we can quickly catch and fix even rare bags. If we notice a critical bug soon after releasing another TeamCity version, it is our priority to release the respective patch or the next bugfix update as soon as possible, which makes it especially crutial that you don't skip regular updates. Any news concerning patches, release issues, and upgrade notes are published [here](upgrade-notes.md).
 
 Major updates are released twice a year, and each major release is followed by multiple minor (bugfix) releases. Read more about the release stages in the [following section](#Release+Stages).
+{product="tc"}
+
+Major updates are released twice a year, and each major release is followed by multiple minor (bugfix) releases.
+{product="tcc"}
 
 ## Version Numbers
 
@@ -21,8 +25,10 @@ A major release is represented with the `YYYY.N` number, where `YYYY` is the rel
 A minor release is represented with the `YYYY.N.M` number, where `YYYY.N` corresponds to its preceding major release and `M` is the serial number of the minor release. For example, `2020.2.2` is the second bugfix update released for major version `2020.2`.
 
 The dates of all previous releases and the sequence of TeamCity versions are listed [here](previous-releases-downloads.md).
+{product="tc"}
 
 ## Release Stages
+{product="tc"}
 
 The default stages of a TeamCity release:
 

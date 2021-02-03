@@ -107,10 +107,6 @@
         <toc-element toc-title="Administrator's Guide">
             <toc-element id="teamcity-configuration-and-maintenance.md">
                 <toc-element id="configuring-authentication-settings.md" show-structure-for="chapter" show-structure-depth="4">
-                    <toc-element id="ldap-integration.md" show-structure-for="chapter" show-structure-depth="4">
-                        <toc-element id="typical-ldap-configurations.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="ldap-troubleshooting.md" show-structure-for="chapter" show-structure-depth="4"/>
-                    </toc-element>
                     <toc-element id="enabling-guest-login.md"/>
                     <toc-element id="enabling-email-verification.md"/>
                     <toc-element id="security-actions.md"/>

@@ -194,6 +194,7 @@ The set of valid licenses defines if the server works in Enterprise mode and how
 
 Before you [upgrade](upgrade.md) to a newer TeamCity version, check the validity of the existing licenses with the new version.   
 If the new TeamCity server effective [release date](previous-releases-downloads.md) is not covered by the maintenance period of some of the licenses, the corresponding licenses will not be valid with the TeamCity version and would need a [renew](http://www.jetbrains.com/teamcity/buy/index.jsp#upgradeuser). Generally, license renew costs about 50% of the new license price in case the new license date is the same as the end of maintenance of the license being renewed.
+{product="tc"}
 
 When a new version is available, TeamCity displays a notification in the web UI and warns you if any of your license keys are incompatible with this new version. A notification on the new TeamCity version is also displayed in the Global Configuration Items of the [Server Health](server-health.md) report, visible to system administrators. System administrators can use the link in the "Some Licenses are incompatible" message to quickly navigate to the [Licenses](#Managing+Licenses) page, where all incompatible licenses will have a warning icon. The information about the license keys installed on your server is secure as it is not sent over the Internet.
 

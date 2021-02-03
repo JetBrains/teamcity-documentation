@@ -17,6 +17,7 @@ TeamCity provides several preconfigured authentication options (presets) to cove
 * [HTTP / SSO authentication modules](#HTTP+%2F+SSO+Authentication+Modules)
   * [Basic HTTP Authentication](#Basic+HTTP+Authentication)
   * [NTLM HTTP Authentication](ntlm-http-authentication.md)
+    {product="tc"}
   * [Bitbucket Cloud](#Bitbucket+Cloud)
   * [GitHub.com](#GitHub.com)
   * [GitHub Enterprise](#GitHub+Enterprise)
@@ -25,18 +26,23 @@ TeamCity provides several preconfigured authentication options (presets) to cove
   
 
 >If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure single sign-on (SSO) from the TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).
+>
+{product="tc"}
 
 When you first sign in to TeamCity, the default authentication, including the Built-in and Basic HTTP authentication modules, is enabled.
 
-* To modify the existing settings, click __Edit__ next to the description of the enabled authentication module.
-* To switch to a different preconfigured scheme, use the __Load preset__ button.
+To modify the existing settings, click __Edit__ next to the description of the enabled authentication module.
 
-<tip>
+To switch to a different preconfigured scheme, use the __Load preset__ button.
+{product="tc"}
+
+<tip product="tc">
 
 Any changes made to authentication in the UI are reflected in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml` file. If using the UI is not possible (for example, the server is not started yet), you can configure authentication settings in this file. The detailed instructions are available in the [previous version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings) of this document.
 </tip>
 
 ### Using Presets
+{product="tc"}
 
 To load a preconfigured set of modules, use the __Load preset__ button, select a required option, and __Apply__ your changes. The following presets are available:
 * Default ([built-in authentication](#Built-in+Authentication) – [Token-based](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
@@ -105,6 +111,7 @@ This module allows users to authenticate via [access tokens](managing-your-user-
 This authentication module is enabled by default.
 
 ### Windows Domain Authentication
+{product="tc"}
 
 Allows user sign in using a Windows domain name and password. TeamCity checks these credentials: the server should be aware of the domain(s) users use to sign in. The supported syntax for the username is `DOMAIN\user.name` or `<username>@<domain>`.
 
@@ -140,6 +147,7 @@ If the default settings do not work for your environment, refer to [JCIFS](http:
 If the library does not find the domain controller to authenticate against, consider adding the `jcifs.netbios.wins` property to the `ntlm-config.properties` file with the address of your WINS server. For other domain services locating properties, see [JCIFS](http://jcifs.samba.org/src/docs/resolver.html).
 
 ### LDAP Authentication
+{product="tc"}
 
 Please refer to the [dedicated page](ldap-integration.md).
 
@@ -160,6 +168,7 @@ For information on configuring basic HTTP authentication directly in the `<[Team
 
 
 ### NTLM HTTP Authentication
+{product="tc"}
 
 Please refer to the [dedicated page](ntlm-http-authentication.md).
 
