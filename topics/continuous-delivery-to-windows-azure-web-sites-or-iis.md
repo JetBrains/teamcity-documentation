@@ -1,11 +1,11 @@
 [//]: # (title: Continuous Delivery to Windows Azure Web Sites \(or IIS\))
 [//]: # (auxiliary-id: viewpage.actionpageId113084596;Continuous Delivery to Windows Azure Web Sites \(or IIS\))
 
-<note>
+>The TeamCity Azure Resource Manager template is deprecated and will no longer receive support. The existing TeamCity installations, based on this template, will continue to work for some time. We recommend running TeamCity via a custom template instead.
+>
+{type="warning"}
 
 In this tutorial, we'll go over the basics of these and see how we can deploy an ASP.NET MVC project to IIS or Windows Azure Web Sites from our TeamCity server using WebDeploy.
-</note>
-
 
 Deploying ASP.NET applications can be done in a multitude of ways. Some build the application on a workstation and then xcopy it over to the target server. Some use a build server, download the artifacts, change the configuration files and xcopy those over to the server. The issue with that arises when something bad creeps in: deployments become unpredictable.  
 What if there are leftovers of unnecessary or old assemblies on that workstation we're xcopying from? What if we forget to change the database connection string in _Web.config_ and mess up that release? How do we quickly roll back if that happens? The .NET stack has a solution to this: Configuration Transforms and WebDeploy.
