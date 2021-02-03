@@ -3,7 +3,7 @@
 
 Before you can start customizing projects and creating build configurations, you need to configure [build agents](build-agent.md). Review the [agent-server communication](#Agent-Server+Data+Transfers) and [Prerequisites](#Prerequisites) sections before proceeding with agent installation.
 
-<tip>
+<tip product="tc">
 
 __Tips__
 
@@ -515,6 +515,11 @@ If you run a previous version of the TeamCity agent, you will need to repeat the
 
 Using 64-bit JDK (not JRE) is recommended. JDK is required for some build runners like [IntelliJ IDEA Project](intellij-idea-project.md), Java [Inspections](inspections.md), and [Duplicates](duplicates-finder-java.md). If you do not have Java builds, you can install JRE instead of JDK.   
 Using of x64 bit Java is possible, but you might need to double the `-Xmx` memory value for the main agent process (see [Configuring Build Agent Startup Properties](configuring-build-agent-startup-properties.md) and alike [section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) for the server).
+{product="tc"}
+
+Using 64-bit JDK (not JRE) is recommended. JDK is required for some build runners like [IntelliJ IDEA Project](intellij-idea-project.md), Java [Inspections](inspections.md), and [Duplicates](duplicates-finder-java.md). If you do not have Java builds, you can install JRE instead of JDK.   
+Using of x64 bit Java is possible, but you might need to double the `-Xmx` memory value for the main agent process (see [Configuring Build Agent Startup Properties](configuring-build-agent-startup-properties.md)).
+{product="tcc"}
 
 <anchor name="java-paths"/>
 

@@ -2,6 +2,7 @@
 [//]: # (auxiliary-id: viewpage.actionpageId113084582;How To...)
 
 ## Choose OS/Platform for TeamCity Server
+{product="tc"}
 
 Once the server/OS fulfills the [requirements](supported-platforms-and-environments.md#TeamCity+Server), TeamCity can run on any system. Please also review the [requirements](supported-platforms-and-environments.md) for the integrations you plan to use, for example the following functionality requires or works better when TeamCity server is installed under Windows:
 * VCS integration with TFS
@@ -15,6 +16,7 @@ If you have no preference, Linux platforms may be more preferable due to more ef
 Final Operating System choice should probably depend more on the available resources and established practices in your organization.
 
 ## Estimate Hardware Requirements for TeamCity
+{product="tc"}
 
 The hardware requirements differ for the server and the agents.
 
@@ -112,13 +114,14 @@ The most important flows of traffic between the agent and the server are:
 * agent retrieves commands from the server: these are typically build start tasks which basically include a dump of the build configuration settings and the full set of build parameters. The latter can be large (e.g. megabytes) in case of a large build chain. The parameters can be reviewed on the build's [Parameters tab](working-with-build-results.md#Parameters);
 * agent periodically sends current status data to the server (this includes all the agents parameters which can be reviewed on the agent's [Agent Parameters](viewing-build-agent-details.md#Agent+Parameters) tab);
 * during the build, the agent sends  build log messages and parameters data back to the server. These can be reviewed on the [Build Log](working-with-build-results.md#Build+Log) and [Parameters](working-with-build-results.md#Parameters) tabs of the build;
-* (when the server\-side checkout mode is used) the agent downloads the sources before the build (as a full or incremental patch) from the server;
+* (when the server-side checkout mode is used) the agent downloads the sources before the build (as a full or incremental patch) from the server;
 * (when an [artifact dependency](artifact-dependencies.md) is configured) the agent downloads build artifacts of other builds from the server before starting a build;
 * (when artifacts are configured for a build) the agent uploads build artifacts to the server;
 * some runners (like coverage or code analysis) include automatic uploading of their results' reports to the server.
 
 
 ## Configuring TeamCity Server for Performance
+{product="tc"}
 
 Here are some recommendations to tweak TeamCity server setup for better performance. The list for [production server use](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) is a prerequisite:
 * Regularly review reported Server Health reports (including hidden ones)
@@ -139,6 +142,7 @@ Here are some recommendations to tweak TeamCity server setup for better performa
 <anchor name="HowTo-RetrieveAdministratorPassword"/>
 
 ## Retrieve Administrator Password
+{product="tc"}
 
 On the first start with the empty database, TeamCity displays the Administrator Setup page which allows creating a user with full administrative permissions (assigning the [System Administrator](role-and-permission.md#Per-Project+Authorization+Mode) role).
 
@@ -150,6 +154,7 @@ If you use built\-in authentication and have correct email specified, you can [r
 
 
 ## Estimate External Database Capacity
+{product="tc"}
 
 It is quite hard to provide the exact numbers when setting up or migrating to an external database, as the required capacity varies greatly depending on how TeamCity is used.
 
@@ -266,18 +271,19 @@ MySQL: the query optimizer might be inefficient: some queries may get a wrong ex
 
 ## Estimate the Number of Required Build Agents
 
-There are no precise data and the number of required build agents depends a lot on the server usage pattern, type of builds, team size, commitment of the team to CI process, etc.   
+There are no precise data and the number of required build agents depends a lot on the server usage pattern, type of builds, team size, commitment of the team to CI process, and so on.   
 The best way is to start with the default 3 agents and see how that plays with the projects configured, then estimate further based on that.
 
 You might want to increase the number of agents when you see:
 * builds waiting for an idle agent in the build queue;
-* more changes included into each build than you find comfortable (e.g. for build failures analysis);
+* more changes included into each build than you find comfortable (for example, for build failures analysis);
 * necessity for different environments.
-We've seen patterns of having an agent per each 20 build configurations (types of builds). Or a build agent per 1\-2 developers.
+We've seen patterns of having an agent per each 20 build configurations (types of builds). Or a build agent per 1-2 developers.
 
 See also [notes](#Estimate+Hardware+Requirements+for+TeamCity) on maximum supported number of agents.
 
 ## Setup TeamCity in Replication/Clustering Environment
+{product="tc"}
 
 It is possible to add a [secondary TeamCity node](configuring-secondary-node.md) to ensure high availability and offload some operations from the main server. All nodes need to be connected to the same [`TeamCity Data Directory`](teamcity-data-directory.md) and the database.
 
@@ -302,6 +308,7 @@ The contents of this section have been moved to the [dedicated article](security
 <anchor name="HowTo-ConfigureNewlyInstalledMySQLServer"/>
 
 ## Configure Newly Installed MySQL Server
+{product="tc"}
 
 If MySQL server is going to be used with TeamCity in addition to the [basic setup](setting-up-an-external-database.md#MySQL), you should review and probably change some of the MySQL server settings. If MySQL is installed on Windows, the settings are located in `my.ini` file which usually can be found under MySQL installation directory. For Unix\-like systems the file is called `my.cnf` and can be placed somewhere under `/etc` directory. Read more about configuration file location in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/option-files.html). Note: you'll need to restart MySQL server after changing settings in `my.ini|my.cnf`.
 
@@ -421,6 +428,7 @@ GRANT PROCESS ON *.* TO <teamcity-user-name>;
 <anchor name="HowTo-ConfigureNewlyInstalledPostgreSQLServer"/>
 
 ## Configure Newly Installed PostgreSQL Server
+{product="tc"}
 
 For better TeamCity server performance, it is recommended to change some of the parameters of the newly installed PostgreSQL server. You can read more about PostgreSQL performance optimization in [PostgreSQL Wiki](https://wiki.postgresql.org/wiki/Performance_Optimization).
 
@@ -478,6 +486,7 @@ synchronous_commit=off
 <anchor name="HowTo-SetUpTeamCitybehindaProxyServer"/>
 
 ## Set Up TeamCity behind a Proxy Server
+{product="tc"}
 
 This section covers the recommended setup of reverse proxy servers installed in front of the TeamCity server web UI.
 
@@ -669,10 +678,12 @@ It is also recommended to specify the `internalProxies` attribute with the regul
 [//]: # (Internal note. Do not delete. "How To...d160e1383.txt")
 
 ## Enforce hiding stacktrace
+{product="tc"}
 
 If a user with access to your TeamCity server submits an invalid cross-site scripting (XSS) payload, the server will display the "Unexpected error" page containing a related stacktrace. To prevent exposing any sensible information about your environment via this stacktrace, you might want to disable its display. For this, set the `teamcity.web.runtimeError.showStacktrace` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to `false`.
 
 ## Configure HTTPS for TeamCity Web UI
+{product="tc"}
 
 TeamCity does not provide out-of-the-box support for HTTPS access (see [TW-12976](http://youtrack.jetbrains.com/issue/TW-12976#comment=27-348823)). It is highly recommended to set up a reverse proxy like Nginx or Apache in front of TeamCity that would handle HTTPS and use HTTP TeamCity server port as the upstream. HTTPS-related configuration of the proxy is not specific for TeamCity and is generic as for any Web application. Make sure to configure the reverse proxy per [our recommendations](#Set+Up+TeamCity+behind+a+Proxy+Server). Generic web application best practices apply (like disabling http access to TeamCity at all).
 
@@ -681,6 +692,7 @@ For small servers, you can set up HTTPS via the internal [Tomcat means](https://
 For configuring clients to access TeamCity server via HTTPS while using self\-signed certificate, check the [related instructions](using-https-to-access-teamcity-server.md).
 
 ## Configure TeamCity to Use Proxy Server for Outgoing Connections
+{product="tc"}
 
 This section describes configuring TeamCity to use proxy server for certain outgoing HTTP connections. To connect TeamCity behind a proxy to Amazon EC2 cloud agents, see [this section](setting-up-teamcity-for-amazon-ec2.md#Proxy+settings).
 
@@ -738,7 +750,7 @@ The alternative approach, which will work for any TeamCity version, is to pass a
 
 ## Configure TeamCity Agent to Use Proxy To Connect to TeamCity Server
 
-This section covers the configuration of a proxy server for TeamCity agent\-to\-server connections (__since TeamCity 2017.1__).
+This section covers the configuration of a proxy server for TeamCity agent-to-server connections (__since TeamCity 2017.1__).
 
 <chunk include-id="agent-proxy-server">
 
@@ -767,14 +779,17 @@ Note that the proxy has to be configured not to cache any TeamCity server respon
 See the [corresponding section](setting-up-and-running-additional-build-agents.md#Installing+Several+Build+Agents+on+the+Same+Machine) under agent installation documentation.
 
 ## Change Server Port
+{product="tc"}
 
 See [corresponding section](installing-and-configuring-the-teamcity-server.md#Changing+Server+Port) in server installation instructions.
 
 ## Test-drive Newer TeamCity Version before Upgrade
+{product="tc"}
 
 It's advised to try a new TeamCity version before upgrading your production server. The usual procedure is to [create a copy](#Create+a+Copy+of+TeamCity+Server+with+All+Data) of your production TeamCity installation, then [upgrade](upgrade.md) it, try the things out, and, when everything is checked, drop the test server and upgrade the main one. When you start the test server, remember to change the Server URL, disable Email and Jabber notifiers as well as [other features](#Copied+Server+Checklist) on the new server.
 
 ## Create a Copy of TeamCity Server with All Data
+{product="tc"}
 
 In case you want to preserve the original server as well as the copy, make sure to check the [licensing considerations](#Licensing+issues).
 
@@ -873,12 +888,7 @@ If you are creating a __test server__, you need to ensure that the users and pro
 
 See also the section below on [moving the server](#Move+TeamCity+Installation+to+a+New+Machine) from one machine to another.
 
-
-
-
 [//]: # (Internal note. Do not delete. "How To...d160e1901.txt")  
-
-
 
 
 ## Move TeamCity Projects from One Server to Another
@@ -913,15 +923,15 @@ Further steps after projects copying might be:
 What is _not_ copied by the approach above:
 * pausing comment and user of the paused build configurations
 * archiving user of the archived projects
-* global server settings (e.g. Maven settings.xml profiles, tools (e.g. handle.exe), external change viewers, build queue priorities, issue trackers). These are stored under various files under `.BuildServer\config` directory and should be synchronized either on the file level or by configuring the same settings in the server administration UI.
+* global server settings (for example, Maven `settings.xml profiles`, tools like `handle.exe`, external change viewers, build queue priorities, issue trackers). These are stored under various files under `.BuildServer\config` directory and should be synchronized either on the file level or by configuring the same settings in the server administration UI.
 * project association with agent pools
 * templates from other projects which are not parents of the copied one. This configuration is actually deprecated in TeamCity 8.0 and is only supported as legacy. Templates used in several projects should be moved to the common parent project or root project.
 * no data configured for the agents (build configurations that are allowed to run on the agent).
-* no user\-related or user group\-related settings (like roles and notification rules)
-* no state\-related data like mutes and investigations, etc.
-
+* no user-related or user group-related settings (like roles and notification rules)
+* no state-related data like mutes and investigations.
 
 ## Move TeamCity Installation to a New Machine
+{product="tc"}
 
 If you need to move an existing TeamCity installation to new hardware or a clean OS, you can install the same TeamCity version on the new machine, stop the old server, connect the new server to the same [`TeamCity Data Directory`](teamcity-data-directory.md) and make sure the server uses the [same environment](#Environment+transferring). Alternatively, you can follow the [instructions on copying](#Create+a+Copy+of+TeamCity+Server+with+All+Data) the server from one machine to another.
 
@@ -957,10 +967,7 @@ With these steps the agent will be recognized by TeamCity server as the same and
 
 Please also review the [section](agent-home-directory.md) for a list of directories that can be deleted without affecting builds consistency.
 
-
 [//]: # (Internal note. Do not delete. "How To...d160e2180.txt")    
-
-
 
 
 ## Share the Build number for Builds in a Chain Build
@@ -998,6 +1005,7 @@ If you need a level of automation and web administration UI does not suite your 
 * use [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
 * change configuration files directly on disk (see more at `<[TeamCity Data Directory](teamcity-data-directory.md)>`)
 * write a TeamCity Java plugin that will perform the tasks using [open API](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).
+
 ## Attach Cucumber Reporter to Ant Build
 
 If you use Cucumber for Java applications testing you should run cucumber with `--expand` and special `--format` options. More over you should specify RUBYLIB environment variable pointing on necessary TeamCity Rake Runner ruby scripts:
@@ -1054,7 +1062,7 @@ This functionality is provided by [REST API](https://www.jetbrains.com/help/team
 
 ## Set up Deployment for My Application in TeamCity
 
-TeamCity has enough features to handle orchestration part of the deployments with the actual deployment logic configured in the build script / build runner. TeamCity supports a variety of generic build tools, so any specific tool can be run from within TeamCity. To ease specific tool usage, it is possible to wrap it into a meta\-runner or write a custom plugin for that.
+TeamCity has enough features to handle orchestration part of the deployments with the actual deployment logic configured in the build script / build runner. TeamCity supports a variety of generic build tools, so any specific tool can be run from within TeamCity. To ease specific tool usage, it is possible to wrap it into a meta-runner or write a custom plugin for that.
 
 In general, setup steps for configuring deployments are:
 1. Write a build script that will perform the deployment task for the binary files available on the disk. (e.g. use Ant or MSBuild for this. For typical deployment transports use [Deployer](deployers.md) runners). See also [Integrate with Build and Reporting Tools](#Integrate+with+Build+and+Reporting+Tools). You can use [Meta-Runner](working-with-meta-runner.md) to reuse a script with convenient UI.
@@ -1074,10 +1082,7 @@ Further recommendations:
 Related section on the official site: [Continuous Deployment with TeamCity](http://www.jetbrains.com/teamcity/features/deployment.html)
 
 
-[//]: # (Internal note. Do not delete. "How To...d160e2430.txt")    
-
-
-
+[//]: # (Internal note. Do not delete. "How To...d160e2430.txt")
 
 ## Use an External Tool that My Build Relies on
 
@@ -1128,6 +1133,7 @@ See also [Import coverage results in TeamCity](#Import+coverage+results+in+TeamC
 For advanced integration, a custom plugin will be necessary to store and present the data as required. See [Developing TeamCity Plugins](https://confluence.jetbrains.com/display/TCD18/Developing+TeamCity+Plugins) for more information on plugin development.
 
 ## Restore Just Deleted Project
+{product="tc"}
 
 TeamCity moves deleted projects settings directories (which are named after the project id) to `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_trash` directory adding `"<internal ID>"` suffix to the directories.
 
@@ -1139,6 +1145,7 @@ Note that TeamCity preserves builds history and other data stored in the databas
 The `config/_trash` directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects. No server restart is required.
 
 ## Transfer 3 Default Agents to Another Server
+{product="tc"}
 
 This is not possible.
 
@@ -1167,8 +1174,9 @@ You should not publish values CodeCoverageB, CodeCoverageL, CodeCoverageM, CodeC
 </note>
 
 ## Recover from "Data format of the Data Directory (NNN) and the database (MMM) do not match" error
+{product="tc"}
 
-If you get "Data format of the Data Directory (NNN) and the database (MMM) do not match." error on starting TeamCity, it means either the database or the TeamCity Data Directory were recently changed to an inconsistent state so they cannot be used together. Double\-check the database and Data Directory locations and change them if they are not those where the server used to store the data.
+If you get "Data format of the Data Directory (NNN) and the database (MMM) do not match." error on starting TeamCity, it means either the database or the TeamCity Data Directory were recently changed to an inconsistent state so they cannot be used together. Double-check the database and Data Directory locations and change them if they are not those where the server used to store the data.
 
 If they are right, most probably it means that the server was upgraded with another database or Data Directory and the [consistent upgrade](upgrade.md#Upgrading+TeamCity+Server) requirement was not met for your main Data Directory and the database.
 
@@ -1196,6 +1204,7 @@ If a build containing several steps fails at a certain step, it is possible to d
 4. When debugging is complete, reenable the build steps.
 
 ## Watch Several TeamCity Servers with Windows Tray Notifier
+{product="tc"}
 
 TeamCity Tray Notifier is used normally to watch builds and receive notifications from a single TeamCity server. However, if you have more than one TeamCity server and want to monitor them with Windows Tray Notifier simultaneously, you need to start a separate instance of Tray Notifier for each of the servers from the command line with the `/allowMultiple` option:
 * From the TeamCity Tray Notifier installation folder (by default, it's `C:\Program Files\JetBrains\TeamCity`) run the following command:
@@ -1216,8 +1225,9 @@ JetBrains.TrayNotifier.exe /allowMultiple /server:http://myTeamCityServer
 See also [details](http://jetbrains.net/tracker/issue/TW-4230#comment=27-14194) in the issue tracker.
 
 ## Personal User Data Processing
+{product="tc"}
 
-In relation to the TeamCity product, JetBrains does not collect any personal data of the on\-premises TeamCity installation users. The related documents governing relationship of customers with JetBrains are available on the official web site: [privacy policy](https://www.jetbrains.com/company/privacy.html), [terms of purchase](https://www.jetbrains.com/store/terms/), [TeamCity license agreement](https://www.jetbrains.com/teamcity/buy/license.html).
+In relation to the TeamCity product, JetBrains does not collect any personal data of the on-premises TeamCity installation users. The related documents governing relationship of customers with JetBrains are available on the official website: [privacy policy](https://www.jetbrains.com/company/privacy.html), [terms of purchase](https://www.jetbrains.com/store/terms/), [TeamCity license agreement](https://www.jetbrains.com/teamcity/buy/license.html).
 
 The notes below can be useful when assessing how your usage of TeamCity complies with the General Data Protection Regulation (GDPR) (EU) 2016/679 regulation. These notes are meant to address the most basic questions and can serve as an input to the assessment of your specific TeamCity installation.
 
@@ -1225,10 +1235,10 @@ The notes are based on TeamCity 2017.2.4 which is actual at the moment of GDPR e
 
 ### TeamCity and Users' Personal Data
 
-The most important user\-related data stored by TeamCity is:
-* full name and username \- stored in the database and shown on the user's profile and whenever the user is referenced. When a user triggers a build, these are also stored in the build's parameters and passed into the build
-* user's email \- stored in the database and shown on the user's profile, used to send out notifications
-* IP address of the clients accessing the server \- can appear in the [internal logs](teamcity-server-logs.md)
+The most important user-related data stored by TeamCity is:
+* full name and username - stored in the database and shown on the user's profile and whenever the user is referenced. When a user triggers a build, these are also stored in the build's parameters and passed into the build
+* user's email - stored in the database and shown on the user's profile, used to send out notifications
+* IP address of the clients accessing the server - can appear in the [internal logs](teamcity-server-logs.md)
 
 TeamCity internal logs can also record some unstructured user\-related information (e.g. submitted by the user or sent by the browser with the HTTP requests, retrieved according to the configured settings from the users source like LDAP)
 

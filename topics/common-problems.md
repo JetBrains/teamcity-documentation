@@ -1,13 +1,10 @@
 [//]: # (title: Common Problems)
 [//]: # (auxiliary-id: Common Problems)
 
-## Most frequently used documentation sections
+Most user issues are related to the following topics. Before reporting your problem, check if any of these Help pages contains the solution already:
 
-* [Configuring server memory settings](installing-and-configuring-the-teamcity-server.md)  
+* [Configuring server memory settings](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server)  
 * [Reporting server slowness issues](reporting-issues.md#Collect+Data)
-
-
-__[Back to top](#Most+frequently+used+documentation+sections)__
 
 ## Build works locally but fails or misbehaves in TeamCity
 
@@ -17,7 +14,7 @@ To do that, follow this procedure:
 
 - Find a way to run the task from a command prompt. Make sure it works on the TeamCity agent machine, under the same user as the TeamCity agent runs under, with the same environment the agent receives. If necessary, run the TeamCity agent under a different user or tweak its environment. 
 - When the command runs OK, configure the same command in a TeamCity build using the command\-line runner with the custom script setting. 
-- If that works, try other runner if that feels applicable.
+- If that works, try another runner if that feels applicable.
 
 Here are details on the approach:
 
@@ -25,7 +22,7 @@ Check that the build runs fine from the command prompt when run on the same mach
 
 If the TeamCity build agent is run as a service (for example, it is installed as a Windows service), try running the TeamCity agent under a regular user with administrative permissions [from the command line](setting-up-and-running-additional-build-agents.md#Starting+the+Build+Agent). See also [Windows Service limitations](known-issues.md#Agent+running+as+Windows+Service+Limitations).
 
-If this fixes the issue, you can try to figure out why running under the service is a problem for the build. Most often this is service\-specific and is not related to TeamCity directly. Also, you can set up the TeamCity agent to be run from the console all the time (for example, [configure](setting-up-and-running-additional-build-agents.md#Automatic+Agent+Start+under+Windows) an automatic user logon and run the agent on the user logon).
+If this fixes the issue, you can try to figure out why running under the service is a problem for the build. Most often this is service-specific and is not related to TeamCity directly. Also, you can set up the TeamCity agent to be run from the console all the time (for example, [configure](setting-up-and-running-additional-build-agents.md#Automatic+Agent+Start+under+Windows) an automatic user logon and run the agent on the user logon).
 
 Here are the detailed steps you can use to run a build from the command line.
 
@@ -51,12 +48,7 @@ If it still behaves differently in TeamCity, most probably this is an environmen
 
 If the command line runner works but the dedicated runner does not while the options are all the same, create a new issue in our [tracker](http://youtrack.jetbrains.net/issues/TW) detailing the case. Please attach all the build step settings, the build log, all agent logs covering the build, the command you used in the console to run the build and the full console output of the build.
 
-
-[//]: # (Internal note. Do not delete. "Common Problemsd63e112.txt")    
-
-
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
+[//]: # (Internal note. Do not delete. "Common Problemsd63e112.txt")
 
 ## Build is slow under TeamCity
 
@@ -70,20 +62,16 @@ If there is some long operation and it is a TeamCity\-related one (before start 
 
 If you want to [turn to us](https://confluence.jetbrains.com/display/TW/Feedback) with the issue, make sure to describe the visible effects, detail the process of investigation and attach the build log, full agent logs and other data collected.
 
-
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
-
 ## Started Build Agent is not available on the server to run builds
 
-First start of agent after installation or TeamCity server upgrade/plugin installation can take time as agent downloads updates form the server and auto\-upgrades. 
+First start of agent after installation or TeamCity server upgrade/plugin installation can take time as agent downloads updates form the server and autoupgrades. 
 
 Regularly, agent should become connected in 1 to 10 minutes, depending on the agent/server network connection speed.
 
-If the agent is not connected within that time, check the name of the agent (as configured in `conf\buildAgent.properties` file) and check the tabs under the Agents server UI section:
-* the agent is under Connected \- the agent is ready to run builds
-* the agent is under Disconnected \- the agent was connected to the server, but became disconnected. Check the "Inactivity reason" in the table. If the reason is "Agent has unregistered (will upgrade)", then wait for several more minutes
-* the agent is under Unauthorized \- all the agents connected to the server for the first time should be authorized by a server administrator
+If the agent is not connected within that time, check the name of the agent (as configured in `conf\buildAgent.properties` file) and check the tabs under the __Agents__ page:
+* the agent is under Connected - the agent is ready to run builds
+* the agent is under Disconnected - the agent was connected to the server, but became disconnected. Check the "Inactivity reason" in the table. If the reason is "Agent has unregistered (will upgrade)", then wait for several more minutes
+* the agent is under Unauthorized - all the agents connected to the server for the first time should be authorized by a server administrator
 
 If the agent stays in the state for more than 10 minutes and you have a fast network connection between the agent and the server, do the following:
 * check the related agent machine to ensure that the agent process is running and `serverURL` in `conf\buildAgent.properties` is correct (and that the server is reachable by that URL from the machine);
@@ -92,29 +80,18 @@ If the agent stays in the state for more than 10 minutes and you have a fast net
 * check [server logs](teamcity-server-logs.md) (`teamcity-server.log`) for any messages/errors mentioning agent name or IP.
 
 If you cannot find the cause of the delayed agent upgrade in the logs, [contact us](https://confluence.jetbrains.com/display/TW/Feedback) and provide the full agent and server logs. Be sure to check/include the state of the agent processes (java ones) on the agent machine.
- 
-
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
-
-
 
 ## Artifacts of a build are not cleaned
 
 If you encounter a case when artifacts are preserved while they should have been removed by the server clean-up process, check the following:
 * the clean-up rules of the build configuration, artifacts section
 * presence of the icon "This build is used by other builds" in the build history line (prior to Pin action/icon on Build History)
-* build's Dependencies tab, "Delivered Artifacts" section. For every build configuration, check whether "Prevent dependency artifacts clean\-up" is turned ON (this is default value). If it is, then the build's artifacts are not cleaned because of the setting. 
+* build's Dependencies tab, "Delivered Artifacts" section. For every build configuration, check whether "Prevent dependency artifacts clean-up" is turned ON (this is default value). If it is, then the build's artifacts are not cleaned because of the setting. 
 
 Read more on [clean-up settings](clean-up.md#Base+Rule+Behavior+for+Dependency+Builds).
 
-
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
-
-
-
 ## Database-related issues
+{product="tc"}
 
 ### "out of memory" error with internal (HSQLDB) database
 
@@ -225,13 +202,6 @@ To fix a problem, perform the following steps:
 
 5. Upon the successful completion of the database migration, the `maintainDB` tool should update the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/database.properties file with references to the new database. Ensure that the file has been updated. Edit the file manually if the tool fails to do it automatically.
 6. Start the TeamCity server.
-
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
-
-
-
-
 
 #### MySQL exception: Specified key was too long; max key length is 767 bytes 
 
@@ -465,11 +435,6 @@ For __MySQL 5.7\+ and MariaDB 10.2\+__ use the defaults, no changes are required
     
 2.  Restart MySQL for the changes to `my.cnf` to take effect.
 
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
-
-
-
 ### 'This driver is not configured for integrated authentication' error with MS SQL database
 
 During TeamCity installation, the following error might occur when connecting and creating the MS SQL database with Windows integrated security: "SQL error when doing: Taking a connection from the data source: This driver is not configured for integrated authentication."
@@ -500,27 +465,16 @@ This error can occur when the Oracle JDBC driver is not compatible with the Orac
 
 In order to resolve the problem, use the Oracle JDBC driver from your Oracle server installation, or [download the driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) of the same version as the Oracle server.
 
-
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
-
-
-
 ## Common Maven issues
 
-There are two kinds of Maven\-related issues commonly seen in the TeamCity build configurations:
+There are two kinds of Maven-related issues commonly seen in the TeamCity build configurations:
 * Error message on "Maven" tab of build configuration: "An error occurred during collecting Maven project information ... "
 * Error message in build configuration with Maven dependencies trigger activated: "Unable to check for Maven dependency Update ..."
-If the build configuration produces successful builds despite displaying such error messages, these errors are likely to be caused by the __server\-side Maven misconfiguration__.
+If the build configuration produces successful builds despite displaying such error messages, these errors are likely to be caused by the __server-side Maven misconfiguration__.
 
-To collect information for the __Maven__ tab, or to perform Maven dependencies check (for the trigger), TeamCity runs the embedded Maven. The execution is performed on the _server_ machine, and any _agent\-side_ maven settings are __not accessible__. TeamCity resolves the `settings.xml` files on the server\-side separately, as described in [Maven Server-Side Settings](maven-server-side-settings.md).
+To collect information for the __Maven__ tab, or to perform Maven dependencies check (for the trigger), TeamCity runs the embedded Maven. The execution is performed on the _server_ machine, and any _agent\-side_ maven settings are __not accessible__. TeamCity resolves the `settings.xml` files on the server-side separately, as described in [Maven Server-Side Settings](maven-server-side-settings.md).
 
 It makes sense to check if the `server-side settings.xml` files contain correct information about remote repositories, proxies, mirrors, profiles, credentials, and so on.
-
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
-
-
 
 ## "Critical error in configuration file" errors
 
@@ -531,19 +485,10 @@ __VCS root with id "XXX" does not exist__
   
 The build configuration or template reference a VCS root which is not defined in the system. Remedy actions: Restore the VCS root or create a new VCS root with the id noted or edit the file noted in the message to remove the reference to the VCS root.
 
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
-
-
-
 ## TeamCity installation problems
+{product="tc"}
 
 If the TeamCity web UI cannot be accessed after installation, you might be running TeamCity on a port that is already in use by another program. [Check and configure](installing-and-configuring-the-teamcity-server.md#Installation+Configuration) your TeamCity installation.
-
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
-
-
 
 ## Problems with TeamCity NuGet Feed
 
@@ -553,13 +498,11 @@ To force TeamCity to reindex all available packages and reset the NuGet package 
 
 For earlier versions, refer to [this section](https://confluence.jetbrains.com/display/TCD8/Common+Problems).
 
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
-## Problems with .Net-related TeamCity Tools
+## Problems with .NET-related TeamCity Tools
 
 ### Startup performance issues
 
-After upgrade to TeamCity 9.0 or later, .NET Framework below version 4.0 installed on TeamCity agents may cause performance issues of .Net\-related TeamCity tools due to Code access security (CAS) policy imposed by Microsoft.
+After upgrade to TeamCity 9.0 or later, .NET Framework below version 4.0 installed on TeamCity agents may cause performance issues of .NET-related TeamCity tools due to Code access security (CAS) policy imposed by Microsoft.
 
 To solve the issue, use one of the options:
 
@@ -577,20 +520,12 @@ To solve the issue, use one of the options:
     
     You can modify the machine.config file as described in this [external blog post](http://blogs.msdn.com/b/amolravande/archive/2008/07/20/startup-performance-disable-the-generatepublisherevidence-property.aspx) and pass this config file to all agents, e.g. using a custom script.
 
-2. Alternatively, upgrade .Net Framework on the TeamCity agents to version 4.0 and above. Details are available in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/dd233103%28v=vs.100%29.aspx#simplification). 
-
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
-
-
+2. Alternatively, upgrade .Net Framework on the TeamCity agents to version 4.0 and above. Details are available in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/dd233103%28v=vs.100%29.aspx#simplification).
 
 ## Using tools requiring manual input, in particular Extended Validation code signing
 
-You might want to use tools which require some manual interaction during the build procedure executed on the TeamCity agent. This is not a TeamCity\-specific problem, so it should be approached using generic means.
+You might want to use tools which require some manual interaction during the build procedure executed on the TeamCity agent. This is not a TeamCity-specific problem, so it should be approached using generic means.
 
-Under WIndows, you might want to configure TeamCity agent to run not as a Service, but with access to the desktop by configuring automatic user logon, [related details](setting-up-and-running-additional-build-agents.md#Automatic+Agent+Start+under+Windows).
+Under Windows, you might want to configure TeamCity agent to run not as a Service, but with access to the desktop by configuring automatic user logon, [related details](setting-up-and-running-additional-build-agents.md#Automatic+Agent+Start+under+Windows).
 
-There is no simple solution for Extended Validation (EV) code signing as the feature is built in for a reason. There is some discussion on the issue on [stack overflow](https://stackoverflow.com/questions/17927895/automate-extended-validation-ev-code-signing=). The appropriate solutoin seems to implement a dedicated service with own authorization approach and sign the binariies through it.
-
-__[Back to top](#Most+frequently+used+documentation+sections)__
-
+There is no simple solution for Extended Validation (EV) code signing as the feature is built in for a reason. There is some discussion on the issue on [stack overflow](https://stackoverflow.com/questions/17927895/automate-extended-validation-ev-code-signing=). The appropriate solution seems to implement a dedicated service with own authorization approach and sign the binaries through it.

@@ -62,25 +62,26 @@ __Consider the following guidelines for posts__:
 Check the sections below for common cases and specific information to collect and send to us.
 
 ## Slowness, Hangings and Low Performance
+{product="tc"}
 
 If TeamCity is running slower than you would expect, please use the notes below to locate the slow process and send us all the relevant details if the process is a TeamCity one.
 
-#### Determine Which Process Is Slow
+### Determine Which Process Is Slow
 
-If you experience a slow TeamCity web UI response, checking for changes process, server\-side sources checkout, long clean-up times or other slow server activity, your target should be the machine where the TeamCity server is installed.   
+If you experience a slow TeamCity web UI response, checking for changes process, server-side sources checkout, long clean-up times or other slow server activity, your target should be the machine where the TeamCity server is installed.   
 If the issue is related only to a single build, you will need to investigate the TeamCity agent machine, which is running the build, and the server. 
 
-Investigate the system resources (CPU, memory, IO) load. If there is a high load, determine the process causing it. If it is not a TeamCity\-related process, that might need addressing outside of the TeamCity scope. Also check for generic slow\-down reasons like anti\-virus software, maintenance time, and so on.
+Investigate the system resources (CPU, memory, IO) load. If there is a high load, determine the process causing it. If it is not a TeamCity-related process, that might need addressing outside of the TeamCity scope. Also check for generic slow-down reasons like antivirus software, maintenance time, and so on.
 
 If it is the TeamCity server that is loading the CPU/IO or there is no substantial CPU/IO load and everything runs just fine except for TeamCity, then this is to be investigated further.
 
-Check if you have any [Conflicting Software](known-issues.md#Conflicting+Software) like anti\-virus running on the machine and disable/uninstall it.
+Check if you have any [conflicting software](known-issues.md#Conflicting+Software) like antivirus running on the machine. Consider temporarily disabling it for test purposes, but make sure it doesn't compromise the security of your setup.
 
 Check that the database used by TeamCity and the file storage of the TeamCity Data Directory do not have performance issues.
 
 If you have a substantial TeamCity installation, check your [memory settings](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) as the first step.
 
-#### Collect Data
+### Collect Data
 
 During the slow operation, take several thread dumps of the slow process (see below for thread dump taking approaches) with 5\-10 seconds interval. If the slowness continues, take several more thread dumps (for example, 3\-5 within several minutes) and then repeat after some time (for example, 10 minutes) while the process is still being slow.
 
@@ -168,6 +169,7 @@ long_query_time=15
 The log can also be sent to us for analysis.
 
 ## OutOfMemory Problems
+{product="tc"}
 
 If you experience problems with TeamCity consuming too much memory or "OutOfMemoryError"/"Java heap space" errors in the log, do the following:
 * Determine what process encounters the error (the actual building process, the TeamCity server, or the TeamCity agent). You can track memory and CPU usage by TeamCity with the charts on the __Administration | Server Administration | Diagnostics__ page of your TeamCity web UI.
@@ -189,6 +191,8 @@ See how to change JVM options for the [server](configuring-teamcity-server-start
 
 
 ## "Too many open files" Error
+{product="tc"}
+
 1. Determine what computer it occurs on
 2. Determine the process which has opened a lot of files and the files list (on Linux use `lsof`, on Windows you can use [handle](http://technet.microsoft.com/en-us/sysinternals/bb896655) or [TCPView](http://technet.microsoft.com/en-us/sysinternals/bb897437.aspx) for listing sockets)
 3. If the number is under thousands, check the OS and the process limits on the file handles (on Linux use `ulimit -n`) and increase them if necessary. Note that default Linux 1024 handles per process is way too small for a server application like TeamCity. Increase the number to at least 16000. Check the actual process limits after the change as there are different settings in the OS for settings global and per\-session limits (e.g. see the [post](http://stackoverflow.com/questions/13988780/too-many-open-files-ulimit-already-changed))
@@ -202,6 +206,7 @@ Note that you will most probably need to reboot the machine with the error after
 Please refer to [Common Problems](common-problems.md#Started+Build+Agent+is+not+available+on+the+server+to+run+builds)
 
 ## Logging events
+{product="tc"}
 
 The TeamCity server and agent create logs that can be used to investigate issues.
 
@@ -284,6 +289,7 @@ In case the [server-side checkout](vcs-checkout-mode.md#server-checkout) is used
 the build log and the agent log will contain the line "Patch is saved to file $\{file.name\}"Get the file and supply it with the problem description.
 
 ## VCS trigger debug logging
+{product="tc"}
 
 To enable debug logging in a VCS trigger in a specific build configuration:
 
@@ -396,7 +402,7 @@ If the settings are the same and you do not use the manual checkout mode but the
 
 ## Logging in TeamCity Eclipse plugin
 
-To enable tracing for the [plugin](eclipse-plugin.md), run Eclipse IDE with the `-debug <filename>` command line parameter. The `<filename>` portion of the argument should be a properties file containing key\-value pairs. The name of each property corresponds to the plugin module and the value is either `true` (to enable debug) or `false`. Here is an example of enabling most common tracing options:
+To enable tracing for the [plugin](eclipse-plugin.md), run Eclipse IDE with the `-debug <filename>` command line parameter. The `<filename>` portion of the argument should be a properties file containing key-value pairs. The name of each property corresponds to the plugin module and the value is either `true` (to enable debug) or `false`. Here is an example of enabling most common tracing options:
 
 
 ```Shell
@@ -445,20 +451,29 @@ To collect additional logs generated by [JetBrains dotCover](jetbrains-dotcover.
 [//]: # (Internal note. Do not delete. "Reporting Issuesd267e1133.txt")    
 
 
-
-
 ## JVM Crashes
 
-On a rare occasion of the TeamCity server or agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually `<[TeamCity server](teamcity-home-directory.md)>` or [`agent home`](agent-home-directory.md)`>/bin`.   
-Under Windows when running as a service, it can be other like `C:\Windows\SysWOW64`. You can also search the disk for the recent files with "hs_err_pid" in the name. See also the related Fatal Error Log section in this [document](http://www.oracle.com/technetwork/java/javase/felog-138657.html).
+On a rare occasion of the TeamCity server or agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.   
+If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually `<[TeamCity server](teamcity-home-directory.md)>` or [`agent home`](agent-home-directory.md)`>/bin`.   
+Under Windows, when running as a service, it can be other like `C:\Windows\SysWOW64`. You can also search the disk for the recent files with "hs_err_pid" in the name. See also the related Fatal Error Log section in this [document](http://www.oracle.com/technetwork/java/javase/felog-138657.html).
+{product="tc"}
+
+On a rare occasion of the TeamCity agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.   
+If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually or [`agent home`](agent-home-directory.md)`>/bin`. You can also search the disk for the recent files with `hs_err_pid` in the name. See also the related Fatal Error Log section in this [document](http://www.oracle.com/technetwork/java/javase/felog-138657.html).
+{product="tcc"}
 
 Please send this file to us for investigation and consider updating the JVM for the [server](installing-and-configuring-the-teamcity-server.md#Java+Installation) (or for [agents](setting-up-and-running-additional-build-agents.md#Configuring+Java)) to the latest version available.
+{product="tc"}
+
+Please send this file to us for investigation and consider updating the [agents'](setting-up-and-running-additional-build-agents.md#Configuring+Java) JVM to the latest version available.
+{product="tcc"}
 
 If you get the "There is insufficient memory for the Java Runtime Environment to continue. Native memory allocation (malloc) failed to allocate..." message with the crash or in the crash report file, make sure to [switch to 64-bit JVM](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server) or reduce the `-Xmx` setting below `1024m`, see details in the [memory configuration section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server).
+{product="tc"}
 
 ## Build Log Issues
 
-While investigating issues related to a build log, we might need the raw binary build log as stored by TeamCity. It can be downloaded via the Web UI from the Build Log build's tab: select "Verbose" log detail and use the "raw messages file" link at the top\-right.
+While investigating issues related to a build log, we might need the raw binary build log as stored by TeamCity. It can be downloaded via the Web UI from the Build Log build's tab: select "Verbose" log detail and use the "raw messages file" link in the upper right corner.
 
 ## IntelliJ IDEA Inspections
 

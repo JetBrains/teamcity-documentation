@@ -10,6 +10,10 @@ We aim to promptly address newly discovered security issues in the nearest bugfi
 However, the general assumption and __recommended setup is to deploy TeamCity in a trusted environment__ with no possibility for it to be accessed by malicious users.
 
 Along with these guidelines, please review [notes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) on configuring the TeamCity server for production use. For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/?s=security+bulletin) and the "Security" section in the release notes.
+{product="tc"}
+
+For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/?s=security+bulletin) and the "Security" section in the release notes.
+{product="tcc"}
 
 ## Security Self-Checklist
 

@@ -1,14 +1,16 @@
 [//]: # (title: TeamCity Configuration and Maintenance)
 [//]: # (auxiliary-id: TeamCity Configuration and Maintenance)
 
-<tip>
-
-Server configuration is only available to the [System Administrators](role-and-permission.md#Per-Project+Authorization+Mode).
-</tip>
+>Server configuration is only available to the [System Administrators](role-and-permission.md#Per-Project+Authorization+Mode).
 
 To change the server configuration, go to __Administration | Global Settings__. The following blocks of settings are available:
+{product="tc"}
+
+To change the server configuration, go to __Administration | Cloud Server Settings__.
+{product="tcc"}
 
 ## TeamCity Configuration
+{product="tc"}
 
 <table><tr>
 
@@ -92,6 +94,7 @@ The [configurable](configuring-server-url.md) URL of the running TeamCity server
 </td></tr></table>
 
 ## Build Settings
+{product="tc"}
 
 <table><tr>
 
@@ -153,6 +156,7 @@ Maximum time for a build. Can be overridden when defining [build failure conditi
 </td></tr></table>
 
 ## Version Control Settings
+{product="tc"}
 
 <table><tr>
 
@@ -197,7 +201,7 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 <anchor name="TeamCityConfigurationandMaintenance-EncryptionSettings"/>
 
 ## Encryption Settings
-{id="encryption-settings" auxiliary-id="Encryption Settings"}
+{id="encryption-settings" auxiliary-id="Encryption Settings" product="tc"}
 
 In this block, you can choose how TeamCity will process secure values: either using the default _scrambling strategy_ or by _encrypting them with a custom key_.
 
@@ -214,3 +218,6 @@ You can change the custom key or go back to using the default strategy anytime.
 During backup, your custom keys will be exported along with their projects and automatically available after restoring from backup. Since keys will be stored in the exported files in an open form, make sure the backup files are well-protected.
 
 </note>
+
+## Cloud Server Settings
+

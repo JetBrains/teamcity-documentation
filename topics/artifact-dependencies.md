@@ -295,7 +295,7 @@ As `USER_ID/PASSWORD` you can use either username/password of a regular TeamCity
 
 The system properties `teamcity.auth.userId` and `teamcity.auth.password` store automatically generated build-unique values which can be used to authenticate on TeamCity server. The values are valid only during the time the build is running. This generated user has limited permissions which allow build-related operations. The primary intent for the user is to use the authentication to download artifacts from other TeamCity builds within the build script.
 
-Using the properties is preferable to using real user credentials since it allows the server to track the artifacts downloaded by your build. If the artifacts were downloaded by the build configuration artifact dependencies or using the supplied properties, the specific artifacts used by the build will be displayed at the __Dependencies__ tab on the build results page. In addition, the builds which were used to get the artifacts from, can be configured to have different [clean-up](clean-up.md) logic.
+Using the properties is preferable to using real user credentials since it allows the server to track the artifacts downloaded by your build. If the artifacts were downloaded by the build configuration artifact dependencies or using the supplied properties, the specific artifacts used by the build will be displayed at the __Dependencies__ tab on the __Build Results__ page. In addition, the builds which were used to get the artifacts from, can be configured to have different [clean-up](clean-up.md) logic.
 
  <seealso>
         <category ref="concepts">

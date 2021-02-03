@@ -6,6 +6,7 @@ This page covers software-related environments TeamCity works with. For hardware
 ## Platforms (Operating Systems)
 
 ### TeamCity Server
+{product="tc"}
 
 Core features of TeamCity server are platform-independent. See [considerations](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server) on choosing server platform.   
 

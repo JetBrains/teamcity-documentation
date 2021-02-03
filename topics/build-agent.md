@@ -96,8 +96,7 @@ Typically, an agent upgrade happens when:
 
 <seealso>
         <category ref="installation">
-            <a href="installation.md#Install+Additional+Build+Agents">Installing and Running Build Agents</a>
-            <a href="setting-up-and-running-additional-build-agents.md">Setting up and Running Additional Build Agents</a>
+            <a href="setting-up-and-running-additional-build-agents.md">Setting up Additional Build Agents</a>
         </category>
         <category ref="concepts">
             <a href="build-grid.md">Build Grid</a>

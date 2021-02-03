@@ -461,6 +461,7 @@ This problem will be resolved in the TeamCity 2020.1.5 update. See the [related 
 ## .NET runner known issues
 
 ### .NET runner is not compatible with obsolete external .NET CLI Support plugin
+{product="tc"}
 
 The reworked [.NET build runner](net.md) is not compatible with the obsolete external plugin [.NET CLI Support](https://plugins.jetbrains.com/plugin/9190--net-cli-support) (used in versions 2017.1 and earlier). If the obsolete plugin is installed on your server, you will get the _Error creating bean with name "jetbrains.buildServer.dotnet.DotnetRunnerRunType"_ after updating to TeamCity 2020.1. To solve this issue, please [uninstall the obsolete plugin](installing-additional-plugins.md#Uninstalling+a+plugin+via+Web+UI) from your server.
 
