@@ -58,12 +58,6 @@ __Prior to TeamCity 2017.2__, TeamCity supports streams stored one level below t
 
 [Parameters](configuring-build-parameters.md) are supported. For the `StreamAtChange` option, use the [Label to checkout](#Checkout+On+Agent+Settings) field.
 
-<warning>
-
-__Performance impact__
-
-When this option is used with the [checkout on the server](vcs-checkout-mode.md#server-checkout) mode, the internal TeamCity source caching on the server side is disabled, which may worsen the performance of [clean checkouts](clean-checkout.md). Also, with this option, snapshot dependencies builds are not [reused](snapshot-dependencies.md). ([TW-41898](https://youtrack.jetbrains.com/issue/TW-41898) \- fixed in TeamCity 2017.1) 
-</warning>
 
 <note>
 
@@ -98,13 +92,6 @@ Client
 <td>
 
 Click this radiobutton to directly specify the client workspace name. The workspace must be already created by a Perforce client application like P4V or P4Win. Only the mapping rules from the configured client workspace are used. The client name is ignored.
-
-<warning>
-
-__Performance impact__
-
-When this option is used with the [VCS Checkout Mode](vcs-checkout-mode.md) mode, the internal TeamCity source caching on the server side is disabled, which may worsen the performance of [clean checkouts](clean-checkout.md). Also, with this option, snapshot dependencies builds are not [reused](snapshot-dependencies.md). ([TW-41898](https://youtrack.jetbrains.com/issue/TW-41898) \- fixed in TeamCity 2017.1) 
-</warning>
 
 
 </td></tr><tr>
