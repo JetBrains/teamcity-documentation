@@ -214,11 +214,11 @@ Specify parameters to be passed to `powershell.exe`.
 </td></tr></table>
 
 ## Docker Settings
+{product="tc"}
 
 To enable support for Docker in PowerShell steps, run the TeamCity server with the `-Dteamcity.docker.runners=jetbrains_powershell` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
 In this section, you can specify a Docker image which will be [used to run the build step](docker-wrapper.md).
-
 
 ### Current Limitations
 

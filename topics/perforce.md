@@ -2,11 +2,11 @@
 [//]: # (auxiliary-id: Perforce)
 
 This page contains descriptions of the fields and options available when setting up VCS roots using Perforce.   
-Common VCS Root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
+Common VCS root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
-<note>
+<note product="tc">
 
-A Perforce client must be installed on the TeamCity server and it should be present in `PATH`. Alternatively, a full path to `p4` could be set via the [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.perforce.customP4Path`.
+A Perforce client must be installed on the TeamCity server and it should be present in `PATH`. Alternatively, a full path to `p4` could be set via the [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.perforce.customP4Path`.   
 If you plan to use the agent-side [checkout mode](vcs-checkout-mode.md#agent-checkout), note that a Perforce client must be installed on the agents, and the path to the p4 executable must be added to the PATH environment variable.
 Also check [TeamCity and Perforce compatibility](perforce-vcs-compatibility.md).
 </note>
@@ -137,13 +137,16 @@ Example:
 
 __Prior to TeamCity 10.0__, editing the client mapping for a Perforce VCS root resulted in a [Clean Checkout](clean-checkout.md) before the next build. A [workaround](https://youtrack.jetbrains.com/issue/TW-25344#comment=27-821321) was provided.
 
-Now [Clean Checkout](clean-checkout.md) on a client mapping change __is not__ enforced for the agent\-side checkout in the following cases:
+Now [Clean Checkout](clean-checkout.md) on a client mapping change __is not__ enforced for the agent-side checkout in the following cases:
 
 * when a Perforce client name is used, changing the Perforce client mapping for the client will not result in a clean checkout
 * when a Perforce stream is used, changing the stream name while keeping the same stream root will not result in a clean checkout
 
 If the direct client mapping is changed, a clean checkout __will be forced__ unless the `teamcity.perforce.enable-no-clean-checkout` [internal property](configuring-teamcity-server-startup-properties.md) is set on the server.
+{product="tc"}
 
+If the direct client mapping is changed, a clean checkout __will be forced__.
+{product="tcc"}
 
 </td></tr><tr>
 
@@ -324,14 +327,15 @@ P4 path on the build agent
 
 <td>
 
-Specify the path to the Perforce command\-line client: `p4.exe` file.
+Specify the path to the Perforce command-line client: `p4.exe` file.
 
-This field works only on the agent side for agent\-side checkout (__prior to TeamCity 2017.2.2__ this path was used for both the server\-side checkout and the agent\-side checkout). On agent-side, the value of this parameter could be overriden via `TEAMCITY_P4_PATH` environment variable, if such a variable is set in buildAgent.properties or comes from build parameters.
+This field works only on the agent side for agent-side checkout (__prior to TeamCity 2017.2.2__ this path was used for both the server-side checkout and the agent-side checkout). On agent-side, the value of this parameter could be overriden via `TEAMCITY_P4_PATH` environment variable, if such a variable is set in buildAgent.properties or comes from build parameters.
 
-For the server, the p4 binary should be present in the PATH of the TeamCity server or can be specified via the `teamcity.perforce.customP4Path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). 
+For the server, the p4 binary should be present in the PATH of the TeamCity server or can be specified via the `teamcity.perforce.customP4Path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+{product="tc"}
 
-To restore old behavior, the `teamcity.perforce.p4PathOnServerWhitelist` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) can be used to specify a  semi\-colon\-separated list of allowed p4 paths.
-
+To restore old behavior, the `teamcity.perforce.p4PathOnServerWhitelist` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) can be used to specify a semicolon-separated list of allowed p4 paths.
+{product="tc"}
 
 </td></tr><tr>
 

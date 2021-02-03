@@ -1,6 +1,7 @@
 [//]: # (title: TeamCity Disk Space Watcher)
 [//]: # (auxiliary-id: TeamCity Disk Space Watcher)
-TeamCity server regularly checks for free disk space on the server machine (in the TeamCity Data Directory) and displays a warning on all the pages of the web UI is the free disk space falls below a certain threshold.  If the space continues to decrease and reaches a certain limit, the build queue is paused.
+
+The TeamCity server regularly checks for free disk space on the server machine (in the TeamCity Data Directory) and displays a warning on all the pages of the web UI is the free disk space falls below a certain threshold. If the space continues to decrease and reaches a certain limit, the build queue is paused.
 
 The thresholds can be changed by modifying the following [internal properties](configuring-teamcity-server-startup-properties.md) values in __KB__:
 

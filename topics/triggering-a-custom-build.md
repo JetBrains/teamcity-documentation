@@ -33,7 +33,10 @@ On the __General__ options you can also specify whether
 ### Dependencies
 
 _This tab is available only for builds that have dependencies on other builds_.   
-You can enforce rebuilding of all dependencies and select a particular build whose artifacts will be taken. By default, the last 20 builds are displayed. To increase the number of builds displayed in the drop-down menu to 50, use the `teamcity.runCustomBuild.buildsLimit=50` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+You can enforce rebuilding of all dependencies and select a particular build whose artifacts will be taken. By default, the last 20 builds are displayed.
+
+To increase the number of builds displayed in the drop-down menu to 50, use the `teamcity.runCustomBuild.buildsLimit=50` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+{product="tc"}
 
 Note that if you re-run a dependent build, TeamCity will try to rebuild all dependency builds, including failed ones, by default.
 

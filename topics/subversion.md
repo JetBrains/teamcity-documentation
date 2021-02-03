@@ -306,13 +306,21 @@ When TeamCity has to connect to a SVN external, it uses the following sequence:
 
 ## Timeouts
 
-Sometimes, the SVN checkout operation for remote SVN servers may fail with a error like `svn: E175002: timed out waiting for server`. Usually this can happen due to network slowness or the SVN server overload.The timeout values for the connection and for read operations can be configured.
+Sometimes, the SVN checkout operation for remote SVN servers may fail with an error like `svn: E175002: timed out waiting for server`. Usually this can happen due to network slowness or the SVN server overload.The timeout values for the connection and for read operations can be configured.
 
 ### Connection timeout
 
-Connection timeout is applied when TeamCity creates a connection to the SVN server. The default timeout for this operation is __60 seconds__, and can be specified via the TeamCity internal property `teamcity.svn.connect.timeout`, in seconds. The value of the property is set differently for server-side checkout and agent-side checkout:
+Connection timeout is applied when TeamCity creates a connection to the SVN server. The default timeout for this operation is __60 seconds__, and can be specified via the `teamcity.svn.connect.timeout` property, in seconds.
+
+The value of the property is set differently for server-side checkout and agent-side checkout:
+{product="tc"}
 * Server-side operations – [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+{product="tc"}
 * Agent-side checkout – [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
+{product="tc"}
+  
+For agent-side checkout, [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
+{product="tcc"}
 
 ### Read timeout
 
@@ -326,14 +334,24 @@ If not specified, the default value for the timeout is 1 hour.
 
 #### Subversion server access via svn:// or svn+ssh://
 
-In this case the read timeout can be specified in seconds via the TeamCity internal property `teamcity.svn.read.timeout`. The default value is 30 minutes. The value of the property is set differently for a server-side checkout and agent-side checkout:
+In this case, the read timeout can be specified in seconds via the T`teamcity.svn.read.timeout` property. The default value is 30 minutes.
+
+The value of the property is set differently for a server-side checkout and agent-side checkout:
+{product="tc"}
 * Server-side operations – [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+{product="tc"}
 * Agent-side checkout – [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
+{product="tc"}
+
+For agent-side checkout, [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
+{product="tcc"}
 
 ## Ignored changes
 
-By default, TeamCity ignores changes in the `svn:mergeinfo` properties and does not consider a directory _changed_ if only these properties are modified in a given commit.   
+TeamCity ignores changes in the `svn:mergeinfo` properties and does not consider a directory _changed_ if only these properties are modified in a given commit.
+
 You can alter the list of ignored SVN properties via the TeamCity [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.svn.ignorable.properties`. The value of this property is a comma-separated list of SVN properties; the default value is `svn:mergeinfo`.
+{product="tc"}
 
  <seealso>
         <category ref="admin-guide">

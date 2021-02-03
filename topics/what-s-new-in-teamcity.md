@@ -135,6 +135,7 @@ To add a new token, go to __My Settings & Tools | Access tokens__:
 <img src="tmp-access-token.png" alt="Temporary access tokens"/>
 
 ## Editing project settings on secondary nodes
+{product="tc"}
 
 TeamCity 2020.2 adds a [new responsibility](configuring-secondary-node.md#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) for secondary nodes. If granted to a node, it allows UI actions: running, stopping, tagging, commenting builds, and much more. The [list of supported UI actions](configuring-secondary-node.md#User-level+Actions+on+Secondary+Node) now also includes editing projects and build configurations (with a few limitations, such as editing cloud profiles).   
 Disabling this responsibility will switch a secondary node to a read-only mode.

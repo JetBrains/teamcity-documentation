@@ -245,9 +245,11 @@ As mentioned [above](#Tagging+for+TeamCity-launched+instances), TeamCity tags ev
 
 Since Amazon doesn't provide a robust API method to retrieve all instance types, Amazon integration relies on the periodical update of AWS SDK to make new instance types available.
 
-However, there is a workaround if you are not willing to wait. To register new Instance Types, use the `teamcity.ec2.instance.types` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) with new instance types separated by ","
+However, there is a workaround if you are not willing to wait. To register new Instance Types, use the `teamcity.ec2.instance.types` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) with new instance types separated by ",".
+{product="tc"}
 
 ### Proxy settings
+{product="tc"}
 
 If your TeamCity server needs to use a proxy to connect to AWS API endpoint, configure the following server [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to connect to Amazon AWS addresses.
 

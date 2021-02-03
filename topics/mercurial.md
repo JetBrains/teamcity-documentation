@@ -166,8 +166,9 @@ The path to the hg executable. Used on TeamCity server only if included into whi
  
 
 ### Path to hg executable detection
+{product="tc"}
 
-When an agent starts, the hg\-plugin detects Mercurial installed on the agent machine.
+When an agent starts, the hg-plugin detects Mercurial installed on the agent machine.
 
 The plugin tries to run the `hg version` command using the path specified by the `teamcity.hg.agent.path` parameter. You can change this parameter in \<[Agent Home Directory](agent-home-directory.md)\>\conf\buildAgent.properties.
 
@@ -248,10 +249,11 @@ When enabled, TeamCity creates a local agent mirror first (under agent's `system
 </td></tr></table>
 
 ## Internal Properties
+{product="tc"}
 
-This section describes hg\-related [internal properties](configuring-teamcity-server-startup-properties.md). You can modify the defaults to adjust the Mercurial settings as needed.
+This section describes hg-related [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). You can modify the defaults to adjust the Mercurial settings as needed.
 
-Server\-side [internal properties](configuring-teamcity-server-startup-properties.md):
+Server-side internal properties:
 
 <table><tr>
 

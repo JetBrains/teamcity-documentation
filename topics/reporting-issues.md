@@ -95,7 +95,7 @@ It is recommended that you take a thread dump of the TeamCity server from the We
 
 If the UI is not accessible (or the server is not yet fully started), you can take a server thread dump manually using the approaches described [below](#Taking+Thread+Dump).
 
-You can also adjust the `teamcity.diagnostics.requestTime.threshold.ms=30000` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to change the timeout after which a thread dump is automatically created in the `threadDumps-<date>` directory under TeamCity logs whenever there is a user\-originated web request taking longer than timeout.
+You can also adjust the `teamcity.diagnostics.requestTime.threshold.ms=30000` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to change the timeout after which a thread dump is automatically created in the `threadDumps-<date>` directory under TeamCity logs whenever there is a user-originated web request taking longer than timeout.
 
 ### Collecting CPU Profiling Data on Server
 

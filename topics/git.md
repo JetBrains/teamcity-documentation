@@ -424,7 +424,7 @@ This way, builds will run significantly faster, with no need to check out the wh
 > Alternatively, you can store the `system/git` directory in a persistent volume, so it keeps all the updates even when a cloud agent is destroyed, and configure its automatic mounting on each newly created agent.
 
 ## Configuring Git Garbage Collection on Server
-{id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server"}
+{id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server" product="tc"}
 
 TeamCity server maintains a local clone for every Git repository used in the VCS roots configured on the server. Since the server performs fetch in those clones many times a day, the clone needs regular optimization to maintain predictable performance. If the Git garbage collection for the clone was not run for a long time, the process of collecting changes may slow down or start to report memory-related errors.
 TeamCity can automatically run git gc periodically when native Git client can be found on the server. Inability to run Git GC results in a related health report.
@@ -449,7 +449,7 @@ TeamCity supports Git LFS for agent-side checkout. To use it, install git 1.8.\+
 We recommend using Git LFS version 2.12.1 or later as earlier versions come with a [vulnerability exploit](https://github.com/git-lfs/git-lfs/security/advisories/GHSA-4g4p-42wc-9f3m).
 
 ## Internal Properties
-{id="internalProperties" auxiliary-id="Internal Properties"}
+{id="internalProperties" auxiliary-id="Internal Properties" product="tc"}
 
 For Git VCS, it is possible to configure the following [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties):
 

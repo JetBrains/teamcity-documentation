@@ -68,7 +68,7 @@ Make sure to renumber all lines after the inserted ones.
 
 <seealso>
         <category ref="concepts">
-            <a href="configuring-teamcity-server-startup-properties.md">Configuring TeamCity Server Startup Properties</a>
+            <a href="configuring-teamcity-server-startup-properties.md" product="tc">Configuring TeamCity Server Startup Properties</a>
         </category>
         <category ref="admin-guide">
             <a href="agent-home-directory.md">Agent Home Directory</a>

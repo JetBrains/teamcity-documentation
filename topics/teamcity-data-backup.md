@@ -1,6 +1,12 @@
 [//]: # (title: TeamCity Data Backup)
 [//]: # (auxiliary-id: TeamCity Data Backup)
 
+The database of your TeamCity Cloud instance is backed up on a daily basis. The backed up files are usually store for 5 days. We constantly monitor active servers and can quickly restore the lost data in case the database gets corrupted due to any error.
+{product="tcc"}
+
+## About Data Backup in TeamCity
+{product="tc"}
+
 TeamCity provides several ways to back up its data:
 * [Backup from the Web UI](creating-backup-from-teamcity-web-ui.md): an action in the web UI (can also be triggered via [REST API](rest-api-reference.md#Data+Backup)) to create a backup while the server is running. It is recommended for regular maintenance backups. Some limitations on the backed up data apply (see the [related section](#Backing+up+Data) below). This option is also available on upgrade in the maintenance screen: on the first start of a newer version of the TeamCity server.
 * [Backup via maintainDB command-line tool](creating-backup-via-maintaindb-command-line-tool.md): same as via the UI. To include all data, use the tool when the server [is stopped](creating-backup-via-maintaindb-command-line-tool.md#Performing+TeamCity+Data+Backup+with+maintainDB+Utility).
@@ -15,6 +21,7 @@ We strongly urge you to make the backup of TeamCity data before upgrading. Note 
 </note>
 
 ## Backing up Data
+{product="tc"}
 
 TeamCity __allows backing up__ the following data:
 * [Data stored in the database](manual-backup-and-restore.md#Database+Data)
@@ -43,7 +50,7 @@ If logs are selected for backup, TeamCity will search for them in [all artifact 
 
 Note that for large production TeamCity installations, exporting and importing of data from/to the database may not be an optimal solution and maintaining database backup via replication might be a better option; for example, see the corresponding [documentation](http://dev.mysql.com/doc/refman/5.0/en/replication.html) for MySQL database.
 
- <seealso>
+<seealso product="tc">
         <category ref="installation">
             <a href="upgrade.md">Upgrade</a>
         </category>

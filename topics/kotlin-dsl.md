@@ -633,6 +633,7 @@ object BuildC: buildType ({
 With these settings, the build configurations will be displayed in the UI in the following order: C, A, B.
 
 ### Kotlin DSL API documentation is not initialized yet
+{product="tc"}
 
 _Problem_:
 * `app/dsl-documentation/index.html` on our Teamcity server displays "Kotlin DSL API documentation is not initialized yet"
