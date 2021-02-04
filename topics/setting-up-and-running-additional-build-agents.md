@@ -74,6 +74,7 @@ The build process is launched by a TeamCity agent and thus shares the environmen
 
 ### Agent-Server Data Transfers
 {product="tc"}
+
 [//]: # (AltHead: Server-Agent Data Transfers)
 
 A TeamCity agent connects to the TeamCity server via the URL configured as the `serverUrl` agent property. This is called [unidirectional](#Unidirectional+Agent-to-Server+Communication) agent-to-server connection. If specifically configured, TeamCity agent can use legacy [bidirectional communication](#Bidirectional+Communication) which also requires establishing a connection from the server to the agents. To view whether the agent-server communication is unidirectional or bidirectional for a particular agent, navigate to __Agents | &lt;Agent Name&gt; | Agent Summary__ tab, the __Details__ section, __Communication Protocol__.

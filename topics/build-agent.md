@@ -86,6 +86,7 @@ Only users with certain roles can manage agents. See [Role and Permission](role-
 For a build agent configuration, refer to the [Build Agent Configuration](build-agent-configuration.md) section.
 
 ## Agent Upgrade
+{product="tc"}
 
 A TeamCity agent is upgraded automatically when necessary. The process involves downloading new agent files from the TeamCity server and restarting the agent on the new files. In order to successfully accomplish this, the user under whose account the agent runs should have [enough](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) permissions.
 
@@ -93,7 +94,11 @@ Typically, an agent upgrade happens when:
 * the server is [upgraded](upgrade.md)
 * an agent plugin is [added](installing-additional-plugins.md) or [updated](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#PluginsPackaging-AgentUpgradeonUpdatingPlugins) on the server
 * [a new tool is installed](installing-agent-tools.md)
-{product="tc"}
+
+## Agent Upgrade
+{product="tcc"}
+
+A TeamCity agent is upgraded automatically when the server is upgraded. The process involves downloading new agent files from the TeamCity server and restarting the agent on the new files. In order to successfully accomplish this, the user under whose account the agent runs should have [enough](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) permissions.
 
 <seealso>
         <category ref="installation">
