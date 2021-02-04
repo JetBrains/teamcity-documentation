@@ -4,6 +4,7 @@
 This page contains a list of workarounds for known issues in TeamCity.
 
 To see issues specific to particular versions of TeamCity, go to the respective section of [upgrade notes](upgrade-notes.md).
+{product="tc"}
 
 <anchor name="jdk8_240"/>
 

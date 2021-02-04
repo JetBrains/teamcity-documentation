@@ -1,7 +1,7 @@
 [//]: # (title: Creating and Editing Build Configurations)
 [//]: # (auxiliary-id: Creating and Editing Build Configurations)
 
-This page details creating build configurations via the TeamCity web UI. Other options include the [REST API](rest-api-reference.md#Build+Configuration+And+Template+Settings) and using TeamCity project configuration in [DSL based on the Kotlin language](storing-project-settings-in-version-control.md).
+This page details creating build configurations via the TeamCity web UI. Other options include the [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-build-configurations.html#Build+Configuration+Locator) and using TeamCity project configuration in [DSL based on the Kotlin language](storing-project-settings-in-version-control.md).
 
 To create a build configuration, open __General Settings__ of a project and click __Create build configuration__ under the __Build Configurations__ section.
 

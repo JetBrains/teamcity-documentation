@@ -203,10 +203,11 @@ If you need to publish NuGet packages and then use their contents within one bui
    Previously, the _Build file_ field of the [Gradle](gradle.md) runner was set to `build.gradle` by default. We have removed this default value as some users rely on custom names of build files and prefer to let Gradle decide what file to choose.   
    If you use `build.gradle` as your build file, all will continue to work as before this update.
 * __REST API updates__:
-   * [VCS labels](rest-api-reference.md#VCS+Labels)
-   * [Test statistics for personal builds](rest-api-reference.md#Tests+and+Build+Problems)
+   * [VCS labels](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#VCS+Labels)
+   * [Test statistics for personal builds](https://www.jetbrains.com/help/teamcity/rest/manage-tests-and-build-problems.html)
 * The [.NET](net.md) build runner now supports earlier versions of Visual Studio and MSBuild. Currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.
 * To see all bundled tool updates, read our [upgrade notes](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
+{product="tc"}
 * Version 2020.2 comes with ~30 performance fixes in various pieces of functionality (for example, in the Custom Run dialog).
 
 ## Fixed issues
@@ -214,6 +215,7 @@ If you need to publish NuGet packages and then use their contents within one bui
 See [TeamCity 2020.2 release notes](teamcity-2020-2-release-notes.md).
 
 ## Upgrade notes
+{product="tc"}
 
 Before upgrading, we highly recommend reading about important changes in [version 2020.2 comparing to 2020.1.x](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
 

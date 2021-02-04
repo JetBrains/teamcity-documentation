@@ -393,7 +393,11 @@ For a changelist which was checked in with one or several associated jobs, TeamC
 
 ## Logging
 
-All Perforce plugin operations are logged into __teamcity\-vcs.log__ files with category __jetbrains.buildServer.VCS.P4__ (on an agent or on a server, depending on the operation context). The detailed logging can be enabled with [TeamCity Server Logs](teamcity-server-logs.md).
+All Perforce plugin operations are logged into `teamcity-vcs.log` files with category `jetbrains.buildServer.VCS.P4` (on an agent or on a server, depending on the operation context). The detailed logging can be enabled with [TeamCity Server Logs](teamcity-server-logs.md).
+{product="tc"}
+
+All Perforce plugin operations are logged into `teamcity-vcs.log` files with category `jetbrains.buildServer.VCS.P4` (on an agent or on a server, depending on the operation context).
+{product="tcc"}
 
 ## Perforce Workspace Handling in TeamCity
 

@@ -4,8 +4,13 @@
 If you experience problems running TeamCity and believe they are related to the software, please [contact us](troubleshooting.md) with a detailed description of the issue.
 
 To fix a problem, we may need a wide range of information about your system as well as various logs. The section below explains how to collect such information for different issues.
+{product="tc"}
+
+In case with TeamCity Cloud, you only need to provide your server URL, and our support will be able to check the state of your server.
+{product="tcc"}
 
 ## Best Practices When Reporting Issues
+{product="tc"}
 
 Following these guidelines will ensure timely response and effective issue resolution. Check [Feedback](https://confluence.jetbrains.com/display/TW/Feedback) for appropriate ways to contact us. 
 
@@ -203,7 +208,7 @@ Note that you will most probably need to reboot the machine with the error after
 
 ## Agent does not connect to the server
 
-Please refer to [Common Problems](common-problems.md#Started+Build+Agent+is+not+available+on+the+server+to+run+builds)
+Please refer to [Common Problems](common-problems.md#Started+Build+Agent+is+not+available+on+the+server+to+run+builds).
 
 ## Logging events
 {product="tc"}
@@ -490,7 +495,7 @@ To help us investigate issues with inspections, do the following:
 
 ## Uploading Large Data Archives
 
-Files under 10 MB in size can be attached right into the [tracker issue](http://youtrack.jetbrains.net/issues/TW) (if you do not want the attachments to be publicly accessible, limit the attachment visibility to "teamcity\-developers" user group only).    
+Files under 10 MB in size can be attached right into the [tracker issue](http://youtrack.jetbrains.net/issues/TW) (if you do not want the attachments to be publicly accessible, limit the attachment visibility to "teamcity-developers" user group only).    
 You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrains.com](mailto:teamcity-support@jetbrains.com) or via [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) (up to 20 MB). Please do not forget to mention your TeamCity version and environment and archive the files before attaching.
 
 [//]: # (Internal note. Do not delete. "Reporting Issuesd267e1305.txt")    

@@ -47,8 +47,8 @@ Any changes made to authentication in the UI are reflected in the `<[TeamCity Da
 To load a preconfigured set of modules, use the __Load preset__ button, select a required option, and __Apply__ your changes. The following presets are available:
 * Default ([built-in authentication](#Built-in+Authentication) – [Token-based](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
 * [LDAP](ldap-integration.md)
-* Active directory ([LDAP](ldap-integration.md) with [NTLM](ntlm-http-authentication.md) and [Token-based](rest-api-reference.md#User+Access+Tokens))
-* Microsoft Windows Domain ([NTLM](ntlm-http-authentication.md), [Token-based](rest-api-reference.md#User+Access+Tokens) and [Basic HTTP](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#REST+Authentication))
+* Active directory ([LDAP](ldap-integration.md) with [NTLM](ntlm-http-authentication.md) and [Token-based](https://www.jetbrains.com/help/teamcity/rest/manage-users.html#User+Access+Tokens))
+* Microsoft Windows Domain ([NTLM](ntlm-http-authentication.md), [Token-based](https://www.jetbrains.com/help/teamcity/rest/manage-users.html#User+Access+Tokens) and [Basic HTTP](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#REST+Authentication))
 
 ### Enabling Multiple Authentication Modules
 
@@ -85,10 +85,16 @@ Handling of the user mapping by the bundled authentication modules:
 * LDAP Integration allows setting LDAP property to get TeamCity username from user's LDAP entry.
 * Modules, corresponding to Git hosting providers, allow admins mapping users with their external accounts by usernames. Each user can connect own profile to an external Git hosting account in __My settings & Tools | General | Authentication Settings__.
 
-Be cautious when modifying authentication settings: there can be a case when the administrator cannot login after changing authentication modules.   
-Let's imagine that the administrator had the "jsmith" TeamCity username and used the default authentication. Then, the authentication module was changed to Windows domain authentication (i.e. Windows domain authentication module was added and the default one was removed). If, for example, the Windows domain username of that administrator is "john.smith", they will not able to sign in anymore: they cannot login using the default authentication since it is disabled and cannot login using Windows domain authentication since their Windows domain username is not equal to the TeamCity username. The solution nevertheless is quite simple: the administrator can sign in using the [superuser account](super-user.md) and change their TeamCity username or specify their Windows domain username on their own profile page.
+Be cautious when modifying authentication settings: there can be a case when the administrator cannot sign in after changing authentication modules.   
+Let's imagine that the administrator had the "jsmith" TeamCity username and used the default authentication. Then, the authentication module was changed to Windows domain authentication (i.e. Windows domain authentication module was added and the default one was removed). If, for example, the Windows domain username of that administrator is "john.smith", they will not able to sign in anymore: not via the default authentication since it is disabled nor via Windows domain authentication since their Windows domain username is not equal to the TeamCity username. The solution nevertheless is quite simple: the administrator can sign in using the [superuser account](super-user.md) and change their TeamCity username or specify their Windows domain username on their own profile page.
+{product="tc"}
+
+Be cautious when modifying authentication settings: there can be a case when the administrator cannot sign in after changing authentication modules.   
+Let's imagine that the administrator had the "jsmith" TeamCity username and used the default authentication. Then, the authentication module was changed to Windows domain authentication (i.e. Windows domain authentication module was added and the default one was removed). If, for example, the Windows domain username of that administrator is "john.smith", they will not able to sign in anymore: not via the default authentication since it is disabled nor via Windows domain authentication since their Windows domain username is not equal to the TeamCity username.
+{product="tcc"}
 
 ### Special User Accounts
+{product="tc"}
 
 By default, TeamCity has a [Super User](super-user.md) account with maximum permissions and a [Guest User](guest-user.md) with minimal permissions. These accounts have no personal settings such as the [__Changes__](viewing-your-changes.md) page and Profile information as they are not related to any particular person but rather intended for special use cases.
 

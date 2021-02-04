@@ -10,6 +10,10 @@ Build tags are labels that can help you to:
 You can assign any number of tags for a single build, for example, `EAP` or `release` using the _Edit tags_ dialog by entering several tags separated by any symbol like space, comma, or semi-colon.
 
 Clicking a tag filters out all builds in the history: only the builds marked with the tag are displayed. Additionally, you can search for builds with particular tags using the [search field](search.md).
+{product="tc"}
+
+Clicking a tag filters out all builds in the history: only the builds marked with the tag are displayed.
+{product="tcc"}
  
 
 __To tag a build:__
@@ -28,6 +32,6 @@ The TeamCity web UI provides the following ways to tag a particular build:
     * Go to the __Comments and Tags__ tab and add/modify the build tags.
 * In the _[Pin/Unpin Build](pinned-build.md)_ dialog where you can tag the build in addition to pinning it. For builds with snapshot dependencies, there is an option to pin and tag the build as well as its snapshot dependencies.
 
-Alternatively, you can add and modify build tags using [TeamCity REST API](rest-api-reference.md#Build+Tags).
+Alternatively, you can add and modify build tags using [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Build+Tags).
 
 [//]: # (Internal note. Do not delete. "Build Tagd46e113.txt")    

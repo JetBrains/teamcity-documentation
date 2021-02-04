@@ -8,7 +8,7 @@ The database of your TeamCity Cloud instance is backed up on a daily basis. The 
 {product="tc"}
 
 TeamCity provides several ways to back up its data:
-* [Backup from the Web UI](creating-backup-from-teamcity-web-ui.md): an action in the web UI (can also be triggered via [REST API](rest-api-reference.md#Data+Backup)) to create a backup while the server is running. It is recommended for regular maintenance backups. Some limitations on the backed up data apply (see the [related section](#Backing+up+Data) below). This option is also available on upgrade in the maintenance screen: on the first start of a newer version of the TeamCity server.
+* [Backup from the Web UI](creating-backup-from-teamcity-web-ui.md): an action in the web UI (can also be triggered via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-data-backup.html)) to create a backup while the server is running. It is recommended for regular maintenance backups. Some limitations on the backed up data apply (see the [related section](#Backing+up+Data) below). This option is also available on upgrade in the maintenance screen: on the first start of a newer version of the TeamCity server.
 * [Backup via maintainDB command-line tool](creating-backup-via-maintaindb-command-line-tool.md): same as via the UI. To include all data, use the tool when the server [is stopped](creating-backup-via-maintaindb-command-line-tool.md#Performing+TeamCity+Data+Backup+with+maintainDB+Utility).
 * [Manual backup](manual-backup-and-restore.md): is suitable if you want to manage the backup procedure manually. 
 * You may need to [back up the build agent's data](backing-up-build-agent-s-data.md) only.
@@ -43,7 +43,7 @@ The following data is __not included__ into backup:
 * TeamCity application logs (they also reside under `<[TeamCity Home](teamcity-home-directory.md)>/logs`)
 * Any manually created files under `<[TeamCity Data Directory](teamcity-data-directory.md)>` that do not fall into previously mentioned items.   
 
-__The recommended approach__ is either to perform the backup process described under [Manual Backup and Restore](manual-backup-and-restore.md) or run a backup from the [web UI](creating-backup-from-teamcity-web-ui.md) regularly (for example, automated via [REST API](rest-api-reference.md#Data+Backup)) with the "Basic" level – this will ensure backing up all important data except build artifacts and build logs.
+__The recommended approach__ is either to perform the backup process described under [Manual Backup and Restore](manual-backup-and-restore.md) or run a backup from the [web UI](creating-backup-from-teamcity-web-ui.md) regularly (for example, automated via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-data-backup.html)) with the "Basic" level – this will ensure backing up all important data except build artifacts and build logs.
 
 Build artifacts and logs (if necessary) can be backed up manually by copying files under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` (prior to TeamCity 9.0 in `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/messages`).   
 If logs are selected for backup, TeamCity will search for them in [all artifact directories](build-artifact.md) currently specified on the server.

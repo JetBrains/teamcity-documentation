@@ -69,6 +69,8 @@
             <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="revision.md"/>
             <toc-element id="mapping-teamcity-concepts-to-other-ci-terms.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="teamcity-data-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="teamcity-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
         <toc-element id="supported-platforms-and-environments.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="testing-frameworks.md"/>

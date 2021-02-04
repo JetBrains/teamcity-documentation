@@ -3,7 +3,7 @@
 
 Since version 2020.1, the [Kubernetes Support](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) plugin is bundled with TeamCity. The plugin adds the Kubernetes type of [cloud profile](agent-cloud-profile.md) and allows running [build agents](build-agent.md) in your Kubernetes cluster.
 
-<note>
+<note product="tc">
 
 If you were using the Helm build runner, included in the external Kubernetes Support plugin, note that the built-in integration does not comprise the Helm runner. Refer to our [upgrade notes](upgrade-notes.md#Bundled+Kubernetes+Support+plugin+does+not+contain+Helm+runner) for more details.
 

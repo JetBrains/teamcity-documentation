@@ -49,7 +49,7 @@ Make sure the user used to perform the authentication (or _Guest_ user) has appr
 <warning>
 
 
-Use the TeamCity [REST API](rest-api-reference.md#Triggering+a+Build) to trigger a build. The section below is __obsolete__ and preserved for compatibility purposes only.
+Use the TeamCity [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Triggering+Build) to trigger a build. The section below is __obsolete__ and preserved for compatibility purposes only.
 
 </warning>
  

@@ -164,7 +164,7 @@ Selecting the _Print stacktrace_ checkbox is equivalent to adding the `-s` Gradl
 
 ### Build properties
 
-The TeamCity system parameters can be accessed in Gradle build scripts in the [same way](upgrade-notes.md#Gradle%3A+Breaking+change+compared+to+9.1.2) as Gradle properties. The recommended way to reference properties is as follows:
+The TeamCity system parameters can be accessed in Gradle build scripts in the same way as Gradle properties. The recommended way to reference properties is as follows:
 
 <tabs>
 

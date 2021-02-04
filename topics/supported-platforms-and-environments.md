@@ -360,6 +360,7 @@ JetBrains dotCover coverage. Requires [JetBrains dotCover](http://www.jetbrains.
 </td></tr></table>
 
 ## Supported Databases
+{product="tc"}
 
 See more at [Setting up an External Database](setting-up-an-external-database.md)
 

@@ -5,18 +5,29 @@
 > 
 {type="note"}
 
+## Why Upgrade TeamCity
+{product="tc"}
+
 TeamCity is systematically and frequently updated with new features and optimizations. __We highly recommend upgrading your server and agents as soon as the new version is released__. Each release introduces the following key improvements:
 * __new functionality__: including new runners, build features, UI enhancements, integration with third-party software, and instruments for customization. The recent [release notes](what-s-new-in-teamcity.md) give an example of the number and scale of features provided per major release.   
   New features are mostly released in major versions. To ensure smooth upgrade/downgrade between minor versions, bugfix updates do not add any important features but aim at fixing occurring problems.
 * __performance improvements__: one of the primary focuses of our team is to make TeamCity as fast and responsive as possible, which includes smooth UX, stable server performance, reasonable utilization of hardware resources, and many other aspects.
 * __security updates__: to comply with the industry-best security practices, we continuously analyze TeamCity and introduce multiple security improvements per release (for more details on security in TeamCity, read [these notes](security-notes.md)).
-* __bug fixes__: thanks to our QA team and active user feedback, we can quickly catch and fix even rare bags. If we notice a critical bug soon after releasing another TeamCity version, it is our priority to release the respective patch or the next bugfix update as soon as possible, which makes it especially crutial that you don't skip regular updates. Any news concerning patches, release issues, and upgrade notes are published [here](upgrade-notes.md).
+* __bug fixes__: thanks to our QA team and active user feedback, we can quickly catch and fix even rare bags. If we notice a critical bug soon after releasing another TeamCity version, it is our priority to release the respective patch or the next bugfix update as soon as possible, which makes it especially crucial that you don't skip regular updates. Any news concerning patches, release issues, and upgrade notes are published [here](upgrade-notes.md).
 
 Major updates are released twice a year, and each major release is followed by multiple minor (bugfix) releases. Read more about the release stages in the [following section](#Release+Stages).
-{product="tc"}
+
+## Why Upgrade TeamCity
+{product="tcc"}
+
+TeamCity is systematically and frequently updated with new features and optimizations. Each release introduces the following key improvements:
+* __new functionality__: including new runners, build features, UI enhancements, integration with third-party software, and instruments for customization. The recent [release notes](what-s-new-in-teamcity.md) give an example of the number and scale of features provided per major release.   
+  New features are mostly released in major versions. To ensure smooth upgrade/downgrade between minor versions, bugfix updates do not add any important features but aim at fixing occurring problems.
+* __performance improvements__: one of the primary focuses of our team is to make TeamCity as fast and responsive as possible, which includes smooth UX, stable server performance, reasonable utilization of hardware resources, and many other aspects.
+* __security updates__: to comply with the industry-best security practices, we continuously analyze TeamCity and introduce multiple security improvements per release (for more details on security in TeamCity, read [these notes](security-notes.md)).
+* __bug fixes__: thanks to our QA team and active user feedback, we can quickly catch and fix even rare bags. If we notice a critical bug soon after releasing another TeamCity version, it is our priority to release the respective patch or the next bugfix update as soon as possible, which makes it especially crucial that you don't skip regular updates.
 
 Major updates are released twice a year, and each major release is followed by multiple minor (bugfix) releases.
-{product="tcc"}
 
 ## Version Numbers
 

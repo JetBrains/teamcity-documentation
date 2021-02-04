@@ -81,6 +81,7 @@ If the agent stays in the state for more than 10 minutes and you have a fast net
 * check that all the related environment [requirements](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) are met;
 * check [agent logs](viewing-build-agent-logs.md) (`teamcity-agent.log`, `launcher.log`, `upgrade.log`) for any related messages/errors;
 * check [server logs](teamcity-server-logs.md) (`teamcity-server.log`) for any messages/errors mentioning agent name or IP.
+{product="tc"}
 
 If you cannot find the cause of the delayed agent upgrade in the logs, [contact us](https://confluence.jetbrains.com/display/TW/Feedback) and provide the full agent and server logs. Be sure to check/include the state of the agent processes (java ones) on the agent machine.
 
@@ -494,6 +495,7 @@ The build configuration or template reference a VCS root which is not defined in
 If the TeamCity web UI cannot be accessed after installation, you might be running TeamCity on a port that is already in use by another program. [Check and configure](installing-and-configuring-the-teamcity-server.md#Installation+Configuration) your TeamCity installation.
 
 ## Problems with TeamCity NuGet Feed
+{product="tc"}
 
 If you are experiencing issues with partial TeamCity NuGet Feed (for example, missing NuGet packages), you might have to reindex the TeamCity NuGet Feed.
 

@@ -79,7 +79,7 @@ __TeamCity Server__
 
 <td>
 
-The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, etc. are stored in a [database](setting-up-an-external-database.md).
+The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, etc. are stored in a database.
 
 <note>
 
@@ -194,7 +194,7 @@ __Build Artifacts__
 
 <td>
 
-Files produced by a build, for example, installers, WAR files, reports, log files, etc, when they become available for download.
+Files produced by a build, for example, installers, WAR files, reports, log files, when they become available for download.
 
 </td></tr></table>
 

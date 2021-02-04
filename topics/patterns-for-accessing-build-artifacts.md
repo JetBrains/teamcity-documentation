@@ -4,14 +4,14 @@
 
 <warning>
 
-It is recommended to use the TeamCity [REST API](rest-api-reference.md#Build+Artifacts) for accessing artifacts from scripts, as the REST API provides build selection facilities and allows listing artifacts.
+It is recommended to use the TeamCity [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Build+Artifacts) for accessing artifacts from scripts, as the REST API provides build selection facilities and allows listing artifacts.
 </warning>
 
 This section is preserved for __backward compatibility__ with the previous TeamCity versions and for some specific functionality.
 
 Check the following information as well:
-* If you need to access the artifacts in your builds, consider using the TeamCity's built\-in [Artifact Dependency](dependent-build.md#Artifact+Dependency) feature. 
-* You can also download artifacts from TeamCity using the [Ivy](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Ant+Build+Script) dependency manager. 
+* If you need to access the artifacts in your builds, consider using the TeamCity's built-in [Artifact Dependency](dependent-build.md#Artifact+Dependency) feature.
+* You can also download artifacts from TeamCity using the [Ivy](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Ant+Build+Script) dependency manager.
 * For artifact downloads from outside TeamCity builds, consider using [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).
 * See also [Accessing Server by HTTP](accessing-server-by-http.md) on basic rules covering an HTTP access from scripts.
 

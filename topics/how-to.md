@@ -148,7 +148,7 @@ On the first start with the empty database, TeamCity displays the Administrator 
 
 If you want to regain access to the system and you cannot log in as a user with the System Administrator role, you can log in as a [super user](super-user.md) and change the existing administrator account password or create a new account with the System Administrator role.
 
-It is also possible to use [REST API](rest-api-reference.md#Making+user+a+system+administrator) to add the System Administrator role to any existing user.
+It is also possible to use [REST API](https://www.jetbrains.com/help/teamcity/rest/curl-examples.html#Making+user+a+system+administrator) to add the System Administrator role to any existing user.
 
 If you use built\-in authentication and have correct email specified, you can [reset the password](managing-your-user-account.md#Changing+Your+Password) from the login page. 
 
@@ -1071,7 +1071,7 @@ In general, setup steps for configuring deployments are:
 4. Configure one of the available triggers in the deploying build configuration if you need the deployment to be triggered automatically (e.g. to deploy last successful of last pinned build), or use "Promote" action in the build that produced the binaries to be deployed.
 5. Consider using [snapshot dependencies](dependent-build.md#Snapshot+Dependency) in addition to artifact ones and check [Build Chains](build-chain.md) tab to get the overview of the builds. In this case artifact dependency should use "Build from the same chain" option.
 6. If you need to parametrize the deployment (e.g. specify different target machines in different runs), pass parameters to the build script using [custom build run dialog](triggering-a-custom-build.md). Consider using [Typed Parameters](typed-parameters.md) to make the custom run dialog easier to use or handle passwords.
-7. If the deploying build is triggered manually consider also adding commands in the build script to pin and tag the build being deployed (via sending a [REST API](rest-api-reference.md#Build+Tags) request). You can also [use a build number](#Share+the+Build+number+for+Builds+in+a+Chain+Build) from the build that generated the artifact.
+7. If the deploying build is triggered manually consider also adding commands in the build script to pin and tag the build being deployed (via sending a [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Build+Tags) request). You can also [use a build number](#Share+the+Build+number+for+Builds+in+a+Chain+Build) from the build that generated the artifact.
 
 Further recommendations:
 * Setup a separate build configurations for each target environment
@@ -1246,9 +1246,10 @@ TeamCity internal logs can also record some unstructured user\-related informati
 
 When you want to delete personal data of a specific user, the best way to do it is to delete the user in TeamCity. This way all the references to the user will continue to store the numeric user id, while all the other user information will not be stored anymore. Note that [Audit](tracking-user-actions.md) records will mention internal numeric user id after the user deletion.
 
-If the user triggered any builds (i.e. had the "Run build" permission in any of the projects which are still present on the server), the user's username and full name were be recorded in the build's "teamcity.build.triggeredBy" parameters as text values as those were part of the build's "environment". If you need to remove those, you can either delete the related builds (and all the builds which artifact\- or snapshot\-depend on them), or delete parameters of those affected builds (the parameters are stored in archived files under &lt;TeamCity Data Directory&gt;\system\artifacts\*\*\*\.teamcity\properties directories).
+If the user triggered any builds (i.e. had the "Run build" permission in any of the projects which are still present on the server), the user's username and full name were recorded in the build's `teamcity.build.triggeredBy` parameters as text values as those were part of the build's "environment". If you need to remove those, you can either delete the related builds (and all the builds which artifact\- or snapshot\-depend on them), or delete parameters of those affected builds (the parameters are stored in archived files under &lt;TeamCity Data Directory&gt;\system\artifacts\*\*\*\.teamcity\properties directories).
 
 After the user deletion and other data cleaning, make sure to [reset search index](search.md#Resetting+Search+Index) to prune possibly cached data of the deleted user from the search index.
+{product="tc"}
 
 There are several other places which can hold user-related data
 

@@ -8,14 +8,14 @@ Besides triggering a build automatically, TeamCity allows you to run a build man
 There are several ways of launching a custom build in TeamCity:
 * Click the ellipsis on the __Run__ button, and specify the options in the __Run Custom Build__ dialog described [below](#General+Options).
 * To run a custom build with specific changes, open the build results page, go to the [Changes](working-with-build-results.md#Changes) tab, expand the required change, click the __Run build with this change__, and proceed with the [options](#General+Options) in the __Run Custom Build__ dialog.
-* Use [HTTP request](accessing-server-by-http.md) or [REST API request](rest-api-reference.md#Triggering+a+Build) to TeamCity to trigger a build.
+* Use [HTTP request](accessing-server-by-http.md) or [REST API request](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Triggering+Build) to TeamCity to trigger a build.
 * Promote a build - see the section [below](#Promoting+Build).
 
 ## Run Custom Build dialog
 
 ### General Options
 
-Select an agent you want to run the build on from the drop\-down list. Note that for each agent in the list, TeamCity displays its current state and estimates when the agent will become idle if it is running a build at the moment. Besides the possibility to run a build on a particular agent from the list, you can also use one of the following options:
+Select an agent you want to run the build on from the drop-down menu. Note that for each agent in the list, TeamCity displays its current state and estimates when the agent will become idle if it is running a build at the moment. Besides the possibility to run a build on a particular agent from the list, you can also use one of the following options:
 * __fastest idle agent__: _default option_; if selected, TeamCity will automatically choose an agent to run a build on based on calculated estimates.
 * __the fastest agent in &lt;a certain&gt; pool__: if selected, TeamCity will run a build on an agent from a specified pool
 * if [cloud integration](teamcity-integration-with-cloud-solutions.md) is configured, you can select to run a build on an agent from a __certain cloud image__. If no available cloud agents of this type exist, TeamCity will also attempt to start a new one.

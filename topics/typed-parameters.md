@@ -163,7 +163,7 @@ If you start editing a parameter that has a specification, you can see a link to
 
 ## Modifying Parameter Specification via REST API
 
-You can also view/edit typed parameters specification via [REST API](rest-api-reference.md#Typed+Parameters+Specification).
+You can also view/edit typed parameters specification via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-typed-parameters.html).
 
  <seealso>
         <category ref="admin-guide">

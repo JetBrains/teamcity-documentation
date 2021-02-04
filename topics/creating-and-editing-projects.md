@@ -1,7 +1,7 @@
 [//]: # (title: Creating and Editing Projects)
 [//]: # (auxiliary-id: Creating and Editing Projects)
 
-This section details creating projects via the TeamCity web UI. Other options include the [REST API](rest-api-reference.md#Project+Settings) and using TeamCity project configuration in [DSL based on the Kotlin language](kotlin-dsl.md).
+This section details creating projects via the TeamCity web UI. Other options include the [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-projects.html) and using TeamCity project configuration in [DSL based on the Kotlin language](kotlin-dsl.md).
 
 ## Creating Project
 
