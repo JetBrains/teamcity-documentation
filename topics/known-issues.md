@@ -20,6 +20,7 @@ Until TeamCity 2019.2.2 is released, it is recommended to use Java 8u232 version
 When a TeamCity build agent is installed as a Windows service, there may appear various "Permission denied" or "Access denied" errors during the build process, see details below.
 
 ### Security-related issues
+{product="tc"}
 
 The user account used by the service is required to have sufficient permissions to perform the build and [manage the service](setting-up-and-running-additional-build-agents.md). If you run the TeamCity agent service under the SYSTEM account, do the following:
 1. [Change](setting-up-and-running-additional-build-agents.md#Changing+Communication+Protocol) SYSTEM for a usual user account with necessary permissions granted.

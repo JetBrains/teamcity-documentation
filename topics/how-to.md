@@ -281,6 +281,7 @@ You might want to increase the number of agents when you see:
 We've seen patterns of having an agent per each 20 build configurations (types of builds). Or a build agent per 1-2 developers.
 
 See also [notes](#Estimate+Hardware+Requirements+for+TeamCity) on maximum supported number of agents.
+{product="tc"}
 
 ## Setup TeamCity in Replication/Clustering Environment
 {product="tc"}
@@ -887,11 +888,13 @@ If you are creating a __test server__, you need to ensure that the users and pro
 * consider significantly increasing [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (server-wide default and overridden in the VCS roots) or changing settings of the VCS roots to prevent them from contacting production servers. Since TeamCity 10.0.3, see also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
 
 See also the section below on [moving the server](#Move+TeamCity+Installation+to+a+New+Machine) from one machine to another.
+{product="tc"}
 
 [//]: # (Internal note. Do not delete. "How To...d160e1901.txt")  
 
 
 ## Move TeamCity Projects from One Server to Another
+{product="tc"}
 
 If you need to move data to a fresh server without existing data, it is recommended to [move the server](#Move+TeamCity+Installation+to+a+New+Machine) or [copy](#Create+a+Copy+of+TeamCity+Server+with+All+Data) it and then delete the data which is not necessary on the new server.
 
@@ -1126,7 +1129,7 @@ To present the results for a generic report, the approach might be to generate H
 
 A metrics value can be published as TeamCity statistics via [service message](service-messages.md#Reporting+Build+Statistics) and then displayed in a [custom chart](customizing-statistics-charts.md#Showing+Charts+Only+for+Specific+Build+Configurations+on+Project+Level). You can also configure [build failure condition](build-failure-conditions.md#Fail+build+on+metric+change) based on the metric.
 
-If the tool reports code\-attributing information like Inspections or Duplicates, TeamCity\-bundled report can be used to display the results. A custom plugin will be necessary to process the tool\-specific report into TeamCity\-specific data model. Example of this can be found in [XML Test Reporting](xml-report-processing.md) plugin and FXCop plugin (see a link on [Open-source Bundled Plugins](https://confluence.jetbrains.com/display/TW/Open-source+Bundled+Plugins)).
+If the tool reports code-attributing information like Inspections or Duplicates, TeamCity-bundled report can be used to display the results. A custom plugin will be necessary to process the tool-specific report into TeamCity-specific data model. Example of this can be found in [XML Test Reporting](xml-report-processing.md) plugin and FXCop plugin (see a link on [Open-source Bundled Plugins](https://confluence.jetbrains.com/display/TW/Open-source+Bundled+Plugins)).
 
 See also [Import coverage results in TeamCity](#Import+coverage+results+in+TeamCity).
 
@@ -1240,7 +1243,7 @@ The most important user-related data stored by TeamCity is:
 * user's email - stored in the database and shown on the user's profile, used to send out notifications
 * IP address of the clients accessing the server - can appear in the [internal logs](teamcity-server-logs.md)
 
-TeamCity internal logs can also record some unstructured user\-related information (e.g. submitted by the user or sent by the browser with the HTTP requests, retrieved according to the configured settings from the users source like LDAP)
+TeamCity internal logs can also record some unstructured user-related information (e.g. submitted by the user or sent by the browser with the HTTP requests, retrieved according to the configured settings from the users source like LDAP)
 
 ### Deleting the User Data
 

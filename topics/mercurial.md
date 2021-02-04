@@ -10,8 +10,8 @@ Mercurial is to be installed on the server machine and, if the [agent-side check
 
 Note that:
 * __Remote Run__ from IDE is not supported. Please use [Branch Remote Run Trigger](branch-remote-run-trigger.md) instead.
-* Checkout rules for agent\-side checkout are not supported except for the `.=><target_dir>` rule.
-For common VCS Root properties, see [this section](configuring-vcs-roots.md#Common+VCS+Root+Properties). The section below contains the description of Mercurial\-specific fields and options.
+* Checkout rules for agent-side checkout are not supported except for the `.=><target_dir>` rule.
+For common VCS Root properties, see [this section](configuring-vcs-roots.md#Common+VCS+Root+Properties). The section below contains the description of Mercurial-specific fields and options.
 
 TeamCity supports Mercurial out of the box.
 
@@ -147,7 +147,7 @@ Use uncompressed transfer
 Uncompressed transfer is faster for repositories in the LAN.
 
 
-</td></tr><tr>
+</td></tr><tr product="tc">
 
 <td>
 

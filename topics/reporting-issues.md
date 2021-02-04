@@ -402,6 +402,7 @@ If the settings are the same and you do not use the manual checkout mode but the
 * Provide us with your IDEA VCS settings and TeamCity VCS settings (for the build configurations you expect to be suitable with your IDEA project)
 * Enable debug logs for the TeamCity IntelliJ plugin (see [above](#Logging+in+IntelliJ+IDEA%2FPlatform-based+IDEs))
 * Enable the TeamCity server debug logs (see [above](#Logging+events))
+{product="tc"}
 * In the [TeamCity IntelliJ plugin](intellij-platform-plugin.md), try to start a remote run build
 * Provide us with the debug logs from the TeamCity IntelliJ plugin and from the TeamCity server.
 

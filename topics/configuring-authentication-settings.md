@@ -12,7 +12,9 @@ TeamCity provides several preconfigured authentication options (presets) to cove
 * [Credentials authentication modules](#Credentials+Authentication+Modules)
   * [Built-in](#Built-in+Authentication)
   * [Windows Domain Authentication](#Windows+Domain+Authentication)
+    {product="tc"}
   * [LDAP Integration](ldap-integration.md)
+    {product="tc"}
   * [Token-Based Authentication](#Token-Based+Authentication)
 * [HTTP / SSO authentication modules](#HTTP+%2F+SSO+Authentication+Modules)
   * [Basic HTTP Authentication](#Basic+HTTP+Authentication)
@@ -61,8 +63,11 @@ When a user attempts to sign in, modules will be tried one by one. If one of the
 If System Administrator creates users without a password with several authentication modes enabled on the server including the [Built-in](#Built-in+Authentication) one, and later changes authentication from mixed one to the build-in one, users with no password will be unable to sign in to TeamCity.
 </warning>
 
-It is possible to use a combination of internal and external authentication. The recommended approach is to configure [LDAP Integration](ldap-integration.md) for your internal employees first and then to add [Built-in](#Built-in+Authentication) authentication for external users.   
-Since TeamCity 2020.2, you can also enable authentication via OAuth services.
+It is possible to use a combination of internal and external authentication. The recommended approach is to configure [LDAP Integration](ldap-integration.md) for your internal employees first and then to add [Built-in](#Built-in+Authentication) authentication for external users. Since TeamCity 2020.2, you can also enable authentication via OAuth services.
+{product="tc"}
+
+It is possible to use a combination of internal and external authentication. Since TeamCity 2020.2, you can also enable authentication via OAuth services.
+{product="tcc"}
 
 To add a module:
 1. Click __Add Module__ and select a module from the drop-down menu.
@@ -74,6 +79,7 @@ To add a module:
 ## User Authentication Settings
 
 The very first time TeamCity server starts with no users (and no administrator), so the first user is prompted for the administrator account. If you are not prompted for the administrator account, refer to [How To Retrieve Administrator Password](how-to.md#Retrieve+Administrator+Password) for a resolution.
+{product="tc"}
 
 The TeamCity administrator can modify the authentication settings of every user on their profile page.
 

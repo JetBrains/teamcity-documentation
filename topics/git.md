@@ -369,11 +369,14 @@ When __enabled__ (default), TeamCity clones the Git repository and creates its m
 See also, [how to prepare a mirror on a cloud agent](#Git+mirrors+on+cloud+agents).
 
 If you __disable__ this option, TeamCity will clone the repository directly under the build's working directory, unless the [`teamcity.git.use.local.mirrors`](#use-local-mirrors) property is set to `true`.
+{product="tc"}
 
+If you __disable__ this option, TeamCity will clone the repository directly under the build's working directory.
+{product="tcc"}
 
 </td></tr></table>
 
-<tip>
+<tip product="tc">
 
 To configure a connection from a TeamCity server running behind a proxy to a remote Git repository, see [this section](how-to.md#Configure+TeamCity+to+Use+Proxy+Server+for+Outgoing+Connections).
 </tip>
@@ -1006,9 +1009,10 @@ If you specify multiple checkout rules for one root, make sure their checkout di
 ```
 
 ## Known Issues
+{product="tc"}
 
 * `java.lang.OutOfMemoryError` while fetching from a repository in case [`teamcity.git.fetch.process.max.memory`](#max-memory) property is specified. Since TeamCity 2019.2, the recommended approach is to disable this property thus delegating the automatic memory management to TeamCity.
-* Teamcity running as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using `teamcity-server.bat`.
+* TeamCity running as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using `teamcity-server.bat`.
 * Inflation using streams in JGit prevents `OutOfMemoryError`, but can be time-consuming (see the related thread at [jgit-dev](http://dev.eclipse.org/mhonarc/lists/jgit-dev/msg00687.html) for details and the [TW-14947](http://youtrack.jetbrains.net/issue/TW-14947) issue related to the problem). If you meet conditions similar to those described in the issue, try to increase `teamcity.git.stream.file.threshold.mb`. Additionally, it is recommended to increase the overall amount of memory dedicated for TeamCity to prevent `OutOfMemoryError`.
 
 ## Development Links

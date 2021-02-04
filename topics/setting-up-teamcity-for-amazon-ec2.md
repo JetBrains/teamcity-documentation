@@ -275,6 +275,7 @@ The Amazon website details the script format for [Linux](http://docs.aws.amazon.
 Usual Amazon EC2 pricing applies. Note that Amazon charges can depend on the specific configuration implemented to deploy TeamCity. We advise you to check your configuration and Amazon account data regularly in order to discover and prevent unexpected charges as early as possible.
 
 Note that traffic volumes and necessary server and agent machines characteristics depend a big deal on the TeamCity setup and nature of the builds run. See also [Estimate Hardware Requirements for TeamCity](how-to.md#Estimate+Hardware+Requirements+for+TeamCity).
+{product="tc"}
 
 ### Traffic Estimate
 

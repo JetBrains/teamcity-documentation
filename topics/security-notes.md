@@ -21,6 +21,7 @@ This checklist contains the main security recommendations to follow when using T
 
 * You are running the latest released TeamCity version and are ready to upgrade to the newly released versions within weeks.
 * An access to the TeamCity web interface is secured with HTTPS (for example, with the help a [proxy server](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) like NGINX). Best practices for securing web applications are employed for the TeamCity web interface: for example, it is not possible to access the server using HTTP the protocol. The reverse proxy does not strip the _Referer_ request header.
+{product="tc"}
 * The TeamCity server machine does not run agents (at least under the user permitted to read the  `<[TeamCity server's home directory](teamcity-home-directory.md)>` and `<[TeamCity Data Directory](teamcity-data-directory.md)>`).
 * TeamCity server and agents processes run under users with minimal required permissions. Installation directories are readable and writable only by a limited set of OS users. The `conf\buildAgent.properties` file and server logs as well as the Data Directory are only readable by OS users who represent administrators of the services, because reading those locations may allow taking over the agent or server respectively.
 * Guest user and user registration is disabled or roles are reviewed for guests and the [All Users](user-group.md#%22All+Users%22+Group) group.
@@ -88,6 +89,10 @@ TeamCity has no built-in protection against DoS (Denial-of-service) attack: high
 ## Encryption Used by TeamCity
 
 TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key, or [using a custom key](teamcity-configuration-and-maintenance.md#encryption-settings).
+{product="tc"}
+
+TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key.
+{product="tcc"}
 
 ## Third-party Software Vulnerabilities
 

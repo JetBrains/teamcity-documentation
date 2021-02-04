@@ -93,7 +93,7 @@ Typically, an agent upgrade happens when:
 * the server is [upgraded](upgrade.md)
 * an agent plugin is [added](installing-additional-plugins.md) or [updated](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#PluginsPackaging-AgentUpgradeonUpdatingPlugins) on the server
 * [a new tool is installed](installing-agent-tools.md)
-{product="tcc"}
+{product="tc"}
 
 <seealso>
         <category ref="installation">
