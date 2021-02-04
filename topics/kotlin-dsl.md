@@ -143,7 +143,7 @@ You can also use the __Download settings in Kotlin format__ option from the proj
 
 The `pom.xml` file provided for a Kotlin project has the `generate` task which can be used to generate TeamCity XML configuration files locally from the DSL scripts. This task can be started from IDE (see __Plugins | teamcity-configs | teamcity-configs:generate__ node in the Maven tool window), or from the command line:
 
-```
+```Shell
 mvn teamcity-configs:generate
 ``` 
 
@@ -166,7 +166,7 @@ TeamCity allows editing a project settings via the web interface, even though th
 But if generated files were changed, then TeamCity will have to produce a patch, since it no longer knows what part of .kt or .kts file should be changed.
  
 In case of portable DSL the patches are placed under the `.teamcity/patches` directory, for example:
-```
+```Shell
 patches/projects/<relative project id>.kts
 patches/buildTypes/<relative build configuration id>.kts  
 patches/templates/<relative vcs root id>.kts  
@@ -371,7 +371,7 @@ The settings using the DSL API version _v2017_2+_ are validated during DSL execu
 
 Validation checks that the mandatory properties are specified, for example a build step like this:
 
-```
+```Kotlin
 buildType {
     ...
     steps {
@@ -386,7 +386,7 @@ will produce a validation error saying that the mandatory _path_ property is not
 
 You can also extend the validation in a way relevant for your setup. To do that, you need to override the `validate()` method. For example, the following class adds a custom validation to Git VCS roots:
 
-```
+```Kotlin
 open class MyGit() : GitVcsRoot() {
     constructor(init: MyGit.() -> Unit): this() {
         init()
@@ -478,7 +478,7 @@ If the build history is important, it should be restored as soon as possible: af
 </note>
 
 In case of a non-portable DSL, patches are stored under the project _patches_ directory of `.teamcity`:
-```
+```Shell
 <project id>/patches/projects/<uuid>.kts
 <project id>/patches/buildTypes/<uuid>.kts
 <project id>/patches/templates/<uuid>.kts

@@ -25,7 +25,7 @@ Supported Java versions are OpenJDK and Oracle Java 8 (8u16 or later) and 11 (32
 
 The TeamCity server Windows installer and server Docker images come bundled with 64-bit Java 11.
 
-Generally, __all the recent versions of Windows, Linux, and macOS are supported__. If you find any compatibility issues with any of the operating systems, make sure to [let us know](https://confluence.jetbrains.com/display/TW/Feedback).
+Generally, __all the recent versions of Windows, Linux, and macOS are supported__. If you find any compatibility issues with any of the operating systems, make sure to [let us know](feedback.md).
 
 The TeamCity server is tested under the following operating systems:
 * Linux (Ubuntu, Debian, RedHat, SUSE, and others)

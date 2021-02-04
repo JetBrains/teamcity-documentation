@@ -17,6 +17,7 @@ This video gives a general overview of the main TeamCity features and explains t
        title="General TeamCity overview"/>
 
 ### What can you do with TeamCity?
+
 * Run parallel builds simultaneously on different platforms and environments
 * Optimize the code integration cycle and be sure you never get broken code in the repository
 * Review on-the-fly test results reporting with intelligent tests reordering
@@ -34,7 +35,7 @@ The complete list of supported platforms and environments can be found [here](su
 
 ## Basic TeamCity concepts
 
-This section explains the main concepts. The complete list can be found [here](supported-platforms-and-environments.md).
+This section explains the main concepts. The complete list can be found under the _Concepts_ section in the sidebar.
 
 The __TeamCity build system__ comprises a server and __Build Agents__.
 
@@ -204,8 +205,12 @@ Files produced by a build, for example, installers, WAR files, reports, log file
 
 To understand the data flow between the server and the agents, what is passed to the agents, how and when TeamCity gets the results, let's take a look at a simple build lifecycle.
 
- 1. The TeamCity server detects a change in your VCS Root and stores it in the database.
- 2. The build trigger sees the change in the database and adds a build to the queue.
- 3. The server finds an idle compatible build agent and assigns the queued build to this agent.
- 4. The agent executes the Build Steps. While the build steps are being executed, the build agent reports the build progress to the TeamCity server sending all the log messages, test reports, code coverage results, etc. to the server on the fly, so you can monitor the build process in real time.
- 5. After finishing the build, the build agent sends [Build Artifacts](build-artifact.md) to the server.
+<img src="cicd-flow.png" width="711" alt="Basic CI flow with TeamCity"/>
+
+1. The TeamCity server detects a change in your VCS root (repository).
+2. The server stores this change in the database.
+3. The trigger, attached to the build configuration, detects the relevant change in the database and initiates the build.
+4. The triggered build gets to the build queue.
+5. The build is assigned to a free and compatible build agent.
+6. The agent executes build steps, described in the build configuration. While executing the steps, the agent reports the build progress to the TeamCity server. It is sending all the log messages, test reports, code coverage results on the fly, so you can monitor the build process in real time.
+7. After finishing the build, the agent sends build artifacts to the server.

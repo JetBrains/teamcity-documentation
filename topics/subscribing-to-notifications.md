@@ -9,7 +9,7 @@ Notifications in TeamCity can be sent:
 * __Per build configuration__, with the [Notifications](notifications.md) build feature. Currently, these notifications are available only for email and Slack.   
   Choose build-level notifications if you want to notify many people at once about a specific build configuration. You can enter an email list address or a Slack channel ID, and whoever is subscribed to this list or channel will be notified when the selected build events occur.
 
-This article explains how to configure user-level notifications and describes the events that can trigger notifications. To read about build-level notifications, refer to the [respective article](notifications.md)
+This article explains how to configure user-level notifications and describes the events that can trigger notifications. To read about build-level notifications, refer to the [respective article](notifications.md).
 
 >You can [customize notification templates](customizing-notifications.md).
 > 

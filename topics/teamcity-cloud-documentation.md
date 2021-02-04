@@ -58,7 +58,7 @@ Welcome to the documentation for [TeamCity Cloud Beta](https://www.jetbrains.com
 
 * [TeamCity Official Site](http://www.jetbrains.com/teamcity)
 * [Official TeamCity Blog](http://blogs.jetbrains.com/teamcity/)
-* [Feedback](https://confluence.jetbrains.com/display/TW/Feedback)
+* [Feedback](feedback.md)
 
 </td></tr>
 </table>

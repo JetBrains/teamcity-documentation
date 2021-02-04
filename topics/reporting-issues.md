@@ -12,7 +12,7 @@ In case with TeamCity Cloud, you only need to provide your server URL, and our s
 ## Best Practices When Reporting Issues
 {product="tc"}
 
-Following these guidelines will ensure timely response and effective issue resolution. Check [Feedback](https://confluence.jetbrains.com/display/TW/Feedback) for appropriate ways to contact us. 
+Following these guidelines will ensure timely response and effective issue resolution. Check [Feedback](feedback.md) for appropriate ways to contact us. 
 
 <note>
  
@@ -90,7 +90,7 @@ If you have a substantial TeamCity installation, check your [memory settings](in
 
 During the slow operation, take several thread dumps of the slow process (see below for thread dump taking approaches) with 5\-10 seconds interval. If the slowness continues, take several more thread dumps (for example, 3\-5 within several minutes) and then repeat after some time (for example, 10 minutes) while the process is still being slow.
 
-Then [send](https://confluence.jetbrains.com/display/TW/Feedback) us a detailed description of the issue accompanied with the thread dumps and full server (or agent) [logs](#Logging+events) covering the issue. Unless it is undesirable for some reason, the preferred way is to file an issue into our [issue tracker](http://youtrack.jetbrains.com/issues/TW) and let us know via support email. Please include all the relevant details of investigation, including the CPU/IO load information, what specifically is slow and what is not, note affected URLs, visible effects, and so on. For large amounts of data, use [our file upload](#Uploading+Large+Data+Archives) service to share the archives with us.
+Then [send](feedback.md) us a detailed description of the issue accompanied with the thread dumps and full server (or agent) [logs](#Logging+events) covering the issue. Unless it is undesirable for some reason, the preferred way is to file an issue into our [issue tracker](http://youtrack.jetbrains.com/issues/TW) and let us know via support email. Please include all the relevant details of investigation, including the CPU/IO load information, what specifically is slow and what is not, note affected URLs, visible effects, and so on. For large amounts of data, use [our file upload](#Uploading+Large+Data+Archives) service to share the archives with us.
 
 ### Server Thread Dump
 
@@ -501,6 +501,6 @@ You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrain
 
 [//]: # (Internal note. Do not delete. "Reporting Issuesd267e1305.txt")    
 
-Large files can be uploaded via [`https://uploads.jetbrains.com/`](https://uploads.jetbrains.com/). Please let us know the exact file name after the upload.
+Large files can be uploaded via [`https://uploads.jetbrains.com/`](https://uploads.jetbrains.com/). Please let us know the exact filename after the upload.
 
 If you cannot upload a large file in one go, try splitting the file into parts and upload them separately.

@@ -325,7 +325,7 @@ Only Surefire version 2.4 and higher is supported.
 
 If you have several build agents installed on the same machine, by default they use the same local repository. However, there are two ways to allocate a custom local repository to each build agent:
 
-* Specify the following property in the `teamcity-agent/conf/buildAgent.properties`:   
+* Specify the following property in the `teamcity-agent/conf/buildAgent.properties`:
 
 ```Plain Text
 system.maven.repo.local=%system.agent.work.dir%/<subdirectory_name>
@@ -348,12 +348,12 @@ Check the following:
 
 In the [Perforce VCS Root](perforce.md) Settings of your build configuration in TeamCity:
 
-1. Enable the [checkout on agent](perforce.md#Checkout+On+Agent+Settings).
+1. Enable the [checkout on agent](perforce.md#Agent+Checkout+Settings).
 2. Enable [Use ticket-based authentication](perforce.md#P4+Connection+Settings) in Perforce VCS root settings.
 3. Make sure your build agent environment doesn't have any occasional P4 variables which can interfere with the execution of Maven Release Plugin.
 4. Specify `release:prepare` in the __Goals__ field of the Maven build step and run the build.
 
-### Using Maven Release with Git VCS 
+### Using Maven Release with Git VCS
 
 1. Use Git SSH URL as [SCM URL](https://maven.apache.org/scm/git.html) in your `pom.xml`.
 2. Make sure that your `release:prepare` maven task works when it is run from the command line without TeamCity.

@@ -63,7 +63,7 @@ If build process is hanging, then "View thread dump" link on the running build r
 
 If there is some long operation and it is a TeamCity\-related one (before start or after end of the actual build process), the TeamCity agent and server are to be analyzed (logs and thread dumps).
 
-If you want to [turn to us](https://confluence.jetbrains.com/display/TW/Feedback) with the issue, make sure to describe the visible effects, detail the process of investigation and attach the build log, full agent logs and other data collected.
+If you want to [turn to us](feedback.md) with the issue, make sure to describe the visible effects, detail the process of investigation and attach the build log, full agent logs and other data collected.
 
 ## Started Build Agent is not available on the server to run builds
 
@@ -83,7 +83,8 @@ If the agent stays in the state for more than 10 minutes and you have a fast net
 * check [server logs](teamcity-server-logs.md) (`teamcity-server.log`) for any messages/errors mentioning agent name or IP.
 {product="tc"}
 
-If you cannot find the cause of the delayed agent upgrade in the logs, [contact us](https://confluence.jetbrains.com/display/TW/Feedback) and provide the full agent and server logs. Be sure to check/include the state of the agent processes (java ones) on the agent machine.
+If you cannot find the cause of the delayed agent upgrade in the logs, [contact us](feedback.md) and provide the full agent and server logs. Be sure to check/include the state of the agent processes (java ones) on the agent machine.
+ 
 
 ## Artifacts of a build are not cleaned
 
