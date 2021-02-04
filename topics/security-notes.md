@@ -36,6 +36,7 @@ This checklist contains the main security recommendations to follow when using T
 Here are the notes on different security-related aspects:
 * [Man-in-the middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) concerns:
     * Between the TeamCity server and the user's web browser: It is advised to [use HTTPS](using-https-to-access-teamcity-server.md) for the TeamCity server. During login, TeamCity transmits the user login password in an encrypted form with a moderate encryption level.
+      {product="tc"}
     * Between a TeamCity agent and the TeamCity server: see [this section](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).
     * Between the TeamCity server and other external servers (version control, issue tracker, and so on): the general rules apply as for a client (the TeamCity server in this case) connecting to the external server, see the guidelines for each specific server.
 * Users who have access to the TeamCity web UI: the specific information accessible to the user is defined via TeamCity [user roles](role-and-permission.md).
