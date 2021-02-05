@@ -155,7 +155,6 @@ Maximum time for a build. Can be overridden when defining [build failure conditi
 </td></tr></table>
 
 ## Version Control Settings
-{product="tc"}
 
 <table><tr>
 
