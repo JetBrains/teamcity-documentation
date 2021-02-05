@@ -68,12 +68,13 @@ From the __Changes__ tab you can:
 
 For each change on this page you can:
 * Explore the change in details
-* View which dependent build the changes come from or builds with snapshot dependencies with the  "Show changes from snapshot dependencies" option  enabled (__since TeamCity 2017.1)__. On hovering over the ![link.png](link.png) icon, the number of the dependent build is displayed; clicking the link opens the Сhanges tab of the dependent build.
+* View which dependent build the changes come from or builds with snapshot dependencies with the  "Show changes from snapshot dependencies" option  enabled (__since TeamCity 2017.1)__. On hovering over the ![link.png](link.png) icon, the number of the dependent build is displayed; clicking the link opens the __Сhanges__ tab of the dependent build.
 * Navigate to the __Change Details__ by clicking a changed file link
 * [Trigger a custom build](triggering-a-custom-build.md) with this change
 * Download patch
 * Download patch to your IDE
 * Review the change in an [external change viewer](external-changes-viewer.md), if configured by the administrator.
+{product="tc"}
 
 The __Changes__ tab provides advanced filtering capabilities for the list of changes. Enabling __Show graph__ displays the changes as a graph of commits to the VCS roots related to this build.
 

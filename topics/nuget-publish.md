@@ -92,7 +92,10 @@ Package Source
 
 <td>
 
-Specify the destination NuGet packages feed URL to push packages to, for example, [`nuget.org`](http://nuget.org). Leave blank to let NuGet decide what package repository to use. If you are using a [TeamCity NuGet feed](using-teamcity-as-nuget-feed.md), select it using the 'magic wand' icon ![magic-wand.png](magic-wand.png) or manually specify the URL from the [NuGet Feed](using-teamcity-as-nuget-feed.md) section of the __Project Settings__.
+Specify the destination NuGet packages feed URL to push packages to, for example, [`nuget.org`](http://nuget.org). Leave blank to let NuGet decide what package repository to use.
+
+If you are using a [TeamCity NuGet feed](using-teamcity-as-nuget-feed.md), select it using the 'magic wand' icon ![magic-wand.png](magic-wand.png) or manually specify the URL from the NuGet Feed section of the __Project Settings__.
+{product="tc"}
 
 If you work with an authenticated feed, configure the [NuGet Feed Credentials](nuget-feed-credentials.md) build feature.   
 

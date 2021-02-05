@@ -103,7 +103,8 @@ Packages Sources
 
 Specify the NuGet package sources. If left blank, [`http://nuget.org`](http://nuget.org/) is used to search for your packages.
 
-If you are using a [TeamCity NuGet feed](using-teamcity-as-nuget-feed.md), select it using the 'magic wand' icon ![magic-wand.png](magic-wand.png) or manually specify the URL from the [NuGet Feed](using-teamcity-as-nuget-feed.md) section of __Project Settings__. 
+If you are using a [TeamCity NuGet feed](using-teamcity-as-nuget-feed.md), select it using the 'magic wand' icon ![magic-wand.png](magic-wand.png) or manually specify the URL from the NuGet Feed section of __Project Settings__.
+{product="tc"}
 
 If you use packages from an authenticated feed, configure the [NuGet Feed Credentials](nuget-feed-credentials.md) build feature.   
 

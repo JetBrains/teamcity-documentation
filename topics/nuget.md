@@ -5,6 +5,7 @@
 
 TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager and, when [NuGet is installed on agents](#Installing+NuGet+to+TeamCity+agents), provides the following capabilities:
 * [Private NuGet feeds](using-teamcity-as-nuget-feed.md) based on the builds' published artifacts.
+{product="tc"}
 * A set of NuGet runners to be used in builds on Windows OS, as well as on Linux and MacOS when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent. 
     * [NuGet Installer](nuget-installer.md) build runner, which installs and updates NuGet packages.
     * [NuGet Pack](nuget-pack.md) build runner, which builds NuGet packages.
@@ -31,6 +32,7 @@ NuGet build runners are supported on build agents running Windows OS by default.
 * To install packages from a public feed, add the [NuGet Installer](nuget-installer.md) build step.
 * To create a package and publish it to a public feed, add the [NuGet Pack](nuget-pack.md) and [NuGet Publish](nuget-publish.md) build steps.
 * To create a package and publish it to the internal TeamCity NuGet Server, enable TeamCity as a NuGet Server (see the [dedicated page](using-teamcity-as-nuget-feed.md)), use the [NuGet Pack](nuget-pack.md) build step and [NuGet Publish](nuget-publish.md) build steps.
+{product="tc"}
 * To trigger a new build when a NuGet package is updated, use the [NuGet Dependency Trigger](nuget-dependency-trigger.md).
 
 ## Installing NuGet to TeamCity agents
@@ -71,7 +73,11 @@ Since TeamCity 2019.2.3, the new automatic package cleaner has been introduced i
 
 ## Authentication in private NuGet Feeds
 
-You can use authentication in [build-in NuGet feeds](using-teamcity-as-nuget-feed.md) or the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials provider will automatically authenticate requests to these feeds.   
+You can use authentication in [build-in NuGet feeds](using-teamcity-as-nuget-feed.md) or the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials provider will automatically authenticate requests to these feeds.
+{product="tc"}
+
+You can use authentication in the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials provider will automatically authenticate requests to these feeds.
+{product="tcc"}
 
 API support:
 * __NuGet Installer / NuGet Publish runners__

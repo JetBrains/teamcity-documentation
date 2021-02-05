@@ -3,10 +3,11 @@
 
 In this section:
 
-
 * [Integrating TeamCity with VCS Hosting Services](integrating-teamcity-with-vcs-hosting-services.md)
 * [Integrating TeamCity with Issue Tracker](integrating-teamcity-with-issue-tracker.md)
 * [Mapping External Links in Comments](mapping-external-links-in-comments.md)
+{product="tc"}
 * [External Changes Viewer](external-changes-viewer.md)
+{product="tc"}
 * [Integrating TeamCity with Docker](integrating-teamcity-with-docker.md)
 

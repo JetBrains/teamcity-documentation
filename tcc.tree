@@ -218,7 +218,6 @@
                         <toc-element id="shared-resources.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="automatic-merge.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nuget-feed-credentials.md"/>
-                        <toc-element id="nuget-packages-indexer.md"/>
                         <toc-element id="ssh-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="file-content-replacer.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="commit-status-publisher.md" show-structure-for="chapter" show-structure-depth="4"/>

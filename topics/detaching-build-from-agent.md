@@ -67,6 +67,10 @@ PUT /app/rest/builds/id:<build_id>/finishDate
 ## Agentless builds' licensing
 
 The number of builds that can simultaneously run without an agent is limited by the number of your active [agent licenses](licensing-policy.md#Number+of+Agents). For example, if you have 10 agent licenses, you can run in parallel up to 10 regular build on agents plus up to 10 agentless builds. As soon as you reach the limit of running agentless builds, TeamCity will not detach steps in the following builds until some of the current agentless builds finish.
+{product="tc"}
+
+The number of builds that can simultaneously run without an agent is limited by the number of your active agent licenses. For example, if you have 10 agent licenses, you can run in parallel up to 10 regular build on agents plus up to 10 agentless builds. As soon as you reach the limit of running agentless builds, TeamCity will not detach steps in the following builds until some of the current agentless builds finish.
+{product="tcc"}
 
 <seealso>
         <category ref="concepts">
