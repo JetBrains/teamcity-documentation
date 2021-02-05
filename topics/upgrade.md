@@ -1,7 +1,10 @@
 [//]: # (title: Upgrade)
 [//]: # (auxiliary-id: Upgrade)
 
-Your TeamCity Cloud instance is kept to date automatically. Refer to [TeamCity Release Cycle](teamcity-release-cycle.md) for information on expected terms of the upgrades.
+Your TeamCity Cloud instance is kept to date automatically. We upgrade all Cloud instances during the week following each major and minor release. The upgrade occurs in the least loaded server time. The duration of upgrade depends on the size of the instance.
+{product="tcc"}
+
+Refer to [TeamCity Release Cycle](teamcity-release-cycle.md) for information on expected release updates.
 {product="tcc"}
 
 >Unless specifically noted, TeamCity does not support downgrade between major releases (changes in the first two numbers of the version). It is strongly recommended to [back up your data](teamcity-data-backup.md) before any upgrade.

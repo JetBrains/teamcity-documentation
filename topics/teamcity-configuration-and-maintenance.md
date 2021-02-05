@@ -61,7 +61,7 @@ Artifact directories
 
 The list of the root directories used by the TeamCity server to store [Build Artifact](build-artifact.md), build logs and other build data. The default location is `/system/artifacts`. Note that artifacts can also be stored on [external storage](configuring-artifacts-storage.md).
 
-The list can be changed by specifying a new\-line delimited list of paths. Absolute and relative (to TeamCity Data Directory) paths are supported.All the specified directories use the same [structure](teamcity-data-directory.md#artifacts).
+The list can be changed by specifying a new-line delimited list of paths. Absolute and relative (to TeamCity Data Directory) paths are supported.All the specified directories use the same [structure](teamcity-data-directory.md#artifacts).
 
 When looking for build artifacts, the specified locations are searched for the directory corresponding to the build. The search is done in the order the root directories are specified. The first found build artifacts directory is used as the source of artifacts of this build.
 
@@ -94,7 +94,6 @@ The [configurable](configuring-server-url.md) URL of the running TeamCity server
 </td></tr></table>
 
 ## Build Settings
-{product="tc"}
 
 <table><tr>
 
@@ -122,7 +121,7 @@ Maximum size in bytes. KB, MB, GB or TB suffixes are allowed. \-1 indicates no l
 
 </td></tr>
 
-<tr>
+<tr product="tc">
 
 <td>
 
@@ -170,7 +169,7 @@ Setting
 
 Description
 
-</td></tr><tr>
+</td></tr><tr product="tc">
 
 <td>
 
@@ -218,6 +217,3 @@ You can change the custom key or go back to using the default strategy anytime.
 During backup, your custom keys will be exported along with their projects and automatically available after restoring from backup. Since keys will be stored in the exported files in an open form, make sure the backup files are well-protected.
 
 </note>
-
-## Cloud Server Settings
-
