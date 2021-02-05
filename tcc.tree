@@ -137,7 +137,6 @@
                 <toc-element id="configuring-vcs-settings.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="configuring-vcs-roots.md" show-structure-for="chapter" show-structure-depth="4">
                         <toc-element id="guess-settings-from-repository-url.md"/>
-                        <toc-element id="clearcase.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="git.md" show-structure-for="chapter" show-structure-depth="4">
                             <toc-element id="ssh-keys-management.md" show-structure-for="chapter" show-structure-depth="4"/>
                         </toc-element>

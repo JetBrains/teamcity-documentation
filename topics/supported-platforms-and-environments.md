@@ -146,6 +146,7 @@ Other runners:
 * [Borland StarTeam](starteam.md) 6 and up (the StarTeam client application must be installed on the TeamCity server)
 {product="tc"}
 * [IBM Rational ClearCase](clearcase.md) Base and UCM modes (requires the ClearCase client installed and configured on the TeamCity server), _integrated via an additional plugin_
+{product="tc"}
 * [Microsoft Visual SourceSafe](visual-sourcesafe.md) 6 and 2005 (requires a SourceSafe client installed on the TeamCity server, available only on Windows platforms)
 
 For support for other VCS please check [external plugins](https://plugins.jetbrains.com/category/93-version-control-systems-support/teamcity) available.
