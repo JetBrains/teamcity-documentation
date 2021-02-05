@@ -135,6 +135,7 @@ To add a new token, go to __My Settings & Tools | Access tokens__:
 <img src="tmp-access-token.png" alt="Temporary access tokens"/>
 
 ## Editing project settings on secondary nodes
+{product="tc"}
 
 TeamCity 2020.2 adds a [new responsibility](configuring-secondary-node.md#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) for secondary nodes. If granted to a node, it allows UI actions: running, stopping, tagging, commenting builds, and much more. The [list of supported UI actions](configuring-secondary-node.md#User-level+Actions+on+Secondary+Node) now also includes editing projects and build configurations (with a few limitations, such as editing cloud profiles).   
 Disabling this responsibility will switch a secondary node to a read-only mode.
@@ -142,6 +143,7 @@ Disabling this responsibility will switch a secondary node to a read-only mode.
 See also [upgrade notes](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
 
 ## Monitoring disk usage in external storage
+{product="tc"}
 
 An increasing number of our users prefer storing build artifacts in cloud – for example, in Amazon S3. However, it was not previously possible to see what amount of data is stored there.
 
@@ -201,10 +203,11 @@ If you need to publish NuGet packages and then use their contents within one bui
    Previously, the _Build file_ field of the [Gradle](gradle.md) runner was set to `build.gradle` by default. We have removed this default value as some users rely on custom names of build files and prefer to let Gradle decide what file to choose.   
    If you use `build.gradle` as your build file, all will continue to work as before this update.
 * __REST API updates__:
-   * [VCS labels](rest-api-reference.md#VCS+Labels)
-   * [Test statistics for personal builds](rest-api-reference.md#Tests+and+Build+Problems)
+   * [VCS labels](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#VCS+Labels)
+   * [Test statistics for personal builds](https://www.jetbrains.com/help/teamcity/rest/manage-tests-and-build-problems.html)
 * The [.NET](net.md) build runner now supports earlier versions of Visual Studio and MSBuild. Currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.
 * To see all bundled tool updates, read our [upgrade notes](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
+{product="tc"}
 * Version 2020.2 comes with ~30 performance fixes in various pieces of functionality (for example, in the Custom Run dialog).
 
 ## Fixed issues
@@ -212,6 +215,7 @@ If you need to publish NuGet packages and then use their contents within one bui
 See [TeamCity 2020.2 release notes](teamcity-2020-2-release-notes.md).
 
 ## Upgrade notes
+{product="tc"}
 
 Before upgrading, we highly recommend reading about important changes in [version 2020.2 comparing to 2020.1.x](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
 

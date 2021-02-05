@@ -10,8 +10,8 @@ Mercurial is to be installed on the server machine and, if the [agent-side check
 
 Note that:
 * __Remote Run__ from IDE is not supported. Please use [Branch Remote Run Trigger](branch-remote-run-trigger.md) instead.
-* Checkout rules for agent\-side checkout are not supported except for the `.=><target_dir>` rule.
-For common VCS Root properties, see [this section](configuring-vcs-roots.md#Common+VCS+Root+Properties). The section below contains the description of Mercurial\-specific fields and options.
+* Checkout rules for agent-side checkout are not supported except for the `.=><target_dir>` rule.
+For common VCS Root properties, see [this section](configuring-vcs-roots.md#Common+VCS+Root+Properties). The section below contains the description of Mercurial-specific fields and options.
 
 TeamCity supports Mercurial out of the box.
 
@@ -147,7 +147,7 @@ Use uncompressed transfer
 Uncompressed transfer is faster for repositories in the LAN.
 
 
-</td></tr><tr>
+</td></tr><tr product="tc">
 
 <td>
 
@@ -166,8 +166,9 @@ The path to the hg executable. Used on TeamCity server only if included into whi
  
 
 ### Path to hg executable detection
+{product="tc"}
 
-When an agent starts, the hg\-plugin detects Mercurial installed on the agent machine.
+When an agent starts, the hg-plugin detects Mercurial installed on the agent machine.
 
 The plugin tries to run the `hg version` command using the path specified by the `teamcity.hg.agent.path` parameter. You can change this parameter in \<[Agent Home Directory](agent-home-directory.md)\>\conf\buildAgent.properties.
 
@@ -248,10 +249,11 @@ When enabled, TeamCity creates a local agent mirror first (under agent's `system
 </td></tr></table>
 
 ## Internal Properties
+{product="tc"}
 
-This section describes hg\-related [internal properties](configuring-teamcity-server-startup-properties.md). You can modify the defaults to adjust the Mercurial settings as needed.
+This section describes hg-related [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). You can modify the defaults to adjust the Mercurial settings as needed.
 
-Server\-side [internal properties](configuring-teamcity-server-startup-properties.md):
+Server-side internal properties:
 
 <table><tr>
 

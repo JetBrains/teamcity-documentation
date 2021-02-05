@@ -6,11 +6,13 @@ You can import projects with all their data and user accounts from a backup file
 <anchor name="ProjectsImport-ProjectsImportorServerMove"/>
 
 ## Projects Import or Server Move
+{product="tc"}
 
 Projects Import should be used only when some projects need to be added to an existing server containing some other projects, that is when you need to merge two servers into one. The import is a disruptive operation and [not all data is imported](#Data+not+included+into+import).   
 If you need to move all the server data to a different machine, use [server move](how-to.md#Move+TeamCity+Installation+to+a+New+Machine).
 
 ## Importing projects
+{product="tc"}
 
 On the source TeamCity server:
 * [Create a usual backup](creating-backup-from-teamcity-web-ui.md) file containing the projects to be imported (note that the __[major version](upgrade.md#Upgrading+TeamCity+Server) of the source and target TeamCity servers has to be the same__)

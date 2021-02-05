@@ -800,7 +800,7 @@ To enable search by the build logs, perform the following:
 2. Set the `tc.search.indexBuildLog=true` TeamCity [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 3. [Reset](#Resetting+Search+Index) the search index.
 
-After re\-indexing, TeamCity will be able to perform searching by specified text in the build logs and will list the relevant builds.
+After reindexing, TeamCity will be able to perform searching by specified text in the build logs and will list the relevant builds.
 
 ## Resetting Search Index
 

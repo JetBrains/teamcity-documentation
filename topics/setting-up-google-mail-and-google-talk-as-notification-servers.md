@@ -1,10 +1,11 @@
 [//]: # (title: Setting up Google Mail and Google Talk as Notification Servers)
 [//]: # (auxiliary-id: Setting up Google Mail and Google Talk as Notification Servers)
+
 This section covers how to set up the Google Mail and Google Talk as notification servers when configuring the TeamCity server.
 
 ## Google Mail
 
-On the __Administration | Email Notifier__ page set the options as described below:
+On the __Administration | Email Notifier__ page, set the options as described below:
 
 <table><tr>
 
@@ -59,7 +60,7 @@ Send email messages from
 
 <td>
 
-E\-mail address to send notifications from.
+Email address to send notifications from.
 
 
 </td></tr><tr>

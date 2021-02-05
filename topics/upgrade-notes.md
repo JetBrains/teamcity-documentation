@@ -1080,11 +1080,11 @@ After the server upgrade, the builds used as snapshot dependencies may be rebuil
 
 ### Perforce
 
-Clean checkout will be enforced in builds with Stream\-based and Client\-based Perforce VCS Roots.
+Clean checkout will be enforced in builds with Stream-based and Client-based Perforce VCS Roots.
 
 ### Subversion
 
-Starting from TeamCity 10, TeamCity does not accept by default connections to SVN servers accessed by https:// protocol with non\-trusted server SSL certificate. To enable access with such certificates, you should either import the certificate to server JVM keychain, or enable VCS Root option "__Accept non\-trusted SSL certificate__" (Enable non\-trusted SSL certificate in 10.0)  ([issue](https://youtrack.jetbrains.com/issue/TW-45592)).
+Starting from TeamCity 10, TeamCity does not accept by default connections to SVN servers accessed by https:// protocol with non-trusted server SSL certificate. To enable access with such certificates, you should either import the certificate to server JVM keychain, or enable VCS Root option "__Accept non-trusted SSL certificate__" (Enable non-trusted SSL certificate in 10.0) ([issue](https://youtrack.jetbrains.com/issue/TW-45592)).
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-11"}
@@ -1099,7 +1099,7 @@ Java inspections and duplicates: the bundled IntelliJ IDEA is updated to 2016.2
 
 ### GitHub Issue Tracker
 
-If you were using the TeamCity\-GitHub  [third-party plugin](https://github.com/milgner/TeamCityGithub)  prior to TeamCity 10.0, you can safely [remove](installing-additional-plugins.md)  it: the built\-in TeamCity integration will detect the existing connection to GitHub issue tracker and pick up your settings automatically. 
+If you were using the TeamCity-GitHub [third-party plugin](https://github.com/milgner/TeamCityGithub)  prior to TeamCity 10.0, you can safely [remove](installing-additional-plugins.md) it: the built-in TeamCity integration will detect the existing connection to GitHub issue tracker and pick up your settings automatically. 
 
 ### NuGet Support
 
@@ -1123,13 +1123,13 @@ REST API uses version 10.0.  The previous versions of the API are still availabl
 
 Requests for a set of items with the locator addressing a single item which resulted in 404 responses previously will now return an empty set as a more consistent approach. For example, `.../app/rest/builds?locator=id:<non-existent build id>`. REST debug logging might have diagnostics message with more details as to the case.
 
-Requests for set of items __may return not all/incomplete results__ (with zero or more items included) and provide `nextHref` sub\-element with the link to retrieve the next "page" of items. The search result is complete when no `nextHref` sub-element is provided.
+Requests for set of items __may return not all/incomplete results__ (with zero or more items included) and provide `nextHref` sub-element with the link to retrieve the next "page" of items. The search result is complete when no `nextHref` sub-element is provided.
 
 Some requests for set of items (e.g. ...`/app/rest/vcs-roots` and .../`app/rest/vcs-root-instances`) will use paged results by default when queried without a locator (they used to list all the items). Add the "`count:NNN"` locator dimension to set page size.
 
  __Finding builds__ (`.../app/rest/builds/...` URL)   
  When performing builds scan to find those matched by the locator specified, by default for performance reasons TeamCity will return partial result limited by scanning only 5000 most recent builds. To process a larger portion of the history, check the `nextHref` attribute returned or set the `lookupLimit` locator dimension to a larger value.   
- Previously, until specifically requested the builds from non\-default branch as well as canceled, personal and failed to start builds were not returned. Now these filtered out builds are returned by default for running and queued builds queries as well as when filtering by agent or user. Use `defaultFIlter:true/false` locator dimension to manage the default filtering explicitly.   
+ Previously, until specifically requested the builds from non-default branch as well as canceled, personal and failed to start builds were not returned. Now these filtered out builds are returned by default for running and queued builds queries as well as when filtering by agent or user. Use `defaultFIlter:true/false` locator dimension to manage the default filtering explicitly.   
  Also, `number:NNN` locator now adheres to the same default logic: only "usual" finished builds from default branch are searched by number and several builds can be returned if found.
 
 __Finding VCS roots__ (`.../app/rest/vcsRoots/... URL`)(minor)   

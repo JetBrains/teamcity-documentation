@@ -16,6 +16,8 @@ To configure email notifications for a build configuration:
 3. Select [events to watch](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications).
 
 >To customize the notification texts, you can modify [notification templates](customizing-notifications.md).
+>
+{product="tc"}
 
 Note that TeamCity Email Notifier relies on the SMTP server settings configured in __Administration | Server Administration__.
 
@@ -25,8 +27,13 @@ The Slack Notifier feature relies on a [Slack connection](#Configuring+Slack+Con
 
 ### Configuring Slack Connection
 
-The TeamCity integration with Slack requires creating a [Slack app](https://api.slack.com/apps) with the following [bot token scopes](https://api.slack.com/scopes): `channels:read`, `chat:write`, `im:read`, `im:write`, `users:read`, `team:read`, `groups:read`. You can add these in __Features | OAuth & Permissions | Scopes__ of your Slack app.   
+The TeamCity integration with Slack requires creating a [Slack app](https://api.slack.com/apps) with the following [bot token scopes](https://api.slack.com/scopes): `channels:read`, `chat:write`, `im:read`, `im:write`, `users:read`, `team:read`, `groups:read`. You can add these in __Features | OAuth & Permissions | Scopes__ of your Slack app.
+
 To ensure your TeamCity server can connect to Slack, specify all the possible endpoint addresses of the server as __Redirect URLs__ in __Features | OAuth & Permissions__. In most cases, it would be enough to specify the _Server URL_ set in __[Global Settings](configuring-server-url.md)__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication in Slack might not work unless the server's IP address is also specified in __Redirect URLs__.
+{product="tc"}
+
+To ensure your TeamCity server can connect to Slack, specify its address as __Redirect URL__ in __Features | OAuth & Permissions__.
+{product="tcc"}
 
 >See this [Basic app setup](https://api.slack.com/authentication/basics) guide for more details.
 
@@ -46,7 +53,7 @@ After configuring the connection, go to the settings of the build configuration 
 2. Choose the created connection.
 3. Enter the ID of a channel or user who will be receiving notifications.   
    >Start typing the user ID, and TeamCity will automcomplete it. Alternatively, you can copy this ID from your Slack user profile options (__Profile | More | Copy member ID__).
-4. Select the message format. Slack Notifier does not currently support [custom notification templates](customizing-notifications.md). However, if you select the verbose format, you will be able to choose what information to display in notifications.
+4. Select the message format. Slack Notifier does not currently support custom notification templates. However, if you select the verbose format, you will be able to choose what information to display in notifications.
 5. Configure a [branch filter](branch-filter.md). If it is not configured, you will receive notifications about the default branch only.
 6. Select [events to watch](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications).
 

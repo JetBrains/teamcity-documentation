@@ -902,7 +902,7 @@ The property value is the path to the directory that contains MSBuild 4.0 listen
 
 The [agent port](build-agent-configuration.md) used by the TeamCity server to connect to the agent.
 
-</td></tr><tr>
+</td></tr><tr product="tc">
 
 <td>
 

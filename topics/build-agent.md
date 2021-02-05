@@ -56,6 +56,10 @@ __Authorized/ Unauthorized__
 <td>
 
 Agents are manually authorized via the web UI on the __Agents__ page (except for the agents from the machines launched by the [cloud integrations](teamcity-integration-with-cloud-solutions.md)). Only authorized build agents can run builds. The number of authorized agents at any given time cannot exceed the number of [agent licenses](licensing-policy.md#Number+of+Agents) entered on the server. When an agent is unauthorized, a license is freed and a different build agent can be authorized. Purchase additional licenses to expand the number of agents that can concurrently run builds. When a new agent is registered on the server for the first time, it is __unauthorized__ by default and requires manual authorization to run the builds.
+{product="tc"}
+
+Agents are manually authorized via the web UI on the __Agents__ page (except for the agents from the machines launched by the [cloud integrations](teamcity-integration-with-cloud-solutions.md)). Only authorized build agents can run builds. The number of authorized agents at any given time cannot exceed the number of agent licenses entered on the server. When an agent is unauthorized, a license is freed and a different build agent can be authorized. Purchase additional licenses to expand the number of agents that can concurrently run builds. When a new agent is registered on the server for the first time, it is __unauthorized__ by default and requires manual authorization to run the builds.
+{product="tcc"}
 
 If a build agent is installed and running on the same computer as the TeamCity build server, it is authorized automatically.
 
@@ -86,18 +90,23 @@ Only users with certain roles can manage agents. See [Role and Permission](role-
 For a build agent configuration, refer to the [Build Agent Configuration](build-agent-configuration.md) section.
 
 ## Agent Upgrade
+{product="tc"}
 
 A TeamCity agent is upgraded automatically when necessary. The process involves downloading new agent files from the TeamCity server and restarting the agent on the new files. In order to successfully accomplish this, the user under whose account the agent runs should have [enough](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) permissions.
 
 Typically, an agent upgrade happens when:
-* the server is [upgraded](upgrade.md#Upgrading+TeamCity+Server)
+* the server is [upgraded](upgrade.md)
 * an agent plugin is [added](installing-additional-plugins.md) or [updated](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#PluginsPackaging-AgentUpgradeonUpdatingPlugins) on the server
 * [a new tool is installed](installing-agent-tools.md)
 
+## Agent Upgrade
+{product="tcc"}
+
+A TeamCity agent is upgraded automatically when the server is upgraded. The process involves downloading new agent files from the TeamCity server and restarting the agent on the new files. In order to successfully accomplish this, the user under whose account the agent runs should have [enough](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) permissions.
+
 <seealso>
         <category ref="installation">
-            <a href="installation.md#Install+Additional+Build+Agents">Installing and Running Build Agents</a>
-            <a href="setting-up-and-running-additional-build-agents.md">Setting up and Running Additional Build Agents</a>
+            <a href="setting-up-and-running-additional-build-agents.md">Setting up Additional Build Agents</a>
         </category>
         <category ref="concepts">
             <a href="build-grid.md">Build Grid</a>

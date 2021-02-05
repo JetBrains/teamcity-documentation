@@ -166,8 +166,9 @@ Then, see `teamcity-xmlrpc.log`.
 To turn it off, make the line `<priority value="INFO"/>`.
 
 ## Advanced Logging Configuration
+{product="tc"}
 
-You can configure location of the logs by altering the value of the `teamcity_logs `property (passed to JVM via `-D` option). You can also change the Log4j configuration file location by changing the value of the `log4j.configuration` property. See the corresponding documentation [section](configuring-build-agent-startup-properties.md) on how to pass the options.
+You can configure location of the logs by altering the value of the `teamcity_logs` property (passed to JVM via `-D` option). You can also change the Log4j configuration file location by changing the value of the `log4j.configuration` property. See the corresponding documentation [section](configuring-build-agent-startup-properties.md) on how to pass the options.
 
 For additional options on tweaking logging, refer to the [TeamCity Server Logs](teamcity-server-logs.md#Changing+Logging+Configuration) page.
 
@@ -175,7 +176,7 @@ For additional options on tweaking logging, refer to the [TeamCity Server Logs](
         <category ref="troubleshooting">
             <a href="reporting-issues.md">Reporting Issues</a>
         </category>
-        <category ref="admin-guide">
+        <category ref="admin-guide" product="tc">
             <a href="teamcity-server-logs.md">TeamCity Server Logs</a>
         </category>
 </seealso>

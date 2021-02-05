@@ -2,8 +2,13 @@
 [//]: # (auxiliary-id: Configure and Run Your First Build)
 
 After you have installed and started TeamCity as described [here](installing-and-configuring-the-teamcity-server.md), the server is accessible locally on the default port (on Windows as [`http://localhost/`](http://localhost:8111/), and on Linux/OS X as [`http://localhost:8111/`](http://localhost:8111/)) and has one registered [build agent](build-agent.md) that runs on the same computer.
+{product="tc"}
 
-Now we can get building!
+Let's run your first build in TeamCity!
+{product="tc"}
+
+After you have started TeamCity as described [here](getting-started-with-teamcity-cloud.md#2.+Start+TeamCity), you are ready to run your first build.
+{product="tcc"}
 
 <img src="run-first-build.png" width="611" alt="Run your first build"/>
 

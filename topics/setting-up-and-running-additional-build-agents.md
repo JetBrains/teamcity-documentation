@@ -3,7 +3,7 @@
 
 Before you can start customizing projects and creating build configurations, you need to configure [build agents](build-agent.md). Review the [agent-server communication](#Agent-Server+Data+Transfers) and [Prerequisites](#Prerequisites) sections before proceeding with agent installation.
 
-<tip>
+<tip product="tc">
 
 __Tips__
 
@@ -26,6 +26,9 @@ Note that to run a TeamCity build agent, the environment and user account used t
 
 The agent process (Java) must:
 * be able to open outbound HTTP connections to the server URL configured via the `serverUrl` property in the [`buildAgent.properties`](build-agent-configuration.md) file (typically the same address you use in the browser to view the TeamCity UI). Sending requests to the paths under the configured URL should not be limited. See also the recommended [reverse proxy settings](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server). Ensure that any firewalls installed on the agent or server machines, network configuration and proxies (if any) comply with these requirements.
+{product="tc"}
+* be able to open outbound HTTP connections to the server URL configured via the `serverUrl` property in the [`buildAgent.properties`](build-agent-configuration.md) file (typically the same address you use in the browser to view the TeamCity UI). Sending requests to the paths under the configured URL should not be limited. Ensure that any firewalls installed on the agent, network configuration, and proxies (if any) comply with these requirements.
+{product="tcc"}
 * have full permissions (read/write/delete) to the following directories recursively: [`<agent home>`](agent-home-directory.md) (necessary for automatic agent upgrade and agent tools support), [`<agent work>`](agent-work-directory.md), [`<agent temp>`](agent-home-directory.md#Agent+Directories), and agent system directory (set by `workDir`, `tempDir`, and `systemDir` parameters in the `buildAgent.properties` file).
 * be able to launch processes (to run builds).
 * be able to launch nested processes with the following parent process exit (this is used during agent upgrade).
@@ -70,16 +73,23 @@ The build process is launched by a TeamCity agent and thus shares the environmen
 <anchor name="SettingupandRunningAdditionalBuildAgents-Agent-ServerDataTransfers"/>
 
 ### Agent-Server Data Transfers
+
 [//]: # (AltHead: Server-Agent Data Transfers)
 
-A TeamCity agent connects to the TeamCity server via the URL configured as the `serverUrl` agent property. This is called [unidirectional](#Unidirectional+Agent-to-Server+Communication) agent-to-server connection. If specifically configured, TeamCity agent can use legacy [bidirectional communication](#Bidirectional+Communication) which also requires establishing a connection from the server to the agents. To view whether the agent-server communication is unidirectional or bidirectional for a particular agent, navigate to __Agents | &lt;Agent Name&gt; | Agent Summary__ tab, the __Details__ section, __Communication Protocol__.
+A TeamCity agent connects to the TeamCity server via the URL configured as the `serverUrl` agent property. This is called [unidirectional](#Unidirectional+Agent-to-Server+Communication) agent-to-server connection.
+
+If specifically configured, TeamCity agent can use legacy [bidirectional communication](#Bidirectional+Communication) which also requires establishing a connection from the server to the agents. To view whether the agent-server communication is unidirectional or bidirectional for a particular agent, navigate to __Agents | &lt;Agent Name&gt; | Agent Summary__ tab, the __Details__ section, __Communication Protocol__.
+{product="tc"}
 
 #### Unidirectional Agent-to-Server Communication
+
 Agents use unidirectional agent-to-server connection via the polling protocol: the agent establishes an HTTP(S) connection to the TeamCity Server, and polls the server periodically for server commands.
 
 It is recommended to use __HTTPS__ for agent to server communications (check related [server configuration notes](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI)). If the agents and the server are deployed into a secure environment, agents can be configured to use plain HTTP URL for connections to the server as this reduces transfer overhead. Note that the data travelling through the connection established from an agent to the server includes build settings, repository access credentials and keys, repository sources, build artifacts, build progress messages and build log. In case of using the HTTP protocol that data can be compromised via the "man in the middle" attack.
+{product="tc"}
 
 #### Bidirectional Communication
+{product="tc"}
 
 The bidirectional communication is a legacy connection between the agent and the server and it needs to be specifically enabled (see the example below). When enabled, it requires the agent to connect to the server via HTTP (or HTTPS) and the server to connect to the agent via HTTP.
 
@@ -88,6 +98,7 @@ The data that is transferred via the connections established by the server to ag
 The communication protocol used by TeamCity agents is determined by the value of the `teamcity.agent.communicationProtocols` server [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). The property accepts a comma-separated ordered list of protocols (`polling`  and `xml-rpc` are supported protocol names) and is set to `teamcity.agent.communicationProtocols=polling` by default. If several protocols are specified, the agent tries to connect using the first protocol from this list and if it fails, it will try to connect via the second protocol in the list. `polling` means unidirectional protocol, `xml-rpc` - older, bidirectional communication.
 
 #### Changing Communication Protocol
+{product="tc"}
 
 * To change the communication protocol __for all agents__, set the TeamCity server `teamcity.agent.communicationProtocols` server [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). The new setting will be used by all agents which will connect to the server after the change. To change the protocol for the existing connections, restart the TeamCity server.
 * By default, the agent's property is not configured; when the agent first connects to the server, it receives it from the TeamCity server. To change the protocol __for an individual agent__ after the initial agent configuration, change the value of the `teamcity.agent.communicationProtocols` property in the [agent's properties](build-agent-configuration.md). The agent's property overrides the server property. After the change the agent will restart automatically upon finishing a running build, if any.
@@ -134,6 +145,9 @@ Ensure that the user account used to run the agent service has appropriate [perm
 5. Extract the downloaded file into the desired directory.
 6. Navigate to the `<installation path>\conf` directory, locate the file called `buildAgent.dist.properties` and rename it to `buildAgent.properties`.
 7. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see the [notes](#Agent-Server+Data+Transfers)) and the name of the agent. Refer to the [Build Agent Configuration](build-agent-configuration.md) page for details on agent configuration.
+{product="tc"}
+7. Edit the `buildAgent.properties` file to specify the TeamCity server URL and the name of the agent. Refer to the [Build Agent Configuration](build-agent-configuration.md) page for details on agent configuration.
+{product="tcc"}
 8. Under Linux, you may need to give execution permissions to the `bin/agent.sh` shell script.
 
 On Windows, you may also want to install the [build agent Windows service](#Build+Agent+as+a+Windows+Service) instead of using the manual agent startup.
@@ -515,6 +529,11 @@ If you run a previous version of the TeamCity agent, you will need to repeat the
 
 Using 64-bit JDK (not JRE) is recommended. JDK is required for some build runners like [IntelliJ IDEA Project](intellij-idea-project.md), Java [Inspections](inspections.md), and [Duplicates](duplicates-finder-java.md). If you do not have Java builds, you can install JRE instead of JDK.   
 Using of x64 bit Java is possible, but you might need to double the `-Xmx` memory value for the main agent process (see [Configuring Build Agent Startup Properties](configuring-build-agent-startup-properties.md) and alike [section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) for the server).
+{product="tc"}
+
+Using 64-bit JDK (not JRE) is recommended. JDK is required for some build runners like [IntelliJ IDEA Project](intellij-idea-project.md), Java [Inspections](inspections.md), and [Duplicates](duplicates-finder-java.md). If you do not have Java builds, you can install JRE instead of JDK.   
+Using of x64 bit Java is possible, but you might need to double the `-Xmx` memory value for the main agent process (see [Configuring Build Agent Startup Properties](configuring-build-agent-startup-properties.md)).
+{product="tcc"}
 
 <anchor name="java-paths"/>
 

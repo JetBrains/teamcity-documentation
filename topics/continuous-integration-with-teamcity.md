@@ -80,7 +80,7 @@ __TeamCity Server__
 
 <td>
 
-The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, etc. are stored in a [database](setting-up-an-external-database.md).
+The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, etc. are stored in a database.
 
 <note>
 
@@ -195,10 +195,9 @@ __Build Artifacts__
 
 <td>
 
-Files produced by a build, for example, installers, WAR files, reports, log files, etc, when they become available for download.
+Files produced by a build, for example, installers, WAR files, reports, log files, when they become available for download.
 
 </td></tr></table>
-
  
 
 ### Basic CI Workflow in TeamCity
@@ -214,5 +213,3 @@ To understand the data flow between the server and the agents, what is passed to
 5. The build is assigned to a free and compatible build agent.
 6. The agent executes build steps, described in the build configuration. While executing the steps, the agent reports the build progress to the TeamCity server. It is sending all the log messages, test reports, code coverage results on the fly, so you can monitor the build process in real time.
 7. After finishing the build, the agent sends build artifacts to the server.
-
-Now you can proceed with [TeamCity installation](installation-quick-start.md).

@@ -10,6 +10,10 @@ We aim to promptly address newly discovered security issues in the nearest bugfi
 However, the general assumption and __recommended setup is to deploy TeamCity in a trusted environment__ with no possibility for it to be accessed by malicious users.
 
 Along with these guidelines, please review [notes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) on configuring the TeamCity server for production use. For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/?s=security+bulletin) and the "Security" section in the release notes.
+{product="tc"}
+
+For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/?s=security+bulletin) and the "Security" section in the release notes.
+{product="tcc"}
 
 ## Security Self-Checklist
 
@@ -17,6 +21,7 @@ This checklist contains the main security recommendations to follow when using T
 
 * You are running the latest released TeamCity version and are ready to upgrade to the newly released versions within weeks.
 * An access to the TeamCity web interface is secured with HTTPS (for example, with the help a [proxy server](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) like NGINX). Best practices for securing web applications are employed for the TeamCity web interface: for example, it is not possible to access the server using HTTP the protocol. The reverse proxy does not strip the _Referer_ request header.
+{product="tc"}
 * The TeamCity server machine does not run agents (at least under the user permitted to read the  `<[TeamCity server's home directory](teamcity-home-directory.md)>` and `<[TeamCity Data Directory](teamcity-data-directory.md)>`).
 * TeamCity server and agents processes run under users with minimal required permissions. Installation directories are readable and writable only by a limited set of OS users. The `conf\buildAgent.properties` file and server logs as well as the Data Directory are only readable by OS users who represent administrators of the services, because reading those locations may allow taking over the agent or server respectively.
 * Guest user and user registration is disabled or roles are reviewed for guests and the [All Users](user-group.md#%22All+Users%22+Group) group.
@@ -31,6 +36,7 @@ This checklist contains the main security recommendations to follow when using T
 Here are the notes on different security-related aspects:
 * [Man-in-the middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) concerns:
     * Between the TeamCity server and the user's web browser: It is advised to [use HTTPS](using-https-to-access-teamcity-server.md) for the TeamCity server. During login, TeamCity transmits the user login password in an encrypted form with a moderate encryption level.
+      {product="tc"}
     * Between a TeamCity agent and the TeamCity server: see [this section](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).
     * Between the TeamCity server and other external servers (version control, issue tracker, and so on): the general rules apply as for a client (the TeamCity server in this case) connecting to the external server, see the guidelines for each specific server.
 * Users who have access to the TeamCity web UI: the specific information accessible to the user is defined via TeamCity [user roles](role-and-permission.md).
@@ -44,6 +50,9 @@ Here are the notes on different security-related aspects:
 * It is advised to run TeamCity agents under an OS account with only a [necessary set of permissions](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) and use the [agent pools](configuring-agent-pools.md) feature to ensure that projects requiring a different set of access are not built on the same agents.
 <anchor name="view-build-config-settings"/>
 * Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server. To restrict this, you can use the `teamcity.buildAuth.enableStrictMode=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+{product="tc"}
+* Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server.
+{product="tcc"}
 * Users with the "Edit project" permission (the "Project Administrator" TeamCity role by default) in one project, by changing settings can retrieve artifacts and trigger builds from any build configuration they have only the view permission for ([TW-39209](https://youtrack.jetbrains.com/issue/TW-39209)).
 * Users with the "Change server settings" permission (the "System Administrator" TeamCity role by default): It is assumed that the users also have access to the computer on which the TeamCity server is running under the user account used to run the server process. Thus, the users can get full access to the machine under that OS user account: browse file system, change files, run arbitrary commands, and so on.
 * The TeamCity server computer administrators: have full access to TeamCity stored data and can affect TeamCity executed processes. Passwords that are necessary to authenticate in external systems (like VCS, issue trackers, and so on) are stored in a scrambled form in [TeamCity Data Directory](teamcity-data-directory.md) and can also be stored in the database. However, the values are only scrambled, which means they can be retrieved by any user who has access to the server file system or database.
@@ -81,6 +90,10 @@ TeamCity has no built-in protection against DoS (Denial-of-service) attack: high
 ## Encryption Used by TeamCity
 
 TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key, or [using a custom key](teamcity-configuration-and-maintenance.md#encryption-settings).
+{product="tc"}
+
+TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key.
+{product="tcc"}
 
 ## Third-party Software Vulnerabilities
 

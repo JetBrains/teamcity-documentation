@@ -5,7 +5,10 @@ Instead of having one common set of [build agents](build-agent.md), you can brea
 * An agent can belong to _one pool only_.
 * A project can use _several pools_ for its builds.
 
-The number of agents authorized by the TeamCity server is limited by the number of [agent licenses](licensing-policy.md#Number+of+Agents). By default, all newly authorized agents are included into the _Default pool_. 
+The number of agents authorized by the TeamCity server is limited by the number of [agent licenses](licensing-policy.md#Number+of+Agents). By default, all newly authorized agents are included into the _Default pool_.
+{product="tc"}
+
+The number of agents authorized by the TeamCity server is limited by the number of agent licenses. By default, all newly authorized agents are included into the _Default pool_.
 
 With the help of agent pools you can bind specific agents to specific projects. Project builds can be run only on build agents from the pools assigned to the project. Agent pools can also help to calculate the required agents' capacity.
 

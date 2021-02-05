@@ -369,11 +369,14 @@ When __enabled__ (default), TeamCity clones the Git repository and creates its m
 See also, [how to prepare a mirror on a cloud agent](#Git+mirrors+on+cloud+agents).
 
 If you __disable__ this option, TeamCity will clone the repository directly under the build's working directory, unless the [`teamcity.git.use.local.mirrors`](#use-local-mirrors) property is set to `true`.
+{product="tc"}
 
+If you __disable__ this option, TeamCity will clone the repository directly under the build's working directory.
+{product="tcc"}
 
 </td></tr></table>
 
-<tip>
+<tip product="tc">
 
 To configure a connection from a TeamCity server running behind a proxy to a remote Git repository, see [this section](how-to.md#Configure+TeamCity+to+Use+Proxy+Server+for+Outgoing+Connections).
 </tip>
@@ -424,7 +427,7 @@ This way, builds will run significantly faster, with no need to check out the wh
 > Alternatively, you can store the `system/git` directory in a persistent volume, so it keeps all the updates even when a cloud agent is destroyed, and configure its automatic mounting on each newly created agent.
 
 ## Configuring Git Garbage Collection on Server
-{id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server"}
+{id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server" product="tc"}
 
 TeamCity server maintains a local clone for every Git repository used in the VCS roots configured on the server. Since the server performs fetch in those clones many times a day, the clone needs regular optimization to maintain predictable performance. If the Git garbage collection for the clone was not run for a long time, the process of collecting changes may slow down or start to report memory-related errors.
 TeamCity can automatically run git gc periodically when native Git client can be found on the server. Inability to run Git GC results in a related health report.
@@ -449,7 +452,7 @@ TeamCity supports Git LFS for agent-side checkout. To use it, install git 1.8.\+
 We recommend using Git LFS version 2.12.1 or later as earlier versions come with a [vulnerability exploit](https://github.com/git-lfs/git-lfs/security/advisories/GHSA-4g4p-42wc-9f3m).
 
 ## Internal Properties
-{id="internalProperties" auxiliary-id="Internal Properties"}
+{id="internalProperties" auxiliary-id="Internal Properties" product="tc"}
 
 For Git VCS, it is possible to configure the following [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties):
 
@@ -564,6 +567,7 @@ By default, TeamCity starts nested Java processes for `git fetch` and `git patch
 This property provides the explicit `-Xmx` and disables the automatic `-Xmx` setup.
 
 Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch` and `git patch`, each using the configured amount of the memory. For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) may be needed.
+{product="tc"}
 
 </td></tr>
 
@@ -879,7 +883,7 @@ false
 
 <td>
 
-_TeamCity checks the state of this property only if the "[_Use mirrors_](#use-alternates)" option is disabled in the VCS root settings. _
+_TeamCity checks the state of this property only if the "[_Use mirrors_](#use-alternates)" option is disabled in the VCS root settings._
 
 By default, if you disable "_Use mirrors_", TeamCity will clone the repository under the build's working directory.   
 Set `teamcity.git.use.local.mirrors` to `true` to clone the repository under the agent's `system\git` directory instead. When running a build, TeamCity will copy the repository from this directory to the build's working directory.
@@ -1005,9 +1009,10 @@ If you specify multiple checkout rules for one root, make sure their checkout di
 ```
 
 ## Known Issues
+{product="tc"}
 
 * `java.lang.OutOfMemoryError` while fetching from a repository in case [`teamcity.git.fetch.process.max.memory`](#max-memory) property is specified. Since TeamCity 2019.2, the recommended approach is to disable this property thus delegating the automatic memory management to TeamCity.
-* Teamcity running as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using `teamcity-server.bat`.
+* TeamCity running as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using `teamcity-server.bat`.
 * Inflation using streams in JGit prevents `OutOfMemoryError`, but can be time-consuming (see the related thread at [jgit-dev](http://dev.eclipse.org/mhonarc/lists/jgit-dev/msg00687.html) for details and the [TW-14947](http://youtrack.jetbrains.net/issue/TW-14947) issue related to the problem). If you meet conditions similar to those described in the issue, try to increase `teamcity.git.stream.file.threshold.mb`. Additionally, it is recommended to increase the overall amount of memory dedicated for TeamCity to prevent `OutOfMemoryError`.
 
 ## Development Links

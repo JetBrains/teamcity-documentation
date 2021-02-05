@@ -1,16 +1,24 @@
 [//]: # (title: Upgrade)
 [//]: # (auxiliary-id: Upgrade)
 
-<warning>
+Your TeamCity Cloud instance is kept to date automatically. We upgrade all Cloud instances during the week following each major and minor release. The upgrade occurs in the least loaded server time. The duration of upgrade depends on the size of the instance.
+{product="tcc"}
 
-Unless specifically noted, TeamCity does not support downgrade between major releases (changes in the first two numbers of the version). It is strongly recommended to [back up your data](teamcity-data-backup.md) before any upgrade.
-</warning>
+Refer to [TeamCity Release Cycle](teamcity-release-cycle.md) for information on expected release updates.
+{product="tcc"}
+
+>Unless specifically noted, TeamCity does not support downgrade between major releases (changes in the first two numbers of the version). It is strongly recommended to [back up your data](teamcity-data-backup.md) before any upgrade.
+> 
+{type="warning" product="tc"}
 
 TeamCity supports upgrades from any of the previous versions to the later ones. All the settings and data are preserved unless noted in the [Upgrade Notes](upgrade-notes.md).
+{product="tc"}
 
-It is recommended to plan for regular upgrades to run the latest TeamCity version at least after several bugfix updates are released. This way you run a fully [supported version](teamcity-release-cycle.md) with the latest fixes and security patches.
+It is recommended to plan for regular upgrades to run the latest TeamCity version at least after several bugfix updates are released. This way, you run a fully [supported version](teamcity-release-cycle.md) with the latest fixes and security patches.
+{product="tc"}
 
 ## Before Upgrade
+{product="tc"}
 
 Before upgrading TeamCity:
 
@@ -42,6 +50,7 @@ When upgrading from TeamCity 4.x or earlier, note that the licensing policy in T
 <anchor name="Upgrade-UpgradingTeamCityServer"/>
 
 ## Upgrading TeamCity Server
+{product="tc"}
 
 TeamCity supports upgrades from any of the previous versions to the current one.   
 Unless specifically noted, downgrades with preserving the data are not possible with changing the major version and are possible within bugfix releases.
@@ -146,12 +155,14 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 If you made no changes to the container, you can just stop the running container, pull the new version of the [official TeamCity image](https://hub.docker.com/r/jetbrains/teamcity-server/) and the server in it via the usual command. If you changed the image, you will need to replicate the changes to the new TeamCity server image.
 
 ## IDE Plugins
+{product="tc"}
 
 It is recommended for all users to regularly update their IDE plugins to the latest version compatible with the TeamCity server version in use. At least to the version available from the TeamCity server's Tools section on user profile.   
 Generally, versions of the IntelliJ IDEA TeamCity plugin, Eclipse TeamCity plugin, and Visual Studio TeamCity Addin have to be the same as the TeamCity server version. Users with non-matching plugin versions get a message on an attempt to log in to the TeamCity server with a non-matching version.   
 The only exception is TeamCity versions 9.0 - 9.1.x, which use a compatible protocol, and any plugin of these versions can be used with any server of these versions. Updating IDE plugins to the matching server version is still recommended.
 
 ## Upgrading Build Agents
+{product="tc"}
 
 * [Automatic Build Agent Upgrading](#Automatic+Build+Agent+Upgrading)
 * [Upgrading Build Agents Manually](#Upgrading+Build+Agents+Manually)
@@ -227,7 +238,7 @@ To upgrade the service wrapper manually, do the following:
 This procedure is applicable ONLY to an agent running with _new_ service wrapper. Make sure you are not running the __agentd__ service.
 </note>
 
-<seealso>
+<seealso product="tc">
         <category ref="concepts">
             <a href="teamcity-data-directory.md">TeamCity Data Directory</a>
         </category>

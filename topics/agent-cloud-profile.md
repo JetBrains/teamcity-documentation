@@ -72,7 +72,7 @@ Cloud type
 Select the cloud provider type from the drop-down menu.
 
 
-</td></tr><tr>
+</td></tr><tr product="tc">
 
 <td>
 

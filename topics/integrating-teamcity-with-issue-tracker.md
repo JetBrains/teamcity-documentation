@@ -122,6 +122,7 @@ Additional authentication information or/and the details on how to specify strin
 * [TFS](team-foundation-work-items.md)
 
 ## Integrating TeamCity with Other Issue Trackers
+{product="tc"}
 
 To integrate TeamCity with other issue trackers, configure TeamCity to turn any issue tracker issue ID mentions in change comments into links. See [mapping external links in comments](mapping-external-links-in-comments.md) for details.
 

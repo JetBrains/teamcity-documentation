@@ -52,7 +52,11 @@ The build queue can be paused manually or automatically.
 
 Users with the _Enable/disable agent_ permission (included in the [Agent Manager](role-and-permission.md#Per-Project+Authorization+Mode) role by default) can manually pause/resume the build queue (since pausing the queue is equivalent to disabling all agents on the server). This action is available in the upper right corner of the __Build Queue__ page.
 
-The build queue can be paused automatically [if the TeamCity Server runs out of disk space](teamcity-disk-space-watcher.md). The queue will be automatically resumed when sufficient space is available.
+The build queue can be paused automatically [if the TeamCity server runs out of disk space](teamcity-disk-space-watcher.md). The queue will be automatically resumed when sufficient space is available.
+{product="tc"}
+
+The build queue can be paused automatically if the TeamCity server runs out of disk space. The queue will be automatically resumed when sufficient space is available.
+{product="tcc"}
 
 When the queue is paused, every page in TeamCity will contain a message with information on the reasons for pausing.
 

@@ -3,10 +3,9 @@
 
 TeamCity integration with GitHub issue tracker can be set up separately or as a part of TeamCity integration with [GitHub source code hosting service](integrating-teamcity-with-vcs-hosting-services.md).
 
-<tip>
+<tip product="tc">
 If you were using the TeamCity-GitHub [third-party plugin](https://github.com/milgner/TeamCityGithub) prior to TeamCity 10.0, you can safely [remove](installing-additional-plugins.md#Uninstalling+a+plugin+via+Web+UI) it: the built-in TeamCity integration will detect the existing connection to GitHub issue tracker and pick up your settings automatically.
 </tip>
-
 
 When setting up [integration](integrating-teamcity-with-issue-tracker.md#Enabling+Issue+Tracker+Integration) with GitHub, in addition to the repository URL and other general settings, you need to configure authentication and specify the issue ID pattern.
 

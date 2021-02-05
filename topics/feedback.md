@@ -15,8 +15,11 @@ Contact us about:
 * _not a public question, and you have an active TeamCity Enterprise server license_ — [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) (private, faster response times)
 
 When submitting a request, make sure:
+{product="tc"}
 * to provide all necessary information by reviewing the [Reporting Issues guidelines](reporting-issues.md#Best+Practices+When+Reporting+Issues);
+{product="tc"}
 * you use a [recent TeamCity version](previous-releases-downloads.md). Generally, we do not provide regular support for [non-current major versions](teamcity-release-cycle.md) older than one year.
+{product="tc"}
 
 ## Licensed Users Support
 

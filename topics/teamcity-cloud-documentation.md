@@ -86,7 +86,7 @@ All the listed features will be introduced in our On-premises version in the nea
 
 TeamCity Cloud Beta has the following limitations comparing to On-premises:
 * Limited server configuration.
-* No automatic [server diagnostics](teamcity-monitoring-and-diagnostics.md).
+* No automatic server diagnostics.
 * Data is backed up and cleaned up automatically. The set of available configuration options may differ from the On-premises installations.
 * Some settings are unavailable to TeamCity Cloud administrators: for example, cloud profiles' configuration or changing the location for storing external artifacts.
 * No plugin management. The following bundled plugins are currently disabled:

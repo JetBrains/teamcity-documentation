@@ -15,17 +15,17 @@ Is reported when more than 90% of total memory has been in use during the last 5
 
 ## Heavy GC overload
 
-Is reported when memory cleaning takes more than 50% of CPU resources  on average. It usually means really serious problems with memory resulting in high performance degradation.
+Is reported when memory cleaning takes more than 50% of CPU resources on average. It usually means really serious problems with memory resulting in high performance degradation.
 
 ## Customization
 
 Several [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) can be used to customize the Monitor:
 
-* `teamCity.memoryUsageMonitor.poolNames` sets up pool names to track. Case\-sensitive comma\-separated string is accepted.
+* `teamCity.memoryUsageMonitor.poolNames` sets up pool names to track. Case-sensitive comma-separated string is accepted.
 
 * `teamCity.memoryUsageMonitor.warningThreshold` allows setting up a minimal warning threshold. Affects all tracked memory pools except for PermGen ([replaced with metaspace](http://javaeesupportpatterns.blogspot.ru/2013/02/java-8-from-permgen-to-metaspace.html) memory allocation in TeamCity 10).
 
-* `teamCity.memoryUsageMonitor[<Pool name>].warningThreshold` can be used to modify single memory pool threshold. Spaces should be escaped or changed to `\ ` signs.
+* `teamCity.memoryUsageMonitor[<Pool name>].warningThreshold` can be used to modify single memory pool threshold. Spaces should be escaped or changed to `\` symbols.
 
 * `teamCity.memoryUsageMonitor.gcWarningThreshold` allows setting up the allowed percentage of resources to spent for cleaning the memory.
 

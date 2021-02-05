@@ -1,14 +1,16 @@
 [//]: # (title: TeamCity Configuration and Maintenance)
 [//]: # (auxiliary-id: TeamCity Configuration and Maintenance)
 
-<tip>
-
-Server configuration is only available to the [System Administrators](role-and-permission.md#Per-Project+Authorization+Mode).
-</tip>
+>Server configuration is only available to the [System Administrators](role-and-permission.md#Per-Project+Authorization+Mode).
 
 To change the server configuration, go to __Administration | Global Settings__. The following blocks of settings are available:
+{product="tc"}
+
+To change the server configuration, go to __Administration | Cloud Server Settings__.
+{product="tcc"}
 
 ## TeamCity Configuration
+{product="tc"}
 
 <table><tr>
 
@@ -59,7 +61,7 @@ Artifact directories
 
 The list of the root directories used by the TeamCity server to store [Build Artifact](build-artifact.md), build logs and other build data. The default location is `/system/artifacts`. Note that artifacts can also be stored on [external storage](configuring-artifacts-storage.md).
 
-The list can be changed by specifying a new\-line delimited list of paths. Absolute and relative (to TeamCity Data Directory) paths are supported.All the specified directories use the same [structure](teamcity-data-directory.md#artifacts).
+The list can be changed by specifying a new-line delimited list of paths. Absolute and relative (to TeamCity Data Directory) paths are supported.All the specified directories use the same [structure](teamcity-data-directory.md#artifacts).
 
 When looking for build artifacts, the specified locations are searched for the directory corresponding to the build. The search is done in the order the root directories are specified. The first found build artifacts directory is used as the source of artifacts of this build.
 
@@ -119,7 +121,7 @@ Maximum size in bytes. KB, MB, GB or TB suffixes are allowed. \-1 indicates no l
 
 </td></tr>
 
-<tr>
+<tr product="tc">
 
 <td>
 
@@ -166,7 +168,7 @@ Setting
 
 Description
 
-</td></tr><tr>
+</td></tr><tr product="tc">
 
 <td>
 
@@ -197,7 +199,7 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 <anchor name="TeamCityConfigurationandMaintenance-EncryptionSettings"/>
 
 ## Encryption Settings
-{id="encryption-settings" auxiliary-id="Encryption Settings"}
+{id="encryption-settings" auxiliary-id="Encryption Settings" product="tc"}
 
 In this block, you can choose how TeamCity will process secure values: either using the default _scrambling strategy_ or by _encrypting them with a custom key_.
 

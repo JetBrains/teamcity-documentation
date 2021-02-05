@@ -7,7 +7,7 @@ The Project Administrator [permissions](role-and-permission.md) at least are req
 
 ## Scope and Severity
 
-The report enables you to define the analysis __scope__: you can select to analyze the global configuration or report on project\-related items. The scope available to you depends on the level of the __View Project__ permission granted to you. _Note that the report is not available for archived projects._
+The report enables you to define the analysis __scope__: you can select to analyze the global configuration or report on project-related items. The scope available to you depends on the level of the __View Project__ permission granted to you. _Note that the report is not available for archived projects._
 
 The Server Health analysis also employs the __severity__ rating, depending on the issue impact on the configuration of the system on the whole or an individual project.
 
@@ -41,6 +41,7 @@ TeamCity displays a notification if agents are not running the recommended Java 
 <anchor name="ServerHealth-WebSocketconnectionissues"/>
 
 ### WebSocket connection issues
+{product="tc"}
 
 The WebSocket protocol is used to get web UI updated for events, running builds updates and statistics counters.
 
@@ -63,19 +64,18 @@ All URLs used by browsers that do not support the WebSocket connection are liste
 
 If Tomcat is configured to use the [BIO connector](https://tomcat.apache.org/tomcat-8.5-doc/config/http.html), the WebSocket protocol is [automatically disabled](http://tomcat.apache.org/tomcat-7.0-doc/web-socket-howto.html#Production_usage). It is recommended to change the Tomcat Connector settings [to use the NIO connector](known-issues.md#Slow+download+from+TeamCity+server).
 
-
 [//]: # (Internal note. Do not delete. "Server Healthd280e163.txt")    
 
-
-
 ### Critical Errors
+{product="tc"}
 
 This category shows the following errors:
-* errors in project configuration files \- occur if the server detects some inconsistency or a broken configuration while it loads configuration files from the disk
+* errors in project configuration files - occur if the server detects some inconsistency or a broken configuration while it loads configuration files from the disk
 * errors raised by the [disk space watcher](teamcity-disk-space-watcher.md)
 * warnings from the TeamCity Server [Memory Monitor](teamcity-memory-monitor.md)
 
 ### Database Related Problems
+{product="tc"}
 
 TeamCity will warn you if the server currently uses the internal database. [A standalone database is recommended as the storage engine](setting-up-an-external-database.md).
 
@@ -194,6 +194,7 @@ If the default agent\-side checkout is not possible, TeamCity will display a cor
 The report helps to find agents which failed to upgrade. [Build agent logs](viewing-build-agent-logs.md) should help identify the cause of the issue.
 
 #### Cloud Agents
+{product="tc"}
 
 If a user removes an image from a profile, a warning is displayed that the instances already started by TeamCity will not be automatically stopped.
 
@@ -205,6 +206,7 @@ The report is displayed for the agents not used for 3 days and more, if
 * if the builds were run on the server during these 3 days
 
 ### Incorrect proxying server configuration
+{product="tc"}
 
 The report displays  detected misconfiguration of the proxy server that is used to access the TeamCity web interface.
 
@@ -215,5 +217,6 @@ See our [recommendations](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) how t
 TeamCity analyzes the current settings of a build configuration and suggests additional options, for example, adding a VCS trigger, a build step, and so on. Besides the server health report, the suggestions for a specific build configuration are shown right on the configuration settings pages.
 
 ## Extensibility
+{product="tc"}
 
 The default Server Health report provided by TeamCity might cover either too many, or not all the items required by you. Depending on your infrastructure, configuration, performance aspects, and so on. that you need to analyze, a custom Server Health report can be needed. TeamCity enables you to write a [plugin](https://confluence.jetbrains.com/display/TCD18/Custom+Server+Health+Report) which will report on specific items.

@@ -2,10 +2,12 @@
 [//]: # (auxiliary-id: Supported Platforms and Environments)
 
 This page covers software-related environments TeamCity works with. For hardware-related notes, see [this section](how-to.md#Estimate+Hardware+Requirements+for+TeamCity).
+{product="tc"}
 
 ## Platforms (Operating Systems)
 
 ### TeamCity Server
+{product="tc"}
 
 Core features of TeamCity server are platform-independent. See [considerations](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server) on choosing server platform.   
 
@@ -139,9 +141,12 @@ Other runners:
 * [Team Foundation Server](team-foundation-server.md) 2005, 2008, 2010, 2012, 2013, 2015, 2017 are supported. 
 * [Mercurial](mercurial.md) (requires the Mercurial "hg" client v1.5.2+ installed on the server)
 * [CVS](cvs.md)
+{product="tc"}
 * [SourceGear Vault](sourcegear-vault.md) 6 and 7 (requires the Vault command line client libraries installed on the TeamCity server), _integrated via an additional plugin_
 * [Borland StarTeam](starteam.md) 6 and up (the StarTeam client application must be installed on the TeamCity server)
+{product="tc"}
 * [IBM Rational ClearCase](clearcase.md) Base and UCM modes (requires the ClearCase client installed and configured on the TeamCity server), _integrated via an additional plugin_
+{product="tc"}
 * [Microsoft Visual SourceSafe](visual-sourcesafe.md) 6 and 2005 (requires a SourceSafe client installed on the TeamCity server, available only on Windows platforms)
 
 For support for other VCS please check [external plugins](https://plugins.jetbrains.com/category/93-version-control-systems-support/teamcity) available.
@@ -156,6 +161,7 @@ The requirements noted are for agent environment and are additional to those for
 * Team Foundation Server 2005-2015, 2017 are supported. 
 * Mercurial (the Mercurial "hg" client v1.5.2+ must be installed on the TeamCity agent machine)
 * CVS
+{product="tc"}
 * IBM Rational ClearCase (the ClearCase client must be installed on the TeamCity agent machine)
    
 ### Labeling Build Sources
@@ -166,8 +172,10 @@ The requirements noted are for agent environment and are additional to those for
 * Team Foundation Server
 * Mercurial
 * CVS
+{product="tc"}
 * SourceGear Vault, _integrated via an additional plugin_
 * Borland StarTeam
+{product="tc"}
 * ClearCase, _integrated via an additional plugin_
    
 ### Remote Run on Branch
@@ -213,6 +221,7 @@ See also details on the [cloud integrations](teamcity-integration-with-cloud-sol
 Additional requirements are listed in [Integrating TeamCity with Issue Tracker](integrating-teamcity-with-issue-tracker.md).
 
 Links to issues of any issue tracker can also be recognized in change comments using [Mapping External Links in Comments](mapping-external-links-in-comments.md).
+{product="tc"}
 
 ## IDE Integration
 
@@ -256,6 +265,7 @@ Supported VCS
 * Perforce (P4WSAD 2009.2 - 2010.1, P4Eclipse 2010.1 - 2015.1)
 * Git (the EGit 2.0+ Eclipse integration plugin)
 * CVS
+{product="tc"}
 * ClearCase (the client software is required), _integrated via an additional plugin_
 * [see also](eclipse-plugin.md)
 
@@ -358,6 +368,7 @@ JetBrains dotCover coverage. Requires [JetBrains dotCover](http://www.jetbrains.
 </td></tr></table>
 
 ## Supported Databases
+{product="tc"}
 
 See more at [Setting up an External Database](setting-up-an-external-database.md)
 

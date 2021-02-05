@@ -12,6 +12,8 @@ Notifications in TeamCity can be sent:
 This article explains how to configure user-level notifications and describes the events that can trigger notifications. To read about build-level notifications, refer to the [respective article](notifications.md).
 
 >You can [customize notification templates](customizing-notifications.md).
+> 
+{product="tc"}
 
 ## Subscribing to User-level Notifications
 
@@ -28,15 +30,17 @@ Note that TeamCity comes with a default notification rule. It will send you an e
 
 </tip>
 
- * __IDE Notifier__: the required TeamCity plugin must be installed in your IDE. For the details on installing TeamCity IDE plugins, refer to [Installing Tools](installing-tools.md).
- * __Jabber Notifier__*: expects entering a Jabber account name. Note that instead of Jabber you can specify your Google Talk account here if this option is [configured by the System Administrator](setting-up-google-mail-and-google-talk-as-notification-servers.md#Google+Talk).
- * __Slack Notifier__: requires signing in to Slack and relies on the Slack connection configured in the project settings. Read more on how to configure the connection to Slack in [Notifications](notifications.md#Configuring+Slack+Connection). 
- * (obsolete) __Windows Tray Notifier__: [Windows Tray Notifier](windows-tray-notifier.md) must be installed.
- * __Browser Notifier__: aims at replacing Windows Tray Notifier and requires installing the [web browser extension](browser-notifier.md).
+* __IDE Notifier__: the required TeamCity plugin must be installed in your IDE. For the details on installing TeamCity IDE plugins, refer to [Installing Tools](installing-tools.md).
+* __Jabber Notifier__*: expects entering a Jabber account name. Note that instead of Jabber you can specify your Google Talk account here if this option is [configured by the System Administrator](setting-up-google-mail-and-google-talk-as-notification-servers.md#Google+Talk).
+{product="tc"}
+* __Slack Notifier__: requires signing in to Slack and relies on the Slack connection configured in the project settings. Read more on how to configure the connection to Slack in [Notifications](notifications.md#Configuring+Slack+Connection). 
+* (obsolete) __Windows Tray Notifier__: [Windows Tray Notifier](windows-tray-notifier.md) must be installed.
+{product="tc"}
+* __Browser Notifier__: aims at replacing Windows Tray Notifier and requires installing the [web browser extension](browser-notifier.md).
 
 3\. Click __Add new rule__ and specify the rule in the dialog. The notification rules are comprised of two parts: [what you will watch](#What+Will+Be+Watched) and [which events you will be notified about](#Which+Events+Will+Trigger+Notifications). See the details below.
 
-<note>
+<note product="tc">
 
 * Email and Jabber notifications are sent only if the System Administrator has configured the SMTP and Jabber servers respectively in __Administration | Server Administration__. System Administrators can also [change the templates](customizing-notifications.md) used for notifications.
 
@@ -506,7 +510,7 @@ A number; limits the number of items to return in a feed. Defaults to 100.
 A negative number; specifies the number of minutes. Only builds finished within the specified number of minutes from the moment of feed request will be returned. Defaults to 5 days.
 
 
-</td></tr><tr>
+</td></tr><tr product="tc">
 
 <td>
 
@@ -517,8 +521,7 @@ A negative number; specifies the number of minutes. Only builds finished within 
 
 <td>
 
-A name of the custom template to use to render the feed (`<template_name>`). The file `<TeamCity Data Directory>\config\<template_name>.ftl` should be present on the server. See the [corresponding section](customizing-notifications.md) on the file syntax.
-
+A name of the custom template used for rendering the feed (`<template_name>`). The file `<TeamCity Data Directory>\config\<template_name>.ftl` should be present on the server. See the [corresponding section](customizing-notifications.md) on the file syntax.
 
 </td></tr></table>
 
@@ -536,7 +539,7 @@ http://teamcity.server:8111/httpAuth/feed.html?buildTypeId=bt1&itemsType=builds&
 
  <seealso>
         <category ref="admin-guide">
-            <a href="customizing-notifications.md">Customizing Notifications</a>
+            <a href="customizing-notifications.md" product="tc">Customizing Notifications</a>
             <a href="notifications.md">Notifications</a>
         </category>
 </seealso>
