@@ -1,5 +1,6 @@
 [//]: # (title: Setting up Google Mail and Google Talk as Notification Servers)
 [//]: # (auxiliary-id: Setting up Google Mail and Google Talk as Notification Servers)
+
 This section covers how to set up the Google Mail and Google Talk as notification servers when configuring the TeamCity server.
 
 ## Google Mail

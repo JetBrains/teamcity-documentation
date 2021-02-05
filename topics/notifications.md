@@ -27,8 +27,13 @@ The Slack Notifier feature relies on a [Slack connection](#Configuring+Slack+Con
 
 ### Configuring Slack Connection
 
-The TeamCity integration with Slack requires creating a [Slack app](https://api.slack.com/apps) with the following [bot token scopes](https://api.slack.com/scopes): `channels:read`, `chat:write`, `im:read`, `im:write`, `users:read`, `team:read`, `groups:read`. You can add these in __Features | OAuth & Permissions | Scopes__ of your Slack app.   
+The TeamCity integration with Slack requires creating a [Slack app](https://api.slack.com/apps) with the following [bot token scopes](https://api.slack.com/scopes): `channels:read`, `chat:write`, `im:read`, `im:write`, `users:read`, `team:read`, `groups:read`. You can add these in __Features | OAuth & Permissions | Scopes__ of your Slack app.
+
 To ensure your TeamCity server can connect to Slack, specify all the possible endpoint addresses of the server as __Redirect URLs__ in __Features | OAuth & Permissions__. In most cases, it would be enough to specify the _Server URL_ set in __[Global Settings](configuring-server-url.md)__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication in Slack might not work unless the server's IP address is also specified in __Redirect URLs__.
+{product="tc"}
+
+To ensure your TeamCity server can connect to Slack, specify its address as __Redirect URL__ in __Features | OAuth & Permissions__.
+{product="tcc"}
 
 >See this [Basic app setup](https://api.slack.com/authentication/basics) guide for more details.
 
