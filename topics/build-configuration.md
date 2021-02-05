@@ -80,7 +80,7 @@ __To activate several build configurations of a project__:
 
 In general, a build configuration status reflects the status of its last finished build.
 
-Note that [Personal builds](personal-build.md) do not affect the build configuration status.
+Note that [personal builds](personal-build.md) do not affect the build configuration status.
 
 You can view the status of all build configurations on the __Projects__ page (for all projects) or __Project Home__ page (for a particular project), when the details are collapsed.
 
@@ -132,14 +132,15 @@ The last build on the default branch executed with errors or one of the currentl
 
 <td>
 
-![investigate.gif](investigate.gif)
+![investigate.png](investigate.png)
 
+![fix.png](fix.png)
 
 </td>
 
 <td>
 
-Indicates that someone has started investigating the problem, or already fixed it. (see [Investigating and Muting Build Failures](investigating-and-muting-build-failures.md)).
+Indicates that someone has started investigating the problem, or already fixed it. See [Investigating and Muting Build Failures](investigating-and-muting-build-failures.md).
 
 
 </td></tr><tr>
@@ -153,22 +154,21 @@ _no icon_
 
 <td>
 
-There were no finished builds for this configuration, the status is unknown. If none of the build configurations in a project have finished builds, the ![NoBuildsProject.png](NoBuildsProject.png) is displayed next to a project name
-
+There were no finished builds for this configuration, the status is unknown.
 
 </td></tr><tr>
 
 <td>
 
-![BCPaused.png](BCPaused.png)
-
+![paused.png](paused.png)
 
 </td>
 
 <td>
 
-The build configuration is paused; no builds are triggered for it. Click on the link next to the status to view by whom it was paused, and activate configuration if needed.
+The build configuration is paused: all triggers are disabled, but the build can still be triggered manually or by [dependencies](configuring-dependencies.md).
 
+To see who paused the configuration or to unpause it, click the link next to the status icon.
 
 </td></tr></table>
 

@@ -198,7 +198,6 @@ __Build Artifacts__
 Files produced by a build, for example, installers, WAR files, reports, log files, when they become available for download.
 
 </td></tr></table>
-
  
 
 ### Basic CI Workflow in TeamCity

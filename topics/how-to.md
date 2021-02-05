@@ -1068,8 +1068,6 @@ Further recommendations:
 * If necessary, use parameter with "prompt" display mode to ask for "[confirmation](https://youtrack.jetbrains.com/issue/TW-8284#comment=27-290611)" on running a build
 * [Change title](https://youtrack.jetbrains.com/issue/TW-20617#comment=27-527943) of the build configuration "Run" button
 
-Related section on the official site: [Continuous Deployment with TeamCity](http://www.jetbrains.com/teamcity/features/deployment.html)
-
 
 [//]: # (Internal note. Do not delete. "How To...d160e2430.txt")
 
