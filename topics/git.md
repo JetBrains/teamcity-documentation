@@ -883,7 +883,7 @@ false
 
 <td>
 
-_TeamCity checks the state of this property only if the "[_Use mirrors_](#use-alternates)" option is disabled in the VCS root settings. _
+_TeamCity checks the state of this property only if the "[_Use mirrors_](#use-alternates)" option is disabled in the VCS root settings._
 
 By default, if you disable "_Use mirrors_", TeamCity will clone the repository under the build's working directory.   
 Set `teamcity.git.use.local.mirrors` to `true` to clone the repository under the agent's `system\git` directory instead. When running a build, TeamCity will copy the repository from this directory to the build's working directory.

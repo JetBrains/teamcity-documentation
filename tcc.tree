@@ -116,8 +116,7 @@
                 <toc-element id="teamcity-data-backup.md"/>
                 <toc-element id="projects-import.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="project-export.md" show-structure-for="chapter" show-structure-depth="4"/>
-                <toc-element id="configuring-server-url.md"/>
-                <toc-element id="setting-up-google-mail-and-google-talk-as-notification-servers.md" show-structure-for="chapter" show-structure-depth="4"/>
+                <toc-element id="setting-up-google-mail-as-notification-server.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="using-https-to-access-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="build-agents-configuration-and-maintenance.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="viewing-build-agent-logs.md" show-structure-for="chapter" show-structure-depth="4"/>
