@@ -34,7 +34,7 @@ If you consider moving projects between several TeamCity server installations, i
 
 <note>
 
-On changing the ID of a project or build configuration, all the related URLs (including the web UI, artifact download links, [RSS feeds](syndication-feed.md), and REST API) will change. If any of the URLs containing the old IDs were bookmarked or hardcoded in the scripts, they will stop to function and will need update. At the moment of the ID change, the correspondingly named directories under TeamCity Data Directory (including directories storing settings and artifacts) are renamed, and this can consume some time.
+On changing the ID of a project or build configuration, all the related URLs (including the web UI, artifact download links, [RSS feeds](syndication-feed.md), and REST API) will change. If any of the URLs containing the old IDs were bookmarked or hardcoded in the scripts, they will stop functioning and will need to be updated. At the moment of the ID change, the correspondingly named directories under TeamCity Data Directory (including directories storing settings and artifacts) are renamed, and this can consume some time.
 </note>
 
 To reset the IDs to match the default scheme for all projects, VCS roots, build configurations, and templates, use the __Bulk Edit IDs__ action on the __Administration__ page of the parent [project](project.md). To use the automatically generated ID after it has been modified or after you change an existing object name, you can regenerate ID using the __Regenerate ID__ action.
