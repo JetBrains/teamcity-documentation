@@ -218,7 +218,7 @@ During backup, your custom keys will be exported along with their projects and a
 </note>
 
 ## Artifacts' Domain Isolation
-{id="artifacts-domain-isolation" auxiliary-id="Artifacts' Domain Isolation" product="tc"}
+{id="artifacts-domain-isolation" auxiliary-id="Artifacts Domain Isolation" product="tc"}
 
 <table><tr>
 
