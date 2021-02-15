@@ -9,7 +9,7 @@ When setting up [integration](integrating-teamcity-with-issue-tracker.md#Enablin
 
 TeamCity allows you to select whether you want to connect to GitHub anonymously or to be authenticated via a personal access token (PAT).
 
->Authentication via login/password is [deprecated](https://developer.github.com/changes/2020-02-14-deprecating-password-auth/) by GitHub. Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
+>Authentication via login/password is [deprecated](https://developer.github.com/changes/2020-02-14-deprecating-password-auth/) by GitHub.
 >We highly recommend that you authenticate with access tokens instead.
 > 
 {type="warning"}
