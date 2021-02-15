@@ -33,7 +33,7 @@ As for coverage, Gallio supports NCover, to include coverage HTML reports to Tea
 ## xUnit
 [//]: # (AltHead: xUnitSupport)
 
-See the [general information](http://xunit.github.io/docs/getting-test-results-in-teamcity.html) about xUnit support from its authors and a related [blog post](http://blog.benhall.me.uk/2008/09/xunit-teamcity-integration.html).
+See the [general information](https://xunit.net/docs/getting-test-results-in-teamcity) about xUnit support from its authors and a related [blog post](http://blog.benhall.me.uk/2008/09/xunit-teamcity-integration.html).
 
 Note that we do not recommend using xUnit in combination with other testing frameworks in TeamCity since it might mix up the test reporting results.
 
