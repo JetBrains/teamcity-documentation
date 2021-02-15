@@ -240,7 +240,7 @@ Enable isolation protection
 
 </td>
 
-<td id="default-vcs-check-interval">
+<td>
 
 
 </td></tr><tr>
