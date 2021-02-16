@@ -42,4 +42,4 @@ Click the notification to get to the related TeamCity build page.
 
 The history of notifications is available in the OS notification area.
 
-If you are signed into multiple TeamCity servers in the same browser, the extension will remember each detected session and automatically disable/enable notifications for it when you – respectively – sign off/into this server. You can manage all sessions in the Notifier menu or in its __Options__.
+If you are signed into multiple TeamCity servers in the same browser, the extension will remember each detected session and automatically disable/enable notifications for it when you — respectively — sign off/into this server. You can manage all sessions in the Notifier menu or in its __Options__.

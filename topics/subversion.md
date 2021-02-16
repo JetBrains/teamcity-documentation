@@ -314,9 +314,9 @@ Connection timeout is applied when TeamCity creates a connection to the SVN serv
 
 The value of the property is set differently for server-side checkout and agent-side checkout:
 {product="tc"}
-* Server-side operations – [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+* Server-side operations — [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 {product="tc"}
-* Agent-side checkout – [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
+* Agent-side checkout — [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
 {product="tc"}
   
 For agent-side checkout, [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
@@ -338,9 +338,9 @@ In this case, the read timeout can be specified in seconds via the T`teamcity.sv
 
 The value of the property is set differently for a server-side checkout and agent-side checkout:
 {product="tc"}
-* Server-side operations – [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+* Server-side operations — [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 {product="tc"}
-* Agent-side checkout – [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
+* Agent-side checkout — [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
 {product="tc"}
 
 For agent-side checkout, [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).

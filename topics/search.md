@@ -694,9 +694,9 @@ Find all builds that were run on the specified agent.
 #### Using Double-Colon
 
 You can use the double\-colon sign (`::`) to search for a project and/or build configuration by name:
-* `pro::best` – search for builds of configurations with the names starting with "best", and in the projects with the names starting with "pro".
-* `mega::` – search for builds in all projects with names starting with "mega".
-* `::super` – search for builds of build configurations with names starting with "super".
+* `pro::best` — search for builds of configurations with the names starting with "best", and in the projects with the names starting with "pro".
+* `mega::` — search for builds in all projects with names starting with "mega".
+* `::super` — search for builds of build configurations with names starting with "super".
 
 ### "Magic" Keywords
 

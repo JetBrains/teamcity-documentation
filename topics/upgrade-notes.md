@@ -56,7 +56,7 @@ Unfortunately, the affected .NET build steps cannot be converted automatically o
 
 The new header is enabled in both classic and experimental UIs. Some plugins developed for the previous header might not work in the new one. With [our new API](https://blog.jetbrains.com/teamcity/2020/09/teamcity-2020-2-updated-plugin-development/), you can make your custom plugins compatible with the new header or write new ones using modern web technologies.
 
-If you have troubles displaying valuable information or actions in this header and updating plugins is not a convenient option, you can set the `teamcity.ui.useClassicHeader=true` internal property – this will switch your TeamCity header to the previous view. Please note that this is not a recommended solution as we might disable the obsolete header in the future versions.
+If you have troubles displaying valuable information or actions in this header and updating plugins is not a convenient option, you can set the `teamcity.ui.useClassicHeader=true` internal property — this will switch your TeamCity header to the previous view. Please note that this is not a recommended solution as we might disable the obsolete header in the future versions.
 
 ### Reindexing build search
 
@@ -74,7 +74,7 @@ If `build.gradle` was selected as a build file in your Gradle steps, this settin
 
 ### New responsibility for secondary nodes
 
-Since version 2019.2, a secondary node allows user actions if at least one responsibility is assigned to it. In 2020.2, we have added a new responsibility – "Processing user requests to modify data". Nodes with this responsibility can process all currently supported user actions and allow changing project settings. Without it, a node will provide a read-only interface.   
+Since version 2019.2, a secondary node allows user actions if at least one responsibility is assigned to it. In 2020.2, we have added a new responsibility — "Processing user requests to modify data". Nodes with this responsibility can process all currently supported user actions and allow changing project settings. Without it, a node will provide a read-only interface.   
 On upgrading, this responsibility will be automatically enabled on all your secondary nodes that have at least one other responsibility. This will ensure no current functionality of these nodes is affected. To allow user actions on new secondary nodes, you have to manually enable the new responsibility in __Administration | Server Configuration__.
  
 ### Bundled tools updates
@@ -126,7 +126,7 @@ This issue will be fixed in TeamCity 2020.1.4. To workaround it in version 2020.
 
 ## Changes from 2020.1.1 to 2020.1.2
 
-* Mercurial support has been dropped for our Windows Server Core agent Docker images. If you need to use Mercurial on Windows Server Core agents, consider pulling the previous version of the agent Docker image – 2020.1.1.
+* Mercurial support has been dropped for our Windows Server Core agent Docker images. If you need to use Mercurial on Windows Server Core agents, consider pulling the previous version of the agent Docker image — 2020.1.1.
 
 ## Changes from 2020.1 to 2020.1.1
 
@@ -229,7 +229,7 @@ The [Kubernetes Support plugin](https://plugins.jetbrains.com/plugin/9818-kubern
 
 TeamCity improves the security of REST API integration mechanisms by introducing CSRF tokens. This change will not affect the behavior of custom integration scripts unless they rely on Cross-Origin Resource Sharing (CORS) in writing operations and the `rest.cors.origins` internal property is [enabled in TeamCity](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#CORS-support) (it is disabled by default).
 
-Previously, CSRF protection was presented in TeamCity with the verification of `Origin/Referer` headers of HTTP requests. To improve TeamCity CSRF protection, this method has been disabled in favor of a more secure one – CSRF tokens. Since this release, TeamCity stops supporting the CORS mechanism for `POST/PUT/DELETE` REST API requests. Cross-origin GET requests' headers are processed as before and still require [CORS configuration](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#CORS-support).
+Previously, CSRF protection was presented in TeamCity with the verification of `Origin/Referer` headers of HTTP requests. To improve TeamCity CSRF protection, this method has been disabled in favor of a more secure one — CSRF tokens. Since this release, TeamCity stops supporting the CORS mechanism for `POST/PUT/DELETE` REST API requests. Cross-origin GET requests' headers are processed as before and still require [CORS configuration](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#CORS-support).
 
 If necessary, you can enforce verification of `Origin/Referer` headers for writing CORS operations by setting the `teamcity.csrf.paranoid=false` internal property. Note that this is a transitory and less secure solution: we strongly recommend refactoring your existing requests so they comply with the new security policy and provide a token within a CSRF header or parameter. A CSRF token can be obtained via the `GET https://your-server/authenticationTest.html?csrf` request and provided via the `X-TC-CSRF-Token` HTTP header to the write CORS requests.
 

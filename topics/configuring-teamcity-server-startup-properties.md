@@ -33,8 +33,8 @@ You will need to [restart](installing-and-configuring-the-teamcity-server.md#Sta
 ### Standard TeamCity Startup Scripts
 
 If you run the server using the `runAll` or `teamcity-server` scripts or as a Windows service, you need to set the options via the OS __[environment variables](http://en.wikipedia.org/wiki/Environment_variable)__ passed to the TeamCity server process:
-* `TEAMCITY_SERVER_MEM_OPTS` – server JVM memory options (for example, `-Xmx750m`)
-* `TEAMCITY_SERVER_OPTS` – additional server JVM options (for example, `-Dteamcity.git.fetch.separate.process=false`)
+* `TEAMCITY_SERVER_MEM_OPTS` — server JVM memory options (for example, `-Xmx750m`)
+* `TEAMCITY_SERVER_OPTS` — additional server JVM options (for example, `-Dteamcity.git.fetch.separate.process=false`)
 
 The process of setting an environment variable depends on your operating system. For example, in Windows, go to __Control Panel\System and Security\System__ and then open the __Advanced system settings | Environment Variables__ window.
 

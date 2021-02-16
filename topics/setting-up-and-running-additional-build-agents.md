@@ -521,8 +521,8 @@ launchctl remove jetbrains.teamcity.BuildAgent
 A TeamCity build agent is a Java application ([supported Java versions](supported-platforms-and-environments.md#Build+Agents)).
 
 A build agent contains two processes:
-* Agent Launcher – a Java process that launches the agent process
-* Agent – the main process for a Build Agent; runs as a child process for the agent launcher
+* Agent Launcher — a Java process that launches the agent process
+* Agent — the main process for a Build Agent; runs as a child process for the agent launcher
 
 The (Windows) `.exe` TeamCity distribution comes bundled with 64-bit Amazon Corretto 8.   
 If you run a previous version of the TeamCity agent, you will need to repeat the agent installation to update the JVM.

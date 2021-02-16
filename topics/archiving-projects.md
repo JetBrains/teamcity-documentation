@@ -8,7 +8,7 @@ When _archived_:
 * All project's __build configurations are__ automatically __[paused](build-configuration.md#Build+Configuration+State)__.
 * Automatic checking for changes in the project's [VCS roots](configuring-vcs-roots.md) is not performed if the VCS roots are not used in other non-archived projects.
 * Automatic build triggering is disabled. However, builds of the project can be triggered manually or automatically as a part of a build chain.
-* All data (settings, build results, artifacts, build logs, and so on) of the project's build configurations are preserved – you can still edit settings of the archived project or its build configurations.
+* All data (settings, build results, artifacts, build logs, and so on) of the project's build configurations are preserved — you can still edit settings of the archived project or its build configurations.
 * Archived projects do not appear in most user-facing projects lists and in IDEs including the list of build configurations for remote run.
 
 The settings of archived projects are stored in the same [Data Directory subfolder](teamcity-data-directory.md) as settings of active projects.

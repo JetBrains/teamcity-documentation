@@ -56,7 +56,7 @@ __Other helpful tips for specific issues__:
 
 * Note any previous modifications of the TeamCity Data Directory or the database.
 
-* Do not include large portions (above 10Kb) of the textual data into the email text – rather attach it in a file.
+* Do not include large portions (above 10Kb) of the textual data into the email text — rather attach it in a file.
 
 __Consider the following guidelines for posts__:
 

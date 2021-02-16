@@ -15,9 +15,9 @@ To install a TeamCity server, perform the following:
 
 After you have selected one of the [TeamCity installation options](installation.md#Select+TeamCity+Installation+Package), proceed with corresponding installation instructions:
 
-* [Windows .exe distribution](#Installing+TeamCity+via+Windows+installation+package) – the executable which provides the installation wizard for Windows platforms and allows installing the server as a Windows service.
-* [.tar.gz distribution](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) – the archive with a "portable" version suitable for all platforms.
-* Docker image – check the instructions at the [image page](https://hub.docker.com/r/jetbrains/teamcity-server/).
+* [Windows .exe distribution](#Installing+TeamCity+via+Windows+installation+package) — the executable which provides the installation wizard for Windows platforms and allows installing the server as a Windows service.
+* [.tar.gz distribution](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) — the archive with a "portable" version suitable for all platforms.
+* Docker image — check the instructions at the [image page](https://hub.docker.com/r/jetbrains/teamcity-server/).
 
 The `.exe` and `.tar.gz` distributions:
 * Include a Tomcat version which TeamCity is tested with, so it is known to be a working combination. This might not be the case with an external Tomcat.
@@ -108,8 +108,8 @@ If TeamCity is installed using the `.exe` or `.tar.gz` distributions, the TeamCi
    * Use `runAll.bat stop` to stop the server and the default agent
   
 * __To start/stop the TeamCity server only__, use the `teamcity-server` scripts and pass the required parameters. Start the script without parameters to see the usage instructions. The `teamcity-server` scripts support the following options for the `stop` command:
-   * `stop n` – sends the stop command to the TeamCity server and waits up to n seconds for the process to end.
-   * `stop n -force` – sends the stop command to the TeamCity server, waits up to n seconds for the process to end, and terminates the server process if it did not stop.
+   * `stop n` — sends the stop command to the TeamCity server and waits up to n seconds for the process to end.
+   * `stop n -force` — sends the stop command to the TeamCity server, waits up to n seconds for the process to end, and terminates the server process if it did not stop.
 
 <tip>
 The TeamCity server will restart automatically if the server process exits (crashes or is killed) without invoking `teamcity-server stop` script.
@@ -312,7 +312,7 @@ Out-of-the-box TeamCity server installation is suitable for evaluation purposes.
 * [Configuring recommended memory settings](#Setting+Up+Memory+settings+for+TeamCity+Server), use "maximum settings" for active or growing servers.
 * Planning for regular [backups](teamcity-data-backup.md).
 * Planning for regular [upgrades](upgrade.md) to the latest TeamCity releases.
-* (since TeamCity 10.0.3) Consider adding the `teamcity.installation.completed=true` line into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\conf\teamcity-startup.properties file – this will prevent the server from creating an administrator user if no such user is found.
+* (since TeamCity 10.0.3) Consider adding the `teamcity.installation.completed=true` line into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\conf\teamcity-startup.properties file — this will prevent the server from creating an administrator user if no such user is found.
 
 Make sure to review the [notes on configuring the server for performance](how-to.md#Configuring+TeamCity+Server+for+Performance) and [security notes](security-notes.md).
 

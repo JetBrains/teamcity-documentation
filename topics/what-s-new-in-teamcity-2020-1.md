@@ -40,7 +40,7 @@ Now, your TeamCity builds can detect pull requests in on-premises and cloud Azur
 
 To configure the [respective build feature](pull-requests.md), go to __Build Configuration Settings | Build Features__, click __Add build feature__, and choose _Pull Requests_.
 
-Note that in case with Azure DevOps TeamCity detects requests on a merge branch – not on the pull request itself as with other VCSs. Each build will be launched on a virtual branch showing an actual result of the build after merging the PR. Thus, the build will contain both the commit with changes and the virtual merge commit.
+Note that in case with Azure DevOps TeamCity detects requests on a merge branch — not on the pull request itself as with other VCSs. Each build will be launched on a virtual branch showing an actual result of the build after merging the PR. Thus, the build will contain both the commit with changes and the virtual merge commit.
 
 ## Displaying TeamCity build information in Jira Cloud
 

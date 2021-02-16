@@ -9,7 +9,7 @@ Some of such resources may be accessed concurrently but allow only a limited num
 
 You can add, edit shared resources, and explore their details (origin of the resource, its usage, and so on) on the __Shared Resources__ tab of the project configuration page.
 
-The resource name can contain only alphanumeric characters and underscores ("`_`") – maximum 80 characters – and should start with a Latin letter.
+The resource name can contain only alphanumeric characters and underscores (`_`) — maximum 80 characters — and should start with a Latin letter.
 
 Shared resources defined at the project level are available in all its subprojects and build configurations.
 

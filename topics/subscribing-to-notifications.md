@@ -67,8 +67,8 @@ Select the projects / build configurations whose builds you want to monitor. Not
 
 Use the following options for granular control over the notifications in the selected projects / build configurations:
 
-* __Branch filter__ – select this option to receive alerts only on the builds from the specified branches. Read more in [Branch Filter](branch-filter.md).
-* __Builds with my changes only__ – select this option to limit notifications to builds containing your changes only. 
+* __Branch filter__ — select this option to receive alerts only on the builds from the specified branches. Read more in [Branch Filter](branch-filter.md).
+* __Builds with my changes only__ — select this option to limit notifications to builds containing your changes only. 
 
 <note>
 
@@ -76,7 +76,7 @@ Make sure your [Version Control Username](managing-users-and-user-groups.md#VCS+
 
 </note>
 
-* __My favorite builds only__ – limit notifications to your [favorite builds](favorite-build.md).
+* __My favorite builds only__ — limit notifications to your [favorite builds](favorite-build.md).
 
 
 </td></tr><tr>
@@ -438,9 +438,9 @@ Feed Authentication Settings
 
 <td>
 
-__Include credentials for HTTP authentication__ – check this box to specify the user name and password for automatic authentication. If this option is not checked, you will have to enter your user name and password in the authorization dialog box of your feed reader.
+__Include credentials for HTTP authentication__ — check this box to specify the user name and password for automatic authentication. If this option is not checked, you will have to enter your user name and password in the authorization dialog box of your feed reader.
 
-_TeamCity User_, _Password_ – configurable when the ... option is checked. Type the user name and password which will be used for HTTP authorization.   
+_TeamCity User_, _Password_ — configurable when the ... option is checked. Type the user name and password which will be used for HTTP authorization.   
 
 </td></tr><tr>
 

@@ -75,16 +75,16 @@ __Platform__
 
 Select platform bitness:
 
-* `x64` – 64-bit,  default, the corresponding requirement will be added
-* `x86` – 32-bit, the corresponding requirement will be added
-* `Auto` – when it is selected, no platform requirement will be added to the build configuration, and if both 32-bit and 64-bit PowerShells are installed, 64\-bit will be preferred.
+* `x64` — 64-bit,  default, the corresponding requirement will be added
+* `x86` — 32-bit, the corresponding requirement will be added
+* `Auto` — when it is selected, no platform requirement will be added to the build configuration, and if both 32-bit and 64-bit PowerShells are installed, 64\-bit will be preferred.
 
 __Edition__
 
 Select a PowerShell edition to be used: (__since TeamCity 2017.1__)
 
-* Desktop – closed-source edition bundled with Windows, available only on Windows platforms. 
-* Core – open-source edition based on .NET Core, cross-platform, 64-bit only
+* Desktop — closed-source edition bundled with Windows, available only on Windows platforms. 
+* Core — open-source edition based on .NET Core, cross-platform, 64-bit only
 
 
 </td></tr><tr>

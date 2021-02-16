@@ -155,8 +155,8 @@ The title above the list of series used on the chart (in the singular form). The
 
 The list of comma-separated options to be checked by default. Can include the following:
 
-* `showFailed` – include results from failed builds by default.
-* `averaged` – by default, show averaged values on the chart.
+* `showFailed` — include results from failed builds by default.
+* `averaged` — by default, show averaged values on the chart.
 
 </td></tr><tr>
 
@@ -170,11 +170,11 @@ The list of comma-separated options to be checked by default. Can include the fo
 
 The list of comma-separated filter names that will not be shown next to the chart:
 
-* `all` – hide all filters.
-* `series` – hide series filter (you won't be able to show only data from specific valueType specified for the chart.)
-* `range` – hide the date range filter.
-* `showFailed` – hide the checkbox which allows including data for failed builds.
-* `averaged` – hide the checkbox which allows viewing averaged values.
+* `all` — hide all filters.
+* `series` — hide series filter (you won't be able to show only data from specific valueType specified for the chart.)
+* `range` — hide the date range filter.
+* `showFailed` — hide the checkbox which allows including data for failed builds.
+* `averaged` — hide the checkbox which allows viewing averaged values.
 
 Default: empty (all filters are shown).
 

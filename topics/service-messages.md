@@ -362,8 +362,8 @@ __Test start/stop messages:__
 ```
 
 Indicates that `testName` was run. If the `testFailed` message is not present, the test is regarded successful, where
-* `duration` (optional numeric integer attribute) sets the test duration in milliseconds to be reported in TeamCity UI. If omitted, the test duration will be calculated from the messages timestamps. If the timestamps are missing – from the actual time the messages were received on the server.
-* `captureStandardOutput` (optional boolean attribute) – if `true`, all the standard output and standard error messages received between `testStarted` and `testFinished` messages will be considered test output. The default value is `false`: assumes usage of `testStdOut` and `testStdErr` service messages to report the test output.
+* `duration` (optional numeric integer attribute) sets the test duration in milliseconds to be reported in TeamCity UI. If omitted, the test duration will be calculated from the messages timestamps. If the timestamps are missing — from the actual time the messages were received on the server.
+* `captureStandardOutput` (optional boolean attribute) — if `true`, all the standard output and standard error messages received between `testStarted` and `testFinished` messages will be considered test output. The default value is `false`: assumes usage of `testStdOut` and `testStdErr` service messages to report the test output.
 
 <note>
 
@@ -476,7 +476,7 @@ Among other uses, the number of inspections can be used as a build metric to [fa
 
 #### Inspection type
 
-Each specific warning or an error in code (inspection instance) has an inspection type – the unique description of the conducted inspection, which can be reported via
+Each specific warning or an error in code (inspection instance) has an inspection type — the unique description of the conducted inspection, which can be reported via
 
 
 ```Shell
@@ -486,10 +486,10 @@ Each specific warning or an error in code (inspection instance) has an inspectio
 
 where all the attributes are required and can have either numeric or textual values:
 
-* `id` – (mandatory) limited by 255 characters
-* `name` – (mandatory) limited by 255 characters
-* `category` – (mandatory) limited by 255 characters. The `category` attribute examples are "Style violations" and "Calling contracts".
-* `description` – (mandatory) limited by 4000 characters. The description can also be in HTML. For example,
+* `id` — (mandatory) limited by 255 characters
+* `name` — (mandatory) limited by 255 characters
+* `category` — (mandatory) limited by 255 characters. The `category` attribute examples are "Style violations" and "Calling contracts".
+* `description` — (mandatory) limited by 4000 characters. The description can also be in HTML. For example,
 
 
 ```HTML
@@ -520,10 +520,10 @@ Reports a specific defect, warning, error message. Includes location, descriptio
 ```
 
 where all the attributes can have either numeric or textual values:
-* `typeId` – (mandatory), reference to the `inspectionType.id` described [above](#Inspection+type) limited by 255 characters;
-* `message` – (optional) current instance description limited by 4000 characters;
-* `file` – (mandatory) file path limited by 4000 characters. The path can be absolute or relative to the [checkout directory](build-checkout-directory.md);
-* `line` – (optional) line of the file, integer;
+* `typeId` — (mandatory), reference to the `inspectionType.id` described [above](#Inspection+type) limited by 255 characters;
+* `message` — (optional) current instance description limited by 4000 characters;
+* `file` — (mandatory) file path limited by 4000 characters. The path can be absolute or relative to the [checkout directory](build-checkout-directory.md);
+* `line` — (optional) line of the file, integer;
 * `additional attribute`– can be any attribute, `SEVERITY` is often used here, with one of the following values (mind the upper case): `INFO`, `ERROR`, `WARNING`, `WEAK WARNING`.
 
 Example:
@@ -566,7 +566,7 @@ Artifacts that are specified in the build configuration setting will be publishe
 
 ### Passing NuGet Packages between Steps
 
-If you need to publish NuGet packages and then use their contents within one build, you want to guarantee they are published and indexed on time – and not at the build finish.   
+If you need to publish NuGet packages and then use their contents within one build, you want to guarantee they are published and indexed on time — and not at the build finish.   
 For this, you can use a [NuGet Publish](nuget-publish.md) runner or send the `##teamcity[publishNuGetPackage]` service message in any step instead. This ensures the NuGet packages are published in all configured NuGet feeds right at the end of the current step and are available in the following build steps.
 
 ### Reporting Build Progress
@@ -608,7 +608,7 @@ To fail a build directly from the build script, a build problem must be reported
 
 where:
  *  `description` (mandatory): a human-readable plain text describing the build problem. By default, the `description` appears in the build status text and in the list of build's problems. The text is limited to 4000 symbols, and will be truncated if the limit is exceeded.
- * `identity` (optional): a unique problem ID. Different problems must have different identity, same problems – same identity, which should not change throughout builds if the same problem, for example, the same compilation error occurs. It must be a valid Java ID up to 60 characters. If omitted, the `identity` is calculated based on the `description` text.
+ * `identity` (optional): a unique problem ID. Different problems must have different identity, same problems — same identity, which should not change throughout builds if the same problem, for example, the same compilation error occurs. It must be a valid Java ID up to 60 characters. If omitted, the `identity` is calculated based on the `description` text.
 
 [//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e948.txt")    
 
@@ -1056,10 +1056,10 @@ If required, you can re-add the build to the queue after canceling it.
 ## Libraries reporting results via TeamCity Service Messages
 
 Several platform-specific libraries from JetBrains and external sources are able to report the results  via TeamCity Service messages.
-* [Service messages .NET library](https://github.com/JetBrains/TeamCity.ServiceMessages) – .NET library for generating (and parsing) TeamCity service messages from .NET applications. See a [related blog post](http://blog.jetbrains.com/teamcity/2011/10/teamcity-service-messages-library-for-net/).
-* [Jasmine 2.0 TeamCity reporter](https://github.com/WilliamDoman/Jasmine2.0TeamCityReporter) – support for emitting TeamCity service messages from Jasmine 2.0 reporter
-* [Perl TAP Formatter](http://search.cpan.org/~thaljef/TAP-Formatter-TeamCity-0.04/) – formatter for Perl to transform TAP messages to TeamCity service messages
-* [PHPUnit 5.0](https://github.com/sebastianbergmann/phpunit/blob/9e86c85be3302eb125f15037ae6f496f62750a93/ChangeLog-5.0.md#500---2015-10-02) – supports TeamCity service messages for tests. For earlier PHPUnit versions, the following external libraries can be used: [PHPUnit Listener 1](https://github.com/realweb-team/deploytools), [PHPUnit Listener 2](https://github.com/maartenba/phpunit-runner-teamcity) – listeners which can be plugged via PHPUnit's` suite.xml` to produce TeamCity service messages for tests.
-* [Python Unit Test Reporting to TeamCity](https://pypi.python.org/pypi/teamcity-messages) – the package that automatically reports unit tests to the TeamCity server via service messages (when run under TeamCity and provided the testing code is adapted to use it).
-* [Mocha](https://github.com/visionmedia/mocha) – on-the-fly reporting via service messages for Mocha JavaScript testing framework. See the related [post](http://richarddingwall.name/2012/06/17/running-mocha-browser-tests-in-teamcity/) with instructions.
-* [Karma](https://github.com/karma-runner/karma) – support in the JavaScript testing tool to report tests progress into TeamCity using TeamCity service messages
+* [Service messages .NET library](https://github.com/JetBrains/TeamCity.ServiceMessages) — .NET library for generating (and parsing) TeamCity service messages from .NET applications. See a [related blog post](http://blog.jetbrains.com/teamcity/2011/10/teamcity-service-messages-library-for-net/).
+* [Jasmine 2.0 TeamCity reporter](https://github.com/WilliamDoman/Jasmine2.0TeamCityReporter) — support for emitting TeamCity service messages from Jasmine 2.0 reporter
+* [Perl TAP Formatter](http://search.cpan.org/~thaljef/TAP-Formatter-TeamCity-0.04/) — formatter for Perl to transform TAP messages to TeamCity service messages
+* [PHPUnit 5.0](https://github.com/sebastianbergmann/phpunit/blob/9e86c85be3302eb125f15037ae6f496f62750a93/ChangeLog-5.0.md#500---2015-10-02) — supports TeamCity service messages for tests. For earlier PHPUnit versions, the following external libraries can be used: [PHPUnit Listener 1](https://github.com/realweb-team/deploytools), [PHPUnit Listener 2](https://github.com/maartenba/phpunit-runner-teamcity) — listeners which can be plugged via PHPUnit's` suite.xml` to produce TeamCity service messages for tests.
+* [Python Unit Test Reporting to TeamCity](https://pypi.python.org/pypi/teamcity-messages) — the package that automatically reports unit tests to the TeamCity server via service messages (when run under TeamCity and provided the testing code is adapted to use it).
+* [Mocha](https://github.com/visionmedia/mocha) — on-the-fly reporting via service messages for Mocha JavaScript testing framework. See the related [post](http://richarddingwall.name/2012/06/17/running-mocha-browser-tests-in-teamcity/) with instructions.
+* [Karma](https://github.com/karma-runner/karma) — support in the JavaScript testing tool to report tests progress into TeamCity using TeamCity service messages

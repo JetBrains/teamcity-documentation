@@ -216,7 +216,7 @@ See also details on the [cloud integrations](teamcity-integration-with-cloud-sol
 * [Bugzilla](http://www.bugzilla.org) 3.0 and later (tested with Bugzilla 5.0.1)
 * [GitHub](github.md)
 * [Bitbucket](github.md)
-* [Azure DevOps Server](team-foundation-work-items.md) (formerly Visual Studio Team Foundation Server – supported version 2012 or later, and Azure DevOps Services are supported)
+* [Azure DevOps Server](team-foundation-work-items.md) (formerly Visual Studio Team Foundation Server — supported version 2012 or later, and Azure DevOps Services are supported)
    
 Additional requirements are listed in [Integrating TeamCity with Issue Tracker](integrating-teamcity-with-issue-tracker.md).
 
@@ -299,7 +299,7 @@ Supported VCS
 
 
 * Subversion 1.4-1.11 (the command-line client is required); note that 1.10-1.11 is supported __since ReSharper 2018.3__.
-* Azure DevOps Server (formerly Team Foundation Server – supported version 2005 or later). Installed Team Explorer is required.
+* Azure DevOps Server (formerly Team Foundation Server — supported version 2005 or later). Installed Team Explorer is required.
 * Perforce 2008.2 and later (the command-line client is required).
 
 

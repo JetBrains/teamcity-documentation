@@ -17,7 +17,7 @@ This option helps to deal with hanging builds and maintains agent efficiency.
 * _if the build process exit code is not zero_: Mark the build as failed if the build process doesn't exit successfully.
 * _if at least one test failed_: Mark the build as failed if the build fails at least one test. If this option is disabled, the build can be marked successful even if it fails to pass a number of tests. Regardless of this option, TeamCity will run all build steps.
   <anchor name="test-retry"/>
-  * _support test retry: successful test run mutes previous test failure_ – if enabled, TeamCity will mute a test if it fails and then succeeds within the same build. Such tests will not affect the build status. This is convenient for configurations with flaky tests that alternately fail and succeed when applied to the same source revision. 
+  * _support test retry: successful test run mutes previous test failure_ — if enabled, TeamCity will mute a test if it fails and then succeeds within the same build. Such tests will not affect the build status. This is convenient for configurations with flaky tests that alternately fail and succeed when applied to the same source revision. 
 * _if an error message is logged by build runner_: Mark the build as failed if the build runner reports an error while building.
 * _if an out-of-memory problem or crash is detected (Java only)_: Mark the build as failed if a crash of the JVM is detected, or Java has out of memory problems. If possible, TeamCity will upload crash logs and memory dumps as artifacts for such builds.
 
@@ -59,7 +59,7 @@ Values from the following builds can be used as the basis for comparing build me
 * last finished build with specified tag.
 
 By default, TeamCity provides the wide range of _build metrics_:
-* artifacts size(bytes) – size of artifacts, excluding [internal artifacts](build-artifact.md#Hidden+Artifacts) under the `.teamcity` directory
+* artifacts size(bytes) — size of artifacts, excluding [internal artifacts](build-artifact.md#Hidden+Artifacts) under the `.teamcity` directory
 * build duration (secs)
 * number of classes
 * number of code duplicated
@@ -80,7 +80,7 @@ By default, TeamCity provides the wide range of _build metrics_:
 * percentage of method coverage
 * percentage of statement coverage
 * test duration (secs)
-* total artifacts size (bytes) – size of all artifacts including [internal ones](build-artifact.md#Hidden+Artifacts)
+* total artifacts size (bytes) — size of all artifacts including [internal ones](build-artifact.md#Hidden+Artifacts)
 
 Note that since TeamCity 9.0, the way TeamCity counts tests [has changed](https://confluence.jetbrains.com/display/TW/Hajipur+9.0+EAP1+(build+31423)+Release+Notes).
 

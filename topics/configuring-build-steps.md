@@ -17,7 +17,7 @@ The decision whether to run the next build step may depend on the exit status of
 
 The build step is considered _failed_ if (1) the build process returned a non-zero exit code and (2) the "_Fail build if build process exit code is not zero_" build failure condition is enabled (see [Build Failure Conditions](build-failure-conditions.md)); otherwise, the build step is considered _successful_.
 
-Note that the status of a build step and the build itself can be different. All build steps can be successful, but the build can fail because of another build failure condition – not based on the exit code (like failing a test). On the other hand, if a build step has failed, the build will fail too.
+Note that the status of a build step and the build itself can be different. All build steps can be successful, but the build can fail because of another build failure condition — not based on the exit code (like failing a test). On the other hand, if a build step has failed, the build will fail too.
 
 For the details on configuring individual build steps, refer to the respective pages inside this section.
 

@@ -76,7 +76,7 @@ Always checkout files on agent
 
 <td>
 
-The build agent will [check out the sources](build-checkout-directory.md) before the build. Agent-side checkout frees more server resources and provides the ability to access version control-specific directories (`.svn`, `CVS`, `.git`); that is, the build script can perform VCS operations (for example, check-ins into the version control) – in this case ensure the build script uses credentials necessary for the check-in.
+The build agent will [check out the sources](build-checkout-directory.md) before the build. Agent-side checkout frees more server resources and provides the ability to access version control-specific directories (`.svn`, `CVS`, `.git`); that is, the build script can perform VCS operations (for example, check-ins into the version control) — in this case ensure the build script uses credentials necessary for the check-in.
 
 VCS client software has to be installed on the agent (applicable to Perforce, Mercurial, Git).
 

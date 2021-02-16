@@ -36,10 +36,10 @@ For example, for Maven builds, TeamCity creates the `maven-build-info.xml` file 
 You can configure publishing some builds artifacts under the `.teamcity` directory to make them hidden.
 
 Some of the hidden artifacts are:
-* `maven-build-info.xml.gz` – Maven build data. Used to display data on the __Maven Build Info__ build's tab.
-* `properties` directory – holds properties calculated for the build on the agent. There are properties actual before the build and after the build. These are displayed on the build __Properties__ tab.
-* `.NETCoverage` – raw .NET coverage data (for example, used to open dotCover data in VS addin).
-* `coverage_idea` – raw IntelliJ IDEA coverage data (for example, used to open coverage in IDEA).
+* `maven-build-info.xml.gz` — Maven build data. Used to display data on the __Maven Build Info__ build's tab.
+* `properties` directory — holds properties calculated for the build on the agent. There are properties actual before the build and after the build. These are displayed on the build __Properties__ tab.
+* `.NETCoverage` — raw .NET coverage data (for example, used to open dotCover data in VS addin).
+* `coverage_idea` — raw IntelliJ IDEA coverage data (for example, used to open coverage in IDEA).
 
 
 [//]: # (Internal note. Do not delete. "Build Artifactd28e144.txt")    

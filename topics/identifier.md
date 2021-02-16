@@ -11,7 +11,7 @@ Each entity has two identifiers:
 
 The so-called _external identifiers_ are configured in the TeamCity web UI (for example, Project ID) and must be unique within all the objects of the same type on the entire server. Build configurations and templates share the same ID space.
 
-IDs can contain only alphanumeric characters and underscores (`_`) – maximum 80 characters – and should start with a Latin letter.
+IDs can contain only alphanumeric characters and underscores (`_`) — maximum 80 characters — and should start with a Latin letter.
 
 ### Using External IDs
 

@@ -131,7 +131,7 @@ In each keep rule, you can configure the following settings:
 
 * Choose if the limits must be applied to each matching branch individually or to all the builds in the selected branches as a single set.   
 This condition applies once per each affected build configuration. If no branches are specified in the filter, it applies as follows: either to each branch in a build configuration or to all the build configuration branches as a set.   
-Example: if you select to keep statistics of 10 last builds and choose two branches for this rule, you can either choose "_All selected_" to preserve 10 last builds among both selected branches or choose "_Each selected branch_" to preserve 20 last builds – 10 for each of the branches.
+Example: if you select to keep statistics of 10 last builds and choose two branches for this rule, you can either choose "_All selected_" to preserve 10 last builds among both selected branches or choose "_Each selected branch_" to preserve 20 last builds — 10 for each of the branches.
 
 TeamCity processes a keep rule in the following order:
 1. __Filters__ the builds of the affected project or build configuration.

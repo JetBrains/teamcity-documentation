@@ -139,10 +139,10 @@ Certain antivirus software like Kaspersky Internet Security can result in Java p
 
 ESET antivirus can also slow down Ant/IntelliJ IDEA project builds a great deal (slowing down TCP connections to localhost on an agent).
 
-If you run antivirus on the TeamCity server or agent machines and get disk access errors or experience degraded performance, you may consider temporarily disabling the antivirus software before investigating the issue and reporting it to JetBrains. Note that disabling the antivirus can make your setup more vulnerable to potential external attacks – ensure you take proper security measures before doing this.
+If you run antivirus on the TeamCity server or agent machines and get disk access errors or experience degraded performance, you may consider temporarily disabling the antivirus software before investigating the issue and reporting it to JetBrains. Note that disabling the antivirus can make your setup more vulnerable to potential external attacks — ensure you take proper security measures before doing this.
 {product="tc"}
 
-If you run antivirus on the TeamCity agent machines and get disk access errors or experience degraded performance, you may consider temporarily disabling the antivirus software before investigating the issue and reporting it to JetBrains. Note that disabling the antivirus can make your setup more vulnerable to potential external attacks – ensure you take proper security measures before doing this.
+If you run antivirus on the TeamCity agent machines and get disk access errors or experience degraded performance, you may consider temporarily disabling the antivirus software before investigating the issue and reporting it to JetBrains. Note that disabling the antivirus can make your setup more vulnerable to potential external attacks — ensure you take proper security measures before doing this.
 {product="tcc"}
 
 It is recommended to exclude entire TeamCity server home and [TeamCity Data Directory](teamcity-data-directory.md) from the background checks and perform periodical checks there in the well-known maintenance window so that those do not affect server performance much. On TeamCity agent, it is recommended to exclude TeamCity agent home from the background checks.
@@ -442,7 +442,7 @@ If you try to run dotCover on an agent with the Nano Server OS, the build will f
 
 ### dotCover does not support сoverage statistics for msbuild
 
-dotCover does not support collection of coverage statistics for the `dotnet msbuild /t:vstest` command – use `dotnet test` instead.
+dotCover does not support collection of coverage statistics for the `dotnet msbuild /t:vstest` command — use `dotnet test` instead.
 
 ### Code coverage configuration using Test Settings is deprecated
 

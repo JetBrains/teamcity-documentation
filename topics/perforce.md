@@ -69,7 +69,7 @@ When Perforce Streams are used with the [agent-side checkout mode](vcs-checkout-
 <anchor name="branch-support"/>
 <anchor name="branchStreams"/>
 
-__Enable feature branches support (experimental)__ – select this checkbox to specify branch streams you want to be monitored for changes in addition to the default one. Enter / Edit the branch specification as a newline\-delimited set of rules. The syntax is  `+|-:stream_name` (with the optional `*` placeholder).
+__Enable feature branches support (experimental)__ — select this checkbox to specify branch streams you want to be monitored for changes in addition to the default one. Enter / Edit the branch specification as a newline\-delimited set of rules. The syntax is  `+|-:stream_name` (with the optional `*` placeholder).
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
@@ -293,9 +293,9 @@ Specify additional `p4 sync` options, like `--parallel`. See [command reference]
 
 With checkout on agent, TeamCity provides environment variables describing the Perforce workspace created during the checkout process.   
 If several Perforce VCS Roots are used for the checkout, the variables are created for the first VCS root. The variables are:
-* __P4USER__ – same as `vcsroot.<VCS root ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
-* __P4PORT__ – same as `vcsroot.<VCS root ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
-* __P4CLIENT__ – name of the generated P4 workspace on the agent
+* __P4USER__ — same as `vcsroot.<VCS root ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
+* __P4PORT__ — same as `vcsroot.<VCS root ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
+* __P4CLIENT__ — name of the generated P4 workspace on the agent
   These variables can be used to perform custom p4 commands after the checkout.
 
 More information: [Perforce Workspace Handling in TeamCity](perforce-workspace-handling-in-teamcity.md)

@@ -439,7 +439,7 @@ If left blank, the URL will be extracted from the VCS root fetch URL.
 
 This feature monitors builds only on the `refs/pull/*/merge` branch.
 
-In case with [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/), TeamCity detects requests on a merge branch – not on the pull request itself as with other VCSs. Each build will be launched on a virtual branch showing an actual result of the build after merging the PR. Thus, the build will contain both the commit with changes and the virtual merge commit.
+In case with [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/), TeamCity detects requests on a merge branch — not on the pull request itself as with other VCSs. Each build will be launched on a virtual branch showing an actual result of the build after merging the PR. Thus, the build will contain both the commit with changes and the virtual merge commit.
 
 Note that the feature ignores Azure DevOps draft pull requests.
 

@@ -55,7 +55,7 @@ Usually artifacts configured in a build configuration are published when the bui
 
 ### Preparing Build Configuration
 
-The first step is to prepare a build configuration which will work the same way as the meta-runner we would like to produce. Let us use the configuration with a single Ant build step: Ant can be executed on any platform where the TeamCity agent runs; besides, Ant runner in TeamCity supports `build.xml` specified right in the runner settings. This is important because our build configuration must be self-contained – it cannot take `build.xml` from the version control repository. In our case, the Ant step settings will look like this:
+The first step is to prepare a build configuration which will work the same way as the meta-runner we would like to produce. Let us use the configuration with a single Ant build step: Ant can be executed on any platform where the TeamCity agent runs; besides, Ant runner in TeamCity supports `build.xml` specified right in the runner settings. This is important because our build configuration must be self-contained — it cannot take `build.xml` from the version control repository. In our case, the Ant step settings will look like this:
 
 <img src="ant-build-step.png" width="750" alt="Adding Ant build step"/>
 

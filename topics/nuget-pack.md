@@ -169,8 +169,8 @@ Options
 
 <td>
 
-__Create tool package__ – check the box to place the output files of the project to the `tool` folder.    
-__Include sources and symbols__ – check the box to create a package containing sources and symbols. When specified with a nuspec, it creates a regular NuGet package file and the corresponding symbols package (needed for publishing the sources to [Symbolsource](http://www.symbolsource.org/) )
+__Create tool package__ — check the box to place the output files of the project to the `tool` folder.    
+__Include sources and symbols__ — check the box to create a package containing sources and symbols. When specified with a nuspec, it creates a regular NuGet package file and the corresponding symbols package (needed for publishing the sources to [Symbolsource](http://www.symbolsource.org/) )
 
 </td></tr><tr>
 

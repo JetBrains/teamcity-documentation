@@ -121,7 +121,7 @@ teamcity.options.users.synchronize=true
 
 
 You also need to specify the following mandatory properties:
-* `java.naming.security.principal` and `java.naming.security.credentials` – they specify the user credentials which are used by TeamCity to connect to LDAP and retrieve data,
+* `java.naming.security.principal` and `java.naming.security.credentials` — they specify the user credentials which are used by TeamCity to connect to LDAP and retrieve data,
 * `teamcity.users.base` and `teamcity.users.filter` - these specify the settings to search for users
 * `teamcity.users.username` - the name of the LDAP attribute containing the TeamCity user's username. Based on this setting LDAP entries are mapped to the TeamCity users.
 
@@ -138,7 +138,7 @@ The list of supported user settings:
 * `teamcity.users.property.displayName`
 * `teamcity.users.property.email`
 * `teamcity.users.property.plugin:notificator:jabber:jabber-account`
-* `teamcity.users.property.plugin:vcs:<VCS type>:anyVcsRoot` – VCS username for all &lt;VCS type&gt; roots. The following VCS types are supported: `svn`, `perforce`, `jetbrains.git`, `cvs`, `tfs`, `vss`, `starteam`.
+* `teamcity.users.property.plugin:vcs:<VCS type>:anyVcsRoot` — VCS username for all &lt;VCS type&gt; roots. The following VCS types are supported: `svn`, `perforce`, `jetbrains.git`, `cvs`, `tfs`, `vss`, `starteam`.
 
 Example properties can be seen by configuring them for a user in the web UI and then listing the properties via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-users.html).
 

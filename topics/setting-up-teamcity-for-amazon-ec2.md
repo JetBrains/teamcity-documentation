@@ -105,7 +105,7 @@ Recommended image (for example, Amazon AMI) preparation steps:
 2. Start the image.
 3. Configure the running instance:   
    * Install and configure a build agent:  
-     * Configure server name and agent name in `conf/buildAgent.properties` – this is optional if the image will be started by TeamCity, but it is useful to test if the agent is configured correctly.
+     * Configure server name and agent name in `conf/buildAgent.properties` — this is optional if the image will be started by TeamCity, but it is useful to test if the agent is configured correctly.
      * It usually makes sense to specify `tempDir` and `workDir` in `conf/buildAgent.properties` to use the non-system drive (`d:` under Windows).
    * Install any additional software necessary for the builds on the machine.
    * Run the agent and check it is working OK and is compatible with all necessary build configurations, and so on.
@@ -253,17 +253,17 @@ However, there is a workaround if you are not willing to wait. To register new I
 
 If your TeamCity server needs to use a proxy to connect to AWS API endpoint, configure the following server [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to connect to Amazon AWS addresses.
 
-* `teamcity.http.proxy.host.ec2` – proxy server host name
-* `teamcity.http.proxy.port.ec2` – proxy server port
+* `teamcity.http.proxy.host.ec2` — proxy server host name
+* `teamcity.http.proxy.port.ec2` — proxy server port
 
 For proxy server authentication: 
 
-* `teamcity.http.proxy.user.ec2` – proxy access username 
-* `teamcity.http.proxy.password.ec2` – proxy access user password
+* `teamcity.http.proxy.user.ec2` — proxy access username 
+* `teamcity.http.proxy.password.ec2` — proxy access user password
 
 For NTML authentication: 
-* `teamcity.http.proxy.domain.ec2` – proxy user domain for NTLM authentication 
-* `teamcity.http.proxy.workstation.ec2` – proxy access workstation for NTLM authentication
+* `teamcity.http.proxy.domain.ec2` — proxy user domain for NTLM authentication 
+* `teamcity.http.proxy.workstation.ec2` — proxy access workstation for NTLM authentication
 
 ### Custom script
 

@@ -19,8 +19,8 @@ Provides information on:
 * __Pending Changes__ also listed as a separate tab, see the details [below](#Pending+Changes)	
 * __Current Status__ of the build configuration, and, if applicable:			
   * number of [queued builds](build-queue.md)		
-  * for a running build – the progress details with the __Stop__ option to terminate the build		
-  * for a [failed build](build-state.md) – the number and [agent](build-agent.md), and so on	
+  * for a running build — the progress details with the __Stop__ option to terminate the build		
+  * for a [failed build](build-state.md) — the number and [agent](build-agent.md), and so on	
 * the [Build History](build-history.md) section lists builds of the current build configuration
 
 ## History

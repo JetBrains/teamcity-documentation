@@ -46,8 +46,8 @@ Usually it takes a minute or two, depending on the _Changes Checking Interval_ d
 ### Project Settings Structure
 
 After the commit to the repository, you will get the `.teamcity` settings directory with the following files:
-* `settings.kts` – the main file containing all the project configuration
-* `pom.xml` – required when opening the project in an IDE to get the auto-completion feature, and ability to compile code and write unit tests for it
+* `settings.kts` — the main file containing all the project configuration
+* `pom.xml` — required when opening the project in an IDE to get the auto-completion feature, and ability to compile code and write unit tests for it
 
 ### Opening Project in IntelliJ IDEA
 
@@ -128,7 +128,7 @@ object HelloWorld: BuildType({
 
 In this case the usage of the `id()` function call is optional because TeamCity will generate the id based on the class name (`HelloWorld` in our case).  
 
-After making the necessary changes in `settings.kts` file, you can submit them to the repository – TeamCity will detect and apply them. If there are no errors during the script execution, you should see a build configuration named "Hello world" in your project.
+After making the necessary changes in `settings.kts` file, you can submit them to the repository — TeamCity will detect and apply them. If there are no errors during the script execution, you should see a build configuration named "Hello world" in your project.
 
 <note>
 

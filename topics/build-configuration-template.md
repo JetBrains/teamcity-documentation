@@ -94,7 +94,7 @@ The older `template(...)` method and property __cannot__ be used multiple times 
 ## Detaching build configurations from template
 
 When you _detach a build configuration from a template_ using the __Detach from template__ option available in the __Actions__ menu of the __Build Configuration Settings__ page, all settings from the template will be copied to the build configuration and enabled for editing.   
-Note that if a build configuration is attached to multiple templates, the __Detach from template__ option becomes unavailable – use __[Manage templates](#Associating+build+configuration+with+multiple+templates)__ instead.
+Note that if a build configuration is attached to multiple templates, the __Detach from template__ option becomes unavailable — use __[Manage templates](#Associating+build+configuration+with+multiple+templates)__ instead.
 
 ## Redefining settings inherited from template
 

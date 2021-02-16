@@ -58,7 +58,7 @@ Learn [how to enable and manage authentication modules](configuring-authenticati
 
 ## Support for Bitbucket Cloud pull requests
 
-TeamCity already supports monitoring pull requests in GitHub, GitLab, Azure DevOps, and Bitbucket Server. And now – in Bitbucket Cloud.
+TeamCity already supports monitoring pull requests in GitHub, GitLab, Azure DevOps, and Bitbucket Server. And now — in Bitbucket Cloud.
 
 <img src="bb-cloud-pr.png" alt="Bitbucket Cloud pull requests"/>
 
@@ -145,7 +145,7 @@ See also [upgrade notes](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
 ## Monitoring disk usage in external storage
 {product="tc"}
 
-An increasing number of our users prefer storing build artifacts in cloud – for example, in Amazon S3. However, it was not previously possible to see what amount of data is stored there.
+An increasing number of our users prefer storing build artifacts in cloud — for example, in Amazon S3. However, it was not previously possible to see what amount of data is stored there.
 
 The [Disk Usage](disk-usage.md) report now supports external [artifact storage](configuring-artifacts-storage.md). It shows the amount of data stored in each configured storage or in all of them at once. Besides, if you had several artifact directories configured for the local storage, you can now also see this report separately for each directory.
 
@@ -182,7 +182,7 @@ See more details in the [documentation](build-failure-conditions.md#Common+build
    TeamCity can filter pull requests not only by the target but by the source branch. It allows you to easily eliminate certain draft branches from the scope of monitoring.   
    Note that this filter is not applicable to Bitbucket Cloud as TeamCity monitors pull requests directly on their source branches.
 * __Passing NuGet packages between build steps__
-If you need to publish NuGet packages and then use their contents within one build, you want to guarantee they are published and indexed on time – and not at the build finish. Previously, it required using a NuGet Publish step. Since this release, a build step can send the `##teamcity[publishNuGetPackage]` [service message](service-messages.md#Passing+NuGet+Packages+between+Steps) instead. This ensures the NuGet packages are published in all configured NuGet feeds right at the end of the current build step and are available in the following build steps.
+If you need to publish NuGet packages and then use their contents within one build, you want to guarantee they are published and indexed on time — and not at the build finish. Previously, it required using a NuGet Publish step. Since this release, a build step can send the `##teamcity[publishNuGetPackage]` [service message](service-messages.md#Passing+NuGet+Packages+between+Steps) instead. This ensures the NuGet packages are published in all configured NuGet feeds right at the end of the current build step and are available in the following build steps.
 * __Faster cold start of agent Docker containers__   
   Since this version, TeamCity agent Docker images are based on the full agent distribution. The full agent contains all bundled plugins. This significantly speeds up the agent cold start because the full agent doesn't need to synchronize all plugins with the server. When launched, it will only download external plugins or tools installed on your server, if any.   
   Please note that this improvement is effective only if the Docker image matches the server version.

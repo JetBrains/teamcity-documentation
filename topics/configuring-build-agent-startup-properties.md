@@ -2,8 +2,8 @@
 [//]: # (auxiliary-id: Configuring Build Agent Startup Properties)
 
 In TeamCity, a [build agent](build-agent.md) contains two processes:
-* Agent launcher – a Java process that launches the agent process.
-* Agent – the main process for a build agent; runs as a child process for the agent launcher.
+* Agent launcher — a Java process that launches the agent process.
+* Agent — the main process for a build agent; runs as a child process for the agent launcher.
 
 Whether you run a build agent via the `agent.bat|sh` script or as a Windows service, the agent launcher starts first, and then it starts the agent itself. Remember that running an agent via script is the recommended approach but you might want to run it as a service in certain cases; refer to [this page](setting-up-and-running-additional-build-agents.md) for more information.
 
@@ -18,8 +18,8 @@ For both processes mentioned above, you can customize the final agent behavior b
 ### Build Agent is Run via Script
 
 Before you run the `[<Agent_Home>](agent-home-directory.md)\bin\agent.bat|sh` script, set the following [environment variables](http://en.wikipedia.org/wiki/Environment_variable) in your OS:
-* `TEAMCITY_AGENT_MEM_OPTS` – set agent memory options (JVM options)
-* `TEAMCITY_AGENT_OPTS` – additional agent JVM options
+* `TEAMCITY_AGENT_MEM_OPTS` — set agent memory options (JVM options)
+* `TEAMCITY_AGENT_OPTS` — additional agent JVM options
 
 ### Build Agent is Run as Service
 

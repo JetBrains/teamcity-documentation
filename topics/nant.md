@@ -213,7 +213,7 @@ Target framework
 
 <td>
 
-Sets `-targetframework:` option to `NAnt` and generates appropriate agent requirements (_mono\-2.0_ target framework will require _Mono_ system property, _net\-2.0_ – _DotNetFramework2.0_ property, and so on). Selecting unsupported in TeamCity framework (_sscli-1.0_, _netcf-1.0_, _netcf-2.0_) won't impose any agent requirements. 
+Sets `-targetframework:` option to `NAnt` and generates appropriate agent requirements (_mono-2.0_ target framework will require _Mono_ system property, _net-2.0_ — _DotNetFramework2.0_ property, and so on). Selecting unsupported in TeamCity framework (_sscli-1.0_, _netcf-1.0_, _netcf-2.0_) won't impose any agent requirements. 
 
 
 <warning>

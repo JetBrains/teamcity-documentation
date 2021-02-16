@@ -99,9 +99,9 @@ Description
 
 
 	
-* __As stored in repository__ – EOL symbols are preserved as they are stored in the repository. No conversion is done.
+* __As stored in repository__ — EOL symbols are preserved as they are stored in the repository. No conversion is done.
 	
-* __Agent's platform default__ – whatever EOL symbol is used in a particular file in the repository, it will be converted to the platform\-specific line separator when passed to the build agent. The resulting EOL symbol exclusively depends on the agent's platform.
+* __Agent's platform default__ — whatever EOL symbol is used in a particular file in the repository, it will be converted to the platform\-specific line separator when passed to the build agent. The resulting EOL symbol exclusively depends on the agent's platform.
 
 
 
@@ -126,9 +126,9 @@ Description
 
 
 	
-* __Using working folders__ – StarTeam folders have the "working folder" property. It defines which local path corresponds to the StarTeam folder (by default, the working folder equals the folder's name). In this mode TeamCity gives the local directories the names stored in the "working folder" properties. Note that even though StarTeam allows using absolute paths as working folders, TeamCity supports relative paths only and doesn't detect the presence of absolute paths.
+* __Using working folders__ — StarTeam folders have the "working folder" property. It defines which local path corresponds to the StarTeam folder (by default, the working folder equals the folder's name). In this mode TeamCity gives the local directories the names stored in the "working folder" properties. Note that even though StarTeam allows using absolute paths as working folders, TeamCity supports relative paths only and doesn't detect the presence of absolute paths.
 	
-* __Using StarTeam folder names__ – In this mode the local directories are named after corresponding StarTeam folders' names. This mode can suit users who keep the working directory structure the same as the project structure in the repository and don't want to rely on "working folder" properties because they can be uncontrollably modified.
+* __Using StarTeam folder names__ — In this mode the local directories are named after corresponding StarTeam folders' names. This mode can suit users who keep the working directory structure the same as the project structure in the repository and don't want to rely on "working folder" properties because they can be uncontrollably modified.
 
 
 

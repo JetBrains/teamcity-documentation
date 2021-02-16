@@ -13,7 +13,7 @@ TeamCity running on any of the supported operating systems (Windows, Linux, macO
 
 ## Enabling NuGet Feed
 
-To start using TeamCity as a NuGet Server, you need to add a NuGet feed at the project level – in __Project Settings | NuGet Feed__. Multiple NuGet feeds can be configured for a project.
+To start using TeamCity as a NuGet Server, you need to add a NuGet feed at the project level — in __Project Settings | NuGet Feed__. Multiple NuGet feeds can be configured for a project.
 
 Click __Add new NuGet Feed__ to create a feed. Optionally, enable _Automatic packages indexing_ for the current project and its subprojects.
 

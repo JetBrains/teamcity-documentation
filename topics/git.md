@@ -251,9 +251,9 @@ Valid only for SSH protocol. A private key must be in the __OpenSSH format__.
 Select one of the options from the __Private Key__ list and specify a valid username (if there is no username in the clone URL; the username specified here overrides the username from the URL).    
 Available __Private Key__ options:
 
-* __Uploaded Key__ – uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
-* __Default Private key__ – uses the keys available on the file system in the default locations used by common ssh tools: the mapping specified in `<USER_HOME>/.ssh/config` if the file exists or the private key file `<USER_HOME>/.ssh/id_rsa` (the files are required to be present on the server and also on the agent if the [agent-side checkout](vcs-checkout-mode.md) is used).
-* __Custom Private Key__ – supported __only for [server-side checkout](vcs-checkout-mode.md)__. When this method is used, fill the __Private Key Path__ field with an absolute path to the private key file on the server machine. If required, specify the passphrase to access your SSH key in the corresponding field.
+* __Uploaded Key__ — uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
+* __Default Private key__ — uses the keys available on the file system in the default locations used by common ssh tools: the mapping specified in `<USER_HOME>/.ssh/config` if the file exists or the private key file `<USER_HOME>/.ssh/id_rsa` (the files are required to be present on the server and also on the agent if the [agent-side checkout](vcs-checkout-mode.md) is used).
+* __Custom Private Key__ — supported __only for [server-side checkout](vcs-checkout-mode.md)__. When this method is used, fill the __Private Key Path__ field with an absolute path to the private key file on the server machine. If required, specify the passphrase to access your SSH key in the corresponding field.
 
 
 </td></tr></table>
@@ -694,7 +694,7 @@ teamcity.git.cleanupCron
 
 <td>
 
-[Cron expression](http://quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger) for the time of a clean-up in git-plugin, by default – daily at 2AM.
+[Cron expression](http://quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger) for the time of a clean-up in git-plugin, by default — daily at 2AM.
 
 
 </td></tr><tr>

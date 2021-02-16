@@ -58,13 +58,13 @@ To perform restore from a backup file via maintainDB:
 
     a. To restore the backup into a __new external database__
     
-    – if the  `database.properties` file is in the TeamCity Data Directory:
+    * if the  `database.properties` file is in the TeamCity Data Directory:
     
     ```Plain Text
     maintainDB.[cmd|sh] restore -A <absolute path to the newly created TeamCity Data Directory> -F <path to the TeamCity backup file> -T <config/database.properties>
     ``` 
     
-   – if the `database.properties` file is outside the TeamCity Data Directory:
+   * if the `database.properties` file is outside the TeamCity Data Directory:
     
     ```Plain Text
     maintainDB.[cmd|sh] restore -A <absolute path to the newly created TeamCity Data Directory> -F <path to the TeamCity backup file> -T <absolute path to the database.properties file of the target database on the file system outside data dir>
