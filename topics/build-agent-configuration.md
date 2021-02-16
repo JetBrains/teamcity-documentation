@@ -1,7 +1,7 @@
 [//]: # (title: Build Agent Configuration)
 [//]: # (auxiliary-id: Build Agent Configuration)
 
-Configuration settings of the build agent are stored in the `<TeamCity Agent Home>/conf/buildagent.properties` file.
+Configuration settings of the build agent are stored in the `<TeamCity Agent Home>/conf/buildAgent.properties` file.
 
 ## General Agent Configuration
 
