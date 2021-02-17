@@ -36,6 +36,8 @@ Since TeamCity 2020.2, you can specify a token's time limit so the token is auto
 <video href="_3oKTnYwKa8"
 title="New in TeamCity 2020.2: Short-lived Access Tokens"/>
 
+<anchor name="token-scope"/>
+
 In terms of EAP 2021.1, you can create tokens with limited permissions for REST API requests. By default, the __Permissions Scope__ field value is set to "_Same as user_", which means that the created token will grant the same permissions as those of the current user. You can use such token both for authentication via UI and for REST API requests.   
 If you change the value to "_Limit to project_", you will be able to limit the token's access to a certain project and select particular permissions for it. The list of available projects and their permissions depend on your user permissions. Such token can only be used for REST API requests.
 
