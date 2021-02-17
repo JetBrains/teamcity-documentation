@@ -1,18 +1,14 @@
 [//]: # (title: Managing User Accounts, Groups and Permissions)
 [//]: # (auxiliary-id: Managing User Accounts, Groups and Permissions)
 
-Before creating and managing user accounts, groups and changing users' permissions, we recommend you  familiarize yourselve with the following [concepts](concepts.md):
+Before creating and managing user accounts, groups and changing users' permissions, we recommend that you read about the following concepts:
 
-
-	
 * [User Account](user-account.md)	
 * [Guest User](guest-user.md)
 * [User Group](user-group.md)
-
 * [Role and Permission](role-and-permission.md)
 
-
-These pages contain essential information about user accounts, their roles and permissions in TeamCity, and more.
+These pages contain essential information about user accounts, their roles, and permissions in TeamCity.
 
 In this section:
 
