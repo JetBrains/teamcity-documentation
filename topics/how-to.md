@@ -1085,7 +1085,7 @@ If you need to use specific external tool to be installed on a build agent to ru
 
 ## Integrate with Build and Reporting Tools
 
-If you have a build tool or a tool that generates some report/provides code metrics which is not yet [supported by TeamCity](teamcity-documentation.md#TeamCity+2020.x+Supported+Platforms+and+Environments) or any of the [plugins](https://plugins.jetbrains.com/teamcity), most probably you can use it in TeamCity even without dedicated integration.
+If you have a build tool or a tool that generates some report/provides code metrics which is not yet [supported by TeamCity](teamcity-documentation.md#TeamCity+2021.x+Supported+Platforms+and+Environments) or any of the [plugins](https://plugins.jetbrains.com/teamcity), most probably you can use it in TeamCity even without dedicated integration.
 {product="tc"}
 
 If you have a build tool or a tool that generates some report/provides code metrics which is not yet [supported by TeamCity](teamcity-cloud-documentation.md#TeamCity+Cloud+Supported+Platforms+and+Environments) or any of the [plugins](https://plugins.jetbrains.com/teamcity), most probably you can use it in TeamCity even without dedicated integration.
