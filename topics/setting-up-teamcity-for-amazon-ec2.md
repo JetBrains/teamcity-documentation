@@ -308,7 +308,7 @@ __Usual connections served by the server:__
 
 #### Uptime Costs
 
-As Amazon rounds machine uptime to the nearest full hour, adjust timeout setting on the EC2 image setting on TeamCity cloud integration settings according to your usual builds length.
+As Amazon rounds machine uptime to the full hour for some configurations (more at [How are Amazon EC2 instance hours billed?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-hour-billing/)), adjust timeout setting on the EC2 image setting on TeamCity cloud integration settings according to your usual builds length.
 
 It is also highly recommended to set execution timeout for all your builds so that a build hanging does not cause prolonged instance running with no payload.
 
