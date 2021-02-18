@@ -193,6 +193,22 @@ Target framework. For example, `netcoreapp` or `netstandard`. Parameter referenc
 
 </td>
 
+</tr><tr>
+
+<td>
+
+Required SDK
+
+</td>
+
+<td>
+
+Allows specifying SDKs that must be installed on a build agent so it can run this build. TeamCity automatically creates an [agent requirement](agent-requirements.md) for each SDK specified in this field.
+
+Expects a space-separated list of SDK or targeting pack versions. For example, `5 4.8` will allow an agent to run the build only if it has .NET 5.0 __and__ .NET 4.8 installed.
+
+</td>
+
 </tr>
 
 <tr>
