@@ -441,7 +441,7 @@ To fix the warning / meet automatic git gc requirements, perform the following:
 1. Install a native Git client manually on the TeamCity server.
 2. Specify the path to the Git executable:
    * Add the directory with the executable to the `PATH` environment variable and restart the server, _or_
-   * Set the full path to the executable in the `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) without the server restart.
+   * Set the full path to the executable in the `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) without the server restart. On Windows, remember to use double backslashes in the path.
    
 When TeamCity runs Git garbage collection, the details are logged into the [`teamcity-cleanup.log`](teamcity-server-logs.md). If git garbage collection fails, a corresponding warning is displayed.
 
@@ -654,7 +654,7 @@ git
 
 <td>
 
-The path to the native git executable on the server
+The path to the native git executable on the server. On Windows, remember to use double backslashes in the path.
 
 
 </td></tr><tr>
