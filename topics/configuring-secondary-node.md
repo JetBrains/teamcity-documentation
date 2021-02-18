@@ -68,7 +68,12 @@ It is possible to use one or more secondary nodes to process traffic from the Te
 
 In general, you do not need a separate node for running builds unless you have more than 400 agents connected to a single server. Using a secondary node allows you to significantly increase the number of agents which the setup can handle.
 
-Once you assign the _Processing data produced by builds_ responsibility to a node, all newly started builds will be routed to this node. The existing running builds will continue being executed on the main server. When you disable the responsibility, only the newly started builds will be switched to the main server. The builds that were already running on the secondary node will continue running there.
+Once you assign a secondary node to the _Processing data produced by builds_ responsibility for the first time, all\* newly started builds will be routed to this node. The existing running builds will continue being executed on the main server. When you disable the responsibility, only the newly started builds will be switched to the main server. The builds that were already running on the secondary node will continue running there.  
+If you assign more than one secondary nodes to this responsibility, builds will be distributed equally between these nodes.
+
+\* In terms of TeamCity EAP 2021.1, you can control how many builds can be run by each node.  
+Find the required node in the list of available nodes and click __...__  next to its _Processing data produced by running builds_ responsibility. The _Builds distribution options_ menu will open. In this menu, you can set a relative (%) or/and absolute (number) limit of builds allowed to run on this node. We suggest that you set these limits depending on the node's hardware capabilities.  
+If the maximum limit of allowed running builds is reached on all secondary nodes, TeamCity will run new builds on the main node until some secondary node will be ready to run a new build.
 
 ### VCS Repositories Polling on Secondary Node
 
