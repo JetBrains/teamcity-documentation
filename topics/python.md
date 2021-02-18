@@ -273,6 +273,16 @@ Path to a Python module file.
 
 <tr><td>
 
+Install tool
+
+</td><td>
+
+Select this option to automatically install the selected tool package (Pytest, Flake8, or Pylint) if it is missing on the build agent.
+
+</td></tr>
+
+<tr><td>
+
 Script or module arguments
 
 </td><td>
