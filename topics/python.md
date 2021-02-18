@@ -340,11 +340,15 @@ You can also specify arguments that will be passed to the interpreter in every P
 
 Optionally, you can run a Python build step in a virtual environment. The Python runner supports the following tools:
 * [Pipenv](https://pipenv.pypa.io/en/latest/)
+* [Venv](https://docs.python.org/3/library/venv.html)
 * [Virtualenv](https://virtualenv.pypa.io/en/latest/)
+
+>If TeamCity finds the `requirements.txt` file when [autodetecting build steps](configuring-build-steps.md#Autodetecting+build+steps) from a project repository, it chooses venv as a tool for these settings by default. You can manually change it to virtualenv if necessary.   
+>[Read more](https://docs.python.org/3/installing/index.html#key-terms) about the differences between these tools.
 
 If you choose Pipenv, enter additional [install arguments](https://pipenv.pypa.io/en/latest/cli/#pipenv-install) if necessary.
 
-Virtualenv has the following settings:
+Venv and virtualenv have the following settings:
 
 <table>
 
@@ -370,11 +374,11 @@ Path to the requirements file or a new-line separated list of files.
 
 <tr><td>
 
-Pip run arguments
+Pip install run arguments
 
 </td><td>
 
-Additional arguments for the `pip run` command.
+Additional arguments for the `pip install run` command.
 
 </td></tr>
 
@@ -390,11 +394,11 @@ Name of the virtual environment.
 
 <tr><td>
 
-Virtualenv arguments
+Venv / virtualenv create arguments
 
 </td><td>
 
-Additional virtualenv arguments to create a new `env` command.
+Additional venv / virtualenv arguments to create a new `env` command.
 
 </td></tr>
 
