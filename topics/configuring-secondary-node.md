@@ -71,7 +71,7 @@ In general, you do not need a separate node for running builds unless you have m
 Once you assign a secondary node to the _Processing data produced by builds_ responsibility for the first time, all\* newly started builds will be routed to this node. The existing running builds will continue being executed on the main server. When you disable the responsibility, only the newly started builds will be switched to the main server. The builds that were already running on the secondary node will continue running there.  
 If you assign more than one secondary nodes to this responsibility, builds will be distributed equally between these nodes.
 
-\* In terms of TeamCity EAP 2021.1, you can control how many builds can be run by each node.  
+\* In terms of TeamCity 2021.1 EAP, you can control how many builds can be run by each node.  
 To do this, find the required node in the list of available nodes and click __...__  next to its _Processing data produced by running builds_ responsibility. The _Builds distribution limits_ menu will open. In this menu, you can enter a relative or/and absolute limit of builds allowed to run on this node. We suggest that you set these limits depending on the node's hardware capabilities.  
 If the maximum limit of allowed running builds is reached on all secondary nodes, TeamCity will be running new builds on the main node until some secondary node finishes its build.
 

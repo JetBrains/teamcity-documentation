@@ -150,7 +150,7 @@ backend tc-ha
 
 #### Proxy as Load Balancer
 
->This functionality is provided in terms of TeamCity Early Access Program 2021.1.
+>This functionality is provided in terms of TeamCity 2021.1 EAP.
 
 In addition to its default role, your proxy can serve as a load balancer and manage communication between TeamCity agents and secondary nodes. By default, an agent sends all its requests to the main node first, and the main node redirects these requests to a suitable secondary node. If the main node becomes unavailable, the agent will not be able to communicate with its appointed secondary node, until the main node becomes available again.   
 With the load balancer approach, you can make this communication less dependent on the main server by always routing agents to the proxy instead. The proxy will route each newly started agent to the main node first. If the main node assigns this agent to a secondary node, the proxy will route all the following agent's requests to this node, independently of the main node's status.

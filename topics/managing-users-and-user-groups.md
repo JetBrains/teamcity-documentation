@@ -23,7 +23,7 @@ The _General_ tabs allows modifying the user's name, email address and password 
 
 The __Authentication Settings__ section appears if several authentication modules are enabled on the server. Here you can edit usernames for different authentication modules such as LDAP and Windows Domain.   
   
-In terms of TeamCity 2020.2 EAP, you can map external OAuth usernames with an existing TeamCity user. If a user with the respective username signs into TeamCity via OAuth, TeamCity will be able to recognize them.
+You can map external OAuth usernames with an existing TeamCity user. If a user with the respective username signs into TeamCity via OAuth, TeamCity will be able to recognize them.
 
  <anchor name="vcsUsername"/>
 
