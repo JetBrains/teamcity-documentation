@@ -72,8 +72,8 @@ Once you assign a secondary node to the _Processing data produced by builds_ res
 If you assign more than one secondary nodes to this responsibility, builds will be distributed equally between these nodes.
 
 \* In terms of TeamCity EAP 2021.1, you can control how many builds can be run by each node.  
-To do this, find the required node in the list of available nodes and click __...__  next to its _Processing data produced by running builds_ responsibility. The _Builds distribution options_ menu will open. In this menu, you can set a relative or/and absolute limit of builds allowed to run on this node. We suggest that you set these limits depending on the node's hardware capabilities.  
-If the maximum limit of allowed running builds is reached on all secondary nodes, TeamCity will be running new builds on the main node until some secondary node will be ready to run a new build.
+To do this, find the required node in the list of available nodes and click __...__  next to its _Processing data produced by running builds_ responsibility. The _Builds distribution limits_ menu will open. In this menu, you can enter a relative or/and absolute limit of builds allowed to run on this node. We suggest that you set these limits depending on the node's hardware capabilities.  
+If the maximum limit of allowed running builds is reached on all secondary nodes, TeamCity will be running new builds on the main node until some secondary node finishes its build.
 
 ### VCS Repositories Polling on Secondary Node
 
