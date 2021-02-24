@@ -102,6 +102,8 @@ To define a new path to a local directory, use the `-Dteamcity.node.data.path` p
 
 To set up a high-availability TeamCity installation, you need to install both the main server and the secondary node behind a reverse proxy and configure it to route requests to the main server while it is available and to the secondary one in other cases. If you are about to set up the TeamCity server behind a reverse proxy for the first time, make sure to review our [notes](how-to.md#Proxy+Server+Setup) on this topic.
 
+#### Default Configuration
+
 The following [NGINX](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-health-check) configuration will route requests to the secondary node only when the main server is unavailable or when the main server responds with the 503 status code (when starting or upgrading).
 
 ```Plain Text
@@ -121,9 +123,9 @@ http {
 
 ```
 
-Note that [NGINX Open Source](http://nginx.org/en/) does not support active [health checks](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-health-check/) (which is a better way to configure High Availability installation) and may experience DNS resolution issues. Consider using [NGINX Plus](https://www.nginx.com/products/nginx/) or [HA Proxy](http://www.haproxy.org/).
+Note that [NGINX Open Source](http://nginx.org/en/) does not support active [health checks](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-health-check/) (which is a better way to configure High Availability installation) and may experience DNS resolution issues. Consider using [NGINX Plus](https://www.nginx.com/products/nginx/) or [HAProxy](http://www.haproxy.org/).
 
-The HA Proxy configuration example:
+The HAProxy configuration example:
 
 ```Plain Text
 resolvers dns
@@ -144,11 +146,83 @@ backend tc-ha
 
 ```
 
-<tip>
-    
-After configuring the proxy, remember to update the _Server URL_ on the __Administration | Global Settings__ page.
-    
-</tip>
+>After configuring the proxy, remember to update the _Server URL_ on the __Administration | Global Settings__ page.
+
+#### Proxy as Load Balancer
+
+>This functionality is provided in terms of TeamCity Early Access Program 2021.1.
+
+In addition to its default role, your proxy can serve as a load balancer and manage communication between TeamCity agents and secondary nodes. By default, an agent sends all its requests to the main node first, and the main node redirects these requests to a suitable secondary node. If the main node becomes unavailable, the agent will not be able to communicate with its appointed secondary node, until the main node becomes available again.   
+With the load balancer approach, you can make this communication less dependent on the main server by always routing agents to the proxy instead. The proxy will route each newly started agent to the main node first. If the main node assigns this agent to a secondary node, the proxy will route all the following agent's requests to this node, independently of the main node's status.
+
+This approach optimizes the communication between agents and nodes which helps establish a high-availability setup. To use it instead of the default one, you need to configure the proxy to route the agent traffic to secondary nodes based on a special HTTP header and cookie.
+
+The following HAProxy example shows what parameters are required to provide in the proxy configuration.
+
+>This example can be used for a reference only and not intended for production purposes.
+> 
+{type="warning"}
+
+```Plain Text
+
+defaults
+    mode http
+    timeout connect 60s
+    timeout client 60s
+    timeout server 60s
+
+    frontend http-in
+        bind *:80
+        default_backend web_endpoint
+        option httplog
+        log stdout local0  info
+
+        option http-buffer-request
+        declare capture request len 40000000
+        http-request capture req.body id 0
+        capture request header user-agent len 150
+        capture request header Host len 15
+        
+        # specify the cookie:
+        capture cookie X-TeamCity-Node-Id-Cookie= len 100
+
+        # specify the package header:
+        http-request add-header X-TeamCity-Proxy "type=haproxy; version=2021.1"
+
+        acl is_build_agent hdr_beg(User-Agent) -i "TeamCity Agent"
+
+        # for web users' requests use the balanced endpoint:
+        use_backend agents_endpoint if is_build_agent
+        use_backend web_endpoint unless is_build_agent
+
+
+    backend agents_endpoint
+        acl cookie_found req.cook(X-TeamCity-Node-Id-Cookie) -m found
+        # pass requests without the cookie to the main node
+        # these are the commands and builds without the cookie:
+        use-server MAIN_SERVER unless cookie_found
+        # parses the X-TeamCity-Node-Id-Cookie cookie from the request. Does not add if absent.
+        cookie X-TeamCity-Node-Id-Cookie
+        # last argument is the cookie value that is the secondary node ID:
+        server secondary_node <sec-host>:<sec-port> check cookie SecNodeID
+        server MAIN_SERVER <main-host>:<port> check cookie MAIN_SERVER
+
+
+    backend web_endpoint
+        # choose the first available server:
+        balance first
+        option httpchk GET /login.html HTTP/1.1 # \r\nHost:localhost
+        # set the main node as the default server:
+        server web_main <sec-host>:<sec-port> check
+        # set the secondary node as backup if the main node is down:
+        server web_secondary <main-host>:<main-port> check
+```
+
+Here, `MAIN_SERVER` is the identifier of the main node; `secNodeID` must be set to the ID of a secondary node, as specified in __Administration | Nodes Configuration__. You can add as many `server secondary_node ...` lines as there are secondary nodes in your setup.
+
+After configuring the proxy, remember to change the `serverURL` value to the proxy address in the agent's [`buildAgent.properties`](build-agent-configuration.md) file.
+
+>If you leave `serverURL` set to the main server URL, the agent will connect to the main node for every operation, as in the default scenario. This way, you can combine two approaches and control which agents connect to the proxy, and which ones — directly to the main server.
 
 ### Firewall Settings
 
