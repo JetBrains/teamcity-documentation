@@ -212,8 +212,7 @@ Select this option to clone a repository with anonymous read access.
 
 <td>
 
- Password
-
+Password
 
 </td>
 
@@ -318,20 +317,17 @@ If you plan to use the [agent-side checkout](vcs-checkout-mode.md), you need to 
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
-Path to git
-
+Path to Git
 
 </td>
 
@@ -339,8 +335,29 @@ Path to git
 
 Provide the path to a Git executable to be used on the agent. When set to `%env.TEAMCITY_GIT_PATH%`, the automatically detected Git will be used, see [Git executable on the agent](#agentGitPath) for details.
 
+</td></tr>
 
-</td></tr><tr>
+<tr>
+
+<td>
+
+Checkout policy
+
+</td>
+
+<td>
+
+Available in terms of TeamCity 2021.1 EAP. This setting defines how TeamCity performs a checkout to a build agent.
+
+* __Use mirrors__: recommended for long-lived agents. With this option selected, TeamCity creates a remote repository cache on the agent machine under the `system/caches/git` directory. The cache is then added as [alternates](https://git-scm.com/docs/gitrepository-layout) when updating the [build checkout directory](build-checkout-directory.md). To speed up the following checkouts of this repository, the agent will reuse the cache in all the builds with the same fetch URL. This also speeds up clean checkout (as only the [build working directory](build-working-directory.md) is cleaned) and saves disk space (as the mirror is the only clone of the given repository on the agent).
+* __Shallow clone__: recommended for short-lived agents; for example, for disposable cloud agents terminating after every build. Choose this option only if you do not require a Git commit history in your builds and if your cloud image does not contain a fresh Git mirror. You can enforce this option on certain agents by specifying the `teamcity.git.shallowClone=true` [agent configuration property](build-agent-configuration.md).
+* __Auto__: TeamCity will automatically apply one of the above approaches depending on the `teamcity.cloud.agent.terminate.after.build` agent configuration property and on the mirror presence on the agent.
+
+>Read how to add a [Git mirror on a cloud agent](#Git+mirrors+on+cloud+agents).
+
+</td></tr>
+
+<tr>
 
 <td>
 
@@ -356,30 +373,8 @@ Specify here when the `git clean` command is to run on the agent, and which file
 If a build configuration depends on multiple VCS roots, we suggest that you configure separate agent checkout directories for each of these roots, using [VCS checkout rules](vcs-checkout-rules.md). This way, `git clean` will never delete these checkout directories during cleaning.
 
 
-</td></tr><tr>
-
-<td id="use-alternates">
-
-Use mirrors
-
-
-</td>
-
-<td>
-
-It is recommended to always leave this option enabled.
-
-When __enabled__ (default), TeamCity clones the Git repository and creates its mirror under the agent's `system\git` directory. TeamCity uses this mirror as an alternate repository when updating the checkout directory for a build. This speeds up clean checkout (because only the build working directory is cleaned) and saves disk space (as the mirror is the only clone of the given Git repository on an agent).
-
-See also, [how to prepare a mirror on a cloud agent](#Git+mirrors+on+cloud+agents).
-
-If you __disable__ this option, TeamCity will clone the repository directly under the build's working directory, unless the [`teamcity.git.use.local.mirrors`](#use-local-mirrors) property is set to `true`.
-{product="tc"}
-
-If you __disable__ this option, TeamCity will clone the repository directly under the build's working directory.
-{product="tcc"}
-
-</td></tr></table>
+</td></tr>
+</table>
 
 <tip product="tc">
 
@@ -866,39 +861,6 @@ teamcity.git.connectionRetryIntervalSeconds
 <td>
 
 Interval in seconds between connection attempts
-
-
-</td></tr>
-
-
-<tr>
-
-<td id="use-local-mirrors">
-
-teamcity.git.use.local.mirrors
-
-</td>
-
-<td>
-
-false
-
-
-</td>
-
-<td>
-
-_TeamCity checks the state of this property only if the "[_Use mirrors_](#use-alternates)" option is disabled in the VCS root settings._
-
-By default, if you disable "_Use mirrors_", TeamCity will clone the repository under the build's working directory.   
-Set `teamcity.git.use.local.mirrors` to `true` to clone the repository under the agent's `system\git` directory instead. When running a build, TeamCity will copy the repository from this directory to the build's working directory.
-
-
-<note>
-
-Copying a repository from a directory located on the same machine is faster than always cloning the repository from the source, so we recommend setting `teamcity.git.use.local.mirrors` to `true` if you disable the "_Use mirrors_" option.
-
-</note>
 
 
 </td></tr>
