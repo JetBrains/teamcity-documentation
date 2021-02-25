@@ -104,7 +104,7 @@ __Perforce__
 <td>
 
 * Maven-like URLs: [`http://maven.apache.org/scm/perforce.html`](http://maven.apache.org/scm/perforce.html)
-* same as Maven but without the `scm` prefix, for example: `perforce://main:1666/myproject/`
+* same as Maven but without the `scm` prefix, for example: `perforce://servername:1666/depot/main`
 
 
 </td></tr><tr>

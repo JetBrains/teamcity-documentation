@@ -5,7 +5,7 @@
 
 Continuous Integration is a software development practice in which developers commit code changes into a shared repository several times a day. Each commit is followed by an automated build to ensure that new changes integrate well into the existing code base and to detect problems early.    
 
-To learn more about continuous integration basics, refer to [Martin Fowler's article](http://www.martinfowler.com/articles/continuousIntegration.html).
+>To learn about the basics of continuous integration, refer to our [CI/CD Guide](https://www.jetbrains.com/teamcity/ci-cd-guide/).
 
 ## What is TeamCity?
 

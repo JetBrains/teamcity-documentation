@@ -3,7 +3,7 @@
 
 Before creating and managing user accounts, groups and changing users' permissions, we recommend that you read about the following concepts:
 
-* [User Account](user-account.md)	
+* [User Account](user-account.md)
 * [Guest User](guest-user.md)
 * [User Group](user-group.md)
 * [Role and Permission](role-and-permission.md)
