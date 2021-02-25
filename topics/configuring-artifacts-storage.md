@@ -51,15 +51,6 @@ Since TeamCity 2020.2, you can set an S3 [path prefix](https://docs.aws.amazon.c
 
 You can enable the virtual host addressing for S3 buckets. Currently, both hosted-style and path-style requests are supported by TeamCity. Note that Amazon [stopped supporting path-style access](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access) for new buckets since September 2020.
 
-#### Multipart upload
-
-<anchor name="multipartUpload"/>
-
-To optimize the [uploading of large files](https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/) to S3, you can initiate [multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html) instead of regular upload. To do this, set the multipart upload threshold in the _Connection Settings_ block. The minimum allowed value is `5MB`. Supported suffixes: `KB`, `MB`, `GB`, `TB`. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (`8MB` is the default value).  
-Additionally, you can configure the maximum allowed size of each uploaded file part. The minimum value is `5MB`. If left empty, TeamCity will use `8MB` as the default value.
-
->We recommend that you configure a [bucket lifecycle policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpu-abort-incomplete-mpu-lifecycle-config.html) to prevent incomplete multipart uploads.
-
 #### Permissions
 
 When the "Use Pre\-Signed URLs for upload" option is enabled, the provided AWS credentials or IAM role on the TeamCity server should have permissions: `DeleteObject, ListAllMyBuckets, GetBucketLocation, GetObject, ListBucket, PutObject`.
