@@ -44,13 +44,11 @@ To use the [minitest](https://rubygems.org/gems/minitest) framework, the `minite
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -58,20 +56,17 @@ Description
 
 Path to a Rakefile file
 
-
 </td>
 
 <td>
 
 Enter a Rakefile path if you don't want to use the default one. The specified path should be relative to the [Build Checkout Directory](build-checkout-directory.md).
 
-
 </td></tr><tr>
 
 <td>
 
 Rakefile content
-
 
 </td>
 
@@ -85,7 +80,6 @@ Type in the Rakefile content instead of using the existing Rakefile. The new Rak
 
 Working directory
 
-
 </td>
 
 <td>
@@ -97,7 +91,6 @@ Optional. Specify if differs from the [Build Checkout Directory](build-checkout-
 <td>
 
 Rake tasks
-
 
 </td>
 
@@ -117,7 +110,6 @@ Additional Rake command line parameters
 
 Specified parameters will be added to `rake` command line. The command line will have the following format:
 
-
 ```Shell
 ruby rake <Additional Rake command line parameters>
 <TeamCity Rake Runner options, e.g TESTOPTS> <tasks>
@@ -134,20 +126,17 @@ ruby rake <Additional Rake command line parameters>
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 Use default Ruby
-
 
 </td>
 
@@ -161,19 +150,16 @@ Use Ruby interpreter settings defined in the [Ruby environment configurator](rub
 
 Ruby interpreter path
 
-
 </td>
 
 <td>
 
 The path to Ruby interpreter. The path cannot be empty. This field supports values of environment and system variables. For example:
 
-
 ```Shell
 %env.I_AM_DEFINED_IN_BUILDAGENT_CONFIGURATION%
 
 ```
-
 
 </td></tr><tr>
 
@@ -181,13 +167,11 @@ The path to Ruby interpreter. The path cannot be empty. This field supports valu
 
 RVM interpreter
 
-
 </td>
 
 <td>
 
-Specify here the RVM interpreter name and optionally a gemset configured on a build agent.  Note, the interpreter name cannot be empty. If gemset isn't specified, the default one will be used.
-
+Specify here the RVM interpreter name and optionally a gemset configured on a build agent. Note, the interpreter name cannot be empty. If gemset isn't specified, the default one will be used.
 
 </td></tr></table>
 
@@ -199,13 +183,11 @@ Specify here the RVM interpreter name and optionally a gemset configured on a bu
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -213,13 +195,11 @@ Description
 
 Bundler: bundle exec
 
-
 </td>
 
 <td>
 
 If your project uses the [Bundler requirements](http://gembundler.com) manager and your Rakefile doesn't load the bundler setup script, this option will allow you to launch rake tasks using the `bundle exec` command emulation. If you want to execute `bundle install` command, you need to do it in the [Command Line](command-line.md) step before the _Rake_ step. Also, remember to set up the [Ruby environment configurator](ruby-environment-configurator.md) build feature to automatically pass Ruby interpreter to the command line runner.
-
 
 </td></tr><tr>
 
@@ -234,7 +214,6 @@ Debug
 
 Check the __Track invoke/execute stages__ option to enable showing _Invoke_ stage data in the build log.
 
-
 </td></tr></table>
 
 ### Tests Reporting
@@ -245,20 +224,17 @@ Check the __Track invoke/execute stages__ option to enable showing _Invoke_ stag
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 Attached reporters
-
 
 </td>
 
@@ -295,27 +271,23 @@ Option
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
-system.teamcity.rake.runner.gem.rake.version
-
+`system.teamcity.rake.runner.gem.rake.version`
 
 </td>
 
 <td>
 
-Allows specifying which rake gem to use for launching a rake build.
-
+Allows specifying which rake gem to use for launching a Rake build.
 
 </td></tr><tr>
 
 <td>
 
-system.teamcity.rake.runner.gem.testunit.version
-
+`system.teamcity.rake.runner.gem.testunit.version`
 
 </td>
 
@@ -323,13 +295,11 @@ system.teamcity.rake.runner.gem.testunit.version
 
 If your application uses the test-unit gem version other than the latest installed (in Ruby sdk), specify it here. Otherwise, the Test::Unit test reporter may try to load the incorrect gem version and affect the runtime behavior. If the test-unit gem is installed but your application uses Test::Unit bundled in Ruby 1.8.x SDK, set the version value to 'built-in'.
 
-
 </td></tr><tr>
 
 <td>
 
-system.teamcity.rake.runner.gem.bundler.version
-
+`system.teamcity.rake.runner.gem.bundler.version`
 
 </td>
 
@@ -337,13 +307,11 @@ system.teamcity.rake.runner.gem.bundler.version
 
 Launches bundler emulation for the specified bundler gem version (the gem should be already installed on an agent.
 
-
 </td></tr><tr>
 
 <td>
 
-system.teamcity.rake.runner.custom.gemfile
-
+`system.teamcity.rake.runner.custom.gemfile`
 
 </td>
 
@@ -351,20 +319,17 @@ system.teamcity.rake.runner.custom.gemfile
 
 Customizes Gemfile if it isn't located in the checkout directory root.
 
-
 </td></tr><tr>
 
 <td>
 
-system.teamcity.rake.runner.custom.bundle.path
-
+`system.teamcity.rake.runner.custom.bundle.path`
 
 </td>
 
 <td>
 
 Sets `BUNDLE_PATH` if TeamCity doesn't fetch it correctly from `<Gemfile_containing_directory>/.bundle/config`.
-
 
 </td></tr></table>
 

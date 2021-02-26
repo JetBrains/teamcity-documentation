@@ -224,7 +224,6 @@ For Linux and macOS agents, all [additional dotCover arguments](#additional-argu
 
 Starting from this version, you can also run dotCover code coverage analysis inside a Docker container, with the [Docker Wrapper](docker-wrapper.md) extension.
 
-
  <seealso>
         <category ref="troubleshooting">
             <a href="known-issues.md#dotCover+known+issues">dotCover Known Issues</a>
