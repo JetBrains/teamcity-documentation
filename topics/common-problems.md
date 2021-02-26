@@ -183,15 +183,14 @@ As for case sensitivity, the possible transitions are:
 
 However, it is recommended to always use CS.
 
-If the source character set is Unicode or UTF, the destination one must also be Unicode or UTF. If the source character set is 8\-bit non\-UTF, the destination one can be the same or Unicode/UTF.
+If the source character set is Unicode or UTF, the destination one must also be Unicode or UTF. If the source character set is 8-bit non-UTF, the destination one can be the same or Unicode/UTF.
 
-This applies to TeamCity 6.0 and above.
 
 #### Resolve character set/collation-related problems
 
 To fix a problem, perform the following steps:
 
-1. Create a new database with the appropriate character set and collation. We recommend using a __unicode case\-sensitive__ collation: see instructions for [PostgreSQL](setting-up-an-external-database.md#On+PostgreSQL+server+side) and [MySQL](setting-up-an-external-database.md#On+MS+SQL+server+side). For MySQL, `utf8_bin` or `utf8mb4_bin` is preferred.  
+1. Create a new database with the appropriate character set and collation. We recommend using a __unicode case-sensitive__ collation: see instructions for [PostgreSQL](setting-up-an-external-database.md#On+PostgreSQL+server+side) and [MySQL](setting-up-an-external-database.md#On+MS+SQL+server+side). For MySQL, `utf8_bin` or `utf8mb4_bin` is preferred.  
     See also [PostgreSQL](http://www.postgresql.org/docs/9.3/static/multibyte.html), [MySQL](http://dev.mysql.com/doc/refman/5.0/en/charset-mysql.html), [MS SQL](http://technet.microsoft.com/en-us/library/ms180175(v=sql.105).aspx) documentation for details on character set.
     
 2. Copy the current \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/database.properties file, and change the database references in the copy to the newly created database.
@@ -509,7 +508,7 @@ For earlier versions, refer to [this section](https://confluence.jetbrains.com/d
 
 ### Startup performance issues
 
-After upgrade to TeamCity 9.0 or later, .NET Framework below version 4.0 installed on TeamCity agents may cause performance issues of .NET-related TeamCity tools due to Code access security (CAS) policy imposed by Microsoft.
+.NET Framework below version 4.0 installed on TeamCity agents may cause performance issues of .NET-related TeamCity tools due to Code access security (CAS) policy imposed by Microsoft.
 
 To solve the issue, use one of the options:
 
@@ -527,7 +526,7 @@ To solve the issue, use one of the options:
     
     You can modify the machine.config file as described in this [external blog post](http://blogs.msdn.com/b/amolravande/archive/2008/07/20/startup-performance-disable-the-generatepublisherevidence-property.aspx) and pass this config file to all agents, e.g. using a custom script.
 
-2. Alternatively, upgrade .Net Framework on the TeamCity agents to version 4.0 and above. Details are available in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/dd233103%28v=vs.100%29.aspx#simplification).
+2. Alternatively, upgrade .NET Framework on the TeamCity agents to version 4.0 and above. Details are available in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/dd233103%28v=vs.100%29.aspx#simplification).
 
 ## Using tools requiring manual input, in particular Extended Validation code signing
 

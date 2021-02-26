@@ -121,10 +121,10 @@ Current automatic update limitations:
 
 >The main server configuration file \<[TeamCity Home Directory](teamcity-home-directory.md)\>/conf/server.xml is updated automatically when there were no changes to it since the last installation. If modification were made, the installer will detect them and backup the old `server.xml` file displaying a warning about the overwrite and the backup file location. Other files under `conf` can be overwitten to their default content as well, so if you have made manual modifications in those, check them after the upgrade.
 
-1. [Create a backup](teamcity-data-backup.md). When upgrading from TeamCity 6.0\+ you will also have a chance to create a backup with the "basic" profile on the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page on the updated TeamCity start.
+1. [Create a backup](teamcity-data-backup.md). You can create a backup with the "basic" profile on the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page on the updated TeamCity start.
 2. Note the username used to run the TeamCity server. You will need it during the new version installation.
 3. If you have any of the Windows service settings customized, store them to repeat the customizations later.
-4. Note if you are using 64 bit Java to run the service (for example, check for "64" in "Java VM info" on the server's Administration | Diagnostics or in a thread dump), consider backing up \<[TeamCity Home Directory](teamcity-home-directory.md)\>\jre directory.
+4. Note if you are using 64-bit Java to run the service (for example, check for "64" in "Java VM info" on the server's Administration | Diagnostics or in a thread dump), consider backing up \<[TeamCity Home Directory](teamcity-home-directory.md)\>\jre directory.
 5. (optional as these will not be overwritten by the upgrade) If you have any customizations of the bundled Tomcat server (like port, https protocol, and so on), JRE, etc. Backup those to repeat the customizations later.
 6. Note if you have local agent installed (though, it is [not recommended](security-notes.md) to have a local agent) so that you can select the same option in the installer.
 7. Run the new installer and point it to the same place TeamCity is installed into ( the location used for installation is remembered automatically). Confirm uninstalling the previous installation. The TeamCity uninstaller ensures proper uninstallation, but you might want to make sure the [TeamCity server installation directory](teamcity-home-directory.md) does not contain any non\-customized files after uninstallation finishes. If there are any, backup/remove them before proceeding with the installation.
@@ -142,7 +142,7 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 
 1. [Create a backup](teamcity-data-backup.md).
 2. Backup files customized since previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
-3. Remove old installation files (the entire `<TeamCity Home Directory>`). It's advised to backup the directory beforehand.
+3. Remove old installation files (the entire `<TeamCity Home Directory>`). It's advised to back up the directory beforehand.
 4. Unpack the new archive to the location where TeamCity was previously installed.
 5. If you use a Tomcat server (your own or bundled in .tar.gz TeamCity distribution), it is recommended to delete the content of the `work` directory. Note that this may affect other web applications deployed into the same web server.
 6. Restore customized settings backed up in step 2 above. If you have the customized `[TOMCAT_HOME]/conf/server.xml` file, apply your changes into the appropriate sections of the default file.
@@ -158,8 +158,7 @@ If you made no changes to the container, you can just stop the running container
 {product="tc"}
 
 It is recommended for all users to regularly update their IDE plugins to the latest version compatible with the TeamCity server version in use. At least to the version available from the TeamCity server's Tools section on user profile.   
-Generally, versions of the IntelliJ IDEA TeamCity plugin, Eclipse TeamCity plugin, and Visual Studio TeamCity Addin have to be the same as the TeamCity server version. Users with non-matching plugin versions get a message on an attempt to log in to the TeamCity server with a non-matching version.   
-The only exception is TeamCity versions 9.0 - 9.1.x, which use a compatible protocol, and any plugin of these versions can be used with any server of these versions. Updating IDE plugins to the matching server version is still recommended.
+Generally, versions of the IntelliJ IDEA TeamCity plugin, Eclipse TeamCity plugin, and Visual Studio TeamCity add-in have to be the same as the TeamCity server version. Users with non-matching plugin versions get a message on an attempt to log in to the TeamCity server with a non-matching version.
 
 ## Upgrading Build Agents
 {product="tc"}

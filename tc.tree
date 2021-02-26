@@ -236,7 +236,7 @@
                   <toc-element id="inspections.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="inspections-resharper.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="intellij-idea-project.md" show-structure-for="chapter" show-structure-depth="4"/>
-                  <toc-element id="ipr-deprecated.md" show-structure-for="chapter" show-structure-depth="4"/>
+                  <toc-element id="ipr-deprecated.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
                   <toc-element id="maven.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="msbuild.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="mspec.md" show-structure-for="chapter" show-structure-depth="4"/>

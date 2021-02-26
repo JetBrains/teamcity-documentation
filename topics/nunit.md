@@ -102,9 +102,7 @@ NUnit Console
 
 _Available if NUnit 3.0 is selected_.
 
-Select a preinstalled console tool or specify a custom path to `nunit3-console.exe`:
-* __prior to TeamCity 9.1.4__, specify the directory containing the console executable file
-* __since 9.1.4__, specify the path to the console executable file including the filename
+Select a preinstalled console tool or specify a custom path to the `nunit3-console.exe` console executable, including the filename.
 
 </td></tr><tr>
 
