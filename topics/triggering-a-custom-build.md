@@ -28,7 +28,7 @@ On the __General__ options you can also specify whether
 * this particular build will be run as a [personal](personal-build.md) one
 * this particular build will be put at the top of the [build queue](build-queue.md)
 * all files in the [build checkout directory](build-checkout-directory.md) will be cleaned before this build.
-   * __Since TeamCity 2017.1__, if snapshot dependencies are configured, this option can be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use clean checkout.
+   * If snapshot dependencies are configured, this option can be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use clean checkout.
 
 ### Dependencies
 

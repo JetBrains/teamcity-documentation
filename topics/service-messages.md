@@ -857,7 +857,7 @@ __Code inspection__
 
 <td>
 
-__Since TeamCity 2017.1__, IntelliJ IDEA inspection results
+IntelliJ IDEA inspection results
 
 </td></tr>
 

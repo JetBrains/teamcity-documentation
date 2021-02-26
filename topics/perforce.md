@@ -51,13 +51,11 @@ Stream
 
 <td>
 
-Click this radio button to specify an existing Perforce stream. TeamCity will use this stream to prepare the stream\-based workspace, and will use the client mapping from such a workspace.
+Click this radio button to specify an existing Perforce stream. TeamCity will use this stream to prepare the stream-based workspace, and will use the client mapping from such a workspace.
 
-TeamCity supports deeper directory structure within the root depot: depots with a depth of `//DEPOTNAME/1/2/n` can be specified in this field.    
-__Prior to TeamCity 2017.2__, TeamCity supports streams stored one level below the depot name: the format is `//streamdepot/streamname`.
+TeamCity supports deeper directory structure within the root depot: depots with a depth of `//DEPOTNAME/1/2/n` can be specified in this field.
 
 [Parameters](configuring-build-parameters.md) are supported. For the `StreamAtChange` option, use the [_Label to checkout_](#Agent+Checkout+Settings) field.
-
 
 <note>
 
@@ -69,7 +67,7 @@ When Perforce Streams are used with the [agent-side checkout mode](vcs-checkout-
 <anchor name="branch-support"/>
 <anchor name="branchStreams"/>
 
-__Enable feature branches support (experimental)__ — select this checkbox to specify branch streams you want to be monitored for changes in addition to the default one. Enter / Edit the branch specification as a newline\-delimited set of rules. The syntax is  `+|-:stream_name` (with the optional `*` placeholder).
+__Enable feature branches support (experimental)__ — select this checkbox to specify branch streams you want to be monitored for changes in addition to the default one. Enter / Edit the branch specification as a newline-delimited set of rules. The syntax is `+|-:stream_name` (with the optional `*` placeholder).
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
@@ -97,7 +95,7 @@ Click this radiobutton to directly specify the client workspace name. The worksp
 
 __Performance impact__
 
-When this option is used with the [checkout on the server](vcs-checkout-mode.md#server-checkout) mode, the internal TeamCity source caching on the server side is disabled, which may worsen the performance of [clean checkouts](clean-checkout.md). Also, with this option, snapshot dependencies builds are not [reused](snapshot-dependencies.md). ([TW-41898](https://youtrack.jetbrains.com/issue/TW-41898) - fixed in TeamCity 2017.1)
+When this option is used with the [checkout on the server](vcs-checkout-mode.md#server-checkout) mode, the internal TeamCity source caching on the server side is disabled, which may worsen the performance of [clean checkouts](clean-checkout.md). Also, with this option, snapshot dependencies builds are not [reused](snapshot-dependencies.md).
 </warning>
 
 </td></tr><tr>
@@ -321,7 +319,7 @@ P4 path on the build agent
 
 Specify the path to the Perforce command-line client: `p4.exe` file.
 
-This field works only on the agent side for agent-side checkout (__prior to TeamCity 2017.2.2__ this path was used for both the server-side checkout and the agent-side checkout). On agent-side, the value of this parameter could be overriden via `TEAMCITY_P4_PATH` environment variable, if such a variable is set in buildAgent.properties or comes from build parameters.
+This field works only on the agent side for agent-side checkout. On the agent side, the value of this parameter could be overridden via `TEAMCITY_P4_PATH` environment variable, if such a variable is set in buildAgent.properties or comes from build parameters.
 
 For the server, the p4 binary should be present in the PATH of the TeamCity server or can be specified via the `teamcity.perforce.customP4Path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 {product="tc"}

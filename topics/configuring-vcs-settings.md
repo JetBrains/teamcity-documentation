@@ -80,10 +80,6 @@ Define whether you want to clean all files in the checkout directory before the 
 
 ### Changes Calculation Settings
 
-This section, formerly called the Display settings, was renamed into Changes calculation settings __since TeamCity 2017.1.__
-
- 
-
 <table><tr>
 
 <td>

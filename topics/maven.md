@@ -105,7 +105,7 @@ If you change the goal from `test` to `deploy` (or any other sequential goal fro
 
 ### Maven Settings
 
-Choose the Maven version you want to use. __Since TeamCity 2017.1__, you can [manage the installed versions](installing-agent-tools.md).
+Choose the Maven version you want to use. You can also [manage the installed versions](installing-agent-tools.md).
 
 <table>
 
@@ -147,7 +147,7 @@ The path to Maven installation is taken from the `M2_HOME` environment variable,
 
 <td>
 
-The bundled version 3.2.5 is used as default. __Since TeamCity 2017.1__, you can [change the defaults](installing-agent-tools.md).
+The bundled version 3.2.5 is used as default. See how to [change the defaults](installing-agent-tools.md).
 
 
 </td></tr><tr>

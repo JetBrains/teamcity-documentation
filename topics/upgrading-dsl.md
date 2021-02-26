@@ -214,7 +214,7 @@ If you used Kotlin DSL with TeamCity 2017.2 for Docker plugin configurations, yo
 
 The essence of the changes:
 * build step __dockerBuild__ is now converted to __dockerCommand__
-* the parameters for DockerBuild are now sub\-parameter for commandType selector
+* the parameters for DockerBuild are now sub-parameter for commandType selector
 
 Note the difference:
 

@@ -48,7 +48,7 @@ a license key is required, [price options](https://www.jetbrains.com/teamcity/bu
 
 <td>
 
-100 build configurations (20 prior to TeamCity 2017.2)
+100 build configurations
 
 
 </td>
@@ -145,7 +145,7 @@ The same TeamCity distribution and installation are used for both editions. You 
 
 The current edition in use is noted in the footer of every TeamCity web UI page and on on the __Administration__ &gt; __Licenses__ page as well as in `teamcity-server.log` on the server startup.
 
-The __Professional edition__ does not require any license key and can be used free of charge. The only functional difference from the Enterprise edition is a limitation of the maximum number of [build configurations](build-configuration.md). The limit is 100 build configurations (prior to TeamCity 2017.2 it was 20). It can be extended by 10 with each agent license key added. You can install several servers with the Professional license.
+The __Professional edition__ does not require any license key and can be used free of charge. The only functional difference from the Enterprise edition is a limitation of the maximum number of [build configurations](build-configuration.md). The limit is 100 build configurations. It can be extended by 10 with each agent license key added. You can install several servers with the Professional license.
 
 The __Enterprise edition__ requires a license key, has no limit on the number of build configurations and entitles you to TeamCity [support](feedback.md) from JetBrains for the maintenance period of the license, provided you use a [recent TeamCity version](teamcity-release-cycle.md).
 
@@ -169,13 +169,13 @@ The TeamCity Licensing Policy does not impose any limitations on the number of i
 
 The Enterprise edition has no limit on the number of build configurations.
 
-The Professional edition allows 100 [build configurations](build-configuration.md) per server since TeamCity 2017.2 (20 in earlier versions).  Since TeamCity 8.0, each build agent license key gives you 10 more build configurations in Professional edition in addition to one more agent. All build configurations are counted (i.e. including those in archived projects).
+The Professional edition allows 100 [build configurations](build-configuration.md) per server. Each build agent license key gives you 10 more build configurations in Professional edition in addition to one more agent. All build configurations are counted (i.e. including those in archived projects).
 
 ### Number of Agents
 
 TeamCity Professional edition comes bundled with 3 [build agents](build-agent.md). More build agents can be added by purchasing additional agent license keys.
 
-A server license key might include more agent licenses then the default 3. The number of agents stated for the server license on jetbrains.com site notes the total number of agents which will be available. Separate agent license keys can be used with either TeamCity edition (Enterprise and Professional). For more information about purchasing agent licenses, refer to the [product page](http://www.jetbrains.com/teamcity/buy/).
+A server license key might include more agent licenses than the default 3. The number of agents stated for the server license on jetbrains.com site notes the total number of agents which will be available. Separate agent license keys can be used with either TeamCity edition (Enterprise and Professional). For more information about purchasing agent licenses, refer to the [product page](http://www.jetbrains.com/teamcity/buy/).
 
 The number of agent licenses limits the number of agents which can be [authorized](build-agent.md#Build+Agent+Status) in TeamCity. The license keys are not bound to specific agents, they just limit the maximum number of functional agents. The licensing makes no difference between local (installed on the TeamCity server machine) and remote agents.   
 When there are more authorized agents than the valid agent licenses available, the server stops to start any builds and displays a warning message to all users in the web browser.

@@ -212,28 +212,6 @@ Find all builds from the specified build configuration.
 
 <td>
 
-files
-
-</td>
-
-<td>
-
-</td>
-
-<td>
-
-(not supported by default since TeamCity 2017.1) Find all builds that include files with the specified file name.
-
-</td>
-
-<td>
-
-`files:`
-
-</td></tr><tr>
-
-<td>
-
 labels
 
 </td>

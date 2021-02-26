@@ -212,12 +212,13 @@ To fix a problem, perform the following steps:
 
 #### Index column size too large. The maximum column size is 767 bytes
 
-Check if the charater set of your MySQL  database. It is recommended to use the `utf8` character set.
+Check if the character set of your MySQL database. It is recommended to use the `utf8` character set.
 
-If your database uses the `utf8mb4` character set (available since MySQL 5.5), set the following InnoDB configuration options (under `[mysqld]` section in `my.cnf` or `my.ini`) for TeamCity 2017.2.1\+ to run:
+If your database uses the `utf8mb4` character set (available since MySQL 5.5), set the following InnoDB configuration options (under `[mysqld]` section in `my.cnf` or `my.ini`) to run:
 * `innodb_large_prefix=1` for index key prefixes longer than 767 bytes (up to 3072 bytes) to be allowed for InnoDB tables that use DYNAMIC row format (deprecated in MySQL 5.7.7).
 * `innodb_file_format=Barracuda` to enable the DYNAMIC row format.
 * `innodb_file_per_table=1` to enable the Barracuda file format
+
 The parameters above have the following default values:
 
 <table><tr>

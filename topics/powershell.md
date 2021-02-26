@@ -72,7 +72,7 @@ Select the platform bitness:
 
 __Edition__
 
-Select a PowerShell edition to be used: (__since TeamCity 2017.1__)
+Select a PowerShell edition to be used:
 
 * Desktop — closed-source edition bundled with Windows, available only on Windows platforms. 
 * Core — open-source edition based on .NET Core, cross-platform, 64-bit only

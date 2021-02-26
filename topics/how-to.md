@@ -737,7 +737,7 @@ teamcity.https.proxyPassword=password
 
 ## Configure TeamCity Agent to Use Proxy To Connect to TeamCity Server
 
-This section covers the configuration of a proxy server for TeamCity agent-to-server connections (__since TeamCity 2017.1__).
+This section covers the configuration of a proxy server for TeamCity agent-to-server connections.
 
 <chunk include-id="agent-proxy-server">
 
@@ -1218,7 +1218,7 @@ In relation to the TeamCity product, JetBrains does not collect any personal dat
 
 The notes below can be useful when assessing how your usage of TeamCity complies with the General Data Protection Regulation (GDPR) (EU) 2016/679 regulation. These notes are meant to address the most basic questions and can serve as an input to the assessment of your specific TeamCity installation.
 
-The notes are based on TeamCity 2017.2.4 which is actual at the moment of GDPR enforcement date. Please update your TeamCity instance at least to the version as previous versions might contain issues not in line with the notes below.
+The notes are based on TeamCity 2017.2.4 which is actual at the moment of GDPR enforcement date. Please update your TeamCity instance at least to this version, as previous versions might contain issues not in line with the notes below.
 
 ### TeamCity and Users' Personal Data
 

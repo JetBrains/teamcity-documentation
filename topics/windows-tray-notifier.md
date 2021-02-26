@@ -286,17 +286,15 @@ Besides the state icons, Windows tray notifier displays pop\-up alerts with a br
 
 <img src="poUp.png" width="250" alt="Windows Tray Notifier Pop-up Window"/>
 
-When a pop\-up notification appears, you can click the link in it to go the __Build results__ page for details.
+When a pop-up notification appears, you can click the link in it to go the __Build results__ page for details.
 
 ## Windows Tray Notifier Logs
 
-__Since TeamCity 2017.2__  Windows Tray Notifier logs events and warnings to the `%ProgramData%` or `%AppData%` (since 2017.2.1) `JetBrains\TeamCity\TrayNotifier\logs` directory containing the following files:
+Windows Tray Notifier logs events and warnings to the `%ProgramData%` or `%AppData%` (since 2017.2.1) `JetBrains\TeamCity\TrayNotifier\logs` directory containing the following files:
 *  `teamcity-tray.log` with common details
 *  `teamcity-update.log` with update details.
- 
 
 You can tune the logger verbosity via the `/verbosity` command line switch: debug logs can be enabled using the following command: 
-
 
 ```Shell
 C:\Program Files (x86)\JetBrains\TeamCity\TrayNotifier\JetBrains.TrayNotifier.exe /verbosity:debug

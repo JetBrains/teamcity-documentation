@@ -310,11 +310,11 @@ __Solution__: Delete build artifacts whose versions violate  [the required forma
 ## Packages indexing is slow in TeamCity NuGet feed
 {product="tc"}
 
-__Problem__: After TeamCity server host machine move or upgrade to the TeamCity 2017.1 build metadata can be reset.
+__Problem__: After TeamCity server host machine move or upgrade, build metadata can be reset.
 
-__Cause__: The TeamCity NuGet feed relies on build metadata, and packages re\-indexing can take a lot of time depending on the number of packages and the idle time of the TeamCity server.
+__Cause__: The TeamCity NuGet feed relies on build metadata, and packages reindexing can take a lot of time depending on the number of packages and the idle time of the TeamCity server.
 
-__Solution__: To speed up build metadata re\-indexing, specify the following [internal properties](configuring-teamcity-server-startup-properties.md):
+__Solution__: To speed up build metadata reindexing, specify the following [internal properties](configuring-teamcity-server-startup-properties.md):
 
 
 ```Shell
@@ -416,7 +416,7 @@ On Windows 10, the Docker server depends on Hyper-V service and its start may ta
 
 ### Linux Docker Containers under Windows
 
-Since __TeamCity 2017.2,__ the [Docker Wrapper](docker-wrapper.md) works on Windows when Windows-based containers are started.
+The [Docker Wrapper](docker-wrapper.md) works on Windows when Windows-based containers are started.
 
 If a Linux container is started on a Windows machine, TeamCity displays the error message "Starting Linux Docker containers under Windows is not supported. To avoid this problem, add the [`teamcity.agent.jvm.os.name`](integrating-teamcity-with-docker.md#Parameters+Reported+by+Agent) does not contain Windows [agent requirement](agent-requirements.md).
 

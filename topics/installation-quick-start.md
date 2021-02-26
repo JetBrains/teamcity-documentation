@@ -20,7 +20,7 @@ You can also use the [TeamCity Server](https://hub.docker.com/r/jetbrains/teamci
 
 ## Download TeamCity
 
-__[Download](https://www.jetbrains.com/teamcity/download/) the free Professional Edition of TeamCity__, the full-featured TeamCity bundled with 3 build agents with a limit of 100 build configurations (or 20, for versions earlier than TeamCity 2017.2).   
+__[Download](https://www.jetbrains.com/teamcity/download/) the free Professional Edition of TeamCity__, the full-featured TeamCity bundled with 3 build agents with a limit of 100 build configurations.   
 After evaluation, you can __switch to the Enterprise Edition__: [Licensing Policy](licensing-policy.md) provides details. The pricing is available on the [JetBrains website](https://www.jetbrains.com/teamcity/buy/).
 
 Earlier versions are available [here](previous-releases-downloads.md) page.

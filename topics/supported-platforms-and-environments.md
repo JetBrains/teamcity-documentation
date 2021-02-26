@@ -284,7 +284,7 @@ Supported VCS
 * Subversion
 * Perforce
 * Git (remote run only)
-* Azure DevOps Server, or formerly Team Foundation Server (__since TeamCity 2017.1__, the plugin update is required)
+* Azure DevOps Server, or formerly Team Foundation Server
 
 </td></tr><tr>
 

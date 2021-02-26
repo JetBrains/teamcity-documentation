@@ -35,7 +35,7 @@ Path to dotCover Home
 
 <td>
 
-Leave this field blank to use the default dotCover. The [bundled version](#Bundled+dotCover+Versions) is set as default prior to TeamCity 2017.1; after this version, you can mark any of the [additionally installed](installing-agent-tools.md) versions as default.   
+Leave this field blank to use the default dotCover. You can mark any of the [additionally installed](installing-agent-tools.md) versions as default.   
 Alternatively, specify the path to the dotCover installed on a build agent.
 
 </td></tr><tr>

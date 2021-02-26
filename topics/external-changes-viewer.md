@@ -1,8 +1,9 @@
 [//]: # (title: External Changes Viewer)
 [//]: # (auxiliary-id: External Changes Viewer)
-TeamCity supports integration with external changes viewers like JetBrains Upsource,  Atlassian Fisheye, and so on. 
 
-__Since TeamCity 2017.2__, some of the viewers are supported out of the box: commits to GitHub, VSTS or Bitbucket are automatically recognized and links are provided enabling you to view the changes externally.
+TeamCity supports integration with external changes viewers like JetBrains Upsource or Atlassian Fisheye. 
+
+Some of the viewers are supported out of the box: commits to GitHub, VSTS or Bitbucket are automatically recognized and links are provided enabling you to view the changes externally.
 
 To enable other external change viewers, create and configure the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/change-viewers.properties file. These settings should be specified for _each VCS root_ you want to use the external changes viewer for. A detailed example of the configuration file including the description of available formats, variables, and other parameters can be found in the `change-viewers.properties.dist` file in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config directory.
 
