@@ -240,7 +240,7 @@ Create non-stream workspace
 <td>
 
 
-(__Since TeamCity 2018.2__) This option is available only when '_Stream_' is selected in [Connection Settings](#P4+Connection+Settings). Enable the option to be able to checkout using a non-stream workspace based on the stream specification. This allows using checkout rules but makes it impossible to commit to the stream within the build.
+This option is available only when '_Stream_' is selected in [Connection Settings](#P4+Connection+Settings). Enable the option to be able to check out using a non-stream workspace based on the stream specification. This allows using checkout rules but makes it impossible to commit to the stream within the build.
 
 </td></tr><tr>
 

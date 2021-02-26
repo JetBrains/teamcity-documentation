@@ -76,12 +76,12 @@ Since TeamCity 2019.2.3, the new automatic package cleaner has been introduced i
 You can use authentication in [build-in NuGet feeds](using-teamcity-as-nuget-feed.md) or the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials provider will automatically authenticate requests to these feeds.
 {product="tc"}
 
-You can use authentication in the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials provider will automatically authenticate requests to these feeds.
+You can use authentication in the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials' provider will automatically authenticate requests to these feeds.
 {product="tcc"}
 
 API support:
 * __NuGet Installer / NuGet Publish runners__
-   * __v3__: supported __since TeamCity 2018.2__, requires NuGet 4.8+ (Windows), NuGet 4.9+ on Mono
+   * __v3__: requires NuGet 4.8+ (Windows), NuGet 4.9+ on Mono
    * __v1/v2__: NuGet 2.0+ is minimum requirement, NuGet 3.5+ is recommended
 * __.NET CLI__
    * __v3__: requires .NET CLI 2.1.500

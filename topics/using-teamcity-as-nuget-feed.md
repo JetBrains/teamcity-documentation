@@ -1,8 +1,7 @@
 [//]: # (title: Using TeamCity as NuGet Feed)
 [//]: # (auxiliary-id: Using TeamCity as NuGet Feed)
 
-If you want to publish your NuGet packages to a limited audience, for example, to use them internally, you can use [TeamCity as a NuGet feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview).        
-__Since TeamCity 2018.2__, you can configure multiple NuGet feeds for a project in TeamCity.
+If you want to publish your NuGet packages to a limited audience, for example, to use them internally, you can use TeamCity [as a NuGet feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview). You can configure multiple NuGet feeds for a TeamCity project.
 
 The built-in TeamCity NuGet feed supports API v1/v2/v3.
 

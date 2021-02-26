@@ -237,11 +237,9 @@ If a build has too many inspection errors or warnings, you can configure it to f
 
 ## Build before analyze
 
-In order to have adequate inspections execution results, you may need to __build your solution before running analysis__. This pre\-step is especially actual when you use (implicitly or explicitly) __code generation__ in your project.
+In order to have adequate inspections' execution results, you may need to __build your solution before running analysis__. This pre-step is especially actual when you use (implicitly or explicitly) __code generation__ in your project.
 
 ### Bundled ReSharper Versions
-
-This section provides information on the versions of ReSharper bundled with TeamCity 2018+ versions.
 
 <table><tr>
 
