@@ -143,11 +143,13 @@ Other runners:
 * [CVS](cvs.md)
 {product="tc"}
 * [SourceGear Vault](sourcegear-vault.md) 6 and 7 (requires the Vault command line client libraries installed on the TeamCity server), _integrated via an additional plugin_
+{product="tc"}
 * [Borland StarTeam](starteam.md) 6 and up (the StarTeam client application must be installed on the TeamCity server)
 {product="tc"}
 * [IBM Rational ClearCase](clearcase.md) Base and UCM modes (requires the ClearCase client installed and configured on the TeamCity server), _integrated via an additional plugin_
 {product="tc"}
 * [Microsoft Visual SourceSafe](visual-sourcesafe.md) 6 and 2005 (requires a SourceSafe client installed on the TeamCity server, available only on Windows platforms)
+{product="tc"}
 
 For support for other VCS please check [external plugins](https://plugins.jetbrains.com/category/93-version-control-systems-support/teamcity) available.
 
@@ -174,9 +176,11 @@ The requirements noted are for agent environment and are additional to those for
 * CVS
 {product="tc"}
 * SourceGear Vault, _integrated via an additional plugin_
+{product="tc"}
 * Borland StarTeam
 {product="tc"}
 * ClearCase, _integrated via an additional plugin_
+{product="tc"}
    
 ### Remote Run on Branch
 

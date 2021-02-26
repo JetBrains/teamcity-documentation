@@ -148,8 +148,6 @@
                         </toc-element>
                         <toc-element id="subversion.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="team-foundation-server.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="sourcegear-vault.md"/>
-                        <toc-element id="visual-sourcesafe.md"/>
                         <toc-element id="configuring-vcs-post-commit-hooks-for-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
                     </toc-element>
                     <toc-element id="working-with-feature-branches.md" show-structure-for="chapter" show-structure-depth="4">
