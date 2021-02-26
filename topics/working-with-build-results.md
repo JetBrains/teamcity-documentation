@@ -63,7 +63,7 @@ To view all tests related to the build, use the dedicated __Tests__ tab. [Learn 
 From the __Changes__ tab you can:
 * Review all changes included in the build with their corresponding [revisions](revision.md) in version control 
   * Review changes included in the build that the current build depends on: if the current build configuration has an artifact dependency, and the artifact downloaded in the current build has changed compared to the one downloaded in the previous build of the current configuration, the __Artifact dependencies changes__ node appears displaying the build which was used to download artifact dependencies from, and the changes which were included in that build.
-* [Label the build sources](vcs-labeling.md) (prior to TeamCity 8.1)
+* [Label the build sources](vcs-labeling.md)
 * [Configure the VCS settings](configuring-vcs-settings.md) of the build configuration (if you have enough permissions).
 
 For each change on this page you can:

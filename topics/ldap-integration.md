@@ -142,17 +142,14 @@ The list of supported user settings:
 
 Example properties can be seen by configuring them for a user in the web UI and then listing the properties via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-users.html).
 
-__Since TeamCity 8.0__, there is an __experimental__ feature which allows mapping user profile properties in TeamCity to a formatted combination of LDAP properties rather than to a specific property on user synchronization.   
+There is an __experimental__ feature which allows mapping user profile properties in TeamCity to a formatted combination of LDAP properties rather than to a specific property on user synchronization.   
 To enable the mapping, add `teamcity.users.properties.resolve=true` to `ldap-config.properties`.   
 Then you can use the `%`-references to LDAP attributes in the form of `%ldap.userEntry.<attribute>%` in the user property definitions. For example,
-
 
 ```Shell
 teamcity.users.property.plugin\:notificator\:jabber\:jabber-account=%ldap.userEntry.name%@jabber.my.domain.com
 
 ```
-
-
 
 ### User Group Membership
 

@@ -177,7 +177,7 @@ We want to have a continuous integration (CI) build for our project, which we ca
 
 
 
-TeamCity 8.1 allows us to create a project based on a VCS URL. We can simply enter the URL to a git, Mercurial, Subversion, ... repository:
+TeamCity allows us to create a project based on a VCS URL. We can simply enter the URL to a git, Mercurial, Subversion, ... repository:
 
 
 

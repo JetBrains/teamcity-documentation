@@ -213,11 +213,6 @@ Only a single TeamCity server can work with one database, which is checked on th
 
 The error is most probably caused by the fact that there is another running TeamCity installation which is connected to the same database. Сheck that the [database properties](setting-up-an-external-database.md) are correct and there is no other TeamCity server using the same database.
 
-__In TeamCity 8.0 and earlier__, if all the settings are correct, the error can occur when the TeamCity server or the database server has been shut down incorrectly. The resolution depends on the database type:
-* __MySQL__: restart the MySQL server and then start TeamCity again.
-* __PostgreSQL__, __Oracle__, __MS SQL__: kill the connections from the incorrectly shut down TeamCity, and then start TeamCity again.
-* Internal database (__HSQL__): remove the `buildserver.lck` file from the  \<[TeamCity Home](teamcity-home-directory.md)\>\system directory, and then start TeamCity again.
-
 ## Slow download from TeamCity server
 {product="tc"}
 
