@@ -312,10 +312,9 @@ Out-of-the-box TeamCity server installation is suitable for evaluation purposes.
 * [Configuring recommended memory settings](#Setting+Up+Memory+settings+for+TeamCity+Server), use "maximum settings" for active or growing servers.
 * Planning for regular [backups](teamcity-data-backup.md).
 * Planning for regular [upgrades](upgrade.md) to the latest TeamCity releases.
-* (since TeamCity 10.0.3) Consider adding the `teamcity.installation.completed=true` line into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\conf\teamcity-startup.properties file — this will prevent the server from creating an administrator user if no such user is found.
+* Consider adding the `teamcity.installation.completed=true` line into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\conf\teamcity-startup.properties file — this will prevent the server from creating an administrator user if no such user is found.
 
 Make sure to review the [notes on configuring the server for performance](how-to.md#Configuring+TeamCity+Server+for+Performance) and [security notes](security-notes.md).
-
 
 <seealso>
         <category ref="installation">

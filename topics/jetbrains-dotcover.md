@@ -107,14 +107,11 @@ You also need to tell TeamCity where to find the source code. To do this, perfor
 
 ## Bundled dotCover Versions
 
-This section provides information on the versions of dotCover bundled with TeamCity 10+ versions. For information on the earlier TeamCity releases, see the [previous documentation version](https://confluence.jetbrains.com/display/TCD9/JetBrains+dotCover#JetBrainsdotCover-BundleddotCoverVersions).
-
 <table><tr>
 
 <td>
 
 TeamCity Version
-
 
 </td>
 

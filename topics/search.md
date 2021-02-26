@@ -41,13 +41,10 @@ TeamCity also supports the `*` and `?` wildcards in a query.  It is not recommen
 
 When using search keywords, use the following query syntax:
 
-
 ```JSON
 <search field name>:<value to search>
 
 ```
-
-
 
 <table><tr>
 
@@ -55,13 +52,11 @@ When using search keywords, use the following query syntax:
 
 Search Field
 
-
 </td>
 
 <td>
 
 Shortcut
-
 
 </td>
 
@@ -69,13 +64,11 @@ Shortcut
 
 Description
 
-
 </td>
 
 <td>
 
 Example
-
 
 </td></tr><tr>
 
@@ -83,13 +76,9 @@ Example
 
 agent
 
-
 </td>
 
 <td>
-
- 
-
 
 </td>
 
@@ -97,13 +86,11 @@ agent
 
 Find all builds that were run on the specified agent.
 
-
 </td>
 
 <td>
 
 `agent:unit-77`, or `agent:agent14*`
-
 
 </td></tr><tr>
 
@@ -111,20 +98,15 @@ Find all builds that were run on the specified agent.
 
 build
 
-
 </td>
 
 <td>
-
- 
-
 
 </td>
 
 <td>
 
 Find all builds that include changes with the specified string.
-
 
 </td>
 
@@ -132,20 +114,15 @@ Find all builds that include changes with the specified string.
 
 `build:254` or `build:failed`
 
-
 </td></tr><tr>
 
 <td>
 
 buildLog
 
-
 </td>
 
 <td>
-
- 
-
 
 </td>
 
@@ -153,13 +130,11 @@ buildLog
 
 Find all builds that include certain text in build logs. It is [disabled](#Using+Double-Colon) by default.
 
-
 </td>
 
 <td>
 
 `buildLog: "NUnit report"`
-
 
 </td></tr><tr>
 
@@ -167,13 +142,9 @@ Find all builds that include certain text in build logs. It is [disabled](#Using
 
 changes
 
-
 </td>
 
 <td>
-
- 
-
 
 </td>
 
@@ -181,13 +152,11 @@ changes
 
 Find all builds that include changes with the specified string.
 
-
 </td>
 
 <td>
 
 `changes:(fix test)`
-
 
 </td></tr><tr>
 
@@ -195,12 +164,9 @@ Find all builds that include changes with the specified string.
 
 committers
 
-
 </td>
 
 <td>
-
- 
 
 
 </td>
@@ -209,13 +175,11 @@ committers
 
 Find all build that include changes committed by the specified developer.
 
-
 </td>
 
 <td>
 
 `committers:ivan_ivanov`
-
 
 </td></tr><tr>
 
@@ -223,20 +187,17 @@ Find all build that include changes committed by the specified developer.
 
 configuration
 
-
 </td>
 
 <td>
 
 c
 
-
 </td>
 
 <td>
 
 Find all builds from the specified build configuration.
-
 
 </td>
 
@@ -251,43 +212,11 @@ Find all builds from the specified build configuration.
 
 <td>
 
-file\_revision
-
-
-</td>
-
-<td>
-
- 
-
-
-</td>
-
-<td>
-
-(not supported by default since TeamCity 2017.1) Find all builds that contain a file with the specified revision.
-
-
-</td>
-
-<td>
-
-`file_revision:5`
-
-
-</td></tr><tr>
-
-<td>
-
 files
 
-
 </td>
 
 <td>
-
- 
-
 
 </td>
 
@@ -295,13 +224,11 @@ files
 
 (not supported by default since TeamCity 2017.1) Find all builds that include files with the specified file name.
 
-
 </td>
 
 <td>
 
 `files:`
-
 
 </td></tr><tr>
 
@@ -309,20 +236,17 @@ files
 
 labels
 
-
 </td>
 
 <td>
 
 l
 
-
 </td>
 
 <td>
 
 Find all builds that include changes with the specified VCS label.
-
 
 </td>
 
@@ -332,20 +256,15 @@ Find all builds that include changes with the specified VCS label.
 
 `l:release`
 
-
 </td></tr><tr>
 
 <td>
 
-pin\_comment
-
+pin_comment
 
 </td>
 
 <td>
-
- 
-
 
 </td>
 
@@ -353,13 +272,11 @@ pin\_comment
 
 Find all builds that were pinned and have the specified word (string) in the pin comment.
 
-
 </td>
 
 <td>
 
 `pin_comment:publish`
-
 
 </td></tr><tr>
 
@@ -367,20 +284,17 @@ Find all builds that were pinned and have the specified word (string) in the pin
 
 project
 
-
 </td>
 
 <td>
 
 p
 
-
 </td>
 
 <td>
 
 Find all builds from the specified project.
-
 
 </td>
 
@@ -390,20 +304,15 @@ Find all builds from the specified project.
 
 `p:Calcutta`
 
-
 </td></tr><tr>
 
 <td>
 
 revision
 
-
 </td>
 
 <td>
-
- 
-
 
 </td>
 
@@ -411,13 +320,11 @@ revision
 
 Find all builds that include changes with the specified revision (for example, you can search for builds with a specific changelist from Perforce, or revision number in Subversion).
 
-
 </td>
 
 <td>
 
 `revision:4536`
-
 
 </td></tr><tr>
 
@@ -425,13 +332,9 @@ Find all builds that include changes with the specified revision (for example, y
 
 stamp
 
-
 </td>
 
 <td>
-
- 
-
 
 </td>
 
@@ -439,13 +342,11 @@ stamp
 
 Find all builds that started at the specified time (search by timestamp).
 
-
 </td>
 
 <td>
 
 `stamp:200811271753`
-
 
 </td></tr><tr>
 
@@ -453,13 +354,9 @@ Find all builds that started at the specified time (search by timestamp).
 
 status
 
-
 </td>
 
 <td>
-
- 
-
 
 </td>
 
@@ -467,13 +364,11 @@ status
 
 Find all builds with the specified text in the build status text.
 
-
 </td>
 
 <td>
 
 `status:"Compilation failed"`
-
 
 </td></tr><tr>
 
@@ -481,20 +376,17 @@ Find all builds with the specified text in the build status text.
 
 tags
 
-
 </td>
 
 <td>
 
 t
 
-
 </td>
 
 <td>
 
 Find all builds with the specified tag.
-
 
 </td>
 
@@ -504,20 +396,15 @@ Find all builds with the specified tag.
 
 `t:release`
 
-
 </td></tr><tr>
 
 <td>
 
 tests
 
-
 </td>
 
 <td>
-
- 
-
 
 </td>
 
@@ -525,13 +412,11 @@ tests
 
 Find all builds that include specified tests.
 
-
 </td>
 
 <td>
 
 `tests:`
-
 
 </td></tr><tr>
 
@@ -539,13 +424,9 @@ Find all builds that include specified tests.
 
 triggerer
 
-
 </td>
 
 <td>
-
- 
-
 
 </td>
 
@@ -553,13 +434,11 @@ triggerer
 
 Find all builds that were triggered by the specified user.
 
-
 </td>
 
 <td>
 
 `triggerer:ivan.ivanov`
-
 
 </td></tr><tr>
 
@@ -567,13 +446,9 @@ Find all builds that were triggered by the specified user.
 
 vcs
 
-
 </td>
 
 <td>
-
- 
-
 
 </td>
 
@@ -588,23 +463,21 @@ Find builds that have the specified VCS.
 
 `vcs:perforce`
 
-
 </td></tr><tr>
 
 <td>
+
 build problem
 
 </td>
 
 <td>
- 
 
 </td>
 
 <td>
 
-__Since TeamCity 10.x,__ Find builds with the specified build problem
-
+Find builds with the specified build problem
 
 </td>
 
@@ -613,8 +486,6 @@ __Since TeamCity 10.x,__ Find builds with the specified build problem
 `buildProblem:Compilation failed`
 
 </td></tr></table>
-
- 
 
 ### Shortcuts
 

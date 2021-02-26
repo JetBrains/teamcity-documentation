@@ -21,9 +21,7 @@ The DSL from the previous TeamCity version generates a parameter with the old na
 
 ### Changes which cannot be performed automatically
 
-Some TeamCity settings changes require external information and cannot be performed automatically. For example, in TeamCity 10.0 the settings of the cloud integration were stored in a dedicated file which was not committed to a VCS.
-
-In TeamCity 2017.1, these settings were moved to the project level. TeamCity cannot perform such a transformation of settings automatically without external data,so manual DSL code update is required.
+Some TeamCity settings changes require external information and cannot be performed automatically. For example, in TeamCity 10.0 the settings of the cloud integration were stored in a dedicated file which was not committed to a VCS. In TeamCity 2017.1, these settings were moved to the project level. TeamCity cannot perform such a transformation of settings automatically without external data, so manual DSL code update is required.
 
 ## Versions in DSL code
 

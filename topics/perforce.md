@@ -128,9 +128,8 @@ Example:
 
 ```
 
-__Prior to TeamCity 10.0__, editing the client mapping for a Perforce VCS root resulted in a [Clean Checkout](clean-checkout.md) before the next build. A [workaround](https://youtrack.jetbrains.com/issue/TW-25344#comment=27-821321) was provided.
 
-Now [Clean Checkout](clean-checkout.md) on a client mapping change __is not__ enforced for the agent-side checkout in the following cases:
+[Clean Checkout](clean-checkout.md) on a client mapping change __is not__ enforced for the agent-side checkout in the following cases:
 
 * when a Perforce client name is used, changing the Perforce client mapping for the client will not result in a clean checkout
 * when a Perforce stream is used, changing the stream name while keeping the same stream root will not result in a clean checkout
