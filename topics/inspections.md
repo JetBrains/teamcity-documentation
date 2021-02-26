@@ -27,8 +27,7 @@ The runner also supports Maven2 or above: to use `pom.xml`, you need to open it 
 It is a good idea to execute `mvn install` as the step preceding the Inspections step in order to allow projects with dependencies to be resolved successfully.
 </note>
 
-
-This page contains reference information about the following __Inspections (IntelliJ IDEA)__ build runner fields:
+This page contains reference information about the __Inspections (IntelliJ IDEA)__ build runner fields.
 
 ## IntelliJ IDEA Project Settings
 

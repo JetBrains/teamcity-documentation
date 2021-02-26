@@ -5,10 +5,7 @@ The IntelliJ IDEA coverage engine in TeamCity is the same engine that is used wi
 
 The IntelliJ IDEA coverage engine currently supports Class, Method, and Line coverage. There is no Branch/Block coverage yet.
 
-<tip>
-
-Make sure your tests run in the `fork=true` mode. Otherwise, the coverage data may not be properly collected.
-</tip>
+>Make sure your tests run in the `fork=true` mode. Otherwise, the coverage data may not be properly collected.
 
 <note>
 
@@ -26,43 +23,37 @@ To configure code coverage using IntelliJ IDEA engine, follow these steps:
 
 <td>
 
- Option 
-
-
-</td>
-
-<td>
-
- Description  
-
-
-</td></tr><tr>
-
-<td>
-
- Classes to instrument
-
+Option
 
 </td>
 
 <td>
 
- Specify Java packages for which code coverage will be gathered. Use new-line delimited patterns that start with a valid package name and contain `*`. For example: `org.apache.*`.  
-
+Description
 
 </td></tr><tr>
 
 <td>
 
- Classes to exclude from instrumentation
+Classes to instrument
 
+</td>
+
+<td>
+
+Specify Java packages for which code coverage will be gathered. Use new-line delimited patterns that start with a valid package name and contain `*`. For example, `org.apache.*`.  
+
+</td></tr><tr>
+
+<td>
+
+Classes to exclude from instrumentation
 
 </td>
 
 <td>
 
 Use newline-separated patterns for fully qualified class names to be excluded from the coverage, for example: `*Test`. Exclude patterns have priority over include patterns.
-
 
 </td></tr></table>
 

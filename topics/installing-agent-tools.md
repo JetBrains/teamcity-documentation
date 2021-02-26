@@ -1,5 +1,6 @@
 [//]: # (title: Installing Agent Tools)
 [//]: # (auxiliary-id: Installing Agent Tools)
+
 In TeamCity an _agent tool_ (i.e. a set of files/a binary distribution) is a type of plugin without any classes loaded into the runtime; agent tools are used only to distribute binary files to agents.
 
 TeamCity allows you to install/remove additional tools on the server and distribute them to build agents on-demand.   

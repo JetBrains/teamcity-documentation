@@ -12,12 +12,12 @@ TeamCity integration with Eclipse provides the following features:
 * viewing failed tests of a particular build
 * navigating to the TeamCity web interface
 * starting investigation of a build failure
-* viewing server\-provided code coverage results run on TeamCity using the IDEA or EMMA code coverage engine: `<Main Menu>/TeamCity/Code Coverage Data...`
+* viewing server-provided code coverage results run on TeamCity using the IDEA or EMMA code coverage engine: `<Main Menu>/TeamCity/Code Coverage Data...`
 * comparing personal patch content with workspace resources
 * viewing compilation errors
 * downloading a patch to IDE from the TeamCity server
 * shelving changes
-* re\-running tests failed on the TeamCity agent locally,
+* rerunning tests failed on the TeamCity agent locally,
 * support for P4Eclipse up to 2015.1 and Eclipse EGit 2.0\+
 
 ## Installing the Plugin
@@ -29,7 +29,7 @@ Quick links: Subversive [download page](http://www.eclipse.org/subversive/downlo
 * __[P4Eclipse](http://www.perforce.com/product/components/eclipse_plugin) plugin__: to enable [Remote Run](remote-run.md) and [Pre-tested Commit](pre-tested-delayed-commit.md) for the Perforce Version Control System. Make sure you initialize Perforce support (for example, perform project update) after opening the project before using TeamCity Remote Run.
 * __[CVS plugin for Eclipse](http://www.eclipse.org/eclipse/platform-cvs)__ to enable Remote Run and Pre\-tested Commit for CVS.
 * __[EGit plugin for Eclipse](http://www.eclipse.org/egit/)__ to support Remote Run and Pre\-tested Commit for Git version control.
-* __JDK 1.6\-1.8 (JDK 1.8 is recommended)__: Eclipse must be run under JDK 1.6\-1.8 for the TeamCity plugin to work.
+* __JDK 1.6-1.8 (JDK 1.8 is recommended)__: Eclipse must be run under JDK 1.6-1.8 for the TeamCity plugin to work.
 
 
 [//]: # (Internal note. Do not delete. "Eclipse Plugind131e119.txt")    
