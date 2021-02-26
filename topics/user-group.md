@@ -1,7 +1,7 @@
 [//]: # (title: User Group)
 [//]: # (auxiliary-id: User Group)
 
-To help you manage user accounts more efficiently, TeamCity provides User Groups configured using the __Adminstration | Groups__ page.
+To help you manage user accounts more efficiently, TeamCity provides User Groups configured using the __Administration | Groups__ page.
 
 Here you can add, delete, edit groups, view parent groups, roles and all users belonging to the group. 
 

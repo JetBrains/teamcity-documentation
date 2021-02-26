@@ -17,7 +17,7 @@ On the subproject level, it is not possible to edit a resource inherited from a 
 However, it is possible to redefine a resource inherited from a project by creating a resource with the same name but with different settings in a subproject. For example:
 1. Create resource A with the infinitive quota in the project Parent.
 2. Go to its subproject Child 1, and created resource A (the same name as the resource in Parent) with the quota of 5.    
-TeamCity will treat this resource as redefined in the subproject Child 1: that is the settings of resource A defined at the project level (infinite quota) will be propagated to all its subprojects, with the exception of the subproject Child 1 where resource A will have the quota of 5.
+TeamCity will treat this resource as redefined in the subproject Child 1: that is the settings of resource A defined at the project level (infinite quota) will be propagated to all its subprojects, except the subproject Child 1 where resource A will have the quota of 5.
 
 The usage of a resource is calculated by scanning the subtree of the current project; thus, if several projects use the same resource, only the usages in the current one will be counted.
 

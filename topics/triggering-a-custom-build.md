@@ -1,7 +1,7 @@
 [//]: # (title: Triggering a Custom Build)
 [//]: # (auxiliary-id: Triggering a Custom Build)
 
-A build configuration usually has [build triggers](configuring-build-triggers.md) configured which automatically start a new build each time the conditions are met, like scheduled time, or detection of VCS changes, and so on.
+A build configuration usually has [build triggers](configuring-build-triggers.md) configured which automatically start a new build each time the conditions are met, like scheduled time or detection of VCS changes.
 
 Besides triggering a build automatically, TeamCity allows you to run a build manually whenever you need, and customize this build by adding properties, using specific changes, running the build on a specific agent, and so on.
 
@@ -45,18 +45,18 @@ Note that if you re-run a dependent build, TeamCity will try to rebuild all depe
 _This tab is available only if you have permissions to access VCS roots for the build configuration._   
 The tab allows you to specify a particular change to be included to the build.
 
-The build will use the change's revision to checkout the sources. That is, all the changes up to the selected one will be included into the build.   
+The build will use the change's revision to check out the sources. That is, all the changes up to the selected one will be included into the build.   
 Note that TeamCity displays only the changes detected earlier for the current build configuration VCS roots. If the VCS root was detached from the build configuration after the change occurred, there is no ability to run the build on such a change. A limited number of changes is displayed. If there is an earlier change in TeamCity that you need to run a build on, you can locate the change in the Change Log and use the __Run build with this change__ action.
 
 ### Include changes
 
-The __Include changes__ drop\-down allows selecting the changes in the VCS roots attached to the configuration to run the build on.
+The __Include changes__ drop-down menu allows selecting the changes in the VCS roots attached to the configuration to run the build on.
 * __Latest changes at the moment the build is started__: TeamCity will automatically include all changes available at the moment.
-* &lt;Last change to include&gt;: When you select a change in the drop\-down list, TeamCity runs the build with the selected change and all changes that were made before it. The build run with the changes earlier than the latest available is marked as a [History Build](history-build.md).
+* __Last change to include__: When you select a change in the drop-down menu, TeamCity runs the build with the selected change and all changes that were made before it. The build run with the changes earlier than the latest available is marked as a [history build](history-build.md).
 
 ### Build branch
 
-The __Build branch__ drop\-down, available if you have branches in your build configuration (or in snapshot dependencies of this build configuration), allows choosing a branch to be used for the custom build.
+The __Build branch__ drop-down menu, available if you have branches in your build configuration (or in snapshot dependencies of this build configuration), allows choosing a branch to be used for the custom build.
 
 <anchor name="TriggeringCustomBuild-UsesettingsfromVCS"/>
 
@@ -91,7 +91,7 @@ Add an optional comment as well as one or more [tags](build-tag.md) to the build
 
 <note>
 
-A greater build number does not mean more recent changes and the last build in the builds history does not reflect the state of the latest project sources: builds in the builds history are sorted by their start time, not by changes they include.
+A greater build number does not mean more recent changes and the last build in the builds' history does not reflect the state of the latest project sources: builds in the builds' history are sorted by their start time, not by changes they include.
 </note>
 
 ## Promoting Build
@@ -101,11 +101,9 @@ Build promotion refers to triggering a custom build with an overridden [artifact
 To promote a build, open the build results page of the dependency build and click __Actions | Promote__.
 
 For example, your build configuration A is configured to take artifacts from the last successful build of configuration B, but you want to run a build of configuration A using artifacts of a different build of configuration B (not the last successful build), so you promote an earlier build of B.   
-Build promotion affects only a single run of the dependent build. Once you click __Promote__, a build of the dependent build configuration which uses the artifacts of the specified build is queued. Any further runs of the dependent build configuration will use artifacts as configured (last successful, last pinned etc.), unless you use another promotion.
+Build promotion affects only a single run of the dependent build. Once you click __Promote__, a build of the dependent build configuration which uses the artifacts of the specified build is queued. Any further runs of the dependent build configuration will use artifacts as configured (last successful, last pinned, and so on), unless you use another promotion.
 
 More details are available in the [related blog-post](http://blog.jetbrains.com/teamcity/2012/04/teamcity-build-dependencies-2/).
-
-
 
  <seealso>
         <category ref="installation">
