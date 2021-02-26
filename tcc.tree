@@ -14,63 +14,63 @@
         </toc-element>
         <toc-element id="concepts.md" hidden="true"/>
         <toc-element toc-title="Concepts">
-            <toc-element id="build-artifact.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="composite-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="deployment-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="build-configuration-template.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="build-log.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="build-tag.md"/>
-            <toc-element id="change.md"/>
-            <toc-element id="change-state.md"/>
-            <toc-element id="difference-viewer.md"/>
-            <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="build-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="agent-pool.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="agent-pool.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="agent-requirements.md"/>
             <toc-element id="agent-work-directory.md"/>
-            <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="already-fixed-in.md"/>
             <toc-element id="authentication-modules.md"/>
+            <toc-element id="build-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-artifact.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-chain.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-checkout-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-configuration-template.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-grid.md"/>
             <toc-element id="build-history.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-log.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-number.md"/>
+            <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-runner.md"/>
+            <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-tag.md"/>
             <toc-element id="build-working-directory.md"/>
+            <toc-element id="change.md"/>
+            <toc-element id="change-state.md"/>
             <toc-element id="clean-checkout.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="clean-up.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="code-coverage.md"/>
             <toc-element id="code-duplicates.md"/>
             <toc-element id="code-inspection.md"/>
+            <toc-element id="composite-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="continuous-integration.md"/>
             <toc-element id="dependent-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="deployment-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="difference-viewer.md"/>
+            <toc-element id="favorite-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="first-failure.md"/>
             <toc-element id="guest-user.md"/>
             <toc-element id="history-build.md"/>
+            <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="notifier.md"/>
             <toc-element id="personal-build.md"/>
             <toc-element id="pinned-build.md"/>
             <toc-element id="pre-tested-delayed-commit.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="remote-debug.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="remote-run.md"/>
+            <toc-element id="revision.md"/>
             <toc-element id="role-and-permission.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="run-configuration-policy.md"/>
-            <toc-element id="user-account.md"/>
-            <toc-element id="user-group.md"/>
-            <toc-element id="wildcards.md"/>
-            <toc-element id="already-fixed-in.md"/>
-            <toc-element id="first-failure.md"/>
-            <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="vcs-root.md"/>
-            <toc-element id="remote-debug.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="favorite-build.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="revision.md"/>
-            <toc-element id="mapping-teamcity-concepts-to-other-ci-terms.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="teamcity-data-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="teamcity-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="user-account.md"/>
+            <toc-element id="user-group.md"/>
+            <toc-element id="vcs-root.md"/>
+            <toc-element id="wildcards.md"/>
+            <toc-element id="mapping-teamcity-concepts-to-other-ci-terms.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
         <toc-element id="supported-platforms-and-environments.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="testing-frameworks.md"/>
@@ -169,11 +169,19 @@
                     <toc-element id="configuring-build-steps.md" show-structure-for="chapter" show-structure-depth="4">
                         <toc-element id="build-step-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="working-with-meta-runner.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="net-process-runner.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="ant.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="command-line.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="duplicates-finder-resharper.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="deployers.md">
+                            <toc-element id="smb-upload.md"/>
+                            <toc-element id="ftp-upload.md"/>
+                            <toc-element id="ssh-upload.md"/>
+                            <toc-element id="container-deployer.md"/>
+                            <toc-element id="ssh-exec.md"/>
+                        </toc-element>
+                        <toc-element id="docker.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="docker-compose.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="duplicates-finder-java.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="duplicates-finder-resharper.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="fxcop.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="gradle.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="inspections.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -184,9 +192,11 @@
                         <toc-element id="msbuild.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="mspec.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nant.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="net.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="net-process-runner.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="nuget-installer.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nuget-pack.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nuget-publish.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="nuget-installer.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nunit.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="powershell.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="python.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -196,37 +206,27 @@
                         <toc-element id="visual-studio-sln.md"/>
                         <toc-element id="visual-studio-tests.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="xcode-project.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="deployers.md">
-                            <toc-element id="smb-upload.md"/>
-                            <toc-element id="ftp-upload.md"/>
-                            <toc-element id="ssh-upload.md"/>
-                            <toc-element id="container-deployer.md"/>
-                            <toc-element id="ssh-exec.md"/>
-                        </toc-element>
-                        <toc-element id="docker.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="docker-compose.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="net.md" show-structure-for="chapter" show-structure-depth="4"/>
                     </toc-element>
                     <toc-element id="adding-build-features.md" show-structure-for="chapter" show-structure-depth="4">
-                        <toc-element id="vcs-labeling.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="ruby-environment-configurator.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="build-files-cleaner-swabra.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="xml-report-processing.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="assemblyinfo-patcher.md"/>
-                        <toc-element id="free-disk-space.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="performance-monitor.md"/>
-                        <toc-element id="shared-resources.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="automatic-merge.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="nuget-feed-credentials.md"/>
-                        <toc-element id="ssh-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="file-content-replacer.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="build-files-cleaner-swabra.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="commit-status-publisher.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="docker-support.md"/>
-                        <toc-element id="pull-requests.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="investigations-auto-assigner.md"/>
+                        <toc-element id="file-content-replacer.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="free-disk-space.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="golang.md" show-structure-for="chapter"/>
-                        <toc-element id="notifications.md" show-structure-for="chapter"/>
+                        <toc-element id="investigations-auto-assigner.md"/>
                         <toc-element id="jira-cloud-integration.md" show-structure-for="chapter"/>
+                        <toc-element id="notifications.md" show-structure-for="chapter"/>
+                        <toc-element id="nuget-feed-credentials.md"/>
+                        <toc-element id="performance-monitor.md"/>
+                        <toc-element id="pull-requests.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="ruby-environment-configurator.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="shared-resources.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="ssh-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="vcs-labeling.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="xml-report-processing.md" show-structure-for="chapter" show-structure-depth="4"/>
                     </toc-element>
                     <toc-element id="configuring-unit-testing-and-code-coverage.md">
                         <toc-element id="net-testing-frameworks-support.md">
