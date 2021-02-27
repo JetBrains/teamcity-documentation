@@ -35,13 +35,11 @@ Option
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 Solution file path
-
 
 </td>
 
@@ -50,13 +48,11 @@ Solution file path
 The path to the `.sln` file created by Microsoft Visual Studio __2005 or later__.   
 The specified path should be relative to the checkout directory.
 
-
 </td></tr><tr>
 
 <td>
 
 Projects filter
-
 
 </td>
 
@@ -64,7 +60,6 @@ Projects filter
 
 Specify project name wildcards to analyze only a part of the solution. Leave _blank_ to analyze the _whole_ solution.  Separate wildcards with new lines.   
 Example:
-
 
 ```Shell
 JetBrains.CommandLine.*
@@ -88,20 +83,17 @@ To launch inspection analysis, you should have __.NET Framework 4.6.1__ (or high
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td id="targetFramework">
 
 Target Frameworks
-
 
 </td>
 
@@ -117,7 +109,6 @@ Agent requirement will be created for every checked item.
 __.NET Frameworks client profiles__ are not supported as target frameworks.
 </note>
 
-
 </td></tr></table>
 
 ## JetBrains ReSharper Command Line Tools Settings
@@ -128,27 +119,23 @@ __.NET Frameworks client profiles__ are not supported as target frameworks.
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
-R# CLT Home Directory 
-
+R# CLT Home Directory
 
 </td>
 
 <td>
 
-Select the ReSharper Command Line Tools version. You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Administration | Tools](https://confluence.jetbrains.com/display/TCD10/Installing+Agent+Tools)__ page. If you want to run ReSharper duplicates using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can use this page to install another version of the tools and change the default version to be used.
-
+Select the ReSharper Command Line Tools version. You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Administration | Tools](installing-agent-tools.md)__ page. If you want to run ReSharper duplicates using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can use this page to install another version of the tools and change the default version to be used.
 
 </td></tr><tr>
 
@@ -172,13 +159,11 @@ Select the platform bitness of the InspectCode tool. To find code issues in C++ 
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -190,7 +175,7 @@ Custom settings profile path
 
 <td>
 
-The path to the file containing __ReSharper settings__ created with JetBrains Resharper __6.1 or later__.   
+The path to the file containing __ReSharper settings__ created with JetBrains ReSharper __6.1 or later__.   
 The specified path should be __relative__ to the checkout directory.   
 If specified, this settings layer has the top priority, so it overrides ReSharper build-in settings. __By default__, __build-in__ ReSharper settings layers are applied.
  
@@ -237,11 +222,9 @@ If a build has too many inspection errors or warnings, you can configure it to f
 
 ## Build before analyze
 
-In order to have adequate inspections execution results, you may need to __build your solution before running analysis__. This pre\-step is especially actual when you use (implicitly or explicitly) __code generation__ in your project.
+In order to have adequate inspections' execution results, you may need to __build your solution before running analysis__. This pre-step is especially actual when you use (implicitly or explicitly) __code generation__ in your project.
 
 ### Bundled ReSharper Versions
-
-This section provides information on the versions of ReSharper bundled with TeamCity 2018+ versions.
 
 <table><tr>
 

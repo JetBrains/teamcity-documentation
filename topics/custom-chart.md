@@ -38,11 +38,6 @@ __To reorder custom charts__ for a project/build configuration, click the __Reor
 
 ## Managing Custom Charts Manually
 
-<note>
-
-__Since TeamCity 10__, manual editing of custom charts has changed. For earlier versions, see this page in the corresponding [documentation](https://confluence.jetbrains.com/display/TW/Documentation).
-</note>
-
 To manually create custom charts to be displayed in the TeamCity web UI, configure the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>`  element is added.
 
 ### Displaying Custom Chart in TeamCity Web UI

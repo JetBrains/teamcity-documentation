@@ -110,7 +110,7 @@ Note that if you redefine an inherited parameter in a build configuration, it wi
 
 ### Using parameter reference
 
-Beside redefining settings as described above, you can redefine inidividual fields of the inherited settings via parameter references.
+Beside redefining settings as described above, you can redefine individual fields of the inherited settings via parameter references.
 
 To introduce a configuration parameter reference, use the `%\ParameterName%` syntax in the template text field. Once introduced, this parameter appears on the __Parameters__ page of the build configuration template marked as requiring a value.
 

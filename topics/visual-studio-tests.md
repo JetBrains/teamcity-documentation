@@ -243,9 +243,8 @@ When using this option, it is recommended to check the number of tests in the pr
 
 #### Custom test logger
 
-`VSTest.Console` supports custom loggers, i.e. libraries that can handle events that occur when tests are being executed.   
-TeamCity 9.0\+ has a custom logger that provides real\-time test reporting.   
-The logger must be installed manually on the agent machine, as it requires dlls to be copied to the `Extensions` folder of the VSTest.Console. No agent restart is needed when the custom logger is installed.
+`VSTest.Console` supports custom loggers, that is libraries that can handle events that occur when tests are being executed.   
+TeamCity has a custom logger that provides real-time test reporting. The logger must be installed manually on the agent machine, as it requires dlls to be copied to the `Extensions` folder of the VSTest.Console. No agent restart is needed when the custom logger is installed.
 
 __To install the custom logger__:
 
@@ -302,11 +301,7 @@ FriendlyName: TeamCity{info}
 
 ```
 
-
-
 ### MSTest settings
-
- 
 
 <table><tr>
 
@@ -314,13 +309,11 @@ FriendlyName: TeamCity{info}
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -328,13 +321,11 @@ Description
 
 MSTest metadata
 
-
 </td>
 
 <td>
 
-Enter a value for `/testmetadata:file` argument. See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/ms182489(VS.80).aspx#testmetadata)
-
+Enter a value for `/testmetadata:file` argument. See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/ms182489(VS.80).aspx#testmetadata).
 
 </td></tr><tr>
 
@@ -342,13 +333,11 @@ Enter a value for `/testmetadata:file` argument. See details in the [Microsoft d
 
 Testlist from metadata to run
 
-
 </td>
 
 <td>
 
-Edit the Testlist. Every line will be translated into `/testlist:line` argument. See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/ms182489(VS.80).aspx#testlist). 
-
+Edit the Testlist. Every line will be translated into `/testlist:line` argument. See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/ms182489(VS.80).aspx#testlist).
 
 </td></tr><tr>
 
@@ -356,13 +345,11 @@ Edit the Testlist. Every line will be translated into `/testlist:line` argument.
 
 Test
 
-
 </td>
 
 <td>
 
 Names of individual tests to run. This option will be translated into the series of `/test:` arguments. See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/ms182489(VS.80).aspx#test). 
-
 
 </td></tr><tr>
 
@@ -370,13 +357,11 @@ Names of individual tests to run. This option will be translated into the series
 
 Unique
 
-
 </td>
 
 <td>
 
-Run the test only if one unique match is found for any specified test in test section
-
+Run the test only if one unique match is found for any specified test in test section.
 
 </td></tr><tr>
 
@@ -384,22 +369,21 @@ Run the test only if one unique match is found for any specified test in test se
 
 Results file
 
-
 </td>
 
 <td>
 
-Enter a value for the `/resultsfile:file_name` command\-line argument. Parameter references are supported. It __is recommended to leave the field blank__ to generate a temporary `\*.trx` file in the build temporary directory. Note that the directory may be cleaned between the builds.
+Enter a value for the `/resultsfile:file_name` command-line argument. Parameter references are supported. It __is recommended to leave the field blank__ to generate a temporary `\*.trx` file in the build temporary directory. Note that the directory may be cleaned between the builds.
 
-To save the test run results to a named non\-default file, enter a value for the `/resultsfile:file_name` command\-line argument.
+To save the test run results to a named non\-default file, enter a value for the `/resultsfile:file_name` command-line argument.
 
  * If the path specified is relative, it will be relative to the build checkout directory. If the specified file already exists in the checkout directory, the build agent will attempt to delete the file. If the agent fails to delete it, the build will fail.   
  To create a `*.trx` report in the build temporary directory, use `%system.teamcity.build.tempDir%.`
 
-<note>
-
-If you need to generate your results file in the checkout directory, consider adding the [Swabra](build-files-cleaner-swabra.md) build feature to your configuration.
-</note>
+ <note>
+ 
+ If you need to generate your results file in the checkout directory, consider adding the [Swabra](build-files-cleaner-swabra.md) build feature to your configuration.
+ </note>
 
  * If the path specified is absolute, it will be used "as is".
 

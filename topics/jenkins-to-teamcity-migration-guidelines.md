@@ -4,7 +4,7 @@
 ## Introduction
 {product="tc"}
 
-This document provides the basics you need to know when migrating from Jenkins to a TeamCity CI server. TeamCity is quite different from Jenkins in terms of concepts related to managing CI and CD. If you just want to jump in and get started, try to follow [this guide](getting-started-with-teamcity.md).
+This document provides the basics you need to know when migrating from Jenkins to a TeamCity CI server. TeamCity is quite different from Jenkins in terms of concepts related to managing CI and CD. To learn more about Continuous Delivery and get tips on building a production pipeline, follow our [CI/CD Guide](https://www.jetbrains.com/teamcity/ci-cd-guide/). If you want to jump in and get started with TeamCity right away, see the [Getting Started](getting-started-with-teamcity.md) instructions.
 
 ## Introduction
 {product="tcc"}

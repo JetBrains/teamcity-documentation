@@ -24,6 +24,8 @@ The parameters can be defined at different levels (in order of precedence):
 * the __Parameters__ page of __Project Settings__; these affect all the build configurations and templates of the project and its subprojects
 * a build agent (the `<[Agent home](agent-home-directory.md)>/conf/buildAgent.properties` file on the agent)
 
+<anchor name="parameter-reference"/>
+
 Any textual setting can reference a parameter. A string in the `%parameter.name%` format will be substituted with the actual value during the build. If a build references a parameter which is not defined, TeamCity considers it an [implicit agent requirement](agent-requirements.md#Implicit+Requirements): the build will only run on the agents with this parameter defined.
 
 ## Parameter name restrictions

@@ -6,7 +6,7 @@
 TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager and, when [NuGet is installed on agents](#Installing+NuGet+to+TeamCity+agents), provides the following capabilities:
 * [Private NuGet feeds](using-teamcity-as-nuget-feed.md) based on the builds' published artifacts.
 {product="tc"}
-* A set of NuGet runners to be used in builds on Windows OS, as well as on Linux and MacOS when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent. 
+* A set of NuGet runners to be used in builds on Windows OS, as well as on Linux and macOS when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent. 
     * [NuGet Installer](nuget-installer.md) build runner, which installs and updates NuGet packages.
     * [NuGet Pack](nuget-pack.md) build runner, which builds NuGet packages.
     * [NuGet Publish](nuget-publish.md) build runner, which publishes packages to a feed of your choice.
@@ -76,12 +76,12 @@ Since TeamCity 2019.2.3, the new automatic package cleaner has been introduced i
 You can use authentication in [build-in NuGet feeds](using-teamcity-as-nuget-feed.md) or the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials provider will automatically authenticate requests to these feeds.
 {product="tc"}
 
-You can use authentication in the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials provider will automatically authenticate requests to these feeds.
+You can use authentication in the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials' provider will automatically authenticate requests to these feeds.
 {product="tcc"}
 
 API support:
 * __NuGet Installer / NuGet Publish runners__
-   * __v3__: supported __since TeamCity 2018.2__, requires NuGet 4.8+ (Windows), NuGet 4.9+ on Mono
+   * __v3__: requires NuGet 4.8+ (Windows), NuGet 4.9+ on Mono
    * __v1/v2__: NuGet 2.0+ is minimum requirement, NuGet 3.5+ is recommended
 * __.NET CLI__
    * __v3__: requires .NET CLI 2.1.500

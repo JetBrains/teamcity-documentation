@@ -161,8 +161,6 @@ Select this option to trigger a build only after the build that produces artifac
 
 ### Advanced Options
 
-Since __TeamCity 9.0__, the following advanced options have been added to the trigger:
-
 <table><tr>
 
 <td>

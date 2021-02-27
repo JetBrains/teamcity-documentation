@@ -84,11 +84,10 @@ ownAddress=<own IP address or server-accessible domain name>
 
 ## Set up Agent behind Proxy
 
-Since TeamCity 2017.1 it is possible to configure a forward proxy server for agent-to-server connections.
+It is possible to configure a forward proxy server for agent-to-server connections.
 
 <include src="how-to.md" include-id="agent-proxy-server"/>
 
- 
 <seealso>
         <category ref="concepts">
             <a href="agent-pool.md">Agent Pool</a>

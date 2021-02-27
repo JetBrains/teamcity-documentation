@@ -737,7 +737,7 @@ teamcity.https.proxyPassword=password
 
 ## Configure TeamCity Agent to Use Proxy To Connect to TeamCity Server
 
-This section covers the configuration of a proxy server for TeamCity agent-to-server connections (__since TeamCity 2017.1__).
+This section covers the configuration of a proxy server for TeamCity agent-to-server connections.
 
 <chunk include-id="agent-proxy-server">
 
@@ -871,7 +871,7 @@ If you are creating a __test server__, you need to ensure that the users and pro
 * disable Commit Status Publishing;
 * disable any plugins which push data into other non-copied systems based on the TeamCity events;
 * disable functionality to [store project settings in VCS](storing-project-settings-in-version-control.md): set `teamcity.versionedSettings.enabled=false` internal property;
-* consider significantly increasing [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (server-wide default and overridden in the VCS roots) or changing settings of the VCS roots to prevent them from contacting production servers. Since TeamCity 10.0.3, see also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
+* consider significantly increasing [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (server-wide default and overridden in the VCS roots) or changing settings of the VCS roots to prevent them from contacting production servers. See also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
 
 See also the section below on [moving the server](#Move+TeamCity+Installation+to+a+New+Machine) from one machine to another.
 {product="tc"}
@@ -1218,7 +1218,7 @@ In relation to the TeamCity product, JetBrains does not collect any personal dat
 
 The notes below can be useful when assessing how your usage of TeamCity complies with the General Data Protection Regulation (GDPR) (EU) 2016/679 regulation. These notes are meant to address the most basic questions and can serve as an input to the assessment of your specific TeamCity installation.
 
-The notes are based on TeamCity 2017.2.4 which is actual at the moment of GDPR enforcement date. Please update your TeamCity instance at least to the version as previous versions might contain issues not in line with the notes below.
+The notes are based on TeamCity 2017.2.4 which is actual at the moment of GDPR enforcement date. Please update your TeamCity instance at least to this version, as previous versions might contain issues not in line with the notes below.
 
 ### TeamCity and Users' Personal Data
 

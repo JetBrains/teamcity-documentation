@@ -76,7 +76,7 @@ Here are the notes on different security-related aspects:
 
 ## Restricting Permissions to TeamCity Data Directory
 
-__Since TeamCity 2017.2__, the TeamCity Windows installer modifies permissions of the [TeamCity installation directory](teamcity-home-directory.md) not to use inheritable permissions and explicitly grants access to the directory to the Administrators user group and the account under which the service is configured to run.   
+The TeamCity Windows installer modifies permissions of the [TeamCity installation directory](teamcity-home-directory.md) not to use inheritable permissions and explicitly grants access to the directory to the Administrators user group and the account under which the service is configured to run.   
 It is strongly recommended to restrict permissions to the [`TeamCity Data Directory`](teamcity-data-directory.md) in the same way.
 
 ## Preventing First-User Access to Empty Database

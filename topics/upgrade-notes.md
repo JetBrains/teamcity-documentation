@@ -1500,7 +1500,7 @@ No noteworthy changes.
 
 #### Command Line Runner
 
-The change in behavior introduced in 8.1 (see [below](#Known+issue+with+Command+Line+Runner)) has been fixed. Command line runners using "Executable with parameters" option which were created/changed with TeamCity 8.1can expose a change in behavior with the upgrade. The recommended approach is to switch to "Custom script" option instead of "Executable with parameters" in command line runner.
+The change in behavior introduced in 8.1 (see [below](#Known+issue+with+Command+Line+Runner)) has been fixed. Command line runners using "Executable with parameters" option which were created/changed with TeamCity 8.1 can expose a change in behavior with the upgrade. The recommended approach is to switch to "Custom script" option instead of "Executable with parameters" in command line runner.
 
 #### Separate download for VSTest.Console runner
 

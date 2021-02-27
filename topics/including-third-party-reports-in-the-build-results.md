@@ -24,13 +24,11 @@ For a __project report tab__, specify the following:
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -38,13 +36,11 @@ Description
 
 Tab title
 
-
 </td>
 
 <td>
 
 Specify a unique title of the report tab that will be displayed in the web UI.
-
 
 </td></tr><tr>
 
@@ -52,20 +48,17 @@ Specify a unique title of the report tab that will be displayed in the web UI.
 
 Get artifacts from
 
-
 </td>
 
 <td>
 
 Select the build configuration and specify the build whose artifacts will be shown on the tab. Select whether the report should be taken from the last successful, pinned, finished build or the build with the specified build number or the last build with the specified tag.
 
-
 </td></tr><tr>
 
 <td>
 
 Start page
-
 
 </td>
 
@@ -75,7 +68,6 @@ Specify the path to the artifacts to be displayed as the contents of the report 
 To use a file from an archive, use the `path-to-archive!relative-path` syntax, for example: `javadoc.zip!/index.html`. See the list of [supported archives](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+a+Build+Script).
 
 You can use the file browser ![chechoutdirBrowser.png](chechoutdirBrowser.png) next to the field to select artifacts. [Parameter references](configuring-build-parameters.md) are supported here, for example, `%\parameter%.zip!index.htm`.
-
 
 </td></tr></table>
 
@@ -87,13 +79,11 @@ For a __build report tab__, specify the following:
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -101,20 +91,17 @@ Description
 
 Tab title
 
-
 </td>
 
 <td>
 
 Specify a unique title of the report tab that will be displayed in the web UI.
 
-
 </td></tr><tr>
 
 <td>
 
 Start page
-
 
 </td>
 
@@ -124,6 +111,5 @@ Specify the path to the artifacts to be displayed as the contents of the report 
 To use a file from an archive, use the `path-to-archive!relative-path` syntax, for example: `javadoc.zip!/index.html`. See the list of [supported archives](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+a+Build+Script).
 
 You can use the file browser ![chechoutdirBrowser.png](chechoutdirBrowser.png) next to the field to select artifacts. [Parameter references](configuring-build-parameters.md) are supported here, for example, `%\parameter%.zip!index.htm`.
-
 
 </td></tr></table>

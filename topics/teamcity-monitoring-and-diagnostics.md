@@ -40,7 +40,7 @@ If you experience memory problems, this section provides an option to dump a mem
 
 #### Server Restart
 
-This section, available __since TeamCity 2017.2__, allows restarting the server from the UI.
+This section allows restarting the server from the UI.
 
 ### Java Configuration
 

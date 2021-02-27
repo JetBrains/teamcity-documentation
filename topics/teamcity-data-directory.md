@@ -36,11 +36,6 @@ If during the first startup TeamCity finds the Data Directory location configure
 
 If the `TEAMCITY_DATA_PATH` environment variable is not set and the `<[TeamCity home directory](teamcity-home-directory.md)>/conf/teamcity-startup.properties` file does not define it either, the default TeamCity Data Directory location will be the user's home directory (for example, it is `$HOME/.BuildServer` under Linux and `%USERPROFILE%.BuildServer` under Windows).
 
-<tip>
-
-__Prior to TeamCity 9.1__, the TeamCity Windows installer configured the TeamCity Data Directory during installation by setting the `TEAMCITY_DATA_PATH` environment variable. The default path suggested for the directory was: `%\ALLUSERSPROFILE%\JetBrains\TeamCity`. In the later TeamCity versions, the installer does not ask for the TeamCity Data Directory and it can be configured on the first TeamCity start.
-</tip>
-
 ### Recommendations as to choosing Data Directory Location
 
 Since the Data Directory stores all the server and configured projects settings, it is important that it is not available for reading and writing to the OS users without the corresponding level of access. See the related [security notes](security-notes.md).
@@ -111,16 +106,15 @@ The `config` subdirectory of TeamCity Data Directory contains the configuration 
      * `.teamcity` subdirectory stores build's [hidden artifacts](build-artifact.md#Hidden+Artifacts) and build logs (see below). The files can be deleted manually, if necessary, but it is not recommended as the build will lose the corresponding features backed by the files (like the build log, displaying/using finished build parameters including for the build reuse as snapshot dependency, coverage reports, and so on)      
     <anchor name="rawLogs"/>
        *  `logs` subdirectory stores the [build log](build-log.md) in an internal format. The build log stores the build output, compilation errors, test output, and test failure details. The files can be removed manually, if necessary, but corresponding builds will lose build log and failure details (as well as test failure details).
-  * `messages` — a directory where build logs used to be stored before TeamCity 9.0. After automatic build logs migration to the new place under artifacts, the directory stores the files which could not be moved (see server log on the server start about details).
+  * `messages` — a directory stores the files which could not be moved (see the server log on the server start for details).
   * `changes` — a directory where the [remote run](personal-build.md) changes are stored in internal format. Name of the files inside the directory contains internal personal change id. The files can be deleted manually, if necessary, but corresponding personal builds will lose personal changes in UI and when affected queued builds try to start, they fail or run without personal patch.
-  *   <anchor name="pluginData"/> `pluginData` — a directory storing various data concerning builds, current system state, and so on. It is not advised to delete or modify this directory. (for example, before TeamCity 2018.2 the state of build triggers was stored in this directory). The content of this directory corresponds to the data stored in the database, so when the database is restored, this directory should be restored to the same state to be consistent with the database.
+  *   <anchor name="pluginData"/> `pluginData` — a directory storing various data concerning builds, current system state, and so on. It is not advised to delete or modify this directory. The content of this directory corresponds to the data stored in the database, so when the database is restored, this directory should be restored to the same state to be consistent with the database.
     * `audit` — directory holding history of the build configuration changes and used to display diff of the changes. Also stores related data in the database.
-    * `repositoryStates` — before TeamCity 2018.2, it was used to store the current state of the VCS roots that were moved to the database in 2018.2. If dropped, some changes might not be detected by TeamCity (between the state last queried by TeamCity and the current state after first server start without this data).
   * `caches` — a directory with internal caches (of the VCS repository contents, search index, other). It can be [manually deleted](teamcity-monitoring-and-diagnostics.md#Caches) to clear caches: they will be restored automatically as needed. It is safer to delete the directory while server is not running.
      * `.unpacked` — directory that is created automatically to store unpacked server-side plugins. Should not be modified while the server is running. Can be safely deleted if the server is not running.
   * `buildserver.*` — a set of files pertaining to the embedded HSQLDB.
 * __`.BuildServer/backup`__ — default directory to store backup archives created via [web UI](creating-backup-from-teamcity-web-ui.md). The files in this directory are not used by TeamCity and can be safely removed if they were already copied for safekeeping.
-* __`.BuildServer/lib/jdbc`__ — directory that TeamCity uses to search for [database drivers](setting-up-an-external-database.md). Create the directory if necessary. TeamCity does not manage the files in the directory, it only scans it for .jar files that store the necessary driver.
+* __`.BuildServer/lib/jdbc`__ — directory that TeamCity uses to search for [database drivers](setting-up-an-external-database.md). Create the directory if necessary. TeamCity does not manage the files in the directory, it only scans it for `.jar` files that store the necessary driver.
 
 ## Direct Modifications of Configuration Files
 {product="tc"}

@@ -32,7 +32,7 @@ Depending on the build runners enabled as your build steps, the number of tabs o
 
 The __Overview__ tab displays general information about the build, such as the build duration, the agent used, trigger, dependencies, and so on. If a build is queued, the tab displays the position of the build in the queue, the time the build is supposed to start, and so on.
 
-If a build is running, the tab displays the build progress. You can also stop a running build using the corresponding link on the __Overview__ tab or the appropriate option from the __Actions__ button drop-down.
+If a build is running, the tab displays the build progress. You can also stop a running build using the corresponding link on the __Overview__ tab or the appropriate option from the __Actions__ drop-down menu.
 
 If another build of this same build configuration is concurrently running, a small window appears on the __Overview__ tab with the following information:
 * The build results of that build linking to the __Build results__ page
@@ -41,8 +41,8 @@ If another build of this same build configuration is concurrently running, a sma
 
 If a build is probably hanging, the corresponding notification is displayed at the top of the __Overview__ tab. In this case TeamCity provides a link to view the process tree of the running build and the thread dumps of each Java or .NET process in a separate frame. If the process is not Java or .NET, its command line is retrieved. The possibility to view the thread dump is supported for the following platforms:
 * Windows, with JDK 1.3 and higher
-* Windows, with JDK 1.6\-1.8, using jstack utility
-* Non\-Windows, with JDK 1.5\-1.8, using jstack utility
+* Windows, with JDK 1.6-1.8, using jstack utility
+* Non-Windows, with JDK 1.5-1.8, using jstack utility
 
 The information on the tab may vary depending on the build runners enabled. If configured, you will see the __Code Coverage Summary__ and a link to the full report or/ and the number of duplicates found in your code and a link opening the __Duplicates__ tab, and so on. Refer to the sections below for details on [Code Coverage](#Code+Coverage+Results) and [Duplicates](#Duplicates) Tabs.
 
@@ -63,12 +63,12 @@ To view all tests related to the build, use the dedicated __Tests__ tab. [Learn 
 From the __Changes__ tab you can:
 * Review all changes included in the build with their corresponding [revisions](revision.md) in version control 
   * Review changes included in the build that the current build depends on: if the current build configuration has an artifact dependency, and the artifact downloaded in the current build has changed compared to the one downloaded in the previous build of the current configuration, the __Artifact dependencies changes__ node appears displaying the build which was used to download artifact dependencies from, and the changes which were included in that build.
-* [Label the build sources](vcs-labeling.md) (prior to TeamCity 8.1)
+* [Label the build sources](vcs-labeling.md)
 * [Configure the VCS settings](configuring-vcs-settings.md) of the build configuration (if you have enough permissions).
 
 For each change on this page you can:
 * Explore the change in details
-* View which dependent build the changes come from or builds with snapshot dependencies with the  "Show changes from snapshot dependencies" option  enabled (__since TeamCity 2017.1)__. On hovering over the ![link.png](link.png) icon, the number of the dependent build is displayed; clicking the link opens the __Сhanges__ tab of the dependent build.
+* View which dependent build the changes come from or builds with snapshot dependencies with the  "Show changes from snapshot dependencies" option  enabled. On hovering over the ![link.png](link.png) icon, the number of the dependent build is displayed; clicking the link opens the __Сhanges__ tab of the dependent build.
 * Navigate to the __Change Details__ by clicking a changed file link
 * [Trigger a custom build](triggering-a-custom-build.md) with this change
 * Download patch
@@ -97,13 +97,11 @@ To view all the tests for a particular build, open the __Build Results__ page, a
 
 Item
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -111,20 +109,17 @@ Description
 
 Download all tests in CSV
 
-
 </td>
 
 <td>
 
 Click the link to download a file containing all the build tests results.
 
-
 </td></tr><tr>
 
 <td>
 
 Filtering options
-
 
 </td>
 
@@ -136,13 +131,11 @@ Use this area to filter the test list:
 * Type in the string (for example, test name from the list) thus providing change of scope for the list.
 * Select a test status.
 
-
 </td></tr><tr>
 
 <td>
 
 Show
-
 
 </td>
 
@@ -150,20 +143,17 @@ Show
 
 Select the number of tests to be shown on a page.
 
-
 </td></tr><tr>
 
 <td>
 
 Status
 
-
 </td>
 
 <td>
 
 Shows the status (OK, Ignored, and Failure) of the test. Failed tests are shown as red __Failure__ links, which you can click to view and analyze the test failure details. Click the header above this column to sort the table by status.
-
 
 </td></tr><tr>
 
@@ -176,8 +166,7 @@ Test
 
 <td>
 
-Click the name of a class, a namespace/package, or a suite to view only the items included in it. Click the arrow next to the test name to view the test history, open the test in the Build Log, start investigation of the failed test, or open the failed test in IDE.
-
+Click the name of a class, a namespace/package, or a suite to view only the items included in it. Click the arrow next to the test name to view the test history, open the test in the Build Log, start investigation of the failed test, or open the failed test in an IDE.
 
 </td></tr><tr>
 
@@ -192,7 +181,6 @@ Duration
 
 Shows the time it took to complete the test. You can view the Test Duration Graph described below by clicking this icon: ![StatsIcon.png](StatsIcon.png).
 
-
 </td></tr><tr>
 
 <td>
@@ -205,7 +193,6 @@ Order
 <td>
 
 Shows the sequence in which the tests were run. Click the header above this column to sort by the test order number.
-
 
 </td></tr></table>
 
@@ -220,12 +207,10 @@ For example:
 * __Build Results__ page | __Tests__ tab
 * __Projects__ | __&lt;build with failed tests&gt;__ | build results drop-down menu
 
-
 Clicking the __Test history__ link opens the __Test details__ page where you can find following information:
 * The test details section including test success rate and test's run duration data:
 * the Test Duration Graph. For more information, refer to the [Test Duration Graph](#Test+Duration+Graph) description below.
 * Complete test history table containing information about the test status, its duration, and information on the builds this test was run in.
-
 
 #### Test Duration Graph
 
@@ -239,7 +224,6 @@ You can perform the following actions on the Test Duration Graph:
 * Click a dot plotted on the graph to jump to the page with the results of the corresponding build.
 * View a build summary in the tooltip of a dot on the graph and navigate to the corresponding __Build Results__ page.
 * Filter information by agents selecting or clearing a particular agent or by clicking __All__ or __None__ links to select or clear all agents.
-
 
 ## Build Log
 
@@ -259,11 +243,8 @@ If a finished build has artifact and/or snapshot dependencies, the __Dependencie
 
 If you have [integration with an issue tracker ](integrating-teamcity-with-issue-tracker.md) configured, and if there is at least one issue mentioned in the comments for the included changes or in the comments for the build itself, you will see the list of issues related to the current build in the __Issues__ tab.
 
-<tip>
 
-If you need to view all the issues related to a build configuration and not just to particular build, you can navigate to the __Issues Log__ tab available on the build configuration home page, where you can see all the issues mapped to the comments or filter the list to particular range of builds.
-</tip>
-
+>If you need to view all the issues related to a build configuration and not just to particular build, you can navigate to the __Issues Log__ tab available on the build configuration home page, where you can see all the issues mapped to the comments or filter the list to particular range of builds.
 ## Build Artifacts
 
 If the build produced [artifacts](build-artifact.md), they all are displayed on the dedicated __Artifacts__ tab.
@@ -290,7 +271,7 @@ The tab consists of:
 * A list of duplicates found. The __new only__ option enables you to show only the duplicates that appeared in the latest build.
 * A list of files containing these duplicates. Use the left and right arrow buttons to show selected duplicate in the respective pane in the lower part of the tab.
 * Two panes with the source code of the file fragments that contain duplicates.
-* Scope filter in the upper\-left corner lists the specific directories that contain the duplicates. This filtering makes it easier for developers to manage the code of interest.
+* Scope filter in the upper-left corner lists the specific directories that contain the duplicates. This filtering makes it easier for developers to manage the code of interest.
 
 ## Maven Build Info
 
@@ -300,7 +281,7 @@ For each Maven build the TeamCity agent gathers Maven specific build details, wh
 
 ## Internal Build ID
 
-In the URL of the build result page you can find the parameter `buildId` with a numeric value. This number is internal build id uniquely identifying the build in the TeamCity installation. You might need this ID when constructing URL manually. For example for [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html), [downloading artifacts](patterns-for-accessing-build-artifacts.md).
+In the URL of the build result page you can find the parameter `buildId` with a numeric value. This number is internal build id uniquely identifying the build in the TeamCity installation. You might need this ID when constructing URL manually. For example, for [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html), [downloading artifacts](patterns-for-accessing-build-artifacts.md).
 
 <seealso>
         <category ref="user-guide">

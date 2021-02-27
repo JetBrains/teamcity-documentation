@@ -3,9 +3,7 @@
 
 TeamCity supports wildcards in different configuration options.
 
-
 ## Antlike Wildcards
-
 
 <table>
 <tr>
@@ -15,7 +13,6 @@ TeamCity supports wildcards in different configuration options.
 Wildcard 
 
 </td>
-
 
 <td>
 
@@ -28,16 +25,14 @@ Description
 
 <td>
 
-`*`    
-
+`*`
 
 </td>
 
 
 <td>
 
-matches any text in the file or directory name excluding directory separator (`/` or `\`)
-
+Matches any text in the file or directory name excluding directory separator (`/` or `\`).
 
 </td>
 </tr>
@@ -46,21 +41,18 @@ matches any text in the file or directory name excluding directory separator (`/
 
 <td>
 
- `?`     
-
+`?`
 
 </td>
 
 
 <td>
 
-matches single symbol in the file or directory name excluding directory separator 
-
+Matches single symbol in the file or directory name excluding directory separator.
 
 </td>
 </tr>
 <tr>
-
 
 <td>
 
@@ -68,16 +60,15 @@ matches single symbol in the file or directory name excluding directory separato
 
 </td>
 
-
 <td>
 
-matches any symbols including the directory separator
+Matches any symbols including the directory separator.
 
 </td>
 </tr>
 </table>
 
-You can read more on Ant wildcards in the corresponding [section](http://ant.apache.org/manual/dirtasks.html#patterns) of Ant documentation.
+You can read more on Ant wildcards in the corresponding [section](http://ant.apache.org/manual/dirtasks.html#patterns) of the Ant documentation.
 
 ### Examples
 
@@ -114,7 +105,6 @@ Pattern
 
 </td>
 
-
 <td>
 
 Matching files
@@ -125,7 +115,7 @@ Matching files
 
 <td>
 
-all files inside the current directory
+All files inside the current directory
 
 </td>
 
@@ -156,7 +146,7 @@ all files inside the current directory
 
 <td>
 
-all log files inside the current directory
+All log files inside the current directory
 
 </td>
 
@@ -186,7 +176,7 @@ all log files inside the current directory
 
 <td>
 
-all files inside the `a/b` directory including those in subdirectories
+All files inside the `a/b` directory including those in subdirectories
 
 </td>
 
@@ -213,7 +203,7 @@ all files inside the `a/b` directory including those in subdirectories
 
 <td>
 
-all files inside the `a/b` directory
+All files inside the `a/b` directory
 
 </td>
 

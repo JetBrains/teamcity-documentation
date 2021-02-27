@@ -97,7 +97,7 @@ In most cases its sufficient to set only the 2 parameters: the path to the NUnit
 
 <img src="nunit-step.png" alt="Build step: NUnit" width="750"/>
 
-The _NUnit runner_ field defines the NUnit version used to run tests. When configuring your build step for NUnit 3, the _Path to NUnit console runner_ field is required to contain the path to the NUnit console: prior to TeamCity 9.1.4 specify the _directory_ containing the console executable file, in the later TeamCity versions specify _the path to the console executable file including the file name_.
+The _NUnit runner_ field defines the NUnit version used to run tests. When configuring your build step for NUnit 3, the _Path to NUnit console runner_ field is required to contain the path to the NUnit console: specify the path to the console executable file including the file name.
 
 In all the examples the NuGet package manager provides the NUnit infrastructure. Using NuGet enables the user to conveniently manage the test environment, update NUnit, and run test locally as they will be run by TeamCity.
 

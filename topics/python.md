@@ -126,7 +126,7 @@ Unittest
 
 Launch the [unittest](https://docs.python.org/3/library/unittest.html) framework. The unit test results will be displayed on the [__Tests__](working-with-build-results.md#Tests) tab of __Build Results__.
 
-To filter the scope of processed files, you can specify a path to the unit test file(s) in the additional arguments.
+To filter the scope of processed files, you can specify the path to unit test file(s) in the additional arguments.
 
 </td>
 
@@ -150,7 +150,7 @@ Pytest
 
 Launch the [pytest](https://docs.pytest.org/en/stable/index.html) framework. The test results will be displayed on the [__Tests__](working-with-build-results.md#Tests) tab of __Build Results__.
 
-To filter the scope of processed files, you can specify a path to the pytest file(s) in the additional arguments.
+To filter the scope of processed files, you can specify the path to pytest file(s) in the additional arguments.
 
 </td>
 
@@ -174,7 +174,7 @@ Flake8
 
 Launch the [Flake8](https://pypi.org/project/flake8/) wrapper. The code inspection results will be displayed on the [__Code Inspection__](working-with-build-results.md#Code+Inspection+Results) tab of __Build Results__.
 
-To filter the scope of processed files, you can specify a path to the Python file(s) in the additional arguments.
+To filter the scope of processed files, you can specify the path to Python file(s) in the additional arguments.
 
 </td>
 
@@ -198,7 +198,7 @@ Pylint
 
 Launch the [Pylint](https://pypi.org/project/pylint/) tool. The code inspection results will be displayed on the [__Code Inspection__](working-with-build-results.md#Code+Inspection+Results) tab of __Build Results__.
 
-To filter the scope of processed files, specify a path to the Python file(s) in the additional arguments.
+To filter the scope of processed files, specify the path to Python file(s) in the additional arguments.
 
 </td>
 

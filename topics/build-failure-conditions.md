@@ -82,12 +82,9 @@ By default, TeamCity provides the wide range of _build metrics_:
 * test duration (secs)
 * total artifacts size (bytes) — size of all artifacts including [internal ones](build-artifact.md#Hidden+Artifacts)
 
-Note that since TeamCity 9.0, the way TeamCity counts tests [has changed](https://confluence.jetbrains.com/display/TW/Hajipur+9.0+EAP1+(build+31423)+Release+Notes).
-
 ### Adding custom build metric
 
 You can add your own build metric. To do so, you need to modify the TeamCity configuration file `<[TeamCity_Data_Directory](teamcity-data-directory.md)>/config/main-config.xml` and add the following section under the `server` node there:
-
 
 ```XML
 <build-metrics>

@@ -249,8 +249,6 @@ To learn about configuring code coverage options, refer to the [Configuring Java
  
 ### Bundled Ant Versions
  
-This section provides information on the versions of Ant bundled with TeamCity 10\+ versions.
- 
 <table><tr>
  
  <td>

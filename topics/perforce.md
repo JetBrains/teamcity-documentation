@@ -7,7 +7,7 @@ Common VCS root properties are described [here](configuring-vcs-roots.md#Common+
 <note product="tc">
 
 A Perforce client must be installed on the TeamCity server and it should be present in `PATH`. Alternatively, a full path to `p4` could be set via the [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.perforce.customP4Path`.   
-If you plan to use the agent-side [checkout mode](vcs-checkout-mode.md#agent-checkout), note that a Perforce client must be installed on the agents, and the path to the p4 executable must be added to the PATH environment variable.
+If you plan to use the agent-side [checkout mode](vcs-checkout-mode.md#agent-checkout), note that a Perforce client must be installed on the agents, and the path to the p4 executable must be added to the PATH environment variable.  
 Also check [TeamCity and Perforce compatibility](perforce-vcs-compatibility.md).
 </note>
 
@@ -19,13 +19,11 @@ Also check [TeamCity and Perforce compatibility](perforce-vcs-compatibility.md).
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -39,25 +37,21 @@ Port
 
 Specify the Perforce server address. The format is `host:port`. For specific environments, P4Host can be specified in the Workspace options [below](#Agent+Checkout+Settings) for any type of checkout.
 
-
 </td></tr><tr>
 
 <td id="perforceStreamOptionDescription">
 
 Stream
 
-
 </td>
 
 <td>
 
-Click this radio button to specify an existing Perforce stream. TeamCity will use this stream to prepare the stream\-based workspace, and will use the client mapping from such a workspace.
+Click this radio button to specify an existing Perforce stream. TeamCity will use this stream to prepare the stream-based workspace, and will use the client mapping from such a workspace.
 
-TeamCity supports deeper directory structure within the root depot: depots with a depth of `//DEPOTNAME/1/2/n` can be specified in this field.    
-__Prior to TeamCity 2017.2__, TeamCity supports streams stored one level below the depot name: the format is `//streamdepot/streamname`.
+TeamCity supports deeper directory structure within the root depot: depots with a depth of `//DEPOTNAME/1/2/n` can be specified in this field.
 
 [Parameters](configuring-build-parameters.md) are supported. For the `StreamAtChange` option, use the [_Label to checkout_](#Agent+Checkout+Settings) field.
-
 
 <note>
 
@@ -69,7 +63,7 @@ When Perforce Streams are used with the [agent-side checkout mode](vcs-checkout-
 <anchor name="branch-support"/>
 <anchor name="branchStreams"/>
 
-__Enable feature branches support (experimental)__ — select this checkbox to specify branch streams you want to be monitored for changes in addition to the default one. Enter / Edit the branch specification as a newline\-delimited set of rules. The syntax is  `+|-:stream_name` (with the optional `*` placeholder).
+__Enable feature branches support (experimental)__ — select this checkbox to specify branch streams you want to be monitored for changes in addition to the default one. Enter / Edit the branch specification as a newline-delimited set of rules. The syntax is `+|-:stream_name` (with the optional `*` placeholder).
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
@@ -79,7 +73,6 @@ __Task stream limitations__
 
 When task streams are used for feature branches, TeamCity may miss some changes in task streams until a modifying commit is made, which means that merge commits from the parent stream are not detected until a 'real' commit to the task stream is made ([TW-44765](https://youtrack.jetbrains.com/issue/TW-44765)).
 </note>
-
 
 </td></tr><tr>
 
@@ -97,7 +90,7 @@ Click this radiobutton to directly specify the client workspace name. The worksp
 
 __Performance impact__
 
-When this option is used with the [checkout on the server](vcs-checkout-mode.md#server-checkout) mode, the internal TeamCity source caching on the server side is disabled, which may worsen the performance of [clean checkouts](clean-checkout.md). Also, with this option, snapshot dependencies builds are not [reused](snapshot-dependencies.md). ([TW-41898](https://youtrack.jetbrains.com/issue/TW-41898) - fixed in TeamCity 2017.1)
+When this option is used with the [checkout on the server](vcs-checkout-mode.md#server-checkout) mode, the internal TeamCity source caching on the server side is disabled, which may worsen the performance of [clean checkouts](clean-checkout.md). Also, with this option, snapshot dependencies builds are not [reused](snapshot-dependencies.md).
 </warning>
 
 </td></tr><tr>
@@ -114,13 +107,9 @@ Client Mapping
 
 Click this radiobutton to specify the mapping of the depot to the client computer. If you have __Client mapping__ selected, TeamCity handles file separators according to the OS/platform of the build agent where a build is run. To enforce specific line separator for all build agents, use __Client__ or __Stream__ with the `LineEnd` option specified in Perforce instead of __Client mapping__. Alternatively, you can add an [agent requirement](configuring-agent-requirements.md) to run builds only on a specific platform.
 
-<tip>
-
-Use __team\-city\-agent__ instead of the client name in the mapping.
-</tip>
+>Use `team-city-agent` instead of the client name in the mapping.
 
 Example:
-
 
 ```Plain Text
 //depot/MPS/... //team-city-agent/...
@@ -128,9 +117,7 @@ Example:
 
 ```
 
-__Prior to TeamCity 10.0__, editing the client mapping for a Perforce VCS root resulted in a [Clean Checkout](clean-checkout.md) before the next build. A [workaround](https://youtrack.jetbrains.com/issue/TW-25344#comment=27-821321) was provided.
-
-Now [Clean Checkout](clean-checkout.md) on a client mapping change __is not__ enforced for the agent-side checkout in the following cases:
+[Clean Checkout](clean-checkout.md) on a client mapping change __is not__ enforced for the agent-side checkout in the following cases:
 
 * when a Perforce client name is used, changing the Perforce client mapping for the client will not result in a clean checkout
 * when a Perforce stream is used, changing the stream name while keeping the same stream root will not result in a clean checkout
@@ -153,7 +140,6 @@ Username
 
 Specify the user login name.
 
-
 </td></tr><tr>
 
 <td id="perforcePasswordOptionDescription">
@@ -173,8 +159,7 @@ If this field is specified, TeamCity
 
 If the password is not specified at all, TeamCity relies on an existing p4 ticket for the current user (`p4ticket.txt`), and if the ticket is not present, it will fail.
 
-The ticket file, should be present on all build agents where TeamCity runs perforce builds for this VCS root and on the TeamCity server (as the server also executes perforce commands)
-
+The ticket file, should be present on all build agents where TeamCity runs perforce builds for this VCS root and on the TeamCity server (as the server also executes perforce commands).
 
 </td></tr><tr>
 
@@ -187,7 +172,6 @@ Ticket-based authentication
 <td>
 
 Check this option to enable ticket-based authentication. This option is enabled by default and not displayed.
-
 
 </td></tr></table>
 
@@ -207,13 +191,11 @@ When the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used, Tea
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -230,20 +212,17 @@ Workspace options
 If needed, you can set here the following options for the [p4 client](http://www.perforce.com/perforce/doc.092/manuals/cmdref/client.html#1040665) command: `Options`, `SubmitOptions`, and `LineEnd`.    
 For specific environments, P4Host can be specified here for any type of checkout.
 
-
 </td></tr><tr>
 
 <td>
 
 Create non-stream workspace
 
-
 </td>
 
 <td>
 
-
-(__Since TeamCity 2018.2__) This option is available only when '_Stream_' is selected in [Connection Settings](#P4+Connection+Settings). Enable the option to be able to checkout using a non-stream workspace based on the stream specification. This allows using checkout rules but makes it impossible to commit to the stream within the build.
+This option is available only when '_Stream_' is selected in [Connection Settings](#P4+Connection+Settings). Enable the option to be able to check out using a non-stream workspace based on the stream specification. This allows using checkout rules but makes it impossible to commit to the stream within the build.
 
 </td></tr><tr>
 
@@ -251,13 +230,11 @@ Create non-stream workspace
 
 Run 'p4 clean' for clean-up
 
-
 </td>
 
 <td>
 
 Enable this option to clean up your workspace from extra files before a build (since p4 2014.1). When enabled, the `p4 clean` command will be run before `p4 sync command`, unless `p4 sync -f` or `p4 sync -p` is used. See the [command reference](http://www.perforce.com/perforce/r14.2/manuals/cmdref/p4_sync.html).
-
 
 </td></tr><tr>
 
@@ -265,13 +242,11 @@ Enable this option to clean up your workspace from extra files before a build (s
 
 Skip the have list update
 
-
 </td>
 
 <td>
 
 Enable this option not to track files on the Perforce server on sync (always transfer all files to the agent, [p4 sync -p](http://www.perforce.com/perforce/doc.current/manuals/cmdref/p4_sync.html)).
-
 
 </td></tr><tr>
 
@@ -279,19 +254,17 @@ Enable this option not to track files on the Perforce server on sync (always tra
 
 Extra sync options
 
-
 </td>
 
 <td>
 
 Specify additional `p4 sync` options, like `--parallel`. See [command reference](http://www.perforce.com/perforce/r14.2/manuals/cmdref/p4_sync.html).
 
-
 </td></tr></table>
 
 ### Perforce Workspace Parameters
 
-With checkout on agent, TeamCity provides environment variables describing the Perforce workspace created during the checkout process.   
+With checkout on an agent, TeamCity provides environment variables describing the Perforce workspace created during the checkout process.   
 If several Perforce VCS Roots are used for the checkout, the variables are created for the first VCS root. The variables are:
 * __P4USER__ — same as `vcsroot.<VCS root ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
 * __P4PORT__ — same as `vcsroot.<VCS root ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
@@ -322,7 +295,7 @@ P4 path on the build agent
 
 Specify the path to the Perforce command-line client: `p4.exe` file.
 
-This field works only on the agent side for agent-side checkout (__prior to TeamCity 2017.2.2__ this path was used for both the server-side checkout and the agent-side checkout). On agent-side, the value of this parameter could be overriden via `TEAMCITY_P4_PATH` environment variable, if such a variable is set in buildAgent.properties or comes from build parameters.
+This field works only on the agent side for agent-side checkout. On the agent side, the value of this parameter could be overridden via `TEAMCITY_P4_PATH` environment variable, if such a variable is set in buildAgent.properties or comes from build parameters.
 
 For the server, the p4 binary should be present in the PATH of the TeamCity server or can be specified via the `teamcity.perforce.customP4Path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 {product="tc"}
@@ -340,7 +313,7 @@ Label/changelist to sync
 
 <td>
 
-If you need to check out sources not with the latest revision, but with a specific Perforce label (with selective changes), you can specify this label here. For instance, this can be useful to produce a milestone/release build, or a reproduce build. If the field is left blank, the latest changelist will be used for sync.
+If you need to check out sources not with the latest revision, but with a specific Perforce label (with selective changes), you can specify this label here. For instance, this can be useful to produce a milestone/release build. If the field is left blank, the latest changelist will be used for sync.
 
 <warning>
 
@@ -360,7 +333,6 @@ Charset
 
 Select the character set used on the client computer.
 
-
 </td></tr><tr>
 
 <td id="utf16">
@@ -376,7 +348,6 @@ Enable this option if you have UTF-16 files stored as `utf16` [Perforce file typ
 You may want to enable this option if you use __server\-side checkout and have files of the `utf16`__ [Perforce file type](https://www.perforce.com/perforce/doc.current/manuals/p4guide/appendix.filetypes.html) in your depot. Enable this flag for the checked out files to be in the `UTF-16` encoding. Otherwise, such files may be converted to `UTF-8` upon checkout.
 
 If you store `UTF-16` files as the `binary` [Perforce file type](https://www.perforce.com/perforce/doc.current/manuals/p4guide/appendix.filetypes.html), they will always be checked out "as is", no conversion will be performed.
-
 
 </td></tr></table>
 
@@ -403,8 +374,6 @@ Refer to a [separate page](perforce-vcs-compatibility.md).
 ## Perforce Streams as feature branches
 
 Refer to a [separate page](perforce-streams-as-feature-branches.md).
-
-
 
 <seealso>
         <category ref="admin-guide">

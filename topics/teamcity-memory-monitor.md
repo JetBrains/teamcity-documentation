@@ -23,7 +23,7 @@ Several [internal properties](configuring-teamcity-server-startup-properties.md#
 
 * `teamCity.memoryUsageMonitor.poolNames` sets up pool names to track. Case-sensitive comma-separated string is accepted.
 
-* `teamCity.memoryUsageMonitor.warningThreshold` allows setting up a minimal warning threshold. Affects all tracked memory pools except for PermGen ([replaced with metaspace](http://javaeesupportpatterns.blogspot.ru/2013/02/java-8-from-permgen-to-metaspace.html) memory allocation in TeamCity 10).
+* `teamCity.memoryUsageMonitor.warningThreshold` allows setting up a minimal warning threshold. Affects all tracked memory pools except for PermGen ([replaced with metaspace](http://javaeesupportpatterns.blogspot.ru/2013/02/java-8-from-permgen-to-metaspace.html) memory allocation).
 
 * `teamCity.memoryUsageMonitor[<Pool name>].warningThreshold` can be used to modify single memory pool threshold. Spaces should be escaped or changed to `\` symbols.
 

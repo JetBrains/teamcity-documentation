@@ -72,8 +72,6 @@ TeamCity users must have unique usernames.
 
     TeamCity will show users with the same username and different emails on both servers, as well as the number of users with the same username and the same email. Email verification [can be enabled](enabling-email-verification.md) for the server,  and the users with the same username and email are compared based on their email verification.  You can view the conflicts information and choose whether to merge the users found. The options are active if users with verified emails are present either on the source or the target TeamCity server, or both.
 
- 
-
 Import of user groups works the same way: new groups are imported, while the existing groups can be merged.
 
 If a [conflict](#Conflicts) occurs (the groups exists on both the source and the target, but the group roles are different), after import the group on the target server may get additional roles. As a result, a member of this group on the target will get additional roles and permissions as well. 

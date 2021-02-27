@@ -31,7 +31,6 @@ To define agent-specific properties, edit the Build Agent's `buildAgent.properti
 
 When defining system properties and environment variables in the `teamcity.default.properties` or `buildAgent.properties` file, use the following format:
 
-
 ```Plain Text
 [env|system].<property_name>=<property_value>
 

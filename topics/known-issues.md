@@ -213,11 +213,6 @@ Only a single TeamCity server can work with one database, which is checked on th
 
 The error is most probably caused by the fact that there is another running TeamCity installation which is connected to the same database. Сheck that the [database properties](setting-up-an-external-database.md) are correct and there is no other TeamCity server using the same database.
 
-__In TeamCity 8.0 and earlier__, if all the settings are correct, the error can occur when the TeamCity server or the database server has been shut down incorrectly. The resolution depends on the database type:
-* __MySQL__: restart the MySQL server and then start TeamCity again.
-* __PostgreSQL__, __Oracle__, __MS SQL__: kill the connections from the incorrectly shut down TeamCity, and then start TeamCity again.
-* Internal database (__HSQL__): remove the `buildserver.lck` file from the  \<[TeamCity Home](teamcity-home-directory.md)\>\system directory, and then start TeamCity again.
-
 ## Slow download from TeamCity server
 {product="tc"}
 
@@ -310,11 +305,11 @@ __Solution__: Delete build artifacts whose versions violate  [the required forma
 ## Packages indexing is slow in TeamCity NuGet feed
 {product="tc"}
 
-__Problem__: After TeamCity server host machine move or upgrade to the TeamCity 2017.1 build metadata can be reset.
+__Problem__: After TeamCity server host machine move or upgrade, build metadata can be reset.
 
-__Cause__: The TeamCity NuGet feed relies on build metadata, and packages re\-indexing can take a lot of time depending on the number of packages and the idle time of the TeamCity server.
+__Cause__: The TeamCity NuGet feed relies on build metadata, and packages reindexing can take a lot of time depending on the number of packages and the idle time of the TeamCity server.
 
-__Solution__: To speed up build metadata re\-indexing, specify the following [internal properties](configuring-teamcity-server-startup-properties.md):
+__Solution__: To speed up build metadata reindexing, specify the following [internal properties](configuring-teamcity-server-startup-properties.md):
 
 
 ```Shell
@@ -416,7 +411,7 @@ On Windows 10, the Docker server depends on Hyper-V service and its start may ta
 
 ### Linux Docker Containers under Windows
 
-Since __TeamCity 2017.2,__ the [Docker Wrapper](docker-wrapper.md) works on Windows when Windows-based containers are started.
+The [Docker Wrapper](docker-wrapper.md) works on Windows when Windows-based containers are started.
 
 If a Linux container is started on a Windows machine, TeamCity displays the error message "Starting Linux Docker containers under Windows is not supported. To avoid this problem, add the [`teamcity.agent.jvm.os.name`](integrating-teamcity-with-docker.md#Parameters+Reported+by+Agent) does not contain Windows [agent requirement](agent-requirements.md).
 

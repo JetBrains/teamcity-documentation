@@ -26,13 +26,11 @@ The [TeamCity download](http://www.jetbrains.com/teamcity/download/) page on the
 
 Target
 
-
 </td>
 
 <td>
 
 Option
-
 
 </td>
 
@@ -40,13 +38,11 @@ Option
 
 Note
 
-
 </td></tr><tr>
 
 <td>
 
 [Windows](installing-and-configuring-the-teamcity-server.md#Installing+TeamCity+via+Windows+installation+package)
-
 
 </td>
 
@@ -54,20 +50,17 @@ Note
 
 TeamCity&lt;version number&gt;.exe
 
-
 </td>
 
 <td>
 
 Executable Windows installer bundled with Tomcat and Java 1.8 JRE.
 
-
 </td></tr><tr>
 
 <td>
 
 [Linux, macOS, Windows](installing-and-configuring-the-teamcity-server.md#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29)
-
 
 </td>
 
@@ -81,7 +74,6 @@ TeamCity&lt;version number&gt;.tar.gz
 
 Archive for manual installation bundled with Tomcat servlet container
 
-
 </td></tr><tr>
 
 <td>
@@ -94,13 +86,11 @@ Archive for manual installation bundled with Tomcat servlet container
 
 Docker
 
-
 </td>
 
 <td>
 
 Official JetBrains TeamCity server Docker image
-
 
 </td></tr>
 

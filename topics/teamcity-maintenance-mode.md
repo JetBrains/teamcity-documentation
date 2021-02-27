@@ -5,7 +5,7 @@ If you see the TeamCity Maintenance page on the TeamCity startup, it means this 
 
 For security reasons, it is to be performed by a __system administrator__ who has administrative access to the environment where the TeamCity server is installed. If you __do not__ have access to the computer where TeamCity is installed, inform your system administrator that TeamCity requires technical maintenance.
 
-If you are a TeamCity system administrator, confirm it by entering the _authentication token_ into the corresponding field on this page. This token can be found in the `teamcity-server.log` file under `<[TeamCity home>/logs](teamcity-server-logs.md).
+If you are a TeamCity system administrator, confirm it by entering the _authentication token_ into the corresponding field on this page. This token can be found in the `teamcity-server.log` file under `<[TeamCity home>/logs](teamcity-server-logs.md)`.
 
 After you have provided this token, you can review the details on what kind of maintenance is required. The need in technical maintenance may be caused by one of the following factors:
 * [TeamCity data upgrade](#TeamCity+Data+Upgrade)
@@ -20,7 +20,7 @@ After you have provided this token, you can review the details on what kind of m
 
 When updating your TeamCity instance to a new feature release, the newly installed version of TeamCity checks if the [TeamCity Data Directory](teamcity-data-directory.md) and database use the same data format as required by the TeamCity version. If the newer version requires data conversion, this page is displayed with data format details. Review them carefully to ensure that the Data Directory and the database locations are indeed those meant to be used by the server.
 
-If you haven't backed up your data before, do it at this point by using the option on the page (available when upgrading from TeamCity 6.0 or higher). Note that the backup process can take time, especially with large TeamCity installations. Other ways to create the backup are detailed in the [TeamCity Data Backup](teamcity-data-backup.md) page.
+If you haven't backed up your data before, do it at this point by using the option on the page. Note that the backup process can take time, especially with large TeamCity installations. Other ways to create the backup are detailed in the [TeamCity Data Backup](teamcity-data-backup.md) page.
 
 Once TeamCity converts the data, downgrade will not be possible. If you need to return to an earlier TeamCity version, you will be able to do that only by restoring the data from a corresponding backup.
 
@@ -30,7 +30,7 @@ When you are sure you have backed up your data, click __Upgrade__.
 
 ## New TeamCity Data Format
 
-TeamCity has detected that the data format corresponds to more recent TeamCity version than you try to run.  Since downgrade is not supported, TeamCity cannot start until you provide the data that matches the format of the TeamCity version you want to run. To do so, restore the required data from backup. Refer to the [Restoring TeamCity Data from Backup](restoring-teamcity-data-from-backup.md) page for the instructions.
+TeamCity has detected that the data format corresponds to more recent TeamCity version than you try to run. Since downgrade is not supported, TeamCity cannot start until you provide the data that matches the format of the TeamCity version you want to run. To do so, restore the required data from backup. Refer to the [Restoring TeamCity Data from Backup](restoring-teamcity-data-from-backup.md) page for the instructions.
 
 ## TeamCity Startup Error
 

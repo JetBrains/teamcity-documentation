@@ -58,7 +58,7 @@ It is possible to use `{build.number}` as a placeholder for older build number.
 ```
 
 	
-* Mandatory `description` attribute is a human\-readable text describing the build problem. By default `description` appears in build status text.
+* Mandatory `description` attribute is a human-readable text describing the build problem. By default `description` appears in build status text.
 
 
 [//]: # (Internal note. Do not delete. "MSBuild Service Tasksd214e94.txt")    
@@ -67,15 +67,11 @@ It is possible to use `{build.number}` as a placeholder for older build number.
 
 ## TeamCitySetStatus
 
-`TeamCitySetStatus` is a task to change current build status text.   
-Prior to TeamCity 8.0, this task was also used for changing build status to failure. However since TeamCity 7.1 [TeamCityBuildProblem](#TeamCityBuildProblem) task should be used for this purpose.
-
-
+`TeamCitySetStatus` is a task to change current build status text.
 
 ```XML
 <TeamCitySetStatus Status="<status value>" Text="{build.status.text} and some aftertext" />
 
 ```
 
-`{build.status.text` is substituted with older status text.   
-Status can have `SUCCESS` value.
+`{build.status.text` is substituted with older status text. Status can have the `SUCCESS` value.

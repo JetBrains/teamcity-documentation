@@ -33,10 +33,9 @@ The part of the branch name matched by the asterisk (`*`) wildcard becomes the s
 
 You can use parameters in the branch specification.
 
-When a single VCS branch is matched by several lines of the branch specification, the most specific (least characters matched by pattern) last rule applies.
+When a single VCS branch is matched by several lines of the branch specification, the most specific (the least characters matched by the pattern) last rule applies.
 
 That is, if the specification contains an exact pattern matching the branch (i.e. a pattern without the `*` wildcard), then the last such pattern is used. So if you have a specification like this:
-
 
 ```Plain Text
 +:refs/heads/release-v1
@@ -47,13 +46,10 @@ then the last pattern will win and the branch will be excluded.
     
 If a branch specification has several patterns with the `*` wildcard, then TeamCity selects the pattern producing the shortest logical name. This branch specification:
 
-
 ```Plain Text
 +:refs/heads/*/hotfix
 -:refs/heads/v1/*
 ```
-
-
 
 will include the `refs/heads/v1/hotfix` branch (because `v1` is shorter than `hotfix`).    
 If 2 patterns with `*` wildcard produce logical names of the same length, then the last pattern wins.
@@ -95,7 +91,6 @@ A logical branch name is a branch name shown in the user interface for the build
 
 For example, if the branch specification is defined like this:
 
-
 ```Plain Text
 +:refs/heads/*
 ```
@@ -103,7 +98,6 @@ For example, if the branch specification is defined like this:
 then the part matched by `*` (for example, `master`) is a logical branch name. 
 
 If the branch specification pattern uses parentheses, the logical name is made up of the part of the name within the parentheses; to see the `v8.1/feature1` logical name displayed in the UI for the VCS branch `refs/heads/v8.1/feature1`, use this:
-
 
 ```Plain Text
 +:refs/heads/(v8.1/*)
@@ -256,7 +250,7 @@ If you need to get the branch name in the build script or use it in other build 
 
 ## Clean-up
 
-Clean\-up rules are applied [independently](clean-up.md#Base+Rule+Behavior+for+Build+Configurations+with+Feature+Branches) to each [active branch](#Active+branches).
+Clean-up rules are applied [independently](clean-up.md#Base+Rule+Behavior+for+Build+Configurations+with+Feature+Branches) to each [active branch](#Active+branches).
 
 ## Manual branch merging
 

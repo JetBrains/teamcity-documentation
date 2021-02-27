@@ -1,12 +1,10 @@
 [//]: # (title: Visual SourceSafe)
 [//]: # (auxiliary-id: Visual SourceSafe)
 
->
->__Since TeamCity 2018.1__, the Visual SourceSafe plugin is no longer bundled with TeamCity and is available as a [separate download](https://plugins.jetbrains.com/plugin/10902-vcs-support-vss).
->
-{type="note"}
+The Visual SourceSafe support is available via an [external plugin](https://plugins.jetbrains.com/plugin/10902-vcs-support-vss).
 
 ### Notes and Limitations
+
 * TeamCity supports Microsoft Visual SourceSafe 6.0 and 2005 (_English versions_ only).
 * Microsoft Visual SourceSafe only works if the TeamCity server is installed on a computer running a Windows® operating system.
 * Make sure the TeamCity server process is run by a user that has permission to access the VSS databases.
