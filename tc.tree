@@ -18,6 +18,8 @@
       </toc-element>
       <toc-element id="concepts.md" hidden="true"/>
       <toc-element toc-title="Concepts">
+         <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="mapping-teamcity-concepts-to-other-ci-terms.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -76,7 +78,6 @@
          <toc-element id="user-group.md"/>
          <toc-element id="vcs-root.md"/>
          <toc-element id="wildcards.md"/>
-         <toc-element id="mapping-teamcity-concepts-to-other-ci-terms.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="supported-platforms-and-environments.md" show-structure-for="chapter" show-structure-depth="4">
          <toc-element id="testing-frameworks.md"/>

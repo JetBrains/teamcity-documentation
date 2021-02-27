@@ -6,7 +6,7 @@
 TeamCity integration with Eclipse provides the following features:
 * [Remote Run](remote-run.md) and [Pre-Tested (Delayed) Commit](pre-tested-delayed-commit.md) for Subversion, Perforce, CVS, and Git
 * customizing parameters for personal builds
-* monitoring the projects status in the IDE
+* monitoring the projects' status in the IDE
 * exploring changes introduced in the source code and comparing the local version with the latest version in the project repository
 * navigating from build logs opened in Eclipse to files referenced in the build log
 * viewing failed tests of a particular build
@@ -27,8 +27,8 @@ The TeamCity Eclipse plugin version must correspond to the version of the TeamCi
 * __[Subversive](http://www.eclipse.org/subversive/) or [Subclipse](http://subclipse.tigris.org/) plugins__: to enable [Remote Run](remote-run.md) and [Pre-tested Commit](pre-tested-delayed-commit.md) for the Subversion Version Control System.   
 Quick links: Subversive [download page](http://www.eclipse.org/subversive/downloads.php). Subclipse [installation instructions](https://github.com/subclipse/subclipse/wiki).
 * __[P4Eclipse](http://www.perforce.com/product/components/eclipse_plugin) plugin__: to enable [Remote Run](remote-run.md) and [Pre-tested Commit](pre-tested-delayed-commit.md) for the Perforce Version Control System. Make sure you initialize Perforce support (for example, perform project update) after opening the project before using TeamCity Remote Run.
-* __[CVS plugin for Eclipse](http://www.eclipse.org/eclipse/platform-cvs)__ to enable Remote Run and Pre\-tested Commit for CVS.
-* __[EGit plugin for Eclipse](http://www.eclipse.org/egit/)__ to support Remote Run and Pre\-tested Commit for Git version control.
+* __[CVS plugin for Eclipse](http://www.eclipse.org/eclipse/platform-cvs)__ to enable Remote Run and Pre-tested Commit for CVS.
+* __[EGit plugin for Eclipse](http://www.eclipse.org/egit/)__ to support Remote Run and Pre-tested Commit for Git version control.
 * __JDK 1.6-1.8 (JDK 1.8 is recommended)__: Eclipse must be run under JDK 1.6-1.8 for the TeamCity plugin to work.
 
 
@@ -38,7 +38,7 @@ __To install the TeamCity plugin for Eclipse:__
 1. In the top right corner of the TeamCity web UI, click the arrow next to your username, and select __My Settings &amp; Tools__.
 2. Locate the __TeamCity Tools__ section on the right.
 3. Under the __Eclipse plugin__ header, copy the __update site link__ URL. For example, in Internet Explorer you can right\-click the link and choose __Copy shortcut__ from the context menu.
-4. In Eclipse, click __Help | Install New Software...__ on the main menu. The __Install__ dialog appears.
+4. In Eclipse, click __Help | Install New Software__ in the main menu. The __Install__ dialog appears.
 5. Enter the URL copied above (`http://<your TeamCity Server address>/update/eclipse/`) into the URL field of the new update site in Eclipse, and click __Enter__.
 6. Select the required features of the TeamCity Eclipse Plugin.        ![Eclipse.png](Eclipse.png)
 7. Click __Next__ and follow the installation instructions.
