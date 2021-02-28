@@ -10,7 +10,7 @@ The corresponding action is available in the __Actions__ menu on the [__Build Re
 You may want to make build successful to:
 	
 * Change the _last successful build_ anchor when using [build failure conditions](build-failure-conditions.md). If your last build failed because of an incorrect value of a metric and this new value is valid, you may mark this build with a successful anchor.
-* Allow using an incorrectly failed build with good artifacts in [__Artifact Dependencies](artifact-dependencies.md#Configurin__g+Artifact+Dependencies+Using+Web+UI).
+* Allow using an incorrectly failed build with good artifacts in [__Artifact Dependencies__](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Web+UI).
 * For a running [personal build](personal-build.md), you can mark the current failures as non-relevant to allow the pretested commit to pass (if the user has permission to do this).
 
 The "_Mark as successful_" action is not available for [builds that failed to start](build-state.md#Failed+to+Start+Builds).
