@@ -55,7 +55,6 @@ When scanning the repository, TeamCity progressively searches for project files 
 
 If the detected steps have already been added to this configuration manually, TeamCity will skip those.
 
-
  <seealso>
         <category ref="concepts">
             <a href="build-runner.md">Build Runner</a>

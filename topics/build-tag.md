@@ -14,9 +14,6 @@ Clicking a tag filters out all builds in the history: only the builds marked wit
 
 Clicking a tag filters out all builds in the history: only the builds marked with the tag are displayed.
 {product="tcc"}
- 
-
-__To tag a build:__
 
 The TeamCity web UI provides the following ways to tag a particular build:
 * On the __[Build Configuration Home](viewing-build-configuration-details.md)__ page: 

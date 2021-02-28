@@ -23,7 +23,7 @@ This video gives a general overview of the main TeamCity features and explains t
 * Review on-the-fly test results reporting with intelligent tests reordering
 * Run code coverage and duplicates finder for Java and .NET
 * Customize statistics on build duration, success rate, code quality, and custom metrics
-* and much more.
+* and much more
 
 To learn more about major TeamCity features, refer to the [official JetBrains site](http://www.jetbrains.com/teamcity/features/index.html).
 
@@ -37,7 +37,7 @@ The complete list of supported platforms and environments can be found [here](su
 
 This section describes the main TeamCity concepts. You can find a more comprehensive explanation in the [Introduction to TeamCity terminology](introduction-to-teamcity-terminology.md).
 
-The __TeamCity build system__ comprises a server and __Build Agents__.
+The __TeamCity build system__ comprises a server and __build agents__.
 
 <table><tr>
 
@@ -55,7 +55,7 @@ Description
 
 <td>
 
-__Build Agent__
+__Build agent__
 
 </td>
 
@@ -80,7 +80,7 @@ __TeamCity Server__
 
 <td>
 
-The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, etc. are stored in a database.
+The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, and so on, are stored in a database.
 
 <note>
 
@@ -104,19 +104,19 @@ A TeamCity Project corresponds to a software project or a specific version/relea
 
 <td>
 
-__Build Configuration__
+__Build configuration__
 
 </td>
 
 <td>
 
-A combination of settings defining a build procedure. The settings include __VCS Roots__, __Build Steps__, __Build Triggers__ described below.
+A combination of settings defining a build procedure. The settings include __VCS roots__, __build steps__, __build triggers__ described below.
 
 </td></tr><tr>
 
 <td>
 
-__VCS Root__
+__VCS root__
 
 </td>
 
@@ -128,19 +128,19 @@ A collection of version control settings (paths to sources, username, password, 
 
 <td>
 
-__Build Step__
+__Build step__
 
 </td>
 
 <td>
 
-A task to be executed. Each build step is represented by a [build runner](build-runner.md) providing integration with a specific build tool (like Ant, Gradle, MSBuild, etc), a testing framework (e.g. NUnit), or a code analysis engine. Thus, in a single build you can have several steps and sequentially invoke test tools, code coverage, and, for instance, compile your project.
+A task to be executed. Each build step is represented by a [build runner](build-runner.md) providing integration with a specific build tool (like Ant, Gradle, MSBuild, and so on), a testing framework (for example, NUnit), or a code analysis engine. Thus, in a single build you can have several steps and sequentially invoke test tools, code coverage, and, for instance, compile your project.
 
 </td></tr><tr>
 
 <td>
 
-__Build Trigger__
+__Build trigger__
 
 </td>
 
@@ -170,13 +170,13 @@ __Build__
 
 <td>
 
-Refers to both: the actual process of creating an application version and the version itself.  After the build process is triggered, it is put into the __[build queue](build-queue.md)__ and is started when there are agents available to run it. After the build is finished, the build agent sends __[Build Artifacts](build-artifact.md)__ to the server. 
+Refers to both: the actual process of creating an application version and the version itself. After the build process is triggered, it is put into the __[build queue](build-queue.md)__ and is started when there are agents available to run it. After the build is finished, the build agent sends __[build artifacts](build-artifact.md)__ to the server. 
 
 </td></tr><tr>
 
 <td>
 
-__Build Queue__
+__Build queue__
 
 </td>
 
@@ -189,7 +189,7 @@ A list of builds that were [triggered](configuring-build-triggers.md) and are wa
 
 <td>
 
-__Build Artifacts__ 
+__Build artifacts__ 
 
 </td>
 

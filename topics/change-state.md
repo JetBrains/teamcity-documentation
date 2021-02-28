@@ -7,13 +7,11 @@
 
 Icon
 
-
 </td>
 
 <td>
 
 State
-
 
 </td>
 
@@ -21,13 +19,11 @@ State
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
- ![pending.gif](pending.gif)
-
+![pending.gif](pending.gif)
 
 </td>
 
@@ -35,15 +31,13 @@ Description
 
 pending
 
-
 </td>
 
 <td>
 
 The change is scheduled to be integrated into a build that is currently in the build queue.
 
- Even if a change has been successfully integrated into a build, the change will appear as pending when it is scheduled to be added to a different build.
-
+Even if a change has been successfully integrated into a build, the change will appear as pending when it is scheduled to be added to a different build.
 
 </td></tr><tr>
 
@@ -51,13 +45,11 @@ The change is scheduled to be integrated into a build that is currently in the b
 
 ![running_green_transparent.gif](running_green_transparent.gif)
 
-
 </td>
 
 <td>
 
 running successfully
-
 
 </td>
 
@@ -65,13 +57,11 @@ running successfully
 
 The change is being integrated into a build that is running successfully.
 
-
 </td></tr><tr>
 
 <td>
 
 ![success_small.gif](success_small.gif)
-
 
 </td>
 
@@ -79,13 +69,11 @@ The change is being integrated into a build that is running successfully.
 
 successful
 
-
 </td>
 
 <td>
 
 The change was integrated into a build that finished successfully.
-
 
 </td></tr><tr>
 
@@ -93,13 +81,11 @@ The change was integrated into a build that finished successfully.
 
 ![running_red_transparent.gif](running_red_transparent.gif)
 
-
 </td>
 
 <td>
 
 running and failing
-
 
 </td>
 
@@ -107,13 +93,11 @@ running and failing
 
 The change is being integrated into a build that is failing.
 
-
 </td></tr><tr>
 
 <td>
 
 ![error_small.gif](error_small.gif)
-
 
 </td>
 
@@ -121,13 +105,11 @@ The change is being integrated into a build that is failing.
 
 failed
 
-
 </td>
 
 <td>
 
 The change was integrated into a build that failed.
-
 
 </td></tr></table>
 
@@ -139,13 +121,11 @@ The change was integrated into a build that failed.
 
 Icon
 
-
 </td>
 
 <td>
 
 State
-
 
 </td>
 
@@ -153,13 +133,11 @@ State
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 ![personalPending.gif](personalPending.gif)
-
 
 </td>
 
@@ -167,13 +145,11 @@ Description
 
 pending
 
-
 </td>
 
 <td>
 
 The change is scheduled to be integrated into a personal build that is currently in the build queue.
-
 
 </td></tr><tr>
 
@@ -181,13 +157,11 @@ The change is scheduled to be integrated into a personal build that is currently
 
 ![personalRunning_green.gif](personalRunning_green.gif)
 
-
 </td>
 
 <td>
 
 running successfully
-
 
 </td>
 
@@ -195,13 +169,11 @@ running successfully
 
 The change is being integrated into a personal build that is running successfully.
 
-
 </td></tr><tr>
 
 <td>
 
 ![personalSuccess.gif](personalSuccess.gif)
-
 
 </td>
 
@@ -209,13 +181,11 @@ The change is being integrated into a personal build that is running successfull
 
 successful
 
-
 </td>
 
 <td>
 
 The change was integrated into a personal build that finished successfully.
-
 
 </td></tr><tr>
 
@@ -223,13 +193,11 @@ The change was integrated into a personal build that finished successfully.
 
 ![personalRunning_red.gif](personalRunning_red.gif)
 
-
 </td>
 
 <td>
 
 running and failing
-
 
 </td>
 
@@ -237,13 +205,11 @@ running and failing
 
 The change is being integrated into a personal build that is failing.
 
-
 </td></tr><tr>
 
 <td>
 
 ![personalCrashed.gif](personalCrashed.gif)
-
 
 </td>
 
@@ -251,13 +217,11 @@ The change is being integrated into a personal build that is failing.
 
 failed
 
-
 </td>
 
 <td>
 
 The change was integrated into a personal build that failed.
-
 
 </td></tr></table>
 

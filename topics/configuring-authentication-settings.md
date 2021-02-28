@@ -163,9 +163,7 @@ If the library does not find the domain controller to authenticate against, cons
 
 Please refer to the [dedicated page](ldap-integration.md).
 
-
 [//]: # (Internal note. Do not delete. "Configuring Authentication Settingsd70e480.txt")
-
 
 ## HTTP / SSO Authentication Modules
 
@@ -173,10 +171,7 @@ Please refer to the [dedicated page](ldap-integration.md).
 
 Please refer to [Accessing Server by HTTP](accessing-server-by-http.md) for details about the basic HTTP authentication.
 
-<tip>
-
-For information on configuring basic HTTP authentication directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml`, refer to the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
-</tip>
+>For information on configuring basic HTTP authentication directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml`, refer to the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
 
 
 ### NTLM HTTP Authentication

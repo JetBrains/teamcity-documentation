@@ -1,6 +1,6 @@
 [//]: # (title: Configuring Build Parameters)
 [//]: # (auxiliary-id: Configuring Build Parameters)
-[//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")    
+[//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")
 
 _Build parameters_ provide you with flexible means of sharing settings and a convenient way of passing settings into the build.
 
@@ -51,11 +51,7 @@ For example: system.tomcat.libs=%env.CATALINA_HOME%/lib/*.jar
 
 ```
 
-<tip>
-
-You can configure the [parameter's type](typed-parameters.md), so the parameter is displayed as a UI field in the _Run Custom Build_ dialog. This way, you can quickly change the parameter's value in the current build run via the web UI.
-
-</tip>
+>You can configure the [parameter's type](typed-parameters.md), so the parameter is displayed as a UI field in the _Run Custom Build_ dialog. This way, you can quickly change the parameter's value in the current build run via the web UI.
 
 ## Using Build Parameters in Build Configuration Settings
 
@@ -75,13 +71,11 @@ If you want to prevent TeamCity from treating the text in the percentage signs a
 
 Settings
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -89,13 +83,11 @@ Description
 
 Build runner settings, artifact specification
 
-
 </td>
 
 <td>
 
 Any of the properties that are passed into the build
-
 
 </td></tr><tr>
 
@@ -109,13 +101,11 @@ User-defined properties and environment variables
 
 Any of the properties that are passed into the build
 
-
 </td></tr><tr>
 
 <td>
 
 Build number format
-
 
 </td>
 
@@ -123,20 +113,17 @@ Build number format
 
 Only [predefined server build properties](predefined-build-parameters.md)
 
-
 </td></tr><tr>
 
 <td>
 
 VCS root and checkout rules settings
 
-
 </td>
 
 <td>
 
 Any of the properties that are passed into the build
-
 
 </td></tr><tr>
 
@@ -162,7 +149,6 @@ Artifact dependency settings
 <td>
 
 Only [predefined server build properties](predefined-build-parameters.md#Server+Build+Properties)
-
 
 </td></tr></table>
 

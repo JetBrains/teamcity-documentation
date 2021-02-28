@@ -30,7 +30,6 @@ wrapper.app.parameter.<N>
 
 ```
 
-
 <note>
  
 You should add these extra lines _before_ the following line in the `wrapper.conf` file: `wrapper.app.parameter.N=jetbrains.buildServer.agent.AgentMain`.
@@ -64,7 +63,6 @@ Make sure to renumber all lines after the inserted ones.
 
 
 [//]: # (Internal note. Do not delete. "Configuring Build Agent Startup Propertiesd71e106.txt")    
-
 
 <seealso>
         <category ref="concepts">

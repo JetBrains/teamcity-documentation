@@ -9,8 +9,7 @@ If a build script needs to run from a location other than the checkout directory
 >
 {type="note"}
 
-
-The path entered in the __Working Directory__ field can be either absolute or relative to the [build checkout directory](build-checkout-directory.md). When using this option, all of the other paths should still be entered relative to the checkout directory.
+The path entered in the __Working Directory__ field can be either absolute or relative to the [build checkout directory](build-checkout-directory.md). When using this option, all the other paths should still be entered relative to the checkout directory.
 
 <seealso>
         <category ref="concepts">
