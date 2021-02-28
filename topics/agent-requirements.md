@@ -1,7 +1,7 @@
 [//]: # (title: Agent Requirements)
 [//]: # (auxiliary-id: Agent Requirements)
 
-Agent requirements are used in TeamCity to specify whether a [build configuration](build-configuration.md) can run on a particular [build agent](build-agent.md) besides [Agent Pools](configuring-agent-pools.md) and specified build configuration restrictions.
+Agent requirements are used in TeamCity to specify whether a [build configuration](build-configuration.md) can run on a particular [build agent](build-agent.md) besides [agent pools](configuring-agent-pools.md) and specified build configuration restrictions.
 
 When a build agent registers on the TeamCity server, it provides information about its configuration, including its environment variables, system properties, and additional settings specified in the `buildAgent.properties` file.
 

@@ -22,7 +22,7 @@ The default format of the backup file name is `TeamCity_Backup_<timestamp>.zip`;
 
 This section describes some of the `maintainDB` options. For a complete list of all available options, run `maintainDB` from the command line with no parameters.
 
-__To create data backup file__, from the command line start `maintainDB` utility with the `backup` command:
+__To create a data backup file__, from the command line start `maintainDB` utility with the `backup` command:
 
 ```Plain Text
 maintainDB.[cmd|sh] backup

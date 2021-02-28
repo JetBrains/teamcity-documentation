@@ -30,7 +30,7 @@ In addition to user-defined artifacts, TeamCity also generates and publishes som
 For example, for Maven builds, TeamCity creates the `maven-build-info.xml` file that contains Maven-specific data collected during the build. The content of the file is then used to visualize the Maven data on the Maven Build Info tab in the build results.
 * Hidden artifacts are placed under the `.teamcity` directory in the root of the build artifacts.
 * Hidden artifacts are not listed on the __Artifacts__ tab of the build results by default. However, below the list of the artifacts there's a link that allows you to view hidden artifacts if any. When hidden artifacts are displayed, clicking the _Download all_ link will result in downloading all artifacts including hidden ones.
-* Artifacts dependencies do not download hidden artifacts unless they explicitly have "`.teamcity`" in the pattern.
+* Artifacts dependencies do not download hidden artifacts unless they explicitly have `.teamcity` in the pattern.
 * Hidden artifacts are not deleted by the artifacts clean-up unless `.teamcity` is explicitly specified in the pattern.
 
 You can configure publishing some builds artifacts under the `.teamcity` directory to make them hidden.
@@ -38,12 +38,10 @@ You can configure publishing some builds artifacts under the `.teamcity` directo
 Some of the hidden artifacts are:
 * `maven-build-info.xml.gz` — Maven build data. Used to display data on the __Maven Build Info__ build's tab.
 * `properties` directory — holds properties calculated for the build on the agent. There are properties actual before the build and after the build. These are displayed on the build __Properties__ tab.
-* `.NETCoverage` — raw .NET coverage data (for example, used to open dotCover data in VS addin).
+* `.NETCoverage` — raw .NET coverage data (for example, used to open dotCover data in VS add-in).
 * `coverage_idea` — raw IntelliJ IDEA coverage data (for example, used to open coverage in IDEA).
 
-
-[//]: # (Internal note. Do not delete. "Build Artifactd28e144.txt")    
-
+[//]: # (Internal note. Do not delete. "Build Artifactd28e144.txt")
 
 ### Artifacts Cache on Agent
 

@@ -29,7 +29,6 @@ Build configuration settings include:
 * [Parameters](configuring-build-parameters.md) which allow sharing settings
 * Agent requirements specifying whether a [build configuration](build-configuration.md) can run on a particular [build agent](build-agent.md).
 
-
 <note>
 
 Build configuration settings and build behavior may vary depending on the type of build configuration.

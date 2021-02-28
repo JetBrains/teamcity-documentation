@@ -9,13 +9,11 @@ When creating a build configuration, specify the following settings:
 
 Setting
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -23,13 +21,11 @@ Description
 
 Name
 
-
 </td>
 
 <td>
 
 The build configuration name.
-
 
 </td></tr><tr>
 
@@ -61,7 +57,6 @@ Description
 
 An optional description for the build configuration.
 
-
 </td></tr><tr>
 
 <td>
@@ -76,7 +71,6 @@ Build Number Format
 
 A pattern which is resolved and assigned to the [build number](#Build+Number+Format) on the build start.
 
-
 </td></tr><tr>
 
 <td id="build-counter">
@@ -90,7 +84,6 @@ Build Counter
 <td>
 
 Specify the counter to be used in build numbering. Each build increases the build counter by 1. Use the _Reset_ link to restore the counter value to 1.
-
 
 </td></tr>
 
@@ -121,12 +114,9 @@ If the `stop` command is issued during the artifacts publishing, the publishing 
 
 </note>
 
-
 </td>
 
 </tr>
-
-
 
 <tr>
 
@@ -136,13 +126,11 @@ If the `stop` command is issued during the artifacts publishing, the publishing 
 
 [Artifact Paths](#Artifact+Paths)
 
-
 </td>
 
 <td>
 
 Patterns to define artifacts of a build. After the first build is run, you can browse the agent [checkout directory](build-checkout-directory.md) to configure artifacts paths.
-
 
 </td></tr><tr>
 
@@ -151,7 +139,6 @@ Patterns to define artifacts of a build. After the first build is run, you can b
 <anchor name="ConfiguringGeneralSettings-buildOptions"/>
 
 [Build Options](#Build+Options)
-
 
 </td>
 
@@ -171,7 +158,7 @@ Specify additional options for the builds of this build configuration.
 
 In the __Build number format__ field you can specify a pattern which is resolved and assigned to the [Build Number](build-number.md) on the build start.
 
-[//]: # (Internal note. Do not delete. "Configuring General Settingsd79e124.txt")    
+[//]: # (Internal note. Do not delete. "Configuring General Settingsd79e124.txt")
 
 The following substitutions are supported in the pattern:
 
@@ -187,20 +174,17 @@ Pattern
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 `%build.counter%`
 
-
 </td>
 
 <td>
 
-The build counter unique for each build configuration. It is maintained by TeamCity and will resolve to a next integer value on each new build start. The current value of the counter can be edited in the [Build counter](#build-counter) field.
-
+The build counter unique for each build configuration. It is maintained by TeamCity and will resolve to a next integer value on each new build start. The current value of the counter can be edited in the [_Build counter_](#build-counter) field.
 
 </td></tr><tr>
 
@@ -208,13 +192,11 @@ The build counter unique for each build configuration. It is maintained by TeamC
 
 `%build.vcs.number.<VCS_root_name>%`
 
-
 </td>
 
 <td>
 
 The revision used for the build of the VCS root with `<VCS_root_name>` name. [Read more](predefined-build-parameters.md) on the property.
-
 
 </td></tr><tr>
 
@@ -222,13 +204,11 @@ The revision used for the build of the VCS root with `<VCS_root_name>` name. [Re
 
 `%property.name%`
 
-
 </td>
 
 <td>
 
 A value of the build property with the corresponding name. All the [Predefined Build Parameters](predefined-build-parameters.md) are supported (including [Reference-only server properties](predefined-build-parameters.md#Configuration+Parameters)).
-
 
 </td></tr></table>
 
@@ -351,7 +331,7 @@ When the feature is enabled, you need to include the following snippets of code 
     <iframe src="<TeamCity_server_URL>/externalStatus.html"/>
     ```
 
-* If you want to include default CSS styles without modifying the `<head>` section, add the __withCss=true__ parameter.   
+* If you want to include default CSS styles without modifying the `<head>` section, add the `withCss=true` parameter.   
 To provide up-to-date status information on specific build configurations, use the following parameter in the URL as many times as needed:
 
     

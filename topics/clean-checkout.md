@@ -37,7 +37,7 @@ Here is the summary of cases when TeamCity performs automatic clean checkout:
 * build checkout directory was not found or is empty (either the build configuration is started on the agent for the first time or the directory has disappeared since the last build). This also covers the following: 
   * no builds were run in a specific checkout directory for a configured (or default) time and the directory became empty. See more at [automatic checkout directory cleaning](build-checkout-directory.md#Automatic+Checkout+Directory+Cleaning)
   * there was not enough [free space on disk](free-disk-space.md) in one of the earlier builds and the directory was deleted
-* a user invoked "Enforce clean checkout" action from the web UI for a build configuration or agent
+* a user invoked "_Enforce clean checkout_" action from the web UI for a build configuration or agent
 * the build was triggered via Custom Run Build dialog with "Clean all files in the checkout directory before build" option selected or by a trigger with the corresponding option
 * the build was triggered by a Schedule trigger with "Clean all files in checkout directory before build" option enabled or as a part of a build chain where the topmost build was triggered with the setting in the schedule trigger while "apply to all snapshot dependencies" was also selected
 * VCS settings of the build configuration were changed

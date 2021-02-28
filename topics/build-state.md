@@ -11,13 +11,11 @@ The build state icon appears next to each build under the expanded view of the b
 
 Icon
 
-
 </td>
 
 <td>
 
 State
-
 
 </td>
 
@@ -25,13 +23,11 @@ State
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 ![running_green_transparent.gif](running_green_transparent.gif)
-
 
 </td>
 
@@ -39,13 +35,11 @@ Description
 
 running successfully
 
-
 </td>
 
 <td>
 
 A build is running successfully.
-
 
 </td></tr><tr>
 
@@ -53,13 +47,11 @@ A build is running successfully.
 
 ![buildSuccessful.png](buildSuccessful.png)
 
-
 </td>
 
 <td>
 
 successful
-
 
 </td>
 
@@ -67,13 +59,11 @@ successful
 
 A build finished successfully in all specified build configurations.
 
-
 </td></tr><tr>
 
 <td>
 
 ![running_red_transparent.gif](running_red_transparent.gif)
-
 
 </td>
 
@@ -81,13 +71,11 @@ A build finished successfully in all specified build configurations.
 
 running and failing
 
-
 </td>
 
 <td>
 
 A build is failing.
-
 
 </td></tr><tr>
 
@@ -95,13 +83,11 @@ A build is failing.
 
 ![buildFailed.png](buildFailed.png)
 
-
 </td>
 
 <td>
 
 failed
-
 
 </td>
 
@@ -109,13 +95,11 @@ failed
 
 A build failed at least in one specified build configuration.
 
-
 </td></tr><tr>
 
 <td>
 
 ![cancelled.png](cancelled.png)
-
 
 </td>
 
@@ -123,13 +107,11 @@ A build failed at least in one specified build configuration.
 
 cancelled
 
-
 </td>
 
 <td>
 
 A build was cancelled.
-
 
 </td></tr></table>
 
@@ -262,7 +244,7 @@ A running build can be marked as _Outdated_ if there is a build which contains m
 
 ## Failed to Start Builds
 
-Builds which failed to start, i.e. did not get to the point of launching the first build step are marked with the  ![redSign.png](redSign.png) icon. It may be caused by a VCS repository being down when the build starts, or the inability to resolve artifact dependencies and so on. Such build status is often an indication of a configuration error and should usually be addressed by a build engineer rather than a developer if there is such roles separation.   
+Builds which failed to start, i.e. did not get to the point of launching the first build step are marked with the ![redSign.png](redSign.png) icon. It may be caused by a VCS repository being down when the build starts, or the inability to resolve artifact dependencies and so on. Such build status is often an indication of a configuration error and should usually be addressed by a build engineer rather than a developer if there is such roles separation.   
 If such an error occurs, TeamCity:
 * doesn't send build failed notification (unless you have subscribed to "the build fails to start" notification)
 * doesn't associate pending changes with this build, that is the changes will remain pending, because they were not actually tested

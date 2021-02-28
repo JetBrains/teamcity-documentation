@@ -30,7 +30,7 @@ If a user has access rights to stop a build in the list, there is a checkbox nea
 
 If user has no access right to stop a build from the list, the checkbox is not visible.
 
-Selecting the checkbox marks the selected build for a stop/removal from queue.
+Selecting the checkbox marks the selected build for a stop/removal from the queue.
 
 If a user has no access right to view a build which is a part of the build chain, this build is not visible to the user at all. If there is at least one such build, there is a warning displayed: "_You don't have access rights to all its parts_". The stripe is shown right under the message "_This build is a part of a build chain_".
 
@@ -44,13 +44,13 @@ You can [disable revisions synchronization](snapshot-dependencies.md#enforce-rev
 This option works if you promote a build from chain part 1 to chain part 2, and the first build configuration of part 2 has this option disabled. In this case, TeamCity can use different sources revisions for builds in part 1 and part 2. See the build setup example in [Build Dependencies Setup](build-dependencies-setup.md#Turned+off+Enforced+Revisions+Synchronization).
 
 This is useful when you need to run a dependent build without synchronizing its code revision with its dependencies (preceding builds in a chain).   
-For example, you can promote an older build to a [deployment build configuration](deployment-build-configuration.md), and this build will be run using the latest deployment scripts.
+For example, you can promote an older build to a [deployment build configuration](deployment-build-configuration.md), and this build will be run using the latest deployment scripts.  
 In load/acceptance testing, when you store tests in a version control system and often change them to test your system, you do not need to rebuild your application entirely; instead, you can pick up the chain directly from the testing phase.
 
 
 ## Build Chains Visual Representation
 
-Basically, each build chain is a [directed acyclic graph](http://en.wikipedia.org/wiki/Directed_acyclic_graph), i.e. it cannot have cycles.
+Basically, each build chain is a [directed acyclic graph](http://en.wikipedia.org/wiki/Directed_acyclic_graph), that is it cannot have cycles.
 
 Build Chains are visible in various places in the TeamCity web UI:
 
@@ -82,8 +82,8 @@ The pie-chart icon displays the ratio of the statuses for builds that are parts 
 When a chain is expanded, the following information is also available:
 
    * all builds this build chain is comprised of
-   * status of these builds: not triggered, in queue, running or finished and its details
-   * the chain displays builds in order of actual execution, i.e. builds that start first are on the left.
+   * status of these builds: not triggered, in the queue, running or finished and its details
+   * the chain displays builds in order of actual execution, that is builds that start first are on the left.
 
 Clicking a build in a chain highlights the selected build and all its direct dependencies. This page:
 
@@ -91,9 +91,8 @@ Clicking a build in a chain highlights the selected build and all its direct dep
    * has additional display options: Group by projects and Hide details.
    * transitively highlights all the downstream/upstream builds when a build is selected in a build chain.
 
-
 From this page you can also:
-   * Continue a chain, if there are yet "not triggered" builds. Click the __Run__ button and a new build will be started on the chain revisions and associated with builds from this chain.
+   * Continue a chain, if there are yet "not triggered" builds. Click __Run__ and a new build will be started on the chain revisions and associated with builds from this chain.
    * Click ![custom_build(1).png](custom_build_1.png)  to open the [custom build dialog](triggering-a-custom-build.md) with build chain revisions preselected. This action can be used if you want to rerun some build in the chain.
 
 ### Dependencies tab of build results page
