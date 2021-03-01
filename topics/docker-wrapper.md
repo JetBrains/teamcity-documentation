@@ -107,6 +107,8 @@ The [checkout directory](build-checkout-directory.md) and most build agent direc
 
 At the end of the build step with the Docker wrapper, a build agent runs the `chown` command to restore access of the `buildAgent` user to the checkout directory. This mitigates a possible problem when the files from a Docker container are created with the `root` ownership and cannot be removed by the build agent later.
 
+>You may want to disable restoring the file ownership, for instance, if the `userns-remap` package is used to handle ownership of files created under Docker. For this, add the `teamcity.docker.chown.enabled=false` configuration parameter to the [`buildAgent.properties`](build-agent-configuration.md) file. As a result, TeamCity will not try to restore permissions of the files at the end of the build.
+
 If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment variable set by the previous [Docker Compose](docker-compose.md) build step, this network is passed to the started `docker run` command with the `--network` switch.
 
 </chunk>
