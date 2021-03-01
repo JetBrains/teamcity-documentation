@@ -8,35 +8,35 @@ This document describes how to configure Java applications to use HTTPS for comm
 If you need to connect the TeamCity server to a service behind a self-signed certificate (for example, Git) or if you need to connect a TeamCity agent to the TeamCity server using the self-signed certificate, use [trusted certificates configuration](uploading-ssl-certificates.md).
 </note>
 
-<note product="tc">
+<note product="tcc">
 
 If you need to connect a TeamCity agent to the TeamCity server using the self-signed certificate, use [trusted certificates configuration](uploading-ssl-certificates.md).
 </note>
 
-We assume that you have [already configured HTTPS](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) in your TeamCity web server. The most common and recommended approach for this is to set up a reverse proxy server like Nginx or Apache that provides HTTPS access for HTTP-only TeamCity server's Tomcat port. In the setup make sure that the reverse proxy has correct configuration as per [Set Up TeamCity behind a Proxy Server](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) section.
+We assume that you have [already configured HTTPS](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) in your TeamCity web server. The most common and recommended approach for this is to set up a reverse proxy server like Nginx or Apache that provides HTTPS access for HTTP-only TeamCity server's Tomcat port. In the setup, make sure that the reverse proxy has correct configuration as per [Set Up TeamCity behind a Proxy Server](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) section.
 {product="tc"}
 
 ## Accessing the server via HTTPS
 
 __If your certificate is valid__ (i.e. it was signed by a well known Certificate Authority like Verisign), then TeamCity clients should work with HTTPS without any additional configuration. All you have to do is use `https://` links to the TeamCity server instead of `http://`.
 
-__If your certificate is not valid (is self\-signed):__ (i.e. is not signed by a known Certificate Authority and likely to result in "PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target" error message)
-* To enable HTTPS connections from the TeamCity [Visual Studio Addin](visual-studio-addin.md) and [Windows Tray Notifier](windows-tray-notifier.md), point your Internet Explorer to the TeamCity server using `https://` URL and import the server certificate into the browser. After that, the Visual Studio Addin and Windows Tray Notifier should be able to connect by HTTPS.
-{product="tc"}
+__If your certificate is not valid (is self-signed):__ (i.e. is not signed by a known Certificate Authority and likely to result in "PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target" error message)
+* To enable HTTPS connections from the TeamCity [Visual Studio Add-in](visual-studio-addin.md) and [Windows Tray Notifier](windows-tray-notifier.md), point your Internet Explorer to the TeamCity server using `https://` URL and import the server certificate into the browser. After that, the Visual Studio Addin and Windows Tray Notifier should be able to connect by HTTPS.
+  {product="tc"}
 * To enable HTTPS connections from Java clients (TeamCity Agents, IntelliJ IDEA, Eclipse, and so on), see the [section below](#Configuring+JVM) for configuring the JVM installation used by the connecting application.
 
 ## Configuring JVM
 
 ### Configuring client JVM for trusting server certificate
 
-__If your certificate is valid__ (that is it was issues and signed by a well-known Certificate Authority like Verisign), then the Java clients should work with HTTPS without any additional configuration. To use Let's Encrypt\-issued certificates, make sure to upgrade the JVM used by the client to the latest.
+__If your certificate is valid__ (that is it was issues and signed by a well-known Certificate Authority like Verisign), then the Java clients should work with HTTPS without any additional configuration. To use Let's Encrypt-issued certificates, make sure to upgrade the JVM used by the client to the latest.
 
-__If your certificate is not valid (is self\-signed):__
+__If your certificate is not valid (is self-signed):__
 
-To enable HTTPS connections from Java clients, you need to install the server certificate (or your organization's certificate the server's certificate is signed by) into the JVM as a trusted certificate. These are generic Java application steps (not TeamCity\-specific):
+To enable HTTPS connections from Java clients, you need to install the server certificate (or your organization's certificate the server's certificate is signed by) into the JVM as a trusted certificate. These are generic Java application steps (not TeamCity-specific):
 * save the CA Root certificate of the server's certificate to a file in one of the [supported formats](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html#keytool_option_importcert) (the file is referred as &lt;cert file&gt; below). This can be done in a browser by inspecting certificate data and exporting it as Base64 encoded X.509 certificate.
 * locate the JRE used by the process. The best way to get the path to the proper Java installation is to look up the command line of the running process. * If there is a JDK installed (like for IntelliJ IDEA), &lt;path to JRE installation&gt; should be &lt;path to used JDK&gt;/jre
- * For TeamCity agent or server installed under Windows, the default location for &lt;path to JRE installation&gt; is &lt;TeamCity installation path&gt;/jre
+* For TeamCity agent or server installed under Windows, the default location for &lt;path to JRE installation&gt; is &lt;TeamCity installation path&gt;/jre
 * import the server certificate into the default JRE installation keystore using JVM's `keytool` tool:
 
 
@@ -126,7 +126,7 @@ Now you need to pass the following parameters to the JVM when running the applic
 
 For IntelliJ IDEA, you can add the lines into the `bin\idea.exe.vmoptions` file (one option per line). For the TeamCity build agent, see [agent startup properties](configuring-build-agent-startup-properties.md).
 
- 
+
 
 ## Useful tools in analyzing certificates issues
 
