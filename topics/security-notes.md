@@ -186,7 +186,7 @@ If possible, try using disposable, one-off build agents. The shorter the agent's
 
 __Use agent pools for different projects__.
 
-n general, it is recommended to distribute projects among agents, so that one TeamCity agent would not run builds of several projects whose developers and administrators should not get access to each other's projects.
+In general, it is recommended to distribute projects among agents, so that one TeamCity agent would not run builds of several projects whose developers and administrators should not get access to each other's projects.
 
 If you run several agents on the same machine and do not [enable clean checkout](clean-checkout.md), beware that compromised agents or untrusted projects could potentially modify source code in the "neighbor" working directories. To mitigate this risk, consider running just one agent per machine and use different [agent pools](agent-pool.md) for different (private/public) projects. Make sure that the "Default" agent pool has no agents as a project can be assigned to the Default pool after a certain reconfiguration (that is when there is no other pool the project is assigned to).
 
