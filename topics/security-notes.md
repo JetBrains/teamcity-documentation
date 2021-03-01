@@ -49,17 +49,23 @@ Although password parameters are masked in the UI, encrypted at REST, and protec
 You may consider using a tool like [HashiCorp Vault](https://www.vaultproject.io/), which lets you manage and rotate all the sensitive credentials you'll be using in a build and which [integrates well with TeamCity](https://blog.jetbrains.com/teamcity/2017/09/vault/).
 
 __Use external authentication__.
+{product="tc"}
 
 If applicable, configure one of our [external authentication modules](authentication-modules.md), ranging from LDAP and Windows Domain integration to authenticating via GitHub, GitLab, or others. You can then [disable the TeamCity built-in authentication](configuring-authentication-settings.md), so that TeamCity no longer keeps hashed passwords in the internal database.
+{product="tc"}
 
 If any of the OAuth [authentication modules](configuring-authentication-settings.md) (Bitbucket Cloud, GitHub.com, GitHub Enterprise, GitLab.com, GitLab CE/EE) are enabled on your server __and__ you restrict authentication to members of a specific Bitbucket workspace, GitHub organization, or GitLab group, note the following:  
 Once signed in to the TeamCity server with an external account, a user can create a password or token which will allow them to sign in to this server directly, bypassing the VCS hosting provider verification. If you delete a user from a workspace/organization/group, remember to restrict their access or delete their user profile in TeamCity as well.
+{product="tc"}
 
 __Use a custom encryption key__.
+{product="tc"}
 
 Passwords that are necessary to authenticate in external systems (like VCS, issue trackers, and so on) are stored in a scrambled form in the [TeamCity Data Directory](teamcity-data-directory.md) and can also be stored in the database. However, the values are only scrambled, which means they can be retrieved by a user who has access to the server file system or database.
+{product="tc"}
 
 Instead of this default scrambling strategy, consider enabling a [custom encryption key](teamcity-configuration-and-maintenance.md#encryption-settings). In this case, TeamCity will use your unique custom key to encrypt all secure values, instead of using the default scrambling mechanism.
+{product="tc"}
 
 ### Permissions 
 
@@ -189,8 +195,10 @@ __Control permissions of the OS user who runs a TeamCity agent__.
 It is advised to run TeamCity agents under an OS account with only a [necessary set of permissions](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions).
 
 __Connect agents only to a trusted server__.
+{product="tc"}
 
 TeamCity agent is fully controlled by the TeamCity server: since TeamCity agents support automatic updates download from the server, agents should only connect to a trusted server. Note that an administrator of the server computer can force execution of arbitrary code on a connected agent.
+{product="tc"}
 
 ### Version Control
 
@@ -209,6 +217,7 @@ __Use a dedicated VCS user__.
 If you are not using advanced features like [Kotlin DSL](kotlin-dsl.md) or, in general, if you don't need to commit to your repository as part of your build process, we recommend keeping a dedicated VCS user without write permissions to connect to your repositories.
 
 ### Artifact Storage
+{product="tc"}
 
 __Disable anonymous access__.
 
@@ -231,8 +240,13 @@ Keep your build history and logs for a longer period of time, especially for bui
 Both measures may help with tracing malicious activities, even if they happened a long time ago.
 
 __Archive server and agent logs__.
+{product="tc"}
 
-Collect the [TeamCity server](teamcity-server-logs.md) and [build agent logs](viewing-build-agent-logs.md) in an archive and put them under properly secured storage.
+Collect the [TeamCity server](teamcity-server-logs.md) and [build agent logs](viewing-build-agent-logs.md) in an archive and put them under a properly secured storage.
+{product="tc"}
+
+Collect [build agent logs](viewing-build-agent-logs.md) in an archive and put them under a properly secured storage.
+{product="tcc"}
 
 ### Integrations
 
@@ -249,8 +263,10 @@ When you use [versioned settings](storing-project-settings-in-version-control.md
 As an option, you could use a separate repository that only a limited number of users can commit to for your versioned settings.
 
 __Be careful with third-party plugins__.
+{product="tc"}
 
 When [installing plugins](installing-additional-plugins.md), make sure they come from a trusted source and that their source code is available. Plugins can potentially access all information on a TeamCity server, including sensitive information.
+{product="tc"}
 
 [//]: # (Internal note. Do not delete. "How To...d160e890.txt")
 
