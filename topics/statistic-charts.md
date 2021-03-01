@@ -9,7 +9,7 @@ Regardless of the selected statistics level in the Statistics tab, you can:
 * Use the branch filter to view the results from the specified branches only.
 * Download each chart data in the CSV format using the ![Download.PNG](Download.PNG) icon.
 * Configure the Y-axis settings for each chart using the ![Cog.PNG](Cog.PNG) icon in the upper left corner.
-* Select a time range for each type of statistics from the __Range__ drop\-down menu.
+* Select a time range for each type of statistics from the __Range__ drop-down menu.
 * Filter the information by data series, for example, by the Agent name or result type.
 * View average values by selecting the __Average__ checkbox.
 * Filter out failed builds and show only successful builds with the unchecked __Show Failed__ option.
@@ -25,7 +25,7 @@ Statistics include information about all the builds across all its history. Howe
 
 For each project TeamCity provides visual charts with statistics gathered from all build configurations included in the project over the entire history of the project. These charts show statistics for code coverage, code inspections and code duplicates for build configurations within the project when the corresponding data is available for the builds of this project's configurations.
 
-You can adjust the project\-level charts in the following ways:
+You can adjust the project-level charts in the following ways:
 * [Disable charts of particular type](customizing-statistics-charts.md#Disabling+Charts+of+Particular+Type+on+Project+Level)
 * [Specify build configurations to be used in the chart](customizing-statistics-charts.md#Showing+Charts+Only+for+Specific+Build+Configurations+on+Project+Level)
 * [Add custom project-level charts](custom-chart.md) (a separate page)
@@ -33,7 +33,7 @@ You can adjust the project\-level charts in the following ways:
 
 ## Build Configuration Statistics
 
-Statistics information is also available at the build configuration level. These charts demonstrate the successful build rate, the build duration, time builds spent in queue, time spent on fixing tests, artifact size, and test count. The charts also show code coverage, duplicates and inspection results if these are included in the respective build configuration.
+Statistics information is also available at the build configuration level. These charts demonstrate the successful build rate, the build duration, time builds spent in the queue, time spent on fixing tests, artifact size, and test count. The charts also show code coverage, duplicates and inspection results if these are included in the respective build configuration.
 
 <img src="BCStatistics_8.0.png" width="750" alt="Build statistics"/>
 
@@ -84,8 +84,6 @@ This chart displays red and yellow dots to track the number of discovered errors
 ## Tests Statistics
 
 You can also find some useful statistics for a particular test: __Test duration__ graph on the __Test History__ page, which allows comparing the amount of time it takes individual tests to run on the builds of this build configuration. For more details refer to the [related page](working-with-build-results.md#Test+Duration+Graph).
-
- 
 
 ## Custom Charts
 

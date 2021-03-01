@@ -282,7 +282,7 @@ Note that traffic volumes and necessary server and agent machines characteristic
 Here are some points to help you estimate TeamCity-related traffic:
 
 * If TeamCity server is not located within the same EC2 region or availability zone that is configured in TeamCity EC2 settings for agents, traffic between the server and agent is subject to usual Amazon EC2 external traffic charges.
-* When estimating traffic, bear in mind that there are lots types of traffic related to TeamCity (see a non\-complete list below).
+* When estimating traffic, bear in mind that there are lots types of traffic related to TeamCity (see a non-complete list below).
 
 __External connections originated by server:__
 
@@ -295,12 +295,12 @@ __Internal connections originated by server:__
 * TeamCity agents (checking status, sending commands, retrieving information like thread dumps, and so on)
 
 __External connections originated by agent:__
-* VCS servers (in case of agent\-side checkout)
+* VCS servers (in case of agent-side checkout)
 * Maven repositories
 * any connections performed from the build process itself
 
 __Internal connections originated by agent:__
-* TeamCity server (retrieving build sources in case of server\-side checkout or personal builds, downloading artifacts, and so on)
+* TeamCity server (retrieving build sources in case of server-side checkout or personal builds, downloading artifacts, and so on)
 
 __Usual connections served by the server:__
 * web browsers
@@ -311,4 +311,3 @@ __Usual connections served by the server:__
 As Amazon rounds machine uptime to the full hour for some configurations (more at [How are Amazon EC2 instance hours billed?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-hour-billing/)), adjust timeout setting on the EC2 image setting on TeamCity cloud integration settings according to your usual builds length.
 
 It is also highly recommended to set execution timeout for all your builds so that a build hanging does not cause prolonged instance running with no payload.
-

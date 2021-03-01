@@ -46,9 +46,7 @@ Target
 
 <td>
 
-
 __Target__ should point to an SSH server location. The syntax is similar to the one used by the \*nix `scp` command:
-
 
 ```Shell
 {hostname|IP_address}[:targer_dir[/sub_path]] 
@@ -56,7 +54,6 @@ __Target__ should point to an SSH server location. The syntax is similar to the 
 ```
 
 where `target_dir` can be absolute or relative; `sub_path` can have any depth.
-
 
 </td></tr><tr>
 
@@ -117,7 +114,6 @@ Select an authentication method.
 
 The current secure connection implementation accepts _any_ certificate provided by the remote host. No trust checks are performed!
 </note>
-
 
 </td></tr><tr>
 

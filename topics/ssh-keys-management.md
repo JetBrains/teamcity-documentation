@@ -5,7 +5,7 @@ You can upload an SSH private key into a project via the TeamCity web interface 
 
 ## Supported Key Format
 
-TeamCity supports keys in the __PEM format only__. If your private key uses a different format, it has to be converted to PEM. For example, the Putty private key format (`*.ppk`), not supported by TeamCity, can be converted to the PEM format using [PuTTY Key Generator](https://www.puttygen.com/): use the menu  __Conversions__  | __Export OpenSSH key__.
+TeamCity supports keys in the __PEM format only__. If your private key uses a different format, it has to be converted to PEM. For example, the Putty private key format (`*.ppk`), not supported by TeamCity, can be converted to the PEM format using [PuTTY Key Generator](https://www.puttygen.com/): use the menu  __Conversions | Export OpenSSH key__.
 
 >Recent versions of OpenSSH no longer generate keys in PEM format by default. The new OpenSSH format is not yet supported by TeamCity (see [TW-53615](https://youtrack.jetbrains.com/issue/TW-53615)). Use the following command to generate TeamCity-compatible keys: `ssh-keygen -t rsa -m PEM`.
 >
@@ -17,7 +17,7 @@ TeamCity supports keys in the __PEM format only__. If your private key uses a di
 2. On the __SSH Keys__ page, click __Upload SSH Key__.
 3. In the "_Upload SSH Key_" dialog, select a private key (usually stored in `<USER_HOME>/.ssh/id_rsa` or `<USER_HOME>/.ssh/id_dsa`).
 
-When you upload an SSH key for a project, it is stored in \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/projects/\<project\>/pluginData/ssh_keys. TeamCity tracks this folder and is able to pick up new keys on-the-fly. The key will be available in the current project and its subprojects.
+When you upload an SSH key for a project, it is stored in `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<project>/pluginData/ssh_keys`. TeamCity tracks this folder and is able to pick up new keys on-the-fly. The key will be available in the current project and its subprojects.
 
 <note>
 

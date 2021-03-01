@@ -13,13 +13,11 @@ On the __Administration | Email Notifier__ page, set the options as described be
 
 Property
 
-
 </td>
 
 <td>
 
 Value
-
 
 </td></tr><tr>
 
@@ -27,13 +25,11 @@ Value
 
 SMTP host
 
-
 </td>
 
 <td>
 
 `smtp.gmail.com`
-
 
 </td></tr><tr>
 
@@ -41,13 +37,11 @@ SMTP host
 
 SMTP port
 
-
 </td>
 
 <td>
 
 465
-
 
 </td></tr><tr>
 
@@ -55,13 +49,11 @@ SMTP port
 
 Send email messages from
 
-
 </td>
 
 <td>
 
 Email address to send notifications from.
-
 
 </td></tr><tr>
 
@@ -69,13 +61,11 @@ Email address to send notifications from.
 
 SMTP login
 
-
 </td>
 
 <td>
 
 Full username with domain part if you use Google Apps for domain
-
 
 </td></tr><tr>
 
@@ -83,13 +73,11 @@ Full username with domain part if you use Google Apps for domain
 
 SMTP password
 
-
 </td>
 
 <td>
 
 User's GMail password
-
 
 </td></tr><tr>
 
@@ -97,13 +85,11 @@ User's GMail password
 
 Secure connection
 
-
 </td>
 
 <td>
 
 SSL
-
 
 </td></tr></table>
 

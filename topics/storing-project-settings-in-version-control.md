@@ -28,7 +28,7 @@ The __Configuration__ tab is used to define
    * when synchronization is enabled, you can define which settings to use when the build starts. See details [below](#Defining+Settings+to+Apply+to+Builds).
 * which VCS root is used to store the project settings: you can store the settings either in the same repository as the source code, or in a dedicated VCS root.
 
-Enabling synchronization for a project also enables it for all its subprojects with the default "_Use settings from a parent project_" option selected. TeamCity synchronizes all changes to the project settings (including modifications of [build configurations](build-configuration.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on) with the exception of [SSH keys](ssh-keys-management.md).   
+Enabling synchronization for a project also enables it for all its subprojects with the default "_Use settings from a parent project_" option selected. TeamCity synchronizes all changes to the project settings (including modifications of [build configurations](build-configuration.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on) except [SSH keys](ssh-keys-management.md).   
 However, if for certain subprojects the "_Synchronization disabled_" option is selected, such subprojects will not be synchronized even if this option is enabled for their parent project.
 
 As soon as synchronization is enabled in a project, TeamCity will make an initial commit in the selected repository for the whole project tree (the project with all its subprojects) to store the current settings from the server. If the settings for the given project are found in the specified VCS root (the VCS root for the parent project settings or the user-selected VCS root), a warning will be displayed asking if TeamCity should
@@ -54,7 +54,7 @@ Before starting a build, TeamCity stores configuration for this build in build i
 To define which settings to take __when build starts__, open the __Project Settings | Versioned Settings__ page, click __Show advanced options__, and select one of the following options:
 * __always use current settings__: all builds use current project settings from the TeamCity server. Settings' changes in branches, history, and personal builds are ignored. Users cannot run a build with custom project settings.
 * __use current settings by default__: a build uses the latest project settings from the TeamCity server. Users can run a build with older project settings via the [custom build dialog](triggering-a-custom-build.md#Changes).
-* __use settings from VCS__: builds in branches and history builds, which use settings from VCS, load settings from the versioned settings revision calculated for the build. Users can change configuration settings in [personal builds from IDE](remote-run.md) or can run a build with project settings current on the TeamCity server via the [custom build dialog](triggering-a-custom-build.md#Changes).
+* __use settings from VCS__: builds in branches and history builds, which use settings from VCS, load settings from the versioned settings' revision calculated for the build. Users can change configuration settings in [personal builds from IDE](remote-run.md) or can run a build with project settings current on the TeamCity server via the [custom build dialog](triggering-a-custom-build.md#Changes).
    * changes in the following settings will __affect__ the build:
      * build number pattern
      * build steps (build steps' parameters and their order)
