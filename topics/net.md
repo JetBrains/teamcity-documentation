@@ -195,7 +195,7 @@ Target framework. For example, `netcoreapp` or `netstandard`. Parameter referenc
 
 </tr><tr>
 
-<td>
+<td auxiliary-id="requiredNetSDK" id="requiredNetSDK">
 
 Required SDK
 
