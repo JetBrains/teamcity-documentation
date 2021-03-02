@@ -34,7 +34,7 @@ Alternatively, you can start the container under the root user by passing the `-
 
 ### No auto prefix for dotnet run command line parameters
 
-Since this version, the [.NET](net.md) build runner __does not apply `--` before the `dotnet run` parameters__. Previously, the runner added this prefix automatically which made it impossible to pass the custom options to the `run` command. To fix this, we've disabled thr previous behavior.  
+Since this version, the [.NET](net.md) build runner __does not apply `--` before the `dotnet run` parameters__. Previously, the runner added this prefix automatically which made it impossible to pass the custom options to the `run` command. To fix this, we've disabled the previous behavior.  
 Unfortunately, the affected .NET build steps cannot be converted automatically on upgrading. If any of your steps pass arguments to the running .NET application, please make sure to alter these steps and prepend the respective parameters with `--`.
 
 ### Bundled Tools Updates
