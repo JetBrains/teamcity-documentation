@@ -1,22 +1,19 @@
 [//]: # (title: Docker)
 [//]: # (auxiliary-id: Docker)
 
-TeamCity comes with built-in [Docker integration](integrating-teamcity-with-docker.md), which includes the Docker runner (formerly Docker Build) for launching Docker commands.
+The _Docker_ [build runner](build-runner.md) allows launching the `build`, `push`, and `tag` [Docker](https://www.docker.com/) commands inside your build.
 
-<include src="integrating-teamcity-with-docker.md" include-id="reqs-supported-env"/>
+>For the `run` command, use [Docker Wrapper](docker-wrapper.md).
 
-<chunk include-id="docker-runner">
+If a [Dockerfile](https://docs.docker.com/engine/reference/builder/) is present in your VCS repository and you create a TeamCity project based on this repository, TeamCity will [autodetect it](configuring-build-steps.md#Autodetecting+build+steps) and offer creating a build step using this runner.
 
-The Docker runner supports the `build`, `push`, and `tag` Docker commands.
+## Common Settings
 
-When creating TeamCity projects / build configurations from a repository URL, the runner is offered as a build step during auto-detection, provided a Dockerfile is present in the VCS repository.
+This runner is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
 
-</chunk>
+Available step execution policies are described [here](configuring-build-steps.md#Execution+policy).
 
- 
 ## Docker Command
-
-<chunk include-id="docker-command">
 
 The runner provides the following settings, depending on the selected command:
 
@@ -38,18 +35,17 @@ Parameter
 
 Description
 
-
 </td></tr>
 
 <tr>
 
 <td rowspan="8">
 
-build
+`build`
 
 </td>
 
-<td id="Docker build">
+<td id="Docker build" auxiliary-id="Docker build">
 
 Dockerfile source
 
@@ -57,7 +53,7 @@ Dockerfile source
 
 <td>
 
-Depending on the selected source, the settings below will vary. The available options include File, a URL or File content.
+Depending on the selected source, the settings below will vary. Available options are _File_, _URL_, and _File content_.
 
 </td></tr><tr>
 
@@ -69,8 +65,9 @@ Path to file
 
 <td>
 
-_Available if File is selected as the source_. Specify the path to the Docker file. The path should be relative to the [checkout directory](build-checkout-directory.md).
+Available for the _File_ source type:
 
+Specify the path to the [Dockerfile](https://docs.docker.com/engine/reference/builder/). The path should be relative to the [build checkout directory](build-checkout-directory.md).
 
 </td></tr><tr>
 
@@ -82,7 +79,9 @@ Context folder
 
 <td>
 
-_Available if File is selected as the source_. Specify the context for the Docker build. If blank, the enclosing folder for Dockerfile will be used.
+Available for the _File_ source type:
+
+Specify the [context](https://docs.docker.com/engine/reference/commandline/build/#extended-description) for the `docker build`. If blank, the parent directory of the Dockerfile will be used.
 
 </td></tr><tr>
 
@@ -94,7 +93,9 @@ URL to file
 
 <td>
 
-_Available if URL is selected as the source_. The URL can refer to three kinds of resources: Git repositories, pre-packaged tarball contexts, and plain text files. See the [Docker documentation](https://docs.docker.com/engine/reference/commandline/build/#extended-description) for details.
+Available for the _URL_ source type:
+
+The URL can refer to one of the three kinds of resources: Git repositories, prepackaged tarball contexts, and plain text files. See the [Docker documentation](https://docs.docker.com/engine/reference/commandline/build/#extended-description) for details.
 
 </td></tr><tr>
 
@@ -106,7 +107,9 @@ File Content
 
 <td>
 
-_Available if the file cis selected as the source_. You can enter the content of the Dockerfile into the field.
+Available for the _File Content_ source type:
+
+You can enter the content of the [Dockerfile](https://docs.docker.com/engine/reference/builder/) into the field.
 
 </td></tr><tr>
 
@@ -118,7 +121,7 @@ Image platform
 
 <td>
 
-Select \<Any\> (default), Linux or Windows.
+Select \<Any\> (default), Linux, or Windows.
 
 </td></tr><tr>
 
@@ -130,8 +133,7 @@ Image name:tag
 
 <td>
 
-Provide a newline-separated list of image name:[tag(s)](https://docs.docker.com/engine/reference/commandline/tag/)
-
+Provide a newline-separated list of image name:[tag(s)](https://docs.docker.com/engine/reference/commandline/tag/).
 
 </td></tr><tr>
 
@@ -143,13 +145,13 @@ Additional arguments for the `build` command
 
 <td>
 
-Supply additional arguments to the docker build command. See [Docker documentation](https://docs.docker.com/engine/reference/commandline/build/) for details.
+Supply additional arguments to the `docker build` command. See the [Docker documentation](https://docs.docker.com/engine/reference/commandline/build/) for details.
 
 </td></tr><tr>
 
 <td rowspan="2">
 
-push
+`push`
 
 </td>
 
@@ -161,7 +163,7 @@ Remove image from agent after push
 
 <td>
 
-If selected, TeamCity will remove the image with `docker rmi` at the end of the step
+If selected, TeamCity will remove the image with `docker rmi` at the end of the step.
 
 </td></tr><tr>
 
@@ -173,7 +175,7 @@ Image name:tag
 
 <td>
 
-Provide a newline-separated list of image name:tag(s)
+Provide a newline-separated list of image name:[tag(s)](https://docs.docker.com/engine/reference/commandline/tag/).
 
 </td></tr><tr>
 
@@ -191,7 +193,7 @@ Command name
 
 <td>
 
-Docker sub-command, like `push` or `tag`. For run, use [Docker Wrapper](docker-wrapper.md)
+Docker sub-command, like `push` or `tag`. For the `run` command, use [Docker Wrapper](docker-wrapper.md).
 
 </td></tr><tr>
 
@@ -203,6 +205,8 @@ Working directory
 
 <td>
 
+Specify the [build working directory](build-working-directory.md) if it differs from the [checkout directory](build-checkout-directory.md).
+
 </td></tr><tr>
 
 <td>
@@ -213,13 +217,13 @@ Additional arguments for the command
 
 <td>
 
-Additional arguments that will be passed to the Docker command.
+Additional arguments that will be passed to the `docker` command.
 
 </td></tr></table>
 
 ### Running Docker via sudo
 
-You can enforce starting Docker commands on a TeamCity agent via `sudo`. Add the `teamcity.docker.use.sudo=true` setting in the [build agent configuration file](build-agent-configuration.md) or as an agent's system property. On the agent start, the TeamCity agent log will inform that the `sudo` prefix is used to run Docker commands.
+You can enforce starting Docker commands on a TeamCity agent via `sudo`. Add the `teamcity.docker.use.sudo=true` setting in the [build agent configuration file](build-agent-configuration.md) or as an agent's system property. On the agent start, the TeamCity agent log will inform you that the `sudo` prefix is used to run Docker commands.
 
 To configure the `sudoers` file for the `sudo` command, use [`visudo`](https://www.sudo.ws/man/1.8.17/visudo.man.html) as follows:
 
@@ -229,14 +233,12 @@ buildagentuser ALL=(ALL) NOPASSWD:SETENV:<full_path_to_docker>
 ```
 
 We recommend removing (or commenting out) the `Defaults requiretty` line from the `sudoers` file to prevent the [problem with `docker login`](https://youtrack.jetbrains.com/issue/TW-60990).
-
-</chunk>
  
 <seealso>
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-docker.md">Integrating TeamCity with Docker</a>
             <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
-            <a href="docker-support.md">Docker Support build feature</a>
+            <a href="docker-support.md">Docker Support feature</a>
             <a href="docker-compose.md">Docker Compose runner</a>
             <a href="docker-wrapper.md">Docker Wrapper extension</a>
         </category>

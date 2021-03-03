@@ -1,15 +1,17 @@
 [//]: # (title: Configuring Connections to Docker)
 [//]: # (auxiliary-id: Configuring Connections to Docker)
 
-A preconfigured Docker connection allows to
-* log in to an authenticated registry before running a build / log out after the build 
+A preconfigured Docker connection allows you to:
+* log in to an authenticated registry before running a build / log out after the build;
 * clean up the published images after the build.
 
-<chunk include-id="docker-connection">
+>This type of connection is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
 
-The __Project Settings | Connections__ page allows you to configure a connection to [docker.io](http://docker.io/) (default) or a private Docker registry. More than one connection can be added to the project. The connection will be available in all the subprojects and build configurations of the current project.
+You can configure a _Docker Registry_ connection on the __Project Settings | Connections__ page. TeamCity supports connections to [docker.io](http://docker.io/) (default) or private Docker registries. More than one connection can be added to the project. The connection will be available in all the subprojects and build configurations of the current project.
 
-After configuring the Docker Registry connection for a TeamCity project, you need to select it when creating the [Docker Support](docker-support.md) feature in the respective build configuration.
+>After configuring the Docker Registry connection for a TeamCity project, you need to select it when adding the [Docker Support](docker-support.md) feature to the respective build configuration.
+> 
+{type="note"}
 
 ## Registry Address Format
 
@@ -21,13 +23,22 @@ If the protocol is not specified, the connection over `https` is used by default
 
 ## Connecting to Private Cloud Registry
 
-* TeamCity supports the Azure container registry storing Docker images; you can authenticate using [Service principal](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication#service-principal) (the principal ID and password are used as connection credentials) or [Admin account](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication#admin-account).
-* Amazon Elastic Container Registry (AWS ECR) is supported: specify the AWS region and your AWS Security Credentials when configuring the connection.
+TeamCity supports the Azure container registry storing Docker images. You can authenticate using the [Service principal](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication#service-principal) (the principal ID and password are used as the connection credentials) or [Admin account](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication#admin-account).
+
+Amazon Elastic Container Registry (AWS ECR) is supported: specify the AWS region and your AWS Security Credentials when configuring the connection.
 
 ## Connecting to Insecure Registry
 
 To connect to an insecure registry:
 1. Configure all TeamCity agents where Docker is installed to work with insecure repositories as stated in the [Docker documentation](https://docs.docker.com/registry/insecure/#deploying-a-plain-http-registry). This is sufficient to allow the connection to the private registry over HTTP.
-2. To connect to an insecure registry over HTTPS with a self-signed certificate, in addition to the step above, import the self-signed certificate to the JVM of the TeamCity server as described [here](using-https-to-access-teamcity-server.md#Configuring+client+JVM+for+trusting+server+certificate). You can consult the Docker documentation on [using self-signed certificates](https://docs.docker.com/registry/insecure/#using-self-signed-certificates). 
+2. To connect to an insecure registry over HTTPS with a self-signed certificate, in addition to the step above, import the self-signed certificate to the JVM of the TeamCity server as described [here](using-https-to-access-teamcity-server.md#Configuring+client+JVM+for+trusting+server+certificate). You can consult the Docker documentation on [using self-signed certificates](https://docs.docker.com/registry/insecure/#using-self-signed-certificates).
 
-</chunk> 
+<seealso>
+        <category ref="admin-guide">
+            <a href="integrating-teamcity-with-docker.md">Integrating TeamCity with Docker</a>
+            <a href="docker.md">Docker runner</a>
+            <a href="docker-compose.md">Docker Compose runner</a>
+            <a href="docker-support.md">Docker Support feature</a>
+            <a href="docker-wrapper.md">Docker Wrapper extension</a>
+        </category>
+</seealso>
