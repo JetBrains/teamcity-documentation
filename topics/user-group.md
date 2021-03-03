@@ -13,7 +13,6 @@ You can create as many user groups as you need, and each user group can include 
 
 <anchor name="allusers"/>
 
-
 #### "All Users" Group
 
 __All Users__ is a special user group that is always present in the system. The group contains all registered users and no user can be removed from the group. You can modify roles and notification rules of the "All Users" group to make them default for all the users in the system.

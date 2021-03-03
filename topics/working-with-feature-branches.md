@@ -54,7 +54,7 @@ If a branch specification has several patterns with the `*` wildcard, then TeamC
 will include the `refs/heads/v1/hotfix` branch (because `v1` is shorter than `hotfix`).    
 If 2 patterns with `*` wildcard produce logical names of the same length, then the last pattern wins.
 
-The branch specification supports comments as lines beginning with "`#"`.
+The branch specification supports comments as lines beginning with `#`.
 
 There is also a special escaping syntax defined via `#! escape: CHARACTER` syntax: for example, to use round brackets in a branch name, you need to escape them. Let's say you want to track the `release-(7.1)` branch: to do that, specify an escaping symbol as the first line in the specification. For Mercurial, the following branch specification does that:
 
@@ -119,7 +119,7 @@ You can also filter history by a branch name if you're interested in a particula
 
 ## Changes
 
-For each build TeamCity shows changes included in it. For builds from branches the changes calculation process takes the branch into account and presents you with the changes relevant to the build branch. The changes for a build in a branch are calculated as the changes from the build's revision to the previous build in the branch or a build in the default branch.   
+For each build TeamCity shows changes included in it. For builds from branches the changes' calculation process takes the branch into account and presents you with the changes relevant to the build branch. The changes for a build in a branch are calculated as the changes from the build's revision to the previous build in the branch or a build in the default branch.   
 The change log with its graph of commits will help you understand what is going on in the monitored branches.
 
 <img src="branchesChange.png" alt="Build changes" width="750"/>
@@ -181,7 +181,7 @@ The Build Configuration status is calculated based on the builds from the defaul
 
 If your build configuration uses more than one VCS root and you specified branches to monitor in both VCS roots, the way the builds are triggered is more complicated.
 
-The VCS trigger groups branches from several VCS roots by [logical branch names](#Logical+branch+name). When some root does not have a branch from the other root, its default branch is used. For example, you have 2 VCS roots, both have the default branch `refs/heads/master`, the first root has the branch specification `refs/heads/7.1/*` and changes in branches `refs/heads/7.1/feature1` and `refs/heads/7.1/feature2`, the second root has the specification `refs/heads/devel/*` and changes in branch `refs/heads/devel/feature1`. In this case VCS trigger runs 3 builds with revisions from following branches combinations:
+The VCS trigger groups branches from several VCS roots by [logical branch names](#Logical+branch+name). When some root does not have a branch from the other root, its default branch is used. For example, you have 2 VCS roots, both have the default branch `refs/heads/master`, the first root has the branch specification `refs/heads/7.1/*` and changes in branches `refs/heads/7.1/feature1` and `refs/heads/7.1/feature2`, the second root has the specification `refs/heads/devel/*` and changes in branch `refs/heads/devel/feature1`. In this case, VCS trigger runs 3 builds with revisions from following branches combinations:
 
 <table><tr>
 
@@ -233,8 +233,6 @@ refs/heads/devel/feature1
 refs/heads/7.1/feature2
 
 </td>
-
-
 
 <td>
 

@@ -1,5 +1,6 @@
 [//]: # (title: Viewing Build Agent Details)
 [//]: # (auxiliary-id: Viewing Build Agent Details)
+
 To view the state and information about an agent, click its name or navigate to the __Agents__ page, find the agent in the list of connected, disconnected or authorized agents and click its name.
 
 For each connected agent TeamCity provides the following information:
@@ -23,7 +24,6 @@ For each connected agent TeamCity provides the following information:
   Additional configuration of the reboot command is possible. See [Agent Reboot](#Agent+Reboot).
   * Dump threads on agent
 
-
 ### Agent Reboot
 [//]: # (AltHead: Configuring Agent Reboot Command)
 
@@ -42,7 +42,6 @@ or
 teamcity.agent.reboot.command=shutdown -r -t 60 -c "TeamCity Agent reboot command" -f
 
 ```
-
 
 ## Build History
 
@@ -63,7 +62,6 @@ The page allows viewing and downloading the logs.
 ## Agent Parameters
 
 The tab lists system properties, environment variables, and configuration parameters. Refer to the [Configuring Build Parameters](configuring-build-parameters.md) page for more information on different types of parameters.
-
 
 <seealso>
         <category ref="installation">

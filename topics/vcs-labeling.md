@@ -90,7 +90,6 @@ This will require you to set the `%projectName%` [configuration parameter](confi
 
 By default, TeamCity will append the label name to the end of the specified target path. If you want to have a different directory structure and put the label in the middle of the target path, you can use the following syntax:
 
-
 ```Plain Text
 /project/trunk => /tagged_configurations/%%system.build.label%%/project
 /modules/module1/trunk => /tagged_configurations/%%system.build.label%%/module1

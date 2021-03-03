@@ -139,7 +139,6 @@ Depending on the way the build is triggered, the checkbox behavior will be as fo
 * if the build is triggered via the [run custom build](triggering-a-custom-build.md) dialog without changing anything, the 'unchecked value' is used (if not empty); and if it is empty, the default value is used
 * if the build is triggered via the [run custom build](triggering-a-custom-build.md) dialog with the box checked, the 'checked value' is used (if not empty); and if it is empty, the 'true' value is used
 
-
 </td></tr><tr>
 
 <td>
@@ -152,7 +151,6 @@ Select
 <td>
 
 Check the __Allow multiple__ box to enable multiple selection. In the __Items__ field specify a newline-separated list of items. Use the following syntax `label => value` or `value`.
-
 
 </td></tr></table>
 

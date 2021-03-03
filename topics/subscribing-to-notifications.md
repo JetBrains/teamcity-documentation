@@ -24,11 +24,7 @@ TeamCity allows you to flexibly adjust the notification rules, so that you recei
 2\. Click the required notifications type and configure the required settings: 
  * __Email Notifier__*: relies on the email address specified in __My Settings &amp; Tools | General__.
 
-<tip>
-
-Note that TeamCity comes with a default notification rule. It will send you an email notification if a build with your changes has failed. This rule starts working after you enter the email address.
-
-</tip>
+>Note that TeamCity comes with a default notification rule. It will send you an email notification if a build with your changes has failed. This rule starts working after you enter the email address.
 
 * __IDE Notifier__: the required TeamCity plugin must be installed in your IDE. For the details on installing TeamCity IDE plugins, refer to [Installing Tools](installing-tools.md).
 * __Jabber Notifier__*: expects entering a Jabber account name. Note that instead of Jabber you can specify your Google Talk account here if this option is [configured by the System Administrator](setting-up-google-mail-and-google-talk-as-notification-servers.md#Google+Talk).
@@ -78,20 +74,17 @@ Make sure your [Version Control Username](managing-users-and-user-groups.md#VCS+
 
 * __My favorite builds only__ — limit notifications to your [favorite builds](favorite-build.md).
 
-
 </td></tr><tr>
 
 <td>
 
 System wide events
 
-
 </td>
 
 <td>
 
 Select to be notified about investigations assigned to you.
-
 
 </td></tr></table>
 
@@ -100,7 +93,6 @@ Select to be notified about investigations assigned to you.
 <table>
 
 <tr><td></td><td></td></tr>
-
 
 <tr>
 
@@ -130,13 +122,11 @@ Note that if __Builds with my changes only__ is selected in the __Watch__ area, 
 
 Only notify on the first failed build after successful
 
-
 </td>
 
 <td>
 
 Check this option to be notified about only the first failed build after a successful build or the first build with your changes. When using this option, you will not be notified about subsequent failed builds.
-
 
 </td></tr><tr>
 
@@ -161,7 +151,6 @@ __Build is successful__
 <td>
 
 Check this option to receive notifications when a build of the specified projects and build configurations executed successfully.
-
 
 </td></tr><tr>
 
@@ -193,13 +182,11 @@ Check this option to receive notifications about a "failing" build as soon as th
 
 __Build starts__
 
-
 </td>
 
 <td>
 
 Check this option to receive notifications as soon as a build starts.
-
 
 </td></tr><tr>
 
@@ -207,13 +194,11 @@ Check this option to receive notifications as soon as a build starts.
 
 __Build fails to start__
 
-
 </td>
 
 <td>
 
 Check this option to receive notifications when a build [fails to start](build-state.md#Personal+Build+States).
-
 
 </td></tr><tr>
 
@@ -221,13 +206,11 @@ Check this option to receive notifications when a build [fails to start](build-s
 
 __Build is probably hanging__
 
-
 </td>
 
 <td>
 
 Check this option to receive notifications when TeamCity identifies a build as [hanging](configuring-general-settings.md#Hanging+Build+Detection).
-
 
 </td></tr><tr>
 
@@ -241,13 +224,11 @@ __Investigation is updated__
 
 Check this option to receive notifications on changing a build configuration or test investigation status, e.g. someone is investigating the problem, or problems were fixed, or the investigator changed.
 
-
 </td></tr><tr>
 
 <td>
 
 __Tests are muted or unmuted__
-
 
 </td>
 
@@ -255,20 +236,17 @@ __Tests are muted or unmuted__
 
 Check this option to receive notifications on the test [mute](investigating-and-muting-build-failures.md#Muting+Failed+Tests) status change in the affected build configurations.
 
-
 </td></tr><tr>
 
 <td>
 
 __Investigation assigned to me__
 
-
 </td>
 
 <td>
 
 This option is available only if the __System wide events__ option is selected in the __Watch__ area. Check the option to be notified each time you start investigating a problem.
-
 
 </td></tr></table>
 
@@ -301,13 +279,11 @@ TeamCity allows obtaining information about the finished builds or about the bui
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -315,20 +291,15 @@ Description
 
 __Select Build Configurations__
 
-
 </td>
 
 <td>
-
- 
-
 
 </td></tr><tr>
 
 <td>
 
 List build configurations
-
 
 </td>
 
@@ -347,13 +318,11 @@ Specify which build configurations to display in the __Select build configuratio
 
 Select build configurations or projects
 
-
 </td>
 
 <td>
 
 Use this list to select the build configurations or projects you want to be informed about via a syndication feed.
-
 
 </td></tr><tr>
 
@@ -361,13 +330,9 @@ Use this list to select the build configurations or projects you want to be info
 
 __Feed Entries Selection__
 
-
 </td>
 
 <td>
-
- 
-
 
 </td></tr><tr>
 
@@ -375,20 +340,17 @@ __Feed Entries Selection__
 
 Generate feed items for
 
-
 </td>
 
 <td>
 
 Specify the events to trigger syndication feed generation. You can opt to select builds, changes or both.
 
-
 </td></tr><tr>
 
 <td>
 
 Include builds
-
 
 </td>
 
@@ -400,13 +362,11 @@ Specify the types of builds to be informed about:
 * Only successful
 * Only failed
 
-
 </td></tr><tr>
 
 <td>
 
 Only builds with changes of the user
-
 
 </td>
 
@@ -414,13 +374,11 @@ Only builds with changes of the user
 
 Select the user whose changes you want to be notified about. You can get a syndication feed about the changes of all users, yours only, or of a particular user from the list of users registered to the server.
 
-
 </td></tr><tr>
 
 <td>
 
 __Other Settings__
-
 
 </td>
 
@@ -428,19 +386,19 @@ __Other Settings__
 
 The following options are available only if __All__ is selected in the __List build configurations__ section.
 
-
 </td></tr><tr>
 
 <td>
+
 Feed Authentication Settings
 
 </td>
 
 <td>
 
-__Include credentials for HTTP authentication__ — check this box to specify the user name and password for automatic authentication. If this option is not checked, you will have to enter your user name and password in the authorization dialog box of your feed reader.
+__Include credentials for HTTP authentication__ — check this box to specify the username and password for automatic authentication. If this option is not checked, you will have to enter your user name and password in the authorization dialog box of your feed reader.
 
-_TeamCity User_, _Password_ — configurable when the ... option is checked. Type the user name and password which will be used for HTTP authorization.   
+_TeamCity User_, _Password_ — configurable when the ... option is checked. Type the username and password which will be used for HTTP authorization.   
 
 </td></tr><tr>
 
@@ -448,13 +406,11 @@ _TeamCity User_, _Password_ — configurable when the ... option is checked. Typ
 
 __Copy and Paste the URL into Your Feed Reader or Subscribe__
 
-
 </td>
 
 <td>
 
 This field displays the URL generated by TeamCity on the basis of the values specified above. You can either copy and paste it to your feed reader or click the __Subscribe__ link.
-
 
 </td></tr></table>
 
@@ -462,11 +418,7 @@ This field displays the URL generated by TeamCity on the basis of the values spe
 
 In addition to the URL parameters available in the [Feed URL Generator](#Feed+URL+Generator+Options), the following parameters are supported:
 
-
 [//]: # (Internal note. Do not delete. "Subscribing to Notificationsd301e584.txt")    
-
-
-
 
 <table><tr>
 
@@ -474,13 +426,11 @@ In addition to the URL parameters available in the [Feed URL Generator](#Feed+UR
 
 Parameter Name
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -488,13 +438,11 @@ Description
 
 `itemsCount`
 
-
 </td>
 
 <td>
 
 A number; limits the number of items to return in a feed. Defaults to 100.
-
 
 </td></tr><tr>
 
@@ -502,20 +450,17 @@ A number; limits the number of items to return in a feed. Defaults to 100.
 
 `sinceDate`
 
-
 </td>
 
 <td>
 
 A negative number; specifies the number of minutes. Only builds finished within the specified number of minutes from the moment of feed request will be returned. Defaults to 5 days.
 
-
 </td></tr><tr product="tc">
 
 <td>
 
 `template`
-
 
 </td>
 
@@ -537,7 +482,7 @@ http://teamcity.server:8111/httpAuth/feed.html?buildTypeId=bt1&itemsType=builds&
 
 ```
 
- <seealso>
+<seealso>
         <category ref="admin-guide">
             <a href="customizing-notifications.md" product="tc">Customizing Notifications</a>
             <a href="notifications.md">Notifications</a>

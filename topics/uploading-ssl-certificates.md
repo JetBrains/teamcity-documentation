@@ -7,10 +7,12 @@ It is possible to upload an SSL certificate which TeamCity considers trusted whe
 
 The trusted certificate storage is global for the whole server and affects all server projects.
 
-__To add a trusted certificate__
+To add a trusted certificate:
 1. Navigate to the Root project __Administration__ area and select the __SSL/HTTPS Certificates__ menu item in the sidebar.
 2. Click __Upload certificate__, specify the certificate name and choose a certificate file of one of the __supported formats__: PEM, DER or PKCS#7.
 3. Save your changes.
+
+The uploaded certificate will be applied to all the settings on the server.
 
 ## Delivering certificates to TeamCity agents
 

@@ -291,6 +291,10 @@
             <toc-element id="integrating-teamcity-with-other-tools.md" hidden="true"/>
             <toc-element toc-title="Integrating TeamCity with Other Tools">
                 <toc-element id="integrating-teamcity-with-vcs-hosting-services.md" show-structure-for="chapter" show-structure-depth="4"/>
+                <toc-element id="integrating-teamcity-with-docker.md" show-structure-for="chapter" show-structure-depth="4">
+                    <toc-element id="docker-wrapper.md" show-structure-for="chapter" show-structure-depth="4"/>
+                    <toc-element id="configuring-connections-to-docker.md" show-structure-for="chapter" show-structure-depth="4"/>
+                </toc-element>
                 <toc-element id="integrating-teamcity-with-issue-tracker.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="jira.md" show-structure-for="chapter" show-structure-depth="4"/>
                     <toc-element id="bugzilla.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -298,10 +302,6 @@
                     <toc-element id="github.md" show-structure-for="chapter" show-structure-depth="4"/>
                     <toc-element id="bitbucket-cloud.md" show-structure-for="chapter" show-structure-depth="4"/>
                     <toc-element id="team-foundation-work-items.md" show-structure-for="chapter" show-structure-depth="4"/>
-                </toc-element>
-                <toc-element id="integrating-teamcity-with-docker.md" show-structure-for="chapter" show-structure-depth="4">
-                    <toc-element id="docker-wrapper.md" show-structure-for="chapter" show-structure-depth="4"/>
-                    <toc-element id="configuring-connections-to-docker.md" show-structure-for="chapter" show-structure-depth="4"/>
                 </toc-element>
             </toc-element>
             <toc-element id="managing-user-accounts-groups-and-permissions.md">
@@ -360,4 +360,6 @@
     <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
     <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
     <toc-element toc-title="TeamCity On-Premises Documentation" href="https://www.jetbrains.com/help/teamcity/teamcity-documentation.html"/>
+    <toc-element toc-title="TeamCity Roadmap" href="https://www.jetbrains.com/teamcity/roadmap/"/>
+    <toc-element toc-title="TeamCity Blog" href="https://blog.jetbrains.com/teamcity/"/>
 </product-profile>

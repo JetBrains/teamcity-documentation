@@ -46,9 +46,7 @@ Target
 
 <td>
 
-
 __Target__ should point to an SSH server location. Enter hostname or IP address.
-
 
 </td></tr><tr>
 
@@ -106,12 +104,10 @@ Select an SSH authentication method.
 * __Password__ — simple password authentication.
 * __SSH-Agent__ — use ssh-agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
 
-
 <note>
 
 The current secure connection implementation accepts _any_ certificate provided by the remote host. No trust checks are performed!
 </note>
-
 
 </td></tr><tr>
 

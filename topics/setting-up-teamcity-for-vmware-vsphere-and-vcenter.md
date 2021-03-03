@@ -1,6 +1,7 @@
 [//]: # (title: Setting Up TeamCity for VMware vSphere and vCenter)
 [//]: # (auxiliary-id: Setting Up TeamCity for VMware vSphere and vCenter)
-TeamCity vSphere integration allows using TeamCity [agent cloud features](teamcity-integration-with-cloud-solutions.md) with VMware __vSphere__ and __vCenter__ installation. It requires configuring TeamCity with your VMware vSphere/vCenter account and then handles automatic creation/starting/stopping/deleting of the virtual machines with TeamCity agents on\-demand, based on the queued builds.
+
+TeamCity vSphere integration allows using TeamCity [agent cloud features](teamcity-integration-with-cloud-solutions.md) with VMware __vSphere__ and __vCenter__ installation. It requires configuring TeamCity with your VMware vSphere/vCenter account and then handles automatic creation/starting/stopping/deleting of the virtual machines with TeamCity agents on-demand, based on the queued builds.
 
 The functionality is implemented as a plugin bundled with TeamCity.
 
@@ -29,7 +30,7 @@ The following steps are required to set up TeamCity-VMware vSphere agent cloud i
 2. Make sure VMware Tools or Open VM Tools are installed. See [VMware documentation](https://docs.vmware.com/en/VMware-Tools/10.1.0/com.vmware.vsphere.vmwaretools.doc/GUID-28C39A00-743B-4222-B697-6632E94A8E72.html).
 3. Install a TeamCity agent, configure and test the machine as described in [this section](teamcity-integration-with-cloud-solutions.md#Preparing+a+virtual+machine).
    * If you want TeamCity to start/stop this machine on demand or to clone it, proceed to configuring the VMware [cloud profile](agent-cloud-profile.md) on the TeamCity server.  When the profile is modified, TeamCity detects the changes immediately, and forces shutdown of the agents started prior to these changes once the agents finish the current build.
-   * If you want to create a template of this machine and clone it, refer to the VMware vSphere web site for details on creating [templates](https://pubs.vmware.com/vsphere-51/index.jsp#com.vmware.vsphere.vm_admin.doc/GUID-F40130B0-0194-4A41-91FA-1A967721924B.html) and proceed to configuring the VMware [cloud profile](agent-cloud-profile.md) on the TeamCity server. Make sure to specify the valid [vCenter SDK URL](https://pubs.vmware.com/vsphere-51/topic/com.vmware.vsphere.install.doc/GUID-191D86C8-EEF4-4198-9C11-2E0F25D2AB89.html).
+   * If you want to create a template of this machine and clone it, refer to the VMware vSphere website for details on creating [templates](https://pubs.vmware.com/vsphere-51/index.jsp#com.vmware.vsphere.vm_admin.doc/GUID-F40130B0-0194-4A41-91FA-1A967721924B.html) and proceed to configuring the VMware [cloud profile](agent-cloud-profile.md) on the TeamCity server. Make sure to specify the valid [vCenter SDK URL](https://pubs.vmware.com/vsphere-51/topic/com.vmware.vsphere.install.doc/GUID-191D86C8-EEF4-4198-9C11-2E0F25D2AB89.html).
 
 <note>
 

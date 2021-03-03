@@ -43,20 +43,17 @@ To enforce the cross-platform mode on TeamCity, set the `teamcity.tfs.mode=java`
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 URL
-
 
 </td>
 
@@ -68,7 +65,6 @@ Team Foundation Server URL in the following format:
 * TFS 2005/2008: `http[s]://<host>:<port>`
 * Azure DevOps: `https://dev.azure.com/<organization>`
 * VSTS: `https://<accountname>.visualstudio.com`
-
 
 </td></tr><tr>
 
@@ -82,13 +78,11 @@ Root
 
 Specify the root using the following format: ` $<project name><project_catalog>`
 
-
 </td></tr><tr>
 
 <td>
 
 Username
-
 
 </td>
 
@@ -97,13 +91,11 @@ Username
 Specify a user to access Team Foundation Server. This can be a username or `DOMAIN\UserName` string.   
 Use blank to let TFS select a user account that is used to run the TeamCity Server (or Agent for the agent-side checkout).
 
-
 </td></tr><tr>
 
 <td>
 
 Password
-
 
 </td>
 
@@ -131,13 +123,11 @@ The created TFS workspaces are automatically removed based on the timeout config
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -145,13 +135,11 @@ Description
 
 Enforce overwrite all files
 
-
 </td>
 
 <td>
 
 When the option is enabled, TeamCity will call TFS to update workspace rewriting all files.
-
 
 </td></tr></table>
 
