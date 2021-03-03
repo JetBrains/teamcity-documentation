@@ -8,17 +8,17 @@ The extension is available for the following [build runners](build-runner.md):
 * [Maven](maven.md)
 * [Ant](ant.md)
 * [Gradle](gradle.md)
-* [.NET](net.md),
+* [.NET](net.md)
 * [Python](python.md)
 * [PowerShell](powershell.md)
   
 Each of the supported runners has the dedicated Docker settings section.
 
->This extension is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
+>_Docker Wrapper_ is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
 
 ## Docker Settings
 
-In the _Docker Settings_ section of the build step settings, you can specify a Docker image which will be used to run the build step. Once the image is specified, all the following options become available.
+In the _Docker Settings_ section of the build step settings, you can specify a Docker image which will be used to run the build step. Once the image is specified, the following options become available.
 
 <table><tr>
 
@@ -82,13 +82,8 @@ Additional docker run arguments
 
 Allows specifying additional options for the `docker run` command. The default argument is `--rm`, but you can provide more, for instance, add an additional volume mapping.
 
-<note>
-     
-In this field, you cannot reference environment variables using the `%env.FOO_BAR%` syntax because TeamCity does not pass environment variables from a build agent into a Docker container.
-
+>In this field, you cannot reference environment variables using the `%env.FOO_BAR%` syntax because TeamCity does not pass environment variables from a build agent into a Docker container.  
 If you need to reference an environment variable on an agent, define the configuration parameter `system.FOO_BAR=env_var_value` in [`buildAgent.properties`](build-agent-configuration.md) and reference it via `%system.FOO_BAR%`.
-     
-</note>
 
 </td></tr></table>
 

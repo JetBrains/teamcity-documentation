@@ -3,19 +3,19 @@
 
 The _Docker Support_ [build feature](adding-build-features.md) allows automatically signing in to a Docker registry before the build start.
 
-Adding this build feature will enable the Docker events' monitoring: such operations as `docker pull` and `docker run` will be detected.
+Adding this feature:
+* enables the Docker events' monitoring: such operations as `docker pull` and `docker run` will be detected by TeamCity;
+* adds the __Docker Info__ tab to the [__Build Results__](working-with-build-results.md) page. The tab provides information on Docker-related operations.
 
-This build feature adds the __Docker Info__ tab to the [__Build Results__](working-with-build-results.md) page. The tab provides information on Docker-related operations.
+The feature also allows:
+* cleaning up the Docker images;
+* automatically log in to an authenticated registry before the build and log out of it after the build.
 
-The feature also enables:
-* an ability to clean up the Docker images;
-* automatic login to an authenticated registry before the build and logout of it after the build.
-
-These options require configuring a [connection to a Docker registry](configuring-connections-to-docker.md):
+These two options require configuring a [connection to a Docker registry](configuring-connections-to-docker.md):
 
 <img src="docker-support.png" width="750" alt="Docker Support build feature"/>
 
->This feature is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
+>_Docker Support_ is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
 
 ## Docker Images Clean-up
 
@@ -26,7 +26,7 @@ It works as follows: when an image is published, TeamCity stores the information
 
 If you need to log in to a registry requiring authentication before a build, select the corresponding option and a connection to Docker configured in the __Project Settings__. Automatic logout will be performed after the build finishes.
 
-[See also](integrating-teamcity-with-docker.md#Conforming+with+Docker+download+rate+limits) how to use this functionality to double the number of pulls allowed to a Free Docker Hub user profile.
+>[See also](integrating-teamcity-with-docker.md#Conforming+with+Docker+download+rate+limits) how to use this functionality to double the number of pulls allowed to a Free Docker Hub user profile.
 
 <seealso>
         <category ref="admin-guide">

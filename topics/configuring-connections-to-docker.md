@@ -9,7 +9,9 @@ A preconfigured Docker connection allows you to:
 
 You can configure a _Docker Registry_ connection on the __Project Settings | Connections__ page. TeamCity supports connections to [docker.io](http://docker.io/) (default) or private Docker registries. More than one connection can be added to the project. The connection will be available in all the subprojects and build configurations of the current project.
 
-After configuring the Docker Registry connection for a TeamCity project, you need to select it when adding the [Docker Support](docker-support.md) feature to the respective build configuration.
+>After configuring the Docker Registry connection for a TeamCity project, you need to select it when adding the [Docker Support](docker-support.md) feature to the respective build configuration.
+> 
+{type="note"}
 
 ## Registry Address Format
 

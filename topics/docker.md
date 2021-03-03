@@ -3,6 +3,8 @@
 
 The _Docker_ [build runner](build-runner.md) allows launching the `build`, `push`, and `tag` [Docker](https://www.docker.com/) commands inside your build.
 
+>For the `run` command, use [Docker Wrapper](docker-wrapper.md).
+
 If a [Dockerfile](https://docs.docker.com/engine/reference/builder/) is present in your VCS repository and you create a TeamCity project based on this repository, TeamCity will [autodetect it](configuring-build-steps.md#Autodetecting+build+steps) and offer creating a build step using this runner.
 
 ## Common Settings
@@ -51,7 +53,7 @@ Dockerfile source
 
 <td>
 
-Depending on the selected source, the settings below will vary. The available options include "File", "URL" or "File content".
+Depending on the selected source, the settings below will vary. Available options are _File_, _URL_, and _File content_.
 
 </td></tr><tr>
 
@@ -149,7 +151,7 @@ Supply additional arguments to the `docker build` command. See the [Docker docum
 
 <td rowspan="2">
 
-push
+`push`
 
 </td>
 
@@ -215,7 +217,7 @@ Additional arguments for the command
 
 <td>
 
-Additional arguments that will be passed to the Docker command.
+Additional arguments that will be passed to the `docker` command.
 
 </td></tr></table>
 
