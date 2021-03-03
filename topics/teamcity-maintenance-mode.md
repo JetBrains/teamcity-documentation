@@ -10,7 +10,7 @@ If you are a TeamCity system administrator, confirm it by entering the _authenti
 After you have provided this token, you can review the details on what kind of maintenance is required. The need in technical maintenance may be caused by one of the following factors:
 * [TeamCity data upgrade](#TeamCity+Data+Upgrade)
 
-[//]: # (Internal note. Do not delete. "TeamCity Maintenance Moded316e49.txt")    
+[//]: # (Internal note. Do not delete. "TeamCity Maintenance Moded316e49.txt")
 
 * [New TeamCity data format](#New+TeamCity+Data+Format)
 * [TeamCity startup error](#TeamCity+Startup+Error)

@@ -1,5 +1,6 @@
 [//]: # (title: Viewing Build Configuration Details)
 [//]: # (auxiliary-id: Viewing Build Configuration Details)
+
 The __Build Configuration Home__ page provides the configuration details and enables you to:
 	
 * [run a custom build](triggering-a-custom-build.md) using the __Run__ button

@@ -63,12 +63,9 @@ where `artifact.paths` is a system property. We need to add it on the __Paramete
 
 <img src="paths-to-artifacts-parameter.png" width="750" alt="Paths to artifacts in Build Parameters"/>
 
-Note that each parameter can have a specification where we can provide the label, description, type of control, and specify validation conditions. Before version 8.0 this specification was used by the custom build dialog only. Now this specification is used by a meta-runner as well.
+Note that each parameter can have a specification where we can provide the label, description, type of control, and specify validation conditions.
 
-<tip>
-
-Here the Ant build step is used just as an example. In the initial build configuration, you can use any of the available build runners (for example, MSBuild or .NET process), and configure the settings and define the parameters for this build step. When you extract a meta-runner from this build configuration, all the settings defined in the build step, and all the build parameters will be added to the meta-runner.
-</tip>
+>Here the Ant build step is used just as an example. In the initial build configuration, you can use any of the available build runners (for example, MSBuild or .NET process), and configure the settings and define the parameters for this build step. When you extract a meta-runner from this build configuration, all the settings defined in the build step, and all the build parameters will be added to the meta-runner.
 
 ### Verifying Build Configuration Works Properly
 
@@ -88,10 +85,7 @@ We also need to provide the name, description, and an ID for the meta-runner: th
 
 Upon clicking the __Extract__ button, TeamCity will take definitions of all build steps and parameters in this build configuration and create a build runner out of them.
 
-<tip>
-
-Besides build steps and parameters, a meta-runner can also have requirements: if requirements are defined in the build configuration, they will be extracted to the meta-runner automatically. Requirements can be useful if the tools used by meta-runner are available on specific platforms only.
-</tip>
+>Besides build steps and parameters, a meta-runner can also have requirements: if requirements are defined in the build configuration, they will be extracted to the meta-runner automatically. Requirements can be useful if the tools used by meta-runner are available on specific platforms only.
 
 Once the meta-runner is extracted, it becomes available in the build runners' selector, under the name of the project it belongs to, and can be used in any build step just like any other build runner:
 

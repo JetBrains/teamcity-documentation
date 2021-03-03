@@ -1,8 +1,7 @@
 [//]: # (title: Testing Frameworks)
 [//]: # (auxiliary-id: Testing Frameworks)
-TeamCity provides out\-of\-the\-box support for a number of testing frameworks. In order to reduce feedback time on the test failures, TeamCity provides support for on\-the\-fly tests reporting where possible. On\-the\-fly tests reporting means that the tests are reported in the TeamCity UI as soon as they are run not waiting for the build to complete.
 
- 
+TeamCity provides out-of-the-box support for a number of testing frameworks. In order to reduce feedback time on the test failures, TeamCity provides support for on-the-fly tests reporting where possible. On-the-fly tests reporting means that the tests are reported in the TeamCity UI as soon as they are run not waiting for the build to complete.
 
 TeamCity directly supports the following _testing frameworks_:
 * JUnit and TestNG for the following runners: 
@@ -14,7 +13,7 @@ TeamCity directly supports the following _testing frameworks_:
      * The MSBuild ([NUnit community](http://msbuildtasks.tigris.org/) or [NUnitTeamCity](nunit-for-msbuild.md) tasks)
      * Microsoft Visual Studio Solution runners (2003, 2005, 2008, 2010, 2012, 2013, and Visual Studio 2015)
      * Any runner provided [TeamCity Addin for NUnit](teamcity-addin-for-nunit.md) is installed
-* [MSTest](mstest-support.md) 2005, 2008, 2010, 2012, 2013, and 2015 (On\-the\-fly reporting is not available due to MSTest limitations)
+* [MSTest](mstest-support.md) 2005, 2008, 2010, 2012, 2013, and 2015 (On-the-fly reporting is not available due to MSTest limitations)
 * [VSTest](visual-studio-tests.md) 2012, 2013, 2015
 * [MSpec](mspec.md)
 
@@ -33,10 +32,7 @@ If there is no TeamCity support yet for your testing framework, you can report t
 Also, see [notes](how-to.md#Integrate+with+Build+and+Reporting+Tools) on integrating with various reporting/metric tools.
 
 
-
-
-
- <seealso>
+<seealso>
         <category ref="user-guide">
             <a href="viewing-tests-and-configuration-problems.md">Viewing Tests and Configuration Problems</a>
         </category>

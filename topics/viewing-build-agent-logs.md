@@ -18,13 +18,11 @@ See the comments in the file for enabling the DEBUG mode: you will need to incre
 
 File name
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -32,13 +30,11 @@ Description
 
 `teamcity-agent.log`
 
-
 </td>
 
 <td>
 
 General build agent log
-
 
 </td></tr><tr>
 
@@ -46,13 +42,11 @@ General build agent log
 
 `teamcity-build.log`
 
-
 </td>
 
 <td>
 
 `stdout` and `stderr` output of builds run by the agent
-
 
 </td></tr><tr>
 
@@ -60,13 +54,11 @@ General build agent log
 
 `teamcity-vcs.log`
 
-
 </td>
 
 <td>
 
 VCS-related logging (for checkout mode "Automatically on agent")
-
 
 </td></tr><tr>
 
@@ -74,13 +66,11 @@ VCS-related logging (for checkout mode "Automatically on agent")
 
 `upgrade.log`
 
-
 </td>
 
 <td>
 
 log of the build agent upgrade (logged by the upgrading process)
-
 
 </td></tr><tr>
 
@@ -88,13 +78,11 @@ log of the build agent upgrade (logged by the upgrading process)
 
 `launcher.log`
 
-
 </td>
 
 <td>
 
 log of the agent's monitoring/launching process
-
 
 </td></tr><tr>
 
@@ -102,20 +90,17 @@ log of the agent's monitoring/launching process
 
 `wrapper.log`
 
-
 </td>
 
 <td>
 
 (only present when the agent is run as Windows service or by Java Service Wrapper) output of the process build agent launching process
 
-
 </td></tr></table>
 
 ## Generic Debug Logging
 
-To enable general debug logging on agent, change the `jetbrains.buildServer` category logging priority in the `<agent home>/conf/teamcity-agent-log4j.xml` file:
-
+To enable general debug logging on an agent, change the `jetbrains.buildServer` category logging priority in the `<agent home>/conf/teamcity-agent-log4j.xml` file:
 
 ```XML
 <category name="jetbrains.buildServer">
@@ -125,15 +110,12 @@ To enable general debug logging on agent, change the `jetbrains.buildServer` cat
 
 ```
 
-
-
 Then, see `teamcity-agent.log*` files.   
 To turn the debug mode off, make the line `<priority value="INFO"/>`.
 
 ## VCS Debug Logging
 
-To enable detailed VCS logging on agent, change the VCS category logging priority in the `<agent home>/conf/teamcity-agent-log4j.xml` file:
-
+To enable detailed VCS logging on an agent, change the VCS category logging priority in the `<agent home>/conf/teamcity-agent-log4j.xml` file:
 
 ```XML
 <category name="jetbrains.buildServer.VCS">
@@ -143,15 +125,12 @@ To enable detailed VCS logging on agent, change the VCS category logging priorit
 
 ```
 
-
-
 Then, see `teamcity-vcs.log*` files.   
 To turn debug mode off, make the line `<priority value="INFO"/>`.
 
 ## Specific Debug Logging
 
-To get dump of the data sent from the agent to the server, enable agent XML-RPC log, by uncommenting the line below in the `<agent home>/conf/teamcity-agent-log4j.xml` file.
-
+To get dump of the data sent from the agent to the server, enable an agent XML-RPC log, by uncommenting the line below in the `<agent home>/conf/teamcity-agent-log4j.xml` file.
 
 ```XML
 <category name="jetbrains.buildServer.XMLRPC">
@@ -160,7 +139,6 @@ To get dump of the data sent from the agent to the server, enable agent XML-RPC 
 </category>
 
 ```
-
 
 Then, see `teamcity-xmlrpc.log`.   
 To turn it off, make the line `<priority value="INFO"/>`.

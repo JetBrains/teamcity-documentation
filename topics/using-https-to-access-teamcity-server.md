@@ -17,7 +17,7 @@ We assume that you have [already configured HTTPS](how-to.md#Configure+HTTPS+for
 __If your certificate is valid__ (i.e. it was signed by a well known Certificate Authority like Verisign), then TeamCity clients should work with HTTPS without any additional configuration. All you have to do is use `https://` links to the TeamCity server instead of `http://`.
 
 __If your certificate is not valid (is self-signed):__ (i.e. is not signed by a known Certificate Authority and likely to result in "PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target" error message)
-* To enable HTTPS connections from the TeamCity [Visual Studio Add-in](visual-studio-addin.md) and [Windows Tray Notifier](windows-tray-notifier.md), point your Internet Explorer to the TeamCity server using `https://` URL and import the server certificate into the browser. After that, the Visual Studio Addin and Windows Tray Notifier should be able to connect by HTTPS.
+* To enable HTTPS connections from the TeamCity [Visual Studio Add-in](visual-studio-addin.md) and [Windows Tray Notifier](windows-tray-notifier.md), point your Internet Explorer to the TeamCity server using `https://` URL and import the server certificate into the browser. After that, the Visual Studio Add-in and Windows Tray Notifier should be able to connect by HTTPS.
   {product="tc"}
 * To enable HTTPS connections from Java clients (TeamCity Agents, IntelliJ IDEA, Eclipse, and so on), see the [section below](#Configuring+JVM) for configuring the JVM installation used by the connecting application.
 
@@ -35,16 +35,14 @@ To enable HTTPS connections from Java clients, you need to install the server ce
 * For TeamCity agent or server installed under Windows, the default location for &lt;path to JRE installation&gt; is &lt;TeamCity installation path&gt;/jre
 * import the server certificate into the default JRE installation keystore using JVM's `keytool` tool:
 
-
 ```Plain Text
 keytool -importcert -file <cert file> -keystore <path to JRE installation>/lib/security/cacerts
 ```
 
-
-
 By default, Java keystore is protected by password "`changeit`" which you need to type on prompt
 
 * restart the JVM
+
 ### Configuring JVM for authentication with client certificate
 
 If you have implemented a custom authentication based on client certificates in front of TeamCity server, you will need to make the JVM clients correctly authenticate with their certificate.
@@ -53,14 +51,13 @@ __Importing client certificate__
 
 If you need to use a client certificate to access a server via https (for example, from IntelliJ IDEA, Eclipse or the build agents), you will need to add the certificate to the Java keystore and supply the keystore to the JVM used by the connecting process.
 
-1\. If you have your certificate in a __p12__ file, you can use the following command to convert it to a Java keystore. Make sure you use `keytool` from JDK 1.6\-1.8: earlier versions may not understand p12 format.
+1\. If you have your certificate in a __p12__ file, you can use the following command to convert it to a Java keystore. Make sure you use `keytool` from JDK 1.6-1.8: earlier versions may not understand p12 format.
 
 ```Plain Text
 keytool -importkeystore -srckeystore <path to your .p12 certificate> -srcstoretype PKCS12 -srcstorepass <password of your p12 certificate> -destkeystore <path to keystore file>  -deststorepass <keystore password> -destkeypass <keystore password> -srcalias 1
 ```
 
-
-This commands extracts the certificate with the alias "1" from your .p12 file and adds it to Java keystore You should know &lt;path to your .p12 certificate&gt; and &lt;password of your p12 certificate&gt; and you can provide new values for &lt;path to keystore file&gt; and &lt;keystore password&gt;.
+These commands extract the certificate with the alias "1" from your .p12 file and adds it to Java keystore You should know &lt;path to your .p12 certificate&gt; and &lt;password of your p12 certificate&gt; and you can provide new values for &lt;path to keystore file&gt; and &lt;keystore password&gt;.
 
 Here, `keypass` should be equal to `storepass` because only `storepass` is supplied to the JVM, and if `keypass` is different, the following error may accur: "java.security.NoSuchAlgorithmException: Error constructing implementation (algorithm: Default, provider: SunJSSE, class: com.sun.net.ssl.internal.ssl.DefaultSSLContextImpl)".
 
@@ -89,8 +86,6 @@ MIIGUjCCBDqgAwIBAgIEAKmKxzANBgkqhkiG9w0BAQQFADBwMRUwEwYDVQQDEwxK
 
 ```
 
-
-
 Let's assume its name is &lt;path to root certificate&gt;.
 
 4\. Now import the root certificate to the trusted keystore with the command:
@@ -112,7 +107,6 @@ __Starting the connecting application JVM__
 
 Now you need to pass the following parameters to the JVM when running the application:
 
-
 ```Plain Text
 -Djavax.net.ssl.keyStore=<path to keystore file>
 -Djavax.net.ssl.keyStorePassword=<keystore password>
@@ -121,8 +115,6 @@ Now you need to pass the following parameters to the JVM when running the applic
 ```
 
 For IntelliJ IDEA, you can add the lines into the `bin\idea.exe.vmoptions` file (one option per line). For the TeamCity build agent, see [agent startup properties](configuring-build-agent-startup-properties.md).
-
-
 
 ## Useful tools in analyzing certificates issues
 

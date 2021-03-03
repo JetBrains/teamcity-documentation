@@ -1,5 +1,6 @@
 [//]: # (title: Viewing Your Changes)
 [//]: # (auxiliary-id: Viewing Your Changes)
+
 Monitoring the quality of the codebase is essential for a development team: a project developer needs to see whether his/her commit brought a build failure or not; for a project leader it is important to detect the code at fault for a build failure to be able to have the situation rectified early, so other members of the team are not inconvenienced.
 
 The __Changes__ page of the TeamCity web UI allows you to review the commits made by all TeamCity users and see how they have affected builds. You can filter the results with the user selector on the page.
@@ -11,7 +12,7 @@ Changes made by a user are displayed correctly only when appropriate [VCS userna
 
 By default, the page does not show the commits to the build configurations hidden by the current user on the Projects dashboard. To remove this filter and view all build configurations, deselect the __Hide configurations excluded from my Projects__ box.
 
-Each change now has a new pie\-chart icon with pie slices showing the relative size of pending, successful, as well as old and new problematic builds affected by the change. Hovering over/clicking the pie\-chart icon gives a visual representation of how the user commit has affected different builds. Builds with new/critical problems are listed by default. Expanding the change or clicking the _See builds_ link lists all builds with the change.
+Each change now has a new pie-chart icon with pie slices showing the relative size of pending, successful, as well as old and new problematic builds affected by the change. Hovering over/clicking the pie-chart icon gives a visual representation of how the user commit has affected different builds. Builds with new/critical problems are listed by default. Expanding the change or clicking the _See builds_ link lists all builds with the change.
 
 From this page you can:
 * View all commits and changes included into personal builds

@@ -21,7 +21,7 @@ Select an agent you want to run the build on from the drop-down menu. Note that 
 * if [cloud integration](teamcity-integration-with-cloud-solutions.md) is configured, you can select to run a build on an agent from a __certain cloud image__. If no available cloud agents of this type exist, TeamCity will also attempt to start a new one.
 * __run a build on &lt;a specified&gt; agent__
 * __All enabled compatible agents__: Use this option to run a build simultaneously on all agents that are enabled and compatible with the build configuration. This option may be useful in the following cases:
-  * run a build for agent maintenance purposes (e.g. you can create a configuration to check whether agents function properly after an environment upgrade/update).
+  * run a build for agent maintenance purposes (for example, you can create a configuration to check whether agents function properly after an environment upgrade/update).
   * run a build on different platforms (for example, you can set up a configuration, and specify for it a number of compatible build agents with different environments installed).
 
 On the __General__ options you can also specify whether
