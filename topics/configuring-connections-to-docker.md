@@ -13,6 +13,8 @@ You can configure a _Docker Registry_ connection on the __Project Settings | Con
 > 
 {type="note"}
 
+<anchor name="ConfiguringConnectionstoDocker-RegistryAddressFormat"/>
+
 ## Registry Address Format
 
 By default, [`https://docker.io`](https://docker.io/) is used.
