@@ -13,6 +13,6 @@ The audit log can also be retrieved in a text form, see the [TeamCity server log
 ## Audit storage period
 {product="tc"}
 
-TeamCity preserves and shows all audit logs indefinitely unless (a) respective projects or agents are deleted manually or (b) [server clean-up](clean-up.md#Server+Clean-up+Settings) is enabled. In (b) case, nonessential audit records are cleaned up automatically after one year. If there are no recent logs to show for a project or configuration, the _View history_ link will not be available.
+TeamCity preserves and shows all audit logs indefinitely unless (a) respective projects or agents are deleted manually or (b) [server clean-up](clean-up.md#Server+Clean-up+Settings) is enabled. In (b) case, nonessential audit records are cleaned up automatically after one year. If there are no audit entries to show for a project or configuration, the _View history_ link will not be available.
 
 To modify this storage period, specify the number of days in the `teamcity.audit.cleanupPeriod` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (365 by default).
