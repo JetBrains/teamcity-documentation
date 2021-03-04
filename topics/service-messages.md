@@ -273,7 +273,7 @@ This custom subflow order affects the sequence of reports in a build log and all
 
 ## Reporting Messages for Build Log
 
-You can report messages for a build log in the following way:
+You can report messages for a build log as follows:
 
 ```Shell
 ##teamcity[message text='<message text>' errorDetails='<error details>' status='<status value>']
@@ -281,13 +281,15 @@ You can report messages for a build log in the following way:
 ```
 
 where:
-* `status` may take following values: `NORMAL` (default), `WARNING`, `FAILURE`, `ERROR`.
+* `status` can take the following values: `NORMAL` (default), `WARNING`, `FAILURE`, `ERROR`.
 * `errorDetails` is used only if `status` is `ERROR`, in other cases it is ignored.   
 This message fails the build in case its status is `ERROR` and the "_Fail build if an error message is logged by build runner_" box is checked on the __[Build Failure Conditions](build-failure-conditions.md)__ page of the build configuration. For example:
     ```Shell
     ##teamcity[message text='Exception text' errorDetails='stack trace' status='ERROR']
     
     ```
+  
+>If you want to control when a build fails, you can either configure a [failure condition](build-failure-conditions.md) or send a special [message with a build problem](#Reporting+Build+Problems).
 
 ### Blocks of Service Messages
 
