@@ -1,6 +1,7 @@
 [//]: # (title: Run Configuration Policy)
 [//]: # (auxiliary-id: Run Configuration Policy)
-The run configuration policy allows you to select the specific build configurations you want a build agent to run. By default, build agents run all compatible build configurations and this isn't always desirable. The run configuration policy settings are located on the __Compatible configurations__ tab of the [Agents Details](viewing-build-agent-details.md) page.
+
+The run configuration policy allows you to select the specific build configurations you want a build agent to run. By default, build agents run all compatible build configurations and this isn't always desirable. The run configuration policy settings are located on the __Compatible configurations__ tab of the [__Agents Details__](viewing-build-agent-details.md) page.
 
 <seealso>
         <category ref="admin-guide">

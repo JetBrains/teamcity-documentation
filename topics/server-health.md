@@ -1,7 +1,7 @@
 [//]: # (title: Server Health)
 [//]: # (auxiliary-id: Server Health)
 
-The __Server Health__ report contains results of the server inspection for any configuration issues which impact or could potentially impact the performance. Such issues, the so called server _health items_, are collectively reported by TeamCity on the __Server Health__ page in the __Administration__ area.
+The __Server Health__ report contains results of the server inspection for any configuration issues which impact or could potentially impact the performance. Such issues, the so-called server _health items_, are collectively reported by TeamCity on the __Server Health__ page in the __Administration__ area.
 
 The Project Administrator [permissions](role-and-permission.md) at least are required to see the report.
 
@@ -15,7 +15,7 @@ The Server Health analysis also employs the __severity__ rating, depending on th
 
 By default, the warning and error level results pertaining to the global configuration will be displayed on the report page as well as at the top of each page in TeamCity.
 
-Besides those, some items will be displayed in\-place: depending on the object causing the issue, the server health item will be reported on the Build Configuration, Template or VCS root settings page.
+Besides those, some items will be displayed in-place: depending on the object causing the issue, the server health item will be reported on the Build Configuration, Template or VCS root settings page.
 
 Only active items are displayed on the TeamCity pages. To remove an item from display, use the __hide__ option next to an item on the report page. For global items, this option is available in every server health message.
 
@@ -32,11 +32,12 @@ Health items cover a wide range of server  functionality to allow administrators
 
 ### Global Configuration Items
 
-TeamCity displays a notification on the availability of the new TeamCity version and a prompt to upgrade.A warning is displayed if any of the licenses are incompatible with this new version. The notification is visible to system administrators only and they can use the link in the "Some Licenses are incompatible" message to quickly navigate to the __Licenses__ page, where all incompatible licenses will have a warning icon.
+TeamCity displays a notification on the availability of the new TeamCity version and a prompt to upgrade.  
+A warning is displayed if any of the licenses are incompatible with this new version. The notification is visible to system administrators only and they can use the link in the "Some Licenses are incompatible" message to quickly navigate to the __Licenses__ page, where all incompatible licenses will have a warning icon.
 
 ### Agent Configuration
 
-TeamCity displays a notification if agents are not running the recommended Java 8: this report shows all of the agents running under Java earlier than version 1.8.
+TeamCity displays a notification if agents are not running the recommended Java 8: this report shows all the agents running under Java earlier than version 1.8.
 
 <anchor name="ServerHealth-WebSocketconnectionissues"/>
 
@@ -45,7 +46,7 @@ TeamCity displays a notification if agents are not running the recommended Java 
 
 The WebSocket protocol is used to get web UI updated for events, running builds updates and statistics counters.
 
-In case of any problems preventing WebSocket connection from working, a warning will be displayed. TeamCity will automatically switch to the legacy update mode (usual HTTP request polling used by TeamCity before version 9.0) and you will be able to continue using TeamCity in this mode.
+In case of any problems preventing WebSocket connection from working, a warning will be displayed. TeamCity will automatically switch to the legacy update mode and you will be able to continue using TeamCity in this mode.
 
 However, it is __recommended__ to make the following adjustments to benefit from faster web UI updates as well as reduced unnecessary network traffic and latency:
 
@@ -91,7 +92,7 @@ TeamCity detects build configurations dependent on a missing build configuration
 
 Large [Build Logs](build-log.md) (more than 200 MB by default) can reduce the server performance as they could be too heavy to parse and are hard to view in the browser.
 
-The build script can be tuned to print less output if this inspection fails frequently for some Build Configuration.
+The build script can be tuned to print less output if this inspection fails frequently for some build configuration.
 
 #### Inefficient Artifacts Publishing
 
@@ -105,7 +106,7 @@ TeamCity will show you the [VCS roots](vcs-root.md) defined in a project and wil
 
 #### Similar VCS roots
 
-TeamCity qualifies [VCS roots](vcs-root.md) as identical when their major settings (for example, URLs, branch settings) are the same even if some of their settings (for example, user name, password) are different.
+TeamCity qualifies [VCS roots](vcs-root.md) as identical when their major settings (for example, URLs, branch settings) are the same even if some of their settings (for example, username, password) are different.
 
 The report will show you identical roots and will leave it up to you whether to merge them or not.
 
@@ -116,8 +117,6 @@ You can define values for [VCS root](vcs-root.md) settings or use parameter refe
 When the referenced VCS roots parameters are resolved to the same values as the values defined, such cases will be reported as identical VCS root usages.
 
 The general recommendation is to use parameter references for root settings, thus optimizing the amount of VCS roots.
-
- 
 
 #### Trigger Rules for Unattached VCS roots
 
@@ -133,8 +132,6 @@ The report will show cases when a build trigger is redundant, for example:
 * Both have VCS triggers, __A__ with the [Trigger on changes in snapshot dependencies](configuring-vcs-triggers.md#Trigger+a+build+on+changes+in+snapshot+dependencies) option enabled.
 In this case, the VCS trigger in __B__ is redundant and causes builds of __A__ to be put into the queue several times.
 
- 
-
 #### Multiple identical build triggers
 
 The warning is displayed if there are two or more enabled triggers of the same type with identical sets of parameter values. Disabled triggers are not taken into account.
@@ -145,12 +142,9 @@ The warning is displayed if there are two or more enabled triggers of the same t
 
 When a [VCS trigger](configuring-vcs-triggers.md) for a build configuration has a quiet period, TeamCity will wait the specified time after the last detected change before triggering the build. During this time, all VCS Roots which affect this build configuration are checked for changes. If other VCS Roots have checking for changes interval bigger than the quiet period, the effective quiet period will be equal to the maximum checking for changes interval of the involved VCS Roots (it could be a VCS Roots from the dependencies).
 
-<tip>
+>When a VCS root uses commit hooks, its check for changes' interval does not affect the quiet period and won't delay build triggering, see [TW-44865](https://youtrack.jetbrains.com/issue/TW-44865).
 
-When a VCS Root uses commit hooks, its checking for changes interval does not affect the quiet period and won't delay build triggering, see [TW-44865](https://youtrack.jetbrains.com/issue/TW-44865).
-</tip>
-
-Possible fix could be one of the following:
+A possible fix could be one of the following:
 * Use commit hooks to trigger checking for changes operations
 * Increase quiet period in the VCS trigger so it is larger than checking for changes interval of the related VCS Roots
 * Reduce checking for changes interval for the problematic VCS Roots
@@ -170,15 +164,14 @@ Enabling the [Build files cleaner (Swabra)](build-files-cleaner-swabra.md) build
 
 _Possible frequent clean checkout (Swabra case)_ server health report shows such incorrectly set up configurations grouped by Swabra settings.
 
- 
 
 #### Optimal recommended checkout
 
-A report is shown for large server\-side patches with a recommendation to switch to the [agent-side checkout](vcs-checkout-mode.md).
+A report is shown for large server-side patches with a recommendation to switch to the [agent-side checkout](vcs-checkout-mode.md).
 
 #### Default auto-checkout on agent 
 
-If the default agent\-side checkout is not possible, TeamCity will display a corresponding health report item and will use the server\-side checkout.
+If the default agent-side checkout is not possible, TeamCity will display a corresponding health report item and will use the server\-side checkout.
 
 ### Integrations-related Items
 * If a project or build configuration has secured parameters and is configured to build GitHub pull requests, this report will raise the warning, because malicious code submitted via the pull request can obtain these secured parameters
@@ -219,4 +212,4 @@ TeamCity analyzes the current settings of a build configuration and suggests add
 ## Extensibility
 {product="tc"}
 
-The default Server Health report provided by TeamCity might cover either too many, or not all the items required by you. Depending on your infrastructure, configuration, performance aspects, and so on. that you need to analyze, a custom Server Health report can be needed. TeamCity enables you to write a [plugin](https://confluence.jetbrains.com/display/TCD18/Custom+Server+Health+Report) which will report on specific items.
+The default Server Health report provided by TeamCity might cover either too many, or not all the items required by you. Depending on your infrastructure, configuration, performance aspects, and so on. that you need to analyze, a custom Server Health report can be needed. TeamCity enables you to write a [plugin](https://plugins.jetbrains.com/docs/teamcity/custom-server-health-report.html) which will report on specific items.
