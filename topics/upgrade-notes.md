@@ -185,11 +185,11 @@ UPDATE users SET algorithm = 'BCRYPT' WHERE password like '$2a$07$%' and algorit
 
 #### New format of env.JDK_ environment variables
  
-To better align with current and future Java versions we've introduced a new format of `env.JDK_` environment variables.   
-Starting with 2020.1 the format is as follows: `env.JDK_<major>_<minor>[_x64]`. For example: `env.JDK_1_6`, `env.JDK_1_7`, `env.JDK_1_8`, `env_JDK_11_0_x64`.   
+To better align with the current and future Java versions we've introduced a new format of `env.JDK_` environment variables.   
+Starting with 2020.1, the format is as follows: `env.JDK_<major>_<minor>[_x64]`. For example: `env.JDK_1_6`, `env.JDK_1_7`, `env.JDK_1_8`, `env.JDK_11_0_x64`.   
 This way, if you are using rather old Java 1.4, the proper variable is `env.JDK_1_4`, while `env.JDK_14_0` will be used for Java 14.0.
 
-For backward compatibility, previous environment variables, such as `env.JDK_16` or `env.JDK_18`, will be generated too, but these variables will no longer be shown in TeamCity auto-completion popup menus.
+For backward compatibility, previous environment variables, such as `env.JDK_16` or `env.JDK_18`, will be generated too, but these variables will no longer be shown in the TeamCity autocompletion pop-up menus.  
 If you are using these environment variables in your build scripts, we encourage you to migrate to the new format.
 
 See the [related issue](https://youtrack.jetbrains.com/issue/TW-64998).

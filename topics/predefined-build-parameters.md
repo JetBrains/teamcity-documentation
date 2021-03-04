@@ -926,43 +926,43 @@ You can define a list of directories separated by an OS-dependent character.
 
 #### Defining Java-related Environment Variables
 
-For each major version `V` of java, the following variables can be defined:
-* `JDK_1V`
-* `JDK_1V_x64`
-* `JRE_1V`
-* `JRE_1V_x64`
+>The Java version format used prior to TeamCity 2020.1 is deprecated. See [these upgrade notes](upgrade-notes.md#New+format+of+env.JDK_+environment+variables) for details.
+>
+{type="warning"}
 
-The `JDK` variables are defined when the JDK is found, the `JRE` variables are defined when the JRE is found but the JDK is not.   
-The `\_x64` variables point to 64-bit java only; the variables without the `\_x64` suffix may point to both 32-bit or 64-bit installations but 32-bit ones are preferred.   
+For each version of Java, the following variable is defined: `JDK_<major>_<minor>[_x64]`. For example, `env.JDK_1_6` (Java 6) or `env.JDK_14_0_x64` (Java 14 64-bit).
+
+The `JDK` variables are defined when the JDK is found. Before Java 11, the `JRE` variables are defined when the JRE is found but the JDK is not.   
+The `_x64` variables point to 64-bit Java only; the variables without the `_x64` suffix may point to both 32-bit or 64-bit installations but 32-bit ones are preferred.   
 If several installations with the same major version and the same bitness but different minor version/update are found, the latest one is selected.
 
 In addition, the following variables are defined:
 * `JAVA_HOME` — for the latest JDK installation (but 32-bit one is preferred)
 * `JDK_HOME` — the same as `JAVA_HOME`
-* `JRE_HOME` — for the latest JRE or JDK installation (but 32-bit one is preferred), defined even if JDK is found.
+* `JRE_HOME` — for the latest JRE or JDK installation (but 32-bit one is preferred), defined even if JDK is found
 
 The `JRE_HOME` and `JDK_HOME` variables may points to different installations; for example, if JRE 1.7 and JDK 1.6 but no JDK 1.7 installed — `JRE_HOME` will point to JRE 1.7 and `JDK_HOME` will point to JDK 1.6.
 
-All variables point to the java home directories, not to binary files. For example, if you want to execute javac version 1.6, you can use the following path:
+All variables point to the Java home directories, not to binary files. For example, if you want to execute javac version 1.6, you can use the following path:
 
 In a TeamCity build configuration:
 
 ```Shell
-%env.JDK_16%/bin/javac
+%env.JDK_1_6%/bin/javac
 
 ```
 
 In a Windows bat/cmd file:
 
 ```Shell
-%JDK_16%\bin\javac
+%JDK_1_6%\bin\javac
 
 ```
 
 In a Unix shell script:
 
 ```Shell
-$JDK_16/bin/javac
+$JDK_1_6/bin/javac
 
 ```
 
