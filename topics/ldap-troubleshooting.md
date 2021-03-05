@@ -11,7 +11,7 @@ Check the `teamcity-ldap.log` file. For each unsuccessful login attempt there sh
 * The LDAP server rejected login with the "Invalid credentials" message ("_Failed to login user '...' due to authentication error. Cause: Invalid credentials (\[LDAP: error code 49 - 80090308: LdapErr: DSID\-0C090334, comment: AcceptSecurityContext error, data 525, vece\^\@\])_")
 
 
-The first reason means that the login can't be used for signing in because it doesn't match a certain filter. For example, by default you can't login with `DOMAIN\username` \- the filter forbids `/`, `\ ` and `@` symbols. See the `teamcity.auth.loginFilter` property.
+The first reason means that the login can't be used for signing in because it doesn't match a certain filter. For example, by default you can't login with `DOMAIN\username` — the filter forbids `/`, `\ ` and `@` symbols. See the `teamcity.auth.loginFilter` property.
 
 The second error can be caused by various things, for example:
 	

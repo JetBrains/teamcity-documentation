@@ -1,5 +1,6 @@
 [//]: # (title: NTLM HTTP Authentication)
 [//]: # (auxiliary-id: NTLM HTTP Authentication)
+
 The TeamCity NTLM HTTP authentication feature employs Integrated Windows Authentication and allows transparent/SSO login to the TeamCity web UI when using browsers/clients supporting NTLM and Negotiate HTTP authentications with NTLMv1, NTLMv1, NTLMv2 and Kerberos logic. The authentication is supported when the TeamCity server runs under Windows OS. Generally, it allows users to log in to the TeamCity server web UI using their NT domain account without the need to enter credentials manually.
 
 ## Configuration
@@ -22,8 +23,10 @@ NTLM HTTP authentication is supported only for TeamCity servers installed on __W
 [//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e47.txt")    
 
 ## Requirements
+
 1. The authenticating user should be logged in to the client workstation with the domain account that is to be used for the authentication.
-2. The user's web browser should support NTLM HTTP authentication (the TeamCity server URL should be a "trusted site", etc.)
+2. The user's web browser should support NTLM HTTP authentication (the TeamCity server URL should be a "trusted site", and so on)
+
 ## Enabling NTLM HTTP Authentication
 
 After the NTLM HTTP authentication module is configured, users will see a link on the login screen which, when clicked, will force the browser to send the domain authentication data.
@@ -32,19 +35,14 @@ After the NTLM HTTP authentication module is configured, users will see a link o
 
 Without this attribute, NTLM HTTP authentication will work only if the client explicitly initiates it (e.g. clicks the "Login using NT domain account" link on the login page), and in the usual case an unauthenticated user will be simply redirected to the TeamCity login page.
 
-
-[//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e74.txt")    
-
+[//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e74.txt")
 
 The TeamCity server forces NTLM HTTP authentication only for Windows users by default. If you want to enable it for all users, set the following [internal property](configuring-teamcity-server-startup-properties.md):
-
 
 ```
 teamcity.ntlm.ignore.user.agent=true
 
 ```
-
-
 
 ### NTLM login URLs
 
@@ -62,22 +60,22 @@ With this property set, a user will be able to log in via their NT domain accoun
 
 Depending on your environment, you may need to configure your client to make NTLM authentication work.
 
-#### Internet Explorer
+### Internet Explorer
 
 1. Open __Tools | Internet Options__.
 2. On the __Advanced__ tab make sure the option __Security | Enable Integrated Windows Authentication__ is checked.
 3. On the __Security__ tab select __Local Intranet | Sites | Advanced__ and add your TeamCity server URL to the list.
 
-#### Google Chrome
+### Google Chrome
 
-On Windows, Chrome normally uses IE's behaviour, see more information [here](http://dev.chromium.org/developers/design-documents/http-authentication).
+On Windows, Chrome normally uses IE's behavior, see more information [here](http://dev.chromium.org/developers/design-documents/http-authentication).
 
-#### Mozilla Firefox
+### Mozilla Firefox
+
 1. Type `about:config` in the browser's address bar.
 2. Add your TeamCity server URL to the [network.automatic-ntlm-auth.trusted-uris](http://kb.mozillazine.org/Network.automatic-ntlm-auth.trusted-uris) property.
 
-[//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e165.txt")    
-
+[//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e165.txt")
 ## Troubleshooting
 
 Helpful links:

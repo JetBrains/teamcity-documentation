@@ -78,7 +78,7 @@ Please make sure that all your classes (whose coverage is to be evaluated) are r
 
 __java.lang.NoClassDefFoundError: com/vladium/emma/rt/RT__
 
-This message appears when your build loads EMMA\-instrumented class files in runtime, and it cannot find emma.jar file in classpath. For test tasks, like `junit` or `testng`, TeamCity adds `emma.jar` to classpath automatically. But, for other tasks, this is not the case, and you might need to modify your build script or to exclude some classes from instrumentation.
+This message appears when your build loads EMMA-instrumented class files in runtime, and it cannot find emma.jar file in classpath. For test tasks, like `junit` or `testng`, TeamCity adds `emma.jar` to classpath automatically. But, for other tasks, this is not the case, and you might need to modify your build script or to exclude some classes from instrumentation.
 
 If your build runs a java task which uses your own compiled classes, you'll have to either add `emma.jar` to the classpath of the java task, or to ensure that classes used in your java task are not instrumented. Besides, you should run your java task with the `fork=true` attribute.
 

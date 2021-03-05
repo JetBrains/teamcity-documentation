@@ -601,7 +601,7 @@ where:
 ### Reporting Build Status
 
 TeamCity allows changing the __build status text__ from the build script. Unlike [progress messages](#Reporting+Build+Progress), this change persists even after a build has finished.  
-You can also ![img.png](img.png)change the build status of a failing build to `SUCCESS`.
+You can also change the build status of a failing build to `SUCCESS`.
 
 >To change the build status to `FAILURE`, uses the [`buildProblem`](#Reporting+Build+Problems) service message.
 

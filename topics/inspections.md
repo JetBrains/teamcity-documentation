@@ -37,13 +37,11 @@ This page contains reference information about the __Inspections (IntelliJ IDEA)
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -51,20 +49,17 @@ Description
 
 Project file type
 
-
 </td>
 
 <td>
 
 To be able to run IntelliJ IDEA inspections on your code, TeamCity requires either an IntelliJ IDEA project file/directory, Maven `pom.xml` or Gradle `build.gradle` to be specified here.
 
-
 </td></tr><tr>
 
 <td>
 
 Path to the project
-
 
 </td>
 
@@ -77,17 +72,13 @@ Depending on the type of project selected in the __Project file type__, specify 
 * __For Gradle project__: the path to the `.gradle` or `.gradle.kts` file.    
 This information is required by this build runner to understand the structure of the project.
 
-<tip>
-
-The specified path should be relative to the checkout directory.
-</tip>
+>The specified path should be relative to the checkout directory.
 
 </td></tr><tr>
 
 <td>
 
 Detect global libraries and module-based JDK in the `*.iml` files
-
 
 </td>
 
@@ -99,13 +90,11 @@ _This option is available if you use an IntelliJ IDEA project to run the inspect
 When this option is selected, the process of opening and saving the build runner settings may become time-consuming, because it involves loading and parsing all project module files.
 </warning>
 
-
 </td></tr><tr>
 
 <td>
 
 Check/Reparse Project
-
 
 </td>
 
@@ -118,13 +107,11 @@ _This option is available if you use an IntelliJ IDEA project to run the inspect
 If you update your project settings in IntelliJ IDEA (for example, add new JDKs, libraries), remember to update the build runner settings by clicking __Check/Reparse Project__.
 </note>
 
-
 </td></tr><tr>
 
 <td>
 
 Working directory
-
 
 </td>
 
@@ -132,12 +119,10 @@ Working directory
 
 Enter a path to a [Build Working Directory](build-working-directory.md) if it differs from the [Build Checkout Directory](build-checkout-directory.md).
 
-
 [//]: # (Internal note. Do not delete. "Inspectionsd166e196.txt")    
 
 
 Optional, specify if differs from the checkout directory.
-
 
 </td></tr></table>
 
@@ -155,13 +140,11 @@ To refresh the values in this section, click __Check/Reparse Project__.
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -169,13 +152,11 @@ Description
 
 &lt;path\_variable\_name&gt;
 
-
 </td>
 
 <td>
 
 This field appears if the project file contains path macros, defined in the _Path Variables_ dialog of the IntelliJ IDEA settings. In __Set value to field__, specify a path to the project resources to be used on different build agents.
-
 
 </td></tr></table>
 
@@ -189,20 +170,17 @@ This section provides the list of SDKs detected in the project.
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 JDK Home
-
 
 </td>
 
@@ -216,13 +194,11 @@ When building with the __Ipr__ runner, this JDK will be used to compile the sour
 To run the build process, the JDK specified in the `JAVA_HOME` environment variable will be used.
 </note>
 
-
 </td></tr><tr>
 
 <td>
 
 JDK Jar File Patterns
-
 
 </td>
 
@@ -230,16 +206,12 @@ JDK Jar File Patterns
 
 Click this link to open a text area where you can define templates for the jar files of the project JDK. Use Ant rules to define the jar file patterns. The default value is used for Linux and Windows operating systems:
 
-
 ```Plain Text
 jre/lib/*.jar
 
 ```
 
-
-
 For macOS, use the following lines:
-
 
 ```Plain Text
 lib/*.jar
@@ -248,22 +220,17 @@ lib/*.jar
 
 ```
 
-
-
-
 </td></tr><tr>
 
 <td>
 
 IDEA Home
 
-
 </td>
 
 <td>
 
 If your project uses the IDEA JDK, specify the location of the IDEA home directory
-
 
 </td></tr><tr>
 
@@ -273,13 +240,11 @@ If your project uses the IDEA JDK, specify the location of the IDEA home directo
 
 IDEA Jar Files Patterns
 
-
 </td>
 
 <td>
 
 Click this link to open a text area, where you can define templates for the jar files of the IDEA JDK.
-
 
 </td></tr></table>
 
@@ -292,7 +257,7 @@ You can use references to external properties when defining the values, like `%s
 
 ## Inspection Parameters
 
-In IntelliJ IDEA\-based IDEs, the code inspections reported are configured by an [inspection profile](http://www.jetbrains.com/idea/webhelp/code-inspection.html#d559109e437).    
+In IntelliJ IDEA-based IDEs, the code inspections reported are configured by an [inspection profile](http://www.jetbrains.com/idea/webhelp/code-inspection.html#d559109e437).    
 When running the inspections in TeamCity, you can specify the inspection profile to use: first you need to configure the inspection profile in IntelliJ IDEA-based IDE and then specify it in TeamCity.
 
 Follow these rules when preparing inspection profiles:
@@ -312,13 +277,11 @@ The logic of selecting an inspection profile is as follows:
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -326,13 +289,11 @@ Description
 
 Inspections profile path
 
-
 </td>
 
 <td>
 
 Use this text field to specify the path to inspections profiles file relative to the project root directory. Use this field only if you do not want to use the shared project profile specified in "Inspections profile name".
-
 
 </td></tr><tr>
 
@@ -340,13 +301,11 @@ Use this text field to specify the path to inspections profiles file relative to
 
 Inspections profile name
 
-
 </td>
 
 <td>
 
 Enter the name of the desired shared project profile. If the field is left blank and no profile path is specified, the default project profile will be used.
-
 
 </td></tr><tr>
 
@@ -354,32 +313,22 @@ Enter the name of the desired shared project profile. If the field is left blank
 
 Include / exclude patterns:
 
-
 </td>
 
 <td>
 
 Optional, specify to restrict the sources scope to run Inspections on.
 
-
 </td></tr></table>
 
-
-
-
-[//]: # (Internal note. Do not delete. "Inspectionsd166e394.txt")    
-
-
-
+[//]: # (Internal note. Do not delete. "Inspectionsd166e394.txt")
 
 Include/exclude patterns are newline-delimited set of rules of the form:
-
 
 ```Plain Text
 [+:|-:]pattern
 
 ```
-
 
 where the pattern must satisfy the following rules:
 * must end with either `**` or `*` (this effectively limits the patterns to only the directories level, they do not support file-level patterns);
@@ -401,10 +350,7 @@ Example:
 
 ```
 
-<tip>
-
-For the file paths to be reported correctly, the "_References to resources outside project/module file directory_" option for the project and all modules should be set to "Relative" in IDEA project.
-</tip>
+>For the file paths to be reported correctly, the "_References to resources outside project/module file directory_" option for the project and all modules should be set to "Relative" in IDEA project.
 
 For Maven inspections run, to ensure correct Java is used for the project JDK, define `env.JAVA_HOME` configuration parameter pointing to the JDK to be used as the project JDK.
 

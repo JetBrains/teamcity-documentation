@@ -42,7 +42,7 @@ Here is the summary of cases when TeamCity performs automatic clean checkout:
 * the build was triggered by a Schedule trigger with "Clean all files in checkout directory before build" option enabled or as a part of a build chain where the topmost build was triggered with the setting in the schedule trigger while "apply to all snapshot dependencies" was also selected
 * VCS settings of the build configuration were changed
 * the previous build in this directory was of a build configuration with different VCS settings (can only occur if the same checkout directory is specified for several build configurations with individual VCS settings and VCS Roots)
-* the previous build in this directory was built on more recent revisions then the current one (can only occur for [history builds](history-build.md))
+* the previous build in this directory was built on more recent revisions than the current one (can only occur for [history builds](history-build.md))
 * there was a critical error while applying or rolling back a patch during the previous build, so TeamCity cannot ensure that checkout directory contains known versions of files
 * [Build Files Cleaner (Swabra)](build-files-cleaner-swabra.md) is enabled with corresponding options and it detected that clean checkout is necessary
 * Custom checkout directory contains agent-specific parameters, such as `%teamcity.agent.work.dir%` (pre-8.1)

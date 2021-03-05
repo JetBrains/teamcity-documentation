@@ -5,14 +5,14 @@ The __Build Time__ report provides comparative statistics of the build time take
 
 To see the report, go to __Administration | Project-related Settings | Build Time__.
 
-### Period Settings
+## Period Settings
 
 The report displays total build duration for the server allowing you to select the period to be analyzed:
 * last 24 hours
 * last week
 * last month
 
-### Grouping and Sorting
+## Grouping and Sorting
 
 You can group the build configuration by project to display the duration of builds for individual projects with the percentage in relation to the parent project. The scope can be further drilled down to the build time of an individual build configuration.
 

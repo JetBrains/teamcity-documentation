@@ -23,13 +23,8 @@ You can find the pull request's details displayed on the __Overview__ tab of the
 
 If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches.
 
-
-<tip>
-
-For requests from GitHub and GitLab, you can set up TeamCity to automatically run a build on each request and merge the request if the build is successful.   
+>For requests from GitHub and GitLab, you can set up TeamCity to automatically run a build on each request and merge the request if the build is successful.   
 To achieve this, enable and configure the Pull Requests and [Automatic Merge](automatic-merge.md) build features.
-
-</tip>
 
 See the [example](#Pull+Requests+workflow+example) on how to set up TeamCity to run builds on GitHub pull requests.
 

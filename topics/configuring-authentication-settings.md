@@ -26,7 +26,6 @@ TeamCity provides several preconfigured authentication options (presets) to cove
   * [GitLab.com](#GitLab.com)
   * [GitLab CE/EE](#GitLab+CE%2FEE)
   
-
 >If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure single sign-on (SSO) from the TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).
 >
 {product="tc"}
@@ -476,8 +475,6 @@ Leave empty to allow all GitLab users to access the TeamCity server.
 >If you reconnect a TeamCity server from one GitLab CE/EE server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](https://teamcity-support.jetbrains.com/hc/en-us).
 >
 {type="warning"}
-
-
 
  <seealso>
         <category ref="concepts">

@@ -57,7 +57,6 @@ Use newline-separated patterns for fully qualified class names to be excluded fr
 
 </td></tr></table>
 
-
 <seealso>
         <category ref="concepts">
             <a href="build-runner.md">Build Runner</a>

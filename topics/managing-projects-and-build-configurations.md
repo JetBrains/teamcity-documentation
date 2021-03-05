@@ -6,7 +6,7 @@
 * using the [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
 * programmatically using DSL based on the Kotlin language if the [versioned settings](storing-project-settings-in-version-control.md) feature is enabled
 
-### Configuring Visibility
+## Configuring Visibility
 
 The __Configure Visible Projects__ pop-up menu on the __Projects__ page allows reordering the projects and change their visibility in the list of projects.
 

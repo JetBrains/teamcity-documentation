@@ -45,7 +45,7 @@ Use this tab to review the groups the user belongs to, and add/remove the user f
 
 ## Roles
 
-_This tab is available only if per\-project permissions are enabled on the server Administration / Authentication page_.    
+_This tab is available only if per-project permissions are enabled on the server Administration / Authentication page_.    
 Use this tab to view the roles assigned to the user directly and those inherited from groups. The roles assigned directly can be modified/removed here. See also [Assigning Roles to Users](#Assigning+Roles+to+Users) below.
 
 <anchor name="assigningRoles"/>
@@ -58,7 +58,7 @@ Use this tab to view the roles assigned to the user directly and those inherited
 
 <tip>
 
-To be able to grant roles to users on per\-project basis, enable per\-project permissions on the __Administration | Authentication__ page.   
+To be able to grant roles to users on per-project basis, enable per-project permissions on the __Administration | Authentication__ page.   
 The __Administration | Roles__ page lists all existing roles detailing their permissions.
 </tip>
 
@@ -68,7 +68,7 @@ There are several ways to assign roles to one or several users:
 * To assign a role to all users in a group, on the __Groups__ tab click _View roles_ for the group in question, then assign a role on the group level.   
 
 When assigning a role, you can:
-* Select whether a role should be granted globally, or in particualr projects.
+* Select whether a role should be granted globally, or in particular projects.
 * Replace existing roles with the newly selected. This will remove all roles assigned to user(s)/group and replace them with the selected one instead.
 
 ## Notification Rules

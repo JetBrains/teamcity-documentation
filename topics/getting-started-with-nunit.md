@@ -39,7 +39,6 @@ The [project file](https://github.com/JetBrains/teamcity-nunit-samples/blob/mast
 
 <chunk include-id="msbuild-examples-nunit">
 
-
 ```Shell
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -110,7 +109,6 @@ When configuring the NUnit build step for NUnit 3, it requires specifying the NU
 The other fields provide a lot of useful options, and this section discusses some of them.
 
 <img src="nunit-step-advanced.png" alt="Build step: NUnit, advanced options" width="750"/>
-
  
 One of the options is defining the __application configuration file__. Sometimes tests obtain data from a configuration file, and to facilitate this, you need to define the path to the application configuration file to be used when running tests in the _Path to application configuration file_ field. The path can be absolute or relative to the [Build Checkout Directory](build-checkout-directory.md). Unfortunately, NUnit is limited by allowing only one configuration file per build step. Due to this limitation, if you need to test several assemblies with different configurations in one build step, you have to aggregate several application configuration files into a common configuration file. If it is not possible, split the test launch into several steps and define a configuration file in each of the steps.
 

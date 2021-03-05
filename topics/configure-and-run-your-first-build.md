@@ -50,12 +50,7 @@ Congratulations! You've configured your first build containing one build step. N
 
 ### Create a project pointing to GitHub.com repository
 
-<tip>
-
-If a parent project of the project to be created is already integrated with GitHub via an existing [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections), the quick option __From GitHub.com__ appears. Click it to create a project from the predefined GitHub connection URL, similarly to [creating a project from a repository URL](#Create+a+project+from+a+repository+URL).
-
-</tip>
-
+>If a parent project of the project to be created is already integrated with GitHub via an existing [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections), the quick option __From GitHub.com__ appears. Click it to create a project from the predefined GitHub connection URL, similarly to [creating a project from a repository URL](#Create+a+project+from+a+repository+URL).
 
 1. On the __Create Project__ page, click __From a repository URL__ and then click the GitHub icon next to the _Repository URL_ field.   
 Note that if one or more [connections](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections) to GitHub are predefined for the parent project, TeamCity will suggest picking one of these connections to create a project from it. If not, proceed with Step 2.
@@ -78,16 +73,13 @@ Click the _register TeamCity_ link.
 The authorized application will be granted full control of private repositories and the _Write repository hooks_ permission in GitHub.   
 The connection is configured: you can continue with creating your project in TeamCity. All the repositories available to the user will be listed. Start typing to filter the list and select the required repository:   
    <img src="CreateGHConnectionProjects.png" alt="Choose a repository" width="1030"/>   
-   TeamCity will verify the repository connection. If the сonnection is verified, the __Create Project__ page opens. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__.  
+   TeamCity will verify the repository connection. If the сonnection is verified, the __Create Project__ page opens. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__.
 8. TeamCity will scan your VCS repository and autodetect your build steps (it may take some time). Check the boxes of the steps and use them in your build configuration.
 9. The selected build step is added to the build configuration.
 
 Congratulations! You've configured the GitHub connection and your first build containing one build step. Now you can [run your build](#Run+your+first+build) and [tweak its settings](#Tweak+your+build+configuration+settings) if necessary.
 
-<tip>
-
-When the connection is configured, a small GitHub icon becomes active in several places of the UI where a repository URL can be specified (when creating a [project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), build configuration from URL, [VCS root from URL](guess-settings-from-repository-url.md), [Git](git.md) VCS root, or [GitHub](github.md) issue tracker for the current project and all of its subprojects), making it easier to create these entities in TeamCity.
-</tip>
+>When the connection is configured, a small GitHub icon becomes active in several places of the UI where a repository URL can be specified (when creating a [project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), build configuration from URL, [VCS root from URL](guess-settings-from-repository-url.md), [Git](git.md) VCS root, or [GitHub](github.md) issue tracker for the current project and all of its subprojects), making it easier to create these entities in TeamCity.
 
 ### Create a project manually
 
@@ -102,17 +94,14 @@ The configurations can be created automatically (similarly to creating projects)
  To create it manually, select a type of VCS from the drop-down menu (_Git_ in the example below), specify the required information (name and URL), test your connection, and click __Create__.   
  <img src="createdVCSRoot.png" alt="Create a project manually, Step 3" width="826"/>   
    After you have created a VCS root, you can instruct TeamCity to exclude some directories from checkout, or map some paths (copy directories and all their contents) to a location on the build agent different from the default one. This can be done by means of [checkout rules](vcs-checkout-rules.md).   
-   You can also specify whether you want TeamCity to checkout the sources [on the agent or server](vcs-checkout-mode.md). Note that the agent-side checkout is [supported not for all VCSs](vcs-checkout-mode.md), and in case you want to use it, you need to have a version control client installed on at least one agent.   
+   You can also specify whether you want TeamCity to check out the sources [on the agent or server](vcs-checkout-mode.md). Note that the agent-side checkout is [supported not for all VCSs](vcs-checkout-mode.md), and in case you want to use it, you need to have a version control client installed on at least one agent.   
     After the VCS Root is created, the build configuration settings are displayed on the left.
 4. Now you can configure [Build steps](configuring-build-steps.md) by selecting the corresponding setting on the left. You can either instruct TeamCity to automatically detect the build steps after scanning your repository or configure build steps manually as described in this example.   
  Click __Add build step__ and select a build runner from the drop-down menu.   
  <img src="NewBuildStep.png" alt="Selecting a build step" width="827"/>
 5. Fill in the required fields and save the build step.
-
-<tip>
     
-If your project resides in several version control systems, you can attach as many VCS Roots to it as you need. For example, if you store a part of your project in Perforce, and the rest in Git, you need to create and attach two VCS roots: one for Perforce, another for Git. [Learn more about configuring VCS roots](configuring-vcs-roots.md).
-</tip>
+>If your project resides in several version control systems, you can attach as many VCS roots to it as you need. For example, if you store a part of your project in Perforce, and the rest in Git, you need to create and attach two VCS roots: one for Perforce, another for Git. [Learn more about configuring VCS roots](configuring-vcs-roots.md).
 
 Congratulations! You've configured your first build containing one build step. Now you can [run your build](#Run+your+first+build) and [tweak its settings](#Tweak+your+build+configuration+settings) if necessary.
 
@@ -128,12 +117,8 @@ You will be redirected to the __Build Results__ page where you can watch the bui
 
 <img src="BuildResults.PNG" alt="Build results" width="750"/>
 
-<tip>
-
-You can add as many steps as you like and reorder them if required. You can add steps manually or ask TeamCity to detect them automatically. TeamCity will also suggest settings, such as triggers, failure conditions, and build features. Depending on the build configuration settings, it may prompt some additional options. Follow the suggestions and add the settings to configure your build.   
+>You can add as many steps as you like and reorder them if required. You can add steps manually or ask TeamCity to detect them automatically. TeamCity will also suggest settings, such as triggers, failure conditions, and build features. Depending on the build configuration settings, it may prompt some additional options. Follow the suggestions and add the settings to configure your build.   
 You can always tweak the settings after running your first build.
-</tip>
- 
 
 ## Tweak your build configuration settings
 
@@ -150,7 +135,7 @@ If your build produces installers, WAR files, reports, log files, and so on, and
 
 TeamCity will place the paths to them into the input field, so you can modify them as needed:
 
-<img src="artifactPathsArchive.png" alt="Modify the arifact paths" width="750"/>
+<img src="artifactPathsArchive.png" alt="Modify the artifact paths" width="750"/>
 
 Save your settings. Now when you run a build, TeamCity will put the required reports into an archive. The build configuration home page lists all builds that were run and enables you to view the available artifacts:
 

@@ -13,7 +13,7 @@ TeamCity stores [artifacts](build-artifact.md) produced by builds on the file sy
 
 TeamCity provides a pluggable API to enable external storage for TeamCity build artifacts. Support for different storages can be implemented as an external plugin to TeamCity: the details are provided in the [external storage implementation guide](https://plugins.jetbrains.com/docs/teamcity/external-storage-implementation-guide.html).
 
-Note that when an external storage for artifacts is enabled, the TeamCity [internal](build-artifact.md#Hidden+Artifacts) artifacts (including build logs) will still be published to the TeamCity server and stored in the TeamCity Data Directory in the built-in artifacts storage.
+Note that when an external storage for artifacts is enabled, the TeamCity [internal](build-artifact.md#Hidden+Artifacts) artifacts (including build logs) will still be published to the TeamCity server and stored in the TeamCity Data Directory in the built-in artifacts' storage.
 
 The same applies to the metadata about artifacts mappings, which will be published to the [artifacts directory](teamcity-configuration-and-maintenance.md) of the TeamCity Data Directory. When restoring from a backup, make sure they are restored for the external artifact plugin to work properly.
 
@@ -26,8 +26,7 @@ It is possible to replace the TeamCity built-in artifacts' storage with [AWS S3]
 * handles resolution of artifact dependencies as well as clean-up of artifacts
 * displays artifacts located externally in the TeamCity web UI
 
-__To enable external artifact storage in an AWS S3 bucket__
-
+To enable external artifact storage in an AWS S3 bucket:
 1. Navigate to the __Project Settings | Artifacts Storage__ tab. The built-in TeamCity artifacts storage is displayed by default and marked as active.
 2. Click __Add new storage__. S3 Storage is selected as the storage type (provided there are no other external storage plugins installed).
 3. Provide an optional name for your storage.

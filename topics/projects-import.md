@@ -25,10 +25,7 @@ On the target TeamCity server:
 To complete the import, you need to copy the artifacts from the old server to the new one by running the [provided scripts](#Moving+artifacts+and+logs): check details in the import log.
 </warning>
 
-<tip>
-
-The Projects Import functionality does not support an external artifacts' storage. If you use an external artifacts' storage, you will need to move the externally stored artifacts manually to new locations using the build ids mapping generated during the import. Contact [TeamCity support](feedback.md) for details.
-</tip>
+>The Projects Import functionality does not support an external artifacts' storage. If you use an external artifacts' storage, you will need to move the externally stored artifacts manually to new locations using the build ids mapping generated during the import. Contact [TeamCity support](feedback.md) for details.
 
 ### Selecting projects for import
 
@@ -53,7 +50,7 @@ For each imported or merged project, the configuration files are imported to the
 
 The following files are imported:
 * Configuration xml files for the Project with its Build Configurations, Templates, and VCS Roots as well as its subprojects.
-* All files from the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/plugins directory.
+* All files from the `<[TeamCity Data Directory](teamcity-data-directory.md)>/plugins` directory.
 * Build Numbers files for the newly added build configurations.
 
 ### Importing users and groups
@@ -82,7 +79,7 @@ The __Project Import__ page | __Import scope__ section | __Groups__ will display
 
 TeamCity does not import entities from the backup file if they conflict with some entity on the target server. Before import, TeamCity analyzes the backup file and displays all detected conflicts on the __Import Scope__ configuration page.
 
-It is __highly recommended to resolve all conflicts__ before proceeding with the import, as unresolved conflicts may result in unpredictable behavior after the import, for example:
+It is __highly recommended that you resolve all conflicts__ before proceeding with the import, as unresolved conflicts may result in unpredictable behavior after the import, for example:
 * Critical errors can be shown if, for example, some VCS Root was skipped, but a Build Configuration depending on it was imported.
 * Imported Build Configurations may refer to the wrong Template if there was an unresolved conflict of [external IDs](identifier.md#External+IDs) between the templates from the source and target servers.
 

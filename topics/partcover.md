@@ -6,9 +6,7 @@ TeamCity supports code coverage with PartCover (2.2 and 2.3) for NUnit tests run
 __Important Notes__
 	
 * In order to launch coverage, PartCover should be installed on an agent where coverage builds will run.
-	
 * You don't need to make any modifications to your build script to enable coverage.
-	
 * You don't need to explicitly pass any of the PartCover arguments to the TeamCity NUnit test runner.
 
 To configure PartCover:
@@ -102,7 +100,7 @@ Report XSLT
 
 <td>
 
-Write new\-line delimited xslt transformation rules in the following format: `file.xslt=>generatedFileName.html`. You can use the default PartCover xslt as `file.xslt`, or your own. The Xslt files path is relative to the build checkout directory.
+Write new-line delimited xslt transformation rules in the following format: `file.xslt=>generatedFileName.html`. You can use the default PartCover xslt as `file.xslt`, or your own. The Xslt files path is relative to the build checkout directory.
 
 
 <tip>

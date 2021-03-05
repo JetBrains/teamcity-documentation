@@ -127,9 +127,8 @@ Maven repository URL
 
 Specify a URL to the Maven repository. Note that this parameter is optional. If the URL is not specified, then:
 
-* For a Maven project the repository URL is determined from the POM and the server-side [Maven Settings](maven-server-side-settings.md#Maven+Settings+Resolution+on+the+Server+Side)
-* For a non-Maven project the repository URL is determined from the server-side [Maven Settings](maven-server-side-settings.md#Maven+Settings+Resolution+on+the+Server+Side) only
-
+* For a Maven project, the repository URL is determined from the POM and the server-side [Maven Settings](maven-server-side-settings.md#Maven+Settings+Resolution+on+the+Server+Side).
+* For a non-Maven project, the repository URL is determined from the server-side [Maven Settings](maven-server-side-settings.md#Maven+Settings+Resolution+on+the+Server+Side) only.
 
 </td></tr><tr>
 
@@ -177,7 +176,6 @@ Allows using authorization from the effective Maven settings
 
 User settings selection
 
-
 </td>
 
 <td>
@@ -200,7 +198,7 @@ TeamCity determines __effective settings__ as follows:
 
 For specifying version ranges use the following syntax, as [proposed in the Maven documentation](http://docs.codehaus.org/display/MAVEN/Dependency+Mediation+and+Conflict+Resolution#DependencyMediationandConflictResolution-DependencyVersionRanges).
 
-Note that Maven Artifact Dependency Trigger can be used not only for fixed\-version artifacts but also for snapshots as a fine-grained alternative to the Maven Snapshots Dependency Trigger.
+Note that Maven Artifact Dependency Trigger can be used not only for fixed-version artifacts but also for snapshots as a fine-grained alternative to the Maven Snapshots Dependency Trigger.
 
 <table><tr>
 
@@ -303,7 +301,6 @@ x &lt;= 1.0 or x &gt;= 1.2. Multiple sets are comma-separated
 <td>
 
 `(,1.1),(1.1,)`
-
 
 </td>
 

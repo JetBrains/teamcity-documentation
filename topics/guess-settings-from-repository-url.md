@@ -5,7 +5,7 @@ TeamCity can automatically discover the VCS type and settings from the repositor
 
 When configuring a [VCS root](vcs-root.md), select the __Guess from Repository URL__ option from the drop-down menu and specify the URL. TeamCity will recognize the URL for a supported version control and will create a VCS root automatically. After the VCS root is created, you can [modify its settings](configuring-vcs-roots.md) using the __Project Settings__ or __Build Configuration Settings__ page.
 
-### VCS URL Formats
+## VCS URL Formats
 
 <table><tr>
 

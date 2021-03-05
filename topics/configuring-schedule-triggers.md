@@ -84,4 +84,3 @@ Read more in [Branch Filter](branch-filter.md).
 Trigger rules and branch filter are combined by __AND__, which means that the build is triggered only __when both conditions are satisfied__.
 
 For example, if you specify a comment text in the trigger rules field and provide the branch specification, the build will be triggered only if a commit has the specified text and is also in a branch matched by the branch filter.
-

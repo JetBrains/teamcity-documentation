@@ -150,13 +150,11 @@ _Available if NUnit 3.0 is selected_.
 
 Enter [additional command line parameters](https://github.com/nunit/docs/wiki/Console-Command-Line) to pass to `nunit-console.exe`.
 
-
 </td></tr><tr>
 
 <td>
 
 .NET Runtime
-
 
 </td>
 
