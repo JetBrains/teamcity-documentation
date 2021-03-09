@@ -18,6 +18,8 @@ With Perforce, check the corresponding box to enable feature branches support, w
 
 Once you've configured the branch specification, TeamCity will start to monitor these branches for changes. If your build configuration has [a VCS trigger and a change is found in some branch](configuring-vcs-triggers.md#branch-filter-1), TeamCity will trigger a build in this branch. From the build configuration home page you'll also be able to filter the history, change log, pending changes and issue log by the branch name. Branch names will also appear in the custom build dialog, so you'll be able to manually trigger a custom build on a branch too.
 
+<anchor name="branch-spec-syntax"/>
+
 The syntax of the branch specification field is newline-delimited list of `+|-:branch_name` rules.       
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 

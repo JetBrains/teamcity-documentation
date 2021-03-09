@@ -45,7 +45,7 @@ As soon as synchronization is enabled in a project, TeamCity will make an initia
 There are two possible sources of build settings: (1) the current settings on the TeamCity server, that is the latest settings' changes applied to the server (either made via the UI, or via a commit to the `.teamcity` directory in the VCS root), and (2) the settings in the VCS on the revision selected for a build.  
 Therefore, it is possible to start builds with settings different from those currently defined in the build configuration. For projects with enabled versioned settings, you can instruct TeamCity which settings to take __when build starts__.    
 This gives multiple options:
-* If you are using TeamCity [feature branches](working-with-feature-branches.md), you can define a branch specification in the VCS root used for versioned settings, and TeamCity will run a build in a branch using the settings from this branch.
+* If you are using TeamCity [feature branches](working-with-feature-branches.md), you can define a branch specification [when creating a project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL) (Git only) or in the [VCS root](vcs-root.md) used for versioned settings. TeamCity will run a build in a branch using the settings from this branch.
 * You can start a [personal build](personal-build.md) with changes made in the `.teamcity` directory, and these changes will affect the build behavior.
 * When running a [history build](history-build.md), TeamCity will attempt to use the settings corresponding to the moment of the selected change. Otherwise, the current project settings will be used.
 
