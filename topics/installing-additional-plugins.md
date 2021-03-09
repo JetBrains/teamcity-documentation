@@ -5,7 +5,7 @@ You can get TeamCity plugins in the [plugin repository](https://plugins.jetbrain
 
 ## Installing a plugin from JetBrains Plugins repository
 
-__Since TeamCity 2018.2__, you can install plugins from the plugin repository.
+To install plugins from the repository:
 
 1. Go to the __Administration | Plugins List__ page and click __Browse plugins repository__.
 2. You will be redirected to the repository. Find the desired plugin and click __Get__ and then __Install to http[s]://\<teamcityUrl\>__.   
@@ -19,20 +19,17 @@ Go to the __Administration | Plugins List__ page and upload a plugin ZIP from yo
 
 ## Installing a plugin manually
 
-Copy the ZIP plugin package into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/plugins  directory. If you have an earlier version of the plugin in the directory (though the plugin package can be named differently), remove it.
+Copy the ZIP plugin package into the` <[TeamCity Data Directory](teamcity-data-directory.md)>/plugins` directory. If you have an earlier version of the plugin in the directory (though the plugin package can be named differently), remove it.
 
 ## Enabling the plugin
 
-Prior to TeamCity 2018.2, you need to restart the server to enable the plugin. If the plugin has an agent part, all the agents will be updated automatically. For plugins with the agent part only, the server restart can be skipped: the agents will be updated automatically.
-
-__Since TeamCity 2018.2__, to enable the plugin after installation, click the plugin context menu and select __Load__. The plugin will be enabled without server restart.
+To enable the plugin after installation, click the plugin context menu and select __Load__. The plugin will be enabled without server restart.
 
 ## Uninstalling a plugin via Web UI
 
 1. Go to the __Administration | Plugins List__ page, locate an external plugin in the list, click the arrow icon next to it, and use the __Delete__ option. 
 2. Once the plugin is deleted, the option to restart the server appears on the page. Click the link to restart the server and check that the plugin version is no longer listed on the __Administration | Plugins List__ page.
 
-
 ## Uninstalling a plugin manually
 
-Remove the plugin package from the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/plugins directory and restart the TeamCity server.
+Remove the plugin package from the `<[TeamCity Data Directory](teamcity-data-directory.md)>/plugins` directory and restart the TeamCity server.

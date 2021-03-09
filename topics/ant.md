@@ -229,8 +229,8 @@ Reduce test failure feedback time:
 
 Use the following two options to instruct TeamCity to run some tests before others.
 
-* Run recently failed tests first – if checked,TeamCity will first run tests failed in the previous finished or running builds as well as tests having a high failure rate (so called _blinking_ tests).
-* Run new and modified tests first – if checked, TeamCity will first run the tests added or modified in the change lists included in the running build.
+* Run recently failed tests first — if checked,TeamCity will first run tests failed in the previous finished or running builds as well as tests having a high failure rate (so called _blinking_ tests).
+* Run new and modified tests first — if checked, TeamCity will first run the tests added or modified in the change lists included in the running build.
 
 </td></tr></table>
 
@@ -248,8 +248,6 @@ In this section, you can specify a Docker image which will be [used to run the b
 To learn about configuring code coverage options, refer to the [Configuring Java Code Coverage](configuring-java-code-coverage.md) page.
  
 ### Bundled Ant Versions
- 
-This section provides information on the versions of Ant bundled with TeamCity 10\+ versions.
  
 <table><tr>
  

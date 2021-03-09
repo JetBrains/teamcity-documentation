@@ -96,7 +96,6 @@ The update progress is logged to the \<[TeamCity Home Directory](teamcity-home-d
 
 <note>
 
-
 In case of an automatic update failure, perform the following to restore your TeamCity to the state prior to the update:
 
 1. Stop your TeamCity server if it is running.
@@ -109,7 +108,7 @@ In case of an automatic update failure, perform the following to restore your Te
 Current automatic update limitations:
 * some customizations, for example, installations with [changed server context](installing-and-configuring-the-teamcity-server.md#Changing+Server+Context), are not supported by automatic update
 * only manual upgrade is possible if the server runs under the official [TeamCity Docker container](#Upgrading+TeamCity+started+from+Docker+images), started with Azure Resource Manager template.
-* the Windows uninstaller is not updated during the upgrade, so after several updates, old TeamCity version will still be noted in Windows lists. During the uninstallation, not all of the TeamCity installation files might be deleted.
+* the Windows uninstaller is not updated during the upgrade, so after several updates, old TeamCity version will still be noted in Windows lists. During the uninstallation, not all the TeamCity installation files might be deleted.
 * the bundled Java is not updated
 * in a [multinode setup](multinode-setup.md), only the main TeamCity server can be auto-updated, the secondary nodes need to be updated manually.
 
@@ -121,17 +120,17 @@ Current automatic update limitations:
 
 >The main server configuration file \<[TeamCity Home Directory](teamcity-home-directory.md)\>/conf/server.xml is updated automatically when there were no changes to it since the last installation. If modification were made, the installer will detect them and backup the old `server.xml` file displaying a warning about the overwrite and the backup file location. Other files under `conf` can be overwitten to their default content as well, so if you have made manual modifications in those, check them after the upgrade.
 
-1. [Create a backup](teamcity-data-backup.md). When upgrading from TeamCity 6.0\+ you will also have a chance to create a backup with the "basic" profile on the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page on the updated TeamCity start.
+1. [Create a backup](teamcity-data-backup.md). You can create a backup with the "basic" profile on the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page on the updated TeamCity start.
 2. Note the username used to run the TeamCity server. You will need it during the new version installation.
 3. If you have any of the Windows service settings customized, store them to repeat the customizations later.
-4. Note if you are using 64 bit Java to run the service (for example, check for "64" in "Java VM info" on the server's Administration | Diagnostics or in a thread dump), consider backing up \<[TeamCity Home Directory](teamcity-home-directory.md)\>\jre directory.
+4. Note if you are using 64-bit Java to run the service (for example, check for "64" in "Java VM info" on the server's Administration | Diagnostics or in a thread dump), consider backing up \<[TeamCity Home Directory](teamcity-home-directory.md)\>\jre directory.
 5. (optional as these will not be overwritten by the upgrade) If you have any customizations of the bundled Tomcat server (like port, https protocol, and so on), JRE, etc. Backup those to repeat the customizations later.
 6. Note if you have local agent installed (though, it is [not recommended](security-notes.md) to have a local agent) so that you can select the same option in the installer.
 7. Run the new installer and point it to the same place TeamCity is installed into ( the location used for installation is remembered automatically). Confirm uninstalling the previous installation. The TeamCity uninstaller ensures proper uninstallation, but you might want to make sure the [TeamCity server installation directory](teamcity-home-directory.md) does not contain any non\-customized files after uninstallation finishes. If there are any, backup/remove them before proceeding with the installation.
 8. If prompted, specify the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/ used by the previous installation.
 9. (Optional as these will not be overwritten by the upgrade) Make sure you have the external database driver [installed](setting-up-an-external-database.md#General+Steps) (this applies only if you use an external database).
 10. Check and restore any customizations of Windows services and Tomcat configuration that you need. When upgrading from versions 7.1 and earlier, make sure to transfer the [server memory setting](configuring-teamcity-server-startup-properties.md) to the [environment variables](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts).
-11. If you were using 64 bit Java to run the server restore the \<[TeamCity Home Directory](teamcity-home-directory.md)\>/\jre directory previously backed up or repeat the 64 bit Java [installation steps](installing-and-configuring-the-teamcity-server.md#Java+Installation).
+11. If you were using 64-bit Java to run the server restore the \<[TeamCity Home Directory](teamcity-home-directory.md)\>/\jre directory previously backed up or repeat the 64-bit Java [installation steps](installing-and-configuring-the-teamcity-server.md#Java+Installation).
 12. If you use a customized Log4j configuration in the `conf\teamcity-server-log4j.xml` file and want to preserve it (note, however, that customizing the file is actually not recommended, use [logging presets](teamcity-server-logs.md#Logging-related+Diagnostics+UI) instead), compare and merge `conf\teamcity-server-log4j.xml.backup` created by the installer from the existing copy with the default file saved with the default name. Compare the `conf\teamcity-*-log4j.xml.dist` file with the corresponding `conf\teamcity-*-log4j.xml` file and make sure that` .xml` file contains all the` .dist` file defaults. It is recommended to copy the `.dist` file over to the corresponding `.xml` file until you really need the changed logging configuration.
 13. Start up the TeamCity server (and agent, if it was installed together with the installer).
 14. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button. Only after that all data will be converted to the newer format.
@@ -142,9 +141,9 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 
 1. [Create a backup](teamcity-data-backup.md).
 2. Backup files customized since previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
-3. Remove old installation files (the entire `<TeamCity Home Directory>`). It's advised to backup the directory beforehand.
+3. Remove old installation files (the entire `<TeamCity Home Directory>`). It's advised to back up the directory beforehand.
 4. Unpack the new archive to the location where TeamCity was previously installed.
-5. If you use a Tomcat server (your own or bundled in .tar.gz TeamCity distribution), it is recommended to delete the content of the `work` directory. Note that this may affect other web applications deployed into the same web server.
+5. If you use a Tomcat server (your own or bundled in `.tar.gz` TeamCity distribution), it is recommended to delete the content of the `work` directory. Note that this may affect other web applications deployed into the same web server.
 6. Restore customized settings backed up in step 2 above. If you have the customized `[TOMCAT_HOME]/conf/server.xml` file, apply your changes into the appropriate sections of the default file.
 7. Make sure the previously configured [TeamCity server startup properties](configuring-teamcity-server-startup-properties.md) (if any) are still actual.
 8. Start up the TeamCity server.
@@ -158,8 +157,7 @@ If you made no changes to the container, you can just stop the running container
 {product="tc"}
 
 It is recommended for all users to regularly update their IDE plugins to the latest version compatible with the TeamCity server version in use. At least to the version available from the TeamCity server's Tools section on user profile.   
-Generally, versions of the IntelliJ IDEA TeamCity plugin, Eclipse TeamCity plugin, and Visual Studio TeamCity Addin have to be the same as the TeamCity server version. Users with non-matching plugin versions get a message on an attempt to log in to the TeamCity server with a non-matching version.   
-The only exception is TeamCity versions 9.0 - 9.1.x, which use a compatible protocol, and any plugin of these versions can be used with any server of these versions. Updating IDE plugins to the matching server version is still recommended.
+Generally, versions of the IntelliJ IDEA TeamCity plugin, Eclipse TeamCity plugin, and Visual Studio TeamCity add-in have to be the same as the TeamCity server version. Users with non-matching plugin versions get a message on an attempt to log in to the TeamCity server with a non-matching version.
 
 ## Upgrading Build Agents
 {product="tc"}
@@ -228,7 +226,7 @@ To upgrade the service wrapper manually, do the following:
 4. Backup the `<agent>/launcher/conf/wrapper.conf` file.
 5. Delete `<agent>/launcher`.
 6. Rename `<agent>/launcher.latest` to `<agent>/launcher`.
-7. Edit the `<agent>/launcher/conf/wrapper.conf` file. Check that the `wrapper.java.command` property points to the `java.exe` file. Leave it blank to use the registry to look up java. Leave 'java.exe' to look up `java.exe` in `PATH`. For a standalone agent, the service value should be `../jre/bin/java`, for an agent installation on the server the value should be `../../jre/bin/java`. The backup version of the `wrapper.conf` file can be used.
+7. Edit the `<agent>/launcher/conf/wrapper.conf` file. Check that the `wrapper.java.command` property points to the `java.exe` file. Leave it blank to use the registry to look up java. Leave `java.exe` to look up `java.exe` in `PATH`. For a standalone agent, the service value should be `../jre/bin/java`, for an agent installation on the server the value should be `../../jre/bin/java`. The backup version of the `wrapper.conf` file can be used.
 8. Install the service using `<agent>\bin\service.install.bat`.
 9. Make sure the service is running under the proper user account. Please note that using SYSTEM can result in failing builds which use MSBuild/Sln2005 configurations.
 10. Start the service using `<agent>\bin\service.start.bat`.

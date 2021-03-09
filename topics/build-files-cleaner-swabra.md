@@ -1,7 +1,7 @@
 [//]: # (title: Build Files Cleaner \(Swabra\))
 [//]: # (auxiliary-id: viewpage.actionpageId113084151;Build Files Cleaner \(Swabra\))
 
-_Swabra_ (originally from the Russian noun '_shvabra_' – a mop, also from the English verb 'swab' \- clean with a mop) is a bundled plugin allowing you to clean files created during the build.
+_Swabra_ is a bundled plugin allowing you to clean files created during the build.
 
 The plugin remembers the state of the file tree after the sources checkout and deletes all the newly added files at the end of the build or at the next build start depending on the settings. Swabra also detects files modified or deleted during the build and reports them to the build log (however, such files are not restored by the plugin). The plugin can also ensure that by the start of the build there are no files modified or deleted by previous builds and initiate clean checkout if such files are detected.
 
@@ -73,10 +73,10 @@ Paths to monitor
 
 <td>
 
-Specify a newline\-separated set of `+-:path` rules to define which files and folders are to be involved in the files collection process (by default and until explicitly excluded, the entire checkout directory is monitored). The path can be relative (based on the [build's checkout directory](build-checkout-directory.md)) or absolute and can include Ant\-like wildcards. If no `+:` or `-:` prefix is specified, a rule as treated as "include".
+Specify a newline\-separated set of `+-:path` rules to define which files and folders are to be involved in the files collection process (by default and until explicitly excluded, the entire checkout directory is monitored). The path can be relative (based on the [build's checkout directory](build-checkout-directory.md)) or absolute and can include Ant-like wildcards. If no `+:` or `-:` prefix is specified, a rule as treated as "include".
 
 Rules on any path must come in the order __from more general to more concrete__.    
-The top level path must always point to a directory. Specifying a directory affects its entire content and sub\-directories. Note also that Swabra is __case\-sensitive.__
+The top level path must always point to a directory. Specifying a directory affects its entire content and subdirectories. Note also that Swabra is __case-sensitive.__
 
 Examples:
 

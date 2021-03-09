@@ -9,7 +9,7 @@ Enabling integration for the project also enables it for all its subprojects; if
 
 ## Dedicated Support for Issue Trackers
 
-TeamCity supports [Jira](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md), [GitHub](github.md), [Bitbucket Cloud](bitbucket-cloud.md), and Azure DevOps Server (formely [TFS](team-foundation-work-items.md)) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Tracker+Integration) page lists supported versions.
+TeamCity supports [Jira](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md), [GitHub](github.md), [Bitbucket Cloud](bitbucket-cloud.md), and Azure DevOps Server (formerly [TFS](team-foundation-work-items.md)) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Tracker+Integration) page lists supported versions.
 
 When an integration is configured, TeamCity automatically transforms an issue ID (=issue key in Jira, work item ID in Azure DevOps Server) mentioned in the VCS commit comment into a link to the corresponding issue, and the basic issue details are displayed in the TeamCity web UI when hovering over the icon next to the issue ID (for example, on the __[Changes](working-with-build-results.md#Changes)__ tab of the build results).
 
@@ -61,13 +61,11 @@ The settings described below are common for all issue trackers:
 
 __Connection type__
 
-
 </td>
 
 <td>
 
 Select the type of your issue tracker from the list.
-
 
 </td></tr><tr>
 
@@ -75,13 +73,11 @@ Select the type of your issue tracker from the list.
 
 __Display name__
 
-
 </td>
 
 <td>
 
 A symbolic name that will be displayed in the TeamCity UI for the issue tracker.
-
 
 </td></tr><tr>
 
@@ -89,13 +85,11 @@ A symbolic name that will be displayed in the TeamCity UI for the issue tracker.
 
 __Server URL (Repository URL)__
 
-
 </td>
 
 <td>
 
-The Issue tracker URL
-
+The issue tracker URL
 
 </td></tr><tr>
 
@@ -103,13 +97,11 @@ The Issue tracker URL
 
 __Username/Password (Authentication)__
 
-
 </td>
 
 <td>
 
 Credentials to log in to the issue tracker, if it requires authorization.
-
 
 </td></tr></table>
 
@@ -128,7 +120,7 @@ To integrate TeamCity with other issue trackers, configure TeamCity to turn any 
 
 Dedicated support for an issue tracker can also be added via a custom [issue tracker integration plugin](https://plugins.jetbrains.com/docs/teamcity/issue-tracker-integration-plugin.html).
 
- <seealso>
+<seealso>
         <category ref="concepts">
             <a href="supported-platforms-and-environments.md#Issue+Tracker+Integration">Supported Issue Trackers</a>
         </category>

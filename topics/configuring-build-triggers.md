@@ -16,10 +16,8 @@ For each build configuration the following triggers can be configured:
 * [Retry build trigger](configuring-retry-build-trigger.md): the build is triggered if the last build failed or failed to start.
 * [Branch remote run trigger](branch-remote-run-trigger.md): personal build is triggered automatically each time TeamCity detects new changes in particular branches of the VCS roots of the build configuration. Supports Git and Mercurial.
 * [NuGet dependency trigger](nuget-dependency-trigger.md): starts a build if there is a NuGet package update detected in the NuGet repository.
-<tip>
 
-Note that if you create a build configuration from a template, it inherits build triggers defined in the template, and they cannot be edited or deleted. However, you can specify additional triggers or disable a trigger permanently or temporarily.
-</tip>
+>Note that if you create a build configuration from a template, it inherits build triggers defined in the template, and they cannot be edited or deleted. However, you can specify additional triggers or disable a trigger permanently or temporarily.
 
 In addition to the triggers defined for the build configuration, you can also trigger a build by an [HTTP GET request](accessing-server-by-http.md#Triggering+a+Build+From+Script), or manually by running a custom build.
 

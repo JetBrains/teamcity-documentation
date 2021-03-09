@@ -3,11 +3,9 @@
 
 TeamCity allows mapping patterns in VCS change comments to arbitrary HTML pieces using regular expression search and replace patterns. One of the most common usages is to map an issue ID mentioning into a hyperlink to the issue page in the issue tracking system.
 
+To configure mapping:
 
-
-__To configure mapping:__
-
-1. Navigate to the file \<[TeamCity Data Directory](teamcity-data-directory.md)\>\config\main-config.xml.
+1. Navigate to the file `<[TeamCity Data Directory](teamcity-data-directory.md)>\config\main-config.xml`.
 2. Locate section `<comment-transformation>`, or create one under the `<server>` tag, if it doesn't exist (you may refer to the `main-config.dtd` file for the XML structure definition).
 3. Specify the search and replace patterns. For example, you can use the following pattern for enabling JIRA integration:
 
@@ -28,8 +26,6 @@ __To configure mapping:__
 ```
 
 TeamCity can apply several patterns to a single piece of text, if they do not intersect (match different string segments).
-
-
 
 <note>
 

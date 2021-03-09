@@ -592,18 +592,6 @@ License
 
 <td>
 
-(before TeamCity 2018.2) [JDK by Oracle](http://www.oracle.com/technetwork/java/javase/)
-
-</td>
-
-<td>
-
-[Oracle](http://www.oracle.com/technetwork/java/javase/jdk-8-readme-2095712.html#redistribution)
-
-</td></tr><tr>
-
-<td>
-
 [Java Mail](http://www.oracle.com/technetwork/java/javamail/)
 
 

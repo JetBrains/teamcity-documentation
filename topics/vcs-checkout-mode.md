@@ -1,5 +1,6 @@
 [//]: # (title: VCS Checkout Mode)
 [//]: # (auxiliary-id: VCS Checkout Mode)
+
 The __Version Control Settings__ page of a build configuration allows configuring how project source code is retrieved from VCS: you can [attach a VCS Root](configuring-vcs-settings.md#Configuring+Checkout+Options+for+Build+Configuration) and configure checkout options.
 
 The _VCS Checkout mode_ is a setting that affects how project sources reach an agent. This mode affects only sources checkout. The current revision and changes data retrieving logic is executed by the TeamCity server, and thus TeamCity server needs to access the VCS server in any mode.
@@ -16,19 +17,17 @@ TeamCity has the following VCS checkout modes:
 
 Checkout mode
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td id="prefer-agent-checkout">
 
-Prefer to checkout files on agent
+Prefer to check out files on agent
 
 </td>
 
@@ -45,12 +44,11 @@ TeamCity falls back to the server-side checkout in the following cases:
 * The agent has no access to the repository
 * If a Perforce client cannot be found on the agent using the same rules as while performing actual checkout or if stream depot is used and the checkout rules are complex (other than . =&gt; A )
 
-
 </td></tr><tr>
 
 <td id="server-checkout">
 
-Always checkout files on server
+Always check out files on server
 
 </td>
 
@@ -70,13 +68,13 @@ The TeamCity server will [export the sources](build-checkout-directory.md) and p
 
 <td id="agent-checkout">
 
-Always checkout files on agent
+Always check out files on agent
 
 </td>
 
 <td>
 
-The build agent will [check out the sources](build-checkout-directory.md) before the build. Agent-side checkout frees more server resources and provides the ability to access version control-specific directories (`.svn`, `CVS`, `.git`); that is, the build script can perform VCS operations (for example, check-ins into the version control) – in this case ensure the build script uses credentials necessary for the check-in.
+The build agent will [check out the sources](build-checkout-directory.md) before the build. Agent-side checkout frees more server resources and provides the ability to access version control-specific directories (`.svn`, `CVS`, `.git`); that is, the build script can perform VCS operations (for example, check-ins into the version control) — in this case ensure the build script uses credentials necessary for the check-in.
 
 VCS client software has to be installed on the agent (applicable to Perforce, Mercurial, Git).
 
@@ -89,7 +87,6 @@ There is a [known issue](https://youtrack.jetbrains.com/issue/TW-43648) with CVS
 * Integration with certain version controls can provide additional options when agent-side checkout is used. For example, [Subversion](subversion.md#Checkout+on+agent+settings).
 
 </note>
-
 
 </td></tr><tr>
 
@@ -104,7 +101,6 @@ Do not check out files automatically
 TeamCity will not check out any sources automatically, the [default build checkout directory](build-checkout-directory.md#Custom+checkout+directory) will still be created so that you could use it to check out the sources via a build script. Note that TeamCity will accurately report changes only if the checkout is performed on the revision specified by the [`build.vcs.number.*`](predefined-build-parameters.md#Server+Build+Properties) properties passed into the build.
 
 The build checkout directory will __not__ be cleaned automatically, unless the directory expiration period is [configured](build-checkout-directory.md#Automatic+Checkout+Directory+Cleaning).
-
 
 </td></tr></table>
 

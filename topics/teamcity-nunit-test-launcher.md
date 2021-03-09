@@ -136,13 +136,11 @@ List of assemblies paths separated by "`;`" or space.
 
 /runAssemblies:processPerAssembly
 
-
 </td>
 
 <td>
 
 Specify, if you want to run each assembly in a new process.
-
 
 </td></tr></table>
 

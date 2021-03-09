@@ -18,13 +18,11 @@ NuGet Installer settings:
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -32,12 +30,11 @@ Description
 
 NuGet.exe
 
-
 </td>
 
 <td>
 
-Select NuGet version to use from the drop\-down list (you need to have [NuGet installed](nuget.md)) or specify a custom path to `NuGet.exe`.
+Select NuGet version to use from the drop-down menu (you need to have [NuGet installed](nuget.md)) or specify a custom path to `NuGet.exe`.
 
 <note>
 
@@ -51,13 +48,11 @@ An appropriate version of .NET Framework installed on the agent machine is requi
 
 Path to solution file
 
-
 </td>
 
 <td>
 
 Specify the path to your solution file (.sln) where packages are to be installed.
-
 
 </td></tr><tr>
 
@@ -65,20 +60,17 @@ Specify the path to your solution file (.sln) where packages are to be installed
 
 Restore Mode
 
-
 </td>
 
 <td>
 
 Select `NuGet.exe restore` (requires NuGet 2.7\+) to restore all packages for an entire solution. The `NuGet.exe install` command is used to restore packages for versions prior to NuGet 2.7, but only for a single `packages.config` file.
 
-
 </td></tr><tr>
 
 <td>
 
 Restore Options
-
 
 </td>
 
@@ -89,13 +81,11 @@ If needed, select:
 * __Exclude version from package folder names__: Equivalent to the `-ExcludeVersion` option of the `NuGet.exe install` command. If enabled, the destination folder will contain only the package name, not the version number.
 * __Disable looking up packages from local machine cache__: Equivalent to the `-NoCache` option of the `NuGet.exe `
 
-
 </td></tr><tr>
 
 <td>
 
 Packages Sources
-
 
 </td>
 
@@ -117,13 +107,11 @@ TeamCity allows you to authenticate using private NuGet feeds. Read more in [NuG
 
 Update Packages
 
-
 </td>
 
 <td>
 
 __Update packages with help of NuGet update command__: Uses the `NuGet.exe update` command to update all packages under the solution. The package versions and constraints are taken from `packages.config` files.
-
 
 </td></tr><tr>
 
@@ -131,23 +119,20 @@ __Update packages with help of NuGet update command__: Uses the `NuGet.exe updat
 
 Update Mode
 
-
 </td>
 
 <td>
 
 Select one of the following:
 
-* __Update via solution file__ \- TeamCity uses Visual Studio solution file (.sln) to create the full list of NuGet packages to install. This option updates packages for the entire solution.
-* __Update via packages.config__ \- Select to update packages via calls to `NuGet.exe update Packages.Config` for each `packages.config` file under the solution.
-
+* __Update via solution file__ — TeamCity uses Visual Studio solution file (.sln) to create the full list of NuGet packages to install. This option updates packages for the entire solution.
+* __Update via packages.config__ — Select to update packages via calls to `NuGet.exe update Packages.Config` for each `packages.config` file under the solution.
 
 </td></tr><tr>
 
 <td>
 
 Update Options
-
 
 </td>
 
@@ -158,11 +143,7 @@ Update Options
 
 </td></tr></table>
 
-<tip>
-
-To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View DSL__ in the sidebar.
-
-</tip>
+>To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View DSL__ in the sidebar.
 
 See the [NuGet documentation](http://docs.nuget.org/docs/reference/command-line-reference) for the complete `NuGet.exe` command line reference.
 

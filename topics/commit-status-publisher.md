@@ -87,7 +87,7 @@ Now, whenever you run a build in this configuration, TeamCity will report the bu
 
 ### Gerrit
 
-Commit Status Publisher in TeamCity 2018.1 and later supports Gerrit versions 2.6+. For configuring integration with earlier Gerrit versions, contact our [support](feedback.md).
+Commit Status Publisher supports Gerrit versions 2.6+. For configuring integration with earlier Gerrit versions, contact our [support](feedback.md).
 
 ## Using Commit Status Publisher
 
@@ -116,4 +116,3 @@ The example below demonstrates how to configure sending the status of builds wit
    Similarly to the previous page, clicking the build status icon opens the [build results](working-with-build-results.md) page in the TeamCity web UI: 
    
     <img src="BuildResults.PNG" width="1054" alt="Build results"/>
-

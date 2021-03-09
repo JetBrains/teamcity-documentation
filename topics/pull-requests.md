@@ -23,13 +23,8 @@ You can find the pull request's details displayed on the __Overview__ tab of the
 
 If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches.
 
-
-<tip>
-
-For requests from GitHub and GitLab, you can set up TeamCity to automatically run a build on each request and merge the request if the build is successful.   
+>For requests from GitHub and GitLab, you can set up TeamCity to automatically run a build on each request and merge the request if the build is successful.   
 To achieve this, enable and configure the Pull Requests and [Automatic Merge](automatic-merge.md) build features.
-
-</tip>
 
 See the [example](#Pull+Requests+workflow+example) on how to set up TeamCity to run builds on GitHub pull requests.
 
@@ -439,7 +434,7 @@ If left blank, the URL will be extracted from the VCS root fetch URL.
 
 This feature monitors builds only on the `refs/pull/*/merge` branch.
 
-In case with [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/), TeamCity detects requests on a merge branch – not on the pull request itself as with other VCSs. Each build will be launched on a virtual branch showing an actual result of the build after merging the PR. Thus, the build will contain both the commit with changes and the virtual merge commit.
+In case with [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/), TeamCity detects requests on a merge branch — not on the pull request itself as with other VCSs. Each build will be launched on a virtual branch showing an actual result of the build after merging the PR. Thus, the build will contain both the commit with changes and the virtual merge commit.
 
 Note that the feature ignores Azure DevOps draft pull requests.
 

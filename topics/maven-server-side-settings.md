@@ -35,6 +35,7 @@ Description
 </td></tr><tr>
 
 <td>
+
 &lt;Default&gt;
 
 </td>
@@ -51,6 +52,7 @@ TeamCity searches the following locations for the `settings.xml` file (listed in
 </td></tr><tr>
 
 <td>
+
 &lt;Custom&gt;
 
 </td>
@@ -59,10 +61,10 @@ TeamCity searches the following locations for the `settings.xml` file (listed in
 
 The path to the file is provided by user. The file should be available both on the server and all the agents where the build will be run.
 
-
 </td></tr><tr>
 
 <td>
+
 Uploaded settings name
 
 </td>
@@ -80,7 +82,7 @@ The settings are available in the current project and its subprojects. To overri
 
 For the logic of Maven settings, refer to the related Maven [documentation](http://maven.apache.org/settings.html).
 
-User\-level settings can be configured in the [Maven Artifact Dependency Trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger).
+User-level settings can be configured in the [Maven Artifact Dependency Trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger).
 
  <seealso>
         <category ref="admin-guide">

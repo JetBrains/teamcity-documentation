@@ -9,13 +9,11 @@ TeamCity allows creating a backup of TeamCity data via the Web UI. To create a b
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -28,8 +26,7 @@ Backup file
 
 <td>
 
-Specify the name for the backup file, the extention (`.zip`) will be added automatically. By default, TeamCity will store the backup file in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/backup directory. For security reasons, you cannot explicitly change this path in the UI. To modify this setting, specify an absolute or relative path (the path should be relative to [TeamCity Data Directory](teamcity-data-directory.md)) in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/backup-config.xml file. For example:
-
+Specify the name for the backup file, the extention (`.zip`) will be added automatically. By default, TeamCity will store the backup file in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/backup` directory. For security reasons, you cannot explicitly change this path in the UI. To modify this setting, specify an absolute or relative path (the path should be relative to [TeamCity Data Directory](teamcity-data-directory.md)) in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/backup-config.xml` file. For example:
 
 ```Shell
 <backup-settings>
@@ -58,8 +55,7 @@ Check this option to automatically add time stamp suffix to the specified filena
 * If the directory where backup files are stored already contains a file with the name specified above, TeamCity won't run backup: you will need either to specify another name, or enable _time stamp suffix_ option, which allows you to avoid this.
 * Time stamp suffix has a specific format: sorting backup files alphabetically will also sort them chronologically.
 </note>
-
-
+  
 </td></tr><tr>
 
 <td id="backup-scope">
@@ -76,10 +72,9 @@ Specify what kind of data you want to back up. The contents of the backup file d
 
 To reduce the resulting file size and the time spent on the backup, select the "basic" scope, which includes server settings, projects and builds configurations, plugins and database. However, you'll be able to restore only the settings which were backed up.
 
-For the full backup suitable for most of the needs, it is recommended to use the Custom scope with all the items selected except for "build logs" and then backup the \<[TeamCity Data Directory](teamcity-data-directory.md)&gt;/system/artifacts location as a usual file system.
+For the full backup suitable for most of the needs, it is recommended to use the Custom scope with all the items selected except for "build logs" and then backup the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` location as a usual file system.
 
 Build artifacts are not included into the backup due to their size. It is recommended to either backup the [artifacts directories](teamcity-configuration-and-maintenance.md) separately or use a redundant storage for the artifacts. Build logs are stored as a part of build artifacts, so there is no need to back up the build logs if you implement a separate backup of the artifacts locations.
-
 
 </td></tr></table>
 

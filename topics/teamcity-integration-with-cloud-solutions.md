@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity Integration with Cloud Solutions)
 [//]: # (auxiliary-id: TeamCity Integration with Cloud Solutions)
 
-TeamCity integration with cloud (IAAS) solutions allows TeamCity to provision virtual machines running TeamCity agents on\-demand based on the build queue state.
+TeamCity integration with cloud (IAAS) solutions allows TeamCity to provision virtual machines running TeamCity agents on-demand based on the build queue state.
 
 This page covers __general information__ about the configuration of integration. For the list of currently supported solutions, refer to [Available Integrations](#Available+Integrations) below.
 
@@ -59,7 +59,7 @@ If you need the [connection](setting-up-and-running-additional-build-agents.md#A
 3. Configure the running instance:
    1. [Install](setting-up-and-running-additional-build-agents.md) and configure a build agent.
       * Configure the server name and agent name in the [`buildAgent.properties`](project-and-agent-level-build-parameters.md) file — this is optional if TeamCity will be configured to launch the image, but it is useful to test the agent is configured correctly.
-      * It usually makes sense to specify `tempDir` and `workDir` in `conf/buildAgent.properties` to use a non\-system drive (for example, `D` drive under Windows)
+      * It usually makes sense to specify `tempDir` and `workDir` in `conf/buildAgent.properties` to use a non-system drive (for example, `D` drive under Windows)
    2. Install any additional software necessary for the builds on the machine (for example, Java or .NET)
    3. Start the agent and wait until it connects to server, ensure it is working OK and is compatible with all necessary build configurations (in the TeamCity web UI, go to the __Agents__ page, select the build agent and view the __Compatible Configurations__ tab), and so on.
    4. Configure the system so that the agent is [started on the machine boot](setting-up-and-running-additional-build-agents.md#Automatic+Start) (and make sure TeamCity server is accessible on the machine boot).

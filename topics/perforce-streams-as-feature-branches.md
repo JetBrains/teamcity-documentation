@@ -9,11 +9,11 @@ After that, all streams which have the specified main stream as a parent, will b
 
 It is possible to specify some mapping to include only specific streams into the feature branches set, like `+://stream-depot/*`.
 
-In this case, only streams under depot __stream\-depot__ will be included for changes collection/build triggering.
+In this case, only streams under depot __stream-depot__ will be included for changes collection/build triggering.
 
 ## Task streams
 
-Task streams are supported, but new task streams are not detected by TeamCity until there is a non\-merge commit into this stream.
+Task streams are supported, but new task streams are not detected by TeamCity until there is a non-merge commit into this stream.
 
 ## Remote run
 

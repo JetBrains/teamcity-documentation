@@ -5,12 +5,6 @@ In addition to statistic charts generated automatically by TeamCity on the __Sta
 
 You can view statistic values reported by the build on the __Build Parameters__ page.
 
-<tip>
-
-The information in this section refers to __TeamСity 10\+__. For other versions, refer to the [listing](https://confluence.jetbrains.com/display/TW/Documentation) to choose the corresponding documentation.
-</tip>
-
-
 ## Managing Custom Charts via the TeamCity Web UI
 
 It is possible to manage custom charts using the TeamCity web UI.
@@ -37,11 +31,6 @@ Note that there is a number of [limitations](edit-custom-chart-limitations.md) t
 __To reorder custom charts__ for a project/build configuration, click the __Reorder__ button and drag-and-drop the charts to arrange them as required and apply your changes.
 
 ## Managing Custom Charts Manually
-
-<note>
-
-__Since TeamCity 10__, manual editing of custom charts has changed. For earlier versions, see this page in the corresponding [documentation](https://confluence.jetbrains.com/display/TW/Documentation).
-</note>
 
 To manually create custom charts to be displayed in the TeamCity web UI, configure the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>`  element is added.
 
@@ -155,8 +144,8 @@ The title above the list of series used on the chart (in the singular form). The
 
 The list of comma-separated options to be checked by default. Can include the following:
 
-* `showFailed` – include results from failed builds by default.
-* `averaged` – by default, show averaged values on the chart.
+* `showFailed` — include results from failed builds by default.
+* `averaged` — by default, show averaged values on the chart.
 
 </td></tr><tr>
 
@@ -170,11 +159,11 @@ The list of comma-separated options to be checked by default. Can include the fo
 
 The list of comma-separated filter names that will not be shown next to the chart:
 
-* `all` – hide all filters.
-* `series` – hide series filter (you won't be able to show only data from specific valueType specified for the chart.)
-* `range` – hide the date range filter.
-* `showFailed` – hide the checkbox which allows including data for failed builds.
-* `averaged` – hide the checkbox which allows viewing averaged values.
+* `all` — hide all filters.
+* `series` — hide series filter (you won't be able to show only data from specific valueType specified for the chart.)
+* `range` — hide the date range filter.
+* `showFailed` — hide the checkbox which allows including data for failed builds.
+* `averaged` — hide the checkbox which allows viewing averaged values.
 
 Default: empty (all filters are shown).
 

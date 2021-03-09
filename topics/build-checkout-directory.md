@@ -14,7 +14,7 @@ If you want to investigate an issue and need to know the directory used by the b
 
 In your [build script](build-script-interaction-with-teamcity.md) you can refer to the effective value of the build checkout directory via the `teamcity.build.checkoutDir` [property](configuring-build-parameters.md) provided by TeamCity.
 
- By default, this is also the directory [where builds will run](build-working-directory.md).
+By default, this is also the directory [where builds will run](build-working-directory.md).
 
 ## Checkout Process
 
@@ -36,7 +36,7 @@ In most cases, the default __Auto (recommended)__ setting will cover your needs.
 
 If for some reason you need to specify a custom checkout directory (for example, the process of creating builds depends on some particular directory), make sure the following conditions are met:
 * the checkout directory is not shared between build configurations with different VCS settings (otherwise, TeamCity will perform [clean checkout](clean-checkout.md) each time another build configuration is built in the directory);
-* the content of the directory is not modified by processes other than those of a single TeamCity agent (otherwise TeamCity might be unable to ensure consistent incremental sources update). If this cannot be eliminated, make sure to turn on the clean build checkout option for all the participating build configurations. This rule also applies to two TeamCity agents sharing the same working directory. As one TeamCity agent has no knowledge of another, the other agent appears as an external process to it.
+* the content of the directory is not modified by processes other than those of a single TeamCity agent (otherwise, TeamCity might be unable to ensure consistent incremental sources update). If this cannot be eliminated, make sure to turn on the clean build checkout option for all the participating build configurations. This rule also applies to two TeamCity agents sharing the same working directory. As one TeamCity agent has no knowledge of another, the other agent appears as an external process to it.
 
 <warning>
 

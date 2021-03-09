@@ -1,7 +1,7 @@
 [//]: # (title: CSRF Protection)
 [//]: # (auxiliary-id: CSRF Protection)
 
-Сross-Site Request Forgery (CSRF) protection in TeamCity has been implemented since version 2017.1 ([issue](https://youtrack.jetbrains.com/issue/TW-17762)). This protection implies a number of requirements on HTTP requests.
+Сross-Site Request Forgery (CSRF) protection in TeamCity implies a number of requirements on HTTP requests.
 
 Since version 2020.1, TeamCity uses only CSRF tokens as a protection measure. In previous versions of TeamCity, `Origin/Referer` headers were also used.
 

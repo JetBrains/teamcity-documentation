@@ -144,10 +144,7 @@ Exclusive patterns examples:
    `-:excl/**/*.*`  
    `+:excl/must_have.txt=>target`  Will download all artifacts to the `target` directory. Will not download anything from the `excl` directory, but the file called `must_have.txt`
 
-<tip>
-
-Click the ![ArtifactsBrowserIcon.png](ArtifactsBrowserIcon.png) icon to invoke the Artifact Browser. TeamCity will try to locate artifacts according to the specified settings and show them in a tree. Select the required artifacts from the tree and TeamCity will place the paths to them into the input field.
-</tip>
+>Click the ![ArtifactsBrowserIcon.png](ArtifactsBrowserIcon.png) icon to invoke the Artifact Browser. TeamCity will try to locate artifacts according to the specified settings and show them in a tree. Select the required artifacts from the tree and TeamCity will place the paths to them into the input field.
 
 The artifacts placed under the `.teamcity` directory are considered [hidden](build-artifact.md#Hidden+Artifacts). These artifacts are ignored by wildcards by default.   
 If you want to include files from the `.teamcity` directory for any purpose, be sure to add the artifact path starting with `.teamcity` explicitly.

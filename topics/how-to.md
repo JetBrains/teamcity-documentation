@@ -27,18 +27,17 @@ The __server__ hardware requirements depend on the server load, which in its tur
 <tip>
 
 * If you decide to run an [external database](setting-up-an-external-database.md) on the same machine as the server, take into account hardware requirements with database engine requirements in mind.
-* If you face some TeamCity\-related performance issues, they should probably be investigated and addressed individually. For example, if builds generate too much data, the server disk system might be needing an upgrade both in size and speed characteristics.
+* If you face some TeamCity-related performance issues, they should probably be investigated and addressed individually. For example, if builds generate too much data, the server disk system might be needing an upgrade both in size and speed characteristics.
 </tip>
 
 __Database Note:__  
 When using the server extensively, the database performance starts to play a greater role.   
-For reliability and performance reasons you should use external database.   
+For reliability and performance reasons you should use an external database.   
 See the [notes](setting-up-an-external-database.md) on choosing external database.    
 The database size requirements naturally vary based on the amount of data stored (number of builds, number of tests, and so on). The active server database usage can be estimated at several gigabytes of data per year.
 
-
 __Overview of the TeamCity hardware resources usage:__      
-* CPU: TeamCity utilizes multiple cores of the CPU, so increasing number of cores makes sense. For non\-trivial TeamCity usage at least 4 CPU cores are recommended.
+* CPU: TeamCity utilizes multiple cores of the CPU, so increasing number of cores makes sense. For non-trivial TeamCity usage at least 4 CPU cores are recommended.
 * Memory: used by the TeamCity server main process and child processes (used for Maven integration, version control integration, Kotlin DSL execution). See the [notes](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) on the main process memory usage. Generally, you will probably not need to dedicate more than 4G of memory to TeamCity server if you do not plan to run more than 100 concurrent builds (agents), support more than 200 online users or work with large repositories.
 * HDD/disk usage: This sums up mainly from the temp directory usage (`<[TeamCity Home](teamcity-home-directory.md)>/temp` and OS default temp directory) and `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` usage. Performance of the TeamCity server highly depends on the disk system performance. As TeamCity stores large amounts of data under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` (most notably, VCS caches and build results), it is important to ensure that the access to the disk is fast (in particular reading/writing files in multiple threads, listing files with attributes). Ensuring disk has good performance is especially important if you plan to store the Data Directory on a network drive. It is recommended to use local storage for `TeamCity Data Directory/system/caches` directory. See also [TeamCity Data Directory](teamcity-data-directory.md#Recommendations+as+to+choosing+Data+Directory+Location).
 * Network: This mainly sums up from the traffic from VCS servers, to clients (web browsers, IDE, etc.) and to/from build agents (send sources, receive build results, logs and artifacts).
@@ -58,7 +57,7 @@ __The load on the server depends on:__
 * total size of the sources checked out by TeamCity daily.    
 
 A general example of hardware configuration capable to handle up to 100 concurrently running builds and running only TeamCity server can be:   
-Server\-suitable modern multi\-core CPU, 8Gb of memory, fast network connection, fast and reliable HDD, fast external database access. 
+Server-suitable modern multicore CPU, 8Gb of memory, fast network connection, fast and reliable HDD, fast external database access. 
 
 Based on our experience, a modest hardware likeIntel 3.2 GHz dual core CPU, 3.2Gb memory under Windows, 1Gb network adapter, single HDDcan provide acceptable performance for the following setup:
 * 60 projects and 300 build configurations (with one forth being active and running regularly);
@@ -81,7 +80,7 @@ __Server load characteristics:__
 * about 4Mb log per build;
 * 100 build agents;
 * 150 web users and 40 IDE users;
-* 250 VCS roots (mainly Git, Hg, Perforce and Subversion using agent\-side checkout), average checking for changes interval is 180 seconds;
+* 250 VCS roots (mainly Git, Hg, Perforce and Subversion using agent-side checkout), average checking for changes interval is 180 seconds;
 * more than 1000 changes per day;
 * the database (MySQL) is running on the same machine;
 * TeamCity server process has `-Xmx3700m` x64 JVM setting.
@@ -92,17 +91,17 @@ HDD free space requirements are mainly determined by the number of builds stored
 
 If the builds generate large number of data (artifacts/build log/test data), using fast hard disk for storing the `.BuildServer/system` directory and fast network between agents and server are recommended.
 
-The general recommendation for deploying large-scale TeamCity installation is to start with a reasonable hardware while considering hardware upgrade. Then increase the load on the server (e.g. add more projects) gradually, monitoring the performance characteristics and deciding on necessary hardware or software improvements. There is also a [benchmark plugin](https://confluence.jetbrains.com/display/TW/TeamCity+Benchmark) which can be used to estimate the number of simultaneous build the current server installation can handle. Anyway, best administration practices are recommended like keeping adequate disk defragmentation level, and so on.
+The general recommendation for deploying large-scale TeamCity installation is to start with a reasonable hardware while considering hardware upgrade. Then increase the load on the server (e.g. add more projects) gradually, monitoring the performance characteristics and deciding on necessary hardware or software improvements. There is also a [benchmark plugin](https://plugins.jetbrains.com/plugin/9127-benchmark) which can be used to estimate the number of simultaneous build the current server installation can handle. Anyway, best administration practices are recommended like keeping adequate disk defragmentation level, and so on.
 
 Starting with an adequately loaded system, if you then increase the number of concurrently running builds (agents) by some factor, be prepared to increase CPU, database and HDD access speeds, amount of memory by the same factor to achieve the same performance.   
 If you increase the number of builds per day, be prepared to increase the disk size.
 
 If you consider cloud deployment for TeamCity agents (for example, on Amazon EC2),  also review [Setting Up TeamCity for Amazon EC2](setting-up-teamcity-for-amazon-ec2.md#Estimating+EC2+Costs)
 
-A note on the agents setup in JetBrains internal TeamCity installation:   
+A note on the agents' setup in JetBrains internal TeamCity installation:   
 We use both separate machines each running a single agent and dedicated "servers" running several virtual machines each of them having a single agent installed. Experimenting with the hardware and software we settled on a configuration when each core7i physical machine runs 3 virtual agents, each using a separate hard disk. This stems form the fact that our (mostly Java) builds depend on HDD performance in the first place. But YMMV.
 
-TeamCity is known to work well with 500\+ build agents (500 concurrently running builds actively logging build run\-time data). In synthetic tests the server was functioning OK with as many as 1000 concurrent builds (the server with 8 cores, 32Gb of total memory running under Linux, and MySQL server running on a separate comparable machine). The load on the server produced by each build depends on the amount of data the build produces (build log, tests number and failure details, inspections/duplicates issues number, etc.). Keeping the amount of data reasonably constrained (publishing large outputs as build artifacts, not printing those into standard output; tweaking inspection profiles to report limited set of the most important inspection hits, etc.) will help scale the server to handle more concurrent builds.   
+TeamCity is known to work well with 500\+ build agents (500 concurrently running builds actively logging build run-time data). In synthetic tests the server was functioning OK with as many as 1000 concurrent builds (the server with 8 cores, 32Gb of total memory running under Linux, and MySQL server running on a separate comparable machine). The load on the server produced by each build depends on the amount of data the build produces (build log, tests number and failure details, inspections/duplicates issues number, etc.). Keeping the amount of data reasonably constrained (publishing large outputs as build artifacts, not printing those into standard output; tweaking inspection profiles to report limited set of the most important inspection hits, etc.) will help scale the server to handle more concurrent builds.   
 If you need much more agents/parallel builds, it is recommended to use [several nodes setup](multinode-setup.md). If a substantially large amount of agents is required, it is recommended to consider using several separate TeamCity instances and distributing the projects between them. We constantly work on TeamCity performance improvements and are willing to work closely with organizations running large TeamCity installations to study any performance issues and improve TeamCity to handle larger loads. See also a related post on the [maximum number of agents which TeamCity can handle](http://blog.jetbrains.com/teamcity/2015/08/benchmarking-teamcity/)
 
 See also a related post: [description of a substantial TeamCity setup](http://blogs.jetbrains.com/teamcity/2011/09/05/improving-performance-and-scalability-of-your-teamcity-server/).
@@ -119,7 +118,6 @@ The most important flows of traffic between the agent and the server are:
 * (when artifacts are configured for a build) the agent uploads build artifacts to the server;
 * some runners (like coverage or code analysis) include automatic uploading of their results' reports to the server.
 
-
 ## Configuring TeamCity Server for Performance
 {product="tc"}
 
@@ -128,16 +126,15 @@ Here are some recommendations to tweak TeamCity server setup for better performa
 * Use a separate [reverse proxy](#Set+Up+TeamCity+behind+a+Proxy+Server) server (e.g. NGINX) to handle HTTPS
 * Use a separate server for the external database and monitor the database performance
 * Monitor the server's CPU and IO performance, increase hardware resources as necessary (see also [hardware notes](#Estimate+Hardware+Requirements+for+TeamCity))
-* Make sure clean\-up is configured for all the projects with a due retention policy, make sure clean\-up completely finishes regularly (check Administration / Clean\-Up page)
+* Make sure clean-up is configured for all the projects with a due retention policy, make sure clean-up completely finishes regularly (check Administration / Clean-Up page)
 * Consider ensuring good IO performance for the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/caches` directory, e.g. by moving it to a separate local drive (or storing on a local drive you choose to store the TeamCity Data Directory on a network storage)
 * Regularly archive obsolete projects
 * Regularly review the installed not bundled plugins and remove those not essential for the server functioning
-* Consider using agent\-side checkout whenever possible
+* Consider using agent-side checkout whenever possible
 * Make sure the build logs are not huge (tens megabytes at most, better less than 10 Mb)
 * If lots VCS roots are configured on the server, consider configuring [repository commit hooks](configuring-vcs-post-commit-hooks-for-teamcity.md) instead of using polling for changes or at least increase [VCS polling interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) to 300 seconds or more
 * If the server is often used by large number of users (e.g. more than 1000), consider reducing the frequency of background UI requests their by increasing [UI refresh intervals](teamcity-tweaks.md#Web+Page+Refresh+Interval)
 * When regularly exceeding 500 concurrently running builds which log a lot of data, consider using [Several Nodes Setup](multinode-setup.md)
-
 
 <anchor name="HowTo-RetrieveAdministratorPassword"/>
 
@@ -150,8 +147,7 @@ If you want to regain access to the system and you cannot log in as a user with 
 
 It is also possible to use [REST API](https://www.jetbrains.com/help/teamcity/rest/curl-examples.html#Making+user+a+system+administrator) to add the System Administrator role to any existing user.
 
-If you use built\-in authentication and have correct email specified, you can [reset the password](managing-your-user-account.md#Changing+Your+Password) from the login page. 
-
+If you use built-in authentication and have correct email specified, you can [reset the password](managing-your-user-account.md#Changing+Your+Password) from the login page. 
 
 ## Estimate External Database Capacity
 {product="tc"}
@@ -168,7 +164,7 @@ The size of the database will depend on:
 * [clean-up](clean-up.md) rules (retention policy)
 * clean-up schedule
 
-We recommend the initial size of data spaces to be 4 GB. When migrating from the internal database, we suggest at least doubling the size of the current internal database. For example, the size of the external database (without the Redo Log files) of the internal TeamCity server in JetBrains is about 50 GB. Setting your database to grow automatically helps to increase file sizes to a pre\-determined limit when necessary, which minimizes the effort to monitor disk space.
+We recommend the initial size of data spaces to be 4 GB. When migrating from the internal database, we suggest at least doubling the size of the current internal database. For example, the size of the external database (without the Redo Log files) of the internal TeamCity server in JetBrains is about 50 GB. Setting your database to grow automatically helps to increase file sizes to a predetermined limit when necessary, which minimizes the effort to monitor disk space.
 
 Allocating 1 GB for the redo log (see the table below) and undo files is sufficient in most cases.
 
@@ -194,13 +190,11 @@ The _redo_ log (or a similar entity) naming for different RDBMS:
 
 RDBMS
 
-
 </td>
 
 <td>
 
 Log name
-
 
 </td></tr><tr>
 
@@ -208,13 +202,11 @@ Log name
 
 Oracle
 
-
 </td>
 
 <td>
 
 Redo Log
-
 
 </td></tr><tr>
 
@@ -222,13 +214,11 @@ Redo Log
 
 MS SQL Server
 
-
 </td>
 
 <td>
 
 Transaction Log
-
 
 </td></tr><tr>
 
@@ -236,13 +226,11 @@ Transaction Log
 
 PostgreSQL
 
-
 </td>
 
 <td>
 
 WAL (write ahead log)
-
 
 </td></tr><tr>
 
@@ -250,24 +238,21 @@ WAL (write ahead log)
 
 MySQL \+ InnoDB and Percona
 
-
 </td>
 
 <td>
 
 Redo Log
 
-
 </td></tr></table>
 
-PostgreSQL: We recommend using version 9.2\+, which has a lot of query optimization features. Also see the information on the write\-ahead\-log (WAL) in the [PostgreSQL documentation](http://www.postgresql.org/docs/9.2/static/wal-internals.html)
+PostgreSQL: We recommend using version 9.2\+, which has a lot of query optimization features. Also see the information on the write-ahead-log (WAL) in the [PostgreSQL documentation](http://www.postgresql.org/docs/9.2/static/wal-internals.html)
 
-Oracle: it is recommended to keep statistics on: all automatically gathered statistics should be enabled (since Oracle 10.0, this is the default set\-up). Also see the information on redo log files in the [Oracle documentation](https://docs.oracle.com/cd/B14117_01/server.101/b10752/iodesign.htm#26022).
+Oracle: it is recommended to keep statistics on: all automatically gathered statistics should be enabled (since Oracle 10.0, this is the default setup). Also see the information on redo log files in the [Oracle documentation](https://docs.oracle.com/cd/B14117_01/server.101/b10752/iodesign.htm#26022).
 
 MS SQL Server: it is NOT recommended to use the jTDS driver: it does not work with `nchar/nvarchar`, and to preserve unicode streams it may cause queries to take a long time and consume a lot of IO. Also see the information on redo log in the [Microsoft Knowledge base](https://support.microsoft.com/kb/2033523). If you use jTDS, please [migrate](setting-up-an-external-database.md#jTDS+driver).
 
 MySQL: the query optimizer might be inefficient: some queries may get a wrong execution plan causing them to take a long time and consume huge IO.
-
 
 ## Estimate the Number of Required Build Agents
 
@@ -311,15 +296,13 @@ The contents of this section have been moved to the [dedicated article](security
 ## Configure Newly Installed MySQL Server
 {product="tc"}
 
-If MySQL server is going to be used with TeamCity in addition to the [basic setup](setting-up-an-external-database.md#MySQL), you should review and probably change some of the MySQL server settings. If MySQL is installed on Windows, the settings are located in `my.ini` file which usually can be found under MySQL installation directory. For Unix\-like systems the file is called `my.cnf` and can be placed somewhere under `/etc` directory. Read more about configuration file location in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/option-files.html). Note: you'll need to restart MySQL server after changing settings in `my.ini|my.cnf`.
+If MySQL server is going to be used with TeamCity in addition to the [basic setup](setting-up-an-external-database.md#MySQL), you should review and probably change some of the MySQL server settings. If MySQL is installed on Windows, the settings are located in `my.ini` file which usually can be found under MySQL installation directory. For Unix-like systems the file is called `my.cnf` and can be placed somewhere under `/etc` directory. Read more about configuration file location in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/option-files.html). Note: you'll need to restart MySQL server after changing settings in `my.ini|my.cnf`.
 
 The following settings should be reviewed and/or changed:
-
 
 ### InnoDB database engine
 
 Make sure you're using InnoDB database engine for tables in TeamCity database. You can check what engine is used with help of this command:
-
 
 ```Shell
 
@@ -329,13 +312,10 @@ show table status like '<table name>';
 
 or for all tables at once:
 
-
 ```Shell
 
 show table status like '%';
 ```
-
-
 
 ### max_connections
 
@@ -344,7 +324,6 @@ You should ensure `max_connections` parameter has a bigger value than the one sp
 ### innodb_buffer_pool_size and innodb_log_file_size
 
 Specifying a too small value in `innodb_buffer_pool_size` may significantly affect performance:
-
 
 ```Shell
 
@@ -360,26 +339,20 @@ innodb_buffer_pool_size=2000M
 
 ```
 
-
-
 We recommend to start with 2Gb and increase it if you experience slowness and have enough memory. After increasing buffer pool size you should also change size of the [`innodb_log_file_size`](http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_log_file_size) setting (its value can be calculated as `innodb_log_file_size/N`, where N is the number of log files in the group (2 by default)):
-
 
 ```Shell
 innodb_log_file_size=1024M
 
 ```
 
-
-
 ### innodb_file_per_table
 
-For better performance you can enable the so\-called [per-table tablespaces](http://dev.mysql.com/doc/refman/5.5/en/innodb-multiple-tablespaces.html). Note that once you add `innodb_file_per_table` option new tables will be created and placed in separate files, but tables created before enabling this option will still be in the shared tablespace. You'll need to re\-import database for them to be placed in separate files.
+For better performance you can enable the so-called [per-table tablespaces](http://dev.mysql.com/doc/refman/5.5/en/innodb-multiple-tablespaces.html). Note that once you add `innodb_file_per_table` option new tables will be created and placed in separate files, but tables created before enabling this option will still be in the shared tablespace. You'll need to reimport database for them to be placed in separate files.
 
 ### innodb_flush_log_at_trx_commit
 
 If TeamCity is the only application using MySQL database then you can improve performance by setting `innodb_flush_log_at_trx_commit` variable to `2` or `0`:
-
 
 ```Shell
 
@@ -395,18 +368,15 @@ innodb_flush_log_at_trx_commit=2
 
 ```
 
-
-
 Note: it is not important for TeamCity that database offers full ACID behavior, so you can safely change this variable.
 
 ### log files on different disk
 
-Placing the MySQL log files on different disk sometimes helps improving performance. You can read about it in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/innodb-configuration.html).
+Placing the MySQL log files on different disk sometimes helps improve performance. You can read about it in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/innodb-configuration.html).
 
 ### Setting The Binary Log Format
 
 If the default MySQL binary logging format is not MIXED (it depends on the [version of MySQL](http://dev.mysql.com/doc/refman/5.1/en/binary-log-setting.html) you are using), then it should be explicitly set to __MIXED__:
-
 
 ```Shell
 
@@ -414,11 +384,9 @@ binlog-format=mixed
 
 ```
 
-
-
 ### Enable additional diagnostics
 
-To get additional diagnostics data in case of some database\-specific errors, grant more permissions for a TeamCity database user via SQL command:
+To get additional diagnostics data in case of some database-specific errors, grant more permissions for a TeamCity database user via SQL command:
 
 ```SQL
 
@@ -451,7 +419,7 @@ shared_buffers=512MB
 ### checkpoint-related parameters
 [//]: # (AltHead: checkpoint_segments)
 
-For write\-intensive applications such as TeamCity, it is recommended to change some of the [checkpoint-related parameters](http://www.postgresql.org/docs/current/static/runtime-config-wal.html#RUNTIME-CONFIG-WAL-CHECKPOINTS):
+For write-intensive applications such as TeamCity, it is recommended to change some of the [checkpoint-related parameters](http://www.postgresql.org/docs/current/static/runtime-config-wal.html#RUNTIME-CONFIG-WAL-CHECKPOINTS):
 
 For __PostgreSQL 9.5 and later__:
 
@@ -461,7 +429,6 @@ max_wal_size = 1500MB
 checkpoint_completion_target=0.9
 
 ```
- 
 
 For versions __prior to PostgreSQL 9.5__:
 
@@ -471,12 +438,9 @@ checkpoint_segments=32
 checkpoint_completion_target=0.9
 ```
 
-
-
 ### synchronous_commit
 
 If TeamCity is the only application using the PostgreSQL database, we recommend disabling the [http://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT](http://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT) parameter:
-
 
 ```Shell
 
@@ -634,7 +598,6 @@ This approach can be used with any proxy configuration, provided the configured 
 
 Set up the proxying server to redirect all requests to `teamcity.public:400` to a dedicated port on the TeamCity server (`8111` in the example below) and change the "Connector" node in `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file as below. Note that the "Connector" port configured this way should only be accessible via the configured proxy's address. If you also want to make TeamCity port accessible directly, use a separate "Connector" node with a dedicated `port` value for that.
 
-
 ```Shell
 
 <Connector port="8111" protocol="org.apache.coyote.http11.Http11NioProtocol"
@@ -661,7 +624,6 @@ This approach can be used when the proxy server sets `X-Forwarded-Proto`, `X-For
 
 Add the following into the Tomcat main `<Host>` node of the `conf\server.xml` file (see also Tomcat [doc](http://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/valves/RemoteIpValve.html)):
 
-
 ```Shell
 
 <Valve
@@ -673,8 +635,7 @@ Add the following into the Tomcat main `<Host>` node of the `conf\server.xml` fi
 
 ```
 
-It is also recommended to specify the `internalProxies` attribute with the regular expression matching only the IP address of the proxy server. For example, `internalProxies="192\.168\.0\.1"`.
-
+It is also recommended specifying the `internalProxies` attribute with the regular expression matching only the IP address of the proxy server. For example, `internalProxies="192\.168\.0\.1"`.
 
 [//]: # (Internal note. Do not delete. "How To...d160e1383.txt")
 
@@ -690,7 +651,7 @@ TeamCity does not provide out-of-the-box support for HTTPS access (see [TW-12976
 
 For small servers, you can set up HTTPS via the internal [Tomcat means](https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html), but this is not recommended as it may significantly increase the CPU load.
 
-For configuring clients to access TeamCity server via HTTPS while using self\-signed certificate, check the [related instructions](using-https-to-access-teamcity-server.md).
+For configuring clients to access TeamCity server via HTTPS while using self-signed certificate, check the [related instructions](using-https-to-access-teamcity-server.md).
 
 ## Configure TeamCity to Use Proxy Server for Outgoing Connections
 {product="tc"}
@@ -737,7 +698,7 @@ teamcity.https.proxyPassword=password
 
 ## Configure TeamCity Agent to Use Proxy To Connect to TeamCity Server
 
-This section covers the configuration of a proxy server for TeamCity agent-to-server connections (__since TeamCity 2017.1__).
+This section covers the configuration of a proxy server for TeamCity agent-to-server connections.
 
 <chunk include-id="agent-proxy-server">
 
@@ -755,11 +716,9 @@ teamcity.http.proxyLogin=login
 teamcity.http.proxyPassword=password
 ```
 
-
 Note that the proxy has to be configured not to cache any TeamCity server responses; for example, if you use Squid, add "cache deny all" line to the `squid.conf` file.
 
 </chunk>
-
 
 ## Install Multiple Agents on the Same Machine
 
@@ -785,6 +744,7 @@ In case you want to preserve the original server as well as the copy, make sure 
 You can create a copy of the server using TeamCity backup functionality or manually. Manual approach is recommended for the complete server move.
 
 ### Use TeamCity Backup
+
 1. Create a [backup](teamcity-data-backup.md) including everything. (You can skip the option to backup build logs is you are moving the artifacts, see below).
 2. Install a new TeamCity server of the same version that you are already running. Ensure that:
    * the appropriate environment is configured (see the notes below) 
@@ -817,10 +777,7 @@ If you do not want to use the bundled backup functionality or need manual contro
 7. Configure the new TeamCity installation to use proper `<[TeamCity Data Directory](teamcity-data-directory.md)>` and [database](setting-up-an-external-database.md) (`.BuildServer/config/database.properties` points to a copy of the database).
 8. Perform the necessary [environment transfer](#Environment+transferring).
 
-<tip>
-
-If you want to do a quick check and do not need to preserve the build history on the new server, you can skip Step 6 (cloning database) and all the optional items of Step 4.
-</tip>
+>If you want to do a quick check and do not need to preserve the build history on the new server, you can skip Step 6 (cloning database) and all the optional items of Step 4.
 
 <anchor name="environment_transfer"/>
 
@@ -871,13 +828,12 @@ If you are creating a __test server__, you need to ensure that the users and pro
 * disable Commit Status Publishing;
 * disable any plugins which push data into other non-copied systems based on the TeamCity events;
 * disable functionality to [store project settings in VCS](storing-project-settings-in-version-control.md): set `teamcity.versionedSettings.enabled=false` internal property;
-* consider significantly increasing [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (server-wide default and overridden in the VCS roots) or changing settings of the VCS roots to prevent them from contacting production servers. Since TeamCity 10.0.3, see also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
+* consider significantly increasing [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (server-wide default and overridden in the VCS roots) or changing settings of the VCS roots to prevent them from contacting production servers. See also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
 
 See also the section below on [moving the server](#Move+TeamCity+Installation+to+a+New+Machine) from one machine to another.
 {product="tc"}
 
 [//]: # (Internal note. Do not delete. "How To...d160e1901.txt")  
-
 
 ## Move TeamCity Projects from One Server to Another
 {product="tc"}
@@ -888,7 +844,7 @@ If you need to join the data with already existing data on the new server, there
 
 _Here are some notes on manual move of the settings in case you ever want to perform it_
 
-Since TeamCity 8.0 it is possible to move _settings_ of a project or a build configuration to another server with simple file copying. For earlier TeamCity versions see the [comment](http://youtrack.jetbrains.net/issue/TW-4124#comment=27-76834).
+It is possible to move _settings_ of a project or a build configuration to another server with simple file copying.
 
 The two TeamCity servers (source and target) should be of exactly the same version (same build).
 
@@ -896,11 +852,11 @@ All the [identifiers](identifier.md) throughout all the projects, build configur
 
 To move settings of the project and all its build configuration from one server to another:
 
-From the [`TeamCity Data Directory`](teamcity-data-directory.md), copy the directories of corresponding projects (`.BuildServer\config\projects\<id>`) and all its parent projects to `.BuildServer\config\projects` of the target server. This moves project settings, build configuration settings, VCS roots defined in the projects preserving the links between them. If there are same\-named files on the target server as those copied, this can happen in case of 
+From the [`TeamCity Data Directory`](teamcity-data-directory.md), copy the directories of corresponding projects (`.BuildServer\config\projects\<id>`) and all its parent projects to `.BuildServer\config\projects` of the target server. This moves project settings, build configuration settings, VCS roots defined in the projects preserving the links between them. If there are same-named files on the target server as those copied, this can happen in case of 
   a) id match: same entities already exist on the target server, in which case the clashing files can be excluded from copying, or 
   b) id clash: different entities happen to have same ids. In this case it should be resolved either by changing entity id on the source or target server to fulfill the uniqueness requirement.
 
-The set of parent projects is to be identifiedmanually based on the web UI or the directory names on disk (which be default will have the same prefix).
+The set of parent projects is to be identified manually based on the web UI or the directory names on disk (which be default will have the same prefix).
 
 Note: It might make sense to keep the settings of the [root project](project.md#Root+Project) synchronized between all the servers (by synchronizing content of `.BuildServer\config\projects_Root` directory). For example, this will ensure same settings for the default clean-up policy on all the servers.
 
@@ -942,12 +898,11 @@ However, if you need to use another server domain address, you will need to:
 * Notify all TeamCity users on the new address
 * Consider updating settings of external services if they depend on the request originating address
 
-
 ## Move TeamCity Agent to a New Machine
 
 Apart from the binaries, TeamCity agent installation stores its configuration and data left from the builds it run. Usually the data from the previous builds makes preparation for the future builds a bit faster, but it can be deleted if necessary. The configuration is stored under `conf` and `launcher\conf` directories. The data collected by previous build is stored under `work` and `system` directories.
 
-The most simple way to move agent installation into a new machine or new location is to:
+The simplest way to move agent installation into a new machine or new location is to:
 * stop existing agent
 * [install](setting-up-and-running-additional-build-agents.md) a new agent on the new machine
 * copy `conf/buildAgent.properties` from the old installation to a new one
@@ -957,7 +912,6 @@ With these steps the agent will be recognized by TeamCity server as the same and
 Please also review the [section](agent-home-directory.md) for a list of directories that can be deleted without affecting builds consistency.
 
 [//]: # (Internal note. Do not delete. "How To...d160e2180.txt")    
-
 
 ## Share the Build number for Builds in a Chain Build
 
@@ -1027,8 +981,6 @@ If you use Cucumber for Java applications testing you should run cucumber with `
 
 ```
 
-
-
 Please check the RUBYLIB path separator (';' for Windows, ':' for Linux, or '$\{path.separator\}' in ant for safety).   
 If you are launching Cucumber tests using the Rake build language, TeamCity will add all necessary command line parameters and environment variables automatically. This tip works in TeamCity version &gt;= 5.0.
 
@@ -1036,16 +988,13 @@ If you are launching Cucumber tests using the Rake build language, TeamCity will
 
 Use URL like this:
 
-
 ```Shell
 
 http://<your TeamCity server>/app/rest/buildTypes/id:<ID of build configuration>/builds/status:SUCCESS/number
 
 ```
 
-
-
-The build number will be returned as a plain\-text response.   
+The build number will be returned as a plain-text response.   
 For `<ID of build configuration>`, see [Identifier](identifier.md).   
 This functionality is provided by [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
 
@@ -1117,7 +1066,7 @@ If the tool reports code-attributing information like Inspections or Duplicates,
 
 See also [Import coverage results in TeamCity](#Import+coverage+results+in+TeamCity).
 
-For advanced integration, a custom plugin will be necessary to store and present the data as required. See [Developing TeamCity Plugins](https://confluence.jetbrains.com/display/TCD18/Developing+TeamCity+Plugins) for more information on plugin development.
+For advanced integration, a custom plugin will be necessary to store and present the data as required. See [Developing TeamCity Plugins](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html) for more information on plugin development.
 
 ## Restore Just Deleted Project
 {product="tc"}
@@ -1152,12 +1101,12 @@ TeamCity comes bundled with IntelliJ IDEA/Emma and, JaCoCo coverage engines for 
 However, there are plenty of other coverage tools out there, like [Cobertura](http://cobertura.sourceforge.net/index.html) and others which are not directly supported by TeamCity.
 
 In order to achieve similar experience with these tools you can:
-* publish coverage HTML report as TeamCity artifact: most of the tools produce coverage report in HTML format, you can publish it as artifact and [configure report tab](including-third-party-reports-in-the-build-results.md) to show it in TeamCity. If artifact is published in the root artifact directory and its name is `coverage.zip` and there is `index.html` file in it, report tab will be shown automatically. As to running an external tool, check [Integrate with Build and Reporting Tools](#Integrate+with+Build+and+Reporting+Tools).
+* publish a coverage HTML report as TeamCity artifact: most of the tools produce coverage report in HTML format, you can publish it as artifact and [configure report tab](including-third-party-reports-in-the-build-results.md) to show it in TeamCity. If artifact is published in the root artifact directory and its name is `coverage.zip` and there is `index.html` file in it, report tab will be shown automatically. As to running an external tool, check [Integrate with Build and Reporting Tools](#Integrate+with+Build+and+Reporting+Tools).
 * extract coverage statistics from coverage report and publish [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) to TeamCity with help of [service message](service-messages.md#Reporting+Build+Statistics): if you do so, you'll see coverage chart on build configuration Statistics tab and also you'll be able to fail a build with the help of a build failure condition on a metric change (for example, you can fail build if the coverage drops).
 
 <note>
 
-You should not publish values CodeCoverageB, CodeCoverageL, CodeCoverageM, CodeCoverageC standing for block/line/method/class coverage percentage. TeamCity will calculate these values using their absolute parts. E.g. CodeCoverageL will be calculated as CodeCoverageAbsLCovered divided by CodeCoverageAbsLTotal. You could publish these values but in this case they will lack decimal parts and will not be useful.
+You should not publish values CodeCoverageB, CodeCoverageL, CodeCoverageM, CodeCoverageC standing for block/line/method/class coverage percentage. TeamCity will calculate these values using their absolute parts. For example, CodeCoverageL will be calculated as CodeCoverageAbsLCovered divided by CodeCoverageAbsLTotal. You could publish these values but in this case they will lack decimal parts and will not be useful.
 </note>
 
 ## Recover from "Data format of the Data Directory (NNN) and the database (MMM) do not match" error
@@ -1176,9 +1125,9 @@ In case a build fails on some agent, it is possible to debug it on this very age
 2. [Disable the agent](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) to temporarily remove it from the [build grid](build-grid.md). Add a comment (optional). To enable the agent automatically after a certain time period, check the corresponding box and specify the time.
 3. [Select the build](working-with-build-results.md) to debug.
 4. Open the [Custom Run](triggering-a-custom-build.md#Run+Custom+Build+dialog) dialog and specify the following options: 
-    a. In the __Agent__ drop\-down, select the disabled agent.
+    a. In the __Agent__ drop-down menu, select the disabled agent.
     b. It is recommended to select the __run as [Personal Build](personal-build.md)__ option to avoid intersection with regular builds.
-5. When debugging is complete, enable the agent manually if automatic re\-enabling has not been configured.
+5. When debugging is complete, enable the agent manually if automatic reenabling has not been configured.
 
 You can also perform [remote debugging](remote-debug.md) of tests on an agent via the [IntelliJ IDEA plugin](intellij-platform-plugin.md) for TeamCity.
 
@@ -1218,7 +1167,7 @@ In relation to the TeamCity product, JetBrains does not collect any personal dat
 
 The notes below can be useful when assessing how your usage of TeamCity complies with the General Data Protection Regulation (GDPR) (EU) 2016/679 regulation. These notes are meant to address the most basic questions and can serve as an input to the assessment of your specific TeamCity installation.
 
-The notes are based on TeamCity 2017.2.4 which is actual at the moment of GDPR enforcement date. Please update your TeamCity instance at least to the version as previous versions might contain issues not in line with the notes below.
+The notes are based on TeamCity 2017.2.4 which is actual at the moment of GDPR enforcement date. Please update your TeamCity instance at least to this version, as previous versions might contain issues not in line with the notes below.
 
 ### TeamCity and Users' Personal Data
 
@@ -1227,13 +1176,13 @@ The most important user-related data stored by TeamCity is:
 * user's email - stored in the database and shown on the user's profile, used to send out notifications
 * IP address of the clients accessing the server - can appear in the [internal logs](teamcity-server-logs.md)
 
-TeamCity internal logs can also record some unstructured user-related information (e.g. submitted by the user or sent by the browser with the HTTP requests, retrieved according to the configured settings from the users source like LDAP)
+TeamCity internal logs can also record some unstructured user-related information (for example, submitted by the user or sent by the browser with the HTTP requests, retrieved according to the configured settings from the users source like LDAP).
 
 ### Deleting the User Data
 
 When you want to delete personal data of a specific user, the best way to do it is to delete the user in TeamCity. This way all the references to the user will continue to store the numeric user id, while all the other user information will not be stored anymore. Note that [Audit](tracking-user-actions.md) records will mention internal numeric user id after the user deletion.
 
-If the user triggered any builds (i.e. had the "Run build" permission in any of the projects which are still present on the server), the user's username and full name were recorded in the build's `teamcity.build.triggeredBy` parameters as text values as those were part of the build's "environment". If you need to remove those, you can either delete the related builds (and all the builds which artifact\- or snapshot\-depend on them), or delete parameters of those affected builds (the parameters are stored in archived files under &lt;TeamCity Data Directory&gt;\system\artifacts\*\*\*\.teamcity\properties directories).
+If the user triggered any builds (i.e. had the "Run build" permission in any of the projects which are still present on the server), the user's username and full name were recorded in the build's `teamcity.build.triggeredBy` parameters as text values as those were part of the build's "environment". If you need to remove those, you can either delete the related builds (and all the builds which artifact- or snapshot-depend on them), or delete parameters of those affected builds (the parameters are stored in archived files under &lt;TeamCity Data Directory&gt;\system\artifacts\*\*\*\.teamcity\properties directories).
 
 After the user deletion and other data cleaning, make sure to [reset search index](search.md#Resetting+Search+Index) to prune possibly cached data of the deleted user from the search index.
 {product="tc"}
@@ -1241,17 +1190,17 @@ After the user deletion and other data cleaning, make sure to [reset search inde
 There are several other places which can hold user-related data
 
 If user had "Edit project" permission, the full name / username can appear in:
-* some audit entries (saved with TeamCity versions before 2017.2.1) \- [TW-52215](https://youtrack.jetbrains.com/issue/TW-52215)
-* some build logs in "Wait for pending persist tasks to complete" build log line (saved with TeamCity versions before 2017.2.1) \- [TW-52872](https://youtrack.jetbrains.com/issue/TW-52872)
+* some audit entries (saved with TeamCity versions before 2017.2.1) — [TW-52215](https://youtrack.jetbrains.com/issue/TW-52215)
+* some build logs in "Wait for pending persist tasks to complete" build log line (saved with TeamCity versions before 2017.2.1) — [TW-52872](https://youtrack.jetbrains.com/issue/TW-52872)
 * commit comments in the repository storing versioned settings store name of the user doing the change in UI
 
-VCS usernames in VCS\-related data :
+VCS usernames in VCS-related data :
 * in VCS changes visible in UI or stored in the database
-* in the local .git repository clones on the server and agents
+* in the local `.git` repository clones on the server and agents
 
 Username can also appear in access credentials configured in different integrations like VCS roots, issue tracker, database access, etc. (these are stored in the settings files and audit diff files in the TeamCity Data Directory and VCS roots usernames are also stored in the database for the current and previous versions of the VCS roots)
 
-To ensure user's details are not stored by TeamCity you might want to to check the TeamCity\-backing storage that no occurrences of the data are stored: the database, Data Directory and the TeamCity home directory (logs, and memory dumps which are regularly placed under the "bin" directory).
+To ensure user's details are not stored by TeamCity you might want to check the TeamCity-backing storage that no occurrences of the data are stored: the database, Data Directory and the TeamCity home directory (logs, and memory dumps which are regularly placed under the "bin" directory).
 
 ### User Agreement
 
@@ -1259,7 +1208,7 @@ If you want the users to accept a special agreement before using your TeamCity i
 
 ### Encryption
 
-If you want to encrypt the data used by TeamCity, it is recommended to use generic, non\-TeamCity\-specific tools for this as TeamCity does not provide dedicated functionality. TeamCity stores the data in the SQL database and on the file system. You can configure the database to store the data in encrypted form and use secure JDBC\-backed connection to the database (configured in the [`database.properties`](setting-up-an-external-database.md)).   
+If you want to encrypt the data used by TeamCity, it is recommended to use generic, non-TeamCity-specific tools for this as TeamCity does not provide dedicated functionality. TeamCity stores the data in the SQL database and on the file system. You can configure the database to store the data in encrypted form and use secure JDBC\-backed connection to the database (configured in the [`database.properties`](setting-up-an-external-database.md)).   
 Also, you can configure encryption on the disk storage on the OS level.
 
 ### Logs and Debugging Data
@@ -1268,7 +1217,7 @@ If you want to ensure that you do not store the internal TeamCity logs for more 
 
 Per\-day rotation can be configured by adding `<param name="rotateOnDayChange" value="true"/>` line within all required `<appender name="..." class="jetbrains.buildServer.util.TCRollingFileAppender">` appenders. This change should be done to the default `conf\teamcity-server-log4j.xml` and also logging presets stored under `<TeamCity Data Directory>\config\_logging`.
 
-TeamCity can also store diagnostics data like thread dumps which can record user\-related data in unstructured way. It is recommended to review the content of the `<[TeamCity Home](teamcity-home-directory.md)>\logs` directory regularly and ensure that no old files are preserved in there. Also, the extra logs should be deleted after logging customization sessions like collecting debug logs, etc. There is a [known issue](https://youtrack.jetbrains.com/issue/TW-22596) that `logs\catalina.out` file if not rotated automatically at all. It is recommended to establish an automatic procedure to rotate the file regularly.
+TeamCity can also store diagnostics data like thread dumps which can record user-related data in unstructured way. It is recommended to review the content of the `<[TeamCity Home](teamcity-home-directory.md)>\logs` directory regularly and ensure that no old files are preserved in there. Also, the extra logs should be deleted after logging customization sessions like collecting debug logs, etc. There is a [known issue](https://youtrack.jetbrains.com/issue/TW-22596) that `logs\catalina.out` file if not rotated automatically at all. It is recommended to establish an automatic procedure to rotate the file regularly.
 
 ### Customizations
 

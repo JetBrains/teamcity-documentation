@@ -143,11 +143,13 @@ Other runners:
 * [CVS](cvs.md)
 {product="tc"}
 * [SourceGear Vault](sourcegear-vault.md) 6 and 7 (requires the Vault command line client libraries installed on the TeamCity server), _integrated via an additional plugin_
+{product="tc"}
 * [Borland StarTeam](starteam.md) 6 and up (the StarTeam client application must be installed on the TeamCity server)
 {product="tc"}
 * [IBM Rational ClearCase](clearcase.md) Base and UCM modes (requires the ClearCase client installed and configured on the TeamCity server), _integrated via an additional plugin_
 {product="tc"}
 * [Microsoft Visual SourceSafe](visual-sourcesafe.md) 6 and 2005 (requires a SourceSafe client installed on the TeamCity server, available only on Windows platforms)
+{product="tc"}
 
 For support for other VCS please check [external plugins](https://plugins.jetbrains.com/category/93-version-control-systems-support/teamcity) available.
 
@@ -174,9 +176,11 @@ The requirements noted are for agent environment and are additional to those for
 * CVS
 {product="tc"}
 * SourceGear Vault, _integrated via an additional plugin_
+{product="tc"}
 * Borland StarTeam
 {product="tc"}
 * ClearCase, _integrated via an additional plugin_
+{product="tc"}
    
 ### Remote Run on Branch
 
@@ -216,7 +220,7 @@ See also details on the [cloud integrations](teamcity-integration-with-cloud-sol
 * [Bugzilla](http://www.bugzilla.org) 3.0 and later (tested with Bugzilla 5.0.1)
 * [GitHub](github.md)
 * [Bitbucket](github.md)
-* [Azure DevOps Server](team-foundation-work-items.md) (formerly Visual Studio Team Foundation Server – supported version 2012 or later, and Azure DevOps Services are supported)
+* [Azure DevOps Server](team-foundation-work-items.md) (formerly Visual Studio Team Foundation Server — supported version 2012 or later, and Azure DevOps Services are supported)
    
 Additional requirements are listed in [Integrating TeamCity with Issue Tracker](integrating-teamcity-with-issue-tracker.md).
 
@@ -284,7 +288,7 @@ Supported VCS
 * Subversion
 * Perforce
 * Git (remote run only)
-* Azure DevOps Server, or formerly Team Foundation Server (__since TeamCity 2017.1__, the plugin update is required)
+* Azure DevOps Server, or formerly Team Foundation Server
 
 </td></tr><tr>
 
@@ -299,7 +303,7 @@ Supported VCS
 
 
 * Subversion 1.4-1.11 (the command-line client is required); note that 1.10-1.11 is supported __since ReSharper 2018.3__.
-* Azure DevOps Server (formerly Team Foundation Server – supported version 2005 or later). Installed Team Explorer is required.
+* Azure DevOps Server (formerly Team Foundation Server — supported version 2005 or later). Installed Team Explorer is required.
 * Perforce 2008.2 and later (the command-line client is required).
 
 

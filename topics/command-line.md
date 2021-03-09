@@ -13,13 +13,11 @@ Using the _Command Line_ build runner, you can run any script supported by the O
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -27,13 +25,11 @@ Description
 
 Working directory
 
-
 </td>
 
 <td>
 
 Specify the [working directory](build-working-directory.md) where the command is to be run (if it differs from the [build checkout directory](build-checkout-directory.md)).
-
 
 </td></tr><tr>
 
@@ -41,20 +37,17 @@ Specify the [working directory](build-working-directory.md) where the command is
 
 Run
 
-
 </td>
 
 <td>
 
 Specify the mode: run an executable with parameters or run custom shell/batch script (see below).
 
-
 </td></tr><tr>
 
 <td>
 
 Command executable
-
 
 </td>
 
@@ -64,13 +57,11 @@ _The option is available if "Executable with parameters" is selected in the __Ru
 
 Specify the path to an executable to be started.
 
-
 </td></tr><tr>
 
 <td>
 
 Command parameters
-
 
 </td>
 
@@ -80,13 +71,11 @@ _The option is available if "Executable with parameters" is selected in the __Ru
 
 Specify space-separated parameters to pass to the executable. If a parameter contains a space, it can be enclosed in double quotes. For non-trivial parameters it is recommended to use "Custom script" option instead.
 
-
 </td></tr><tr>
 
 <td>
 
 Custom script
-
 
 </td>
 
@@ -112,7 +101,6 @@ Specify how the error output is handled by the runner:
 * __warning__: default; any output to `stderr` is handled as a warning
 
 </td></tr></table>
-
 
 >TeamCity treats a string surrounded by percentage signs (`%`) in the script as a [parameter reference](predefined-build-parameters.md). To prevent TeamCity from treating the text in the percentage signs as a property reference, use double percentage signs to escape them: for example, if you want to pass `%Y%m%d%H%M%S` into the build, change it to `%%Y%%m%%d%%H%%M%%S`.
 >

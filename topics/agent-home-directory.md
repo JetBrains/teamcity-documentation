@@ -16,7 +16,7 @@ The agent consists of:
 * agent configuration (stored under `conf` and `launcher\conf` directories). This is a unique piece of information defining the agent settings and behavior.
 * [agent work directory](agent-work-directory.md) (stored under the `work` directory by default, configurable via agent configuration).
 * agent auxiliary data (stored under `system`, `temp`, `backup`, `update` directories). The data necessary during agent running.
-* agent logs (stored under `logs` directory): The directory storing internal agent logs that might be necessary for agent issues investigation.
+* agent logs (stored under `logs` directory): The directory storing internal agent logs that might be necessary for investigating agent issues.
 
 ### Agent Files Modification
 
@@ -48,7 +48,7 @@ The content of directories storing agent auxiliary data can be deleted (but only
 * __/logs__ 
     * `launcher.log` — log of the build agent launcher.
     * `teamcity-agent.log` — main build agent log.
-    * `wrapper.log` — log of the Java Service Wrapper. Available only if the build agent is running as a windows service.
+    * `wrapper.log` — log of the Java Service Wrapper. Available only if the build agent is running as a Windows service.
     * `teamcity-build.log` — log from the build.
     * `upgrade.log` — log from the build agent upgrade process.
     * `teamcity-vcs.log` — agent-side checkout logs.
@@ -59,7 +59,6 @@ The content of directories storing agent auxiliary data can be deleted (but only
 <anchor name="temp-dir"/>
 
 * __/temp__: temporary folder; the path can be overridden in the [`buildAgent.properties`](build-agent-configuration.md) file.
-    * `agentTmp` — temporary folder that is used by the build agent to store build\-related files during the build. Is cleaned after each build.
+    * `agentTmp` — temporary folder that is used by the build agent to store build-related files during the build. Is cleaned after each build.
     * `buildTmp` — temporary folder that is set as the default temp directory for the build process and is cleaned after each build
     * `globalTmp` — temporary folder that is used by the build agent for its own temporary files. Is cleaned on the agent restart.
-    

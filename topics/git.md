@@ -25,13 +25,11 @@ __Important notes__:
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -39,13 +37,11 @@ Description
 
 Fetch URL
 
-
 </td>
 
 <td>
 
 The URL of the remote Git repository used for fetching data from the repository.
-
 
 </td></tr><tr>
 
@@ -53,20 +49,17 @@ The URL of the remote Git repository used for fetching data from the repository.
 
 Push URL
 
-
 </td>
 
 <td>
 
 The URL of the target remote Git repository used for pushing annotated tags created via [VCS labeling](vcs-labeling.md) build feature to the remote repository. If blank, the fetch URL is used.
 
-
 </td></tr><tr>
 
 <td>
 
 Default branch
-
 
 </td>
 
@@ -94,7 +87,6 @@ Lists the patterns for branch names, required for [feature branches](working-wit
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
-
 </td></tr><tr>
 
 <td>
@@ -106,7 +98,6 @@ Use tags as branches
 <td>
 
 Allows monitoring / checking out git [tags](vcs-labeling.md) as branches making branch specification match tag names as well as branches (for example,`+|-:refs/tags/<tag_name>`). By default, tags are ignored.
-
 
 </td></tr><tr>
 
@@ -132,7 +123,6 @@ Submodules
 
 Select whether you want to ignore the submodules, or treat them as a part of the source tree. Submodule repositories should either not require authentication or use the same protocol and accept the same authentication as configured in the VCS root.
 
-
 </td></tr><tr>
 
 <td>
@@ -144,7 +134,6 @@ Username for tags/merge
 <td>
 
 A custom username used for [labeling](vcs-labeling.md).
-
 
 </td></tr></table>
 
@@ -186,13 +175,11 @@ When you run TeamCity as a Windows service, it cannot access mapped network driv
 
 Authentication Method
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -200,20 +187,17 @@ Description
 
 Anonymous
 
-
 </td>
 
 <td>
 
 Select this option to clone a repository with anonymous read access.
 
-
 </td></tr><tr>
 
 <td>
 
- Password
-
+Password
 
 </td>
 
@@ -225,6 +209,11 @@ For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
 
 You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, and Bitbucket.   
 Note that TeamCity does not support token authentication to hosted [Azure DevOps Server](https://azure.microsoft.com/en-in/services/devops/server/) (formerly, Team Foundation Server) installations.
+
+>Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
+>We highly recommend that you use an access token instead of password when configuring a VCS root for a GitHub.com repository.
+>
+{type="warning"}
 
 </td></tr><tr>
 
@@ -246,9 +235,9 @@ Valid only for SSH protocol. A private key must be in the __OpenSSH format__.
 Select one of the options from the __Private Key__ list and specify a valid username (if there is no username in the clone URL; the username specified here overrides the username from the URL).    
 Available __Private Key__ options:
 
-* __Uploaded Key__ – uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
-* __Default Private key__ – uses the keys available on the file system in the default locations used by common ssh tools: the mapping specified in `<USER_HOME>/.ssh/config` if the file exists or the private key file `<USER_HOME>/.ssh/id_rsa` (the files are required to be present on the server and also on the agent if the [agent-side checkout](vcs-checkout-mode.md) is used).
-* __Custom Private Key__ – supported __only for [server-side checkout](vcs-checkout-mode.md)__. When this method is used, fill the __Private Key Path__ field with an absolute path to the private key file on the server machine. If required, specify the passphrase to access your SSH key in the corresponding field.
+* __Uploaded Key__ — uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
+* __Default Private key__ — uses the keys available on the file system in the default locations used by common ssh tools: the mapping specified in `<USER_HOME>/.ssh/config` if the file exists or the private key file `<USER_HOME>/.ssh/id_rsa` (the files are required to be present on the server and also on the agent if the [agent-side checkout](vcs-checkout-mode.md) is used).
+* __Custom Private Key__ — supported __only for [server-side checkout](vcs-checkout-mode.md)__. When this method is used, fill the __Private Key Path__ field with an absolute path to the private key file on the server machine. If required, specify the passphrase to access your SSH key in the corresponding field.
 
 
 </td></tr></table>
@@ -261,7 +250,6 @@ If you use Git source control with Azure DevOps Services, the following options 
 
 <include src="team-foundation-server.md" include-id="azure-authentication"/>
 
-
 ## Server Settings
 
 These are the settings used in case of the server-side [checkout](vcs-checkout-mode.md).
@@ -272,13 +260,11 @@ These are the settings used in case of the server-side [checkout](vcs-checkout-m
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -288,13 +274,11 @@ Description
 
 Convert line-endings to CRLF
 
-
 </td>
 
 <td>
 
 Convert line-endings of all text files to CRLF (works as setting `core.autocrlf=true` in a repository config). When not selected, no line-endings conversion is performed (works as setting `core.autocrlf=false`). Affects the server-side checkout only. A change to this property causes a clean checkout.
-
 
 </td></tr></table>
 
@@ -313,13 +297,11 @@ If you plan to use the [agent-side checkout](vcs-checkout-mode.md), you need to 
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -327,20 +309,17 @@ Description
 
 Path to git
 
-
 </td>
 
 <td>
 
 Provide the path to a Git executable to be used on the agent. When set to `%env.TEAMCITY_GIT_PATH%`, the automatically detected Git will be used, see [Git executable on the agent](#agentGitPath) for details.
 
-
 </td></tr><tr>
 
 <td>
 
 Clean Policy/Clean Files Policy
-
 
 </td>
 
@@ -350,13 +329,11 @@ Specify here when the `git clean` command is to run on the agent, and which file
 
 If a build configuration depends on multiple VCS roots, we suggest that you configure separate agent checkout directories for each of these roots, using [VCS checkout rules](vcs-checkout-rules.md). This way, `git clean` will never delete these checkout directories during cleaning.
 
-
 </td></tr><tr>
 
 <td id="use-alternates">
 
 Use mirrors
-
 
 </td>
 
@@ -392,11 +369,11 @@ If you only have the git command line on some machines, set "Path to git" settin
 Instead of adding Git to the agent's PATH, you can set the `TEAMCITY_GIT_PATH` environment variable (or `env.TEAMCITY_GIT_PATH` property in the agent's [`buildAgent.properties`](build-agent-configuration.md) file) to the full path to the git executable.
 
 If `TEAMCITY_GIT_PATH` is not defined, the Git agent plugin tries to detect the installed git on the launch of the agent. It first tries to run git from the following locations:
-* for Windows \- it tries to run `git.exe` at:
+* for Windows — it tries to run `git.exe` at:
    * `C:\Program Files\Git\bin`
    * `C:\Program Files (x86)\Git\bin`
    * `C:\cygwin\bin`
-* for \*nix \- it tries to run `git` at:
+* for \*nix — it tries to run `git` at:
    * `/usr/local/bin`
    * `/usr/bin`
    * `/opt/local/bin`
@@ -436,7 +413,7 @@ To fix the warning / meet automatic git gc requirements, perform the following:
 1. Install a native Git client manually on the TeamCity server.
 2. Specify the path to the Git executable:
    * Add the directory with the executable to the `PATH` environment variable and restart the server, _or_
-   * Set the full path to the executable in the `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) without the server restart.
+   * Set the full path to the executable in the `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) without the server restart. On Windows, remember to use double backslashes in the path.
    
 When TeamCity runs Git garbage collection, the details are logged into the [`teamcity-cleanup.log`](teamcity-server-logs.md). If git garbage collection fails, a corresponding warning is displayed.
 
@@ -483,13 +460,11 @@ Description
 
 teamcity.git.idle.timeout.seconds
 
-
 </td>
 
 <td>
 
 1800
-
 
 </td>
 
@@ -499,13 +474,11 @@ The idle timeout for communication with the remote repository. If no data were s
 
 >The idle timeout can also be set [on the agent side](#git-agent-config).
 
-
 </td></tr><tr>
 
 <td>
 
 teamcity.git.fetch.timeout
-
 
 </td>
 
@@ -520,13 +493,11 @@ teamcity.git.fetch.timeout
 
 (deprecated) Override of `teamcity.git.idle.timeout.seconds` for the `git fetch` operation
 
-
 </td></tr><tr>
 
 <td>
 
 teamcity.git.fetch.separate.process
-
 
 </td>
 
@@ -534,13 +505,11 @@ teamcity.git.fetch.separate.process
 
 true
 
-
 </td>
 
 <td>
 
 Defines whether TeamCity runs `git fetch` in a separate process
-
 
 </td></tr><tr>
 
@@ -551,7 +520,6 @@ teamcity.git.fetch.process.max.memory
 </td>
 
 <td>
-
 
 </td>
 
@@ -581,7 +549,6 @@ teamcity.git.fetch.process.max.memory.limit
 
 <td>
 
-
 </td>
 <td>
 
@@ -594,7 +561,6 @@ This property specifies the maximum possible `-Xmx` value for `git fetch` or `gi
 
 </tr>
 
-
 <tr>
 
 <td>
@@ -606,7 +572,6 @@ teamcity.git.monitoring.expiration.timeout.hours
 <td>
 
 24
-
 
 </td>
 
@@ -624,13 +589,11 @@ teamcity.server.git.gc.enabled
 
 false
 
-
 </td>
 
 <td>
 
 Whether TeamCity should run `git gc` during the server clean-up (native git is used)
-
 
 </td></tr><tr>
 
@@ -644,13 +607,11 @@ teamcity.server.git.executable.path
 
 git
 
-
 </td>
 
 <td>
 
-The path to the native git executable on the server
-
+The path to the native git executable on the server. On Windows, remember to use double backslashes in the path.
 
 </td></tr><tr>
 
@@ -664,13 +625,11 @@ teamcity.server.git.gc.quota.minutes
 
 60
 
-
 </td>
 
 <td>
 
 Maximum amount of time to run `git gc`
-
 
 </td></tr><tr>
 
@@ -684,13 +643,11 @@ teamcity.git.cleanupCron
 
 0 0 2 \* \* ? \*
 
-
 </td>
 
 <td>
 
-[Cron expression](http://quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger) for the time of a clean-up in git-plugin, by default – daily at 2AM.
-
+[Cron expression](http://quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger) for the time of a clean-up in git-plugin, by default — daily at 2AM.
 
 </td></tr><tr>
 
@@ -704,13 +661,11 @@ teamcity.git.stream.file.threshold.mb
 
 128
 
-
 </td>
 
 <td>
 
-Threshold in megabytes after which JGit uses streams to inflate objects. Increase it if you have large binary files in the repository and see symptoms described in [TW-14947](http://youtrack.jetbrains.com/issue/TW-14947)
-
+Threshold in megabytes after which JGit uses streams to inflate objects. Increase it if you have large binary files in the repository and see symptoms described in [TW-14947](http://youtrack.jetbrains.com/issue/TW-14947).
 
 </td></tr><tr>
 
@@ -724,13 +679,11 @@ teamcity.git.buildPatchInSeparateProcess
 
 true
 
-
 </td>
 
 <td>
 
 Git-plugin builds patches in a separate process, set it to false to build patch in the server process. To build patch, git-plugin has to read repository files into memory. To not run out of memory git-plugin reads only objects of size smaller than the threshold, for larger objects streams are used and they can be slow ([TW-14947](http://youtrack.jetbrains.com/issue/TW-14947)). With patch building in a separate process all objects are read into memory. Patch process uses the memory settings of the separate fetch process.
-
 
 </td></tr><tr>
 
@@ -744,13 +697,11 @@ teamcity.git.mirror.expiration.timeout.days
 
 7
 
-
 </td>
 
 <td>
 
 The number of days after which an unused clone of the repository will be removed from the server machine. The repository is considered unused if there were no TeamCity operations on this repository, like checking for changes or getting the current version. These operations are quite frequent, so 7 days is a reasonably high value.
-
 
 </td></tr><tr>
 
@@ -764,13 +715,11 @@ teamcity.git.commit.debug.info
 
 false
 
-
 </td>
 
 <td>
 
 Defines whether to log additional debug info on each found commit
-
 
 </td></tr><tr>
 
@@ -788,7 +737,6 @@ teamcity.git.sshProxyType
 
 Type of SSH proxy, supported values: `http`, `socks4`, `socks5`. Keep in mind that socks4 proxy cannot resolve remote host names, so if you get an UnknownHostException, either switch to socks5 or add an entry for your git server into the hosts file on the TeamCity server machine.
 
-
 </td></tr><tr>
 
 <td>
@@ -804,7 +752,6 @@ teamcity.git.sshProxyHost
 <td>
 
 SSH proxy host
-
 
 </td></tr><tr>
 
@@ -822,7 +769,6 @@ teamcity.git.sshProxyPort
 
 SSH proxy port
 
-
 </td></tr><tr>
 
 <td>
@@ -835,13 +781,11 @@ teamcity.git.connectionRetryAttempts
 
 3
 
-
 </td>
 
 <td>
 
 Number of attempts to establish connection to the remote host for testing connection and getting a current repository state before admitting a failure
-
 
 </td></tr><tr>
 
@@ -855,13 +799,11 @@ teamcity.git.connectionRetryIntervalSeconds
 
 4
 
-
 </td>
 
 <td>
 
 Interval in seconds between connection attempts
-
 
 </td></tr>
 
@@ -878,7 +820,6 @@ teamcity.git.use.local.mirrors
 
 false
 
-
 </td>
 
 <td>
@@ -888,13 +829,11 @@ _TeamCity checks the state of this property only if the "[_Use mirrors_](#use-al
 By default, if you disable "_Use mirrors_", TeamCity will clone the repository under the build's working directory.   
 Set `teamcity.git.use.local.mirrors` to `true` to clone the repository under the agent's `system\git` directory instead. When running a build, TeamCity will copy the repository from this directory to the build's working directory.
 
-
 <note>
 
 Copying a repository from a directory located on the same machine is faster than always cloning the repository from the source, so we recommend setting `teamcity.git.use.local.mirrors` to `true` if you disable the "_Use mirrors_" option.
 
 </note>
-
 
 </td></tr>
 
@@ -913,20 +852,17 @@ Copying a repository from a directory located on the same machine is faster than
 
 Property
 
-
 </td>
 
 <td>
 
 Default
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -940,20 +876,17 @@ teamcity.git.use.native.ssh
 
 false
 
-
 </td>
 
 <td>
 
 When checkout on agent: whether TeamCity should use native SSH implementation.
 
-
 </td>
 
 <td>
 
 [//]: # (Internal note. Do not delete. "Gitd153e964.txt")    
-
 
 </td></tr><tr>
 
@@ -967,13 +900,11 @@ teamcity.git.idle.timeout.seconds
 
 3600
 
-
 </td>
 
 <td>
 
 The idle timeout for the `git fetch` operation when the agent-side checkout is used. The fetch is terminated if there is no output from the fetch process during this time.
-
 
 </td></tr></table>
 

@@ -34,10 +34,10 @@ TeamCity notifiers use templates to evaluate output values (global template vari
 
 __Email Notifier__
 
-* __subject__ – subject of the email message to send
-* __body__ – plain text of the email message to send
-* __bodyHtml__ – (optional) HTML text of the email message to send. It will be included together with plain text part of the message. However, if it is present in the template, it should be customized as well.
-* __headers__ – (optional) raw list of additional headers to include into an email. One header per line. For example:
+* __subject__ — subject of the email message to send
+* __body__ — plain text of the email message to send
+* __bodyHtml__ — (optional) HTML text of the email message to send. It will be included together with plain text part of the message. However, if it is present in the template, it should be customized as well.
+* __headers__ — (optional) raw list of additional headers to include into an email. One header per line. For example:
 
 
 ```XML
@@ -50,10 +50,10 @@ __Email Notifier__
 
 __Jabber__
 
-* __message__ – plain text of the message to send
+* __message__ — plain text of the message to send
 __IDE Notifications__ and __Windows Tray Notifications__
-* __message__ – plain text of the message to send
-* __link__ – URL of the TeamCity page that contains detailed information about the event
+* __message__ — plain text of the message to send
+* __link__ — URL of the TeamCity page that contains detailed information about the event
 (i)The Atom/RSS feeds template differs from the others. Refer to the [dedicated section](#TeamCity+Notification+Properties) for details.
 
 ### Customization Examples
@@ -183,13 +183,13 @@ Here is an example description of the model (the code can be used in IntelliJ ID
 
 The following [properties](configuring-teamcity-server-startup-properties.md) can be useful to customize the notifications behavior:
 
-* `teamcity.notification.template.update.interval` – how often the templates are reread by the system (integer, in seconds, default 60)
-* `teamcity.notification.includeDebugInfo` – include debugging information into the message in case of template processing errors (boolean, default false)
-* `teamcity.notification.maxChangesNum` – max number of changes to list in an email message (integer, default 10)
-* `teamcity.notification.maxCompilationDataSize` – max size (in bytes) of compilation error data to include in an email message (integer, default 20480)
-* `teamcity.notification.maxFailedTestNum` – max number of failed tests to list in an email message (integer, default 50)
-* `teamcity.notification.maxFailedTestStacktraces` – max number of test stacktraces in an email message (integer, default 5)
-* `teamcity.notification.maxFailedTestDataSize` – max size (in bytes) of failed test output data to include in a single email message (integer, default 10240)
+* `teamcity.notification.template.update.interval` — how often the templates are reread by the system (integer, in seconds, default 60)
+* `teamcity.notification.includeDebugInfo` — include debugging information into the message in case of template processing errors (boolean, default false)
+* `teamcity.notification.maxChangesNum` — max number of changes to list in an email message (integer, default 10)
+* `teamcity.notification.maxCompilationDataSize` — max size (in bytes) of compilation error data to include in an email message (integer, default 20480)
+* `teamcity.notification.maxFailedTestNum` — max number of failed tests to list in an email message (integer, default 50)
+* `teamcity.notification.maxFailedTestStacktraces` — max number of test stacktraces in an email message (integer, default 5)
+* `teamcity.notification.maxFailedTestDataSize` — max size (in bytes) of failed test output data to include in a single email message (integer, default 10240)
 
 ### Syndication Feed Template
 

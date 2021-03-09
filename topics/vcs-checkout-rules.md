@@ -14,7 +14,6 @@ The general recommendation is to keep a number of VCS roots, pointing to the roo
 
 __To add a checkout rule__, go to the build configuration's __Version Control Settings__ page, locate the VCS root in the list, and click __Edit checkout rules__ to open a form for entering the rules. Use the VCS repository browser ![VCS-browserIcon.png](VCS-browserIcon.png) to select a directory to check out.
 
-
 <chunk include-id="note-perforce-vcs">
 
 Note that Perforce support in TeamCity treats checkout rules as case-sensitive. Case-insensitivity for Perforce-based build configurations can be enabled on the __Version Control Settings__ page by adding the following comment in the _Edit Checkout Rules_ form: `##teamcity ignore-case`.
@@ -73,13 +72,11 @@ Rules can be used to perform the following operations:
 
 Syntax
 
-
 </td>
 
 <td>
 
 Explanation
-
 
 </td></tr><tr>
 
@@ -87,13 +84,11 @@ Explanation
 
 `+:.=>AgentPath`
 
-
 </td>
 
 <td>
 
 Checks out the root into the `Path` directory on a build agent.
-
 
 </td></tr><tr>
 
@@ -101,13 +96,11 @@ Checks out the root into the `Path` directory on a build agent.
 
 `-:VCSPath`
 
-
 </td>
 
 <td>
 
 Excludes `VCSPath` (the path must be a directory and not a filename).
-
 
 </td></tr><tr>
 
@@ -115,13 +108,11 @@ Excludes `VCSPath` (the path must be a directory and not a filename).
 
 `+:VCSPath=>.`
 
-
 </td>
 
 <td>
 
 Maps the `VCSPath` from the VCS to the [build agent's default work directory](agent-work-directory.md).
-
 
 </td></tr><tr>
 
@@ -129,13 +120,11 @@ Maps the `VCSPath` from the VCS to the [build agent's default work directory](ag
 
 `VCSPath=>NewAgentPath`
 
-
 </td>
 
 <td>
 
 Maps the `VCSPath` from the VCS to the `NewAgentPath` directory on a build agent.
-
 
 </td></tr><tr>
 
@@ -143,19 +132,15 @@ Maps the `VCSPath` from the VCS to the `NewAgentPath` directory on a build agent
 
 `+:VCSPath`
 
-
 </td>
 
 <td>
 
-Maps the `VCSPath` from the VCS to the same\-named directory (`VCSPath`) on a build agent.
-
+Maps the `VCSPath` from the VCS to the same-named directory (`VCSPath`) on a build agent.
 
 </td></tr></table>
 
-
 An example with three VCS checkout rules:
-
 
 ```Shell
 

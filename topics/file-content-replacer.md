@@ -3,11 +3,7 @@
 
 _File Content Replacer_ is the [build feature](adding-build-features.md) which processes text files by performing regular expression replacements before a build. After the build, it restores the file content to the original state.
 
-<tip>
-
-_File Content Replacer_ should be used with the [automatic checkout](vcs-checkout-mode.md) only: after this build feature is configured, it will run __before the first build step__. TeamCity will first perform replacement in the specified files found in the build checkout directory and then run your build. 
-</tip>
- 
+>_File Content Replacer_ should be used with the [automatic checkout](vcs-checkout-mode.md) only: after this build feature is configured, it will run __before the first build step__. TeamCity will first perform replacement in the specified files found in the build checkout directory and then run your build.
 
 The common case of using File Content Replacer is replacing one attribute at a time in particular files, for example, it can be used to patch files with the build number.   
 
@@ -17,8 +13,7 @@ You can add more than one File Content Replacer build feature if you wish to:
 
 This feature extends the capabilities provided by [AssemblyInfo Patcher](assemblyinfo-patcher.md).
 
-Check the [Adding Build Features](adding-build-features.md) section for notes on how to add a build feature.
-
+See how to [add a build feature](adding-build-features.md).
 
 ## File Content Replacer Settings
 
@@ -30,13 +25,11 @@ You can specify the values manually or use value presets for replacement, which 
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -44,19 +37,17 @@ Description
 
 Template (optional)
 
-
 </td>
 
 <td id="Template">
 
-File Content Replacer provides a template for every attribute to be replaced. Clicking the __Load Template__ button displays the combobox with templates containing value presets for replacement. The templates can be filtered by _language_ (e.g. `C#`), _file_ (e.g. `AssemblyInfo`) or _attribute_ (e.g. `AssemblyVersion`) by typing in the combobox. When a template is selected, the settings are automatically filled with predefined values. See the [section below](#Templates) for template details.
+File Content Replacer provides a template for every attribute to be replaced. Clicking the __Load Template__ button displays the combobox with templates containing value presets for replacement. The templates can be filtered by _language_ (for example, `C#`), _file_ (for example, `AssemblyInfo`) or _attribute_ (for example, `AssemblyVersion`) by typing in the combobox. When a template is selected, the settings are automatically filled with predefined values. See the [section below](#Templates) for template details.
 
 </td></tr><tr>
 
 <td>
 
 Process files
-
 
 </td>
 
@@ -68,7 +59,6 @@ Click __Edit file list__ and specify paths to files where the values to be repla
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
 _If a [predefined template](#Templates) is selected, the files associated with that template will be used._
-
 
 </td></tr><tr>
 
@@ -84,9 +74,7 @@ Enabled by default. Disable this option to prevent build failure even if no file
 
 </td>
 
-
 </tr>
-
 
 <tr>
 
@@ -94,22 +82,19 @@ Enabled by default. Disable this option to prevent build failure even if no file
 
 File encoding
 
-
 </td>
 
 <td id="Fileencoding">
 
-By default, TeamCity will auto\-detect the file encoding. To specify the encoding explicitly, select it from the drop\-down. When specifying a _custom_ encoding, make sure it is [supported](https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html) by the agent.     
+By default, TeamCity will autodetect the file encoding. To specify the encoding explicitly, select it from the drop-down menu. When specifying a _custom_ encoding, make sure it is [supported](https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html) by the agent.     
 
 _If a [pre-defined template](file-content-replacer.md#Templates) is selected, the file encoding associated with that template will be used._
-
 
 </td></tr><tr>
 
 <td>
 
 Find what
-
 
 </td>
 
@@ -119,8 +104,7 @@ Specify a pattern to search for, in the [regular expression](https://docs.oracle
 The [MULTILINE](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#MULTILINE) mode is on by default.       
 _If a [pre-defined template](file-content-replacer.md#Templates) is selected, the pattern associated with that template will be used._
 
-You can disable the MULTILINE mode by adding "(?\-m)" at the start of the pattern string.
-
+You can disable the MULTILINE mode by adding `(?-m)` at the start of the pattern string.
 
 </td></tr><tr>
 
@@ -128,13 +112,12 @@ You can disable the MULTILINE mode by adding "(?\-m)" at the start of the patter
 
 Match case
 
-
 </td>
 
 <td id="matchCase">
 
 By default, the comparison is case-sensitive. Uncheck for case-insensitive languages.    
-_If a [pre-defined template](file-content-replacer.md#Templates) is selected, the comparison associated with that template will be used._
+_If a [predefined template](file-content-replacer.md#Templates) is selected, the comparison associated with that template will be used._
 
 </td></tr><tr>
 
@@ -150,10 +133,9 @@ Enabled by default and applies to both the search and replacement strings. Unche
 
 <note id="RegexMixed">
 
-If you use [versioned settings](storing-project-settings-in-version-control.md) (_XML_ or _Kotlin DSL_), in addition to the default `REGEX` and non\-default `FIXED_STRINGS` mode, the `REGEX_MIXED` mode is available. In this mode, the search pattern is interpreted as a regular expression, but the replacement text will be [quoted](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#quoteReplacement-java.lang.String-) (the `\`and `$` characters have no special meaning).
+If you use [versioned settings](storing-project-settings-in-version-control.md) (_XML_ or _Kotlin DSL_), in addition to the default `REGEX` and non-default `FIXED_STRINGS` mode, the `REGEX_MIXED` mode is available. In this mode, the search pattern is interpreted as a regular expression, but the replacement text will be [quoted](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#quoteReplacement-java.lang.String-) (the `\`and `$` characters have no special meaning).
 
 See a sample _File Content Replacer_ configuration for settings in [Kotlin](kotlin-dsl.md):
-
 
 ```Shell
 features {
@@ -236,7 +218,7 @@ The templates for replacing the following [Assembly attributes](https://msdn.mic
 
 #### MFC templates
 
-The templates for replacing the following __MFC C\+\+ resource keys__ are provided:
+The templates for replacing the following __MFC C++ resource keys__ are provided:
 * `FileDescription`
 * `CompanyName`
 * `ProductName`
@@ -246,7 +228,7 @@ The templates for replacing the following __MFC C\+\+ resource keys__ are provid
 
 <note>
 
-In __MFC\*.rc__ files, both `FileVersion` and `ProductVersion` occur twice, once in a _dot\-separated_ (e.g. `1.2.3.4`) and once in a _comma\-separated_ (e.g. `1,2,3,4`) form. If your `%build.number%` parameter has a format of `1.2.3.{0}`, using two build parameters with different delimiters instead of a single `%build.number%` is recommended.
+In __MFC\*.rc__ files, both `FileVersion` and `ProductVersion` occur twice, once in a _dot-separated_ (e.g. `1.2.3.4`) and once in a _comma-separated_ (e.g. `1,2,3,4`) form. If your `%build.number%` parameter has a format of `1.2.3.{0}`, using two build parameters with different delimiters instead of a single `%build.number%` is recommended.
 </note>
 
 #### Xcode templates
@@ -266,24 +248,23 @@ Do the following: change the default replacement `$1MyAssemblyConfiguration$7` t
 
 [//]: # (Internal note. Do not delete. "File Content Replacerd143e622.txt")    
 
-
 For changing complex regex patterns, [this external tool](https://regex101.com/) might be useful.
 
 ### Patching only specified files
 
-The default `AssemblyInfo` templates follow the usual _Visual Studio_ project/solution layout; but a lot of information may be shared across multiple projects and can reside in a shared file (e.g. `CommonAssemblyInfo.cs`).
+The default `AssemblyInfo` templates follow the usual _Visual Studio_ project/solution layout; but a lot of information may be shared across multiple projects and can reside in a shared file (for example, `CommonAssemblyInfo.cs`).
 
-Suppose you want to patch this shared file only; or you want to patch `AssemblyInfo.cs` files on a per\-project bassis.
+Suppose you want to patch this shared file only; or you want to patch `AssemblyInfo.cs` files on a per-project basis.
 
 Do the following:
-1. Load the `AssemblyInfo` template corresponding to the attribute you are trying to process (e.g. `AssemblyVersion`)
-2. Change the list of file paths in the [Look in](#Wildcards) field from the default `*/Properties/AssemblyInfo.cs` to `*/CommonAssemblyInfo.cs ` or list several files comma\- or new\-line separated files here, e.g. `myproject1/Properties/AssemblyInfo.cs, myproject2/Properties/AssemblyInfo.cs` .
+1. Load the `AssemblyInfo` template corresponding to the attribute you are trying to process (for example, `AssemblyVersion`)
+2. Change the list of file paths in the [Look in](#Wildcards) field from the default `*/Properties/AssemblyInfo.cs` to `*/CommonAssemblyInfo.cs ` or list multiple comma- or new-line separated files here, for example, `myproject1/Properties/AssemblyInfo.cs, myproject2/Properties/AssemblyInfo.cs`.
 
 ### Specifying path patterns which contain spaces
 
 Spaces are usually considered a part of the pattern, unless they follow a comma, as the comma is recognised as a delimiter.
 
-Note that the TeamCity server UI trims leading and trailing spaces in input fields, so a single\-line pattern like `<spaces>foo.bar` will become `foo.bar` upon save. The following workarounds are available:
+Note that the TeamCity server UI trims leading and trailing spaces in input fields, so a single-line pattern like `<spaces>foo.bar` will become `foo.bar` upon save. The following workarounds are available:
 
 [//]: # (Internal note. Do not delete. "File Content Replacerd143e694.txt")    
 
@@ -320,7 +301,6 @@ to
 $1$5\%build.number%$7
 
 ```
-
 
 <note>
 

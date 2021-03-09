@@ -41,7 +41,7 @@ Alternatively, you can start the container under the root user by passing the `-
 
 ### No auto prefix for dotnet run command line parameters
 
-Since this version, the [.NET](net.md) build runner __does not apply `--` before the `dotnet run` parameters__. Previously, the runner added this prefix automatically which made it impossible to pass the custom options to the `run` command. To fix this, we've disabled thr previous behavior.  
+Since this version, the [.NET](net.md) build runner __does not apply `--` before the `dotnet run` parameters__. Previously, the runner added this prefix automatically which made it impossible to pass the custom options to the `run` command. To fix this, we've disabled the previous behavior.  
 Unfortunately, the affected .NET build steps cannot be converted automatically on upgrading. If any of your steps pass arguments to the running .NET application, please make sure to alter these steps and prepend the respective parameters with `--`.
 
 ### Bundled Tools Updates
@@ -63,7 +63,7 @@ Unfortunately, the affected .NET build steps cannot be converted automatically o
 
 The new header is enabled in both classic and experimental UIs. Some plugins developed for the previous header might not work in the new one. With [our new API](https://blog.jetbrains.com/teamcity/2020/09/teamcity-2020-2-updated-plugin-development/), you can make your custom plugins compatible with the new header or write new ones using modern web technologies.
 
-If you have troubles displaying valuable information or actions in this header and updating plugins is not a convenient option, you can set the `teamcity.ui.useClassicHeader=true` internal property – this will switch your TeamCity header to the previous view. Please note that this is not a recommended solution as we might disable the obsolete header in the future versions.
+If you have troubles displaying valuable information or actions in this header and updating plugins is not a convenient option, you can set the `teamcity.ui.useClassicHeader=true` internal property — this will switch your TeamCity header to the previous view. Please note that this is not a recommended solution as we might disable the obsolete header in the future versions.
 
 ### Reindexing build search
 
@@ -81,7 +81,7 @@ If `build.gradle` was selected as a build file in your Gradle steps, this settin
 
 ### New responsibility for secondary nodes
 
-Since version 2019.2, a secondary node allows user actions if at least one responsibility is assigned to it. In 2020.2, we have added a new responsibility – "Processing user requests to modify data". Nodes with this responsibility can process all currently supported user actions and allow changing project settings. Without it, a node will provide a read-only interface.   
+Since version 2019.2, a secondary node allows user actions if at least one responsibility is assigned to it. In 2020.2, we have added a new responsibility — "Processing user requests to modify data". Nodes with this responsibility can process all currently supported user actions and allow changing project settings. Without it, a node will provide a read-only interface.   
 On upgrading, this responsibility will be automatically enabled on all your secondary nodes that have at least one other responsibility. This will ensure no current functionality of these nodes is affected. To allow user actions on new secondary nodes, you have to manually enable the new responsibility in __Administration | Server Configuration__.
  
 ### Bundled tools updates
@@ -133,7 +133,7 @@ This issue will be fixed in TeamCity 2020.1.4. To workaround it in version 2020.
 
 ## Changes from 2020.1.1 to 2020.1.2
 
-* Mercurial support has been dropped for our Windows Server Core agent Docker images. If you need to use Mercurial on Windows Server Core agents, consider pulling the previous version of the agent Docker image – 2020.1.1.
+* Mercurial support has been dropped for our Windows Server Core agent Docker images. If you need to use Mercurial on Windows Server Core agents, consider pulling the previous version of the agent Docker image — 2020.1.1.
 
 ## Changes from 2020.1 to 2020.1.1
 
@@ -192,11 +192,11 @@ UPDATE users SET algorithm = 'BCRYPT' WHERE password like '$2a$07$%' and algorit
 
 #### New format of env.JDK_ environment variables
  
-To better align with current and future Java versions we've introduced a new format of `env.JDK_` environment variables.   
-Starting with 2020.1 the format is as follows: `env.JDK_<major>_<minor>[_x64]`. For example: `env.JDK_1_6`, `env.JDK_1_7`, `env.JDK_1_8`, `env_JDK_11_0_x64`.   
+To better align with the current and future Java versions we've introduced a new format of `env.JDK_` environment variables.   
+Starting with 2020.1, the format is as follows: `env.JDK_<major>_<minor>[_x64]`. For example: `env.JDK_1_6`, `env.JDK_1_7`, `env.JDK_1_8`, `env.JDK_11_0_x64`.   
 This way, if you are using rather old Java 1.4, the proper variable is `env.JDK_1_4`, while `env.JDK_14_0` will be used for Java 14.0.
 
-For backward compatibility, previous environment variables, such as `env.JDK_16` or `env.JDK_18`, will be generated too, but these variables will no longer be shown in TeamCity auto-completion popup menus.
+For backward compatibility, previous environment variables, such as `env.JDK_16` or `env.JDK_18`, will be generated too, but these variables will no longer be shown in the TeamCity autocompletion pop-up menus.  
 If you are using these environment variables in your build scripts, we encourage you to migrate to the new format.
 
 See the [related issue](https://youtrack.jetbrains.com/issue/TW-64998).
@@ -236,7 +236,7 @@ The [Kubernetes Support plugin](https://plugins.jetbrains.com/plugin/9818-kubern
 
 TeamCity improves the security of REST API integration mechanisms by introducing CSRF tokens. This change will not affect the behavior of custom integration scripts unless they rely on Cross-Origin Resource Sharing (CORS) in writing operations and the `rest.cors.origins` internal property is [enabled in TeamCity](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#CORS-support) (it is disabled by default).
 
-Previously, CSRF protection was presented in TeamCity with the verification of `Origin/Referer` headers of HTTP requests. To improve TeamCity CSRF protection, this method has been disabled in favor of a more secure one – CSRF tokens. Since this release, TeamCity stops supporting the CORS mechanism for `POST/PUT/DELETE` REST API requests. Cross-origin GET requests' headers are processed as before and still require [CORS configuration](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#CORS-support).
+Previously, CSRF protection was presented in TeamCity with the verification of `Origin/Referer` headers of HTTP requests. To improve TeamCity CSRF protection, this method has been disabled in favor of a more secure one — CSRF tokens. Since this release, TeamCity stops supporting the CORS mechanism for `POST/PUT/DELETE` REST API requests. Cross-origin GET requests' headers are processed as before and still require [CORS configuration](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#CORS-support).
 
 If necessary, you can enforce verification of `Origin/Referer` headers for writing CORS operations by setting the `teamcity.csrf.paranoid=false` internal property. Note that this is a transitory and less secure solution: we strongly recommend refactoring your existing requests so they comply with the new security policy and provide a token within a CSRF header or parameter. A CSRF token can be obtained via the `GET https://your-server/authenticationTest.html?csrf` request and provided via the `X-TC-CSRF-Token` HTTP header to the write CORS requests.
 
@@ -1507,7 +1507,7 @@ No noteworthy changes.
 
 #### Command Line Runner
 
-The change in behavior introduced in 8.1 (see [below](#Known+issue+with+Command+Line+Runner)) has been fixed. Command line runners using "Executable with parameters" option which were created/changed with TeamCity 8.1can expose a change in behavior with the upgrade. The recommended approach is to switch to "Custom script" option instead of "Executable with parameters" in command line runner.
+The change in behavior introduced in 8.1 (see [below](#Known+issue+with+Command+Line+Runner)) has been fixed. Command line runners using "Executable with parameters" option which were created/changed with TeamCity 8.1 can expose a change in behavior with the upgrade. The recommended approach is to switch to "Custom script" option instead of "Executable with parameters" in command line runner.
 
 #### Separate download for VSTest.Console runner
 

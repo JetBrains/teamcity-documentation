@@ -1,12 +1,9 @@
 [//]: # (title: Agent Cloud Profile)
 [//]: # (auxiliary-id: Agent Cloud Profile)
 
-A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand while distributing a build queue. Configuring a cloud provider profile is one of the steps required to [enable agent cloud integration](teamcity-integration-with-cloud-solutions.md) between TeamCity and a cloud provider. The settings of profiles slightly vary depending on the cloud type. 
+A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand while distributing a build queue. Configuring a cloud provider profile is one of the steps required to [enable agent cloud integration](teamcity-integration-with-cloud-solutions.md) between TeamCity and a cloud provider. The settings of profiles slightly vary depending on the cloud type.
 
-<tip>
-
-Note that after an upgrade, if you use Kotlin DSL for your TeamCity project settings, you need to update your DSL as described [here](upgrading-dsl.md).
-</tip>
+>If you use Kotlin DSL for your TeamCity project settings, you need to update your DSL after upgrading as described [here](upgrading-dsl.md).
 
 ## Configuring Cloud Profile
 
@@ -22,13 +19,11 @@ The following profile settings have to be provided:
 
 Setting
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -36,13 +31,11 @@ Description
 
 Profile name
 
-
 </td>
 
 <td>
 
 Provide a name for the profile.
-
 
 </td></tr><tr>
 
@@ -50,13 +43,11 @@ Provide a name for the profile.
 
 Description
 
-
 </td>
 
 <td>
 
 Provide an optional profile description.
-
 
 </td></tr><tr>
 
@@ -64,20 +55,17 @@ Provide an optional profile description.
 
 Cloud type
 
-
 </td>
 
 <td>
 
 Select the cloud provider type from the drop-down menu.
 
-
 </td></tr><tr product="tc">
 
 <td>
 
 Server URL
-
 
 </td>
 
@@ -86,13 +74,11 @@ Server URL
 The URL that the agents cloned from the image will use to connect to the TeamCity server. This URL must be available from the build agent machine.   
 If this field is left empty, agents will use the [TeamCity server URL](configuring-server-url.md) specified on the __Administration | Global Settings__ page.
 
-
 </td></tr><tr>
 
 <td>
 
 Terminate instance idle time
-
 
 </td>
 
@@ -101,13 +87,11 @@ Terminate instance idle time
 Instruct TeamCity to stop a cloud agent machine using this setting and the _Additional terminate conditions_ options. Specify the period (in minutes) for TeamCity to wait before stopping an idle build agent.   
 Leave empty for no timeout.
 
-
 </td></tr><tr>
 
 <td id="agent-terminate-condition">
 
 Additional terminate conditions
-
 
 </td>
 
@@ -130,11 +114,7 @@ You can limit the number of instances across all images in the cloud profile (_M
 
 Click __Add Image__ and configure the required options for the image.
 
-<tip>
-
-Note that only one TeamCity build agent service can be run on each cloud instance.
-
-</tip>
+>Note that only one TeamCity build agent service can be run on each cloud instance.
 
 You can specify which [agent pool](configuring-agent-pools.md) the agents should belong to. You can only select the pool that contains this project and/or its subprojects. Pools containing projects other than the current one and its subprojects will not be available for assignment. If the selected agent pool is changed in the future so that the criteria are not met or if the agent pool is not specified, TeamCity will automatically assign the cloud agents to the _project agent pool_. You can also select the _\<Project pool\>_ in the drop-down menu manually.   
 TeamCity automatically composes the project pool containing agents from all cloud profiles of the current project and all its subprojects. Thus, the added image will be available to all the subprojects as well. On the __Agents | Pools__ page, this pool is marked as "_\<Project name\> project pool_". Project pools cannot be deleted or modified.

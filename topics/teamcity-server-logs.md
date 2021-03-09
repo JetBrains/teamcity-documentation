@@ -11,7 +11,7 @@ While the server is running, the logs can be viewed in the web UI on the `Server
 
 __Enable Debug in Server Logs__
 
-In the web UI, go to __Administration | Diagnostics__ page. On the __Troubleshooting__ tab, choose a logging preset, view logs under __Server Logs__ subsection.   
+In the web UI, go to __Administration | Diagnostics__ page. On the __Troubleshooting__ tab, choose a logging preset, view logs under __Server Logs__ subsection.
 
 If it is not possible to enable debug logging mode from the TeamCity web UI, refer to [Changing Logging Configuration](#Changing+Logging+Configuration) section to learn how to adjust logging options manually.
 </tip>
@@ -39,20 +39,17 @@ The most important log files are:
 
 General server log
 
-
 </td></tr><tr>
 
 <td>
 
 `teamcity-activities.log`
 
-
 </td>
 
 <td>
 
-Log of user\-initiated and main build\-related events
-
+Log of user-initiated and main build-related events
 
 </td></tr><tr>
 
@@ -60,13 +57,11 @@ Log of user\-initiated and main build\-related events
 
 `teamcity-vcs.log`
 
-
 </td>
 
 <td>
 
-Log of [VCS](configuring-vcs-roots.md)\-related activity
-
+Log of [VCS](configuring-vcs-roots.md)-related activity
 
 </td></tr><tr>
 
@@ -74,13 +69,11 @@ Log of [VCS](configuring-vcs-roots.md)\-related activity
 
 `teamcity-cleanup.log`
 
-
 </td>
 
 <td>
 
-contains [clean-up](clean-up.md)\-related log
-
+Contains [clean-up](clean-up.md)-related log
 
 </td></tr><tr>
 
@@ -88,13 +81,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-notifications.log`
 
-
 </td>
 
 <td>
 
 [Notifications](subscribing-to-notifications.md)\-related log
-
 
 </td></tr><tr>
 
@@ -102,13 +93,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-clouds.log`
 
-
 </td>
 
 <td>
 
 (off by default) [Cloud-integration](teamcity-integration-with-cloud-solutions.md)\-related log
-
 
 </td></tr><tr>
 
@@ -116,13 +105,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-sql.log`
 
-
 </td>
 
 <td>
 
 (off by default) Log of SQL queries, see [details](reporting-issues.md#Database-related+Slowdowns)
-
 
 </td></tr><tr>
 
@@ -130,13 +117,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-http-auth.log`
 
-
 </td>
 
 <td>
 
 (off by default) Log with messages related to [NTLM](ntlm-http-authentication.md) and other authentication for HTML requests
-
 
 </td></tr><tr>
 
@@ -144,13 +129,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-xmlrpc.log`
 
-
 </td>
 
 <td>
 
-(off by default) Log of messages sent by the server to agents and IDE plugins via XML\-RPC
-
+(off by default) Log of messages sent by the server to agents and IDE plugins via XML-RPC
 
 </td></tr><tr>
 
@@ -158,13 +141,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `vcs-content-cache.log`
 
-
 </td>
 
 <td>
 
 (off by default) Log related to individual file content requests from VCS
-
 
 </td></tr><tr>
 
@@ -172,13 +153,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-rest.log`
 
-
 </td>
 
 <td>
 
 (off by default) [REST-API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) related logging
-
 
 </td></tr><tr>
 
@@ -186,13 +165,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-freemarker.log`
 
-
 </td>
 
 <td>
 
-(off by default) [Notification templates](customizing-notifications.md) processing\-related logging
-
+(off by default) [Notification templates](customizing-notifications.md) processing-related logging
 
 </td></tr><tr>
 
@@ -200,13 +177,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-agentPush.log`
 
-
 </td>
 
 <td>
 
 (off by default) Logging related to [agent push](setting-up-and-running-additional-build-agents.md) operations
-
 
 </td></tr><tr>
 
@@ -214,13 +189,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-remote-run.log`
 
-
 </td>
 
 <td>
 
 (off by default) Logging related to [personal builds](personal-build.md) processing on the server
-
 
 </td></tr><tr>
 
@@ -228,13 +201,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-svn.log`
 
-
 </td>
 
 <td>
 
 (off by default) [SVN integration](subversion.md) log
-
 
 </td></tr><tr>
 
@@ -242,13 +213,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-tfs.log`
 
-
 </td>
 
 <td>
 
 (off by default) [TFS integration](team-foundation-server.md) log
-
 
 </td></tr><tr>
 
@@ -256,13 +225,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-starteam.log`
 
-
 </td>
 
 <td>
 
 (off by default) [StarTeam integration](starteam.md) log
-
 
 </td></tr><tr>
 
@@ -270,13 +237,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-clearcase.log`
 
-
 </td>
 
 <td>
 
 (off by default) [ClearCase integration plugin](clearcase.md) log
-
 
 </td></tr><tr>
 
@@ -284,13 +249,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-ldap.log`
 
-
 </td>
 
 <td>
 
-[LDAP](ldap-integration.md)\-related log
-
+[LDAP](ldap-integration.md)-related log
 
 </td></tr><tr>
 
@@ -298,13 +261,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-nuget.log`
 
-
 </td>
 
 <td>
 
-[NuGet](nuget.md)\-related log
-
+[NuGet](nuget.md)-related log
 
 </td></tr><tr>
 
@@ -312,13 +273,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-maintenance.log`
 
-
 </td>
 
 <td>
 
-(off by default) logs of back\-up/ restore/ migration performed with [maintainDB tool](migrating-to-an-external-database.md#Full+Migration)
-
+(off by default) logs of back-up/ restore/ migration performed with [maintainDB tool](migrating-to-an-external-database.md#Full+Migration)
 
 </td></tr><tr>
 
@@ -326,13 +285,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-maintenance-truncation.log`
 
-
 </td>
 
 <td>
 
-(off by default) contains extended information on possible data truncation during back\-up/ restore/ migration performed with [maintainDB tool](migrating-to-an-external-database.md)
-
+(off by default) contains extended information on possible data truncation during back-up/ restore/ migration performed with [maintainDB tool](migrating-to-an-external-database.md)
 
 </td></tr><tr>
 
@@ -340,13 +297,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-versioned-settings.log`
 
-
 </td>
 
 <td>
 
 (off by default) contains information on [synchronization of the project settings](storing-project-settings-in-version-control.md) with the version control
-
 
 </td></tr><tr>
 
@@ -354,13 +309,11 @@ contains [clean-up](clean-up.md)\-related log
 
 `teamcity-ws.log`
 
-
 </td>
 
 <td>
 
 logs related to communication between browsers and the TeamCity server using the [WebSocket connection](server-health.md#WebSocket+connection+issues)
-
 
 </td></tr><tr>
 
@@ -378,7 +331,7 @@ logs related to communication between TeamCity and configured [issue tracker](in
 
 Other files can also be created on [changing Logging Configuration](#Changing+Logging+Configuration).
 
-Some of the files can have `.N` extensions \- that are files with previous logging messages copied on main file rotation. See [`maxBackupIndex`](#Changing+Logging+Settings) for preserving more files.
+Some of the files can have `.N` extensions — that are files with previous logging messages copied on main file rotation. See [`maxBackupIndex`](#Changing+Logging+Settings) for preserving more files.
 
 ## Logging-related Diagnostics UI
 
@@ -406,9 +359,9 @@ If you want to fine-tune the log4j configuration, you can edit `<[TeamCity Serve
 
 If you change settings in other preset files, like `debug-all.xml` or `debug-vcs.xml`, the settings won't be picked up automatically. To enforce the change, switch logging preset to some other value, like `<Default>` and then switch back to `debug-all`. 
 
-Most useful settings of log4j configuration:   
-To change the minimum log level to save in the file, tweak the `value` attribute of the `priority` element:
+Most useful settings of log4j configuration:
 
+To change the minimum log level to save in the file, tweak the `value` attribute of the `priority` element.
 
 ```Plain Text
 <category ...>
@@ -417,10 +370,7 @@ To change the minimum log level to save in the file, tweak the `value` attribute
 
 ```
 
-
-
 The logs are rotated by default. When debug is enabled, it makes sense to increase the `value` attribute of `maxBackupIndex` element to affect the number of preserved log files. While doing so, ensure there is sufficient free disk space available.
-
 
 ```Plain Text
 <appender ...>
@@ -428,8 +378,6 @@ The logs are rotated by default. When debug is enabled, it makes sense to increa
 ...
 
 ```
-
-
 
 For detailed description of `maxBackupIndex` and other supported attributes, see [Class RollingFileAppender](http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/RollingFileAppender.html) in Apache documentation.
 
@@ -456,7 +404,7 @@ The configuration options values can be changed via the corresponding `log4j.con
 For example: `log4j.configuration=file:../conf/teamcity-server-log4j.xml` and `teamcity_logs=../logs/`.   
 Default values can be looked up in the `bin/teamcity-server` script available in the .exe and tar.gz distributions.
 
-If you start TeamCity by the means other than the bundled `teamcity-server` or `runAll` scripts, make sure to pass the above\-mentioned options to the server JVM. See also the [recommendations](installing-and-configuring-the-teamcity-server.md) on installing TeamCity into not bundled web server.
+If you start TeamCity by the means other than the bundled `teamcity-server` or `runAll` scripts, make sure to pass the above-mentioned options to the server JVM. See also the [recommendations](installing-and-configuring-the-teamcity-server.md) on installing TeamCity into not bundled web server.
 
 The default `teamcity-server-log4j.xml` file content can be found in the `.exe` and `tar.gz` distributions. The one with debug enabled can be found under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging/debug-general.xml` name after server's first start. See also the sample [`teamcity-server-log4j.xml`](https://confluence.jetbrains.com/download/attachments/113084044/teamcity-server-log4j.xml?version=1&modificationDate=1362486616000&api=v2) file.
 

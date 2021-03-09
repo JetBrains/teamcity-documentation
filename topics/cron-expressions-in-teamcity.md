@@ -9,7 +9,7 @@ TeamCity allows you to flexibly schedule regular operations using the [cron](htt
 
 TeamCity uses [Quartz](https://www.quartz-scheduler.org/) for working with cron expressions. See the examples below or consider using the [CronMaker](http://www.cronmaker.com/) utility to generate expressions based on the Quartz cron format.
 
-#### Cron format in TeamCity
+## Cron format in TeamCity
 
 Cron expressions are comprised of six fields and one optional field separated with a white space. The fields are respectively described as follows:
 
@@ -185,7 +185,7 @@ empty, 1970\-2099
 
 For the description of special characters, refer to [Quartz CronTrigger Tutorial](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html#special-characters).
 
-#### Examples
+## Examples
 
 <table><tr>
 

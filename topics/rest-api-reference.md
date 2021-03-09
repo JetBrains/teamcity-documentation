@@ -400,10 +400,10 @@ Note that since the matched VCS root instances are the same as for `../app/rest/
 ### VCS root instance locator
  
 Some supported `<vcsRootInstancesLocator>` from above:
-* `type:<VCS root type>` – VCS root instances of the specified version control (for example, `jetbrains.git`, `mercurial`, `svn`).
-* `vcsRoot:(<vcsRootLocator>)` – VCS root instances corresponding to the VCS root matched by `<vcsRootLocator>`.
-* `buildType:(<buildTypeLocator>)` – VCS root instances attached to the matching build configuration.
-* `property:(name:<name>,value:<value>,matchType:<matching>)` – VCS root instances with the property of name `<name>` and value matching condition `<matchType>` (for example, equals, contains) by the value `<value>`.
+* `type:<VCS root type>` — VCS root instances of the specified version control (for example, `jetbrains.git`, `mercurial`, `svn`).
+* `vcsRoot:(<vcsRootLocator>)` — VCS root instances corresponding to the VCS root matched by `<vcsRootLocator>`.
+* `buildType:(<buildTypeLocator>)` — VCS root instances attached to the matching build configuration.
+* `property:(name:<name>,value:<value>,matchType:<matching>)` — VCS root instances with the property of name `<name>` and value matching condition `<matchType>` (for example, equals, contains) by the value `<value>`.
 
 ## Cloud Profiles
 
@@ -823,12 +823,12 @@ The most frequently used values for `<buildTypeLocator>` are `id:<buildConfigura
 __Since TeamCity 2017.2__, the _experimental_ [type](build-configuration.md#Build+Configuration+Types) locator is supported with one of the values: `regular`, `composite`, or `deployment`.
  
 Other supported [dimensions](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#Locator) are (these are in _experimental_ state):
-* `internalId` – internal ID of the build configuration.
-* `project` – `<projectLocator>` to limit the build configurations to those belonging to a single project.
-* `affectedProject` – `<projectLocator>` to limit the build configurations under a single project (recursively).
-* `template` – `<buildTypeLocator>` of a template to list only build configurations using the template.
-* `templateFlag` – boolean value to get only templates or only non-templates.
-* `paused` – boolean value to filter paused/not paused build configurations.
+* `internalId` — internal ID of the build configuration.
+* `project` — `<projectLocator>` to limit the build configurations to those belonging to a single project.
+* `affectedProject` — `<projectLocator>` to limit the build configurations under a single project (recursively).
+* `template` — `<buildTypeLocator>` of a template to list only build configurations using the template.
+* `templateFlag` — boolean value to get only templates or only non-templates.
+* `paused` — boolean value to filter paused/not paused build configurations.
  
 [//]: # (Internal note. Do not delete. "REST APId269e1377.txt")    
  
@@ -898,33 +898,33 @@ Using a [locator](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api
 For some requests, a default filtering is applied which returns only "normal" builds (finished builds which are not canceled, not failed-to-start, not personal, and on default branch (in branched build configurations)), unless those types of builds are specifically requested via the locator. To turn off this default filter and process all builds, add the `defaultFilter:false` dimension to the build locator. Default filtering varies depending on the specified locator dimensions. For example, when `agent` or `user` dimensions are present, personal, canceled, and failed to start builds are included into the results.
  
 Examples of supported build locators:
-* `id:<internal build id>` – use [internal build ID](working-with-build-results.md#Internal+Build+ID) when you need to refer to a specific build.
-* `number:<build number>` – to find build by build number, provided build configuration is already specified.
-* `<dimension1>:<value1>,<dimension2>:<value2>` – to find builds by multiple criteria.
+* `id:<internal build id>` — use [internal build ID](working-with-build-results.md#Internal+Build+ID) when you need to refer to a specific build.
+* `number:<build number>` — to find build by build number, provided build configuration is already specified.
+* `<dimension1>:<value1>,<dimension2>:<value2>` — to find builds by multiple criteria.
  
 The list of supported build locator dimensions:
-* `project:<project locator>` – limit the list to the builds of the specified project (belonging to any build type directly under the project).
-* `affectedProject:<project locator>` – limit the list to the builds of the specified project (belonging to any build type directly or indirectly under the project)
-* `buildType:(<buildTypeLocator>),defaultFilter:false` – all the builds of the specified build configuration
-* `tag:<tag>` – __since TeamCity 10__, get tagged builds. If a list of tags is specified, for example `tag:<tag1>`, `tag:<tag2>`, only the builds containing all the specified tags are returned. The legacy `tags:<tags>` locator is supported for compatibility.
-* `status:<SUCCESS/FAILURE/UNKNOWN>` – list builds with the specified status only.
-* `user:(<userLocator>)` – limit builds to only those triggered by the user specified.
-* `personal:<true/false/any>` – limit builds by the personal flag. By default, personal builds are not included.
-* `canceled:<true/false/any>` – limit builds by the canceled flag. By default, canceled builds are not included.
-* `failedToStart:<true/false/any>` – limit builds by the failed to start flag. By default, failed to start builds are not included.
-* `state:<queued/running/finished>` – limit builds by the specified state.
-* `running:<true/false/any>` – limit builds by the running flag. By default, running builds are not included.
-* `state:running,hanging:true` – fetch hanging builds (__since TeamCity 10.0__).
-* `pinned:<true/false/any>` – limit builds by the pinned flag.
-* `branch:<branch locator>` – limit the builds by branch. `<branch locator>` can be the branch name displayed in the UI, or `(name:<name>,default:<true/false/any>,unspecified:<true/false/any>,branched:<true/false/any>)`. By default only builds from the default branch are returned. To retrieve all builds, add the following `locator: branch:default:any`. The whole path will look like this: `/app/rest/builds/?locator=buildType:One_Git,branch:default:any`.
-* `revision:<REVISION>` – find builds by revision, for example all builds of the given build configuration with the revision: `/app/rest/builds?locator=revision:(REVISION),buildType:(id:BUILD_TYPE_ID)`. See more information [below](#Revisions).
-* `agentName:<name>` – agent name to return only builds ran on the agent with the specified name.
-* `sinceBuild:(<buildLocator>)` – limit the list of builds only to those after the one specified
-* `sinceDate:<date>` – limit the list of builds only to those started after the date specified. The date should be in the same format as dates returned by REST API (for example, `20130305T170030+0400`).
-* `queuedDate/startDate/finishDate:(date:<time-date>,build:<build locator>,condition:<before/after>)` – filter builds based on the time specified by the build locator, for example for the builds finished after November 23, 2017, 20:34:46, GMT\+1 timezone use: `finishDate:(date:20171123T203446%2B0100,condition:after)`.
-* `count:<number>` – serve only the specified number of builds.
-* `start:<number>` – list the builds from the list starting from the position specified (zero\-based).
-* `lookupLimit:<number>` – limit processing to the latest N builds only (the default is 5000). If none of the latest N builds match the other specified criteria of the build locator, 404 response is returned for single build request and empty collection for multiple builds request. See the [related note](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#API+Client+Recommendations).
+* `project:<project locator>` — limit the list to the builds of the specified project (belonging to any build type directly under the project).
+* `affectedProject:<project locator>` — limit the list to the builds of the specified project (belonging to any build type directly or indirectly under the project)
+* `buildType:(<buildTypeLocator>),defaultFilter:false` — all the builds of the specified build configuration
+* `tag:<tag>` — __since TeamCity 10__, get tagged builds. If a list of tags is specified, for example `tag:<tag1>`, `tag:<tag2>`, only the builds containing all the specified tags are returned. The legacy `tags:<tags>` locator is supported for compatibility.
+* `status:<SUCCESS/FAILURE/UNKNOWN>` — list builds with the specified status only.
+* `user:(<userLocator>)` — limit builds to only those triggered by the user specified.
+* `personal:<true/false/any>` — limit builds by the personal flag. By default, personal builds are not included.
+* `canceled:<true/false/any>` — limit builds by the canceled flag. By default, canceled builds are not included.
+* `failedToStart:<true/false/any>` — limit builds by the failed to start flag. By default, failed to start builds are not included.
+* `state:<queued/running/finished>` — limit builds by the specified state.
+* `running:<true/false/any>` — limit builds by the running flag. By default, running builds are not included.
+* `state:running,hanging:true` — fetch hanging builds (__since TeamCity 10.0__).
+* `pinned:<true/false/any>` — limit builds by the pinned flag.
+* `branch:<branch locator>` — limit the builds by branch. `<branch locator>` can be the branch name displayed in the UI, or `(name:<name>,default:<true/false/any>,unspecified:<true/false/any>,branched:<true/false/any>)`. By default only builds from the default branch are returned. To retrieve all builds, add the following `locator: branch:default:any`. The whole path will look like this: `/app/rest/builds/?locator=buildType:One_Git,branch:default:any`.
+* `revision:<REVISION>` — find builds by revision, for example all builds of the given build configuration with the revision: `/app/rest/builds?locator=revision:(REVISION),buildType:(id:BUILD_TYPE_ID)`. See more information [below](#Revisions).
+* `agentName:<name>` — agent name to return only builds ran on the agent with the specified name.
+* `sinceBuild:(<buildLocator>)` — limit the list of builds only to those after the one specified
+* `sinceDate:<date>` — limit the list of builds only to those started after the date specified. The date should be in the same format as dates returned by REST API (for example, `20130305T170030+0400`).
+* `queuedDate/startDate/finishDate:(date:<time-date>,build:<build locator>,condition:<before/after>)` — filter builds based on the time specified by the build locator, for example for the builds finished after November 23, 2017, 20:34:46, GMT\+1 timezone use: `finishDate:(date:20171123T203446%2B0100,condition:after)`.
+* `count:<number>` — serve only the specified number of builds.
+* `start:<number>` — list the builds from the list starting from the position specified (zero\-based).
+* `lookupLimit:<number>` — limit processing to the latest N builds only (the default is 5000). If none of the latest N builds match the other specified criteria of the build locator, 404 response is returned for single build request and empty collection for multiple builds request. See the [related note](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#API+Client+Recommendations).
  
 ### Queued Builds
 
@@ -1028,7 +1028,7 @@ GET http://teamcity:8111/app/rest/buildQueue?locator=buildType:<locator>
  
 ### Triggering a Build
  
-To start a build, send a `POST` request to [`http://teamcity:8111/app/rest/buildQueue`](http://teamcity:8111/app/rest/buildQueue) with the "build" node (see below) in content – the same node as details of a queued build or finished build. The queued build details will be returned.
+To start a build, send a `POST` request to [`http://teamcity:8111/app/rest/buildQueue`](http://teamcity:8111/app/rest/buildQueue) with the "build" node (see below) in content — the same node as details of a queued build or finished build. The queued build details will be returned.
  
 When the build is started, the request to the queued build (`/app/rest/buildQueue/XXX`) will return running/finished build data. This way, you can monitor the build completeness by querying build details using the `href` attribute of the build details returned on build triggering, until the build has the `state="finished"` attribute.
  
@@ -1817,10 +1817,10 @@ GET http://teamcity:8111/app/rest/testOccurrences?locator=<locator dimension>:<v
 </table>
  
 __Supported locators__:
-* `build:(<build locator>)` – test run in the build.
-* `build:(<build locator>),muted:true` – failed tests which were muted in the build.
-* `currentlyFailing:true,affectedProject:<project_locator>` – tests currently failing under the project specified (recursively).
-* `currentlyMuted:true,affectedProject:<project_locator>` – tests currently muted under the project specified (recursively). See also the project's __Muted Problems__ tab.
+* `build:(<build locator>)` — test run in the build.
+* `build:(<build locator>),muted:true` — failed tests which were muted in the build.
+* `currentlyFailing:true,affectedProject:<project_locator>` — tests currently failing under the project specified (recursively).
+* `currentlyMuted:true,affectedProject:<project_locator>` — tests currently muted under the project specified (recursively). See also the project's __Muted Problems__ tab.
 * `includePersonal:true` - include tests from [personal builds](personal-build.md).
  
 __Examples__:
@@ -2513,8 +2513,8 @@ GET http://teamcity:8111/app/rest/users/<userLocator>/roles
 ```
 
 `<userLocator>` can be of a form:
-* `id:<internal user id>` – to reference the user by internal ID
-* `username:<user's username>` – to reference the user by username/login name
+* `id:<internal user id>` — to reference the user by internal ID
+* `username:<user's username>` — to reference the user by username/login name
 
 </td></tr>
 
@@ -3057,7 +3057,7 @@ curl -v -u USER:PASSWORD http://teamcity:8111/app/rest/projects --header "Conten
 curl -v -u :SUPERUSER_TOKEN --request PUT http://teamcity:8111/app/rest/users/username:USERNAME/roles/SYSTEM_ADMIN/g/
  
 ```
-where `SUPERUSER_TOKEN` is the super user token unique for each server start; `teamcity:8111` – the TeamCity server URL; `USERNAME` – the username of the user to be made the system administrator.
+where `SUPERUSER_TOKEN` is the super user token unique for each server start; `teamcity:8111` — the TeamCity server URL; `USERNAME` — the username of the user to be made the system administrator.
  
 <tip>
  

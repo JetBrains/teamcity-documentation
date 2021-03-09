@@ -1,7 +1,6 @@
 [//]: # (title: Ordering Build Queue)
 [//]: # (auxiliary-id: Ordering Build Queue)
 
-
 This page lists the options to manage the queue builds manually. Automatic build queue optimization is detailed in the [separate section](build-queue.md#Build+Queue+Optimization+by+TeamCity).
 
 ## Manually Reordering Builds in Queue
@@ -24,7 +23,7 @@ To access these settings, on the __Build Queue__ tab, click the __Configure Buil
 
 <tip>
 
-Note that only users with the __System Administator__ role can manage build priority classes.
+Note that only users with the __System Administrator__ role can manage build priority classes.
 </tip>
 
 By default, there are two predefined priority classes: _Personal_ and _Default_, both with `priority=0`.
@@ -51,7 +50,7 @@ Additionally, you can:
 
 It is possible to limit the maximum number of builds in the queue. By default, the limit is set to 3000 builds. The default value can be changed using the `teamcity.buildTriggersChecker.queueSizeLimit` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
-When the queue size reaches the limit, TeamCity will pause [Configuring Build Triggers](configuring-build-triggers.md). Automatic build triggering will be reenabled once the queue size gets below limit. While triggering is paused, a warning message is shown to all of the users.
+When the queue size reaches the limit, TeamCity will pause [Configuring Build Triggers](configuring-build-triggers.md). Automatic build triggering will be reenabled once the queue size gets below limit. While triggering is paused, a warning message is shown to all the users.
 
  While __automatic__ triggering is paused, it is still possible to add builds to the queue [manually](triggering-a-custom-build.md).
 

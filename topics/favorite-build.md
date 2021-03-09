@@ -7,7 +7,7 @@ To easily access builds you want to monitor, you can mark them as favorite.
 
 ## Adding Builds to Favorites
 
-To manually add a build to your favorites, use the appropriate option from the __Actions__ menu on the [Build Results](working-with-build-results.md) page. Your favorite build will be marked with a star symbol ![star_filled.png](star_filled.png).
+To manually add a build to your favorites, use the appropriate option from the __Actions__ menu on the __[Build Results](working-with-build-results.md)__ page. Your favorite build will be marked with a star symbol ![star_filled.png](star_filled.png).
 
 Any of your manually triggered builds and [personal builds](personal-build.md) can be added to your favorites automatically if you enable the corresponding setting in your [user profile settings](managing-your-user-account.md).
 
@@ -26,5 +26,5 @@ When [subscribing to notifications](subscribing-to-notifications.md), you can li
 ## Removing Builds from Favorites
 
 To remove builds from favorites:
-* On the __Favorite Builds__ page or [Build results](working-with-build-results.md) page, click the star symbol ![star_filled.png](star_filled.png).
-* Alternatively, on the [Build results](working-with-build-results.md) page, use the __Remove Builds from favorites__ option from the __Actions__ menu.
+* On the __Favorite Builds__ or __[Build Results](working-with-build-results.md)__ page, click the star symbol ![star_filled.png](star_filled.png).
+* Alternatively, on the __[Build Results](working-with-build-results.md)__ page, use the __Remove Builds from favorites__ option from the __Actions__ menu.

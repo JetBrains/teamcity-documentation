@@ -39,7 +39,6 @@ The [project file](https://github.com/JetBrains/teamcity-nunit-samples/blob/mast
 
 <chunk include-id="msbuild-examples-nunit">
 
-
 ```Shell
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -97,7 +96,7 @@ In most cases its sufficient to set only the 2 parameters: the path to the NUnit
 
 <img src="nunit-step.png" alt="Build step: NUnit" width="750"/>
 
-The _NUnit runner_ field defines the NUnit version used to run tests. When configuring your build step for NUnit 3, the _Path to NUnit console runner_ field is required to contain the path to the NUnit console: prior to TeamCity 9.1.4 specify the _directory_ containing the console executable file, in the later TeamCity versions specify _the path to the console executable file including the file name_.
+The _NUnit runner_ field defines the NUnit version used to run tests. When configuring your build step for NUnit 3, the _Path to NUnit console runner_ field is required to contain the path to the NUnit console: specify the path to the console executable file including the file name.
 
 In all the examples the NuGet package manager provides the NUnit infrastructure. Using NuGet enables the user to conveniently manage the test environment, update NUnit, and run test locally as they will be run by TeamCity.
 
@@ -110,7 +109,6 @@ When configuring the NUnit build step for NUnit 3, it requires specifying the NU
 The other fields provide a lot of useful options, and this section discusses some of them.
 
 <img src="nunit-step-advanced.png" alt="Build step: NUnit, advanced options" width="750"/>
-
  
 One of the options is defining the __application configuration file__. Sometimes tests obtain data from a configuration file, and to facilitate this, you need to define the path to the application configuration file to be used when running tests in the _Path to application configuration file_ field. The path can be absolute or relative to the [Build Checkout Directory](build-checkout-directory.md). Unfortunately, NUnit is limited by allowing only one configuration file per build step. Due to this limitation, if you need to test several assemblies with different configurations in one build step, you have to aggregate several application configuration files into a common configuration file. If it is not possible, split the test launch into several steps and define a configuration file in each of the steps.
 

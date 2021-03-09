@@ -15,8 +15,8 @@ Supported environments:
 TeamCity also allows [implementing tests reordering feature for a custom build runner](https://plugins.jetbrains.com/docs/teamcity/risk-tests-reordering-in-custom-test-runner.html).
 </tip>
 
-You can instruct TeamCity to run some tests before others. You can do this on the build runner settings page. Currently there are two groups of tests that TeamCity can run first:
-* recently failed tests, i.e. the tests failed in previous finished or running builds as well as tests having high failure rate (a so called blinking tests)
+You can instruct TeamCity to run some tests before others. You can do this on the build runner settings page. Currently, there are two groups of tests that TeamCity can run first:
+* recently failed tests, i.e. the tests failed in previous finished or running builds as well as tests having high failure rate (so-called blinking tests)
 * new and modified tests, i.e. tests added or modified in changelists included in the running build
 
 <note>
@@ -31,6 +31,7 @@ TeamCity operates on test case basis, that is not the individual tests are reord
 Tests reordering works the following way:
 
 #### JUint
+
 1. TeamCity provides tests that should be run first (test classes).
 2. When a JUnit task starts, TeamCity checks whether it includes these tests.
 3. If at least one test is included, TeamCity generates a new fileset containing included tests only and processes it before all other filesets. It also patches other filesets to exclude tests added to the automatically generated fileset.
@@ -48,7 +49,7 @@ Some cases when automatic tests reordering will not work:
 __TestNG versions earlier than 5.14__:
 1. TeamCity provides tests that should be run first (test classes).
 2. When a TestNG task starts, TeamCity checks whether it includes these tests.
-3. If at least one test is included, TeamCity generates a new xml file with suite containing included tests only and processes it before all other files. It also patches other files to exclude tests added to the automatically generated file.
+3. If at least one test is included, TeamCity generates a new XML file with a suite containing included tests only and processes it before all other files. It also patches other files to exclude tests added to the automatically generated file.
 4. After that TestNG starts and runs as usual.
 
 <note>Some cases when automatic tests reordering will not work
@@ -57,7 +58,7 @@ if &lt;package/&gt; element is used in the TestNG XML suite.
 
 __TestNG versions 5.14 or later__:
 1. TeamCity provides tests that should be run first (test classes).
-2. When a TestNG starts, TeamCity injects custom listener which will reorder tests if needed.
+2. When a TestNG starts, TeamCity injects a custom listener which will reorder tests if needed.
 3. Before starting tests TestNG asks listener to reorder tests execution order list. If some test requires reordering, TeamCity listener moves it to to the start of the list.
 4. After that TestNG runs tests in new order.
 
@@ -79,13 +80,11 @@ Supported build runners:
 
 Tests reordering only supports reordering of recently failed tests. 
 
-
 <note>
 
 * When the "Run recently failed tests first" option is selected, the [Explicit](https://github.com/nunit/docs/wiki/Explicit-Attribute) attribute __will not work__.
 * Test reordering is __not supported for parametrized NUnit tests.__
 </note>
-
 
 If risk tests reordering option is enabled, the feature for NUnit test runner works in the following way:
 1. NUnit runs tests from the "risk" group using test name filter.
@@ -97,7 +96,7 @@ If risk tests reordering option is enabled, the feature for NUnit test runner wo
 * Tests reordering feature applies to an NUnit task. That is, for NAnt and MSBuild runners, tests reordering feature will be initiated as many times as many NUnit tasks you have in your build script.
 </note>
 
- <seealso>
+<seealso>
         <category ref="external">
             <a href="https://plugins.jetbrains.com/docs/teamcity/risk-tests-reordering-in-custom-test-runner.html">Developing TeamCity Plugins: Risk Tests Reordering in Custom Test Runner</a>
         </category>

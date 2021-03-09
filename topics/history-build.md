@@ -16,8 +16,6 @@ As the history build does not reflect the current state of the sources, the foll
 * History builds are not shown on the __Projects__ or __Build Configuration Home__ page as the last finished build of a configuration.
 * The [Investigation](investigating-and-muting-build-failures.md) option is not available for history builds.
 
-
-
 [//]: # (Internal note. Do not delete. "History Buildd159e60.txt")    
 
  <seealso>

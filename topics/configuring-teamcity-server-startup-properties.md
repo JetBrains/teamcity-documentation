@@ -16,7 +16,7 @@ __Please do not change the internal properties unless asked by the TeamCity supp
 If you have internal properties customized, make sure to note this when you turn to the TeamCity support.
 
 Server administrators can review and edit internal properties in the TeamCity web UI: go to the __Administration | Server Administration | Diagnostics__ page, select the __Internal Properties__ tab, and click __Edit internal properties__.   
-Many properties do not require the server restart, but some do. When the restart is required we usually note that specifically.
+Many properties do not require the server restart, but some do. When the restart is required, we usually note that specifically.
 
 The properties are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/internal.properties` file. The file is a Java [properties file](http://en.wikipedia.org/wiki/.properties). If necessary, you can edit the file manually and add each required property `<property_name>=<property_value>` on a separate line.
 
@@ -33,8 +33,8 @@ You will need to [restart](installing-and-configuring-the-teamcity-server.md#Sta
 ### Standard TeamCity Startup Scripts
 
 If you run the server using the `runAll` or `teamcity-server` scripts or as a Windows service, you need to set the options via the OS __[environment variables](http://en.wikipedia.org/wiki/Environment_variable)__ passed to the TeamCity server process:
-* `TEAMCITY_SERVER_MEM_OPTS` – server JVM memory options (for example, `-Xmx750m`)
-* `TEAMCITY_SERVER_OPTS` – additional server JVM options (for example, `-Dteamcity.git.fetch.separate.process=false`)
+* `TEAMCITY_SERVER_MEM_OPTS` — server JVM memory options (for example, `-Xmx750m`)
+* `TEAMCITY_SERVER_OPTS` — additional server JVM options (for example, `-Dteamcity.git.fetch.separate.process=false`)
 
 The process of setting an environment variable depends on your operating system. For example, in Windows, go to __Control Panel\System and Security\System__ and then open the __Advanced system settings | Environment Variables__ window.
 

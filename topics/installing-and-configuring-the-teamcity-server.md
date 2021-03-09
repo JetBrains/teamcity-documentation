@@ -15,9 +15,9 @@ To install a TeamCity server, perform the following:
 
 After you have selected one of the [TeamCity installation options](installation.md#Select+TeamCity+Installation+Package), proceed with corresponding installation instructions:
 
-* [Windows .exe distribution](#Installing+TeamCity+via+Windows+installation+package) – the executable which provides the installation wizard for Windows platforms and allows installing the server as a Windows service.
-* [.tar.gz distribution](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) – the archive with a "portable" version suitable for all platforms.
-* Docker image – check the instructions at the [image page](https://hub.docker.com/r/jetbrains/teamcity-server/).
+* [Windows .exe distribution](#Installing+TeamCity+via+Windows+installation+package) — the executable which provides the installation wizard for Windows platforms and allows installing the server as a Windows service.
+* [.tar.gz distribution](#Installing+TeamCity+bundled+with+Tomcat+servlet+container+%28Linux%2C+macOS%2C+Windows%29) — the archive with a "portable" version suitable for all platforms.
+* Docker image — check the instructions at the [image page](https://hub.docker.com/r/jetbrains/teamcity-server/).
 
 The `.exe` and `.tar.gz` distributions:
 * Include a Tomcat version which TeamCity is tested with, so it is known to be a working combination. This might not be the case with an external Tomcat.
@@ -66,11 +66,7 @@ By default, the Windows service is installed under the SYSTEM account. To change
 
 Review [software requirements](supported-platforms-and-environments.md#TeamCity+Server) before the installation.
 
-<tip>
-
-We recommend running the TeamCity server under a dedicated user account.
-
-</tip>
+>We recommend running the TeamCity server under a dedicated user account.
 
 Unpack the `TeamCity<version number>.tar.gz` archive (for example, using the `tar xfz TeamCity<version number>.tar.gz` command under Linux, or the WinZip, WinRar or similar utility under Windows). Use GNU tar to unpack (for example, Solaris 10 tar is reported to truncate too long file names and may cause a `ClassNotFoundException` when using the server after such unpacking. Consider getting GNU tar at [Solaris packages](http://sunfreeware.com/) or using the `gtar xfz` command).
 
@@ -101,19 +97,17 @@ For the latter, you might want to:
 
 Under Windows, if TeamCity server is installed as a Windows service, follow the usual procedure of starting and stopping services.
 
-If TeamCity is installed using the `.exe` or `.tar.gz` distributions, the TeamCity server can be started and stopped by the `teamcity-server` scripts provided in the \<[TeamCity Home](teamcity-home-directory.md)\>\/bin directory. The script accepts `run` (run in the same console), `start` (start new detached process and exit from the script), and `stop` commands.
+If TeamCity is installed using the `.exe` or `.tar.gz` distributions, the TeamCity server can be started and stopped by the `teamcity-server` scripts provided in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory. The script accepts `run` (run in the same console), `start` (start new detached process and exit from the script), and `stop` commands.
 
 * __(evaluation only) To start/stop the TeamCity server and one default agent at the same time__, use the `runAll` script, for example:
    * Use `runAll.bat start` to start the server and the default agent
    * Use `runAll.bat stop` to stop the server and the default agent
   
 * __To start/stop the TeamCity server only__, use the `teamcity-server` scripts and pass the required parameters. Start the script without parameters to see the usage instructions. The `teamcity-server` scripts support the following options for the `stop` command:
-   * `stop n` – sends the stop command to the TeamCity server and waits up to n seconds for the process to end.
-   * `stop n -force` – sends the stop command to the TeamCity server, waits up to n seconds for the process to end, and terminates the server process if it did not stop.
+   * `stop n` — sends the stop command to the TeamCity server and waits up to n seconds for the process to end.
+   * `stop n -force` — sends the stop command to the TeamCity server, waits up to n seconds for the process to end, and terminates the server process if it did not stop.
 
-<tip>
-The TeamCity server will restart automatically if the server process exits (crashes or is killed) without invoking `teamcity-server stop` script.
-</tip>
+>The TeamCity server will restart automatically if the server process exits (crashes or is killed) without invoking `teamcity-server stop` script.
 
 By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/). See the information [below](#Changing+Server+Port) for changing the server port.
 
@@ -145,7 +139,7 @@ Starting up TeamCity server on macOS is quite similar to starting Tomcat on macO
             <string>/bin/bash</string>
             <string>--login</string>
             <string>-c</string>
-            <string>bin/teamcity\-server.sh run</string>
+            <string>bin/teamcity-server.sh run</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
@@ -179,9 +173,9 @@ Upon successful installation, the TeamCity server web UI can be accessed via a w
 
 If the TeamCity web UI cannot be accessed, check the following:
 * the "TeamCity Server" service is running (if you installed TeamCity as a Windows service)
-* the TeamCity server process (Tomcat) is running (it is a `java` process run in the \<[TeamCity Home](teamcity-home-directory.md)\>\/bin directory)
+* the TeamCity server process (Tomcat) is running (it is a `java` process run in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory)
 * the console output if you run the server from a console
-* the `teamcity-server.log` and other files in the \<[TeamCity Home](teamcity-home-directory.md)\>\logs directory for error messages
+* the `teamcity-server.log` and other files in the `<[TeamCity Home](teamcity-home-directory.md)>\logs` directory for error messages
 
 One of the most common issues with the server installation is using a port that is already used by another program. See [below](#Changing+Server+Port) on changing the default port.
 
@@ -191,8 +185,7 @@ If you use the TeamCity server Windows installer, you can set the port to be use
 
 Use the following instructions to change the port if you use the `.tar.gz` distribution. If another application uses the same port as the TeamCity server, the TeamCity server (Tomcat server) won't start and this will be identified by "Address already in use" errors in the server logs or server console.
 
-To change the server port, in the \<[TeamCity Home](teamcity-home-directory.md)\>/conf/server.xml file, change the port number in the not commented `<Connector>` XML node (here the port number is 8111):
-
+To change the server port, in the `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file, change the port number in the not commented `<Connector>` XML node (here the port number is 8111):
 
 ```XML
 <Connector port="8111" ...
@@ -210,13 +203,10 @@ If you want to use the `https://` protocol, it should be enabled separately and 
 By default, the TeamCity server is accessible under the root context of the server address (for example, [`http://localhost:8111/`](http://localhost:8111/) ). To make it available under a nested path instead (for example, [`http://localhost:8111/teamcity/`](http://localhost:8111/teamcity/) ), you need to:
 
 1. Stop the TeamCity server.
-2. Rename the \<[TeamCity Home](teamcity-home-directory.md)\>\webapps\ROOT directory to \<[TeamCity Home](teamcity-home-directory.md)\>\webapps\teamcity.
+2. Rename the `<[TeamCity Home](teamcity-home-directory.md)>\webapps\ROOT` directory to `<[TeamCity Home](teamcity-home-directory.md)>\webapps\teamcity`.
 3. Start the TeamCity server.
 
-<tip>
-
-Note that after this change [automatic update](upgrade.md#Automatic+Update) will be disabled for your installation and you will have to upgrade TeamCity [manually](upgrade.md#Manual+Upgrade).
-</tip>
+>Note that after this change [automatic update](upgrade.md#Automatic+Update) will be disabled for your installation and you will have to upgrade TeamCity [manually](upgrade.md#Manual+Upgrade).
 
 
 ### Java Installation
@@ -229,12 +219,12 @@ Supported Java versions are OpenJDK and Oracle Java 8 (8u16 or later) and 11 (32
 If you have configured any native libraries for use with TeamCity (like `.dll` for using the Integrated Security option of the Microsoft SQL database), you need to update the libraries to match the JVM x86/x64 platform.
 
 TeamCity selects the Java to run the server process as follows:
-* By default, if your TeamCity installation has a bundled JRE (the \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory exists), it will be used to run the TeamCity server process. To use a different JRE, specify its path via the `TEAMCITY_JRE` environment variable.
-* If there is no \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory present, TeamCity looks for the `JRE_HOME` or `JAVA_HOME` environment variable pointing to the installation directory of JRE or JVM (Java SDK) respectively. If both variables are declared, JRE will be used.
+* By default, if your TeamCity installation has a bundled JRE (the `<[TeamCity Home](teamcity-home-directory.md)>\jre` directory exists), it will be used to run the TeamCity server process. To use a different JRE, specify its path via the `TEAMCITY_JRE` environment variable.
+* If there is no `<[TeamCity Home](teamcity-home-directory.md)>\jre` directory present, TeamCity looks for the `JRE_HOME` or `JAVA_HOME` environment variable pointing to the installation directory of JRE or JVM (Java SDK) respectively. If both variables are declared, JRE will be used.
 
 The necessary steps to update the Java installation depend on the distribution used.
-* If your TeamCity installation has a bundled JRE (there is the \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory), update it by installing a newer JRE per installation instructions and copying the content of the resulting directory to replace the content of the existing \<[TeamCity Home](teamcity-home-directory.md)\>\jre directory.   
-If you also run a TeamCity agent from the \<[TeamCity Home](teamcity-home-directory.md)\>\buildAgent directory, install JDK (Java SDK) installation instead of JRE and copy content of JDK installation directory into \<[TeamCity Home](teamcity-home-directory.md)\>\jre.
+* If your TeamCity installation has a bundled JRE (there is the `<[TeamCity Home](teamcity-home-directory.md)>\jre` directory), update it by installing a newer JRE per installation instructions and copying the content of the resulting directory to replace the content of the existing `<[TeamCity Home](teamcity-home-directory.md)>\jre` directory.   
+If you also run a TeamCity agent from the `<[TeamCity Home](teamcity-home-directory.md)>\buildAgent` directory, install JDK (Java SDK) installation instead of JRE and copy content of JDK installation directory into `<[TeamCity Home](teamcity-home-directory.md)>\jre`.
 
 [//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e906.txt")
 
@@ -312,10 +302,9 @@ Out-of-the-box TeamCity server installation is suitable for evaluation purposes.
 * [Configuring recommended memory settings](#Setting+Up+Memory+settings+for+TeamCity+Server), use "maximum settings" for active or growing servers.
 * Planning for regular [backups](teamcity-data-backup.md).
 * Planning for regular [upgrades](upgrade.md) to the latest TeamCity releases.
-* (since TeamCity 10.0.3) Consider adding the `teamcity.installation.completed=true` line into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\conf\teamcity-startup.properties file – this will prevent the server from creating an administrator user if no such user is found.
+* Consider adding the `teamcity.installation.completed=true` line into the `<[TeamCity Data Directory](teamcity-data-directory.md)>\conf\teamcity-startup.properties` file — this will prevent the server from creating an administrator user if no such user is found.
 
 Make sure to review the [notes on configuring the server for performance](how-to.md#Configuring+TeamCity+Server+for+Performance) and [security notes](security-notes.md).
-
 
 <seealso>
         <category ref="installation">

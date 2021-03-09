@@ -16,20 +16,17 @@ This runner requires .NET Framework 4.6.1 (or higher) to be installed on the age
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 Include
-
 
 </td>
 
@@ -39,20 +36,17 @@ Use newline-delimited Ant-like wildcards relative to the checkout root to specif
 Visual Studio solution files are parsed and replaced by all source files from all projects within a solution.   
 Example: `src\MySolution.sln`
 
-
 </td></tr><tr>
 
 <td>
 
 Exclude
 
-
 </td>
 
 <td>
 
 Enter newline-delimited Ant-like wildcards to exclude files from the duplicates search (for example, `*/generated{*}{}.cs`). The entries should be relative to the checkout root.
-
 
 </td></tr></table>
 
@@ -64,20 +58,17 @@ Enter newline-delimited Ant-like wildcards to exclude files from the duplicates 
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 R# CLT Home Directory 
-
 
 </td>
 
@@ -95,13 +86,11 @@ Select the ReSharper Command Line Tools version. You can check the installed Jet
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -115,13 +104,11 @@ Code fragments comparison
 
 Use these options to define which elements of the source code should be discarded when searching for repetitive code fragments. Code fragments can be considered duplicated, if they are structurally similar, but contain different variables, fields, methods, types or literals. Refer to the samples below:
 
-
 </td></tr><tr>
 
 <td>
 
 Discard namespaces
-
 
 </td>
 
@@ -129,15 +116,11 @@ Discard namespaces
 
 If this option is checked, similar contents with different _namespace specifications_ will be recognized as duplicates.
 
-
 ```Shell
 NLog.Logger.GetInstance().Log("abcd");
 A.Log.Logger.GetInstance().Log("abcd");
 
 ```
-
-
-
 
 </td></tr><tr>
 
@@ -145,13 +128,11 @@ A.Log.Logger.GetInstance().Log("abcd");
 
 Discard literals
 
-
 </td>
 
 <td>
 
 If this option is checked, similar lines of code with different literals will be recognized as duplicates.
-
 
 ```Shell
 myStatusBar.SetText("Not Logged In");
@@ -165,13 +146,11 @@ myStatusBar.SetText("Logging In...");
 
 Discard local variables
 
-
 </td>
 
 <td>
 
 If this option is checked, similar code fragments with different local variable names will be recognized as duplicates.
-
 
 ```Shell
 int a = 5; a += 6;
@@ -185,13 +164,11 @@ int b = 5; b += 6;
 
 Discard class fields name
 
-
 </td>
 
 <td>
 
 If this option is checked, the similar code fragments with different field names will be recognized as duplicates.
-
 
 ```Shell
 Console.WriteLine(myFoo);
@@ -200,22 +177,17 @@ Console.WriteLine(myBar);
 
 ```
 
-
-
-
 </td></tr><tr>
 
 <td>
 
 Discard types
 
-
 </td>
 
 <td>
 
 If this option is checked, similar content with different type names will be recognized as duplicates. These include all possible type references (as shown below):
-
 
 ```csharp
 Logger.GetInstance("text");
@@ -236,13 +208,11 @@ public void SomeMethod(object[] param);
 
 Ignore duplicates with complexity lower than
 
-
 </td>
 
 <td>
 
 Use this field to specify the lowest level of complexity of code blocks to be taken into consideration when detecting duplicates.
-
 
 </td></tr><tr>
 
@@ -250,13 +220,11 @@ Use this field to specify the lowest level of complexity of code blocks to be ta
 
 Skip files by opening comment
 
-
 </td>
 
 <td>
 
 Enter newline-delimited keywords to exclude files that contain the keyword in the file's opening comments from the duplicates search.
-
 
 </td></tr><tr>
 
@@ -264,13 +232,11 @@ Enter newline-delimited keywords to exclude files that contain the keyword in th
 
 Skip regions by message substring
 
-
 </td>
 
 <td>
 
 Enter newline-delimited keywords that exclude regions that contain the keyword in the message substring from the duplicates search. Entering "generated code", for example, will skip regions containing "Windows Form Designer generated code".
-
 
 </td></tr><tr>
 
@@ -278,13 +244,11 @@ Enter newline-delimited keywords that exclude regions that contain the keyword i
 
 Enable debug output
 
-
 </td>
 
 <td>
 
- Check this option to include debug messages in the build log and publish the file with additional logs (`dotnet-tools-dupfinder.log`) as an artifact.
-
+Check this option to include debug messages in the build log and publish the file with additional logs (`dotnet-tools-dupfinder.log`) as an artifact.
 
 </td></tr><tr>
 

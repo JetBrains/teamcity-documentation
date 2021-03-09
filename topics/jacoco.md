@@ -19,15 +19,12 @@ To ensure the coverage data is collected properly, make sure your tests run in (
 
 </tip>
 
-
-
 ## Enabling JaCoco coverage
 
 TeamCity supports the Java agent coverage mode allowing you to collect coverage without modifying build scripts or binaries. No additional build steps needed - just choose JaCoCo coverage in a build step which runs tests:
 
 1. In the __Code Coverage__ section, select __JaCoCo__ as a coverage tool in the __Choose coverage runner__ drop-down menu.
 2. Set up the coverage options - refer to the description of the available options below.
-
 
 <note>
 
@@ -40,7 +37,6 @@ To provide JaCoCo coverage in Android projects, the build script should generate
 
 <td>
 
-
 Option
 
 </td>
@@ -49,18 +45,15 @@ Option
 
 Description
 
-
 </td>
 
 <td>
-
 
 Example
 
 </td></tr><tr>
 
 <td>
-
 
 __Classfile directories or jars__
 
@@ -81,7 +74,6 @@ Newline-delimited set of path patterns in the form of `+|-:[path]` relative to t
 </td></tr><tr>
 
 <td>
-
 
 __Classes to instrument__
 
@@ -113,7 +105,6 @@ The code coverage results can be viewed on the __Overview__ tab of the __Build R
 ## Importing JaCoCo coverage data to TeamCity
 
 TeamCity can parse JaCoCo coverage data and generate a report using a [service message](service-messages.md) of the following format:
-
 
 ```Plain Text
 ##teamcity[jacocoReport dataPath='<path to jacoco.exec file>']

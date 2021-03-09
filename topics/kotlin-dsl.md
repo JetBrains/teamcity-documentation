@@ -12,9 +12,9 @@ title="Getting Started With Kotlin DSL in TeamCity: From Zero to Hero"/>
 
 ## How Kotlin DSL Works
 
-When versioned settings in Kotlin format are enabled, TeamCity commits the current settings to the specified settings repository.
+When versioned settings in Kotlin format are enabled, TeamCity commits the current settings to the specified settings' repository.
 
-When a new commit is detected in a settings repository, TeamCity runs the DSL scripts found in this commit and applies the result to the settings on the TeamCity server or reports errors on the project's __Versioned Settings__ tab.
+When a new commit is detected in a settings' repository, TeamCity runs the DSL scripts found in this commit and applies the result to the settings on the TeamCity server or reports errors on the project's __Versioned Settings__ tab.
 
 Note: DSL scripts is essentially another way of writing TeamCity configuration files. DSL scripts do not have direct control on how builds are executed. For instance, it is impossible to have a condition and change something depending on the current state of a build. The result of scripts execution is configuration files, which are loaded by TeamCity server and then behavior of the newly triggered builds changes. 
 
@@ -46,8 +46,8 @@ Usually it takes a minute or two, depending on the _Changes Checking Interval_ d
 ### Project Settings Structure
 
 After the commit to the repository, you will get the `.teamcity` settings directory with the following files:
-* `settings.kts` – the main file containing all the project configuration
-* `pom.xml` – required when opening the project in an IDE to get the auto-completion feature, and ability to compile code and write unit tests for it
+* `settings.kts` — the main file containing all the project configuration
+* `pom.xml` — required when opening the project in an IDE to get the auto-completion feature, and ability to compile code and write unit tests for it
 
 ### Opening Project in IntelliJ IDEA
 
@@ -104,7 +104,7 @@ project {
 
 Here, `id` will be used as the value of the _[Build configuration ID](identifier.md)_ field in TeamCity. In the example above the `id` must be specified. If you omit it, there will be a validation error on an attempt to generate settings from this script.
 
-But there is also another way to define the same build configuration:
+There is also another way to define the same build configuration:
 
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
@@ -128,7 +128,7 @@ object HelloWorld: BuildType({
 
 In this case the usage of the `id()` function call is optional because TeamCity will generate the id based on the class name (`HelloWorld` in our case).  
 
-After making the necessary changes in `settings.kts` file, you can submit them to the repository – TeamCity will detect and apply them. If there are no errors during the script execution, you should see a build configuration named "Hello world" in your project.
+After making the necessary changes in `settings.kts` file, you can submit them to the repository — TeamCity will detect and apply them. If there are no errors during the script execution, you should see a build configuration named "Hello world" in your project.
 
 <note>
 
@@ -414,7 +414,7 @@ open class MyGit() : GitVcsRoot() {
 
 You can use external libraries in your Kotlin DSL code, which allows sharing code between different Kotlin DSL-based projects.
 
-To use an external library in your Kotlin DSL code, add a dependency on this library to the `.teamcity/pom.xml` file in the settings repository and commit this change so that TeamCity detects it. Then, before starting the generation process, the TeamCity server will fetch the necessary dependencies from the Maven repository, compile code with them, and then start the settings generator.
+To use an external library in your Kotlin DSL code, add a dependency on this library to the `.teamcity/pom.xml` file in the settings repository and commit this change so that TeamCity detects it. Then, before starting the generation process, the TeamCity server will fetch the necessary dependencies from the Maven repository, compile code with them, and then start the settings' generator.
 
 Since TeamCity 2019.2.1, you can establish access to external libraries in private repositories. For this, specify all the required credentials in the [Maven settings file](https://maven.apache.org/settings.html) (`mavenSettingsDsl.xml`) and upload it on the __Maven Settings__ page of the _Root_ project.
 
@@ -527,9 +527,9 @@ Templates, build configurations, and VCS roots have [unique IDs](identifier.md#U
 Since these IDs must be unique, there cannot be two different entities in the system with the same ID.
 
 However, one of the reasons why portable DSL is called portable is because the same `settings.kts` script can be used to generate settings for two different projects even on the same server.   
-To achieve this while overcoming IDs uniqueness, TeamCity operates with relative IDs in portable DSL scripts. These relative IDs do not have parent project ID prefix in them. So when TeamCity generates portable Kotlin DSL scripts, it has to remove the parent project ID prefix from the IDs of all of the generated entities.
+To achieve this while overcoming IDs uniqueness, TeamCity operates with relative IDs in portable DSL scripts. These relative IDs do not have parent project ID prefix in them. So when TeamCity generates portable Kotlin DSL scripts, it has to remove the parent project ID prefix from the IDs of all the generated entities.
 
-But this will not work if not all of the project entities have this prefix in their IDs. In this case the following error can be shown:
+But this will not work if not all the project entities have this prefix in their IDs. In this case the following error can be shown:
 
 _Build configuration id '&lt;some id&gt;' should have a prefix corresponding to its parent project id: '&lt;parent project id&gt;'_
 

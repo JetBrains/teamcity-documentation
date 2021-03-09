@@ -3,17 +3,11 @@
 
 A build configuration can be made dependent on the artifacts or sources of builds of some other build configurations. 
 
-
 For _[snapshot dependencies](snapshot-dependencies.md)_, TeamCity will run all dependent builds on the sources taken at the moment the build they depend on starts.
 
 For _[artifact dependencies](artifact-dependencies.md)_, before a build is started, all artifacts this build depends on will be downloaded and placed in their configured target locations and then will be used by the build.
 
-
-<tip>
-
-The dependencies of the build can later be viewed on the build results page \- the Dependencies tab. This tab also displays indirect dependencies, e.g. if a build A depends on a build B which depends on builds C and D, then these builds C and D are indirect dependencies for build A.
-</tip>
-
+>The dependencies of the build can later be viewed on the build results page — the __Dependencies__ tab. This tab also displays indirect dependencies, e.g. if a build A depends on a build B which depends on builds C and D, then these builds C and D are indirect dependencies for build A.
 
 <seealso>
         <category ref="external">

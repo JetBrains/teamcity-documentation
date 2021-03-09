@@ -23,29 +23,26 @@ To configure code coverage by means of EMMA engine, follow these steps:
 	
 1. While creating/editing Build Configuration, go to the __Build Step__ page.
 2. Select the [Ant](ant.md) build runner.
-3. In the __Code Coverage__ section, choose __EMMA__ as a coverage tool in the drop\-down.
-4. Set up the coverage options \- refer to the description of the available options below.
+3. In the __Code Coverage__ section, choose __EMMA__ as a coverage tool in the drop-down menu.
+4. Set up the coverage options — refer to the description of the available options below.
 
 <table><tr>
 
 <td>
 
-Option 
-
+Option
 
 </td>
 
 <td>
 
-Description  
-
+Description
 
 </td></tr><tr>
 
 <td>
 
 Include Source Files in the Coverage Data 
-
 
 </td>
 
@@ -57,50 +54,41 @@ Check this option to include source files into the code coverage report (you'll 
 
 Enabling this option can increase the report size and may slow down the creation of your builds. To avoid this situation, specify some [EMMA properties](http://emma.sourceforge.net/reference_single/reference.html#prop-ref.tables).
 </warning>
- 
 
 </td></tr><tr>
 
 <td>
 
-Coverage Instrumentation Parameters 
-
+Coverage Instrumentation Parameters
 
 </td>
 
 <td>
 
-Use this field to specify the filters to be used for creating the code coverage report. These filters define classes to be exempted from instrumentation. For detailed description of filters, refer to [EMMA documentation](http://emma.sourceforge.net/reference_single/reference.html#prop-ref.tables). 
-
+Use this field to specify the filters to be used for creating the code coverage report. These filters define classes to be exempted from instrumentation. For detailed description of filters, refer to [EMMA documentation](http://emma.sourceforge.net/reference_single/reference.html#prop-ref.tables).
 
 </td></tr></table>
 
 
 ## Troubleshooting
 
-#### No coverage, there is a message: EMMA: no output created: metadata is empty
+__No coverage, there is a message: EMMA: no output created: metadata is empty__
 
 Please make sure that all your classes (whose coverage is to be evaluated) are recompiled during the build. Usually this requires adding a "clean" task at the beginning of the build.
 
+__java.lang.NoClassDefFoundError: com/vladium/emma/rt/RT__
 
+This message appears when your build loads EMMA-instrumented class files in runtime, and it cannot find emma.jar file in classpath. For test tasks, like `junit` or `testng`, TeamCity adds `emma.jar` to classpath automatically. But, for other tasks, this is not the case, and you might need to modify your build script or to exclude some classes from instrumentation.
 
-#### java.lang.NoClassDefFoundError: com/vladium/emma/rt/RT
-
-This message appears when your build loads EMMA\-instrumented class files in runtime, and it cannot find emma.jar file in classpath. For test tasks, like `junit` or `testng`, TeamCity adds `emma.jar` to classpath automatically. But for other tasks, this is not the case and you might need to modify your build script or to exclude some classes from instrumentation.
-
-
-If your build runs a java task which uses your own compiled classes, you'll have to either add `emma.jar` to the classpath of the java task,  or to ensure that classes used in your java task are not instrumented. Besides, you should run your java task with the `fork=true` attribute.
-
+If your build runs a java task which uses your own compiled classes, you'll have to either add `emma.jar` to the classpath of the java task, or to ensure that classes used in your java task are not instrumented. Besides, you should run your java task with the `fork=true` attribute.
 
 The corresponding `emma.jar` file can be taken from `buildAgent/plugins/coveragePlugin/lib/emma.jar`. For a typical build, the corresponding include path would be `../../plugins/coveragePlugin/lib/emma.jar`.
 
-
-
 To exclude classes from compilation, use settings for EMMA instrumentation task. TeamCity UI has a field to pass these parameters to EMMA, labeled "Coverage instrumentation parameters". To exclude some package from instrumenting, use the following syntax: `-ix -com.foo.task.*,+com.foo.*,-*Test*`, where the package `com.foo.task.*` contains files for your custom task.
 
-#### EMMA coverage results are unstable
+__EMMA coverage results are unstable__
 
-Please make sure that your junit task has the `fork=true` attribute. The recommended combination of attributes is "`fork=true forkmode=once`".
+Please make sure that your junit task has the `fork=true` attribute. The recommended combination of attributes is `fork=true forkmode=once`.
 
  <seealso>
         <category ref="concepts">

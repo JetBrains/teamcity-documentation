@@ -19,7 +19,6 @@ It will take some time for the JVM-specific cache in TeamCity to expire and for 
 
 When working with a failover cluster, it is recommended to decrease the JVM-specific DNS caching on TeamCity [by setting the TTL to 60](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-jvm-ttl.html):
 1. Add the `-Dsun.net.inetaddr.ttl=60` JVM option to the [environment variable](configuring-teamcity-server-startup-properties.md#JVM+Options).
-
 2. Restart TeamCity for the changes to take effect.
 
 <note>

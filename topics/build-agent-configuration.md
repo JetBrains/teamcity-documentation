@@ -1,7 +1,7 @@
 [//]: # (title: Build Agent Configuration)
 [//]: # (auxiliary-id: Build Agent Configuration)
 
-Configuration settings of the build agent are stored in the `<TeamCity Agent Home>/conf/buildagent.properties` file.
+Configuration settings of the build agent are stored in the `<TeamCity Agent Home>/conf/buildAgent.properties` file.
 
 ## General Agent Configuration
 
@@ -16,7 +16,6 @@ A quick guide is:
 * whitespaces within a line matter
 
 Example of the file:
-
 
 ```Shell
 ## The address of the TeamCity server. The same as is used to open the TeamCity web interface in the browser.
@@ -51,7 +50,7 @@ authorizationToken=1234567890abcdefghijklml
 
 <note>
 
-Make sure that the file is writable for the build agent process itself. For example, the file is updated to store its authorization token that is generated on the server\-side.
+Make sure that the file is writable for the build agent process itself. For example, the file is updated to store its authorization token that is generated on the server-side.
 </note>
 
 If the `name` property is not specified, the server will generate a build agent name automatically. By default, this name will be created from the build agent's host name.
@@ -70,10 +69,7 @@ ownPort=9090
 
 ```
 
-<tip>
-
-If more than one build agent is hosted on the same machine, different ports must be assigned to them via the `ownPort` property in the `buildAgent.properties` file of every agent.
-</tip>
+>If more than one build agent is hosted on the same machine, different ports must be assigned to them via the `ownPort` property in the `buildAgent.properties` file of every agent.
 
 The IP address used by TeamCity server to connect to the build agent is automatically detected by the server when the agent first connects to TeamCity, unless the ownAddress property is defined. If the machine has several network interfaces, automatic detection may fail and it is recommended to specify the `ownAddress` property:
 
@@ -84,11 +80,10 @@ ownAddress=<own IP address or server-accessible domain name>
 
 ## Set up Agent behind Proxy
 
-Since TeamCity 2017.1 it is possible to configure a forward proxy server for agent-to-server connections.
+It is possible to configure a forward proxy server for agent-to-server connections.
 
 <include src="how-to.md" include-id="agent-proxy-server"/>
 
- 
 <seealso>
         <category ref="concepts">
             <a href="agent-pool.md">Agent Pool</a>

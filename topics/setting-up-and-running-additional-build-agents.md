@@ -36,11 +36,11 @@ The agent process (Java) must:
 <anchor name="Windows"/>
 
 #### Windows
-* Log on as a service (to run as Windows service)
-* Start/Stop service (to run as Windows service, necessary for the agent upgrade to work, see also [Microsoft KB article](https://support.microsoft.com/en-us/help/325349/how-to-grant-users-rights-to-manage-services-in-windows-server-2003))
-* Debug programs (required for take process dump functionality)
-* Reboot the machine (required for agent reboot functionality) 
-* To be able to [monitor performance](performance-monitor.md) of a build agent run as a Windows [service](#Build+Agent+as+a+Windows+Service), the user starting the agent must be a member of the Performance Monitor Users group
+* Log on as a service (to run as Windows service).
+* Start/Stop service (to run as Windows service, necessary for the agent upgrade to work, see also [Microsoft KB article](https://support.microsoft.com/en-us/help/325349/how-to-grant-users-rights-to-manage-services-in-windows-server-2003)).
+* Debug programs (required for take process dump functionality).
+* Reboot the machine (required for agent reboot functionality) .
+* To be able to [monitor performance](performance-monitor.md) of a build agent run as a Windows [service](#Build+Agent+as+a+Windows+Service), the user starting the agent must be a member of the Performance Monitor Users group.
 
 <note>
 
@@ -102,7 +102,6 @@ The communication protocol used by TeamCity agents is determined by the value of
 
 * To change the communication protocol __for all agents__, set the TeamCity server `teamcity.agent.communicationProtocols` server [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). The new setting will be used by all agents which will connect to the server after the change. To change the protocol for the existing connections, restart the TeamCity server.
 * By default, the agent's property is not configured; when the agent first connects to the server, it receives it from the TeamCity server. To change the protocol __for an individual agent__ after the initial agent configuration, change the value of the `teamcity.agent.communicationProtocols` property in the [agent's properties](build-agent-configuration.md). The agent's property overrides the server property. After the change the agent will restart automatically upon finishing a running build, if any.
-* When connecting TeamCity agents of version 2018.1+ to TeamCity server of version before 9.1 (e.g. after roll back following an upgrade), the agents will need to be updated to use `xml-rpc` protocol (or they can be reinstalled) to be able to connect to an older server to perform the self-update procedure.
 
 [//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e376.txt")    
 
@@ -278,7 +277,7 @@ To run an agent automatically on the machine boot under Windows, you can either 
 Using the Windows service approach is the easiest way, but Windows applies [some constraints](known-issues.md#Agent+running+as+Windows+Service+Limitations) to the processes run this way.   
 A TeamCity agent works reliably under Windows service provided all the [requirements](#Necessary+OS+and+environment+permissions) are met, but is often not the case for the build processes configured to be run on the agent.
 
-That is why it is recommended to run a TeamCity agent as a Windows service only if all the build scripts support this. Otherwise, it is advised to use alternative OS\-specific ways to start a TeamCity agent automatically.   
+That is why it is recommended to run a TeamCity agent as a Windows service only if all the build scripts support this. Otherwise, it is advised to use alternative OS-specific ways to start a TeamCity agent automatically.   
 One of the ways is to configure an [automatic user logon](https://support.microsoft.com/en-us/help/324737/how-to-turn-on-automatic-logon-in-windows) on Windows start and then configure the TeamCity agent start (via `agent.bat start`) on the user logon (for example, via Windows [Task Scheduler](https://msdn.microsoft.com/en-us/library/windows/desktop/aa383614(v=vs.85).aspx)).
 
 #### Build Agent as a Windows Service
@@ -287,13 +286,10 @@ In Windows, you may want to run TeamCity agent as a Windows service to allow it 
 
 <warning>
 
-To run builds, the build agent must be started under a user with sufficient permissions for performing a build and [managing](#Windows) the service. By default, a Windows service is started under the SYSTEM account which is not recommended for production use due to extended permissions the account uses. To change it, use the standard Windows Services applet (Control Panel|Administrative Tools|Services) and change the user for the `TeamCity Build Agent` service.
+To run builds, the build agent must be started under a user with sufficient permissions for performing a build and [managing](#Windows) the service. By default, a Windows service is started under the SYSTEM account which is not recommended for production use due to extended permissions the account uses. To change it, use the standard Windows Services applet (Control Panel|Administrative Tools|Services) and change the user for the _TeamCity Build Agent_ service.
 </warning>
 
-<tip>
-
-If you start an Amazon EC2 cloud agent as a Windows service, check the [related notes](setting-up-teamcity-for-amazon-ec2.md#Preparing+Image+with+Installed+TeamCity+Agent).
-</tip>
+>If you start an Amazon EC2 cloud agent as a Windows service, check the [related notes](setting-up-teamcity-for-amazon-ec2.md#Preparing+Image+with+Installed+TeamCity+Agent).
 
 The following instructions can be used to install the Windows service manually (for example, after `.zip` agent installation). This procedure should also be performed to create Windows services for the [second and following agents](#Installing+Several+Build+Agents+on+the+Same+Machine) on the same machine.
 
@@ -301,7 +297,7 @@ __To install the service:__
 1. Check if the service with the required name and id (see #4 below, service name is `TeamCity Build Agent` by default) is not present; if installed, remove it.
 2. Check that the `wrapper.java.command` property in the `<agent home>\launcher\conf\wrapper.conf` file contains a valid path to the Java executable in the JDK installation directory. You can use `wrapper.java.command=../jre/bin/java` for the agent installed with the Windows distribution. Make sure to specify the path of the java.exe file without any quotes.
 3. If you want to run the agent under user account (recommended) and not "System", add the `wrapper.ntservice.account` and `wrapper.ntservice.password` properties to the `<agent home>\launcher\conf\wrapper.conf` file with appropriate credentials
-4. (for second and following installations) modify the `<agent>\launcher\conf\wrapper.conf` file so that the `wrapper.console.title`, `wrapper.ntservice.name`, `wrapper.ntservice.displayname`, and `wrapper.ntservice.description` properties have unique values within the computer.
+4. (for second and following installations) Modify the `<agent>\launcher\conf\wrapper.conf` file so that the `wrapper.console.title`, `wrapper.ntservice.name`, `wrapper.ntservice.displayname`, and `wrapper.ntservice.description` properties have unique values within the computer.
 5. Run the `<agent home>\bin\service.install.bat` script under a user with sufficient privileges to register the new agent service. Make sure to start the agent for the first time only after it is configured as described.
 
 __To start the service:__
@@ -504,7 +500,7 @@ Under Linux, you have one more option top use `stop kill` to kill the agent proc
 
 If the agent runs with a console attached, you may also press __Ctrl\+C__ in the console to stop the agent (if a build is running, it will be canceled).
 
-### Stopping the Agent Service on Mac OS
+### Stopping the Agent Service on macOS
 
 If a build agent has been started as a `LaunchAgent` service, it can be stopped using the `launchctl` utility:
 
@@ -521,8 +517,8 @@ launchctl remove jetbrains.teamcity.BuildAgent
 A TeamCity build agent is a Java application ([supported Java versions](supported-platforms-and-environments.md#Build+Agents)).
 
 A build agent contains two processes:
-* Agent Launcher – a Java process that launches the agent process
-* Agent – the main process for a Build Agent; runs as a child process for the agent launcher
+* Agent Launcher — a Java process that launches the agent process
+* Agent — the main process for a Build Agent; runs as a child process for the agent launcher
 
 The (Windows) `.exe` TeamCity distribution comes bundled with 64-bit Amazon Corretto 8.   
 If you run a previous version of the TeamCity agent, you will need to repeat the agent installation to update the JVM.
@@ -563,8 +559,8 @@ OpenJDK 8 (for example, bundled [Amazon Corretto](https://aws.amazon.com/corrett
 
 To update Java on agents, do one of the following:
 * If the agent details page in the TeamCity UI displays a Java version note with the corresponding action, you can switch to using newer Java: if the appropriate Java version of the same bitness as the current one is detected on the agent, the agent page provides an action to switch to using that Java automatically. Upon the action invocation, the agent process is restarted (once the agent becomes idle, i.e. finishes the current build if there is one) using the new Java.
-* (Windows) Since the build agent Windows installer comes bundled with the required Java, you can just manually reinstall the agent using the Windows installer (`.exe`) obtained from the TeamCity server __Agents__ page. See [installation instructions](setting-up-and-running-additional-build-agents.md#Installing+via+Windows+installer). It is important to uninstall the previous version of the agent before installing the updated agent: invoke `Uninstall.exe` in the agent home directory, clear all the "_Remove..._" checkboxes, and click __Uninstall__.
-* Install a required Java on the agent into one of the standard locations, and restart the agent \- the agent should then detect it and provide an action to use a newer Java in the web UI (see above).
+* (Windows) Since the build agent Windows installer comes bundled with the required Java, you can just manually reinstall the agent using the Windows installer (`.exe`) obtained from the TeamCity server __Agents__ page. See [installation instructions](setting-up-and-running-additional-build-agents.md#Installing+via+Windows+installer). It is important to uninstall the previous version of the agent before installing the updated agent: invoke `Uninstall.exe` in the agent home directory, clear all the "_Remove_" checkboxes, and click __Uninstall__.
+* Install a required Java on the agent into one of the standard locations, and restart the agent — the agent should then detect it and provide an action to use a newer Java in the web UI (see above).
 * Install a required Java on the agent and [configure the agent](#Configuring+Java) to use it.
  
 
@@ -606,7 +602,6 @@ If you want to start several build agents on macOS, repeat the procedure of inst
     * the `WorkingDirectory` parameter to the correct path to the second build agent home
   * Start the second agent with the command `launchctl load $HOME/Library/LaunchAgents/jetbrains.teamcity.BuildAgent2.plist`.
 
-
 To check that both build agents are running, use the following command:
 
 ```Shell
@@ -620,14 +615,11 @@ launchctl list | grep BuildAgent
 
 If you use Windows installer to install additional agents and want to run the agent as a service, you will need to perform manual steps as installing second agent as a service on the same machine is not supported by the installer: the existing service is overwritten (see also a [feature request](http://youtrack.jetbrains.net/issue/TW-4962)).
 
-In order to install the second agent, it is recommended to install the second agent [manually](#Installing+via+ZIP+File) (using `.zip` agent distribution). You can use the Windows agent installer and do not opt for service installation, but you will lose uninstall option for the initially installed agent this way.
+In order to install the second agent, it is recommended to install the second agent [manually](#Installing+via+ZIP+File) (using the `.zip` agent distribution). You can use the Windows agent installer and do not opt for service installation, but you will lose uninstall option for the initially installed agent this way.
 
 After the second agent is installed, register a new service for it as mentioned in the [section above](#Build+Agent+as+a+Windows+Service).
 
-<tip>
-
-For step-by-step instructions on installing a second Windows agent as a service, see a related [external blog post](https://handcraftsman.wordpress.com/2010/07/20/multiple-teamcity-build-agents-on-one-server/).
-</tip>
+>For step-by-step instructions on installing a second Windows agent as a service, see the related [external blog post](https://handcraftsman.wordpress.com/2010/07/20/multiple-teamcity-build-agents-on-one-server/).
 
 <seealso>
         <category ref="concepts">

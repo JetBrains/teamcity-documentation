@@ -1,11 +1,11 @@
 [//]: # (title: IntelliJ IDEA Project)
 [//]: # (auxiliary-id: IntelliJ IDEA Project)
 
-The _IntelliJ IDEA Project_ build runner allows you to build a project created in IntelliJ IDEA. TeamCity versions up to 6.0 had [Ipr (deprecated)](ipr-deprecated.md) which is now superseded by IntelliJ IDEA Project runner.
+The _IntelliJ IDEA Project_ build runner allows you to build a project created in IntelliJ IDEA.
 
 ## Supported IntelliJ IDEA features
 
-TeamCity IntelliJ IDEA runner supports subset of IntelliJ IDEA features:
+TeamCity IntelliJ IDEA runner supports the subset of IntelliJ IDEA features:
 
 <table><tr>
 
@@ -97,14 +97,14 @@ Application run configuration
 <td>
 
 
-![plus.png](plus.png) , with limitations 
+![plus.png](plus.png), with limitations 
 
 </td>
 
 <td>
 
 * running Maven before tests start is not supported
-* altrenative JRE is not supported
+* alternative JRE is not supported
 
 </td></tr><tr>
 
@@ -277,16 +277,13 @@ Path to the project
 
 Use this field to specify the path to the project file (`.ipr`) or path to the project directory (root directory of the project that contains `.idea` folder). This information is required by this build runner to understand the structure of the project.
 
-<tip>
-
-Specified path should be relative to the checkout directory.
-</tip>
+The path should be relative to the checkout directory.
 
 </td></tr><tr>
 
 <td>
 
-Detect global libraries and module\-based JDK in the `*.iml` files
+Detect global libraries and module-based JDK in the `*.iml` files
 
 </td>
 
@@ -296,7 +293,7 @@ If this option is checked, all the module files will be automatically scanned fo
 
 <warning>
 
-When this option is selected, the process of opening and saving the build runner settings may become time\-consuming, because it involves loading and parsing all project module files.
+When this option is selected, the process of opening and saving the build runner settings may become time-consuming, because it involves loading and parsing all project module files.
 </warning>
 
 </td></tr><tr>
@@ -313,7 +310,7 @@ Click to reparse the project and import build settings right from the IDEA proje
 
 <note>
 
-If you update your project settings in IntelliJ IDEA \- add new JDKs, libraries, don't forget to update build runner settings by clicking __Check/Reparse Project__.
+If you update your project settings in IntelliJ IDEA — add new JDKs, libraries, don't forget to update build runner settings by clicking __Check/Reparse Project__.
 </note>
 
 </td></tr><tr>
@@ -328,11 +325,7 @@ Working directory
 
 Enter a path to a [Build Working Directory](build-working-directory.md), if it differs from the [Build Checkout Directory](build-checkout-directory.md).
 
-
-
-[//]: # (Internal note. Do not delete. "IntelliJ IDEA Projectd178e242.txt")    
-
-
+[//]: # (Internal note. Do not delete. "IntelliJ IDEA Projectd178e242.txt")
 
 Optional, specify if differs from the checkout directory.
 
@@ -340,9 +333,9 @@ Optional, specify if differs from the checkout directory.
 
 ## Unresolved Project Modules and Path Variables
 
-This section is displayed, when an IntelliJ IDEA module file (`.iml`) referenced from IPR\-file:
+This section is displayed, when an IntelliJ IDEA module file (`.iml`) referenced from IPR-file:
 * cannot be found
-* allows you to enter the values of path variables used in the IPR\-file
+* allows you to enter the values of path variables used in the IPR-file
 
 To refresh values in this section click __Check/Reparse Project__.
 
@@ -402,7 +395,7 @@ Use this field to specify JDK home for the project.
 
 <note>
 
-When building with the __Ipr__ runner, this JDK will be used to compile the sources of corresponding IDEA modules. For __Inspections__ and __Duplicate Finder__ builds, this JDK will be used internally to resolve the Java API used in your project.   
+For __Inspections__ and __Duplicate Finder__ builds, this JDK will be used internally to resolve the Java API used in your project.   
 To run the build process itself the JDK specified in the `JAVA_HOME` environment variable will be used.
 </note>
 
@@ -419,16 +412,12 @@ JDK Jar File Patterns
 Click this link to open a text area, where you can define templates for the `.jar` files of the project JDK. Use Ant rules to define the `.jar` file patterns.   
 The default value is used for Linux and Windows operating systems:
 
-
 ```Shell
 
 jre/lib/*.jar
 ```
 
-
-
 For macOS, use the following lines:
-
 
 ```Shell
 lib/*.jar

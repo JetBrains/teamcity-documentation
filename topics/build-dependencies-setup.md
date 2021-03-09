@@ -205,7 +205,7 @@ It is possible to [configure](snapshot-dependencies.md#on-failed-dependency) the
 
 The VCS build trigger has another [option](configuring-vcs-triggers.md#Trigger+a+build+on+changes+in+snapshot+dependencies) that alters triggering behavior for a build chain. With this options enabled, the whole build chain will be triggered even if changes are detected in dependencies, not in the final build.   
 
-Let's take a build chain from the example: `pack setup` – depends on – `tests` – depends on – `compile`.
+Let's take a build chain from the example: `pack setup` — depends on — `tests` — depends on — `compile`.
 
 <img src="compile-test-pack.png" width="401"/>
 

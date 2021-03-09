@@ -1,36 +1,38 @@
 [//]: # (title: Integrating TeamCity with Docker)
 [//]: # (auxiliary-id: Integrating TeamCity with Docker)
 
-TeamCity comes with Docker Support, implemented as a bundled [plugin](https://plugins.jetbrains.com/plugin/10062-docker-support).
+TeamCity integration with Docker includes:
+* The [Docker](docker.md) _build runner_ to launch Docker commands and create Docker images during a build.
+* The [Docker Compose](docker-compose.md) _build runner_ to start services with the help of the [Docker Compose tool](https://docs.docker.com/compose/) during a build.
+* The [Docker Wrapper](docker-wrapper.md) _extension_ to execute build steps inside a Docker container. Available for multiple runners.
+* The [Docker Support](docker-support.md) _build feature_ to automatically sign in to a Docker registry before starting a build. This feature also adds the __Docker Info__ tab of __Build Results__ with the information about the images published to the Docker registry during the build.
 
->To learn how to run Docker inside an agent container and read other information about TeamCity agent Docker images, read our documentation in [Docker Hub](https://hub.docker.com/r/jetbrains/teamcity-agent/).
+You can learn more details about the listed tools in the dedicated Help articles, linked above. The following article contains information common to these tools.
+
+>This page is about TeamCity instruments for integrating builds with Docker. If you want to learn how to run Docker inside a build agent container and read other information about the TeamCity Agent Docker images, read our documentation in [Docker Hub](https://hub.docker.com/r/jetbrains/teamcity-agent/).
 
 ## Requirements
 
-The integration requires [Docker](https://docs.docker.com/engine/installation/) installed on the build agents. To use the [Docker Compose](docker-compose.md) build runner, install [Docker Compose](https://docs.docker.com/compose/install/) as well.
+The integration requires [Docker](https://docs.docker.com/engine/installation/) to be installed on the [build agents](build-agent.md). To use the [Docker Compose](docker-compose.md) build runner, you also need to install [Docker Compose](https://docs.docker.com/compose/install/).
 
 Since version 2019.2.1, TeamCity periodically checks if Docker is available on active build agents. Based on the `docker.server.version` and `docker.version` variables received from the agents, TeamCity distributes builds that use Docker only between agents with the installed Docker engine.   
-If a build configuration uses the [Docker runner](docker.md) or the [Docker Wrapper extension](docker-wrapper.md), TeamCity automatically adds the `docker.server.version` [agent compatibility requirement](configuring-agent-requirements.md) for this configuration.
-
-<chunk include-id="reqs-supported-env">
+If a [build configuration](build-configuration.md) uses the [Docker runner](docker.md) or the [Docker Wrapper extension](docker-wrapper.md), TeamCity automatically adds the `docker.server.version` [agent compatibility requirement](configuring-agent-requirements.md) for this configuration.
 
 ## Supported Environments
 
-TeamCity Docker Support can run on Windows, Linux, and macOS build agents. It uses the `docker` executable on the build agent machine, so it should be runnable by the build agent user. 
+TeamCity Docker Support can run on Windows, Linux, and macOS build agents. It uses the `docker` executable on the build agent machine, so it should be runnable by the build agent user.
 
 <note>
 
-   * On Linux, the integration will run if the installed Docker is detected.
-   * On Windows, the integration works for Linux and Windows container modes.
-   * On macOS, the official [Docker support for Mac](https://docs.docker.com/docker-for-mac/install/) should be installed for the user running the build agent.
+* On Linux, the integration will run if the installed Docker is detected.
+* On Windows, the integration works for Linux and Windows container modes.
+* On macOS, the official [Docker support for Mac](https://docs.docker.com/docker-for-mac/install/) should be installed for the user running the build agent.
 
 </note>
 
-</chunk>
-
 ## Parameters Reported by Agent
 
-During the build, the build agent reports the following parameters:
+During the build, the build agent can report the following Docker-related parameters:
 
 <table><tr>
 
@@ -54,7 +56,7 @@ Description
 
 <td>
 
-[Docker CLI](https://docs.docker.com/engine/reference/commandline/docker/) version
+The [Docker CLI](https://docs.docker.com/engine/reference/commandline/docker/) version.
 
 </td></tr><tr>
 
@@ -78,7 +80,7 @@ The Docker Compose file version, if the [Docker Compose](docker-compose.md) buil
 
 <td>
 
-[Docker Engine](https://docs.docker.com/engine/reference/commandline/dockerd/) version
+The [Docker Engine](https://docs.docker.com/engine/reference/commandline/dockerd/) version.
 
 </td></tr><tr>
 
@@ -90,70 +92,31 @@ The Docker Compose file version, if the [Docker Compose](docker-compose.md) buil
 
 <td>
 
-The Docker Engine OS platform, can have the `linux` or `windows` value.
+The Docker Engine OS platform. Supported values: `linux` or `windows`.
 
 </td></tr></table>
 
-If you are using the [Command Line](command-line.md) build step (and not the TeamCity-provided Docker steps), these parameters can be used as [agent requirements](agent-requirements.md) to ensure your build is run only on the agents with Docker installed. 
+>If you are using the [Command Line](command-line.md) build step (and not the specific Docker steps), these parameters can be used as [agent requirements](agent-requirements.md) to ensure your build is run only on the agents with Docker installed.
 
-## Features
+## Docker Disk Space Cleaner
 
-The TeamСity-Docker integration provides the following features which facilitate working with Docker under TeamCity:
-
-### Docker Support Build Feature
-
-<include src="docker-support.md" include-id="docker-support"/>
-
-### Docker Connection for Project
-
-<include src="configuring-connections-to-docker.md" include-id="docker-connection"/>
-
-### Docker Runner
-
-<include src="docker.md" include-id="docker-runner"/>
-
-### Docker Command
-{id="docker-command-1"}
-
-<include src="docker.md" include-id="docker-command"/>
-
-### Docker Compose Runner
-
-<include src="docker-compose.md" include-id="docker-compose"/>
-
-### Docker Wrapper
-{id="docker-wrapper-1"}
-
-TeamCity provides the Docker Wrapper extension for [Command Line](command-line.md), [Maven](maven.md), [Ant](ant.md), [Gradle](gradle.md), and [Python](python.md) runners. Each of the supported runners has the dedicated Docker Settings section.
-
-#### Docker Settings
-{id="docker-settings-1"}
-
-See the [Docker Wrapper](docker-wrapper.md) description.
-
-### Docker Disk Space Cleaner
-
-Docker Disk Space Cleaner is an extension to the [Free Disk Space](free-disk-space.md) build feature ensuring a certain amount of disk space for a build.   
+Docker Disk Space Cleaner is an extension to the [Free Disk Space](free-disk-space.md) build feature ensuring a necessary amount of disk space for a build.
 
 TeamCity regularly cleans up its related Docker images which were tagged/pulled:
 * in a build with the [Docker Support](docker-support.md) build feature, __or__
 * in a [Docker](docker.md) or [Docker Compose](docker-compose.md) build step, __or__
-* in a build step with the enabled [Docker Wrapper](docker-wrapper.md) extension
+* in a build step with the enabled [Docker Wrapper](docker-wrapper.md) extension.
 
 For such builds,  
 
-* The TeamCity agent tracks Docker images tagged or pulled during builds (the list of images is stored in the `buildAgent/system/docker-used-images.dat` file). 
-* During clean-up / freeing disk space, TeamCity agent tries to remove these images if they were not used within 3 days, 1 day, 0 on subsequent attempts to free disk space.  
+* A TeamCity agent tracks Docker images tagged or pulled during the builds (the list of images is stored in the `buildAgent/system/docker-used-images.dat` file).
+* During clean-up / freeing disk space, the TeamCity agent tries to remove these images if they have not been used within 3 days (or 1 or 0 days, on subsequent attempts to free the disk space).
 
-Besides that, TeamCity cleans local Docker Caches using the command:
+Besides, TeamCity cleans local Docker Caches using the `docker system prune --volumes` command. Works for Docker v.17.06.1 or later.
 
-* __Since 2018.1.2__: `docker system prune --volumes`. Works for Docker v.17.06.1 or later.
-* __Before 2018.1.2__: `docker system prune -a`
+## Service Message to Report Pushed Image
 
-### Service Message to Report Pushed Image
-
-If TeamCity (for some reason) cannot determine that an image has been pushed, a user can send a special [service message](service-messages.md) to report this information to the TeamCity server:
-
+If, for some reason, TeamCity cannot determine that an image has been pushed, a user can send a special [service message](service-messages.md) to report this information to the TeamCity server:
 
 ```Shell
 
@@ -186,3 +149,13 @@ However, there are few cases to consider:
 * During the [Free Disk Space](free-disk-space.md) stage of the build, TeamCity may clean up old unused Docker images from the local cache.
 
 If previously your builds were accessing Docker Hub anonymously, you can double the number of allowed pulls by creating a Free Docker user profile and configuring a [Docker connection](configuring-connections-to-docker.md) in your TeamCity project. TeamCity agents will be able to use this connection to authenticate in Docker Hub before each build.
+
+<seealso>
+        <category ref="admin-guide">
+            <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
+            <a href="docker-compose.md">Docker Compose runner</a>
+            <a href="docker.md">Docker runner</a>
+            <a href="docker-support.md">Docker Support feature</a>
+            <a href="docker-wrapper.md">Docker Wrapper extension</a>
+        </category>
+</seealso>

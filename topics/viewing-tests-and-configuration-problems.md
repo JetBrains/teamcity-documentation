@@ -34,7 +34,7 @@ TeamCity detects flaky tests and displays them on the dedicated tab for a given 
 A flaky test is a test that is unstable (can exhibit both a passing and a failing result) with the same code.
 
 Flaky test detection is based on the following heuristics:
-1. High flip rate (Frequent test status changes). A flip in TeamCity is a test status change – either from "OK" to "Failure", or vice versa. The Flip Rate is the ratio of such "flips" to the invocation count of a given test, measured per agent, per build configuration, or over a certain time period (7 days by default). A test which constantly fails, while having a 100% failure rate, will have its flip rate close to zero; a test which "flips" each time it is invoked will have the flip rate close to 100%.If the flip rate is too high, TeamCity will consider the test flaky.
+1. High flip rate (Frequent test status changes). A flip in TeamCity is a test status change — either from "OK" to "Failure", or vice versa. The Flip Rate is the ratio of such "flips" to the invocation count of a given test, measured per agent, per build configuration, or over a certain time period (7 days by default). A test which constantly fails, while having a 100% failure rate, will have its flip rate close to zero; a test which "flips" each time it is invoked will have the flip rate close to 100%.If the flip rate is too high, TeamCity will consider the test flaky.
 2. If the status of a test "flipped" in the new build with no changes, i.e. a previously successful test failed in a build without changes or a previously failing test passed in a build without changes, TeamCity will consider the test flaky.
 3. Different test status for multiple invocations in the same build (flaky failure): if the same test is invoked multiple times and the test status flips, TeamCity will consider the test flaky.    
 This heuristic is supported for [TestNG](http://testng.org/) unit tests with `invocationCount` \[[1](http://testng.org/doc/documentation-main.html)\]\[[2](http://testng.org/javadocs/org/testng/annotations/Test.html#invocationCount--)\] greater than `1`.
@@ -77,11 +77,7 @@ You can also see if the test is flaky when viewing the expanded stack trace for 
 
 As with any failed test, you can assign investigations for a flaky test (or multiple tests). For flaky tests the resolution method is automatically set to "Manual"; otherwise the investigation will be automatically removed once the test is successful, which does not mean that the flaky test has been fixed.
 
-<tip>
-
-Investigation Auto Assigner can [delay automatic assignment of investigations](investigations-auto-assigner.md#delay-auto-assign), which prevents wrong auto assignments in projects with flaky tests.
-
-</tip>
+>Investigation Auto Assigner can [delay automatic assignment of investigations](investigations-auto-assigner.md#delay-auto-assign), which prevents wrong auto assignments in projects with flaky tests.
 
 Note that if [branches](working-with-feature-branches.md#Configuring+branches) are configured for a VCS Root, flaky tests are detected for the default branch only.
 

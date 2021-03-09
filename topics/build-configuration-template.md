@@ -1,8 +1,6 @@
 [//]: # (title: Build Configuration Template)
 [//]: # (auxiliary-id: Build Configuration Template)
 
-## Overview
-
 _Build configuration templates_ allow you to eliminate duplication of build configuration settings. If you want to have several similar (not necessarily identical) build configurations and be able to modify their common settings in one place without having to edit each configuration, create a build configuration template with those settings. Modifying template settings affects __all__ build configurations associated with this template.
 
 It is possible to define a default template in a project for all build configurations in this project and its subprojects. The [section below](#Defining+default+template+for+project) contains details.
@@ -21,7 +19,7 @@ There are several ways to create a build configuration template:
 
 Default templates allow affecting all build configurations in this project and its subprojects.
 
-You can associate all the build configurations of the project with a default template using the __General Settings__ page of the project administration, by selecting a template from the  __Default template__ drop-down menu. The option is available if at least one template is defined in the project or its parent. All new build configurations will inherit the default template settings.
+You can associate all the build configurations of the project with a default template using the __General Settings__ page of the project administration, by selecting a template from the __Default template__ drop-down menu. The option is available if at least one template is defined in the project or its parent. All new build configurations will inherit the default template settings.
 
 The settings of the existing configurations will be preserved.
 
@@ -65,7 +63,7 @@ It is also possible to associate a build configuration with multiple templates.
 
 A build configuration can be attached to multiple templates using the _Attach to template_ action menu. In the __Actions__ menu, the __Manage templates__ action allows users to:
 * change the order of templates, which affects the overlapping settings priority and the build step order: the priority is given to the settings from the template higher in the list. It affects such entities as parameter names, setting IDs (for build steps, triggers, features, artifact dependencies, and requirements), VCS roots or snapshot dependency source build configurations IDs if they overlap between templates attached to a build configuration.
-* detach the build configuration from some of the templates (the user marks those to be detached and then has to apply their changes).
+* detach the build configuration from some templates (the user marks those to be detached and then has to apply their changes).
 * detach the build configuration from all templates using the respectively named button in the same dialog window.
 
 You can view all the templates attached to a build configuration on the __Build Configuration Settings__ page.
@@ -88,13 +86,13 @@ When a build configuration is detached from some of its templates, all the effec
 </inherits>
 ```
 
-* DSL: Kotlin DSL is extended, so within a build configuration definition users can use the `templates(vararg)` method accepting either external ids or DSL template instances (but not a mix of them, so if both templates defined inside and outside DSL are used in the same configuration, the external ids of both must be used).
+* DSL: Kotlin DSL is extended, so within a build configuration definition users can use the `templates(vararg)` method accepting either external ids or DSL template instances (but not a mix of them, so if both templates defined inside and outside DSL are used in the same configuration, the external ids of both must be used).   
 The older `template(...)` method and property __cannot__ be used multiple times within the same build type definition to indicate that it is inherited from multiple templates: following earlier implementation, each time this method is used, it overrides the previous template external ID. It is preserved for backward compatibility.
 
 ## Detaching build configurations from template
 
 When you _detach a build configuration from a template_ using the __Detach from template__ option available in the __Actions__ menu of the __Build Configuration Settings__ page, all settings from the template will be copied to the build configuration and enabled for editing.   
-Note that if a build configuration is attached to multiple templates, the __Detach from template__ option becomes unavailable – use __[Manage templates](#Associating+build+configuration+with+multiple+templates)__ instead.
+Note that if a build configuration is attached to multiple templates, the __Detach from template__ option becomes unavailable — use __[Manage templates](#Associating+build+configuration+with+multiple+templates)__ instead.
 
 ## Redefining settings inherited from template
 
@@ -110,7 +108,7 @@ Note that if you redefine an inherited parameter in a build configuration, it wi
 
 ### Using parameter reference
 
-Beside redefining settings as described above, you can redefine inidividual fields of the inherited settings via parameter references.
+Beside redefining settings as described above, you can redefine individual fields of the inherited settings via parameter references.
 
 To introduce a configuration parameter reference, use the `%\ParameterName%` syntax in the template text field. Once introduced, this parameter appears on the __Parameters__ page of the build configuration template marked as requiring a value.
 
@@ -149,17 +147,17 @@ You can still customize the order of build steps in a template-based build confi
 ## Enforcing settings inherited from template
 [//]: # ([//]: # (AltHead:Enforced settings)
 
-If you want to enforce some settings on all the build configurations in the project so that other users could not redefine them, TeamCity provides this ability for all of the build configurations in a project hierarchy. For instance, using enforced settings it is possible to set [agent side checkout](vcs-checkout-mode.md) everywhere, or ensure that all build configurations have some strict [execution timeout](build-failure-conditions.md#Common+build+failure+conditions). Currently, it is possible to enforce build features, options, and parameters. Build steps and build requirements can also be enforced.
+If you want to enforce some settings on all the build configurations in the project so that other users could not redefine them, TeamCity provides this ability for all the build configurations in a project hierarchy. For instance, using enforced settings it is possible to set [agent side checkout](vcs-checkout-mode.md) everywhere, or ensure that all build configurations have some strict [execution timeout](build-failure-conditions.md#Common+build+failure+conditions). Currently, it is possible to enforce build features, options, and parameters. Build steps and build requirements can also be enforced.
 
-To enforce some settings in the project hierarchy, create a template with these settings. After that, a system administrator can set this template as the enforced settings template in the project:
+To enforce some settings in the project hierarchy, create a template with these settings. After that, a system administrator can set this template as the enforced settings' template in the project:
 
 <img src="enforced-settings-template.png" alt="Enforced settings template" width="1164"/>
 
-The enforced settings template is similar to the default template as all of its settings are inherited in build configurations of the project hierarchy. The difference is that these inherited settings cannot be disabled or overridden.
+The enforced settings' template is similar to the default template as all of its settings are inherited in build configurations of the project hierarchy. The difference is that these inherited settings cannot be disabled or overridden.
 
-The system administrator role is required to associate a project with a specific enforced settings template. The template itself can be edited by a project administrator who can administer the project where the template is defined.
+The system administrator role is required to associate a project with a specific enforced settings' template. The template itself can be edited by a project administrator who can administer the project where the template is defined.
 
-If the enforced settings template is specified in a project and a different template is assigned as the enforced settings in a subproject, the template of the subproject will have a higher priority.
+If the enforced settings' template is specified in a project and a different template is assigned as the enforced settings in a subproject, the template of the subproject will have a higher priority.
 
 <seealso>
         <category ref="admin-guide">

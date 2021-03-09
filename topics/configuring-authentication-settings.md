@@ -46,7 +46,7 @@ Any changes made to authentication in the UI are reflected in the `<[TeamCity Da
 {product="tc"}
 
 To load a preconfigured set of modules, use the __Load preset__ button, select a required option, and __Apply__ your changes. The following presets are available:
-* Default ([built-in authentication](#Built-in+Authentication) – [Token-based](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
+* Default ([built-in authentication](#Built-in+Authentication) — [Token-based](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
 * [LDAP](ldap-integration.md)
 * Active directory ([LDAP](ldap-integration.md) with [NTLM](ntlm-http-authentication.md) and [Token-based](https://www.jetbrains.com/help/teamcity/rest/manage-users.html#User+Access+Tokens))
 * Microsoft Windows Domain ([NTLM](ntlm-http-authentication.md), [Token-based](https://www.jetbrains.com/help/teamcity/rest/manage-users.html#User+Access+Tokens) and [Basic HTTP](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#REST+Authentication))
@@ -171,9 +171,7 @@ If the library does not find the domain controller to authenticate against, cons
 
 Please refer to the [dedicated page](ldap-integration.md).
 
-
 [//]: # (Internal note. Do not delete. "Configuring Authentication Settingsd70e480.txt")
-
 
 ## HTTP / SSO Authentication Modules
 
@@ -181,10 +179,7 @@ Please refer to the [dedicated page](ldap-integration.md).
 
 Please refer to [Accessing Server by HTTP](accessing-server-by-http.md) for details about the basic HTTP authentication.
 
-<tip>
-
-For information on configuring basic HTTP authentication directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml`, refer to the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
-</tip>
+>For information on configuring basic HTTP authentication directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml`, refer to the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
 
 
 ### NTLM HTTP Authentication
@@ -489,8 +484,6 @@ Leave empty to allow all GitLab users to access the TeamCity server.
 >If you reconnect a TeamCity server from one GitLab CE/EE server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](https://teamcity-support.jetbrains.com/hc/en-us).
 >
 {type="warning"}
-
-
 
  <seealso>
         <category ref="concepts">

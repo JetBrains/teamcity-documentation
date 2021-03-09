@@ -5,9 +5,7 @@ The _NUnit_ build runner is intended to run NUnit tests right on the TeamCity se
 
 <tip include-id="supported-versions">
     
-Supported NUnit versions: __2.2.10__, __2.4.1__, __2.4.6__, __2.4.7__, __2.4.8__, __2.5.0__, __2.5.2__, __2.5.3__, __2.5.4__, __2.5.5__, __2.5.6__, __2.5.7__, __2.5.8__, __2.5.9__, __2.5.10__, __2.6.0__, __2.6.1__, __2.6.2__, __2.6.3__. 
-
-__Since TeamCity 9.1__, NUnit __3.0 and above__ is also supported.
+Supported NUnit versions: __2.2.10__, __2.4.1__, __2.4.6__, __2.4.7__, __2.4.8__, __2.5.0__, __2.5.2__, __2.5.3__, __2.5.4__, __2.5.5__, __2.5.6__, __2.5.7__, __2.5.8__, __2.5.9__, __2.5.10__, __2.6.0__, __2.6.1__, __2.6.2__, __2.6.3__, 3.0.
 
 It is possible to have several versions of NUnit installed on an agent machine and use any of them in a build.
 
@@ -48,7 +46,7 @@ For example, you can add a [Command Line](command-line.md) build step before the
     
     _or_
 
-* Install NUnit manually on all of the agents in some standard location and configure the path to `nunit-console.exe` in your NUnit build step.
+* Install NUnit manually on all the agents in some standard location and configure the path to `nunit-console.exe` in your NUnit build step.
 
 </chunk>
 
@@ -104,9 +102,7 @@ NUnit Console
 
 _Available if NUnit 3.0 is selected_.
 
-Select a preinstalled console tool or specify a custom path to `nunit3-console.exe`:
-* __prior to TeamCity 9.1.4__, specify the directory containing the console executable file
-* __since 9.1.4__, specify the path to the console executable file including the filename
+Select a preinstalled console tool or specify a custom path to the `nunit3-console.exe` console executable, including the filename.
 
 </td></tr><tr>
 
@@ -154,13 +150,11 @@ _Available if NUnit 3.0 is selected_.
 
 Enter [additional command line parameters](https://github.com/nunit/docs/wiki/Console-Command-Line) to pass to `nunit-console.exe`.
 
-
 </td></tr><tr>
 
 <td>
 
 .NET Runtime
-
 
 </td>
 
@@ -242,7 +236,7 @@ Exclude categories
 
 <td>
 
-Specify NUnit categories to be excluded from the tests to be run. Multiple entries are comma-separated.    
+Specify NUnit categories to be excluded from the tests to be run. Multiple entries are comma-separated.   
 [Category expressions](teamcity-nunit-test-launcher.md#Category+Expression) are supported here as well; commas, semicolons, and new lines are treated as global __or__ operations (prior to the expression parsing). Since NUnit 3.0 __category expressions are not supported__ and must be set via the command line as [described in the NUNit documentation](https://github.com/nunit/docs/wiki/Test-Selection-Language).
 
 </td></tr><tr>

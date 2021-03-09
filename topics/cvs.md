@@ -3,7 +3,7 @@
 
 Common VCS Root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
-This page contains descriptions of CVS\-specific fields and options available when setting up a VCS root. Depending on the selected access method, the page shows different fields that help you to easily define the [CVS settings](http://ximbiot.com/cvs/):
+This page contains descriptions of CVS-specific fields and options available when setting up a VCS root. Depending on the selected access method, the page shows different fields that help you to easily define the [CVS settings](http://ximbiot.com/cvs/):
 
 ## CVS Root
 
@@ -13,13 +13,11 @@ This page contains descriptions of CVS\-specific fields and options available wh
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -27,13 +25,11 @@ Description
 
 Module name
 
-
 </td>
 
 <td>
 
 Specify the name of the module managed by CVS.
-
 
 </td></tr><tr>
 
@@ -41,12 +37,11 @@ Specify the name of the module managed by CVS.
 
 CVS Root
 
-
 </td>
 
 <td>
 
-Use these fields to select the access method, point to the user name, CVS server host and repository.  For example: `:pserver:user@host.name.org:/repository/path`.   
+Use these fields to select the access method, point to the username, CVS server host and repository. For example, `:pserver:user@host.name.org:/repository/path`.   
 For a [local](#Local+CVS+Settings) connection only the path to the CVS repository should be used.   
 TeamCity supports the following connection methods (described below):
 
@@ -54,7 +49,6 @@ TeamCity supports the following connection methods (described below):
 * [ext](#Ext+Protocol+Settings)
 * [ssh](#SSH+Protocol+Settings+%28internal+implementation%29)
 * [local](#Local+CVS+Settings)
-
 
 </td></tr></table>
 
@@ -66,13 +60,11 @@ TeamCity supports the following connection methods (described below):
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -84,13 +76,11 @@ Checkout from branch
 
 Checkout by Tag
 
-
 </td>
 
 <td>
 
 Define the way CVS will fill in and update the working directory
-
 
 </td></tr><tr>
 
@@ -100,13 +90,11 @@ Define the way CVS will fill in and update the working directory
 
 Quiet period
 
-
 </td>
 
 <td>
 
 Since there are no atomic commits in CVS, using this setting  you can instruct TeamCity not to take (detect) a change  until the specified period of time passed since the previous change was detected. It helps avoid situations when one commit is shown as two different changes in the TeamCity web UI.
-
 
 </td></tr></table>
 
@@ -118,13 +106,11 @@ Since there are no atomic commits in CVS, using this setting  you can instruct T
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -132,13 +118,11 @@ Description
 
 CVS Password
 
-
 </td>
 
 <td>
 
 Click this radio button if you want to access the CVS repository by entering a password.
-
 
 </td></tr><tr>
 
@@ -146,13 +130,11 @@ Click this radio button if you want to access the CVS repository by entering a p
 
 Password File Path
 
-
 </td>
 
 <td>
 
 Click this radio button to specify the path to the `.cvspass` file.
-
 
 </td></tr><tr>
 
@@ -160,13 +142,11 @@ Click this radio button to specify the path to the `.cvspass` file.
 
 Connection Timeout
 
-
 </td>
 
 <td>
 
 Specify the connection timeout.
-
 
 </td></tr></table>
 
@@ -178,13 +158,11 @@ Specify the connection timeout.
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -192,13 +170,11 @@ Description
 
 Path to external rsh
 
-
 </td>
 
 <td>
 
 Specify the path to the rsh program used to connect to the repository.
-
 
 </td></tr><tr>
 
@@ -206,13 +182,11 @@ Specify the path to the rsh program used to connect to the repository.
 
 Path to private key file
 
-
 </td>
 
 <td>
 
 Specify the path to the file that contains user authentication information.
-
 
 </td></tr><tr>
 
@@ -220,13 +194,11 @@ Specify the path to the file that contains user authentication information.
 
 Additional parameters
 
-
 </td>
 
 <td>
 
 Enter any required rsh parameters that will be passed to the program. Multiple parameters are separated by spaces.
-
 
 </td></tr></table>
 
@@ -238,20 +210,17 @@ Enter any required rsh parameters that will be passed to the program. Multiple p
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
- SSH version
-
+SSH version
 
 </td>
 
@@ -259,13 +228,11 @@ Description
 
 Select a supported version of SSH.
 
-
 </td></tr><tr>
 
 <td>
 
 SSH port
-
 
 </td>
 
@@ -273,13 +240,11 @@ SSH port
 
 Specify SSH port number.
 
-
 </td></tr><tr>
 
 <td>
 
 SSH Password
-
 
 </td>
 
@@ -287,13 +252,11 @@ SSH Password
 
 Click this radio button if you want to authenticate via an SSH password.
 
-
 </td></tr><tr>
 
 <td>
 
 Private Key
-
 
 </td>
 
@@ -301,20 +264,17 @@ Private Key
 
 Click this radio button to use private key authentication. In this case specify the path to the private key file.
 
-
 </td></tr><tr>
 
 <td>
 
 SSH Proxy Settings
 
-
 </td>
 
 <td>
 
 See proxy options [below](#Local+CVS+Settings).
-
 
 </td></tr></table>
 
@@ -326,13 +286,11 @@ See proxy options [below](#Local+CVS+Settings).
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -340,13 +298,11 @@ Description
 
 Path to the CVS Client
 
-
 </td>
 
 <td>
 
 Specify the path to the local CVS client.
-
 
 </td></tr><tr>
 
@@ -354,13 +310,11 @@ Specify the path to the local CVS client.
 
 Server Command
 
-
 </td>
 
 <td>
 
 Type the server command. The server command is the command which makes the CVS client to work in server mode. Default value is `server`.
-
 
 </td></tr></table>
 
@@ -372,13 +326,11 @@ Type the server command. The server command is the command which makes the CVS c
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -386,13 +338,11 @@ Description
 
 Use proxy
 
-
 </td>
 
 <td>
 
-Check this option if you want to use a proxy, and select the desired protocol from the drop\-down list.
-
+Check this option if you want to use a proxy, and select the desired protocol from the drop-down menu.
 
 </td></tr><tr>
 
@@ -400,13 +350,11 @@ Check this option if you want to use a proxy, and select the desired protocol fr
 
 Proxy Host
 
-
 </td>
 
 <td>
 
 Specify the name of the proxy.
-
 
 </td></tr><tr>
 
@@ -414,13 +362,11 @@ Specify the name of the proxy.
 
 Proxy Port
 
-
 </td>
 
 <td>
 
 Specify the port number.
-
 
 </td></tr><tr>
 
@@ -428,13 +374,11 @@ Specify the port number.
 
 Login
 
-
 </td>
 
 <td>
 
 Specify the login.
-
 
 </td></tr><tr>
 
@@ -442,13 +386,11 @@ Specify the login.
 
 Password
 
-
 </td>
 
 <td>
 
 Specify the password.
-
 
 </td></tr></table>
 
@@ -460,13 +402,11 @@ Specify the password.
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -474,13 +414,11 @@ Description
 
 Use GZIP compression
 
-
 </td>
 
 <td>
 
 Check this option to apply gzip compression to the data passed between the CVS server and the CVS client.
-
 
 </td></tr><tr>
 
@@ -488,13 +426,11 @@ Check this option to apply gzip compression to the data passed between the CVS s
 
 Send all environment variables to the CVS server
 
-
 </td>
 
 <td>
 
 Check this option to send environment variables to the server for compatibility with certain servers.
-
 
 </td></tr><tr>
 
@@ -502,12 +438,10 @@ Check this option to send environment variables to the server for compatibility 
 
 History Command Supported
 
-
 </td>
 
 <td>
 
 Check this option to use the history file on the server to search for newly committed changes. Enable this option to improve the CVS support performance. By default, the option is not checked because not every CVS server supports keeping a history log file.
-
 
 </td></tr></table>

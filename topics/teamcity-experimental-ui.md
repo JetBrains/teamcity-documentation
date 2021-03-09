@@ -79,7 +79,7 @@ Click any stage to open the corresponding line of the build log. In the new UI, 
 
 <tip>
 
-The __Actions__ menu offers a handy new option – __Compare with__. Choose this action to compare the parameters and results of the current build with any other selected build side-by-side.   
+The __Actions__ menu offers a handy new option — __Compare with__. Choose this action to compare the parameters and results of the current build with any other selected build side-by-side.   
 This option is also available from the build's context menu in the build list.
 
 </tip>

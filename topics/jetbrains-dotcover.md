@@ -7,11 +7,8 @@ After choosing the appropriate option in the .NET coverage section of a build st
 
 If you have a license for dotCover and have it installed on a developer machine, TeamCity-collected coverage results can be downloaded and viewed inside Visual Studio with the help of the [TeamCity Visual Studio Add-in](visual-studio-addin.md).
 
-<tip>
-
-.NET Framework 3.5 or newer must be installed on the agent machine. This is necessary for the bundled dotCover to work. Your project can depend on another .NET Framework version.   
+>.NET Framework 3.5 or newer must be installed on the agent machine. This is necessary for the bundled dotCover to work. Your project can depend on another .NET Framework version.   
 dotCover 2018.2 or newer requires .NET Framework 4.6.1 or newer.
-</tip>
 
 ## dotCover Settings
 
@@ -23,19 +20,17 @@ dotCover 2018.2 or newer requires .NET Framework 4.6.1 or newer.
 
 </tr>
 
-
 <tr>
 
 <td>
 
 Path to dotCover Home
 
-
 </td>
 
 <td>
 
-Leave this field blank to use the default dotCover. The [bundled version](#Bundled+dotCover+Versions) is set as default prior to TeamCity 2017.1; after this version, you can mark any of the [additionally installed](installing-agent-tools.md) versions as default.   
+Leave this field blank to use the default dotCover. You can mark any of the [additionally installed](installing-agent-tools.md) versions as default.   
 Alternatively, specify the path to the dotCover installed on a build agent.
 
 </td></tr><tr>
@@ -43,7 +38,6 @@ Alternatively, specify the path to the dotCover installed on a build agent.
 <td>
 
 Filters
-
 
 </td>
 
@@ -59,13 +53,11 @@ For example, to run coverage on all `MyDemoApp` assemblies but not on `MyDemoApp
 
 See also the related [blog post](https://blog.jetbrains.com/dotnet/2010/12/10/coverage-with-dotcover-teamcity-mstest-nunit-or-mspec/).
 
-
 </td></tr><tr>
 
 <td>
 
 Attribute Filters
-
 
 </td>
 
@@ -85,7 +77,6 @@ Additional arguments
 <td>
 
 Provide a new-line separated list of additional commandline parameters to pass to `dotCover.exe`.
-
 
 </td></tr></table>
 
@@ -107,14 +98,11 @@ You also need to tell TeamCity where to find the source code. To do this, perfor
 
 ## Bundled dotCover Versions
 
-This section provides information on the versions of dotCover bundled with TeamCity 10+ versions. For information on the earlier TeamCity releases, see the [previous documentation version](https://confluence.jetbrains.com/display/TCD9/JetBrains+dotCover#JetBrainsdotCover-BundleddotCoverVersions).
-
 <table><tr>
 
 <td>
 
 TeamCity Version
-
 
 </td>
 
@@ -223,7 +211,6 @@ For Linux and macOS agents, all [additional dotCover arguments](#additional-argu
 </note>
 
 Starting from this version, you can also run dotCover code coverage analysis inside a Docker container, with the [Docker Wrapper](docker-wrapper.md) extension.
-
 
  <seealso>
         <category ref="troubleshooting">

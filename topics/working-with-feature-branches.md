@@ -35,10 +35,9 @@ The part of the branch name matched by the asterisk (`*`) wildcard becomes the s
 
 You can use parameters in the branch specification.
 
-When a single VCS branch is matched by several lines of the branch specification, the most specific (least characters matched by pattern) last rule applies.
+When a single VCS branch is matched by several lines of the branch specification, the most specific (the least characters matched by the pattern) last rule applies.
 
 That is, if the specification contains an exact pattern matching the branch (i.e. a pattern without the `*` wildcard), then the last such pattern is used. So if you have a specification like this:
-
 
 ```Plain Text
 +:refs/heads/release-v1
@@ -49,18 +48,15 @@ then the last pattern will win and the branch will be excluded.
     
 If a branch specification has several patterns with the `*` wildcard, then TeamCity selects the pattern producing the shortest logical name. This branch specification:
 
-
 ```Plain Text
 +:refs/heads/*/hotfix
 -:refs/heads/v1/*
 ```
 
-
-
 will include the `refs/heads/v1/hotfix` branch (because `v1` is shorter than `hotfix`).    
 If 2 patterns with `*` wildcard produce logical names of the same length, then the last pattern wins.
 
-The branch specification supports comments as lines beginning with "`#"`.
+The branch specification supports comments as lines beginning with `#`.
 
 There is also a special escaping syntax defined via `#! escape: CHARACTER` syntax: for example, to use round brackets in a branch name, you need to escape them. Let's say you want to track the `release-(7.1)` branch: to do that, specify an escaping symbol as the first line in the specification. For Mercurial, the following branch specification does that:
 
@@ -97,7 +93,6 @@ A logical branch name is a branch name shown in the user interface for the build
 
 For example, if the branch specification is defined like this:
 
-
 ```Plain Text
 +:refs/heads/*
 ```
@@ -105,7 +100,6 @@ For example, if the branch specification is defined like this:
 then the part matched by `*` (for example, `master`) is a logical branch name. 
 
 If the branch specification pattern uses parentheses, the logical name is made up of the part of the name within the parentheses; to see the `v8.1/feature1` logical name displayed in the UI for the VCS branch `refs/heads/v8.1/feature1`, use this:
-
 
 ```Plain Text
 +:refs/heads/(v8.1/*)
@@ -127,7 +121,7 @@ You can also filter history by a branch name if you're interested in a particula
 
 ## Changes
 
-For each build TeamCity shows changes included in it. For builds from branches the changes calculation process takes the branch into account and presents you with the changes relevant to the build branch. The changes for a build in a branch are calculated as the changes from the build's revision to the previous build in the branch or a build in the default branch.   
+For each build TeamCity shows changes included in it. For builds from branches the changes' calculation process takes the branch into account and presents you with the changes relevant to the build branch. The changes for a build in a branch are calculated as the changes from the build's revision to the previous build in the branch or a build in the default branch.   
 The change log with its graph of commits will help you understand what is going on in the monitored branches.
 
 <img src="branchesChange.png" alt="Build changes" width="750"/>
@@ -189,7 +183,7 @@ The Build Configuration status is calculated based on the builds from the defaul
 
 If your build configuration uses more than one VCS root and you specified branches to monitor in both VCS roots, the way the builds are triggered is more complicated.
 
-The VCS trigger groups branches from several VCS roots by [logical branch names](#Logical+branch+name). When some root does not have a branch from the other root, its default branch is used. For example, you have 2 VCS roots, both have the default branch `refs/heads/master`, the first root has the branch specification `refs/heads/7.1/*` and changes in branches `refs/heads/7.1/feature1` and `refs/heads/7.1/feature2`, the second root has the specification `refs/heads/devel/*` and changes in branch `refs/heads/devel/feature1`. In this case VCS trigger runs 3 builds with revisions from following branches combinations:
+The VCS trigger groups branches from several VCS roots by [logical branch names](#Logical+branch+name). When some root does not have a branch from the other root, its default branch is used. For example, you have 2 VCS roots, both have the default branch `refs/heads/master`, the first root has the branch specification `refs/heads/7.1/*` and changes in branches `refs/heads/7.1/feature1` and `refs/heads/7.1/feature2`, the second root has the specification `refs/heads/devel/*` and changes in branch `refs/heads/devel/feature1`. In this case, VCS trigger runs 3 builds with revisions from following branches combinations:
 
 <table><tr>
 
@@ -242,8 +236,6 @@ refs/heads/7.1/feature2
 
 </td>
 
-
-
 <td>
 
 refs/heads/master
@@ -258,7 +250,7 @@ If you need to get the branch name in the build script or use it in other build 
 
 ## Clean-up
 
-Clean\-up rules are applied [independently](clean-up.md#Base+Rule+Behavior+for+Build+Configurations+with+Feature+Branches) to each [active branch](#Active+branches).
+Clean-up rules are applied [independently](clean-up.md#Base+Rule+Behavior+for+Build+Configurations+with+Feature+Branches) to each [active branch](#Active+branches).
 
 ## Manual branch merging
 

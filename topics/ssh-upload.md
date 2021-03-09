@@ -5,7 +5,7 @@ The _SSH Upload_ build runner allows uploading files/directories via SSH (using 
 
 The settings common for all runners are described in [Configuring Build Steps](configuring-build-steps.md); this page details the SSH Deployer settings.
 
-The fields below support [parameter references](predefined-build-parameters.md): any text between percentage signs (`%`) is considered a reference to a property by TeamCity. To prevent TeamCity from treating the text in the percentage signs as reference to a property, use two percentage signs to escape them: for example, if you want to pass "`%Y%m%d%H%M%S`" into the build, change it to "`%%Y%%m%%d%%H%%M%%S`".
+The fields below support [parameter references](predefined-build-parameters.md): any text between percentage signs (`%`) is considered a reference to a property by TeamCity. To prevent TeamCity from treating the text in the percentage signs as reference to a property, use two percentage signs to escape them: for example, if you want to pass `%Y%m%d%H%M%S` into the build, change it to `%%Y%%m%%d%%H%%M%%S`.
 
 <warning>
 
@@ -46,9 +46,7 @@ Target
 
 <td>
 
-
 __Target__ should point to an SSH server location. The syntax is similar to the one used by the \*nix `scp` command:
-
 
 ```Shell
 {hostname|IP_address}[:targer_dir[/sub_path]] 
@@ -56,7 +54,6 @@ __Target__ should point to an SSH server location. The syntax is similar to the 
 ```
 
 where `target_dir` can be absolute or relative; `sub_path` can have any depth.
-
 
 </td></tr><tr>
 
@@ -110,14 +107,13 @@ Select an authentication method.
 * __Uploaded key__ uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
 * __Default private key__ will try to perform private key authentication using the `~/.ssh/config` settings. If no settings file exists, will try to use the `~/.ssh/rsa_pub` public key file. No passphrases should be set.
 * __Custom private key__ will try to perform private key authentication using the given public key file with given passphrase
-* __Password__ – simple password authentication.
-* __SSH\-Agent__ – use SSH agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
+* __Password__ — simple password authentication.
+* __SSH-Agent__ — use SSH agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
 
 <note>
 
 The current secure connection implementation accepts _any_ certificate provided by the remote host. No trust checks are performed!
 </note>
-
 
 </td></tr><tr>
 

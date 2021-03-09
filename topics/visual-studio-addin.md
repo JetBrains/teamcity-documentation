@@ -29,14 +29,13 @@ To enable navigation to the failed tests in MS Visual Studio by using _Open in I
    * Click the arrow next to your username in the top right corner of the TeamCity web UI and select __My Settings &amp; Tools__.
    * In the __TeamCity Tools__ section on the right, click the Visual Studio Add\-in download link.
 
-The TeamCity Visual Studio Add-in is shipped as a part of [ReSharper Ultimate](https://www.jetbrains.com/dotnet/) products bundle. After installation, the TeamCity Add\-in will be available under the RESHARPER menu in Visual Studio.
+The TeamCity Visual Studio Add-in is shipped as a part of [ReSharper Ultimate](https://www.jetbrains.com/dotnet/) products bundle. After installation, the TeamCity add-in will be available under the RESHARPER menu in Visual Studio.
 
 <note>
 
 The installer will remove the prebundled products' versions: TeamCity and ReSharper versions prior to 9.0, dotCover prior to 3.0, dotTrace prior to 6.0. ReSharper Ultimate does not support the Visual Studio versions 2005 and 2008.
 </note>
 
-The Legacy version of the TeamCity VS Add-in for Visual Studio versions from 2005 to 2013 compatible with JetBrains .NET tools prior to ReSharper 9.0, dotCover 3.0 and dotTrace 6.0 is not available since __TeamCity 10.0__.
 
 ## Requirements
 

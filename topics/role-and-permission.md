@@ -144,23 +144,17 @@ Can customize general settings of a project and settings of build configurations
 
 With the enabled "_Change user / group notification rules in project_" permission, can edit notification rules for users and user groups assigned to their projects.
 
-__Prior to TeamCity 10__, this role included the [Agent Manager](#agent-manager) role.   
-__Since TeamCity 10__, [project-level agent management permissions](#Project-level+Agent+Management+Permissions) replace the inherited Agent Manager role. If old settings (set prior to TeamCity 10) are preserved in your TeamCity installation after upgrade to version 10 or later, we recommend excluding the Agent Manager role from the Project Administrator role manually and configuring agent management permissions instead.
-
-
 </td></tr><tr>
 
 <td id="project-developer">
 
 __Project developer__
 
-
 </td>
 
 <td>
 
 Usually commits changes to a project. Can start/stop builds, reorder builds in the build queue, label the build sources, review agent details, start investigation of a failed build.
-
 
 </td></tr><tr>
 
@@ -173,8 +167,6 @@ __Agent manager__
 <td>
 
 Can customize and manage [Build Agents](build-agent.md), change the run configuration policy, [enable/disable](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) build agents, and [pause/resume build queue](build-queue.md#Pausing%2FResuming+Build+Queue).
-
-__Prior to TeamCity 10.0__, this role was included into the [Project Administrator](#project-administrator) role. __Since TeamCity 10__, project-level agent management permissions [have been introduced](#Project-level+Agent+Management+Permissions).
 
 
 </td></tr></table>

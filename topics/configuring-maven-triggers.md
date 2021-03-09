@@ -2,11 +2,11 @@
 [//]: # (auxiliary-id: Configuring Maven Triggers)
 [//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e3.txt")    
 
-The __Triggers__ page of the Build Configuration Settings allows you to add the following Maven dependency triggers:
+The __Triggers__ page of __Build Configuration Settings__ allows you to add the following Maven dependency triggers:
 
-__Checksum Based Triggering__
+## Checksum Based Triggering
 
-The trigger checks if the content of the dependency has actually changed by verifying its checksum from the repository against the locally stored version. Before triggering a build, TeamCity tries to determine the checksum of the required dependency by downloading the file digest (MD5/SHA\-1) associated with that artifact.
+The trigger checks if the content of the dependency has actually changed by verifying its checksum from the repository against the locally stored version. Before triggering a build, TeamCity tries to determine the checksum of the required dependency by downloading the file digest (MD5/SHA-1) associated with that artifact.
 
 If the checksum can be retrieved, and it matches a locally stored one, no build is triggered. If the checksum is different, a build is triggered.
 
@@ -18,11 +18,11 @@ If the checksum cannot be retrieved from the remote server, the dependency will 
 
 Maven snapshot dependency trigger adds a new build to the queue when there is a real modification of the snapshot dependency content in the remote repository which is detected by the checksum change.
 
-Dependency artifacts are resolved according to the POM and the server\-side [Maven Settings](maven-server-side-settings.md).
+Dependency artifacts are resolved according to the POM and the server-side [Maven Settings](maven-server-side-settings.md).
 
 <note>
 
-Note that since Maven deploys artifacts to remote repositories sequentially during a build, not all artifacts may be up\-to\-date at the moment the snapshot dependency trigger detects the first updated artifact. To avoid inconsistency, select the __Do not trigger a build if currently running builds can produce snapshot dependencies__ check box when adding this trigger, which will ensure the build won't start while builds producing snapshot dependencies are still running.
+Note that since Maven deploys artifacts to remote repositories sequentially during a build, not all artifacts may be up-to-date at the moment the snapshot dependency trigger detects the first updated artifact. To avoid inconsistency, select the __Do not trigger a build if currently running builds can produce snapshot dependencies__ check box when adding this trigger, which will ensure the build won't start while builds producing snapshot dependencies are still running.
 </note>
 
 
@@ -48,20 +48,17 @@ To add a trigger, specify the following parameters in the __Add New Trigger__ di
 
 Parameter
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
-Group Id
-
+Group ID
 
 </td>
 
@@ -69,13 +66,11 @@ Group Id
 
 Specify an identifier of a group the desired Maven artifact belongs to.
 
-
 </td></tr><tr>
 
 <td>
 
-Artifact Id
-
+Artifact ID
 
 </td>
 
@@ -83,20 +78,17 @@ Artifact Id
 
 Specify the artifact's identifier.
 
-
 </td></tr><tr>
 
 <td>
 
 Version or Version range
 
-
 </td>
 
 <td>
 
 Specify a version or version range of the artifact. The version range syntax is described in the [section](#Version+Ranges) below. SNAPSHOT versions can also be used.
-
 
 </td></tr><tr>
 
@@ -111,13 +103,11 @@ Type
 
 Define explicitly the type of the specified artifact. By default, the type is `jar`.
 
-
 </td></tr><tr>
 
 <td>
 
 Classifier
-
 
 </td>
 
@@ -125,13 +115,11 @@ Classifier
 
 (Optional) Specify the classifier of an artifact.
 
-
 </td></tr><tr>
 
 <td>
 
 Maven repository URL
-
 
 </td>
 
@@ -139,9 +127,8 @@ Maven repository URL
 
 Specify a URL to the Maven repository. Note that this parameter is optional. If the URL is not specified, then:
 
-* For a Maven project the repository URL is determined from the POM and the server\-side [Maven Settings](maven-server-side-settings.md#Maven+Settings+Resolution+on+the+Server+Side)
-* For a non\-Maven project the repository URL is determined from the server\-side [Maven Settings](maven-server-side-settings.md#Maven+Settings+Resolution+on+the+Server+Side) only
-
+* For a Maven project, the repository URL is determined from the POM and the server-side [Maven Settings](maven-server-side-settings.md#Maven+Settings+Resolution+on+the+Server+Side).
+* For a non-Maven project, the repository URL is determined from the server-side [Maven Settings](maven-server-side-settings.md#Maven+Settings+Resolution+on+the+Server+Side) only.
 
 </td></tr><tr>
 
@@ -149,19 +136,15 @@ Specify a URL to the Maven repository. Note that this parameter is optional. If 
 
 Do not trigger a build if currently running builds can produce this artifact
 
-
 </td>
 
 <td>
 
 Select this option to trigger a build only after the build that produces artifacts used here is finished.
 
-
 </td></tr></table>
 
 ### Advanced Options
-
-Since __TeamCity 9.0__, the following advanced options have been added to the trigger:
 
 <table><tr>
 
@@ -169,13 +152,11 @@ Since __TeamCity 9.0__, the following advanced options have been added to the tr
 
 Parameter
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -183,13 +164,11 @@ Description
 
 Repository ID
 
-
 </td>
 
 <td>
 
 Allows using authorization from the effective Maven settings
-
 
 </td></tr><tr>
 
@@ -197,31 +176,29 @@ Allows using authorization from the effective Maven settings
 
 User settings selection
 
-
 </td>
 
 <td>
 
 Allows selecting effective settings. The same as [User Settings](maven.md#User+Settings) of the Maven runner.
 
-
 </td></tr></table>
 
 TeamCity determines the __effective repository__ to be checked for the artifact updates and to trigger builds if changes are detected as follows:
 * if a URL and Repository ID are set, authentication will be chosen from the effective settings (see below)
-* if only a URL is set, the old behavior is preserved: a temporary repository ID is used ("\_tc\_temp\_remote\_repo")
+* if only a URL is set, the old behavior is preserved: a temporary repository ID is used (`_tc_temp_remote_repo`)
 * if URL is not set (regardless of the Repository ID), the artifact will be looked up in a repository available according to the effective settings.
-
 
 TeamCity determines __effective settings__ as follows:
 * in the trigger settings a user can choose among the default, custom or uploaded Maven settings. See [Maven Server-Side Settings](maven-server-side-settings.md) for details.
 * if no specific settings are configured for the trigger, [Maven](maven.md) build step settings are used
 * if no settings for the trigger are configured and there are no Maven build steps, the `default` [server Maven settings](maven-server-side-settings.md) will be used.
+
 ### Version Ranges
 
 For specifying version ranges use the following syntax, as [proposed in the Maven documentation](http://docs.codehaus.org/display/MAVEN/Dependency+Mediation+and+Conflict+Resolution#DependencyMediationandConflictResolution-DependencyVersionRanges).
 
-Note that Maven Artifact Dependency Trigger can be used not only for fixed\-version artifacts but also for snapshots as a fine\-grained alternative to the Maven Snapshots Dependency Trigger.
+Note that Maven Artifact Dependency Trigger can be used not only for fixed-version artifacts but also for snapshots as a fine-grained alternative to the Maven Snapshots Dependency Trigger.
 
 <table><tr>
 
@@ -229,13 +206,11 @@ Note that Maven Artifact Dependency Trigger can be used not only for fixed\-vers
 
 Range
 
-
 </td>
 
 <td>
 
 Meaning
-
 
 </td></tr><tr>
 
@@ -243,13 +218,11 @@ Meaning
 
 `(,1.0]`
 
-
 </td>
 
 <td>
 
 x &lt;= 1.0
-
 
 </td></tr><tr>
 
@@ -257,13 +230,11 @@ x &lt;= 1.0
 
 `1.0`
 
-
 </td>
 
 <td>
 
-"Soft" requirement on 1.0 (just a recommendation \- helps select the correct version if it matches all ranges)
-
+"Soft" requirement on 1.0 (just a recommendation — helps select the correct version if it matches all ranges)
 
 </td></tr><tr>
 
@@ -271,13 +242,11 @@ x &lt;= 1.0
 
 `[1.0]`
 
-
 </td>
 
 <td>
 
 Hard requirement on 1.0
-
 
 </td></tr><tr>
 
@@ -285,13 +254,11 @@ Hard requirement on 1.0
 
 `[1.2,1.3]`
 
-
 </td>
 
 <td>
 
 1.2 &lt;= x &lt;= 1.3
-
 
 </td></tr><tr>
 
@@ -299,13 +266,11 @@ Hard requirement on 1.0
 
 `[1.0,2.0)`
 
-
 </td>
 
 <td>
 
 1.0 &lt;= x &lt; 2.0
-
 
 </td></tr><tr>
 
@@ -313,13 +278,11 @@ Hard requirement on 1.0
 
 `[1.5,)`
 
-
 </td>
 
 <td>
 
 x &gt;= 1.5
-
 
 </td></tr><tr>
 
@@ -327,13 +290,11 @@ x &gt;= 1.5
 
 `(,1.0],[1.2,)`
 
-
 </td>
 
 <td>
 
-x &lt;= 1.0 or x &gt;= 1.2. Multiple sets are comma\-separated
-
+x &lt;= 1.0 or x &gt;= 1.2. Multiple sets are comma-separated
 
 </td></tr><tr>
 
@@ -341,27 +302,23 @@ x &lt;= 1.0 or x &gt;= 1.2. Multiple sets are comma\-separated
 
 `(,1.1),(1.1,)`
 
-
 </td>
 
 <td>
 
 This excludes 1.1, if it is known not to work in combination with this library
 
-
 </td></tr><tr>
 
 <td>
 
-1.0\-SNAPSHOT
-
+1.0-SNAPSHOT
 
 </td>
 
 <td>
 
 The trigger will check the latest snapshot version for updates
-
 
 </td></tr></table>
 

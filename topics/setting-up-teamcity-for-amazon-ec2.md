@@ -105,7 +105,7 @@ Recommended image (for example, Amazon AMI) preparation steps:
 2. Start the image.
 3. Configure the running instance:   
    * Install and configure a build agent:  
-     * Configure server name and agent name in `conf/buildAgent.properties` – this is optional if the image will be started by TeamCity, but it is useful to test if the agent is configured correctly.
+     * Configure server name and agent name in `conf/buildAgent.properties` — this is optional if the image will be started by TeamCity, but it is useful to test if the agent is configured correctly.
      * It usually makes sense to specify `tempDir` and `workDir` in `conf/buildAgent.properties` to use the non-system drive (`d:` under Windows).
    * Install any additional software necessary for the builds on the machine.
    * Run the agent and check it is working OK and is compatible with all necessary build configurations, and so on.
@@ -253,17 +253,17 @@ However, there is a workaround if you are not willing to wait. To register new I
 
 If your TeamCity server needs to use a proxy to connect to AWS API endpoint, configure the following server [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to connect to Amazon AWS addresses.
 
-* `teamcity.http.proxy.host.ec2` – proxy server host name
-* `teamcity.http.proxy.port.ec2` – proxy server port
+* `teamcity.http.proxy.host.ec2` — proxy server host name
+* `teamcity.http.proxy.port.ec2` — proxy server port
 
 For proxy server authentication: 
 
-* `teamcity.http.proxy.user.ec2` – proxy access username 
-* `teamcity.http.proxy.password.ec2` – proxy access user password
+* `teamcity.http.proxy.user.ec2` — proxy access username 
+* `teamcity.http.proxy.password.ec2` — proxy access user password
 
 For NTML authentication: 
-* `teamcity.http.proxy.domain.ec2` – proxy user domain for NTLM authentication 
-* `teamcity.http.proxy.workstation.ec2` – proxy access workstation for NTLM authentication
+* `teamcity.http.proxy.domain.ec2` — proxy user domain for NTLM authentication 
+* `teamcity.http.proxy.workstation.ec2` — proxy access workstation for NTLM authentication
 
 ### Custom script
 
@@ -282,7 +282,7 @@ Note that traffic volumes and necessary server and agent machines characteristic
 Here are some points to help you estimate TeamCity-related traffic:
 
 * If TeamCity server is not located within the same EC2 region or availability zone that is configured in TeamCity EC2 settings for agents, traffic between the server and agent is subject to usual Amazon EC2 external traffic charges.
-* When estimating traffic, bear in mind that there are lots types of traffic related to TeamCity (see a non\-complete list below).
+* When estimating traffic, bear in mind that there are lots types of traffic related to TeamCity (see a non-complete list below).
 
 __External connections originated by server:__
 
@@ -295,12 +295,12 @@ __Internal connections originated by server:__
 * TeamCity agents (checking status, sending commands, retrieving information like thread dumps, and so on)
 
 __External connections originated by agent:__
-* VCS servers (in case of agent\-side checkout)
+* VCS servers (in case of agent-side checkout)
 * Maven repositories
 * any connections performed from the build process itself
 
 __Internal connections originated by agent:__
-* TeamCity server (retrieving build sources in case of server\-side checkout or personal builds, downloading artifacts, and so on)
+* TeamCity server (retrieving build sources in case of server-side checkout or personal builds, downloading artifacts, and so on)
 
 __Usual connections served by the server:__
 * web browsers
@@ -308,7 +308,6 @@ __Usual connections served by the server:__
 
 #### Uptime Costs
 
-As Amazon rounds machine uptime to the nearest full hour, adjust timeout setting on the EC2 image setting on TeamCity cloud integration settings according to your usual builds length.
+As Amazon rounds machine uptime to the full hour for some configurations (more at [How are Amazon EC2 instance hours billed?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-hour-billing/)), adjust timeout setting on the EC2 image setting on TeamCity cloud integration settings according to your usual builds length.
 
 It is also highly recommended to set execution timeout for all your builds so that a build hanging does not cause prolonged instance running with no payload.
-

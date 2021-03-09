@@ -50,8 +50,7 @@ SBT installation mode
 
 <td>
 
-When the default `<Auto>` option is selected, the latest SBT version will be installed on every TeamCity agent your build will be running. To specify an existing installation, use the `<Custom>` mode. The `sbt-launch.jar` from the `\bin` directory of the SBT home will be launched. 
-
+When the default `<Auto>` option is selected, the latest SBT version will be installed on every TeamCity agent your build will be running. To specify an existing installation, use the `<Custom>` mode. The `sbt-launch.jar` from the `\bin` directory of the SBT home will be launched.
 
 </td>
 </tr>
@@ -60,16 +59,13 @@ When the default `<Auto>` option is selected, the latest SBT version will be ins
 
 <td>
 
-SBT home path 
-
+SBT home path
 
 </td>
-
 
 <td>
 
 _Available if `<Custom>` is selected in the option above._ The path to the existing SBT installation directory.
-
 
 </td>
 </tr>
@@ -80,70 +76,53 @@ _Available if `<Custom>` is selected in the option above._ The path to the exist
 
 Working directory 
 
-
 </td>
 
 
 <td>
 
-Optional. Specify the [Build Working Directory](build-working-directory.md) if it differs from the [Build Checkout Directory](build-checkout-directory.md). 
-
+Optional. Specify the [Build Working Directory](build-working-directory.md) if it differs from the [Build Checkout Directory](build-checkout-directory.md).
 
 </td>
 </tr>
 </table>
 
-
-
-
 ### Java Parameters
-
-
 
 <table>
 <tr>
 
-
 <td>
 
-Option 
-
+Option
 
 </td>
 
-
 <td>
 
-Description 
-
+Description
 
 </td>
 </tr>
 <tr>
 
-
 <td>
 
-JDK 
-
+JDK
 
 </td>
 
-
 <td>
 
- When `<Default>` is selected, the JDK specified in the `JAVA_HOME` environment variable on the agent or the agent's own Java is used to run the build process. Set to `<Custom>` to use a custom JDK. 
-
+When `<Default>` is selected, the JDK specified in the `JAVA_HOME` environment variable on the agent or the agent's own Java is used to run the build process. Set to `<Custom>` to use a custom JDK.
 
 </td>
 </tr>
 <tr>
-
 
 <td>
 
 JDK home path 
-
 
 </td>
 
@@ -152,16 +131,13 @@ JDK home path
 
 _Available if `<Custom>` is selected in the option above._ Specify the path to your custom JDK which will be used to run the build.
 
-
 </td>
 </tr>
 <tr>
 
-
 <td>
 
-JVM command line parameters 
-
+JVM command line parameters
 
 </td>
 
@@ -170,8 +146,6 @@ JVM command line parameters
 
 Specify the desired Java Virtual Machine parameters, such as maximum heap size or parameters that enable remote debugging. These settings are passed to the JVM used to run your build.   
  Example:
-
-
 
 ```Java
 -Xmx512m -Xms256m

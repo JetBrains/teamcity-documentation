@@ -5,10 +5,7 @@ The _PowerShell_ [build runner](build-runner.md) is specifically designed to run
 
 The plugin responsible for PowerShell integration has been open-sourced [on GitHub](https://github.com/JetBrains/teamcity-powershell).
 
-<tip>
-
-If you need to run a PowerShell script with elevated permissions, consider using the TeamCity [RunAs plugin](https://github.com/JetBrains/teamcity-runas-plugin).
-</tip>
+>If you need to run a PowerShell script with elevated permissions, consider using the TeamCity [RunAs plugin](https://github.com/JetBrains/teamcity-runas-plugin).
 
 ## Cross-Platform PowerShell
 
@@ -17,7 +14,7 @@ If you need to run a PowerShell script with elevated permissions, consider using
 
 ## Detection of Installed PowerShell on Build Agents
 
-During startup, a TeamCity agent searches for the PowerShell installation in standard locations, such as `Program Files` and `Windows` directories. You can specify a custom location in the `teamcity.powershell.detector.search.paths` [agent property](predefined-build-parameters.md#Agent+Properties), so the agent can detect PowerShell in this directory (and its children) as well.   
+During the startup, a TeamCity agent searches for the PowerShell installation in standard locations, such as `Program Files` and `Windows` directories. You can specify a custom location in the `teamcity.powershell.detector.search.paths` [agent property](predefined-build-parameters.md#Agent+Properties), so the agent can detect PowerShell in this directory (and its children) as well.   
 To list multiple locations, separate their paths with `;`.
 
 ## PowerShell Settings
@@ -28,13 +25,11 @@ To list multiple locations, separate their paths with `;`.
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -44,19 +39,15 @@ Version
 
 </td>
 
-
-
 <td>
 
 List of PowerShell versions supported by TeamCity. It is passed to `powershell.exe` as the `-Version` command line argument.
-
 
 </td></tr><tr>
 
 <td>
 
 PowerShell run mode
-
 
 </td>
 
@@ -73,26 +64,24 @@ If the version field is left blank, no lower bound on the version requirement wi
 
 __Platform__
 
-Select platform bitness:
+Select the platform bitness:
 
-* `x64` – 64-bit,  default, the corresponding requirement will be added
-* `x86` – 32-bit, the corresponding requirement will be added
-* `Auto` – when it is selected, no platform requirement will be added to the build configuration, and if both 32-bit and 64-bit PowerShells are installed, 64\-bit will be preferred.
+* `x64` — 64-bit,  default, the corresponding requirement will be added
+* `x86` — 32-bit, the corresponding requirement will be added
+* `Auto` — when it is selected, no platform requirement will be added to the build configuration, and if both 32-bit and 64-bit PowerShells are installed, 64-bit will be preferred.
 
 __Edition__
 
-Select a PowerShell edition to be used: (__since TeamCity 2017.1__)
+Select a PowerShell edition to be used:
 
-* Desktop – closed-source edition bundled with Windows, available only on Windows platforms. 
-* Core – open-source edition based on .NET Core, cross-platform, 64-bit only
-
+* Desktop — closed-source edition bundled with Windows, available only on Windows platforms. 
+* Core — open-source edition based on .NET Core, cross-platform, 64-bit only
 
 </td></tr><tr>
 
 <td>
 
 Format stderr output as:
-
 
 </td>
 
@@ -103,12 +92,7 @@ Specify how the error output is handled by the runner:
 * __error__: any output to `stderr` is handled as an error
 * __warning__: default; any output to `stderr` is handled as a warning
 
-<tip>
-
-To fail a build if "an error message is logged by build runner" (see [Build Failure Conditions](build-failure-conditions.md)), change the default setting of the Error Output selector from __warning__ to __error__.
-</tip>
-
-
+>To fail a build if "an error message is logged by build runner" (see [Build Failure Conditions](build-failure-conditions.md)), change the default setting of the Error Output selector from __warning__ to __error__.
 
 </td></tr><tr>
 
@@ -116,9 +100,7 @@ To fail a build if "an error message is logged by build runner" (see [Build Fail
 
 Working directory
 
-
 </td>
-
 
 <td>
 
@@ -129,7 +111,6 @@ Specify the path to the [build working directory](build-working-directory.md).
 <td>
 
 Script
-
 
 </td>
 
@@ -152,30 +133,25 @@ Alternatively, you can store your script in a separate file and reference it in 
 There is an issue with PowerShell 2.0 not returning the correct exit code when the script contains explicitly defined parameters. As a [workaround](https://youtrack.jetbrains.com/issue/TW-42996), either upgrade your PowerShell or to use `[Environment]::Exit(code)`.
 </note>
 
-
-
 </td></tr><tr>
 
 <td>
 
 Script execution mode
 
-
 </td>
 
 <td>
 
-Specify the PowerShell script execution mode. By default, PowerShell may not allow execution of arbitrary `.ps1` files. TeamCity will try to supply the `-ExecutionPolicy ByPass` argument. If you've selected __Execute .ps1 script from external file__, your script should be signed or you should make PowerShell allow execution of arbitrary `.ps1` files.  If the execution policy doesn't allow running your scripts, select __Put script into PowerShell stdin__ mode to avoid this issue.
+Specify the PowerShell script execution mode. By default, PowerShell may not allow execution of arbitrary `.ps1` files. TeamCity will try to supply the `-ExecutionPolicy ByPass` argument. If you've selected __Execute .ps1 script from external file__, your script should be signed or you should make PowerShell allow execution of arbitrary `.ps1` files. If the execution policy doesn't allow running your scripts, select __Put script into PowerShell stdin__ mode to avoid this issue.
 
-The `-Command` mode is deprecated and is not recommended for use with PowerShell of version greater than 1.0
-
+The `-Command` mode is deprecated and is not recommended for use with PowerShell of version greater than 1.0.
 
 </td></tr><tr>
 
 <td>
 
 Script arguments
-
 
 </td>
 
@@ -196,20 +172,17 @@ TeamCity calls `powershell.exe` from the console of your operating system (comma
 If parameters containing special symbols are passed to your PowerShell script in double quotes, make sure these characters are properly escaped: use the escape rules depending on your interpreter, for example, on Windows, if a PowerShell script argument ends with a backslash, use the backslash as the escape symbol for TeamCity to correctly interpret it: `"foo\\"`.
 </note>
 
-
 </td></tr><tr>
 
 <td>
 
 Additional command line parameters
 
-
 </td>
 
 <td>
 
 Specify parameters to be passed to `powershell.exe`.
-
 
 </td></tr></table>
 
@@ -218,7 +191,7 @@ Specify parameters to be passed to `powershell.exe`.
 
 To enable support for Docker in PowerShell steps, run the TeamCity server with the `-Dteamcity.docker.runners=jetbrains_powershell` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
-In this section, you can specify a Docker image which will be [used to run the build step](docker-wrapper.md).
+In this section, you can specify the Docker image which will be [used to run the build step](docker-wrapper.md).
 
 ### Current Limitations
 
@@ -238,7 +211,6 @@ To workaround this problem, we suggest using PowerShell Core instead. Alternativ
 
 Attention must be paid when using PowerShell to interact with TeamCity through service messages. PowerShell tends to wrap strings written to the console with commands like `Write-Output`, `Write-Error` and similar (see [TW-15080](http://youtrack.jetbrains.com/issue/TW-15080)). To avoid this behavior, either use the `Write-Host` command, or adjust the buffer length manually:
 
-
 ```Shell
 function Set-PSConsole {
   if (Test-Path env:TEAMCITY_VERSION) {
@@ -252,8 +224,6 @@ function Set-PSConsole {
 }
 
 ```
-
-
 
 ## Error Handling
 
@@ -273,7 +243,6 @@ The PowerShell plugin does not use the cmd wrapper around `powershell.exe`. It m
     }
     ```
 
-
 * _Setting  to  and adding a build failure condition_:   
 In case syntax errors and exceptions are present, PowerShell writes them to `stderr`. To make TeamCity fail the build, set __Error Output__ option to `Error` and add a [build failure condition](build-failure-conditions.md#Common+build+failure+conditions) that will fail the build on any error output.
 * _Failing build on certain message in build log_:   
@@ -290,13 +259,10 @@ Add a [build failure condition](build-failure-conditions.md#Common+build+failure
     }
     ```
 
-
-
 ## Handling Output
 
 To properly handle non-ASCII output from PowerShell, the correct encoding must be set both on the PowerShell side and on the TeamCity side.
 * To set the output encoding for PowerShell to UTF-8, add the following line to the beginning of your PowerShell script:
-
 
     ```Shell
     [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
@@ -312,5 +278,4 @@ The TeamCity PowerShell plugin uses temporary files as an entry point; these fil
 
 The PowerShell support is implemented as an open-source plugin. For development links refer to the [plugin's page](https://plugins.jetbrains.com/plugin/9041-powershell-runner).
 
-
-[//]: # (Internal note. Do not delete. "PowerShelld255e514.txt")    
+[//]: # (Internal note. Do not delete. "PowerShelld255e514.txt")

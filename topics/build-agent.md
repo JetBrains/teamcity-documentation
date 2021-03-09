@@ -22,13 +22,11 @@ In TeamCity, a build agent can have following statuses:
 
 Status
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -36,20 +34,17 @@ Description
 
 __Connected/ Disconnected__
 
-
 </td>
 
 <td>
 
 An agent is connected if it is registered on the TeamCity server and responds to server commands, otherwise it is __disconnected__. This status is determined automatically.
 
-
 </td></tr><tr>
 
 <td id="agent-authorization">
 
 __Authorized/ Unauthorized__
-
 
 </td>
 
@@ -69,7 +64,6 @@ If a build agent is installed and running on the same computer as the TeamCity b
 
 __Enabled/ Disabled__
 
-
 </td>
 
 <td>
@@ -80,14 +74,13 @@ Agents are manually enabled/disabled via the [web UI](build-agents-configuration
 
 __Disabled__ agents can still run builds when the build is assigned to a special agent (for example, by [triggering a custom build](triggering-a-custom-build.md)). This feature is generally used to temporarily remove agents from the build grid to investigate agent-specific issues.
 
-
 </td></tr></table>
 
 All agents connected to the server must have unique agent names.
 
 Only users with certain roles can manage agents. See [Role and Permission](role-and-permission.md) for more information.
 
-For a build agent configuration, refer to the [Build Agent Configuration](build-agent-configuration.md) section.
+For a build agent configuration, refer to [this section](build-agent-configuration.md).
 
 ## Agent Upgrade
 {product="tc"}

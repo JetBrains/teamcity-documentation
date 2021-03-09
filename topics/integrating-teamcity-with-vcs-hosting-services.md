@@ -93,12 +93,9 @@ The page that opens provides the parameters to be used when connecting TeamCity 
    * your personal access token
 5. Save the connection settings. 
 6. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [TFS](team-foundation-server.md) VCS root, create [Team Foundation Work Items](team-foundation-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all of the resources that are available to you.   
-__Since TeamCity 2017.2 EAP1__, when configuring Commit Status Publisher for Git repositories hosted in TFS/VSTS, the personal access token can be filled out automatically if a VSTS project connection is configured.
+When configuring Commit Status Publisher for Git repositories hosted in TFS/VSTS, the personal access token can be filled out automatically if a VSTS project connection is configured.
 
-<tip>
-
- It is possible to configure several VSTS connections. In this case the server URL will be displayed next to the VSTS icon to distinguish the server in use. 
-</tip>
+>It is possible to configure several VSTS connections. In this case the server URL will be displayed next to the VSTS icon to distinguish the server in use.
 
 ## Creating Entities from URL in TeamCity
 

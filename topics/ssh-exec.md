@@ -46,9 +46,7 @@ Target
 
 <td>
 
-
 __Target__ should point to an SSH server location. Enter hostname or IP address.
-
 
 </td></tr><tr>
 
@@ -103,15 +101,13 @@ Select an SSH authentication method.
 * __Uploaded key__ uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
 * __Default private key__ will try to perform private key authentication using the `~/.ssh/config` settings. If no settings file exists, will try to use the `~/.ssh/rsa_pub` public key file. No passphrases should be set.
 * __Custom private key__ will try to perform private key authentication using the given public key file with given passphrase
-* __Password__ – simple password authentication.
-* __SSH\-Agent__ – use ssh\-agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
-
+* __Password__ — simple password authentication.
+* __SSH-Agent__ — use ssh-agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
 
 <note>
 
 The current secure connection implementation accepts _any_ certificate provided by the remote host. No trust checks are performed!
 </note>
-
 
 </td></tr><tr>
 

@@ -170,7 +170,7 @@ teamcity.users.filter=(&(objectClass=user)(|(memberOf=CN=GroupOne,OU=myou,DC=com
 
 ```
 
-To limit users who can login into TeamCity you also need to change the `teamcity.users.login.filter` property:
+To limit users who can sign in to TeamCity you also need to change the `teamcity.users.login.filter` property:
 
 ```Shell
 teamcity.users.login.filter=(&(sAMAccountName=$capturedLogin$)(memberOf:1.2.840.113556.1.4.1941:=CN=TeamCity Users,OU=Accounts,DC=domain,DC=com))

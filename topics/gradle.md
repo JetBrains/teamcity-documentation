@@ -7,11 +7,7 @@ To run builds with Gradle, Gradle 0.9-rc-1 or later must be installed on all the
 
 The runner supports all Gradle build configurations, including `build.gradle` and `build.gradle.kts`.
 
-<tip>
-
-To use the TeamCity server as an external dependency repository for Gradle builds, try the external [TeamCity-Gradle plugin](https://github.com/jk1/TeamCity-dependencies-gradle-plugin).
-
-</tip>
+>To use the TeamCity server as an external dependency repository for Gradle builds, try the external [TeamCity-Gradle plugin](https://github.com/jk1/TeamCity-dependencies-gradle-plugin).
 
 ## Gradle Parameters
 
@@ -21,20 +17,17 @@ To use the TeamCity server as an external dependency repository for Gradle build
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 Gradle tasks
-
 
 </td>
 
@@ -50,7 +43,6 @@ Specify Gradle task names separated by spaces. For example, `:myproject:clean :m
 
 Gradle build file
 
-
 </td>
 
 <td>
@@ -65,7 +57,6 @@ A path to the [Gradle build file](https://docs.gradle.org/current/userguide/tuto
 
 Incremental building
 
-
 </td>
 
 <td>
@@ -77,7 +68,6 @@ TeamCity can make use of the Gradle `:buildDependents` [feature](http://www.grad
 <td>
 
 Gradle home path
-
 
 </td>
 
@@ -103,7 +93,6 @@ Optionally, specify the space-separated list of command line parameters to be pa
 
 Gradle Wrapper
 
-
 </td>
 
 <td>
@@ -123,20 +112,17 @@ If enabled, TeamCity will look for Gradle Wrapper scripts in the checkout direct
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 Debug
-
 
 </td>
 
@@ -150,13 +136,11 @@ Selecting the _Log debug messages_ checkbox is equivalent to adding the `-d` Gra
 
 Stacktrace
 
-
 </td>
 
 <td>
 
 Selecting the _Print stacktrace_ checkbox is equivalent to adding the `-s` Gradle command-line parameter.
-
 
 </td></tr></table>
 
@@ -224,7 +208,6 @@ In this section, you can specify a Docker image which will be [used to run the b
 [//]: # (AltHead: coverage)
 
 The Gradle build runner supports code coverage with based on the [IDEA code coverage engine](intellij-idea.md) and [JaCoCo](jacoco.md).
-
 
 <seealso>
         <category ref="admin-guide">

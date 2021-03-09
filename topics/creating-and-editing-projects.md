@@ -17,7 +17,6 @@ There are several options to create a project:
  
 Note that only two options are available by default: _From a repository URL_ and _Manually_. If a [connection](integrating-teamcity-with-vcs-hosting-services.md) to some VCS hosting service is configured in the Root project (or a parent project of the project to be created), the corresponding option becomes available, so you can create a project using an existing VCS connection specification.
 
-
 To create a subproject, go to the __Project Settings__ page of the parent project and use one of the available options, similarly to creating a project.
 
 ### Creating project pointing to repository URL
@@ -92,7 +91,6 @@ Provide a password or token if access to the repository requires authentication.
 
 3\. Click __Proceed__. TeamCity will configure the remaining settings for you.
  * It will determine the type of the VCS repository, autoconfigure VCS repository settings, and suggest the project and build configuration names.
-   
  * For a Git repository, it will autodetect the default branch. You have an option to change it now or later, in the [VCS root](vcs-root.md) settings. You can also change the branch specification: by default, TeamCity monitors all branches of the repository but you can choose what exact branches to monitor by entering [custom rules](working-with-feature-branches.md#branch-spec-syntax).
  * The project, build configuration, and VCS root will be created automatically.
  * TeamCity will add a VCS build trigger.
@@ -104,6 +102,7 @@ Provide a password or token if access to the repository requires authentication.
 Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review suggestions at the end of the settings' list and configure the required ones.
 
 ### Creating project pointing to GitHub.com repository
+
 1. On the __Create project__ page, select to create a project __from GitHub.com__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will:
@@ -117,6 +116,7 @@ Depending on the build configuration settings, TeamCity can suggest some additio
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
 
 ### Creating project pointing to Bitbucket Cloud
+
 1. On the __Create project__ page, select to create a project __from Bitbucket Cloud__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will:
@@ -130,6 +130,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
 
 ### Creating project pointing to GitLab.com
+
 1. On the __Create project__ page, select to create a project __from GitLab.com__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will:
@@ -164,6 +165,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
 
 ### Creating project manually
+
 1\. Click the __Create project__ button and select __Manually__.
 
 2\. On the __Create New Project__ page, specify the project settings:
@@ -276,7 +278,7 @@ You can also opt to copy build configurations build numbers.
 
 <note>
 
-When running TeamCity in the [Professional mode](licensing-policy.md), the __Copy__ option will not be displayed for a project if the number of build configurations on the server after copying will exceed the limit (100 build configurations since TeamCity 2017.2 and 20 in earlier versions unless you purchased additional Build Agent licenses).
+When running TeamCity in the [Professional mode](licensing-policy.md), the __Copy__ option will not be displayed for a project if the number of build configurations on the server after copying will exceed the limit (100 build configurations, unless you purchased additional build agent licenses).
 </note>
 
 
@@ -323,18 +325,15 @@ You can [export configuration files](project-export.md) of a project with its ch
 
 Use the corresponding item from the __Actions__ menu in the upper right corner of the __Project Settings__ page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent __Project Settings__ page.
 
-When you delete a project, TeamCity will remove its `.xml` configuration files. After the deletion, the project is moved to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/.ProjectID.projectN directory. There is a [configurable](clean-up.md#Deleted+Build+Configurations+Clean-up) timeout (5 days by default) before all project-related data stored in the database (build history, artifacts, and so on) of the deleted project is completely removed during the next build history clean-up.
+When you delete a project, TeamCity will remove its `.xml` configuration files. After the deletion, the project is moved to the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_trash/`.ProjectID.projectN directory. There is a [configurable](clean-up.md#Deleted+Build+Configurations+Clean-up) timeout (5 days by default) before all project-related data stored in the database (build history, artifacts, and so on) of the deleted project is completely removed during the next build history clean-up.
 
 >You can [restore](how-to.md#Restore+Just+Deleted+Project) a deleted project before the clean-up is run.
 >
 {product="tc"}
 
-The \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/ directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects. 
+The `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_trash/` directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects. 
 
-<tip>
-
-If you attempt to delete a project with [dependent build configurations](dependent-build.md) from other projects, TeamCity will warn you about it. If you proceed with the deletion, the dependencies will no longer function.
-</tip>
+>If you attempt to delete a project with [dependent build configurations](dependent-build.md) from other projects, TeamCity will warn you about it. If you proceed with the deletion, the dependencies will no longer function.
 
  <seealso>
         <category ref="admin-guide">

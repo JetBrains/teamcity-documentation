@@ -15,7 +15,7 @@ If the build configuration uses VCS roots or is associated with a template, whic
 
 <note product="tc">
 
-When running TeamCity in the [Professional mode](licensing-policy.md#Licensing+Overview) with the maximum allowed number of build configurations (100 build configurations and prior to TeamCity 2017.2 - 20) unless you purchased additional Build Agent licenses), the __Copy__ option will not be displayed for build configurations.
+When running TeamCity in the [Professional mode](licensing-policy.md#Licensing+Overview) with the maximum allowed number of build configurations (100), unless you purchased additional build agent licenses), the __Copy__ option will not be displayed for build configurations.
 </note>
 
 ## Delete Build Configuration

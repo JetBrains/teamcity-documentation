@@ -29,7 +29,7 @@ The .NET runner requires the following software to be installed on a build agent
 </td>
 <td>
 
-* [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/) (versions 1 – 3.1)   
+* [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/) (versions 1–3.1)   
    _or_
 * [.NET SDK](https://dotnet.microsoft.com/download/dotnet/5.0) (version 5.0)
 </td>

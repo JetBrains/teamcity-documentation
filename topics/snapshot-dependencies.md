@@ -139,7 +139,7 @@ If a dependency fails, you can manage the status of the dependent build by selec
 ### Suitable Builds
 [//]: # (Internal note. Do not delete. "Snapshot Dependenciesd292e145.txt")    
 
-In terms of snapshot dependencies, a _suitable_ build is a build which can be used instead a queued dependency build within a [build chain](build-chain.md). That is, a queued build which is a part of a build chain can be dropped – and the builds depending on it can be made dependent on another queued, running, or already finished "suitable" build. This behavior only works when the "_Do not run new build if there is a suitable one_" option of a corresponding snapshot dependency is enabled.
+In terms of snapshot dependencies, a _suitable_ build is a build which can be used instead a queued dependency build within a [build chain](build-chain.md). That is, a queued build which is a part of a build chain can be dropped — and the builds depending on it can be made dependent on another queued, running, or already finished "suitable" build. This behavior only works when the "_Do not run new build if there is a suitable one_" option of a corresponding snapshot dependency is enabled.
 
 For a build to be considered "suitable", it should comply with all these conditions:
 * It must use _the same sources' snapshot_ as the entire queued build chain being processed. If the build configurations have the same VCS settings, this means _the same sources' revision_. If the VCS settings are different (VCS roots or checkout rules), this means _the revisions taken simultaneously at some moment in time_.

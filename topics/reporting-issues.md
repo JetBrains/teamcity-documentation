@@ -56,7 +56,7 @@ __Other helpful tips for specific issues__:
 
 * Note any previous modifications of the TeamCity Data Directory or the database.
 
-* Do not include large portions (above 10Kb) of the textual data into the email text – rather attach it in a file.
+* Do not include large portions (above 10Kb) of the textual data into the email text — rather attach it in a file.
 
 __Consider the following guidelines for posts__:
 
@@ -88,13 +88,13 @@ If you have a substantial TeamCity installation, check your [memory settings](in
 
 ### Collect Data
 
-During the slow operation, take several thread dumps of the slow process (see below for thread dump taking approaches) with 5\-10 seconds interval. If the slowness continues, take several more thread dumps (for example, 3\-5 within several minutes) and then repeat after some time (for example, 10 minutes) while the process is still being slow.
+During the slow operation, take several thread dumps of the slow process (see below for thread dump taking approaches) with 5\-10 seconds interval. If the slowness continues, take several more thread dumps (for example, 3-5 within several minutes) and then repeat after some time (for example, 10 minutes) while the process is still being slow.
 
 Then [send](feedback.md) us a detailed description of the issue accompanied with the thread dumps and full server (or agent) [logs](#Logging+events) covering the issue. Unless it is undesirable for some reason, the preferred way is to file an issue into our [issue tracker](http://youtrack.jetbrains.com/issues/TW) and let us know via support email. Please include all the relevant details of investigation, including the CPU/IO load information, what specifically is slow and what is not, note affected URLs, visible effects, and so on. For large amounts of data, use [our file upload](#Uploading+Large+Data+Archives) service to share the archives with us.
 
 ### Server Thread Dump
 
-When an operation on the server is slow, take a set of the server thread dumps (10\+) spread over the time of the slowness. TeamCity automatically saves thread dumps on super slow operations, so there might already be some saved in `logs/threadDumps-<date>` directories. It is recommended to send us an archive of the entire content of server's  `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directories for all the recent dates.
+When an operation on the server is slow, take a set of the server thread dumps (10\+) spread over the time of the slowness. TeamCity automatically saves thread dumps on super slow operations, so there might already be some saved in `logs/threadDumps-<date>` directories. It is recommended to send us an archive of the entire content of server's `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directories for all the recent dates.
 
 It is recommended that you take a thread dump of the TeamCity server from the Web UI if the hanging is local and you can still open the TeamCity __Administration__ pages: go to the __Administration | Server Administration | Diagnostics__ page and click the __Save Thread Dump__ button to save a dump under the `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directory (where you can later download the files from "Server Logs"). If the server is fully started but the web UI is not responsive, try the [direct URL](http://YOUR_TEAMCITY_SERVER_URL/admin/diagnostic.html?actionName=threadDump&amp;save=false) using the actual URL of your TeamCity server.
 
@@ -109,7 +109,7 @@ If you experience degraded server performance and the TeamCity server process is
 Here are some hints to get the best results from CPU profiling:
 * after starting the server, wait for some time to allow it to "warm up". This can take from 5 to 20 minutes depending on the data volume that TeamCity stores.
 * when a CPU usage increase is found on the server, try to indicate what actions cause the load.
-* start CPU profiling and repeat the action several times (5 \- 10).
+* start CPU profiling and repeat the action several times (5 — 10).
 * capture a snapshot.
 * archive the snapshot and send it to us including the description of the actions that cause the CPU load.
 
@@ -129,19 +129,16 @@ To take a thread dump:
 
 You have several options:
 * To take a server thread dump if the server is run from the console, press __Ctrl\+Break__ (Ctrl\+Pause on some keyboards) in the console window (this will not work for an agent, since its console belongs to the launcher process). If the server is run as a service, try running it from console by logging under the same use as configured in the service and executing `<TeamCity server home>\bin\teamcity-server.bat run` command.
-Another approach is to figure out the process id of the TeamCity server process (it's the top\-most "java" proces with "org.apache.catalina.startup. Bootstrap  start" at the end og the command line and use of the following approaches:
+Another approach is to figure out the process id of the TeamCity server process (it's the topmost "java" process with "org.apache.catalina.startup. Bootstrap  start" at the end og the command line and use of the following approaches:
 * run `jstack <pid_of_java_process>` in the bin directory of the Java installation used to by the process (the Java home can be looked up in the process command line. If the installation does not have jstack utility, you might need to get the java version via java \-version command, download full JDK of the same version and use "jstack" utility form there). You might also need to supply `-F` flag to the command.
-* use TeamCity\-bundled agent thread dump tool (can be found in the agent's plugins). Run the command:
-
+* use TeamCity-bundled agent thread dump tool (can be found in the agent's plugins). Run the command:
 
 ```Shell
 
 <TeamCity agent>\plugins\stacktracesPlugin\bin\x86\JetBrains.TeamCity.Injector.exe <pid_of_java_process>
 ```
 
-
-
-Note that if the hanging process is run as a service, the thread dumping tool must be run from a console with elevated permissions (using Run as Administrator). If the service is run under System account, you might also need to launch the thread dumping tools via [`PsExec.exe`](http://technet.microsoft.com/en-us/sysinternals/bb897553.aspx)` -s <path to the tool>\<tool> <options>`. When the service is run under a regular user, wrapping the tool invocation in "` PsExec.exe -u <user> -p <password> <path to the tool>\<tool> <options>` might also help.
+Note that if the hanging process is run as a service, the thread dumping tool must be run from a console with elevated permissions (using Run as Administrator). If the service is run under System account, you might also need to launch the thread dumping tools via [`PsExec.exe`](http://technet.microsoft.com/en-us/sysinternals/bb897553.aspx)` -s <path to the tool>\<tool> <options>`. When the service is run under a regular user, wrapping the tool invocation in ` PsExec.exe -u <user> -p <password> <path to the tool>\<tool> <options>` might also help.
 
 If neither of these work for the server running as a service, try [running the server](installing-and-configuring-the-teamcity-server.md#Starting+TeamCity+server) from console and not as a service. This way the first (Ctrl\+Break) option can be used.
 
@@ -153,7 +150,7 @@ See also [Server Performance](#Determine+Which+Process+Is+Slow) section above.
 
 ### Database-related Slowdowns
 
-When the server is slow, check if the problem is caused by database operations.It is recommended to use database\-specific tools.
+When the server is slow, check if the problem is caused by database operations.It is recommended to use database-specific tools.
 
 You can also use the `debug-sql` server [logging preset](teamcity-server-logs.md#Logging-related+Diagnostics+UI). Upon enabling, all the queries which take longer 1 second will be logged into the `teamcity-sql.log` file. The time can be changed by setting the `teamcity.sqlLog.slowQuery.threshold` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). The value should be set in milliseconds and is 1000 by default.
 
@@ -181,26 +178,22 @@ If you experience problems with TeamCity consuming too much memory or "OutOfMemo
 * If the server is to blame, check you have increased memory settings from the default ones for using the server in production (see the [section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server)).
 * If the build process is to blame, set "JVM Command Line Parameters" settings in the build runner. Increase the value for the `-Xmx` JVM option: for instance, `-Xmx1200m`. Note that Java Inspections builds may specifically need increasing the `-Xmx` value.
 * If the TeamCity server is to blame and increasing the memory size does not help, please report the case for us to investigate. For this, while the server is high on memory consumption, take several server thread dumps as described [above](#Taking+Thread+Dump), get the memory dump (see below) and all the server logs including `threadDumps-*` sub-directories, archive the results, and [send them](#Uploading+Large+Data+Archives) to us for further analysis. Make sure that the `-Xmx` setting is less than 8Gb before getting the dump:
-  * if a memory dump (`hprof` file) is created automatically, the `java_xxx.hprof` file is created in the process startup directory (\<[TeamCity Home](teamcity-home-directory.md)\>\/bin or \<[TeamCity Agent home](agent-home-directory.md)\>\/bin`);
+  * if a memory dump (`hprof` file) is created automatically, the `java_xxx.hprof` file is created in the process startup directory (`<[TeamCity Home](teamcity-home-directory.md)>/bin` or `<[TeamCity Agent home](agent-home-directory.md)>/bin`);
   * for the server, you can also take memory dump manually when the memory usage is at its peak. Go to the __Administration | Server Administration | Diagnostics__ page of your TeamCity web UI and click __Dump Memory Snapshot__.
   * another approach to take a memory dump manually is to use the `jmap` standard JVM command line utility of the full JVM installation of the same version as the Java used by the process. Example command line is:   
     
     ```Shell
     jmap -dump:file=<file_on_disk_to_save_dump_into>.hprof <pid_of_the_process>
     ```
-  
-  
-  
 
 See how to change JVM options for the [server](configuring-teamcity-server-startup-properties.md#JVM+Options) and for [agents](configuring-build-agent-startup-properties.md#Agent+Properties).
-
 
 ## "Too many open files" Error
 {product="tc"}
 
 1. Determine what computer it occurs on
 2. Determine the process which has opened a lot of files and the files list (on Linux use `lsof`, on Windows you can use [handle](http://technet.microsoft.com/en-us/sysinternals/bb896655) or [TCPView](http://technet.microsoft.com/en-us/sysinternals/bb897437.aspx) for listing sockets)
-3. If the number is under thousands, check the OS and the process limits on the file handles (on Linux use `ulimit -n`) and increase them if necessary. Note that default Linux 1024 handles per process is way too small for a server application like TeamCity. Increase the number to at least 16000. Check the actual process limits after the change as there are different settings in the OS for settings global and per\-session limits (e.g. see the [post](http://stackoverflow.com/questions/13988780/too-many-open-files-ulimit-already-changed))
+3. If the number is under thousands, check the OS and the process limits on the file handles (on Linux use `ulimit -n`) and increase them if necessary. Note that default Linux 1024 handles per process is way too small for a server application like TeamCity. Increase the number to at least 16000. Check the actual process limits after the change as there are different settings in the OS for settings global and per-session limits (e.g. see the [post](http://stackoverflow.com/questions/13988780/too-many-open-files-ulimit-already-changed))
 
 If the number of files is large and looks suspicious and the locking process is a TeamCity one (the TeamCity agent or server with no other web applications running), then, while the issue is still occurring, grab the list of open handles several times with several minutes interval and send the result to us for investigation together with the relevant details.
 
@@ -217,7 +210,7 @@ The TeamCity server and agent create logs that can be used to investigate issues
 
 <note>
 
-Before reproducing the problem it makes sense to enable 'DEBUG' log level for TeamCity classes. On the server side, go to the __Administration__ | __Server Administration__ | __Diagnostics__ page and select logging preset (`debug-all`, `debug-vcs`, etc).
+Before reproducing the problem it makes sense to enable 'DEBUG' log level for TeamCity classes. On the server side, go to the __Administration | Server Administration | Diagnostics__ page and select logging preset (`debug-all`, `debug-vcs`, etc).   
 After that, DEBUG messages will go to `teamcity-*.log` files ([read more](teamcity-server-logs.md)).
 </note>
 
@@ -226,18 +219,16 @@ For detailed information, refer to the corresponding sections:
 * [TeamCity Server Logs](teamcity-server-logs.md)   
 * [Viewing Build Agent Logs](viewing-build-agent-logs.md)
 
-
 ### Version Control debug logging
 
 <note>
 
-To enable VCS logging on the server side, [switch logging preset](teamcity-server-logs.md) to "debug\-vcs" in administration web UI and then retrieve `logs/teamcity-vcs.log` log file.
+To enable VCS logging on the server side, [switch logging preset](teamcity-server-logs.md) to "debug-vcs" in administration web UI and then retrieve `logs/teamcity-vcs.log` log file.
 </note>
 
 Most VCS operations occur on the TeamCity server, but if you're using the [agent-side checkout](vcs-checkout-mode.md#agent-checkout), VCS checkout occurs on the build agents.
 
 For the agent and the server, you can change the Log4j configuration manually in `<[TeamCity Home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` or `<[BuildAgent home](agent-home-directory.md)>/conf/teamcity-agent-log4j.xml` files to include the following fragment:
-
 
 ```Shell
 
@@ -255,17 +246,13 @@ For the agent and the server, you can change the Log4j configuration manually in
 
 ```
 
-
 Be sure to update the `<appender name="ROLL.VCS">` node to increase the number of the files to store:
-
 
 ```Shell
 
     <param name="maxBackupIndex" value="30"/>
 
 ```
-
-
 
 If there are separate logging options for specific version controls, they are described below.
 
@@ -276,11 +263,11 @@ If there are separate logging options for specific version controls, they are de
 To enable SVN logging on the server side, [switch the logging preset](teamcity-server-logs.md) to "debug\-SVN" in the administration web UI and then retrieve the `logs/teamcity-vcs.log` and `logs/teamcity-svn.log` files.
 </note>
 
-An alternative manual approach is also necessary for agent\-side logging.
+An alternative manual approach is also necessary for agent-side logging.
 
 First, enable the generic VCS debug logging, as described [above](#Version+Control+debug+logging).
 
-Uncomment the SVN\-related parts (the `SVN.LOG` appender and `javasvn.output` category) of the Log4j configuration file on the server and on the agent (if the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used). The log will be saved to the `logs/teamcity-svn.log` file. Generic VCS log should be also taken from `logs/teamcity-vcs.log`
+Uncomment the SVN-related parts (the `SVN.LOG` appender and `javasvn.output` category) of the Log4j configuration file on the server and on the agent (if the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used). The log will be saved to the `logs/teamcity-svn.log` file. Generic VCS log should be also taken from `logs/teamcity-vcs.log`
 
 #### ClearCase
 
@@ -338,16 +325,13 @@ Add the `teamcity.agent.dotnet.debug=true` [configuration parameter](configuring
 After a debug log is created, it is recommended to roll back the change. The change in the `teamcity-log4net.xml` will be removed on the build agent autoupgrade.
 </note>
 
-
 ## Remote Run Problems
 
 The changes that are sent from the IDE to the server on a [remote run](remote-run.md) can be retrieved from the server `.BuildServer/system/changes` directory. Locate the `<change_number>.changes` file that corresponds to your change (you can pick the latest number available or deduce the URL of the change from the web UI). The file contains the patch in the binary form. Please send it with the problem description.
 
-
 ## Logging in IntelliJ IDEA/Platform-based IDEs
 
 To enable debug logging for the [IntelliJ Platform-based IDE plugin](intellij-platform-plugin.md), include the following fragment into the Log4j configuration of the `<IDE home>/bin/log.xml` file:
-
 
 ```Shell
 
@@ -381,9 +365,7 @@ To enable debug logging for the [IntelliJ Platform-based IDE plugin](intellij-pl
 
 ```
 
-
-
-After changing this file, restart the IDE. The TeamCity plugin debug logs are saved into `idea-teamcity\*` files and will appear in the logs directory of the [IDE settings](http://www.jetbrains.com/idea/webhelp/project-and-ide-settings.html#d1270417e197) (`<IDE settings/Data Directory>/system/log` directory).
+After changing this file, restart the IDE. The TeamCity plugin debug logs are saved into `idea-teamcity\*` files and will appear in the logs' directory of the [IDE settings](http://www.jetbrains.com/idea/webhelp/project-and-ide-settings.html#d1270417e197) (`<IDE settings/Data Directory>/system/log` directory).
 
 ### Open in IDE Functionality Logging
 
@@ -410,7 +392,6 @@ If the settings are the same and you do not use the manual checkout mode but the
 
 To enable tracing for the [plugin](eclipse-plugin.md), run Eclipse IDE with the `-debug <filename>` command line parameter. The `<filename>` portion of the argument should be a properties file containing key-value pairs. The name of each property corresponds to the plugin module and the value is either `true` (to enable debug) or `false`. Here is an example of enabling most common tracing options:
 
-
 ```Shell
 
 jetbrains.teamcity.core/debug = true
@@ -425,10 +406,7 @@ jetbrains.teamcity.core/perfomance/vcs = true
 jetbrains.teamcity.core/perfomance/teamcity = true
 ```
 
-
-
-Read more about Eclipse Debug mode [Gathering Information About Your Plug-in](http://www.eclipse.org/eclipse/platform-core/documents/3.1/debug.html) and built\-in Eclipse help.
-
+Read more about Eclipse Debug mode [Gathering Information About Your Plug-in](http://www.eclipse.org/eclipse/platform-core/documents/3.1/debug.html) and built-in Eclipse help.
 
 ## TeamCity Visual Studio Addin issues
 
@@ -438,7 +416,7 @@ To capture logs from the TeamCity [Visual Studio Addin](visual-studio-addin.md):
 
 1. Locate the Visual Studio installation directory (in the example below `c:\Program Files (x86)\Microsoft Visual Studio\2017\Common7\IDE`)
 
-2. Run Microsoft Visual Studio executable (`INSTALLATION_DIRECTORY\Common7\IDE\devenv.exe`) from the command line with the ReSharper\-related command line arguments:
+2. Run Microsoft Visual Studio executable (`INSTALLATION_DIRECTORY\Common7\IDE\devenv.exe`) from the command line with the ReSharper-related command line arguments:
    * For TeamCity VS Add-in as a part of [ReSharper Ultimate](https://www.jetbrains.com/dotnet/), use `/ReSharper.LogFile <PATH_TO_FILE>` and `/ReSharper.LogLevel <Normal|Verbose|Trace>` switches
      ```Shell 
      c:\Program Files (x86)\Microsoft Visual Studio\2017\Common7\IDE>devenv.exe /ReSharper.LogFile C:\Users\jetbrains\Desktop\vs.log /ReSharper.LogLevel Verbose
@@ -453,14 +431,12 @@ To troubleshoot common Visual Studio, run Microsoft Visual Studio executable `IN
 
 To collect additional logs generated by [JetBrains dotCover](jetbrains-dotcover.md), add the `teamcity.agent.dotCover.log` [configuration parameter](configuring-build-parameters.md) to the build configuration with a path to an empty directory on the agent. All dotCover log files will be placed there and TeamCity will publish zipped logs as hidden build artifact `.teamcity/.NETCoverage/dotCoverLogs.zip`.
 
-
-[//]: # (Internal note. Do not delete. "Reporting Issuesd267e1133.txt")    
-
+[//]: # (Internal note. Do not delete. "Reporting Issuesd267e1133.txt")
 
 ## JVM Crashes
 
 On a rare occasion of the TeamCity server or agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.   
-If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually `<[TeamCity server](teamcity-home-directory.md)>` or [`agent home`](agent-home-directory.md)`>/bin`.   
+If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually `<[TeamCity server home](teamcity-home-directory.md)>/bin` or `<[agent home](agent-home-directory.md)>/bin`.   
 Under Windows, when running as a service, it can be other like `C:\Windows\SysWOW64`. You can also search the disk for the recent files with "hs_err_pid" in the name. See also the related Fatal Error Log section in this [document](http://www.oracle.com/technetwork/java/javase/felog-138657.html).
 {product="tc"}
 
@@ -490,9 +466,8 @@ To help us investigate issues with inspections, do the following:
 2. Add `%system.teamcity.build.tempDir%/inspection*result/** => inspections-reports-data-%build.number%.zip` rule to [Artifact paths](configuring-general-settings.md#Artifact+Paths)
 3. Add `%system.teamcity.build.tempDir%/idea-logs/** => inspections-reports-idea-logs-%build.number%.zip` rule to [Artifact paths](configuring-general-settings.md#Artifact+Paths)
 4. Add `-Didea.log.path=%system.teamcity.build.tempDir%/idea-logs/` to the runner's [JVM command line parameters](inspections.md#Java+Parameters) field.
-5. Run a  new build.
+5. Run a new build.
 6. Send us `inspections-reports-*.zip` files.
- 
 
 ## Uploading Large Data Archives
 

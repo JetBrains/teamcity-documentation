@@ -1,8 +1,7 @@
 [//]: # (title: Using TeamCity as NuGet Feed)
 [//]: # (auxiliary-id: Using TeamCity as NuGet Feed)
 
-If you want to publish your NuGet packages to a limited audience, for example, to use them internally, you can use [TeamCity as a NuGet feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview).        
-__Since TeamCity 2018.2__, you can configure multiple NuGet feeds for a project in TeamCity.
+If you want to publish your NuGet packages to a limited audience, for example, to use them internally, you can use TeamCity [as a NuGet feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview). You can configure multiple NuGet feeds for a TeamCity project.
 
 The built-in TeamCity NuGet feed supports API v1/v2/v3.
 
@@ -13,7 +12,7 @@ TeamCity running on any of the supported operating systems (Windows, Linux, macO
 
 ## Enabling NuGet Feed
 
-To start using TeamCity as a NuGet Server, you need to add a NuGet feed at the project level – in __Project Settings | NuGet Feed__. Multiple NuGet feeds can be configured for a project.
+To start using TeamCity as a NuGet Server, you need to add a NuGet feed at the project level — in __Project Settings | NuGet Feed__. Multiple NuGet feeds can be configured for a project.
 
 Click __Add new NuGet Feed__ to create a feed. Optionally, enable _Automatic packages indexing_ for the current project and its subprojects.
 
@@ -83,7 +82,7 @@ Current reference
  
 <td>
  
- `teamcity.nuget.feed.httpAuth._Root.default.v2`
+`teamcity.nuget.feed.httpAuth._Root.default.v2`
 
 </td></tr></table>
 
@@ -123,10 +122,7 @@ You can add TeamCity NuGet feeds as package sources on your developer machine. F
 You can use TeamCity NuGet feeds to restore packages in your builds via the [NuGet Installer](nuget-installer.md) and [NuGet Publish](nuget-publish.md) build runners, or the [.NET](net.md) runner with the MSBuild `restore` target. Obsolete [MSBuild](msbuild.md) and [Visual Studio (sln)](visual-studio-sln.md) runners are also supported.   
 TeamCity uses own [credential provider](https://docs.microsoft.com/en-us/nuget/reference/extensibility/nuget-exe-credential-providers) to automatically authenticate requests to the private TeamCity NuGet feeds.
 
-<tip>
-
-The packages available in the feed are bound to the builds' artifacts: they are removed from the feed when the artifacts of the build which produced them are [cleaned up](clean-up.md). To avoid clean-up of artifacts in a specific build, [pin this build](pinned-build.md).
-</tip>
+>The packages available in the feed are bound to the builds' artifacts: they are removed from the feed when the artifacts of the build which produced them are [cleaned up](clean-up.md). To avoid clean-up of artifacts in a specific build, [pin this build](pinned-build.md).
 
 Internet Explorer settings may need to be set to trust the TeamCity server when working in a mixed authentication environment.
 

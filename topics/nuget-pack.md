@@ -5,11 +5,7 @@ The _NuGet Pack_ build runner allows building a NuGet package from a given speci
 
 <include src="nuget.md" include-id="nuget-OS"/>
 
-<tip>
-
-To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View DSL__ in the sidebar.
-
-</tip>
+>To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View DSL__ in the sidebar.
 
 Configure the following options of the NuGet Pack runner:
 
@@ -19,20 +15,17 @@ Configure the following options of the NuGet Pack runner:
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 NuGet.exe
-
 
 </td>
 
@@ -44,7 +37,6 @@ Select a NuGet version to use from the drop-down menu ([NuGet](nuget.md) must be
 
 An appropriate version of .NET Framework must be installed on the agent machine, depending on the used `NuGet.exe` version: NuGet 2.8.6+ requires .NET 4.5+, earlier NuGet versions require .NET 4.0.
 </note>
-
 
 </td></tr><tr>
 
@@ -100,13 +92,11 @@ Select an option from the drop-down menu to specify the directory where the file
 
 Output directory
 
-
 </td>
 
 <td>
 
 Specify the path where to put the generated NuGet package.
-
 
 </td></tr><tr>
 
@@ -114,13 +104,11 @@ Specify the path where to put the generated NuGet package.
 
 Сlean output directory
 
-
 </td>
 
 <td>
 
 Clean the directory before packing.
-
 
 </td></tr><tr>
 
@@ -169,8 +157,8 @@ Options
 
 <td>
 
-__Create tool package__ – check the box to place the output files of the project to the `tool` folder.    
-__Include sources and symbols__ – check the box to create a package containing sources and symbols. When specified with a nuspec, it creates a regular NuGet package file and the corresponding symbols package (needed for publishing the sources to [Symbolsource](http://www.symbolsource.org/) )
+__Create tool package__ — check the box to place the output files of the project to the `tool` folder.    
+__Include sources and symbols__ — check the box to create a package containing sources and symbols. When specified with a nuspec, it creates a regular NuGet package file and the corresponding symbols package (needed for publishing the sources to [Symbolsource](http://www.symbolsource.org/) )
 
 </td></tr><tr>
 

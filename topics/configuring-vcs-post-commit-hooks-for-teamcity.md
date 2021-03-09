@@ -1,13 +1,15 @@
 [//]: # (title: Configuring VCS Post-Commit Hooks for TeamCity)
 [//]: # (auxiliary-id: Configuring VCS Post-Commit Hooks for TeamCity)
 
+By default, TeamCity uses a polling approach to detect changes in a VCS repository, that is for each [VCS root](vcs-root.md). It periodically sends requests to the version control repository server to find out whether there are new revisions. For large installations with hundreds of VCS roots, this may create a noticeable load on the VCS server and on TeamCity.
+
+To avoid background polling, it is possible to set up a post-commit hook on the VCS server, which will notify TeamCity to start checking for changes procedure. This way, TeamCity will make background requests for changes detection only when such changes are available.
+
+>If you are using GitHub, try the external [TeamCity Commit Hooks plugin](https://github.com/JetBrains/teamcity-commit-hooks).
+
 ## Overview
 
-By default TeamCity uses a polling approach to detect changes in a VCS repository, that is for each VCS Root, it periodically sends requests to the version control repository server to find out whether there are new revisions. For large installations with hundreds of VCS roots, this may create a noticeable load on the VCS server and on TeamCity itself.
-
-To avoid background polling, it is possible to set up a post\-commit hook on the VCS server, which will notify TeamCity to start checking for changes procedure. This way TeamCity will make background requests for changes detection only when such changes are available.
-
-Even with commit hooks configured and working properly TeamCity still makes requests for changes on the server start and on each build queuing (or starting) to ensure the latest changes are used even if commit hooks stopped to function.
+Even with commit hooks configured and working properly, TeamCity still makes requests for changes on the server start and on each build queuing (or starting) to ensure the latest changes are used even if commit hooks stopped to function.
 
 When a commit hook call comes in, TeamCity starts checking for changes in VCS Roots which match the request.
 If a change is found during the check, TeamCity automatically increases the [VCS polling interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (the minimum after the increase is 15 minutes, maximum is 4 hours, increased by 2 times on each successful check). If the commit hook stops working (for example, TeamCity finds a change in a VCS root which it did not receive a commit hook call for), the [VCS polling interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) value is reset to default.
@@ -36,7 +38,7 @@ vcsRoot:(type:<TYPE>,property:(name:<URL_PROPERTY_NAME>,value:<VCS_REPOSITORY_UR
 
 ```
 
-Commit hooks examples for UNIX\-based VCS servers are described below.
+Commit hooks examples for UNIX-based VCS servers are described below.
 
 ## Post-commit generic script
 
@@ -63,9 +65,8 @@ Set the  variables according to your TeamCity server. The user must have __View 
 If your TeamCity server uses a custom SSL certificate, you'll need to pass `-k` or  `--cacert /path/to/correct/internal/CACertificate` parameter to the `curl` command above.
 </note>
 
- 
-
 ## Setting up post-receive hook on Git server
+
 1\. Locate the Git repository root on the target VCS server. It should contain the `.git/hooks` directory with some templates.
 
 2\. Create the `.git/hooks/post-receive` file with a line:
@@ -75,7 +76,7 @@ If your TeamCity server uses a custom SSL certificate, you'll need to pass `-k` 
 
 ```
 
-where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL\-escaped. Note that locator has `matchType:contains` in it, which means you can specify some part of URL `too.file`.
+where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped. Note that locator has `matchType:contains` in it, which means you can specify some part of URL `too.file`.
 
 3\. Make sure that both `teamcity-trigger.sh` and `hooks/post-receive` scripts can be read and executed by Git user(s). You may need to execute the following command:
     
@@ -83,8 +84,6 @@ where `<VCS root repository URL>` must be replaced with the repository URL speci
 chmod 755 /path/to/teamcity-trigger.sh /path/to/git_root/.git/hooks/post-receive
 
 ```
-
-
 
 ## Setting up hook on Mercurial server
 
@@ -98,7 +97,7 @@ changegroup = /path/to/teamcity-trigger.sh 'vcsRoot:(type:mercurial,count:99999)
 
 ```
 
-where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL\-escaped. Note that the locator has `matchType:contains` in it, which means you can specify some part of the URL too.
+where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped. Note that the locator has `matchType:contains` in it, which means you can specify some part of the URL too.
 
 3\. Make sure that `teamcity-trigger.sh` is executable. You may need to execute the following command:
 
@@ -106,7 +105,6 @@ where `<VCS root repository URL>` must be replaced with the repository URL speci
 chmod 755 /path/to/teamcity-trigger.sh
 
 ```
-
 
 ## Setting up post-commit hook on Subversion server
 
@@ -118,7 +116,7 @@ chmod 755 /path/to/teamcity-trigger.sh
 /path/to/teamcity-trigger.sh 'vcsRoot:(type:svn,count:99999),property:(name:url,value:<VCS root repository url>,matchType:contains,ignoreCase:true),count:99999'
 ```
 
-where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL\-escaped. Note that the locator has `matchType:contains` in it, which means you can specify some part of URL too.
+where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped. Note that the locator has `matchType:contains` in it, which means you can specify some part of URL too.
 
  
 3\. Make sure that both `teamcity-trigger.sh` and `hooks/post-commit` script can be read and executed by the process of the Subversion server. You may need to execute the following command:
@@ -141,7 +139,7 @@ check-for-changes-teamcity change-commit //depot/project1/... "/path/teamcity-tr
 
 
 where `<VCS Root locator>` can be one of the following:
-* for Stream\-based VCS roots:
+* for Stream-based VCS roots:
 
 
 ```Shell
@@ -149,23 +147,21 @@ vcsRoot:(type:perforce,count:99999),property:(name:stream,value://streamdepot/st
 
 ```
 
-* for Client\-based VCS roots:
+* for Client-based VCS roots:
 
 ```Shell
 vcsRoot:(type:perforce,count:99999),property:(name:client,value:<client name>,matchType:contains,ignoreCase:true),count:99999
 
 ```
 
-* for Client\-mapping VCS roots:
+* for Client-mapping VCS roots:
 
 ```Shell
 vcsRoot:(type:perforce,count:99999),property:(name:client-mapping,value:<some unique part of client mapping>,matchType:contains,ignoreCase:true),count:99999
 
 ```
 
-Where `<some unique part of client mapping>` should match the 
-Perforce depot path in TeamCity VCS Root after all parameter resolution. 
-For the rule `check-for-changes-teamcity change-commit //depot/project1/...` it should probably be `//depot/project1/`.
+Where `<some unique part of client mapping>` should match the Perforce depot path in TeamCity VCS Root after all parameter resolution. For the rule `check-for-changes-teamcity change-commit //depot/project1/...` it should probably be `//depot/project1/`.
 
 Each such `check-for-changes-teamcity` rule line describes an association between path with commit (`//depot/project1`) and a set of VCS roots which should be checked for changes.
 
@@ -208,8 +204,6 @@ http://teamcity/app/rest/vcs-root-instances/commitHookNotification?locator=vcsRo
 
 ```
 
-
-
 ### Git Repository
 
 
@@ -219,7 +213,7 @@ vcsRoot:(type:jetbrains.git,count:99999),property:(name:url,value:<VCS root repo
 ```
 
 
-where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL\-escaped. Example:
+where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped. Example:
 
 
 ```Shell
@@ -268,9 +262,9 @@ curl --header "Authorization: Bearer $ACCESS_TOKEN" -X POST "$SERVER/app/rest/vc
 
 <note>
 
-A commit hook supports matching more than one VCS root, but it is highly recommended to limit the matched VCS roots only to those affected by the change generating the event.
+A commit hook supports matching more than one VCS root, but it is highly recommended limiting the matched VCS roots only to those affected by the change generating the event.
 
-It is recommended to set up a commit hook per a VCS repository. In this case on a check-in to some repository, TeamCity will not spend resources trying to find commits in other non\-related VCS roots which were also matched by the commit hook.
+It is recommended to set up a commit hook per a VCS repository. In this case on a check-in to some repository, TeamCity will not spend resources trying to find commits in other non-related VCS roots which were also matched by the commit hook.
 
 By default, the number of VCS roots matched by a commit hook in TeamCity is limited by 100. If you want to match more than 100 VCS roots, add the count parameter: `<locator>,count:1000`. Check the corresponding [request description](https://www.jetbrains.com/help/teamcity/rest/manage-vcs-roots.html).
 </note>

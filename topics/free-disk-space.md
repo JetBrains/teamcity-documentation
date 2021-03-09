@@ -1,6 +1,8 @@
 [//]: # (title: Free Disk Space)
 [//]: # (auxiliary-id: Free Disk Space)
 
+>This page is about the _Free disk space_ build feature. If you want to learn how to automatically clean up the TeamCity data, see [this section](clean-up.md). To learn where and how TeamCity stores its configuration settings, see [this section](teamcity-data-directory.md).
+
 The _Free disk space_ [build feature](adding-build-features.md) allows ensuring certain free disk space __on the agent__ before the build by deleting files managed by the TeamCity agent (other build's checkout directories and various caches).   
 When the feature is not configured, the default free space for a build is 3 GB.
 
@@ -17,11 +19,11 @@ The data cleaned includes:
 * cleaning the local [Docker caches](integrating-teamcity-with-docker.md#Docker+Disk+Space+Cleaner) 
 * cleaning the local [NuGet packages caches](nuget.md#NuGet+Packages+Cache+Clean-up+on+Agents)
 
-If you need to make sure a checkout directory is never deleted while freeing disk space, set the `system.teamcity.build.checkoutDir.expireHours` property to `never`. See more at [Build Checkout Directory](build-checkout-directory.md).
+If you need to make sure a checkout directory is never deleted while freeing disk space, set the `system.teamcity.build.checkoutDir.expireHours` property to `never`. Read more about [Build Checkout Directory](build-checkout-directory.md).
 
 ## Configuring free disk space 
 
-You can use the Free disk space [build feature](adding-build-features.md) to alter the default 3 GB of required disk space. Configure the settings below:
+You can use the Free Disk Space [build feature](adding-build-features.md) to alter the default 3 GB of required disk space. Configure the settings below:
 
 <table><tr>
 
@@ -47,7 +49,6 @@ Required free space
 
 You can specify a custom free disk space value here (in bytes or using one of the kb, mb, gb or tb suffixes).
 
-
 </td></tr><tr>
 
 <td>
@@ -67,7 +68,7 @@ Check the box to add the corresponding build failure condition.
 For compatibility reasons  the free disk space value can be specified via the properties below. However, using the Free disk space build feature is recommended as the properties can be removed in the future TeamCity versions.
 
 The properties can be defined:
-* globally for a build agent (in agent's [`buildAgent.properties`](build-agent-configuration.md) file)
+* globally for a build agent (in the agent's [`buildAgent.properties`](build-agent-configuration.md) file)
 * for a particular build configuration by specifying its system properties.
 
 The required free space value is defined with the following properties:
@@ -81,10 +82,9 @@ Example: `system.teamcity.agent.ensure.free.space = 5gb`
 
 ### Configuring artifacts cache
 
-A TeamCity build agent maintains a cache of published and downloaded build artifacts to reduce network transfers to the same agent. The cache is stored in the \<[Build Agent Home](agent-home-directory.md)\>\system\.artifacts_cache directory and is cleaned automatically provided the _Free disk space_ build feature is configured correctly.
+A TeamCity build agent maintains a cache of published and downloaded build artifacts to reduce network transfers to the same agent. The cache is stored in the `<[Build Agent Home](agent-home-directory.md)>\system\.artifacts_cache` directory and is cleaned automatically provided the _Free disk space_ build feature is configured correctly.
 
 If caching artifacts is undesirable (for example, when the artifacts are large and not used within TeamCity, or if the artifacts cache directory is located not on the same disk as the build checkout directory, or if the builds do not define the _Free disk space_ build feature and the default 3Gb is not sufficient for a build), caching artifacts on the agent can be __turned off__ by adding the `teamcity.agent.filecache.publishing.disabled=true` configuration parameter to a project or one of the build configurations of a project. However, the agent will still cache artifacts downloaded as artifact dependencies.
-
 
 [//]: # (Internal note. Do not delete. "Free disk spaced145e166.txt")
 
