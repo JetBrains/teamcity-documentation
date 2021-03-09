@@ -1,6 +1,13 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2020.2.2 to 2020.2.3
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-202023"}
+
+* [SBT](http://www.scala-sbt.org/), used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.4.7.
+
 ## Changes from 2020.2.1 to 2020.2.2
 
 ### IntelliJ Platform Compatibility
