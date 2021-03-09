@@ -104,3 +104,7 @@ __10 March 2021__
 
 [**TW-68591**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68591) — Python script with non-ASCII symbols in name. Bad encoding in build log in case there are syntax errors.  
 [**TW-69326**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69326) — Inconsistent capitalization in Python build step
+
+### Security Problem
+
+12 security problems have been fixed.
