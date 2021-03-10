@@ -928,7 +928,7 @@ You can define a list of directories separated by an OS-dependent character.
 
 >The Java version format used prior to TeamCity 2020.1 is deprecated. See [these upgrade notes](upgrade-notes.md#New+format+of+env.JDK_+environment+variables) for details.
 >
-{type="warning"}
+{type="warning" product="tc"}
 
 For each version of Java, the following variable is defined: `JDK_<major>_<minor>[_x64]`. For example, `env.JDK_1_6` (Java 6) or `env.JDK_14_0_x64` (Java 14 64-bit).
 
