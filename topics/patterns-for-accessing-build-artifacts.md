@@ -56,10 +56,12 @@ __To download all artifacts in a .zip archive__, use:
 ```
 
 where
-* __`BUILD_TYPE_EXT_ID`__ is a [build configuration ID](configuring-general-settings.md).
-* __`BUILD_SPECIFICATION`__ can be `.lastFinished`, `.lastSuccessful` or `.lastPinned`, specific `buildNumber` or [build id](working-with-build-results.md#Internal+Build+ID) in format `BUILD_ID:id`.
-* __`ARTIFACT_PATH`__ is a path to the artifact on the TeamCity server. This path can contain a `{build.number}` pattern (`%7Bbuild.number%7D`) which will be replaced by TeamCity with the build number of the build whose artifact is retrieved. By default, the archive with all artifacts does not include [hidden artifact](build-artifact.md#Hidden+Artifacts). To include them, add `?showAll=true` at the end of the corresponding URL.
+* `BUILD_TYPE_EXT_ID` is a [build configuration ID](configuring-general-settings.md).
+* `BUILD_SPECIFICATION` can be `.lastFinished`, `.lastSuccessful` or `.lastPinned`, specific `buildNumber` or [build id](working-with-build-results.md#Internal+Build+ID) in format `BUILD_ID:id`.
+* `ARTIFACT_PATH` is a path to the artifact on the TeamCity server. This path can contain a `{build.number}` pattern (`%7Bbuild.number%7D`) which will be replaced by TeamCity with the build number of the build whose artifact is retrieved. By default, the archive with all artifacts does not include [hidden artifact](build-artifact.md#Hidden+Artifacts). To include them, add `?showAll=true` at the end of the corresponding URL.   
 To download artifact from the last finished, last successful, last pinned or tagged build in a specific branch, add the `?branch=<branch_name>` parameter at the end of the corresponding URL.
+  
+Since 2020.1.4, this endpoint allows downloading archives larger than 4 Gb only if the `teamcity.internal.artifacts.useZip64=false` [configuration parameter](configuring-build-parameters.md) is provided, either on a build configuration or project level.
 
 ## Obtaining Artifacts from an Archive
 

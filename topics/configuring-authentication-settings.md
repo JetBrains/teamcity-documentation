@@ -25,7 +25,7 @@ TeamCity provides several preconfigured authentication options (presets) to cove
   * [GitHub Enterprise](#GitHub+Enterprise)
   * [GitLab.com](#GitLab.com)
   * [GitLab CE/EE](#GitLab+CE%2FEE)
-  
+
 >If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure single sign-on (SSO) from the TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).
 >
 {product="tc"}
@@ -75,6 +75,15 @@ To add a module:
 
 >TeamCity plugins can provide [additional authentication modules](https://plugins.jetbrains.com/docs/teamcity/custom-authentication-module.html).
 
+### General Authentication Settings
+
+In the __General Settings__ block, you can:
+* Enable the [guest login](enabling-guest-login.md) on the server and change the guest username. Please read our [security notes](security-notes.md#caution-guest-login) before enabling this option.
+* Customize the view of the login form: enter an introductory text and hide the default username/password fields (convenient if you prefer [authentication through third-party services](#HTTP+%2F+SSO+Authentication+Modules)).
+* Enable the [per-project authorization mode](role-and-permission.md#Changing+Authorization+Mode).
+* Enforce the [email verification](enabling-email-verification.md) for all TeamCity users.
+* Log out all currently signed in users and delete all [personal access tokens](managing-your-user-account.md#Managing+Access+Tokens).
+
 ## User Authentication Settings
 
 The very first time TeamCity server starts with no users (and no administrator), so the first user is prompted for the administrator account. If you are not prompted for the administrator account, refer to [How To Retrieve Administrator Password](how-to.md#Retrieve+Administrator+Password) for a resolution.
@@ -101,7 +110,7 @@ Let's imagine that the administrator had the "jsmith" TeamCity username and used
 ### Special User Accounts
 {product="tc"}
 
-By default, TeamCity has a [Super User](super-user.md) account with maximum permissions and a [Guest User](guest-user.md) with minimal permissions. These accounts have no personal settings such as the [__Changes__](viewing-your-changes.md) page and Profile information as they are not related to any particular person but rather intended for special use cases.
+By default, TeamCity has a [Super User](super-user.md) account with maximum permissions and a [Guest User](guest-user.md) with minimal permissions. These accounts have no personal settings such as the __[Changes](viewing-your-changes.md)__ page and Profile information as they are not related to any particular person but rather intended for special use cases.
 
 ## Credentials Authentication Modules
 
