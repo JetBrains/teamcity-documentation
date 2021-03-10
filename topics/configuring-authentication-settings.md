@@ -78,8 +78,8 @@ To add a module:
 ### General Authentication Settings
 
 In the __General Settings__ block, you can:
-* Enable the [guest login](enabling-guest-login.md) on the server and change the guest username. Please read our [security notes](security-notes.md) before enabling this option.
-* Customize the view of the login form: enter an introductory text and hide the default username/password fields (convenient if you prefer [authentication through third-party services](#Basic+HTTP+Authentication)).
+* Enable the [guest login](enabling-guest-login.md) on the server and change the guest username. Please read our [security notes](security-notes.md#caution-guest-login) before enabling this option.
+* Customize the view of the login form: enter an introductory text and hide the default username/password fields (convenient if you prefer [authentication through third-party services](#HTTP+%2F+SSO+Authentication+Modules)).
 * Enable the [per-project authorization mode](role-and-permission.md#Changing+Authorization+Mode).
 * Enforce the [email verification](enabling-email-verification.md) for all TeamCity users.
 * Log out all currently signed in users and delete all [personal access tokens](managing-your-user-account.md#Managing+Access+Tokens).

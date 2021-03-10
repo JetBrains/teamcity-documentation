@@ -85,6 +85,8 @@ __Use per-project authorization__.
 
 To tighten security even more, you can also make use of [per-project authorization](role-and-permission.md#Per-Project+Authorization+Mode). This way, your developers could, for example, have access only to the compilation part of your build chain, while devops could access and run the deployment part.
 
+<anchor name="caution-guest-login"/>
+
 __Do not enable Guest Login__.
 
 By default, [logging into TeamCity anonymously](enabling-guest-login.md) is disabled. Make sure not to enable it on the production TeamCity server instances that are exposed to the internet, unless you want external users to be able to see all your builds and the associated log files/artifacts. If enabled, user roles should be carefully reviewed for guests and the [All Users](user-group.md#%22All+Users%22+Group) group.
