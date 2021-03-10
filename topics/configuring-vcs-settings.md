@@ -7,7 +7,7 @@ A Version Control System (VCS) is a system for tracking the revisions of the pro
 A Version Control System (VCS) is a system for tracking the revisions of the project source files. It is also known as SCM (source code management) or a revision control system. The following VCSs are supported by TeamCity out-of-the-box: [Git](git.md), [Subversion](subversion.md), [Mercurial](mercurial.md), [Perforce](perforce.md), [Team Foundation Server](team-foundation-server.md).
 {product="tcc"}
 
-Connection to a version control system is defined by a TeamCity [VCS root](vcs-root.md). A project or a [build configuration](build-configuration.md) in TeamCity can have one or more VCS roots attached; a build configuration can also define the workspace for the builds via other checkout options like [Checkout Rules](vcs-checkout-rules.md).
+Connection to a version control system is defined by a TeamCity [VCS root](vcs-root.md). A [project](project.md) or a [build configuration](build-configuration.md) in TeamCity can have one or more VCS roots attached; a build configuration can also define the workspace for the builds via other checkout options like [Checkout Rules](vcs-checkout-rules.md).
 
 TeamCity always monitors the repositories from the server-side to detect changes and display them in the UI. Depending on the specified [VCS Checkout Mode](vcs-checkout-mode.md) the actual repository checkout can also happen on the agent-side.
 

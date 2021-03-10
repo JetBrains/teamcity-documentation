@@ -73,7 +73,6 @@ Specify here the exact [build number](configuring-general-settings.md#Build+Numb
 
 Build tag
 
-
 </td>
 
 <td>
@@ -81,19 +80,17 @@ Build tag
 _This field appears if you have selected last finished build with specified tag in the __Get artifacts from__ list_.   
 Specify here the tag of the build whose artifacts are to be used. When resolving the dependency, TeamCity will look for the last successful build with the given tag and use its artifacts.
 
-
 </td></tr><tr>
 
 <td>
 
 Build branch filter
 
-
 </td>
 
 <td>
 
-_This field appears if the dependency has a [branch specified](working-with-feature-branches.md#Configuring+branches) in the VCS Root settings_. Allows setting a [branch filter](branch-filter.md) to limit source builds only to those in the matching branches. If not specified, the default branch is used.
+_This field appears if the dependency has a [branch specified](working-with-feature-branches.md#Configuring+branches) in the VCS root settings_. Allows setting a [branch filter](branch-filter.md) to limit source builds only to those in the matching branches. If not specified, the default branch is used.
 
 </td></tr><tr>
 
