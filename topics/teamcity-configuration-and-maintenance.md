@@ -81,7 +81,7 @@ The directory containing TeamCity internal caches (of the VCS repository content
 
 </td></tr><tr>
 
-<td>
+<td id="server-url">
 
 Server URL
 
@@ -254,6 +254,6 @@ Artifacts' URL
 
 <td>
   
-Specify a URL to serve build artifacts from. The URL must be different from the Server URL.
+Specify a URL to serve build artifacts from. It is required to be able to use artifacts for displaying custom reports. The URL must be different from the [Server URL](#server-url). Make sure that your reverse proxy and DNS are [properly configured](multinode-setup#Domain+Isolation+Proxy+Configuration). 
 
 </td></tr></table>
