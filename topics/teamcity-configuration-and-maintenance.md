@@ -246,7 +246,7 @@ Secure the server by isolating user-supplied content under a separate domain.
 
 </td></tr><tr>
 
-<td>
+<td id="artifacts-url">
 
 Artifacts' URL
 
