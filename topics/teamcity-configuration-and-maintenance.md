@@ -242,6 +242,7 @@ Enable isolation protection
 
 <td>
 
+Secure the server by isolating user-supplied content under a separate domain.
 
 </td></tr><tr>
 
@@ -252,5 +253,7 @@ Artifacts' URL
 </td>
 
 <td>
+  
+Specify a URL to serve build artifacts from. The URL must be different from the Server URL.
 
 </td></tr></table>
