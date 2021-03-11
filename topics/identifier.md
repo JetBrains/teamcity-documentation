@@ -58,6 +58,6 @@ TeamCity projects, build configurations, and VCS roots have a UUID which is an a
             <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>
             <a href="accessing-server-by-http.md">Accessing Server by HTTP</a>
             <a href="patterns-for-accessing-build-artifacts.md">Patterns For Accessing Build Artifacts</a>
-            <a href="rest-api.md">REST API</a>
+            <a href="https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html">REST API</a>
         </category>
 </seealso>

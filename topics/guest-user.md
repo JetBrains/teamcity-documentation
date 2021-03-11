@@ -23,7 +23,7 @@ http://buildserver:8111/guestAuth/repository/download/<BuildConfigName>/<BuildID
 <seealso>
         <category ref="concepts">
             <a href="role-and-permission.md">Role and Permission</a>
-            <a href="super-user.md">Super User</a>
+            <a href="super-user.md" product="tc">Super User</a>
         </category>
         <category ref="admin-guide">
             <a href="enabling-guest-login.md">Enabling Guest Login</a>

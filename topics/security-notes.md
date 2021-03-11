@@ -159,6 +159,7 @@ Note that binaries of the agent plugins installed on the server are available to
 __Use HTTPS everywhere__.
 
 Access to the TeamCity web interface is [secured with HTTPS](using-https-to-access-teamcity-server.md) (for example, with the help a [proxy server](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) like NGINX). Make sure that best practices for securing web applications are employed for the TeamCity web interface: for example, that it is not possible to access the server using HTTP the protocol. The reverse proxy does not strip the _Referer_ request header.
+{product="tc"}
 
 To learn how to configure a connection between a TeamCity agent and the TeamCity server, see [this section](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).
 
@@ -318,10 +319,10 @@ Under no circumstances these versions of Apache Struts are used to handle any HT
         <a href="using-https-to-access-teamcity-server.md">Using HTTPS to Access TeamCity Server</a>
     </category>
     <category ref="howto">
-        <a href="how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server">How to Set Up TeamCity behind a Proxy Server</a>
+        <a href="how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server" product="tc">How to Set Up TeamCity behind a Proxy Server</a>
         <a href="how-to.md#Configure+HTTPS+for+TeamCity+Web+UI">How to Configure HTTPS for TeamCity Web UI</a>
-        <a href="how-to.md#Configure+TeamCity+to+Use+Proxy+Server+for+Outgoing+Connections">How to Configure TeamCity to Use Proxy Server for Outgoing Connections</a>
+        <a href="how-to.md#Configure+TeamCity+to+Use+Proxy+Server+for+Outgoing+Connections" product="tc">How to Configure TeamCity to Use Proxy Server for Outgoing Connections</a>
         <a href="how-to.md#Configure+TeamCity+Agent+to+Use+Proxy+To+Connect+to+TeamCity+Server">How to Configure TeamCity Agent to Use Proxy To Connect to TeamCity Server</a>
-        <a href="how-to.md#Personal+User+Data+Processing">Personal User Data Processing</a>
+        <a href="how-to.md#Personal+User+Data+Processing" product="tc">Personal User Data Processing</a>
     </category>
 </seealso>

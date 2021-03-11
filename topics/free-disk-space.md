@@ -90,7 +90,7 @@ If caching artifacts is undesirable (for example, when the artifacts are large a
 
  <seealso>
         <category ref="admin-guide">
-            <a href="teamcity-disk-space-watcher.md">TeamCity Server Disk Space Watcher</a>
+            <a href="teamcity-disk-space-watcher.md" product="tc">TeamCity Server Disk Space Watcher</a>
             <a href="build-failure-conditions.md">Build Failure Conditions</a>
         </category>
 </seealso>
