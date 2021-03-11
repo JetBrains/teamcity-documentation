@@ -150,6 +150,10 @@ After configuring the proxy, remember to update the _Server URL_ on the __Admini
     
 </tip>
 
+#### Domain Isolation Proxy Configuration
+
+When enabling the [domain isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation), make sure to configure the `CNAME` record for the artifacts' domain to point to your reverse proxy.
+
 ### Firewall Settings
 
 Firewall settings should allow accessing secondary nodes from the agents and from the main TeamCity server (the main server also communicates with the nodes by HTTP).
