@@ -143,16 +143,12 @@ backend tc-ha
    server tc_ro_node %TC_RO_NODE_URL:8111% backup check resolvers dns
 
 ```
-
-<tip>
     
-After configuring the proxy, remember to update the _Server URL_ on the __Administration | Global Settings__ page.
-    
-</tip>
+>After configuring the proxy, remember to update the _Server URL_ on the __Administration | Global Settings__ page.
 
 #### Domain Isolation Proxy Configuration
 
-When enabling the [domain isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation), make sure to configure the `CNAME` record for the artifacts' domain to point to your reverse proxy.
+The [domain isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) mode requires configuring a dedicated domain for serving artifacts. Make sure to add a new record in your DNS pointing from this domain to the proxy address: for example, it could be a [`CNAME` record](https://en.wikipedia.org/wiki/CNAME_record) pointing to the proxy URL.
 
 ### Firewall Settings
 
