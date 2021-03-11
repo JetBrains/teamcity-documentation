@@ -254,6 +254,6 @@ Artifacts' URL
 
 <td>
   
-Specify a URL to serve build artifacts from. It is required to be able to use artifacts for displaying custom reports. The URL must be different from the [Server URL](#server-url). Make sure that your reverse proxy and DNS are [properly configured](multinode-setup#Domain+Isolation+Proxy+Configuration). 
+Specify a URL to serve build artifacts from. It is required to be able to use artifacts for displaying custom reports. The URL must be different from the [Server URL](#server-url). Make sure that your reverse proxy and DNS are [properly configured](multinode-setup.md#Domain+Isolation+Proxy+Configuration). 
 
 </td></tr></table>
