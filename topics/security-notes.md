@@ -320,7 +320,7 @@ Under no circumstances these versions of Apache Struts are used to handle any HT
     </category>
     <category ref="howto">
         <a href="how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server" product="tc">How to Set Up TeamCity behind a Proxy Server</a>
-        <a href="how-to.md#Configure+HTTPS+for+TeamCity+Web+UI">How to Configure HTTPS for TeamCity Web UI</a>
+        <a href="how-to.md#Configure+HTTPS+for+TeamCity+Web+UI" product="tc">How to Configure HTTPS for TeamCity Web UI</a>
         <a href="how-to.md#Configure+TeamCity+to+Use+Proxy+Server+for+Outgoing+Connections" product="tc">How to Configure TeamCity to Use Proxy Server for Outgoing Connections</a>
         <a href="how-to.md#Configure+TeamCity+Agent+to+Use+Proxy+To+Connect+to+TeamCity+Server">How to Configure TeamCity Agent to Use Proxy To Connect to TeamCity Server</a>
         <a href="how-to.md#Personal+User+Data+Processing" product="tc">Personal User Data Processing</a>
