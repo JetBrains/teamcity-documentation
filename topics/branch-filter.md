@@ -213,7 +213,7 @@ If there are multiple branch filters configured atop a single root, the followin
 
 ## Branch Filter Format
 
-To filter branches, use a newline-delimited list of `+|-:logical_branch_name` rules, where `logical_branch_name` is the name displayed in the TeamCity UI (for example, `master`).
+To filter branches, use a newline-delimited list of `+|-:logical_branch_name` rules, where `logical_branch_name` is the name displayed in the TeamCity UI (for example, `master`). The name is case-sensitive.
 
 <chunk include-id="OR-syntax-tip">
 
