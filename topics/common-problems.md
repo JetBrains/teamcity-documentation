@@ -426,12 +426,12 @@ For __MySQL 5.7\+ and MariaDB 10.2\+__ use the defaults, no changes are required
 
 ### 'Incorrect string value' error in MySQL
 
-1. Use the `utf8mb4` character set in MySQL and set up the MySQL server to use `utf8mb4` by default using the following options in the `[mysqld]` section in `my.cnf`: 
-
+1. Make sure the database uses the `utf8mb4` character set and `utf8mb4_bin` collation. If that's not the case, [change the DB character set and collation](#Resolve+character+set%2Fcollation-related+problems).
+2. If the character set and collation are set properly, but the new errors still occur, the problem is that default charset in MySQL is not utf8mb4. Set up the MySQL server to use `utf8mb4` by default using the following options in the `[mysqld]` section in `my.cnf`: 
     `character_set_server = utf8mb4`   
     `collation_server = utf8mb4_bin`
     
-2.  Restart MySQL for the changes to `my.cnf` to take effect.
+3.  Restart MySQL for the changes to `my.cnf` to take effect.
 
 ### 'This driver is not configured for integrated authentication' error with MS SQL database
 
