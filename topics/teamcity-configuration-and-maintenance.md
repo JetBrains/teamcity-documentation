@@ -258,16 +258,13 @@ Artifacts' URL
   
 Specify a URL to serve build artifacts from. The URL must be different from the [Server URL](#server-url).
 
-Once the URL is specified then upon a request for a content of some artifact TeamCity will redirect a browser to a short-lived URL having the artifacts URL as a base one.
-The URL is short-lived and will expire after some time to prevent unauthorized access to the artifact. 
-Upon accessing the expired URL a regular authentication will be performed and, a new URL will be generated. 
+On receiving a request for a content of some artifact, TeamCity will redirect your browser to a temporary URL that uses this artifacts' URL as a base. The temporary URL expires after some time to prevent unauthorized access to the artifact. Upon accessing the expired URL, a regular authentication will be performed and a new URL will be generated.  
 The same logic applies to the [custom report tabs](including-third-party-reports-in-the-build-results.md) because their content also comes from the build artifacts.
 
-For a personal TeamCity installation which is accessible via localhost only, a URL like `http://127.0.0.1[:port]/` would be sufficient.
+For a personal TeamCity installation, which is accessible via localhost only, a URL like `http://127.0.0.1[:port]/` would be sufficient.
 
-For a TeamCity server used by an organization a new DNS name, or a [`CNAME`](https://en.wikipedia.org/wiki/CNAME_record) should be registered either for the machine where the server is installed or for a reverse proxy server if TeamCity is accessible through the proxy.
-Then the URL with this new hostname should be specified in the artifacts URL.
+For a TeamCity server used by an organization, a new DNS name, or a [`CNAME`](https://en.wikipedia.org/wiki/CNAME_record), should be registered either for the machine where the server is installed or for a reverse proxy server if TeamCity is accessible through the proxy. The URL with this new hostname should be specified in the artifacts' URL.
 
-Note: as this is a special URL which exists for serving artifacts only, users will not be able to sign in to the TeamCity interface via this URL.
+Note: as this is a special URL which exists for serving artifacts only, users will not be able to sign in to the TeamCity interface via it.
 
 </td></tr></table>
