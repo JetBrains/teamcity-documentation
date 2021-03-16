@@ -209,7 +209,6 @@ In this section, you can specify a Docker image which will be [used to run the b
 
 The Gradle build runner supports code coverage with based on the [IDEA code coverage engine](intellij-idea.md) and [JaCoCo](jacoco.md).
 
-
 <seealso>
         <category ref="admin-guide">
             <a href="intellij-idea.md">IntelliJ IDEA Code Coverage</a>

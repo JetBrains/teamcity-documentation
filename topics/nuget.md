@@ -41,9 +41,7 @@ NuGet build runners are supported on build agents running Windows OS by default.
 
 The NuGet trigger and the NuGet-related build runners require the NuGet command line binary configured on the server. They are automatically distributed to agents once configured. Several versions can be installed and a version of your choice can be set as the default one.
 
-<tip>
-It is recommended to use release versions of NuGet.
-</tip>
+>It is recommended to use release versions of NuGet.
 
 To install `NuGet.exe` on TeamCity:
 1. Go to the __Administration | Tools__ tab.
@@ -53,11 +51,8 @@ To install `NuGet.exe` on TeamCity:
    * If the __Upload__ radio button is selected, specify your own NuGet package.
 4. Specify whether this NuGet version will be default using the related checkbox. 
 5. Click __Add__ to install the selected NuGet version.
- 
-<tip>
 
-Installing NuGet on agents results in agents upgrade.
-</tip>
+>Installing NuGet on agents results in agents upgrade.
 
 ## NuGet Packages Cache Clean-up on Agents
 
@@ -73,7 +68,7 @@ Since TeamCity 2019.2.3, the new automatic package cleaner has been introduced i
 
 ## Authentication in private NuGet Feeds
 
-You can use authentication in [build-in NuGet feeds](using-teamcity-as-nuget-feed.md) or the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials provider will automatically authenticate requests to these feeds.
+You can use authentication in [build-in NuGet feeds](using-teamcity-as-nuget-feed.md) or the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials' provider will automatically authenticate requests to these feeds.
 {product="tc"}
 
 You can use authentication in the feeds specified in the [NuGet feed credentials](nuget-feed-credentials.md) build feature. The credentials' provider will automatically authenticate requests to these feeds.

@@ -3,7 +3,7 @@
 
 VCS triggers automatically start a new build each time TeamCity detects new changes in the configured [VCS roots](vcs-root.md) and displays the change in the pending changes. Only one VCS trigger can be added to a build configuration.
 
-A new VCS trigger with the default settings triggers a build once there are pending changes in the build configuration: the version control is polled for changes according to the [checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) of a VCS root honoring a [VCS commit hook](configuring-vcs-post-commit-hooks-for-teamcity.md) if configured. Only the changes matched by the [checkout rules](vcs-checkout-rules.md) are displayed as pending and thus are processed by the trigger. If several check\-ins are made within short time frame and discovered by TeamCity together, only __one build will be triggered__.
+A new VCS trigger with the default settings triggers a build once there are pending changes in the build configuration: the version control is polled for changes according to the [checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) of a VCS root honoring a [VCS commit hook](configuring-vcs-post-commit-hooks-for-teamcity.md) if configured. Only the changes matched by the [checkout rules](vcs-checkout-rules.md) are displayed as pending and thus are processed by the trigger. If several check-ins are made within short time frame and discovered by TeamCity together, only __one build will be triggered__.
 
 After the last change is detected, a [quiet period](#Quiet+Period+Settings) can be configured to wait for some time without changes before the build is queued.
 
@@ -25,10 +25,10 @@ See also details at the [Build Dependencies](build-dependencies-setup.md) page.
 
 ## Per-check-in Triggering
 
-When this option is __not__ enabled, several check\-ins by different committers can be made; and once they are detected, TeamCity will add only one build to the queue with all of these changes.
+When this option is __not__ enabled, several check-ins by different committers can be made; and once they are detected, TeamCity will add only one build to the queue with all of these changes.
 
-If you have fast builds and enough build agents, you can make TeamCity launch a new build __for each check\-in__ ensuring that no other changes get into the same build.    
-To do that, select the __Trigger a build on each check\-in__ option. If you select the __Include several check\-ins in build if they are from the same committer__ option, and TeamCity will detect a number of pending changes, it will group them by user and start builds having single user changes only.
+If you have fast builds and enough build agents, you can make TeamCity launch a new build __for each check-in__ ensuring that no other changes get into the same build.    
+To do that, select the __Trigger a build on each check-in__ option. If you select the __Include several check-ins in build if they are from the same committer__ option, and TeamCity will detect a number of pending changes, it will group them by user and start builds having single user changes only.
 
 This helps to figure out whose change broke a build or caused a new test failure, should such issue arise.
 
@@ -37,13 +37,11 @@ This helps to figure out whose change broke a build or caused a new test failure
 
 ### Quiet Period Settings
 
-By specifying the quiet period you can ensure the build is not triggered in the middle of non\-atomic check\-ins consisting of several VCS check\-ins.
+By specifying the quiet period you can ensure the build is not triggered in the middle of non-atomic check-ins consisting of several VCS check\-ins.
 
 A __quiet period__ is a period (in seconds) that TeamCity maintains between the moment the last VCS change is detected and a build is added into the queue. If new VCS change is detected in the Build Configuration within the period, the period starts over from the new change detection time. The build is added into the queue only if there were no new VCS changes detected within the quiet period.
 
-
-[//]: # (Internal note. Do not delete. "Configuring VCS Triggersd93e129.txt")    
-
+[//]: # (Internal note. Do not delete. "Configuring VCS Triggersd93e129.txt")
 
 Note that the actual quiet period will not be less than the maximum [checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) among the VCS roots of a build configuration, as TeamCity must ensure that changes were collected at least once during the quiet period. 
 
@@ -71,7 +69,7 @@ To limit the changes that trigger the build, use the VCS trigger rules. You can 
 
 <img src="addRule.png" width="450" alt="Adding trigger rule"/>
 
-Each rule is ether an "include" (starts with "`+`") or an "exclude" (starts with "`-`").
+Each rule is ether an "include" (starts with `+`) or an "exclude" (starts with `-`).
 
 </chunk>
 
@@ -91,7 +89,7 @@ The general syntax for a single rule is:
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
 where:
-* `Ant_like_wildcard`: A [wildcard](wildcards.md) to match the changed file path. Only `*` and `**` patterns are supported, the `?` pattern is __not__ supported. The file paths in the rule can be relative (not started with `/` or `\ `) to match resulting paths on the agent or absolute (started with `/`) to match VCS paths relative to a VCS root. For each file in a change the most specific rule is found (the rule matching the longest file path). The build is triggered if there is at least one file with a matching "include" rule or a file with no matching "exclude" rules.   
+* `Ant_like_wildcard`: A [wildcard](wildcards.md) to match the changed file path. Only `*` and `**` patterns are supported, the `?` pattern is __not__ supported. The file paths in the rule can be relative (not started with `/` or `\`) to match resulting paths on the agent or absolute (started with `/`) to match VCS paths relative to a VCS root. For each file in a change the most specific rule is found (the rule matching the longest file path). The build is triggered if there is at least one file with a matching "include" rule or a file with no matching "exclude" rules.   
 * [`VCS_username`](managing-users-and-user-groups.md): if specified, limits the rule only to the changes made by a user with the corresponding [VCS username](managing-users-and-user-groups.md#VCS+Usernames).
 * `VCS_root_id`: if specified, limits the rule only to the changes from the corresponding VCS root.
 * `VCS_comment_regexp`: if specified, limits the rule only to the changes that contain specified text in the VCS comment. Use the [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) pattern for matching the text in a comment (see examples below). The rule matches if the comment text contains a matched text portion; to match the entire text, include the `^` and `$` special characters.
@@ -99,7 +97,7 @@ where:
 <tip>
 
 When specifying the rules, note that as soon as you enter any `+` rule, TeamCity will change the implicit default from "include all" to "exclude all".    
-To include all the files, use `+:.` rule.   
+To include all the files, use `+:.` rule.
 
 Also, rules are sorted according to path specificity. If you have an explicit inclusion rule for `/some/path`, and exclusion rule `-:user=some_user:.` for all paths, commits to the `/some/path` from `some_user` will be __included__ unless you add a specific exclusion rule for this user and this path at once, like `-:user=some_user:/some/path/**`
 </tip>
@@ -110,7 +108,6 @@ Also, rules are sorted according to path specificity. If you have an explicit in
 {id="trigger-rules-examples-1"}
 
 <chunk include-id="trigger-rules-examples">
-
 
 <table>
 <tr>
@@ -202,7 +199,6 @@ No triggering if the comment consists of the word "oops" only (according to [Jav
 
 </chunk>
 
-
 ### Branch Filter
 {id="branch-filter-1"}
 
@@ -217,8 +213,8 @@ For example, if you specify a comment text in the trigger rules field and provid
 
 ### Triggering a Build on Branch Merge
 
-The VCS trigger is fully aware of branches and will trigger a build once a check\-in is detected in a branch.
+The VCS trigger is fully aware of branches and will trigger a build once a check-in is detected in a branch.
 
 When changes are merged / fast-forwarded from one branch to another, strictly speaking there are no actual changes in the code. By default, the VCS trigger behaves in the following way:
-* When merging/fast forwarding of two non\-default branches: the changes in a build are calculated with regard to previous builds in the same branch, so if there is a build on same commit in a different branch, the trigger will start a build in another branch pointing to the same commit.
-*  If the default branch is one of the branches in the merging/fast\-forwarding, the changes are always calculated against the default branch, if there is a build on same revision in the default branch, TeamCity will not run a new build on the same revision.
+* When merging/fast forwarding of two non-default branches: the changes in a build are calculated with regard to previous builds in the same branch, so if there is a build on same commit in a different branch, the trigger will start a build in another branch pointing to the same commit.
+*  If the default branch is one of the branches in the merging/fast-forwarding, the changes are always calculated against the default branch, if there is a build on same revision in the default branch, TeamCity will not run a new build on the same revision.

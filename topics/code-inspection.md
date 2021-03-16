@@ -10,7 +10,6 @@ Inspection results are reported in the [__Code Inspection__](working-with-build-
 
 TeamCity can also [be integrated with external reporting tools](how-to.md#Integrate+with+Build+and+Reporting+Tools).
 
-
  <seealso>
         <category ref="concepts">
             <a href="build-runner.md">Build Runner</a>

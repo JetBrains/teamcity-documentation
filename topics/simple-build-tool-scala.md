@@ -1,9 +1,9 @@
 [//]: # (title: Simple Build Tool \(Scala\))
 [//]: # (auxiliary-id: viewpage.actionpageId113084133;Simple Build Tool \(Scala\))
 
-The _Simple Build Tool (Scala)_ build runner natively supports [SBT](http://www.scala-sbt.org/) builds: you can build your code, run tests and see the results in a handy way in TeamCity.
+The _Simple Build Tool (Scala)_ build runner natively supports [SBT](http://www.scala-sbt.org/) builds: you can build your code, run tests, and see the results in a handy way in TeamCity.
 
-TeamCity supports SBT versions up to 1.3.x.
+TeamCity supports SBT versions up to 1.4.x.
 
 ## SBT runner settings
 

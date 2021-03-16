@@ -52,7 +52,7 @@ After configuring the connection, go to the settings of the build configuration 
 1. In __Build Features__, add the _Notifications_ feature and select _Slack Notifier_.
 2. Choose the created connection.
 3. Enter the ID of a channel or user who will be receiving notifications.   
-   >Start typing the user ID, and TeamCity will automcomplete it. Alternatively, you can copy this ID from your Slack user profile options (__Profile | More | Copy member ID__).
+   >Start typing the user ID, and TeamCity will autocomplete it. Alternatively, you can copy this ID from your Slack user profile options (__Profile | More | Copy member ID__).
 4. Select the message format. Slack Notifier does not currently support custom notification templates. However, if you select the verbose format, you will be able to choose what information to display in notifications.
 5. Configure a [branch filter](branch-filter.md). If it is not configured, you will receive notifications about the default branch only.
 6. Select [events to watch](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications).

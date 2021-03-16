@@ -59,7 +59,7 @@ The section below describes the required configuration on the database server an
 
 Recommended database server settings:
  * use InnoDB storage engine
- * use [UTF-8 character set](configuring-utf8-character-set-for-mysql.md)
+ * use [utf8mb4 character set](configuring-utf8-character-set-for-mysql.md) (or utf8 if MySQL version is 5.5.2 or earlier)
  * use case\-sensitive collation
  * make sure that the time zone of the JVM running TeamCity and that of MySQL instance are the same using the `my.cnf` file or by configuring time zones at the OS level
  * [see also recommendations for MySQL server settings](how-to.md#Configure+Newly+Installed+MySQL+Server)
@@ -68,7 +68,7 @@ The MySQL user account that will be used by TeamCity must be granted all permiss
 
 
 ```sql
-create database <database-name> collate utf8_bin;
+create database <database-name> collate utf8mb4_bin; -- or utf8_bin on MySQL 5.5.2 or earlier
 create user <user-name> identified by '<password>';
 grant all privileges on <database-name>.* to <user-name>;
 grant process on *.* to <user-name>;
@@ -106,8 +106,6 @@ The schema has to be empty (it must not contain any tables).
 #### On TeamCity server side (with PostgreSQL)
 
 Download the required [PostgreSQL JDBC42 driver](http://jdbc.postgresql.org/download.html#current) and place it into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/lib\/jdbc directory (remove the existing files there, if any). Proceed with the TeamCity setup.
-
-For TeamCity prior to 2018.1.2, set the `connectionProperties.autosave=conservative` in the [database properties file](#Database+Configuration+Properties) to address [this issue](https://github.com/pgjdbc/pgjdbc/pull/451) with the PostgreSQL JDBC driver.
 
 ### Oracle
 
@@ -156,7 +154,7 @@ into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/lib\/jdbc di
 
 [Supported versions](supported-platforms-and-environments.md#Supported+Databases)
 
-For step\-by\-step instructions, see the [dedicated page](setting-up-teamcity-with-ms-sql-server.md). The current section provides key details required for the setup.
+For step-by-step instructions, see the [dedicated page](setting-up-teamcity-with-ms-sql-server.md). The current section provides key details required for the setup.
 
 #### On MS SQL server side
 
@@ -166,7 +164,7 @@ TeamCity uses the primary character set (char, varchar, text) for storing intern
 </note>
 
 
-1. Create a new database. As the primary collation, use the case\-sensitive collation (collation name ending with `_CS_AS`) corresponding to your locale.
+1. Create a new database. As the primary collation, use the case-sensitive collation (collation name ending with `_CS_AS`) corresponding to your locale.
 2. Create a TeamCity user and ensure that this user is the owner of the database (grant the user dbo rights), which will give the user the ability to modify the database schema. For SSL connections, ensure that the version of MS SQL server and the TeamCity version of java are compatible. We recommend using the latest update of SQL server.
 3. Allocate sufficient transaction log space depending on how intensively the server will be used. The recommended setup is not less than 1Gb.
 4. Make sure SQL Server Browser is running.
@@ -183,7 +181,7 @@ TeamCity uses the primary character set (char, varchar, text) for storing intern
 
 It is not recommended to use jTDS JDBC driver. There are at least known issues with using Unicode characters when the driver is in use.
 
-If you use the driver (`jtds` text appears in the `connectionUrl` of `database.properties`), it is highly recommended to switch the native driver.
+If you use the driver (`jtds` text appears in the `connectionUrl` of `database.properties`), it is highly recommended switching the native driver.
 
 The due procedure for the switch is to:
 * create the server [backup](teamcity-data-backup.md) including the database
@@ -196,11 +194,9 @@ The due procedure for the switch is to:
 
 The database connection settings are stored in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/database.properties file. The file is a Java [properties file](http://en.wikipedia.org/wiki/.properties). You can modify it to specify required properties for your database connections.
 
-For all supported databases there are [template files](teamcity-data-directory.md#.dist+Template+Configuration+Files) with database\-specific properties located in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config directory. The files have the following naming format: `database.<database_type>.properties.dist` and can be used as a reference on the required settings.
+For all supported databases there are [template files](teamcity-data-directory.md#.dist+Template+Configuration+Files) with database-specific properties located in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config directory. The files have the following naming format: `database.<database_type>.properties.dist` and can be used as a reference on the required settings.
 
 TeamCity uses Apache DBCP for database connection pooling. Refer to [Apache Commons documentation](http://commons.apache.org/dbcp/configuration.html) for detailed description of configuration properties.
-
-
 
  <seealso>
         <category ref="installation">

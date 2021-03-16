@@ -32,7 +32,6 @@ Specify the type of the parameter: system property, environment variable, or con
 
 Parameter Name
 
-
 </td>
 
 <td>
@@ -73,7 +72,6 @@ Value
 Is shown for the conditions which require the value to match against (like "equals"). The value supports parameters resolution, but only the parameters which do not originate from the agents are supported in the field.`
 
 </td></tr></table>
-
 
 [//]: # (Internal note. Do not delete. "Configuring Agent Requirementsd68e98.txt")
  Note that the [Agent Requirements](agent-requirements.md) page also displays the list of compatible and incompatible build agents for this build configuration, which is updated each time you modify the list of requirements. Possible reasons why build agent may be incompatible with this build configuration are [described separately](agent-requirements.md).

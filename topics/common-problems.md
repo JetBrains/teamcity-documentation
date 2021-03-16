@@ -15,9 +15,9 @@ If a build fails or otherwise misbehaves in TeamCity but you believe it should n
 
 To do that, follow this procedure:
 
-- Find a way to run the task from a command prompt. Make sure it works on the TeamCity agent machine, under the same user as the TeamCity agent runs under, with the same environment the agent receives. If necessary, run the TeamCity agent under a different user or tweak its environment. 
-- When the command runs OK, configure the same command in a TeamCity build using the command\-line runner with the custom script setting. 
-- If that works, try another runner if that feels applicable.
+1. Find a way to run the task from a command prompt. Make sure it works on the TeamCity agent machine, under the same user as the TeamCity agent runs under, with the same environment the agent receives. If necessary, run the TeamCity agent under a different user or tweak its environment.
+2. When the command runs OK, configure the same command in a TeamCity build using the [Command Line](command-line.md) runner with the custom script setting. 
+3. If that works, try another runner if that feels applicable.
 
 Here are details on the approach:
 
@@ -36,14 +36,13 @@ Assuming you have a configured build in TeamCity which is failing, do the follow
 * log in to the agent machine using the same user as the one running the TeamCity agent (check the right user in the machine processes list)
 * stop the agent
 * in a command line console, `cd` to the checkout directory of the build in question (the directory can be looked up in the beginning of the build log in TeamCity)
-* run the build with a command line as you would do on a developer machine. This is runner\-dependent. (For some runners you can look up the command line used by TeamCity in the build log, see also the `logs\teamcity-agent.log` agent log file for the command line used by TeamCity)
-* if the build fails \- investigate the reason as the issue is probably not TeamCity\-related and should be investigated on the machine.
+* run the build with a command line as you would do on a developer machine. This is runner-dependent. (For some runners you can look up the command line used by TeamCity in the build log, see also the `logs\teamcity-agent.log` agent log file for the command line used by TeamCity)
+* if the build fails — investigate the reason as the issue is probably not TeamCity-related and should be investigated on the machine.
 * if it runs OK, continue
-* in the same console window `cd` to  \<[TeamCity agent home](agent-home-directory.md)\>\/bin and start TeamCity agent from there with the `agent start` command
+* in the same console window `cd` to \<[TeamCity agent home](agent-home-directory.md)\>\/bin and start TeamCity agent from there with the `agent start` command
 * ensure the runner settings in TeamCity are appropriate and should generate the same command line as you used manually. For example, use the _Command Line_ build step with the _Custom script_ option and the same command which can be saved in a `.sh` or `.bat` file and run from the command prompt
 * run the build in TeamCity selecting the agent in the Run custom build dialog
 * when finished, enable the agent
-
 
 If the build succeeds from the console but still fails in TeamCity, use a command line runner in TeamCity to launch the same command as in the console. 
 
@@ -61,7 +60,7 @@ If the slowness is spread over all the operations, the agent machine resources (
 
 If build process is hanging, then "View thread dump" link on the running build results page can help with understanding why it happens.
 
-If there is some long operation and it is a TeamCity\-related one (before start or after end of the actual build process), the TeamCity agent and server are to be analyzed (logs and thread dumps).
+If there is some long operation and it is a TeamCity-related one (before the start or after the end of the actual build process), the TeamCity agent and server are to be analyzed (logs and thread dumps).
 
 If you want to [turn to us](feedback.md) with the issue, make sure to describe the visible effects, detail the process of investigation and attach the build log, full agent logs and other data collected.
 
@@ -72,9 +71,9 @@ First start of agent after installation or TeamCity server upgrade/plugin instal
 Regularly, agent should become connected in 1 to 10 minutes, depending on the agent/server network connection speed.
 
 If the agent is not connected within that time, check the name of the agent (as configured in `conf\buildAgent.properties` file) and check the tabs under the __Agents__ page:
-* the agent is under Connected - the agent is ready to run builds
-* the agent is under Disconnected - the agent was connected to the server, but became disconnected. Check the "Inactivity reason" in the table. If the reason is "Agent has unregistered (will upgrade)", then wait for several more minutes
-* the agent is under Unauthorized - all the agents connected to the server for the first time should be authorized by a server administrator
+* the agent is under Connected — the agent is ready to run builds
+* the agent is under Disconnected — the agent was connected to the server, but became disconnected. Check the "Inactivity reason" in the table. If the reason is "Agent has unregistered (will upgrade)", then wait for several more minutes
+* the agent is under Unauthorized — all the agents connected to the server for the first time should be authorized by a server administrator
 
 If the agent stays in the state for more than 10 minutes and you have a fast network connection between the agent and the server, do the following:
 * check the related agent machine to ensure that the agent process is running and `serverURL` in `conf\buildAgent.properties` is correct (and that the server is reachable by that URL from the machine);
@@ -84,7 +83,6 @@ If the agent stays in the state for more than 10 minutes and you have a fast net
 {product="tc"}
 
 If you cannot find the cause of the delayed agent upgrade in the logs, [contact us](feedback.md) and provide the full agent and server logs. Be sure to check/include the state of the agent processes (java ones) on the agent machine.
- 
 
 ## Artifacts of a build are not cleaned
 
@@ -106,8 +104,8 @@ If during the TeamCity server start-up you encounter errors like: _"error in scr
 
 Here is a way to attempt a manual database restore:
 * stop the TeamCity server
-* backup the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/buildserver.data file
-* remove the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/buildserver.data file and replace it with zero-size file of the same name
+* backup the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.data` file
+* remove the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.data` file and replace it with zero-size file of the same name
 * start the TeamCity server
 
 However, if the database does not recover automatically, chances that it can be fixed manually are minimal.
@@ -133,10 +131,9 @@ This error can occur with an Oracle database. The error indicates that Oracle co
 
 ### MySQL JDBC driver error: PacketTooBigException
 
-The [ER_NET_PACKET_TOO_LARGE](https://dev.mysql.com/doc/refman/5.7/en/error-messages-server.html#error_er_net_packet_too_large) error (PacketTooBigException / Packet for query is too large) is caused by the server\-side  `max_allowed_packet` [configuration variable](https://dev.mysql.com/doc/refman/5.7/en/packet-too-large.html) set to a low value or left at the default one. 
+The [ER_NET_PACKET_TOO_LARGE](https://dev.mysql.com/doc/refman/5.7/en/error-messages-server.html#error_er_net_packet_too_large) error (PacketTooBigException / Packet for query is too large) is caused by the server-side `max_allowed_packet` [configuration variable](https://dev.mysql.com/doc/refman/5.7/en/packet-too-large.html) set to a low value or left at the default one.
 
  The variable controls the maximum size of MySQL communication buffer with 4MB being the default for Windows builds of MySQL 5.6, whereas in popular Linux distributions (e. g. Debian and Fedora Core), this variable defaults to 16MB, for both i686 and amd64 architectures.
-
  
 1. Check the value of the `max_allowed_packet` [configuration variable](https://dev.mysql.com/doc/refman/5.7/en/packet-too-large.html) by either examining `my.cnf / my.ini` , or via 
          
@@ -155,7 +152,7 @@ The [ER_NET_PACKET_TOO_LARGE](https://dev.mysql.com/doc/refman/5.7/en/error-mess
 
 <note>
 
-Setting a client\-side value (via `maxAllowedPacket` [connection property](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-configuration-properties.html) ) in the JDBC URL will have no effect,  as this value cannot exceed the server\-side limit.
+Setting a client-side value (via `maxAllowedPacket` [connection property](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-configuration-properties.html) ) in the JDBC URL will have no effect,  as this value cannot exceed the server-side limit.
 </note>
 
 ### Database character set/collation-related problems
@@ -164,11 +161,11 @@ Setting a client\-side value (via `maxAllowedPacket` [connection property](https
 
 #### Character set/collation mismatch
 
-TeamCity reports character set/collation mismatch error: database tables/columns have a character set or collation that is not the same as the default character set or collation in your database schema. You may see this message if you are using a non\-unicode character set as default for your database as TeamCity enforces unicode charset for some of the `varchar` fields. Make sure you configured the database according to our [recommendations](setting-up-an-external-database.md).
+TeamCity reports character set/collation mismatch error: database tables/columns have a character set or collation that is not the same as the default character set or collation in your database schema. You may see this message if you are using a non-unicode character set as default for your database as TeamCity enforces unicode charset for some of the `varchar` fields. Make sure you configured the database according to our [recommendations](setting-up-an-external-database.md).
 
 #### TeamCity displays ???? instead of national symbols
 
-If you want to allow your local characters in texts in TeamCity (for example, VCS messages, test names, user names), you need to migrate to a database with the appropriate character set.
+If you want to allow your local characters in texts in TeamCity (for example, VCS messages, test names, usernames), you need to migrate to a database with the appropriate character set.
 
 #### "Unique key violations" or "Duplicates found" error on restore from backup
 
@@ -185,7 +182,6 @@ However, it is recommended to always use CS.
 
 If the source character set is Unicode or UTF, the destination one must also be Unicode or UTF. If the source character set is 8-bit non-UTF, the destination one can be the same or Unicode/UTF.
 
-
 #### Resolve character set/collation-related problems
 
 To fix a problem, perform the following steps:
@@ -193,7 +189,7 @@ To fix a problem, perform the following steps:
 1. Create a new database with the appropriate character set and collation. We recommend using a __unicode case-sensitive__ collation: see instructions for [PostgreSQL](setting-up-an-external-database.md#On+PostgreSQL+server+side) and [MySQL](setting-up-an-external-database.md#On+MS+SQL+server+side). For MySQL, `utf8_bin` or `utf8mb4_bin` is preferred.  
     See also [PostgreSQL](http://www.postgresql.org/docs/9.3/static/multibyte.html), [MySQL](http://dev.mysql.com/doc/refman/5.0/en/charset-mysql.html), [MS SQL](http://technet.microsoft.com/en-us/library/ms180175(v=sql.105).aspx) documentation for details on character set.
     
-2. Copy the current \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/database.properties file, and change the database references in the copy to the newly created database.
+2. Copy the current `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file, and change the database references in the copy to the newly created database.
 3. Stop the TeamCity server.
 4. Use the `maintainDB` tool to migrate to the new database:
 
@@ -201,10 +197,9 @@ To fix a problem, perform the following steps:
     maintainDB migrate [-A <path-to-data-dir>] -T <new-database-properties-file>
 
     ```
-
     Depending on the size of your database, the migration may take from several minutes to several hours. For more information on the `maintainDB tool`, see [this section](migrating-to-an-external-database.md#Full+Migration).
 
-5. Upon the successful completion of the database migration, the `maintainDB` tool should update the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/database.properties file with references to the new database. Ensure that the file has been updated. Edit the file manually if the tool fails to do it automatically.
+5. Upon the successful completion of the database migration, the `maintainDB` tool should update the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file with references to the new database. Ensure that the file has been updated. Edit the file manually if the tool fails to do it automatically.
 6. Start the TeamCity server.
 
 #### MySQL exception: Specified key was too long; max key length is 767 bytes 
@@ -223,7 +218,6 @@ The parameters above have the following default values:
 <table><tr>
 
 <td>
- 
 
 </td>
 
@@ -271,7 +265,7 @@ MariaDB 10.2
 
 <td>
 
-innodb\_large\_prefix 
+innodb_large_prefix 
 
 </td>
 
@@ -319,7 +313,7 @@ innodb\_large\_prefix
 
 <td>
 
-innodb\_file\_format
+innodb_file_format
 
 </td>
 
@@ -336,6 +330,7 @@ Antelope
 </td>
 
 <td>
+
 Barracuda
 
 </td>
@@ -366,7 +361,7 @@ Barracuda
 
 <td>
 
-innodb\_file\_per\_table
+innodb_file_per_table
 
 </td>
 
@@ -412,8 +407,6 @@ innodb\_file\_per\_table
 
 </td></tr></table>
 
- 
-
 Depending on the database server version, the following configuration changes need to be made:
 
 __MySQL 5.5:__
@@ -433,12 +426,11 @@ For __MySQL 5.7\+ and MariaDB 10.2\+__ use the defaults, no changes are required
 
 ### 'Incorrect string value' error in MySQL
 
-1. Use the `utf8mb4` character set in MySQL and set up the MySQL server to use `utf8mb4` by default using the following options in the `[mysqld]` section in `my.cnf`: 
-
+1. Make sure the database uses the `utf8mb4` character set and `utf8mb4_bin` collation. If that's not the case, [change the DB character set and collation](#Resolve+character+set%2Fcollation-related+problems).
+2. If the character set and collation are set properly, but the new errors still occur, the problem is that the default charset in MySQL is not utf8mb4. Set up the MySQL server to use `utf8mb4` by default by specifying the following options in the `[mysqld]` section of `my.cnf`:  
     `character_set_server = utf8mb4`   
     `collation_server = utf8mb4_bin`
-    
-2.  Restart MySQL for the changes to `my.cnf` to take effect.
+3. Restart MySQL for the changes in `my.cnf` to take effect.
 
 ### 'This driver is not configured for integrated authentication' error with MS SQL database
 
@@ -449,20 +441,18 @@ The most common reason for the problem is the different bitness of the `sqljdbc_
 To solve the problem, do the following:
 
 1. Make sure you use the MS SQL native driver (downloadable from the [Microsoft Download Center](http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=11774)). 
-2. Use the right JRE bitness: ensure that you are running TeamCity using Java with the same bitness as your `sqljdbc_auth.dll` MS SQL shared library. By default, TeamCity uses the 32\-bit Java. However, both 32\-bit and 64\-bit Java versions [can be used](installing-and-configuring-the-teamcity-server.md#Java+Installation).
+2. Use the right JRE bitness: ensure that you are running TeamCity using Java with the same bitness as your `sqljdbc_auth.dll` MS SQL shared library. By default, TeamCity uses the 32\-bit Java. However, both 32-bit and 64-bit Java versions [can be used](installing-and-configuring-the-teamcity-server.md#Java+Installation).
 
 To run TeamCity with the required JRE, do one of the following:
     * either set the `TEAMCITY_JRE` environment variable
-    * or remove the JRE bundled with TeamCity from \<[TeamCity home](teamcity-home-directory.md)\>\jre and set `JAVA_HOME`.  
+    * or remove the JRE bundled with TeamCity from `<[TeamCity home](teamcity-home-directory.md)>\jre` and set `JAVA_HOME`.  
     
 <note>
 
-Note that on upgrade, TeamCity will overwrite the existing JRE with the default 32\-bit version, so you'll have to update to the 64\-bit JRE again after upgrade.
+Note that on upgrade, TeamCity will overwrite the existing JRE with the default 32-bit version, so you'll have to update to the 64-bit JRE again after upgrade.
 </note>
 
 See also this related [external posting](http://www.mikeobrien.net/blog/teamcity-sqlserver-integrated-security).
-
-
 
 ### Protocol violation error (Oracle only)
 
@@ -477,14 +467,14 @@ There are two kinds of Maven-related issues commonly seen in the TeamCity build 
 * Error message in build configuration with Maven dependencies trigger activated: "Unable to check for Maven dependency Update ..."
 If the build configuration produces successful builds despite displaying such error messages, these errors are likely to be caused by the __server-side Maven misconfiguration__.
 
-To collect information for the __Maven__ tab, or to perform Maven dependencies check (for the trigger), TeamCity runs the embedded Maven. The execution is performed on the _server_ machine, and any _agent\-side_ maven settings are __not accessible__. TeamCity resolves the `settings.xml` files on the server-side separately, as described in [Maven Server-Side Settings](maven-server-side-settings.md).
+To collect information for the __Maven__ tab, or to perform Maven dependencies check (for the trigger), TeamCity runs the embedded Maven. The execution is performed on the _server_ machine, and any _agent-side_ maven settings are __not accessible__. TeamCity resolves the `settings.xml` files on the server-side separately, as described in [Maven Server-Side Settings](maven-server-side-settings.md).
 
 It makes sense to check if the `server-side settings.xml` files contain correct information about remote repositories, proxies, mirrors, profiles, credentials, and so on.
 
 ## "Critical error in configuration file" errors
 
 If you encounter the error, it means the settings stored in the TeamCity Data Directory are in an inconsistent state. This can occur after manual change of the files or if newer version of TeamCity starts to report the inconsistencies.  
-To resolve the issue, you can edit the file noted in the message on the server file system. (make sure to create backup copy of the file before any manual edits). Usually server restart is not necessary for the changes to take effect.
+To resolve the issue, you can edit the file noted in the message on the server file system. (Make sure to create backup copy of the file before any manual edits). Usually server restart is not necessary for the changes to take effect.
 
 __VCS root with id "XXX" does not exist__ 
   

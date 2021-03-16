@@ -16,8 +16,6 @@ For JIRA, you need to provide a space-separated list of [project keys](http://co
 
 For example, if a project key is `WEB`, an issue key like `WEB-101`, mentioned in a VCS comment, will be resolved to a link to the corresponding issue.
 
-
-
  <seealso>
         <category ref="get_started">
             <a href="supported-platforms-and-environments.md#Issue+Tracker+Integration">Supported Issue Trackers</a>

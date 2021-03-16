@@ -12,21 +12,16 @@ The TeamCity NAnt runner requires .NET Framework or Mono installed on the build 
 
 ## MSBuild Task for NAnt
 
-
 The TeamCity NAnt runner includes a task called `msbuild` that allows NAnt to start MSBuild scripts. TeamCity `msbuild` task for NAnt has the same set of attributes as the [NAntContrib package](http://nantcontrib.sourceforge.net) `msbuild` task. The MSBuild build processes started by NAnt will behave exactly as if they were launched by TeamCity MSBuild/SLN2005 build runner (that is `NUnit` and/or `NUnitTeamCity` MSBuild tasks will be added to build scripts and logs and error reports will be sent directly to the build server).
-
 
 <note>
 
-`msbuild` task for NAnt makes all build configuration system properties available inside MSBuild script. Note, all property names will have "`.`" replaced with "`_`".   
+`msbuild` task for NAnt makes all build configuration system properties available inside MSBuild script. Note, all property names will have `.` replaced with `_`.   
 To disable this, set `false` to `set-teamcity-properties` attribute of the task.
 </note>
 
-
-
-By default, NAnt `msbuild` task checks for current value of NAnt target\-framework property to select MSBuild runtime version.  
+By default, NAnt `msbuild` task checks for current value of NAnt target-framework property to select MSBuild runtime version.  
 This parameter could be overriden by setting `teamcity_dotnet_tools_version` project property with required .NET Framework version, i.e. "4.0".
-
 
 ```XML
 ...
@@ -39,18 +34,14 @@ This parameter could be overriden by setting `teamcity_dotnet_tools_version` pro
 
 ```
 
-
-
 <note>
 
-To pass properties to MSBuild, use the `property` tag instead of explicit properties definition in the command line.
+To pass properties to MSBuild, use the `property` tag instead of the explicit properties definition in the command line.
 </note>
-
-
 
 ## &lt;nunit2&gt; Task for NAnt
 
-To test all of the assemblies without halting on first failed test use:
+To test all the assemblies without halting on first failed test use:
 
 ```XML
 <target name="build">
@@ -67,38 +58,27 @@ To test all of the assemblies without halting on first failed test use:
 
 ```
 
-
 <note>
 
 The `failonfailureatend` attribute is not defined in the original `NUnit2` task from NAnt. Note that this attribute will be ignored if the `haltonfailure` attribute is set to `true` for either the `nunit2` element or the `test` element.
 </note>
 
-
-
 Below you can find reference information about NAnt Build Runner fields.
-
-
 
 ## General Options
 
-
-
 <table>
 <tr>
-
 
 <td>
 
 Option 
 
-
 </td>
-
 
 <td>
 
 Description 
-
 
 </td>
 </tr>
@@ -109,185 +89,146 @@ Description
 
 Path to a build file 
 
-
 </td>
-
 
 <td>
 
-Specify path relative to the [Build Checkout Directory](build-checkout-directory.md). 
-
-
+Specify path relative to the [Build Checkout Directory](build-checkout-directory.md).
 
 </td>
 </tr>
 <tr>
 
-
 <td>
 
-Build file content 
-
+Build file content
 
 </td>
 
 
 <td>
 
-Select the option, if you want to use a different build script than the one listed in the settings of the build file. When the option is enabled, you have to type the build script in the text area.  
-
+Select the option, if you want to use a different build script than the one listed in the settings of the build file. When the option is enabled, you have to type the build script in the text area.
 
 </td>
 </tr>
 <tr>
 
-
 <td>
 
-Targets 
-
+Targets
 
 </td>
-
 
 <td>
 
 Specify the names of build targets defined by the build script, separated by spaces. The available targets can be viewed in the Web UI by clicking the icon next to the field and added by checking the appropriate boxes.
 
-
 </td>
 </tr>
 <tr>
 
-
 <td>
 
-Working directory 
-
+Working directory
 
 </td>
-
 
 <td>
 
 Specify the path to the [Build Working Directory](build-working-directory.md). By default, the build working directory is set to the same path as the [build checkout directory](build-checkout-directory.md). 
 
-
 </td>
 </tr>
 <tr>
 
-
 <td>
 
- NAnt home 
-
+NAnt home
 
 </td>
-
 
 <td>
 
 Enter a path to the `NAnt.exe`. 
-
 
 <tip>
 
 Here you can specify an absolute path to the NAnt.exe file on the agent, or a path relative to the checkout directory. Such relative path allows you to provide particular NAnt.exe file to run a build of the particular build configuration.
 </tip>
 
-
-
 </td>
 </tr>
 <tr>
 
-
 <td>
 
-Target framework 
-
+Target framework
 
 </td>
 
 
 <td>
 
-Sets `-targetframework:` option to `NAnt` and generates appropriate agent requirements (_mono-2.0_ target framework will require _Mono_ system property, _net-2.0_ — _DotNetFramework2.0_ property, and so on). Selecting unsupported in TeamCity framework (_sscli-1.0_, _netcf-1.0_, _netcf-2.0_) won't impose any agent requirements. 
-
+Sets `-targetframework:` option to `NAnt` and generates appropriate agent requirements (_mono-2.0_ target framework will require _Mono_ system property, _net-2.0_ — _DotNetFramework2.0_ property, and so on). Selecting unsupported in TeamCity framework (_sscli-1.0_, _netcf-1.0_, _netcf-2.0_) won't impose any agent requirements.
 
 <warning>
 
 This option has no effect on framework which used to run `NAnt.exe`. `NAnt.exe` will be launched as ordinary exe file if .NET framework was found, and through mono executable, if not.
 </warning>
 
-
-
 </td>
 </tr>
 <tr>
 
-
 <td>
 
-Command line parameters 
-
+Command line parameters
 
 </td>
 
 
 <td>
 
-Specify any additional parameters for `NAnt.exe` 
-
+Specify any additional parameters for `NAnt.exe`
 
 <tip>
 
 TeamCity passes automatically to NAnt all defined [Configuring Build Parameters](configuring-build-parameters.md), so you do not need to specify all of the properties here via  `-D` option.
 </tip>
 
+</td>
+</tr>
+<tr>
 
+<td>
+
+Reduce test failure feedback time
+
+</td>
+
+<td>
+
+Use following option to instruct TeamCity to run some tests before others.
 
 </td>
 </tr>
 <tr>
 
-
 <td>
 
-Reduce test failure feedback time 
-
+Run recently failed tests first
 
 </td>
 
 
 <td>
 
-Use following option to instruct TeamCity to run some tests before others. 
-
-
-</td>
-</tr>
-<tr>
-
-
-<td>
-
-Run recently failed tests first 
-
-
-</td>
-
-
-<td>
-
-If checked, in the first place TeamCity will run tests failed in previous finished or running builds as well as tests having high failure rate (a so called _blinking_ tests) 
-
+If checked, in the first place TeamCity will run tests failed in previous finished or running builds as well as tests having high failure rate (a so called _blinking_ tests).
 
 </td>
 </tr>
 </table>
-
 
 ## Code Coverage
 

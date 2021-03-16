@@ -5,12 +5,6 @@ In addition to statistic charts generated automatically by TeamCity on the __Sta
 
 You can view statistic values reported by the build on the __Build Parameters__ page.
 
-<tip>
-
-The information in this section refers to __TeamСity 10\+__. For other versions, refer to the [listing](https://confluence.jetbrains.com/display/TW/Documentation) to choose the corresponding documentation.
-</tip>
-
-
 ## Managing Custom Charts via the TeamCity Web UI
 
 It is possible to manage custom charts using the TeamCity web UI.

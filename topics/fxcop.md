@@ -117,7 +117,7 @@ Assemblies
 
 <td>
 
-Enter the paths to the assemblies to be inspected (use ant\-like wildcards to select files by a mask). FxCop will use default settings to inspect them. The paths should be relative to the [Build Checkout Directory](build-checkout-directory.md) and separated by spaces. Enter exclude wildcards to refine the included assemblies list.
+Enter the paths to the assemblies to be inspected (use Ant-like wildcards to select files by a mask). FxCop will use default settings to inspect them. The paths should be relative to the [Build Checkout Directory](build-checkout-directory.md) and separated by spaces. Enter exclude wildcards to refine the included assemblies list.
 
 Note that there is a limitation to the maximum number of assemblies that can be specified here due to [command-line string limitation](https://support.microsoft.com/en-us/kb/830473).
 

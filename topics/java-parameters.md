@@ -1,6 +1,7 @@
 [//]: # (title: Java Parameters)
 [//]: # (auxiliary-id: Java+Parameters)
-This page describes general parameters for Java\-based runners. For other settings of an individual runner, refer to the following pages:
+
+This page describes general parameters for Java-based runners. For other settings of an individual runner, refer to the following pages:
 
 * [Ant](ant.md)
 * [Maven](maven.md)
@@ -9,9 +10,7 @@ This page describes general parameters for Java\-based runners. For other settin
 * [Inspections (IntelliJ IDEA)](inspections.md)
 * [IntelliJ IDEA Project](intellij-idea-project.md)
 
-
 <chunk include-id="java-param">
-
  
 ### Java Parameters
 
@@ -21,13 +20,11 @@ This page describes general parameters for Java\-based runners. For other settin
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -35,13 +32,11 @@ Description
 
 JDK
 
-
 </td>
 
 <td>
 
 Select a JDK. [This section](predefined-build-parameters.md) details the available options. The default is `JAVA_HOME` environment variable or the agent's own Java.
-
 
 </td></tr><tr>
 
@@ -49,13 +44,11 @@ Select a JDK. [This section](predefined-build-parameters.md) details the availab
 
 JDK home path
 
-
 </td>
 
 <td>
 
-_The option is available when &lt;Custom&gt; is selected above._ Use this field to specify the path to your custom JDK used to run the build. If the field is left blank, the path to JDK Home is read either from the `JAVA_HOME` environment variable on agent the computer, or from the `env.JAVA_HOME` property specified in the [build agent configuration](build-agent-configuration.md) file (`buildAgent.properties`). If these values are not specified, TeamCity uses the Java home of the build agent process itself.
-
+_The option is available when &lt;Custom&gt; is selected above._ Use this field to specify the path to your custom JDK used to run the build. If the field is left blank, the path to JDK Home is read either from the `JAVA_HOME` environment variable on the agent machine, or from the `env.JAVA_HOME` property specified in the [build agent configuration](build-agent-configuration.md) file (`buildAgent.properties`). If these values are not specified, TeamCity uses the Java home of the build agent process itself.
 
 </td></tr><tr>
 
@@ -63,14 +56,13 @@ _The option is available when &lt;Custom&gt; is selected above._ Use this field 
 
 JVM command line parameters
 
-
 </td>
 
 <td>
 
-You can specify such JVM command line parameters, for example, _maximum heap size_ or parameters enabling _remote debugging_. These values are passed by the JVM used to run your build.   
-Example:
+You can specify such JVM command line parameters, for example, _maximum heap size_ or parameters enabling _remote debugging_. These values are passed by the JVM used to run your build.
 
+Example:
 
 ```Shell
 -Xmx512m -Xms256m

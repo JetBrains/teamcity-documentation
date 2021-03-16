@@ -156,7 +156,7 @@ Specify additional options for the builds of this build configuration.
 
 ### Build Number Format
 
-In the __Build number format__ field you can specify a pattern which is resolved and assigned to the [Build Number](build-number.md) on the build start.
+In the _Build number format_ field you can specify a pattern which is resolved and assigned to the [build number](build-number.md) on the build start.
 
 [//]: # (Internal note. Do not delete. "Configuring General Settingsd79e124.txt")
 
@@ -212,14 +212,9 @@ A value of the build property with the corresponding name. All the [Predefined B
 
 </td></tr></table>
 
-<tip>
+>A build number format example: `1.0.%build.counter%.%build.vcs.number.My_Project_svn%`.
 
-A build number format example:
-
-`1.0.%build.counter%.%build.vcs.number.My_Project_svn%`
-</tip>
-
-Though not required, it is still highly recommended to ensure the build numbers are unique. Please include the build counter in the build number and do not reset the build counter to lesser values. It is also possible to change the build number from within your build script. For details, refer to [Build Script Interaction with TeamCity](service-messages.md#Reporting+Build+Number).
+Though not required, it is still highly recommended ensuring the build numbers are unique. Please include the build counter in the build number and do not reset the build counter to lesser values. It is also possible to change the build number from within your build script. For details, refer to [Build Script Interaction with TeamCity](service-messages.md#Reporting+Build+Number).
 
 <anchor name="ConfiguringGeneralSettings-artifactPaths"/>
 
@@ -253,19 +248,19 @@ Note that although absolute paths are supported in the source part, it is recomm
 * `file_name` — to publish the file. The name should be relative to the [Build Checkout Directory](build-checkout-directory.md).
 * `directory_name` — to publish all the files and subdirectories within the directory specified. The directory name should be a path relative to the [Build Checkout Directory](build-checkout-directory.md). The files will be published preserving the directories structure under the directory specified (the directory itself will not be included).
 * `wildcard` — to publish files matching [Ant-like wildcard](wildcards.md) pattern (only `*` and `**` wildcards are supported). The wildcard should represent a path relative to the build checkout directory. The files will be published preserving the structure of the directories matched by the wildcard (directories matched by "static" text will not be created). That is, TeamCity will create directories starting from the first occurrence of the wildcard in the pattern.
-* You can use [build parameters](configuring-build-parameters.md) in the artifacts specification. For example, use `mylib-%system.build.number%.zip` to refer to a file with the build number in the name.
+* You can use [build parameters](configuring-build-parameters.md) in the artifacts' specification. For example, use `mylib-%system.build.number%.zip` to refer to a file with the build number in the name.
 
 The optional part starting with the `=>` symbols and followed by the target directory name can be used to publish the files into the specified target directory. If the target directory is omitted, the files are published in the root of the build artifacts. You can use `.` (dot) as a reference to the build checkout directory.   
 The target paths cannot be absolute. Non-relative paths will produce errors during the build. 
 * `target_directory` — (optional) the directory in the resulting build's artifacts that will contain the files determined by the left part of the pattern. 
-* `target_archive` — (optional) the path to the archive to be created by TeamCity by packing build artifacts determined in the left part of the pattern. TeamCity treats the right part of the pattern as `target\_archive` whenever it ends with a [supported archive extension](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+an+Archive), that is `.zip`, `.7z`, `.jar`, `.tar.gz`, or `.tgz`.
+* `target_archive` — (optional) the path to the archive to be created by TeamCity by packing build artifacts determined in the left part of the pattern. TeamCity treats the right part of the pattern as `target_archive` whenever it ends with a [supported archive extension](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+an+Archive), that is `.zip`, `.7z`, `.jar`, `.tar.gz`, or `.tgz`.
 
 Examples:
 
 * `install.zip` — publish a file named `install.zip` in the build artifacts.
 * `dist` — publish the content of the dist directory.
 * `target/*.jar` — publish all jar files in the target directory.
-* `target/**/*.txt=> docs` — publish all the txt files found in the target directory and its subdirectories. The files will be available in the build artifacts under the docs directory.
+* `target/**/*.txt=> docs` — publish all the txt files found in the target directory and its subdirectories. The files will be available in the build artifacts under the `docs` directory.
 * `reports => reports, distrib/idea*.zip` — publish reports directory as reports and files matching `idea*.zip` from the `distrib` directory into the artifacts root.
 * Relative paths inside a zip archive can be used, if needed: `results\result1\Dir1\Dir2 => archive.zip!results/result1/Dir1`.
 * The same target_archive name can be used multiple times, for example: 
@@ -297,7 +292,9 @@ The status can be retrieved via the HTML status widget described below, or via a
 
 #### HTML Status Widget
 
-This feature allows you to get an overview of the current project status on your company's website, wiki, Confluence or any other web page.When the __Enable status widget__ option is enabled, an HTML snippet can be included into an external web page and will display the current build configuration status.For build status icon as a single image, check [REST build status icon](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html).
+This feature allows you to get an overview of the current project status on your company's website, wiki, Confluence or any other web page.  
+When the __Enable status widget__ option is enabled, an HTML snippet can be included into an external web page and will display the current build configuration status.  
+For build status icon as a single image, check [REST build status icon](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html).
 
 The following build process information is provided by the status widget:
 * The latest build results

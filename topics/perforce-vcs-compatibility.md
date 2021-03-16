@@ -7,20 +7,17 @@
 
 Perforce server version
 
-
 </td>
 
 <td>
 
 TeamCity version
 
-
 </td>
 
 <td>
 
 Comment
-
 
 </td></tr><tr>
 

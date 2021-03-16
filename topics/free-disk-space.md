@@ -82,7 +82,7 @@ Example: `system.teamcity.agent.ensure.free.space = 5gb`
 
 ### Configuring artifacts cache
 
-A TeamCity build agent maintains a cache of published and downloaded build artifacts to reduce network transfers to the same agent. The cache is stored in the \<[Build Agent Home](agent-home-directory.md)\>\system\.artifacts_cache directory and is cleaned automatically provided the _Free disk space_ build feature is configured correctly.
+A TeamCity build agent maintains a cache of published and downloaded build artifacts to reduce network transfers to the same agent. The cache is stored in the `<[Build Agent Home](agent-home-directory.md)>\system\.artifacts_cache` directory and is cleaned automatically provided the _Free disk space_ build feature is configured correctly.
 
 If caching artifacts is undesirable (for example, when the artifacts are large and not used within TeamCity, or if the artifacts cache directory is located not on the same disk as the build checkout directory, or if the builds do not define the _Free disk space_ build feature and the default 3Gb is not sufficient for a build), caching artifacts on the agent can be __turned off__ by adding the `teamcity.agent.filecache.publishing.disabled=true` configuration parameter to a project or one of the build configurations of a project. However, the agent will still cache artifacts downloaded as artifact dependencies.
 
@@ -90,7 +90,7 @@ If caching artifacts is undesirable (for example, when the artifacts are large a
 
  <seealso>
         <category ref="admin-guide">
-            <a href="teamcity-disk-space-watcher.md">TeamCity Server Disk Space Watcher</a>
+            <a href="teamcity-disk-space-watcher.md" product="tc">TeamCity Server Disk Space Watcher</a>
             <a href="build-failure-conditions.md">Build Failure Conditions</a>
         </category>
 </seealso>

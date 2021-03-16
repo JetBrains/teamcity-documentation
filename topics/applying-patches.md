@@ -10,7 +10,6 @@ To apply a patch for `vss-native.exe`:
 4. Inside the `vss-support.jar` file, replace the `/bin/vss-native.exe` with the new one.
 5. Start the server.
 
-
 To apply a full VSS plugin patch:
 1. Shut down the TeamCity server.
 2. Open `<[TeamCity Home](teamcity-home-directory.md)>/webapps/root/WEB-INF/plugins/vss/` or `<[TeamCity Home](teamcity-home-directory.md)>/webapps/root/WEB-INF/lib/`.

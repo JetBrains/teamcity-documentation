@@ -61,7 +61,6 @@ wrapper.java.additional.<N>
 Make sure to renumber all lines after the inserted ones.
 </note>
 
-
 [//]: # (Internal note. Do not delete. "Configuring Build Agent Startup Propertiesd71e106.txt")    
 
 <seealso>

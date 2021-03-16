@@ -9,7 +9,7 @@ To create a MySQL database which uses the UTF-8 character set:
 1. Create a new database:
 
     ```SQL
-    create database <database_name> character set UTF8 collate utf8_bin
+    create database <database_name> character set utf8mb4 collate utf8mb4_bin
     ```
 	
 2. Open `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties`, and add the `characterEncoding` property:

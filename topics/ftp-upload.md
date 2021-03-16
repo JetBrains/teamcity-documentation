@@ -48,7 +48,6 @@ ftp://hostname.com/hostname.com:34445/subdir127.0.0.1/%2Fetc/
 
 ```
 
-
 </td></tr><tr>
 
 <td>
@@ -60,7 +59,6 @@ Secure connection
 <td>
 
 Choose between an insecure (FTP) and a secure connection (FTPS, FTPES).
-
 
 </td></tr><tr>
 

@@ -1,9 +1,8 @@
 [//]: # (title: Mono Support)
 [//]: # (auxiliary-id: Mono Support)
-Mono framework is an alternative framework for running .NET applications on both Windows and Unix\-based platforms.   
+
+Mono framework is an alternative framework for running .NET applications on both Windows and Unix-based platforms.   
 For more information refer to the [Mono official site](http://www.mono-project.com).
-
-
 
 ## Supported Build Runners
 
@@ -50,7 +49,6 @@ Automatic detection of Mono framework under Unix has the following specifics:
 2. The frameworks paths are extracted from `pkg-config --variable=prefix mono` and `pkg-config --variable=libdir mono`.
 3. The platform architecture is detected by analyzing the `PREFIX/bin/mono` executable.
 You can force Mono to be detected from a custom location by adding the `PREFIX/bin` directory to the beginning of the `PATH` and updating `PKG_CONFIG_PATH` (described in `pkg-config(1)`) with `PREFIX/lib/pkgconfig.`
-
  
 <seealso>
         <category ref="admin-guide">

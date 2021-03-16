@@ -7,7 +7,7 @@ Build tags are labels that can help you to:
 * search for a build with a particular tag
 * create an artifact dependency on a build with a particular tag   
  
-You can assign any number of tags for a single build, for example, `EAP` or `release` using the _Edit tags_ dialog by entering several tags separated by any symbol like space, comma, or semi-colon.
+You can assign any number of tags for a single build, for example, `EAP` or `release` using the _Edit tags_ dialog by entering several tags separated by any symbol like space, comma, or semicolon.
 
 Clicking a tag filters out all builds in the history: only the builds marked with the tag are displayed. Additionally, you can search for builds with particular tags using the [search field](search.md).
 {product="tc"}

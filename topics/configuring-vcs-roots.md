@@ -25,13 +25,11 @@ Description
 
 Type of VCS
 
-
 </td>
 
 <td>
 
 Type of a version control system supported by TeamCity, for example, Perforce, Subversion, and so on.
-
 
 </td></tr><tr>
 
@@ -42,8 +40,7 @@ VCS root name
 </td>
 
 <td>
- 
- 
+
 Unique name of VCS root across all VCS roots of the project.
 
 </td></tr><tr>
@@ -51,7 +48,6 @@ Unique name of VCS root across all VCS roots of the project.
 <td id="VCSRootID">
 
 VCS root ID
-
 
 </td>
 
@@ -93,13 +89,11 @@ Some public servers may block access if polled too frequently.
 
 If TeamCity detects that a [VCS commit hook](configuring-vcs-post-commit-hooks-for-teamcity.md) is used to trigger checking for changes, this interval is automatically increased up to the predefined value (4 hours). If the periodical check finds changes undetected via the commit hook, the polling interval is reset to the specified minimum.
 
-
 </td></tr><tr>
 
 <td id="svnRootSharing">
 
 Belongs to project
-
 
 </td>
 
@@ -123,5 +117,4 @@ Make sure to synchronize the system time at the VCS server, TeamCity server and 
 
 
 [//]: # (Internal note. Do not delete. "Configuring VCS Rootsd91e181.txt")    
-[//]: # (Internal note. Do not delete. "Configuring VCS Rootsd91e186.txt")    
-
+[//]: # (Internal note. Do not delete. "Configuring VCS Rootsd91e186.txt")

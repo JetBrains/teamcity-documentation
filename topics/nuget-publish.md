@@ -31,19 +31,17 @@ Option
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 NuGet.exe
 
-
 </td>
 
 <td>
 
-Select a NuGet version to use from the drop\-down list (you need to have [NuGet installed](nuget.md)), or specify a custom path to `NuGet.exe`.
+Select a NuGet version to use from the drop-down menu (you need to have [NuGet installed](nuget.md)), or specify a custom path to `NuGet.exe`.
 
 <note>
 
@@ -57,20 +55,17 @@ An appropriate version of .NET Framework installed on the agent machine is requi
 
 Packages
 
-
 </td>
 
 <td>
 
 Specify a newline-separated list of NuGet package files (`.nupkg`) to publish to the NuGet feed. List packages individually or use wildcards.
 
-
 </td></tr><tr>
 
 <td>
 
 API key
-
 
 </td>
 
@@ -80,13 +75,11 @@ Specify the API key to access a NuGet packages feed.
 
 To publish to the TeamCity NuGet server, specify the `%teamcity.nuget.feed.api.key%` parameter.
 
-
 </td></tr><tr>
 
 <td>
 
 Package Source
-
 
 </td>
 
@@ -101,10 +94,9 @@ If you work with an authenticated feed, configure the [NuGet Feed Credentials](n
 
 TeamCity allows you to authenticate using private NuGet feeds. Read more in [NuGet](nuget.md#Authentication+in+private+NuGet+Feeds).
 
-#### Replacing existing package version in TeamCity internal feed
+## Replacing existing package version in TeamCity internal feed
 
 When publishing a package with the same version that already exists in a TeamCity internal NuGet feed, the package will be rejected. To force the TeamCity server to replace the existing NuGet package with a new version, append your feed URL obtainable from the __Project Settings__ page with the `?replace=true` parameter, for example, `http://<Teamcity URL>/httpAuth/app/nuget/feed/NuGet/default/v2?replace=true`.
-
 
 </td></tr><tr>
 

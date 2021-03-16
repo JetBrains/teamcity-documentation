@@ -81,7 +81,7 @@ The directory containing TeamCity internal caches (of the VCS repository content
 
 </td></tr><tr>
 
-<td>
+<td id="server-url">
 
 Server URL
 
@@ -216,3 +216,50 @@ You can change the custom key or go back to using the default strategy anytime.
 During backup, your custom keys will be exported along with their projects and automatically available after restoring from backup. Since keys will be stored in the exported files in an open form, make sure the backup files are well-protected.
 
 </note>
+
+## Artifacts' Domain Isolation
+{id="artifacts-domain-isolation" auxiliary-id="Artifacts Domain Isolation" product="tc"}
+
+<table><tr>
+
+<td width="100">
+
+Setting
+
+</td>
+
+<td>
+
+Description
+
+</td></tr><tr>
+
+<td>
+
+Enable isolation protection
+
+</td>
+
+<td>
+
+The domain isolation protection secures the server by isolating user-supplied content under a separate domain. This way, build artifacts will be loaded from an isolated domain and any potential malicious content will not be able to affect the main server.
+
+Note that this mode requires configuring a dedicated domain for TeamCity and properly routing it via proxy. To continue using artifacts for displaying some build results (for example, custom reports), you need to specify this domain's URL below.
+
+</td></tr><tr>
+
+<td id="artifacts-url">
+
+Artifacts' URL
+
+</td>
+
+<td>
+  
+Specify a URL to serve build artifacts from. It is required for displaying the build results' tabs which rely on artifacts for representing build data (for example, custom reports). The URL must be different from the [Server URL](#server-url).
+
+Make sure that your reverse proxy and DNS are [properly configured](multinode-setup.md#Domain+Isolation+Proxy+Configuration) so this URL routes to the same address as the main server URL.
+
+As this is a service domain, users will not be able to sign in to the TeamCity interface via this URL.
+
+</td></tr></table>

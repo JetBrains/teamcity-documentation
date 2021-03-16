@@ -41,7 +41,7 @@ CVS Root
 
 <td>
 
-Use these fields to select the access method, point to the user name, CVS server host and repository. For example, `:pserver:user@host.name.org:/repository/path`.   
+Use these fields to select the access method, point to the username, CVS server host and repository. For example, `:pserver:user@host.name.org:/repository/path`.   
 For a [local](#Local+CVS+Settings) connection only the path to the CVS repository should be used.   
 TeamCity supports the following connection methods (described below):
 

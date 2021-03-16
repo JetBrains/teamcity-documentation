@@ -49,7 +49,6 @@ File Content Replacer provides a template for every attribute to be replaced. Cl
 
 Process files
 
-
 </td>
 
 <td id="Wildcards">
@@ -134,7 +133,7 @@ Enabled by default and applies to both the search and replacement strings. Unche
 
 <note id="RegexMixed">
 
-If you use [versioned settings](storing-project-settings-in-version-control.md) (_XML_ or _Kotlin DSL_), in addition to the default `REGEX` and non\-default `FIXED_STRINGS` mode, the `REGEX_MIXED` mode is available. In this mode, the search pattern is interpreted as a regular expression, but the replacement text will be [quoted](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#quoteReplacement-java.lang.String-) (the `\`and `$` characters have no special meaning).
+If you use [versioned settings](storing-project-settings-in-version-control.md) (_XML_ or _Kotlin DSL_), in addition to the default `REGEX` and non-default `FIXED_STRINGS` mode, the `REGEX_MIXED` mode is available. In this mode, the search pattern is interpreted as a regular expression, but the replacement text will be [quoted](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#quoteReplacement-java.lang.String-) (the `\`and `$` characters have no special meaning).
 
 See a sample _File Content Replacer_ configuration for settings in [Kotlin](kotlin-dsl.md):
 
@@ -219,7 +218,7 @@ The templates for replacing the following [Assembly attributes](https://msdn.mic
 
 #### MFC templates
 
-The templates for replacing the following __MFC C\+\+ resource keys__ are provided:
+The templates for replacing the following __MFC C++ resource keys__ are provided:
 * `FileDescription`
 * `CompanyName`
 * `ProductName`

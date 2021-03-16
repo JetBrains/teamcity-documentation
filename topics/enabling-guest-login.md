@@ -1,20 +1,16 @@
 [//]: # (title: Enabling Guest Login)
 [//]: # (auxiliary-id: Enabling Guest Login)
-Logging in as [Guest User](guest-user.md) is turned off by default.
 
-__To enable the guest login to TeamCity:__
-	
+Logging in as a [guest user](guest-user.md) is disabled by default.
+
+To enable the guest login in TeamCity:
 1. Navigate to the __Administration | Authentication__ page.	
-2. Select the __Allow login as guest user__ option.
+2. Select the _Allow login as guest user_ option.
 3. Save your changes.
 
+The __Log in as guest__ link will appear on the __Log in to TeamCity__ page.
 
-The __Log in as guest__ link appears on the __Log in to TeamCity__ page.
-
-By default, the guest user can view all the projects. To customize which projects guest user has access to:
-
-Click the __Configure guest user roles__ link to configure the [Role and Permission](role-and-permission.md). The link appears when the [per-project authorization mode](role-and-permission.md#Changing+Authorization+Mode) is enabled.
-
+By default, the guest user can view all the projects. To customize which projects a guest user has access to, click __Configure guest user roles__ under the _Allow login as guest user_ option and configure the respective [roles and permissions](role-and-permission.md). This link appears only if the [per-project authorization mode](role-and-permission.md#Changing+Authorization+Mode) is enabled.
 
  <seealso>
         <category ref="concepts">

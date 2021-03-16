@@ -23,13 +23,11 @@ TeamCity supports Mercurial out of the box.
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -37,13 +35,11 @@ Description
 
 Pull changes from
 
-
 </td>
 
 <td>
 
 The URL of your hosting.
-
 
 </td></tr><tr>
 
@@ -51,20 +47,17 @@ The URL of your hosting.
 
 Default branch
 
-
 </td>
 
 <td>
 
 Set to the default branch which used in the absence of branch specification or when the branch of the branch specification cannot be found. Note that parameter references are supported here.
 
-
 </td></tr><tr>
 
 <td>
 
 Branch specification
-
 
 </td>
 
@@ -77,13 +70,11 @@ In this area list all the branches you want to be monitored for changes. The syn
 Bookmarks support requires Mercurial 2.4 installed on the TeamCity server.
 </note>
 
-
 </td></tr><tr>
 
 <td>
 
 Use tags as branches
-
 
 </td>
 
@@ -91,19 +82,11 @@ Use tags as branches
 
 Allows you to use tags in branch specification. By default, tags are ignored.
 
-
 </td>
 
 <td>
 
-
-
-
-[//]: # (Internal note. Do not delete. "Mercuriald211e104.txt")    
-
-
-
-
+[//]: # (Internal note. Do not delete. "Mercuriald211e104.txt")
 
 </td></tr><tr>
 
@@ -111,13 +94,11 @@ Allows you to use tags in branch specification. By default, tags are ignored.
 
 Detect subrepo changes
 
-
 </td>
 
 <td>
 
 By default, subrepositories are not monitored for changes.
-
 
 </td></tr><tr>
 
@@ -125,13 +106,11 @@ By default, subrepositories are not monitored for changes.
 
 Username for tags/merge
 
-
 </td>
 
 <td>
 
 A custom username used for labeling
-
 
 </td></tr><tr>
 
@@ -139,13 +118,11 @@ A custom username used for labeling
 
 Use uncompressed transfer
 
-
 </td>
 
 <td>
 
 Uncompressed transfer is faster for repositories in the LAN.
-
 
 </td></tr><tr product="tc">
 
@@ -153,34 +130,30 @@ Uncompressed transfer is faster for repositories in the LAN.
 
 HG command path
 
-
 </td>
 
 <td>
 
 The path to the hg executable. Used on TeamCity server only if included into whitelist. See more [below](#Path+to+hg+executable+detection).
 
-
 </td></tr></table>
-
- 
 
 ### Path to hg executable detection
 {product="tc"}
 
 When an agent starts, the hg-plugin detects Mercurial installed on the agent machine.
 
-The plugin tries to run the `hg version` command using the path specified by the `teamcity.hg.agent.path` parameter. You can change this parameter in \<[Agent Home Directory](agent-home-directory.md)\>\conf\buildAgent.properties.
+The plugin tries to run the `hg version` command using the path specified by the `teamcity.hg.agent.path` parameter. You can change this parameter in `<[Agent Home Directory](agent-home-directory.md)>\conf\buildAgent.properties`.
 
-If this parameter is not set, the plugin uses `hg` as a path to the command, assuming it is somewhere in the $PATH. If the command is executed successfully and mercurial has an appropriate version (1.5.2\+), then the hg\-plugin reports the path to hg in the `teamcity.hg.agent.path` parameter.
+If this parameter is not set, the plugin uses `hg` as a path to the command, assuming it is somewhere in the $PATH. If the command is executed successfully and mercurial has an appropriate version (1.5.2\+), then the hg-plugin reports the path to hg in the `teamcity.hg.agent.path` parameter.
 
 During the build, the plugin uses the hg specified in the _HG command path_ field of a VCS root settings. To use the detected hg, put `%teamcity.hg.agent.path%` in this field. Configurations with such settings will be run only on agents which report the path to hg.
 
-The server side of the plugin checks the value of the `teamcity.hg.customServerHgPathWhitelist` [internal property](configuring-teamcity-server-startup-properties.md). The property contains the `;`-separated list of allowed hg paths to use on the server.  If the path specified in VCS root is in whitelist, then it is used on the server. If not, the path specified in the `teamcity.hg.server.path` [internal property](configuring-teamcity-server-startup-properties.md) is used. If this property is not set, TeamCity server uses `hg` from the `$PATH`.
+The server side of the plugin checks the value of the `teamcity.hg.customServerHgPathWhitelist` [internal property](configuring-teamcity-server-startup-properties.md). The property contains the `;`-separated list of allowed hg paths to use on the server. If the path specified in VCS root is in the whitelist, then it is used on the server. If not, the path specified in the `teamcity.hg.server.path` [internal property](configuring-teamcity-server-startup-properties.md) is used. If this property is not set, TeamCity server uses `hg` from the `$PATH`.
 
 ## Agent Settings
 
-These are the settings used in case of the agent\-side checkout ([default mode](vcs-checkout-mode.md#prefer-agent-checkout)), which requires Mercurial installed on all agents.
+These are the settings used in case of the agent-side checkout ([default mode](vcs-checkout-mode.md#prefer-agent-checkout)), which requires Mercurial installed on all agents.
 
 <table><tr>
 
@@ -188,24 +161,23 @@ These are the settings used in case of the agent\-side checkout ([default mode](
 
 Option
 
-
 </td>
 
 <td>
 
 Description
 
-
 </td></tr><tr>
 
 <td>
+
 Mercurial config
 
 </td>
 
 <td>
 
-Specify the Mercurial configuration options to be applied to the repository during agent\-side checkout, for example, enter the following to enable the `largefiles` extension:   
+Specify the Mercurial configuration options to be applied to the repository during agent-side checkout, for example, enter the following to enable the `largefiles` extension:   
 
 ```Plain Text
 [extensions] 
@@ -215,15 +187,11 @@ Specify the Mercurial configuration options to be applied to the repository duri
  
 The configuration format is described [here](http://www.selenic.com/mercurial/hgrc.5.html).
 
-Before 2017.2.2 this option was also used on TeamCity server. This was disabled for security reasons.
-
-
 </td></tr><tr>
 
 <td>
 
 Purge settings
-
 
 </td>
 
@@ -231,20 +199,17 @@ Purge settings
 
 Defines whether to [purge files](https://www.mercurial-scm.org/wiki/PurgeExtension) and directories not being tracked by Mercurial in the current repository. You can choose to remove only unknown files and empty directories, or to remove ignored files as well. Added files and (unmodified or modified) tracked files are preserved.
 
-
 </td></tr><tr>
 
 <td>
 
 Use mirrors
 
-
 </td>
 
 <td>
 
 When enabled, TeamCity creates a local agent mirror first (under agent's `system/mercurial` directory) and then clones to the working directory from this local mirror. This option speeds up clean checkout, because only the build working directory is cleaned. Also, if a single root is used in several build configurations, a clone will be faster.
-
 
 </td></tr></table>
 
@@ -261,13 +226,11 @@ Server-side internal properties:
 
 Property
 
-
 </td>
 
 <td>
 
 Default
-
 
 </td>
 
@@ -275,13 +238,11 @@ Default
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 `teamcity.hg.pull.timeout.seconds`
-
 
 </td>
 
@@ -289,13 +250,11 @@ Description
 
 3600
 
-
 </td>
 
 <td>
 
 Maximum time in seconds for pull operation to run
-
 
 </td></tr><tr>
 
@@ -303,20 +262,17 @@ Maximum time in seconds for pull operation to run
 
 `teamcity.hg.server.path`
 
-
 </td>
 
 <td>
 
 hg
 
-
 </td>
 
 <td>
 
 Path to the hg executable on the server (see [Path to hg executable detection](#Path+to+hg+executable+detection) for the details).
-
 
 </td></tr><tr>
 
@@ -327,7 +283,6 @@ Path to the hg executable on the server (see [Path to hg executable detection](#
 </td>
 
 <td>
- 
 
 </td>
 
@@ -345,13 +300,11 @@ Path to the hg executable on the server (see [Path to hg executable detection](#
 
 Property
 
-
 </td>
 
 <td>
 
 Default
-
 
 </td>
 
@@ -359,19 +312,11 @@ Default
 
 Description
 
-
 </td>
 
 <td>
 
- 
-
-
-[//]: # (Internal note. Do not delete. "Mercuriald211e377.txt")    
-
-
- 
-
+[//]: # (Internal note. Do not delete. "Mercuriald211e377.txt")
 
 </td></tr><tr>
 
@@ -379,13 +324,11 @@ Description
 
 `teamcity.hg.pull.timeout.seconds`
 
-
 </td>
 
 <td>
 
 3600
-
 
 </td>
 
@@ -393,13 +336,11 @@ Description
 
 Maximum time in seconds for pull operation to run
 
-
 </td></tr><tr>
 
 <td>
 
 `teamcity.hg.agent.path`
-
 
 </td>
 
@@ -407,13 +348,11 @@ Maximum time in seconds for pull operation to run
 
 hg
 
-
 </td>
 
 <td>
 
 Path to hg executable on the agent (see [Path to hg executable detection](#Path+to+hg+executable+detection) for the details).
-
 
 </td></tr></table>
 

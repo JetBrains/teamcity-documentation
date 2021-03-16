@@ -1,5 +1,6 @@
 [//]: # (title: Mapping TeamCity Concepts to Other CI Terms)
 [//]: # (auxiliary-id: Mapping TeamCity Concepts to Other CI Terms)
+
 This information can be used when migrating to TeamCity from other Continuous Integration tools.
 
 ## Jenkins mapping
@@ -14,13 +15,11 @@ This information can be used when migrating to TeamCity from other Continuous In
 
 Bamboo
 
-
 </td>
 
 <td>
 
 TeamCity
-
 
 </td></tr><tr>
 
@@ -28,13 +27,11 @@ TeamCity
 
 Project
 
-
 </td>
 
 <td>
 
 Project
-
 
 </td></tr><tr>
 
@@ -42,13 +39,11 @@ Project
 
 Plan
 
-
 </td>
 
 <td>
 
 Build Configuration
-
 
 </td></tr><tr>
 
@@ -56,13 +51,11 @@ Build Configuration
 
 Stage
 
-
 </td>
 
 <td>
 
 Build Step
-
 
 </td></tr><tr>
 
@@ -70,20 +63,17 @@ Build Step
 
 Job
 
-
 </td>
 
 <td>
 
 Build
 
-
 </td></tr><tr>
 
 <td>
 
-Task \- a part of the Job, often making use of an executable
-
+Task — a part of the Job, often making use of an executable
 
 </td>
 
@@ -91,13 +81,11 @@ Task \- a part of the Job, often making use of an executable
 
 a part of Build Step
 
-
 </td></tr><tr>
 
 <td>
 
 Builder task
-
 
 </td>
 
@@ -105,13 +93,11 @@ Builder task
 
 Build runner step
 
-
 </td></tr><tr>
 
 <td>
 
 Agent
-
 
 </td>
 
@@ -119,13 +105,11 @@ Agent
 
 Build Agent
 
-
 </td></tr><tr>
 
 <td>
 
 (Agent) capability
-
 
 </td>
 
@@ -133,19 +117,16 @@ Build Agent
 
 (Agent) Parameter
 
-
 </td></tr><tr>
 
 <td>
 
 (Job) requirement
 
-
 </td>
 
 <td>
 
 Agent Requirement
-
 
 </td></tr></table>

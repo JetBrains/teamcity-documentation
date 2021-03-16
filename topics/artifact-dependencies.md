@@ -73,7 +73,6 @@ Specify here the exact [build number](configuring-general-settings.md#Build+Numb
 
 Build tag
 
-
 </td>
 
 <td>
@@ -81,19 +80,17 @@ Build tag
 _This field appears if you have selected last finished build with specified tag in the __Get artifacts from__ list_.   
 Specify here the tag of the build whose artifacts are to be used. When resolving the dependency, TeamCity will look for the last successful build with the given tag and use its artifacts.
 
-
 </td></tr><tr>
 
 <td>
 
 Build branch filter
 
-
 </td>
 
 <td>
 
-_This field appears if the dependency has a [branch specified](working-with-feature-branches.md#Configuring+branches) in the VCS Root settings_. Allows setting a [branch filter](branch-filter.md) to limit source builds only to those in the matching branches. If not specified, the default branch is used.
+_This field appears if the dependency has a [branch specified](working-with-feature-branches.md#Configuring+branches) in the VCS root settings_. Allows setting a [branch filter](branch-filter.md) to limit source builds only to those in the matching branches. If not specified, the default branch is used.
 
 </td></tr><tr>
 
@@ -144,10 +141,7 @@ Exclusive patterns examples:
    `-:excl/**/*.*`  
    `+:excl/must_have.txt=>target`  Will download all artifacts to the `target` directory. Will not download anything from the `excl` directory, but the file called `must_have.txt`
 
-<tip>
-
-Click the ![ArtifactsBrowserIcon.png](ArtifactsBrowserIcon.png) icon to invoke the Artifact Browser. TeamCity will try to locate artifacts according to the specified settings and show them in a tree. Select the required artifacts from the tree and TeamCity will place the paths to them into the input field.
-</tip>
+>Click the ![ArtifactsBrowserIcon.png](ArtifactsBrowserIcon.png) icon to invoke the Artifact Browser. TeamCity will try to locate artifacts according to the specified settings and show them in a tree. Select the required artifacts from the tree and TeamCity will place the paths to them into the input field.
 
 The artifacts placed under the `.teamcity` directory are considered [hidden](build-artifact.md#Hidden+Artifacts). These artifacts are ignored by wildcards by default.   
 If you want to include files from the `.teamcity` directory for any purpose, be sure to add the artifact path starting with `.teamcity` explicitly.

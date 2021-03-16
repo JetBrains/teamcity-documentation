@@ -48,7 +48,7 @@ As this feature is still in progress, some operations allowed by enabled permiss
 ## Managing Version Control Username Settings
 
 On the __General__ tab of the __My Settings & Tools__ page, you can see the list of your version control usernames in the __Version Control Username Settings__ area.   
-By default, TeamCity uses your login name as the VCS username. Click __Edit__ to provide actual usernames for version control systems you use. Make sure the user names are correct.   
+By default, TeamCity uses your login name as the VCS username. Click __Edit__ to provide actual usernames for version control systems you use. Make sure the usernames are correct.   
 These settings are not used for authentication for the particular VCS, and so on.
 
 These settings enable you to:
@@ -58,9 +58,9 @@ These settings enable you to:
 
 ## Customizing UI
 
-On the __General__ tab of the __My Settings &\ Tools__ page, you can customize the following UI settings:
+On the __General__ tab of the __My Settings \& Tools__ page, you can customize the following UI settings:
 * Highlight my changes and investigations: Select to highlight builds that include your changes (changes committed by a user with the VCS username provided in the [Version Control Username Settings](#Managing+Version+Control+Username+Settings) section) and problems you were assigned to investigate on the __Projects__ page, __Project Home__ page, __Build Configuration Home__ page.
-* Show date/time in my timezone: Check the option, if you want TeamCity to automatically detect your time zone and show the date and time (for example, build start, vcs change time, and so on) according to it.
+* Show date/time in my timezone: Check the option, if you want TeamCity to automatically detect your time zone and show the date and time (for example, build start, VCS change time, and so on) according to it.
 * Show all personal builds
 * Add builds manually triggered by you to your [favorites](favorite-build.md).
 

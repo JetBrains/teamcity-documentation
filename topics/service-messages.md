@@ -80,7 +80,6 @@ For escaped values, TeamCity uses a vertical bar `|` as an escape character. To 
 
 will be displayed in TeamCity as `foo's test`. Refer to the table of the escaped values below.
 
-
 <table>
 
 <tr>
@@ -105,13 +104,11 @@ Escape as
 
 ' (apostrophe)
 
-
 </td>
 
 <td>
 
 |'
-
 
 </td></tr>
 
@@ -121,13 +118,11 @@ Escape as
 
 \n (line feed)
 
-
 </td>
 
 <td>
 
 |n
-
 
 </td></tr>
 
@@ -136,7 +131,6 @@ Escape as
 <td>
 
 \r (carriage return)
-
 
 </td>
 
@@ -166,13 +160,11 @@ Escape as
 
 | (vertical bar)
 
-
 </td>
 
 <td>
 
 ||
-
 
 </td></tr>
 
@@ -180,15 +172,13 @@ Escape as
 
 <td>
 
- [ (opening bracket)
-
+[ (opening bracket)
 
 </td>
 
 <td>
 
 |[
-
 
 [//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e192.txt")    
 
@@ -200,13 +190,11 @@ Escape as
 
 ] (closing bracket)
 
-
 </td>
 
 <td>
 
 |]
-
 
 </td></tr></table>
 
@@ -215,7 +203,6 @@ Escape as
 Any message supports the optional attributes `timestamp` and `flowId`. In the following examples, `<messageName>` is the name of the specific service message.
 
 ### Message Creation Timestamp
-
 
 ```Shell
 ##teamcity[<messageName> timestamp='timestamp' ...]
@@ -273,7 +260,7 @@ This custom subflow order affects the sequence of reports in a build log and all
 
 ## Reporting Messages for Build Log
 
-You can report messages for a build log in the following way:
+You can report messages for a build log as follows:
 
 ```Shell
 ##teamcity[message text='<message text>' errorDetails='<error details>' status='<status value>']
@@ -281,13 +268,15 @@ You can report messages for a build log in the following way:
 ```
 
 where:
-* `status` may take following values: `NORMAL` (default), `WARNING`, `FAILURE`, `ERROR`.
+* `status` can take the following values: `NORMAL` (default), `WARNING`, `FAILURE`, `ERROR`.
 * `errorDetails` is used only if `status` is `ERROR`, in other cases it is ignored.   
 This message fails the build in case its status is `ERROR` and the "_Fail build if an error message is logged by build runner_" box is checked on the __[Build Failure Conditions](build-failure-conditions.md)__ page of the build configuration. For example:
     ```Shell
     ##teamcity[message text='Exception text' errorDetails='stack trace' status='ERROR']
     
     ```
+  
+>If you want to control when a build fails, you can either configure a [failure condition](build-failure-conditions.md) or send a special [message with a build problem](#Reporting+Build+Problems).
 
 ### Blocks of Service Messages
 
@@ -372,10 +361,9 @@ All the other test messages (except for `testIgnored`) with the same `name` attr
 If using Ant's `echo` task to output the messages, make sure to include the `flowId` attribute with the same value in all the messages related to the same test / test suite as otherwise they [will not be processed correctly](http://jetbrains.net/tracker/issue/TW-5059).
 </note>
 
-It is highly recommended to ensure that the pair of `test suite` + `test name` is unique within the build. For advanced TeamCity test-related features to work, test names must not deviate from one build to another (a single test must be reported under the same name in every build). Include absolute paths in the reported test names is __strongly discouraged__.
+It is highly recommended that you ensure that the pair of `test suite` + `test name` is unique within the build. For advanced TeamCity test-related features to work, test names must not deviate from one build to another (a single test must be reported under the same name in every build). Include absolute paths in the reported test names is __strongly discouraged__.
 
 __Ignored tests:__
-
 
 ```Shell
 ##teamcity[testIgnored name='testName' message='ignore comment']
@@ -491,7 +479,6 @@ where all the attributes are required and can have either numeric or textual val
 * `category` — (mandatory) limited by 255 characters. The `category` attribute examples are "Style violations" and "Calling contracts".
 * `description` — (mandatory) limited by 4000 characters. The description can also be in HTML. For example,
 
-
 ```HTML
 <html>
     <body>
@@ -508,7 +495,6 @@ where all the attributes are required and can have either numeric or textual val
 </html>
 
 ```
-
 
 ### Inspection instance
 
@@ -614,17 +600,12 @@ where:
 
 ### Reporting Build Status
 
-TeamCity allows changing the __build status text__ from the build script. Unlike [progress messages](#Reporting+Build+Progress), this change persists even after a build has finished.   
+TeamCity allows changing the __build status text__ from the build script. Unlike [progress messages](#Reporting+Build+Progress), this change persists even after a build has finished.  
 You can also change the build status of a failing build to `SUCCESS`.
 
-<tip>
-
-Prior to TeamCity 7.1, this service message could be also used for changing the build status to `FAILURE`. In the later TeamCity versions, the [`buildProblem`](#Reporting+Build+Problems) service message must be used for that.
-
-</tip>
+>To change the build status to `FAILURE`, uses the [`buildProblem`](#Reporting+Build+Problems) service message.
 
 To set the status and/or change the text of the build status (for example, note the number of failed tests if the test framework is not supported by TeamCity), use the `buildStatus` message with the following format:
-
 
 ```Shell
 ##teamcity[buildStatus status='<status_value>' text='{build.status.text} and some aftertext']
@@ -764,13 +745,11 @@ JUnit Ant task XML reports
 
 `surefire`
 
-
 </td>
 
 <td>
 
 Maven Surefire XML reports
-
 
 </td></tr>
 
@@ -780,13 +759,11 @@ Maven Surefire XML reports
 
 `nunit`
 
-
 </td>
 
 <td>
 
 NUnit-Console XML reports
-
 
 </td></tr>
 
@@ -796,13 +773,11 @@ NUnit-Console XML reports
 
 `mstest`
 
-
 </td>
 
 <td>
 
 MSTest XML reports
-
 
 </td></tr>
 
@@ -812,13 +787,11 @@ MSTest XML reports
 
 `vstest`
 
-
 </td>
 
 <td>
 
 VSTest XML reports
-
 
 </td></tr>
 
@@ -828,13 +801,11 @@ VSTest XML reports
 
 `gtest`
 
-
 </td>
 
 <td>
 
 Google Test XML reports
-
 
 </td></tr>
 
@@ -843,7 +814,6 @@ Google Test XML reports
 <td colspan="2">
 
 __Code inspection__
-
 
 </td></tr>
 
@@ -873,7 +843,6 @@ IntelliJ IDEA inspection results
 
 Checkstyle inspections XML reports
 
-
 </td></tr>
 
 <tr>
@@ -888,7 +857,6 @@ Checkstyle inspections XML reports
 
 FindBugs inspections XML reports
 
-
 </td></tr>
 
 <tr>
@@ -896,7 +864,6 @@ FindBugs inspections XML reports
 <td>
 
 `jslint`
-
 
 </td>
 
@@ -954,7 +921,6 @@ PMD inspections XML reports
 <td colspan="2">
 
 __Code duplication__
-
 
 </td></tr>
 
@@ -1039,9 +1005,7 @@ Only several reports of different types can be included in a build. Processing r
 
 </note>
 
-
 [//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1503.txt")    
-
 
 ## Canceling build via service message
 

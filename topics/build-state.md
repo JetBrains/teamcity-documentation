@@ -135,13 +135,11 @@ It is possible to configure your build so that it will continue executing build 
 
 Icon
 
-
 </td>
 
 <td>
 
 State
-
 
 </td>
 
@@ -149,13 +147,11 @@ State
 
 Description
 
-
 </td></tr><tr>
 
 <td>
 
 ![personalRunning.gif](personalRunning.gif)
-
 
 </td>
 
@@ -163,13 +159,11 @@ Description
 
 running successfully
 
-
 </td>
 
 <td>
 
 A personal build is running successfully.
-
 
 </td></tr><tr>
 
@@ -177,13 +171,11 @@ A personal build is running successfully.
 
 ![personalFinished.png](personalFinished.png)
 
-
 </td>
 
 <td>
 
 successful
-
 
 </td>
 
@@ -191,13 +183,11 @@ successful
 
 A personal build has completed successfully for all specified build configurations.
 
-
 </td></tr><tr>
 
 <td>
 
 ![personalRunningFailing.gif](personalRunningFailing.gif)
-
 
 </td>
 
@@ -205,20 +195,17 @@ A personal build has completed successfully for all specified build configuratio
 
 running and failing
 
-
 </td>
 
 <td>
 
 A personal build is running with errors.
 
-
 </td></tr><tr>
 
 <td>
 
 ![personalFinishedFailed.png](personalFinishedFailed.png)
-
 
 </td>
 
@@ -233,7 +220,6 @@ failed
 
 A personal build failed at least in one specified build configuration.
 
-
 </td></tr></table>
 
 ## Hanging and Outdated Builds
@@ -244,7 +230,7 @@ A running build can be marked as _Outdated_ if there is a build which contains m
 
 ## Failed to Start Builds
 
-Builds which failed to start, i.e. did not get to the point of launching the first build step are marked with the ![redSign.png](redSign.png) icon. It may be caused by a VCS repository being down when the build starts, or the inability to resolve artifact dependencies and so on. Such build status is often an indication of a configuration error and should usually be addressed by a build engineer rather than a developer if there is such roles separation.   
+Builds which failed to start, i.e. did not get to the point of launching the first build step are marked with the ![redSign.png](redSign.png) icon. It may be caused by a VCS repository being down when the build starts, or the inability to resolve artifact dependencies and so on. Such build status is often an indication of a configuration error and should usually be addressed by a build engineer rather than a developer.   
 If such an error occurs, TeamCity:
 * doesn't send build failed notification (unless you have subscribed to "the build fails to start" notification)
 * doesn't associate pending changes with this build, that is the changes will remain pending, because they were not actually tested

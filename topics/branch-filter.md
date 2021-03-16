@@ -1,11 +1,11 @@
 [//]: # (title: Branch Filter)
 [//]: # (auxiliary-id: Branch Filter)
 
-If a VCS Root has branches configured, you can use the _Branch Filter_ option.
+If a [VCS root](vcs-root.md) has [branches specified](working-with-feature-branches.md#Configuring+branches), the _branch filter_ option becomes available for various operations in TeamCity.
 
 ## Branch Filter Usage
 
-The Branch Filter allows limiting branches used by TeamCity in various operations. Currently, the Branch Filter is available on the following TeamCity settings pages:
+Currently, branch filters can be configured on the following TeamCity settings pages:
 
 <table>
 
@@ -29,8 +29,7 @@ Branch filter description
 
 <td>
  
-[Version Control Settings of a build configuration](configuring-vcs-settings.md)
-
+[Version Control Settings](configuring-vcs-settings.md) of a build configuration
 
 </td>
 
@@ -52,7 +51,7 @@ Limit the set of branches available for the build configuration. This branch fil
 
 <td>
 
-Limit the set of branches to use artifacts from.
+Limit dependency builds, whose artifacts will be used in the builds of the current configuration, to those in the matching branches.
 
 </td>
 
@@ -68,7 +67,7 @@ Limit the set of branches to use artifacts from.
 
 <td>
 
-Limit the set of branches to which builds the trigger should be applied to.
+Limit the set of branches where builds will be monitored by this finish build trigger.
 
 </td>
 
@@ -84,7 +83,7 @@ Limit the set of branches to which builds the trigger should be applied to.
 
 <td>
 
-Limit the set of branches the trigger should be applied to.
+Limit the set of branches in which builds can be triggered by this VCS trigger.
 
 </td>
 
@@ -102,9 +101,8 @@ Limit the set of branches the trigger should be applied to.
 
 Limit the set of branches the trigger should be applied to.
 
-* If "_Trigger build only if there are pending changes_" is turned ON, then the trigger will add a build to the queue for all branches matched by the trigger branch filter where pending changes exist
-* If "_Trigger build only if there are pending changes_" is turned OFF, then the trigger will add a build to the queue for all branches matched by the trigger branch filter regardless of the presence of pending changes there.
-
+* If "_Trigger build only if there are pending changes_" is turned ON, then the trigger will add a build to the queue for all matching branches where pending changes exist.
+* If "_Trigger build only if there are pending changes_" is turned OFF, then the trigger will add a build to the queue for all matching branches regardless of the presence of pending changes there.
 
 </td>
 
@@ -208,17 +206,18 @@ Specify a naming pattern for branches to which the clean-up rule will apply. Not
 
 </table>
 
+If there are multiple branch filters configured atop a single root, the following order of priority is applied:
+1. The [branch specification](working-with-feature-branches.md#Configuring+branches) in the VCS root settings defines the initial set of the monitored branches.
+2. If specified, a branch filter in the __Versioned Control Settings__ of a build configuration can narrow down the initial set of branches.
+3. If specified, a branch filter in the settings of a build trigger applies to the subset declared by the filter (2). 
+
 ## Branch Filter Format
 
-To filter branches, use a newline-delimited list of `+|-:logical_branch_name` rules, where `logical_branch_name` is the name displayed in the TeamCity UI (for example, `master`).
+To filter branches, use a newline-delimited list of `+|-:logical_branch_name` rules, where `logical_branch_name` is the name displayed in the TeamCity UI (for example, `master`). The name is case-sensitive.
 
 <chunk include-id="OR-syntax-tip">
 
-<tip>
-
-Here, the _pipe_ symbol `|` represents the __OR__ command, as in regular expressions: use `+` for including, __OR__ `-` for excluding.
-
-</tip>
+>Here, the _pipe_ symbol `|` represents the __OR__ command, as in regular expressions: use `+` for including, __OR__ `-` for excluding.
 
 </chunk>
  

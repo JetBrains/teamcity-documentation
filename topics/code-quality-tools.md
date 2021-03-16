@@ -5,7 +5,7 @@ TeamCity comes bundled with a number of tools capable of analyzing the quality o
 
 ## Bundled Tools
 
-Generally, the tools are configured as [build runners](build-runner.md) and the results are displayed on the Build Results page as well as in the IDE for some of the tools.   
+Generally, the tools are configured as [build runners](build-runner.md) and the results are displayed on the Build Results page as well as in the IDE for some tools.
 
 You can also configure builds to fail based on the results and view the trends as statistics charts.
 
@@ -13,7 +13,7 @@ You can also configure builds to fail based on the results and view the trends a
 
 #### IntelliJ IDEA-powered Code Analysis Tools
 
-These are available when you have an IntelliJ IDEA project (.idea directory or .ipr file) or a Maven project file (pom.xml) checked into your version control.
+These are available when you have an IntelliJ IDEA project (.idea directory or `.ipr` file) or a Maven project file (pom.xml) checked into your version control.
 * [Inspections (IntelliJ IDEA)](inspections.md) runs [IntelliJ IDEA inspections](http://www.jetbrains.com/idea/documentation/inspections.jsp) in TeamCity. These include more than 600 Java, HTML, CSS, JavaScript inspections.
 * [Duplicates Finder (Java)](duplicates-finder-java.md) provides a report on the discovered repetitive blocks of code.
 
@@ -31,7 +31,7 @@ These are configured in the dedicated sections of the build runners.
 These are available if you use Visual Studio.
 * [Inspections (ReSharper)](inspections-resharper.md) gathers results of [JetBrains ReSharper Code Inspections](http://www.jetbrains.com/resharper/webhelp/Code_Analysis__Code_Inspections.html) in your C#, VB.NET, XAML, XML, ASP.NET, JavaScript, CSS and HTML code.
 * [Duplicates Finder (ReSharper)](duplicates-finder-resharper.md) provides a report on the discovered repetitive blocks of C# and VB.NET code.
-* [FxCop](fxcop.md) uses [Microsoft FxCop](http://msdn.microsoft.com/en-us/library/bb429476(VS.80).aspx) pre\-installed on a build agent.
+* [FxCop](fxcop.md) uses [Microsoft FxCop](http://msdn.microsoft.com/en-us/library/bb429476(VS.80).aspx) preinstalled on a build agent.
 
 #### Code Coverage
 
@@ -42,11 +42,9 @@ The following code coverage tools are supported for [.NET Process Runner](net-pr
 
 For the [.NET CLI (dotnet)](net.md) runner and with NUnit version 3.x the only supported coverage tool is [JetBrains dotCover](jetbrains-dotcover.md).
 
- 
-
 ## Reporting External Tools Results in TeamCity
 
-If you need to use non\-bundled tools, you can use TeamCity to import their results and display them in the TeamCity UI.
+If you need to use non-bundled tools, you can use TeamCity to import their results and display them in the TeamCity UI.
 
 ### Supported Report Formats
 

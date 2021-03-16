@@ -7,7 +7,7 @@ A Version Control System (VCS) is a system for tracking the revisions of the pro
 A Version Control System (VCS) is a system for tracking the revisions of the project source files. It is also known as SCM (source code management) or a revision control system. The following VCSs are supported by TeamCity out-of-the-box: [Git](git.md), [Subversion](subversion.md), [Mercurial](mercurial.md), [Perforce](perforce.md), [Team Foundation Server](team-foundation-server.md).
 {product="tcc"}
 
-Connection to a version control system is defined by a TeamCity [VCS root](vcs-root.md). A project or a [build configuration](build-configuration.md) in TeamCity can have one or more VCS roots attached; a build configuration can also define the workspace for the builds via other checkout options like [Checkout Rules](vcs-checkout-rules.md).
+Connection to a version control system is defined by a TeamCity [VCS root](vcs-root.md). A [project](project.md) or a [build configuration](build-configuration.md) in TeamCity can have one or more VCS roots attached; a build configuration can also define the workspace for the builds via other checkout options like [Checkout Rules](vcs-checkout-rules.md).
 
 TeamCity always monitors the repositories from the server-side to detect changes and display them in the UI. Depending on the specified [VCS Checkout Mode](vcs-checkout-mode.md) the actual repository checkout can also happen on the agent-side.
 
@@ -21,7 +21,7 @@ VCS settings are configured on the __Version Control Settings__ page for a proje
 
 ### Configure Checkout Rules
 
-When several VCS roots are attached or you need to checkout only a portion of the repository, specify the [checkout rules](vcs-checkout-rules.md) for the VCS root to provide advanced possibilities to control sources checkout. With the rules you can exclude and/or map paths to a different location on the build agent during checkout.
+When several VCS roots are attached or you need to check out only a portion of the repository, specify the [checkout rules](vcs-checkout-rules.md) for the VCS root to provide advanced possibilities to control sources checkout. With the rules you can exclude and/or map paths to a different location on the build agent during checkout.
 
 ## Configuring Checkout Options for Build Configuration
 
@@ -128,13 +128,10 @@ If you want to see the changes in a feature branch only, check the box to exclud
 
 You can use a [branch filter](branch-filter.md) to limit the set of branches available for the build configuration. By default, no limits are applied.
 
-
 ## Other VCS-Related Settings
 
 * Configure a [VCS trigger](configuring-vcs-triggers.md) if you want the build to be started on new changes detection.
 * Additionally, you can add a label into the version control system for the sources used for a particular build by means of the [VCS Labeling](vcs-labeling.md) build feature.
- 
- 
  
  <seealso>
         <category ref="admin-guide">
