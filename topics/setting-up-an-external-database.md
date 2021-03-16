@@ -59,7 +59,7 @@ The section below describes the required configuration on the database server an
 
 Recommended database server settings:
  * use InnoDB storage engine
- * use [utf8mb4 character set](configuring-utf8-character-set-for-mysql.md) (or utf8 if MySQL version is 5.5.2 or older)
+ * use [utf8mb4 character set](configuring-utf8-character-set-for-mysql.md) (or utf8 if MySQL version is 5.5.2 or earlier)
  * use case\-sensitive collation
  * make sure that the time zone of the JVM running TeamCity and that of MySQL instance are the same using the `my.cnf` file or by configuring time zones at the OS level
  * [see also recommendations for MySQL server settings](how-to.md#Configure+Newly+Installed+MySQL+Server)
@@ -68,7 +68,7 @@ The MySQL user account that will be used by TeamCity must be granted all permiss
 
 
 ```sql
-create database <database-name> collate utf8mb4_bin; -- or utf8_bin on MySQL 5.5.2 and older
+create database <database-name> collate utf8mb4_bin; -- or utf8_bin on MySQL 5.5.2 or earlier
 create user <user-name> identified by '<password>';
 grant all privileges on <database-name>.* to <user-name>;
 grant process on *.* to <user-name>;
