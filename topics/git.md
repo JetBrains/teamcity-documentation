@@ -719,9 +719,31 @@ false
 
 <td>
 
-Defines whether to log additional debug info on each found commit
+Defines whether to log additional debug info on each found commit.
 
-</td></tr><tr>
+</td></tr>
+
+<tr>
+
+<td>
+
+teamcity.git.repackIdleTimeoutSeconds
+
+</td>
+
+<td>
+
+1800
+
+</td>
+
+<td>
+
+Defines the idle timeout of `git-repack` operations, in seconds. You might need to increase this timeout for large repositories as repacking objects in them takes a lot of time.
+
+</td></tr>
+
+<tr>
 
 <td>
 
