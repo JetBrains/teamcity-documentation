@@ -471,6 +471,8 @@ To collect information for the __Maven__ tab, or to perform Maven dependencies c
 
 It makes sense to check if the `server-side settings.xml` files contain correct information about remote repositories, proxies, mirrors, profiles, credentials, and so on.
 
+<anchor name="%22Criticalerrorinconfigurationfile%22errors"/>
+
 ## "Critical error in configuration file" errors
 
 If you encounter the error, it means the settings stored in the TeamCity Data Directory are in an inconsistent state. This can occur after manual change of the files or if newer version of TeamCity starts to report the inconsistencies.  
