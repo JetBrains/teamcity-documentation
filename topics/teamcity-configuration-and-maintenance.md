@@ -242,7 +242,7 @@ Enable isolation protection
 
 <td>
 
-The domain isolation protection secures the server by isolating user-supplied content under a separate domain. This way, build artifacts will be loaded from an isolated domain and any potential malicious content will not be able to affect the main server.
+If enabled, build artifacts will be loaded from a separate domain and any potential malicious content will not be able to communicate with the TeamCity server on behalf of the user viewing this content. This mitigates the risk of XSS attacks through artifacts and of other related vulnerabilities.
 
 Note that this mode requires configuring a dedicated domain for TeamCity and properly routing it via proxy. To continue using artifacts for displaying some build results (for example, custom reports), you need to specify this domain's URL below.
 
