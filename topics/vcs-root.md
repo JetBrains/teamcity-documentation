@@ -1,5 +1,5 @@
-[//]: # (title: VCS root)
-[//]: # (auxiliary-id: VCS root)
+[//]: # (title: VCS Root)
+[//]: # (auxiliary-id: VCS Root)
 
 <chunk include-id="VCSRoot">
 
