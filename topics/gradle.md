@@ -144,7 +144,9 @@ Selecting the _Print stacktrace_ checkbox is equivalent to adding the `-s` Gradl
 
 </td></tr></table>
 
-<include src="ant.md" include-id="java-param"/>
+### Java Parameters
+
+<include src="java-parameters.md" include-id="java-param"/>
 
 ### Build properties
 

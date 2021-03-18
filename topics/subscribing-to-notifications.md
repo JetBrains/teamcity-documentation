@@ -19,7 +19,7 @@ This article explains how to configure user-level notifications and describes th
 
 TeamCity allows you to flexibly adjust the notification rules, so that you receive notifications only on the events you are interested in. To subscribe to user-level notifications:
 
-1\. In the top right corner of the screen, click the arrow next to your username, and select __My Settings &amp; Tools__ from the drop-down menu. Open the __Notification Rules__ tab.
+1\. In the upper right corner of the screen, click the arrow next to your username, and select __My Settings &amp; Tools__ from the drop-down menu. Open the __Notification Rules__ tab.
 
 2\. Click the required notifications type and configure the required settings: 
  * __Email Notifier__*: relies on the email address specified in __My Settings &amp; Tools | General__.
@@ -29,7 +29,7 @@ TeamCity allows you to flexibly adjust the notification rules, so that you recei
 * __IDE Notifier__: the required TeamCity plugin must be installed in your IDE. For the details on installing TeamCity IDE plugins, refer to [Installing Tools](installing-tools.md).
 * __Jabber Notifier__*: expects entering a Jabber account name. Note that instead of Jabber you can specify your Google Talk account here if this option is [configured by the System Administrator](setting-up-google-mail-and-google-talk-as-notification-servers.md#Google+Talk).
 {product="tc"}
-* __Slack Notifier__: requires signing in to Slack and relies on the Slack connection configured in the project settings. Read more on how to configure the connection to Slack in [Notifications](notifications.md#Configuring+Slack+Connection). 
+* __Slack Notifier__: requires signing in to Slack and relies on the Slack connection configured in the project settings. Read more on how to configure the connection to Slack in [Notifications](notifications.md#Configuring+Slack+Connection).
 * (obsolete) __Windows Tray Notifier__: [Windows Tray Notifier](windows-tray-notifier.md) must be installed.
 {product="tc"}
 * __Browser Notifier__: aims at replacing Windows Tray Notifier and requires installing the [web browser extension](browser-notifier.md).

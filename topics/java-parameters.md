@@ -1,7 +1,7 @@
 [//]: # (title: Java Parameters)
 [//]: # (auxiliary-id: Java+Parameters)
 
-This page describes general parameters for Java-based runners. For other settings of an individual runner, refer to the following pages:
+This page describes general parameters for Java-based runners:
 
 * [Ant](ant.md)
 * [Maven](maven.md)
@@ -11,8 +11,6 @@ This page describes general parameters for Java-based runners. For other setting
 * [IntelliJ IDEA Project](intellij-idea-project.md)
 
 <chunk include-id="java-param">
- 
-### Java Parameters
 
 <table><tr>
 
@@ -36,7 +34,7 @@ JDK
 
 <td>
 
-Select a JDK. [This section](predefined-build-parameters.md) details the available options. The default is `JAVA_HOME` environment variable or the agent's own Java.
+Select a JDK. [This section](predefined-build-parameters.md#Defining+Java-related+Environment+Variables) details the available options. The default is `JAVA_HOME` environment variable or the agent's own Java.
 
 </td></tr><tr>
 

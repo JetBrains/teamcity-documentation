@@ -459,7 +459,9 @@ You can use references to external properties when defining the values, like `%s
 
 </chunk>
 
-<include src="ant.md" include-id="java-param"/>
+### Java Parameters
+
+<include src="java-parameters.md" include-id="java-param"/>
 
 ## Compilation settings
 

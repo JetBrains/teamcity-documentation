@@ -253,7 +253,9 @@ Click this link to open a text area, where you can define templates for the jar 
 You can use references to external properties when defining the values, like `%system.idea_home%` or `%env.JDK_1_3%`. This will add a [requirement](agent-requirements.md) for the corresponding property.
 </note>
 
-<include src="ant.md" include-id="java-param"/>
+### Java Parameters
+
+<include src="java-parameters.md" include-id="java-param"/>
 
 ## Inspection Parameters
 
