@@ -132,8 +132,6 @@ It also contains [missing link Ant task](https://code.google.com/p/missing-link/
 
 To use the tool, specify `-lib "%teamcity.tool.ant-net-tasks%"` in [Additional Ant command line parameters](#Ant+Parameters) of the runner settings.
 
-<chunk include-id="java-param">
-
 <anchor name="Ant-JavaParameters"/>
 
 ### Java Parameters
