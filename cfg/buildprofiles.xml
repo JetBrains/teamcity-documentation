@@ -21,6 +21,9 @@
         <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2020.2/</browser-edits-url>
         <disable-prev-next-links>true</disable-prev-next-links>
         <disable-variable-interpolation>true</disable-variable-interpolation>
+        <web-root>https://www.jetbrains.com/help/teamcity</web-root>
+        <og-twitter>@teamcity</og-twitter>
+        <og-image>https://resources.jetbrains.com/storage/products/teamcity/img/meta/preview.png</og-image>
     </variables>
     <layout name="Web help" mode="web2">
         <style>s.css</style>
