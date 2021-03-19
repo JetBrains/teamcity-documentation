@@ -22,7 +22,7 @@ Learn more on [our website](https://www.jetbrains.com/teamcity/cloud/).
 ### Get Started
 
 * [Getting Started with TeamCity](getting-started-with-teamcity.md)   
-* [TeamCity Concepts](concepts.md)
+* [TeamCity Concepts](introduction-to-teamcity-terminology.md)
     
 </td>
 
