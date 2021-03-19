@@ -1,7 +1,7 @@
 [//]: # (title: Managing your User Account)
 [//]: # (auxiliary-id: Managing your User Account)
 
-To manage your account settings, in the top right corner of the screen, click the arrow next to your username and select __My Settings &amp; Tools__ from the drop-down menu.
+To get to your user profile settings, click your name in the header and select __Profile__ from the drop-down menu. The __My Settings \& Tools__ page will open.
 
 ## Changing Your Password
 
@@ -47,7 +47,7 @@ As this feature is still in progress, some operations allowed by enabled permiss
 
 ## Managing Version Control Username Settings
 
-On the __General__ tab of the __My Settings & Tools__ page, you can see the list of your version control usernames in the __Version Control Username Settings__ area.   
+In __My Settings & Tools | General__, you can see the list of your version control usernames in the __Version Control Username Settings__ area.   
 By default, TeamCity uses your login name as the VCS username. Click __Edit__ to provide actual usernames for version control systems you use. Make sure the usernames are correct.   
 These settings are not used for authentication for the particular VCS, and so on.
 
@@ -58,16 +58,17 @@ These settings enable you to:
 
 ## Customizing UI
 
-On the __General__ tab of the __My Settings \& Tools__ page, you can customize the following UI settings:
+In __My Settings & Tools | General__, you can customize the following UI settings:
 * Highlight my changes and investigations: Select to highlight builds that include your changes (changes committed by a user with the VCS username provided in the [Version Control Username Settings](#Managing+Version+Control+Username+Settings) section) and problems you were assigned to investigate on the __Projects__ page, __Project Home__ page, __Build Configuration Home__ page.
 * Show date/time in my timezone: Check the option, if you want TeamCity to automatically detect your time zone and show the date and time (for example, build start, VCS change time, and so on) according to it.
 * Show all personal builds
 * Add builds manually triggered by you to your [favorites](favorite-build.md).
 
 ## Viewing your Roles and Permissions
-In the top right corner of the screen, click the arrow next to your username, and select __My Settings & Tools__ from the drop-down menu.
-* To view the list of user groups you are in, go to the __Groups__ tab.
-* To view your roles and permissions in different projects, go to the __Roles__ tab. Note, that roles are assigned to the user by the system administrator.
+
+In __My Settings & Tools | Groups__, you can view the list of user groups you are assigned to.
+
+In __My Settings & Tools | Roles__, you can view your roles and permissions in different projects. Note, that roles are assigned to a user by the system administrator.
 
 <seealso>
         <category ref="concepts">

@@ -7,7 +7,7 @@ The following guide explains the main TeamCity terms and concepts. For a quick r
 
 _[Projects](project.md)_ are the topmost objects of the TeamCity hierarchy, and _Root project_ is the main default project that contains all your custom projects and their subprojects. Each project serves for storing logically related _[build configurations](build-configuration.md)_ and defining their common settings and parameters. Most often, a TeamCity project corresponds to a single software product or its specific version.
 
-Projects can be configured manually or automatically, from a VCS repository. The settings of each repository used in a project are stored in a dedicated preset called _[VCS root](vcs-root.md)_. Besides VCS roots, a project contains other settings shared between its nested build configurations: _[cloud profile connections](teamcity-integration-with-cloud-solutions.md)_, _[common parameters](project-and-agent-level-build-parameters.md)_, _[clean-up rules](clean-up.md)_, and [many others](creating-and-editing-projects.md).
+Projects can be configured manually or automatically, from a VCS repository. The settings of each repository used in a project are stored in a dedicated preset called _[VCS root](vcs-root.md)_. Besides VCS roots, a project contains other settings shared between its nested subprojects and build configurations: _[cloud profile connections](teamcity-integration-with-cloud-solutions.md)_, _[common parameters](project-and-agent-level-build-parameters.md)_, _[clean-up rules](clean-up.md)_, and [many others](creating-and-editing-projects.md).
 
 Example of an object hierarchy in TeamCity:
 

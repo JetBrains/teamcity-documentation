@@ -121,7 +121,7 @@ Additional Ant command line parameters
 
 <td>
 
-Optionally, specify additional command line parameters as a space\-separated list. For example, you can specify the [ant-net-tasks Tool](#ant-net-tasks+Tool) (see below).
+Optionally, specify additional command line parameters as a space-separated list. For example, you can specify the [ant-net-tasks Tool](#ant-net-tasks+Tool) (see below).
 
 </td></tr></table>
 
@@ -132,73 +132,11 @@ It also contains [missing link Ant task](https://code.google.com/p/missing-link/
 
 To use the tool, specify `-lib "%teamcity.tool.ant-net-tasks%"` in [Additional Ant command line parameters](#Ant+Parameters) of the runner settings.
 
-<chunk include-id="java-param">
-
 <anchor name="Ant-JavaParameters"/>
 
 ### Java Parameters
 
-<table><tr>
-
-<td>
-
-Option
-
-</td>
-
-<td>
-
-Description
-
-</td></tr><tr>
-
-<td>
-
-JDK
-
-
-</td>
-
-<td>
-
-Select a JDK. [This section](predefined-build-parameters.md#Defining+Java-related+Environment+Variables) details the available options. The default is `JAVA_HOME` environment variable or the agent's own Java.
-
-</td></tr><tr>
-
-<td>
-
-JDK home path
-
-</td>
-
-<td>
-
-_The option is available when &lt;Custom&gt; is selected above._ Use this field to specify the path to your custom JDK used to run the build. If the field is left blank, the path to JDK Home is read either from the `JAVA_HOME` environment variable on agent the computer, or from the `env.JAVA_HOME` property specified in the [build agent configuration](build-agent-configuration.md) file (`buildAgent.properties`). If these values are not specified, TeamCity uses the Java home of the build agent process itself.
-
-</td></tr><tr>
-
-<td>
-
-JVM command line parameters
-
-</td>
-
-<td>
-
-You can specify such JVM command line parameters, for example, _maximum heap size_ or parameters enabling _remote debugging_. These values are passed by the JVM used to run your build.
-
-Example:
-
-```Shell
--Xmx512m -Xms256m
-
-```
-
-</td></tr></table>
-
-</chunk>
-
-
+<include src="java-parameters.md" include-id="java-param"/>
 
 ### Test Parameters
 
