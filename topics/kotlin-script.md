@@ -77,7 +77,7 @@ Available for the __Custom Script__ type.
 
 Enter a code of a Kotlin script.
 
-If you want to extend the script's functionality with external libraries, you can use annotation-based references to Maven dependencies. For example
+If you want to extend the script's functionality with external libraries, you can use annotation-based references to Maven dependencies. For example:
 
 ```Kotlin
 @file:Repository("https://mvnrepository.com")
@@ -126,7 +126,7 @@ Script parameters
 
 Enter the parameters of the script, as in the command line. [Parameter references](configuring-build-parameters.md#parameter-reference) are supported.
 
->We highly recommend that you use parameter references here to pass access tokens and other secure values into the script. This will ensure that these values are available on the agent only during the build. Otherwise, if the parameters are specified directly inside the script, their resolved values will be stored on the agent machine as long as the script itself if stored, which might compromise the security of your data.
+>We highly recommend that you use parameter references here to pass access tokens and other secure values into the script. This will ensure that these values are available on the agent only during the build. Otherwise, if the parameters are specified directly inside the script, their resolved values will be stored on the agent machine as long as the script itself is stored, which might compromise the security of your data.
 
 </td>
 
@@ -143,13 +143,14 @@ JDK
 <td>
 
 Select JDK to run the script:
-* Default: the path to JDK Home is read either from the `JAVA_HOME` environment variable on the agent machine, or from the `env.JAVA_HOME` property specified in the [build agent configuration file](build-agent-configuration.md) (`buildAgent.properties`). If these values are not specified, TeamCity uses the Java Home of the build agent process itself.
-* Custom: enter a path to a JDK installed on the agent.
-* Select any installed version by number.
+* __Default__: the path to JDK Home is read either from the `JAVA_HOME` environment variable on the agent machine, or from the `env.JAVA_HOME` property specified in the [build agent configuration file](build-agent-configuration.md) (`buildAgent.properties`). If these values are not specified, TeamCity uses the Java Home of the build agent process itself.
+* __Custom__: enter a path to a JDK installed on the agent.
+* Select any installed __version by number__.
 
 >If you use Java 9 or later and Kotlin 1.4.2 or later, you might get the following warning in the build log:  
 > `An illegal reflective access operation has occurred`  
 > This is caused by a known issue of the Kotlin compiler and will not affect your build anyhow. The details of the issue and its workaround are described [here](https://youtrack.jetbrains.com/issue/TW-70604#focus=Comments-27-4763145.0-0).
+>
 {type="warning"}
 
 </td>
