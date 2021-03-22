@@ -96,7 +96,7 @@ See [Kotlin Help](https://github.com/Kotlin/KEEP/blob/master/proposals/scripting
 
 <tr>
 
-<td id="script-file" auxiliary-id=""kotlin-script-file">
+<td id="script-file" auxiliary-id="kotlin-script-file">
 
 Kotlin script file
 
