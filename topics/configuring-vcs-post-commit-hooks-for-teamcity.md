@@ -11,27 +11,27 @@ To avoid background polling, it is possible to set up a post-commit hook on the 
 
 Even with commit hooks configured and working properly, TeamCity still makes requests for changes on the server start and on each build queuing (or starting) to ensure the latest changes are used even if commit hooks stopped to function.
 
-When a commit hook call comes in, TeamCity starts checking for changes in VCS Roots which match the request.
+When a commit hook call comes in, TeamCity starts checking for changes in VCS roots which match the request.   
 If a change is found during the check, TeamCity automatically increases the [VCS polling interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (the minimum after the increase is 15 minutes, maximum is 4 hours, increased by 2 times on each successful check). If the commit hook stops working (for example, TeamCity finds a change in a VCS root which it did not receive a commit hook call for), the [VCS polling interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) value is reset to default.
 
-Commit hooks are received via TeamCity REST API [requests](https://www.jetbrains.com/help/teamcity/rest/manage-vcs-roots.html) which should typically be configured to in the post-commit repository triggers:
+Commit hooks are received via TeamCity REST API [requests](https://www.jetbrains.com/help/teamcity/rest/manage-vcs-roots.html) which should typically be configured in the post-commit repository triggers:
 
 `POST .../app/rest/vcs-root-instances/commitHookNotification?locator=<vcsRootInstancesLocator>`
 
 The request returns textual details as to the performed operation or an error message.
 
-It is important to find the `<vcsRootInstancesLocator>` for the request to match only the affected VCS roots from those configured in the TeamCity instance. If too many VCS roots are matched by the request configured in the commit hook, it will lead to more requests and more overload on the VCS repository and TeamCity than using default polling approach. Some examples of the "locator" are provided below.   
-The request should be performed by a user who has "View project and all parent projects" permission for all the projects where VCS root is defined.   
-Note that by default only the first 100 matched "VCS root instances" will be matched by the [request](https://www.jetbrains.com/help/teamcity/rest/manage-vcs-roots.html). To match more, "count:9999" can be added as below.
+It is important to find `<vcsRootInstancesLocator>` for the request to match only the affected VCS roots from those configured in the TeamCity instance. If too many VCS roots are matched by the request configured in the commit hook, it will lead to more requests and more overload on the VCS repository and TeamCity than using the default polling approach. Some examples of the "locator" are provided below.   
+The request should be performed by a user who has the "_View project and all parent projects_" permission for all the projects where the VCS root is defined.   
+Note that by default only the first 100 VCS root instances will be matched by the [request](https://www.jetbrains.com/help/teamcity/rest/manage-vcs-roots.html). To match more, `count:9999` can be added as below.
 
-The most common form of the `<vcsRootInstancesLocator>` is:
+The most common form of `<vcsRootInstancesLocator>` is:
 
 ```Shell
 vcsRoot:(type:<TYPE>,count:99999),property:(name:<URL_PROPERTY_NAME>,value:<VCS_REPOSITORY_URL_PART>,matchType:contains,ignoreCase:true),count:99999
 
 ```
 
-However, for VCS roots without parameter `%-references`, a more performant variance can be used:
+However, for VCS roots without the parameter `%-references`, a more performant option can be used:
 
 ```Shell
 vcsRoot:(type:<TYPE>,property:(name:<URL_PROPERTY_NAME>,value:<VCS_REPOSITORY_URL_PART>,matchType:contains,ignoreCase:true),count:99999),count:99999
@@ -42,7 +42,7 @@ Commit hooks examples for UNIX-based VCS servers are described below.
 
 ## Post-commit generic script
 
-Save the script below on a VCS server as `teamcity-trigger.sh` (you'll need to generate a personal [access token](managing-your-user-account.md#Managing+Access+Tokens)): 
+Save the script below on a VCS server as `teamcity-trigger.sh` (you will need a personal [access token](managing-your-user-account.md#Managing+Access+Tokens)): 
 
 
 ```Shell
@@ -58,11 +58,13 @@ exit 0
 
 ```
 
-Set the  variables according to your TeamCity server. The user must have __View build configuration settings__ permission for projects where VCS root is defined. This permission is included in the __Project developer__ role by default.
+For Perforce, you can use this [dedicated script](#Using+post-commit+script+for+Perforce).
+
+Set the  variables according to your TeamCity server. The user must have the "_View build configuration settings_" permission for projects where the VCS root is defined. This permission is included in the Project Developer role by default.
 
 <note>
 
-If your TeamCity server uses a custom SSL certificate, you'll need to pass `-k` or  `--cacert /path/to/correct/internal/CACertificate` parameter to the `curl` command above.
+If your TeamCity server uses a custom SSL certificate, you need to pass the `-k` or `--cacert /path/to/correct/internal/CACertificate` parameter to the `curl` command above.
 </note>
 
 ## Setting up post-receive hook on Git server
@@ -129,7 +131,61 @@ chmod 755 /path/to/teamcity-trigger.sh /path/to/svn_repository_root/hooks/post-c
 
 ## Setting up post-commit trigger on Perforce server
 
-Set up a `change-commit` trigger by adding one or several lines when [editing specification](https://www.perforce.com/perforce/r15.1/manuals/p4sag/chapter.scripting.html#scripting.trigger.table.fields) (the text below must be placed in one line, one line per trigger):
+There are ways to set up a post-commit trigger in Perforce:
+
+* [Using the dedicated script](#Using+post-commit+script+for+Perforce). This is a recommended approach. It is currently available in terms of TeamCity 2021.1 Early Access Program.
+* [Editing the Perforce specification manually](#Editing+Perforce+specification+manually).
+
+### Using post-commit script for Perforce
+
+You can install the dedicated post-commit script on your Perforce server. This script will autodetect Perforce VCS roots in TeamCity and trigger the respective builds.
+
+To be able to use the script, you need to generate an [access token](managing-your-user-account.md#Managing+Access+Tokens) first. The TeamCity user assigned to this token must have the "_Run build_" permission for projects where Perforce VCS roots are defined. This permission is included in the Project Developer role by default.
+
+1. Save this script on your Perforce server as `teamcity-hook.sh`:
+
+    ```Shell
+    #!/bin/sh
+    # How to use this script:
+    # 1. Save the script on the Perforce server under the name /path/teamcity-hook.sh.
+    # 2. Run chmod +x /path/teamcity-hook.sh.
+    # 3. Set up a change-commit trigger by adding the following line when editing the specification with the `p4 triggers` command:
+    #    check-for-changes-teamcity change-commit //depot/... "/path/teamcity-hook.sh %change%"
+    # 4. Update the variables below.
+    #
+    # Update the following variables: 
+    
+    # TeamCity server root URL:
+    TEAMCITY_SERVER=http://localhost:8111/bs
+    
+    # Access token of a user on TeamCity server which can run builds in all relevant configurations (Developer role)
+    TC_ACCESS_TOKEN="<token_value>"
+    
+    # This P4PORT value will be used to find relevant VCS roots, it should be equal to the P4Port setting in the VCS root:
+    P4PORT="localhost:1666"
+    CHANGE=$1
+    
+    # The following is one line:
+    (sleep 10;  curl -H "Authorization: Bearer $TC_ACCESS_TOKEN" -d "p4port=$P4PORT&changelistId=$CHANGE" "$TEAMCITY_SERVER/app/perforce/commitHook" -o /dev/null) >/dev/null 2>&1 <&1 &
+    exit 0
+    
+    ```
+
+2. Run `chmod +x /path/teamcity-hook.sh`.
+3. [Edit the Perforce specification](https://www.perforce.com/perforce/r15.1/manuals/p4sag/chapter.scripting.html#scripting.trigger.table.fields) with the `p4 triggers` command and set up a change-commit trigger by adding the following line:
+   ```Shell
+   check-for-changes-teamcity change-commit //depot/... "/path/teamcity-hook.sh %change%"
+   ```
+   where `//depot/...` is the depot which is used in TeamCity builds. If there are multiple depots, you can replace this path with `//...`.
+4. Update the variables from the script with your TeamCity settings.
+
+>If your TeamCity server uses a custom SSL certificate, you need to pass the `-k` or `--cacert /path/to/correct/internal/CACertificate` parameter to the `curl` command above.
+>
+{type="note"}
+
+### Editing Perforce specification manually
+
+Set up a `change-commit` trigger by adding one or several lines when [editing the specification](https://www.perforce.com/perforce/r15.1/manuals/p4sag/chapter.scripting.html#scripting.trigger.table.fields). The text below must be placed in one line, one line per trigger.
 
 
 ```Shell
@@ -139,31 +195,26 @@ check-for-changes-teamcity change-commit //depot/project1/... "/path/teamcity-tr
 
 
 where `<VCS Root locator>` can be one of the following:
+
 * for Stream-based VCS roots:
-
-
-```Shell
-vcsRoot:(type:perforce,count:99999),property:(name:stream,value://streamdepot/streamname,matchType:contains,ignoreCase:true),count:99999
-
-```
+    ```Shell
+    vcsRoot:(type:perforce,count:99999),property:(name:stream,value://streamdepot/streamname,matchType:contains,ignoreCase:true),count:99999
+    
+    ```
 
 * for Client-based VCS roots:
-
-```Shell
-vcsRoot:(type:perforce,count:99999),property:(name:client,value:<client name>,matchType:contains,ignoreCase:true),count:99999
-
-```
+    ```Shell
+    vcsRoot:(type:perforce,count:99999),property:(name:client,value:<client name>,matchType:contains,ignoreCase:true),count:99999
+    
+    ```
 
 * for Client-mapping VCS roots:
-
-```Shell
-vcsRoot:(type:perforce,count:99999),property:(name:client-mapping,value:<some unique part of client mapping>,matchType:contains,ignoreCase:true),count:99999
-
-```
-
-Where `<some unique part of client mapping>` should match the Perforce depot path in TeamCity VCS Root after all parameter resolution. For the rule `check-for-changes-teamcity change-commit //depot/project1/...` it should probably be `//depot/project1/`.
-
-Each such `check-for-changes-teamcity` rule line describes an association between path with commit (`//depot/project1`) and a set of VCS roots which should be checked for changes.
+    ```Shell
+    vcsRoot:(type:perforce,count:99999),property:(name:client-mapping,value:<unique client mapping>,matchType:contains,ignoreCase:true),count:99999
+    
+    ```
+    where `<unique client mapping>` should match the Perforce depot path in the TeamCity VCS root after all parameters' resolution. For the rule `check-for-changes-teamcity change-commit //depot/project1/...` it would be `//depot/project1/`.  
+  Each `check-for-changes-teamcity` rule line describes an association between the path with the commit (`//depot/project1`) and a set of VCS roots which should be checked for changes.
 
 ## Setting up service hook on Team Foundation Server for TFVC and Git
 
