@@ -105,6 +105,8 @@ To configure this build failure condition, specify:
 * a string or a [Java Regular Expression](http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html) whose presence/absence in the build log is an indicator of a build failure,
 * a failure message to be displayed on the __Build Results__ page when a build fails due to this condition.
 
+When using Regex, you can refer to the regular expression or its parts from the "_Failure message_" field (for example, refer to specific [capturing groups](https://www.regular-expressions.info/brackets.html) with `$N` where `N` is the group number). This allows including the matching error text into the failure message displayed in the build results.
+
 ### Stopping build immediately
 
 You can stop a build immediately on encountering a specified text in the build log or when a certain build metric, specified using the _Fail build on metric change_ condition, is exceeded.
