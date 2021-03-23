@@ -2903,28 +2903,28 @@ For build configuration with the `BUILD_CONF_ID` ID:
 Status of the last build:
  
 ```HTML
-<img src="http://teamcity:8111/app/rest/builds/buildType:(id:BUILD_CONF_ID)/statusIcon"/>
+<img src="http://teamcity:8111/app/rest/builds/buildType:(id:BUILD_CONF_ID)/statusIcon.svg"/>
  
 ```
  
 Status of the last build tagged with the `myTag` tag:
 ```HTML
-<img src="http://teamcity:8111/app/rest/builds/buildType:(id:BUILD_CONF_ID),tag:myTag/statusIcon"/>
+<img src="http://teamcity:8111/app/rest/builds/buildType:(id:BUILD_CONF_ID),tag:myTag/statusIcon.svg"/>
  
 ```
  
-![BuildSuccessfulStatus.png](BuildSuccessfulStatus.png)
+![BuildSuccessfulStatus.svg](BuildSuccessfulStatus.svg)
  
 All other [build locators](#Build+Locator) are supported.
  
 For example, you can use the following markdown markup to add the build status for GitHub repository for the build configuration with ID `TeamCityPluginsByJetBrains_TeamcityGoogleTagManagerPlugin_Build` and server [`https://teamcity.jetbrains.com`](https://teamcity.jetbrains.com) with guest authentication enabled:
  
 ```HTML
-[![Build status](https://teamcity.jetbrains.com/guestAuth/app/rest/builds/buildType:(id:TeamCityPluginsByJetBrains_TeamcityGoogleTagManagerPlugin_Build)/statusIcon.svg)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=TeamCityPluginsByJetBrains_TeamcityGoogleTagManagerPlugin_Build)
+[![Build status](https://teamcity.jetbrains.com/guestAuth/app/rest/builds/buildType:(id:TeamCityPluginsByJetBrains_TeamcityGoogleTagManagerPlugin_Build)/statusIcon.svg](https://teamcity.jetbrains.com/viewType.html?buildTypeId=TeamCityPluginsByJetBrains_TeamcityGoogleTagManagerPlugin_Build)
  
 ```
  
-If the returned image contains "no permission to get data" text (![no-permission-to-get-data.png](no-permission-to-get-data.png)), ensure that one of the following is true:
+If the returned image contains "no permission to get data" text (![no-permission-to-get-data.svg](no-permission-to-get-data.svg)), ensure that one of the following is true:
 * The server has the [guest user access](guest-user.md) enabled, and the guest user has permissions to access the build configuration referenced, or
 * The build configuration referenced has the "enable status widget" [option](configuring-general-settings.md#Enable+Status+Widget) __ON__.
 * You are logged in to the TeamCity server in the same browser and you have permissions to view the build configuration referenced. Note that this will not help for embedded images in GitHub pages as GitHub retrieves the images from the server side.
