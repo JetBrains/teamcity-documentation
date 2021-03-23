@@ -63,7 +63,7 @@ Any text appearing between percentage signs TeamCity considers a reference to a 
 
 If you want to prevent TeamCity from treating the text in the percentage signs as a reference to a property, use two percentage signs. Every occurrence of `%%` in the values where property references are supported will be replaced with `%` before passing the value to the build. For example, if you want to pass `%Y%m%d%H%M%S` into the build, change it to `%%Y%%m%%d%%H%%M%%S`.
 
-#### Where References Can Be Used
+### Where References Can Be Used
 
 <table><tr>
 
