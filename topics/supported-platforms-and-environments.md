@@ -120,6 +120,7 @@ Other runners:
 ### Other runners
 
 * [Python](python.md), requires installing Python version 2.0 or later on agents
+* [Kotlin Script](kotlin-script.md)
 * [Rake](rake.md)
 * [Command Line](command-line.md) for running any build process using a shell script
 * [PowerShell](powershell.md), versions 1.0 - 5.0
