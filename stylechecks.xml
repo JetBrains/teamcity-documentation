@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE style-checks
-        SYSTEM "http://helpserver.labs.intellij.net/help/style-checker.dtd">
+        SYSTEM "https://resources.jetbrains.com/stardust/style-checker.dtd">
 <style-checks>
     <style-check replacement="checkbox">
         <lookup>check-box</lookup>
