@@ -55,7 +55,7 @@ By default, a newly started secondary node provides a read-only user interface a
 * [VCS repositories polling](#VCS+Repositories+Polling+on+Secondary+Node)
 * [Processing build triggers](#Processing+Triggers+on+Secondary+Node)
 * [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node)
-* In 2021.1 EAP2: Main TeamCity node
+* In 2021.1 EAP2: [Main TeamCity node](#Main+Node+Responsibility)
 
 <img src="Nodes.png" alt="Secondary node responsibilities"/>
 
