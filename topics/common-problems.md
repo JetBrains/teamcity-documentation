@@ -527,3 +527,8 @@ You might want to use tools which require some manual interaction during the bui
 Under Windows, you might want to configure TeamCity agent to run not as a Service, but with access to the desktop by configuring automatic user logon, [related details](setting-up-and-running-additional-build-agents.md#Automatic+Agent+Start+under+Windows).
 
 There is no simple solution for Extended Validation (EV) code signing as the feature is built in for a reason. There is some discussion on the issue on [stack overflow](https://stackoverflow.com/questions/17927895/automate-extended-validation-ev-code-signing=). The appropriate solution seems to implement a dedicated service with own authorization approach and sign the binaries through it.
+
+## Tomcat error: Request Header too large
+
+By default, Tomcat sets a 4096 bytes (4KB) limit to the request and response HTTP headers. If too many cookies get included into a header (for example, by the proxy servers between the end user and TeamCity), users might get the `400: Request Header too large` error when browsing TeamCity.  
+To identify the cause of this problem, we recommend that you inspect the affected header with the browser developer console. As a temporary workaround, you can also increase the Tomcat header limit. To do this, change the `$TOMCAT_HOME/conf/server.xml` file and increase the value of the `maxHttpHeaderSize` parameter for all relevant connectors (for example, set `65536` to increase the limit to 64KB).
