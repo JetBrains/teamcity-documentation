@@ -1,26 +1,26 @@
 [//]: # (title: Typed Parameters)
 [//]: # (auxiliary-id: Typed Parameters)
 
-When adding a [build parameter](configuring-build-parameters.md) (system property, environment variable or configuration parameter), you can extend its definition with a specification that will regulate the parameter's control presentation and validation. This specification is the parameter's _meta-information_ that is used to display the parameter in the _[Triggering a Custom Build](triggering-a-custom-build.md) dialog_. It allows making a custom build run more user-friendly and usable by non-developers.
+When adding a [build parameter](configuring-build-parameters.md) (system property, environment variable, or configuration parameter), you can extend its definition with meta-information, or _specification_. The parameter's specification defines how its controls are presented and validated in the _[Run Custom Build](triggering-a-custom-build.md)_ dialog.
 
-Consider a simple example. You have a build configuration in which you have a hard-to-read build parameter that regulates if a build has to include a license or not. The parameter can be either true or false, and is false by default. It may be clear for a build engineer, which build parameter regulates license generation and which value it is to have, but it may not be obvious to a regular user.
+By adding a typed specification to a parameter, you make it a _typed parameter_. Typed parameters are more understandable for non-developers and make experience with builds more user-friendly.
 
-Using the build parameter's specification you can make your parameters more readable in the _Run Custom Build_ dialog.
+Example: a build configuration has a parameter that defines if a build has to include a license or not. The parameter can be either true or false, and is false by default. For a regular user, it might not be clear which build parameter is responsible for the license generation and what its values mean. It is not a problem when builds run with the default configuration, but if some user wants to run a custom build, the variety of available parameters might confuse them. Using the build parameter's specification, you can make the parameters' appearance in the _Run Custom Build_ dialog more readable.
 
 ## Adding Parameter Specification
 
-To add specification to a build parameter, click the __Edit__ button in the __Spec__ area when editing/adding a build parameter.
+To add a specification to a build parameter, click __Edit__ in the __Spec__ section when editing/adding a build parameter.
 
-All parameters specifications support a number of common properties, such as:
-* __Label__: some text that is shown near the control in the _Run Custom Build_ dialog.
-* __Description__: some text that is shown below the control containing an explanatory note of the control use.
+All parameters' specifications support the following common properties:
+* __Label__: a text that is displayed near the control in the _Run Custom Build_ dialog.
+* __Description__: a text that is displayed below the control containing an explanatory note of the control use.
 * __Display__:
-   * if _hidden_ is selected, the parameter will not be shown in the _Run Custom Build_ dialog, but will be sent to a build;
-   * if _prompt_ is selected, TeamCity will always require a review of the parameter value when clicking the __Run__ button (won't require the parameter if build is triggered automatically);
-   * if _normal_ is selected, the parameter will be shown as usual.
-* __Read-only__: if the box is checked, it will be impossible to override the parameter with a different value.
+   * if _hidden_ is selected, the parameter will not be displayed in the _Run Custom Build_ dialog, but will be sent to a build;
+   * if _prompt_ is selected, TeamCity will always require a review of the parameter's value when clicking __Run__ (won't require the parameter if the build is triggered automatically);
+   * if _normal_ is selected, the parameter will be displayed as usual.
+* __Read-only__: if enabled, it will be impossible to override the parameters value.
 * __Type__:
-   * a simple text field with the ability to validate its value using regular expression;
+   * a simple text field with the ability to validate its value using a regular expression;
    * a checkbox;
    * a select control;
    * a password field.
@@ -49,7 +49,7 @@ Text
 
 <td>
 
-The default option. Represents a usual text string without any extra handling
+The default option. Represents a usual text string without any extra handling.
 
 </td></tr><tr>
 
@@ -61,7 +61,7 @@ Checkbox
 
 <td>
 
-True/false option represented by a checkbox
+A true/false option represented by a checkbox.
 
 </td></tr><tr>
 
@@ -73,7 +73,7 @@ Select
 
 <td>
 
-"Select one" or "select many" control to set the value to one of predefined settings.
+A "select one" or "select many" control to set the value to one of the predefined settings.
 
 </td></tr><tr>
 
@@ -85,12 +85,12 @@ Password
 
 <td>
 
-This is designed to store passwords or other secure data in TeamCity settings. TeamCity makes the value of the password parameter never appear in the TeamCity web UI: it affects the settings' screens and the _Run Custom Build_ dialog where password fields appear. Also, the value is replaced in the build's __Parameters__ tab and build log.
+This type is designed to store passwords or other secure data in TeamCity settings. TeamCity makes the value of the password parameter never appear in the TeamCity UI: including the settings' screens and the _Run Custom Build_ dialog where password fields appear. The value is also replaced in the build's __Parameters__ tab and build log.
 
-The password value is stored in the configuration files under TeamCity Data Directory. Depending on the server [Encryption Settings](teamcity-configuration-and-maintenance.md#encryption-settings), the value is either scrambled or encrypted with a custom key.
+The password value is stored in the configuration files under [TeamCity Data Directory](teamcity-data-directory.md). Depending on the server [encryption settings](teamcity-configuration-and-maintenance.md#encryption-settings), the value is either scrambled or encrypted with a custom key.
 {product="tc"}
 
-The password value is stored in the configuration files under TeamCity Data Directory.
+The password value is stored in the configuration files under [TeamCity Data Directory](teamcity-data-directory.md).
 {product="tcc"}
 
 The build log value is hidden with a simple search-and-replace algorithm, so if you have a trivial password of "123", all occurrences of "123" will be replaced, potentially exposing the password. Setting the parameter to the _password_ type does not guarantee that the raw value cannot be retrieved. Any project administrator can retrieve it, and any developer who can change the build script could potentially write malicious code to get the password.
@@ -111,13 +111,11 @@ Depending on the specification's type, there are additional settings.
 
 Text
 
-
 </td>
 
 <td>
 
-__Allowed value__ - choose the allowed value. For the __Regex__ option, specify __Pattern__, a Java-style regular expression to validate the field value, as well as a __validation message__.
-
+__Allowed value__: choose the allowed text value. For the _Regex_ option, specify _Pattern_, a Java-style regular expression to validate the field value, as well as a _validation message_.
 
 </td></tr><tr>
 
@@ -125,19 +123,18 @@ __Allowed value__ - choose the allowed value. For the __Regex__ option, specify 
 
 Checkbox
 
-
 </td>
 
 <td>
 
-__Checked value__/__Unchecked value__: Specify values for the parameter to have depending on the checkbox's state.
+__Checked value/Unchecked value__: Specify values of the parameter respective to these checkbox states.
 
-It is recommended to __specify the checked value__ and keep the default value and the unchecked value of the parameter __the same__.
+We recommend that you keep the unchecked value equal to the default value and specify a custom checked value.
 
-Depending on the way the build is triggered, the checkbox behavior will be as follows:
-* if the build is triggered by an automatic trigger or by clicking the __Run__ button (without the [run custom build](triggering-a-custom-build.md) dialog), the default value is used
-* if the build is triggered via the [run custom build](triggering-a-custom-build.md) dialog without changing anything, the 'unchecked value' is used (if not empty); and if it is empty, the default value is used
-* if the build is triggered via the [run custom build](triggering-a-custom-build.md) dialog with the box checked, the 'checked value' is used (if not empty); and if it is empty, the 'true' value is used
+Depending on how the build is triggered, the checkbox behavior will be as follows:
+* if the build is triggered by an automatic trigger or by clicking __Run__ (without the [_Run Custom Build_](triggering-a-custom-build.md) dialog), the default value is used;
+* if the build is triggered via the _Run Custom Build_ dialog without changing anything, the "unchecked" value is used, if it is not empty and differs from the default one; if empty, the default value is used;
+* if the build is triggered via the _Run Custom Build_ dialog with the box checked, the "checked" value is used, if it is not empty; if it is empty, the `true` value is used.
 
 </td></tr><tr>
 
@@ -145,12 +142,11 @@ Depending on the way the build is triggered, the checkbox behavior will be as fo
 
 Select
 
-
 </td>
 
 <td>
 
-Check the __Allow multiple__ box to enable multiple selection. In the __Items__ field specify a newline-separated list of items. Use the following syntax `label => value` or `value`.
+Check the __Allow multiple__ box to enable multiple selection. In the __Items__ field, specify a newline-separated list of items. Use the following syntax `label => value` or `value`.
 
 </td></tr></table>
 
