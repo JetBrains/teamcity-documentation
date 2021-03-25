@@ -101,7 +101,7 @@ In the _Dependencies_ block of a base rule, you can also choose the clean-up beh
 TeamCity can optionally preserve builds and their artifacts which are used in other builds by [artifact dependencies](dependent-build.md#Artifact+Dependency). The following options are available:
 * _Use default_ uses the option configured in the default clean-up rule.
 * _Prevent clean-up_ protects builds (and their artifacts) which were used as a source of artifact or snapshot dependencies for the builds of the current build configuration.
-* _Do not prevent clean-up_ (default) makes cleanup-related processing of the dependency builds disregard the fact that they are used by the builds of the current build configuration.
+* _Do not prevent clean-up_ (default) makes cleanup-related processing of the dependency builds disregard the fact that they are used by the builds of the current build configuration. The dependency builds and artifacts will be cleaned up. Note that clean up does not delete a build history and logs of snapshot dependency builds, even if this option is selected.
 
 For example, a dependent build configuration A has an artifact dependency on B. If the _Prevent clean-up_ option is used for A, the builds of B that provide artifacts for the builds of A will not be processed while cleaning the builds, so the builds and their artifacts will be preserved.
 
