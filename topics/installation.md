@@ -125,7 +125,6 @@ Official JetBrains TeamCity server Docker image
 </table>
 
 You can also install TeamCity using the following __experimental options__:
-* Official [CloudFormation template](https://github.com/JetBrains/teamcity-cloudformation-template) to launch TeamCity in AWS. Read more in [Running TeamCity Stack in AWS](running-teamcity-stack-in-aws.md).
 * TeamCity template on [Azure Marketplace](https://azuremarketplace.microsoft.com/en-en/marketplace/apps/jetbrains.teamcity?tab=Overview). Read more in our [blog post](https://blog.jetbrains.com/teamcity/2018/09/teamcity-on-azure-marketplace/).
 * [Azure Resource Manager template](https://github.com/JetBrains/teamcity-azure-template).
 * [Google Cloud Deployment Manager template](https://github.com/JetBrains/teamcity-google-template).
