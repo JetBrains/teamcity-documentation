@@ -1,0 +1,19 @@
+<svg width="201" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>permission</title>
+<defs><rect id="a" x=".09" width="200.077" height="20" rx="3"/><linearGradient x1="100%" y1="100%" y2="0%" id="c"><stop stop-opacity=".1" offset="0%"/><stop stop-color="#FFF" stop-opacity="0" offset="100%"/></linearGradient></defs>
+<g fill="none" fill-rule="evenodd">
+  <g>
+    <mask id="b" fill="#fff"><use xlink:href="#a"/></mask>
+    <g mask="url(#b)"><path d="M.093 0h77.134v20H.093V0z" fill="#565656"/><path d="M51 0h149.167v20H51V0z" fill="#9F9F9F"/><path d="M200.126 20H0V0h200.126v20z" fill="url(#c)"/></g>
+  </g>
+  <g font-family="Helvetica Neue, Arial, sans-serif" letter-spacing=".6" font-size="11">
+    <text fill-opacity=".3" fill="#010101" x="20" y="15">build</text>
+    <text fill="#fff" x="20" y="14">build</text>
+    <text fill-opacity=".3" fill="#000" x="56" y="15">no permission to get data</text>
+    <text fill="#FFF" x="56" y="14">no permission to get data</text>
+  </g>
+  <g>
+    <path style="fill:#fff" d="M3,6h6.96v1.74h-2.61v6.67h-1.74v-6.67h-2.61z
+    m11.31,8.41c-2.61,.29,-4.35,-1.595,-4.35,-4.06s1.74-4.35,4.35-4.35c1.74,0,2.465,0.58,3.19,1.305l-1.16,1.305c-0.58-0.58-1.305-1.015-2.03-1.015c-1.45,0-2.32,1.16-2.32,2.61s1.015,2.61,2.32,2.61c0.87,0,1.45-0.435,2.175-1.015l1.16,1.16c-.87,.87,-1.74,1.45,-4.93,1.45z"/>  </g>
+</g>
+</svg>

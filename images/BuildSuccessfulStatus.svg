@@ -1,0 +1,20 @@
+<svg width="106" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>successful</title>
+<defs><rect id="a" x=".057" width="105.283" height="20" rx="3"/><linearGradient x1="100%" y1="100%" y2="0%" id="c"><stop stop-opacity=".1" offset="0%"/><stop stop-color="#FFF" stop-opacity=".1" offset="100%"/></linearGradient></defs>
+<g fill="none" fill-rule="evenodd">
+  <g>
+    <mask id="b" fill="#fff"><use xlink:href="#a"/></mask>
+    <g mask="url(#b)"><path d="M0 0h51.632v20H0V0z" fill="#565656"/><path d="M51 0h55.94v20H51V0z" fill="#4C1"/><path d="M105.32 20H.01V0h105.31v20z" fill="url(#c)"/></g>
+  </g>
+  <g font-family="Helvetica Neue, Arial, sans-serif" letter-spacing=".6" font-size="11">
+    <text fill-opacity=".3" fill="#010101" x="20" y="15">build</text>
+    <text fill="#fff" x="20" y="14">build</text>
+    <text fill-opacity=".3" fill="#010101" x="56" y="15">success</text>
+    <text fill="#fff" x="56" y="14">success</text>
+  </g>
+  <g>
+    <path style="fill:#fff" d="M3,6h6.96v1.74h-2.61v6.67h-1.74v-6.67h-2.61z
+    m11.31,8.41c-2.61,.29,-4.35,-1.595,-4.35,-4.06s1.74-4.35,4.35-4.35c1.74,0,2.465,0.58,3.19,1.305l-1.16,1.305c-0.58-0.58-1.305-1.015-2.03-1.015c-1.45,0-2.32,1.16-2.32,2.61s1.015,2.61,2.32,2.61c0.87,0,1.45-0.435,2.175-1.015l1.16,1.16c-.87,.87,-1.74,1.45,-4.93,1.45z"/>
+  </g>
+</g>
+</svg>
