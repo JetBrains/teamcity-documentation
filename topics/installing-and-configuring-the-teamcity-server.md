@@ -5,7 +5,7 @@ This page covers a new TeamCity server installation. For __upgrade instructions_
 
 To install a TeamCity server, perform the following:
 
-1. Choose the appropriate TeamCity distribution (`.exe`, `.tar.gz` or [Docker image](https://hub.docker.com/r/jetbrains/teamcity-server/)) based on the details below. You can also [run TeamCity on AWS](running-teamcity-stack-in-aws.md) stack.
+1. Choose the appropriate TeamCity distribution (`.exe`, `.tar.gz` or [Docker image](https://hub.docker.com/r/jetbrains/teamcity-server/)) based on the details below.
 2. [Download](http://www.jetbrains.com/teamcity/download/) the distribution.
 3. Review [software requirements](supported-platforms-and-environments.md) and [hardware requirements notes](how-to.md#Estimate+Hardware+Requirements+for+TeamCity) and [platform selection](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server).
 4. Review TeamCity [Licensing Policy](licensing-policy.md).
