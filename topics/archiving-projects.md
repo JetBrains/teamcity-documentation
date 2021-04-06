@@ -15,7 +15,7 @@ The settings of archived projects are stored in the same [Data Directory subfold
 
 By default, permissions to archive projects are given to project and system administrators.
 
-If the parent project of an archived subproject is displayed in the project list (for example, on the __[Projects](managing-projects-and-build-configurations.md#Configuring+Visibility)__ page), the archived subprojects are displayed with the corresponding note.
+If the parent project of an archived subproject is displayed in the project list (for example, on the __[Projects](ordering-projects-and-build-configurations.md)__ page), the archived subprojects are displayed with the corresponding note.
 
 ### Dearchiving Projects
 
