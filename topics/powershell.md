@@ -182,14 +182,12 @@ Additional command line parameters
 
 <td>
 
-Specify parameters to be passed to `powershell.exe`.
+Specify parameters to be passed to the PowerShell executable.
 
 </td></tr></table>
 
 ## Docker Settings
 {product="tc"}
-
-To enable support for Docker in PowerShell steps, run the TeamCity server with the `-Dteamcity.docker.runners=jetbrains_powershell` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
 In this section, you can specify the Docker image which will be [used to run the build step](docker-wrapper.md).
 
@@ -276,6 +274,6 @@ The TeamCity PowerShell plugin uses temporary files as an entry point; these fil
 
 ## Development Links
 
-The PowerShell support is implemented as an open-source plugin. For development links refer to the [plugin's page](https://plugins.jetbrains.com/plugin/9041-powershell-runner).
+The PowerShell support is implemented as an open-source plugin. For development links refer to the [plugin's page](https://github.com/JetBrains/teamcity-powershell).
 
 [//]: # (Internal note. Do not delete. "PowerShelld255e514.txt")
