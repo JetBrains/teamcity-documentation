@@ -87,7 +87,7 @@ This option is also available from the build's context menu in the build list.
 Apart from the __Overview__ tab, you can use the revamped __Changes__, __Tests__, and __Dependencies__ tabs:
 
 * The __Changes__ tab displays more information about changes in the build, separately for user commits and artifact changes. You can filter changes by their author and display changes made in the build configuration settings.
-* The __Tests__ tab allows switching between failed, ignored, and succeeded tests. Click a test to quickly view its details or, for example, to assign an investigation. Since version 2020.2, you can also see a [new __Test History__ page](what-s-new-in-teamcity.md#Experimental+Test+History+page).
+* The __Tests__ tab allows switching between failed, ignored, and succeeded tests. Click a test to quickly view its details or, for example, to assign an investigation. You can also view its history on the new __Test History__ page.
 * The __Dependencies__ tab provides three alternative modes of displaying the build dependencies: a visual timeline, structured list, and build chain. Choose the mode that is the most helpful for your current task.
 
 Other classic UI tabs are also available: click __More__ and select the required tab in the list.
