@@ -124,7 +124,7 @@ Other runners:
 * [Rake](rake.md)
 * [Command Line](command-line.md) for running any build process using a shell script
 * [PowerShell](powershell.md), versions 1.0 - 5.0
-* [Xcode](xcode-project.md), versions 3-8 (requires [Xcode](xcode-project.md) installed on the build agent)
+* [Xcode](xcode-project.md), versions 3-12 (requires [Xcode](xcode-project.md) installed on the build agent)
 
 ## Testing Frameworks 
 

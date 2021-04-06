@@ -1,7 +1,7 @@
 [//]: # (title: Integrating TeamCity with Issue Tracker)
 [//]: # (auxiliary-id: Integrating TeamCity with Issue Tracker)
 
-TeamCity can be integrated with your issue tracker to provide a comprehensive view of your development project. TeamCity detects issues mentioned in the comments to version control changes, turning them into links to your issue tracker in the TeamCity web UI.
+TeamCity can be integrated with your issue tracker to provide a comprehensive view of your development project. TeamCity detects issues mentioned in the comments to version control changes, turning them into links to your issue tracker in the TeamCity UI.
 
 The integration is configured at the project level: the Project Administrator permissions are required. You can configure integration if you have multiple projects on both the TeamCity and the issue tracker server or if you are using different issue trackers for different projects.
 
@@ -37,7 +37,7 @@ To get maximum benefit from the issue tracker integration, do the following:
 The information about the issues is retrieved by the TeamCity server using the credentials provided and then is displayed to TeamCity users.
 
 This has several implications:
-* The TeamCity server needs direct access to the issue tracker. (Also, TeamCity does not yet [support](http://youtrack.jetbrains.net/issue/TW-8876) proxy for connections to issue trackers).
+* The TeamCity server needs direct access to the issue tracker.
 * The user configured in the connection to the issue tracker has to have sufficient permissions to view the issues that can be mentioned in TeamCity. Also, TeamCity users will be able to view the issue details in TeamCity for all the issues that the configured user has access to.
 
 ### Configuring connection
@@ -112,6 +112,20 @@ Additional authentication information or/and the details on how to specify strin
 * [GitHub](github.md)
 * [Bitbucket Cloud](bitbucket-cloud.md)
 * [TFS](team-foundation-work-items.md)
+
+### Converting Strings into Links to Issues
+
+In addition to general settings, you need to specify which strings should be recognized as references to issues in your tracker.
+
+For __Jira__, you need to provide a space-separated list of [project keys](http://confluence.atlassian.com/display/JIRA044/What+is+a+Project). You can also load all project keys automatically: check the corresponding box and test the connection to your Jira server. If the connection is successful, the __Project keys__ field will be automatically populated. Newly created projects in Jira will be detected by TeamCity, and the project keys list will be automatically synchronized.   
+For example, if a project key is `WEB`, an issue key like `WEB-101`, mentioned in a VCS comment, will be resolved to a link to the corresponding issue.
+
+For __YouTrack__, you need to provide a [permanent token](https://www.jetbrains.com/help/youtrack/incloud/authentication-with-permanent-token.html) for authentication and a space-separated list of __Project IDs__. You can also load all project IDs automatically: check _Use all YouTrack IDs automatically_ and test the connection to your YouTrack server. If the connection is successful, the __Project IDs__ field will be automatically populated. Newly created projects in YouTrack will be detected by TeamCity, and the project ID list will be automatically synchronized.  
+For example, if a project ID is `TW`, an issue ID like `TW-18802` mentioned in a VCS comment will be resolved to a link to the corresponding issue.
+ 
+For __Bugzilla__, __GitHub__, and __Bitbucket Cloud__, you need to specify the __Issue ID Pattern__: a [Java Regular Expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to find the issue ID in the text. The matched text (or the first group if there are groups defined) is used as the issue number. The most common case is `#(\d+)` — this will extract `1234` as the issue ID from the text `Fix for #1234`.
+
+TeamCity will resolve the issue number mentioned in a VCS comment and will display a link to this issue in the UI (for example, on the [__Changes__](working-with-build-results.md#Changes) page, or the [__Issues__](working-with-build-results.md#Related+Issues) tab of [__Build Results__](working-with-build-results.md)).
 
 ## Integrating TeamCity with Other Issue Trackers
 {product="tc"}

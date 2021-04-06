@@ -1,11 +1,9 @@
 [//]: # (title: Team Foundation Work Items)
 [//]: # (auxiliary-id: Team Foundation Work Items)
 
-<note>
-
-In 2019, Team Foundation Server has been renamed to Azure DevOps Server. The content of this page is applicable to Azure DevOps Server.
-
-</note>
+>In 2019, Team Foundation Server has been renamed to Azure DevOps Server. The content of this page is applicable to Azure DevOps Server.
+>
+{type="note"}
 
 Team Foundation Work Items tracking is integrated with TeamCity. Supported versions are Microsoft Visual Studio Team Foundation Server 2012 or later, and Azure DevOps Services.
 
@@ -60,7 +58,6 @@ __TFS 2010\+__: `http[s]://<host>:<port>/tfs/<collection>/<project>`
 
 __Azure DevOps Services__: `https://<account>.visualstudio.com/<project>`
 
-
 </td></tr><tr>
 
 <td>
@@ -72,9 +69,8 @@ Username
 <td>
 
 
-Specify a user to access Team Foundation Server. This can be a user name or `DOMAIN\UserName` string.   
+Specify a user to access Team Foundation Server. This can be a username or `DOMAIN\UserName` string.   
 Use blank to let TFS select a user account that is used to run the TeamCity Server. For VSTS use [personal access tokens](team-foundation-server.md#teamFoundationServerLive).
-
 
 </td></tr><tr>
 

@@ -294,40 +294,6 @@ The most common cause for this is `maxAllowedContentLength` setting (in IIS) is 
 
 So any artifact larger than `maxAllowedContentLength` is discarded by IISCheck the settings value and try to rerun your build
 
-## Prerelease packages are not visible in the TeamCity NuGet feed
-
-__Problem__: Prerelease packages are not visible in the TeamCity NuGet feed.
-
-__Cause__: NuGet clients __prior to version 3__ fail to list prerelease packages if the package version violates [the required format](http://docs.nuget.org/create/versioning#user-content-prerelease-versions).
-
-__Solution__: Delete build artifacts whose versions violate  [the required format](http://docs.nuget.org/create/versioning#user-content-prerelease-versions).
-
-## Packages indexing is slow in TeamCity NuGet feed
-{product="tc"}
-
-__Problem__: After TeamCity server host machine move or upgrade, build metadata can be reset.
-
-__Cause__: The TeamCity NuGet feed relies on build metadata, and packages reindexing can take a lot of time depending on the number of packages and the idle time of the TeamCity server.
-
-__Solution__: To speed up build metadata reindexing, specify the following [internal properties](configuring-teamcity-server-startup-properties.md):
-
-
-```Shell
-teamcity.buildIndexer.indexPackSize=1000
-teamcity.buildIndexer.packSleepDurationMs=10
-
-```
-
-To check the metadata indexing progress, look for lines similar to the ones below in the [teamcity-server.log](teamcity-server-logs.md) file:
-
-```Shell
-INFO - .index.BuildIndexer (metadata) - Enqueued next 100 builds for indexing, builds left: 7064, last build id: 8142
-
-```
-
-After reindexing is complete, remove these internal properties. 
-
-
 ## SSL problems when connecting to HTTPS from TeamCity (handshake alert: unrecognized_name)
 {product="tc"}
 
@@ -486,6 +452,49 @@ Note that all the existing .NET CLI Support build steps are automatically switch
 In rare cases, if an early build of Visual Studio 2017 is installed on your build agent, you might get the "Cannot create an instance of the logger" error when running the .NET build step. This might be caused by the logger's incompatibility with the framework version being used.
 
 To workaround this problem, you can upgrade Visual Studio 2017 to the latest build or, alternatively, install any later version of .NET Framework.
+
+## NuGet known issues
+
+### Prerelease packages are not visible in the TeamCity NuGet feed
+
+__Problem__: Prerelease packages are not visible in the TeamCity NuGet feed.
+
+__Cause__: NuGet clients __prior to version 3__ fail to list prerelease packages if the package version violates [the required format](http://docs.nuget.org/create/versioning#user-content-prerelease-versions).
+
+__Solution__: Delete build artifacts whose versions violate  [the required format](http://docs.nuget.org/create/versioning#user-content-prerelease-versions).
+
+### Packages indexing is slow in TeamCity NuGet feed
+{product="tc"}
+
+__Problem__: After TeamCity server host machine move or upgrade, build metadata can be reset.
+
+__Cause__: The TeamCity NuGet feed relies on build metadata, and packages reindexing can take a lot of time depending on the number of packages and the idle time of the TeamCity server.
+
+__Solution__: To speed up build metadata reindexing, specify the following [internal properties](configuring-teamcity-server-startup-properties.md):
+
+
+```Shell
+teamcity.buildIndexer.indexPackSize=1000
+teamcity.buildIndexer.packSleepDurationMs=10
+
+```
+
+To check the metadata indexing progress, look for lines similar to the ones below in the [teamcity-server.log](teamcity-server-logs.md) file:
+
+```Shell
+INFO - .index.BuildIndexer (metadata) - Enqueued next 100 builds for indexing, builds left: 7064, last build id: 8142
+
+```
+
+After reindexing is complete, remove these internal properties.
+
+### NuGet does not pull recent package version
+
+__Problem__: NuGet can sometimes skip the recent versions of packages when pulling these packages from the feed.
+
+__Cause__: NuGet caches the server responses, thus pulling does not detect the most recent changes in the feed.
+
+__Solution__: To send a new request directly to the server instead of the cache, use the `--no-cache` parameter in your request.
 
 ## Cannot use multiline parameters in PowerShell
 
