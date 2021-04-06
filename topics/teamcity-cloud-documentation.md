@@ -3,7 +3,7 @@
 
 Welcome to the documentation for [TeamCity Cloud Beta](https://www.jetbrains.com/teamcity/cloud/).
 
->This documentation is a work in progress and might contain sections relevant only to TeamCity On-premises. Please refer to the [following section](#Differences+between+TeamCity+Cloud+and+On-premises) to learn about the current differences between TeamCity Cloud and On-premises versions.
+>This documentation is a work in progress and might contain sections relevant only to TeamCity On-Premises. Please refer to the [following section](#Differences+between+TeamCity+Cloud+and+On-premises) to learn about the current differences between TeamCity Cloud and On-premises versions.
 >
 {type="warning"}
 
@@ -75,7 +75,7 @@ The software described in this documentation is furnished under a software licen
 
 ## Differences between TeamCity Cloud and On-premises
 
-We plan to provide equal CI/CD experience to users of our Cloud and On-premises versions. However, the Cloud version is an automatically configured server and thus does not provide the same server settings as our On-premises solution.
+We plan to provide equal CI/CD experience to users of our Cloud and On-Premises versions. However, the Cloud version is an automatically configured server and thus does not provide the same server settings as our On-Premises solution.
 
 Comparing to On-premises, TeamCity Cloud Beta offers the following new features:
 * For better security, you can generate authentication tokens for build agents in advance.
@@ -87,7 +87,7 @@ All the listed features will be introduced in our On-premises version in the nea
 TeamCity Cloud Beta has the following limitations comparing to On-premises:
 * Limited server configuration.
 * No automatic server diagnostics.
-* Data is backed up and cleaned up automatically. The set of available configuration options may differ from the On-premises installations.
+* Data is backed up and cleaned up automatically. The set of available configuration options may differ from the On-Premises installations.
 * Some settings are unavailable to TeamCity Cloud administrators: for example, cloud profiles' configuration or changing the location for storing external artifacts.
 * No plugin management. The following bundled plugins are currently disabled:
     * LDAP support
