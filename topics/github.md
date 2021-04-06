@@ -1,9 +1,9 @@
 [//]: # (title: GitHub)
 [//]: # (auxiliary-id: GitHub)
 
-TeamCity integration with GitHub issue tracker can be set up separately or as a part of TeamCity integration with the [GitHub source code hosting service](integrating-teamcity-with-vcs-hosting-services.md).
+TeamCity integration with GitHub issue tracker can be set up separately or as a part of TeamCity integration with the [GitHub source code hosting service](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub).
 
-When setting up [integration](integrating-teamcity-with-issue-tracker.md#Enabling+Issue+Tracker+Integration) with GitHub, in addition to the repository URL and other general settings, you need to configure authentication and specify the issue ID pattern.
+When setting up integration with GitHub (see general information [here](integrating-teamcity-with-issue-tracker.md#Enabling+Issue+Tracker+Integration)), in addition to the repository URL and other general settings, you need to configure authentication and specify the issue ID pattern.
 
 ## Authentication
 
@@ -14,8 +14,12 @@ TeamCity allows you to select whether you want to connect to GitHub anonymously 
 > 
 {type="warning"}
 
-## Converting Strings into Links to Issues
-
-You need to specify which strings should be recognized as references to issues in your tracker. For GitHub, use the regex syntax: for example, `#(\d+)`.
-
-TeamCity will resolve the issue number mentioned in a VCS comment and will display a link to this issue in the UI (for example, on the [__Changes__](working-with-build-results.md#Changes) page, or the [__Issues__](working-with-build-results.md#Related+Issues) tab of [__Build Results__](working-with-build-results.md)).
+<seealso>
+        <category ref="concepts">
+            <a href="supported-platforms-and-environments.md">Supported Platforms and Environments</a>
+        </category>
+        <category ref="admin-guide">
+            <a href="integrating-teamcity-with-issue-tracker.md">Integrating TeamCity with Issue Tracker</a>
+            <a href="integrating-teamcity-with-vcs-hosting-services.md">Integrating TeamCity with VCS Hosting Services</a>
+        </category>
+</seealso>
