@@ -3,6 +3,8 @@
 
 You can integrate TeamCity with [YouTrack](https://www.jetbrains.com/youtrack/) to provide links to YouTrack issues from the TeamCity UI. General information about the TeamCity integration with issue trackers is provided [here](integrating-teamcity-with-issue-tracker.md).
 
+Note that TeamCity does not support the [legacy YouTrack REST API endpoints](https://blog.jetbrains.com/youtrack/2021/02/discontinuing-the-legacy-rest-api-action-required/). See [this issue](https://youtrack.jetbrains.com/issue/TW-69857) for details.
+
 ## Enhancing Integration with YouTrack
 
 YouTrack provides native TeamCity integration, which enhances the set of available features. For example:
