@@ -268,7 +268,7 @@ Description
 
 </td></tr><tr>
 
-<td auxiliary-id="serverAutoCRLF" id="serverAutoCRLF">
+<td id="serverAutoCRLF" auxiliary-id="serverAutoCRLF">
 
 <anchor name="Git-serverAutoCRLF"/>
 
@@ -331,7 +331,7 @@ If a build configuration depends on multiple VCS roots, we suggest that you conf
 
 </td></tr><tr>
 
-<td id="use-alternates">
+<td id="use-alternates" auxiliary-id="use-alternates">
 
 Use mirrors
 

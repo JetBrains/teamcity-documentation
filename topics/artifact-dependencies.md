@@ -43,7 +43,7 @@ Get artifacts from
 
 </td>
 
-<td>
+<td id="artifact-dep-get-from" auxiliary-id="artifact-dep-get-from">
 
 Specify the type of build whose artifacts are to be taken:
 
