@@ -56,6 +56,9 @@ To learn more about TeamCity, explore this Help further:
 * To properly install and configure your setup, refer to [Supported Platforms and Environments](supported-platforms-and-environments.md) and [Installation and Upgrade](installation-and-upgrade.md).
 * If you are using TeamCity only for managing and viewing builds, make sure to read the [User's Guide](user-s-guide.md).
 * If you have a Project Administrator or Server Administrator access, use the [Admin's Guide](administrator-s-guide.md) section to learn how to configure projects or how to use the Administration panel and maintain the server. This section also contains information on [licensing](licensing-policy.md) and [configuration as code in TeamCity](kotlin-dsl.md).
+{product="tc"}
+* If you have a Project Administrator or Server Administrator access, use the [Admin's Guide](administrator-s-guide.md) section to learn how to configure projects or how to use the Administration panel and maintain the server. This section also contains information on [configuration as code in TeamCity](kotlin-dsl.md).
+{product="tcc"}
 * Available TeamCity add-ins are described [here](installing-tools.md).
 * Under [Extending TeamCity](extending-teamcity.md), advanced users can learn how to [run build scripts for interacting with TeamCity](build-script-interaction-with-teamcity.md), how to [use TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html), and more.
 * If none of these sections answer your questions, try looking into [Troubleshooting](troubleshooting.md) and [How-to](how-to.md).

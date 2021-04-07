@@ -131,7 +131,7 @@ Occurs with the release of two newer major versions. At this point, we stop prov
 
 <seealso>
         <category ref="installation">
-            <a href="licensing-policy.md">Licensing Policy</a>
+            <a href="licensing-policy.md" product="tc">Licensing Policy</a>
             <a href="previous-releases-downloads.md">Previous Releases Downloads</a>
             <a href="upgrade.md">Upgrade</a>
         </category>

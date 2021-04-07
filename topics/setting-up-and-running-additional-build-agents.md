@@ -118,6 +118,7 @@ The communication protocol used by TeamCity agents is determined by the value of
 When the newly installed agent connects to the server for the first time, it appears on the `Agents` page, `Unauthorized agents` tab visible to administrators/users with the permissions to authorize it. Agents will not run builds until they are authorized in the TeamCity web UI. The agent running on the same computer as the server is authorized by default.
 
 The number of authorized agents is limited by the number of agents licenses on the server. See more under [Licensing Policy](licensing-policy.md).
+{product="tc"}
 
 ### Installing via Windows installer
 1. In the TeamCity web UI, navigate to the __Agents__ tab.

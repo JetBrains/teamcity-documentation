@@ -276,7 +276,7 @@ Selecting the __Copy project-associated user, agent and other settings__ option 
 
 You can also opt to copy build configurations build numbers.
 
-<note>
+<note product="tc">
 
 When running TeamCity in the [Professional mode](licensing-policy.md), the __Copy__ option will not be displayed for a project if the number of build configurations on the server after copying will exceed the limit (100 build configurations, unless you purchased additional build agent licenses).
 </note>

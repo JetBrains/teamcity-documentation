@@ -72,6 +72,9 @@
             <toc-element id="testing-frameworks.md"/>
             <toc-element id="code-quality-tools.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
+        <toc-element id="teamcity-cloud-subscription-and-licensing.md" show-structure-for="chapter" show-structure-depth="4">
+            <toc-element id="third-party-license-agreements.md"/>
+        </toc-element>
         <toc-element id="installation-and-upgrade.md" hidden="true"/>
         <toc-element toc-title="Installation and Upgrade">
             <toc-element id="installation.md" show-structure-for="chapter" show-structure-depth="4">
@@ -279,9 +282,6 @@
                 <toc-element id="ordering-build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="changing-build-status-manually.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="customizing-statistics-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
-            </toc-element>
-            <toc-element id="licensing-policy.md" show-structure-for="chapter" show-structure-depth="4">
-                <toc-element id="third-party-license-agreements.md"/>
             </toc-element>
             <toc-element id="integrating-teamcity-with-other-tools.md" hidden="true"/>
             <toc-element toc-title="Integrating TeamCity with Other Tools">

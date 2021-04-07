@@ -109,6 +109,6 @@ A TeamCity agent is upgraded automatically when the server is upgraded. The proc
         <category ref="admin-guide">
             <a href="configuring-agent-pools.md">Agent Pools</a>
             <a href="assigning-build-configurations-to-specific-build-agents.md">Assigning Build Configurations to Specific Build Agents</a>
-            <a href="licensing-policy.md">Licensing Policy</a>
+            <a href="licensing-policy.md" product="tc">Licensing Policy</a>
         </category>
 </seealso>

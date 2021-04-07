@@ -798,13 +798,15 @@ Consider transferring the relevant environment if it was specially modified for 
 <anchor name="copy_server_license"/>
 
 ### Licensing issues
+{product="tc"}
 
 A single TeamCity license __cannot be used on two running servers__ at the same time.
 * A copy of the server created for redundancy/backup purposes can use the same license as only one of the servers will be running at a time.
-* A copy of the server created for testing purposes requires an additional license. You can get the time\-limited TeamCity [evaluation license](licensing-policy.md) once from the official TeamCity [download page](http://www.jetbrains.com/teamcity/download/). If you need an extension of the license or you have already evaluated the same TeamCity version, please [contact our sales department](http://www.jetbrains.com/company/contacts/index.html#Contacts_?TeamCity).
+* A copy of the server created for testing purposes requires an additional license. You can get the time-limited TeamCity [evaluation license](licensing-policy.md) once from the official TeamCity [download page](http://www.jetbrains.com/teamcity/download/). If you need an extension of the license or you have already evaluated the same TeamCity version, please [contact our sales department](http://www.jetbrains.com/company/contacts/index.html#Contacts_?TeamCity).
 * A copy of the server intended to run at the same time as the main one regularly/for production purposes requires a separate license.
 
 ### Copied Server Checklist
+{product="tc"}
 
 If you are creating a copy (as opposed to moving the server this way), it is important to go through the checklist below:
 * ensure the new server is configured to use another Data Directory and another database than the original server; check also "Artifact directories" setting on server's Global Settings;

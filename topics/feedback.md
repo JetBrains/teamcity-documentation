@@ -5,6 +5,9 @@ This section details our support services, contact information, and best practic
 
 Before requesting support, we suggest that you check if the answer is already available in:
 * online documentation: [Common Problems](common-problems.md), [Known Issues](known-issues.md), [Licensing Policy](licensing-policy.md)
+{product="tc"}
+* online documentation: [Common Problems](common-problems.md), [Known Issues](known-issues.md)
+  {product="tcc"}
 * [public issue tracker](https://youtrack.jetbrains.com/issues/TW)
 * [community forum](http://jb.gg/teamcity-forum)
 
