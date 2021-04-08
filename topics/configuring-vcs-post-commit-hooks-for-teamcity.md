@@ -22,7 +22,7 @@ The request returns textual details as to the performed operation or an error me
 
 It is important to find the `<vcsRootInstancesLocator>` for the request to match only the affected VCS roots from those configured in the TeamCity instance. If too many VCS roots are matched by the request configured in the commit hook, it will lead to more requests and more overload on the VCS repository and TeamCity than using default polling approach. Some examples of the "locator" are provided below.   
 The request should be performed by a user who has "View project and all parent projects" permission for all the projects where VCS root is defined.   
-Note that by default only the first 100 matched "VCS root instances" will be matched by the [request](https://www.jetbrains.com/help/teamcity/rest/manage-vcs-roots.html). To match more, "count:9999" can be added as below.
+Note that by default only the first 100 matched "VCS root instances" will be matched by the [request](https://www.jetbrains.com/help/teamcity/rest/manage-vcs-roots.html). To match more, "count:99999" can be added as below.
 
 The most common form of the `<vcsRootInstancesLocator>` is:
 
