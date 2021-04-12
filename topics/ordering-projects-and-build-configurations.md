@@ -5,7 +5,7 @@ By default, TeamCity displays projects, their subprojects, build configurations,
 
 Project administrators can apply custom ordering to subprojects and build configurations on the __Project Settings__ page for the parent project and use it as the default order. To enable reordering, click __Reorder__ above the list of subprojects or build configurations.
 
-Individual users can reorder the projects and change their visibility in the __[Configure Visible Projects](managing-projects-and-build-configurations.md#Configuring+Visibility)__ pop-up menu on the __Projects__ page.
+Individual users can reorder the projects and change their visibility in the __Configure Visible Projects__ pop-up menu on the __Projects__ page.
 
 To add an individual project to the __Projects__ page or remove it from this page, toggle the "eye" button on the __Project Home__ page:
 
