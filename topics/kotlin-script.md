@@ -140,7 +140,7 @@ JDK
 
 </td>
 
-<td>
+<td id="kotlin-java9-note" auxiliary-id="kotlin-java9-note">
 
 Select JDK to run the script:
 * __Default__: the path to JDK Home is read either from the `JAVA_HOME` environment variable on the agent machine, or from the `env.JAVA_HOME` property specified in the [build agent configuration file](build-agent-configuration.md) (`buildAgent.properties`). If these values are not specified, TeamCity uses the Java Home of the build agent process itself.
