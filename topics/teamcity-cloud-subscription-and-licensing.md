@@ -7,7 +7,7 @@ TeamCity Cloud services can be provided in two modes:
 
 This document details the terms of subscription and licensing in TeamCity Cloud. For more information, see our [F.A.Q]() or contact us via our [issue tracker](https://youtrack.jetbrains.com/issues/TCC).
 
-Refer to the [subscription glossary](#Cloud+Licensing+Terminology) to learn about the terms used in this document.
+Refer to the [licensing glossary](#Cloud+Licensing+Terminology) to learn about the terms used in this document.
 
 ## TeamCity Cloud Subscription
 
@@ -20,7 +20,7 @@ The TeamCity Cloud subscription plans are predominantly based on the number of _
 Note that only contributors to the source take the committer clots. An unlimited number of users (managers, QA, [and so on](#cloud-web-users)) can get access to the TeamCity web interface.
 
 Each committer slot is provided with a set of _build resources_:
-* [build minutes]() on our [JetBrains-hosted agents](#cloud-jb-hosted-agents);
+* [build minutes](#cloud-build-time) on our [JetBrains-hosted agents](#cloud-jb-hosted-agents);
 * slots for [self-hosted build agents](#cloud-self-hosted-agents);
 * [storage](#cloud-storage);
 * [data transfer capacity](#cloud-data-transfer).
@@ -29,28 +29,13 @@ The more committers you have, the more build resources you are granted with. Ple
 
 ### Build Credits
 
-_Build credits_, granted per every committer, are your currency in TeamCity Cloud and can be flexibly utilized as needed. You determine how you want to utilize the build credits when you need them.
-
-At the end of each month build credits from your subscription expire, and a new set of build credits is replenished.
+_Build credits_, granted per every committer, are your currency in TeamCity Cloud and can be flexibly utilized according to your needs. At the end of each month, any remaining build credits expire from your subscription, and a new set of build credits is replenished at the beginning of the next month.
 
 Each minute of build time on [JetBrains-hosted agents](#cloud-jb-hosted-agents) will draw on your [build-credit](#cloud-build-credits) allotment. The exact rate depends on the type of your build agent instance tier. We also offer prepurchased build agents for customers who can more accurately predict their build agent utilization.
 
-By default, when using the JetBrains-hosted build agents, we draw build credits at the per-minute rate of that instance type. If you anticipate a high utilization rate of our JetBrains-hosted agent, you have the option to pay for that agent upfront to help reduce costs. [Prepaid build agents](#cloud-prepaid-agents) are permanently connected; JetBrains-hosted build agents that allow unlimited builds and do not draw on your build credits at a per minute rate.
+By default, when using the JetBrains-hosted build agents, we draw build credits at the per-minute rate of that instance type. If you anticipate a high utilization rate of our JetBrains-hosted agent, you have the option to [pay for that agent upfront]() to help reduce costs. Once connected, builds running on self-hosted and [prepaid build agents](#cloud-prepaid-agents) do not draw on any additional build credits.
 
-
-Build credits from your subscription expire at the end of each month and are renewed at the beginning of every month.
-
-If you purchase build credits a-la-carte, those build credits do not expire.
-
-Are build credits drawn while agents are being spun up and terminated?
-No, you only pay for the build time when utilizing JetBrains-hosted build agents.
-
-Do build credits expire?
-The number of build credits you receive through your subscription plan is dependent on the number of committer slots you purchase. Any remaining build credits at the end of the month expire, and a new set of credits are replenished at the beginning of the next month.
-
-Do self-hosted or monthly pre-purchased build agents draw on build credits at a per-minute rate?
-No, self-hosted build agents, or monthly pre-purchased JetBrains-hosted build agents can be connected to TeamCity Cloud at a flat rate per month. Once connected, builds running on self-hosted and pre-purchased agents do not draw on any additional build credits.
-
+If you purchase [additional build credits](#On-demand+Cloud+Resources), they do not expire.
 
 ### Free Trial Subscription
 
@@ -58,32 +43,11 @@ You can [try TeamCity Cloud for free]() for 14 days. The free trial subscription
 
 ## On-demand Cloud Resources
 
+There are two ways to get more build credits for your TeamCity instance. You can add additional committer slots, which come with a set of build credits, or if you don't require any additional committers, you can purchase build credits on demand. More information is available on our [pricing] page. Build credits purchased this way do not expire. Build credits can be redeemed for additional storage, data transfer, build time, self hosted agents, and committers as needed. Additional committer slots can also be purchased through the [JetBrains e-store]().
 
-You can redeem existing build credits to add a new committer slot in this situation or purchase additional committer slots through the JetBrains e-store.
-
-Customers can utilize their build credits to add self-hosted build agents to their instance at a flat monthly rate of 20,000 build credits, or about $16 USD. Self-hosted build agents do not draw on any additional build credits. You can run an unlimited number of builds on self-hosted build agents.
+Customers can utilize their build credits to add self-hosted build agents to their instance at a flat monthly rate. Self-hosted build agents do not draw on any additional build credits. You can run an unlimited number of builds on self-hosted build agents.
 
 When a self-hosted build agent is redeemed in your TeamCity Cloud instance, it increases the number of concurrent builds you can perform on self-hosted agents by 1. You will be able to connect as many self-hosted agents as you wish. This allows you to connect a pool of self-hosted agents to your TeamCity instance that can suit a wide variety of build configurations and requirements.
-
-Additional build credits or build resources can be purchased on demand. Build credits purchased this way do not expire.
-
-There are two ways to add more build credits to your TeamCity instance. You can add additional committer slots, which come with a set of build credits, or if you don’t require any additional committers, you can purchase build credits a-la-carte. More information is available on our [pricing] page.
-
-Build credits from your subscription (credits you receive alongside each committer) expire at the end of each month and are replenished at the beginning of the next month. Build credits purchased a-la-carte do not expire.
-
-Can I purchase build credits, storage, data transfer a-la-carte?
-Yes. You get a set of build resources with each committer slot, but you can purchase additional build credits a-la-carte to expand your capabilities. Build credits can be redeemed for additional storage, data transfer, build time, self hosted agents, and committers as needed.
-
-
-Can I use build credits to pay for additional resources?
-Yes, build credits act as your “currency” in TeamCity Cloud. You can exchange build credits for additional storage, data transfer, self-hosted build agents, build minutes, monthly pre-purchased build agents, or additional committer slots.
-
-Build credits from your subscription expire and are replenished at the end of each month. Build credits purchased a-la-carte do not expire and carry over month to month.
-
-
-Can I exchange unused artifact storage, data transfer for additional build credits?
-No, this type of exchange is not allowed.
-
 
 ### Cloud Licensing Terminology
 
