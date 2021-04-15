@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity Cloud Subscription and Licensing)
 [//]: # (auxiliary-id: TeamCity Cloud Subscription and Licensing)
 
-TeamCity Cloud services are provided by a monthly subscription which includes a predefined set of resources. If you reach any of the subscription limits, you can get additional resources anytime.
+TeamCity Cloud services are provided by a monthly subscription which includes a predefined set of resources. If you reach any of the subscription limits, you can get additional resources on demand.
 
 This document details the terms of a subscription and licensing in TeamCity Cloud. For more information, see our [F.A.Q]() or contact us via our [issue tracker](https://youtrack.jetbrains.com/issues/TCC).
 
@@ -9,27 +9,26 @@ Refer to the [licensing glossary](#Cloud+Licensing+Terminology) to learn about t
 
 ## TeamCity Cloud Subscription
 
-### Committers-Based Subscription
+### Committers by Subscription
 
-TeamCity Cloud subscription plans are predominantly based on the number of _[Committers](#cloud-committers)_, that are users who make changes to the project code. All users who author VCS changes require an active _Committer slot_ in TeamCity Cloud. Before acquiring the subscription, we suggest that you analyze the number of potential Committers in all projects you are about to run in TeamCity. If you need help estimating the subscription plan, [contact us for a demo](https://www.jetbrains.com/teamcity/request-a-demo/).
+TeamCity Cloud subscription plans are predominantly based on the number of _[committers](#cloud-committers)_, that are users who make changes in the project code. All users who author VCS changes require an active _committer slot_ in TeamCity Cloud. Before acquiring the subscription, we suggest that you estimate the number of potential committers in all projects you are about to run in TeamCity. If you need help choosing the subscription plan, [contact us for a demo](https://www.jetbrains.com/teamcity/request-a-demo/).
 
->If you have utilized all the Committer slots provided in terms of the subscription and a new user makes a commit to your source project, TeamCity Cloud will not start new builds with changes from that Committer. Other builds will continue to start as usual. Read how you can [get extra resources](#On-demand+Cloud+Resources) in this case.
+>If you have utilized all the committer slots provided in terms of the subscription and a new user makes a commit to your source project, TeamCity Cloud will not be able to start new builds with changes from that committer. Other builds will continue to start as usual. Read how you can [get extra resources](#On-demand+Cloud+Resources) in this case.
 
-Note that only contributors to the source take the Committer clots. An unlimited number of users (managers, QA, [and so on](#cloud-web-users)) can get access to the TeamCity web interface.
+Note that only contributors to the source take the committer clots. An unlimited number of users (managers, QA, [and so on](#cloud-web-users)) can get access to the TeamCity web interface.
 
-Each Committer slot is provided with a set of _build resources_:
-* [build minutes](#cloud-build-time) on our [JetBrains-Hosted Build Agents](#cloud-jb-hosted-agents);
-* slots for [Self-Hosted Build Agents](#cloud-self-hosted-agents);
-* [Storage](#cloud-storage);
-* [Data Transfer capacity](#cloud-data-transfer).
+Each committer slot is provided with a predefined set of _resources_:
+* [build credits](#cloud-build-credits) for exchanging on necessary build resources;
+* [storage](#cloud-storage) for build results;
+* [data transfer capacity](#cloud-data-transfer).
 
-The more Committers you have, the more build resources you are granted with. Please refer to [our website]() to see the exact rates.
+The more committers you have, the more build resources you are proportionally granted with. Please refer to [our website]() to see the exact rates.
 
 ### Build Credits
 
-_Build Credits_, granted per every Committer, are your currency in TeamCity Cloud and can be flexibly utilized according to your needs. At the end of each month, the remaining Build Credits expire from your subscription, and a new set of Build Credits is replenished at the beginning of the next month.
+_[Build credits](#cloud-build-credits)_, granted per committer, are your currency in TeamCity Cloud and can be flexibly utilized according to your needs. At the end of each month, the remaining build credits expire from your subscription, and a new set of build credits is provided at the beginning of the next month.
 
-Each minute of build time on [JetBrains-Hosted Agents](#cloud-jb-hosted-agents) will draw on your [build-credit](#cloud-build-credits) allotment. The exact rate depends on the type of your build agent instance tier. We also offer prepurchased build agents for customers who can more accurately predict their build agent utilization.
+TeamCity Cloud can run builds on two types of agents: hosted by JetBrains and hosted by a customer. Each minute of build time on [JetBrains-hosted agents](#cloud-jb-hosted-agents) will expend some number of build credits. The exact rate depends on the type of your build agent [instance tier](). We also offer prepurchased build agents for customers who can more accurately predict their build agent utilization.
 
 By default, when providing a JetBrains-Hosted Build Agent, we draw Build Credits at the per-minute rate of its instance type. If you anticipate a high utilization rate of our JetBrains-Hosted Agents, you can alternatively [pay for these agents upfront]() to help reduce costs. Once connected, builds running on Self-Hosted and [prepaid build agents](#cloud-prepaid-agents) do not draw on any additional Build Credits.
 
@@ -127,6 +126,21 @@ __Cloud data transfer__
 <td>
 
 Cloud data transfer is counted when you download artifacts and build logs from TeamCity Cloud to outside locations. For example, between self-hosted agents and TeamCity Cloud, artifacts downloaded from the browser, or through tools like wget or curl.
+
+</td>
+
+</tr>
+
+<tr>
+<td id="cloud-instance-tier" auxiliary-id="cloud-instance-tier">
+
+__Instance tier__
+
+</td>
+
+<td>
+
+A type of virtual machine with a preinstalled TeamCity agent instance. A tier is defined by a unique combination of an operating system and instance size. For example, the Linux Small instance tier. Depending on its expected load, each tier is provided with a predefined set of hardware resources.
 
 </td>
 
