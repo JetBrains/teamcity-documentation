@@ -185,6 +185,7 @@ We recommend [enforcing clean checkout](clean-checkout.md) for your production b
 
 __Use disposable, network-protected build agents__.
 
+Note that the builds running on the same build agent are not isolated, and they can potentially affect each other, which might give an opportunity to perform malicious actions.  
 If possible, try using disposable, one-off build agents. The shorter the agent's lifetime, the smaller the chance of a compromise. Also make sure to use OS-dependent firewall rules to disable incoming network access to your cloud agents.
 
 __Use agent pools for different projects__.
