@@ -1,6 +1,21 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2020.2.3 to 2020.2.4
+
+### Verifying NuGet used in NuGet dependency trigger
+
+To ensure that the integration with NuGet is secure, TeamCity now checks if a trusted NuGet installer is used when starting builds on Windows with a [NuGet dependency trigger](nuget-dependency-trigger.md). If your triggers use a NuGet version installed via __[Administration | Tools](installing-agent-tools.md)__, this verification will go smoothly, with no user actions required. Otherwise, you might get the "_Problem with NuGet Dependency Trigger_" error. The recommended solution is to switch all affected triggers to any NuGet version that has been regularly [installed via the TeamCity UI](installing-agent-tools.md). Such versions automatically appear in the _NuGet.exe_ drop-down menu in the trigger's settings. Alternatively, if you need to use a custom NuGet executable and absolutely trust it, you can add it to the whitelist by specifying the following [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties):
+
+```Plain Text
+teamcity.nuget.server.cli.path.whitelist=<disk>:\\<path-to-executable>\\NuGet.exe
+```
+
+### SSH runners: change in authentication with default key
+
+In this version, we've changed the behavior of SSH authentication with the default private key in the [SSH Exec](ssh-exec.md) and [SSH Upload](ssh-upload.md) build runners. Previously, when authenticating via SSH during a build, a build agent would use the username configured in the agent's SSH config or, if it's missing, the name of the OS user who runs this agent. The value of the optional _Username_ field in the build step's settings would always be ignored. Now, if this value is specified, the agent will use it for SSH authentication instead of the one in the SSH config.  
+If you have previously configured an SSH username directly inside build steps and the _Default private key_ authentication method is selected in these steps, make sure that this username is still relevant and allows for successful authentication.
+
 ## Changes from 2020.2.2 to 2020.2.3
 
 ### Bundled Tools Updates
