@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity 2020.2.4 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2020.2.4 Release Notes)
 
-__Build: 86060__   
+__Build: 86063__   
 __15 April 2021__
 
 ### Feature  
@@ -46,7 +46,8 @@ __15 April 2021__
 [**TW-70509**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-70509) — Impossible to use repository with &quot;--config&quot;  
 [**TW-70611**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-70611) — Dependencies comparison doesn&#39;t work when there are no common dependent builds for chosen builds  
 [**TW-67239**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67239) — Unexpected error &quot;bean newVersionBean not found within scope&quot; for non-administrators on the health item  
-[**TW-70552**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-70552) — Problem investigation with manual resolution removed automatically after successful build and clean-up
+[**TW-70552**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-70552) — Problem investigation with manual resolution removed automatically after successful build and clean-up  
+[**TW-71077**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71077) — Restore "teamcity.git.use.shallow.clone" support for shallow clone from mirror to checkout directory when alternates are disabled
 
 ### Performance Problem
 
