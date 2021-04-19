@@ -107,6 +107,7 @@
         <toc-element id="administrator-s-guide.md" hidden="true"/>
         <toc-element toc-title="Administrator's Guide">
             <toc-element id="teamcity-configuration-and-maintenance.md">
+                <toc-element id="managing-subscription-and-resources.md"/>
                 <toc-element id="configuring-authentication-settings.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="enabling-guest-login.md"/>
                     <toc-element id="enabling-email-verification.md"/>
