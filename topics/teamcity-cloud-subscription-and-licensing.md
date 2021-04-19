@@ -17,22 +17,20 @@ TeamCity Cloud subscription plans are predominantly based on the number of _[com
 
 Note that only contributors to the source take the committer clots. An unlimited number of users (managers, QA, [and so on](#cloud-web-users)) can get access to the TeamCity web interface.
 
-Each committer slot is provided with a predefined set of _resources_:
-* [build credits](#cloud-build-credits) for exchanging on necessary build resources;
-* [storage](#cloud-storage) for build results;
-* [data transfer capacity](#cloud-data-transfer).
+Each acquired committer slot is provided with a fixed amount of _build resources_: [storage](#cloud-storage) for build results and [data transfer capacity](#cloud-data-transfer). You also get a number of [build credits](#cloud-build-credits) per each committer: they can be exchanged on extra build resources when necessary. The more committers you have, the more credits and build resources you are proportionally granted with. Please refer to [our website]() to see the exact rates.
 
-The more committers you have, the more build resources you are proportionally granted with. Please refer to [our website]() to see the exact rates.
+You can manage your subscription on the __[Resources & Subscription]()__ administration page in TeamCity.
 
-### Build Credits
+### Using Build Credits
 
-_[Build credits](#cloud-build-credits)_, granted per committer, are your currency in TeamCity Cloud and can be flexibly utilized according to your needs. At the end of each month, the remaining build credits expire from your subscription, and a new set of build credits is provided at the beginning of the next month.
-
-TeamCity Cloud can run builds on two types of agents: hosted by JetBrains and hosted by a customer. Each minute of build time on [JetBrains-hosted agents](#cloud-jb-hosted-agents) will expend some number of build credits. The exact rate depends on the type of your build agent [instance tier](). We also offer prepurchased build agents for customers who can more accurately predict their build agent utilization.
-
-By default, when providing a JetBrains-Hosted Build Agent, we draw Build Credits at the per-minute rate of its instance type. If you anticipate a high utilization rate of our JetBrains-Hosted Agents, you can alternatively [pay for these agents upfront]() to help reduce costs. Once connected, builds running on Self-Hosted and [prepaid build agents](#cloud-prepaid-agents) do not draw on any additional Build Credits.
-
+_[Build credits](#cloud-build-credits)_, granted per committer, are your currency in TeamCity Cloud and can be flexibly utilized according to your needs. At the end of each month, the remaining build credits expire from your subscription, and a new set of build credits is provided at the beginning of the next month.  
 If you purchase [additional build credits](#On-demand+Cloud+Resources), they do not expire.
+
+You can spend build credits on build time on agents, additional [storage](#cloud-storage), and [data transfer capacity](#cloud-data-transfer).
+
+TeamCity Cloud can run builds on two types of agents: hosted by JetBrains and hosted by a customer. Each minute of build time on [JetBrains-hosted agents](#cloud-jb-hosted-agents) will expend some number of build credits. The exact rate depends on the type of your build agent [instance tier](#cloud-instance-tier).  
+We also offer [prepaid build agents]() for customers who can more accurately predict their build agent utilization. If you anticipate a high utilization rate of our JetBrains-hosted agents, you can use this method to help reduce costs.  
+Builds running on self-hosted and [prepaid build agents](#cloud-prepaid-agents) do not spend build credits.
 
 ### Free Trial Subscription
 
@@ -40,13 +38,15 @@ You can [try TeamCity Cloud for free]() for 14 days. The free trial subscription
 
 ## On-demand Cloud Resources
 
-There are two ways to get more Build Credits for your TeamCity instance. You can add extra Committer slots or, if you don't require additional Committers, you can purchase Build Credits on demand. More information is available on our [pricing] page. Build credits purchased this way do not expire. Build credits can be redeemed for additional Storage, Data Transfer, build time, self-hosted agents, and Committers as needed. Additional Committer slots can also be purchased in the [JetBrains e-store]().
+There are two ways to get more build credits for your TeamCity instance, atop the ongoing subscription: on purchasing a committer slot (each committer comes with a set of resources and credits) or by purchasing credits directly. More information on pricing is available on [our website]().
 
-Customers can utilize their Build Credits to add Self-Hosted Build Agents to their instance at a flat monthly rate. Self-Hosted Build Agents do not draw on any additional Build Credits. You can run an unlimited number of builds on Self-Hosted Build Agents.
+Build credits purchased this way do not expire. They can be redeemed for additional storage, data transfer, build time, slots for [self-hosted agents](), and committers as needed. Additional committer slots can also be purchased in the [JetBrains e-store]().
 
-When a Self-Hosted Build Agent is redeemed in your TeamCity Cloud instance, it increases the number of concurrent builds you can perform on Self-Hosted Agents by 1. You will be able to connect as many Self-Hosted Agents as you wish. This allows you to connect a pool of Self-Hosted Agents to your TeamCity instance that can suit a wide variety of build configurations and requirements.
+To acquire credits and manage build resources, use the __[Resources & Subscription]()__ administration page in TeamCity.
 
-### Cloud Licensing Terminology
+
+
+## Cloud Licensing Terminology
 
 <table>
 <tr><td></td><td></td></tr>
@@ -60,7 +60,7 @@ __Build credits__
 
 <td>
 
-For each [committer](#cloud-committers) slot purchased, TeamCity Cloud customers are granted build credits. They act as your "currency" in TeamCity Cloud. Build credits can be redeemed in TeamCity Cloud for build minutes on our [JetBrains-hosted agents](#cloud-jb-hosted-agents) or exchanged at a flat rate for [self-hosted build agents](#cloud-self-hosted-agents). You can also exchange build credits for additional [storage](#cloud-storage), [data transfer](#cloud-data-transfer-capacity), and commiter slots.
+For each [committer](#cloud-committers) slot purchased, TeamCity Cloud customers are granted build credits. They act as your "currency" in TeamCity Cloud. Build credits can be redeemed in TeamCity Cloud for build minutes on our [JetBrains-hosted agents](#cloud-jb-hosted-agents) or exchanged at a flat rate for [self-hosted build agents](#cloud-self-hosted-agents). You can also exchange build credits for additional [storage](#cloud-storage), [data transfer](#cloud-data-transfer-capacity), and committer slots.
 
 </td>
 
@@ -108,7 +108,9 @@ __Committer__
 
 <td>
 
-A user who authors VCS (version control system) changes for projects that are built by TeamCity. Once a user authors 10 changes in a VCS, they will occupy one committer slot. Committer slots are released after 30 days of inactivity.
+A user who authors VCS (version control system) changes for projects that are built by TeamCity. A user occupies a committer slot after committing 10 or more changes into your projects during 30 days. This slot is reserved for this user until their last 10th commit gets older than 30 days. For example, if a user makes 5 commits on June 10 plus 5 commits on June 11 and then stops committing, TeamCity will release their committer slot on July 10, after 30 days since the first of the last 10 commits.
+
+If you have utilized all the committer slots provided in terms of the subscription and a new user makes a commit to your source project, TeamCity Cloud will not be able to start new builds with changes from that committer. Other builds will continue to start as usual.
 
 Roughly, each developer for a project will require a committer slot in TeamCity Cloud. Regular [web users](#cloud-web-users) are unlimited in TeamCity Cloud.
 
@@ -173,6 +175,10 @@ __Self-hosted build agent__
 <td>
 
 Self-hosted [build agents](build-agent.md) are "bring-your-own" build agents that can be connected to TeamCity Cloud, but are hosted and managed by the customer. Self-hosted build agents are useful if you require your own specialized set of build software, specialized build environments, and so on.
+
+You can spend build credits on adding an unlimited number of self-hosted build agents to your instance at a flat monthly rate. These agents do not draw on any additional build credits and can run an unlimited number of builds.
+
+When a self-hosted build agent is redeemed in your TeamCity Cloud instance, it increases the number of concurrent builds you can perform on self-hosted agents by 1.
 
 </td>
 
