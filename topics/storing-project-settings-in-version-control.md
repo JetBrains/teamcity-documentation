@@ -154,7 +154,9 @@ When TeamCity commits settings into a VCS, it uses the standard commit message n
 
 ## Displaying Changes
 
-TeamCity will not only synchronize the settings, but will also automatically display changes to the project settings the same way it is done for regular changes in the version control. You can configure the changes to be displayed for the affected build configurations: on the __Project Settings | Versioned Settings | Configuration__ tab, click __Show advanced options__ and check the _Show settings changes in builds_ box.
+TeamCity will not only synchronize the settings, but will also automatically display changes to the project settings the same way it is done for regular changes in the version control. You can configure the changes to be displayed for the affected build configurations: on the __Project Settings | Versioned Settings | Configuration__ tab, click __Show advanced options__ and check the _Show settings changes in builds_ box. This option is only effective if you store versioned settings in a VCS root that is not directly attached to the current build configuration. If a VCS root is attached to this configuration, its changes will be displayed by default, unless specific [build triggering rules](configuring-build-triggers.md) are configured.
+
+If you store versioned settings in a separate VCS root, not the one which is directly attached to your build configurations, then when turned ON this checkbox starts showing changes made to these VCS roots. If VCS root is already attached to your configuration, then it does nothing.
 
 By default, the VCS trigger will ignore such changes. To enable build triggering on a settings' commit, add a trigger rule in the following format: `+:root=Settings_root_id;:*`.
 

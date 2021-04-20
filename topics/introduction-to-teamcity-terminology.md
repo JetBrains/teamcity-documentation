@@ -9,7 +9,7 @@ _[Projects](project.md)_ are the topmost objects of the TeamCity hierarchy, and 
 
 Projects can be configured manually or automatically, from a VCS repository. The settings of each repository used in a project are stored in a dedicated preset called _[VCS root](vcs-root.md)_. Besides VCS roots, a project contains other settings shared between its nested subprojects and build configurations: _[cloud profile connections](teamcity-integration-with-cloud-solutions.md)_, _[common parameters](project-and-agent-level-build-parameters.md)_, _[clean-up rules](clean-up.md)_, and [many others](creating-and-editing-projects.md).
 
-Example of an object hierarchy in TeamCity:
+Example of a simple object hierarchy in TeamCity:
 
 <img src="ex-hierarchy.png" alt="Example object hierarchy" width="227"/>
 
@@ -18,9 +18,9 @@ In certain cases, you may need to create multiple build configurations that diff
 
 >In TeamCity terms, it is considered that a build configuration _belongs_ to its parent project and that each running build that uses this configuration as a blueprint _belongs_ to this build configuration. In certain contexts, you will notice that the terms _build_ and _build configuration_ are used interchangeably in the documentation. For example, if we describe two related builds from different configurations, we can perceive each _build_ both as a single running job and as a carrier of its build configuration settings.
 
-Each build configuration can have _[build features](adding-build-features.md)_ and _[build steps](configuring-build-steps.md)_. A build feature is a piece of extra functionality available to a build: it could be a performance monitor, a reporting tool, or a support for pull requests. Some features are built in TeamCity and some can be obtained by installing external plugins. A build step is a logical stage of a build that is performed by a certain _[build runner](build-runner.md)_; TeamCity offers a wide range of different runners: from testing tools to Docker integration.
+Each build configuration can have _[build features](adding-build-features.md)_ and _[build steps](configuring-build-steps.md)_. A build feature is a piece of extra functionality available to a build: it could be a performance monitor, a reporting tool, or a support for pull requests. Some features are built in TeamCity and some can be obtained by installing external plugins. A build step is a logical stage of a build that is performed by a certain _[build runner](build-runner.md)_. TeamCity offers a wide range of different runners: from testing tools to Docker integration.
 
-Another important setting included into a build configuration is a _[trigger](configuring-build-triggers.md)_. There are multiple types of triggers in TeamCity. Their common purpose is to run a build automatically when a preconfigured condition is satisfied thus establishing automatic continuous integration of a software product.
+Another important setting included into a build configuration is a _[trigger](configuring-build-triggers.md)_. There are multiple types of triggers in TeamCity. Their common purpose is to run a build automatically when a preconfigured condition is satisfied, thus establishing automatic continuous integration of a software product.
 
 TeamCity offers all these granular objects so you can configure a build process as flexibly as possible. However, they would make more sense if you have the means to interconnect them with each other. For this purpose, TeamCity provides two types of dependencies between build configurations (that is between their builds):
 * _[artifact dependency](artifact-dependencies.md)_ — for sending _artifacts_ produced by one build to another build; an example of an artifact is a `.jar` application that is compiled by one build configuration and deployed by another.
@@ -42,6 +42,10 @@ The TeamCity server stores all the objects' settings, manages the _[build queue]
 {product="tcc"}
 
 A different piece of software is used for actually running builds — a _[build agent](build-agent.md)_. By default, you get three build agents with your TeamCity server but you can get more if required. A build agent software can be installed on a different machine or alongside the server.
+{product="tc"}
+
+A different piece of software is used for actually running builds — a _[build agent](build-agent.md)_. You automatically get access to cloud build agents with your TeamCity Cloud server, but you can also install a build agent software on your own machines.
+{product="tcc"}
 
 >Check out the [basic CI workflow in TeamCity](continuous-integration-with-teamcity.md#Basic+CI+Workflow+in+TeamCity) to see an example of a simple build run.
 
