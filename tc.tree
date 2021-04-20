@@ -3,15 +3,6 @@
   SYSTEM "https://resources.jetbrains.com/stardust/product-profile.dtd">
 <product-profile id="tc" name="TeamCity" start-page="teamcity-documentation.md" status="release">
    <toc-element id="teamcity-documentation.md">
-      <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2020-2.html" hidden="true">
-         <toc-element id="teamcity-2020-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-         <toc-element id="teamcity-2020-2-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-         <toc-element id="teamcity-2020-2-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-         <toc-element id="teamcity-2020-2-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-      </toc-element>
-      <toc-element id="what-s-new-in-teamcity-2019.2.md" hidden="true"/>
-      <toc-element id="what-s-new-in-teamcity-2019.1.md" hidden="true"/>
-      <toc-element id="what-s-new-in-teamcity-2020-1.md" hidden="true"/>
       <toc-element id="getting-started-with-teamcity.md">
          <toc-element id="continuous-integration-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="installation-quick-start.md" show-structure-for="chapter" show-structure-depth="4"/>
