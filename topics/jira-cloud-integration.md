@@ -3,7 +3,7 @@
 
 The _Jira Cloud Integration_ build feature allows reporting build statuses directly to Jira Cloud in real time.
 
-It uses the [Jira Software Cloud REST API](https://developer.atlassian.com/cloud/jira/software/rest/) and requires additional authentication parameters comparing to the [regular integration with Jira](integrating-teamcity-with-issue-tracker.md#Dedicated+Support+for+Issue+Trackers), which affects only the TeamCity interface. Before adding this feature to your build configuration, you need to create an [issue tracker connection to Jira](jira.md) in the parent project's settings.
+> This feature uses the [Jira Software Cloud REST API](https://developer.atlassian.com/cloud/jira/software/rest/) and requires additional authentication parameters comparing to the [regular integration with Jira](integrating-teamcity-with-issue-tracker.md#Dedicated+Support+for+Issue+Trackers). Before adding this feature to your build configuration, you need to create an [issue tracker connection to Jira](jira.md) in the parent project's settings and provide the OAuth client ID/secret there. 
 
 ## Jira Cloud Integration Settings
 
