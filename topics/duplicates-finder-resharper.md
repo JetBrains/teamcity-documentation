@@ -1,7 +1,7 @@
 [//]: # (title: Duplicates Finder \(ReSharper\))
 [//]: # (auxiliary-id: viewpage.actionpageId113084077;Duplicates Finder \(ReSharper\))
 
-The _Duplicates finder (ReSharper)_ build runner, based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html), is intended to catch similar code fragments and provide a report on  the discovered repetitive blocks of C# and Visual Basic .NET code in Visual Studio 2003, 2005, 2008, 2010, 2012, 2013, and 2015 solutions.
+The _Duplicates finder (ReSharper)_ build runner, based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html), is intended to catch similar code fragments and provide a report on the discovered repetitive blocks of C# and Visual Basic .NET code in Visual Studio 2003, 2005, 2008, 2010, 2012, 2013, and 2015 solutions.
 
 <note>
 
