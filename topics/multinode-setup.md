@@ -224,6 +224,12 @@ After configuring the proxy, remember to change the `serverURL` value to the pro
 
 >If you leave `serverURL` set to the main server URL, the agent will connect to the main node for every operation, as in the default scenario. This way, you can combine two approaches and control which agents connect to the proxy, and which ones — directly to the main server.
 
+#### Matching Proxy Version with Server
+
+When configuring a proxy as a [load balancer](#Proxy+as+Load+Balancer), you can optionally specify a minimal supported TeamCity version as the `version` parameter of the proxy package header. We always declare it in our configuration examples, as it helps ensure that each example template is compatible with the specified server version. Once we extend the proxying functionality in TeamCity, we will respectively update the proxy configuration templates and increase the recommended TeamCity version declared in them.
+
+If TeamCity detects that the proxy version is later than the current version of the TeamCity server, it will display a related health report. In this case, the proxy configuration should be downgraded. To prevent such cases, we suggest that you always upgrade your TeamCity server before upgrading the proxy configuration and never use configuration templates with the later version than the version of your server.
+
 ### Firewall Settings
 
 Firewall settings should allow accessing secondary nodes from the agents and from the main TeamCity server (the main server also communicates with the nodes by HTTP).
@@ -243,15 +249,17 @@ To __upgrade__ nodes in a multinode setup to a major version of TeamCity, follow
 3. Proceed with the upgrade.
 4. Verify that everything works properly and agents are connecting (the agents will reroute the data, that was supposed to be routed to the secondary nodes, to the main server).
 5. Upgrade the TeamCity installations on the secondary nodes to the same version.
-6. Start the secondary nodes and verify that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main server.
+6. Upgrade the [proxy configuration](#Matching+Proxy+Version+with+Server), if necessary.
+7. Start the secondary nodes and verify that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main server.
       
 To __downgrade__ nodes in a multinode setup, follow these steps:
 1. Shutdown the main server and the secondary nodes.
 2. [Restore the data](restoring-teamcity-data-from-backup.md) from backup (only if the data format has been changed during the upgrade).
-3. Downgrade the TeamCity software on the main server.
-4. Start the main TeamCity server and verify that everything works properly.
-5. Downgrade the TeamCity software on the secondary nodes to the same version as the main server.
-6. Start the secondary nodes. 
+3. Downgrade the [proxy configuration](#Matching+Proxy+Version+with+Server), if necessary.
+4. Downgrade the TeamCity software on the main server.
+5. Start the main TeamCity server and verify that everything works properly.
+6. Downgrade the TeamCity software on the secondary nodes to the same version as the main server.
+7. Start the secondary nodes. 
 
 TeamCity agents will perform upgrade/downgrade automatically.
 
