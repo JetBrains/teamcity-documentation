@@ -99,6 +99,7 @@ To reduce the load caused by extra IO requests from all nodes to the shared Team
 To define a new path to a local directory, use the `-Dteamcity.node.data.path` property in the TeamCity [start-up scripts](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts). Read more in [Configuring Secondary Node](configuring-secondary-node.md#Installing+Secondary+Node).
 
 ### Proxy Configuration
+{id="ProxyConfiguration" auxiliary-id="ProxyConfiguration"}
 
 To set up a high-availability TeamCity installation, you need to install both the main server and the secondary node behind a reverse proxy and configure it to route requests to the main server while it is available and to the secondary one in other cases. If you are about to set up the TeamCity server behind a reverse proxy for the first time, make sure to review our [notes](how-to.md#Proxy+Server+Setup) on this topic.
 
@@ -160,7 +161,7 @@ This approach optimizes the communication between agents and nodes which helps e
 The following HAProxy example shows what parameters are required to provide in the proxy configuration.
 
 >This example can be used for a reference only and not intended for production purposes.
-> 
+>
 {type="warning"}
 
 ```Plain Text
@@ -224,6 +225,13 @@ After configuring the proxy, remember to change the `serverURL` value to the pro
 
 >If you leave `serverURL` set to the main server URL, the agent will connect to the main node for every operation, as in the default scenario. This way, you can combine two approaches and control which agents connect to the proxy, and which ones — directly to the main server.
 
+#### Matching Proxy Version with Server
+{id="MatchingProxyVersionwithServer" auxiliary-id="MatchingProxyVersionwithServer"}
+
+When configuring a proxy as a [load balancer](#Proxy+as+Load+Balancer), you can optionally specify a minimal supported TeamCity version as the `version` parameter of the proxy package header. We always declare it in our configuration examples, as it helps ensure that each example template is compatible with the specified server version. Once we extend the proxying functionality in TeamCity, we will respectively update the proxy configuration templates and increase the recommended TeamCity version declared in them.
+
+We suggest that you always upgrade your TeamCity server before upgrading the proxy configuration and never use configuration templates with the later version than the version of your server.
+
 ### Firewall Settings
 
 Firewall settings should allow accessing secondary nodes from the agents and from the main TeamCity server (the main server also communicates with the nodes by HTTP).
@@ -243,15 +251,17 @@ To __upgrade__ nodes in a multinode setup to a major version of TeamCity, follow
 3. Proceed with the upgrade.
 4. Verify that everything works properly and agents are connecting (the agents will reroute the data, that was supposed to be routed to the secondary nodes, to the main server).
 5. Upgrade the TeamCity installations on the secondary nodes to the same version.
-6. Start the secondary nodes and verify that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main server.
-      
+6. Upgrade the [proxy configuration](#MatchingProxyVersionwithServer), if necessary.
+7. Start the secondary nodes and verify that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main server.
+
 To __downgrade__ nodes in a multinode setup, follow these steps:
 1. Shutdown the main server and the secondary nodes.
 2. [Restore the data](restoring-teamcity-data-from-backup.md) from backup (only if the data format has been changed during the upgrade).
-3. Downgrade the TeamCity software on the main server.
-4. Start the main TeamCity server and verify that everything works properly.
-5. Downgrade the TeamCity software on the secondary nodes to the same version as the main server.
-6. Start the secondary nodes. 
+3. Downgrade the [proxy configuration](#MatchingProxyVersionwithServer), if necessary.
+4. Downgrade the TeamCity software on the main server.
+5. Start the main TeamCity server and verify that everything works properly.
+6. Downgrade the TeamCity software on the secondary nodes to the same version as the main server.
+7. Start the secondary nodes.
 
 TeamCity agents will perform upgrade/downgrade automatically.
 
@@ -262,4 +272,3 @@ A secondary server has a few limitations compared to the main server:
 * A secondary node does not allow changing the server configuration and state. The nodes without responsibilities are served in the read-only mode; the nodes with responsibilities provide user-level actions. In both cases, not all administration pages and actions are available.
 * Currently, only bundled plugins and a limited set of some other plugins can be loaded by a secondary server. Some functionality provided by external plugins can be missing. Read more in [Configuring Secondary Node](configuring-secondary-node.md#Using+Plugins).
 * Users may need to relogin when they are routed to a secondary node if they did not select the _Remember Me_ option.
-
