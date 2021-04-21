@@ -37,7 +37,7 @@ During installation, you can configure:
    <img src="installAsWinServicepng.png" alt="TeamCity server and agent as Windows services"/>
    
 * ports:      
-   * Server port: `80` is the default port, which can be already used by other applications (for example, Skype). Change the server port if it is already in use. In the example below, we've set the port to `7777`.
+   * Server port: `8111` is the default port, which can be already used by other applications (for example, Skype). Change the server port if it is already in use. In the example below, we've set the port to `7777`.
    * Agent port: `9090` is the default for incoming connections from the server. If this port is already in use, you'll be asked to change it by setting the `ownPort` property to a different value.   
    <img src="configure-agent-port.png" alt="Configure a build agent port" width="450"/>
 
@@ -54,7 +54,7 @@ Otherwise, to start/stop the TeamCity server and one default agent at the same t
     .\runAll.bat stop
     ```
 
-If you did not change the default port (`80`) during the installation, the TeamCity web UI can be accessed at [`http://localhost`](http://localhost/) in a web browser running on the same machine where the TeamCity server is installed. Otherwise, use `http://localhost:<port>` ([`http://localhost:8111`](http://localhost:8111/) in our case).
+If you did not change the default port (`8111`) during the installation, the TeamCity web UI can be accessed at [`http://localhost`](http://localhost/) in a web browser running on the same machine where the TeamCity server is installed. Otherwise, use `http://localhost:<port>` ([`http://localhost:8111`](http://localhost:8111/) in our case).
 
 ### on Linux and OS X
 

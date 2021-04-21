@@ -25,7 +25,7 @@ We strongly urge you to make the backup of TeamCity data before upgrading. Note 
 
 TeamCity __allows backing up__ the following data:
 * [Data stored in the database](manual-backup-and-restore.md#Database+Data)
-* Server settings, settings of projects and builds configurations (everything stored in `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`)
+* Server settings, settings of projects and builds configurations (everything stored in `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`), and secure values
 * Custom plugins (installed under `<[TeamCity Data Directory](teamcity-data-directory.md)>\plugins`) and and database drivers (from `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib` directory)
 * Supplementary data: settings history, triggers states, plugins data, and so on (everything under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` directory)
 * Build logs
