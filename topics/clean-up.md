@@ -49,6 +49,8 @@ The __Previous clean-up__ section of the server clean-up settings enables you to
 
 During clean-up, TeamCity reports the progress. If you need, you can stop the clean-up process, and the remaining data will be removed during the next clean-up.
 
+<anchor name="Clean-Up-ProjectClean-upRules"/>
+
 ## Clean-up Rules
 
 The _clean-up rules_ define how to clean data in the current project, its subprojects and build configurations.
@@ -70,6 +72,8 @@ The clean-up rules assigned to a project are inherited by all its subprojects an
 <img src="clean-up-inheritance.png" width="700" alt="Inheritance of clean-up rules"/>
 
 You can always reset the overridden rule to its original definition in a parent project, closest in the hierarchy.
+
+<anchor name="Clean-up-BaseRule"/>
   
 ### Base Rule
 
