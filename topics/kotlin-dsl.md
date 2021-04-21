@@ -245,7 +245,7 @@ Visit [our blog](https://blog.jetbrains.com/teamcity/2020/09/creating-teamcity-p
 
 <note>
 
-Currently, if Kotlin DSL uses context parameters then the settings of such projects cannot be edited via the TeamCity UI (see [TW-63565](https://youtrack.jetbrains.com/issue/TW-63565) for details).
+Currently, if Kotlin DSL uses context parameters, then the settings of such projects cannot be edited via the TeamCity UI (see [TW-63565](https://youtrack.jetbrains.com/issue/TW-63565) for details).
 
 </note>
 
@@ -419,7 +419,7 @@ Since TeamCity 2019.2.1, you can establish access to external libraries in priva
 
 ### Non-Portable DSL
 
-Versions before 2018.1 used a different format for Kotlin DSL settings. This format can still be enabled by turning off the _Generate portable DSL scripts_ checkbox on the __Versioned Settings__ page.
+TeamCity versions before 2018.1 used a different format for Kotlin DSL settings. If you import a project in this obsolete non-portable format, TeamCity will allow working with it. In this case, the _Generate portable DSL scripts_ option will become available.
 
 When TeamCity generates a non-portable DSL, the project structure in the `.teamcity` directory looks as follows:
 * `pom.xml`
