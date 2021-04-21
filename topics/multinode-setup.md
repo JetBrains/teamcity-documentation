@@ -99,6 +99,7 @@ To reduce the load caused by extra IO requests from all nodes to the shared Team
 To define a new path to a local directory, use the `-Dteamcity.node.data.path` property in the TeamCity [start-up scripts](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts). Read more in [Configuring Secondary Node](configuring-secondary-node.md#Installing+Secondary+Node).
 
 ### Proxy Configuration
+{id="ProxyConfiguration" auxiliary-id="ProxyConfiguration"}
 
 To set up a high-availability TeamCity installation, you need to install both the main server and the secondary node behind a reverse proxy and configure it to route requests to the main server while it is available and to the secondary one in other cases. If you are about to set up the TeamCity server behind a reverse proxy for the first time, make sure to review our [notes](how-to.md#Proxy+Server+Setup) on this topic.
 
@@ -225,6 +226,7 @@ After configuring the proxy, remember to change the `serverURL` value to the pro
 >If you leave `serverURL` set to the main server URL, the agent will connect to the main node for every operation, as in the default scenario. This way, you can combine two approaches and control which agents connect to the proxy, and which ones — directly to the main server.
 
 #### Matching Proxy Version with Server
+{id="MatchingProxyVersionwithServer" auxiliary-id="MatchingProxyVersionwithServer"}
 
 When configuring a proxy as a [load balancer](#Proxy+as+Load+Balancer), you can optionally specify a minimal supported TeamCity version as the `version` parameter of the proxy package header. We always declare it in our configuration examples, as it helps ensure that each example template is compatible with the specified server version. Once we extend the proxying functionality in TeamCity, we will respectively update the proxy configuration templates and increase the recommended TeamCity version declared in them.
 
