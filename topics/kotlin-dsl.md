@@ -210,10 +210,9 @@ If you are not sure what build history to select, you can look at the __Build Re
 
 ### Viewing DSL in UI
 
-When viewing your build configuration settings in the UI, you can click __View DSL__ in the sidebar: the DSL representation of the current configuration will be displayed and the setting being viewed (for example, a build step, a trigger, dependencies) will be highlighted. To go back, click __Edit in UI__.
+When viewing your build configuration settings in the UI, you can click __View as code__ in the sidebar: the DSL representation of the current configuration will be displayed and the setting being viewed (for example, a build step, a trigger, dependencies) will be highlighted. To go back, click __Edit in UI__.
 
 This is especially useful if you need to add some build feature or trigger to your DSL scripts and you're not sure how DSL code should look like.
-
 
 ### Sharing Kotlin DSL Scripts
 

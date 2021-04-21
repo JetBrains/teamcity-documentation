@@ -5,7 +5,7 @@ The _NuGet Pack_ build runner allows building a NuGet package from a given speci
 
 <include src="nuget.md" include-id="nuget-OS"/>
 
->To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View DSL__ in the sidebar.
+>To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View as code__ in the sidebar.
 
 Configure the following options of the NuGet Pack runner:
 

@@ -12,7 +12,7 @@ When using TeamCity as a NuGet server, there are three ways to publish packages 
  
 <tip>
 
-To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View DSL__ in the sidebar.
+To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View as code__ in the sidebar.
 
 </tip>
 
