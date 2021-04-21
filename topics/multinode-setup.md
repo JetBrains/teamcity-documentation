@@ -251,13 +251,13 @@ To __upgrade__ nodes in a multinode setup to a major version of TeamCity, follow
 3. Proceed with the upgrade.
 4. Verify that everything works properly and agents are connecting (the agents will reroute the data, that was supposed to be routed to the secondary nodes, to the main server).
 5. Upgrade the TeamCity installations on the secondary nodes to the same version.
-6. Upgrade the [proxy configuration](#Matching+Proxy+Version+with+Server), if necessary.
+6. Upgrade the [proxy configuration](#MatchingProxyVersionwithServer), if necessary.
 7. Start the secondary nodes and verify that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main server.
       
 To __downgrade__ nodes in a multinode setup, follow these steps:
 1. Shutdown the main server and the secondary nodes.
 2. [Restore the data](restoring-teamcity-data-from-backup.md) from backup (only if the data format has been changed during the upgrade).
-3. Downgrade the [proxy configuration](#Matching+Proxy+Version+with+Server), if necessary.
+3. Downgrade the [proxy configuration](#MatchingProxyVersionwithServer), if necessary.
 4. Downgrade the TeamCity software on the main server.
 5. Start the main TeamCity server and verify that everything works properly.
 6. Downgrade the TeamCity software on the secondary nodes to the same version as the main server.
@@ -272,4 +272,3 @@ A secondary server has a few limitations compared to the main server:
 * A secondary node does not allow changing the server configuration and state. The nodes without responsibilities are served in the read-only mode; the nodes with responsibilities provide user-level actions. In both cases, not all administration pages and actions are available.
 * Currently, only bundled plugins and a limited set of some other plugins can be loaded by a secondary server. Some functionality provided by external plugins can be missing. Read more in [Configuring Secondary Node](configuring-secondary-node.md#Using+Plugins).
 * Users may need to relogin when they are routed to a secondary node if they did not select the _Remember Me_ option.
-
