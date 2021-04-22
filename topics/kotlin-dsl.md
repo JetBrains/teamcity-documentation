@@ -27,7 +27,7 @@ DSL is also good in case when you need to have a big amount of similar build con
 This [Kotlin tutorial](https://play.kotlinlang.org/koans/overview) helps quickly learn most Kotlin features. The Kotlin DSL API documentation is available at `<teamcityserver:port>/app/dsl-documentation/index.html`.
 
 To start working with Kotlin DSL in TeamCity, create an empty sandbox project on your server and follow these steps:
-1. [Enable versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) for your project.
+1. [Enable versioned settings](storing-project-settings-in-version-control.md#SynchronizingSettingswithVCS) for your project.
 2. Select a required VCS root. Make sure it specifies correct credentials; TeamCity won't be able to commit changes if anonymous authentication is used.
 3. Select Kotlin as the format.
 4. Click __Apply__, and TeamCity will commit the generated Kotlin files to your repository.
@@ -238,7 +238,7 @@ It seems pointless to keep two projects using the same DSL scripts on one server
 
 ### Using Context Parameters in DSL
 
-Since TeamCity 2019.2, you can customize the DSL generation behavior using context parameters configured in the TeamCity UI. Context parameters are specified as a part of the project [versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) in the UI.
+Since TeamCity 2019.2, you can customize the DSL generation behavior using context parameters configured in the TeamCity UI. Context parameters are specified as a part of the project [versioned settings](storing-project-settings-in-version-control.md#SynchronizingSettingswithVCS) in the UI.
 
 With context parameters, it is possible to maintain a single Kotlin DSL code and use it in different projects on the same TeamCity server. Each of these projects can have own values of context parameters, and the same DSL code can produce different settings based on values of these parameters.
 
@@ -585,7 +585,7 @@ _Solution_:
 * Fix the URL in the Kotlin DSL in the version control and push the fix.
 * Disable versioned settings to enable the UI.
 * Fix the URL in the VCS root in the UI.
-* [Enable versioned settings](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) with the same VCS root and the Kotlin format again. TeamCity will detect that the repository contains the `.teamcity` directory and ask you if you want to import settings.
+* [Enable versioned settings](storing-project-settings-in-version-control.md#SynchronizingSettingswithVCS) with the same VCS root and the Kotlin format again. TeamCity will detect that the repository contains the `.teamcity` directory and ask you if you want to import settings.
 * Choose to import settings.
 
 ### How to Read Files in Kotlin DSL
