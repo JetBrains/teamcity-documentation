@@ -3,11 +3,9 @@
 
 TeamCity is a CI/CD server which key features are a powerful toolset and universality. With our Cloud version, we address the user demand in the full-featured CI/CD solution and make it available to you in a couple of minutes, with no need to maintain a server on-premises.
 
-__If you are new to CI/CD or TeamCity__, the Cloud Beta is a great starting point as it automatically resolves the task of installing and configuring the server.
+__If you are new to CI/CD or TeamCity__, the Cloud version is a great starting point as it automatically resolves the task of installing and configuring the server.
 
 When you register a TeamCity Cloud account, your own TeamCity server is automatically created in Amazon Web Services. The server operates on the newest version of TeamCity and currently provides Windows and Linux cloud build agents out of the box (self-hosted agents for Windows, Linux, and macOS are also supported).
-
-We plan to officially release our Cloud version in 2021. __Users of the Beta program will be able to migrate their TeamCity data to the released Cloud version.__
 
 ## 1. Learn about CI with TeamCity Cloud
 
@@ -15,10 +13,36 @@ Understand the idea behind continuous integration, learn [basic TeamCity concept
 
 ## 2. Start TeamCity
 
-To start TeamCity in cloud, __[register a Cloud Beta account](https://www.jetbrains.com/teamcity/cloud/)__. In a matter of seconds, your server will be available under the `beta.teamcity.com` domain.
+To start TeamCity in cloud, __[register a Cloud account](https://www.jetbrains.com/teamcity/cloud/)__. In a matter of seconds, your server will be available under the `teamcity.com` domain.
 
 After the server is ready, an invitation link will be sent to your email. Proceed via this link to get to your administrative account. Everything is ready to build!
 
 ## 3. Run your First Build
 
 Create your [first project](configure-and-run-your-first-build.md) in TeamCity Cloud and configure and run your first build.
+
+## Differences between TeamCity Cloud and On-Premises
+
+Users of our Cloud and On-Premises versions can expect a similar level of scalability and universality of these solutions. However, the Cloud version is automatically configured and maintained by TeamCity and thus provides limited server administration settings comparing to our [On-Premises](https://www.jetbrains.com/teamcity/) solution.
+
+TeamCity Cloud has the following limitations comparing to On-Premises:
+* Limited server configuration and diagnostics.
+* TeamCity Cloud data is backed up and cleaned up automatically. The set of available configuration options may differ from the On-Premises installations.
+* Some settings are unavailable to TeamCity Cloud administrators: for example, cloud profiles' configuration or changing the location for storing external artifacts.
+* No plugin management. The following bundled plugins are currently disabled:
+    * LDAP support
+    * Microsoft Windows Domain authentication
+    * VCS Support: CVS and VCS Support: StarTeam
+    * RSS feed support
+    * Build Agent JVM updater
+    * NuGet Support
+    * Search
+
+If you are interested in our On-Premises solution, you can visit its [website](https://www.jetbrains.com/teamcity/) or [documentation](https://www.jetbrains.com/help/teamcity/teamcity-documentation.html).
+
+Comparing to On-Premises, TeamCity Cloud offers the following new features:
+* For better security, you can generate authentication tokens for build agents in advance.
+* If you authenticate via GitHub, GitLab, or Bitbucket, the respective [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections) will be preconfigured automatically.
+* The __Administration | Invitations__ page allows automatically inviting users to the server. __By default, you can add new users only via invitations__. An invited user will be able to register a new user account or authenticate via GitHub, GitLab, or Bitbucket.
+
+All the listed features will be introduced in our On-premises version in the nearest future.

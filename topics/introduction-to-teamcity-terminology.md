@@ -35,7 +35,7 @@ Example of a build chain in TeamCity:
 ## TeamCity Build Environment
 
 The [TeamCity server](installing-and-configuring-the-teamcity-server.md) stores all the objects' settings, manages the _[build queue](build-queue.md)_, monitors the state of running builds, and performs many other tasks. You can install as many additional _[secondary servers](multinode-setup.md)_ as you need to ensure high availability and scalability of your setup.   
-You can host the server on your own machine or register for [TeamCity Cloud Beta](https://www.jetbrains.com/teamcity/cloud/) so your server is automatically launched and maintained in the cloud.
+You can host the server on your own machine or get a [TeamCity Cloud](https://www.jetbrains.com/teamcity/cloud/) subscription so your server is automatically launched and maintained in the cloud.
 {product="tc"}
 
 The TeamCity server stores all the objects' settings, manages the _[build queue](build-queue.md)_, monitors the state of running builds, and performs many other tasks.
