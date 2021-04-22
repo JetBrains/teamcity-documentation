@@ -3,15 +3,15 @@
 
 TeamCity Cloud services are provided by a monthly or annual subscription which includes a predefined set of resources. If you reach any of the subscription limits, you can get additional resources on demand.
 
-This document details the terms of a subscription and licensing in TeamCity Cloud. For more information, see our [Terms of Service](), [F.A.Q](), or contact us via our [issue tracker](https://youtrack.jetbrains.com/issues/TCC).
+This document details the terms of a subscription and licensing in TeamCity Cloud. For more information, see our [Terms of Service](), [F.A.Q](https://teamcity-support.jetbrains.com/hc/en-us/categories/360003110659-TeamCity-Cloud-FAQ), or contact us via our [issue tracker](https://youtrack.jetbrains.com/issues/TCC).
 
 Refer to the [licensing glossary](#Cloud+Licensing+Terminology) to learn about the terms used in this document.
 
 ## TeamCity Cloud Subscription
 
-### Subscription Plans
+### Subscription Levels
 
-TeamCity Cloud subscription plans are predominantly based on the number of _[committers](#cloud-committers)_, that are users who make changes in the project code. All users who author 10 or more VCS changes over a 30-day period require a _committer slot_ in TeamCity Cloud. Before acquiring the subscription, we suggest that you estimate the number of potential committers in all projects you are about to run in TeamCity. If you need help choosing the subscription plan, [contact us for a demo](https://www.jetbrains.com/teamcity/get-in-touch/).
+TeamCity Cloud subscription levels are predominantly based on the number of _[committers](#cloud-committers)_, that are users who make changes in the project code. All users who author 10 or more VCS changes over a 30-day period require a _committer slot_ in TeamCity Cloud. Before acquiring the subscription, we suggest that you estimate the number of potential committers in all projects you are about to run in TeamCity. If you need help choosing the subscription level, [contact us for a demo](https://www.jetbrains.com/teamcity/get-in-touch/).
 
 >If you have utilized all the committer slots provided with your subscription and a new user makes 10 or more commits to your source project within a 30-day period, TeamCity Cloud will not be able to start new builds with the successive changes from that committer until an additional committer slot is acquired. Other builds will continue to start as usual. Read how you can [get extra committer slots](#On-demand+Cloud+Resources) in this case.
 
@@ -19,7 +19,7 @@ Note that only contributors to the source code take the committer slots. An unli
 
 Each acquired committer slot in the subscription is provided with a fixed amount of [storage](#cloud-storage) for build results and [data transfer capacity](#cloud-data-transfer). You also get a number of [build credits](#cloud-build-credits) per each committer: they are automatically spent on build time on agents and can be exchanged for extra [build resources]() when necessary. The more committers you have, the more credits and build resources you are proportionally granted with. Please refer to [our website](https://www.jetbrains.com/teamcity/buy/#cloud) to see the exact rates.
 
-You can manage your subscription on the __[Resources & Subscription]()__ administration page in TeamCity.
+You can manage your subscription on the __[Resources & Subscription](managing-subscription-and-resources.md)__ administration page in TeamCity.
 
 ### Using Build Credits
 
@@ -28,13 +28,13 @@ If you purchase [additional build credits](#On-demand+Cloud+Resources), they do 
 
 Build credits are automatically spent on build time on agents. You can also exchange them to get more committer slots and concurrent builds on self-hosted agents, as well as on extra [storage](#cloud-storage) and [data transfer capacity](#cloud-data-transfer).
 
->It is easier to stay under storage capacity limits if you configure proper [clean-up rules]() in your TeamCity Cloud instance.
+>It is easier to stay under storage capacity limits if you configure proper [clean-up rules](clean-up.md) in your TeamCity Cloud instance.
 
 TeamCity Cloud can run builds on two types of agents: hosted by JetBrains and self-hosted. Each minute of build time on [JetBrains-hosted agents](#cloud-jb-hosted-agents) will expend a certain number of build credits. The exact rate depends on your build agent [instance type](#cloud-instance-type).
 
-In case with [self-hosted agents](), build time is not counted. Instead, you need to purchase an extra slot for each concurrent build running on a self-hosted agent. For example, if you purchase 3 slots monthly, you would be able to run up to 3 builds on self-hosted agents, connected to your TeamCity server, at each moment of time during this month.
+In case with [self-hosted agents](#cloud-self-hosted-agents), build time is not counted. Instead, you need to purchase an extra slot for each concurrent build running on a self-hosted agent. For example, if you purchase 3 slots monthly, you would be able to run up to 3 builds on self-hosted agents, connected to your TeamCity server, at each moment of time during this month.
 
->Coming soon: We will also offer [prepaid build agents]() for customers who can more accurately predict their build agent utilization. If you anticipate a high utilization rate of your JetBrains-hosted agents, you will be able to use this method to help reduce costs.
+>Coming soon: We will also offer [prepaid build agents](#cloud-prepaid-agents) for customers who can more accurately predict their build agent utilization. If you anticipate a high utilization rate of your JetBrains-hosted agents, you will be able to use this method to help reduce costs.
 
 ### Free Trial Subscription
 
@@ -42,13 +42,13 @@ You can [try TeamCity Cloud for free]() for 14 days. The free trial subscription
 
 ## On-demand Cloud Resources
 
-You can get more build credits, atop the ongoing subscription, and spend them on necessary resources. Credits are purchased in packs of 25,000. More information on pricing is available on [our website]().
+You can get more build credits, atop the ongoing subscription, and spend them on necessary resources. Credits are purchased in packs of 25,000. More information on pricing is available on [our website](https://www.jetbrains.com/teamcity/cloud/).
 
-Build credits purchased this way do not expire. Similarly to credits provided with your subscription, they are spent on build time on JetBrains-hosted build agents and can be redeemed for additional storage, concurrent builds on [self-hosted agents](), committers, and (in the future updates) [prepaid build agents](). When you buy a resource, its price for the current month is lowered proportionally to how many days are left in the month.
+Build credits purchased this way do not expire. Similarly to credits provided with your subscription, they are spent on build time on JetBrains-hosted build agents and can be redeemed for additional storage, concurrent builds on [self-hosted agents](#cloud-self-hosted-agents), committers, and (in the future updates) [prepaid build agents](#cloud-prepaid-agents). When you buy a resource, its price for the current month is lowered proportionally to how many days are left in the month.
 
 Note that when you buy an additional resource for build credits, it will be automatically renewed each month (that is, build credits will be automatically spent on it) unless you cancel it. If you cancel a purchased resource, it will only reset at the beginning of the next month.
 
-To acquire credits and manage build resources, use the __[Resources & Subscription]()__ administration page in TeamCity.
+To acquire credits and manage build resources, use the __[Resources & Subscription](managing-subscription-and-resources.md)__ administration page in TeamCity.
 
 ## Cloud Licensing Terminology
 
@@ -182,7 +182,7 @@ You can spend build credits on adding self-hosted build agents to your instance 
 </tr>
 
 <tr>
-<td id="cloud-self-hosted-agents" auxiliary-id="cloud-self-hosted-agents">
+<td id="cloud-prepaid-agents" auxiliary-id="cloud-prepaid-agents">
 
 __Prepaid build agent__
 
@@ -192,7 +192,7 @@ __Prepaid build agent__
 
 [Coming soon]
 
-A build agent hosted by JetBrains and prepaid with a fixed number of credits monthly, instead of paying per build time. If thoroughly planned, using such agents allows saving costs but is not as flexible as using [regular JetBrains-hosted agents](), as you pay for each agent that can run one build at a time instead of autostarting as many parallel builds as needed. You can combine these agents with regular JetBrains-hosted agents whenever necessary.
+A build agent hosted by JetBrains and prepaid with a fixed number of credits monthly, instead of paying per build time. If thoroughly planned, using such agents allows saving costs but is not as flexible as using [regular JetBrains-hosted agents](#cloud-jb-hosted-agents), as you pay for each agent that can run one build at a time instead of autostarting as many parallel builds as needed. You can combine these agents with regular JetBrains-hosted agents whenever necessary.
 
 </td>
 
