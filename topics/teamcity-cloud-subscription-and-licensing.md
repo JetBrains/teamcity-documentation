@@ -3,7 +3,7 @@
 
 TeamCity Cloud services are provided by a monthly or annual subscription which includes a predefined set of resources. If you reach any of the subscription limits, you can get additional resources on demand.
 
-This document details the terms of a subscription and licensing in TeamCity Cloud. For more information, see our [Terms of Service](), [F.A.Q](https://teamcity-support.jetbrains.com/hc/en-us/categories/360003110659-TeamCity-Cloud-FAQ), or contact us via our [issue tracker](https://youtrack.jetbrains.com/issues/TCC).
+This document details the terms of a subscription and licensing in TeamCity Cloud. For more information, see our [Terms of Service](https://www.jetbrains.com/legal/docs/teamcity/teamcity_cloud.html), [F.A.Q](https://teamcity-support.jetbrains.com/hc/en-us/categories/360003110659-TeamCity-Cloud-FAQ), or contact us via our [issue tracker](https://youtrack.jetbrains.com/issues/TCC).
 
 Refer to the [licensing glossary](#Cloud+Licensing+Terminology) to learn about the terms used in this document.
 
@@ -38,7 +38,7 @@ In case with [self-hosted agents](#cloud-self-hosted-agents), build time is not 
 
 ### Free Trial Subscription
 
-You can [try TeamCity Cloud for free]() for 14 days. The free trial subscription plan includes unlimited committer slots, 12,000 build credits (good for up to 20 build hours on our Linux small instance type), unlimited parallel builds, 120 GB of storage, and up to 3 concurrent self-hosted builds.
+You can try TeamCity Cloud for free for 14 days. The free trial subscription plan includes unlimited committer slots, 12,000 build credits (good for up to 20 build hours on our Linux small instance type), unlimited parallel builds, 120 GB of storage, and up to 3 concurrent self-hosted builds. See the detailed information on [our website](https://www.jetbrains.com/teamcity/cloud/).
 
 ## On-demand Cloud Resources
 
