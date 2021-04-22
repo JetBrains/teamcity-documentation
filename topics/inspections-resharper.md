@@ -145,7 +145,7 @@ InspectCode Platform
 
 </td>
 
-<td>
+<td id="ReSharperInspectionPlatform" auxiliary-id="ReSharperInspectionsPlatform">
 
 Select the platform bitness of the InspectCode tool. To find code issues in C++ projects, use the x86 platform. 
 
