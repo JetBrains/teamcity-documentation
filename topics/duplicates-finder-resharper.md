@@ -76,7 +76,23 @@ R# CLT Home Directory
 
 Select the ReSharper Command Line Tools version. You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Administration | Tools](installing-agent-tools.md)__ page. If you want to run ReSharper duplicates using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can use this page to install another version of the tools and can change the default version to be used.
 
-</td></tr></table>
+</td></tr>
+
+<tr>
+
+<td>
+
+dupFinder Platform
+
+</td>
+
+<td id="ReSharperDupFinderPlatform" auxiliary-id="ReSharperDupFinderPlatform">
+
+Select the platform bitness of the dupFinder tool. By default, x64. In terms of TeamCity 2021.1 EAP, the cross-platform duplicates finder is also supported in ReSharper 2020.2.1 or later.
+
+</td></tr>
+
+</table>
 
 ## Duplicate Searcher Settings
 
