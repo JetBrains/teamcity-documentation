@@ -10,6 +10,7 @@ The versioned settings are stored in the `.teamcity` directory in the root of th
 <anchor name="StoringProjectSettingsinVersionControl-SynchronizingSettingswithVCS"/>
 
 ## Synchronizing Settings with VCS
+{id="SynchronizingSettingswithVCS" auxiliary-id="SynchronizingSettingswithVCS"}
 
 By default, the synchronization of the project settings with the version control system is disabled.
 
