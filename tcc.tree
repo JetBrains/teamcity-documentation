@@ -113,6 +113,7 @@
                     <toc-element id="enabling-guest-login.md"/>
                     <toc-element id="enabling-email-verification.md"/>
                     <toc-element id="security-actions.md"/>
+                    <toc-element id="inviting-users.md"/>
                 </toc-element>
                 <toc-element id="teamcity-data-backup.md"/>
                 <toc-element id="projects-import.md" show-structure-for="chapter" show-structure-depth="4"/>
