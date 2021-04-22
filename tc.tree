@@ -246,6 +246,7 @@
                   <toc-element id="nant.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="net.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="net-process-runner.md" show-structure-for="chapter" show-structure-depth="4"/>
+                  <toc-element id="nodejs.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="nuget-installer.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="nuget-pack.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="nuget-publish.md" show-structure-for="chapter" show-structure-depth="4"/>
