@@ -171,6 +171,7 @@
             <toc-element id="server-health.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-time-report.md"/>
             <toc-element id="teamcity-monitoring-and-diagnostics.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="search-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="uploading-ssl-certificates.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="content-security-policy-in-teamcity.md"/>
          </toc-element>
