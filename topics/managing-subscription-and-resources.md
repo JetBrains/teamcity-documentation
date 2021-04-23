@@ -1,7 +1,7 @@
 [//]: # (title: Managing Subscription and Resources)
 [//]: # (auxiliary-id: Managing Subscription and Resources)
 
-The __Administration | Subscription & Resources__ page allows you to manage the TeamCity Cloud subscription, get extra build resources, and view the statistics of expenses. This page is only available to [Cloud Account Administrators]().
+The __Administration | Subscription & Resources__ page allows you to manage the TeamCity Cloud subscription, get extra build resources, and view the statistics of expenses. This page is only available to [Cloud Account Administrators](#Managing+Cloud+Account+Administrators).
 
 ## Upgrade Subscription
 
