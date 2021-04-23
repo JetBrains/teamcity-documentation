@@ -19,7 +19,7 @@ Note that only contributors to the source code take the committer slots. An unli
 
 Each acquired committer slot in the subscription is provided with a fixed amount of [storage](#cloud-storage) for build results and [data transfer capacity](#cloud-data-transfer). You also get a number of [build credits](#cloud-build-credits) per each committer: they are automatically spent on build time on agents and can be exchanged for extra [build resources]() when necessary. The more committers you have, the more credits and build resources you are proportionally granted with. Please refer to [our website](https://www.jetbrains.com/teamcity/buy/#cloud) to see the exact rates.
 
-You can manage your subscription on the __[Resources & Subscription](managing-subscription-and-resources.md)__ administration page in TeamCity.
+You can manage your subscription on the __[Subscription & Resources](managing-subscription-and-resources.md)__ administration page in TeamCity.
 
 ### Using Build Credits
 
@@ -48,7 +48,7 @@ Build credits purchased this way do not expire. Similarly to credits provided wi
 
 Note that when you buy an additional resource for build credits, it will be automatically renewed each month (that is, build credits will be automatically spent on it) unless you cancel it. If you cancel a purchased resource, it will only reset at the beginning of the next month.
 
-To acquire credits and manage build resources, use the __[Resources & Subscription](managing-subscription-and-resources.md)__ administration page in TeamCity.
+To acquire credits and manage build resources, use the __[Subscription & Resources](managing-subscription-and-resources.md)__ administration page in TeamCity.
 
 ## Cloud Licensing Terminology
 
@@ -208,7 +208,7 @@ __Web users__
 
 <td>
 
-QA, managers, or other team members who do not author changes and do not occupy committer slots. They can view build results, modify build configurations, and perform other actions in the TeamCity UI with no licensing limits.
+QA, managers, or other team members who only access the TeamCity interface via UI and do not author changes in the code. These users do not occupy committer slots. They can view build results, modify build configurations, and perform other actions in the TeamCity UI with no licensing limits.
 
 </td>
 
