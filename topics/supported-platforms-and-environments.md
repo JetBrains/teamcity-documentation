@@ -46,6 +46,7 @@ Reportedly works without known issues on:
 Note that Windows XP/XP x64 are not supported.
 
 ### Build Agents
+{product="tc"}
 
 The TeamCity Agent is a standalone Java application.
 
@@ -58,6 +59,115 @@ Supported Java versions are OpenJDK and Oracle Java 8 - 11. We recommend using t
 __Since TeamCity 2019.2__, 64-bit [Amazon Corretto](https://aws.amazon.com/corretto/) 8 is included in the Windows `.exe` TeamCity distribution (previously, 32-bit Oracle Java and then AdoptOpenJDK were bundled with the TeamCity Windows distribution). Users of the bundled version of JRE are automatically switched to 64-bit Amazon Corretto on upgrading TeamCity to 2019.2 or later.
 
 </note>
+
+The TeamCity agent is tested under the following operating systems:
+* Linux
+* macOS
+* Windows 7/7x64
+* Windows 10
+* Windows Server 2003/2008, 2012, 2016, 2019
+* Server Core installation of Windows Server 2016
+
+Reportedly works on:
+* Windows XP/XP x64
+* Windows 2000 (interactive mode only)
+* Solaris
+* FreeBSD
+* IBM z/OS
+* HP-UX
+
+### Build Agents
+{product="tcc"}
+
+The TeamCity Agent is a standalone Java application. TeamCity supports two types of agents:
+* Hosted by JetBrains
+* Hosted by a customer
+
+You can combine agents of both types in your installation. Read more information on licensing these agents in [Subscription and Licensing](teamcity-cloud-subscription-and-licensing.md).
+
+#### JetBrains-Hosted Agents
+
+These agents are automatically maintained by JetBrains and don't need to be installed or configured. There are multiple types of these agents:
+
+<table>
+
+<tr>
+
+<td>
+
+Instance Type
+
+</td>
+
+<td>
+
+Hardware
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Linux (small)
+
+</td>
+
+<td>
+
+* CPU: 2 vCPU (Intel Xeon (Cascade Lake))
+* RAM: 4 Gb ram
+* SSD: 20 Gb
+
+</td>
+
+<tr>
+
+<td>
+
+Linux (medium)
+
+</td>
+
+<td>
+
+* CPU: 4 vCPU (Intel Xeon (Cascade Lake))
+* RAM: 8 Gb ram
+* SSD: 20 Gb
+
+</td>
+
+<tr>
+
+<td>
+
+Windows (medium)
+
+</td>
+
+<td>
+
+* CPU: 4 vCPU (Intel Xeon (Cascade Lake))
+* RAM: 8 Gb ram
+* SSD: 20 Gb
+
+</td>
+
+</tr>
+
+</table>
+
+Each JetBrains-hosted agent comes with a set of preinstalled software.
+
+#### Self-Hosted Agents
+
+You can install a build agent locally on your machine, similarly to how you would do it in [TeamCity On-Premises](https://www.jetbrains.com/help/teamcity/setting-up-and-running-additional-build-agents.html), and connect it to the TeamCity Cloud instance. Note that you need to acquire a [concurrent build slot](teamcity-cloud-subscription-and-licensing.md#Using+Build+Credits) for each self-hosted agent.
+
+Build agents require a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
+
+Supported Java versions are OpenJDK and Oracle Java 8 - 11. We recommend using the latest available version of JDK. Support for running agents under Java 1.6 and 1.7 is deprecated.
 
 The TeamCity agent is tested under the following operating systems:
 * Linux
@@ -382,4 +492,3 @@ The internal database suits __evaluation purposes only__; we strongly recommend 
 * Microsoft SQL Server 2005 or later (including Express editions), SQL Azure; SSL connections support might require [these updates](http://blogs.msdn.com/b/jdbcteam/archive/2012/01/19/patch-available-for-sql-server-and-java-6-update-30.aspx).
 * PostgreSQL 8.2 and newer
 * Oracle 10g and newer (TeamCity is tested with [driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1)
-

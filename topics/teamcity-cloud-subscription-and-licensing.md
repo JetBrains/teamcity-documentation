@@ -17,7 +17,7 @@ TeamCity Cloud subscription levels are predominantly based on the number of _[co
 
 Note that only contributors to the source code take the committer slots. An unlimited number of non-committing users (managers, QA, [and so on](#cloud-web-users)) can get access to the TeamCity web interface.
 
-Each acquired committer slot in the subscription is provided with a fixed amount of [storage](#cloud-storage) for build results and [data transfer capacity](#cloud-data-transfer). You also get a number of [build credits](#cloud-build-credits) per each committer: they are automatically spent on build time on agents and can be exchanged for extra [build resources]() when necessary. The more committers you have, the more credits and build resources you are proportionally granted with. Please refer to [our website](https://www.jetbrains.com/teamcity/buy/#cloud) to see the exact rates.
+Each acquired committer slot in the subscription is provided with a fixed amount of [storage](#cloud-storage) for build results and [data transfer capacity](#cloud-data-transfer). You also get a number of [build credits](#cloud-build-credits) per each committer: they are automatically spent on build time on agents and can be exchanged for extra build resources when necessary. The more committers you have, the more credits and build resources you are proportionally granted with. Please refer to [our website](https://www.jetbrains.com/teamcity/buy/#cloud) to see the exact rates.
 
 You can manage your subscription on the __[Subscription & Resources](managing-subscription-and-resources.md)__ administration page in TeamCity.
 
