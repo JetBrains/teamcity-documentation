@@ -1,14 +1,18 @@
 [//]: # (title: Setting up and Running Additional Build Agents)
 [//]: # (auxiliary-id: Setting up and Running Additional Build Agents)
 
+>This page is about starting up and running [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents). [JetBrains-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-jb-hosted-agents) are automatically maintained by TeamCity Cloud and require no user actions.
+> 
+{type="note" product="tcc"}
+
 Before you can start customizing projects and creating build configurations, you need to configure [build agents](build-agent.md). Review the [agent-server communication](#Agent-Server+Data+Transfers) and [Prerequisites](#Prerequisites) sections before proceeding with agent installation.
 
 <tip product="tc">
 
 __Tips__
 
-* If you install TeamCity bundled with a Tomcat servlet container, or use the TeamCity installer for Windows, both the server and one build agent are installed on the same machine. This is not a recommended setup for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) because of [security concerns](security-notes.md) and since the build procedure can slow down the responsiveness of the web UI and overall TeamCity server functioning. If you need more build agents, perform the procedure described below.   
-* If you need the agent to run an operating system different from the TeamCity server, perform the procedure described below.   
+* If you install TeamCity bundled with a Tomcat servlet container, or use the TeamCity installer for Windows, both the server and one build agent are installed on the same machine. This is not a recommended setup for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) because of [security concerns](security-notes.md) and since the build procedure can slow down the responsiveness of the web UI and overall TeamCity server functioning. If you need more build agents, perform the procedure described below.
+* If you need the agent to run an operating system different from the TeamCity server, perform the procedure described below.
 * For production installations, it is recommended to adjust the [Agent's JVM parameters](configuring-build-agent-startup-properties.md) to include the `-server` option.
 </tip>
 

@@ -26,9 +26,9 @@ Create your [first project](configure-and-run-your-first-build.md) in TeamCity C
 Users of our Cloud and On-Premises versions can expect a similar level of scalability and universality of these solutions. However, the Cloud version is automatically configured and maintained by TeamCity and thus provides limited server administration settings comparing to our [On-Premises](https://www.jetbrains.com/teamcity/) solution.
 
 TeamCity Cloud has the following limitations comparing to On-Premises:
-* Limited server configuration and diagnostics.
-* TeamCity Cloud data is backed up and cleaned up automatically. The set of available configuration options may differ from the On-Premises installations.
-* Some settings are unavailable to TeamCity Cloud administrators: for example, cloud profiles' configuration or changing the location for storing external artifacts.
+* Limited server configuration and diagnostics. See the related pages in the On-Premises documentation: [Installing and Configuring Server](https://www.jetbrains.com/help/teamcity/installing-and-configuring-the-teamcity-server.html) and [Monitoring and Diagnostics](https://www.jetbrains.com/help/teamcity/teamcity-monitoring-and-diagnostics.html).
+* TeamCity Cloud data is backed up and cleaned up automatically. The set of available configuration options may differ from the On-Premises installations. See the related pages in the On-Premises documentation: [Data Backup](https://www.jetbrains.com/help/teamcity/teamcity-data-backup.html) and [Clean-Up](https://www.jetbrains.com/help/teamcity/clean-up.html).
+* Some settings are unavailable to TeamCity Cloud administrators: for example, cloud profiles' configuration or changing the location for storing external artifacts. See the related pages in the On-Premises documentation: [Integration with Cloud Solutions](https://www.jetbrains.com/help/teamcity/teamcity-integration-with-cloud-solutions.html) and [Clean-Up](https://www.jetbrains.com/help/teamcity/configuring-artifacts-storage.html).
 * No plugin management. The following bundled plugins are currently disabled:
     * LDAP support
     * Microsoft Windows Domain authentication
@@ -45,4 +45,4 @@ Comparing to On-Premises, TeamCity Cloud offers the following new features:
 * If you authenticate via GitHub, GitLab, or Bitbucket, the respective [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections) will be preconfigured automatically.
 * The __Administration | Invitations__ page allows automatically inviting users to the server. __By default, you can add new users only via invitations__. An invited user will be able to register a new user account or authenticate via GitHub, GitLab, or Bitbucket.
 
-All the listed features will be introduced in our On-premises version in the nearest future.
+All the listed features will be introduced in our On-Premises version in the nearest future.
