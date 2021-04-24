@@ -1,14 +1,18 @@
 [//]: # (title: Setting up and Running Additional Build Agents)
 [//]: # (auxiliary-id: Setting up and Running Additional Build Agents)
 
+>This page is about starting up and running [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents). [JetBrains-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-jb-hosted-agents) are automatically maintained by TeamCity Cloud and require no user actions.
+> 
+{type="note" product="tcc"}
+
 Before you can start customizing projects and creating build configurations, you need to configure [build agents](build-agent.md). Review the [agent-server communication](#Agent-Server+Data+Transfers) and [Prerequisites](#Prerequisites) sections before proceeding with agent installation. Make sure to also read our [security notes](security-notes.md#Build+Agents) on maintaining build agents.
 
 <tip product="tc">
 
 __Tips__
 
-* If you install TeamCity bundled with a Tomcat servlet container, or use the TeamCity installer for Windows, both the server and one build agent are installed on the same machine. This is not a recommended setup for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) because of [security concerns](security-notes.md) and since the build procedure can slow down the responsiveness of the web UI and overall TeamCity server functioning. If you need more build agents, perform the procedure described below.   
-* If you need the agent to run an operating system different from the TeamCity server, perform the procedure described below.   
+* If you install TeamCity bundled with a Tomcat servlet container, or use the TeamCity installer for Windows, both the server and one build agent are installed on the same machine. This is not a recommended setup for [production purposes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) because of [security concerns](security-notes.md) and since the build procedure can slow down the responsiveness of the web UI and overall TeamCity server functioning. If you need more build agents, perform the procedure described below.
+* If you need the agent to run an operating system different from the TeamCity server, perform the procedure described below.
 * For production installations, it is recommended to adjust the [Agent's JVM parameters](configuring-build-agent-startup-properties.md) to include the `-server` option.
 </tip>
 
@@ -63,10 +67,12 @@ subinacl.exe /service TCBuildAgent /grant=<user login name>=PTO
 </note>
 
 #### Linux
+
 * The user must be able to run the `shutdown` command (for the agent machine reboot functionality and the machine shutdown functionality when running in a cloud environment).
 * If you are using `systemd`, it should not kill the processes on the main process exit (use [`RemainAfterExit=yes`](https://serverfault.com/questions/660063/teamcity-build-agent-gets-killed-by-systemd-when-upgrading)). See also [how to set up automatic agent start under Linux](#Automatic+Agent+Start+under+Linux).
 
 #### Build-related Permissions
+
 The build process is launched by a TeamCity agent and thus shares the environment and is executed under the OS user used by the TeamCity agent. Ensure that the TeamCity agent is configured accordingly. See [Known Issues](known-issues.md) for related Windows Service Limitations.
 
 <anchor name="SettingupandRunningAdditionalBuildAgents-ServerDataTransfers"/>
@@ -85,7 +91,7 @@ If specifically configured, TeamCity agent can use legacy [bidirectional communi
 
 Agents use unidirectional agent-to-server connection via the polling protocol: the agent establishes an HTTP(S) connection to the TeamCity Server, and polls the server periodically for server commands.
 
-It is recommended to use __HTTPS__ for agent to server communications (check related [server configuration notes](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI)). If the agents and the server are deployed into a secure environment, agents can be configured to use plain HTTP URL for connections to the server as this reduces transfer overhead. Note that the data travelling through the connection established from an agent to the server includes build settings, repository access credentials and keys, repository sources, build artifacts, build progress messages and build log. In case of using the HTTP protocol that data can be compromised via the "man in the middle" attack.
+It is recommended to use __HTTPS__ for agent-to-server communications (check related [server configuration notes](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI)). If the agents and the server are deployed into a secure environment, agents can be configured to use plain HTTP URL for connections to the server as this reduces transfer overhead. Note that the data travelling through the connection established from an agent to the server includes build settings, repository access credentials and keys, repository sources, build artifacts, build progress messages and build log. In case of using the HTTP protocol that data can be compromised via the "man in the middle" attack.
 {product="tc"}
 
 #### Bidirectional Communication
@@ -103,21 +109,36 @@ The communication protocol used by TeamCity agents is determined by the value of
 * To change the communication protocol __for all agents__, set the TeamCity server `teamcity.agent.communicationProtocols` server [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). The new setting will be used by all agents which will connect to the server after the change. To change the protocol for the existing connections, restart the TeamCity server.
 * By default, the agent's property is not configured; when the agent first connects to the server, it receives it from the TeamCity server. To change the protocol __for an individual agent__ after the initial agent configuration, change the value of the `teamcity.agent.communicationProtocols` property in the [agent's properties](build-agent-configuration.md). The agent's property overrides the server property. After the change the agent will restart automatically upon finishing a running build, if any.
 
-[//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e376.txt")    
+[//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e376.txt")
+
+## Generating Authentication Token
+{product="tcc"}
+
+The recommended approach to connecting a self-hosted agent to a TeamCity Cloud instance is to generate a unique authentication token for this agent. To do this, go to __Agents__, open the __Install Build Agents__ menu in the upper right corner of the screen, and click _Use authentication token_. There are two options:
+
+* _Generate plain-text token_: you need to copy the generated token and enter it in the [build agent configuration](build-agent-configuration.md) file. On Windows, you will be prompted to enter it right in the _Configure Build Agent Properties_ installation dialog.
+* _Download config_: enter an agent name (`name` attribute in the [build agent config](build-agent-configuration.md)) and download the entire config file. You then need to place it as the `buildAgent.properties` file in the build agent directory.
+
+Please generate own token or configuration file per each self-hosted agent.
+
+<anchor name="SettingupandRunningAdditionalBuildAgents-InstallingAdditionalBuildAgents"/>
 
 ## Installing Additional Build Agents
-1\. Install a build agent using any of the following options:
- * [using Windows installer](#Installing+via+Windows+installer) (Windows only)
- * [by downloading a ZIP file and installing manually](#Installing+via+ZIP+File) (any platform): minimal and full-packed ZIP archives ara available
- * via the [Docker Agent Image](#Installing+via+Docker+Agent+Image) option to prepare a Docker container based on the official [TeamCity Agent image](https://hub.docker.com/r/jetbrains/teamcity-agent/)
 
-2\. After installation, configure the agent specifying its name and the address of the TeamCity server in the [`conf/buildAgent.properties`](build-agent-configuration.md) file.
-
-3\. [Start](#Starting+the+Build+Agent) the agent. If the agent does not seem to run correctly, check the [agent logs](viewing-build-agent-logs.md).
+1. Install a build agent using any of the following options:
+  * [using Windows installer](#Installing+via+Windows+installer) (Windows only)
+  * [by downloading a ZIP file and installing manually](#Installing+via+ZIP+File) (any platform): minimal and full-packed ZIP archives ara available
+  * via the [Docker Agent Image](#Installing+via+Docker+Agent+Image) option to prepare a Docker container based on the official [TeamCity Agent image](https://hub.docker.com/r/jetbrains/teamcity-agent/)
+2. After installation, configure the agent specifying its name and the address of the TeamCity server in the [`conf/buildAgent.properties`](build-agent-configuration.md) file.
+{product="tc"}
+2. After installation, configure the agent specifying its name, the address of the TeamCity server, and the [authentication token](#Generating+Authentication+Token) in the [`conf/buildAgent.properties`](build-agent-configuration.md) file.
+{product="tcc"}
+3. [Start](#Starting+the+Build+Agent) the agent. If the agent does not seem to run correctly, check the [agent logs](viewing-build-agent-logs.md).
 
 When the newly installed agent connects to the server for the first time, it appears on the `Agents` page, `Unauthorized agents` tab visible to administrators/users with the permissions to authorize it. Agents will not run builds until they are authorized in the TeamCity web UI. The agent running on the same computer as the server is authorized by default.
 
 The number of authorized agents is limited by the number of agents licenses on the server. See more under [Licensing Policy](licensing-policy.md).
+{product="tc"}
 
 ### Installing via Windows installer
 1. In the TeamCity web UI, navigate to the __Agents__ tab.
@@ -156,6 +177,10 @@ On Windows, you may also want to install the [build agent Windows service](#Buil
 __\*__ A __minimal TeamCity agent__ distribution does not contain plugins: the agent downloads them on the first start. The __full agent__ contains all enabled plugins and automatically stays relevant with the current TeamCity server state. This makes its distribution archive larger but significantly reduces the time spent on the first agent run.
 
 The full agent is the most convenient if you use scripts for creating agent images (for example, [in cloud](agent-cloud-profile.md)). All instances will be synchronized with the server from the start and can instantly run a build.
+{product="tc"}
+
+The full agent is the most convenient if you use scripts for creating agent images. All instances will be synchronized with the server from the start and can instantly run a build.
+{product="tcc"}
 
 Note that after starting, the full agent behaves like a regular agent. If you modify the state of plugins on the TeamCity server, all active agents will need to restart to sync with the server.
 
@@ -248,7 +273,7 @@ If you are going to use same settings for several target hosts, you can __create
 2. In the _Install agent_ dialog, either select a saved preset or choose "_Use custom settings_", specify the target host platform, and configure corresponding settings. Agent Push to a Linux system via SSH supports custom ports (the default is 22) specified as the __SSH port__ parameter. The port specified in a preset can be overridden in the host name (for example, `hostname.domain:2222`), during the actual agent installation.
 3. You may need to download `Sysinternals psexec.exe`, in which case you will see the corresponding warning and a link to the __Administration__ | __Tools__ page where you can download it.
 
-<tip>
+<tip product="tc">
 
 You can use Agent Push presets in [Agent Cloud profile](agent-cloud-profile.md) settings to automatically install a build agent to a started cloud instance.
 
@@ -286,10 +311,12 @@ In Windows, you may want to run TeamCity agent as a Windows service to allow it 
 
 <warning>
 
-To run builds, the build agent must be started under a user with sufficient permissions for performing a build and [managing](#Windows) the service. By default, a Windows service is started under the SYSTEM account which is not recommended for production use due to extended permissions the account uses. To change it, use the standard Windows Services applet (Control Panel|Administrative Tools|Services) and change the user for the _TeamCity Build Agent_ service.
+To run builds, the build agent must be started under a user with sufficient permissions for performing a build and [managing](#Windows) the service. By default, a Windows service is started under the SYSTEM account which is not recommended for production use due to extended permissions the account uses. To change it, use the standard Windows Services applet (__Control Panel | Administrative Tools | Services__) and change the user for the _TeamCity Build Agent_ service.
 </warning>
 
 >If you start an Amazon EC2 cloud agent as a Windows service, check the [related notes](setting-up-teamcity-for-amazon-ec2.md#Preparing+Image+with+Installed+TeamCity+Agent).
+> 
+{type="tip" product="tc"}
 
 The following instructions can be used to install the Windows service manually (for example, after `.zip` agent installation). This procedure should also be performed to create Windows services for the [second and following agents](#Installing+Several+Build+Agents+on+the+Same+Machine) on the same machine.
 

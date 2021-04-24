@@ -417,7 +417,6 @@
          <toc-element id="getting-started-with-php.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
          <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
-      <toc-element id="teamcity-cloud.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
       <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
    </toc-element>
    <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>

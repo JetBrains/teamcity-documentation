@@ -19,6 +19,7 @@ Select an agent you want to run the build on from the drop-down menu. Note that 
 * __fastest idle agent__: _default option_; if selected, TeamCity will automatically choose an agent to run a build on based on calculated estimates.
 * __the fastest agent in &lt;a certain&gt; pool__: if selected, TeamCity will run a build on an agent from a specified pool
 * if [cloud integration](teamcity-integration-with-cloud-solutions.md) is configured, you can select to run a build on an agent from a __certain cloud image__. If no available cloud agents of this type exist, TeamCity will also attempt to start a new one.
+{product="tc"}
 * __run a build on &lt;a specified&gt; agent__
 * __All enabled compatible agents__: Use this option to run a build simultaneously on all agents that are enabled and compatible with the build configuration. This option may be useful in the following cases:
   * run a build for agent maintenance purposes (for example, you can create a configuration to check whether agents function properly after an environment upgrade/update).

@@ -11,7 +11,6 @@
         <toc-element toc-title="Concepts">
             <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="mapping-teamcity-concepts-to-other-ci-terms.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="agent-pool.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -72,16 +71,14 @@
             <toc-element id="testing-frameworks.md"/>
             <toc-element id="code-quality-tools.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
+        <toc-element id="teamcity-cloud-subscription-and-licensing.md" show-structure-for="chapter" show-structure-depth="4">
+            <toc-element id="third-party-license-agreements.md"/>
+        </toc-element>
         <toc-element id="installation-and-upgrade.md" hidden="true"/>
         <toc-element toc-title="Installation and Upgrade">
             <toc-element id="installation.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="setting-up-and-running-additional-build-agents.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="build-agent-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
-                </toc-element>
-                <toc-element id="teamcity-integration-with-cloud-solutions.md" show-structure-for="chapter" show-structure-depth="4">
-                    <toc-element id="setting-up-teamcity-for-amazon-ec2.md" show-structure-for="chapter" show-structure-depth="4"/>
-                    <toc-element id="setting-up-teamcity-for-kubernetes.md" show-structure-for="chapter" show-structure-depth="4"/>
-                    <toc-element id="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md" show-structure-for="chapter" show-structure-depth="4"/>
                 </toc-element>
                 <toc-element id="installing-agent-tools.md"/>
                 <toc-element id="csrf-protection.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -104,10 +101,12 @@
         <toc-element id="administrator-s-guide.md" hidden="true"/>
         <toc-element toc-title="Administrator's Guide">
             <toc-element id="teamcity-configuration-and-maintenance.md">
+                <toc-element id="managing-subscription-and-resources.md"/>
                 <toc-element id="configuring-authentication-settings.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="enabling-guest-login.md"/>
                     <toc-element id="enabling-email-verification.md"/>
                     <toc-element id="security-actions.md"/>
+                    <toc-element id="inviting-users.md"/>
                 </toc-element>
                 <toc-element id="teamcity-data-backup.md"/>
                 <toc-element id="projects-import.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -279,9 +278,6 @@
                 <toc-element id="ordering-build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="changing-build-status-manually.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="customizing-statistics-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
-            </toc-element>
-            <toc-element id="licensing-policy.md" show-structure-for="chapter" show-structure-depth="4">
-                <toc-element id="third-party-license-agreements.md"/>
             </toc-element>
             <toc-element id="integrating-teamcity-with-other-tools.md" hidden="true"/>
             <toc-element toc-title="Integrating TeamCity with Other Tools">

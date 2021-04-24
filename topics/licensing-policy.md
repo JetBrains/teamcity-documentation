@@ -3,13 +3,8 @@
 
 Pricing and new licenses/upgrades purchase are available via the __[official web site](http://www.jetbrains.com/teamcity/buy/)__. If you have any questions on the licensing terms, obtaining or upgrading license key and related, please [contact](https://www.jetbrains.com/support/sales/) JetBrains sales department.   
 You can review TeamCity [license agreement](http://www.jetbrains.com/teamcity/buy/license.html) on the official website or in the footer of the installed TeamCity server web UI.
-{product="tc"}
-
-You can read about the licensing policy of TeamCity Cloud after registering for the [Cloud Beta](https://www.jetbrains.com/teamcity/cloud/).
-{product="tcc"}
 
 ## Licensing Overview
-{product="tc"}
 
 JetBrains offers several licensing options that allow you to scale TeamCity to your needs.   
 This section illustrates the main differences between the TeamCity server [editions](#Editions) and provides general information on the TeamCity [Build Agent](build-agent.md) license.
@@ -137,7 +132,6 @@ a license key is required, [price options](https://www.jetbrains.com/teamcity/bu
 <anchor name="LicensingPolicy-editions"/>
 
 ## Editions
-{product="tc"}
 
 There are two editions of TeamCity: __Professional__ and __Enterprise__.   
 The editions are equal in all the features except for the maximum number of build configurations allowed.   
@@ -149,7 +143,7 @@ The __Professional edition__ does not require any license key and can be used fr
 
 The __Enterprise edition__ requires a license key, has no limit on the number of build configurations and entitles you to TeamCity [support](feedback.md) from JetBrains for the maintenance period of the license, provided you use a [recent TeamCity version](teamcity-release-cycle.md).
 
-<note product="tc">
+<note>
 
 An additional server in a [high availability set-up](multinode-setup.md) uses the license from the main server and does not require a separate license at this time.
 </note>
@@ -181,7 +175,6 @@ The number of agent licenses limits the number of agents which can be [authorize
 When there are more authorized agents than the valid agent licenses available, the server stops to start any builds and displays a warning message to all users in the web browser.
 
 ## Managing Licenses
-{product="tc"}
 
 You can enter new license keys and review the currently used ones (including the license issue date and maintenance period) on the __Administration__ &gt; __Licenses__ page of the TeamCity web UI. By default, only users with the System Administrator role can access the page. Adding or removing licenses on the page is applied immediately.
 
@@ -193,7 +186,6 @@ When you already own license(s) and buy more licenses, you can [request](https:/
 When buying many licenses, you are welcome to [contact](https://www.jetbrains.com/support/sales/) our sales for available volume discounts.
 
 ## Valid TeamCity Versions
-{product="tc"}
 
 TeamCity licenses are perpetual for the TeamCity versions they cover. This means that you can run a covered TeamCity version with existing licenses for unlimited time and the licenses will stay valid for this TeamCity version.   
 Each TeamCity license (including Enterprise Server and Agent) has a __maintenance period__ (generally 1 year). The license key is valid for any version of TeamCity released before the license purchase as well as for any version released within the maintenance period. Licenses valid for the major release (changes in the first two release numbers) are also considered valid for the corresponding minor (bugfix) updates (changes in the third release number).
@@ -202,7 +194,6 @@ The set of valid licenses defines if the server works in Enterprise mode and how
 
 Before you [upgrade](upgrade.md) to a newer TeamCity version, check the validity of the existing licenses with the new version.   
 If the new TeamCity server effective [release date](previous-releases-downloads.md) is not covered by the maintenance period of some of the licenses, the corresponding licenses will not be valid with the TeamCity version and would need a [renew](http://www.jetbrains.com/teamcity/buy/index.jsp#upgradeuser). Generally, license renew costs about 50% of the new license price in case the new license date is the same as the end of maintenance of the license being renewed.
-{product="tc"}
 
 When a new version is available, TeamCity displays a notification in the web UI and warns you if any of your license keys are incompatible with this new version. A notification on the new TeamCity version is also displayed in the Global Configuration Items of the [Server Health](server-health.md) report, visible to system administrators. System administrators can use the link in the "Some Licenses are incompatible" message to quickly navigate to the [Licenses](#Managing+Licenses) page, where all incompatible licenses will have a warning icon. The information about the license keys installed on your server is secure as it is not sent over the Internet.
 
@@ -216,7 +207,6 @@ Note that TeamCity [email support](feedback.md) covers only the [recent TeamCity
 <anchor name="LicensingPolicy-LicenseExpiration"/>
 
 ## License Expiration
-{product="tc"}
 
 If an Enterprise license key is removed from the server, or an evaluation license expires, or a TeamCity server is upgraded to a version released out of the maintenance window of the available Enterprise license, TeamCity automatically switches to the Professional mode.
 
@@ -229,7 +219,6 @@ Once sufficient valid license keys are entered which cover the server configurat
 <anchor name="LicensingPolicy-WaystoObtainaLicense"/>
 
 ## Ways to Obtain a License
-{product="tc"}
 
 The following ways to switch your server into the Enterprise mode exist:
 * [buy](http://www.jetbrains.com/teamcity/buy/) an Enterprise Server license;
@@ -238,7 +227,6 @@ The following ways to switch your server into the Enterprise mode exist:
 * use TeamCity for open-source projects only and [request an open-source license](https://www.jetbrains.com/buy/opensource/?product=teamcity).
 
 ## Upgrading From Previous Versions
-{product="tc"}
 
 ### Upgrading from TeamCity 5.x and later
 
@@ -265,7 +253,7 @@ To check TeamCity upgrade availability for your IntelliJ IDEA licenses and to re
 [//]: # (Internal note. Do not delete. "Licensing Policyd197e452.txt")    
 
 
-<seealso product="tc">
+<seealso>
         <category ref="concepts">
             <a href="build-agent.md">Build Agent</a>
         </category>
