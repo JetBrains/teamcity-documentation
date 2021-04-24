@@ -22,7 +22,7 @@ License
 
 <td>
 
-[Acegi Security](http://www.acegisecurity.org/)
+[Acegi Security](https://spring.io/projects/spring-security)
 
 
 </td>
@@ -578,21 +578,21 @@ License
 
 <td>
 
-[JAXB reference implementation](https://jaxb.dev.java.net/)
+[JAXB reference implementation](https://javaee.github.io/jaxb-v2/)
 
 
 </td>
 
 <td>
 
-[CDDL v1.0](https://glassfish.dev.java.net/public/CDDL+GPL.html)
+[CDDL v1.0](https://javaee.github.io/jaxb-v2/LICENSE)
 
 
 </td></tr><tr>
 
 <td>
 
-[Java Mail](http://www.oracle.com/technetwork/java/javamail/)
+[Java Mail](https://javaee.github.io/javamail/)
 
 
 </td>
