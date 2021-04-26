@@ -23,8 +23,7 @@ You can manage your subscription on the __[Subscription & Resources](managing-su
 
 ### Using Build Credits
 
-_[Build credits](#cloud-build-credits)_ are granted per committer and serve as your currency in TeamCity Cloud and can be flexibly utilized according to your needs. At the end of each month, the remaining build credits expire from your subscription, and a new set of build credits is provided at the beginning of the next month.  
-If you purchase [additional build credits](#On-demand+Cloud+Resources), they do not expire.
+_[Build credits](#cloud-build-credits)_ are granted to your subscription per each committer and can be flexibly utilized according to your needs. At the end of each month, the remaining build credits expire from your subscription, and a new set of build credits is provided at the beginning of the next month. If you purchase [additional build credits](#On-demand+Cloud+Resources), they do not expire.
 
 Build credits are automatically spent on build time on agents. You can also exchange them to get more committer slots and concurrent builds on self-hosted agents, as well as on extra [storage](#cloud-storage) and [data transfer capacity](#cloud-data-transfer).
 
@@ -64,7 +63,7 @@ __Build credits__
 
 <td>
 
-Build credits act as your "currency" in TeamCity Cloud. They are redeemed for build minutes on [JetBrains-hosted agents](#cloud-jb-hosted-agents) or can be exchanged at a flat rate for concurrent builds on [self-hosted agents](#cloud-self-hosted-agents). You can also exchange build credits for additional [storage](#cloud-storage), [data transfer](#cloud-data-transfer), and committer slots.
+Build credits in TeamCity Cloud can be redeemed for build minutes on [JetBrains-hosted agents](#cloud-jb-hosted-agents) or exchanged at a flat rate for concurrent builds on [self-hosted agents](#cloud-self-hosted-agents). You can also exchange build credits for additional [storage](#cloud-storage), [data transfer](#cloud-data-transfer), and committer slots.
 
 Build credits are granted per every committer slot in a subscription and can be purchased on demand.
 
