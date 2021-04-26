@@ -7,7 +7,7 @@ Refer to [Configuring Build Steps](configuring-build-steps.md) for a description
 
 ## Prerequisites
 
-In terms of EAP, Node.js steps can only be run inside a Docker container. `node:lts` is used by default.
+In terms of EAP, Node.js steps can only be run inside a Docker container. `node:lts` is used by default. If there is an `.npmrc` file inside your JS project, TeamCity will automatically use the node version specified in it.
 
 ## Autodetecting JS Steps
 
