@@ -87,7 +87,7 @@ You can combine agents of both types in your installation. Read more information
 
 #### JetBrains-Hosted Agents
 
-These agents are automatically maintained by JetBrains and don't need to be installed or configured. There are multiple types of these agents:
+These agents are automatically maintained by JetBrains and don't require to be installed or configured by a customer. There are multiple types of these agents:
 
 <table>
 
