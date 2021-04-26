@@ -38,6 +38,7 @@ To configure the scope of data to include in the backup file, use the following 
 * `-L` or `--include-build-logs` — includes build logs
 * `-P` or `--include-personal-changes` — includes personal changes
 * `-U` or `--include-supplementary-data` — includes supplementary (plugins') data
+
 Specifying different combinations of the above options, you can control the content of the backup file. For example, to create backup with all supported types of data, run
 
 ```Plain Text

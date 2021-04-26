@@ -350,13 +350,16 @@ You can also specify arguments that will be passed to the interpreter in every P
 
 Optionally, you can run a Python build step in a virtual environment. The Python runner supports the following tools:
 * [Pipenv](https://pipenv.pypa.io/en/latest/)
+* [Poetry](https://python-poetry.org/)
 * [Venv](https://docs.python.org/3/library/venv.html)
 * [Virtualenv](https://virtualenv.pypa.io/en/latest/)
 
 >If TeamCity finds the `requirements.txt` file when [autodetecting build steps](configuring-build-steps.md#Autodetecting+build+steps) from a project repository, it chooses venv as a tool for these settings by default. You can manually change it to virtualenv if necessary.   
 >[Read more](https://docs.python.org/3/installing/index.html#key-terms) about the differences between these tools.
 
-If you choose Pipenv, enter additional [install arguments](https://pipenv.pypa.io/en/latest/cli/#pipenv-install) if necessary.
+For Pipenv, optionally enter [install run arguments](https://pipenv.pypa.io/en/latest/cli/#pipenv-install).
+
+For Poetry, optionally enter [install run arguments](https://python-poetry.org/docs/cli/#install) and a custom executable path.
 
 Venv and virtualenv have the following settings:
 

@@ -3,13 +3,9 @@
 
 ## How to enable
 
-On the VCS Root page, select checkbox "_Enable feature branches support_" after the parent stream name.
+In the [Perforce VCS root](perforce.md) settings, select the "_Enable feature branches support_" option next to the parent stream name. After that, all streams which have the specified main stream as a parent will be included into the [feature branches](working-with-feature-branches.md).
 
-After that, all streams which have the specified main stream as a parent, will be included into the feature branches.
-
-It is possible to specify some mapping to include only specific streams into the feature branches set, like `+://stream-depot/*`.
-
-In this case, only streams under depot __stream-depot__ will be included for changes collection/build triggering.
+It is possible to specify some mapping to include only specific streams into the feature branches set, like `+://stream-depot/*`. In this case, only streams under depot __stream-depot__ will be included for changes collection/build triggering.
 
 ## Task streams
 

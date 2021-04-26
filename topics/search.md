@@ -3,21 +3,17 @@
 
 After you have installed and started running TeamCity, it collects the information on builds, tests and so on and indexes it. You can search builds by build number, tag, build configuration name, and other different parameters specifying one or several keywords. You can also search for builds by text in build logs, and by the [external ID](identifier.md#External+IDs) of a build configuration.
 
+By default, TeamCity stores a search index locally. In terms of TeamCity 2021.1 EAP, you can also switch to an [Elastic-based search mode](search-settings.md).
+
 ## Search Query
 
-In TeamCity you can search for builds using the [Lucene query syntax](http://lucene.apache.org/); however, a TeamCity search query has two major differences described [below](#Differences+from+Lucene+Syntax).
+In TeamCity you can search for builds using the [Lucene query syntax](http://lucene.apache.org/). Note that there is a major difference with the default Lucene syntax: by default, TeamCity uses the "prefix search" — not the exact matching like Lucene. For example, if you search for `c:main`, TeamCity will find all builds of the build configuration whose name starts with the `main` string.
+
+As Lucene, TeamCity uses the `OR` operator in a query by default: if there is no Boolean operator between the two terms, `OR` will be used. The `OR` operator links two terms and finds a matching entry if either of these terms exist in it.
 
 To narrow your search and get more precise results, use the available search fields — indexed parameters of each build. For complete list of available search fields (keywords), refer to the [related section](#search-fields-list).
 
-### Differences from Lucene Syntax
-
-When using a search query in TeamCity, mind the following major differences from the Lucene native syntax:
-1. By default, TeamCity uses the `AND` operator in a query. That is, if you type in the following query: `failed @agent123`, then you will get a list of all builds that have the keyword `failed` in any of its search fields, and were run on the build agent named `agent123`.
-2. By default, TeamCity uses the "prefix search", not the exact matching like Lucene. For example, if you search for `c:main`, TeamCity will find all builds of the build configuration whose name starts with the `main` string.
-
-
-[//]: # (Internal note. Do not delete. "Searchd278e44.txt")    
-
+[//]: # (Internal note. Do not delete. "Searchd278e44.txt")
 
 ### Performing Fuzzy Search
 
@@ -27,7 +23,7 @@ You also have a possibility to perform fuzzy search using the tilde (`~`) symbol
 
 You can combine multiple terms with Boolean operators to create more complex search queries. In TeamCity, you can use `AND`, `+`, `OR`, `NOT`, and `-`.
 
- When using Boolean operators, type them ALL CAPS.
+When using Boolean operators, type them ALL CAPS.
 * `AND` (same as a plus sign). All words that are linked by the `AND` are included in the search results. This operator is used by default.
 * `NOT` (same as minus sign in front of a query word). Exclude a word or phrase from search results.
 * `OR` operator helps you to fetch the search terms that contain either of the terms you specify in the search field.
@@ -532,7 +528,7 @@ Find all builds that were run on the specified agent.
 
 #### Using Double-Colon
 
-You can use the double\-colon sign (`::`) to search for a project and/or build configuration by name:
+You can use the double-colon sign (`::`) to search for a project and/or build configuration by name:
 * `pro::best` — search for builds of configurations with the names starting with "best", and in the projects with the names starting with "pro".
 * `mega::` — search for builds in all projects with names starting with "mega".
 * `::super` — search for builds of build configurations with names starting with "super".
@@ -636,4 +632,10 @@ The search uses an "index" cached on the disk. Only the data previously added to
 To reset the cached search index, click `reset` for the "search" entry on the __Administration | Server Administration | Diagnostics__, __Caches__ tab or manually delete files from \<[TeamCity Data Directory](teamcity-data-directory.md)\>\system\caches\search while the server is not running. After that, reindexing will start which is a resource-intensive operation on the server and can take hours (depending on the number and "size" of builds, as well as the server machine and database performance). You can monitor the progress in the UI on the Search page or in the server logs.
 
 
-[//]: # (Internal note. Do not delete. "Searchd278e621.txt")    
+[//]: # (Internal note. Do not delete. "Searchd278e621.txt")
+
+<seealso>
+        <category ref="admin-guide">
+            <a href="search-settings.md">Storing Project Settings in Version Control</a>
+        </category>
+</seealso>

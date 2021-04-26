@@ -46,7 +46,7 @@ For the Windows platform, run the executable file and follow the installation in
 
 If you opted to install the services, use the standard Windows `Services` applet to manage the service. Otherwise, use standard [scripts](#Starting+TeamCity+server).
 
-If you did not change the default port (80) during the installation, the TeamCity web UI can be accessed via [`http://localhost/`](http://localhost/) in a web browser running on the same machine where the server is installed. Note that port 80 can be used by other programs (for example, Skype, or other web servers like IIS). In this case you can specify another port during the installation and use [`http://localhost:<port>/`](http://localhost:<port>/) address in the browser.
+If you did not change the default port (8111) during the installation, the TeamCity web UI can be accessed via [`http://localhost/`](http://localhost/) in a web browser running on the same machine where the server is installed. Note that port 8111 can be used by other programs (for example, Skype, or other web servers like IIS). In this case you can specify another port during the installation and use [`http://localhost:<port>/`](http://localhost:<port>/) address in the browser.
 
 If you want to edit the TeamCity server's service parameters, memory settings or system properties after the installation, refer to the [Configuring TeamCity Server Startup Properties](configuring-teamcity-server-startup-properties.md) page.
 
@@ -169,7 +169,7 @@ The TeamCity server will now start automatically when the machine starts. To con
 
 ### Troubleshooting TeamCity Installation
 
-Upon successful installation, the TeamCity server web UI can be accessed via a web browser. The default address that can be used to access TeamCity from the same machine depends on the installation package and installation options. (Port 80 is used for Windows installation, unless another port is specified, port 8111 for `.tar.gz` installation unless not changed in the server configuration).
+Upon successful installation, the TeamCity server web UI can be accessed via a web browser. The default address that can be used to access TeamCity from the same machine depends on the installation package and installation options. (Port 8111 is used for Windows and `.tar.gz` installations, unless another port is specified).
 
 If the TeamCity web UI cannot be accessed, check the following:
 * the "TeamCity Server" service is running (if you installed TeamCity as a Windows service)

@@ -20,6 +20,8 @@ You can also refer to the [ReSharper documentation](https://www.jetbrains.com/he
 To run inspections for your project, you must have a ReSharper inspection profile for .NET projects.
 </note>
 
+Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container (in terms of TeamCity EAP 2021.1).
+
 ## Sources to Analyze
 
 <table><tr>
@@ -147,7 +149,7 @@ InspectCode Platform
 
 <td id="ReSharperInspectionsPlatform" auxiliary-id="ReSharperInspectionsPlatform">
 
-Select the platform bitness of the InspectCode tool. To find code issues in C++ projects, use the x86 platform. 
+Select the platform bitness of the InspectCode tool. To find code issues in C++ projects, use the x86 platform. In terms of TeamCity 2021.1 EAP, the cross-platform inspections are also supported in ReSharper 2020.2.1 or later.
 
 </td></tr></table>
 

@@ -230,7 +230,7 @@ After configuring the proxy, remember to change the `serverURL` value to the pro
 
 When configuring a proxy as a [load balancer](#Proxy+as+Load+Balancer), you can optionally specify a minimal supported TeamCity version as the `version` parameter of the proxy package header. We always declare it in our configuration examples, as it helps ensure that each example template is compatible with the specified server version. Once we extend the proxying functionality in TeamCity, we will respectively update the proxy configuration templates and increase the recommended TeamCity version declared in them.
 
-We suggest that you always upgrade your TeamCity server before upgrading the proxy configuration and never use configuration templates with the later version than the version of your server.
+If TeamCity detects that the proxy version is later than the current version of the TeamCity server, it will display a related health report. In this case, the proxy configuration should be downgraded. To prevent such cases, we suggest that you always upgrade your TeamCity server before upgrading the proxy configuration and never use configuration templates with the later version than the version of your server.
 
 ### Firewall Settings
 

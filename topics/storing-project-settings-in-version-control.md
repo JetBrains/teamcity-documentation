@@ -1,14 +1,9 @@
 [//]: # (title: Storing Project Settings in Version Control)
 [//]: # (auxiliary-id: Storing Project Settings in Version Control)
 
-TeamCity allows the two-way synchronization of the project settings with the version control repository. Supported VCSs are Git, Mercurial, Perforce, Subversion, and Azure DevOps Server (formerly TFS).
+TeamCity allows synchronizing project settings with the version control repository (VCS). Supported VCSs are Git, Mercurial, Perforce, Subversion, and Azure DevOps Server (formerly TFS).
 
-You can store settings in the XML format or in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [Kotlin-based DSL](kotlin-dsl.md).
-
-When you enable two-way settings' synchronization:  
-* Each administrative change made to the project settings in the TeamCity web UI is committed to the version control; the changes are made noting the TeamCity user as the committer.
-* If the settings change is committed to the version control, the TeamCity server will detect the modifications and apply them to the project on the fly.   
-Before applying the newly checked-in settings, validation constraints are applied. If the constraints are not met (that is, the settings are invalid), the current settings are left intact and an error is shown in the UI. Invalid settings are those that cannot be loaded because of constraints, for instance, a build configuration referencing a non-existing VCS root, of having a duplicate ID or a duplicate name.
+You can store project settings in the XML format or in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [Kotlin-based DSL](kotlin-dsl.md).
 
 The versioned settings are stored in the `.teamcity` directory in the root of the VCS repository, in the same format as in the [TeamCity Data Directory](teamcity-data-directory.md).
 
@@ -16,28 +11,37 @@ The versioned settings are stored in the `.teamcity` directory in the root of th
 
 ## Synchronizing Settings with VCS
 {id="SynchronizingSettingswithVCS" auxiliary-id="SynchronizingSettingswithVCS"}
+By default, the synchronization of the project settings with the version control system is disabled.
 
-By default, the synchronization of the project settings with the version control is disabled.
+To enable it, go to __Project Settings | Versioned Settings | Configuration__. The "_Enable/disable versioned settings_" permission is required (default for the [System Administrator](role-and-permission.md#Per-Project+Authorization+Mode) role).
 
-To enable it, go to __Project Settings | Versioned Settings__.
+Here you can choose one of the following options:
+* Use the same settings as in the parent project (default).
+* Disable synchronization.
+* Enable synchronization. In this case, you can also define which settings to use when the build starts. See details [below](#Defining+Settings+to+Apply+to+Builds).
 
-The "_Enable/disable versioned settings_" permission is required (default for the [System Administrator](role-and-permission.md#Per-Project+Authorization+Mode) role).
+There are two modes of settings’ synchronization: _two-way_ and _one-way_ (provided in terms of TeamCity 2021.1 EAP).
 
-The __Configuration__ tab is used to define
-* whether the synchronization settings are the same as in the parent project;
-* whether the synchronization is enabled;
-   * when synchronization is enabled, you can define which settings to use when the build starts. See details [below](#Defining+Settings+to+Apply+to+Builds).
-* which VCS root is used to store the project settings: you can store the settings either in the same repository as the source code, or in a dedicated VCS root.
+<anchor name="two-way-sync"/>
+
+The default mode is a _two-way synchronization_, that is when the _Allow editing project settings via UI_ option is enabled. It works as follows:
+* Each administrative change made to the project settings in the TeamCity UI is committed to the version control system; the changes are made noting the TeamCity user as the committer.
+* If the settings change is committed to the VCS, the TeamCity server will detect them and apply them to the project on the fly.   
+  Before applying the newly checked-in settings, TeamCity validates them. If the validation constraints are not met (that is, the settings are invalid), the current settings are left intact and an error is shown in the UI. Invalid settings are those that cannot be loaded because of constraints: for instance, a build configuration references a non-existing VCS root or has a duplicate ID or name.
+
+If you disable the _Allow editing project settings via UI_ option, the project settings will become read-only in the UI and will only reflect changes made in the VCS. This is convenient if you prefer defining project settings’ [as code](kotlin-dsl.md) or load settings from a read-only VCS branch.
 
 Enabling synchronization for a project also enables it for all its subprojects with the default "_Use settings from a parent project_" option selected. TeamCity synchronizes all changes to the project settings (including modifications of [build configurations](build-configuration.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on) except [SSH keys](ssh-keys-management.md).   
 However, if for certain subprojects the "_Synchronization disabled_" option is selected, such subprojects will not be synchronized even if this option is enabled for their parent project.
 
 As soon as synchronization is enabled in a project, TeamCity will make an initial commit in the selected repository for the whole project tree (the project with all its subprojects) to store the current settings from the server. If the settings for the given project are found in the specified VCS root (the VCS root for the parent project settings or the user-selected VCS root), a warning will be displayed asking if TeamCity should
-* overwrite the settings in the VCS with the current project settings on the TeamCity server; or
+* overwrite the settings in the VCS with the current project settings on the TeamCity server (only if the two-way [synchronization](#two-way-sync) is enabled); or
 * import the settings from the VCS replacing the current project settings on the TeamCity server with those from version control.
 
 >If you choose to generate [portable DSL scripts](kotlin-dsl.md#Project+Settings+Structure) and the current project comprises less than 20 entities, TeamCity will create one `settings.kts` file to define them all. Individual entities include _projects_, _build configurations_, _templates_, and _VCS roots_.  
 >If there are more than 20 entities in the project, TeamCity will create a hierarchy of separate `.kt` files to define and group these entities.
+
+On the __Configuration__ tab, you can also choose which VCS root is used to store the project settings: you can store the settings either in the same repository as the source code or in a dedicated VCS root.
 
 <anchor name="StoringProjectSettingsinVersionControl-DefiningSettingstoApplytoBuilds"/>
 
@@ -75,9 +79,9 @@ To define which settings to take __when build starts__, open the __Project Setti
 
 ## Storing Secure Settings 
 
-It is recommended to store security data outside the VCS. The __Project Settings | Versioned Settings | Configuration__ page has an option to _store passwords, API tokens, and other secure settings outside of VCS_. By default, this option is enabled if versioned settings are enabled for a project for the first time, and disabled for projects already storing their settings in the VCS.
+It is recommended to store security data outside of VCS. The _Store passwords and API tokens outside of VCS_ option is available on the __Project Settings | Versioned Settings | Configuration__ page if the [two-way synchronization](#two-way-sync) is enabled. By default, this option is enabled if versioned settings are enabled for a project for the first time, and disabled for projects already storing their settings in the VCS.
 
-If this option is enabled, TeamCity stores a randomly generated IDs in XML configuration files instead of the scrambled passwords. Actual passwords are stored on the disk under the [TeamCity Data Directory](teamcity-data-directory.md) and are not checked into the version control system.
+If this option is enabled, TeamCity stores randomly generated IDs in XML configuration files instead of the scrambled passwords. Actual passwords are stored on the disk under the [TeamCity Data Directory](teamcity-data-directory.md) and are not checked into the version control system.
 
 <warning>
 

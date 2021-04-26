@@ -117,6 +117,16 @@ Example:
 
 ```
 
+To focus on specific revisions, use the [`ChangeView`](https://www.perforce.com/manuals/p4guide/Content/P4Guide/configuration.workspace_view.changeview.html) specification:
+
+```
+//depot/... //team-city-agent/...
+ChangeView:
+    //depot/dir1/…@90
+    //depot/dir2/…@automaticLabelWithRevision
+```
+where `90` is the number of the exact revision of `dir1` and `automaticLabelWithRevision` is the labeled revision of `dir2`. All the other revisions of these directories will not be monitored by this VCS root.
+
 [Clean Checkout](clean-checkout.md) on a client mapping change __is not__ enforced for the agent-side checkout in the following cases:
 
 * when a Perforce client name is used, changing the Perforce client mapping for the client will not result in a clean checkout

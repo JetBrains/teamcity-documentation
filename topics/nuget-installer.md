@@ -143,7 +143,7 @@ Update Options
 
 </td></tr></table>
 
->To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View DSL__ in the sidebar.
+>To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View as code__ in the sidebar.
 
 See the [NuGet documentation](http://docs.nuget.org/docs/reference/command-line-reference) for the complete `NuGet.exe` command line reference.
 

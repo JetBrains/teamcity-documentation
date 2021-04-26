@@ -15,7 +15,7 @@ It is possible to [restrict running personal builds](configuring-general-setting
 
 ### Direct Patch Upload
 
-You can upload a patch with local changes directly to the TeamCity server, via our web UI or REST API.
+Users with the _Change build source code with a custom patch_ permission can upload a patch with local changes directly to the TeamCity server, via our web UI or REST API.
 
 TeamCity supports patches in a [unified diff format](https://en.wikipedia.org/wiki/Diff#Unified_format).
 
