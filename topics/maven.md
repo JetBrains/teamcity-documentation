@@ -85,6 +85,10 @@ If you change the goal from `test` to `deploy` (or any other sequential goal fro
 ### Maven Settings
 
 Choose the Maven version you want to use. You can also [manage the installed versions](installing-agent-tools.md).
+{product="tc"}
+
+Choose the Maven version you want to use.
+{product="tcc"}
 
 <table>
 
@@ -127,6 +131,10 @@ The path to the Maven installation is taken from the `M2_HOME` environment varia
 <td>
 
 The bundled version is used as default. See how to [change the defaults](installing-agent-tools.md).
+{product="tc"}
+
+The bundled version is used as default.
+{product="tcc"}
 
 </td></tr><tr>
 

@@ -406,6 +406,7 @@ If you try to run dotCover on an agent with the Nano Server OS, the build will f
 dotCover does not support collection of coverage statistics for the `dotnet msbuild /t:vstest` command — use `dotnet test` instead.
 
 ### Code coverage configuration using Test Settings is deprecated
+{product="tc"}
 
 Code coverage configuration using Test Settings is deprecated in dotCover. [Read more](https://docs.microsoft.com/en-us/previous-versions/dd504821(v=vs.140)) in Microsoft documentation.
 

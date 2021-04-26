@@ -87,7 +87,6 @@
                 <toc-element id="setting-up-and-running-additional-build-agents.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="build-agent-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
                 </toc-element>
-                <toc-element id="installing-agent-tools.md"/>
                 <toc-element id="csrf-protection.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
             <toc-element id="upgrade.md" show-structure-for="chapter" show-structure-depth="4"/>

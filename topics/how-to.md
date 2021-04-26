@@ -1023,13 +1023,22 @@ Further recommendations:
 [//]: # (Internal note. Do not delete. "How To...d160e2430.txt")
 
 ## Use an External Tool that My Build Relies on
+{product="tc"}
 
 If you need to use specific external tool to be installed on a build agent to run your builds, you have the following options:
-* Install and register the tool in TeamCity: 
+* Install and register the tool in TeamCity:
   1. Install the tool on all the agents that will run the build. This can be done manually or via an automated script. For simple file distribution also see [Installing Agent Tools](installing-agent-tools.md)
   2. Add a property into `buildAgent.properties` file (or add environment variable to the system) with the tool home location as the value.
   3. Add agent requirement for the property in the build configuration.
   4. Use the property in the build script.
+* Check in the tool into the version control and use relative paths.
+* Add environment preparation stage into the build script to get the tool form elsewhere.
+* Create a separate build configuration with a single "fake" build which would contain required files as artifacts, then use artifact dependencies to send files to the target build.
+
+## Use an External Tool that My Build Relies on
+{product="tcc"}
+
+If you need to use specific external tool to be installed on a build agent to run your builds, you have the following options:
 * Check in the tool into the version control and use relative paths.
 * Add environment preparation stage into the build script to get the tool form elsewhere.
 * Create a separate build configuration with a single "fake" build which would contain required files as artifacts, then use artifact dependencies to send files to the target build.
