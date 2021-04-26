@@ -1,7 +1,7 @@
 [//]: # (title: Setting up and Running Additional Build Agents)
 [//]: # (auxiliary-id: Setting up and Running Additional Build Agents)
 
-Before you can start customizing projects and creating build configurations, you need to configure [build agents](build-agent.md). Review the [agent-server communication](#Agent-Server+Data+Transfers) and [Prerequisites](#Prerequisites) sections before proceeding with agent installation.
+Before you can start customizing projects and creating build configurations, you need to configure [build agents](build-agent.md). Review the [agent-server communication](#Agent-Server+Data+Transfers) and [Prerequisites](#Prerequisites) sections before proceeding with agent installation. Make sure to also read our [security notes](security-notes.md#Build+Agents) on maintaining build agents.
 
 <tip product="tc">
 

@@ -161,7 +161,7 @@ This approach optimizes the communication between agents and nodes which helps e
 The following HAProxy example shows what parameters are required to provide in the proxy configuration.
 
 >This example can be used for a reference only and not intended for production purposes.
-> 
+>
 {type="warning"}
 
 ```Plain Text
@@ -253,7 +253,7 @@ To __upgrade__ nodes in a multinode setup to a major version of TeamCity, follow
 5. Upgrade the TeamCity installations on the secondary nodes to the same version.
 6. Upgrade the [proxy configuration](#MatchingProxyVersionwithServer), if necessary.
 7. Start the secondary nodes and verify that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main server.
-      
+
 To __downgrade__ nodes in a multinode setup, follow these steps:
 1. Shutdown the main server and the secondary nodes.
 2. [Restore the data](restoring-teamcity-data-from-backup.md) from backup (only if the data format has been changed during the upgrade).
@@ -261,7 +261,7 @@ To __downgrade__ nodes in a multinode setup, follow these steps:
 4. Downgrade the TeamCity software on the main server.
 5. Start the main TeamCity server and verify that everything works properly.
 6. Downgrade the TeamCity software on the secondary nodes to the same version as the main server.
-7. Start the secondary nodes. 
+7. Start the secondary nodes.
 
 TeamCity agents will perform upgrade/downgrade automatically.
 

@@ -1,16 +1,19 @@
 [//]: # (title: Git)
 [//]: # (auxiliary-id: Git)
-[//]: # (Internal note. Do not delete. "Gitd153e3.txt" "Git \(JetBrains\)d152e3.txt")  
- 
+[//]: # (Internal note. Do not delete. "Gitd153e3.txt" "Git \(JetBrains\)d152e3.txt")
+
 TeamCity supports Git out of the box. Git source control with Azure DevOps Services is supported (see authentication notes [below](#Authenticating+to+Azure+DevOps+Services)).
 
-This page contains description of the Git-specific fields of the VCS root settings.    
-For common VCS Root properties, see [this section](configuring-vcs-roots.md#Common+VCS+Root+Properties).
+This page contains description of the Git-specific fields of the VCS root settings.  
+For common VCS root properties, see [this section](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
-<note>
+>The Git command-line client needs to be installed on the agents if the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used.
+>
+{type="note"}
 
-Git command line client needs to be installed on the agents if the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used.
-</note>
+>Git versions earlier than 2.10.0 will be deprecated in the future versions of TeamCity. If you get the related warning on running a build on some agent, we suggest that you update Git (the one specified in the `TEAMCITY_GIT_VERSION` parameter) and restart the agent.
+>
+{type="warning"}
 
 __Important notes__:
 
@@ -226,7 +229,7 @@ You can use a personal access token instead of a password to authenticate in Git
 Note that TeamCity does not support token authentication to hosted [Azure DevOps Server](https://azure.microsoft.com/en-in/services/devops/server/) (formerly, Team Foundation Server) installations.
 
 >Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
->We highly recommend that you use an access token instead of password when configuring a VCS root for a GitHub.com repository.
+>We highly recommend that you use an access token or SSH key instead of password when configuring a VCS root for a GitHub.com repository.
 >
 {type="warning"}
 

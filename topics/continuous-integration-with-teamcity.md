@@ -10,8 +10,16 @@ Continuous Integration is a software development practice in which developers co
 ## What is TeamCity?
 
 JetBrains TeamCity is a user-friendly continuous integration (CI) server for developers and build engineers [free of charge with the Professional Server License](http://www.jetbrains.com/teamcity/buy/index.jsp) and easy to set up!
+{product="tc"}
+
+JetBrains TeamCity is a user-friendly and easy to set up continuous integration (CI) server for developers and build engineers.
+{product="tcc"}
 
 This video gives a general overview of the main TeamCity features and explains the [licensing policy](licensing-policy.md):
+{product="tc"}
+
+This video gives a general overview of the main TeamCity features:
+{product="tcc"}
 
 <video href="s68u2shSo6o"
        title="General TeamCity overview"/>
@@ -25,7 +33,7 @@ This video gives a general overview of the main TeamCity features and explains t
 * Customize statistics on build duration, success rate, code quality, and custom metrics
 * and much more
 
-To learn more about major TeamCity features, refer to the [official JetBrains site](http://www.jetbrains.com/teamcity/features/index.html).
+To learn more about major TeamCity features, refer to the [official JetBrains website](http://www.jetbrains.com/teamcity/features/index.html).
 
 TeamCity works great not only for admins and build engineers, but also for developers. Watch this video to see some of the signature features it provides:
 <video href="icuhBgEFtVM"
@@ -61,14 +69,17 @@ __Build agent__
 
 <td>
 
-A piece of software that actually executes a build process. It is installed and configured separately from the TeamCity server, i.e. the agent can be installed on a separate machine (physical or virtual, and it can run the same operating system (OS) as the server or a different OS. 
-Build Agents in TeamCity can have different platforms, operating systems, and preconfigured environments that you may want to test your software on. Different types of tests can be run under different platforms simultaneously so the developers get faster feedback and more reliable testing results.
+A piece of software that actually executes a build process. It is installed and configured separately from the TeamCity server, i.e. the agent can be installed on a separate machine (physical or virtual, and it can run the same operating system (OS) as the server or a different OS.  
+Build agents in TeamCity can have different platforms, operating systems, and preconfigured environments that you may want to test your software on. Different types of tests can be run under different platforms simultaneously so the developers get faster feedback and more reliable testing results.
+{product="tc"}
 
-<note>
+>It is possible for the server and an agent to coexist on the same computer, but for production purposes, we recommend installing them on different machines for a number of reasons, the server performance being the most important.
+>
+{type="note" product="tc"}
 
-It is possible for the server and an agent to coexist on the same computer, but for production purposes, we recommend installing them on different machines for a number of reasons, the server performance being the most important. 
-</note>
-
+A piece of software that actually executes a build process. It is installed and configured separately from the TeamCity server. You get access to Cloud agents with your TeamCity Cloud subscription, but you can also host agents on a physical machine.  
+Build agents in TeamCity can have different platforms, operating systems, and preconfigured environments that you may want to test your software on. Different types of tests can be run under different platforms simultaneously so the developers get faster feedback and more reliable testing results.
+{product="tcc"}
 
 </td></tr><tr>
 
@@ -82,10 +93,9 @@ __TeamCity Server__
 
 The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, and so on, are stored in a database.
 
-<note>
-
-It is possible for the server and an agent to coexist on the same computer, but for production purposes, we recommend installing them on different machines for a number of reasons, the server performance being the most important. 
-</note>
+>It is possible for the server and an agent to coexist on the same computer, but for production purposes, we recommend installing them on different machines for a number of reasons, the server performance being the most important.
+>
+{type="note" product="tc"}
 
 
 </td></tr><tr>
@@ -98,7 +108,7 @@ __Project__
 
 <td>
 
-A TeamCity Project corresponds to a software project or a specific version/release of a software project. A project is a collection of build configurations.
+A TeamCity project corresponds to a software project or a specific version/release of a software project. A project is a collection of build configurations.
 
 </td></tr><tr>
 
