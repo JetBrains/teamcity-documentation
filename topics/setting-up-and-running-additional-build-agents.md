@@ -1,11 +1,15 @@
 [//]: # (title: Setting up and Running Additional Build Agents)
 [//]: # (auxiliary-id: Setting up and Running Additional Build Agents)
 
->This page is about starting up and running [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents). [JetBrains-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-jb-hosted-agents) are automatically maintained by TeamCity Cloud and require no user actions.
+>This page is about starting up and running [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents). [JetBrains-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-jb-hosted-agents) are maintained by the TeamCity Cloud team and require no actions from users.
 > 
 {type="note" product="tcc"}
 
 Before you can start customizing projects and creating build configurations, you need to configure [build agents](build-agent.md). Review the [agent-server communication](#Agent-Server+Data+Transfers) and [Prerequisites](#Prerequisites) sections before proceeding with agent installation. Make sure to also read our [security notes](security-notes.md#Build+Agents) on maintaining build agents.
+{product="tc"}
+
+Before you can start customizing projects and creating build configurations, you need to add and configure [build agents](build-agent.md). Review the [agent-server communication](#Agent-Server+Data+Transfers) and [Prerequisites](#Prerequisites) sections before proceeding with agent installation. Make sure to also read our [security notes](security-notes.md#Build+Agents) on maintaining build agents and [licensing policy](teamcity-cloud-subscription-and-licensing.md) on adding new agents.
+{product="tcc"}
 
 <tip product="tc">
 
@@ -117,7 +121,7 @@ The communication protocol used by TeamCity agents is determined by the value of
 The recommended approach to connecting a self-hosted agent to a TeamCity Cloud instance is to generate a unique authentication token for this agent. To do this, go to __Agents__, open the __Install Build Agents__ menu in the upper right corner of the screen, and click _Use authentication token_. There are two options:
 
 * _Generate plain-text token_: you need to copy the generated token and enter it in the [build agent configuration](build-agent-configuration.md) file. On Windows, you will be prompted to enter it right in the _Configure Build Agent Properties_ installation dialog.
-* _Download config_: enter an agent name (`name` attribute in the [build agent config](build-agent-configuration.md)) and download the entire config file. You then need to place it as the `buildAgent.properties` file in the build agent directory.
+* _Download config_: enter an agent name (`name` attribute in the [build agent config](build-agent-configuration.md)) and download the entire config file. Place it as the `buildAgent.properties` file in the build agent directory.
 
 Please generate own token or configuration file per each self-hosted agent.
 
@@ -136,6 +140,7 @@ Please generate own token or configuration file per each self-hosted agent.
 3. [Start](#Starting+the+Build+Agent) the agent. If the agent does not seem to run correctly, check the [agent logs](viewing-build-agent-logs.md).
 
 When the newly installed agent connects to the server for the first time, it appears on the `Agents` page, `Unauthorized agents` tab visible to administrators/users with the permissions to authorize it. Agents will not run builds until they are authorized in the TeamCity web UI. The agent running on the same computer as the server is authorized by default.
+{product="tc"}
 
 The number of authorized agents is limited by the number of agents licenses on the server. See more under [Licensing Policy](licensing-policy.md).
 {product="tc"}
@@ -151,7 +156,7 @@ Ensure that the user account used to run the agent service has appropriate [perm
 </note>
 
 ### Installing via Docker Agent Image
-1. In the TeamCity web UI, navigate to the __Agents__ tab.
+1. In the TeamCity UI, navigate to the __Agents__ tab.
 2. Click the __Install Build Agents__ link and select _Docker Agent Image_.
 3. Follow the instructions on the opened [page](https://hub.docker.com/r/jetbrains/teamcity-agent/).
 
@@ -164,10 +169,10 @@ Ensure that the user account used to run the agent service has appropriate [perm
    * (since TeamCity 2020.1) __Full ZIP file distribution*__: a full build agent prepacked with all plugins currently enabled on the server
 5. Extract the downloaded file into the desired directory.
 6. Navigate to the `<installation path>\conf` directory, locate the file called `buildAgent.dist.properties` and rename it to `buildAgent.properties`.
-7. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see the [notes](#Agent-Server+Data+Transfers)) and the name of the agent. Refer to the [Build Agent Configuration](build-agent-configuration.md) page for details on agent configuration.
-{product="tc"}
-7. Edit the `buildAgent.properties` file to specify the TeamCity server URL and the name of the agent. Refer to the [Build Agent Configuration](build-agent-configuration.md) page for details on agent configuration.
+7. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see the [notes](#Agent-Server+Data+Transfers)), the name of the agent, and the [authentication token](#Generating+Authentication+Token). Refer to the [Build Agent Configuration](build-agent-configuration.md) page for details on agent configuration.
 {product="tcc"}
+7. Edit the `buildAgent.properties` file to specify the TeamCity server URL and the name of the agent. Refer to the [Build Agent Configuration](build-agent-configuration.md) page for details on agent configuration.
+{product="tc"}
 8. Under Linux, you may need to give execution permissions to the `bin/agent.sh` shell script.
 
 On Windows, you may also want to install the [build agent Windows service](#Build+Agent+as+a+Windows+Service) instead of using the manual agent startup.
@@ -187,10 +192,23 @@ Note that after starting, the full agent behaves like a regular agent. If you mo
 </tip>
 
 ### Installing via Agent Push
+{product="tc"}
 
 TeamCity provides the Agent Push functionality that allows installing a build agent to a remote host. Currently, supported combinations of the server host platform and targets for build agents are:
 * from the Unix-based TeamCity server, build agents can be installed to Unix hosts only (via SSH)
 * from the Windows-based TeamCity server, build agents can be installed to Unix (via SSH) or Windows (via psexec) hosts
+
+<note>
+
+__SSH note__
+
+Make sure the "Password" or "Public key" authentication is enabled on the target host according to a preferred authentication method.
+</note>
+
+### Installing via Agent Push
+{product="tcc"}
+
+TeamCity provides the Agent Push functionality that allows installing a build agent to a remote Unix host.
 
 <note>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE product-profile
   SYSTEM "https://resources.jetbrains.com/stardust/product-profile.dtd">
-<product-profile id="tc" name="TeamCity" start-page="teamcity-documentation.md" status="release">
+<product-profile id="tc" name="TeamCity On-Premises" start-page="teamcity-documentation.md" status="release">
    <toc-element id="teamcity-documentation.md">
       <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2020-2.html">
          <toc-element id="teamcity-2020-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>

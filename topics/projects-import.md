@@ -15,7 +15,7 @@ If you need to move all the server data to a different machine, use [server move
 {product="tc"}
 
 On the source TeamCity server:
-* [Create a usual backup](creating-backup-from-teamcity-web-ui.md) file containing the projects to be imported (note that the __[major version](upgrade.md#Upgrading+TeamCity+Server) of the source and target TeamCity servers has to be the same__)
+* [Create a usual backup](creating-backup-from-teamcity-web-ui.md) file containing the projects to be imported (note that the __[major version](upgrade.md#Upgrading+TeamCity+Server) of the source and target TeamCity servers has to be the same__).
 
 On the target TeamCity server:
 * Go to the __Server Administration__ area and select __Project Import__ on the left. Upload your project settings and follow the wizard. When the import finishes, TeamCity will display the results.
@@ -65,7 +65,7 @@ TeamCity users must have unique usernames.
    * if a user has the system administrator role on the source, this role will be added to the user on the target after import,   
    * if a user has several roles in several projects on the source, only the new roles for the projects within the import scope will be added on the target.   
 
-    __The Project Import__ page | __Import scope__ section | __Users__ will display the number of conflicts and you can view them and decide is you want to merge them. 
+    The __Project Import | Import scope | Users__ section will display the number of conflicts and you can view them and decide is you want to merge them. 
 
     TeamCity will show users with the same username and different emails on both servers, as well as the number of users with the same username and the same email. Email verification [can be enabled](enabling-email-verification.md) for the server,  and the users with the same username and email are compared based on their email verification.  You can view the conflicts information and choose whether to merge the users found. The options are active if users with verified emails are present either on the source or the target TeamCity server, or both.
 
@@ -87,6 +87,15 @@ If the conflicts have not been resolved before importing, you can find the confl
 
 <anchor name="ProjectsImport-Dataexcludedfromimport"/>
 
+## Importing projects
+{product="tcc"}
+
+On the source TeamCity On-Premises server:
+* Create a [backup file](https://www.jetbrains.com/help/teamcity/creating-backup-from-teamcity-web-ui.html) containing the projects to be imported.
+
+On the target TeamCity server:
+* Go to the __Server Administration__ area and select __Project Import__ on the left. Upload your project settings and follow the wizard. When the import finishes, TeamCity will display the results.
+
 ## Data not included into import
 
 There is a number of limitations regarding the import:
@@ -97,7 +106,9 @@ There is a number of limitations regarding the import:
 * Running builds and the build queue are not included in the backup and not imported.
 * Internal ids (like ids of the builds) are not preserved during import. This means that URLs to the build results pages from the old server will appear broken even if redirected to the new server as build ids change on importing.
 * The backup files do not contain artifacts and logs (build logs are stored under build artifacts), so these are not imported automatically, but TeamCity provides scripts to move them [manually](#Moving+artifacts+and+logs).
+{product="tc"}
 * Global server settings (authentication schemes, custom roles, and so on) are not imported.
+* Import to TeamCity Cloud: build artifacts and logs.
 
 <note>
 
@@ -105,6 +116,7 @@ Importing projects may take significant time. There can be only one import proce
 </note>
     
 ## Moving artifacts and logs
+{product="tc"}
 
 Although artifacts and logs are not imported right from the backup file, you can copy/move them from the source to the target server using the `.bat` and `.sh` scripts from the `projectsImport-<date>` directory under TeamCity logs. These scripts accept the source and target data directories via the command line; the scripts accept the source and target [artifact directories](build-artifact.md). The rest is done automatically. The scripts can be executed while the server is running.
 
@@ -118,4 +130,5 @@ The directory contains the following:
 * conflicting files' folder, containing all data which has been merged
 * mappings, containing mapping of the fields in the source and target databases
 * scripts for copying artifacts and logs (see the section [above](#Moving+artifacts+and+logs))
+{product="tc"}
 * import report, listing import results including the information on the data which has not been imported (if any)

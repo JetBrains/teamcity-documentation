@@ -2,8 +2,8 @@
 [//]: # (auxiliary-id: Authentication Modules)
 
 There are two types of _authentication modules_ in TeamCity:
-* __Credentials Authentication Module__ authenticates users with a login/password pair specified on the login page.
-* __HTTP Authentication Module__ authenticates users with some information from a certain HTTP request.   
+* __Credentials Authentication Modules__ authenticate users with a login/password pair specified on the login page.
+* __HTTP Authentication Modules__ authenticate users with some information from a certain HTTP request.   
 You can enable several _credentials authentication modules_ and several _HTTP authentication modules_ simultaneously.
 
 On an attempt to sign in via the login form, TeamCity asks all the available _credentials authentication modules_ in the order they are specified in the settings; the first one who _can_ authenticate the user authenticates them. For any HTTP request, if there is no authenticated user yet, TeamCity asks all enabled _HTTP authentication modules_ in the order they are specified; the first one who can authenticate the user, authenticates them (if no _HTTP authentication module_ can authenticate the user for the specified HTTP request, TeamCity redirects the user to the login page).

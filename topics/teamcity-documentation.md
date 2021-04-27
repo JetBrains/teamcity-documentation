@@ -31,7 +31,7 @@ Welcome to the documentation for [TeamCity 2020.x](https://www.jetbrains.com/tea
 
 ### Administer  
     
-* [Configure and Maintain TeamCity server](teamcity-configuration-and-maintenance.md) 
+* [Configure and Maintain TeamCity Server](teamcity-configuration-and-maintenance.md) 
 * [Work with Projects and Build Configurations](managing-projects-and-build-configurations.md) 
 * [Manage Users and their Permissions](managing-user-accounts-groups-and-permissions.md) 
 * [Upgrade](upgrade.md)
@@ -61,6 +61,7 @@ Welcome to the documentation for [TeamCity 2020.x](https://www.jetbrains.com/tea
 * [Known Issues](known-issues.md)
 * [Public Issue Tracker](http://youtrack.jetbrains.net/issues/TW)
 * [Community Forum](http://jb.gg/teamcity-forum)
+* [CI/CD Guide](https://www.jetbrains.com/teamcity/ci-cd-guide/)
 * [Video User Guide](http://blog.jetbrains.com/teamcity/2013/05/teamcity-user-guide-courseware/)
     
 </td>
@@ -70,7 +71,7 @@ Welcome to the documentation for [TeamCity 2020.x](https://www.jetbrains.com/tea
  
 ### Learn More and Contact Us
    
-* [TeamCity Official Site](http://www.jetbrains.com/teamcity)
+* [Official TeamCity Website](http://www.jetbrains.com/teamcity)
 * [Official TeamCity Blog](http://blogs.jetbrains.com/teamcity/)
 * [Feedback](feedback.md)
     
@@ -78,20 +79,11 @@ Welcome to the documentation for [TeamCity 2020.x](https://www.jetbrains.com/tea
 </table>
 
 
-
-
-
-
-
- 
-
 ## TeamCity 2020.x Supported Platforms and Environments
 
 The core features of TeamCity are platform-independent. See details at [Supported Platforms and Environments](supported-platforms-and-environments.md). 
 
 [//]: # (Internal note. Do not delete. "TeamCity Documentationd313e156.txt")    
-
-
 
 ## Copyright and Trademark Notice
 

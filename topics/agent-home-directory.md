@@ -1,6 +1,10 @@
 [//]: # (title: Agent's Home Directory)
 [//]: # (auxiliary-id: Agent's Home Directory)
 
+>This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
+>
+{type="note" product="tcc"}
+
 The _Build Agent Home Directory_ is the directory where the agent is installed.
 
 A [build agent](build-agent.md) can be installed into any directory. If you use the TeamCity [.tar.gz distribution or .exe distribution](installing-and-configuring-the-teamcity-server.md#Installing+TeamCity+Server) opting to install a build agent, the agent will be placed into `<[TeamCity Home](teamcity-home-directory.md)>/buildAgent`. The default directory suggested by the `.exe` agent installation is `C:\BuildAgent`.

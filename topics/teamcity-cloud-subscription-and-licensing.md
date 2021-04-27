@@ -209,6 +209,8 @@ __Web users__
 
 QA, managers, or other team members who only access the TeamCity interface via UI and do not author changes in the code. These users do not occupy committer slots. They can view build results, modify build configurations, and perform other actions in the TeamCity UI with no licensing limits.
 
+__See also:__ [Guest Users](guest-user.md)
+
 </td>
 
 </tr>

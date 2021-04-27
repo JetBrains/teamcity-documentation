@@ -23,7 +23,8 @@ Welcome to the documentation for [TeamCity Cloud](https://www.jetbrains.com/team
 
 ### Administer
 
-* [Configure and Maintain TeamCity server](teamcity-configuration-and-maintenance.md)
+* [Manage Cloud Subscription and Resources](managing-subscription-and-resources.md)
+* [Configure Global Settings](teamcity-configuration-and-maintenance.md)
 * [Work with Projects and Build Configurations](managing-projects-and-build-configurations.md)
 * [Manage Users and their Permissions](managing-user-accounts-groups-and-permissions.md)
 
@@ -52,7 +53,7 @@ Welcome to the documentation for [TeamCity Cloud](https://www.jetbrains.com/team
 
 ### Learn More and Contact Us
 
-* [TeamCity Official Site](http://www.jetbrains.com/teamcity)
+* [Official TeamCity Website](http://www.jetbrains.com/teamcity)
 * [Official TeamCity Blog](http://blogs.jetbrains.com/teamcity/)
 * [Feedback](feedback.md)
 

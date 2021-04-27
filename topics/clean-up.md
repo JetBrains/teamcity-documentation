@@ -22,6 +22,9 @@ To see all the current server warnings and errors, go to __Administration | Proj
 
 </note>
 
+TeamCity Cloud also comes bundled with the [Caches Cleanup](https://github.com/JetBrains/teamcity-caches-cleanup-plugin) plugin that helps easily free disk space.
+{product="tcc"}
+
 ## Server Clean-up Settings
 {product="tc"}
 

@@ -1,5 +1,5 @@
-[//]: # (title: Patterns For Accessing Build Artifacts)
-[//]: # (auxiliary-id: Patterns For Accessing Build Artifacts)
+[//]: # (title: Patterns for Accessing Build Artifacts)
+[//]: # (auxiliary-id: Patterns for Accessing Build Artifacts)
 
 <warning>
 

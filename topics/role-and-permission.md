@@ -128,7 +128,7 @@ __Project Viewer__
 
 <td>
 
-Has read-only access to projects and can only _view_ the project, its parent, and subprojects. Does not have permissions to [view agent details](build-agents-configuration-and-maintenance.md#Viewing+TeamCity+agents+details).
+Has read-only access to projects and can only _view_ the project, its parent, and subprojects. Does not have permissions to [view agent details](build-agents-configuration-and-maintenance.md#Viewing+TeamCity+Agents+Details).
 
 </td></tr><tr>
 

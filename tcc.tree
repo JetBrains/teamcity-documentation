@@ -112,12 +112,10 @@
                     <toc-element id="enabling-guest-login.md"/>
                     <toc-element id="enabling-email-verification.md"/>
                     <toc-element id="security-actions.md"/>
-                    <toc-element id="inviting-users.md"/>
                 </toc-element>
                 <toc-element id="teamcity-data-backup.md"/>
                 <toc-element id="projects-import.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="project-export.md" show-structure-for="chapter" show-structure-depth="4"/>
-                <toc-element id="setting-up-google-mail-as-notification-server.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="using-https-to-access-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="build-agents-configuration-and-maintenance.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="viewing-build-agent-logs.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -305,10 +303,10 @@
                 <toc-element id="managing-users-and-user-groups.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="viewing-users-and-user-groups.md"/>
                 <toc-element id="managing-roles.md"/>
+                <toc-element id="inviting-users.md"/>
             </toc-element>
             <toc-element id="assigning-build-configurations-to-specific-build-agents.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="detaching-build-from-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="configuring-cross-server-projects-pop-up-menu.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="patterns-for-accessing-build-artifacts.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="mono-support.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="maven-server-side-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -354,7 +352,6 @@
         </toc-element>
         <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
     </toc-element>
-    <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
     <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
     <toc-element toc-title="TeamCity On-Premises Documentation" href="https://www.jetbrains.com/help/teamcity/teamcity-documentation.html"/>
     <toc-element toc-title="TeamCity Roadmap" href="https://www.jetbrains.com/teamcity/roadmap/"/>

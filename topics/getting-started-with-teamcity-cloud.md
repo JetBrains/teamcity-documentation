@@ -28,11 +28,12 @@ Users of our Cloud and On-Premises versions can expect a similar level of scalab
 TeamCity Cloud has the following limitations comparing to On-Premises:
 * Limited server configuration and diagnostics. See the related pages in the On-Premises documentation: [Installing and Configuring Server](https://www.jetbrains.com/help/teamcity/installing-and-configuring-the-teamcity-server.html) and [Monitoring and Diagnostics](https://www.jetbrains.com/help/teamcity/teamcity-monitoring-and-diagnostics.html).
 * TeamCity Cloud data is backed up and cleaned up automatically. The set of available configuration options may differ from the On-Premises installations. See the related pages in the On-Premises documentation: [Data Backup](https://www.jetbrains.com/help/teamcity/teamcity-data-backup.html) and [Clean-Up](https://www.jetbrains.com/help/teamcity/clean-up.html).
-* Some settings are unavailable to TeamCity Cloud administrators: for example, cloud profiles' configuration or changing the location for storing external artifacts. See the related pages in the On-Premises documentation: [Integration with Cloud Solutions](https://www.jetbrains.com/help/teamcity/teamcity-integration-with-cloud-solutions.html) and [External Artifact Storage](https://www.jetbrains.com/help/teamcity/configuring-artifacts-storage.html#External+Artifacts+Storage).
+* Some settings are unavailable to TeamCity Cloud administrators: for example, configuring cloud profiles or changing the location for storing external artifacts. See the related pages in the On-Premises documentation: [Integration with Cloud Solutions](https://www.jetbrains.com/help/teamcity/teamcity-integration-with-cloud-solutions.html) and [External Artifact Storage](https://www.jetbrains.com/help/teamcity/configuring-artifacts-storage.html#External+Artifacts+Storage).
 * No plugin management. The following bundled plugins are currently disabled:
     * LDAP support
     * Microsoft Windows Domain authentication
-    * VCS Support: CVS and VCS Support: StarTeam
+    * VCS Support: CVS
+    * VCS Support: StarTeam
     * RSS feed support
     * Build Agent JVM updater
     * NuGet Support
@@ -41,8 +42,12 @@ TeamCity Cloud has the following limitations comparing to On-Premises:
 If you are interested in our On-Premises solution, you can visit its [website](https://www.jetbrains.com/teamcity/) or [documentation](https://www.jetbrains.com/help/teamcity/teamcity-documentation.html).
 
 Comparing to On-Premises, TeamCity Cloud offers the following new features:
-* For better security, you can generate authentication tokens for build agents in advance.
+* To ensure secure agent-server connection, you can easily generate and preconfigure authentication tokens for self-hosted build agents.
 * If you authenticate via GitHub, GitLab, or Bitbucket, the respective [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections) will be preconfigured automatically.
-* The __Administration | Invitations__ page allows automatically inviting users to the server. __By default, you can add new users only via invitations__. An invited user will be able to register a new user account or authenticate via GitHub, GitLab, or Bitbucket.
+* The __Administration | Invitations__ page allows automatically inviting users to the server. An invited user will be able to register a new user account or authenticate via GitHub, GitLab, or Bitbucket.
+* The following plugins are bundled and enabled in TeamCity cloud:
+  * [Unity Support](https://plugins.jetbrains.com/plugin/11453-unity-support) for building Unity projects
+  * [GitHub Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks) to easily install GitHub webhooks via the TeamCity UI
+  * [Caches Cleanup](https://github.com/JetBrains/teamcity-caches-cleanup-plugin) helps easily free disk space
 
 All the listed features will be introduced in our On-Premises version in the nearest future.

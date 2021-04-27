@@ -1,6 +1,10 @@
 [//]: # (title: Configuring Build Agent Startup Properties)
 [//]: # (auxiliary-id: Configuring Build Agent Startup Properties)
 
+>This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
+>
+{type="note" product="tcc"}
+
 In TeamCity, a [build agent](build-agent.md) contains two processes:
 * Agent launcher — a Java process that launches the agent process.
 * Agent — the main process for a build agent; runs as a child process for the agent launcher.
