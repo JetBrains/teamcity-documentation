@@ -18,7 +18,46 @@ Make sure the TeamCity user is allowed to perform writing operations in the [Kub
 You might also require to configure the following privileges for your Kubernetes user role:
 * Pods: `get`, `create`, `list`, `delete`.
 * Deployments: `list`, `get` — if you want to create an agent pod using [a deployment configuration](#Use+pod+template+from+deployment).
-* Namespaces: `list` — to allow TeamCity to suggest the namespaces available on your server.
+* Namespaces: `get`, `list` — to allow TeamCity to suggest the namespaces available on your server.
+
+Example of setting up all required permissions via [Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac)
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: teamcity:manage-agents
+rules:
+- apiGroups: [""]
+  resources: ["namespaces"]
+  verbs: ["list", "get"]
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "create", "list", "delete"]
+- apiGroups: ["extensions", "apps"]
+  resources: ["deployments"]
+  verbs: ["list", "get"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: teamcity:manage-agents
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: teamcity:manage-agents
+subjects:
+  # proper RoleBinding subject depends on your Authentication strategy
+  # use one of examples below
+
+  # if you use OIDC/Certificate auth strategies
+  - kind: User
+    name: teamcity
+
+  # if you use Service account
+  - kind: ServiceAccount
+    name: teamcity
+```
 
 ## Kubernetes Cloud Profile Configuration
 
