@@ -3,11 +3,9 @@
 
 TeamCity is a CI/CD server which key features are a powerful toolset and universality. With our Cloud version, we address the user demand in the full-featured CI/CD solution and make it available to you in a couple of minutes, with no need to maintain a server on-premises.
 
-__If you are new to CI/CD or TeamCity__, the Cloud Beta is a great starting point as it automatically resolves the task of installing and configuring the server.
+__If you are new to CI/CD or TeamCity__, the Cloud is a great starting point as it automatically resolves the task of installing and configuring the server.
 
 When you register a TeamCity Cloud account, your own TeamCity server is automatically created in Amazon Web Services. The server operates on the newest version of TeamCity and currently provides Windows and Linux cloud build agents out of the box (self-hosted agents for Windows, Linux, and macOS are also supported).
-
-We plan to officially release our Cloud version in 2021. __Users of the Beta program will be able to migrate their TeamCity data to the released Cloud version.__
 
 ## 1. Learn about CI with TeamCity Cloud
 
