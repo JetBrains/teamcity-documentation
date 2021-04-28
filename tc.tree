@@ -419,6 +419,7 @@
       </toc-element>
       <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
    </toc-element>
+   <toc-element id="teamcity-cloud.md" show-structure-for="chapter" show-structure-depth="4"/>
    <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
    <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
    <toc-element toc-title="TeamCity Cloud Documentation" href="https://www.jetbrains.com/help/teamcity/cloud/teamcity-cloud-documentation.html"/>
