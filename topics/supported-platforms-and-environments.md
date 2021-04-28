@@ -79,7 +79,7 @@ Reportedly works on:
 ### Build Agents
 {product="tcc"}
 
-The TeamCity Agent is a standalone Java application. TeamCity supports two types of agents:
+The TeamCity Agent is a standalone Java application. TeamCity Cloud supports two types of agents:
 * Hosted by JetBrains
 * Hosted by a customer
 
