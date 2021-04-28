@@ -45,7 +45,7 @@ Comparing to On-Premises, TeamCity Cloud offers the following new features:
 * To ensure secure agent-server connection, you can easily generate and preconfigure authentication tokens for self-hosted build agents.
 * If you authenticate via GitHub, GitLab, or Bitbucket, the respective [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections) will be preconfigured automatically.
 * The __Administration | Invitations__ page allows automatically inviting users to the server. An invited user will be able to register a new user account or authenticate via GitHub, GitLab, or Bitbucket.
-* The following plugins are bundled and enabled in TeamCity cloud:
+* The following plugins are bundled and enabled in TeamCity Cloud:
   * [Unity Support](https://plugins.jetbrains.com/plugin/11453-unity-support) for building Unity projects
   * [GitHub Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks) to easily install GitHub webhooks via the TeamCity UI
   * [Caches Cleanup](https://github.com/JetBrains/teamcity-caches-cleanup-plugin) helps easily free disk space
