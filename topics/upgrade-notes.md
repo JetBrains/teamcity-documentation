@@ -64,7 +64,6 @@ Unfortunately, the affected .NET build steps cannot be converted automatically o
 {id="bundled-tools-updates-202021"}
 
 * Bundled Tomcat has been updated to version 8.5.61.
-* Bundled JaCoCo version has been updated to 0.8.6.
 
 ## Changes from 2020.1.x to 2020.2
 
