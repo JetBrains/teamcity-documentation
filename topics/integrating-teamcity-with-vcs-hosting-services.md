@@ -5,6 +5,10 @@ If you have an organization account in [GitHub.com](https://github.com/), [GitHu
 
 It is also possible to connect TeamCity to [Azure DevOps Services](https://visualstudio.microsoft.com/team-services/) making it really simple to set up projects which use VSTS repositories or issue tracker.
 
+>In TeamCity Cloud, connections to GitHub.com, GitLab.com, and Bitbucket Cloud are already predefined in the Root project's settings, which makes them available in all the other projects.
+>
+{product="tcc"}
+
 ## Configuring Connections
 
 Connections are created on the project level, a configured connection is accessible in the current project and in all of its subprojects. If you use global VCS hosting services like GitHub or Bitbucket Cloud, it makes sense to configure a single connection for the Root project. Alternatively, your organization administrator can create a parent project and configure connection to GitHub there once, and the users will see a list of GitHub repositories URLs in the TeamCity web UI, which will make setting up subprojects a lot simpler for them.
@@ -16,6 +20,10 @@ Connections are configured on the __Project Administration | Connections__ page.
 You need to register your TeamCity application in your VCS hosting service using the information provided by TeamCity, enter the access details provided by the service in the TeamCity form, and log in to your VCS hosting service from TeamCity to authorize the TeamCity application in the VCS. See details below.
 
 ### Connecting to GitHub
+
+>In TeamCity Cloud, a connection to GitHub.com is already predefined in the Root project's settings, which makes it available in all the other projects.
+>
+{product="tcc"}
 
 You will need a GitHub repository connection to create a [project from GitHub URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), create a [VCS root from URL](guess-settings-from-repository-url.md), create a [Git](git.md) VCS root, create [GitHub](github.md) issue tracker, or [enable GitHub authentication](configuring-authentication-settings.md#GitHub.com).
 
@@ -39,6 +47,10 @@ The following steps are performed in your GitHub account:
 
 ### Connecting to Bitbucket Cloud
 
+>In TeamCity Cloud, a connection to Bitbucket Cloud is already predefined in the Root project's settings, which makes it available in all the other projects.
+>
+{product="tcc"}
+
 You will need a Bitbucket Cloud connection to create a [project from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), create a [VCS root from URL](guess-settings-from-repository-url.md), create a [Mercurial](mercurial.md) VCS root, create a [Bitbucket](bitbucket-cloud.md) issue tracker, or [enable BitBucket Cloud authentication](configuring-authentication-settings.md#Bitbucket+Cloud).
 
 To configure a Bitbucket Cloud connection:
@@ -56,6 +68,10 @@ You need to create an [OAuth consumer](https://confluence.atlassian.com/bitbucke
 5. The connection is configured, and now a small Bitbucket icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Mercurial](mercurial.md) VCS root, create [Bitbucket](bitbucket-cloud.md) issue tracker. Click the icon, log in to Bitbucket  and authorize TeamCity. TeamCity will be granted access to your public repositories. For __private__ repositories you'll still have to provide Bitbucket credentials to be used for authentication by TeamCity, as Bitbucket Cloud doesn't provide non-expiring access tokens. See the [related discussion](https://bitbucket.org/site/master/issues/11774/application-specific-passwords-or-tokens).
 
 ### Connecting to GitLab
+
+>In TeamCity Cloud, a connection to GitLab.com is already predefined in the Root project's settings, which makes it available in all the other projects.
+>
+{product="tcc"}
 
 You will need a GitLab connection to create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), create a [VCS root from URL](guess-settings-from-repository-url.md), or [enable GitLab authentication](configuring-authentication-settings.md#GitLab.com).
 

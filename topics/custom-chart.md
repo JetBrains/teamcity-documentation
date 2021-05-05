@@ -42,7 +42,7 @@ Each extension must have a unique `id` in the project.
 
 The `type` attribute is set to 
 * `project-graphs` for project-level chart
-* `buildType-graphs` for build configuration-level chart
+* `buildtype-graphs` for build configuration-level chart
 
 Each chart is described by the `<parameters>` element. It must contain the `<param>` sub-elements with data shown in the chart in `name/value` pairs; the `series` parameter uses the JSON format to list series of data shown on the chart. 
 

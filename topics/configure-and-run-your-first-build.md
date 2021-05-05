@@ -50,6 +50,10 @@ Congratulations! You've configured your first build containing one build step. N
 
 ### Create a project pointing to GitHub.com repository
 
+>In TeamCity Cloud, you can skip creating a connection for GitHub.com, GitLab.com, and Bitbucket Cloud, as these are already predefined in the Root project's settings.
+>
+{product="tcc"}
+
 >If a parent project of the project to be created is already integrated with GitHub via an existing [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections), the quick option __From GitHub.com__ appears. Click it to create a project from the predefined GitHub connection URL, similarly to [creating a project from a repository URL](#Create+a+project+from+a+repository+URL).
 
 1. On the __Create Project__ page, click __From a repository URL__ and then click the GitHub icon next to the _Repository URL_ field.   

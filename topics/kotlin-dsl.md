@@ -5,7 +5,7 @@ Besides [storing settings in version control](storing-project-settings-in-versio
 
 Using the version control-stored DSL enables you to define settings programmatically. Since Kotlin is statically typed, you automatically receive the auto-completion feature in an IDE which makes the discovery of available API options much simpler.
 
-Check out the [blog post series](https://blog.jetbrains.com/teamcity/2019/03/configuration-as-code-part-1-getting-started-with-kotlin-dsl) on using Kotlin DSL in TeamCity.
+Check out the [blog post series](https://blog.jetbrains.com/teamcity/2019/03/configuration-as-code-part-1-getting-started-with-kotlin-dsl) on using Kotlin DSL in TeamCity, and the [Recommended Refactorings](https://blog.jetbrains.com/teamcity/2021/04/kotlin-dsl-for-beginners-recommended-refactorings/) article.
 
 <video href="AEYjAnR2-MY"
 title="Getting Started With Kotlin DSL in TeamCity: From Zero to Hero"/>

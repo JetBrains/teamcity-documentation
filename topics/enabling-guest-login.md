@@ -1,6 +1,10 @@
 [//]: # (title: Enabling Guest Login)
 [//]: # (auxiliary-id: Enabling Guest Login)
 
+>If you are using TeamCity Cloud, please be extremely cautious when enabling this functionality. Unlike the TeamCity On-Premises instances, most often installed in private environments, each TeamCity Cloud instance is globally available via its URL. If guest login is disabled on the instance (default behavior), only authorized users will be able to access it. If you enable it, anyone who knows your server address will be able to view its UI in the read-only mode. We suggest that you enable it for a Cloud server only if absolutely necessary and carefully manage the restrictions of the guest user roles.
+>
+{type="warning" product="tcc"}
+
 Logging in as a [guest user](guest-user.md) is disabled by default.
 
 To enable the guest login in TeamCity:

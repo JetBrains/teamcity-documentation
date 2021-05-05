@@ -1,3 +1,4 @@
+
 [//]: # (title: Code Quality Tools)
 [//]: # (auxiliary-id: Code Quality Tools)
 
@@ -24,7 +25,7 @@ These are configured in the dedicated sections of the build runners.
 * [EMMA](emma.md) coverage supports [Ant](ant.md) build runner.
 * [JaCoCo](jacoco.md) coverage supports [Ant](ant.md), [IntelliJ IDEA Project](intellij-idea-project.md), [Gradle](gradle.md) and [Maven](maven.md) build runners.
 
-### .Net Tools
+### .NET Tools
 
 #### ReSharper-powered Tools
 
@@ -40,7 +41,7 @@ The following code coverage tools are supported for [.NET Process Runner](net-pr
 * [NCover](ncover.md)
 * [PartCover](partcover.md)
 
-For the [.NET CLI (dotnet)](net.md) runner and with NUnit version 3.x the only supported coverage tool is [JetBrains dotCover](jetbrains-dotcover.md).
+For the [.NET](net.md) runner and with NUnit version 3.x the only supported coverage tool is [JetBrains dotCover](jetbrains-dotcover.md).
 
 ## Reporting External Tools Results in TeamCity
 

@@ -1,7 +1,7 @@
 [//]: # (title: Build Agents Configuration and Maintenance)
 [//]: # (auxiliary-id: Build Agents Configuration and Maintenance)
 
-## Viewing TeamCity agents details
+## Viewing TeamCity Agents Details
 
 The __Agents__ page of the TeamCity web UI provides the comprehensive information on the TeamCity agents. The number of tabs on the page may differ depending on your agent setup.
 
@@ -20,7 +20,7 @@ TeamCity distributes builds only among the enabled agents. Agents can be manuall
 
 Refer to a [separate page](configuring-agent-pools.md) for information on configuring agent pools in TeamCity.
 
-### Parameters report
+### Parameters Report
 
 Filter all available agents using a specified parameter.
 
@@ -31,7 +31,16 @@ Refer to a separate page for information on [viewing the agents workload](viewin
 ### Cloud
 
 Lists all configured [agent cloud profiles](agent-cloud-profile.md).
+{product="tc"}
+
+Lists all configured [JetBrains-hosted agents](teamcity-cloud-subscription-and-licensing.md#cloud-jb-hosted-agents).
+{product="tcc"}
 
 ### Diff 
 
 Compare two agents and see their differences highlighted.
+
+## Installing Software to Self-Hosted Agents
+{product="tcc"}
+
+You can manually install any [supported software](supported-platforms-and-environments.md) to a [self-hosted build agent](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents) and keep multiple versions of one tool on the same agent, if necessary.
