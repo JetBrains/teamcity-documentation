@@ -20,7 +20,7 @@ You might also require to configure the following privileges for your Kubernetes
 * Deployments: `list`, `get` — if you want to create an agent pod using [a deployment configuration](#Use+pod+template+from+deployment).
 * Namespaces: `get`, `list` — to allow TeamCity to suggest the namespaces available on your server.
 
-Example of setting up all required permissions via [Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac)
+Here is an example of setting up all required permissions via [Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/):
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
