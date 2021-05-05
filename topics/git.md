@@ -321,7 +321,7 @@ Provide the path to a Git executable to be used on the agent. When set to `%env.
 
 <tr>
 
-<td>
+<td id="git-checkout-policy" auxiliary-id="git-checkout-policy">
 
 Checkout policy
 
