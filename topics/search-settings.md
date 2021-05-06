@@ -10,7 +10,7 @@ By default, TeamCity stores a search index locally, in the [Data Directory](team
 ## Elastic-based Search
 {id="ElasticSearchSettings" auxiliary-id="ElasticSearchSettings"}
 
-In terms of TeamCity 2021.1 EAP, TeamCity provides an alternative search mode, based on [Elastic](https://www.elastic.co/). It allows storing a global search index on your Elastic host, which is most optimal for TeamCity [multinode installations](multinode-setup.md), as it saves nodes' resources on maintaining own local indexes and works faster.
+In terms of TeamCity 2021.1 EAP, TeamCity provides an alternative search mode, based on [Elastic](https://www.elastic.co/). It allows storing a global search index on your Elastic host, which is most optimal for TeamCity [multinode installations](multinode-setup.md), as it saves nodes' resources which would be otherwise spent on maintaining own local indexes.
 
 To connect to your Elastic host or cluster, enter its URL and credentials. You can also set a custom name for a TeamCity index.
 
