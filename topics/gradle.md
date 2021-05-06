@@ -133,6 +133,10 @@ Debug
 
 Selecting the _Log debug messages_ checkbox is equivalent to adding the `-d` Gradle command-line parameter.
 
+>Running Gradle with the `DEBUG` log level can potentially expose sensitive information in the build log (learn more in the [Gradle documentation](https://docs.gradle.org/current/userguide/logging.html#sec:debug_security)). Before enabling this mode, make sure that the log can be viewed only by trusted users.
+> 
+{type="warning"}
+
 </td></tr><tr>
 
 <td>
