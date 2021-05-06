@@ -8,6 +8,7 @@ You can change the [search](search.md) mode used on the server in the __Search__
 By default, TeamCity stores a search index locally, in the [Data Directory](teamcity-data-directory.md). In the __Search__ section, you can control the indexing and see its statistics.
 
 ## Elastic-based Search
+{id="ElasticSearchSettings" auxiliary-id="ElasticSearchSettings"}
 
 In terms of TeamCity 2021.1 EAP, TeamCity provides an alternative search mode, based on [Elastic](https://www.elastic.co/). It allows storing a global search index on your Elastic host, which is most optimal for TeamCity [multinode installations](multinode-setup.md), as it saves nodes' resources on maintaining own local indexes and works faster.
 
