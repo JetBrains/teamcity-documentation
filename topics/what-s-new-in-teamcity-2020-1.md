@@ -3,7 +3,7 @@
 
 ## Conditional build steps
 
-Now, you get granular control over build steps with the new __[execution conditions](build-step-conditions.md)__. When running a build, TeamCity will execute each step only if __all__ its preconditions, configured by you, are satisfied in the current run.
+Now, you get granular control over build steps with the new __[execution conditions](build-step-execution-conditions.md)__. When running a build, TeamCity will execute each step only if __all__ its preconditions, configured by you, are satisfied in the current run.
 
 In the advanced build step settings, click __Add condition__ and specify a logical condition for any build parameter provided by the TeamCity server or agent. You can quickly select among the example conditions, such as:
 * _Run the step only in the default branch_

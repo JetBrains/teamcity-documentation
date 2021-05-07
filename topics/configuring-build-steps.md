@@ -13,7 +13,7 @@ Each build step is represented by a [build runner](build-runner.md) and provides
 
 Build steps are invoked sequentially.
 
-The decision whether to run the next build step may depend on the exit status of the previous build steps, the current build status, or [execution conditions](build-step-conditions.md).
+The decision whether to run the next build step may depend on the exit status of the previous build steps, the current build status, or [execution conditions](build-step-execution-conditions.md).
 
 The build step is considered _failed_ if (1) the build process returned a non-zero exit code and (2) the "_Fail build if build process exit code is not zero_" build failure condition is enabled (see [Build Failure Conditions](build-failure-conditions.md)); otherwise, the build step is considered _successful_.
 
@@ -41,7 +41,7 @@ __Tips:__
 
 <anchor name="execution-conditions"/>
 
-Since TeamCity 2020.1, you can also add granular [execution conditions](build-step-conditions.md) for build steps.
+Since TeamCity 2020.1, you can also add granular [execution conditions](build-step-execution-conditions.md) for build steps.
 
 ## Autodetecting build steps
 
