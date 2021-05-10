@@ -102,7 +102,7 @@ The upgrade procedure involves two steps:
 
 <anchor name="dsl20211"/>
 
-## Update DSL from 2020.1.x to 2020.2.x
+## Update DSL from 2020.2.x to 2021.1.x
 
 * The `useMirrors` parameter in [Git](git.md) VCS roots is deprecated and replaced by the `checkoutPolicy` parameter that supports the following values: `AUTO`, `USE_MIRRORS`, `NO_MIRRORS`, `SHALLOW_CLONE`. Read more about these checkout policies [here](git.md#git-checkout-policy).
 
