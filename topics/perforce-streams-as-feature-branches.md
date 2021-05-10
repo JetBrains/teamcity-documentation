@@ -20,3 +20,7 @@ For instance, if a file path in the working copy starts with `//depot/stream1/so
 But if you modified a file from another stream (imported into the working copy) and want to enforce build in a particular stream, you should specify a configuration parameter `teamcity.build.branch` when triggering the remote run.
 
 <img src="perforce-stream.png" width="367" alt="Remote run of Perforce stream"/>
+
+## Clean Stream Workspaces
+
+To properly process task streams, TeamCity needs to create dedicated workspaces on the Perforce server. To save the server resources, you can [clean inactive workspaces](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server), created by TeamCity, directly from the TeamCity UI.
