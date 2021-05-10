@@ -295,7 +295,7 @@ If build configurations A and B are trying to set different values for the same 
    * `conflict.<btA>.<property_name>=<valueA>`
    * `conflict.<btB>.<property_name>=<valueB>`
 
-The `reverse.dep.*` parameters are processed on queuing of the build where the parameters are defined. As the parameters' values should be known at that stage, they can only be defined either as [build configuration parameters](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) or in the [custom build dialog](triggering-a-custom-build.md#Run+Custom+Build+dialog). Setting the parameter during the build has no effect.
+The `reverse.dep.*` parameters are processed on queuing of the build where the parameters are defined. As the parameters' values should be known at that stage, they can only be defined either as [build configuration parameters](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) or in the [custom build dialog](running-custom-build.md#Run+Custom+Build+dialog). Setting the parameter during the build has no effect.
 
 Pushing a new parameter into the build will supersede the ["Do not run new build if there is a suitable one"](snapshot-dependencies.md#Suitable+Builds) snapshot dependency option and may trigger a new build if the parameter is set to a non-default value.
 

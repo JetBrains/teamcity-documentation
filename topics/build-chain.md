@@ -93,7 +93,7 @@ Clicking a build in a chain highlights the selected build and all its direct dep
 
 From this page you can also:
    * Continue a chain, if there are yet "not triggered" builds. Click __Run__ and a new build will be started on the chain revisions and associated with builds from this chain.
-   * Click ![custom_build(1).png](custom_build_1.png)  to open the [custom build dialog](triggering-a-custom-build.md) with build chain revisions preselected. This action can be used if you want to rerun some build in the chain.
+   * Click ![custom_build(1).png](custom_build_1.png)  to open the [custom build dialog](running-custom-build.md) with build chain revisions preselected. This action can be used if you want to rerun some build in the chain.
 
 ### Dependencies tab of build results page
 

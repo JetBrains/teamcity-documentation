@@ -3,7 +3,9 @@
 
 The _finish build trigger_ starts a build of the current build configuration when a build of the selected build configuration is finished. If the "_Trigger after successful build only_" checkbox is enabled, a build is triggered only after a successful build of the selected configuration.
 
-To monitor builds in other build configurations and trigger a build if these builds change, please see [this option](configuring-schedule-triggers.md#Build+Changes) of the schedule build trigger.
+>To monitor builds in other build configurations and trigger a build if these builds change, please see [this option](configuring-schedule-triggers.md#Build+Changes) of the schedule build trigger.
+
+## Triggering Settings
 
 In most of the cases, the finish build trigger should be used with snapshot dependencies, that is the current build configuration where the trigger is defined should have a direct or an indirect snapshot dependency on the build configuration selected in the trigger. If there is no snapshot dependency, the following limitations exist:
 * It is likely that a build of the build configuration being triggered will not have the same revisions as the finished build even if both configurations have the same VCS settings.
@@ -16,6 +18,10 @@ All these limitations __do not apply__ if a build configuration with the finish 
 Note that if a build configuration with the finish build trigger __has__ a snapshot dependency on the selected build configuration, the trigger will be able to detect if the last monitored build has already been promoted to the current build configuration (either manually or by another trigger). In this case, the trigger will not run a new build.
 
 In a build configuration with branches, you can use the [branch filter](branch-filter.md) to limit the branches in which finished builds will trigger new builds of the current configuration.
+
+## Triggered Build Customization
+
+<include src="configuring-vcs-triggers.md" include-id="triggered-build-customization"/>
 
 <seealso>
         <category ref="admin-guide">

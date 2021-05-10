@@ -25,7 +25,7 @@ The TeamCity web UI provides the following ways to tag a particular build:
 * On the __Queued Build__ page: 
      1. Click __Actions__.
      2. Select __Tag__ and add/modify the build tags.
-* In the _[Run Custom Build](triggering-a-custom-build.md)_ dialog:
+* In the _[Run Custom Build](running-custom-build.md)_ dialog:
     * Go to the __Comments and Tags__ tab and add/modify the build tags.
 * In the _[Pin/Unpin Build](pinned-build.md)_ dialog where you can tag the build in addition to pinning it. For builds with snapshot dependencies, there is an option to pin and tag the build as well as its snapshot dependencies.
 

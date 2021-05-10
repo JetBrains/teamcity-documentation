@@ -1,7 +1,7 @@
 [//]: # (title: Configuring Schedule Triggers)
 [//]: # (auxiliary-id: Configuring Schedule Triggers)
 
-The _schedule trigger_ allows you to set the time when a build of the configuration will be run. The __[Builds Schedule](builds-schedule.md)__ section of the current __Project Settings__ displays the configured build times. More than one schedule trigger can be added to a build configuration.
+The _schedule trigger_ allows you to set the time when a build of the configuration will be run. The __[Builds Schedule](builds-schedule.md)__ section of the current __Project Settings__ displays the configured build times. Multiple schedule triggers can be added to a build configuration.
 
 ## Triggering Conditions
 
@@ -17,7 +17,7 @@ TeamCity uses [Quartz](https://www.quartz-scheduler.org/) for working with cron 
 
 ### VCS Changes
 
-You can restrict a schedule trigger to start builds only if there are pending changes in your version control by enabling the __Trigger only if there are pending changes__ option. This option considers only newly detected pending changes: if there were pending changes before the Trigger was created, the build is not triggered.
+You can restrict a schedule trigger to start builds only if there are pending changes in your version control by enabling the __Trigger only if there are pending changes__ option. This option considers only newly detected pending changes: if there were pending changes before the trigger was created, the build is not triggered.
 
 <anchor name="ConfiguringScheduleTriggers-buildTriggerRules"/>
 
@@ -46,11 +46,11 @@ A schedule trigger can watch a build in any specified build configuration and tr
 * Last [pinned build](pinned-build.md)
 * Last finished build with a specified [build tag](build-tag.md)
 
-If the Trigger detects a new build that satisfies the selected characteristic in the watched configuration, it queues a new build in own configuration.
+If the trigger detects a new build that satisfies the selected characteristic in the watched configuration, it queues a new build in own configuration.
  
-The Trigger watches only regular (not [personal](personal-build.md) or [history](history-build.md)) builds in the default branch.
+The trigger watches only regular (not [personal](personal-build.md) or [history](history-build.md)) builds in the default branch.
  
-If the triggered build depends on the watched build via a snapshot or artifact dependency, select the "_Promote watched build_" option so TeamCity can automatically [promote](triggering-a-custom-build.md#Promoting+Build) the detected build to the triggered build. Otherwise, the build will be triggered as usual and will have no relation to the detected build.
+If the triggered build depends on the watched build via a snapshot or artifact dependency, select the "_Promote watched build_" option so TeamCity can automatically [promote](running-custom-build.md#Promoting+Build) the detected build to the triggered build. Otherwise, the build will be triggered as usual and will have no relation to the detected build.
 
 ## Additional Options
 
@@ -84,3 +84,7 @@ Read more in [Branch Filter](branch-filter.md).
 Trigger rules and branch filter are combined by __AND__, which means that the build is triggered only __when both conditions are satisfied__.
 
 For example, if you specify a comment text in the trigger rules field and provide the branch specification, the build will be triggered only if a commit has the specified text and is also in a branch matched by the branch filter.
+
+## Triggered Build Customization
+
+<include src="configuring-vcs-triggers.md" include-id="triggered-build-customization"/>

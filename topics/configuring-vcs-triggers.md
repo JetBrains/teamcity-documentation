@@ -1,7 +1,7 @@
 [//]: # (title: Configuring VCS Triggers)
 [//]: # (auxiliary-id: Configuring VCS Triggers)
 
-VCS triggers automatically start a new build each time TeamCity detects new changes in the configured [VCS roots](vcs-root.md) and displays the change in the pending changes.
+VCS triggers automatically start a new build each time TeamCity detects new changes in the configured [VCS roots](vcs-root.md) and displays the change in the pending changes. Multiple VCS triggers can be added to a build configuration.
 
 A new VCS trigger with the default settings triggers a build once there are pending changes in the build configuration: the version control is polled for changes according to the [checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) of a VCS root honoring a [VCS commit hook](configuring-vcs-post-commit-hooks-for-teamcity.md) if configured. Only the changes matched by the [checkout rules](vcs-checkout-rules.md) are displayed as pending and thus are processed by the trigger. If several check-ins are made within short time frame and discovered by TeamCity together, only __one build will be triggered__.
 
@@ -13,9 +13,9 @@ You can adjust a VCS trigger to your needs using the options described below:
 
 <anchor name="ConfiguringVCSTriggers-Triggerabuildonchangesinsnapshotdependencies"/>
 
-## Trigger a build on changes in snapshot dependencies
+## Trigger build on changes in snapshot dependencies
 
-If you have a [build chain](build-chain.md) (i.e. a number of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency)),  the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
+If you have a [build chain](build-chain.md) (that is a number of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency)), the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
 
 <include src="build-dependencies-setup.md" include-id="trigger-on-ssdep-chngs"/>
 
@@ -218,3 +218,21 @@ The VCS trigger is fully aware of branches and will trigger a build once a check
 When changes are merged / fast-forwarded from one branch to another, strictly speaking there are no actual changes in the code. By default, the VCS trigger behaves in the following way:
 * When merging/fast forwarding of two non-default branches: the changes in a build are calculated with regard to previous builds in the same branch, so if there is a build on same commit in a different branch, the trigger will start a build in another branch pointing to the same commit.
 *  If the default branch is one of the branches in the merging/fast-forwarding, the changes are always calculated against the default branch, if there is a build on same revision in the default branch, TeamCity will not run a new build on the same revision.
+
+## Triggered Build Customization
+
+<chunk include-id="triggered-build-customization">
+
+In terms of TeamCity 2021.1 EAP, the __Build Customization__ tab of a trigger's settings allows configuring custom parameters of builds started by this trigger. Similarly to the [Run Custom Build](running-custom-build.md) dialog, it lets you override values of [build parameters](configuring-build-parameters.md) and define if the [checkout directory](build-checkout-directory.md) should be cleaned before the build.
+
+On this tab, you can customize the value of any [parameter](configuring-build-parameters.md) used in the current [build configuration](build-configuration.md). Or, you can add a new parameter, and it will be available only in builds started by this trigger. If the current build has [snapshot dependencies](snapshot-dependencies.md) on other builds, such a parameter can also be used to [override a certain property](predefined-build-parameters.md#Overriding+Dependencies+Properties) of a dependency build configuration: use the `reverse.dep.<dependencyBuildID>.<property>` syntax for this.
+
+>If you redefine a build parameter inside a trigger and then delete the original parameter in __Parameters__, its redefined value will be converted to the trigger's own plain-text parameter. This is crucial to consider when customizing secure values, as they are only concealed if stored with the ["Password" type](typed-parameters.md) and will become readable if converted to plain text.
+>
+{type="note"}
+
+TeamCity allows solving similar tasks in multiple ways, and in some cases it is still preferable to create different build configurations. For example, if there are too many custom runs in the same configuration, it might be harder for TeamCity to predict the exact duration of each build. If you need to trigger builds with numerous different parameters, we suggest that you create a [build configuration template](build-configuration-template.md) and use it as a blueprint for several configurations, each with its own parameters.
+
+>This functionality gets more effective if you combine it with the [build step execution conditions](build-step-conditions.md). You can configure certain build steps to be executed only when special conditions are met, and then add multiple triggers each of whom will run a build with a slightly different set of steps.
+
+</chunk>

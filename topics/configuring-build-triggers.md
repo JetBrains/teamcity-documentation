@@ -1,7 +1,7 @@
 [//]: # (title: Configuring Build Triggers)
 [//]: # (auxiliary-id: Configuring Build Triggers)
 
-Once a build configuration is created, builds can be triggered manually by clicking the [Run](triggering-a-custom-build.md#Run+Custom+Build+dialog) button or initiated automatically with the help of _triggers_.
+Once a build configuration is created, builds can be triggered manually by clicking the [Run](running-custom-build.md#Run+Custom+Build+dialog) button or initiated automatically with the help of _triggers_.
 
 A _build trigger_ is a rule which initiates a new build on certain events. The build is put into the [build queue](build-queue.md) and is started when there are agents available to run it.
 
@@ -19,7 +19,7 @@ For each build configuration the following triggers can be configured:
 
 >Note that if you create a build configuration from a template, it inherits build triggers defined in the template, and they cannot be edited or deleted. However, you can specify additional triggers or disable a trigger permanently or temporarily.
 
-In addition to the triggers defined for the build configuration, you can also trigger a build by an [HTTP GET request](accessing-server-by-http.md#Triggering+a+Build+From+Script), or manually by running a custom build.
+In addition to the triggers defined for a build configuration, you can also trigger a build by an [HTTP GET request](accessing-server-by-http.md#Triggering+a+Build+From+Script), or manually by running a custom build.
 
 <seealso>
     <category ref="external">

@@ -2,7 +2,10 @@
 [//]: # (auxiliary-id: Configuring Maven Triggers)
 [//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e3.txt")    
 
-The __Triggers__ page of __Build Configuration Settings__ allows you to add the following Maven dependency triggers:
+The __Triggers__ page of __Build Configuration Settings__ allows you to add the following Maven-related triggers:
+
+* [Maven Snapshot Dependency Trigger](#Maven+Snapshot+Dependency+Trigger)
+* [Maven Artifact Dependency Trigger](#Maven+Artifact+Dependency+Trigger)
 
 ## Checksum Based Triggering
 
@@ -322,5 +325,8 @@ The trigger will check the latest snapshot version for updates
 
 </td></tr></table>
 
-[//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e322.txt")    
+[//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e322.txt")
 
+## Triggered Build Customization
+
+<include src="configuring-vcs-triggers.md" include-id="triggered-build-customization"/>

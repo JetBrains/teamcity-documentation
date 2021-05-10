@@ -19,7 +19,7 @@ There are three types of build parameters:
 TeamCity provides a set of [predefined parameters](predefined-build-parameters.md), and administrators can add custom parameters.
 
 The parameters can be defined at different levels (in order of precedence):
-* a specific build (via the [Run Custom Build](triggering-a-custom-build.md) dialog)
+* a specific build (via the [Run Custom Build](running-custom-build.md) dialog)
 * the __Parameters__ page of __Build Configuration Settings__ or [Build Configuration Template](build-configuration-template.md)
 * the __Parameters__ page of __Project Settings__; these affect all the build configurations and templates of the project and its subprojects
 * a build agent (the `<[Agent home](agent-home-directory.md)>/conf/buildAgent.properties` file on the agent)
@@ -38,7 +38,7 @@ The references to parameters which names do not satisfy the above restrictions d
 
 ## Defining Build Parameters in Build Configuration
 
-On the __Parameters__ page of __Build Configuration Settings__, you can define the required system properties and environment variables to be passed to the build script and environment when a build is started. Note that you can redefine them when launching a [custom build](triggering-a-custom-build.md).
+On the __Parameters__ page of __Build Configuration Settings__, you can define the required system properties and environment variables to be passed to the build script and environment when a build is started. Note that you can redefine them when launching a [custom build](running-custom-build.md).
 
 Build parameters defined in a build configuration are used only within this configuration. For other ways, refer to [Project- and Agent-Level Build Parameters](project-and-agent-level-build-parameters.md).
 

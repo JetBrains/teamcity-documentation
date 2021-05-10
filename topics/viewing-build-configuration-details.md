@@ -3,7 +3,7 @@
 
 The __Build Configuration Home__ page provides the configuration details and enables you to:
 	
-* [run a custom build](triggering-a-custom-build.md) using the __Run__ button
+* [run a custom build](running-custom-build.md) using the __Run__ button
 * using the __Actions__ menu			
   * [pause triggers](build-configuration.md#Build+Configuration+State)		
   * check for [pending changes](change-state.md)		

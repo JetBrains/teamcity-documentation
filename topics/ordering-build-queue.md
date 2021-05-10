@@ -52,7 +52,7 @@ It is possible to limit the maximum number of builds in the queue. By default, t
 
 When the queue size reaches the limit, TeamCity will pause [Configuring Build Triggers](configuring-build-triggers.md). Automatic build triggering will be reenabled once the queue size gets below limit. While triggering is paused, a warning message is shown to all the users.
 
- While __automatic__ triggering is paused, it is still possible to add builds to the queue [manually](triggering-a-custom-build.md).
+ While __automatic__ triggering is paused, it is still possible to add builds to the queue [manually](running-custom-build.md).
 
  <seealso>
         <category ref="concepts">

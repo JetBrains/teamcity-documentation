@@ -7,6 +7,8 @@ At the moment, the branch remote run trigger supports only Git and Mercurial VCS
 
 For non-personal builds off branches, see [Working with Feature Branches](working-with-feature-branches.md). When a branch specification is configured for a VCS root, the branch remote run trigger only processes branches not matched by the specification.
 
+## Triggering Settings
+
 A trigger monitors branches with names that match specific patterns.   
 Default patterns are:
 * for Git repositories: `refs/heads/remote-run/*`
@@ -53,9 +55,13 @@ marked working directory as branch remote-run/my_feature
 
 ```
 
-### Limitations
+## Limitations
 
 If your build configuration has more than one VCS root which support branch remote run, and you push changes to all of them, TeamCity will start one personal build with changes per each VCS root.
+
+## Triggered Build Customization
+
+<include src="configuring-vcs-triggers.md" include-id="triggered-build-customization"/>
 
  <seealso>
         <category ref="admin-guide">
