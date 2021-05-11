@@ -233,6 +233,6 @@ On this tab, you can customize the value of any [parameter](configuring-build-pa
 
 TeamCity allows solving similar tasks in multiple ways, and in some cases it is still preferable to create different build configurations. For example, if there are too many custom runs in the same configuration, it might be harder for TeamCity to predict the exact duration of each build. If you need to trigger builds with numerous different parameters, we suggest that you create a [build configuration template](build-configuration-template.md) and use it as a blueprint for several configurations, each with its own parameters.
 
->This functionality gets more effective if you combine it with the [build step execution conditions](build-step-conditions.md). You can configure certain build steps to be executed only when special conditions are met, and then add multiple triggers each of whom will run a build with a slightly different set of steps.
+>This functionality gets more effective if you combine it with the [build step execution conditions](build-step-execution-conditions.md). You can configure certain build steps to be executed only when special conditions are met, and then add multiple triggers each of whom will run a build with a slightly different set of steps.
 
 </chunk>
