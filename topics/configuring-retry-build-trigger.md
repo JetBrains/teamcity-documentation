@@ -3,6 +3,8 @@
 
 The _retry build trigger_ automatically adds a new build to the queue if the previous build of the current build configuration has failed.
 
+## Triggering Settings
+
 The following settings are available for the retry build trigger:
 
 <table>
@@ -73,3 +75,6 @@ Apply a [branch filter](branch-filter.md) to rerun failed builds only in branche
 
 </table>
 
+## Triggered Build Customization
+
+<include src="configuring-vcs-triggers.md" include-id="triggered-build-customization"/>

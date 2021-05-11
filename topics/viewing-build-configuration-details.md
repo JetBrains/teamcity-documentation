@@ -3,12 +3,13 @@
 
 The __Build Configuration Home__ page provides the configuration details and enables you to:
 	
-* [run a custom build](triggering-a-custom-build.md) using the __Run__ button
+* [run a custom build](running-custom-build.md) using the __Run__ button
 * using the __Actions__ menu			
   * [pause triggers](build-configuration.md#Build+Configuration+State)		
   * check for [pending changes](change-state.md)		
   * enforce [clean checkout](clean-checkout.md)		
   * [assign an investigation](investigating-and-muting-build-failures.md)
+  * [clean stream workspaces on a Perforce server](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server)
 * [edit the configuration settings](creating-and-editing-build-configurations.md#Configuring+Settings)
 
 The build configuration details are separated into several tabs whose number may vary depending on your server or project configuration, for example, [dependencies](dependent-build.md), [TeamCity integration with other tools](integrating-teamcity-with-other-tools.md), and so on. 

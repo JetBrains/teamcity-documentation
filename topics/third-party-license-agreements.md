@@ -1004,14 +1004,14 @@ License
 
 <td>
 
-[NanoContainer](http://nanocontainer.codehaus.org/)
+[NanoContainer](https://github.com/picocontainer/NanoContainer)
 
 
 </td>
 
 <td>
 
-[NanoContainer](http://nanocontainer.codehaus.org/License)
+[NanoContainer](https://github.com/picocontainer/NanoContainer/blob/master/LICENSE.txt)
 
 
 </td></tr><tr>
@@ -1683,7 +1683,9 @@ Paul Johnson's MD5 Copyright © 1998 \- 2002, Paul Johnston &amp; Contributors. 
 
 Portions of PostgreSQL Copyright © 1996\-2005, The PostgreSQL Global Development Group or Portions Copyright © 1994, The Regents of the University of California.
 
-Raphaël © 2008 Dmitry BaranovskiyRome is Copyright © 2004 Sun Microsystems, Inc.
+Raphaël © 2008 Dmitry Baranovskiy
+
+Rome is Copyright © 2004 Sun Microsystems, Inc.
 
 [Script.aculo.us](http://Script.aculo.us) Copyright © 2005 Thomas Fuchs ([http://script.aculo.us](http://script.aculo.us/), [http://mir.aculo.us](http://mir.aculo.us/)).
 

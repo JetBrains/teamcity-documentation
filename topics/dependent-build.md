@@ -41,7 +41,7 @@ A build of a chain can [reference parameters](predefined-build-parameters.md#Dep
 There is a [special support](predefined-build-parameters.md#Overriding+Dependencies+Properties) for pushing parameters down the chain when a build with snapshot dependencies is triggered. It is done by defining a parameter with `reverse.dep.<configurationId>.<parameterName>` name.
 
 When setting up __triggers__ for the builds in the chain, the recommended approach is: _think about the result_ — the build you want to get at the end of the process, and configure triggers in its corresponding, "top" build configuration. No triggers are necessary in the build configurations this top one depends on, as their builds will be put into the queue automatically when the top one is triggered.   
-See also the related "Trigger on changes in snapshot dependencies" [setting](configuring-vcs-triggers.md#Trigger+a+build+on+changes+in+snapshot+dependencies) of a VCS trigger and the "Show changes from snapshot dependencies" [checkbox](build-dependencies-setup.md#show-changes-from-dependencies) in the "Version Control Settings" configuration section.
+See also the related "Trigger on changes in snapshot dependencies" [setting](configuring-vcs-triggers.md#Trigger+build+on+changes+in+snapshot+dependencies) of a VCS trigger and the "Show changes from snapshot dependencies" [checkbox](build-dependencies-setup.md#show-changes-from-dependencies) in the "Version Control Settings" configuration section.
 
 Let's consider an example to illustrate how snapshot dependencies work.
 

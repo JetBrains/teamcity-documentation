@@ -11,7 +11,7 @@ To manually add a build to your favorites, use the appropriate option from the _
 
 Any of your manually triggered builds and [personal builds](personal-build.md) can be added to your favorites automatically if you enable the corresponding setting in your [user profile settings](managing-your-user-account.md).
 
-You can also add a custom build to favorites by checking the [corresponding box](triggering-a-custom-build.md#Comment+and+Tags).
+You can also add a custom build to favorites by checking the [corresponding box](running-custom-build.md#Comment+and+Tags).
 
 ## Viewing Your Favorites
 

@@ -8,7 +8,7 @@ Read more about running commits via Remote Run in [Pre-Tested (Delayed) Commit](
 
 By default, users only see their own personal builds in the build lists, but this can be changed via the "_Show all personal builds_" option in __My Settings & Tools | General | UI settings__ of the [user profile](managing-your-user-account.md).
 
-You can also mark a build as _personal_ using the corresponding option of the [Run](triggering-a-custom-build.md) dialog.   
+You can also mark a build as _personal_ using the corresponding option of the [Run](running-custom-build.md) dialog.   
 By default, only users with the Project Developer [role](role-and-permission.md) can initiate a personal build.
 
 It is possible to [restrict running personal builds](configuring-general-settings.md#Allow+Triggering+Personal+Builds) in the __General Settings__ of a build configuration.
@@ -34,7 +34,7 @@ __To generate a patch__:
 For example, to save a diff between the last commit and the preceding commit to the `patch.diff` file in the `test` folder, run `git diff HEAD^ HEAD > ~/test/patch.diff`. See other examples in [Git documentation](https://git-scm.com/docs/git-diff#_examples).
 
 __To upload a patch and run a personal build via the web UI__:
-1. Open the [Run Custom Build](triggering-a-custom-build.md) dialog and enable the "_run as a personal build_" option. The __Upload patch__ button will appear. <img src="upload-patch-ui.png" alt="Upload a unidiff patch via UI" width="500"/>
+1. Open the [Run Custom Build](running-custom-build.md) dialog and enable the "_run as a personal build_" option. The __Upload patch__ button will appear. <img src="upload-patch-ui.png" alt="Upload a unidiff patch via UI" width="500"/>
 2. Upload the patch and click __Run Build__.   
 The agent will receive the patch and apply it before running the build. After the build, it will revert the patch, so the checkout directory can be reused by subsequent builds.
 

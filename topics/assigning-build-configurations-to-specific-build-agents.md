@@ -11,7 +11,7 @@ It is sometimes necessary to manage the [Build Agents](build-agent.md)' workload
 <tip>
 
 * You can modify these parameters when setting up the project or build configuration, or at any moment you need. The changes you make to the build configurations are applied on the fly.	
-* You can specify a particular build agent to run a build on when [Triggering a Custom Build](triggering-a-custom-build.md).
+* You can specify a particular build agent to run a build on when [Triggering a Custom Build](running-custom-build.md).
 
 </tip>
 
@@ -50,6 +50,6 @@ You can also use the condition __contains__, however, it may include more than o
             <a href="run-configuration-policy.md">Run Configuration Policy</a>
         </category>
         <category ref="admin-guide">
-            <a href="triggering-a-custom-build.md">Triggering a Custom Build</a>
+            <a href="running-custom-build.md">Triggering a Custom Build</a>
         </category>
 </seealso>

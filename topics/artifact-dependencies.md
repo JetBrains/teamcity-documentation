@@ -126,7 +126,7 @@ Check this option to delete the content of the destination directories before co
 
 </td></tr></table>
 
-At any point you can launch a build with [custom artifact dependencies](triggering-a-custom-build.md#Promoting+Build).
+At any point you can launch a build with [custom artifact dependencies](running-custom-build.md#Promoting+Build).
 
 ### Artifacts Rules
 

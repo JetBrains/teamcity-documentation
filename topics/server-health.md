@@ -129,7 +129,7 @@ TeamCity displays a warning if a rule of a [VCS Trigger or Schedule Trigger](con
 The report will show cases when a build trigger is redundant, for example:
 * There are two build configurations __A__ and __B__
 * __A__ snapshot depends on __B__
-* Both have VCS triggers, __A__ with the [Trigger on changes in snapshot dependencies](configuring-vcs-triggers.md#Trigger+a+build+on+changes+in+snapshot+dependencies) option enabled.
+* Both have VCS triggers, __A__ with the [Trigger on changes in snapshot dependencies](configuring-vcs-triggers.md#Trigger+build+on+changes+in+snapshot+dependencies) option enabled.
 In this case, the VCS trigger in __B__ is redundant and causes builds of __A__ to be put into the queue several times.
 
 #### Multiple identical build triggers

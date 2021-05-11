@@ -9,7 +9,7 @@ In TeamCity a build goes through several states:
 In TeamCity all information about a particular build, whether it is queued, running or finished, is accumulated on the __Build Results__ page. The page can be accessed by clicking the build number or build status link.
 
 Besides providing the build information, this page enables you to:
-* [run a custom build](triggering-a-custom-build.md) using the __Run__ button
+* [run a custom build](running-custom-build.md) using the __Run__ button
 * use the __Actions__ menu to do the following: 
   * add a build to [favorites](favorite-build.md)
   * add a comment
@@ -70,7 +70,7 @@ For each change on this page you can:
 * Explore the change in details
 * View which dependent build the changes come from or builds with snapshot dependencies with the  "Show changes from snapshot dependencies" option  enabled. On hovering over the ![link.png](link.png) icon, the number of the dependent build is displayed; clicking the link opens the __Сhanges__ tab of the dependent build.
 * Navigate to the __Change Details__ by clicking a changed file link
-* [Trigger a custom build](triggering-a-custom-build.md) with this change
+* [Trigger a custom build](running-custom-build.md) with this change
 * Download patch
 * Download patch to your IDE
 * Review the change in an [external change viewer](external-changes-viewer.md), if configured by the administrator.

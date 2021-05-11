@@ -1010,7 +1010,7 @@ In general, setup steps for configuring deployments are:
 3. In this build configuration configure [artifact dependency](dependent-build.md#Artifact+Dependency) on a build configuration that produces binaries that need to be deployed.
 4. Configure one of the available triggers in the deploying build configuration if you need the deployment to be triggered automatically (e.g. to deploy last successful of last pinned build), or use "Promote" action in the build that produced the binaries to be deployed.
 5. Consider using [snapshot dependencies](dependent-build.md#Snapshot+Dependency) in addition to artifact ones and check [Build Chains](build-chain.md) tab to get the overview of the builds. In this case artifact dependency should use "Build from the same chain" option.
-6. If you need to parametrize the deployment (e.g. specify different target machines in different runs), pass parameters to the build script using [custom build run dialog](triggering-a-custom-build.md). Consider using [Typed Parameters](typed-parameters.md) to make the custom run dialog easier to use or handle passwords.
+6. If you need to parametrize the deployment (e.g. specify different target machines in different runs), pass parameters to the build script using [custom build run dialog](running-custom-build.md). Consider using [Typed Parameters](typed-parameters.md) to make the custom run dialog easier to use or handle passwords.
 7. If the deploying build is triggered manually consider also adding commands in the build script to pin and tag the build being deployed (via sending a [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Build+Tags) request). You can also [use a build number](#Share+the+Build+number+for+Builds+in+a+Chain+Build) from the build that generated the artifact.
 
 Further recommendations:
@@ -1135,7 +1135,7 @@ In case a build fails on some agent, it is possible to debug it on this very age
 1. Go to the __Agents__ page in the TeamCity web UI and [select the agent](viewing-build-agent-details.md).
 2. [Disable the agent](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) to temporarily remove it from the [build grid](build-grid.md). Add a comment (optional). To enable the agent automatically after a certain time period, check the corresponding box and specify the time.
 3. [Select the build](working-with-build-results.md) to debug.
-4. Open the [Custom Run](triggering-a-custom-build.md#Run+Custom+Build+dialog) dialog and specify the following options: 
+4. Open the [Custom Run](running-custom-build.md#Run+Custom+Build+dialog) dialog and specify the following options: 
     a. In the __Agent__ drop-down menu, select the disabled agent.
     b. It is recommended to select the __run as [Personal Build](personal-build.md)__ option to avoid intersection with regular builds.
 5. When debugging is complete, enable the agent manually if automatic reenabling has not been configured.
@@ -1147,7 +1147,7 @@ You can also perform [remote debugging](remote-debug.md) of tests on an agent vi
 If a build containing several steps fails at a certain step, it is possible to debug the step that breaks. Do the following:
 1. Go to the build configuration and disable the build steps up to the one you want to debug.
 2. [Select the build](working-with-build-results.md) to debug.
-3. Open the [Custom Run](triggering-a-custom-build.md#Run+Custom+Build+dialog) dialog and select the __put the build to the [queue top](build-queue.md)__ to give you build the priority.
+3. Open the [Custom Run](running-custom-build.md#Run+Custom+Build+dialog) dialog and select the __put the build to the [queue top](build-queue.md)__ to give you build the priority.
 4. When debugging is complete, reenable the build steps.
 
 ## Watch Several TeamCity Servers with Windows Tray Notifier

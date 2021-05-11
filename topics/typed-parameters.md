@@ -1,7 +1,7 @@
 [//]: # (title: Typed Parameters)
 [//]: # (auxiliary-id: Typed Parameters)
 
-When adding a [build parameter](configuring-build-parameters.md) (system property, environment variable, or configuration parameter), you can extend its definition with meta-information, or _specification_. The parameter's specification defines how its controls are presented and validated in the _[Run Custom Build](triggering-a-custom-build.md)_ dialog.
+When adding a [build parameter](configuring-build-parameters.md) (system property, environment variable, or configuration parameter), you can extend its definition with meta-information, or _specification_. The parameter's specification defines how its controls are presented and validated in the _[Run Custom Build](running-custom-build.md)_ dialog.
 
 By adding a typed specification to a parameter, you make it a _typed parameter_. Typed parameters are more understandable for non-developers and make experience with builds more user-friendly.
 
@@ -132,7 +132,7 @@ __Checked value/Unchecked value__: Specify values of the parameter respective to
 We recommend that you keep the unchecked value equal to the default value and specify a custom checked value.
 
 Depending on how the build is triggered, the checkbox behavior will be as follows:
-* if the build is triggered by an automatic trigger or by clicking __Run__ (without the [_Run Custom Build_](triggering-a-custom-build.md) dialog), the default value is used;
+* if the build is triggered by an automatic trigger or by clicking __Run__ (without the [_Run Custom Build_](running-custom-build.md) dialog), the default value is used;
 * if the build is triggered via the _Run Custom Build_ dialog without changing anything, the "unchecked" value is used, if it is not empty and differs from the default one; if empty, the default value is used;
 * if the build is triggered via the _Run Custom Build_ dialog with the box checked, the "checked" value is used, if it is not empty; if it is empty, the `true` value is used.
 
