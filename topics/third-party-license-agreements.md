@@ -385,6 +385,18 @@ License
 
 <td>
 
+[Elasticsearch](https://www.elastic.co/)
+
+</td>
+
+<td>
+
+[Apache](http://www.apache.org/licenses/LICENSE-2.0)
+
+</td></tr><tr>
+
+<td>
+
 [Expat XML Parser Toolkit](http://www.jclark.com.md/expat.html)
 
 
@@ -1645,6 +1657,7 @@ License
 This product includes software developed by Spring Security Project ([http://acegisecurity.org](http://acegisecurity.org/)). (Acegi Security)
 
 This product includes software developed by The Apache Software Foundation ([http://www.apache.org/](http://www.apache.org/)). (Apache Ant, Ivy, Jakarta, Log4j, Maven2, Tomcat, and Xerces2 Java Parser)
+
 This product includes software developed by the DOM Project ([http://www.jdom.org/](http://www.jdom.org/)). (JDom)
 
 This product includes software developed by the Visigoth Software Society ([http://www.visigoths.org/](http://www.visigoths.org/)). (FreeMarker)
