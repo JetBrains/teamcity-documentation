@@ -223,16 +223,14 @@ When changes are merged / fast-forwarded from one branch to another, strictly sp
 
 <chunk include-id="triggered-build-customization">
 
-In terms of TeamCity 2021.1 EAP, the __Build Customization__ tab of a trigger's settings allows configuring custom parameters of builds started by this trigger. Similarly to the [Run Custom Build](running-custom-build.md) dialog, it lets you override values of [build parameters](configuring-build-parameters.md) and define if the [checkout directory](build-checkout-directory.md) should be cleaned before the build.
+The __Build Customization__ tab of a trigger's settings allows configuring custom parameters of builds started by this trigger. Similarly to the [Run Custom Build](running-custom-build.md) dialog, it lets you override values of [build parameters](configuring-build-parameters.md) and choose if the [checkout directory](build-checkout-directory.md) should be cleaned before the build.
 
 On this tab, you can customize the value of any [parameter](configuring-build-parameters.md) used in the current [build configuration](build-configuration.md). Or, you can add a new parameter, and it will be available only in builds started by this trigger. If the current build has [snapshot dependencies](snapshot-dependencies.md) on other builds, such a parameter can also be used to [override a certain property](predefined-build-parameters.md#Overriding+Dependencies+Properties) of a dependency build configuration: use the `reverse.dep.<dependencyBuildID>.<property>` syntax for this.
 
->If you redefine a build parameter inside a trigger and then delete the original parameter in __Parameters__, its redefined value will be converted to the trigger's own plain-text parameter. This is crucial to consider when customizing secure values, as they are only concealed if stored with the ["Password" type](typed-parameters.md) and will become readable if converted to plain text.
->
-{type="note"}
+>This functionality gets more effective if you combine it with the [build step execution conditions](build-step-execution-conditions.md). You can configure certain build steps to be executed only when special conditions are met, and then add multiple triggers each of whom will run a build with a slightly different set of steps.
+
+Note that if you redefine a build parameter inside a trigger and then delete the original parameter in __Parameters__, its redefined value will be converted to the trigger's own plain-text parameter. This is crucial to consider when customizing secure values, as they are only concealed if stored with the ["Password" type](typed-parameters.md) and will become readable if converted to plain text.
 
 TeamCity allows solving similar tasks in multiple ways, and in some cases it is still preferable to create different build configurations. For example, if there are too many custom runs in the same configuration, it might be harder for TeamCity to predict the exact duration of each build. If you need to trigger builds with numerous different parameters, we suggest that you create a [build configuration template](build-configuration-template.md) and use it as a blueprint for several configurations, each with its own parameters.
-
->This functionality gets more effective if you combine it with the [build step execution conditions](build-step-execution-conditions.md). You can configure certain build steps to be executed only when special conditions are met, and then add multiple triggers each of whom will run a build with a slightly different set of steps.
 
 </chunk>
