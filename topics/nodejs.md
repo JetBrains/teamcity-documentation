@@ -17,6 +17,10 @@ Currently supported frameworks are [ESlint](https://eslint.org/), [Jest](https:/
 
 If TeamCity detects an `.nvmrc` file, it will automatically use the node version specified in it.
 
+## Running Node.js Commands
+
+In the _Shell script_ field, enter all Node.js commands to be executed in this step.
+
 ## Accessing Private Registries
 
 To access a private npm registry during a build (for example, to download a package), you need to:
