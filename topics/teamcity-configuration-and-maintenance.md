@@ -216,3 +216,55 @@ You can change the custom key or go back to using the default strategy anytime.
 During backup, your custom keys will be exported along with their projects and automatically available after restoring from backup. Since keys will be stored in the exported files in an open form, make sure the backup files are well-protected.
 
 </note>
+
+## Artifacts' Domain Isolation
+{id="artifacts-domain-isolation" auxiliary-id="Artifacts Domain Isolation" product="tc"}
+
+<table><tr>
+
+<td width="100">
+
+Setting
+
+</td>
+
+<td>
+
+Description
+
+</td></tr><tr>
+
+<td>
+
+Enable isolation protection
+
+</td>
+
+<td>
+
+If enabled, build artifacts will be loaded from a separate domain and any potential malicious content will not be able to communicate with the TeamCity server on behalf of the user viewing this content. This mitigates the risk of XSS attacks through artifacts and of other related vulnerabilities.
+
+Note that this mode requires configuring a dedicated domain for TeamCity and properly routing it via proxy. To continue using artifacts for displaying some build results (for example, custom reports), you need to specify this domain's URL below.
+
+</td></tr><tr>
+
+<td id="artifacts-url">
+
+Artifacts' URL
+
+</td>
+
+<td>
+  
+Specify a URL to serve build artifacts from. The URL must be different from the [Server URL](#server-url).
+
+On receiving a request for a content of some artifact, TeamCity will redirect your browser to a temporary URL that uses this artifacts' URL as a base. The temporary URL expires after some time to prevent unauthorized access to the artifact. Upon accessing the expired URL, a regular authentication will be performed and a new URL will be generated.  
+The same logic applies to the [custom report tabs](including-third-party-reports-in-the-build-results.md) because their content also comes from the build artifacts.
+
+For a personal TeamCity installation, which is accessible via localhost only, a URL like `http://127.0.0.1[:port]/` would be sufficient.
+
+For a TeamCity server used by an organization, a new DNS name, or a [`CNAME`](https://en.wikipedia.org/wiki/CNAME_record), should be registered either for the machine where the server is installed or for a reverse proxy server if TeamCity is accessible through the proxy. The URL with this new hostname should be specified in the artifacts' URL.
+
+Note: as this is a special URL which exists for serving artifacts only, users will not be able to sign in to the TeamCity interface via it.
+
+</td></tr></table>
