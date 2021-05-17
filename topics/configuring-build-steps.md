@@ -45,7 +45,7 @@ Since TeamCity 2020.1, you can also add granular [execution conditions](build-st
 
 ## Autodetecting build steps
 
-TeamCity can scan the source VCS repository of a project and autodetect build steps in Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.
+TeamCity can scan the source VCS repository of a project and autodetect build steps in Node.js, Kotlin, Python, Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.
 
 In __Build Steps__, click __Auto-detect build steps__, and then select the proposed steps you want to add to the current build configuration. You can change their settings afterwards.
 

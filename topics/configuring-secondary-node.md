@@ -55,7 +55,7 @@ By default, a newly started secondary node provides a read-only user interface a
 * [VCS repositories polling](#VCS+Repositories+Polling+on+Secondary+Node)
 * [Processing build triggers](#Processing+Triggers+on+Secondary+Node)
 * [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node)
-* In 2021.1 EAP2: [Main TeamCity node](#Main+Node+Responsibility)
+* In 2021.1 EAP: [Main TeamCity node](#Main+Node+Responsibility)
 
 <img src="Nodes.png" alt="Secondary node responsibilities"/>
 
@@ -94,7 +94,7 @@ This responsibility is responsible for allowing [user actions on a secondary nod
 
 ### Main Node Responsibility
 
-In terms of TeamCity 2021.1 EAP2, you can assign a secondary node to the _Main TeamCity node_ responsibility. This responsibility by default belongs to the current main server, but gets vacant if this server becomes unavailable. After you assign any secondary server to this responsibility, it becomes the main node and receives all its other responsibilities (processing builds, managing agents, and so on). All the running builds will continue their operations without interruption. If a [proxy is configured](multinode-setup.md#ProxyConfiguration) in your setup, build agents will seamlessly reconnect to the new main node.  
+In terms of TeamCity 2021.1 EAP, you can assign a secondary node to the _Main TeamCity node_ responsibility. This responsibility by default belongs to the current main server, but gets vacant if this server becomes unavailable. After you assign any secondary server to this responsibility, it becomes the main node and receives all its other responsibilities (processing builds, managing agents, and so on). All the running builds will continue their operations without interruption. If a [proxy is configured](multinode-setup.md#ProxyConfiguration) in your setup, build agents will seamlessly reconnect to the new main node.  
 When the previous main server starts again, it becomes a secondary node, as the _Main TeamCity node_ responsibility is already occupied by another server. If necessary, you can repeat the procedure above to switch roles between these servers.
 
 ## User-level Actions on Secondary Node
