@@ -11,7 +11,7 @@ If the [limit of agentless builds](#Agentless+builds%27+licensing) is not exceed
 
 >We highly recommend releasing the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require the build agent.
 
-In terms of TeamCity 2021.1 EAP, this service message supports the `trackingInfo` attribute (Unicode, up to 1000 symbols) for providing an information that could help track a build on the TeamCity server (for example, a deployment ID).
+This service message supports the `trackingInfo` attribute (Unicode, up to 1000 symbols) for providing an information that could help track a build on the TeamCity server (for example, a deployment ID).
 
 ## Logging build data
 

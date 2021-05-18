@@ -10,7 +10,7 @@ There are several ways of launching a custom build in TeamCity:
 * To run a custom build with specific changes, open the build results page, go to the [Changes](working-with-build-results.md#Changes) tab, expand the required change, click the __Run build with this change__, and proceed with the [options](#General+Options) in the __Run Custom Build__ dialog.
 * Use [HTTP request](accessing-server-by-http.md) or [REST API request](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Triggering+Build) to TeamCity to trigger a build.
 * Promote a build - see the section [below](#Promoting+Build).
-* In terms of TeamCity 2021.1 EAP, [build triggers](configuring-build-triggers.md) can launch builds with custom parameters.
+* [Build triggers](configuring-build-triggers.md) can launch builds with custom parameters.
 
 ## Run Custom Build dialog
 

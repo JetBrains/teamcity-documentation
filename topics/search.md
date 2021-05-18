@@ -3,7 +3,7 @@
 
 After you have installed and started running TeamCity, it collects the information on builds, tests and so on and indexes it. You can search builds by build number, tag, build configuration name, and other different parameters specifying one or several keywords. You can also search for builds by text in build logs, and by the [external ID](identifier.md#External+IDs) of a build configuration.
 
-By default, TeamCity stores a search index locally. In terms of TeamCity 2021.1 EAP, you can also switch to an [Elastic-based search mode](search-settings.md).
+By default, TeamCity stores a search index locally, but you can also switch to an [Elastic-based search mode](search-settings.md).
 
 ## Search Query
 

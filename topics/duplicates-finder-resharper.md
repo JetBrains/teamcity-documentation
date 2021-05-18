@@ -8,7 +8,7 @@ The _Duplicates finder (ReSharper)_ build runner, based on [ReSharper Command Li
 This runner requires .NET Framework 4.6.1 (or higher) to be installed on the agent where builds will run.
 </note>
 
-Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container (in terms of TeamCity EAP 2021.1).
+Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container).
 
 ## Sources
 
@@ -93,7 +93,7 @@ dupFinder Platform
 
 <td id="ReSharperDupFinderPlatform" auxiliary-id="ReSharperDupFinderPlatform">
 
-Select the platform bitness of the dupFinder tool. By default, x64. In terms of TeamCity 2021.1 EAP, the cross-platform duplicates finder is also supported in ReSharper 2020.2.1 or later.
+Select the platform bitness of the dupFinder tool. By default, x64. The cross-platform duplicates finder is also supported in ReSharper 2020.2.1 or later.
 
 </td></tr>
 

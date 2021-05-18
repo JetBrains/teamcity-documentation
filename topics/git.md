@@ -329,7 +329,7 @@ Checkout policy
 
 <td>
 
-Available in terms of TeamCity 2021.1 EAP. This setting defines how TeamCity performs a checkout to a build agent.
+This setting defines how TeamCity performs a checkout to a build agent.
 
 * __Use mirrors__: recommended for long-lived agents. With this option selected, TeamCity creates a remote repository cache on the agent machine under the `system/caches/git` directory. The cache is then added as [alternates](https://git-scm.com/docs/gitrepository-layout) when updating the [build checkout directory](build-checkout-directory.md). To speed up the following checkouts of this repository, the agent will reuse the cache in all the builds with the same fetch URL. This also speeds up clean checkout (as only the [build working directory](build-working-directory.md) is cleaned) and saves disk space (as the mirror is the only clone of the given repository on the agent).
 * __Do not use mirrors__: choose to check out right into the [build checkout directory](build-checkout-directory.md), without creating a mirror. Less optimal in terms of disk usage than mirrors.

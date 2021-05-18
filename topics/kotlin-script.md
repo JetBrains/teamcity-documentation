@@ -3,13 +3,11 @@
 
 The _Kotlin Script_ runner allows executing a [Kotlin](https://kotlinlang.org/) script on Windows, Linux, or macOS.
 
->This runner is a part of TeamCity 2021.1 Early Access Program.
-
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings.
 
 ## Prerequisites
 
-A [Kotlin](https://kotlinlang.org/) compiler version 1.3.70 or later must be [installed as an agent tool](installing-agent-tools.md) to run this step. Kotlin 1.4.31 is already bundled with TeamCity, but you can install other versions if necessary.
+A [Kotlin](https://kotlinlang.org/) compiler version 1.3.70 or later must be [installed as an agent tool](installing-agent-tools.md) to run this step. Kotlin 1.5.0 is already bundled with TeamCity.
 
 ## Kotlin settings
 
@@ -77,12 +75,23 @@ Available for the __Custom Script__ type.
 
 Enter a code of a Kotlin script.
 
-If you want to extend the script's functionality with external libraries, you can use annotation-based references to Maven dependencies. For example:
+To extend the script's functionality with external libraries, you can use annotation-based references to Maven dependencies. For example:
 
 ```Kotlin
-@file:Repository("https://mvnrepository.com")
-@file:DependsOn("com.google.code.gson:gson:2.8.6")
-import com.google.gson.Gson
+#!/usr/bin/env kotlin
+
+@file:Repository("https://jcenter.bintray.com")
+@file:DependsOn("org.jetbrains.kotlinx:kotlinx-html-jvm:0.6.11")
+
+import kotlinx.html.*; import kotlinx.html.stream.*; import kotlinx.html.attributes.*
+
+val addressee = args.firstOrNull() ?: "World"
+
+print(createHTML().html {
+    body {
+        h1 { +"Hello, $address!" }
+    }
+})
 
 ...
 
@@ -126,7 +135,17 @@ Script parameters
 
 Enter the parameters of the script, as in the command line. [Parameter references](configuring-build-parameters.md#parameter-reference) are supported.
 
->We highly recommend that you use parameter references here to pass access tokens and other secure values into the script. This will ensure that these values are available on the agent only during the build. Otherwise, if the parameters are specified directly inside the script, their resolved values will be stored on the agent machine as long as the script itself is stored, which might compromise the security of your data.
+For security reasons, we highly recommend that you avoid using parameter references directly inside scripts if these parameters represent secure values. You can pass such values via script parameters instead. For example, to pass a token value, [add a new build parameter](configuring-build-parameters.md) with the "Password" type, refer it in the runner’s _Script parameters_ field:
+
+`%access_token%`
+
+and call it as an argument within the script:
+
+`val accessToken = args[0]`
+
+This way, you can reuse the token’s value anywhere in the script.
+
+This practice will ensure that these values are available on the agent only during the build. Otherwise, if the parameters are specified directly inside the script, their resolved values will be stored on the agent machine as long as the script itself is stored, which might compromise the security of your data.
 
 </td>
 

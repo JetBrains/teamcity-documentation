@@ -55,7 +55,7 @@ By default, a newly started secondary node provides a read-only user interface a
 * [VCS repositories polling](#VCS+Repositories+Polling+on+Secondary+Node)
 * [Processing build triggers](#Processing+Triggers+on+Secondary+Node)
 * [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node)
-* In 2021.1 EAP: [Main TeamCity node](#Main+Node+Responsibility)
+* [Main TeamCity node](#Main+Node+Responsibility)
 
 <img src="Nodes.png" alt="Secondary node responsibilities"/>
 
@@ -72,7 +72,7 @@ In general, you do not need a separate node for running builds unless you have m
 Once you assign a secondary node to the _Processing data produced by builds_ responsibility for the first time, all\* newly started builds will be routed to this node. The existing running builds will continue being executed on the main server. When you disable the responsibility, only the newly started builds will be switched to the main server. The builds that were already running on the secondary node will continue running there.  
 If you assign more than one secondary nodes to this responsibility, builds will be distributed equally between these nodes.
 
-\* In terms of TeamCity 2021.1 EAP, you can control how many builds can be run by each node.  
+\* You can control how many builds can be run by each node.  
 To do this, find the required node in the list of available nodes and click __...__  next to its _Processing data produced by running builds_ responsibility. The _Builds distribution limits_ menu will open. In this menu, you can enter a relative limit of builds allowed to run on this node. We suggest that you choose this limit depending on the node's hardware capabilities.  
 If the maximum limit of allowed running builds is reached on all secondary nodes, TeamCity will be running new builds on the main node until some secondary node finishes its build.
 
@@ -94,7 +94,7 @@ This responsibility is responsible for allowing [user actions on a secondary nod
 
 ### Main Node Responsibility
 
-In terms of TeamCity 2021.1 EAP, you can assign a secondary node to the _Main TeamCity node_ responsibility. This responsibility by default belongs to the current main server, but gets vacant if this server becomes unavailable. After you assign any secondary server to this responsibility, it becomes the main node and receives all its other responsibilities (processing builds, managing agents, and so on). All the running builds will continue their operations without interruption. If a [proxy is configured](multinode-setup.md#ProxyConfiguration) in your setup, build agents will seamlessly reconnect to the new main node.  
+You can assign a secondary node to the _Main TeamCity node_ responsibility. This responsibility by default belongs to the current main server, but gets vacant if this server becomes unavailable. After you assign any secondary server to this responsibility, it becomes the main node and receives all its other responsibilities (processing builds, managing agents, and so on). All the running builds will continue their operations without interruption. If a [proxy is configured](multinode-setup.md#ProxyConfiguration) in your setup, build agents will seamlessly reconnect to the new main node.  
 When the previous main server starts again, it becomes a secondary node, as the _Main TeamCity node_ responsibility is already occupied by another server. If necessary, you can repeat the procedure above to switch roles between these servers.
 
 ## User-level Actions on Secondary Node
