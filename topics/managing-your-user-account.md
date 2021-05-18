@@ -31,19 +31,19 @@ If [token-based authentication](configuring-authentication-settings.md#Token-Bas
 
 You can manage tokens in __My Settings & Tools | Access Tokens__. Note that the token value is only available during token creation and is not possible for retrieval afterwards.
   
-Since TeamCity 2020.2, you can specify a token's time limit so the token is automatically revoked after its expiration.
+To automatically revoke a token after its expiration, specify its time limit.
 
 <video href="_3oKTnYwKa8"
 title="New in TeamCity 2020.2: Short-lived Access Tokens"/>
 
 <anchor name="token-scope"/>
 
-You can create tokens with limited permissions for REST API requests. By default, the __Permissions scope__ field value is set to "_Same as user_", which means that the created token will grant the same permissions as those of the current user. You can use such token both for authentication via UI and for REST API requests.   
-If you change the value to "_Limit to project_", you will be able to limit the token's access to a certain project and select particular permissions for it. The list of available projects and their permissions depend on your user permissions. Such token can only be used for REST API requests.
+You can create tokens with limited permissions for REST API requests. By default, the __Permissions scope__ field value is set to "_Same as current user_", which means that the created token will grant the same permissions as those of the current user. You can use such token both for authentication in the UI and for REST API requests.   
+If you change the value to "_Limit per project_", you will be able to limit the token's access to a certain project and select particular permissions for it. The list of available projects and their permissions depend on your user permissions. Such token can only be used for REST API requests.
 
 <img src="create-access-token.png" alt="Create an access token"/>
 
-As this feature is still in progress, some operations allowed by enabled permissions might be blocked by the absence of other permissions. Please make sure to thoroughly manage the token's scope to get predictable results of your requests. In case of any issues, you can contact us via any convenient [feedback channel](feedback.md).
+Note that some operations allowed by enabled permissions might be blocked by the absence of other permissions. Please make sure to thoroughly manage the token's scope to get predictable results of your requests. In case of any issues, you can contact us via any convenient [feedback channel](feedback.md).
 
 ## Managing Version Control Username Settings
 
