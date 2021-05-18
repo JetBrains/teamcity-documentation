@@ -7,11 +7,15 @@ Refer to [Configuring Build Steps](configuring-build-steps.md) for a description
 
 ## Prerequisites
 
-Currently, Node.js steps can only be run inside a Docker container. `node:lts` is used by default.
+Currently, Node.js steps can only be run inside a Docker container. TeamCity uses `node:lts` by default, or, if there is an `.nvmrc` file inside your project, it will search for the image specification there.
 
 ## Autodetecting JavaScript Steps
 
 If your repository contains a `package.json` file, TeamCity will [automatically detect](configuring-build-steps.md#Autodetecting+build+steps) used frameworks and propose adding respective build steps.
+
+>If TeamCity detects a dependency on a test framework, it will propose choosing between two steps: run tests via this framework or with a general `test` command. To display structured test reports in TeamCity, select the step with the framework.
+> 
+{type="note"}
 
 Currently supported frameworks are [ESlint](https://eslint.org/), [Jest](https://jestjs.io/), [Mocha](https://mochajs.org/), and [Hermione](https://www.npmjs.com/package/hermione).
 
@@ -24,10 +28,11 @@ In the _Shell script_ field, enter all Node.js commands to be executed in this s
 ## Accessing Private Registries
 
 To access a private npm registry during a build (for example, to download a package), you need to:
-1. In __Project Settings | Connections__, configure an _NPM Registry_ connection: specify the registry URL, automation access token, and a scope.
+1. In __Project Settings | Connections__, configure an _NPM Registry_ connection: specify the registry URL, automation access token, and a scope.  
+   The scope defines which registries will be accessed by the npm commands. It is a good practice to keep this specification in one place, that is in the connection settings: either in the TeamCity connection instance or directly in the `.npmrc` file. Alternatively, if you don't specify a scope in the connection settings, you can still access a specific registry within a Node.js step by appending `--registry registry_url` to the `npm ...` command.
 2. In __Build Configuration Settings | Build Features__, add an _NPM Registry Connection_ build feature and select the new connection, so it can be used in this configuration.
 
-As a result, a TeamCity agent will authenticate in this registry during the build and sign out after its finish.
+As a result, a TeamCity agent will authenticate in this registry during the build.
 
 >Note that TeamCity will only be able to access registries where automation tokens are allowed. If your connection test fails in TeamCity, revise the registry settings.
 > 
