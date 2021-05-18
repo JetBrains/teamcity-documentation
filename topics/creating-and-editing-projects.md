@@ -101,7 +101,7 @@ Provide a password or token if access to the repository requires authentication.
 
 3\. Click __Proceed__. TeamCity will configure the rest of settings for you.
  * it will determine the type of the VCS repository, autoconfigure VCS repository settings, and suggest the project and build configuration names.   
-   In terms of EAP 2021.1: for a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+   For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
  * the project, build configuration and VCS root will be created automatically.
  * TeamCity will add a VCS build trigger.
  * TeamCity will attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.
@@ -114,7 +114,7 @@ Depending on the build configuration settings, TeamCity can suggest some additio
 ### Creating project pointing to GitHub.com repository
 1. On the __Create project__ page, select to create a project __from GitHub.com__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
-3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. In terms of EAP 2021.1: TeamCity will autodetect the default Git branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. TeamCity will autodetect the default Git branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
     On the __Auto-detected Build Steps__ page, select the detected step(s) to use in your build configuration. Click __Use selected__.   
     If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
@@ -123,7 +123,7 @@ Depending on the build configuration settings, TeamCity can suggest some additio
 ### Creating project pointing to Bitbucket Cloud
 1. On the __Create project__ page, select to create a project __from Bitbucket Cloud__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
-3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. In terms of EAP 2021.1: for a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
 On the __Auto-detected Build Steps__ page, select the detected step(s) to use in your build configuration. Click __Use selected__.   
 If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
@@ -132,7 +132,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 ### Creating project pointing to GitLab.com
 1. On the __Create project__ page, select to create a project __from GitLab.com__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
-3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. In terms of EAP 2021.1: TeamCity will autodetect the default Git branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. TeamCity will autodetect the default Git branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
 On the __Auto-detected Build Steps__ page, select the detected step(s) to use in your build configuration. Click __Use selected__.   
 If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
@@ -148,7 +148,7 @@ In 2019, Visual Studio Team Services have been renamed to Azure DevOps Services.
 
 1. On the __Create project__ page, select to create project __from Azure DevOps Services__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
-3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. In terms of EAP 2021.1: for a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   
 On the __Auto\-detected Build Steps page__ select the detected step(s) to use in your build configuration. Click __Use selected__.   
 If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).

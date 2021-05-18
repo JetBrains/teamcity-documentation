@@ -40,7 +40,7 @@ Also, TeamCity does not force workspace deletion when a Perforce edge/replica se
 
 ### Cleaning Workspaces on Perforce Server
 
-If you enable the [feature branches support](perforce-streams-as-feature-branches.md) in a Perforce VCS root, TeamCity will start processing your Perforce task streams. To do this correctly, it needs to create dedicated workspaces on the Perforce server. Over time, these workspaces might consume a significant amount of resources on this server's machine. In terms of TeamCity 2021.1 EAP, you can clean no longer necessary workspaces directly from the TeamCity UI.
+If you enable the [feature branches support](perforce-streams-as-feature-branches.md) in a Perforce VCS root, TeamCity will start processing your Perforce task streams. To do this correctly, it needs to create dedicated workspaces on the Perforce server. Over time, these workspaces might consume a significant amount of resources on this server's machine. You can clean no longer necessary workspaces directly from the TeamCity UI.
 
 To establish direct access to your Perforce server, go to __Project Settings | Connections__ in TeamCity and add a _Perforce Administrator Access_ connection. In its settings, enter the host and user credentials for accessing the Perforce server (the user must have the [`admin` permission](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels)), and TeamCity will connect to it.
 {id="P4AdminAccessConnection" auxiliary-id="P4AdminAccessConnection"}

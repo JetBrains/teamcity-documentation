@@ -288,7 +288,7 @@ You can restrict running [personal builds](personal-build.md) by unchecking the 
 
 This option enables retrieving the status and basic details of the last build in the build configuration without requiring any user authentication. Note that this also allows getting the status of any specific build in the build configuration (however, builds cannot be listed and no other information except the build status (`success/failure/internal error/cancelled`) is available).
 
-The status can be retrieved via the HTML status widget described [below](#HTML+Status+Widget), or via a single icon: with the help of [REST API](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html) or, in terms of TeamCity EAP 2021.1, via the __Actions__ menu in __Build Configuration Home__.
+The status can be retrieved via the HTML status widget described [below](#HTML+Status+Widget), or via a single icon: with the help of [REST API](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html) or via the __Actions__ menu in __Build Configuration Home__.
 
 #### HTML Status Widget
 

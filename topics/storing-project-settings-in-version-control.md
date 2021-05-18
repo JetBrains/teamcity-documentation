@@ -20,7 +20,7 @@ Here you can choose one of the following options:
 * Disable synchronization.
 * Enable synchronization. In this case, you can also define which settings to use when the build starts. See details [below](#Defining+Settings+to+Apply+to+Builds).
 
-There are two modes of settings’ synchronization: _two-way_ and _one-way_ (provided in terms of TeamCity 2021.1 EAP).
+There are two modes of settings’ synchronization: _two-way_ and _one-way_.
 
 <anchor name="two-way-sync"/>
 
