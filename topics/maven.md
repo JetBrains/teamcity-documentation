@@ -321,30 +321,24 @@ If you have several build agents installed on the same machine, by default they 
 
 ## Maven Release with Different VCSs
 
-To run the `release:prepare` Maven task with different VCSs supported by TeamCity, make sure you're using at least 2.0 version of the [Maven Release plugin](http://maven.apache.org/maven-release/maven-release-plugin/).
+To run the `release:prepare` Maven task with different VCSs supported by TeamCity, make sure you are using at least 2.0 version of the [Maven Release plugin](http://maven.apache.org/maven-release/maven-release-plugin/).
 
 ### Using Maven Release with Perforce
 
-Check the following:
-
-1. Use [ticket-based authentication](http://www.perforce.com/perforce/doc.current/manuals/p4sag/chapter.superuser.html#1080319) for the Maven Release plugin.
-2. Make sure that your `release:prepare` Maven task works when it is run from the command line without TeamCity.
+The Maven Release plugin needs a [ticket](https://www.perforce.com/manuals/p4sag/Content/P4SAG/superuser.basic.auth.tickets.html) to authenticate in Perforce.
 
 In the [Perforce VCS root](perforce.md) settings of your build configuration in TeamCity:
-
 1. Enable the [checkout on agent](perforce.md#Agent+Checkout+Settings).
 2. Enable [Use ticket-based authentication](perforce.md#P4+Connection+Settings) in Perforce VCS root settings.
 3. Make sure your build agent environment doesn't have any occasional P4 variables which can interfere with the execution of Maven Release Plugin.
-4. Specify `release:prepare` in the __Goals__ field of the Maven build step and run the build.
+4. Specify `release:prepare` in the _Goals_ field of the Maven build step and run the build.
 
 ### Using Maven Release with Git VCS
 
-1. Use Git SSH URL as [SCM URL](https://maven.apache.org/scm/git.html) in your `pom.xml`.
-2. Make sure that your `release:prepare` maven task works when it is run from the command line without TeamCity.
+To use this plugin with Git, set a Git SSH URL as [SCM URL](https://maven.apache.org/scm/git.html) in your `pom.xml`.
 
-__On the TeamCity agent__:
-
-1. Make sure that the agent has Git installed and added to the agent's `$PATH` on Unix\-like OS's and to the `%PATH%` environment variable on Windows.
+On the TeamCity agent:
+1. Make sure the agent has Git installed and added to the agent's `$PATH` on Unix-like OS's and to the `%PATH%` environment variable on Windows.
 2. On the agent, set your account's identity by executing
     ```Shell
     git config --system user.email "buildserver@example.com"
@@ -352,9 +346,8 @@ __On the TeamCity agent__:
     ```
 3. Make sure your Git VCS is added to the known hosts database on the agent.
 
-__On the TeamCity server__:
-
-1. Upload [Git SSH key](ssh-keys-management.md) to your TeamCity server.
+On the TeamCity server:
+1. Upload a [Git SSH key](ssh-keys-management.md) to your TeamCity server.
 2. On the __Build Configuration Settings | Version Control Settings__ page, enable the checkout on the agent.
 3. In your Git VCS root, enable _Private Key_ authentication.
 4. Add the [SSH Agent](ssh-agent.md) build feature to your configuration.

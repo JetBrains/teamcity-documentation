@@ -104,6 +104,17 @@ If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment va
 
 TeamCity passes environment variables from the [build configuration](build-configuration.md) into the Docker process, but it does not pass environment variables from the [build agent](build-agent.md), as they may not be relevant to the Docker container environment. The list of the passed environment variables can be seen in the [Verbose mode](build-log.md#Viewing+Build+Log) in the build log.
 
+## Setting Image Entrypoint
+
+If you want to run a container with a specific [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint), follow these steps:
+
+1. Create a [Command Line](command-line.md) build step.
+2. Set the _Run_ mode to _Executable with parameters_.
+3. In the _Command executable_ field, specify the full path to the `ENTRYPOINT` in the target Docker container.
+4. In _Docker Settings_, specify the name of the Docker container.
+
+TeamCity will start the specified Docker image with the defined `ENTRYPOINT`.
+
 <seealso>
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-docker.md">Integrating TeamCity with Docker</a>

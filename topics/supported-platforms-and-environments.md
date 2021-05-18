@@ -502,11 +502,11 @@ JetBrains dotCover coverage. Requires [JetBrains dotCover](http://www.jetbrains.
 See more at [Setting up an External Database](setting-up-an-external-database.md)
 
 * HSQLDB 2.3.2   
-The internal database suits __evaluation purposes only__; we strongly recommend using an external database in a production environment.
-* MySQL 5.0.33+, 5.1.49+, 5.5+, 5.6+, 5.7+, 8+ (Note that due to bugs in MySQL, versions 5.0.20, 5.0.22 and 5.1 up to 5.1.48 are not compatible with TeamCity)
-* Microsoft SQL Server 2005 or later (including Express editions), SQL Azure; SSL connections support might require [these updates](http://blogs.msdn.com/b/jdbcteam/archive/2012/01/19/patch-available-for-sql-server-and-java-6-update-30.aspx).
-* PostgreSQL 8.2 and newer
-* Oracle 10g and newer (TeamCity is tested with [driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1)
+The internal HSQLDB database suits __evaluation purposes only__; we strongly recommend using an external database in a production environment.
+* MySQL 5.7.34 or later
+* Microsoft SQL Server 2012 or later (including Express editions), SQL Azure.
+* PostgreSQL 9.6 or later.
+* Oracle 10g and newer (TeamCity is tested with [driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1).
 
 ## Game Engines
 
