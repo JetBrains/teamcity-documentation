@@ -3,7 +3,7 @@
 
 After you have installed and started running TeamCity, it collects the information on builds, tests and so on and indexes it. You can search builds by build number, tag, build configuration name, and other different parameters specifying one or several keywords. You can also search for builds by text in build logs, and by the [external ID](identifier.md#External+IDs) of a build configuration.
 
-By default, TeamCity stores a search index locally, but you can also switch to an [Elastic-based search mode](search-settings.md).
+By default, TeamCity stores a search index locally, but you can switch to the [Elasticsearch mode](search-settings.md) so the index is stored on your Elastic host. Both modes support the Lucene syntax described in this article.
 
 ## Search Query
 
@@ -636,6 +636,6 @@ To reset the cached search index, click `reset` for the "search" entry on the __
 
 <seealso>
         <category ref="admin-guide">
-            <a href="search-settings.md">Storing Project Settings in Version Control</a>
+            <a href="search-settings.md">Search Settings</a>
         </category>
 </seealso>
