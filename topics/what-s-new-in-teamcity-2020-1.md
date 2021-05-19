@@ -117,7 +117,7 @@ With each release, we come closer to providing a full-value TeamCity server expe
 * __New responsibility: processing build triggers__.   
 In setups with many projects and build configurations, a significant amount of the main server’s CPU is allocated to constant processing of build triggers. By enabling this responsibility for one or more secondary nodes, you distribute the trigger processing tasks and necessary CPU load between the main node and the responsible secondary ones.
 * __More user-level actions__.   
-Secondary nodes now allow changing user settings, checking for pending changes, performing various agent-related actions, and more. Refer to [our documentation](configuring-secondary-node.md#User-level+Actions+on+Secondary+Node) for the full list of available actions.
+Secondary nodes now allow changing user settings, checking for pending changes, performing various agent-related actions, and more. Refer to [our documentation](multinode-setup.md#User-level+Actions+on+Secondary+Node) for the full list of available actions.
 * __Automatic update via web UI__.   
 Use our [autoupdate](upgrade.md#Automatic+Update) on secondary nodes, similarly to the main server experience.
 * __Agent | Cloud tab__.   

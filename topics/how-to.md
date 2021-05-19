@@ -271,7 +271,7 @@ See also [notes](#Estimate+Hardware+Requirements+for+TeamCity) on maximum suppor
 ## Setup TeamCity in Replication/Clustering Environment
 {product="tc"}
 
-It is possible to add a [secondary TeamCity node](configuring-secondary-node.md) to ensure high availability and offload some operations from the main server. All nodes need to be connected to the same [`TeamCity Data Directory`](teamcity-data-directory.md) and the database.
+It is possible to add a [secondary TeamCity node](multinode-setup.md) to ensure high availability and offload some operations from the main server. All nodes need to be connected to the same [`TeamCity Data Directory`](teamcity-data-directory.md) and the database.
 
 To address fast disaster recovery scenarios, TeamCity supports active - failover (cold standby) approach: the data that the TeamCity server uses can be replicated and a solution put in place to start a new server using the same data if the currently active server malfunctions.
 

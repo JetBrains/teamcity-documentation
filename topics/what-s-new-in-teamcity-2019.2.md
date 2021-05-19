@@ -125,7 +125,7 @@ Administrator-level actions are not yet available on secondary nodes. Use the ma
 
 Since this release, agents can download server-side patches from secondary nodes — not only from the main server, as it was before.
 
-Server-side patches are mostly used when an agent cannot find a VCS client executable (for example, Git or Perforce) on an agent machine. In this case, the agent will request the server to create a patch with VCS changes and send it to the agent. Now, if you assign the "_[VCS repositories polling](configuring-secondary-node.md#Assigning+Responsibilities)_" and "_[Processing data produced by builds](configuring-secondary-node.md#Assigning+Responsibilities)_" responsibilities to a secondary node, the agents will be able to request patches from this node as well, which significantly reduces the load on the main server.
+Server-side patches are mostly used when an agent cannot find a VCS client executable (for example, Git or Perforce) on an agent machine. In this case, the agent will request the server to create a patch with VCS changes and send it to the agent. Now, if you assign the "_[VCS repositories polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node)_" and "_[Processing data produced by builds](multinode-setup.md#Processing+Data+Produced+by+Builds+on+Secondary+Node)_" responsibilities to a secondary node, the agents will be able to request patches from this node as well, which significantly reduces the load on the main server.
 
 ## Updates for DSL-based projects
 

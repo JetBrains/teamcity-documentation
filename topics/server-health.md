@@ -29,7 +29,6 @@ The visibility changes will be listed on the __Audit__ page in the __Administrat
 
 Health items cover a wide range of server  functionality to allow administrators to easily monitor the TeamCity overall status.
 
-
 ### Global Configuration Items
 
 TeamCity displays a notification on the availability of the new TeamCity version and a prompt to upgrade.  
@@ -38,6 +37,30 @@ A warning is displayed if any of the licenses are incompatible with this new ver
 ### Agent Configuration
 
 TeamCity displays a notification if agents are not running the recommended Java 8: this report shows all the agents running under Java earlier than version 1.8.
+
+### Multinode Setup Misconfiguration
+
+For a [multinode setup](multinode-setup.md), TeamCity might display health reports in the following cases:
+
+#### Main Node is Inactive
+
+_The main node has been inactive for N minutes_.
+
+If this is a planned inactivity (a restart or upgrade), you can ignore this message — it will disappear once the main node is active again. Otherwise, please log in to the main node server and check the status of the TeamCity process.
+
+If there is no TeamCity process or the server is down and cannot be recovered shortly, you can assign the "[Main TeamCity node](multinode-setup.md#Main+Node+Responsibility)" responsibility to the current or some other node on the __Nodes Configuration__ page.
+
+#### Different Versions of Main and Secondary Servers
+
+_The secondary node version doesn't match the current server version_.
+
+In this case, you need to [update the secondary node](multinode-setup.md#Upgrade%2FDowngrade) to the same version as of the main TeamCity Server.
+
+#### No Proxy Server in Multinode Setup
+
+_Multinode setup doesn't have a proxy server._
+
+To set up a high-availability TeamCity installation, you need to [configure a reverse proxy](multinode-setup.md#Proxy+Configuration).
 
 <anchor name="ServerHealth-WebSocketconnectionissues"/>
 
@@ -198,10 +221,10 @@ The report is displayed for the agents not used for 3 days and more, if
 * your agents have been registered for more than 3 days
 * if the builds were run on the server during these 3 days
 
-### Incorrect proxying server configuration
+### Incorrect Proxy Server Configuration
 {product="tc"}
 
-The report displays  detected misconfiguration of the proxy server that is used to access the TeamCity web interface.
+The report displays detected misconfiguration of the proxy server that is used to access the TeamCity web interface.
 
 See our [recommendations](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) how to set up a proxy server with TeamCity.
 

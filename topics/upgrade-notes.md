@@ -386,7 +386,7 @@ If you were using the default bundled Java on Windows, make sure the following c
 
 ### Discontinued Running Builds Node
 
-The [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is discontinued. In a multinode setup, you can instead [configure a secondary node](configuring-secondary-node.md) with the "_Processing data produced by running builds_" responsibility. Read more on the [Multinode Setup](multinode-setup.md#running-builds-node-discontinued) page.
+The [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is discontinued. In a multinode setup, you can instead [configure a secondary node](multinode-setup.md) with the "_Processing data produced by running builds_" responsibility.
 
 ### Automatic management of git fetch memory
 
@@ -451,7 +451,7 @@ To workaround this problem without upgrading to 2019.1.5, download the fixed NuG
 
 <anchor name="running-builds-node-deprecated"/>
 
-* The [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is deprecated and will be discontinued in TeamCity 2019.2. In a [multinode setup](multinode-setup.md), you can instead [configure a secondary node](configuring-secondary-node.md) with the _"Processing data produced by running builds"_ responsibility.
+* The [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is deprecated and will be discontinued in TeamCity 2019.2. In a [multinode setup](multinode-setup.md), you can instead configure a secondary node with the _"Processing data produced by running builds"_ responsibility.
 
 ### Known issues
 
