@@ -7,6 +7,8 @@ If a final step of a build triggers some external service and the build does not
 
 To release its current build agent, a runner needs to send the `##teamcity[buildDetachedFromAgent]` [service message](service-messages.md). After receiving this message, the agent skips all the following steps of the build, unless they have the "[_Always, even if build stop command was issued_](configuring-build-steps.md#Execution+policy)" execution policy enabled. If necessary, you can enable it for mandatory final steps — the agent will be released only after completing them.
 
+>Alternatively to using service messages, you can write own server-side plugin that will be polling an external service for a build status. Use the `jetbrains.buildServer.serverSide.agentless.DetachedBuildStatusProvider` extension point for this. Read more about developing custom plugins in [TeamCity Plugin Help](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).
+
 If the [limit of agentless builds](#Agentless+builds%27+licensing) is not exceeded, the server releases the agent and it instantly becomes available to other builds. Otherwise, the agent stays attached to the build until some of the running agentless builds finish. 
 
 >We highly recommend releasing the agent only during the last build step. Make sure the tasks performed outside TeamCity do not require the build agent.
