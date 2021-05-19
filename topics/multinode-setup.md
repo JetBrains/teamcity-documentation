@@ -67,7 +67,7 @@ The minimum number of server machines necessary for a high-availability setup is
 
 ### Configuring HA Setup
 
-This sections relies on the following assumptions:
+This section relies on the following assumptions:
 * All the [prerequisites](#Prerequisites) are met.
 * [TeamCity is installed](installing-and-configuring-the-teamcity-server.md) on both nodes. (See how to [install a regular secondary node](#Installing+Secondary+Node).)
 * [TeamCity Data Directory](teamcity-data-directory.md) and database are already initialized.
@@ -249,6 +249,10 @@ On a failover, if a former secondary node is assigned with the _Main TeamCity no
 {type="note"}
 
 The HAProxy config sets a special header `X-TeamCity-Proxy`. It tells TeamCity that a request comes through a properly configured proxy. The header also defines a version of the proxy config: it helps ensure that the TeamCity server is compatible with the proxy configuration.
+
+### Domain Isolation Proxy Configuration
+
+The [domain isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) mode requires configuring a dedicated domain for serving artifacts. Make sure to add a new record in your DNS pointing from this domain to the proxy address: for example, it could be a `CNAME` record pointing to the proxy URL.
 
 ## Failover
 
