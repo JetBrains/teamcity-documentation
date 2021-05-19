@@ -46,7 +46,7 @@ SQL Server supports two ways of authentication: SQL Server authentication and Wi
 
 ### Set up JDBC Driver for SQL Server database
 
-1. Download a [Microsoft JDBC driver version 6.0 or higher](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server) (pick `.exe` or `.tar.gz` depending on your TeamCity server platform) from the Microsoft Download Center.   
+1. Download a [Microsoft JDBC driver version 6.0 or later](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server) (pick `.exe` or `.tar.gz` depending on your TeamCity server platform) from the Microsoft Download Center.   
 2. Unpack the downloaded package into a temporary directory.   
 3. Copy the `sqljdbc42.jar` (or `mssql-jdbc-<version>.jre8.jar` in versions above 6.0) package from the just downloaded package into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory.
 

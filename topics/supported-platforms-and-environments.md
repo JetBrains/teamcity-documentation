@@ -218,7 +218,7 @@ TeamCity supports a wide range of build tools, enabling both Java and .NET softw
 
 ### Supported Java build runners
 
-* [Ant](ant.md) 1.6-1.10. TeamCity comes bundled with Ant 1.9.14.
+* [Ant](ant.md) 1.6-1.10. TeamCity comes bundled with Ant 1.10.10 (requires Java 8).
 * [Maven](maven.md) versions 2.0.x, 2.x, 3.x (known at the moment of the TeamCity release). Java 1.5 and higher is supported. TeamCity comes bundled with Maven 2.2.1, 3.0.5, 3.1.1, 3.2.5, 3.3.9, 3.5.4, and 3.6.3.
 * [IntelliJ IDEA Project](intellij-idea-project.md) runner (requires Java 8)
 * [Gradle](gradle.md) (requires Gradle 0.9-rc-1 or higher)
@@ -262,7 +262,7 @@ Other runners:
 ## Version Control Systems
 
 * [Git](git.md) (for automatic `git gc` support requires Git client installed on the server in order to perform maintenance of Git clones, latest version is recommended)
-* [Subversion](subversion.md) (server versions 1.4-1.9 and higher as long as the protocol is backward-compatible).
+* [Subversion](subversion.md) (server versions 1.4-1.9 and later, as long as the protocol is backward-compatible).
 * [Perforce](perforce.md) (requires a Perforce client installed on the TeamCity server). Check [compatibility issues](perforce-vcs-compatibility.md).
 * [Team Foundation Server](team-foundation-server.md) 2005, 2008, 2010, 2012, 2013, 2015, 2017 are supported. 
 * [Mercurial](mercurial.md) (requires the Mercurial "hg" client v1.5.2+ installed on the server)
@@ -283,7 +283,7 @@ For support for other VCS please check [external plugins](https://plugins.jetbra
 
 The requirements noted are for agent environment and are additional to those for the server listed above.
 
-* Git (git client version 1.6.4+ must be installed on the agent, latest version is recommended)
+* Git (git client version 1.6.4+ must be installed on the agent, the latest version is recommended)
 * Subversion (working copies in the Subversion 1.4-1.8 format are supported)
 * Perforce (a Perforce client must be installed on the TeamCity agent machine)
 * Team Foundation Server 2005-2015, 2017 are supported. 

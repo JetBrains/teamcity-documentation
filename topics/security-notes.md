@@ -138,7 +138,7 @@ TeamCity will automatically notify you via the UI once a new update is available
 
 From a technical perspective, upgrades between bugfix releases within the same major/minor version are backwards compatible (for example, 2020.2.1 → 2020.2.2) and support relatively simple rollbacks. For all other major upgrades, we do our best to ensure that they run as smoothly as possible, though [backups](teamcity-data-backup.md) are strongly recommended for easy rollbacks.
 
-From a licensing perspective, upgrades between bugfix releases are also safe. If your license covers 2020.2, then you will be able to upgrade to any 2020.2.x version.
+From a licensing perspective, upgrades between bugfix releases are also safe. If your license covers 2021.1, then you will be able to upgrade to any 2021.1.x version.
 
 __Protect the TeamCity Data Directory__.
 
