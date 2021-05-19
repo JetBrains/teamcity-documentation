@@ -1,5 +1,5 @@
 [//]: # (title: Running Custom Build)
-[//]: # (auxiliary-id: Running Custom Build)
+[//]: # (auxiliary-id: Running Custom Build;Triggering a Custom Build)
 
 A build configuration usually has [build triggers](configuring-build-triggers.md) configured which automatically start a new build each time the conditions are met, like scheduled time or detection of VCS changes.
 
