@@ -82,8 +82,6 @@ Used terms:
 * `<node_root_URL>` — a direct URL of a node, usually `http://<node_hostname>`. This URL is required for inter-node communications; a firewall should be configured to allow connections to this URL from one node to another.
 
 >Paths like `<TeamCity Data Directory>` or `<Node-specific data directory>` can be different on each node. To keep the setup simple, we recommend that you keep them the same.
->
-{type="node"}
 
 To configure a TeamCity cluster consisting of two nodes, follow these steps:
 1. Check that the version of the TeamCity server installed on both nodes is the same and corresponds to the version of the Data Directory.
