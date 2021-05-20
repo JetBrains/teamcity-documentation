@@ -63,7 +63,7 @@ Now, we can proceed with the transition from a single server setup to a high-ava
 Used terms:
 * [TeamCity Data Directory](teamcity-data-directory.md) — a path to a mount point of the shared data directory.
 * [TeamCity Home Directory](teamcity-home-directory.md) —  a path to the TeamCity server installation directory.
-* [Node-specific Data Directory](#Node-specific+Data+Directory) —  a path to each node’s local storage where the node keeps its specific configuration and caches.
+* Node-specific Data Directory —  a path to each node’s local storage where the node keeps its specific configuration and caches.
 * `<node_ID>` — a unique identifier of a TeamCity node, which can be used in the UI and configuration files.
 * `<node_root_URL>` — a direct URL of a node, usually `http://<node_hostname>`. This URL is required for inter-node communications; a firewall should be configured to allow connections to this URL from one node to another.
 
@@ -359,7 +359,7 @@ To install a secondary node, follow these steps on the secondary node machine:
     ```
    where
    * `<node_ID>` is the ID of the node that will be displayed on the __Administration | Nodes Configuration__ page.
-   * `<path_to_node_data_directory>` is the path to the node Data Directory (see [Node-Specific Data Directory](#Node-specific+Data+Directory)).
+   * `<path_to_node_data_directory>` is the path to the node Data Directory.
    * `<node_URL>` is the secondary node root URL. It should be accessible from the main node and agents.
 
 ### Upgrade/Downgrade
