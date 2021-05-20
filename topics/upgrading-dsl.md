@@ -104,7 +104,16 @@ The upgrade procedure involves two steps:
 
 ## Update DSL from 2020.2.x to 2021.1.x
 
-* The `useMirrors` parameter in [Git](git.md) VCS roots is deprecated and replaced by the `checkoutPolicy` parameter that supports the following values: `AUTO`, `USE_MIRRORS`, `NO_MIRRORS`, `SHALLOW_CLONE`. Read more about these checkout policies [here](git.md#git-checkout-policy). For instance, `useMirrors=false` should be replaced with `checkoutPolicy=NO_MIRRORS`, while `useMirrors=true` with `checkoutPolicy=USE_MIRRORS`. If `useMirrors` was not specified in the project Git VCS roots, then `checkoutPolicy=USE_MIRRORS` should be added.   
+* This release __does not__ introduce a new DSL API package, so __v2019_2__ remains the latest one.
+* The bundled Kotlin version has been updated to 1.4.32.
+
+* The `useMirrors` parameter in [Git](git.md) VCS roots is deprecated and replaced by the `checkoutPolicy` parameter that supports the following values: `AUTO`, `USE_MIRRORS`, `NO_MIRRORS`, `SHALLOW_CLONE`. 
+
+   Git VCS roots in the project DSL code should be updated accordingly. For instance, `useMirrors=false` should be replaced with `checkoutPolicy=NO_MIRRORS`, while `useMirrors=true` with `checkoutPolicy=USE_MIRRORS`. If `useMirrors` was not specified in a Git VCS root, then `checkoutPolicy=USE_MIRRORS` should be added.
+
+  Read more about these checkout policies [here](git.md#git-checkout-policy).
+
+* Python build steps default for the `installToolPackage` field has changed. Since 2021.1 `installToolPackage` is `true` by default. To preserve the current behavior of the Python build steps add `installToolPackage = false` to the step settings 
 
 <anchor name="dsl20202"/>
 
