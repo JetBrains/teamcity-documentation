@@ -3,7 +3,11 @@
 
 The TeamCity server can be configured to use multiple nodes (or servers) for high availability and flexible load distribution. It is possible to set up a cluster of TeamCity nodes, where each node is responsible for different tasks, like processing data from builds or collecting changes from VCS repositories. Or, to keep one main node that does all the work and a secondary node which provides a read-only interface. In case the main node goes down, all data processing can be switched to the secondary node with minimum downtime.
 
-As the main use case of a multinode setup is to achieve high availability (HA), this article will focus on configuring an HA cluster. However, you can use the same methods for any setup with multiple TeamCity servers: for example, to distribute load between several machines.
+As the main use case of a multinode setup is to achieve high availability (HA), this article will focus on configuring an HA cluster. However, you can use the same methods for any setup with multiple TeamCity nodes: for example, to distribute load between several machines.
+
+>The instructions are provided for TeamCity 2021.1 or later. If you use an earlier version, please refer to its [respective documentation](https://confluence.jetbrains.com/display/TW/Documentation).
+>
+{type="note"}
 
 ## Main vs. secondary node
 
@@ -11,46 +15,9 @@ A TeamCity cluster can have one _main node_ and multiple _secondary nodes_. The 
 
 <img src="multinode-setup.png" width="702" alt="TeamCity setup with two nodes"/>
 
-## Shared Data Directory
-
-The main TeamCity node and secondary nodes must be able to access and share the same [TeamCity Data Directory](teamcity-data-directory.md).
-
-Here are main recommendations on setting up the shared Data Directory:
-* For a high-availability setup, store it on a separate and well-performing machine, so it is accessible even when the main node goes down.
-* All TeamCity nodes’ machines should be able to access it in the read\/write modes.
-* The typical Data Directory mounting options are SMB and NFS. TeamCity uses the Data Directory as a regular file system so all basic file system operations should be supported.
-* The I/O operations count or I/O volume limits should not be restricted by the storage or mounting option.
-* Make sure to review performance guidelines for your storage solution. For example, increasing MTU for the network connection between the server and the storage usually increases the artifact transfer speed.
-
-### Disable Network Client Caches on Data Directory Mounts
-
-It is important that all the nodes "see" the current state of the shared Data Directory without delay. If this is not the case, it is likely to result in unstable behavior and frequent build log corruptions.
-
-If TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure all the registry keys mentioned in [this article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all the TeamCity nodes.
-
-If the Data Directory is shared via NFS, make sure all nodes have the following option in their mount settings: `lookupcache=positive`.
-
-### Main Node Caches Directory
-
-If the main node accesses the Data Directory via a network location, it is highly recommended moving the `system/caches` directory to a [local disk](teamcity-data-directory.md#caches_folder).
-
-### Node-specific Data Directory
-
-Besides the Data Directory shared with the main server, a secondary node requires a _local_ Data Directory where it stores some caches, unpacked external plugins, and other configuration.
-
-On the first start of the node, the local Data Directory is automatically created as `<TeamCity Data Directory>/nodes/<node_ID>`. This is usually the location of the shared Data Directory used by all nodes.
-
-To reduce the load caused by extra IO requests from all nodes to the shared TeamCity Data Directory and to speed up the nodes\' access to data, we highly recommend redefining the location of the node-specific Data Directory to use the node\'s local disk.
-
-To define a new path to a local directory, use the `-Dteamcity.node.data.path` property in the TeamCity [start-up scripts](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts). Read more [below](#Installing+Secondary+Node).
-
 ## High-Availability Setup
 
 ### Prerequisites
-
->The instructions are provided for TeamCity 2021.1 or later. If you use an earlier version, please refer to its [respective documentation](https://confluence.jetbrains.com/display/TW/Documentation).
-> 
-{type="note"}
 
 A basic HA setup must include the following components:
 * __Dedicated database server__: an external database server from the list of [supported databases](supported-platforms-and-environments.md#Supported+Databases).
@@ -65,11 +32,30 @@ The minimum number of server machines necessary for a high-availability setup is
 >
 {type="note"}
 
+### Shared Data Directory
+
+The main TeamCity node and secondary nodes must be able to access and share the same [TeamCity Data Directory](teamcity-data-directory.md).
+
+Here are main recommendations on setting up the shared Data Directory:
+* For a high-availability setup, store it on a separate and well-performing machine, so it is accessible even when the main node goes down.
+* All TeamCity nodes’ machines should be able to access it in the read\/write modes.
+* The typical Data Directory mounting options are SMB and NFS. TeamCity uses the Data Directory as a regular file system so all basic file system operations should be supported.
+* The I/O operations count or I/O volume limits should not be restricted by the storage or mounting option.
+* Make sure to review performance guidelines for your storage solution. For example, increasing MTU for the network connection between the server and the storage usually increases the artifact transfer speed.
+
+#### Disable Network Client Caches on Data Directory Mounts
+
+It is important that all the nodes "see" the current state of the shared Data Directory without delay. If this is not the case, it is likely to result in unstable behavior and frequent build log corruptions.
+
+If TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure all the registry keys mentioned in [this article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all the TeamCity nodes.
+
+If the Data Directory is shared via NFS, make sure all nodes have the following option in their mount settings: `lookupcache=positive`.
+
 ### Configuring HA Setup
 
 This section relies on the following assumptions:
 * All the [prerequisites](#Prerequisites) are met.
-* [TeamCity is installed](installing-and-configuring-the-teamcity-server.md) on both nodes. (See how to [install a regular secondary node](#Installing+Secondary+Node).)
+* [TeamCity is installed](installing-and-configuring-the-teamcity-server.md) on both nodes.
 * [TeamCity Data Directory](teamcity-data-directory.md) and database are already initialized.
 
 Now, we can proceed with the transition from a single server setup to a high-availability cluster setup.
@@ -248,7 +234,7 @@ On a failover, if a former secondary node is assigned with the _Main TeamCity no
 > 
 {type="note"}
 
-The HAProxy config sets a special header `X-TeamCity-Proxy`. It tells TeamCity that a request comes through a properly configured proxy. The header also defines a version of the proxy config: it helps ensure that the TeamCity server is compatible with the proxy configuration.
+The proxy config sets a special header `X-TeamCity-Proxy`. It tells TeamCity that a request comes through a properly configured proxy. The header also defines a version of the proxy config: it helps ensure that the TeamCity server is compatible with the proxy configuration.
 
 ### Domain Isolation Proxy Configuration
 
@@ -262,21 +248,11 @@ Each secondary node tracks the activity of the current main node and, if it is i
 
 After switching the responsibility, you also need to update the IDs and hostnames of nodes in the [reverse proxy configuration](#Proxy+Configuration) and reload the proxy server configuration. Otherwise, if you decide to start the former main node again, the proxy won’t be able to properly route agents and users.
 
-## Installing Secondary Node
-
-To install a secondary node, follow these steps on the secondary node machine:
-
-1. [Install](installing-and-configuring-the-teamcity-server.md) the TeamCity software as usual: download the distribution package and follow the installation wizard. Please note: when installing a secondary node using the installation wizard, it is important not to start the TeamCity Server service until the environment variables in step 2 and 3 are configured.
-2. Provide the path to the [shared Data Directory](#Shared+Data+Directory) via the `TEAMCITY_DATA_PATH` [environment variable](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts).
-3. Add additional arguments to the `TEAMCITY_SERVER_OPTS` environment variable:
-    ```Plain Text
-    TEAMCITY_SERVER_OPTS = -Dteamcity.server.nodeId=<node_ID> -Dteamcity.node.data.path=<path_to_node_data_directory>  -Dteamcity.server.rootURL=<node_URL>
-    
-    ```
-   where
-    * `<node_ID>` is the ID of the node that will be displayed on the __Administration | Nodes Configuration__ page.
-    * `<path_to_node_data_directory>` is the path to the node Data Directory (see [Node-Specific Data Directory](#Node-specific+Data+Directory)).
-    * `<node_URL>` is the secondary node root URL. It should be accessible from the main server and agents.
+To sum up, on a failover, follow these steps:
+1. Wait for a server health report about the main node unavailability on the secondary node.
+2. Make sure the main node is stopped.
+3. Switch the "Main node" responsibility on the secondary node.
+4. Update the main node ID in the reverse proxy configuration and reload the config.
 
 ## Nodes Configuration and Usage
 
@@ -306,11 +282,11 @@ You can enable and disable responsibilities for nodes at any moment.
 
 #### Processing Data Produced by Builds on Secondary Node
 
-It is possible to use one or more secondary nodes to process traffic from the TeamCity agents. This allows moving the related load to a separate machine from the main TeamCity server which will improve the TeamCity performance when handling hundreds of concurrent and actively logging builds.
+It is possible to use one or more secondary nodes to process traffic from the TeamCity agents. This allows moving the related load to a separate machine from the main TeamCity node which will improve the TeamCity performance when handling hundreds of concurrent and actively logging builds.
 
-In general, you do not need a separate node for running builds unless you have more than 400 agents connected to a single server. Using a secondary node allows you to significantly increase the number of agents which the setup can handle.
+In general, you do not need a separate node for running builds unless you have more than 400 agents connected to a single node. Using a secondary node allows you to significantly increase the number of agents which the setup can handle.
 
-Once you assign a secondary node to the _Processing data produced by builds_ responsibility for the first time, all\* newly started builds will be routed to this node. The existing running builds will continue being executed on the main server. When you disable the responsibility, only the newly started builds will be switched to the main server. The builds that were already running on the secondary node will continue running there.  
+Once you assign a secondary node to the _Processing data produced by builds_ responsibility for the first time, all\* newly started builds will be routed to this node. The existing running builds will continue being executed on the main node. When you disable the responsibility, only the newly started builds will be switched to the main node. The builds that were already running on the secondary node will continue running there.  
 If you assign more than one secondary nodes to this responsibility, builds will be distributed equally between these nodes.
 
 \* You can control how many builds can be run by each node.  
@@ -319,24 +295,24 @@ If the maximum limit of allowed running builds is reached on all secondary nodes
 
 #### VCS Repositories Polling on Secondary Node
 
-Usually, the main TeamCity server polls the VCS repositories for changes to detect new commits. You can delegate VCS polling to the secondary node thus improving the performance of the main server. Only one secondary node can be assigned to this responsibility.
+Usually, the main TeamCity node polls the VCS repositories for changes to detect new commits. You can delegate VCS polling to the secondary node thus improving the performance of the main node. Only one secondary node can be assigned to this responsibility.
 
-Once you assign the _VCS repositories polling_ responsibility to a node, it may take some time for the main server to finish the polling activities in progress, and then the secondary node will pick up this task. When you disable the responsibility, the main server will start polling VCS repositories.
+Once you assign the _VCS repositories polling_ responsibility to a node, it may take some time for the main node to finish the polling activities in progress, and then the secondary node will pick up this task. When you disable the responsibility, the main node will start polling VCS repositories. This responsibility can be assigned only to one node in a cluster.
 
-If you have commit hooks configured on the main server, no changes in hooks are required: the hooks will continue working if the VCS polling is delegated to the secondary node.
+If you have commit hooks configured on the main node, no changes in hooks are required: the hooks will continue working if the VCS polling is delegated to the secondary node.
 
 #### Processing Triggers on Secondary Node
 
-In setups with many build agents, a significant amount of the main server's CPU is allocated to constant processing of build triggers. By enabling the _Processing build trigger_ responsibility for one or more secondary nodes, you can distribute the trigger processing tasks and CPU load between the main node and the responsible secondary ones. TeamCity distributes the triggers automatically but you can see what triggers are currently assigned to each node.
+In setups with many build agents, a significant amount of the main node's CPU is allocated to constant processing of build triggers. By enabling the _Processing build trigger_ responsibility for one or more secondary nodes, you can distribute the trigger processing tasks and CPU load between the main node and the responsible secondary ones. TeamCity distributes the triggers automatically but you can see what triggers are currently assigned to each node.
 
 #### Processing User Requests to Modify Data on Secondary Node
 
-This responsibility is responsible for allowing [user actions on a secondary node](#User-level+Actions+on+Secondary+Node). It is especially useful when the main server is down or goes through maintenance.
+This responsibility is responsible for allowing [user actions on a secondary node](#User-level+Actions+on+Secondary+Node). It is especially useful when the main node is down or goes through maintenance.
 
 #### Main Node Responsibility
 
-You can assign a secondary node to the _Main TeamCity node_ responsibility. This responsibility by default belongs to the current main server, but gets vacant if this server becomes unavailable. After you assign any secondary server to this responsibility, it becomes the main node and receives all its other responsibilities (processing builds, managing agents, and so on). All the running builds will continue their operations without interruption. If a [proxy is configured](#Proxy+Configuration) in your setup, build agents will seamlessly reconnect to the new main node.  
-When the previous main server starts again, it becomes a secondary node, as the _Main TeamCity node_ responsibility is already occupied by another server. If necessary, you can repeat the procedure above to switch roles between these servers.
+You can assign a secondary node to the _Main TeamCity node_ responsibility. This responsibility by default belongs to the current main node, but gets vacant if this node becomes unavailable. After you assign any secondary node to this responsibility, it becomes the main node and receives all its other responsibilities (processing builds, managing agents, and so on). All the running builds will continue their operations without interruption. If a [proxy is configured](#Proxy+Configuration) in your setup, build agents will seamlessly reconnect to the new main node.  
+When the previous main node starts again, it becomes a secondary node, as the _Main TeamCity node_ responsibility is already occupied by another node. If necessary, you can repeat the procedure above to switch roles between these nodes.
 
 ### Internal Properties
 
@@ -370,29 +346,45 @@ A number of bundled plugins can be used on the main node only:
 
 The TeamCity clean-up task runs on the main node only. In a multinode configuration, as well as in a single node configuration, the task can run while the secondary nodes are handling their operations.
 
+### Installing Additional Secondary Node
+
+To install a secondary node, follow these steps on the secondary node machine:
+
+1. [Install](installing-and-configuring-the-teamcity-server.md) the TeamCity software as usual: download the distribution package and follow the installation wizard. Please note: when installing a secondary node using the installation wizard, it is important not to start the TeamCity Server service until the environment variables in step 2 and 3 are configured.
+2. Provide the path to the [shared Data Directory](#Shared+Data+Directory) via the `TEAMCITY_DATA_PATH` [environment variable](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts).
+3. Add additional arguments to the `TEAMCITY_SERVER_OPTS` environment variable:
+    ```Plain Text
+    TEAMCITY_SERVER_OPTS = -Dteamcity.server.nodeId=<node_ID> -Dteamcity.node.data.path=<path_to_node_data_directory>  -Dteamcity.server.rootURL=<node_URL>
+    
+    ```
+   where
+   * `<node_ID>` is the ID of the node that will be displayed on the __Administration | Nodes Configuration__ page.
+   * `<path_to_node_data_directory>` is the path to the node Data Directory (see [Node-Specific Data Directory](#Node-specific+Data+Directory)).
+   * `<node_URL>` is the secondary node root URL. It should be accessible from the main node and agents.
+
 ### Upgrade/Downgrade
 
-It is recommended that the main TeamCity server and all secondary nodes have the same version. In certain cases, the main server and secondary nodes can be running different versions for a short period, for example, during the minor upgrade of the main server. When the versions of a secondary node and the main server are different, the corresponding health report will be displayed on both nodes.
+It is recommended that the main TeamCity node and all secondary nodes have the same version. In certain cases, the main node and secondary nodes can be running different versions for a short period, for example, during the minor upgrade of the main node. When the versions of a secondary node and the main node are different, the corresponding health report will be displayed on both nodes.
 
-When __upgrading to a minor version__ (a bugfix release), the main and the secondary nodes should be running without issues as the TeamCity data format stays the same. You can upgrade the main TeamCity server and then the secondary servers [manually](upgrade.md), or with the [automatic update](upgrade.md#Automatic+Update).
+When __upgrading to a minor version__ (a bugfix release), the main and the secondary nodes should be running without issues as the TeamCity data format stays the same. You can upgrade the main TeamCity node and then the secondary nodes [manually](upgrade.md), or with the [automatic update](upgrade.md#Automatic+Update).
 
-When __upgrading the main server to a major version__, its TeamCity data format will change. We recommend stopping all the secondary nodes before starting the upgrade of the main server to avoid any possible data format errors.   
-To be able to process tasks, all secondary nodes must be upgraded after the main server major upgrade.
+When __upgrading the main node to a major version__, its TeamCity data format will change. We recommend stopping all the secondary nodes before starting the upgrade of the main node to avoid any possible data format errors.   
+To be able to process tasks, all secondary nodes must be upgraded after the main node major upgrade.
 
 To __upgrade__ nodes in a multinode setup to a major version of TeamCity, follow these steps:
 1. Stop all secondary nodes.
-2. Start the [upgrade](upgrade.md) on the main TeamCity server as usual.
+2. Start the [upgrade](upgrade.md) on the main TeamCity node as usual.
 3. Proceed with the upgrade.
-4. Verify that everything works properly and agents are connecting to the main server (the agents will reroute the data that was supposed to be routed to the secondary nodes to the main server).
+4. Verify that everything works properly and agents are connecting to the main node (the agents will reroute the data that was supposed to be routed to the secondary nodes to the main node).
 5. Upgrade TeamCity on the secondary nodes to the same version.
-6. Start the secondary nodes and verify that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main server.
+6. Start the secondary nodes and verify that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main node.
 
 To __downgrade__ nodes in a multinode setup, follow these steps:
-1. Shutdown the main server and the secondary nodes.
+1. Shutdown the main node and the secondary nodes.
 2. [Restore the data](restoring-teamcity-data-from-backup.md) from backup (only if the data format has been changed during the upgrade).
-3. Downgrade the TeamCity software on the main server.
-4. Start the main TeamCity server and verify that everything works properly.
-5. Downgrade the TeamCity software on the secondary nodes to the same version as the main server.
+3. Downgrade the TeamCity software on the main node.
+4. Start the main TeamCity node and verify that everything works properly.
+5. Downgrade the TeamCity software on the secondary nodes to the same version as the main node.
 6. Start the secondary nodes.
 
 TeamCity agents will perform upgrade/downgrade automatically.
@@ -409,7 +401,7 @@ A secondary node, as well as the main node, can be stopped or restarted while th
 
 You can back up the main node right [from the TeamCity UI](creating-backup-from-teamcity-web-ui.md). [From a command line](creating-backup-via-maintaindb-command-line-tool.md), you can back up both the main node and secondary nodes.
 
-The restore operation can be done on either of the nodes, but only if all servers using the TeamCity database and data directory are stopped.
+The restore operation can be done on either of the nodes, but only if all nodes using the TeamCity database and data directory are stopped.
 
 >Currently, the contents of the `<Node-specific data directory>` are not included in the backup.
 >
@@ -433,7 +425,7 @@ If the "_[Processing user requests to modify data](#Processing+User+Requests+to+
 
 See the related tasks in our issue tracker for the full list of available actions: [TW-62749](https://youtrack.jetbrains.com/issue/TW-62749), [TW-63346](https://youtrack.jetbrains.com/issue/TW-63346).
 
-Administrator-level actions are not yet available on secondary nodes. Use the main server if you need to change the server configuration.
+Administrator-level actions are not yet available on secondary nodes. Use the main node if you need to change the node configuration.
 
 ## Multinode Setup Health Reports
 
