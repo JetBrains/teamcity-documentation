@@ -1,6 +1,52 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2020.2.x to 2021.1
+
+### Git Use Mirrors is deprecated in favor of Checkout Policy
+
+[Git](git.md) VCS roots now receive the new _[Checkout Policy](git.md#git-checkout-policy)_ option that replaces the _Use Mirrors_ checkbox and provides more flexibility. On upgrading, the roots' settings will keep their selected states. However, Git roots' settings in [Kotlin DSL](kotlin-dsl.md) specifications need to be updated.
+
+The `useMirrors` parameter in the Kotlin DSL of Git VCS roots is deprecated and replaced by the `checkoutPolicy` parameter that supports the following values: `AUTO` (default), `USE_MIRRORS`, `NO_MIRRORS`, `SHALLOW_CLONE`.
+
+### Deprecated non-portable Kotlin DSL
+
+Non-portable Kotlin DSL format is deprecated. It is no longer possible to create new projects in this format. For compatibility, projects that are already stored in this format will continue working.
+
+### Changed default port for Windows installers
+
+The default port in the TeamCity installer for Windows has been changed to 8111. Now, both `tar.gz` and `exe` installers use the same port.
+
+### OR as default operator for Lucene search
+
+TeamCity [Lucene-based search](search.md) now uses the `OR` operator by default instead of `AND`. This corresponds to the default Lucene syntax and helps optimize the search behavior and reduce its index size.
+
+### PNG build status icon by default
+
+The build status icon, available via the default `http://<TeamCity Server host>:<port>/app/rest/builds/<buildLocator>/statusIcon` [REST API endpoint](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html), is now provided in the SVG format instead of PNG. The `statusIcon.svg` endpoint is still supported for compatibility with existing scripts.
+
+### Unbundled old versions of REST API
+
+The following old versions of [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) have been unbundled: 6.0, 7.0, 8.1, 9.0, 9.1. If this change causes any problems for your setup, please contact us via any [feedback channel](feedback.md).
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-20211"}
+
+* Bundled Amazon Corretto Java has been updated to version 11.0.11.9.1 in the TeamCity server Docker images and Windows installers.
+* Bundled [Ant](ant.md) has been updated to version 1.10.10. Note that this version requires Java 8 or later.
+* Bundled dotCover and ReSharper CLT have been updated to version 2021.1.2.
+* Bundled JaCoCo has been updated to version 0.8.6.
+* The Bundled Kotlin compiler, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version 1.4.32.
+* Bundled Kotlin, used in the [Kotlin Script](kotlin-script.md) build runner, has been updated to version 1.5.0.
+* The bundled ReSharper and dotCover tools have been updated to version 2021.1.1.
+* JGit version, used in the [Git](git.md) plugin, has been updated to 5.10.0.202012080955-r.
+* SVNKit, used in [Subversion](subversion.md) VCS roots, has been updated to version 1.10.3.
+
+### Other Updates
+{id="other-updates-20211"}
+
+* The __My Settings & Tools__ page has been renamed to __Your Profile__.
+
 ## Changes from 2020.2.3 to 2020.2.4
 
 ### Verifying NuGet used in NuGet dependency trigger
