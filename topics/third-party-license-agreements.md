@@ -32,7 +32,23 @@ License
 [Apache](http://www.apache.org/licenses/LICENSE-2.0)
 
 
-</td></tr><tr>
+</td></tr>
+
+<tr>
+
+<td>
+
+[ANTLR](https://www.antlr.org/)
+
+</td>
+
+<td>
+
+[BSD 3-clause](https://github.com/antlr/antlr4/blob/master/LICENSE.txt)
+
+</td></tr>
+
+<tr>
 
 <td>
 
@@ -490,7 +506,42 @@ License
 [Apache](http://www.apache.org/licenses/LICENSE-2.0)
 
 
-</td></tr><tr>
+</td></tr>
+
+
+<tr>
+
+<td>
+
+[GraphQL Java](https://www.graphql-java.com/)
+
+
+</td>
+
+<td>
+
+[MIT](https://github.com/graphql-java/graphql-java/blob/master/LICENSE.md)
+
+
+</td></tr>
+
+<tr>
+
+<td>
+
+[GraphQL Java Tools](https://github.com/graphql-java-kickstart/graphql-java-tools)
+
+
+</td>
+
+<td>
+
+[MIT](https://github.com/graphql-java-kickstart/graphql-java-tools/blob/master/LICENSE)
+
+
+</td></tr>
+
+<tr>
 
 <td>
 
@@ -1260,7 +1311,26 @@ License
 [MIT](http://raphaeljs.com/license.html)
 
 
-</td></tr><tr>
+</td></tr>
+
+
+<tr>
+
+<td>
+
+[Reactive Streams](https://www.reactive-streams.org/)
+
+
+</td>
+
+<td>
+
+[CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+
+</td></tr>
+
+<tr>
 
 <td>
 
