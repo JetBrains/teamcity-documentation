@@ -19,7 +19,7 @@ To improve your experience with building JavaScript projects in TeamCity, we int
 
 You can add the Node.js steps manually or let TeamCity scan your project's repository. When scanning, TeamCity will parse the `package.json` file to see what frameworks are used in the project. Based on this information, it will propose adding the respective build steps: for example, to install necessary dependencies or to run tests. You can later adjust these steps as you like.
 
-If there are [ESlint](https://eslint.org/), [Jest](https://jestjs.io/), [Mocha](https://mochajs.org/), or [Hermione](https://www.npmjs.com/package/hermione) dependencies in your project, TeamCity will show the respective test results right in the build overview.
+If there are [ESlint](https://eslint.org/), [Jest](https://jestjs.io/), or [Mocha](https://mochajs.org/) dependencies in your project, TeamCity will show the respective test results right in the build overview.
 
 To configure a Node.js build step, just enter a script with necessary Shell commands:
 

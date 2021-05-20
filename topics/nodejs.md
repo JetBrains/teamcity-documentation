@@ -17,7 +17,7 @@ If your repository contains a `package.json` file, TeamCity will [automatically 
 > 
 {type="note"}
 
-Currently supported frameworks are [ESlint](https://eslint.org/), [Jest](https://jestjs.io/), [Mocha](https://mochajs.org/), and [Hermione](https://www.npmjs.com/package/hermione).
+Currently supported frameworks are [ESlint](https://eslint.org/), [Jest](https://jestjs.io/), or [Mocha](https://mochajs.org/).
 
 If TeamCity detects an `.nvmrc` file, it will automatically use the node version specified in it.
 
