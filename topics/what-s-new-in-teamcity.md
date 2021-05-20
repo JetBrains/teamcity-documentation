@@ -179,7 +179,7 @@ The experimental UI roadmap strongly depends on our users' feedback. In version 
 
 >Leave feedback about your experience with the experimental UI via [this form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=360001686659).
 
-## Show tests in tree mode in Build Overview
+### Show tests in tree mode in Build Overview
 
 Test results are often the most important information you seek when opening the build details. We keep improving how tests are represented in our experimental UI: our goal is to reproduce all instruments available in the classic UI and make them even handier for you. Now, the new UI supports the test tree mode in the __Build Overview__.
 
@@ -191,7 +191,7 @@ As tests within the same group have a similar purpose, you might want to quickly
 
 If you prefer a keyboard navigation, use __Up__ and __Down__ keys to navigate the tree and __Space__ to collapse or expand the selected group or test.
 
-## New code coverage preview
+### New code coverage preview
 
 TeamCity can provide code coverage for [multiple build runners](code-coverage.md). With this release, the code coverage preview in __Build Overview__ gets even more visual.
 
@@ -199,7 +199,7 @@ If coverage is available for a build configuration, you can quickly preview a vi
 
 <img src="code-coverage-preview.png" width="706" alt="Code coverage preview"/>
 
-## Refined Project Home
+### Refined Project Home
 
 After gathering your feedback on the experimental __Project Home__ page, we focused on two tasks: use the space on this page more effectively and make a project tree easier to navigate. We hope that the refined page will serve you as a handy dashboard for previewing and running all builds of the same project:
 
