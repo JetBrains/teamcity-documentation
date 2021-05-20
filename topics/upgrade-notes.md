@@ -21,7 +21,7 @@ The default port in the TeamCity installer for Windows has been changed to 8111.
 
 TeamCity [Lucene-based search](search.md) now uses the `OR` operator by default instead of `AND`. This corresponds to the default Lucene syntax and helps optimize the search behavior and reduce its index size.
 
-### PNG build status icon by default
+### SVG build status icon by default
 
 The build status icon, available via the default `http://<TeamCity Server host>:<port>/app/rest/builds/<buildLocator>/statusIcon` [REST API endpoint](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html), is now provided in the SVG format instead of PNG. The `statusIcon.svg` endpoint is still supported for compatibility with existing scripts.
 
