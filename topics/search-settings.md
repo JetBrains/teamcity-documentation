@@ -1,22 +1,22 @@
 [//]: # (title: Search Settings)
 [//]: # (auxiliary-id: Search Settings)
 
-You can change the [search](search.md) mode used on the server in the __Search__ section of the Root project's settings.
+You can change the search mode used on the server in the __Builds Search__ section of the Root project's settings.
+
+The Lucene search syntax, supported for both modes, is described in [this article](search.md).
 
 ## Local Search
 
-By default, TeamCity stores a search index locally, in the [Data Directory](teamcity-data-directory.md). In the __Search__ section, you can control the indexing and see its statistics.
+By default, TeamCity stores a search index locally, in the [Data Directory](teamcity-data-directory.md). In the __Builds Search__ section, you can control the indexing and see its statistics.
 
-## Elastic-based Search
+## Elasticsearch
 {id="ElasticSearchSettings" auxiliary-id="ElasticSearchSettings"}
 
-TeamCity provides an alternative search mode, based on [Elastic](https://www.elastic.co/). It allows storing a global search index on your Elastic host, which is most optimal for TeamCity [multinode installations](multinode-setup.md), as it saves nodes' resources which would be otherwise spent on maintaining own local indexes.
+TeamCity provides an alternative search mode, based on [Elasticsearch](https://www.elastic.co/). The new mode has two advantages: (1) it saves disk space on the TeamCity server machine and (2) it is better for the TeamCity performance. It is especially effective for multinode installations, as nodes spend fewer resources on maintaining a single remote index than on multiple local indexes.
 
 To connect to your Elastic host or cluster, enter its URL and credentials. You can also set a custom name for a TeamCity index.
 
 After you save the new settings, TeamCity will spend some time reindexing entries. The exact duration depends on the size of your server. You can track or control the progress in the _Diagnostics_ table.
-
-Note that in terms of EAP, results provided by the Elastic search can differ from those of the local search. Search by build log is currently supported only for the local index, but we plan to support it in the Elastic search as well.
 
 <seealso>
         <category ref="user-guide">

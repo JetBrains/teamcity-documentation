@@ -20,7 +20,7 @@ Here you can choose one of the following options:
 * Disable synchronization.
 * Enable synchronization. In this case, you can also define which settings to use when the build starts. See details [below](#Defining+Settings+to+Apply+to+Builds).
 
-There are two modes of settings’ synchronization: _two-way_ and _one-way_.
+There are two modes of settings' synchronization: _two-way_ and _one-way_.
 
 <anchor name="two-way-sync"/>
 
@@ -29,7 +29,7 @@ The default mode is a _two-way synchronization_, that is when the _Allow editing
 * If the settings change is committed to the VCS, the TeamCity server will detect them and apply them to the project on the fly.   
   Before applying the newly checked-in settings, TeamCity validates them. If the validation constraints are not met (that is, the settings are invalid), the current settings are left intact and an error is shown in the UI. Invalid settings are those that cannot be loaded because of constraints: for instance, a build configuration references a non-existing VCS root or has a duplicate ID or name.
 
-If you disable the _Allow editing project settings via UI_ option, the project settings will become read-only in the UI and will only reflect changes made in the VCS. This is convenient if you prefer defining project settings’ [as code](kotlin-dsl.md) or load settings from a read-only VCS branch.
+If you disable the _Allow editing project settings via UI_ option, the project settings will become read-only in the UI and will only reflect changes made in the VCS. This is convenient if you prefer defining project settings' [as code](kotlin-dsl.md) or load settings from a read-only VCS branch.
 
 Enabling synchronization for a project also enables it for all its subprojects with the default "_Use settings from a parent project_" option selected. TeamCity synchronizes all changes to the project settings (including modifications of [build configurations](build-configuration.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on) except [SSH keys](ssh-keys-management.md).   
 However, if for certain subprojects the "_Synchronization disabled_" option is selected, such subprojects will not be synchronized even if this option is enabled for their parent project.

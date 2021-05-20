@@ -22,7 +22,6 @@ If you change or reset your password, TeamCity will automatically sign you out o
 ## Managing Access Tokens
 
 If [token-based authentication](configuring-authentication-settings.md#Token-Based+Authentication) is enabled on the TeamCity server, you can create access tokens and use them for authentication:
-
 * instead of your password (for example, in scripts or IDE plugin login), _or_
 * as the value of the `Authorization: Bearer <token-value>` HTTP header. For instance, in REST API requests:   
    ```Shell
