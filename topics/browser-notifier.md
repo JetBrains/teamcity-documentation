@@ -6,7 +6,7 @@ The extension is available for Mozilla Firefox, Opera, and Google Chrome (includ
 
 <note product="tc">
 
-Browser Notifier aims at replacing the obsolete [Windows Tray Notifier](windows-tray-notifier.md) and automatically uses all rules configured for it, if any. The __My Settings & Tools | Notification Rules | Windows Tray Notifier__ tab in TeamCity is renamed to __Browser Notifier__.
+Browser Notifier aims at replacing the obsolete [Windows Tray Notifier](windows-tray-notifier.md) and automatically uses all rules configured for it, if any. The __Your Profile | Notification Rules | Windows Tray Notifier__ tab in TeamCity is renamed to __Browser Notifier__.
 
 We recommend switching to the new Notifier as it covers the Windows Tray Notifier functionality and is overall more convenient. However, if you are using Mozilla Firefox or Opera, note that Browser Notifier will work only when your browser is open.
 
@@ -31,7 +31,7 @@ Follow these steps to start using the Notifier:
    * [Opera](https://addons.opera.com/en/extensions/details/teamcity-notifier/)
 2. Open your TeamCity server and sign into it.   
 The extension will automatically detect the TeamCity session and change the icon from the inactive ![browser-notifier-inactive.png](browser-notifier-inactive.png) to active state ![browser-notifier-active.png](browser-notifier-active.png). Click the icon and check that notifications are enabled.
-3. The Notifier relies on your [custom notification rules](subscribing-to-notifications.md#What+Will+Be+Watched) configured in TeamCity. If no rules are specified, you won’t be able to receive any notifications. To add or modify a rule, click __Edit rules__ opposite the server URL. You will be redirected to the __My Settings & Tools | Notification Rules | Browser Notifier__ tab of your TeamCity user settings.
+3. The Notifier relies on your [custom notification rules](subscribing-to-notifications.md#What+Will+Be+Watched) configured in TeamCity. If no rules are specified, you won’t be able to receive any notifications. To add or modify a rule, click __Edit rules__ opposite the server URL. You will be redirected to the __Your Profile | Notification Rules | Browser Notifier__ tab of your TeamCity user settings.
 
 ## Working with Browser Notifier
 

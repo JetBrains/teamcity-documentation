@@ -11,7 +11,7 @@ We encourage you to try the TeamCity experimental UI and leave your feedback via
 
 When you sign in to TeamCity for the first time, it automatically offers you to switch to the experimental UI and remembers your choice.
 
-You can change the default UI representation anytime in __My Settings & Tools | General__ via the _Use experimental UI_ checkbox.
+You can change the default UI representation anytime in __Your Profile | General__ via the _Use experimental UI_ checkbox.
  
 Any page that supports the experimental UI has a toggle that allows quickly accessing a UI mode alternative to the default one. For example, if you miss any of the familiar classic options in the new UI, you can switch the page to the classic UI with the ![mammoth.png](mammoth.png) button. To return to the experimental UI, click ![tube.png](tube.png).
 

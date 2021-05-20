@@ -5,7 +5,7 @@ To get to your user profile settings, click your name in the header and select _
 
 ## Changing Your Password
 
-If [built-in authentication](configuring-authentication-settings.md#Built-in+Authentication) is configured, TeamCity server maintains passwords for the user authentication. You can change your password in __My Settings & Tools | General | Built-in Authentication__. Enter an existing and new passwords and click __Save changes__.
+If [built-in authentication](configuring-authentication-settings.md#Built-in+Authentication) is configured, TeamCity server maintains passwords for the user authentication. You can change the password in __Your Profile | General | Built-in Authentication__. Enter an existing and new passwords and click __Save changes__.
 
 The password can only be changed for the built-in authentication. If you don't see these fields, this means that TeamCity is configured to use external authentication and the password should be changed in the corresponding external system. 
 
@@ -28,7 +28,7 @@ If [token-based authentication](configuring-authentication-settings.md#Token-Bas
    curl --header "Authorization: Bearer <token-value>" http://<host>:<port>/app/rest/builds
    ```
 
-You can manage tokens in __My Settings & Tools | Access Tokens__. Note that the token value is only available during token creation and is not possible for retrieval afterwards.
+You can manage tokens in __Your Profile | Access Tokens__. Note that the token value is only available during token creation and is not possible for retrieval afterwards.
   
 To automatically revoke a token after its expiration, specify its time limit.
 
@@ -46,7 +46,7 @@ Note that some operations allowed by enabled permissions might be blocked by the
 
 ## Managing Version Control Username Settings
 
-In __My Settings & Tools | General__, you can see the list of your version control usernames in the __Version Control Username Settings__ area.   
+In __Your Profile | General__, you can see the list of your version control usernames in the __Version Control Username Settings__ area.   
 By default, TeamCity uses your login name as the VCS username. Click __Edit__ to provide actual usernames for version control systems you use. Make sure the usernames are correct.   
 These settings are not used for authentication for the particular VCS, and so on.
 
@@ -57,7 +57,7 @@ These settings enable you to:
 
 ## Customizing UI
 
-In __My Settings & Tools | General__, you can customize the following UI settings:
+In __Your Profile | General__, you can customize the following UI settings:
 * Highlight my changes and investigations: Select to highlight builds that include your changes (changes committed by a user with the VCS username provided in the [Version Control Username Settings](#Managing+Version+Control+Username+Settings) section) and problems you were assigned to investigate on the __Projects__ page, __Project Home__ page, __Build Configuration Home__ page.
 * Show date/time in my timezone: Check the option, if you want TeamCity to automatically detect your time zone and show the date and time (for example, build start, VCS change time, and so on) according to it.
 * Show all personal builds
@@ -65,9 +65,9 @@ In __My Settings & Tools | General__, you can customize the following UI setting
 
 ## Viewing your Roles and Permissions
 
-In __My Settings & Tools | Groups__, you can view the list of user groups you are assigned to.
+In __Your Profile | Groups__, you can view the list of user groups you are assigned to.
 
-In __My Settings & Tools | Roles__, you can view your roles and permissions in different projects. Note, that roles are assigned to a user by the system administrator.
+In __Your Profile | Roles__, you can view your roles and permissions in different projects. Note, that roles are assigned to a user by the system administrator.
 
 <seealso>
         <category ref="concepts">
