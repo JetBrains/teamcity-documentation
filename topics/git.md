@@ -337,6 +337,8 @@ This setting defines how TeamCity performs a checkout to a build agent.
 * __Auto__: TeamCity will automatically apply one of the above approaches depending on the `teamcity.cloud.agent.terminate.after.build` [agent configuration property](build-agent-configuration.md) and on the mirror presence on the agent.
 
 >Read how to add a [Git mirror on a cloud agent](#Git+mirrors+on+cloud+agents).
+>
+{product="tc"}
 
 </td></tr>
 

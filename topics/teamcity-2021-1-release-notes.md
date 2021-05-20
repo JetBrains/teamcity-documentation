@@ -47,7 +47,7 @@ __20 May 2021__
 [**TW-66202**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-66202) — Allow S3 upload chunk size and minimum multipart threshold to be configurable  
 [**TW-20566**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-20566) — Make status widget more discoverable  
 [**TW-68887**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68887) — Docker image. Support ARM architecture (AWS ECS Graviton ARM)  
-[**TW-69025**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69025) — Consider adding [Access-Control-Allow-Origin] header to the authenticationTest.html?csrf endpoint  
+[**TW-69025**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69025) — Consider adding \[Access-Control-Allow-Origin\] header to the authenticationTest.html?csrf endpoint  
 [**TW-58966**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-58966) — Provide perforce/helix binaries to teamcity-server docker image  
 [**TW-70837**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-70837) — Access Tokens: Add permissions and expiration date to audit actions  
 [**TW-64791**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-64791) — Limit permissions scope on access token  
@@ -118,7 +118,7 @@ __20 May 2021__
 [**TW-68702**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68702) — Let&#39;s show project and build configuration favourite icon by hover  
 [**TW-69111**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69111) — Not obvious how to configure building from branches  
 [**TW-70119**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-70119) — Permission &quot;View project and all parent projects&quot; in the Access tokens table is confusing  
-[**TW-70003**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-70003) — It&#39;s not possible to modify a user group (setGroupProperty﻿) using a personal limited to project token  
+[**TW-70003**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-70003) — It&#39;s not possible to modify a user group (setGroupProperty) using a personal limited to project token  
 [**TW-68714**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68714) — Add a link to documentation to the Auto-detected Build Steps page  
 [**TW-67588**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67588) — Token settings (type and time limit) are reset after entering an invalid value
 
