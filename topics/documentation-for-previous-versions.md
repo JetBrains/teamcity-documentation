@@ -1,0 +1,21 @@
+[//]: # (title: Documentation for Previous Versions)
+[//]: # (auxiliary-id: Documentation for Previous Versions)
+
+[Permalink](https://www.jetbrains.com/help/teamcity/teamcity-documentation.html) to the latest version documentation.
+
+* [TeamCity 2021.1 documentation](https://www.jetbrains.com/help/teamcity/2021.1/teamcity-documentation.html) (you are here)
+* [TeamCity 2020.2 documentation](https://www.jetbrains.com/help/teamcity/2020.2/teamcity-documentation.html)
+* [TeamCity 2020.1 documentation](https://www.jetbrains.com/help/teamcity/2020.1/teamcity-documentation.html)
+* [TeamCity 2019.2 documentation](https://www.jetbrains.com/help/teamcity/2019.2/teamcity-documentation.html)
+* [TeamCity 2019.1 documentation](https://www.jetbrains.com/help/teamcity/2019.1/teamcity-documentation.html)
+* [TeamCity 2018.x documentation](https://confluence.jetbrains.com/display/TCD18/TeamCity+Documentation)
+* [TeamCity 10.x and 2017.x documentation](https://confluence.jetbrains.com/display/TCD10/TeamCity+Documentation)
+* [TeamCity 9.x documentation](https://confluence.jetbrains.com/display/TCD9/TeamCity+Documentation)
+* [TeamCity 8.x documentation](https://confluence.jetbrains.com/display/TCD8)
+* [TeamCity 7.x documentation](https://confluence.jetbrains.com/display/TCD7)
+* [TeamCity 6.5.x documentation](https://confluence.jetbrains.com/display/TCD65)
+* [TeamCity 6.0.x documentation](https://confluence.jetbrains.com/display/TCD6)
+* [TeamCity 5.x documentation](https://confluence.jetbrains.com/display/TCD5)
+* [TeamCity 4.x documentation](https://confluence.jetbrains.com/display/TCD4)
+* [TeamCity 3.x documentation](https://confluence.jetbrains.com/display/TCD3)
+* [TeamCity 2.x documentation](https://confluence.jetbrains.com/display/TCD)
