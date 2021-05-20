@@ -8,6 +8,8 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 >* For all downloads, you can get the SHA256 checksum: just add `.sha256` to the download URL.
 >* Windows installer can also be downloaded archived: replace `.exe` in the link to the installer with `-installer.zip`.
 
+See also: [Documentation for Previous Versions](documentation-for-previous-versions.md) and [Roadmap Outline](roadmap-outline.md).
+
 ## Current version
 
 __Current TeamCity Version is 2021.1__

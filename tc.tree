@@ -111,6 +111,7 @@
          <toc-element id="upgrade.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="previous-releases-downloads.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="teamcity-release-cycle.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="roadmap-outline.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="teamcity-maintenance-mode.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="setting-up-an-external-database.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="setting-up-teamcity-with-ms-sql-server.md" show-structure-for="chapter" show-structure-depth="4"/>
