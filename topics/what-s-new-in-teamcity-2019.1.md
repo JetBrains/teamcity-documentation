@@ -9,7 +9,7 @@ The main product documentation is accessible on the [new documentation website](
  
 The Plugin Development Help is now in a [separate location](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html) and its source files have been moved to the public [GitHub repository](https://github.com/JetBrains/teamcity-sdk-docs) so our community can contribute to it. 
 
-The [documentation for previous versions](https://confluence.jetbrains.com/display/TW/Documentation) is available in Confluence.
+See the [documentation for previous versions](documentation-for-previous-versions.md).
 
 
 ## Revamped experimental TeamCity UI

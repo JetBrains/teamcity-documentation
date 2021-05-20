@@ -5,7 +5,7 @@ The TeamCity server can be configured to use multiple nodes (or servers) for hig
 
 As the main use case of a multinode setup is to achieve high availability (HA), this article will focus on configuring an HA cluster. However, you can use the same methods for any setup with multiple TeamCity nodes: for example, to distribute load between several machines.
 
->The instructions are provided for TeamCity 2021.1 or later. If you use an earlier version, please refer to its [respective documentation](https://confluence.jetbrains.com/display/TW/Documentation).
+>The instructions are provided for TeamCity 2021.1 or later. If you use an earlier version, please refer to its [respective documentation](documentation-for-previous-versions.md).
 >
 {type="note"}
 
