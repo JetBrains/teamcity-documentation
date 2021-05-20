@@ -407,7 +407,7 @@ The restore operation can be done on either of the nodes, but only if all nodes 
 >
 {type="note"}
 
-#### User-level Actions on Secondary Node
+### User-level Actions on Secondary Node
 
 If the "_[Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node)_" responsibility is enabled on a secondary node, it will allow performing the most common user-level actions:
 * Triggering a build, including a custom or personal one
