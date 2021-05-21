@@ -84,7 +84,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
 
 ## Proxy Configuration
 
-The reverse HTTP proxy serves a single endpoint for TeamCity users and for [build agents](build-agent.md). This is also a good place to configure HTTPS connection settings for the entire cluster.
+The reverse HTTP proxy serves as a single endpoint for TeamCity users and for [build agents](build-agent.md). This is also a good place to configure HTTPS connection settings for the entire cluster.
 
 In case with TeamCity, the proxy server also acts as a load balancer for incoming requests. It can determine where the request should be sent and route it to the corresponding upstream server. In this article, we provide examples of the proxy configuration for two most popular proxy servers: NGINX and HAProxy.
 
@@ -95,9 +95,9 @@ In case with TeamCity, the proxy server also acts as a load balancer for incomin
 ```Plain Text
 defaults
     mode http
-    timeout connect 5s
-    timeout client 10800s
-    timeout server 10800s
+    timeout connect 240s
+    timeout client 1200s
+    timeout server 1200s
 
 frontend http-in
     bind *:80
@@ -123,7 +123,6 @@ frontend http-in
     http-request add-header X-TeamCity-Proxy "type=haproxy; version=2021.1" 
     http-request set-header X-Forwarded-Host %[req.hdr(Host)]
 
-
     acl is_build_agent hdr_beg(User-Agent) -i "TeamCity Agent"
 
     use_backend agents_endpoint if is_build_agent
@@ -135,14 +134,14 @@ backend agents_endpoint
     cookie X-TeamCity-Node-Id-Cookie
     
     option httpchk GET /app/rest/version
-    server MAIN_NODE {main_node_hostname} check inter 5s downinter 2s fall 3 rise 5 cookie {main_node_id}
-    server SECONDARY_NODE {secondary_node_hostname} check inter 5s downinter 2s fall 3 rise 5 cookie {secondary_node_id}
+    server MAIN_NODE {main_node_hostname} check inter 30s downinter 15s fall 4 rise 4 cookie {main_node_id}
+    server SECONDARY_NODE {secondary_node_hostname} check inter 30s downinter 15s fall 4 rise 4 cookie {secondary_node_id}
 
 backend web_endpoint
     balance first # choose first available server
     option httpchk GET /app/rest/version
-    server WEB_MAIN_NODE {main_node_hostname} check inter 5s downinter 2s fall 3 rise 5
-    server WEB_SECONDARY_NODE {secondary_node_hostname} check inter 5s downinter 2s fall 3 rise 5
+    server WEB_MAIN_NODE {main_node_hostname} check inter 30s downinter 15s fall 4 rise 4 
+    server WEB_SECONDARY_NODE {secondary_node_hostname} check inter 30s downinter 15s fall 4 rise 4 
 
 ```
 </tab>
@@ -178,6 +177,10 @@ map $http_upgrade $connection_upgrade { # WebSocket support
    default upgrade;
    '' '';
 }   
+
+proxy_read_timeout     1200;
+proxy_connect_timeout  240;
+client_max_body_size   0;    # maximum size of an HTTP request. 0 allows uploading large artifacts to TeamCity
 
 server {
   listen        80;
