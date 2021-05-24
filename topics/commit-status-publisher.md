@@ -97,7 +97,7 @@ Commit Status Publisher supports Gerrit versions 2.6+. For configuring integrati
 4. Test the connection
 5. Save your settings.
 
-## Example: Configuring Pull Requests Status Publishing to GitHub
+__Example: Configuring Pull Requests Status Publishing to GitHub__
 
 The example below demonstrates how to configure sending the status of builds with changes included in your pull request from TeamCity to GitHub.
 
@@ -112,7 +112,18 @@ The example below demonstrates how to configure sending the status of builds wit
      * failed ![Failed.png](Failed.png)
      * successful ![Successful.png](Successful.png)
    * hovering over the commit status will display the build summary
-   * clicking the build status icon or the _Details_ link will open the [build results](working-with-build-results.md) page in TeamCity. This information is also available on the __Commits__ tab of your pull request details.         
-   Similarly to the previous page, clicking the build status icon opens the [build results](working-with-build-results.md) page in the TeamCity web UI: 
+   * clicking the build status icon or the _Details_ link will open the [build results](working-with-build-results.md) page in TeamCity. This information is also available on the __Commits__ tab of your pull request details.   
+   Similarly to the previous page, clicking the build status icon opens the [build results](working-with-build-results.md) page in the TeamCity UI: 
    
     <img src="BuildResults.PNG" width="1054" alt="Build results"/>
+    
+## Using Commit Status Publisher with VCS checkout rules
+
+If a build's VCS root has [checkout rules](configuring-vcs-settings.md#Configure+Checkout+Rules) configured, Commit Status Publisher will consider only commits that conform to these rules. That is, if the last commit made before the build start does not satisfy the checkout rules, it will not be labeled with the build status; the status will be displayed next to the last satisfying commit instead.
+
+If you need to display the build status next to the last commit of the build (for example, in a pull request), you can adjust the checkout rules so this commit is included into the VCS root's scope. Or, if this is a recurrent issue, consider rearranging your build chain as follows:
+1. Configure the main build with checkout rules.
+2. Configure an utility [composite build](composite-build-configuration.md) without build steps and checkout rules but with the Commit Status Publisher feature.
+3. In the composite build, configure a [snapshot dependency](snapshot-dependencies.md) on the main build.
+
+In the scope of such a chain, Commit Status Publisher will not be bound by the checkout rules and the build status will be displayed next to the very last commit.
