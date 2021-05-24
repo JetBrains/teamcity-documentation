@@ -6,7 +6,7 @@ Common VCS root properties are described [here](configuring-vcs-roots.md#Common+
 
 <note product="tc">
 
-A Perforce client must be installed on the TeamCity server and it should be present in `PATH`. Alternatively, a full path to `p4` could be set via the [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.perforce.customP4Path`.   
+A Perforce client must be installed on the TeamCity server and it should be present in `PATH`. Alternatively, a full path to `p4` could be set via the [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.perforce.customP4Path`. The property value must include the `p4` filename, too.
 If you plan to use the agent-side [checkout mode](vcs-checkout-mode.md#agent-checkout), note that a Perforce client must be installed on the agents, and the path to the p4 executable must be added to the PATH environment variable.  
 Also check [TeamCity and Perforce compatibility](perforce-vcs-compatibility.md).
 </note>
