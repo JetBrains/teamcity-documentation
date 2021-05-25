@@ -29,10 +29,10 @@ It is recommended to print into the output only the messages required to underst
 
 When opening large build logs, TeamCity displays a part of it to avoid browser hanging. You can view the full build log on clicking the corresponding link.
 
-The display threshold is set to 7M characters by default and can be adjusted using the `teamcity.buildLog.sizeThreshold.chars` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (not applicable to running build logs and logs links with states (for example, direct links to messages).
+The display threshold is set to 5M characters by default and can be adjusted using the `teamcity.buildLog.sizeThreshold.chars` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (not applicable to running build logs and logs links with states (for example, direct links to messages).
 {product="tc"}
 
-The display threshold is set to 7M characters.
+The display threshold is set to 5M characters.
 {product="tcc"}
 
 ## ANSI-style Coloring in Build Log
