@@ -116,10 +116,10 @@ Click __Add Image__ and configure the required options for the image.
 
 >Note that only one TeamCity build agent service can be run on each cloud instance.
 
-You can specify which [agent pool](configuring-agent-pools.md) the agents should belong to. You can only select the pool that contains this project and/or its subprojects. Pools containing projects other than the current one and its subprojects will not be available for assignment. If the selected agent pool is changed in the future so that the criteria are not met or if the agent pool is not specified, TeamCity will automatically assign the cloud agents to the _project agent pool_. You can also select the _\<Project pool\>_ in the drop-down menu manually.   
+You can specify which [agent pool](agent-pool.md) the agents should belong to. You can only select the pool that contains the current project and/or its subprojects. Pools containing projects other than the current one and its subprojects will not be available for assignment. If the selected agent pool is changed in the future so that the criteria are not met or if the agent pool is not specified, TeamCity will automatically assign the cloud agents to the _project pool_. You can also select the _\<Project pool\>_ in the drop-down menu manually.   
 TeamCity automatically composes the project pool containing agents from all cloud profiles of the current project and all its subprojects. Thus, the added image will be available to all the subprojects as well. On the __Agents | Pools__ page, this pool is marked as "_\<Project name\> project pool_". Project pools cannot be deleted or modified.
 
-After an Agent Cloud profile is created with one or several sources for virtual machines, TeamCity does a test start for all the virtual machines specified in the profile to learn about the agents configured on them. Once agents are connected, TeamCity calculates their build configurations-to-agents compatibility and stores this information.
+After an agent cloud profile is created with one or several sources for virtual machines, TeamCity does a test start for all the virtual machines specified in the profile to learn about the agents configured on them. Once agents are connected, TeamCity calculates their build configurations-to-agents compatibility and stores this information.
 
 When a cloud profile is changed, TeamCity detects modifications immediately and forces shutdown of the agents started prior to these changes once the agents finish the current build.
 
