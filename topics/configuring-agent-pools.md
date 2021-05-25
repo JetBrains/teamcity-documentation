@@ -22,6 +22,7 @@ By default, a pool can contain an unlimited number of agents. You can set a maxi
 To populate a pool with agents, click __Assign agents__ and select them from the list. Since an agent can belong to one pool only, assigning it to a pool will remove it from its previous pool. If this may cause compatibility problems, TeamCity will give you a warning. Removing an agent from a custom pool will return it to the Default pool. You can also assign cloud agents to a specific pool when adding an image to a cloud profile.
 
 To assign a pool to a cloud agent, you need to configure it in the cloud image details of the [agent cloud profile](agent-cloud-profile.md). Note that agents from all cloud profiles of the current project are automatically combined into a _[project pool](agent-cloud-profile.md#Adding+Agent+Image)_.
+{product="tc"}
 
 <note product="tc">
 
@@ -41,6 +42,6 @@ When you have configured agent pools, you can:
         </category>
         <category ref="admin-guide">
             <a href="viewing-agents-workload.md">Viewing Agents Workload</a>
-            <a href="agent-cloud-profile.md">Agent Cloud Profile</a>
+            <a href="agent-cloud-profile.md" product="tc">Agent Cloud Profile</a>
         </category>
 </seealso>
