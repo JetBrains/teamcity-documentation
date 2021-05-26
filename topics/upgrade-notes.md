@@ -23,7 +23,8 @@ TeamCity [Lucene-based search](search.md) now uses the `OR` operator by default 
 
 ### SVG build status icon by default
 
-The build status icon, available via the default `http://<TeamCity Server host>:<port>/app/rest/builds/<buildLocator>/statusIcon` [REST API endpoint](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html), is now provided in the SVG format instead of PNG. The `statusIcon.svg` endpoint is still supported for compatibility with existing scripts.
+The build status icon, available via the default `http://<TeamCity Server host>:<port>/app/rest/builds/<buildLocator>/statusIcon` [REST API endpoint](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html), is now provided in the SVG format instead of PNG. The `statusIcon.svg` endpoint is still supported for compatibility with existing scripts.  
+To get a PNG icon, use the `statusIcon.png` endpoint.
 
 ### Unbundled old versions of REST API
 
