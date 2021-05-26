@@ -26,7 +26,7 @@ The `.exe` and `.tar.gz` distributions:
 * At least under Windows, provide better error reporting for some cases (like a missing Java installation).
 * Under Windows, allow running TeamCity as a service with the ability to use the same configuration as if run from the console.
 * Come bundled with a build agent distribution and single startup script which allows for easy TeamCity server evaluation with one agent.
-* Come bundled with the devPackage for [TeamCity plugin development](https://confluence.jetbrains.com/display/TCD18/Developing+TeamCity+Plugins).
+* Come bundled with the devPackage for [TeamCity plugin development](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).
 * May provide more convenience features in the future.
 
 After installation, the TeamCity web UI can be accessed via a web browser. The default addresses are [`http://localhost/`](http://localhost/) for Windows distribution and [`http://localhost:8111/`](http://localhost:8111/) for the `tar.gz` distribution.
