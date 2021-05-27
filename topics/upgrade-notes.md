@@ -3,6 +3,11 @@
 
 ## Changes from 2020.2.x to 2021.1
 
+### Known Issues
+{id="known-issues-202121"}
+
+* When trying to load a NuGet package which name contains the `.` (dot) character, users get the "Could not find acceptable representation" exception in the build log. This is caused by the issue in the new performance optimization algorithm: it truncates the file name to the part preceding the first dot. To workaround this issue, please download the fixed NuGet Support plugin [here](https://youtrack.jetbrains.com/issue/TW-71659#focus=Comments-27-4916989.0-0) and upload it in __Administration | Plugins__. Alternatively, you can temporarily disable the new optimization mode by setting the `teamcity.nuget.feed.async.request.enabled` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to `false` — note that this property has to be removed after upgrading to TeamCity 2021.1.1.
+
 ### Git Use Mirrors is deprecated in favor of Checkout Policy
 
 [Git](git.md) VCS roots now receive the new _[Checkout Policy](git.md#git-checkout-policy)_ option that replaces the _Use Mirrors_ checkbox and provides more flexibility. On upgrading, the roots' settings will keep their selected states. However, Git roots' settings in [Kotlin DSL](kotlin-dsl.md) specifications need to be updated.
