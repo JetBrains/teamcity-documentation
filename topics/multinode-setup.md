@@ -1,5 +1,5 @@
 [//]: # (title: Multinode Setup)
-[//]: # (auxiliary-id: Multinode Setup;Configuring Secondary Node)
+[//]: # (auxiliary-id: Multinode Setup)
 
 The TeamCity server can be configured to use multiple nodes (or servers) for high availability and flexible load distribution. It is possible to set up a cluster of TeamCity nodes, where each node is responsible for different tasks, like processing data from builds or collecting changes from VCS repositories. Or, to keep one main node that does all the work and a secondary node which provides a read-only interface. In case the main node goes down, all data processing can be switched to the secondary node with minimum downtime.
 

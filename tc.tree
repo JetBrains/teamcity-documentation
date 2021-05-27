@@ -182,6 +182,7 @@
          </toc-element>
          <toc-element id="security-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="multinode-setup.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="configuring-secondary-node.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
          <toc-element id="managing-projects-and-build-configurations.md">
             <toc-element id="creating-and-editing-projects.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configuring-vcs-settings.md" show-structure-for="chapter" show-structure-depth="4">
