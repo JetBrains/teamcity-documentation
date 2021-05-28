@@ -106,9 +106,8 @@ TeamCity passes environment variables from the [build configuration](build-confi
 
 ## Setting Image Entrypoint
 
-If you want to run a container with a specific [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint), follow these steps:
-
-1. Create a [Command Line](command-line.md) build step.
+If a Docker image does not define an [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint), you can use still run a container with an `ENTRYPOINT` from the command line:
+1. Add a [Command Line](command-line.md) build step.
 2. Set the _Run_ mode to _Executable with parameters_.
 3. In the _Command executable_ field, specify the full path to the `ENTRYPOINT` in the target Docker container.
 4. In _Docker Settings_, specify the name of the Docker container.
