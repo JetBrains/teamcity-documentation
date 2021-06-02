@@ -233,7 +233,7 @@ In the examples above, the following values should be replaced:
 
 On a failover, if a former secondary node is assigned with the _Main TeamCity node_ responsibility, the configuration of the main and secondary nodes in the proxy config should be updated: `{main_node_hostname}` and `{main_node_id}` should be replaced with the hostname and ID of the new main node; `{secondary_node_hostname}` and `{secondary_node_id}` — with the hostname and ID of the former main node.
 
->Since all users will be using the URL of the proxy server for accessing the UI, this URL should be specified as a "Server URL" on the __Administration | Global Settings__ page.
+>Since users will be using the URL of the proxy server for accessing the TeamCity UI, this URL should be specified as a "Server URL" on the __Administration | Global Settings__ page. Likewise, as build agents will be using it for accessing the nodes, it should be set as `serverURL` in the [build agents' configs](build-agent-configuration.md).
 > 
 {type="note"}
 
