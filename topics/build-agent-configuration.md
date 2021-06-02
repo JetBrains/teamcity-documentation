@@ -54,12 +54,14 @@ authorizationToken=1234567890abcdefghijklml
 
 <note>
 
-Make sure that the file is writable for the build agent process itself. For example, the file is updated to store its authorization token that is generated on the server-side.
+Make sure the file is writable for the build agent process itself. For example, the file is updated to store its authorization token generated on the server-side.
 </note>
+
+If you install multiple TeamCity nodes [behind a reverse proxy](multinode-setup.md#Proxy+Configuration), `serverUrl` should be set to the proxy URL.
 
 If the `name` property is not specified, the server will generate a build agent name automatically. By default, this name will be created from the build agent's host name.
 
-The file can be edited while the agent is running: the agent detects the change and (upon finishing a running build, if any) restarts automatically  loading the new settings. 
+The file can be edited while the agent is running: the agent detects the change and (upon finishing a running build, if any) restarts automatically loading the new settings. 
 
 ## Optional Properties
 
