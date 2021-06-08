@@ -74,7 +74,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
 2. Select an ID for each of the nodes: for example, a short ID based on a hostname.
 3. Create the `TEAMCITY_SERVER_OPTS` environment variable on each node. This variable should have the following arguments:
     ```Shell
-    -Dteamcity.server.nodeId=<node_ID> -Dteamcity.server.rootURL=<node_ID> -Dteamcity.data.path=<TeamCity Data Directory> -Dteamcity.node.data.path=<Node-specific Data Directory>
+    -Dteamcity.server.nodeId=<node_ID> -Dteamcity.server.rootURL=<node_root_URL> -Dteamcity.data.path=<TeamCity Data Directory> -Dteamcity.node.data.path=<Node-specific Data Directory>
     ```
     >You can also specify a path to the shared TeamCity Data Directory via the TEAMCITY_DATA_PATH environment variable.  
     >Make sure the database is configured to accept enough parallel connections to handle requests from both nodes. By default, each node requires 50 connections to the database.
