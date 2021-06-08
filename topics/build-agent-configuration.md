@@ -58,6 +58,7 @@ Make sure the file is writable for the build agent process itself. For example, 
 </note>
 
 If you install multiple TeamCity nodes [behind a reverse proxy](multinode-setup.md#Proxy+Configuration), `serverUrl` should be set to the proxy URL.
+{product="tc"}
 
 If the `name` property is not specified, the server will generate a build agent name automatically. By default, this name will be created from the build agent's host name.
 
