@@ -133,7 +133,7 @@ chmod 755 /path/to/teamcity-trigger.sh /path/to/svn_repository_root/hooks/post-c
 
 There are two ways to set up a post-commit hook in Perforce:
 
-* [Using the dedicated script](#Using+post-commit+script+for+Perforce). This is a recommended approach. It is currently available in terms of TeamCity 2021.1 Early Access Program.
+* [Using the dedicated script](#Using+post-commit+script+for+Perforce). This is a recommended approach.
 * [Using the generic script](#Editing+Perforce+specification+with+generic+script). Obsolete approach.
 
 ### Using post-commit script for Perforce
