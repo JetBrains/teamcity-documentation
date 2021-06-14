@@ -37,7 +37,11 @@ To connect to an insecure registry:
 
 ## Running multiple agents with Docker on one machine
 
-TeamCity supports the case when multiple agents are running parallel builds on the same machine and connect to a Docker registry during these builds. However, if any build executes the `docker logout` command to sign out from a Docker registry, this might break a parallel build which is also connected to this registry. To prevent this from happening, you need to specify the location of each agent's `.docker` directory as an environment variable. For this, define the `env.DOCKER_CONFIG=%[teamcity.agent.home.dir](agent-home-directory.md)%/system/.docker` environment variable either as a [build configuration parameter](configuring-build-parameters.md) or in the [`buildAgent.properties`](build-agent-configuration.md) file of each agent.
+TeamCity supports the case when multiple agents are running parallel builds on the same machine and connect to a Docker registry during these builds.
+
+But this setup requires different docker environments as the `docker logout` command executed at the end of the one build should not affect the parallel build on another agent.
+
+To prevent this from happening, you need to specify different locations of each agent's `.docker` directory. For this, define the `env.DOCKER_CONFIG=%[teamcity.agent.home.dir](agent-home-directory.md)%/system/.docker` environment variable either as a [build configuration parameter](configuring-build-parameters.md) or in the [`buildAgent.properties`](build-agent-configuration.md) file of each agent.
 
 <seealso>
         <category ref="admin-guide">
