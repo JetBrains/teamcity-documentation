@@ -3,9 +3,12 @@
 
 ## Changes from 2021.1 to 2021.1.1
 
+* If you have added the `teamcity.nuget.feed.async.request.enabled` internal property to workaround [this issue](#ki-202121) in 2021.1, remember to remove it on upgrading to 2021.1.1.
 * VCS roots of archived subprojects are now hidden by default on the __Project Settings | VCS Roots__ page. You can display them by enabling the _including archived_ filter option.
 
 ## Changes from 2020.2.x to 2021.1
+
+<anchor name="ki-202121"/>
 
 ### Known Issues
 {id="known-issues-202121"}
