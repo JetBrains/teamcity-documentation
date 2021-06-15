@@ -100,9 +100,9 @@ If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment va
 
 At the end of each build step performed inside a Docker wrapper, a build agent runs the `chown` command to restore the access of the `buildAgent` user to the checkout directory. This is done to prevent a potential problem when the files from a Docker container are created with the `root` ownership and cannot be removed by the build agent later.
 
-By default, TeamCity agent uses the `busybox` image from Docker Hub to run the `chown` command. You can specify an alternative image name with the `teamcity.internal.docker.busybox` parameter, either in the [`buildAgent.properties`](build-agent-configuration.md) file or in the [build configuration parameters](configuring-build-parameters.md).
+By default, a TeamCity agent uses the `busybox` image from Docker Hub to run the `chown` command. You can specify an alternative image name with the `teamcity.internal.docker.busybox` parameter, either in the [`buildAgent.properties`](build-agent-configuration.md) file or in the [build configuration parameters](configuring-build-parameters.md).
 
-> You may want to disable restoring the file ownership. For instance, if the `userns-remap` package is used for handling ownership of files created under Docker. For this, add the `teamcity.docker.chown.enabled=false` configuration parameter to the [`buildAgent.properties`](build-agent-configuration.md) file. As a result, TeamCity will not try to restore permissions of the files at the end of the build.
+>You may want to disable restoring the file ownership. For instance, if the `userns-remap` package is used for handling ownership of files created under Docker. For this, add the `teamcity.docker.chown.enabled=false` configuration parameter to the [`buildAgent.properties`](build-agent-configuration.md) file. As a result, TeamCity will not try to restore permissions of the files at the end of the build.
 
 ## Environment Variables Handling
 
