@@ -98,11 +98,11 @@ If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment va
                                      
 ## Restoring File Ownership on Linux
 
-At the end of the build step with the Docker wrapper, a build agent runs the `chown` command to restore access of the `buildAgent` user to the checkout directory. This mitigates a possible problem when the files from a Docker container are created with the `root` ownership and cannot be removed by the build agent later.
+At the end of each build step performed inside a Docker wrapper, a build agent runs the `chown` command to restore the access of the `buildAgent` user to the checkout directory. This is done to prevent a potential problem when the files from a Docker container are created with the `root` ownership and cannot be removed by the build agent later.
 
->You may want to disable restoring the file ownership, for instance, if the `userns-remap` package is used to handle ownership of files created under Docker. For this, add the `teamcity.docker.chown.enabled=false` configuration parameter to the [`buildAgent.properties`](build-agent-configuration.md) file. As a result, TeamCity will not try to restore permissions of the files at the end of the build.
+By default, a TeamCity agent uses the `busybox` image from Docker Hub to run the `chown` command. You can specify an alternative image name with the `teamcity.internal.docker.busybox` parameter, either in the [`buildAgent.properties`](build-agent-configuration.md) file or in the [build configuration parameters](configuring-build-parameters.md).
 
-If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment variable set by the previous [Docker Compose](docker-compose.md) build step, this network is passed to the started `docker run` command with the `--network` switch.
+>You may want to disable restoring the file ownership. For instance, if the `userns-remap` package is used for handling ownership of files created under Docker. For this, add the `teamcity.docker.chown.enabled=false` configuration parameter to the [`buildAgent.properties`](build-agent-configuration.md) file. As a result, TeamCity will not try to restore permissions of the files at the end of the build.
 
 ## Environment Variables Handling
 

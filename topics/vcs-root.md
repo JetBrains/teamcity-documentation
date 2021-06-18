@@ -9,7 +9,10 @@ VCS roots are created in a project and are available to all the build configurat
 
 <anchor name="SharedVCSRoots"/>
 
-To view and manage all VCS roots configured within a project, go to __Project Settings | VCS Roots__.   
+To view and manage all VCS roots configured within a project, go to __Project Settings | VCS Roots__.
+
+Here, you can filter the project's roots by name and modify other filter options.
+
 If someone attempts to modify a VCS root that is used in more than one project or build configuration, TeamCity will issue a warning that the changes to the VCS root could potentially affect other projects or build configurations. The user is then prompted to either save the changes and apply them to all the affected projects and build configurations, or to make a copy of the VCS root to be used by a specific build configuration or project.
 
 On an attempt to create a new VCS root, TeamCity checks whether there are other VCS roots accessible in this project with similar settings. If such VCS roots exist, TeamCity suggests using them.

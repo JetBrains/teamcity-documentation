@@ -115,6 +115,12 @@ Make sure to synchronize the system time at the VCS server, TeamCity server and 
 
 </note>
 
+<seealso>
+        <category ref="concepts">
+            <a href="vcs-root.md">VCS root</a>
+        </category>
+</seealso>
+
 
 [//]: # (Internal note. Do not delete. "Configuring VCS Rootsd91e181.txt")    
 [//]: # (Internal note. Do not delete. "Configuring VCS Rootsd91e186.txt")

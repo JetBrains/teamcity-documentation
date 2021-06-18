@@ -42,6 +42,8 @@ To increase the number of builds displayed in the drop-down menu to 50, use the 
 
 Note that if you re-run a dependent build, TeamCity will try to rebuild all dependency builds, including failed ones, by default.
 
+By default, dependency builds in the list are grouped by their branches sorted alphabetically. Builds of the same branch are sorted relatively to each other by date. In some cases, you might need to discard branch-based sorting and sort all dependency builds only by their date, to display the newest builds at the top. To do this, click __Sort dependencies by date__. To return to the default sorting, click __Reset all__.
+
 ### Changes
 
 _This tab is available only if you have permissions to access VCS roots for the build configuration._   
