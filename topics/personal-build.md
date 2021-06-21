@@ -13,7 +13,7 @@ By default, only users with the Project Developer [role](role-and-permission.md)
 
 It is possible to [restrict running personal builds](configuring-general-settings.md#Allow+Triggering+Personal+Builds) in the __General Settings__ of a build configuration.
 
-### Direct Patch Upload
+## Direct Patch Upload
 
 Users with the _Change build source code with a custom patch_ permission can upload a patch with local changes directly to the TeamCity server, via our web UI or REST API.
 
@@ -70,7 +70,7 @@ __To upload a patch and run a personal build via REST API__:
         --data @node.xml \
         "http://<username>:<password>@<host>:<port>/app/rest/buildQueue"
    ```   
-   The agent will receive the patch and apply it before running the build. After the build, it will revert the patch, so the checkout directory can be reused by subsequent builds.
+   The agent will receive the patch and apply it before running the build. After the build, it will revert the patch, so the checkout directory can be reused by subsequent builds. Unused patches are automatically cleaned up by a 15-minutes timeout.
 
  <seealso>
         <category ref="installation">
