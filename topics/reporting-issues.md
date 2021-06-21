@@ -331,7 +331,11 @@ The changes that are sent from the IDE to the server on a [remote run](remote-ru
 
 ## Logging in IntelliJ IDEA/Platform-based IDEs
 
-To enable debug logging for the [IntelliJ Platform-based IDE plugin](intellij-platform-plugin.md), include the following fragment into the Log4j configuration of the `<IDE home>/bin/log.xml` file:
+To enable debug logging for the [IntelliJ Platform-based IDE plugin](intellij-platform-plugin.md), include the following fragment into the Log4j configuration of the `<IDE home>/bin/log.xml` file.
+
+> Since platform version 2019.3, this file is no longer loaded by default. Consider adding the configuration via __Help | Diagnostic Tools | Debug Log Settings__ instead. Alternatively, you can copy this file to some location and specify a path to it by adding `idea.log.config.file = /path/to/log.xml` in __Help | Edit Custom Properties__.
+>
+{type="note"}
 
 ```Shell
 
