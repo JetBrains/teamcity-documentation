@@ -942,6 +942,8 @@ If you specify multiple checkout rules for one root, make sure their checkout di
 
 ```
 
+Note that rules should not remap files. That is, the following rule is not supported: `+:dirA/dirA1 => dirA/dirA2`.
+
 ## Known Issues
 {product="tc"}
 

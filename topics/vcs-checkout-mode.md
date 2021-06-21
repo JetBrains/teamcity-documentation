@@ -1,7 +1,7 @@
 [//]: # (title: VCS Checkout Mode)
 [//]: # (auxiliary-id: VCS Checkout Mode)
 
-The __Version Control Settings__ page of a build configuration allows configuring how project source code is retrieved from VCS: you can [attach a VCS Root](configuring-vcs-settings.md#Configuring+Checkout+Options+for+Build+Configuration) and configure checkout options.
+The __Version Control Settings__ page of a build configuration allows configuring how project source code is retrieved from VCS: you can [attach a VCS root](configuring-vcs-settings.md#Configuring+Checkout+Options+for+Build+Configuration) and configure checkout options.
 
 The _VCS Checkout mode_ is a setting that affects how project sources reach an agent. This mode affects only sources checkout. The current revision and changes data retrieving logic is executed by the TeamCity server, and thus TeamCity server needs to access the VCS server in any mode.
 
@@ -39,10 +39,10 @@ With this setting enabled, TeamCity will use the agent-side checkout (see the _"
 
 TeamCity falls back to the server-side checkout in the following cases:
 
-* No Git or Mercurial client is found on the agent
-* The Git or Mercurial client is present on the agent, but is of the wrong version
-* The agent has no access to the repository
-* If a Perforce client cannot be found on the agent using the same rules as while performing actual checkout or if stream depot is used and the checkout rules are complex (other than . =&gt; A )
+* No Git or Mercurial client is found on the agent.
+* The Git or Mercurial client is present on the agent, but is of the wrong version.
+* The agent has no access to the repository.
+* If a Perforce client cannot be found on the agent using the same rules as while performing actual checkout or if stream depot is used and the checkout rules are complex (other than . =&gt; A ).
 
 </td></tr><tr>
 
