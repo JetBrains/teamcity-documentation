@@ -28,8 +28,7 @@ In the _Shell script_ field, enter all Node.js commands to be executed in this s
 ## Accessing Private Registries
 
 To access a private npm registry during a build (for example, to download a package), you need to:
-1. In __Project Settings | Connections__, configure an _NPM Registry_ connection: specify the registry URL, automation access token, and a scope.  
-   The scope defines which registries will be accessed by the npm commands. It is a good practice to keep this specification in one place, that is in the connection settings: either in the TeamCity connection instance or directly in the `.npmrc` file. Alternatively, if you don't specify a scope in the connection settings, you can still access a specific registry within a Node.js step by appending `--registry registry_url` to the `npm ...` command.
+1. In __Project Settings | Connections__, configure an _NPM Registry_ connection (see the details [below](#NPM+Registry+Connection+Settings)).
 2. In __Build Configuration Settings | Build Features__, add an _NPM Registry Connection_ build feature and select the new connection, so it can be used in this configuration.
 
 As a result, a TeamCity agent will authenticate in this registry during the build.
@@ -43,3 +42,59 @@ Alternatively to this procedure, you can let TeamCity parse a token from the `.n
 >If a token is configured in your NPM registry connection, TeamCity will use it for connecting to this registry. However, there is known issue when TeamCity might use the token specified in the `.npmrc` file instead of that in the connection settings. See the workarounds to this issue in [our tracker](https://youtrack.jetbrains.com/issue/TW-71200#focus=Comments-27-4854154.0-0).
 > 
 {type="warning"}
+
+### NPM Registry Connection Settings
+
+<table>
+
+<tr><td>Setting</td><td>Description</td></tr>
+
+<tr>
+
+<td>Display name</td>
+<td>
+
+Set a display name to distinguish this connection from connections with the same registry URL and scope. This parameter does not affect the connection's behavior.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Scope</td>
+<td>
+
+Specify an npm user/organization's [scope](https://docs.npmjs.com/cli/v7/using-npm/scope) to [associate](https://docs.npmjs.com/cli/v7/using-npm/scope#associating-a-scope-with-a-registry) with the connected registry. If you want to use multiple registries per project, you need to specify a scope for each of them.
+
+Leave empty if you want to use only one registry in this project. It will be used by `npm` commands by default.
+
+>If you don't specify a scope in the connection settings, you can still access a specific registry within a Node.js step by appending `--registry registry_url` to the `npm ...` command.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Registry URL</td>
+<td>
+
+Specify the npm registry URL in the following format: `http(s)://hostname[:port]`. For example, `https://npm.pkg.jetbrains.space/mycompany/p/projectkey/mynpm`. The HTTPS schema is used by default.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Access token</td>
+<td>
+
+Specify a [token](https://docs.npmjs.com/about-access-tokens), if it's needed for accessing the registry. Leave empty for anonymous access. Note that token-based authentication could differ depending on a registry type. See instructions for [npm Enterprise](https://docs.npmjs.com/creating-and-viewing-access-tokens), [Space Packages](https://www.jetbrains.com/help/space/authenticate-in-packages.html#space_account), or [GitHub Packages](https://docs.github.com/en/packages/learn-github-packages/about-permissions-for-github-packages#about-scopes-and-permissions-for-package-registries).
+
+</td>
+
+</tr>
+
+</table>
