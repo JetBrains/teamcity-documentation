@@ -3,6 +3,15 @@
 
 ## Changes from 2021.1 to 2021.1.1
 
+### Known Issues
+{id="known-issues-2021211"}
+
+* Builds that use Git [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) might fail with the "_Failed to perform checkout on agent_" error. To prevent it, you need to set a branch for each used submodule in `.gitmodules`.  
+  This problem will be fixed in version 2021.1.2, but you can already download and install our Git plugin with the fix [here](https://youtrack.jetbrains.com/issue/TW-71933#focus=Comments-27-4975853.0-0).
+
+### Other Updates
+{id="other-updates-202111"}
+
 * If you have added the `teamcity.nuget.feed.async.request.enabled` internal property to workaround [this issue](#ki-202121) in 2021.1, remember to remove it on upgrading to 2021.1.1.
 * VCS roots of archived subprojects are now hidden by default on the __Project Settings | VCS Roots__ page. You can display them by enabling the _including archived_ filter option.
 
