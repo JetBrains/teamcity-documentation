@@ -99,7 +99,7 @@ To change the server port, locate the `<TeamCity Home>/conf/server.xml` and modi
 ## Start TeamCity for the First Time
 
 On the first TeamCity start:
-1. Review the [location of the TeamCity Data Directory](teamcity-data-directory.md#Configuring+the+Location), where all the configuration information is stored. Click __Proceed__.
+1. Review the [location of the TeamCity Data Directory](teamcity-data-directory.md#Configuring+Location), where all the configuration information is stored. Click __Proceed__.
 2. TeamCity stores build history, users, build results, and some runtime data in an SQL database and allows you to select the database type.   
    For now, keep the default internal database. Click __Proceed__.   
    <img src="default-DB.png" alt="Select the database type" width="450"/>
