@@ -44,6 +44,7 @@ Alternatively to this procedure, you can let TeamCity parse a token from the `.n
 {type="warning"}
 
 ### NPM Registry Connection Settings
+{id="npm-registry-settings" auxiliary-id="npm-registry-settings"}
 
 <table>
 
@@ -67,7 +68,7 @@ Set a display name to distinguish this connection from connections with the same
 
 Specify an npm user/organization's [scope](https://docs.npmjs.com/cli/v7/using-npm/scope) to [associate](https://docs.npmjs.com/cli/v7/using-npm/scope#associating-a-scope-with-a-registry) with the connected registry. If you want to use multiple registries per project, you need to specify a scope for each of them.
 
-Leave empty if you want to use only one registry in this project. It will be used by `npm` commands by default.
+Leave empty if you want to use only one registry in this project. It will be used by `npm`/`yarn` commands by default.
 
 >If you don't specify a scope in the connection settings, you can still access a specific registry within a Node.js step by appending `--registry registry_url` to the `npm ...` command.
 
