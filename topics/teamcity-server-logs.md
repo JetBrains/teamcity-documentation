@@ -16,8 +16,6 @@ In the web UI, go to __Administration | Diagnostics__ page. On the __Troubleshoo
 If it is not possible to enable debug logging mode from the TeamCity web UI, refer to [Changing Logging Configuration](#Changing+Logging+Configuration) section to learn how to adjust logging options manually.
 </tip>
 
-
-
 ## General Logging Description
 
 TeamCity uses [log4j library](http://logging.apache.org/log4j) for the logging and its settings can be [customized](#Changing+Logging+Configuration).
@@ -26,12 +24,15 @@ By default, log files are located under the `<[TeamCity Server home](teamcity-ho
 
 The most important log files are:
 
-<table><tr>
+<table>
+
+<tr><td></td><td></td></tr>
+
+<tr>
 
 <td>
 
 `teamcity-server.log`
-
 
 </td>
 
