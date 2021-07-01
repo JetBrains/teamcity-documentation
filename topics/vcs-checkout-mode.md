@@ -41,7 +41,6 @@ TeamCity falls back to the server-side checkout in the following cases:
 
 * No Git or Mercurial client is found on the agent.
 * The Git or Mercurial client is present on the agent, but is of the wrong version.
-* The agent has no access to the repository.
 * If a Perforce client cannot be found on the agent using the same rules as while performing actual checkout or if stream depot is used and the checkout rules are complex (other than . =&gt; A ).
 
 </td></tr><tr>
