@@ -76,7 +76,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
     ```Shell
     -Dteamcity.server.nodeId=<node_ID> -Dteamcity.server.rootURL=<node_root_URL> -Dteamcity.data.path=<TeamCity Data Directory> -Dteamcity.node.data.path=<Node-specific Data Directory>
     ```
-    >You can also specify a path to the shared TeamCity Data Directory via the TEAMCITY_DATA_PATH environment variable.  
+    >You can also specify a path to the shared TeamCity Data Directory via the `TEAMCITY_DATA_PATH` environment variable.  
     >Make sure the database is configured to accept enough parallel connections to handle requests from both nodes. By default, each node requires 50 connections to the database.
 4. Start both nodes using [regular TeamCity scripts](installing-and-configuring-the-teamcity-server.md#Starting+TeamCity+server) or via the TeamCity service.
 5. Open the TeamCity __Administration | Nodes Configuration__ page on any of the two servers and enable the "_[Main TeamCity node](#Main+Node+Responsibility)_" responsibility for a node you want to make main.
