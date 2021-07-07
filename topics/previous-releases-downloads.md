@@ -30,7 +30,7 @@ Build 92597
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2021.1.1.exe)   
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2021.1.1.tar.gz)
 
-[Release notes](teamcity-2021-1-1-release-notes.md)
+[Release notes](teamcity-2021-1-release-notes.md)
 
 ## TeamCity 2020.2.4
 
