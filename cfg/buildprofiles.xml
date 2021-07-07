@@ -10,7 +10,7 @@
         <config-showDownloadButton>true</config-showDownloadButton>
         <config-disqus-id>jetbrains</config-disqus-id>
         <config-disqus-show>false</config-disqus-show>
-        <config-feedback-url>https://data.services.jetbrains.com/feedback</config-feedback-url>
+        <config-feedback-url>https://forms-service.jetbrains.com/feedback</config-feedback-url>
         <config-feedback-enabled>true</config-feedback-enabled>
         <config-feedback-widget>true</config-feedback-widget>
         <config-webmaster>https://teamcity-support.jetbrains.com/</config-webmaster>
