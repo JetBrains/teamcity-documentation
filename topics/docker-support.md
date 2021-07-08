@@ -5,7 +5,7 @@ The _Docker Support_ [build feature](adding-build-features.md) allows automatica
 
 Adding this feature:
 * enables the Docker events' monitoring: such operations as `docker pull` and `docker run` will be detected by TeamCity;
-* adds the __Docker Info__ tab to the [__Build Results__](working-with-build-results.md) page. The tab provides information on Docker-related operations.
+* adds the __Docker Info__ tab to the _[Build Results](working-with-build-results.md)_ page. The tab provides information on Docker-related operations.
 
 The feature also allows:
 * cleaning up the Docker images;

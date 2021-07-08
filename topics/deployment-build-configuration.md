@@ -10,7 +10,7 @@ You can change the type back to _Regular_ anytime.
 
 Once a configuration is marked as _Deployment_, TeamCity changes behavior in the following way:
 * The __Run__ button caption for this configuration changes to __Deploy__.
-* If there is a build used as a [dependency](configuring-dependencies.md) in a deployment configuration, then, after the build is run, its [__Build Results__](working-with-build-results.md) page will display the __Deployments__ section allowing you to quickly deploy the build.   
+* If there is a build used as a [dependency](configuring-dependencies.md) in a deployment configuration, then, after the build is run, its __[Build Results](working-with-build-results.md)__ page will display the __Deployments__ section allowing you to quickly deploy the build.   
 
    <img src="Deployments.png" alt="Build deployments" width="750"/>
 

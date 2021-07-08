@@ -3,14 +3,14 @@
 
 A user with appropriate permissions can change the status of a build manually, that is make it either failed or successful.
 
-The corresponding action is available in the __Actions__ menu on the [__Build Results__](working-with-build-results.md) page.
+The corresponding action is available in the __Actions__ menu on the __[Build Results](working-with-build-results.md)__ page.
 
 ## Marking build as successful
 
 You may want to make build successful to:
 	
 * Change the _last successful build_ anchor when using [build failure conditions](build-failure-conditions.md). If your last build failed because of an incorrect value of a metric and this new value is valid, you may mark this build with a successful anchor.
-* Allow using an incorrectly failed build with good artifacts in [__Artifact Dependencies__](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Web+UI).
+* Allow using an incorrectly failed build with good artifacts in __[Artifact Dependencies](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Web+UI)__.
 * For a running [personal build](personal-build.md), you can mark the current failures as non-relevant to allow the pretested commit to pass (if the user has permission to do this).
 
 The "_Mark as successful_" action is not available for [builds that failed to start](build-state.md#Failed+to+Start+Builds).

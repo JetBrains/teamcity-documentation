@@ -51,7 +51,7 @@ Click this radio button to specify an existing Perforce stream. TeamCity will us
 
 TeamCity supports deeper directory structure within the root depot: depots with a depth of `//DEPOTNAME/1/2/n` can be specified in this field.
 
-[Parameters](configuring-build-parameters.md) are supported. For the `StreamAtChange` option, use the [_Label to checkout_](#Agent+Checkout+Settings) field.
+[Parameters](configuring-build-parameters.md) are supported. For the `StreamAtChange` option, use the _[Label to checkout](#Agent+Checkout+Settings)_ field.
 
 <note>
 

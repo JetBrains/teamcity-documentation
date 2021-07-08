@@ -42,7 +42,7 @@ This has several implications:
 
 ### Configuring connection
 
-To enable integration, you need to create a connection to your issue tracker on the __Project Settings__ | __Issue Trackers__ page.
+To enable integration, you need to create a connection to your issue tracker on the __Project Settings | Issue Trackers__ page.
 
 The settings described below are common for all issue trackers:
 
@@ -125,7 +125,7 @@ For example, if a project ID is `TW`, an issue ID like `TW-18802` mentioned in a
  
 For __Bugzilla__, __GitHub__, and __Bitbucket Cloud__, you need to specify the __Issue ID Pattern__: a [Java Regular Expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to find the issue ID in the text. The matched text (or the first group if there are groups defined) is used as the issue number. The most common case is `#(\d+)` — this will extract `1234` as the issue ID from the text `Fix for #1234`.
 
-TeamCity will resolve the issue number mentioned in a VCS comment and will display a link to this issue in the UI (for example, on the [__Changes__](working-with-build-results.md#Changes) page, or the [__Issues__](working-with-build-results.md#Related+Issues) tab of [__Build Results__](working-with-build-results.md)).
+TeamCity will resolve the issue number mentioned in a VCS comment and will display a link to this issue in the UI (for example, on the __[Changes](working-with-build-results.md#Changes)__ page, or the __[Issues](working-with-build-results.md#Related+Issues)__ tab of __[Build Results](working-with-build-results.md)__).
 
 ## Integrating TeamCity with Other Issue Trackers
 {product="tc"}

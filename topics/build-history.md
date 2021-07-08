@@ -3,7 +3,7 @@
 
 _Build history_ is a record of the past builds produced by TeamCity.
 
-To view the history of a build configuration, open its [__Build Results__](working-with-build-results.md) page. In the upper right corner of the page, click __previous__ and __next__ links to browse through the builds, or click __All history__ link to open the __History__ tab.
+To view the history of a build configuration, open its __[Build Results](working-with-build-results.md)__ page. In the upper right corner of the page, click __previous__ and __next__ links to browse through the builds, or click __All history__ link to open the __History__ tab.
 
 Navigation menu:
 

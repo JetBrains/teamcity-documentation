@@ -132,7 +132,7 @@ __Checked value/Unchecked value__: Specify values of the parameter respective to
 We recommend that you keep the unchecked value equal to the default value and specify a custom checked value.
 
 Depending on how the build is triggered, the checkbox behavior will be as follows:
-* if the build is triggered by an automatic trigger or by clicking __Run__ (without the [_Run Custom Build_](running-custom-build.md) dialog), the default value is used;
+* if the build is triggered by an automatic trigger or by clicking __Run__ (without the _[Run Custom Build](running-custom-build.md)_ dialog), the default value is used;
 * if the build is triggered via the _Run Custom Build_ dialog without changing anything, the "unchecked" value is used, if it is not empty and differs from the default one; if empty, the default value is used;
 * if the build is triggered via the _Run Custom Build_ dialog with the box checked, the "checked" value is used, if it is not empty; if it is empty, the `true` value is used.
 

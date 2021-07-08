@@ -7,7 +7,7 @@ TeamCity can label (tag) sources of a particular build (automatically or manuall
 
 You can set TeamCity to label the sources of a build depending on the build status automatically. The process takes place in the background after the build finishes and does not affect the build status, which means that a labeling failure is not a standard [notification event](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications). However, the users subscribed to [notifications about failed builds](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications) of the current build configuration will be notified about a labeling failure.
 
-Any errors encountered during labeling are reported on the [__Changes__](working-with-build-results.md#Changes) tab of the __Build Results__ page.
+Any errors encountered during labeling are reported on the __[Changes](working-with-build-results.md#Changes)__ tab of the __Build Results__ page.
 
 Labeling is configured per a build configuration/template.
 

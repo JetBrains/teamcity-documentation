@@ -69,7 +69,7 @@ Configuration directory
 
 <td>
 
-You can specify an alternative subversion configuration directory, or use the default one (recommended). This setting also applies to agent-side checkout. TeamCity does not store authentication in SVN configuration directory, but can read settings stored there.
+You can specify an alternative Subversion configuration directory, or use the default one (recommended). This setting also applies to agent-side checkout. TeamCity does not store authentication in SVN configuration directory, but can read settings stored there.
 
 </td></tr><tr>
 
@@ -95,8 +95,8 @@ Externals support
 
 Select one of the following options to control the SVN externals processing.
 
-* _Full support (load changes and checkout)_: TeamCity will check out all configuration's sources (including the sources from the externals) and will gather and display information about externals' changes on the [__Changes__](viewing-your-changes.md) tab.
-* _Checkout, but ignore changes_: TeamCity will check out the sources from externals but any changes in externals' source files will not be gathered and displayed on the [Changes](viewing-your-changes.md) tab. You can use this option if you have several SVN externals and do not want to get information about any changes made in the externals' source files.   
+* _Full support (load changes and checkout)_: TeamCity will check out all configuration's sources (including the sources from the externals) and will gather and display information about externals' changes on the __[Changes](viewing-your-changes.md)__ tab.
+* _Checkout, but ignore changes_: TeamCity will check out the sources from externals but any changes in externals' source files will not be gathered and displayed on the __[Changes](viewing-your-changes.md)__ tab. You can use this option if you have several SVN externals and do not want to get information about any changes made in the externals' source files.   
     
    <note>
 
@@ -214,7 +214,7 @@ Working copy format
 <td>
 
 Select the format of the working copy. Available values for this option are 1.4 through 1.8 (current default).   
-This option defines the format version of Subversion files located in `.svn` directories, when [the checkout on agent mode](vcs-checkout-mode.md#agent-checkout) is used. The specified format is important in two cases:
+This option defines the format version of Subversion files located in `.svn` directories, when the [checkout on agent mode](vcs-checkout-mode.md#agent-checkout) is used. The specified format is important in two cases:
 
 * If you run command-line `svn` commands on the files checked out by TeamCity. For example, if your working copy has version 1.5, you will not be able to use Subversion 1.4 binaries to work with it.
 * If you use new Subversion features; for example, file-based externals which were added in Subversion 1.6. Thus, unless you set the working copy format to 1.6, the file-based externals will not be available in the __checkout on agent__ mode.

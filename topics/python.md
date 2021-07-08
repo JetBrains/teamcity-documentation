@@ -124,7 +124,7 @@ Unittest
 
 <td>
 
-Launch the [unittest](https://docs.python.org/3/library/unittest.html) framework. The unit test results will be displayed on the [__Tests__](working-with-build-results.md#Tests) tab of __Build Results__.
+Launch the [unittest](https://docs.python.org/3/library/unittest.html) framework. The unit test results will be displayed on the __[Tests](working-with-build-results.md#Tests)__ tab of __Build Results__.
 
 To filter the scope of processed files, you can specify the path to unit test file(s) in the additional arguments.
 
@@ -148,7 +148,7 @@ Pytest
 
 <td>
 
-Launch the [pytest](https://docs.pytest.org/en/stable/index.html) framework. The test results will be displayed on the [__Tests__](working-with-build-results.md#Tests) tab of __Build Results__.
+Launch the [pytest](https://docs.pytest.org/en/stable/index.html) framework. The test results will be displayed on the __[Tests](working-with-build-results.md#Tests)__ tab of __Build Results__.
 
 To filter the scope of processed files, you can specify the path to pytest file(s) in the additional arguments.
 
@@ -172,7 +172,7 @@ Flake8
 
 <td>
 
-Launch the [Flake8](https://pypi.org/project/flake8/) wrapper. The code inspection results will be displayed on the [__Code Inspection__](working-with-build-results.md#Code+Inspection+Results) tab of __Build Results__.
+Launch the [Flake8](https://pypi.org/project/flake8/) wrapper. The code inspection results will be displayed on the __[Code Inspection](working-with-build-results.md#Code+Inspection+Results)__ tab of __Build Results__.
 
 To filter the scope of processed files, you can specify the path to Python file(s) in the additional arguments.
 
@@ -196,7 +196,7 @@ Pylint
 
 <td>
 
-Launch the [Pylint](https://pypi.org/project/pylint/) tool. The code inspection results will be displayed on the [__Code Inspection__](working-with-build-results.md#Code+Inspection+Results) tab of __Build Results__.
+Launch the [Pylint](https://pypi.org/project/pylint/) tool. The code inspection results will be displayed on the __[Code Inspection](working-with-build-results.md#Code+Inspection+Results)__ tab of __Build Results__.
 
 To filter the scope of processed files, specify the path to Python file(s) in the additional arguments.
 
@@ -317,7 +317,7 @@ Coverage
 
 </td><td>
 
-Enable code coverage collecting via [Coverage.py](https://coverage.readthedocs.io/en/coverage-5.3/). TeamCity displays the produced test report on the [__Code Coverage__](working-with-build-results.md#Code+Coverage+Results) tab.
+Enable code coverage collecting via [Coverage.py](https://coverage.readthedocs.io/en/coverage-5.3/). TeamCity displays the produced test report on the __[Code Coverage](working-with-build-results.md#Code+Coverage+Results)__ tab.
 
 </td></tr>
 

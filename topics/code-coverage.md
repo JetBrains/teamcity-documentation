@@ -31,9 +31,9 @@ To get the code coverage information displayed in TeamCity for the supported too
 * [Ipr (deprecated)](ipr-deprecated.md)
 
 Note that currently the Maven2 runner supports [IntelliJ IDEA](intellij-idea.md) and [JaCoCo](jacoco.md) coverage engines.   
-The code coverage results can be viewed on the __Overview__ tab of [__Build Results__](working-with-build-results.md); detailed report is displayed on the dedicated [__Code Coverage__](working-with-build-results.md) tab.
+The code coverage results can be viewed on the __Overview__ tab of __[Build Results](working-with-build-results.md)__; detailed report is displayed on the dedicated __[Code Coverage](working-with-build-results.md)__ tab.
 
-The chart for code coverage is also available on the [__Statistic Charts__](statistic-charts.md) tab of the build configuration.
+The chart for code coverage is also available on the __[Statistic Charts](statistic-charts.md)__ tab of the build configuration.
 
 For the details on configuring code coverage, refer to the dedicated pages: [Configuring Java Code Coverage](configuring-java-code-coverage.md), [Configuring .NET Code Coverage](configuring-.net-code-coverage.md).
 

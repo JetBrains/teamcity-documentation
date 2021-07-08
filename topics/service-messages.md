@@ -444,7 +444,7 @@ Integration Tests: Backend: org.jetbrains.teamcity.LoginPageController.testBadPa
 // test parameters = ("incorrect password", false)
 ```
 
-The [__Tests__](working-with-build-results.md#Tests) tab of the __Build Results__ page allows grouping by suites, packages/namespaces, classes, and tests. Usually the attribute values are provides as they are reported by your test framework and TeamCity is able to interpret test names correctly.
+The __[Tests](working-with-build-results.md#Tests)__ tab of the __Build Results__ page allows grouping by suites, packages/namespaces, classes, and tests. Usually the attribute values are provides as they are reported by your test framework and TeamCity is able to interpret test names correctly.
 
 If a test cannot be parsed in the form above, TeamCity still tries to extract `<suite name>` from the full test name for the filtering on the Tests tab, and treats everything after the suite a non-parsable test name.
 
@@ -536,7 +536,7 @@ The `<path>` has to adhere to the same rules as the [Build Artifact specificatio
 
 The message should be printed after all the files are ready and no file is locked for reading.
 
->To publish multiple artifact files in one archive, you need to configure the [_Artifact paths_](configuring-general-settings.md#Artifact+Paths) in __General Settings__ of a build configuration. If you use service messages, only artifacts for the last rule will be published to the archive.
+>To publish multiple artifact files in one archive, you need to configure the _[Artifact paths](configuring-general-settings.md#Artifact+Paths)_ in __General Settings__ of a build configuration. If you use service messages, only artifacts for the last rule will be published to the archive.
 >
 {type="tip"}
 
@@ -557,7 +557,7 @@ For this, you can use a [NuGet Publish](nuget-publish.md) runner or send the `##
 
 ### Reporting Build Progress
 
-You can use special progress messages to mark long-running parts in a build script. These messages will be shown on the projects' dashboard for the corresponding build and on the [Build Results page](working-with-build-results.md).
+You can use special progress messages to mark long-running parts in a build script. These messages will be shown on the projects' dashboard for the corresponding build and on the __[Build Results](working-with-build-results.md)__ page.
 
 To log a single progress message, use:
 
@@ -584,7 +584,7 @@ The same message should be used for both `progressStart` and `progressFinish`. T
 
 ### Reporting Build Problems
 
-To fail a build directly from the build script, a build problem must be reported. Build problems affect the build status text. They appear on the [Build Results](working-with-build-results.md) page. To add a build problem to a build, use:
+To fail a build directly from the build script, a build problem must be reported. Build problems affect the build status text. They appear on the __[Build Results](working-with-build-results.md)__ page. To add a build problem to a build, use:
 
 
 ```Shell
@@ -636,7 +636,7 @@ In the &lt;new build number&gt; value, you can use the `{build.number}` substitu
 
 ### Adding or Changing a Build Parameter
 
-By using a dedicated service message in your build script, you can dynamically update build parameters of the build right from a build step (the parameters need to be defined in the [__Parameters__](configuring-build-parameters.md) section of the build configuration). The changed build parameters will be available in the build steps following the modifying one. They will also be available as build parameters and can be used in the dependent builds via [` %dep.*% parameter references`](predefined-build-parameters.md#Dependencies+Properties), for example:
+By using a dedicated service message in your build script, you can dynamically update build parameters of the build right from a build step (the parameters need to be defined in the __[Parameters](configuring-build-parameters.md)__ section of the build configuration). The changed build parameters will be available in the build steps following the modifying one. They will also be available as build parameters and can be used in the dependent builds via [` %dep.*% parameter references`](predefined-build-parameters.md#Dependencies+Properties), for example:
 
 ```Shell
 ##teamcity[setParameter name='ddd' value='fff']

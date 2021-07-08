@@ -9,7 +9,7 @@ Technically, build runners are implemented as plugins. Each runner has two parts
 
 Instructions on configuring bundled runners are listed under the [Configuring Build Steps](configuring-build-steps.md) section.
 
-Build runners are configurable in the [__Build Steps__](configuring-build-steps.md) section of the [Create/Edit Build Configuration](creating-and-editing-build-configurations.md) page.
+Build runners are configurable in the __[Build Steps](configuring-build-steps.md)__ section of the __[Create/Edit Build Configuration](creating-and-editing-build-configurations.md)__ page.
 
  <seealso>
         <category ref="admin-guide">

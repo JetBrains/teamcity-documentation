@@ -3,7 +3,7 @@
 
 When creating a build configuration, it is important to configure the sequence of _build steps_ to be executed.
 
-Build steps are configured in the __Build Steps__ section of the [__Build Configuration Settings__](creating-and-editing-build-configurations.md) page. Here, you can:
+Build steps are configured in the __Build Steps__ section of the __[Build Configuration Settings](creating-and-editing-build-configurations.md)__ page. Here, you can:
 * add new steps manually;
 * [autodetect steps](#Autodetecting+build+steps) by scanning the source VCS repository;
 * copy and delete steps;

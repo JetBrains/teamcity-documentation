@@ -1,11 +1,11 @@
 [//]: # (title: Detaching Build from Agent)
 [//]: # (auxiliary-id: Detaching Build from Agent)
 
-If a final step of a build triggers some external service and the build does not require a [build agent](build-agent.md) anymore, the respective runner can detach the build from the agent. This makes this agent available to other builds. The build then continues running on the TeamCity server, and the external service reports its progress directly to the server. Such build steps are called [_agentless steps_](agentless-build-step.md).
+If a final step of a build triggers some external service and the build does not require a [build agent](build-agent.md) anymore, the respective runner can detach the build from the agent. This makes this agent available to other builds. The build then continues running on the TeamCity server, and the external service reports its progress directly to the server. Such build steps are called _[agentless steps](agentless-build-step.md)_.
 
 ## Releasing build agent
 
-To release its current build agent, a runner needs to send the `##teamcity[buildDetachedFromAgent]` [service message](service-messages.md). After receiving this message, the agent skips all the following steps of the build, unless they have the "[_Always, even if build stop command was issued_](configuring-build-steps.md#Execution+policy)" execution policy enabled. If necessary, you can enable it for mandatory final steps — the agent will be released only after completing them.
+To release its current build agent, a runner needs to send the `##teamcity[buildDetachedFromAgent]` [service message](service-messages.md). After receiving this message, the agent skips all the following steps of the build, unless they have the "_[Always, even if build stop command was issued](configuring-build-steps.md#Execution+policy)_" execution policy enabled. If necessary, you can enable it for mandatory final steps — the agent will be released only after completing them.
 
 >Alternatively to using service messages, you can write own server-side plugin that will be polling an external service for a build status. Use the `jetbrains.buildServer.serverSide.agentless.DetachedBuildStatusProvider` extension point for this. Read more about developing custom plugins in [TeamCity Plugin Help](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).
 
@@ -46,7 +46,7 @@ POST /app/rest/builds/id:TestBuild/log
 (curl -v --basic --user TeamCityBuildId=87065:lqmT22NStn4ulqmT22NStn4ulqmT22NStn4u --request POST http://localhost:8111/app/rest/builds/id:TestBuild/log --data "##teamcity[message text='Deployment failed' errorDetails='stack trace' status='ERROR']" --header "Content-Type: text/plain")
 ```
 
->To structure service messages in a build log, use [_flow tracking_](service-messages.md#Message+FlowId).
+>To structure service messages in a build log, use _[flow tracking](service-messages.md#Message+FlowId)_.
 
 ### Finishing build
 
