@@ -279,7 +279,7 @@ When running TeamCity in the [Professional mode](licensing-policy.md), the __Cop
 <warning>
 
 Before moving the project, consider the following:
-* TeamCity assigns user roles  on a [per-project](role-and-permission.md) basis, which means that moving a project may result in __changing the scope of user permissions__ in the new project (new permissions may be added or the existing permissions can be dropped)
+* TeamCity assigns user roles on a [per-project](role-and-permission.md) basis, which means that moving a project may result in __changing the scope of user permissions__ in the new project (new permissions may be added or the existing permissions can be dropped)
 * Connection to Git VCS Roots containing SSH keys may get unavailable after a project move.
 </warning>
 
