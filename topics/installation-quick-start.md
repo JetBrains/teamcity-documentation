@@ -17,7 +17,7 @@ To install TeamCity for the production setup, read the [Installation and Upgrade
 __[Download](https://www.jetbrains.com/teamcity/download/) the free Professional Edition of TeamCity__, which is a full-featured TeamCity bundled with 3 build agents with a limit of 100 build configurations.  
 After evaluation, you can __switch to the Enterprise Edition__. Read the details of our [licensing policy](licensing-policy.md) and [pricing](https://www.jetbrains.com/teamcity/buy/).
 
-### Install and run on Windows
+## Install and run on Windows
 
 Run the downloaded `.exe` file and follow the instructions of the TeamCity Setup wizard. The TeamCity web server and one build agent will be installed on the same machine.
 
@@ -44,7 +44,7 @@ Otherwise, to start or stop the TeamCity server and one default agent at the sam
 
 If you did not change the default port (`8111`) during the installation, the TeamCity web UI can be accessed at [`http://localhost`](http://localhost/) via a web browser running on the same machine. Otherwise, use `http://localhost:<port>` (`http://localhost:7777` in our example).
 
-### Install and run on Linux and macOS
+## Install and run on Linux and macOS
 
 1. Make sure you have Java 8 installed (for example, use bundled [Amazon Corretto](https://aws.amazon.com/corretto/)).   
    Open a command-line terminal and run the following command:   
