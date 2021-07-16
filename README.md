@@ -1,3 +1,4 @@
+[<img src="http://jb.gg/badges/official.svg"/>](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 # Source Repository of TeamCity Help
 
 Welcome to the source repository of the [TeamCity Help](https://www.jetbrains.com/help/teamcity/teamcity-documentation.html) site.
