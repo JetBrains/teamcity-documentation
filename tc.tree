@@ -228,6 +228,7 @@
                   <toc-element id="working-with-meta-runner.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="ant.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="command-line.md" show-structure-for="chapter" show-structure-depth="4"/>
+                  <toc-element id="c-script.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="deployers.md">
                      <toc-element id="smb-upload.md"/>
                      <toc-element id="ftp-upload.md"/>

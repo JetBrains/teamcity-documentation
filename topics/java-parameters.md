@@ -1,5 +1,5 @@
 [//]: # (title: Java Parameters)
-[//]: # (auxiliary-id: Java+Parameters)
+[//]: # (auxiliary-id: Java Parameters)
 
 This page describes general parameters for Java-based runners:
 
@@ -9,6 +9,7 @@ This page describes general parameters for Java-based runners:
 * [Duplicates Finder (Java)](duplicates-finder-java.md)  
 * [Inspections (IntelliJ IDEA)](inspections.md)
 * [IntelliJ IDEA Project](intellij-idea-project.md)
+* [Kotlin Script](kotlin-script.md)
 
 <chunk include-id="java-param">
 
