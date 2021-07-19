@@ -1,5 +1,5 @@
 [//]: # (title: C# Script)
-[//]: # (auxiliary-id: C# Script;charp+script)
+[//]: # (auxiliary-id: C# Script;charp script)
 
 >This functionality is available in terms of TeamCity 2021.2 Early Access Program.
 > 
