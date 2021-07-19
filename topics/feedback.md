@@ -3,6 +3,21 @@
 
 This section details our support services, contact information, and best practices for contacting JetBrains to get TeamCity support and send your feedback on the product.
 
+<table>
+<tr><td></td></tr>
+
+<tr><td>
+
+Contact us about:
+* __technical question or idea__ — [community forum](http://jb.gg/teamcity-forum), "New Post" action (public)
+* __bug or feature request__ — [issue tracker](https://youtrack.jetbrains.com/issues/TW) (public, with an option of private comments/attachments)
+* __license/purchase question__ — [TeamCity sales department](https://www.jetbrains.com/teamcity/get-in-touch/) (private)
+* __private report (only for TeamCity Enterprise server license)__ — [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) (private, faster response times)
+
+</td></tr>
+<tr><td></td></tr>
+</table>
+
 Before requesting support, we suggest that you check if the answer is already available in:
 * online documentation: [Common Problems](common-problems.md), [Known Issues](known-issues.md), [Licensing Policy](licensing-policy.md)
 {product="tc"}
@@ -10,12 +25,6 @@ Before requesting support, we suggest that you check if the answer is already av
   {product="tcc"}
 * [public issue tracker](https://youtrack.jetbrains.com/issues/TW)
 * [community forum](http://jb.gg/teamcity-forum)
-
-Contact us about:
-* _a technical question or an idea_ — [community forum](http://jb.gg/teamcity-forum), "New Post" action (public)
-* _a bug or a feature request_ — [issue tracker](https://youtrack.jetbrains.com/issues/TW) (public, with an option of private comments/attachments)
-* _a license/purchase question_ — JetBrains [sales department](http://www.jetbrains.com/company/contacts/#contactSales) (private)
-* _not a public question, and you have an active TeamCity Enterprise server license_ — [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) (private, faster response times)
 
 When submitting a request, make sure:
 {product="tc"}
