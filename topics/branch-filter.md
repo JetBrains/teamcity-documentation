@@ -208,7 +208,7 @@ Specify a naming pattern for branches to which the clean-up rule will apply. Not
 
 If there are multiple branch filters configured atop a single root, the following order of priority is applied:
 1. The [branch specification](working-with-feature-branches.md#Configuring+branches) in the VCS root settings defines the initial set of the monitored branches.
-2. If specified, a branch filter in the __Versioned Control Settings__ of a build configuration can narrow down the initial set of branches.
+2. If specified, a branch filter in the __Version Control Settings__ of a build configuration can narrow down the initial set of branches.
 3. If specified, a branch filter in the settings of a build trigger applies to the subset declared by the filter (2). 
 
 ## Branch Filter Format
