@@ -1,7 +1,7 @@
 [//]: # (title: Configure and Run Your First Build)
 [//]: # (auxiliary-id: Configure and Run Your First Build)
 
-After you have installed and started TeamCity as described [here](installation-quick-start.md), you are ready to configure and run your first build.
+After you have installed and started TeamCity as described [here](quick-setup-guide.md), you are ready to configure and run your first build.
 {product="tc"}
 
 After you have started TeamCity as described [here](getting-started-with-teamcity-cloud.md#2.+Start+TeamCity), you are ready to configure and run your first build.
@@ -122,7 +122,7 @@ Congratulations! You are now ready to run the first build based on the just crea
 
 ## Run your first build
 
-A fresh TeamCity server, installed as described [here](installation-quick-start.md), has one registered [build agent](build-agent.md) that runs on the same computer. Agents are responsible for running TeamCity builds, so let's use it to run the first one, based on our recently created configuration.
+A fresh TeamCity server, installed as described [here](quick-setup-guide.md), has one registered [build agent](build-agent.md) that runs on the same computer. Agents are responsible for running TeamCity builds, so let's use it to run the first one, based on our recently created configuration.
 {product="tc"}
 
 On the __Build Configuration Settings__ page, click __Run__ in the upper right corner:

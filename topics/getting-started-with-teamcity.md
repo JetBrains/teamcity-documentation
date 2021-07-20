@@ -15,7 +15,7 @@ Understand the idea behind continuous integration, learn [basic TeamCity concept
 
 ## 2. Install and Start TeamCity
 
-Get [information](installation-quick-start.md) required to download, install, and start TeamCity on Windows, on Linux, and OS X.
+Get [information](quick-setup-guide.md) required to download, install, and start TeamCity on Windows, on Linux, and OS X.
 
 ## 3. Run your First Build
 

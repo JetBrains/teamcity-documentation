@@ -5,7 +5,7 @@
 
 * MS SQL server
 * MS SQL Server Management Studio
-* [Installed TeamCity Server](installation-quick-start.md)
+* [Installed TeamCity Server](quick-setup-guide.md)
 
 ## Configure  MS SQL server to be used with TeamCity
 

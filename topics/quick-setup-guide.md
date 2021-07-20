@@ -1,5 +1,5 @@
-[//]: # (title: Installation Quick Start)
-[//]: # (auxiliary-id: Installation Quick Start)
+[//]: # (title: Quick Setup Guide)
+[//]: # (auxiliary-id: Quick Setup Guide)
 
 This article describes the __evaluation setup__ of a TeamCity server and one build agent on the same machine, for the most popular operating systems.
 
