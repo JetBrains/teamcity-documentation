@@ -123,8 +123,9 @@ Congratulations! You are now ready to run the first build based on the just crea
 ## Run your first build
 
 A fresh TeamCity server, installed as described [here](installation-quick-start.md), has one registered [build agent](build-agent.md) that runs on the same computer. Agents are responsible for running TeamCity builds, so let's use it to run the first one, based on our recently created configuration.
+{product="tc"}
 
-On the __Builld Configuration Settings__ page, click __Run__ in the upper right corner:
+On the __Build Configuration Settings__ page, click __Run__ in the upper right corner:
 
 <img src="RunBuild.png" alt="Run a build" width="750"/>
 
