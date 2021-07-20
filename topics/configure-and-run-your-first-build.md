@@ -1,6 +1,8 @@
 [//]: # (title: Configure and Run Your First Build)
 [//]: # (auxiliary-id: Configure and Run Your First Build)
 
+In TeamCity terms, a _build_ is a process that consists of one or more steps and performs a certain CI/CD job.
+
 After you have installed and started TeamCity as described [here](quick-setup-guide.md), you are ready to configure and run your first build.
 {product="tc"}
 
