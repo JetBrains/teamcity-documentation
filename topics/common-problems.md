@@ -110,7 +110,7 @@ Here is a way to attempt a manual database restore:
 
 However, if the database does not recover automatically, chances that it can be fixed manually are minimal.
 
-The internal (HSQL) database is not stable enough for production use and we highly recommend using an [external database](setting-up-an-external-database.md) for TeamCity non-evaluation usage.  
+The internal (HSQL) database is not stable enough for production use and we highly recommend using an [external database](setting-up-external-database.md) for TeamCity non-evaluation usage.  
 If you encountered database corruption, you can restore the last good backup or drop builds history and users, but preserve the settings, see [Migrating to an External Database](migrating-to-an-external-database.md#Switch+with+No+Data+Migration).
 
 ### The transaction... log is full
@@ -161,7 +161,7 @@ Setting a client-side value (via `maxAllowedPacket` [connection property](https:
 
 #### Character set/collation mismatch
 
-TeamCity reports character set/collation mismatch error: database tables/columns have a character set or collation that is not the same as the default character set or collation in your database schema. You may see this message if you are using a non-unicode character set as default for your database as TeamCity enforces unicode charset for some of the `varchar` fields. Make sure you configured the database according to our [recommendations](setting-up-an-external-database.md).
+TeamCity reports character set/collation mismatch error: database tables/columns have a character set or collation that is not the same as the default character set or collation in your database schema. You may see this message if you are using a non-unicode character set as default for your database as TeamCity enforces unicode charset for some of the `varchar` fields. Make sure you configured the database according to our [recommendations](setting-up-external-database.md).
 
 #### TeamCity displays ???? instead of national symbols
 
@@ -186,7 +186,7 @@ If the source character set is Unicode or UTF, the destination one must also be 
 
 To fix a problem, perform the following steps:
 
-1. Create a new database with the appropriate character set and collation. We recommend using a __unicode case-sensitive__ collation: see instructions for [PostgreSQL](setting-up-an-external-database.md#On+PostgreSQL+server+side) and [MySQL](setting-up-an-external-database.md#On+MS+SQL+server+side). For MySQL, `utf8_bin` or `utf8mb4_bin` is preferred.  
+1. Create a new database with the appropriate character set and collation. We recommend using a __unicode case-sensitive__ collation: see instructions for [PostgreSQL](setting-up-external-database.md#On+PostgreSQL+server+side) and [MySQL](setting-up-external-database.md#On+MS+SQL+server+side). For MySQL, `utf8_bin` or `utf8mb4_bin` is preferred.  
     See also [PostgreSQL](http://www.postgresql.org/docs/9.3/static/multibyte.html), [MySQL](http://dev.mysql.com/doc/refman/5.0/en/charset-mysql.html), [MS SQL](http://technet.microsoft.com/en-us/library/ms180175(v=sql.105).aspx) documentation for details on character set.
     
 2. Copy the current `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file, and change the database references in the copy to the newly created database.

@@ -26,14 +26,14 @@ The __server__ hardware requirements depend on the server load, which in its tur
 
 <tip>
 
-* If you decide to run an [external database](setting-up-an-external-database.md) on the same machine as the server, take into account hardware requirements with database engine requirements in mind.
+* If you decide to run an [external database](setting-up-external-database.md) on the same machine as the server, take into account hardware requirements with database engine requirements in mind.
 * If you face some TeamCity-related performance issues, they should probably be investigated and addressed individually. For example, if builds generate too much data, the server disk system might be needing an upgrade both in size and speed characteristics.
 </tip>
 
 __Database Note:__  
 When using the server extensively, the database performance starts to play a greater role.   
 For reliability and performance reasons you should use an external database.   
-See the [notes](setting-up-an-external-database.md) on choosing external database.    
+See the [notes](setting-up-external-database.md) on choosing external database.    
 The database size requirements naturally vary based on the amount of data stored (number of builds, number of tests, and so on). The active server database usage can be estimated at several gigabytes of data per year.
 
 __Overview of the TeamCity hardware resources usage:__      
@@ -250,7 +250,7 @@ PostgreSQL: We recommend using version 9.2\+, which has a lot of query optimizat
 
 Oracle: it is recommended to keep statistics on: all automatically gathered statistics should be enabled (since Oracle 10.0, this is the default setup). Also see the information on redo log files in the [Oracle documentation](https://docs.oracle.com/cd/B14117_01/server.101/b10752/iodesign.htm#26022).
 
-MS SQL Server: it is NOT recommended to use the jTDS driver: it does not work with `nchar/nvarchar`, and to preserve unicode streams it may cause queries to take a long time and consume a lot of IO. Also see the information on redo log in the [Microsoft Knowledge base](https://support.microsoft.com/kb/2033523). If you use jTDS, please [migrate](setting-up-an-external-database.md#jTDS+driver).
+MS SQL Server: it is NOT recommended to use the jTDS driver: it does not work with `nchar/nvarchar`, and to preserve unicode streams it may cause queries to take a long time and consume a lot of IO. Also see the information on redo log in the [Microsoft Knowledge base](https://support.microsoft.com/kb/2033523). If you use jTDS, please [migrate](setting-up-external-database.md#jTDS+driver).
 
 MySQL: the query optimizer might be inefficient: some queries may get a wrong execution plan causing them to take a long time and consume huge IO.
 
@@ -296,7 +296,7 @@ The contents of this section have been moved to the [dedicated article](security
 ## Configure Newly Installed MySQL Server
 {product="tc"}
 
-If MySQL server is going to be used with TeamCity in addition to the [basic setup](setting-up-an-external-database.md#MySQL), you should review and probably change some of the MySQL server settings. If MySQL is installed on Windows, the settings are located in `my.ini` file which usually can be found under MySQL installation directory. For Unix-like systems the file is called `my.cnf` and can be placed somewhere under `/etc` directory. Read more about configuration file location in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/option-files.html). Note: you'll need to restart MySQL server after changing settings in `my.ini|my.cnf`.
+If MySQL server is going to be used with TeamCity in addition to the [basic setup](setting-up-external-database.md#MySQL), you should review and probably change some of the MySQL server settings. If MySQL is installed on Windows, the settings are located in `my.ini` file which usually can be found under MySQL installation directory. For Unix-like systems the file is called `my.cnf` and can be placed somewhere under `/etc` directory. Read more about configuration file location in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/option-files.html). Note: you'll need to restart MySQL server after changing settings in `my.ini|my.cnf`.
 
 The following settings should be reviewed and/or changed:
 
@@ -748,7 +748,7 @@ You can create a copy of the server using TeamCity backup functionality or manua
 1. Create a [backup](teamcity-data-backup.md) including everything. (You can skip the option to backup build logs is you are moving the artifacts, see below).
 2. Install a new TeamCity server of the same version that you are already running. Ensure that:
    * the appropriate environment is configured (see the notes below) 
-   * the server uses its own `<[TeamCity Data Directory](teamcity-data-directory.md)>` and its own [database](setting-up-an-external-database.md) (check the `<[TeamCity Data Directory](teamcity-data-directory.md)>config/database.properties` file)
+   * the server uses its own `<[TeamCity Data Directory](teamcity-data-directory.md)>` and its own [database](setting-up-external-database.md) (check the `<[TeamCity Data Directory](teamcity-data-directory.md)>config/database.properties` file)
 3. [Restore the backup](restoring-teamcity-data-from-backup.md).
 4. Move the artifacts (these are not included into the backup) by moving the content of `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` directory from the old location to the new one. Since the artifacts can be large in the size, this can take a lot of time, so plan accordingly.
 5. Perform the necessary [environment transfer](#Environment+transferring).
@@ -773,8 +773,8 @@ If you do not want to use the bundled backup functionality or need manual contro
     * `.BuildServer/system/pluginData` (optional) if you want to preserve the state of various plugins, build triggers, and settings audit diff
     * `.BuildServer/system/caches` and `.BuildServer/system/caches` (optional) are not necessary to copy to the new server, they will be recreated on startup, but can take some time to be rebuilt (expect some slow down)
 5. Artifacts directory is usually large. If you need to minimize the downtime of the server when moving it, you can use the generic approach for copying the data: use rsync, robocopy or alike tool to copy the data while the original server is running. Repeat the sync run several times until the amount of synced data reduces. Run the final sync after the original server shutdown. Alternative solution for the server move is to make the old data artifacts directory accessible to the new server and configure it as a second [location of artifacts](teamcity-configuration-and-maintenance.md). Then copy the files over from this second location to the main one while the server is running. Restart the server after copying completion.
-6. Create a copy of the [database](setting-up-an-external-database.md), which your TeamCity installation is using, in a new schema or new database server. This can be done with database-specific tools or with the bundled maintainDB tool by [backing up](creating-backup-via-maintaindb-command-line-tool.md) database data and then [restoring](restoring-teamcity-data-from-backup.md) it.
-7. Configure the new TeamCity installation to use proper `<[TeamCity Data Directory](teamcity-data-directory.md)>` and [database](setting-up-an-external-database.md) (`.BuildServer/config/database.properties` points to a copy of the database).
+6. Create a copy of the [database](setting-up-external-database.md), which your TeamCity installation is using, in a new schema or new database server. This can be done with database-specific tools or with the bundled maintainDB tool by [backing up](creating-backup-via-maintaindb-command-line-tool.md) database data and then [restoring](restoring-teamcity-data-from-backup.md) it.
+7. Configure the new TeamCity installation to use proper `<[TeamCity Data Directory](teamcity-data-directory.md)>` and [database](setting-up-external-database.md) (`.BuildServer/config/database.properties` points to a copy of the database).
 8. Perform the necessary [environment transfer](#Environment+transferring).
 
 >If you want to do a quick check and do not need to preserve the build history on the new server, you can skip Step 6 (cloning database) and all the optional items of Step 4.
@@ -856,7 +856,7 @@ To move settings of the project and all its build configuration from one server 
 
 From the [`TeamCity Data Directory`](teamcity-data-directory.md), copy the directories of corresponding projects (`.BuildServer\config\projects\<id>`) and all its parent projects to `.BuildServer\config\projects` of the target server. This moves project settings, build configuration settings, VCS roots defined in the projects preserving the links between them. If there are same-named files on the target server as those copied, this can happen in case of 
   a) id match: same entities already exist on the target server, in which case the clashing files can be excluded from copying, or 
-  b) id clash: different entities happen to have same ids. In this case it should be resolved either by changing entity id on the source or target server to fulfill the uniqueness requirement.
+  b) id clash: different entities happen to have same ids. In this case it should be resolved either by changing entity ID on the source or target server to fulfill the uniqueness requirement.
 
 The set of parent projects is to be identified manually based on the web UI or the directory names on disk (which be default will have the same prefix).
 
@@ -1219,7 +1219,7 @@ If you want the users to accept a special agreement before using your TeamCity i
 
 ### Encryption
 
-If you want to encrypt the data used by TeamCity, it is recommended to use generic, non-TeamCity-specific tools for this as TeamCity does not provide dedicated functionality. TeamCity stores the data in the SQL database and on the file system. You can configure the database to store the data in encrypted form and use secure JDBC\-backed connection to the database (configured in the [`database.properties`](setting-up-an-external-database.md)).   
+If you want to encrypt the data used by TeamCity, it is recommended to use generic, non-TeamCity-specific tools for this as TeamCity does not provide dedicated functionality. TeamCity stores the data in the SQL database and on the file system. You can configure the database to store the data in encrypted form and use secure JDBC\-backed connection to the database (configured in the [`database.properties`](setting-up-external-database.md)).   
 Also, you can configure encryption on the disk storage on the OS level.
 
 ### Logs and Debugging Data

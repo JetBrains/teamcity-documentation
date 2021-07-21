@@ -245,7 +245,7 @@ Use the default Maven repository location. The repository is shared between all 
 * The former _GitHub Pull Requests_ plugin to _Pull Requests_.
 * The server startup performance has been improved.
 * The __[My Investigations](investigating-and-muting-build-failures.md#Viewing+My+Investigations)__ page now displays failures in the currently running builds.
-* [Build runners](supported-platforms-and-environments.md#Supported+.NET+platform+build+runners) now support .NET Framework 4.8.
+* [Build runners](supported-platforms-and-environments.md#.NET+Runners) now support .NET Framework 4.8.
 
 ## Known issues
 

@@ -13,7 +13,7 @@ Since version 2020.1, TeamCity can report build statuses directly to Jira Cloud 
 
  <seealso>
         <category ref="get_started">
-            <a href="supported-platforms-and-environments.md#Issue+Tracker+Integration">Supported Issue Trackers</a>
+            <a href="supported-platforms-and-environments.md#Issue+Trackers">Supported Issue Trackers</a>
         </category>
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-issue-tracker.md">Integrating TeamCity with Issue Tracker</a>

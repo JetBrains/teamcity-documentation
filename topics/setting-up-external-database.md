@@ -1,5 +1,5 @@
-[//]: # (title: Setting up an External Database)
-[//]: # (auxiliary-id: Setting up an External Database)
+[//]: # (title: Setting up External Database)
+[//]: # (auxiliary-id: Setting up External Database;Setting up an External Database)
 
 TeamCity stores build history, users, build results, and some run time data in an SQL database. See also the description of what is stored where on the [Manual Backup and Restore](manual-backup-and-restore.md) page.
 
@@ -11,7 +11,7 @@ The current database in use is shown on the __Administration | Global Settings__
 
 On the first TeamCity run, using an internal database based on the HSQLDB database engine is suggested by default. The internal database suits evaluation purposes only; it works out of the box and requires no additional setup.
 
-However, we strongly recommend using an external database as a back\-end TeamCity database in a production environment. An external database is usually more reliable and provides better performance: the internal database may crash and lose all your data (e.g. on the "out of disk space" condition). Also, the internal database may become extremely slow on large data sets (say, database storage files over 200Mb). Also note that our support does not cover any performance or database data loss issues if you are using the internal database.
+However, we strongly recommend using an external database as a backend TeamCity database in a production environment. An external database is usually more reliable and provides better performance: the internal database may crash and lose all your data (for example, on the "out of disk space" condition). Also, the internal database may become extremely slow on large data sets (say, database storage files over 200Mb). Also note that our support does not cover any performance or database data loss issues if you are using the internal database.
 
 In short, __do not EVER use internal HSQLDB database for production TeamCity instances__. [Migrate to an external database](migrating-to-an-external-database.md) the moment you start to rely on the data stored in TeamCity server.
 
@@ -53,7 +53,7 @@ The section below describes the required configuration on the database server an
 
 ### MySQL
 
-[Supported versions](supported-platforms-and-environments.md#Supported+Databases)
+[Supported versions](supported-platforms-and-environments.md#Databases)
 
 #### On MySQL server side
 
@@ -83,7 +83,7 @@ JDBC driver installation:
 
 ### PostgreSQL
 
-[Supported versions](supported-platforms-and-environments.md#Supported+Databases)
+[Supported versions](supported-platforms-and-environments.md#Databases)
 
 #### On PostgreSQL server side
 1. Create an empty database for TeamCity in PostgreSQL.
@@ -109,7 +109,7 @@ Download the required [PostgreSQL JDBC42 driver](http://jdbc.postgresql.org/down
 
 ### Oracle
 
-[Supported versions](supported-platforms-and-environments.md#Supported+Databases)
+[Supported versions](supported-platforms-and-environments.md#Databases)
 
 #### On Oracle server side
 Create an Oracle user account/schema for TeamCity.
@@ -152,7 +152,7 @@ into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/lib\/jdbc di
 ### Microsoft SQL Server
 [//]: # (AltHead: settingUpMSSQL)
 
-[Supported versions](supported-platforms-and-environments.md#Supported+Databases)
+[Supported versions](supported-platforms-and-environments.md#Databases)
 
 For step-by-step instructions, see the [dedicated page](setting-up-teamcity-with-ms-sql-server.md). The current section provides key details required for the setup.
 

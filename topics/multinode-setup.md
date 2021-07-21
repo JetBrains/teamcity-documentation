@@ -20,7 +20,7 @@ A TeamCity cluster can have one _main node_ and multiple _secondary nodes_. The 
 ### Prerequisites
 
 A basic HA setup must include the following components:
-* __Dedicated database server__: an external database server from the list of [supported databases](supported-platforms-and-environments.md#Supported+Databases).
+* __Dedicated database server__: an external database server from the list of [supported databases](supported-platforms-and-environments.md#Databases).
 * __Dedicated server for the TeamCity data directory__: the [data directory](#Shared+Data+Directory) should be shared with nodes by network, via NFS or SMB.
 * __At least two servers for TeamCity nodes__ with the mounted [shared data directory](#Shared+Data+Directory): both servers should have the same or comparable hardware. Otherwise, if a secondary node is less performant, you can experience a significant performance drop in case of a failover.
 * __Local storage on the TeamCity nodes__: necessary for the TeamCity installation and storing logs and local caches. To estimate the size of caches, see the size of the`<TeamCity data directory>/system/caches` directory in your current  installation.

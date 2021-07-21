@@ -1561,7 +1561,7 @@ If you need the tests to be treated as separate ones, consider running them in t
 
 #### Database-related changes
 
-The national character sets (nchar, nvarchar, nclob types) for text fields are now supported in MS SQL databases used by TeamCity. It is recommended to use the Microsoft native JDBC driver, as jTDS JDBC driver does not support the nchar and nvarchar characters. If you still use jTDS, please [migrate](setting-up-an-external-database.md).
+The national character sets (nchar, nvarchar, nclob types) for text fields are now supported in MS SQL databases used by TeamCity. It is recommended to use the Microsoft native JDBC driver, as jTDS JDBC driver does not support the nchar and nvarchar characters. If you still use jTDS, please [migrate](setting-up-external-database.md).
 
 Upon upgrade and entering the normal working status, TeamCity starts a background process to move the entries from the vcs\_changes database table to vcs\_change table. This process is transparent and you can continue working with the server as usual. It has negligible impact on the server performance and the only affected logic is the projects import feature (it is recommended to be used only with backups taken after the process is completed). The progress of the process can be seen on the Backup section in the server administration, along with "TeamCity is currently optimizing VCS\-related data in the database for better backup/restore performance" message.   
 The other important thing is that the data copying increases the size of the raw database storage.   
@@ -1608,10 +1608,10 @@ When installing TeamCity anew and creating an MS SQL database with integrated se
 
 If for some reason the workaround above does not resolve the problem, do the following:
 
-1. Start the TeamCity server, approve a new database creation, configure the MS SQL access with a login and password, without [integrated security](setting-up-an-external-database.md).
+1. Start the TeamCity server, approve a new database creation, configure the MS SQL access with a login and password, without [integrated security](setting-up-external-database.md).
 2. Ensure that TeamCity works properly.
 3. Stop the TeamCity server.
-4. Modify the [Setting up an External Database](setting-up-an-external-database.md) file: configure MS SQL connection string to use integrated security, and remove the login and password.
+4. Modify the [Setting up an External Database](setting-up-external-database.md) file: configure MS SQL connection string to use integrated security, and remove the login and password.
 5. Start the TeamCity server again.
 
 #### Known issue with VSTest.Console runner
@@ -2196,9 +2196,9 @@ Since 5.1, TeamCity uses [new template engine](customizing-notifications.md) (Fr
 If you customized notification templates prior to this upgrade, please review the new notification templates and make changes to them if necessary. Old notification templates are copied into `<TeamCity Data Directory>/config/_trash/_notifications` directory. Hope, you will enjoy the new templates and new extended customization capabilities.
 
 __External database drivers location__   
-JDBC drivers can now be placed into `<TeamCity Data Directory>/lib/jdbc` directory instead of `WEB-INF/lib`. It is recommended to use the new location. See details at [Setting up an External Database](setting-up-an-external-database.md).
+JDBC drivers can now be placed into `<TeamCity Data Directory>/lib/jdbc` directory instead of `WEB-INF/lib`. It is recommended to use the new location. See details at [Setting up an External Database](setting-up-external-database.md).
 
-PostgresSQL jdbc driver is no more bundled with TeamCity installation package, you will need to [install](setting-up-an-external-database.md) it yourself upon upgrade.
+PostgresSQL jdbc driver is no more bundled with TeamCity installation package, you will need to [install](setting-up-external-database.md) it yourself upon upgrade.
 
 __Database connection properties__   
 Database connection properties template files have changed their names and are placed into `database.<database-type>.properties.dist` files under `<TeamCity Data Directory>/config` directory. They follow [.dist files convention](teamcity-data-directory.md).

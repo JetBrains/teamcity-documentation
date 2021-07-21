@@ -298,7 +298,7 @@ Out-of-the-box TeamCity server installation is suitable for evaluation purposes.
 * Make sure server URL, email and (optionally) Jabber server settings are specified and are correct.
 * Configuring the server process for OS-dependent autostart on machine reboot.
 * Using reliable storage for [TeamCity Data Directory](teamcity-data-directory.md).
-* [Using external database](setting-up-an-external-database.md).
+* [Using external database](setting-up-external-database.md).
 * [Configuring recommended memory settings](#Setting+Up+Memory+settings+for+TeamCity+Server), use "maximum settings" for active or growing servers.
 * Planning for regular [backups](teamcity-data-backup.md).
 * Planning for regular [upgrades](upgrade.md) to the latest TeamCity releases.

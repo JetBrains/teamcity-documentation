@@ -4,30 +4,21 @@
 This page covers software-related environments TeamCity works with. For hardware-related notes, see [this section](how-to.md#Estimate+Hardware+Requirements+for+TeamCity).
 {product="tc"}
 
-## Platforms (Operating Systems)
+## Operating Systems
 
 ### TeamCity Server
 {product="tc"}
 
-Core features of TeamCity server are platform-independent. See [considerations](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server) on choosing server platform.   
+TeamCity Server is a web application that runs within a capable J2EE servlet container. It requires a Java SE JRE installation to run. See [notes](installing-and-configuring-the-teamcity-server.md#Java+Installation) on how to install Java on a TeamCity server.
 
-The TeamCity server is a web application that runs within a capable J2EE servlet container.
+Supported Java versions: __OpenJDK and Oracle Java 8 (8u16 or later) and 11 (32 or 64 bit)__. Using 64-bit Java is recommended.  
+The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 11__.
 
-The server requires a Java SE JRE installation to run. See [notes](installing-and-configuring-the-teamcity-server.md#Java+Installation) on how to install Java on the server.
+>The core features of TeamCity Server are platform-independent. See [considerations](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server) on choosing the server platform.
 
-<note>
+Generally, __all the recent versions of Windows, Linux, and macOS are supported__. If you find any compatibility issues with any of the operating systems, [let us know](feedback.md).
 
-__Since TeamCity 2019.2__, [Amazon Corretto](https://aws.amazon.com/corretto/) is included in the Windows `.exe` TeamCity distribution (previously, 32-bit Oracle Java and then AdoptOpenJDK were bundled with the TeamCity Windows distribution). Users of the bundled version of JRE are automatically switched to 64-bit Amazon Corretto on upgrading TeamCity to 2019.2 or later.
-
-</note>
-
-Supported Java versions are OpenJDK and Oracle Java 8 (8u16 or later) and 11 (32 or 64 bit). Using 64-bit Java is recommended.
-
-The TeamCity server Windows installer and server Docker images come bundled with 64-bit Java 11.
-
-Generally, __all the recent versions of Windows, Linux, and macOS are supported__. If you find any compatibility issues with any of the operating systems, make sure to [let us know](feedback.md).
-
-The TeamCity server is tested under the following operating systems:
+TeamCity Server is tested under the following operating systems:
 * Linux (Ubuntu, Debian, RedHat, SUSE, and others)
 * macOS
 * Windows 7/7x64
@@ -43,24 +34,17 @@ Reportedly works without known issues on:
 * IBM z/OS
 * HP-UX
    
-Note that Windows XP/XP x64 are not supported.
+Windows XP/XP x64 are not supported.
 
-### Build Agents
+### TeamCity Agent
 {product="tc"}
 
-The TeamCity Agent is a standalone Java application.
+TeamCity Agent is a standalone Java application. It requires a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
 
-Build agents require a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
+Supported Java versions: __OpenJDK and Oracle Java 8-11__. We recommend using the latest available version of JDK.  
+The TeamCity agent Windows installer comes __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 8__.
 
-Supported Java versions are OpenJDK and Oracle Java 8 - 11. We recommend using the latest available version of JDK. Support for running agents under Java 1.6 and 1.7 is deprecated.
-
-<note>
-
-__Since TeamCity 2019.2__, 64-bit [Amazon Corretto](https://aws.amazon.com/corretto/) 8 is included in the Windows `.exe` TeamCity distribution (previously, 32-bit Oracle Java and then AdoptOpenJDK were bundled with the TeamCity Windows distribution). Users of the bundled version of JRE are automatically switched to 64-bit Amazon Corretto on upgrading TeamCity to 2019.2 or later.
-
-</note>
-
-The TeamCity agent is tested under the following operating systems:
+TeamCity Agent is tested under the following operating systems:
 * Linux
 * macOS
 * Windows 7/7x64
@@ -79,7 +63,7 @@ Reportedly works on:
 ### Build Agents
 {product="tcc"}
 
-The TeamCity Agent is a standalone Java application. TeamCity Cloud supports two types of agents:
+TeamCity Agent is a standalone Java application. TeamCity Cloud supports two types of agents:
 * Hosted by JetBrains
 * Hosted by a customer
 
@@ -181,9 +165,9 @@ You can install a build agent locally on your machine, similarly to how you woul
 
 Build agents require a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
 
-Supported Java versions are OpenJDK and Oracle Java 8 - 11. We recommend using the latest available version of JDK. Support for running agents under Java 1.6 and 1.7 is deprecated.
+Supported Java versions: OpenJDK and Oracle Java 8 - 11. We recommend using the latest available version of JDK.
 
-The TeamCity agent is tested under the following operating systems:
+TeamCity Agent is tested under the following operating systems:
 * Linux
 * macOS
 * Windows 7/7x64
@@ -198,119 +182,348 @@ Reportedly works on:
 * FreeBSD
 * IBM z/OS
 * HP-UX
-   
-### Windows Tray Notifier
 
-Windows 7/7x64/10 with one of the supported versions of Internet Explorer.
+## Browsers
 
-## Web Browsers
-
-The TeamCity Web Interface is mostly W3C-compliant, so just about any modern browser should work well with TeamCity. The following browsers have been specifically tested and reported to work correctly in the recent versions of:
-   * Google Chrome
-   * Mozilla Firefox 
-   * Safari under Mac
-   * Microsoft Edge
-   * Opera 15+
+The TeamCity web interface is mostly W3C-compliant, so any modern browser should work well with TeamCity. The recent versions of the following browsers have been specifically tested and reported to work correctly:
+* Google Chrome
+* Mozilla Firefox 
+* Safari under macOS
+* Microsoft Edge
+* Opera
    
 ## Build Runners
 
-TeamCity supports a wide range of build tools, enabling both Java and .NET software teams to build their projects.
+### Java Runners
 
-### Supported Java build runners
+<table>
 
-* [Ant](ant.md) 1.6-1.10. TeamCity comes bundled with Ant 1.10.10 (requires Java 8).
-* [Maven](maven.md) versions 2.0.x, 2.x, 3.x (known at the moment of the TeamCity release). Java 1.5 and higher is supported. TeamCity comes bundled with Maven 2.2.1, 3.0.5, 3.1.1, 3.2.5, 3.3.9, 3.5.4, and 3.6.3.
-* [IntelliJ IDEA Project](intellij-idea-project.md) runner (requires Java 8)
-* [Gradle](gradle.md) (requires Gradle 0.9-rc-1 or higher)
-* [Java Inspections](inspections.md) and [Java Duplicates](duplicates-finder-java.md) based on IntelliJ IDEA (requires Java 8)
+<tr><td>Runner</td><td>Supported versions</td><td>Bundled versions</td></tr>
 
-### Supported .NET platform build runners
+<tr><td>
 
-For a unified [.NET](net.md) runner, see a [dedicated section](net.md#Requirements).
+[Ant](ant.md)
 
-Other runners:
-* [MSBuild](msbuild.md). Requires .NET Framework or Mono installed on the build agent. Microsoft Build Tools 2013, 2015, 2017, and 2019 are also supported.
-* [NAnt](nant.md) versions 0.85 - 0.91 alpha 2. Requires .NET Framework or Mono installed on the build agent.
-* [Microsoft Visual Studio Solutions](visual-studio-sln.md) ([2003](visual-studio-2003.md) - 2015, 2017, and 2019). Requires a corresponding version of Microsoft Visual Studio installed on the build agent.
-* [FxCop](fxcop.md). Requires FxCop installed on the build agent.
-* [Duplicates Finder for C# and VB.NET code](duplicates-finder-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html). Supported languages are C# up to version 4.0 and VB.NET version 8.0 - 10.0. Requires .NET Framework 4.6.1+ installed on the build agent.
-* [Inspections for .NET](inspections-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html). Requires .NET Framework 4.6.1+ installed on the build agent.
-* [.NET Process Runner](net-process-runner.md) for running any .NET application (requires .NET installed on the build agent)
-* [NuGet](nuget.md) runners under Windows, Linux, macOS. Require NuGet.exe Command Line tool installed on the agents. Supported NuGet versions under Windows are 1.4+. 
-  * Windows: NuGet versions prior to 2.8.6 require .NET Framework 4.0+ installed on the build agent
-  * Windows: NuGet 2.8.6 and later requires .NET 4.5
-  * Linux and macOS: require [Mono](http://www.mono-project.com/docs/getting-started/install/) 4.4.2+ and NuGet CLI 3.2+ installed on the agent
+</td><td>1.6-1.10</td><td>1.10.10</td></tr>
 
-### Other runners
+<tr><td>
 
-* [Python](python.md), requires installing Python version 2.0 or later on agents
-* [Kotlin Script](kotlin-script.md)
-{product="tc"}
-* [Node.js](nodejs.md)
-{product="tc"}
-* [Rake](rake.md)
-* [Command Line](command-line.md) for running any build process using a shell script
-* [PowerShell](powershell.md), versions 1.0 - 5.0
-* [Xcode](xcode-project.md), versions 3-12 (requires [Xcode](xcode-project.md) installed on the build agent)
+[Maven](maven.md)
 
-## Testing Frameworks 
+</td><td>2.0.x, 2.x, 3.x</td><td>2.2.1, 3.0.5, 3.1.1, 3.2.5, 3.3.9, 3.5.4, 3.6.3</td></tr>
 
-* JUnit 3.8.1+, 4.x
-* [NUnit](nunit-support.md) 2.2.10, 2.4.x, 2.5.x, 2.6.x, 3.0.x are supported (dedicated build runner). 
-* TestNG 5.3+
-* MSTest 8.x-12.x, 14.x, 15.x, 19.x and VSTest are supported by the [.NET](net.md) runner; requires the appropriate Microsoft Visual Studio edition or Visual Studio Test Agent installed on the build agent.
-* [MSpec](mspec.md) (requires MSpec installed on the build agent)
+<tr><td>
+
+[IntelliJ IDEA Project](intellij-idea-project.md)
+
+</td><td></td><td></td></tr>
+
+<tr><td>
+
+[Gradle](gradle.md)
+
+</td><td>0.9-rc-1 or later</td><td></td></tr>
+
+<tr><td>
+
+[Java Inspections](inspections.md)
+
+</td><td></td><td></td></tr>
+
+<tr><td>
+
+[Java Duplicates](duplicates-finder-java.md)
+
+</td><td></td><td></td></tr>
+
+</table>
+
+### .NET Runners
+
+We recommend that you use the __unified [.NET](net.md) runner__ to run .NET projects in TeamCity. See its requirements [here](net.md#Requirements).
+
+Other .NET runners:
+
+<table>
+
+<tr><td>Runner</td><td>Supported versions</td><td>Requirements</td></tr>
+
+<tr><td>
+
+[MSBuild](msbuild.md)
+
+</td><td>Microsoft Build Tools 2013, 2015, 2017, 2019</td><td>.NET Framework or Mono installed on the build agent</td></tr>
+
+<tr><td>
+
+[NAnt](nant.md)
+
+</td><td>0.85 - 0.91 alpha 2</td><td>.NET Framework or Mono installed on the build agent</td></tr>
+
+<tr><td>
+
+[Microsoft Visual Studio Solutions](visual-studio-sln.md)
+
+</td><td></td><td>A corresponding version of Microsoft Visual Studio installed on the build agent</td></tr>
+
+<tr><td>
+
+[FxCop](fxcop.md)
+
+</td><td></td><td>FxCop installed on the build agent</td></tr>
+
+<tr><td>
+
+[Duplicates Finder for C# and VB.NET code](duplicates-finder-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html)
+
+</td><td>Supported languages are C# up to version 4.0 and VB.NET version 8.0 - 10.0</td><td>.NET Framework 4.6.1 or later installed on the build agent</td></tr>
+
+<tr><td>
+
+[Inspections for .NET](inspections-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html)
+
+</td><td></td><td>.NET Framework 4.6.1 or later installed on the build agent</td></tr>
+
+<tr><td>
+
+[.NET Process Runner](net-process-runner.md)
+
+</td><td></td><td>.NET installed on the build agent</td></tr>
+
+<tr><td>
+
+[NuGet](nuget.md)
+
+</td><td>NuGet 1.4 or later</td><td>
+
+Required on the build agent:
+* NuGet.exe command-line tool
+* on Windows: NuGet versions prior to 2.8.6 — .NET Framework 4.0 or later; NuGet 2.8.6 or later — .NET Framework 4.5
+* on Linux and macOS: [Mono](http://www.mono-project.com/docs/getting-started/install/) 4.4.2 or later and NuGet CLI 3.2 or later
+
+</td></tr>
+
+</table>
+
+### Other Runners
+
+<table>
+
+<tr><td>Runner</td><td>Supported versions</td><td>Requirements</td></tr>
+
+<tr><td>
+
+[Command Line](command-line.md)
+
+</td><td></td><td></td></tr>
+
+<tr><td>
+
+[Python](python.md)
+
+</td><td>2.0 or later</td><td>Python installed on the build agent</td></tr>
+
+<tr product="tc"><td>
+
+[Kotlin Script](kotlin-script.md)
+
+</td><td></td><td></td></tr>
+
+<tr product="tc"><td>
+
+[Node.js](nodejs.md)
+
+</td><td></td><td></td></tr>
+
+<tr><td>
+
+[Rake](rake.md)
+
+</td><td>0.7.3 gem or later</td><td></td></tr>
+
+<tr><td>
+
+[PowerShell](powershell.md)
+
+</td><td>1.0 - 5.0</td><td></td></tr>
+
+<tr><td>
+
+[Xcode](xcode-project.md)
+
+</td><td>3-12</td><td>Xcode installed on the build agent</td></tr>
+
+</table>
+
+## Testing Frameworks
+
+<table>
+
+<tr><td>Framework</td><td>Supported versions</td><td>Requirements</td></tr>
+
+<tr><td>
+
+JUnit
+
+</td><td>3.8.1+, 4.x</td><td></td></tr>
+
+<tr><td>
+
+[NUnit](nunit-support.md)
+
+</td><td>2.2.10, 2.4.x, 2.5.x, 2.6.x, 3.0.x</td><td></td></tr>
+
+<tr><td>
+
+TestNG
+
+</td><td>5.3 or later</td><td></td></tr>
+
+<tr><td>
+
+MSTest and VSTest
+
+</td><td>
+
+8.x-12.x, 14.x, 15.x, 19.x are supported by the [.NET](net.md) runner
+
+</td><td>A corresponding Microsoft Visual Studio edition or Visual Studio Test Agent installed on the build agent</td></tr>
+
+<tr><td>
+
+[MSpec](mspec.md)
+
+</td><td></td><td>MSpec installed on the build agent</td></tr>
+
+</table>
+
+[Read more](testing-frameworks.md) about the support for testing frameworks in TeamCity.
 
 ## Version Control Systems
 
-* [Git](git.md) (for automatic `git gc` support requires Git client installed on the server in order to perform maintenance of Git clones, latest version is recommended)
-* [Subversion](subversion.md) (server versions 1.4-1.9 and later, as long as the protocol is backward-compatible).
-* [Perforce](perforce.md) (requires a Perforce client installed on the TeamCity server). Check [compatibility issues](perforce-vcs-compatibility.md).
-* [Team Foundation Server](team-foundation-server.md) 2005, 2008, 2010, 2012, 2013, 2015, 2017 are supported. 
-* [Mercurial](mercurial.md) (requires the Mercurial "hg" client v1.5.2+ installed on the server)
-* [CVS](cvs.md)
-{product="tc"}
-* [SourceGear Vault](sourcegear-vault.md) 6 and 7 (requires the Vault command line client libraries installed on the TeamCity server), _integrated via an additional plugin_
-{product="tc"}
-* [Borland StarTeam](starteam.md) 6 and up (the StarTeam client application must be installed on the TeamCity server)
-{product="tc"}
-* [IBM Rational ClearCase](clearcase.md) Base and UCM modes (requires the ClearCase client installed and configured on the TeamCity server), _integrated via an additional plugin_
-{product="tc"}
-* [Microsoft Visual SourceSafe](visual-sourcesafe.md) 6 and 2005 (requires a SourceSafe client installed on the TeamCity server, available only on Windows platforms)
-{product="tc"}
+### VCS Support on Server
 
-For support for other VCS please check [external plugins](https://plugins.jetbrains.com/category/93-version-control-systems-support/teamcity) available.
+<table>
 
-### Checkout on Agent
+<tr><td>VCS</td><td>Supported versions</td><td>Requirements</td></tr>
 
-The requirements noted are for agent environment and are additional to those for the server listed above.
+<tr><td>
 
-* Git (git client version 1.6.4+ must be installed on the agent, the latest version is recommended)
-* Subversion (working copies in the Subversion 1.4-1.8 format are supported)
-* Perforce (a Perforce client must be installed on the TeamCity agent machine)
-* Team Foundation Server 2005-2015, 2017 are supported. 
-* Mercurial (the Mercurial "hg" client v1.5.2+ must be installed on the TeamCity agent machine)
-* CVS
-{product="tc"}
-* IBM Rational ClearCase (the ClearCase client must be installed on the TeamCity agent machine)
+[Git](git.md)
+
+</td><td></td><td>
+
+For automatic `git gc` support and maintenance of Git clones, requires a Git client installed on the server
+
+</td></tr>
+
+<tr><td>
+
+[Subversion](subversion.md)
+
+</td><td>Server versions 1.4-1.9 or later</td><td></td></tr>
+
+<tr><td>
+
+[Perforce](perforce.md)
+
+</td><td></td><td>
+
+A Perforce client installed on the server. See also [Perforce compatibility issues](perforce-vcs-compatibility.md).
+
+</td></tr>
+
+<tr><td>
+
+Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
+
+</td><td>2005, 2008, 2010, 2012, 2013, 2015, 2017</td><td></td></tr>
+
+<tr><td>
+
+[Mercurial](mercurial.md)
+
+</td><td></td><td>A Mercurial "hg" client v1.5.2+ installed on the server</td></tr>
+
+<tr product="tc"><td>
+
+[CVS](cvs.md)
+
+</td><td></td><td></td></tr>
+
+<tr><td>
+
+[Borland StarTeam](starteam.md)
+
+</td><td>6 or later</td><td>A StarTeam client application installed on the server</td></tr>
+
+<tr><td>
+
+[Microsoft Visual SourceSafe](visual-sourcesafe.md)
+
+</td><td>6, 2005</td><td>A SourceSafe client installed on the TeamCity server, available only on Windows platforms</td></tr>
+
+</table>
+
+Other VCSs can be supported in TeamCity via [external plugins](https://plugins.jetbrains.com/search?products=teamcity&tags=VCS%20integration).
+
+### VCS Support on Agent
+
+<table>
+
+<tr><td>VCS</td><td>Supported versions</td><td>Requirements</td></tr>
+
+<tr><td>
+
+[Git](git.md)
+
+</td><td>1.6.4 or later</td><td>A Git client installed on the agent</td></tr>
+
+<tr><td>
+
+[Subversion](subversion.md)
+
+</td><td>1.4-1.8</td><td></td></tr>
+
+<tr><td>
+
+[Perforce](perforce.md)
+
+</td><td></td><td>A Perforce client installed on the agent</td></tr>
+
+<tr><td>
+
+Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
+
+</td><td>2005-2015, 2017</td><td></td></tr>
+
+<tr><td>
+
+[Mercurial](mercurial.md)
+
+</td><td></td><td>A Mercurial "hg" client v1.5.2+ installed on the agent</td></tr>
+
+<tr product="tc"><td>
+
+[CVS](cvs.md)
+
+</td><td></td><td></td></tr>
+
+</table>
    
 ### Labeling Build Sources
 
 * Git
 * Subversion
 * Perforce
-* Team Foundation Server
+* Azure DevOps Server, Team Foundation Server
 * Mercurial
 * CVS
 {product="tc"}
-* SourceGear Vault, _integrated via an additional plugin_
-{product="tc"}
 * Borland StarTeam
 {product="tc"}
-* ClearCase, _integrated via an additional plugin_
-{product="tc"}
    
-### Remote Run on Branch
+### Remote Run
 
 * Git
 * Mercurial
@@ -319,51 +532,107 @@ The requirements noted are for agent environment and are additional to those for
 
 * Git
 * Mercurial
-   
-### VCS Systems Supported via Third Party Plugins
 
-* [AccuRev](https://plugins.jetbrains.com/plugin/8885?pr=teamcity)
-* [Bazaar](https://plugins.jetbrains.com/plugin/8886?pr=teamcity)
-* [PlasticSCM](https://plugins.jetbrains.com/plugin/8889-plastic-scm?pr=teamcity) (related [details](http://www.plasticscm.com/infocenter/technical-articles/kb-how-to-integrate-plastic-scm-with-teamcity-ci.aspx))
-
-
-## Cloud Agents Integration
-{product="tc"}
-
-* [Amazon EC2](setting-up-teamcity-for-amazon-ec2.md)
-* [VMWare vSphere](setting-up-teamcity-for-vmware-vsphere-and-vcenter.md)
-
-See also details on the [cloud integrations](teamcity-integration-with-cloud-solutions.md) and non-bundled and third-party [cloud integration plugins](https://plugins.jetbrains.com/category/102-cloud-support/teamcity).
-
-## VCS Hosting Services Integration
-
-* [GitHub / GitHub Enterprise](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub)
-* [GitLab](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitLab)
+## VCS Hosting Services
+* [GitHub.com / GitHub Enterprise](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub)
+* [GitLab.com / GitLab CE/EE](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitLab)
 * [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket+Cloud)
 * [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps+Services), or formerly Visual Studio Team Services
 
-## Issue Tracker Integration
-
-* [JetBrains YouTrack](http://jetbrains.com/youtrack) 1.0 and later (tested with the latest version)
-* [Atlassian Jira](http://www.atlassian.com/software/jira/) 4.4 and later (all major features also reportedly worked for version 4.2)
-* [Bugzilla](http://www.bugzilla.org) 3.0 and later (tested with Bugzilla 5.0.1)
-* [GitHub](github.md)
-* [Bitbucket](github.md)
-* [Azure DevOps Server](team-foundation-work-items.md) (formerly Visual Studio Team Foundation Server — supported version 2012 or later, and Azure DevOps Services are supported)
-   
-Additional requirements are listed in [Integrating TeamCity with Issue Tracker](integrating-teamcity-with-issue-tracker.md).
-
-Links to issues of any issue tracker can also be recognized in change comments using [Mapping External Links in Comments](mapping-external-links-in-comments.md).
+## Cloud Platforms
 {product="tc"}
+
+The following cloud platforms can be used to run build agents:
+* [Amazon EC2](setting-up-teamcity-for-amazon-ec2.md)
+* [VMWare vSphere](setting-up-teamcity-for-vmware-vsphere-and-vcenter.md)
+* [Kubernetes](setting-up-teamcity-for-kubernetes.md)
+
+Available as non-bundled plugins:
+* [Windows Azure](https://plugins.jetbrains.com/plugin/9260-azure-resource-manager-cloud-support)
+* [Google Cloud](https://plugins.jetbrains.com/plugin/9704-google-cloud-agents)
+* [Other plugins](https://plugins.jetbrains.com/category/102-cloud-support/teamcity).
+
+## Issue Trackers
+
+<table>
+
+<tr><td>Tracker</td><td>Supported versions</td></tr>
+
+<tr><td>
+
+[JetBrains YouTrack](youtrack.md)
+
+</td><td>1.0 or later</td></tr>
+
+<tr><td>
+
+[Atlassian Jira](jira.md)
+
+</td><td>4.4 or later (all major features also reportedly worked for version 4.2)</td></tr>
+
+<tr><td>
+
+[Bugzilla](bugzilla.md)
+
+</td><td>3.0 or later</td></tr>
+
+<tr><td>
+
+[GitHub](github.md)
+
+</td><td>0.9-rc-1 or later</td></tr>
+
+<tr><td>
+
+[Bitbucket Cloud](bitbucket-cloud.md)
+
+</td><td></td></tr>
+
+<tr><td>
+
+[Azure DevOps Server](team-foundation-work-items.md) (formerly Team Foundation Server — supported version 2012 or later), and Azure DevOps Services
+
+</td><td></td></tr>
+
+</table>
+   
+See also [additional requirements](integrating-teamcity-with-issue-tracker.md).
 
 ## IDE Integration
 
 TeamCity provides productivity plugins for the following IDEs:
 
-* [Eclipse](eclipse-plugin.md): Eclipse versions 3.8 and 4.2-4.6 are supported. Eclipse must be run under JDK 1.5\+
-* [IntelliJ Platform Plugin](intellij-platform-plugin.md): compatible with IntelliJ IDEA 15.0.x - 2019.3.x (Ultimate and Community editions); as well as other IDEs based on the same version of the platform, including JetBrains RubyMine 6.3+, JetBrains PyCharm 3.1+, JetBrains PhpStorm/WebStorm 7.1+, AppCode 2.1+. See [more information](intellij-platform-plugin-compatibility.md) on compatibility.
-* [Microsoft Visual Studio](visual-studio-addin.md) 2010, 2012, 2013, 2015, 2017, 2019
- is supported by the TeamCity Visual Studio [Add-in shipped as a part of ReSharper Ultimate](visual-studio-addin.md#Installing+Add-in). Installed .NET Framework is required. 
+<table>
+
+<tr><td>IDE</td><td>Supported versions</td><td>Requirements</td></tr>
+
+<tr><td>
+
+[Eclipse](eclipse-plugin.md)
+
+</td><td>3.8, 4.2-4.6</td><td>
+
+Eclipse must be run under JDK 1.5+
+
+</td></tr>
+
+<tr><td>
+
+[IntelliJ Platform Plugin](intellij-platform-plugin.md)
+
+</td><td>
+
+Compatible with IntelliJ IDEA 15.0.x - 2019.3.x (Ultimate and Community editions); as well as other IDEs based on the same version of the platform, including JetBrains RubyMine 6.3+, JetBrains PyCharm 3.1+, JetBrains PhpStorm/WebStorm 7.1+, AppCode 2.1+. See [more information](intellij-platform-plugin-compatibility.md) on compatibility.
+
+</td><td></td></tr>
+
+<tr><td>
+
+[Microsoft Visual Studio](visual-studio-addin.md)
+
+</td><td>2010, 2012, 2013, 2015, 2017, 2019</td><td>.NET Framework</td></tr>
+
+</table>
 
 ### Remote Run and Pre-tested Commit
 
@@ -387,11 +656,9 @@ Supported VCS
 
 [Eclipse](eclipse-plugin.md)
 
-
 </td>
 
 <td>
-
 
 * Subversion 1.7-1.8 via Subclipse and Subversive Eclipse integration plugins or SvnKit.
 * Subversion 1.4-1.7 via Subclipse and Subversive Eclipse integration plugins.
@@ -400,14 +667,16 @@ Supported VCS
 * CVS
 {product="tc"}
 * ClearCase (the client software is required), _integrated via an additional plugin_
-* [see also](eclipse-plugin.md)
 
+[Read more details](eclipse-plugin.md).
 
 </td></tr><tr>
 
 <td>
 
-[IntelliJ IDEA Platform](intellij-platform-plugin.md) \*)
+[IntelliJ IDEA Platform](intellij-platform-plugin.md)
+
+(supported only for VCS integrations bundled with JetBrains IDEs)
 
 </td>
 
@@ -424,20 +693,15 @@ Supported VCS
 
 [Microsoft Visual Studio](visual-studio-addin.md)
 
-
 </td>
 
 <td>
 
-
-* Subversion 1.4-1.11 (the command-line client is required); note that 1.10-1.11 is supported __since ReSharper 2018.3__.
+* Subversion 1.4-1.11 (the command-line client is required); note that 1.10-1.11 is supported since ReSharper 2018.3.
 * Azure DevOps Server (formerly Team Foundation Server — supported version 2005 or later). Installed Team Explorer is required.
-* Perforce 2008.2 and later (the command-line client is required).
-
+* Perforce 2008.2 or later (the command-line client is required).
 
 </td></tr></table>
-
-\*) Supported only with the VCS integrations bundled with the IDEs by JetBrains
 
 ### Code Coverage
 
@@ -447,13 +711,11 @@ Supported VCS
 
 IDE
 
-
 </td>
 
 <td>
 
-Supported Coverage Tool
-
+Supported Coverage Tools
 
 </td></tr><tr>
 
@@ -461,13 +723,11 @@ Supported Coverage Tool
 
 [Eclipse](eclipse-plugin.md)
 
-
 </td>
 
 <td>
 
 [IDEA](intellij-idea.md) and [EMMA](emma.md) code coverage
-
 
 </td></tr><tr>
 
@@ -475,13 +735,11 @@ Supported Coverage Tool
 
 [IntelliJ IDEA Platform](intellij-platform-plugin.md)
 
-
 </td>
 
 <td>
 
-[IDEA](intellij-idea.md), [EMMA](emma.md) and [JaCoCo](jacoco.md) code coverage
-
+[IDEA](intellij-idea.md), [EMMA](emma.md), and [JaCoCo](jacoco.md) code coverage
 
 </td></tr><tr>
 
@@ -489,27 +747,49 @@ Supported Coverage Tool
 
 [Microsoft Visual Studio](visual-studio-addin.md)
 
-
 </td>
 
 <td>
 
-JetBrains dotCover coverage. Requires [JetBrains dotCover](http://www.jetbrains.com/dotcover/) installed in Microsoft Visual Studio
-
+JetBrains dotCover coverage. Requires [JetBrains dotCover](http://www.jetbrains.com/dotcover/) installed in Microsoft Visual Studio.
 
 </td></tr></table>
 
-## Supported Databases
+## Databases
 {product="tc"}
 
-See more at [Setting up an External Database](setting-up-an-external-database.md)
+<table>
 
-* HSQLDB 2.3.2   
-The internal HSQLDB database suits __evaluation purposes only__; we strongly recommend using an external database in a production environment.
-* MySQL 5.7.34 or later
-* Microsoft SQL Server 2012 or later (including Express editions), SQL Azure.
-* PostgreSQL 9.6 or later.
-* Oracle 10g and newer (TeamCity is tested with [driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1).
+<tr><td>Database</td><td>Supported versions</td></tr><tr>
+
+<td>
+
+HSQLDB
+
+(The internal HSQLDB database can be used for __evaluation purposes only__.)
+
+</td><td>2.3.2</td></tr><tr><td>
+
+MySQL
+
+</td><td>5.7.34 or later</td></tr><tr><td>
+
+Microsoft SQL Server
+
+</td><td>2012 or later (including Express editions), SQL Azure</td></tr><tr><td>
+
+PostgreSQL
+
+</td><td>9.6 or later</td></tr><tr><td>
+
+Oracle
+
+</td><td>10g or later (tested with the [driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1</td></tr>
+
+</table>
+
+
+[Read more details](setting-up-external-database.md).
 
 ## Game Engines
 

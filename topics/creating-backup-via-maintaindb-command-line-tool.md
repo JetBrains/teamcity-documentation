@@ -83,7 +83,7 @@ If you customize TeamCity server startup options via `TEAMCITY_SERVER_OPTS/TEAMC
  
  <seealso>
         <category ref="installation">
-            <a href="setting-up-an-external-database.md">Setting up an External Database</a>
+            <a href="setting-up-external-database.md">Setting up an External Database</a>
             <a href="migrating-to-an-external-database.md">Migrating to an External Database</a>
         </category>
 </seealso>

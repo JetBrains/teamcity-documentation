@@ -209,7 +209,7 @@ Only a single TeamCity server can work with one database, which is checked on th
 * A second TeamCity instance detected
 * The internal HSQL database is being used by another application
 
-The error is most probably caused by the fact that there is another running TeamCity installation which is connected to the same database. Сheck that the [database properties](setting-up-an-external-database.md) are correct and there is no other TeamCity server using the same database.
+The error is most probably caused by the fact that there is another running TeamCity installation which is connected to the same database. Сheck that the [database properties](setting-up-external-database.md) are correct and there is no other TeamCity server using the same database.
 
 ## Slow download from TeamCity server
 {product="tc"}

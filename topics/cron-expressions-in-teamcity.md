@@ -1,4 +1,4 @@
-[//]: # (title: Cron Expressions in TeamCity)
+[//]: # (title: Cron Expressions)
 [//]: # (auxiliary-id: Cron Expressions in TeamCity)
 
 TeamCity allows you to flexibly schedule regular operations using the [cron](https://en.wikipedia.org/wiki/Cron#Operators) format. Currently, cron-like expressions are supported for [schedule triggers](configuring-schedule-triggers.md) and [server clean-up](clean-up.md#Server+Clean-up+Settings).
@@ -11,7 +11,7 @@ TeamCity uses [Quartz](https://www.quartz-scheduler.org/) for working with cron 
 
 ## Cron format in TeamCity
 
-Cron expressions are comprised of six fields and one optional field separated with a white space. The fields are respectively described as follows:
+Cron expressions comprise six fields and one optional field separated with a white space. The fields are respectively described as follows:
 
 <table><tr>
 

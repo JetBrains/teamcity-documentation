@@ -559,7 +559,7 @@ launchctl remove jetbrains.teamcity.BuildAgent
 
 ## Configuring Java
 
-A TeamCity build agent is a Java application ([supported Java versions](supported-platforms-and-environments.md#Build+Agents)).
+A TeamCity build agent is a Java application ([supported Java versions](supported-platforms-and-environments.md#TeamCity+Agent)).
 
 A build agent contains two processes:
 * Agent Launcher — a Java process that launches the agent process
