@@ -6,6 +6,7 @@ The _Kotlin Script_ runner allows executing a [Kotlin](https://kotlinlang.org/) 
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings.
 
 ## Prerequisites
+{product="tc"}
 
 A [Kotlin](https://kotlinlang.org/) compiler version 1.3.70 or later must be [installed as an agent tool](installing-agent-tools.md) to run this step. Kotlin 1.5.0 is already bundled with TeamCity.
 

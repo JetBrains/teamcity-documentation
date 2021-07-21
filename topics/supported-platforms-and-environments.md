@@ -60,7 +60,7 @@ Reportedly works on:
 * IBM z/OS
 * HP-UX
 
-### Build Agents
+### TeamCity Agent
 {product="tcc"}
 
 TeamCity Agent is a standalone Java application. TeamCity Cloud supports two types of agents:
@@ -451,17 +451,11 @@ Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
 
 </td><td></td><td></td></tr>
 
-<tr><td>
+<tr product="tc"><td>
 
 [Borland StarTeam](starteam.md)
 
 </td><td>6 or later</td><td>A StarTeam client application installed on the server</td></tr>
-
-<tr><td>
-
-[Microsoft Visual SourceSafe](visual-sourcesafe.md)
-
-</td><td>6, 2005</td><td>A SourceSafe client installed on the TeamCity server, available only on Windows platforms</td></tr>
 
 </table>
 
@@ -784,7 +778,11 @@ PostgreSQL
 
 Oracle
 
-</td><td>10g or later (tested with the [driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1</td></tr>
+</td><td>
+
+10g or later (tested with the [driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1
+
+</td></tr>
 
 </table>
 
