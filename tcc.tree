@@ -178,12 +178,14 @@
                         <toc-element id="inspections-resharper.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="intellij-idea-project.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="ipr-deprecated.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+                        <toc-element id="kotlin-script.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="maven.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="msbuild.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="mspec.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nant.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="net.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="net-process-runner.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="nodejs.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nuget-installer.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nuget-pack.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nuget-publish.md" show-structure-for="chapter" show-structure-depth="4"/>
