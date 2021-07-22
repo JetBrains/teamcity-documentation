@@ -164,6 +164,8 @@ If the bid price is not specified, the default On-Demand price will be used.
 
 TeamCity launches a spot instance as soon as the cloud profile is saved. If it is impossible to launch the instance (for example, if there is no available capacity or if your bid price is lower than the current minimum Spot Price in Amazon), TeamCity will be repeating the launch attempt once a minute, as long as there are queued builds which can run on this agent.
 
+If a spot instance is terminated, TeamCity will fail the build with a corresponding build problem, and will re-add this build to the build queue.
+
 <note>
 
 It is not recommended to use spot instances for production-critical builds due to the possibility of an [unexpected spot instance termination by Amazon](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#using-spot-instances-managing-interruptions).
