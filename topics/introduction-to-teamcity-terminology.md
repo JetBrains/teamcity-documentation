@@ -57,7 +57,7 @@ A different piece of software is used for actually running builds — a _[build 
 
 To learn more about TeamCity, explore this Help further:
 * The current Concepts section lists the main TeamCity objects and terms. Use it as a reference to learn about unfamiliar notions.
-* To properly install and configure your setup, refer to [Supported Platforms and Environments](supported-platforms-and-environments.md) and [Installation and Upgrade](installation-and-upgrade.md).
+* To properly install and configure your setup, refer to [Supported Platforms and Environments](supported-platforms-and-environments.md) and [Installation](installation.md).
 * If you are using TeamCity only for managing and viewing builds, make sure to read the [User's Guide](user-s-guide.md).
 * If you have a Project Administrator or Server Administrator access, use the [Admin's Guide](administrator-s-guide.md) section to learn how to configure projects or how to use the Administration panel and maintain the server. This section also contains information on [licensing](licensing-policy.md) and [configuration as code in TeamCity](kotlin-dsl.md).
 {product="tc"}
