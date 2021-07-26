@@ -24,6 +24,7 @@ The following _HTTP authentication modules_ are supported:
 * __GitHub.com__ and __GitHub Enterprise__: Allow authenticating using an existing GitHub user account. Allow limiting access to members of a [GitHub organization](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-organizations).
 * __GitLab.com__ and __GitLab CE/EE__: Allow authenticating using an existing GitLab.com account. Allow limiting access to members of a [GitLab group](https://docs.gitlab.com/ee/user/group/).
 * __Bitbucket Cloud__: Allows authenticating using an existing Bitbucket Cloud account.
+* (In terms of TeamCity 2021.2 EAP) __JetBrains Space__: Allows authenticating using an existing [JetBrains Space](https://www.jetbrains.com/space/) account.
 
 Refer to [Configuring Authentication Settings](configuring-authentication-settings.md) for specific _authentication modules'_ configuration. See also [Accessing Server by HTTP](accessing-server-by-http.md) page for details about accessing a server from your scripts using _Token-Based Authentication_ or _basic HTTP authentication_.
 
