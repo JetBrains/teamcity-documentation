@@ -1,6 +1,13 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2021.1 to 2021.2
+
+>TeamCity 2021.2 is currently at the Early Access Program stage.
+
+EAP1 build:
+* If you use [VCS labeling](vcs-labeling.md) for a [Perforce](perforce.md) root, note that TeamCity now creates [automatic labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) by default. If, for some reason, you want to continue using static labels, you can revert to the old behavior by adding the `teamcity.perforce.useStaticLabels=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+
 ## Changes from 2021.1 to 2021.1.1
 
 ### Known Issues
