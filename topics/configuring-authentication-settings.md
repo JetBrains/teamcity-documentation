@@ -510,8 +510,8 @@ In JetBrains Space:
 In TeamCity:
 * In the Root project’s settings:
   1. In __Connections__, add a connection with the _JetBrains Space_ type.
-  2. Enter the connection name and Space settings:
-     * URL of the Space server.
+  2. Enter the connection name and settings from JetBrains Space:
+     * URL of the JetBrains Space server.
      * Client ID of your Space application.
      * Client secret of your Space application.
   3. Save the connection.
