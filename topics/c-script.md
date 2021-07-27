@@ -132,8 +132,6 @@ Enter parameters of the script. Parameters are passed as the `Args` array. View 
 > 
 {type="note"}
 
-
-
 </td>
 
 </tr>
@@ -148,7 +146,11 @@ NuGet package sources
 
 <td>
 
-By default, TeamCity restores NuGet packages from their sources published on [NuGet.org](http://nuget.org). In this field, you can specify paths to other NuGet repositories, and TeamCity will search for packages there, by the order of declaration. If a package source cannot be found in any of the specified repositories, TeamCity will search for it on NuGet.org. 
+If you [refer to a package](#Commands+and+Arguments+Supported+in+Scripts) from a script, TeamCity will automatically download it from the feed specified in this field.
+
+By default, TeamCity restores NuGet packages from their sources published on [NuGet.org](http://nuget.org). In this field, you can specify paths to other NuGet repositories, and TeamCity will search for packages there, by the order of declaration. If a package source cannot be found in any of the specified repositories, TeamCity will search for it on NuGet.org.
+
+To be able to access private repositories, configure [NuGet feed credentials](nuget-feed-credentials.md).
 
 </td>
 

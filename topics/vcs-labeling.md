@@ -1,31 +1,25 @@
 [//]: # (title: VCS Labeling)
 [//]: # (auxiliary-id: VCS Labeling)
 
-TeamCity can label (tag) sources of a particular build (automatically or manually) in your Version Control System. The list of applied labels and their application status is displayed on the __[Changes](working-with-build-results.md#Changes)__ tab of the __Build Results__ page.
+TeamCity can label (tag) sources of a particular build (automatically or manually) in your Version Control System. The list of applied labels and their application status is displayed on the __[Changes](working-with-build-results.md#Changes)__ tab of __Build Results__.
 
 ## Automatic VCS labeling
 
-You can set TeamCity to label the sources of a build depending on the build status automatically. The process takes place in the background after the build finishes and does not affect the build status, which means that a labeling failure is not a standard [notification event](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications). However, the users subscribed to [notifications about failed builds](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications) of the current build configuration will be notified about a labeling failure.
+You can set TeamCity to automatically label the sources of a build depending on the build status. Labeling is not a standard [notification event](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications) — it takes place in the background after the build finishes and does not affect the build status. However, the users subscribed to [notifications about failed builds](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications) of the current build configuration will be notified about a labeling failure.
 
-Any errors encountered during labeling are reported on the __[Changes](working-with-build-results.md#Changes)__ tab of the __Build Results__ page.
-
-Labeling is configured per a build configuration/template.
-
-Automatic VCS labeling is configured as a [build feature](adding-build-features.md). When adding the feature, you will need to specify the root to label and the labeling pattern.   
-If there are [branches configured](working-with-feature-branches.md) for a build configuration, you can label only builds from specific [branches you select](branch-filter.md).
+Labeling is configured per a build configuration/template, as a [build feature](adding-build-features.md). When adding this feature, you need to specify the root to label and a labeling pattern. If there are [branches configured](working-with-feature-branches.md) for the current build configuration, you can label only builds from specific [branches you select](branch-filter.md).
 
 It is possible to override the labeling settings inherited from a template completely and apply different labels to different VCS roots.
 
-<note>
+>Labeling uses credentials specified for the VCS root. The write access to the source repository is required.
+> 
+{type="note"}
 
-Labeling uses the credentials specified for the VCS root. The write access to the source repository is required.
-</note>
-
-Note that if you change the VCS settings of a build configuration, they will be used for labeling only in the new builds.
+Note that if you change VCS settings of a labeled build configuration, they will be used for labeling only in the following new builds.
 
 "Moving" labels (a label with the same name for different builds, for example, `SNAPSHOT`) are currently supported only for CVS.
 
-For an example of using the Teamcity VCS labeling feature to automate tag creation, refer to this [external posting](http://laurentkempe.com/2010/06/03/Build-and-Deployment-automation-VCS-Root-and-Labeling-in-TeamCity/).
+For an example of using the Teamcity VCS labeling feature to automate tag creation, refer to this [external post](http://laurentkempe.com/2010/06/03/Build-and-Deployment-automation-VCS-Root-and-Labeling-in-TeamCity/).
 
 ## Manual VCS labeling
 
