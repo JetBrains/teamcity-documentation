@@ -71,6 +71,18 @@ In this case, the labeling rules should be:
 
 ```
 
+## Labeling in Perforce
+
+>This functionality is available in terms of TeamCity 2021.2 Early Access Program.
+>
+{type="note"}
+
+Since 2021.2, TeamCity creates [automatic labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) instead of static ones. Automatic labels work as aliases for changelists. In a label's `Revision` field, TeamCity displays the revision checked out in the current build. For the `View` field, it uses the mapping associated with all paths of the current VCS root.
+
+For Perforce labels, TeamCity supports only include rules and ignores exclude rules.
+
+If you prefer using static labels, you can enable the previous behavior by setting the `teamcity.perforce.useStaticLabels=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+
 ## Labeling Rule Examples
 
 You can use variables substitution in both labeling rules and labeling patterns. See a labeling rule example in a VCS root used in different configurations:
