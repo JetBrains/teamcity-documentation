@@ -478,9 +478,9 @@ sudo chkconfig buildAgent on
 
 For macOS, TeamCity provides the ability to load a build agent automatically when a build user logs in.
 
-The `LaunchAgent` approach:
+The recommended approach is to use [`launchd`](https://support.apple.com/guide/terminal/script-management-with-launchd-apdc6c1077b-5d5d-4d35-9c19-60f2397b2369/mac) (LaunchAgent):
 
-To configure an automatic build agent startup via `LaunchAgent`, follow these steps:
+To configure an automatic build agent startup via `launchd`, follow these steps:
 
 1\. Install a build agent on a Mac via `buildAgent.zip`.
 
@@ -499,7 +499,7 @@ sh buildAgent/bin/mac.launchd.sh load
 
 Run these commands under the `your_build_user` account.
 
-__Wait several minutes__ for the build agent to auto-upgrade from the TeamCity server. You can watch the process in the logs:
+__Wait for some time__ for the build agent to auto-upgrade from the TeamCity server. This can take up to several minutes. You can watch the process in the logs:
 
 
 ```Shell
@@ -515,13 +515,13 @@ sh buildAgent/bin/mac.launchd.sh unload
 
 ```
 
-6\. After the build agent upgrades from the TeamCity server, copy the `buildAgent/bin/jetbrains.teamcity.BuildAgent.plist` file to the `$HOME/Library/LaunchAgents/` directory. If you don't want TeamCity to start under the root permissions, specify the __UserName__ key in the `.plist` file, for example:
+6\. After the build agent upgrades from the TeamCity server, copy the `buildAgent/bin/jetbrains.teamcity.BuildAgent.plist` file to the `$HOME/Library/LaunchAgents/` directory (you might have to create it). If you don't want TeamCity to start under the root permissions, specify the __UserName__ key in the `.plist` file, for example:
 ```XML
 <key>UserName</key>
-<string>teamcity_user</string>
+<string>your_build_user</string>
 ```
 
-7\. Configure your Mac system to __automatically login__ as a build user, as described [here](https://support.apple.com/en-us/HT201476).
+7\. Configure your Mac system to __automatically login__ as `your_build_user`, as described [here](https://support.apple.com/en-us/HT201476).
 
 8\. Reboot.
 
