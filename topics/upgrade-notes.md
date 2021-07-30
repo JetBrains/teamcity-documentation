@@ -1,6 +1,10 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2021.1.1 to 2021.1.2
+
+* Now, if you run a build as personal, all its 
+
 ## Changes from 2021.1 to 2021.1.1
 
 ### Known Issues
