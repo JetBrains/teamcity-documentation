@@ -407,6 +407,7 @@
          <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="requirement-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="search.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="wildcards.md"/>
       </toc-element>

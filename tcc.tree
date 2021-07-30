@@ -30,7 +30,6 @@
             <toc-element id="build-number.md"/>
             <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-runner.md"/>
-            <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-tag.md"/>
             <toc-element id="build-working-directory.md"/>
             <toc-element id="change.md"/>
@@ -49,7 +48,6 @@
             <toc-element id="first-failure.md"/>
             <toc-element id="guest-user.md"/>
             <toc-element id="history-build.md"/>
-            <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="notifier.md"/>
             <toc-element id="personal-build.md"/>
             <toc-element id="pinned-build.md"/>
@@ -65,7 +63,6 @@
             <toc-element id="user-account.md"/>
             <toc-element id="user-group.md"/>
             <toc-element id="vcs-root.md"/>
-            <toc-element id="wildcards.md"/>
         </toc-element>
         <toc-element id="supported-platforms-and-environments.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="testing-frameworks.md"/>
@@ -306,7 +303,6 @@
             <toc-element id="mono-support.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="maven-server-side-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="tracking-user-actions.md"/>
-            <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="jenkins-to-teamcity-migration-guidelines.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
         <toc-element id="installing-tools.md">
@@ -346,6 +342,13 @@
             <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
         <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element toc-title="Reference">
+            <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="requirement-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="wildcards.md"/>
+        </toc-element>
     </toc-element>
     <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2021-1.html">
         <toc-element id="teamcity-2021-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
