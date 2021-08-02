@@ -3,7 +3,8 @@
 
 ## Changes from 2021.1.1 to 2021.1.2
 
-* Now, if you run a build as personal, all its 
+* If you run a [personal build](personal-build.md) that is a part of a [build chain](build-chain.md), all its dependency builds will be run as personal builds as well.  
+  However, if you enable the [reuse of suitable builds](snapshot-dependencies.md#Suitable+Builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
 
 ## Changes from 2021.1 to 2021.1.1
 
