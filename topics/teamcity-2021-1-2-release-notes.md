@@ -84,13 +84,16 @@ __02 August 2021__
 [**TW-52948**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-52948) — Personal patch is still applied/undone when VCS root is set to &quot;do not checkout&quot; mode  
 [**TW-72030**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72030) — Custom build dialog silently closes on attempt to run a personal build with a dependency where personal builds are disabled  
 [**TW-71858**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71858) — Move the line status column of the files to the left  
-[**TW-69762**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69762) — /usr/bin/python3.x is not detected if there is no /usr/bin/python3
+[**TW-69762**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69762) — /usr/bin/python3.x is not detected if there is no /usr/bin/python3  
+[**TW-72519**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72519) — Do not recalculate status text of finished composite builds in case of out of order builds finishing
+[**TW-71933**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71933) — Git submodule update fails on agent in 2021.1.1
 
 ### Performance Problem
 
 [**TW-72419**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72419) — High contention on attempt to load the same build into the cache from the several threads  
 [**TW-71948**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71948) — Excessive memory usage in StringPoolInstance in some cases (eg concurrent execution of long tests)  
-[**TW-71979**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71979) — Slow processing of VCS triggers with triggering rules even if triggering rule matches all of the files of a commit
+[**TW-71979**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71979) — Slow processing of VCS triggers with triggering rules even if triggering rule matches all of the files of a commit  
+[**TW-72484**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72484) — NoClassDefFound exception related to email notification
 
 ### Task
 
