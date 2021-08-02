@@ -1,8 +1,8 @@
 [//]: # (title: TeamCity 2021.1.2 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2021.1.2 Release Notes)
 
-__Build:  __  
-__29 July 2021__
+__Build: 92869__  
+__02 August 2021__
 
 ### Feature
 
