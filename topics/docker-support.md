@@ -19,8 +19,21 @@ These two options require configuring a [connection to a Docker registry](config
 
 ## Docker Images Clean-up
 
+### Clean-up of the Pushed Images
+
 If you have a build configuration which publishes images, you need to remove them at some point. You can select the corresponding option and instruct TeamCity to remove the images published by a certain build when the build itself is [cleaned up](clean-up.md).  
 It works as follows: when an image is published, TeamCity stores the information about the registry of the images published by the build. When the [server clean-up](clean-up.md) is run and it deletes the build, all the configured connections are searched for the address of this registry, and the images published by the build are cleaned up using the credentials specified in the found connection.
+
+### Clean-up of Images on Build Agent
+                                   
+As a part of [Free Disk Space](free-disk-space.md) build feature, Docker plugin cleans up images which were created by TeamCity builds on this build agent. The docker plugin assumes, that docker images are stored under
+
+ - `/var/lib/docker` on Linux
+ - `%ProgramData%` directory on Windows
+ - `$HOME` directory on other systems
+
+The location is important, as the [Free Disk Space](free-disk-space.md) feature analyzes which disk volumes should be cleaned for the build. If your docker daemon uses a non-standard location for the images/containers, the location can be specified using `teamcity.docker.data.path` configuration parameter, preferably in [`buildAgent.properties`](build-agent-configuration.md) file.
+<!-- We're going to avoid the need to configure manually this with https://youtrack.jetbrains.com/issue/TW-72569 -->
 
 ## Docker Registry Automatic Login/Logout
 
