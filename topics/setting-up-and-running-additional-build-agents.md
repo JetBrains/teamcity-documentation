@@ -569,11 +569,11 @@ The (Windows) `.exe` TeamCity distribution comes bundled with 64-bit Amazon Corr
 If you run a previous version of the TeamCity agent, you will need to repeat the agent installation to update the JVM.
 
 Using 64-bit JDK (not JRE) is recommended. JDK is required for some build runners like [IntelliJ IDEA Project](intellij-idea-project.md), Java [Inspections](inspections.md), and [Duplicates](duplicates-finder-java.md). If you do not have Java builds, you can install JRE instead of JDK.   
-Using of x64 bit Java is possible, but you might need to double the `-Xmx` memory value for the main agent process (see [Configuring Build Agent Startup Properties](configuring-build-agent-startup-properties.md) and alike [section](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) for the server).
+On switching from 32- to 64-bit, you might need to double the `-Xmx` memory value for the main agent process (see related notes for [build agents](configuring-build-agent-startup-properties.md) and [server](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server)).
 {product="tc"}
 
 Using 64-bit JDK (not JRE) is recommended. JDK is required for some build runners like [IntelliJ IDEA Project](intellij-idea-project.md), Java [Inspections](inspections.md), and [Duplicates](duplicates-finder-java.md). If you do not have Java builds, you can install JRE instead of JDK.   
-Using of x64 bit Java is possible, but you might need to double the `-Xmx` memory value for the main agent process (see [Configuring Build Agent Startup Properties](configuring-build-agent-startup-properties.md)).
+On switching from 32- to 64-bit, you might need to double the `-Xmx` memory value for the main agent process (see [related notes](configuring-build-agent-startup-properties.md)).
 {product="tcc"}
 
 <anchor name="java-paths"/>
@@ -599,7 +599,7 @@ An agent machine can have multiple Java versions installed, and the agent can us
 Please let us know using any of our [support channels](feedback.md) if your setup depends on the older version of Java and if you will not be able to upgrade to version 8 for some reason.
 </note>
 
-It is recommended to use latest Java 8, 64-bit version.
+It is recommended to use latest Java 8, 64-bit version.  
 OpenJDK 8 (for example, bundled [Amazon Corretto](https://aws.amazon.com/corretto/)) 1.8.0_161 or later. [Oracle Java 8](http://www.oracle.com/technetwork/java/javase/downloads/) is also supported.
 
 To update Java on agents, do one of the following:
