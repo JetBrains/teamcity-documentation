@@ -5,23 +5,37 @@
 
 |Software|Version|
 |---|---|
-|Unity|2020.2.3|
-|JDK|11.0.10_9, 8.272.10.3, 15.0.2.7.1|
-|.NET||
-|Git|2.30.1|
-|kubectl|1.20.4|
-|AWS CLI|2.1.26|
-|WiX Toolset|3.11.2|
-|NUnit|3.12.0|
-|Z-Zip|19.0|
-|Yarn|1.22.5|
-|Docker|19.03.14|
-|Docker Compose|1.28.2|
-|Gradle|6.8.2|
-|CMake|3.19.4|
-|Ruby|3.0.0.1, 2.7.2.1, 2.6.5.1, 2.5.3.101|
-|Ruby2 DevKit|4.7.2.2013022403|
-|RTools||
-|Node.js|v14.16.1|
+|git|2.31.1|
+|git-lfs|git-lfs/2.13.3|
+|docker|20.10.6|
+|docker.cli|20.10.6|
+|docker-compose|1.28.0|
+|awscli|aws-cli/1.18.69|
+|kubectl|GitVersion:"v1.21.0",|
+|android-sdk|6858069|
+|p4||
+|mercurial|5.3.1|
+|svn||
+|helm|v3.5.0+g32c2223|
+|yarn||
+|ant|1.10.7|
+|gradle|6.8.1|
+|cmake|3.19.5|
+|powershell|7.1.1|
+|r|3.6.3|
+|groovy|3.0.7|
+|rvm|1.29.12-next|
+|rustup|1.23.1|
+|cargo|1.51.0|
+|rustc|1.51.0|
+|go|1.16|
+|nvm|0.33.11|
+|node|14.5|
+|python|3.8.5|
+|python2|2.7.18|
+|python3|3.9.4|
+|pip3|21.0.1|
+|pip|21.0.1|
+|ansible|2.9.6|
 
-</chunk>
+</chunk> 
