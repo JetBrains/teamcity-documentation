@@ -5,23 +5,22 @@
 
 |Software|Version|
 |---|---|
-|Unity|2020.2.3|
-|JDK|11.0.10_9, 8.272.10.3, 15.0.2.7.1|
-|.NET||
-|Git|2.30.1|
-|kubectl|1.20.4|
-|AWS CLI|2.1.26|
-|WiX Toolset|3.11.2|
-|NUnit|3.12.0|
-|Z-Zip|19.0|
-|Yarn|1.22.5|
-|Docker|19.03.14|
-|Docker Compose|1.28.2|
-|Gradle|6.8.2|
-|CMake|3.19.4|
-|Ruby|3.0.0.1, 2.7.2.1, 2.6.5.1, 2.5.3.101|
-|Ruby2 DevKit|4.7.2.2013022403|
-|RTools||
-|Node.js|v14.16.1|
+|[Unity](https://unity.com/)|2020.3.1|
+|[JDK](https://aws.amazon.com/corretto/)|11.0.11_9|
+|[.NET](https://dotnet.microsoft.com/)||
+|[Git](https://git-scm.com/)|2.31.1|
+|[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|1.21.1|
+|[AWS CLI](https://aws.amazon.com/cli/)|2.2.5|
+|[WiX Toolset](https://wixtoolset.org/)|3.11.2|
+|[NUnit](https://nunit.org/)|3.12.0|
+|[7-Zip](https://www.7-zip.org/)|19.0|
+|[Yarn](https://yarnpkg.com/)|1.22.5|
+|[Docker](https://www.docker.com/)|20.10.4|
+|[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
+|[Gradle](https://gradle.org/)|6.9|
+|[CMake](https://cmake.org/)|3.20.2|
+|[Ruby](https://www.ruby-lang.org/en/)|3.0.0.1|
+|[RTools](https://cran.r-project.org/bin/windows/Rtools/)||
+|[Node.js](https://nodejs.org/en/)|v14.17.0|
 
-</chunk>
+</chunk> 
