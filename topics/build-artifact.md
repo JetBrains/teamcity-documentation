@@ -26,24 +26,34 @@ Build artifacts can also be uploaded to the server while the build is still runn
 
 ## Hidden Artifacts
 
-In addition to user-defined artifacts, TeamCity also generates and publishes some artifacts for internal purposes. These are called hidden artifacts.   
+In addition to user-defined artifacts, TeamCity also generates and publishes some _hidden artifacts_ for internal purposes.  
 For example, for Maven builds, TeamCity creates the `maven-build-info.xml` file that contains Maven-specific data collected during the build. The content of the file is then used to visualize the Maven data on the Maven Build Info tab in the build results.
-* Hidden artifacts are placed under the `.teamcity` directory in the root of the build artifacts.
-* Hidden artifacts are not listed on the __Artifacts__ tab of the build results by default. However, below the list of the artifacts there's a link that allows you to view hidden artifacts if any. When hidden artifacts are displayed, clicking the _Download all_ link will result in downloading all artifacts including hidden ones.
-* Artifacts dependencies do not download hidden artifacts unless they explicitly have `.teamcity` in the pattern.
-* Hidden artifacts are not deleted by the artifacts clean-up unless `.teamcity` is explicitly specified in the pattern.
 
-You can configure publishing some builds artifacts under the `.teamcity` directory to make them hidden.
+TeamCity stores hidden artifacts in the `.teamcity` directory in the artifacts' root.
 
-Some of the hidden artifacts are:
-* `maven-build-info.xml.gz` — Maven build data. Used to display data on the __Maven Build Info__ build's tab.
-* `properties` directory — holds properties calculated for the build on the agent. There are properties actual before the build and after the build. These are displayed on the build __Properties__ tab.
+[Artifact dependencies](artifact-dependencies.md) do not consider hidden artifacts, unless they explicitly specify `.teamcity` in their pattern.
+
+Hidden artifacts are not deleted by the artifacts clean-up unless `.teamcity` is explicitly specified in the clean-up scope.
+
+Examples of hidden artifacts:
+* `maven-build-info.xml.gz` — Maven build data. Used to display data on the __Maven Build Info__ tab.
+* the `properties` directory — holds properties calculated for the build on the agent. There are properties actual before the build and after the build. These are displayed on the __Properties__ tab of build results.
 * `.NETCoverage` — raw .NET coverage data (for example, used to open dotCover data in VS add-in).
 * `coverage_idea` — raw IntelliJ IDEA coverage data (for example, used to open coverage in IDEA).
 
+### Retrieve Hidden Artifacts
+
+Hidden artifacts are not displayed on the __Artifacts__ tab by default, but, if there are any of them in the current build, you can show them by clicking __Show hidden artifacts__.
+
+You can browse and download them individually or download the whole `.teamcity` directory by clicking __Download all (.zip)__.
+
+### Hide Artifacts
+
+To hide an artifact, you need to publish it under the `.teamcity` directory.
+
 [//]: # (Internal note. Do not delete. "Build Artifactd28e144.txt")
 
-### Artifacts Cache on Agent
+## Artifacts Cache on Agent
 
 All artifacts published by a build are stored in the agent's artifacts cache in the `<Build Agent home>\system\.artifacts_cache` directory, which helps speed up artifact dependencies in some cases.   
 However, depending on the size of artifacts, [clean-up](clean-up.md), and other settings, artifacts caching may cause low disk space on the agent. You can [configure](free-disk-space.md#Configuring+artifacts+cache) storing published artifacts in the agent cache.
