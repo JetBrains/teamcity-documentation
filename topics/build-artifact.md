@@ -43,9 +43,9 @@ Examples of hidden artifacts:
 
 ### Retrieve Hidden Artifacts
 
-Hidden artifacts are not displayed on the __Artifacts__ tab by default, but, if there are any of them in the current build, you can show them by clicking __Show hidden artifacts__.
+Hidden artifacts are not displayed on the __Artifacts__ tab by default. If there are any of them in the current build, you can reveal them by clicking __Show hidden artifacts__.
 
-You can browse and download them individually or download the whole `.teamcity` directory by clicking __Download all (.zip)__.
+To browse or download artifacts individually, use the artifacts' tree. To download the whole `.teamcity` directory, click __Download all (.zip)__ in the right part of the screen.
 
 ### Hide Artifacts
 
@@ -55,7 +55,7 @@ To hide an artifact, you need to publish it under the `.teamcity` directory.
 
 ## Artifacts Cache on Agent
 
-All artifacts published by a build are stored in the agent's artifacts cache in the `<Build Agent home>\system\.artifacts_cache` directory, which helps speed up artifact dependencies in some cases.   
+All artifacts published by a build are stored in the agent's artifacts cache in `<Build Agent home>\system\.artifacts_cache`, which helps speed up artifact dependencies in some cases.   
 However, depending on the size of artifacts, [clean-up](clean-up.md), and other settings, artifacts caching may cause low disk space on the agent. You can [configure](free-disk-space.md#Configuring+artifacts+cache) storing published artifacts in the agent cache.
 
 <seealso>
