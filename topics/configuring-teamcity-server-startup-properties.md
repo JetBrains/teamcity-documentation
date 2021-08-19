@@ -22,6 +22,8 @@ The properties are stored in the `<[TeamCity Data Directory](teamcity-data-direc
 
 An alternative but obsolete method of adding an internal property is to pass it as a `-D<name>=<value>` JVM option (see the [section below](#JVM+Options)).
 
+>If you are installing TeamCity from a Docker image, see [this reference](https://hub.docker.com/r/jetbrains/teamcity-server/) for more information on properties.
+
 ### JVM Options
 
 If you need to pass additional JVM options to a TeamCity server (for example, `-D` options mentioned in [Reporting Issues](reporting-issues.md) or any other options like `-X...`), the approach will depend on the way the server is run.
