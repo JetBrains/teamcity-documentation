@@ -76,9 +76,3 @@ On Windows, Chrome normally uses IE's behavior, see more information [here](http
 2. Add your TeamCity server URL to the [network.automatic-ntlm-auth.trusted-uris](http://kb.mozillazine.org/Network.automatic-ntlm-auth.trusted-uris) property.
 
 [//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e165.txt")
-## Troubleshooting
-
-Helpful links:
-* [http://waffle.codeplex.com/wikipage?title=Frequently%20Asked%20Questions](http://waffle.codeplex.com/wikipage?title=Frequently%20Asked%20Questions)
-* [http://waffle.codeplex.com/discussions/254748](http://waffle.codeplex.com/discussions/254748)
-* [http://waffle.codeplex.com/wikipage?title=Troubleshooting%20Negotiate&amp;referringTitle=Documentation](http://waffle.codeplex.com/wikipage?title=Troubleshooting%20Negotiate&amp;referringTitle=Documentation)
