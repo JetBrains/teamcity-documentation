@@ -53,7 +53,7 @@ For all builds in a chain, which are linked by snapshot dependencies with this o
 If you __disable__ this option for a snapshot dependency, then, when the [dependency build](#dependency-build) is promoted to the current build configuration, the build of the current build configuration will use the most recent revision of the sources instead of the revision corresponding to the promoted dependency. This is useful when the builds do not have strict sources' dependencies (for example, as with package and deploy steps).
 
 _In our example, if the snapshot dependency of build B has this option disabled, the behavior is following: Build A launches on revision 1.2 and, after finishing, is promoted to build B. TeamCity will find the latest revision for build B (let's say 1.3) at the moment of starting B._   
-_Otherwise, if this option is disabled, TeamCity will start build B on the same 1.2 revision as A_. 
+_Otherwise, if this option is enabled, TeamCity will start build B on the same 1.2 revision as A_. 
 
 Note that the sources' snapshot rule is only applied to the [parts of the builds chain](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts)) linked via the snapshot dependencies with the option enabled.
 
