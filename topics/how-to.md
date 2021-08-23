@@ -620,7 +620,7 @@ When the public server address is __HTTPS__, use the `secure="true"` and `scheme
 ### "RemoteIpValve" Approach
 [//]: # (AltHead: Proxy-Tomcat-RemoteIpValve)
 
-This approach can be used when the proxy server sets `X-Forwarded-Proto`, `X-Forwarded-Port` request headers to the values of the original URL. Also, while not critical for the most setups, this approach can be used to make sure the original client IP is passed to the TeamCity server correctly. This is important for legacy agents' [bidirectional communication](setting-up-and-running-additional-build-agents.md#Bidirectional+Communication).
+This approach can be used when the proxy server sets `X-Forwarded-Proto`, `X-Forwarded-Port` request headers to the values of the original URL.
 
 Add the following into the Tomcat main `<Host>` node of the `conf\server.xml` file (see also Tomcat [doc](http://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/valves/RemoteIpValve.html)):
 

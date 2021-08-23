@@ -49,9 +49,9 @@ The requirements for a virtual machine/image to be used for TeamCity cloud integ
 * to skip the update attempts on each agent connection to the server, make sure that the agent is up to date: start and wait for the update to complete. The agent state changes each time a plugin or tool is installed/updated/removed on the server.
 * the [`buildAgent.properties`](project-and-agent-level-build-parameters.md) file can be left "as is". The `serverUrl`, `name`, and `authorizationToken` properties can be left empty or set to any value, they are ignored when TeamCity starts the instance __unless otherwise specifically stated__ in [the platform-specific documentation](https://confluence.jetbrains.com/display/TW/Microsoft+Azure+cloud).
 
-Provided these requirements are met, the usual TeamCity agent installation and cloud\-provider image bundling procedures are applicable.
+Provided these requirements are met, the usual TeamCity agent installation and cloud-provider image bundling procedures are applicable.
 
-If you need the [connection](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers) between the server and the agent machine to be secure, you will need to set up the agent machine to establish a secure tunnel (for example, VPN) to the server on boot so that the TeamCity agent receives data via the secure channel. Keep in mind that communication between TeamCity agent and server is bidirectional and requires an open port on the agent as well as on the server.
+If you need the [connection](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers) between the server and the agent machine to be secure, you will need to set up the agent machine to establish a secure tunnel (for example, VPN) to the server on boot so that the TeamCity agent receives data via the secure channel. Keep in mind that communication between TeamCity agent and server requires opening ports on both the agent and the server.
 
 ### Preparing a virtual machine
 1. Create and start a virtual machine with desired OS installed.

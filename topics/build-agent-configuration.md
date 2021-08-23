@@ -66,9 +66,6 @@ The file can be edited while the agent is running: the agent detects the change 
 
 ## Optional Properties
 
-If the default polling protocol is changed in favor of legacy [bidirectional communication](setting-up-and-running-additional-build-agents.md#Bidirectional+Communication) between the server and the agent, the server must be able to open HTTP connections to the agent.
-{product="tc"}
-
 The port where the TeamCity build agent starts and where it listens for the incoming data from the server is determined via the `ownPort` property (9090 by default). If the firewall is configured, make sure that the incoming connections for this port are allowed on the agent computer.
 
 ```Shell
