@@ -16,6 +16,7 @@ For each build configuration the following triggers can be configured:
 * [Retry build trigger](configuring-retry-build-trigger.md): the build is triggered if the last build failed or failed to start.
 * [Branch remote run trigger](branch-remote-run-trigger.md): personal build is triggered automatically each time TeamCity detects new changes in particular branches of the VCS roots of the build configuration. Supports Git and Mercurial.
 * [NuGet dependency trigger](nuget-dependency-trigger.md): starts a build if there is a NuGet package update detected in the NuGet repository.
+* In terms of 2021.2 EAP, [Perforce shelve trigger](perforce-shelve-trigger.md): starts a build on a change in shelved files.
 
 >Note that if you create a build configuration from a template, it inherits build triggers defined in the template, and they cannot be edited or deleted. However, you can specify additional triggers or disable a trigger permanently or temporarily.
 

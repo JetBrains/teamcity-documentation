@@ -326,6 +326,7 @@
                   <toc-element id="nuget-dependency-trigger.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="configuring-finish-build-trigger.md"/>
                   <toc-element id="configuring-retry-build-trigger.md"/>
+                  <toc-element id="perforce-shelve-trigger.md" show-structure-for="chapter" show-structure-depth="4"/>
                </toc-element>
                <toc-element id="configuring-dependencies.md">
                   <toc-element id="artifact-dependencies.md" show-structure-for="chapter" show-structure-depth="4"/>
