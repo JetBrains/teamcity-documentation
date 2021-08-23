@@ -86,7 +86,7 @@ The build process is launched by a TeamCity agent and thus shares the environmen
 
 [//]: # (AltHead: Server-Agent Data Transfers)
 
-A TeamCity agent connects to the TeamCity server via the URL configured as the `serverUrl` agent property. This is called [unidirectional](#Unidirectional+Agent-to-Server+Communication) agent-to-server connection.
+A TeamCity agent connects to the TeamCity server via the URL configured as the `serverUrl` agent property. This is called unidirectional agent-to-server connection.
 
 Agents use unidirectional agent-to-server connection via the polling protocol: the agent establishes an HTTP(S) connection to the TeamCity Server, and polls the server periodically for server commands.
 

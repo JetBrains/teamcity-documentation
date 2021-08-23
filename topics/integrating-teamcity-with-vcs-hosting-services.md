@@ -104,7 +104,7 @@ When creating a VCS root URL for GitLab, note that TeamCity will not extract cre
 ### Connecting to Azure DevOps Services
 
 There are two types of Azure DevOps connections in TeamCity:
-* In terms of TeamCity 2021.2 EAP: [Azure DevOps OAuth 2.0](#Connecting+to+Azure+DevOps) is the recommended type. It allows creating projects from Azure Git repositories and signing in to TeamCity via an Azure AD account.
+* In terms of TeamCity 2021.2 EAP: [Azure DevOps OAuth 2.0](#Connecting+to+Azure+DevOps+Services) is the recommended type. It allows creating projects from Azure Git repositories and signing in to TeamCity via an Azure AD account.
 * [Azure DevOps PAT](#Azure+DevOps+PAT+Connection) is the obsolete type of connection, previously used for connecting to Team Foundation Server. It is left for compatibility, as it allows connecting to both Git and TFVC repositories.
 
 #### Azure DevOps OAuth 2.0 Connection
