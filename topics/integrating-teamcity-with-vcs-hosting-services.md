@@ -1,7 +1,7 @@
 [//]: # (title: Integrating TeamCity with VCS Hosting Services)
 [//]: # (auxiliary-id: Integrating TeamCity with VCS Hosting Services)
 
-You can create a preset of a connection to any of following hosting services:
+You can create a preset of a connection to any of the following hosting services:
 * [GitHub.com](https://github.com/)
 * [GitHub Enterprise](https://enterprise.github.com/)
 * [Bitbucket Cloud](https://bitbucket.org/)
@@ -9,7 +9,7 @@ You can create a preset of a connection to any of following hosting services:
 * [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/)
 * [Azure DevOps Services](https://azure.microsoft.com/ru-ru/services/devops/)
 
-Once created, such a connection can serve as a base for different kind of operations: creating projects from URL, creating VCS roots, integrating with issue trackers, and authenticating users in TeamCity using their external profiles.
+Once created, such a connection can serve as a base for different operations: creating projects from URL, creating VCS roots, integrating with issue trackers, and authenticating users in TeamCity using their external profiles.
 
 >In TeamCity Cloud, connections to GitHub.com, GitLab.com, and Bitbucket Cloud are already predefined in the Root project's settings, which makes them available in all the other projects.
 >
@@ -108,7 +108,7 @@ There are two types of Azure DevOps connections in TeamCity:
 * [Azure DevOps PAT](#Azure+DevOps+PAT+Connection) is the obsolete type of connection, previously used for connecting to Team Foundation Server. It is left for compatibility, as it allows connecting to both Git and TFVC repositories.
 
 #### Azure DevOps OAuth 2.0 Connection
-{id="Connecting to Azure DevOps" auxiliary-id="Connecting to Azure DevOps"}
+{id="Connecting+to+Azure+DevOps" auxiliary-id="Connecting+to+Azure+DevOps"}
 
 This type of connection supports only Azure DevOps Services. It uses the [OAuth 2.0 protocol](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops) based on JWT tokens and requires creating a dedicated app in your Azure profile.
 
