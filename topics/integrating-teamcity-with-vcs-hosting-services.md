@@ -108,7 +108,7 @@ There are two types of Azure DevOps connections in TeamCity:
 * [Azure DevOps PAT](#Azure+DevOps+PAT+Connection) is the obsolete type of connection, previously used for connecting to Team Foundation Server. It is left for compatibility, as it allows connecting to both Git and TFVC repositories.
 
 #### Azure DevOps OAuth 2.0 Connection
-{id="Connecting+to+Azure+DevOps" auxiliary-id="Connecting+to+Azure+DevOps"}
+{id="Connecting to Azure DevOps" auxiliary-id="Connecting to Azure DevOps"}
 
 This type of connection supports only Azure DevOps Services. It uses the [OAuth 2.0 protocol](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops) based on JWT tokens and requires creating a dedicated app in your Azure profile.
 
