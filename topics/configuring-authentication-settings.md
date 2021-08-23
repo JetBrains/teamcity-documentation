@@ -26,6 +26,7 @@ TeamCity provides several preconfigured authentication options (presets) to cove
   * [GitLab.com](#GitLab.com)
   * [GitLab CE/EE](#GitLab+CE%2FEE)
   * (In terms of TeamCity 2021.2 EAP) [JetBrains Space](#connect-to-jetbrains-space)
+  * (In terms of TeamCity 2021.2 EAP) [Azure DevOps Services](#Azure+DevOps+Services)
 
 >If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure single sign-on (SSO) from the TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).
 >
@@ -474,7 +475,7 @@ This list limits a set of users who can register or authenticate in TeamCity wit
 
 Leave empty to allow all GitLab users to access the TeamCity server.
 
->Once registered on the TeamCity server, a user can create a password or token which will allow them to sign in to this server directly, bypassing the GitLab verification. If you delete a user from an organization in GitLab, remember to restrict their access or delete their user profile in TeamCity.
+>Once registered on the TeamCity server, a user can create a password or token which will allow them to sign in to this server directly, bypassing the GitLab verification. If you delete a user from a group in GitLab, remember to restrict their access or delete their user profile in TeamCity.
 
 </td>
 
@@ -520,6 +521,22 @@ In TeamCity:
    3. Save the module.
 
 To sign in, click the JetBrains Space icon above the TeamCity login form and, after the redirect, approve the TeamCity application.
+
+### Azure DevOps Services
+
+>This functionality is provided in terms of TeamCity 2021.2 Early Access Program.
+>
+{type="note"}
+
+Before enabling this module, you need to create a [dedicated connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps) to your Azure DevOps Services in the Root project's settings.
+
+To enable the module, in __Administation | Authentication__:
+1. Click __Add module__ and choose the _Azure DevOps OAuth 2.0_ type.
+2. Choose if you want to allow creating new users on the first login. If you disable this option, TeamCity will not create a new TeamCity user when their Azure AD account is not recognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
+3. Choose if you want to restrict the access only to members of specific [Azure DevOps organizations](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/organization-management?view=azure-devops). Specify their IDs separated by comma. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+4. Save the module.
+
+To sign in, click the Azure DevOps icon above the TeamCity login form and, after the redirect, approve the TeamCity application.
 
  <seealso>
         <category ref="concepts">

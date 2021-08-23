@@ -15,7 +15,8 @@ You can create a new build configuration
 * [Manually](#Creating+New+Build+Configuration+Manually)
 * [Pointing to a repository URL](#Creating+New+Build+Configuration+from+URL) 
 * Pointing to a GitHub repository
-* Pointing to Bitbucket repository
+* Pointing to a Bitbucket repository
+* Pointing to an Azure DevOps Services repository
 * [Create a build configuration template](#Creating+Build+Configuration+Template), and then [create a build configuration based on the template](#Creating+Build+Configuration+From+Template).
 
 When build configurations are created, you can:

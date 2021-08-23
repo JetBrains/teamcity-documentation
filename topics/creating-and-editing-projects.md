@@ -12,7 +12,7 @@ There are several options to create a project:
 * [From GitHub.com](#Creating+project+pointing+to+GitHub.com+repository)
 * [From Bitbucket Cloud](#Creating+project+pointing+to+Bitbucket+Cloud)
 * [From GitLab](#Creating+project+pointing+to+GitLab.com)
-* [From Azure DevOps Services](#Creating+project+pointing+to+Azure+DevOps+Services), or formerly Visual Studio Team Services
+* [From Azure DevOps](#Creating+project+pointing+to+Azure+DevOps+Services)
 * [Manually](#Creating+project+manually)
  
 Note that only two options are available by default: _From a repository URL_ and _Manually_. If a [connection](integrating-teamcity-with-vcs-hosting-services.md) to some VCS hosting service is configured in the Root project (or a parent project of the project to be created), the corresponding option becomes available, so you can create a project using an existing VCS connection specification.
@@ -140,13 +140,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 
 ### Creating project pointing to Azure DevOps Services
 
-<note>
-
-In 2019, Visual Studio Team Services have been renamed to Azure DevOps Services. Depending on your version of TeamCity, the Services might be named differently (and interchangeably) in the TeamCity UI.
-
-</note>
-
-1. On the __Create project__ page, select to create project __from Azure DevOps Services__.
+1. On the __Create project__ page, select to create project __from Azure DevOps__. The recommended approach for Git repositories is to use the [connection based on OAuth 2.0 protocol](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps). If you need to connect to a TFVC repository, use the obsolete [PAT-based connection](integrating-teamcity-with-vcs-hosting-services.md#Azure+DevOps+PAT+Connection).
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   
