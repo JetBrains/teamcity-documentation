@@ -314,7 +314,7 @@ No server restart is required. If the configuration is correct, TeamCity will cr
 
 ## Logging for .NET Runners
 
-To investigate process launch issues for [.NET-related runners](supported-platforms-and-environments.md#Supported+.NET+platform+build+runners), enable debugging as described below. The detailed information will then be printed into the build log. It is recommended not to have the debug logging for a long time and revert the settings after investigation.
+To investigate process launch issues for [.NET-related runners](supported-platforms-and-environments.md#.NET+Runners), enable debugging as described below. The detailed information will then be printed into the build log. It is recommended not to have the debug logging for a long time and revert the settings after investigation.
 
 Aa alternative way to enable the logging is as follows:
 Add the `teamcity.agent.dotnet.debug=true` [configuration parameter](configuring-build-parameters.md) in the build configuration or on the agent and run the build.

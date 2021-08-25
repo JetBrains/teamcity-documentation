@@ -5,7 +5,7 @@ This page covers a new TeamCity server installation. For __upgrade instructions_
 
 To install a TeamCity server, perform the following:
 
-1. Choose the appropriate TeamCity distribution (`.exe`, `.tar.gz` or [Docker image](https://hub.docker.com/r/jetbrains/teamcity-server/)) based on the details below. You can also [run TeamCity on AWS](running-teamcity-stack-in-aws.md) stack.
+1. Choose the appropriate TeamCity distribution (`.exe`, `.tar.gz` or [Docker image](https://hub.docker.com/r/jetbrains/teamcity-server/)) based on the details below.
 2. [Download](http://www.jetbrains.com/teamcity/download/) the distribution.
 3. Review [software requirements](supported-platforms-and-environments.md) and [hardware requirements notes](how-to.md#Estimate+Hardware+Requirements+for+TeamCity) and [platform selection](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server).
 4. Review TeamCity [Licensing Policy](licensing-policy.md).
@@ -298,7 +298,7 @@ Out-of-the-box TeamCity server installation is suitable for evaluation purposes.
 * Make sure server URL, email and (optionally) Jabber server settings are specified and are correct.
 * Configuring the server process for OS-dependent autostart on machine reboot.
 * Using reliable storage for [TeamCity Data Directory](teamcity-data-directory.md).
-* [Using external database](setting-up-an-external-database.md).
+* [Using external database](setting-up-external-database.md).
 * [Configuring recommended memory settings](#Setting+Up+Memory+settings+for+TeamCity+Server), use "maximum settings" for active or growing servers.
 * Planning for regular [backups](teamcity-data-backup.md).
 * Planning for regular [upgrades](upgrade.md) to the latest TeamCity releases.

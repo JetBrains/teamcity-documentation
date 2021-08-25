@@ -8,7 +8,7 @@ The _[FxCop](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframew
 The FxCop build runner requires FxCop installed on the build agent.
 </note>
 
-For the list of supported FxCop versions, see [Supported Platforms and Environments](supported-platforms-and-environments.md#Supported+.NET+platform+build+runners).
+For the list of supported FxCop versions, see [Supported Platforms and Environments](supported-platforms-and-environments.md#.NET+Runners).
 
 ## FxCop Build Runner Settings
 

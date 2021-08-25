@@ -59,13 +59,13 @@ Fail build if sufficient disk space cannot be freed
 
 <td>
 
-Check the box to add the corresponding build failure condition.
+Enable to add the corresponding [build failure condition](build-failure-conditions.md).
 
 </td></tr></table>
 
 ## Other ways to set the free disk space value
 
-For compatibility reasons  the free disk space value can be specified via the properties below. However, using the Free disk space build feature is recommended as the properties can be removed in the future TeamCity versions.
+To ensure compatibility, the free disk space value can be specified via the properties below. However, using the Free Disk Space build feature is recommended as these properties can be removed in the future TeamCity versions.
 
 The properties can be defined:
 * globally for a build agent (in the agent's [`buildAgent.properties`](build-agent-configuration.md) file)
@@ -75,10 +75,16 @@ The required free space value is defined with the following properties:
 * `system.teamcity.agent.ensure.free.space` for the build checkout directory
 * `system.teamcity.agent.ensure.free.temp.space` for the agent's `temp` directory
 
-If `teamcity.agent.ensure.free.temp.space` is not defined, the value of the `teamcity.agent.ensure.free.space property` is used.
+If `teamcity.agent.ensure.free.temp.space` is not defined, the value of the `teamcity.agent.ensure.free.space` property is used.
 
 The values of these properties specify the amount of the available free disk space to be ensured before the build starts. The value should be a number followed by kb, mb, gb, kib, mib, or gib suffix. Use no suffix for bytes.   
 Example: `system.teamcity.agent.ensure.free.space = 5gb`
+
+Here is how TeamCity will choose a free disk space value:
+1. Use `system.teamcity.agent.ensure.free.space`, defined on the agent or overridden on the project or build configuration level.
+2. If (1) is not defined, use `teamcity.agent.ensure.free.space`, defined on the agent or overridden on the project or build configuration level.
+3. If (1-2) are not defined, use the custom value defined in the build feature.
+4. If no custom values are defined, use the default value of 3 GB.
 
 ### Configuring artifacts cache
 

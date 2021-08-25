@@ -3,6 +3,8 @@
 
 TeamCity provides out-of-the-box support for a number of testing frameworks. In order to reduce feedback time on the test failures, TeamCity provides support for on-the-fly tests reporting where possible. On-the-fly tests reporting means that the tests are reported in the TeamCity UI as soon as they are run not waiting for the build to complete.
 
+## Supported Testing Frameworks
+
 TeamCity directly supports the following _testing frameworks_:
 * JUnit and TestNG for the following runners: 
      * Ant (when tests are run by the `junit` and `testng` tasks directly within the script, TeamCity reports tests on the fly)
@@ -25,7 +27,7 @@ See also external [plugins](https://plugins.jetbrains.com/teamcity).
 
 Also, you can import test run XML reports of supported formats with [XML Report Processing](xml-report-processing.md).
 
-### Custom Testing Frameworks
+## Custom Testing Frameworks
 
 If there is no TeamCity support yet for your testing framework, you can report tests progress to TeamCity from the build via [service messages](service-messages.md#Reporting+Tests) or generate one of the supported [XML reports](xml-report-processing.md) in the build.
 

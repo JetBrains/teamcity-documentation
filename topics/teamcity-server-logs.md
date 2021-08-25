@@ -242,7 +242,7 @@ Contains [clean-up](clean-up.md)-related log
 
 <td>
 
-(off by default) [ClearCase integration plugin](clearcase.md) log
+(off by default) [ClearCase integration plugin](https://plugins.jetbrains.com/plugin/13210-vcs-support-clearcase) log
 
 </td></tr><tr>
 

@@ -6,7 +6,7 @@ TeamCity Data Directory is the directory on the file system used by TeamCity ser
 For TeamCity Cloud instances, this directory is fully operated by the TeamCity team.
 {product="tcc"}
 
-The build history, users and their data and some other data are stored in the [database](setting-up-an-external-database.md). See notes on [backup](manual-backup-and-restore.md) for the description of the data stored in the directory and the database.
+The build history, users and their data and some other data are stored in the [database](setting-up-external-database.md). See notes on [backup](manual-backup-and-restore.md) for the description of the data stored in the directory and the database.
 {product="tc"}
 
 Note that in this documentation and other TeamCity materials the directory is often referred to as `.BuildServer`. If you have a different name for it, replace `.BuildServer` with the actual name.
@@ -82,7 +82,7 @@ The `config` subdirectory of TeamCity Data Directory contains the configuration 
       * `vcsRoots` — a directory which contains project's VCS roots settings in the files `<VcsRootID>.xml`.
       * `project-config.xml` — the project configuration file containing the project settings, such as [parameters](configuring-build-parameters.md) and [clean-up rules](clean-up.md).
   * `main-config.xml` — server-wide configuration settings.
-  * `database.properties` — database connection settings, see more at [Setting up an External Database](setting-up-an-external-database.md).
+  * `database.properties` — database connection settings, see more at [Setting up an External Database](setting-up-external-database.md).
   * `license.keys` — a file which stores the license keys entered into TeamCity.
   * `change-viewers.properties` — [External Changes Viewer](external-changes-viewer.md) configuration properties, if available.
   * `internal.properties` — file for specifying various [internal TeamCity properties](configuring-teamcity-server-startup-properties.md). It is __not__ present by default and needs to be created if necessary.
@@ -113,7 +113,7 @@ The `config` subdirectory of TeamCity Data Directory contains the configuration 
      * `.unpacked` — directory that is created automatically to store unpacked server-side plugins. Should not be modified while the server is running. Can be safely deleted if the server is not running.
   * `buildserver.*` — a set of files pertaining to the embedded HSQLDB.
 * __`.BuildServer/backup`__ — default directory to store backup archives created via [web UI](creating-backup-from-teamcity-web-ui.md). The files in this directory are not used by TeamCity and can be safely removed if they were already copied for safekeeping.
-* __`.BuildServer/lib/jdbc`__ — directory that TeamCity uses to search for [database drivers](setting-up-an-external-database.md). Create the directory if necessary. TeamCity does not manage the files in the directory, it only scans it for `.jar` files that store the necessary driver.
+* __`.BuildServer/lib/jdbc`__ — directory that TeamCity uses to search for [database drivers](setting-up-external-database.md). Create the directory if necessary. TeamCity does not manage the files in the directory, it only scans it for `.jar` files that store the necessary driver.
 
 ## Direct Modifications of Configuration Files
 {product="tc"}

@@ -3,23 +3,9 @@
   SYSTEM "https://resources.jetbrains.com/stardust/product-profile.dtd">
 <product-profile id="tc" name="TeamCity On-Premises" start-page="teamcity-documentation.md" status="eap">
    <toc-element id="teamcity-documentation.md">
-      <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2021-1.html">
-         <toc-element id="teamcity-2021-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="teamcity-2021-1-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
-      </toc-element>
-      <toc-element id="what-s-new-in-teamcity-2020-2.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
-         <toc-element id="teamcity-2020-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-         <toc-element id="teamcity-2020-2-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-         <toc-element id="teamcity-2020-2-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-         <toc-element id="teamcity-2020-2-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-         <toc-element id="teamcity-2020-2-4-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-      </toc-element>
-      <toc-element id="what-s-new-in-teamcity-2019.2.md" hidden="true"/>
-      <toc-element id="what-s-new-in-teamcity-2019.1.md" hidden="true"/>
-      <toc-element id="what-s-new-in-teamcity-2020-1.md" hidden="true"/>
       <toc-element id="getting-started-with-teamcity.md">
          <toc-element id="continuous-integration-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="installation-quick-start.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="quick-setup-guide.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="configure-and-run-your-first-build.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="concepts.md" hidden="true"/>
@@ -46,7 +32,6 @@
          <toc-element id="build-number.md"/>
          <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-runner.md"/>
-         <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-tag.md"/>
          <toc-element id="build-working-directory.md"/>
          <toc-element id="change.md"/>
@@ -65,7 +50,6 @@
          <toc-element id="first-failure.md"/>
          <toc-element id="guest-user.md"/>
          <toc-element id="history-build.md"/>
-         <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="notifier.md"/>
          <toc-element id="personal-build.md"/>
          <toc-element id="pinned-build.md"/>
@@ -83,14 +67,13 @@
          <toc-element id="user-account.md"/>
          <toc-element id="user-group.md"/>
          <toc-element id="vcs-root.md"/>
-         <toc-element id="wildcards.md"/>
-      </toc-element>
-      <toc-element id="supported-platforms-and-environments.md" show-structure-for="chapter" show-structure-depth="4">
-         <toc-element id="testing-frameworks.md"/>
-         <toc-element id="code-quality-tools.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="installation-and-upgrade.md" hidden="true"/>
       <toc-element toc-title="Installation and Upgrade">
+         <toc-element id="supported-platforms-and-environments.md" show-structure-for="chapter" show-structure-depth="4">
+            <toc-element id="testing-frameworks.md"/>
+            <toc-element id="code-quality-tools.md" show-structure-for="chapter" show-structure-depth="4"/>
+         </toc-element>
          <toc-element id="installation.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="installing-and-configuring-the-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4">
                <toc-element id="csrf-protection.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -114,7 +97,7 @@
          <toc-element id="teamcity-release-cycle.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="roadmap-outline.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="teamcity-maintenance-mode.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="setting-up-an-external-database.md" show-structure-for="chapter" show-structure-depth="4">
+         <toc-element id="setting-up-external-database.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="setting-up-teamcity-with-ms-sql-server.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configuring-utf8-character-set-for-mysql.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="using-aws-aurora-database-cluster.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -131,7 +114,6 @@
          <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="viewing-build-configuration-details.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="statistic-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="search.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="maven-related-data.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="administrator-s-guide.md" hidden="true"/>
@@ -189,7 +171,6 @@
             <toc-element id="configuring-vcs-settings.md" show-structure-for="chapter" show-structure-depth="4">
                <toc-element id="configuring-vcs-roots.md" show-structure-for="chapter" show-structure-depth="4">
                   <toc-element id="guess-settings-from-repository-url.md"/>
-                  <toc-element id="clearcase.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="cvs.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="git.md" show-structure-for="chapter" show-structure-depth="4">
                      <toc-element id="ssh-keys-management.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -203,8 +184,6 @@
                   <toc-element id="starteam.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="subversion.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="team-foundation-server.md" show-structure-for="chapter" show-structure-depth="4"/>
-                  <toc-element id="sourcegear-vault.md"/>
-                  <toc-element id="visual-sourcesafe.md"/>
                   <toc-element id="configuring-vcs-post-commit-hooks-for-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
                </toc-element>
                <toc-element id="working-with-feature-branches.md" show-structure-for="chapter" show-structure-depth="4">
@@ -383,7 +362,6 @@
          <toc-element id="mono-support.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="maven-server-side-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="tracking-user-actions.md"/>
-         <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="jenkins-to-teamcity-migration-guidelines.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="installing-tools.md">
@@ -427,7 +405,30 @@
          <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element toc-title="Reference">
+         <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="requirement-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="search.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="wildcards.md"/>
+      </toc-element>
    </toc-element>
+   <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2021-1.html">
+      <toc-element id="teamcity-2021-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="teamcity-2021-1-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="teamcity-2021-1-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+   </toc-element>
+   <toc-element id="what-s-new-in-teamcity-2020-2.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
+      <toc-element id="teamcity-2020-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+      <toc-element id="teamcity-2020-2-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+      <toc-element id="teamcity-2020-2-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+      <toc-element id="teamcity-2020-2-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+      <toc-element id="teamcity-2020-2-4-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+   </toc-element>
+   <toc-element id="what-s-new-in-teamcity-2019.2.md" hidden="true"/>
+   <toc-element id="what-s-new-in-teamcity-2019.1.md" hidden="true"/>
+   <toc-element id="what-s-new-in-teamcity-2020-1.md" hidden="true"/>
    <toc-element toc-title="Other resources">
       <toc-element id="teamcity-cloud.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
       <toc-element toc-title="TeamCity Cloud Documentation" href="https://www.jetbrains.com/help/teamcity/cloud/teamcity-cloud-documentation.html"/>

@@ -4,7 +4,6 @@
         <download-page/>
         <search-scope/>
         <fallback-url>https://www.jetbrains.com/help/teamcity/</fallback-url>
-        <help-app-version>3</help-app-version>
         <config-feedbackRequireEmail>false</config-feedbackRequireEmail>
         <hide-last-modified>true</hide-last-modified>
         <config-showDownloadButton>true</config-showDownloadButton>
@@ -21,40 +20,10 @@
         <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2021.2/</browser-edits-url>
         <disable-prev-next-links>true</disable-prev-next-links>
         <disable-variable-interpolation>true</disable-variable-interpolation>
-        <web-root>https://www.jetbrains.com/help/teamcity</web-root>
+        <web-root>https://www.jetbrains.com/help</web-root>
         <og-twitter>@teamcity</og-twitter>
         <og-image>https://resources.jetbrains.com/storage/products/teamcity/img/meta/preview.png</og-image>
     </variables>
-    <layout name="Web help" mode="web2">
-        <style>s.css</style>
-        <views toc="true" search="true" index="true" fav="true"/>
-        <xsl>topic.web.new.xsl</xsl>
-    </layout>
-    <layout name="Old Web help" mode="web" hidden="true">
-        <style>sw.css</style>
-        <views toc="true" search="true" index="no" fav="true"/>
-        <xsl>topic.core.xsl</xsl>
-    </layout>
-    <layout name="Mac help" mode="mac" hidden="true">
-        <style>sw.css</style>
-        <views toc="true" search="true" index="no" fav="true"/>
-        <xsl>topic.core.xsl</xsl>
-    </layout>
-    <layout name="Jar help" mode="jar" hidden="true">
-        <style>s.css</style>
-        <views toc="true" search="true" index="true" fav="true"/>
-        <xsl>topic.core.xsl</xsl>
-    </layout>
-    <layout name="Chm help" mode="chm" hidden="true">
-        <style>sw.css</style>
-        <views toc="true" search="true" index="true" fav="true"/>
-        <xsl>topic.core.xsl</xsl>
-    </layout>
-    <layout name="PDF help" mode="pdf" hidden="true">
-        <style>swp.css</style>
-        <views toc="true" search="true" index="true" fav="true"/>
-        <xsl>topic.core.xsl</xsl>
-    </layout>
 
     <build-profile product="tc"/>
     <build-profile product="tcc"/>

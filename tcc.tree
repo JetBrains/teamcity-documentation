@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE product-profile
         SYSTEM "https://resources.jetbrains.com/stardust/product-profile.dtd">
-<product-profile id="tcc" name="TeamCity Cloud" start-page="teamcity-cloud-documentation.md" status="eap">
+<product-profile id="tcc" name="TeamCity Cloud" start-page="teamcity-cloud-documentation.md" status="release">
     <toc-element id="teamcity-cloud-documentation.md">
-        <toc-element id="what-s-new-in-teamcity-2020-2.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
-            <toc-element id="teamcity-2020-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-            <toc-element id="teamcity-2020-2-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-            <toc-element id="teamcity-2020-2-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-            <toc-element id="teamcity-2020-2-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-            <toc-element id="teamcity-2020-2-4-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-        </toc-element>
         <toc-element id="getting-started-with-teamcity-cloud.md">
             <toc-element id="continuous-integration-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configure-and-run-your-first-build.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -37,7 +30,6 @@
             <toc-element id="build-number.md"/>
             <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-runner.md"/>
-            <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-tag.md"/>
             <toc-element id="build-working-directory.md"/>
             <toc-element id="change.md"/>
@@ -56,7 +48,6 @@
             <toc-element id="first-failure.md"/>
             <toc-element id="guest-user.md"/>
             <toc-element id="history-build.md"/>
-            <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="notifier.md"/>
             <toc-element id="personal-build.md"/>
             <toc-element id="pinned-build.md"/>
@@ -72,7 +63,6 @@
             <toc-element id="user-account.md"/>
             <toc-element id="user-group.md"/>
             <toc-element id="vcs-root.md"/>
-            <toc-element id="wildcards.md"/>
         </toc-element>
         <toc-element id="supported-platforms-and-environments.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="testing-frameworks.md"/>
@@ -186,12 +176,14 @@
                         <toc-element id="inspections-resharper.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="intellij-idea-project.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="ipr-deprecated.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+                        <toc-element id="kotlin-script.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="maven.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="msbuild.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="mspec.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nant.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="net.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="net-process-runner.md" show-structure-for="chapter" show-structure-depth="4"/>
+                        <toc-element id="nodejs.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nuget-installer.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nuget-pack.md" show-structure-for="chapter" show-structure-depth="4"/>
                         <toc-element id="nuget-publish.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -312,7 +304,6 @@
             <toc-element id="mono-support.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="maven-server-side-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="tracking-user-actions.md"/>
-            <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="jenkins-to-teamcity-migration-guidelines.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
         <toc-element id="installing-tools.md">
@@ -352,9 +343,23 @@
             <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
         <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element toc-title="Reference">
+            <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="requirement-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="wildcards.md"/>
+        </toc-element>
     </toc-element>
-    <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
-    <toc-element toc-title="TeamCity On-Premises Documentation" href="https://www.jetbrains.com/help/teamcity/teamcity-documentation.html"/>
-    <toc-element toc-title="TeamCity Roadmap" href="https://www.jetbrains.com/teamcity/roadmap/"/>
-    <toc-element toc-title="TeamCity Blog" href="https://blog.jetbrains.com/teamcity/"/>
+    <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2021-1.html">
+        <toc-element id="teamcity-2021-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element id="teamcity-2021-1-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element id="teamcity-2021-1-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+    </toc-element>
+    <toc-element toc-title="Other resources">
+        <toc-element toc-title="TeamCity On-Premises Documentation" href="https://www.jetbrains.com/help/teamcity/teamcity-documentation.html"/>
+        <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
+        <toc-element toc-title="TeamCity Roadmap" href="https://www.jetbrains.com/teamcity/roadmap/"/>
+        <toc-element toc-title="TeamCity Blog" href="https://blog.jetbrains.com/teamcity/"/>
+    </toc-element>
 </product-profile>
