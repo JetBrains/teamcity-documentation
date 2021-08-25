@@ -179,15 +179,22 @@ All notification rules except "My changes" will only notify you on builds from t
 
 ## Build configuration status
 
-The Build Configuration status is calculated based on the builds from the default branch only. Consequently, per-configuration investigation works for builds from the default branch. For example, a successful build from a non-default branch will not remove a per-configuration investigation, but a successful build from the default branch will.
+The build configuration status is calculated based on the builds from the default branch only. Consequently, per-configuration investigation works for builds from the default branch. For example, a successful build from a non-default branch will not remove a per-configuration investigation, but a successful build from the default branch will.
 
 ## Multiple VCS roots
 
-If your build configuration uses more than one VCS root and you specified branches to monitor in both VCS roots, the way the builds are triggered is more complicated.
+If a build configuration has two (or more) VCS roots with specified branch filters, the triggering behavior might get more complicated.
 
-The VCS trigger groups branches from several VCS roots by [logical branch names](#Logical+branch+name). When some root does not have a branch from the other root, its default branch is used. For example, you have 2 VCS roots, both have the default branch `refs/heads/master`, the first root has the branch specification `refs/heads/7.1/*` and changes in branches `refs/heads/7.1/feature1` and `refs/heads/7.1/feature2`, the second root has the specification `refs/heads/devel/*` and changes in branch `refs/heads/devel/feature1`. In this case, VCS trigger runs 3 builds with revisions from following branches combinations:
+The VCS trigger groups branches from multiple roots by their [logical branch names](#Logical+branch+name). When some root does not have a branch from the other root, its default branch is used.
+
+Example: 2 VCS roots have the same default branch `refs/heads/master`. Root1 has the branch specification `refs/heads/7.1/*` and new commits in branches `refs/heads/7.1/feature1` and `refs/heads/7.1/feature2`. Root2 has the specification `refs/heads/devel/*` and new commits in the branch `refs/heads/devel/feature1`.  
+Here, `feature1` is the logical name relevant to two branches with different paths: `.../7.1/feature1` and `.../devel/feature1`.
+
+In this case, the VCS trigger will run 3 builds with revisions from the following branches' combinations:
 
 <table><tr>
+
+<td>Build number</td>
 
 <td>
 
@@ -201,50 +208,76 @@ root2
 
 </td>
 
-</tr><tr>
-
-<td>
-
-refs/heads/master
-
-</td>
-
-<td>
-
-refs/heads/master
-
-</td>
+<td>Description</td>
 
 </tr><tr>
 
+<td>1</td>
+
 <td>
 
-refs/heads/7.1/feature1
+`refs/heads/master`
 
 </td>
 
+<td>
+
+`refs/heads/master`
+
+</td>
 
 <td>
 
-refs/heads/devel/feature1
+Default branches are [implicitly added](#Default+branch) to each specification.
 
 </td>
 
 </tr><tr>
 
+<td>2</td>
+
 <td>
 
-refs/heads/7.1/feature2
+`refs/heads/7.1/feature1`
 
 </td>
 
 <td>
 
-refs/heads/master
+`refs/heads/devel/feature1`
+
+</td>
+
+<td>
+
+The `feature1` logical name is present in specifications of both roots.
+
+</td>
+
+</tr><tr>
+
+<td>3</td>
+
+<td>
+
+`refs/heads/7.1/feature2`
+
+</td>
+
+<td>
+
+`refs/heads/master`
+
+</td>
+
+<td>
+
+The `feature2` logical name is present in the specification of root1 but absent in the specification of root2. Thus, root2 falls back to the default branch.
 
 </td>
 
 </tr></table>
+
 
 ## Build parameters
 
