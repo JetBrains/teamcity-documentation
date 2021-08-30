@@ -498,3 +498,8 @@ __Solution__: To send a new request directly to the server instead of the cache,
 ## Cannot use multiline parameters in PowerShell
 
 Earlier versions of the [PowerShell](powershell.md) runner don't support passing multiline arguments. Since version 2020.1.4, you can enable this support by setting the `teamcity.powershell.arguments.multiline=true` [configuration parameter](configuring-build-parameters.md).
+
+## Error while loading VCS changes
+
+_Error while loading VCS changes_ on the TeamCity server startup might be associated with the enabled cursor-based streaming in MySQL. To prevent this error, try setting the `connectionProperties.useCursorFetch` property to `false` in `database.properties` and restart the server.  
+See [this issue](https://youtrack.jetbrains.com/issue/TW-71781) for more details.
