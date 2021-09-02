@@ -89,7 +89,7 @@ ownAddress=<own IP address or server-accessible domain name>
 
 It is possible to configure a forward proxy server for agent-to-server connections.
 
-<include src="how-to.md" include-id="agent-proxy-server"/>
+<include src="set-up-teamcity-behind-proxy.md" include-id="agent-proxy-server"/>
 
 <seealso>
         <category ref="concepts">
