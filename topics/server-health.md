@@ -120,7 +120,7 @@ The build script can be tuned to print less output if this inspection fails freq
 
 #### Inefficient Artifacts Publishing
 
-TeamCity detects a build publishing many small artifact files and suggests publishing them as a single `.zip` archive.
+TeamCity detects a build publishing many small artifact files and suggests publishing them as a single `.zip` archive to optimize the upload/download operations. See more information [here](build-artifact.md#artifacts-as-archive).
 
 ### VCS Root Related Problems
 
