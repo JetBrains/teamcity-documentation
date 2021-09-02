@@ -453,7 +453,7 @@ synchronous_commit=off
 ## Set Up TeamCity behind a Proxy Server
 {product="tc"}
 
-The contents of this section have been moved to the [dedicated article](set-up-teamcity-behind-proxy.md).
+The contents of this section have been moved to the [dedicated article](configuring-proxy-server.md).
 
 ## Enforce hiding stacktrace
 {product="tc"}
@@ -472,7 +472,7 @@ For configuring clients to access TeamCity server via HTTPS while using self-sig
 ## Configure TeamCity to Use Proxy Server for Outgoing Connections
 {product="tc"}
 
-The contents of this section have been moved to the [dedicated article](set-up-teamcity-behind-proxy.md).
+The contents of this section have been moved to the [dedicated article](configuring-proxy-server.md).
 
 ## Configure TeamCity Agent to Use Proxy To Connect to TeamCity Server
 
