@@ -44,8 +44,9 @@ Specify an FTP server (use a hostname or IP address) and a remote directory (rel
 To set an absolute `*nix` path, use `%2F` as the forward slash. For example:
 
 ```Shell
-ftp://hostname.com/hostname.com:34445/subdir127.0.0.1/%2Fetc/
-
+ftp://hostname.com/
+hostname.com:34445/subdir
+127.0.0.1/%2Fetc/
 ```
 
 </td></tr><tr>
