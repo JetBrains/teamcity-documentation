@@ -12,17 +12,7 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 
 ## Current version
 
-__Current TeamCity Version is 2021.1.3__
-
-Release date: 07 September 2021   
-Build 92911
-
-[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2021.1.3.exe)   
-[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2021.1.3.tar.gz)
-
-[Release notes](teamcity-2021-1-3-release-notes.md)
-
-## TeamCity 2021.1.2
+__Current TeamCity Version is 2021.1.2__
 
 Release date: 02 August 2021   
 Build 92869

@@ -1,10 +1,6 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
-## Changes from 2021.1.2 to 2021.1.3
-
-No noteworthy updates.
-
 ## Changes from 2021.1.1 to 2021.1.2
 
 * If you run a [personal build](personal-build.md) that is a part of a [build chain](build-chain.md), all its dependency builds will now be run as personal builds as well.  
