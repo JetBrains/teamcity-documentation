@@ -53,7 +53,7 @@ You can create a build configuration using a VCS URL:
 1. Click the __Create build configuration__ button and select __Pointing to GitHub.com repository__.
     * If you do not have a GitHub connection configured, you will be redirected to the __Connections__ page. Set up the connection as [described here](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub), then follow the steps below.
     * If you have a GitHub connection configured, follow the steps below.
-2. On the __Create Build Configuration From GitHub__ page, select a repository. TeamCity will verify the repository [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections). If the connection is verified, the new page opens.
+2. On the __Create Build Configuration From GitHub__ page, select a repository. TeamCity will verify the repository [connection](integrating-teamcity-with-vcs-hosting-services.md). If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names.  
    It will also autodetect the default branch. You have an option to change it now or later, in the [VCS root](vcs-root.md) settings. You can also change the branch specification: by default, TeamCity monitors all branches of the repository but you can choose what exact branches to monitor by entering [custom rules](working-with-feature-branches.md#branch-spec-syntax).  
    Click __Proceed__.
@@ -65,7 +65,7 @@ You can create a build configuration using a VCS URL:
 1. Click the __Create build configuration__ button and select __Pointing to Bitbucket Cloud repository__. 
  * If you do not have a Bitbucket connection configured, you will be redirected to the __Connections__ page. Set up the connection as [described here](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket+Cloud), then follow the steps below.
  * If you have a Bitbucket connection configured, follow the steps below.
-2. On the __Create Build Configuration From Bitbucket Cloud__ page, select a repository. TeamCity will verify the repository [connection](integrating-teamcity-with-vcs-hosting-services.md#Configuring+Connections). If the connection is verified, the new page opens.
+2. On the __Create Build Configuration From Bitbucket Cloud__ page, select a repository. TeamCity will verify the repository [connection](integrating-teamcity-with-vcs-hosting-services.md). If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names.  
    For a Git repository, it will also autodetect the default branch. You have an option to change it now or later, in the [VCS root](vcs-root.md) settings. You can also change the branch specification: by default, TeamCity monitors all branches of the repository but you can choose what exact branches to monitor by entering [custom rules](working-with-feature-branches.md#branch-spec-syntax).  
    Click __Proceed__.

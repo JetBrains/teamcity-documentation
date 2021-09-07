@@ -1,122 +1,34 @@
 [//]: # (title: Integrating TeamCity with VCS Hosting Services)
 [//]: # (auxiliary-id: Integrating TeamCity with VCS Hosting Services)
 
-If you have an organization account in [GitHub.com](https://github.com/), [GitHub Enterprise](https://enterprise.github.com/), [Bitbucket Cloud](https://bitbucket.org/), [GitLab.com](https://about.gitlab.com/), or [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/), you can connect TeamCity to these source code hosting services making it easier for the organization users to create new projects, [Git](git.md) or [Mercurial](mercurial.md) VCS roots, [GitHub](github.md) or [Bitbucket](integrating-teamcity-with-issue-tracker.md) issue trackers, which are supported out of the box.
+You can create presets of connections to the following hosting services:
+* [GitHub.com](https://github.com/) and [GitHub Enterprise](https://enterprise.github.com/)
+* [Bitbucket Cloud](https://bitbucket.org/)
+* [GitLab.com](https://about.gitlab.com/) and [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/)
+* [Azure DevOps](https://azure.microsoft.com/ru-ru/services/devops/)
 
-It is also possible to connect TeamCity to [Azure DevOps Services](https://visualstudio.microsoft.com/team-services/) making it really simple to set up projects which use VSTS repositories or issue tracker.
+Once created, such a connection can serve as a base for different operations: creating projects from URL, creating VCS roots, integrating with issue trackers, and authenticating users in TeamCity using their external profiles.
 
 >In TeamCity Cloud, connections to GitHub.com, GitLab.com, and Bitbucket Cloud are already predefined in the Root project's settings, which makes them available in all the other projects.
 >
 {product="tcc"}
 
-## Configuring Connections
-
-Connections are created on the project level, a configured connection is accessible in the current project and in all of its subprojects. If you use global VCS hosting services like GitHub or Bitbucket Cloud, it makes sense to configure a single connection for the Root project. Alternatively, your organization administrator can create a parent project and configure connection to GitHub there once, and the users will see a list of GitHub repositories URLs in the TeamCity web UI, which will make setting up subprojects a lot simpler for them.
-
-Connections are configured on the __Project Administration | Connections__ page. 
+Connections are configured on the __Project Administration | Connections__ page. Each connection is accessible in the current project and all its subprojects. If you use global VCS hosting services for your whole organization, it makes sense to configure a single connection to such a service on the Root project level. This way, the users will be able to quickly access the list of the organization's repositories when creating subprojects or editing projects' settings.
 
 <img src="projectConnections.png" width="700" alt="Adding a GitHub connection"/>
 
-You need to register your TeamCity application in your VCS hosting service using the information provided by TeamCity, enter the access details provided by the service in the TeamCity form, and log in to your VCS hosting service from TeamCity to authorize the TeamCity application in the VCS. See details below.
+## Connecting to GitHub
 
-### Connecting to GitHub
+<include src="configuring-connections.md" include-id="github"/>
 
->In TeamCity Cloud, a connection to GitHub.com is already predefined in the Root project's settings, which makes it available in all the other projects.
->
-{product="tcc"}
+## Connecting to Bitbucket Cloud
 
-You will need a GitHub repository connection to create a [project from GitHub URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), create a [VCS root from URL](guess-settings-from-repository-url.md), create a [Git](git.md) VCS root, create [GitHub](github.md) issue tracker, or [enable GitHub authentication](configuring-authentication-settings.md#GitHub.com).
+<include src="configuring-connections.md" include-id="bb-cloud"/>
 
-To configure a GitHub connection:
-1. In __Project Administration | Connections__, click __Add Connection__.
-2. Select _GitHub.com_ or _GitHub Enterprise_ as the connection type. The page that opens provides the parameters to be used when registering your TeamCity application in GitHub service.
-3. Click the _register application_ link. The GitHub page opens.   
-You need to register TeamCity as an [OAuth application](https://docs.github.com/en/developers/apps/authorizing-oauth-apps) in GitHub.   
-The following steps are performed in your GitHub account:
-   * Sign in to your GitHub account. On the __Register a new OAuth application__ page, specify the name and an optional description, the homepage URL and the callback URL as provided by TeamCity.
-   * Click __Register application__. The page is updated with Client ID and the client secret information for your TeamCity application. 
-   >If you use the [GitHub authentication](configuring-authentication-settings.md#GitHub.com) module and want to restrict access to TeamCity to users of specific GitHub organizations, you need to ensure that your OAuth app is allowed by all these organizations. By default, GitHub does not allow OAuth apps to access the organizations. You can either disable this restriction for all apps or approve only the TeamCity app in each of the required organizations. Please refer to the [GitHub documentation](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-oauth-app-access-restrictions) for more details.
-4. Continue configuring the connection in TeamCity. On the __Add Connection__ page, specify:   
-      * _Application ID_
-      * _Secret_
-      * _Server URL_ (only for GitHub Enterprise)
-5. Save the connection settings. 
-6. The connection is configured, and now a small GitHub icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Git](git.md) VCS root, create [GitHub](github.md) issue tracker. Click the icon, log in to GitHub and authorize TeamCity. The authorized application will be granted full control of private repositories and the _Write repository hooks_ permission.
+## Connecting to GitLab
 
->If your GitHub Enterprise server uses HTTPS, you need to also [upload its HTTPS certificate](uploading-ssl-certificates.md).
+<include src="configuring-connections.md" include-id="gitlab"/>
 
-### Connecting to Bitbucket Cloud
+## Connecting to Azure DevOps Services
 
->In TeamCity Cloud, a connection to Bitbucket Cloud is already predefined in the Root project's settings, which makes it available in all the other projects.
->
-{product="tcc"}
-
-You will need a Bitbucket Cloud connection to create a [project from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), create a [VCS root from URL](guess-settings-from-repository-url.md), create a [Mercurial](mercurial.md) VCS root, create a [Bitbucket](bitbucket-cloud.md) issue tracker, or [enable BitBucket Cloud authentication](configuring-authentication-settings.md#Bitbucket+Cloud).
-
-To configure a Bitbucket Cloud connection:
-1. In __Project Administration | Connections__, click __Add Connection__.
-2. Select _Bitbucket_ as the connection type.   
-The page that opens provides the parameters to be used when registering an OAuth consumer on Bitbucket Cloud. Click the _register application_ link.   
-You need to create an [OAuth consumer](https://confluence.atlassian.com/bitbucket/oauth-on-bitbucket-cloud-238027431.html#OAuthonBitbucketCloud-Createaconsumer) on Bitbucket Cloud. The following steps are performed in your Bitbucket account:
-   1. Log into your Bitbucket account, click your avatar and select __Bitbucket settings__ from the menu. The __Account__ page opens.
-   2. Click __OAuth__ from the menu bar. On the __Add OAuth consumer__ page, specify the name and an optional description, the callback URL and the URL as provided by TeamCity.
-   3. Specify the set of permissions: TeamCity requires "_read_" access to your account and your repositories.
-   4. Save your settings.
-   5. On the page that opens, in the __OAuth consumers__ section, click the name of your TeamCity application to display the key and the secret.
-3. Continue configuring the connection in TeamCity: on the __Add Connection__ page that is open, specify the key and secret.
-4. Save the connection settings. 
-5. The connection is configured, and now a small Bitbucket icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Mercurial](mercurial.md) VCS root, create [Bitbucket](bitbucket-cloud.md) issue tracker. Click the icon, log in to Bitbucket  and authorize TeamCity. TeamCity will be granted access to your public repositories. For __private__ repositories you'll still have to provide Bitbucket credentials to be used for authentication by TeamCity, as Bitbucket Cloud doesn't provide non-expiring access tokens. See the [related discussion](https://bitbucket.org/site/master/issues/11774/application-specific-passwords-or-tokens).
-
-### Connecting to GitLab
-
->In TeamCity Cloud, a connection to GitLab.com is already predefined in the Root project's settings, which makes it available in all the other projects.
->
-{product="tcc"}
-
-You will need a GitLab connection to create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), create a [VCS root from URL](guess-settings-from-repository-url.md), or [enable GitLab authentication](configuring-authentication-settings.md#GitLab.com).
-
-To configure a GitLab connection in TeamCity:
-1. In __Project Administration | Connections__, click __Add Connection__.
-2. Select _GitLab.com_ or _GitLab CE/EE_ as the connection type.
-3. TeamCity will display the _Redirect URL_ required for registering an OAuth application in GitLab.   
-To register the application, follow [this instruction](https://docs.gitlab.com/ee/integration/oauth_provider.html). Insert the TeamCity _Redirect URL_ as _Redirect URI_ and select the `api` [scope](https://docs.gitlab.com/ee/integration/oauth_provider.html#authorized-applications). Save your application, and copy the __secret__ and __application ID__ generated by GitLab.
-4. Once ready, go back to configuring the connection in TeamCity and fill in the following fields:
-   * _Application ID_
-   * _Secret_
-   * _Server URL_ (only for GitLab CE/EE)
-5. Save the connection settings.
-6. The connection is configured, and now a small GitLab icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL) and [create VCS root from URL](guess-settings-from-repository-url.md). Click the icon, sign in to GitLab, and authorize TeamCity. TeamCity will be granted access to your repositories.
-
->If your GitLab CE/EE server uses HTTPS, you need to [upload its HTTPS certificate](uploading-ssl-certificates.md).
-
-<note>
-
-When creating a VCS root URL for GitLab, note that TeamCity will not extract credentials from the root URL, so you need to specify a username and password manually.
-
-</note>
-
-### Connecting to Azure DevOps Services
-
-You can configure a connection to your Azure DevOps Services (or Azure DevOps Server, formerly Team Foundation Server) to create a [project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), create a [VCS root from URL](guess-settings-from-repository-url.md), create [TFS](team-foundation-server.md) VCS root, or create [Team Foundation Work Items](team-foundation-work-items.md) tracker.
-
-To configure a connection to Azure DevOps Services, follow these steps:
-1. In __Project Administration | Connections__, click __Add Connection__.
-2. Select _Azure DevOps Services_ as the connection type.   
-The page that opens provides the parameters to be used when connecting TeamCity to Azure DevOps Services.
-3. Log in to your Azure DevOps Services account to create a personal access token with _All scopes_ as described in the [Microsoft documentation](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
-4. Continue configuring the connection in TeamCity: on the __Add Connection__ page that is open, specify
-   * the server URL in the `https://{account}.visualstudio.com` format or your Team Foundation Server web portal as `https://{server}:8080/tfs/`
-   * your personal access token
-5. Save the connection settings. 
-6. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [TFS](team-foundation-server.md) VCS root, create [Team Foundation Work Items](team-foundation-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all of the resources that are available to you.   
-When configuring Commit Status Publisher for Git repositories hosted in TFS/VSTS, the personal access token can be filled out automatically if a VSTS project connection is configured.
-
->It is possible to configure several VSTS connections. In this case the server URL will be displayed next to the VSTS icon to distinguish the server in use.
-
-## Creating Entities from URL in TeamCity
-
-Now creating entities from a URL in TeamCity is extremely easy: on clicking the GitHub, Bitbucket, GitLab, or VSTS icon, the list of repositories available to the current user is displayed (note that only public Bitbucket repositories will be available via the configured connection):
-
-<img src="ProjectConnectionBitbucket.png" width="587" alt="Available Bitbucket repositories"/>
-
-You can select the URL and proceed with the configuration.
+<include src="configuring-connections.md" include-id="azure-devops"/>
