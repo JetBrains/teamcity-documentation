@@ -34,12 +34,12 @@ Read more about this type of notifier [here](browser-notifier.md).
 
 ### Slack Notifier
 
-Configuring Slack notifications is a bit trickier than the previous types, as it requires creating a dedicated app on the Slack side and a connection to this app in TeamCity. We suggest that you read [this guide](notifications.md#Slack+Notifier) for the detailed instruction.
+Configuring Slack notifications is a bit trickier than the previous types, as it requires creating a dedicated app on the Slack side and a connection to this app in TeamCity. We suggest that you read [this guide](configuring-connections.md#Slack) for the detailed instruction.
 
 When configured, you will need to authenticate in Slack in __Your Profile | Notification Rules__ and specify the [rules](#Subscribe+to+Notifications) themselves. Then, you will be receiving build status notifications directly to private messages in Slack.
 
 In addition to notifications per user, you can configure notifications per build configuration. This way, when a certain event occurs in a certain build configuration, TeamCity will report it to the respective Slack channel, specified by you.  
-To configure such behavior for a build configuration, you need to add a [Notifications](notifications.md#Configuring+Slack+Notifier) build feature.
+To configure such behavior for a build configuration, you need to add a [Notifications](notifications.md#Slack+Notifier) build feature.
 
 ## Subscribe to Notifications
 
