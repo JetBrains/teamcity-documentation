@@ -30,7 +30,6 @@ __08 September 2021__
 [**TW-67257**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67257) — Tests muted by TeamCity&#39;s test retry feature should show reasonable mute info  
 [**TW-67571**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67571) — Unarchived subprojects are missing on the project overview for archived project in the Experimental UI.  
 [**TW-72292**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72292) — S3ArtifactsPublisher doesn&#39;t retry when S3 responds with an internal server error  
-[**TW-69087**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69087) — No mute status of the test at the moment when the test was run  
 [**TW-69059**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69059) — Test History page. First and last bars are cut on Success Rate chart.  
 [**TW-72373**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72373) — Inconsistent time presentation on the same page  
 [**TW-72343**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72343) — Expand only one test in the test tree on the build overview  
