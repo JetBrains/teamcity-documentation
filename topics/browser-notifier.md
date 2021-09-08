@@ -29,7 +29,7 @@ Follow these steps to start using the Notifier:
    * [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/joojdhbnigbkaeaohmookbghmlfejcpm)
    * [Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/teamcity-notifier/)
    * [Opera](https://addons.opera.com/en/extensions/details/teamcity-notifier/)
-2. Open your TeamCity server and sign into it.   
+2. Open your TeamCity server and sign in to it.   
 The extension will automatically detect the TeamCity session and change the icon from the inactive ![browser-notifier-inactive.png](browser-notifier-inactive.png) to active state ![browser-notifier-active.png](browser-notifier-active.png). Click the icon and check that notifications are enabled.
 3. The Notifier relies on your [custom notification rules](subscribing-to-notifications.md#What+Will+Be+Watched) configured in TeamCity. If no rules are specified, you won’t be able to receive any notifications. To add or modify a rule, click __Edit rules__ opposite the server URL. You will be redirected to the __Your Profile | Notification Rules | Browser Notifier__ tab of your TeamCity user settings.
 

@@ -7,6 +7,11 @@
          <toc-element id="continuous-integration-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="quick-setup-guide.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="configure-and-run-your-first-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="create-pipeline.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="deploy-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="view-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="solve-build-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="set-up-notifications.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="concepts.md" hidden="true"/>
       <toc-element toc-title="Concepts">

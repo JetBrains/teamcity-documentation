@@ -1,4 +1,4 @@
-[//]: # (title: Subscribing to Notifications)
+  [//]: # (title: Subscribing to Notifications)
 [//]: # (auxiliary-id: Subscribing to Notifications)
 
 TeamCity provides a wide range of notification possibilities to keep developers informed about the status of their projects. Notifications can be sent by email and instant messages, or can be displayed in the IDE (with the help of TeamCity plugins) or in the web browser. Notifications can also be received via Atom/RSS syndication feeds.

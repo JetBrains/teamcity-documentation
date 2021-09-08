@@ -66,7 +66,7 @@ __Subversion__
 
 <td>
 
-__TFS__
+__Azure__
 
 </td>
 

@@ -180,7 +180,9 @@ __Build__
 
 <td>
 
-Refers to both: the actual process of creating an application version and the version itself. After the build process is triggered, it is put into the __[build queue](build-queue.md)__ and is started when there are agents available to run it. After the build is finished, the build agent sends __[build artifacts](build-artifact.md)__ to the server. 
+A CI/CD job executed on an agent. Consists of one or more steps that can do any service task: compile, test, deploy, produce reports, and so on.
+
+The terms _build_ can refer to both the actual process of building and the result of building. After the build process is triggered, it is put into the __[build queue](build-queue.md)__ and is started when there are agents available to run it. After the build is finished, the build agent sends __[build artifacts](build-artifact.md)__ to the server. 
 
 </td></tr><tr>
 
