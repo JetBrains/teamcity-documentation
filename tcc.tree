@@ -144,6 +144,9 @@
                     </toc-element>
                     <toc-element id="vcs-checkout-rules.md"/>
                     <toc-element id="vcs-checkout-mode.md"/>
+                    <toc-element id="configuring-connections.md" show-structure-for="chapter" show-structure-depth="4">
+                        <toc-element id="configuring-connections-to-docker.md" show-structure-for="chapter" show-structure-depth="4"/>
+                    </toc-element>
                 </toc-element>
                 <toc-element id="storing-project-settings-in-version-control.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="kotlin-dsl.md" show-structure-for="chapter" show-structure-depth="4">
@@ -280,7 +283,6 @@
                 <toc-element id="integrating-teamcity-with-vcs-hosting-services.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="integrating-teamcity-with-docker.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="docker-wrapper.md" show-structure-for="chapter" show-structure-depth="4"/>
-                    <toc-element id="configuring-connections-to-docker.md" show-structure-for="chapter" show-structure-depth="4"/>
                 </toc-element>
                 <toc-element id="integrating-teamcity-with-issue-tracker.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="jira.md" show-structure-for="chapter" show-structure-depth="4"/>
