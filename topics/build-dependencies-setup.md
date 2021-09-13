@@ -3,12 +3,10 @@
 
 This page gives the general idea on how dependencies work in TeamCity based on an example. For the dependencies' description, see [Dependent Build](dependent-build.md).
 
-## Introduction
-
-In many cases it is convenient to use the output of one build in another, as well as to run a number of builds sequentially on the same sources. Consider a typical example: you have a cross-platform project that has to be tested under Windows and macOS before you get the production build. The best workflow for this simple case will be to:
+In many cases, it is convenient to use the output of one build in another, as well as to run a number of builds sequentially or in parallel on the same sources. Consider a typical example: you have a cross-platform project that has to be tested under Windows and macOS before you get the production build. The best workflow for this simple case will be to:
 
 1. Compile your project.
-2. Run tests under Windows and macOS simultaneously on the same sources
+2. Run tests under Windows and macOS simultaneously on the same sources.
 3. Build a release version on the same sources, of course, if tests have passed under both OSs.
 
 This can be easily achieved by configuring dependencies between your build configurations in TeamCity that would look like this:
@@ -19,7 +17,7 @@ Where _compile_, _tests (win)_, _tests (mac)_, and _pack setup_ are build config
 
 ## Basics
 
-Generally known as the _build pipeline_, in TeamCity a similar concept is referred to as a _[build chain](build-chain.md)_. Before getting into details on how this works in TeamCity, let's clarify the legend behind diagrams given here (including the one in the introduction):
+Generally known as a _build pipeline_, in TeamCity a similar concept is referred to as a _[build chain](build-chain.md)_. Before getting into details on how this works in TeamCity, let's clarify the legend behind diagrams given here (including the one in the introduction):
 
 <table>
 
@@ -54,20 +52,17 @@ A build configuration.
 [Snapshot dependency](#Snapshot+Dependencies) between 2 build configurations. Note that the arrow shows the sequence of triggering build configurations, the [build chain](build-chain.md) flow, meaning that B is executed before A. However, the dependencies are configured in the opposite direction (A snapshot-depends on B). The arrows are drawn this way because in the [TeamCity UI](#Build+Chains+in+TeamCity+UI) you can find the visual representation of build chains which are always displayed according to the build chain flow.   
 Typically, when adding a snapshot dependency, you also add an artifact dependency with the "build from the same chain" option from the same configuration to transfer the previous build results and use them in the build as well.
 
-
 </td></tr><tr>
 
 <td>
 
 <img src="artifactDependency.png" width="191" alt="Artifact dependency"/>
 
-
 </td>
 
 <td>
 
 [Artifact dependency](#Artifact+Dependencies). The arrow shows the artifacts flow, the dependency is configured in the opposite direction.
-
 
 </td></tr>
 
@@ -87,7 +82,6 @@ An _artifact dependency_ allows reusing the output of one build (or a part of it
  
  
 <img src="artifactDependency.png" width="191" alt="Artifact dependency"/>
-
 
 If build configuration __A__ has an artifact dependency on __B__, then the artifacts of __B__ are downloaded to a build agent before a build of __A__ starts. Note that you can flexibly adjust [artifact rules](artifact-dependencies.md) to configure which artifacts should be taken and where exactly they should be placed.    
 
@@ -226,10 +220,16 @@ Enabling this setting affects pending changes of a build configuration, builds c
 
 With this setting enabled, the [Schedule Trigger](configuring-schedule-triggers.md) with a "Trigger build only if there are pending changes" option will consider changes from dependencies too.
 
-#### Parameters in dependent builds
+#### Parameters in Dependent Builds
 
 TeamCity provides the ability to use properties provided by the builds the current build depends on (via a snapshot or artifact dependency). When build A depends on build B, you can pass properties from build B to build A, i.e. properties can be passed only in the direction of the build chain flow and not vice versa.   
 For the details on how to use parameters of the previous build in chain, refer to the [Dependencies Properties](predefined-build-parameters.md#Dependencies+Properties) section.
+
+#### Running Builds in Parallel
+
+A build chain can have an indefinite number of parallel and sequential connections. Builds will run in parallel to each other if:
+* Each of these builds has own snapshot dependency on the same dependency build. These builds will be able to start as soon as the dependency build finishes.
+* There are enough free build agents on the server. If the agents are busy, TeamCity will run these builds one after another, in accordance to the agents' load.
 
 ## Miscellaneous Notes on Using Dependencies
 
@@ -246,5 +246,6 @@ __Running personal build in a chain__
 Since TeamCity 2021.1.2, if you run a personal build that is a part of a [build chain](build-chain.md), all its dependency builds will be run as personal builds as well.  
 However, if you enable the [reuse of suitable builds](snapshot-dependencies.md#Suitable+Builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
 
-[//]: # (Internal note. Do not delete. "Build Dependencies Setupd34e498.txt")    
+[//]: # (Internal note. Do not delete. "Build Dependencies Setupd34e498.txt")
+
 
