@@ -35,7 +35,7 @@ Quick links: Subversive [download page](http://www.eclipse.org/subversive/downlo
 [//]: # (Internal note. Do not delete. "Eclipse Plugind131e119.txt")    
 
 __To install the TeamCity plugin for Eclipse:__
-1. In the top right corner of the TeamCity web UI, click the arrow next to your username, and select __My Settings &amp; Tools__.
+1. In the top right corner of the TeamCity web UI, click the arrow next to your username, and select __Profile__.
 2. Locate the __TeamCity Tools__ section on the right.
 3. Under the __Eclipse plugin__ header, copy the __update site link__ URL. For example, in Internet Explorer you can right\-click the link and choose __Copy shortcut__ from the context menu.
 4. In Eclipse, click __Help | Install New Software__ in the main menu. The __Install__ dialog appears.

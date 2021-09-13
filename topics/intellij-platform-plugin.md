@@ -45,10 +45,10 @@ __To install the TeamCity plugin for IntelliJ platform IDE__:
 
 ### Installing the Plugin Manually
 
-The plugin for IntelliJ platform can be downloaded from the __TeamCity Tools__ area on the __My Settings &amp; Tools__ page of TeamCity web UI.
+The plugin for IntelliJ platform can be downloaded from the __TeamCity Tools__ area on the __Your Profile__ page of TeamCity web UI.
 
 __To install the TeamCity plugin__:
-1. In the top right corner of the TeamCity web UI, click the arrow next to your username, and select __My Settings &amp; Tools__.
+1. In the top right corner of the TeamCity web UI, click the arrow next to your username, and select __Profile__.
 2. On the right, locate the IntelliJ Platform Plugin section in the __TeamCity Tools__ area, click the __download__ link, and save the archive.
 3. In IDE, open the __Settings__ dialog. To do so either press __Ctrl\+Alt\+S__ or choose __File__ &gt; __Settings__ (__Apple__ &gt; __Settings__ on macOS) from the main menu.
 4. Open __Plugins__ section.
