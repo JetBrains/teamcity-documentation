@@ -16,11 +16,11 @@ The _TeamCity Home Directory_ or the _TeamCity Installation Directory_ is the di
 
 * __`/bin`__ — contains executable binary files and scripts (only available in TeamCity `.tar.gz` and `.exe` distributions)
      * `runAll.bat` — batch script to start/stop the server and a build agent from the console under Windows
-     * `runAll.sh` — shell script to start/stop the server and a build agent under Linux/Unix
+     * `runAll.sh` — Shell script to start/stop the server and a build agent under Linux/Unix
      * `teamcity-server.bat` — batch script to start/stop the server only from the console under Windows
-     * `teamcity-server.sh` — shell script to start/stop the server only under Linux/Unix
+     * `teamcity-server.sh` — Shell script to start/stop the server only under Linux/Unix
      * `maintainDB.cmd` — Windows Command line script to [back up, restore, and migrate](creating-backup-via-maintaindb-command-line-tool.md) the server data between different databases
-     * `maintainDB.sh` — shell script to [back up, restore, and migrate](creating-backup-via-maintaindb-command-line-tool.md) the server data between different databases
+     * `maintainDB.sh` — Shell script to [back up, restore, and migrate](creating-backup-via-maintaindb-command-line-tool.md) the server data between different databases
 * __`/buildAgent`__ — [Build Agent Home Directory](agent-home-directory.md)
 * __`/conf`__ — contains all configuration files for the TeamCity server 
     * `server.xml` — the main server configuration file
