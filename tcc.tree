@@ -356,6 +356,7 @@
         <toc-element id="teamcity-2021-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="teamcity-2021-1-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="teamcity-2021-1-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element id="teamcity-2021-1-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
     </toc-element>
     <toc-element toc-title="Other resources">
         <toc-element toc-title="TeamCity On-Premises Documentation" href="https://www.jetbrains.com/help/teamcity/teamcity-documentation.html"/>
