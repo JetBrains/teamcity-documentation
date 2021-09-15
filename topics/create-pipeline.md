@@ -2,6 +2,10 @@
 [//]: # (auxiliary-id: Create Pipeline)
 
 _This tutorial assumes that you have already installed and started your trial TeamCity instance as described [here](quick-setup-guide.md). We also suggest that you learn how to [run a simple build](configure-and-run-your-first-build.md)._
+{product="tc"}
+
+_This tutorial assumes that you have already started your TeamCity instance. We also suggest that you learn how to [run a simple build](configure-and-run-your-first-build.md)._
+{product="tcc"}
 
 In TeamCity terms, a pipeline is called a _build chain_.
 
