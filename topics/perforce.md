@@ -8,7 +8,7 @@ Common VCS root properties are described [here](configuring-vcs-roots.md#Common+
 
 A Perforce client must be installed on the TeamCity server and it should be present in `PATH`. Alternatively, a full path to `p4` could be set via the [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.perforce.customP4Path`. The property value must include the `p4` filename, too.
 If you plan to use the agent-side [checkout mode](vcs-checkout-mode.md#agent-checkout), note that a Perforce client must be installed on the agents, and the path to the p4 executable must be added to the PATH environment variable.  
-Also check [TeamCity and Perforce compatibility](perforce-vcs-compatibility.md).
+Also check [TeamCity and Perforce compatibility](perforce-helix-core-compatibility.md).
 </note>
 
 ## P4 Connection Settings
@@ -275,7 +275,7 @@ Specify additional `p4 sync` options, like `--parallel`. See [command reference]
 ### Perforce Workspace Parameters
 
 With checkout on an agent, TeamCity provides environment variables describing the Perforce workspace created during the checkout process.   
-If several Perforce VCS Roots are used for the checkout, the variables are created for the first VCS root. The variables are:
+If several Perforce VCS roots are used for the checkout, the variables are created for the first VCS root. The variables are:
 * __P4USER__ — same as `vcsroot.<VCS root ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
 * __P4PORT__ — same as `vcsroot.<VCS root ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
 * __P4CLIENT__ — name of the generated P4 workspace on the agent
@@ -377,9 +377,9 @@ All Perforce plugin operations are logged into `teamcity-vcs.log` files with cat
 
 Refer to a [separate page](perforce-workspace-handling-in-teamcity.md).
 
-## Perforce VCS Compatibility
+## Perforce Helix Core Compatibility
 
-Refer to a [separate page](perforce-vcs-compatibility.md).
+Refer to a [separate page](perforce-helix-core-compatibility.md).
 
 ## Perforce Streams as feature branches
 

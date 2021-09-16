@@ -1,5 +1,5 @@
-[//]: # (title: Perforce VCS Compatibility)
-[//]: # (auxiliary-id: Perforce VCS Compatibility)
+[//]: # (title: Perforce Helix Core Compatibility)
+[//]: # (auxiliary-id: Perforce Helix Core Compatibility)
 
 <table><tr>
 

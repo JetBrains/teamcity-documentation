@@ -185,7 +185,7 @@
                   </toc-element>
                   <toc-element id="mercurial.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="perforce.md" show-structure-for="chapter" show-structure-depth="4">
-                     <toc-element id="perforce-vcs-compatibility.md"/>
+                     <toc-element id="perforce-helix-core-compatibility.md"/>
                      <toc-element id="perforce-workspace-handling-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
                      <toc-element id="perforce-streams-as-feature-branches.md" show-structure-for="chapter" show-structure-depth="4"/>
                   </toc-element>

@@ -5,7 +5,7 @@ To perform Perforce-related operations, TeamCity usually operates in a "no-works
 
 The cases when a workspace is created are:
 * [Agent-side checkout](vcs-checkout-mode.md#agent-checkout), the default mode. In this case, TeamCity creates a Perforce workspace to check out the sources.
-* Using [versioned settings](storing-project-settings-in-version-control.md) with Perforce VCS.
+* Using [versioned settings](storing-project-settings-in-version-control.md) with Perforce Helix Core.
 * Using [Perforce streams as feature branches](perforce-streams-as-feature-branches.md). In this case, TeamCity creates workspaces on the Perforce server to correctly process task streams.
 
 ## Perforce Workspace Name
@@ -17,7 +17,7 @@ The name of the workspace also includes the build agent name and a hash value bu
 ## Perforce Workspace Parameters
 
 With [agent-side checkout](vcs-checkout-mode.md#agent-checkout), TeamCity provides environment variables describing the Perforce workspace created during the checkout process.   
-If several Perforce VCS Roots are used for the checkout, the variables are created for the __first__ VCS root in the list of the build's VCS Roots.   
+If several Perforce VCS roots are used for the checkout, the variables are created for the __first__ VCS root in the list of the build's VCS Roots.   
 The variables are:
 * `P4USER` — same as `vcsroot.<VCS root ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
 * `P4PORT` — same as `vcsroot.<VCS root ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
