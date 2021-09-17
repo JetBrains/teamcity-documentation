@@ -429,7 +429,7 @@ For automatic `git gc` support and maintenance of Git clones, requires a Git cli
 
 </td><td></td><td>
 
-A Perforce client installed on the server. See also [Perforce compatibility issues](perforce-vcs-compatibility.md).
+A Perforce client installed on the server. See also [Perforce compatibility issues](perforce-helix-core-compatibility.md).
 
 </td></tr>
 
