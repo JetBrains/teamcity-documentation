@@ -19,7 +19,29 @@ TeamCity version
 
 Comment
 
-</td></tr><tr>
+</td></tr>
+
+<tr>
+
+<td>
+
+2017.1\+
+
+</td>
+
+<td>
+
+2021.2
+
+</td>
+
+<td>
+
+[TW-73075](https://youtrack.jetbrains.com/issue/TW-73075)
+
+</td></tr>
+
+<tr>
 
 <td>
 
@@ -29,7 +51,7 @@ Comment
 
 <td>
 
-2017.1 and later
+2017.1 — 2021.1
 
 </td>
 
@@ -40,10 +62,9 @@ Comment
 
 <td>
 
-2009.1 .. 2016.1
+2009.1 — 2016.1
 
 Feature branches work with 2014.2\+
-
 
 </td>
 
@@ -60,7 +81,7 @@ Feature branches work with 2014.2\+
 
 <td>
 
-2009.1 .. 2015.1
+2009.1 — 2015.1
 
 
 </td>
@@ -81,7 +102,7 @@ Feature branches work with 2014.2\+
 
 <td>
 
-2010.2 .. 2015.1
+2010.2 — 2015.1
 
 
 </td>
@@ -102,31 +123,26 @@ Feature branches work with 2014.2\+
 
 <td>
 
-2009.1 .. 2015.1
+2009.1 — 2015.1
 
 
 </td>
 
 <td>
 
-8.1.x..9.0.x
-
+8.1.x — 9.0.x
 
 </td>
 
 <td>
-
- 
-
 
 </td></tr><tr>
 
 <td>
 
-2009.1 .. 2013.2
+2009.1 — 2013.2
 
-2009.1 .. 2014.1 (might work with later versions, not tested)
-
+2009.1 — 2014.1 (might work with later versions, not tested)
 
 </td>
 
@@ -136,12 +152,9 @@ Feature branches work with 2014.2\+
 
 8.0.6\+
 
-
 </td>
 
 <td>
-
- 
 
 [TW-34128](http://youtrack.jetbrains.com/issue/TW-34128)
 
@@ -150,10 +163,9 @@ Feature branches work with 2014.2\+
 
 <td>
 
-2009.1 .. 2012.1
+2009.1 — 2012.1
 
-2009.1 .. 2013.2
-
+2009.1 — 2013.2
 
 </td>
 
@@ -161,14 +173,12 @@ Feature branches work with 2014.2\+
 
 7.1.2
 
-7.1.3..8.0.5
-
+7.1.3 — 8.0.5
 
 </td>
 
 <td>
 
 [TW-24046](http://youtrack.jetbrains.com/issue/TW-24046)
-
 
 </td></tr></table>
