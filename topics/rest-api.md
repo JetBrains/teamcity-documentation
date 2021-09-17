@@ -45,7 +45,7 @@ Suppose you want to know more on the agents and see (in the `/app/rest/server` r
 ## REST Authentication
 
 You can authenticate in the REST API in the following ways:
-* The preferred way to access REST API is by using the [token-based HTTP authentication](configuring-authentication-settings.md#Token-Based+Authentication). Provide your personal TeamCity access token generated on __My Settings &amp; Tools | Access Tokens__ in the HTTP header `Authorization: Bearer <token-value>`. For example:
+* The preferred way to access REST API is by using the [token-based HTTP authentication](configuring-authentication-settings.md#Token-Based+Authentication). Provide your personal TeamCity access token generated on __Your Profile | Access Tokens__ in the HTTP header `Authorization: Bearer <token-value>`. For example:
     ```Shell
     curl --header "Authorization: Bearer <token-value>" http://teamcity:8111/app/rest/builds
     ```

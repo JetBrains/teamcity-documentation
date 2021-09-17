@@ -29,7 +29,7 @@ TeamCity allows you to flexibly adjust the notification rules, so that you recei
 * __IDE Notifier__: the required TeamCity plugin must be installed in your IDE. For the details on installing TeamCity IDE plugins, refer to [Installing Tools](installing-tools.md).
 * __Jabber Notifier__*: expects entering a Jabber account name. Note that instead of Jabber you can specify your Google Talk account here if this option is [configured by the System Administrator](setting-up-google-mail-and-google-talk-as-notification-servers.md#Google+Talk).
 {product="tc"}
-* __Slack Notifier__: requires signing in to Slack and relies on the Slack connection configured in the project settings. Read more on how to configure the connection to Slack in [Notifications](notifications.md#Configuring+Slack+Connection).
+* __Slack Notifier__: requires signing in to Slack and relies on the Slack connection configured in the project settings. Read more on how to configure the connection to Slack [here](configuring-connections.md#Slack).
 * (obsolete) __Windows Tray Notifier__: [Windows Tray Notifier](windows-tray-notifier.md) must be installed.
 {product="tc"}
 * __Browser Notifier__: aims at replacing Windows Tray Notifier and requires installing the [web browser extension](browser-notifier.md).

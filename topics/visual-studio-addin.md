@@ -26,7 +26,7 @@ To enable navigation to the failed tests in MS Visual Studio by using _Open in I
 
 1. Close all running instances of Visual Studio before starting the Add-in installation (initial or upgrade).
 2. Navigate to the download page of the Visual Studio Add-in:
-   * Click the arrow next to your username in the top right corner of the TeamCity web UI and select __My Settings &amp; Tools__.
+   * Click the arrow next to your username in the top right corner of the TeamCity web UI and select __Profile__.
    * In the __TeamCity Tools__ section on the right, click the Visual Studio Add\-in download link.
 
 The TeamCity Visual Studio Add-in is shipped as a part of [ReSharper Ultimate](https://www.jetbrains.com/dotnet/) products bundle. After installation, the TeamCity add-in will be available under the RESHARPER menu in Visual Studio.

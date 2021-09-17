@@ -7,6 +7,11 @@
          <toc-element id="continuous-integration-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="quick-setup-guide.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="configure-and-run-your-first-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="create-pipeline.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="deploy-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="view-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="solve-build-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="set-up-notifications.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="concepts.md" hidden="true"/>
       <toc-element toc-title="Concepts">
@@ -76,7 +81,6 @@
          </toc-element>
          <toc-element id="installation.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="installing-and-configuring-the-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4">
-               <toc-element id="csrf-protection.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="running-teamcity-stack-in-aws.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
             </toc-element>
             <toc-element id="setting-up-and-running-additional-build-agents.md" show-structure-for="chapter" show-structure-depth="4">
@@ -118,6 +122,15 @@
       </toc-element>
       <toc-element id="administrator-s-guide.md" hidden="true"/>
       <toc-element toc-title="Administrator's Guide">
+         <toc-element toc-title="Secure TeamCity">
+            <toc-element id="security-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="csrf-protection.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="using-https-to-access-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="uploading-ssl-certificates.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="content-security-policy-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="configuring-proxy-server.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="security-actions.md" show-structure-for="chapter" show-structure-depth="4"/>
+         </toc-element>
          <toc-element id="teamcity-configuration-and-maintenance.md">
             <toc-element id="configuring-authentication-settings.md" show-structure-for="chapter" show-structure-depth="4">
                <toc-element id="ldap-integration.md" show-structure-for="chapter" show-structure-depth="4">
@@ -127,7 +140,6 @@
                <toc-element id="ntlm-http-authentication.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="enabling-guest-login.md"/>
                <toc-element id="enabling-email-verification.md"/>
-               <toc-element id="security-actions.md"/>
             </toc-element>
             <toc-element id="teamcity-data-backup.md">
                <toc-element id="creating-backup-from-teamcity-web-ui.md"/>
@@ -144,7 +156,6 @@
                <toc-element id="teamcity-tweaks.md"/>
             </toc-element>
             <toc-element id="setting-up-google-mail-and-google-talk-as-notification-servers.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="using-https-to-access-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="teamcity-disk-space-watcher.md"/>
             <toc-element id="teamcity-server-logs.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-agents-configuration-and-maintenance.md" show-structure-for="chapter" show-structure-depth="4">
@@ -160,10 +171,7 @@
             <toc-element id="build-time-report.md"/>
             <toc-element id="teamcity-monitoring-and-diagnostics.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="search-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="uploading-ssl-certificates.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="content-security-policy-in-teamcity.md"/>
          </toc-element>
-         <toc-element id="security-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="multinode-setup.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="configuring-secondary-node.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
          <toc-element id="managing-projects-and-build-configurations.md">
@@ -177,7 +185,7 @@
                   </toc-element>
                   <toc-element id="mercurial.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="perforce.md" show-structure-for="chapter" show-structure-depth="4">
-                     <toc-element id="perforce-vcs-compatibility.md"/>
+                     <toc-element id="perforce-helix-core-compatibility.md"/>
                      <toc-element id="perforce-workspace-handling-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
                      <toc-element id="perforce-streams-as-feature-branches.md" show-structure-for="chapter" show-structure-depth="4"/>
                   </toc-element>
@@ -191,6 +199,9 @@
                </toc-element>
                <toc-element id="vcs-checkout-rules.md"/>
                <toc-element id="vcs-checkout-mode.md"/>
+            </toc-element>
+            <toc-element id="configuring-connections.md" show-structure-for="chapter" show-structure-depth="4">
+               <toc-element id="configuring-connections-to-docker.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
             <toc-element id="storing-project-settings-in-version-control.md" show-structure-for="chapter" show-structure-depth="4">
                <toc-element id="kotlin-dsl.md" show-structure-for="chapter" show-structure-depth="4">
@@ -336,7 +347,6 @@
             <toc-element id="integrating-teamcity-with-vcs-hosting-services.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="integrating-teamcity-with-docker.md" show-structure-for="chapter" show-structure-depth="4">
                <toc-element id="docker-wrapper.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="configuring-connections-to-docker.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
             <toc-element id="integrating-teamcity-with-issue-tracker.md" show-structure-for="chapter" show-structure-depth="4">
                <toc-element id="bitbucket-cloud.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -418,6 +428,7 @@
       <toc-element id="teamcity-2021-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="teamcity-2021-1-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="teamcity-2021-1-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="teamcity-2021-1-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
    </toc-element>
    <toc-element id="what-s-new-in-teamcity-2020-2.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
       <toc-element id="teamcity-2020-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
@@ -433,7 +444,7 @@
       <toc-element id="teamcity-cloud.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
       <toc-element toc-title="TeamCity Cloud Documentation" href="https://www.jetbrains.com/help/teamcity/cloud/teamcity-cloud-documentation.html"/>
       <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
-      <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/"/>
+      <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/tc-welcome.html"/>
       <toc-element id="documentation-for-previous-versions.md"/>
       <toc-element toc-title="TeamCity Roadmap" href="https://www.jetbrains.com/teamcity/roadmap/"/>
       <toc-element toc-title="TeamCity Blog" href="https://blog.jetbrains.com/teamcity/"/>

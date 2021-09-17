@@ -23,32 +23,9 @@ Note that TeamCity Email Notifier relies on the SMTP server settings configured 
 
 ## Slack Notifier
 
-The Slack Notifier feature relies on a [Slack connection](#Configuring+Slack+Connection) that should be preconfigured in the parent project's settings.
-
-### Configuring Slack Connection
-
-The TeamCity integration with Slack requires creating a [Slack app](https://api.slack.com/apps) with the following [bot token scopes](https://api.slack.com/scopes): `channels:read`, `chat:write`, `im:read`, `im:write`, `users:read`, `team:read`, `groups:read`. You can add these in __Features | OAuth & Permissions | Scopes__ of your Slack app.
-
-To ensure your TeamCity server can connect to Slack, specify all the possible endpoint addresses of the server as __Redirect URLs__ in __Features | OAuth & Permissions__. In most cases, it would be enough to specify the _Server URL_ set in __[Global Settings](configuring-server-url.md)__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication in Slack might not work unless the server's IP address is also specified in __Redirect URLs__.
-{product="tc"}
-
-To ensure your TeamCity server can connect to Slack, specify its address as __Redirect URL__ in __Features | OAuth & Permissions__.
-{product="tcc"}
-
->See this [Basic app setup](https://api.slack.com/authentication/basics) guide for more details.
-
-Now you can return to TeamCity and configure a connection to Slack. Go to __Project Settings | Connections__ and click __Add Connection__. In the opened form, select the _Slack_ type and give a connection any convenient name.
-
-Enter the app parameters:
-* _Client ID_ and _Secret_ from the app's __Basic Information__ page
-* a [bot user token](https://api.slack.com/docs/token-types#bot) of your app
-
-Save the connection and proceed with [adding the Notifier feature](#Configuring+Slack+Notifier).
-
-### Configuring Slack Notifier
+The Slack Notifier feature relies on a [Slack connection](configuring-connections.md#Slack) that should be preconfigured in the parent project's settings.
 
 After configuring the connection, go to the settings of the build configuration you want to receive notifications for:
-
 1. In __Build Features__, add the _Notifications_ feature and select _Slack Notifier_.
 2. Choose the created connection.
 3. Enter the ID of a channel or user who will be receiving notifications.   

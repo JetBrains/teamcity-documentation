@@ -2,14 +2,14 @@
 [//]: # (auxiliary-id: Configuring Connections to Docker)
 
 A preconfigured Docker connection allows you to:
-* log in to an authenticated registry before running a build / log out after the build;
+* sign in to an authenticated registry before running a build / sign out after the build;
 * clean up the published images after the build.
 
 >This type of connection is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
 
-You can configure a _Docker Registry_ connection on the __Project Settings | Connections__ page. TeamCity supports connections to [docker.io](http://docker.io/) (default) or private Docker registries. More than one connection can be added to the project. The connection will be available in all the subprojects and build configurations of the current project.
+You can configure a _Docker Registry_ connection on the __Project Settings | Connections__ page. TeamCity supports connections to [docker.io](http://docker.io/) (default) or private Docker registries. More than one connection can be added to a project. The connection will be available in all the subprojects and build configurations of the current project.
 
->After configuring the Docker Registry connection for a TeamCity project, you need to select it when adding the [Docker Support](docker-support.md) feature to the respective build configuration.
+>After configuring the Docker Registry connection for a TeamCity project, you need to select it when adding a [Docker Support](docker-support.md) feature to the respective build configuration.
 > 
 {type="note"}
 

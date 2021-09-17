@@ -12,7 +12,7 @@ The Windows Tray Notifier is an utility which allows monitoring the status of sp
 ## Installing Windows Tray Notifier
 
 To install the Windows Tray Notifier:
-1. In the top right corner of the TeamCity web UI, click the arrow next to your username, and select __My Settings &amp; Tools__.
+1. In the top right corner of the TeamCity web UI, click the arrow next to your username, and select __Profile__.
 2. In the __TeamCity Tools__ area, click the __download__ link under __Windows tray notifier__.
 3. Run the TrayNotifierInstaller.msi file and follow the instructions.
 
@@ -22,7 +22,7 @@ To launch Windows Tray Notifier, run the __Start &gt; Programs &gt; JetBrains Te
 
 When the application started, you need to connect and log in to your server:
 1. Specify your TeamCity server URL and credentials to log in to it.
-2. Wait for the notifier to connect to your TeamCity server. Once the connection is established, you'll be prompted to configure notification rules in the __My Settings &amp; Tools | Notification rules | Windows Tray Notifier__ section: <img src="windows-tray-notifier.png" width="750" alt="Windows Tray Notifier"/>
+2. Wait for the notifier to connect to your TeamCity server. Once the connection is established, you'll be prompted to configure notification rules in the __Your Profile | Notification Rules | Windows Tray Notifier__ section: <img src="windows-tray-notifier.png" width="750" alt="Windows Tray Notifier"/>
 3. When Windows Tray Notifier is launched, the [status icon](#Status+Icons) in the Windows System Tray appears.
 
 ## Windows Tray Notifier UI

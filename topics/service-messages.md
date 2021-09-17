@@ -62,7 +62,7 @@ Service messages support two formats:
     ```
 
 where:
- * `messageName` is the name of the message. Must be a valid Java ID (only alphanumeric characters and `-`, starting with a letter).
+ * `messageName` is the name of the message, such as `flowStarted` or `setParameter`.
  * `propertyName` is a name of the message attribute. Must be a valid Java ID.
  * `value` is a value of the attribute. Must be an [escaped value](#Escaped+values).
  * `WSP` is a required whitespace(s): space or tab character (`\t`).
@@ -247,12 +247,12 @@ When you absolutely need to start a flow not inside the root flow but as a subfl
 To end a subflow, use the `flowFinished` parameter. Ending a parent flow automatically closes all its subflows, but we recommend declaring the flow order explicitly:
 
 ```Shell
-##teamcity[<messageName> flowStarted flowId='MainFlow' ...]
-##teamcity[<messageName> flowStarted flowId='SubFlow1' parent='MainFlow' ...]
-##teamcity[<messageName> flowFinished flowId='SubFlow1' ...]
-##teamcity[<messageName> flowStarted flowId='SubFlow2' parent='MainFlow' ...]
-##teamcity[<messageName> flowFinished flowId='SubFlow2' ...]
-##teamcity[<messageName> flowFinished flowId='MainFlow' ...]
+##teamcity[flowStarted flowId='MainFlow' ...]
+##teamcity[flowStarted flowId='SubFlow1' parent='MainFlow' ...]
+##teamcity[flowFinished flowId='SubFlow1' ...]
+##teamcity[flowStarted flowId='SubFlow2' parent='MainFlow' ...]
+##teamcity[flowFinished flowId='SubFlow2' ...]
+##teamcity[flowFinished flowId='MainFlow' ...]
 
 ```
 

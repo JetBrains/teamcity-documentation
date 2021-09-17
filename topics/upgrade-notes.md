@@ -14,11 +14,15 @@ EAP2 build:
   * Upgrade the server to version 2021.1, wait until all the agents upgrade as well, and then upgrade the server to 2021.2.
   * Upgrade the server to version 2021.2, uninstall the old agents manually, and then [install the new agents](setting-up-and-running-additional-build-agents.md).
 
+## Changes from 2021.1.2 to 2021.1.3
+
+No noteworthy updates.
+
 ## Changes from 2021.1.1 to 2021.1.2
 
 * If you run a [personal build](personal-build.md) that is a part of a [build chain](build-chain.md), all its dependency builds will now be run as personal builds as well.  
   However, if you enable the [reuse of suitable builds](snapshot-dependencies.md#Suitable+Builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
-  
+
 ## Changes from 2021.1 to 2021.1.1
 
 ### Known Issues
@@ -268,10 +272,10 @@ The bundled Jira Cloud plugin will be automatically updated with this fix in our
 
 #### Bad Redirect URI error when authenticating in Slack
 
-To be able to sign in to Slack from TeamCity, you need to specify all the possible URIs of the TeamCity server as _Redirect URLs_ in the [Slack app's](notifications.md#Configuring+Slack+Connection) settings.   
+To be able to sign in to Slack from TeamCity, you need to specify all the possible URIs of the TeamCity server as _Redirect URLs_ in the [Slack app's](configuring-connections.md#Slack) settings.   
 If you use nginx to set up TeamCity behind a proxy server, you might still get the `bad_redirect_uri` error when trying to establish a connection with Slack. This error is caused by the mismatch between the nginx and Tomcat configuration.
 
-To workaround this issue, download the fixed plugin, attached to the [related issue](https://youtrack.jetbrains.com/issue/TW-66113), and install it as described [here](installing-additional-plugins.md). Alternatively, you can try [updating the Tomcat settings](how-to.md#Proxy-Tomcat-RemoteIpValve).   
+To workaround this issue, download the fixed plugin, attached to the [related issue](https://youtrack.jetbrains.com/issue/TW-66113), and install it as described [here](installing-additional-plugins.md). Alternatively, you can try [updating the Tomcat settings](configuring-proxy-server.md#Proxy-Tomcat-RemoteIpValve).   
 The bundled Slack plugin will be automatically updated with this fix in our next release.
 
 #### Problems with built-in authentication in upgraded 2020.1 EAP1 installations

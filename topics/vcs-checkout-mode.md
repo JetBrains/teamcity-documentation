@@ -41,7 +41,9 @@ TeamCity falls back to the server-side checkout in the following cases:
 
 * No Git or Mercurial client is found on the agent.
 * The Git or Mercurial client is present on the agent, but is of the wrong version.
-* If a Perforce client cannot be found on the agent using the same rules as while performing actual checkout or if stream depot is used and the checkout rules are complex (other than . =&gt; A ).
+* Perforce:
+  * If Perforce client cannot be found on the agent.
+  * If a stream depot is used and the checkout rules are non-trivial (other than `. => A`). To disable the fallback in this case, you can enable the _Create non-stream workspace_ option in the [Perforce root](perforce.md) settings. Note that it will prevent commits to streams during the build.
 
 </td></tr><tr>
 

@@ -1,4 +1,4 @@
-[//]: # (title: Build Statuses)
+[//]: # (title: Build State)
 [//]: # (auxiliary-id: Build State)
 
 The build state icon appears next to each build under the expanded view of the build configuration on the __Projects__ page.

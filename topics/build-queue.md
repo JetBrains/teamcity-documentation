@@ -48,7 +48,7 @@ You can do the following:
 
 ### Pausing/Resuming Build Queue
 
-The build queue can be paused manually or automatically.
+The build queue can be paused manually or automatically. In this case, the builds are still going to be added to the queue, but they will not be assigned to agents until the queue is unpaused.
 
 Users with the _Enable/disable agent_ permission (included in the [Agent Manager](role-and-permission.md#Per-Project+Authorization+Mode) role by default) can manually pause/resume the build queue (since pausing the queue is equivalent to disabling all agents on the server). This action is available in the upper right corner of the __Build Queue__ page.
 

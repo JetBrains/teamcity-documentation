@@ -259,7 +259,7 @@ Examples:
 
 * `install.zip` — publish a file named `install.zip` in the build artifacts.
 * `dist` — publish the content of the dist directory.
-* `target/*.jar` — publish all jar files in the target directory.
+* `target/*.jar` — publish all `jar` files in the target directory.
 * `target/**/*.txt=> docs` — publish all the txt files found in the target directory and its subdirectories. The files will be available in the build artifacts under the `docs` directory.
 * `reports => reports, distrib/idea*.zip` — publish reports directory as reports and files matching `idea*.zip` from the `distrib` directory into the artifacts root.
 * Relative paths inside a zip archive can be used, if needed: `results\result1\Dir1\Dir2 => archive.zip!results/result1/Dir1`.

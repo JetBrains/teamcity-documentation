@@ -19,7 +19,7 @@ Any page that supports the experimental UI has a toggle that allows quickly acce
 
 Currently, the experimental UI is available for the following pages:
 * __[Project Home](#Experimental+Project+Home+page)__ and __[Build Configuration Home](#Experimental+Build+Configuration+Home+page)__ pages: redesigned __Overview__ tab
-* __[Build Details](#Experimental+Build+Details+page)__ page: redesigned __Overview__, __Tests__ (and __Test History__, __Changes__, __Build Log__, and __Dependencies__ tabs
+* __[Build Results](#Experimental+Build+Results+page)__ page: redesigned __Overview__, __Tests__ (and __Test History__, __Changes__, __Build Log__, and __Dependencies__ tabs
 * __[Agents](#Experimental+Agents+page)__ page
 * __[Queue](#Experimental+Queue+page)__ page
 
@@ -45,7 +45,7 @@ All the classic UI tabs are also available on the experimental page: click __Mor
 
 The __Overview__ tab of the experimental __Build Configuration Home__ page provides two already familiar views: __Builds__, listing all the recent builds of the configuration, and __Branches__, listing the recent builds in active branches.
 
-Every build item in the list is expandable: click it to preview the most important information about the build and get quick access to any of the __Build Details__ tabs.
+Every build item in the list is expandable: click it to preview the most important information about the build and get quick access to any of the __Build Results__ tabs.
 
 <img src="exp-build-home.png" alt="Experimental Build Home page"/>
 
@@ -61,11 +61,11 @@ Example of the _Changes_ pop-up block:
 
 All the classic UI tabs of __Build Configuration Home__ are also available on the experimental page: click __More__ and select the required tab in the list.
 
-### Experimental Build Details page
+### Experimental Build Results page
 
-The new __Build Details__ page offers better visualization of the build results and provides a few handy widgets.
+The new __Build Results__ page offers better visualization of the build results and provides a few handy widgets.
 
-<img src="exp-build-details.png" alt="Experimental Build Details page"/>
+<img src="exp-build-details.png" alt="Experimental Build Results page"/>
 
 With the __Trends__ block, you can instantly preview all the previous builds and their details, without leaving the current build page:
 

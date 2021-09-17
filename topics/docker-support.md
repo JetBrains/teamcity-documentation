@@ -41,6 +41,142 @@ If you need to log in to a registry requiring authentication before a build, sel
 
 >[See also](integrating-teamcity-with-docker.md#Conforming+with+Docker+download+rate+limits) how to use this functionality to double the number of pulls allowed to a Free Docker Hub user profile.
 
+## Amazon ECR
+
+A connection to Amazon Elastic Container Registry (ECR) allows storing Docker images in private AWS registries. For this, such a connection needs to be selected when adding a [Docker Support](docker-support.md) feature to a build configuration.
+
+Connection settings:
+
+<table>
+<tr>
+<td>
+
+Setting
+
+</td>
+<td>
+
+Description
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+AWS region
+
+</td>
+<td>
+
+Select an AWS region where the target resources are located.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+Credentials type
+
+</td>
+<td>
+
+* __Access key__: select to use preconfigured AWS account access keys. You can find them in the [Identity and Access Management](https://console.aws.amazon.com/iam) section of your AWS console.
+* __Temporary credentials__: get [temporary access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) via AWS STS. Such credentials are short-term and do not belong to a specific user.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+IAM role ARN
+
+(_only for Temporary credentials_)
+
+</td>
+<td>
+
+Specify a role to be used for generating temporary credentials. You need to [create this role in advance](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html) in your AWS console and assign it to all the necessary permissions.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+External ID
+
+(_only for Temporary credentials_)
+
+</td>
+<td>
+
+Specify an [external ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html). We strongly recommend that you always define it when using temporary credentials. This ensures that only TeamCity will be able to use the specified IAM role.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+Default credential provider chain
+
+</td>
+<td>
+
+Enable this option to automatically find access keys according to the [default chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+Access key ID
+
+</td>
+<td>
+
+Specify the access key ID.
+
+See how to get it [here](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html).
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+Secret access key
+
+</td>
+<td>
+
+Specify the secret access key.
+
+See how to get it [here](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html).
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+Registry ID
+
+</td>
+<td>
+
+Enter an ID of your registry or AWS account.
+
+</td>
+</tr>
+
+</table>
+
+
 <seealso>
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-docker.md">Integrating TeamCity with Docker</a>
