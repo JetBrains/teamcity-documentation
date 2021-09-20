@@ -5,6 +5,8 @@
 
 The _Perforce shelve trigger_ automatically runs a build on detecting a change in [shelved Perforce files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html).
 
+>You can also run such a build manually, with the [custom run](running-custom-build.md).
+
 The trigger supports Perforce 2018.2 or later.
 
 ## Settings
