@@ -508,9 +508,9 @@ To sign in, click the JetBrains Space icon above the TeamCity login form and, af
 >
 {type="note"}
 
-Before enabling this module, you need to create a [dedicated connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps+Services) to your Azure DevOps Services in the Root project's settings.
+Before enabling this module, you need to create a [dedicated connection](configuring-connections.md#Azure+DevOps) to your Azure DevOps Services in the Root project's settings.
 
-To enable the module, in __Administation | Authentication__:
+To enable the module, in __Administration | Authentication__:
 1. Click __Add module__ and choose the _Azure DevOps OAuth 2.0_ type.
 2. Choose if you want to allow creating new users on the first login. If you disable this option, TeamCity will not create a new TeamCity user when their Azure AD account is not recognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 3. Choose if you want to restrict the access only to members of specific [Azure DevOps organizations](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/organization-management?view=azure-devops). Specify their IDs separated by comma. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
