@@ -25,7 +25,7 @@ TeamCity provides several preconfigured authentication options (presets) to cove
   * [GitHub Enterprise](#GitHub+Enterprise)
   * [GitLab.com](#GitLab.com)
   * [GitLab CE/EE](#GitLab+CE%2FEE)
-  * (In terms of TeamCity 2021.2 EAP) [JetBrains Space](#connect-to-jetbrains-space)
+  * (In terms of TeamCity 2021.2 EAP) [JetBrains Space](#JetBrains+Space)
   * (In terms of TeamCity 2021.2 EAP) [Azure DevOps Services](#Azure+DevOps+Services)
 
 >If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure single sign-on (SSO) from the TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).

@@ -15,6 +15,8 @@ There are two types of Azure DevOps connections in TeamCity:
 * In terms of TeamCity 2021.2 EAP: __Azure DevOps OAuth 2.0__ is the recommended type. It allows creating projects from Azure Git repositories and signing in to TeamCity via an Azure AD account.
 * __Azure DevOps PAT__ is the obsolete type of connection, previously used for connecting to Team Foundation Server. It is left for compatibility, as it allows connecting to both Git and TFVC repositories.
 
+<anchor name="azure-devops-connection"/>
+
 #### Azure DevOps OAuth 2.0 Connection
 {id="Connecting to Azure DevOps" auxiliary-id="Connecting to Azure DevOps"}
 
@@ -294,6 +296,8 @@ Now you can return to TeamCity, add a new Slack connection, and enter the follow
 * a [bot user token](https://api.slack.com/docs/token-types#bot) of your app.
 
 Save the connection and proceed with adding a [Notifier](notifications.md#Slack+Notifier) build feature.
+
+<anchor name="jetbrains-space-connection"/>
 
 ## JetBrains Space
 {id="connect-to-jetbrains-space" auxiliary-id="Connect to JetBrains Space"}
