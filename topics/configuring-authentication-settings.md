@@ -494,7 +494,7 @@ Leave empty to allow all GitLab users to access the TeamCity server.
 > 
 {type="note"}
 
-Before enabling this module, you need to create a dedicated application in JetBrains Space and configure a connection to it in the Root project's settings, as described [here](configuring-connections.md#connect-to-jetbrains-space).
+Before enabling this module, you need to create a dedicated application in JetBrains Space and configure a connection to it in the Root project's settings, as described [here](configuring-connections.md#Connect+to+JetBrains+Space).
 
 After the connection is configured, go to __Administration | Authentication__ and:
 1. Click __Add module__ and choose the _JetBrains Space_ type.

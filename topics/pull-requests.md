@@ -512,7 +512,7 @@ Specify a project URL for synchronization with the remote Azure DevOps server. T
 
 TeamCity processes [JetBrains Space](https://www.jetbrains.com/space/) merge requests similarly to how it processes pull requests in other hosting services.
 
-This feature requires configuring a [connection to JetBrains Space](configuring-connections.md#JetBrains+Space).
+This feature requires configuring a [connection to JetBrains Space](configuring-connections.md#Connect+to+JetBrains+Space).
 
 When configuring the feature, define the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. If left blank, no filters will apply.
 
