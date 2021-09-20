@@ -13,6 +13,10 @@ EAP2 build:
   To upgrade TeamCity from versions earlier than 9.1, where the unidirectional support was first introduced, to 2021.2, use one of the following approaches:
   * Upgrade the server to version 2021.1, wait until all the agents upgrade as well, and then upgrade the server to 2021.2.
   * Upgrade the server to version 2021.2, uninstall the old agents manually, and then [install the new agents](setting-up-and-running-additional-build-agents.md).
+  
+EAP3 build:
+* The bundled Kotlin compiler, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version 1.5.
+* Fixed an inconsistent [clean-up](clean-up.md) behavior in build chains. Previously, builds in an artifact dependency configuration were never cleaned up if its dependent configuration had a snapshot dependency on another build and this build was set to be preserved. This included the case when the "_Do not prevent clean-up_" option was enabled in the respective clean-up rule. Now, the artifact dependency configuration will be cleaned up properly, according to its clean-up rules.
 
 ## Changes from 2021.1.2 to 2021.1.3
 
