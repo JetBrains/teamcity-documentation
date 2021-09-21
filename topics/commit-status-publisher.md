@@ -61,7 +61,7 @@ Personal access tokens can be used for authentication. If a [VSTS connection](in
 
 ### JetBrains Space
 
-To establish integration with [JetBrains Space](https://www.jetbrains.com/space/), you need to create a predefined connection to it, as described [here](configuring-connections.md#Connect+to+JetBrains+Space).
+To establish integration with [JetBrains Space](https://www.jetbrains.com/space/), you need to create a predefined connection to it, as described [here](configuring-connections.md#jetbrains-space-connection).
 
 Then, in the build configuration's settings:
 1. Open __Build Features__ and add the _Commit status publisher_ build feature.
