@@ -510,11 +510,12 @@ Specify a project URL for synchronization with the remote Azure DevOps server. T
 
 ### JetBrains Space Merge Requests
 
-TeamCity processes [JetBrains Space](https://www.jetbrains.com/space/) merge requests similarly to how it processes pull requests in other hosting services.
+In case with [JetBrains Space](https://www.jetbrains.com/space/), this build feature monitors directly source branches in a source repository (forks are not supported).  
+If more than one merge request is submitted from the same source branch at the moment of the build start, TeamCity will display all these requests in the build results. However, only commits from the open requests matching the filtering criteria will be displayed as _Changes_ of the build.
 
-This feature requires configuring a [connection to JetBrains Space](configuring-connections.md#jetbrains-space-connection).
+This feature requires a [connection to JetBrains Space](configuring-connections.md#jetbrains-space-connection).
 
-When configuring the feature, define the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. If left blank, no filters will apply.
+In the feature settings, you can define the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. If left blank, no filters will apply.
 
 ## Predefined build parameters for pull requests
 
