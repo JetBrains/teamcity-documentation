@@ -14,8 +14,7 @@ We suggest that you only enable the mandatory mode after introducing the optiona
 ## 2FA REST API Endpoints
 
 To manage 2FA through the [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html), use the following endpoints:
-
-* `/2FA/setup` — returns a new secret key, the set pf recovery keys, and the UUID for the unconfirmed lookup of secret keys.
+* `/2FA/setup` — returns a new secret key, the set of recovery keys, and the UUID for the unconfirmed lookup of secret keys.
 * `/2FA/{userLocator}/disable` — disable 2FA for a given user, can be used by a user themselves of by the administrator.
 * `/2FA/confirm` — takes the UUID and password as parameters, looks up the unconfirmed secret key by the provided UUID. After that, the TOTP 6-digit password for this key is generated. If the password parameter is correct, the secret key is confirmed and 2FA is enabled.
 * `/2FA/newRecoveryKeys` — generates, sets, and returns new recovery keys for a user with active 2FA. Format of recovery keys: `[0-9a-f]{6}-[0-9a-f]{6}`.
