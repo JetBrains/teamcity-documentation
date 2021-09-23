@@ -1,7 +1,7 @@
 [//]: # (title: Ruby Environment Configurator)
 [//]: # (auxiliary-id: Ruby Environment Configurator)
 
-The _Ruby environment configurator_ build feature passes Ruby interpreter to all build steps. The build feature adds the selected Ruby interpreter and gems bin directories to the system PATH environment variable and configures other necessary environment variables in case of the [RVM](http://rvm.io/) interpreter. For example, in the [Command Line](command-line.md) build runner you will be able to directly use such commands as `ruby`, `rake`, `gem`, `bundle`, and so on. Thus, if you want to install gems before launching the [Rake](rake.md) build runner, you need to add the [Command Line](command-line.md) build step which launches a custom script, for example:
+The _Ruby environment configurator_ [build feature](adding-build-features.md) passes Ruby interpreter to all build steps. The build feature adds the selected Ruby interpreter and gems bin directories to the system PATH environment variable and configures other necessary environment variables in case of the [RVM](http://rvm.io/) interpreter. For example, in the [Command Line](command-line.md) build runner you will be able to directly use such commands as `ruby`, `rake`, `gem`, `bundle`, and so on. Thus, if you want to install gems before launching the [Rake](rake.md) build runner, you need to add the [Command Line](command-line.md) build step which launches a custom script, for example:
 
 ```Shell
 gem install rake --no-ri --no-rdoc

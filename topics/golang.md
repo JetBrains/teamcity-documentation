@@ -1,7 +1,7 @@
 [//]: # (title: Golang)
 [//]: # (auxiliary-id: Golang)
 
-The Golang build feature enables the real-time reporting and history of Go test results in TeamCity.
+The Golang [build feature](adding-build-features.md) enables the real-time reporting and history of Go test results in TeamCity.
 
 Before running builds, make sure a Go compiler is installed on an agent.
 
