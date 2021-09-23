@@ -12,6 +12,10 @@ TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager 
     * [NuGet Publish](nuget-publish.md) build runner, which publishes packages to a feed of your choice.
 * [NuGet dependency trigger](nuget-dependency-trigger.md), which allows triggering builds on NuGet feed updates.
 
+>Note that TeamCity Cloud currently doesn't support automatic delivery of tools to [build agents](build-agent.md). To be able to use the NuGet runners, you need to download and install the required version of NuGet on the agent. You can do this manually (only on self-hosted agents) or via any convenient utility step at the beginning of the build (for example, [Command Line](command-line.md)). When configuring a NuGet build step, you will need to specify the path to NuGet relatively to the [build checkout directory](build-checkout-directory.md).
+>
+{type="warning" product="tcc"}
+
 <chunk include-id="nuget-OS">
 
 __Supported Operating Systems__:   
@@ -36,6 +40,7 @@ NuGet build runners are supported on build agents running Windows OS by default.
 * To trigger a new build when a NuGet package is updated, use the [NuGet Dependency Trigger](nuget-dependency-trigger.md).
 
 ## Installing NuGet to TeamCity agents
+{product="tc"}
 
 [//]: # (AltHead:installNuGet)
 

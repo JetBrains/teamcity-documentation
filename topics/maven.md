@@ -9,6 +9,10 @@ Note that you can create a new Maven-based build configuration [automatically fr
 > 
 {type="note"}
 
+>Note that TeamCity Cloud currently doesn't support automatic delivery of tools to [build agents](build-agent.md). To be able to use this runner, you need to download and install the required version of NuGet on the agent. You can do this manually (only on self-hosted agents) or via any convenient utility step at the beginning of the build (for example, [Command Line](command-line.md)). When configuring a NuGet build step, you will need to specify the path to NuGet relatively to the [build checkout directory](build-checkout-directory.md).
+>
+{type="warning" product="tcc"}
+
 ## Maven runner settings
 
 <table><tr>
