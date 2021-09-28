@@ -3,7 +3,7 @@
 
 TeamCity stores build history, users, build results, and some run time data in an SQL database. See also the description of what is stored where on the [Manual Backup and Restore](manual-backup-and-restore.md) page.
 
-If you evaluated TeamCity with the internal database which is [not recommended for production](#Default+Internal+Database), refer to [Migrating to an External Database](migrating-to-an-external-database.md).
+If you evaluated TeamCity with the internal database which is [not recommended for production](#Default+Internal+Database), refer to [Migrating to an External Database](migrating-to-external-database.md).
 
 The current database in use is shown on the __Administration | Global Settings__ page in the _Database_ field and also is mentioned in `teamcity-server.log` on the server startup. `HSQL*` means that the internal database is in use.
 
@@ -13,7 +13,7 @@ On the first TeamCity run, using an internal database based on the HSQLDB databa
 
 However, we strongly recommend using an external database as a backend TeamCity database in a production environment. An external database is usually more reliable and provides better performance: the internal database may crash and lose all your data (for example, on the "out of disk space" condition). Also, the internal database may become extremely slow on large data sets (say, database storage files over 200Mb). Also note that our support does not cover any performance or database data loss issues if you are using the internal database.
 
-In short, __do not EVER use internal HSQLDB database for production TeamCity instances__. [Migrate to an external database](migrating-to-an-external-database.md) the moment you start to rely on the data stored in TeamCity server.
+In short, __do not EVER use internal HSQLDB database for production TeamCity instances__. [Migrate to an external database](migrating-to-external-database.md) the moment you start to rely on the data stored in TeamCity server.
 
 ## Selecting External Database Engine
 [//]: # (AltHead: selectingDatabase)
@@ -201,7 +201,7 @@ TeamCity uses Apache DBCP for database connection pooling. Refer to [Apache Comm
  <seealso>
         <category ref="installation">
             <a href="common-problems.md">Common database-related problems</a>
-            <a href="migrating-to-an-external-database.md">Migrating to an External Database</a>
+            <a href="migrating-to-external-database.md">Migrating to an External Database</a>
         </category>
         <category ref="concepts">
             <a href="teamcity-data-directory.md">TeamCity Data Directory</a>
