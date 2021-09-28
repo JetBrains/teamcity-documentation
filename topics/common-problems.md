@@ -111,7 +111,7 @@ Here is a way to attempt a manual database restore:
 However, if the database does not recover automatically, chances that it can be fixed manually are minimal.
 
 The internal (HSQL) database is not stable enough for production use and we highly recommend using an [external database](setting-up-external-database.md) for TeamCity non-evaluation usage.  
-If you encountered database corruption, you can restore the last good backup or drop builds history and users, but preserve the settings, see [Migrating to an External Database](migrating-to-an-external-database.md#Switch+with+No+Data+Migration).
+If you encountered database corruption, you can restore the last good backup or drop builds history and users, but preserve the settings, see [Migrating to an External Database](migrating-to-external-database.md#Switch+with+No+Data+Migration).
 
 ### The transaction... log is full
 
@@ -197,7 +197,7 @@ To fix a problem, perform the following steps:
     maintainDB migrate [-A <path-to-data-dir>] -T <new-database-properties-file>
 
     ```
-    Depending on the size of your database, the migration may take from several minutes to several hours. For more information on the `maintainDB tool`, see [this section](migrating-to-an-external-database.md#Full+Migration).
+    Depending on the size of your database, the migration may take from several minutes to several hours. For more information on the `maintainDB tool`, see [this section](migrating-to-external-database.md#Full+Migration).
 
 5. Upon the successful completion of the database migration, the `maintainDB` tool should update the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file with references to the new database. Ensure that the file has been updated. Edit the file manually if the tool fails to do it automatically.
 6. Start the TeamCity server.

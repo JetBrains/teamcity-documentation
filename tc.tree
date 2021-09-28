@@ -103,7 +103,7 @@
             <toc-element id="configuring-utf8-character-set-for-mysql.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="using-aws-aurora-database-cluster.md" show-structure-for="chapter" show-structure-depth="4"/>
          </toc-element>
-         <toc-element id="migrating-to-an-external-database.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="migrating-to-external-database.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="migrating-to-an-external-database.html"/>
       </toc-element>
       <toc-element id="user-s-guide.md" hidden="true"/>
       <toc-element toc-title="User's Guide">
