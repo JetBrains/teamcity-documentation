@@ -97,9 +97,6 @@
          </toc-element>
          <toc-element id="upgrade-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="upgrade.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="previous-releases-downloads.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="teamcity-release-cycle.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="roadmap-outline.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="teamcity-maintenance-mode.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="setting-up-external-database.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="setting-up-teamcity-with-ms-sql-server.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -337,9 +334,6 @@
             <toc-element id="customizing-statistics-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configuring-artifacts-storage.md" show-structure-for="chapter" show-structure-depth="4"/>
          </toc-element>
-         <toc-element id="licensing-policy.md" show-structure-for="chapter" show-structure-depth="4">
-            <toc-element id="third-party-license-agreements.md"/>
-         </toc-element>
          <toc-element id="integrating-teamcity-with-other-tools.md" hidden="true"/>
          <toc-element toc-title="Integrating TeamCity with Other Tools">
             <toc-element id="integrating-teamcity-with-vcs-hosting-services.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -399,6 +393,23 @@
          </toc-element>
       </toc-element>
       <toc-element id="how-to.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element toc-title="Licensing and Release Cycle">
+         <toc-element id="licensing-policy.md" show-structure-for="chapter" show-structure-depth="4">
+            <toc-element id="third-party-license-agreements.md"/>
+         </toc-element>
+         <toc-element id="previous-releases-downloads.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="teamcity-release-cycle.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="roadmap-outline.md" show-structure-for="chapter" show-structure-depth="4"/>
+      </toc-element>
+      <toc-element toc-title="Reference">
+         <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="requirement-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="search.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="wildcards.md"/>
+      </toc-element>
       <toc-element id="troubleshooting.md">
          <toc-element id="common-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="known-issues.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -411,15 +422,6 @@
          <toc-element id="getting-started-with-nunit.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="getting-started-with-php.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
          <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
-      </toc-element>
-      <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
-      <toc-element toc-title="Reference">
-         <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="requirement-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="search.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="wildcards.md"/>
       </toc-element>
    </toc-element>
    <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2021-1.html">
