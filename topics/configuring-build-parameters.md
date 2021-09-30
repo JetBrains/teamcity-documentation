@@ -9,14 +9,30 @@ _Build parameters_ allow you to flexibly share settings and pass them into the b
 
 ## Types of Build Parameters
 
-Build parameters are name-value pairs, defined by a user or provided by TeamCity, which can be used in a build.
+Build parameters are name-value pairs, defined by a user or provided by TeamCity, which can be used in a build. There are three types of build parameters:
+* Environment variables
+* System properties
+* Configuration parameters
 
-There are three types of build parameters:
-* __Environment variables__ (defined by the `env.` prefix) are passed into the spawned build process as environment.
-* __System properties__ (defined by the `system.` prefix) are passed into the build scripts of the [supported runners](#Using+Build+Parameters+in+the+Build+Scripts) as variables specific to a build tool.
-* __Configuration parameters__ (no prefix) are not passed into the build and are only meant to share settings within a build configuration. They are the primary means for customizing a build configuration which is based on a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md).
+### Environment Variables
 
-TeamCity provides a set of [predefined parameters](predefined-build-parameters.md), and administrators can add custom parameters.
+Environment variables are passed into the spawned build process as environment.
+
+They are defined by the `env.` prefix.
+
+### System Properties
+
+System properties are passed into the build scripts of the [supported runners](#Using+Build+Parameters+in+Build+Scripts) as variables specific to a build tool.
+
+They are defined by the `system.` prefix.
+
+### Configuration Parameters
+
+Configuration parameters are not passed into the build and are only meant to share settings within a build configuration. They are the primary means for customizing a build configuration which is based on a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md).
+
+They come with no prefix.
+
+## Levels of Parameters
 
 The parameters can be defined at different levels (in order of precedence):
 * a specific build (via the [Run Custom Build](running-custom-build.md) dialog)
@@ -26,19 +42,25 @@ The parameters can be defined at different levels (in order of precedence):
 
 <anchor name="parameter-reference"/>
 
-Any textual setting can reference a parameter. A string in the `%parameter.name%` format will be substituted with the actual value during the build. If a build references a parameter which is not defined, TeamCity considers it an [implicit agent requirement](agent-requirements.md#Implicit+Requirements): the build will only run on the agents with this parameter defined.
-
-## Parameter name restrictions
+## Parameter Name Restrictions
 
 The name of a configuration parameter must satisfy the following requirements:
 * contain only the following characters: `[a-zA-Z0-9._-*]`
 * start with an ASCII letter
 
-The references to parameters which names do not satisfy the above restrictions do not create an [implicit requirement](agent-requirements.md#Implicit+Requirements).
+## Parameter References
 
-## Defining Build Parameters in Build Configuration
+Any textual setting can reference a parameter. A string in the `%parameter.name%` format will be substituted with the actual value during the build. If a build references a parameter which is not defined, TeamCity considers it an [implicit agent requirement](agent-requirements.md#Implicit+Requirements): the build will only run on the agents with this parameter defined.
 
-On the __Parameters__ page of __Build Configuration Settings__, you can define the required system properties and environment variables to be passed to the build script and environment when a build is started. Note that you can redefine them when launching a [custom build](running-custom-build.md).
+The references to parameters which names do not satisfy the [above restrictions](#Parameter+Name+Restrictions) do not create an [implicit requirement](agent-requirements.md#Implicit+Requirements).
+
+## Predefined and Custom Parameters
+
+TeamCity provides a set of [predefined parameters](predefined-build-parameters.md). Administrators can add custom parameters, as described below.
+
+### Defining Build Parameters in Build Configuration
+
+On the __Parameters__ page of __Build Configuration Settings__, you can define the required system properties and set environment variables to be passed to the build script and environment when a build is started. Note that you can redefine them when launching a [custom build](running-custom-build.md).
 
 Build parameters defined in a build configuration are used only within this configuration. For other ways, refer to [Project- and Agent-Level Build Parameters](project-and-agent-level-build-parameters.md).
 
@@ -164,7 +186,7 @@ In the build number pattern and VCS labeling pattern, you can use the `%[env|sys
 
 For example, a VCS revision number can be specified as `%build.vcs.number%`.
 
-## Using Build Parameters in the Build Scripts
+## Using Build Parameters in Build Scripts
 
 All build parameters starting with the `env.` prefix (environment variables) are passed into the build's process environment (omitting the prefix).
 

@@ -255,7 +255,7 @@ The target paths cannot be absolute. Non-relative paths will produce errors duri
 * `target_directory` — (optional) the directory in the resulting build's artifacts that will contain the files determined by the left part of the pattern. 
 * `target_archive` — (optional) the path to the archive to be created by TeamCity by packing build artifacts determined in the left part of the pattern. TeamCity treats the right part of the pattern as `target_archive` whenever it ends with a [supported archive extension](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+an+Archive), that is `.zip`, `.7z`, `.jar`, `.tar.gz`, or `.tgz`.
 
-Examples:
+#### Artifacts Paths Examples
 
 * `install.zip` — publish a file named `install.zip` in the build artifacts.
 * `dist` — publish the content of the dist directory.

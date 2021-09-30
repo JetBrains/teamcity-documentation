@@ -460,7 +460,7 @@ You can configure .NET coverage processing by means of service messages. To lear
 
 You can report inspections from a custom tool to TeamCity using the service messages described below.
 
-Among other uses, the number of inspections can be used as a build metric to [fail a build on](build-failure-conditions.md#Fail+build+on+metric+change).
+Among other uses, the number of inspections can be used as a build metric to [fail a build on](build-failure-conditions.md#Fail+Build+on+Metric+Change).
 
 #### Inspection type
 

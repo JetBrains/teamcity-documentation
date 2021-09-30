@@ -59,7 +59,7 @@ To mute a particular build problem:
    * or, _Manually_
 4. Click __Save__.
 
-## Muting Failed Tests
+## Muting Tests
 
 You can mute a failed test or several tests at once on the __Overview__ or __[Tests](working-with-build-results.md#Tests)__ tab of the __Build Results__, similarly to [muting build problems](#Muting+Build+Problems).
 

@@ -1,5 +1,5 @@
-[//]: # (title: Role and Permission)
-[//]: # (auxiliary-id: Role and Permission)
+[//]: # (title: User Permissions and Roles)
+[//]: # (auxiliary-id: User Permissions and Roles;Role and Permission)
 
 User access levels are handled by assigning different _roles_ to users thus granting them respective _permissions_.
 

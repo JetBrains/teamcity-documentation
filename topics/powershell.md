@@ -242,9 +242,9 @@ The PowerShell plugin does not use the cmd wrapper around `powershell.exe`. It m
     ```
 
 * _Setting  to  and adding a build failure condition_:   
-In case syntax errors and exceptions are present, PowerShell writes them to `stderr`. To make TeamCity fail the build, set __Error Output__ option to `Error` and add a [build failure condition](build-failure-conditions.md#Common+build+failure+conditions) that will fail the build on any error output.
+In case syntax errors and exceptions are present, PowerShell writes them to `stderr`. To make TeamCity fail the build, set __Error Output__ option to `Error` and add a [build failure condition](build-failure-conditions.md#Common+Build+Failure+Conditions) that will fail the build on any error output.
 * _Failing build on certain message in build log_:   
-Add a [build failure condition](build-failure-conditions.md#Common+build+failure+conditions) that will fail the build on a certain message (say "POWERSHELL ERROR") in the build log.
+Add a [build failure condition](build-failure-conditions.md#Common+Build+Failure+Conditions) that will fail the build on a certain message (say "POWERSHELL ERROR") in the build log.
 
 
     ```Shell

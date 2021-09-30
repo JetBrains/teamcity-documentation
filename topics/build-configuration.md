@@ -44,31 +44,28 @@ The following build configuration types exist in TeamCity:
 
 ## Build Configuration State
 
-A build configuration is characterized by its state visible in the UI which can be _paused_ or _active_. By default, when created all configurations are active and can be paused manually as described below or automatically if the project is [archived](archiving-projects.md).
+A build configuration is characterized by its state visible in the UI which can be _paused_ or _active_. By default, when created, all configurations are active and can be paused manually as described below or automatically if the project is [archived](archiving-projects.md).
 
-If a build configuration is _paused_, its [automatic build triggers](configuring-build-triggers.md) are disabled until the configuration is activated. Still, you can start a build of a paused configuration manually or automatically as a part of a [Build Chain](build-chain.md). Besides, information on paused build configurations is not displayed on the [Changes](viewing-your-changes.md) page.
+If a build configuration is _paused_, its [automatic build triggers](configuring-build-triggers.md) are disabled until the configuration is activated. Still, you can start a build of a paused configuration manually or automatically as a part of a [build chain](build-chain.md). Besides, information on paused build configurations is not displayed on the [Changes](viewing-your-changes.md) page.
 
 It is possible to manually pause all or selected build configurations for a project.
 
-### Pausing / Activating a single build configuration
+### Pausing Build Configuration
 
-On the __Build Configuration Settings__ or __Home__ page:
-* Open the __Actions__ menu, click __Pause__, and enter your comment in the _Pause_ dialog (optional).  
-To remove the builds of the paused build configuration from the [build queue](build-queue.md), check the _Cancel already queued builds_ box.
-Click __Pause__ to confirm.
-* To activate a paused build configuration, select __Activate__ in the __Actions__ menu.
+To pause a single build configuration, open its __Build Configuration Settings__ or __Home__ page. In the __Actions__ menu, click __Pause__ and enter your comment in the _Pause_ dialog (optional). To remove the builds of the paused build configuration from the [build queue](build-queue.md), check the _Cancel already queued builds_ box. Click __Pause__ to confirm.
 
-### Pausing / Activating several build configurations of a project
+To activate a paused build configuration, select __Activate__ in the __Actions__ menu.
 
-__To pause several build configurations of a project__:
+### Pausing Several Build Configurations in Project
 
+To pause several build configurations in a project:
 1. On the __Project Settings__ page, open the __Actions__ menu and click __Pause/Activate__.
 2. In the dialog that opens, select the box next to the project to pause all its build configurations or check the boxes of the configurations selectively: the checked build configurations will be paused.
 3. Add an optional comment.
 4. To remove all the builds of the paused configurations from the [build queue](build-queue.md), check the _Cancel already queued builds if build configuration is paused_ box.
 5. Click __Apply__. 
 
-__To activate several build configurations of a project__:
+To activate several build configurations in a project:
 
 1. On the __Project Settings__ page, open the __Actions__ menu and click __Pause/Activate__.
 2. In the dialog that opens, clear the box next to the project to activate all its build configurations or clear the boxes of the configurations selectively: the unselected build configurations will be activated.

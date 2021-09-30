@@ -217,7 +217,7 @@ Additional options for calling FxCopCmd executable. All entered options will be 
 
 ### Build failure conditions
 
-Check the box to fail a build on the specified analysis errors. Click [build failure condition](build-failure-conditions.md#Fail+build+on+metric+change) to define the number of the errors.
+Check the box to fail a build on the specified analysis errors. Click [build failure condition](build-failure-conditions.md#Fail+Build+on+Metric+Change) to define the number of the errors.
 
 ## Using Service Messages
 

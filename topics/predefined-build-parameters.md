@@ -322,7 +322,7 @@ If there is only one VCS root in a build configuration, the `<VCS root ID>.` par
 
 Properties marked by the VCS support as `secure` (for example, passwords) are not available as reference properties.
 
-### Branch-Related Parameters
+### Build Branch Parameters
 
 When TeamCity starts a build in a build configuration where a [branch specification](working-with-feature-branches.md) is configured, it adds a branch label to each build. This logical branch name is also available as a configuration parameter:
 

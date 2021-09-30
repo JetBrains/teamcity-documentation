@@ -25,7 +25,7 @@ If TeamCity detects an `.nvmrc` file, it will automatically use the node version
 
 In the _Shell script_ field, enter all Node.js commands to be executed in this step.
 
-## Accessing Private Registries
+## Accessing Private NPM Registries
 
 To access a private npm registry during a build (for example, to download a package), you need to:
 1. Configure an _NPM Registry_ connection as described [here](configuring-connections.md#npm-registry-settings).

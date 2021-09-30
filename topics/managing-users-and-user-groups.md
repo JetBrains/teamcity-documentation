@@ -11,13 +11,13 @@ If only the [default authentication](authentication-modules.md) is used, the pas
 
 <anchor name="ManagingUsersandUserGroups-EditingUserAccount"/>
 
-### Editing User Account
+## Editing User Account
 
 To edit/delete a user account, click its name on the __Users__ tab of the __Administration | Users__ page and use the corresponding option. The page provides several tabs allowing you to modify various user account settings
 
 ### General
 
-The _General_ tabs allows modifying the user's name, email address and password if you have appropriate permissions. Users can change their own username only if free registration is allowed. The administrator can always change the username of any user.
+The _General_ tabs allows modifying the user's name, email address, and password if you have appropriate permissions. Users can change their own username only if free registration is allowed. The administrator can always change the username of any user.
 
 #### Authentication Settings
 
@@ -39,31 +39,27 @@ The names set here will be used to:
 * highlight such builds on the Projects page if the appropriate [option is selected](managing-your-user-account.md#Customizing+UI),
 * notify the user on such builds when the __Builds affected by my changes__ option is selected in [notifications settings](subscribing-to-notifications.md#What+Will+Be+Watched).
 
-## Groups
+## Add User to Group
 
-Use this tab to review the groups the user belongs to, and add/remove the user from groups.
+Use the __Groups__ tab to review the [groups](#Managing+User+Groups) the user belongs to, and add/remove the user from groups.
 
-## Roles
+## Add User to Project
 
-_This tab is available only if per-project permissions are enabled on the server Administration / Authentication page_.    
-Use this tab to view the roles assigned to the user directly and those inherited from groups. The roles assigned directly can be modified/removed here. See also [Assigning Roles to Users](#Assigning+Roles+to+Users) below.
+To add a user to a specific project and manage permissions this user has in it, you need to assign it with a certain role. Read how to [manage roles](managing-roles.md).
+
+The __Roles__ tab for a user is available only if per-project permissions are enabled on the server __Administration | Authentication__ page_. You can view this tab to view the roles assigned to the user directly and those inherited from groups. The roles assigned directly can be modified/removed here.
 
 <anchor name="assigningRoles"/>
 
 <anchor name="ManagingUsersandUserGroups-Assigningrolestousers"/>
 
 ### Assigning Roles to Users
-
 [//]: # (AltHead: assigningRoles)
 
-<tip>
-
-To be able to grant roles to users on per-project basis, enable per-project permissions on the __Administration | Authentication__ page.   
-The __Administration | Roles__ page lists all existing roles detailing their permissions.
-</tip>
+To be able to grant roles to users on per-project basis, enable per-project permissions on the __Administration | Authentication__ page. The __Administration | Roles__ page lists all existing roles detailing their permissions.
 
 There are several ways to assign roles to one or several users:
-* To assign a role to a specific user, on the __Users__ tab for the user click _View roles_ in the corresponding column. In the Roles tab, click __Assign role__.
+* To assign a role to a specific user, on the __Users__ tab for the user click _View roles_ in the corresponding column. In the __Roles__ tab, click __Assign role__.
 * To assign a role to multiple users, on the __Users__ tab, check the boxes next to the usernames and use the __Assign roles__ button at the bottom of the page.
 * To assign a role to all users in a group, on the __Groups__ tab click _View roles_ for the group in question, then assign a role on the group level.   
 
@@ -75,11 +71,11 @@ When assigning a role, you can:
 
 This tab displays [notification rules](subscribing-to-notifications.md) for the user.
 
-### Own rules
+### Own Rules
 
 The rules configured by the user are displayed here and can be modified.
 
-### Inherited rules
+### Inherited Rules
 
 This section displays the rules inherited by the user from the groups they belong to.
 
@@ -97,10 +93,7 @@ To edit a group, click its name on the __Groups__ tab. You can modify the group 
 
 To delete a group, click __Delete__ next to its name in the list. This action will only delete the group itself and won't affect the users of this group.
 
-<tip>
-
-The __All Users__ group includes all users and cannot be deleted. However, you can modify its roles and notification settings.
-</tip>
+>The __All Users__ group includes all users and cannot be deleted. However, you can modify its roles and notification settings.
 
 The __Roles__ tab allows you to view and edit (assign/unassign) default roles for the current group. These roles will be automatically assigned to all users in the group. Default roles for a user group are divided in two groups:
 * roles inherited from a parent group. Inherited roles can not be unassigned from the group.
