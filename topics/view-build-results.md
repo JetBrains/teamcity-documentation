@@ -13,7 +13,7 @@ In this article, we give a quick overview of how to explore build results in Tea
 
 ## Preview Projects and Build Configurations
 
-TeamCity has two main modes: __Home__ mode is for viewing results and running builds, and __Edit__ mode is for configuring settings. The switch between them is located in the upper right corner of the screen.
+TeamCity has two main modes: __Home__ mode is for viewing results and running builds, and __Edit__ mode is for configuring settings. The switch between them is located in the upper right corner of the screen. Note that it's only available if you have rights to edit projects' settings.
 
 Both __Project Home__ and __Build Configuration Home__ allow you to monitor builds and perform all the basic actions.
 
