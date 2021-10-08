@@ -7,7 +7,8 @@ __08 October 2021__
 
 ### Feature
 
-[**TW-72955**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72955) — AnyPython agent parameter is no longer defined
+[**TW-72955**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72955) — Allow running Python step on any version (AnyPython agent parameter support)  
+[**TW-47419**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-47419) — ECDSA and ED25519 SSH keys support
 
 ### Bug
 
@@ -41,7 +42,6 @@ __08 October 2021__
 
 ### Task
 
-[**TW-47419**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-47419) — ECDSA and ED25519 SSH keys support  
 [**TW-73054**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73054) — Update git and perforce in agents` Linux images
 
 ### Security Problem
