@@ -25,7 +25,8 @@ __08 October 2021__
 [**TW-60688**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-60688) — A system problem reported by Commit Status Publisher is not cleared after the build feature is either deleted or disabled in the configuration  
 [**TW-72812**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72812) — TeamCity agent does not detect .NET some configuration properties like MSBuildTools2.0\_x86\_Path under Windows XP  
 [**TW-70290**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-70290) — Select test with several invocations selects only first invocation  
-[**TW-72631**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72631) — Agents screen: redirect loop after the network connection was lost
+[**TW-72631**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72631) — Agents screen: redirect loop after the network connection was lost  
+[**TW-53615**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-53615) — TeamCity can't import SSH private keys saved in the new (non-PEM) OpenSSH format
 
 ### Exception
 

@@ -5,7 +5,7 @@ You can upload an SSH private key into a project via the TeamCity web interface 
 
 ## Supported Key Format
 
-TeamCity supports keys in the PEM and SSH formats. If your private key uses a different format, it has to be converted. For example, the Putty private key format (`*.ppk`), not supported by TeamCity, can be converted to the PEM format using [PuTTY Key Generator](https://www.puttygen.com/): use the menu  __Conversions | Export OpenSSH key__.
+TeamCity supports keys in the PEM and OpenSSH formats. If your private key uses a different format, it has to be converted. For example, the Putty private key format (`*.ppk`), not supported by TeamCity, can be converted to the PEM format using [PuTTY Key Generator](https://www.puttygen.com/): use the menu  __Conversions | Export OpenSSH key__.
 
 ## Uploading SSH Key to TeamCity Server
 
