@@ -52,7 +52,7 @@ Refer to [our documentation](jira-cloud-integration.md) for details on configuri
 
 ## Notifications on build configuration level
 
-TeamCity can use external channels (such as email or Jabber) to notify the registered users about various build events. Previously, notifications were configured only for each TeamCity user or user group. Now, we are introducing the [Notifications](notifications.md) build feature which allows setting up notifications per build configuration and provides the same set of rules as the user-specific notifications.
+TeamCity can use external channels (such as email) to notify the registered users about various build events. Previously, notifications were configured only for each TeamCity user or user group. Now, we are introducing the [Notifications](notifications.md) build feature which allows setting up notifications per build configuration and provides the same set of rules as the user-specific notifications.
 
 This approach does not require referencing a specific TeamCity user and works better for group notifications. Currently, the feature supports notifications via email and [Slack](#Built-in+integration+with+Slack).
 

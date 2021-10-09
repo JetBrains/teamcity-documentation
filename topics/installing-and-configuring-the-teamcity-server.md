@@ -289,13 +289,12 @@ After successful server start, any TeamCity page request will redirect to prompt
 After administration account setup you may begin to create Project and Build Configurations in the TeamCity server. You may also want to configure the following settings in the Server Administration section:
 * Server URL
 * Email server address and settings
-* Jabber server address and settings
 
 ### Configuring Server for Production Use
 
 Out-of-the-box TeamCity server installation is suitable for evaluation purposes. For production use you will need to perform additional configuration which typically includes:
 * Check that the server is using due [server port](#Changing+Server+Port) and configure [access via https](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI).
-* Make sure server URL, email and (optionally) Jabber server settings are specified and are correct.
+* Make sure the server URL and email server settings are specified and correct.
 * Configuring the server process for OS-dependent autostart on machine reboot.
 * Using reliable storage for [TeamCity Data Directory](teamcity-data-directory.md).
 * [Using external database](setting-up-external-database.md).

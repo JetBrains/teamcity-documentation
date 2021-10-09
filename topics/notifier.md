@@ -65,8 +65,7 @@ Displays the status of the specified build configurations and/or the status of t
 
 <td>
 
-__Jabber Notifier__
-
+__Jabber Notifier__ (needs installing a [dedicated plugin](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp))
 
 </td>
 

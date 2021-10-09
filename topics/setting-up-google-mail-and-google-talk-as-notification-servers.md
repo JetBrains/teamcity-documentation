@@ -111,7 +111,9 @@ SSL
 
 ## Google Talk
 
-Thee settings were working with Google Talk and can still continue to work with Google Hangouts. However, since Google discontinues Jabber/XMPP support, they might stop working.
+These settings were working with Google Talk and can still continue to work with Google Hangouts. However, since Google discontinues Jabber/XMPP support, they might stop working.
+
+Note that since TeamCity 2021.2 the Jabber/XMPP plugin has been unbundled. You can [download the plugin](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp) and install it on your server as described [here](installing-additional-plugins.md).
 
 On the __Administration | Jabber Notifier__ page set the options as described below:
 

@@ -51,6 +51,7 @@ __Email Notifier__
 __Jabber__
 
 * __message__ — plain text of the message to send
+
 __IDE Notifications__ and __Windows Tray Notifications__
 * __message__ — plain text of the message to send
 * __link__ — URL of the TeamCity page that contains detailed information about the event

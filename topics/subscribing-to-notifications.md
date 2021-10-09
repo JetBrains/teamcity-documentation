@@ -27,7 +27,7 @@ TeamCity allows you to flexibly adjust the notification rules, so that you recei
 >Note that TeamCity comes with a default notification rule. It will send you an email notification if a build with your changes has failed. This rule starts working after you enter the email address.
 
 * __IDE Notifier__: the required TeamCity plugin must be installed in your IDE. For the details on installing TeamCity IDE plugins, refer to [Installing Tools](installing-tools.md).
-* __Jabber Notifier__*: expects entering a Jabber account name. Note that instead of Jabber you can specify your Google Talk account here if this option is [configured by the System Administrator](setting-up-google-mail-and-google-talk-as-notification-servers.md#Google+Talk).
+* __Jabber Notifier__*: available as an [external plugin](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp), expects entering a Jabber account name. Note that instead of Jabber you can specify your Google Talk account here if this option is [configured by the System Administrator](setting-up-google-mail-and-google-talk-as-notification-servers.md#Google+Talk).
 {product="tc"}
 * __Slack Notifier__: requires signing in to Slack and relies on the Slack connection configured in the project settings. Read more on how to configure the connection to Slack [here](configuring-connections.md#Slack).
 * (obsolete) __Windows Tray Notifier__: [Windows Tray Notifier](windows-tray-notifier.md) must be installed.
@@ -38,7 +38,7 @@ TeamCity allows you to flexibly adjust the notification rules, so that you recei
 
 <note product="tc">
 
-* Email and Jabber notifications are sent only if the System Administrator has configured the SMTP and Jabber servers respectively in __Administration | Server Administration__. System Administrators can also [change the templates](customizing-notifications.md) used for notifications.
+\* Email and Jabber notifications are sent only if the System Administrator has configured the SMTP and Jabber servers respectively in __Administration | Server Administration__. System Administrators can also [change the templates](customizing-notifications.md) used for notifications.
 
 </note>
 
