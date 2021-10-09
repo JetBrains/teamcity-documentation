@@ -11,13 +11,14 @@ TeamCity provides several ways to create a new [build configuration](build-confi
 
 <img src="create-build-configuration.png" alt="Create a build configuration from a repository URL" width="828"/>
 
-You can create a new build configuration
-* [Manually](#Creating+New+Build+Configuration+Manually)
-* [Pointing to a repository URL](#Creating+New+Build+Configuration+from+URL) 
-* Pointing to a GitHub repository
-* Pointing to a Bitbucket repository
-* Pointing to an Azure DevOps Services repository
-* [Create a build configuration template](#Creating+Build+Configuration+Template), and then [create a build configuration based on the template](#Creating+Build+Configuration+From+Template).
+You can create a new build configuration:
+* [manually](#Creating+New+Build+Configuration+Manually)
+* [pointing to a repository URL](#Creating+New+Build+Configuration+from+URL) 
+* pointing to a GitHub repository
+* pointing to a Bitbucket repository
+* pointing to an Azure DevOps Services repository
+* (in terms of TeamCity 2021.2 EAP) pointing to a JetBrains Space repository
+* by [creating a build configuration template](#Creating+Build+Configuration+Template), and then [creating a build configuration based on the template](#Creating+Build+Configuration+From+Template).
 
 When build configurations are created, you can:
 * [change their order](#Ordering+Build+Configurations)

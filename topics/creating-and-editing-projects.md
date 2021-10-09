@@ -5,15 +5,16 @@ This section details creating projects via the TeamCity web UI. Other options in
 
 ## Creating Project
 
-To create a project, use the __Administration__ link at the upper right corner and click __Create project__. The __Create project__ page is displayed.
+To create a project, use the __Administration__ link in the upper right corner and click __Create project__. The __Create project__ page is displayed.
 
-There are several options to create a project:
-* [From a repository URL](#Creating+project+pointing+to+repository+URL)
-* [From GitHub.com](#Creating+project+pointing+to+GitHub.com+repository)
-* [From Bitbucket Cloud](#Creating+project+pointing+to+Bitbucket+Cloud)
-* [From GitLab](#Creating+project+pointing+to+GitLab.com)
-* [From Azure DevOps](#Creating+project+pointing+to+Azure+DevOps+Services)
-* [Manually](#Creating+project+manually)
+There are several options to create a project from:
+* [from a repository URL](#Creating+project+pointing+to+repository+URL)
+* [from GitHub.com](#Creating+project+pointing+to+GitHub.com+repository)
+* [from Bitbucket Cloud](#Creating+project+pointing+to+Bitbucket+Cloud)
+* [from GitLab](#Creating+project+pointing+to+GitLab.com)
+* [from Azure DevOps](#Creating+project+pointing+to+Azure+DevOps+Services)
+* (in terms of TeamCity 2021.2 EAP) from JetBrains Space
+* [manually](#Creating+project+manually)
  
 Note that only two options are available by default: _From a repository URL_ and _Manually_. If a [connection](integrating-teamcity-with-vcs-hosting-services.md) to some VCS hosting service is configured in the Root project (or a parent project of the project to be created), the corresponding option becomes available, so you can create a project using an existing VCS connection specification.
 

@@ -302,7 +302,12 @@ Save the connection and proceed with adding a [Notifier](notifications.md#Slack+
 ## JetBrains Space
 {id="connect-to-jetbrains-space" auxiliary-id="Connect to JetBrains Space"}
 
-This type of connection can be used to publish build statuses in [JetBrains Space](https://www.jetbrains.com/space/) with the help of [Commit Status Publisher](commit-status-publisher.md) or — in terms of 2021.2 EAP — running builds on merge requests with the [Pull Requests](pull-requests.md) feature. 2021.2 EAP also allows [authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with your JetBrains Space account.
+This type of connection can be used for:
+* publishing build statuses in [JetBrains Space](https://www.jetbrains.com/space/) with the help of [Commit Status Publisher](commit-status-publisher.md)
+* in terms of 2021.2 EAP:
+  * running builds on merge requests with the [Pull Requests](pull-requests.md) feature
+  * [authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account
+  * creating projects and build configurations from a JetBrains Space repository
 
 Before configuring this connection, you need to create a dedicated application in JetBrains Space:
 1. Go to __Administration | Applications__ and click __New application__.
