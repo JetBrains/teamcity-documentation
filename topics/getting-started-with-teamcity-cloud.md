@@ -34,7 +34,6 @@ TeamCity Cloud has the following limitations comparing to On-Premises:
     * Microsoft Windows Domain authentication
     * VCS Support: CVS
     * VCS Support: StarTeam
-    * RSS feed support
     * Build Agent JVM updater
     * NuGet Support
     * Search

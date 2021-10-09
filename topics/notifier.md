@@ -87,7 +87,6 @@ __Atom/RSS Feed Notifier__
 
 Notifications regarding specified events are sent via an Atom/RSS feed. See [this section](customizing-notifications.md#Syndication+Feed+Template).
 
-
 </td></tr></table>
 
 You can configure the notifier settings, create, change, and delete notification rules in __My Settings \& Tools | [Notification Rules](subscribing-to-notifications.md)__.

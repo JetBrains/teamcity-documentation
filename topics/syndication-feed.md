@@ -1,6 +1,10 @@
 [//]: # (title: Syndication Feed)
 [//]: # (auxiliary-id: Syndication Feed)
 
+>The RSS feed support plugin has been disabled in TeamCity 2021.2. To use notifications via an RSS feed, you need to download the [dedicated plugin](https://plugins.jetbrains.com/plugin/17723-rss-feed-support) and install it as described [here](installing-additional-plugins.md).
+>
+{type="note"}
+
 To configure a syndication feed for obtaining information about the builds of certain build configurations:
 1. In the top right corner of the TeamCity web UI, click the arrow next to your username, and select __Profile__.
 2. In the __TeamCity Tools__ section, in the __Syndication Feed__ section click the __Customize__ link.

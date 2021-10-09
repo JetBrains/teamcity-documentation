@@ -55,7 +55,8 @@ __Jabber__
 __IDE Notifications__ and __Windows Tray Notifications__
 * __message__ — plain text of the message to send
 * __link__ — URL of the TeamCity page that contains detailed information about the event
-(i)The Atom/RSS feeds template differs from the others. Refer to the [dedicated section](#TeamCity+Notification+Properties) for details.
+
+The Atom/RSS feeds template differs from the others. Refer to the [dedicated section](#TeamCity+Notification+Properties) for details.
 
 ### Customization Examples
 

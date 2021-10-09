@@ -269,7 +269,7 @@ You may already have some notification rules configured by your System Administr
 
 ## Customizing RSS Feed Notifications
 
-TeamCity allows obtaining information about the finished builds or about the builds with the changes of particular users via RSS. You can customize the RSS feed from the TeamCity Tools sidebar of __My Settings &amp; Tools__ page using the [Syndication Feed](syndication-feed.md) section (click __customize__ to open the __Feed URL Generator__ options) or from the home page of a build configuration. TeamCity produces a URL to the syndication feed on the basis of the values specified on the Feed URL Generator page.
+TeamCity allows obtaining information about the finished builds or about the builds with the changes of particular users via RSS (requires installing a [dedicated plugin](https://plugins.jetbrains.com/plugin/17723-rss-feed-support)). You can customize the RSS feed from the TeamCity Tools sidebar of __My Settings &amp; Tools__ page using the [Syndication Feed](syndication-feed.md) section (click __customize__ to open the __Feed URL Generator__ options) or from the home page of a build configuration. TeamCity produces a URL to the syndication feed on the basis of the values specified on the Feed URL Generator page.
 
 #### Feed URL Generator Options
 
