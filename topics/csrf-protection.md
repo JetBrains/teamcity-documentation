@@ -16,9 +16,7 @@ When considering HTTP request safety from the TeamCity perspective, the followin
 
 ## Implications for non-browser HTTP clients
 
-For non-browser API access, we recommend using [token-based authentication](managing-your-user-account.md#Managing+Access+Tokens) of the request and disabling cookie support in your HTTP client.
-
-If you need to use cookies, your API will have to obtain a CSRF token first and provide it with your cookie-enabled requests.
+For non-browser API access, we recommend using [token-based authentication](managing-your-user-account.md#Managing+Access+Tokens).
 
 ## Implications for CORS clients
 
