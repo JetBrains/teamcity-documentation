@@ -18,6 +18,9 @@ EAP3 build:
 * The bundled Kotlin compiler, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version 1.5.
 * Fixed an inconsistent [clean-up](clean-up.md) behavior in build chains. Previously, builds in an artifact dependency configuration were never cleaned up if its dependent configuration had a snapshot dependency on another build and this build was set to be preserved. This included the case when the "_Do not prevent clean-up_" option was enabled in the respective clean-up rule. Now, the artifact dependency configuration will be cleaned up properly, according to its clean-up rules.
 
+RC build:
+* Bundled JaCoCo has been updated to version 0.8.7.
+
 ## Changes from 2021.1.2 to 2021.1.3
 
 No noteworthy updates.
