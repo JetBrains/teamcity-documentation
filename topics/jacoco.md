@@ -5,8 +5,6 @@ TeamCity supports [JaCoCo](http://www.eclemma.org/jacoco), a Java Code Coverage 
 
 JaCoCo is available for the following build runners: [Ant](ant.md), [IntelliJ IDEA Project](intellij-idea-project.md), [Gradle](gradle.md), and [Maven](maven.md).
 
-TeamCity is bundled with the following versions of JaCoCo: 0.7.5 (default), 0.8.2, and 0.8.4.
-
 <tip>
 
 To ensure the coverage data is collected properly, make sure your tests run in (one or more) separate JVMs.
