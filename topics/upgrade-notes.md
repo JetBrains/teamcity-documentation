@@ -19,7 +19,7 @@ EAP3 build:
 * Fixed an inconsistent [clean-up](clean-up.md) behavior in build chains. Previously, builds in an artifact dependency configuration were never cleaned up if its dependent configuration had a snapshot dependency on another build and this build was set to be preserved. This included the case when the "_Do not prevent clean-up_" option was enabled in the respective clean-up rule. Now, the artifact dependency configuration will be cleaned up properly, according to its clean-up rules.
 
 RC build:
-* The Jabber plugin has been unbundled. If you use TeamCity notifications via Jabber, please [install](installing-additional-plugins.md) the plugin [from JetBrains marketplace](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp) after upgrading to 2021.2.
+* The Jabber/XMPP plugin has been unbundled. If you use TeamCity notifications via Jabber, please [install](installing-additional-plugins.md) the plugin [from JetBrains marketplace](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp) after upgrading to 2021.2.
 * Bundled JaCoCo has been updated to version 0.8.7.
 
 ## Changes from 2021.1.2 to 2021.1.3
