@@ -275,17 +275,27 @@ When using build parameters of type "Password", referencing them from a dependen
 
 ### Overriding Dependencies Properties
 
-It is possible to redefine the [build parameters](configuring-build-parameters.md) in the snapshot-dependency builds when the current build starts. For example, build configuration A depends on B and B depends on C; on triggering, A can change any parameter used in B or C with the following property:
+It is possible to redefine [build parameters](configuring-build-parameters.md) in the snapshot-dependency builds when the current build starts. For example, build configuration A depends on B and B depends on C; on triggering, A can change any parameter used in B or C with the following property:
 
 ```XML
 reverse.dep.<btID>.<property_name>
 ```
+
+`<property_name>` is the name of the property to set in the noted build configuration. To set a system property, `<property_name>` should contain the `system.` prefix.
 
 To change a parameter in all dependencies at once, use a wildcard:
 
 ```XML
 reverse.dep.*.<property_name>
 ```
+
+If some dependency build configurations have alike IDs, so their beginning and/or ending coincide, you can change a parameter in these dependencies by defining their prefix or/and suffix. Use the following syntax:
+
+```XML
+reverse.dep.[prefix]*[suffix].<property_name>
+```
+
+where `prefix` corresponds to the beginning of the target builds' IDs, and `suffix` corresponds to their ending. Both attributes are optional.
 
 Thus, each dependent build in a chain can redefine parameters in any of its dependency builds.
 
@@ -294,14 +304,16 @@ If build configurations A and B are trying to set different values for the same 
 * if both A and B do not depend on each other, TeamCity will consider it a conflict and will not modify the original value in C. Instead, two other parameters will be created for C:
    * `conflict.<btA>.<property_name>=<valueA>`
    * `conflict.<btB>.<property_name>=<valueB>`
+* the priority of a reverse parameter's value depends on the way it is defined:
+  * top priority: if a value is redefined in the specific build via `<btID>`
+  * medium priority: if a value is redefined in a set of builds via `[prefix]*[suffix]`
+  * low priority: if a value is redefined in all preceding builds via `*`
 
 The `reverse.dep.*` parameters are processed on queuing of the build where the parameters are defined. As the parameters' values should be known at that stage, they can only be defined either as [build configuration parameters](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) or in the [custom build dialog](running-custom-build.md#Run+Custom+Build+dialog). Setting the parameter during the build has no effect.
 
 Pushing a new parameter into the build will supersede the ["Do not run new build if there is a suitable one"](snapshot-dependencies.md#Suitable+Builds) snapshot dependency option and may trigger a new build if the parameter is set to a non-default value.
 
-Note that the values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without reference resolution. %-references, if any, will be resolved in the context of the build where the parameters are pushed to.   
-`<property_name>` is the name of the property to set in the noted build configuration. To set system property, `<property_name>` should contain the `system.` prefix.
-
+Note that the values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without reference resolution. `%`-references, if any, will be resolved in the context of the build where the parameters are pushed to.
 
 [//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e388.txt")    
 
