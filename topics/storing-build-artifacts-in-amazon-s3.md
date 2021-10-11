@@ -46,24 +46,24 @@ When the "Use Pre-Signed URLs for upload" option is disabled:
 ## Transferring Artifacts via CloudFront
 {id="CloudFrontSettings" auxiliary-id="CloudFrontSettings"}
 
-[Amazon CloudFront](https://aws.amazon.com/cloudfront/) is a content delivery network that offers low latency and high transfer speeds. Enabling its support for an S3 storage will allow TeamCity to transfer artifacts not through the S3 buckets but through the closest CloudFront server. If your S3 bucket is located in a different region than your TeamCity infrastructure, this could significantly speed up the artifacts' upload/download and reduce expenses.
+[Amazon CloudFront](https://aws.amazon.com/cloudfront/) is a content delivery network that offers low latency and high transfer speeds. Enabling its support for an S3 storage will allow TeamCity to transfer artifacts through the closest CloudFront server. If your S3 bucket is located in a different region than your TeamCity infrastructure, this could significantly speed up the artifacts' upload/download and reduce expenses.
 
 >If you use [EC2 build agents](setting-up-teamcity-for-amazon-ec2.md) located in the same region as the target S3 bucket, these agents will communicate with the bucket directly, omitting CloudFront.
 
 ### Prerequisites
 
 To be able to use CloudFront, you need to create:
-* a [distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html)
+* a [CloudFront distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html)
 * a [trusted key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#choosing-key-groups-or-AWS-accounts)
 * an SSH-2 RSA [key pair](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-creating-cloudfront-key-pairs) (public key + private key) in PEM format
 
-TeamCity will create these for you, or you can configure all the settings manually.
+TeamCity can [create these for you](#Automatic+CloudFront+Setup), or you can configure all the settings [manually](#Manual+CloudFront+Setup).
 
 ### CloudFront Settings
 
-To enable the CloudFront support for the current S3 bucket, activate the _Use CloudFront to download artifacts_ option.
+To enable the CloudFront support for the current S3 bucket, activate the _Use CloudFront to download artifacts_ option in the storage settings.
 
-In the _CloudFront distribution_, choose one of these options:
+In the _Distribution_, choose one of these options:
 
 * _[Create automatically](#Automatic+CloudFront+Setup)_
 * an existing distribution, if it has been [manually created](#Manual+CloudFront+Setup) in your Amazon profile
@@ -88,7 +88,15 @@ To configure a distribution in CloudFront:
 1. Generate a key pair.
 2. [Upload the public key](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreatePublicKey.html) from the pair to CloudFront.
 3. [Add a new key group](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateKeyGroup.html) in CloudFront and add the created public key to this group.
-4. [Create a distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating.html) and attach your key group to it
+4. [Create a distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating.html) and attach your key group to it:
+   * Make sure to choose the same S3 bucket as specified in TeamCity.
+   * Enable the _use OAI_ option and configure OAI with the following settings:
+     * __Bucket policy__: _No, I will update the bucket policy_
+     * __Allowed HTTP methods__: `GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, `DELETE`
+     * __Restrict viewer access__: _yes_
+     * __Trusted authorization type__: _trusted key groups_
+     * __Cache and origin requests__: _Cache policy and origin request policy_
+   * Create a new cache policy with __Cache key settings__ | __Query strings__ set to _All_.
 5. [Add a new policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/add-bucket-policy.html) to your S3 bucket. See the [policy example](#S3+Policy+Example).
 
 When configured, the distribution should automatically appear in the _CloudFront distribution_ drop-down menu:
