@@ -63,14 +63,11 @@ TeamCity can [create these for you](#Automatic+CloudFront+Setup), or you can con
 
 To enable the CloudFront support for the current S3 bucket, activate the _Use CloudFront to transport artifacts_ option in the storage settings.
 
-In the _Distribution_, choose one of these options:
-
-* _[Create automatically](#Automatic+CloudFront+Setup)_
-* an existing distribution, if it has been [manually created](#Manual+CloudFront+Setup) in your Amazon profile
+In the _Distribution_, choose an available distribution, if it has been [manually created](#Manual+CloudFront+Setup) in your Amazon profile, or click ![magic-wand.png](magic-wand.png) to _[configure settings automatically](#Automatic+CloudFront+Setup)_.
 
 #### Automatic CloudFront Setup
 
-TeamCity can configure a new distribution automatically. This involves:
+TeamCity can configure the settings automatically. This involves:
 * Generating a key pair and uploading a public key to CloudFront.
 * Creating a new key group in CloudFront.
 * Creating a new distribution with:
