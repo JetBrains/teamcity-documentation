@@ -528,10 +528,11 @@ Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
 * Mercurial
 
 ## VCS Hosting Services
-* [GitHub.com / GitHub Enterprise](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub)
-* [GitLab.com / GitLab CE/EE](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitLab)
-* [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket+Cloud)
-* [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Azure+DevOps+Services), or formerly Visual Studio Team Services
+
+* [GitHub.com / GitHub Enterprise](integrating-teamcity-with-vcs-hosting-services.md#Integrating+with+GitHub)
+* [GitLab.com / GitLab CE/EE](integrating-teamcity-with-vcs-hosting-services.md#Integrating+with+GitLab)
+* [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Integrating+with+Bitbucket+Cloud)
+* [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Integrating+with+Azure+DevOps), or formerly Visual Studio Team Services
 
 ## Cloud Platforms
 {product="tc"}

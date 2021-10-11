@@ -1,7 +1,7 @@
 [//]: # (title: GitHub)
 [//]: # (auxiliary-id: GitHub)
 
-TeamCity integration with GitHub issue tracker can be set up separately or as a part of TeamCity integration with the [GitHub source code hosting service](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub).
+TeamCity integration with GitHub issue tracker can be set up separately or as a part of TeamCity integration with the [GitHub source code hosting service](integrating-teamcity-with-vcs-hosting-services.md).
 
 When setting up integration with GitHub (see general information [here](integrating-teamcity-with-issue-tracker.md#Enabling+Issue+Tracker+Integration)), in addition to the repository URL and other general settings, you need to configure authentication and specify the issue ID pattern.
 

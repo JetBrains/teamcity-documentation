@@ -22,7 +22,7 @@ There are two types of Azure DevOps connections in TeamCity:
 
 This type of connection supports only Azure DevOps Services. It uses the [OAuth 2.0 protocol](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops) based on JWT tokens and requires creating a dedicated app in your Azure profile.
 
-This connection can be used for creating a [project from a Git repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), creating a [VCS root from URL](guess-settings-from-repository-url.md), or to enable [user authentication via Azure DevOps](configuring-authentication-settings.md#).
+This connection can be used for creating a [project from a Git repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), creating a [VCS root from URL](guess-settings-from-repository-url.md), or to enable [user authentication via Azure DevOps](configuring-authentication-settings.md#Azure+DevOps+Services).
 
 To configure an Azure DevOps OAuth 2.0 connection:
 1. In __Project Administration | Connections__, click __Add Connection__.
@@ -92,11 +92,11 @@ A Bitbucket icon will become active in several places where a repository URL can
 There are two types of GitHub connections: __GitHub Enterprise__ and __GitHub.com__. Choose it depending on your GitHub account type.
 
 A connection to GitHub can be used to:
-* create a [project from GitHub URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL);
-* create a [VCS root from URL](guess-settings-from-repository-url.md);
-* create a [Git VCS root](git.md);
-* integrate with a [GitHub issue tracker](github.md);
-* enable [GitHub.com authentication](configuring-authentication-settings.md#GitHub.com).
+* create a [project from GitHub URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [VCS root from URL](guess-settings-from-repository-url.md)
+* create a [Git VCS root](git.md)
+* integrate with a [GitHub issue tracker](github.md)
+* enable [GitHub.com authentication](configuring-authentication-settings.md#GitHub.com)
 
 The GitHub connection form provides multiple parameters. You need to use them to [create a new OAuth application in GitHub](https://docs.github.com/en/developers/apps/authorizing-oauth-apps).
 
@@ -125,9 +125,9 @@ A GitHub icon will become active in several places where a repository URL can be
 There are two types of GitLab connections: __GitLab CE/EE__ and __GitLab.com__. Choose it depending on your GitHub account type.
 
 A connection to GitLab can be used to:
-* create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL);
-* create a [VCS root from URL](guess-settings-from-repository-url.md);
-* enable [GitLab.com authentication](configuring-authentication-settings.md#GitLab.com).
+* create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [VCS root from URL](guess-settings-from-repository-url.md)
+* enable [GitLab.com authentication](configuring-authentication-settings.md#GitLab.com)
 
 The GitLab connection form provides multiple parameters. You need to use them to [create a new OAuth application in GitLab](https://docs.gitlab.com/ee/integration/oauth_provider.html).
 

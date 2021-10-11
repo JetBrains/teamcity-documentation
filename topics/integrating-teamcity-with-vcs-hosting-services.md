@@ -3,8 +3,8 @@
 
 You can create presets of connections to the following hosting services:
 * [GitHub.com](https://github.com/) and [GitHub Enterprise](https://enterprise.github.com/)
-* [Bitbucket Cloud](https://bitbucket.org/)
 * [GitLab.com](https://about.gitlab.com/) and [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/)
+* [Bitbucket Cloud](https://bitbucket.org/)
 * [Azure DevOps](https://azure.microsoft.com/ru-ru/services/devops/)
 
 Once created, such a connection can serve as a base for different operations: creating projects from URL, creating VCS roots, integrating with issue trackers, and authenticating users in TeamCity using their external profiles.
@@ -17,18 +17,42 @@ Connections are configured on the __Project Administration | Connections__ page.
 
 <img src="projectConnections.png" width="700" alt="Adding a GitHub connection"/>
 
-## Connecting to GitHub
+## Integrating with GitHub
 
-<include src="configuring-connections.md" include-id="github"/>
+Integration with GitHub allows you to:
+* create a [project from GitHub URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [VCS root from URL](guess-settings-from-repository-url.md)
+* create a [Git VCS root](git.md)
+* integrate with a [GitHub issue tracker](github.md)
+* enable [GitHub.com authentication](configuring-authentication-settings.md#GitHub.com)
 
-## Connecting to Bitbucket Cloud
+See how to configure a connection to GitHub.com or GitHub Enterprise [here](configuring-connections.md#GitHub).
 
-<include src="configuring-connections.md" include-id="bb-cloud"/>
+## Integrating with GitLab
 
-## Connecting to GitLab
+Integration with GitLab allows you to:
+* create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [VCS root from URL](guess-settings-from-repository-url.md)
+* enable [GitLab.com authentication](configuring-authentication-settings.md#GitLab.com)
 
-<include src="configuring-connections.md" include-id="gitlab"/>
+See how to configure a connection to GitLab.com or GitLab CE/EE [here](configuring-connections.md#GitLab).
 
-## Connecting to Azure DevOps Services
+## Integrating with Bitbucket Cloud
 
-<include src="configuring-connections.md" include-id="azure-devops"/>
+Integration with BitBucket Cloud allows you to:
+* create a [project from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [VCS root from URL](guess-settings-from-repository-url.md)
+* create a [Mercurial VCS root](mercurial.md)
+* integrate with a [Bitbucket Cloud issue tracker](bitbucket-cloud.md)
+* enable [BitBucket Cloud authentication](configuring-authentication-settings.md#Bitbucket+Cloud)
+
+See how to configure a connection to BitBucket Cloud [here](configuring-connections.md#Bitbucket+Cloud).
+
+## Integrating with Azure DevOps
+
+Integration with Azure DevOps Services allows you to:
+* create a [project from a Git repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [VCS root from URL](guess-settings-from-repository-url.md)
+* enable [user authentication via Azure DevOps](configuring-authentication-settings.md#Azure+DevOps+Services)
+
+See how to configure a connection to Azure DevOps [here](configuring-connections.md#Azure+DevOps).

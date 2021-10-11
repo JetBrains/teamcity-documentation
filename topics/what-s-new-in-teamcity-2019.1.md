@@ -28,7 +28,7 @@ The new TeamCity version comes with the reworked UI aiming at improving your exp
 
 ## Support for GitLab
 
-TamCity 2019.1 supports GitLab. It allows creating [connections](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitLab) to [GitLab.com](https://about.gitlab.com/) and [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/) so you could easily select a predefined GitLab repository when creating a new project or a build configuration.   
+TamCity 2019.1 supports GitLab. It allows creating [connections](configuring-connections.md#GitLab) to [GitLab.com](https://about.gitlab.com/) and [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/) so you could easily select a predefined GitLab repository when creating a new project or a build configuration.   
 To be able to authenticate to GitLab during the connection, register an [OAuth application](https://docs.gitlab.com/ee/integration/oauth_provider.html) in GitLab with the `api` and `read_repository` scopes and generate a secret and an application ID.   
 Enter the secret and application ID, along with the GitLab server URL, when adding a new connection.
 

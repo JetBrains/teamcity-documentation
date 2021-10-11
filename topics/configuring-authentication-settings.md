@@ -194,7 +194,7 @@ Please refer to the [dedicated page](ntlm-http-authentication.md).
 
 Since version 2020.2, users can sign in to TeamCity with a Bitbucket Cloud account.
 
-Before enabling this module, you need to configure a [Bitbucket Cloud connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+Bitbucket+Cloud) in the Root project's settings and a dedicated application in Bitbucket.
+Before enabling this module, you need to configure a [Bitbucket Cloud connection](configuring-connections.md#Bitbucket+Cloud) in the Root project's settings and a dedicated application in Bitbucket.
 
 To sign in, click the Bitbucket icon above the login form and, after the redirect, approve the TeamCity application. If a user with your Bitbucket email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in Bitbucket, this Bitbucket account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with Bitbucket Cloud profiles.
 
@@ -250,7 +250,7 @@ Leave empty to allow all Bitbucket Cloud users to access the TeamCity server.
 
 Since version 2020.2, users can sign in to TeamCity with a GitHub.com account.
 
-Before enabling this module, you need to configure a [GitHub.com connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub) in the Root project's settings and a dedicated application in GitHub.
+Before enabling this module, you need to configure a [GitHub.com connection](configuring-connections.md#GitHub) in the Root project's settings and a dedicated application in GitHub.
 
 To sign in, click the GitHub icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitHub email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitHub, this GitHub account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitHub.com profiles.
 
@@ -292,7 +292,7 @@ A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-t
 
 This list limits a set of users who can register or authenticate in TeamCity with their GitHub account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
 
->To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub.com connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub) is approved for each specified organization.
+>To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub.com connection](configuring-connections.md#GitHub) is approved for each specified organization.
 {type="note"}
 
 Leave empty to allow all GitHub users to access the TeamCity server.
@@ -309,7 +309,7 @@ Leave empty to allow all GitHub users to access the TeamCity server.
 
 Since version 2020.2, users can sign in to TeamCity with a GitHub Enterprise account.
 
-Before enabling this module, you need to configure a [GitHub Enterprise connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub) in the Root project's settings and a dedicated application in GitHub.
+Before enabling this module, you need to configure a [GitHub Enterprise connection](configuring-connections.md#GitHub) in the Root project's settings and a dedicated application in GitHub.
 
 To sign in, click the GitHub icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitHub email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitHub, this GitHub account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitHub Enterprise profiles.
 
@@ -351,7 +351,7 @@ A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-t
 
 This list limits a set of users who can register or authenticate in TeamCity with their GitHub account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
 
->To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub Enterprise connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitHub) is approved for each specified organization.
+>To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub Enterprise connection](configuring-connections.md#GitHub) is approved for each specified organization.
 {type="note"}
 
 Leave empty to allow all GitHub users to access the TeamCity server.
@@ -372,7 +372,7 @@ Leave empty to allow all GitHub users to access the TeamCity server.
 
 Since version 2020.2, users can sign in to TeamCity with a GitLab.com account.
 
-Before enabling this module, you need to configure a [GitLab.com connection](integrating-teamcity-with-vcs-hosting-services.md#Connecting+to+GitLab) in the Root project's settings and a dedicated application in GitLab.
+Before enabling this module, you need to configure a [GitLab.com connection](configuring-connections.md#GitLab) in the Root project's settings and a dedicated application in GitLab.
 
 To sign in, click the GitLab icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitLab email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitLab, this GitLab account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitLab.com profiles.
 
