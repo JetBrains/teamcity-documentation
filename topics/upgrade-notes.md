@@ -23,7 +23,7 @@ RC build:
   * [Jabber/XMPP](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp)
   * [RSS feed support](https://plugins.jetbrains.com/plugin/17723-rss-feed-support)  
   To proceed using their functionality in TeamCity 2021.2, you need to download the required plugin via the link above and install it as described [here](installing-additional-plugins.md).
-* Bundled Amazon Corretto Java has been updated in the TeamCity server Docker images: to version 11.0.12.7.2 for Windows and Linux, to version 11.0.12.7.2 for macOS.
+* Bundled Amazon Corretto Java has been updated in the TeamCity server Docker images: to version 11.0.12.7.1 for Windows and Linux, to version 11.0.12.7.2 for macOS.
 * Bundled JaCoCo has been updated to version 0.8.7.
 
 ## Changes from 2021.1.2 to 2021.1.3
