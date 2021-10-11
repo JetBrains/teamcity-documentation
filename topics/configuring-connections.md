@@ -307,7 +307,7 @@ This type of connection can be used for:
 * in terms of 2021.2 EAP:
   * running builds on merge requests with the [Pull Requests](pull-requests.md) feature
   * [authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account
-  * creating projects and build configurations from a JetBrains Space repository
+  * creating [projects](creating-and-editing-projects.md) and [build configurations](creating-and-editing-build-configurations.md) from a JetBrains Space repository
 
 Before configuring this connection, you need to create a dedicated application in JetBrains Space:
 1. Go to __Administration | Applications__ and click __New application__.
@@ -324,7 +324,7 @@ Before configuring this connection, you need to create a dedicated application i
       * _Project | View project data_
       * _Private Projects | List private projects_
       * _Git Repositories | Read_
-4. Open the __Authentication__ tab and enable _Client Credentials Flow_. Or, for the user authentication in Space, _Authorization Code Flow_.
+4. Open the __Authentication__ tab and enable _Client Credentials Flow_. User authentication and creating projects/configurations from a repository also require enabling _Authorization Code Flow_.
 5. In the __Authentication__ tab, enter your TeamCity server's URL as the redirect URI.  
    If you use the authorization code flow, you need to ensure that your TeamCity server can always connect to JetBrains Space. Specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __[Global Settings](configuring-server-url.md)__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
 6. In the __Authentication__ tab, copy the app's _Client ID_ and _Client secret_.

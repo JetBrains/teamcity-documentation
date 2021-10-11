@@ -147,8 +147,19 @@ If no steps found, you will have to [configure build steps manually](configuring
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   
 On the __Auto\-detected Build Steps page__ select the detected step(s) to use in your build configuration. Click __Use selected__.   
 If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
-5. Your project and a build configuration are configured. Click __Run__ to start the build.   
-Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
+5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
+
+### Creating project pointing to JetBrains Space
+
+Before creating a project from a JetBrains Space, you need to configure a [dedicated connection to your Space instance](configuring-connections.md#connect-to-jetbrains-space).
+
+1. On the __Create project__ page, select to create project __from JetBrains Space__. The first time, you will be prompted to grant TeamCity access to viewing your user profile and projects.
+2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
+3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   
+   On the __Auto\-detected Build Steps page__ select the detected step(s) to use in your build configuration. Click __Use selected__.   
+   If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
+5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
 
 ### Creating project manually
 1\. Click the __Create project__ button and select __Manually__.
