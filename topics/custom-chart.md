@@ -34,6 +34,8 @@ __To reorder custom charts__ for a project/build configuration, click the __Reor
 
 To manually create custom charts to be displayed in the TeamCity web UI, configure the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>`  element is added.
 
+Charts can also be configured via [Kotlin DSL](kotlin-dsl.md). Example configuration:
+
 ```Plain Text
 feature {
   id = "SampleChart"
@@ -45,6 +47,8 @@ feature {
         }
 
 ```
+
+See the reference on available parameters [below](#Parameters+Reference).
 
 ### Displaying Custom Chart in TeamCity Web UI
 
