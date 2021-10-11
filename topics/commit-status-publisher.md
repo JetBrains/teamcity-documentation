@@ -3,7 +3,7 @@
 
 Commit Status Publisher is a [build feature](adding-build-features.md) which allows TeamCity to automatically send build statuses of your commits to an external system. The feature is implemented as an [open-source plugin](https://github.com/JetBrains/commit-status-publisher) bundled with TeamCity.
 
-The supported systems are:
+Supported systems:
 * GitHub (the build statuses for pull requests are supported as well)
 * GitLab
 * Azure DevOps (supported statuses: Pending, Succeeded, Failed, Error)
@@ -11,6 +11,7 @@ The supported systems are:
 * JetBrains Space
 * JetBrains Upsource
 * Gerrit Code Review tool 2.6+
+* (in terms of TeamCity 2021.1 EAP) Perforce Helix Swarm
  
 ## Provider-specific Configuration
 
@@ -70,6 +71,17 @@ Then, in the build configuration's settings:
 4. Save the settings.
 
 Now, whenever you run a build in this configuration, TeamCity will report the build status to JetBrains Space.
+
+### Perforce Helix Swarm
+
+If a build is run on changes in Perforce shelved files, TeamCity can report its statuses as comments to a respective code review in Helix Swarm.
+
+In the Commit Status Publisher settings, specify:
+* Helix Swarm URL
+* Username
+* [Ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html)
+
+Note that the Perforce changelist description needs to contain the `review` keyword, so Helix Swarm could recognize it.
 
 ### Gerrit
 
