@@ -61,7 +61,7 @@ TeamCity can [create these for you](#Automatic+CloudFront+Setup), or you can con
 
 ### CloudFront Settings
 
-To enable the CloudFront support for the current S3 bucket, activate the _Use CloudFront to download artifacts_ option in the storage settings.
+To enable the CloudFront support for the current S3 bucket, activate the _Use CloudFront to transport artifacts_ option in the storage settings.
 
 In the _Distribution_, choose one of these options:
 
