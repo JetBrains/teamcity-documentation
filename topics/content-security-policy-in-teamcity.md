@@ -18,20 +18,16 @@ As a server administrator, you can change the CSP header value via the [internal
 
 * For TeamCity administration pages:   
     ```Plain Text
-    teamcity.web.header.Content-Security-Policy.adminUI.protectedValue=<full_header_value>
+    teamcity.web.header.Content-Security-Policy.adminUI.protectedValue=<value>
  
     ```
 * For other TeamCity pages:   
     ```Plain Text
-    teamcity.web.header.Content-Security-Policy.protectedValue=<full_header_value>
+    teamcity.web.header.Content-Security-Policy.protectedValue=<value>
  
     ```
 
-<note>
-
-The property must contain the full value of the CSP header, so change it with _extra caution_.
-
-</note>
+In the value, you only need to provide the custom part of the CSP header. If you provide the full value, only its custom parts will be applied.
 
 ### Adding Google Analytics via internal properties
 
