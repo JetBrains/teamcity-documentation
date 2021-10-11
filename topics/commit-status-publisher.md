@@ -81,7 +81,8 @@ In the Commit Status Publisher settings, specify:
 * Username
 * [Ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html)
 
-Note that usually the Perforce changelist description needs to contain the `review` keyword, so Helix Swarm could recognize it.
+Note that usually, Helix Swarm creates reviews on shelved changelists that have some specific keyword in their description.  
+If you want TeamCity to trigger builds on Perforce shelved files automatically, you need to specify the same keyword in the [Perforce Shelve Trigger](perforce-shelve-trigger.md) settings as well.
 
 ### Gerrit
 
