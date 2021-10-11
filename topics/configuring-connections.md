@@ -18,7 +18,7 @@ There are two types of Azure DevOps connections in TeamCity:
 <anchor name="azure-devops-connection"/>
 
 #### Azure DevOps OAuth 2.0 Connection
-{id="Connecting to Azure DevOps" auxiliary-id="Connecting to Azure DevOps"}
+{id="Connecting+to+Azure+DevOps" auxiliary-id="Connecting to Azure DevOps"}
 
 This type of connection supports only Azure DevOps Services. It uses the [OAuth 2.0 protocol](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops) based on JWT tokens and requires creating a dedicated app in your Azure profile.
 
