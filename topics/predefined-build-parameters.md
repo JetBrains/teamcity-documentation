@@ -295,7 +295,7 @@ If some dependency build configurations have alike IDs, so their beginning and/o
 reverse.dep.[prefix]*[suffix].<property_name>
 ```
 
-where `prefix` corresponds to the beginning of the target builds' IDs, and `suffix` corresponds to their ending. Both attributes are optional.
+where `prefix` corresponds to the beginning of the target builds' IDs, and `suffix` corresponds to their ending. Both attributes are optional. Only one `*` symbol is allowed.
 
 Thus, each dependent build in a chain can redefine parameters in any of its dependency builds.
 
@@ -306,7 +306,7 @@ If build configurations A and B are trying to set different values for the same 
    * `conflict.<btB>.<property_name>=<valueB>`
 * the priority of a reverse parameter's value depends on the way it is defined:
   * top priority: if a value is redefined in the specific build via `<btID>`
-  * medium priority: if a value is redefined in a set of builds via `[prefix]*[suffix]`
+  * medium priority: if a value is redefined in a set of builds via `[prefix]*[suffix]`; among them, the longer values are considered more specific and thus have higher priority than the shorter ones
   * low priority: if a value is redefined in all preceding builds via `*`
 
 The `reverse.dep.*` parameters are processed on queuing of the build where the parameters are defined. As the parameters' values should be known at that stage, they can only be defined either as [build configuration parameters](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) or in the [custom build dialog](running-custom-build.md#Run+Custom+Build+dialog). Setting the parameter during the build has no effect.
