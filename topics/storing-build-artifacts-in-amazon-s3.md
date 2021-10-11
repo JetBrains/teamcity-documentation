@@ -53,6 +53,7 @@ When the "Use Pre-Signed URLs for upload" option is disabled:
 ### Prerequisites
 
 To be able to use CloudFront, you need to create:
+* an [OAI](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) user
 * a [CloudFront distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html)
 * a [trusted key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#choosing-key-groups-or-AWS-accounts)
 * an SSH-2 RSA [key pair](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-creating-cloudfront-key-pairs) (public key + private key) in PEM format
@@ -75,7 +76,7 @@ TeamCity can configure the settings automatically. This involves:
   * a new [Origin Access Identity](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) that can access the current bucket
   * a single default behavior with:
     * `GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, `DELETE` as allowed HTTP methods
-    * a new [key group](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KeyGroup.html) with the viewer access
+    * a new [key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-adding-trusted-signers) with the viewer access
     * a custom [cache policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html) that allows passing all query strings
 * Adding a new policy to an S3 bucket to allow the new distribution accessing it. See the [policy example](#S3+Policy+Example).
 
@@ -84,17 +85,19 @@ TeamCity can configure the settings automatically. This involves:
 To configure a distribution in CloudFront:
 1. Generate a key pair in [SSH-2 RSA key format](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-creating-cloudfront-key-pairs).
 2. Upload the public key from the pair to CloudFront.
-3. [Add a new key group](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateKeyGroup.html) in CloudFront and add the created public key to this group.
+3. [Add a new key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-adding-trusted-signers) in CloudFront and add the created public key to this group.
 4. Create a new cache policy with __Cache key settings__ | __Query strings__ set to _All_.
-5. [Create a distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating.html) and attach your key group to it:
+5. If you use a private bucket, create a new [OAI](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) user.
+6. [Create a distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating.html) and attach your key group to it:
    * Make sure to choose the same S3 bucket as specified in TeamCity.
-   * Enable the _use OAI_ option and configure OAI with the following settings:
+   * __Allowed HTTP methods__: `GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, `DELETE`
+   * __Restrict viewer access__: _yes_
+   * __Trusted authorization type__: _trusted key groups_
+   * __Cache key and origin requests__: _Cache policy and origin request policy_
+   * For private buckets, enable the _use OAI_ option and configure OAI with the following setting:
      * __Bucket policy__: _No, I will update the bucket policy_
-     * __Allowed HTTP methods__: `GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, `DELETE`
-     * __Restrict viewer access__: _yes_
-     * __Trusted authorization type__: _trusted key groups_
-     * __Cache key and origin requests__: _Cache policy and origin request policy_
-6. [Add a new policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/add-bucket-policy.html) to your S3 bucket. See the [policy example](#S3+Policy+Example).
+   * For public buckets, disable the __Block public access__ option.
+7. [Add a new policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/add-bucket-policy.html) to your S3 bucket. See the [policy example](#S3+Policy+Example).
 
 When configured, the distribution should automatically appear in the _CloudFront distribution_ drop-down menu:
 1. Select the target CloudFront distribution.
@@ -103,6 +106,8 @@ When configured, the distribution should automatically appear in the _CloudFront
 4. Save the storage settings.
 
 #### S3 Policy Example
+
+For accessing a private bucket with OAI:
 
 ```Plain Text
 {
@@ -117,6 +122,21 @@ When configured, the distribution should automatically appear in the _CloudFront
       "s3:DeleteObject"
   ],
   "Resource": "arn:aws:s3:::<S3 bucket name/*"
+}
+```
+
+For accessing a public bucket:
+
+```Plain Text
+{
+"Sid": "PublicRead",
+"Effect": "Allow",
+"Principal": "*",
+  "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+    ],
+  "Resource": "arn:aws:s3::<BUCKET_NAME>/*"
 }
 ```
 
