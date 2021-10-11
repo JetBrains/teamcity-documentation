@@ -34,6 +34,18 @@ __To reorder custom charts__ for a project/build configuration, click the __Reor
 
 To manually create custom charts to be displayed in the TeamCity web UI, configure the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>`  element is added.
 
+```Plain Text
+feature {
+  id = "SampleChart"
+    title = "Success Rate"
+    seriesTitle = "Serie"
+    format = CustomChart.Format.PERCENT
+    series = listOf(
+        Serie(title = "Success Rate", key = SeriesKey.SUCCESS_RATE, sourceBuildTypeId = "testBuild")
+        }
+
+```
+
 ### Displaying Custom Chart in TeamCity Web UI
 
 To make TeamCity display a custom chart in the web UI, update the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` configuration file adding a new `<extention>` sub-element to the `<project-extensions>` element.
