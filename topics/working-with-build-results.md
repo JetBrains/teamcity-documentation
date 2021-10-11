@@ -18,7 +18,7 @@ Besides providing the build information, this page enables you to:
   * change the build status, marking the build as [failed](changing-build-status-manually.md#Marking+build+as+failed) or [successful](changing-build-status-manually.md#Marking+build+as+successful)
   * [label this build sources](vcs-labeling.md)
   * remove the build
-* [edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+From+Template)
+* [edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+Template)
 
 ## Build Details
 

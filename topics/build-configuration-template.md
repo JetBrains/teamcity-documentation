@@ -50,7 +50,7 @@ object Project : Project({
 ```
 
 ## Associating build configurations with templates
-* You can [create new build configurations based on a template](creating-and-editing-build-configurations.md#Creating+Build+Configuration+From+Template).
+* You can [create new build configurations based on a template](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+Template).
 * You can associate/attach any number of existing build configurations with/to a template: there is the __Attach to template__ option available from the __Actions__ button in the upper right corner of the screen.
  
 When you associate an existing build configuration with a template, the build configuration inherits __all the settings__ defined in the template, and if there is a conflict, the template settings supersede the settings of the build configuration (except dependencies, parameters, and requirements). The settings inherited from a template [can be overridden](#Redefining+settings+inherited+from+template).
