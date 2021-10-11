@@ -81,7 +81,7 @@ In the Commit Status Publisher settings, specify:
 * Username
 * [Ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html)
 
-Note that the Perforce changelist description needs to contain the `review` keyword, so Helix Swarm could recognize it.
+Note that usually the Perforce changelist description needs to contain the `review` keyword, so Helix Swarm could recognize it.
 
 ### Gerrit
 
