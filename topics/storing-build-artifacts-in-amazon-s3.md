@@ -82,19 +82,19 @@ TeamCity can configure the settings automatically. This involves:
 #### Manual CloudFront Setup
 
 To configure a distribution in CloudFront:
-1. Generate a key pair.
-2. [Upload the public key](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreatePublicKey.html) from the pair to CloudFront.
+1. Generate a key pair in [SSH-2 RSA key format](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-creating-cloudfront-key-pairs).
+2. Upload the public key from the pair to CloudFront.
 3. [Add a new key group](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateKeyGroup.html) in CloudFront and add the created public key to this group.
-4. [Create a distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating.html) and attach your key group to it:
+4. Create a new cache policy with __Cache key settings__ | __Query strings__ set to _All_.
+5. [Create a distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating.html) and attach your key group to it:
    * Make sure to choose the same S3 bucket as specified in TeamCity.
    * Enable the _use OAI_ option and configure OAI with the following settings:
      * __Bucket policy__: _No, I will update the bucket policy_
      * __Allowed HTTP methods__: `GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, `DELETE`
      * __Restrict viewer access__: _yes_
      * __Trusted authorization type__: _trusted key groups_
-     * __Cache and origin requests__: _Cache policy and origin request policy_
-   * Create a new cache policy with __Cache key settings__ | __Query strings__ set to _All_.
-5. [Add a new policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/add-bucket-policy.html) to your S3 bucket. See the [policy example](#S3+Policy+Example).
+     * __Cache key and origin requests__: _Cache policy and origin request policy_
+6. [Add a new policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/add-bucket-policy.html) to your S3 bucket. See the [policy example](#S3+Policy+Example).
 
 When configured, the distribution should automatically appear in the _CloudFront distribution_ drop-down menu:
 1. Select the target CloudFront distribution.
