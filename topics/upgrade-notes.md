@@ -19,12 +19,14 @@ EAP3 build:
 * Fixed an inconsistent [clean-up](clean-up.md) behavior in build chains. Previously, builds in an artifact dependency configuration were never cleaned up if its dependent configuration had a snapshot dependency on another build and this build was set to be preserved. This included the case when the "_Do not prevent clean-up_" option was enabled in the respective clean-up rule. Now, the artifact dependency configuration will be cleaned up properly, according to its clean-up rules.
 
 RC build:
+* The [C# Script runner](c-script.md) now supports .NET 6.0.0-rc.1 and requires installing it on build agents that will run C# Script steps.
 * The following notifications plugins are no longer actively used and thus unbundled from TeamCity:
   * [Jabber/XMPP](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp)
   * [RSS feed support](https://plugins.jetbrains.com/plugin/17723-rss-feed-support)  
   To proceed using their functionality in TeamCity 2021.2, you need to download the required plugin via the link above and install it as described [here](installing-additional-plugins.md).
-* Bundled Amazon Corretto Java has been updated in the TeamCity server Docker images: to version 11.0.12.7.1 for Windows and Linux, to version 11.0.12.7.2 for macOS.
+* Bundled Amazon Corretto Java has been updated to version 11.0.12.7.1 in the TeamCity server Docker images for Windows and Linux.
 * Bundled JaCoCo has been updated to version 0.8.7.
+* Bundled Ant has been updated to version 1.10.11.
 
 ## Changes from 2021.1.2 to 2021.1.3
 

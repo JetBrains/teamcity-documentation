@@ -14,7 +14,7 @@ Refer to [Configuring Build Steps](configuring-build-steps.md) for a description
 ## Prerequisites
 
 The runner's requirements:
-* .NET runtime 3.1 must be installed on a build agent.
+* .NET runtime 6.0.0-rc.1 must be installed on a build agent.
 * The [TeamCity.csi](https://www.nuget.org/packages/TeamCity.csi/) package must be [installed as an agent tool](installing-agent-tools.md).
 
 >__Use TeamCity.csi outside TeamCity__   
