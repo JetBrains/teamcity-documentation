@@ -28,6 +28,7 @@ RC build:
 * Bundled JaCoCo has been updated to version 0.8.7.
 * Bundled Ant has been updated to version 1.10.11.
 * The Bundled Kotlin compiler, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version 1.5.31.
+* The bundled ReSharper tool has been updated to version 2021.2.1.
 
 ## Changes from 2021.1.2 to 2021.1.3
 
