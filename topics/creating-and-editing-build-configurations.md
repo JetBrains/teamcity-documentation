@@ -113,7 +113,7 @@ Different build configuration settings are described in the respective articles 
 ## Actions in Build Configuration Settings
 
 Use the __Actions__ menu, located in the upper right corner of the settings screen, to
-* [pause/activate a build configuration](build-configuration.md#Pausing+%2F+Activating+a+single+build+configuration)
+* [pause/activate a build configuration](build-configuration.md#Pausing+Build+Configuration)
 * [copy/move/delete a build configuration](copy-move-delete-build-configuration.md)
 * [attach a build configuration to a template](build-configuration-template.md#Associating+build+configurations+with+templates)
 * [extract a template from a build configuration](build-configuration-template.md#Creating+build+configuration+template)
