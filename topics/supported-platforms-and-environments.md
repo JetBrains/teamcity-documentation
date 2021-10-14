@@ -43,7 +43,7 @@ Windows XP/XP x64 are not supported.
 TeamCity Agent is a standalone Java application. It requires a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
 
 Supported Java versions: __OpenJDK and Oracle Java 8-11__. We recommend using the latest available version of JDK.  
-The TeamCity agent Windows installer comes __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 8__.  
+The TeamCity agent Windows installer comes __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 11__.  
 For Apple M1 systems, consider using a different version of Java 11, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
 
 TeamCity Agent is tested under the following operating systems:
