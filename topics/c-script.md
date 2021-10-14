@@ -1,10 +1,6 @@
 [//]: # (title: C# Script)
 [//]: # (auxiliary-id: C# Script;csharp script)
 
->This functionality is available in terms of TeamCity 2021.2 Early Access Program.
-> 
-{type="note"}
-
 The _C# Script_ runner allows executing a [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) script on Windows, Linux, or macOS. It uses a custom TeamCity tool for running a C# Interactive shell across platforms.
 
 With this runner, you can perform various service tasks, such as preparing a build environment, creating a user profile, or reporting to different messengers.
@@ -233,6 +229,7 @@ Set a verbosity level to `quiet`, `normal`, or `trace`.
 </table>
 
 <anchor name="call-args"/>
+
 Supported arguments:
 * __arguments__ provided in the _Script parameters_ field and stored in the `Args` array (for example, `WriteLine(Args[0])` to write the value of the first script parameter);
 * __system parameters__ specified in __Build Configuration Settings | Parameters__ and stored in the `Props` dictionary (for example, `WriteLine(Props["version"])` to write the value of the `system.version` parameter).
