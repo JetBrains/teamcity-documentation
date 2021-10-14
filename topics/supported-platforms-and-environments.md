@@ -12,7 +12,8 @@ This page covers software-related environments TeamCity works with. For hardware
 TeamCity Server is a web application that runs within a capable J2EE servlet container. It requires a Java SE JRE installation to run. See [notes](installing-and-configuring-the-teamcity-server.md#Java+Installation) on how to install Java on a TeamCity server.
 
 Supported Java versions: __OpenJDK and Oracle Java 8 (8u16 or later) and 11 (32 or 64 bit)__. Using 64-bit Java is recommended.  
-The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 11__.
+The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 11__.  
+For Apple M1 systems, consider using a different version of Java 11, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
 
 >The core features of TeamCity Server are platform-independent. See [considerations](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server) on choosing the server platform.
 
@@ -42,7 +43,8 @@ Windows XP/XP x64 are not supported.
 TeamCity Agent is a standalone Java application. It requires a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
 
 Supported Java versions: __OpenJDK and Oracle Java 8-11__. We recommend using the latest available version of JDK.  
-The TeamCity agent Windows installer comes __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 8__.
+The TeamCity agent Windows installer comes __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 8__.  
+For Apple M1 systems, consider using a different version of Java 11, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
 
 TeamCity Agent is tested under the following operating systems:
 * Linux
