@@ -3,32 +3,35 @@
 
 ## Changes from 2021.1 to 2021.2
 
->TeamCity 2021.2 is currently at the Early Access Program stage.
+### Canceled bidirectional agent-server communication protocol
 
-EAP1 build:
-* If you use [VCS labeling](vcs-labeling.md) for a [Perforce](perforce.md) root, note that TeamCity now creates [automatic labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) by default. If, for some reason, you want to continue using static labels, you can revert to the old behavior by adding the `teamcity.perforce.useStaticLabels=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+The support for the bidirectional agent-server communication protocol has been canceled. Since version 2021.2, agents will connect to the server exclusively via the [unidirectional protocol](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).
 
-EAP2 build:
-* The support for the bidirectional agent-server communication protocol has been canceled. Since version 2021.2, agents will connect to the server exclusively via the [unidirectional protocol](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).  
-  To upgrade TeamCity from versions earlier than 9.1, where the unidirectional support was first introduced, to 2021.2, use one of the following approaches:
-  * Upgrade the server to version 2021.1, wait until all the agents upgrade as well, and then upgrade the server to 2021.2.
-  * Upgrade the server to version 2021.2, uninstall the old agents manually, and then [install the new agents](setting-up-and-running-additional-build-agents.md).
-  
-EAP3 build:
-* The bundled Kotlin compiler, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version 1.5.
-* Fixed an inconsistent [clean-up](clean-up.md) behavior in build chains. Previously, builds in an artifact dependency configuration were never cleaned up if its dependent configuration had a snapshot dependency on another build and this build was set to be preserved. This included the case when the "_Do not prevent clean-up_" option was enabled in the respective clean-up rule. Now, the artifact dependency configuration will be cleaned up properly, according to its clean-up rules.
+To upgrade TeamCity from versions earlier than 9.1, where the unidirectional support was first introduced, to 2021.2, use one of the following approaches:
+* Upgrade the server to version 2021.1, wait until all the agents upgrade as well, and then upgrade the server to 2021.2.
+* Upgrade the server to version 2021.2, uninstall the old agents manually, and then [install the new agents](setting-up-and-running-additional-build-agents.md).
 
-RC build:
-* The [C# Script runner](c-script.md) now supports .NET 6.0.0-rc.1 and requires installing it on build agents that will run C# Script steps.
-* The following notifications plugins are no longer actively used and thus unbundled from TeamCity:
-  * [Jabber/XMPP](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp)
-  * [RSS feed support](https://plugins.jetbrains.com/plugin/17723-rss-feed-support)  
-  To proceed using their functionality in TeamCity 2021.2, you need to download the required plugin via the link above and install it as described [here](installing-additional-plugins.md).
+### Perforce automatic labels become default
+
+If you use [VCS labeling](vcs-labeling.md) for a [Perforce](perforce.md) root, note that TeamCity now creates [automatic labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) by default. If, for some reason, you want to continue using static labels, you can revert to the old behavior by adding the `teamcity.perforce.useStaticLabels=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+
+### Fixed inconsistency in build chains clean-up
+
+Previously, builds in an artifact dependency configuration were never [cleaned up](clean-up.md) if its dependent configuration had a snapshot dependency on another build and that build was set to be preserved. This included the case when the "_Do not prevent clean-up_" option was enabled in the respective clean-up rule for the artifact dependency. Now, the artifact dependency configuration will be cleaned up properly, in full accordance with its clean-up rules.  
+This fix restores the intended behavior, but we recommend that you review your clean-up settings to ensure no builds will be cleaned up unexpectedly after the upgrade.
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-20211"}
+
 * Bundled Amazon Corretto Java has been updated to version 11.0.12.7.1 in the TeamCity server Docker images for Windows and Linux.
 * Bundled JaCoCo has been updated to version 0.8.7.
 * Bundled Ant has been updated to version 1.10.11.
 * The Bundled Kotlin compiler, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version 1.5.31.
 * The bundled ReSharper tool has been updated to version 2021.2.1.
+* The following notifications plugins are no longer actively used and thus unbundled from TeamCity:
+  * [Jabber/XMPP](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp)
+  * [RSS feed support](https://plugins.jetbrains.com/plugin/17723-rss-feed-support)  
+  To proceed using their functionality in TeamCity 2021.2, you need to download the required plugin via the link above and install it as described [here](installing-additional-plugins.md).
 
 ## Changes from 2021.1.3 to 2021.1.4
 
