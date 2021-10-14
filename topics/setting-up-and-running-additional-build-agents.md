@@ -172,11 +172,13 @@ Note that after starting, the full agent behaves like a regular agent. If you mo
 </tip>
 
 ### Installing via Agent Push
-{product="tc"}
 
-TeamCity provides the Agent Push functionality that allows installing a build agent to a remote host. Currently, supported combinations of the server host platform and targets for build agents are:
+TeamCity provides the Agent Push functionality that allows installing a build agent to a remote host. 
+
+Currently, supported combinations of the server host platform and targets for build agents are:
 * from the Unix-based TeamCity server, build agents can be installed to Unix hosts only (via SSH)
 * from the Windows-based TeamCity server, build agents can be installed to Unix (via SSH) or Windows (via psexec) hosts
+{product="tc"}
 
 <note>
 
@@ -185,17 +187,6 @@ __SSH note__
 Make sure the "Password" or "Public key" authentication is enabled on the target host according to a preferred authentication method.
 </note>
 
-### Installing via Agent Push
-{product="tcc"}
-
-TeamCity provides the Agent Push functionality that allows installing a build agent to a remote Unix host.
-
-<note>
-
-__SSH note__
-
-Make sure the "Password" or "Public key" authentication is enabled on the target host according to a preferred authentication method.
-</note>
 
 #### Remote Host Requirements
 

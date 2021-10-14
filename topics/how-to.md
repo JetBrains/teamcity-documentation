@@ -849,7 +849,7 @@ For testing tools, if they are not yet [supported](testing-frameworks.md) you ca
 
 To present the results for a generic report, the approach might be to generate HTML report in the build script, pack it into archive and publish as a build artifact. Then configure a [report tab](including-third-party-reports-in-the-build-results.md) to display the HTML report as a tab on build's results.
 
-A metrics value can be published as TeamCity statistics via [service message](service-messages.md#Reporting+Build+Statistics) and then displayed in a [custom chart](customizing-statistics-charts.md#Showing+Charts+Only+for+Specific+Build+Configurations+on+Project+Level). You can also configure [build failure condition](build-failure-conditions.md#Fail+build+on+metric+change) based on the metric.
+A metrics value can be published as TeamCity statistics via [service message](service-messages.md#Reporting+Build+Statistics) and then displayed in a [custom chart](customizing-statistics-charts.md#Showing+Charts+Only+for+Specific+Build+Configurations+on+Project+Level). You can also configure [build failure condition](build-failure-conditions.md#Fail+Build+on+Metric+Change) based on the metric.
 
 If the tool reports code-attributing information like Inspections or Duplicates, TeamCity-bundled report can be used to display the results. A custom plugin will be necessary to process the tool-specific report into TeamCity-specific data model. Example of this can be found in [XML Test Reporting](xml-report-processing.md) plugin and FXCop plugin (see a link on [Open-source Bundled Plugins](https://confluence.jetbrains.com/display/TW/Open-source+Bundled+Plugins)).
 

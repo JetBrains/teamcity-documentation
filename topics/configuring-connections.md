@@ -110,7 +110,7 @@ If you use a GitHub Enterprise server with HTTPS, you need to also upload its HT
 
 >If you enable the [GitHub.com authentication](configuring-authentication-settings.md#GitHub.com) module and want to restrict access to TeamCity to users of specific GitHub organizations, you need to ensure that your OAuth app is allowed by all these organizations. By default, GitHub does not allow OAuth apps to access the organizations. You can either disable this restriction for all apps or approve only the TeamCity app in each of the required organizations. Please refer to the [GitHub documentation](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-oauth-app-access-restrictions) for more details.
 
-A GitHub icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitHub profile. TeamCity will be granted full control of your private repositories and get the _Write repository hooks_ permission. If you configure multiple GitHub connections, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
+A GitHub icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitHub profile. TeamCity will be granted full control of your private repositories and get the _Write repository hooks_ permission. If you configure multiple GitHub integrations, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
 </chunk>
 
@@ -386,7 +386,7 @@ Specify a [token](https://docs.npmjs.com/about-access-tokens), if it's needed fo
 
 </table>
 
-Save the connection and proceed with adding an [NPM Registry Connection](nodejs.md#Accessing+Private+Registries) build feature.
+Save the connection and proceed with adding an [NPM Registry Connection](nodejs.md#Accessing+Private+NPM+Registries) build feature.
 
 ## Perforce Administrator Access
 

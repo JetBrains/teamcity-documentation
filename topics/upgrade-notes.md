@@ -30,6 +30,12 @@ RC build:
 * The Bundled Kotlin compiler, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version 1.5.31.
 * The bundled ReSharper tool has been updated to version 2021.2.1.
 
+## Changes from 2021.1.3 to 2021.1.4
+
+* Updates in [TeamCity Agent Docker images](https://hub.docker.com/r/jetbrains/teamcity-agent/) for Linux:
+  * Git is updated to version 2.25.1.
+  * The Perforce Helix Core client (p4) is updated to version 2021.1/2179737.
+
 ## Changes from 2021.1.2 to 2021.1.3
 
 No noteworthy updates.

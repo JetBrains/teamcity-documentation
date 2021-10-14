@@ -1,5 +1,5 @@
-[//]: # (title: Migrating to an External Database)
-[//]: # (auxiliary-id: Migrating to an External Database)
+[//]: # (title: Migrating to External Database)
+[//]: # (auxiliary-id: Migrating to External Database;Migrating to an External Database)
 
 For details on using an external database from the first TeamCity start, as well as the general external database information and the database-specific configuration steps, refer to the [Setting up an External Database](setting-up-external-database.md) page.
 

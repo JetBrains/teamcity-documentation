@@ -174,7 +174,7 @@ Now, if _test retry_ is enabled in your build, TeamCity will mute a failed test 
 
 <img src="test-retry.png" alt="Muted by test retry"/>
 
-See more details in the [documentation](build-failure-conditions.md#Common+build+failure+conditions).
+See more details in the [documentation](build-failure-conditions.md#Common+Build+Failure+Conditions).
 
 ## Other improvements
 

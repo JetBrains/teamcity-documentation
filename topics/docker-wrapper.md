@@ -87,7 +87,7 @@ If you need to reference an environment variable on an agent, define the configu
 
 </td></tr></table>
 
-## How It Works
+## How Docker Wrapper Works
 {id="how-it-works-1"}
 
 Technically, the command of the build runner is wrapped in a shell script, and this script is executed inside a Docker container with the `docker run` command. All the details about the started process, text of the script, and so on, are written into the build log (the [Verbose mode](build-log.md#Viewing+Build+Log) enables viewing them).

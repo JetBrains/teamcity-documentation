@@ -147,7 +147,7 @@ You can still customize the order of build steps in a template-based build confi
 ## Enforcing settings inherited from template
 [//]: # ([//]: # (AltHead:Enforced settings)
 
-If you want to enforce some settings on all the build configurations in the project so that other users could not redefine them, TeamCity provides this ability for all the build configurations in a project hierarchy. For instance, using enforced settings it is possible to set [agent side checkout](vcs-checkout-mode.md) everywhere, or ensure that all build configurations have some strict [execution timeout](build-failure-conditions.md#Common+build+failure+conditions). Currently, it is possible to enforce build features, options, and parameters. Build steps and build requirements can also be enforced.
+If you want to enforce some settings on all the build configurations in the project so that other users could not redefine them, TeamCity provides this ability for all the build configurations in a project hierarchy. For instance, using enforced settings it is possible to set [agent side checkout](vcs-checkout-mode.md) everywhere, or ensure that all build configurations have some strict [execution timeout](build-failure-conditions.md#Common+Build+Failure+Conditions). Currently, it is possible to enforce build features, options, and parameters. Build steps and build requirements can also be enforced.
 
 To enforce some settings in the project hierarchy, create a template with these settings. After that, a system administrator can set this template as the enforced settings' template in the project:
 

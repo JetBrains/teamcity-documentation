@@ -16,7 +16,7 @@ By default, the __Current Problems__ tab displays data for all build configurati
 From this page you can view problems in your project divided into the following groups:
 * build configuration problems
 * failed tests
-* [muted test failures](investigating-and-muting-build-failures.md#Muting+Failed+Tests)
+* [muted test failures](investigating-and-muting-build-failures.md#Muting+Tests)
 * build problems
 
 Each of the sections is expandable and you can further drill down to the smallest relevant item using the up and down arrows ![UpDownArrows.PNG](UpDownArrows.PNG).

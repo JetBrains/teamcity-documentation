@@ -278,7 +278,7 @@ Contains [clean-up](clean-up.md)-related log
 
 <td>
 
-(off by default) logs of back-up/ restore/ migration performed with [maintainDB tool](migrating-to-an-external-database.md#Full+Migration)
+(off by default) logs of back-up/ restore/ migration performed with [maintainDB tool](migrating-to-external-database.md#Full+Migration)
 
 </td></tr><tr>
 
@@ -290,7 +290,7 @@ Contains [clean-up](clean-up.md)-related log
 
 <td>
 
-(off by default) contains extended information on possible data truncation during back-up/ restore/ migration performed with [maintainDB tool](migrating-to-an-external-database.md)
+(off by default) contains extended information on possible data truncation during back-up/ restore/ migration performed with [maintainDB tool](migrating-to-external-database.md)
 
 </td></tr><tr>
 

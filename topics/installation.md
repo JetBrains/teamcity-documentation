@@ -96,15 +96,6 @@ Official JetBrains TeamCity server Docker image
 
 </table>
 
-You can also install TeamCity using the following __experimental options__:
-* TeamCity template on [Azure Marketplace](https://azuremarketplace.microsoft.com/en-en/marketplace/apps/jetbrains.teamcity?tab=Overview). Read more in our [blog post](https://blog.jetbrains.com/teamcity/2018/09/teamcity-on-azure-marketplace/).
-* [Azure Resource Manager template](https://github.com/JetBrains/teamcity-azure-template).
-* [Google Cloud Deployment Manager template](https://github.com/JetBrains/teamcity-google-template).
-
->Note that we do not guarantee support of experimental versions. For production purposes, we recommend using stable TeamCity distributives and Docker images.
->
-{type="note"}
-
 ## Install Additional Build Agents
 {product="tc"}
 
