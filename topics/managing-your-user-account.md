@@ -1,7 +1,7 @@
 [//]: # (title: Managing your User Account)
 [//]: # (auxiliary-id: Managing your User Account)
 
-To get to your user profile settings, click your name in the header and select __Profile__ from the drop-down menu. The __Your Profile__ page will open.
+To get to your user profile settings, click your avatar in the header and select __Profile__ from the drop-down menu. The __Your Profile__ page will open.
 
 ## Changing Your Password
 
@@ -57,9 +57,7 @@ These settings enable you to:
 
 ## Configuring Two-Factor Authentication
 
->This functionality is provided in terms of TeamCity 2021.2 Early Access Program.
-
-TeamCity administrators can enable two-factor authentication (2FA) on the whole server. In this case, you will be prompted to configure 2FA settings for your user account. To do this:
+TeamCity administrators can enable [two-factor authentication](enabling-two-factor-authentication.md) (2FA) on the whole server. In this case, you will be prompted to configure 2FA settings for your user account. To do this:
 
 1. Download and install any suitable authenticator app on your mobile device: for example, Google Authenticator or Microsoft Authenticator.
 2. In TeamCity, open __Your Profile | Two-factor Authentication__.
