@@ -21,12 +21,11 @@ You also have a possibility to perform fuzzy search using the tilde (`~`) symbol
 
 ### Boolean Operators and Wildcards Support
 
-You can combine multiple terms with Boolean operators to create more complex search queries. In TeamCity, you can use `AND`, `+`, `OR`, `NOT`, and `-`.
+You can combine multiple terms with Boolean operators to create more complex search queries. In TeamCity, you can use `OR`, `NOT`, `-`. The `AND` operator is unrecommended and you should use the white space (equivalent to `OR`) instead.
 
 When using Boolean operators, type them ALL CAPS.
 * `OR` operator helps fetch the search terms that contain either of the terms you specify in the search field. This operator is used by default.
-* `AND` (same as a plus sign). All words that are linked by the `AND` are included in the search results.
-* `NOT` (same as minus sign in front of a query word). Exclude a word or phrase from search results.
+* `NOT` (same as `-` in front of a query word). Exclude a word or phrase from search results.
 
 TeamCity also supports the `*` and `?` wildcards in a query. It is not recommended using the asterisk (`*`) at the beginning of the search term as it may require a significant amount of time for TeamCity to search its database. For example, the `*onfiguration` search term is incorrect.
 
