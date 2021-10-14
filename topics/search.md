@@ -21,7 +21,7 @@ You also have a possibility to perform fuzzy search using the tilde (`~`) symbol
 
 ### Boolean Operators and Wildcards Support
 
-You can combine multiple terms with Boolean operators to create more complex search queries. In TeamCity, you can use `OR`, `NOT`, `-`. The `AND` operator is unrecommended and you should use the white space (equivalent to `OR`) instead.
+You can combine multiple terms with Boolean operators to create more complex search queries. In TeamCity, you can use `OR`, `NOT`, `-`. The `AND` operator is not recommended — use the white space (equivalent to `OR`) instead.
 
 When using Boolean operators, type them ALL CAPS.
 * `OR` operator helps fetch the search terms that contain either of the terms you specify in the search field. This operator is used by default.
