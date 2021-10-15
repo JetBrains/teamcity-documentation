@@ -24,7 +24,7 @@ This fix restores the intended behavior, but we recommend that you review your c
 
 TeamCity 2021.2 Server and Agent support Java versions 8 and 11, but __Java 8 support will be discontinued in TeamCity 2022.1__. If you use a non-bundled version of Java 8, we highly recommend that you migrate your infrastructure to Java 11 until the 2022.1 release.
 
-Note that TeamCity is not compatible with Java 17, which makes Java 11 the only version planned for support in TeamCity 2022.1.
+Note that TeamCity is not currently compatible with Java versions later than 11.
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-20212"}
