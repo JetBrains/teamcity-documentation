@@ -73,10 +73,6 @@ In this case, the labeling rules should be:
 
 ## Labeling in Perforce
 
->This functionality is available in terms of TeamCity 2021.2 Early Access Program.
->
-{type="note"}
-
 Since 2021.2, TeamCity creates [automatic labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) instead of static ones. Automatic labels work as aliases for changelists. In a label's `Revision` field, TeamCity displays the revision checked out in the current build. For the `View` field, it uses the mapping associated with all paths of the current VCS root.
 
 For Perforce labels, TeamCity supports only include rules and ignores exclude rules.

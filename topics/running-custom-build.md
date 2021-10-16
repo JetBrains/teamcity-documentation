@@ -7,9 +7,9 @@ Besides triggering a build automatically, TeamCity allows you to run a build man
 
 There are several ways of launching a custom build in TeamCity:
 * Click the ellipsis on the __Run__ button, and specify the options in the __Run Custom Build__ dialog described [below](#General+Options).
-* To run a custom build with specific changes, open the build results page, go to the [Changes](working-with-build-results.md#Changes) tab, expand the required change, click the __Run build with this change__, and proceed with the [options](#General+Options) in the __Run Custom Build__ dialog.
+* To run a custom build with specific changes, open the build results page, go to the __[Changes](working-with-build-results.md#Changes)__ tab, expand the required change, click the __Run build with this change__, and proceed with the [options](#General+Options) in the __Run Custom Build__ dialog.
 * Use [HTTP request](accessing-server-by-http.md) or [REST API request](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Triggering+Build) to TeamCity to trigger a build.
-* Promote a build - see the section [below](#Promoting+Build).
+* [Promote a build](#Promoting+Build).
 * [Build triggers](configuring-build-triggers.md) can launch builds with custom parameters.
 
 ## Run Custom Build dialog
@@ -27,10 +27,17 @@ Select an agent you want to run the build on from the drop-down menu. Note that 
   * run a build on different platforms (for example, you can set up a configuration, and specify for it a number of compatible build agents with different environments installed).
 
 On the __General__ options you can also specify whether
-* this particular build will be run as a [personal](personal-build.md) one
-* this particular build will be put at the top of the [build queue](build-queue.md)
+* this build will be run as a [personal](personal-build.md) one
+* this build will be put at the top of the [build queue](build-queue.md)
 * all files in the [build checkout directory](build-checkout-directory.md) will be cleaned before this build.
    * If snapshot dependencies are configured, this option can be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use clean checkout.
+
+If the current build configuration uses a [Perforce](perforce.md) VCS root, you can also run a custom build on [shelved files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html). To do this:
+1. Enable _run as a personal build_ option.
+2. Enter the ID of the changelist that contains the shelved files.
+3. Choose the target Perforce root.
+
+>Learn how to automate running builds on shelved files with [Perforce Shelve Trigger](perforce-shelve-trigger.md).
 
 ### Dependencies
 

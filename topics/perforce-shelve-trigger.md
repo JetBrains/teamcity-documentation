@@ -1,7 +1,7 @@
 [//]: # (title: Perforce Shelve Trigger)
 [//]: # (auxiliary-id: Perforce Shelve Trigger)
 
-The _Perforce shelve trigger_ automatically runs a build on detecting a change in [shelved Perforce files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html).
+The _Perforce shelve trigger_ automatically runs a build on detecting a change in [shelved files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html) of your Perforce changelists.
 
 >You can also run such a build manually, with the [custom run](running-custom-build.md).
 
