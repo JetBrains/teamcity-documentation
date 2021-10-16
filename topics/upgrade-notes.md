@@ -26,7 +26,7 @@ TeamCity 2021.2 Server and Agent support Java versions 8 and 11, but __Java 8 su
 
 Note that TeamCity is not currently compatible with Java versions later than 11.
 
-### Bundled Tools Updates
+### Bundled tools updates
 {id="bundled-tools-updates-20212"}
 
 * Bundled Amazon Corretto Java has been updated to version 11.0.12.7.1 in the TeamCity server Docker images for Windows and Linux.
