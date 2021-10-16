@@ -54,7 +54,7 @@ Per request, our sales engineers can provide you with a more thorough estimation
 In general, the migration to Cloud looks as follows:
 
 1. [Register a TeamCity Cloud instance](https://www.jetbrains.com/teamcity/cloud/) with the domain name of your choice (`<name>.teamcity.com`) and get 14-day trial access free of charge.
-2. Back up the TeamCity On-Premises data, as described [here](https://www.jetbrains.com/help/teamcity/creating-backup-from-teamcity-web-ui.html). Make sure that the major version of your TeamCity On-Premises server is the same as the current Cloud version (currently, 2021.1).  
+2. Back up the TeamCity On-Premises data, as described [here](https://www.jetbrains.com/help/teamcity/creating-backup-from-teamcity-web-ui.html). Make sure that the major version of your TeamCity On-Premises server is the same as the current Cloud version (currently, 2021.2).  
    Note that the backup file of a big server may be quite large as well. TeamCity Cloud will allow importing files up to \~1.5 GB. If your backup file exceeds this limit, consider excluding the build history from its scope.  
   This will allow transferring the settings of your projects, build configurations, and users, as well as build history, changelogs, and statistics. Some data, such as build artifacts and build logs, cannot be imported to a new server. See the full list of potential transfer implications [here](projects-import.md#Data+not+included+into+import).
 3. [Import](projects-import.md) the backed-up On-Premises data to your new Cloud instance.

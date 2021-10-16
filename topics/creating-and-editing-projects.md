@@ -13,7 +13,7 @@ There are several options to create a project from:
 * [from Bitbucket Cloud](#Creating+project+pointing+to+Bitbucket+Cloud)
 * [from GitLab](#Creating+project+pointing+to+GitLab.com)
 * [from Azure DevOps](#Creating+project+pointing+to+Azure+DevOps+Services)
-* (in terms of TeamCity 2021.2 EAP) from JetBrains Space
+* [from JetBrains Space](#Creating+project+pointing+to+JetBrains+Space)
 * [manually](#Creating+project+manually)
  
 Note that only two options are available by default: _From a repository URL_ and _Manually_. If a [connection](integrating-teamcity-with-vcs-hosting-services.md) to some VCS hosting service is configured in the Root project (or a parent project of the project to be created), the corresponding option becomes available, so you can create a project using an existing VCS connection specification.

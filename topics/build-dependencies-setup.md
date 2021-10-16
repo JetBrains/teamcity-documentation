@@ -243,7 +243,7 @@ Artifacts may not be [cleaned](clean-up.md) if they were downloaded by other bui
 
 __Running personal build in a chain__
 
-Since TeamCity 2021.1.2, if you run a personal build that is a part of a [build chain](build-chain.md), all its dependency builds will be run as personal builds as well.  
+If you run a personal build that is a part of a [build chain](build-chain.md), all its dependency builds will be run as personal builds as well.  
 However, if you enable the [reuse of suitable builds](snapshot-dependencies.md#Suitable+Builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
 
 [//]: # (Internal note. Do not delete. "Build Dependencies Setupd34e498.txt")

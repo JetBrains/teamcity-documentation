@@ -25,8 +25,8 @@ TeamCity provides several preconfigured authentication options (presets) to cove
   * [GitHub Enterprise](#GitHub+Enterprise)
   * [GitLab.com](#GitLab.com)
   * [GitLab CE/EE](#GitLab+CE%2FEE)
-  * (In terms of TeamCity 2021.2 EAP) [JetBrains Space](#JetBrains+Space)
-  * (In terms of TeamCity 2021.2 EAP) [Azure DevOps Services](#Azure+DevOps+Services)
+  * [JetBrains Space](#JetBrains+Space)
+  * [Azure DevOps Services](#Azure+DevOps+Services)
 
 >If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure single sign-on (SSO) from the TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).
 >
@@ -83,7 +83,7 @@ In the __General Settings__ block, you can:
 * Enable the [guest login](enabling-guest-login.md) on the server and change the guest username. Please read our [security notes](security-notes.md#caution-guest-login) before enabling this option.
 * Customize the view of the login form: enter an introductory text and hide the default username/password fields (convenient if you prefer [authentication through third-party services](#HTTP+%2F+SSO+Authentication+Modules)).
 * Enable the [per-project authorization mode](role-and-permission.md#Changing+Authorization+Mode).
-* (In terms of 2021.2 EAP) Enable the [two-factor authentication](enabling-two-factor-authentication.md).
+* Enable the [two-factor authentication](enabling-two-factor-authentication.md).
 * Enforce the [email verification](enabling-email-verification.md) for all TeamCity users.
 * Log out all currently signed in users and delete all [personal access tokens](managing-your-user-account.md#Managing+Access+Tokens).
 
@@ -490,10 +490,6 @@ Leave empty to allow all GitLab users to access the TeamCity server.
 
 ### JetBrains Space
 
->This functionality is provided in terms of TeamCity 2021.2 Early Access Program.
-> 
-{type="note"}
-
 Before enabling this module, you need to create a dedicated application in JetBrains Space and configure a connection to it in the Root project's settings, as described [here](configuring-connections.md#jetbrains-space-connection).
 
 After the connection is configured, go to __Administration | Authentication__ and:
@@ -504,10 +500,6 @@ After the connection is configured, go to __Administration | Authentication__ an
 To sign in, click the JetBrains Space icon above the TeamCity login form and, after the redirect, approve the TeamCity application.
 
 ### Azure DevOps Services
-
->This functionality is provided in terms of TeamCity 2021.2 Early Access Program.
->
-{type="note"}
 
 Before enabling this module, you need to create a [dedicated connection](configuring-connections.md#Azure+DevOps) to your Azure DevOps Services in the Root project's settings.
 

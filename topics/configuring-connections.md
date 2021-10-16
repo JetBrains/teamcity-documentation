@@ -12,7 +12,7 @@ When created, a connection can be used in all the nested subprojects of the curr
 <chunk include-id="azure-devops">
 
 There are two types of Azure DevOps connections in TeamCity:
-* In terms of TeamCity 2021.2 EAP: __Azure DevOps OAuth 2.0__ is the recommended type. It allows creating projects from Azure Git repositories and signing in to TeamCity via an Azure AD account.
+* __Azure DevOps OAuth 2.0__ is the recommended type. It allows creating projects from Azure Git repositories and signing in to TeamCity via an Azure AD account.
 * __Azure DevOps PAT__ is the obsolete type of connection, previously used for connecting to Team Foundation Server. It is left for compatibility, as it allows connecting to both Git and TFVC repositories.
 
 <anchor name="azure-devops-connection"/>
@@ -304,10 +304,9 @@ Save the connection and proceed with adding a [Notifier](notifications.md#Slack+
 
 This type of connection can be used for:
 * publishing build statuses in [JetBrains Space](https://www.jetbrains.com/space/) with the help of [Commit Status Publisher](commit-status-publisher.md)
-* in terms of 2021.2 EAP:
-  * running builds on merge requests with the [Pull Requests](pull-requests.md) feature
-  * [authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account
-  * creating [projects](creating-and-editing-projects.md) and [build configurations](creating-and-editing-build-configurations.md) from a JetBrains Space repository
+* running builds on merge requests with the [Pull Requests](pull-requests.md) feature
+* [authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account
+* creating [projects](creating-and-editing-projects.md) and [build configurations](creating-and-editing-build-configurations.md) from a JetBrains Space repository
 
 Before configuring this connection, you need to create a dedicated application in JetBrains Space:
 1. Go to __Administration | Applications__ and click __New application__.

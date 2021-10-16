@@ -11,7 +11,7 @@ Supported systems:
 * JetBrains Space
 * JetBrains Upsource
 * Gerrit Code Review tool 2.6+
-* (in terms of TeamCity 2021.1 EAP) Perforce Helix Swarm
+* Perforce Helix Swarm
  
 ## Provider-specific Configuration
 

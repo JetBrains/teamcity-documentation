@@ -17,5 +17,3 @@ After you enable the Performance Monitor [build feature](adding-build-features.m
 Clicking on a point in the graph displays the corresponding value (CPU on a screenshot below) as well as the build log with the highlighted fragment for the selected time:
 
 <img src="performance-monitor.png" width="750" alt="Performance monitor"/>
-
-Since version 2021.1.2, you can select a specific time range with a drag-and-drop, and TeamCity will show the respective log entries.

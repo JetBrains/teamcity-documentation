@@ -120,7 +120,7 @@ frontend http-in
 
     capture cookie X-TeamCity-Node-Id-Cookie= len 100
 
-    http-request add-header X-TeamCity-Proxy "type=haproxy; version=2021.1" 
+    http-request add-header X-TeamCity-Proxy "type=haproxy; version=2021.2" 
     http-request set-header X-Forwarded-Host %[req.hdr(Host)]
 
     acl is_build_agent hdr_beg(User-Agent) -i "TeamCity Agent"
@@ -198,7 +198,7 @@ server {
      proxy_intercept_errors on;
      proxy_set_header Host $host:$server_port;
      proxy_redirect off;
-     proxy_set_header X-TeamCity-Proxy "type=nginx; version=2021.1";
+     proxy_set_header X-TeamCity-Proxy "type=nginx; version=2021.2";
      proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
      proxy_set_header X-Forwarded-Proto $scheme;
      proxy_set_header X-Forwarded-For $remote_addr;
@@ -212,7 +212,7 @@ server {
      proxy_intercept_errors on;
      proxy_set_header Host $host:$server_port;
      proxy_redirect off;
-     proxy_set_header X-TeamCity-Proxy "type=nginx; version=2021.1";
+     proxy_set_header X-TeamCity-Proxy "type=nginx; version=2021.2";
      proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
      proxy_set_header X-Forwarded-Proto $scheme;
      proxy_set_header X-Forwarded-For $remote_addr;
@@ -415,7 +415,7 @@ The restore operation can be done on either of the nodes, but only if all nodes 
 If the "_[Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node)_" responsibility is enabled on a secondary node, it will allow performing the most common user-level actions:
 * Triggering a build, including a custom or personal one
 * Stopping/deleting and pinning/tagging/commenting builds
-* Pausing/resuming builds (in terms of 2021.2 EAP)
+* Pausing/resuming builds
 * Assigning investigations and muting build problems and tests
 * Marking a build as successful/failed
 * Editing build changes\' descriptions

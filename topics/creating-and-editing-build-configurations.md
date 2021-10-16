@@ -17,7 +17,7 @@ To find the build configuration creation wizard:
 3. Follow the instructions specific to your preferred method:
    * [manually](#Creating+Build+Configuration+Manually)
    * [pointing to a repository URL](#Creating+Build+Configuration+from+URL)
-   * pointing to a repository in GitHub.com, GitLab CE/EE, Bitbucket Cloud, Azure DevOps Services, and (in terms of TeamCity 2021.2 EAP) JetBrains Space
+   * pointing to a repository in GitHub.com, GitLab CE/EE, Bitbucket Cloud, Azure DevOps Services, and JetBrains Space
    * based on a [build configuration template](#Creating+Build+Configuration+Template)
 
 <img src="create-build-configuration.png" alt="Create a build configuration from a repository URL" width="828"/>

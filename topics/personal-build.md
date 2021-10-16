@@ -74,8 +74,6 @@ __To upload a patch and run a personal build via REST API__:
 
 ## Run Build on Perforce Shelved Files
 
-This functionality is provided in terms of TeamCity 2021.2 Early Access Program.
-
 If the current build configuration has a [Perforce VCS root](perforce.md), you can run a personal build based on changes in [shelved Perforce files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html). For this, enable the _run as a personal build_ option and enter the target changelist ID in the _Shelved changelist ID_ field.
 
 >Learn how to [automate such builds](perforce-shelve-trigger.md).
