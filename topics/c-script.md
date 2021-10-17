@@ -148,6 +148,8 @@ By default, TeamCity restores NuGet packages from their sources published on [Nu
 
 To be able to access private repositories, configure [NuGet feed credentials](nuget-feed-credentials.md).
 
+You can also refer a [TeamCity internal feed](using-teamcity-as-nuget-feed.md).
+
 </td>
 
 </tr>
