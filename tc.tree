@@ -153,7 +153,7 @@
             <toc-element id="configuring-teamcity-server-startup-properties.md" show-structure-for="chapter" show-structure-depth="4">
                <toc-element id="teamcity-tweaks.md"/>
             </toc-element>
-            <toc-element id="setting-up-google-mail-and-google-talk-as-notification-servers.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="setting-up-google-mail-as-notification-server.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="teamcity-disk-space-watcher.md"/>
             <toc-element id="teamcity-server-logs.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-agents-configuration-and-maintenance.md" show-structure-for="chapter" show-structure-depth="4">

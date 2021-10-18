@@ -102,7 +102,7 @@ If the TeamCity server is not located within the same region or affinity group a
 
 __External connections originated by server__:
 * VCS servers
-* Email and Jabber servers
+* Email servers
 * Maven repositories
 * NuGet repositories
 

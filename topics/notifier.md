@@ -61,20 +61,8 @@ __IDE Notifier__
 Displays the status of the specified build configurations and/or the status of the user changes in the user's IDE. Requires a corresponding TeamCity plugin: IntelliJ Platform plugin, Addin for Visual Studio or Eclipse Plugin; which can be downloaded from the [My Settings&amp;Tools](subscribing-to-notifications.md) page. Refer to the [Installing Tools](installing-tools.md) section. 
 
 
-</td></tr><tr product="tc">
-
-<td>
-
-__Jabber Notifier__ (needs installing a [dedicated plugin](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp))
-
-</td>
-
-<td>
-
-Notifications regarding specified events are sent via Jabber.
-
-
-</td></tr></table>
+</td></tr>
+</table>
 
 You can configure the notifier settings, create, change, and delete notification rules in __My Settings \& Tools | [Notification Rules](subscribing-to-notifications.md)__.
 

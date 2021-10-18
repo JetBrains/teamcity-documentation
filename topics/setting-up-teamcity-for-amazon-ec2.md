@@ -289,7 +289,7 @@ Here are some points to help you estimate TeamCity-related traffic:
 __External connections originated by server:__
 
 * VCS servers
-* Email and Jabber servers
+* Email servers
 * Maven repositories
 
 __Internal connections originated by server:__

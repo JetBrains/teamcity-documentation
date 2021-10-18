@@ -510,7 +510,7 @@ See [corresponding section](installing-and-configuring-the-teamcity-server.md#Ch
 ## Test-drive Newer TeamCity Version before Upgrade
 {product="tc"}
 
-It's advised to try a new TeamCity version before upgrading your production server. The usual procedure is to [create a copy](#Create+a+Copy+of+TeamCity+Server+with+All+Data) of your production TeamCity installation, then [upgrade](upgrade.md) it, try the things out, and, when everything is checked, drop the test server and upgrade the main one. When you start the test server, remember to change the Server URL, disable Email and Jabber notifiers as well as [other features](#Copied+Server+Checklist) on the new server.
+It's advised to try a new TeamCity version before upgrading your production server. The usual procedure is to [create a copy](#Create+a+Copy+of+TeamCity+Server+with+All+Data) of your production TeamCity installation, then [upgrade](upgrade.md) it, try the things out, and, when everything is checked, drop the test server and upgrade the main one. When you start the test server, remember to change the Server URL, disable the email notifier as well as [other features](#Copied+Server+Checklist) on the new server.
 
 ## Create a Copy of TeamCity Server with All Data
 {product="tc"}
@@ -592,14 +592,14 @@ If you are creating a copy (as opposed to moving the server this way), it is imp
 * ensure the same license keys are not used on several servers ([more on licensing](#Licensing+issues));
 * update [Server URL](configuring-server-url.md) on the __Administration | Global Settings__ page to the actual URL of the server;
 * check that you can successfully authenticate on the new server, use [super user](super-user.md) access if necessary;
-* check that VCS servers, issue tracker servers, email and Jabber server and other server-accessed systems are accessible;
+* check that VCS servers, issue tracker servers, email server, and other server-accessed systems are accessible;
 * check that any systems configured to push events to TeamCity server (like VCS hooks, automated build triggering, monitors, etc.) are updated to know about the new server;
 * review the list of installed plugins to determine if their settings need changes;
 * install new agents (or select some from the existing ones) and configure them to connect to the new server (using the new server URL);
 * check that clients reading from the server (downloading artifact, using server's REST API, NuGet feed, etc.) are reconfigured, if necessary.
 
 If you are creating a __test server__, you need to ensure that the users and production systems are not affected. Typically, this means you need to:
-* disable Email, Jabber (in the "Administration &gt; Notifier" sections) and possibly also custom notifiers or change their settings to prevent the new server from sending out notifications;
+* disable the email (in the "Administration &gt; Notifier" sections) and possibly also custom notifiers or change their settings to prevent the new server from sending out notifications;
 * disable email verification (in the "Administration &gt; Authentication" section);
 * be sure not to run any builds which change (for example, deploy to) production environments. This also typically includes Maven builds deploying to non-local repositories. You can prevent any builds from starting by pausing the [build queue](build-queue.md);
 * disable cloud integration (so that it does not interfere with the main server);
