@@ -13,6 +13,8 @@ TeamCity support for feature branches is continuously increasing and, among othe
 
 <anchor name="Working+with+Feature+Branches#WorkingwithFeatureBranches-branchSpec"/>
 
+<anchor name="WorkingwithFeatureBranches-branchSpec"/>
+
 ## Configuring branches
 
 To start working with DVCS branches, you need to configure which branches need to be watched for changes. This is done in the __General Settings__ section of a [Git](git.md) or [Mercurial](mercurial.md) VCS root via the __Branch Specification__ field.    
