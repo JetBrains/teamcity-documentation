@@ -231,6 +231,8 @@ Username/password
 
 Specify a username and password for connection to Bitbucket Server.
 
+You can submit an access token instead of the password. The token should have _Read_ permissions for projects and repositories.
+
 </td>
 </tr>
 <tr>
