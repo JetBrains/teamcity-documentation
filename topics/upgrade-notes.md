@@ -13,11 +13,12 @@ To upgrade TeamCity from versions earlier than 9.1, where the unidirectional sup
 
 ### Perforce automatic labels become default
 
-If you use [VCS labeling](vcs-labeling.md) for a [Perforce](perforce.md) root, note that TeamCity now creates [automatic labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) by default. If, for some reason, you want to continue using static labels, you can revert to the old behavior by adding the `teamcity.perforce.useStaticLabels=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+If you use [VCS labeling](vcs-labeling.md) for a [Perforce](perforce.md) root, note that TeamCity now creates [automatic labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) by default. If you want to continue using static labels, you can revert to the previous behavior by adding the `teamcity.perforce.useStaticLabels=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
 
 ### Fixed inconsistency in build chains clean-up
 
-Previously, builds in an artifact dependency configuration were never [cleaned up](clean-up.md) if its dependent configuration had a snapshot dependency on another build and that build was set to be preserved. This included the case when the "_Do not prevent clean-up_" option was enabled in the respective clean-up rule for the artifact dependency. Now, the artifact dependency configuration will be cleaned up properly, in full accordance with its clean-up rules.  
+Previously, builds in an artifact dependency configuration were never [cleaned up](clean-up.md) if its dependent configuration had a snapshot dependency on another build configuration which was set to be preserved. For example, if __C__ artifact-depends on __B__ and snapshot-depends on __A__ and __A__ is set to be preserved, __B__ was not cleaned up even if the "_Keep artifact dependencies_" option was enabled in __C__. Now, builds in the artifact dependency configuration (__C__) will be cleaned up properly, in full accordance with the clean-up rules.
+
 This fix restores the intended behavior, but we recommend that you review your clean-up settings to ensure no builds will be cleaned up unexpectedly after the upgrade.
 
 ### Planned deprecation of Java 8 in TeamCity 2022.1
