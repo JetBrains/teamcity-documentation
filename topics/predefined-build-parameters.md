@@ -329,7 +329,7 @@ vcsroot.<VCS_root_ID>.<VCS_root_property_name>
 ```
 
 * `<VCS_root_ID>` — is the VCS root ID as described on the [Configuring VCS Roots](configuring-vcs-roots.md) page.
-* `<VCS_root_property_name>` — the name of the VCS root property. This is VCS-specific and depends on the VCS support. You can get the available list of properties as described [above](#Configuration+Parameters).
+* `<VCS_root_property_name>` — the name of the VCS root property. This is VCS-specific and depends on the VCS support. You can get the available list of properties as described [above](#Configuration+Parameters).  
 If there is only one VCS root in a build configuration, the `<VCS root ID>.` part can be omitted.
 
 Properties marked by the VCS support as `secure` (for example, passwords) are not available as reference properties.
