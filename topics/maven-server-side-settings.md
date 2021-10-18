@@ -12,9 +12,7 @@ During the process, TeamCity uses the usual Maven logic for finding the `setting
 ### Global Settings
 
 Maven _global-level_ settings are used from the `.xml` file in the default Maven location for the TeamCity server process: `${env.M2_HOME}/conf/settings.xml` or `${system.maven.home}/conf/settings.xml`.   
-The global values of `M2_HOME` environment variable and` maven.home` JVM option are used set for the TeamCity server process.
-
-Since TeamCity 2019.2.1, you can also define credentials for accessing Maven repositories in the `mavenSettingsDsl.xml` file and upload it to the __Maven Settings__ of your _Root_ project. This allows storing custom libraries in private repositories and accessing them from all the subprojects of the _Root_ project using the predefined credentials.
+The global values of `M2_HOME` environment variable and `maven.home` JVM option are used set for the TeamCity server process.
 
 ### User-Level Settings
 
