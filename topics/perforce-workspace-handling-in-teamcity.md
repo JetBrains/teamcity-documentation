@@ -19,9 +19,9 @@ The name of the workspace also includes the build agent name and a hash value bu
 With [agent-side checkout](vcs-checkout-mode.md#agent-checkout), TeamCity provides environment variables describing the Perforce workspace created during the checkout process.   
 If several Perforce VCS roots are used for the checkout, the variables are created for the __first__ VCS root in the list of the build's VCS Roots.   
 The variables are:
-* `P4USER` — same as `vcsroot.<VCS root ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
-* `P4PORT` — same as `vcsroot.<VCS root ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
-* `P4CLIENT` — same as `vcsroot.<VCS root ID>.p4client` [parameter](predefined-build-parameters.md#VCS+Properties), the name of the generated P4 workspace on the agent
+* `P4USER` — same as `vcsroot.<VCS_root_ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
+* `P4PORT` — same as `vcsroot.<VCS_root_ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
+* `P4CLIENT` — same as `vcsroot.<VCS_root_ID>.p4client` [parameter](predefined-build-parameters.md#VCS+Properties), the name of the generated P4 workspace on the agent
 
 These variables can be used to perform custom p4 commands after the checkout.
 
