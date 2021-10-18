@@ -12,7 +12,7 @@ When created, a connection can be used in all the nested subprojects of the curr
 <chunk include-id="azure-devops">
 
 There are two types of Azure DevOps connections in TeamCity:
-* __Azure DevOps OAuth 2.0__ allows signing in to TeamCity via an Azure AD account.
+* __Azure DevOps OAuth 2.0__ allows signing in to TeamCity via an Azure DevOps Services account.
 * __Azure DevOps PAT__ allows creating TeamCity projects from Azure Git and TFVC repositories.
 
 <anchor name="azure-devops-connection"/>
