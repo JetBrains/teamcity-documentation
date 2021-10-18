@@ -305,7 +305,7 @@ Save the connection and proceed with adding a [Notifier](notifications.md#Slack+
 This type of connection can be used for:
 * publishing build statuses in [JetBrains Space](https://www.jetbrains.com/space/) with the help of [Commit Status Publisher](commit-status-publisher.md)
 * [authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account
-* creating [projects](creating-and-editing-projects.md) and [build configurations](creating-and-editing-build-configurations.md) from a JetBrains Space repository
+* creating [projects](creating-and-editing-projects.md), [build configurations](creating-and-editing-build-configurations.md), and [VCS roots](configuring-vcs-roots.md) from a JetBrains Space repository
 
 Before configuring this connection, you need to create a dedicated application in JetBrains Space:
 1. Go to __Administration | Applications__ and click __New application__.
@@ -328,7 +328,7 @@ Now you can return to TeamCity, add a new JetBrains Space connection, and enter 
 * URL of the Space server
 * client ID and secret of your Space application
 
-Save the connection and proceed with adding a [Commit Status Publisher](commit-status-publisher.md), [enabling Space authentication](configuring-authentication-settings.md#JetBrains+Space), or creating a [project](creating-and-editing-projects.md#Creating+project+pointing+to+JetBrains+Space) / [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+Pointing+to+Specific+VCS).
+Save the connection and proceed with adding a [Commit Status Publisher](commit-status-publisher.md), [enabling Space authentication](configuring-authentication-settings.md#JetBrains+Space), or creating a [project](creating-and-editing-projects.md#Creating+project+pointing+to+JetBrains+Space) / [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+Pointing+to+Specific+VCS) / [VCS root](configuring-vcs-roots.md).
 
 ## NPM Registry
 {id="npm-registry-settings" auxiliary-id="npm-registry-settings"}
