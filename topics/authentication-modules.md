@@ -17,7 +17,7 @@ TeamCity supports the following _credentials authentication modules_:
   <anchor name="AuthenticationModules-tokenBasedAuth"/>
 * __Token-based Authentication__ (cross-platform): Authentication via the personal access tokens that are maintained by TeamCity. This enables both an ability to authenticate with login/access-token instead of login/password when using the login form and token-based HTTP authentication.
 
-<anchor href="auth-modules"/>
+<anchor name="auth-modules"/>
 
 The following _HTTP authentication modules_ are supported:
 * __Basic HTTP__ (cross-platform): Allows accessing certain web server pages and perform actions from various scripts.

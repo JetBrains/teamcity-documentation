@@ -264,8 +264,6 @@ Other .NET runners:
 
 </td></tr>
 
-<tr>
-
 <tr><td>
 
 [MSBuild](msbuild.md)
