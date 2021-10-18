@@ -12,3 +12,7 @@ The trigger monitors all [Perforce VCS roots](perforce.md) associated with the c
 >See how to invoke this trigger [via TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/edit-build-configuration-settings.html#Manage+Build+Triggers).
 
 On any change made in shelved files of a matching changelist, TeamCity will start a new [personal build](personal-build.md) with the contents of these files.
+
+If the current build is [composite](composite-build-configuration.md), the whole build chain will be triggered on a change in shelved files.
+
+If [stream support](perforce-streams-as-feature-branches.md) is enabled in the Perforce VCS root settings, this trigger will run builds only on the default stream.
