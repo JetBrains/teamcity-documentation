@@ -29,7 +29,7 @@ Type of VCS
 
 <td>
 
-Type of a version control system supported by TeamCity, for example, Perforce, Subversion, and so on.
+Type of version control system supported by TeamCity, for example, Perforce or Subversion.
 
 </td></tr><tr>
 
