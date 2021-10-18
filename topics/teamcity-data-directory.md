@@ -71,7 +71,7 @@ We highly recommend placing the Data Directory outside of the TeamCity installat
 The `config` subdirectory of TeamCity Data Directory contains the configuration of your TeamCity projects, and the `system` subdirectory contains build logs, artifacts, and database files (if internal database (HSQLDB) is used which is default). You can also review information on [Manual Backup and Restore](manual-backup-and-restore.md) to understand better which data is stored in the database, and which is on the file system.
 * __`BuildServer/config`__ — a directory where projects, build configurations and general server settings are stored.
   * `_trash` — backup copies of deleted projects, it is OK to delete them manually. For details on restoring the projects check [How To](how-to.md#Restore+Just+Deleted+Project).
-  * `notifications` — notification templates and notification configuration settings, including syndication feeds template.
+  * `notifications` — notification templates and notification configuration settings.
   * `logging` — [internal server logging](teamcity-server-logs.md) configuration files, new files can be added to the directory manually.
      <anchor name="projects_folder"/>
   * `projects` — a directory which contains all project-related settings. Each project has its own directory. Project hierarchy is not used and all the projects have a corresponding directory residing directly under "projects".

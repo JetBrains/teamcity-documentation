@@ -1,7 +1,7 @@
 [//]: # (title: Customizing Notifications)
 [//]: # (auxiliary-id: Customizing Notifications)
 
-TeamCity users can [select the events to be notified about](subscribing-to-notifications.md). The default notification messages can be customized globally on a per-server basis. Customizing notifications received via Atom/RSS syndication feeds requires a [special approach](#TeamCity+Notification+Properties) since the feeds use the "pull" model for receiving notifications instead of "push".
+TeamCity users can [select the events to be notified about](subscribing-to-notifications.md). The default notification messages can be customized globally on a per-server basis.
 
 Project Administrators with the enabled "_Change user / group notification rules in project_" permission can edit notification rules for users and user groups assigned to their projects.
 
@@ -56,7 +56,6 @@ __IDE Notifications__ and __Windows Tray Notifications__
 * __message__ — plain text of the message to send
 * __link__ — URL of the TeamCity page that contains detailed information about the event
 
-The Atom/RSS feeds template differs from the others. Refer to the [dedicated section](#TeamCity+Notification+Properties) for details.
 
 ### Customization Examples
 
@@ -192,20 +191,6 @@ The following [properties](configuring-teamcity-server-startup-properties.md) ca
 * `teamcity.notification.maxFailedTestNum` — max number of failed tests to list in an email message (integer, default 50)
 * `teamcity.notification.maxFailedTestStacktraces` — max number of test stacktraces in an email message (integer, default 5)
 * `teamcity.notification.maxFailedTestDataSize` — max size (in bytes) of failed test output data to include in a single email message (integer, default 10240)
-
-### Syndication Feed Template
-
-The template uses a configuration approach different from other notification engines.
-
-The default template is stored in the file: `<TeamCity Data Directory>/config/default-feed-item-template.ftl`. This file should never be edited: it is overwritten on every server startup with the default copy. To specify a new template to use, copy the file named `feed-item-template.ftl` into the same directory. This file can be edited and will not be overwritten. It will be used by the engine if present.
-
-The template is a [FreeMarker](http://freemarker.org/docs/dgui.html) template and can be freely edited.
-
-You can use several templates on a single server. The template name can be passed as a [URL parameter](subscribing-to-notifications.md#Additional+Supported+URL+Parameters) of the feed URL.
-
-During feed rendering, the template is evaluated to get the feed content. The resultant content is defined by the global variables defined in the template.
-
-See the default template for an example of available input variables and output variables.
 
 <seealso>
         <category ref="user-guide">

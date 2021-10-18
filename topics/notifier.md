@@ -74,19 +74,6 @@ __Jabber Notifier__ (needs installing a [dedicated plugin](https://plugins.jetbr
 Notifications regarding specified events are sent via Jabber.
 
 
-</td></tr><tr product="tc">
-
-<td>
-
-__Atom/RSS Feed Notifier__
-
-
-</td>
-
-<td>
-
-Notifications regarding specified events are sent via an Atom/RSS feed. See [this section](customizing-notifications.md#Syndication+Feed+Template).
-
 </td></tr></table>
 
 You can configure the notifier settings, create, change, and delete notification rules in __My Settings \& Tools | [Notification Rules](subscribing-to-notifications.md)__.
