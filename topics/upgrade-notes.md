@@ -34,7 +34,7 @@ Note that TeamCity is not currently compatible with Java versions later than 11.
 * Bundled JaCoCo has been updated to version 0.8.7.
 * Bundled Ant has been updated to version 1.10.11.
 * The Bundled Kotlin compiler, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version 1.5.31.
-* The bundled ReSharper and dotCover tools have been updated to version 2021.2.2.
+* The bundled dotCover tool has been updated to version 2021.2.2.
 * The following notifications plugins are no longer actively used and thus unbundled from TeamCity:
   * [Jabber/XMPP](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp)
   * [RSS feed support](https://plugins.jetbrains.com/plugin/17723-rss-feed-support)  
