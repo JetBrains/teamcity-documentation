@@ -501,7 +501,7 @@ To sign in, click the JetBrains Space icon above the TeamCity login form and, af
 
 ### Azure DevOps Services
 
-Before enabling this module, you need to create a [dedicated connection](configuring-connections.md#Azure+DevOps) to your Azure DevOps Services in the Root project's settings.
+Before enabling this module, you need to create a [dedicated connection](configuring-connections.md#Azure+DevOps) to your Azure DevOps Services instance in the Root project's settings.
 
 To enable the module, in __Administration | Authentication__:
 1. Click __Add module__ and choose the _Azure DevOps OAuth 2.0_ type.

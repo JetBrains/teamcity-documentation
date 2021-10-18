@@ -12,8 +12,8 @@ When created, a connection can be used in all the nested subprojects of the curr
 <chunk include-id="azure-devops">
 
 There are two types of Azure DevOps connections in TeamCity:
-* __Azure DevOps OAuth 2.0__ is the recommended type. It allows creating projects from Azure Git repositories and signing in to TeamCity via an Azure AD account.
-* __Azure DevOps PAT__ is the obsolete type of connection, previously used for connecting to Team Foundation Server. It is left for compatibility, as it allows connecting to both Git and TFVC repositories.
+* __Azure DevOps OAuth 2.0__ allows signing in to TeamCity via an Azure AD account.
+* __Azure DevOps PAT__ allows creating TeamCity projects from Azure Git and TFVC repositories.
 
 <anchor name="azure-devops-connection"/>
 
@@ -22,17 +22,17 @@ There are two types of Azure DevOps connections in TeamCity:
 
 This type of connection supports only Azure DevOps Services. It uses the [OAuth 2.0 protocol](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops) based on JWT tokens and requires creating a dedicated app in your Azure profile.
 
-This connection can be used for creating a [project from a Git repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), creating a [VCS root from URL](guess-settings-from-repository-url.md), or to enable [user authentication via Azure DevOps](configuring-authentication-settings.md#Azure+DevOps+Services).
+This connection can be used for enabling [user authentication via Azure DevOps](configuring-authentication-settings.md#Azure+DevOps+Services).
 
 To configure an Azure DevOps OAuth 2.0 connection:
 1. In __Project Administration | Connections__, click __Add Connection__.
 2. Select _Azure DevOps OAuth 2.0_ as the connection type.
 3. TeamCity will display the _Callback URL_ and _scopes_ required for registering an OAuth application in Azure DevOps.  
-   Go to your [Azure admin panel](https://app.vsaex.visualstudio.com/app/register) and create a new app using the provided parameters. When created, copy the app’s ID and client secret.
-4. Go back to the connection form in TeamCity and enter your Azure DevOps server’s URL, the new application ID, and client secret.
+   Go to your [Azure admin panel](https://app.vsaex.visualstudio.com/app/register) and create a new app using the provided parameters. When created, copy the app's ID and client secret.
+4. Go back to the connection form in TeamCity and enter your Azure DevOps server's URL, the new application ID, and client secret.
 5. Save the connection.
 
-Now, a small Azure DevOps icon will be displayed whenever you [create a project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL) or [VCS root from URL](guess-settings-from-repository-url.md). Click this icon, sign in to Azure DevOps Services, and authorize TeamCity. TeamCity will be granted access to your public repositories.
+To activate the Azure DevOps Services authentication on your server, proceed to enabling the respective [authentication module](configuring-authentication-settings.md#Azure+DevOps+Services).
 
 #### Azure DevOps PAT Connection
 
