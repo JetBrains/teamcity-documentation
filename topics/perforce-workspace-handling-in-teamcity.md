@@ -21,7 +21,7 @@ If several Perforce VCS roots are used for the checkout, the variables are creat
 The variables are:
 * `P4USER` — same as `vcsroot.<VCS root ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
 * `P4PORT` — same as `vcsroot.<VCS root ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
-* `P4CLIENT` — the name of the generated P4 workspace on the agent
+* `P4CLIENT` — same as `vcsroot.<VCS root ID>.p4client` [parameter](predefined-build-parameters.md#VCS+Properties), the name of the generated P4 workspace on the agent
 
 These variables can be used to perform custom p4 commands after the checkout.
 
