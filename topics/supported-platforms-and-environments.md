@@ -252,6 +252,22 @@ Other .NET runners:
 
 <tr><td>
 
+[C# Script](c-script.md)
+
+</td><td>
+
+.NET 6.0
+
+</td><td>
+
+.NET 6.0 installed on the build agent, or can be run inside a Docker container with .NET 6.0
+
+</td></tr>
+
+<tr>
+
+<tr><td>
+
 [MSBuild](msbuild.md)
 
 </td><td>Microsoft Build Tools 2013, 2015, 2017, 2019</td><td>.NET Framework or Mono installed on the build agent</td></tr>
