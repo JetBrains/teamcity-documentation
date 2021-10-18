@@ -319,7 +319,6 @@ Before configuring this connection, you need to create a dedicated application i
 5. In the __Authentication__ tab, enter your TeamCity server's URL as the redirect URI.  
    If you use the authorization code flow, you need to ensure that your TeamCity server can always connect to JetBrains Space. Specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __[Global Settings](configuring-server-url.md)__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
 6. In the __Authentication__ tab, copy the app's _Client ID_ and _Client secret_.
-7. Open the __Authorization__ tab and add projects where this app will be authorized. Alternatively, you can authorize this app in the settings of every required project.
 
 >Note that when you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you (or the user who created the application in Step 1) are listed as a member.
 > 

@@ -153,7 +153,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 
 Before creating a project from a JetBrains Space, you need to configure a [dedicated connection to your Space instance](configuring-connections.md#connect-to-jetbrains-space).
 
-1. On the __Create project__ page, select to create a project __from JetBrains Space__. The first time, you will be prompted to sign in and grant TeamCity access to viewing your user profile and projects.
+1. On the __Create project__ page, select to create a project __from JetBrains Space__. The first time, you will be prompted to sign in to Space and grant TeamCity access to view your user profile and projects. To be able to do this, TeamCity will create a service token for authenticating in your Space instance.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration names. If required, modify them and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   
