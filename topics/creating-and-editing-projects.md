@@ -141,7 +141,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 
 ### Creating project pointing to Azure DevOps Services
 
-1. On the __Create project__ page, select to create project __from Azure DevOps__. The recommended approach for Git repositories is to use the [connection based on OAuth 2.0 protocol](configuring-connections.md#Connecting+to+Azure+DevOps). If you need to connect to a TFVC repository, use the obsolete [PAT-based connection](configuring-connections.md#Azure+DevOps+PAT+Connection).
+1. On the __Create project__ page, select to create a project __from Azure DevOps__. The recommended approach for Git repositories is to use the [connection based on OAuth 2.0 protocol](configuring-connections.md#Connecting+to+Azure+DevOps). If you need to connect to a TFVC repository, use the obsolete [PAT-based connection](configuring-connections.md#Azure+DevOps+PAT+Connection).
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   
@@ -153,9 +153,9 @@ If no steps found, you will have to [configure build steps manually](configuring
 
 Before creating a project from a JetBrains Space, you need to configure a [dedicated connection to your Space instance](configuring-connections.md#connect-to-jetbrains-space).
 
-1. On the __Create project__ page, select to create project __from JetBrains Space__. The first time, you will be prompted to grant TeamCity access to viewing your user profile and projects.
+1. On the __Create project__ page, select to create a project __from JetBrains Space__. The first time, you will be prompted to sign in and grant TeamCity access to viewing your user profile and projects.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
-3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+3. TeamCity will display the project and build configuration names. If required, modify them and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   
    On the __Auto\-detected Build Steps page__ select the detected step(s) to use in your build configuration. Click __Use selected__.   
    If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).

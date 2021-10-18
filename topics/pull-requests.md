@@ -1,9 +1,9 @@
 [//]: # (title: Pull Requests)
 [//]: # (auxiliary-id: Pull Requests)
 
-The _Pull Requests_ [build feature](adding-build-features.md) lets you automatically load pull request\* information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [Bitbucket Cloud](#Bitbucket+Cloud+Pull+Requests), [GitLab](#GitLab+Merge+Requests), [Azure DevOps](#Azure+DevOps+Pull+Requests), and [JetBrains Space](#JetBrains+Space+Merge+Requests).
+The _Pull Requests_ [build feature](adding-build-features.md) lets you automatically load pull request\* information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [Bitbucket Cloud](#Bitbucket+Cloud+Pull+Requests), [GitLab](#GitLab+Merge+Requests), and [Azure DevOps](#Azure+DevOps+Pull+Requests).
 
-\* Or _merge requests_ in case of GitLab and JetBrains Space.
+\* Or _merge requests_ in case of GitLab.
 
 When adding this build feature, you need to specify a VCS root and select a VCS hosting type.  
 Other settings depend on the selected VCS hosting type.
@@ -507,15 +507,6 @@ Specify a project URL for synchronization with the remote Azure DevOps server. T
 </td>
   </tr>
 </table>
-
-### JetBrains Space Merge Requests
-
-In case with [JetBrains Space](https://www.jetbrains.com/space/), this build feature monitors directly source branches in a source repository (forks are not supported).  
-If more than one merge request is submitted from the same source branch at the moment of the build start, TeamCity will display all these requests in the build results. However, only commits from the open requests matching the filtering criteria will be displayed as _Changes_ of the build.
-
-This feature requires a [connection to JetBrains Space](configuring-connections.md#jetbrains-space-connection).
-
-In the feature settings, you can define the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. If left blank, no filters will apply.
 
 ## Predefined build parameters for pull requests
 

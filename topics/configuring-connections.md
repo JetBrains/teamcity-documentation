@@ -304,7 +304,6 @@ Save the connection and proceed with adding a [Notifier](notifications.md#Slack+
 
 This type of connection can be used for:
 * publishing build statuses in [JetBrains Space](https://www.jetbrains.com/space/) with the help of [Commit Status Publisher](commit-status-publisher.md)
-* running builds on merge requests with the [Pull Requests](pull-requests.md) feature
 * [authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account
 * creating [projects](creating-and-editing-projects.md) and [build configurations](creating-and-editing-build-configurations.md) from a JetBrains Space repository
 
@@ -319,21 +318,21 @@ Before configuring this connection, you need to create a dedicated application i
       * _Application | Edit Application_
    * Required for Commit Status Publisher:
       * _Git Repositories | Report external check status_
-   * Required for Pull Requests:
-      * _Project | View project data_
-      * _Private Projects | List private projects_
-      * _Git Repositories | Read_
 4. Open the __Authentication__ tab and enable _Client Credentials Flow_. User authentication and creating projects/configurations from a repository also require enabling _Authorization Code Flow_.
 5. In the __Authentication__ tab, enter your TeamCity server's URL as the redirect URI.  
    If you use the authorization code flow, you need to ensure that your TeamCity server can always connect to JetBrains Space. Specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __[Global Settings](configuring-server-url.md)__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
 6. In the __Authentication__ tab, copy the app's _Client ID_ and _Client secret_.
 7. Open the __Authorization__ tab and add projects where this app will be authorized. Alternatively, you can authorize this app in the settings of every required project.
 
-Now you can return to TeamCity, add a new JetBrains Space connection, and enter the following connection parameters:
-* URL of the Space server;
-* client ID and secret of your Space application.
+>Note that when you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you (or the user who created the application in Step 1) are listed as a member.
+> 
+{type="note"}
 
-Save the connection and proceed with adding a [Commit Status Publisher](commit-status-publisher.md) or\/and [Pull Requests](pull-requests.md) build feature.
+Now you can return to TeamCity, add a new JetBrains Space connection, and enter the following connection parameters:
+* URL of the Space server
+* client ID and secret of your Space application
+
+Save the connection and proceed with adding a [Commit Status Publisher](commit-status-publisher.md), [enabling Space authentication](configuring-authentication-settings.md#JetBrains+Space), or creating a [project](creating-and-editing-projects.md#Creating+project+pointing+to+JetBrains+Space) / [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+Pointing+to+Specific+VCS).
 
 ## NPM Registry
 {id="npm-registry-settings" auxiliary-id="npm-registry-settings"}
