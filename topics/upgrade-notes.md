@@ -30,11 +30,11 @@ Note that TeamCity is not currently compatible with Java versions later than 11.
 {id="bundled-tools-updates-20212"}
 
 * Bundled Amazon Corretto Java has been updated to version 11.0.12.7.1 in the TeamCity server Docker images for Windows and Linux.
+* Bundled Tomcat has been updated to version 8.5.72.
 * Bundled JaCoCo has been updated to version 0.8.7.
 * Bundled Ant has been updated to version 1.10.11.
 * The Bundled Kotlin compiler, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version 1.5.31.
 * The bundled ReSharper and dotCover tools have been updated to version 2021.2.2.
-* 
 * The following notifications plugins are no longer actively used and thus unbundled from TeamCity:
   * [Jabber/XMPP](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp)
   * [RSS feed support](https://plugins.jetbrains.com/plugin/17723-rss-feed-support)  
