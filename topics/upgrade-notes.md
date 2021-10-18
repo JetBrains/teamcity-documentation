@@ -33,7 +33,8 @@ Note that TeamCity is not currently compatible with Java versions later than 11.
 * Bundled JaCoCo has been updated to version 0.8.7.
 * Bundled Ant has been updated to version 1.10.11.
 * The Bundled Kotlin compiler, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version 1.5.31.
-* The bundled ReSharper tool has been updated to version 2021.2.1.
+* The bundled ReSharper and dotCover tools have been updated to version 2021.2.2.
+* 
 * The following notifications plugins are no longer actively used and thus unbundled from TeamCity:
   * [Jabber/XMPP](https://plugins.jetbrains.com/plugin/17722-notifier-jabber-xmpp)
   * [RSS feed support](https://plugins.jetbrains.com/plugin/17723-rss-feed-support)  
@@ -113,7 +114,6 @@ The following old versions of [REST API](https://www.jetbrains.com/help/teamcity
 * Bundled JaCoCo has been updated to version 0.8.6.
 * The Bundled Kotlin compiler, used in [TeamCity DSL](kotlin-dsl.md), has been updated to version 1.4.32.
 * Bundled Kotlin, used in the [Kotlin Script](kotlin-script.md) build runner, has been updated to version 1.5.0.
-* The bundled ReSharper and dotCover tools have been updated to version 2021.1.1.
 * JGit version, used in the [Git](git.md) plugin, has been updated to 5.10.0.202012080955-r.
 * SVNKit, used in [Subversion](subversion.md) VCS roots, has been updated to version 1.10.3.
 
