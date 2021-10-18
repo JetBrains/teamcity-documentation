@@ -29,7 +29,7 @@ Note that TeamCity is not currently compatible with Java versions later than 11.
 ### Bundled tools updates
 {id="bundled-tools-updates-20212"}
 
-* Bundled Amazon Corretto Java has been updated to version 11.0.12.7.1 in the TeamCity server Docker images for Windows and Linux.
+* Bundled Amazon Corretto Java has been updated to version 11.0.12.7.1 in the TeamCity server and agent Docker images for Windows and Linux.
 * Bundled Tomcat has been updated to version 8.5.72.
 * Bundled JaCoCo has been updated to version 0.8.7.
 * Bundled Ant has been updated to version 1.10.11.
