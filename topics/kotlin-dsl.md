@@ -66,7 +66,7 @@ To display the hidden files and directories, press `Command` + `Shift` + `.` ins
 When creating an empty project, that's what you see in `settings.kts` in your IDE:
 
 ```Kotlin
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2021_2.*
 /* some comment text */
 version = "2021.2"
  
@@ -82,8 +82,8 @@ You can create different entities in this project by calling `vcsRoot()`, `build
 The following examples shows how to add a build configuration with a command line script:
 
 ```Kotlin
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
+import jetbrains.buildServer.configs.kotlin.v2021_2.*
+import jetbrains.buildServer.configs.kotlin.v2021_2.buildSteps.script 
 
 version = "2021.2"
 
@@ -107,8 +107,8 @@ Here, `id` will be used as the value of the _[Build configuration ID](identifier
 There is also another way to define the same build configuration:
 
 ```Kotlin
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
+import jetbrains.buildServer.configs.kotlin.v2021_2.*
+import jetbrains.buildServer.configs.kotlin.v2021_2.buildSteps.script 
 
 version = "2021.2"
 
@@ -226,7 +226,7 @@ Point TeamCity to your repository, and it will detect the `.teamcity` directory 
 
 <note>
 
-It seems pointless to keep two projects using the same DSL scripts on one server, as such projects will be identical. All changes to the one project will be replicated to another. However, since TeamCity 2019.2, it is possible to customize generation of project settings with help of [DSL context parameters](#contextParameters).
+It seems pointless to keep two projects using the same DSL scripts on one server, as such projects will be identical. All changes to the one project will be replicated to another. However, it is possible to customize generation of project settings with help of [DSL context parameters](#contextParameters).
 
 </note>
 
@@ -237,7 +237,7 @@ It seems pointless to keep two projects using the same DSL scripts on one server
 
 ### Using Context Parameters in DSL
 
-Since TeamCity 2019.2, you can customize the DSL generation behavior using context parameters configured in the TeamCity UI. Context parameters are specified as a part of the project [versioned settings](storing-project-settings-in-version-control.md#SynchronizingSettingswithVCS) in the UI.
+You can customize the DSL generation behavior using context parameters configured in the TeamCity UI. Context parameters are specified as a part of the project [versioned settings](storing-project-settings-in-version-control.md#SynchronizingSettingswithVCS) in the UI.
 
 With context parameters, it is possible to maintain a single Kotlin DSL code and use it in different projects on the same TeamCity server. Each of these projects can have own values of context parameters, and the same DSL code can produce different settings based on values of these parameters.
 
@@ -415,7 +415,7 @@ You can use external libraries in your Kotlin DSL code, which allows sharing cod
 
 To use an external library in your Kotlin DSL code, add a dependency on this library to the `.teamcity/pom.xml` file in the settings repository and commit this change so that TeamCity detects it. Then, before starting the generation process, the TeamCity server will fetch the necessary dependencies from the Maven repository, compile code with them, and then start the settings' generator.
 
-Since TeamCity 2019.2.1, you can establish access to external libraries in private repositories. For this, specify all the required credentials in the [Maven settings file](https://maven.apache.org/settings.html) (`mavenSettingsDsl.xml`) and upload it on the __Maven Settings__ page of the _Root_ project.
+You can establish access to external libraries in private repositories. For this, specify all the required credentials in the [Maven settings file](https://maven.apache.org/settings.html) (`mavenSettingsDsl.xml`) and upload it on the __Maven Settings__ page of the _Root_ project.
 
 ### Non-Portable DSL
 
@@ -436,7 +436,7 @@ In the non-portable format each project has the following `settings.kts` file:
 
 ```Kotlin
 package MyProject
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2021_2.*
 /* ... */
 version = "2021.2"
 
@@ -452,8 +452,8 @@ The `Project.kt` file looks as follows:
 
 ```Kotlin
 package MyPackage
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.Project
+import jetbrains.buildServer.configs.kotlin.v2021_2.*
+import jetbrains.buildServer.configs.kotlin.v2021_2.Project
 
 object Project : Project({
    uuid = "05acd964-b90f-4493-aa09-c2229f8c76c0"
@@ -592,7 +592,7 @@ _Solution_:
 _Problem_: I want to generate a TeamCity build configuration based on the data in some file residing in the VCS inside the `.teamcity` directory.
 
 _Solution_:   
-Since TeamCity 2019.2, it is possible to access the location of the `.teamcity` directory from DSL scripts with help of the `DslContext.baseDir` property, for example:
+It is possible to access the location of the `.teamcity` directory from DSL scripts with help of the `DslContext.baseDir` property, for example:
 ```Kotlin
 val dataFile = File(DslContext.baseDir, "data/setup.xml")
 ```
