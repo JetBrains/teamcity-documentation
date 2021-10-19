@@ -100,6 +100,14 @@ The upgrade procedure involves two steps:
 
 >Instead of upgrading manually, you can always regenerate all the Kotlin DSL scripts for your projects, unless you changed them in the VCS repository since the versioned settings had been enabled in your project. To do this, you can disable and enable versioned settings again, and select the "_Overwrite_" option in the confirmation dialog. After that, TeamCity will make a commit to your VCS repository removing all previously generated Kotlin files and adding newly generated files corresponding to the current TeamCity version.
 
+<anchor name="dsl20212"/>
+
+## Update DSL from 2021.1.x to 2021.2.x
+
+* This release __does not__ introduce a new DSL API package, so __v2019_2__ remains the latest one.
+* The bundled Kotlin version has been updated to 1.5.31.
+* Typed DSL is now supported for numerous settings of projects and build configurations. See the whole list of improvements [here](https://youtrack.jetbrains.com/issues?q=%23TW%20tag:%20missing-dsl%20%23Fixed%20-%7Btrunk%20issue%7D%20Fix%20versions:%20%7BMorena%202021.2%20RC%20(99472)%7D,%20%7BMorena%202021.2%20EAP3%20(99319)%7D,%20%7BMorena%202021.2%20EAP2%20(99125)%7D,%20%7BMorena%202021.2%20EAP1%20(98941)%7D,%202021.2).
+
 <anchor name="dsl20211"/>
 
 ## Update DSL from 2020.2.x to 2021.1.x
