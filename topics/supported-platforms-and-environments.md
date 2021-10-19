@@ -104,8 +104,9 @@ Linux (small)
 <td>
 
 * CPU: 2 vCPU (Intel Xeon (Cascade Lake))
-* RAM: 4 Gb ram
-* SSD: 20 Gb
+* RAM: 4 GB ram
+* SSD: 20 GB
+* EBS volume (storage): 100 GB
 
 </td>
 
@@ -122,8 +123,28 @@ Linux (medium)
 <td>
 
 * CPU: 4 vCPU (Intel Xeon (Cascade Lake))
-* RAM: 8 Gb ram
-* SSD: 20 Gb
+* RAM: 8 GB ram
+* SSD: 100 GB
+* EBS volume (storage): 100 GB
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Linux (large)
+
+</td>
+
+<td>
+
+* CPU: 8 vCPU (Intel Xeon (Cascade Lake))
+* RAM: 16 GB ram
+* SSD: 200 GB
+* EBS volume (storage): 100 GB
 
 </td>
 
@@ -140,8 +161,9 @@ Windows (medium)
 <td>
 
 * CPU: 4 vCPU (Intel Xeon (Cascade Lake))
-* RAM: 8 Gb ram
-* SSD: 20 Gb
+* RAM: 8 GB ram
+* SSD: 100 GB
+* EBS volume (storage): 100 GB
 
 </td>
 
