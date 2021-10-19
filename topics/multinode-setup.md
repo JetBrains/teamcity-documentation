@@ -415,7 +415,7 @@ The restore operation can be done on either of the nodes, but only if all nodes 
 If the "_[Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node)_" responsibility is enabled on a secondary node, it will allow performing the most common user-level actions:
 * Triggering a build, including a custom or personal one
 * Stopping/deleting and pinning/tagging/commenting builds
-* Pausing/resuming builds
+* Pausing/resuming the build queue
 * Assigning investigations and muting build problems and tests
 * Marking a build as successful/failed
 * Editing build changes\' descriptions
