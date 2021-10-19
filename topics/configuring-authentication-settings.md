@@ -84,6 +84,7 @@ In the __General Settings__ block, you can:
 * Customize the view of the login form: enter an introductory text and hide the default username/password fields (convenient if you prefer [authentication through third-party services](#HTTP+%2F+SSO+Authentication+Modules)).
 * Enable the [per-project authorization mode](role-and-permission.md#Changing+Authorization+Mode).
 * Enable the [two-factor authentication](managing-two-factor-authentication.md).
+{product="tc"}
 * Enforce the [email verification](enabling-email-verification.md) for all TeamCity users.
 * Log out all currently signed in users and delete all [personal access tokens](managing-your-user-account.md#Managing+Access+Tokens).
 

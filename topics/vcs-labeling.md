@@ -78,6 +78,7 @@ Since 2021.2, TeamCity creates [automatic labels](https://www.perforce.com/manua
 For Perforce labels, TeamCity supports only include rules and ignores exclude rules.
 
 If you prefer using static labels, you can enable the previous behavior by setting the `teamcity.perforce.useStaticLabels=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+{product="tc"}
 
 ## Labeling Rule Examples
 
