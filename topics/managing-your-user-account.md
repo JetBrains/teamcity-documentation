@@ -83,6 +83,10 @@ In __Your Profile | Groups__, you can view the list of user groups you are assig
 
 In __Your Profile | Roles__, you can view your roles and permissions in different projects. Note, that roles are assigned to a user by the system administrator.
 
+## Uploading Avatar
+
+Since version 2021.2, users can upload their avatars in the user profile. The avatars are displayed around the TeamCity UI, next to the changes (commits) of their authors. Only users with the _View all users_ [permission](role-and-permission.md) can see them.
+
 <seealso>
         <category ref="concepts">
             <a href="role-and-permission.md">Role and Permission</a>
