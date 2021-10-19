@@ -57,7 +57,7 @@ These settings enable you to:
 
 ## Configuring Two-Factor Authentication
 
-TeamCity administrators can enable [two-factor authentication](enabling-two-factor-authentication.md) (2FA) on the whole server. In this case, you will be prompted to configure 2FA settings for your user account. To do this:
+TeamCity administrators can enable [two-factor authentication](managing-two-factor-authentication.md) (2FA) on the whole server. In this case, you will be prompted to configure 2FA settings for your user account. To do this:
 
 1. Download and install any suitable authenticator app on your mobile device: for example, Google Authenticator or Microsoft Authenticator.
 2. In TeamCity, open __Your Profile | Two-factor Authentication__.

@@ -1,5 +1,5 @@
-[//]: # (title: Enabling Two-Factor Authentication)
-[//]: # (auxiliary-id: Enabling Two-Factor Authentication)
+[//]: # (title: Managing Two-Factor Authentication)
+[//]: # (auxiliary-id: Managing Two-Factor Authentication;Enabling Two-Factor Authentication)
 
 Enabling two-factor user authentication (2FA) on your TeamCity server grants it an extra level of security. Users will have to verify their identity in two steps: by providing their regular credentials _plus_ by submitting disposable keys, generated on their personal mobile devices.
 
