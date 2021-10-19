@@ -12,13 +12,17 @@ Currently, the following IntelliJ IDEA run configurations are supported:
 
 Remote debug for Ant steps requires that the build configuration have the `teamcity.remote-debug.ant.supported=true` [parameter](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration).
 
-### Prerequisites
+## Prerequisites
 
 * IntelliJ IDEA run configuration on the local developer machine with the [TeamCity plugin for IntelliJ IDEA](intellij-platform-plugin.md) installed
 * Build configuration on the TeamCity Server with the [IntelliJ IDEA Project](intellij-idea-project.md) runner as one of the [build steps](configuring-build-steps.md)
 * Remote [TeamCity agent](build-agent.md) to run this build available to the local machine by socket connection
 
-### Debugging Tests Remotely
+>If a user configures a [two-factor authentication](managing-your-user-account.md#Configuring+Two-Factor+Authentication) for their account, they will only be able to debug builds remotely by authenticating via [access tokens](managing-your-user-account.md#Managing+Access+Tokens).
+>
+{type="note"}
+
+## Debugging Tests Remotely
 
 1. To start remote debugging of a test, select the test and choose the __Debug &lt;Test Name&gt; Remotely on TeamCity Agent__ option from the context menu (the __Remote Debug__ action is also available from the TeamCity plugin menu. The action will require you to select an IntelliJ IDEA run configuration).
 2. Once you do this, the TeamCity plugin will ask you to select a build configuration where you want to start the debug session. The process is similar to starting a personal build. For example, if there are personal changes, a personal patch will be created and sent to an agent. Also, since the process is basically the same, when you select a build configuration, you can specify an agent, customize properties, and so on. ![remote_debug_conf_selected.png](remote_debug_conf_selected.png)
