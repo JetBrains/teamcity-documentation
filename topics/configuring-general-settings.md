@@ -341,8 +341,6 @@ It is also possible to show the status of all projects build configurations by r
 
 You can also download and customize the `externalStatus.css` file (for example, you can disable some columns by using `display: none`; see comments in `externalStatus.css`). However, in this case, you must _not_ include the __withCss=true__ parameter, but provide the CSS styles explicitly, preferably in the `<head>` section, instead.
 
-Enabling the status widget also allows non-logged in users to get the RSS feed for the build configuration.
-
 #### Limit Number of Simultaneously Running Builds
 
 Specify the number of builds of the same configuration that can run simultaneously on all agents. This option helps avoid the situation, when all the agents are busy with the builds of a single project. Enter 0 to allow an unlimited number of builds to run simultaneously.
