@@ -56,7 +56,6 @@ These settings enable you to:
 * notify you on such builds when the __Builds affected by my changes__ option is selected in [notifications settings](subscribing-to-notifications.md#What+Will+Be+Watched).
 
 ## Configuring Two-Factor Authentication
-{product="tc"}
 
 TeamCity administrators can enable [two-factor authentication](managing-two-factor-authentication.md) (2FA) on the whole server. In this case, you will be prompted to configure 2FA settings for your user account. To do this:
 
