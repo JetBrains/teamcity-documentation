@@ -23,7 +23,7 @@ __21 October 2021__
 [**TW-39618**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-39618) — Allow to obtain P4 variables for different VCS Roots after checkout on agent  
 [**TW-36751**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-36751) — Use perforce automatic labels  
 [**TW-69739**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69739) — Single change page in new UI  
-[**TW-73376**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73376) — [S3 Plugin] Check artifacts integrity on upload  
+[**TW-73376**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73376) — S3 Plugin Check artifacts integrity on upload  
 [**TW-64968**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-64968) — Add possibility to show failed tests from the dependencies on the build overview page  
 [**TW-73079**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73079) — TeamCity-Api-JS: add ServiceMessage typings  
 [**TW-73238**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73238) — Update git, NET, JDK, mercurial in docker images  
