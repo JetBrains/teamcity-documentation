@@ -3,6 +3,10 @@
 
 ## Changes from 2021.1 to 2021.2
 
+### 2021.2 Known Issues
+
+* Users who have configured [two-factor authentication](managing-your-user-account.md#Configuring+Two-Factor+Authentication) for their TeamCity accounts, temporarily cannot [run and debug TeamCity builds remotely](remote-run.md) from ReSharper and Eclipse. If using the remote run from these tools is crucial to your pipelines, make sure 2FA is set to _Optional_ on your servers (default option), so users can disable it for their own accounts anytime.
+
 ### Canceled bidirectional agent-server communication protocol
 
 The support for the bidirectional agent-server communication protocol has been canceled. Since version 2021.2, agents will connect to the server exclusively via the [unidirectional protocol](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).
