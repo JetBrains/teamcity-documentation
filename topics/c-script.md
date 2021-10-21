@@ -3,7 +3,7 @@
 
 The _C# Script_ runner allows executing a [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) script on Windows, Linux, or macOS. It uses a custom TeamCity tool for running a C# Interactive shell across platforms.
 
-With this runner, you can perform various service tasks, such as preparing a build environment, creating a user profile, or reporting to different messengers.
+With this runner, you can perform various service tasks, such as preparing a build environment, creating an OS user, or reporting to different messengers.
 
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
 
