@@ -15,7 +15,7 @@ Read how to [enable 2FA on your server](managing-two-factor-authentication.md) a
 
 ## C# Script Runner
 
-The new C# Script runner offers a handy way to automate your service tasks in C#: prepare a build environment, create user profiles, report to messengers, and so on. This runner is a good alternative to [PowerShell](powershell.md) and [Kotlin](kotlin-script.md) for users who feel more confident with C#.
+The new C# Script runner offers a handy way to automate your service tasks in C#: prepare a build environment, create OS users, report to messengers, and so on. This runner is a good alternative to [PowerShell](powershell.md) and [Kotlin](kotlin-script.md) for users who feel more confident with C#.
 
 The runner can launch C# scripts across platforms: on Windows, Linux, and macOS. It needs .NET 6.0, so the easiest way is to launch it inside a Docker container with preinstalled .NET. It also requires installing our [custom C# Interactive shell](https://www.nuget.org/packages/TeamCity.csi/) as an [agent tool](installing-agent-tools.md).
 {product="tc"}
@@ -176,7 +176,6 @@ To try this option, open the results of any build that is a part of a [chain](bu
 ## Other improvements
 
 ### Kotlin DSL updates
-{product="tc"}
 
 The [typed Kotlin DSL](kotlin-dsl.md) is now supported for numerous settings of projects and build configurations. See the full list of improvements [here](https://youtrack.jetbrains.com/issues?q=%23TW%20tag:%20missing-dsl%20%23Fixed%20-%7Btrunk%20issue%7D%20visible%20to:%20%7BAll%20Users%7D%20Fix%20versions:%20%7BMorena%202021.2%20RC%20(99472)%7D,%20%7BMorena%202021.2%20EAP3%20(99319)%7D,%20%7BMorena%202021.2%20EAP2%20(99125)%7D,%20%7BMorena%202021.2%20EAP1%20(98941)%7D,%202021.2).
 
