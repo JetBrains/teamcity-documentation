@@ -495,7 +495,7 @@ Before enabling this module, you need to create a dedicated application in JetBr
 
 After the connection is configured, go to __Administration | Authentication__ and:
 1. Click __Add module__ and choose the _JetBrains Space_ type.
-2. Choose if you want to allow creating new users on the first login. If you disable this option, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
+2. Choose if you want to allow creating new users on the first login. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 3. Save the module.
 
 To sign in, click the JetBrains Space icon above the TeamCity login form and, after the redirect, approve the TeamCity application.
