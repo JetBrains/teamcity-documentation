@@ -1,15 +1,17 @@
 [//]: # (title: TeamCity 2021.2 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2021.2 Release Notes)
 
-__Build: 99529__  
-__20 October 2021__
+__Build: 99537__  
+__21 October 2021__
 
 ### Feature
 
-[**TW-12514**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-12514) — Add support for avatar  
 [**TW-28423**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-28423) — Support reporting build status to Perforce Swarm  
-[**TW-73115**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73115) — Support access token authorization option for Bitbucket Server in the Pull Requests plugin DSL extension  
 [**TW-46634**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-46634) — Implement Multi Factor Authentication  
+[**TW-36329**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-36329) — Do not trigger per-checkin builds for all the merged changes in case of DVCS  
+[**TW-73305**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73305) — Allow to authenticate with Access Tokens in IDEA plugin  
+[**TW-12514**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-12514) — Add support for avatar  
+[**TW-73115**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73115) — Support access token authorization option for Bitbucket Server in the Pull Requests plugin DSL extension  
 [**TW-41783**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-41783) — Ability to match dependencies by prefix or suffix in their id in reverse.dep. parameters  
 [**TW-68899**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68899) — Impossible to pause or resume build queue on the secondary node.  
 [**TW-73278**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73278) — Allow to create projects, build configuration and VCS root using Space connection  
@@ -21,12 +23,12 @@ __20 October 2021__
 [**TW-39618**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-39618) — Allow to obtain P4 variables for different VCS Roots after checkout on agent  
 [**TW-36751**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-36751) — Use perforce automatic labels  
 [**TW-69739**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69739) — Single change page in new UI  
+[**TW-73376**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73376) — [S3 Plugin] Check artifacts integrity on upload  
 [**TW-64968**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-64968) — Add possibility to show failed tests from the dependencies on the build overview page  
 [**TW-73079**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73079) — TeamCity-Api-JS: add ServiceMessage typings  
 [**TW-73238**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73238) — Update git, NET, JDK, mercurial in docker images  
 [**TW-73067**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73067) — Add a boolean field &#39;Run tests in a single session&#39; for dotnet test and vstest commands  
 [**TW-73374**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73374) — Use .NET 6 with C# script runner  
-[**TW-73305**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73305) — Allow to authenticate with Access Tokens in IDEA plugin  
 [**TW-73221**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73221) — Simplify uploading custom jacoco versions  
 [**TW-72620**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72620) — Support GIT\_TRACE=1 when running git commands  
 [**TW-73110**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73110) — Provide grace period for registered users without 2FA configured when two-factor authentication mode is set to mandatory.  
@@ -50,9 +52,13 @@ __20 October 2021__
 
 ### Usability Problem
 
+[**TW-73118**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73118) — Provide a warning if a user tries to disable 2fa when Two-factor authentication mode is set to mandatory on the server.  
+[**TW-72142**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72142) — While using TOKEN I am getting CSRF errors when trying to do REST API POST commands  
 [**TW-73251**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73251) — Append custom CSP to the default one instead of overriding it  
 [**TW-72801**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72801) — PowerShell on ARM64  
+[**TW-73579**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73579) — Can&#39;t save global settings if one of the artifacts directories is mounted in read only mode even though no changes are made to the artifacts directories  
 [**TW-73258**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73258) — Consider changing title in the browser tab on Single change page  
+[**TW-73084**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73084) — Show tools usages should sort the list of build configurations  
 [**TW-71548**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71548) — Modify server health report that is displayed when artifacts cannot be cleaned up by plugin.  
 [**TW-73250**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73250) — Add copy revision icon to the Single change page  
 [**TW-72781**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72781) — Inverse default order by duration on the new build Tests tab  
@@ -82,14 +88,40 @@ __20 October 2021__
 
 ### Bug
 
+[**TW-73693**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73693) — The secondary node can&#39;t reload a template or VCS root moved from one project to another  
+[**TW-73640**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73640) — New UI: archived build type page stays in endless loading state  
+[**TW-73676**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73676) — Planned agent is shown incorrectly in TC Cloud UI after upgrading to TC 2021.2  
+[**TW-73658**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73658) — User without &quot;View user profile&quot; permission (project developer) cannot see TC usernames in changes  
+[**TW-73680**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73680) — User&#39;s tokens don&#39;t work after upgrading to 2021.2 version  
+[**TW-73679**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73679) — Build problems section doesn&#39;t show the loader during the expanding  
+[**TW-64009**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-64009) — Incomplete estimates details are shown on the new UI queued build page  
+[**TW-73552**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73552) — Display error when TeamCity tries to obtain the list of repositories with incorrect URL to Space configured.  
+[**TW-72283**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72283) — Commit Status Publisher: in BitBucket 7.4+ PR status may not show up in PR details if build was running on a PR ref  
 [**TW-60864**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-60864) — Support personal access tokens for Bitbucket Server in Pull Requests plugin  
+[**TW-69017**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69017) — Build logs not backed up on Linux server if artifact directory path contains a backslash  
+[**TW-73593**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73593) — Two-Factor Authentication page is available when two factors autorization is disabled on the server.  
 [**TW-73100**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73100) — Obsolete revision can be taken by a build if it&#39;s configuration was not available while changes affecting it were detected  
 [**TW-60938**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-60938) — Incorrect revision can be taken by a build in a branch if the branch was moved to a commit which was detected in the same VCS root before the builds&#39; build configuration was created  
 [**TW-73071**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73071) — Showing composite build parameters from build.finish.properties in the UI  
 [**TW-73452**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73452) — Changes list is not filtered by user name after clicking on user avatar  
+[**TW-72635**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72635) — Snapshot dependencies chart. Bar text is broken with a long text  
+[**TW-73599**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73599) — Sibling sub projects popup does not show any projects  
+[**TW-73450**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73450) — Inefficient column widths on the Single change page  
+[**TW-73542**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73542) — ConcurrentModificationException on attempt to open a tests tab  
 [**TW-67322**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67322) — Provide better DSL for Ruby environment configurator build feature  
+[**TW-73581**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73581) — &#39;Failed to determine newly failed tests in build: BuildPromotion&#39; error on server start  
+[**TW-73017**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73017) — Docker jetbrains/teamcity-server has infinite recursion in gitconfig  
+[**TW-72583**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72583) — Error java.util.UnknownFormatConversionException: Conversion = &#39;D&#39; in ReactUIRouteAccessibilityResponse  
+[**TW-65124**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-65124) — Lots of DefaultDispatcher-worker-N threads in server thread dump  
+[**TW-72308**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72308) — C# Script: log exact csharp tool version in the log  
 [**TW-72368**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72368) — Provide ability to open changes list in dependent build from changes tab of current build.  
+[**TW-73577**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73577) — OutOfMemoryError on the agent because of unnecessary String copying while saving parameters to a file  
+[**TW-72746**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72746) — Emoji in commit messages aren&#39;t shown in the experimental UI  
+[**TW-73561**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73561) — Buttons &quot;Show only All/failed/successful/queued builds&quot; do not work in Classic UI  
 [**TW-72447**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72447) — &#39;Change from snapshot dependencies&#39; icon has no information about build configuration and build number  
+[**TW-70688**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-70688) — Avoid logging `No mapping found for HTTP request with` warnings in teamcity-server.log  
+[**TW-72790**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72790) — Properly support SemVer 2.0 sorting on the Tools page  
+[**TW-73263**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73263) — When a build is removed from build queue due to optimization or manually by user, a corresponding comment should be added to Perforce Swarm Review  
 [**TW-73476**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73476) — No user name is shown on hover user&#39;s avatar, if there are changes from one user  
 [**TW-73530**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73530) — Endless loading on the build configuration page in the classic UI  
 [**TW-73109**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73109) — Incorrect response when empty password is entered in Two-Factor Authentication form.  
@@ -200,7 +232,6 @@ __20 October 2021__
 [**TW-72542**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72542) — Don&#39;t show hint about creation a Space application for the existing connections  
 [**TW-72454**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72454) — Fix C# position in the server tools list  
 [**TW-69827**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69827) — Build Queue: there is no &quot;time to start&quot; pop-up in experimenal UI  
-[**TW-64009**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-64009) — Incomplete estimates details are shown on the new UI queued build page  
 [**TW-72440**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72440) — Add information about application type and minimal rights for Commit Status Publisher to JetBrains Space connection  
 [**TW-72239**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72239) — Status from agent-less build step may be not reported in multi-node setup (build hangs)  
 [**TW-71773**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71773) — REST: add information about planned agent and &quot;delayed by&quot; for queued build  
@@ -215,6 +246,8 @@ __20 October 2021__
 
 ### Performance Problem
 
+[**TW-73624**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73624) — Inefficient implementation of RegistryAgentParamsProcessor.getPasswordParameters()  
+[**TW-73460**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73460) — Slow DSL data update in case when project has several thousands of build configurations and data directory is on a network storage  
 [**TW-72660**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72660) — Many agents requests occupy http threads in case when build messages queue becomes full  
 [**TW-45825**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-45825) — Many builds in long &quot;checking for changes&quot; (hours), each checking the same VCS repository when VCS repository gets a bit slower  
 [**TW-73087**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73087) — Build tabs loading duration is too long  
@@ -243,10 +276,17 @@ __20 October 2021__
 ### Task
 
 [**TW-69990**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69990) — Unbundle Jabber plugin  
+[**TW-73646**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73646) — 2FA: enable optional mode by default  
+[**TW-73617**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73617) — Update Kotlin DSL version to 2021.2  
 [**TW-69408**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69408) — Unbundle RSS feed plugin  
+[**TW-73560**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73560) — Update bundled dotCover version to 2021.2.2  
 [**TW-73234**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73234) — Update bundled kotlin compiler version to the latest one (1.5.31)  
 [**TW-73227**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73227) — Update bundled Ant to version 1.10.11  
+[**TW-73229**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73229) — Update bundled Tomcat to the latest 8.5.x  
 [**TW-73230**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73230) — Update bundled JaCoCo version  
+[**TW-72679**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72679) — Health report about deprecating Java 1.8  
+[**TW-72641**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72641) — API for tree on a files tab of a change page similar to one on a test history page  
+[**TW-73481**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73481) — Remove HEADER\_HELP\_DROPDOWN PlaceID  
 [**TW-73231**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73231) — Update bundled Java to 11.0.12.7.1  
 [**TW-72766**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72766) — API to retrieve builds and build configurations for Deployments tab on a Change page  
 [**TW-69554**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69554) — Agent should open XML-RPC port (9090) only on local interface (drop bidirectional agent-server communication protocol)  
@@ -271,6 +311,6 @@ __20 October 2021__
 [**TW-72425**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72425) — teamcity-configs-maven-plugin pom.xml has a dependency on maven-core:3.0.5 that is deprecated  
 [**TW-66056**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-66056) — Remove old cleanup rules controller and related UI classes
 
-#### Security Problem
+### Security Problem
 
-4 security problems have been fixed.
+5 security problems have been fixed.
