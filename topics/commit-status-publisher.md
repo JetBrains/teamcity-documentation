@@ -82,6 +82,8 @@ In the Commit Status Publisher settings, specify:
 
 Note that Helix Swarm usually creates reviews on shelved changelists whose description contains a special keyword, depending on your setup (for example, `#review`). If you want TeamCity to trigger builds on Perforce shelved files automatically, you need to specify the same keyword in the [Perforce Shelve Trigger](perforce-shelve-trigger.md) settings as well.
 
+>To get notified about the events, make sure to [configure Swarm triggers](https://www.perforce.com/manuals/swarm-admin/Content/Swarm/setup.perforce.html).
+
 ### Gerrit
 
 Commit Status Publisher supports Gerrit versions 2.6+. For configuring integration with earlier Gerrit versions, contact our [support](feedback.md).
