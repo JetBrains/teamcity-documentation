@@ -11,9 +11,15 @@ This page covers software-related environments TeamCity works with. For hardware
 
 TeamCity Server is a web application that runs within a capable J2EE servlet container. It requires a Java SE JRE installation to run. See [notes](installing-and-configuring-the-teamcity-server.md#Java+Installation) on how to install Java on a TeamCity server.
 
+#### Supported Java Versions
+{id="Supported+Java+Versions+for+TeamCity+Server" auxiliary-id="Supported+Java+Versions+for+TeamCity+Server"}
+
 Supported Java versions: __OpenJDK and Oracle Java 8 (8u16 or later) and 11 (32 or 64 bit)__. Using 64-bit Java is recommended.  
 The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 11__.  
 For Apple M1 systems, consider using a different version of Java 11, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
+
+#### Supported Platforms
+{id="Supported+Platforms+for+TeamCity+Server" auxiliary-id="Supported+Platforms+for+TeamCity+Server"}
 
 >The core features of TeamCity Server are platform-independent. See [considerations](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server) on choosing the server platform.
 
@@ -42,9 +48,15 @@ Windows XP/XP x64 are not supported.
 
 TeamCity Agent is a standalone Java application. It requires a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
 
+#### Supported Java Versions
+{id="Supported+Java+Versions+for+TeamCity+Agent" auxiliary-id="Supported+Java+Versions+for+TeamCity+Agent"}
+
 Supported Java versions: __OpenJDK and Oracle Java 8-11__. We recommend using the latest available version of JDK.  
 The TeamCity agent Windows installer comes __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 11__.  
 For Apple M1 systems, consider using a different version of Java 11, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
+
+#### Supported Platforms
+{id="Supported+Platforms+for+TeamCity+Agent" auxiliary-id="Supported+Platforms+for+TeamCity+Agent"}
 
 TeamCity Agent is tested under the following operating systems:
 * Linux
@@ -187,9 +199,15 @@ include-id="ubuntu-jb-agents"/>
 
 You can install a build agent locally on your machine, similarly to how you would do it in [TeamCity On-Premises](https://www.jetbrains.com/help/teamcity/setting-up-and-running-additional-build-agents.html), and connect it to the TeamCity Cloud instance. Note that you need to acquire a [concurrent build slot](teamcity-cloud-subscription-and-licensing.md#Using+Build+Credits) for each self-hosted agent.
 
+#### Supported Java Versions
+{id="Supported+Java+Versions+for+TeamCity+Agent" auxiliary-id="Supported+Java+Versions+for+TeamCity+Agent"}
+
 Build agents require a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
 
 Supported Java versions: OpenJDK and Oracle Java 8 - 11. We recommend using the latest available version of JDK.
+
+#### Supported Platforms
+{id="Supported+Platforms+for+TeamCity+Agent" auxiliary-id="Supported+Platforms+for+TeamCity+Agent"}
 
 TeamCity Agent is tested under the following operating systems:
 * Linux
@@ -567,10 +585,10 @@ Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
 
 ## VCS Hosting Services
 
-* [GitHub.com / GitHub Enterprise](integrating-teamcity-with-vcs-hosting-services.md#Integrating+with+GitHub)
-* [GitLab.com / GitLab CE/EE](integrating-teamcity-with-vcs-hosting-services.md#Integrating+with+GitLab)
-* [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Integrating+with+Bitbucket+Cloud)
-* [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Integrating+with+Azure+DevOps), or formerly Visual Studio Team Services
+* [GitHub.com / GitHub Enterprise](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+GitHub)
+* [GitLab.com / GitLab CE/EE](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+GitLab)
+* [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+Bitbucket+Cloud)
+* [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+Azure+DevOps), or formerly Visual Studio Team Services
 
 ## Cloud Platforms
 {product="tc"}

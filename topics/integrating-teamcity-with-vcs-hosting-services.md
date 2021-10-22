@@ -17,7 +17,9 @@ Connections are configured on the __Project Administration | Connections__ page.
 
 <img src="projectConnections.png" width="700" alt="Adding a GitHub connection"/>
 
-## Integrating with GitHub
+<anchor name="Connecting+to+GitHub"/>
+
+## Integrating TeamCity with GitHub
 
 Integration with GitHub allows you to:
 * create a [project from GitHub URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
@@ -28,7 +30,7 @@ Integration with GitHub allows you to:
 
 See how to configure a connection to GitHub.com or GitHub Enterprise [here](configuring-connections.md#GitHub).
 
-## Integrating with GitLab
+## Integrating TeamCity with GitLab
 
 Integration with GitLab allows you to:
 * create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
@@ -37,7 +39,7 @@ Integration with GitLab allows you to:
 
 See how to configure a connection to GitLab.com or GitLab CE/EE [here](configuring-connections.md#GitLab).
 
-## Integrating with Bitbucket Cloud
+## Integrating TeamCity with Bitbucket Cloud
 
 Integration with BitBucket Cloud allows you to:
 * create a [project from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
@@ -48,7 +50,7 @@ Integration with BitBucket Cloud allows you to:
 
 See how to configure a connection to BitBucket Cloud [here](configuring-connections.md#Bitbucket+Cloud).
 
-## Integrating with Azure DevOps
+## Integrating TeamCity with Azure DevOps
 
 Integration with Azure DevOps Services allows you to:
 * create a [project from a Git repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)

@@ -5,11 +5,11 @@ The __Project Settings | Artifacts Storage__ tab displays artifact storages conf
 
 By default, the built-in TeamCity artifacts storage is displayed and marked as active. You can activate a different storage using the corresponding link.
 
-### Built-in Artifacts Storage
+## Built-in Artifacts Storage
 
 TeamCity stores [artifacts](build-artifact.md) produced by builds on the file system accessible by the TeamCity server. The default artifacts directory location is `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` but it can be [redefined](teamcity-configuration-and-maintenance.md).
 
-### External Artifacts Storage 
+## External Artifacts Storage 
 
 TeamCity provides a pluggable API to enable external storage for TeamCity build artifacts. Support for different storages can be implemented as an external plugin to TeamCity: the details are provided in the [external storage implementation guide](https://plugins.jetbrains.com/docs/teamcity/external-storage-implementation-guide.html).
 
@@ -17,7 +17,7 @@ Note that when an external storage for artifacts is enabled, the TeamCity [inter
 
 The same applies to the metadata about artifacts mappings, which will be published to the [artifacts directory](teamcity-configuration-and-maintenance.md) of the TeamCity Data Directory. When restoring from a backup, make sure they are restored for the external artifact plugin to work properly.
 
-### Amazon S3 Support
+## Amazon S3 Support
 
 TeamCity comes bundled with [Amazon S3 Artifact Storage](https://plugins.jetbrains.com/plugin/9623-aws-s3-artifact-storage) plugin which allows storing build artifacts in an Amazon S3 bucket.
 
@@ -38,19 +38,19 @@ To enable external artifact storage in an AWS S3 bucket:
 
 Now new artifacts produced by builds of this project with its subprojects and build configurations will be stored in the specified AWS S3 bucket.
 
-#### Path prefix
+### Path prefix
 
 <anchor name="pathPrefix"/>
 
 Since TeamCity 2020.2, you can set an S3 [path prefix](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/using-folders.html). This allows using the same S3 bucket for all TeamCity projects and configure prefix-based permissions.
 
-#### Virtual host addressing
+### Virtual host addressing
 
 <anchor name="forceVirtualHostAddressing"/>
 
 You can enable the virtual host addressing for S3 buckets. Currently, both hosted-style and path-style requests are supported by TeamCity. Note that Amazon [stopped supporting path-style access](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access) for new buckets since September 2020.
 
-#### Permissions
+### Permissions
 
 When the "Use Pre-Signed URLs for upload" option is enabled, the provided AWS credentials or IAM role on the TeamCity server should have permissions: `DeleteObject, ListAllMyBuckets, GetBucketLocation, GetObject, ListBucket, PutObject`.
 
@@ -58,17 +58,17 @@ When the "Use Pre-Signed URLs for upload" option is disabled:
 * the provided AWS credentials or IAM role on the TeamCity server should have permissions: `DeleteObject, ListAllMyBuckets, GetBucketLocation, GetObject`
 * either AWS credentials should be specified and have `ListBucket, PutObject` permissions, or IAM role on all the TeamCity agents should have permissions: `ListBucket, PutObject`
 
-### Other External Artifact Storage Plugins
+## Other External Artifact Storage Plugins
 
-#### Azure Artifact Storage
+### Azure Artifact Storage
 
 [Azure Artifact Storage](https://plugins.jetbrains.com/plugin/9617-azure-artifact-storage) is an experimental plugin by JetBrains which allows replacing the TeamCity built-in artifacts' storage by Azure Blob storage. 
 
-#### Google Cloud Artifact Storage
+### Google Cloud Artifact Storage
 
  Google Cloud Artifact Storage is implemented as a [plugin](https://plugins.jetbrains.com/plugin/9634-google-artifact-storage) by JetBrains.
 
-#### Multipart Upload
+### Multipart Upload
 <anchor name="multipartUpload"/>
 
 To optimize the [upload of large files](https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/) to S3, you can initiate [multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html) instead of regular upload. To do this, set the multipart upload threshold in the _Connection Settings_ block. The minimum allowed value is `5MB`. Supported suffixes: `KB`, `MB`, `GB`, `TB`. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (`8MB` is the default value).
