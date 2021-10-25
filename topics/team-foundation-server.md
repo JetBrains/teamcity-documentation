@@ -266,7 +266,7 @@ Work Items
 
 <td>
 
-Work Items (Read, write, & manage)
+Work Items (read, write, and manage)
 
 </td></tr><tr>
 
