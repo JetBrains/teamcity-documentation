@@ -23,7 +23,7 @@ TeamCity versions
 <td></td>
 <td></td>
 
-<td>2021.1</td>
+<td>2021.1 - 2021.2</td>
 <td>2020.2</td>
 <td>2020.1</td>
 

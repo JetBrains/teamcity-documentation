@@ -339,6 +339,20 @@ ReSharper Version
 
 </td></tr>
 
+<tr>
+
+<td>
+
+2021.2
+
+</td>
+
+<td>
+
+2021.1.2
+
+</td></tr>
+
 </table>
 
 You can view the installed versions of ReSharper on the __Server Administration | Tools__ page. The bundled version is set as default; you can install other versions and change the default settings.
