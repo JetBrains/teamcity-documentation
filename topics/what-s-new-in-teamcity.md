@@ -69,8 +69,10 @@ After this feature is configured, TeamCity will be publishing the build statuses
 
 ### Automatic labels support
 
-TeamCity can assign custom labels to your project sources. In case with Perforce, the [VCS labeling](vcs-labeling.md) build feature was previously creating [static labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.archive.html), which are archives of local workspaces. However, it seems that [automatic Perforce labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) are way better in terms of performance, as they work as mere aliases for changelists. And since version 2021.2, TeamCity publishes automatic labels by default.  
-If you prefer using static labels, please read our [upgrade notes](upgrade-notes.md#Perforce+automatic+labels+become+default) with an instruction on how to revert this change on your server. 
+TeamCity can assign custom labels to your project sources. In case with Perforce, the [VCS labeling](vcs-labeling.md) build feature was previously creating [static labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.archive.html), which are archives of local workspaces. However, it seems that [automatic Perforce labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) are way better in terms of performance, as they work as mere aliases for changelists. And since version 2021.2, TeamCity publishes automatic labels by default.
+
+If you prefer using static labels, please read our [upgrade notes](upgrade-notes.md#Perforce+automatic+labels+become+default) with an instruction on how to revert this change on your server.
+{product="tc"}
 
 [Learn more](vcs-labeling.md#Labeling+in+Perforce).
 
