@@ -84,20 +84,6 @@ where `rootID` is the VCS root’s external ID, specified in its settings.
 
 [Learn more](perforce-workspace-handling-in-teamcity.md#Perforce+Workspace+Parameters).
 
-## Authenticate in TeamCity with Azure DevOps Services account
-
-If your team uses [Azure DevOps Services](https://azure.microsoft.com/en-us/services/devops/), its members can now sign in to TeamCity with their Azure accounts.
-
-To enable this functionality on your TeamCity server:
-1. Configure an OAuth 2.0 connection to your Azure DevOps Services instance as described [here](configuring-connections.md#Connecting+to+Azure+DevOps).
-2. Enable the _Azure DevOps OAuth 2.0_ module in **Administration | Authentication**. To secure the access further, you can restrict the scope of Azure organizations whose members can access TeamCity:
-
-<img src="azureprofileauth.png" width="460" alt="Configuring authentication in Azure"/>
-
-Now, users will be able to sign in to TeamCity by clicking the Azure icon on the login page and confirming the authentication.
-
->If you want to associate an existing TeamCity user with an Azure DevOps Service user, you can do this in the authentication settings of their TeamCity profile.
-
 ## JetBrains Space integration: authenticating users and creating projects from repositories
 
 [Space](https://www.jetbrains.com/space/) is the new JetBrains collaboration solution for software teams. If your company is already on board with it, you can now:
@@ -129,6 +115,20 @@ As a result, users will see the JetBrains Space icon on the TeamCity login page 
 <img src="spaceauth.png" width="296" alt="Signing in to TeamCity with JetBrains Space"/>
 
 >If you want to associate an existing TeamCity user with a JetBrains Space user, you can do this in the authentication settings of their TeamCity profile.
+
+## Authenticate in TeamCity with Azure DevOps Services account
+
+If your team uses [Azure DevOps Services](https://azure.microsoft.com/en-us/services/devops/), its members can now sign in to TeamCity with their Azure accounts.
+
+To enable this functionality on your TeamCity server:
+1. Configure an OAuth 2.0 connection to your Azure DevOps Services instance as described [here](configuring-connections.md#Connecting+to+Azure+DevOps).
+2. Enable the _Azure DevOps OAuth 2.0_ module in **Administration | Authentication**. To secure the access further, you can restrict the scope of Azure organizations whose members can access TeamCity:
+
+<img src="azureprofileauth.png" width="460" alt="Configuring authentication in Azure"/>
+
+Now, users will be able to sign in to TeamCity by clicking the Azure icon on the login page and confirming the authentication.
+
+>If you want to associate an existing TeamCity user with an Azure DevOps Service user, you can do this in the authentication settings of their TeamCity profile.
 
 ## User Interface improvements
 
