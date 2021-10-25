@@ -100,7 +100,7 @@ After the connection is configured, the JetBrains Space button will become avail
 
 TeamCity will display the list of Space repositories available to you:
 
-<img src="space-auth.png" alt="Creating a project from JetBrains Space" width="460"/>
+<img src="space-auth.png" alt="Creating a project from JetBrains Space" width="706"/>
 
 Choose a repository to create a project or build configuration from — and TeamCity will scan it and suggest the settings, as described [here](creating-and-editing-projects.md#Creating+project+pointing+to+JetBrains+Space).
 
@@ -147,7 +147,7 @@ Version 2021.2 brings the following TeamCity UI improvements:
 
 User avatars are now displayed next to the usernames, both in the classic and experimental UIs. Visual icons can help quickly identify the commits’ authors.
 
-<img src="avatars.png" alt="Showing user avatars in TeamCity" width="460"/>
+<img src="avatars.png" alt="Showing user avatars in TeamCity" width="706"/>
 
 You can upload the avatar in your user profile settings.
 
