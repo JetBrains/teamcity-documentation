@@ -1,17 +1,18 @@
 [//]: # (title: TeamCity 2021.2 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2021.2 Release Notes)
 
-__Build: 99537__  
-__21 October 2021__
+__Build: 99542__  
+__25 October 2021__
 
 ### Feature
 
 [**TW-28423**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-28423) — Support reporting build status to Perforce Swarm  
+[**TW-53318**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-53318) — Kotlin DSL for charts is missing  
+[**TW-73115**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73115) — Support access token authorization option for Bitbucket Server in the Pull Requests plugin DSL extension  
+[**TW-12514**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-12514) — Add support for avatar  
 [**TW-46634**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-46634) — Implement Multi Factor Authentication  
 [**TW-36329**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-36329) — Do not trigger per-checkin builds for all the merged changes in case of DVCS  
 [**TW-73305**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73305) — Allow to authenticate with Access Tokens in IDEA plugin  
-[**TW-12514**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-12514) — Add support for avatar  
-[**TW-73115**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73115) — Support access token authorization option for Bitbucket Server in the Pull Requests plugin DSL extension  
 [**TW-41783**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-41783) — Ability to match dependencies by prefix or suffix in their id in reverse.dep. parameters  
 [**TW-68899**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68899) — Impossible to pause or resume build queue on the secondary node.  
 [**TW-73278**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73278) — Allow to create projects, build configuration and VCS root using Space connection  
@@ -23,7 +24,7 @@ __21 October 2021__
 [**TW-39618**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-39618) — Allow to obtain P4 variables for different VCS Roots after checkout on agent  
 [**TW-36751**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-36751) — Use perforce automatic labels  
 [**TW-69739**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69739) — Single change page in new UI  
-[**TW-73376**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73376) — S3 Plugin Check artifacts integrity on upload  
+[**TW-73376**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73376) — [S3 Plugin] Check artifacts integrity on upload  
 [**TW-64968**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-64968) — Add possibility to show failed tests from the dependencies on the build overview page  
 [**TW-73079**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73079) — TeamCity-Api-JS: add ServiceMessage typings  
 [**TW-73238**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73238) — Update git, NET, JDK, mercurial in docker images  
@@ -37,7 +38,6 @@ __21 October 2021__
 [**TW-73284**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73284) — Add hashes to avatar URLs returned by REST  
 [**TW-73283**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73283) — Allow admins to set or delete user&#39;s avatar  
 [**TW-71044**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71044) — Provide dedicated Kotlin DSL for ReSharper inspections/duplicates  
-[**TW-53318**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-53318) — Kotlin DSL for charts is missing  
 [**TW-66277**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-66277) — BuildFeature Kotlin DSL for JetBrains.SharedResources feature  
 [**TW-72774**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72774) — Perforce Shelve Trigger. Add support for additional custom parameters for builds started via trigger  
 [**TW-72770**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72770) — Support nuget version ranges  
@@ -88,16 +88,17 @@ __21 October 2021__
 
 ### Bug
 
+[**TW-72824**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72824) — Hanging SlackWebApiImpl.request leads to exhausted HTTP thread pool  
+[**TW-60864**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-60864) — Support personal access tokens for Bitbucket Server in Pull Requests plugin  
+[**TW-73680**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73680) — User&#39;s tokens don&#39;t work after upgrading to 2021.2 version  
 [**TW-73693**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73693) — The secondary node can&#39;t reload a template or VCS root moved from one project to another  
 [**TW-73640**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73640) — New UI: archived build type page stays in endless loading state  
 [**TW-73676**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73676) — Planned agent is shown incorrectly in TC Cloud UI after upgrading to TC 2021.2  
 [**TW-73658**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73658) — User without &quot;View user profile&quot; permission (project developer) cannot see TC usernames in changes  
-[**TW-73680**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73680) — User&#39;s tokens don&#39;t work after upgrading to 2021.2 version  
 [**TW-73679**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73679) — Build problems section doesn&#39;t show the loader during the expanding  
 [**TW-64009**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-64009) — Incomplete estimates details are shown on the new UI queued build page  
 [**TW-73552**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73552) — Display error when TeamCity tries to obtain the list of repositories with incorrect URL to Space configured.  
 [**TW-72283**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72283) — Commit Status Publisher: in BitBucket 7.4+ PR status may not show up in PR details if build was running on a PR ref  
-[**TW-60864**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-60864) — Support personal access tokens for Bitbucket Server in Pull Requests plugin  
 [**TW-69017**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69017) — Build logs not backed up on Linux server if artifact directory path contains a backslash  
 [**TW-73593**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73593) — Two-Factor Authentication page is available when two factors autorization is disabled on the server.  
 [**TW-73100**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73100) — Obsolete revision can be taken by a build if it&#39;s configuration was not available while changes affecting it were detected  
@@ -115,7 +116,6 @@ __21 October 2021__
 [**TW-65124**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-65124) — Lots of DefaultDispatcher-worker-N threads in server thread dump  
 [**TW-72308**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72308) — C# Script: log exact csharp tool version in the log  
 [**TW-72368**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72368) — Provide ability to open changes list in dependent build from changes tab of current build.  
-[**TW-73577**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73577) — OutOfMemoryError on the agent because of unnecessary String copying while saving parameters to a file  
 [**TW-72746**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72746) — Emoji in commit messages aren&#39;t shown in the experimental UI  
 [**TW-73561**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73561) — Buttons &quot;Show only All/failed/successful/queued builds&quot; do not work in Classic UI  
 [**TW-72447**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72447) — &#39;Change from snapshot dependencies&#39; icon has no information about build configuration and build number  
@@ -161,7 +161,6 @@ __21 October 2021__
 [**TW-70550**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-70550) — Number of tests on build overview is not synchronized with list of tests  
 [**TW-54638**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-54638) — S3 Storage: log a user-friendly message if there were connection problems during artifacts cleanup  
 [**TW-73200**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73200) — unset: bad argument count  
-[**TW-72824**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72824) — Hanging SlackWebApiImpl.request leads to exhausted HTTP thread pool  
 [**TW-71360**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71360) — Missing DSL for IDEA tool version (inspections/duplicates)  
 [**TW-71680**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71680) — &quot;Discard literals&quot; option in absent in ReSharper dupFinder DSL  
 [**TW-73046**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73046) — Missing DSL for SSH Exec  
@@ -240,6 +239,14 @@ __21 October 2021__
 [**TW-72260**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72260) — Change format of a nuget reference  
 [**TW-66699**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-66699) — There&#39;s missing &quot;View in SonarQube&quot; link on build overview page in new UI
 
+### Cosmetics
+
+[**TW-73116**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73116) — Remove unnecessary input in two-factor authentication form.  
+[**TW-73120**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73120) — Single change page shows commit author starting with a capital  
+[**TW-68009**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68009) — Build page, failed tests section: consider renaming &quot;show all&quot; to &quot;show all failed&quot;  
+[**TW-58361**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-58361) — Improvements for displaying build configurations without builds  
+[**TW-66728**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-66728) — Bad wording for triggered by of restarted build on build details overview page
+
 ### Exception
 
 [**TW-73123**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73123) — InstantiationException in teamcity-server.log
@@ -263,21 +270,11 @@ __21 October 2021__
 [**TW-72391**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72391) — A lot of memory used by some of the agent related pages (calculation of compatibility with many build configurations)  
 [**TW-69802**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69802) — Using quick search by projects in sidebar makes the page unusable due to performance issues  
 [**TW-72194**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72194) — Move to top operation can lock build queue processing  
-[**TW-72301**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72301) — TeamCitySummaryFactory is slow because of fetching of muted tests information
-
-### Cosmetics
-
-[**TW-73116**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73116) — Remove unnecessary input in two-factor authentication form.  
-[**TW-73120**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73120) — Single change page shows commit author starting with a capital  
-[**TW-68009**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68009) — Build page, failed tests section: consider renaming &quot;show all&quot; to &quot;show all failed&quot;  
-[**TW-58361**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-58361) — Improvements for displaying build configurations without builds  
-[**TW-66728**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-66728) — Bad wording for triggered by of restarted build on build details overview page
-
-### Task
-
+[**TW-72301**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72301) — TeamCitySummaryFactory is slow because of fetching of muted tests information  
+### Task  
+[**TW-73617**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73617) — Update Kotlin DSL version to 2021.2  
 [**TW-69990**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69990) — Unbundle Jabber plugin  
 [**TW-73646**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73646) — 2FA: enable optional mode by default  
-[**TW-73617**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73617) — Update Kotlin DSL version to 2021.2  
 [**TW-69408**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69408) — Unbundle RSS feed plugin  
 [**TW-73560**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73560) — Update bundled dotCover version to 2021.2.2  
 [**TW-73234**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73234) — Update bundled kotlin compiler version to the latest one (1.5.31)  
