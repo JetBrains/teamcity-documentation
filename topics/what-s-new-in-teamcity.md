@@ -5,8 +5,6 @@
 
 TeamCity now provides built-in two-factor user authentication (2FA). Enabling it on your TeamCity server grants it an extra level of security. Users will have to verify their identity in two steps: by providing their regular credentials _plus_ by submitting disposable keys, generated on their personal devices.
 
->You can combine TeamCity 2FA with authentication via external accounts. See [supported providers](configuring-authentication-settings.md#HTTP+%2F+SSO+Authentication+Modules).
-
 2FA is set to _Optional_ by default, but you can make it _Disabled_ or _Mandatory_ on your server — in **Administration | Authentication**. The optional mode allows users to decide whether they want to enable 2FA for their accounts or not. The mandatory mode prevents users from accessing TeamCity without the 2FA verification. After you enable it, users will get a grace period of 1 week during which they are supposed to set up 2FA for their accounts.
 
 <img src="2fa-user-page.png" alt="Configuring two-factor authentication" width="706"/>
@@ -17,7 +15,7 @@ Read how to [enable 2FA on your server](managing-two-factor-authentication.md) a
 
 The new C# Script runner offers a handy way to automate your service tasks in C#: prepare a build environment, create OS users, report to messengers, and so on. This runner is a good alternative to [PowerShell](powershell.md) and [Kotlin](kotlin-script.md) for users who feel more confident with C#.
 
-The runner can launch C# scripts across platforms: on Windows, Linux, and macOS. It needs .NET 6.0, so the easiest way is to launch it inside a Docker container with preinstalled .NET. It also requires installing our [custom C# Interactive shell](https://www.nuget.org/packages/TeamCity.csi/) as an [agent tool](installing-agent-tools.md).
+The runner can launch C# scripts across platforms: on Windows, Linux, and macOS. It needs .NET 6.0, so the easiest way is to launch it inside a Docker container with preinstalled .NET. It also requires installing our [custom C# Interactive shell](https://github.com/JetBrains/teamcity-csharp-interactive#readme) as an [agent tool](installing-agent-tools.md).
 {product="tc"}
 
 Another advantage of this runner is that it’s capable of automatically restoring NuGet packages referenced in your scripts. By default, TeamCity searches for packages on NuGet.org, but you can specify other target feeds, including private and [TeamCity-internal](using-teamcity-as-nuget-feed.md) ones.
@@ -71,7 +69,8 @@ After this feature is configured, TeamCity will be publishing the build statuses
 
 ### Automatic labels support
 
-TeamCity can assign custom labels to your project sources. In case with Perforce, the [VCS labeling](vcs-labeling.md) build feature was previously creating [static labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.archive.html), which are archives of local workspaces. However, it seems that [automatic Perforce labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) are way better in terms of performance, as they work as mere aliases for changelists. And since version 2021.2, TeamCity publishes automatic labels by default.
+TeamCity can assign custom labels to your project sources. In case with Perforce, the [VCS labeling](vcs-labeling.md) build feature was previously creating [static labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.archive.html), which are archives of local workspaces. However, it seems that [automatic Perforce labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) are way better in terms of performance, as they work as mere aliases for changelists. And since version 2021.2, TeamCity publishes automatic labels by default.  
+If you prefer using static labels, please read our [upgrade notes](upgrade-notes.md#Perforce+automatic+labels+become+default) with an instruction on how to revert this change on your server. 
 
 [Learn more](vcs-labeling.md#Labeling+in+Perforce).
 
@@ -79,12 +78,9 @@ TeamCity can assign custom labels to your project sources. In case with Perforce
 
 If a build agent needs to connect to several Perforce VCS roots during one build run, it can now get connection parameters of each of these roots.
 
-Previously, if you wanted to use `[P4PORT](https://www.perforce.com/manuals/cmdref/Content/CmdRef/P4PORT.html)`, `[P4USER](https://www.perforce.com/perforce/r12.1/manuals/cmdref/env.P4USER.html)`, or `[P4CLIENT](https://www.perforce.com/manuals/v18.1/cmdref/Content/CmdRef/P4CLIENT.html)` in your build scripts, you could only refer to variables of the first Perforce root. Now, TeamCity stores these variables as parameters, so you can reference them in the scripts separately for each root:
-* `%vcsRoot.extId.port%`
-* `%vcsRoot.extId.user%`
-* `%vcsRoot.extId.p4client%`
+Previously, if you wanted to use `[P4PORT](https://www.perforce.com/manuals/cmdref/Content/CmdRef/P4PORT.html)`, `[P4USER](https://www.perforce.com/perforce/r12.1/manuals/cmdref/env.P4USER.html)`, or `[P4CLIENT](https://www.perforce.com/manuals/v18.1/cmdref/Content/CmdRef/P4CLIENT.html)` in your build scripts, you could only refer to variables of the first Perforce root. Now, TeamCity stores these variables as parameters, so you can reference them in the scripts separately for each root: `P4USER`, `P4PORT`, `P4CLIENT`. For example, `env.P4PORT=%vcsRoot.<rootID>.port%`.
 
-where `extId` is the VCS root’s external ID, specified in its settings.
+where `rootID` is the VCS root’s external ID, specified in its settings.
 
 [Learn more](perforce-workspace-handling-in-teamcity.md#Perforce+Workspace+Parameters).
 
@@ -108,7 +104,7 @@ Now, users will be able to sign in to TeamCity by clicking the Azure icon on the
 * Natively create projects, build configurations, and VCS roots from JetBrains Space repositories.
 * Allow users to sign in to TeamCity with their JetBrains Space accounts.
 
-As it’s custom in TeamCity, this integration requires [configuring a connection to your Space instance](configuring-connections.md#jetbrains-space-connection).
+This integration requires preconfiguring a connection to your Space instance: see [how to do this](configuring-connections.md#jetbrains-space-connection).
 
 ### Create projects, build configurations, and VCS roots from JetBrains Space repositories
 
@@ -167,13 +163,19 @@ Single **Change**:
 
 ### Group builds by projects in experimental build chain graph
 
-You can now group builds by projects on the experimental build chain graph.
+It is now possible to group builds by projects on the experimental build chain graph. This can give a convenient overview of a large pipeline.
 
 To try this option, open the results of any build that is a part of a [chain](build-chain.md), go to its **Dependencies** tab, and switch to the **Chain** mode.
 
 <img src="group-projects-chain.png" alt="Group builds by projects on a chain" width="706"/>
 
 ## Other improvements
+
+### OpenSSH keys support
+
+TeamCity now supports keys in the OpenSSH format, including ECDSA and ED25519. You can upload such a key to TeamCity and reuse it when configuring [VCS roots](vcs-root.md) or running an [SSH agent](ssh-agent.md) during a build.
+
+The support for this format has also been introduced in a bugfix build TeamCity 2021.1.4.
 
 ### Kotlin DSL updates
 
@@ -208,7 +210,7 @@ Previously, if you needed to send an API request with enabled cookies, it was re
 
 ### Easier CSP header customization
 
-To customize a [Content Security Policy (CSP)](content-security-policy-in-teamcity.md) header, it is now enough to provide only the custom part, with no need to specify the full header value. If the full value is provided, only the different parts will be applied.
+To customize a [Content Security Policy (CSP)](content-security-policy-in-teamcity.md) header, which prohibits downloading unknown external resources from TeamCity, it is now enough to provide only the custom part, with no need to specify the full header value. If the full value is provided, only the different parts will be applied.
 
 ## Fixed issues
 

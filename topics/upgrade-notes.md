@@ -9,7 +9,7 @@
 
 ### Canceled bidirectional agent-server communication protocol
 
-The support for the bidirectional agent-server communication protocol has been canceled. Since version 2021.2, agents will connect to the server exclusively via the [unidirectional protocol](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).
+The support for the bidirectional agent-server communication protocol has been stopped. Since version 2021.2, agents will connect to the server exclusively via the [unidirectional protocol](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).
 
 To upgrade TeamCity from versions earlier than 9.1, where the unidirectional support was first introduced, to 2021.2, use one of the following methods:
 * Upgrade the server to version 2021.1, wait until all the agents upgrade as well, and then upgrade the server to 2021.2.
