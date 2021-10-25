@@ -9,7 +9,7 @@ TeamCity now provides built-in two-factor user authentication (2FA). Enabling it
 
 2FA is set to _Optional_ by default, but you can make it _Disabled_ or _Mandatory_ on your server — in **Administration | Authentication**. The optional mode allows users to decide whether they want to enable 2FA for their accounts or not. The mandatory mode prevents users from accessing TeamCity without the 2FA verification. After you enable it, users will get a grace period of 1 week during which they are supposed to set up 2FA for their accounts.
 
-<img src="2fa-user-page.png" alt="Configuring two-factor authentication"/>
+<img src="2fa-user-page.png" alt="Configuring two-factor authentication" width="706"/>
 
 Read how to [enable 2FA on your server](managing-two-factor-authentication.md) and [set it up for your user account](managing-your-user-account.md#Configuring+Two-Factor+Authentication).
 
@@ -31,7 +31,7 @@ Another advantage of this runner is that it’s capable of automatically restori
 
 To configure a C# Script build step, you just need to enter the script code (or a path to the `.csx` file) and its arguments, if necessary. Read about other settings in [this article](c-script.md).
 
-<img src="C-script.png" alt="Configuring C# Script step"/>
+<img src="C-script.png" alt="Configuring C# Script step" width="706"/>
 
 >We are about to explore the capabilities of this runner in the upcoming tutorial in [our blog](https://blog.jetbrains.com/teamcity/) — follow it to get updates.
 
@@ -51,7 +51,7 @@ In both cases, TeamCity will run a _[personal build](personal-build.md)_ which i
 
 These options are available for all build configurations that use [Perforce VCS roots](perforce.md).
 
-<img src="p4-custom-run-shelved.png" alt="Run custom build on P4 shelved files"/>
+<img src="p4-custom-run-shelved.png" alt="Run custom build on P4 shelved files" width="460"/>
 
 [Learn more](perforce-shelve-trigger.md).
 
@@ -61,11 +61,11 @@ If a build is run on a shelved changelist, TeamCity can automatically report its
 
 To set up this integration, enable the [Commit Status Publisher](commit-status-publisher.md) feature in a build configuration that uses a [Perforce VCS root](perforce.md):
 
-<img src="csp-helix-swarm.png" alt="Configure Commit Status Publisher for P4 Helix Swarm"/>
+<img src="csp-helix-swarm.png" alt="Configure Commit Status Publisher for P4 Helix Swarm" width="460"/>
 
 After this feature is configured, TeamCity will be publishing the build statuses’ updates as comments to the respective code reviews in Helix Swarm:
 
-<img src="helixswarm.png" alt="Displaying TeamCity build statuses in Helix Swarm"/>
+<img src="helixswarm.png" alt="Displaying TeamCity build statuses in Helix Swarm" width="706"/>
 
 [Learn more](commit-status-publisher.md#Perforce+Helix+Swarm).
 
@@ -116,7 +116,7 @@ After the connection is configured, the JetBrains Space button will become avail
 
 TeamCity will display the list of Space repositories available to you:
 
-<img src="space-auth.png" alt="Creating a project from JetBrains Space"/>
+<img src="space-auth.png" alt="Creating a project from JetBrains Space" width="460"/>
 
 Choose a repository to create a project or build configuration from — and TeamCity will scan it and suggest the settings, as described [here](creating-and-editing-projects.md#Creating+project+pointing+to+JetBrains+Space).
 
@@ -130,7 +130,7 @@ To activate the Space authentication on your server, you need to:
 
 As a result, users will see the JetBrains Space icon on the TeamCity login page and can click it to sign in with their Space account.
 
-<img src="spaceauth.png" width="300" alt="Signing in to TeamCity with JetBrains Space"/>
+<img src="spaceauth.png" width="296" alt="Signing in to TeamCity with JetBrains Space"/>
 
 >If you want to associate an existing TeamCity user with a JetBrains Space user, you can do this in the authentication settings of their TeamCity profile.
 
@@ -149,7 +149,7 @@ Version 2021.2 brings the following TeamCity UI improvements:
 
 User avatars are now displayed next to the usernames, both in the classic and experimental UIs. Visual icons can help quickly identify the commits’ authors.
 
-<img src="avatars.png" alt="Showing user avatars in TeamCity"/>
+<img src="avatars.png" alt="Showing user avatars in TeamCity" width="460"/>
 
 You can upload the avatar in your user profile settings.
 
@@ -159,11 +159,11 @@ The **Pending Changes** tab and single **Change** page have been fully reproduce
 
 **Pending Changes**:
 
-<img src="new-pending-changes.png" alt="New Pending Changes tab"/>
+<img src="new-pending-changes.png" alt="New Pending Changes tab" width="706"/>
 
 Single **Change**:
 
-<img src="changes-page.png" alt="New Change page"/>
+<img src="changes-page.png" alt="New Change page" width="706"/>
 
 ### Group builds by projects in experimental build chain graph
 
@@ -171,7 +171,7 @@ You can now group builds by projects on the experimental build chain graph.
 
 To try this option, open the results of any build that is a part of a [chain](build-chain.md), go to its **Dependencies** tab, and switch to the **Chain** mode.
 
-<img src="group-projects-chain.png" alt="Group builds by projects on a chain"/>
+<img src="group-projects-chain.png" alt="Group builds by projects on a chain" width="706"/>
 
 ## Other improvements
 
