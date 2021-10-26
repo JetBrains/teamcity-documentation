@@ -14,10 +14,6 @@ The runner's requirements:
 * The [TeamCity.csi](https://www.nuget.org/packages/TeamCity.csi/) package must be [installed as an agent tool](installing-agent-tools.md).
 {product="tc"}
 
->Note that .NET 6.0.0-rc.1 will become available on JetBrains-hosted agents since October 26, 2021. Before that, it is possible to run C# Script steps only on self-hosted agents.
-> 
-{type="warning" product="tcc"}
-
 >__Use TeamCity.csi outside TeamCity__   
 >You can use our custom tool to run tasks in C# from the command line, similarly to using a regular C# Interactive tool. TeamCity.csi can be run on Windows, Linux, and macOS. See its [README](https://github.com/JetBrains/teamcity-csharp-interactive) for more details.
 
