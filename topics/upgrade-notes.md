@@ -3,6 +3,10 @@
 
 ## Changes from 2021.1 to 2021.2
 
+### No data converters in 2021.2
+
+TeamCity 2021.2 does not introduce any new data formats compared to version 2021.1 and does not contain data converters. This simplifies and thus speeds up the upgrade/downgrade between these versions.
+
 ### 2021.2 Known Issues
 
 * Users who have configured [two-factor authentication](managing-your-user-account.md#Configuring+Two-Factor+Authentication) for their TeamCity accounts, temporarily cannot [run and debug TeamCity builds remotely](remote-run.md) from ReSharper and Eclipse. If using the remote run from these tools is crucial to your pipelines, make sure 2FA is set to _Optional_ on your servers (default option), so users can disable it for their own accounts anytime.
