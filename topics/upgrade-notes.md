@@ -10,7 +10,15 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 
 ### 2021.2 Known Issues
 
-* Users who have configured [two-factor authentication](managing-your-user-account.md#Configuring+Two-Factor+Authentication) for their TeamCity accounts, temporarily cannot [run and debug TeamCity builds remotely](remote-run.md) from ReSharper and Eclipse. If using the remote run from these tools is crucial to your pipelines, make sure 2FA is set to _Optional_ on your servers (default option), so users can disable it for their own accounts anytime.
+* __Can't use remote run from ReSharper and Eclipse with enabled 2FA__  
+  Users who have configured [two-factor authentication](managing-your-user-account.md#Configuring+Two-Factor+Authentication) for their TeamCity accounts, temporarily cannot [run and debug TeamCity builds remotely](remote-run.md) from ReSharper and Eclipse. If using the remote run from these tools is crucial to your pipelines, make sure 2FA is set to _Optional_ on your servers (default option), so users can disable it for their own accounts anytime.
+* __.NET builds may fail due to enabled deterministic source paths__  
+  Builds with [.NET steps](net.md) may fail with the "_SourceRoot items must include at least one top-level (not nested) item when DeterministicSourcePaths is true_" error. This error is caused by the conflict between the expected paths' format ([deterministic](https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/#deterministic-builds)) and the approach used in your project (likely, absolute paths to sources).    
+  As a workaround, consider adding the `/p:ContinuousIntegrationBuild=false` command-line argument to disable deterministic source paths, or download and install the fixed .NET runner as described [here](https://youtrack.jetbrains.com/issue/TW-73746#focus=Comments-27-5341660.0-0).
+* __.NET builds fail if .NET version is \< 6.0 and a path to a build agent contains whitespaces__  
+  If you run a build with a [.NET step](net.md) on a build agent that has whitespaces in its OS path __and__ the used .NET version is earlier than 6.0, the build will fail with the "_Only one project can be specified_" error.  
+  As a workaround, consider switching to .NET 6.0, or download and install the fixed .NET runner as described [here](https://youtrack.jetbrains.com/issue/TW-73745#focus=Comments-27-5341673.0-0).
+  
 
 ### Canceled bidirectional agent-server communication protocol
 
