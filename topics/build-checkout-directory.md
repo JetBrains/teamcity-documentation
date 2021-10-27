@@ -12,7 +12,7 @@ The checkout directory is configured in the __Checkout Settings__ section on the
 
 If you want to investigate an issue and need to know the directory used by the build configuration, you can get the directory from the build log, or you can refer to the `<[Agent Work Directory](agent-work-directory.md)>/directory.map` generated file which lists build configurations with the directories they used last.
 
-In your [build script](build-script-interaction-with-teamcity.md) you can refer to the effective value of the build checkout directory via the `teamcity.build.checkoutDir` [property](configuring-build-parameters.md) provided by TeamCity.
+In your [build script](build-script-interaction-with-teamcity.md), you can refer to the effective value of the build checkout directory via the `teamcity.build.checkoutDir` [property](configuring-build-parameters.md) provided by TeamCity.
 
 By default, this is also the directory [where builds will run](build-working-directory.md).
 

@@ -5,15 +5,15 @@ TeamCity server checks available memory on a regular basis and warns you if the 
 
 There are several warning types reported:
 
-## Low pool memory
+### Low pool memory
 
 Is reported when memory usage in a single memory pool exceeds 90% after garbage collection. High server activity may cause such memory usage.
 
-## Low total memory
+### Low total memory
 
 Is reported when more than 90% of total memory has been in use during the last 5 minutes and more than 20% of CPU resources are being consumed by garbage collection. Lasting memory lack  may result in performance degradation and server instability as well.
 
-## Heavy GC overload
+### Heavy GC overload
 
 Is reported when memory cleaning takes more than 50% of CPU resources on average. It usually means really serious problems with memory resulting in high performance degradation.
 

@@ -3,9 +3,7 @@
 
 Using the _Command Line_ build runner, you can run any script supported by the OS.
 
-## Command Line Runner Settings
-
-### General Settings
+## General Settings
 
 <table><tr>
 
@@ -83,7 +81,7 @@ Custom script
 
 _The option is available if "Custom script" is selected in the __Run__ drop-down menu._
 
-A platform-specific script which will be executed as an executable script in Unix-like environments and as a `*.cmd` batch file on Windows. Under Unix-like OS the script is saved with the executable bit set and is then executed by OS. This defaults to /bin/sh interpreter on the most systems. If you need a specific interpreter to be used, specify shebang (for example, `#!/bin/bash`) as the first line of the script.
+A platform-specific script which will be executed as an executable script in Unix-like environments and as a `*.cmd` batch file on Windows. Under Unix-like OS the script is saved with the executable bit set and is then executed by OS. This defaults to `/bin/sh` interpreter on the most systems. If you need a specific interpreter to be used, specify shebang (for example, `#!/bin/bash`) as the first line of the script.
 
 </td></tr><tr>
 
@@ -106,11 +104,11 @@ Specify how the error output is handled by the runner:
 >
 {type="note"}
 
-### Docker Settings
+## Docker Settings
 
 In this section, you can specify a Docker image which will be [used to run this build step](docker-wrapper.md).
 
-### Code Coverage
+## Code Coverage
 
 To learn about configuring code coverage options, refer to the [Configuring Java Code Coverage](configuring-java-code-coverage.md) page.
 
