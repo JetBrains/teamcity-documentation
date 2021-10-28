@@ -407,7 +407,7 @@ Required on the build agent:
 
 [Xcode](xcode-project.md)
 
-</td><td>3-12</td><td>Xcode installed on the build agent</td></tr>
+</td><td>3-13</td><td>Xcode installed on the build agent</td></tr>
 
 </table>
 
