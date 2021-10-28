@@ -156,19 +156,14 @@ Use this option to instruct TeamCity to run the tests which failed in the previo
 
 </td></tr></table>
 
-
-
-
-[//]: # (Internal note. Do not delete. "MSBuildd215e169.txt")    
-
-
-
+[//]: # (Internal note. Do not delete. "MSBuildd215e169.txt")
 
 ## Code Coverage
 
 To learn about configuring code coverage options, refer to the [Configuring .NET Code Coverage](configuring-.net-code-coverage.md) page.
 
 ## Implementation notes
+{product="tc"}
 
 The MSBuild runner generates an MSBuild script that includes the user's script. This script is used to add TeamCity-provided MSBuild tasks. Your MSBuild script will be included with the &lt;Import&gt; task. If you specified a Visual Studio solution file, it will be called from the &lt;MSBuild&gt; task. To disable it, set the `teamcity.msbuild.generateWrappingScript` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to `false`.
 
