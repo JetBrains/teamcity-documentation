@@ -61,6 +61,8 @@ Note that the sources' snapshot rule is only applied to the [parts of the builds
 
 <td>
 
+<anchor name="do-not-run-new-build-if-there-is-a-suitable-one"/>
+ 
 Do not run new build if there is a suitable one
 
 
