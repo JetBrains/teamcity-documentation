@@ -18,7 +18,9 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 * __.NET builds fail if .NET version is \< 6.0 and a path to a build agent contains whitespaces__  
   If you run a build with a [.NET step](net.md) on a build agent that has whitespaces in its OS path __and__ the used .NET version is earlier than 6.0, the build will fail with the "_Only one project can be specified_" error.  
   As a workaround, consider switching to .NET 6.0, or download and install the fixed .NET runner as described [here](https://youtrack.jetbrains.com/issue/TW-73745#focus=Comments-27-5341673.0-0).
-  
+* __Microsoft Azure agents fail to automatically start/stop__  
+  Build agents running in the Microsoft Azure cloud may fail to automatically start/stop and, after a timeout, freeze in the "Scheduled to Stop" state.  
+  To work around this issue in the Azure plugin, please set the `teamcity.kotlinCoroutinesPool.configurator.enabled=false` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). This issue will be fixed in the following bugfix update.
 
 ### Canceled bidirectional agent-server communication protocol
 
