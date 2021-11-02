@@ -237,7 +237,7 @@ It seems pointless to keep two projects using the same DSL scripts on one server
 
 ### Using Context Parameters in DSL
 
-Since TeamCity 2019.2, you can customize the DSL generation behavior using context parameters configured in the TeamCity UI. Context parameters are specified as a part of the project [versioned settings](storing-project-settings-in-version-control.md#SynchronizingSettingswithVCS) in the UI.
+You can customize the DSL generation behavior using context parameters configured in the TeamCity UI. Context parameters are specified as a part of the project [versioned settings](storing-project-settings-in-version-control.md#SynchronizingSettingswithVCS) in the UI.
 
 With context parameters, it is possible to maintain a single Kotlin DSL code and use it in different projects on the same TeamCity server. Each of these projects can have own values of context parameters, and the same DSL code can produce different settings based on values of these parameters.
 
@@ -415,7 +415,7 @@ You can use external libraries in your Kotlin DSL code, which allows sharing cod
 
 To use an external library in your Kotlin DSL code, add a dependency on this library to the `.teamcity/pom.xml` file in the settings repository and commit this change so that TeamCity detects it. Then, before starting the generation process, the TeamCity server will fetch the necessary dependencies from the Maven repository, compile code with them, and then start the settings' generator.
 
-Since TeamCity 2019.2.1, you can establish access to external libraries in private repositories. For this, specify all the required credentials in the [Maven settings file](https://maven.apache.org/settings.html) (`mavenSettingsDsl.xml`) and upload it on the __Maven Settings__ page of the _Root_ project.
+You can establish access to external libraries in private repositories. For this, specify all the required credentials in the [Maven settings file](https://maven.apache.org/settings.html) (`mavenSettingsDsl.xml`) and upload it on the __Maven Settings__ page of the _Root_ project.
 
 ### Non-Portable DSL
 
@@ -592,7 +592,7 @@ _Solution_:
 _Problem_: I want to generate a TeamCity build configuration based on the data in some file residing in the VCS inside the `.teamcity` directory.
 
 _Solution_:   
-Since TeamCity 2019.2, it is possible to access the location of the `.teamcity` directory from DSL scripts with help of the `DslContext.baseDir` property, for example:
+You can access the location of the `.teamcity` directory from DSL scripts with help of the `DslContext.baseDir` property, for example:
 ```Kotlin
 val dataFile = File(DslContext.baseDir, "data/setup.xml")
 ```

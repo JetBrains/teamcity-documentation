@@ -1,7 +1,11 @@
 [//]: # (title: Ruby Environment Configurator)
 [//]: # (auxiliary-id: Ruby Environment Configurator)
 
-The _Ruby environment configurator_ [build feature](adding-build-features.md) passes Ruby interpreter to all build steps. The build feature adds the selected Ruby interpreter and gems bin directories to the system PATH environment variable and configures other necessary environment variables in case of the [RVM](http://rvm.io/) interpreter. For example, in the [Command Line](command-line.md) build runner you will be able to directly use such commands as `ruby`, `rake`, `gem`, `bundle`, and so on. Thus, if you want to install gems before launching the [Rake](rake.md) build runner, you need to add the [Command Line](command-line.md) build step which launches a custom script, for example:
+The _Ruby environment configurator_ [build feature](adding-build-features.md) passes the Ruby interpreter to all build steps. It (1) adds the selected Ruby interpreter and gems bin directories to the system `PATH` environment variable and (2) configures other necessary environment variables in case of the [RVM](http://rvm.io/) interpreter.
+
+## Example Use Case
+
+For example, this feature allows using commands like `ruby`, `rake`, `gem`, `bundle` in the [Command Line](command-line.md) build runner. Thus, if you want to install gems before launching the [Rake](rake.md) build runner, you need to add the [Command Line](command-line.md) build step which launches a custom script. Example:
 
 ```Shell
 gem install rake --no-ri --no-rdoc
@@ -36,8 +40,9 @@ Ruby interpreter path
 
 <td>
 
-The path to Ruby interpreter. If not specified, the interpreter will be searched in the `PATH`. In this field you can use values of environment and system variables.   
-For example:
+The path to the Ruby interpreter. If not specified, the interpreter will be searched in `PATH`. In this field, you can use values of environment and system variables.
+
+Example:
 
 ```Plain Text
 %env.I_AM_DEFINED_IN_BUILDAGENT_CONFIGURATION%
@@ -56,15 +61,15 @@ RVM interpreter
 
 <td>
 
-Specify here the RVM interpreter name and optionally a gemset configured on a build agent.
-Note, that the interpreter name cannot be empty. If gemset isn't specified, the default one will be used.
+The RVM interpreter name and, optionally, a gemset configured on a build agent.
 
-This option can be used if you don't want to use the `.rvmrc` settings, for instance to run tests on different ruby interpreters instead of those hard-coded in the `.rvmrc` file.
+The interpreter name cannot be empty. If gemset is not specified, the default one will be used.
+
+This option can be used if you do not want to use the `.rvmrc` settings: for instance, to run tests on different Ruby interpreters instead of those defined in the `.rvmrc` file.
 
 </td>
 </tr>
 <tr>
-
 
 <td>
 
@@ -74,7 +79,7 @@ RVM with .rvmrc file
 
 <td>
 
-Specify here the path to a `.rvmrc` file relative to the checkout directory. If the file is specified, TeamCity will fetch environment variables using the rvm-shell and will pass it to all build steps.
+The path to the `.rvmrc` file relative to the checkout directory. If specified, TeamCity will fetch environment variables using rvm-shell and pass them to all build steps.
 
 </td>
 </tr>
@@ -88,7 +93,7 @@ Fail build if Ruby interpreter wasn't found
 
 <td>
 
-Check the option to fail a build if the Ruby environment configurator cannot pass the Ruby interpreter to the step execution environment because the interpreter wasn't found on the agent.
+Enabling it will fail a build in case the Ruby environment configurator cannot pass the Ruby interpreter to the step execution environment, because the interpreter hasn't been found on the agent.
 
 </td>
 </tr>
