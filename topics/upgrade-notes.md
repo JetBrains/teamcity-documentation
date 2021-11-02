@@ -20,7 +20,10 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
   As a workaround, consider switching to .NET 6.0, or download and install the fixed .NET runner as described [here](https://youtrack.jetbrains.com/issue/TW-73745#focus=Comments-27-5341673.0-0).
 * __Microsoft Azure agents fail to automatically start/stop__  
   Build agents running in the Microsoft Azure cloud may fail to automatically start/stop and, after a timeout, freeze in the "Scheduled to Stop" state.  
-  To work around this issue in the Azure plugin, please set the `teamcity.kotlinCoroutinesPool.configurator.enabled=false` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). This issue will be fixed in the following bugfix update.
+  To work around this issue in the Azure plugin, please set the `teamcity.kotlinCoroutinesPool.configurator.enabled=false` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). This issue will be automatically resolved on upgrading to the next bugfix update.
+* __Builds using Ruby Environment Configurator have no compatible agents__  
+  Enabling the [Ruby Environment Configurator](ruby-environment-configurator.md) feature in a build configuration will add the `env.AAAA` [agent requirement](agent-requirements.md) to it. Thus, the build agents that don't have this environment variable will be marked as incompatible, and TeamCity won't be able to run this build on them.  
+  To work around this issue, please update the Ruby plugin to the fixed version as described [here](https://youtrack.jetbrains.com/issue/TW-73814#focus=Comments-27-5368673.0-0). This issue will be automatically resolved on upgrading to the next bugfix update.
 
 ### Canceled bidirectional agent-server communication protocol
 
