@@ -24,6 +24,9 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 * __Builds using Ruby Environment Configurator have no compatible agents__  
   Enabling the [Ruby Environment Configurator](ruby-environment-configurator.md) feature in a build configuration will add the `env.AAAA` [agent requirement](agent-requirements.md) to it. Thus, the build agents that don't have this environment variable will be marked as incompatible, and TeamCity won't be able to run this build on them.  
   To work around this issue, please update the Ruby plugin to the fixed version as described [here](https://youtrack.jetbrains.com/issue/TW-73814#focus=Comments-27-5368673.0-0). This issue will be automatically resolved on upgrading to the next bugfix update.
+* __DSA/DSS SSH keys can't be used in TeamCity 2021.1.4 and 2021.2__  
+  After the upgrade to any of these versions, the [SSH keys](ssh-keys-management.md) of the DSA/DSS format are rejected with the "_ssh-dss cannot be used as public key type for identity_" error.  
+  To continue using them in TeamCity, please follow [this workaround](https://youtrack.jetbrains.com/issue/TW-73759#focus=Comments-27-5347961.0-0).
 
 ### Canceled bidirectional agent-server communication protocol
 
