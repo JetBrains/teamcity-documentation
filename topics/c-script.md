@@ -7,6 +7,8 @@ With this runner, you can perform various service tasks, such as preparing a bui
 
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
 
+>This [blog post](https://blog.jetbrains.com/teamcity/2021/11/how-to-automate-ci-cd-tasks-with-c-scripting-in-teamcity/) describes this runner and contains two tutorials: basic "Hello World" and more advanced Telegram bot integration. It also shows an example C# Script step configuration in [Kotlin DSL](kotlin-dsl.md). 
+
 ## Prerequisites
 
 The runner's requirements:
