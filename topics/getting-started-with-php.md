@@ -75,7 +75,7 @@ Let's first make sure code coverage is enabled. Edit the first build step (runni
 
 ```PHP
 
-build/release/*%system.build.number%*
+build/release/*%\system.build.number%*
 unitTests/codeCoverage => coverage.zip
 
 ```

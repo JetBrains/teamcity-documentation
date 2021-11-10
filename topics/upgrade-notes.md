@@ -629,7 +629,7 @@ Starting with 2019.1, the behavior of [`reverse.dep`](predefined-build-parameter
 
 [Agent tools](installing-agent-tools.md) (located under the `<agent_installation>/tools` directory on agents) are now transferred to an agent not on the agent upgrade, but right before the first build that uses the respective tool. You might need to update the build configuration settings so TeamCity knows which tools are required by the builds.   
 Before starting a build on an agent, TeamCity checks for the references to `teamcity.tool.<tool_ID>` configuration parameters to collect the set of tools used by the build. If some tool is referenced via this parameter, TeamCity will make sure this tool is present on the agent before the build logic starts executing.   
-If some of your builds use tools on agent assuming their locations under the `<agent installation>/tools` directory, such references should be changed to a TeamCity-provided parameter reference. Paths like `<agent_installation>/tools/<tool_ID>` used in TeamCity settings should be changed to the `%\teamcity.tool.<tool_ID>%` parameter reference. For example, `../tools/maven3.4.5/bin/mvn` should be replaced with `%teamcity.tool.maven3.4.5%/bin/mvn`.
+If some of your builds use tools on agent assuming their locations under the `<agent installation>/tools` directory, such references should be changed to a TeamCity-provided parameter reference. Paths like `<agent_installation>/tools/<tool_ID>` used in TeamCity settings should be changed to the `%\teamcity.tool.<tool_ID>%` parameter reference. For example, `../tools/maven3.4.5/bin/mvn` should be replaced with `%\teamcity.tool.maven3.4.5%/bin/mvn`.
 
 ### Changed .NET build requirements in ReSharper tools
 
@@ -1273,7 +1273,7 @@ If you were using the TeamCity-GitHub [third-party plugin](https://github.com/mi
 
 ### NuGet Support
 
-Configuration parameters `teamcity.tool.NuGet.CommandLine.%\NUGET_VERSION%.nupkg` are not reported anymore. The `teamcity.tool.NuGet.CommandLine.%NUGET_VERSION%` parameters should be referenced instead.
+Configuration parameters `teamcity.tool.NuGet.CommandLine.%\NUGET_VERSION%.nupkg` are not reported anymore. The `teamcity.tool.NuGet.CommandLine.%\NUGET_VERSION%` parameters should be referenced instead.
 
 For example, instead of using `%\teamcity.tool.NuGet.CommandLine.DEFAULT.nupkg%` parameter reference `%\teamcity.tool.NuGet.CommandLine.DEFAULT%` should be used.
 

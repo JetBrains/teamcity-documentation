@@ -55,7 +55,7 @@ You can authenticate in the REST API in the following ways:
 
 Authentication can be slow when a basic HTTP authentication with a non-built-in module is used. If you want to use basic HTTP authentication instead of token-based one, consider applying the [session reuse approach](http://youtrack.jetbrains.com/issue/TW-14209#comment=27-485445) for reusing authentication between sequential requests.
  
-If you perform a request from within a TeamCity build, for a limited set of build-related operations (like downloading artifacts) you can use values of [`teamcity.auth.userId/teamcity.auth.password`](artifact-dependencies.md#Build-level+authentication) system properties as basic credentials (within TeamCity settings you can reference them as `%\system.teamcity.auth.userId%` and `%system.teamcity.auth.password%`).
+If you perform a request from within a TeamCity build, for a limited set of build-related operations (like downloading artifacts) you can use values of [`teamcity.auth.userId/teamcity.auth.password`](artifact-dependencies.md#Build-level+authentication) system properties as basic credentials (within TeamCity settings you can reference them as `%\system.teamcity.auth.userId%` and `%\system.teamcity.auth.password%`).
  
 Within a build, the request for current build details can look like:
  

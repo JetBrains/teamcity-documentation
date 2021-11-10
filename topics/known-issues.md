@@ -82,7 +82,7 @@ Increasing the limit (for example, to 4096) on the TeamCity server should solve 
 
 See also this [external posting](https://www.elastic.co/blog/we-are-out-of-memory-systemd-process-limits).
 
-## Clearing Browser Caсhes
+## Clearing Browser Caches
 
 There is a web UI-related issue which some users have encountered (and it cannot be reproduced on other computers) which is tied to the cached versions of content. If you have come across such problem, make sure your browser does not use cached versions of content by [clearing browser caches](http://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache).
 

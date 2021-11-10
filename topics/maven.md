@@ -342,7 +342,7 @@ In the [Perforce VCS root](perforce.md) settings of your build configuration in 
 To use this plugin with Git, set a Git SSH URL as [SCM URL](https://maven.apache.org/scm/git.html) in your `pom.xml`.
 
 On the TeamCity agent:
-1. Make sure the agent has Git installed and added to the agent's `$PATH` on Unix-like OS's and to the `%PATH%` environment variable on Windows.
+1. Make sure the agent has Git installed and added to the agent's `$PATH` on Unix-like OS's and to the `%\PATH%` environment variable on Windows.
 2. On the agent, set your account's identity by executing
     ```Shell
     git config --system user.email "buildserver@example.com"

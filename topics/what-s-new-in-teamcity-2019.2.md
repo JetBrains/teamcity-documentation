@@ -45,7 +45,7 @@ Example of TeamCity metrics represented in Grafana:
 
 <img src="grafana-monitoring-example.png" width="800" alt="Example of TeamCity metrics represented in Grafana"/>
 
-## Code highlighting in build runners’ scripts
+## Code highlighting in build runner scripts
 
 We’ve added automatic code highlighting and line numbering for scripts of the following build runners: [Command Line](command-line.md), [Ant](ant.md), [PowerShell](powershell.md), [Docker](docker.md), [NAnt](nant.md), and [Rake](rake.md), as well as for the configuration of [Amazon EC2 images](setting-up-teamcity-for-amazon-ec2.md).
 
