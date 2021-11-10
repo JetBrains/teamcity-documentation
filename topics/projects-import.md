@@ -127,7 +127,7 @@ It may take some time for TeamCity to display the imported build artifacts.
 Each import process creates the `projectsImport-<date>` directory under the TeamCity logs allowing you to view the import results.
 
 The directory contains the following:
-* conflicting files' folder, containing all data which has been merged
+* conflicting files' directory, containing all data which has been merged
 * mappings, containing mapping of the fields in the source and target databases
 * scripts for copying artifacts and logs (see the section [above](#Moving+artifacts+and+logs))
 {product="tc"}

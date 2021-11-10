@@ -20,7 +20,7 @@ The following types of tools can be managed up via the __Administration | Tools_
 * You can also upload __your own tool as a .zip archive__: the structure of the tool plugin is described on the [Plugins Packaging page](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#Tools). TeamCity will use the name of the zip file as the tool name on all agents. The zip file will be automatically unpacked on the agents to the directory with the same name.   
 When the first custom tool is installed, the __Zip Archive__ section appears on the page. In this section, you can see all the tool usages, remove the tool, or install a new one.
 
-TeamCity places installed tools into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/plugins/.tools` and monitors the content of this folder.
+TeamCity places installed tools into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/plugins/.tools` and monitors the content of this directory.
 
 An agent downloads a tool before starting the first build which requires it. Once downloaded, the tool is stored on the agent so builds don't spend time on downloading it again.
 

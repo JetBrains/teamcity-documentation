@@ -11,7 +11,7 @@ Swabra can be added as a [build feature](adding-build-features.md) to your build
 
 >Swabra should be used with the [automatic checkout](vcs-checkout-mode.md) only: after this build feature is configured, it will run __before the first build step__ to remember the state of the file tree after the sources checkout and to restore it after the build.
 
-The checkout directory state is saved into a file in the caches directory named `<checkout-directory-name-hash>.snapshot` using the DiskDir format. The path to the checkout directory to be cleaned is saved into the `snapshot.map` file. The snapshot is used later (at the end of the build or at the next build start) to determine which files and folders are newly created, modified or deleted. It is done based on the actual files' presence, last modification data and size comparison with the corresponding records in the snapshot.
+The checkout directory state is saved into a file in the caches directory named `<checkout-directory-name-hash>.snapshot` using the DiskDir format. The path to the checkout directory to be cleaned is saved into the `snapshot.map` file. The snapshot is used later (at the end of the build or at the next build start) to determine which files and directories are newly created, modified or deleted. It is done based on the actual files' presence, last modification data and size comparison with the corresponding records in the snapshot.
 
 ## Configuring Swabra Options
 
@@ -70,15 +70,15 @@ Paths to monitor
 
 <td>
 
-Specify a newline\-separated set of `+-:path` rules to define which files and folders are to be involved in the files collection process (by default and until explicitly excluded, the entire checkout directory is monitored). The path can be relative (based on the [build's checkout directory](build-checkout-directory.md)) or absolute and can include Ant-like wildcards. If no `+:` or `-:` prefix is specified, a rule as treated as "include".
+Specify a newline\-separated set of `+-:path` rules to define which files and directories are to be involved in the files collection process (by default and until explicitly excluded, the entire checkout directory is monitored). The path can be relative (based on the [build's checkout directory](build-checkout-directory.md)) or absolute and can include Ant-like wildcards. If no `+:` or `-:` prefix is specified, a rule as treated as "include".
 
 Rules on any path must come in the order __from more general to more concrete__.    
 The top level path must always point to a directory. Specifying a directory affects its entire content and subdirectories. Note also that Swabra is __case-sensitive.__
 
 Examples:
 
-* `-:*/dir/*` excludes all `dir` folders and their content
-* `-:some/dir, +:some/dir/inner` excludes `some/dir` folder and all its content except for the `inner` subfolder and its content
+* `-:*/dir/*` excludes all `dir` directories and their content
+* `-:some/dir, +:some/dir/inner` excludes the `some/dir` directory and all its content except for the `inner` subdirectory and its content
 * `+:./*file.txt` includes only the specified file in the build checkout directory into monitoring
 * `-:file.txt `excludes the specified file in the build checkout directory from monitoring
 
@@ -120,7 +120,7 @@ Check this option to enable detailed logging to build log.
 
 ## Default excluded paths
 
-If the build is set up to checkout on the agent, by default Swabra ignores all `.svn`, `.git`, `.hg`, `CVS` folders and their content. To turn off this behaviour, specify an empty `swabra.default.rules` configuration parameter.
+If the build is set up to checkout on the agent, by default Swabra ignores all `.svn`, `.git`, `.hg`, `CVS` directories and their content. To turn off this behaviour, specify an empty `swabra.default.rules` configuration parameter.
 
 ## Installing Handle
 

@@ -12,7 +12,7 @@ Basically, a meta-runner is a set of build steps from one build configuration th
 
 TeamCity allows extracting meta-runners using the web UI.
 
-All meta-runners are stored on a project level, so they are available within this project and its subprojects only, and are not visible outside. If a meta-runner is stored on the __&lt;Root&gt;__  project level, it is available globally (in all projects).
+All meta-runners are stored on a project level, so they are available within this project and its subprojects only, and are not visible outside. If a meta-runner is stored on the Root project level, it is available globally (in all projects).
 
 You can use the existing meta-runners from the TeamCity Meta-Runners Power Pack or create your own meta-runner.
 
@@ -79,7 +79,7 @@ If the build configuration works properly, we can create a meta-runner by clicki
 
 <img src="extract-meta-runner.png" width="650" alt="Extract Meta-Runner"/>
 
-The __Extract Meta-Runner__ dialog requires specifying the project where the meta-runner will be created. A meta-runner created in a project will be available in this project and all its subprojects. In our case the __&lt;Root project&gt;__ is selected, so the meta-runner will be available in all projects.
+The __Extract Meta-Runner__ dialog requires specifying the project where the meta-runner will be created. A meta-runner created in a project will be available in this project and all its subprojects. In our case the Root project is selected, so the meta-runner will be available in all projects.
 
 We also need to provide the name, description, and an ID for the meta-runner: the name and description will be shown in the web interface, an ID is required to distinguish this meta-runner from others.
 
@@ -95,7 +95,7 @@ The current meta-runner usages can be seen at the project __Meta-Runners__ page:
 
 <img src="meta-runners.png" width="750" alt="Meta-Runners"/>
 
-When a meta-runner is extracted, all steps are extracted. If you need to reorder parameters or make some quick fixes in the runner script, you can edit its raw XML definition in the web browser: go to __Project Administration__ | __Meta-Runners__ and use the __Edit__ option next to the meta-runner. The parameters will be shown in the same order as `<param>` elements in the XML definition. Definitions of meta-runners are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>\config\projects\<project_ID>\pluginData\metaRunners` directory.
+When a meta-runner is extracted, all steps are extracted. If you need to reorder parameters or make some quick fixes in the runner script, you can edit its raw XML definition in the web browser: go to __Project Administration | Meta-Runners__ and use the __Edit__ option next to the meta-runner. The parameters will be shown in the same order as `<param>` elements in the XML definition. Definitions of meta-runners are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>\config\projects\<project_ID>\pluginData\metaRunners` directory.
 
 ## Creating Meta-Runner from XML Definition of Build Configuration
 

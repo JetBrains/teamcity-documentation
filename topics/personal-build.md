@@ -31,7 +31,7 @@ __To generate a patch__:
 
 * __In any IntelliJ Platform IDE__: select the required local changes in the commit log, click [Create Patch](https://www.jetbrains.com/help/idea/use-patches.html#create-patch) in the context menu, and save the patch as a `*.diff` file.
 * __Via Git__: run `git diff commit1..commit2 > path/filename.diff`.   
-For example, to save a diff between the last commit and the preceding commit to the `patch.diff` file in the `test` folder, run `git diff HEAD^ HEAD > ~/test/patch.diff`. See other examples in [Git documentation](https://git-scm.com/docs/git-diff#_examples).
+For example, to save a diff between the last commit and the preceding commit to the `patch.diff` file in the `test` directory, run `git diff HEAD^ HEAD > ~/test/patch.diff`. See other examples in [Git documentation](https://git-scm.com/docs/git-diff#_examples).
 
 __To upload a patch and run a personal build via the web UI__:
 1. Open the [Run Custom Build](running-custom-build.md) dialog and enable the "_run as a personal build_" option. The __Upload patch__ button will appear. <img src="upload-patch-ui.png" alt="Upload a unidiff patch via UI" width="500"/>

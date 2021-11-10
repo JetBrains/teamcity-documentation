@@ -932,7 +932,7 @@ If a build containing several steps fails at a certain step, it is possible to d
 {product="tc"}
 
 TeamCity Tray Notifier is used normally to watch builds and receive notifications from a single TeamCity server. However, if you have more than one TeamCity server and want to monitor them with Windows Tray Notifier simultaneously, you need to start a separate instance of Tray Notifier for each of the servers from the command line with the `/allowMultiple` option:
-* From the TeamCity Tray Notifier installation folder (by default, it's `C:\Program Files\JetBrains\TeamCity`) run the following command:
+* From the TeamCity Tray Notifier installation directory (by default, it's `C:\Program Files\JetBrains\TeamCity`) run the following command:
 
 
 ```Shell

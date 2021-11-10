@@ -26,7 +26,7 @@ Note that compilation errors are not reported by inspections, so it's a good ide
 
 __Maven projects__
 
-The runner also supports Maven2 or above: to use `pom.xml`, you need to open it in IntelliJ IDEA and configure inspection profiles as described in the [IntelliJ IDEA documentation](https://www.jetbrains.com/help/idea/customizing-profiles.html). IntelliJ IDEA will save your inspection profiles in the [corresponding folder](https://www.jetbrains.com/help/idea/tuning-the-ide.html#default-dirs). Make sure you have it checked into your version control. Then specify the paths to the inspection profiles while configuring this runner.
+The runner also supports Maven2 or above: to use `pom.xml`, you need to open it in IntelliJ IDEA and configure inspection profiles as described in the [IntelliJ IDEA documentation](https://www.jetbrains.com/help/idea/customizing-profiles.html). IntelliJ IDEA will save your inspection profiles in the [corresponding directory](https://www.jetbrains.com/help/idea/tuning-the-ide.html#default-dirs). Make sure you have it checked into your version control. Then specify the paths to the inspection profiles while configuring this runner.
 
 It is a good idea to execute `mvn install` as the step preceding the Inspections step in order to allow projects with dependencies to be resolved successfully.
 </note>
@@ -71,7 +71,7 @@ Path to the project
 
 Depending on the type of project selected in the __Project file type__, specify here:
 
-* __For IntelliJ IDEA project__: the path to the project file (`.ipr`) or the path to the project directory the root directory of the project containing the `.idea` folder).
+* __For IntelliJ IDEA project__: the path to the project file (`.ipr`) or the path to the project directory the root directory of the project containing the `.idea` directory).
 * __For Maven project__: the path to the `pom.xml` file. 
 * __For Gradle project__: the path to the `.gradle` or `.gradle.kts` file.    
 This information is required by this build runner to understand the structure of the project.

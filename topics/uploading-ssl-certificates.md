@@ -21,5 +21,5 @@ All uploaded certificates will be automatically delivered to all TeamCity agents
 However, sometimes automatically distributing certificates to all agents may not be needed or may be undesirable. Then, you can __manually__ add certificates to a required agent by placing them into the `<[TeamCity Agent Home](agent-home-directory.md)>/conf/trustedCertificates` directory (one file per certificate, certificates in textual form in one of the supported formats mentioned above). Note that this directory is used for storing manually added certificates only; automatically distributed certificates are stored separately, alongside other system files.
 
 This can be useful in the following cases:
-* If the user is running the TeamCity server under a non-trusted certificate, you need to place the server certificate into this folder on an agent to establish agent-server connection
+* If the user is running the TeamCity server under a non-trusted certificate, you need to place the server certificate into this directory on an agent to establish agent-server connection
 * If the user considers their network connection between the server and agents insecure and does not want to transfer sensitive information.

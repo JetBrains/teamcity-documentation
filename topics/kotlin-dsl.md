@@ -541,8 +541,8 @@ _Question_: How to add the `.teamcity` settings directory as a new module to an 
 _Solution_: In your existing project in  IntelliJ IDEA:
 * Go to __File | Project Structure__, or press __Ctrl+Shift+Alt+S__.
 * Select __Modules__ under the __Project Settings__ section.
-* Click the plus sign, select __Import module__ and choose the folder containing your project settings. Click __Ok__ and follow the wizard.
-* Click __Apply__. The new module is added to your project structure.\
+* Click the plus sign, select __Import module__ and choose the directory containing your project settings. Click __OK__ and follow the wizard.
+* Click __Apply__. The new module is added to your project structure.
 
 ### How to Access Auxiliary Scripts from DSL Settings
 

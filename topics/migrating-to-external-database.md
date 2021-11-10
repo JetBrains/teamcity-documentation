@@ -25,7 +25,7 @@ Steps to perform the switch:
 1. [Create and configure an external database](setting-up-external-database.md#Supported+Databases) to be used by TeamCity.
 2. Shut down the TeamCity server.
 3. [Create a backup copy](teamcity-data-backup.md) of the `<[TeamCity Data Directory](teamcity-data-directory.md)>` used by the server.
-4. Clean up the `system` folder: you __must__ remove the `messages` and `artifacts` folders from the `system` folder of your `<[TeamCity Data Directory](teamcity-data-directory.md)>`; you __may__ delete the old HSQLDB files: `buildserver.*` to remove the no longer needed internal storage data.
+4. Clean up the `system` directory: you __must__ remove the `messages` and `artifacts` directories from the `system` folder of your `<[TeamCity Data Directory](teamcity-data-directory.md)>`; you __may__ delete the old HSQLDB files: `buildserver.*` to remove the no longer needed internal storage data.
 5. Start the TeamCity server.
 
 <tip>

@@ -51,7 +51,7 @@ Description
 
 <td>
 
-The full path to the dotCover home folder to override the bundled dotCover. 
+The full path to the dotCover home directory to override the bundled dotCover. 
 
 </td>
 </tr>
@@ -91,7 +91,7 @@ Sample value
 
 <td>
 
-Full path to NCover installation folder.
+Full path to the NCover installation directory.
 
 </td>
 

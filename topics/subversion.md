@@ -130,7 +130,7 @@ If enabled, TeamCity is able to connect to SVN servers without properly signed S
 
 <note>
 
-Note that if you have anonymous access for some path within SVN, the entered username will never be used to authenticate when accessing any of its subfolders. Anonymous access will be used instead. This rule only applies for `svn://` and `http(s)://` protocols; i.e. if you have a build configuration which uses a combination of this VCS Root \+ [VCS Checkout Rules](vcs-checkout-rules.md) referencing a non-restricted path above the restricted one for another build configuration, changes under the restricted path will be ignored _even_ if you specify correct username/password for the VCS Root itself.
+Note that if you have anonymous access for some path within SVN, the entered username will never be used to authenticate when accessing any of its subdirectories. Anonymous access will be used instead. This rule only applies for `svn://` and `http(s)://` protocols; i.e. if you have a build configuration which uses a combination of this VCS Root \+ [VCS Checkout Rules](vcs-checkout-rules.md) referencing a non-restricted path above the restricted one for another build configuration, changes under the restricted path will be ignored _even_ if you specify correct username/password for the VCS Root itself.
 </note>
 
 ## SSH settings

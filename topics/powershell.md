@@ -270,7 +270,7 @@ To properly handle non-ASCII output from PowerShell, the correct encoding must b
 
 ## Temporary Files
 
-The TeamCity PowerShell plugin uses temporary files as an entry point; these files are created in the build temporary folder and removed after the PowerShell build step is finished. To keep the files, set the `powershell.keep.generated` or `teamcity.dont.delete.temp.files` configuration parameter to `true`.
+The TeamCity PowerShell plugin uses temporary files as an entry point; these files are created in the build temporary directory and removed after the PowerShell build step is finished. To keep the files, set the `powershell.keep.generated` or `teamcity.dont.delete.temp.files` configuration parameter to `true`.
 
 ## Development Links
 

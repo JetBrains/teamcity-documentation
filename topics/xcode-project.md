@@ -122,7 +122,7 @@ Scheme-based
 
 <td>
 
-Xcode scheme to build. The list of available schemes is formed by parsing your project/workspace files in the VCS. Make sure your __Path to the project or workspace__ is set correctly and click the __Check/Reparse Project__ button to show/refresh the schemes list. Note that a scheme must be shared to be shown in the list (to check if your scheme is shared, verify that it is located under the `xcshareddata` folder and not under the `xcuserdata` one, and that the `xcshareddata` folder is committed to your VCS. To check the latter, use the VCS tree popup next to the __Path to the project or workspace__ field). More information on managing Xcode schemes is available in the [Apple documentation](http://developer.apple.com/library/ios/#recipes/xcode_help-scheme_editor/Articles/SchemeManage.html).
+Xcode scheme to build. The list of available schemes is formed by parsing your project/workspace files in the VCS. Make sure your __Path to the project or workspace__ is set correctly and click the __Check/Reparse Project__ button to show/refresh the schemes list. Note that a scheme must be shared to be shown in the list (to check if your scheme is shared, verify that it is located under the `xcshareddata` directory and not under the `xcuserdata` one, and that the `xcshareddata` folder is committed to your VCS. To check the latter, use the VCS tree popup next to the __Path to the project or workspace__ field). More information on managing Xcode schemes is available in the [Apple documentation](http://developer.apple.com/library/ios/#recipes/xcode_help-scheme_editor/Articles/SchemeManage.html).
 
 </td></tr><tr>
 

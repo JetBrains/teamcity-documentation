@@ -117,7 +117,7 @@ If you need to pass special properties to the server, refer to [Configuring Team
 
 Starting up TeamCity server on macOS is quite similar to starting Tomcat on macOS.
 
-1. Install TeamCity and make sure it works if started from the command line with `bin/teamcity-server.sh start`. We'll assume that TeamCity is installed in the /Library/TeamCity folder
+1. Install TeamCity and make sure it works if started from the command line with `bin/teamcity-server.sh start`. We'll assume that TeamCity is installed in the `/Library/TeamCity` directory.
 2. Create the `/Library/LaunchDaemons/jetbrains.teamcity.server.plist` file with the following content:   
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>

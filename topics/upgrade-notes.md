@@ -1107,7 +1107,7 @@ AWS SDK has been updated to 1.11.66 to support new instance types (r4.4xlarge, f
 
 ## Changes from 10.0.2 to 10.0.3
 
-### Amazon EBS–Optimized Instances
+### Amazon EBS-Optimizied Instances
 
 The behavior of [EBS optimization](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html), enabled by default since TeamCity 10.0, is changed similarly to what EC2 console offers:
 

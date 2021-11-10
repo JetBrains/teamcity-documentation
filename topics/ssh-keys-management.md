@@ -13,7 +13,7 @@ TeamCity supports keys in the PEM and OpenSSH formats. If your private key uses 
 2. On the __SSH Keys__ page, click __Upload SSH Key__.
 3. In the "_Upload SSH Key_" dialog, select a private key (usually stored in `<USER_HOME>/.ssh/id_rsa` or `<USER_HOME>/.ssh/id_dsa`).
 
-When you upload an SSH key for a project, it is stored in `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<project>/pluginData/ssh_keys`. TeamCity tracks this folder and is able to pick up new keys on-the-fly. The key will be available in the current project and its subprojects.
+When you upload an SSH key for a project, it is stored in `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<project>/pluginData/ssh_keys`. TeamCity tracks this directory and is able to pick up new keys on-the-fly. The key will be available in the current project and its subprojects.
 
 <note>
 

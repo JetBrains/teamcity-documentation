@@ -275,7 +275,7 @@ Path to the project
 
 <td>
 
-Use this field to specify the path to the project file (`.ipr`) or path to the project directory (root directory of the project that contains `.idea` folder). This information is required by this build runner to understand the structure of the project.
+Use this field to specify the path to the project file (`.ipr`) or path to the project directory (root directory of the project that contains `.idea` directory). This information is required by this build runner to understand the structure of the project.
 
 The path should be relative to the checkout directory.
 

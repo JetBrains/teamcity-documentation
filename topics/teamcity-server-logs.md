@@ -86,7 +86,7 @@ Contains [clean-up](clean-up.md)-related log
 
 <td>
 
-[Notifications](subscribing-to-notifications.md)\-related log
+[Notifications](subscribing-to-notifications.md)-related log
 
 </td></tr><tr>
 
@@ -98,7 +98,7 @@ Contains [clean-up](clean-up.md)-related log
 
 <td>
 
-(off by default) [Cloud-integration](teamcity-integration-with-cloud-solutions.md)\-related log
+(off by default) [Cloud-integration](teamcity-integration-with-cloud-solutions.md)-related log
 
 </td></tr><tr>
 

@@ -19,7 +19,7 @@ The TeamCity vSphere integration allows you to:
   * either to start/stop an existing virtual machine
   * or clone a virtual machine or a template, deleting the clone once it becomes idle (when the build is finished or an idle timeout elapses, depending on the profile settings)
 * select a virtual machine snapshot to start
-* specify the folder for clones and the resource pool where your machine will be allocated
+* specify the directory for clones and the resource pool where your machine will be allocated
 * configure the maximum number of started instances
 
 ## Usage

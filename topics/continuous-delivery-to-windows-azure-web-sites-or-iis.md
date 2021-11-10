@@ -51,7 +51,7 @@ Deployment packages can be created by running the _Package_ build target on the 
 msbuild AcmeCompany.Portal.csproj /T:Package /P:Configuration=Release
 ```
 
-The project will be compiled and a new folder created, containing our deployment package. And more!
+The project will be compiled and a new directory created, containing our deployment package. And more!
 
 ![03.png](03.png)
 

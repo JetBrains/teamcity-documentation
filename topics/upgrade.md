@@ -95,7 +95,7 @@ The update progress is logged to the `<[TeamCity Home Directory](teamcity-home-d
 In case of an automatic update failure, perform the following to restore your TeamCity to the state prior to the update:
 
 1. Stop your TeamCity server if it is running.
-2. In your [TeamCity Home Directory](teamcity-home-directory.md) directory, remove the folders with the same name as the ones in the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory.
+2. In your [TeamCity Home Directory](teamcity-home-directory.md) directory, remove the directories with the same name as the ones in the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory.
 3. Copy the contents of the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory to the `<TeamCity server home>` directory.
 4. Start the TeamCity server.
 
@@ -213,10 +213,10 @@ If you customized the user under which the service is started, do not forget to 
 
 #### Upgrading from TeamCity version 2.x
 
-If the service wrapper needs an update, the new version is downloaded into the `<agent>/launcher.latest` folder, however the changes are not applied automatically.
+If the service wrapper needs an update, the new version is downloaded into the `<agent>/launcher.latest` directory, however the changes are not applied automatically.
 
 To upgrade the service wrapper manually, do the following:
-1. Ensure the `<agent>/launcher.latest` folder exists.
+1. Ensure the `<agent>/launcher.latest` directory exists.
 2. Stop the service using `<agent>\bin\service.stop.bat`.
 3. Uninstall the service using `service.uninstall.bat`.
 4. Backup the `<agent>/launcher/conf/wrapper.conf` file.

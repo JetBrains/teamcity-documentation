@@ -23,6 +23,8 @@
         <web-root>https://www.jetbrains.com/help</web-root>
         <og-twitter>@teamcity</og-twitter>
         <og-image>https://resources.jetbrains.com/storage/products/teamcity/img/meta/preview.png</og-image>
+        <color-preset>contrast</color-preset>
+        <primary-color>forest</primary-color>
     </variables>
 
     <build-profile product="tc"/>

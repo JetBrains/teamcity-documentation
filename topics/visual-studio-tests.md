@@ -244,7 +244,7 @@ When using this option, it is recommended to check the number of tests in the pr
 #### Custom test logger
 
 `VSTest.Console` supports custom loggers, that is libraries that can handle events that occur when tests are being executed.   
-TeamCity has a custom logger that provides real-time test reporting. The logger must be installed manually on the agent machine, as it requires dlls to be copied to the `Extensions` folder of the VSTest.Console. No agent restart is needed when the custom logger is installed.
+TeamCity has a custom logger that provides real-time test reporting. The logger must be installed manually on the agent machine, as it requires dlls to be copied to the `Extensions` directory of the VSTest.Console. No agent restart is needed when the custom logger is installed.
 
 __To install the custom logger__:
 

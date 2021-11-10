@@ -295,7 +295,7 @@ In TeamCity versions before 2021.1, it is only possible to enable debug logging 
        <param name="file" value="${teamcity_logs}/teamcity-vcs-trigger.log"/>
        <param name="maxBackupIndex" value="20"/>
        <layout class="org.apache.log4j.PatternLayout">
-         <param name="ConversionPattern" value="[%d] %6p [%15.15t] - %30.30c - %m%n"/>
+         <param name="ConversionPattern" value="[%d] %6p [%15.15t] - %30.30c - %\m%n"/>
         </layout>
      </appender>
     ```
@@ -318,9 +318,9 @@ To investigate process launch issues for [.NET-related runners](supported-platfo
 
 Aa alternative way to enable the logging is as follows:
 Add the `teamcity.agent.dotnet.debug=true` [configuration parameter](configuring-build-parameters.md) in the build configuration or on the agent and run the build.
-1. Open the `<[agent home](agent-home-directory.md)>/plugins/dotnetPlugin/bin` folder.
-2. Make a backup copy of `teamcity-log4net.xml`
-3. Replace `teamcity-log4net.xml` with the content of `teamcity-log4net-debug.xml`
+1. Open the `<[agent home](agent-home-directory.md)>/plugins/dotnetPlugin/bin` directory.
+2. Make a backup copy of `teamcity-log4net.xml`.
+3. Replace `teamcity-log4net.xml` with the content of `teamcity-log4net-debug.xml`.
 
 <note>
 

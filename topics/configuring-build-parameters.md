@@ -82,7 +82,7 @@ In most build configuration settings, you can use a reference to a build paramet
 To reference a build parameter, use its name enclosed in percentage signs: for example, `%\teamcity.build.number%`.
 
 TeamCity considers a reference to a property any text that is enclosed in percentage symbols. If the property cannot be found in the build configuration, the reference becomes an _implicit agent requirement_ and such build configuration can only be run on an agent with this property defined. The agent-defined value will be used in the build.  
-If you want to prevent TeamCity from treating the text in the percentage signs as a reference to a property, use two percentage signs. Every occurrence of `%%` in the values where property references are supported will be replaced with `%` before passing the value to the build. For example, if you want to pass `%Y%m%d%H%M%S` into the build, change it to `%%Y%%m%%d%%H%%M%%S`.
+If you want to prevent TeamCity from treating the text in the percentage signs as a reference to a property, use two percentage signs. Every occurrence of `%\%` in the values where property references are supported will be replaced with `%` before passing the value to the build. For example, if you want to pass `%\Y%m%\d%H%\M%S` into the build, change it to `%\%Y%\%m%\%d%\%H%\%M%\%S`.
 
 ### Where References Can Be Used
 

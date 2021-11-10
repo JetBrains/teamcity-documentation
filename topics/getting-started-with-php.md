@@ -11,7 +11,7 @@ This tutorial assumes you already have a PHP environment with PEAR, PHPUnit and 
 
 We'll start by creating a new project and build configuration in TeamCity. The build number for this new build configuration will be `1.7.6.{0}` since PHPExcel is currently in the `1.7.6.x` version range.
 
-PHPExcel comes with a build script that creates build artifacts under the `build/release/*` folder, which means we can already add that path as the artifact path TeamCity monitors.
+PHPExcel comes with a build script that creates build artifacts under the `build/release/*` directory, which means we can already add that path as the artifact path TeamCity monitors.
 
 <img src="create-configuration.png" width="700"/>
 
