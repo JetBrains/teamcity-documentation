@@ -1100,6 +1100,7 @@ When `%\dep.ID.NAME%` parameter reference is used and there are several dependen
 Since 10.0.4 `dep.` parameter resolution works as follows:
 1. if there is a snapshot dependency, the build from the same chain wins.
 2. if there is no snapshot dependency and several builds are accessible via an artifact dependency, the build with a greater `buildId` wins. If there are several artifact dependencies from a single build configuration, only the first one is considered.
+
 ### Updates
 
 AWS SDK has been updated to 1.11.66 to support new instance types (r4.4xlarge, f1.16xlarge, t2.2xlarge, t2.xlarge, r4.2xlarge, r4.xlarge, r4.large, r4.16xlarge, r4.8xlarge, f1.2xlarge).
