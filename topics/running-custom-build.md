@@ -8,7 +8,7 @@ Besides triggering a build automatically, TeamCity allows you to run a build man
 There are several ways of launching a custom build in TeamCity:
 * Click the ellipsis on the __Run__ button, and specify the options in the __Run Custom Build__ dialog described [below](#General+Options).
 * To run a custom build with specific changes, open the build results page, go to the __[Changes](working-with-build-results.md#Changes)__ tab, expand the required change, click the __Run build with this change__, and proceed with the [options](#General+Options) in the __Run Custom Build__ dialog.
-* Use [HTTP request](accessing-server-by-http.md) or [REST API request](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Triggering+Build) to TeamCity to trigger a build.
+* Use [HTTP request](accessing-server-by-http.md) or [REST API request](https://www.jetbrains.com/help/teamcity/rest/edit-build-configuration-settings.html#Manage+Build+Triggers) to TeamCity to trigger a build.
 * [Promote a build](#Promoting+Build).
 * [Build triggers](configuring-build-triggers.md) can launch builds with custom parameters.
 

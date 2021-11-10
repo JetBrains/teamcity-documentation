@@ -203,7 +203,7 @@ If you need to publish NuGet packages and then use their contents within one bui
    Previously, the _Build file_ field of the [Gradle](gradle.md) runner was set to `build.gradle` by default. We have removed this default value as some users rely on custom names of build files and prefer to let Gradle decide what file to choose.   
    If you use `build.gradle` as your build file, all will continue to work as before this update.
 * __REST API updates__:
-   * [VCS labels](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#VCS+Labels)
+   * [VCS labels](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Manage+VCS+Labels)
    * [Test statistics for personal builds](https://www.jetbrains.com/help/teamcity/rest/manage-tests-and-build-problems.html)
 * The [.NET](net.md) build runner now supports earlier versions of Visual Studio and MSBuild. Currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.
 * To see all bundled tool updates, read our [upgrade notes](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).

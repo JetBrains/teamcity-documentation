@@ -3,7 +3,7 @@
 
 This page details creating build configurations via the TeamCity UI.
 
->Build configurations can also be created via [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/manage-build-configurations.html#Build+Configuration+Locator) and as a versioned [Kotlin DSL code](storing-project-settings-in-version-control.md).
+>Build configurations can also be created via [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/get-build-details.html#Get+Specific+Builds) and as a versioned [Kotlin DSL code](storing-project-settings-in-version-control.md).
 
 <img src="create-build-configuration-button.png" alt="Create a build configuration" width="750"/>
 

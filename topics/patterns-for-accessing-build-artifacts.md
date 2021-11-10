@@ -3,7 +3,7 @@
 
 <warning>
 
-It is recommended to use the TeamCity [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Build+Artifacts) for accessing artifacts from scripts, as the REST API provides build selection facilities and allows listing artifacts.
+It is recommended to use the TeamCity [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Get+Build+Artifacts) for accessing artifacts from scripts, as the REST API provides build selection facilities and allows listing artifacts.
 </warning>
 
 This section is preserved for __backward compatibility__ with the previous TeamCity versions and for some specific functionality.

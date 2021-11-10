@@ -17,7 +17,7 @@ To download artifacts of a build, go to the [Artifacts](working-with-build-resul
 
 <anchor name="artifacts-as-archive"/>
 
->If you want to publish many artifacts in one build, we suggest that you pack them into an archive beforehand. This will make the publishing and the following downloads significantly faster. You will still be able to browse files within an archive in the build results and access archived files individually via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Build+Artifacts).  
+>If you want to publish many artifacts in one build, we suggest that you pack them into an archive beforehand. This will make the publishing and the following downloads significantly faster. You will still be able to browse files within an archive in the build results and access archived files individually via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Get+Build+Artifacts).  
 >TeamCity can automatically create an archive from a directory when publishing build artifacts. To configure this behavior, you need to specify the build artifact path as follows: `directory => directory.*`, where `*` is the archive extension. See more information and examples [here](configuring-general-settings.md#Artifact+Paths).
 >
 {id="artifacts-as-archive" auxiliary-id="artifacts-as-archive"}
@@ -28,7 +28,7 @@ You can [configure an external artifacts](configuring-artifacts-storage.md#Exter
 
 Build artifacts can also be uploaded to the server while the build is still running. To instruct TeamCity to upload the artifacts, the build script should be modified to send [service messages](service-messages.md#Publishing+Artifacts+while+the+Build+is+Still+in+Progress).
 
-You can automate artifacts downloading via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-builds.html#Build+Artifacts).
+You can automate artifacts downloading via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Get+Build+Artifacts).
 
 ## Hidden Artifacts
 

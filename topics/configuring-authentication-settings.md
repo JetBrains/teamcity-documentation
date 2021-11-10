@@ -50,8 +50,8 @@ Any changes made to authentication in the UI are reflected in the `<[TeamCity Da
 To load a preconfigured set of modules, use the __Load preset__ button, select a required option, and __Apply__ your changes. The following presets are available:
 * Default ([built-in authentication](#Built-in+Authentication) — [Token-based](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
 * [LDAP](ldap-integration.md)
-* Active directory ([LDAP](ldap-integration.md) with [NTLM](ntlm-http-authentication.md) and [Token-based](https://www.jetbrains.com/help/teamcity/rest/manage-users.html#User+Access+Tokens))
-* Microsoft Windows Domain ([NTLM](ntlm-http-authentication.md), [Token-based](https://www.jetbrains.com/help/teamcity/rest/manage-users.html#User+Access+Tokens) and [Basic HTTP](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#REST+Authentication))
+* Active directory ([LDAP](ldap-integration.md) with [NTLM](ntlm-http-authentication.md) and [Token-based](https://www.jetbrains.com/help/teamcity/rest/manage-users.html#Manage+Access+Tokens))
+* Microsoft Windows Domain ([NTLM](ntlm-http-authentication.md), [Token-based](https://www.jetbrains.com/help/teamcity/rest/manage-users.html#Manage+Access+Tokens) and [Basic HTTP](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#REST+Authentication))
 
 ### Enabling Multiple Authentication Modules
 
