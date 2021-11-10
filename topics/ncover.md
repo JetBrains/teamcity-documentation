@@ -48,7 +48,7 @@ Path to NCover
 
 <td>
 
-Specify the path to NCover installed on the build agent, or use `%system.ncover.v1.path%` to refer to the autodetected NCover on the build agent.
+Specify the path to NCover installed on the build agent, or use `%\system.ncover.v1.path%` to refer to the autodetected NCover on the build agent.
 
 </td>
 </tr>
@@ -201,7 +201,7 @@ Path to NCover 3
 
 <td>
 
-Specify the path to NCover. Alternatively, use `%system.ncover.v3.x86.path%` or `%system.ncover.v3.x64.path%` to refer to the autodetected NCover 3 on the build agent.
+Specify the path to NCover. Alternatively, use `%\system.ncover.v3.x86.path%` or `%\system.ncover.v3.x64.path%` to refer to the autodetected NCover 3 on the build agent.
 
 </td>
 </tr>

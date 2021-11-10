@@ -315,7 +315,7 @@ Path to Git
 
 <td>
 
-Provide the path to a Git executable to be used on the agent. When set to `%env.TEAMCITY_GIT_PATH%`, the automatically detected Git will be used, see [Git executable on the agent](#agentGitPath) for details.
+Provide the path to a Git executable to be used on the agent. When set to `%\env.TEAMCITY_GIT_PATH%`, the automatically detected Git will be used, see [Git executable on the agent](#agentGitPath) for details.
 
 </td></tr>
 
@@ -371,7 +371,7 @@ To configure a connection from a TeamCity server running behind a proxy to a rem
 TeamCity needs Git command line client version 1.6.4\+ on the agent in order to use the agent-side checkout.
 
 The recommended approach is to ensure that the git client is available in `PATH` of the TeamCity agent and leave the "Path to git" setting in the VCS root blank.   
-If you only have the git command line on some machines, set "Path to git" setting in the VCS root to the `%env.TEAMCITY_GIT_PATH%` value.
+If you only have the git command line on some machines, set "Path to git" setting in the VCS root to the `%\env.TEAMCITY_GIT_PATH%` value.
 
 Instead of adding Git to the agent's PATH, you can set the `TEAMCITY_GIT_PATH` environment variable (or `env.TEAMCITY_GIT_PATH` property in the agent's [`buildAgent.properties`](build-agent-configuration.md) file) to the full path to the git executable.
 

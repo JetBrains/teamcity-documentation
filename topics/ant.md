@@ -130,7 +130,7 @@ Optionally, specify additional command line parameters as a space-separated list
 The Ant build runner comes with a bundled tool, _ant-net-tasks_, which includes the jar files required for network tasks, such as FTP, sshexec, scp and mail.   
 It also contains [missing link Ant task](https://code.google.com/p/missing-link/) which can be used for REST requests.
 
-To use the tool, specify `-lib "%teamcity.tool.ant-net-tasks%"` in [Additional Ant command line parameters](#Ant+Parameters) of the runner settings.
+To use the tool, specify `-lib "%\teamcity.tool.ant-net-tasks%"` in [Additional Ant command line parameters](#Ant+Parameters) of the runner settings.
 
 <anchor name="Ant-JavaParameters"/>
 

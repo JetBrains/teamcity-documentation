@@ -52,12 +52,12 @@ Our next build step will be invoking [Phing](http://www.phing.info), a PHP proje
 
 ```PHP
 
-phing \-f build\build.xml \-DpackageVersion=%system.build.number% \-DreleaseDate=CIbuild \-DdocumentFormat=doc release-standard
+phing \-f build\build.xml \-DpackageVersion=%\system.build.number% \-DreleaseDate=CIbuild \-DdocumentFormat=doc release-standard
 ```
 
 PHPExcel has four build targets defined (_release\-standard_, _release\-documentation_, _release\-pear_ and _release\-phar_), all providing different build artifacts. The release\-standard target which we've now specified at the command line is the default build for PHPExcel which generates a ZIP file containing all source code and phpDocumentor output.
 
-We are also passing Phing the current build number from TeamCity using Phing's \-D command line switches. The build script can use these to create the correct file names.
+We are also passing Phing the current build number from TeamCity using Phing's `-D` command line switches. The build script can use these to create the correct file names.
 
 If you haven't configured the artifact paths while creating our build project, it's best to do so now (see Setting up the project). We want to make sure that the ZIP file generated in this build script is available from TeamCity's web interface.
 

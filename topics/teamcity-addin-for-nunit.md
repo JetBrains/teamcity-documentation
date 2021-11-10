@@ -61,4 +61,4 @@ To solve the problem, we suggest you use any of the following workarounds:
 
 See original blog post on this issue [http://nunit.com/blogs/?p=56](http://nunit.com/blogs/?p=56)
 
-__Environment variables__ If you need to configure environment variables for NUnit explicitly, specify an environment variable with the value reference of `%system.teamcity.dotnet.nunitaddin%`. See [Configuring Build Parameters](configuring-build-parameters.md) for details.
+__Environment variables__ If you need to configure environment variables for NUnit explicitly, specify an environment variable with the value reference of `%\system.teamcity.dotnet.nunitaddin%`. See [Configuring Build Parameters](configuring-build-parameters.md) for details.

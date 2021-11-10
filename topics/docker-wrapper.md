@@ -83,8 +83,8 @@ Additional docker run arguments
 
 Allows specifying additional options for the `docker run` command. The default argument is `--rm`, but you can provide more, for instance, add an additional volume mapping.
 
->In this field, you cannot reference environment variables using the `%env.FOO_BAR%` syntax because TeamCity does not pass environment variables from a build agent into a Docker container.  
-If you need to reference an environment variable on an agent, define the configuration parameter `system.FOO_BAR=env_var_value` in [`buildAgent.properties`](build-agent-configuration.md) and reference it via `%system.FOO_BAR%`.
+>In this field, you cannot reference environment variables using the `%\env.FOO_BAR%` syntax because TeamCity does not pass environment variables from a build agent into a Docker container.  
+If you need to reference an environment variable on an agent, define the configuration parameter `system.FOO_BAR=env_var_value` in [`buildAgent.properties`](build-agent-configuration.md) and reference it via `%\system.FOO_BAR%`.
 
 </td></tr></table>
 

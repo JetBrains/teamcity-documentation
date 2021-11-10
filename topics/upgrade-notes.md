@@ -629,7 +629,7 @@ Starting with 2019.1, the behavior of [`reverse.dep`](predefined-build-parameter
 
 [Agent tools](installing-agent-tools.md) (located under the `<agent_installation>/tools` directory on agents) are now transferred to an agent not on the agent upgrade, but right before the first build that uses the respective tool. You might need to update the build configuration settings so TeamCity knows which tools are required by the builds.   
 Before starting a build on an agent, TeamCity checks for the references to `teamcity.tool.<tool_ID>` configuration parameters to collect the set of tools used by the build. If some tool is referenced via this parameter, TeamCity will make sure this tool is present on the agent before the build logic starts executing.   
-If some of your builds use tools on agent assuming their locations under the `<agent installation>/tools` directory, such references should be changed to a TeamCity-provided parameter reference. Paths like `<agent_installation>/tools/<tool_ID>` used in TeamCity settings should be changed to the `%teamcity.tool.<tool_ID>%` parameter reference. For example, `../tools/maven3.4.5/bin/mvn` should be replaced with `%teamcity.tool.maven3.4.5%/bin/mvn`.
+If some of your builds use tools on agent assuming their locations under the `<agent installation>/tools` directory, such references should be changed to a TeamCity-provided parameter reference. Paths like `<agent_installation>/tools/<tool_ID>` used in TeamCity settings should be changed to the `%\teamcity.tool.<tool_ID>%` parameter reference. For example, `../tools/maven3.4.5/bin/mvn` should be replaced with `%teamcity.tool.maven3.4.5%/bin/mvn`.
 
 ### Changed .NET build requirements in ReSharper tools
 
@@ -647,7 +647,7 @@ If you rely on external resources (for example, in the build report tabs content
 ### Change in dotCover artifacts
 
 The `dotCover.dcvr` hidden artifact is no longer published by default. It is now created in the build temporary folder and removed when the build finishes.   
-If you use dotCover and rely on this artifact, specify the path to the `%system.teamcity.build.tempDir%\..\agentTmp\dotNetCoverageResults\dotCover.dcvr` file explicitly in the [Artifact paths](configuring-general-settings.md#Artifact+Paths).
+If you use dotCover and rely on this artifact, specify the path to the `%\system.teamcity.build.tempDir%\..\agentTmp\dotNetCoverageResults\dotCover.dcvr` file explicitly in the [Artifact paths](configuring-general-settings.md#Artifact+Paths).
 
 
 ### Bundled Tools Updates
@@ -812,7 +812,7 @@ If you're upgrading from 2018.1 to 2018.1.1 and you want to see the NuGet packag
 
 ```Shell
 
-> cd "%TeamCityDataDir%\system\artifacts\"
+> cd "%\TeamCityDataDir%\system\artifacts\"
 > Get-ChildItem -Recurse | Where-Object { $_.FullName -match '\.teamcity\\nuget\\packages\.json' } | Remove-Item
 ```
 
@@ -1093,9 +1093,9 @@ If you are using TFS with agent\-side checkout, note that due to the fix of  [TW
 
 ## Changes from 10.0.3 to 10.0.4
 
-### Precedence of %dep.ID.NAME% parameter references
+### Precedence of dep.ID.NAME parameter references
 
-When `%dep.ID.NAME%` parameter reference is used and there are several dependency paths to the same build configuration with id "ID" so that different builds are accessible via (direct or indirect) artifact dependencies, the result of the reference resolution could have used any of the builds without any guaranteed precedence.
+When `%\dep.ID.NAME%` parameter reference is used and there are several dependency paths to the same build configuration with id "ID" so that different builds are accessible via (direct or indirect) artifact dependencies, the result of the reference resolution could have used any of the builds without any guaranteed precedence.
 
 Since 10.0.4 `dep.` parameter resolution works as follows:
 1. if there is a snapshot dependency, the build from the same chain wins.
@@ -1123,7 +1123,8 @@ The bundled dotCover has been updated to version 2016.2.2
 * The known issue mentioned for 10.0.1 is fixed.
 * The bundled JetBrains dotCover has been updated to version 2016.2.
 * Jabber integration is now [more restrictive](https://youtrack.jetbrains.com/issue/TW-47046) with regard to SSL connection checking. If you are using jabber.org for sending notifications, and face a problem regarding SSL certificate, you should either enable "Use legacy SSL" option or (better) change JVM version for running TeamCity to at least 1.8.0\_101.
-* Precedence of %dep.ID.NAME% parameters resolution was changed unintentionally in case of several different builds used as dependency. See [TW-47518](https://youtrack.jetbrains.com/issue/TW-47518) for details.
+* Precedence of %\dep.ID.NAME% parameters resolution was changed unintentionally in case of several different builds used as dependency. See [TW-47518](https://youtrack.jetbrains.com/issue/TW-47518) for details.
+
 ## Changes from 10.0 to 10.0.1
 
 All known issues mentioned for 10.0 are fixed.
@@ -1272,9 +1273,9 @@ If you were using the TeamCity-GitHub [third-party plugin](https://github.com/mi
 
 ### NuGet Support
 
-Configuration parameters `teamcity.tool.NuGet.CommandLine.%NUGET_VERSION%.nupkg` are not reported anymore. The `teamcity.tool.NuGet.CommandLine.%NUGET_VERSION%` parameters should be referenced instead.
+Configuration parameters `teamcity.tool.NuGet.CommandLine.%\NUGET_VERSION%.nupkg` are not reported anymore. The `teamcity.tool.NuGet.CommandLine.%NUGET_VERSION%` parameters should be referenced instead.
 
-For example, instead of using `%teamcity.tool.NuGet.CommandLine.DEFAULT.nupkg%` parameter reference `%teamcity.tool.NuGet.CommandLine.DEFAULT%` should be used.
+For example, instead of using `%\teamcity.tool.NuGet.CommandLine.DEFAULT.nupkg%` parameter reference `%\teamcity.tool.NuGet.CommandLine.DEFAULT%` should be used.
 
 ### Build Statistics
 
@@ -1338,7 +1339,7 @@ No noteworthy changes.
 
 There is a [known issue](https://youtrack.jetbrains.com/issue/TW-43731) in the bundled dotCover run on Windows XP and Vista. You can use the [hotfix](https://youtrack.jetbrains.com/issue/TW-43731#comment=27-1286417) or the [workaround ](https://youtrack.jetbrains.com/issue/TW-43731#comment=27-1286522)provided. The issue will be fixed in the next dotCover release.
 
-There is a [known issue](https://youtrack.jetbrains.com/issue/TW-44479) with [NuGet Credentials](https://confluence.jetbrains.com/display/TCD9/NuGet+Feed+Credentials) not working for the Authenticated Feed URL of the internal TeamCity NuCet server on the local agents. As a workaround, instead of using `%teamcity.nuget.feed.auth.server%`, please specify the external server URL in the build step and the build feature.
+There is a [known issue](https://youtrack.jetbrains.com/issue/TW-44479) with [NuGet Credentials](https://confluence.jetbrains.com/display/TCD9/NuGet+Feed+Credentials) not working for the Authenticated Feed URL of the internal TeamCity NuCet server on the local agents. As a workaround, instead of using `%\teamcity.nuget.feed.auth.server%`, please specify the external server URL in the build step and the build feature.
 
 #### NuGet
 
@@ -1944,7 +1945,7 @@ Agent windows service started to use OS\-provided environment variables. Once Ag
 
 __Default location for TeamCity Data Directory when installed with Windows installer__   
 This is only relevant for fresh TeamCity installations with Windows installer. Existing settings are preserved if you upgrade an existing installation.   
-Windows installer now uses `%ALLUSERSPROFILE%\JetBrains\TeamCity` location as default one for [TeamCity Data Directory](teamcity-data-directory.md). In TeamCity 7.0 and previous versions that used to be `%USERPROFILE%\.BuildServer`.
+Windows installer now uses `%\ALLUSERSPROFILE%\JetBrains\TeamCity` location as default one for [TeamCity Data Directory](teamcity-data-directory.md). In TeamCity 7.0 and previous versions that used to be `%\USERPROFILE%\.BuildServer`.
 
 __Windows domain login module__   
 When TeamCity server runs under Windows and Windows domain user authentication is used, TeamCity now uses another library (Waffle) to talk to the Windows domain. Under Linux the behavior is unchanged: jCIFS library is used as it were.
@@ -2337,7 +2338,7 @@ __Other plugins__
 If you use any plugins that are not bundled with TeamCity, please make sure you are using the latest version and it is compatible with the 5.0 release. e.g. You will need the latest version of [Groovy plug](https://confluence.jetbrains.com/display/TW/Groovy+plug) and other properties\-providing extensions.Pre\-5.0 notifier plugins may lack support for per\-test and assignment responsibility notifications.
 
 __Obsolete Properties__   
-The system property "build.number.format" and environment variable "BUILD\_NUMBER\_FORMAT" are removed. If you need to use build number format in your build (let us know why), you can define build number format as `%system.<property name>%` and define &lt;property name&gt; system property in the build configuration (it will be passed to the build then).
+The system property "build.number.format" and environment variable "BUILD\_NUMBER\_FORMAT" are removed. If you need to use build number format in your build (let us know why), you can define build number format as `%\system.<property name>%` and define &lt;property name&gt; system property in the build configuration (it will be passed to the build then).
 
 __Oracle database__   
 If you use TeamCity with Oracle database, you should add an addition privilege to the TeamCity Oracle user. In order to do it, log in to Oracle as user SYS and perform

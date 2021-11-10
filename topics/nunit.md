@@ -32,14 +32,14 @@ To use the TeamCity NUnit build runner, install the [NUnit NuGet package](https:
 For example, you can add a [Command Line](command-line.md) build step before the NUnit build step which will install the `NUnit.Console` NuGet package as follows:
 
     ```Shell
-    %teamcity.tool.NuGet.CommandLine.DEFAULT%\tools\nuget.exe install NUnit.Console -version 3.6.0 -o packages
+    %\teamcity.tool.NuGet.CommandLine.DEFAULT%\tools\nuget.exe install NUnit.Console -version 3.6.0 -o packages
    
     ```
     
-    Note that `%teamcity.tool.NuGet.CommandLine.DEFAULT%` is a reference to the NuGet installed under the TeamCity agent.   
+    Note that `%\teamcity.tool.NuGet.CommandLine.DEFAULT%` is a reference to the NuGet installed under the TeamCity agent.   
     You can install NuGet on agents from the __Administration | Tools__ page, where you can also mark one of the installed NuGet versions as default.
     
-    After that, the `%teamcity.tool.NuGet.CommandLine.DEFAULT%` parameter reference should properly resolve to the NuGet installation path on the agent.   
+    After that, the `%\teamcity.tool.NuGet.CommandLine.DEFAULT%` parameter reference should properly resolve to the NuGet installation path on the agent.   
     Then nunit3-console should appear under the packages directory.   
     
     To run tests, in the next NUnit build step specify the NUnit path in the NUnit settings as `packages\NUnit.ConsoleRunner.3.6.0\tools\nunit3-console.exe`.   

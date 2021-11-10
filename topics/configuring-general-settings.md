@@ -178,7 +178,7 @@ Description
 
 <td>
 
-`%build.counter%`
+`%\build.counter%`
 
 </td>
 
@@ -190,7 +190,7 @@ The build counter unique for each build configuration. It is maintained by TeamC
 
 <td>
 
-`%build.vcs.number.<VCS_root_name>%`
+`%\build.vcs.number.<VCS_root_name>%`
 
 </td>
 
@@ -202,7 +202,7 @@ The revision used for the build of the VCS root with `<VCS_root_name>` name. [Re
 
 <td>
 
-`%property.name%`
+`%\property.name%`
 
 </td>
 
@@ -212,7 +212,7 @@ A value of the build property with the corresponding name. All the [Predefined B
 
 </td></tr></table>
 
->A build number format example: `1.0.%build.counter%.%build.vcs.number.My_Project_svn%`.
+>A build number format example: `1.0.%\build.counter%.%\build.vcs.number.My_Project_svn%`.
 
 Though not required, it is still highly recommended ensuring the build numbers are unique. Please include the build counter in the build number and do not reset the build counter to lesser values. It is also possible to change the build number from within your build script. For details, refer to [Build Script Interaction with TeamCity](service-messages.md#Reporting+Build+Number).
 
@@ -248,7 +248,7 @@ Note that although absolute paths are supported in the source part, it is recomm
 * `file_name` — to publish the file. The name should be relative to the [build checkout directory](build-checkout-directory.md).
 * `directory_name` — to publish all the files and subdirectories within the directory specified. The directory name should be a path relative to the [build checkout directory](build-checkout-directory.md). The files will be published preserving the directories structure under the directory specified (the directory itself will not be included).
 * `wildcard` — to publish files matching [Ant-like wildcard](wildcards.md) pattern (only `*` and `**` wildcards are supported). The wildcard should represent a path relative to the build checkout directory. The files will be published preserving the structure of the directories matched by the wildcard (directories matched by "static" text will not be created). That is, TeamCity will create directories starting from the first occurrence of the wildcard in the pattern.
-* You can use [build parameters](configuring-build-parameters.md) in the artifacts' specification. For example, use `mylib-%system.build.number%.zip` to refer to a file with the build number in the name.
+* You can use [build parameters](configuring-build-parameters.md) in the artifacts' specification. For example, use `mylib-%\system.build.number%.zip` to refer to a file with the build number in the name.
 
 The optional part starting with the `=>` symbols and followed by the target directory name can be used to publish the files into the specified target directory. If the target directory is omitted, the files are published in the root of the build artifacts. You can use `.` (dot) as a reference to the build checkout directory.   
 The target paths cannot be absolute. Non-relative paths will produce errors during the build. 

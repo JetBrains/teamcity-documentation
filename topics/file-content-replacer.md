@@ -143,7 +143,7 @@ features {
         fileRules = "**/*"
         pattern = "(?iu)the\h+pattern\h+to\h+search\h+for"
         regexMode = FileContentReplacer.RegexMode.REGEX_MIXED
-        replacement = """%teamcity.agent.work.dir%\nd_r\bin\isf"""
+        replacement = """%\teamcity.agent.work.dir%\nd_r\bin\isf"""
     }
 }
 ```
@@ -228,7 +228,7 @@ The templates for replacing the following __MFC C++ resource keys__ are provided
 
 <note>
 
-In __MFC\*.rc__ files, both `FileVersion` and `ProductVersion` occur twice, once in a _dot-separated_ (e.g. `1.2.3.4`) and once in a _comma-separated_ (e.g. `1,2,3,4`) form. If your `%build.number%` parameter has a format of `1.2.3.{0}`, using two build parameters with different delimiters instead of a single `%build.number%` is recommended.
+In __MFC\*.rc__ files, both `FileVersion` and `ProductVersion` occur twice, once in a _dot-separated_ (e.g. `1.2.3.4`) and once in a _comma-separated_ (e.g. `1,2,3,4`) form. If your `%\build.number%` parameter has a format of `1.2.3.{0}`, using two build parameters with different delimiters instead of a single `%build.number%` is recommended.
 </note>
 
 #### Xcode templates
@@ -291,18 +291,18 @@ and change the default replacement:
 
 ```Shell
 
-$1\%build.number%$7
+$1\%\build.number%$7
 
 ```
 
 to
 
 ```Shell
-$1$5\%build.number%$7
+$1$5\%\build.number%$7
 
 ```
 
 <note>
 
-Make sure your `%build.number%` [format](configuring-general-settings.md) contains just a decimal number without any dots, or you may end up with a non-standard version like `1.2.3.4.5.6.2600` (i.e. `%build.counter%` _is_ a valid value here while `4.5.6.%build.counter%` is _not_).
+Make sure your `%\build.number%` [format](configuring-general-settings.md) contains just a decimal number without any dots, or you may end up with a non-standard version like `1.2.3.4.5.6.2600` (i.e. `%\build.counter%` _is_ a valid value here while `4.5.6.%build.counter%` is _not_).
 </note>

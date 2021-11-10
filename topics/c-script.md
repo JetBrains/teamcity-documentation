@@ -125,7 +125,7 @@ Enter parameters of the script. Parameters are passed as the `Args` array. View 
 
 >__Passing secure values__   
 >For security reasons, we highly recommend that you avoid using parameter references directly inside scripts if these parameters represent secure values. You can pass such values via script parameters instead. For example, to pass a token value, [add a new build parameter](configuring-build-parameters.md) with the "Password" type, refer it in the runner’s _Script parameters_ field:
->`%access_token%`
+>`%\access_token%`
 >and call it as an argument within the script:
 >`val accessToken = args[0]`
 >This way, you can reuse the token’s value anywhere in the script.

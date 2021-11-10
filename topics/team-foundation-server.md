@@ -26,8 +26,8 @@ TeamCity features the [cross-platform TFS integration](https://blog.jetbrains.co
 The built-in TFS plugin can work in two modes: the default and cross-platform. The working mode is based on the availability of Team Explorer (default mode): if it is not present, the plugin falls back from the default to cross-platform mode. 
 
 When detecting the Team Explorer version, TeamCity checks [.NET GAC](https://msdn.microsoft.com/en-us/library/yf1d93sz.aspx) and the following paths:
-* `Windows x86: %CommonProgramFiles%\Microsoft Shared\Team Foundation Server\%version_number%`
-* `Windows x64: %CommonProgramFiles(x86)%\Microsoft Shared\Team Foundation Server\%version_number%`
+* `Windows x86: %\CommonProgramFiles%\Microsoft Shared\Team Foundation Server\%\version_number%`
+* `Windows x64: %\CommonProgramFiles(x86)%\Microsoft Shared\Team Foundation Server\%\version_number%`
 
 To enforce the cross-platform mode on TeamCity, set the `teamcity.tfs.mode=java` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) or [build configuration parameter](configuring-build-parameters.md).
 {product="tc"}

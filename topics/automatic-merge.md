@@ -49,7 +49,7 @@ Merge commit message
 
 </td><td>
 
-A message for a merge commit. The default is set to `Merge branch '%teamcity.build.branch%'`. Parameter references are supported here.
+A message for a merge commit. The default is set to `Merge branch '%\teamcity.build.branch%'`. Parameter references are supported here.
 
 </td>
 </tr><tr>

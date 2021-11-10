@@ -9,7 +9,7 @@ Check [SSH Keys Management](ssh-keys-management.md) for SSH key upload notes.
 
 The TeamCity SSH agent uses a native SSH agent from the OpenSSH included with Linux and macOS, so the feature works out of the box for these OSs. For Windows, OpenSSH needs to be installed (for example, as a part of CygWin, MinGW or a part of Git distribution for Windows).
 
-The SSH agent must be added to `$PATH` on Unix-like OSs and to `%PATH%` on Windows.
+The SSH agent must be added to `$PATH` on Unix-like OSs and to `%\PATH%` on Windows.
 
 For each TeamCity build agent, a separate SSH agent is started, so it is possible to use this feature if several build agents are installed on the same machine.
 

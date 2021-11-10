@@ -86,7 +86,7 @@ __18 June 2021__
 [**TW-71320**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71320) — Warning &quot;Failed to log action to audit&quot; in teamcity-server.log after switching main node  
 [**TW-71622**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71622) — Obsolete revision is taken in a build after checkout rules change and rebase  
 [**TW-62992**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-62992) — No stacktrace information is shown in the new UI for system problems  
-[**TW-71526**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71526) — %dep.extId.param% parameters are not updated in trigger build customization when external id of dependency changes  
+[**TW-71526**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71526) — %\dep.extId.param% parameters are not updated in trigger build customization when external id of dependency changes  
 [**TW-71555**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71555) — Duplicate custom shared resource values will result in an unpopulated &#39;teamcity.locks.readLock.\*&#39; parameter  
 [**TW-69874**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69874) — Improve an empty Agent Overview page  
 [**TW-71476**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71476) — Better handling of cases with long suites/packages/classes tests names  

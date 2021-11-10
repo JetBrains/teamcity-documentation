@@ -214,7 +214,7 @@ Examples:
 
 * To clean the workspace before the build, enable the [Clean build](configuring-vcs-settings.md#Checkout+Settings) checkbox in Version Control Settings of a Build Configuration.
 * To cancel the build if the process is stuck, configure [failure conditions](build-failure-conditions.md) of a Build Configuration. What is more, TeamCity provides [hanging build detection](configuring-general-settings.md#Build+Options) out of the box.
-* Environment variables can be accessed by specifying a special `%env.<environment variable name>%` pattern (example: `%env.JAVA_HOME%`) in various places of the configuration.
+* Environment variables can be accessed by specifying a special `%env.<environment variable name>%` pattern (example: `%\env.JAVA_HOME%`) in various places of the configuration.
 
 ### Triggers
 

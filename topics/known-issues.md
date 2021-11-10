@@ -78,7 +78,7 @@ To handle this, consider using the __Automatic (Delayed Start)__ option of the s
 
 If your TeamCity server is running on SUSE® Linux Enterprise (or using systemd Daemon), the __java.lang.OutOfMemoryError: unable to create new native thread error__ may be caused by the [cgroup process number controller](https://www.kernel.org/doc/Documentation/cgroup-v1/pids.txt) feature limiting the number of processes and the amount of threads in a cgroup to 512 by default.
 
-Increasing the limit (e.g. to 4096) on the TeamCity server should solve the issue.
+Increasing the limit (for example, to 4096) on the TeamCity server should solve the issue.
 
 See also this [external posting](https://www.elastic.co/blog/we-are-out-of-memory-systemd-process-limits).
 
@@ -119,7 +119,7 @@ with the following one:
 
 ```Shell
 :error
-if "%OS%"=="Windows_NT" @endlocal
+if "%\OS%"=="Windows_NT" @endlocal
 set ERROR_CODE=1
 
 ```

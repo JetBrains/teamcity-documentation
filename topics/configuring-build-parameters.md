@@ -50,7 +50,7 @@ The name of a configuration parameter must satisfy the following requirements:
 
 ## Parameter References
 
-Any textual setting can reference a parameter. A string in the `%parameter.name%` format will be substituted with the actual value during the build. If a build references a parameter which is not defined, TeamCity considers it an [implicit agent requirement](agent-requirements.md#Implicit+Requirements): the build will only run on the agents with this parameter defined.
+Any textual setting can reference a parameter. A string in the `%\parameter.name%` format will be substituted with the actual value during the build. If a build references a parameter which is not defined, TeamCity considers it an [implicit agent requirement](agent-requirements.md#Implicit+Requirements): the build will only run on the agents with this parameter defined.
 
 The references to parameters which names do not satisfy the [above restrictions](#Parameter+Name+Restrictions) do not create an [implicit requirement](agent-requirements.md#Implicit+Requirements).
 
@@ -69,7 +69,7 @@ Any user-defined build parameter (system property or environment variable) can r
 ```Shell
 
 %[env|system].property_name%
-For example: system.tomcat.libs=%env.CATALINA_HOME%/lib/*.jar
+For example: system.tomcat.libs=%\env.CATALINA_HOME%/lib/*.jar
 
 ```
 
@@ -79,7 +79,7 @@ For example: system.tomcat.libs=%env.CATALINA_HOME%/lib/*.jar
 
 In most build configuration settings, you can use a reference to a build parameter instead of using the actual value. Before starting a build, TeamCity resolves all references with the available parameters. If there are references that cannot be resolved, they are left as is; a respective warning appears in the build log.
 
-To reference a build parameter, use its name enclosed in percentage signs: for example, `%teamcity.build.number%`.
+To reference a build parameter, use its name enclosed in percentage signs: for example, `%\teamcity.build.number%`.
 
 TeamCity considers a reference to a property any text that is enclosed in percentage symbols. If the property cannot be found in the build configuration, the reference becomes an _implicit agent requirement_ and such build configuration can only be run on an agent with this property defined. The agent-defined value will be used in the build.  
 If you want to prevent TeamCity from treating the text in the percentage signs as a reference to a property, use two percentage signs. Every occurrence of `%%` in the values where property references are supported will be replaced with `%` before passing the value to the build. For example, if you want to pass `%Y%m%d%H%M%S` into the build, change it to `%%Y%%m%%d%%H%%M%%S`.
@@ -184,7 +184,7 @@ In the build number pattern and VCS labeling pattern, you can use the `%[env|sys
 * [server](predefined-build-parameters.md#Server+Build+Properties) and [reference](predefined-build-parameters.md#Configuration+Parameters) predefined properties;
 * properties defined on the __Build Configuration Settings | Parameters__ page.
 
-For example, a VCS revision number can be specified as `%build.vcs.number%`.
+For example, a VCS revision number can be specified as `%\build.vcs.number%`.
 
 ## Using Build Parameters in Build Scripts
 

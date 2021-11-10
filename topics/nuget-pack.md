@@ -76,7 +76,7 @@ Version
 
 <td>
 
-Specify the package version. Overrides the version number from the `nuspec` file. You can use the TeamCity variable `%build.number%` here.
+Specify the package version. Overrides the version number from the `nuspec` file. You can use the TeamCity variable `%\build.number%` here.
 
 </td></tr><tr>
 

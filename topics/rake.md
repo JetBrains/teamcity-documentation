@@ -157,7 +157,7 @@ Ruby interpreter path
 The path to Ruby interpreter. The path cannot be empty. This field supports values of environment and system variables. For example:
 
 ```Shell
-%env.I_AM_DEFINED_IN_BUILDAGENT_CONFIGURATION%
+%\env.I_AM_DEFINED_IN_BUILDAGENT_CONFIGURATION%
 
 ```
 

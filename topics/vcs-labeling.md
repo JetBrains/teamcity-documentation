@@ -85,18 +85,18 @@ If you prefer using static labels, you can enable the previous behavior by setti
 You can use variables substitution in both labeling rules and labeling patterns. See a labeling rule example in a VCS root used in different configurations:
 
 ```Plain Text
-/projects/%projectName%/trunk => /projects/%projectName%/tags
+/projects/%\projectName%/trunk => /projects/%\projectName%/tags
 
 ```
 
-This will require you to set the `%projectName%` [configuration parameter](configuring-build-parameters.md) in the build configuration settings.
+This will require you to set the `%\projectName%` [configuration parameter](configuring-build-parameters.md) in the build configuration settings.
 
 By default, TeamCity will append the label name to the end of the specified target path. If you want to have a different directory structure and put the label in the middle of the target path, you can use the following syntax:
 
 ```Plain Text
-/project/trunk => /tagged_configurations/%%system.build.label%%/project
-/modules/module1/trunk => /tagged_configurations/%%system.build.label%%/module1
-/modules/module2/trunk => /tagged_configurations/%%system.build.label%%/module2
+/project/trunk => /tagged_configurations/%\%system.build.label%%/project
+/modules/module1/trunk => /tagged_configurations/%\%system.build.label%%/module1
+/modules/module2/trunk => /tagged_configurations/%\%system.build.label%%/module2
 
 ```
 

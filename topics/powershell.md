@@ -161,7 +161,7 @@ Script arguments
 _Available if "Script execution mode" option is set to "Execute .ps1 script from external file"._
 
 Specify build parameters to be passed as arguments into the PowerShell script.   
-When using named arguments, follow this pattern: `-<script_argument1> %build_parameter1% -<script_argument2> %build_parameter2%`.
+When using named arguments, follow this pattern: `-<script_argument1> %\build_parameter1% -<script_argument2> %\build_parameter2%`.
 
 <note>
 

@@ -7,7 +7,7 @@ TeamCity provides its own NUnit tests launcher that can be used from the command
 
 <note>
 
-* If you need to access the path to the TeamCity NUnit launcher from some process, you can add the `%system.teamcity.dotnet.nunitlauncher%` [environment variable](configuring-build-parameters.md).
+* If you need to access the path to the TeamCity NUnit launcher from some process, you can add the `%\system.teamcity.dotnet.nunitlauncher%` [environment variable](configuring-build-parameters.md).
 * Values surrounded with `%` in custom scripts in the [Command Line runner](command-line.md) are treated as TeamCity references.
 
 </note>
@@ -274,21 +274,21 @@ The following examples assume that the `teamcity.dotnet.nunitlauncher` property 
 Run tests from an assembly:
 
 ```Shell
-%teamcity.dotnet.nunitlauncher% v2.0 x64 NUnit-2.2.10 Assembly.dll
+%\teamcity.dotnet.nunitlauncher% v2.0 x64 NUnit-2.2.10 Assembly.dll
 
 ```
 
 Run tests from an assembly with NUnit categories filter
 
 ```Shell
-%teamcity.dotnet.nunitlauncher% v2.0 x64 NUnit-2.2.10 /category-include:C1 /category-exclude:C2 Assembly.dll
+%\teamcity.dotnet.nunitlauncher% v2.0 x64 NUnit-2.2.10 /category-include:C1 /category-exclude:C2 Assembly.dll
 
 ```
 
 Run tests from assemblies:
 
 ```Shell
-%teamcity.dotnet.nunitlauncher% v2.0 x64 NUnit-2.5.0 /addin:Addin1.dll;Addin2.dll Assembly.dll Assebly2.dll
+%\teamcity.dotnet.nunitlauncher% v2.0 x64 NUnit-2.5.0 /addin:Addin1.dll;Addin2.dll Assembly.dll Assebly2.dll
 
 ```
 

@@ -33,7 +33,7 @@ There are three ways to configure the location of the TeamCity Data Directory:
 
 If during the first startup TeamCity finds the Data Directory location configured as the environment variable, it skips the related startup screen and uses the detected path.
 
-If the `TEAMCITY_DATA_PATH` environment variable is not set and the `<[TeamCity home directory](teamcity-home-directory.md)>/conf/teamcity-startup.properties` file does not define it either, the default TeamCity Data Directory location will be the user's home directory (for example, it is `$HOME/.BuildServer` under Linux and `%USERPROFILE%.BuildServer` under Windows).
+If the `TEAMCITY_DATA_PATH` environment variable is not set and the `<[TeamCity home directory](teamcity-home-directory.md)>/conf/teamcity-startup.properties` file does not define it either, the default TeamCity Data Directory location will be the user's home directory (for example, it is `$HOME/.BuildServer` under Linux and `%\USERPROFILE%.BuildServer` under Windows).
 
 ### Recommendations as to choosing Data Directory Location
 

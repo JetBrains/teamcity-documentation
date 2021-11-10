@@ -469,9 +469,9 @@ The inspections result from a TeamCity build may not match inspections from a lo
 
 To help us investigate issues with inspections, do the following:
 1. Add `system.teamcity.dont.delete.temp.result.dir=true` to the [configuration parameters](configuring-build-parameters.md)
-2. Add `%system.teamcity.build.tempDir%/inspection*result/** => inspections-reports-data-%build.number%.zip` rule to [Artifact paths](configuring-general-settings.md#Artifact+Paths)
-3. Add `%system.teamcity.build.tempDir%/idea-logs/** => inspections-reports-idea-logs-%build.number%.zip` rule to [Artifact paths](configuring-general-settings.md#Artifact+Paths)
-4. Add `-Didea.log.path=%system.teamcity.build.tempDir%/idea-logs/` to the runner's [JVM command line parameters](inspections.md#Java+Parameters) field.
+2. Add `%\system.teamcity.build.tempDir%/inspection*result/** => inspections-reports-data-%\build.number%.zip` rule to [Artifact paths](configuring-general-settings.md#Artifact+Paths)
+3. Add `%\system.teamcity.build.tempDir%/idea-logs/** => inspections-reports-idea-logs-%\build.number%.zip` rule to [Artifact paths](configuring-general-settings.md#Artifact+Paths)
+4. Add `-Didea.log.path=%\system.teamcity.build.tempDir%/idea-logs/` to the runner's [JVM command line parameters](inspections.md#Java+Parameters) field.
 5. Run a new build.
 6. Send us `inspections-reports-*.zip` files.
 

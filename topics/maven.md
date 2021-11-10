@@ -211,7 +211,7 @@ Predefined settings
 
 <td>
 
-If there are settings files uploaded to the TeamCity server via the administration UI, you can select one of the available options here. To upload settings file to TeamCity, click _Manage settings files_.  Maven settings are defined on the project level. You can see the settings files defined in the current project or upload files on the __Project Settings__ page using __Maven Settings__. The files will be available in the project and its subprojects. The uploaded files are stored in the `<TeamCity Data Directory>/config/projects/%projectID%/pluginData/mavenSettings` directory. If necessary, they can be edited right there. The uploaded files are used both for the agent and server-side Maven functionality.   
+If there are settings files uploaded to the TeamCity server via the administration UI, you can select one of the available options here. To upload settings file to TeamCity, click _Manage settings files_.  Maven settings are defined on the project level. You can see the settings files defined in the current project or upload files on the __Project Settings__ page using __Maven Settings__. The files will be available in the project and its subprojects. The uploaded files are stored in the `<TeamCity Data Directory>/config/projects/%\projectID%/pluginData/mavenSettings` directory. If necessary, they can be edited right there. The uploaded files are used both for the agent and server-side Maven functionality.   
 If Custom or Predefined settings are used, the path to the effective user settings file is available inside the maven process as the `teamcity.maven.userSettings.path` system property.
 
 </td></tr></table>
@@ -316,10 +316,10 @@ If you have several build agents installed on the same machine, by default they 
 * Specify the following property in `teamcity-agent/conf/buildAgent.properties`:
 
     ```Plain Text
-    system.maven.repo.local=%system.agent.work.dir%/<subdirectory_name>
+    system.maven.repo.local=%\system.agent.work.dir%/<subdirectory_name>
     
     ```   
-    For instance, `%system.agent.work.dir%/m2-repository`.
+    For instance, `%\system.agent.work.dir%/m2-repository`.
 
 * Run each build agent under different user account.
 

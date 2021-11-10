@@ -29,7 +29,7 @@ It works as follows: when an image is published, TeamCity stores the information
 As a part of [Free Disk Space](free-disk-space.md) build feature, Docker plugin cleans up images which were created by TeamCity builds on this build agent. The docker plugin assumes, that docker images are stored under
 
  - `/var/lib/docker` on Linux
- - `%ProgramData%` directory on Windows
+ - `%\ProgramData%` directory on Windows
  - `$HOME` directory on other systems
 
 The location is important, as the [Free Disk Space](free-disk-space.md) feature analyzes which disk volumes should be cleaned for the build. If your docker daemon uses a non-standard location for the images/containers, the location can be specified using `teamcity.docker.data.path` configuration parameter, preferably in [`buildAgent.properties`](build-agent-configuration.md) file.

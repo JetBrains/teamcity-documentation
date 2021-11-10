@@ -101,8 +101,8 @@ If you need to build binaries in one build and collect code coverage in another 
 To display the source code in the [Code Coverage tab](working-with-build-results.md#Code+Coverage+Results) of build results of B, you need to point B to the same [VCS root](configuring-vcs-roots.md) as A to get your source code in an appropriate location (the [checkout root](build-checkout-directory.md)) and add an [artifact dependency](build-dependencies-setup.md#Artifact+Dependencies) on __build from the same chain__ of A (for dotCover to get the paths to the sources from the `.pdb` files).
 
 You also need to tell TeamCity where to find the source code. To do this, perform the following:
-1. Add the `teamcity.dotCover.sourceBase` configuration parameter with the value `%teamcity.build.checkoutDir%` to the compiling build configuration A.
-2. Add the configuration parameter `dotNetCoverage.dotCover.source.mapping` to your test configuration B with the value `%dep.btA.teamcity.dotCover.sourceBase%=>%teamcity.build.checkoutDir%`, where `btA` is the actual [ID](identifier.md) of your configuration A.
+1. Add the `teamcity.dotCover.sourceBase` configuration parameter with the value `%\teamcity.build.checkoutDir%` to the compiling build configuration A.
+2. Add the configuration parameter `dotNetCoverage.dotCover.source.mapping` to your test configuration B with the value `%\dep.btA.teamcity.dotCover.sourceBase%=>%\teamcity.build.checkoutDir%`, where `btA` is the actual [ID](identifier.md) of your configuration A.
 
 ## Bundled dotCover Versions
 

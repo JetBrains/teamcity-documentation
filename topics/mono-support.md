@@ -33,13 +33,13 @@ If the Mono installation cannot be detected automatically (for example, you have
 
 Automatic detection of Mono framework under Windows has the following specifics:
 1. The Mono version is read from `HKLM\SOFTWARE\Novell\Mono\DefaultCLR`.
-2. The Frameworks paths are extracted from `HKLM\SOFTWARE\Novell\Mono\%MonoVersion%`.
+2. The Frameworks paths are extracted from `HKLM\SOFTWARE\Novell\Mono\%\MonoVersion%`.
 3. The platform architecture is detected by analyzing `mono.exe`.
 
 #### macOS Specifics
 1. The framework is detected automatically from `/Library/Frameworks/Mono.framework/Versions`.
 2. The highest version is selected.
-3. The frameworks path are extracted from `/Library/Frameworks/Mono.framework/Versions/%MonoVersion%/lib/mono`.
+3. The frameworks path are extracted from `/Library/Frameworks/Mono.framework/Versions/%\MonoVersion%/lib/mono`.
 4. The platform architecture is fixed to x86 as Mono official builds support only X86.
 
 #### Custom Linux/Unix Specifics
@@ -48,7 +48,7 @@ Automatic detection of Mono framework under Unix has the following specifics:
 1. Mono version is read from `pkg-config --modversion mono`.
 2. The frameworks paths are extracted from `pkg-config --variable=prefix mono` and `pkg-config --variable=libdir mono`.
 3. The platform architecture is detected by analyzing the `PREFIX/bin/mono` executable.
-You can force Mono to be detected from a custom location by adding the `PREFIX/bin` directory to the beginning of the `PATH` and updating `PKG_CONFIG_PATH` (described in `pkg-config(1)`) with `PREFIX/lib/pkgconfig.`
+You can force Mono to be detected from a custom location by adding the `PREFIX/bin` directory to the beginning of the `PATH` and updating `PKG_CONFIG_PATH` (described in `pkg-config(1)`) with `PREFIX/lib/pkgconfig`.
  
 <seealso>
         <category ref="admin-guide">

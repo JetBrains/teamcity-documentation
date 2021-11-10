@@ -73,7 +73,7 @@ API key
 
 Specify the API key to access a NuGet packages feed.
 
-To publish to the TeamCity NuGet server, specify the `%teamcity.nuget.feed.api.key%` parameter.
+To publish to the TeamCity NuGet server, specify the `%\teamcity.nuget.feed.api.key%` parameter.
 
 </td></tr><tr>
 

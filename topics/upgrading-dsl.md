@@ -1813,12 +1813,12 @@ The changes in this section should be done to Kotlin scripts on changing the [sc
 #### Updating DotCover parameters
 [//]: # (AltHead: dslConverter794)
 
-Parameters used by DotCover were changed and if you use them,  make sure `dotNetCoverage.tool` has the `dotcover` value. If the `dotNetCoverage.dotCover.home.path` parameter is missing, set it to `%teamcity.tool.JetBrains.dotCover.CommandLineTools.bundled%`. The result should look like this:
+Parameters used by DotCover were changed and if you use them,  make sure `dotNetCoverage.tool` has the `dotcover` value. If the `dotNetCoverage.dotCover.home.path` parameter is missing, set it to `%\teamcity.tool.JetBrains.dotCover.CommandLineTools.bundled%`. The result should look like this:
 
 
 ```Kotlin
 param("dotNetCoverage.tool", "dotcover")
-param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.bundled%")
+param("dotNetCoverage.dotCover.home.path", "%\teamcity.tool.JetBrains.dotCover.CommandLineTools.bundled%")
 
 ```
 
@@ -1872,7 +1872,7 @@ New value
 
 <td>
 
-`%teamcity.tool.maven%`
+`%\teamcity.tool.maven%`
 
 
 </td></tr><tr>
@@ -1886,7 +1886,7 @@ New value
 
 <td>
 
-`%teamcity.tool.maven3%`
+`%\teamcity.tool.maven3%`
 
 
 </td></tr><tr>
@@ -1900,7 +1900,7 @@ New value
 
 <td>
 
-`%teamcity.tool.maven3_1%`
+`%\teamcity.tool.maven3_1%`
 
 
 </td></tr><tr>
@@ -1914,7 +1914,7 @@ New value
 
 <td>
 
-`%teamcity.tool.maven3_2%`
+`%\teamcity.tool.maven3_2%`
 
 
 </td></tr><tr>
@@ -1928,7 +1928,7 @@ New value
 
 <td>
 
-`%teamcity.tool.maven3_3%`
+`%\teamcity.tool.maven3_3%`
 
 
 </td></tr><tr>
@@ -1942,7 +1942,7 @@ New value
 
 <td>
 
-`%teamcity.tool.maven.AUTO%`
+`%\teamcity.tool.maven.AUTO%`
 
 
 </td></tr><tr>

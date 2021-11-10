@@ -378,7 +378,7 @@ Enter a value for the `/resultsfile:file_name` command-line argument. Parameter 
 To save the test run results to a named non\-default file, enter a value for the `/resultsfile:file_name` command-line argument.
 
  * If the path specified is relative, it will be relative to the build checkout directory. If the specified file already exists in the checkout directory, the build agent will attempt to delete the file. If the agent fails to delete it, the build will fail.   
- To create a `*.trx` report in the build temporary directory, use `%system.teamcity.build.tempDir%.`
+ To create a `*.trx` report in the build temporary directory, use `%\system.teamcity.build.tempDir%.`
 
  <note>
  

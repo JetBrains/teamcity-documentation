@@ -147,7 +147,7 @@ The plugin tries to run the `hg version` command using the path specified by the
 
 If this parameter is not set, the plugin uses `hg` as a path to the command, assuming it is somewhere in the $PATH. If the command is executed successfully and mercurial has an appropriate version (1.5.2\+), then the hg-plugin reports the path to hg in the `teamcity.hg.agent.path` parameter.
 
-During the build, the plugin uses the hg specified in the _HG command path_ field of a VCS root settings. To use the detected hg, put `%teamcity.hg.agent.path%` in this field. Configurations with such settings will be run only on agents which report the path to hg.
+During the build, the plugin uses the hg specified in the _HG command path_ field of a VCS root settings. To use the detected hg, put `%\teamcity.hg.agent.path%` in this field. Configurations with such settings will be run only on agents which report the path to hg.
 
 The server side of the plugin checks the value of the `teamcity.hg.customServerHgPathWhitelist` [internal property](configuring-teamcity-server-startup-properties.md). The property contains the `;`-separated list of allowed hg paths to use on the server. If the path specified in VCS root is in the whitelist, then it is used on the server. If not, the path specified in the `teamcity.hg.server.path` [internal property](configuring-teamcity-server-startup-properties.md) is used. If this property is not set, TeamCity server uses `hg` from the `$PATH`.
 

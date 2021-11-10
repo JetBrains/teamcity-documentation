@@ -21,10 +21,10 @@ During agentless steps, the external tool should report all build status informa
 
 To perform a request, it needs to provide:
 * [build-level authentication](artifact-dependencies.md#Build-level+authentication) credentials specified as [build system properties](configuring-build-parameters.md):
-   * username: `%system.teamcity.auth.userId%`
-   * password: `%system.teamcity.auth.password%`
-* [build ID](working-with-build-results.md#Internal+Build+ID): `%teamcity.build.id%`
-* TeamCity server URL: `%teamcity.serverUrl%`
+   * username: `%\system.teamcity.auth.userId%`
+   * password: `%\system.teamcity.auth.password%`
+* [build ID](working-with-build-results.md#Internal+Build+ID): `%\teamcity.build.id%`
+* TeamCity server URL: `%\teamcity.serverUrl%`
 
 An agent should send these parameters to the external software in advance, before being released.
 

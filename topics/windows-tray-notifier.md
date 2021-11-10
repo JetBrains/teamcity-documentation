@@ -290,7 +290,7 @@ When a pop-up notification appears, you can click the link in it to go the __Bui
 
 ## Windows Tray Notifier Logs
 
-Windows Tray Notifier logs events and warnings to the `%ProgramData%` or `%AppData%` (since 2017.2.1) `JetBrains\TeamCity\TrayNotifier\logs` directory containing the following files:
+Windows Tray Notifier logs events and warnings to the `%\ProgramData%` or `%\AppData%` (since 2017.2.1) `JetBrains\TeamCity\TrayNotifier\logs` directory containing the following files:
 *  `teamcity-tray.log` with common details
 *  `teamcity-update.log` with update details.
 

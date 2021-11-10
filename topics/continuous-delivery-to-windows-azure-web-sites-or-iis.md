@@ -148,7 +148,7 @@ Let's start by specifying build dependencies. Under the build configuration's _D
 
 ![12.png](12.png)
 
-We want to be able to identify the build numbers throughout the entire chain of deployments. For example, if CI build 1.0.0 is deployed to staging, we want to be sure that this is actually version 1.0.0 and not some intermediate version. Under _General Settings_, change the build number format to use the same version number as the originating CI build. The build number format will have to be similar to _%dep.WebAcmeCorpPortal\_ContinuousIntegration.build.number%_, duplicating the version number from the CI build.
+We want to be able to identify the build numbers throughout the entire chain of deployments. For example, if CI build 1.0.0 is deployed to staging, we want to be sure that this is actually version 1.0.0 and not some intermediate version. Under _General Settings_, change the build number format to use the same version number as the originating CI build. The build number format will have to be similar to `%\dep.WebAcmeCorpPortal\_ContinuousIntegration.build.number%`, duplicating the version number from the CI build.
 
 Our CI build was building the default configuration for our solution. Since we are now deploying to a different environment and we've created deployment configurations (and configuration transforms) for Development and Production, let's change the build configuration through the Visual Studio build step.
 

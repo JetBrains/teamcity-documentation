@@ -122,7 +122,7 @@ Assume that you have two similar build configurations that differ only by checko
 
 To do so, perform the following steps:
 1. Extract a template from one of those configurations.
-2. In the template settings, navigate to __Version Control Settings__, open the __Checkout rules__ dialog for the VCS root, and enter there: `%checkout.rules%`
+2. In the template settings, navigate to __Version Control Settings__, open the __Checkout rules__ dialog for the VCS root, and enter there: `%\checkout.rules%`
 3. For the inherited build configuration, open the configuration settings page and on the __Parameters__ page specify the actual value for the `checkout.rules` configuration parameter.
 4. For the second build configuration, use the __Associate with template__ option from __Actions__ and choose the template. Specify an appropriate value for the `checkout.rules` parameter right in the "Associate with Template" dialog. Click __Associate__.
 

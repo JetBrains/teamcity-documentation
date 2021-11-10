@@ -152,7 +152,7 @@ It is also recommended configuring a _[Perforce Administrator Access](perforce-w
     # 1. Save the script on the Perforce server under the name /path/teamcity-hook.sh.
     # 2. Run chmod +x /path/teamcity-hook.sh.
     # 3. Set up a change-commit trigger by adding the following line when editing the specification with the `p4 triggers` command:
-    #    check-for-changes-teamcity change-commit //depot/... "/path/teamcity-hook.sh %change%"
+    #    check-for-changes-teamcity change-commit //depot/... "/path/teamcity-hook.sh %\change%"
     # 4. Update the variables below.
     #
     # Update the following variables: 
@@ -176,7 +176,7 @@ It is also recommended configuring a _[Perforce Administrator Access](perforce-w
 2. Run `chmod +x /path/teamcity-hook.sh`.
 3. [Edit the Perforce specification](https://www.perforce.com/perforce/r15.1/manuals/p4sag/chapter.scripting.html#scripting.trigger.table.fields) with the `p4 triggers` command and set up a change-commit trigger by adding the following line:
    ```Shell
-   check-for-changes-teamcity change-commit //depot/... "/path/teamcity-hook.sh %change%"
+   check-for-changes-teamcity change-commit //depot/... "/path/teamcity-hook.sh %\change%"
    ```
    where `//depot/...` is the depot which is used in TeamCity builds. If there are multiple depots, you can replace this path with `//...`.
 4. Update the variables from the script with your TeamCity settings.

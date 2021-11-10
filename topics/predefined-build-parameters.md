@@ -16,7 +16,7 @@ There is also a special type of server-side build parameters that can be referen
 
 ## Server Build Properties
 
-System properties can be referenced using `%system.propertyName%`.
+System properties can be referenced using `%\system.propertyName%`.
 
 <table><tr>
 
@@ -903,7 +903,7 @@ The installed Java is searched for in the ALL locations listed below. Then, ever
 The following locations are searched (a number of locations is common for all operating systems; some of them are OS-specific):
 
 * If defined, a custom directory on the agent is searched for Java installations. Defining a custom directory to search for Java is described [below](#Defining+Custom+directory+to+Search+for+Java).
-* The [agent tools](installing-agent-tools.md) directory, `<Agent Home Directory>/tools`, is checked for containing a jre or jdk. By default, the subdirectories of `/tools` are not scanned. To search the subdirectories, define `teamcity.agent.java.search.path=%agent.tools.NAME%/INNER_PATH` in the `buildAgent.properties` file.    
+* The [agent tools](installing-agent-tools.md) directory, `<Agent Home Directory>/tools`, is checked for containing a jre or jdk. By default, the subdirectories of `/tools` are not scanned. To search the subdirectories, define `teamcity.agent.java.search.path=%\agent.tools.NAME%/INNER_PATH` in the `buildAgent.properties` file.    
 For Unix and macOS, remember to [set the executable bit](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html) on the files for TeamCity to be able to launch the discovered Java.
 {product="tc"}  
 * It is checked whether the `JAVA_HOME`, `JDK_HOME`, `JRE_HOME` variables are defined
@@ -961,14 +961,14 @@ All variables point to the Java home directories, not to binary files. For examp
 In a TeamCity build configuration:
 
 ```Shell
-%env.JDK_1_6%/bin/javac
+%\env.JDK_1_6%/bin/javac
 
 ```
 
 In a Windows bat/cmd file:
 
 ```Shell
-%JDK_1_6%\bin\javac
+%\JDK_1_6%\bin\javac
 
 ```
 

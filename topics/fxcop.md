@@ -36,7 +36,7 @@ FxCop detection mode
 
 <td>
 
-When a build agent is started, it detects automatically whether FxCop is installed. If FxCop is detected, TeamCity defines the `%system.FxCopRoot%` agent system property. You can also use a custom installation of FxCop or the use FxCop checked in your version control. Depending on the selection, the settings displayed below will vary.
+When a build agent is started, it detects automatically whether FxCop is installed. If FxCop is detected, TeamCity defines the `%\system.FxCopRoot%` agent system property. You can also use a custom installation of FxCop or the use FxCop checked in your version control. Depending on the selection, the settings displayed below will vary.
 
 </td></tr><tr>
 
@@ -199,7 +199,7 @@ Report XSLT file
 
 <td>
 
-The path to the XSLT transformation file relative to the [Build Checkout Directory](build-checkout-directory.md) or absolute on the agent machine. You can use the path to the detected FxCop on the target machine (i.e. `%system.FxCopRoot%/Xml/FxCopReport.xsl`). When the __Report XSLT file__ option is set, the build runner will apply an XSLT transform to FxCop XML output and display the resulting HTML in a new __FxCop__ tab on the build results page.
+The path to the XSLT transformation file relative to the [Build Checkout Directory](build-checkout-directory.md) or absolute on the agent machine. You can use the path to the detected FxCop on the target machine (i.e. `%\system.FxCopRoot%/Xml/FxCopReport.xsl`). When the __Report XSLT file__ option is set, the build runner will apply an XSLT transform to FxCop XML output and display the resulting HTML in a new __FxCop__ tab on the build results page.
 
 </td></tr><tr>
 
