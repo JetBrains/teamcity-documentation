@@ -5,11 +5,13 @@ The _schedule trigger_ allows you to set the time when a build of the configurat
 
 ## Triggering Conditions
 
-The settings in this section define time and other conditions for automatic build triggering. You can schedule a recurring build or set a specific date and time for it.
+This section describes the schedule trigger's parameters such as timing and VCS rules.
 
 <anchor name="ConfiguringScheduleTriggers"/>
 
 ### Date and Time
+
+You can schedule a recurring build or set a specific date and time for it.
 
 In addition to triggering builds __daily__ or __weekly__ at a specified time for a particular time zone, you can specify advanced time settings using [cron](cron-expressions-in-teamcity.md)-like expressions. This format provides more flexible scheduling options.
 

@@ -1,11 +1,11 @@
 [//]: # (title: Windows Tray Notifier)
 [//]: # (auxiliary-id: Windows Tray Notifier)
 
-<note>
+<warning>
 
 The Windows Tray Notifier is deprecated in favor of the [Browser Notifier extension](browser-notifier.md).
 
-</note>
+</warning>
 
 The Windows Tray Notifier is an utility which allows monitoring the status of specific build configurations in the system tray via popup alerts and status icons.
 

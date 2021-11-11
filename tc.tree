@@ -116,6 +116,15 @@
          <toc-element id="viewing-build-configuration-details.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="statistic-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="maven-related-data.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="installing-tools.md">
+            <toc-element id="intellij-platform-plugin.md" show-structure-for="chapter" show-structure-depth="4">
+               <toc-element id="intellij-platform-plugin-compatibility.md" hidden="true"/>
+            </toc-element>
+            <toc-element id="browser-notifier.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="eclipse-plugin.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="visual-studio-addin.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="windows-tray-notifier.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+         </toc-element>
       </toc-element>
       <toc-element id="administrator-s-guide.md" hidden="true"/>
       <toc-element toc-title="Administrator's Guide">
@@ -368,15 +377,6 @@
          <toc-element id="maven-server-side-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="tracking-user-actions.md"/>
          <toc-element id="jenkins-to-teamcity-migration-guidelines.md" show-structure-for="chapter" show-structure-depth="4"/>
-      </toc-element>
-      <toc-element id="installing-tools.md">
-         <toc-element id="intellij-platform-plugin.md" show-structure-for="chapter" show-structure-depth="4">
-            <toc-element id="intellij-platform-plugin-compatibility.md" hidden="true"/>
-         </toc-element>
-         <toc-element id="browser-notifier.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="eclipse-plugin.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="visual-studio-addin.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="windows-tray-notifier.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="extending-teamcity.md">

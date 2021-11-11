@@ -66,6 +66,8 @@ The file can be edited while the agent is running: the agent detects the change 
 
 ## Optional Properties
 
+### Build Agent Port
+
 The port where the TeamCity build agent starts and where it listens for the incoming data from the server is determined via the `ownPort` property (9090 by default). If the firewall is configured, make sure that the incoming connections for this port are allowed on the agent computer.
 
 ```Shell
@@ -75,7 +77,9 @@ ownPort=9090
 
 >If more than one build agent is hosted on the same machine, different ports must be assigned to them via the `ownPort` property in the `buildAgent.properties` file of every agent.
 
-The IP address used by TeamCity server to connect to the build agent is automatically detected by the server when the agent first connects to TeamCity, unless the ownAddress property is defined. If the machine has several network interfaces, automatic detection may fail and it is recommended to specify the `ownAddress` property:
+### Build Agent IP Address
+
+The IP address used by TeamCity server to connect to the build agent is automatically detected by the server when the agent first connects to TeamCity, unless the `ownAddress` property is defined. If the machine has several network interfaces, automatic detection may fail. In this case, it is recommended to specify the `ownAddress` property:
 
 ```Shell
 ownAddress=<own IP address or server-accessible domain name>

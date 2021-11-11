@@ -17,7 +17,7 @@ We assume that you have [already configured HTTPS](how-to.md#Configure+HTTPS+for
 __If your certificate is valid__ (i.e. it was signed by a well known Certificate Authority like Verisign), then TeamCity clients should work with HTTPS without any additional configuration. All you have to do is use `https://` links to the TeamCity server instead of `http://`.
 
 __If your certificate is not valid (is self-signed):__ (i.e. is not signed by a known Certificate Authority and likely to result in "PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target" error message)
-* To enable HTTPS connections from the TeamCity [Visual Studio Add-in](visual-studio-addin.md) and [Windows Tray Notifier](windows-tray-notifier.md), point your Internet Explorer to the TeamCity server using `https://` URL and import the server certificate into the browser. After that, the Visual Studio Add-in and Windows Tray Notifier should be able to connect by HTTPS.
+* To enable HTTPS connections from the TeamCity [Visual Studio Add-in](visual-studio-addin.md), point your Internet Explorer to the TeamCity server using `https://` URL and import the server certificate into the browser. After that, the Visual Studio Add-in should be able to connect by HTTPS.
   {product="tc"}
 * To enable HTTPS connections from Java clients (TeamCity Agents, IntelliJ IDEA, Eclipse, and so on), see the [section below](#Configuring+JVM) for configuring the JVM installation used by the connecting application.
 

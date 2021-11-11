@@ -1035,7 +1035,7 @@ none
 
 <td>
 
-[Working directory](build-working-directory.md) where the build is started. This is a path where TeamCity build runner is supposed to start a process. This is a runner-specific property, thus it has different value for each new step.
+[Working directory](build-working-directory.md) where the build is started. This is a path where TeamCity build runner is supposed to start a process. This is a runner-specific property, thus it has a different value for each new step.
 
 </td></tr><tr>
 

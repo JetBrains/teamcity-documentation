@@ -10,7 +10,7 @@ The TeamCity add-in for Microsoft Visual Studio provides the following features:
 * viewing recently committed changes and personal builds with their build status in the __My Changes__ tool window
 * opening build failure details in MS Visual Studio from the TeamCity web UI
 * viewing failed tests' details for a build
-* reruning tests failed in the TeamCity build locally via the [ReSharper](http://www.jetbrains.com/resharper/) test runner
+* rerunning tests failed in the TeamCity build locally via the [ReSharper](http://www.jetbrains.com/resharper/) test runner
 * navigation from the IDE to the build results web page
 * reapplying changes sent in Remote Run or Pre-tested commit to the working directory
 

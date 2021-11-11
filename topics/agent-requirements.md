@@ -3,9 +3,11 @@
 
 Agent requirements are used in TeamCity to specify whether a [build configuration](build-configuration.md) can run on a particular [build agent](build-agent.md) besides [agent pools](configuring-agent-pools.md) and specified build configuration restrictions.
 
+## Agent Requirements Based on Environment Variables and Properties
+
 When a build agent registers on the TeamCity server, it provides information about its configuration, including its environment variables, system properties, and additional settings specified in the `buildAgent.properties` file.
 
-The administrator can specify required environment variables and system properties for a build configuration on the __Build Configuration Settings | Agent Requirements__ page. For instance, if a particular build configuration must run on a build agent running Windows, the administrator specifies this by adding a requirement that the `teamcity.agent.jvm.os.name` system property on the build agent must contain the `Windows` string. 
+The administrator can specify required environment variables and system properties for a build configuration on the __Build Configuration Settings | Agent Requirements__ page. For instance, if a particular build configuration must run on a build agent running Windows, the administrator specifies this by adding a requirement that the `teamcity.agent.jvm.os.name` system property on the build agent must contain the `Windows` string.
 
 If the properties and environment variables on the build agent do not fulfill the requirements specified by the build configuration, then the build agent is incompatible with this build configuration. The __Agent Requirements__ page lists both compatible and incompatible agents. Multiple agent requirements for a single parameter can be added. The conditions are treated as 'and' to determine compatible agents. 
 

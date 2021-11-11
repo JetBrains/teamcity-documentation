@@ -6,9 +6,9 @@
 The _Free disk space_ [build feature](adding-build-features.md) allows ensuring certain free disk space __on the agent__ before the build by deleting files managed by the TeamCity agent (other build's checkout directories and various caches).   
 When the feature is not configured, the default free space for a build is 3 GB.
 
-## Analyzing and freeing disk space
+## Free Disk Space Requirements
 
-Before the build and before each build preparation stage, the agent will check the currently available free disk space in three locations: the agent's system, the agent's temp directory, and the build checkout directory. All the locations have to meet the same specified requirement. If the failure condition is specified, the build will fail if either of the locations does not meet the requirement.
+Before the build and before each build preparation stage, the agent will check the currently available free disk space in three locations: the agent's system, the agent's temp directory, and the build checkout directory. All these locations have to meet the same specified requirement. If the failure condition is specified, the build will fail if either of the locations does not meet the requirement.
 
 If the amount is less than required, the agent will try to delete the data of other builds before proceeding.
 
@@ -19,9 +19,9 @@ The data cleaned includes:
 * cleaning the local [Docker caches](integrating-teamcity-with-docker.md#Docker+Disk+Space+Cleaner) 
 * cleaning the local [NuGet packages caches](nuget.md#NuGet+Packages+Cache+Clean-up+on+Agents)
 
-If you need to make sure a checkout directory is never deleted while freeing disk space, set the `system.teamcity.build.checkoutDir.expireHours` property to `never`. Read more about [Build Checkout Directory](build-checkout-directory.md).
+If you need to make sure a checkout directory is never deleted while freeing disk space, set the `system.teamcity.build.checkoutDir.expireHours` property to `never`.
 
-## Configuring free disk space 
+## Settings
 
 You can use the Free Disk Space [build feature](adding-build-features.md) to alter the default 3 GB of required disk space. Configure the settings below:
 
@@ -63,7 +63,7 @@ Enable to add the corresponding [build failure condition](build-failure-conditio
 
 </td></tr></table>
 
-## Other ways to set the free disk space value
+## Alternative Methods to Set Free Disk Space Value
 
 To ensure compatibility, the free disk space value can be specified via the properties below. However, using the Free Disk Space build feature is recommended as these properties can be removed in the future TeamCity versions.
 
@@ -86,7 +86,7 @@ Here is how TeamCity will choose a free disk space value:
 3. If (1-2) are not defined, use the custom value defined in the build feature.
 4. If no custom values are defined, use the default value of 3 GB.
 
-### Configuring artifacts cache
+### Configuring Artifacts Cache
 
 A TeamCity build agent maintains a cache of published and downloaded build artifacts to reduce network transfers to the same agent. The cache is stored in the `<[Build Agent Home](agent-home-directory.md)>\system\.artifacts_cache` directory and is cleaned automatically provided the _Free disk space_ build feature is configured correctly.
 

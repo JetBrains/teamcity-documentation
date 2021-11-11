@@ -62,7 +62,7 @@ To hide an artifact, you need to publish it under the `.teamcity` directory.
 ## Artifacts Cache on Agent
 
 All artifacts published by a build are stored in the agent's artifacts cache in `<Build Agent home>\system\.artifacts_cache`, which helps speed up artifact dependencies in some cases.   
-However, depending on the size of artifacts, [clean-up](clean-up.md), and other settings, artifacts caching may cause low disk space on the agent. You can [configure](free-disk-space.md#Configuring+artifacts+cache) storing published artifacts in the agent cache.
+However, depending on the size of artifacts, [clean-up](clean-up.md), and other settings, artifacts caching may cause low disk space on the agent. You can [configure](free-disk-space.md#Configuring+Artifacts+Cache) storing published artifacts in the agent cache.
 
 <seealso>
         <category ref="concepts">

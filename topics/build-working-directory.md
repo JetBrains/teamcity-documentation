@@ -11,6 +11,8 @@ If a build script needs to run from a location other than the checkout directory
 
 The path entered in the __Working Directory__ field can be either absolute or relative to the [build checkout directory](build-checkout-directory.md). When using this option, all the other paths should still be entered relative to the checkout directory.
 
+The path to the build working directory is available as the `teamcity.build.workingDir` [predefined parameter](predefined-build-parameters.md).
+
 <seealso>
         <category ref="concepts">
             <a href="build-checkout-directory.md">Build Checkout Directory</a>
