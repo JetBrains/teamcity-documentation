@@ -11,6 +11,18 @@ Under the __My Subscription__ section, you can see how many credits and resource
 
 Under the __Available Resources__ section, you can view more detailed information on resources and credits left, and exchange credits for more committer slots, concurrent builds on self-hosted agents, and artifact storage. Read more about on-demand resources in [TeamCity Cloud Subscription and Licensing](teamcity-cloud-subscription-and-licensing.md#On-demand+Cloud+Resources).
 
+## Get Self-Hosted Build Agents
+
+Self-hosted build agents are "bring-your-own" agents that can be connected to TeamCity Cloud, but are hosted and managed by the customer. Self-hosted build agents are useful if you require your own specialized set of build software, specialized build environments, and so on.
+
+Customers can utilize their build credits to add self-hosted build agents to their instance at a flat monthly rate of 20,000 build credits. Self-hosted build agents do not draw on any additional build credits. You can connect an indefinite number of self-hosted agents to your TeamCity Cloud instance and run an unlimited number of builds on them. When such an agent is redeemed, it increases the number of concurrent builds you can perform on self-hosted agents by 1.
+
+To redeem a self-hosted agent, go to __Administration | Subscription & Resources__ and click __Manage__ in the _Concurrent Builds_ column. Enter the number of required agents and click __Apply__. Note that you can only acquire as many agents as the current quantity of build credits allows it, even if no credits are to be charged in the current month.
+
+<img src="get-self-hosted-agent.png" width="700"/>
+
+After you redeem a self-hosted agent(s), you need to install them on your machine(s) and connect them to your TeamCity Cloud instance. To download an agent distribution package, go to the __Agents__ page, click __Install agent__, and choose a preferred format. Read how to [install and connect them to your instance](setting-up-and-running-additional-build-agents.md). For a more convenient connection, make sure to generate a unique authentication token for each agent as described [here](setting-up-and-running-additional-build-agents.md#Generating+Authentication+Token).
+
 ## Review Statistics of Expenses
 
 This page also lets you track the details of your TeamCity cloud instance:
