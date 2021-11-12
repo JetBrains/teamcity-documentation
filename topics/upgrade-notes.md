@@ -629,7 +629,7 @@ Starting with 2019.1, the behavior of [`reverse.dep`](predefined-build-parameter
 
 [Agent tools](installing-agent-tools.md) (located under the `<agent_installation>/tools` directory on agents) are now transferred to an agent not on the agent upgrade, but right before the first build that uses the respective tool. You might need to update the build configuration settings so TeamCity knows which tools are required by the builds.   
 Before starting a build on an agent, TeamCity checks for the references to `teamcity.tool.<tool_ID>` configuration parameters to collect the set of tools used by the build. If some tool is referenced via this parameter, TeamCity will make sure this tool is present on the agent before the build logic starts executing.   
-If some of your builds use tools on agent assuming their locations under the `<agent installation>/tools` directory, such references should be changed to a TeamCity-provided parameter reference. Paths like `<agent_installation>/tools/<tool_ID>` used in TeamCity settings should be changed to the `%\teamcity.tool.<tool_ID>%` parameter reference. For example, `../tools/maven3.4.5/bin/mvn` should be replaced with `%\teamcity.tool.maven3.4.5%/bin/mvn`.
+If some of your builds use tools on agent assuming their locations under the `<agent installation>/tools` directory, such references should be changed to a TeamCity-provided parameter reference. Paths like `<agent_installation>/tools/<tool_ID>` used in TeamCity settings should be changed to the `%teamcity.tool.<tool_ID>%` parameter reference. For example, `../tools/maven3.4.5/bin/mvn` should be replaced with `%\teamcity.tool.maven3.4.5%/bin/mvn`.
 
 ### Changed .NET build requirements in ReSharper tools
 
@@ -2339,7 +2339,7 @@ __Other plugins__
 If you use any plugins that are not bundled with TeamCity, please make sure you are using the latest version and it is compatible with the 5.0 release. e.g. You will need the latest version of [Groovy plug](https://confluence.jetbrains.com/display/TW/Groovy+plug) and other properties\-providing extensions.Pre\-5.0 notifier plugins may lack support for per\-test and assignment responsibility notifications.
 
 __Obsolete Properties__   
-The system property "build.number.format" and environment variable "BUILD\_NUMBER\_FORMAT" are removed. If you need to use build number format in your build (let us know why), you can define build number format as `%\system.<property name>%` and define &lt;property name&gt; system property in the build configuration (it will be passed to the build then).
+The system property "build.number.format" and environment variable "BUILD\_NUMBER\_FORMAT" are removed. If you need to use build number format in your build (let us know why), you can define build number format as `%system.<property name>%` and define &lt;property name&gt; system property in the build configuration (it will be passed to the build then).
 
 __Oracle database__   
 If you use TeamCity with Oracle database, you should add an addition privilege to the TeamCity Oracle user. In order to do it, log in to Oracle as user SYS and perform

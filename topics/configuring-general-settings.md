@@ -190,7 +190,7 @@ The build counter unique for each build configuration. It is maintained by TeamC
 
 <td>
 
-`%\build.vcs.number.<VCS_root_name>%`
+`%build.vcs.number.<VCS_root_name>%`
 
 </td>
 
