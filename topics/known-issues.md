@@ -496,3 +496,7 @@ Earlier versions of the [PowerShell](powershell.md) runner don't support passing
 
 _Error while loading VCS changes_ on the TeamCity server startup might be associated with the enabled cursor-based streaming in MySQL. To prevent this error, try setting the `connectionProperties.useCursorFetch` property to `false` in `database.properties` and restart the server.  
 See [this issue](https://youtrack.jetbrains.com/issue/TW-71781) for more details.
+
+## Artifacts Domain Isolation in setups with IIS causes authorization error on accessing artifacts
+
+If [Artifacts Domain Isolation](teamcity-configuration-and-maintenance.md#Artifacts+Domain+Isolation) is enabled on your TeamCity server, trying to access build artifacts might result in the 401 Unauthorized error. This issue is most likely caused by the default behavior of your IIS web server: it rewrites the response headers targeting them back from the artifacts' domain to the main server domain. To disable this behavior, go to __Application Request Routing | Server Proxy Settings__ in the IIS interface and disable the "_Reverse rewrite host in response headers_" option.
