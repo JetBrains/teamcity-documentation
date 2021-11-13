@@ -3,6 +3,8 @@
 
 TeamCity allows creating a backup of TeamCity data via the Web UI. To create a backup file, navigate to the __Administration | Backup__ page, specify backup parameters as described below, and start the backup process.
 
+## Backup Settings
+
 <table><tr>
 
 <td>
@@ -74,7 +76,7 @@ To reduce the resulting file size and the time spent on the backup, select the "
 
 For the full backup suitable for most of the needs, it is recommended to use the Custom scope with all the items selected except for "build logs" and then backup the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` location as a usual file system.
 
-Build artifacts are not included into the backup due to their size. It is recommended to either backup the [artifacts directories](teamcity-configuration-and-maintenance.md) separately or use a redundant storage for the artifacts. Build logs are stored as a part of build artifacts, so there is no need to back up the build logs if you implement a separate backup of the artifacts locations.
+Build artifacts are not included into the backup due to their size. It is recommended to either back up the [artifacts directories](teamcity-configuration-and-maintenance.md) separately or use a redundant storage for the artifacts. Build logs are stored as a part of build artifacts, so there is no need to back up the build logs if you implement a separate backup of the artifacts locations.
 
 </td></tr></table>
 
@@ -85,13 +87,13 @@ When you start the backup, TeamCity will display its status and details of the c
 __Important Note__
 
 * Running and queued builds are not included into a backup created during server running. To include these builds, consider using the different [backup](creating-backup-via-maintaindb-command-line-tool.md) approach when the server is not running.
-* The backup process takes time that depends on how many builds there are in the system. During this process the system's state can change, for example, some builds may finish, other builds that were waiting in the build queue may start, new builds may appear in the build queue. Note, that these changes will not influence the backup. TeamCity will backup only the data actual by the time the backup process was started.
+* The backup process takes time that depends on how many builds there are in the system. During this process the system's state can change, for example, some builds may finish, other builds that were waiting in the build queue may start, new builds may appear in the build queue. Note, that these changes will not influence the backup. TeamCity will back up only the data actual by the time the backup process was started.
 * The resulting backup file is a `*.zip` archive which has a specific structure that does not depend on the OS or database type you use. Thus, you can use the backup file to restore your data even on a different Operating System, or with a different database. If you change the contents of this file manually, TeamCity will not be able to restore your data.
 
 </note>
 
 
-### Backup History
+## Back up History
 
 The __History__ tab of the __Administration | Backup__ page allows reviewing the list of created backup files, their size and date when the files were created.
 

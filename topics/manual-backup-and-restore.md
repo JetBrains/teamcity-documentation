@@ -12,12 +12,12 @@ Before performing the backup procedures, it is recommended to __stop__ the TeamC
 
 The following data needs to be backed up:
 
-### TeamCity Data Directory
+### TeamCity Data Directory Backup
 
 [`TeamCity Data Directory`](teamcity-data-directory.md) stores:
-* server settings, projects and build configurations with their settings (i.e. all that is configured via the Administration web UI)
-* build artifacts by default, unless a different location is [configured](build-artifact.md). Build logs are also stored as a part of the build artifacts
-* current operation files, internal data structure, and so on
+* server settings, projects and build configurations with their settings (that is, all that is configured via the UI);
+* build artifacts by default, unless a different location is [configured](build-artifact.md). Build logs are also stored as a part of the build artifacts;
+* current operation files, internal data structure, and so on.
 
 For more details on the directory structure and data, refer to the [TeamCity Data Directory](teamcity-data-directory.md) section.
 
@@ -34,8 +34,9 @@ The `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.
 ### Database Data
 
 The database stores all information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, and so on.
+
 * If you use the HSQLDB, the internal database (default setting, not recommended for production), the database is stored in the files residing directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` directory. All files from the directory can be backed up. You may also refer to the [HSQLDB backup notes](http://hsqldb.org/doc/guide/ch05.html#N10F02).
-* If you use an external database, back up your database schema used by TeamCity with database-specific tools. For the external database connection settings used by TeamCity, refer to the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file. You can also see the [corresponding installation section](setting-up-external-database.md).
+* If you use an external database, back up your database schema used by TeamCity with database-specific tools. For the external database connection settings used by TeamCity, refer to the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file. See the [related article](setting-up-external-database.md).
 
 ### Application Files
 
@@ -51,7 +52,7 @@ If you feel you need to back up the application files:
 
 ### Log files
 
-If you need [TeamCity server log files](teamcity-server-logs.md) (which are mainly used for problem solving or debug purposes), back up the  `<[TeamCity Data Directory](teamcity-data-directory.md)>/logs` directory.
+If you need [TeamCity server log files](teamcity-server-logs.md) (which are mainly used for problem-solving or debug purposes), back up the  `<[TeamCity Data Directory](teamcity-data-directory.md)>/logs` directory.
 
 <note>
 

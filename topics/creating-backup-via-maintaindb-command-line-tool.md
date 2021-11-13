@@ -1,9 +1,9 @@
 [//]: # (title: Creating Backup via maintainDB command-line tool)
 [//]: # (auxiliary-id: Creating Backup via maintainDB command-line tool)
 
-TeamCity [.tar.gz and .exe distributions](installing-and-configuring-the-teamcity-server.md) provide the `maintainDB.bat|sh` utility located in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory. This command-line tool enables you to back up the server data, [restore it](restoring-teamcity-data-from-backup.md), and [migrate between different databases](migrating-to-external-database.md). You can also create data backup using the [web UI](creating-backup-from-teamcity-web-ui.md).
+TeamCity [.tar.gz and .exe distributions](installing-and-configuring-the-teamcity-server.md) provide the `maintainDB.bat|sh` utility located in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory. This command-line tool enables you to back up the server data, [restore it](restoring-teamcity-data-from-backup.md), and [migrate between different databases](migrating-to-external-database.md). You can also back up data using the [UI](creating-backup-from-teamcity-web-ui.md).
 
-## Before You Backup
+## Before You Back up
 
 Before backing up data, it is recommended to shut down the TeamCity server to include all builds into the backup. If the backup process is started when the TeamCity server is up, running and queued builds are not included into the backup.
 

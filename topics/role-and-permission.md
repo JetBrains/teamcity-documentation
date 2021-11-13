@@ -171,7 +171,7 @@ Can customize and manage [Build Agents](build-agent.md), change the run configur
 
 </td></tr></table>
 
-When per-project permissions are enabled, server administrators can modify the roles, delete them, or add new roles with any combination of permissions right in the TeamCity Administration web UI, or by modifying the `roles-config.xml` file stored in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config directory. When assigning roles to users, the _View role permissions_ link in the web UI displays the list of permissions for each role in accordance with their current configuration.
+When per-project permissions are enabled, server administrators can modify the roles, delete them, or add new roles with any combination of permissions right in the TeamCity Administration web UI, or by modifying the `roles-config.xml` file stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config` directory. When assigning roles to users, the _View role permissions_ link in the web UI displays the list of permissions for each role in accordance with their current configuration.
 
 ## Project-level Agent Management Permissions
 

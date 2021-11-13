@@ -37,7 +37,7 @@ TeamCity supports the following databases:
     __Note__ that TeamCity assumes ownership over the database schema. The database structure is created on the first start and actively modified during the upgrade to the new TeamCity version. The schema is not changed when TeamCity is working normally.    
     The user account used by TeamCity should have __permissions to create new, modify and delete existing tables__ in its schema, in addition to usual __read/write permissions__ on all tables.
 3. You may also need to __download the JDBC driver for your database__.   
-   Due to licensing terms, TeamCity does not bundle driver `.jar` files for external databases. You will need to download the Java JDBC driver and put the appropriate `.jar` files (see driver\-specific sections below) from it into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/lib\/jdbc directory.    
+   Due to licensing terms, TeamCity does not bundle driver `.jar` files for external databases. You will need to download the Java JDBC driver and put the appropriate `.jar` files (see driver-specific sections below) from it into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory.    
     Note that the `.jar` files should be compiled for the Java version not greater than the one used to run TeamCity, otherwise you might see `Unsupported major.minor version` errors related to the database driver classes.
 
 <note>
@@ -105,7 +105,7 @@ The schema has to be empty (it must not contain any tables).
 
 #### On TeamCity server side (with PostgreSQL)
 
-Download the required [PostgreSQL JDBC42 driver](http://jdbc.postgresql.org/download.html#current) and place it into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/lib\/jdbc directory (remove the existing files there, if any). Proceed with the TeamCity setup.
+Download the required [PostgreSQL JDBC42 driver](http://jdbc.postgresql.org/download.html#current) and place it into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any). Proceed with the TeamCity setup.
 
 ### Oracle
 
@@ -138,14 +138,14 @@ Make sure TeamCity user has quota for accessing table space.
     Place the following files:
    * `ojdbc8.jar` (or `ojdbc6.jar`, `ojdbc7.jar` depending on your database version)
    * `orai18n.jar` (can be omitted if missing in the driver version)
-into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/lib\/jdbc directory (remove the existing files there, if any).
+into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any).
 
   <note>
 
   The Oracle JDBC driver must be compatible with the Oracle server.
   </note>
 
-  It is strongly recommended to locate the driver in your Oracle server installation. Contact your DBA for the files if required. Alternatively, download the Oracle JDBC driver from the [Oracle web site](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html). Make sure the driver version is compatible with your Oracle server.
+  It is strongly recommended placing the driver in your Oracle server installation. Contact your DBA for the files if required. Alternatively, download the Oracle JDBC driver from the [Oracle web site](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html). Make sure the driver version is compatible with your Oracle server.
 
   2\. Proceed with the TeamCity setup.
 
@@ -174,7 +174,7 @@ TeamCity uses the primary character set (char, varchar, text) for storing intern
 
 1. Download the [`Microsoft JDBC driver v6.4+`](https://www.microsoft.com/en-us/download/details.aspx?id=56615) (`sqljdbc_6.*.x` package) from the Microsoft [`Download Center`](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server).
 2. Unpack the downloaded package into a temporary directory.
-3. Copy the `mssql-jdbc-*.jre8.jar` from the just downloaded package into the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/lib\/jdbc directory (remove the existing files there, if any). MS SQL integrated security (Windows authentication) requires installing `sqljdbc_auth.dll` from the driver package as per [instructions](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
+3. Copy the `mssql-jdbc-*.jre8.jar` from the just downloaded package into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any). MS SQL integrated security (Windows authentication) requires installing `sqljdbc_auth.dll` from the driver package as per [instructions](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
 4. Proceed with the TeamCity setup.
 
 #### jTDS driver
@@ -192,9 +192,9 @@ The due procedure for the switch is to:
 
 ## Database Configuration Properties
 
-The database connection settings are stored in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config\/database.properties file. The file is a Java [properties file](http://en.wikipedia.org/wiki/.properties). You can modify it to specify required properties for your database connections.
+The database connection settings are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file. The file is a Java [properties file](http://en.wikipedia.org/wiki/.properties). You can modify it to specify required properties for your database connections.
 
-For all supported databases there are [template files](teamcity-data-directory.md#.dist+Template+Configuration+Files) with database-specific properties located in the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/config directory. The files have the following naming format: `database.<database_type>.properties.dist` and can be used as a reference on the required settings.
+For all supported databases there are [template files](teamcity-data-directory.md#.dist+Template+Configuration+Files) with database-specific properties located in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config` directory. The files have the following naming format: `database.<database_type>.properties.dist` and can be used as a reference on the required settings.
 
 TeamCity uses Apache DBCP for database connection pooling. Refer to [Apache Commons documentation](http://commons.apache.org/dbcp/configuration.html) for detailed description of configuration properties.
 

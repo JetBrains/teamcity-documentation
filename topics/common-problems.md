@@ -39,7 +39,7 @@ Assuming you have a configured build in TeamCity which is failing, do the follow
 * run the build with a command line as you would do on a developer machine. This is runner-dependent. (For some runners you can look up the command line used by TeamCity in the build log, see also the `logs\teamcity-agent.log` agent log file for the command line used by TeamCity)
 * if the build fails — investigate the reason as the issue is probably not TeamCity-related and should be investigated on the machine.
 * if it runs OK, continue
-* in the same console window `cd` to \<[TeamCity agent home](agent-home-directory.md)\>\/bin and start TeamCity agent from there with the `agent start` command
+* in the same console window `cd` to `<[TeamCity agent home](agent-home-directory.md)>/bin` and start TeamCity agent from there with the `agent start` command
 * ensure the runner settings in TeamCity are appropriate and should generate the same command line as you used manually. For example, use the _Command Line_ build step with the _Custom script_ option and the same command which can be saved in a `.sh` or `.bat` file and run from the command prompt
 * run the build in TeamCity selecting the agent in the Run custom build dialog
 * when finished, enable the agent

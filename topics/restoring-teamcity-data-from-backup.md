@@ -3,7 +3,7 @@
 
 TeamCity administrators are able to restore [backed up data](creating-backup-via-maintaindb-command-line-tool.md) via the TeamCity UI or by manually using the `maintainDB` command-line utility.
 
-## Before restoring
+## Before Restoring
 
 <note>
 
@@ -85,15 +85,15 @@ To perform restore from a backup file via maintainDB:
     maintainDB.[cmd|sh] restore -A <absolute path to the newly created TeamCity Data Directory> -I -F <path to the TeamCity backup file>
     ```
 
-6. If the process completes successfully, to __complete the restoration__ you need to __copy__ over \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/artifacts from the old directory. The directory stores build artifacts and those are not included into the backup file.
+6. If the process completes successfully, to __complete the restoration__ you need to __copy__ over `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` from the old directory. The directory stores build artifacts and those are not included into the backup file.
 
  
 Notes on the `restore` command options:
 * The `-A` argument can be omitted if you have the [`TEAMCITY_DATA_PATH`](teamcity-data-directory.md) environment variable set.
-* The `-F` argument can be an absolute path or a path relative to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/backup directory.
+* The `-F` argument can be an absolute path or a path relative to the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/backup` directory.
 * The `-T` argument must point to the `database.properties` file created in step 3.
 * If the `-T` argument is not specified and the `database.properties` file is present in the newly created `<TeamCity Data Directory>/config` and the backup file, the database is restored using the properties file in `<TeamCity Data Directory>/config`.
-* By default, if no other option except `-F` is specified, all of the backed up scopes will be restored from the backup file. To restore only specific scopes from the backup file, use the corresponding options of the `maintainDB` utility: `-D`, `-C`, `-U`, `-L`, and `-P`.
+* By default, if no other option except `-F` is specified, all the backed up scopes will be restored from the backup file. To restore only specific scopes from the backup file, use the corresponding options of the `maintainDB` utility: `-D`, `-C`, `-U`, `-L`, and `-P`.
 <tip>
 
 To get the reference for the available options of `maintainDB`, run the utility without any command or option.
@@ -102,23 +102,23 @@ To get the reference for the available options of `maintainDB`, run the utility 
 ## Restoring database only
 
 When restoring the database but preserving the more recent TeamCity Data Directory, it is important to make sure the data is consistent:
-* \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/pluginData (_supplementary data_) should be restored as well to be consistent with the data stored in the database
-* \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/caches should be cleared before the server start
+* `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` (_supplementary data_) should be restored as well to be consistent with the data stored in the database.
+* `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/caches` should be cleared before the server start.
 
 Before restoring a TeamCity database to an existing server, make sure the TeamCity server is not running.
 
 To restore a TeamCity database only from a backup file to an existing server:
 1. [Create and configure the database](setting-up-external-database.md), placing the `database.properties` file into the `config` subdirectory of the `TeamCity Data Directory`.
-2. Ensure that the required database drivers are present in the `/lib/jdbc` sub directory.
-3. Use the `maintainDB` utility located in the \<[TeamCity Home](teamcity-home-directory.md)\>\/bin directory (only available in TeamCity `.tar.gz` and `.exe` distributions).
-4. If the _supplementary data_ is present in the backup, delete the content of the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/pluginData directory (consider backing it up in another location first).
+2. Ensure that the required database drivers are present in the `/lib/jdbc` subdirectory.
+3. Use the `maintainDB` utility located in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/bin` directory (only available in TeamCity `.tar.gz` and `.exe` distributions).
+4. If the _supplementary data_ is present in the backup, delete the content of the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` directory (consider backing it up in another location first).
 5. Use the `restore` command (The `-T` argument must point to the `database.properties` file created in step 1):
 
     ```Plain Text
     maintainDB.[cmd|sh] restore -A <absolute path to TeamCity Data Directory> -F <path to the TeamCity backup file> -T <path to the database.properties file of the target database> -D
     ```
 6. See the `maintainDB` utility console output. You may have to copy the `database.properties` file manually if requested.
-7. Delete the contents of the \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/system\/caches directory.
+7. Delete the contents of the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/caches` directory.
 
 ## Resuming restore after interruption
 
@@ -130,7 +130,7 @@ The interruption occurs when one of tables or indexes failed to be restored, whi
 __Before resuming the restore__, manually delete the incorrectly restored object from the database.
 
 To resume the backup restore after an interruption:   
-Run the `maintainDB` utility with the `restore` command with the required options and the additonal `--continue` option:
+Run the `maintainDB` utility with the `restore` command with the required options and the `--continue` option:
 
 
 ```Plain Text
