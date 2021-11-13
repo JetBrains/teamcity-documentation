@@ -1,7 +1,7 @@
 [//]: # (title: Pinned Build)
 [//]: # (auxiliary-id: Pinned Build)
 
-A build can be _pinned_ to prevent it from being removed when a clean-up procedure is executed, as stipulated by the [clean-up policy](clean-up.md).
+A build can be _pinned_ to prevent it from being removed when a clean-up procedure is executed, as stipulated by the [clean-up policy](teamcity-data-clean-up.md).
 
 To pin/unpin a build:
 * on the [Build Results page](working-with-build-results.md), select __Pin__ in the _Actions_ drop-down menu, _or_
@@ -13,6 +13,6 @@ If the current build is a part of a [chain](build-chain.md) and has [snapshot de
 
 <seealso>
         <category ref="concepts">
-            <a href="clean-up.md">Clean-up policy</a>
+            <a href="teamcity-data-clean-up.md">Clean-up policy</a>
         </category>
 </seealso>

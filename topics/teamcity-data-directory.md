@@ -39,7 +39,7 @@ If the `TEAMCITY_DATA_PATH` environment variable is not set and the `<[TeamCity 
 
 Since the Data Directory stores all the server and configured projects settings, it is important that it is not available for reading and writing to the OS users without the corresponding level of access. See the related [security notes](security-notes.md#Server+and+Data).
 
-By default, the `system` directory stores all the [artifacts](build-artifact.md) and build logs of the builds in the history and can be quite large, so it is recommended to place TeamCity Data Directory on a non-system disk. Refer to the [Clean-Up](clean-up.md) page to configure automatic cleaning of older builds. If a single local disk cannot store all the artifacts, you can add another disk and configure [multiple artifacts paths](teamcity-configuration-and-maintenance.md#artifact-directories).
+By default, the `system` directory stores all the [artifacts](build-artifact.md) and build logs of the builds in the history and can be quite large, so it is recommended to place TeamCity Data Directory on a non-system disk. Refer to the [Clean-Up](teamcity-data-clean-up.md) page to configure automatic cleaning of older builds. If a single local disk cannot store all the artifacts, you can add another disk and configure [multiple artifacts paths](teamcity-configuration-and-maintenance.md#artifact-directories).
 
 Note that TeamCity assumes reliable and persistent read/write access to the TeamCity Data Directory and can malfunction if the Data Directory becomes inaccessible. This malfunction can affect TeamCity operation while the directory is unavailable and may also corrupt data of the currently running builds. While TeamCity should be able to tolerate occasional Data Directory inaccessibility, under rare circumstances the data stored in the directory might still be corrupted or partially lost.
 
@@ -80,7 +80,7 @@ The `config` subdirectory of TeamCity Data Directory contains the configuration 
       * `buildTypes` — a directory with `<buildConfiguration or template ID>.xml` files with corresponding build configuration or template settings.
       * `pluginData` — a directory to store optional and plugin-related project-level settings. Bundled plugins settings and auxiliary project settings like custom project tabs are stored in the `plugin-settings.xml` file in the directory. Credentials stored outside of VCS per Versioned settings are stored in the `secure/credentials.json` file.
       * `vcsRoots` — a directory which contains project's VCS roots settings in the files `<VcsRootID>.xml`.
-      * `project-config.xml` — the project configuration file containing the project settings, such as [parameters](configuring-build-parameters.md) and [clean-up rules](clean-up.md).
+      * `project-config.xml` — the project configuration file containing the project settings, such as [parameters](configuring-build-parameters.md) and [clean-up rules](teamcity-data-clean-up.md).
   * `main-config.xml` — server-wide configuration settings.
   * `database.properties` — database connection settings, see more at [Setting up an External Database](setting-up-external-database.md).
   * `license.keys` — a file which stores the license keys entered into TeamCity.

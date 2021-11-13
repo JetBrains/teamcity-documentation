@@ -21,7 +21,7 @@ Example of a keep rule:
 
 <img src="keep-rule-example.png" width="350" alt="Keep Rule example"/>
 
-Read more in [Clean-up](clean-up.md).
+Read more in [Clean-up](teamcity-data-clean-up.md).
 
 ## Metrics reporting
 

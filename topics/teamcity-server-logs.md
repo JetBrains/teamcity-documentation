@@ -74,7 +74,7 @@ Log of [VCS](configuring-vcs-roots.md)-related activity
 
 <td>
 
-Contains [clean-up](clean-up.md)-related log
+Contains [clean-up](teamcity-data-clean-up.md)-related log
 
 </td></tr><tr>
 

@@ -216,7 +216,7 @@ Clicking the __Test history__ link opens the __Test details__ page where you can
 
 The Test Duration graph (see the screenshot above) is useful for comparing the amount of time it takes individual tests to run on the builds of this build configuration.
 
-Test duration results are only available for the builds which are currently in the build history. Once a build has been [cleaned up](clean-up.md), this data is no longer available.
+Test duration results are only available for the builds which are currently in the build history. Once a build has been [cleaned up](teamcity-data-clean-up.md), this data is no longer available.
 
 You can perform the following actions on the Test Duration Graph:
 * Filter out the builds that failed the test by clearing the __Show failed__ option.

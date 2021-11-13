@@ -70,13 +70,13 @@ pauses the build queue
 
 </td></tr></table>
 
-You can use [Disk Usage](disk-usage.md) report to evaluate what projects use the most of the disk space and adjust the [clean-up](clean-up.md) rules if required. 
+You can use [Disk Usage](disk-usage.md) report to evaluate what projects use the most of the disk space and adjust the [clean-up](teamcity-data-clean-up.md) rules if required. 
 
 
 <seealso>
         <category ref="admin-guide">
             <a href="free-disk-space.md">Free disk space on agent</a>
             <a href="disk-usage.md">[Disk Usage</a>
-            <a href="clean-up.md">Clean-up</a>
+            <a href="teamcity-data-clean-up.md">Clean-up</a>
         </category>
 </seealso>

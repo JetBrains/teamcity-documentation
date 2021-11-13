@@ -235,11 +235,11 @@ A build chain can have an indefinite number of parallel and sequential connectio
 
 __Build chain and clean-up__
 
-By default, TeamCity preserves builds that are a part of a chain from clean-up, but you can switch off the option. Refer to the [Clean-Up](clean-up.md) description for more details.
+By default, TeamCity preserves builds that are a part of a chain from clean-up, but you can switch off the option. Refer to the [Clean-Up](teamcity-data-clean-up.md) description for more details.
 
 __Artifact dependency and clean-up__   
 
-Artifacts may not be [cleaned](clean-up.md) if they were downloaded by other builds and these builds are not yet cleaned up. For a build configuration with configured artifact dependencies, you can specify whether the artifacts downloaded by this configuration from other builds can be cleaned or not. This setting is available on the [clean-up policies](clean-up.md) page.
+Artifacts may not be [cleaned](teamcity-data-clean-up.md) if they were downloaded by other builds and these builds are not yet cleaned up. For a build configuration with configured artifact dependencies, you can specify whether the artifacts downloaded by this configuration from other builds can be cleaned or not. This setting is available on the [clean-up policies](teamcity-data-clean-up.md) page.
 
 __Running personal build in a chain__
 

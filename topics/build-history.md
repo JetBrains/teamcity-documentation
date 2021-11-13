@@ -17,6 +17,6 @@ __History__ tab:
 
  <seealso>
         <category ref="concepts">
-            <a href="clean-up.md">Clean-up</a>
+            <a href="teamcity-data-clean-up.md">Clean-up</a>
         </category>
 </seealso>

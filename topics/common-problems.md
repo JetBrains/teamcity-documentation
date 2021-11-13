@@ -91,7 +91,7 @@ If you encounter a case when artifacts are preserved while they should have been
 * presence of the icon "This build is used by other builds" in the build history line (prior to Pin action/icon on Build History)
 * build's Dependencies tab, "Delivered Artifacts" section. For every build configuration, check whether "Prevent dependency artifacts clean-up" is turned ON (this is default value). If it is, then the build's artifacts are not cleaned because of the setting. 
 
-Read more on [clean-up settings](clean-up.md#Base+Rule+Behavior+for+Dependency+Builds).
+Read more on [clean-up settings](teamcity-data-clean-up.md#Base+Rule+Behavior+for+Dependency+Builds).
 
 ## Database-related issues
 {product="tc"}

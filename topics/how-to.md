@@ -161,7 +161,7 @@ __Database Size__
 The size of the database will depend on:   
 * how many builds are started every day
 * how many test are reported from builds
-* [clean-up](clean-up.md) rules (retention policy)
+* [clean-up](teamcity-data-clean-up.md) rules (retention policy)
 * clean-up schedule
 
 We recommend the initial size of data spaces to be 4 GB. When migrating from the internal database, we suggest at least doubling the size of the current internal database. For example, the size of the external database (without the Redo Log files) of the internal TeamCity server in JetBrains is about 50 GB. Setting your database to grow automatically helps to increase file sizes to a predetermined limit when necessary, which minimizes the effort to monitor disk space.
@@ -174,7 +174,7 @@ The following factors are to be taken into account:
 * type of database (RDBMS)
 * number of agents (which actually means the number of builds running in parallel)
 * number of web pages opened by all users
-* [clean-up](clean-up.md) rules (retention policy)
+* [clean-up](teamcity-data-clean-up.md) rules (retention policy)
 
 It is advised to place the [`TeamCity Data Directory`](teamcity-data-directory.md) and database data files on physically different hard disks (even when both the TeamCity server and RDBMS share the same host).
 
@@ -865,7 +865,7 @@ TeamCity moves deleted projects settings directories (which are named after the 
 To restore a project, find the project directory in the `_trash` directory and move it into regular projects settings directory: `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects` while removing the `".projectN"` suffix from the directory name.   
 You can do this while server is running, it should pick up the restored project automatically.
 
-Note that TeamCity preserves builds history and other data stored in the database for deleted projects/build configurations for 5 days after the deletion time. All the associated data (builds and test history, changes, etc.) is removed during the next clean-up after the [configurable](clean-up.md#Deleted+Build+Configurations+Clean-up) (5 days by default) timeout elapses. 
+Note that TeamCity preserves builds history and other data stored in the database for deleted projects/build configurations for 5 days after the deletion time. All the associated data (builds and test history, changes, etc.) is removed during the next clean-up after the [configurable](teamcity-data-clean-up.md#Deleted+Build+Configurations+Clean-up) (5 days by default) timeout elapses. 
 
 The `config/_trash` directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects. No server restart is required.
 

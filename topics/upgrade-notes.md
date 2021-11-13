@@ -42,7 +42,7 @@ If you use [VCS labeling](vcs-labeling.md) for a [Perforce](perforce.md) root, n
 
 ### Fixed inconsistency in build chains clean-up
 
-Previously, builds in an artifact dependency configuration were never [cleaned up](clean-up.md) if its dependent configuration had a snapshot dependency on another build configuration which was set to be preserved. For example, if __C__ artifact-depends on __B__ and snapshot-depends on __A__ and __A__ is set to be preserved, __B__ was not cleaned up even if the "_Keep artifact dependencies_" option was enabled in __C__. Now, builds in the artifact dependency configuration (__C__) will be cleaned up properly, in full accordance with the clean-up rules.
+Previously, builds in an artifact dependency configuration were never [cleaned up](teamcity-data-clean-up.md) if its dependent configuration had a snapshot dependency on another build configuration which was set to be preserved. For example, if __C__ artifact-depends on __B__ and snapshot-depends on __A__ and __A__ is set to be preserved, __B__ was not cleaned up even if the "_Keep artifact dependencies_" option was enabled in __C__. Now, builds in the artifact dependency configuration (__C__) will be cleaned up properly, in full accordance with the clean-up rules.
 
 This fix restores the intended behavior, but we recommend that you review your clean-up settings to ensure no builds will be cleaned up unexpectedly after the upgrade.
 
@@ -1821,7 +1821,7 @@ IntelliJ IDEA project runner now uses IntelliJ IDEA's external make tool to buil
 
 #### Clean-up for build configurations with feature branches
 
-Build configurations with feature branches now process clean\-up rules per\-branch which can result in more builds preserved during clean\-up than in previous versions. See [details](clean-up.md).
+Build configurations with feature branches now process clean\-up rules per\-branch which can result in more builds preserved during clean\-up than in previous versions. See [details](teamcity-data-clean-up.md).
 
 #### Team Foundation Server integration
 

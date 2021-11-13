@@ -321,7 +321,7 @@ You can [export configuration files](project-export.md) of a project with its ch
 
 Use the corresponding item from the __Actions__ menu in the upper right corner of the __Project Settings__ page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent __Project Settings__ page.
 
-When you delete a project, TeamCity will remove its `.xml` configuration files. After the deletion, the project is moved to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/.ProjectID.projectN directory. There is a [configurable](clean-up.md#Deleted+Build+Configurations+Clean-up) timeout (5 days by default) before all project-related data stored in the database (build history, artifacts, and so on) of the deleted project is completely removed during the next build history clean-up.
+When you delete a project, TeamCity will remove its `.xml` configuration files. After the deletion, the project is moved to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/.ProjectID.projectN directory. There is a [configurable](teamcity-data-clean-up.md#Deleted+Build+Configurations+Clean-up) timeout (5 days by default) before all project-related data stored in the database (build history, artifacts, and so on) of the deleted project is completely removed during the next build history clean-up.
 
 >You can [restore](how-to.md#Restore+Just+Deleted+Project) a deleted project before the clean-up is run.
 >

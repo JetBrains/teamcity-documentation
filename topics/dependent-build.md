@@ -26,7 +26,7 @@ A snapshot dependency alters the builds' behavior in the following way:
 * if some build configurations already have started builds with matching changes ("suitable builds") and the snapshot dependency has the "_Do not run new build if there is a suitable one_" option ON, TeamCity optimizes the queued builds by using an already finished builds instead of the queued ones. Corresponding queued builds are then silently removed. This procedure can be performed several times, because, while builds of the chain remain in the queue, new builds may start and finish;
 * all builds linked via snapshot dependencies are started by TeamCity with explicit specification of the sources' revision. The revision is calculated so that it corresponds to the same moment in time (for the same VCS root it is the same revision number). For a queued build chain (all builds linked with a snapshot dependency), the revision to use is determined after adding builds to the queue. At this time, all the VCS roots of the chain are checked for changes and the current revision is fixed in the builds;
 * if there is a snapshot dependency and artifact dependency on the __Build from the same chain__ pointing to the same build configuration, TeamCity ensures the download of artifacts from the same-sources build.
-* by default, builds that are a part of a build chain are preserved from clean-up, but this can be switched on a per-build configuration basis. Refer to the [Clean-Up](clean-up.md) description for more details.
+* by default, builds that are a part of a build chain are preserved from clean-up, but this can be switched on a per-build configuration basis. Refer to the [Clean-Up](teamcity-data-clean-up.md) description for more details.
 
 Depending on the dependencies, topology builds can run sequentially or in parallel.
 
@@ -69,7 +69,7 @@ To create and configure an artifact dependency, use the __[Dependencies](artifac
  
 __Notes on Cleaning Up Artifacts__  
  
-Artifacts may not be [cleaned](clean-up.md) if they were downloaded by other builds and these builds are not yet cleaned up. For a build configuration with configured artifact dependencies, you can specify whether the artifacts downloaded by this configuration from other builds can be cleaned or not. This setting is available on the [clean-up policies](clean-up.md) page.
+Artifacts may not be [cleaned](teamcity-data-clean-up.md) if they were downloaded by other builds and these builds are not yet cleaned up. For a build configuration with configured artifact dependencies, you can specify whether the artifacts downloaded by this configuration from other builds can be cleaned or not. This setting is available on the [clean-up policies](teamcity-data-clean-up.md) page.
 
 <seealso>
         <category ref="concepts">

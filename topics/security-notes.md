@@ -239,7 +239,7 @@ Do not store credentials or other sensitive information as plain text in your bu
 
 __Keep your build history__.
 
-Keep your build history and logs for a longer period of time, especially for builds doing critical deployments, by specifying corresponding [clean-up rules](clean-up.md) for your project. Also, make sure to not grant the "remove build" [permissions](role-and-permission.md) to developers, as this could prevent the archiving.
+Keep your build history and logs for a longer period of time, especially for builds doing critical deployments, by specifying corresponding [clean-up rules](teamcity-data-clean-up.md) for your project. Also, make sure to not grant the "remove build" [permissions](role-and-permission.md) to developers, as this could prevent the archiving.
 
 Both measures may help with tracing malicious activities, even if they happened a long time ago.
 

@@ -196,7 +196,7 @@ It is implied that you move the changes from the patch file to the corresponding
 
 To identify a build configuration in a project based on the portable DSL, TeamCity uses the [ID](#id-or-name) assigned to this build configuration in the DSL. We recommend keeping this ID constant, so the changes made in the DSL code are consistently applied to the respective build configuration in TeamCity.
 
-However, if you need to modify the build configuration ID in the DSL, note that for TeamCity this modification will look like if the configuration with the previous ID was deleted and a new configuration with the new ID was created. As a result of this change, the build configuration will not contain the builds' history anymore. Even so, TeamCity keeps the history of builds for 5 days until [cleaning it up](clean-up.md), and the history can still be restored during this period.
+However, if you need to modify the build configuration ID in the DSL, note that for TeamCity this modification will look like if the configuration with the previous ID was deleted and a new configuration with the new ID was created. As a result of this change, the build configuration will not contain the builds' history anymore. Even so, TeamCity keeps the history of builds for 5 days until [cleaning it up](teamcity-data-clean-up.md), and the history can still be restored during this period.
 
 To restore the builds' history after changing the build configuration ID, go to the __Build Configuration Settings__ of the build configuration whose ID was changed, open the __Actions__ menu, and click __Attach build history__. You will be redirected to the __Attach Build History__ tab. Select the detached build history and click __Attach__.
 
@@ -473,7 +473,7 @@ The `uuid` is a unique identifier which associates a project, build configuratio
 
 <note>
 
-If the build history is important, it should be restored as soon as possible: after the deletion, there is a [configurable](clean-up.md) timeout (5 days by default) before the builds of the deleted configuration are removed during the build history clean-up.
+If the build history is important, it should be restored as soon as possible: after the deletion, there is a [configurable](teamcity-data-clean-up.md) timeout (5 days by default) before the builds of the deleted configuration are removed during the build history clean-up.
 </note>
 
 In case of a non-portable DSL, patches are stored under the project _patches_ directory of `.teamcity`:

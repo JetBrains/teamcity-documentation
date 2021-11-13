@@ -21,8 +21,8 @@ These two options require configuring a [connection to a Docker registry](config
 
 ### Clean-up of the Pushed Images
 
-If you have a build configuration which publishes images, you need to remove them at some point. You can select the corresponding option and instruct TeamCity to remove the images published by a certain build when the build itself is [cleaned up](clean-up.md).  
-It works as follows: when an image is published, TeamCity stores the information about the registry of the images published by the build. When the [server clean-up](clean-up.md) is run and it deletes the build, all the configured connections are searched for the address of this registry, and the images published by the build are cleaned up using the credentials specified in the found connection.
+If you have a build configuration which publishes images, you need to remove them at some point. You can select the corresponding option and instruct TeamCity to remove the images published by a certain build when the build itself is [cleaned up](teamcity-data-clean-up.md).  
+It works as follows: when an image is published, TeamCity stores the information about the registry of the images published by the build. When the [server clean-up](teamcity-data-clean-up.md) is run and it deletes the build, all the configured connections are searched for the address of this registry, and the images published by the build are cleaned up using the credentials specified in the found connection.
 
 ### Clean-up of Images on Build Agent
                                    

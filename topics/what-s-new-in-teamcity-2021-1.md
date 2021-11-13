@@ -154,7 +154,7 @@ To configure this, go to your project settings in TeamCity and, under __Connecti
 
 <img src="p4-admin-connect.png" width="460" alt="Perforce Administrator Access connection"/>
 
-During every [clean-up](clean-up.md), TeamCity will detect and delete workspaces that have been inactive for more than 7 days. Or, you can delete them anytime by clicking Delete these workspaces in the connection settings. Note that workspaces are deleted only on the server — not on build agents — and only if they were created by TeamCity.
+During every [clean-up](teamcity-data-clean-up.md), TeamCity will detect and delete workspaces that have been inactive for more than 7 days. Or, you can delete them anytime by clicking Delete these workspaces in the connection settings. Note that workspaces are deleted only on the server — not on build agents — and only if they were created by TeamCity.
 
 If the support for feature branches is enabled in a Perforce root, it is also possible to delete workspaces associated with any stream available to this root. Go to __Build Configuration Home__, open the __Actions__ menu, and click __Delete Perforce stream workspaces__. By default, this action is available to all users with the Project Developer role. In this menu, you can specify a path to a stream, and TeamCity will delete the related workspaces on the Perforce server.
 

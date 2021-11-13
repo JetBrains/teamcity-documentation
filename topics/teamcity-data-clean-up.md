@@ -1,5 +1,5 @@
-[//]: # (title: Clean-Up)
-[//]: # (auxiliary-id: Clean-Up)
+[//]: # (title: TeamCity Data Clean-Up)
+[//]: # (auxiliary-id: TeamCity Data Clean-Up;Clean-Up)
 
 TeamCity clean-up functionality allows an automatic deletion of old and no longer necessary build data.
 

@@ -192,7 +192,7 @@ Specify on which branches to monitor and trigger pull requests.
 
 <td>
 
-[Keep rules for clean-up](clean-up.md#Keep+Rule)
+[Keep rules for clean-up](teamcity-data-clean-up.md#Keep+Rule)
 
 </td>
 

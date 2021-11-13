@@ -1,7 +1,7 @@
 [//]: # (title: Cron Expressions)
 [//]: # (auxiliary-id: Cron Expressions in TeamCity)
 
-TeamCity allows you to flexibly schedule regular operations using the [cron](https://en.wikipedia.org/wiki/Cron#Operators) format. Currently, cron-like expressions are supported for [schedule triggers](configuring-schedule-triggers.md) and [server clean-up](clean-up.md#Server+Clean-up+Settings).
+TeamCity allows you to flexibly schedule regular operations using the [cron](https://en.wikipedia.org/wiki/Cron#Operators) format. Currently, cron-like expressions are supported for [schedule triggers](configuring-schedule-triggers.md) and [server clean-up](teamcity-data-clean-up.md#Server+Clean-up+Settings).
 {product="tc"}
 
 TeamCity allows you to flexibly schedule regular operations using the [cron](https://en.wikipedia.org/wiki/Cron#Operators) format. Currently, cron-like expressions are supported for [schedule triggers](configuring-schedule-triggers.md).

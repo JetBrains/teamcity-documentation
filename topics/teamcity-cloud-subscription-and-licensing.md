@@ -27,7 +27,7 @@ _[Build credits](#cloud-build-credits)_ are granted to your subscription per eac
 
 Build credits are automatically spent on build time on agents. You can also exchange them to get more committer slots and concurrent builds on self-hosted agents, as well as on extra [storage](#cloud-storage) and [data transfer capacity](#cloud-data-transfer).
 
->It is easier to stay under storage capacity limits if you configure proper [clean-up rules](clean-up.md) in your TeamCity Cloud instance.
+>It is easier to stay under storage capacity limits if you configure proper [clean-up rules](teamcity-data-clean-up.md) in your TeamCity Cloud instance.
 
 TeamCity Cloud can run builds on two types of agents: hosted by JetBrains and self-hosted. Each minute of build time on [JetBrains-hosted agents](#cloud-jb-hosted-agents) will expend a certain number of build credits. The exact rate depends on your build agent [instance type](#cloud-instance-type).
 
