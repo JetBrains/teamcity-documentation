@@ -21,11 +21,11 @@ After the server is ready, an invitation link will be sent to your email. Procee
 
 Create your [first project](configure-and-run-your-first-build.md) in TeamCity Cloud and configure and run your first build.
 
-## Differences between TeamCity Cloud and On-Premises
+## Differences Between TeamCity Cloud and On-Premises
 
 Users of our Cloud and On-Premises versions can expect a similar level of scalability and universality of these solutions. However, the Cloud version is automatically configured and maintained by TeamCity and thus provides limited server administration settings comparing to our [On-Premises](https://www.jetbrains.com/teamcity/) solution.
 
-TeamCity Cloud has the following limitations comparing to On-Premises:
+TeamCity Cloud has the following limitations compared to On-Premises:
 * Limited server configuration and diagnostics. See the related pages in the On-Premises documentation: [Installing and Configuring Server](https://www.jetbrains.com/help/teamcity/installing-and-configuring-the-teamcity-server.html) and [Monitoring and Diagnostics](https://www.jetbrains.com/help/teamcity/teamcity-monitoring-and-diagnostics.html).
 * TeamCity Cloud data is backed up and cleaned up automatically. The set of available configuration options may differ from the On-Premises installations. See the related pages in the On-Premises documentation: [Data Backup](https://www.jetbrains.com/help/teamcity/teamcity-data-backup.html) and [Clean-Up](https://www.jetbrains.com/help/teamcity/clean-up.html).
 * Some settings are unavailable to TeamCity Cloud administrators: for example, configuring cloud profiles or changing the location for storing external artifacts. See the related pages in the On-Premises documentation: [Integration with Cloud Solutions](https://www.jetbrains.com/help/teamcity/teamcity-integration-with-cloud-solutions.html) and [External Artifact Storage](https://www.jetbrains.com/help/teamcity/configuring-artifacts-storage.html#External+Artifacts+Storage).
