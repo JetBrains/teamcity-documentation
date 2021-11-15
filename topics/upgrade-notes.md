@@ -27,6 +27,9 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 * __DSA/DSS SSH keys can't be used in TeamCity 2021.1.4 and 2021.2__  
   After upgrading to any of these versions, the [SSH keys](ssh-keys-management.md) of the DSA/DSS format are rejected with the "_ssh-dss cannot be used as public key type for identity_" error.  
   To continue using them in TeamCity, please follow [this workaround](https://youtrack.jetbrains.com/issue/TW-73759#focus=Comments-27-5347961.0-0).
+* __UnknownHostException when fetching files from Git LFS 3.0.0__  
+  Users might get the `java.net.UnknownHostException` error when fetching files to build agents from Git LFS 3.0.0. This version [switched to the pure SSH protocol](https://github.com/git-lfs/git-lfs/blob/main/CHANGELOG.md#300-24-sep-2021). According to this protocol, it adds `—` before the host name. The JSch library used by TeamCity for SSH connections doesn't support them and treats these symbols as a part of the host name.  
+  To work around this issue, set the `teamcity.git.use.native.ssh=true` [build configuration parameter](configuring-build-parameters.md). Alternatively, you can temporarily downgrade Git LFS to a version earlier than 3.0.0. This issue will be fixed in TeamCity 2021.2.1.
 
 ### Canceled bidirectional agent-server communication protocol
 
