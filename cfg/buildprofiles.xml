@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildprofiles>
     <variables>
-        <download-page/>
         <search-scope/>
         <fallback-url>https://www.jetbrains.com/help/teamcity/</fallback-url>
         <config-feedbackRequireEmail>false</config-feedbackRequireEmail>
