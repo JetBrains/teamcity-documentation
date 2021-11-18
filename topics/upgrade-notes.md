@@ -18,7 +18,7 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 * __.NET builds fail if .NET version is \< 6.0 and a path to a build agent contains whitespaces__  
   If you run a build with a [.NET step](net.md) on a build agent that has whitespaces in its OS path __and__ the used .NET version is earlier than 6.0, the build will fail with the "_Only one project can be specified_" error.  
   As a workaround, consider switching to .NET 6.0, or download and install the fixed .NET runner as described [here](https://youtrack.jetbrains.com/issue/TW-73745#focus=Comments-27-5341673.0-0).
-* __Invalid property errors when passing .NET parameters containing special characters__
+* __Invalid property errors when passing .NET parameters containing special characters__  
     If running .NET commands via the [.NET](net.md) runner results in the "_Property is not valid_" error, you may need to adjust the system parameters being passed to it. Since version 2021.2, the .NET runner no longer escapes special characters in parameters. This new approach allows passing lists of parameters, but might cause errors if your existing parameters contain such special characters.  
     To resolve this issue, please revise and adjust the parameters being passed — make sure to [escape](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-escape-special-characters-in-msbuild?view=vs-2022#to-use-an-msbuild-special-character-as-a-literal-character) all the occurring [special characters](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-special-characters) in them.
 * __Microsoft Azure agents fail to automatically start/stop__  
