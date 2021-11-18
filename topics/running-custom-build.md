@@ -32,6 +32,8 @@ On the __General__ options you can also specify whether
 * all files in the [build checkout directory](build-checkout-directory.md) will be cleaned before this build.
    * If snapshot dependencies are configured, this option can be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use clean checkout.
 
+<anchor name="P4-shelved-files-custom-run"/>
+
 If the current build configuration uses a [Perforce](perforce.md) VCS root, you can also run a custom build on [shelved files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html). To do this:
 1. Enable _run as a personal build_ option.
 2. Enter the ID of the changelist that contains the shelved files.
