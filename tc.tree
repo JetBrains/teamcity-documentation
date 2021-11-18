@@ -147,7 +147,7 @@
                <toc-element id="enabling-email-verification.md"/>
                <toc-element id="managing-two-factor-authentication.md"/>
             </toc-element>
-            <toc-element id="teamcity-data-clean-up.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="cleanup"/>
+            <toc-element id="teamcity-data-clean-up.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="cleanup"/>
             <toc-element id="teamcity-data-backup.md">
                <toc-element id="creating-backup-from-teamcity-web-ui.md"/>
                <toc-element id="creating-backup-via-maintaindb-command-line-tool.md" show-structure-for="chapter" show-structure-depth="4"/>
