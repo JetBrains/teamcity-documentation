@@ -400,6 +400,8 @@ Refer to a [separate page](perforce-streams-as-feature-branches.md).
 
 Since version 2021.2, you can [manually run](running-custom-build.md#P4-shelved-files-custom-run) or [automatically trigger](perforce-shelve-trigger.md) builds on Perforce shelved files.
 
+If you use [Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm) for code reviews, you can also [configure TeamCity to posts build statuses](commit-status-publisher.md#Perforce+Helix+Swarm) as comments to your reviews.
+
 <seealso>
         <category ref="admin-guide">
             <a href="vcs-checkout-mode.md">VCS Checkout Mode</a>
