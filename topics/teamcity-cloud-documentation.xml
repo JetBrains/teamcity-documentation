@@ -35,7 +35,7 @@
         <custom-groups>
             <group type="cards">
                 <title>Administer TeamCity</title>
-                <a href="managing-subscription-and-resourced.md" description="Learn how you can spend build credits, add more agents, and view the statistics of committers.">Manage Cloud subscription and resources</a>
+                <a href="managing-subscriptions-and-resources.md" description="Learn how you can spend build credits, add more agents, and view the statistics of committers.">Manage Cloud subscription and resources</a>
                 <a href="managing-projects-and-build-configurations.md" description="To integrate TeamCity with your source repositories and configure pipelines, read how to create and work with projects and build configurations.">Work with Projects and Build Configurations</a>
                 <a href="managing-user-accounts-groups-and-permissions.md" description="See how to manage who can access your server and what actions they can perform.">Manage users and permissions</a>
             </group>

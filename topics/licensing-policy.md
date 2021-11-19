@@ -250,8 +250,11 @@ Any IntelliJ IDEA 6.0 license purchased between July 12, 2006 and January 15, 20
 To check TeamCity upgrade availability for your IntelliJ IDEA licenses and to request your Enterprise Server license, please contact [sales department](https://www.jetbrains.com/support/sales/) with one of your IntelliJ IDEA licenses purchased within the above period.
 
 
-[//]: # (Internal note. Do not delete. "Licensing Policyd197e452.txt")    
+[//]: # (Internal note. Do not delete. "Licensing Policyd197e452.txt")
 
+## Copyright and Trademark Notice
+
+The software described in this documentation is furnished under a software license agreement. _JetBrains_, _IntelliJ_, _IntelliJ IDEA_, _YouTrack_, and _TeamCity_ are trademarks or registered trademarks of _JetBrains, s.r.o._ _Windows_ is a registered trademark of _Microsoft Corporation_ in the United States and other countries. _Mac,_ _Mac OS, macOS_ are trademarks of _Apple Inc._, registered in the U.S. and other countries. _Linux_ is a registered trademark of _Linus Torvalds_. All other trademarks are the properties of their respective owners.
 
 <seealso>
         <category ref="concepts">
