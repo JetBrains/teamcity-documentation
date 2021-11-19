@@ -67,6 +67,10 @@ Passwords that are necessary to authenticate in external systems (like VCS, issu
 Instead of this default scrambling strategy, consider enabling a [custom encryption key](teamcity-configuration-and-maintenance.md#encryption-settings). In this case, TeamCity will use your unique custom key to encrypt all secure values, instead of using the default scrambling mechanism.
 {product="tc"}
 
+__Use encrypted SSH keys__.
+
+When you [upload private SSH keys](ssh-keys-management.md) to your TeamCity server, note that they will be stored on disk in plain text, without any additional encryption. It is strongly recommended to use only SSH keys that are already encrypted with a passphrase.
+
 ### Permissions 
 
 __Use predefined roles__.
