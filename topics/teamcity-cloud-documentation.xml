@@ -13,7 +13,7 @@
 
         <tip-group>
             <a href="getting-started-with-teamcity-cloud.md" description="Learn the basics of TeamCity features and capabilities and run your first build." type="start">Run your first build</a>
-            <a href="introduction-to-teamcity-terminology.md" description="Find out how (and if?) TeamCity builds are different from jobs and explore main TeamCity concepts." type="install">TeamCity terms and concepts</a>
+            <a href="introduction-to-teamcity-terminology.md" description="Find out how (and if?) TeamCity builds are different from jobs and explore the main TeamCity concepts." type="install">TeamCity terms and concepts</a>
         </tip-group>
 
         <main-group>
