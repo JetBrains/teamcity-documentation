@@ -5,7 +5,7 @@ In addition to statistic charts generated automatically by TeamCity on the __Sta
 
 You can view statistic values reported by the build on the __Build Parameters__ page.
 
-## Managing Custom Charts via the TeamCity Web UI
+## Managing Custom Charts via TeamCity UI
 
 It is possible to manage custom charts using the TeamCity web UI.
 
@@ -32,7 +32,7 @@ __To reorder custom charts__ for a project/build configuration, click the __Reor
 
 ## Managing Custom Charts Manually
 
-To manually create custom charts to be displayed in the TeamCity web UI, configure the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>`  element is added.
+To manually create custom charts to be displayed in the TeamCity UI, configure the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` file. The file has the `<project-extensions>` element which contains all project features, including custom charts. For each chart an `<extention>` element is added.
 
 Charts can also be configured via [Kotlin DSL](kotlin-dsl.md). Example configuration:
 
@@ -50,9 +50,9 @@ feature {
 
 See the reference on available parameters [below](#Parameters+Reference).
 
-### Displaying Custom Chart in TeamCity Web UI
+### Displaying Custom Chart in TeamCity UI
 
-To make TeamCity display a custom chart in the web UI, update the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` configuration file adding a new `<extention>` sub-element to the `<project-extensions>` element.
+To make TeamCity display a custom chart in the UI, update the `<TeamCity Data Directory>/config/projects/<[ProjectID](identifier.md)>/project-config.xml` configuration file adding a new `<extention>` sub-element to the `<project-extensions>` element.
 
 Each extension must have a unique `id` in the project.
 
@@ -295,14 +295,14 @@ The color of a series to be used in the chart. Standard web color formats can be
 
 <td>
 
-Pattern for names of the Value Types (or series) to be shown on the chart. The asterisk (`*`) sign is allowed to filter Value Types (or series) either predefined by TeamCity, like `BuildDuration` or `ArtifactsSize` (see [below](#Default+Statistics+Values+Provided+by+TeamCity) for the complete list of predefined statistic values), or your own data can be provided by reporting it from the build script.
+Pattern for names of the Value Types (or series) to be shown on the chart. The asterisk (`*`) symbol is allowed to filter Value Types (or series) either predefined by TeamCity, like `BuildDuration` or `ArtifactsSize` (see [below](#Default+Statistics+Values+Provided+by+TeamCity) for the complete list of predefined statistic values), or your own data can be provided by reporting it from the build script.
 
 </td></tr></table>
  
 
 #### Chart Dimensions
 
-You can set the custom chart width/height in pixels using the `properties.width` and `properties.height` attributes for the `param` elements: `<param name="properties.width" value="300"/>.`
+You can set the custom chart width/height in pixels using the `properties.width` and `properties.height` attributes for the `param` elements: `<param name="properties.width" value="300"/>`.
 
 #### Chart Axis Settings
 
@@ -387,7 +387,7 @@ The table below lists the predefined value providers that can be used to configu
 
 <anchor name="reportedStatValues"/>
 
-You can view the all statistic values reported by the build on the __Build Results | Parameters | Reported statistic values__ tab. For each of the values, a statistics chart is available on clicking the _View Trend_ icon ![ViewTrend.PNG](ViewTrend.PNG).
+You can view all statistic values reported by the build on the __Build Results | Parameters | Reported statistic values__ tab. For each of the values, a statistics chart is available on clicking the _View Trend_ icon ![ViewTrend.PNG](ViewTrend.PNG).
 
 <table><tr>
 

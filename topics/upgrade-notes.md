@@ -33,6 +33,9 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 * __UnknownHostException when fetching files from Git LFS 3.0.0__  
   Users might get the `java.net.UnknownHostException` error when fetching files to build agents from Git LFS 3.0.0. This version [switched to the pure SSH protocol](https://github.com/git-lfs/git-lfs/blob/main/CHANGELOG.md#300-24-sep-2021). According to this protocol, it adds `—` before the host name. The JSch library used by TeamCity for SSH connections doesn't support them and treats these symbols as a part of the host name.  
   To work around this issue, set the `teamcity.git.use.native.ssh=true` [build configuration parameter](configuring-build-parameters.md). Alternatively, you can temporarily downgrade Git LFS to a version earlier than 3.0.0. This issue will be fixed in TeamCity 2021.2.1.
+* __C# Script builds may fail if .NET profiling is enabled__  
+  Running a build with [C# Script](c-script.md) steps on .NET with enabled [profiling](https://docs.microsoft.com/en-us/dotnet/core/run-time-config/debugging-profiling) may result in the "_Failed to create CoreCLR, HRESULT: 0x80004005_" error. This issue can occur only if .NET is launched inside a Docker container or in Windows Subsystem for Linux (WSL).  
+  To work around it, add an [environment variable](configuring-build-parameters.md#Environment+Variables) `COMPlus_EnableDiagnostics=0` to your build configuration.
 
 ### Canceled bidirectional agent-server communication protocol
 
