@@ -117,6 +117,12 @@ You do not need to include the default branch into the branch specification as i
 
 ## Builds
 
+You can manually run a build on a specific branch in one of the two ways:
+* Click __Run__ opposite the required branch in the build list.
+* Open the [Custom Run](running-custom-build.md) dialog, go to the __Changes__ tab, and choose the required branch in the "_Build branch_" drop-down menu.
+
+To run builds from a specific branch or set of branches automatically, configure [build triggers](configuring-build-triggers.md).
+
 Builds from branches are easily recognizable in the TeamCity UI, because they are marked with a special label:
 
 <img src="branches.png" alt="Builds from branches" width="750"/>
@@ -165,7 +171,7 @@ If a build failure condition is configured as follows:  _build metric has change
 
 The VCS trigger is fully aware of branches and will trigger a build once a check-in is detected in a branch. All VCS trigger options like per-checkin triggering, quiet period, and triggering rules are directly available for builds from branches. By default, the Schedule and Finish build trigger will watch for builds in the default branch only.
 
-Additionally, a [branch filter](branch-filter.md) can be specified for the VCS, Schedule and Finish build triggers.
+Additionally, a [branch filter](branch-filter.md) can be specified for the VCS, Schedule, and Finish build triggers.
 
 ## Dependencies
 
