@@ -5,7 +5,7 @@ The _branch remote run trigger_ automatically starts a new [personal build](pers
 
 At the moment, the branch remote run trigger supports only Git and Mercurial VCSs.
 
-For non-personal builds off branches, see [Working with Feature Branches](working-with-feature-branches.md). When a branch specification is configured for a VCS root, the branch remote run trigger only processes branches not matched by the specification.
+For non-personal builds off branches, see [Working with Feature Branches](working-with-feature-branches.md). When a branch specification is configured for a VCS root, the branch remote run trigger only processes branches not matched and not excluded by the specification.
 
 ## Triggering Settings
 
