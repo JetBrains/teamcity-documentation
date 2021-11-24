@@ -4,7 +4,7 @@
 User access levels are handled by assigning different _roles_ to users thus granting them respective _permissions_.
 
 A _permission_ is an _authorization_ to perform particular operations, for example, to run a build or modify build configuration settings.   
-A _role_ is a set of _permissions_ that can be granted to a user in one or all projects thus controlling access to the projects and various features in the Web UI.
+A _role_ is a set of _permissions_ that can be granted to a user in one or all projects thus controlling access to the projects and various features in the UI.
 
 ## Authorization Mode
 

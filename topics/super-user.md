@@ -1,7 +1,7 @@
 [//]: # (title: Super User)
 [//]: # (auxiliary-id: Super User)
 
-The __Super user__ login allows you to access the server UI with System Administrator permissions. For example, if you forgot the credentials or need to fix authentication-related settings. The login is performed using authentication token that can be found in the server logs.
+The __Super user__ login allows you to access the server UI with System Administrator permissions. For example, if you forgot the credentials or need to fix authentication-related settings. The login is performed using an authentication token that can be found in the server logs.
 
 Also, Super user token is used to access the server maintenance pages displayed on the server start when a manual action is required to proceed with the server startup.
 

@@ -15,6 +15,8 @@ Viewing and analyzing changes involves the following possibilities:
 * Navigating to the related issues in a bug tracking system.
 * Navigating to the source code and viewing differences.
 * [Starting an investigation](investigating-and-muting-build-failures.md) of a failed build, if your changes have caused a build failure.
+
+View [possible states of a change](change-state.md).
  
 <seealso>
         <category ref="concepts">

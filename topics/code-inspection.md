@@ -8,7 +8,7 @@ The following inspections tools are bundled with TeamCity:
 * [Inspections (ReSharper)](inspections-resharper.md): gathers results of [JetBrains ReSharper](http://www.jetbrains.com/resharper) [Code Analysis](http://www.jetbrains.com/resharper/webhelp/Code_Analysis__Index.html) in your C#, VB.NET, XAML, XML, ASP.NET, JavaScript, CSS, and HTML code.   
 Inspection results are reported in the __[Code Inspection](working-with-build-results.md#Code+Inspection+Results)__ tab of the __Build Results__ page.
 
-TeamCity can also [be integrated with external reporting tools](how-to.md#Integrate+with+Build+and+Reporting+Tools).
+TeamCity can also be [integrated with external reporting tools](how-to.md#Integrate+with+Build+and+Reporting+Tools).
 
  <seealso>
         <category ref="concepts">

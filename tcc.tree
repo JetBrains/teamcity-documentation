@@ -47,7 +47,6 @@
         <toc-element id="build-checkout-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-configuration-template.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="build-grid.md"/>
         <toc-element id="build-history.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-log.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-number.md"/>
@@ -59,10 +58,8 @@
         <toc-element id="change-state.md"/>
         <toc-element id="clean-checkout.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="code-coverage.md"/>
-        <toc-element id="code-duplicates.md"/>
         <toc-element id="code-inspection.md"/>
         <toc-element id="composite-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="continuous-integration.md"/>
         <toc-element id="dependent-build.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="deployment-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="difference-viewer.md"/>

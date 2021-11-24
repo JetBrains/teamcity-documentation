@@ -103,7 +103,6 @@ where __myConf1__ and __myConf2__ values are [build configuration IDs](configuri
         <category ref="concepts">
             <a href="code-coverage.md">Code Coverage</a>
             <a href="code-inspection.md">Code Inspection</a>
-            <a href="code-duplicates.md">Code Duplicates</a>
         </category>
         <category ref="user-guide">
             <a href="statistic-charts.md">Statistic Charts</a>

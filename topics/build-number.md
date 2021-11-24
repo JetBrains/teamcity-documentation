@@ -1,7 +1,7 @@
 [//]: # (title: Build Number)
 [//]: # (auxiliary-id: Build Number)
 
-Each build in TeamCity is assigned a build number, which is a string identifier composed according to the pattern specified in the build configuration setting on the [General Settings](configuring-general-settings.md) page.  
+Each build in TeamCity is assigned a build number, which is a string identifier composed according to the pattern specified in the build configuration settings on the [General Settings](configuring-general-settings.md) page.  
 This number is displayed in the UI and passed into the build as a [predefined property](predefined-build-parameters.md).
 
 A build number can be:

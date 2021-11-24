@@ -11,7 +11,7 @@ Build configuration templates support project hierarchy: once created, available
 
 There are several ways to create a build configuration template:
 * __Manually__, like a [regular build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+Template).
-* __Extract__ from an existing build configuration: there is the __Extract template__ option available from the __Actions__ button at the upper right corner of the screen. Note that if you extract a template from a build configuration, the original configuration automatically becomes [associated](#Associating+build+configurations+with+templates) with the newly created template.
+* __Extract__ from an existing build configuration: there is the __Extract template__ option available from the __Actions__ menu in the upper right corner of the screen. Note that if you extract a template from a build configuration, the original configuration automatically becomes [associated](#Associating+build+configurations+with+templates) with the newly created template.
 
 <anchor name="BuildConfigurationTemplate-Definingdefaulttemplateforproject"/>
 
