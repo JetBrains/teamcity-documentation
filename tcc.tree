@@ -12,6 +12,10 @@
         <toc-element id="view-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="solve-build-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="set-up-notifications.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element toc-title="Migrating from Other CI/CD Tool">
+            <toc-element id="mapping-teamcity-concepts-to-other-ci-terms.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="jenkins-to-teamcity-migration-guidelines.md" show-structure-for="chapter" show-structure-depth="4"/>
+        </toc-element>
     </toc-element>
     <toc-element id="teamcity-cloud-subscription-and-licensing.md" show-structure-for="chapter" show-structure-depth="4">
         <toc-element id="third-party-license-agreements.md"/>
@@ -33,7 +37,6 @@
     <toc-element id="concepts.md" hidden="true"/>
     <toc-element toc-title="Concepts">
         <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="mapping-teamcity-concepts-to-other-ci-terms.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agent-pool.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -88,6 +91,7 @@
         <toc-element id="managing-your-user-account.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="subscribing-to-notifications.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="viewing-your-changes.md"/>
+        <toc-element id="running-custom-build.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="working-with-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="investigating-and-muting-build-failures.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -122,8 +126,6 @@
             </toc-element>
             <toc-element id="teamcity-data-clean-up.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="cleanup"/>
             <toc-element id="teamcity-data-backup.md"/>
-            <toc-element id="projects-import.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="project-export.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-agents-configuration-and-maintenance.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="viewing-build-agent-logs.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="configuring-build-agent-startup-properties.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -137,6 +139,8 @@
         </toc-element>
         <toc-element id="managing-projects-and-build-configurations.md">
             <toc-element id="creating-and-editing-projects.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="project-export.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="projects-import.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configuring-vcs-settings.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="configuring-vcs-roots.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="guess-settings-from-repository-url.md"/>
@@ -286,7 +290,6 @@
                 </toc-element>
                 <toc-element id="configuring-agent-requirements.md"/>
             </toc-element>
-            <toc-element id="running-custom-build.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="copy-move-delete-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="ordering-projects-and-build-configurations.md"/>
             <toc-element id="archiving-projects.md"/>
@@ -321,7 +324,6 @@
         <toc-element id="mono-support.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="maven-server-side-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="tracking-user-actions.md"/>
-        <toc-element id="jenkins-to-teamcity-migration-guidelines.md" show-structure-for="chapter" show-structure-depth="4"/>
     </toc-element>
     <toc-element id="extending-teamcity.md">
         <toc-element id="build-script-interaction-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4">
@@ -336,16 +338,16 @@
             <toc-element id="edit-custom-chart-limitations.md"/>
         </toc-element>
     </toc-element>
+    <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
     <toc-element toc-title="Reference">
         <toc-element id="glossary.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element id="how-to.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="requirement-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="wildcards.md"/>
     </toc-element>
-    <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
-    <toc-element id="how-to.md" show-structure-for="chapter" show-structure-depth="4"/>
     <toc-element id="troubleshooting.md">
         <toc-element id="common-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="known-issues.md" show-structure-for="chapter" show-structure-depth="4"/>
