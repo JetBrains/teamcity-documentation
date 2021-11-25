@@ -337,6 +337,7 @@
         </toc-element>
     </toc-element>
     <toc-element toc-title="Reference">
+        <toc-element id="glossary.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
