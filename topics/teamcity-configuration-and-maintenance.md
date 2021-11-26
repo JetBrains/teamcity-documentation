@@ -263,7 +263,7 @@ The same logic applies to the [custom report tabs](including-third-party-reports
 
 For a personal TeamCity installation, which is accessible via localhost only, a URL like `http://127.0.0.1[:port]/` would be sufficient.
 
-For a TeamCity server used by an organization, a new DNS name, or a [`CNAME`](https://en.wikipedia.org/wiki/CNAME_record), should be registered either for the machine where the server is installed or for a reverse proxy server if TeamCity is accessible through the proxy. The URL with this new hostname should be specified in the artifacts' URL.
+For a TeamCity server used by an organization, a new DNS name, or a [`CNAME`](https://en.wikipedia.org/wiki/CNAME_record), should be registered either for the machine where the server is installed or for a reverse proxy server if TeamCity is accessible through the proxy. The URL with this new hostname should be specified in the artifacts' URL. No extra configuration on the proxy side is required.
 
 Note: as this is a special URL which exists for serving artifacts only, users will not be able to sign in to the TeamCity interface via it.
 
