@@ -7,10 +7,11 @@ __29 November 2021__
 
 ### Feature
 
-[**TW-73700**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73700) — Provide ability to use remote run in Eclipse plugin for user with enabled 2FA.  
+[**TW-73700**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73700) — Provide ability to use remote run in Eclipse plugin for user with enabled 2FA  
 [**TW-73769**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73769) — Add copy branch name button
 
-### Bug  
+### Bug
+
 [**TW-73776**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73776) — Impossible to retrieve nuget packages from TeamCity NuGet feed when 2FA is enabled.   
 [**TW-73580**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73580) — Maximum call stack size exceeded after enabling &quot;Group by project&quot; option on the build chain view in the new UI   
 [**TW-73982**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73982) — .NET runner and C# script runner do not propagate TEAMCITY\_PROCESS\_FLOW\_ID environment variables to spawned processes   
@@ -18,7 +19,7 @@ __29 November 2021__
 [**TW-73725**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73725) — Error on load project settings from VCS for custom chart with build step duration metric: &quot;Unresolved reference: buildstepname&quot;   
 [**TW-73122**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73122) — Remote run impossible from IDE with two-factor authentication enabled.   
 [**TW-73791**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73791) — Azure agents not cycling after upgrade to 2021.2   
-[**TW-73453**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73453) — [S3 Storage] Artifacts cache hashsums are invalid when artifacts stored in cache during upload   
+[**TW-73453**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73453) — S3 Storage Artifacts cache hashsums are invalid when artifacts stored in cache during upload   
 [**TW-74012**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74012) — Errors when building windows docker images for teamcity agents   
 [**TW-74060**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74060) — Checkout rules mapping is not applied to paths in uploaded unified diff patch   
 [**TW-74042**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74042) — C# script runner may fail in docker dotnet container with &quot;Failed to create CoreCLR, HRESULT: 0x80004005&quot;   
@@ -85,14 +86,13 @@ __29 November 2021__
 [**TW-72736**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72736) — Add &quot;Open in build log&quot; icon   
 [**TW-73756**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73756) — Server health report about disabled native git operations and git version should be more detailed   
 [**TW-73708**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73708) — Custom Statistics Chart with pattern shows build step ID (buildStageDuration:buildStepRunner\_N) instead of build step name   
-[**TW-73739**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73739) — Switch of the verbosily level on the new build log collapses all of the nodes
+[**TW-73739**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73739) — Switch of the verbosity level on the new build log collapses all the nodes
 
 ### Task
 
 [**TW-72680**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72680) — Auto update: check if auto update is possible before starting it (i.e. ensure that the currently used Java is supported by the new TeamCity version)   
-[**TW-72860**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72860) — Please replace usages of scheduled-to-remove `StringBuilderSpinAllocator` class   
-[**TW-71351**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71351) — GraphQL API: implement agents tree query missing properties   
-[**TW-73749**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73749) — GraphQL: Implement authorizeAgent &amp; bulkAuthorizeAgents   
-[**TW-73360**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73360) — GraphQL: Implement bulk versions of mutations assignAgentWithAgentPool and assignCloudImageWithAgentPool
+[**TW-72860**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72860) — Replace usages of scheduled-to-remove `StringBuilderSpinAllocator`
 
 ### Security Problem
+
+6 security problems have been fixed.
