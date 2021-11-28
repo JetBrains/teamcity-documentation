@@ -1,6 +1,10 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2021.2 to 2021.2.1
+
+No noteworthy changes.
+
 ## Changes from 2021.1 to 2021.2
 
 ### No data converters in 2021.2
@@ -83,7 +87,7 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 
 ## Changes from 2021.1.2 to 2021.1.3
 
-No noteworthy updates.
+No noteworthy changes.
 
 ## Changes from 2021.1.1 to 2021.1.2
 
@@ -282,7 +286,7 @@ If you were actively using the VS 2003 runner and cannot easily migrate to the .
 
 ## Changes from 2020.1.4 to 2020.1.5
 
-No noteworthy updates.
+No noteworthy changes.
 
 ## Changes from 2020.1.3 to 2020.1.4
 
