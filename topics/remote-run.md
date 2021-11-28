@@ -5,10 +5,6 @@ A _remote run_ is a [personal build](personal-build.md) initiated by a developer
 
 For a list of version control systems supported by each IDE, see [Supported Platforms and Environments](supported-platforms-and-environments.md).
 
->If a user configures a [two-factor authentication](managing-your-user-account.md#Configuring+Two-Factor+Authentication) for their account, they will only be able to run builds remotely by authenticating via [access tokens](managing-your-user-account.md#Managing+Access+Tokens).
->
->If you use ReSharper or Eclipse with TeamCity 2021.2, please see [this known issue](upgrade-notes.md#2021.2+Known+Issues).
-{type="note" product="tc"}
 
 <seealso>
         <category ref="inst_tools">

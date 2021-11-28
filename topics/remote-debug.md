@@ -18,11 +18,6 @@ Remote debug for Ant steps requires that the build configuration have the `teamc
 * Build configuration on the TeamCity Server with the [IntelliJ IDEA Project](intellij-idea-project.md) runner as one of the [build steps](configuring-build-steps.md)
 * Remote [TeamCity agent](build-agent.md) to run this build available to the local machine by socket connection
 
->If a user configures a [two-factor authentication](managing-your-user-account.md#Configuring+Two-Factor+Authentication) for their account, they will only be able to debug builds remotely by authenticating via [access tokens](managing-your-user-account.md#Managing+Access+Tokens).
->
->If you use ReSharper or Eclipse with TeamCity 2021.2, please see [this known issue](upgrade-notes.md#2021.2+Known+Issues).
-{type="note" product="tc"}
-
 ## Debugging Tests Remotely
 
 1. To start remote debugging of a test, select the test and choose the __Debug &lt;Test Name&gt; Remotely on TeamCity Agent__ option from the context menu (the __Remote Debug__ action is also available from the TeamCity plugin menu. The action will require you to select an IntelliJ IDEA run configuration).
