@@ -46,4 +46,4 @@ __08 October 2021__
 
 ### Security Problem
 
-6 security problem have been fixed.
+1 security problem has been fixed.
