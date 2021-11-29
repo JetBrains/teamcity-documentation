@@ -3,7 +3,10 @@
 
 ## Changes from 2021.2 to 2021.2.1
 
-No noteworthy changes.
+### Bundled tools updates
+{id="bundled-tools-updates-202121"}
+
+* The Perforce Helix Core client (p4) is updated to version 2021.2/2201121.
 
 ## Changes from 2021.1 to 2021.2
 

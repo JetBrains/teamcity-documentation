@@ -90,6 +90,7 @@ __29 November 2021__
 
 ### Task
 
+[**TW-74054**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74054) — Upgrade Perforce helix client to a more recent version   
 [**TW-72680**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72680) — Auto update: check if auto update is possible before starting it (i.e. ensure that the currently used Java is supported by the new TeamCity version)   
 [**TW-72860**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72860) — Replace usages of scheduled-to-remove `StringBuilderSpinAllocator`
 
