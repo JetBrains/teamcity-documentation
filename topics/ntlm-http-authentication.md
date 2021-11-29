@@ -37,7 +37,7 @@ Without this attribute, NTLM HTTP authentication will work only if the client ex
 
 [//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e74.txt")
 
-The TeamCity server forces NTLM HTTP authentication only for Windows users by default. If you want to enable it for all users, set the following [internal property](configuring-teamcity-server-startup-properties.md):
+The TeamCity server forces NTLM HTTP authentication only for Windows users by default. If you want to enable it for all users, set the following [internal property](server-startup-properties.md):
 
 ```
 teamcity.ntlm.ignore.user.agent=true

@@ -15,7 +15,7 @@ Any number of super users can log in to TeamCity simultaneously without affectin
 
 Instead of using an empty username, you can also go to the `<TeamCity_server_URL>/login.html?super=1` page and enter the super user authentication token. On loading the super user login page, the super user token is printed into the server log and console again for your convenience.
 
-The super user login is enabled by default, but it can be disabled by specifying the `teamcity.superUser.disable=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+The super user login is enabled by default, but it can be disabled by specifying the `teamcity.superUser.disable=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 
 <seealso>
         <category ref="concepts">

@@ -3,8 +3,6 @@
 
 This page provides details on using an [Amazon Aurora](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Overview.html) cluster as the TeamCity database server.
 
-## Overview
-
 When using an AWS Aurora cluster with TeamCity pointing to the [cluster end-point](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html#Aurora.Overview.Endpoints) as the database server, it is important to understand what happens when an AWS Aurora cluster fails over.
 
 Both AWS Aurora DB instances are rebooted (so for a short period of time TeamCity entirely loses connection to the cluster) and
@@ -18,7 +16,7 @@ It will take some time for the JVM-specific cache in TeamCity to expire and for 
 ## General Recommendations 
 
 When working with a failover cluster, it is recommended to decrease the JVM-specific DNS caching on TeamCity [by setting the TTL to 60](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-jvm-ttl.html):
-1. Add the `-Dsun.net.inetaddr.ttl=60` JVM option to the [environment variable](configuring-teamcity-server-startup-properties.md#JVM+Options).
+1. Add the `-Dsun.net.inetaddr.ttl=60` JVM option to the [environment variable](server-startup-properties.md#JVM+Options).
 2. Restart TeamCity for the changes to take effect.
 
 <note>
@@ -42,7 +40,7 @@ The following options may affect your TeamCity server performance.
 </note>
 
 1. Configure the database connection pool to use a special validation query, so that the connections to the DB instance are tested before and/or after use and if a connection to the read-only database is detected, they are evicted from the pool.   
-For this, add the following lines to the `<TeamCity Data Directory>/config/`[database.properties](setting-up-external-database.md#Database+Configuration+Properties):   
+For this, add the following lines to the `<TeamCity Data Directory>/config/`[database.properties](set-up-external-database.md#Database+Configuration+Properties):   
 For Aurora MySQL:
     ```Shell
     testOnBorrow=true
@@ -79,5 +77,4 @@ To change the mode of the SSL connection (for example, to enforce or disable it)
     ```Text
     connectionUrl=jdbc:mysql://<hostname>:3306/<dbname>?sslMode=<value>
   ``` 
-
 See the list of supported connection mode values in [Connector/J configuration properties](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-configuration-properties.html).

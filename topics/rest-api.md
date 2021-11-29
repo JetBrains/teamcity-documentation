@@ -135,9 +135,9 @@ To get details about each processed request, turn on debug logging (for example,
 ## CORS Support
 {id="CORS-support" auxiliary-id="CORS Support"}
  
-The TeamCity REST API can be configured to allow [cross-origin requests](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) using the `rest.cors.origins` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+The TeamCity REST API can be configured to allow [cross-origin requests](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) using the `rest.cors.origins` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
  
-To allow requests from a page loaded from a specific domain, add the page address (including the __protocol and port__, __wildcards are not supported__) to the comma-separated [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `rest.cors.origins`. For example, `rest.cors.origins=http://myinternalwebpage.org.com:8080,https://myinternalwebpage.org.com`.
+To allow requests from a page loaded from a specific domain, add the page address (including the __protocol and port__, __wildcards are not supported__) to the comma-separated [internal property](server-startup-properties.md#TeamCity+Internal+Properties) `rest.cors.origins`. For example, `rest.cors.origins=http://myinternalwebpage.org.com:8080,https://myinternalwebpage.org.com`.
 
 <note>
 
@@ -146,7 +146,7 @@ Since version 2020.1, TeamCity uses CSRF tokens to improve the security of REST 
 </note>
  
 To enable support for a [preflight OPTIONS request](https://youtrack.jetbrains.com/issue/TW-27606):
-1. Add the `rest.cors.optionsRequest.allowUnauthorized=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+1. Add the `rest.cors.optionsRequest.allowUnauthorized=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 2. __Restart__ the TeamCity server.
 3. Use the `/app/rest/latest` URL for the requests.  Do not use `/app/rest`, do not use the `httpAuth` prefix.
 If that does not help, enable debug [logging](#Logging) and look for related messages. If there are none, capture the browser traffic and messages to investigate the case.

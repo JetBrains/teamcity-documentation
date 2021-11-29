@@ -68,7 +68,7 @@ Enable to add the corresponding [build failure condition](build-failure-conditio
 To ensure compatibility, the free disk space value can be specified via the properties below. However, using the Free Disk Space build feature is recommended as these properties can be removed in the future TeamCity versions.
 
 The properties can be defined:
-* globally for a build agent (in the agent's [`buildAgent.properties`](build-agent-configuration.md) file)
+* globally for a build agent (in the agent's [`buildAgent.properties`](configure-agent-installation.md) file)
 * for a particular build configuration by specifying its system properties.
 
 The required free space value is defined with the following properties:

@@ -282,7 +282,7 @@ Connection timeout is applied when TeamCity creates a connection to the SVN serv
 
 The value of the property is set differently for server-side checkout and agent-side checkout:
 {product="tc"}
-* Server-side operations — [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+* Server-side operations — [configure an internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 {product="tc"}
 * Agent-side checkout — [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
 {product="tc"}
@@ -306,7 +306,7 @@ In this case, the read timeout can be specified in seconds via the TeamCity `tea
 
 The value of the property is set differently for a server-side checkout and agent-side checkout:
 {product="tc"}
-* Server-side operations — [configure an internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+* Server-side operations — [configure an internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 {product="tc"}
 * Agent-side checkout — [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
 {product="tc"}
@@ -318,7 +318,7 @@ For agent-side checkout, [add a start-up property](configuring-build-agent-start
 
 TeamCity ignores changes in the `svn:mergeinfo` properties and does not consider a directory _changed_ if only these properties are modified in a given commit.
 
-You can alter the list of ignored SVN properties via the TeamCity [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.svn.ignorable.properties`. The value of this property is a comma-separated list of SVN properties; the default value is `svn:mergeinfo`.
+You can alter the list of ignored SVN properties via the TeamCity [internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.svn.ignorable.properties`. The value of this property is a comma-separated list of SVN properties; the default value is `svn:mergeinfo`.
 {product="tc"}
 
  <seealso>

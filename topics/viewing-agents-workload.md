@@ -34,6 +34,6 @@ You will find this feature helpful in:
             <a href="build-agent.md">Build Agent</a>
         </category>
         <category ref="installation">
-            <a href="installation.md">Installing and Running Additional Build Agents</a>
+            <a href="install-teamcity-agent.md">Install TeamCity Agent</a>
         </category>
 </seealso>

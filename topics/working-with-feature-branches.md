@@ -146,7 +146,7 @@ In a build configuration with configured branches, most UI pages show active bra
 
 An _active branch_ is a branch with the recent activity: it has recent builds or exists in the repository with recent commits.    
 
-The threshold for activity can be configured via build configuration parameters. The parameters can be changed either in a build configuration (this will affect one build configuration only), project, or in the [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (this defines defaults for the entire server). A parameter in the configuration overrides a parameter in the [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+The threshold for activity can be configured via build configuration parameters. The parameters can be changed either in a build configuration (this will affect one build configuration only), project, or in the [internal properties](server-startup-properties.md#TeamCity+Internal+Properties) (this defines defaults for the entire server). A parameter in the configuration overrides a parameter in the [internal properties](server-startup-properties.md#TeamCity+Internal+Properties).
 {product="tc"}
 
 The threshold for activity can be configured via build configuration parameters. The parameters can be changed in a build configuration (this will affect one build configuration only) or project.

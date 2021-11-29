@@ -38,7 +38,7 @@ Example of a build chain in TeamCity:
 
 ## TeamCity Build Environment
 
-The [TeamCity server](installing-and-configuring-the-teamcity-server.md) stores all the objects' settings, manages the _[build queue](build-queue.md)_, monitors the state of running builds, and performs many other tasks. You can install as many additional _[secondary servers](multinode-setup.md)_ as you need to ensure high availability and scalability of your setup.   
+The [TeamCity server](install-and-start-teamcity-server.md) stores all the objects' settings, manages the _[build queue](build-queue.md)_, monitors the state of running builds, and performs many other tasks. You can install as many additional _[secondary servers](multinode-setup.md)_ as you need to ensure high availability and scalability of your setup.   
 You can host the server on your own machine or get a [TeamCity Cloud](https://www.jetbrains.com/teamcity/cloud/) subscription so your server is automatically launched and maintained in the cloud.
 {product="tc"}
 
@@ -57,7 +57,8 @@ A different piece of software is used for actually running builds — a _[build 
 
 To learn more about TeamCity, explore this Help further:
 * The current Concepts section lists the main TeamCity objects and terms. Use it as a reference to learn about unfamiliar notions.
-* To properly install and configure your setup, refer to [Supported Platforms and Environments](supported-platforms-and-environments.md) and [Installation](installation.md).
+* To properly install and configure your setup, refer to [Supported Platforms and Environments](supported-platforms-and-environments.md) and [Installation](install-and-start-teamcity-server.md).
+{product="tc"}
 * If you are using TeamCity only for managing and viewing builds, make sure to read the [User's Guide](user-s-guide.md).
 * If you have a Project Administrator or Server Administrator access, use the [Admin's Guide](administrator-s-guide.md) section to learn how to configure projects or how to use the Administration panel and maintain the server. This section also contains information on [licensing](licensing-policy.md) and [configuration as code in TeamCity](kotlin-dsl.md).
 {product="tc"}

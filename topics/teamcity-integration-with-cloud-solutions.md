@@ -1,9 +1,9 @@
-[//]: # (title: TeamCity Integration with Cloud Solutions)
-[//]: # (auxiliary-id: TeamCity Integration with Cloud Solutions)
+[//]: # (title: Run Build Agents in Cloud)
+[//]: # (auxiliary-id: Run Build Agents in Cloud;TeamCity Integration with Cloud Solutions)
 
-TeamCity integration with cloud (IAAS) solutions allows TeamCity to provision virtual machines running TeamCity agents on-demand based on the build queue state.
+TeamCity integration with cloud (IAAS) solutions allows TeamCity to provide virtual machines running TeamCity agents on-demand based on the build queue state.
 
-This page covers __general information__ about the configuration of integration. For the list of currently supported solutions, refer to [Available Integrations](#Available+Integrations) below.
+This page covers __general information__ on how to configure this integration. For the list of currently supported solutions, refer to [Available Integrations](#Available+Integrations).
 
 ## General Description
 
@@ -30,11 +30,10 @@ Integrations with cloud solutions are implemented as plugins. The platform-speci
 * [VMWare vSphere](setting-up-teamcity-for-vmware-vsphere-and-vcenter.md)
 * [Kubernetes](setting-up-teamcity-for-kubernetes.md)
 
-Also available as non-bundled plugins are:
+Available as non-bundled plugins:
 * [Windows Azure](https://plugins.jetbrains.com/plugin/9260-azure-resource-manager-cloud-support)
 * [Google Cloud](https://plugins.jetbrains.com/plugin/9704-google-cloud-agents)
-
-and [others](https://plugins.jetbrains.com/category/102-cloud-support/teamcity). 
+* [Others](https://plugins.jetbrains.com/category/102-cloud-support/teamcity). 
 
 New integrations can be implemented as a TeamCity plugin, see [Implementing Cloud support](https://confluence.jetbrains.com/display/TW/Implementing+Cloud+support).
 
@@ -42,36 +41,34 @@ New integrations can be implemented as a TeamCity plugin, see [Implementing Clou
 
 This section describes general steps required for cloud integration.
 
-### Preparing a virtual machine with an installed TeamCity agent
-
 The requirements for a virtual machine/image to be used for TeamCity cloud integration:
-* The TeamCity agent must be correctly [installed](setting-up-and-running-additional-build-agents.md) and configured to start [automatically](setting-up-and-running-additional-build-agents.md#Automatic+Start) on the machine startup.
+* The TeamCity agent must be correctly [installed](install-and-start-teamcity-agents.md) and configured to start [automatically](start-teamcity-agent.md#Automatic+Start) on the machine startup.
 * to skip the update attempts on each agent connection to the server, make sure that the agent is up to date: start and wait for the update to complete. The agent state changes each time a plugin or tool is installed/updated/removed on the server.
 * the [`buildAgent.properties`](project-and-agent-level-build-parameters.md) file can be left "as is". The `serverUrl`, `name`, and `authorizationToken` properties can be left empty or set to any value, they are ignored when TeamCity starts the instance __unless otherwise specifically stated__ in [the platform-specific documentation](https://confluence.jetbrains.com/display/TW/Microsoft+Azure+cloud).
 
 Provided these requirements are met, the usual TeamCity agent installation and cloud-provider image bundling procedures are applicable.
 
-If you need the [connection](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers) between the server and the agent machine to be secure, you will need to set up the agent machine to establish a secure tunnel (for example, VPN) to the server on boot so that the TeamCity agent receives data via the secure channel. Keep in mind that communication between TeamCity agent and server requires opening ports on both the agent and the server.
+If you need the [connection](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer) between the server and the agent machine to be secure, you will need to set up the agent machine to establish a secure tunnel (for example, VPN) to the server on boot so that the TeamCity agent receives data via the secure channel. Keep in mind that communication between TeamCity agent and server requires opening ports on both the agent and the server.
 
-### Preparing a virtual machine
+### Preparing Virtual Machine
+
 1. Create and start a virtual machine with desired OS installed.
 2. Connect and log in to the virtual machine. 
 3. Configure the running instance:
-   1. [Install](setting-up-and-running-additional-build-agents.md) and configure a build agent.
+   1. [Install](install-and-start-teamcity-agents.md) and configure a build agent.
       * Configure the server name and agent name in the [`buildAgent.properties`](project-and-agent-level-build-parameters.md) file — this is optional if TeamCity will be configured to launch the image, but it is useful to test the agent is configured correctly.
       * It usually makes sense to specify `tempDir` and `workDir` in `conf/buildAgent.properties` to use a non-system drive (for example, `D` drive under Windows)
    2. Install any additional software necessary for the builds on the machine (for example, Java or .NET)
    3. Start the agent and wait until it connects to server, ensure it is working OK and is compatible with all necessary build configurations (in the TeamCity web UI, go to the __Agents__ page, select the build agent and view the __Compatible Configurations__ tab), and so on.
-   4. Configure the system so that the agent is [started on the machine boot](setting-up-and-running-additional-build-agents.md#Automatic+Start) (and make sure TeamCity server is accessible on the machine boot).
+   4. Configure the system so that the agent is [started on the machine boot](start-teamcity-agent.md#Automatic+Start) (and make sure TeamCity server is accessible on the machine boot).
    5. Check the port on which the build agent will listen for incoming data from TeamCity and open the required firewall ports (usually 9090).
 4. Test the setup by rebooting machine and checking that the agent connects normally to the server. Once the agent connects, it will automatically update all the plugins. Wait until the agent is connected completely so that all plugins are downloaded to the agent machine.
 
 If you want TeamCity to start an existing virtual machine and stop it after the build is finished or an idle timeout elapses, the setup above is all you need. If you want TeamCity to create and start virtual machines from an image and terminate the machine after use, the image should be captured from the virtual machine that was created.
 
-### Capturing an image from a virtual machine
+### Capturing Image from Virtual Machine
 
-Do the following:
-1. Complete the steps for [creating a virtual machine](#Preparing+a+virtual+machine).
+1. Complete the steps for [creating a virtual machine](#Preparing+Virtual+Machine).
    * Remove any temporary/history information in the system.
    * Stop the agent (under Windows, stop the service but leave it in the _Automatic_ startup type)
    * (optional) Delete the content of the `logs` and `temp` directories in the [agent home](agent-home-directory.md)
@@ -84,9 +81,9 @@ Do the following:
 TeamCity agent auto-upgrades whenever distribution of agent (for example, after TeamCity upgrade) or agent plugins on the server changes. If you want to reduce the agent startup time, you might want to capture a new virtual machine image after the agent distribution or plugins have been updated.
 </note>
 
-### Configuring a cloud profile in TeamCity
+### Configuring Cloud Profile
 
-A cloud profile is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand. Cloud profiles are configured in the __Cloud Profiles__ section of the __Project Settings__.
+A cloud profile is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand. Cloud profiles are configured in the __Cloud Profiles__ section of __Project Settings__. See the detailed instruction for the [Amazon EC2](setting-up-teamcity-for-amazon-ec2.md), [Kubernetes](setting-up-teamcity-for-kubernetes.md), and [vSphere](setting-up-teamcity-for-vmware-vsphere-and-vcenter.md) profiles.
 
 ## Estimating Costs
 
@@ -94,7 +91,7 @@ The cloud provider pricing applies. Note that the charges can depend on the spec
 
 Note that traffic volumes and necessary server and agent machines characteristics depend a big deal on the TeamCity setup and nature of the builds run.
 
-### Traffic Estimate
+### Estimating Traffic
 
 Here are some points to help you estimate TeamCity-related traffic:
 
@@ -113,7 +110,7 @@ __External connections originated by agent__:
 * VCS servers (in case of agent-side checkout)
 * Maven repositories
 * NuGet repositories
-* any connections performed from the build process itself
+* Any connections performed from the build process itself
 
 __Internal connections originated by agent__:
 * TeamCity server (retrieving build sources in case of server-side checkout or personal builds, downloading artifacts, and so on)
@@ -124,4 +121,4 @@ __Usual connections used by the server__:
 
 ### Running Costs
 
-Cloud providers calculate costs based on the virtual machine uptime, so it is recommended to adjust the timeout setting according to your usual builds length. This reduces the amount of time a virtual machine is running. It is also highly recommended to set an execution timeout for all your builds so that a build hanging does not cause prolonged instance running with no payload.
+Cloud providers calculate costs based on the virtual machine uptime, so it is recommended to adjust the timeout setting according to your usual builds length. This reduces the amount of time a virtual machine is running. It is also highly recommended setting an execution timeout for all your builds so that a build hanging does not cause prolonged instance running with no payload.

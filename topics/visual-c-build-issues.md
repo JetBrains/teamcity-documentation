@@ -30,7 +30,7 @@ If none of the steps is helpful for your case, please contact us via any [feedba
 
     ```
 	
-* Add all environment variables from `...\Microsoft Visual Studio 9.0\VC\vcvarsall.bat` to the environment or to the [Build Agent Configuration](build-agent-configuration.md).
+* Add all environment variables from `...\Microsoft Visual Studio 9.0\VC\vcvarsall.bat` to the environment or to the [Build Agent Configuration](configure-agent-installation.md).
 * Try using the `devenv` command of the with [.NET](net.md) build runner instead of the [Visual Studio (sln)](visual-studio-sln.md) runner.
 * Ensure all paths to sources do not contain spaces.
 * Set `VCBuildUserEnvironment=true` in the runner properties.

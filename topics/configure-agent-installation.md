@@ -1,25 +1,23 @@
-[//]: # (title: Build Agent Configuration)
-[//]: # (auxiliary-id: Build Agent Configuration)
+[//]: # (title: Configure Agent Installation)
+[//]: # (auxiliary-id: Configure Agent Installation;Build Agent Configuration)
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >
 {type="note" product="tcc"}
 
-Configuration settings of the build agent are stored in the `<TeamCity Agent Home>/conf/buildAgent.properties` file.
+A build agent can be configured by adjusting in the `<TeamCity Agent Home>/conf/buildAgent.properties` file.
 
 ## General Agent Configuration
 
-The configuration file can store properties that will be published on the server as __Agent properties__ and can participate in the [Agent Requirements](agent-requirements.md) expressions. All [system and environment properties](predefined-build-parameters.md#Agent+Properties) defined in the file will be passed to every build run on the agent.
+This [Java properties](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)) configuration file can store properties that will be published on the server as _agent properties_ and can participate in the [Agent Requirements](agent-requirements.md) expressions. All [system and environment properties](predefined-build-parameters.md#Agent+Properties) defined in the file will be passed to every build run on the agent.
 
-The file is a [Java properties](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)) file.
+Syntax reference:
+* Use `property_name=value<newline>` syntax.
+* Use `#` in the first position of the line for a comment.
+* Use `/` instead of `\` as the path separator. If you need to include `\`, escape it with another `\`.
+* Whitespaces are processed as any other symbol.
 
-A quick guide is:
-* use `property_name=value<newline>` syntax
-* use `#` in the first position of the line for a comment
-* use `/` instead of `\` as the path separator. If you need to include `\`, escape it with another `\`.
-* whitespaces within a line matter
-
-Example of the file:
+Example agent configuration file:
 
 ```Shell
 ## The address of the TeamCity server. The same as is used to open the TeamCity web interface in the browser.
@@ -52,41 +50,38 @@ authorizationToken=1234567890abcdefghijklml
 
 ```
 
-<note>
-
-Make sure the file is writable for the build agent process itself. For example, the file is updated to store its authorization token generated on the server-side.
-</note>
+Make sure the file is writable for the build agent process itself. For example, that the file is updated to store its authorization token generated on the server-side.
 
 If you install multiple TeamCity nodes [behind a reverse proxy](multinode-setup.md#Proxy+Configuration), `serverUrl` should be set to the proxy URL.
 {product="tc"}
 
 If the `name` property is not specified, the server will generate a build agent name automatically. By default, this name will be created from the build agent's host name.
 
-The file can be edited while the agent is running: the agent detects the change and (upon finishing a running build, if any) restarts automatically loading the new settings. 
+The file can be edited while the agent is running: the agent detects the change and (upon finishing a running build, if any) restarts automatically loading the new settings.
 
 ## Optional Properties
 
 ### Build Agent Port
 
-The port where the TeamCity build agent starts and where it listens for the incoming data from the server is determined via the `ownPort` property (9090 by default). If the firewall is configured, make sure that the incoming connections for this port are allowed on the agent computer.
+The port where the TeamCity build agent starts and where it listens for the incoming data from the server is determined via the `ownPort` property (9090 by default). If the firewall is configured, make sure that the incoming connections for this port are allowed on the agent machine.
 
 ```Shell
 ownPort=9090
 
 ```
 
->If more than one build agent is hosted on the same machine, different ports must be assigned to them via the `ownPort` property in the `buildAgent.properties` file of every agent.
+If more than one build agent is hosted on the same machine, different ports must be assigned to them via the `ownPort` property in the `buildAgent.properties` file of every agent.
 
 ### Build Agent IP Address
 
-The IP address used by TeamCity server to connect to the build agent is automatically detected by the server when the agent first connects to TeamCity, unless the `ownAddress` property is defined. If the machine has several network interfaces, automatic detection may fail. In this case, it is recommended to specify the `ownAddress` property:
+When an agent connects to the TeamCity server for the first time, the agent automatically determines its IP address to use for connection, unless the `ownAddress` property is defined. If the agent machine has several network interfaces, automatic detection may fail. In this case, it is recommended to specify the `ownAddress` property:
 
 ```Shell
 ownAddress=<own IP address or server-accessible domain name>
 
 ```
 
-## Set up Agent behind Proxy
+## Set up Agent Behind Proxy
 
 It is possible to configure a forward proxy server for agent-to-server connections.
 

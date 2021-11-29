@@ -29,7 +29,7 @@ When detecting the Team Explorer version, TeamCity checks [.NET GAC](https://msd
 * `Windows x86: %\CommonProgramFiles%\Microsoft Shared\Team Foundation Server\%\version_number%`
 * `Windows x64: %\CommonProgramFiles(x86)%\Microsoft Shared\Team Foundation Server\%\version_number%`
 
-To enforce the cross-platform mode on TeamCity, set the `teamcity.tfs.mode=java` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) or [build configuration parameter](configuring-build-parameters.md).
+To enforce the cross-platform mode on TeamCity, set the `teamcity.tfs.mode=java` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) or [build configuration parameter](configuring-build-parameters.md).
 {product="tc"}
 
 To enforce the cross-platform mode on TeamCity, set the `teamcity.tfs.mode=java` [build configuration parameter](configuring-build-parameters.md).
@@ -115,7 +115,7 @@ TeamCity automatically creates a TFS workspace for each [checkout directory](bui
 
 By default, the created TFS workspace uses the location defined in the TFS server settings. You can force TeamCity to use a specific workspace location via the [build configuration parameter](configuring-build-parameters.md) `teamcity.tfs.workspace.location` set to `local` or `server`.
 
-The created TFS workspaces are automatically removed based on the timeout configured via the `teamcity.tfs.workspace.idleTime` [build agent property](build-agent-configuration.md) set to the default value of 1209600 sec (2 weeks).
+The created TFS workspaces are automatically removed based on the timeout configured via the `teamcity.tfs.workspace.idleTime` [build agent property](configure-agent-installation.md) set to the default value of 1209600 sec (2 weeks).
 
 <table><tr>
 
@@ -317,7 +317,7 @@ To interact with the TFS server, the proxy server settings specified for the use
 ### Cross-Platform Working Mode
 {product="tc"}
 
-The default Java proxy server settings specified for the TeamCity server or agent will be used in the TFS integration. On the TeamCity server, [internal properties or Java options](configuring-teamcity-server-startup-properties.md) can be used. On the TeamCity agent, [build agent configuration](build-agent-configuration.md) or [Java options](configuring-build-agent-startup-properties.md) can be used. The TeamCity-TFS integration supports the following options:
+The default Java proxy server settings specified for the TeamCity server or agent will be used in the TFS integration. On the TeamCity server, [internal properties or Java options](server-startup-properties.md) can be used. On the TeamCity agent, [build agent configuration](configure-agent-installation.md) or [Java options](configuring-build-agent-startup-properties.md) can be used. The TeamCity-TFS integration supports the following options:
 
 
 ```Plain Text
@@ -333,7 +333,7 @@ http.proxyPassword
 ### Cross-Platform Working Mode
 {product="tcc"}
 
-The default Java proxy server settings specified for the TeamCity agent will be used in the TFS integration. On the TeamCity agent, [build agent configuration](build-agent-configuration.md) or [Java options](configuring-build-agent-startup-properties.md) can be used. The TeamCity-TFS integration supports the following options:
+The default Java proxy server settings specified for the TeamCity agent will be used in the TFS integration. On the TeamCity agent, [build agent configuration](configure-agent-installation.md) or [Java options](configuring-build-agent-startup-properties.md) can be used. The TeamCity-TFS integration supports the following options:
 
 
 ```Plain Text

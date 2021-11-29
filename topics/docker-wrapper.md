@@ -84,7 +84,7 @@ Additional docker run arguments
 Allows specifying additional options for the `docker run` command. The default argument is `--rm`, but you can provide more, for instance, add an additional volume mapping.
 
 >In this field, you cannot reference environment variables using the `%\env.FOO_BAR%` syntax because TeamCity does not pass environment variables from a build agent into a Docker container.  
-If you need to reference an environment variable on an agent, define the configuration parameter `system.FOO_BAR=env_var_value` in [`buildAgent.properties`](build-agent-configuration.md) and reference it via `%\system.FOO_BAR%`.
+If you need to reference an environment variable on an agent, define the configuration parameter `system.FOO_BAR=env_var_value` in [`buildAgent.properties`](configure-agent-installation.md) and reference it via `%\system.FOO_BAR%`.
 
 </td></tr></table>
 
@@ -101,9 +101,9 @@ If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment va
 
 At the end of each build step performed inside a Docker wrapper, a build agent runs the `chown` command to restore the access of the `buildAgent` user to the checkout directory. This is done to prevent a potential problem when the files from a Docker container are created with the `root` ownership and cannot be removed by the build agent later.
 
-By default, a TeamCity agent uses the `busybox` image from Docker Hub to run the `chown` command. You can specify an alternative image name with the `teamcity.internal.docker.busybox` parameter, either in the [`buildAgent.properties`](build-agent-configuration.md) file or in the [build configuration parameters](configuring-build-parameters.md).
+By default, a TeamCity agent uses the `busybox` image from Docker Hub to run the `chown` command. You can specify an alternative image name with the `teamcity.internal.docker.busybox` parameter, either in the [`buildAgent.properties`](configure-agent-installation.md) file or in the [build configuration parameters](configuring-build-parameters.md).
 
->You may want to disable restoring the file ownership. For instance, if the `userns-remap` package is used for handling ownership of files created under Docker. For this, add the `teamcity.docker.chown.enabled=false` configuration parameter to the [`buildAgent.properties`](build-agent-configuration.md) file. As a result, TeamCity will not try to restore permissions of the files at the end of the build.
+>You may want to disable restoring the file ownership. For instance, if the `userns-remap` package is used for handling ownership of files created under Docker. For this, add the `teamcity.docker.chown.enabled=false` configuration parameter to the [`buildAgent.properties`](configure-agent-installation.md) file. As a result, TeamCity will not try to restore permissions of the files at the end of the build.
 
 ## Environment Variables Handling
 

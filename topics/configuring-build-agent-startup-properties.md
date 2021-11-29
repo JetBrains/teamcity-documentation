@@ -9,7 +9,7 @@ In TeamCity, a [build agent](build-agent.md) contains two processes:
 * Agent launcher — a Java process that launches the agent process.
 * Agent — the main process for a build agent; runs as a child process for the agent launcher.
 
-Whether you run a build agent via the `agent.bat|sh` script or as a Windows service, the agent launcher starts first, and then it starts the agent itself. Remember that running an agent via script is the recommended approach but you might want to run it as a service in certain cases; refer to [this page](setting-up-and-running-additional-build-agents.md) for more information.
+Whether you run a build agent via the `agent.bat|sh` script or as a Windows service, the agent launcher starts first, and then it starts the agent itself. Remember that running an agent via script is the recommended approach but you might want to run it as a service in certain cases; refer to [this page](install-and-start-teamcity-agents.md) for more information.
 
 >Please avoid changing the startup options unless you are advised to do so by the TeamCity support team or you are absolutely confident in consequences of these changes.
 >
@@ -69,10 +69,10 @@ Make sure to renumber all lines after the inserted ones.
 
 <seealso>
         <category ref="concepts">
-            <a href="configuring-teamcity-server-startup-properties.md" product="tc">Configuring TeamCity Server Startup Properties</a>
+            <a href="server-startup-properties.md" product="tc">Configuring TeamCity Server Startup Properties</a>
         </category>
         <category ref="admin-guide">
             <a href="agent-home-directory.md">Agent Home Directory</a>
-            <a href="setting-up-and-running-additional-build-agents.md">Setting up and Running Additional Build Agents</a>
+            <a href="install-and-start-teamcity-agents.md">Setting up and Running Additional Build Agents</a>
         </category>
 </seealso>

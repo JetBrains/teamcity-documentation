@@ -820,7 +820,7 @@ The property value is the path to the directory that contains MSBuild 4.0 listen
 
 <td>
 
-The [agent port](build-agent-configuration.md) used by the TeamCity server to connect to the agent.
+The [agent port](configure-agent-installation.md) used by the TeamCity server to connect to the agent.
 
 </td></tr><tr product="tc">
 
@@ -832,7 +832,7 @@ The [agent port](build-agent-configuration.md) used by the TeamCity server to co
 
 <td>
 
-The [protocol](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers) used for data transfers between the agent and the server.
+The [protocol](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer) used for data transfers between the agent and the server.
 
 </td></tr><tr>
 
@@ -933,7 +933,7 @@ The following directories are searched:
 
 #### Defining Custom directory to Search for Java
 
-You can define a custom directory on an agent to search for Java installations in by adding the `teamcity.agent.java.search.path` property to the [`buildAgent.properties`](build-agent-configuration.md) file.
+You can define a custom directory on an agent to search for Java installations in by adding the `teamcity.agent.java.search.path` property to the [`buildAgent.properties`](configure-agent-installation.md) file.
 
 You can define a list of directories separated by an OS-dependent character.
 

@@ -15,7 +15,7 @@ If you need to move all the server data to a different machine, use [server move
 {product="tc"}
 
 On the source TeamCity server:
-* [Create a usual backup](creating-backup-from-teamcity-web-ui.md) file containing the projects to be imported (note that the __[major version](upgrade.md#Upgrading+TeamCity+Server) of the source and target TeamCity servers has to be the same__).
+* [Create a usual backup](creating-backup-from-teamcity-web-ui.md) file containing the projects to be imported (note that the __[major version](upgrading-teamcity-server-and-agents.md#Upgrading+TeamCity+Server) of the source and target TeamCity servers has to be the same__).
 
 On the target TeamCity server:
 * Go to the __Server Administration__ area and select __Project Import__ on the left. Upload your project settings and follow the wizard. When the import finishes, TeamCity will display the results.

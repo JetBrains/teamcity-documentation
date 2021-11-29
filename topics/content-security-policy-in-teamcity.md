@@ -14,7 +14,7 @@ As a plugin developer, you can provide CSP directives via the [`ContentSecurityP
 ## Changing CSP Header Value
 {product="tc"}
 
-As a server administrator, you can change the CSP header value via the [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+As a server administrator, you can change the CSP header value via the [internal properties](server-startup-properties.md#TeamCity+Internal+Properties).
 
 * For TeamCity administration pages:   
     ```Plain Text

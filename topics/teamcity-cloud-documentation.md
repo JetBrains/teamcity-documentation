@@ -15,7 +15,7 @@ Welcome to the documentation for [TeamCity Cloud](https://www.jetbrains.com/team
 
 * [Getting Started with TeamCity](getting-started-with-teamcity-cloud.md)
 * [TeamCity Concepts](concepts.md)
-* [Set up Additional Build Agents](setting-up-and-running-additional-build-agents.md)
+* [Set up Additional Build Agents](install-and-start-teamcity-agents.md)
 
 </td>
 

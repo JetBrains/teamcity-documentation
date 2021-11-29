@@ -69,7 +69,7 @@ If you start the TeamCity server instance for the first time and want to restore
 
 <img src="backup-restore-ui.png" width="400" alt="Automatic backup restore"/>
 
-Read more in [Restoring TeamCity Data from Backup](restoring-teamcity-data-from-backup.md#Performing+restore).
+Read more in [Restoring TeamCity Data from Backup](restoring-teamcity-data-from-backup.md).
  
 ## Running personal builds on unified diffs
 

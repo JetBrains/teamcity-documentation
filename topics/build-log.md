@@ -29,7 +29,7 @@ It is recommended to print into the output only the messages required to underst
 
 When opening large build logs, TeamCity displays a part of it to avoid browser hanging. You can view the full build log on clicking the corresponding link.
 
-The display threshold is set to 5M characters by default and can be adjusted using the `teamcity.buildLog.sizeThreshold.chars` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (not applicable to running build logs and logs links with states (for example, direct links to messages).
+The display threshold is set to 5M characters by default and can be adjusted using the `teamcity.buildLog.sizeThreshold.chars` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (not applicable to running build logs and logs links with states (for example, direct links to messages).
 {product="tc"}
 
 The display threshold is set to 5M characters.
@@ -39,5 +39,5 @@ The display threshold is set to 5M characters.
 
 TeamCity build logs render clickable hyperlinks and support ANSI-style escape color codes by default: if your tool produces a colored console output, you will see in the build log in TeamCity. See the related feature request for the [full list of supported sequences](https://youtrack.jetbrains.com/issue/TW-23760#comment=27-1021150).
 
-To disable the coloring, set the `teamcity.buildLog.ansiColoring.enabled=false` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+To disable the coloring, set the `teamcity.buildLog.ansiColoring.enabled=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 {product="tc"}

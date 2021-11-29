@@ -24,7 +24,7 @@ When [external artifacts storage](configuring-artifacts-storage.md#External+Arti
 
 See also details on the directories in the [TeamCity Data Directory](teamcity-data-directory.md) description.
 
-## Performing restore
+## Performing Restore
 
 TeamCity can automatically restore the backed up data. This process relies on the maintainDB utility, but performs all the necessary operations under the hood. To restore the backed up files on the first start of the TeamCity server:
 1. Open the TeamCity URL (by default, [`http://localhost/`](http://localhost/) for `exe` installations and [`http://localhost:8111/`](http://localhost:8111/) for `tar.gz`) in a browser.
@@ -52,9 +52,9 @@ To perform restore from a backup file via maintainDB:
 1. Install the TeamCity server from a `tar.gz` or `.exe` installation package. Do not start the TeamCity server.
 2. Create a new empty [TeamCity Data Directory](teamcity-data-directory.md).
 3. Choose one of the options:   
-    * To restore the backup into a __new external database__, [create and configure an empty database](setting-up-external-database.md), configure a `database.properties` file with the database settings to be passed to the `restore` command later on and either place it into the `/config` subdirectory of the newly created [TeamCity Data Directory](teamcity-data-directory.md) or anywhere on your file system outside the TeamCity Data Directory.   
+    * To restore the backup into a __new external database__, [create and configure an empty database](set-up-external-database.md), configure a `database.properties` file with the database settings to be passed to the `restore` command later on and either place it into the `/config` subdirectory of the newly created [TeamCity Data Directory](teamcity-data-directory.md) or anywhere on your file system outside the TeamCity Data Directory.   
     * To restore the data into the __same database the backup was created from__, proceed to the next step.   
-4. Place the required [database drivers](setting-up-external-database.md#Database-specific+Steps) into the `lib/jdbc` subdirectory of the newly created [TeamCity Data Directory](teamcity-data-directory.md) directory.
+4. Place the required [database drivers](set-up-external-database.md#Database-specific+Steps) into the `lib/jdbc` subdirectory of the newly created [TeamCity Data Directory](teamcity-data-directory.md) directory.
 5. Use the `maintainDB` utility located in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory to run the `restore` command:   
 
     a. To restore the backup into a __new external database__
@@ -108,7 +108,7 @@ When restoring the database but preserving the more recent TeamCity Data Directo
 Before restoring a TeamCity database to an existing server, make sure the TeamCity server is not running.
 
 To restore a TeamCity database only from a backup file to an existing server:
-1. [Create and configure the database](setting-up-external-database.md), placing the `database.properties` file into the `config` subdirectory of the `TeamCity Data Directory`.
+1. [Create and configure the database](set-up-external-database.md), placing the `database.properties` file into the `config` subdirectory of the `TeamCity Data Directory`.
 2. Ensure that the required database drivers are present in the `/lib/jdbc` subdirectory.
 3. Use the `maintainDB` utility located in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/bin` directory (only available in TeamCity `.tar.gz` and `.exe` distributions).
 4. If the _supplementary data_ is present in the backup, delete the content of the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` directory (consider backing it up in another location first).

@@ -333,8 +333,8 @@ This setting defines how TeamCity performs a checkout to a build agent.
 
 * __Use mirrors__: recommended for long-lived agents. With this option selected, TeamCity creates a remote repository cache on the agent machine under the `system/caches/git` directory. The cache is then added as [alternates](https://git-scm.com/docs/gitrepository-layout) when updating the [build checkout directory](build-checkout-directory.md). To speed up the following checkouts of this repository, the agent will reuse the cache in all the builds with the same fetch URL. This also speeds up clean checkout (as only the [build working directory](build-working-directory.md) is cleaned) and saves disk space (as the mirror is the only clone of the given repository on the agent).
 * __Do not use mirrors__: choose to check out right into the [build checkout directory](build-checkout-directory.md), without creating a mirror. Less optimal in terms of disk usage than mirrors, but preserved for backwards compatibility with existing configurations.
-* __Shallow clone__: recommended for short-lived agents; for example, for disposable cloud agents being terminated after every build. Creates a [shallow clone](https://git-scm.com/docs/git-clone) by fetching only one required revision, which allows saving time on the build start. Choose this option only if you do not require a Git commit history in your builds and if your cloud image does not contain a fresh Git mirror. You can enforce this option on certain agents by specifying the `teamcity.git.shallowClone=true` [agent configuration property](build-agent-configuration.md).
-* __Auto__: TeamCity will automatically apply one of the above approaches depending on the `teamcity.cloud.agent.terminate.after.build` [agent configuration property](build-agent-configuration.md) and on the mirror presence on the agent.
+* __Shallow clone__: recommended for short-lived agents; for example, for disposable cloud agents being terminated after every build. Creates a [shallow clone](https://git-scm.com/docs/git-clone) by fetching only one required revision, which allows saving time on the build start. Choose this option only if you do not require a Git commit history in your builds and if your cloud image does not contain a fresh Git mirror. You can enforce this option on certain agents by specifying the `teamcity.git.shallowClone=true` [agent configuration property](configure-agent-installation.md).
+* __Auto__: TeamCity will automatically apply one of the above approaches depending on the `teamcity.cloud.agent.terminate.after.build` [agent configuration property](configure-agent-installation.md) and on the mirror presence on the agent.
 
 >Read how to add a [Git mirror on a cloud agent](#Git+mirrors+on+cloud+agents).
 >
@@ -373,7 +373,7 @@ TeamCity needs Git command line client version 1.6.4\+ on the agent in order to 
 The recommended approach is to ensure that the git client is available in `PATH` of the TeamCity agent and leave the "Path to git" setting in the VCS root blank.   
 If you only have the git command line on some machines, set "Path to git" setting in the VCS root to the `%\env.TEAMCITY_GIT_PATH%` value.
 
-Instead of adding Git to the agent's PATH, you can set the `TEAMCITY_GIT_PATH` environment variable (or `env.TEAMCITY_GIT_PATH` property in the agent's [`buildAgent.properties`](build-agent-configuration.md) file) to the full path to the git executable.
+Instead of adding Git to the agent's PATH, you can set the `TEAMCITY_GIT_PATH` environment variable (or `env.TEAMCITY_GIT_PATH` property in the agent's [`buildAgent.properties`](configure-agent-installation.md) file) to the full path to the git executable.
 
 If `TEAMCITY_GIT_PATH` is not defined, the Git agent plugin tries to detect the installed git on the launch of the agent. It first tries to run git from the following locations:
 * for Windows — it tries to run `git.exe` at:
@@ -396,7 +396,7 @@ By default, TeamCity creates a [mirror](https://help.github.com/en/github/creati
 
 Comparing to self-hosted TeamCity agents, cloud agents require extra steps to add a Git mirror:
 
-1. When [preparing a cloud image](teamcity-integration-with-cloud-solutions.md#Preparing+a+virtual+machine), clone the repository under the agent image's `system/git` directory. If necessary, you can store multiple `*.git` directories side by side.
+1. When [preparing a cloud image](teamcity-integration-with-cloud-solutions.md#Preparing+Virtual+Machine), clone the repository under the agent image's `system/git` directory. If necessary, you can store multiple `*.git` directories side by side.
 2. Create a `map` file under the `system/git` directory and describe the mapping between the original repository and its mirror. For example,   
    ```Text
 
@@ -420,11 +420,11 @@ To fix the warning / meet automatic git gc requirements, perform the following:
 1. Install a native Git client manually on the TeamCity server.
 2. Specify the path to the Git executable:
    * Add the directory with the executable to the `PATH` environment variable and restart the server, _or_
-   * Set the full path to the executable in the `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) without the server restart. On Windows, remember to use double backslashes in the path.
+   * Set the full path to the executable in the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) without the server restart. On Windows, remember to use double backslashes in the path.
    
 When TeamCity runs Git garbage collection, the details are logged into the [`teamcity-cleanup.log`](teamcity-server-logs.md). If git garbage collection fails, a corresponding warning is displayed.
 
-TeamCity executes Git garbage collection until the total time doesn't exceed 5 hours quota; the quota can be changed using the `teamcity.server.git.gc.quota.minutes` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).   
+TeamCity executes Git garbage collection until the total time doesn't exceed 5 hours quota; the quota can be changed using the `teamcity.server.git.gc.quota.minutes` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).   
 Git garbage collection is executed every night at 2 a.m., this can be changed by specifying the internal property with a cron expression like this: `teamcity.git.cleanupCron=0 0 2 * * ?`. If the `git gc` process works slowly and cannot be completed in the allotted time, check the `git-repack` configuration in the default Git configuration files (for example, you can increase `--window-memory` to improve the `git gc` performance).
 
 If the local Git clones need some kind of manual maintenance, you can find them under the `<TeamCity Data Directory>/system/caches/git` directory. The `map` file in the directory contains mapping between the repository URL and the subdirectory storing the bare clone of the repository.
@@ -440,7 +440,7 @@ We recommend using Git LFS version 2.12.1 or later as earlier versions come with
 ## Internal Properties
 {id="internalProperties" auxiliary-id="Internal Properties" product="tc"}
 
-For Git VCS, it is possible to configure the following [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties):
+For Git VCS, it is possible to configure the following [internal properties](server-startup-properties.md#TeamCity+Internal+Properties):
 
 <table><tr>
 
@@ -543,7 +543,7 @@ By default, TeamCity starts nested Java processes for `git fetch` and `git patch
  
 This property provides the explicit `-Xmx` and disables the automatic `-Xmx` setup.
 
-Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch` and `git patch`, each using the configured amount of the memory. For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) may be needed.
+Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch` and `git patch`, each using the configured amount of the memory. For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) may be needed.
 {product="tc"}
 
 </td></tr>

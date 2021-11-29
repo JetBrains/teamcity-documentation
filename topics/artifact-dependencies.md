@@ -179,7 +179,7 @@ Example of accessing hidden artifacts:
 * `.teamcity/properties/*.properties`
 * `.teamcity/*.*`
 
-By default, downloading artifact dependencies to the [agent work directory](agent-work-directory.md) is allowed, the [agent home directory](agent-home-directory.md) is prohibited. To override the defaults, set custom rules to download artifacts by specifying the comma-separated paths in the [`buildAgent.properties`](build-agent-configuration.md): `teamcity.artifactDependenciesResolution.blackList` and `teamcity.artifactDependenciesResolution.whiteList`. Blacklisting a path forbids artifacts download to the directory unless it is whitelisted.
+By default, downloading artifact dependencies to the [agent work directory](agent-work-directory.md) is allowed, the [agent home directory](agent-home-directory.md) is prohibited. To override the defaults, set custom rules to download artifacts by specifying the comma-separated paths in the [`buildAgent.properties`](configure-agent-installation.md): `teamcity.artifactDependenciesResolution.blackList` and `teamcity.artifactDependenciesResolution.whiteList`. Blacklisting a path forbids artifacts download to the directory unless it is whitelisted.
 
 ## Configuring Artifact Dependencies Using Ant Build Script
 

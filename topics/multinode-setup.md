@@ -1,5 +1,5 @@
-[//]: # (title: Multinode Setup)
-[//]: # (auxiliary-id: Multinode Setup)
+[//]: # (title: Multinode Setup for High Availability)
+[//]: # (auxiliary-id: Multinode Setup for High Availability;Multinode Setup)
 
 The TeamCity server can be configured to use multiple nodes (or servers) for high availability and flexible load distribution. It is possible to set up a cluster of TeamCity nodes, where each node is responsible for different tasks, like processing data from builds or collecting changes from VCS repositories. Or, to keep one main node that does all the work and a secondary node which provides a read-only interface. In case the main node goes down, all data processing can be switched to the secondary node with minimum downtime.
 
@@ -54,8 +54,8 @@ If the Data Directory is shared via NFS, make sure all nodes have the following 
 ### Configuring HA Setup
 
 This section relies on the following assumptions:
-* All the [prerequisites](#Prerequisites) are met.
-* [TeamCity is installed](installing-and-configuring-the-teamcity-server.md) on both nodes.
+* All the [system requirements](system-requirements.md) are met.
+* [TeamCity is installed](install-and-start-teamcity-server.md) on both nodes.
 * [TeamCity Data Directory](teamcity-data-directory.md) and database are already initialized.
 
 Now, we can proceed with the transition from a single server setup to a high-availability cluster setup.
@@ -78,7 +78,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
     ```
     >You can also specify a path to the shared TeamCity Data Directory via the `TEAMCITY_DATA_PATH` environment variable.  
     >Make sure the database is configured to accept enough parallel connections to handle requests from both nodes. By default, each node requires 50 connections to the database.
-4. Start both nodes using [regular TeamCity scripts](installing-and-configuring-the-teamcity-server.md#Starting+TeamCity+server) or via the TeamCity service.
+4. Start both nodes using [regular TeamCity scripts](start-teamcity-server.md) or via the TeamCity service.
 5. Open the TeamCity __Administration | Nodes Configuration__ page on any of the two servers and enable the "_[Main TeamCity node](#Main+Node+Responsibility)_" responsibility for a node you want to make main.
 6. Proceed with [configuring the reverse HTTP proxy](#Proxy+Configuration).
 
@@ -233,7 +233,7 @@ In the examples above, the following values should be replaced:
 
 On a failover, if a former secondary node is assigned with the _Main TeamCity node_ responsibility, the configuration of the main and secondary nodes in the proxy config should be updated: `{main_node_hostname}` and `{main_node_id}` should be replaced with the hostname and ID of the new main node; `{secondary_node_hostname}` and `{secondary_node_id}` — with the hostname and ID of the former main node.
 
->Since users will be using the URL of the proxy server for accessing the TeamCity UI, this URL should be specified as a "Server URL" on the __Administration | Global Settings__ page. Likewise, as build agents will be using it for accessing the nodes, it should be set as `serverUrl` in the [build agents' configs](build-agent-configuration.md).
+>Since users will be using the URL of the proxy server for accessing the TeamCity UI, this URL should be specified as a "Server URL" on the __Administration | Global Settings__ page. Likewise, as build agents will be using it for accessing the nodes, it should be set as `serverUrl` in the [build agents' configs](configure-agent-installation.md).
 > 
 {type="note"}
 
@@ -325,7 +325,7 @@ To disable any common property on a given secondary node, pass it using the foll
 
 ### Secondary Node Memory Settings
 
-The secondary node requires the same memory settings as the main node. If you have already configured the `TEAMCITY_SERVER_MEM_OPTS` [environment variable](configuring-teamcity-server-startup-properties.md) for the main node, make sure to use the same variable for the secondary node. If your main node uses a 64-bit JVM, the secondary node must use a 64-bit JVM as well.
+The secondary node requires the same memory settings as the main node. If you have already configured the `TEAMCITY_SERVER_MEM_OPTS` [environment variable](server-startup-properties.md) for the main node, make sure to use the same variable for the secondary node. If your main node uses a 64-bit JVM, the secondary node must use a 64-bit JVM as well.
 
 ### Project Import
 
@@ -353,8 +353,8 @@ The TeamCity clean-up task runs on the main node only. In a multinode configurat
 
 To install a secondary node, follow these steps on the secondary node machine:
 
-1. [Install](installing-and-configuring-the-teamcity-server.md) the TeamCity software as usual: download the distribution package and follow the installation wizard. Please note: when installing a secondary node using the installation wizard, it is important not to start the TeamCity Server service until the environment variables in step 2 and 3 are configured.
-2. Provide the path to the [shared Data Directory](#Shared+Data+Directory) via the `TEAMCITY_DATA_PATH` [environment variable](configuring-teamcity-server-startup-properties.md#Standard+TeamCity+Startup+Scripts).
+1. [Install](install-and-start-teamcity-server.md) the TeamCity software as usual: download the distribution package and follow the installation wizard. Please note: when installing a secondary node using the installation wizard, it is important not to start the TeamCity Server service until the environment variables in step 2 and 3 are configured.
+2. Provide the path to the [shared Data Directory](#Shared+Data+Directory) via the `TEAMCITY_DATA_PATH` [environment variable](server-startup-properties.md#JVM+Options).
 3. Add additional arguments to the `TEAMCITY_SERVER_OPTS` environment variable:
     ```Plain Text
     TEAMCITY_SERVER_OPTS = -Dteamcity.server.nodeId=<node_ID> -Dteamcity.node.data.path=<path_to_node_data_directory>  -Dteamcity.server.rootURL=<node_URL>
@@ -369,14 +369,14 @@ To install a secondary node, follow these steps on the secondary node machine:
 
 It is recommended that the main TeamCity node and all secondary nodes have the same version. In certain cases, the main node and secondary nodes can be running different versions for a short period, for example, during the minor upgrade of the main node. When the versions of a secondary node and the main node are different, the corresponding health report will be displayed on both nodes.
 
-When __upgrading to a minor version__ (a bugfix release), the main and the secondary nodes should be running without issues as the TeamCity data format stays the same. You can upgrade the main TeamCity node and then the secondary nodes [manually](upgrade.md), or with the [automatic update](upgrade.md#Automatic+Update).
+When __upgrading to a minor version__ (a bugfix release), the main and the secondary nodes should be running without issues as the TeamCity data format stays the same. You can upgrade the main TeamCity node and then the secondary nodes [manually](upgrading-teamcity-server-and-agents.md), or with the [automatic update](upgrading-teamcity-server-and-agents.md#Automatic+Update).
 
 When __upgrading the main node to a major version__, its TeamCity data format will change. We recommend stopping all the secondary nodes before starting the upgrade of the main node to avoid any possible data format errors.   
 To be able to process tasks, all secondary nodes must be upgraded after the main node major upgrade.
 
 To __upgrade__ nodes in a multinode setup to a major version of TeamCity, follow these steps:
 1. Stop all secondary nodes.
-2. Start the [upgrade](upgrade.md) on the main TeamCity node as usual.
+2. Start the [upgrade](upgrading-teamcity-server-and-agents.md) on the main TeamCity node as usual.
 3. Proceed with the upgrade.
 4. Verify that everything works properly and agents are connecting to the main node (the agents will reroute the data that was supposed to be routed to the secondary nodes to the main node).
 5. Upgrade TeamCity on the secondary nodes to the same version.

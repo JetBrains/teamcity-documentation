@@ -8,7 +8,7 @@
 TeamCity is developed with security concerns in mind. We make reasonable efforts to ensure the system is invulnerable to different types of attacks. We work with third parties on assessing TeamCity security using security scanners and penetration tests. Newly discovered security issues are promptly addressed in the nearest bugfix releases ([read more](teamcity-release-cycle.md) about our release cycle). It is recommended to [upgrade to newly released TeamCity versions](https://www.jetbrains.com/teamcity/download/) as soon as they become available.  
 However, the general assumption and __recommended setup is to deploy TeamCity in a trusted environment__, with no possibility for it to be accessed by malicious users.
 
-Along with these guidelines, please review [notes](installing-and-configuring-the-teamcity-server.md#Configuring+Server+for+Production+Use) on configuring the TeamCity server for production use. For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/?s=security+bulletin) and the "Security" section in the release notes.
+Along with these guidelines, please review [notes](configure-server-installation.md#Configuring+Server+for+Production+Use) on configuring the TeamCity server for production use. For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/?s=security+bulletin) and the "Security" section in the release notes.
 {product="tc"}
 
 For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/?s=security+bulletin) and the "Security" section in the release notes.
@@ -115,7 +115,7 @@ Note the following nuances:
   * can retrieve settings of the build configurations where the builds are run, including the values of the password fields.
   * can download artifacts from any build on the server.
     <anchor name="view-build-config-settings"/>
-* Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server. To restrict this, you can use the `teamcity.buildAuth.enableStrictMode=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+* Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server. To restrict this, you can use the `teamcity.buildAuth.enableStrictMode=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
   {product="tc"}
 * Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server.
   {product="tcc"}
@@ -165,7 +165,7 @@ __Use HTTPS everywhere__.
 Access to the TeamCity web interface is [secured with HTTPS](using-https-to-access-teamcity-server.md) (for example, with the help a [proxy server](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) like NGINX). Make sure that best practices for securing web applications are employed for the TeamCity web interface: for example, that it is not possible to access the server using HTTP the protocol. The reverse proxy does not strip the _Referer_ request header.
 {product="tc"}
 
-To learn how to configure a connection between a TeamCity agent and the TeamCity server, see [this section](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).
+To learn how to configure a connection between a TeamCity agent and the TeamCity server, see [this section](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer).
 
 __Protect against DoS__.
 
@@ -200,7 +200,7 @@ If you run several agents on the same machine and do not [enable clean checkout]
 
 __Control permissions of the OS user who runs a TeamCity agent__.
 
-It is advised to run TeamCity agents under an OS account with only a [necessary set of permissions](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions).
+It is advised to run TeamCity agents under an OS account with only a [necessary set of permissions](system-requirements.md#Common+Requirements).
 
 __Connect agents only to a trusted server__.
 {product="tc"}

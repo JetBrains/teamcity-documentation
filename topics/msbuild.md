@@ -165,7 +165,7 @@ To learn about configuring code coverage options, refer to the [Configuring .NET
 ## Implementation notes
 {product="tc"}
 
-The MSBuild runner generates an MSBuild script that includes the user's script. This script is used to add TeamCity-provided MSBuild tasks. Your MSBuild script will be included with the &lt;Import&gt; task. If you specified a Visual Studio solution file, it will be called from the &lt;MSBuild&gt; task. To disable it, set the `teamcity.msbuild.generateWrappingScript` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to `false`.
+The MSBuild runner generates an MSBuild script that includes the user's script. This script is used to add TeamCity-provided MSBuild tasks. Your MSBuild script will be included with the &lt;Import&gt; task. If you specified a Visual Studio solution file, it will be called from the &lt;MSBuild&gt; task. To disable it, set the `teamcity.msbuild.generateWrappingScript` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `false`.
 
 <seealso>
         <category ref="concepts">

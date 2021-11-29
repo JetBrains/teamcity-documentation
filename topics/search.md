@@ -618,8 +618,8 @@ Search for personal builds. For example, using `-$p` expression in your query wi
 By default, TeamCity does not search for builds by a certain text in build logs.
 
 To enable search by the build logs, perform the following:
-1. Since the logic will increase server memory usage, you need to increase [memory size](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) in the `-Xmx` JVM option on at least 5 Gb (more if you have large build logs/many builds).
-2. Set the `tc.search.indexBuildLog=true` TeamCity [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+1. Since the logic will increase server memory usage, you need to increase [memory size](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) in the `-Xmx` JVM option on at least 5 Gb (more if you have large build logs/many builds).
+2. Set the `tc.search.indexBuildLog=true` TeamCity [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 3. [Reset](#Resetting+Search+Index) the search index.
 
 After reindexing, TeamCity will be able to perform searching by specified text in the build logs and will list the relevant builds.

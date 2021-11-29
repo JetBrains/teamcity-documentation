@@ -32,7 +32,7 @@ As a part of [Free Disk Space](free-disk-space.md) build feature, Docker plugin 
  - `%\ProgramData%` directory on Windows
  - `$HOME` directory on other systems
 
-The location is important, as the [Free Disk Space](free-disk-space.md) feature analyzes which disk volumes should be cleaned for the build. If your docker daemon uses a non-standard location for the images/containers, the location can be specified using `teamcity.docker.data.path` configuration parameter, preferably in [`buildAgent.properties`](build-agent-configuration.md) file.
+The location is important, as the [Free Disk Space](free-disk-space.md) feature analyzes which disk volumes should be cleaned for the build. If your docker daemon uses a non-standard location for the images/containers, the location can be specified using `teamcity.docker.data.path` configuration parameter, preferably in [`buildAgent.properties`](configure-agent-installation.md) file.
 <!-- We're going to avoid the need to configure manually this with https://youtrack.jetbrains.com/issue/TW-72569 -->
 
 ## Docker Registry Automatic Login/Logout

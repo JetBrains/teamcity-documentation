@@ -21,7 +21,7 @@ Build 99602
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2021.2.1.tar.gz)
 
 [Release notes](teamcity-2021-2-release-notes.md)
-
+ 
 ## TeamCity 2021.2
 
 Release date: __25 October 2021__   

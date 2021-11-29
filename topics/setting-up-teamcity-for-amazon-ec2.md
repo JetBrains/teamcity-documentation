@@ -91,13 +91,13 @@ View information on example policies for [Linux](http://docs.aws.amazon.com/AWSE
 ### Preparing Image with Installed TeamCity Agent
 
 Here are the requirements for an image that can be used for TeamCity cloud integration:
-* TeamCity agent should be correctly [installed](setting-up-and-running-additional-build-agents.md).
+* TeamCity agent should be correctly [installed](install-and-start-teamcity-agents.md).
 * TeamCity agent should start on machine startup.
 * `buildAgent.properties` can be left as is. The `serverUrl`, `name`, and `authorizationToken` properties can be empty or set to any value; they are ignored when TeamCity starts the instance.
 
 Provided these requirements are met, usual TeamCity agent installation and cloud-provider image bundling procedures are applicable.
 
-If you need the [connection](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers) between the server and the agent machine to be secure, you will need to set up the agent machine to establish a secure tunnel (for example, VPN) to the server on boot so that TeamCity agent receives data via the secure channel.
+If you need the [connection](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer) between the server and the agent machine to be secure, you will need to set up the agent machine to establish a secure tunnel (for example, VPN) to the server on boot so that TeamCity agent receives data via the secure channel.
 
 Recommended image (for example, Amazon AMI) preparation steps:
 
@@ -247,13 +247,13 @@ As mentioned [above](#Tagging+for+TeamCity-launched+instances), TeamCity tags ev
 
 Since Amazon doesn't provide a robust API method to retrieve all instance types, Amazon integration relies on the periodical update of AWS SDK to make new instance types available.
 
-However, there is a workaround if you are not willing to wait. To register new Instance Types, use the `teamcity.ec2.instance.types` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) with new instance types separated by ",".
+However, there is a workaround if you are not willing to wait. To register new Instance Types, use the `teamcity.ec2.instance.types` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) with new instance types separated by ",".
 {product="tc"}
 
 ### Proxy settings
 {product="tc"}
 
-If your TeamCity server needs to use a proxy to connect to AWS API endpoint, configure the following server [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to connect to Amazon AWS addresses.
+If your TeamCity server needs to use a proxy to connect to AWS API endpoint, configure the following server [internal properties](server-startup-properties.md#TeamCity+Internal+Properties) to connect to Amazon AWS addresses.
 
 * `teamcity.http.proxy.host.ec2` — proxy server host name
 * `teamcity.http.proxy.port.ec2` — proxy server port
@@ -276,36 +276,36 @@ The Amazon website details the script format for [Linux](http://docs.aws.amazon.
 
 Usual Amazon EC2 pricing applies. Note that Amazon charges can depend on the specific configuration implemented to deploy TeamCity. We advise you to check your configuration and Amazon account data regularly in order to discover and prevent unexpected charges as early as possible.
 
-Note that traffic volumes and necessary server and agent machines characteristics depend a big deal on the TeamCity setup and nature of the builds run. See also [Estimate Hardware Requirements for TeamCity](how-to.md#Estimate+Hardware+Requirements+for+TeamCity).
+Note that traffic volumes and necessary server and agent machines characteristics depend a big deal on the TeamCity setup and nature of the builds run. See also [Estimate Hardware Requirements for TeamCity](system-requirements.md#Estimating+External+Database+Capacity).
 {product="tc"}
 
-### Traffic Estimate
+### Estimating Traffic
 
 Here are some points to help you estimate TeamCity-related traffic:
 
 * If TeamCity server is not located within the same EC2 region or availability zone that is configured in TeamCity EC2 settings for agents, traffic between the server and agent is subject to usual Amazon EC2 external traffic charges.
 * When estimating traffic, bear in mind that there are lots types of traffic related to TeamCity (see a non-complete list below).
 
-__External connections originated by server:__
+__External connections originated by server__:
 
 * VCS servers
 * Email servers
 * Maven repositories
 
-__Internal connections originated by server:__
+__Internal connections originated by server__:
 
 * TeamCity agents (checking status, sending commands, retrieving information like thread dumps, and so on)
 
-__External connections originated by agent:__
+__External connections originated by agent__:
 * VCS servers (in case of agent-side checkout)
 * Maven repositories
-* any connections performed from the build process itself
+* Any connections performed from the build process itself
 
-__Internal connections originated by agent:__
+__Internal connections originated by agent__:
 * TeamCity server (retrieving build sources in case of server-side checkout or personal builds, downloading artifacts, and so on)
 
-__Usual connections served by the server:__
-* web browsers
+__Usual connections served by the server__:
+* Web browsers
 * IDE plugins
 
 #### Uptime Costs

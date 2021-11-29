@@ -19,7 +19,7 @@ Is reported when memory cleaning takes more than 50% of CPU resources on average
 
 ## Customization
 
-Several [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) can be used to customize the Monitor:
+Several [internal properties](server-startup-properties.md#TeamCity+Internal+Properties) can be used to customize the Monitor:
 
 * `teamCity.memoryUsageMonitor.poolNames` sets up pool names to track. Case-sensitive comma-separated string is accepted.
 * `teamCity.memoryUsageMonitor.warningThreshold` allows setting up a minimal warning threshold. Affects all tracked memory pools except for PermGen ([replaced with metaspace](http://javaeesupportpatterns.blogspot.ru/2013/02/java-8-from-permgen-to-metaspace.html) memory allocation).
@@ -33,6 +33,6 @@ Several [internal properties](configuring-teamcity-server-startup-properties.md#
             <a href="reporting-issues.md#OutOfMemory+Problems">Out Of Memory Problems</a>
         </category>
         <category ref="installation">
-            <a href="installing-and-configuring-the-teamcity-server.md">Installing and Configuring the TeamCity Server</a>
+            <a href="install-and-start-teamcity-server.md">Installing and Configuring the TeamCity Server</a>
         </category>
 </seealso>

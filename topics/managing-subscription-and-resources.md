@@ -21,7 +21,7 @@ To redeem a self-hosted agent, go to __Administration | Subscription & Resources
 
 <img src="get-self-hosted-agent.png" width="700"/>
 
-After you redeem a self-hosted agent(s), you need to install them on your machine(s) and connect them to your TeamCity Cloud instance. To download an agent distribution package, go to the __Agents__ page, click __Install agent__, and choose a preferred format. Read how to [install and connect them to your instance](setting-up-and-running-additional-build-agents.md). For a more convenient connection, make sure to generate a unique authentication token for each agent as described [here](setting-up-and-running-additional-build-agents.md#Generating+Authentication+Token).
+After you redeem a self-hosted agent(s), you need to install them on your machine(s) and connect them to your TeamCity Cloud instance. To download an agent distribution package, go to the __Agents__ page, click __Install agent__, and choose a preferred format. Read how to [install and connect them to your instance](configure-agent-installation.md). For a more convenient connection, make sure to generate a unique authentication token for each agent as described [here](install-and-start-teamcity-agents.md#Generating+Authentication+Token).
 
 ## Review Statistics of Expenses
 

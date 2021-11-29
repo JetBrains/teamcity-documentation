@@ -119,7 +119,7 @@ In setups with many projects and build configurations, a significant amount of t
 * __More user-level actions__.   
 Secondary nodes now allow changing user settings, checking for pending changes, performing various agent-related actions, and more. Refer to [our documentation](multinode-setup.md#User-level+Actions+on+Secondary+Node) for the full list of available actions.
 * __Automatic update via web UI__.   
-Use our [autoupdate](upgrade.md#Automatic+Update) on secondary nodes, similarly to the main server experience.
+Use our [autoupdate](upgrading-teamcity-server-and-agents.md#Automatic+Update) on secondary nodes, similarly to the main server experience.
 * __Agent | Cloud tab__.   
 You can now monitor cloud agents right on a secondary node.
 

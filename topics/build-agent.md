@@ -1,10 +1,10 @@
 [//]: # (title: Build Agent)
 [//]: # (auxiliary-id: Build Agent)
 
-A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. It is [installed and configured](setting-up-and-running-additional-build-agents.md) separately from the TeamCity server. An agent can be installed on the same computer as the server or on a different machine (the latter is a preferred setup for server performance reasons); an agent can run the same operating system (OS) as the TeamCity server or a different OS.
+A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. It is [installed and configured](install-and-start-teamcity-agents.md) separately from the TeamCity server. An agent can be installed on the same computer as the server or on a different machine (the latter is a preferred setup for server performance reasons); an agent can run the same operating system (OS) as the TeamCity server or a different OS.
 {product="tc"}
 
-A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. There are two types of agents in TeamCity Cloud: JetBrains-hosted and self-hosted. The first ones are maintained and configured by JetBrains. They are started on-demand as soon as each new build requires to be run. The second ones are [stored and configured](setting-up-and-running-additional-build-agents.md) by the customer. Both types of agents can be successfully combined in one TeamCity Cloud installation. Please see [Subscription and Licensing](teamcity-cloud-subscription-and-licensing.md) on details between these agents in terms of the TeamCity Cloud subscription.
+A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. There are two types of agents in TeamCity Cloud: JetBrains-hosted and self-hosted. The first ones are maintained and configured by JetBrains. They are started on-demand as soon as each new build requires to be run. The second ones are [stored and configured](install-and-start-teamcity-agents.md) by the customer. Both types of agents can be successfully combined in one TeamCity Cloud installation. Please see [Subscription and Licensing](teamcity-cloud-subscription-and-licensing.md) on details between these agents in terms of the TeamCity Cloud subscription.
 {product="tcc"}
 
 A TeamCity build agent contains [two processes](configuring-build-agent-startup-properties.md):   
@@ -84,15 +84,15 @@ All agents connected to the server must have unique agent names.
 
 Only users with certain roles can manage agents. See [Role and Permission](role-and-permission.md) for more information.
 
-For a build agent configuration, refer to [this section](build-agent-configuration.md).
+For a build agent configuration, refer to [this section](configure-agent-installation.md).
 
 ## Agent Upgrade
 {product="tc"}
 
-A TeamCity agent is upgraded automatically when necessary. The process involves downloading new agent files from the TeamCity server and restarting the agent on the new files. In order to successfully accomplish this, the user under whose account the agent runs should have [enough](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) permissions.
+A TeamCity agent is upgraded automatically when necessary. The process involves downloading new agent files from the TeamCity server and restarting the agent on the new files. In order to successfully accomplish this, the user under whose account the agent runs should have [enough](system-requirements.md#Common+Requirements) permissions.
 
 Typically, an agent upgrade happens when:
-* the server is [upgraded](upgrade.md)
+* the server is [upgraded](upgrading-teamcity-server-and-agents.md)
 * an agent plugin is [added](installing-additional-plugins.md) or [updated](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#PluginsPackaging-AgentUpgradeonUpdatingPlugins) on the server
 * [a new tool is installed](installing-agent-tools.md)
 
@@ -101,13 +101,13 @@ Typically, an agent upgrade happens when:
 
 JetBrains hosted agents are upgraded automatically when the server is upgraded.
 
-The upgrade of self-hosted agents is also automated and involves downloading new agent files from the TeamCity server and restarting the agent on the new files. In order to successfully accomplish this, the user under whose account the agent runs should have [enough](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) permissions.
+The upgrade of self-hosted agents is also automated and involves downloading new agent files from the TeamCity server and restarting the agent on the new files. In order to successfully accomplish this, the user under whose account the agent runs should have [enough](system-requirements.md#Common+Requirements) permissions.
 
 Typically, an agent upgrade happens when the server is upgraded.
 
 <seealso>
         <category ref="installation">
-            <a href="setting-up-and-running-additional-build-agents.md">Setting up Additional Build Agents</a>
+            <a href="install-and-start-teamcity-agents.md">Setting up Additional Build Agents</a>
         </category>
         <category ref="concepts">
             <a href="agent-work-directory.md">Agent Work Directory</a>

@@ -6,7 +6,7 @@ TeamCity Data Directory is the directory on the file system used by the TeamCity
 For TeamCity Cloud instances, this directory is fully operated by the TeamCity team.
 {product="tcc"}
 
-The build history, users and their data and some other data are stored in the [database](setting-up-external-database.md). See notes on [backup](manual-backup-and-restore.md) for the description of the data stored in the directory and the database.
+The build history, users and their data and some other data are stored in the [database](set-up-external-database.md). See notes on [backup](manual-backup-and-restore.md) for the description of the data stored in the directory and the database.
 {product="tc"}
 
 Note that in this documentation and other TeamCity materials the directory is often referred to as `.BuildServer`. If you have a different name for it, replace `.BuildServer` with the actual name.
@@ -27,13 +27,13 @@ The current Data Directory location is also available in the `logs/teamcity-serv
 ### Configuring Location
 
 There are three ways to configure the location of the TeamCity Data Directory:
-* __by selecting it in the UI form on the first server startup__ (only for TeamCity `.tar.gz` or `.exe` distributions). The specified Data Directory is then saved into `<[TeamCity home directory](teamcity-home-directory.md)>/conf/teamcity-startup.properties` file.
-* manually, using the `TEAMCITY_DATA_PATH` __environment variable__. The variable can be either system-wide or defined for the user under whom the TeamCity server is started. After setting/changing the variable, you might need to restart the computer for the changes to take effect.
-* manually, by specifying the `teamcity.data.path` __[JVM property](configuring-teamcity-server-startup-properties.md#JVM+Options)__.
+* __by selecting it in the UI form on the first server startup__. The specified Data Directory is then saved into `<[TeamCity home directory](teamcity-home-directory.md)>/conf/teamcity-startup.properties` file.
+* manually, using the `TEAMCITY_DATA_PATH` __environment variable__. The variable can be either system-wide or defined for the user under whom the TeamCity server is started.
+* manually, by specifying the `teamcity.data.path` __[JVM property](server-startup-properties.md#JVM+Options)__.
 
 If during the first startup TeamCity finds the Data Directory location configured as the environment variable, it skips the related startup screen and uses the detected path.
 
-If the `TEAMCITY_DATA_PATH` environment variable is not set and the `<[TeamCity home directory](teamcity-home-directory.md)>/conf/teamcity-startup.properties` file does not define it either, the default TeamCity Data Directory location will be the user's home directory (for example, it is `$HOME/.BuildServer` under Linux and `%\USERPROFILE%.BuildServer` under Windows).
+If the `TEAMCITY_DATA_PATH` environment variable is not set and the `<[TeamCity home directory](teamcity-home-directory.md)>/conf/teamcity-startup.properties` file does not define it either, the default TeamCity Data Directory location will be the user's home directory (for example, it is `$HOME/.BuildServer` under Linux and `%\USERPROFILE%/.BuildServer` under Windows).
 
 ### Recommendations as to choosing Data Directory Location
 
@@ -82,10 +82,10 @@ The `config` subdirectory of TeamCity Data Directory contains the configuration 
       * `vcsRoots` — a directory which contains project's VCS roots settings in the files `<VcsRootID>.xml`.
       * `project-config.xml` — the project configuration file containing the project settings, such as [parameters](configuring-build-parameters.md) and [clean-up rules](teamcity-data-clean-up.md).
   * `main-config.xml` — server-wide configuration settings.
-  * `database.properties` — database connection settings, see more at [Setting up an External Database](setting-up-external-database.md).
+  * `database.properties` — database connection settings, see more at [Setting up an External Database](set-up-external-database.md).
   * `license.keys` — a file which stores the license keys entered into TeamCity.
   * `change-viewers.properties` — [External Changes Viewer](external-changes-viewer.md) configuration properties, if available.
-  * `internal.properties` — file for specifying various [internal TeamCity properties](configuring-teamcity-server-startup-properties.md). It is __not__ present by default and needs to be created if necessary.
+  * `internal.properties` — file for specifying various [internal TeamCity properties](server-startup-properties.md). It is __not__ present by default and needs to be created if necessary.
   * `auth-config.xml` — a file storing server-wide authentication-related settings.
   * `ldap-config.properties` — [LDAP authentication](ldap-integration.md) configuration properties.
   * `ntlm-config.properties` — [Windows domain authentication](configuring-authentication-settings.md#Windows+Domain+Authentication) configuration properties.
@@ -113,7 +113,7 @@ The `config` subdirectory of TeamCity Data Directory contains the configuration 
      * `.unpacked` — directory that is created automatically to store unpacked server-side plugins. Should not be modified while the server is running. Can be safely deleted if the server is not running.
   * `buildserver.*` — a set of files pertaining to the embedded HSQLDB.
 * __`.BuildServer/backup`__ — default directory to store backup archives created via [web UI](creating-backup-from-teamcity-web-ui.md). The files in this directory are not used by TeamCity and can be safely removed if they were already copied for safekeeping.
-* __`.BuildServer/lib/jdbc`__ — directory that TeamCity uses to search for [database drivers](setting-up-external-database.md). Create the directory if necessary. TeamCity does not manage the files in the directory, it only scans it for `.jar` files that store the necessary driver.
+* __`.BuildServer/lib/jdbc`__ — directory that TeamCity uses to search for [database drivers](set-up-external-database.md). Create the directory if necessary. TeamCity does not manage the files in the directory, it only scans it for `.jar` files that store the necessary driver.
 
 ## Direct Modifications of Configuration Files
 {product="tc"}

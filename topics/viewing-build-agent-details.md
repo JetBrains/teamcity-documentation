@@ -12,7 +12,7 @@ For each connected agent TeamCity provides the following information:
   * the agent name
   * the agent host IP address 
   * the port used by the TeamCity server to connect to the agent
-  * the communication [protocol](setting-up-and-running-additional-build-agents.md) used for data transfers between the agent and the server
+  * the communication [protocol](install-and-start-teamcity-agents.md) used for data transfers between the agent and the server
   * the agent operating system
   * CPU rank: the result of the bundled CPU benchmark. Note that the benchmark results can depend on the JVM version and options used by the agent. For example, `-server` JVM option has a significant influence on the results. CPU benchmark also affects the way how the server distributes builds among agents. If a build duration estimate cannot be calculated for an agent (there were no builds in the history ran on this agent), TeamCity chooses the fastest agent basing on the CPU benchmark value.
   * the [pool](configuring-agent-pools.md) the agent belongs to
@@ -34,7 +34,7 @@ For each connected agent TeamCity provides the following information:
 
 Agent reboot is performed by executing an OS-specific command. Under certain circumstances the command might need customization specific to the OS environment. Additional configuration might be required if the default reboot command fails.
 
-To tweak the agent reboot, add the `teamcity.agent.reboot.command` agent configuration parameter to the [`buildagent.properties`](build-agent-configuration.md) file with the command to execute when reboot is required. Example configuration:
+To tweak the agent reboot, add the `teamcity.agent.reboot.command` agent configuration parameter to the [`buildagent.properties`](configure-agent-installation.md) file with the command to execute when reboot is required. Example configuration:
 
 ```Shell
 teamcity.agent.reboot.command=sudo shutdown -r 60
@@ -70,7 +70,7 @@ The tab lists system properties, environment variables, and configuration parame
 
 <seealso>
         <category ref="installation">
-            <a href="installation.md">Installing and Running Additional Build Agents</a>
+            <a href="install-and-start-teamcity-server.md" product="tc">Installing and Running Additional Build Agents</a>
         </category>
         <category ref="concepts">
             <a href="build-agent.md">Build Agent</a>

@@ -22,7 +22,7 @@ The output values defined by the template are then used by the notifier to send 
 
 Each of the bundled [notifiers](notifier.md) has a directory in `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_notifications/`, which stores [FreeMarker](http://freemarker.sourceforge.net/) (`.ftl`) templates. There are also [`.dist`](teamcity-data-directory.md#.dist+Template+Configuration+Files) files that store the default templates. Each notification type evaluates a template file with a corresponding name. The template files can be modified while the server is running.
 
-By default, the server checks for changes in the files every 60 seconds, but this can be changed by setting the `teamcity.notification.template.update.interval` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to the desired number of seconds.
+By default, the server checks for changes in the files every 60 seconds, but this can be changed by setting the `teamcity.notification.template.update.interval` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to the desired number of seconds.
 
 If an error occurs during the template evaluation, TeamCity logs the error details to `teamcity-notifications.log`. There can be non-critical errors that result in ignoring part of the template or critical errors that result in the inability to send notification at all. Whenever you make changes to the notification templates ensure the notification can still be sent.
 
@@ -178,7 +178,7 @@ Here is an example description of the model (the code can be used in IntelliJ ID
 
 ### TeamCity Notification Properties
 
-The following [properties](configuring-teamcity-server-startup-properties.md) can be useful to customize the notifications behavior:
+The following [properties](server-startup-properties.md) can be useful to customize the notifications behavior:
 
 * `teamcity.notification.template.update.interval` — how often the templates are reread by the system (integer, in seconds, default 60)
 * `teamcity.notification.includeDebugInfo` — include debugging information into the message in case of template processing errors (boolean, default false)

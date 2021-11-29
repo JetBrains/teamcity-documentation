@@ -1,7 +1,7 @@
 [//]: # (title: Installing Agent Tools)
 [//]: # (auxiliary-id: Installing Agent Tools)
 
-In TeamCity, an _agent tool_ is a type of plugin used only for distributing files to [build agents](build-agent.md). An agent tool can be a set of files or a binary distribution. Its classes aren't loaded into the runtime.
+In TeamCity, an _agent tool_ is a type of plugin used only for distributing files to [build agents](build-agent.md). An agent tool can be a set of files or a binary distribution. Its classes are not loaded into the runtime.
 
 TeamCity allows you to install/remove additional tools on the server and distribute them to build agents on-demand.   
 In environments with many build agents, you can centralize distribution of configuration files (for example, if you want to distribute a custom configuration file/library to all agents that require it) or remove a tool on agents at once.
@@ -17,7 +17,7 @@ The following types of tools can be managed up via the __Administration | Tools_
 * __NUnit 3__: different versions can be installed and the default version set/changed.
 * __Sysinternals handle.exe__ used to determine processes which hold files in the checkout directory on Windows agents.
 * __Sysinternals psexec.exe__ required for installing a TeamCity agent from a Windows server to a Windows host using Agent push.
-* You can also upload __your own tool as a .zip archive__: the structure of the tool plugin is described on the [Plugins Packaging page](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#Tools). TeamCity will use the name of the zip file as the tool name on all agents. The zip file will be automatically unpacked on the agents to the directory with the same name.   
+* You can also upload __your own tool as a .zip archive__: the structure of the tool plugin is described on the [Plugins Packaging page](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#Tools). TeamCity will use the name of the ZIP file as the tool name on all agents. The ZIP file will be automatically unpacked on the agents to the directory with the same name.   
 When the first custom tool is installed, the __Zip Archive__ section appears on the page. In this section, you can see all the tool usages, remove the tool, or install a new one.
 
 TeamCity places installed tools into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/plugins/.tools` and monitors the content of this directory.
@@ -34,6 +34,6 @@ When a new tool is installed on the server, even though agents won't try to down
 
 </note>
 
-To check that the tool appears on the agent, look for `teamcity.tool.<installed_tool_ID>` in [configuration parameters reported by the agent](predefined-build-parameters.md#Agent+Properties) in the TeamCity web UI.
+To check that the tool appears on the agent, look for `teamcity.tool.<installed_tool_ID>` in [configuration parameters reported by the agent](predefined-build-parameters.md#Agent+Properties) in the TeamCity UI.
 
-If you delete a tool in the TeamCity web UI, each agent that have this tool installed will detect this, delete own copy of the tool, and restart.
+If you delete a tool in the TeamCity UI, each agent that have this tool installed will detect this, delete own copy of the tool, and restart.

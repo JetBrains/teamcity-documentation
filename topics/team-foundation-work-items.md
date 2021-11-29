@@ -103,4 +103,4 @@ Specify the work item id format in changeset comments in the form of regexp.
 ## Custom Resolved States
 {product="tc"}
 
-In addition, resolved states in TeamCity can be customized by using the `teamcity.tfs.workItems.resolvedStates` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) set to `Closed?|Done|Fixed|Resolved?|Removed?` by default.
+In addition, resolved states in TeamCity can be customized by using the `teamcity.tfs.workItems.resolvedStates` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) set to `Closed?|Done|Fixed|Resolved?|Removed?` by default.

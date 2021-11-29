@@ -12,7 +12,7 @@ To create a MySQL database which uses the UTF-8 character set:
     create database <database_name> character set utf8mb4 collate utf8mb4_bin
     ```
 	
-2. Open `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties`, and add the `characterEncoding` property:
+2. Open `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` and add the `characterEncoding` property:
   
     ```Plain Text
     connectionProperties.characterEncoding=UTF-8
@@ -21,20 +21,20 @@ To create a MySQL database which uses the UTF-8 character set:
 To change the character set of an existing MySQL database to UTF-8:
 	
 1. Shut down the TeamCity server.
-2. From the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory, export the database using the `maintainDB tool`:
+2. From the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory, export the database using the maintainDB tool:
     
     ```Plain Text
     maintainDB backup -D -F database_backup
     ```
 
-    More details on this backup are [here](creating-backup-via-maintaindb-command-line-tool.md#Performing+TeamCity+Data+Backup+with+maintainDB+Utility).
-3. Create a new database with UTF-8 as the default character set, as described above.
+    More details on the backup procedure are [here](creating-backup-via-maintaindb-command-line-tool.md#Performing+TeamCity+Data+Backup+with+maintainDB+Utility).
+3. Create a new database with UTF-8 as the default character set, as described in Step 1.
 4. Modify the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file by changing the `connectionUrl` property to:
         
     ```Plain Text
     jdbc:mysql://<host>/<new_database_name>
     ```
-5. Import data the new database:
+5. Import data to the new database:
 
     ```Plain Text
     maintainDB restore -D -F database_backup -T <TeamCity Data Directory>/config/database.properties

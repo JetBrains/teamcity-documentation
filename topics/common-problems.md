@@ -4,7 +4,7 @@
 Most user issues are related to the following topics. Before reporting your problem, check if any of these Help pages contains the solution already:
 {product="tc"}
 
-* [Configuring server memory settings](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server)
+* [Configuring server memory settings](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server)
 {product="tc"}
 * [Reporting server slowness issues](reporting-issues.md#Collect+Data)
 {product="tc"}
@@ -23,9 +23,9 @@ Here are details on the approach:
 
 Check that the build runs fine from the command prompt when run on the same machine as the TeamCity agent and under the same user that the agent is running, with the same environment variables and the same working directory, same architecture (32/64 bit) command line.
 
-If the TeamCity build agent is run as a service (for example, it is installed as a Windows service), try running the TeamCity agent under a regular user with administrative permissions [from the command line](setting-up-and-running-additional-build-agents.md#Starting+the+Build+Agent). See also [Windows Service limitations](known-issues.md#Agent+running+as+Windows+Service+Limitations).
+If the TeamCity build agent is run as a service (for example, it is installed as a Windows service), try running the TeamCity agent under a regular user with administrative permissions [from the command line](start-teamcity-agent.md). See also [Windows Service limitations](known-issues.md#Agent+running+as+Windows+Service+Limitations).
 
-If this fixes the issue, you can try to figure out why running under the service is a problem for the build. Most often this is service-specific and is not related to TeamCity directly. Also, you can set up the TeamCity agent to be run from the console all the time (for example, [configure](setting-up-and-running-additional-build-agents.md#Automatic+Agent+Start+under+Windows) an automatic user logon and run the agent on the user logon).
+If this fixes the issue, you can try to figure out why running under the service is a problem for the build. Most often this is service-specific and is not related to TeamCity directly. Also, you can set up the TeamCity agent to be run from the console all the time (for example, [configure](start-teamcity-agent.md#Automatic+Start) an automatic user logon and run the agent on the user logon).
 
 Here are the detailed steps you can use to run a build from the command line.
 
@@ -36,7 +36,7 @@ Assuming you have a configured build in TeamCity which is failing, do the follow
 * log in to the agent machine using the same user as the one running the TeamCity agent (check the right user in the machine processes list)
 * stop the agent
 * in a command line console, `cd` to the checkout directory of the build in question (the directory can be looked up in the beginning of the build log in TeamCity)
-* run the build with a command line as you would do on a developer machine. This is runner-dependent. (For some runners you can look up the command line used by TeamCity in the build log, see also the `logs\teamcity-agent.log` agent log file for the command line used by TeamCity)
+* run the build with a command line as you would do on a developer machine. This is runner-dependent. (For some runners you can look up the command line used by TeamCity in the build log, see also the `logs\teamcity-agent.log` file for the command line used by TeamCity)
 * if the build fails — investigate the reason as the issue is probably not TeamCity-related and should be investigated on the machine.
 * if it runs OK, continue
 * in the same console window `cd` to `<[TeamCity agent home](agent-home-directory.md)>/bin` and start TeamCity agent from there with the `agent start` command
@@ -77,7 +77,7 @@ If the agent is not connected within that time, check the name of the agent (as 
 
 If the agent stays in the state for more than 10 minutes and you have a fast network connection between the agent and the server, do the following:
 * check the related agent machine to ensure that the agent process is running and `serverURL` in `conf\buildAgent.properties` is correct (and that the server is reachable by that URL from the machine);
-* check that all the related environment [requirements](setting-up-and-running-additional-build-agents.md#Necessary+OS+and+environment+permissions) are met;
+* check that all the related environment [requirements](system-requirements.md#Common+Requirements) are met;
 * check [agent logs](viewing-build-agent-logs.md) (`teamcity-agent.log`, `launcher.log`, `upgrade.log`) for any related messages/errors;
 * check [server logs](teamcity-server-logs.md) (`teamcity-server.log`) for any messages/errors mentioning agent name or IP.
 {product="tc"}
@@ -100,17 +100,17 @@ Read more on [clean-up settings](teamcity-data-clean-up.md#Base+Rule+Behavior+fo
 
 If during the TeamCity server start-up you encounter errors like: _"error in script file line: ... out of memory"_, _"java.sql.SQLException: out of memory"_, perform the following:
 
-* try [increasing server memory](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server). If this does not help, most probably this means that you have encountered __internal database corruption__. You can try to deal with this corruption using the [notes](http://www.hsqldb.org/doc/1.8/guide/apc.html) based on the HSQLDB documentation.
+* try [increasing server memory](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server). If this does not help, most probably this means that you have encountered __internal database corruption__. You can try to deal with this corruption using the [notes](http://www.hsqldb.org/doc/1.8/guide/apc.html) based on the HSQLDB documentation.
 
 Here is a way to attempt a manual database restore:
 * stop the TeamCity server
-* backup the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.data` file
+* back up the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.data` file
 * remove the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.data` file and replace it with zero-size file of the same name
 * start the TeamCity server
 
 However, if the database does not recover automatically, chances that it can be fixed manually are minimal.
 
-The internal (HSQL) database is not stable enough for production use and we highly recommend using an [external database](setting-up-external-database.md) for TeamCity non-evaluation usage.  
+The internal (HSQL) database is not stable enough for production use and we highly recommend using an [external database](set-up-external-database.md) for TeamCity non-evaluation usage.  
 If you encountered database corruption, you can restore the last good backup or drop builds history and users, but preserve the settings, see [Migrating to an External Database](migrating-to-external-database.md#Switch+with+No+Data+Migration).
 
 ### The transaction... log is full
@@ -161,7 +161,7 @@ Setting a client-side value (via `maxAllowedPacket` [connection property](https:
 
 #### Character set/collation mismatch
 
-TeamCity reports character set/collation mismatch error: database tables/columns have a character set or collation that is not the same as the default character set or collation in your database schema. You may see this message if you are using a non-unicode character set as default for your database as TeamCity enforces unicode charset for some of the `varchar` fields. Make sure you configured the database according to our [recommendations](setting-up-external-database.md).
+TeamCity reports character set/collation mismatch error: database tables/columns have a character set or collation that is not the same as the default character set or collation in your database schema. You may see this message if you are using a non-unicode character set as default for your database as TeamCity enforces unicode charset for some of the `varchar` fields. Make sure you configured the database according to our [recommendations](set-up-external-database.md).
 
 #### TeamCity displays ???? instead of national symbols
 
@@ -186,7 +186,7 @@ If the source character set is Unicode or UTF, the destination one must also be 
 
 To fix a problem, perform the following steps:
 
-1. Create a new database with the appropriate character set and collation. We recommend using a __unicode case-sensitive__ collation: see instructions for [PostgreSQL](setting-up-external-database.md#On+PostgreSQL+server+side) and [MySQL](setting-up-external-database.md#On+MS+SQL+server+side). For MySQL, `utf8_bin` or `utf8mb4_bin` is preferred.  
+1. Create a new database with the appropriate character set and collation. We recommend using a __unicode case-sensitive__ collation: see instructions for [PostgreSQL](set-up-external-database.md#On+PostgreSQL+Server+Side) and [MySQL](set-up-external-database.md#On+MySQL+Server+Side). For MySQL, `utf8_bin` or `utf8mb4_bin` is preferred.  
     See also [PostgreSQL](http://www.postgresql.org/docs/9.3/static/multibyte.html), [MySQL](http://dev.mysql.com/doc/refman/5.0/en/charset-mysql.html), [MS SQL](http://technet.microsoft.com/en-us/library/ms180175(v=sql.105).aspx) documentation for details on character set.
     
 2. Copy the current `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file, and change the database references in the copy to the newly created database.
@@ -441,7 +441,7 @@ The most common reason for the problem is the different bitness of the `sqljdbc_
 To solve the problem, do the following:
 
 1. Make sure you use the MS SQL native driver (downloadable from the [Microsoft Download Center](http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=11774)). 
-2. Use the right JRE bitness: ensure that you are running TeamCity using Java with the same bitness as your `sqljdbc_auth.dll` MS SQL shared library. By default, TeamCity uses the 32\-bit Java. However, both 32-bit and 64-bit Java versions [can be used](installing-and-configuring-the-teamcity-server.md#Java+Installation).
+2. Use the right JRE bitness: ensure that you are running TeamCity using Java with the same bitness as your `sqljdbc_auth.dll` MS SQL shared library. By default, TeamCity uses the 32\-bit Java. However, both 32-bit and 64-bit Java versions [can be used](how-to.md#Install+Non-Bundled+Version+of+Java).
 
 To run TeamCity with the required JRE, do one of the following:
     * either set the `TEAMCITY_JRE` environment variable
@@ -485,7 +485,7 @@ The build configuration or template reference a VCS root which is not defined in
 ## TeamCity installation problems
 {product="tc"}
 
-If the TeamCity web UI cannot be accessed after installation, you might be running TeamCity on a port that is already in use by another program. [Check and configure](installing-and-configuring-the-teamcity-server.md#Installation+Configuration) your TeamCity installation.
+If the TeamCity web UI cannot be accessed after installation, you might be running TeamCity on a port that is already in use by another program. [Check and configure](configure-server-installation.md) your TeamCity installation.
 
 ## Problems with TeamCity NuGet Feed
 {product="tc"}
@@ -524,7 +524,7 @@ To solve the issue, use one of the options:
 
 You might want to use tools which require some manual interaction during the build procedure executed on the TeamCity agent. This is not a TeamCity-specific problem, so it should be approached using generic means.
 
-Under Windows, you might want to configure TeamCity agent to run not as a Service, but with access to the desktop by configuring automatic user logon, [related details](setting-up-and-running-additional-build-agents.md#Automatic+Agent+Start+under+Windows).
+Under Windows, you might want to configure TeamCity agent to run not as a Service, but with access to the desktop by configuring automatic user logon, [related details](start-teamcity-agent.md#Automatic+Agent+Start+Under+Windows).
 
 There is no simple solution for Extended Validation (EV) code signing as the feature is built in for a reason. There is some discussion on the issue on [stack overflow](https://stackoverflow.com/questions/17927895/automate-extended-validation-ev-code-signing=). The appropriate solution seems to implement a dedicated service with own authorization approach and sign the binaries through it.
 

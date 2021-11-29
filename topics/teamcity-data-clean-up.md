@@ -155,7 +155,7 @@ Notes on the keep rule behavior:
 
 When a project or a build configuration is deleted, the corresponding build data is removed during the clean-up, but only if 5 days (432, 000 seconds) have passed since the deletion.
 
-To change the timeout, set the `teamcity.deletedEntities.cleanupTimeout` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to the required number of seconds to protect the data from deletion.
+To change the timeout, set the `teamcity.deletedEntities.cleanupTimeout` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to the required number of seconds to protect the data from deletion.
 {product="tc"}
 
 There are builds that preserve all their data and are not affected during clean-up. These are:

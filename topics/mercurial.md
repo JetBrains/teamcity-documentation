@@ -149,7 +149,7 @@ If this parameter is not set, the plugin uses `hg` as a path to the command, ass
 
 During the build, the plugin uses the hg specified in the _HG command path_ field of a VCS root settings. To use the detected hg, put `%\teamcity.hg.agent.path%` in this field. Configurations with such settings will be run only on agents which report the path to hg.
 
-The server side of the plugin checks the value of the `teamcity.hg.customServerHgPathWhitelist` [internal property](configuring-teamcity-server-startup-properties.md). The property contains the `;`-separated list of allowed hg paths to use on the server. If the path specified in VCS root is in the whitelist, then it is used on the server. If not, the path specified in the `teamcity.hg.server.path` [internal property](configuring-teamcity-server-startup-properties.md) is used. If this property is not set, TeamCity server uses `hg` from the `$PATH`.
+The server side of the plugin checks the value of the `teamcity.hg.customServerHgPathWhitelist` [internal property](server-startup-properties.md). The property contains the `;`-separated list of allowed hg paths to use on the server. If the path specified in VCS root is in the whitelist, then it is used on the server. If not, the path specified in the `teamcity.hg.server.path` [internal property](server-startup-properties.md) is used. If this property is not set, TeamCity server uses `hg` from the `$PATH`.
 
 ## Agent Settings
 
@@ -216,7 +216,7 @@ When enabled, TeamCity creates a local agent mirror first (under agent's `system
 ## Internal Properties
 {product="tc"}
 
-This section describes hg-related [internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). You can modify the defaults to adjust the Mercurial settings as needed.
+This section describes hg-related [internal properties](server-startup-properties.md#TeamCity+Internal+Properties). You can modify the defaults to adjust the Mercurial settings as needed.
 
 Server-side internal properties:
 
@@ -292,7 +292,7 @@ Path to the hg executable on the server (see [Path to hg executable detection](#
 
 </td></tr></table>
 
-[Agent configuration](build-agent-configuration.md) for Mercurial:
+[Agent configuration](configure-agent-installation.md) for Mercurial:
 
 <table><tr>
 

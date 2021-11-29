@@ -102,7 +102,7 @@ This category shows the following errors:
 ### Database Related Problems
 {product="tc"}
 
-TeamCity will warn you if the server currently uses the internal database. [A standalone database is recommended as the storage engine](setting-up-external-database.md).
+TeamCity will warn you if the server currently uses the internal database. [A standalone database is recommended as the storage engine](set-up-external-database.md).
 
 As [TeamCity does not support Sybase as an external database](upgrade-notes.md#no-sybase-support), a warning message will be displayed if you are using Sybase.
 

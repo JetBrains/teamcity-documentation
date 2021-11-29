@@ -2,8 +2,24 @@
 <!DOCTYPE rules SYSTEM "https://helpserver.labs.jb.gg/help/redirection-rules.dtd">
 <rules>
 
-    <rule id="cleanup">
-        <accepts>clean-up.html</accepts>
+    <rule id="installation">
+        <accepts>installation.html</accepts>
+        <accepts>installing-and-configuring-the-teamcity-server.html</accepts>
     </rule>
+    <rule id="server-startup-properties">
+        <accepts>configuring-teamcity-server-startup-properties.html</accepts>
+    </rule>
+    <rule id="install-and-start-agents">
+        <accepts>setting-up-and-running-additional-build-agents.html</accepts>
+    </rule>
+    <rule id="configure-agent-installation">
+        <accepts>build-agent-configuration.html</accepts>
+    </rule>
+    <rule id="upgrade-dsl">
+        <accepts>upgrading-dsl.html</accepts>
+    </rule>
+    <rule id="cleanup">
+            <accepts>clean-up.html</accepts>
+     </rule>
 
 </rules>

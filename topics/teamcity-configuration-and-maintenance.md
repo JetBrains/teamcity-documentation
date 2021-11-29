@@ -34,7 +34,7 @@ Database
 
 <td>
 
-The [database](setting-up-external-database.md) used by the running TeamCity server.
+The [database](set-up-external-database.md) used by the running TeamCity server.
 
 </td></tr><tr>
 

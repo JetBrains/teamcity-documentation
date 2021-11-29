@@ -1,7 +1,7 @@
 [//]: # (title: Supported Platforms and Environments)
 [//]: # (auxiliary-id: Supported Platforms and Environments)
 
-This page covers software-related environments TeamCity works with. For hardware-related notes, see [this section](how-to.md#Estimate+Hardware+Requirements+for+TeamCity).
+This page covers software-related environments TeamCity works with. For hardware-related notes, see [this section](system-requirements.md#Estimating+External+Database+Capacity).
 {product="tc"}
 
 ## Operating Systems
@@ -9,7 +9,7 @@ This page covers software-related environments TeamCity works with. For hardware
 ### TeamCity Server
 {product="tc"}
 
-TeamCity Server is a web application that runs within a capable J2EE servlet container. It requires a Java SE JRE installation to run. See [notes](installing-and-configuring-the-teamcity-server.md#Java+Installation) on how to install Java on a TeamCity server.
+TeamCity Server is a web application that runs within a capable J2EE servlet container. It requires a Java SE JRE installation to run. See [notes](how-to.md#Install+Non-Bundled+Version+of+Java) on how to install Java on a TeamCity server.
 
 #### Supported Java Versions
 {id="Supported+Java+Versions+for+TeamCity+Server" auxiliary-id="Supported+Java+Versions+for+TeamCity+Server"}
@@ -21,7 +21,7 @@ For Apple M1 systems, consider using a different version of Java 11, like [Azul 
 #### Supported Platforms
 {id="Supported+Platforms+for+TeamCity+Server" auxiliary-id="Supported+Platforms+for+TeamCity+Server"}
 
->The core features of TeamCity Server are platform-independent. See [considerations](how-to.md#Choose+OS%2FPlatform+for+TeamCity+Server) on choosing the server platform.
+>The core features of TeamCity Server are platform-independent. See [considerations](system-requirements.md#Choosing+Server+OS%2FPlatform) on choosing the server platform.
 
 Generally, __all the recent versions of Windows, Linux, and macOS are supported__. If you find any compatibility issues with any of the operating systems, [let us know](feedback.md).
 
@@ -46,7 +46,7 @@ Windows XP/XP x64 are not supported.
 ### TeamCity Agent
 {product="tc"}
 
-TeamCity Agent is a standalone Java application. It requires a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
+TeamCity Agent is a standalone Java application. It requires a Java SE JRE installation to run. See [notes](configure-java-for-agent.md) on how to configure Java on agents.
 
 #### Supported Java Versions
 {id="Supported+Java+Versions+for+TeamCity+Agent" auxiliary-id="Supported+Java+Versions+for+TeamCity+Agent"}
@@ -202,7 +202,7 @@ You can install a build agent locally on your machine, similarly to how you woul
 #### Supported Java Versions
 {id="Supported+Java+Versions+for+TeamCity+Agent" auxiliary-id="Supported+Java+Versions+for+TeamCity+Agent"}
 
-Build agents require a Java SE JRE installation to run. See [notes](setting-up-and-running-additional-build-agents.md#Configuring+Java) on how to configure Java on agents.
+Build agents require a Java SE JRE installation to run. See [notes](configure-java-for-agent.md) on how to configure Java on agents.
 
 Supported Java versions: OpenJDK and Oracle Java 8 - 11. We recommend using the latest available version of JDK.
 
@@ -844,7 +844,7 @@ Oracle
 </table>
 
 
-[Read more details](setting-up-external-database.md).
+[Read more details](set-up-external-database.md).
 
 ## Game Engines
 

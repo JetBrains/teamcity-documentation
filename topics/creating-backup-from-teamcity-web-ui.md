@@ -101,7 +101,7 @@ Note that only backup files created from web UI are shown here. Backups created 
 
  <seealso>
         <category ref="installation">
-            <a href="upgrade.md">Upgrade</a>
+            <a href="upgrading-teamcity-server-and-agents.md">Upgrade</a>
         </category>
         <category ref="concepts">
             <a href="teamcity-data-directory.md">TeamCity Data Directory</a>

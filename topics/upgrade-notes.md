@@ -30,7 +30,7 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
     To resolve this issue, please revise and adjust the parameters being passed — make sure to [escape](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-escape-special-characters-in-msbuild?view=vs-2022#to-use-an-msbuild-special-character-as-a-literal-character) all the occurring [special characters](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-special-characters) in them.
 * __Microsoft Azure agents fail to automatically start/stop__  
   Build agents running in the Microsoft Azure cloud may fail to automatically start/stop and, after a timeout, freeze in the "Scheduled to Stop" state.  
-  To work around this issue in the Azure plugin, please set the `teamcity.kotlinCoroutinesPool.configurator.enabled=false` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties). This issue will be automatically resolved on upgrading to the next bugfix update.
+  To work around this issue in the Azure plugin, please set the `teamcity.kotlinCoroutinesPool.configurator.enabled=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). This issue will be automatically resolved on upgrading to the next bugfix update.
 * __Builds using Ruby Environment Configurator have no compatible agents__  
   Enabling the [Ruby Environment Configurator](ruby-environment-configurator.md) feature in a build configuration will add the `env.AAAA` [agent requirement](agent-requirements.md) to it. Thus, the build agents that don't have this environment variable will be marked as incompatible, and TeamCity won't be able to run this build on them.  
   To work around this issue, please update the Ruby plugin to the fixed version as described [here](https://youtrack.jetbrains.com/issue/TW-73814#focus=Comments-27-5368673.0-0). This issue will be automatically resolved on upgrading to the next bugfix update.
@@ -46,15 +46,15 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 
 ### Canceled bidirectional agent-server communication protocol
 
-The support for the bidirectional agent-server communication protocol has been stopped. Since version 2021.2, agents will connect to the server exclusively via the [unidirectional protocol](setting-up-and-running-additional-build-agents.md#Agent-Server+Data+Transfers).
+The support for the bidirectional agent-server communication protocol has been stopped. Since version 2021.2, agents will connect to the server exclusively via the [unidirectional protocol](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer).
 
 To upgrade TeamCity from versions earlier than 9.1, where the unidirectional support was first introduced, to 2021.2, use one of the following methods:
 * Upgrade the server to version 2021.1, wait until all the agents upgrade as well, and then upgrade the server to 2021.2.
-* Upgrade the server to version 2021.2, uninstall the old agents manually, and then [install the new agents](setting-up-and-running-additional-build-agents.md).
+* Upgrade the server to version 2021.2, uninstall the old agents manually, and then [install the new agents](install-and-start-teamcity-agents.md).
 
 ### Perforce automatic labels become default
 
-If you use [VCS labeling](vcs-labeling.md) for a [Perforce](perforce.md) root, note that TeamCity now creates [automatic labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) by default. If you want to continue using static labels, you can revert to the previous behavior by adding the `teamcity.perforce.useStaticLabels=true` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+If you use [VCS labeling](vcs-labeling.md) for a [Perforce](perforce.md) root, note that TeamCity now creates [automatic labels](https://www.perforce.com/manuals/p4guide/Content/P4Guide/labels.alias.html) by default. If you want to continue using static labels, you can revert to the previous behavior by adding the `teamcity.perforce.useStaticLabels=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 
 ### Fixed inconsistency in build chains clean-up
 
@@ -118,7 +118,7 @@ No noteworthy changes.
 ### Known Issues
 {id="known-issues-202121"}
 
-* When trying to load a NuGet package which name contains the `.` (dot) character, users get the "Could not find acceptable representation" exception in the build log. This is caused by the issue in the new performance optimization algorithm: it truncates the file name to the part preceding the first dot. To workaround this issue, please download the fixed NuGet Support plugin [here](https://youtrack.jetbrains.com/issue/TW-71659#focus=Comments-27-4916989.0-0) and upload it in __Administration | Plugins__. Alternatively, you can temporarily disable the new optimization mode by setting the `teamcity.nuget.feed.async.request.enabled` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) to `false` — note that this property has to be removed after upgrading to TeamCity 2021.1.1.
+* When trying to load a NuGet package which name contains the `.` (dot) character, users get the "Could not find acceptable representation" exception in the build log. This is caused by the issue in the new performance optimization algorithm: it truncates the file name to the part preceding the first dot. To workaround this issue, please download the fixed NuGet Support plugin [here](https://youtrack.jetbrains.com/issue/TW-71659#focus=Comments-27-4916989.0-0) and upload it in __Administration | Plugins__. Alternatively, you can temporarily disable the new optimization mode by setting the `teamcity.nuget.feed.async.request.enabled` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `false` — note that this property has to be removed after upgrading to TeamCity 2021.1.1.
 
 ### Git Use Mirrors is deprecated in favor of Checkout Policy
 
@@ -168,7 +168,7 @@ The following old versions of [REST API](https://www.jetbrains.com/help/teamcity
 
 ### Verifying NuGet used in NuGet dependency trigger
 
-To ensure that the integration with NuGet is secure, TeamCity now checks if a trusted NuGet installer is used when starting builds on Windows with a [NuGet dependency trigger](nuget-dependency-trigger.md). If your triggers use a NuGet version installed via __[Administration | Tools](installing-agent-tools.md)__, this verification will go smoothly, with no user actions required. Otherwise, you might get the "_Problem with NuGet Dependency Trigger_" error. The recommended solution is to switch all affected triggers to any NuGet version that has been regularly [installed via the TeamCity UI](installing-agent-tools.md). Such versions automatically appear in the _NuGet.exe_ drop-down menu in the trigger's settings. Alternatively, if you need to use a custom NuGet executable and absolutely trust it, you can add it to the whitelist by specifying the following [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties):
+To ensure that the integration with NuGet is secure, TeamCity now checks if a trusted NuGet installer is used when starting builds on Windows with a [NuGet dependency trigger](nuget-dependency-trigger.md). If your triggers use a NuGet version installed via __[Administration | Tools](installing-agent-tools.md)__, this verification will go smoothly, with no user actions required. Otherwise, you might get the "_Problem with NuGet Dependency Trigger_" error. The recommended solution is to switch all affected triggers to any NuGet version that has been regularly [installed via the TeamCity UI](installing-agent-tools.md). Such versions automatically appear in the _NuGet.exe_ drop-down menu in the trigger's settings. Alternatively, if you need to use a custom NuGet executable and absolutely trust it, you can add it to the whitelist by specifying the following [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
 
 ```Plain Text
 teamcity.nuget.server.cli.path.whitelist=<disk>:\\<path-to-executable>\\NuGet.exe
@@ -209,7 +209,7 @@ IntelliJ IDEA version 2019.2 and earlier, as well as other IntelliJ-based produc
 ### Known Issues
 {id="known-issues-202021"}
 
-* Windows Docker images of the TeamCity server don't allow restarting the server from the UI. See how to [stop and start the server](installing-and-configuring-the-teamcity-server.md#Starting+TeamCity+server) via the command line.
+* Windows Docker images of the TeamCity server don't allow restarting the server from the UI. See how to [stop and start the server](start-teamcity-server.md) via the command line.
 
 ### Breaking change for Linux Docker images of TeamCity Server: non-root user by default
 
@@ -284,7 +284,7 @@ If you were actively using the VS 2003 runner and cannot easily migrate to the .
 
 ### Other updates
 
-* When detecting [GitHub issues](github.md), TeamCity now filters out pull requests that have no issues assigned to them. If you need to display such independent pull requests in the issue log, you can disable this filter by setting the `teamcity.issues.github.filter.pull.requests=false` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+* When detecting [GitHub issues](github.md), TeamCity now filters out pull requests that have no issues assigned to them. If you need to display such independent pull requests in the issue log, you can disable this filter by setting the `teamcity.issues.github.filter.pull.requests=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 * [Email Notifier](notifications.md#Email+Notifier) now uses the same versions of the TLS protocol as supported by the current TeamCity server's JVM.
 
 ## Changes from 2020.1.4 to 2020.1.5
@@ -439,7 +439,7 @@ Filtering test occurrences by a branch (`.../app/rest/testOccurrences?locator=br
 * Now, a user cannot assign a role to another user, if this role has more permissions than the role of the current user.   
 If you experience troubles with certain roles being unavailable to users after upgrading to 2020.1, make sure these roles don't comprise any permissions that exceed the rights of the respective project administrators.
 * TeamCity has dropped support for Internet Explorer. Please use Microsoft Edge instead.
-* Since this version, the new .NET runner, introduced in TeamCity 2019.2.3, is not compatible with the obsolete external [.NET CLI Support](https://plugins.jetbrains.com/plugin/9190--net-cli-support) plugin (used in versions 2017.1 and earlier). If you have previously installed this plugin, please [uninstall](installing-additional-plugins.md#Uninstalling+a+plugin+via+Web+UI) it from your server to be able to use the new .NET runner.
+* Since this version, the new .NET runner, introduced in TeamCity 2019.2.3, is not compatible with the obsolete external [.NET CLI Support](https://plugins.jetbrains.com/plugin/9190--net-cli-support) plugin (used in versions 2017.1 and earlier). If you have previously installed this plugin, please [uninstall](installing-additional-plugins.md#Uninstalling+Plugin+via+Web+UI) it from your server to be able to use the new .NET runner.
 
 ## Changes from 2019.2.3 to 2019.2.4
 
@@ -537,7 +537,7 @@ The bundled version of Java in Windows installers of TeamCity Server and Agent a
 
 If you were using the default bundled Java on Windows, make sure the following conditions are satisfied:
 * The TeamCity server and agents operate on the 64-bit Windows OS. If you need to use a 32-bit OS, you need to install and use 32-bit Java to run TeamCity;
-* If the TeamCity server has manually configured [memory settings](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) (the `TEAMCITY_SERVER_MEM_OPTS` environment variable is defined), the value of the `-Xmx` parameter should be increased (recommended to twice the previous value). Before increasing the value, make sure the machine has enough physical memory for that.
+* If the TeamCity server has manually configured [memory settings](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) (the `TEAMCITY_SERVER_MEM_OPTS` environment variable is defined), the value of the `-Xmx` parameter should be increased (recommended to twice the previous value). Before increasing the value, make sure the machine has enough physical memory for that.
 * If you use Microsoft SQL Server as the TeamCity database with the integrated MS SQL authentication, the 64-bit `sqljdbc_auth.dll` native library has to be [present in the due location](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
 * If there was any custom logic executing native tools on the server, check that it still works with the new process bitness.
 
@@ -658,7 +658,7 @@ On upgrading to 2019.1, the Token-Based Authentication module will be enabled by
 ### New CSP header value
 
 Now TeamCity web UI uses more restrictive value for the [`Content-Security-Policy`](https://content-security-policy.com/) HTTP header. This provides extra security at the expense of prohibiting usage of the web resources not hosted on the TeamCity server.   
-If you rely on external resources (for example, in the build report tabs content or by using not yet updated plugins), you can specify new header value in the `teamcity.web.header.Content-Security-Policy.protectedValue=<full_header_value>` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (and `teamcity.web.header.Content-Security-Policy.adminUI.protectedValue` property for the web pages in Administration area). Plugins can use [`ContentSecurityPolicyConfig`](http://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) open API interface to add to the value configured.
+If you rely on external resources (for example, in the build report tabs content or by using not yet updated plugins), you can specify new header value in the `teamcity.web.header.Content-Security-Policy.protectedValue=<full_header_value>` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (and `teamcity.web.header.Content-Security-Policy.adminUI.protectedValue` property for the web pages in Administration area). Plugins can use [`ContentSecurityPolicyConfig`](http://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) open API interface to add to the value configured.
 
 ### Change in dotCover artifacts
 
@@ -908,7 +908,7 @@ In all the build configurations, the builds run before the upgrade will not be r
 
 __Security__
 
-When upgrading to 2017.2.x versions (please ignore when upgrading to 2018.1 and further versions): It is recommended to add "`teamcity.artifacts.restrictRequestsWithArtifactReferer=true`" [internal property](configuring-teamcity-server-startup-properties.md) to enhance security of the server.
+When upgrading to 2017.2.x versions (please ignore when upgrading to 2018.1 and further versions): It is recommended to add "`teamcity.artifacts.restrictRequestsWithArtifactReferer=true`" [internal property](server-startup-properties.md) to enhance security of the server.
 
 ## Changes from 2017.2.1 to 2017.2.2
 
@@ -923,19 +923,19 @@ Under Windows, when TeamCity server is started as a service, "logs\teamcity\-win
 
 ### IDE Plugins
 
-It is highly recommended to update the IDE plugins for all users to the latest version and then add the `teamcity.uploadPersonalPatch.requireAuthorization=true` [internal property](configuring-teamcity-server-startup-properties.md) to enhance security of the server.
+It is highly recommended to update the IDE plugins for all users to the latest version and then add the `teamcity.uploadPersonalPatch.requireAuthorization=true` [internal property](server-startup-properties.md) to enhance security of the server.
 
 ### Perforce VCS Root executable paths
 
 __Since TeamCity 2017.2.2__, the field which specifies the path to p4 works only on the agent side, for agent\-side checkout.
 
-For the server, the p4 binary should be present in the PATH of the TeamCity server (or can be specified via the `teamcity.perforce.customP4Path ` [internal property](configuring-teamcity-server-startup-properties.md)). The `teamcity.perforce.p4PathOnServerWhitelist` [internal property](configuring-teamcity-server-startup-properties.md) can be used to specify a  semi\-colon\-separated list of allowed p4 paths. The paths from this list can be set in VCS Root p4 path parameter for the server side (to restore old behavior).
+For the server, the p4 binary should be present in the PATH of the TeamCity server (or can be specified via the `teamcity.perforce.customP4Path ` [internal property](server-startup-properties.md)). The `teamcity.perforce.p4PathOnServerWhitelist` [internal property](server-startup-properties.md) can be used to specify a  semi\-colon\-separated list of allowed p4 paths. The paths from this list can be set in VCS Root p4 path parameter for the server side (to restore old behavior).
 
 ### Mercurial VCS Root properties
 
 __Since TeamCity 2017.2.2__, a number of Mercurial VCS root properties change their behavior for security reasons.
 * the "HG command path" is used on the TeamCity server only if included into the [whitelist](https://confluence.jetbrains.com/display/TCD10/Mercurial#Mercurial-Pathtohgexecutabledetection)
-* the "Clone repository to" property is hidden if the VCS root doesn't have it already and is ignored by default. To make TeamCity display the property in all VCS roots, add the `teamcity.hg.showCustomClonePath=true` [internal property](configuring-teamcity-server-startup-properties.md). The value of the VCS root property is respected only if it is included into the whitelist specified by the `teamcity.hg.customClonePathWhitelist` [internal property](configuring-teamcity-server-startup-properties.md), which is a semi\-colon\-separated list of directories where a clone is allowed. Use `/path/to/dir/*` to allow clones to the child directories of the `/path/to/dir`.
+* the "Clone repository to" property is hidden if the VCS root doesn't have it already and is ignored by default. To make TeamCity display the property in all VCS roots, add the `teamcity.hg.showCustomClonePath=true` [internal property](server-startup-properties.md). The value of the VCS root property is respected only if it is included into the whitelist specified by the `teamcity.hg.customClonePathWhitelist` [internal property](server-startup-properties.md), which is a semi\-colon\-separated list of directories where a clone is allowed. Use `/path/to/dir/*` to allow clones to the child directories of the `/path/to/dir`.
 * the "Mercurial config" is ignored on the server. If you need to enable some Mercurial plugins, please do that in the global .`hgrc` on the TeamCity server machine.
 
 ## Changes from 2017.2 to 2017.2.1
@@ -1032,7 +1032,7 @@ TFS Personal support lists all build configurations for TFVC VCS root. See [TW-5
 
 [TW-50148](https://youtrack.jetbrains.com/issue/TW-50148) was fixed and the DSL API documentation was improved. If you need these changes for local development, please update the [maven dependency version](upgrading-dsl.md) to 2017.1.3.
 
-Now TeamCity server runs 'git gc' automatically to improve performance of git operations. This requires a git client to be installed on the server and be  the server via the PATH environment variable. If a native git client cannot be found, then the corresponding health report is shown. For TeamCity to find the git client, the client needs to be installed on the server machine and added to `$PATH` (the server restart is required afterwards). Instead of modifying PATH, the path to the git client can be specified via the `teamcity.server.git.executable.path` [internal property](configuring-teamcity-server-startup-properties.md).
+Now TeamCity server runs 'git gc' automatically to improve performance of git operations. This requires a git client to be installed on the server and be  the server via the PATH environment variable. If a native git client cannot be found, then the corresponding health report is shown. For TeamCity to find the git client, the client needs to be installed on the server machine and added to `$PATH` (the server restart is required afterwards). Instead of modifying PATH, the path to the git client can be specified via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md).
 
 ## Changes from 2017.1.1 to 2017.1.2
 
@@ -1188,7 +1188,7 @@ Some third\-party plugins are known to be affected. On the upgrade, make sure to
 
 ### Ignored tests table optimization
 
-During upgrade TeamCity will optimize data in the ignored\_tests table (we do that in order to speedup the TeamCity built\-in backup / restore process). In some rare cases, when this table contains millions of rows, the process of table optimization may take significant time \- possibly a few hours. Among other data, the table contains the reasons why a particular test in a build was marked as ignored. If this information for old builds is not very important for you, you can start TeamCity server with the additional [JVM option](configuring-teamcity-server-startup-properties.md#JVM+Options): `-Dteamcity.truncateIgnoreReasonConverter.copyReasons=false`
+During upgrade TeamCity will optimize data in the ignored\_tests table (we do that in order to speedup the TeamCity built\-in backup / restore process). In some rare cases, when this table contains millions of rows, the process of table optimization may take significant time \- possibly a few hours. Among other data, the table contains the reasons why a particular test in a build was marked as ignored. If this information for old builds is not very important for you, you can start TeamCity server with the additional [JVM option](server-startup-properties.md#JVM+Options): `-Dteamcity.truncateIgnoreReasonConverter.copyReasons=false`
 
 In this case TeamCity will not copy the ignore reasons into the new, optimized table, and this particular step of the upgrade process will run much faster.
 
@@ -1200,7 +1200,7 @@ __TeamCity agents__ currently require Java 1.6\+, but starting from the next Tea
 
 __Java memory options change__
 
-It is recommended to remove the " `-XX:MaxPermSize=..."`  [JVM option](configuring-teamcity-server-startup-properties.md) from `TEAMCITY_SERVER_MEM_OPTS` environment variable, if previously configured. (This is due to the fact that Java 8 [does not use](http://javaeesupportpatterns.blogspot.ru/2013/02/java-8-from-permgen-to-metaspace.html) permanent generation (PermGen) anymore)
+It is recommended to remove the " `-XX:MaxPermSize=..."`  [JVM option](server-startup-properties.md) from `TEAMCITY_SERVER_MEM_OPTS` environment variable, if previously configured. (This is due to the fact that Java 8 [does not use](http://javaeesupportpatterns.blogspot.ru/2013/02/java-8-from-permgen-to-metaspace.html) permanent generation (PermGen) anymore)
 
 ### Agent requirements and artifact dependencies disabling
 
@@ -1658,7 +1658,7 @@ If you need the tests to be treated as separate ones, consider running them in t
 
 #### Database-related changes
 
-The national character sets (nchar, nvarchar, nclob types) for text fields are now supported in MS SQL databases used by TeamCity. It is recommended to use the Microsoft native JDBC driver, as jTDS JDBC driver does not support the nchar and nvarchar characters. If you still use jTDS, please [migrate](setting-up-external-database.md).
+The national character sets (nchar, nvarchar, nclob types) for text fields are now supported in MS SQL databases used by TeamCity. It is recommended to use the Microsoft native JDBC driver, as jTDS JDBC driver does not support the nchar and nvarchar characters. If you still use jTDS, please [migrate](set-up-external-database.md).
 
 Upon upgrade and entering the normal working status, TeamCity starts a background process to move the entries from the vcs\_changes database table to vcs\_change table. This process is transparent and you can continue working with the server as usual. It has negligible impact on the server performance and the only affected logic is the projects import feature (it is recommended to be used only with backups taken after the process is completed). The progress of the process can be seen on the Backup section in the server administration, along with "TeamCity is currently optimizing VCS\-related data in the database for better backup/restore performance" message.   
 The other important thing is that the data copying increases the size of the raw database storage.   
@@ -1705,10 +1705,10 @@ When installing TeamCity anew and creating an MS SQL database with integrated se
 
 If for some reason the workaround above does not resolve the problem, do the following:
 
-1. Start the TeamCity server, approve a new database creation, configure the MS SQL access with a login and password, without [integrated security](setting-up-external-database.md).
+1. Start the TeamCity server, approve a new database creation, configure the MS SQL access with a login and password, without [integrated security](set-up-external-database.md).
 2. Ensure that TeamCity works properly.
 3. Stop the TeamCity server.
-4. Modify the [Setting up an External Database](setting-up-external-database.md) file: configure MS SQL connection string to use integrated security, and remove the login and password.
+4. Modify the [Setting up an External Database](set-up-external-database.md) file: configure MS SQL connection string to use integrated security, and remove the login and password.
 5. Start the TeamCity server again.
 
 #### Known issue with VSTest.Console runner
@@ -1726,7 +1726,7 @@ The recommended approach is to switch to "Custom script" option instead of "Exec
 
 #### Memory Settings
 
-If you have not [switched to 64 bit JVM](installing-and-configuring-the-teamcity-server.md) yet and use `-Xmx1300` memory setting for the server and the server is running on Windows, consider decreasing the setting to `-Xmx1200` as otherwise you might encounter "Native memory allocation (malloc) failed" JVM crash. See the [recommended memory settings](installing-and-configuring-the-teamcity-server.md) for details.
+If you have not [switched to 64 bit JVM](install-and-start-teamcity-server.md) yet and use `-Xmx1300` memory setting for the server and the server is running on Windows, consider decreasing the setting to `-Xmx1200` as otherwise you might encounter "Native memory allocation (malloc) failed" JVM crash. See the [recommended memory settings](install-and-start-teamcity-server.md) for details.
 
 #### Actions menu
 
@@ -1749,7 +1749,7 @@ If the build takes lock on all values of a resource with custom values, these va
 
 #### TeamCity Disk Space Watcher
 
-The following [internal properties](configuring-teamcity-server-startup-properties.md) define free disk space thresholds on the TeamCity server machine:
+The following [internal properties](server-startup-properties.md) define free disk space thresholds on the TeamCity server machine:
 * `teamcity.diskSpaceWatcher.threshold` set to 500 Mb by default displays a warning on all the pages of the TeamCity web UI.
 * `teamcity.pauseBuildQueue.diskSpace.threshold` set to 50 Mb by default pauses the build queue.
 The `teamcity.diskSpaceWatcher.softThreshold` property is removed.
@@ -1956,7 +1956,7 @@ No noteworthy changes.
 
 __Windows service configuration__   
 Since version 7.1, TeamCity uses its own service wrapping solution for the TeamCity server as opposed to that of default Tomcat one in previous versions.This changes the way TeamCity service is configured (Data Directory and server startup options including memory settings) and makes it unified between service and console startup.   
-Please refer to the updated [section](configuring-teamcity-server-startup-properties.md) on configuring the server startup properties.
+Please refer to the updated [section](server-startup-properties.md) on configuring the server startup properties.
 
 Agent windows service started to use OS\-provided environment variables. Once Agent server (and JVM) are x86 processes, agent will report x86 environment variables. The change may affect your CPU bitness checks. See [MSDN Blog](http://blogs.msdn.com/b/david.wang/archive/2006/03/26/howto-detect-process-bitness.aspx) on how to check if machine supports x64 by reported environment variables
 
@@ -1968,7 +1968,7 @@ __Windows domain login module__
 When TeamCity server runs under Windows and Windows domain user authentication is used, TeamCity now uses another library (Waffle) to talk to the Windows domain. Under Linux the behavior is unchanged: jCIFS library is used as it were.
 
 Unless you specified specific settings for jCIFS library in ntlm\-config.properties file, your installation should not be affected.   
-If you experience any issues with login into TeamCity with your Windows username/password after upgrade, please provide details [to us](feedback.md). In the mean time you can switch to using old jCIFS library. For this, add `teamcity.ntlm.use.jcifs=true` line into [internal properties file](configuring-teamcity-server-startup-properties.md).   
+If you experience any issues with login into TeamCity with your Windows username/password after upgrade, please provide details [to us](feedback.md). In the mean time you can switch to using old jCIFS library. For this, add `teamcity.ntlm.use.jcifs=true` line into [internal properties file](server-startup-properties.md).   
 Please note that jCIFS library approach can be depricated in future versions of TeamCity, so the property specification is not recommended if you can go without it.
 
 __Checkout directory change for Git and Mercurial__   
@@ -2026,12 +2026,12 @@ Starting with this version Ant runner requires minimum of JDK 1.4 in __runtime__
 
   __Supported Java for Server and Agent__   
   Starting with this version the following requirements
-* TeamCity __server__ should be run with JRE 1.6 or above (was 1.5 previously). TeamCity .exe distribution is already bundled with appropriate Java. For .tar.gz or .war TeamCity distributions you might need to install and configure server [manualy](installing-and-configuring-the-teamcity-server.md).
-* TeamCity __agent__ should be run with JRE 1.6 or above (was 1.5 previously). Agent .exe distribution is already bundled with appropriate Java. If you used .zip agent distribution or installed the TeamCity agent with TeamCity version 5.0 or earlier, you might need [manual steps](setting-up-and-running-additional-build-agents.md). If you run TeamCity 6.5.x, please check "Agents" page of your existing TeamCity server: the page will have a yellow warning in case any of the connected agents are running JDK less than 1.6.
+* TeamCity __server__ should be run with JRE 1.6 or above (was 1.5 previously). TeamCity .exe distribution is already bundled with appropriate Java. For .tar.gz or .war TeamCity distributions you might need to install and configure server [manualy](install-and-start-teamcity-server.md).
+* TeamCity __agent__ should be run with JRE 1.6 or above (was 1.5 previously). Agent .exe distribution is already bundled with appropriate Java. If you used .zip agent distribution or installed the TeamCity agent with TeamCity version 5.0 or earlier, you might need [manual steps](install-and-start-teamcity-agents.md). If you run TeamCity 6.5.x, please check "Agents" page of your existing TeamCity server: the page will have a yellow warning in case any of the connected agents are running JDK less than 1.6.
 
 <note>
 
-If any of your agents are running under JDK version less than 1.6, the agents will fail to upgrade and will stop running on the server upgrade. You will need to recover them manually by installing JDK 1.6 and making sure the agents will [use it](setting-up-and-running-additional-build-agents.md).
+If any of your agents are running under JDK version less than 1.6, the agents will fail to upgrade and will stop running on the server upgrade. You will need to recover them manually by installing JDK 1.6 and making sure the agents will [use it](install-and-start-teamcity-agents.md).
 </note>
 
 __Project/Template parameters override__   
@@ -2293,9 +2293,9 @@ Since 5.1, TeamCity uses [new template engine](customizing-notifications.md) (Fr
 If you customized notification templates prior to this upgrade, please review the new notification templates and make changes to them if necessary. Old notification templates are copied into `<TeamCity Data Directory>/config/_trash/_notifications` directory. Hope, you will enjoy the new templates and new extended customization capabilities.
 
 __External database drivers location__   
-JDBC drivers can now be placed into `<TeamCity Data Directory>/lib/jdbc` directory instead of `WEB-INF/lib`. It is recommended to use the new location. See details at [Setting up an External Database](setting-up-external-database.md).
+JDBC drivers can now be placed into `<TeamCity Data Directory>/lib/jdbc` directory instead of `WEB-INF/lib`. It is recommended to use the new location. See details at [Setting up an External Database](set-up-external-database.md).
 
-PostgresSQL jdbc driver is no more bundled with TeamCity installation package, you will need to [install](setting-up-external-database.md) it yourself upon upgrade.
+PostgresSQL jdbc driver is no more bundled with TeamCity installation package, you will need to [install](set-up-external-database.md) it yourself upon upgrade.
 
 __Database connection properties__   
 Database connection properties template files have changed their names and are placed into `database.<database-type>.properties.dist` files under `<TeamCity Data Directory>/config` directory. They follow [.dist files convention](teamcity-data-directory.md).
@@ -2303,12 +2303,12 @@ Database connection properties template files have changed their names and are p
 It is recommended to review your `database.properties` file by comparing it with the new template file for your database and remove any options that you did not customize specifically.
 
 __Default memory options change__   
-We changed the default [memory option](installing-and-configuring-the-teamcity-server.md) for PermGen memory space and if you had `-Xmx` JVM option changed to about 1.3G and are running on 32-bit JVM, the server may fail to start with a message like: "Error occurred during initialization of VM Could not reserve enough space for object heap Could not create the Java virtual machine".
+We changed the default [memory option](install-and-start-teamcity-server.md) for PermGen memory space and if you had `-Xmx` JVM option changed to about 1.3G and are running on 32-bit JVM, the server may fail to start with a message like: "Error occurred during initialization of VM Could not reserve enough space for object heap Could not create the Java virtual machine".
 
 On this occasion, please consider either:
-* switching to 64 bit JVM. Please consider the [note](installing-and-configuring-the-teamcity-server.md#Using+64+bit+Java+to+Run+TeamCity+Server).
-* reducing PermGen memory via `-XX:MaxPermSize` [JVM option](configuring-teamcity-server-startup-properties.md) (to previous default 120m)
-* reducing heap memory via `-Xmx` [JVM option](configuring-teamcity-server-startup-properties.md)
+* [switching to 64-bit JVM](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server).
+* reducing PermGen memory via `-XX:MaxPermSize` [JVM option](server-startup-properties.md) (to previous default 120m)
+* reducing heap memory via `-Xmx` [JVM option](server-startup-properties.md)
 
 __Vault Plugin is bundled__   
 In this version we bundled [SourceGear Vault VCS plugin](https://confluence.jetbrains.com/display/TW/Vault) (with experimental status). Please make sure to uninstall the plugin from `.BuildServer/plugins` (just delete the plugin's ZIP) if you installed it previously.

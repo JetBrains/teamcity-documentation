@@ -1,7 +1,7 @@
 [//]: # (title: Creating Backup via maintainDB command-line tool)
 [//]: # (auxiliary-id: Creating Backup via maintainDB command-line tool)
 
-TeamCity [.tar.gz and .exe distributions](installing-and-configuring-the-teamcity-server.md) provide the `maintainDB.bat|sh` utility located in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory. This command-line tool enables you to back up the server data, [restore it](restoring-teamcity-data-from-backup.md), and [migrate between different databases](migrating-to-external-database.md). You can also back up data using the [UI](creating-backup-from-teamcity-web-ui.md).
+TeamCity [.tar.gz and .exe distributions](install-and-start-teamcity-server.md) provide the `maintainDB.bat|sh` utility located in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory. This command-line tool enables you to back up the server data, [restore it](restoring-teamcity-data-from-backup.md), and [migrate between different databases](migrating-to-external-database.md). You can also back up data using the [UI](creating-backup-from-teamcity-web-ui.md).
 
 ## Before You Back up
 
@@ -83,7 +83,7 @@ If you customize TeamCity server startup options via `TEAMCITY_SERVER_OPTS/TEAMC
  
  <seealso>
         <category ref="installation">
-            <a href="setting-up-external-database.md">Setting up an External Database</a>
+            <a href="set-up-external-database.md">Setting up an External Database</a>
             <a href="migrating-to-external-database.md">Migrating to an External Database</a>
         </category>
 </seealso>

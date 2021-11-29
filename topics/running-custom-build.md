@@ -46,7 +46,7 @@ If the current build configuration uses a [Perforce](perforce.md) VCS root, you 
 _This tab is available only for builds that have dependencies on other builds_.   
 You can enforce rebuilding of all dependencies and select a particular build whose artifacts will be taken. By default, the last 20 builds are displayed.
 
-To increase the number of builds displayed in the drop-down menu to 50, use the `teamcity.runCustomBuild.buildsLimit=50` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties).
+To increase the number of builds displayed in the drop-down menu to 50, use the `teamcity.runCustomBuild.buildsLimit=50` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 {product="tc"}
 
 Note that if you re-run a dependent build, TeamCity will try to rebuild all dependency builds, including failed ones, by default.
@@ -120,7 +120,7 @@ More details are available in the [related blog-post](http://blog.jetbrains.com/
 
  <seealso>
         <category ref="installation">
-            <a href="upgrade.md">Upgrade</a>
+            <a href="upgrading-teamcity-server-and-agents.md" product="tc">Upgrade</a>
         </category>
         <category ref="concepts">
             <a href="build-queue.md">Build Queue</a>

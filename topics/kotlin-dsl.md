@@ -638,7 +638,7 @@ _Problem_:
 * `app/dsl-documentation/index.html` on our Teamcity server displays "Kotlin DSL API documentation is not initialized yet"
 * `OutOfMemoryError` during TeamCity startup with `org.jetbrains.dokka` in stack trace
  
- _Solution_: set the [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) `teamcity.kotlinConfigsDsl.docsGenerationXmx=768m` and restart the server.
+ _Solution_: set the [internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.kotlinConfigsDsl.docsGenerationXmx=768m` and restart the server.
 
 
 <seealso>

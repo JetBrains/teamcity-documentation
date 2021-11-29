@@ -1,59 +1,52 @@
 [//]: # (title: Migrating to External Database)
-[//]: # (auxiliary-id: Migrating to External Database;Migrating to an External Database)
+[//]: # (auxiliary-id: Migrating to an External Database)
 
-For details on using an external database from the first TeamCity start, as well as the general external database information and the database-specific configuration steps, refer to the [Setting up an External Database](setting-up-external-database.md) page.
+This article covers the steps required to migrate TeamCity data from the database of one type to another. For details on using an external database from the first TeamCity start, as well as the general external database information and database-specific configuration steps, refer to [this article](set-up-external-database.md).
 
-The current section covers the steps required to migrate TeamCity data from the database of one type to another. The most typical case is when you evaluated TeamCity with the default internal database and need to switch to an external database to prepare your TeamCity installation for production use. The steps here are also applicable when switching from one external database to another. You can also use the steps to move between database servers of the same type, but in that case the database-specific data transfer is regularly more preferable.
+The most typical case for migration is when you evaluated TeamCity with the default internal database and need to switch to an external database to prepare your TeamCity installation for production use. The recommended steps are also applicable when switching from one external database to another. You can also follow them to move between database servers of the same type, but in that case, the database-specific data transfer is regularly more preferable.
 
 <note>
 
-Database migration cannot be combined with the server upgrade. If you want to upgrade at the same time, you should first [upgrade](upgrade.md), run the new version of TeamCity, and then migrate to another database.
+Database migration cannot be combined with the server upgrade. If you want to upgrade at the same time, you should first [upgrade](upgrading-teamcity-server-and-agents.md), run the new version of TeamCity, and then migrate to another database.
 </note>
 
 [//]: # (Internal note. Do not delete. "Migrating to an External Databased212e19.txt")    
 
 There are several ways to migrate data into a new database:
 * [Switch](#Switch+with+No+Data+Migration) with no data migration: build configurations settings will be preserved, but not the historical builds data or users.
-* [Full Migration](#Full+Migration): all the data is preserved except for any database-stored data provided by the third-party plugins.
+* [Full migration](#Full+Migration): all the data is preserved except for any database-stored data provided by the third-party plugins.
 * [Backup and then restore](#Backup+and+Restore): the same as full migration, but using the two-step approach.
 
 ## Switch with No Data Migration
 
-If you want a fast switch to an external database and _do not want to preserve existing data_ like users and builds on the server, follow the steps below. See [Full Migration](#Full+Migration) for preserving all the data. After the switch, the server will start with an empty database, but preserve all the _settings_ stored under TeamCity Data Directory (see [details](manual-backup-and-restore.md) on what is stored where).
+If you want a fast switch to an external database and _do not want to preserve existing data_ like users and builds on the server, follow the steps below. After the switch, the server will start with an empty database, but preserve all the _settings_ stored under TeamCity Data Directory (see [details](manual-backup-and-restore.md#TeamCity+Data+Directory+Backup) on what is stored where).
 
-Steps to perform the switch:
-1. [Create and configure an external database](setting-up-external-database.md#Supported+Databases) to be used by TeamCity.
+1. [Create and configure an external database](set-up-external-database.md) to be used by TeamCity.
 2. Shut down the TeamCity server.
 3. [Create a backup copy](teamcity-data-backup.md) of the `<[TeamCity Data Directory](teamcity-data-directory.md)>` used by the server.
-4. Clean up the `system` directory: you __must__ remove the `messages` and `artifacts` directories from the `system` folder of your `<[TeamCity Data Directory](teamcity-data-directory.md)>`; you __may__ delete the old HSQLDB files: `buildserver.*` to remove the no longer needed internal storage data.
+4. Clean up the `system` directory: you __must__ remove the `messages` and `artifacts` directories from the `system` directory of your `<[TeamCity Data Directory](teamcity-data-directory.md)>`; you __may__ delete the old HSQLDB files: `buildserver.*` to remove the no longer needed internal storage data.
 5. Start the TeamCity server.
 
-<tip>
-
-If you see the __TeamCity Maintenance__ screen, click the _"I'm a server administrator, show me the details"_ link and enter the [Super User Token](super-user.md). Follow the instructions to create a new TeamCity database.
-</tip>
+>If you see the __TeamCity Maintenance__ screen, click _"I'm a server administrator, show me the details"_ and enter the [Super User Token](super-user.md). Follow the instructions to create a new TeamCity database.
 
 ## Full Migration
 
-These steps describe switching to another database preserving all data. The TeamCity migration tool, the `maintainDB` command line utility, is available for this purpose.
+These steps describe switching to another database while preserving all the data. This is done by the TeamCity migration tool — `maintainDB` command-line utility.
 
- The `maintainDB.[cmd|sh]` shell/batch script is located in the `<[TeamCity Home  Directory](teamcity-home-directory.md)>/bin` directory and is used for migrating as well as for [backing up](creating-backup-via-maintaindb-command-line-tool.md) and [restoring](restoring-teamcity-data-from-backup.md) TeamCity data. The utility is only available in the TeamCity `.tar.gz` and .`exe` distributions.
+The `maintainDB.[cmd|sh]` shell/batch script is located in the `<[TeamCity Home  Directory](teamcity-home-directory.md)>/bin` directory and is used for migrating as well as for [backing up](creating-backup-via-maintaindb-command-line-tool.md) and [restoring](restoring-teamcity-data-from-backup.md) TeamCity data. The utility is only available in the TeamCity `.tar.gz` and .`exe` distributions.
 
-TeamCity supports __HSQLDB__, __MySQL__, __Oracle__, __PostgreSQL__ and __Microsoft SQL Server__; the migration is possible between any of these databases.
-
-<note>
+TeamCity supports __HSQLDB__, __MySQL__, __Oracle__, __PostgreSQL__, and __Microsoft SQL Server__; the migration is possible between any of these databases.
 
 The target database must be empty before the migration process (it must NOT contain any tables).
-</note>
 
 <note>
 
 If an error occurs during migration, do not use the new database as it may result in the database data corruption or various errors that can uncover later. In case of an error, investigate the reason logged into the console or in the migration logs (see below), and, if a solution is found, clean the target database and repeat the migration process.
 </note>
 
-__To migrate all your existing data to a new external database:__
+To migrate all your existing data to a new external database:
 
-1\. [Create and configure an external database](setting-up-external-database.md#Supported+Databases) to be used by TeamCity and install the database driver into TeamCity. __Do not modify any TeamCity settings at this stage__.
+1\. [Create and configure an external database](set-up-external-database.md) to be used by TeamCity and install the database driver into TeamCity. __Do not modify any TeamCity settings at this stage__.
 
 2\. Shut down the TeamCity server.
 
@@ -66,12 +59,9 @@ __To migrate all your existing data to a new external database:__
  ```
 Upon the successful completion of the database migration, the temporary file will be copied to the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file which will be used by TeamCity. The temporary file can be safely deleted. If you are migrating between external databases, the original `database.properties` file for the source database will be replaced with the file specified via the `-T` option. The original `database.properties` file will be automatically renamed to `database.properties.before.<timestamp>`.
 
-<tip>
+>If you have the `TEAMCITY_DATA_PATH` environment set (pointing to the [TeamCity Data Directory](teamcity-data-directory.md)), you do not need the `-A <path to TeamCity Data Directory>` parameter of the tool.
 
-If you have the `TEAMCITY_DATA_PATH` environment set (pointing to the [TeamCity Data Directory](teamcity-data-directory.md)), you do not need the `-A <path to TeamCity Data Directory>` parameter of the tool.
-</tip>
-
-5\. Start the TeamCity server. This must be the same TeamCity version that was run last time (TeamCity [upgrade](upgrade.md) must be performed as a separate procedure).
+5\. Start the TeamCity server. This must be the same TeamCity version that was run last time (TeamCity [upgrade](upgrading-teamcity-server-and-agents.md) must be performed as a separate procedure).
 
 After you make sure the migration succeeded, you __may__ delete the old HSQLDB files: `buildserver.*` to remove the no longer needed internal storage data.
 
@@ -82,10 +72,10 @@ After you make sure the migration succeeded, you __may__ delete the old HSQLDB f
 
 You can [create a backup](teamcity-data-backup.md) and then [restore it](restoring-teamcity-data-from-backup.md) using different target database settings. You will probably need to specify restore options to restore only the database data.
 
-### Troubleshooting
+## Troubleshooting
 
 * Extended information during migration execution is logged into the `logs\teamcity-maintenance.log` file. Also, `logs\teamcity-maintenance-truncation.log` contains extended information on possible data truncation during the migration process.
-* If you encounter an "out of memory" error, try increasing the number in the `-Xmx512m` parameter in the `maintainDB` script. On a 32-bit platform, the maximum is about 1300 megabytes.    
+* If you encounter an "_Out of memory_" error, try increasing the number in the `-Xmx512m` parameter in the `maintainDB` script. On a 32-bit platform, the maximum is about 1300 MB.    
     Alternatively, run HSQLDB in the standalone mode via
 
     ```Java
@@ -93,15 +83,15 @@ You can [create a backup](teamcity-data-backup.md) and then [restore it](restori
     <TeamCity Data Directory>\system\buildserver -dbname.0 buildserver
     ```
 
-    and then run the Migration tool pointing to the database as the source: `jdbc:hsqldb:hsql://localhost/buildserver sa ''`
+    and then run the migration tool pointing to the database as the source: `jdbc:hsqldb:hsql://localhost/buildserver sa ''`
 
-* If you get "The input line is too long." error while running the tool (e.g. this may happen on Windows 2000), change the script to use an alternative classpath method.    
-    For `maintainDB.bat`, remove the lines below "Add all JARs from WEB-INF\lib to classpath" comment and uncomment the lines below "Alternative classpath: Add only necessary JARs" comment.
+* If you get "_The input line is too long_" error while running the tool, change the script to use an alternative classpath method.  
+    For `maintainDB.bat`, remove the lines below the "_Add all JARs from WEB-INF\lib to classpath_" comment and uncomment the lines below the "_Alternative classpath: Add only necessary JARs_" comment.
 
- <seealso>
+<seealso>
         <category ref="installation">
             <a href="common-problems.md">Common database-related problems</a>
-            <a href="setting-up-external-database.md">Setting up an External Database</a>
+            <a href="set-up-external-database.md">Setting up an External Database</a>
         </category>
         <category ref="concepts">
             <a href="teamcity-data-directory.md">TeamCity Data Directory</a>

@@ -8,7 +8,7 @@ To get a general idea of how to install TeamCity for evaluation, you can watch t
 <video href="5Akqy-vEFr0"
        title="TeamCity Installation and initial setup"/>
 
-To install TeamCity for the production setup, read [this section](installation.md).
+To install TeamCity for the production setup, read [this section](install-and-start-teamcity-server.md).
 
 >You can also use the TeamCity [Server](https://hub.docker.com/r/jetbrains/teamcity-server/) and [Build Agent](https://hub.docker.com/r/jetbrains/teamcity-agent/) Docker images.
 

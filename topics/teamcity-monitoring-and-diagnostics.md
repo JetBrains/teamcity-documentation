@@ -11,7 +11,7 @@ This tab provides a number of indicators helping you to detect and address issue
 
 ### CPU &amp; Memory Usage
 
-This section displays the data provided by the [TeamCity Memory Monitor](teamcity-memory-monitor.md), which regularly checks available memory and submits a warning if the [memory](reporting-issues.md#OutOfMemory+Problems) or [CPU usage](reporting-issues.md#Collecting+CPU+Profiling+Data+on+Server) grows too high. See also information on configuring [memory settings](installing-and-configuring-the-teamcity-server.md#Setting+Up+Memory+settings+for+TeamCity+Server) for the TeamCity server.
+This section displays the data provided by the [TeamCity Memory Monitor](teamcity-memory-monitor.md), which regularly checks available memory and submits a warning if the [memory](reporting-issues.md#OutOfMemory+Problems) or [CPU usage](reporting-issues.md#Collecting+CPU+Profiling+Data+on+Server) grows too high. See also information on configuring [memory settings](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) for the TeamCity server.
 
 Depending on your operating system and Java settings, the list of displayed properties below may vary.
 
@@ -44,7 +44,7 @@ This section allows restarting the server from the UI.
 
 ### Java Configuration
 
-This section informs you on the Java [installed on your server](installing-and-configuring-the-teamcity-server.md#Java+Installation) and the configured [JVM options](configuring-teamcity-server-startup-properties.md#JVM+Options).
+This section informs you on the Java [installed on your server](how-to.md#Install+Non-Bundled+Version+of+Java) and the configured [JVM options](server-startup-properties.md#JVM+Options).
 
 ## VCS Status
 
@@ -68,7 +68,7 @@ This tab allows you to view and download the available [TeamCity server logs](te
 
 ## Internal Properties
 
-This tab displays the TeamCity [server internal properties](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) and allows modifying them.
+This tab displays the TeamCity [server internal properties](server-startup-properties.md#TeamCity+Internal+Properties) and allows modifying them.
 
 ## Logging Presets
 
