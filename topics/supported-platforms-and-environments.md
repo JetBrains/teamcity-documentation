@@ -29,9 +29,9 @@ TeamCity Server is tested under the following operating systems:
 * Linux (Ubuntu, Debian, RedHat, SUSE, and others)
 * macOS
 * Windows 7/7x64
-* Windows Server 2008, 2012, 2016, 2019
+* Windows Server 2008, 2012, 2016, 2019, 2022
 * Server Core installation of Windows Server 2016
-* Windows 10 under the Tomcat 8.5+ web application server.
+* Windows 10 and 11 under the Tomcat 8.5+ web application server
    
 Reportedly works without known issues on:
 * Windows 7+
