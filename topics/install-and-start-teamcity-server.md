@@ -97,3 +97,7 @@ The official JetBrains TeamCity server Docker image.
 </td></tr>
 
 </table>
+
+## Java Installation
+
+TeamCity Server is a JVM web application that runs in a Tomcat application server. It requires a Java SE JRE installation to run. See what Java versions are [bundled with TeamCity](supported-platforms-and-environments.md#Supported+Java+Versions) or read [how to install a non-bundled version of Java](how-to.md#Install+Non-Bundled+Version+of+Java).
