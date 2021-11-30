@@ -212,7 +212,7 @@ With the VCS Trigger set up in the `pack setup` configuration, the whole build c
 
 __Changes from Dependencies__
  
-For a build configuration with snapshot dependencies, you can enable showing of changes from these dependencies transitively. The setting is called "_Show changes from snapshot dependencies_" and is available in the advanced options of the "Version Control Settings" step of the build configuration administration pages.
+For a build configuration with snapshot dependencies, you can enable showing of changes from these dependencies transitively. The setting is called "_[Show changes from snapshot dependencies](configuring-vcs-settings.md#show-changes-from-snapshot-dependencies)_" and is available in the advanced options of the "Version Control Settings" step of the build configuration administration pages.
 
 Enabling this setting affects pending changes of a build configuration, builds changes in builds history, the change log and issue log. Changes from dependencies are marked with ![deps_changes_marker.gif](deps_changes_marker.gif). For example:
 

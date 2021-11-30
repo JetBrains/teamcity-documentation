@@ -96,6 +96,8 @@ Description
 
 <td>
 
+<anchor name="show-changes-from-snapshot-dependencies"/>
+
 Show changes from snapshot dependencies
 
 </td>

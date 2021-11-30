@@ -68,11 +68,11 @@ From the __Changes__ tab you can:
 
 For each change on this page you can:
 * Explore the change in details
-* View which dependent build the changes come from or builds with snapshot dependencies with the  "Show changes from snapshot dependencies" option  enabled. On hovering over the ![link.png](link.png) icon, the number of the dependent build is displayed; clicking the link opens the __Сhanges__ tab of the dependent build.
-* Navigate to the __Change Details__ by clicking a changed file link
-* [Trigger a custom build](running-custom-build.md) with this change
-* Download patch
-* Download patch to your IDE
+* View which dependent build the changes come from or builds with snapshot dependencies with the "Show changes from snapshot dependencies" option enabled. On hovering over the ![link.png](link.png) icon, the number of the dependent build is displayed; clicking the link opens the __Сhanges__ tab of the dependent build.
+* Navigate to the __Change Details__ by clicking a changed file link.
+* [Trigger a custom build](running-custom-build.md) with this change.
+* Download patch.
+* Download patch to your IDE.
 * Review the change in an [external change viewer](external-changes-viewer.md), if configured by the administrator.
 {product="tc"}
 
