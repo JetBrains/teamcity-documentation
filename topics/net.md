@@ -84,7 +84,7 @@ The .NET runner requires the following software to be installed on a build agent
 
 <td>
 
-* Visual Studio (version 2010 or later)   
+* Visual Studio (version 2010 or later)
 
 </td>
 
@@ -592,11 +592,15 @@ TeamCity provides full support for the [`nuget push`](https://docs.microsoft.com
 
 ### Visual Studio Command-Line Mode
 
-Since TeamCity 2019.2.3, the .NET runner supports the Visual Studio command-line mode with the [`devenv`](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches) command.
+The .NET runner supports the Visual Studio command-line mode with the [`devenv`](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches) command.
 
 Devenv allows configuring custom options for the IDE, build, debug, and deploy projects from the command line using different [switches](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches#devenv-switch-syntax).
 
 `devenv` shares some of the common options with the basic CLI commands of the .NET runner (see the [corresponding section](#Basic+Commands) for more details).
+
+>Before running Visual Studio from TeamCity under a specific user, we highly recommended launching it in the UI mode from this user's account at least once. On the first start, VS usually displays pop-up dialogs which might hang a build running the `devenv` command. Once closed during the first launch, these dialogs won't be generated during the following launches in the devenv-mode and no hanging will occur.
+>
+{type="note"}
 
 Devenv-specific fields are:
 
