@@ -115,7 +115,7 @@
          <toc-element id="multinode-setup.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="installing-additional-plugins.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="installing-agent-tools.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="upgrading-teamcity-server-and-agents.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="upgrading-teamcity-server-and-agents.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="upgrade"/>
          <toc-element id="upgrading-dsl.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="upgrade-dsl"/>
          <toc-element id="upgrade-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>

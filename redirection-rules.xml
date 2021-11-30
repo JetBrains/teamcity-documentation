@@ -21,5 +21,8 @@
     <rule id="cleanup">
             <accepts>clean-up.html</accepts>
      </rule>
+    <rule id="upgrade">
+        <accepts>upgrade.html</accepts>
+    </rule>
 
 </rules>
