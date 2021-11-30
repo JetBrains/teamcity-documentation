@@ -19,6 +19,8 @@ TeamCity uses [Quartz](https://www.quartz-scheduler.org/) for working with cron 
 
 You can restrict a schedule trigger to start builds only if there are pending changes in your version control by enabling the __Trigger only if there are pending changes__ option. This option considers only newly detected pending changes: if there were pending changes before the Trigger was created, the build is not triggered.
 
+If the [_Show changes from snapshot dependencies_](configuring-vcs-settings.md#show-changes-from-snapshot-dependencies) option is enabled in the build configuration Version Control Settings, Schedule Trigger will also consider the changes from dependency configurations ([more](configuring-schedule-triggers.md#show-changes-from-dependencies)).
+
 <anchor name="ConfiguringScheduleTriggers-buildTriggerRules"/>
 
 ### VCS Trigger Rules
