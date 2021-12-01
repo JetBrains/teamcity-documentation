@@ -22,8 +22,6 @@
         <web-root>https://www.jetbrains.com/help</web-root>
         <og-twitter>@teamcity</og-twitter>
         <og-image>https://resources.jetbrains.com/storage/products/teamcity/img/meta/preview.png</og-image>
-        <color-preset>contrast</color-preset>
-        <primary-color>forest</primary-color>
         <download-page>https://www.jetbrains.com/teamcity/download/</download-page>
         <config-showDownloadButton>true</config-showDownloadButton>
     </variables>
