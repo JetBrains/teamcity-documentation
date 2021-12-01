@@ -45,7 +45,7 @@ The complete list of supported platforms and environments can be found [here](su
 
 This section describes the main TeamCity concepts. You can find a more comprehensive explanation in the [Introduction to TeamCity terminology](introduction-to-teamcity-terminology.md).
 
-The __TeamCity build system__ comprises a server and __build agents__.
+The __TeamCity build system__ comprises a __server__ and __build agents__.
 
 <table><tr>
 
@@ -108,7 +108,7 @@ __Project__
 
 <td>
 
-A TeamCity project corresponds to a software project or a specific version/release of a software project. A project is a collection of build configurations.
+A TeamCity project corresponds to a software project or a specific version/release of a software project. A project is a collection of _[build configurations](build-configuration.md)_.
 
 </td></tr><tr>
 
@@ -120,7 +120,7 @@ __Build configuration__
 
 <td>
 
-A combination of settings defining a build procedure. The settings include __VCS roots__, __build steps__, __build triggers__ described below.
+A combination of settings defining a build procedure. The settings include _[VCS roots](vcs-root.md)_, _[build steps](configuring-build-steps.md)_, _[build triggers](configuring-build-triggers.md)_ described below.
 
 </td></tr><tr>
 
@@ -156,7 +156,7 @@ __Build trigger__
 
 <td>
 
-A  rule which initiates a new build on certain events. For example, a [VCS trigger](configuring-vcs-triggers.md) will automatically start a new build each time TeamCity detects a __change__ in the configured [VCS roots](vcs-root.md). 
+A  rule which initiates a new build on certain events. For example, a [VCS trigger](configuring-vcs-triggers.md) will automatically start a new build each time TeamCity detects a _[change](change.md)_ in the configured VCS roots. 
 
 </td></tr><tr>
 
@@ -182,7 +182,7 @@ __Build__
 
 A CI/CD job executed on an agent. Consists of one or more steps that can do any service task: compile, test, deploy, produce reports, and so on.
 
-The terms _build_ can refer to both the actual process of building and the result of building. After the build process is triggered, it is put into the __[build queue](build-queue.md)__ and is started when there are agents available to run it. After the build is finished, the build agent sends __[build artifacts](build-artifact.md)__ to the server. 
+The terms _build_ can refer to both the actual process of building and the result of building. After the build process is triggered, it is put into the _[build queue](build-queue.md)_ and is started when there are agents available to run it. After the build is finished, the build agent sends _[build artifacts](build-artifact.md)_ to the server. 
 
 </td></tr><tr>
 
@@ -194,7 +194,7 @@ __Build queue__
 
 <td>
 
-A list of builds that were [triggered](configuring-build-triggers.md) and are waiting to be started. TeamCity will distribute them to [compatible](agent-requirements.md) build agents as soon as the agents become idle. A queued build is assigned to an agent at the moment when it is started on the agent; no preassignment is made while the build is waiting in the build queue.
+A list of builds that were triggered and are waiting to be started. TeamCity will distribute them to [compatible](agent-requirements.md) build agents as soon as the agents become idle. A queued build is assigned to an agent at the moment when it is started on the agent; no preassignment is made while the build is waiting in the build queue.
 
 
 </td></tr><tr>

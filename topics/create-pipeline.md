@@ -64,7 +64,7 @@ At this point, the first two builds are already chained together, and you can ru
 
 When you run any build from a chain, whether it's the last one or medium one, TeamCity gathers all the other chained builds into a sequence, according to their dependencies. As you saw on our sample chain's scheme, _TodoImage_ always runs after _TodoApp_; _Test1_ and _Test2_ start only after _TodoImage_ finishes and run in parallel to each other.
 
-Let's run the _TodoImage_ build with the __Run__ button. Go to __Project Home__ to see how TeamCity automatically runs a new _TodoApp_ build first and, after its finish, launches the following _TodoApp_ build. As a result of this chain, TeamCity will produce a Docker image according to the `Dockerfile`.
+Let's run the _TodoImage_ build with the __Run__ button. Go to __Project Home__ to see how TeamCity automatically runs a new _TodoApp_ build first and, after its finish, launches the following _TodoImage_ build. As a result of this chain, TeamCity will produce a Docker image according to the `Dockerfile`.
 
 >To speed up a chain, TeamCity can reuse already finished builds instead of running new ones. Read about this optimization mechanism [here](snapshot-dependencies.md#Suitable+Builds).
 
@@ -122,7 +122,7 @@ As _Test2_ contains a failing test, you will see that _TestReport_ will fail as 
 
 The build chain mechanism in TeamCity is very flexible and designed to satisfy the needs of every project. You will also notice that build chains are much easier to monitor than scattered builds. Detailed statuses of all chained builds are displayed in the __Dependencies__ tab of __Build Results__.
 
-Proceed with our getting started tutorials to learn about the other type of build configuration — _deployment_.
+Proceed with our getting started tutorials to learn about the other type of build configuration — _[deployment](deploy-build.md)_.
 
 ## Takeaway
 

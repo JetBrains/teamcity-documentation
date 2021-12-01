@@ -27,7 +27,7 @@ During the __installation__, you can:
    <img src="installAsWinServicepng.png" alt="TeamCity server and agent as Windows services"/>
 * configure ports:      
    * Server port: `8111` is the default port. Note that it can be already occupied by other applications on your machine. If this port is already in use, you can change it during the installation. In the example below, we set the port to `7777`.
-   * Agent port: `9090` is the default for incoming connections from the server. If this port is already in use, you will be prompted to change it by setting the `ownPort` property to a different value.   
+   * Agent port: `9090` is the default for incoming connections from the server. If this port is already in use, you can set the `ownPort` property to a different value to change the port.   
    <img src="configure-agent-port.png" alt="Configure a build agent port" width="450"/>
      
 If you have installed TeamCity as a Windows service, follow the [usual procedure](https://bit.ly/2yJF87R) of starting and stopping services.  
