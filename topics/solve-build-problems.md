@@ -2,9 +2,9 @@
 [//]: # (auxiliary-id: Solve Build Problems)
 
 Whenever you see a failed test or another problem in __[Build Results](view-build-results.md)__, you can assign it to any member of your team for further investigation. This guide explains how to:
-* assign and resolve investigations;
-* mute and unmute failed tests and build problems;
-* browse the history of investigations.
+* Assign and resolve investigations.
+* Mute and unmute failed tests and build problems.
+* Browse the history of investigations.
 
 You can perform these actions from any place the problem or test is visible in the TeamCity UI. For example, if you expand the failed build in the list of builds:
 

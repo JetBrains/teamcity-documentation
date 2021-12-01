@@ -45,15 +45,14 @@ There are several ways to create a project in TeamCity: automatically from a rep
 Congratulations! You are now ready to run the first build based on the just created build configuration. You can go straight to [running it](#Run+your+first+build) and [tweak its settings](#Tweak+your+build+configuration+settings) afterwards.
 
 ## Run your first build
-
-A fresh TeamCity server, installed as described [here](quick-setup-guide.md), has one registered [build agent](build-agent.md) that runs on the same computer. Agents are responsible for running TeamCity builds, so let's use it to run the first one, based on our recently created configuration.
+To run builds in TeamCity, you need [build agents](build-agent.md). A fresh TeamCity server, installed as described [here](quick-setup-guide.md), has one registered build agent that runs on the same computer. Let's use this agent to run a build on the sample project.
 {product="tc"}
 
 On the __Build Configuration Settings__ page, click __Run__ in the upper right corner:
 
 <img src="RunBuild.png" alt="Run a build" width="750"/>
 
-TeamCity will always assign a build to the first available and [suitable](agent-requirements.md) [build agent](build-agent.md).
+TeamCity will always assign a build to the first available and [suitable](agent-requirements.md) build agent.
 
 You will be automatically redirected to the __Build Results__ page, where you can watch the build progress and review its results upon the build finish. You can also access your build configuration settings from this page and edit them as necessary:
 
