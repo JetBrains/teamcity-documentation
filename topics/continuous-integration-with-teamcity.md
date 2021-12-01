@@ -156,7 +156,7 @@ __Build trigger__
 
 <td>
 
-A  rule which initiates a new build on certain events. For example, a [VCS trigger](configuring-vcs-triggers.md) will automatically start a new build each time TeamCity detects a _[change](change.md)_ in the configured VCS roots. 
+A rule which initiates a new build on certain events. For example, a _[VCS trigger](configuring-vcs-triggers.md)_ will automatically start a new build each time TeamCity detects a _[change](change.md)_ in the configured _VCS roots_. 
 
 </td></tr><tr>
 
@@ -182,7 +182,7 @@ __Build__
 
 A CI/CD job executed on an agent. Consists of one or more steps that can do any service task: compile, test, deploy, produce reports, and so on.
 
-The terms _build_ can refer to both the actual process of building and the result of building. After the build process is triggered, it is put into the _[build queue](build-queue.md)_ and is started when there are agents available to run it. After the build is finished, the build agent sends _[build artifacts](build-artifact.md)_ to the server. 
+The term _build_ can refer to both the actual process of building and the result of building. After the build process is triggered, it is put into the _[build queue](build-queue.md)_ and is started when there are agents available to run it. After the build is finished, the build agent sends _[build artifacts](build-artifact.md)_ to the server. 
 
 </td></tr><tr>
 
