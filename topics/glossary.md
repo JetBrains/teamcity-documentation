@@ -11,7 +11,7 @@ Agent cloud profile
 : A collection of settings according to which TeamCity starts virtual machines with build agents in the cloud. Configuring a cloud profile is a mandatory step of integrating TeamCity with the cloud providers: Amazon EC2, Kubernetes, VMWare vSphere, and others.
 {product="tcc"}
 
-Agent home directory
+Agent Home Directory
 : A directory where a build agent is installed. Its location can be changed manually. This directory contains the agent configuration file and other important files, such as scripts for starting and stopping the agent.
 
 Agentless build step
@@ -23,7 +23,7 @@ Agent pool
 Agent requirement
 : A rule that specifies if a given build configuration can run on a particular agent. Allows managing what agents are used for running each build configuration.
 
-Agent work directory
+Agent Work Directory
 : A directory on a build agent that contains default checkout directories. By default, it is the same as the Agent Home Directory.
 
 Already Fixed In
@@ -190,17 +190,17 @@ Run configuration policy
 ## S
 
 Snapshot dependency
-:  A dependency between build configurations that allows assigning multiple builds to the same source revision (commit) so the same project files are used on all the building stages.
+: A dependency between build configurations that allows assigning multiple builds to the same source revision (commit) so the same project files are used on all the building stages.
 
 Super-user
 : The super-user login allows accessing the server UI with the System Administrator permissions. It is useful when the administrator forgot the credentials or needs to fix authentication-related settings. The login is performed using an authentication token that can be found in the server logs.
 
 ## T
 
-TeamCity data directory
+TeamCity Data Directory
 : The directory on the file system used by the TeamCity server to store configuration, build results, and current operation files. This directory is the primary storage for all the configuration settings and holds the data critical to the TeamCity installation.
 
-TeamCity home directory
+TeamCity Home Directory
 : The directory where the TeamCity server application files and libraries were unpacked during the TeamCity installation.
 
 ## U
