@@ -43,6 +43,9 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 * __C# Script builds may fail if .NET profiling is enabled__  
   Running a build with [C# Script](c-script.md) steps on .NET with enabled [profiling](https://docs.microsoft.com/en-us/dotnet/core/run-time-config/debugging-profiling) may result in the "_Failed to create CoreCLR, HRESULT: 0x80004005_" error. This issue can occur only if .NET is launched inside a Docker container or in Windows Subsystem for Linux (WSL).  
   To work around it, add an [environment variable](configuring-build-parameters.md#Environment+Variables) `COMPlus_EnableDiagnostics=0` to your build configuration.
+* __TeamCity fails to initialize a cloud client when creating an Amazon EC2 spot fleet profile__  
+  When creating a [cloud profile](agent-cloud-profile.md) for an Amazon EC2 spot fleet, users might get the "_Failed to initialize cloud client 'amazon'. An exception occurred while parsing config._" error. This error only occurs if the "_Specify instance attributes that match your compute requirements_" option is enabled in the current fleet's _[instance type requirements](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html#abs-create-spot-fleet)_.  
+  To work around this issue, please remove the `InstanceRequirements` block from the fleet's JSON configuration file before uploading it to TeamCity. This issue will be fixed in TeamCity 2022.1.
 
 ### Canceled bidirectional agent-server communication protocol
 
