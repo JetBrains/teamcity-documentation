@@ -1,6 +1,15 @@
 [//]: # (title: Third-Party License Agreements)
 [//]: # (auxiliary-id: Third-Party License Agreements)
-The following are two alphabetical lists of third\-party libraries distributed with TeamCity. See also the `TeamCity Home/licenses` directory.
+
+>This document is obsolete. See the relevant list of third-party software used in TeamCity on our [website](https://www.jetbrains.com/legal/third-party-software/?product=TC).
+> 
+{product="tc"}
+
+>This document is obsolete. See the relevant list of third-party software used in TeamCity on our [website](https://www.jetbrains.com/legal/third-party-software/?product=TCC).
+>
+{product="tcc"}
+
+The following are two alphabetical lists of third-party libraries distributed with TeamCity. See also the `TeamCity Home/licenses` directory.
 
 ## Libraries
 

@@ -23,7 +23,7 @@
     </toc-element>
     <toc-element id="teamcity-cloud-subscription-and-licensing.md" show-structure-for="chapter" show-structure-depth="4">
         <toc-element id="teamcity-release-cycle.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="third-party-license-agreements.md"/>
+        <toc-element toc-title="Third-Party Software and Licenses" href="https://www.jetbrains.com/legal/third-party-software/?product=TCC"/>
     </toc-element>
     <toc-element toc-title="Installation and Upgrade">
         <toc-element id="get-your-teamcity-cloud-instance.md" show-structure-for="chapter" show-structure-depth="4"/>

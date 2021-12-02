@@ -26,7 +26,7 @@ The _TeamCity Home Directory_ or the _TeamCity Installation Directory_ is the di
     * `server.xml` — the main server configuration file
 * __`/devPackage`__ — the [bundled development package](https://plugins.jetbrains.com/docs/teamcity/bundled-development-package.html) that can be used to start developing TeamCity plugins.
 * __`/jre`__ — the bundled JRE installation directory
-* __`/licenses`__ — licenses for the [third-party libraries](third-party-license-agreements.md) distributed with TeamCity
+* __`/licenses`__ — licenses for the [third-party libraries](https://www.jetbrains.com/legal/third-party-software/?product=TC) distributed with TeamCity
 * __`/logs`__ — contains the [TeamCity server logs](teamcity-server-logs.md)
 * __`/temp`__ — temporary directory
 * __`/webapps`__ — TeamCity web application data
