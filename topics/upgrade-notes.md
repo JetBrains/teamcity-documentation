@@ -3,6 +3,10 @@
 
 ## Changes from 2021.2 to 2021.2.1
 
+* __.NET build runner counts parametrized tests as a single test__  
+  If parametrized .NET tests are launched with the `test` command of the [.NET](net.md) runner, TeamCity will show them as a single test with multiple runs, while previously it counted them separately and displayed the parameters' values per test in the __Tests__ tab.  
+  To revert to the previous behavior, please download the [fixed version of our .NET plugin](https://youtrack.jetbrains.com/issue/TW-74176#focus=Comments-27-5585620.0-0) and install it as described [here](installing-additional-plugins.md). This issue will be fixed in TeamCity 2021.2.2.
+
 ### Bundled tools updates
 {id="bundled-tools-updates-202121"}
 
