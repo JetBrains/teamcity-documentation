@@ -22,7 +22,6 @@
          </toc-element>
       </toc-element>
       <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4">
-         <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
