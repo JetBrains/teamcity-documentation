@@ -69,7 +69,7 @@ __Build agent__
 
 <td>
 
-A piece of software that actually executes a build process. It is installed and configured separately from the TeamCity server, i.e. the agent can be installed on a separate machine (physical or virtual, and it can run the same operating system (OS) as the server or a different OS.  
+A piece of software that actually executes a build process. It is installed and configured separately from the TeamCity server, that is the agent can be installed on a separate machine (physical or virtual, and it can run the same operating system (OS) as the server or a different OS.  
 Build agents in TeamCity can have different platforms, operating systems, and preconfigured environments that you may want to test your software on. Different types of tests can be run under different platforms simultaneously so the developers get faster feedback and more reliable testing results.
 {product="tc"}
 
@@ -132,7 +132,7 @@ __VCS root__
 
 <td>
 
-A collection of version control settings (paths to sources, username, password, [checkout mode](vcs-checkout-mode.md) and other settings) that defines how TeamCity communicates with a version control (SCM) system to monitor changes and get sources for a build.
+A collection of version control settings (paths to sources, username, password, _[checkout mode](vcs-checkout-mode.md)_ and other settings) that defines how TeamCity communicates with a version control (SCM) system to monitor changes and get sources for a build.
 
 </td></tr><tr>
 
@@ -144,7 +144,7 @@ __Build step__
 
 <td>
 
-A task to be executed. Each build step is represented by a [build runner](build-runner.md) providing integration with a specific build tool (like Ant, Gradle, MSBuild, and so on), a testing framework (for example, NUnit), or a code analysis engine. Thus, in a single build you can have several steps and sequentially invoke test tools, code coverage, and, for instance, compile your project.
+A task to be executed. Each build step is represented by a _[build runner](build-runner.md)_ providing integration with a specific build tool (like Ant, Gradle, MSBuild, and so on), a testing framework (for example, NUnit), or a code analysis engine. Thus, in a single build you can have several steps and sequentially invoke test tools, code coverage, and, for instance, compile your project.
 
 </td></tr><tr>
 
@@ -194,7 +194,7 @@ __Build queue__
 
 <td>
 
-A list of builds that were triggered and are waiting to be started. TeamCity will distribute them to [compatible](agent-requirements.md) build agents as soon as the agents become idle. A queued build is assigned to an agent at the moment when it is started on the agent; no preassignment is made while the build is waiting in the build queue.
+A list of builds that were triggered and are waiting to be started. TeamCity will distribute them to _[compatible](agent-requirements.md)_ build agents as soon as the agents become idle. A queued build is assigned to an agent at the moment when it is started on the agent; no preassignment is made while the build is waiting in the build queue.
 
 
 </td></tr><tr>
