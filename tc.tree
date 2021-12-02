@@ -21,8 +21,7 @@
             <toc-element id="jenkins-to-teamcity-migration-guidelines.md" show-structure-for="chapter" show-structure-depth="4"/>
          </toc-element>
       </toc-element>
-      <toc-element id="concepts.md" hidden="true"/>
-      <toc-element toc-title="Concepts">
+      <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4">
          <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -459,9 +458,9 @@
    <toc-element id="what-s-new-in-teamcity-2020-1.md" hidden="true"/>
    <toc-element toc-title="Other resources">
       <toc-element id="teamcity-cloud.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-      <toc-element toc-title="TeamCity Cloud Help" href="https://www.jetbrains.com/help/teamcity/cloud/teamcity-cloud-documentation.html"/>
-      <toc-element toc-title="TeamCity Plugin Development Help" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
-      <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/tc-welcome.html"/>
+      <toc-element toc-title="TeamCity Cloud Documentation" href="https://www.jetbrains.com/help/teamcity/cloud/teamcity-cloud-documentation.html"/>
+      <toc-element toc-title="TeamCity Plugin Development Documentation" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
+      <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Documentation" href="https://www.jetbrains.com/help/teamcity/ij-addin/tc-welcome.html"/>
       <toc-element id="documentation-for-previous-versions.md"/>
       <toc-element toc-title="TeamCity Roadmap" href="https://www.jetbrains.com/teamcity/roadmap/"/>
       <toc-element toc-title="TeamCity Blog" href="https://blog.jetbrains.com/teamcity/"/>

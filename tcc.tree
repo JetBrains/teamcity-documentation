@@ -36,8 +36,7 @@
             <toc-element id="install-multiple-agents-on-one-machine.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
     </toc-element>
-    <toc-element id="concepts.md" hidden="true"/>
-    <toc-element toc-title="Concepts">
+    <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4">
         <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -375,7 +374,7 @@
         </toc-element>
     </toc-element>
     <toc-element toc-title="Other resources">
-        <toc-element toc-title="TeamCity On-Premises Help" href="https://www.jetbrains.com/help/teamcity/teamcity-documentation.html"/>
+        <toc-element toc-title="TeamCity On-Premises Documentation" href="https://www.jetbrains.com/help/teamcity/teamcity-documentation.html"/>
         <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/tc-welcome.html"/>
         <toc-element toc-title="TeamCity Roadmap" href="https://www.jetbrains.com/teamcity/roadmap/"/>
         <toc-element toc-title="TeamCity Blog" href="https://blog.jetbrains.com/teamcity/"/>

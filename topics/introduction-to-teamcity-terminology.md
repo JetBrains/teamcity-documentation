@@ -1,7 +1,9 @@
-[//]: # (title: Introduction to TeamCity Terminology)
-[//]: # (auxiliary-id: Introduction to TeamCity Terminology)
+[//]: # (title: Concepts)
+[//]: # (auxiliary-id: Introduction to TeamCity Terminology;Concepts)
 
 The following guide explains the main TeamCity terms and concepts. For a quick reference, see also [Basic TeamCity concepts](continuous-integration-with-teamcity.md#Basic+TeamCity+concepts).
+
+>Use the documentation tree in the sidebar to navigate between the articles of this section — they describe each concept in detail.
 
 ## TeamCity Object Hierarchy
 
