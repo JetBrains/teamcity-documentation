@@ -11,7 +11,7 @@ Agent cloud profile
 : A collection of settings according to which TeamCity starts virtual machines with build agents in the cloud. Configuring a cloud profile is a mandatory step of integrating TeamCity with the cloud providers: Amazon EC2, Kubernetes, VMWare vSphere, and others.
 {product="tcc"}
 
-Agent Home Directory
+Agent home directory
 : A directory where a build agent is installed. Its location can be changed manually. This directory contains the agent configuration file and other important files, such as scripts for starting and stopping the agent.
 
 Agentless build step
@@ -23,11 +23,14 @@ Agent pool
 Agent requirement
 : A rule that specifies if a given build configuration can run on a particular agent. Allows managing what agents are used for running each build configuration.
 
-Agent Work Directory
+Agent work directory
 : A directory on a build agent that contains default checkout directories. By default, it is the same as the Agent Home Directory.
 
 Already Fixed In
 : The prompt in the overview of a failed build that shows the build where the currently failed test was successful and that run _after_ the build with the initial test failure.
+
+Artifact dependency
+: A dependency between build configurations that allows sending artifacts produced by one build to another build.
 
 Authentication module
 : A chunk of functionality responsible for implementing a certain authentication technology in TeamCity. TeamCity has two types of authentication modules: Credentials Authentication Modules and HTTP Authentication Modules.
@@ -55,6 +58,9 @@ Build configuration
 Build configuration template
 : A predefined collection of settings that serves as a base for creating similar build configurations.
 
+Build feature
+: A piece of extra functionality available to a build (it could be a performance monitor, a reporting tool, or a support for pull requests).
+
 Build grid
 : A pool of agents used by TeamCity to simultaneously create builds of multiple projects. A build grid employs currently unused resources from multiple computers, any of which can run multiple builds and/or tests at the same time, for single or multiple projects across your company.
 
@@ -73,8 +79,14 @@ Build queue
 Build runner
 : A TeamCity module that allows integration with a specific tool: Command Line, .NET, Kotlin Script, Gradle, and so on. Each build step defines the runner that will be used to execute it.
 
+Build step
+: A task to be executed by a build runner. A single build configuration can include multiple steps.
+
 Build tag
 : A label that can be assigned to a build. Labels can be used for organizing the history of builds, easier search and navigation, and so on.
+
+Build trigger
+: A rule that initiates a new build on a certain event (for example, on a change in the configured VCS root). The build is put into the build queue and is started when there are agents available to run it.
 
 Build working directory
 : The directory set as current for the build process. By default, this is the same directory as the build checkout directory.
@@ -177,15 +189,18 @@ Run configuration policy
 
 ## S
 
+Snapshot dependency
+:  A dependency between build configurations that allows assigning multiple builds to the same source revision (commit) so the same project files are used on all the building stages.
+
 Super-user
 : The super-user login allows accessing the server UI with the System Administrator permissions. It is useful when the administrator forgot the credentials or needs to fix authentication-related settings. The login is performed using an authentication token that can be found in the server logs.
 
 ## T
 
-TeamCity Data Directory
+TeamCity data directory
 : The directory on the file system used by the TeamCity server to store configuration, build results, and current operation files. This directory is the primary storage for all the configuration settings and holds the data critical to the TeamCity installation.
 
-TeamCity Home Directory
+TeamCity home directory
 : The directory where the TeamCity server application files and libraries were unpacked during the TeamCity installation.
 
 ## U
