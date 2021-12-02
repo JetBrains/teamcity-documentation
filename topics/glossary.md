@@ -29,6 +29,9 @@ Agent Work Directory
 Already Fixed In
 : The prompt in the overview of a failed build that shows the build where the currently failed test was successful and that run _after_ the build with the initial test failure.
 
+Artifact dependency
+: A dependency between build configurations that allows sending artifacts produced by one build to another build.
+
 Authentication module
 : A chunk of functionality responsible for implementing a certain authentication technology in TeamCity. TeamCity has two types of authentication modules: Credentials Authentication Modules and HTTP Authentication Modules.
 
@@ -55,6 +58,9 @@ Build configuration
 Build configuration template
 : A predefined collection of settings that serves as a base for creating similar build configurations.
 
+Build feature
+: A piece of extra functionality available to a build (it could be a performance monitor, a reporting tool, or a support for pull requests).
+
 Build grid
 : A pool of agents used by TeamCity to simultaneously create builds of multiple projects. A build grid employs currently unused resources from multiple computers, any of which can run multiple builds and/or tests at the same time, for single or multiple projects across your company.
 
@@ -73,8 +79,14 @@ Build queue
 Build runner
 : A TeamCity module that allows integration with a specific tool: Command Line, .NET, Kotlin Script, Gradle, and so on. Each build step defines the runner that will be used to execute it.
 
+Build step
+: A task to be executed by a build runner. A single build configuration can include multiple steps.
+
 Build tag
 : A label that can be assigned to a build. Labels can be used for organizing the history of builds, easier search and navigation, and so on.
+
+Build trigger
+: A rule that initiates a new build on a certain event (for example, on a change in the configured VCS root). The build is put into the build queue and is started when there are agents available to run it.
 
 Build working directory
 : The directory set as current for the build process. By default, this is the same directory as the build checkout directory.
@@ -176,6 +188,9 @@ Run configuration policy
 : A policy that allows selecting specific build configurations you want a build agent to run. By default, build agents run all compatible build configurations, and this is not always desirable — in this case, this policy lets you limit the allowed set in each agent's details.
 
 ## S
+
+Snapshot dependency
+: A dependency between build configurations that allows assigning multiple builds to the same source revision (commit) so the same project files are used on all the building stages.
 
 Super-user
 : The super-user login allows accessing the server UI with the System Administrator permissions. It is useful when the administrator forgot the credentials or needs to fix authentication-related settings. The login is performed using an authentication token that can be found in the server logs.
