@@ -310,15 +310,17 @@ This type of connection can be used for:
 Before configuring this connection, you need to create a dedicated application in JetBrains Space:
 1. Go to __Administration | Applications__ and click __New application__.
 2. Enter a convenient name and save the application.
-3. Open the app's __Requested rights__ tab and enable the required permissions:
+3. Go to the app's __Authorization__ tab and click __Configure requirements__ under the __In-context Authorization__ section. Enter the name of the Space project you are about to access from TeamCity.
+4. Now, you need to set permissions that will be granted to the app in this project. Click __Configure__ and enable the following permissions:
    * General access / authentication:
-      * _Members | View member profile_
+      * _Members | View member profile_ (you might need a server administrator's approval for that)
    * Required for Commit Status Publisher:
-      * _Git Repositories | Report external check status_
-4. Open the __Authentication__ tab and enable _Client Credentials Flow_. User authentication and creating projects/configurations from a repository require enabling _Authorization Code Flow_ as well.
-5. In the __Authentication__ tab, enter your TeamCity server's URL as the redirect URI.  
-   Ensure that your TeamCity server can always connect to JetBrains Space. Specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
-6. In the __Authentication__ tab, copy the app's _Client ID_ and _Client secret_.
+      * _Git Repositories | Report external check status_ (if you are the project's administrator, you can approve this permission right in this __Authorization__ tab)
+5. Go back to the app's __Overview__ and open the __Authentication__ tab.
+6. Enable _Client Credentials Flow_.
+7. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL as the redirect URI.  
+   To ensure that your TeamCity server can always connect to JetBrains Space, specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
+8. Copy the app's _Client ID_ and _Client secret_.
 
 >Note that when you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you (or the user who created the application in Step 1) are listed as a member.
 > 
