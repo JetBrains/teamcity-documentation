@@ -1,27 +1,41 @@
 [//]: # (title: Agent Requirements)
 [//]: # (auxiliary-id: Agent Requirements)
 
-Agent requirements are used in TeamCity to specify whether a [build configuration](build-configuration.md) can run on a particular [build agent](build-agent.md) besides [agent pools](configuring-agent-pools.md) and specified build configuration restrictions.
+_Agent requirements_ are special conditions that define whether a [build configuration](build-configuration.md) can run on a particular [build agent](build-agent.md). Together with grouping by [agent pools](configuring-agent-pools.md), they give you a flexible control over how builds are distributed to agents.
+
+To create an explicit agent requirement for a given build configuration, go to __Build Configuration Settings | Agent Requirements__ and click __Add new requirement__. Each requirement represents a conditional rule for a certain parameter. While you are entering a parameter name or value, TeamCity will show you related suggestions.
+
+To temporarily disable or delete a requirement, use its context menu.
+
+>You can also set requirements to agents in the scope of each build step.  
+>In a step's settings, add a [parametrized execution condition](build-step-execution-conditions.md) that defines a requirement to build agents. This way, this step will be executed during a build run only if the current agent satisfies this condition.
 
 ## Agent Requirements Based on Environment Variables and Properties
 
-When a build agent registers on the TeamCity server, it provides information about its configuration, including its environment variables, system properties, and additional settings specified in the `buildAgent.properties` file.
+When a build agent registers on the TeamCity server, it provides information about its configuration, including its environment variables, system properties, and additional settings specified in the `buildAgent.properties` file. You can use these parameters to define agent requirements.
 
-The administrator can specify required environment variables and system properties for a build configuration on the __Build Configuration Settings | Agent Requirements__ page. For instance, if a particular build configuration must run on a build agent running Windows, the administrator specifies this by adding a requirement that the `teamcity.agent.jvm.os.name` system property on the build agent must contain the `Windows` string.
+For example, if the current build configuration must run only on a Windows agent, add the following rule:
+* Parameter name: `teamcity.agent.jvm.os.name`
+* Condition: `equals`
+* Value: `Windows`
 
-If the properties and environment variables on the build agent do not fulfill the requirements specified by the build configuration, then the build agent is incompatible with this build configuration. The __Agent Requirements__ page lists both compatible and incompatible agents. Multiple agent requirements for a single parameter can be added. The conditions are treated as 'and' to determine compatible agents. 
+After this requirement is created, TeamCity will check the value of the `jvm.os.name` system property on all active agents. If it does not equal `Windows` on a particular agent, this agent will be marked as incompatible with the current build configuration.
 
-It is possible to disable a configured requirement using the corresponding option in the requirements list.
+Both compatible and incompatible agents are listed in __Build Configuration Settings | Agent Requirements__.
 
-Sometimes the build configuration may become incompatible with a build agent if the build runner for this configuration cannot be initialized on the build agent. For instance, .NET build runners do not initialize on UNIX systems.
+You can add multiple agent requirements for a single parameter. The agent will be considered compatible only if it satisfies all these requirements.
+
+>If you are not sure why a certain requirement is not met, contact a responsible project or system administrator who created this requirement.
 
 ## Implicit Requirements
 
-Any reference (a name enclosed in `%` characters) to an unknown parameter is considered an _implicit requirement_, which means that the build will only run if:
-* an agent provides this parameter,
-* or the parameter is defined on the build configuration (or project) level. The priority of the build configuration's value is higher than of the value defined on an agent.
+Any [reference](configuring-build-parameters.md#Parameter+References) (a name enclosed in `%` characters) to an unknown parameter within a build is considered an _implicit requirement_. The build will only run on an agent if:
+* The agent provides this parameter, or
+* The parameter is defined on the build configuration (or project) level.
 
-For instance, if you define a build runner parameter as a reference to another property: `%\env.JDK_16%/lib/*.jar`, this will implicitly add an agent requirement for the referenced property: that is, `env.JDK_16` must be defined. To define such properties on the agent, you can:
+The priority of the build configuration's value is higher than of the value defined on the agent.
+
+For example, if you define a build runner parameter as a reference to another property: `%\env.JDK_16%/lib/*.jar`, this will implicitly add an agent requirement for the referenced property: that is, `env.JDK_16` must be defined. To define such properties on the agent, you can:
 * Specify them in the [`buildAgent.properties`](configure-agent-installation.md) file.
 * Set the [environment variable](predefined-build-parameters.md#Agent+Environment+Variables) `JDK_16` on the build agent.
 * Specify the value on the __Parameters__ page of a build configuration (or in the __Project Settings__). The same value of the property will be used for all build agents.
