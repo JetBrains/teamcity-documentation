@@ -61,6 +61,13 @@ To launch an [instance with the IAM Role](#Configuring+an+Amazon+EC2+cloud+profi
 * `iam:ListInstanceProfiles`
 * `iam:PassRole`
 
+To use [encrypted EBS volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html), the following additional permissions are required:
+* `kms:CreateGrant`
+* `kms:Decrypt`
+* `kms:DescribeKey`
+* `kms:GenerateDataKeyWithoutPlainText`
+* `kms:ReEncrypt`
+
 An example of custom IAM policy definition (allows all EC2 operations from a specified IP address):
 
 ```Shell
