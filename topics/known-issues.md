@@ -343,7 +343,7 @@ Problems common to TeamCity Docker container images.
 * On Windows 10, the memory allocated per container is 1GB by default. To increase this value, use the following memory options:
 
     ```Shell
-        docker run ... -m 2GB -e TEAMCITY_SERVER_MEM_OPTS="-Xmx2g -XX:ReservedCodeCacheSize=350m"
+        docker run ... -m 6GB -e TEAMCITY_SERVER_MEM_OPTS="-Xmx3g -XX:ReservedCodeCacheSize=350m"
         
     ```
 
