@@ -42,7 +42,7 @@ For older versions of GitLab, use the GitLab URL of the format `http[s]://<hostn
 To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111). Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111), are rejected by the Bitbucket API.
 {product="tc"}
 
-In the Commit Status Publisher settings, specify a username and password (or token) for authentication. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password.
+In the Commit Status Publisher settings, specify a username and [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) (or token) for authentication. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password.
 
 ### Bitbucket Server
 
