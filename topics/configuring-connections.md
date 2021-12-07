@@ -322,9 +322,7 @@ Before configuring this connection, you need to create a dedicated application i
    To ensure that your TeamCity server can always connect to JetBrains Space, specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
 8. Copy the app's _Client ID_ and _Client secret_.
 
->Note that when you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you (or the user who created the application in Step 1) are listed as a member.
-> 
-{type="note"}
+__Note__: When you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you (or the user who created the application in Step 1) are listed as a member.
 
 Now you can return to TeamCity, add a new JetBrains Space connection, and enter the following connection parameters:
 * URL of the Space server
