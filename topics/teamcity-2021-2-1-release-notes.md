@@ -96,4 +96,4 @@ __29 November 2021__
 
 ### Security Problem
 
-6 security problems have been fixed.
+7 security problems have been fixed.
