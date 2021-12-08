@@ -384,7 +384,7 @@ To address it, upgrade your host machine to Windows Server 2019 / Windows 10 180
 
 When Docker is starting Windows containers with __process isolation__, it uses a Windows user account which lacks the write access to the directory with Docker volumes. In this case, build agents may fail to start due to the "_Access to the path is denied_" or "_Access is denied_" error.
 
-To resolve this issue, specify a dedicated volume mapping for the `..\TeamCity\temp` directory in the `docker run` command. We also suggest ensuring that sufficient amount of resources is allocated to this process.
+To resolve this issue, specify a dedicated volume mapping for the `..\TeamCity\temp` directory in the `docker run` command. We also suggest ensuring that a sufficient amount of resources is allocated to this process.
 
 ```Shell
 docker run -it --memory="6g" --cpus=4 -e TEAMCITY_SERVER_MEM_OPTS="-Xmx3g -XX:MaxPermSize=270m -XX:ReservedCodeCacheSize=450m" --name teamcity-server-instance
