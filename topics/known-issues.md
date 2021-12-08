@@ -343,7 +343,7 @@ Problems common to TeamCity Docker container images.
 * On Windows 10, the memory allocated per container is 1GB by default. To increase this value, use the following memory options:
 
     ```Shell
-        docker run ... -m 6GB -e TEAMCITY_SERVER_MEM_OPTS="-Xmx3g -XX:ReservedCodeCacheSize=350m"
+        docker run ... -m 6GB --cpus=4 -e TEAMCITY_SERVER_MEM_OPTS="-Xmx3g -XX:ReservedCodeCacheSize=450m"
         
     ```
 
@@ -384,7 +384,18 @@ To address it, upgrade your host machine to Windows Server 2019 / Windows 10 180
 
 When Docker is starting Windows containers with __process isolation__, it uses a Windows user account which lacks the write access to the directory with Docker volumes. In this case, build agents may fail to start due to the "_Access to the path is denied_" or "_Access is denied_" error.
 
-To resolve this issue, grant the "Full control" permission to the "Authenticated Users" group for the `%\PROGRAMDATA%\docker\volumes` directory.
+To resolve this issue, specify a dedicated volume mapping for the `..\TeamCity\temp` directory in the `docker run` command. We also suggest ensuring that sufficient amount of resources is allocated to this process.
+
+```Shell
+docker run -it --memory="6g" --cpus=4 -e TEAMCITY_SERVER_MEM_OPTS="-Xmx3g -XX:MaxPermSize=270m -XX:ReservedCodeCacheSize=450m" --name teamcity-server-instance
+    -v <path-to-data-directory>:C:/ProgramData/JetBrains/TeamCity 
+    -v <path-to-logs-directory>:C:/TeamCity/logs  
+    -v <path-to-temp-directory>:C:/TeamCity/temp  
+    -p <port-on-host>:8111 jetbrains/teamcity-server
+
+```
+
+Alternatively, you can grant the "Full control" permission to the "Authenticated Users" group for the `%\PROGRAMDATA%\docker\volumes` directory.
 
 ## dotCover known issues
 
