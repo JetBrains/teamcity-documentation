@@ -50,7 +50,7 @@ SBT installation mode
 
 <td>
 
-When the default `<Auto>` option is selected, the latest SBT version will be installed on every TeamCity agent your build will be running. To specify an existing installation, use the `<Custom>` mode. The `sbt-launch.jar` from the `\bin` directory of the SBT home will be launched.
+When the default `<Auto>` option is selected, the bundled SBT version will be installed on every TeamCity agent your build will be running. To specify an existing installation, use the `<Custom>` mode. The `sbt-launch.jar` from the `\bin` directory of the SBT home will be launched.
 
 </td>
 </tr>
