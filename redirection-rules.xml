@@ -24,5 +24,8 @@
     <rule id="upgrade">
         <accepts>upgrade.html</accepts>
     </rule>
+    <rule id="set-up-external-database">
+        <accepts>setting-up-external-database.html</accepts>
+    </rule>
 
 </rules>

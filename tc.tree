@@ -104,7 +104,7 @@
                <toc-element id="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
          </toc-element>
-         <toc-element id="set-up-external-database.md" show-structure-for="chapter" show-structure-depth="4">
+         <toc-element id="set-up-external-database.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="set-up-external-database">
             <toc-element id="migrating-to-external-database.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="setting-up-teamcity-with-ms-sql-server.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configuring-utf8-character-set-for-mysql.md" show-structure-for="chapter" show-structure-depth="4"/>
