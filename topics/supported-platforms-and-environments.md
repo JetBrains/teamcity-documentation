@@ -109,35 +109,16 @@ Hardware
 
 <td>
 
-Linux (small)
+Linux (Small)
 
 </td>
 
 <td>
 
-* CPU: 2 vCPU (Intel Xeon (Cascade Lake))
-* RAM: 4 GB ram
-* SSD: 20 GB
-* EBS volume (storage): 100 GB
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-
-Linux (medium)
-
-</td>
-
-<td>
-
-* CPU: 4 vCPU (Intel Xeon (Cascade Lake))
-* RAM: 8 GB ram
-* SSD: 100 GB
-* EBS volume (storage): 100 GB
+* CPU: 2 vCPU (Intel Xeon - Cascade Lake)
+* RAM: 4 GB
+* SSD storage (for running builds): 50 GB
+* Root EBS volume: 100 GB
 
 </td>
 
@@ -147,16 +128,16 @@ Linux (medium)
 
 <td>
 
-Linux (large)
+Linux (Medium)
 
 </td>
 
 <td>
 
-* CPU: 8 vCPU (Intel Xeon (Cascade Lake))
-* RAM: 16 GB ram
-* SSD: 200 GB
-* EBS volume (storage): 100 GB
+* CPU: 4 vCPU (Intel Xeon - Cascade Lake)
+* RAM: 8 GB
+* SSD storage (for running builds): 100 GB
+* Root EBS volume: 100 GB
 
 </td>
 
@@ -166,16 +147,54 @@ Linux (large)
 
 <td>
 
-Windows (medium)
+Linux (Large)
 
 </td>
 
 <td>
 
-* CPU: 4 vCPU (Intel Xeon (Cascade Lake))
-* RAM: 8 GB ram
-* SSD: 100 GB
-* EBS volume (storage): 100 GB
+* CPU: 8 vCPU (Intel Xeon - Cascade Lake)
+* RAM: 16 GB
+* SSD storage (for running builds): 200 GB
+* Root EBS volume: 100 GB
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Linux (XLarge)
+
+</td>
+
+<td>
+
+* CPU: 16 vCPU (Intel Xeon - Cascade Lake)
+* RAM: 32 GB
+* SSD storage (for running builds): 400 GB
+* Root EBS volume: 100 GB
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Windows (Medium)
+
+</td>
+
+<td>
+
+* CPU: 4 vCPU (Intel Xeon - Cascade Lake)
+* RAM: 8 GB
+* SSD storage (for running builds): 100 GB
+* Root EBS volume: 100 GB
 
 </td>
 
