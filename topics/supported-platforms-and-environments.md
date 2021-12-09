@@ -87,8 +87,6 @@ You can combine agents of both types in your installation. Read more information
 
 These agents are automatically maintained by JetBrains and don't require to be installed or configured by a customer. There are multiple types of these agents:
 
-
-
 <table>
 
 <tr>
