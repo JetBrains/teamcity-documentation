@@ -529,24 +529,17 @@ You can use these parameters in the settings of a build configuration or in buil
 ## Pull Requests workflow example
 
 Let's say you have the following environment set up:
-* public GitHub repository `web-app` with the default branch `master`
-* TeamCity project
-    * build configuration `web-app` that uses files from the `web-app` repository to build a web application
+* Public GitHub repository `web-app` with the default branch `master`.
+* TeamCity project.
+    * Build configuration `web-app` that uses files from the `web-app` repository to build a web application.
 
 The members of your [organization](https://help.github.com/en/articles/about-organizations) propose changes to the sources by sending pull requests to the `master` branch, and you want these changes to be automatically built and tested in TeamCity before you merge them.   
 TeamCity can detect each pull request sent to the `master` branch and build the web application based on the updated sources.
 
-<note>
-
-The `web-app` build configuration must have a [VCS trigger](configuring-vcs-triggers.md) enabled.
-
-</note>
-
-To configure the described pipeline for the `web-app` build configuration in TeamCity:
+To configure the described workflow for the `web-app` build configuration in TeamCity:
 1. __Add a [VCS root](vcs-root.md) to the build configuration__:   
    * Go to __Build Configuration Settings | Version Control Settings__ and click __Attach VCS root__.
    * Configure the root parameters:
-   
       - __Type of VCS__: _Git_
       - __VCS root name__: _\<unique_root_name\>_
       - __Fetch URL__: _\<GitHub_repository_URL\>_
@@ -563,21 +556,22 @@ To configure the described pipeline for the `web-app` build configuration in Tea
         * __Pull Requests filtering__:
            * __By authors__: _Members of the same organization_
            * __By target branch__: leave blank to apply no filters and monitor all new pull requests in the repository, or explicitly specify the target branch (in this example, _`master`_)
-   * Test the connection and, if successful, click __Save__.   
+   * Test the connection and, if successful, click __Save__.
+3. Add a [VCS trigger](configuring-vcs-triggers.md) to the build configuration.
 
 That's it! Now, whenever a member of your GitHub organization sends a pull request to the `master` branch, TeamCity acts as follows:
 1. Detects the pull request sent to the `master` branch.
 2. Runs the `web-app` build configuration: collects sources, builds and tests the app according to your predefined build steps.
-3. Displays information about the processed pull request on the build configuration __Overview__ page. You can instantly see the pull request status (1) and refresh the information about its state (2).   
+3. Displays information about the processed pull request on the build configuration __Overview__ page. You can instantly see the pull request status (1) and refresh the information about its state (2).
    
    <img src="PullRequestOverviewInfo.png" width="500" alt="Pull Request information in Build Overview"/>
 
-__Pro Tip__
+__Pro Tips__
 
 You can automate your setup further, so TeamCity:
-* sends a build status back to GitHub after the build finishes, with the [Commit Status Publisher](commit-status-publisher.md) build feature
-* merges the pull request in GitHub if the build finishes successfully, with the [Automatic Merge](automatic-merge.md) build feature
-
+* Sends a build status back to GitHub after the build finishes, with the [Commit Status Publisher](commit-status-publisher.md) build feature.
+* Merges the pull request in GitHub if the build finishes successfully, with the [Automatic Merge](automatic-merge.md) build feature.
+* If you want to run a whole [build chain](build-chain.md) on a pull request, remember to add the Pull Requests feature to each build configuration of the chain. To simplify this procedure, you can set everything in a [build configuration template](build-configuration-template.md) and then create these build configurations based on it.
 
 <seealso>
         <category ref="blog">
