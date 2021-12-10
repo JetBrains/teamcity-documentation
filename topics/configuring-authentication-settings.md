@@ -82,11 +82,11 @@ To add a module:
 In the __General Settings__ block, you can:
 * Enable the [guest login](enabling-guest-login.md) on the server and change the guest username. Please read our [security notes](security-notes.md#caution-guest-login) before enabling this option.
 * Customize the view of the login form: enter an introductory text and hide the default username/password fields (convenient if you prefer [authentication through third-party services](#HTTP+%2F+SSO+Authentication+Modules)).
-* Enable the [per-project authorization mode](role-and-permission.md#Changing+Authorization+Mode).
+* Enable the [per-project authorization mode](managing-roles-and-permissions.md#Changing+Authorization+Mode).
 * Enable the [two-factor authentication](managing-two-factor-authentication.md).
 {product="tc"}
 * Enforce the [email verification](enabling-email-verification.md) for all TeamCity users.
-* Log out all currently signed in users and delete all [personal access tokens](managing-your-user-account.md#Managing+Access+Tokens).
+* Log out all currently signed in users and delete all [personal access tokens](configuring-your-user-profile.md#Managing+Access+Tokens).
 
 ## User Authentication Settings
 
@@ -124,13 +124,13 @@ By default, TeamCity uses the built-in authentication and maintains users and th
 
 When signing in to TeamCity for the first time, the user will be prompted to create the TeamCity username and password which will be stored in TeamCity and used for authentication. If you installed TeamCity and signed in to it, it means that built-in authentication is enabled and all user data is stored in TeamCity.
 
-In the beginning, the user database is empty. New users are either [added by the TeamCity administrator](managing-users-and-user-groups.md#Creating+New+User), or users register themselves if the corresponding option is enabled in the authentication module settings. All newly created users belong to the [All Users](user-group.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles should [be granted](managing-roles.md) via the __All Users__ group.
+In the beginning, the user database is empty. New users are either [added by the TeamCity administrator](creating-and-managing-users.md), or users register themselves if the corresponding option is enabled in the authentication module settings. All newly created users belong to the [All Users](creating-and-managing-user-groups.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](managing-roles-and-permissions.md) are needed for the newly registered users, these roles should [be granted](managing-roles-and-permissions.md#Managing+Roles) via the __All Users__ group.
 
 By default, the users are allowed to change their password on their profile page.
 
 ### Token-Based Authentication
 
-This module allows users to authenticate via [access tokens](managing-your-user-account.md#Managing+Access+Tokens) that they can create and invalidate themselves.
+This module allows users to authenticate via [access tokens](configuring-your-user-profile.md#Managing+Access+Tokens) that they can create and invalidate themselves.
 
 This authentication module is enabled by default.
 
@@ -153,7 +153,7 @@ To allow users to enter the system using the login form without specifying the d
 #### Registering New Users on Login
 
 The default settings allow users to register from the login page. TeamCity usernames for the new users will be the same as their Windows domain accounts.   
-All newly created users belong to the [All Users](user-group.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles should [be granted](managing-roles.md) via the __All Users__ group.
+All newly created users belong to the [All Users](creating-and-managing-user-groups.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](managing-roles-and-permissions.md) are needed for the newly registered users, these roles should [be granted](managing-roles-and-permissions.md#Managing+Roles) via the __All Users__ group.
 
 To disable new user registration on login:
 1. Go to __Administration | Authentication__.

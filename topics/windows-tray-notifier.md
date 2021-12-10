@@ -303,9 +303,9 @@ C:\Program Files (x86)\JetBrains\TeamCity\TrayNotifier\JetBrains.TrayNotifier.ex
 
  <seealso>
         <category ref="user-guide">
-            <a href="subscribing-to-notifications.md">Subscribing to Notifications</a>
+            <a href="adding-notification-rules.md">Subscribing to Notifications</a>
         </category>
         <category ref="admin-guide">
-            <a href="customizing-notifications.md">Customizing Notifications</a>
+            <a href="customizing-notification-templates.md">Customizing Notifications</a>
         </category>
 </seealso>

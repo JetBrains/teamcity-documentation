@@ -160,7 +160,7 @@ Limit the set of branches which builds’ sources will be merged.
 
 <td>
 
-[Notification rules](subscribing-to-notifications.md) and the [Notifications](notifications.md) build feature
+[Notification rules](adding-notification-rules.md) and the [Notifications](notifications.md) build feature
 
 </td>
 

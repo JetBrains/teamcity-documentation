@@ -128,7 +128,7 @@ Remember that too frequent clean-ups might extensively load the CPU, and too rar
 
 ## Time-limited access tokens
 
-TeamCity can generate time-limited [access tokens](managing-your-user-account.md#Managing+Access+Tokens). You can use these tokens in scripts or other REST API requests to grant temporary access to the TeamCity server. After the token’s time limit expires, TeamCity will automatically revoke its access.
+TeamCity can generate time-limited [access tokens](configuring-your-user-profile.md#Managing+Access+Tokens). You can use these tokens in scripts or other REST API requests to grant temporary access to the TeamCity server. After the token’s time limit expires, TeamCity will automatically revoke its access.
 
 To add a new token, go to __My Settings & Tools | Access tokens__:
 

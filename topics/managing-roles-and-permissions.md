@@ -1,15 +1,16 @@
-[//]: # (title: User Permissions and Roles)
-[//]: # (auxiliary-id: User Permissions and Roles;Role and Permission)
+[//]: # (title: Managing Roles and Permissions)
+[//]: # (auxiliary-id: Managing Roles and Permissions;Role and Permission)
 
-User access levels are handled by assigning different _roles_ to users thus granting them respective _permissions_.
+User access levels in TeamCity are handled by assigning different _roles_ to users thus granting them respective _permissions_.
 
-A _permission_ is an _authorization_ to perform particular operations, for example, to run a build or modify build configuration settings.   
+A _permission_ is an _authorization_ to perform particular operations, for example, to run a build or modify build configuration settings.
+
 A _role_ is a set of _permissions_ that can be granted to a user in one or all projects thus controlling access to the projects and various features in the UI.
 
 ## Authorization Mode
 
 TeamCity authorization supports two modes: __simple__ and __per-project__.
-* In the __simple__ mode, there are only three types of authorization levels: guest, logged-in user, and administrator.   
+* In the __simple__ mode, there are only three types of authorization levels: guest, logged-in user, and administrator.
 * In the __per-project__ mode, you can assign users roles in projects or server-wide. The set of permissions in roles is editable.
 
 Permissions within a role granted at the project level are automatically propagated in all the subprojects of this project.   
@@ -17,7 +18,8 @@ The __View project and all parent projects__ permission allows viewing not only 
 
 ## Changing Authorization Mode
 
-Unless explicitly configured, the simple authorization mode is used in TeamCity Professional and per-project is used in TeamCity Enterprise.   
+Unless explicitly configured, the simple authorization mode is used in TeamCity Professional and per-project is used in TeamCity Enterprise.
+
 To change the authorization mode, go to __Administration | Authentication__ and enable/disable the _Enable per-project permissions_ option.
 
 ## Simple Authorization Mode
@@ -85,7 +87,7 @@ Corresponds to the default [Project Viewer](#project-viewer) role granted for al
 
 ## Per-Project Authorization Mode
 
-Roles are assigned to users by administrators on a per-project basis: a user can have different roles in different projects, and hence, the permissions are project-based. A user can have a role in a specific project or in all available projects, or no roles at all. You can [associate a user account with a set of roles](managing-users-and-user-groups.md). A role can also be granted to a user group. This means that the role is automatically granted to all the users that are included into the group (both directly or through other groups).
+Roles are assigned to users by administrators on a per-project basis: a user can have different roles in different projects, and hence, the permissions are project-based. A user can have a role in a specific project or in all available projects, or no roles at all. You can [associate a user account with a set of roles](creating-and-managing-users.md#Assigning+Roles+to+Users). A role can also be granted to a user group. This means that the role is automatically granted to all the users that are included into the group (both directly or through other groups).
 
 You can add roles and assign permissions to them in __Administration | Roles__. Click __Add permission__ under any role to see the list of all available permissions, select a required permission, and click __Add__. To add multiple permissions, hold the __CTRL__ key when selecting them.
 
@@ -183,22 +185,29 @@ TeamCity has the following project-level permissions to perform a task on an age
 * Remove project agent
 * Authorize project agent
 
-<tip>
-
-With the _"Authorize project agent"_ permission and the [maximum number of agents](configuring-agent-pools.md#Managing+Agent+Pools) setting for an agent pool, you can set up the system in a way which allows project administrators to run new agents and authorize/add them to their pools without involving the global system administrator.
-
-</tip>
+>With the _"Authorize project agent"_ permission and the [maximum number of agents](configuring-agent-pools.md#Managing+Agent+Pools) setting for an agent pool, you can set up the system in a way which allows project administrators to run new agents and authorize/add them to their pools without involving the global system administrator.
 
 All project-level agent management permissions are by default added to the [Project Administrator](#project-administrator) role.
 
-A user can perform a task controlled by one of these permissions on all the agents belonging to some [pool](configuring-agent-pools.md) provided this permission is granted to the user in all the projects associated with this pool. For example, a user with the _"Enable/disable agents associated with project"_ permission granted in some projects can enable or disable agents which belong to the pools of the related projects if the permission is granted in __all the projects__ associated with the pools. 
+A user can perform a task controlled by one of these permissions on all the agents belonging to some [pool](configuring-agent-pools.md) provided this permission is granted to the user in all the projects associated with this pool. For example, a user with the _"Enable/disable agents associated with project"_ permission granted in some projects can enable or disable agents which belong to the pools of the related projects if the permission is granted in __all the projects__ associated with the pools.
+
+## Managing Roles
+{id="Managing+Roles" auxiliary-id="Managing Roles"}
+
+If per-project permissions are enabled in your installation, you can view the existing roles, modify them, and create new ones in the TeamCity UI — on the __Administration | Roles__ page. It allows:
+* Creating new roles.
+* Deleting existing roles.
+* Adding/deleting permissions from existing roles.
+* Including/excluding permissions from a role.
+
+Note that role settings are global.
+
+>You can also configure roles and permissions using the `roles-config.xml` file stored in `<[TeamCity Data Directory](teamcity-data-directory.md)>/config` directory.
 
 <seealso>
-        <category ref="concepts">
-            <a href="user-account.md">User Account</a>
-        </category>
         <category ref="admin-guide">
             <a href="enabling-guest-login.md">Enabling Guest Login</a>
-            <a href="managing-users-and-user-groups.md">Managing Users and User Groups</a>
+            <a href="creating-and-managing-users.md">Creating and Managing Users</a>
+            <a href="creating-and-managing-user-groups.md">Creating and Managing User Groups</a>
         </category>
 </seealso>

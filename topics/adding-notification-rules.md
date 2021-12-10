@@ -1,61 +1,23 @@
-[//]: # (title: Subscribing to Notifications)
-[//]: # (auxiliary-id: Subscribing to Notifications)
+[//]: # (title: Adding Notification Rules)
+[//]: # (auxiliary-id: Adding Notification Rules;Subscribing to Notifications)
 
-TeamCity provides a wide range of notification possibilities to keep developers informed about the status of their projects. Notifications can be sent by email and instant messages, or can be displayed in the IDE (with the help of TeamCity plugins) or in the web browser.
+This article explains how to set up notification rules. To learn how enable the notification functionality on your TeamCity server, follow [these instructions](configuring-notifications.md).
 
-Notifications in TeamCity can be sent:
-* __Per user__, according to the user's configured notification rules. These rules can also be set at the user-group level, so they are applied to all the users in the TeamCity group.  
-  You can create a user-level notification rule for a specific project or multiple projects and build configurations. These notifications are also available in a wider range of software than the build-level ones: IDE, browsers, Slack, and email.
-* __Per build configuration__, with the [Notifications](notifications.md) build feature. Currently, these notifications are available only for email and Slack.   
-  Choose build-level notifications if you want to notify many people at once about a specific build configuration. You can enter an email list address or a Slack channel ID, and whoever is subscribed to this list or channel will be notified when the selected build events occur.
+Each notification rule consists of two parts: [what scope will be watched](#What+Will+Be+Watched) and [what events will trigger notifications](#Which+Events+Will+Trigger+Notifications). Users can create personal rules and inherit rules from their user group.
 
-This article explains how to configure user-level notifications and describes the events that can trigger notifications. To read about build-level notifications, refer to the [respective article](notifications.md).
+## Add Notification Rule
 
->You can [customize notification templates](customizing-notifications.md).
-> 
-{product="tc"}
-
-## Subscribing to User-level Notifications
-
-TeamCity allows you to flexibly adjust the notification rules, so that you receive notifications only on the events you are interested in. To subscribe to user-level notifications:
-
-1. In the upper right corner of the screen, click the arrow next to your username, and select __My Settings &amp; Tools__ from the drop-down menu. Open the __Notification Rules__ tab.
-2. Click the required notifications type and configure the required settings.
-3. Click __Add new rule__ and specify the rule in the dialog. The notification rules are comprised of two parts: [what you will watch](#What+Will+Be+Watched) and [which events you will be notified about](#Which+Events+Will+Trigger+Notifications).
-
-### Email Notifications
-
-Email notifications are sent only if a System Administrator has configured the SMTP server in __Administration | Server Administration__. System Administrators can also [change the templates](customizing-notifications.md) used for notifications.
-{product="tc"}
-
-__TeamCity Email Notifier__ relies on the email address specified in __My Settings &amp; Tools | General__.
-
-Note that TeamCity comes with a default notification rule. It will send you an email notification if a build with your changes has failed. This rule starts working after you enter the email address.
-
-See how to [configure email notifications for a build configuration](notifications.md#Email+Notifier).
-
-### Browser Notifications
-
-__TeamCity Browser Notifier__ displays notifications directly in your web browser. It works as a browser extension. See the details about it in [this article](browser-notifier.md).
-
-### Slack Notifier
-
-__TeamCity Slack Notifier__ requires signing in to Slack and relies on the Slack connection configured in the project settings. Read more on how to configure the connection to Slack [here](configuring-connections.md#Slack).
-
-See how to [configure Slack notifications for a build configuration](notifications.md#Slack+Notifier).
-
-### IDE Notifications
-
-__TeamCity IDE Notifier__ requires installing the TeamCity plugin in your IDE. For the details on installing TeamCity IDE plugins, refer to [Installing Tools](installing-tools.md).
-
-
+To add a new personal notification rule:
+1. In the upper right corner of the screen, click your avatar and click __Profile__ in the drop-down menu.
+2. In __Your Profile__, open the __Notification Rules__ tab.
+3. Click the required notifications type and configure the required settings.
+4. Click __Add new rule__ and specify the rule in the dialog.
 
 ## What Will Be Watched
 
 <table>
 
 <tr><td></td><td></td></tr>
-
 
 <tr>
 
@@ -76,7 +38,7 @@ Use the following options for granular control over the notifications in the sel
 
 <note>
 
-Make sure your [Version Control Username](managing-users-and-user-groups.md#VCS+Usernames) Settings are correct.
+Make sure your [Version Control username](creating-and-managing-users.md#VCS+Usernames) settings are correct.
 
 </note>
 
@@ -86,7 +48,7 @@ Make sure your [Version Control Username](managing-users-and-user-groups.md#VCS+
 
 <td>
 
-System wide events
+System-wide events
 
 </td>
 
@@ -267,7 +229,7 @@ The user rules are applied first, then the group rules are applied.
 
 The group rules are processed in hierarchical order: starting from child groups to parent ones.
 
-If there are more than one parent with their own rules set, the inherited rules are processed top\-bottom corresponding to the order they are presented on the Notification Rules user profile tab (alphabetically).
+If there are more than one parent with their own rules set, the inherited rules are processed top-to-bottom corresponding to the order they are presented on the Notification Rules user profile tab (alphabetically).
 
 ## Unsubscribing and Overriding Existing Rules
 
@@ -277,7 +239,7 @@ You may already have some notification rules configured by your System Administr
 
 <seealso>
         <category ref="admin-guide">
-            <a href="customizing-notifications.md" product="tc">Customizing Notifications</a>
+            <a href="customizing-notification-templates.md" product="tc">Customizing Notifications</a>
             <a href="notifications.md">Notifications</a>
         </category>
 </seealso>

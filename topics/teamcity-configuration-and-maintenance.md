@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity Configuration and Maintenance)
 [//]: # (auxiliary-id: TeamCity Configuration and Maintenance)
 
->Server configuration is only available to the [System Administrators](role-and-permission.md#Per-Project+Authorization+Mode).
+>Server configuration is only available to the [System Administrators](managing-roles-and-permissions.md#Per-Project+Authorization+Mode).
 
 To change the server configuration, go to __Administration | Global Settings__. The following blocks of settings are available:
 {product="tc"}

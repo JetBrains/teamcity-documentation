@@ -7,7 +7,7 @@ The __Changes__ page of the TeamCity web UI allows you to review the commits mad
 
 <note>
 
-Changes made by a user are displayed correctly only when appropriate [VCS usernames](managing-users-and-user-groups.md#VCS+Usernames) are defined.
+Changes made by a user are displayed correctly only when appropriate [VCS usernames](creating-and-managing-users.md#VCS+Usernames) are defined.
 </note>
 
 By default, the page does not show the commits to the build configurations hidden by the current user on the Projects dashboard. To remove this filter and view all build configurations, deselect the __Hide configurations excluded from my Projects__ box.

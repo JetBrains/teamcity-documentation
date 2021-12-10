@@ -1,7 +1,7 @@
-[//]: # (title: Customizing Notifications)
-[//]: # (auxiliary-id: Customizing Notifications)
+[//]: # (title: Customizing Notification Templates)
+[//]: # (auxiliary-id: Customizing Notification Templates;Customizing Notifications)
 
-TeamCity users can [select the events to be notified about](subscribing-to-notifications.md). The default notification messages can be customized globally on a per-server basis.
+TeamCity users can [select the events to be notified about](adding-notification-rules.md). The default notification messages can be customized globally on a per-server basis.
 
 Project Administrators with the enabled "_Change user / group notification rules in project_" permission can edit notification rules for users and user groups assigned to their projects.
 
@@ -57,7 +57,7 @@ __IDE Notifications__ and __Windows Tray Notifications__
 
 This section provides Freemaker code snippets that can be used for customization of notifications:
 
-#### Including ERRORS from the log
+#### Including Errors from Log
 
 
 ```XML
@@ -117,7 +117,7 @@ ${var.buildCompilationErrors}${var.buildFailedTestsErrors}${var.buildChanges}
 
 ```
 
-#### Listing build artifacts
+#### Listing Build Artifacts
 
 There is no default way of listing build artifacts in an email template at the moment. See a [related issue](https://youtrack.jetbrains.com/issue/TW-50431) with a simple plugin allowing you to list artifacts via a relevant API.
 
@@ -135,7 +135,7 @@ This assumes direct access to disk from the template and ignores external artifa
 
 This will list only the root artifacts and include the `.teamcity` directory, which can be changed by modifications to the code.
 
-#### Listing build parameters
+#### Listing Build Parameters
 
 
 ```XML
@@ -178,7 +178,7 @@ Here is an example description of the model (the code can be used in IntelliJ ID
 
 ### TeamCity Notification Properties
 
-The following [properties](server-startup-properties.md) can be useful to customize the notifications behavior:
+The following [properties](server-startup-properties.md) can be useful to customize the notifications' behavior:
 
 * `teamcity.notification.template.update.interval` — how often the templates are reread by the system (integer, in seconds, default 60)
 * `teamcity.notification.includeDebugInfo` — include debugging information into the message in case of template processing errors (boolean, default false)
@@ -190,7 +190,7 @@ The following [properties](server-startup-properties.md) can be useful to custom
 
 <seealso>
         <category ref="user-guide">
-            <a href="subscribing-to-notifications.md">Subscribing to Notifications</a>
+            <a href="adding-notification-rules.md">Subscribing to Notifications</a>
         </category>
         <category ref="admin-guide">
             <a href="notifications.md">Notifications</a>

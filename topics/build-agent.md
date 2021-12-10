@@ -82,7 +82,7 @@ __Disabled__ agents can still run builds when the build is assigned to a special
 
 All agents connected to the server must have unique agent names.
 
-Only users with certain roles can manage agents. See [Role and Permission](role-and-permission.md) for more information.
+Only users with certain roles can manage agents. See [this article](managing-roles-and-permissions.md) for more information.
 
 For a build agent configuration, refer to [this section](configure-agent-installation.md).
 
@@ -111,7 +111,7 @@ Typically, an agent upgrade happens when the server is upgraded.
         </category>
         <category ref="concepts">
             <a href="agent-work-directory.md">Agent Work Directory</a>
-            <a href="role-and-permission.md">Role and Permission</a>
+            <a href="managing-roles-and-permissions.md">Roles and Permissions</a>
         </category>
         <category ref="admin-guide">
             <a href="configuring-agent-pools.md">Agent Pools</a>

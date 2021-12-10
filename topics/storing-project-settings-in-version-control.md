@@ -13,7 +13,7 @@ The versioned settings are stored in the `.teamcity` directory in the root of th
 {id="SynchronizingSettingswithVCS" auxiliary-id="SynchronizingSettingswithVCS"}
 By default, the synchronization of the project settings with the version control system is disabled.
 
-To enable it, go to __Project Settings | Versioned Settings | Configuration__. The "_Enable/disable versioned settings_" permission is required (default for the [System Administrator](role-and-permission.md#Per-Project+Authorization+Mode) role).
+To enable it, go to __Project Settings | Versioned Settings | Configuration__. The "_Enable/disable versioned settings_" permission is required (default for the [System Administrator](managing-roles-and-permissions.md#Per-Project+Authorization+Mode) role).
 
 Here you can choose one of the following options:
 * Use the same settings as in the parent project (default).

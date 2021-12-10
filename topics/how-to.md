@@ -112,13 +112,13 @@ If you want to get a preconfigured server right away, put the files from a previ
 ## Retrieve Administrator Password
 {product="tc"}
 
-On the first start with the empty database, TeamCity displays the Administrator Setup page which allows creating a user with full administrative permissions (assigning the [System Administrator](role-and-permission.md#Per-Project+Authorization+Mode) role).
+On the first start with the empty database, TeamCity displays the Administrator Setup page which allows creating a user with full administrative permissions (assigning the [System Administrator](managing-roles-and-permissions.md#Per-Project+Authorization+Mode) role).
 
 If you want to regain access to the system and you cannot log in as a user with the System Administrator role, you can log in as a [super user](super-user.md) and change the existing administrator account password or create a new account with the System Administrator role.
 
 It is also possible to use [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-users.html#Manage+User+Roles) to add the System Administrator role to any existing user.
 
-If you use built-in authentication and have correct email specified, you can [reset the password](managing-your-user-account.md#Changing+Your+Password) from the login page.
+If you use built-in authentication and have correct email specified, you can [reset the password](configuring-your-user-profile.md#Changing+Your+Password) from the login page.
 
 ## Setup TeamCity in Replication/Clustering Environment
 {product="tc"}

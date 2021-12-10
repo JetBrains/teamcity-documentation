@@ -9,7 +9,7 @@ TeamCity now provides built-in two-factor user authentication (2FA). Enabling it
 
 <img src="2fa-user-page.png" alt="Configuring two-factor authentication" width="706"/>
 
-Read how to [enable 2FA on your server](managing-two-factor-authentication.md) and [set it up for your user account](managing-your-user-account.md#Configuring+Two-Factor+Authentication).
+Read how to [enable 2FA on your server](managing-two-factor-authentication.md) and [set it up for your user account](configuring-your-user-profile.md#Configuring+Two-Factor+Authentication).
 
 ## C# Script Runner
 
