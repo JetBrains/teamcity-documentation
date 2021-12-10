@@ -1,6 +1,14 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2021.2 to 2022.1
+
+### Bundled tools updates
+{id="bundled-tools-updates-20221"}
+
+* Bundled __IntelliJ IDEA__ has been updated to version __2021.2.3__. Note that this version requires __Java 11__.
+* [SBT](http://www.scala-sbt.org/), used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version __1.5.5__.
+
 ## Changes from 2021.2 to 2021.2.1
 
 * __.NET build runner counts parametrized tests as a single test__  

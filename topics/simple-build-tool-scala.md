@@ -3,7 +3,7 @@
 
 The _Simple Build Tool (Scala)_ build runner natively supports [SBT](http://www.scala-sbt.org/) builds: you can build your code, run tests, and see the results in a handy way in TeamCity.
 
-TeamCity supports SBT versions up to 1.4.x.
+TeamCity supports SBT versions up to 1.5.5.
 
 ## SBT runner settings
 

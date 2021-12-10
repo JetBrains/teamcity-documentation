@@ -692,7 +692,7 @@ Eclipse must be run under JDK 1.5+
 
 </td><td>
 
-Compatible with IntelliJ IDEA 2019.3.x — 2021.1 (Ultimate and Community editions); as well as other IDEs based on the same version of the platform, including JetBrains RubyMine 6.3+, JetBrains PyCharm 3.1+, JetBrains PhpStorm/WebStorm 7.1+, AppCode 2.1+. See [more information](intellij-platform-plugin-compatibility.md) on compatibility.
+Compatible with IntelliJ IDEA 2019.3 - 2021.2.3 (Ultimate and Community editions); as well as other IDEs based on the same version of the platform, including JetBrains RubyMine 6.3+, JetBrains PyCharm 3.1+, JetBrains PhpStorm/WebStorm 7.1+, AppCode 2.1+. See [more information](intellij-platform-plugin-compatibility.md) on compatibility.
 
 </td><td></td></tr>
 
