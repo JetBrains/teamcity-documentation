@@ -6,6 +6,9 @@
 ### Bundled tools updates
 {id="bundled-tools-updates-2021-12"}
 
+* Updates in TeamCity Agent Docker images for Windows:
+  * Bundled .NET Core SDK has been updated to 6.0.100.
+  * Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
 * Bundled __IntelliJ IDEA__ has been updated to version __2021.2.3__. Note that this version requires __Java 11__.
 * [SBT](http://www.scala-sbt.org/), used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version __1.5.5__.
 
