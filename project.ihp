@@ -9,12 +9,12 @@
     <module name="teamcity-docs"/>
     <vars src="v.list"/>
     <topics dir="topics"/>
-    <images dir="images" version="2021.2"
-            web-path="https://resources.jetbrains.com/help/img/teamcity/2021.2/"/>
+    <images dir="images" version="2021.12"
+            web-path="https://resources.jetbrains.com/help/img/teamcity/2021.12/"/>
     <categories src="c.list"/>
     <tags src="g.list"/>
-    <product src="tc.tree" web-path="/teamcity/2021.2/"
-             teamcity-build-path="Documentation_Teamware_TeamCity" version="2021.2" keymaps-mode="none"/>
-    <product src="tcc.tree" web-path="/teamcity/cloud/2021.2/"
-             teamcity-build-path="Documentation_Teamware_TeamCity_TeamCityCloud" version="2021.2" keymaps-mode="none"/>
+    <product src="tc.tree" web-path="/teamcity/2021.12/"
+             teamcity-build-path="Documentation_Teamware_TeamCity" version="2021.12" keymaps-mode="none"/>
+    <product src="tcc.tree" web-path="/teamcity/cloud/2021.12/"
+             teamcity-build-path="Documentation_Teamware_TeamCity_TeamCityCloud" version="2021.12" keymaps-mode="none"/>
 </ihp>
