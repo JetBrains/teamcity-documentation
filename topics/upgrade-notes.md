@@ -3,6 +3,7 @@
 
 ## Changes from 2021.2 to 2021.12
 
+* TeamCity stops supporting the [Microsoft Edge Legacy](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224) web browsers.
 * It is now impossible to automatically [trigger builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) when the [queue limit](ordering-build-queue.md#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
 
 ### Bundled tools updates
