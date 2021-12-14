@@ -3,6 +3,8 @@
 
 ## Changes from 2021.2 to 2021.12
 
+* It is now impossible to automatically [trigger builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) when the [queue limit](ordering-build-queue.md#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
+
 ### Bundled tools updates
 {id="bundled-tools-updates-2021-12"}
 
