@@ -74,6 +74,11 @@ When a test is muted, it is __still run__ in the future builds, but its failure 
 
 Your build script might need adjustment to make the build successful when there are failing but muted tests. Make sure the build does not fail because of other build failure conditions (for example, _"Fail if build process exit code is not zero"_) in case the only errors encountered were tests failures. See the related issue [TW-16784](http://youtrack.jetbrains.net/issue/TW-16784) for more details.
 
+## Changing Project Scope of Investigation or Mute
+
+When a user assigns an investigation or mutes a problem, TeamCity suggests the scope where it has to be investigated or muted. By default, it proposes to apply the action within the current project, and users usually confirm this default scope. However, the same problem might often occur not in a single project but in multiple adjacent projects which are children of the same parent. In this case, it makes sense to investigate or mute this problem in the scope of the whole parent project.  
+Since version 2021.12, Project Administrators can change the value of the preferred investigation/mute scope per project. Setting the `teamcity.internal.preferredInvestigationProject` [configuration parameter](configuring-build-parameters.md#Levels+of+Parameters) in the parent project's settings will make this project the default scope in the _Investigate/Mute_ dialog for all its children. The value should contain the parent project [ID](identifier.md). This property changes only the option proposed by default — users will still be able to adjust the scope in the dialog.
+
 ## Marking Problems as Fixed
 
 A user, to whom the investigation is assigned, can mark the investigated problem as fixed in any _Investigate_ UI dialog corresponding to this problem.    
@@ -103,7 +108,7 @@ For each failed test, you can instantly see:
 * current stack trace and the information about the build where the test is currently failing
 * information about the first failure of the test, with the stack trace and the build
 
-The investigations assigned to you are also highlighted in the web UI if you enable the "_Highlight my changes and investigations_" option in your [profile settings](configuring-your-user-profile.md).
+The investigations assigned to you are also highlighted in the UI if you enable the "_Highlight my changes and investigations_" option in your [profile settings](configuring-your-user-profile.md).
 
 ## Viewing Investigation History
 
