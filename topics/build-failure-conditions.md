@@ -122,7 +122,7 @@ To configure this build failure condition, specify:
 
 When using Regex, you can refer to the regular expression or its parts from the "_Failure message_" field (for example, refer to specific [capturing groups](https://www.regular-expressions.info/brackets.html) with `$N` where `N` is the group number). This allows including the matching error text into the failure message displayed in the build results.
 
-TeamCity creates a build problem only for the first text occurrence found in a build log. To report a build problem on each found match, disable the option _Create build problem only on the first match_. For example, a build tool sends multiple errors that correspond to the specified search rule. It can be easier to identify issues in your code when you have a separate build problem for each error.
+TeamCity reports a build problem only for the first text occurrence found in a build log. To report a problem on each found match instead, disable the option _Create build problem only on the first match_. This might be helpful if a build tool sends multiple different errors matching the searched pattern and you want to get a problem report for each of them.
 
 ### Stopping Build Immediately
 
