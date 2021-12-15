@@ -10,7 +10,7 @@
     <vars src="v.list"/>
     <topics dir="topics"/>
     <images dir="images" version="2020.1"
-            web-path="/img/teamcity/2020.1/"/>
+            web-path="https://resources.jetbrains.com/help/img/teamcity/2020.1/"/>
     <categories src="c.list"/>
     <tags src="g.list"/>
     <product src="tc.tree" web-path="/teamcity/2020.1/"
