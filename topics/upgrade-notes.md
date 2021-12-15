@@ -14,6 +14,8 @@
   * Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
 * Bundled __IntelliJ IDEA__ has been updated to version __2021.2.3__. Note that this version requires __Java 11__.
 * [SBT](http://www.scala-sbt.org/), used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version __1.5.5__.
+* The [Octopus Deploy integration plugin](https://plugins.jetbrains.com/plugin/9038-octopus-deploy-integration) bundled with TeamCity Cloud has been updated to version 6.1.8.
+* The [Unity Support plugin](https://plugins.jetbrains.com/plugin/11453-unity-support) bundled with TeamCity Cloud has been updated to version SNAPSHOT-20211116104228.
 
 ## Changes from 2021.2 to 2021.2.1
 
