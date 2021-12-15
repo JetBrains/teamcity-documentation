@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2021.12)
-[//]: # (auxiliary-id: What's New in TeamCity 2021.12; What's New in TeamCity)
+[//]: # (auxiliary-id: What's New in TeamCity 2021.12;What's New in TeamCity)
 
 **TeamCity 2021.12 is still in production! It will be released for TeamCity Cloud in December 2021.**
 
