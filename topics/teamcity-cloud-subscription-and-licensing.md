@@ -25,15 +25,20 @@ You can manage your subscription on the __[Subscription & Resources](managing-su
 
 _[Build credits](#cloud-build-credits)_ are granted to your subscription per each committer and can be flexibly utilized according to your needs. At the end of each month, the remaining build credits expire from your subscription, and a new set of build credits is provided at the beginning of the next month. If you purchase [additional build credits](#On-demand+Cloud+Resources), they do not expire.
 
-Build credits are automatically spent on build time on agents. You can also exchange them to get more committer slots and concurrent builds on self-hosted agents, as well as on extra [storage](#cloud-storage) and [data transfer capacity](#cloud-data-transfer).
+Build credits are automatically spent on build time on agents. You can also exchange them on:
+* Committer slots
+* Concurrent builds on self-hosted agents
+* Prepaid per-month agents
+* Extra [storage](#cloud-storage) and [data transfer capacity](#cloud-data-transfer)
 
 >It is easier to stay under storage capacity limits if you configure proper [clean-up rules](teamcity-data-clean-up.md) in your TeamCity Cloud instance.
 
-TeamCity Cloud can run builds on two types of agents: hosted by JetBrains and self-hosted. Each minute of build time on [JetBrains-hosted agents](#cloud-jb-hosted-agents) will expend a certain number of build credits. The exact rate depends on your build agent [instance type](#cloud-instance-type).
+TeamCity Cloud can run builds on two types of agents:
+* __JetBrains-hosted__: Each minute of build time on [JetBrains-hosted agents](#cloud-jb-hosted-agents) will expend a certain number of build credits. The exact rate depends on your build agent [instance type](#cloud-instance-type).  
+  Alternatively, you can [prepay](#cloud-prepaid-agents) one or more JetBrains-hosted agents on a monthly basis. Once prepaid, such an agent will be able to run an unlimited number of builds during the following month. This option can significantly reduce costs if you run builds non-stop. It is also convenient if you don't mind how many builds run in parallel and just want to pay a fixed sum monthly.
+* __Self-hosted__: In case with [self-hosted agents](#cloud-self-hosted-agents), build time is not counted. Instead, you need to purchase an extra slot for each concurrent build running on a self-hosted agent. For example, if you purchase 3 slots monthly, you would be able to run up to 3 builds on self-hosted agents, connected to your TeamCity server, at each moment of time during this month.
 
-In case with [self-hosted agents](#cloud-self-hosted-agents), build time is not counted. Instead, you need to purchase an extra slot for each concurrent build running on a self-hosted agent. For example, if you purchase 3 slots monthly, you would be able to run up to 3 builds on self-hosted agents, connected to your TeamCity server, at each moment of time during this month.
-
->Coming soon: We will also offer [prepaid build agents](#cloud-prepaid-agents) for customers who can more accurately predict their build agent utilization. If you anticipate a high utilization rate of your JetBrains-hosted agents, you will be able to use this method to help reduce costs.
+TeamCity will always try to optimize costs spent on a build. If an idle self-hosted agent is available, TeamCity will assign the build to it. If only JetBrains-hosted agents are available and there is an idle prepaid one, it will assign the build to this agent.
 
 ### Free Trial Subscription
 
@@ -43,7 +48,7 @@ You can try TeamCity Cloud for free for 14 days. The free trial subscription pla
 
 You can get more build credits, atop the ongoing subscription, and spend them on necessary resources. Credits are purchased in packs of 25,000. More information on pricing is available on [our website](https://www.jetbrains.com/teamcity/cloud/).
 
-Build credits purchased this way do not expire. Similarly to credits provided with your subscription, they are spent on build time on JetBrains-hosted build agents and can be redeemed for additional storage, concurrent builds on [self-hosted agents](#cloud-self-hosted-agents), committers, and (in the future updates) [prepaid build agents](#cloud-prepaid-agents). When you buy a resource, its price for the current month is lowered proportionally to how many days are left in the month.
+Build credits purchased this way do not expire. Similarly to credits provided with your subscription, they are spent on build time on JetBrains-hosted build agents and can be redeemed for additional storage, concurrent builds on [self-hosted agents](#cloud-self-hosted-agents), committers, and [prepaid build agents](#cloud-prepaid-agents). When you buy a resource, its price for the current month is lowered proportionally to how many days are left in the month.
 
 Note that when you buy an additional resource for build credits, it will be automatically renewed each month (that is, build credits will be automatically spent on it) unless you cancel it. If you cancel a purchased resource, it will only reset at the beginning of the next month.
 
@@ -189,14 +194,15 @@ __Prepaid build agent__
 
 <td>
 
-[Coming soon]
+A build agent hosted by JetBrains and prepaid with a fixed number of build credits monthly, instead of paying per build time. If thoroughly planned, using such agents allows significantly reducing costs: if an agent is supposed to run builds more than 6 hours per workday, it makes sense to prepay it in advance.
 
-A build agent hosted by JetBrains and prepaid with a fixed number of credits monthly, instead of paying per build time. If thoroughly planned, using such agents allows saving costs but is not as flexible as using [regular JetBrains-hosted agents](#cloud-jb-hosted-agents), as you pay for each agent that can run one build at a time instead of autostarting as many parallel builds as needed. You can combine these agents with regular JetBrains-hosted agents whenever necessary.
+This option is not as flexible as using [regular JetBrains-hosted agents](#cloud-jb-hosted-agents), as you pay for each agent that can run one build at a time instead of autostarting as many parallel builds as needed. However, it is convenient if you don't mind how many builds run in parallel and just want to pay a fixed sum monthly.
+
+You can combine these agents with regular JetBrains-hosted agents whenever necessary. If a new build can be assigned to either a regular or prepaid agent, TeamCity will always assign it to the prepaid one.
 
 </td>
 
 </tr>
-
 
 <tr>
 <td id="cloud-web-users" auxiliary-id="cloud-web-users">

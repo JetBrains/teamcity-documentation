@@ -11,6 +11,25 @@ Under the __My Subscription__ section, you can see how many credits and resource
 
 Under the __Available Resources__ section, you can view more detailed information on resources and credits left, and exchange credits for more committer slots, concurrent builds on self-hosted agents, and artifact storage. Read more about on-demand resources in [TeamCity Cloud Subscription and Licensing](teamcity-cloud-subscription-and-licensing.md#On-demand+Cloud+Resources).
 
+## Prepay JetBrains-Hosted Build Agents Monthly
+
+You can prepay one or more JetBrains-hosted agents on a monthly basis and run an unlimited number of builds on them, instead of paying per build time. A single prepaid agent can run one build at a time.
+
+If thoroughly planned, using such agents allows significantly reducing costs: if an agent is supposed to run builds more than 6 hours per workday, it makes sense to prepay it in advance.
+
+Paying per build time on regular JetBrains-hosted agents allows starting as many parallel builds as needed and makes it a more flexible approach. However, using prepaid agents is convenient if you don't mind how many builds run in parallel and just want to pay a fixed sum monthly.
+
+You can prepay a JetBrains-hosted agent anytime. To do this:
+1. Click __Buy agents__ under the __Per-Month Agents__ section.
+2. Choose the [type of the agent instance](supported-platforms-and-environments.md#JetBrains-Hosted+Agents) and the number of instances to add.
+3. Apply the changes.
+
+Note that the agent is prepaid until the end of the current calendar month. The price is scaled depending on the number of days left in this month.
+
+>You can distinguish a prepaid agent in the system by the word `Monthly` in its name.
+
+Prepaid agents can be used together with regular JetBrains-hosted agents. If a new build can be assigned to either a regular or prepaid agent, TeamCity will always assign it to the prepaid one.
+
 ## Get Self-Hosted Build Agents
 
 Self-hosted build agents are "bring-your-own" agents that can be connected to TeamCity Cloud, but are hosted and managed by the customer. Self-hosted build agents are useful if you require your own specialized set of build software, specialized build environments, and so on.
