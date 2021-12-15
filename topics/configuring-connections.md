@@ -63,11 +63,11 @@ To configure an Azure DevOps PAT connection:
 {product="tcc"}
 
 A connection to Bitbucket Cloud can be used to:
-* create a [project from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL);
-* create a [VCS root from URL](guess-settings-from-repository-url.md);
-* create a [Mercurial VCS root](mercurial.md);
-* integrate with a [Bitbucket Cloud issue tracker](bitbucket-cloud.md);
-* enable [BitBucket Cloud authentication](configuring-authentication-settings.md#Bitbucket+Cloud).
+* Create a [project from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
+* Create a [VCS root from URL](guess-settings-from-repository-url.md).
+* Create a [Mercurial VCS root](mercurial.md).
+* Integrate with a [Bitbucket Cloud issue tracker](bitbucket-cloud.md).
+* Enable [BitBucket Cloud authentication](configuring-authentication-settings.md#Bitbucket+Cloud).
 
 The Bitbucket Cloud connection form provides multiple parameters. You need to use them for [creating a new OAuth consumer in Bitbucket](https://confluence.atlassian.com/bitbucket/oauth-on-bitbucket-cloud-238027431.html#OAuthonBitbucketCloud-Createaconsumer).
 
@@ -92,11 +92,11 @@ A Bitbucket icon will become active in several places where a repository URL can
 There are two types of GitHub connections: __GitHub Enterprise__ and __GitHub.com__. Choose it depending on your GitHub account type.
 
 A connection to GitHub can be used to:
-* create a [project from GitHub URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
-* create a [VCS root from URL](guess-settings-from-repository-url.md)
-* create a [Git VCS root](git.md)
-* integrate with a [GitHub issue tracker](github.md)
-* enable [GitHub.com authentication](configuring-authentication-settings.md#GitHub.com)
+* Create a [project from GitHub URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
+* Create a [VCS root from URL](guess-settings-from-repository-url.md).
+* Create a [Git VCS root](git.md).
+* Integrate with a [GitHub issue tracker](github.md).
+* Enable [GitHub.com authentication](configuring-authentication-settings.md#GitHub.com).
 
 The GitHub connection form provides multiple parameters. You need to use them to [create a new OAuth application in GitHub](https://docs.github.com/en/developers/apps/authorizing-oauth-apps).
 
@@ -125,9 +125,9 @@ A GitHub icon will become active in several places where a repository URL can be
 There are two types of GitLab connections: __GitLab CE/EE__ and __GitLab.com__. Choose it depending on your GitHub account type.
 
 A connection to GitLab can be used to:
-* create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
-* create a [VCS root from URL](guess-settings-from-repository-url.md)
-* enable [GitLab.com authentication](configuring-authentication-settings.md#GitLab.com)
+* Create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
+* Create a [VCS root from URL](guess-settings-from-repository-url.md).
+* Enable [GitLab.com authentication](configuring-authentication-settings.md#GitLab.com).
 
 The GitLab connection form provides multiple parameters. You need to use them to [create a new OAuth application in GitLab](https://docs.gitlab.com/ee/integration/oauth_provider.html).
 
@@ -146,8 +146,8 @@ A GitLab icon will become active in several places where a repository URL can be
 ## Docker Registry
 
 A connection to Docker Registry can be used to:
-* sign in to an authenticated Docker registry before running a build / sign out after the build;
-* clean up published images after the build.
+* Sign in to an authenticated Docker registry before running a build / sign out after the build.
+* Clean up published images after the build.
 
 See more information in the [dedicated article](configuring-connections-to-docker.md).
 
@@ -292,8 +292,8 @@ To ensure your TeamCity server can connect to Slack, specify its address as __Re
 >See this [Basic app setup](https://api.slack.com/authentication/basics) guide for more details.
 
 Now you can return to TeamCity, add a new Slack connection, and enter the following connection parameters:
-* client ID and secret from the app's __Basic Information__ page;
-* a [bot user token](https://api.slack.com/docs/token-types#bot) of your app.
+* Client ID and secret from the app's __Basic Information__ page
+* A [bot user token](https://api.slack.com/docs/token-types#bot) of your app
 
 Save the connection and proceed with adding a [Notifier](notifications.md#Slack+Notifier) build feature.
 
@@ -303,19 +303,24 @@ Save the connection and proceed with adding a [Notifier](notifications.md#Slack+
 {id="connect-to-jetbrains-space" auxiliary-id="Connect to JetBrains Space"}
 
 This type of connection can be used for:
-* publishing build statuses in [JetBrains Space](https://www.jetbrains.com/space/) with the help of [Commit Status Publisher](commit-status-publisher.md)
-* [authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account
-* creating [projects](creating-and-editing-projects.md), [build configurations](creating-and-editing-build-configurations.md), and [VCS roots](configuring-vcs-roots.md) from a JetBrains Space repository
+* Publishing build statuses in [JetBrains Space](https://www.jetbrains.com/space/) with the help of [Commit Status Publisher](commit-status-publisher.md).
+* [Authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account.
+* Creating [projects](creating-and-editing-projects.md), [build configurations](creating-and-editing-build-configurations.md), and [VCS roots](configuring-vcs-roots.md) from a JetBrains Space repository.
+* Starting builds on [merge requests](pull-requests.md#JetBrains+Space+Merge+Requests) created in a JetBrains Space repository.
 
 Before configuring this connection, you need to create a dedicated application in JetBrains Space:
 1. Go to __Administration | Applications__ and click __New application__.
 2. Enter a convenient name and save the application.
 3. Go to the app's __Authorization__ tab and click __Configure requirements__ under the __In-context Authorization__ section. Enter the name of the Space project you are about to access from TeamCity.
 4. Now, you need to set permissions that will be granted to the app in this project. Click __Configure__ and enable the following permissions:
-   * General access / authentication:
-      * _Members | View member profile_ (you might need a server administrator's approval for that)
+   * Required for general access / authentication and Pull Requests:
+      * _Members | View member profile_
    * Required for Commit Status Publisher:
-      * _Git Repositories | Report external check status_ (if you are the project's administrator, you can approve this permission right in this __Authorization__ tab)
+      * _Git Repositories | Report external check status_
+   * Required for Pull Requests:
+       * _Code Review | View code reviews_
+   
+   You can approve project-level permissions right in this Authorization tab if you are the project's administrator. Global permissions like viewing a member profile require a server administrator's approval.
 5. Go back to the app's __Overview__ and open the __Authentication__ tab.
 6. Enable _Client Credentials Flow_.
 7. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL as the redirect URI.  
@@ -326,9 +331,9 @@ __Note__: When you create a project in JetBrains Space, it does not automaticall
 
 Now you can return to TeamCity, add a new JetBrains Space connection, and enter the following connection parameters:
 * URL of the Space server
-* client ID and secret of your Space application
+* Client ID and secret of your Space application
 
-Save the connection and proceed with adding a [Commit Status Publisher](commit-status-publisher.md), [enabling Space authentication](configuring-authentication-settings.md#JetBrains+Space), or creating a [project](creating-and-editing-projects.md#Creating+project+pointing+to+JetBrains+Space) / [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+Pointing+to+Specific+VCS) / [VCS root](configuring-vcs-roots.md).
+Save the connection and proceed with adding a [Commit Status Publisher](commit-status-publisher.md) or [Pull Requests](pull-requests.md#JetBrains+Space+Merge+Requests) feature, [enabling Space authentication](configuring-authentication-settings.md#JetBrains+Space), or creating a [project](creating-and-editing-projects.md#Creating+project+pointing+to+JetBrains+Space) / [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+Pointing+to+Specific+VCS) / [VCS root](configuring-vcs-roots.md).
 
 ## NPM Registry
 {id="npm-registry-settings" auxiliary-id="npm-registry-settings"}

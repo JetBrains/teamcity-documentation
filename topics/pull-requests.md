@@ -1,9 +1,9 @@
 [//]: # (title: Pull Requests)
 [//]: # (auxiliary-id: Pull Requests)
 
-The _Pull Requests_ [build feature](adding-build-features.md) lets you automatically load pull request\* information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [Bitbucket Cloud](#Bitbucket+Cloud+Pull+Requests), [GitLab](#GitLab+Merge+Requests), and [Azure DevOps](#Azure+DevOps+Pull+Requests).
+The _Pull Requests_ [build feature](adding-build-features.md) lets you automatically load pull request\* information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [Bitbucket Cloud](#Bitbucket+Cloud+Pull+Requests), [GitLab](#GitLab+Merge+Requests), [Azure DevOps](#Azure+DevOps+Pull+Requests), and [JetBrains Space](#JetBrains+Space+Merge+Requests).
 
-\* Or _merge requests_ in case of GitLab.
+\* Or _merge requests_ in case of GitLab and JetBrains Space.
 
 When adding this build feature, you need to specify a VCS root and select a VCS hosting type.  
 Other settings depend on the selected VCS hosting type.
@@ -142,7 +142,7 @@ By source branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left empty, no filters apply.
 
 </td>
 </tr>
@@ -155,7 +155,7 @@ By target branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.
 
 </td>
 </tr>
@@ -170,7 +170,7 @@ Server URL
 
 Specify a GitHub URL for connection.
 
-If left blank, the URL will be extracted from the VCS root fetch URL.
+If left empty, the URL will be extracted from the VCS root fetch URL.
 
 </td>
   </tr>
@@ -244,7 +244,7 @@ By source branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left empty, no filters apply.
 
 </td>
 </tr>
@@ -257,7 +257,7 @@ By target branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.
 
 </td>
 </tr>
@@ -272,7 +272,7 @@ Server URL
 
 Specify a Bitbucket URL for connection.
 
-If left blank, the URL will be extracted from the VCS root fetch URL.
+If left empty, the URL will be extracted from the VCS root fetch URL.
 
 </td>
   </tr>
@@ -349,7 +349,7 @@ By target branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left empty, no filters apply.
 
 </td>
 </tr>
@@ -400,7 +400,7 @@ By source branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor merge requests only on source branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor merge requests only on source branches that match the specified criteria. If left empty, no filters apply.
 
 </td>
 </tr>
@@ -413,7 +413,7 @@ By target branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. If left empty, no filters apply.
 
 </td>
 </tr>
@@ -428,7 +428,7 @@ Server URL
 
 Specify a GitLab URL for connection.
 
-If left blank, the URL will be extracted from the VCS root fetch URL.
+If left empty, the URL will be extracted from the VCS root fetch URL.
 
 </td>
   </tr>
@@ -480,7 +480,7 @@ By source branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left empty, no filters apply.
 
 </td>
 </tr>
@@ -493,7 +493,7 @@ By target branch
 <td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.
 
 </td>
 </tr>
@@ -506,11 +506,76 @@ Project URL
 
 <td>
 
-Specify a project URL for synchronization with the remote Azure DevOps server. This field is recommended for on-premises Azure DevOps installations. If left blank, the URL will be composed based on the VCS root fetch URL.
+Specify a project URL for synchronization with the remote Azure DevOps server. This field is recommended for on-premises Azure DevOps installations. If left empty, the URL will be composed based on the VCS root fetch URL.
 
 </td>
   </tr>
 </table>
+
+### JetBrains Space Merge Requests
+This feature monitors merge requests directly in the source branches of a source repository (forks are not supported).
+
+The following parameters are available for the [JetBrains Space](https://www.jetbrains.com/space/) hosting type:
+
+<table>
+<tr>
+<td width="150">
+
+Parameter
+
+</td>
+
+<td>
+
+Description
+
+</td>
+</tr>
+<tr>
+<td>
+
+Connection
+
+</td>
+
+<td>
+
+Choose a preconfigured [connection to JetBrains Space](configuring-connections.md#jetbrains-space-connection).
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+By target branch
+
+</td>
+
+<td>
+
+Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left empty, no filters apply.
+
+If more than one merge request is submitted from the same source branch at the moment of the build start, TeamCity will display all these requests in the build results. However, only commits from the open requests matching the filtering criteria will be displayed as _Changes_ of the build.
+</td>
+</tr>
+
+</table>
+
+If you want to run several parallel builds to pretest a request before merging it, the best solution is to:
+1. Create a [composite build configuration](composite-build-configuration.md) and attach your JetBrains Space [VCS root](configuring-vcs-roots.md) with an empty branch specification.
+2. Combine builds in a chain by [snapshot dependencies](build-dependencies-setup.md##Snapshot+Dependencies) and add the composite build configuration to the end of the chain.
+3. Add the _Pull Requests_ feature to each build configuration of the chain so that all builds can detect changes in a merge request branch. You can adjust all settings in a [build configuration template](build-configuration-template.md) and then create these build configurations based on it.
+4. In the composite build configuration settings:
+   - Add a [VCS trigger](configuring-vcs-triggers.md) to automatically run builds on changes detected in the merge request branch.
+   - Add the [Commit Status Publisher](commit-status-publisher.md#JetBrains+Space) feature to send the build statuses to the merge requiest timeline in JetBrains Space.  
+   If you want other builds of the chain report their statuses to the merge request timeline (for example, _deployment_ or _integration testing_ builds), add the _Commit Status Publisher_ feature to the corresponding build configurations.     
+
+After that, TeamCity will automatically run builds on changes in the merge request branch submitted to your JetBrains Space repo and publish build statuses to the merge request timeline in Space:
+
+<img src="space-timeline.png" alt="Space merge request timeline" width="700"/>
+
+To protect a JetBrains Space branch from unverified merge requests, you can also configure [Quality Gates](https://www.jetbrains.com/help/space/branch-and-merge-restrictions.html#quality-gates-for-merge-requests) in your repository settings. If you set a TeamCity build as an external check, JetBrains Space will require the build on a merge request to finish successfully before allowing this request to be merged.
 
 ## Predefined build parameters for pull requests
 
@@ -555,7 +620,7 @@ To configure the described workflow for the `web-app` build configuration in Tea
         * __Authentication type__: _Use VCS root credentials_, or select _Access token_ to use a GitHub token instead        
         * __Pull Requests filtering__:
            * __By authors__: _Members of the same organization_
-           * __By target branch__: leave blank to apply no filters and monitor all new pull requests in the repository, or explicitly specify the target branch (in this example, _`master`_)
+           * __By target branch__: leave empty to apply no filters and monitor all new pull requests in the repository, or explicitly specify the target branch (in this example, _`master`_)
    * Test the connection and, if successful, click __Save__.
 3. Add a [VCS trigger](configuring-vcs-triggers.md) to the build configuration.
 
