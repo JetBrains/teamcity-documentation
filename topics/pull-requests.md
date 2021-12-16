@@ -569,9 +569,9 @@ If you want to run several parallel builds to pretest a request before merging i
 4. In the composite build configuration settings:
    - Add a [VCS trigger](configuring-vcs-triggers.md) to automatically run builds on changes detected in the merge request branch.
    - Add the [Commit Status Publisher](commit-status-publisher.md#JetBrains+Space) feature to send the build statuses to the merge requiest timeline in JetBrains Space.  
-   If you want other builds of the chain to report their statuses to the merge request timeline (for example, _deployment_ or _integration testing_ builds), add the _Commit Status Publisher_ feature to the corresponding build configurations.     
+   If you want other builds of the chain to report their statuses to JetBrains Space (for example, _deployment_ or _integration testing_ builds), add the _Commit Status Publisher_ feature to the corresponding build configurations.     
 
-After that, TeamCity will automatically run builds on changes in the merge request branch submitted to your JetBrains Space repo and publish build statuses to the _Commits_ tab and the merge request timeline in Space:
+After that, TeamCity will automatically run builds on changes in a merge request branch submitted to your JetBrains Space repo and publish build statuses to the _Commits_ tab and the merge request timeline in Space:
 
 <img src="space-timeline.png" alt="Space merge request timeline" width="700"/>
 
