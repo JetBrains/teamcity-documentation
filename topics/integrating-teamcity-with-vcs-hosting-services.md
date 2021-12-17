@@ -67,4 +67,4 @@ Integration with JetBrains Space allows you to:
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
 * enable [JetBrains Space authentication](configuring-authentication-settings.md#JetBrains+Space)
 
-See how to configure a connection to JetBrains Space [here](configuring-connections.md#JetBrains+Space).
+See how to configure a connection to JetBrains Space [here](configuring-connections.md#connect-to-jetbrains-space).
