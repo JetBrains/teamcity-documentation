@@ -513,7 +513,10 @@ Specify a project URL for synchronization with the remote Azure DevOps server. T
 </table>
 
 ### JetBrains Space Merge Requests
-This feature monitors merge requests directly in the source branches of a source repository (forks are not supported).
+
+This feature monitors merge requests directly in the source branches of an origin repository (forks are not supported).  
+If more than one merge request is submitted from the same source branch at the moment of the build start, TeamCity will display all these requests in the build results. However, only commits from the open requests matching the filtering criteria will be displayed as [Changes](working-with-build-results.md#Changes) of the build.
+
 
 The following parameters are available for the [JetBrains Space](https://www.jetbrains.com/space/) hosting type:
 
@@ -555,20 +558,18 @@ By target branch
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor merge requests only on branches that match the specified criteria. If left empty, no filters apply.
-
-If more than one merge request is submitted from the same source branch at the moment of the build start, TeamCity will display all these requests in the build results. However, only commits from the open requests matching the filtering criteria will be displayed as _Changes_ of the build.
 </td>
 </tr>
 
 </table>
 
 If you want to run several parallel builds to pretest a request before merging it, the best solution is to:
-1. Create a [composite build configuration](composite-build-configuration.md) and attach your JetBrains Space [VCS root](configuring-vcs-roots.md) with an empty branch specification.
-2. Combine builds in a chain by [snapshot dependencies](build-dependencies-setup.md##Snapshot+Dependencies) and add the composite build configuration to the end of the chain.
-3. Add the _Pull Requests_ feature to each build configuration of the chain so that all builds can detect changes in a merge request branch. You can adjust all settings in a [build configuration template](build-configuration-template.md) and then create these build configurations based on it.
+1. Create a [composite build configuration](composite-build-configuration.md) and attach your JetBrains Space [VCS root](configuring-vcs-roots.md) with an empty branch specification to it.
+2. Add the composite build configuration at the end of the build chain by configuring its [snapshot dependencies](build-dependencies-setup.md##Snapshot+Dependencies) on parallel builds with tests.
+3. Add the _Pull Requests_ feature to each build configuration of the chain so that all builds can detect changes in a merge request branch. You can preconfigure all settings in a [build configuration template](build-configuration-template.md) and then create these build configurations based on it.
 4. In the composite build configuration settings:
-   - Add a [VCS trigger](configuring-vcs-triggers.md) to automatically run builds on changes detected in the merge request branch.
-   - Add the [Commit Status Publisher](commit-status-publisher.md#JetBrains+Space) feature to send the build statuses to the merge requiest timeline in JetBrains Space.  
+   * Add a [VCS trigger](configuring-vcs-triggers.md) to automatically run builds on changes detected in the merge request branch.
+   * Add the [Commit Status Publisher](commit-status-publisher.md#JetBrains+Space) feature to send the build statuses to the merge requiest timeline in JetBrains Space.  
    If you want other builds of the chain to report their statuses to JetBrains Space (for example, _deployment_ or _integration testing_ builds), add the _Commit Status Publisher_ feature to the corresponding build configurations.     
 
 After that, TeamCity will automatically run builds on changes in a merge request branch submitted to your JetBrains Space repo and publish build statuses to the _Commits_ tab and the merge request timeline in Space:

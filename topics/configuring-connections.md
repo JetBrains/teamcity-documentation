@@ -313,7 +313,7 @@ Before configuring this connection, you need to create a dedicated application i
 2. Enter a convenient name and save the application.
 3. Go to the app's __Authorization__ tab and click __Configure requirements__ under the __In-context Authorization__ section. Enter the name of the Space project you are about to access from TeamCity.
 4. Now, you need to set permissions that will be granted to the app in this project. Click __Configure__ and enable the following permissions:
-   * Required for general access / authentication and Pull Requests:
+   * Required for authentication and Pull Requests:
       * _Members | View member profile_
    * Required for Commit Status Publisher:
       * _Git Repositories | Report external check status_
