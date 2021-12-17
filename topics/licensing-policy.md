@@ -153,8 +153,7 @@ Each TeamCity edition comes bundled with 3 or more [build agents](build-agent.md
 <anchor name="evaluation-license"/>
 
 Besides the Professional and Enterprise licenses, there are two more license types:
-* __Evaluation__ — has an expiration date and provides an unlimited number of agents and build configurations. To obtain the evaluation license, use the link on [TeamCity download page](http://www.jetbrains.com/teamcity/download/). The evaluation license can be obtained only once for each major TeamCity version. A second evaluation license key from the site is not accepted by the same major version of TeamCity server. If you need to extend/repeat the evaluation, please [contact](https://www.jetbrains.com/support/sales/) our sales department.   
-Each [EAP](https://www.jetbrains.com/teamcity/nextversion/) (preview, not stable) release of TeamCity comes bundled with a 60-day evaluation license.
+* __Evaluation__ — has an expiration date and provides an unlimited number of agents and build configurations. To obtain the evaluation license, use the link on [TeamCity download page](http://www.jetbrains.com/teamcity/download/). The evaluation license can be obtained only once for each major TeamCity version. A second evaluation license key from the site is not accepted by the same major version of TeamCity server. If you need to extend/repeat the evaluation, please [contact](https://www.jetbrains.com/support/sales/) our sales department.
 * __Open Source__ — this is a special type of license granted for open source projects, it is time-based, and provides an unlimited number of agents. Refer to the details on [this page](https://www.jetbrains.com/teamcity/buy/choose_edition.jsp?license=OPEN_SOURCE).
 
 The TeamCity Licensing Policy does not impose any limitations on the number of instances for any of the IDE plugins or Notifiers.
@@ -223,7 +222,6 @@ Once sufficient valid license keys are entered which cover the server configurat
 The following ways to switch your server into the Enterprise mode exist:
 * [buy](http://www.jetbrains.com/teamcity/buy/) an Enterprise Server license;
 * request a 60-days evaluation license on the [download page](http://www.jetbrains.com/teamcity/download/) (see details [above](#Editions));
-* use a TeamCity [EAP release](https://www.jetbrains.com/teamcity/nextversion/) (not stable, but comes bundled with a 60-day nonrestrictive license);
 * use TeamCity for open-source projects only and [request an open-source license](https://www.jetbrains.com/buy/opensource/?product=teamcity).
 
 ## Upgrading From Previous Versions
