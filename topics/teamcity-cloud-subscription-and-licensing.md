@@ -28,14 +28,14 @@ _[Build credits](#cloud-build-credits)_ are granted to your subscription per eac
 Build credits are automatically spent on build time on agents. You can also exchange them on:
 * Committer slots
 * Concurrent builds on self-hosted agents
-* Prepaid per-month agents
+* Agents prepaid monthly
 * Extra [storage](#cloud-storage) and [data transfer capacity](#cloud-data-transfer)
 
 >It is easier to stay under storage capacity limits if you configure proper [clean-up rules](teamcity-data-clean-up.md) in your TeamCity Cloud instance.
 
 TeamCity Cloud can run builds on two types of agents:
 * __JetBrains-hosted__: Each minute of build time on [JetBrains-hosted agents](#cloud-jb-hosted-agents) will expend a certain number of build credits. The exact rate depends on your build agent [instance type](#cloud-instance-type).  
-  Alternatively, you can [prepay](#cloud-prepaid-agents) one or more JetBrains-hosted agents on a monthly basis. Once prepaid, such an agent will be able to run an unlimited number of builds during the following month. This option can significantly reduce costs if you run builds non-stop. It is also convenient if you don't mind how many builds run in parallel and just want to pay a fixed sum monthly.
+  Alternatively, you can [prepay](#cloud-prepaid-agents) one or more JetBrains-hosted agents on a monthly basis. You can choose a specific type of agent and run an unlimited number of builds on it during the following month. This option can significantly reduce costs if you run builds non-stop. It is also convenient if you don't mind how many builds run in parallel and just want to pay a fixed sum monthly.
 * __Self-hosted__: In case with [self-hosted agents](#cloud-self-hosted-agents), build time is not counted. Instead, you need to purchase an extra slot for each concurrent build running on a self-hosted agent. For example, if you purchase 3 slots monthly, you would be able to run up to 3 builds on self-hosted agents, connected to your TeamCity server, at each moment of time during this month.
 
 TeamCity will always try to optimize costs spent on a build. If an idle self-hosted agent is available, TeamCity will assign the build to it. If only JetBrains-hosted agents are available and there is an idle prepaid one, it will assign the build to this agent.
@@ -68,7 +68,7 @@ __Build credits__
 
 <td>
 
-Build credits in TeamCity Cloud can be redeemed for build minutes on [JetBrains-hosted agents](#cloud-jb-hosted-agents) or exchanged at a flat rate for concurrent builds on [self-hosted agents](#cloud-self-hosted-agents). You can also exchange build credits for additional [storage](#cloud-storage), [data transfer](#cloud-data-transfer), and committer slots.
+Build credits in TeamCity Cloud can be redeemed for build minutes on [JetBrains-hosted agents](#cloud-jb-hosted-agents), exchanged at a flat rate for concurrent builds on [self-hosted agents](#cloud-self-hosted-agents) or [prepaid agents](#cloud-prepaid-agents). You can also exchange build credits for additional [storage](#cloud-storage), [data transfer](#cloud-data-transfer), and committer slots.
 
 Build credits are granted per every committer slot in a subscription and can be purchased on demand.
 
