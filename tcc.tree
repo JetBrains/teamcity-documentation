@@ -34,9 +34,15 @@
             <toc-element id="start-teamcity-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configure-java-for-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="install-multiple-agents-on-one-machine.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="teamcity-integration-with-cloud-solutions.md" show-structure-for="chapter" show-structure-depth="4">
+                <toc-element id="setting-up-teamcity-for-amazon-ec2.md" show-structure-for="chapter" show-structure-depth="4"/>
+                <toc-element id="setting-up-teamcity-for-kubernetes.md" show-structure-for="chapter" show-structure-depth="4"/>
+                <toc-element id="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md" show-structure-for="chapter" show-structure-depth="4"/>
+            </toc-element>
         </toc-element>
     </toc-element>
     <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4">
+        <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agent-pool.md" show-structure-for="chapter" show-structure-depth="4"/>

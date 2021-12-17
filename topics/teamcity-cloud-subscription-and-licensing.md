@@ -177,7 +177,7 @@ __Self-hosted build agent__
 
 <td>
 
-A build agent that can be connected to TeamCity Cloud, but is hosted and managed by the customer. Self-hosted build agents are useful if you require a custom set of build software, build environments, and so on.
+A build agent that can be connected to TeamCity Cloud, but is hosted and managed by the customer ([locally](install-and-start-teamcity-agents.md), or [in cloud](teamcity-integration-with-cloud-solutions.md)). Self-hosted build agents are useful if you require a custom set of build software, build environments, and so on.
 
 You can spend build credits on adding self-hosted build agents to your instance at a flat monthly rate. These agents do not draw on any additional build credits and can run an unlimited number of builds. When a self-hosted build agent is redeemed in your TeamCity Cloud instance, it increases the number of concurrent builds you can perform on self-hosted agents by 1.
 

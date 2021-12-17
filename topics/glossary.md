@@ -5,7 +5,6 @@
 
 Agent cloud profile
 : A collection of settings according to which TeamCity starts virtual machines with build agents in the cloud. Configuring a cloud profile is a mandatory step of integrating TeamCity with the cloud providers: Amazon EC2, Kubernetes, VMWare vSphere, and [others](teamcity-integration-with-cloud-solutions.md).
-{product="tc"}
 
 Agent cloud profile
 : A collection of settings according to which TeamCity starts virtual machines with build agents in the cloud. Configuring a cloud profile is a mandatory step of integrating TeamCity with the cloud providers: Amazon EC2, Kubernetes, VMWare vSphere, and others.

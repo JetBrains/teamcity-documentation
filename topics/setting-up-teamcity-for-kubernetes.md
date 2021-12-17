@@ -1,7 +1,7 @@
 [//]: # (title: Setting Up TeamCity for Kubernetes)
 [//]: # (auxiliary-id: Setting Up TeamCity for Kubernetes)
 
-Since version 2020.1, the [Kubernetes Support](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) plugin is bundled with TeamCity. The plugin adds the Kubernetes type of [cloud profile](agent-cloud-profile.md) and allows running [build agents](build-agent.md) in your Kubernetes cluster.
+Thanks to the [Kubernetes Support](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) plugin, TeamCity can run [build agents](build-agent.md) in your Kubernetes cluster.
 
 <note product="tc">
 

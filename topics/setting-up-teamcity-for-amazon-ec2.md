@@ -9,7 +9,7 @@ Integrations with other cloud solutions are [available](teamcity-integration-wit
 
 It is assumed that the machine images are preconfigured to start TeamCity agent on boot (see details [below](#Preparing+Image+with+Installed+TeamCity+Agent)).
 
-Once a cloud profile is configured in TeamCity with one or several images, TeamCity does a test start for all the new images to learn about the agents on them.   
+Once a cloud profile is configured in TeamCity with one or several images, TeamCity does a test start for all the new images to learn about the agents on them.  
 Once the agents are connected, TeamCity stores their parameters to be able to process the build configurations-to-agents compatibility correctly.
 
 For each queued build, TeamCity first tries to start it on one of the regular, non-cloud agents. If there are no usual agents available, TeamCity finds a matching cloud image with a compatible agent and starts a new instance for the image. TeamCity ensures that the running instances limit configured in the cloud profile is not exceeded.
