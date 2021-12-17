@@ -554,7 +554,7 @@ By target branch
 
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left empty, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor merge requests only on branches that match the specified criteria. If left empty, no filters apply.
 
 If more than one merge request is submitted from the same source branch at the moment of the build start, TeamCity will display all these requests in the build results. However, only commits from the open requests matching the filtering criteria will be displayed as _Changes_ of the build.
 </td>
