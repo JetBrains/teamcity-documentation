@@ -120,7 +120,7 @@ Occurs with the release of two newer major versions. At this point, we stop prov
 <seealso>
         <category ref="installation">
             <a href="licensing-policy.md" product="tc">Licensing Policy</a>
-            <a href="previous-releases-downloads.md">Previous Releases Downloads</a>
-            <a href="upgrading-teamcity-server-and-agents.md">Upgrade</a>
+            <a href="previous-releases-downloads.md" product="tc">Previous Releases Downloads</a>
+            <a href="upgrading-teamcity-server-and-agents.md" product="tc">Upgrade</a>
         </category>
 </seealso>

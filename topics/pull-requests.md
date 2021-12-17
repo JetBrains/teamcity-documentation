@@ -565,7 +565,7 @@ Define the [branch filter](branch-filter.md) to monitor merge requests only on b
 
 If you want to run several parallel builds to pretest a request before merging it, the best solution is to:
 1. Create a [composite build configuration](composite-build-configuration.md) and attach your JetBrains Space [VCS root](configuring-vcs-roots.md) with an empty branch specification to it.
-2. Add the composite build configuration at the end of the build chain by configuring its [snapshot dependencies](build-dependencies-setup.md##Snapshot+Dependencies) on parallel builds with tests.
+2. Add the composite build configuration at the end of the build chain by configuring its [snapshot dependencies](build-dependencies-setup.md#Snapshot+Dependencies) on parallel builds with tests.
 3. Add the _Pull Requests_ feature to each build configuration of the chain so that all builds can detect changes in a merge request branch. You can preconfigure all settings in a [build configuration template](build-configuration-template.md) and then create these build configurations based on it.
 4. In the composite build configuration settings:
    * Add a [VCS trigger](configuring-vcs-triggers.md) to automatically run builds on changes detected in the merge request branch.
