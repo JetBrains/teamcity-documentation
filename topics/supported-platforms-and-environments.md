@@ -608,6 +608,7 @@ Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
 * [GitLab.com / GitLab CE/EE](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+GitLab)
 * [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+Bitbucket+Cloud)
 * [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+Azure+DevOps), or formerly Visual Studio Team Services
+* [JetBrains Space](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+JetBrains+Space)
 
 ## Cloud Platforms
 {product="tc"}
