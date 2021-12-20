@@ -29,6 +29,7 @@ On an attempt to sign in via the login form, TeamCity asks all the available _cr
 * __JetBrains Space__: Allows authenticating with an existing [JetBrains Space](https://www.jetbrains.com/space/) account.
 * __Azure DevOps__: Allows authenticating with an existing Azure AD account via OAuth 2.0.
 * (Since version 2021.12) __HTTP SAML 2.0__: Allows authenticating with an existing [Okta](https://www.okta.com/) or [OneLogin](https://www.onelogin.com/) account via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0).
+{product="tcc"}
 
 Refer to [Configuring Authentication Settings](configuring-authentication-settings.md) for specific _authentication modules'_ configuration. See also [Accessing Server by HTTP](accessing-server-by-http.md) page for details about accessing a server from your scripts using _Token-Based Authentication_ or _basic HTTP authentication_.
 
