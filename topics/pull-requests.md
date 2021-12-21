@@ -514,8 +514,8 @@ Specify a project URL for synchronization with the remote Azure DevOps server. T
 
 ### JetBrains Space Merge Requests
 
-This feature monitors merge requests directly in the source branches of an origin repository (forks are not supported).  
-If more than one merge request is submitted from the same source branch at the moment of the build start, TeamCity will display all these requests in the build results. However, only commits from the open requests matching the filtering criteria will be displayed as [Changes](working-with-build-results.md#Changes) of the build.
+This feature monitors merge requests directly in the source branches of an origin repository.  
+If more than one merge request is submitted from the same source branch, TeamCity will display all these requests in the build results. However, only commits from the open requests matching the filtering criteria will be displayed as [Changes](working-with-build-results.md#Changes) of the build.
 
 
 The following parameters are available for the [JetBrains Space](https://www.jetbrains.com/space/) hosting type:
