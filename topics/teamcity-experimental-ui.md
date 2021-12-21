@@ -3,7 +3,7 @@
 
 >This UI is the default mode in TeamCity Cloud. The current article gives an overview of this UI's differences from the Classic mode.
 >
-{type="tcc"}
+{product="tcc"}
 
 In version 2019.1, TeamCity introduced an experimental UI option as an alternative to the classic UI. Our experimental UI is a work in progress: we present the changes in functionality in the early stages of development so you can benefit from the new features as soon as possible. Based on our vision and your feedback, we are constantly releasing new UI features and improving existing ones.
  
