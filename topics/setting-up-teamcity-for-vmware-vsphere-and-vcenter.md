@@ -44,16 +44,16 @@ When configuring the TeamCity build agent, be sure to specify the valid TeamCity
 * When using the same image in different cloud profiles, to avoid possible conflicts, it is possible to use a custom agent image name when configuring a cloud profile in TeamCity. This can be also useful with naming patterns for agents. When a custom agent image name is specified, the names of cloud agent instances cloned from the image will be based on this name.
 
 
-### How to Reuse Agent (Virtual Machine Clone)
+### Clone Virtual Machine to Reuse Agent
 
-To clone a virtual machine or template and preserve the clone so that TeamCity can reuse it, select the second option in the __Behavior__ configuration field of the __Add Image/Edit Image__ dialog:
+To clone a virtual machine or template and preserve the clone so TeamCity can reuse it, select the respective option in the _Behavior_ configuration field of the __Add Image/Edit Image__ dialog:
 
-<img src="vCenter-add-image-behavior.png" alt="vCenter Add Image Behavior" width="700"/>
+<img src="vCenter-add-image-behavior.png" alt="vCenter Add Image Behavior" width="706"/>
 
-Note that if you use `<Current State>` in the __Snapshot name__ field, TeamCity will always create a new clone and delete the previous one. To preserve the cloned virtual machine, do the following instead:
+Note that if you use `<Current State>` in the _Snapshot name_ field, TeamCity will always create a new clone and delete the previous one. To preserve the cloned virtual machine:
 * __For virtual machines__:  
-  1. Select the virtual machine that you want to use in the __Agent image__ field.
-  2. [Create a snapshot of your virtual machine](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-A0D8E8E7-629B-466D-A50C-38705ACA7613.html) and use its name in the __Snapshot name__ field.
+  1. Select the virtual machine that you want to use in the _Agent image_ field.
+  2. [Create a snapshot of your virtual machine](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-A0D8E8E7-629B-466D-A50C-38705ACA7613.html) and use its name in the _Snapshot name_ field.
 * __For templates:__  
   1. [Convert a template to a virtual machine](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.hostclient.doc/GUID-79C2F2A0-D268-4F4A-88CC-8B87144E5E46.html), create a snapshot of this virtual machine, and then [convert the virtual machine back to a template](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.hostclient.doc/GUID-846238E4-A1E3-4A28-B230-33BDD1D57454.html). 
-  2. In TeamCity, select the template in the __Agent image__ field and use the snapshot that you've just created in the __Snapshot name__ field .
+  2. In TeamCity, select the template in the _Agent image_ field and use the snapshot you have just created in the _Snapshot name_ field .
