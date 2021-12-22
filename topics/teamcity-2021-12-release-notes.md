@@ -23,7 +23,6 @@ __22 December 2021__
 [**TW-69110**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69110) — Consider adding &quot;Create project&quot; button to the sidebar  
 [**TW-72145**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72145) — New black header: Issue with accessibility  
 [**TW-73739**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73739) — Switch of the verbosity level on the new build log collapses all of the nodes  
-[**TW-73756**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73756) — Server health report about disabled native git operations and git version should be more detailed  
 [**TW-72736**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72736) — Add &quot;Open in build log&quot; icon  
 [**TW-73549**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73549) — Select JetBrains space as connection type in Add connection dialog when user selects Space icon with no connection configured.  
 [**TW-69011**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69011) — UI to edit agent pools  
@@ -53,13 +52,11 @@ __22 December 2021__
 [**TW-74338**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74338) — SQL exception on attempt to execute &quot;optimize table build\_type\_vcs\_change&quot; statement  
 [**TW-74386**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74386) — CloudImage.getAgentPoolId() returns wrong result  
 [**TW-74255**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74255) — VCS trigger runs builds on old changes in obsolete branches after the VCS root settings changes and builds cleanup  
-[**TW-74142**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74142) — Update .NET SDK 3.1 -\&gt; 6 in docker images  
-[**TW-74173**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74173) — IntelliJ 2021.3 cannot be uploaded as a tool in TeamCity: &quot;Package is invalid&quot;  
+[**TW-74142**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74142) — Update .NET SDK 3.1 -\&gt; 6 in docker images   
 [**TW-73290**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73290) — Single change page. Switch tab shows &quot;Open in build log&quot; window if it was previously closed  
 [**TW-45709**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-45709) — UUID clash when something is edited in UI and on disk simultaneously  
 [**TW-73647**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73647) — Weird search result on attempt to find a project/configuration by keyword &quot;xml&quot;  
-[**TW-73688**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73688) — &quot;It&#39;s me&quot; link is shown for guest user on the Change page  
-[**TW-73742**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73742) — &quot;Could not read data from the Dsl data dir&quot; warning because writing to system/pluginData/.../dslData.zip is prohibited  
+[**TW-73688**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73688) — &quot;It&#39;s me&quot; link is shown for guest user on the Change page   
 [**TW-73690**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73690) — &quot;Show files&quot; checkbox doesn&#39;t work for guest users in the experimental UI  
 [**TW-73689**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73689) — Guest user doesn&#39;t see build revision in the experimental UI  
 [**TW-73620**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73620) — The &quot;Highlight my changes and investigations&quot; setting does not work in terms of highlighting my changes  
@@ -110,7 +107,6 @@ __22 December 2021__
 [**TW-71874**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71874) — Renaming/moving/archiving of projects should be reflected in GraphQL agent pool projects tab  
 [**TW-73766**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73766) — Provide the limit for number of symbols in Agent Pool name in Experimental UI.  
 [**TW-73453**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73453) — [S3 Storage] Artifacts cache hashsums are invalid when artifacts stored in cache during upload  
-[**TW-73776**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73776) — Impossible to retrieve nuget packages from TeamCity NuGet feed when 2FA is enabled.  
 [**TW-74088**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74088) — Build may be cancelled when the server is temporary unavailable  
 [**TW-73725**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73725) — Error on load project settings from VCS for custom chart with build step duration metric: &quot;Unresolved reference: buildstepname&quot;  
 [**TW-73973**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73973) — GraphQL API: add the `excludedCount` prop to the `AgentPoolProjectsConnection` type  
@@ -176,7 +172,6 @@ __22 December 2021__
 [**TW-73749**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73749) — GraphQL: Implement authorizeAgent &amp; bulkAuthorizeAgents  
 [**TW-71351**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71351) — GraphQL API: implement agents tree query missing properties  
 [**TW-72860**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72860) — Please replace usages of scheduled-to-remove `StringBuilderSpinAllocator` class  
-[**TW-72680**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72680) — Auto update: check if auto update is possible before starting it (i.e. ensure that the currently used Java is supported by the new TeamCity version)  
 [**TW-74054**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74054) — Upgrade Perforce helix client to a more recent version  
 [**TW-74357**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74357) — Remove log4j classes from webapps/ROOT/WEB-INF/plugins/jps-tool/agent/jps.zip!lib/scala-plugin/incremental-compiler.jar  
 [**TW-73228**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73228) — Bundle IntelliJ IDEA 2021.2.3 with TeamCity 2021.2  

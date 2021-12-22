@@ -578,6 +578,8 @@ After that, TeamCity will automatically run builds on changes in a merge request
 
 To protect a JetBrains Space branch from unverified merge requests, you can also configure [Quality Gates](https://www.jetbrains.com/help/space/branch-and-merge-restrictions.html#quality-gates-for-merge-requests) in your repository settings. If you set a TeamCity build as an external check, JetBrains Space will require the build on a merge request to finish successfully before allowing this request to be merged.
 
+See known issues with processing JetBrains Space merge requests [here](known-issues.md#Known+issues+of+Pull+Requests+build+feature).
+
 ## Predefined build parameters for pull requests
 
 TeamCity provides multiple [predefined build parameters](predefined-build-parameters.md) that expose valuable information on pull requests for builds with the enabled Pull Requests [feature](adding-build-features.md):
