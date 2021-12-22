@@ -20,18 +20,18 @@ Major updates are released twice a year, and each major release is followed by m
 ## Version Numbers
 {product="tc"}
 
-A major release is represented by the `YYYY.NN` number, where `YYYY` is the release year and `NN` is the number of the release month. For example, `2022.04` and `2022.10` are two major versions to be released in year 2022, in April and October.
+A major release is represented by the `YYYY.MM` number, where `YYYY` is the release year and `MM` is the number of the release month. For example, `2022.04` and `2022.10` are two major versions to be released in year 2022, in April and October.
 
-A minor release is represented by the `YYYY.NN.M` number, where `YYYY.NN` corresponds to its preceding major release and M is the serial number of the minor release. For example, `2022.04.1` is the first bugfix update to be released for major version `2022.04`.
+A minor release is represented by the `YYYY.MM.B` number, where `YYYY.MM.B` corresponds to its preceding major release and `B` is the serial number of the minor (bugfix) release. For example, `2022.04.1` is the first bugfix update to be released for major version `2022.04`.
 
 The dates of all previous releases and the sequence of TeamCity versions are listed [here](previous-releases-downloads.md).
 {product="tc"}
 
 ## Release Stages
 
->Since version 2021.12, TeamCity adopts a new scheme of releases. It replaces the former Early Access Program in favor of granting early access to new features in TeamCity Cloud.
+>Since version 2021.12, TeamCity adopts a new scheme of releases. We are discontinuing a former Early Access Program in favor of frequent and stable TeamCity Cloud releases, in which all features will be polished and ready to be used in production, but tested only in the Cloud environment.
 > 
->The TeamCity Cloud infrastructure allows releasing new features more frequently: they are now rolled out to the Cloud instances bimonthly. On-Premises instances can be upgraded to a new major version twice a year, exactly as before.
+>The TeamCity Cloud infrastructure allows releasing new features more frequently than in On-Premises: they are now rolled out to the Cloud instances bimonthly. On-Premises instances can be upgraded to a new major version twice a year, exactly as before.
 > 
 {type="note"}
 
