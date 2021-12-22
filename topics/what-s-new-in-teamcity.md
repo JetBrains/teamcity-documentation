@@ -119,11 +119,11 @@ Similarly, you can also associate projects with this pool: open the **Projects**
 - TeamCity stops supporting the [Microsoft Edge Legacy](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224) web browsers.
 - It is now impossible to automatically [trigger builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-build-queue.html#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
 - Updates in TeamCity Agent Docker images:
-{product="tcс"}
+{product="tc"}
     - Bundled .NET Core SDK has been updated to 6.0.100.
-{product="tcс"}
+{product="tс"}
     - Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
-{product="tcс"}
+{product="tс"}
 - Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11.
 - The [SBT](http://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](https://www.jetbrains.com/help/teamcity/2021.12/simple-build-tool-scala.html) plugin, has been updated to version 1.5.5.
 - The [Octopus Deploy integration plugin](https://plugins.jetbrains.com/plugin/9038-octopus-deploy-integration) bundled with TeamCity Cloud has been updated to version 6.1.8.

@@ -52,7 +52,6 @@ __22 December 2021__
 [**TW-74338**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74338) — SQL exception on attempt to execute &quot;optimize table build\_type\_vcs\_change&quot; statement  
 [**TW-74386**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74386) — CloudImage.getAgentPoolId() returns wrong result  
 [**TW-74255**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74255) — VCS trigger runs builds on old changes in obsolete branches after the VCS root settings changes and builds cleanup  
-[**TW-74142**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74142) — Update .NET SDK 3.1 -\&gt; 6 in docker images   
 [**TW-73290**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73290) — Single change page. Switch tab shows &quot;Open in build log&quot; window if it was previously closed  
 [**TW-45709**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-45709) — UUID clash when something is edited in UI and on disk simultaneously  
 [**TW-73647**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73647) — Weird search result on attempt to find a project/configuration by keyword &quot;xml&quot;  
@@ -111,7 +110,6 @@ __22 December 2021__
 [**TW-73725**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73725) — Error on load project settings from VCS for custom chart with build step duration metric: &quot;Unresolved reference: buildstepname&quot;  
 [**TW-73973**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73973) — GraphQL API: add the `excludedCount` prop to the `AgentPoolProjectsConnection` type  
 [**TW-73911**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73911) — Deadlock on attempt to store a new metadata storage key id  
-[**TW-74012**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74012) — Errors when building windows docker images for teamcity agents  
 [**TW-74042**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74042) — C# script runner may fail in docker dotnet container with &quot;Failed to create CoreCLR, HRESULT: 0x80004005&quot;  
 [**TW-73138**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73138) — Agents parameters subtabs links leads to old UI  
 [**TW-73998**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73998) — SSL certificate cannot be uploaded under Root project due to the lack of permissions  
@@ -172,7 +170,6 @@ __22 December 2021__
 [**TW-73749**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73749) — GraphQL: Implement authorizeAgent &amp; bulkAuthorizeAgents  
 [**TW-71351**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71351) — GraphQL API: implement agents tree query missing properties  
 [**TW-72860**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72860) — Please replace usages of scheduled-to-remove `StringBuilderSpinAllocator` class  
-[**TW-74054**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74054) — Upgrade Perforce helix client to a more recent version  
 [**TW-74357**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74357) — Remove log4j classes from webapps/ROOT/WEB-INF/plugins/jps-tool/agent/jps.zip!lib/scala-plugin/incremental-compiler.jar  
 [**TW-73228**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-73228) — Bundle IntelliJ IDEA 2021.2.3 with TeamCity 2021.2  
 [**TW-74333**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-74333) — Update Kotlin DSL to version 2021.12  
