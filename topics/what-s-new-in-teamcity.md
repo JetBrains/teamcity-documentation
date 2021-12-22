@@ -113,6 +113,10 @@ Similarly, you can also associate projects with this pool: open the **Projects**
 **Build failure conditions: Create a build problem per each matching error**  
   When configuring a _Fail build on specific text in build log_ [failure condition](build-failure-conditions.md), you can now specify whether to create a build problem only for the first text occurrence found in a build log (default) or for each error that matches the specified pattern.
 
+## Fixed issues
+
+See [TeamCity 2021.12 release notes](teamcity-2021-12-release-notes.md).
+
 ## Upgrade Notes 2021.12
 
 - To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). After updating to 2021.12, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset.
@@ -130,6 +134,7 @@ Similarly, you can also associate projects with this pool: open the **Projects**
 {product="tcc"}
 - The [Unity Support plugin](https://plugins.jetbrains.com/plugin/11453-unity-support) bundled with TeamCity Cloud has been updated to version SNAPSHOT-20211116104228.
 {product="tcc"}
+
 
 ## Previous releases
 
