@@ -114,6 +114,7 @@ Similarly, you can also associate projects with this pool: open the **Projects**
   When configuring a _Fail build on specific text in build log_ [failure condition](build-failure-conditions.md), you can now specify whether to create a build problem only for the first text occurrence found in a build log (default) or for each error that matches the specified pattern.
 
 ## Fixed issues
+{product="tcc"}
 
 See [TeamCity 2021.12 release notes](teamcity-2021-12-release-notes.md).
 
