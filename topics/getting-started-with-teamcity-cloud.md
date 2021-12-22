@@ -13,7 +13,7 @@ Understand the idea behind continuous integration, learn [basic TeamCity concept
 
 ## 2. Start TeamCity
 
-To start TeamCity in cloud, __[register an account](https://www.jetbrains.com/teamcity/cloud/)__. In a matter of seconds, your server will be available under the `teamcity.com` domain.
+To start TeamCity in cloud, __[register an account](https://www.jetbrains.com/teamcity/signup/)__. In a matter of seconds, your server will be available under the `teamcity.com` domain.
 
 After the server is ready, an invitation link will be sent to your email. Proceed via this link to get to your administrative account. Everything is ready to build!
 
