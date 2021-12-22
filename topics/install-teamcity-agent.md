@@ -123,7 +123,9 @@ You can test the connection by the following commands:
 
 ### Installation
 
-1. In the TeamCity Server UI, open __Agents | Agent Push__ and click __Install Agent__.   
+Note that to access the __Agent Push__ page, a user needs to have the _Administer build agent machines_ permission.
+
+1. In the TeamCity UI, open __Agents | Agent Push__ and click __Install Agent__.   
    If you want to use the same settings for several target hosts, you can __create a preset__ with these settings and use it each time when installing an agent to another remote host.
 2. In the _Install agent_ dialog, either select a saved preset or choose "_Use custom settings_", specify the target host platform, and configure corresponding settings. Agent Push to a Linux system via SSH supports custom ports (the default is 22) specified as the _SSH port_ parameter. The port specified in a preset can be overridden in the host name (for example, `hostname.domain:2222`), during the actual agent installation.
 3. You may need to download `Sysinternals psexec.exe`, in which case you will see the corresponding warning and a link to __Administration | Tools__ where you can download it.
