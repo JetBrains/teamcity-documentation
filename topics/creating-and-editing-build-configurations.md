@@ -110,6 +110,18 @@ Different build configuration settings are described in the respective articles 
 
 >Note that editing via the TeamCity UI will be disabled for build configurations created via the [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).
 
+## Permissions to Edit Build Configuration
+
+While only users with Project Administrator's permissions can change project and build configuration settings, there are several ways how contributors to the source code can also affect the build settings and environment.
+
+The default _Developer_ [role](managing-users-and-roles.md) grants users two permissions:
+* _Customize build parameters_ allows changing the values of [build configuration parameters](configuring-build-parameters.md) thus potentially affecting how the source code is executed.
+* _Change build source code with a custom patch_ allows running a [custom build](running-custom-build.md) based on a user's local sources, not yet committed to the repository.
+
+Besides, all the users who author the source code or/and can write to the repository with project settings stored in [Kotlin DSL](kotlin-dsl.md), could potentially execute their arbitrary code on common build agents.
+
+We recommend considering this aspect when granting users the permissions mentioned above or writing access to the projects' repositories. If necessary, you can adjust the set of [permissions granted to each role](managing-roles-and-permissions.md).
+
 ## Actions in Build Configuration Settings
 
 Use the __Actions__ menu, located in the upper right corner of the settings screen, to
