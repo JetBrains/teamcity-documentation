@@ -373,7 +373,9 @@
         <toc-element id="getting-started-with-php.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
         <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
     </toc-element>
-    <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2021-12.html"/>
+    <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2021-12.html">
+        <toc-element id="teamcity-2021-12-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+    </toc-element>
     <toc-element toc-title="Other resources">
         <toc-element toc-title="TeamCity On-Premises Documentation" href="https://www.jetbrains.com/help/teamcity/teamcity-documentation.html"/>
         <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Help" href="https://www.jetbrains.com/help/teamcity/ij-addin/tc-welcome.html"/>

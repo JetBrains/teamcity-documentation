@@ -9,11 +9,11 @@
 ### Bundled tools updates
 {id="bundled-tools-updates-2021-12"}
 
-* Updates in TeamCity Agent Docker images for Windows:
+* Updates in TeamCity Agent Docker images:
   * Bundled .NET Core SDK has been updated to 6.0.100.
   * Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
 * Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11.
-* [SBT](http://www.scala-sbt.org/), used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.5.5.
+* The [SBT](http://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.5.5.
 * The [Octopus Deploy integration plugin](https://plugins.jetbrains.com/plugin/9038-octopus-deploy-integration) bundled with TeamCity Cloud has been updated to version 6.1.8.
 {product="tcc"}
 * The [Unity Support plugin](https://plugins.jetbrains.com/plugin/11453-unity-support) bundled with TeamCity Cloud has been updated to version SNAPSHOT-20211116104228.
@@ -21,9 +21,9 @@
 
 ## Changes from 2021.2 to 2021.2.1
 
-* __.NET build runner counts parametrized tests as a single test__  
-  If parametrized .NET tests are launched with the `test` command of the [.NET](net.md) runner, TeamCity will show them as a single test with multiple runs, while previously it counted them separately and displayed the parameters' values per test in the __Tests__ tab.  
-  To revert to the previous behavior, please download the [fixed version of our .NET plugin](https://youtrack.jetbrains.com/issue/TW-74176#focus=Comments-27-5585620.0-0) and install it as described [here](installing-additional-plugins.md). This issue will be fixed in TeamCity 2021.2.2.
+* To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). After updating to 2021.2.1, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset.
+* If parametrized .NET tests are launched with the `test` command of the [.NET](net.md) runner, TeamCity will show them as a single test with multiple runs, while previously it counted them separately and displayed the parameters' values per test in the __Tests__ tab.  
+  To revert to the previous behavior, please download the [fixed version of our .NET plugin](https://youtrack.jetbrains.com/issue/TW-74176#focus=Comments-27-5585620.0-0) and install it as described [here](installing-additional-plugins.md).
 
 ### Bundled tools updates
 {id="bundled-tools-updates-202121"}
