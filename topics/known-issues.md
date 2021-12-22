@@ -515,5 +515,12 @@ If [Artifacts Domain Isolation](teamcity-configuration-and-maintenance.md#artifa
 
 ## Known issues of Pull Requests build feature
 
-* In some cases, TeamCity could start builds on old open merge requests in __JetBrains Space__ and pull requests in __Bitbucket Cloud__. This happens if the [Pull Requests](pull-requests.md) build feature was disabled and then enabled again in a build configuration whose VCS root has an empty branch specification. [See the related issue](https://youtrack.jetbrains.com/issue/TW-74379) for more details.
-* The [Pull Requests](pull-requests.md) build feature could post a wrong build step number to the merge request timeline in __JetBrains Space__. [See the related issue](https://youtrack.jetbrains.com/issue/TW-74374).
+* In some cases, TeamCity could start builds on old open merge requests in __JetBrains Space__ and pull requests in __Bitbucket Cloud__. This is reproduced with the following sequence of steps:
+  1. Create a new VCS root that connects to a repository with open merge requests. Leave the default branch specification.
+  2. Create a build configuration with this VCS root and a VCS trigger.
+  3. Remove the branch specification from the VCS root.
+  4. Add the Pull Requests build feature to the build configuration.
+  5. Disable the Pull Requests feature and then enable it again.  
+
+  See the [related issue](https://youtrack.jetbrains.com/issue/TW-74379) for more details.
+* The [Pull Requests](pull-requests.md) build feature could post a wrong build step number to the merge request timeline in __JetBrains Space__. See the [related issue](https://youtrack.jetbrains.com/issue/TW-74374).
