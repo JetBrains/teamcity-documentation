@@ -517,7 +517,7 @@ To sign in, click the Azure DevOps icon above the TeamCity login form and, after
 ### HTTP SAML 2.0
 {product="tcc"}
 
-This module enables single sign-on authentication in TeamCity via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0). It is confirmed to support [Okta](https://www.okta.com/), [OneLogin](https://www.onelogin.com/), [AWS SSO](https://aws.amazon.com/single-sign-on/), and other SSO providers.
+This module enables single sign-on authentication in TeamCity via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0). It is confirmed to support [Okta](https://www.okta.com/), [OneLogin](https://www.onelogin.com/), [AWS SSO](https://aws.amazon.com/single-sign-on/), [AD FS](https://docs.microsoft.com/en-us/windows-server/identity/active-directory-federation-services), and other SSO providers.
 
 The module relies on the verified third-party [SAML Authentication plugin](https://github.com/morincer/teamcity-plugin-saml) bundled with TeamCity since version 2021.12.
 
