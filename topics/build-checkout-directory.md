@@ -53,8 +53,6 @@ It is recommended to use the [Free Disk Space](free-disk-space.md) build feature
 
 [//]: # (Internal note. Do not delete. "Build Checkout Directoryd30e211.txt")
 
-There are also obsolete manual controls for old checkout directories clean-up:
-
 The time frame for automatic directory expiration can be changed by specifying a new value (in hours) by either of the following ways:
 * `teamcity.agent.build.checkoutDir.expireHours` agent property in the `buildAgent.properties` file
 * `system.teamcity.build.checkoutDir.expireHours` [build configuration property](configuring-build-parameters.md)   
