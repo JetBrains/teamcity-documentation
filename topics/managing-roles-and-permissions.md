@@ -158,6 +158,8 @@ __Project developer__
 
 Usually commits changes to a project. Can start/stop builds, reorder builds in the build queue, label the build sources, review agent details, start investigation of a failed build.
 
+Note that by default this role has the _Customize build parameters_ and _Change build source code with a custom patch_ permissions. This could give indirect access to altering a configuration/environment per build (see [more details](creating-and-editing-build-configurations.md#Permissions+to+Edit+Build+Configuration)).
+
 </td></tr><tr>
 
 <td id="agent-manager">

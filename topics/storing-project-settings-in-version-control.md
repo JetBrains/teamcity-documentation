@@ -48,15 +48,16 @@ On the __Configuration__ tab, you can also choose which VCS root is used to stor
 ### Defining Settings to Apply to Builds
 
 There are two possible sources of build settings: (1) the current settings on the TeamCity server, that is the latest settings' changes applied to the server (either made via the UI, or via a commit to the `.teamcity` directory in the VCS root), and (2) the settings in the VCS on the revision selected for a build.  
-Therefore, it is possible to start builds with settings different from those currently defined in the build configuration. For projects with enabled versioned settings, you can instruct TeamCity which settings to take __when build starts__.    
+It is possible to start builds with settings different from those currently defined in the build configuration. For projects with enabled versioned settings, you can instruct TeamCity which settings to take __when a build starts__.
+
 This gives multiple options:
 * If you are using TeamCity [feature branches](working-with-feature-branches.md), you can define a branch specification [when creating a project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL) (Git only) or in the [VCS root](vcs-root.md) used for versioned settings. TeamCity will run a build in a branch using the settings from this branch.
 * You can start a [personal build](personal-build.md) with changes made in the `.teamcity` directory, and these changes will affect the build behavior.
 * When running a [history build](history-build.md), TeamCity will attempt to use the settings corresponding to the moment of the selected change. Otherwise, the current project settings will be used.
 
-Before starting a build, TeamCity stores configuration for this build in build internal artifacts under the `.teamcity/settings` directory. These configuration files can be examined later to understand what settings were actually used by the build.
+>Before starting a build, TeamCity stores a configuration for this build in its internal artifacts under the `.teamcity/settings` directory. These configuration files can be examined later to understand what settings were actually used by the build.
 
-To define which settings to take __when build starts__, open the __Project Settings | Versioned Settings__ page, click __Show advanced options__, and select one of the following options:
+To define which settings to take __when a build starts__, open the __Project Settings | Versioned Settings__ page, click __Show advanced options__, and select one of the following options:
 * __always use current settings__: all builds use current project settings from the TeamCity server. Settings' changes in branches, history, and personal builds are ignored. Users cannot run a build with custom project settings.
 * __use current settings by default__: a build uses the latest project settings from the TeamCity server. Users can run a build with older project settings via the [custom build dialog](running-custom-build.md#Changes).
 * __use settings from VCS__: builds in branches and history builds, which use settings from VCS, load settings from the versioned settings' revision calculated for the build. Users can change configuration settings in [personal builds from IDE](remote-run.md) or can run a build with project settings current on the TeamCity server via the [custom build dialog](running-custom-build.md#Changes).

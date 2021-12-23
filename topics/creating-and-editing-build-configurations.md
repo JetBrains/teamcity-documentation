@@ -112,9 +112,9 @@ Different build configuration settings are described in the respective articles 
 
 ## Permissions to Edit Build Configuration
 
-While only users with Project Administrator's permissions can change project and build configuration settings, there are several ways how contributors to the source code can also affect the build settings and environment.
+While only users with _Project Administrator's_ permissions can change project and build configuration settings, there are several ways how contributors to the source code can also affect the build settings and environment.
 
-The default _Developer_ [role](managing-users-and-roles.md) grants users two permissions:
+The default _Project Developer_ [role](managing-users-and-roles.md) grants users two permissions:
 * _Customize build parameters_ allows changing the values of [build configuration parameters](configuring-build-parameters.md) thus potentially affecting how the source code is executed.
 * _Change build source code with a custom patch_ allows running a [custom build](running-custom-build.md) based on a user's local sources, not yet committed to the repository.
 
