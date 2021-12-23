@@ -116,9 +116,9 @@ Similarly, you can also associate projects with this pool: open the **Projects**
 ## Fixed issues
 {product="tcc"}
 
-See [TeamCity 2021.12 release notes](teamcity-2021-12-release-notes.md).
+See [TeamCity Build 107109 release notes](teamcity-release-notes-build-107109.md).
 
-## Upgrade Notes 2021.12
+## Upgrade notes
 
 - To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). After updating to 2021.12, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset.
 - TeamCity stops supporting the [Microsoft Edge Legacy](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224) web browsers.
@@ -138,6 +138,7 @@ See [TeamCity 2021.12 release notes](teamcity-2021-12-release-notes.md).
 
 
 ## Previous releases
+{product="tc"}
 
 * [What's New in TeamCity 2021.2](https://www.jetbrains.com/help/teamcity/2021.2/what-s-new-in-teamcity.html)
 * [What's New in TeamCity 2021.1](https://www.jetbrains.com/help/teamcity/2021.1/what-s-new-in-teamcity.html)
