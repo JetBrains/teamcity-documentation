@@ -20,6 +20,7 @@ Here is a high-level summary of the suggestions:
 * Use [self-hosted build agents](managing-subscription-and-resources.md#Get+Self-Hosted+Build+Agents) for some of your builds.
 * Enable reuse of build results and incremental builds by configuring [build chains](build-chain.md).
 * Pass libraries or packages as artifacts to subsequent build configurations.
+* [Prepay](teamcity-cloud-subscription-and-licensing.md#cloud-prepaid-agents) for extensively used build agents.
 * Review resources that are automatically renewed each month.
 * Choose the right size of your subscription.
 
@@ -126,9 +127,15 @@ In this example, a new artifact dependency is being added to a build configurati
 
 <img src="new-artifact-dependency-dialog.png" alt="Add New Artifact Dependency dialog" width="460"/>
 
+## Prepay for extensively used build agents
+
+If you have some particularly long-running builds or find yourself using a single type of cloud build agent for more than 125 hours a month, you can prepay for one or more instances of that type of cloud build agent and avoid any other per-minute fees. This is accomplished by [redeeming a batch of credits each month](managing-subscription-and-resources.md#Prepay+JetBrains-Hosted+Build+Agents+Monthly).
+
+While this approach offers a big saving on build credit consumption, it is important to note this comes at the trade-off of decreased concurrency. That is, if you prepay for a certain type of build agents, only a maximum of 5 of those agents can be running concurrently with the prepaid rate. Any further concurrent builds on the same type of agents will revert to the per-minute pricing.
+
 ## Review automatically renewed resources
 
-The TeamCity Cloud **Subscription \& Resources** page allows redeeming credits for additional resources: extra committer slots, data storage, and concurrent builds on self-hosted agents. When you increase any of these resources, a certain number of credits are immediately deducted from your available balance for the current month.
+The TeamCity Cloud **Subscription \& Resources** page allows redeeming credits for additional resources: extra committer slots, prepaid agents, data storage, and concurrent builds on self-hosted agents. When you increase any of these resources, a certain number of credits are immediately deducted from your available balance for the current month.
 
 For example, one additional concurrent build on a self-hosted agent costs 20,000 credits per month. If you redeem credits for this extra resource on the first day of the month, a 20,000 credits are deducted. Or, if you redeem credits for the extra resource at the middle of the month, the deduction would be prorated at ~10,000 credits for the remainder of the month.
 
