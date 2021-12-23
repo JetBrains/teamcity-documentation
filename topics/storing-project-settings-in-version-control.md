@@ -60,23 +60,24 @@ This gives multiple options:
 To define which settings to take __when a build starts__, open the __Project Settings | Versioned Settings__ page, click __Show advanced options__, and select one of the following options:
 * __always use current settings__: all builds use current project settings from the TeamCity server. Settings' changes in branches, history, and personal builds are ignored. Users cannot run a build with custom project settings.
 * __use current settings by default__: a build uses the latest project settings from the TeamCity server. Users can run a build with older project settings via the [custom build dialog](running-custom-build.md#Changes).
-* __use settings from VCS__: builds in branches and history builds, which use settings from VCS, load settings from the versioned settings' revision calculated for the build. Users can change configuration settings in [personal builds from IDE](remote-run.md) or can run a build with project settings current on the TeamCity server via the [custom build dialog](running-custom-build.md#Changes).
-   * changes in the following settings will __affect__ the build:
-     * build number pattern
-     * build steps (build steps' parameters and their order)
-     * build configuration parameters
-     * system properties and environment variables
-     * agent requirements
-     * build features (except [automatic merge](automatic-merge.md) and [VCS labeling](vcs-labeling.md))
-     * failure conditions
-     * artifact publishing rules
-     * artifact dependencies
-  * changes in the following settings coming from a branch will be ignored and __will not affect__ the build:
-     * VCS roots and checkout rules
-     * snapshot dependencies
-     * build triggers
-     * build configuration level options, like hanging builds detection, enabling/disabling of triggering of personal builds, or build configuration type
-     * clean-up rules
+* __use settings from VCS__: builds in branches and history builds, which use settings from VCS, load settings from the versioned settings' revision calculated for the build. Users can change configuration settings in [personal builds from IDE](remote-run.md) or can run a build with project settings current on the TeamCity server via the [custom build dialog](running-custom-build.md#Changes).  
+  TeamCity will try to use settings from the current build's branch whenever possible. However, some of the build features and settings might require using the default configuration (the one stored in TeamCity Data Directory). In general,
+* changes in the following settings coming from the build's branch will be ignored and __will not affect__ the build:
+    * VCS roots and checkout rules
+    * snapshot dependencies
+    * build triggers
+    * build configuration level options, like hanging builds detection, enabling/disabling of triggering of personal builds, or build configuration type
+    * clean-up rules
+* changes in the following settings __will affect__ the build in most cases:
+    * build number pattern
+    * order of build steps
+    * build configuration parameters used inside steps and some build features
+    * system properties and environment variables
+    * agent requirements (except [custom runs](running-custom-build.md))
+    * some build features (for example, [Commit Status Publisher](commit-status-publisher.md) will use settings from the build's branch, while [Pull Requests](pull-requests.md) will always use the default settings)
+    * failure conditions
+    * artifact publishing rules
+    * artifact dependencies
 
 ## Storing Secure Settings 
 
