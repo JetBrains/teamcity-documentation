@@ -1,4 +1,4 @@
-[//]: # (title: Feedback)
+[#//]: # (title: Feedback)#
 [//]: # (auxiliary-id: Feedback)
 
 This section details our support services, contact information, and best practices for contacting JetBrains to get TeamCity support and send your feedback on the product.
@@ -64,6 +64,6 @@ If you need to share data that is not meant to be publicly available, you can us
 
 All data received with a note on its non-public nature is used only for the related issue investigation and is discarded afterwards.   
 While in transfer and while stored, the data can be kept on third-party servers like mail servers, Amazon AWS servers, ZenDesk support system, and so on.   
-Read more [on JetBrains Privacy Policy](https://www.jetbrains.com/company/privacy.html).
+Read more [on JetBrains Privacy Policy](https://www.jetbrains.com/company/privacy.html)#.
 
-__Thank you for providing feedback on TeamCity!__
+__Thank you for# providing# feedback #on TeamCity!__
