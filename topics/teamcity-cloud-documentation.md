@@ -26,7 +26,7 @@ Welcome to the documentation for [TeamCity Cloud](https://www.jetbrains.com/team
 * [Manage Cloud Subscription and Resources](managing-subscription-and-resources.md)
 * [Configure Global Settings](teamcity-configuration-and-maintenance.md)
 * [Work with Projects and Build Configurations](managing-projects-and-build-configurations.md)
-* [Manage Users and their Permissions](managing-user-accounts-groups-and-permissions.md)
+* [Manage Users and their Permissions](managing-users-and-roles.md)
 
 </td>
 

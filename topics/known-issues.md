@@ -512,3 +512,13 @@ See [this issue](https://youtrack.jetbrains.com/issue/TW-71781) for more details
 {product="tc"}
 
 If [Artifacts Domain Isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) is enabled on your TeamCity server, trying to access build artifacts might result in the 401 Unauthorized error. This issue is most likely caused by the default behavior of your IIS web server: it rewrites the response headers targeting them back from the artifacts' domain to the main server domain. To disable this behavior, go to __Application Request Routing | Server Proxy Settings__ in the IIS interface and disable the "_Reverse rewrite host in response headers_" option.
+
+## Known issues of Pull Requests build feature
+
+* In some cases, TeamCity could start builds on old open merge requests in __Bitbucket Cloud__. This is reproduced with the following sequence of steps:
+    1. Create a new VCS root that connects to a repository with open merge requests. Leave the default branch specification.
+    2. Create a build configuration with this VCS root and a VCS trigger.
+    3. Remove the branch specification from the VCS root.
+    4. Add the [Pull Requests](pull-requests.md) build feature to the build configuration.
+    5. Disable the Pull Requests feature and then enable it again.  
+       See the [related issue](https://youtrack.jetbrains.com/issue/TW-74379) for more details.

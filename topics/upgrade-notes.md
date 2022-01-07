@@ -22,7 +22,7 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 ### 2021.2 Known Issues
 
 * __Can't use remote run from ReSharper and Eclipse with enabled 2FA__  
-  Users who have configured [two-factor authentication](managing-your-user-account.md#Configuring+Two-Factor+Authentication) for their TeamCity accounts, temporarily cannot [run and debug TeamCity builds remotely](remote-run.md) from ReSharper and Eclipse. If using the remote run from these tools is crucial to your pipelines, make sure 2FA is set to _Optional_ on your servers (default option), so users can disable it for their own accounts anytime.
+  Users who have configured [two-factor authentication](configuring-your-user-profile.md#Configuring+Two-Factor+Authentication) for their TeamCity accounts, temporarily cannot [run and debug TeamCity builds remotely](remote-run.md) from ReSharper and Eclipse. If using the remote run from these tools is crucial to your pipelines, make sure 2FA is set to _Optional_ on your servers (default option), so users can disable it for their own accounts anytime.
 * __.NET builds may fail due to enabled deterministic source paths__  
   Builds with [.NET steps](net.md) may fail with the "_SourceRoot items must include at least one top-level (not nested) item when DeterministicSourcePaths is true_" error. This error is caused by the conflict between the expected paths' format ([deterministic](https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/#deterministic-builds)) and the approach used in your project (likely, absolute paths to sources).    
   As a workaround, consider adding the `/p:ContinuousIntegrationBuild=false` command-line argument to disable deterministic source paths, or download and install the fixed .NET runner as described [here](https://youtrack.jetbrains.com/issue/TW-73746#focus=Comments-27-5341660.0-0).
@@ -660,7 +660,7 @@ The requirements for the .NET Framework version used by ReSharper tools have cha
 
 ### Token-based authentication enabled by default
 
-On upgrading to 2019.1, the Token-Based Authentication module will be enabled by default, so you can generate [access tokens](managing-your-user-account.md#Managing+Access+Tokens) and start using them right away.
+On upgrading to 2019.1, the Token-Based Authentication module will be enabled by default, so you can generate [access tokens](configuring-your-user-profile.md#Managing+Access+Tokens) and start using them right away.
 
 ### New CSP header value
 
@@ -1227,7 +1227,7 @@ The default setting for the VCS checkout mode on creating new build configuratio
 
 ### Project-based Agent Management Permissions
 
-New TeamCity installations now have different agent management permissions assignments: Project Administrator role does not include (global) Agent Manager role. Instead, Project administrator role has [agent-project permissions](role-and-permission.md#Project-level+Agent+Management+Permissions) which allow managing agents from the agent pools with only projects where user has Project Administrator role.
+New TeamCity installations now have different agent management permissions assignments: Project Administrator role does not include (global) Agent Manager role. Instead, Project administrator role has [agent-project permissions](managing-roles-and-permissions.md#Project-level+Agent+Management+Permissions) which allow managing agents from the agent pools with only projects where user has Project Administrator role.
 
 Existing installations are not affected by this change in order not to change the user permissions. However, it is recommended to review the Project Administrator role and consider excluding "Agent Manager" role and adding the following permissions:
 * Enable / disable agents associated with project
@@ -2295,7 +2295,7 @@ NCover 3 support may not work. See [TW-11680](http://youtrack.jetbrains.net/issu
 </tip>
 
 __Notification templates change__   
-Since 5.1, TeamCity uses [new template engine](customizing-notifications.md) (Freemarker) to generate notification messages. New default templates are supplied and customizations to the templates made prior to upgrading are no longer effective.
+Since 5.1, TeamCity uses [new template engine](customizing-notification-templates.md) (Freemarker) to generate notification messages. New default templates are supplied and customizations to the templates made prior to upgrading are no longer effective.
 
 If you customized notification templates prior to this upgrade, please review the new notification templates and make changes to them if necessary. Old notification templates are copied into `<TeamCity Data Directory>/config/_trash/_notifications` directory. Hope, you will enjoy the new templates and new extended customization capabilities.
 
@@ -2487,7 +2487,7 @@ Since TeamCity 3.0 introduces ability to configure VCS roots on per\-Build Confi
 
 __User Roles when upgrading from TeamCity 1.x/2.x/3.x Professional to 3.x Enterprise__
 
-When upgrading from TeamCity 1.x/2.x/3.x Professional to 3.x Enterprise for the first time TeamCity's accounts will be assigned the following [roles](role-and-permission.md) by default:
+When upgrading from TeamCity 1.x/2.x/3.x Professional to 3.x Enterprise for the first time TeamCity's accounts will be assigned the following [roles](managing-roles-and-permissions.md) by default:
 * _Administrators_ become System Administrators
 * _Users_ become Project Developers for all of the projects
 * The _Guest_ account is able to view all of the projects

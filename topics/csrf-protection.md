@@ -16,7 +16,7 @@ When considering HTTP request safety from the TeamCity perspective, the followin
 
 ## Implications for non-browser HTTP clients
 
-For non-browser API access, we recommend using [token-based authentication](managing-your-user-account.md#Managing+Access+Tokens).
+For non-browser API access, we recommend using [token-based authentication](configuring-your-user-profile.md#Managing+Access+Tokens).
 
 ## Implications for CORS clients
 

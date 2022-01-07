@@ -608,6 +608,7 @@ Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
 * [GitLab.com / GitLab CE/EE](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+GitLab)
 * [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+Bitbucket+Cloud)
 * [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+Azure+DevOps), or formerly Visual Studio Team Services
+* [JetBrains Space](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+JetBrains+Space)
 
 ## Cloud Platforms
 {product="tc"}
@@ -692,7 +693,7 @@ Eclipse must be run under JDK 1.5+
 
 </td><td>
 
-Compatible with IntelliJ IDEA 15.0.x - 2019.3.x (Ultimate and Community editions); as well as other IDEs based on the same version of the platform, including JetBrains RubyMine 6.3+, JetBrains PyCharm 3.1+, JetBrains PhpStorm/WebStorm 7.1+, AppCode 2.1+. See [more information](intellij-platform-plugin-compatibility.md) on compatibility.
+Compatible with IntelliJ IDEA 2019.3.x — 2021.1 (Ultimate and Community editions); as well as other IDEs based on the same version of the platform, including JetBrains RubyMine 6.3+, JetBrains PyCharm 3.1+, JetBrains PhpStorm/WebStorm 7.1+, AppCode 2.1+. See [more information](intellij-platform-plugin-compatibility.md) on compatibility.
 
 </td><td></td></tr>
 

@@ -77,7 +77,7 @@ Your build script might need adjustment to make the build successful when there 
 ## Marking Problems as Fixed
 
 A user, to whom the investigation is assigned, can mark the investigated problem as fixed in any _Investigate_ UI dialog corresponding to this problem.    
- The problem will be marked with ![checkmark.png](checkmark.png) on all TeamCity pages it appears. This allows identifying a potentially fixed problem in the UI, but leaves a possibility to continue the investigation if the problem persists in the following build run. If the author of the investigation has the [respective notifications](subscribing-to-notifications.md#investigation-is-updated) turned on, they will be notified about the fix.   
+ The problem will be marked with ![checkmark.png](checkmark.png) on all TeamCity pages it appears. This allows identifying a potentially fixed problem in the UI, but leaves a possibility to continue the investigation if the problem persists in the following build run. If the author of the investigation has the [respective notifications](adding-notification-rules.md#investigation-is-updated) turned on, they will be notified about the fix.   
 TeamCity will remove the investigation in the following build run after the investigation is marked as fixed, if the problem is not reproduced and if this investigation has the "_Automatically when fixed_" resolution condition.
 
 ## Viewing Investigations and Mutes
@@ -103,7 +103,7 @@ For each failed test, you can instantly see:
 * current stack trace and the information about the build where the test is currently failing
 * information about the first failure of the test, with the stack trace and the build
 
-The investigations assigned to you are also highlighted in the web UI if you enable the "_Highlight my changes and investigations_" option in your [profile settings](managing-your-user-account.md).
+The investigations assigned to you are also highlighted in the web UI if you enable the "_Highlight my changes and investigations_" option in your [profile settings](configuring-your-user-profile.md).
 
 ## Viewing Investigation History
 

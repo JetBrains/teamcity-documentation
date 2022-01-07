@@ -94,7 +94,7 @@ TeamCity allows obtaining a file from an archive from the build artifacts direct
 
 It is often required to download artifacts of some build configuration by tools like __wget__ or another downloader which does not support HTML login page. TeamCity asks for authentication if you access the artifacts' repository.
 
-__To authenticate correctly using token-based auth from a build script__, you have to pass your personal [access token](managing-your-user-account.md#Managing+Access+Tokens) in the HTTP header `Authorization: Bearer <token-value>`.
+__To authenticate correctly using token-based auth from a build script__, you have to pass your personal [access token](configuring-your-user-profile.md#Managing+Access+Tokens) in the HTTP header `Authorization: Bearer <token-value>`.
 
 __To authenticate correctly using basic auth from a build script__, you have to change URLs (add the `/httpAuth/` prefix to the URL):
 

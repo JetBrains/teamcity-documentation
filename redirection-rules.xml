@@ -2,6 +2,12 @@
 <!DOCTYPE rules SYSTEM "https://helpserver.labs.jb.gg/help/redirection-rules.dtd">
 <rules>
 
+    <rule id="configuring-your-user-profile">
+        <accepts>managing-your-user-account.html</accepts>
+    </rule>
+    <rule id="build-step-conditions">
+        <accepts>build-step-conditions.html</accepts>
+    </rule>
     <rule id="installation">
         <accepts>installation.html</accepts>
         <accepts>installing-and-configuring-the-teamcity-server.html</accepts>
@@ -23,6 +29,29 @@
      </rule>
     <rule id="upgrade">
         <accepts>upgrade.html</accepts>
+    </rule>
+    <rule id="set-up-external-database">
+        <accepts>setting-up-external-database.html</accepts>
+    </rule>
+    <rule id="managing-users-and-roles">
+            <accepts>managing-user-accounts-groups-and-permissions.html</accepts>
+    </rule>
+    <rule id="creating-and-managing-users">
+            <accepts>user-account.html</accepts>
+            <accepts>managing-users-and-user-groups.html</accepts>
+    </rule>
+    <rule id="creating-and-managing-user-groups">
+            <accepts>user-group.html</accepts>
+    </rule>
+    <rule id="managing-user-roles-and-permissions">
+            <accepts>role-and-permission.html</accepts>
+            <accepts>role-and-permission.html</accepts>
+    </rule>
+    <rule id="adding-notification-rules">
+            <accepts>subscribing-to-notifications.html</accepts>
+    </rule>
+    <rule id="customizing-notification-templates">
+            <accepts>customizing-notifications.html</accepts>
     </rule>
 
 </rules>

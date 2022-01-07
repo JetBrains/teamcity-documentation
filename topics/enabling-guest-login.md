@@ -5,7 +5,7 @@
 >
 {type="warning" product="tcc"}
 
-Logging in as a [guest user](guest-user.md) is disabled by default.
+Logging in as a [Guest User](guest-user.md) is disabled by default.
 
 To enable the guest login in TeamCity:
 1. Navigate to the __Administration | Authentication__ page.	
@@ -14,15 +14,14 @@ To enable the guest login in TeamCity:
 
 The __Log in as guest__ link will appear on the __Log in to TeamCity__ page.
 
-By default, the guest user can view all the projects. To customize which projects a guest user has access to, click __Configure guest user roles__ under the _Allow login as guest user_ option and configure the respective [roles and permissions](role-and-permission.md). This link appears only if the [per-project authorization mode](role-and-permission.md#Changing+Authorization+Mode) is enabled.
+By default, the guest user can view all the projects. To customize which projects a guest user has access to, click __Configure guest user roles__ under the _Allow login as guest user_ option and configure the respective [roles and permissions](managing-roles-and-permissions.md). This link appears only if the [per-project authorization mode](managing-roles-and-permissions.md#Changing+Authorization+Mode) is enabled.
 
  <seealso>
-        <category ref="concepts">
-            <a href="user-account.md">User Account</a>
-            <a href="role-and-permission.md">Role and Permission</a>
-        </category>
         <category ref="admin-guide">
             <a href="configuring-authentication-settings.md">Configuring Authentication Settings</a>
-            <a href="managing-users-and-user-groups.md">Managing Users and User Groups</a>
+            <a href="creating-and-managing-users.md">Creating and Managing Users</a>
+            <a href="creating-and-managing-user-groups.md">Creating and Managing User Groups</a>
+            <a href="creating-and-managing-users.md#User+Account">User Account</a>
+            <a href="managing-roles-and-permissions.md">Roles and Permissions</a>
         </category>
 </seealso>

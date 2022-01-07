@@ -3,7 +3,7 @@
 
 The _Notifications_ [build feature](adding-build-features.md) is responsible for sending notifications about build statuses and events to external services. Currently, the feature provides __Email Notifier__ and __Slack Notifier__.
 
-This feature adds to the functionality of [user-level notifications](subscribing-to-notifications.md) that can be assigned to a particular user or user group, but it allows configuring _notifications per build configuration_. This approach does not require referencing a specific TeamCity user and works better for group notifications.
+This feature adds to the functionality of [user-level notifications](configuring-notifications.md) that can be assigned to a particular user or user group, but it allows configuring _notifications per build configuration_. This approach does not require referencing a specific TeamCity user and works better for group notifications.
 
 >To set up similar notifications for several build configurations, use a [build configuration template](build-configuration-template.md).
 
@@ -13,13 +13,13 @@ To configure email notifications for a build configuration:
 
 1. Enter the target email. For example, you can specify an email list address, and all its subscribers will be receiving build notifications automatically.
 2. Configure a [branch filter](branch-filter.md). If it is not configured, you will receive notifications about the default branch only.
-3. Select [events to watch](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications).
+3. Select [events to watch](adding-notification-rules.md#Which+Events+Will+Trigger+Notifications).
 
->To customize the notification texts, you can modify [notification templates](customizing-notifications.md).
+>To customize the notification texts, you can modify [notification templates](customizing-notification-templates.md).
 >
 {product="tc"}
 
-Note that TeamCity Email Notifier relies on the SMTP server settings configured in __Administration | Server Administration__.
+Note that TeamCity Email Notifier relies on the SMTP server settings configured in __Administration | Server Administration | Email Notifier__.
 
 ## Slack Notifier
 
@@ -32,10 +32,10 @@ After configuring the connection, go to the settings of the build configuration 
    >Start typing the user ID, and TeamCity will autocomplete it. Alternatively, you can copy this ID from your Slack user profile options (__Profile | More | Copy member ID__).
 4. Select the message format. Slack Notifier does not currently support custom notification templates. However, if you select the verbose format, you will be able to choose what information to display in notifications.
 5. Configure a [branch filter](branch-filter.md). If it is not configured, you will receive notifications about the default branch only.
-6. Select [events to watch](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications).
+6. Select [events to watch](adding-notification-rules.md#Which+Events+Will+Trigger+Notifications).
 
 <seealso>
         <category ref="user-guide">
-            <a href="subscribing-to-notifications.md">Subscribing to Notifications</a>
+            <a href="adding-notification-rules.md">Subscribing to Notifications</a>
         </category>
 </seealso>

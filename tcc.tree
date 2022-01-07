@@ -23,6 +23,7 @@
     </toc-element>
     <toc-element id="teamcity-cloud-subscription-and-licensing.md" show-structure-for="chapter" show-structure-depth="4">
         <toc-element id="teamcity-release-cycle.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element id="teamcity-cloud-cost-optimization.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element toc-title="Third-Party Software and Licenses" href="https://www.jetbrains.com/legal/third-party-software/?product=TCC"/>
     </toc-element>
     <toc-element toc-title="Installation and Upgrade">
@@ -68,7 +69,6 @@
         <toc-element id="difference-viewer.md"/>
         <toc-element id="favorite-build.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="first-failure.md"/>
-        <toc-element id="guest-user.md"/>
         <toc-element id="history-build.md"/>
         <toc-element id="notifier.md"/>
         <toc-element id="personal-build.md"/>
@@ -78,18 +78,13 @@
         <toc-element id="remote-debug.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="remote-run.md"/>
         <toc-element id="revision.md"/>
-        <toc-element id="role-and-permission.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="run-configuration-policy.md"/>
         <toc-element id="teamcity-data-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="teamcity-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="user-account.md"/>
-        <toc-element id="user-group.md"/>
         <toc-element id="vcs-root.md"/>
     </toc-element>
     <toc-element id="user-s-guide.md" hidden="true"/>
     <toc-element toc-title="User's Guide">
-        <toc-element id="managing-your-user-account.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="subscribing-to-notifications.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="viewing-your-changes.md"/>
         <toc-element id="running-custom-build.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="working-with-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -297,6 +292,19 @@
             <toc-element id="changing-build-status-manually.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="customizing-statistics-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
+        <toc-element id="managing-users-and-roles.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="managing-users-and-roles">
+            <toc-element id="configuring-your-user-profile.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="configuring-your-user-profile"/>
+            <toc-element id="viewing-users-and-user-groups.md"/>
+            <toc-element id="inviting-users.md"/>
+            <toc-element id="creating-and-managing-users.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="creating-and-managing-users"/>
+            <toc-element id="creating-and-managing-user-groups.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="creating-and-managing-user-groups"/>
+            <toc-element id="managing-roles-and-permissions.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="managing-user-roles-and-permissions"/>
+            <toc-element id="tracking-user-actions.md"/>
+            <toc-element id="guest-user.md"/>
+        </toc-element>
+        <toc-element id="configuring-notifications.md" show-structure-for="chapter" show-structure-depth="4">
+            <toc-element id="adding-notification-rules.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="adding-notification-rules"/>
+        </toc-element>
         <toc-element id="integrating-teamcity-with-other-tools.md" hidden="true"/>
         <toc-element toc-title="Integrating TeamCity with Other Tools">
             <toc-element id="integrating-teamcity-with-vcs-hosting-services.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -312,18 +320,11 @@
                 <toc-element id="team-foundation-work-items.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
         </toc-element>
-        <toc-element id="managing-user-accounts-groups-and-permissions.md">
-            <toc-element id="managing-users-and-user-groups.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="viewing-users-and-user-groups.md"/>
-            <toc-element id="managing-roles.md"/>
-            <toc-element id="inviting-users.md"/>
-        </toc-element>
         <toc-element id="assigning-build-configurations-to-specific-build-agents.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="detaching-build-from-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="patterns-for-accessing-build-artifacts.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="mono-support.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="maven-server-side-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="tracking-user-actions.md"/>
     </toc-element>
     <toc-element id="extending-teamcity.md">
         <toc-element id="build-script-interaction-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4">

@@ -7,7 +7,7 @@ You can integrate TeamCity with various external systems and be notified about t
 * via Slack
 * in an IDE
 
-In this guide, we show how to quickly configure email, browser, and Slack notifications. For other methods and in-depth details, see [this article](subscribing-to-notifications.md).
+In this guide, we show how to quickly configure email, browser, and Slack notifications. For other methods and in-depth details, see [this article](configuring-notifications.md).
 
 ## Configure Notifiers
 
@@ -53,9 +53,9 @@ A notification rule comprises the following conditions:
 
 The notification about a certain event is only sent if this event satisfies any of the configured rules.
 
-Admins can configure these rules per [user group](user-group.md), and its users will inherit these rules automatically.
+Admins can configure these rules per [user group](creating-and-managing-user-groups.md), and its users will inherit these rules automatically.
 
 ## Customize Notifications
 {product="tc"}
 
-You can change the text and structure of the notification messages by altering their templates. Read [our instructions](customizing-notifications.md) on this subject.
+You can change the text and structure of the notification messages by altering their templates. Read [our instructions](customizing-notification-templates.md) on this subject.

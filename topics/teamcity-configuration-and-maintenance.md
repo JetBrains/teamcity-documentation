@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity Configuration and Maintenance)
 [//]: # (auxiliary-id: TeamCity Configuration and Maintenance)
 
->Server configuration is only available to the [System Administrators](role-and-permission.md#Per-Project+Authorization+Mode).
+>Server configuration is only available to the [System Administrators](managing-roles-and-permissions.md#Per-Project+Authorization+Mode).
 
 To change the server configuration, go to __Administration | Global Settings__. The following blocks of settings are available:
 {product="tc"}
@@ -61,7 +61,7 @@ Artifact directories
 
 The list of the root directories used by the TeamCity server to store [Build Artifact](build-artifact.md), build logs and other build data. The default location is `/system/artifacts`. Note that artifacts can also be stored on [external storage](configuring-artifacts-storage.md).
 
-The list can be changed by specifying a new-line delimited list of paths. Absolute and relative (to TeamCity Data Directory) paths are supported.All the specified directories use the same [structure](teamcity-data-directory.md#artifacts).
+The list can be changed by specifying a new-line delimited list of paths. Absolute and relative (to TeamCity Data Directory) paths are supported. All the specified directories use the same [structure](teamcity-data-directory.md#artifacts).
 
 When looking for build artifacts, the specified locations are searched for the directory corresponding to the build. The search is done in the order the root directories are specified. The first found build artifacts directory is used as the source of artifacts of this build.
 
@@ -77,7 +77,7 @@ Caches directory
 
 <td>
 
-The directory containing TeamCity internal caches (of the VCS repository contents, search index, other), which be manually deleted to clear [caches](teamcity-monitoring-and-diagnostics.md#Caches).
+The directory containing TeamCity internal caches (of the VCS repository contents, search index, other). You can manually delete files from this directory to clear [caches](teamcity-monitoring-and-diagnostics.md#Caches).
 
 </td></tr><tr>
 
@@ -117,7 +117,8 @@ Maximum build artifact file size
 
 <td>
 
-Maximum size in bytes. KB, MB, GB or TB suffixes are allowed. \-1 indicates no limit
+Maximum size in bytes. KB, MB, GB or TB suffixes are allowed.  
+\-1 indicates no limit.
 
 </td></tr>
 
@@ -205,7 +206,7 @@ In this block, you can choose how TeamCity will process secure values: either us
 
 By default, TeamCity [stores all secure values](storing-project-settings-in-version-control.md#Storing+Secure+Settings), used in project configuration files, in a scrambled form. The initial values are stored in the [TeamCity Data Directory](teamcity-data-directory.md), and their safety primarily depends on the security of your environment. To minimize the risk of potential malicious actions, TeamCity can encrypt secure values with your custom key.
 
-To use the custom encryption, select the respective option and enter an encryption key. Click __Generate__ to randomly generate it, or enter your own key (128-bit keys encoded with Base64 are supported). After you save the settings, TeamCity will change the strategy from _scrambling secure values_ to _encrypting them with your custom key using the AES algorithm_.
+To use the custom encryption, select the respective option and enter an encryption key. Click __Generate key__ to randomly generate it, or enter your own key (128-bit keys encoded with Base64 are supported). After you save the settings, TeamCity will change the strategy from _scrambling secure values_ to _encrypting them with your custom key using the AES algorithm_.
 
 Any existing secure values will remain scrambled. Note that when you change any project parameters, all the project’s secure values are reencrypted automatically using the current key.
 

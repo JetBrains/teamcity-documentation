@@ -19,7 +19,7 @@ To allow logging into TeamCity with LDAP credentials, you need to configure LDAP
 
 If you need to configure authentication without access to web UI refer to the [corresponding section](https://confluence.jetbrains.com/display/TCD8/LDAP+Integration) in the previous documentation version.
 
-When the "_Allow creating new users on the first login_" option is selected (by default) a new user account will be created on the first successful login. The TeamCity usernames for the new users will be derived from their LDAP data based on the configured setting. All newly created users belong to the [User Group](user-group.md) group and have all roles assigned to this group. If some specific [roles](role-and-permission.md) are needed for the newly registered users, these roles can [be granted](managing-roles.md) via the __All Users__ group.
+When the "_Allow creating new users on the first login_" option is selected (by default) a new user account will be created on the first successful login. The TeamCity usernames for the new users will be derived from their LDAP data based on the configured setting. All newly created users belong to the [All Users](creating-and-managing-user-groups.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](managing-roles-and-permissions.md) are needed for the newly registered users, these roles can [be granted](managing-roles-and-permissions.md#Managing+Roles) via the __All Users__ group.
 
 TeamCity stores user accounts and details in its own database. For information on automatic user creation and automatic population of user details from LDAP, refer to the [Synchronization](#Synchronization) section.
 
@@ -31,7 +31,7 @@ Create the file by copying `<TeamCity Data Directory>/config/ldap-config.propert
 
 The file uses the standard Java properties file syntax, so all the values in the file must be properly [escaped](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)). The file is reread on any modification so you do not need to restart the server to apply changes in the file.
 
-It is strongly recommended to back up the previous version of the file: if you misconfigure LDAP integration, you may no longer be able to log in into TeamCity. The users who are already logged in are not affected by the modified LDAP integration settings because users are authenticated only on login.
+It is strongly recommended backing up the previous version of the file: if you misconfigure LDAP integration, you may no longer be able to log in into TeamCity. The users who are already logged in are not affected by the modified LDAP integration settings because users are authenticated only on login.
 
 The mandatory property in the `ldap-config.properties` file is `java.naming.provider.url` that configures the server and root DN. The property stores the URL to the LDAP server node that is used in following LDAP queries. For example, `ldap://dc.example.com:389/CN=Users,DC=Example,DC=Com`. Note that the value of the property should use URL-escaping if necessary. For example, use `%20` if you need the space character.
 
@@ -147,10 +147,10 @@ TeamCity can automatically update users membership in groups based on the LDAP-p
 
 __To configure Group membership:__
 1. Create groups in TeamCity manually.
-2. Specify the mapping of LDAP groups to TeamCity groups in the `<TeamCity Data Directory>/config/ldap-mapping.xml` file. Use the `ldap-mapping.xml`.[`dist file`](teamcity-data-directory.md) as an example: TeamCity user groups are determined by the [Group Key](managing-users-and-user-groups.md#Managing+User+Groups), LDAP groups are specified by the group DN.
+2. Specify the mapping of LDAP groups to TeamCity groups in the `<TeamCity Data Directory>/config/ldap-mapping.xml` file. Use the `ldap-mapping.xml`.[`dist file`](teamcity-data-directory.md) as an example: TeamCity user groups are determined by the [Group Key](creating-and-managing-user-groups.md), LDAP groups are specified by the group DN.
 3. Set the required properties in the `ldap-config.properties` file, the __groups settings__ section:
-   * `teamcity.options.groups.synchronize` - enables user group membership synchronization
-   * `teamcity.groups.base` and `teamcity.groups.filter` - specifies the LDAP base node and filter to find the groups in LDAP (those configured in the `ldap-mapping.xml` file should be a subset of the groups found by these settings)
+   * `teamcity.options.groups.synchronize` — enables user group membership synchronization
+   * `teamcity.groups.base` and `teamcity.groups.filter` — specifies the LDAP base node and filter to find the groups in LDAP (those configured in the `ldap-mapping.xml` file should be a subset of the groups found by these settings)
    * `teamcity.groups.property.member` specifies the LDAP attribute holding the members of the group. LDAP groups should have all their members listed in the specified attribute.
 
 Note that TeamCity only operates with the users matched by `teamcity.users.base` and `teamcity.users.filter `settings, so only the users found by these properties will be processed during the group membership synchronization process.

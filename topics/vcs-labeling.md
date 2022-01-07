@@ -5,7 +5,7 @@ TeamCity can label (tag) sources of a particular build (automatically or manuall
 
 ## Automatic VCS labeling
 
-You can set TeamCity to automatically label the sources of a build depending on the build status. Labeling is not a standard [notification event](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications) — it takes place in the background after the build finishes and does not affect the build status. However, the users subscribed to [notifications about failed builds](subscribing-to-notifications.md#Which+Events+Will+Trigger+Notifications) of the current build configuration will be notified about a labeling failure.
+You can set TeamCity to automatically label the sources of a build depending on the build status. Labeling is not a standard [notification event](adding-notification-rules.md#Which+Events+Will+Trigger+Notifications) — it takes place in the background after the build finishes and does not affect the build status. However, the users subscribed to [notifications about failed builds](adding-notification-rules.md#Which+Events+Will+Trigger+Notifications) of the current build configuration will be notified about a labeling failure.
 
 Labeling is configured per a build configuration/template, as a [build feature](adding-build-features.md). When adding this feature, you need to specify the root to label and a labeling pattern. If there are [branches configured](working-with-feature-branches.md) for the current build configuration, you can label only builds from specific [branches you select](branch-filter.md).
 

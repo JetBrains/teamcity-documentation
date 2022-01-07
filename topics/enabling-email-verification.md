@@ -3,7 +3,7 @@
 
 TeamCity administrators can enable / disable email verification (off by default).
 
-If email verification is enabled on the TeamCity server, the _Email address_ field in the user account registration form becomes mandatory. When an address is added/modified, the users will be asked to verify their address. If the email address is not verified, TeamCity will display a notification on the __General__ tab of the [user account](managing-users-and-user-groups.md#Editing+User+Account) settings.
+If email verification is enabled on the TeamCity server, the _Email address_ field in the user account registration form becomes mandatory. When an address is added/modified, the users will be asked to verify their address. If the email address is not verified, TeamCity will display a notification on the __General__ tab of the [user account](creating-and-managing-users.md#Editing+User+Account) settings.
 
 Verified email addresses will be marked with a green checkmark on the __Administration | Users__ page.
 
@@ -18,11 +18,11 @@ To enable email verification in TeamCity:
 
 <seealso>
         <category ref="concepts">
-            <a href="user-account.md">User Account</a>
-            <a href="role-and-permission.md">Role and Permission</a>
+            <a href="managing-roles-and-permissions.md">Roles and Permissions</a>
         </category>
         <category ref="admin-guide">
             <a href="configuring-authentication-settings.md">Configuring Authentication Settings</a>
-            <a href="managing-users-and-user-groups.md">Managing Users and User Groups</a>
+            <a href="creating-and-managing-users.md">Creating and Managing Users</a>
+            <a href="creating-and-managing-user-groups.md">Creating and Managing User Groups</a>
         </category>
 </seealso>

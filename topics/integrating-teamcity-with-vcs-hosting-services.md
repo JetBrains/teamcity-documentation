@@ -6,6 +6,7 @@ You can create presets of connections to the following hosting services:
 * [GitLab.com](https://about.gitlab.com/) and [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/)
 * [Bitbucket Cloud](https://bitbucket.org/)
 * [Azure DevOps](https://azure.microsoft.com/ru-ru/services/devops/)
+* [JetBrains Space](https://www.jetbrains.com/space/)
 
 Once created, such a connection can serve as a base for different operations: creating projects from URL, creating VCS roots, integrating with issue trackers, and authenticating users in TeamCity using their external profiles.
 
@@ -58,3 +59,12 @@ Integration with Azure DevOps Services allows you to:
 * enable [user authentication via Azure DevOps](configuring-authentication-settings.md#Azure+DevOps+Services)
 
 See how to configure a connection to Azure DevOps [here](configuring-connections.md#Azure+DevOps).
+
+## Integrating TeamCity with JetBrains Space
+
+Integration with JetBrains Space allows you to:
+* create a [project from a Git Space URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [VCS root from URL](guess-settings-from-repository-url.md)
+* enable [JetBrains Space authentication](configuring-authentication-settings.md#JetBrains+Space)
+
+See how to configure a connection to JetBrains Space [here](configuring-connections.md#connect-to-jetbrains-space).

@@ -63,7 +63,7 @@ With this feature, it is now possible to describe the notifications in DSL and s
 Since this version, Slack integration has been built into TeamCity. It allows receiving notifications with specific build events and details in private messages or via a Slack channel.
 
 Two notifying options are available:
-* _Individual notifications_ configured per project in a user profile, as any [usual notifications](subscribing-to-notifications.md) in TeamCity.
+* _Individual notifications_ configured per project in a user profile, as any [usual notifications](adding-notification-rules.md) in TeamCity.
 * _Notifications [on a build configuration level](#Notifications+on+build+configuration+level)_ that allow setting up notifications for a single build configuration (or an entire project in a template). [Read more](notifications.md) on how to configure the responsible build feature.
 
 Example of a TeamCity notification in Slack:

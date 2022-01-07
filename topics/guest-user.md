@@ -1,7 +1,7 @@
-[//]: # (title: Guest User)
-[//]: # (auxiliary-id: Guest User)
+[//]: # (title: Guest User Access)
+[//]: # (auxiliary-id: Guest User Access;Guest User)
 
-TeamCity provides the ability to turn on the guest login allowing anonymous access to the TeamCity web UI.
+TeamCity provides the ability to turn on the guest login allowing anonymous access to the TeamCity UI.
 
 >If you are using TeamCity Cloud, please be extremely cautious when enabling this functionality. Unlike the TeamCity On-Premises instances, most often installed in private environments, each TeamCity Cloud instance is globally available via its URL. If guest login is disabled on the instance (default behavior), only authorized users will be able to access it. If you enable it, anyone who knows your server address will be able to view its UI in the read-only mode. We suggest that you enable it for a Cloud server only if absolutely necessary and carefully manage the restrictions of the guest user roles.
 >
@@ -17,7 +17,7 @@ Guest users do not have any personal settings, such as the __Changes__ page and 
 
 If guest login is enabled, you can construct a URL to the TeamCity web interface, so that no user login is required. Add the `&guest=1` parameter to a usual page URL. The login will be silently attempted on loading the page.
 
-You can use guest login to download artifacts by adding `/guestAuth` before the URL path. For example,
+You can use guest login to download artifacts by adding `/guestAuth` before the URL path. For example:
 
 ```Shell
 http://buildserver:8111/guestAuth/repository/download/<BuildConfigName>/<BuildID>:id/<artifacts>.zip
@@ -25,11 +25,9 @@ http://buildserver:8111/guestAuth/repository/download/<BuildConfigName>/<BuildID
 ```
 
 <seealso>
-        <category ref="concepts">
-            <a href="role-and-permission.md">Role and Permission</a>
-            <a href="super-user.md" product="tc">Super User</a>
-        </category>
         <category ref="admin-guide">
             <a href="enabling-guest-login.md">Enabling Guest Login</a>
+            <a href="managing-roles-and-permissions.md">Roles and Permissions</a>
+            <a href="super-user.md" product="tc">Super User</a>
         </category>
 </seealso>

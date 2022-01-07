@@ -86,7 +86,7 @@ Contains [clean-up](teamcity-data-clean-up.md)-related log
 
 <td>
 
-[Notifications](subscribing-to-notifications.md)-related log
+[Notifications](adding-notification-rules.md)-related log
 
 </td></tr><tr>
 
@@ -170,7 +170,7 @@ Contains [clean-up](teamcity-data-clean-up.md)-related log
 
 <td>
 
-(off by default) [Notification templates](customizing-notifications.md) processing-related logging
+(off by default) [Notification templates](customizing-notification-templates.md) processing-related logging
 
 </td></tr><tr>
 

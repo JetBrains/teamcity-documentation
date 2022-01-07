@@ -37,12 +37,12 @@
                 <title>Administer TeamCity</title>
                 <a href="managing-subscription-and-resources.md" description="Learn how you can spend build credits, add more agents, and view the statistics of committers.">Manage Cloud subscription and resources</a>
                 <a href="managing-projects-and-build-configurations.md" description="To integrate TeamCity with your source repositories and configure pipelines, read how to create and work with projects and build configurations.">Work with Projects and Build Configurations</a>
-                <a href="managing-user-accounts-groups-and-permissions.md" description="See how to manage who can access your server and what actions they can perform.">Manage users and permissions</a>
+                <a href="managing-users-and-roles.md" description="See how to manage who can access your server and what actions they can perform.">Manage users and permissions</a>
             </group>
             <group type="cards">
                 <title>Work with builds</title>
                 <a href="view-build-results.md" description="Explore the detailed reports that TeamCity provide for your builds.">View build results</a>
-                <a href="subscribing-to-notifications.md" description="Be notified about build statuses via email, Slack, or browser.">Set up notifications</a>
+                <a href="configuring-notifications.md" description="Be notified about build statuses via email, Slack, or browser.">Set up notifications</a>
                 <a href="investigating-and-muting-build-failures.md" description="Learn how to assign a responsible investigator to resolve a build or test failure, or mute a problem until it is fixed.">Investigate build problems</a>
             </group>
 

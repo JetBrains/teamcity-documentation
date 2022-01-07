@@ -42,7 +42,7 @@ Commit hooks examples for UNIX-based VCS servers are described below.
 
 ## Post-commit generic script
 
-Save the script below on a VCS server as `teamcity-trigger.sh` (you will need a personal [access token](managing-your-user-account.md#Managing+Access+Tokens)): 
+Save the script below on a VCS server as `teamcity-trigger.sh` (you will need a personal [access token](configuring-your-user-profile.md#Managing+Access+Tokens)): 
 
 
 ```Shell
@@ -140,7 +140,7 @@ There are two ways to set up a post-commit hook in Perforce:
 
 You can install the dedicated post-commit script on your Perforce server. This script will autodetect Perforce VCS roots in TeamCity and trigger the respective builds.
 
-To be able to use the script, you need to generate an [access token](managing-your-user-account.md#Managing+Access+Tokens) first. The TeamCity user assigned to this token must have the "_Run build_" permission for projects where Perforce VCS roots are defined. This permission is included in the Project Developer role by default.
+To be able to use the script, you need to generate an [access token](configuring-your-user-profile.md#Managing+Access+Tokens) first. The TeamCity user assigned to this token must have the "_Run build_" permission for projects where Perforce VCS roots are defined. This permission is included in the Project Developer role by default.
 
 It is also recommended configuring a _[Perforce Administrator Access](perforce-workspace-handling-in-teamcity.md#perforce-admin-access)_ connection in the project settings. TeamCity will use it to ensure that all changed files in the Perforce changelist are collected. If such a connection is not configured explicitly, TeamCity will try to connect to Perforce using settings of one of the project's VCS roots. 
 

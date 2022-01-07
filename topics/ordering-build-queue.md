@@ -48,11 +48,10 @@ Additionally, you can:
 ## Limiting Maximum Size of Build Queue
 {product="tc"}
 
-It is possible to limit the maximum number of builds in the queue. By default, the limit is set to 3000 builds. The default value can be changed using the `teamcity.buildTriggersChecker.queueSizeLimit` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+It is possible to limit the maximum number of builds in the queue. By default, the limit is 6000 builds. The default value can be changed by configuring the `teamcity.buildTriggersChecker.queueSizeLimit` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 
-When the queue size reaches the limit, TeamCity will pause [Configuring Build Triggers](configuring-build-triggers.md). Automatic build triggering will be reenabled once the queue size gets below limit. While triggering is paused, a warning message is shown to all the users.
-
- While __automatic__ triggering is paused, it is still possible to add builds to the queue [manually](running-custom-build.md).
+When the queue size reaches the limit, TeamCity will pause [automatic build triggering](configuring-build-triggers.md). It will be reenabled once the queue size gets below limit. While triggering is paused, a warning message is displayed to all the users.  
+However, even if the queue reached the limit and automatic triggering is paused, it is still possible to add builds to the queue [manually](running-custom-build.md).
 
  <seealso>
         <category ref="concepts">

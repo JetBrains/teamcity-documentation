@@ -14,7 +14,7 @@ To change the port of the installed/unpacked server, open the `<[TeamCity Home D
 
 ```
 
-To apply the changes, [restart the server](start-teamcity-server.md).
+To apply the changes, [restart the server](start-teamcity-server.md) by.
 
 If you change the port of an operational TeamCity server, you also need to change it in all the stored URLs of the server (browser bookmarks, agents' `serverUrl` [properties](configure-agent-installation.md), URL in users' IDEs, the _Server URL_ setting on the __Administration | Global Settings__ page).  
 If you run another Tomcat server on the same machine, you might also need to change other service ports of the Tomcat server (search for `port=` in the `server.xml` file).
@@ -38,7 +38,7 @@ By default, the TeamCity server is accessible under the root context of the serv
 
 TeamCity Server has the main process which can also launch child processes. Child processes use available memory on the machine. This section covers the memory settings of the main TeamCity server process only, as it requires special configuration.
 
-As a JVM application, the TeamCity main server process utilizes only memory available to the JVM. The required memory depends on the JVM bitness (64- or 32-bit). The memory used by JVM usually consists of: _heap_ (configured via `-Xmx`) and _metaspace_ (limited by the amount of available native memory), internal JVM (usually tens of MB), and OS-dependent memory features like memory-mapped files. TeamCity mostly depends on the heap memory. This setting can be manually configured by [passing](server-startup-properties.md#JVM+Options) the `-Xmx` (heap space) option to the JVM running the TeamCity server. In most cases, it means setting `TEAMCITY_SERVER_MEM_OPTS` environment variable to a value like `-Xmx750m`.
+As a JVM application, the TeamCity main server process utilizes only memory available to the JVM. The required memory depends on the JVM bitness (64- or 32-bit). The memory used by JVM usually consists of: _heap_ (configured via `-Xmx`) and _metaspace_ (limited by the amount of available native memory), internal JVM (usually tens of MB), and OS-dependent memory features like memory-mapped files. TeamCity mostly depends on the heap memory. This setting can be manually configured by [passing](server-startup-properties.md#JVM+Options) the `-Xmx` (heap space) option to the JVM running the TeamCity server. In most cases, it means setting `TEAMCITY_SERVER_MEM_OPTS` environment variable to a value like `-Xmx750m`. To apply the changed memory value, [stop and then start the server process](start-teamcity-server.md) via the respective commands.
 
 Once you start [using TeamCity for production purposes](#Configuring+Server+for+Production+Use) or if you want to load the server during evaluation, you should manually set the appropriate memory settings for the TeamCity server.
 

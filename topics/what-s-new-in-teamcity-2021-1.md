@@ -109,7 +109,7 @@ To toggle the new option, go to __Project Settings | Versioned Settings | Config
 
 You can now create access tokens with limited permissions and use these tokens for REST API requests. This gives you more control over how your scripts integrate with TeamCity. For example, if used in combination with the timeout setting, this allows generating short-lived tokens for specific tasks.
 
-By default, a token's _Permissions scope_ is set to "_Same as current user_". It means that the created token will grant the same [permissions](role-and-permission.md) as those of the current user. You can use such a token both for authentication in the UI and for REST API requests.
+By default, a token's _Permissions scope_ is set to "_Same as current user_". It means that the created token will grant the same [permissions](managing-roles-and-permissions.md) as those of the current user. You can use such a token both for authentication in the UI and for REST API requests.
 
 If you change the scope to "_Limit per project_", you will be able to limit the token's access to a certain project and even select particular permissions for it. The list of available projects and permissions depend on your user role. Tokens with a limited scope can only be used for REST API requests.
 
@@ -210,7 +210,7 @@ After gathering your feedback on the experimental __Project Home__ page, we focu
 
 TeamCity allows running a custom build with your local changes — without actually changing the common project's code stored in a VCS. To run such a build, you need to send the patch with changes to the TeamCity server: either by using a [Remote Run](remote-run.md) in IDEs or by [uploading it](personal-build.md#Direct+Patch+Upload) via UI or REST API. This patch will be delivered to the build agent machine and used only in the custom build. However, as the patch is stored on the agent file system, it would be wise to ensure that it includes only trusted changes, which cannot potentially harm the next builds running on this agent.
 
-For this purpose, we've created a new [user permission](role-and-permission.md) — _Change build source code with a custom patch_. On upgrading to 2021.1, it will be automatically enabled for the default Project Developer role and other roles with the _Customize build permission_. By toggling this permission, you can granularly control who can patch builds or, if necessary, fully restrict this functionality in important projects.
+For this purpose, we've created a new [user permission](managing-roles-and-permissions.md) — _Change build source code with a custom patch_. On upgrading to 2021.1, it will be automatically enabled for the default Project Developer role and other roles with the _Customize build permission_. By toggling this permission, you can granularly control who can patch builds or, if necessary, fully restrict this functionality in important projects.
 
 ## Customize multipart upload of artifacts to Amazon S3
 {product="tc"}

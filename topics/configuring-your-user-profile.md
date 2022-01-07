@@ -1,21 +1,19 @@
-[//]: # (title: Managing your User Account)
-[//]: # (auxiliary-id: Managing your User Account)
+[//]: # (title: Configuring Your User Profile)
+[//]: # (auxiliary-id: Configuring Your User Profile;Managing your User Account)
 
-To get to your user profile settings, click your avatar in the header and select __Profile__ from the drop-down menu. The __Your Profile__ page will open.
+To get to your user profile settings, click your avatar in the header and select __Profile__ from the drop-down menu.
 
-## Changing Your Password
+### Changing Your Password
 
 If [built-in authentication](configuring-authentication-settings.md#Built-in+Authentication) is configured, TeamCity server maintains passwords for the user authentication. You can change the password in __Your Profile | General | Built-in Authentication__. Enter an existing and new passwords and click __Save changes__.
 
-The password can only be changed for the built-in authentication. If you don't see these fields, this means that TeamCity is configured to use external authentication and the password should be changed in the corresponding external system. 
+The password can only be changed for the built-in authentication. If you do not see these fields, this means that TeamCity is configured to use external authentication and the password should be changed in the corresponding external system. 
 
 You can reset your built-in authentication password using the _Reset password_ link on the sign-in page.
 
-<note>
-
-If you have not received the email with the reset instructions, check if TeamCity [Email Notifier](notifier.md) is enabled. Contact your server administrator for details.
-
-</note>
+>If you have not received the email with the reset instructions, check if TeamCity [Email Notifier](notifier.md) is enabled. Contact your server administrator for details.
+> 
+{type="note"}
 
 If you change or reset your password, TeamCity will automatically sign you out of all sessions.
 
@@ -53,7 +51,7 @@ These settings are not used for authentication for the particular VCS, and so on
 These settings enable you to:
 * track your changes status on the [Changes](viewing-your-changes.md),
 * highlight such builds on the Projects page if the appropriate [option is selected](#Customizing+UI),
-* notify you on such builds when the __Builds affected by my changes__ option is selected in [notifications settings](subscribing-to-notifications.md#What+Will+Be+Watched).
+* notify you on such builds when the __Builds affected by my changes__ option is selected in [notifications settings](adding-notification-rules.md#What+Will+Be+Watched).
 
 ## Configuring Two-Factor Authentication
 
@@ -80,18 +78,22 @@ In __Your Profile | General__, you can customize the following UI settings:
 
 In __Your Profile | Groups__, you can view the list of user groups you are assigned to.
 
-In __Your Profile | Roles__, you can view your roles and permissions in different projects. Note, that roles are assigned to a user by the system administrator.
+In __Your Profile | Roles__, you can view your roles and permissions in different projects. Note that roles are assigned to a user by the system administrator.
+
+## Managing Notification Rules
+
+In __Your Profile | Notification Rules__, you can view what notification rules you inherit from your user group and create new personal rules.
 
 ## Uploading Avatar
 
-Since version 2021.2, users can upload their avatars in the user profile. The avatars are displayed around the TeamCity UI, next to the changes (commits) of their authors. Only users with the _View all users_ [permission](role-and-permission.md) can see them.
+Since version 2021.2, users can upload their avatars in the user profile. The avatars are displayed around the TeamCity UI, next to the changes (commits) of their authors. Only users with the _View all users_ [permission](managing-roles-and-permissions.md) can see them.
 
 <seealso>
         <category ref="concepts">
-            <a href="role-and-permission.md">Role and Permission</a>
+            <a href="managing-roles-and-permissions.md">Roles and Permissions</a>
         </category>
         <category ref="user-guide">
             <a href="viewing-your-changes.md">Viewing Your Changes</a>
-            <a href="subscribing-to-notifications.md">Subscribing to Notifications</a>
+            <a href="adding-notification-rules.md">Subscribing to Notifications</a>
         </category>
 </seealso>
