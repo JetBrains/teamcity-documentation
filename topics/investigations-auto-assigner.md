@@ -1,7 +1,7 @@
 [//]: # (title: Investigations Auto Assigner)
 [//]: # (auxiliary-id: Investigations Auto Assigner)
 
-TeamCity can analyse build problems (for example, compilation errors) and test failures, and try to find a committer to blame for the problem using a number of heuristics.
+TeamCity can analyse build problems (for example, compilation errors) and test failures, and try to find a committer responsible for each problem's cause.
 
 For test failures, there is a suggestion to assign an investigation to this user: you can review the suggestion and assign the user to investigate the failure.
 
