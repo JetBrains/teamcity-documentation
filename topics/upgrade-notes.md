@@ -1,6 +1,9 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2021.2.1 to 2021.2.2
+No noteworthy changes.
+
 ## Changes from 2021.2 to 2021.2.1
 
 * __.NET build runner counts parametrized tests as a single test__  
