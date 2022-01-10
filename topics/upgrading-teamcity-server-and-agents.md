@@ -88,8 +88,6 @@ The automatic update procedure is as follows:
 3. Next, the updated server starts.  
    The update progress is logged to the `<[TeamCity Home Directory](teamcity-home-directory.md)>/logs/teamcity-update.log` file.
 
-<note>
-
 In case of an automatic update failure, perform the following to restore your TeamCity to the state prior to the update:
 
 1. Stop your TeamCity server if it is running.
@@ -97,13 +95,17 @@ In case of an automatic update failure, perform the following to restore your Te
 3. Copy the contents of the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory to the `<TeamCity server home>` directory.
 4. Start the TeamCity server.
 
-</note>
+>Note that the bundled version of Java is not updated automatically. Learn [how to install the required Java version manually](how-to.md#Install+Non-Bundled+Version+of+Java).  
+>If switching from 32- to 64-bit Java, you will also need to adjust the heap space (`Xmx`) value as described [here](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server).
+>
+> See also: [supported Java versions for TeamCity Server](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Server).
+> 
+{type="warning"}
 
-Current limitations of automatic update:
-* Some files like `TeamCityService.exe` and `teamcity-server.bat` are not included into the scope of autoupdate.
+Other limitations of the automatic update:
+* Some files like `TeamCityService.exe` and `teamcity-server.bat` are not included into the scope of the autoupdate.
 * Some customizations, for example, installations with [changed server context](configure-server-installation.md#Changing+Server+Context), are not supported by automatic update.
 * The Windows uninstaller is not updated during the upgrade, so after several updates, old TeamCity version will still be noted in Windows lists. During the uninstallation, not all the TeamCity installation files might be deleted.
-* The bundled Java is not updated.
 
 ### Manual Update
 

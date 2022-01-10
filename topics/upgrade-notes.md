@@ -69,11 +69,13 @@ Previously, builds in an artifact dependency configuration were never [cleaned u
 
 This fix restores the intended behavior, but we recommend that you review your clean-up settings to ensure no builds will be cleaned up unexpectedly after the upgrade.
 
-### Planned deprecation of Java 8 in TeamCity Server 2022.1
+<anchor name="Planned+deprecation+of+Java+8+in+TeamCity+Server+2022.1"/>
 
-TeamCity 2021.2 Server supports Java versions 8 and 11, but __Java 8 support will be discontinued in TeamCity 2022.1__. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 until the 2022.1 release.
+### Planned deprecation of Java 8 in TeamCity Server 2022.04
 
-Note that TeamCity is not compatible with Java 17, which makes Java 11 the only version planned for support in TeamCity Server 2022.1.
+TeamCity 2021.2 Server supports Java versions 8 and 11, but __Java 8 support will be discontinued in TeamCity 2022.04__, in April 2022. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 until the 2022.04 release.
+
+Note that TeamCity is not compatible with Java 17, which makes Java 11 the only version planned for support in TeamCity Server 2022.04.
 
 ### Bundled tools updates
 {id="bundled-tools-updates-20212"}
