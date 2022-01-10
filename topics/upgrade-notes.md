@@ -2,7 +2,13 @@
 [//]: # (auxiliary-id: Upgrade Notes)
 
 ## Changes from 2021.2.1 to 2021.2.2
-No noteworthy changes.
+
+### Bundled tools updates
+{id="bundled-tools-updates-202122"}
+
+* Updates in TeamCity Agent Docker images:
+  * Bundled version of .NET Core SDK has been updated to 6.0.100.
+  * Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
 
 ## Changes from 2021.2 to 2021.2.1
 
