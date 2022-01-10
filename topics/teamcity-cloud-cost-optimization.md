@@ -26,7 +26,7 @@ Here is a high-level summary of the suggestions:
 
 We will delve deeper into each of them further in this article.
 
-## Ensure each user populates a full list of their VCS usernames
+## Ensure each user populates full list of their VCS usernames
 
 TeamCity Cloud [subscriptions](teamcity-cloud-subscription-and-licensing.md) are based on the number of active committers. An active committer is essentially any developer that makes 10 or more VCS commits in a rolling 30-day period that end up being built by TeamCity (either via an automatic or manually triggered build). Once a user is classified as an active committer, they consume one of the committer slots in the subscription.
 
@@ -58,7 +58,7 @@ If the build steps within a build configuration have minimal CPU and memory requ
 
 The [Performance Monitor](#Use+Performance+Monitor+to+show+statistics+and+spot+bottlenecks) build feature provides insights into the usage of system resources throughout an entire build. This could help you choose the right size of cloud build agents to use for it.
 
-## Use the Matrix view to identify the most intensive projects and build configurations
+## Use Matrix view to identify most intensive projects and build configurations
 
 The [Matrix](viewing-agents-workload.md#Load+Statistics+Matrix) is a tab available from the __Agents__ screen. It offers an overview of all projects and build configurations and shows totals of their overall build time across all build agents during a specific timeframe.
 
@@ -66,7 +66,7 @@ If you have many projects or build configurations, the Matrix view provides a si
 
 <img src="agent-matrix-no-outline.png" width="750" alt="Agents matrix"/>
 
-## Define a quiet period for VCS Triggers
+## Define quiet period for VCS Triggers
 
 If multiple commits are made to a repository in a short period of time, this could lead to separate builds being run — one build per each commit. Over time, this can add up to an excessive consumption of build credits, when many of these commits could be combined under a single build.
 
@@ -142,7 +142,7 @@ __Note__: if you don't decrease these additional resources prior to the end of t
 
 You can even decrease the additional resources right after you've increased them (in case you forget to do it later), and these resources will only stay active through the remainder of the current month.
 
-## Choose the right size for your subscription
+## Choose right size for your subscription
 
 When you acquire a new TeamCity Cloud subscription, or when it's time to renew, it is a good idea to closely review how many resources (build credits) are allocated to your TeamCity Cloud instance based on the number of committers in your subscription. This helps confirm whether you have an excessive amount of resources.
 
