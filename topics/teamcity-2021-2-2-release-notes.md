@@ -45,7 +45,8 @@ __11 January 2022__
 ### Task
 
 [**TW-72679**](https://youtrack.jetbrains.com/issue/TW-72679) — Health report about deprecating Java 1.8   
-[**TW-73685**](https://youtrack.jetbrains.com/issue/TW-73685) — Update IntelliJ IDEA versions list available for download in tools    
+[**TW-73685**](https://youtrack.jetbrains.com/issue/TW-73685) — Update IntelliJ IDEA versions list available for download in tools   
+[**TW-74357**](https://youtrack.jetbrains.com/issue/TW-74357) — Remove log4j classes from incremental-compiler.jar      
 [**TW-73659**](https://youtrack.jetbrains.com/issue/TW-73659) — VCS updater: handle the case when update settings from VCS takes too much time
 
 ### Security Problem
