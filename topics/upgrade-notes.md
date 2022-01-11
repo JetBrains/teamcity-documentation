@@ -50,6 +50,9 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 * __TeamCity fails to initialize a cloud client when creating an Amazon EC2 spot fleet profile__  
   When creating a [cloud profile](agent-cloud-profile.md) for an Amazon EC2 spot fleet, users might get the "_Failed to initialize cloud client 'amazon'. An exception occurred while parsing config._" error. This error only occurs if the "_Specify instance attributes that match your compute requirements_" option is enabled in the current fleet's _[instance type requirements](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html#abs-create-spot-fleet)_.  
   To work around this issue, please remove the `InstanceRequirements` block from the fleet's JSON configuration file before uploading it to TeamCity. This issue will be fixed in TeamCity 2022.1.
+* __Builds might fail to publish artifacts to Amazon S3 if AWS KMS is used__  
+  After updating to 2021.2, builds might start failing on an attempt to publish artifacts to an Amazon S3 bucket encrypted with an [AWS KMS](https://docs.aws.amazon.com/kms/index.html) key. This issue is caused by the recently added integrity check for build artifacts. To temporarily disable it in a project and workaround the issue, set the `teamcity.internal.storage.s3.upload.enableConsistencyCheck=false` property on a [project level](project-and-agent-level-build-parameters.md).  
+ This problem will be fixed in TeamCity 2021.2.3.
 
 ### Canceled bidirectional agent-server communication protocol
 
