@@ -45,9 +45,7 @@ __11 January 2022__
 ### Task
 
 [**TW-72679**](https://youtrack.jetbrains.com/issue/TW-72679) — Health report about deprecating Java 1.8   
-[**TW-73685**](https://youtrack.jetbrains.com/issue/TW-73685) — Update IntelliJ IDEA versions list available for download in tools   
-[**TW-74357**](https://youtrack.jetbrains.com/issue/TW-74357) — Remove log4j classes from webapps/ROOT/WEB-INF/plugins/jps-tool/agent/jps.zip!lib/scala-plugin/incremental-compiler.jar   
-[**TW-72394**](https://youtrack.jetbrains.com/issue/TW-72394) — Investigate necessity of a new index in build\_state table (build\_type\_id, build\_id)   
+[**TW-73685**](https://youtrack.jetbrains.com/issue/TW-73685) — Update IntelliJ IDEA versions list available for download in tools    
 [**TW-73659**](https://youtrack.jetbrains.com/issue/TW-73659) — VCS updater: handle the case when update settings from VCS takes too much time
 
 ### Security Problem
