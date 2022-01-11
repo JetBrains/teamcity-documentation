@@ -69,7 +69,7 @@
       </toc-element>
    <toc-element toc-title="Licensing and Release Cycle">
       <toc-element id="licensing-policy.md" show-structure-for="chapter" show-structure-depth="4">
-         <toc-element toc-title="Third-Party Software and Licenses" href="https://www.jetbrains.com/legal/third-party-software/?product=TC"/>
+         <toc-element toc-title="Third-Party Software and Licenses" href="https://www.jetbrains.com/legal/third-party-software/?product=TC" accepts-web-file-names="third-party-license-agreements.html"/>
       </toc-element>
       <toc-element id="previous-releases-downloads.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="teamcity-release-cycle.md" show-structure-for="chapter" show-structure-depth="4"/>
