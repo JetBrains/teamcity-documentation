@@ -19,6 +19,18 @@
 * The [Unity Support plugin](https://plugins.jetbrains.com/plugin/11453-unity-support) bundled with TeamCity Cloud has been updated to version SNAPSHOT-20211116104228.
 {product="tcc"}
 
+## Changes from 2021.2.1 to 2021.2.2
+
+* __Changed format for .NET assembly names__  
+  To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). On updating to 2021.2.2, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset.
+
+### Bundled tools updates
+{id="bundled-tools-updates-202122"}
+
+* Updates in TeamCity Agent Docker images:
+  * The bundled version of .NET Core SDK has been updated to 6.0.100.
+  * Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
+
 ## Changes from 2021.2 to 2021.2.1
 
 * To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). After updating to 2021.2.1, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset.
