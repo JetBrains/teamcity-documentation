@@ -20,11 +20,11 @@ __11 January 2022__
 [**TW-72694**](https://youtrack.jetbrains.com/issue/TW-72694) — It is not obvious that the build is running if its end time is not known   
 [**TW-74142**](https://youtrack.jetbrains.com/issue/TW-74142) — Update .NET SDK 3.1 -\&gt; 6 in docker images   
 [**TW-73852**](https://youtrack.jetbrains.com/issue/TW-73852) — Wrong code coverage for kotlin files   
-[**TW-73485**](https://youtrack.jetbrains.com/issue/TW-73485) — \&lt;unknown test name\&gt; is displayed for the passed tests after the first loading of the page   
+[**TW-73485**](https://youtrack.jetbrains.com/issue/TW-73485) — unknown test name is displayed for the passed tests after the first loading of the page   
 [**TW-72225**](https://youtrack.jetbrains.com/issue/TW-72225) — Cleanup rules list shows Keep rule branch filter always in lower case   
 [**TW-73959**](https://youtrack.jetbrains.com/issue/TW-73959) — GraphQL API: make it possible to `unassignProjectFromAgentPool` recursively   
 [**TW-74190**](https://youtrack.jetbrains.com/issue/TW-74190) — Versioned settings update process should not rely on low priority executor   
-[**TW-74163**](https://youtrack.jetbrains.com/issue/TW-74163) — [S3 storage] Allowed unicode characters break multipart presigned upload   
+[**TW-74163**](https://youtrack.jetbrains.com/issue/TW-74163) — S3 storage Allowed unicode characters break multipart presigned upload   
 [**TW-74228**](https://youtrack.jetbrains.com/issue/TW-74228) — Builds fail if Perforce server has high latency   
 [**TW-74112**](https://youtrack.jetbrains.com/issue/TW-74112) — Gradle runner error: Could not find matching constructor for: java.io.File(String, File)   
 [**TW-74094**](https://youtrack.jetbrains.com/issue/TW-74094) — Unexpected error occurred on server when assigning a role to a group   
