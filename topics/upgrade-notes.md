@@ -68,6 +68,9 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 * __TeamCity fails to initialize a cloud client when creating an Amazon EC2 spot fleet profile__  
   When creating a [cloud profile](agent-cloud-profile.md) for an Amazon EC2 spot fleet, users might get the "_Failed to initialize cloud client 'amazon'. An exception occurred while parsing config._" error. This error only occurs if the "_Specify instance attributes that match your compute requirements_" option is enabled in the current fleet's _[instance type requirements](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html#abs-create-spot-fleet)_.  
   To work around this issue, please remove the `InstanceRequirements` block from the fleet's JSON configuration file before uploading it to TeamCity. This issue will be fixed in TeamCity 2022.1.
+* __Builds might fail to publish artifacts to Amazon S3 if AWS KMS is used__  
+  After updating to 2021.2, builds might start failing on an attempt to publish artifacts to an Amazon S3 bucket encrypted with an [AWS KMS](https://docs.aws.amazon.com/kms/index.html) key. This issue is caused by the recently added integrity check for build artifacts. To temporarily disable it in a project and workaround the issue, set the `teamcity.internal.storage.s3.upload.enableConsistencyCheck=false` property on a [project level](project-and-agent-level-build-parameters.md).  
+ This problem will be fixed in TeamCity 2021.2.3.
 
 ### Canceled bidirectional agent-server communication protocol
 
@@ -87,11 +90,13 @@ Previously, builds in an artifact dependency configuration were never [cleaned u
 
 This fix restores the intended behavior, but we recommend that you review your clean-up settings to ensure no builds will be cleaned up unexpectedly after the upgrade.
 
-### Planned deprecation of Java 8 in TeamCity Server 2022.1
+<anchor name="Planned+deprecation+of+Java+8+in+TeamCity+Server+2022.1"/>
 
-TeamCity 2021.2 Server supports Java versions 8 and 11, but __Java 8 support will be discontinued in TeamCity 2022.1__. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 until the 2022.1 release.
+### Planned deprecation of Java 8 in TeamCity Server 2022.04
 
-Note that TeamCity is not compatible with Java 17, which makes Java 11 the only version planned for support in TeamCity Server 2022.1.
+TeamCity 2021.2 Server supports Java versions 8 and 11, but __Java 8 support will be discontinued in TeamCity 2022.04__, in April 2022. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 until the 2022.04 release.
+
+Note that TeamCity is not compatible with Java 17, which makes Java 11 the only version planned for support in TeamCity Server 2022.04.
 
 ### Bundled tools updates
 {id="bundled-tools-updates-20212"}
