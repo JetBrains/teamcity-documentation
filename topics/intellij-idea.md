@@ -60,9 +60,9 @@ Use newline-separated patterns for fully qualified class names to be excluded fr
 <seealso>
         <category ref="concepts">
             <a href="build-runner.md">Build Runner</a>
-            <a href="code-coverage.md">Code Coverage</a>
         </category>
         <category ref="admin-guide">
+            <a href="configuring-test-reports-and-code-coverage.md">Configuring Test Reports and Code Coverage</a>
             <a href="configuring-java-code-coverage.md">Configuring Java Code Coverage</a>
             <a href="emma.md">EMMA</a>
         </category>

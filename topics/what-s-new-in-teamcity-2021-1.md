@@ -194,7 +194,7 @@ If you prefer a keyboard navigation, use __Up__ and __Down__ keys to navigate th
 
 ### New code coverage preview
 
-TeamCity can provide code coverage for [multiple build runners](code-coverage.md). With this release, the code coverage preview in __Build Overview__ gets even more visual.
+TeamCity can provide code coverage for [multiple build runners](configuring-test-reports-and-code-coverage.md#Code+Coverage+in+TeamCity). With this release, the code coverage preview in __Build Overview__ gets even more visual.
 
 If coverage is available for a build configuration, you can quickly preview a visualized statistics of the build's tests and see how it changed compared to the previous build:
 

@@ -258,7 +258,7 @@ By clicking the links in the __Coverage Breakdown__ section, you can drill-down 
 
 ## Code Inspection Results
 
-If configured, the results of the [Code Inspection](code-inspection.md) build step are shown on the __Code Inspection__ tab. Use the left pane to navigate through the inspection results; the filtered inspections are shown in the right pane.
+If configured, the results of a [Code Inspection](configuring-test-reports-and-code-coverage.md#Code+Inspection+in+TeamCity) build step are shown on the __Code Inspection__ tab. Use the left pane to navigate through the inspection results; the filtered inspections are shown in the right pane.
 * Switch from the __Total__ to __Errors__ option, if you're not interested in warnings.
 * Use the scope filter to limit the view to the specific directories. This makes it easier for developers to manage specific code of interest.
 * Use the inspections tree view under the scope filter to display results by specific inspection.
@@ -293,9 +293,9 @@ In the URL of the build result page you can find the parameter `buildId` with a 
             <a href="build-log.md">Build Log</a>
             <a href="build-artifact.md">Build Artifact</a>
             <a href="change.md">Change</a>
-            <a href="code-coverage.md">Code Coverage</a>
         </category>
         <category ref="admin-guide">
+            <a href="configuring-test-reports-and-code-coverage.md">Configuring Test Reports and Code Coverage</a>
             <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
         </category>
         <category ref="external">
