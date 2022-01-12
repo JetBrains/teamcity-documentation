@@ -1056,7 +1056,7 @@ TFS Personal support lists all build configurations for TFVC VCS root. See [TW-5
 
 [TW-50148](https://youtrack.jetbrains.com/issue/TW-50148) was fixed and the DSL API documentation was improved. If you need these changes for local development, please update the [maven dependency version](upgrading-dsl.md) to 2017.1.3.
 
-Now TeamCity server runs 'git gc' automatically to improve performance of git operations. This requires a git client to be installed on the server and be  the server via the PATH environment variable. If a native git client cannot be found, then the corresponding health report is shown. For TeamCity to find the git client, the client needs to be installed on the server machine and added to `$PATH` (the server restart is required afterwards). Instead of modifying PATH, the path to the git client can be specified via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md).
+Now TeamCity server runs 'git gc' automatically to improve performance of git operations. This requires a git client to be installed on the server and be accessible the server via the PATH environment variable. If a native git client cannot be found, then the corresponding health report is shown. For TeamCity to find the git client, the client needs to be installed on the server machine and added to `$PATH` (the server restart is required afterwards). Instead of modifying PATH, the path to the git client can be specified via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md).
 
 ## Changes from 2017.1.1 to 2017.1.2
 
