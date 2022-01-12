@@ -1,7 +1,7 @@
-[//]: # (title: Visual Studio Addin)
-[//]: # (auxiliary-id: Visual Studio Addin)
+[//]: # (title: Visual Studio Add-in)
+[//]: # (auxiliary-id: Visual Studio Add-in;Visual Studio Addin)
 
-## Add-in Features
+## Visual Studio Add-in Features
 
 The TeamCity add-in for Microsoft Visual Studio provides the following features:
 * [Remote Run](remote-run.md) for TFS, Subversion and Perforce (for remote run for Mercurial and Git see [Branch Remote Run Trigger](branch-remote-run-trigger.md))
@@ -16,18 +16,14 @@ The TeamCity add-in for Microsoft Visual Studio provides the following features:
 
 For detailed instructions, refer to the [TeamCity Add-in Online Help](https://www.jetbrains.com/help/teamcity/vs-addin/TeamCity_Getting_Started.html).
 
-<tip>
-
-To enable navigation to the failed tests in MS Visual Studio by using _Open in IDE_ actions in the web UI, make sure that `.pdb` file generation for the assemblies involved in NUnit/MSTest unit tests is switched on in the current Visual Studio project.
-</tip>
-
+>To enable navigation to the failed tests in MS Visual Studio by using _Open in IDE_ actions in the web UI, make sure that `.pdb` file generation for the assemblies involved in NUnit/MSTest unit tests is switched on in the current Visual Studio project.
 
 ## Installing Add-in
 
 1. Close all running instances of Visual Studio before starting the Add-in installation (initial or upgrade).
 2. Navigate to the download page of the Visual Studio Add-in:
    * Click the arrow next to your username in the top right corner of the TeamCity web UI and select __Profile__.
-   * In the __TeamCity Tools__ section on the right, click the Visual Studio Add\-in download link.
+   * In the __TeamCity Tools__ section on the right, click the Visual Studio Add-in download link.
 
 The TeamCity Visual Studio Add-in is shipped as a part of [ReSharper Ultimate](https://www.jetbrains.com/dotnet/) products bundle. After installation, the TeamCity add-in will be available under the RESHARPER menu in Visual Studio.
 
@@ -35,7 +31,6 @@ The TeamCity Visual Studio Add-in is shipped as a part of [ReSharper Ultimate](h
 
 The installer will remove the prebundled products' versions: TeamCity and ReSharper versions prior to 9.0, dotCover prior to 3.0, dotTrace prior to 6.0. ReSharper Ultimate does not support the Visual Studio versions 2005 and 2008.
 </note>
-
 
 ## Requirements
 

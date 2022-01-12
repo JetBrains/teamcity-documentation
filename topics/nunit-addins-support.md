@@ -1,18 +1,18 @@
 [//]: # (title: NUnit Addins Support)
 [//]: # (auxiliary-id: NUnit Addins Support)
 
-NUnit addin is an extension that plugs into NUnit core and changes the way it operates. Refer to the [NUnit addins page](http://www.nunit.org/index.php?p=nunitAddins&amp;r=2.6.3) for more information. This section covers description of NUnit addins support for:
+NUnit add-in is an extension that plugs into NUnit core and changes the way it operates. Refer to the [NUnit add-ins page](http://www.nunit.org/index.php?p=nunitAddins&amp;r=2.6.3) for more information. This section covers description of NUnit addins support for:
 
 ## NAnt Build Runner
 
-To support NUnit addins for NAnt build runner you need to provide in your build script the `teamcity.dotnet.nant.nunit2.addins` property in the following format:
+To support NUnit add-ins for NAnt build runner you need to provide in your build script the `teamcity.dotnet.nant.nunit2.addins` property in the following format:
 
 ```XML
 <property name="teamcity.dotnet.nant.nunit2.addins" value="<list of paths>" />
 
 ```
 
-where `<list>` is the list of paths to NUnit addins separated by `;`.
+where `<list>` is the list of paths to NUnit add-ins separated by `;`.
 
 For example:
 
@@ -23,7 +23,7 @@ For example:
 
 ## TeamCity NUnit Console Launcher
 
-To support NUnit addins for the [console launcher](teamcity-nunit-test-launcher.md) you need to provide the `/addins:<list of addins separated with ;>` command line option.
+To support NUnit add-ins for the [console launcher](teamcity-nunit-test-launcher.md) you need to provide the `/addins:<list of addins separated with ;>` command line option.
 
 For example:
 

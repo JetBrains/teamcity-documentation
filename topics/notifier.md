@@ -58,7 +58,7 @@ __IDE Notifier__
 
 <td>
 
-Displays the status of the specified build configurations and/or the status of the user changes in the user's IDE. Requires a corresponding TeamCity plugin: IntelliJ Platform plugin, Addin for Visual Studio or Eclipse Plugin; which can be downloaded from the [My Settings&amp;Tools](adding-notification-rules.md) page. Refer to the [Installing Tools](installing-tools.md) section. 
+Displays the status of the specified build configurations and/or the status of the user changes in the user's IDE. Requires a corresponding TeamCity plugin: IntelliJ Platform plugin, Add-in for Visual Studio or Eclipse Plugin; which can be downloaded from the [My Settings&amp;Tools](adding-notification-rules.md) page. Refer to the [Installing Tools](installing-tools.md) section. 
 
 
 </td></tr>

@@ -1432,7 +1432,7 @@ The bundled JetBrains IntelliJ IDEA (IDEA inspections and duplicates) has been u
 
 #### .NET tools updates
 
-JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 10.0.2 releaseTeamCity Visual Studio Addin Web installer updated to ReSharper 10.0.2 releaseBundled JetBrains dotCover updated to version 10.0.2
+JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 10.0.2 releaseTeamCity Visual Studio Add-in Web installer updated to ReSharper 10.0.2 releaseBundled JetBrains dotCover updated to version 10.0.2
 
 ## Changes from 9.1.3 to 9.1.4
 
@@ -1459,7 +1459,7 @@ Bundled Oracle JRE (in both Server and Agent.exe installers) has been updated to
 
 JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 10.0 release
 
-TeamCity Visual Studio Addin Web installer updated to ReSharper 10.0 release
+TeamCity Visual Studio Add-in Web installer updated to ReSharper 10.0 release
 
 Bundled JetBrains dotCover updated to version 10.0
 
@@ -1490,11 +1490,11 @@ Build status icons updated to a more "standard" look and are of a bit larger now
 
 JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 9.2 release
 
-TeamCity Visual Studio Addin Web installer updated to ReSharper 9.2 release
+TeamCity Visual Studio Add-in Web installer updated to ReSharper 9.2 release
 
 Bundled JetBrains dotCover updated to version 3.2
 
-Bundled Oracle JRE (in both Server and Agent .exe installers) updated to version 1.8.0\_60 (32\-bit)
+Bundled Oracle JRE (in both Server and Agent .exe installers) updated to version 1.8.0_60 (32-bit)
 
 ## Changes from 9.1 to 9.1.1
 

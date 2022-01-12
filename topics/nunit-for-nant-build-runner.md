@@ -11,7 +11,7 @@ This section assumes, that you already have a NAnt build script with the configu
 To track tests defined in a NAnt build via the standard `nunt2` task, TeamCity provides a custom [task](http://nant.sourceforge.net/nightly/latest/help/tasks/nunit2.html) implementation and automatically replaces the original `<nunit2>` task with its own task. Thus when the build is triggered, TeamCity starts TeamCity NUnit Test Launcher using own implementation of `<nunit2>`. This allows you to leave your build script without changes and receive on-the-fly test reports in TeamCity.
 
 If you don't want TeamCity to replace the original `nunit2` task, consider the following options:
-* Use NUnit console with TeamCity Addin for NUnit.
+* Use NUnit console with TeamCity Add-in for NUnit.
 * Import XML tests results via the XML Test Report plugin.
 * Use command-line TeamCity NUnit Test Launcher.
 * Configure reporting tests manually via service messages.

@@ -138,7 +138,7 @@ If using NUnit build runner is inapplicable, TeamCity provides the following way
 * TeamCity supports the standard [NUnit for NAnt Build Runner](nunit-for-nant-build-runner.md).
 * TeamCity provides the [NUnit for MSBuild](nunit-for-msbuild.md) and supports the [NUnit for MSBuild](nunit-for-msbuild.md) from [MSBuild Community tasks](http://msbuildtasks.tigris.org/).
 * TeamCity provides its own NUnit Test Launcher that can be configured in the [MSBuild build script](nunit-for-msbuild.md) or launched from the [command line](teamcity-nunit-test-launcher.md).
-* [TeamCity Addin for NUnit](teamcity-addin-for-nunit.md) is available to turn on reporting on the NUnit level without build procedure modifications. 
+* [TeamCity Add-in for NUnit](teamcity-addin-for-nunit.md) is available to turn on reporting on the NUnit level without build procedure modifications. 
 * The bundled [XML Test Reporting plugin](xml-report-processing.md) allows importing any XML report to TeamCity. In this case it is not always possible to track results on the fly.   
     You can add the __XML Report Processing__ build feature to your build configuration, or use the following service message: `##teamcity[importData type='sometype' path='<path to the xml file>']`. Learn more: [XML Report Processing](xml-report-processing.md), [Build Script Interaction with TeamCity](service-messages.md#Importing+XML+Reports).
 * TeamCity allows configuring tests reporting manually via [service messages](build-script-interaction-with-teamcity.md).
@@ -280,7 +280,7 @@ Implicit TeamCity .NET Coverage
 
 <td>
 
-TeamCity Addin for NUnit
+TeamCity Add-in for NUnit
 
 </td>
 
