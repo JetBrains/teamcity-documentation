@@ -9,16 +9,17 @@ In TeamCity a build goes through several states:
 In TeamCity all information about a particular build, whether it is queued, running or finished, is accumulated on the __Build Results__ page. The page can be accessed by clicking the build number or build status link.
 
 Besides providing the build information, this page enables you to:
-* [run a custom build](running-custom-build.md) using the __Run__ button
-* use the __Actions__ menu to do the following: 
-  * add a build to [favorites](favorite-build.md)
-  * add a comment
-  * [pin the build](pinned-build.md)
-  * [tag the build](build-tag.md)
-  * change the build status, marking the build as [failed](changing-build-status-manually.md#Marking+build+as+failed) or [successful](changing-build-status-manually.md#Marking+build+as+successful)
-  * [label this build sources](vcs-labeling.md)
-  * remove the build
-* [edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+Template)
+* [Run a custom build](running-custom-build.md) using the __Run__ button.
+* Use the __Actions__ menu to do the following:
+  * Add a build to [favorites](favorite-build.md).
+  * Add a comment.
+  * [Pin the build](pinned-build.md).
+  * [Tag the build](build-tag.md).
+  * Change the build status, marking the build as [failed](changing-build-status-manually.md#Marking+build+as+failed) or [successful](changing-build-status-manually.md#Marking+build+as+successful).
+  * [Label this build's sources](vcs-labeling.md).
+  * Remove the build.
+  * Re-run the build: this will restart this build only, omitting other builds in its chain if any, which might be helpful if the build failed due to some infrastructure problems.
+* [Edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+Template).
 
 ## Build Details
 
