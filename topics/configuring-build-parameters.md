@@ -2,51 +2,51 @@
 [//]: # (auxiliary-id: Configuring Build Parameters)
 [//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")
 
-_Build parameters_ allow you to flexibly share settings and pass them into the build.
+_Build parameters_ are name-value pairs, defined by a user or provided by TeamCity, which can be used in a build. They help flexibly share settings and pass them to build steps.
 
 <anchor name="ConfiguringBuildParameters-ConfigurationParameters"/>
 <anchor name="ConfiguringBuildParameters-BuildParameters"/>
 
 ## Types of Build Parameters
 
-Build parameters are name-value pairs, defined by a user or provided by TeamCity, which can be used in a build. There are three types of build parameters:
-* Environment variables
-* System properties
-* Configuration parameters
+There are three types of build parameters:
+* [Environment variables](#Environment+Variables)
+* [System properties](#System+Properties)
+* [Configuration parameters](#Configuration+Parameters)
 
 ### Environment Variables
 
-Environment variables are passed into the spawned build process as environment.
+Environment variables can be passed into a spawned build process as into an environment.
 
 They are defined by the `env.` prefix.
 
 ### System Properties
 
-System properties are passed into the build scripts of the [supported runners](#Using+Build+Parameters+in+Build+Scripts) as variables specific to a build tool.
+System properties can be passed into build scripts of [certain runners](#Using+Build+Parameters+in+Build+Scripts) as variables specific to a build tool.
 
 They are defined by the `system.` prefix.
 
 ### Configuration Parameters
 
-Configuration parameters are not passed into the build and are only meant to share settings within a build configuration. They are the primary means for customizing a build configuration which is based on a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md).
+Configuration parameters are not passed into a build process and are only meant to share settings within a build configuration. They are the primary means for customizing a build configuration which is based on a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md).
 
 They come with no prefix.
 
 ## Levels of Parameters
 
-The parameters can be defined at different levels (in order of precedence):
-* a specific build (via the [Run Custom Build](running-custom-build.md) dialog)
-* the __Parameters__ page of __Build Configuration Settings__ or [Build Configuration Template](build-configuration-template.md)
-* the __Parameters__ page of __Project Settings__; these affect all the build configurations and templates of the project and its subprojects
-* a build agent (the `<[Agent home](agent-home-directory.md)>/conf/buildAgent.properties` file on the agent)
+The parameters can be defined at different levels (sorted from higher to lower priority):
+* In a [custom build](running-custom-build.md) dialog.
+* On the __Parameters__ page of __[Build Configuration Settings](creating-and-editing-build-configurations.md)__ or in a [build configuration template](build-configuration-template.md).
+* On the __Parameters__ page of __Project Settings__: these affect all the build configurations and templates of the project and its subprojects.
+* In the `<[Agent home](agent-home-directory.md)>/conf/buildAgent.properties` [configuration file](configure-agent-installation.md) of a build agent.
 
 <anchor name="parameter-reference"/>
 
 ## Parameter Name Restrictions
 
-The name of a configuration parameter must satisfy the following requirements:
-* contain only the following characters: `[a-zA-Z0-9._-*]`
-* start with an ASCII letter
+The name of a configuration parameter must:
+* Contain only the following characters: `[a-zA-Z0-9._-*]`.
+* Start with an ASCII letter.
 
 ## Parameter References
 
