@@ -20,7 +20,7 @@ For each build configuration the following triggers can be configured:
 
 >Note that if you create a build configuration from a template, it inherits build triggers defined in the template, and they cannot be edited or deleted. However, you can specify additional triggers or disable a trigger permanently or temporarily.
 
-In addition to the triggers defined for a build configuration, you can also trigger a build by an [HTTP GET request](accessing-server-by-http.md#Triggering+a+Build+From+Script), or manually by running a custom build.
+You can also manage build triggers using [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/edit-build-configuration-settings.html#Manage+Build+Triggers).
 
 <seealso>
     <category ref="external">
