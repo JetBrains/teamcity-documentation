@@ -1074,7 +1074,7 @@ TFS Personal support lists all build configurations for TFVC VCS root. See [TW-5
 
 [TW-50148](https://youtrack.jetbrains.com/issue/TW-50148) was fixed and the DSL API documentation was improved. If you need these changes for local development, please update the [maven dependency version](upgrading-dsl.md) to 2017.1.3.
 
-Now TeamCity server runs 'git gc' automatically to improve performance of git operations. This requires a git client to be installed on the server and be  the server via the PATH environment variable. If a native git client cannot be found, then the corresponding health report is shown. For TeamCity to find the git client, the client needs to be installed on the server machine and added to `$PATH` (the server restart is required afterwards). Instead of modifying PATH, the path to the git client can be specified via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md).
+Now TeamCity server runs 'git gc' automatically to improve performance of git operations. This requires a git client to be installed on the server and be accessible the server via the PATH environment variable. If a native git client cannot be found, then the corresponding health report is shown. For TeamCity to find the git client, the client needs to be installed on the server machine and added to `$PATH` (the server restart is required afterwards). Instead of modifying PATH, the path to the git client can be specified via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md).
 
 ## Changes from 2017.1.1 to 2017.1.2
 
@@ -1450,7 +1450,7 @@ The bundled JetBrains IntelliJ IDEA (IDEA inspections and duplicates) has been u
 
 #### .NET tools updates
 
-JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 10.0.2 releaseTeamCity Visual Studio Addin Web installer updated to ReSharper 10.0.2 releaseBundled JetBrains dotCover updated to version 10.0.2
+JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 10.0.2 releaseTeamCity Visual Studio Add-in Web installer updated to ReSharper 10.0.2 releaseBundled JetBrains dotCover updated to version 10.0.2
 
 ## Changes from 9.1.3 to 9.1.4
 
@@ -1477,7 +1477,7 @@ Bundled Oracle JRE (in both Server and Agent.exe installers) has been updated to
 
 JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 10.0 release
 
-TeamCity Visual Studio Addin Web installer updated to ReSharper 10.0 release
+TeamCity Visual Studio Add-in Web installer updated to ReSharper 10.0 release
 
 Bundled JetBrains dotCover updated to version 10.0
 
@@ -1508,11 +1508,11 @@ Build status icons updated to a more "standard" look and are of a bit larger now
 
 JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 9.2 release
 
-TeamCity Visual Studio Addin Web installer updated to ReSharper 9.2 release
+TeamCity Visual Studio Add-in Web installer updated to ReSharper 9.2 release
 
 Bundled JetBrains dotCover updated to version 3.2
 
-Bundled Oracle JRE (in both Server and Agent .exe installers) updated to version 1.8.0\_60 (32\-bit)
+Bundled Oracle JRE (in both Server and Agent .exe installers) updated to version 1.8.0_60 (32-bit)
 
 ## Changes from 9.1 to 9.1.1
 

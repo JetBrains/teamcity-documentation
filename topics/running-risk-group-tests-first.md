@@ -10,10 +10,7 @@ Supported environments:
 * [Ant](ant.md) and [IntelliJ IDEA Project](intellij-idea-project.md) runners
 * JUnit and TestNG frameworks when tests are started with usual JUnit or TestNG tasks
 
-<tip>
-
-TeamCity also allows [implementing tests reordering feature for a custom build runner](https://plugins.jetbrains.com/docs/teamcity/risk-tests-reordering-in-custom-test-runner.html).
-</tip>
+>TeamCity also allows [implementing tests reordering feature for a custom build runner](https://plugins.jetbrains.com/docs/teamcity/risk-tests-reordering-in-custom-test-runner.html).
 
 You can instruct TeamCity to run some tests before others. You can do this on the build runner settings page. Currently, there are two groups of tests that TeamCity can run first:
 * recently failed tests, i.e. the tests failed in previous finished or running builds as well as tests having high failure rate (so-called blinking tests)
@@ -30,7 +27,7 @@ TeamCity operates on test case basis, that is not the individual tests are reord
 
 Tests reordering works the following way:
 
-#### JUint
+### JUint
 
 1. TeamCity provides tests that should be run first (test classes).
 2. When a JUnit task starts, TeamCity checks whether it includes these tests.
@@ -44,7 +41,7 @@ Some cases when automatic tests reordering will not work:
 * if @RunWith annotation is used in JUnit4 tests
 </note>
 
-#### TestNG
+### TestNG
 
 __TestNG versions earlier than 5.14__:
 1. TeamCity provides tests that should be run first (test classes).

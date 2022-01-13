@@ -276,7 +276,7 @@ __For NUnit 3.x__, only [JetBrains dotCover](jetbrains-dotcover.md) is supported
  
 <seealso>
         <category ref="admin-guide">
-            <a href="configuring-unit-testing-and-code-coverage.md">Configuring Unit Testing and Code Coverage</a>
+            <a href="configuring-test-reports-and-code-coverage.md">Configuring Unit Testing and Code Coverage</a>
             <a href="nunit-support.md">NUnit Support</a>
             <a href="getting-started-with-nunit.md">Getting Started with NUnit</a>
         </category>

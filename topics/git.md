@@ -17,7 +17,7 @@ For common VCS root properties, see [this section](configuring-vcs-roots.md#Comm
 
 __Important notes__:
 
-* [Remote Run](remote-run.md) and [Pre-Tested Commit](pre-tested-delayed-commit.md) are supported in the [IntelliJ IDEA](intellij-platform-plugin.md) and [Eclipse](eclipse-plugin.md) plugins; with the [Visual Studio Addin](visual-studio-addin.md) use the [Branch Remote Run Trigger](branch-remote-run-trigger.md).
+* [Remote Run](remote-run.md) and [Pre-Tested Commit](pre-tested-delayed-commit.md) are supported in the [IntelliJ IDEA](intellij-platform-plugin.md) and [Eclipse](eclipse-plugin.md) plugins; with the [Visual Studio Add-in](visual-studio-addin.md) use the [Branch Remote Run Trigger](branch-remote-run-trigger.md).
 * Initial Git [checkout](build-checkout-directory.md#Checkout+Process) may take significant time (sometimes hours), depending on the size of your project history, because the whole project history is downloaded during the initial checkout.
 
 ## General Settings
@@ -413,8 +413,8 @@ This way, builds will run significantly faster, with no need to check out the wh
 ## Configuring Git Garbage Collection on Server
 {id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server" product="tc"}
 
-TeamCity server maintains a local clone for every Git repository used in the VCS roots configured on the server. Since the server performs fetch in those clones many times a day, the clone needs regular optimization to maintain predictable performance. If the Git garbage collection for the clone was not run for a long time, the process of collecting changes may slow down or start to report memory-related errors.
-TeamCity can automatically run git gc periodically when native Git client can be found on the server. Inability to run Git GC results in a related health report.
+TeamCity server maintains a local clone for every Git repository used in the VCS roots configured on the server. Since the server performs fetch in those clones many times a day, the clone needs regular optimization to maintain predictable performance. If the Git garbage collection for the clone was not run for a long time, the process of collecting changes may slow down or start to report memory-related errors.  
+TeamCity can automatically run `git gc` periodically when the native Git client can be found on the server. Inability to run Git GC results in a related health report.
 
 To fix the warning / meet automatic git gc requirements, perform the following:
 1. Install a native Git client manually on the TeamCity server.
@@ -425,7 +425,7 @@ To fix the warning / meet automatic git gc requirements, perform the following:
 When TeamCity runs Git garbage collection, the details are logged into the [`teamcity-cleanup.log`](teamcity-server-logs.md). If git garbage collection fails, a corresponding warning is displayed.
 
 TeamCity executes Git garbage collection until the total time doesn't exceed 5 hours quota; the quota can be changed using the `teamcity.server.git.gc.quota.minutes` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).   
-Git garbage collection is executed every night at 2 a.m., this can be changed by specifying the internal property with a cron expression like this: `teamcity.git.cleanupCron=0 0 2 * * ?`. If the `git gc` process works slowly and cannot be completed in the allotted time, check the `git-repack` configuration in the default Git configuration files (for example, you can increase `--window-memory` to improve the `git gc` performance).
+Git garbage collection is executed every night at 2 AM. This can be changed by specifying the internal property with a cron expression like this: `teamcity.git.cleanupCron=0 0 2 * * ?`. If the `git gc` process works slowly and cannot be completed in the allotted time, check the `git-repack` configuration in the default Git configuration files (for example, you can increase `--window-memory` to improve the `git gc` performance).
 
 If the local Git clones need some kind of manual maintenance, you can find them under the `<TeamCity Data Directory>/system/caches/git` directory. The `map` file in the directory contains mapping between the repository URL and the subdirectory storing the bare clone of the repository.
 

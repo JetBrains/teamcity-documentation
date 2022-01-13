@@ -53,5 +53,10 @@
     <rule id="customizing-notification-templates">
             <accepts>customizing-notifications.html</accepts>
     </rule>
+    <rule id="configuring-test-reports-and-code-coverage">
+            <accepts>code-inspection.html</accepts>
+            <accepts>code-coverage.html</accepts>
+            <accepts>configuring+unit+testing+and+code+coverage.html</accepts>
+    </rule>
 
 </rules>

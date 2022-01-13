@@ -9,16 +9,17 @@ In TeamCity a build goes through several states:
 In TeamCity all information about a particular build, whether it is queued, running or finished, is accumulated on the __Build Results__ page. The page can be accessed by clicking the build number or build status link.
 
 Besides providing the build information, this page enables you to:
-* [run a custom build](running-custom-build.md) using the __Run__ button
-* use the __Actions__ menu to do the following: 
-  * add a build to [favorites](favorite-build.md)
-  * add a comment
-  * [pin the build](pinned-build.md)
-  * [tag the build](build-tag.md)
-  * change the build status, marking the build as [failed](changing-build-status-manually.md#Marking+build+as+failed) or [successful](changing-build-status-manually.md#Marking+build+as+successful)
-  * [label this build sources](vcs-labeling.md)
-  * remove the build
-* [edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+Template)
+* [Run a custom build](running-custom-build.md) using the __Run__ button.
+* Use the __Actions__ menu to do the following:
+  * Add a build to [favorites](favorite-build.md).
+  * Add a comment.
+  * [Pin the build](pinned-build.md).
+  * [Tag the build](build-tag.md).
+  * Change the build status, marking the build as [failed](changing-build-status-manually.md#Marking+build+as+failed) or [successful](changing-build-status-manually.md#Marking+build+as+successful).
+  * [Label this build's sources](vcs-labeling.md).
+  * Remove the build.
+  * Re-run the build: this will restart this build only, omitting other builds in its chain if any, which might be helpful if the build failed due to some infrastructure problems.
+* [Edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+Template).
 
 ## Build Details
 
@@ -257,7 +258,7 @@ By clicking the links in the __Coverage Breakdown__ section, you can drill-down 
 
 ## Code Inspection Results
 
-If configured, the results of the [Code Inspection](code-inspection.md) build step are shown on the __Code Inspection__ tab. Use the left pane to navigate through the inspection results; the filtered inspections are shown in the right pane.
+If configured, the results of a [Code Inspection](configuring-test-reports-and-code-coverage.md#Code+Inspection+in+TeamCity) build step are shown on the __Code Inspection__ tab. Use the left pane to navigate through the inspection results; the filtered inspections are shown in the right pane.
 * Switch from the __Total__ to __Errors__ option, if you're not interested in warnings.
 * Use the scope filter to limit the view to the specific directories. This makes it easier for developers to manage specific code of interest.
 * Use the inspections tree view under the scope filter to display results by specific inspection.
@@ -292,9 +293,9 @@ In the URL of the build result page you can find the parameter `buildId` with a 
             <a href="build-log.md">Build Log</a>
             <a href="build-artifact.md">Build Artifact</a>
             <a href="change.md">Change</a>
-            <a href="code-coverage.md">Code Coverage</a>
         </category>
         <category ref="admin-guide">
+            <a href="configuring-test-reports-and-code-coverage.md">Configuring Test Reports and Code Coverage</a>
             <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
         </category>
         <category ref="external">

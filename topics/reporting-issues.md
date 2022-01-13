@@ -414,9 +414,9 @@ jetbrains.teamcity.core/perfomance/teamcity = true
 
 Read more about Eclipse Debug mode [Gathering Information About Your Plug-in](http://www.eclipse.org/eclipse/platform-core/documents/3.1/debug.html) and built-in Eclipse help.
 
-## TeamCity Visual Studio Addin issues
+## TeamCity Visual Studio Add-in issues
 
-### TeamCity Addin logging
+### TeamCity Add-in logging
 
 To capture logs from the TeamCity [Visual Studio Addin](visual-studio-addin.md):
 

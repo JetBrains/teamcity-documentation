@@ -712,7 +712,7 @@ A metrics value can be published as TeamCity statistics via [service message](se
 
 If the tool reports code-attributing information like Inspections or Duplicates, TeamCity-bundled report can be used to display the results. A custom plugin will be necessary to process the tool-specific report into TeamCity-specific data model. Example of this can be found in [XML Test Reporting](xml-report-processing.md) plugin and FXCop plugin (see a link on [Open-source Bundled Plugins](https://confluence.jetbrains.com/display/TW/Open-source+Bundled+Plugins)).
 
-See also [Import coverage results in TeamCity](#Import+coverage+results+in+TeamCity).
+See also [Import coverage results in TeamCity](importing-arbitrary-coverage-results-to-teamcity.md).
 
 For advanced integration, a custom plugin will be necessary to store and present the data as required. See [Developing TeamCity Plugins](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html) for more information on plugin development.
 
@@ -741,21 +741,6 @@ So, the agents bound to the server cannot be transferred to another server.
 If you need more build agents that are included with your TeamCity server, you can purchase additional build agent licenses and connect more agents in addition to those that come bound with the server.
 
 See [more](licensing-policy.md) on licensing.
-
-## Import coverage results in TeamCity
-
-TeamCity comes bundled with IntelliJ IDEA/Emma and, JaCoCo coverage engines for Java and dotCover/NCover/PartCover for .NET.
-
-However, there are plenty of other coverage tools out there, like [Cobertura](http://cobertura.sourceforge.net/index.html) and others which are not directly supported by TeamCity.
-
-In order to achieve similar experience with these tools you can:
-* publish a coverage HTML report as TeamCity artifact: most of the tools produce coverage report in HTML format, you can publish it as artifact and [configure report tab](including-third-party-reports-in-the-build-results.md) to show it in TeamCity. If artifact is published in the root artifact directory and its name is `coverage.zip` and there is `index.html` file in it, report tab will be shown automatically. As to running an external tool, check [Integrate with Build and Reporting Tools](#Integrate+with+Build+and+Reporting+Tools).
-* extract coverage statistics from coverage report and publish [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) to TeamCity with help of [service message](service-messages.md#Reporting+Build+Statistics): if you do so, you'll see coverage chart on build configuration Statistics tab and also you'll be able to fail a build with the help of a build failure condition on a metric change (for example, you can fail build if the coverage drops).
-
-<note>
-
-You should not publish values CodeCoverageB, CodeCoverageL, CodeCoverageM, CodeCoverageC standing for block/line/method/class coverage percentage. TeamCity will calculate these values using their absolute parts. For example, CodeCoverageL will be calculated as CodeCoverageAbsLCovered divided by CodeCoverageAbsLTotal. You could publish these values but in this case they will lack decimal parts and will not be useful.
-</note>
 
 ## Recover from "Data format of the Data Directory (NNN) and the database (MMM) do not match" error
 {product="tc"}

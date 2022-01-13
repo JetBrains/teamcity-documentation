@@ -10,7 +10,7 @@ TeamCity supports Java code coverage via:
 >We recommend configuring code coverage either in the project source __or__ in the TeamCity runner. If it is configured in both places, this might result in conflicts or stack overflow issues.
 
 <seealso>
-        <category ref="concepts">
-            <a href="code-coverage.md">Code Coverage</a>
+        <category ref="admin-guide">
+            <a href="configuring-test-reports-and-code-coverage.md">Configuring Test Reports and Code Coverage</a>
         </category>
 </seealso>
