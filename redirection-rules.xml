@@ -53,5 +53,8 @@
     <rule id="customizing-notification-templates">
             <accepts>customizing-notifications.html</accepts>
     </rule>
+    <rule id="levels-and-priority-of-parameters">
+        <accepts>project-and-agent-level-build-parameters.html</accepts>
+    </rule>
 
 </rules>

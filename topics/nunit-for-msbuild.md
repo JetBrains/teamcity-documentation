@@ -16,7 +16,7 @@ This section assumes that you already have an MSBuild build script with a config
 TeamCity provides a custom `NUnitTeamCity` task compatible with the `NUnit` task from [MSBuild Community tasks](http://msbuildtasks.tigris.org/) project. If you provide the `NUnitTeamCity` task in your build script, TeamCity will launch its own test runner based on the options specified within the task. Thus, you do not need to have any NUnit runner, because TeamCity will run the tests.
 
 In order to correctly use the `NUnitTeamCity` task, perform the following steps:
-1. Make sure the `teamcity_dotnet_nunitlauncher` system property is accessible on build agents. Build agents running Windows should automatically detect these properties as environment variables. If you need to set them manually, see defining [agent-specific](project-and-agent-level-build-parameters.md#Agent+Level+Build+Parameters) properties for more information.
+1. Make sure the `teamcity_dotnet_nunitlauncher` system property is accessible on build agents. Build agents running Windows should automatically detect these properties as environment variables. If you need to set them manually, see defining [agent-specific](levels-and-priority-of-build-parameters.md#Agent-Level+Build+Parameters) properties for more information.
 2. Configure your MSBuild build script with the `NUnitTeamCity` task using the following syntax:   
    ```XML
    <UsingTask TaskName="NUnitTeamCity" AssemblyFile="$(teamcity_dotnet_nunitlauncher_msbuild_task)" />

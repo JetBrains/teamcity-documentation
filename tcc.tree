@@ -279,7 +279,8 @@
                     <toc-element id="build-dependencies-setup.md" show-structure-for="chapter" show-structure-depth="4"/>
                 </toc-element>
                 <toc-element id="configuring-build-parameters.md" show-structure-for="chapter" show-structure-depth="4">
-                    <toc-element id="project-and-agent-level-build-parameters.md" show-structure-for="chapter" show-structure-depth="4"/>
+                    <toc-element id="using-build-parameters.md" show-structure-for="chapter" show-structure-depth="4">
+                    <toc-element id="levels-and-priority-of-build-parameters.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="levels-and-priority-of-parameters"/>
                     <toc-element id="typed-parameters.md" show-structure-for="chapter" show-structure-depth="4"/>
                     <toc-element id="predefined-build-parameters.md" show-structure-for="chapter" show-structure-depth="4"/>
                 </toc-element>
