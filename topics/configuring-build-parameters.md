@@ -24,7 +24,7 @@ They are defined by the `env.` prefix.
 
 ### System Properties
 
-System properties can be passed into build scripts of [certain runners](#Using+Build+Parameters+in+Build+Scripts) as variables specific to a build tool.
+System properties can be passed into build scripts of [certain runners](using-build-parameters.md#Using+Build+Parameters+in+Build+Scripts) as variables specific to a build tool.
 
 They are defined by the `system.` prefix.
 
@@ -40,13 +40,13 @@ They come with no prefix.
 
 The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` characters and start with an ASCII letter.
 
-## Predefined and Custom Parameters
+## Predefined Build Parameters
 
 TeamCity provides a set of [predefined parameters](predefined-build-parameters.md). Administrators can add custom parameters, as described below.
 
-## Defining Build Parameters in Build Configuration
+## Custom Build Parameters
 
-In __Build Configuration Settings | Parameters__, you can define the required system properties and set environment variables to be passed to the build script and environment when a build is started. You can redefine them in a single build run by launching a [custom build](running-custom-build.md).
+In __Build Configuration Settings | Parameters__, you can define the required <emphasis tooltip="system-properties">system properties</emphasis> and set <emphasis tooltip="environment-variables">environment variables</emphasis> to be passed to the build script and environment when a build is started. You can later redefine them in a single build run by launching a [custom build](running-custom-build.md).
 
 Build parameters defined in a build configuration are used only within this configuration. See how to define them on a [project or agent level](levels-and-priority-of-build-parameters.md).
 
@@ -54,21 +54,21 @@ Any user-defined build parameter (system property or environment variable) can r
 
 ```Shell
 
-%[env|system].property_name%
+%[env|system].parameter_name%
 For example: system.tomcat.libs=%\env.CATALINA_HOME%/lib/*.jar
 
 ```
 
-Read more about [parameter references](#Parameter+References).
+Read more about parameter references [below](#Parameter+References).
 
-You can also choose the [parameter's type](typed-parameters.md), so the parameter is displayed as a UI field in the _Run Custom Build_ dialog. This way, you can quickly change the parameter's value in the current build run via the UI.
+You can also choose the [parameter's type](typed-parameters.md), so the parameter is displayed as a UI field in the _Run Custom Build_ dialog. This way, you can quickly change the parameter's value in a build run via the UI.
 
 ## Parameter References
 
-Any textual setting in TeamCity can reference a build parameter. If you enter a string in the `%\parameter.name%` format, TeamCity will substitute it with the actual value during the build.
+Almost any text-field setting in TeamCity can reference a build parameter as a variable. If you enter a string in the `%\parameter.name%` format, TeamCity will substitute it with the actual value during the build.
 
-If a build references a parameter which is not defined, TeamCity considers it an [implicit agent requirement](agent-requirements.md#Implicit+Requirements): the build will only run on the agents with this parameter defined.  
-The references to parameters which names do not satisfy the [above restrictions](#Parameter+Name+Restrictions) do not create an [implicit requirement](agent-requirements.md#Implicit+Requirements).
+If a build references a parameter which is not defined, TeamCity will consider it an [implicit agent requirement](agent-requirements.md#Implicit+Requirements): the build will only run on the agents where this parameter is defined.  
+The references to parameters which names do not satisfy the [above restrictions](#Parameter+Name+Restrictions) do not create an [implicit requirement](agent-requirements.md#Implicit+Requirements) and are ignored.
 
 See [where you can use parameter references](using-build-parameters.md#Where+References+Can+Be+Used).
 
