@@ -49,6 +49,7 @@ The expected format is the same as at the project level: `[env|system].<property
 <seealso>
         <category ref="admin-guide">
             <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
+            <a href="using-build-parameters.md">Using Build Parameters</a>
             <a href="predefined-build-parameters.md">List of Predefined Build Parameters</a>
         </category>
 </seealso>
