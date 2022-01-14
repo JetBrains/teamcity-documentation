@@ -42,7 +42,7 @@ For example, `env.CATALINA_HOME=C:\tomcat_6.0.13`.
 ## Agent-Level Build Parameters
 [//]: # (AltHead: agentSpecific)
 
-To define parameters specific to a certain [build agent](build-agent.md), edit this agent's `<Agent Home>/conf/buildAgent.properties` [configuration file](configure-agent-installation.md). Refer to [this section](predefined-build-parameters.md#Agent+Properties) for more information on available predefined parameters for agents.
+To define parameters specific to a certain [build agent](build-agent.md), edit this agent's `<Agent Home>/conf/buildAgent.properties` [configuration file](configure-agent-installation.md). Refer to [this section](predefined-build-parameters.md#Agent+Parameters) for more information on available predefined parameters for agents.
 
 The expected format is the same as at the project level: `[env|system].<property_name>=<property_value>`.
 

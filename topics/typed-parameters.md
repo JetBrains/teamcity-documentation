@@ -13,8 +13,7 @@ Example: A build configuration has a parameter that defines if a build has to in
 
 To add a specification to a build parameter, click __Edit__ in the __Spec__ section when [editing/adding a build parameter](configuring-build-parameters.md).
 
-All parameters' specifications support the following common properties:
-
+All parameters' specifications support the following common settings:
 
 <table>
 <tr><td>Setting</td><td>Description</td></tr>

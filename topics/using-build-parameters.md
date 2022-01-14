@@ -14,7 +14,7 @@ If you want to prevent TeamCity from treating the text in the percentage charact
 
 Password fields can also contain references to parameters: in this case, you cannot see the reference as it is masked by asterisks as any secure value.
 
-For details on reusing or overriding parameters withing a build chain, refer to [this section](predefined-build-parameters.md#Dependencies+Properties).
+For details on reusing or overriding parameters withing a build chain, refer to [this section](predefined-build-parameters.md#Dependencies+Parameters).
 
 ### Where References Can Be Used
 
@@ -90,7 +90,7 @@ VCS label pattern
 
 <td>
 
-`system.build.number` and [predefined server build parameters](predefined-build-parameters.md#Server+Build+Properties).
+`system.build.number` and [predefined server build parameters](predefined-build-parameters.md#Server+Build+Parameters).
 
 </td></tr><tr>
 
@@ -102,7 +102,7 @@ Artifact dependency settings
 
 <td>
 
-Only [predefined server build parameters](predefined-build-parameters.md#Server+Build+Properties).
+Only [predefined server build parameters](predefined-build-parameters.md#Server+Build+Parameters).
 
 </td></tr></table>
 
