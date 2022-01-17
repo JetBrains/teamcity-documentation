@@ -44,7 +44,7 @@ This section describes general steps required for cloud integration.
 The requirements for a virtual machine/image to be used for TeamCity cloud integration:
 * The TeamCity agent must be correctly [installed](install-and-start-teamcity-agents.md) and configured to start [automatically](start-teamcity-agent.md#Automatic+Start) on the machine startup.
 * To skip the update attempts on each agent connection to the server, make sure that the agent is up to date: start and wait for the update to complete. The agent state changes each time a plugin or tool is installed/updated/removed on the server.
-* The [`buildAgent.properties`](project-and-agent-level-build-parameters.md) file can be left "as is". The `serverUrl`, `name`, and `authorizationToken` properties can be left empty or set to any value, they are ignored when TeamCity starts the instance.
+* The [`buildAgent.properties`](levels-and-priority-of-build-parameters.md) file can be left "as is". The `serverUrl`, `name`, and `authorizationToken` properties can be left empty or set to any value, they are ignored when TeamCity starts the instance.
 
 Provided these requirements are met, the usual TeamCity agent installation and cloud-provider image bundling procedures are applicable.
 
@@ -56,7 +56,7 @@ If you need the [connection](install-and-start-teamcity-agents.md#Agent-Server+D
 2. Connect and log in to the virtual machine. 
 3. Configure the running instance:
    1. [Install](install-and-start-teamcity-agents.md) and configure a build agent.
-      * Configure the server name and agent name in the [`buildAgent.properties`](project-and-agent-level-build-parameters.md) file — this is optional if TeamCity will be configured to launch the image, but it is useful to test the agent is configured correctly.
+      * Configure the server name and agent name in the [`buildAgent.properties`](levels-and-priority-of-build-parameters.md) file — this is optional if TeamCity will be configured to launch the image, but it is useful to test the agent is configured correctly.
       * It usually makes sense to specify `tempDir` and `workDir` in `conf/buildAgent.properties` to use a non-system drive (for example, `D` drive under Windows).
    2. Install any additional software necessary for the builds on the machine (for example, Java or .NET).
    3. Start the agent and wait until it connects to the server, ensure it is operating and compatible with all the necessary build configurations (in the TeamCity UI, go to the __Agents__ page, select the build agent and view the __Compatible Configurations__ tab).
@@ -73,7 +73,7 @@ If you want TeamCity to start an existing virtual machine and stop it after the 
    * Stop the agent (under Windows, stop the service but leave it in the _Automatic_ startup type).
    * (optional) Delete the content of the `logs` and `temp` directories in the [agent home](agent-home-directory.md).
    * (optional) Clean up the `<Agent Home>/conf/` directory from platform-specific files.
-   * (optional) Change the [`buildAgent.properties`](project-and-agent-level-build-parameters.md) file to remove the `name`, `serverUrl`, and `authorizationToken` properties.
+   * (optional) Change the [`buildAgent.properties`](levels-and-priority-of-build-parameters.md) file to remove the `name`, `serverUrl`, and `authorizationToken` properties.
 2. Make a new image from the running instance. Refer your cloud provider's documentation on how to do this.
 
 >TeamCity Agent autoupgrades whenever the agent distribution or agent plugins change on the server. If you want to reduce the agent startup time, it might make sense capturing a new virtual machine image after each TeamCity Server upgrade.

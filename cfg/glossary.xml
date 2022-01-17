@@ -4,3 +4,14 @@
     <term name="build-grid">
         A pool of agents used by TeamCity to simultaneously create builds of multiple projects. A build grid employs currently unused resources from multiple computers, any of which can run multiple builds and/or tests at the same time, for single or multiple projects across your company.
     </term>
+    <term name="environment-variable">
+        Environment variables are passed into a spawned build process as into an environment. Defined by the `env.` prefix.
+    </term>
+    <term name="system-property">
+        System properties can be passed into build scripts of certain runners as variables specific to a build tool. Defined by the `system.` prefix.
+    </term>
+    <term name="configuration-parameter">
+        Configuration parameters are meant to share settings within a build configuration (widely used in templates and meta-runners).
+    </term>
+
+    </terms>

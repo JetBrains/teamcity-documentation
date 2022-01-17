@@ -223,7 +223,7 @@ With this setting enabled, the [Schedule Trigger](configuring-schedule-triggers.
 #### Parameters in Dependent Builds
 
 TeamCity provides the ability to use properties provided by the builds the current build depends on (via a snapshot or artifact dependency). When build A depends on build B, you can pass properties from build B to build A, i.e. properties can be passed only in the direction of the build chain flow and not vice versa.   
-For the details on how to use parameters of the previous build in chain, refer to the [Dependencies Properties](predefined-build-parameters.md#Dependencies+Properties) section.
+For the details on how to use parameters of the previous build in chain, refer to the [Dependencies Properties](predefined-build-parameters.md#Dependency+Parameters) section.
 
 #### Running Builds in Parallel
 
