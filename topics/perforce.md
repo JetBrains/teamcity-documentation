@@ -287,9 +287,9 @@ Specify additional `p4 sync` options, like `--parallel`. See [command reference]
 
 With checkout on an agent, TeamCity provides environment variables describing the Perforce workspace created during the checkout process.   
 If several Perforce VCS roots are used for the checkout, the variables are created for the __first__ VCS root. The variables are:
-* __P4USER__ — same as `vcsroot.<VCS_root_ID>.user` [parameter](predefined-build-parameters.md#VCS+Properties)
-* __P4PORT__ — same as `vcsroot.<VCS_root_ID>.port` [parameter](predefined-build-parameters.md#VCS+Properties)
-* __P4CLIENT__ — same as `vcsroot.<VCS root ID>.p4client` [parameter](predefined-build-parameters.md#VCS+Properties), the name of the generated P4 workspace on the agent
+* __P4USER__ — same as `vcsroot.<VCS_root_ID>.user` [parameter](predefined-build-parameters.md#VCS+Parameters)
+* __P4PORT__ — same as `vcsroot.<VCS_root_ID>.port` [parameter](predefined-build-parameters.md#VCS+Parameters)
+* __P4CLIENT__ — same as `vcsroot.<VCS root ID>.p4client` [parameter](predefined-build-parameters.md#VCS+Parameters), the name of the generated P4 workspace on the agent
 
 These variables can be used to perform custom `p4` commands after the checkout.
 

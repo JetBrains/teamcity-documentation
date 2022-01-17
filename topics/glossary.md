@@ -75,6 +75,9 @@ Build number
 Build queue
 : A list of builds that were [triggered](configuring-build-triggers.md) and are waiting to be started. TeamCity will distribute them to compatible build agents as soon as these agents become idle. A queued build is assigned to an agent at the moment it is started on the agent; no preassignment is made while the build is waiting in the build queue.
 
+Build parameter
+: A name-value pair, defined by a user or provided by TeamCity, which can be used in a build. [Build parameters](configuring-build-parameters.md) help flexibly share settings and pass them to build steps.
+
 Build runner
 : A TeamCity module that allows integration with a specific tool: Command Line, .NET, Kotlin Script, Gradle, and so on. Each build step defines the runner that will be used to execute it.
 
@@ -110,6 +113,9 @@ Code inspections
 Composite build configuration
 : A special type of build configuration that aggregates results from several other builds combined by snapshot dependencies. A composite build can be viewed as a build which consists of several parts which can be executed in parallel on different agents. All these parts will have a synchronized snapshot of the source code, and the results can be seen in a single place.
 
+Configuration parameter
+: In TeamCity, a type of [build parameter](configuring-build-parameters.md) that is meant to share settings within a build configuration (widely used in templates and meta-runners).
+
 Continuous integration
 : A software engineering term describing a process that frequently rebuilds and tests an application. Generally, it takes the form of a server process or daemon that
 * monitors a file system or version control system for changes;
@@ -128,6 +134,11 @@ Deployment build configuration
 
 Difference viewer
 : A TeamCity component that allows reviewing the differences between two versions of a file modified in the source control and navigating between these differences.
+
+## E
+
+Environment variable
+: In TeamCity, a type of [build parameter](configuring-build-parameters.md) that is passed into a spawned build process as into an environment. Defined by the `env.` prefix.
 
 ## F
 
@@ -193,6 +204,9 @@ Snapshot dependency
 
 Super-user
 : The super-user login allows accessing the server UI with the System Administrator permissions. It is useful when the administrator forgot the credentials or needs to fix authentication-related settings. The login is performed using an authentication token that can be found in the server logs.
+
+System property
+: In TeamCity, a type of [build parameter](configuring-build-parameters.md) that can be passed into build scripts of certain runners as a variable specific to a build tool. Defined by the `system.` prefix.
 
 ## T
 

@@ -53,6 +53,9 @@
     <rule id="customizing-notification-templates">
             <accepts>customizing-notifications.html</accepts>
     </rule>
+    <rule id="levels-and-priority-of-parameters">
+        <accepts>project-and-agent-level-build-parameters.html</accepts>
+    </rule>
     <rule id="configuring-test-reports-and-code-coverage">
             <accepts>code-inspection.html</accepts>
             <accepts>code-coverage.html</accepts>

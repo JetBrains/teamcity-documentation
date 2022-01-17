@@ -208,7 +208,7 @@ The revision used for the build of the VCS root with `<VCS_root_name>` name. [Re
 
 <td>
 
-A value of the build property with the corresponding name. All the [Predefined Build Parameters](predefined-build-parameters.md) are supported (including [Reference-only server properties](predefined-build-parameters.md#Configuration+Parameters)).
+A value of the build property with the corresponding name. All the [Predefined Build Parameters](predefined-build-parameters.md) are supported (including [Reference-only server properties](predefined-build-parameters.md#Predefined+Configuration+Parameters)).
 
 </td></tr></table>
 

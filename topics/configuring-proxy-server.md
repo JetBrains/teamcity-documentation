@@ -1,7 +1,10 @@
 [//]: # (title: Configuring Proxy Server)
 [//]: # (auxiliary-id: Configuring Proxy Server)
 
-This article gives general recommendations on configuring a [reverse proxy installed in front of the TeamCity Server web UI](#Set+Up+TeamCity+Server+Behind+Proxy). It also contains example proxy configurations for [outgoing connections](#Use+Proxy+for+Outgoing+Connections) and [agent-server communication](#Use+Proxy+to+Connect+Agents+to+TeamCity+Server).
+This article gives general recommendations on configuring the following proxy types: 
+* [Reverse proxy installed in front of the TeamCity Server web UI](#Set+Up+TeamCity+Server+Behind+Proxy)
+* [Proxy for outgoing connections](#Use+Proxy+for+Outgoing+Connections)
+* [Proxy on the TeamCity agent side for agent-to-server connections](#Use+Proxy+to+Connect+Agents+to+TeamCity+Server)
 
 ## Set Up TeamCity Server Behind Proxy
 

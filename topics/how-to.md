@@ -572,7 +572,7 @@ Do the following:
 
 Where `<btID>` is the [ID of the build configuration](build-configuration.md) C. The approach works best when builds reuse is turned off via the [Snapshot Dependencies](snapshot-dependencies.md) snapshot dependency option set to off.
 
-[Read more](predefined-build-parameters.md#Configuration+Parameters) about dependency properties.
+[Read more](predefined-build-parameters.md#Predefined+Configuration+Parameters) about dependency properties.
 
 Please watch/comment the issue related to sharing a build number [TW-7745](http://www.jetbrains.net/tracker/issue/TW-7745).
 
