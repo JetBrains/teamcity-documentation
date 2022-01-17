@@ -89,6 +89,8 @@ For this type, it is possible to define the allowed value:
 * _Not empty_
 * _Regex_: specify a [Java-style regular expression](https://www.w3schools.com/java/java_regex.asp) to validate the field value, as well as the message to show if the validation fails.
 
+<anchor name="TypedParameters-Checkbox"/>
+
 ### Checkbox Type
 
 A true/false option represented by a checkbox.

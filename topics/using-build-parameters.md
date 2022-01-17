@@ -135,3 +135,10 @@ Artifact dependency settings
 Only [predefined server build parameters](predefined-build-parameters.md#Predefined+Server+Build+Parameters).
 
 </td></tr></table>
+
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
+            <a href="predefined-build-parameters.md">List of Predefined Build Parameters</a>
+        </category>
+</seealso>

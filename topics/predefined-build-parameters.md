@@ -1089,3 +1089,10 @@ Human-friendly description of how the build was triggered.
 If the build was triggered by a user, the username of this user is reported. When a build is triggered not by a user, this property is not reported.
 
 </td></tr></table>
+
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
+            <a href="using-build-parameters.md">Using Build Parameters</a>
+        </category>
+</seealso>

@@ -6,15 +6,14 @@ _Build parameters_ are name-value pairs, defined by a user or provided by TeamCi
 
 This article explains how to configure build parameters. See how to [use them inside build settings and build scripts](using-build-parameters.md).
 
-<anchor name="ConfiguringBuildParameters-ConfigurationParameters"/>
-<anchor name="ConfiguringBuildParameters-BuildParameters"/>
-
 ## Types of Build Parameters
 
 There are three types of build parameters in TeamCity:
 * [Environment variables](#Environment+Variables)
 * [System properties](#System+Properties)
 * [Configuration parameters](#Configuration+Parameters)
+
+<anchor name="ConfiguringBuildParameters-BuildParameters"/>
 
 ### Environment Variables
 
@@ -27,6 +26,8 @@ They are defined by the `env.` prefix.
 System properties can be passed into build scripts of [certain runners](using-build-parameters.md#Using+Build+Parameters+in+Build+Scripts) as variables specific to a build tool.
 
 They are defined by the `system.` prefix.
+
+<anchor name="ConfiguringBuildParameters-ConfigurationParameters"/>
 
 ### Configuration Parameters
 
