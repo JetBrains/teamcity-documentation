@@ -53,7 +53,7 @@ In __Build Configuration Settings | Parameters__, project administrators can def
 
 Build parameters defined in a build configuration are used only within this configuration. See how to define them on a [project or agent level](levels-and-priority-of-build-parameters.md).
 
-Any user-defined build parameter (<emphasis tooltip="system-property">system property</emphasis> or <emphasis tooltip="environment-variable">environment variable</emphasis>) can reference other parameters as follows: `%system.parameter_name%` or `%env.parameter_name%`. For example, `system.tomcat.libs=%\env.CATALINA_HOME%/lib/*.jar`.  
+Any user-defined build parameter (<emphasis tooltip="system-property">system property</emphasis> or <emphasis tooltip="environment-variable">environment variable</emphasis>) can reference other parameters as follows: `%\system.parameter_name%` or `%\env.parameter_name%`. For example, `system.tomcat.libs=%\env.CATALINA_HOME%/lib/*.jar`.  
 Read more about parameter references [below](#Parameter+References).
 
 You can also configure a [parameter's type](typed-parameters.md), so the parameter is displayed as a UI field in the _Run Custom Build_ dialog. This way, users will be able to use the UI dialog to quickly change the parameter's value in the next build run.
