@@ -966,8 +966,6 @@ It is possible to override values of [build parameters](configuring-build-parame
 
 For example, build configuration A depends on B and B depends on C.
 
-<img src="ABC.png" width="311" alt="Example 1"/>
-
 On triggering, A can change any parameter used in B or C by setting the following parameter:
 
 ```XML
