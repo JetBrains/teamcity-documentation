@@ -14,7 +14,7 @@ If you want to prevent TeamCity from treating the text in the percentage charact
 
 Password fields can also contain references to parameters: in this case, you cannot see the reference as it is masked by asterisks as any secure value.
 
-For details on reusing or overriding parameters withing a build chain, refer to [this section](predefined-build-parameters.md#Dependencies+Parameters).
+For details on reusing or overriding parameters withing a build chain, refer to [this section](predefined-build-parameters.md#Dependency+Parameters).
 
 ### Where References Can Be Used
 
@@ -90,7 +90,7 @@ VCS label pattern
 
 <td>
 
-`system.build.number` and [predefined server build parameters](predefined-build-parameters.md#Server+Build+Parameters).
+`system.build.number` and [predefined server build parameters](predefined-build-parameters.md#Predefined+Server+Build+Parameters).
 
 </td></tr><tr>
 
@@ -102,23 +102,23 @@ Artifact dependency settings
 
 <td>
 
-Only [predefined server build parameters](predefined-build-parameters.md#Server+Build+Parameters).
+Only [predefined server build parameters](predefined-build-parameters.md#Predefined+Server+Build+Parameters).
 
 </td></tr></table>
 
 ## Using Build Parameters in VCS Labeling Pattern and Build Number
 
 In the [build number](build-number.md) pattern or [VCS labeling](vcs-labeling.md) pattern, you can use the `%[env|system].parameter_name%` syntax to reference any parameter known by TeamCity:
-* Predefined parameters of a [server](predefined-build-parameters.md#Server+Build+Properties) or [build configuration](predefined-build-parameters.md#Configuration+Parameters).
+* Predefined parameters of a [server](predefined-build-parameters.md#Server+Build+Properties) or [build configuration](predefined-build-parameters.md#Predefined+Configuration+Parameters).
 * Custom build parameters added on the __Build Configuration Settings | Parameters__ page.
 
 For example, a VCS revision number can be specified as `%\build.vcs.number%`.
 
 ## Using Build Parameters in Build Scripts
 
-All build parameters starting with the `env.` prefix (<emphasis tooltip="environment-variables">environment variables</emphasis>) are passed into a build's process environment, without the `env.` prefix.
+All build parameters starting with the `env.` prefix (<emphasis tooltip="environment-variable">environment variables</emphasis>) are passed into a build's process environment, without the `env.` prefix.
 
-All build parameters starting with the `system.` prefix (<emphasis tooltip="system-properties">system properties</emphasis>) are passed to the build script engines and can be referenced there by the parameter name, without the `system.` prefix. However, you need to use this prefix to access these parameters in the TeamCity UI or, for example, in the [Command Line](command-line.md) runner.
+All build parameters starting with the `system.` prefix (<emphasis tooltip="system-property">system properties</emphasis>) are passed to the build script engines and can be referenced there by the parameter name, without the `system.` prefix. However, you need to use this prefix to access these parameters in the TeamCity UI or, for example, in the [Command Line](command-line.md) runner.
 
 The following syntax will work _in the build script_ (_not_ in TeamCity settings):
 * For [Ant](ant.md), [Maven](maven.md), and [NAnt](nant.md), use `${<parameter_name>}`.

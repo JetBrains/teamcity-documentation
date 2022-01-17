@@ -11,7 +11,7 @@ When TeamCity starts a build process, the following precedence of build paramete
 * Environment variables of the build agent process itself.
 * [Predefined build parameters](predefined-build-parameters.md).
 
-The resultant set of parameters is saved into a file which can be accessed by the build script. To learn more about this file, see the `teamcity.build.properties.file` <emphasis tooltip="system-properties">system property</emphasis> or `TEAMCITY_BUILD_PROPERTIES_FILE` <emphasis tooltip="environment-variables">environment variable</emphasis> descriptions in [Predefined Build Parameters](predefined-build-parameters.md).
+The resultant set of parameters is saved into a file which can be accessed by the build script. To learn more about this file, see the `teamcity.build.properties.file` <emphasis tooltip="system-property">system property</emphasis> or `TEAMCITY_BUILD_PROPERTIES_FILE` <emphasis tooltip="environment-variable">environment variable</emphasis> descriptions in [Predefined Build Parameters](predefined-build-parameters.md).
 
 ## Project-Level Build Parameters
 
@@ -28,7 +28,7 @@ If a build parameter with the same name is defined both in a build configuration
 You can also define parameters for only those build configurations of the project that use __the same VCS root__. To do that, create a text file named `teamcity.default.properties` and check it in to the VCS root. Ensure that the file appears directly in the [Build Working Directory](build-working-directory.md) by specifying the appropriate [checkout rules](configuring-vcs-settings.md#Configure+Checkout+Rules). The name and path to the file can be customized via the `teamcity.default.properties` parameter of a build configuration.  
 The parameters defined this way are not visible in the TeamCity UI, but are passed directly to the build process.
 
-When defining <emphasis tooltip="system-properties">system properties</emphasis> or <emphasis tooltip="environment-variables">environment variables</emphasis> in the `teamcity.default.properties` file, use the following format:
+When defining <emphasis tooltip="system-property">system properties</emphasis> or <emphasis tooltip="environment-variable">environment variables</emphasis> in the `teamcity.default.properties` file, use the following format:
 
 ```Plain Text
 [env|system].<property_name>=<property_value>
@@ -42,7 +42,7 @@ For example, `env.CATALINA_HOME=C:\tomcat_6.0.13`.
 ## Agent-Level Build Parameters
 [//]: # (AltHead: agentSpecific)
 
-To define parameters specific to a certain [build agent](build-agent.md), edit this agent's `<Agent Home>/conf/buildAgent.properties` [configuration file](configure-agent-installation.md). Refer to [this section](predefined-build-parameters.md#Agent+Parameters) for more information on available predefined parameters for agents.
+To define parameters specific to a certain [build agent](build-agent.md), edit this agent's `<Agent Home>/conf/buildAgent.properties` [configuration file](configure-agent-installation.md). Refer to [this section](predefined-build-parameters.md#Predefined+Agent+Build+Parameters) for more information on available predefined parameters for agents.
 
 The expected format is the same as at the project level: `[env|system].<property_name>=<property_value>`.
 

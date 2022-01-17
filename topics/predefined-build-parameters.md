@@ -18,7 +18,7 @@ There is also a special type of server-side build parameters that can be referen
 
 ## Predefined Server Build Parameters
 
-Here is the list of <emphasis tooltip="system-properties">system properties</emphasis> predefined in TeamCity and the respective environment variables.
+Here is the list of <emphasis tooltip="system-property">system properties</emphasis> predefined in TeamCity and the respective environment variables.
 
 <table><tr>
 
@@ -359,7 +359,7 @@ This property could be useful if you want to [support risk test reordering](http
 
 ## Predefined Agent Environment Parameters
 
-Agent-specific parameters are defined on each build agent and vary depending on its environment. Aside from standard parameters (for example, `teamcity.agent.jvm.os.name` or `teamcity.agent.jvm.os.arch` provided by the JVM running on an agent), agents can have parameters based on installed applications. TeamCity can automatically detect applications like .NET Framework or Visual Studio and add the corresponding <emphasis tooltip="system-properties">system properties</emphasis> and <emphasis tooltip="environment-variables">environment variables</emphasis>.
+Agent-specific parameters are defined on each build agent and vary depending on its environment. Aside from standard parameters (for example, `teamcity.agent.jvm.os.name` or `teamcity.agent.jvm.os.arch` provided by the JVM running on an agent), agents can have parameters based on installed applications. TeamCity can automatically detect applications like .NET Framework or Visual Studio and add the corresponding <emphasis tooltip="system-property">system properties</emphasis> and <emphasis tooltip="environment-variable">environment variables</emphasis>.
 
 If additional applications/libraries are available in the environment, the system administrator can manually define the respective properties manually, in the `<Agent Home>/conf/buildAgent.properties` file.
 
@@ -842,16 +842,16 @@ The name of the build agent host.
 
 ### Java-Related Environment Variables
 
-When a build agent starts, it detects the installed JDK and JRE and then defines Java-related environment variables as described [below](#Defining+Java-related+Environment+Variables). If a started agent already has the Java-related environment variables set, they are not redefined.
+When a build agent starts, it detects the installed JDK and JRE and then defines Java-related environment variables as described [below](#Defining+Java-Related+Environment+Variables). If a started agent already has the Java-related environment variables set, they are not redefined.
 
-These variables can be used in build scripts as usual <emphasis tooltip="environment-variables">environment variables</emphasis>.
+These variables can be used in build scripts as usual <emphasis tooltip="environment-variable">environment variables</emphasis>.
 
 #### Detecting Java on Agent
 
 An agent searches and launches all Java installations to verify they are valid. It determines the Java version and bitness based on the output.
 
 The following locations are searched (some locations are common for all OSs, some are OS-specific):
-* A custom directory on the agent, if defined. See [how to define a custom directory](#Defining+Custom+directory+to+Search+for+Java).
+* A custom directory on the agent, if defined. See [how to define a custom directory](#Defining+Custom+Directory+to+Search+for+Java).
 * The [agent tools](installing-agent-tools.md) directory, `<Agent Home Directory>/tools`, is checked for containing a JRE or JDK. By default, the subdirectories of `/tools` are not scanned. To search the subdirectories, define `teamcity.agent.java.search.path=%\agent.tools.NAME%/INNER_PATH` in the `buildAgent.properties` file.  
   For Unix and macOS, remember to [set the executable bit](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html) on the files for TeamCity to be able to launch the discovered Java.
 {product="tc"}  
@@ -970,7 +970,7 @@ For example, build configuration A depends on B and B depends on C. On triggerin
 reverse.dep.<btID>.<parameter_name>
 ```
 
-`<parameter_name>` is the name of the parameter to set in the build configuration `<btID>`. To set a <emphasis tooltip="system-properties">system property</emphasis>, include the `system.` prefix in `<parameter_name>`.
+`<parameter_name>` is the name of the parameter to set in the build configuration `<btID>`. To set a <emphasis tooltip="system-property">system property</emphasis>, include the `system.` prefix in `<parameter_name>`.
 
 To change a parameter in all dependency builds at once, use a wildcard:
 

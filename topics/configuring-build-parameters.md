@@ -46,7 +46,7 @@ TeamCity provides a set of [predefined parameters](predefined-build-parameters.m
 
 ## Custom Build Parameters
 
-In __Build Configuration Settings | Parameters__, you can define the required <emphasis tooltip="system-properties">system properties</emphasis> and set <emphasis tooltip="environment-variables">environment variables</emphasis> to be passed to the build script and environment when a build is started. You can later redefine them in a single build run by launching a [custom build](running-custom-build.md).
+In __Build Configuration Settings | Parameters__, you can define the required <emphasis tooltip="system-property">system properties</emphasis> and set <emphasis tooltip="environment-variable">environment variables</emphasis> to be passed to the build script and environment when a build is started. You can later redefine them in a single build run by launching a [custom build](running-custom-build.md).
 
 Build parameters defined in a build configuration are used only within this configuration. See how to define them on a [project or agent level](levels-and-priority-of-build-parameters.md).
 

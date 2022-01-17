@@ -17,7 +17,7 @@ IDs can contain only alphanumeric characters and underscores (`_`) — maximum 8
 
 External IDs are used:
 * in URLs of the web interface (including the [NuGet](nuget.md) feed), for example, [`https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains`](https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains);
-* in the [`dep.`](predefined-build-parameters.md#Dependencies+Parameters) and [`vcsRoot.`](predefined-build-parameters.md#VCS+Parameters) parameter references;
+* in the [`dep.`](predefined-build-parameters.md#Dependency+Parameters) and [`vcsRoot.`](predefined-build-parameters.md#VCS+Parameters) parameter references;
 * in [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) and build scripts used to automate actions with TeamCity (for example, download artifacts via direct URLs or Ivy);
 * in the configuration files storing settings of projects and build configurations under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`;
 * in file and directory names under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` (for example, build artifacts storage).

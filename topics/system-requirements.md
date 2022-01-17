@@ -217,7 +217,7 @@ The network traffic mostly depends on your settings as some of them imply transf
 
 The most important flows of traffic between a TeamCity agent and the TeamCity server are:
 * The agent retrieves commands from the server: these are typically build start tasks, including a dump of the build configuration settings and the full set of build parameters. These parameters can be reviewed on the build's [Parameters](working-with-build-results.md#Parameters) tab.
-* The agent periodically sends current status data to the server (this includes all the agents’ parameters which can be reviewed on the agent's [Agent Parameters](viewing-build-agent-details.md#Agent+Parameters) tab).
+* The agent periodically sends current status data to the server (this includes all the agents’ parameters which can be reviewed on the agent's [Agent Parameters](viewing-build-agent-details.md#Predefined+Agent+Build+Parameters) tab).
 * During the build, the agent sends build log messages and parameters data back to the server. These can be reviewed on the [Build Log](working-with-build-results.md#Build+Log) and [Parameters](working-with-build-results.md#Parameters) tabs of the build.
 * (when the server-side checkout mode is used) The agent downloads the sources before the build (as a full or incremental patch) from the server.
 * (when an [artifact dependency](artifact-dependencies.md) is configured) The agent downloads build artifacts of other builds from the server before starting a build, unless an external artifact storage is used instead.

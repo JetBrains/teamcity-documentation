@@ -34,6 +34,6 @@ When a new tool is installed on the server, even though agents won't try to down
 
 </note>
 
-To check that the tool appears on the agent, look for `teamcity.tool.<installed_tool_ID>` in [configuration parameters reported by the agent](predefined-build-parameters.md#Agent+Parameters) in the TeamCity UI.
+To check that the tool appears on the agent, look for `teamcity.tool.<installed_tool_ID>` in [configuration parameters reported by the agent](predefined-build-parameters.md#Predefined+Agent+Build+Parameters) in the TeamCity UI.
 
 If you delete a tool in the TeamCity UI, each agent that have this tool installed will detect this, delete own copy of the tool, and restart.

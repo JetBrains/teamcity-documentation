@@ -107,7 +107,7 @@ Do not check out files automatically
 
 <td>
 
-TeamCity will not check out any sources automatically, the [default build checkout directory](build-checkout-directory.md#Custom+checkout+directory) will still be created so that you could use it to check out the sources via a build script. Note that TeamCity will accurately report changes only if the checkout is performed on the revision specified by the [`build.vcs.number.*`](predefined-build-parameters.md#Server+Build+Parameters) properties passed into the build.
+TeamCity will not check out any sources automatically, the [default build checkout directory](build-checkout-directory.md#Custom+checkout+directory) will still be created so that you could use it to check out the sources via a build script. Note that TeamCity will accurately report changes only if the checkout is performed on the revision specified by the [`build.vcs.number.*`](predefined-build-parameters.md#Predefined+Server+Build+Parameters) properties passed into the build.
 
 The build checkout directory will __not__ be cleaned automatically, unless the directory expiration period is [configured](build-checkout-directory.md#Automatic+Checkout+Directory+Cleaning).
 
