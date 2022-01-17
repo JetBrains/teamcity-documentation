@@ -1,11 +1,11 @@
 [//]: # (title: Changing Build Parameter Type and UI Appearance)
 [//]: # (auxiliary-id: Changing Build Parameter Type and UI Appearance;Typed Parameters)
 
-When adding a [build parameter](configuring-build-parameters.md), you can extend its definition with meta-information, or _specification_. The parameter's specification defines how its controls are presented and validated in the _[Run Custom Build](running-custom-build.md)_ dialog.
+When [adding a build parameter](configuring-build-parameters.md), you can extend its definition with meta-information, or _specification_. The parameter's specification defines how its controls are presented and validated in the _[Run Custom Build](running-custom-build.md)_ dialog.
 
 By adding a typed specification to a parameter, you make it a _typed parameter_. Typed parameters are more understandable for non-developers and make experience with builds more user-friendly.
 
-Example: A build configuration has a parameter that defines if a build has to include a license or not. The parameter can be either `true` or `false` (default). For a regular user, it might not be clear which build parameter is responsible for the license generation and what its values mean. It is not a problem when builds run with the default configuration. However, if a user wants to run a [custom build](running-custom-build.md), the variety of available parameters might confuse them. Using the build parameter's specification, you can make the parameters' appearance in the _Run Custom Build_ dialog more readable.
+**Example**: A build configuration has a parameter that defines if a build has to include a license or not. The parameter can be either `true` or `false` (default). For a regular user, it might not be clear which build parameter is responsible for the license generation and what its values mean. It is not a problem when builds run with the default configuration. However, if a user wants to run a [custom build](running-custom-build.md), the variety of available parameters might confuse them. Using the build parameter specification, you can make the parameters' appearance in the _Run Custom Build_ dialog more readable.
 
 <img src="typed-parameter-in-custom-run-dialog.png" width="700" alt="Typed parameter in a Running Custom Build dialog"/>
 
@@ -13,7 +13,7 @@ Example: A build configuration has a parameter that defines if a build has to in
 
 To add a specification to a build parameter, click __Edit__ in the __Spec__ section when [editing/adding a build parameter](configuring-build-parameters.md).
 
-All parameters' specifications support the following common settings:
+All parameter specifications support the following common settings:
 
 <table>
 <tr><td>Setting</td><td>Description</td></tr>
@@ -34,7 +34,7 @@ Description
 
 </td><td>
 
-A text that is displayed below the control. Might contain an explanation on how to use the control.
+A text that is displayed below the control. Might contain a more detailed explanation on how to use the control.
 
 </td></tr>
 
@@ -58,7 +58,7 @@ Read-only
 
 </td><td>
 
-If enabled, it will be impossible to override the parameter's value.
+If enabled, it will be impossible to override the parameter's default value.
 
 </td></tr>
 
@@ -87,7 +87,7 @@ This is the default option which is a usual text string.
 For this type, it is possible to define the allowed value:
 * _Any_
 * _Not empty_
-* _Regex_: specify a [Java-style regular expression](https://www.w3schools.com/java/java_regex.asp) to validate the field value, as well as a message to show if the validation fails.
+* _Regex_: specify a [Java-style regular expression](https://www.w3schools.com/java/java_regex.asp) to validate the field value, as well as the message to show if the validation fails.
 
 ### Checkbox Type
 
@@ -106,7 +106,7 @@ Depending on how the build is triggered, the checkbox behavior will be as follow
 
 A "select one" or "select many" control to set the value to one of the predefined settings.
 
-To allow selection of multiple options, enable the _Allow multiple_ option. In the _Items_ field, specify a newline-separated list of items of the selector menu. Use the following syntax `label => value` or `value`.
+To allow selection of multiple options, enable the _Allow multiple_ option. In the _Items_ field, specify a newline-separated list of items of the selector menu. Use the following syntax `label => value` to display a human-readable label to represent a value or just `value` to display the value as is.
 
 ### Password Type
 
@@ -118,7 +118,7 @@ The password value is stored in the configuration files under [TeamCity Data Dir
 The password value is stored in the configuration files under [TeamCity Data Directory](teamcity-data-directory.md).
 {product="tcc"}
 
->The value is hidden in the build log by a plain search-and-replace algorithm. If you have a trivial password of "123", all occurrences of the "123" pattern will be replaced, which could potentially expose the password.  
+>The value is hidden in the build log by a plain search-and-replace algorithm. If you have a trivial password of "123", all occurrences of the "123" pattern will be replaced in the log, which could potentially expose the password.  
 > Setting the parameter to the _Password_ type does not guarantee that the raw value cannot be retrieved. Any project administrator can retrieve it, and any developer who can change the build script could potentially write malicious code to get the password.
 > 
 {type="warning"}
@@ -127,7 +127,7 @@ Note that if you switch an existing parameter from the _Password_ type to any ot
 
 ## Manually Configuring Parameter Specification
 
-You can also configure a specification manually — using a specially formatted string with the syntax similar to the one used in [service messages](service-messages.md) (`typeName key='value'`).   
+You can also configure a parameter's specification manually — using a specially formatted string with the syntax similar to the one used in [service messages](service-messages.md) (`typeName key='value'`).   
 For example, for the text label, use `text label='some label' regex='some pattern'`.
 
 ## Copying Parameter Specification
@@ -136,7 +136,7 @@ If you start editing a parameter that has a specification, you can see a link to
 
 ## Modifying Parameter Specification via REST API
 
-You can also view/edit typed parameters specification via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-typed-parameters.html).
+You can also view/edit typed parameters' specification via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-typed-parameters.html).
 
  <seealso>
         <category ref="admin-guide">
