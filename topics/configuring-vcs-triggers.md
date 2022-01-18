@@ -194,6 +194,26 @@ Prevents the build from triggering, if the changes check contains the word "mino
  
 No triggering if the comment consists of the word "oops" only (according to [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) principles `^` and `$` in pattern stand for string beginning and ending).
 
+</td></tr><tr>
+<td>
+
++:comment=#teamcity:\*\*
+
+</td>
+<td>
+
+Triggers the build if the commit message contains the "#teamcity" keyword.
+
+</td></tr><tr>
+<td>
+
++:comment=(?s)#teamcity.*#major.\*:\*\*
+
+</td>
+<td>
+
+Triggers the build if the commit message contains both "#teamcity" and "#major" keywords. Here, `(?s)` is a [DOTALL pattern](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#DOTALL) that makes the character `.` match any character, including a line terminator.
+
 </td></tr>
 </table>
 
