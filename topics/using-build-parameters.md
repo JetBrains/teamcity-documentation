@@ -136,6 +136,39 @@ Only [predefined server build parameters](predefined-build-parameters.md#Predefi
 
 </td></tr></table>
 
+## Example Workflow
+
+Let's try to define a build parameter on a build configuration level and use it in a build step.
+
+In this example use case, we will add a configuration parameter containing your server URL. Then, we will use its value as the base part of the URL to download a certain file via a command line. To do this:
+1. Go to __Build Configuration Settings | Parameters__.
+2. Click __Add new parameter__.
+3. Enter the parameter's name and value. Leave _Configuration parameter_ as its _Kind_.  
+   * Name: `serverUrlBase`
+   * Value: `https://<yourServerDomain>.com/`
+     <img src="add-config-parameter.png" width="460" alt="Add configuration parameter"/>
+4. Save the parameter.
+5. Go to __Build Steps__.
+6. Click __Add build step__.
+7. Choose the [Command Line](command-line.md) runner type.
+8. In the _Custom script_ field, enter the following command:
+  ```Shell
+  curl -o libraries_%build.number%.tar.gz %serverUrlBase%libraries.tar.gz
+
+  ```
+  For a build with the number `1234`, this command will be resolved as follows:
+  ```Shell
+  curl -o libraries_1234.tar.gz https://<yourServerDomain>.com/libraries.tar.gz
+
+  ```
+9. Save the build step and run a new build.
+
+When executing this step in a build, TeamCity will download the `libraries.tar.gz` archive from your server and save it in the [checkout directory](build-checkout-directory.md) as an archive with the new name, depending on the current build's number. TeamCity generates a unique build number for each starting build and saves it as this build's `build.number` parameter, which we referenced in the new archive name. Such predefined parameters can be accessed within build steps in the same way as parameters you add manually. You can find the list of other predefined parameters [here](predefined-build-parameters.md).
+
+You can follow this guide in your own configuration: just substitute the archive name and server URL with real values.
+
+Parametrized build settings and scripts is one of the main advantages of TeamCity, and using them will significantly boost your pipelines' capabilities.
+
  <seealso>
         <category ref="admin-guide">
             <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
