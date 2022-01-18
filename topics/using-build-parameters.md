@@ -153,7 +153,7 @@ In this example use case, we will add a configuration parameter containing your 
 7. Choose the [Command Line](command-line.md) runner type.
 8. In the _Custom script_ field, enter the following command:
   ```Shell
-  curl -o libraries_%build.number%.tar.gz %serverUrlBase%libraries.tar.gz
+  curl -o libraries_%\build.number%.tar.gz %\serverUrlBase%libraries.tar.gz
 
   ```
   For a build with the number `1234`, this command will be resolved as follows:
