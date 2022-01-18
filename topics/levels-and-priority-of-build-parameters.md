@@ -71,6 +71,8 @@ Parameters of project A2 (the one build configuration belongs to) have priority 
 
 When defining <emphasis tooltip="system-property">system properties</emphasis> or <emphasis tooltip="environment-variable">environment variables</emphasis> in the `teamcity.default.properties` file, use the following format: `system.<property_name>=<property_value>` or `env.<property_name>=<property_value>`. For example, `env.CATALINA_HOME=C:\tomcat_6.0.13`.
 
+The names of parameters must contain only the `[a-zA-Z0-9._-*]` characters and start with an ASCII letter.
+
 ### Set Parameters for Build Configurations Using Same VCS Root
 
 You can also define parameters for only those build configurations of the project that use the same VCS root. To do that, create a text file named `teamcity.default.properties` and check it in to the VCS root. Ensure that the file appears directly in the [Build Working Directory](build-working-directory.md) by specifying the appropriate [checkout rules](configuring-vcs-settings.md#Configure+Checkout+Rules). The name and path to the file can be customized via the `teamcity.default.properties` parameter of a build configuration.  
