@@ -158,7 +158,7 @@ Excludes all `.html` files from triggering a build.
  
 <td>
  
-Excludes builds being triggered by `.xml` files checked in by the [VCS user](creating-and-managing-users.md#VCS+Usernames) "techwriter" to the `misc/doc` directory of the VCS root named _Internal SVN_ (as defined in the VCS Settings). Note that the path is absolute (starts with "/"), thus the file path is matched from the VCS root.
+Excludes builds being triggered by `.xml` files checked in by the [VCS user](creating-and-managing-users.md#VCS+Usernames) "techwriter" to the `misc/doc` directory of the VCS root named _Internal SVN_ (as defined in the VCS Settings). Note that the path is absolute (starts with `/`), thus the file path is matched from the VCS root.
  
 </td></tr>
  
@@ -182,7 +182,7 @@ Prevents the build from triggering by updates to the `lib` directory of the buil
 </td>
 <td>
  
-Prevents the build from triggering, if the changes check contains the word "minor" in the comment.
+Prevents the build from triggering, if the changes check contains the word `minor` in the comment.
 
 </td></tr><tr>
 <td>
@@ -192,7 +192,7 @@ Prevents the build from triggering, if the changes check contains the word "mino
 </td>
 <td>
  
-No triggering if the comment consists of the word "oops" only (according to [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) principles `^` and `$` in pattern stand for string beginning and ending).
+No triggering if the comment consists of the word `oops` only (according to [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) principles `^` and `$` in pattern stand for string beginning and ending).
 
 </td></tr><tr>
 <td>
@@ -202,7 +202,7 @@ No triggering if the comment consists of the word "oops" only (according to [Jav
 </td>
 <td>
 
-Triggers the build if the commit message contains the "#teamcity" keyword.
+Triggers the build if the commit message contains the `#teamcity` keyword.
 
 </td></tr><tr>
 <td>
@@ -212,7 +212,7 @@ Triggers the build if the commit message contains the "#teamcity" keyword.
 </td>
 <td>
 
-Triggers the build if the commit message contains both "#teamcity" and "#major" keywords. Here, `(?s)` is a [DOTALL pattern](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#DOTALL) that makes the character `.` match any character, including a line terminator.
+Triggers the build if the commit message contains both `#teamcity` and `#major` keywords. Here, `(?s)` is a [DOTALL pattern](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#DOTALL) that makes the character `.` match any character, including a line terminator.
 
 </td></tr>
 </table>
