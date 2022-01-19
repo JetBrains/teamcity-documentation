@@ -486,7 +486,7 @@ object Project : Project({
 
 ### Updating .NET CLI parameters
 
-__Since 2017.2__ TeamCity bundles .NET CLI plugin. If you were using Kotlin DSL for the plugin parameters in TeamCity 2017.1.x, you need to change the commands as follows. In TeamCity 2017.1.x:
+__Since 2017.2__, TeamCity had been bundling the .NET CLI plugin (now reintroduced as the [.NET](net.md) runner). If you were using Kotlin DSL for the plugin parameters in TeamCity 2017.1.x, you need to change the commands as follows. In TeamCity 2017.1.x:
 
 
 ```Kotlin
@@ -500,9 +500,7 @@ steps {
 
 ```
 
-
-
-Since TeamCity 2017.2 you could explicitly specify build steps with parameters:
+Since TeamCity 2017.2, you can explicitly specify build steps with parameters:
 
 
 ```Kotlin
@@ -513,8 +511,6 @@ steps {
 }
 
 ```
-
-
 
 #### Common parameters
 

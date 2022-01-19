@@ -2,14 +2,14 @@
 [//]: # (auxiliary-id: NUnit Support)
 
 There are two most common methods to set up NUnit tests reporting in TeamCity:
-* using the [.NET CLI](net.md) build runner
-* using the [NUnit](nunit.md) build runner
+* Use the [.NET](net.md) build runner.
+* Use the [NUnit](nunit.md) build runner.
 
 Besides that, you can try [alternative approaches](#Alternative+Approaches) or run tests in any other runner (like [PowerShell](powershell.md) or [Command Line](command-line.md)) with the [TeamCity VSTest Adapter](https://github.com/JetBrains/TeamCity.VSTest.TestAdapter).
 
 ## Framework Compatibility
 
-The [NUnit](nunit.md) build runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the [.NET CLI (dotnet)](net.md) build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead.
+The [NUnit](nunit.md) build runner supports only the [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the [.NET](net.md) build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead.
 
 The following table represents the compatibility of TeamCity runners with the .NET implementations:
 
@@ -75,7 +75,7 @@ __NUnit runner__
 
 <td>
 
-__.NET CLI runner__
+__.NET runner__
 * `dotnest test`
 * `dotnet msbuild /t:VSTest`
 * `dotnet vstest`
