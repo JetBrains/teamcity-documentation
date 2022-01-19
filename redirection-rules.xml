@@ -61,5 +61,8 @@
             <accepts>code-coverage.html</accepts>
             <accepts>configuring+unit+testing+and+code+coverage.html</accepts>
     </rule>
-
+    <rule id="nunit-support">
+        <accepts>teamcity-nunit-test-launcher.md</accepts>
+        <accepts>nunit-for-nant-build-runner.md</accepts>
+    </rule>
 </rules>

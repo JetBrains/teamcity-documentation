@@ -23,7 +23,7 @@ For example:
 
 ## TeamCity NUnit Console Launcher
 
-To support NUnit add-ins for the [console launcher](teamcity-nunit-test-launcher.md) you need to provide the `/addins:<list of addins separated with ;>` command line option.
+To support NUnit add-ins for the [console launcher](nunit-support.md#NUnit+Test+Launcher) you need to provide the `/addins:<list of addins separated with ;>` command line option.
 
 For example:
 
