@@ -3,6 +3,14 @@
 
 This section contains articles concerning support of test reports, code inspections, and code coverage in TeamCity.
 
+## Test Reports in TeamCity
+
+TeamCity provides out-of-the-box support for a number of testing frameworks. To reduce feedback time on the test failures, it reports detailed test results on the fly whenever possible. These results are displayed in the build overview. See the list of currently [supported testing frameworks](testing-frameworks.md).
+
+This section also contains articles related to the support of the [.NET](net-testing-frameworks-support.md) and [Java](java-testing-frameworks-support.md) testing frameworks.
+
+>You can [assign a user to investigate a test](investigating-and-muting-build-failures.md#Assigning+Investigations+of+Build+Problems+and+Failed+Tests) or [mute the test](investigating-and-muting-build-failures.md#Muting+Tests) so it doesn't affect the build status.
+
 ## Code Inspection in TeamCity
 
 TeamCity comes with code analysis tools capable of inspecting your source code on the fly, finding and reporting common problems and anti-patterns.
