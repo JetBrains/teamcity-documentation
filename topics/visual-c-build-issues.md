@@ -1,7 +1,7 @@
 [//]: # (title: Visual C Build Issues)
 [//]: # (auxiliary-id: Visual C Build Issues)
 
-If you experience any problems running a Visual C++ build on a build agent, you can try to workaround these issues with the following steps, sequentially:
+If you experience any problems running a Visual C++ build on a build agent, you can try to work around these issues with the following steps, sequentially:
 
 <note>
 
