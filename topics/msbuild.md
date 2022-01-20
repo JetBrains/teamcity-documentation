@@ -173,7 +173,7 @@ The MSBuild runner generates an MSBuild script that includes the user's script. 
             <a href="build-checkout-directory.md">Build Checkout Directory</a>
         </category>
         <category ref="admin-guide">
-            <a href="nunit-for-msbuild.md">NUnit for MSBuild</a>
-            <a href="msbuild-service-tasks.md">MSBuild Service Tasks</a>
+            <a href="nunit-support.md#Using+NUnit+for+MSBuild">NUnit for MSBuild</a>
+            <a href="nunit-support.md#MSBuild+Service+Tasks">MSBuild Service Tasks</a>
         </category>
 </seealso>

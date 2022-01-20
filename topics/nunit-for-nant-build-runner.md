@@ -120,7 +120,7 @@ Adding the listed properties to the NAnt build script makes it TeamCity dependen
 
 <tip>
 
-If you need TeamCity test runner to support third-party NUnit addins, refer to the [NUnit Addins Support](nunit-addins-support.md) section for the details.
+If you need TeamCity test runner to support third-party NUnit add-ins, refer to the [NUnit Add-ins Support](nunit-support.md#NUnit+Add-ins+Support) section for the details.
 </tip>
 
 ### Examples

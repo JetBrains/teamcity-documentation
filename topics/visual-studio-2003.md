@@ -287,6 +287,6 @@ If checked, in the first place TeamCity will run tests failed in previous finish
 
 <seealso>
         <category ref="admin-guide">
-            <a href="nunit-for-msbuild.md">NUnit for MSBuild</a>
+            <a href="nunit-support.md#Using+NUnit+for+MSBuild">NUnit for MSBuild</a>
         </category>
 </seealso>

@@ -62,7 +62,10 @@
             <accepts>configuring+unit+testing+and+code+coverage.html</accepts>
     </rule>
     <rule id="nunit-support">
-        <accepts>teamcity-nunit-test-launcher.md</accepts>
-        <accepts>nunit-for-nant-build-runner.md</accepts>
+        <accepts>teamcity-nunit-test-launcher.html</accepts>
+        <accepts>nunit-for-nant-build-runner.html</accepts>
+        <accepts>nunit-for-msbuild.html</accepts>
+        <accepts>msbuild-service-tasks.html</accepts>
+        <accepts>nunit-addins-support.html</accepts>
     </rule>
 </rules>

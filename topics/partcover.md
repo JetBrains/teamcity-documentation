@@ -1,7 +1,7 @@
 [//]: # (title: PartCover)
 [//]: # (auxiliary-id: PartCover)
 
-TeamCity supports code coverage with PartCover (2.2 and 2.3) for NUnit tests run via the TeamCity NUnit test runner, which can be configured in one of the following ways: via the web UI, [TeamCity NUnit Test Launcher](nunit-support.md#NUnit+Test+Launcher), [NUnit for MSBuild](nunit-for-msbuild.md), [NUnit for MSBuild](nunit-for-msbuild.md), [NUnit for NAnt Build Runner](nunit-for-nant-build-runner.md).
+TeamCity supports code coverage with PartCover (2.2 and 2.3) for NUnit tests run via the TeamCity NUnit test runner, which can be configured in one of the following ways: via the web UI, [TeamCity NUnit Test Launcher](nunit-support.md#NUnit+Test+Launcher), [NUnit for MSBuild](nunit-support.md#Using+NUnit+for+MSBuild), [NUnit for MSBuild](nunit-support.md#Using+NUnit+for+MSBuild), [NUnit for NAnt Build Runner](nunit-for-nant-build-runner.md).
 
 __Important Notes__
 	
