@@ -5,10 +5,9 @@ The _NUnit_ build runner is intended to run NUnit tests right on the TeamCity se
 
 <anchor name="NUnit3Extensions"/>
 
-## NUnit 3 Requirements
-[//]: # (AltHead: NUnit3Extensions)
+Note that this runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the [.NET](net.md) build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead. See the [NUnit Support in TeamCity](nunit-support.md) article for details.
 
-### Installing NUnit
+## Installing NUnit
 
 <chunk include-id="installing-nunit">
 
@@ -30,6 +29,7 @@ To use the NUnit build runner, you need to install the [NUnit NuGet package](htt
 * Install NUnit manually to a standard location on all the build agents and configure the path to `nunit-console.exe` in your NUnit build step.
 
 ### Installing Extensions
+[//]: # (AltHead: NUnit3Extensions)
 
 Starting from version 3.2.0, NUnit requires the `NUnit.Extension.NUnitProjectLoader` extension to be installed on the TeamCity agent. Starting from version 3.4.1, NUnit requires the `NUnit.Extension.TeamCityEventListener` extension to be installed on the TeamCity agent.  
 If the extensions are not found in versions 3.2.0 and 3.2.1, the build will fail without a warning. Since version 3.4.1, a message will be displayed suggesting you install them.   

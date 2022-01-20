@@ -11,6 +11,8 @@ To report NUnit test results, use the [.NET](net.md) or [NUnit](nunit.md) build 
 
 Note that the NUnit runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the .NET build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead.
 
+The details of the NUnit support in TeamCity and alternative approaches are described in [this article](nunit-support.md).
+
 ## MSTest
 
 Refer to the [MSTest Support](mstest-support.md) page for details. Note that due to specifics of the MSTest tool, TeamCity does not support on-the-fly test reporting for MSTest.

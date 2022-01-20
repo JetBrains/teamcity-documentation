@@ -1,11 +1,13 @@
-[//]: # (title: NUnit Support)
-[//]: # (auxiliary-id: NUnit Support;TeamCity NUnit Test Launcher;NUnit for NAnt Build Runner;NUnit for MSBuild;MSBuild Service Tasks;NUnit Addins Support;TeamCity Add-in for NUnit;TeamCity Addin for NUnit)
+[//]: # (title: NUnit Support in TeamCity)
+[//]: # (auxiliary-id: NUnit Support in TeamCity;NUnit Support;TeamCity NUnit Test Launcher;NUnit for NAnt Build Runner;NUnit for MSBuild;MSBuild Service Tasks;NUnit Addins Support;TeamCity Add-in for NUnit;TeamCity Addin for NUnit)
 
 There are two most common methods to set up NUnit tests reporting in TeamCity:
 * Use the [.NET](net.md) build runner.
 * Use the [NUnit](nunit.md) build runner.
 
-Besides that, you can try [alternative approaches](#Alternative+Approaches) or run tests in any other runner (like [PowerShell](powershell.md) or [Command Line](command-line.md)) with the [TeamCity VSTest Adapter](https://github.com/JetBrains/TeamCity.VSTest.TestAdapter).
+Besides that, you can try alternative approaches or run tests in any other runner (like [PowerShell](powershell.md) or [Command Line](command-line.md)) with the [TeamCity VSTest Adapter](https://github.com/JetBrains/TeamCity.VSTest.TestAdapter).
+
+This article describes the specifics of the NUnit support in TeamCity and the [alternative approaches](#Alternative+Approaches) to establishing it.
 
 ## Supported NUnit Versions
 
@@ -17,8 +19,6 @@ It is possible to have several versions of NUnit installed on an agent machine a
 
 NUnit version __3.4.0__ is __not__ supported by the NUnit build runner due to a problem in [NUnit](https://github.com/nunit/docs/wiki/Release-Notes#issues-resolved-1). Only version 3.4.0 was affected, other NUnit 3.x versions work fine with TeamCity.
 </warning>
-
-Note that this runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the [.NET](net.md) build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead.
 
 ## NUnit Framework Compatibility
 
@@ -145,11 +145,11 @@ __VSTest adapter in other runners__
 
 ## Alternative Approaches
 
-If using NUnit build runner is inapplicable, TeamCity provides the following ways to configure NUnit tests reporting in TeamCity:
-* The standard [NUnit for NAnt Build Runner](nunit-support.md#NUnit+for+NAnt+Build+Runner).
-* [NUnit for MSBuild](nunit-support.md#Using+NUnit+for+MSBuild).
-* The NUnit Test Launcher that can be configured in the [MSBuild build script](nunit-support.md#Using+NUnit+for+MSBuild) or launched from the [command line](nunit-support.md#NUnit+Test+Launcher).
-* [TeamCity Add-in for NUnit](nunit-support.md#TeamCity+Add-in+for+NUnit) is available to turn on reporting on the NUnit level without build procedure modifications. 
+If using the NUnit or .NET build runners is inapplicable, TeamCity provides the following ways to configure NUnit tests reporting in TeamCity:
+* The standard [NUnit for NAnt Build Runner](#NUnit+for+NAnt+Build+Runner).
+* [NUnit for MSBuild](#Using+NUnit+for+MSBuild).
+* The NUnit Test Launcher that can be configured in the [MSBuild build script](#Using+NUnit+for+MSBuild) or launched from the [command line](#NUnit+Test+Launcher).
+* [TeamCity Add-in for NUnit](#TeamCity+Add-in+for+NUnit) is available to turn on reporting on the NUnit level without build procedure modifications. 
 * The bundled [XML Test Reporting plugin](xml-report-processing.md) allows importing any XML report to TeamCity. In this case, it is not always possible to track results on the fly.   
     You can add the __XML Report Processing__ build feature to your build configuration, or use the following service message: `##teamcity[importData type='sometype' path='<path to the xml file>']`. Learn more: [XML Report Processing](xml-report-processing.md), [Importing XML Reports](service-messages.md#Importing+XML+Reports).
 * Configuring test reports manually via [service messages](build-script-interaction-with-teamcity.md).
