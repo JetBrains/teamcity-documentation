@@ -146,7 +146,7 @@ __VSTest adapter in other runners__
 ## Alternative Approaches
 
 If using NUnit build runner is inapplicable, TeamCity provides the following ways to configure NUnit tests reporting in TeamCity:
-* The standard [NUnit for NAnt Build Runner](nunit-for-nant-build-runner.md).
+* The standard [NUnit for NAnt Build Runner](nunit-support.md#NUnit+for+NAnt+Build+Runner).
 * [NUnit for MSBuild](nunit-support.md#Using+NUnit+for+MSBuild).
 * The NUnit Test Launcher that can be configured in the [MSBuild build script](nunit-support.md#Using+NUnit+for+MSBuild) or launched from the [command line](nunit-support.md#NUnit+Test+Launcher).
 * [TeamCity Add-in for NUnit](nunit-support.md#TeamCity+Add-in+for+NUnit) is available to turn on reporting on the NUnit level without build procedure modifications. 

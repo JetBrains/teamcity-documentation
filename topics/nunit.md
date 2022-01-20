@@ -10,6 +10,8 @@ The _NUnit_ build runner is intended to run NUnit tests right on the TeamCity se
 
 ### Installing NUnit
 
+<chunk include-id="installing-nunit">
+
 To use the NUnit build runner, you need to install the [NUnit NuGet package](https://www.nuget.org/packages/NUnit/) on TeamCity agents via one of the following options:
 * Instruct the first build step to install NUnit from a NuGet package.  
   For example, you can add a [Command Line](command-line.md) build step which will install the `NUnit.Console` NuGet package as follows:
@@ -33,6 +35,8 @@ Starting from version 3.2.0, NUnit requires the `NUnit.Extension.NUnitProjectLoa
 If the extensions are not found in versions 3.2.0 and 3.2.1, the build will fail without a warning. Since version 3.4.1, a message will be displayed suggesting you install them.   
 
 The extensions can be installed as separate packages or in bulk using the [NUnit Console Version 3](https://www.nuget.org/packages/NUnit.Console) NuGet package.
+
+</chunk>
 
 <anchor name="NUnit-settings"/>
 

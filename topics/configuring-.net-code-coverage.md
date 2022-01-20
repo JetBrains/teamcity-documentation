@@ -3,7 +3,7 @@
 
 TeamCity supports .NET code coverage using NCover, PartCover, and dotCover coverage engines. Configuration via the TeamCity UI is supported for:
 * [NUnit build runner](nunit.md)
-* NAnt runner: [&lt;nunit2&gt; NAnt task](nunit-for-nant-build-runner.md)
+* NAnt runner: [&lt;nunit2&gt; NAnt task](nunit-support.md#NUnit+for+NAnt+Build+Runner)
 * MSBuild runner: &lt;NUnit&gt; and &lt;NUnitTeamCity&gt; [NUnit for MSBuild](nunit-support.md#Using+NUnit+for+MSBuild)
 
 For the [.NET](net.md) runner and with NUnit version 3.x the only supported coverage tool is [JetBrains dotCover](jetbrains-dotcover.md).
