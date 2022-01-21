@@ -6,8 +6,7 @@
 Integration with TeamCity brings the following advantages to the JetBrains Space users:
 * Compiling, testing, and deploying projects within the same environment.
 * Building source code of pull requests, with the ability to merge sources automatically after a successful build.
-* Viewing test results on the fly, while builds are still in progress.
-* Extensive build overview: diffs and artifacts, detailed test reports, code coverage, inspections, and various other metrics.
+* Extensive build overview: diffs and artifacts, detailed test reports on-the-fly, code coverage, inspections, and various other metrics.
 * Flexible pipelines where builds depend on one another and share settings and results.
 * Ability to configure builds as code, in Kotlin DSL.
 * Cross-shared statuses of builds and code reviews between these solutions, for easier monitoring.
@@ -26,11 +25,21 @@ There are three ways to integrate a JetBrains Space repository with TeamCity:
 * Create a build configuration based on a repository in an existing TeamCity project.
 * Create a VCS root based on a repository in an existing TeamCity project.
 
-We will describe the first approach as it's the most popular and self-sufficient use case. However, you can always add one more Space [root](configuring-vcs-roots.md) or [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL) to an existing project — tne procedure is similar.
+We will describe the first approach as it the most popular and self-sufficient. However, you can always add one more Space [root](configuring-vcs-roots.md) or [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL) to an existing project — tne procedure is similar.
 
+This approach involves two steps: (1) creating a connection preset to your Space instance and (2) creating a TeamCity project from a Space repository URL.
 
+### Create Connection Preset
 
-### Building Sources on JetBrains Space Pull Requests
+>TeamCity allows you to configure all settings of your _connection_ to VCS in one place and then reuse these settings in different projects and build configurations. If you add such a _connection_ on the <emphasis tooltip="root-project">Root project</emphasis> level, this will allow using its settings to connect any other project on the server. To make a connection available only in a certain project, you need to add it in this project.  
+>You can configure as many connections as you want.
+
+To create a connection to your JetBrains Space instance:
+1. 
+
+### Create Project
+
+## Building Sources on JetBrains Space Pull Requests
 
 ## Reporting Build Statuses to JetBrains Space
 

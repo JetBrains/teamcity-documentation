@@ -48,10 +48,10 @@ Note that associating a project with an [agent pool](configuring-agent-pools.md)
 TeamCity always has a __&lt;Root project&gt;__ as the top of the project hierarchy. The root project has most of the properties of a usual project, and the settings configured in the root project are available to all the other projects on the server.
 
 The root project is special in the following ways:
-* it is present by default and cannot be deleted.
-* it is the top-level project, so it has no parent project.
-* it can have no build configurations.
-* it does not appear in the user-level UI and is mostly present as an entity in Administration UI only.
+* It is present by default and cannot be deleted.
+* It is the top-level project, so it has no parent project.
+* It can have no build configurations.
+* It does not appear in the user-level UI and is mostly present as an entity in Administration UI only.
 
  <seealso>
         <category ref="concepts">

@@ -13,5 +13,8 @@
     <term name="configuration-parameter">
         Configuration parameters are meant to share settings within a build configuration (widely used in templates and meta-runners).
     </term>
+    <term name="root-project">
+        A default project at the top of the project hierarchy whose settings are available to all the other projects on the server.
+    </term>
 
     </terms>
