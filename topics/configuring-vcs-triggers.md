@@ -192,7 +192,7 @@ Prevents the build from triggering, if the changes check contains the word `mino
 </td>
 <td>
  
-No triggering if the comment consists of the `oops` word only (according to [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) principles `^` and `$` in pattern stand for string beginning and ending).
+No triggering if the comment consists of the `oops` word only (according to [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) principles `^` and `$` in the pattern stand for string beginning and ending).
 
 </td></tr><tr>
 <td>
