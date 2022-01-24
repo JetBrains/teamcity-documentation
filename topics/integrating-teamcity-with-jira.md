@@ -11,18 +11,19 @@ The [Supported Platforms and Environments](supported-platforms-and-environments.
 
 ## Displaying Links to Jira Issues in TeamCity UI
 
-When integration with Jira is enabled, TeamCity automatically detects Jira issue keys mentioned in VCS commit comments and transforms these keys into links to the corresponding issues in Jira. An issue's basic details are displayed in the TeamCity web UI when hovering over the icon next to the issue key (for example, on the __[Changes](working-with-build-results.md#Changes)__ tab of the build results).
+When integration with Jira is enabled, TeamCity automatically detects Jira issue keys mentioned in VCS commit comments and transforms these keys into links to the corresponding issues in Jira. An issue's basic details are displayed in the TeamCity web UI when hovering over the icon next to the issue key on the __[Changes](working-with-build-results.md#Changes)__ tab of the build results:
 
 <img src="issue-tracker-integration.png" width="661" alt="Issue tracker integration"/>
 
-Issues fixed in the build can also be viewed on the __[Issues](working-with-build-results.md#Related+Issues)__ tab of the build results. You can filter the list to a particular range of builds and view issues mentioned in comments with their states.
+Issues fixed in the build can also be viewed on the __[Issues](working-with-build-results.md#Related+Issues)__ tab of the build results: 
 
 <img src="issue-log.png" width="750" alt="Issue log"/>
 
-To get maximum benefit from the Jira integration, follow these recommendations:
+To view issues related to all builds of a build configuration (not only to individual builds), use the __Issue Log__ tab of the build configuration home page. You can filter the list to a particular range of builds and/or enable the _Show only resolved issues_ option to display only issues fixed in the builds.
+
+To get the maximum benefit from the Jira integration, follow these recommendations:
 * When committing changes to your version control, __always mention the issue key__ related to the fix in the comment to the commit.
 * Resolve issues when they are fixed (the time of resolve does not really matter).
-* Use __Issue Log__ of a build configuration to get issues related to builds. Enable the _Show only resolved issues_ option to only display the issues fixed in the builds.
 
 
 ### Configuring Connection to Jira
@@ -117,7 +118,7 @@ You can also load all project keys automatically: check the corresponding box an
 
 </td></tr></table>
 
-Nota that a user configured in the connection to Jira should have sufficient permissions to view issues that can be mentioned in TeamCity. Also, TeamCity users will be able to view details in TeamCity for all issues to which the configured user has access.
+Note that a user configured in the connection to Jira should have sufficient permissions to view issues that can be mentioned in TeamCity. Also, TeamCity users will be able to view details in TeamCity for all issues to which the configured user has access.
 
    
 ## Reporting TeamCity Build Statuses to Jira Cloud
