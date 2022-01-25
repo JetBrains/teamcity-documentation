@@ -51,6 +51,7 @@ In your JetBrains Space instance:
 5. __Configure Authentication Mode__.
    1. Go back to the app's __Overview__ and open the __Authentication__ tab.
    2. Enable _Client Credentials Flow_.
+   <anchor name="redirect-uri"/>
    3. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL as the redirect URI.  
       To ensure that your TeamCity server can always connect to JetBrains Space, it is important to specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a [proxy](configuring-proxy-server.md) for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
    {product="tc"}
@@ -62,6 +63,8 @@ Now you can return to TeamCity and add a connection to JetBrains Space.
 
 >TeamCity allows you to configure all settings of your _connection_ to a service in one place and then reuse these settings in different projects and build configurations. If you add such a _connection_ on the <emphasis tooltip="root-project">Root project</emphasis> level, this will allow using its settings to any other project on the server. To make a connection available only in a certain project, you need to add it in this project.  
 >You can configure as many connections as you want.
+
+<img src="connection-to-space.png" width="460" alt="Create a connection to Space"/>
 
 To create a connection to your JetBrains Space instance:
 1. Go to __Project Settings | Connections__ and click __Add Сonnection__.
@@ -76,7 +79,14 @@ At this stage, you are free to connect the current project or any of its subproj
 
 ### Step 3. Create Project from JetBrains Space Repository
 
-Let's create a nested project of the project from Step 2. If you have added the connection in the <emphasis tooltip="root-project">Root project</emphasis>, go to __Administration | Projects__ and click __Create project__ there. You will notice that there is now the __From JetBrains Space__ button.
+Let's create a nested project of the project from Step 2. If you have added the connection in the <emphasis tooltip="root-project">Root project</emphasis>, go to __Administration | Projects__ and click __Create project__ there. You will notice the new __From JetBrains Space__ button. Its name depends on the _Display name_ you gave to the connection, but you can always distinguish Space connections from others by the Space logo.
+
+<img src="create-project-from-space.png" width="706" alt="Create a project from a Space repository"/>
+
+1. Click __From JetBrains Space__.
+2. As it is the first time you connect this server to your Space instance, you have to authenticate in Space via your user profile. Click __Sign in to Space__, enter your credentials, and confirm the authentication. Next time, you won't have to confirm it again, unless you explicitly sign off or change your password.  
+  If you get the _OAuth 2.0 Error_, this probably means that the _Redirect URI_ has not been configured properly in Step 1. Make sure to [revise it](#redirect-uri).
+3. TO DO
 
 ## Building Sources on JetBrains Space Pull Requests
 
