@@ -1,11 +1,11 @@
 [//]: # (title: How to Configure CI/CD with JetBrains Space)
 [//]: # (auxiliary-id: How to Configure CI/CD with JetBrains Space)
 
-[JetBrains Space](https://www.jetbrains.com/space/) is a full-cycle collaboration solution for software development teams. This guide explains how to achieve continuous integration and delivery of JetBrains Space projects by integrating them with TeamCity.
+**[JetBrains Space](https://www.jetbrains.com/space/) is a full-cycle collaboration solution for software development teams. This guide explains how to achieve continuous integration and delivery of JetBrains Space projects by integrating them with TeamCity.**
 
 <table><tr><td></td></tr><tr><td>
 
-**Integration with TeamCity brings the following advantages to the JetBrains Space users**:
+Integration with TeamCity brings the following advantages to the JetBrains Space users:
 * Compiling, testing, and deploying projects within the same environment.
 * Building source code of pull requests and merging them automatically after a successful build.
 * Extensive build overview: diffs and artifacts, detailed test reports on-the-fly, code coverage, inspections, and various other metrics. Statuses of builds and code reviews are cross-shared between systems for easier monitoring.
@@ -15,6 +15,8 @@
 
 </td></tr><tr><td></td></tr></table>
 
+![pending.png](pending.png) _The [preliminary setup](#Preliminary+Setup) usually takes up to 15 minutes to complete, granting all the steps are performed with no delay. After it is completed, enabling the components of this integration becomes quite straightforward and can be done at any pace._
+
 ## Prerequisites
 
 To perform all the steps described in this guide, you need to have:
@@ -23,7 +25,53 @@ To perform all the steps described in this guide, you need to have:
 
 If you only want to integrate JetBrains Space repositories with TeamCity projects, having project administration rights is enough.
 
-## Building Sources of JetBrains Space Repository
+## Preliminary Setup
+
+Connecting TeamCity to JetBrains Space involves two steps: (1) creating a service application for TeamCity authentication in your Space instance and (2) creating a preset of connection to Space.
+
+### Step 1: Create Application in JetBrains Space
+
+In your JetBrains Space instance:
+1. Go to __Administration | Applications__ and click __New application__.
+2. Enter a convenient name (for example, `Space-to-TeamCity`), save the application, and click __Go to application settings__.
+3. __Configure In-context Authorization__.
+   1. On the __Authorization__ tab, click __Authorize in new context__ under _In-context Authorization_.
+   2. Enter the name of the Space project you are about to access from TeamCity and click __Authorize__.
+   >When you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you (or the user who created the application) are listed as a member.
+   3. (_Optional_) If you want TeamCity to be able to publish commit statuses to Space, you will need to add a respective permission.  
+      Click __Configure__ and enable _Git Repositories | Report external check status_. If you are the selected project's administrator, you can approve this permission right in this __Authorization__ tab. Otherwise, wait until it is granted by the project administrator.
+4. __Configure Global Authorization__.
+   1. On the __Authorization__ tab, click __Configure__ under _Global Authorization_.
+   2. To establish general access from TeamCity to Space, enable the _Members | View member profile_ permission and click __Save__. This request has to be accepted by the server administrator.
+5. __Configure Authentication Mode__.
+   1. Go back to the app's __Overview__ and open the __Authentication__ tab.
+   2. Enable _Client Credentials Flow_.
+      <anchor name="redirect-uri"/>
+   3. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL as the redirect URI.  
+      To ensure that your TeamCity server can always connect to JetBrains Space, it is important to specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a [proxy](configuring-proxy-server.md) for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
+      {product="tc"}
+   4. Copy the app's _Client ID_ and _Client secret_. You will need them for configuration on the TeamCity side.
+
+Now you can return to TeamCity and add a connection to JetBrains Space.
+
+### Step 2: Establish Connection to JetBrains Space
+
+>TeamCity allows you to configure all settings of your _connection_ to a service in one place and then reuse these settings in different projects and build configurations. If you add such a _connection_ on the <emphasis tooltip="root-project">Root project</emphasis> level, this will allow using its settings to any other project on the server. To make a connection available only in a certain project, you need to add it in this project.  
+>You can configure as many connections as you want.
+
+To create a connection to your JetBrains Space instance:
+1. Go to __Project Settings | Connections__ and click __Add Сonnection__.
+2. Choose the _JetBrains Space_ connection type.  
+   <img src="connection-to-space.png" width="460" alt="Create a connection to Space"/>
+4. Enter the settings as follows:
+   * _Space URL_: the URL of your Space instance (`<company_name>.jetbrains.space`).
+   * _Client ID_: the client ID value copied from the Space app's __Authentication__ tab.
+   * _Client secret_: the client secret value copied from the Space app's __Authentication__ tab.
+5. Save the connection.
+
+At this stage, you are free to connect the current project or any of its subprojects to your JetBrains Space instance whenever necessary.
+
+## Connecting TeamCity Projects with JetBrains Space Projects
 
 There are three ways to integrate a JetBrains Space repository with TeamCity:
 * Create a TeamCity _project_ based on a repository.
@@ -32,63 +80,17 @@ There are three ways to integrate a JetBrains Space repository with TeamCity:
 
 We will describe the first approach as it's the most popular and self-sufficient. However, you can always add one more Space [root](configuring-vcs-roots.md) or [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL) to an existing project — tne procedure is similar.
 
-This approach involves the following steps: (1) creating a service application for TeamCity authentication in your Space instance, (2) creating a preset of connection to Space, and (3) creating a TeamCity project from a Space repository URL.
+Let's create a nested project of the project where you've added the JetBrains Space connection. If it is the <emphasis tooltip="root-project">Root project</emphasis>, go to __Administration | Projects__ and click __Create project__ there.
 
-### Step 1. Create Application in JetBrains Space
-
-In your JetBrains Space instance:
-1. Go to __Administration | Applications__ and click __New application__.
-2. Enter a convenient name (for example, `Space-to-TeamCity`), save the application, and click __Go to application settings__.
-3. __Configure In-context Authorization__.
-   1. On the __Authorization__ tab, click __Authorize in new context__ under _In-context Authorization_.
-   2. Enter the name of the Space project you are about to access from TeamCity and click __Authorize__.  
-   >When you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you (or the user who created the application) are listed as a member.
-   3. (_Optional_) If you want TeamCity to be able to publish commit statuses to Space, you will need to add a respective permission.  
-     Click __Configure__ and enable _Git Repositories | Report external check status_. If you are the selected project's administrator, you can approve this permission right in this __Authorization__ tab. Otherwise, wait until it is granted by the project administrator.
-4. __Configure Global Authorization__.
-   1. On the __Authorization__ tab, click __Configure__ under _Global Authorization_.
-   2. To establish general access from TeamCity to Space, enable the _Members | View member profile_ permission and click __Save__. This request has to be accepted by the server administrator.
-5. __Configure Authentication Mode__.
-   1. Go back to the app's __Overview__ and open the __Authentication__ tab.
-   2. Enable _Client Credentials Flow_.
-   <anchor name="redirect-uri"/>
-   3. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL as the redirect URI.  
-      To ensure that your TeamCity server can always connect to JetBrains Space, it is important to specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a [proxy](configuring-proxy-server.md) for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
-   {product="tc"}
-   4. Copy the app's _Client ID_ and _Client secret_. You will need them for configuration on the TeamCity side.
-
-Now you can return to TeamCity and add a connection to JetBrains Space.
-
-### Step 2. Establish Connection to JetBrains Space
-
->TeamCity allows you to configure all settings of your _connection_ to a service in one place and then reuse these settings in different projects and build configurations. If you add such a _connection_ on the <emphasis tooltip="root-project">Root project</emphasis> level, this will allow using its settings to any other project on the server. To make a connection available only in a certain project, you need to add it in this project.  
->You can configure as many connections as you want.
-
-<img src="connection-to-space.png" width="460" alt="Create a connection to Space"/>
-
-To create a connection to your JetBrains Space instance:
-1. Go to __Project Settings | Connections__ and click __Add Сonnection__.
-2. Choose the _JetBrains Space_ connection type.
-3. Enter the settings as follows:
-   * _Space URL_: the URL of your Space instance (`<company_name>.jetbrains.space`).
-   * _Client ID_: the client ID value copied from the Space app's __Authentication__ tab.
-   * _Client secret_: the client secret value copied from the Space app's __Authentication__ tab.
-4. Save the connection.
-
-At this stage, you are free to connect the current project or any of its subprojects to your JetBrains Space instance whenever necessary.
-
-### Step 3. Create Project from JetBrains Space Repository
-
-Let's create a nested project of the project from Step 2. If you have added the connection in the <emphasis tooltip="root-project">Root project</emphasis>, go to __Administration | Projects__ and click __Create project__ there. You will notice the new __From JetBrains Space__ button. Its name depends on the _Display name_ you gave to the connection, but you can always distinguish Space connections from others by the Space logo.
-
-<img src="create-project-from-space.png" width="706" alt="Create a project from a Space repository"/>
+You will notice the new button: __From JetBrains Space__. Its name depends on the _Display name_ you gave to the connection, but you can always distinguish Space connections from others by the Space logo. To create a new project:
 
 1. Click __From JetBrains Space__.
 2. As it is the first time you connect this server to your Space instance, you have to authenticate in Space via your user profile. Click __Sign in to Space__, enter your credentials, and confirm the authentication. Next time, you won't have to confirm it again, unless you explicitly sign off or change your password.  
-  If you get the _OAuth 2.0 Error_, this probably means that the _Redirect URI_ has not been configured properly in Step 1. Make sure to [revise it](#redirect-uri).
+  If you get the _OAuth 2.0 Error_, this probably means that the _Redirect URI_ has not been configured properly in Step 1 of the preliminary setup. Make sure to [revise it](#redirect-uri).  
+   <img src="create-project-from-space.png" width="706" alt="Create a project from a Space repository"/>
 3. TO DO
 
-## Building Sources on JetBrains Space Pull Requests
+## Building Sources of Pull Requests
 
 ## Reporting Build Statuses to JetBrains Space
 
@@ -96,3 +98,17 @@ Let's create a nested project of the project from Step 2. If you have added the 
 
 ## Authenticating in TeamCity with JetBrains Space Account
 
+Users of your JetBrains Space instance can authenticate in TeamCity with their Space accounts.
+
+This functionality requires that the [JetBrains Space connection](#Step+2%3A+Establish+Connection+to+JetBrains+Space) is added on the Root project level.
+
+To configure it:
+1. Go to __Administration | Authentication__.
+2. Click __Add module__ and choose the _JetBrains Space_ type.  
+   <img src="add-space-auth-module.png" width="460" alt="Add a JetBrains Space authentication module"/>
+3. Choose if you want to allow creating new users on the first login, if their email is not recognized by TeamCity. Disabling this option could be helpful if you use a publicly available TeamCity server and want to limit access to it.
+4. Save the module.
+
+To sign in to TeamCity, click the JetBrains Space icon above the TeamCity login form and, after the redirect, approve the TeamCity application.
+
+<img src="spaceauth.png" width="296" alt="Sign in to TeamCity with JetBrains Space account"/>
