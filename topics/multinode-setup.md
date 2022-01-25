@@ -227,7 +227,7 @@ server {
 
 In the examples above, the following values should be replaced:
 * `{main_node_hostname}` — a hostname of the main node. If the UI of the main node operates on a port different from the proxy server port, this value should be specified in the form `hostname:port`.
-* `{secondary_node_hostname}` — a hostname of the secondary node. If the secondary node operates on a port different from the proxy server port, this value should be specified in the form `hostname:port`
+* `{secondary_node_hostname}` — a hostname of the secondary node. If the secondary node operates on a port different from the proxy server port, this value should be specified in the form `hostname:port`.
 * `{main_node_id}` — the ID of the main node.
 * `{secondary_node_id}` — the ID of the secondary node.
 * `{proxy_server_hostname}` — proxy server name (NGINX only).
