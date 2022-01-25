@@ -14,8 +14,8 @@ TeamCity directly supports the following _testing frameworks_:
 * [NUnit](nunit-support.md) for the following runners:
   * [.NET](net.md) (the `test` task)
   * [NAnt](nant.md) (the `nunit2` task)
-  * Runners deprecated in favor of the .NET runner, but supported for compatibility: [MSBuild](msbuild.md) ([NUnit community](http://msbuildtasks.tigris.org/) or [NUnitTeamCity](nunit-for-msbuild.md) tasks), [Microsoft Visual Studio Solution](visual-studio-sln.md)
-  * Any other runner, provided that the [TeamCity add-in for NUnit](teamcity-addin-for-nunit.md) is installed
+  * Runners deprecated in favor of the .NET runner, but supported for compatibility: [MSBuild](msbuild.md) ([NUnit community](http://msbuildtasks.tigris.org/) or [NUnitTeamCity](nunit-support.md#Using+NUnit+for+MSBuild) tasks), [Microsoft Visual Studio Solution](visual-studio-sln.md)
+  * Any other runner, provided that the [TeamCity add-in for NUnit](nunit-support.md#TeamCity+Add-in+for+NUnit) is installed
 * [MSTest](mstest-support.md) 2005, 2008, 2010, 2012, 2013, and 2015 (On-the-fly reporting is not available due to MSTest limitations)
 * VSTest in the [.NET](net.md) and (deprecated) [VSTest](visual-studio-tests.md) runners
 * [MSpec](mspec.md)
