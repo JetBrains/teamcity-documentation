@@ -89,7 +89,7 @@ The following project files contain some examples: [`sample2adv.proj`](https://g
 
 ## Case 3. NUnit Build Step
 
-Note that the NUnit runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the .NET build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead. Refer to the [NUnit Support](nunit-support.md#Framework+Compatibility) page for details.
+Note that the NUnit runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the .NET build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead. Refer to the [NUnit Support](nunit-support.md#NUnit+Framework+Compatibility) page for details.
 
 The [NUnit](nunit.md) build step is probably the simplest and yet most powerful way to launch NUnit tests in TeamCity.   
 In most cases its sufficient to set only the 2 parameters: the path to the NUnit console runner and the list of assemblies to be tested.

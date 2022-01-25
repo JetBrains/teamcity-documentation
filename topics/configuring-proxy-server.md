@@ -15,10 +15,12 @@ TeamCity server is installed at a _local_ URL [`http://teamcity.local:8111/tc`](
 It is visible to the outside world as a _public_ URL [`http://teamcity.public:400/tc`](http://teamcity.public:400/tc).
 
 To make sure TeamCity "knows" the actual absolute URLs used by the client to access the resources, you need to:
-* set up a reverse proxy as described below;
-* configure the [Tomcat server](#TeamCity+Tomcat+Configuration) bundled with TeamCity.
+* Set up a reverse proxy as described below.
+* Configure the [Tomcat server](#TeamCity+Tomcat+Configuration) bundled with TeamCity.
 
 These URLs are used to generate absolute URLs in the client redirects and other responses.
+
+After configuring the proxy, you will also need to change the _Server URL_ value in TeamCity __Global Settings__ to the proxy URL.
 
 Note: An internal TeamCity server should work under the __same context__ (that is part of the URL after the host name) as it is visible from outside by an external address. See also the TeamCity server [context changing instructions](configure-server-installation.md#Changing+Server+Context).   
 If you need to run the server under a different context, note that the context-changing proxy should conceal this fact from the TeamCity: for example, it should map server redirect URLs as well as cookies setting paths to the original (external) context.

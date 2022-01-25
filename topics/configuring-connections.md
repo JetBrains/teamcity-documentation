@@ -7,6 +7,10 @@ To add a connection, go the target project's settings, open the __Connections__ 
 
 When created, a connection can be used in all the nested subprojects of the current project. If you add a connection in the Root project, it will become available on the whole server.
 
+If your TeamCity server is [installed behind a proxy](configuring-proxy-server.md), it is important to ensure that this is reflected in the connection settings, if applicable. When configuring a callback URL for a connection, you need to specify all URLs by which the current server can be accessed.  
+After configuring the proxy, remember to also set the new address as the _Server URL_ in __Global Settings__ of TeamCity.
+{product="tc"}
+
 ## Azure DevOps
 
 <chunk include-id="azure-devops">

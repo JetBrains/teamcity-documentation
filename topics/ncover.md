@@ -1,7 +1,7 @@
 [//]: # (title: NCover)
 [//]: # (auxiliary-id: NCover)
 
-TeamCity supports code coverage with NCover (1.x and 3.x) for NUnit tests run via TeamCity NUnit test runner, which can be configured in one of the following ways: web UI, [TeamCity NUnit Test Launcher](teamcity-nunit-test-launcher.md), [NUnit for MSBuild](nunit-for-msbuild.md), [NUnit for MSBuild](nunit-for-msbuild.md), [NUnit for NAnt Build Runner](nunit-for-nant-build-runner.md). 
+TeamCity supports code coverage with NCover (1.x and 3.x) for NUnit tests run via TeamCity NUnit test runner, which can be configured in one of the following ways: web UI, [TeamCity NUnit Test Launcher](nunit-support.md#NUnit+Test+Launcher), [NUnit for MSBuild](nunit-support.md#Using+NUnit+for+MSBuild), [NUnit for MSBuild](nunit-support.md#Using+NUnit+for+MSBuild), [NUnit for NAnt Build Runner](nunit-support.md#NUnit+for+NAnt+Build+Runner). 
 
 __Important Notes__ 
 	

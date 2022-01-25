@@ -10,8 +10,8 @@ To reorder builds in the [Build Queue](build-queue.md), you can drag them to the
 ### Moving Builds to Top
 
 * For any queued build, do one of the following: 
-   * on the [Build Queue](build-queue.md) page, click the arrow button next to the build sequence number ![moveToTop.png](moveToTop.png) to move the build to the top of the queue.
-   * click the build number or build status link anywhere in the UI, and, on the [queued build ](working-with-build-results.md)page, click the __Actions__ menu in the top right. Select the __Move to top__ action. The queue position will change. For a composite build, the whole build chain will be moved to the top of the queue.
+   * On the **[Build Queue](build-queue.md)** page, click the arrow button next to the build sequence number ![moveToTop.png](moveToTop.png) to move the build to the top of the queue.
+   * Click the build number or build status link anywhere in the UI, and, on the [queued build ](working-with-build-results.md)page, click the __Actions__ menu in the top right. Select the __Move to top__ action. The queue position will change. For a composite build, the whole build chain will be moved to the top of the queue.
  * For a running composite build which has dependencies that have not yet started, click the build number or build status link anywhere in the UI, and, on the [running build](working-with-build-results.md) page, click the __Actions__ menu in the top right. Select the __Move queued dependencies to top__ action. All queued dependencies of this build will be moved to the top of the queue.
 
 ## Managing Build Priorities
