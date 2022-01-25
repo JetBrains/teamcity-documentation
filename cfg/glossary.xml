@@ -16,5 +16,8 @@
     <term name="root-project">
         A default project at the top of the project hierarchy whose settings are available to all the other projects on the server.
     </term>
+    <term name="vcs-root">
+        A set of connection parameters that determine how TeamCity communicates with a VCS to monitor changes and get sources for a build.
+    </term>
 
     </terms>
