@@ -184,7 +184,7 @@ client_max_body_size   0;    # maximum size of an HTTP request. 0 allows uploadi
 
 server {
   listen        80;
-  server_name   {proxy server hostname};
+  server_name   {proxy_server_hostname};
 
   set $proxy_header_host $host; 
 
@@ -227,9 +227,10 @@ server {
 
 In the examples above, the following values should be replaced:
 * `{main_node_hostname}` — a hostname of the main node. If the UI of the main node operates on a port different from the proxy server port, this value should be specified in the form `hostname:port`.
-* `{secondary_node_hostname}` — a hostname of the secondary node.
+* `{secondary_node_hostname}` — a hostname of the secondary node. If the secondary node operates on a port different from the proxy server port, this value should be specified in the form `hostname:port`
 * `{main_node_id}` — the ID of the main node.
 * `{secondary_node_id}` — the ID of the secondary node.
+* `{proxy_server_hostname}` — proxy server name (NGINX only).
 
 On a failover, if a former secondary node is assigned with the _Main TeamCity node_ responsibility, the configuration of the main and secondary nodes in the proxy config should be updated: `{main_node_hostname}` and `{main_node_id}` should be replaced with the hostname and ID of the new main node; `{secondary_node_hostname}` and `{secondary_node_id}` — with the hostname and ID of the former main node.
 
