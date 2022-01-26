@@ -110,7 +110,19 @@ After this basic setup, you can advance the Space integration by following the i
 
 A build's checkout scope usually consists of the following items: the default branch of [VCS root(s)](vcs-root.md) + the project's [branch specification](working-with-feature-branches.md) + [checkout rules](vcs-checkout-rules.md) of the build configuration. By adding the [Pull Request](pull-requests.md) build feature to this build configuration, you can add one more item to this formula — branches of merge requests. This will allow TeamCity to monitor changes in merge requests and run builds on them. The most common use case is prebuilding sources of feature-branches before they are merged into the default branch.
 
+To add this feature:
+1. Go to __Build Configuration Settings | Build Features__.
+2. Click __Add build feature__ and choose _Pull Requests_.
+3. Select _JetBrains Space_ as the feature type and specify the settings as follows:
+   * _Connection_: choose the [connection to Space](#Step+2%3A+Establish+Connection+to+JetBrains+Space).
+   * _By target branch_: define the [branch filter](branch-filter.md) to monitor merge requests only on branches that match the specified criteria. If left empty, no filters apply.
+4. Save the settings.
 
+Now, TeamCity will monitor merge requests submitted from the source branches of your repository. If a build is run on a merge request, the request's details will be displayed in the build results. If more than one merge request is submitted from the same source branch, TeamCity will display all these requests. However, only commits from the open requests matching the filtering criteria will be displayed as [Changes](working-with-build-results.md#Changes) of the build.
+
+>To protect a JetBrains Space branch from unverified merge requests, you can also configure [Quality Gates](https://www.jetbrains.com/help/space/branch-and-merge-restrictions.html#quality-gates-for-merge-requests) in your repository settings. If you set a TeamCity build as an external check, JetBrains Space will require the build on a merge request to finish successfully before allowing this request to be merged.
+
+Read more about the Pull Requests build feature in [this article](pull-requests.md).
 
 ## Reporting Build Statuses to JetBrains Space
 
