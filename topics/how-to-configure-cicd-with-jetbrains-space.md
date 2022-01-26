@@ -7,7 +7,7 @@
 
 Integration with TeamCity brings the following advantages to the JetBrains Space users:
 * Compiling, testing, and deploying projects within the same environment.
-* Building source code of pull requests and merging them automatically after a successful build.
+* Building source code of merge requests and merging them automatically after a successful build.
 * Extensive build overview: diffs and artifacts, detailed test reports on-the-fly, code coverage, inspections, and various other metrics. Statuses of builds and code reviews are cross-shared between systems for easier monitoring.
 * Flexible pipelines where builds depend on one another and share settings and results.
 * Ability to configure builds as code, in [Kotlin DSL](kotlin-dsl.md).
@@ -15,7 +15,7 @@ Integration with TeamCity brings the following advantages to the JetBrains Space
 
 </td></tr><tr><td></td></tr></table>
 
-![pending.png](pending.png) _The [preliminary setup](#Preliminary+Setup) usually takes up to 15 minutes to complete, granting all the steps are performed with no delay. After it is completed, enabling the components of this integration becomes quite straightforward and can be done at any pace._
+![pending.png](pending.png) _The [preliminary setup](#Preliminary+Setup) usually takes up to 10 minutes to complete, granting all the steps are performed with no delay. After it is completed, enabling the components of this integration gets quite straightforward and can be done at any pace._
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ In your JetBrains Space instance:
    1. Go back to the app's __Overview__ and open the __Authentication__ tab.
    2. Enable _Client Credentials Flow_.
       <anchor name="redirect-uri"/>
-   3. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL as the redirect URI.  
+   3. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL (`https://<server>:<port>/oauth/space/accessToken.html`) as the redirect URI.  
       To ensure that your TeamCity server can always connect to JetBrains Space, it is important to specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a [proxy](configuring-proxy-server.md) for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
       {product="tc"}
    4. Copy the app's _Client ID_ and _Client secret_. You will need them for configuration on the TeamCity side.
@@ -85,14 +85,32 @@ Let's create a nested project of the project where you've added the JetBrains Sp
 You will notice the new button: __From JetBrains Space__. Its name depends on the _Display name_ you gave to the connection, but you can always distinguish Space connections from others by the Space logo. To create a new project:
 
 1. Click __From JetBrains Space__.
-2. As it is the first time you connect this server to your Space instance, you have to authenticate in Space via your user profile. Click __Sign in to Space__, enter your credentials, and confirm the authentication. Next time, you won't have to confirm it again, unless you explicitly sign off or change your password.  
+2. As it is the first time you connect this server to your Space instance, you have to authenticate in Space via your user profile. Click __Sign in to Space__ and accept the access request. Next time, you won't have to confirm it again, unless you sign out or change your password.  
   If you get the _OAuth 2.0 Error_, this probably means that the _Redirect URI_ has not been configured properly in Step 1 of the preliminary setup. Make sure to [revise it](#redirect-uri). Note that Space supports only HTTPS connection.  
    <img src="create-project-from-space.png" width="706" alt="Create a project from a Space repository"/>
-3. TO DO
+3. The project creation wizard will display a list of all Space projects your user has access to. Choose a repository and wait until TeamCity verifies the connection settings.
+4. Now it's time to configure the main settings of the new project and its [VCS root](vcs-root.md). You can always adjust them later.
+   * _Project name_ and the name of its first [build configuration](build-configuration.md).
+   * _VCS root_: read-only — it matches the URL of a repository you choose in Step 3.
+   * _Default branch_: `refs/heads/main`, or another branch of your choice. Remember to keep `refs/heads` and change only the branch name.
+   * _Branch specification_: if you want to run builds on other branches apart from the default one, this setting allows extending the scope of the VCS root and monitor these branches as well. TeamCity uses a [special format or branch specification rules](working-with-feature-branches.md). To monitor the whole repository, use the `refs/heads/*` rule.
+     <img src="space-project-basic-settings.png" width="706" alt="Configure project settings"/>
+   >Our test project also contains project settings specified in a TeamCity [Kotlin DSL](kotlin-dsl.md) format. If TeamCity detects those in your repository, it can automatically apply all the specifications.
+5. Click __Proceed__.
 
-## Building Sources of Pull Requests
+TeamCity will attempt to [autodetect build steps](configuring-build-steps.md#Autodetecting+build+steps) in your project. You are free to confirm or reject the proposed steps and explore the project settings further.
 
-Creating a project from a JetBrains Space repository 
+To be able to manually run builds on the Space repository sources, you need to [configure steps](configuring-build-steps.md) of the newly created build configuration. The simplest scenario is to add a [Command Line](command-line.md) step and define the CLI command to build your sources. To initiate a build based on the freshest sources of the default branch, click __Run__ in the upper right corner. TeamCity will launch a one-step build with these CLI commands.  
+To monitor changes in the Space repository and automatically start builds on new commits, configure a [VCS trigger](configuring-vcs-triggers.md) in this build configuration.
+
+After this basic setup, you can advance the Space integration by following the instructions below, or learn how to [create more sophisticated build configurations](configuring-general-settings.md) and utilize the power of TeamCity to the fullest.
+
+## Building Sources of Merge Requests
+{product="tcc"}
+
+A build's checkout scope usually consists of the following items: the default branch of [VCS root(s)](vcs-root.md) + the project's [branch specification](working-with-feature-branches.md) + [checkout rules](vcs-checkout-rules.md) of the build configuration. By adding the [Pull Request](pull-requests.md) build feature to this build configuration, you can add one more item to this formula — branches of merge requests. This will allow TeamCity to monitor changes in merge requests and run builds on them. The most common use case is prebuilding sources of feature-branches before they are merged into the default branch.
+
+
 
 ## Reporting Build Statuses to JetBrains Space
 
