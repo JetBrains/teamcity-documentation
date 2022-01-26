@@ -67,5 +67,6 @@
         <accepts>nunit-for-msbuild.html</accepts>
         <accepts>msbuild-service-tasks.html</accepts>
         <accepts>nunit-addins-support.html</accepts>
+        <accepts>teamcity-addin-for-nunit.html</accepts>
     </rule>
 </rules>
