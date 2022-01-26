@@ -1,5 +1,5 @@
-[//]: # (title: YouTrack)
-[//]: # (auxiliary-id: YouTrack)
+[//]: # (title: Integrating TeamCity with YouTrack)
+[//]: # (auxiliary-id: Integrating TeamCity with YouTrack;YouTrack)
 
 You can integrate TeamCity with [YouTrack](https://www.jetbrains.com/youtrack/) to provide links to YouTrack issues from the TeamCity UI. General information about the TeamCity integration with issue trackers is provided [here](integrating-teamcity-with-issue-tracker.md).
 

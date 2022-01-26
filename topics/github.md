@@ -1,5 +1,5 @@
-[//]: # (title: GitHub)
-[//]: # (auxiliary-id: GitHub)
+[//]: # (title: Integrating TeamCity with GitHub)
+[//]: # (auxiliary-id: Integrating TeamCity with GitHub;GitHub)
 
 TeamCity integration with the GitHub issue tracker can be set up separately or as a part of TeamCity integration with the [GitHub source code hosting service](integrating-teamcity-with-vcs-hosting-services.md).
 

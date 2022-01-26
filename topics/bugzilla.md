@@ -1,5 +1,5 @@
-[//]: # (title: Bugzilla)
-[//]: # (auxiliary-id: Bugzilla)
+[//]: # (title: Integrating TeamCity with Bugzilla)
+[//]: # (auxiliary-id: Integrating TeamCity with Bugzilla;Bugzilla)
 
 You can integrate TeamCity with [Bugzilla](https://www.bugzilla.org/) to provide links to Bugzilla issues from the TeamCity UI. General information about the TeamCity integration with issue trackers is provided [here](integrating-teamcity-with-issue-tracker.md).
 
