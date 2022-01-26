@@ -3,11 +3,13 @@
 
 The Node.js build runner allows running Node.js tools like [`npm`](https://www.npmjs.com/), [`yarn`](https://yarnpkg.com/), and [`node`](https://github.com/nodejs/node).
 
-Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
+Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings.
 
 ## Prerequisites
 
-Currently, Node.js steps can only be run inside a Docker container. TeamCity uses `node:lts` by default, or, if there is an `.nvmrc` file inside your project, it will search for the image specification there.
+Currently, Node.js steps can only be run inside a Docker container. Refer to [Docker Wrapper](docker-wrapper.md) for general information about available Docker settings.
+
+You can define what version of Node.js to use for the current build step. TeamCity uses a `node:lts` image by default, or, if there is an `.nvmrc` file inside your project, it will search for the image specification there.
 
 ## Autodetecting JavaScript Steps
 

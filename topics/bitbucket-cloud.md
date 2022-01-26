@@ -1,5 +1,5 @@
-[//]: # (title: Bitbucket Cloud)
-[//]: # (auxiliary-id: Bitbucket Cloud)
+[//]: # (title: Integrating TeamCity with Bitbucket Cloud)
+[//]: # (auxiliary-id: Integrating TeamCity with Bitbucket Cloud;Bitbucket Cloud)
 
 The TeamCity integration with the Bitbucket Cloud issue tracker can be set up separately, or as a part of TeamCity integration with [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+Bitbucket+Cloud) as a source code hosting service.
 
