@@ -1,5 +1,5 @@
-[//]: # (title: Team Foundation Work Items)
-[//]: # (auxiliary-id: Team Foundation Work Items)
+[//]: # (title: Integrating TeamCity with Team Foundation Work Items)
+[//]: # (auxiliary-id: Integrating TeamCity with Team Foundation Work Items;Team Foundation Work Items)
 
 >In 2019, Team Foundation Server has been renamed to Azure DevOps Server. The content of this page is applicable to Azure DevOps Server.
 >
