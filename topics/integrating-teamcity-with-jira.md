@@ -139,7 +139,7 @@ Currently, Jira Cloud API for [Builds](https://developer.atlassian.com/cloud/jir
 
 To make TeamCity send build/deploy information to Jira Cloud:
 
-1. When configuring a [connection to Jira Cloud](#Configure+Connection+to+Jira), specify the _Jira Cloud Client ID_ and _Server secret_ settings.  
+1. When configuring a connection to Jira Cloud, specify the _Jira Cloud Client ID_ and _Server secret_ settings.  
 
 2. Add the _Jira Cloud Integration_ [build feature](adding-build-features.md) to a build configuration, and select the preconfigured connection to Jira Cloud.
 
