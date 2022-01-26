@@ -375,7 +375,7 @@
                <toc-element id="bitbucket-cloud.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="bugzilla.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="github.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="integrating-teamcity-with-jira.md" show-structure-for="chapter" show-structure-depth="4"/>
+               <toc-element id="jira.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="team-foundation-work-items.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="youtrack.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
