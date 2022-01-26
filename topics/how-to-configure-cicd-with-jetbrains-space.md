@@ -86,11 +86,13 @@ You will notice the new button: __From JetBrains Space__. Its name depends on th
 
 1. Click __From JetBrains Space__.
 2. As it is the first time you connect this server to your Space instance, you have to authenticate in Space via your user profile. Click __Sign in to Space__, enter your credentials, and confirm the authentication. Next time, you won't have to confirm it again, unless you explicitly sign off or change your password.  
-  If you get the _OAuth 2.0 Error_, this probably means that the _Redirect URI_ has not been configured properly in Step 1 of the preliminary setup. Make sure to [revise it](#redirect-uri).  
+  If you get the _OAuth 2.0 Error_, this probably means that the _Redirect URI_ has not been configured properly in Step 1 of the preliminary setup. Make sure to [revise it](#redirect-uri). Note that Space supports only HTTPS connection.  
    <img src="create-project-from-space.png" width="706" alt="Create a project from a Space repository"/>
 3. TO DO
 
 ## Building Sources of Pull Requests
+
+Creating a project from a JetBrains Space repository 
 
 ## Reporting Build Statuses to JetBrains Space
 
