@@ -37,15 +37,17 @@ To manually create custom charts to be displayed in the TeamCity UI, configure t
 Charts can also be configured via [Kotlin DSL](kotlin-dsl.md). Example configuration:
 
 ```Plain Text
-feature {
-  id = "SampleChart"
+features {
+  projectCustomChart {
+    id = "SampleChart"
     title = "Success Rate"
     seriesTitle = "Serie"
     format = CustomChart.Format.PERCENT
     series = listOf(
         Serie(title = "Success Rate", key = SeriesKey.SUCCESS_RATE, sourceBuildTypeId = "testBuild")
-        }
-
+    )
+  }
+}
 ```
 
 See the reference on available parameters [below](#Parameters+Reference).
