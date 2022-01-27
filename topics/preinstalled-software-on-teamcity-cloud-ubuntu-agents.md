@@ -33,7 +33,7 @@
 |[Ant](https://ant.apache.org/)|1.10.7|
 |[Gradle](https://gradle.org/)|7.2|
 |[CMake](https://cmake.org/)|3.21.4|
-|[Apache Maven](https://maven.apache.org/)|3.6.3[m|
+|[Apache Maven](https://maven.apache.org/)|3.6.3m|
 |[PowerShell](https://docs.microsoft.com/en-us/powershell/)|7.2.0|
 |[R](https://www.r-project.org/)|3.6.3|
 |[Groovy](https://groovy-lang.org/)|3.0.9|
