@@ -361,6 +361,7 @@
     </toc-element>
     <toc-element id="ci-tutorials.md">
         <toc-element toc-title="CI/CD Guide" href="https://www.jetbrains.com/teamcity/ci-cd-guide/"/>
+        <toc-element id="how-to-configure-cicd-with-jetbrains-space.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element toc-title="Configure, Build, and Test .NET Projects" href="https://www.jetbrains.com/teamcity/tutorials/dotnet-build-configure-test/"/>
         <toc-element toc-title="Configure, Build, and Test Python Projects" href="https://www.jetbrains.com/teamcity/tutorials/python-build-configure-test/"/>
         <toc-element toc-title="Configure, Build, and Test Gradle Projects" href="https://www.jetbrains.com/teamcity/tutorials/gradle-build-configure-test/"/>
