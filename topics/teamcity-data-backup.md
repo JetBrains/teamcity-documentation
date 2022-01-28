@@ -32,7 +32,7 @@ TeamCity allows backing up the following data:
 * Personal changes
 
 The following data is __not included__ into backup:
-* __Build artifacts__ (because of their size). These include explicit build artifacts and internal artifacts storing coverage report, finish build parameters, settings digest, and so on. If you need to back up the artifacts, save the contents of [artifacts directories](teamcity-configuration-and-maintenance.md) manually.
+* __Build artifacts__ (because of their size). These include explicit build artifacts and internal artifacts storing NuGet packages, coverage report, finish build parameters, settings digest, and so on. If you need to back up the artifacts, save the contents of [artifacts directories](teamcity-configuration-and-maintenance.md) manually before [restoring TeamCity data from backup](restoring-teamcity-data-from-backup.md).
 * For backup from the UI: __running builds and build queue state__. If you want to back up these, stop the TeamCity server and use the maintainDB tool.
 * TeamCity application manual customizations under `<[TeamCity Home](teamcity-home-directory.md)>`, including used server port number, which are stored in the `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file.
 * TeamCity application logs (under `<[TeamCity Home](teamcity-home-directory.md)>/logs`).

@@ -18,11 +18,13 @@ A newer version of TeamCity can be used to restore the backup created with any p
 
 During restoration of a large database you might want to configure database-specific settings to make the bulk data changes faster (like setting SQL Server "Recovery Model" to "Simple"). Consult your DBA for more details.
 
-A TeamCity backup file __does not contain build artifacts__, so to get the server with all the same important data you need to restore from a backup file (at least settings and database) and copy the build logs and artifacts (located in `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` by [default](build-artifact.md)) from an old to the new Data Directory manually. The general compatibility rule of the data under `system/artifacts` is that files created by older TeamCity versions can be read by newer versions, but not necessarily vice versa.
+A TeamCity [backup file](teamcity-data-backup.md#Backing+up+Data) __does not contain build artifacts__. To back up the build logs and artifacts, copy the content of the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` directory (stores artifacts by [default](build-artifact.md)) from the old location to the new one manually. The general compatibility rule of the data under `system/artifacts` is that files created by older TeamCity versions can be read by newer versions, but not necessarily vice versa.
 
 When [external artifacts storage](configuring-artifacts-storage.md#External+Artifacts+Storage) is enabled, the [artifacts directory](teamcity-configuration-and-maintenance.md#artifact-directories) of the TeamCity Data Directory contains metadata about artifacts mappings, so make sure they are restored.
 
 See also details on the directories in the [TeamCity Data Directory](teamcity-data-directory.md) description.
+
+Note that it is important to __copy artifacts before restoring__ TeamCity data from a backup file — this will automatically start reindexing build metadata. For example, it is required to correctly reindex packages in NuGet feeds. In case you copied artifacts after the TeamCity server was restored (or copying of artifacts was not completed before the server start), you might need to [reindex build metadata manually](common-problems.md#Problems+with+TeamCity+NuGet+Feed) and [wait until reindexing is finished](known-issues.md#Packages+indexing+is+slow+in+TeamCity+NuGet+feed).
 
 ## Performing Restore
 
