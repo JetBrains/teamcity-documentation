@@ -42,6 +42,8 @@ Specify the Perforce server address. The format is `host:port`. For specific env
 </td></tr><tr>
 
 <td id="perforceStreamOptionDescription">
+    
+<anchor name="Perforce-perforceStreamOptionDescription"/>
 
 Stream
 
@@ -79,6 +81,8 @@ When task streams are used for feature branches, TeamCity may miss some changes 
 </td></tr><tr>
 
 <td id="perforceClientOptionDescription">
+    
+<anchor name="Perforce-perforceClientOptionDescription"/>
 
 Client
 
