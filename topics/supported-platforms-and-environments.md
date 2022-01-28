@@ -509,7 +509,7 @@ For automatic `git gc` support and maintenance of Git clones, requires a Git cli
 
 </td><td></td><td>
 
-A Perforce client installed on the server. See also [Perforce compatibility issues](perforce-helix-core-compatibility.md).
+A Perforce Helix Core client installed on the server. See [Perforce compatibility issues](integrating-teamcity-with-perforce.md#Perforce+Helix+Core+Compatibility).
 
 </td></tr>
 
