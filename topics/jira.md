@@ -27,6 +27,7 @@ Follow these recommendations to get the maximum benefit from the Jira integratio
 * When committing changes to your version control, __always mention the issue key__ related to the fix in the comment to the commit.
 * Mark fixed issues as _Resolved_ in Jira to display them with the _Fixed_ status in TeamCity logs (the time of resolve does not really matter).
 
+TeamCity updates statuses of Jira issues displayed for builds every 10 minutes or when new commits are detected.
 
 <anchor name="jira-JIRA-Authentication"/>
 
