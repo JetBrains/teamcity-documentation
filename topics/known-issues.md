@@ -499,6 +499,14 @@ __Cause__: NuGet caches the server responses, thus pulling does not detect the m
 
 __Solution__: To send a new request directly to the server instead of the cache, use the `--no-cache` parameter in your request.
 
+### Packages are not found in NuGet feed
+
+__Problem__: Not all packages are found in a NuGet feed, though artifacts are present on the disk and in the UI and <path>teamcity-nuget.log</path> does not indicate that indexing of packages is in progress.
+
+__Cause__: One of the possible causes could be that TeamCity was restored from backup or moved to a new server.
+
+__Solution__: Clear the [buildsMetadata](teamcity-monitoring-and-diagnostics.md#Caches) cache and wait until reindexing of packages is finished on the server. Note that it could take a lot of time for a large server with a long build history.
+
 ## Cannot use multiline parameters in PowerShell
 
 Earlier versions of the [PowerShell](powershell.md) runner don't support passing multiline arguments. Since version 2020.1.4, you can enable this support by setting the `teamcity.powershell.arguments.multiline=true` [configuration parameter](configuring-build-parameters.md).
