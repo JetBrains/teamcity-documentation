@@ -1,5 +1,5 @@
 [//]: # (title: Search Syntax)
-[//]: # (auxiliary-id: Search)
+[//]: # (auxiliary-id: Search Syntax;Search)
 
 After you have installed and started running TeamCity, it collects the information on builds, tests and so on and indexes it. You can search builds by build number, tag, build configuration name, and other different parameters specifying one or several keywords. You can also search for builds by text in build logs, and by the [external ID](identifier.md#External+IDs) of a build configuration.
 
@@ -21,7 +21,7 @@ You also have a possibility to perform fuzzy search using the tilde (`~`) symbol
 
 ### Boolean Operators and Wildcards Support
 
-You can combine multiple terms with Boolean operators to create more complex search queries. In TeamCity, you can use `OR`, `NOT`, `-`. The `AND` operator is not recommended — use the white space (equivalent to `OR`) instead.
+You can combine multiple terms with Boolean operators to create more complex search queries. TeamCity Search supports the `OR`, `NOT`, and `-` operators. The `AND` operator only works in the scope of the same field (for example, `tags:EAP AND tags:Production`).
 
 When using Boolean operators, type them ALL CAPS.
 * `OR` operator helps fetch the search terms that contain either of the terms you specify in the search field. This operator is used by default.
@@ -528,8 +528,8 @@ Find all builds that were run on the specified agent.
 #### Using Double-Colon
 
 You can use the double-colon sign (`::`) to search for a project and/or build configuration by name:
-* `pro::best` — search for builds of configurations with the names starting with "best", and in the projects with the names starting with "pro".
-* `mega::` — search for builds in all projects with names starting with "mega".
+* `pro::best` — search for builds of configurations with the names starting with `best`, and in the projects with the names starting with `pro`.
+* `mega::` — search for builds in all projects with names starting with `mega`.
 * `::super` — search for builds of build configurations with names starting with "super".
 
 ### "Magic" Keywords
@@ -561,7 +561,7 @@ Description
 
 <td>
 
-Search for builds with tags. For example, `Calcutta::Master $t` query will result in a list of all builds marked with any tag of build configurations whose name starts with "Master" from projects with names beginning with `Calcutta`.
+Search for builds with tags. For example, `Calcutta::Master $t` query will result in a list of all builds marked with any tag of build configurations whose name starts with `Master` from projects with names beginning with `Calcutta`.
 
 </td></tr><tr>
 
