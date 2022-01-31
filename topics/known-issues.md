@@ -501,11 +501,11 @@ __Solution__: To send a new request directly to the server instead of the cache,
 
 ### Packages are not found in NuGet feed
 
-__Problem__: Not all packages are found in a NuGet feed, though artifacts are restored and <path>teamcity-nuget.log</path> does not indicate that indexing of packages is in progress.
+__Problem__: Not all packages are found in a NuGet feed, though artifacts are present on the disk and in the UI and <path>teamcity-nuget.log</path> does not indicate that indexing of packages is in progress.
 
-__Cause__: TeamCity was restored from backup or moved to a new server.
+__Cause__: One of the possible causes could be that TeamCity was restored from backup or moved to a new server.
 
-__Solution__: Clear the [buildsMetadata](teamcity-monitoring-and-diagnostics.md#Caches) cache and wait until reindexing of packages is finished on the server. Note that it could take a lot of time depending on the number of packages in the feed.
+__Solution__: Clear the [buildsMetadata](teamcity-monitoring-and-diagnostics.md#Caches) cache and wait until reindexing of packages is finished on the server. Note that it could take a lot of time for a large server with a long build history.
 
 ## Cannot use multiline parameters in PowerShell
 
