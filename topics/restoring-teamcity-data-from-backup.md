@@ -24,7 +24,7 @@ When [external artifacts storage](configuring-artifacts-storage.md#External+Arti
 
 See also details on the directories in the [TeamCity Data Directory](teamcity-data-directory.md) description.
 
-Note that it is important to __copy artifacts before a server start__ as reindexing build metadata will be automatically launched on starting the server restored from backup. If some artifacts are missing during indexing, this could lead to failures in the work of some parts of the TeamCity server (for example, a NuGet feed). In case you copied artifacts after the server start (or copying of artifacts was not completed before the server start), you might need to [reindex build metadata manually](common-problems.md#Problems+with+TeamCity+NuGet+Feed) and wait until reindexing is finished.
+Note that it is important to __copy artifacts before the server start__ as reindexing build metadata is launched automatically on starting the server restored from backup. If some artifacts are missing during indexing, this could lead to failures in the work of some parts of the TeamCity server (for example, a NuGet feed). In case you copied artifacts after the server start (or copying of artifacts was not completed before the server start), you might need to [reindex build metadata manually](common-problems.md#Problems+with+TeamCity+NuGet+Feed) and wait until reindexing is finished.
 
 ## Performing Restore
 
