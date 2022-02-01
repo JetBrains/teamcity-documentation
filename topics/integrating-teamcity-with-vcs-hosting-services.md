@@ -31,6 +31,9 @@ Integration with GitHub allows you to:
 
 See how to configure a connection to GitHub.com or GitHub Enterprise [here](configuring-connections.md#GitHub).
 
+<video href="hbh7sk5sGTc"
+title="TeamCity tutorial — How to integrate TeamCity and GitHub"/>
+
 ## Integrating TeamCity with GitLab
 
 Integration with GitLab allows you to:

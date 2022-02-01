@@ -4,12 +4,21 @@
 When creating a build configuration, it is important to configure the sequence of _build steps_ to be executed.
 
 Build steps are configured in the __Build Steps__ section of the __[Build Configuration Settings](creating-and-editing-build-configurations.md)__ page. Here, you can:
-* add new steps manually;
-* [autodetect steps](#Autodetecting+build+steps) by scanning the source VCS repository;
-* copy and delete steps;
-* temporarily enable/disable steps.
+* Add new steps manually.
+* [Autodetect steps](#Autodetecting+Build+Steps) by scanning the source VCS repository.
+* Copy and delete steps.
+* Temporarily enable/disable steps.
 
-Each build step is represented by a [build runner](build-runner.md) and provides integration with a specific build or test tool. For example, call a NAnt script before compiling VS solutions. You can add as many build steps to your build configuration as needed.
+## Choosing Build Runner for Your Task
+
+Each build step is represented by a [build runner](build-runner.md) and provides integration with a specific build or test tool. For example, calling a NAnt script before compiling VS solutions. You can add as many build steps to your build configuration as needed.
+
+This video tutorial explains how to choose a build runner based on your project's needs:
+
+<video href="wLmLgh5OK5o"
+title="TeamCity - How to use specific runners to supercharge your builds"/>
+
+## Build Steps Execution
 
 Build steps are invoked sequentially.
 
@@ -21,7 +30,7 @@ Note that the status of a build step and the build itself can be different. All 
 
 For the details on configuring individual build steps, refer to the respective pages inside this section.
 
-## Execution policy
+### Execution Policy
 
 You can specify the step execution policy via the __Execute step__ option:
 * __Only if build status is successful__: before starting the step, the build agent requests the build status from the server, and skips the step if the status is failed. This considers the failure conditions processed by the server, like failure on test failures or on metric change. Note that this still can be not exact as some failure conditions are processed on the server asynchronously ([TW-17015](https://youtrack.jetbrains.com/issue/TW-17015))
@@ -43,7 +52,7 @@ __Tips:__
 
 Since TeamCity 2020.1, you can also add granular [execution conditions](build-step-execution-conditions.md) for build steps.
 
-## Autodetecting build steps
+## Autodetecting Build Steps
 
 TeamCity can scan the source VCS repository of a project and autodetect build steps in Node.js, Kotlin, Python, Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.
 

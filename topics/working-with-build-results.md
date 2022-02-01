@@ -197,6 +197,8 @@ Shows the sequence in which the tests were run. Click the header above this colu
 
 </td></tr></table>
 
+>Watch our **video tutorial** on how to [use the test report page](https://www.youtube.com/watch?v=LKJjcBJT1k0).
+
 #### Test History
 
 To navigate to the history of a particular test, click the arrow next to the test name and select __Test History__ from the drop-down menu.   

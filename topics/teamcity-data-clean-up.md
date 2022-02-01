@@ -114,7 +114,7 @@ For example, a dependent build configuration A has an artifact dependency on B. 
 
 #### Base Rule Behavior for Build Configurations with Feature Branches
 
-If a build configuration has builds from several [branches](working-with-feature-branches.md), before applying a base clean-up rule, TeamCity splits the build history of this configuration into several groups. TeamCity creates one group per each [active branch](working-with-feature-branches.md#Active+branches), and a single group for all builds from inactive branches. Then the base clean-up rule is applied to each group independently.
+If a build configuration has builds from several [branches](working-with-feature-branches.md), before applying a base clean-up rule, TeamCity splits the build history of this configuration into several groups. TeamCity creates one group per each [active branch](working-with-feature-branches.md#Active+Branches), and a single group for all builds from inactive branches. Then the base clean-up rule is applied to each group independently.
 
 #### Base Rule Behavior for Personal Builds
 

@@ -12,7 +12,9 @@ Supported systems:
 * JetBrains Upsource
 * Gerrit Code Review tool 2.6+
 * Perforce Helix Swarm
- 
+
+>See our **video guide** on how to [send build information to external systems](https://www.youtube.com/watch?v=o0oj7mOcNvc).
+
 ## Provider-specific Configuration
 
 ### GitHub
