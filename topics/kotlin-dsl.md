@@ -10,7 +10,13 @@ Check out the [blog post series](https://blog.jetbrains.com/teamcity/2019/03/con
 <video href="AEYjAnR2-MY"
 title="Getting Started With Kotlin DSL in TeamCity: From Zero to Hero"/>
 
-See more TeamCity Kotlin DSL video tutorials [here](https://www.youtube.com/playlist?list=PLQ176FUIyIUaW-RqAJLbSZe59l6r7t8wp).
+See more TeamCity Kotlin DSL video tutorials:
+* [DSL Basics](https://youtu.be/YIS7syghJFk?list=PLQ176FUIyIUaW-RqAJLbSZe59l6r7t8wp)
+* [DSL Deep Dive](https://youtu.be/-wmfAuDObhQ?list=PLQ176FUIyIUaW-RqAJLbSZe59l6r7t8wp)
+* [UI Conflicts](https://youtu.be/nXqYBRtOKY0?list=PLQ176FUIyIUaW-RqAJLbSZe59l6r7t8wp)
+* [Build chains](https://youtu.be/9KHXzMcWyMc?list=PLQ176FUIyIUaW-RqAJLbSZe59l6r7t8wp)
+* [Build chain refactoring](https://youtu.be/b22Ql90AqV0?list=PLQ176FUIyIUaW-RqAJLbSZe59l6r7t8wp)
+* [How to create build pipelines for microservices with Kotlin DSL](https://www.youtube.com/watch?v=Icva0O5_xnQ)
 
 ## How Kotlin DSL Works
 

@@ -13,8 +13,7 @@ Supported systems:
 * Gerrit Code Review tool 2.6+
 * Perforce Helix Swarm
 
-<video href="o0oj7mOcNvc"
-title="TeamCity tutorial - How to send build information to GitHub, Jira etc."/>
+>See our **video guide** on how to [send build information to external systems](https://www.youtube.com/watch?v=o0oj7mOcNvc).
 
 ## Provider-specific Configuration
 

@@ -1,7 +1,7 @@
 [//]: # (title: Build Step Execution Conditions)
 [//]: # (auxiliary-id: Build Step Execution Conditions;Build Step Conditions)
 
-When configuring a build step, you can choose a general [execution policy](configuring-build-steps.md#Execution+policy) and, since TeamCity 2020.1, add a parameter-based _execution condition_.
+When configuring a build step, you can choose a general [execution policy](configuring-build-steps.md#Execution+Policy) and, since TeamCity 2020.1, add a parameter-based _execution condition_.
 
 Execution conditions make builds more flexible and address many common use cases, such as:
 * running the step only in the default branch

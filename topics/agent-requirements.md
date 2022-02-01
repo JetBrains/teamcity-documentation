@@ -5,9 +5,6 @@ _Agent requirements_ are special conditions that define whether a [build configu
 
 To create an explicit agent requirement for a given build configuration, go to __Build Configuration Settings | Agent Requirements__ and click __Add new requirement__. Each requirement represents a conditional rule for a certain parameter. While you are entering a parameter name or value, TeamCity will show you related suggestions.
 
-<video href="5gaoW8IfNJA"
-title="TeamCity tutorial - Agent Requirements"/>
-
 To temporarily disable or delete a requirement, use its context menu.
 
 >You can also set requirements to agents in the scope of each build step.  
@@ -42,6 +39,11 @@ For example, if you define a build runner parameter as a reference to another pr
 * Specify them in the [`buildAgent.properties`](configure-agent-installation.md) file.
 * Set the [environment variable](predefined-build-parameters.md#Java-Related+Environment+Variables) `JDK_16` on the build agent.
 * Specify the value on the __Parameters__ page of a build configuration (or in the __Project Settings__). The same value of the property will be used for all build agents.
+
+## Agent Requirements Video Guide
+
+<video href="5gaoW8IfNJA"
+title="TeamCity tutorial — Agent Requirements"/>
 
  <seealso>
         <category ref="concepts">

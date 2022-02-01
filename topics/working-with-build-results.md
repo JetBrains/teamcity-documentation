@@ -197,8 +197,7 @@ Shows the sequence in which the tests were run. Click the header above this colu
 
 </td></tr></table>
 
-<video href="LKJjcBJT1k0"
-title="TeamCity tutorial - How to use the test report page"/>
+>Watch our **video tutorial** on how to [use the test report page](https://www.youtube.com/watch?v=LKJjcBJT1k0).
 
 #### Test History
 

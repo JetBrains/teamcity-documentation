@@ -5,10 +5,7 @@ By default, TeamCity uses a polling approach to detect changes in a VCS reposito
 
 To avoid background polling, it is possible to set up a post-commit hook on the VCS server, which will notify TeamCity to start checking for changes procedure. This way, TeamCity will make background requests for changes detection only when such changes are available.
 
->If you are using GitHub, try the external [TeamCity Commit Hooks plugin](https://github.com/JetBrains/teamcity-commit-hooks).
-
-<video href="VzDI2HoiHk4"
-title="TeamCity tutorial - How to use GitHub commit hooks for faster checkouts"/>
+>If you are using GitHub, try the external [TeamCity Commit Hooks plugin](https://github.com/JetBrains/teamcity-commit-hooks)
 
 ## Overview
 
@@ -89,6 +86,8 @@ where `<VCS root repository URL>` must be replaced with the repository URL speci
 chmod 755 /path/to/teamcity-trigger.sh /path/to/git_root/.git/hooks/post-receive
 
 ```
+
+>If you are a GitHub user, watch our **video tutorial** on how to [use GitHub commit hooks for faster checkouts](https://www.youtube.com/watch?v=VzDI2HoiHk4).
 
 ## Setting up hook on Mercurial server
 

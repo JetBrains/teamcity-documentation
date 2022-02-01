@@ -13,7 +13,7 @@ You can define what version of Node.js to use for the current build step. TeamCi
 
 ## Autodetecting JavaScript Steps
 
-If your repository contains a `package.json` file, TeamCity will [automatically detect](configuring-build-steps.md#Autodetecting+build+steps) used frameworks and propose adding respective build steps.
+If your repository contains a `package.json` file, TeamCity will [automatically detect](configuring-build-steps.md#Autodetecting+Build+Steps) used frameworks and propose adding respective build steps.
 
 >If TeamCity detects a dependency on a test framework, it will propose choosing between two steps: run tests via this framework or with a general `test` command. To display structured test reports in TeamCity, select the step with the framework.
 > 

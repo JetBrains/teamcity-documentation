@@ -79,7 +79,7 @@ As with any failed test, you can assign investigations for a flaky test (or mult
 
 >Investigation Auto Assigner can [delay automatic assignment of investigations](investigations-auto-assigner.md#delay-auto-assign), which prevents wrong auto assignments in projects with flaky tests.
 
-Note that if [branches](working-with-feature-branches.md#Configuring+branches) are configured for a VCS Root, flaky tests are detected for the default branch only.
+Note that if [branches](working-with-feature-branches.md#Configuring+Branches) are configured for a VCS Root, flaky tests are detected for the default branch only.
 
 <seealso>
         <category ref="concepts">

@@ -3,12 +3,11 @@
 
 The _SSH Exec_ enables TeamCity to execute arbitrary remote commands using SSH.
 
-<video href="D6JOyGd4pWI"
-title="TeamCity tutorial - How to use SSH during your builds"/>
-
-The settings common for all runners are described in [Configuring Build Steps](configuring-build-steps.md); this page details the SSH Exec runner settings.
+The settings common for all runners are described [here](configuring-build-steps.md). This article details the SSH Exec runner settings.
 
 The fields below support [parameter references](predefined-build-parameters.md): any text between percentage signs (`%`) is considered a reference to a property by TeamCity. To prevent TeamCity from treating the text in the percentage signs as reference to a property, use two percentage signs to escape them: for example, if you want to pass `%\Y%m%\d%H%\M%S` into the build, change it to `%\%Y%\%m%\%d%\%H%\%M%\%S`.
+
+>Watch our **video guide** on how to [use SSH during your builds](https://www.youtube.com/watch?v=D6JOyGd4pWI).
 
 <warning>
 
