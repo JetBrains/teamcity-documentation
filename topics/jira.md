@@ -5,6 +5,9 @@ TeamCity integration with [Jira](https://www.atlassian.com/software/jira) allows
 * Displaying links to Jira issues in the TeamCity UI — applicable to self-managed Jira (Data Center and Server 4.4 or later) and Jira Cloud.
 * Reporting TeamCity build statuses to Jira Cloud.
 
+<video href="rK7faWbCh0Q"
+title="TeamCity tutorial - How to integrate TeamCity and JIRA (Cloud)"/>
+
 This article describes how TeamCity behaves when integrated with Jira and contains instructions on how to enable and configure the integration.
 
 ## Displaying Links to Jira Issues in TeamCity UI

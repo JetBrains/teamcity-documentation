@@ -7,6 +7,9 @@ To avoid background polling, it is possible to set up a post-commit hook on the 
 
 >If you are using GitHub, try the external [TeamCity Commit Hooks plugin](https://github.com/JetBrains/teamcity-commit-hooks).
 
+<video href="VzDI2HoiHk4"
+title="TeamCity tutorial - How to use GitHub commit hooks for faster checkouts"/>
+
 ## Overview
 
 Even with commit hooks configured and working properly, TeamCity still makes requests for changes on the server start and on each build queuing (or starting) to ensure the latest changes are used even if commit hooks stopped to function.

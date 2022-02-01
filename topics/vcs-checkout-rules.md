@@ -6,6 +6,9 @@ _VCS checkout rules_ allow you to check out a part of the configured VCS root an
 The checkout rules affect what build changes are displayed in the UI and what files are checked out for a build on the agent. If a commit does not match any of the checkout rule patterns of the build's VCS root, TeamCity will completely ignore it. Such change will not be displayed as pending and will not be able to trigger any builds in the current configuration.    
 To display changes but not to trigger a build on a commit, use [VCS trigger rules](configuring-vcs-triggers.md#vcs-trigger-rules-1).
 
+<video href="nhYOo7Rk4DM"
+title="TeamCity tutorial - Checkout Rules vs Trigger Rules?"/>
+
 >If a [dependent build](dependent-build.md) (1) has a [VCS trigger](configuring-vcs-triggers.md) that monitors changes in its [snapshot dependency](snapshot-dependencies.md) build and (2) shares a VCS root with this dependency, its checkout rules' scope should cover the scope of rules of this dependency. That is, each commit relevant for a dependency must be also relevant for the dependent build.
 >
 {type="tip"}

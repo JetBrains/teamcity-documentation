@@ -5,6 +5,9 @@ The _Pull Requests_ [build feature](adding-build-features.md) lets you automatic
 
 \* Or _merge requests_ in case of GitLab.
 
+<video href="4yFck9PvXI4"
+title="TeamCity tutorial - How to work with pull requests"/>
+
 When adding this build feature, you need to specify a VCS root and select a VCS hosting type.  
 Other settings depend on the selected VCS hosting type.
 

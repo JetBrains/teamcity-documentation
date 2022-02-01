@@ -10,6 +10,8 @@ Check out the [blog post series](https://blog.jetbrains.com/teamcity/2019/03/con
 <video href="AEYjAnR2-MY"
 title="Getting Started With Kotlin DSL in TeamCity: From Zero to Hero"/>
 
+See more TeamCity Kotlin DSL video tutorials [here](https://www.youtube.com/playlist?list=PLQ176FUIyIUaW-RqAJLbSZe59l6r7t8wp).
+
 ## How Kotlin DSL Works
 
 When versioned settings in Kotlin format are enabled, TeamCity commits the current settings to the specified settings' repository.

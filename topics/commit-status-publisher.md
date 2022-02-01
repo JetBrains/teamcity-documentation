@@ -12,7 +12,10 @@ Supported systems:
 * JetBrains Upsource
 * Gerrit Code Review tool 2.6+
 * Perforce Helix Swarm
- 
+
+<video href="o0oj7mOcNvc"
+title="TeamCity tutorial - How to send build information to GitHub, Jira etc."/>
+
 ## Provider-specific Configuration
 
 ### GitHub

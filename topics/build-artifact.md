@@ -3,6 +3,9 @@
 
 _Build artifacts_ are files produced by a build. Typically, these include distribution packages, WAR files, reports, log files, and so on. When creating a build configuration, you specify the paths to the artifacts of your build on the [Configuring General Settings](configuring-general-settings.md#Artifact+Paths) page.
 
+<video href="mNYq424IQ-w"
+title="TeamCity tutorial - How to work with artifacts (logs, graphics, binaries)"/>
+
 ## Artifacts Storage
 
 TeamCity contains an integrated lightweight builds artifact repository. The artifacts are stored either on the [server-accessible file system](configuring-artifacts-storage.md#Built-in+Artifacts+Storage) or on an [external storage](configuring-artifacts-storage.md#External+Artifacts+Storage).

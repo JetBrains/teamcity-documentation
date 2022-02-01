@@ -13,6 +13,9 @@ Note that you can create a new Maven-based build configuration [automatically fr
 >
 {type="warning" product="tcc"}
 
+<video href="wLmLgh5OK5o"
+title="TeamCity - How to use specific runners to supercharge your builds"/>
+
 ## Maven runner settings
 
 <table><tr>

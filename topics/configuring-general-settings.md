@@ -268,6 +268,9 @@ The target paths cannot be absolute. Non-relative paths will produce errors duri
    * `+:*/*.css => report.zip!/css/`
    * `-:*/*.txt => report.zip`
 
+<video href="AXITbn7bNyA"
+title="TeamCity tutorial - How to work with Artifact Rules"/>
+
 <anchor name="buildOptions"/>
 
 ### Build Options

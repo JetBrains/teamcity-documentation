@@ -11,6 +11,9 @@ Instructions on configuring bundled runners are listed under the [Configuring Bu
 
 Build runners are configurable in the __[Build Steps](configuring-build-steps.md)__ section of the __[Create/Edit Build Configuration](creating-and-editing-build-configurations.md)__ page.
 
+<video href="wLmLgh5OK5o"
+title="TeamCity - How to use specific runners to supercharge your builds"/>
+
  <seealso>
         <category ref="admin-guide">
             <a href="configuring-build-steps.md">Configuring Build Steps</a>
