@@ -7,6 +7,7 @@ The logs are stored in plain text files in a disk directory on the TeamCity serv
 
 While the server is running, the logs can be viewed in the web UI on the `Server Logs` tab of __Administration | Diagnostics__ section.
 
+<anchor name="enable-server-logs-debug"/>
 
 >__Enable Debug in Server Logs__  
 >In the web UI, go to __Administration | Diagnostics__ page. On the __Troubleshooting__ tab, choose an active logging preset. To view logs, go to the __Server Logs__ tab.  
