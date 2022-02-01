@@ -68,7 +68,7 @@ Default branch
 
 <td id="defaultBranch">
 
-Configures [default branch](working-with-feature-branches.md#Default+branch). Parameter references are supported here. Default value is `refs/heads/master`.
+Configures [default branch](working-with-feature-branches.md#Default+Branch). Parameter references are supported here. Default value is `refs/heads/master`.
 
 <note>
 
@@ -86,7 +86,7 @@ Branch specification
 
 <td>
 
-Lists the patterns for branch names, required for [feature branches](working-with-feature-branches.md#Configuring+branches) support. The matched branches are monitored for changes in addition to the default branch. The syntax is similar to checkout rules: `+|-:branch_name`, where `branch_name` is specific to the VCS, i.e. `refs/heads/` in Git (with the optional `*` placeholder).
+Lists the patterns for branch names, required for [feature branches](working-with-feature-branches.md#Configuring+Branches) support. The matched branches are monitored for changes in addition to the default branch. The syntax is similar to checkout rules: `+|-:branch_name`, where `branch_name` is specific to the VCS, i.e. `refs/heads/` in Git (with the optional `*` placeholder).
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 

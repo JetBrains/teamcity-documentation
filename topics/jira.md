@@ -151,6 +151,11 @@ To make TeamCity send build/deploy information to Jira Cloud:
 
    For a [deployment build configuration](deployment-build-configuration.md), specify an environment type (for example, _testing_ or _production_) and an environment name. These options are required to show the deployment information in Jira Cloud.
 
+## TeamCity Integration with Jira Cloud Video Guide
+
+<video href="rK7faWbCh0Q"
+title="TeamCity tutorial — How to integrate TeamCity and Jira (Cloud)"/>
+
  <seealso>
         <category ref="get_started">
             <a href="supported-platforms-and-environments.md#Issue+Trackers">Supported Issue Trackers</a>

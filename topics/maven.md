@@ -13,6 +13,8 @@ Note that you can create a new Maven-based build configuration [automatically fr
 >
 {type="warning" product="tcc"}
 
+This **video guide** explains [how to get the best from platform-specific build runners](https://www.youtube.com/watch?v=wLmLgh5OK5o): it uses Maven as an example.
+
 ## Maven runner settings
 
 <table><tr>

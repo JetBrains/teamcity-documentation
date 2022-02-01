@@ -366,7 +366,7 @@ The `poetry install` command will be run for this environment tool. It will reso
 
 ### Venv and virtualenv settings
 
->If TeamCity finds the `requirements.txt` file when [autodetecting build steps](configuring-build-steps.md#Autodetecting+build+steps) from a project repository, it chooses venv as a tool for these settings by default. You can manually change it to virtualenv if necessary.   
+>If TeamCity finds the `requirements.txt` file when [autodetecting build steps](configuring-build-steps.md#Autodetecting+Build+Steps) from a project repository, it chooses venv as a tool for these settings by default. You can manually change it to virtualenv if necessary.   
 >[Read more](https://docs.python.org/3/installing/index.html#key-terms) about the differences between these tools.
 
 [Venv](https://docs.python.org/3/library/venv.html) and [virtualenv](https://virtualenv.pypa.io/en/latest/) have the following settings:

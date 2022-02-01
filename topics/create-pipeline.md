@@ -17,6 +17,8 @@ In this tutorial, we will explain the basics of creating pipelines in TeamCity a
 
 While running this chain, TeamCity will (1) build a Spring Boot application and (2) create its Docker image. Then, it will (3-4) check the app with two sets of tests and (5) report the test results.
 
+>You can also watch our **video guide** on how to [compose a pipeline in TeamCity](https://www.youtube.com/watch?v=p4kCMOehrqs). It shows a different example than the one described in this article.
+
 ## Import Sample Project
 
 This tutorial uses a sample project with five separate build configurations which we are about to connect. To follow the tutorial, you can use the [sample repository](https://github.com/mkjetbrains/TodoApp-NoChain-KTS) and repeat the steps below on your TeamCity server.
@@ -132,6 +134,5 @@ Proceed with our getting started tutorials to learn about the other type of buil
 * When any chained build is triggered, TeamCity composes and runs the whole chain from start to finish. As triggers can only consider preceding builds, it is convenient to add one VCS trigger in the very last build of a chain.
 * You can limit what scopes of the source projects are relevant to each build configuration. This prevents excessive build runs.
 * You can create a logical _composite_ configuration to gather the results of multiple dependency builds. Such a configuration doesn't require a build agent and only serves as an aggregator.
-
 
 

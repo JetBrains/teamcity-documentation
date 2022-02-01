@@ -3,6 +3,8 @@
 
 A _build chain_ is a sequence of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency). Sometimes the build chain is called a "pipeline". Parts of a build chain linked with snapshot dependencies with enabled revisions synchronization use the same snapshot of the sources.
 
+>See our **video guide** on how to [compose a pipeline in TeamCity](https://www.youtube.com/watch?v=p4kCMOehrqs).
+
 ## Common Use Case
 
 The most common use case for specifying a build chain is running the same test suite of your project on different platforms. For example, before a _release build_ you want to make sure the tests are run correctly under different platforms and environments. For this purpose, you can instruct TeamCity to run tests, then an integration build first, and a release build after that.
@@ -65,7 +67,7 @@ If a build configuration is a part of a build chain, the corresponding informati
 
 <note>
 
-If build configurations in a chain use feature branches, the [logical names](working-with-feature-branches.md#Logical+branch+name) of the branches are also represented as build labels on the chain graph. Note that these names [may differ](working-with-feature-branches.md#Dependencies) from the VCS roots actually used for the builds: if a build uses a default branch but depends on a build that uses a non-default branch, the label of the dependency build will reflect this. For example, if build A uses the default branch "master" but depends on build B that uses branch "v1.1", both builds will be labeled with "v1.1".
+If build configurations in a chain use feature branches, the [logical names](working-with-feature-branches.md#Logical+Branch+Name) of the branches are also represented as build labels on the chain graph. Note that these names [may differ](working-with-feature-branches.md#Dependencies) from the VCS roots actually used for the builds: if a build uses a default branch but depends on a build that uses a non-default branch, the label of the dependency build will reflect this. For example, if build A uses the default branch "master" but depends on build B that uses branch "v1.1", both builds will be labeled with "v1.1".
 
 </note>
 
