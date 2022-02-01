@@ -47,7 +47,7 @@ An agent is connected if it is registered on the TeamCity server and responds to
 >If an agent stays disconnected during 14 days, its state changes to _Unauthorized_. If you try to reconnect it to the server, you will have to authorize it again.  
 >The default timeout duration (14 days) can be adjusted by changing the `teamcity.server.cleanup.agents.inactivityDays` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 >
-{type="note"}
+{type="note" product="tc"}
 
 </td></tr><tr>
 
