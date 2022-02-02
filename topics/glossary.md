@@ -23,6 +23,9 @@ Agent pool
 Agent requirement
 : A rule that specifies if a given build configuration can run on a particular agent. Allows managing what agents are used for running each build configuration.
 
+Agent-side checkout
+: A mode when a build agent checks out a build's source files from VCS before starting the build. Could be [set as preferred or forced mode](vcs-checkout-mode.md). Alternative to server-side checkout.
+
 Agent Work Directory
 : A directory on a build agent that contains default checkout directories. By default, it is the same as the Agent Home Directory.
 
@@ -199,6 +202,9 @@ Run configuration policy
 : A policy that allows selecting specific build configurations you want a build agent to run. By default, build agents run all compatible build configurations, and this is not always desirable — in this case, this policy lets you limit the allowed set in each agent's details.
 
 ## S
+
+Server-side checkout
+: A mode when TeamCity checks out a build's source files from VCS to the server machine and, before starting each new build, exports them to the build agent machine. Could be [set as preferred or forced mode](vcs-checkout-mode.md). Alternative to agent-side checkout.
 
 Snapshot dependency
 : A dependency between build configurations that allows assigning multiple builds to the same source revision (commit) so the same project files are used on all the building stages.
