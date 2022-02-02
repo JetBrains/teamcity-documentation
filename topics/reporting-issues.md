@@ -129,16 +129,15 @@ To take a thread dump:
 
 You have several options:
 * To take a server thread dump if the server is run from the console, press __Ctrl\+Break__ (Ctrl\+Pause on some keyboards) in the console window (this will not work for an agent, since its console belongs to the launcher process). If the server is run as a service, try running it from console by logging under the same use as configured in the service and executing `<TeamCity server home>\bin\teamcity-server.bat run` command.
-Another approach is to figure out the process id of the TeamCity server process (it's the topmost "java" process with "org.apache.catalina.startup. Bootstrap  start" at the end og the command line and use of the following approaches:
-* run `jstack <pid_of_java_process>` in the bin directory of the Java installation used to by the process (the Java home can be looked up in the process command line. If the installation does not have jstack utility, you might need to get the java version via java \-version command, download full JDK of the same version and use "jstack" utility form there). You might also need to supply `-F` flag to the command.
-* use TeamCity-bundled agent thread dump tool (can be found in the agent's plugins). Run the command:
-
-```Shell
-
-<TeamCity agent>\plugins\stacktracesPlugin\bin\x86\JetBrains.TeamCity.Injector.exe <pid_of_java_process>
-```
-
-Note that if the hanging process is run as a service, the thread dumping tool must be run from a console with elevated permissions (using Run as Administrator). If the service is run under System account, you might also need to launch the thread dumping tools via [`PsExec.exe`](http://technet.microsoft.com/en-us/sysinternals/bb897553.aspx)` -s <path to the tool>\<tool> <options>`. When the service is run under a regular user, wrapping the tool invocation in ` PsExec.exe -u <user> -p <password> <path to the tool>\<tool> <options>` might also help.
+* Another approach is to figure out the ID of the TeamCity server process (it's the topmost "java" process with "org.apache.catalina.startup. Bootstrap start" at the end of the command line) and use of the following approaches:
+  * Run `jstack <pid_of_java_process>` in the `bin` directory of the Java installation used to by the process (the Java home can be looked up in the process command line. If the installation does not have the `jstack` utility, you might need to get the Java version via the `java -version` command, download full JDK of the same version and use the `jstack` form there). You might also need to supply `-F` flag to the command.
+  * Use TeamCity-bundled agent thread dump tool (can be found in the agent's plugins). Run the command:
+    ```Shell
+    
+    <TeamCity agent>\plugins\stacktracesPlugin\bin\x86\JetBrains.TeamCity.Injector.exe <pid_of_java_process>
+    ```
+    
+    Note that if the hanging process is run as a service, the thread dumping tool must be run from a console with elevated permissions (using Run as Administrator). If the service is run under System account, you might also need to launch the thread dumping tools via [`PsExec.exe`](http://technet.microsoft.com/en-us/sysinternals/bb897553.aspx) `-s <path to the tool>\<tool> <options>`. When the service is run under a regular user, wrapping the tool invocation in `PsExec.exe -u <user> -p <password> <path to the tool>\<tool> <options>` might also help.
 
 If neither of these work for the server running as a service, try [running the server](start-teamcity-server.md) from console and not as a service. This way the first (Ctrl\+Break) option can be used.
 
