@@ -47,7 +47,7 @@ In your JetBrains Space instance:
     1. Go back to the app's __Overview__ and open the __Authentication__ tab.
     2. Enable _Client Credentials Flow_.
        <anchor name="redirect-uri"/>
-    3. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL (`https://<server>:<port>/oauth/space/accessToken.html`) as the redirect URI.
+    3. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter the redirect URI (`https://<server>:<port>/oauth/space/accessToken.html`) of your TeamCity Server.
        >To ensure that your TeamCity server can always connect to JetBrains Space, it is important to specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a [proxy](configuring-proxy-server.md) for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
        >
        {product="tc"}
@@ -108,7 +108,7 @@ TeamCity will show the commits that got into a build on the build's **Overview**
 
 After this basic setup, you can advance the Space integration by following the instructions below, or learn how to [create more sophisticated build configurations](configuring-general-settings.md) and utilize the power of TeamCity to the fullest.
 
-## Building Sources of Merge Requests
+## Building Sources from Merge Requests
 {product="tcc"}
 
 A build's checkout scope usually consists of the following items: the default branch of [VCS root(s)](vcs-root.md) + the project's [branch specification](working-with-feature-branches.md) + [checkout rules](vcs-checkout-rules.md) of the build configuration. By adding the [Pull Request](pull-requests.md) build feature to this build configuration, you can add one more item to this formula — branches of merge requests. This will allow TeamCity to monitor changes in merge requests and run builds on them. The most common use case for this is prebuilding and pretesting sources of feature branches before they are merged into the default branch.
@@ -120,12 +120,13 @@ To add this feature:
 4. Select _JetBrains Space_ as the VCS hosting type and specify the settings as follows:
     * _Connection_: choose the [connection to Space](#Step+2%3A+Establish+Connection+to+JetBrains+Space).
     * _By target branch_: define the [branch filter](branch-filter.md) to monitor merge requests only on branches that match the specified criteria. If left empty, no filters apply.
-   >Note that the scope of branches you define in this feature should not overlap with the branch specification of the VCS root. This measure will ensure that no conflicts occur when starting builds on merge requests.
-   >
-   {type="warning"}
 5. Save the settings.
 
-Now, TeamCity will monitor merge requests submitted from the source branches of your repository. If a build is run on a merge request, TeamCity will display the details of the request and report the build status to the code review in Space.
+>Note that the scope of branches you define in this feature should not overlap with the branch specification of the VCS root. This measure will ensure that no conflicts occur when starting builds on merge requests.
+>
+{type="warning"}
+
+Now, TeamCity will monitor merge requests submitted from the source branches of your repository. If a build is run on a merge request, TeamCity will display the details of the request and report the build status to the code review in Space:
 
 <img src="space-timeline.png" width="460" alt="Reporting build statuses to Space"/>
 
