@@ -1,5 +1,5 @@
-[//]: # (title: How to Configure CI/CD with JetBrains Space)
-[//]: # (auxiliary-id: How to Configure CI/CD with JetBrains Space)
+[//]: # (title: How to Configure CI/CD for JetBrains Space)
+[//]: # (auxiliary-id: How to Configure CI/CD for JetBrains Space)
 
 **[JetBrains Space](https://www.jetbrains.com/space/) is a full-cycle collaboration solution for software development teams. This guide explains how to achieve continuous integration and delivery of JetBrains Space projects by integrating them with TeamCity.**
 
