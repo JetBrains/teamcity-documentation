@@ -33,7 +33,7 @@ To enable the integration, create a connection to Team Foundation Work Items on 
 
 <td>
 
-Option
+Setting
 
 </td>
 

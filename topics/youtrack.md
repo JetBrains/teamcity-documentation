@@ -33,7 +33,7 @@ To enable the integration, create a connection to YouTrack on the __Project Sett
 
 <td>
 
-Option
+Setting
 
 </td>
 
