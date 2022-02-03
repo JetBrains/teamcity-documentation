@@ -369,12 +369,12 @@
                <toc-element id="docker-wrapper.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
             <toc-element id="integrating-teamcity-with-issue-tracker.md" show-structure-for="chapter" show-structure-depth="4">
-               <toc-element id="bitbucket-cloud.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="bugzilla.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="github.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="jira.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="team-foundation-work-items.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="youtrack.md" show-structure-for="chapter" show-structure-depth="4"/>
+               <toc-element id="bitbucket-cloud.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Bitbucket Cloud"/>
+               <toc-element id="bugzilla.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Bugzilla"/>
+               <toc-element id="github.md" show-structure-for="chapter" show-structure-depth="4" toc-title="GitHub"/>
+               <toc-element id="jira.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Jira"/>
+               <toc-element id="team-foundation-work-items.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Team Foundation Work Items"/>
+               <toc-element id="youtrack.md" show-structure-for="chapter" show-structure-depth="4" toc-title="YouTrack"/>
             </toc-element>
             <toc-element id="mapping-external-links-in-comments.md"/>
             <toc-element id="external-changes-viewer.md"/>
