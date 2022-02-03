@@ -1,7 +1,7 @@
 [//]: # (title: Integrating TeamCity with YouTrack)
 [//]: # (auxiliary-id: Integrating TeamCity with YouTrack;YouTrack)
 
-You can integrate TeamCity with [JetBrains YouTrack](https://www.jetbrains.com/youtrack/) to provide links to YouTrack issues from the TeamCity UI.
+You can integrate TeamCity with [JetBrains YouTrack](https://www.jetbrains.com/youtrack/) Standalone or InCloud to provide links to YouTrack issues from the TeamCity UI.
 
 Note that TeamCity does not support the [legacy YouTrack REST API endpoints](https://blog.jetbrains.com/youtrack/2021/02/discontinuing-the-legacy-rest-api-action-required/). See [this issue](https://youtrack.jetbrains.com/issue/TW-69857) for details.
 
