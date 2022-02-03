@@ -21,7 +21,7 @@ To get the maximum benefit from the integration with Team Foundation Work Items,
 * When committing changes to your version control, __always mention the work item ID__ related to the fix in the comment to the commit.
 * Mark fixed work items as _Resolved_ in the issue tracker to display them with the _Fixed_ status in TeamCity logs (the time of resolve does not really matter).
 
-If a project has a [TFVC](team-foundation-server.md) root configured, TeamCity will suggest configuring integration with Team Foundation Work Items as well.
+>If a project has a [TFVC](team-foundation-server.md) root configured, TeamCity will suggest configuring integration with Team Foundation Work Items as well.
 
 ### Configuring Connection to Team Foundation Work Items
 
@@ -124,4 +124,5 @@ Specify a [Java Regular Expression](http://java.sun.com/j2se/1.5.0/docs/api/java
 
 ## Custom Resolved States
 {product="tc"}
-In addition, TeamCity supports custom states for resolved work items. For example, to customize the _resolved_ states, set the `teamcity.tfs.workItems.resolvedStates` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `Closed?|Done|Fixed|Resolved?|Removed?`.
+
+TeamCity supports custom states for work items. For example, to customize the _resolved_ states, set the `teamcity.tfs.workItems.resolvedStates` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `Closed?|Done|Fixed|Resolved?|Removed?`.
