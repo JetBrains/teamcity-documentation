@@ -9,7 +9,7 @@ Integration with TeamCity brings the following advantages to the JetBrains Space
 * Compiling, testing, and deploying projects within the same environment.
 * Building source code of merge requests and merging them automatically after a successful build.
   {product="tcc"}
-* Extensive build overview: diffs and artifacts, detailed test reports on-the-fly, code coverage, inspections, and various other metrics. Statuses of builds and code reviews are cross-shared between systems for easier monitoring.
+* Extensive build overview: diffs and artifacts, detailed test reports on the fly, code coverage, inspections, and various other metrics. Statuses of builds and code reviews are cross-shared between systems for easier monitoring.
 * Flexible pipelines where builds depend on one another and share settings and results.
 * Ability to configure builds as code, in [Kotlin DSL](kotlin-dsl.md).
 * Authentication with a single account in both systems: VCS (JetBrains Space) and CI/CD (TeamCity).
@@ -98,16 +98,20 @@ You will notice the new button: __From JetBrains Space__. Its name depends on th
    >Our sample project contains project settings specified in a TeamCity [Kotlin DSL](kotlin-dsl.md) format. If TeamCity detects them in your repository, it can automatically apply the specification to the new project.
 5. Click __Proceed__.
 
-TeamCity will attempt to [autodetect build steps](configuring-build-steps.md#Autodetecting+build+steps) in your project. You are free to confirm or reject the proposed steps and explore the project settings further.
+TeamCity will attempt to [autodetect build steps](configuring-build-steps.md#Autodetecting+build+steps) in your project. You can confirm or reject the proposed steps and explore the project settings further.
 
 If you create a project from a repository automatically, like we just did, TeamCity automatically adds a [VCS trigger](vcs-root.md). This trigger will be watching your Space repository and run builds on each new commit. You can edit its settings or [add other types of triggers](configuring-build-triggers.md).
+
+TeamCity will show the commits that got into a build on the build's **Overview** tab. Click the Space icon opposite a commit to open its details in JetBrains Space:
+
+<img src="connection-to-space.png" width="460" alt="Create a connection to Space"/>
 
 After this basic setup, you can advance the Space integration by following the instructions below, or learn how to [create more sophisticated build configurations](configuring-general-settings.md) and utilize the power of TeamCity to the fullest.
 
 ## Building Sources of Merge Requests
 {product="tcc"}
 
-A build's checkout scope usually consists of the following items: the default branch of [VCS root(s)](vcs-root.md) + the project's [branch specification](working-with-feature-branches.md) + [checkout rules](vcs-checkout-rules.md) of the build configuration. By adding the [Pull Request](pull-requests.md) build feature to this build configuration, you can add one more item to this formula — branches of merge requests. This will allow TeamCity to monitor changes in merge requests and run builds on them. The most common use case for this is prebuilding and pretesting sources of feature-branches before they are merged into the default branch.
+A build's checkout scope usually consists of the following items: the default branch of [VCS root(s)](vcs-root.md) + the project's [branch specification](working-with-feature-branches.md) + [checkout rules](vcs-checkout-rules.md) of the build configuration. By adding the [Pull Request](pull-requests.md) build feature to this build configuration, you can add one more item to this formula — branches of merge requests. This will allow TeamCity to monitor changes in merge requests and run builds on them. The most common use case for this is prebuilding and pretesting sources of feature branches before they are merged into the default branch.
 
 To add this feature:
 1. Go to __Build Configuration Settings | Build Features__.
