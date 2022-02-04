@@ -16,7 +16,7 @@ Integration with TeamCity brings the following advantages to the JetBrains Space
 
 </td></tr><tr><td></td></tr></table>
 
-![pending.png](pending.png) _The [preliminary setup](#Preliminary+Setup) usually takes up to 10 minutes to complete, granting all the steps are performed with no delay. After it is completed, enabling the components of this integration gets quite straightforward and can be done at any pace._
+This guide consists of the common [preliminary setup](#Preliminary+Setup) and optional procedures for enabling each component of the integration.
 
 ## Prerequisites
 
@@ -104,7 +104,7 @@ If you create a project from a repository automatically, like we just did, TeamC
 
 TeamCity will show the commits that got into a build on the build's **Overview** tab. Click the Space icon opposite a commit to open its details in JetBrains Space:
 
-<img src="connection-to-space.png" width="460" alt="Create a connection to Space"/>
+<img src="space-commit-details.png" width="460" alt="Create a connection to Space"/>
 
 After this basic setup, you can advance the Space integration by following the instructions below, or learn how to [create more sophisticated build configurations](configuring-general-settings.md) and utilize the power of TeamCity to the fullest.
 
@@ -172,3 +172,12 @@ To configure it:
 To sign in to TeamCity, click the JetBrains Space icon above the TeamCity login form and, after the redirect, approve the TeamCity request.
 
 <img src="spaceauth.png" width="296" alt="Sign in to TeamCity with JetBrains Space account"/>
+
+<seealso>
+        <category ref="admin-guide">
+            <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>
+            <a href="configuring-connections.md">Configuring Connections</a>
+            <a href="creating-and-editing-projects.md">Creating and Editing Projects</a>
+            <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
+        </category>
+</seealso>

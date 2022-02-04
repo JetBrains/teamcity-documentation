@@ -306,6 +306,8 @@ Save the connection and proceed with adding a [Notifier](notifications.md#Slack+
 ## JetBrains Space
 {id="connect-to-jetbrains-space" auxiliary-id="Connect to JetBrains Space"}
 
+>If you are looking for how to integrate your JetBrains Space instance with TeamCity, check out this **[full integration guide](how-to-configure-cicd-for-jetbrains-space.md)**!
+
 This type of connection can be used for:
 * Publishing build statuses in [JetBrains Space](https://www.jetbrains.com/space/) with the help of [Commit Status Publisher](commit-status-publisher.md).
 * [Authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account.
@@ -324,7 +326,7 @@ Before configuring this connection, you need to create a dedicated application i
    * Required for Pull Requests:
        * _Code Review | View code reviews_
    
-   You can approve project-level permissions right in this Authorization tab if you are the project's administrator. Global permissions like viewing a member profile require a server administrator's approval.
+   You can approve project-level permissions right in this **Authorization** tab if you are the project's administrator. Global permissions like viewing a member profile require a server administrator's approval.
 5. Go back to the app's __Overview__ and open the __Authentication__ tab.
 6. Enable _Client Credentials Flow_.
 7. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL as the redirect URI.  
@@ -394,3 +396,14 @@ Save the connection and proceed with adding an [NPM Registry Connection](nodejs.
 ## Perforce Administrator Access
 
 This type of connection allows [processing task streams on your Perforce server](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server). In the connection settings, enter the host and user credentials for accessing the Perforce server (the user must have the [admin](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels) permission).
+
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>
+            <a href="creating-and-editing-projects.md">Creating and Editing Projects</a>
+            <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
+        </category>
+        <category ref="examples">
+            <a href="how-to-configure-cicd-for-jetbrains-space.md">How to Configure CI/CD for JetBrains Space</a>
+        </category>
+</seealso>
