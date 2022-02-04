@@ -104,7 +104,7 @@ If you create a project from a repository automatically, like we just did, TeamC
 
 TeamCity will show the commits that got into a build on the build's **Overview** tab. Click the Space icon opposite a commit to open its details in JetBrains Space:
 
-<img src="space-commit-details.png" width="460" alt="Create a connection to Space"/>
+<img src="space-commit-details.png" width="706" alt="Create a connection to Space"/>
 
 After this basic setup, you can advance the Space integration by following the instructions below, or learn how to [create more sophisticated build configurations](configuring-general-settings.md) and utilize the power of TeamCity to the fullest.
 
