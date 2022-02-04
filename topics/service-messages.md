@@ -64,7 +64,7 @@ Service messages support two formats:
 where:
  * `messageName` is the name of the message, such as `flowStarted` or `setParameter`.
  * `propertyName` is a name of the message attribute. Must be a valid Java ID.
- * `value` is a value of the attribute. Must be an [escaped value](#Escaped+values).
+ * `value` is a value of the attribute. Must be an [escaped value](#Escaped+Values).
  * `WSP` is a required whitespace(s): space or tab character (`\t`).
  * `OWSP` is an optional whitespace(s).
  * `...` is any number of `WSPpropertyNameOWSP=OWSP'value'` blocks.
@@ -505,7 +505,7 @@ Reports a specific defect, warning, error message. Includes location, descriptio
 ```
 
 where all the attributes can have either numeric or textual values:
-* `typeId` — (mandatory), reference to the `inspectionType.id` described [above](#Inspection+type) limited by 255 characters.
+* `typeId` — (mandatory), reference to the `inspectionType.id` described [above](#Inspection+Type) limited by 255 characters.
 * `message` — (optional) current instance description limited by 4000 characters.
 * `file` — (mandatory) file path limited by 4000 characters. The path can be absolute or relative to the [checkout directory](build-checkout-directory.md).
 * `line` — (optional) line of the file, integer.
