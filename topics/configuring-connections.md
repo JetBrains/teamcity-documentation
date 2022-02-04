@@ -302,6 +302,8 @@ Save the connection and proceed with adding a [Notifier](notifications.md#Slack+
 ## JetBrains Space
 {id="connect-to-jetbrains-space" auxiliary-id="Connect to JetBrains Space"}
 
+>If you are looking for how to integrate your JetBrains Space instance with TeamCity, check out this **[full integration guide](how-to-configure-cicd-for-jetbrains-space.md)**!
+
 This type of connection can be used for:
 * publishing build statuses in [JetBrains Space](https://www.jetbrains.com/space/) with the help of [Commit Status Publisher](commit-status-publisher.md)
 * [authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account
@@ -385,3 +387,14 @@ Save the connection and proceed with adding an [NPM Registry Connection](nodejs.
 ## Perforce Administrator Access
 
 This type of connection allows [processing task streams on your Perforce server](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server). In the connection settings, enter the host and user credentials for accessing the Perforce server (the user must have the [admin](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels) permission).
+
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>
+            <a href="creating-and-editing-projects.md">Creating and Editing Projects</a>
+            <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
+        </category>
+        <category ref="examples">
+            <a href="how-to-configure-cicd-for-jetbrains-space.md">How to Configure CI/CD for JetBrains Space</a>
+        </category>
+</seealso>
