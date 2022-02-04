@@ -306,6 +306,8 @@ Save the connection and proceed with adding a [Notifier](notifications.md#Slack+
 ## JetBrains Space
 {id="connect-to-jetbrains-space" auxiliary-id="Connect to JetBrains Space"}
 
+>If you are looking for how to integrate your JetBrains Space instance with TeamCity, check out this **[full integration guide](how-to-configure-cicd-for-jetbrains-space.md)**!
+
 This type of connection can be used for:
 * Publishing build statuses in [JetBrains Space](https://www.jetbrains.com/space/) with the help of [Commit Status Publisher](commit-status-publisher.md).
 * [Authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account.
@@ -331,7 +333,7 @@ Before configuring this connection, you need to create a dedicated application i
    To ensure that your TeamCity server can always connect to JetBrains Space, specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
 8. Copy the app's _Client ID_ and _Client secret_.
 
-__Note__: When you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you (or the user who created the application in Step 1) are listed as a member.
+__Note__: When you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you are listed as a member.
 
 Now you can return to TeamCity, add a new JetBrains Space connection, and enter the following connection parameters:
 * URL of the Space server
@@ -394,3 +396,14 @@ Save the connection and proceed with adding an [NPM Registry Connection](nodejs.
 ## Perforce Administrator Access
 
 This type of connection allows [processing task streams on your Perforce server](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server). In the connection settings, enter the host and user credentials for accessing the Perforce server (the user must have the [admin](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels) permission).
+
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>
+            <a href="creating-and-editing-projects.md">Creating and Editing Projects</a>
+            <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
+        </category>
+        <category ref="examples">
+            <a href="how-to-configure-cicd-for-jetbrains-space.md">How to Configure CI/CD for JetBrains Space</a>
+        </category>
+</seealso>

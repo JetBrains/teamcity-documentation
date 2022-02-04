@@ -9,7 +9,7 @@ You can use [service messages](service-messages.md) to report this kind of addit
 
 Additional test data is reported using the `testMetadata` service message, with the following attributes:
 * `name` (optional) is a name of the metadata item, used to distinguish different metadata items for the same test and to show this item in the UI. When omitted, TeamCity autogenerates the name, but does not show it in UI.
-* `testName` (optional) is the name of the test for which this metadata is generated. If the service message is reported in the middle of the test or immediately after its finish, the `testName` attribute can be skipped. If the metadata is reported later, it should contain the full test name, including suites and packages in the following format: `<suiteName>: <packageName>.<testName>` (read more about [interpreting test names](service-messages.md#Interpreting+test+names)).
+* `testName` (optional) is the name of the test for which this metadata is generated. If the service message is reported in the middle of the test or immediately after its finish, the `testName` attribute can be skipped. If the metadata is reported later, it should contain the full test name, including suites and packages in the following format: `<suiteName>: <packageName>.<testName>` (read more about [interpreting test names](service-messages.md#Interpreting+Test+Names)).
 * `value` (mandatory) contains the metadata value associated with the test. The max value length is 1024.
 * `type` (optional) defaults to text unless otherwise specified. The type affects how metadata is stored and how its value is shown in the TeamCity UI.
 

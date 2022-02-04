@@ -1,7 +1,7 @@
 [//]: # (title: Working with Feature Branches)
 [//]: # (auxiliary-id: Working with Feature Branches)
 
-_Feature branches_ in distributed version control systems (DVCS) allow you to work on a feature independently from the main development and commit all the changes for the feature onto the branch, merging the changes into the main branch when your feature is complete. This approach brings a number of advantages to software development teams; however, in continuous integration servers that do not have dedicated support for it, it also causes a number of problems, like constant build configurations duplication, poor visibility, and, in the end, loss of control over the process.
+_Feature branches_ in distributed version control systems (DVCS) allow you to work on a feature independently of the main development and commit all the changes for the feature onto the branch, merging the changes into the main branch when your feature is complete. This approach brings a number of advantages to software development teams; however, in continuous integration servers that do not have dedicated support for it, it also causes a number of problems, like constant build configurations duplication, poor visibility, and, in the end, loss of control over the process.
 
 TeamCity support for feature branches is continuously increasing and, among other features, includes [Branch Remote Run Trigger](branch-remote-run-trigger.md) starting a new personal build each time TeamCity detects changes in a particular branches of the VCS roots of the build configuration and [Automatic Merge](automatic-merge.md) to merge a branch into another after a successful build.
 
@@ -70,7 +70,7 @@ There is also a special escaping syntax defined via `#! escape: CHARACTER` synta
 +:release-\(7.1\)
 ```
 
->To run builds on GitHub pull request branches, use the [Pull Requests](pull-requests.md) build feature.
+>To run builds on GitHub and GitLab pull request branches, use the [Pull Requests](pull-requests.md) build feature.
 
 ## Default Branch
 
@@ -165,7 +165,7 @@ Additionally, a [branch filter](branch-filter.md) is available on the test detai
 
 ## Failure Conditions
 
-If a build failure condition is configured as follows:  _build metric has changed comparing to a last successful/finished/pinned build_, then the build from the same branch will be used. If there is no suitable build on the same branch, then build from default branch is used and the corresponding message is added to the build log.
+If a [build failure condition](build-failure-conditions.md) is configured as follows: _build metric has changed comparing to a last successful/finished/pinned build_, then the build from the same branch will be used. If there is no suitable build on the same branch, then the build from the default branch is used and the corresponding message is added to the build log. However, if the default branch is disabled, TeamCity will not be able to a
 
 ## Triggers
 

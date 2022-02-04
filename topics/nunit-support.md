@@ -1032,10 +1032,6 @@ The MSBuild property `TEAMCITY_VERSION` is added to MSBuild when started from Te
 
 Starting from version 3.0, NUnit supports TeamCity natively, so there is no need to use a special task for MSBuild as it was done for the [earlier NUnit versions](#Working+with+NUnit+Task+in+MSBuild+Build). The simplest way is to run the NUnit console via the standard [Exec task](https://msdn.microsoft.com/en-us/library/x8zx72cd.aspx).
 
->The MSBuild runner option "_[Reduce test failure feedback time](msbuild.md#General+Build+Runner+Options)_" __will not work__ out of the box in this case. To use this feature, configure the [NUnit](nunit.md) build step.
->
-{type="note"}
-
 The [Getting Started with NUnit](getting-started-with-nunit.md) article contains details and examples.
 
 ### MSBuild Service Tasks

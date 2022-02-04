@@ -41,16 +41,23 @@ To enable the integration, create a connection to Jira on the __Project Settings
 
 <tr>
 
-<td></td>
-<td></td>
+<td>
 
-</tr>
+Setting
+
+</td>
+
+<td>
+
+Description
+
+</td></tr>
 
 <tr>
 
 <td>
 
-__Connection Type__
+Connection Type
 
 </td>
 
@@ -62,7 +69,7 @@ Select __Jira__ from the list.
 
 <td>
 
-__Display Name__
+Display Name
 
 </td>
 
@@ -74,7 +81,7 @@ Specify the connection name to distinguish it from the other connections.
 
 <td>
 
-__Server URL__
+Server URL
 
 </td>
 
@@ -86,7 +93,7 @@ Enter the base URL of your Jira instance or server. For Jira Cloud, it is a URL 
 
 <td>
 
-__Login__
+Login
 
 </td>
 
@@ -98,7 +105,7 @@ A username for self-managed Jira (specified in the Jira user profile) or email f
 
 <td>
 
-__Password / API Token__
+Password / API Token
 
 </td>
 
@@ -110,7 +117,7 @@ A password for self-managed Jira or [API token](https://developer.atlassian.com/
 
 <td>
 
-__Project Keys__
+Project Keys
 
 </td>
 

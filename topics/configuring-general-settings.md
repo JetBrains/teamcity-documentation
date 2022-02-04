@@ -106,7 +106,7 @@ Select when to publish artifacts:
 * "_Only if build status is successful_": publish artifacts at the last step of a build if all previous steps have been completed successfully. TeamCity checks the current build status on the server before publishing artifacts.
 * "_Always, even if build stop command was issued_": publish artifacts for all builds, even for interrupted ones (for example, after the `stop` command was issued or after the time-out, specified in the build failure conditions).
 
-This setting does not affect artifacts publishing configured in a [build script](service-messages.md#Publishing+Artifacts+while+the+Build+is+Still+in+Progress).
+This setting does not affect artifacts publishing configured in a [build script](service-messages.md#Publishing+Artifacts+While+Build+is+in+Progress).
 
 <note>
 

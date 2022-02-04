@@ -26,7 +26,7 @@ In case of the built-in storage, TeamCity keeps artifacts on the disk in a direc
 You can [configure an external artifacts](configuring-artifacts-storage.md#External+Artifacts+Storage) storage to replace the built-in one.
 {product="tc"}
 
-Build artifacts can also be uploaded to the server while the build is still running. To instruct TeamCity to upload the artifacts, the build script should be modified to send [service messages](service-messages.md#Publishing+Artifacts+while+the+Build+is+Still+in+Progress).
+Build artifacts can also be uploaded to the server while the build is still running. To instruct TeamCity to upload the artifacts, the build script should be modified to send [service messages](service-messages.md#Publishing+Artifacts+While+Build+is+in+Progress).
 
 You can automate artifacts downloading via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Get+Build+Artifacts).
 

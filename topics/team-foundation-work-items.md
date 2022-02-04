@@ -1,27 +1,39 @@
 [//]: # (title: Integrating TeamCity with Team Foundation Work Items)
 [//]: # (auxiliary-id: Integrating TeamCity with Team Foundation Work Items;Team Foundation Work Items)
 
->In 2019, Team Foundation Server has been renamed to Azure DevOps Server. The content of this page is applicable to Azure DevOps Server.
+>In 2019, Team Foundation Server (TFS) has been renamed to [Azure DevOps Server](https://azure.microsoft.com/en-us/services/devops/server/). The content of this page is applicable to Azure DevOps Server.
 >
 {type="note"}
 
-Team Foundation Work Items tracking is integrated with TeamCity. Supported versions are Microsoft Visual Studio Team Foundation Server 2012 or later, and Azure DevOps Services.
+You can integrate TeamCity with Team Foundation Work Items to provide links to [work items](https://docs.microsoft.com/en-us/azure/devops/boards/work-items/about-work-items?view=azure-devops&tabs=agile-process) from the TeamCity UI. TeamCity supports Azure DevOps Server (previously named Team Foundation Server — versions 2012 or later), and Azure DevOps Services.
 
-TFS work items support can be configured on the [Issue Trackers](integrating-teamcity-with-issue-tracker.md) page for a project. If a project has a [TFVC](team-foundation-server.md) root configured, TeamCity will suggest configuring the issue tracker as well.
+## Displaying Links to Work Items in TeamCity UI
 
-## Integration
+When integration with Team Foundation Work Items is enabled, TeamCity automatically detects work item IDs mentioned in the comments of VCS commits. It transforms these IDs into links to the corresponding work items and displays them to TeamCity users in the UI: 
 
-By default, the integration works the same way as the other issue tracker integrations: you need to mention the work item ID in the comment message, so the work items can be linked to builds and the links will be displayed in various places in the TeamCity web UI. 
+* To see the basic details of a work item in the TeamCity UI, open the __[Changes](working-with-build-results.md#Changes)__ tab of the related build’s results and hover over the icon next to the work item ID.
+* Work items fixed in the build can be viewed on the __[Issues](working-with-build-results.md#Related+Issues)__ tab of the build results.
+* To view work items related to a whole build configuration (not only to individual builds), use the __Issue Log__ tab of the __Build Configuration Home__ page. You can filter the list to a particular range of builds and/or enable the _Show only resolved issues_ option to display only issues fixed in the builds.
 
-Additionally, if your changeset has related work items, TeamCity can retrieve information about them and display information on the __Issue Log__ tab even if no comment is added to the changeset. Besides, custom states for resolved work items are supported by TeamCity.
+Additionally, if your changeset has related work items, TeamCity can retrieve information about them and display information in the UI even if no comment is added to the changeset.
 
-## Settings
+To get the maximum benefit from the integration with Team Foundation Work Items, follow these recommendations:
+* When committing changes to your version control, __always mention the work item ID__ related to the fix in the comment to the commit.
+* Mark fixed work items as _Resolved_ in the issue tracker to display them with the _Fixed_ status in TeamCity logs (the time of resolve does not really matter).
+
+>If a project has a [TFVC](team-foundation-server.md) root configured, TeamCity will suggest configuring integration with Team Foundation Work Items as well.
+
+### Configuring Connection to Team Foundation Work Items
+
+>Enabling TeamCity integration with Team Foundation Work Items requires Project Administrator permissions as it is configured at a project level. Note that enabling integration for a project enables it for all its subprojects as well. If the settings are different in a subproject, they have priority over the parent project's settings.
+
+To enable the integration, create a connection to Team Foundation Work Items on the __Project Settings | Issue Trackers__ page and specify the following settings:
 
 <table><tr>
 
 <td>
 
-Option
+Setting
 
 </td>
 
@@ -33,13 +45,25 @@ Description
 
 <td>
 
+Connection Type
+
+</td>
+
+<td>
+
+Select __Team Foundation Work Items__ from the list.
+
+</td></tr><tr>
+
+<td>
+
 Display Name
 
 </td>
 
 <td>
 
-Specify the tracker connection name
+Specify the connection name to distinguish it from the other connections.
 
 </td></tr><tr>
 
@@ -52,11 +76,11 @@ Server URL
 <td>
 
 
-Team Foundation Server URL in the following format:
+Enter Team Foundation Server URL in the following format:
 
-__TFS 2010\+__: `http[s]://<host>:<port>/tfs/<collection>/<project>`
+__TFS__: `http[s]://<host>:<port>/tfs/<collection>/<project>`
 
-__Azure DevOps Services__: `https://<account>.visualstudio.com/<project>`
+__Azure DevOps__: `https://dev.azure.com/<organization>/<project>`
 
 </td></tr><tr>
 
@@ -70,7 +94,7 @@ Username
 
 
 Specify a user to access Team Foundation Server. This can be a username or `DOMAIN\UserName` string.   
-Use blank to let TFS select a user account that is used to run the TeamCity Server. For VSTS use [personal access tokens](team-foundation-server.md#teamFoundationServerLive).
+Leave empty to let TFS select a user account that is used to run the TeamCity Server. For Azure DevOps, use [personal access tokens](team-foundation-server.md#teamFoundationServerLive).
 
 </td></tr><tr>
 
@@ -82,7 +106,7 @@ Password
 
 <td>
 
-Enter the password of the user entered above
+Enter the password for the user entered above.
 
 </td></tr><tr>
 
@@ -94,13 +118,11 @@ Pattern
 
 <td>
 
-Specify the work item id format in changeset comments in the form of regexp.
+Specify a [Java Regular Expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to recognize a work item ID in the comment text. The matched text (or the first group if there are groups defined) is used as the work item number. The most common case is `#(\d+)` — this will extract `1234` as the work item ID from the text `Fix for #1234`.
 
 </td></tr></table>
-
-[Learn more](team-foundation-server.md#teamFoundationServerLive) about authentication in Azure DevOps Services.
 
 ## Custom Resolved States
 {product="tc"}
 
-In addition, resolved states in TeamCity can be customized by using the `teamcity.tfs.workItems.resolvedStates` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) set to `Closed?|Done|Fixed|Resolved?|Removed?` by default.
+TeamCity supports custom states for work items. For example, to customize the _resolved_ states, set the `teamcity.tfs.workItems.resolvedStates` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `Closed?|Done|Fixed|Resolved?|Removed?`.

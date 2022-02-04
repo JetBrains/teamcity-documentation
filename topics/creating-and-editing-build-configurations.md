@@ -138,4 +138,7 @@ Use the __Actions__ menu, located in the upper right corner of the settings scre
             <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
             <a href="configuring-vcs-settings.md">Configuring VCS Settings</a>
         </category>
+        <category ref="examples">
+            <a href="how-to-configure-cicd-for-jetbrains-space.md">How to Configure CI/CD for JetBrains Space</a>
+        </category>
 </seealso>

@@ -93,7 +93,7 @@ If you need to reference an environment variable on an agent, define the configu
 
 Technically, the command of the build runner is wrapped in a shell script, and this script is executed inside a Docker container with the `docker run` command. All the details about the started process, text of the script, and so on, are written into the build log (the [Verbose mode](build-log.md#Viewing+Build+Log) enables viewing them).
 
-The [build checkout directory](build-checkout-directory.md) and most build agent directories are mapped inside the Docker process.
+The Docker wrapper maps paths to the [build checkout directory](build-checkout-directory.md) and other agent directories like <path>[buildAgent/work](agent-work-directory.md)</path>, so that all these directories have the same location on a build agent and inside a Docker wrapper.
 
 If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment variable set by the previous [Docker Compose](docker-compose.md) build step, this network is passed to the started `docker run` command with the `--network` switch.
                                      
