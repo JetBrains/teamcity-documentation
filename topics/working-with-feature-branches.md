@@ -70,7 +70,7 @@ There is also a special escaping syntax defined via `#! escape: CHARACTER` synta
 +:release-\(7.1\)
 ```
 
->To run builds on GitHub pull request branches, use the [Pull Requests](pull-requests.md) build feature.
+>To run builds on GitHub and GitLab pull request branches, use the [Pull Requests](pull-requests.md) build feature.
 
 ## Default Branch
 
