@@ -98,7 +98,7 @@ You will notice the new button: __From JetBrains Space__. Its name depends on th
    >Our sample project contains project settings specified in a TeamCity [Kotlin DSL](kotlin-dsl.md) format. If TeamCity detects them in your repository, it can automatically apply the specification to the new project.
 5. Click __Proceed__.
 
-TeamCity will attempt to [autodetect build steps](configuring-build-steps.md#Autodetecting+build+steps) in your project. You can confirm or reject the proposed steps and explore the project settings further.
+TeamCity will attempt to [autodetect build steps](configuring-build-steps.md#Autodetecting+Build+Steps) in your project. You can confirm or reject the proposed steps and explore the project settings further.
 
 If you create a project from a repository automatically, like we just did, TeamCity automatically adds a [VCS trigger](vcs-root.md). This trigger will be watching your Space repository and run builds on each new commit. You can edit its settings or [add other types of triggers](configuring-build-triggers.md).
 

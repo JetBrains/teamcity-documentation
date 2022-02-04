@@ -15,7 +15,7 @@ You can download a full build log in the textual form or as a `.zip` archive  fr
 
 ## Customizing Log Output
 
-You can modify the log output using [service messages](service-messages.md#Reporting+Messages+for+Build+Log). This includes grouping the log entries in blocks, handling parallel message flows, changing the severity of a log message, and so on.
+You can modify the log output using [service messages](service-messages.md#Reporting+Messages+to+Build+Log). This includes grouping the log entries in blocks, handling parallel message flows, changing the severity of a log message, and so on.
 
 <anchor name="BuildLog-LargeBuildLogsInspection"/>
 
