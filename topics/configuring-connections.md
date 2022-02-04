@@ -326,7 +326,7 @@ Before configuring this connection, you need to create a dedicated application i
    * Required for Pull Requests:
        * _Code Review | View code reviews_
    
-   You can approve project-level permissions right in this Authorization tab if you are the project's administrator. Global permissions like viewing a member profile require a server administrator's approval.
+   You can approve project-level permissions right in this **Authorization** tab if you are the project's administrator. Global permissions like viewing a member profile require a server administrator's approval.
 5. Go back to the app's __Overview__ and open the __Authentication__ tab.
 6. Enable _Client Credentials Flow_.
 7. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL as the redirect URI.  

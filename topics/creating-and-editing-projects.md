@@ -153,6 +153,8 @@ If no steps found, you will have to [configure build steps manually](configuring
 
 ### Creating project pointing to JetBrains Space
 
+>If you are looking for how to integrate your JetBrains Space instance with TeamCity, check out this **[full integration guide](how-to-configure-cicd-for-jetbrains-space.md)**!
+
 Before creating a project from a JetBrains Space, you need to configure a [dedicated connection to your Space instance](configuring-connections.md#connect-to-jetbrains-space).
 
 1. On the __Create project__ page, select to create a project __from JetBrains Space__. The first time, you will be prompted to sign in to Space and grant TeamCity access to view your user profile and projects. To be able to do this, TeamCity will create a service token for authenticating in your Space instance.

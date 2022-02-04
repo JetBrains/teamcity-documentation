@@ -514,9 +514,10 @@ Specify a project URL for synchronization with the remote Azure DevOps server. T
 
 ### JetBrains Space Merge Requests
 
+>If you are looking for how to integrate your JetBrains Space instance with TeamCity, check out this **[full integration guide](how-to-configure-cicd-for-jetbrains-space.md)**!
+
 This feature monitors merge requests directly in the source branches of an origin repository.  
 If more than one merge request is submitted from the same source branch, TeamCity will display all these requests in the build results. However, only commits from the open requests matching the filtering criteria will be displayed as [Changes](working-with-build-results.md#Changes) of the build.
-
 
 The following parameters are available for the [JetBrains Space](https://www.jetbrains.com/space/) hosting type:
 
@@ -569,10 +570,10 @@ If you want to run several parallel builds to pretest a request before merging i
 3. Add the _Pull Requests_ feature to each build configuration of the chain so that all builds can detect changes in a merge request branch. You can preconfigure all settings in a [build configuration template](build-configuration-template.md) and then create these build configurations based on it.
 4. In the composite build configuration settings:
    * Add a [VCS trigger](configuring-vcs-triggers.md) to automatically run builds on changes detected in the merge request branch.
-   * Add the [Commit Status Publisher](commit-status-publisher.md#JetBrains+Space) feature to send the build statuses to the merge requiest timeline in JetBrains Space.  
+   * Add the [Commit Status Publisher](commit-status-publisher.md#JetBrains+Space) feature to send the build statuses to the commit details in JetBrains Space.  
    If you want other builds of the chain to report their statuses to JetBrains Space (for example, _deployment_ or _integration testing_ builds), add the _Commit Status Publisher_ feature to the corresponding build configurations.     
 
-After that, TeamCity will automatically run builds on changes in a merge request branch submitted to your JetBrains Space repo and publish build statuses to the _Commits_ tab and the merge request timeline in Space:
+After that, TeamCity will automatically run builds on changes in a merge request branch submitted to your JetBrains Space repo and publish build statuses to the merge request timeline in Space:
 
 <img src="space-timeline.png" alt="Space merge request timeline" width="700"/>
 
@@ -644,5 +645,8 @@ You can automate your setup further, so TeamCity:
 <seealso>
         <category ref="blog">
             <a href="https://blog.jetbrains.com/teamcity/2019/08/building-github-pull-requests-with-teamcity/">Building GitHub pull requests with TeamCity</a>
+        </category>
+        <category ref="examples">
+            <a href="how-to-configure-cicd-for-jetbrains-space.md">How to Configure CI/CD for JetBrains Space</a>
         </category>
 </seealso>
