@@ -147,7 +147,7 @@
                         <toc-element id="perforce-streams-as-feature-branches.md" show-structure-for="chapter" show-structure-depth="4"/>
                     </toc-element>
                     <toc-element id="subversion.md" show-structure-for="chapter" show-structure-depth="4"/>
-                    <toc-element id="team-foundation-server.md" show-structure-for="chapter" show-structure-depth="4"/>
+                    <toc-element id="azure-devops-server.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="azure-devops-server"/>
                     <toc-element id="configuring-vcs-post-commit-hooks-for-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
                 </toc-element>
                 <toc-element id="working-with-feature-branches.md" show-structure-for="chapter" show-structure-depth="4">
@@ -312,7 +312,7 @@
                 <toc-element id="bugzilla.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Bugzilla"/>
                 <toc-element id="github.md" show-structure-for="chapter" show-structure-depth="4" toc-title="GitHub"/>
                 <toc-element id="jira.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Jira"/>
-                <toc-element id="team-foundation-work-items.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Team Foundation Work Items"/>
+                <toc-element id="azure-board-work-items.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Team Foundation Work Items"/>
                 <toc-element id="youtrack.md" show-structure-for="chapter" show-structure-depth="4" toc-title="YouTrack"/>
             </toc-element>
         </toc-element>

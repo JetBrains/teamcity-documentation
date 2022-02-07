@@ -248,9 +248,7 @@ For all available options to connect to GitHub, see the [comment](http://youtrac
 
 ## Authenticating to Azure DevOps Services
 
-If you use Git source control with Azure DevOps Services, the following options are available to you:
-
-<include src="team-foundation-server.md" include-id="azure-authentication"/>
+If you use Git source control with Azure DevOps Services, see the available options [here](azure-devops-server.md#Authentication+in+Azure+DevOps).
 
 ## Server Settings
 
