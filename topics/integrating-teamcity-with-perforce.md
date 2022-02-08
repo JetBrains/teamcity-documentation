@@ -3,6 +3,7 @@
 
 This article describes how to integrate TeamCity with [Perforce Helix Core](https://www.perforce.com/products/helix-core) to:
 
+* Build sources of projects stores in a Helix Core repository.
 * 
 
 ## Prerequisites
@@ -79,9 +80,9 @@ Comment
 
 To see the compatibility matrix for earlier versions, refer to [this page](https://www.jetbrains.com/help/teamcity/2021.1/perforce-helix-core-compatibility.html).
 
-## Run Builds on Perforce Sources
+## Run Builds on Perforce Helix Core Sources
 
-To be able to run builds on project sources stored in Perforce Helix Core, you need to perform two steps:
+To be able to run builds on project sources stored in Perforce Helix Core, you need to perform two procedures:
 1. Create a dedicated project in TeamCity:
    1. Go to __Administration | Projects__ and click __Create project__.  
       Note that this will add the project right under the _Root project_. Alternatively, you can add it under any other existing project.
@@ -95,22 +96,20 @@ To be able to run builds on project sources stored in Perforce Helix Core, you n
 
 After the project and Perforce root are configured, you can proceed with [adding build configurations](creating-and-editing-build-configurations.md) and running builds.
 
-## Perforce Jobs Support
+## View Build Details
 
-For a changelist which was checked in with one or several associated jobs, TeamCity shows a wrench icon ![wrench.png](wrench.png) which allows you to view details of the jobs when clicked or hovered over.
+### View Perforce Jobs
 
-## Logging
+If a build contains a changelist that is associated with one or more [jobs](https://www.perforce.com/manuals/p4guide/Content/P4Guide/chapter.jobs.html), TeamCity will show a wrench icon ![wrench.png](wrench.png) next to this change in the build results. Click or hover it to view the details of the relevant jobs.
 
-All Perforce plugin operations are logged into `teamcity-vcs.log` files with category `jetbrains.buildServer.VCS.P4` (on an agent or on a server, depending on the operation context). The detailed logging can be enabled with [TeamCity Server Logs](teamcity-server-logs.md).
+## Perforce Logs
 {product="tc"}
 
-All Perforce plugin operations are logged into `teamcity-vcs.log` files with category `jetbrains.buildServer.VCS.P4` (on an agent or on a server, depending on the operation context).
-{product="tcc"}
+All operations of the Perforce plugin are logged in to the `teamcity-vcs.log` files with the category `jetbrains.buildServer.VCS.P4` (on an agent or on a server, depending on the operation mode). The detailed logging can be enabled with [TeamCity Server Logs](teamcity-server-logs.md).
 
 ## Perforce Workspace Handling in TeamCity
 
 Refer to a [separate page](perforce-workspace-handling-in-teamcity.md).
-
 
 ## Perforce Streams as feature branches
 
