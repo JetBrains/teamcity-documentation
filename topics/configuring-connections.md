@@ -40,7 +40,7 @@ To activate the Azure DevOps Services authentication on your server, proceed to 
 
 #### Azure DevOps PAT Connection
 
-This type of connection uses personal access tokens. It allows creating a [project from a Git or TFVC repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), creating a [TFS VCS root](team-foundation-server.md), or integrating with the [Team Foundation Work Items](team-foundation-work-items.md) tracker.
+This type of connection uses personal access tokens. It allows creating a [project from a Git or TFVC repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), creating an [Azure DevOps VCS root](azure-devops.md), or integrating with the [Azure Board Work Items](azure-board-work-items.md) tracker.
 
 To configure an Azure DevOps PAT connection:
 1. In __Project Administration | Connections__, click __Add Connection__.
@@ -48,10 +48,10 @@ To configure an Azure DevOps PAT connection:
    The page that opens provides the parameters to be used when connecting TeamCity to Azure DevOps Services.
 3. Log in to your Azure DevOps Services account to create a personal access token with _All scopes_ as described in the [Microsoft documentation](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
 4. Continue configuring the connection in TeamCity: on the __Add Connection__ page that is open, specify
-   * the server URL in the `https://{account}.visualstudio.com` format or your Team Foundation Server web portal as `https://{server}:8080/tfs/`
+   * the server URL in the `https://{account}.visualstudio.com` format or your Azure DevOps Server as `https://{server}:8080/tfs/`
    * your personal access token
 5. Save the connection settings.
-6. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [TFS](team-foundation-server.md) VCS root, create [Team Foundation Work Items](team-foundation-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all the resources that are available to you.   
+6. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Azure DevOps Server](azure-devops.md) VCS root, create [Azure Board Work Items](azure-board-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all the resources that are available to you.   
    When configuring Commit Status Publisher for Git repositories hosted in TFS/VSTS, the personal access token can be filled out automatically if a VSTS project connection is configured.
 
 >It is possible to configure several VSTS connections. In this case, the server URL will be displayed next to the VSTS icon to distinguish the server in use.

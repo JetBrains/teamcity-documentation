@@ -10,9 +10,7 @@ TeamCity support for feature branches is continuously increasing and, among othe
 [Git](git.md) and [Mercurial](mercurial.md) feature branches are supported as well as Perforce [branch streams support](perforce.md#branch-support).
 
 <anchor name="branchSpec"/>
-
 <anchor name="Working+with+Feature+Branches#WorkingwithFeatureBranches-branchSpec"/>
-
 <anchor name="WorkingwithFeatureBranches-branchSpec"/>
 
 ## Configuring Branches
@@ -165,7 +163,7 @@ Additionally, a [branch filter](branch-filter.md) is available on the test detai
 
 ## Failure Conditions
 
-If a [build failure condition](build-failure-conditions.md) is configured as follows: _build metric has changed comparing to a last successful/finished/pinned build_, then the build from the same branch will be used. If there is no suitable build on the same branch, then the build from the default branch is used and the corresponding message is added to the build log. However, if the default branch is disabled, TeamCity will not be able to a
+If a [build failure condition](build-failure-conditions.md) is configured as follows: _build metric has changed comparing to a last successful/finished/pinned build_, TeamCity will try to compare the current build with the build from the same branch. If there is no suitable build in the same branch, it will use the build from the default branch and add the respective message to the build log. Note that currently, if the default branch is disabled by the [branch filter](branch-filter.md), TeamCity will not be able to process the build failure condition properly (see the related issue [TW-74884](https://youtrack.jetbrains.com/issue/TW-74884)).
 
 ## Triggers
 
