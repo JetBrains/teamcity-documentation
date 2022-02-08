@@ -210,7 +210,7 @@ Specify a valid __username__ (if there is no username in the clone URL; the user
 For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](http://youtrack.jetbrains.com/issue/TW-18711).    
 For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
 
-You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, and Bitbucket. When connecting to Azure DevOps, remember to set the _Code_ [access scope](#Required+Access+Scope) to _Code (read) / Code (read and write) for versioned settings_ in the repositories you are about to access from TeamCity.
+You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, and Bitbucket. When connecting to Azure DevOps, remember to set the _Code_ access scope to _Code (read) / Code (read and write) for versioned settings_ in the repositories you are about to access from TeamCity.
 
 >Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
 >We highly recommend that you use an access token or SSH key instead of password when configuring a VCS root for a GitHub.com repository.

@@ -153,7 +153,7 @@ When connecting to a TFVC repository, leave the _Username_ field in the VCS root
 
 You can create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account.
 
-Set the _Code_ [access scope](#Required+Access+Scope) to _All scopes_ in the repositories you are about to access from TeamCity.
+Set the _Code_ access scope to _All scopes_ in the repositories you are about to access from TeamCity.
 
 ### Alternate Authentication Credentials
 

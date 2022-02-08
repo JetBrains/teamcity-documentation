@@ -99,7 +99,7 @@ Password
 
 Enter the password for the user entered above.
 
-To authenticate via access token instead of password, leave the _Username_ field empty and enter your access token as _Password_. You can create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account. Set the _Code_ [access scope](#Required+Access+Scope) to _Work Items (read, write, and manage)_ in the repositories you are about to access from TeamCity.
+To authenticate via access token instead of password, leave the _Username_ field empty and enter your access token as _Password_. You can create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account. Set the _Code_ access scope to _Work Items (read, write, and manage)_ in the repositories you are about to access from TeamCity.
 
 </td></tr><tr>
 
