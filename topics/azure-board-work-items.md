@@ -71,8 +71,8 @@ Server URL
 <td>
 
 Enter Azure DevOps Server URL in the following format:
-* __Azure DevOps__: `https://dev.azure.com/<organization>/<project>`
-* __TFS__: `http[s]://<host>:<port>/tfs/<collection>/<project>`
+* __Azure DevOps Services__: `https://dev.azure.com/<organization>/<project>`
+* __Azure DevOps Server__: `http[s]://<host>:<port>/tfs/<collection>/<project>`
 
 </td></tr><tr>
 
@@ -85,7 +85,7 @@ Username
 <td>
 
 Specify a user to access the Azure DevOps Server. This can be a username or `DOMAIN\UserName` string.   
-Leave empty to let Azure DevOps select a user account that is used to run the TeamCity Server. Consider using [personal access tokens](azure-devops-server.md#teamFoundationServerLive).
+Leave empty to let Azure DevOps select a user account that is used to run the TeamCity Server.
 
 </td></tr><tr>
 
@@ -98,6 +98,8 @@ Password
 <td>
 
 Enter the password for the user entered above.
+
+To authenticate via access token instead of password, leave the _Username_ field empty and enter your access token as _Password_. You can create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account. Set the _Code_ [access scope](#Required+Access+Scope) to _Work Items (read, write, and manage)_ in the repositories you are about to access from TeamCity.
 
 </td></tr><tr>
 

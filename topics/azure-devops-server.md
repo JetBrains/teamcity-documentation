@@ -1,13 +1,11 @@
 [//]: # (title: Azure DevOps Server)
 [//]: # (auxiliary-id: Azure DevOps Server;Team Foundation Server)
 
-TeamCity can connect to repositories in a version control system of Microsoft Azure DevOps Server (formerly, Team Foundation Server), or Azure DevOps Services. It supports both Git and TFVC types of repository.
+TeamCity can connect to repositories in a version control system of Microsoft Azure DevOps Server (formerly, Team Foundation Server), or Azure DevOps Services.
 
 This article contains descriptions of the fields and options available when setting up an Azure DevOps Server [VCS root](vcs-root.md) type. Common VCS root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
-When connecting to an Azure DevOps Git repository, select [Git](git.md) as _Type of VCS_. 
-
->If you have an Azure DevOps Server root configured, TeamCity will suggest configuring the [Azure Board Work Items](azure-board-work-items.md) as well.
+__This type of root allows connecting to TFVC repositories only. When connecting to an Azure DevOps Git repository, select the [Git](git.md) type__.
 
 ## Cross-Platform Azure DevOps Integration
 
@@ -49,9 +47,9 @@ URL
 <td>
 
 The Server URL in the following format:
-* Azure DevOps: `https://dev.azure.com/<organization>`
+* Azure DevOps Services: `https://dev.azure.com/<organization>`
+* Azure DevOps Server: `http[s]://<host>:<port>/tfs/<collection>`
 * VSTS: `https://<accountname>.visualstudio.com`
-* TFS 2010+: `http[s]://<host>:<port>/tfs/<collection>`
 * TFS 2005/2008: `http[s]://<host>:<port>`
 
 </td></tr><tr>
@@ -151,109 +149,11 @@ The following authentication options are available in Azure DevOps.
 
 ### Personal Access Tokens
 
-To use access tokens, you need to create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account, where you have to set some _Code_ [access scope](#Required+Access+Scope) in your repositories and use it when configuring a VCS root.
+When connecting to a TFVC repository, leave the _Username_ field in the VCS root settings empty and specify your access token as _Password_.
 
-<table><tr>
+You can create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account.
 
-<td>
-
-Setting
-
-</td>
-
-<td>
-
-Description
-
-</td></tr><tr>
-
-<td>
-
-Username
-
-</td>
-
-<td>
-
-Leave empty for TFVC. Enter a value for Git.
-
-</td></tr><tr>
-
-<td>
-
-Password
-
-</td>
-
-<td>
-
-Enter your personal access token.
-
-</td></tr></table>
-
-#### Required Access Scope
-
-<table><tr>
-
-<td>
-
-Azure DevOps subsystem
-
-</td>
-
-<td>
-
-Scopes
-
-</td></tr><tr>
-
-<td>
-
-TFVC
-
-</td>
-
-<td>
-
-All scopes
-
-</td></tr><tr>
-
-<td>
-
-Git
-
-</td>
-
-<td>
-
-Code (read) / Code (read and write) for versioned settings
-
-</td></tr><tr>
-
-<td>
-
-Work Items
-
-</td>
-
-<td>
-
-Work Items (read, write, and manage)
-
-</td></tr><tr>
-
-<td>
-
-Commit Status
-
-</td>
-
-<td>
-
-Code (status)
-
-</td></tr></table>
+Set the _Code_ [access scope](#Required+Access+Scope) to _All scopes_ in the repositories you are about to access from TeamCity.
 
 ### Alternate Authentication Credentials
 
