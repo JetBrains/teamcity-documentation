@@ -1,9 +1,9 @@
-[//]: # (title: Azure DevOps Server)
-[//]: # (auxiliary-id: Azure DevOps Server;Team Foundation Server)
+[//]: # (title: Azure DevOps)
+[//]: # (auxiliary-id: Azure DevOps;Team Foundation Server)
 
 TeamCity can connect to repositories in a version control system of Microsoft Azure DevOps Server (formerly, Team Foundation Server), or Azure DevOps Services.
 
-This article contains descriptions of the fields and options available when setting up an Azure DevOps Server [VCS root](vcs-root.md) type. Common VCS root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
+This article contains descriptions of the fields and options available when setting up an Azure DevOps [VCS root](vcs-root.md) type. Common VCS root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
 __This type of root allows connecting to TFVC repositories only. When connecting to an Azure DevOps Git repository, select the [Git](git.md) type__.
 

@@ -217,7 +217,7 @@ Contains [clean-up](teamcity-data-clean-up.md)-related log
 
 <td>
 
-(off by default) [TFS integration](azure-devops-server.md) log
+(off by default) [TFS integration](azure-devops.md) log
 
 </td></tr><tr>
 
