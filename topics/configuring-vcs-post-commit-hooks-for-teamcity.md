@@ -220,29 +220,22 @@ where `<VCS Root locator>` can be one of the following:
     where `<unique client mapping>` should match the Perforce depot path in the TeamCity VCS root after all parameters' resolution. For the rule `check-for-changes-teamcity change-commit //depot/project1/...` it would be `//depot/project1/`.  
   Each `check-for-changes-teamcity` rule line describes an association between the path with the commit (`//depot/project1`) and a set of VCS roots which should be checked for changes.
 
-## Setting up service hook on Team Foundation Server for TFVC and Git
+## Setting up service hook on Azure DevOps Server for TFVC and Git
 
 The latest Azure DevOps Server (formerly, Team Foundation Server) and Azure DevOps Services provide service hooks for code commit events. To create a hook, perform the following steps:
 
-1\. Open the admin page for a team project in web access.
-
-2\. Create a subscription by running the wizard.
-
-3\. Select the "Web Hooks" service to integrate with.
-
-4\. Select the "Code checked in" event and specify a filter.
-
-5\. Fill in the TeamCity username, password, and server URL in the format:
-
-```Shell
-"$SERVER/app/rest/vcs-root-instances/commitHookNotification?locator=$LOCATOR"
-
-```
-
-where the `$LOCATOR` value depends on the TFS repository type as described in the sections below.
+1. Open the admin page for a team project in web access.
+2. Create a subscription by running the wizard.
+3. Select the "Web Hooks" service to integrate with.
+4. Select the "Code checked in" event and specify a filter.
+5. Fill in the TeamCity username, password, and server URL in the format:
+    ```Shell
+    "$SERVER/app/rest/vcs-root-instances/commitHookNotification?locator=$LOCATOR"
+    
+    ```
+    where the `$LOCATOR` value depends on the TFS repository type as described in the sections below.
 
 ### TFVC Repository
-
 
 ```Shell
 
@@ -250,8 +243,7 @@ vcsRoot:(type:tfs,count:99999),property:(name:tfs-url,value:<TFS server url>,mat
 
 ```
 
-where `<TFS server url>` must be replaced with the value specified in the TFS VCS root URL and path properties. Example:
-
+where `<TFS server url>` must be replaced with the value specified in the Azure DevOps VCS root URL and path properties. Example:
 
 ```Shell
 
@@ -261,15 +253,12 @@ http://teamcity/app/rest/vcs-root-instances/commitHookNotification?locator=vcsRo
 
 ### Git Repository
 
-
 ```Shell
 vcsRoot:(type:jetbrains.git,count:99999),property:(name:url,value:<VCS root repository URL>,matchType:contains,ignoreCase:true),count:99999
 
 ```
 
-
 where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped. Example:
-
 
 ```Shell
 http://teamcity/app/rest/vcs-root-instances/commitHookNotification?locator=vcsRoot:(type:jetbrains.git,count:99999),property:(name:url,value:https%3A%2F%2Faccount.visualstudio.com%2FDefaultCollection%2FProject%2F_git%2FRepository,matchType:contains,ignoreCase:true),count:99999

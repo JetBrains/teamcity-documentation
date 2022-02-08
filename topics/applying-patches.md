@@ -27,26 +27,25 @@ To manually enable detailed logging (for debugging purposes) for VSS Native:
 
 To get the command line syntax and options reference, run the program without any switch.
 
-## Microsoft Team Foundation Server Integration
+## Microsoft Azure DevOps Server Integration
 
 To apply a patch for `tfs-native.exe`:
-
-1. Shutdown the TeamCity server.
+1. Shut down the TeamCity server.
 2. Open `<TeamCity Server>/webapps/root/WEB-INF/plugins/tfs/` or `<TeamCity Server>/webapps/root/WEB-INF/lib/`.
 3. Back up `tfs-support.jar`.
 4. Inside the `tfs-support.jar` file, replace `/bin/tfs-native.exe` with the new one.
 5. Start the server.
 
-To apply a full TFS plugin patch:
-1. Shutdown the TeamCity server.
+To apply a full Azure DevOps plugin patch:
+1. Shut down the TeamCity server.
 2. Open `<[TeamCity Home](teamcity-home-directory.md)>/webapps/root/WEB-INF/plugins/tfs/` or `<[TeamCity Home](teamcity-home-directory.md)>/webapps/root/WEB-INF/lib/`.
 3. Back up `tfs-support.jar`.
 4. Replace `tfs-support.jar` with the new one.
 5. Start the server.
 
-### Capturing logs from TFS-native
+### Capturing logs from Azure DevOps-native
 
-To enable creating logs from TFS-native:
+To enable creating logs from Azure DevOps-native:
 1. Locate `tfs-native.exe` under the TeamCity `temp` directory. The filename format is `TC-TFS-NATIVE-<digits>.exe`.
 2. Create a copy of the file in any other directory.
 3. Run this program with the `/log` switch.

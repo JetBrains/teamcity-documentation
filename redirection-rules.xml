@@ -69,4 +69,10 @@
         <accepts>nunit-addins-support.html</accepts>
         <accepts>teamcity-addin-for-nunit.html</accepts>
     </rule>
+    <rule id="azure-devops-server">
+        <accepts>team-foundation-server.html</accepts>
+    </rule>
+    <rule id="azure-board-work-items">
+        <accepts>team-foundation-work-items.html</accepts>
+    </rule>
 </rules>

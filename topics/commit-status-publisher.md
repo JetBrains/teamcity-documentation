@@ -57,13 +57,9 @@ Commit Status Publisher supports the Bitbucket Server URL in the following forma
 
 ### Azure DevOps
 
-<note>
-
-In 2019, Visual Studio Team Services and Team Foundation Server have been renamed to Azure DevOps Services and Azure DevOps Server.
-
-</note>
-
 Personal access tokens can be used for authentication. If a [VSTS connection](configuring-connections.md#Azure+DevOps+PAT+Connection) is configured, the personal access token can be automatically filled from the project connection.
+
+You can create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account. Set the _Code_ [access scope](#Required+Access+Scope) to _Code (status)_ in the repositories you are about to send statuses to from TeamCity.`
 
 ### JetBrains Space
 
