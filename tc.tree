@@ -386,8 +386,8 @@
          <toc-element id="mono-support.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="maven-server-side-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
+      <toc-element toc-title="REST API Documentation" href="https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html"/>
       <toc-element id="extending-teamcity.md">
-         <toc-element toc-title="REST API Documentation" href="https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html"/>
          <toc-element id="build-script-interaction-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="service-messages.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="teamcity-info-xml.md" show-structure-for="chapter" show-structure-depth="4"/>
