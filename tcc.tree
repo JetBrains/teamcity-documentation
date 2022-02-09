@@ -143,7 +143,6 @@
                     <toc-element id="mercurial.md" show-structure-for="chapter" show-structure-depth="4"/>
                     <toc-element id="perforce.md" show-structure-for="chapter" show-structure-depth="4">
                         <toc-element id="perforce-workspace-handling-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="perforce-streams-as-feature-branches.md" show-structure-for="chapter" show-structure-depth="4"/>
                     </toc-element>
                     <toc-element id="subversion.md" show-structure-for="chapter" show-structure-depth="4"/>
                     <toc-element id="team-foundation-server.md" show-structure-for="chapter" show-structure-depth="4"/>

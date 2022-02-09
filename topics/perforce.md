@@ -99,9 +99,7 @@ Notes on using this mode:
 <anchor name="branch-support"/>
 <anchor name="branchStreams"/>
 
-The "_Enable feature branches support_" option allows you to specify branch streams to be monitored for changes, in addition to the default one. Enter the branch specification as a newline-delimited set of rules. The syntax is `+|-:stream_name` (with the optional `*` placeholder).
-
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+The "_Enable feature branches support_" option allows you to specify branch streams to be monitored for changes, in addition to the default one. [Read more](integrating-teamcity-with-perforce.md#Connecting+to+Perforce+Stream) about this functionality.
 
 <anchor name="Perforce-perforceClientOptionDescription"/>
 

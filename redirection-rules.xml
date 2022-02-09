@@ -69,4 +69,7 @@
         <accepts>nunit-addins-support.html</accepts>
         <accepts>teamcity-addin-for-nunit.html</accepts>
     </rule>
+    <rule id="integrating-teamcity-with-perforce">
+        <accepts>perforce-streams-as-feature-branches.html</accepts>
+    </rule>
 </rules>

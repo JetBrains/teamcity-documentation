@@ -1,5 +1,5 @@
 [//]: # (title: Integrating TeamCity with Perforce)
-[//]: # (auxiliary-id: Integrating TeamCity with Perforce)
+[//]: # (auxiliary-id: Integrating TeamCity with Perforce;Perforce Streams as feature branches)
 
 This article describes how to integrate TeamCity with [Perforce Helix Core](https://www.perforce.com/products/helix-core) to:
 
@@ -80,7 +80,7 @@ Comment
 
 To see the compatibility matrix for earlier versions, refer to [this page](https://www.jetbrains.com/help/teamcity/2021.1/perforce-helix-core-compatibility.html).
 
-## Run Builds on Perforce Helix Core Sources
+## Running Builds on Perforce Helix Core Sources
 
 To be able to run builds on project sources stored in Perforce Helix Core, you need to perform two procedures:
 1. Create a dedicated project in TeamCity:
@@ -95,6 +95,31 @@ To be able to run builds on project sources stored in Perforce Helix Core, you n
    4. Configure the settings as described in [this article](perforce.md).
 
 After the project and Perforce root are configured, you can proceed with [adding build configurations](creating-and-editing-build-configurations.md) and running builds.
+
+## Running Builds on Perforce Streams
+
+TeamCity can monitor commits in Perforce [streams](https://www.perforce.com/video-tutorials/vcs/what-perforce-streams) and work with them as with regular [feature branches](working-with-feature-branches.md).
+
+If a Perforce root is configured to use the _Stream_ mode, you can enable the feature branches support in the root settings. After it is enabled, all streams which have the specified main stream as a parent will be included into the set of [feature branches](working-with-feature-branches.md) processed by TeamCity. To include only specific streams to this set, edit the branch specification to filter these streams. Each filter rule should start with a new line. The syntax is `+|-:stream_name` (with the optional `*` placeholder). For example, use `+://stream-depot/*` to monitor only streams located in the `stream-depot` depot.
+
+<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+
+TeamCity can process task streams as well, but it only detects new task streams if there is a non-merge commit made to them.
+
+### Running Builds on Streams Remotely
+
+You can launch a [remote build run](remote-run.md) from IntelliJ IDEA only if a stream has been already detected by TeamCity. The TeamCity Remote Run plugin tries to deduce the correct stream according to the depot paths of the files in the IDE's working copy.  
+For instance, if a file path in the working copy starts with `//depot/stream1/some/path`, TeamCity will try finding the `//depot/stream1` stream and starting the remote run there. If you have modified a file from another stream (imported into the working copy) and want to enforce a build in a particular stream, you need to specify a [configuration parameter](configuring-build-parameters.md) `teamcity.build.branch` when triggering the remote run.
+
+### Cleaning Stream Workspaces
+
+To properly process task streams, TeamCity needs to create dedicated workspaces on the Perforce server. To save the server resources, you can [clean inactive workspaces](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server) created by TeamCity directly from the TeamCity UI.
+
+## Using Perforce Workspaces
+
+## Using Perforce Shelved Changelists
+
+##
 
 ## View Build Details
 
@@ -111,9 +136,6 @@ All operations of the Perforce plugin are logged in to the `teamcity-vcs.log` fi
 
 Refer to a [separate page](perforce-workspace-handling-in-teamcity.md).
 
-## Perforce Streams as feature branches
-
-Refer to a [separate page](perforce-streams-as-feature-branches.md).
 
 ## Running Builds on Perforce Shelved Files
 

@@ -6,11 +6,11 @@ To perform Perforce-related operations, TeamCity usually operates in a "no-works
 The cases when a workspace is created are:
 * [Agent-side checkout](vcs-checkout-mode.md#agent-checkout), the default mode. In this case, TeamCity creates a Perforce workspace to check out the sources.
 * Using [versioned settings](storing-project-settings-in-version-control.md) with Perforce Helix Core.
-* Using [Perforce streams as feature branches](perforce-streams-as-feature-branches.md). In this case, TeamCity creates workspaces on the Perforce server to correctly process task streams.
+* Using [Perforce streams as feature branches](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams). In this case, TeamCity creates workspaces on the Perforce server to correctly process task streams.
 
 ## Perforce Workspace Name
 
-The names of the created workspaces start with the `TC_p4_` prefix. For the agent-side checkout, it is possible to provide an additional prefix for the workspace name using the `teamcity.perforce.workspace.prefix` [configuration parameter](configuring-build-parameters.md). Workspaces created on the Perforce server side, to support [feature branches](perforce-streams-as-feature-branches.md), have the `TC_p4_server_` prefix.
+The names of the created workspaces start with the `TC_p4_` prefix. For the agent-side checkout, it is possible to provide an additional prefix for the workspace name using the `teamcity.perforce.workspace.prefix` [configuration parameter](configuring-build-parameters.md). Workspaces created on the Perforce server side, to support [feature branches](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams), have the `TC_p4_server_` prefix.
 
 The name of the workspace also includes the build agent name and a hash value built from the checkout directory and (optionally) checkout rules.
 
@@ -40,7 +40,7 @@ Also, TeamCity does not force workspace deletion when a Perforce edge/replica se
 
 ### Cleaning Workspaces on Perforce Server
 
-If you enable the [feature branches support](perforce-streams-as-feature-branches.md) in a Perforce VCS root, TeamCity will start processing your Perforce task streams. To do this correctly, it needs to create dedicated workspaces on the Perforce server. Over time, these workspaces might consume a significant amount of resources on this server's machine. You can clean no longer necessary workspaces directly from the TeamCity UI.
+If you enable the [feature branches support](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) in a Perforce VCS root, TeamCity will start processing your Perforce task streams. To do this correctly, it needs to create dedicated workspaces on the Perforce server. Over time, these workspaces might consume a significant amount of resources on this server's machine. You can clean no longer necessary workspaces directly from the TeamCity UI.
 
 <anchor name="perforce-admin-access"/>
 
