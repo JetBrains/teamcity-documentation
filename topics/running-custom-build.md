@@ -100,7 +100,7 @@ When adding/editing/deleting properties and variables, note the following:
 
 ### Comment and Tags
 
-Add an optional comment as well as one or more [tags](build-tag.md) to the build. You can also add a custom build to [favorites](favorite-build.md) by checking the corresponding box in this section.
+Add an optional comment as well as one or more [tags](build-actions.md#Add+Tags+to+Build) to the build. You can also add a custom build to [favorites](build-actions.md#Add+Build+to+Favorites) by checking the corresponding box in this section.
 
 <note>
 

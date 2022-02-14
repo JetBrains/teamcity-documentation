@@ -1,5 +1,5 @@
-[//]: # (title: Personal Build)
-[//]: # (auxiliary-id: Personal Build)
+[//]: # (title: Running Personal Build)
+[//]: # (auxiliary-id: Running Personal Build;Personal Build)
 
 A _personal build_ is a build-out of the common build sequence which typically uses the changes not yet committed into the version control. Personal builds are usually initiated from one of the [supported IDEs](supported-platforms-and-environments.md#Remote+Run+and+Pre-tested+Commit) via the [Remote Run](remote-run.md) procedure. You can also upload a patch with changes directly to the server, as described [below](#Direct+Patch+Upload).
 

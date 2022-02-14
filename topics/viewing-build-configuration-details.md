@@ -27,7 +27,7 @@ Provides information on:
 
 ## History
 
-Displays [Build History](build-history.md) on a separate page and allows filtering builds by build agents, [tagging builds](build-tag.md) and filtering them by tags (if available).
+Displays [Build History](build-history.md) on a separate page and allows filtering builds by build agents, [tagging builds](build-actions.md#Add+Tags+to+Build) and filtering them by tags (if available).
 
 ## Change Log
 

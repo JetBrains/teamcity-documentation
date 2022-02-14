@@ -11,10 +11,9 @@ In TeamCity all information about a particular build, whether it is queued, runn
 Besides providing the build information, this page enables you to:
 * [Run a custom build](running-custom-build.md) using the __Run__ button.
 * Use the __Actions__ menu to do the following:
-  * Add a build to [favorites](favorite-build.md).
+  * Add a build to [favorites](build-actions.md#Add+Build+to+Favorites).
   * Add a comment.
-  * [Pin the build](pinned-build.md).
-  * [Tag the build](build-tag.md).
+  * [Tag the build](build-actions.md#Add+Tags+to+Build).
   * Change the build status, marking the build as [failed](changing-build-status-manually.md#Marking+build+as+failed) or [successful](changing-build-status-manually.md#Marking+build+as+successful).
   * [Label this build's sources](vcs-labeling.md).
   * Remove the build.

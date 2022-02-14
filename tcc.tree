@@ -58,10 +58,8 @@
         <toc-element id="build-configuration-template.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-history.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-log.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="build-number.md"/>
         <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-runner.md"/>
-        <toc-element id="build-tag.md"/>
         <toc-element id="build-working-directory.md"/>
         <toc-element id="change.md"/>
         <toc-element id="change-state.md"/>
@@ -70,18 +68,15 @@
         <toc-element id="dependent-build.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="deployment-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="difference-viewer.md"/>
-        <toc-element id="favorite-build.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="first-failure.md"/>
         <toc-element id="history-build.md"/>
         <toc-element id="notifier.md"/>
         <toc-element id="personal-build.md"/>
-        <toc-element id="pinned-build.md"/>
         <toc-element id="pre-tested-delayed-commit.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="remote-debug.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="remote-run.md"/>
         <toc-element id="revision.md"/>
-        <toc-element id="run-configuration-policy.md"/>
         <toc-element id="teamcity-data-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="teamcity-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="vcs-root.md"/>

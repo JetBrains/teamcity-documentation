@@ -47,7 +47,6 @@ You can also use the condition __contains__, however, it may include more than o
         <category ref="concepts">
             <a href="build-agent.md">Build Agent</a>
             <a href="agent-requirements.md">Agent Requirements</a>
-            <a href="run-configuration-policy.md">Run Configuration Policy</a>
         </category>
         <category ref="admin-guide">
             <a href="running-custom-build.md">Triggering a Custom Build</a>

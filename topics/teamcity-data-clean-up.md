@@ -159,7 +159,7 @@ To change the timeout, set the `teamcity.deletedEntities.cleanupTimeout` [intern
 {product="tc"}
 
 There are builds that preserve all their data and are not affected during clean-up. These are:
-* [pinned builds](pinned-build.md)
+* [pinned builds](build-actions.md#Pin+Build)
 * builds used as an [artifact of snapshot dependency](configuring-dependencies.md) in other builds when the "_[Prevent clean-up](#Base+Rule+Behavior+for+Dependency+Builds)_" option for dependencies is enabled in the build configuration. Such builds are marked with the ![link.png](link.png) icon in the build history list
 * builds of build configurations that were deleted less than one day ago
 

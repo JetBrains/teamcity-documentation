@@ -72,7 +72,7 @@ In __Your Profile | General__, you can customize the following UI settings:
 * Highlight my changes and investigations: Select to highlight builds that include your changes (changes committed by a user with the VCS username provided in the [Version Control Username Settings](#Managing+Version+Control+Username+Settings) section) and problems you were assigned to investigate on the __Projects__ page, __Project Home__ page, __Build Configuration Home__ page.
 * Show date/time in my timezone: Check the option, if you want TeamCity to automatically detect your time zone and show the date and time (for example, build start, VCS change time, and so on) according to it.
 * Show all personal builds
-* Add builds manually triggered by you to your [favorites](favorite-build.md).
+* Add builds manually triggered by you to your [favorites](build-actions.md#Add+Build+to+Favorites).
 
 ## Viewing your Roles and Permissions
 

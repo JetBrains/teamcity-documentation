@@ -38,7 +38,7 @@ Authentication module
 ## B
 
 Build
-: A process that performs a certain CI/CD job. Most builds comprise multiple sequential steps executing their own granular actions. A build is run based on the settings specified in its build configuration.
+: A process that performs a certain CI/CD job. Most builds comprise multiple sequential steps executing their own granular actions. A build is executed according to the settings specified in its build configuration.
 
 Build agent
 : A piece of software which listens for the commands from the TeamCity server and starts the actual build process. Agents can be installed in the customer's environment or run on-demand in the cloud.
@@ -71,7 +71,12 @@ Build log
 : An enhanced console output of a build. It is represented by a structured list of the events which took place during the build. Generally, it includes entries on TeamCity-performed actions and the output of the processes launched during the build. TeamCity captures the processes output and stores it in an internal format that allows for hierarchical display.
 
 Build number
-: A string identifier composed according to the pattern specified in the build configuration settings. This number is displayed in the UI and passed into the build as a [predefined property](predefined-build-parameters.md). It is often used for passing and downloading artifacts.
+: A string identifier composed according to the pattern specified in the build configuration settings. This number is displayed in the UI and passed into the build as a [predefined parameter](predefined-build-parameters.md). It can be:
+* [used to download artifacts](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts)
+* [referenced as a property](predefined-build-parameters.md)
+* [shared for builds connected by a dependency](how-to.md#Share+the+Build+number+for+Builds+in+a+Chain+Build)
+* [used in artifact dependencies](artifact-dependencies.md)
+* [set by a service message](service-messages.md#Reporting+Build+Number)
 
 Build queue
 : A list of builds that were [triggered](configuring-build-triggers.md) and are waiting to be started. TeamCity will distribute them to compatible build agents as soon as these agents become idle. A queued build is assigned to an agent at the moment it is started on the agent; no preassignment is made while the build is waiting in the build queue.
@@ -125,6 +130,9 @@ Continuous integration
 Continuous integration is also associated with _Extreme Programming_ and other _agile_ software development practices.  
 Following the principles of _Continuous Integration_, TeamCity allows users to monitor the software development process of the company, while improving communication and facilitating the integration of changes without breaking any established practices.
 
+Custom build run
+* A standalone build whose settings have been adjusted compared to its build configuration. Such a build can be initiated from a context menu next to the __Run__ button.
+
 ## D
 
 Dependent build
@@ -173,7 +181,7 @@ Personal build
 : A build that is executed out of the common build sequence. Typically, it uses the changes not yet committed into the version control. This allows developers to run their newly added functionality in a real environment without modifying the project code in the VCS. Personal builds are usually initiated from an IDE via the Remote Run procedure.
 
 Pinned build
-: A build that is prevented from being removed during a [clean-up](teamcity-data-clean-up.md) procedure.
+: A build that is prevented from being removed during a scheduled [clean-up](teamcity-data-clean-up.md).
 
 Pre-tested commits
 : An approach that prevents committing defective code into a build, so the entire team's process is not affected. [These diagrams](http://www.jetbrains.com/teamcity/features/delayed_commit.html) illustrate the TeamCity approach to pre-tested commits.
@@ -199,7 +207,7 @@ Root project
 : A default project at the top of the project hierarchy. Its settings are available to all the other projects on the server.
 
 Run configuration policy
-: A policy that allows selecting specific build configurations you want a build agent to run. By default, build agents run all compatible build configurations, and this is not always desirable — in this case, this policy lets you limit the allowed set in each agent's details.
+: A policy that allows selecting specific build configurations you want a build agent to run. By default, build agents run all compatible build configurations, and this is not always desirable — in this case, this policy lets you limit the allowed set in each agent's details. The run configuration policy settings are located in __[Agents Details](viewing-build-agent-details.md) | Compatible configurations__.
 
 ## S
 

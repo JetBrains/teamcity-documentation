@@ -24,20 +24,14 @@
          <toc-element id="agent-pool.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-requirements.md"/>
          <toc-element id="agent-work-directory.md"/>
-         <toc-element id="already-fixed-in.md"/>
          <toc-element id="authentication-modules.md"/>
          <toc-element id="build-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-artifact.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-chain.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-checkout-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-configuration-template.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="build-history.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-log.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="build-number.md"/>
-         <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-runner.md"/>
-         <toc-element id="build-tag.md"/>
          <toc-element id="build-working-directory.md"/>
          <toc-element id="change.md"/>
          <toc-element id="clean-checkout.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -45,18 +39,9 @@
          <toc-element id="dependent-build.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="deployment-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="difference-viewer.md"/>
-         <toc-element id="favorite-build.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="first-failure.md"/>
-         <toc-element id="history-build.md"/>
          <toc-element id="notifier.md"/>
-         <toc-element id="personal-build.md"/>
-         <toc-element id="pinned-build.md"/>
-         <toc-element id="pre-tested-delayed-commit.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="remote-debug.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="remote-run.md"/>
          <toc-element id="revision.md"/>
-         <toc-element id="run-configuration-policy.md"/>
          <toc-element id="teamcity-data-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="teamcity-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="vcs-root.md"/>
@@ -137,7 +122,6 @@
       <toc-element id="user-s-guide.md" hidden="true"/>
       <toc-element toc-title="User's Guide">
          <toc-element id="viewing-your-changes.md"/>
-         <toc-element id="running-custom-build.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="working-with-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="investigating-and-muting-build-failures.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -351,7 +335,6 @@
             <toc-element id="ordering-projects-and-build-configurations.md"/>
             <toc-element id="configuring-cross-server-projects-pop-up-menu.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="archiving-projects.md"/>
-            <toc-element id="ordering-build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="changing-build-status-manually.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="customizing-statistics-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configuring-artifacts-storage.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -419,6 +402,26 @@
             <toc-element id="edit-custom-chart-limitations.md"/>
          </toc-element>
          <toc-element toc-title="TeamCity Plugin Development Documentation" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
+      </toc-element>
+      <toc-element toc-title="Running Builds and Viewing Results">
+         <toc-element toc-title="Manage Builds">
+            <toc-element id="build-actions.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="running-custom-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="personal-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="ordering-build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="pre-tested-delayed-commit.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="remote-debug.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="remote-run.md"/>
+         </toc-element>
+         <toc-element toc-title="View Build Results">
+
+            <toc-element id="already-fixed-in.md"/>
+            <toc-element id="first-failure.md"/>
+            <toc-element id="history-build.md"/>
+            <toc-element id="build-history.md" show-structure-for="chapter" show-structure-depth="4"/>
+         </toc-element>
       </toc-element>
       <toc-element toc-title="Reference">
          <toc-element id="glossary.md" show-structure-for="chapter" show-structure-depth="4"/>
