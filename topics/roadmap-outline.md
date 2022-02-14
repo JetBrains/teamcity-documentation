@@ -7,7 +7,7 @@ __Current TeamCity Version is 2021.2__
 
 ### Next Major Release
 
-TeamCity 2022.1 feature release does not yet have dates planned, but it is likely to happen in the second half of April 2022.
+TeamCity 2022.04 feature release does not yet have dates planned, but it is likely to happen in the second half of April 2022.
 
 ### Next BugFix Release
 
