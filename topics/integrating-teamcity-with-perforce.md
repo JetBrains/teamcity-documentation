@@ -2,7 +2,6 @@
 [//]: # (auxiliary-id: Integrating TeamCity with Perforce;Perforce Streams as feature branches)
 
 This article describes how to integrate TeamCity with [Perforce Helix Core](https://www.perforce.com/products/helix-core) to:
-
 * Build sources of projects stores in a Helix Core repository.
 * 
 
@@ -82,7 +81,7 @@ To see the compatibility matrix for earlier versions, refer to [this page](https
 
 ## Running Builds on Perforce Helix Core Sources
 
-To be able to run builds on project sources stored in Perforce Helix Core, you need to perform two procedures:
+To be able to run builds on project sources stored in Perforce Helix Core and to use all the features described in this article, you need to perform two procedures:
 1. Create a dedicated project in TeamCity:
    1. Go to __Administration | Projects__ and click __Create project__.  
       Note that this will add the project right under the _Root project_. Alternatively, you can add it under any other existing project.
@@ -117,16 +116,61 @@ To properly process task streams, TeamCity needs to create dedicated workspaces 
 
 ## Running Builds on Perforce Shelved Files
 
-Since version 2021.2, you can [manually run](running-custom-build.md#P4-shelved-files-custom-run) or [automatically trigger](perforce-shelve-trigger.md) builds on Perforce shelved files.
+TeamCity allows you to run personal builds on Perforce [shelved files](https://www.perforce.com/manuals/v17.1/p4v/files.shelve.html). This way, you can try building changed source files before checking them into a common depot.
 
-If you use [Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm) for code reviews, you can also [configure TeamCity to posts build statuses](commit-status-publisher.md#Perforce+Helix+Swarm) as comments to your reviews.
+To manually run a custom build on Perforce shelved files:
+1. Open the [custom run](running-custom-build.md) dialog by clicking the context menu next to the __Run__ button.
+2. Enable _run as a personal build_ option.
+3. Enter the ID of the changelist that contains the shelved files.
+   <img src="p4-custom-run-shelved.png" alt="Run custom build on P4 shelved files" width="460"/>
+4. Choose the target Perforce root.
 
+To configure automatic triggering for a Perforce shelved changelist:
+1. Go to __Build Configuration Settings | Triggers__.
+2. Add a new trigger of the _Perforce Shelve Trigger_ type.
+3. Configure its settings as described in [this article](perforce-shelve-trigger.md).
+
+>Learn how to initiate [remote run](remote-run.md), [remote debug](remote-debug.md), and [pre-test delayed commits](pre-tested-delayed-commit.md) in TeamCity.
+
+### Publishing Build Statuses to Perforce Helix Swarm
+
+If you use [Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm) for code review of shelved files, you can configure TeamCity to posts build statuses as comments to your reviews:
+1. Go to __Build Configuration Settings | Build Features__.
+2. Add a new feature of the _Commit Status Publisher_ type.
+3. Choose _Perforce Helix Swarm_ as the feature type.
+4. Enter the settings:
+   * Your Helix Swarm server's URL.
+   * A username and cross-host [ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html) for connection (use the `p4 login -a -p` command to obtain one).
+   <img src="csp-helix-swarm.png" alt="Configure Commit Status Publisher for P4 Helix Swarm" width="460"/>
+
+Note that Helix Swarm usually creates reviews on shelved changelists whose description contains a special keyword, depending on your setup (for example, `#review`). If you want TeamCity to trigger builds on Perforce shelved files automatically, you need to specify the same keyword in the [Perforce Shelve Trigger](perforce-shelve-trigger.md) settings as well.
+
+>To get notified about the events, make sure to [configure Swarm triggers](https://www.perforce.com/manuals/swarm-admin/Content/Swarm/setup.perforce.html).
 
 ## Using Perforce Workspaces
 
-## Using Perforce Shelved Changelists
+To perform Perforce-related operations, TeamCity usually executes Perforce commands without the workspace context. For instance, workspaces are not required for tracking changes or for most server-side operations. However, certain cases require creating a dedicated workspace:
+* If [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is enabled (it is the default checkout mode). In this case, TeamCity creates a Perforce workspace to check out the build sources.
+* Using [versioned project settings](storing-project-settings-in-version-control.md) with Perforce Helix Core.
+* Using [Perforce streams as feature branches](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams). In this case, TeamCity creates workspaces on the Perforce server to correctly process task streams.
 
-##
+Learn how TeamCity creates workspaces in Perforce and works with them in [this article](perforce-workspace-handling-in-teamcity.md).
+
+## Configuring Post-Commit Hooks on Perforce Server
+
+By default, TeamCity uses a polling approach to detect changes in a VCS repository. It periodically sends requests to the Perforce server to detect new revisions. For large installations with hundreds of VCS roots, this may create a noticeable load on both Perforce server and TeamCity. To avoid background polling, you can set up a post-commit hook on your Perforce server. This hook will notify TeamCity to start checking for changes only when they are available.
+
+TeamCity provides a dedicated hook script that should be saved on your Perforce server. You can find the detailed instruction [here](configuring-vcs-post-commit-hooks-for-teamcity.md#Using+post-commit+script+for+Perforce).
+
+## Label Perforce Sources
+
+TeamCity can assign custom labels to Perforce project sources. The list of applied labels and their status is displayed on the __[Changes](working-with-build-results.md#Changes)__ tab of __Build Results__.
+
+To configure automatic labeling for a build configuration:
+1. Go to __Build Configuration Settings | Build Features__.
+2. Add a new feature of the _VCS labeling_ type.
+3. Choose a Perforce VCS root to label.
+4. Specify the labeling pattern as described [here](vcs-labeling.md#Labeling+in+Perforce).
 
 ## View Build Details
 
@@ -139,3 +183,8 @@ If a build contains a changelist that is associated with one or more [jobs](http
 
 All operations of the Perforce plugin are logged in to the `teamcity-vcs.log` files with the category `jetbrains.buildServer.VCS.P4` (on an agent or on a server, depending on the operation mode). The detailed logging can be enabled with [TeamCity Server Logs](teamcity-server-logs.md).
 
+## View Build Status in Code Review
+
+If commit status publishing is [configured for Perforce Helix Swarm](#Publishing+Build+Statuses+to+Perforce+Helix+Swarm), TeamCity will be publishing the build statuses' updates as comments to the respective code reviews in Helix Swarm:
+
+<img src="helixswarm.png" alt="Displaying TeamCity build statuses in Helix Swarm" width="706"/>
