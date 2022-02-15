@@ -53,6 +53,9 @@ In the Commit Status Publisher settings, specify a username and [app password](h
 
 Commit Status Publisher supports the Bitbucket Server URL in the following format: `http[s]://<hostname>:<port>`. Apart from the URL, you need to specify a username and password (or token) for authentication.
 
+To protect a branch and ensure that only verified pull requests are merged into it, you can specify [required builds](https://confluence.atlassian.com/bitbucketserver/checks-for-merging-pull-requests-776640039.html#Checksformergingpullrequests-Requiredbuildsmergecheck) in your Bitbucket repository settings. To set a TeamCity build as a _required build_, specify a build configuration ID as a build key in the __Add builds__ field of the Bitbucket's __Add required builds__ page.
+In this case, Bitbucket will not allow a pull request to be merged until the build on requested changes finishes successfully.
+
 >The _TeamCity Integration for Bitbucket_ app made by Stiltsoft provides a more detailed preview of TeamCity builds in the Bitbucket UI and lets you run them without switching to TeamCity. Read more details about the app in [this post](https://blog.jetbrains.com/teamcity/2021/05/run-and-view-teamcity-builds-from-bitbucket/).
 
 ### Azure DevOps

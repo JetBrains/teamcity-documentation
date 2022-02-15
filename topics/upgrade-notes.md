@@ -1,6 +1,10 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2021.2.2 to 2021.2.3
+
+No noteworthy changes.
+
 ## Changes from 2021.2.1 to 2021.2.2
 
 * __Changed format for .NET assembly names__  
