@@ -15,7 +15,7 @@ Read how to [enable 2FA on your server](managing-two-factor-authentication.md) a
 
 The new C# Script runner offers a handy way to automate your service tasks in C#: prepare a build environment, create OS users, report to messengers, and so on. This runner is a good alternative to [PowerShell](powershell.md) and [Kotlin](kotlin-script.md) for users who feel more confident with C#.
 
-The runner can launch C# scripts across platforms: on Windows, Linux, and macOS. It needs .NET 6.0, so the easiest way is to launch it inside a Docker container with preinstalled .NET. It also requires installing our [custom C# Interactive shell](https://github.com/JetBrains/teamcity-csharp-interactive#readme) as an [agent tool](installing-agent-tools.md).
+The runner can launch C# scripts across platforms: on Windows, Linux, and macOS. It needs .NET 6.0, so the easiest way is to launch it inside a Docker container with preinstalled .NET. It also requires installing our [custom C# Interactive shell](https://github.com/JetBrains/teamcity-csharp-interactive#readme){nullable="true"} as an [agent tool](installing-agent-tools.md).
 {product="tc"}
 
 Another advantage of this runner is that it’s capable of automatically restoring NuGet packages referenced in your scripts. By default, TeamCity searches for packages on NuGet.org, but you can specify other target feeds, including private and [TeamCity-internal](using-teamcity-as-nuget-feed.md) ones.
@@ -80,7 +80,7 @@ If you prefer using static labels, please read our [upgrade notes](upgrade-notes
 
 If a build agent needs to connect to several Perforce VCS roots during one build run, it can now get connection parameters of each of these roots.
 
-Previously, if you wanted to use `[P4PORT](https://www.perforce.com/manuals/cmdref/Content/CmdRef/P4PORT.html)`, `[P4USER](https://www.perforce.com/perforce/r12.1/manuals/cmdref/env.P4USER.html)`, or `[P4CLIENT](https://www.perforce.com/manuals/v18.1/cmdref/Content/CmdRef/P4CLIENT.html)` in your build scripts, you could only refer to variables of the first Perforce root. Now, TeamCity stores these variables as parameters, so you can reference them in the scripts separately for each root: `P4USER`, `P4PORT`, `P4CLIENT`. For example, `env.P4PORT=%vcsRoot.<rootID>.port%`.
+Previously, if you wanted to use `[P4PORT](https://www.perforce.com/manuals/cmdref/Content/CmdRef/P4PORT.html)`, `[P4USER](https://www.perforce.com/manuals/cmdref/Content/CmdRef/P4USER.html)`, or `[P4CLIENT](https://www.perforce.com/manuals/v18.1/cmdref/Content/CmdRef/P4CLIENT.html)` in your build scripts, you could only refer to variables of the first Perforce root. Now, TeamCity stores these variables as parameters, so you can reference them in the scripts separately for each root: `P4USER`, `P4PORT`, `P4CLIENT`. For example, `env.P4PORT=%vcsRoot.<rootID>.port%`.
 
 where `rootID` is the VCS root’s external ID, specified in its settings.
 
@@ -141,7 +141,7 @@ Version 2021.2 brings the following TeamCity UI improvements:
 
 >As in the multiple preceding releases, our focus stays on improving the [experimental UI](teamcity-experimental-ui.md) and polishing it to the point when it can serve as a better alternative to the classic UI for all of our users. Your feedback helps determine which features are the most expected, so we can shape our roadmap to suit these needs better.  
 >If you tried the first versions of the new UI and switched back to the classic mode, we encourage you to give the new UI another go, as its current implementation differs a lot from the first one.  
->You are welcome to share your feedback about the new improvements via [this form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=360001686659)!
+>You are welcome to share your feedback about the new improvements via [this form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=360001686659){nullable="true"}!
 >
 {product="tc"}
 

@@ -96,7 +96,7 @@ Then [send](feedback.md) us a detailed description of the issue accompanied with
 
 When an operation on the server is slow, take a set of the server thread dumps (10\+) spread over the time of the slowness. TeamCity automatically saves thread dumps on super slow operations, so there might already be some saved in `logs/threadDumps-<date>` directories. It is recommended to send us an archive of the entire content of server's `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directories for all the recent dates.
 
-It is recommended that you take a thread dump of the TeamCity server from the Web UI if the hanging is local and you can still open the TeamCity __Administration__ pages: go to the __Administration | Server Administration | Diagnostics__ page and click the __Save Thread Dump__ button to save a dump under the `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directory (where you can later download the files from "Server Logs"). If the server is fully started but the web UI is not responsive, try the [direct URL](http://YOUR_TEAMCITY_SERVER_URL/admin/diagnostic.html?actionName=threadDump&amp;save=false) using the actual URL of your TeamCity server.
+It is recommended that you take a thread dump of the TeamCity server from the Web UI if the hanging is local and you can still open the TeamCity __Administration__ pages: go to the __Administration | Server Administration | Diagnostics__ page and click the __Save Thread Dump__ button to save a dump under the `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directory (where you can later download the files from "Server Logs"). If the server is fully started but the web UI is not responsive, try the [direct URL](http://YOUR_TEAMCITY_SERVER_URL/admin/diagnostic.html?actionName=threadDump&amp;save=false){nullable="true"} using the actual URL of your TeamCity server.
 
 If the UI is not accessible (or the server is not yet fully started), you can take a server thread dump manually using the approaches described [below](#Taking+Thread+Dump).
 
@@ -476,8 +476,8 @@ To help us investigate issues with inspections, do the following:
 
 ## Uploading Large Data Archives
 
-Files under 10 MB in size can be attached right into the [tracker issue](http://youtrack.jetbrains.net/issues/TW) (if you do not want the attachments to be publicly accessible, limit the attachment visibility to "teamcity-developers" user group only).    
-You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrains.com](mailto:teamcity-support@jetbrains.com) or via [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) (up to 20 MB). Please do not forget to mention your TeamCity version and environment and archive the files before attaching.
+Files under 10 MB in size can be attached right into the [tracker issue](http://youtrack.jetbrains.net/issues/TW) (if you do not want the attachments to be publicly accessible, limit the attachment visibility to "teamcity-developers" user group only).  
+You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrains.com](mailto:teamcity-support@jetbrains.com) or via [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} (up to 20 MB). Please do not forget to mention your TeamCity version and environment and archive the files before attaching.
 
 [//]: # (Internal note. Do not delete. "Reporting Issuesd267e1305.txt")    
 

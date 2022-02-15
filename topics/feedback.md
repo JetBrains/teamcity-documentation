@@ -12,7 +12,7 @@ Contact us about:
 * __technical question or idea__ — [community forum](http://jb.gg/teamcity-forum), "New Post" action (public)
 * __bug or feature request__ — [issue tracker](https://youtrack.jetbrains.com/issues/TW) (public, with an option of private comments/attachments)
 * __license/purchase question__ — [TeamCity sales department](https://www.jetbrains.com/teamcity/get-in-touch/) (private)
-* __private report (only for TeamCity Enterprise server license)__ — [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) (private, faster response times)
+* __private report (only for TeamCity Enterprise server license)__ — [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) (private, faster response times)
 
 </td></tr>
 <tr><td></td></tr>
@@ -35,7 +35,7 @@ When submitting a request, make sure:
 
 ## Licensed Users Support
 
-You can contact us via the [online support form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) if you own a TeamCity Enterprise server license with the active maintenance period and need the error report not to be publicly available. Only [two latest major TeamCity releases](teamcity-release-cycle.md) and their bugfix updates are covered by our support.   
+You can contact us via the [online support form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) if you own a TeamCity Enterprise server license with the active maintenance period and need the error report not to be publicly available. Only [two latest major TeamCity releases](teamcity-release-cycle.md) and their bugfix updates are covered by our support.   
 However, we would appreciate if you post your question in the forums as this allows other users to share their experience. If, for some reason, there is a delay in responding to the question in the forum, feel free to ping us via email noting the forum post you have created.
 
 We prefer to keep our support efforts as close to the development team as possible, and you will often get answers from the actual developer of the related TeamCity feature.   

@@ -300,7 +300,7 @@ On upgrading, this responsibility will be automatically enabled on all your seco
 * The Linux image in TeamCity server Docker containers has been updated to version 20.04 (LTS).
 * Bundled dotCover and ReSharper CLT have been upgraded to version 2020.2.4.
 * The deprecated Visual Studio 2003 build runner is disabled in TeamCity. We recommend using the [.NET](net.md) runner instead.   
-If you were actively using the VS 2003 runner and cannot easily migrate to the .NET runner, please let us know about it via any of our [feedback channels](https://teamcity-support.jetbrains.com/hc/en-us).
+If you were actively using the VS 2003 runner and cannot easily migrate to the .NET runner, please let us know about it via any of our [feedback channels](https://teamcity-support.jetbrains.com/hc/en-us){nullable="true"}.
 * JDBC drivers for external databases, suggested on the fresh TeamCity installation, have been updated to the following versions:
      * MySQL - 8.0.22
      * MSSQL - 8.4.1
@@ -2014,7 +2014,7 @@ TeamCity\-related tables should now be located in the database schema which is s
 
 This change may require reconfiguration of the database to set default schema for the user used by TeamCity server to connect to the database.
 
-Please check that all TeamCity\-related tables are located in the default user's schema before performing the upgrade. (e.g. [using](http://blog.sqlauthority.com/2009/06/17/sql-server-list-schema-name-and-table-name-for-database/) the 'sys.tables' view)
+Please check that all TeamCity\-related tables are located in the default user's schema before performing the upgrade.
 
 If the default user's schema is not set right, TeamCity can report "TeamCity database is empty or doesn't exist. If you proceed, a new database will be created." message on the first start of newer TeamCity.
 

@@ -60,7 +60,7 @@ Name resolution
 
 <td>
 
-The __DNS only name resolution__ allows switching  JCIFS to "DNS-only" mode. May fix performance or out of memory exceptions (see [this bitbucket issue](https://bitbucket.org/nskvortsov/deployer/issue/20/out-of-memory-exception) for details). Is equivalent to following JCIFS settings:
+The __DNS only name resolution__ allows switching  JCIFS to "DNS-only" mode. May fix performance or out of memory exceptions (see [this bitbucket issue](https://confluence.atlassian.com/bitbucketserverkb/how-to-debug-out-of-memory-heap-space-779171691.html) for details). Is equivalent to following JCIFS settings:
 
 ```Shell
 -Djcifs.resolveOrder=DNS
