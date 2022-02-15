@@ -75,4 +75,8 @@
     <rule id="azure-board-work-items">
         <accepts>team-foundation-work-items.html</accepts>
     </rule>
+    <rule id="rest-api">
+        <accepts>rest-api.html</accepts>
+        <accepts>rest-api-reference.html</accepts>
+    </rule>
 </rules>
