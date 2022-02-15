@@ -24,7 +24,7 @@ TeamCity integration with Eclipse provides the following features:
 
 The TeamCity Eclipse plugin version must correspond to the version of the TeamCity server it connects to. Connections to TeamCity servers with different versions are generally not supported.
 
-* __[Subversive](http://www.eclipse.org/subversive/) or [Subclipse](http://subclipse.tigris.org/) plugins__: to enable [Remote Run](remote-run.md) and [Pre-tested Commit](pre-tested-delayed-commit.md) for the Subversion Version Control System.   
+* __[Subversive](http://www.eclipse.org/subversive/) or [Subclipse](https://marketplace.eclipse.org/content/subclipse) plugins__: to enable [Remote Run](remote-run.md) and [Pre-tested Commit](pre-tested-delayed-commit.md) for the Subversion Version Control System.   
 Quick links: Subversive [download page](http://www.eclipse.org/subversive/downloads.php). Subclipse [installation instructions](https://github.com/subclipse/subclipse/wiki).
 * __[P4Eclipse](http://www.perforce.com/product/components/eclipse_plugin) plugin__: to enable [Remote Run](remote-run.md) and [Pre-tested Commit](pre-tested-delayed-commit.md) for the Perforce Version Control System. Make sure you initialize Perforce support (for example, perform project update) after opening the project before using TeamCity Remote Run.
 * __[CVS plugin for Eclipse](http://www.eclipse.org/eclipse/platform-cvs)__ to enable Remote Run and Pre-tested Commit for CVS.

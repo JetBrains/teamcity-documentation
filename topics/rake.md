@@ -199,7 +199,7 @@ Bundler: bundle exec
 
 <td>
 
-If your project uses the [Bundler requirements](http://gembundler.com) manager and your Rakefile doesn't load the bundler setup script, this option will allow you to launch rake tasks using the `bundle exec` command emulation. If you want to execute `bundle install` command, you need to do it in the [Command Line](command-line.md) step before the _Rake_ step. Also, remember to set up the [Ruby environment configurator](ruby-environment-configurator.md) build feature to automatically pass Ruby interpreter to the command line runner.
+If your project uses the [Bundler requirements](https://bundler.io/) manager and your Rakefile doesn't load the bundler setup script, this option will allow you to launch rake tasks using the `bundle exec` command emulation. If you want to execute `bundle install` command, you need to do it in the [Command Line](command-line.md) step before the _Rake_ step. Also, remember to set up the [Ruby environment configurator](ruby-environment-configurator.md) build feature to automatically pass Ruby interpreter to the command line runner.
 
 </td></tr><tr>
 

@@ -162,7 +162,7 @@ The SCP-like syntax requires a colon after the hostname, while a usual SSH URL d
 </note>
 
 * Git: (for example, [`git://git.kernel.org/pub/scm/git/git.git`](git://git.kernel.org/pub/scm/git/git.git))
-* HTTP: (for example, [`http://git.somewhere.org/projects/test.git`](http://git.somewhere.org/projects/test.git))
+* HTTP: (for example, [`http://git.somewhere.org/projects/test.git`](http://git.somewhere.org/projects/test.git){nullable="true"})
 * file: (for example, [`file:///c:/projects/myproject/.git`](file:///c:/projects/myproject/.git))
 
 <note>
@@ -653,7 +653,7 @@ teamcity.git.cleanupCron
 
 <td>
 
-[Cron expression](http://quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger) for the time of a clean-up in git-plugin, by default — daily at 2AM.
+[Cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) for the time of a clean-up in git-plugin, by default — daily at 2AM.
 
 </td></tr><tr>
 
@@ -672,7 +672,6 @@ teamcity.git.stream.file.threshold.mb
 <td>
 
 Threshold in megabytes after which JGit uses streams to inflate objects. Increase it if you have large binary files in the repository and see symptoms described in [TW-14947](http://youtrack.jetbrains.com/issue/TW-14947)
-
 
 </td></tr><tr>
 

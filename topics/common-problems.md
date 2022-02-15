@@ -131,7 +131,7 @@ This error can occur with an Oracle database. The error indicates that Oracle co
 
 ### MySQL JDBC driver error: PacketTooBigException
 
-The [ER_NET_PACKET_TOO_LARGE](https://dev.mysql.com/doc/refman/5.7/en/error-messages-server.html#error_er_net_packet_too_large) error (PacketTooBigException / Packet for query is too large) is caused by the server-side `max_allowed_packet` [configuration variable](https://dev.mysql.com/doc/refman/5.7/en/packet-too-large.html) set to a low value or left at the default one.
+The `ER_NET_PACKET_TOO_LARGE` error (PacketTooBigException / Packet for query is too large) is caused by the server-side `max_allowed_packet` [configuration variable](https://dev.mysql.com/doc/refman/8.0/en/packet-too-large.html) set to a low value or left at the default one.
 
  The variable controls the maximum size of MySQL communication buffer with 4MB being the default for Windows builds of MySQL 5.6, whereas in popular Linux distributions (e. g. Debian and Fedora Core), this variable defaults to 16MB, for both i686 and amd64 architectures.
  

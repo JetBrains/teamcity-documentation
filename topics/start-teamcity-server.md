@@ -23,7 +23,7 @@ You can configure autostart of TeamCity on your machine by the means of the oper
 
 ## Launch TeamCity UI
 
-The TeamCity UI can be accessed via a web browser. The default addresses are [`http://localhost/`](http://localhost/) for the `exe` distribution and [`http://localhost:8111/`](http://localhost:8111/) for the `tar.gz` distribution. See how to [change the server port](configure-server-installation.md#Changing+Server+Port), if necessary.
+The TeamCity UI can be accessed via a web browser. The default addresses are [`http://localhost/`](http://localhost/){nullable="true"} for the `exe` distribution and [`http://localhost:8111/`](http://localhost:8111/){nullable="true"} for the `tar.gz` distribution. See how to [change the server port](configure-server-installation.md#Changing+Server+Port), if necessary.
 
 If you cannot access the TeamCity UI after a successful installation, please refer to the [troubleshooting section](#Troubleshoot+TeamCity+Installation).
 

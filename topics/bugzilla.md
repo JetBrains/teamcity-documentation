@@ -124,7 +124,7 @@ Note that a user specified in the connection to Bugzilla should have sufficient 
 There are several known issues in Bugzilla regarding XMLs generated for the issues, which makes it hard to communicate with it. However, this can usually be fixed by tweaking the Bugzilla configuration.
 	
 * If you see the _path/to/bugzilla.dtd not found_ error, this means that the issue XML contains the relative path to the `bugzilla.dtd` file, and not the URL. To fix that, set the server URL in Bugzilla.
-* Sometimes you may see a `SAXParseException` saying that _Open quote is expected for attribute type_id associated with an element type flag_. This happens because the generated XML does not correspond to the bundled `bugzilla.dtd`. To fix it, make the `type_id` attribute `#IMPLIED` (optional) in the bugzilla.dtd file. The issue and the workaround are described in detail [here](http://jake.murzy.com/post/2661770569/errors-while-performing-validation-against-bugzilla-dtd).
+* Sometimes you may see a `SAXParseException` saying that _Open quote is expected for attribute type_id associated with an element type flag_. This happens because the generated XML does not correspond to the bundled `bugzilla.dtd`. To fix it, make the `type_id` attribute `#IMPLIED` (optional) in the `bugzilla.dtd` file.
 
 <seealso>
         <category ref="concepts">

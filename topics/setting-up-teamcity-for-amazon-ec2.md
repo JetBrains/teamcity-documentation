@@ -129,11 +129,10 @@ Recommended image (for example, Amazon AMI) preparation steps:
 
 #### Additional configuration for Windows agents
 
-_To ensure proper TeamCity agent communication with EC2 API (including access to additional drives) on Windows_, add a dependency from the TeamCity Build Agent service on the [AmazonSSMAgent](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) or [EC2Launch/EC2Config](http://docs.amazonwebservices.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html) service (the service which ensures the machine is fully initialized in regard to AWS infrastructure use). This can be done, for example, via the [Registry](https://support.microsoft.com/en-us/kb/193888) or using [sc config](https://technet.microsoft.com/en-us/library/cc990290(v=ws.11).aspx) (for instance, `sc config TCBuildAgent depend=EC2Config`).   
+_To ensure proper TeamCity agent communication with EC2 API (including access to additional drives) on Windows_, add a dependency from the TeamCity Build Agent service on the [AmazonSSMAgent](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) or [EC2Launch/EC2Config](http://docs.amazonwebservices.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html) service (the service which ensures the machine is fully initialized in regard to AWS infrastructure use). This can be done, for example, via the [Registry](https://support.microsoft.com/en-us/windows/how-to-open-registry-editor-in-windows-10-deab38e6-91d6-e0aa-4b7c-8878d9e07b11) or using [sc config](https://technet.microsoft.com/en-us/library/cc990290(v=ws.11).aspx) (for instance, `sc config TCBuildAgent depend=EC2Config`).   
 Alternatively, you can use the "Automatic (delayed start)" service starting mode.
 
-__Important note for images based on Windows Server 2016 image__:
-
+__Important note for images based on Windows Server 2016 image__:  
 Due to the [bug in the network settings](https://forums.aws.amazon.com/thread.jspa?threadID=242194), instance metadata is not available by default. It means the TeamCity agent service cannot retrieve its properties and cloud integration doesn't work (the agent does not connect to the server or is not automatically authorized). To fix this issue, do the following:
 
 1. Install the [latest EC2Config](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_Install.html?shortFooter=true#ec2config-update-version).

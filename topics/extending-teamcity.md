@@ -3,9 +3,10 @@
 
 TeamCity behavior can be extended in several ways. You can communicate with TeamCity from the build script and report tests, change build number or provide statistics data. Or you can write full-fledged plugin which will provide the custom UI, customized notifications and much more.
 
-If you cannot find relevant information here, have questions or want to share your TeamCity plugins experience with other users, welcome to [TeamCity Plugins Forum](https://teamcity-support.jetbrains.com/hc/en-us/community/topics/200366719-TeamCity-Plugin-Development).
+If you cannot find relevant information here, have questions or want to share your TeamCity plugins experience with other users, welcome to [TeamCity Plugins Forum](https://teamcity-support.jetbrains.com/hc/en-us/community/topics/200366719-TeamCity-Plugin-Development){nullable="true"}.
 
 ## Customizing TeamCity without Plugins
+
 * [Build Script Interaction with TeamCity](build-script-interaction-with-teamcity.md)
 * [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) and [Accessing Server by HTTP](accessing-server-by-http.md)
 * [Including Third-Party Reports in the Build Results](including-third-party-reports-in-the-build-results.md)

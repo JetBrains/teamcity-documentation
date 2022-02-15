@@ -42,7 +42,7 @@ Otherwise, to start or stop the TeamCity server and one default agent at the sam
     .\runAll.bat stop
     ```
 
-If you did not change the default port (`8111`) during the installation, the TeamCity web UI can be accessed at [`http://localhost`](http://localhost/) via a web browser running on the same machine. Otherwise, use `http://localhost:<port>` (`http://localhost:7777` in our example).
+If you did not change the default port (`8111`) during the installation, the TeamCity web UI can be accessed at [`http://localhost`](http://localhost/){nullable="true"} via a web browser running on the same machine. Otherwise, use `http://localhost:<port>` (`http://localhost:7777` in our example).
 
 ## Install and run on Linux and macOS
 
@@ -74,7 +74,7 @@ To start/stop the TeamCity server and one default agent at the same time, run th
     ./runAll.sh stop
     ```
 
-By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/) and has one registered build agent that runs on the same machine. If another application already uses this port, the TeamCity server (Tomcat server) will not start with the "_Address already in use_" errors in the server logs or server console.
+By default, TeamCity runs on [`http://localhost:8111/`](http://localhost:8111/){nullable="true"} and has one registered build agent that runs on the same machine. If another application already uses this port, the TeamCity server (Tomcat server) will not start with the "_Address already in use_" errors in the server logs or server console.
 
 To change the server port, locate the `<TeamCity Home>/conf/server.xml` and modify the port in the `<Connector>` XML node, for example:
 
