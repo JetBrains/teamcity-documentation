@@ -142,6 +142,8 @@ Version 2021.2 brings the following TeamCity UI improvements:
 >As in the multiple preceding releases, our focus stays on improving the [experimental UI](teamcity-experimental-ui.md) and polishing it to the point when it can serve as a better alternative to the classic UI for all of our users. Your feedback helps determine which features are the most expected, so we can shape our roadmap to suit these needs better.  
 >If you tried the first versions of the new UI and switched back to the classic mode, we encourage you to give the new UI another go, as its current implementation differs a lot from the first one.  
 >You are welcome to share your feedback about the new improvements via [this form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=360001686659)!
+>
+{product="tc"}
 
 ### Displaying user avatars
 

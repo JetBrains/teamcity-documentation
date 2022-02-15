@@ -515,7 +515,7 @@ A Perforce client installed on the server. See also [Perforce compatibility issu
 
 <tr><td>
 
-Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
+[Azure DevOps](azure-devops.md)
 
 </td><td>2005, 2008, 2010, 2012, 2013, 2015, 2017</td><td></td></tr>
 
@@ -567,7 +567,7 @@ Other VCSs can be supported in TeamCity via [external plugins](https://plugins.j
 
 <tr><td>
 
-Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
+[Azure DevOps](azure-devops.md)
 
 </td><td>2005-2015, 2017</td><td></td></tr>
 
@@ -590,7 +590,7 @@ Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
 * Git
 * Subversion
 * Perforce
-* Azure DevOps Server, Team Foundation Server
+* Azure DevOps
 * Mercurial
 * CVS
 {product="tc"}
@@ -666,7 +666,7 @@ Available as non-bundled plugins:
 
 <tr><td>
 
-[Azure DevOps Server](team-foundation-work-items.md) (formerly Team Foundation Server — supported version 2012 or later), and Azure DevOps Services
+[Azure DevOps Server](azure-board-work-items.md) (formerly Team Foundation Server — supported version 2012 or later), and Azure DevOps Services
 
 </td><td></td></tr>
 
@@ -761,7 +761,7 @@ Supported VCS
 * Subversion
 * Perforce
 * Git (remote run only)
-* Azure DevOps Server, or formerly Team Foundation Server
+* Azure DevOps, or formerly Team Foundation Server
 
 </td></tr><tr>
 
@@ -774,7 +774,7 @@ Supported VCS
 <td>
 
 * Subversion 1.4-1.11 (the command-line client is required); note that 1.10-1.11 is supported since ReSharper 2018.3.
-* Azure DevOps Server (formerly Team Foundation Server — supported version 2005 or later). Installed Team Explorer is required.
+* Azure DevOps (formerly Team Foundation Server — supported version 2005 or later). Installed Team Explorer is required.
 * Perforce 2008.2 or later (the command-line client is required).
 
 </td></tr></table>

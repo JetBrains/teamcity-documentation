@@ -59,6 +59,7 @@ You will be automatically redirected to the __Build Results__ page, where you ca
 <img src="BuildResults.PNG" alt="Build results" width="750"/>
 
 >Try our [experimental UI](teamcity-experimental-ui.md) for a more modern interface of __Build Results__. This mode also provides better visualization and an improved build log preview.
+{product="tc"}
 
 ## Tweak your build configuration settings
 

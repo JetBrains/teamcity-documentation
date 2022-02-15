@@ -11,7 +11,8 @@ The __Tree view__ is the most capable view provided in the web UI. By default, a
 
 >To switch to the dark theme in the build log, select the __Use console view__ option.
 
-You can download a full build log in the textual form or as a `.zip` archive  from the Build Results page by clicking the _Download full build log_ link at the upper right corner. Alternatively, you can use the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=<id>`. It is also possible to download the build log as a `.zip` file using the corresponding link in the UI or via the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=&archived=true`. 
+You can download a full build log in the textual form or as a `.zip` archive  from the Build Results page by clicking the _Download full build log_ link in the upper right corner. Alternatively, you can use the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=<id>`. It is also possible to download the build log as a `.zip` file using the corresponding link in the UI or via the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=&archived=true`.  
+Note that if you authenticate in TeamCity via access token (for example, when sending an API request), you need to omit the `httpAuth` part of the URL and use `http://teamcity:8111/downloadBuildLog.html?buildId=<id>`.
 
 ## Customizing Log Output
 

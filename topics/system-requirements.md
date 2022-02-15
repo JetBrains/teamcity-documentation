@@ -15,7 +15,7 @@ This article contains general recommendations on choosing and configuring the en
 TeamCity Server can run on any recent version of Windows, Linux, or macOS. Requirements for the server's operating system are listed [here](supported-platforms-and-environments.md#TeamCity+Server).
 
 We also recommend that you review the [requirements](supported-platforms-and-environments.md) for the integrations you plan to use. For example, the following functionalities may require or work better when TeamCity Server is installed under Windows:
-* VCS integration with Azure DevOps Server (TFS)
+* VCS integration with Azure DevOps (TFS)
 * VCS integration with VSS
 * Windows domain logins (can work under Linux, but might be less stable), especially NTLM HTTP authentication
 * NuGet feed on the server (can work under Linux, but might be less stable)
