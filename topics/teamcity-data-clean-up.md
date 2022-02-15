@@ -65,8 +65,11 @@ There are two types of project clean-up rules:
 * _Base rules_ define what data to delete and when. They are easy to configure and cover most common clean-up cases. One base rule is assigned to each project and build configuration. [Read how configure a base rule](#Base+Rule).
 * _Keep rules_ define what data to preserve during the clean-up. They are very flexible but take more effort to configure than base rules. Multiple keep rules can be assigned to a project or build configuration. [Read how to configure a keep rule](#Keep+Rule).
 
-Keep rules are more fine-grained and can cover cases like keeping all the builds with a certain tag (for example, `release`) or in a certain branch. While using the keep rules requires a better understanding of different kinds of builds and their data, it also offers greater flexibility.   
-You can set a base rule to configure the common clean-up scenario and add multiple keep rules to tune what exact data to preserve. Or, you can rely exclusively on the keep rules to configure the clean-up logic, but make sure they preserve all valuable data before you disable a base rule.
+Keep rules are more fine-grained and can cover cases like keeping all the builds with a certain tag (for example, `release`) or in a certain branch. While using the keep rules requires a better understanding of different kinds of builds and their data, it also offers greater flexibility. You can set a base rule to configure the common clean-up scenario and add multiple keep rules to tune what exact data to preserve, or rely only on keep rules.
+
+>If a build configuration has no base clean-up rule configured, all its data not covered by keep rules will be scheduled for a clean-up. Before disabling the base rule make sure that keep rules preserve all valuable data.
+> 
+{type="warning"}
 
 During the clean-up, TeamCity analyzes and combines the base and keep rules to determine the scopes of data to preserve and to delete.
 
