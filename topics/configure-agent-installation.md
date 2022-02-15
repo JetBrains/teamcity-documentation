@@ -21,7 +21,7 @@ Example agent configuration file:
 
 ```Shell
 ## The address of the TeamCity server. The same as is used to open the TeamCity web interface in the browser.
-## Note that usage of https:// is recommended
+## Must include the protocol specification (https:// is recommended).
 serverUrl=http://localhost:8111/
 
 ## The unique name of the agent used to identify this agent on the TeamCity server
