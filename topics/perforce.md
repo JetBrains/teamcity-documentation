@@ -33,7 +33,7 @@ For specific environments, the `P4Host` environment variable can be set in the W
 
 <td>
 
-Choose the connection mode. See the details [below](#Perforce+Stream+Connection).
+Choose the connection mode. See the details [below](#Use+Perforce+Streams).
 
 </td></tr><tr>
 
@@ -99,7 +99,7 @@ Notes on using this mode:
 <anchor name="branch-support"/>
 <anchor name="branchStreams"/>
 
-The "_Enable feature branches support_" option allows you to specify branch streams to be monitored for changes, in addition to the default one. [Read more](integrating-teamcity-with-perforce.md#Connecting+to+Perforce+Stream) about this functionality.
+The "_Enable feature branches support_" option allows you to specify branch streams to be monitored for changes, in addition to the default one. [Read more](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) about this functionality.
 
 <anchor name="Perforce-perforceClientOptionDescription"/>
 

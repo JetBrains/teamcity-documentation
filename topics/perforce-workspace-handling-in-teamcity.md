@@ -24,7 +24,7 @@ If multiple Perforce VCS roots are used for the checkout, the variables are crea
 * `P4PORT` — same as `vcsroot.<VCS_root_ID>.port` [parameter](predefined-build-parameters.md#VCS+Parameters).
 * `P4CLIENT` — same as `vcsroot.<VCS_root_ID>.p4client` [parameter](predefined-build-parameters.md#VCS+Parameters), the name of the generated P4 workspace on the agent.
 
-These variables can be used to perform custom Perforce commands after the checkout. For example, to be able to access the port of the `PerforceTest` VCS root, define the `env.P4PORT=%vcsRoot.PerforceTest.port%` [environment variable](configuring-build-parameters.md#Environment+Variables) in the project or build configuration settings.
+These variables can be used to perform custom Perforce commands after the checkout. For example, to be able to access the port of the `PerforceTest` VCS root, define the `env.P4PORT=%\vcsRoot.PerforceTest.port%` [environment variable](configuring-build-parameters.md#Environment+Variables) in the project or build configuration settings.
 
 ## Workspace Deletion
 
@@ -32,7 +32,7 @@ These variables can be used to perform custom Perforce commands after the checko
 
 TeamCity deletes the Perforce workspaces in the following scenarios:
 * Immediately after a versioned settings commit (a workspace is created for each commit).
-* For the agent-side checkout — when a [clean checkout](clean-checkout.md) is performed (TeamCity will also run `p4 sync -f` in this case, see details [below](#Perforce+sync+-f+and+workspace+reuse)).
+* For the agent-side checkout — when a [clean checkout](clean-checkout.md) is performed (TeamCity will also run `p4 sync -f` in this case, see details [below](#Perforce+Sync+-f+and+Workspace+Reuse)).
 * In the background of the agent process (between builds), when it detects a non-existing workspace directory for a workspace associated with the current agent. A TeamCity agent performs a clean-up of unused [checkout directories](build-checkout-directory.md) (the default timeout is 8 days, can be changed with the `system.teamcity.build.checkoutDir.expireHours` [system property](configuring-build-parameters.md#Custom+Build+Parameters)). When a checkout directory is deleted, and this directory is associated with a Perforce workspace, this workspace is deleted as well. Cleaning Perforce workspaces can be disabled via the `teamcity.perforce.workspace.cleanup=false` setting, either in the [`buildAgent.properties`](configure-agent-installation.md) file or globally at the server level as a Root project [configuration parameter](configuring-build-parameters.md).
 
 When deleting a Perforce workspace which contains pending changes or opened files, TeamCity tries to revert the changes and remove pending changelists, and after that repeats the operation. If the second attempt fails as well, TeamCity tries to run the `p4 client -d -f`operation (forced). All those actions are logged to `teamcity-vcs.log`.

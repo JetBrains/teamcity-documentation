@@ -2,8 +2,11 @@
 [//]: # (auxiliary-id: Integrating TeamCity with Perforce;Perforce Streams as feature branches)
 
 This article describes how to integrate TeamCity with [Perforce Helix Core](https://www.perforce.com/products/helix-core) to:
-* Build sources of projects stores in a Helix Core repository.
-* 
+* Build sources of projects stored in a Helix Core repository.
+* Use Perforce streams as feature branches and build their sources independently.
+* Pre-test and pre-build files in shelved changelists.
+* Apply automatic labels to sources.
+* Report build statuses to code reviews in Perforce Helix Swarm.
 
 ## Prerequisites
 
