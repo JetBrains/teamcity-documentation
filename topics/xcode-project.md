@@ -13,10 +13,11 @@ To run an Xcode build, you need to have one or more build agents running macOS w
 <anchor name="Xcode 7.x Support"/>
 
 ## Working with different Xcode setups
+
 *  If only one Xcode version is installed on the agent machine, it will be used by default. The agent restart is required if Xcode was installed/updated.
 *  If several Xcode versions are installed, perform __one of the following__:
    * specify the path to the required version in the "Path to Xcode" setting (see below) of the Xcode Project build step settings
-   * select the default XCode distribution using the `xcode-select` tool (details on [Apple.com](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/xcode-select.1.html)).   
+   * select the default XCode distribution using the `xcode-select` tool.   
    Path to Xcode: `/Applications/Xcode.app/Contents/Developer`.   
    Command to switch: `sudo xcode-select -s path_to_xcode_distribution`.
 

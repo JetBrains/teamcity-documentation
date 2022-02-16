@@ -23,7 +23,7 @@ If you want to use the HTTPS protocol, it should be enabled separately. The proc
 
 ## Changing Server Context
 
-By default, the TeamCity server is accessible under the root context of the server address (for example, [`http://localhost:8111/`](http://localhost:8111/) ). To make it available under a nested path instead (for example, [`http://localhost:8111/teamcity/`](http://localhost:8111/teamcity/) ), you need to:
+By default, the TeamCity server is accessible under the root context of the server address (for example, [`http://localhost:8111/`](http://localhost:8111/){nullable="true"}). To make it available under a nested path instead (for example, [`http://localhost:8111/teamcity/`](http://localhost:8111/teamcity/){nullable="true"}), you need to:
 1. Stop the TeamCity server.
 2. Rename the `<[TeamCity Home Directory](teamcity-home-directory.md)>\webapps\ROOT` directory to `<[TeamCity Home Directory](teamcity-home-directory.md)>\webapps\teamcity`.
 3. [Start the TeamCity server](start-teamcity-server.md).

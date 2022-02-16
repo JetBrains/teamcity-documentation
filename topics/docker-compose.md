@@ -7,7 +7,7 @@ The _Docker Compose_ [build runner](build-runner.md) allows starting [Docker Com
 
 This runner is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
 
-Available step execution policies are described [here](configuring-build-steps.md#Execution+policy).
+Available step execution policies are described [here](configuring-build-steps.md#Execution+Policy).
 
 ## Docker Compose Settings
 

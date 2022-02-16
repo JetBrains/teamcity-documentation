@@ -27,6 +27,7 @@ Follow these recommendations to get the maximum benefit from the Jira integratio
 * When committing changes to your version control, __always mention the issue key__ related to the fix in the comment to the commit.
 * Mark fixed issues as _Resolved_ in Jira to display them with the _Fixed_ status in TeamCity logs (the time of resolve does not really matter).
 
+TeamCity updates statuses of Jira issues displayed for builds every 10 minutes or when new commits are detected.
 
 <anchor name="jira-JIRA-Authentication"/>
 
@@ -40,16 +41,23 @@ To enable the integration, create a connection to Jira on the __Project Settings
 
 <tr>
 
-<td></td>
-<td></td>
+<td>
 
-</tr>
+Setting
+
+</td>
+
+<td>
+
+Description
+
+</td></tr>
 
 <tr>
 
 <td>
 
-__Connection Type__
+Connection Type
 
 </td>
 
@@ -61,7 +69,7 @@ Select __Jira__ from the list.
 
 <td>
 
-__Display Name__
+Display Name
 
 </td>
 
@@ -73,7 +81,7 @@ Specify the connection name to distinguish it from the other connections.
 
 <td>
 
-__Server URL__
+Server URL
 
 </td>
 
@@ -85,7 +93,7 @@ Enter the base URL of your Jira instance or server. For Jira Cloud, it is a URL 
 
 <td>
 
-__Login__
+Login
 
 </td>
 
@@ -97,7 +105,7 @@ A username for self-managed Jira (specified in the Jira user profile) or email f
 
 <td>
 
-__Password / API Token__
+Password / API Token
 
 </td>
 
@@ -109,7 +117,7 @@ A password for self-managed Jira or [API token](https://developer.atlassian.com/
 
 <td>
 
-__Project Keys__
+Project Keys
 
 </td>
 
@@ -149,6 +157,11 @@ To make TeamCity send build/deploy information to Jira Cloud:
 2. Add the _Jira Cloud Integration_ [build feature](adding-build-features.md) to a build configuration, and select the preconfigured connection to Jira Cloud.
 
    For a [deployment build configuration](deployment-build-configuration.md), specify an environment type (for example, _testing_ or _production_) and an environment name. These options are required to show the deployment information in Jira Cloud.
+
+## TeamCity Integration with Jira Cloud Video Guide
+
+<video href="rK7faWbCh0Q"
+title="TeamCity tutorial — How to integrate TeamCity and Jira (Cloud)"/>
 
  <seealso>
         <category ref="get_started">

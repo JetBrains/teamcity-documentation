@@ -5,13 +5,13 @@ The _Docker_ [build runner](build-runner.md) allows launching the `build`, `push
 
 >For the `run` command, use [Docker Wrapper](docker-wrapper.md).
 
-If a [Dockerfile](https://docs.docker.com/engine/reference/builder/) is present in your VCS repository and you create a TeamCity project based on this repository, TeamCity will [autodetect it](configuring-build-steps.md#Autodetecting+build+steps) and offer creating a build step using this runner.
+If a [Dockerfile](https://docs.docker.com/engine/reference/builder/) is present in your VCS repository and you create a TeamCity project based on this repository, TeamCity will [autodetect it](configuring-build-steps.md#Autodetecting+Build+Steps) and offer creating a build step using this runner.
 
 ## Common Settings
 
 This runner is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
 
-Available step execution policies are described [here](configuring-build-steps.md#Execution+policy).
+Available step execution policies are described [here](configuring-build-steps.md#Execution+Policy).
 
 ## Docker Command
 

@@ -5,7 +5,7 @@ _Feature branches_ in distributed version control systems (DVCS) allow you to wo
 
 TeamCity support for feature branches is continuously extending and, among other features, includes [Branch Remote Run Trigger](branch-remote-run-trigger.md) starting a new personal build each time TeamCity detects changes in a particular branches of the VCS roots of the build configuration and [Automatic Merge](automatic-merge.md) to merge a branch into another after a successful build.
 
-## Supported version control systems
+## Supported Version Control Systems
 
 [Git](git.md) and [Mercurial](mercurial.md) feature branches are supported as well as Perforce [branch streams support](perforce.md#branch-support).
 
@@ -13,10 +13,10 @@ TeamCity support for feature branches is continuously extending and, among other
 <anchor name="Working+with+Feature+Branches#WorkingwithFeatureBranches-branchSpec"/>
 <anchor name="WorkingwithFeatureBranches-branchSpec"/>
 
-## Configuring branches
+## Configuring Branches
 
 To start working with DVCS branches, you need to configure which branches need to be watched for changes. This is done in the __General Settings__ section of a [Git](git.md) or [Mercurial](mercurial.md) VCS root via the __Branch Specification__ field.    
-With Perforce, check the corresponding box to enable feature branches support, which will display the branch specification field. The field accepts a list of branch names or patterns. TeamCity monitors the branches matched by the branch specification in addition to the [default branch](#Default+branch).
+With Perforce, check the corresponding box to enable feature branches support, which will display the branch specification field. The field accepts a list of branch names or patterns. TeamCity monitors the branches matched by the branch specification in addition to the [default branch](#Default+Branch).
 
 Once you've configured the branch specification, TeamCity will start to monitor these branches for changes. If your build configuration has [a VCS trigger and a change is found in some branch](configuring-vcs-triggers.md#branch-filter-1), TeamCity will trigger a build in this branch. From the build configuration home page you'll also be able to filter the history, change log, pending changes and issue log by the branch name. Branch names will also appear in the custom build dialog, so you'll be able to manually trigger a custom build on a branch too.
 
@@ -33,7 +33,7 @@ The `branch_name` parameter is VCS-specific, i.e. `refs/heads/master` in Git:
  
 <img src="branchSpec.png" alt="Branch specification" width="750"/>
 
-The part of the branch name matched by the asterisk (`*`) wildcard becomes the short branch name to be displayed in the TeamCity user-level interface (also known as the [logical branch name](#Logical+branch+name)). The line can also contain optional parentheses which, when present, denote the part of the pattern to be used as the logical name instead of just *-matched symbols.
+The part of the branch name matched by the asterisk (`*`) wildcard becomes the short branch name to be displayed in the TeamCity user-level interface (also known as the [logical branch name](#Logical+Branch+Name)). The line can also contain optional parentheses which, when present, denote the part of the pattern to be used as the logical name instead of just *-matched symbols.
 
 You can use parameters in the branch specification.
 
@@ -68,9 +68,9 @@ There is also a special escaping syntax defined via `#! escape: CHARACTER` synta
 +:release-\(7.1\)
 ```
 
->To run builds on GitHub pull request branches, use the [Pull Requests](pull-requests.md) build feature.
+>To run builds on GitHub and GitLab pull request branches, use the [Pull Requests](pull-requests.md) build feature.
 
-## Default branch
+## Default Branch
 
 When configuring a VCS root for DVCS, you need to specify the branch name to be used as the default one. The default branch has special meaning:
 * It is a fallback branch to use when the branch is not specified or the specified branch is not included by the branch specification (for example, when someone just clicks __Run__ without selecting a branch).
@@ -81,7 +81,7 @@ Unless disabled via a [branch filter](branch-filter.md), the default branch is a
 
 >Note that unlike the _Branch specification_ field, _Default branch_ does not support parentheses.
 
-## My branches
+## My Branches
 
 TeamCity can identify and group branches, based on the commits of the current TeamCity user.
 
@@ -89,9 +89,9 @@ Select the _My Branches_ group in the branch filter to display all active branch
 
  <anchor name="logicalBranchName"/>
 
-## Logical branch name
+## Logical Branch Name
 
-A logical branch name is a branch name shown in the user interface for the builds and on build configuration level. A logical branch name is regularly a part of the full VCS-specific branch name. It is calculated by applying a [branch specification](#Configuring+branches) to the branch name from the version control.
+A logical branch name is a branch name shown in the user interface for the builds and on build configuration level. A logical branch name is regularly a part of the full VCS-specific branch name. It is calculated by applying a [branch specification](#Configuring+Branches) to the branch name from the version control.
 
 For example, if the branch specification is defined like this:
 
@@ -138,7 +138,7 @@ With the __Show graph__ option enabled by default TeamCity displays build marker
 
 <anchor name="ActiveBranches"/>
 
-## Active branches
+## Active Branches
 
 In a build configuration with configured branches, most UI pages show active branches by default.
 
@@ -163,7 +163,7 @@ Additionally, a [branch filter](branch-filter.md) is available on the test detai
 
 ## Failure Conditions
 
-If a build failure condition is configured as follows:  _build metric has changed comparing to a last successful/finished/pinned build_, then the build from the same branch will be used. If there is no suitable build on the same branch, then build from default branch is used and the corresponding message is added to the build log.
+If a [build failure condition](build-failure-conditions.md) is configured as follows: _build metric has changed comparing to a last successful/finished/pinned build_, TeamCity will try to compare the current build with the build from the same branch. If there is no suitable build in the same branch, it will use the build from the default branch and add the respective message to the build log. Note that currently, if the default branch is disabled by the [branch filter](branch-filter.md), TeamCity will not be able to process the build failure condition properly (see the related issue [TW-74884](https://youtrack.jetbrains.com/issue/TW-74884)).
 
 ## Triggers
 
@@ -173,7 +173,7 @@ Additionally, a [branch filter](branch-filter.md) can be specified for the VCS, 
 
 ## Dependencies
 
-If a build configuration with branches has snapshot dependencies on other build configurations with branches, then when a build in a branch is triggered, the other builds in the chain will also get the branch associated, if the branches in the VCS roots of the builds have the same [logical name](#Logical+branch+name) and this branch is not excluded by the branch specification. The VCS roots of the builds can point to different repositories, but the logical branch name must be the same.
+If a build configuration with branches has snapshot dependencies on other build configurations with branches, then when a build in a branch is triggered, the other builds in the chain will also get the branch associated, if the branches in the VCS roots of the builds have the same [logical name](#Logical+Branch+Name) and this branch is not excluded by the branch specification. The VCS roots of the builds can point to different repositories, but the logical branch name must be the same.
 
 If this condition is met, the branches with this name will be checked out and all the builds down the chain (which the build triggered depends on) and all the builds up the chain (depending on the triggered build) will be marked with the same branch. Otherwise, the default branch will be checked out.
 
@@ -183,15 +183,15 @@ It is possible to configure artifact dependencies to retrieve artifacts from a b
 
 All notification rules except "My changes" will only notify you on builds from the default branch. At the same time, the "My changes" rule will work for builds from all available branches.
 
-## Build configuration status
+## Build Configuration Status
 
 The build configuration status is calculated based on the builds from the default branch only. Consequently, per-configuration investigation works for builds from the default branch. For example, a successful build from a non-default branch will not remove a per-configuration investigation, but a successful build from the default branch will.
 
-## Multiple VCS roots
+## Multiple VCS Roots
 
 If a build configuration has two (or more) VCS roots with specified branch filters, the triggering behavior might get more complicated.
 
-The VCS trigger groups branches from multiple roots by their [logical branch names](#Logical+branch+name). When some root does not have a branch from the other root, its default branch is used.
+The VCS trigger groups branches from multiple roots by their [logical branch names](#Logical+Branch+Name). When some root does not have a branch from the other root, its default branch is used.
 
 Example: 2 VCS roots have the same default branch `refs/heads/master`. Root1 has the branch specification `refs/heads/7.1/*` and new commits in branches `refs/heads/7.1/feature1` and `refs/heads/7.1/feature2`. Root2 has the specification `refs/heads/devel/*` and new commits in the branch `refs/heads/devel/feature1`.  
 Here, `feature1` is the logical name relevant to two branches with different paths: `.../7.1/feature1` and `.../devel/feature1`.
@@ -234,7 +234,7 @@ root2
 
 <td>
 
-Default branches are [implicitly added](#Default+branch) to each specification.
+Default branches are [implicitly added](#Default+Branch) to each specification.
 
 </td>
 
@@ -285,15 +285,15 @@ The `feature2` logical name is present in the specification of root1 but absent 
 </tr></table>
 
 
-## Build parameters
+## Build Parameters
 
 If you need to get the branch name in the build script or use it in other build configuration settings as a parameter, refer to [Predefined Build Parameters](predefined-build-parameters.md).
 
 ## Clean-up
 
-Clean-up rules are applied [independently](teamcity-data-clean-up.md#Base+Rule+Behavior+for+Build+Configurations+with+Feature+Branches) to each [active branch](#Active+branches).
+Clean-up rules are applied [independently](teamcity-data-clean-up.md#Base+Rule+Behavior+for+Build+Configurations+with+Feature+Branches) to each [active branch](#Active+Branches).
 
-## Manual branch merging
+## Manual Branch Merging
 
 You can merge branches in TeamCity manually, for example, if you want to merge branches only after a code review / approval, or if you want to perform the merge despite the test failure in a branch.
 
@@ -303,6 +303,11 @@ Open the [build results page](working-with-build-results.md), click the __Action
  The dialog that appears enables you to select the destination branch and add a commit message (required).
 
 It is also possible to merge branches [automatically](automatic-merge.md).
+
+## Feature Branches Video Tutorial
+
+<video href="aTE_1A0Fuh0"
+title="TeamCity tutorial — How to work with feature branches"/>
 
 <seealso>
         <category ref="admin-guide">

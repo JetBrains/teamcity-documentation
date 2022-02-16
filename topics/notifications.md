@@ -34,6 +34,8 @@ After configuring the connection, go to the settings of the build configuration 
 5. Configure a [branch filter](branch-filter.md). If it is not configured, you will receive notifications about the default branch only.
 6. Select [events to watch](adding-notification-rules.md#Which+Events+Will+Trigger+Notifications).
 
+>Watch our **video tutorial** on how to [integrate TeamCity with Slack](https://www.youtube.com/watch?v=d_Xuw7kkp4c).
+
 <seealso>
         <category ref="user-guide">
             <a href="adding-notification-rules.md">Subscribing to Notifications</a>

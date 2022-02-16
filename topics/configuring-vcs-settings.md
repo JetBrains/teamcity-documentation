@@ -1,10 +1,10 @@
 [//]: # (title: Configuring VCS Settings)
 [//]: # (auxiliary-id: Configuring VCS Settings)
 
-A Version Control System (VCS) is a system for tracking the revisions of the project source files. It is also known as SCM (source code management) or a revision control system. The following VCSs are supported by TeamCity out-of-the-box: [Git](git.md), [Subversion](subversion.md), [Mercurial](mercurial.md), [Perforce](perforce.md), [Team Foundation Server](team-foundation-server.md), [CVS](cvs.md), [StarTeam](starteam.md).
+A Version Control System (VCS) is a system for tracking the revisions of the project source files. It is also known as SCM (source code management) or a revision control system. The following VCSs are supported by TeamCity out-of-the-box: [Git](git.md), [Subversion](subversion.md), [Mercurial](mercurial.md), [Perforce](perforce.md), [Azure DevOps](azure-devops.md), [CVS](cvs.md), [StarTeam](starteam.md).
 {product="tc"}
 
-A Version Control System (VCS) is a system for tracking the revisions of the project source files. It is also known as SCM (source code management) or a revision control system. The following VCSs are supported by TeamCity out-of-the-box: [Git](git.md), [Subversion](subversion.md), [Mercurial](mercurial.md), [Perforce](perforce.md), [Team Foundation Server](team-foundation-server.md).
+A Version Control System (VCS) is a system for tracking the revisions of the project source files. It is also known as SCM (source code management) or a revision control system. The following VCSs are supported by TeamCity out-of-the-box: [Git](git.md), [Subversion](subversion.md), [Mercurial](mercurial.md), [Perforce](perforce.md), [Azure DevOps](azure-devops.md).
 {product="tcc"}
 
 Connection to a version control system is defined by a TeamCity [VCS root](vcs-root.md). A [project](project.md) or a [build configuration](build-configuration.md) in TeamCity can have one or more VCS roots attached; a build configuration can also define the workspace for the builds via other checkout options like [Checkout Rules](vcs-checkout-rules.md).
@@ -118,7 +118,7 @@ Exclude default branch changes from other branches
 
 <td id="excludeDefaultBranch">
 
-By default, when displaying pending changes in a feature branch or changes of a build on a branch, TeamCity includes changes in the [default branch](working-with-feature-branches.md#Default+branch) (till a build in the default branch) as well. This allows tracking the cases when a commit that broke a build was fixed in the default branch, but not in a feature branch.
+By default, when displaying pending changes in a feature branch or changes of a build on a branch, TeamCity includes changes in the [default branch](working-with-feature-branches.md#Default+Branch) (till a build in the default branch) as well. This allows tracking the cases when a commit that broke a build was fixed in the default branch, but not in a feature branch.
 
 However, for large projects with multiple teams simultaneously working on lots of different branches this means that all the project committers (regardless of the branch they are committing to) will be notified when, for example, a commit in the default branch broke the build or if a force push was performed.
 

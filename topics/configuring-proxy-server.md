@@ -11,8 +11,8 @@ This article gives general recommendations on configuring the following proxy ty
 >We strongly recommend that you configure HTTPS on the proxy level. Refer to your proxy server documentation for more details.
 
 Consider the example:   
-TeamCity server is installed at a _local_ URL [`http://teamcity.local:8111/tc`](http://teamcity.local:8111/tc).   
-It is visible to the outside world as a _public_ URL [`http://teamcity.public:400/tc`](http://teamcity.public:400/tc).
+TeamCity server is installed at a _local_ URL [`http://teamcity.local:8111/tc`](http://teamcity.local:8111/tc){nullable="true"}.   
+It is visible to the outside world as a _public_ URL [`http://teamcity.public:400/tc`](http://teamcity.public:400/tc){nullable="true"}.
 
 To make sure TeamCity "knows" the actual absolute URLs used by the client to access the resources, you need to:
 * Set up a reverse proxy as described below.

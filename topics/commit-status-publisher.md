@@ -12,7 +12,9 @@ Supported systems:
 * JetBrains Upsource
 * Gerrit Code Review tool 2.6+
 * Perforce Helix Swarm
- 
+
+>See our **video guide** on how to [send build information to external systems](https://www.youtube.com/watch?v=o0oj7mOcNvc).
+
 ## Provider-specific Configuration
 
 ### GitHub
@@ -42,7 +44,7 @@ For older versions of GitLab, use the GitLab URL of the format `http[s]://<hostn
 
 ### Bitbucket Cloud
 
-To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111). Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111), are rejected by the Bitbucket API.
+To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111){nullable="true"}. Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111){nullable="true"}, are rejected by the Bitbucket API.
 {product="tc"}
 
 In the Commit Status Publisher settings, specify a username and [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) (or token) for authentication. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password.
@@ -55,13 +57,9 @@ Commit Status Publisher supports the Bitbucket Server URL in the following forma
 
 ### Azure DevOps
 
-<note>
-
-In 2019, Visual Studio Team Services and Team Foundation Server have been renamed to Azure DevOps Services and Azure DevOps Server.
-
-</note>
-
 Personal access tokens can be used for authentication. If a [VSTS connection](configuring-connections.md#Azure+DevOps+PAT+Connection) is configured, the personal access token can be automatically filled from the project connection.
+
+You can create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account. Set the _Code_ access scope to _Code (status)_ in the repositories you are about to send statuses to from TeamCity.`
 
 ### JetBrains Space
 

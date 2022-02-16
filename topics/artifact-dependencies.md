@@ -97,7 +97,7 @@ Build branch filter
 
 <td>
 
-_This field appears if the dependency has a [branch specified](working-with-feature-branches.md#Configuring+branches) in the VCS root settings_. Allows setting a [branch filter](branch-filter.md) to limit source builds only to those in the matching branches. If not specified, the default branch is used.
+_This field appears if the dependency has a [branch specified](working-with-feature-branches.md#Configuring+Branches) in the VCS root settings_. Allows setting a [branch filter](branch-filter.md) to limit source builds only to those in the matching branches. If not specified, the default branch is used.
 
 </td></tr><tr>
 
@@ -131,6 +131,8 @@ At any point you can launch a build with [custom artifact dependencies](running-
 ### Artifacts Rules
 
 Here you specify the artifacts of the source build to be downloaded and the location on the agent they will be downloaded to before the dependent build starts.
+
+>Watch our **video guide** on how to [work with artifact rules](https://www.youtube.com/watch?v=AXITbn7bNyA).
 
 A newline-delimited set of rules. Each rule must have the following syntax:
 

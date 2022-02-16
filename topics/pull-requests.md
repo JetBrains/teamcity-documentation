@@ -26,7 +26,7 @@ If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build con
 >For requests from GitHub and GitLab, you can set up TeamCity to automatically run a build on each request and merge the request if the build is successful.   
 To achieve this, enable and configure the Pull Requests and [Automatic Merge](automatic-merge.md) build features.
 
-See the [example](#Pull+Requests+workflow+example) on how to set up TeamCity to run builds on GitHub pull requests.
+See the [example](#Pull+Requests+workflow+example) on how to set up TeamCity to run builds on GitHub pull requests, or watch our **[video tutorial](https://www.youtube.com/watch?v=4yFck9PvXI4)**.
 
 ## VCS-specific settings
 

@@ -60,7 +60,7 @@ All additional information on how to work with the TeamCity plugin is available 
 
 ## Configuring IntelliJ IDEA-platform based IDE to Check for Plugin Updates
 1. In IntelliJ IDEA, open __Settings | Updates__.
-2. Add [`http://<your_teamcity_server_URL>/update/idea-plugins.xml`](http://<your_teamcity_server_URL>/update/idea-plugins.xml) to the list.
+2. Add [`http://<your_teamcity_server_URL>/update/idea-plugins.xml`](http://<your_teamcity_server_URL>/update/idea-plugins.xml){nullable="true"} to the list.
 3. Set "Check for updates" to "Daily".
 4. Click __Apply__, then __Check Now__.
 

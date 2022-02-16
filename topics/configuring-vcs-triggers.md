@@ -63,7 +63,9 @@ Note that when a build is triggered by a trigger with the VCS quiet period set, 
 
 <chunk include-id="vcs-trigger-rules">
 
-If no trigger rules are specified, a build is triggered upon any change detected for the build configuration. You can control what changes are detected by changing the VCS root settings and specifying [Checkout Rules](vcs-checkout-rules.md).
+If no trigger rules are specified, a build is triggered upon any change detected for the build configuration. You can control what changes are detected by changing the VCS root settings and specifying [checkout rules](vcs-checkout-rules.md).
+
+>Watch our **video guide** on the [difference between the checkout and trigger rules](https://www.youtube.com/watch?v=nhYOo7Rk4DM).
 
 To limit the changes that trigger the build, use the VCS trigger rules. You can add these rules manually in the text area (one per line), or use the __Add new rule__ option to generate them.
 

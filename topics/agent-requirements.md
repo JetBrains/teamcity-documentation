@@ -40,6 +40,11 @@ For example, if you define a build runner parameter as a reference to another pr
 * Set the [environment variable](predefined-build-parameters.md#Java-Related+Environment+Variables) `JDK_16` on the build agent.
 * Specify the value on the __Parameters__ page of a build configuration (or in the __Project Settings__). The same value of the property will be used for all build agents.
 
+## Agent Requirements Video Guide
+
+<video href="5gaoW8IfNJA"
+title="TeamCity tutorial — Agent Requirements"/>
+
  <seealso>
         <category ref="concepts">
             <a href="build-agent.md">Build Agent</a>

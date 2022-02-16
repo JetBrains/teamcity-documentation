@@ -198,6 +198,9 @@ Revision
 Role
 : A set of permissions that can be granted to a user in one or all projects thus controlling their access to the projects and various features in the UI.
 
+Root project
+: A default project at the top of the project hierarchy. Its settings are available to all the other projects on the server.
+
 Run configuration policy
 : A policy that allows selecting specific build configurations you want a build agent to run. By default, build agents run all compatible build configurations, and this is not always desirable — in this case, this policy lets you limit the allowed set in each agent's details.
 

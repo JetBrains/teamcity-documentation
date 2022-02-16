@@ -106,7 +106,7 @@ Select when to publish artifacts:
 * "_Only if build status is successful_": publish artifacts at the last step of a build if all previous steps have been completed successfully. TeamCity checks the current build status on the server before publishing artifacts.
 * "_Always, even if build stop command was issued_": publish artifacts for all builds, even for interrupted ones (for example, after the `stop` command was issued or after the time-out, specified in the build failure conditions).
 
-This setting does not affect artifacts publishing configured in a [build script](service-messages.md#Publishing+Artifacts+while+the+Build+is+Still+in+Progress).
+This setting does not affect artifacts publishing configured in a [build script](service-messages.md#Publishing+Artifacts+While+Build+is+in+Progress).
 
 <note>
 
@@ -220,20 +220,20 @@ Though not required, it is still highly recommended ensuring the build numbers a
 
 ### Artifact Paths
 
-[Build artifacts](build-artifact.md) are files produced by the build which are stored on TeamCity server and can be downloaded from the TeamCity web UI or used as artifact dependencies by other builds. On the __General Settings__ page of the build configuration, you can specify patterns for the files on the agent which will be uploaded to the server after the build.
+[Build artifacts](build-artifact.md) are files produced by the build which are stored on TeamCity server and can be downloaded from the TeamCity UI or used as artifact dependencies by other builds. On the __General Settings__ page of the build configuration, you can specify patterns for the files on the agent which will be uploaded to the server after the build.
 
 If you have a finished build on an agent, you can use the checkout directory browser ![chechoutdirBrowser.png](chechoutdirBrowser.png) (which lists the checkout directory content on the agent) and select artifacts from the tree. TeamCity will place the paths to them into the input field.
 
-The __Artifact Paths__ field supports relative (to the build checkout directory) and absolute paths. Using relative paths is recommended. You can specify exact file paths or patterns, one per line or comma-separated. Patterns support the `*` and `**` wildcards (see below). Each line can be of the form `[+:]source [=> target]` to include and `-:source [=> target]` to exclude files or directories to publish as build artifacts. The parts enclosed in square brackets are optional. Rules are grouped by the right part and are applied in the order of appearance:
+The _Artifact Paths_ field supports relative (to the build checkout directory) and absolute paths. Using relative paths is recommended. You can specify exact file paths or patterns, one per line or comma-separated. Patterns support the `*` and `**` wildcards (see below). Each line can be of the form `[+:]source [=> target]` to include and `-:source [=> target]` to exclude files or directories to publish as build artifacts. The parts enclosed in square brackets are optional. Rules are grouped by the right part and are applied in the order of appearance:
 
 ```Shell
 
 +:**/* => target_directory
--:**/folder1 => target_directory
+-:directory1 => target_directory
 
 ```
 
-will tell TeamCity to publish all files except for `folder1` into the `target_directory`.
+will tell TeamCity to publish all files except for `directory1` into the `target_directory`.
 
 Line format description:
 
@@ -255,6 +255,10 @@ The target paths cannot be absolute. Non-relative paths will produce errors duri
 * `target_directory` — (optional) the directory in the resulting build's artifacts that will contain the files determined by the left part of the pattern. 
 * `target_archive` — (optional) the path to the archive to be created by TeamCity by packing build artifacts determined in the left part of the pattern. TeamCity treats the right part of the pattern as `target_archive` whenever it ends with a [supported archive extension](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts+from+an+Archive), that is `.zip`, `.7z`, `.jar`, `.tar.gz`, or `.tgz`.
 
+>There is a known issue with inability to exclude artifact paths specified with the `**` wildcard: for example, `-:**/directory`. Such exclude rules will be ignored by TeamCity. As a workaround, use the `-:**/directory/**` format instead. See the [related issue](https://youtrack.jetbrains.com/issue/TW-59469) in our tracker.
+> 
+{type="warning"}
+
 #### Artifacts Paths Examples
 
 * `install.zip` — publish a file named `install.zip` in the build artifacts.
@@ -263,7 +267,7 @@ The target paths cannot be absolute. Non-relative paths will produce errors duri
 * `target/**/*.txt=> docs` — publish all the txt files found in the target directory and its subdirectories. The files will be available in the build artifacts under the `docs` directory.
 * `reports => reports, distrib/idea*.zip` — publish reports directory as reports and files matching `idea*.zip` from the `distrib` directory into the artifacts root.
 * Relative paths inside a zip archive can be used, if needed: `results\result1\Dir1\Dir2 => archive.zip!results/result1/Dir1`.
-* The same target_archive name can be used multiple times, for example: 
+* The same `target_archive` name can be used multiple times, for example: 
    * `+:*/*.html => report.zip` 
    * `+:*/*.css => report.zip!/css/`
    * `-:*/*.txt => report.zip`

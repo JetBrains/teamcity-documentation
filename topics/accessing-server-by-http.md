@@ -9,7 +9,7 @@ Use the TeamCity [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcit
 
 </warning>
 
-The examples below assume that your server web UI is accessible via [`http://teamcity.jetbrains.com:8111/`](http://teamcity.jetbrains.com:8111/) URL.
+The examples below assume that your server web UI is accessible via <a href="http://teamcity.jetbrains.com:8111/" nullable="true">http://teamcity.jetbrains.com:8111/</a> URL.
 
 The TeamCity server supports basic HTTP authentication allowing users to access certain web server pages and perform actions from various scripts. Consult the manual for the client tool/library on how to supply basic HTTP credentials when issuing a request.
 

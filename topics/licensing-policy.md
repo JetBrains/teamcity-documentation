@@ -6,8 +6,10 @@ You can review TeamCity [license agreement](http://www.jetbrains.com/teamcity/bu
 
 ## Licensing Overview
 
-JetBrains offers several licensing options that allow you to scale TeamCity to your needs.   
+JetBrains offers several licensing options that allow you to scale TeamCity to your needs.  
 This section illustrates the main differences between the TeamCity server [editions](#Editions) and provides general information on the TeamCity [Build Agent](build-agent.md) license.
+
+_In general, to use TeamCity for production (Enterprise edition), you need to own one **server license**. In addition, you can acquire an indefinite number of **build agent licenses**, depending on how many builds you want to run in parallel._
 
 For detailed information, refer to the sections below.
 
@@ -17,26 +19,23 @@ For detailed information, refer to the sections below.
 
 Professional Server
 
-
 </td>
 
 <td>
 
 Enterprise Server
 
-
 </td></tr><tr>
 
 <td>
 
-no license key is required,  __free__
-
+No license key is required,  __free__
 
 </td>
 
 <td>
 
-a license key is required, [price options](https://www.jetbrains.com/teamcity/buy/choose_edition.jsp?license=ENTERPRISE)
+A license key is required, [price options](https://www.jetbrains.com/teamcity/buy/choose_edition.jsp?license=ENTERPRISE)
 
 
 </td></tr><tr>
@@ -45,41 +44,35 @@ a license key is required, [price options](https://www.jetbrains.com/teamcity/bu
 
 100 build configurations
 
-
 </td>
 
 <td>
 
-unlimited number of build configurations
-
+Unlimited number of build configurations
 
 </td></tr><tr>
 
 <td>
 
-full access to all product features
-
+Full access to all product features
 
 </td>
 
 <td>
 
-free 1\-year subscription to upgrades
-
+Free 1-year subscription to upgrades
 
 </td></tr><tr>
 
 <td>
 
-support via [community forum](http://jb.gg/teamcity-forum)
-
+Support via [community forum](http://jb.gg/teamcity-forum)
 
 </td>
 
 <td>
 
-priority [support](feedback.md) for the [supported releases](teamcity-release-cycle.md)
-
+Priority [support](feedback.md) for the [supported releases](teamcity-release-cycle.md)
 
 </td></tr><tr>
 
@@ -87,13 +80,11 @@ priority [support](feedback.md) for the [supported releases](teamcity-release-cy
 
 3 build agents included, buy more as necessary
 
-
 </td>
 
 <td>
 
-from 3 to 100 build agents included, buy more as necessary
-
+From 3 to 100 build agents included, buy more as necessary
 
 </td></tr></table>
 
@@ -105,27 +96,23 @@ If you need more build agents that are included with your TeamCity server editio
 
 Build Agent License
 
+</td></tr><tr>
+
+<td>
+
+Connects 1 additional build agent
 
 </td></tr><tr>
 
 <td>
 
-connects 1 additional build agent
-
-
-</td></tr><tr>
-
-<td>
-
-if using Professional edition, adds 10 additional build configurations
-
+If using Professional edition, adds 10 additional build configurations
 
 </td></tr><tr>
 
 <td>
 
-a license key is required, [price options](https://www.jetbrains.com/teamcity/buy/choose_edition.jsp?license=ADDITIONAL)
-
+A license key is required, [price options](https://www.jetbrains.com/teamcity/buy/choose_edition.jsp?license=ADDITIONAL)
 
 </td></tr></table>
 

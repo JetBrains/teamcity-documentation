@@ -15,8 +15,7 @@ PHPExcel comes with a build script that creates build artifacts under the `build
 
 <img src="create-configuration.png" width="700"/>
 
-The PHPExcel project has a GitHub repository at [https://github.com/maartenba/PHPExcel.git](https://github.com/maartenba/PHPExcel.git), a URL which we can configure in the Version Control System (VCS) settings.
-
+The PHPExcel project has a [GitHub repository](https://github.com/phpexcel/PHPExcel), a URL which we can configure in the Version Control System (VCS) settings.
 
 <img src="vcs-settings.png" width="700"/>
 

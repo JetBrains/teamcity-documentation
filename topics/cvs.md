@@ -1,10 +1,9 @@
 [//]: # (title: CVS)
 [//]: # (auxiliary-id: CVS)
 
-Common VCS Root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
+Common VCS root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
-This page contains descriptions of CVS-specific fields and options available when setting up a VCS root. Depending on the selected access method, the page shows different fields that help you to easily define the [CVS settings](http://ximbiot.com/cvs/):
-
+This article contains descriptions of CVS-specific fields and options available when setting up a VCS root.
 ## CVS Root
 
 <table><tr>

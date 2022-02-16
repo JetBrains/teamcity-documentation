@@ -68,7 +68,7 @@ Default branch
 
 <td id="defaultBranch">
 
-Configures [default branch](working-with-feature-branches.md#Default+branch). Parameter references are supported here. Default value is `refs/heads/master`.
+Configures [default branch](working-with-feature-branches.md#Default+Branch). Parameter references are supported here. Default value is `refs/heads/master`.
 
 <note>
 
@@ -86,7 +86,7 @@ Branch specification
 
 <td>
 
-Lists the patterns for branch names, required for [feature branches](working-with-feature-branches.md#Configuring+branches) support. The matched branches are monitored for changes in addition to the default branch. The syntax is similar to checkout rules: `+|-:branch_name`, where `branch_name` is specific to the VCS, i.e. `refs/heads/` in Git (with the optional `*` placeholder).
+Lists the patterns for branch names, required for [feature branches](working-with-feature-branches.md#Configuring+Branches) support. The matched branches are monitored for changes in addition to the default branch. The syntax is similar to checkout rules: `+|-:branch_name`, where `branch_name` is specific to the VCS, i.e. `refs/heads/` in Git (with the optional `*` placeholder).
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
@@ -162,7 +162,7 @@ The SCP-like syntax requires a colon after the hostname, while a usual SSH URL d
 </note>
 
 * Git: (for example, [`git://git.kernel.org/pub/scm/git/git.git`](git://git.kernel.org/pub/scm/git/git.git))
-* HTTP: (for example, [`http://git.somewhere.org/projects/test.git`](http://git.somewhere.org/projects/test.git))
+* HTTP: (for example, [`http://git.somewhere.org/projects/test.git`](http://git.somewhere.org/projects/test.git){nullable="true"})
 * file: (for example, [`file:///c:/projects/myproject/.git`](file:///c:/projects/myproject/.git))
 
 <note>
@@ -210,8 +210,7 @@ Specify a valid __username__ (if there is no username in the clone URL; the user
 For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](http://youtrack.jetbrains.com/issue/TW-18711).    
 For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
 
-You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, and Bitbucket.   
-Note that TeamCity does not support token authentication to hosted [Azure DevOps Server](https://azure.microsoft.com/en-in/services/devops/server/) (formerly, Team Foundation Server) installations.
+You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, and Bitbucket. When connecting to Azure DevOps, remember to set the _Code_ access scope to _Code (read) / Code (read and write) for versioned settings_ in the repositories you are about to access from TeamCity.
 
 >Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
 >We highly recommend that you use an access token or SSH key instead of password when configuring a VCS root for a GitHub.com repository.
@@ -248,9 +247,7 @@ For all available options to connect to GitHub, see the [comment](http://youtrac
 
 ## Authenticating to Azure DevOps Services
 
-If you use Git source control with Azure DevOps Services, the following options are available to you:
-
-<include src="team-foundation-server.md" include-id="azure-authentication"/>
+If you use Git source control with Azure DevOps Services, see the available options [here](azure-devops.md#Authentication+in+Azure+DevOps).
 
 ## Server Settings
 
@@ -656,7 +653,7 @@ teamcity.git.cleanupCron
 
 <td>
 
-[Cron expression](http://quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger) for the time of a clean-up in git-plugin, by default — daily at 2AM.
+[Cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) for the time of a clean-up in git-plugin, by default — daily at 2AM.
 
 </td></tr><tr>
 
@@ -675,7 +672,6 @@ teamcity.git.stream.file.threshold.mb
 <td>
 
 Threshold in megabytes after which JGit uses streams to inflate objects. Increase it if you have large binary files in the repository and see symptoms described in [TW-14947](http://youtrack.jetbrains.com/issue/TW-14947)
-
 
 </td></tr><tr>
 

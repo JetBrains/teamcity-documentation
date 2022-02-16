@@ -22,6 +22,8 @@ The access to the [TeamCity Data Directory](teamcity-data-directory.md) must be 
 
 Once the key is uploaded, a VCS root can be configured to use this uploaded key.
 
+>Watch our **video tutorial** on [how to check out from SSH repositories](https://www.youtube.com/watch?v=nUTb1BjMMoE) with SSH keys.
+
 ## SSH Key Usage
 
 See [SSH Agent](ssh-agent.md) for usage from within the build scripts.

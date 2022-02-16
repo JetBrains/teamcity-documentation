@@ -7,14 +7,13 @@ The logs are stored in plain text files in a disk directory on the TeamCity serv
 
 While the server is running, the logs can be viewed in the web UI on the `Server Logs` tab of __Administration | Diagnostics__ section.
 
-<tip>
+<anchor name="enable-server-logs-debug"/>
 
-__Enable Debug in Server Logs__
-
-In the web UI, go to __Administration | Diagnostics__ page. On the __Troubleshooting__ tab, choose a logging preset, view logs under __Server Logs__ subsection.
-
-If it is not possible to enable debug logging mode from the TeamCity web UI, refer to [Changing Logging Configuration](#Changing+Logging+Configuration) section to learn how to adjust logging options manually.
-</tip>
+>__Enable Debug in Server Logs__  
+>In the web UI, go to __Administration | Diagnostics__ page. On the __Troubleshooting__ tab, choose an active logging preset. To view logs, go to the __Server Logs__ tab.  
+>If it is not possible to enable debug logging mode from the TeamCity web UI, refer to [this section](#Changing+Logging+Configuration) to learn how to adjust logging options manually.
+> 
+{id="enable-debug-in-server-logs" auxiliary-id="enable-debug-in-server-logs"}
 
 ## General Logging Description
 
@@ -218,7 +217,7 @@ Contains [clean-up](teamcity-data-clean-up.md)-related log
 
 <td>
 
-(off by default) [TFS integration](team-foundation-server.md) log
+(off by default) [TFS integration](azure-devops.md) log
 
 </td></tr><tr>
 
