@@ -3,7 +3,7 @@
 
 ## Changes from 2021.2.2 to 2021.2.3
 
-No noteworthy changes.
+* To avoid false positive reports from some security scanners, TeamCity now uses an instance of the Log4j 1.2 library without vulnerable classes. To achieve this, we've created [our own fork of Log4j 1.2](https://github.com/JetBrains/teamcity-log4j) on GitHub, removed vulnerable packages unused by TeamCity (`net`, `chainsaw`, `jdbc`, and `jmx`), and built the library. 
 
 ## Changes from 2021.2.1 to 2021.2.2
 
