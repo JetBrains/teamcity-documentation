@@ -218,9 +218,7 @@
                      <toc-element id="ssh-keys-management.md" show-structure-for="chapter" show-structure-depth="4"/>
                   </toc-element>
                   <toc-element id="mercurial.md" show-structure-for="chapter" show-structure-depth="4"/>
-                  <toc-element id="perforce.md" show-structure-for="chapter" show-structure-depth="4">
-                     <toc-element id="perforce-workspace-handling-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
-                  </toc-element>
+                  <toc-element id="perforce.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="starteam.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="subversion.md" show-structure-for="chapter" show-structure-depth="4"/>
                   <toc-element id="azure-devops.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="azure-devops-server"/>
@@ -391,7 +389,9 @@
          <toc-element id="integrating-teamcity-with-other-tools.md" hidden="true"/>
          <toc-element toc-title="Integrating TeamCity with Other Tools">
             <toc-element id="integrating-teamcity-with-vcs-hosting-services.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="integrating-teamcity-with-perforce.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="integrating-teamcity-with-perforce"/>
+            <toc-element id="integrating-teamcity-with-perforce.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="integrating-teamcity-with-perforce">
+               <toc-element id="perforce-workspace-handling-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
+            </toc-element>
             <toc-element id="integrating-teamcity-with-docker.md" show-structure-for="chapter" show-structure-depth="4">
                <toc-element id="docker-wrapper.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>

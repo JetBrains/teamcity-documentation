@@ -129,11 +129,11 @@ Notes on using this mode:
     //depot/MPS/lib/tools/... //team-city-agent/tools/...
     
     ```
-* If the direct client mapping is changed, a clean checkout __will be forced__, unless the `teamcity.perforce.enable-no-clean-checkout` [internal property](server-startup-properties.md) is set on the server.
+* If the direct client mapping is changed, a [clean checkout](clean-checkout.md) __will be forced__, unless the `teamcity.perforce.enable-no-clean-checkout` [internal property](server-startup-properties.md) is set on the server.
 {product="tc"}
 * If the direct client mapping is changed, a clean checkout __will be forced__.
 {product="tcc"}
-* Changing client mapping __will not force__ [clean checkout](clean-checkout.md) for the agent-side checkout when:
+* Changing client mapping __will not force__ clean checkout for the agent-side checkout when:
   * A Perforce client name is used: changing the Perforce client mapping for the client will not result in a clean checkout.
   * A Perforce stream is used: changing the stream name while keeping the same stream root will not result in a clean checkout.
 

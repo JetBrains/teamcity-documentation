@@ -3,7 +3,7 @@
 
 This article describes how to integrate TeamCity with [Perforce Helix Core](https://www.perforce.com/products/helix-core) to:
 * Build sources of projects stored in a Helix Core repository.
-* Use Perforce streams as feature branches and build their sources independently.
+* Use Perforce streams as feature branches and build their sources independently of each other.
 * Pre-test and pre-build files in shelved changelists.
 * Apply automatic labels to sources.
 * Report build statuses to code reviews in Perforce Helix Swarm.
@@ -94,7 +94,7 @@ To be able to run builds on project sources stored in Perforce Helix Core and to
    1. In the __Project Settings__, go to __VCS Roots__.
    2. Click __Create VCS root__.
    3. Choose _Perforce Helix Core_ as a VCS type.
-   4. Configure the settings as described in [this article](perforce.md).
+   4. Configure the root's settings as described in [this article](perforce.md).
 
 After the project and Perforce root are configured, you can proceed with [adding build configurations](creating-and-editing-build-configurations.md) and running builds.
 
@@ -102,7 +102,7 @@ After the project and Perforce root are configured, you can proceed with [adding
 
 TeamCity can monitor commits in Perforce [streams](https://www.perforce.com/video-tutorials/vcs/what-perforce-streams) and work with them as with regular [feature branches](working-with-feature-branches.md).
 
-If a Perforce root is configured to use the _Stream_ mode, you can enable the feature branches support in the root settings. After it is enabled, all streams which have the specified main stream as a parent will be included into the set of [feature branches](working-with-feature-branches.md) processed by TeamCity. To include only specific streams to this set, edit the branch specification to filter these streams. Each filter rule should start with a new line. The syntax is `+|-:stream_name` (with the optional `*` placeholder). For example, use `+://stream-depot/*` to monitor only streams located in the `stream-depot` depot.
+If a [Perforce root](perforce.md) is configured to use the _Stream_ mode, you can enable the feature branches support in the root settings. After it is enabled, all streams which have the specified main stream as a parent will be included into the set of [feature branches](working-with-feature-branches.md) processed by TeamCity. To include only specific streams to this set, edit the branch specification to filter these streams. Each filter rule should start with a new line. The syntax is `+|-:stream_name` (with the optional `*` placeholder). For example, use `+://stream-depot/*` to monitor only streams located in the `stream-depot` depot.
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
@@ -110,7 +110,7 @@ TeamCity can process task streams as well, but it only detects new task streams 
 
 ### Running Builds on Streams Remotely
 
-You can launch a [remote build run](remote-run.md) from IntelliJ IDEA only if a stream has been already detected by TeamCity. The TeamCity Remote Run plugin tries to deduce the correct stream according to the depot paths of the files in the IDE's working copy.  
+You can launch a [remote build run](remote-run.md) from IntelliJ IDEA, but only if a stream has been already detected by TeamCity. The TeamCity Remote Run plugin tries to deduce the correct stream according to the depot paths of the files in the IDE's working copy.  
 For instance, if a file path in the working copy starts with `//depot/stream1/some/path`, TeamCity will try finding the `//depot/stream1` stream and starting the remote run there. If you have modified a file from another stream (imported into the working copy) and want to enforce a build in a particular stream, you need to specify a [configuration parameter](configuring-build-parameters.md) `teamcity.build.branch` when triggering the remote run.
 
 ### Cleaning Stream Workspaces
@@ -121,14 +121,14 @@ To properly process task streams, TeamCity needs to create dedicated workspaces 
 
 TeamCity allows you to run personal builds on Perforce [shelved files](https://www.perforce.com/manuals/v17.1/p4v/files.shelve.html). This way, you can try building changed source files before checking them into a common depot.
 
-To manually run a custom build on Perforce shelved files:
+To **manually run** a custom build on Perforce shelved files:
 1. Open the [custom run](running-custom-build.md) dialog by clicking the context menu next to the __Run__ button.
 2. Enable _run as a personal build_ option.
 3. Enter the ID of the changelist that contains the shelved files.
    <img src="p4-custom-run-shelved.png" alt="Run custom build on P4 shelved files" width="460"/>
 4. Choose the target Perforce root.
 
-To configure automatic triggering for a Perforce shelved changelist:
+To **configure automatic triggering** for a Perforce shelved changelist:
 1. Go to __Build Configuration Settings | Triggers__.
 2. Add a new trigger of the _Perforce Shelve Trigger_ type.
 3. Configure its settings as described in [this article](perforce-shelve-trigger.md).
@@ -146,13 +146,17 @@ If you use [Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm)
    * A username and cross-host [ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html) for connection (use the `p4 login -a -p` command to obtain one).
    <img src="csp-helix-swarm.png" alt="Configure Commit Status Publisher for P4 Helix Swarm" width="460"/>
 
+After this feature is configured, TeamCity will be publishing the build statuses' updates as comments to the respective code reviews in Helix Swarm:
+
+<img src="helixswarm.png" alt="Displaying TeamCity build statuses in Helix Swarm" width="706"/>
+
 Note that Helix Swarm usually creates reviews on shelved changelists whose description contains a special keyword, depending on your setup (for example, `#review`). If you want TeamCity to trigger builds on Perforce shelved files automatically, you need to specify the same keyword in the [Perforce Shelve Trigger](perforce-shelve-trigger.md) settings as well.
 
 >To get notified about the events, make sure to [configure Swarm triggers](https://www.perforce.com/manuals/swarm-admin/Content/Swarm/setup.perforce.html).
 
 ## Using Perforce Workspaces
 
-To perform Perforce-related operations, TeamCity usually executes Perforce commands without the workspace context. For instance, workspaces are not required for tracking changes or for most server-side operations. However, certain cases require creating a dedicated workspace:
+To perform Perforce-related operations, TeamCity usually executes Perforce commands without the workspace context. For instance, workspaces are not required for tracking changes and for most server-side operations. However, certain cases require creating a dedicated workspace:
 * If [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is enabled (it is the default checkout mode). In this case, TeamCity creates a Perforce workspace to check out the build sources.
 * Using [versioned project settings](storing-project-settings-in-version-control.md) with Perforce Helix Core.
 * Using [Perforce streams as feature branches](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams). In this case, TeamCity creates workspaces on the Perforce server to correctly process task streams.
@@ -175,8 +179,6 @@ To configure automatic labeling for a build configuration:
 3. Choose a Perforce VCS root to label.
 4. Specify the labeling pattern as described [here](vcs-labeling.md#Labeling+in+Perforce).
 
-## View Build Details
-
 ### View Perforce Jobs
 
 If a build contains a changelist that is associated with one or more [jobs](https://www.perforce.com/manuals/p4guide/Content/P4Guide/chapter.jobs.html), TeamCity will show a wrench icon ![wrench.png](wrench.png) next to this change in the build results. Click or hover it to view the details of the relevant jobs.
@@ -185,9 +187,3 @@ If a build contains a changelist that is associated with one or more [jobs](http
 {product="tc"}
 
 All operations of the Perforce plugin are logged in to the `teamcity-vcs.log` files with the category `jetbrains.buildServer.VCS.P4` (on an agent or on a server, depending on the operation mode). The detailed logging can be enabled with [TeamCity Server Logs](teamcity-server-logs.md).
-
-## View Build Status in Code Review
-
-If commit status publishing is [configured for Perforce Helix Swarm](#Publishing+Build+Statuses+to+Perforce+Helix+Swarm), TeamCity will be publishing the build statuses' updates as comments to the respective code reviews in Helix Swarm:
-
-<img src="helixswarm.png" alt="Displaying TeamCity build statuses in Helix Swarm" width="706"/>
