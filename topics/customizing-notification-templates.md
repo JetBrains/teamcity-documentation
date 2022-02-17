@@ -55,7 +55,7 @@ __IDE Notifications__ and __Windows Tray Notifications__
 
 ### Customization Examples
 
-This section provides Freemaker code snippets that can be used for customization of notifications:
+This section provides Freemarker code snippets that can be used for customization of notifications:
 
 #### Including Errors from Log
 
