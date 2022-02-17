@@ -25,11 +25,11 @@ Commit Status Publisher supports the GitHub URL in the following format:
 
 For connection, select one of the available authentication types:
 * _Access Token_   
-Use a personal access token or obtain a token through an OAuth connection. The token must have the following scopes:
-   * for public repositories: `public_repo` and `repo:status`
-   * for private repositories: `repo`
+  Use a personal access token or obtain a token through an OAuth connection. The token must have the following scopes:
+    * for public repositories: `public_repo` and `repo:status`
+    * for private repositories: `repo`
 * _Password_   
-Provide the GitHub username and password.
+  Provide the GitHub username and password.
 
 Note that the password authentication will not work if connecting to a GitHub Enterprise repository or if the user's GitHub account is protected with a two-factor authentication. In these cases, use an access token instead.
 
@@ -38,7 +38,7 @@ Note that the password authentication will not work if connecting to a GitHub En
 
 ### GitLab
 
-If you use a recent version of GitLab (&gt;= 9.0), it is recommended to use the GitLab URL of the following format: `http[s]://<hostname>[:<port>]/api/v4` as GitLab [stops supporting](https://about.gitlab.com/2018/01/22/gitlab-10-4-released/#api-v3) the v3 API in GitLab 11. If you have `/api/v3` in your current TeamCity configurations, they may stop working with GitLab 11+, so consider changing the server URL to `api/v4`.
+If you use a recent version of GitLab (\<= 9.0), it is recommended to use the GitLab URL of the following format: `http[s]://<hostname>[:<port>]/api/v4` as GitLab [stops supporting](https://about.gitlab.com/2018/01/22/gitlab-10-4-released/#api-v3) the v3 API in GitLab 11. If you have `/api/v3` in your current TeamCity configurations, they may stop working with GitLab 11+, so consider changing the server URL to `api/v4`.
 
 For older versions of GitLab, use the GitLab URL of the format `http[s]://<hostname>[:<port>]/api/v3`.
 
