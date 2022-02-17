@@ -15,9 +15,13 @@
 * Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11.
 * The [SBT](http://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.5.5.
 * The [Octopus Deploy integration plugin](https://plugins.jetbrains.com/plugin/9038-octopus-deploy-integration) bundled with TeamCity Cloud has been updated to version 6.1.8.
-{product="tcc"}
+  {product="tcc"}
 * The [Unity Support plugin](https://plugins.jetbrains.com/plugin/11453-unity-support) bundled with TeamCity Cloud has been updated to version SNAPSHOT-20211116104228.
-{product="tcc"}
+  {product="tcc"}
+
+## Changes from 2021.2.2 to 2021.2.3
+
+* To avoid false positive reports from some security scanners, TeamCity now uses an instance of the Log4j 1.2 library without vulnerable classes. To achieve this, we've created [our own fork of Log4j 1.2](https://github.com/JetBrains/teamcity-log4j) on GitHub, removed vulnerable packages unused by TeamCity (`net`, `chainsaw`, `jdbc`, and `jmx`), and built the library.
 
 ## Changes from 2021.2.1 to 2021.2.2
 

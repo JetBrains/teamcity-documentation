@@ -25,11 +25,11 @@ Commit Status Publisher supports the GitHub URL in the following format:
 
 For connection, select one of the available authentication types:
 * _Access Token_   
-Use a personal access token or obtain a token through an OAuth connection. The token must have the following scopes:
-   * for public repositories: `public_repo` and `repo:status`
-   * for private repositories: `repo`
+  Use a personal access token or obtain a token through an OAuth connection. The token must have the following scopes:
+    * for public repositories: `public_repo` and `repo:status`
+    * for private repositories: `repo`
 * _Password_   
-Provide the GitHub username and password.
+  Provide the GitHub username and password.
 
 Note that the password authentication will not work if connecting to a GitHub Enterprise repository or if the user's GitHub account is protected with a two-factor authentication. In these cases, use an access token instead.
 
@@ -38,7 +38,7 @@ Note that the password authentication will not work if connecting to a GitHub En
 
 ### GitLab
 
-If you use a recent version of GitLab (&gt;= 9.0), it is recommended to use the GitLab URL of the following format: `http[s]://<hostname>[:<port>]/api/v4` as GitLab [stops supporting](https://about.gitlab.com/2018/01/22/gitlab-10-4-released/#api-v3) the v3 API in GitLab 11. If you have `/api/v3` in your current TeamCity configurations, they may stop working with GitLab 11+, so consider changing the server URL to `api/v4`.
+If you use a recent version of GitLab (\<= 9.0), it is recommended to use the GitLab URL of the following format: `http[s]://<hostname>[:<port>]/api/v4` as GitLab [stops supporting](https://about.gitlab.com/2018/01/22/gitlab-10-4-released/#api-v3) the v3 API in GitLab 11. If you have `/api/v3` in your current TeamCity configurations, they may stop working with GitLab 11+, so consider changing the server URL to `api/v4`.
 
 For older versions of GitLab, use the GitLab URL of the format `http[s]://<hostname>[:<port>]/api/v3`.
 
@@ -52,6 +52,8 @@ In the Commit Status Publisher settings, specify a username and [app password](h
 ### Bitbucket Server
 
 Commit Status Publisher supports the Bitbucket Server URL in the following format: `http[s]://<hostname>:<port>`. Apart from the URL, you need to specify a username and password (or token) for authentication.
+
+To protect a branch and ensure that only verified pull requests are merged into it, you can specify [required builds](https://confluence.atlassian.com/bitbucketserver/checks-for-merging-pull-requests-776640039.html#Checksformergingpullrequests-Requiredbuildsmergecheck) in your Bitbucket repository settings. To set a TeamCity build as a _required build_, open the __Add required builds__ page in Bitbucket and specify a build configuration ID as a build key in the __Add builds__ field. In this case, Bitbucket will not allow a pull request to be merged until the build on requested changes finishes successfully.
 
 >The _TeamCity Integration for Bitbucket_ app made by Stiltsoft provides a more detailed preview of TeamCity builds in the Bitbucket UI and lets you run them without switching to TeamCity. Read more details about the app in [this post](https://blog.jetbrains.com/teamcity/2021/05/run-and-view-teamcity-builds-from-bitbucket/).
 
