@@ -8,7 +8,7 @@
 ## Changes from 2021.2.1 to 2021.2.2
 
 * __Changed format for .NET assembly names__  
-  To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). On updating to 2021.2.2, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset.
+  To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). On updating to 2021.2.2, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset. The details on the changes to the common identifier format in .NET can be found in the [Microsoft Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.assemblyname.name?view=net-6.0).
 
 ### Bundled tools updates
 {id="bundled-tools-updates-202122"}
