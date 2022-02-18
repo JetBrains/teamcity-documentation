@@ -167,6 +167,19 @@ Connection settings:
 <tr>
 <td>
 
+Repository type
+
+</td>
+<td>
+
+Choose to connect to a [private](https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html) or [public](https://docs.aws.amazon.com/AmazonECR/latest/public/what-is-ecr.html) registry.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
 AWS region
 
 </td>
