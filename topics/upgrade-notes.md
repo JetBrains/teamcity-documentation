@@ -5,6 +5,12 @@
 
 * To avoid false positive reports from some security scanners, TeamCity now uses an instance of the Log4j 1.2 library without vulnerable classes. To achieve this, we've created [our own fork of Log4j 1.2](https://github.com/JetBrains/teamcity-log4j) on GitHub, removed vulnerable packages unused by TeamCity (`net`, `chainsaw`, `jdbc`, and `jmx`), and built the library. 
 
+### Known Issues
+{id="known-issues-202123"}
+ 
+* After upgrading to 2021.2.3, builds might fail to check out sources from Azure DevOps Services via SSH.  
+  If you face this problem, please apply a workaround from [the issue](https://youtrack.jetbrains.com/issue/TW-73759#focus=Comments-27-5347961.0-0).
+
 ## Changes from 2021.2.1 to 2021.2.2
 
 * __Changed format for .NET assembly names__  
