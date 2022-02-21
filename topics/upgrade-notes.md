@@ -8,7 +8,7 @@
 ### Known Issues
 {id="known-issues-202123"}
  
-* After upgrading to 2021.2.3, builds might fail to check out sources from git repositories on Azure DevOps Services via SSH.  
+* After upgrading to 2021.2.3, builds might fail to check out sources from git repositories on Azure DevOps Server or Azure DevOps Services via SSH.  
   If you face this problem, please apply a workaround from [the issue](https://youtrack.jetbrains.com/issue/TW-73759#focus=Comments-27-5347961.0-0).
 
 ## Changes from 2021.2.1 to 2021.2.2
