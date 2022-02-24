@@ -24,7 +24,7 @@ Once the key is uploaded, a VCS root can be configured to use this uploaded key.
 
 >Watch our **video tutorial** on [how to check out from SSH repositories](https://www.youtube.com/watch?v=nUTb1BjMMoE) with SSH keys.
 
-On the __SSH Keys__ page, you can copy the public part of any uploaded non-encrypted SSH key using the __Copy the public key__ link under the key name.
+On the __SSH Keys__ page, you can copy the public part of an uploaded non-encrypted SSH key using the __Copy the public key__ link under the key name.
 
 <img src="ssh-keys.png" width="706" alt="SSH Keys"/>
 
