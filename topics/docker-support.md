@@ -43,7 +43,7 @@ If you need to log in to a registry requiring authentication before a build, sel
 
 ## Amazon ECR
 
-A connection to Amazon Elastic Container Registry (ECR) allows storing Docker images in private and public AWS registries. For this, such a connection needs to be selected when adding a [Docker Support](docker-support.md) feature to a build configuration.
+A connection to Amazon Elastic Container Registry (ECR) allows storing Docker images in private AWS registries. For this, such a connection needs to be selected when adding a [Docker Support](docker-support.md) feature to a build configuration.
 
 Connection settings:
 
@@ -57,19 +57,6 @@ Setting
 <td>
 
 Description
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-Repository type
-
-</td>
-<td>
-
-Select an Amazon ECR repository type.
 
 </td>
 </tr>
