@@ -22,7 +22,7 @@ Besides providing the build information, this page enables you to:
 
 * [Edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+Template).
 
-Note that you can also manage multiple builds at once (for example, pin, tag, remove builds, add builds to favorites or add comments). For this, select the required builds on the __Overview__ tab of the __Build Configuration Home__ page (checkboxes appear when hovering builds), and use commands of the popup menu that appears on selecting builds.
+You can also manage multiple builds at once (for example, pin, tag, remove builds, add builds to favorites, or add comments). For this, select the required builds on the __Overview__ tab of the __Build Configuration Home__ page (checkboxes appear when hovering over builds), and use commands of the pop-up context menu.
 
 ## Build Details
 
