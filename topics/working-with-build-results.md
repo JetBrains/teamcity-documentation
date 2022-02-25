@@ -19,7 +19,10 @@ Besides providing the build information, this page enables you to:
   * [Label this build's sources](vcs-labeling.md).
   * Remove the build.
   * Re-run the build: this will restart this build only, omitting other builds in its chain if any, which might be helpful if the build failed due to some infrastructure problems.
+
 * [Edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+Template).
+
+You can also manage multiple builds at once (for example, pin, tag, remove builds, add builds to favorites, or add comments). For this, select the required builds on the __Overview__ tab of the __Build Configuration Home__ page (checkboxes appear when hovering over builds), and use commands of the pop-up context menu.
 
 ## Build Details
 
