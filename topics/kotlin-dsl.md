@@ -74,7 +74,7 @@ To display the hidden files and directories, press `Command` + `Shift` + `.` ins
 When creating an empty project, that's what you see in `settings.kts` in your IDE:
 
 ```Kotlin
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.*
 /* some comment text */
 version = "2021.2"
  
@@ -90,8 +90,8 @@ You can create different entities in this project by calling `vcsRoot()`, `build
 The following examples shows how to add a build configuration with a command line script:
 
 ```Kotlin
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script 
 
 version = "2021.2"
 
@@ -115,8 +115,8 @@ Here, `id` will be used as the value of the _[Build configuration ID](identifier
 There is also another way to define the same build configuration:
 
 ```Kotlin
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script 
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script 
 
 version = "2021.2"
 
@@ -444,7 +444,7 @@ In the non-portable format each project has the following `settings.kts` file:
 
 ```Kotlin
 package MyProject
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.*
 /* ... */
 version = "2021.2"
 
@@ -460,8 +460,8 @@ The `Project.kt` file looks as follows:
 
 ```Kotlin
 package MyPackage
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.Project
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.Project
 
 object Project : Project({
    uuid = "05acd964-b90f-4493-aa09-c2229f8c76c0"
