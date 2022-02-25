@@ -75,7 +75,7 @@ Values from the following builds can be used as the basis for comparing build me
 
 By default, TeamCity provides the wide range of _build metrics_:
 * artifacts size(bytes) — size of artifacts, excluding [internal artifacts](build-artifact.md#Hidden+Artifacts) under the `.teamcity` directory
-* build duration (secs)
+* build duration (secs) — build duration, excluding time to check out sources
 * number of classes
 * number of code duplicated
 * number of covered classes
