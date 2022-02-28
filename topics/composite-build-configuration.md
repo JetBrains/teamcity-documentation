@@ -10,7 +10,7 @@ The purpose of the composite build configuration is to aggregate results from se
 When [creating a build configuration](creating-and-editing-build-configurations.md), you can specify _Composite_ as its type and specify its snapshot dependencies: the build configurations whose build results the current composite one will aggregate.
 
 There are important differences between composite builds and regular builds with snapshot dependencies:
-* A composite build does not occupy an agent; as a result, some settings which require an agent (for example, build steps or requirements) are not applicable.
+* A composite build does not occupy an agent; as a result, some settings which require an agent (for example, build steps or requirements) are not applicable. Composite builds are not displayed as [compatible](viewing-build-agent-details.md#Compatible+Configurations) in build agent details.
 * A composite build often acts as a __single__ build regardless of the number of dependencies:
     * A composite build is shown as _running_ at the time when the first dependency of the build chain starts, and is shown as _finished_ only when the last dependency finishes.
     * If a composite build is stopped or removed from the queue, all its dependencies, that is the whole build chain, are stopped/removed as well.
