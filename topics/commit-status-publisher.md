@@ -80,8 +80,9 @@ Now, whenever you run a build in this configuration, TeamCity will report the bu
 If a build is run on changes in Perforce [shelved files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html), TeamCity can report its statuses as comments to the respective code review in Perforce Helix Swarm.
 
 In the Commit Status Publisher settings, specify:
-* your Helix Swarm server's URL
-* username and cross-host [ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html) for connection (use `p4 login -a -p` command to obtain one)
+* Your Helix Swarm server's URL.
+* Username and cross-host [ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html) for connection (use `p4 login -a -p` command to obtain one)
+* If you want TeamCity to create a test run on the Swarm server and update its status according to the build status in TeamCity. To be able to use this mode, make sure the provided credentials grant administrative access.
 
 Note that Helix Swarm usually creates reviews on shelved changelists whose description contains a special keyword, depending on your setup (for example, `#review`). If you want TeamCity to trigger builds on Perforce shelved files automatically, you need to specify the same keyword in the [Perforce Shelve Trigger](perforce-shelve-trigger.md) settings as well.
 
