@@ -41,9 +41,7 @@
                 <toc-element id="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
         </toc-element>
-        <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2021-12.html">
-            <toc-element id="teamcity-release-notes-build-107109.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="teamcity-2021-12-release-notes.html"/>
-        </toc-element>
+        <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2021-12.html"/>
     </toc-element>
     <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4">
         <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
