@@ -22,7 +22,7 @@
         <accepts>build-agent-configuration.html</accepts>
     </rule>
     <rule id="upgrade-dsl">
-        <accepts>upgrading-dsl.html</accepts>
+        <accepts>upgrade-dsl.html</accepts>
     </rule>
     <rule id="cleanup">
             <accepts>clean-up.html</accepts>
