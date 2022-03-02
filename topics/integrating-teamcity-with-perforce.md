@@ -102,20 +102,28 @@ After the project and Perforce root are configured, you can proceed with [adding
 
 TeamCity can monitor commits in Perforce [streams](https://www.perforce.com/video-tutorials/vcs/what-perforce-streams) and work with them as with regular [feature branches](working-with-feature-branches.md).
 
-If a [Perforce root](perforce.md) is configured to use the _Stream_ mode, you can enable the feature branches support in the root settings. After it is enabled, all streams which have the specified main stream as a parent will be included into the set of [feature branches](working-with-feature-branches.md) processed by TeamCity. To include only specific streams to this set, edit the branch specification to filter these streams. Each filter rule should start with a new line. The syntax is `+|-:stream_name` (with the optional `*` placeholder). For example, use `+://stream-depot/*` to monitor only streams located in the `stream-depot` depot.
+If a [Perforce root](perforce.md) is configured to use the _Stream_ mode, you can enable the feature branches support in the root settings. After it is enabled, all streams which have the specified main stream as a parent will be included into the set of [feature branches](working-with-feature-branches.md) processed by TeamCity. To include only specific streams to this set, edit the branch specification to filter these streams. Each filter rule should start with a new line. The syntax is `+|-:stream_name`. For example, use `+://stream-depot/*` to monitor only streams located in the `stream-depot` depot, where `*` (for example, `master`) is a logical branch name.
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
 TeamCity can process task streams as well, but it only detects new task streams if there is a non-merge commit made to them.
 
-### Running Builds on Streams Remotely
+### Running Builds on Streams from IntelliJ IDE
 
-You can launch a [remote build run](remote-run.md) from IntelliJ IDEA, but only if a stream has been already detected by TeamCity. The TeamCity Remote Run plugin tries to deduce the correct stream according to the depot paths of the files in the IDE's working copy.  
+You can launch a [remote build run](remote-run.md) from IntelliJ-platform IDEs, but only if a stream has been already detected by TeamCity. The TeamCity Remote Run plugin tries to deduce the correct stream according to the depot paths of the files in the IDE's working copy.  
 For instance, if a file path in the working copy starts with `//depot/stream1/some/path`, TeamCity will try finding the `//depot/stream1` stream and starting the remote run there. If you have modified a file from another stream (imported into the working copy) and want to enforce a build in a particular stream, you need to specify a [configuration parameter](configuring-build-parameters.md) `teamcity.build.branch` when triggering the remote run.
 
 ### Cleaning Stream Workspaces
 
 To properly process task streams, TeamCity needs to create dedicated workspaces on the Perforce server. To save the server resources, you can [clean inactive workspaces](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server) created by TeamCity directly from the TeamCity UI.
+
+## Running Personal Builds from IntelliJ IDE
+
+If you write code in an IntelliJ-based IDE, you can pretest and prebuild local changes before committing them to a main Perforce repository: see common instructions on [remote run](remote-run.md), [remote debug](remote-debug.md), and [pre-test delayed commits](pre-tested-delayed-commit.md).
+
+The remote run/debug functionality is common for all types of VCS, but there are extra conveniences specific to Perforce:
+* [Remotely running builds on Perforce streams](#Running+Builds+on+Perforce+Streams).
+* [Testing changes on shelved files without committing them to a depot](#Running+Builds+on+Perforce+Shelved+Files).
 
 ## Running Builds on Perforce Shelved Files
 
@@ -132,8 +140,6 @@ To **configure automatic triggering** for a Perforce shelved changelist:
 1. Go to __Build Configuration Settings | Triggers__.
 2. Add a new trigger of the _Perforce Shelve Trigger_ type.
 3. Configure its settings as described in [this article](perforce-shelve-trigger.md).
-
->Learn how to initiate [remote run](remote-run.md), [remote debug](remote-debug.md), and [pre-test delayed commits](pre-tested-delayed-commit.md) in TeamCity.
 
 ### Publishing Build Statuses to Perforce Helix Swarm
 
@@ -154,11 +160,11 @@ Note that Helix Swarm usually creates reviews on shelved changelists whose descr
 
 >To get notified about the events, make sure to [configure Swarm triggers](https://www.perforce.com/manuals/swarm-admin/Content/Swarm/setup.perforce.html).
 
-## Using Perforce Workspaces
+## TeamCity Workspaces in Perforce
 
-To perform Perforce-related operations, TeamCity usually executes Perforce commands without the workspace context. For instance, workspaces are not required for tracking changes and for most server-side operations. However, certain cases require creating a dedicated workspace:
-* If [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is enabled (it is the default checkout mode). In this case, TeamCity creates a Perforce workspace to check out the build sources.
-* Using [versioned project settings](storing-project-settings-in-version-control.md) with Perforce Helix Core.
+To perform Perforce-related operations, a TeamCity server usually executes Perforce commands without the workspace context. For instance, workspaces are not required for tracking changes and for most server-side operations. However, certain cases require creating a dedicated workspace:
+* By default, TeamCity uses [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout) for checking out sources of a build. In this case, it creates a dedicated Perforce workspace and executes a corresponding `p4 sync` command to get the sources.
+* Using a Perforce VCS root to store [versioned project settings](storing-project-settings-in-version-control.md).
 * Using [Perforce streams as feature branches](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams). In this case, TeamCity creates workspaces on the Perforce server to correctly process task streams.
 
 Learn how TeamCity creates workspaces in Perforce and works with them in [this article](perforce-workspace-handling-in-teamcity.md).
