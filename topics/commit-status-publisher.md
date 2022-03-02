@@ -81,7 +81,7 @@ If a build is run on changes in Perforce [shelved files](https://www.perforce.co
 
 In the Commit Status Publisher settings, specify:
 * your Helix Swarm server's URL
-* username and cross-host [ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html) for connection (use `p4 login -a -p` command to obtain one)
+* username and cross-host [ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html) for connection (use the `p4 login -a -p` command to obtain one)
 
 Note that Helix Swarm usually creates reviews on shelved changelists whose description contains a special keyword, depending on your setup (for example, `#review`). If you want TeamCity to trigger builds on Perforce shelved files automatically, you need to specify the same keyword in the [Perforce Shelve Trigger](perforce-shelve-trigger.md) settings as well.
 
