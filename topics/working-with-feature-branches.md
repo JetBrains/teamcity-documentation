@@ -3,7 +3,7 @@
 
 _Feature branches_ in distributed version control systems (DVCS) allow you to work on a feature independently of the main development and commit all the changes for the feature onto the branch, merging the changes into the main branch when your feature is complete. This approach brings a number of advantages to software development teams; however, in continuous integration servers that do not have dedicated support for it, it also causes a number of problems, like constant build configurations duplication, poor visibility, and, in the end, loss of control over the process.
 
-TeamCity support for feature branches is continuously increasing and, among other features, includes [Branch Remote Run Trigger](branch-remote-run-trigger.md) starting a new personal build each time TeamCity detects changes in a particular branches of the VCS roots of the build configuration and [Automatic Merge](automatic-merge.md) to merge a branch into another after a successful build.
+TeamCity support for feature branches is continuously extending and, among other features, includes [Branch Remote Run Trigger](branch-remote-run-trigger.md) starting a new personal build each time TeamCity detects changes in a particular branches of the VCS roots of the build configuration and [Automatic Merge](automatic-merge.md) to merge a branch into another after a successful build.
 
 ## Supported Version Control Systems
 

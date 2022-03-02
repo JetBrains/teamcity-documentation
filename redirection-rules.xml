@@ -79,4 +79,7 @@
         <accepts>rest-api.html</accepts>
         <accepts>rest-api-reference.html</accepts>
     </rule>
+    <rule id="integrating-teamcity-with-perforce">
+        <accepts>perforce-streams-as-feature-branches.html</accepts>
+    </rule>
 </rules>
