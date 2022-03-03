@@ -9,7 +9,8 @@
 {id="known-issues-202123"}
  
 * After upgrading to 2021.2.3, builds might fail to check out sources from git repositories on Azure DevOps (both Server and Services) via SSH. See the [related issue](https://youtrack.jetbrains.com/issue/TW-75102) for details.  
-If you face this problem, please apply a workaround from [the issue](https://youtrack.jetbrains.com/issue/TW-73759#focus=Comments-27-5347961.0-0).
+  If you face this problem, please apply a workaround from [the issue](https://youtrack.jetbrains.com/issue/TW-73759#focus=Comments-27-5347961.0-0).
+* Builds might fail to publish artifacts or a build number via commands of an MSBuild script. This problem can be worked around by changing the build log verbosity level to _normal_: to do this, set the `msbuild.logger.params` [configuration parameter](configuring-build-parameters.md) to `verbosity=normal`. Alternatively, you can download the fixed .NET plugin [here](https://youtrack.jetbrains.com/issue/TW-75259#focus=Comments-27-5837867.0-0) and [install it manually](installing-additional-plugins.md) on your server.
 
 ## Changes from 2021.2.1 to 2021.2.2
 
