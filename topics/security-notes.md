@@ -38,7 +38,7 @@ Make especially sure to keep your credentials out of:
 
 TeamCity users with administrative permissions should have complex passwords.
 
-To make user passwords safe, TeamCity uses the BCrypt hashing algorithm.
+To make user password storage safer, TeamCity uses the BCrypt hashing algorithm.
 
 __Store secure data using parameters with the "password" type__.
 
