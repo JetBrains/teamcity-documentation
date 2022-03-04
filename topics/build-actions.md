@@ -107,4 +107,4 @@ The __Actions__ menu has a few options for viewing build details:
 * Comparing two builds with one another.
 * Viewing the build's investigation history.
 
-These actions are described in the [View Build Details](viewing-build-details.md) article.
+These actions are described in the [View Build Details](viewing-build-results.md) article.

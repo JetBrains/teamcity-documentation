@@ -408,16 +408,16 @@
             <toc-element id="personal-build.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="pre-tested-delayed-commit.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="remote-debug.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="remote-run.md"/>
-            <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="ordering-build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
-
+            <toc-element id="remote-run.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="viewing-user-changes-in-builds.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="working-with-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="investigating-and-muting-build-failures.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="investigating-and-muting-build-failures.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="working-with-build-queue.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="working-with-build-queue"/>
          </toc-element>
-         <toc-element id="viewing-build-details.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="view-build-details">
+         <toc-element id="working-with-build-results.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="working-with-build-results">
+            <toc-element id="project-home-page.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-configuration-home-page.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-results-page.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="already-fixed-in.md"/>
             <toc-element id="first-failure.md"/>
             <toc-element id="history-build.md"/>
