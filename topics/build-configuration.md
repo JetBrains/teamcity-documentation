@@ -3,7 +3,7 @@
 
 A _build configuration_ is a collection of settings used to start a build and group the sequence of the builds in the UI. Examples of build configurations are _distribution_, _integration tests_, _prepare release distribution_, _"nightly" build_.
 
-A build configuration belongs to a [project](project.md) and contains builds. You can explore details of a build configuration on its [home page](viewing-build-configuration-details.md) and modify its settings on the [editing page](creating-and-editing-build-configurations.md).
+A build configuration belongs to a [project](project.md) and contains builds. You can explore details of a build configuration on its [home page](view-build-details.md) and modify its settings on the [editing page](creating-and-editing-build-configurations.md).
 
 It is recommended to have a separate build configuration for each sequence of builds (that is performing a specified task in a dedicated environment). This allows for proper features functioning, like detection of new problems/failed tests, first failed in/fixed in tests status, automatically removed investigations, and so on.
 

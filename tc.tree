@@ -125,7 +125,6 @@
          <toc-element id="working-with-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="investigating-and-muting-build-failures.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="viewing-build-configuration-details.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="statistic-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="maven-related-data.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="installing-tools.md">
@@ -335,7 +334,6 @@
             <toc-element id="ordering-projects-and-build-configurations.md"/>
             <toc-element id="configuring-cross-server-projects-pop-up-menu.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="archiving-projects.md"/>
-            <toc-element id="changing-build-status-manually.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="customizing-statistics-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configuring-artifacts-storage.md" show-structure-for="chapter" show-structure-depth="4"/>
          </toc-element>
@@ -405,7 +403,7 @@
       </toc-element>
       <toc-element toc-title="Running Builds and Viewing Results">
          <toc-element toc-title="Manage Builds">
-            <toc-element id="build-actions.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-actions.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="build-actions"/>
             <toc-element id="build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="running-custom-build.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="personal-build.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -415,8 +413,7 @@
             <toc-element id="remote-debug.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="remote-run.md"/>
          </toc-element>
-         <toc-element toc-title="View Build Results">
-
+         <toc-element id="view-build-details.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="view-build-details">
             <toc-element id="already-fixed-in.md"/>
             <toc-element id="first-failure.md"/>
             <toc-element id="history-build.md"/>

@@ -79,4 +79,13 @@
         <accepts>rest-api.html</accepts>
         <accepts>rest-api-reference.html</accepts>
     </rule>
+    <rule id="view-build-details">
+        <accepts>viewing-build-configuration-details.html</accepts>
+    </rule>
+    <rule id="build-actions">
+        <accepts>changing-build-status-manually.html</accepts>
+        <accepts>build-tag.html</accepts>
+        <accepts>pinned-build.html</accepts>
+        <accepts>working-with-build-results.html</accepts>
+    </rule>
 </rules>

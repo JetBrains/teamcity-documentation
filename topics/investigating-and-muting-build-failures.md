@@ -17,7 +17,7 @@ These permissions are granted to Project Administrators and System Administrator
 ## Assigning Investigations of Failed Build Configurations
 
 To assign an investigation of a failed build configuration:
-1. Navigate to the __Overview__ tab of the __[Build Configuration Home](viewing-build-configuration-details.md)__ page (or the __Overview__ tab of the __[Build Results](working-with-build-results.md)__ page) and click __Assign investigation__. <img src="assign-investigation-button.png" alt="Assign an investigation of a failed build" width="676"/>
+1. Navigate to the __Overview__ tab of the __[Build Configuration Home](view-build-details.md)__ page (or the __Overview__ tab of the __[Build Results](working-with-build-results.md)__ page) and click __Assign investigation__. <img src="assign-investigation-button.png" alt="Assign an investigation of a failed build" width="676"/>
 2. Select a TeamCity user from the __Investigated by__ drop-down menu. <img src="assign-investigation-failed-build.png" width="575" alt="Assigned an investigation of a failed build"/>
 3. Select the condition to resolve the investigation:
    * _When build configuration is successful_

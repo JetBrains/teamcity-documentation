@@ -273,7 +273,6 @@
             <toc-element id="ordering-projects-and-build-configurations.md"/>
             <toc-element id="archiving-projects.md"/>
             <toc-element id="ordering-build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="changing-build-status-manually.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="customizing-statistics-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
         <toc-element id="configuring-test-reports-and-code-coverage.md">

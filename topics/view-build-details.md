@@ -1,5 +1,5 @@
-[//]: # (title: Viewing Build Configuration Details)
-[//]: # (auxiliary-id: Viewing Build Configuration Details)
+[//]: # (title: View Build Details)
+[//]: # (auxiliary-id: View Build Details;Viewing Build Configuration Details)
 
 The __Build Configuration Home__ page provides the configuration details and enables you to:
 	
@@ -51,3 +51,13 @@ Lists [changes](change-state.md) waiting to be included in the next build on a s
 ## Settings
 
 Lists the current [build configuration settings](creating-and-editing-build-configurations.md#Configuring+Settings) on a separate page.
+
+## Compare Two Builds
+
+The _Select for comparison_ action is available only in the new TeamCity UI. You can switch to it from a classic UI mode by clicking the test-tube icon in the upper right corner of the screen.
+
+This action allows comparing the settings and results of the current build with any other build from this build configuration, side-by-side. It shows the statistics and differences of their [parameters](configuring-build-parameters.md), revisions, statistics, and tests.
+
+This mode is especially helpful when the current build configuration is managed and monitored by multiple users. For example, if a build has no changes in the project code but fails for no obvious reason, you can compare this build with the last successful build and analyze their differences to find the most probable cause of the failure.
+
+## View Investigation History

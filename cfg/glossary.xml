@@ -28,5 +28,8 @@
     <term name="custom-build-run">
        A standalone build whose settings have been adjusted compared to its build configuration.
     </term>
+    <term name="build-chain">
+       A pipeline, or sequence, of builds connected by snapshot dependencies. Usually designed to continuously compile, test, and deliver a certain product or component.
+    </term>
 
     </terms>
