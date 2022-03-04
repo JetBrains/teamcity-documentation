@@ -1,11 +1,11 @@
-[//]: # (title: View Build Details)
-[//]: # (auxiliary-id: View Build Details;Viewing Build Configuration Details)
+[//]: # (title: Viewing Build Details)
+[//]: # (auxiliary-id: Viewing Build Details;Viewing Build Configuration Details)
 
 The __Build Configuration Home__ page provides the configuration details and enables you to:
 	
 * [run a custom build](running-custom-build.md) using the __Run__ button
 * using the __Actions__ menu			
-  * [pause triggers](build-configuration.md#Build+Configuration+State)		
+  * [pause triggers](managing-builds.md#Build+Configuration+State)		
   * check for [pending changes](change-state.md)		
   * enforce [clean checkout](clean-checkout.md)		
   * [assign an investigation](investigating-and-muting-build-failures.md)

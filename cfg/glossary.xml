@@ -31,5 +31,7 @@
     <term name="build-chain">
        A pipeline, or sequence, of builds connected by snapshot dependencies. Usually designed to continuously compile, test, and deliver a certain product or component.
     </term>
-
-    </terms>
+    <term name="build-configuration">
+       A collection of settings of a certain type of builds that determines their steps, features, and other common parameters. It serves as a blueprint for all builds that belong to it.
+    </term>
+</terms>

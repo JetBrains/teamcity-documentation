@@ -19,6 +19,6 @@ If you want to switch to your IDE and explore a change in detail, click __Open i
  <seealso>
         <category ref="concepts">
             <a href="project.md">Project</a>
-            <a href="build-configuration.md">Build Configuration</a>
+            <a href="managing-builds.md">Build Configuration</a>
         </category>
 </seealso>

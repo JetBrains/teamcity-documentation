@@ -5,7 +5,7 @@ If a project is not in an active development state, you can _archive_ it using t
 
 When _archived_:
 * All the __subprojects__ of the current project __are archived__ as well.
-* All project's __build configurations are__ automatically __[paused](build-configuration.md#Build+Configuration+State)__.
+* All project's __build configurations are__ automatically __[paused](managing-builds.md#Build+Configuration+State)__.
 * Automatic checking for changes in the project's [VCS roots](configuring-vcs-roots.md) is not performed if the VCS roots are not used in other non-archived projects.
 * Automatic build triggering is disabled. However, builds of the project can be triggered manually or automatically as a part of a build chain.
 * All data (settings, build results, artifacts, build logs, and so on) of the project's build configurations are preserved — you can still edit settings of the archived project or its build configurations.
@@ -24,6 +24,6 @@ If you need to dearchive a project, you can do it using the __Actions__ menu in 
 <seealso>
         <category ref="concepts">
             <a href="project.md">Project</a>
-            <a href="build-configuration.md">Build Configuration</a>
+            <a href="managing-builds.md">Build Configuration</a>
         </category>
 </seealso>

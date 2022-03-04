@@ -83,7 +83,7 @@
     </toc-element>
     <toc-element id="user-s-guide.md" hidden="true"/>
     <toc-element toc-title="User's Guide">
-        <toc-element id="viewing-your-changes.md"/>
+        <toc-element id="viewing-user-changes-in-builds.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="running-custom-build.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="working-with-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="investigating-and-muting-build-failures.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -167,6 +167,11 @@
             </toc-element>
             <toc-element id="creating-and-editing-build-configurations.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="configuring-general-settings.md"/>
+                <toc-element id="changing-build-configuration-type.md" show-structure-for="chapter" show-structure-depth="4">
+                    <toc-element id="composite-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
+                    <toc-element id="deployment-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
+                </toc-element>
+                <toc-element id="changing-build-configuration-status.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="nuget.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="configuring-build-steps.md" show-structure-for="chapter" show-structure-depth="4">
                     <toc-element id="build-step-execution-conditions.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="build-step-conditions.html"/>

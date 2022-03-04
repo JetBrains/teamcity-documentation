@@ -1,7 +1,7 @@
 [//]: # (title: Project)
 [//]: # (auxiliary-id: Project)
 
-A _project_ in TeamCity is a collection of [build configurations](build-configuration.md). A TeamCity project can correspond to a software project, a specific version/release of a project or any other logical group of the build configurations.   
+A _project_ in TeamCity is a collection of [build configurations](managing-builds.md). A TeamCity project can correspond to a software project, a specific version/release of a project or any other logical group of the build configurations.   
 The project has a name, an [ID](identifier.md), and an optional description.   
 In TeamCity, user [roles and permissions](managing-roles-and-permissions.md) are managed on a per-project basis.
 
@@ -55,7 +55,7 @@ The root project is special in the following ways:
 
  <seealso>
         <category ref="concepts">
-            <a href="build-configuration.md">Build Configuration</a>
+            <a href="managing-builds.md">Build Configuration</a>
         </category>
         <category ref="admin-guide">
             <a href="managing-projects-and-build-configurations.md">Managing Projects and Build Configurations</a>

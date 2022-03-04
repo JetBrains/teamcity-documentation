@@ -43,7 +43,7 @@ To remove build(s) from the queue, check the __Remove__ box next to the selected
 
 Additionally, you can:
 * Remove all your personal builds from the queue at once from the __Actions__ menu.
-* Remove several builds of [paused build configurations](build-configuration.md#Pausing+Several+Build+Configurations+in+Project) from the queue.
+* Remove several builds of [paused build configurations](managing-builds.md#Pausing+Several+Build+Configurations+in+Project) from the queue.
 
 ## Limiting Maximum Size of Build Queue
 {product="tc"}

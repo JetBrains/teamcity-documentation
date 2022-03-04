@@ -35,9 +35,7 @@
          <toc-element id="build-working-directory.md"/>
          <toc-element id="change.md"/>
          <toc-element id="clean-checkout.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="composite-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="dependent-build.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="deployment-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="difference-viewer.md"/>
          <toc-element id="notifier.md"/>
          <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -121,10 +119,7 @@
       </toc-element>
       <toc-element id="user-s-guide.md" hidden="true"/>
       <toc-element toc-title="User's Guide">
-         <toc-element id="viewing-your-changes.md"/>
-         <toc-element id="working-with-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="investigating-and-muting-build-failures.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
+
          <toc-element id="statistic-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="maven-related-data.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="installing-tools.md">
@@ -224,7 +219,12 @@
                <toc-element id="kotlin-dsl.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
             <toc-element id="creating-and-editing-build-configurations.md" show-structure-for="chapter" show-structure-depth="4">
-               <toc-element id="configuring-general-settings.md"/>
+               <toc-element id="configuring-general-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
+               <toc-element id="changing-build-configuration-type.md" show-structure-for="chapter" show-structure-depth="4">
+                  <toc-element id="composite-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
+                  <toc-element id="deployment-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
+               </toc-element>
+               <toc-element id="changing-build-configuration-status.md" show-structure-for="chapter" show-structure-depth="4"/>
                <toc-element id="nuget.md" show-structure-for="chapter" show-structure-depth="4">
                   <toc-element id="using-teamcity-as-nuget-feed.md" show-structure-for="chapter" show-structure-depth="4"/>
                </toc-element>
@@ -402,18 +402,22 @@
          <toc-element toc-title="TeamCity Plugin Development Documentation" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
       </toc-element>
       <toc-element toc-title="Running Builds and Viewing Results">
-         <toc-element toc-title="Manage Builds">
+         <toc-element id="managing-builds.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="managing-builds">
             <toc-element id="build-actions.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="build-actions"/>
-            <toc-element id="build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="running-custom-build.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="personal-build.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="ordering-build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="pre-tested-delayed-commit.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="remote-debug.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="remote-run.md"/>
+            <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="ordering-build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
+
+            <toc-element id="viewing-user-changes-in-builds.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="working-with-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="investigating-and-muting-build-failures.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
          </toc-element>
-         <toc-element id="view-build-details.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="view-build-details">
+         <toc-element id="viewing-build-details.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="view-build-details">
             <toc-element id="already-fixed-in.md"/>
             <toc-element id="first-failure.md"/>
             <toc-element id="history-build.md"/>

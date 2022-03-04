@@ -35,7 +35,7 @@ You can make TeamCity aware of the extra VCS usernames by populating the [additi
 
 <img src="additional-vcs-usernames.png" alt="Add Requirement dialog" width="460"/>
 
-This measure not only ensures you use the minimum number of committer slots, but also allows users to correctly track their changes on the __[Changes](viewing-your-changes.md)__ tab and see all of their personal builds on the **Projects** page.
+This measure not only ensures you use the minimum number of committer slots, but also allows users to correctly track their changes on the __[Changes](viewing-user-changes-in-builds.md)__ tab and see all of their personal builds on the **Projects** page.
 
 ## Use Performance Monitor to show statistics and spot bottlenecks
 

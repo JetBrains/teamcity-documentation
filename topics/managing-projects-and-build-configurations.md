@@ -11,6 +11,6 @@ Refer to the sidebar for the list of detailed instructions on managing projects 
 <seealso>
         <category ref="concepts">
             <a href="project.md">Project</a>
-            <a href="build-configuration.md">Build Configuration</a>
+            <a href="managing-builds.md">Build Configuration</a>
         </category>
 </seealso>

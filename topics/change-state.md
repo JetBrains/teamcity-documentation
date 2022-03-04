@@ -227,11 +227,11 @@ The change was integrated into a personal build that failed.
 
  <seealso>
         <category ref="concepts">
-            <a href="build-configuration.md">Build Configuration Status</a>
+            <a href="managing-builds.md">Build Configuration Status</a>
             <a href="build-state.md">Build State</a>
             <a href="change.md">Change</a>
         </category>
         <category ref="user-guide">
-            <a href="viewing-your-changes.md">Viewing Your Changes</a>
+            <a href="viewing-user-changes-in-builds.md">Viewing Your Changes</a>
         </category>
 </seealso>

@@ -820,7 +820,7 @@ curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>
  
 The most frequently used values for `<buildTypeLocator>` are `id:<buildConfigurationOrTemplate_id>` and `name:<Build%20Configuration%20name>`.
  
-__Since TeamCity 2017.2__, the _experimental_ [type](build-configuration.md#Build+Configuration+Types) locator is supported with one of the values: `regular`, `composite`, or `deployment`.
+__Since TeamCity 2017.2__, the _experimental_ [type](managing-builds.md#Build+Configuration+Types) locator is supported with one of the values: `regular`, `composite`, or `deployment`.
  
 Other supported [dimensions](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#Locator) are (these are in _experimental_ state):
 * `internalId` — internal ID of the build configuration.

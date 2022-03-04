@@ -11,7 +11,7 @@ To add an individual project to the __Projects__ page or remove it from this pag
 
 <img src="eye-button.png" width="750" alt="Disk usage in details"/>
 
-Note that if a project has [archived subprojects](archiving-projects.md) / [paused build configurations](build-configuration.md#Pausing+Several+Build+Configurations+in+Project), they will also be displayed on the __Overview__ page and will be marked correspondingly.
+Note that if a project has [archived subprojects](archiving-projects.md) / [paused build configurations](managing-builds.md#Pausing+Several+Build+Configurations+in+Project), they will also be displayed on the __Overview__ page and will be marked correspondingly.
 
 <seealso>
         <category ref="admin-guide">

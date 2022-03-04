@@ -49,7 +49,7 @@ By default, TeamCity uses your login name as the VCS username. Click __Edit__ to
 These settings are not used for authentication for the particular VCS, and so on.
 
 These settings enable you to:
-* track your changes status on the [Changes](viewing-your-changes.md),
+* track your changes status on the [Changes](viewing-user-changes-in-builds.md),
 * highlight such builds on the Projects page if the appropriate [option is selected](#Customizing+UI),
 * notify you on such builds when the __Builds affected by my changes__ option is selected in [notifications settings](adding-notification-rules.md#What+Will+Be+Watched).
 
@@ -93,7 +93,7 @@ Since version 2021.2, users can upload their avatars in the user profile. The av
             <a href="managing-roles-and-permissions.md">Roles and Permissions</a>
         </category>
         <category ref="user-guide">
-            <a href="viewing-your-changes.md">Viewing Your Changes</a>
+            <a href="viewing-user-changes-in-builds.md">Viewing Your Changes</a>
             <a href="adding-notification-rules.md">Subscribing to Notifications</a>
         </category>
 </seealso>

@@ -35,7 +35,7 @@ If upon changed files choosing TeamCity is unable to find build configurations t
 
 * A developer uses the Remote Run dialog of a [TeamCity IDE plugin](installing-tools.md) to select the files to be sent to TeamCity.
 * Based on the selected files, a list of applicable build configurations is displayed. The developer selects the build configurations to test the change against and sets options for a pre-tested commit.
-* The TeamCity IDE plugin builds a "patch" - full content of all the files selected and sends it to the TeamCity server. The patch is also preserved locally on the developer's machine. When sent, the change appears on the developer's [changes](viewing-your-changes.md) page. Developer can continue working with the code and can modify the files sent to the pre-tested commit.
+* The TeamCity IDE plugin builds a "patch" - full content of all the files selected and sends it to the TeamCity server. The patch is also preserved locally on the developer's machine. When sent, the change appears on the developer's [changes](viewing-user-changes-in-builds.md) page. Developer can continue working with the code and can modify the files sent to the pre-tested commit.
 * The personal build is queued and processed like other queued builds.
 * When the build starts, it checks out the latest sources just like a normal build and then applies the developer's personal changes sent from the IDE over (full file content is used)
 * The build runs as usual

@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Already Fixed In)
 
 For some test failures TeamCity can show the "_Already Fixed In_" build.   
-This is the build where this initially failed test was successful and which was run _after_ the build with initial test failure (for the same [Build Configuration](build-configuration.md)). 
+This is the build where this initially failed test was successful and which was run _after_ the build with initial test failure (for the same [Build Configuration](managing-builds.md)). 
 
 Here, _after_ means that
 * the build with the successful test has newer changes than the build with initial failure;

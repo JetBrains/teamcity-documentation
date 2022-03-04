@@ -570,7 +570,7 @@ Do the following:
 %dep.<btID>.system.build.number%
 ```
 
-Where `<btID>` is the [ID of the build configuration](build-configuration.md) C. The approach works best when builds reuse is turned off via the [Snapshot Dependencies](snapshot-dependencies.md) snapshot dependency option set to off.
+Where `<btID>` is the [ID of the build configuration](managing-builds.md) C. The approach works best when builds reuse is turned off via the [Snapshot Dependencies](snapshot-dependencies.md) snapshot dependency option set to off.
 
 [Read more](predefined-build-parameters.md#Predefined+Configuration+Parameters) about dependency properties.
 

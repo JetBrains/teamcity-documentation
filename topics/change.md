@@ -4,7 +4,7 @@
 Any modification of the source code which you introduce. If a change has been committed to the version control system, but not yet included in a build, it is considered pending for a certain build configuration.
 
 TeamCity suggests several ways to view changes:
-* The __[Changes](viewing-your-changes.md)__ page shows the list of changes made by TeamCity users and how they have affected different builds. By default, your own changes are displayed. The page has a user selector enabling you to view changes made by any other TeamCity user the same way you see your own changes.
+* The __[Changes](viewing-user-changes-in-builds.md)__ page shows the list of changes made by TeamCity users and how they have affected different builds. By default, your own changes are displayed. The page has a user selector enabling you to view changes made by any other TeamCity user the same way you see your own changes.
 * Pending changes are accessible from the __Projects__ page, build configuration page, or the [build results](working-with-build-results.md) page.
 
 Viewing and analyzing changes involves the following possibilities:
@@ -21,7 +21,7 @@ View [possible states of a change](change-state.md).
 <seealso>
         <category ref="concepts">
             <a href="revision.md">Revision</a>
-            <a href="build-configuration.md">Build Configuration</a>
+            <a href="managing-builds.md">Build Configuration</a>
         </category>
         <category ref="user-guide">
             <a href="investigating-and-muting-build-failures.md">Investigating and Muting Build Failures</a>

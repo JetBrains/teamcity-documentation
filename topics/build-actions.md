@@ -19,7 +19,7 @@ The context menu next to the __Run__ button opens the build's settings menu, so 
 
 To cancel a running build, click the stop icon next to its progress bar. TeamCity will prompt to you to enter an optional reason for cancelling; you can also choose if this build should be automatically re-added to the queue.
 
-Note that there is no way to pause and then continue a single build (though you can [pause a whole build configuration](build-configuration.md#Pausing+Build+Configuration)). If cancelled, a build should be restarted from the first step.
+Note that there is no way to pause and then continue a single build (though you can [pause a whole build configuration](managing-builds.md#Pausing+Build+Configuration)). If cancelled, a build should be restarted from the first step.
 
 ## Build Actions Menu
 
@@ -107,4 +107,4 @@ The __Actions__ menu has a few options for viewing build details:
 * Comparing two builds with one another.
 * Viewing the build's investigation history.
 
-These actions are described in the [View Build Details](view-build-details.md) article.
+These actions are described in the [View Build Details](viewing-build-details.md) article.

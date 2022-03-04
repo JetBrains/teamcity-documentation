@@ -91,7 +91,7 @@ It is possible to [customize project-level charts](customizing-statistics-charts
 
 <seealso>
         <category ref="concepts">
-            <a href="build-configuration.md">Build Configuration</a>
+            <a href="managing-builds.md">Build Configuration</a>
             <a href="build-state.md">Build State</a>
             <a href="change.md">Change</a>
         </category>

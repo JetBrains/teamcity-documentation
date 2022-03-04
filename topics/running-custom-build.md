@@ -17,19 +17,19 @@ There are several ways of launching a custom build in TeamCity:
 ### General Options
 
 Select an agent you want to run the build on from the drop-down menu. Note that for each agent in the list, TeamCity displays its current state and estimates when the agent will become idle if it is running a build at the moment. Besides the possibility to run a build on a particular agent from the list, you can also use one of the following options:
-* __fastest idle agent__: _default option_; if selected, TeamCity will automatically choose an agent to run a build on based on calculated estimates.
-* __the fastest agent in &lt;a certain&gt; pool__: if selected, TeamCity will run a build on an agent from a specified pool
+* __Fastest idle agent__: _default option_; if selected, TeamCity will automatically choose an agent to run a build on based on calculated estimates.
+* __Fastest agent in a certain pool__: if selected, TeamCity will run a build on an agent from a specified pool
 * if [cloud integration](teamcity-integration-with-cloud-solutions.md) is configured, you can select to run a build on an agent from a __certain cloud image__. If no available cloud agents of this type exist, TeamCity will also attempt to start a new one.
 {product="tc"}
-* __run a build on &lt;a specified&gt; agent__
+* __Run a build on &lt;a specified&gt; agent__
 * __All enabled compatible agents__: Use this option to run a build simultaneously on all agents that are enabled and compatible with the build configuration. This option may be useful in the following cases:
-  * run a build for agent maintenance purposes (for example, you can create a configuration to check whether agents function properly after an environment upgrade/update).
-  * run a build on different platforms (for example, you can set up a configuration, and specify for it a number of compatible build agents with different environments installed).
+  * Run a build for agent maintenance purposes (for example, you can create a configuration to check whether agents function properly after an environment upgrade/update).
+  * Run a build on different platforms (for example, you can set up a configuration, and specify for it a number of compatible build agents with different environments installed).
 
 On the __General__ options you can also specify whether
-* this build will be run as a [personal](personal-build.md) one
-* this build will be put at the top of the [build queue](build-queue.md)
-* all files in the [build checkout directory](build-checkout-directory.md) will be cleaned before this build.
+* This build will be run as a [personal](personal-build.md) one.
+* This build will be put at the top of the [build queue](build-queue.md)
+* All files in the [build checkout directory](build-checkout-directory.md) will be cleaned before this build.
    * If snapshot dependencies are configured, this option can be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use clean checkout.
 
 <anchor name="P4-shelved-files-custom-run"/>
@@ -76,9 +76,9 @@ The __Build branch__ drop-down menu, available if you have branches in your buil
 ### Use settings
 
 If your project has [versioned settings](storing-project-settings-in-version-control.md) enabled, you can tell TeamCity to run a build:
-* with the settings defined for the project, either the current settings on the server or the settings from VCS
-* with the project settings currently defined on the server
-* with the settings loaded from the VCS revision calculated for the build.
+* With the settings defined for the project, either the current settings on the server or the settings from VCS.
+* With the project settings currently defined on the server.
+* With the settings loaded from the VCS revision calculated for the build.
 
 If changes are selected in the [step above](#Include+changes), the revision of the project settings corresponding to the selected changes will be loaded.
 
@@ -116,7 +116,7 @@ To promote a build, open the build results page of the dependency build and clic
 For example, your build configuration A is configured to take artifacts from the last successful build of configuration B, but you want to run a build of configuration A using artifacts of a different build of configuration B (not the last successful build), so you promote an earlier build of B.   
 Build promotion affects only a single run of the dependent build. Once you click __Promote__, a build of the dependent build configuration which uses the artifacts of the specified build is queued. Any further runs of the dependent build configuration will use artifacts as configured (last successful, last pinned, and so on), unless you use another promotion.
 
-More details are available in the [related blog-post](http://blog.jetbrains.com/teamcity/2012/04/teamcity-build-dependencies-2/).
+More details are available in the [related blog post](http://blog.jetbrains.com/teamcity/2012/04/teamcity-build-dependencies-2/).
 
  <seealso>
         <category ref="installation">

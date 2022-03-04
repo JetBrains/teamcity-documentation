@@ -108,7 +108,7 @@ __Project__
 
 <td>
 
-A TeamCity project corresponds to a software project or a specific version/release of a software project. A project is a collection of _[build configurations](build-configuration.md)_.
+A TeamCity project corresponds to a software project or a specific version/release of a software project. A project is a collection of _[build configurations](managing-builds.md)_.
 
 </td></tr><tr>
 
