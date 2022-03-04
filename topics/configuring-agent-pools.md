@@ -37,7 +37,7 @@ When you have configured agent pools, you can:
         <category ref="concepts">
             <a href="agent-pool.md">Agent Pool</a>
             <a href="build-agent.md">Build Agent</a>
-            <a href="build-queue.md">Build Queue</a>
+            <a href="working-with-build-queue.md">Working with Build Queue</a>
             <a href="agent-requirements.md">Agent Requirements</a>
         </category>
         <category ref="admin-guide">

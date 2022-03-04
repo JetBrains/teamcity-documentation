@@ -14,7 +14,7 @@ This page displays the following information for each build:
 * Time to start: the estimated wait duration. Hovering over the estimated time value shows a tooltip with the following information:
     * Expected start/finish time.
     * The link to the planned agent.
-    * If the current build is a part of a <emphasis tooltip="build-chain">"build chain</emphasis> and the builds it depends on are not finished yet, a corresponding note will be displayed. For some builds, like the builds that have never been run before, TeamCity cannot estimate possible duration, so the respective message will be displayed in the tooltip, for example:
+    * If the current build is a part of a <emphasis tooltip="build-chain">build chain</emphasis> and the builds it depends on are not finished yet, a corresponding note will be displayed. For some builds, like the builds that have never been run before, TeamCity cannot estimate possible duration, so the respective message will be displayed in the tooltip, for example:
    <img src="unpredictableDuration.png" alt="Unpredictable build duration" width="400"/>
 * A brief description of the [event that triggered the build](configuring-build-triggers.md).
 * The number of agents compatible with this build configuration. You can click an agent's name link to open the __[Agents](viewing-build-agent-details.md)__ page, or use the down arrow to quickly view the list of compatible agents in the pop-up menu.
@@ -37,9 +37,9 @@ When there are several idle agents that can run a queued build, TeamCity tries t
 ## Ordering Build Queue
 
 You can:
-* [Reorder](ordering-build-queue.md) the builds in the queue manually.
-* [Remove](ordering-build-queue.md#Removing+Builds+From+Build+Queue) build configurations or personal builds from the queue.
-* With System Administrator permissions, [assign different priorities to build configurations](ordering-build-queue.md#Managing+Build+Priorities), which will affect their position in the queue.
+* Reorder the builds in the queue manually.
+* Remove build configurations or personal builds from the queue.
+* With System Administrator permissions, assign different priorities to build configurations, which will affect their position in the queue.
 
 ### Manually Reordering Builds in Queue
 

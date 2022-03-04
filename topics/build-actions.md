@@ -108,3 +108,12 @@ The __Actions__ menu has a few options for viewing build details:
 * Viewing the build's investigation history.
 
 These actions are described in the [View Build Details](viewing-build-results.md) article.
+
+## Build Configuration Actions Menu
+
+The __[Build Configuration Home](build-configuration-home-page.md)__ page has own __Actions__ menu with a different set of actions. It allows you to:
+* [Pause triggers](managing-builds.md#Build+Configuration+State).
+* Check for [pending changes](change-state.md).
+* Enforce [clean checkout](clean-checkout.md).
+* [Assign an investigation](investigating-and-muting-build-failures.md).
+* [Clean stream workspaces on a Perforce server](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server).

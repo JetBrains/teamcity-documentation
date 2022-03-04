@@ -1,93 +1,9 @@
 [//]: # (title: Viewing Build Results)
 [//]: # (auxiliary-id: Viewing Build Results;Viewing Build Configuration Details;Working with Build Results)
 
-TeamCity has two main modes: __Home__ and __Settings__. The __Home__ mode accumulates build results at a project or build configuration level. If you are using the new TeamCity UI, you can navigate between this hierarchy via the Projects sidebar. Whenever you click a particular build on any __Home__ page, TeamCity will show this build's __Build Results__ page.  
-Each mode has its own level of detail: to see the build statistics for the whole project, go to __Project Home__; to browse the details of a single build, go to its __Build Results__.
 
-This section contains articles explaining how you can use these modes to browse build results in TeamCity.
-
-## Build Configuration Home
 
 In TeamCity, all information about a build, whether it is queued, running or finished, is accumulated on its __Build Results__ page. This page can be accessed by clicking the build number or build status link in a build list.
-
-The __Build Configuration Home__ page provides the configuration details and enables you to:
-* [run a custom build](running-custom-build.md) using the __Run__ button
-* using the __Actions__ menu			
-  * [pause triggers](managing-builds.md#Build+Configuration+State)		
-  * check for [pending changes](change-state.md)		
-  * enforce [clean checkout](clean-checkout.md)		
-  * [assign an investigation](investigating-and-muting-build-failures.md)
-  * [clean stream workspaces on a Perforce server](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server)
-* [edit the configuration settings](creating-and-editing-build-configurations.md#Configuring+Settings)
-
-The build configuration details are separated into several tabs whose number may vary depending on your server or project configuration, for example, [dependencies](dependent-build.md), [TeamCity integration with other tools](integrating-teamcity-with-other-tools.md), and so on. 
-
-## Overview
-
-Provides information on:
-	
-* __Pending Changes__ also listed as a separate tab, see the details [below](#Pending+Changes)	
-* __Current Status__ of the build configuration, and, if applicable:			
-  * number of [queued builds](build-queue.md)		
-  * for a running build — the progress details with the __Stop__ option to terminate the build		
-  * for a [failed build](build-state.md) — the number and [agent](build-agent.md), and so on	
-* the [Build History](build-history.md) section lists builds of the current build configuration
-
-## History
-
-Displays [Build History](build-history.md) on a separate page and allows filtering builds by build agents, [tagging builds](build-actions.md#Add+Tags+to+Build) and filtering them by tags (if available).
-
-## Change Log
-
-By default, lists changes from builds finished during the last 14 active days. Use the show all link to view the complete change log.
-
-The page shows the change log with its graph of commits to the [monitored branches](working-with-feature-branches.md#Changes) of all VCS repositories used by the current build configurations and the repositories used by the [dependencies and dependent configurations](dependent-build.md) of the current configuration.
-
-## Statistics
-
-Displays the collected statistical data as [visual charts](statistic-charts.md#Build+Configuration+Statistics).
-
-## Compatible Agents
-
-Lists all authorized agents. Agents meeting [Agent Requirements](agent-requirements.md) are listed as compatible. For each incompatible agent, the reason is provided.   
-The agents belonging to the [pool(s)](configuring-agent-pools.md) associated with the current project are listed first. 
-
-## Pending Changes
-
-Lists [changes](change-state.md) waiting to be included in the next build on a separate page.
-
-## Settings
-
-Lists the current [build configuration settings](creating-and-editing-build-configurations.md#Configuring+Settings) on a separate page.
-
-## Compare Two Builds
-
-The _Select for comparison_ action is available only in the new TeamCity UI. You can switch to it from a classic UI mode by clicking the test-tube icon in the upper right corner of the screen.
-
-This action allows comparing the settings and results of the current build with any other build from this build configuration, side-by-side. It shows the statistics and differences of their [parameters](configuring-build-parameters.md), revisions, statistics, and tests.
-
-This mode is especially helpful when the current build configuration is managed and monitored by multiple users. For example, if a build has no changes in the project code but fails for no obvious reason, you can compare this build with the last successful build and analyze their differences to find the most probable cause of the failure.
-
-## View Investigation History
-
-In TeamCity a build goes through several states:
-* Upon some event the build trigger adds the build to the queue where the build stays waiting for a free agent.
-* The build starts on the agent and performs all configured build steps.
-* The build finishes and becomes a part of the build history of this build configuration.
-
-In TeamCity all information about a particular build, whether it is queued, running or finished, is accumulated on the __Build Results__ page. The page can be accessed by clicking the build number or build status link.
-
-Besides providing the build information, this page enables you to:
-* [Run a custom build](running-custom-build.md) using the __Run__ button.
-* Use the __Actions__ menu to do the following:
-  * Add a build to [favorites](build-actions.md#Add+Build+to+Favorites).
-  * Add a comment.
-  * [Tag the build](build-actions.md#Add+Tags+to+Build).
-  * Change the build status, marking the build as [failed](changing-build-status-manually.md#Marking+build+as+failed) or [successful](changing-build-status-manually.md#Marking+build+as+successful).
-  * [Label this build's sources](vcs-labeling.md).
-  * Remove the build.
-  * Re-run the build: this will restart this build only, omitting other builds in its chain if any, which might be helpful if the build failed due to some infrastructure problems.
-* [Edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+Template).
 
 ## Build Details
 
@@ -314,8 +230,8 @@ If a finished build has artifact and/or snapshot dependencies, the __Dependencie
 
 If you have [integration with an issue tracker ](integrating-teamcity-with-issue-tracker.md) configured, and if there is at least one issue mentioned in the comments for the included changes or in the comments for the build itself, you will see the list of issues related to the current build in the __Issues__ tab.
 
-
 >If you need to view all the issues related to a build configuration and not just to particular build, you can navigate to the __Issues Log__ tab available on the build configuration home page, where you can see all the issues mapped to the comments or filter the list to particular range of builds.
+
 ## Build Artifacts
 
 If the build produced [artifacts](build-artifact.md), they all are displayed on the dedicated __Artifacts__ tab.

@@ -21,7 +21,7 @@ As the history build does not reflect the current state of the sources, the foll
  <seealso>
         <category ref="concepts">
             <a href="build-history.md">Build History</a>
-            <a href="build-queue.md">Build Queue</a>
+            <a href="working-with-build-queue.md">Working with Build Queue</a>
         </category>
         <category ref="admin-guide">
             <a href="running-custom-build.md">Triggering a Custom Build</a>

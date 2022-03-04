@@ -28,7 +28,7 @@ Select an agent you want to run the build on from the drop-down menu. Note that 
 
 On the __General__ options you can also specify whether
 * This build will be run as a [personal](personal-build.md) one.
-* This build will be put at the top of the [build queue](build-queue.md)
+* This build will be put at the top of the [build queue](working-with-build-queue.md)
 * All files in the [build checkout directory](build-checkout-directory.md) will be cleaned before this build.
    * If snapshot dependencies are configured, this option can be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use clean checkout.
 
@@ -123,7 +123,7 @@ More details are available in the [related blog post](http://blog.jetbrains.com/
             <a href="upgrading-teamcity-server-and-agents.md" product="tc">Upgrade</a>
         </category>
         <category ref="concepts">
-            <a href="build-queue.md">Build Queue</a>
+            <a href="working-with-build-queue.md">Working with Build Queue</a>
             <a href="dependent-build.md">Dependent Build</a>
             <a href="personal-build.md">Personal Build</a>
         </category>

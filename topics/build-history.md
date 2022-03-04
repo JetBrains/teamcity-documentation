@@ -1,5 +1,5 @@
-[//]: # (title: Build History)
-[//]: # (auxiliary-id: Build History)
+[//]: # (title: Viewing Build History)
+[//]: # (auxiliary-id: Viewing Build History;Build History)
 
 _Build history_ is a record of the past builds produced by TeamCity.
 

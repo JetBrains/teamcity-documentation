@@ -1,7 +1,7 @@
 [//]: # (title: Assigning Build Configurations to Specific Build Agents)
 [//]: # (auxiliary-id: Assigning Build Configurations to Specific Build Agents)
 
-It is sometimes necessary to manage the [Build Agents](build-agent.md)' workload more effectively. For example, if the time-consuming performance tests are run, the Build Agents with low hardware resources may slow down. As a result, more builds will enter the [Build Queue](build-queue.md), and the feedback loop can become longer than desired. To avoid such situation, you can:
+It is sometimes necessary to manage the [Build Agents](build-agent.md)' workload more effectively. For example, if the time-consuming performance tests are run, the Build Agents with low hardware resources may slow down. As a result, more builds will enter the [build queue](working-with-build-queue.md), and the feedback loop can become longer than desired. To avoid such situation, you can:
 
 1. [Establish a run configuration policy](#Agent+pools) for an agent, which defines the build configurations to run on this agent.
 2. Define special [Agent Requirements](agent-requirements.md), to restrict the pool of agents, on which a build configuration can run the builds. These requirements are:			

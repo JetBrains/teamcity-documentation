@@ -464,7 +464,7 @@ If you are creating a copy (as opposed to moving the server this way), it is imp
 If you are creating a __test server__, you need to ensure that the users and production systems are not affected. Typically, this means you need to:
 * disable the email (in the "Administration &gt; Notifier" sections) and possibly also custom notifiers or change their settings to prevent the new server from sending out notifications;
 * disable email verification (in the "Administration &gt; Authentication" section);
-* be sure not to run any builds which change (for example, deploy to) production environments. This also typically includes Maven builds deploying to non-local repositories. You can prevent any builds from starting by pausing the [build queue](build-queue.md);
+* be sure not to run any builds which change (for example, deploy to) production environments. This also typically includes Maven builds deploying to non-local repositories. You can prevent any builds from starting by pausing the [build queue](working-with-build-queue.md);
 * disable cloud integration (so that it does not interfere with the main server);
 * disable external artifact storage (as otherwise running/deleting builds and server clean-up will affect the storage which might be used by the production server);
 * disable Docker registry clean-up (or just disable clean-up on the server);
@@ -769,7 +769,7 @@ You can also perform [remote debugging](remote-debug.md) of tests on an agent vi
 If a build containing several steps fails at a certain step, it is possible to debug the step that breaks. Do the following:
 1. Go to the build configuration and disable the build steps up to the one you want to debug.
 2. [Select the build](working-with-build-results.md) to debug.
-3. Open the [Custom Run](running-custom-build.md#Run+Custom+Build+dialog) dialog and select the __put the build to the [queue top](build-queue.md)__ to give you build the priority.
+3. Open the [Custom Run](running-custom-build.md#Run+Custom+Build+dialog) dialog and select the __put the build to the [queue top](working-with-build-queue.md#Moving+Builds+to+Top)__ to give you build the priority.
 4. When debugging is complete, reenable the build steps.
 
 ## Watch Several TeamCity Servers with Windows Tray Notifier

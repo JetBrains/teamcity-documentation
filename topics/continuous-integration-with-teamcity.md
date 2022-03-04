@@ -91,7 +91,7 @@ __TeamCity Server__
 
 <td>
 
-The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, and so on, are stored in a database.
+The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](working-with-build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, and so on, are stored in a database.
 
 >It is possible for the server and an agent to coexist on the same computer, but for production purposes, we recommend installing them on different machines for a number of reasons, the server performance being the most important.
 >
@@ -182,7 +182,7 @@ __Build__
 
 A CI/CD job executed on an agent. Consists of one or more steps that can do any service task: compile, test, deploy, produce reports, and so on.
 
-The term _build_ can refer to both the actual process of building and the result of building. After the build process is triggered, it is put into the _[build queue](build-queue.md)_ and is started when there are agents available to run it. After the build is finished, the build agent sends _[build artifacts](build-artifact.md)_ to the server. 
+The term _build_ can refer to both the actual process of building and the result of building. After the build process is triggered, it is put into the _[build queue](working-with-build-queue.md)_ and is started when there are agents available to run it. After the build is finished, the build agent sends _[build artifacts](build-artifact.md)_ to the server. 
 
 </td></tr><tr>
 

@@ -58,7 +58,6 @@
         <toc-element id="build-configuration-template.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-history.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-log.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-runner.md"/>
         <toc-element id="build-working-directory.md"/>
         <toc-element id="change.md"/>
@@ -277,7 +276,6 @@
             <toc-element id="detaching-build-from-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="ordering-projects-and-build-configurations.md"/>
             <toc-element id="archiving-projects.md"/>
-            <toc-element id="ordering-build-queue.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="customizing-statistics-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
         <toc-element id="configuring-test-reports-and-code-coverage.md">

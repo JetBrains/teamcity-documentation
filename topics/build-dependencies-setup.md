@@ -113,7 +113,7 @@ To get an idea of how snapshot dependencies work, think of module dependencies, 
 
 <img src="a1-a2-an.png" width="311" alt="Build chain"/>
 
-1. If a build of A1 is triggered, the whole build chain A1...AN is added to the [build queue](build-queue.md), but __not vice versa!__ - if build AN is triggered, it doesn't affect anything else in the build chain, only AN is run.
+1. If a build of A1 is triggered, the whole build chain A1...AN is added to the [build queue](working-with-build-queue.md), but __not vice versa!__ - if build AN is triggered, it doesn't affect anything else in the build chain, only AN is run.
 2. Builds run __sequentially starting from AN to A1__. Build A(k-1) won't start until build Ak finishes successfully.
 3. All builds in the chain will use the same sources snapshot, i.e. with explicit specification of the sources revision, that is calculated at the moment when the build chain is added to the queue.   
 
@@ -147,7 +147,7 @@ In this case it doesn't matter which build - B1 or B2 - starts first. As in the 
 
 #### Reusing builds
 
-All builds belonging to the [build chain](build-chain.md) are placed in the [queue](build-queue.md). But, instead of enforcing the run of all builds from a build chain, TeamCity can check whether there are already suitable builds, i.e. finished builds that used the required sources snapshot. The matching queued builds will not be run and will be [dropped from the queue](build-queue.md#Build+Queue+Optimization+by+TeamCity), and TeamCity will link the dependency to the "suitable" builds. To enable this, select '_Do not run new build if there is a suitable one_' when configuring snapshot dependency options.
+All builds belonging to the [build chain](build-chain.md) are placed in the [queue](working-with-build-queue.md). But, instead of enforcing the run of all builds from a build chain, TeamCity can check whether there are already suitable builds, i.e. finished builds that used the required sources snapshot. The matching queued builds will not be run and will be [dropped from the queue](working-with-build-queue.md#Build+Queue+Optimization+by+TeamCity), and TeamCity will link the dependency to the "suitable" builds. To enable this, select '_Do not run new build if there is a suitable one_' when configuring snapshot dependency options.
 
 Another option that allows you to control how builds are re\-used is called "_Only use successful builds from suitable ones_" and it may help when there's a suitable build, but it isn't successful. Normally, when there's a failed build in a chain, TeamCity doesn't proceed with the rest of the chain. However, with this option enabled, TeamCity will run this failed build on these sources one more time. When is this helpful? For example, when the build failure was caused by a problem when connecting to a VCS.
 
