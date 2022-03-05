@@ -38,6 +38,8 @@ Make especially sure to keep your credentials out of:
 
 TeamCity users with administrative permissions should have complex passwords.
 
+To make user password storage safer, TeamCity uses the BCrypt hashing algorithm.
+
 __Store secure data using parameters with the "password" type__.
 
 To store passwords or other secure data in the TeamCity settings, you are strongly advised to use the [typed parameters](typed-parameters.md). This will make sure that sensitive values never appear in the web UI and are masked with asterisks in the build log. Make sure passwords are stored as parameters with the [password type](typed-parameters.md#Adding+Parameter+Specification).
