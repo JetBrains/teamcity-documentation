@@ -34,7 +34,7 @@ To log messages, use the following call:
 
 ```shell script
 POST /app/rest/builds/id:<build_id>/log 
-(curl -v --basic --user <username>:<password> --request POST http://<teamcity.url>/app/rest/builds/id:<build_id>/log --data <message> --header "Content-Type: text/plain")
+(curl -v --basic --user <username>:<password> --request POST <teamcity.url>/app/rest/builds/id:<build_id>/log --data <message> --header "Content-Type: text/plain")
 ```
 
 Here, you can send any [service message](service-messages.md) as `<message>`.
@@ -56,14 +56,14 @@ To finish a build, use the following call:
 
 ```shell script
 PUT /app/rest/builds/id:<build_id>/finish
-(curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finish)
+(curl -v --basic --user <username>:<password> --request PUT <teamcity.url>/app/rest/builds/id:<build_id>/finish)
 ```
 
 Alternatively, you can finish it by sending the exact finish date as a non-empty string in the `yyyyMMdd'T'HHmmssZ` format:
 
 ```shell script
 PUT /app/rest/builds/id:<build_id>/finishDate
-(curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finishDate --data "20201231T235959+0000" --header "Content-Type: text/plain")
+(curl -v --basic --user <username>:<password> --request PUT <teamcity.url>/app/rest/builds/id:<build_id>/finishDate --data "20201231T235959+0000" --header "Content-Type: text/plain")
 ```
 
 >If you need to end a build as "Failed", log the `buildProblem` message, as described [here](service-messages.md#Reporting+Build+Problems).
