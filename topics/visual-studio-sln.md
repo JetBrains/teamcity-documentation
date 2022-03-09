@@ -5,12 +5,12 @@
 
 Since TeamCity 2019.2.3, we have stopped providing active support for the Visual Studio (sln) runner.
 
-Since the Visual Studio (sln) runner uses MSBuild for building projects under its hood, you can softly migrate to using the .NET build runner with the `msbuild` command. Your configured Visual Studio (sln) settings (such as command line parameters) will work similarly with `msbuild`.   
+Since the Visual Studio (sln) runner uses MSBuild for building projects under its hood, you can softly migrate to using the .NET build runner with the `msbuild` command. Your configured Visual Studio (sln) settings (such as command line parameters) will work similarly with `msbuild`.  
 Note the .NET runner also supports the VS-native `devenv` command which allows launching Visual Studio in a command-line mode and using its own [switches](https://docs.microsoft.com/en-us/visualstudio/ide/reference/devenv-command-line-switches) for building, debugging, and deploying projects.
 
 For more details on migration, refer to the [.NET runner description](net.md#migrating-to-net-from-sln).
 
-For compatibility, the Visual Studio (sln) runner will be bundled with the nearest future versions of TeamCity. You can continue using it if migration to the .NET runner is too time-consuming for your setup.   
+For compatibility, the Visual Studio (sln) runner will be bundled with the nearest future versions of TeamCity. You can continue using it if migration to the .NET runner is too time-consuming for your setup.  
 However, we will unbundle this runner after a sufficient transition period. In this case, you will still be able to install it as an external plugin. Remember to check our [upgrade notes](upgrade-notes.md) before upgrading to each following version.
 {product="tc"}
 
@@ -36,13 +36,11 @@ The Visual Studio (sln) build runner requires the proper version of Microsoft Vi
 
 Option
 
-
 </td>
 
 <td>
 
 Description
-
 
 </td></tr><tr>
 
@@ -50,13 +48,11 @@ Description
 
 Solution file path
 
-
 </td>
 
 <td>
 
 Specify the path to the solution to be built relative to the [Build Checkout Directory](build-checkout-directory.md). For example:
-
 
 ```Shell
 vs-addin\addin\addin.sln
@@ -69,13 +65,11 @@ vs-addin\addin\addin.sln
 
 Working directory
 
-
 </td>
 
 <td>
 
 Specify the [Build Working Directory](build-working-directory.md). (optional)
-
 
 </td></tr><tr>
 
@@ -83,13 +77,11 @@ Specify the [Build Working Directory](build-working-directory.md). (optional)
 
 Visual Studio
 
-
 </td>
 
 <td>
 
 Select the Visual Studio version.
-
 
 </td></tr><tr>
 
@@ -97,13 +89,11 @@ Select the Visual Studio version.
 
 Targets
 
-
 </td>
 
 <td>
 
-Specify the Microsoft Visual Studio targets specific for the previously selected Visual Studio version. The possible options are __Build__, __Rebuild__, __Clean__, __Publish__ or a combination of these targets based on your needs. Multiple targets are space\-separated.
-
+Specify the Microsoft Visual Studio targets specific for the previously selected Visual Studio version. The possible options are __Build__, __Rebuild__, __Clean__, __Publish__ or a combination of these targets based on your needs. Multiple targets are space-separated.
 
 </td></tr><tr>
 
@@ -111,13 +101,11 @@ Specify the Microsoft Visual Studio targets specific for the previously selected
 
 Configuration
 
-
 </td>
 
 <td>
 
 Specify the name of Microsoft Visual Studio solution configuration to build (optional).
-
 
 </td></tr><tr>
 
@@ -125,13 +113,11 @@ Specify the name of Microsoft Visual Studio solution configuration to build (opt
 
 Platform
 
-
 </td>
 
 <td>
 
 Specify the platform for the solution. You can leave this field blank, and TeamCity will obtain this information from the solution settings (optional).
-
 
 </td></tr><tr>
 
@@ -139,13 +125,11 @@ Specify the platform for the solution. You can leave this field blank, and TeamC
 
 Command line parameters
 
-
 </td>
 
 <td>
 
 Specify additional command line parameters to be passed to the build runner. Instead of explicitly specifying these parameters, it is recommended to define them on the [Configuring Build Parameters](configuring-build-parameters.md) page.
-
 
 </td></tr></table>
 

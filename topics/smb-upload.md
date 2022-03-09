@@ -41,7 +41,6 @@ Target URL
 
 The URL should point to a host \+ share at least. Subdirectories are allowed here and will be created if missing. Valid examples:
 
-
 ```Shell
 \\host\share_name
 \\host\share_name\some\path
@@ -135,7 +134,7 @@ Path to sources
 
 Specify the deployment sources as a newline- or comma-separated list of paths to files/directories.
 
-The field supports [Ant-style wildcard patterns](wildcards.md#Antlike+Wildcards) (for example, `dir/**/*.zip`).   
+The field supports [Ant-style wildcard patterns](wildcards.md#Antlike+Wildcards) (for example, `dir/**/*.zip`).  
 You can also specify a target directory to be created using the `file => directory` pattern (for example, `*.zip => winFiles,unix/distro.tgz => linuxFiles` will create the `winFiles` and `linuxFiles` directories, and respectively put the declared files inside them).
 
 </td></tr></table>

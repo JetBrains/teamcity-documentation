@@ -52,8 +52,8 @@ For all builds in a chain, which are linked by snapshot dependencies with this o
 
 If you __disable__ this option for a snapshot dependency, then, when the [dependency build](#dependency-build) is promoted to the current build configuration, the build of the current build configuration will use the most recent revision of the sources instead of the revision corresponding to the promoted dependency. This is useful when the builds do not have strict sources' dependencies (for example, as with package and deploy steps).
 
-_In our example, if the snapshot dependency of build B has this option disabled, the behavior is following: Build A launches on revision 1.2 and, after finishing, is promoted to build B. TeamCity will find the latest revision for build B (let's say 1.3) at the moment of starting B._   
-_Otherwise, if this option is enabled, TeamCity will start build B on the same 1.2 revision as A_. 
+_In our example, if the snapshot dependency of build B has this option disabled, the behavior is following: Build A launches on revision 1.2 and, after finishing, is promoted to build B. TeamCity will find the latest revision for build B (let's say 1.3) at the moment of starting B._  
+_Otherwise, if this option is enabled, TeamCity will start build B on the same 1.2 revision as A_.
 
 Note that the sources' snapshot rule is only applied to the [parts of the builds chain](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts)) linked via the snapshot dependencies with the option enabled.
 
@@ -70,7 +70,7 @@ Do not run new build if there is a suitable one
 
 <td>
 
-If this option is enabled, TeamCity will not run a new dependency build, if another running or finished dependency build with the appropriate sources' revision already exists. See also [Suitable Builds](#Suitable+Builds).   
+If this option is enabled, TeamCity will not run a new dependency build, if another running or finished dependency build with the appropriate sources' revision already exists. See also [Suitable Builds](#Suitable+Builds).  
 In this case, when a dependent build is triggered, the dependency build will also be put into the queue. Then, when the changes for the build chain are collected, this dependency build will be removed from the queue and the dependency will be set to a suitable finished build.
 
 <note>
@@ -114,7 +114,6 @@ Before starting a build chain having _run on the same agent_ dependencies, TeamC
 
 </note>
 
-
 </td></tr><tr>
 
 <td id="on-failed-dependency">
@@ -127,7 +126,6 @@ On failed dependency/ On failed to start/canceled dependency
 
 
 If a dependency fails, you can manage the status of the dependent build by selecting one of the following options:
-
 * __Run build, but add problem__: the dependent build will be run and the problem will be added to it, changing its status to failed (if the problem was not muted earlier).
 * __Run build, but do not add problem__: the dependent build will be run and no problem will be added.
 * __Mark build as failed to start__: the dependent build will not run and will be marked as "_Failed to start_".
@@ -163,7 +161,6 @@ Some settings in VCS roots can effectively disable builds reuse. These settings 
 * Subversion: __Checkout, but ignore changes__ mode
 * CVS: __Checkout by tag__ mode
 * Perforce: __Stream__ or __Client__ connection settings, or label is specified as the __Label/revision to checkout__
-
 * Starteam: checkout mode option set to __view label__ or __promotion date__
  
 <seealso>
