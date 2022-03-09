@@ -5,7 +5,7 @@ As an obsolete approach to collect the build script collect information, you can
 
 Note that this approach __can be discontinued__ in the future TeamCity versions, so [service messages](service-messages.md) approach is recommended instead. In case service messages does not work for you, let us know the details and describe the case via [email](feedback.md).
 
-## Modifying the Build Status
+## Modifying Build Status
 
 TeamCity has the ability to change the build status directly from the build script. You can set the status (build failure or success) and change the text of the build status (for example, note the number of failed tests if the test framework is not supported by TeamCity).
 
@@ -13,8 +13,8 @@ TeamCity has the ability to change the build status directly from the build scri
 
 It is possible to set the following information for the build:
 
-* __Build number__ — sets the new number for the finished build. You can reference the TeamCity-provided build number using \{`build.number`\}.
-* __Build status__ — changes the build status. Supported values are "FAILURE" and "SUCCESS".
+* __Build number__ — sets the new number for the finished build. You can reference the TeamCity-provided build number using `{build.number}`.
+* __Build status__ — changes the build status. Supported values are `FAILURE` and `SUCCESS`.
 * __Status text__ — modifies the text of build status. You can replace the TeamCity-provided status text or add a custom part before or after the standard text. Supported `action` values are "append", "prepend", and "replace".
 
 Example of the `teamcity-info.xml` file:
@@ -39,7 +39,7 @@ It is up to you to figure out how to retrieve test results that are not supporte
 
 It is possible to provide [custom charts](customizing-statistics-charts.md) in TeamCity. Your build can provide data for such graphs using `teamcity-info.xml` file.
 
-### Providing data using the teamcity-info.xml file
+### Storing Data in teamcity-info.xml
 
 This file should be created by the build in the root directory of the build. You can publish multiple statistics (see the details on the data format below) and create separate charts for each set of values.
 
