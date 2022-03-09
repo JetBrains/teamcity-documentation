@@ -13,7 +13,7 @@ The user exporting the project settings must have the "_View build configuration
 
 ## Export Scope
 
-Currently, only the settings export is supported.
+TeamCity exports projects settings, including [uploaded SSH private keys](ssh-keys-management.md).
 
 External dependencies for build configurations are exported as well. A build configuration defined in one project can depend on other projects in a number of ways. It can:
 * be associated with a [template](build-configuration-template.md) defined in the [parent projects](project.md#Settings+Propagation);
