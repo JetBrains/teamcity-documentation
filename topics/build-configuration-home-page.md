@@ -48,14 +48,6 @@ Lists [changes](change-state.md) waiting to be included in the next build.
 
 Lists the current [build configuration settings](creating-and-editing-build-configurations.md#Configuring+Settings).
 
-## Compare Two Builds
-
-The _Select for comparison_ action of the __[Actions](build-actions.md#Build+Configuration+Actions+Menu)__ menu is available only in the new TeamCity UI. You can switch to it from a classic UI mode by clicking the test-tube icon in the upper right corner of the screen.
-
-This action allows comparing the settings and results of the current build with any other build from this build configuration, side-by-side. It shows the statistics and differences of their [parameters](configuring-build-parameters.md), revisions, statistics, and tests.
-
-This mode is especially helpful when the current build configuration is managed and monitored by multiple users. For example, if a build has no changes in the project code but fails for no obvious reason, you can compare this build with the last successful build and analyze their differences to find the most probable cause of the failure.
-
 ## View Investigation History
 
 The _Investigation History_ action of the __[Actions](build-actions.md#Build+Configuration+Actions+Menu)__ menu gives access to the log of all [investigations](investigating-and-muting-build-failures.md) of the current build configuration. It is most helpful for big teams and projects when it is not as easy to determine who and when changed or resolved the investigation.

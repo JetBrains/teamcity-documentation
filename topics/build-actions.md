@@ -74,6 +74,14 @@ TeamCity can automatically mark your manually triggered and [personal builds](pe
 
 To view your favorites, click your avatar in the upper right corner of the screen and choose __Favorite Builds__.
 
+### Compare Two Builds
+
+The _Select for comparison_ action of the __Actions__ menu is available only in the new TeamCity UI. You can switch to it from a classic UI mode by clicking the test-tube icon in the upper right corner of the screen.
+
+This action allows comparing the settings and results of the current build with any other build from this build configuration, side-by-side. It shows the statistics and differences of their [parameters](configuring-build-parameters.md), revisions, statistics, and tests.
+
+This mode is especially helpful when the current build configuration is managed and monitored by multiple users. For example, if a build has no changes in the project code but fails for no obvious reason, you can compare this build with the last successful build and analyze their differences to find the most probable cause of the failure.
+
 ### Manually Change Build Status to Failed or Successful
 
 Project administrators can manually change the successful build's status to failed, and vice versa. There are following common use cases for this:
