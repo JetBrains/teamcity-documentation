@@ -59,7 +59,7 @@
     <rule id="configuring-test-reports-and-code-coverage">
             <accepts>code-inspection.html</accepts>
             <accepts>code-coverage.html</accepts>
-            <accepts>configuring+unit+testing+and+code+coverage.html</accepts>
+            <accepts>configuring-unit-testing-and-code-coverage.html</accepts>
     </rule>
     <rule id="nunit-support">
         <accepts>teamcity-nunit-test-launcher.html</accepts>
