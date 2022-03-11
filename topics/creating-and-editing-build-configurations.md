@@ -4,7 +4,7 @@
 This section contains articles on how to create and configure build configurations via the TeamCity UI.
 
 A _build configuration_ is a collection of settings used to start a build and group the sequence of the builds in the UI. Examples of build configurations are _distribution_, _integration tests_, _prepare release distribution_, _"nightly" build_.  
-A build configuration belongs to a [project](project.md) and contains builds. You can explore details of a build configuration on its [Home page](viewing-build-results.md) and modify its settings on the [Settings page](creating-and-editing-build-configurations.md).
+A build configuration belongs to a [project](project.md) and contains builds. You can explore details of a build configuration on its [Home page](build-configuration-home-page.md) and modify its settings on the [Settings page](creating-and-editing-build-configurations.md).
 
 <img src="create-build-configuration-button.png" alt="Create a build configuration" width="750"/>
 

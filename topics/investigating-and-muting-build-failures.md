@@ -17,7 +17,7 @@ These permissions are granted to Project Administrators and System Administrator
 ## Assigning Investigations of Failed Build Configurations
 
 To assign an investigation of a failed build configuration:
-1. Navigate to the __Overview__ tab of the __[Build Configuration Home](viewing-build-results.md)__ page (or the __Overview__ tab of the __[Build Results](working-with-build-results.md)__ page) and click __Assign investigation__. <img src="assign-investigation-button.png" alt="Assign an investigation of a failed build" width="676"/>
+1. Navigate to the __Overview__ tab of the __[Build Configuration Home](build-configuration-home-page.md)__ page (or the __Overview__ tab of the __[Build Results](working-with-build-results.md)__ page) and click __Assign investigation__. <img src="assign-investigation-button.png" alt="Assign an investigation of a failed build" width="676"/>
 2. Select a TeamCity user from the __Investigated by__ drop-down menu. <img src="assign-investigation-failed-build.png" width="575" alt="Assigned an investigation of a failed build"/>
 3. Select the condition to resolve the investigation:
    * _When build configuration is successful_
@@ -32,7 +32,7 @@ To assign similar investigations for other failed build configurations in the sa
 ## Assigning Investigations of Build Problems and Failed Tests
 
 To assign an investigation of a particular build problem:
-1. Navigate to the __Overview__ tab of the [Build Results](working-with-build-results.md) page (or the __[Current Problems](viewing-tests-and-configuration-problems.md#Using+Current+Problems+Tab)__ tab of the __Project Home__), click the arrow next to the build problem, and then click __Investigate/Mute__. 
+1. Navigate to the __Overview__ tab of the **[Build Results](working-with-build-results.md)** page (or the __[Current Problems](viewing-tests-and-configuration-problems.md#Using+Current+Problems+Tab)__ tab of the __Project Home__), click the arrow next to the build problem, and then click __Investigate/Mute__. 
 <img src="investigating-muting-build-problem.png" width="1166" alt="Investigate/mute a build problem"/>   
    The _Investigate/Mute_ dialog opens.
 2. Select a TeamCity user from the __Investigated by__ drop-down menu. <img src="assign-investigation-failed-build.png" width="575" alt="Assigned an investigation of a failed build"/>

@@ -30,13 +30,11 @@
          <toc-element id="build-chain.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-checkout-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-configuration-template.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="build-log.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-runner.md"/>
          <toc-element id="build-working-directory.md"/>
          <toc-element id="change.md"/>
          <toc-element id="clean-checkout.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="dependent-build.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="difference-viewer.md"/>
          <toc-element id="history-build.md"/>
          <toc-element id="notifier.md"/>
          <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -119,17 +117,6 @@
          <toc-element id="what-s-new-in-teamcity-2020-1.md" hidden="true"/>
       </toc-element>
       <toc-element id="user-s-guide.md" hidden="true"/>
-      <toc-element toc-title="User's Guide">
-         <toc-element id="installing-tools.md">
-            <toc-element id="intellij-platform-plugin.md" show-structure-for="chapter" show-structure-depth="4">
-               <toc-element id="intellij-platform-plugin-compatibility.md" hidden="true"/>
-            </toc-element>
-            <toc-element id="browser-notifier.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="eclipse-plugin.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="visual-studio-addin.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="windows-tray-notifier.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-         </toc-element>
-      </toc-element>
       <toc-element id="administrator-s-guide.md" hidden="true"/>
       <toc-element toc-title="Administrator's Guide">
          <toc-element toc-title="Secure TeamCity">
@@ -386,6 +373,15 @@
             <toc-element id="mapping-external-links-in-comments.md"/>
             <toc-element id="external-changes-viewer.md"/>
          </toc-element>
+         <toc-element id="installing-tools.md">
+            <toc-element id="intellij-platform-plugin.md" show-structure-for="chapter" show-structure-depth="4">
+               <toc-element id="intellij-platform-plugin-compatibility.md" hidden="true"/>
+            </toc-element>
+            <toc-element id="browser-notifier.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="eclipse-plugin.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="visual-studio-addin.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="windows-tray-notifier.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+         </toc-element>
          <toc-element id="teamcity-rest-api.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="rest-api"/>
       </toc-element>
       <toc-element id="extending-teamcity.md">
@@ -414,9 +410,11 @@
             <toc-element id="project-home-page.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-configuration-home-page.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="build-configuration-home-page"/>
             <toc-element id="build-results-page.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="build-results-page"/>
+            <toc-element id="build-log.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="viewing-user-changes-in-builds.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="viewing-tests-and-configuration-problems"/>
             <toc-element id="statistic-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="difference-viewer.md"/>
          </toc-element>
       </toc-element>
       <toc-element toc-title="Reference">
