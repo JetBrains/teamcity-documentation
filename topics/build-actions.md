@@ -1,5 +1,5 @@
 [//]: # (title: Build Actions)
-[//]: # (auxiliary-id: Build Actions;Working with Build Results;Pinned Build;Build Tag;Changing Build Status Manually)
+[//]: # (auxiliary-id: Build Actions;Pinned Build;Build Tag;Changing Build Status Manually)
 
 This article describes what actions can be applied to <emphasis tooltip="build">builds</emphasis> in TeamCity.
 
