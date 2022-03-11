@@ -48,7 +48,6 @@
         <toc-element id="agent-pool.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agent-requirements.md"/>
         <toc-element id="agent-work-directory.md"/>
-        <toc-element id="already-fixed-in.md"/>
         <toc-element id="authentication-modules.md"/>
         <toc-element id="build-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-artifact.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -56,7 +55,6 @@
         <toc-element id="build-checkout-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-configuration-template.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="build-history.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-log.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-runner.md"/>
         <toc-element id="build-working-directory.md"/>
@@ -67,7 +65,6 @@
         <toc-element id="dependent-build.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="deployment-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="difference-viewer.md"/>
-        <toc-element id="first-failure.md"/>
         <toc-element id="history-build.md"/>
         <toc-element id="notifier.md"/>
         <toc-element id="personal-build.md"/>
@@ -89,7 +86,6 @@
         <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="viewing-build-configuration-details.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="statistic-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="maven-related-data.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="installing-tools.md">
             <toc-element id="intellij-platform-plugin.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="intellij-platform-plugin-compatibility.md" hidden="true"/>

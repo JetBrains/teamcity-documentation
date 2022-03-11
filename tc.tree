@@ -37,6 +37,7 @@
          <toc-element id="clean-checkout.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="dependent-build.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="difference-viewer.md"/>
+         <toc-element id="history-build.md"/>
          <toc-element id="notifier.md"/>
          <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="revision.md"/>
@@ -119,9 +120,6 @@
       </toc-element>
       <toc-element id="user-s-guide.md" hidden="true"/>
       <toc-element toc-title="User's Guide">
-
-         <toc-element id="statistic-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="maven-related-data.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="installing-tools.md">
             <toc-element id="intellij-platform-plugin.md" show-structure-for="chapter" show-structure-depth="4">
                <toc-element id="intellij-platform-plugin-compatibility.md" hidden="true"/>
@@ -409,19 +407,16 @@
             <toc-element id="pre-tested-delayed-commit.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="remote-debug.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="remote-run.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="viewing-user-changes-in-builds.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="investigating-and-muting-build-failures.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="working-with-build-queue.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="working-with-build-queue"/>
          </toc-element>
          <toc-element id="working-with-build-results.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="working-with-build-results">
             <toc-element id="project-home-page.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="build-configuration-home-page.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="build-results-page.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="already-fixed-in.md"/>
-            <toc-element id="first-failure.md"/>
-            <toc-element id="history-build.md"/>
-            <toc-element id="build-history.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="build-configuration-home-page.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="build-configuration-home-page"/>
+            <toc-element id="build-results-page.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="build-results-page"/>
+            <toc-element id="viewing-user-changes-in-builds.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="viewing-tests-and-configuration-problems.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="viewing-tests-and-configuration-problems"/>
+            <toc-element id="statistic-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
          </toc-element>
       </toc-element>
       <toc-element toc-title="Reference">

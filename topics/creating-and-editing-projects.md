@@ -265,7 +265,7 @@ Use the corresponding item from the __Actions__ menu in the upper right corner o
 
 Projects can be copied and moved to another project by project administrators.
 
-A copy duplicates all the settings, [subprojects](project.md#Project+Hierarchy), [build configurations](managing-builds.md), and [templates](build-configuration-template.md) of the original project, but no data related to builds is preserved. The copy is created with the empty [build history](build-history.md) and no [statistics](statistic-charts.md).
+A copy duplicates all the settings, [subprojects](project.md#Project+Hierarchy), [build configurations](managing-builds.md), and [templates](build-configuration-template.md) of the original project, but no data related to builds is preserved. The copy is created with the empty [build history](build-results-page.md#Build+History+in+Classic+UI) and no [statistics](statistic-charts.md).
 
 You can copy a project into the same or another parent.
 
@@ -294,7 +294,7 @@ Before moving the project, consider the following:
 
 To move a project, use the corresponding item from the __Actions__ menu in the upper right corner of the __Project Settings__ page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent __Project Settings__ page.
 
-When moving a project, TeamCity preserves all its settings, [subprojects](project.md#Project+Hierarchy), [build configurations](managing-builds.md)/[templates](build-configuration-template.md), and associated data, as well as the [build history](build-history.md).
+When moving a project, TeamCity preserves all its settings, [subprojects](project.md#Project+Hierarchy), [build configurations](managing-builds.md)/[templates](build-configuration-template.md), and associated data, as well as the [build history](build-results-page.md#Build+History+in+Classic+UI).
 
 ### Archiving Project
 

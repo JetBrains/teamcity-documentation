@@ -45,6 +45,24 @@ Click any stage to open the corresponding line of the build log.
 
 The __Dependencies__ tab provides three modes of displaying the build dependencies: a visual timeline, structured list, and build chain. Choose the mode that is the most helpful for your current task.
 
+## Maven Build Info Tab
+
+For each Maven build, a build agent gathers Maven-specific build details to be displayed on the __Maven Build Info__ tab after the build finish. This tab can be useful for build engineers when adjusting build configurations.
+
 ## Classic UI Tabs
 
 Other classic UI tabs, not yet reproduced in the new UI, are also available: click __More__ and select the required tab in the list.
+
+## Build History in Classic UI
+
+_Build history_ is a record of the past builds produced by TeamCity. It is displayed as the __Trends__ widget in the new UI and as the menu with links in the classic UI, which is described below.
+
+To view the history of builds in the current configuration, click __previous__ and __next__ links in the upper right corner of __Build Results__. Click __All history__ link to open the __History__ tab.
+
+Navigation menu:
+
+<img src="history-buttons.png" alt="Navigate through history" width="228"/>
+
+The __History__ tab:
+
+<img src="build-history.png" alt="Build history" width="1312"/>

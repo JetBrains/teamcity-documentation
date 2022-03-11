@@ -1,5 +1,5 @@
 [//]: # (title: Build Configuration Home Page)
-[//]: # (auxiliary-id: Build Configuration Home Page)
+[//]: # (auxiliary-id: Build Configuration Home Page;Maven-related Data)
 
 This article gives an overview of the __Build Configuration Home__ page of the new TeamCity UI. Most of its features are also available in the classic UI mode.
 
@@ -13,7 +13,7 @@ This tab provides information on:
     * Number of [queued builds](working-with-build-queue.md).
     * For a running build, the progress details with the __Stop__ option to terminate the build.
     * For a [failed build](build-state.md), the number, [agent](build-agent.md), and so on.
-* [Build history](build-history.md).
+* [Build history](build-results-page.md#Build+History+in+Classic+UI).
 
 ## History
 
@@ -55,3 +55,8 @@ The _Investigation History_ action of the __[Actions](build-actions.md#Build+Con
 To see all the actions applied to an investigation, open its context menu and click __Investigation History__.
 
 <img src="wn-investigation-history.png" alt="Investigation history"/>
+
+## Maven Tab
+
+You can find information about settings specified in your Maven project's `pom.xml` file on the dedicated __Maven__ tab. It also shows _Provided parameters_: for example, `maven.project.name`, `maven.project.groupId`, `maven.project.version`, `maven.project.artifactId`. You can use these parameters within your build and reference them within the build number pattern using the `%`-notation. For example, `%\maven.project.version%.{0}`.
+

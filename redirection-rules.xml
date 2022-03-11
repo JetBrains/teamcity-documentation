@@ -92,4 +92,15 @@
         <accepts>pinned-build.html</accepts>
         <accepts>working-with-build-results.html</accepts>
     </rule>
+    <rule id="viewing-tests-and-configuration-problems">
+        <accepts>already-fixed-in.html</accepts>
+        <accepts>first-failure.html</accepts>
+    </rule>
+    <rule id="build-configuration-home-page">
+        <accepts>maven-related-data.html</accepts>
+    </rule>
+    <rule id="build-results-page">
+        <accepts>build-history.html</accepts>
+    </rule>
+
 </rules>

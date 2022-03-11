@@ -3,7 +3,7 @@
 
 A _personal build_ is a build-out of the common build sequence which typically uses the changes not yet committed into the version control. Personal builds are usually initiated from one of the [supported IDEs](supported-platforms-and-environments.md#Remote+Run+and+Pre-tested+Commit) via the [Remote Run](remote-run.md) procedure. You can also upload a patch with changes directly to the server, as described [below](#Direct+Patch+Upload).
 
-A personal build uses the current VCS repository sources plus the changed files identified during the remote run initiation. The results of a personal build can be seen in the "My Changes" view of the corresponding IDE plugin and on the __[Changes](viewing-user-changes-in-builds.md)__ page in TeamCity. Finished personal builds are listed in the [build history](build-history.md), but only for the users who initiated them.   
+A personal build uses the current VCS repository sources plus the changed files identified during the remote run initiation. The results of a personal build can be seen in the "My Changes" view of the corresponding IDE plugin and on the __[Changes](viewing-user-changes-in-builds.md)__ page in TeamCity. Finished personal builds are listed in the [build history](build-results-page.md#Build+History+in+Classic+UI), but only for the users who initiated them.   
 Read more about running commits via Remote Run in [Pre-Tested (Delayed) Commit](pre-tested-delayed-commit.md).
 
 By default, users only see their own personal builds in the build lists, but this can be changed via the "_Show all personal builds_" option in __Your Profile | General | UI settings__ of the [user profile](configuring-your-user-profile.md).
