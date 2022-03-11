@@ -13,7 +13,7 @@ TeamCity contains an integrated lightweight builds artifact repository.
 
 Upon the build finish, TeamCity searches for artifacts in the build [checkout directory](build-checkout-directory.md) according to the specified [artifact path or path patterns](configuring-general-settings.md#Artifact+Paths). The matching files are then uploaded ("published") to the TeamCity server, where they become available for downloading through the web UI or can be used in other builds using [artifact dependencies](dependent-build.md#Artifact+Dependency). You can [choose when to publish artifacts](configuring-general-settings.md#publish-artifacts): for all completed builds, only for successful builds, or for all builds, even the interrupted ones.
 
-To download artifacts of a build, go to the [Artifacts](working-with-build-results.md#Build+Artifacts) tab of the build results page or use the artifacts icon ![artifactIcon.png](artifactIcon.png) available on the project or build configuration __Overview__ page and on the TeamCity pages that list the builds.
+To download artifacts of a build, go to the [Artifacts](build-results-page.md#Artifacts+Tab) tab of the build results page or use the artifacts icon ![artifactIcon.png](artifactIcon.png) available on the project or build configuration __Overview__ page and on the TeamCity pages that list the builds.
 
 <anchor name="artifacts-as-archive"/>
 

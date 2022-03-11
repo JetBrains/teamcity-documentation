@@ -313,7 +313,7 @@ Care must be taken when performing this action. Modifying the ID will change all
 
 ### Pausing / Activating Triggers
 
-You can [pause triggers](managing-builds.md#Pausing+Several+Build+Configurations+in+Project) for all or selected build configurations of a project. Use the corresponding item from the __Actions__ menu in the upper right corner of the __Project Settings__ page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent __Project Settings__ page.
+You can [pause triggers](changing-build-configuration-status.md#Pausing+Several+Build+Configurations+in+Project) for all or selected build configurations of a project. Use the corresponding item from the __Actions__ menu in the upper right corner of the __Project Settings__ page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent __Project Settings__ page.
 
 ### Exporting Project 
 

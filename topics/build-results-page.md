@@ -59,6 +59,10 @@ Click any stage to open the corresponding line of the build log.
 
 More information on build logs in TeamCity is available [here](build-log.md).
 
+## Artifacts Tab
+
+If the build produced [artifacts](build-artifact.md), they all are displayed on the dedicated __Artifacts__ tab.
+
 ## Parameters Tab
 
 All system properties and environmental variables which were used by a particular build are listed on the __Parameters__ tab. [Learn more about build parameters](configuring-build-parameters.md).
@@ -107,7 +111,7 @@ The tab consists of:
 
 The __Tests__ tab allows switching between failed, ignored, and succeeded tests, and use various filters.
 
-For each failed test, you can view its stacktrace, the diff between the expected and actual values, jump to the test [history](#Test+History), [assign a team member to investigate its failure](investigating-and-muting-build-failures.md), [open the test in your IDE](installing-tools.md) and/or start fixing it right away.
+For each failed test, you can view its stacktrace, the diff between the expected and actual values, jump to the test history, [assign a team member to investigate its failure](investigating-and-muting-build-failures.md), [open the test in your IDE](installing-tools.md) and/or start fixing it right away.
 
 >Watch our **video tutorial** on how to [use the test report page](https://www.youtube.com/watch?v=LKJjcBJT1k0).
 

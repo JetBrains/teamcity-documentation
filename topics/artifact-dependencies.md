@@ -245,7 +245,7 @@ TeamCity itself acts as an Ivy repository. You can read more about the Ivy depen
 where:
 * `YOUR_ORGANIZATION` replace with the name of your organization.
 * `YOUR_MODULE` replace with the name of your project or module where artifacts will be used.
-* `BUILD_TYPE_EXT_ID` replace with the [external ID](managing-builds.md#Status+Display+for+Set+of+Build+Configurations) of the build configuration whose artifacts are downloaded.
+* `BUILD_TYPE_EXT_ID` replace with the [external ID](changing-build-configuration-status.md#Status+Display+for+Set+of+Build+Configurations) of the build configuration whose artifacts are downloaded.
 * `BUILD_REVISION` can be either a build number or one of the following strings: `* latest.lastFinished`
   * `latest.lastSuccessful`
   * `latest.lastPinned`

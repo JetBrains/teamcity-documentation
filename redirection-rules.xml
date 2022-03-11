@@ -22,7 +22,7 @@
         <accepts>build-agent-configuration.html</accepts>
     </rule>
     <rule id="upgrade-dsl">
-        <accepts>upgrading-dsl.html</accepts>
+        <accepts>upgrade-dsl.html</accepts>
     </rule>
     <rule id="cleanup">
             <accepts>clean-up.html</accepts>
@@ -90,7 +90,6 @@
         <accepts>changing-build-status-manually.html</accepts>
         <accepts>build-tag.html</accepts>
         <accepts>pinned-build.html</accepts>
-        <accepts>working-with-build-results.html</accepts>
     </rule>
     <rule id="viewing-tests-and-configuration-problems">
         <accepts>already-fixed-in.html</accepts>

@@ -25,7 +25,7 @@ _Build history_ is a record of the past builds produced by TeamCity. The __Histo
 
 By default, lists changes from builds finished during the last 14 active days. Use the _Show all_ link to view the complete changelog.
 
-This tab shows the changelog with its graph of commits to the [monitored branches](working-with-feature-branches.md#Changes) of all VCS repositories used by the current build configurations and the repositories used by the [dependencies and dependent configurations](dependent-build.md) of the current configuration.
+This tab shows the changelog with its graph of commits to the [monitored branches](build-results-page.md#Changes+Tab) of all VCS repositories used by the current build configurations and the repositories used by the [dependencies and dependent configurations](dependent-build.md) of the current configuration.
 
 ## Issue Log
 

@@ -8,7 +8,7 @@ When displaying [changes](change.md) included in a finished or queued build, Tea
 TeamCity remembers the current repository revision when you add a new [VCS root](vcs-root.md) for a [project](project.md) or [build configuration](managing-builds.md), or when you [modify settings](configuring-vcs-settings.md) of an existing VCS root.
 
 After that, TeamCity does not monitor the whole repository but only collects changes for the scope of the repository specified in TeamCity: the configured [VCS root settings](configuring-vcs-settings.md) with [checkout rules](vcs-checkout-rules.md).   
-The revision of the sources corresponding to the latest detected change affecting your build will be displayed as the VCS root revision on the [Changes page](viewing-user-changes-in-builds.md) accessible via the link on the __Projects__ page or on the [Changes tab](working-with-build-results.md#Changes) of __Build Results__.
+The revision of the sources corresponding to the latest detected change affecting your build will be displayed as the VCS root revision on the [Changes page](viewing-user-changes-in-builds.md) accessible via the link on the __Projects__ page or on the [Changes tab](build-results-page.md#Changes+Tab) of __Build Results__.
 
 ## Revision order
 

@@ -19,7 +19,7 @@ The context menu next to the __Run__ button opens the build's settings menu, so 
 
 To cancel a running build, click the stop icon next to its progress bar. TeamCity will prompt to you to enter an optional reason for cancelling; you can also choose if this build should be automatically re-added to the queue.
 
-Note that there is no way to pause and then continue a single build (though you can [pause a whole build configuration](managing-builds.md#Pausing+Build+Configuration)). If cancelled, a build should be restarted from the first step.
+Note that there is no way to pause and then continue a single build (though you can [pause a whole build configuration](changing-build-configuration-status.md)). If cancelled, a build should be restarted from the first step.
 
 ## Build Actions Menu
 
@@ -99,7 +99,7 @@ The "_Mark as successful_" action is not available for [builds that failed to st
 
 ### Label Build Sources
 
-TeamCity can label (tag) sources of a particular build in your VCS repository. The list of applied labels and their application status is displayed on the __[Changes](working-with-build-results.md#Changes)__ tab of __Build Results__.
+TeamCity can label (tag) sources of a particular build in your VCS repository. The list of applied labels and their application status is displayed on the __[Changes](build-results-page.md#Changes+Tab)__ tab of __Build Results__.
 
 You can configure [automatic labeling](vcs-labeling.md) or label each build manually, from the __Actions__ menu. Manual labeling uses the VCS settings actual for the build.
 
@@ -112,7 +112,7 @@ You can configure [automatic merge](automatic-merge.md) or do it manually for ea
 ## Build Configuration Actions Menu
 
 The __[Build Configuration Home](build-configuration-home-page.md)__ page has own __Actions__ menu with a different set of actions. It allows you to:
-* [Pause triggers](managing-builds.md#Build+Configuration+State).
+* [Pause triggers](changing-build-configuration-status.md).
 * Check for [pending changes](change-state.md).
 * Enforce [clean checkout](clean-checkout.md).
 * [Assign an investigation](investigating-and-muting-build-failures.md).

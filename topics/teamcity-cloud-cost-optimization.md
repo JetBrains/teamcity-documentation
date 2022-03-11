@@ -78,7 +78,7 @@ In this example, a quiet period of 300 seconds (5 minutes) has been defined for 
 
 One important note regarding the use of quiet period: if you have selected the option to trigger a build on each check-in, the quiet period settings will be ignored.
 
-When multiple commits are combined in one build, you are still able to see the full list of the changes in the build by going to its **[Changes](working-with-build-results.md#Changes)** tab, even if the commits were made by several developers. In addition, if a build fails, you can cross-reference the error or failure with the list of changes to see who might have contributed to the failure.
+When multiple commits are combined in one build, you are still able to see the full list of the changes in the build by going to its **[Changes](build-results-page.md#Changes+Tab)** tab, even if the commits were made by several developers. In addition, if a build fails, you can cross-reference the error or failure with the list of changes to see who might have contributed to the failure.
 
 >The [Investigations Auto Assigner](investigations-auto-assigner.md) build feature can automatically suggest assigning a failure to a particular committer based on a number of built-in heuristics.
 

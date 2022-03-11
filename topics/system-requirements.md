@@ -216,9 +216,9 @@ If you consider cloud deployment for TeamCity agents (for example, on Amazon EC2
 The network traffic mostly depends on your settings as some of them imply transferring binaries between the agent and the server.
 
 The most important flows of traffic between a TeamCity agent and the TeamCity server are:
-* The agent retrieves commands from the server: these are typically build start tasks, including a dump of the build configuration settings and the full set of build parameters. These parameters can be reviewed on the build's [Parameters](working-with-build-results.md#Parameters) tab.
+* The agent retrieves commands from the server: these are typically build start tasks, including a dump of the build configuration settings and the full set of build parameters. These parameters can be reviewed on the build's [Parameters](build-results-page.md#Parameters+Tab) tab.
 * The agent periodically sends current status data to the server (this includes all the agents’ parameters which can be reviewed on the agent's [Agent Parameters](viewing-build-agent-details.md#Agent+Parameters) tab).
-* During the build, the agent sends build log messages and parameters data back to the server. These can be reviewed on the [Build Log](working-with-build-results.md#Build+Log) and [Parameters](working-with-build-results.md#Parameters) tabs of the build.
+* During the build, the agent sends build log messages and parameters data back to the server. These can be reviewed on the [Build Log](build-results-page.md#Build+Log+Tab) and [Parameters](build-results-page.md#Parameters+Tab) tabs of the build.
 * (when the server-side checkout mode is used) The agent downloads the sources before the build (as a full or incremental patch) from the server.
 * (when an [artifact dependency](artifact-dependencies.md) is configured) The agent downloads build artifacts of other builds from the server before starting a build, unless an external artifact storage is used instead.
 * (when artifacts are configured for a build) The agent uploads build artifacts to the server, unless an external artifact storage is used instead.

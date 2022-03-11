@@ -43,7 +43,7 @@ To assign an investigation of a particular build problem:
    The user to whom the investigation is assigned can later [mark the problem as fixed](#Marking+Problems+as+Fixed) in this window.
 4. Save the investigation.
 
-You can similarly assign an investigation of a failed test on the __Overview__ or __[Tests](working-with-build-results.md#Tests)__ tab of the __Build Results__.
+You can similarly assign an investigation of a failed test on the __Overview__ or __[Tests](build-results-page.md#Tests+Tab)__ tab of the __Build Results__.
 
 ## Muting Build Problems
 
@@ -61,7 +61,7 @@ To mute a particular build problem:
 
 ## Muting Tests
 
-You can mute a failed test or several tests at once on the __Overview__ or __[Tests](working-with-build-results.md#Tests)__ tab of the __Build Results__, similarly to [muting build problems](#Muting+Build+Problems).
+You can mute a failed test or several tests at once on the __Overview__ or __[Tests](build-results-page.md#Tests+Tab)__ tab of the __Build Results__, similarly to [muting build problems](#Muting+Build+Problems).
 
 <img src="investigate-mute.png" width="583" alt="Investigate/mute a build problem"/>
    
