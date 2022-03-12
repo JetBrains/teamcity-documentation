@@ -61,10 +61,10 @@ To learn more about TeamCity, explore this Help further:
 * The current Concepts section lists the main TeamCity objects and terms. Use it as a reference to learn about unfamiliar notions.
 * To properly install and configure your setup, refer to [Supported Platforms and Environments](supported-platforms-and-environments.md) and [Installation](install-and-start-teamcity-server.md).
 {product="tc"}
-* If you are using TeamCity only for managing and viewing builds, make sure to read the [User's Guide](user-s-guide.md).
-* If you have a Project Administrator or Server Administrator access, use the [Admin's Guide](administrator-s-guide.md) section to learn how to configure projects or how to use the Administration panel and maintain the server. This section also contains information on [licensing](licensing-policy.md) and [configuration as code in TeamCity](kotlin-dsl.md).
+* If you are using TeamCity only for managing and viewing builds, make sure to read [this section](managing-builds.md).
+* If you have a Project Administrator or Server Administrator access, use the [TeamCity Configuration and Maintenance](teamcity-configuration-and-maintenance.md) section to learn how to configure projects or how to use the Administration panel and maintain the server. This section also contains information on [licensing](licensing-policy.md) and [configuration as code in TeamCity](kotlin-dsl.md).
 {product="tc"}
-* If you have a Project Administrator or Server Administrator access, use the [Admin's Guide](administrator-s-guide.md) section to learn how to configure projects or how to use the Administration panel and maintain the server. This section also contains information on [configuration as code in TeamCity](kotlin-dsl.md).
+* If you have a Project Administrator or Server Administrator access, use the [TeamCity Configuration and Maintenance](teamcity-configuration-and-maintenance.md) section to learn how to configure projects or how to use the Administration panel and maintain the server. This section also contains information on [configuration as code in TeamCity](kotlin-dsl.md).
 {product="tcc"}
 * Available TeamCity add-ins are described [here](installing-tools.md).
 * Under [Extending TeamCity](extending-teamcity.md), advanced users can learn how to [run build scripts for interacting with TeamCity](build-script-interaction-with-teamcity.md), how to [use TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html), and more.
