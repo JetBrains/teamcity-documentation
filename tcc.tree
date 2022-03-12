@@ -43,6 +43,7 @@
         </toc-element>
     </toc-element>
     <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4">
+        <toc-element id="glossary.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agent-pool.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -72,15 +73,16 @@
         <toc-element id="vcs-root.md"/>
     </toc-element>
     <toc-element id="administrator-s-guide.md" hidden="true"/>
-    <toc-element toc-title="Administrator's Guide">
-        <toc-element toc-title="Secure TeamCity">
-            <toc-element id="security-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="csrf-protection.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="using-https-to-access-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="uploading-ssl-certificates.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="content-security-policy-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="security-actions.md" show-structure-for="chapter" show-structure-depth="4"/>
-        </toc-element>
+    <toc-element toc-title="Secure TeamCity">
+        <toc-element id="security-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element id="csrf-protection.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element id="using-https-to-access-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element id="uploading-ssl-certificates.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element id="content-security-policy-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element id="security-actions.md" show-structure-for="chapter" show-structure-depth="4"/>
+    </toc-element>
+
+
         <toc-element id="teamcity-configuration-and-maintenance.md">
             <toc-element id="managing-subscription-and-resources.md"/>
             <toc-element id="configuring-authentication-settings.md" show-structure-for="chapter" show-structure-depth="4">
@@ -298,7 +300,7 @@
             </toc-element>
         </toc-element>
         <toc-element id="teamcity-rest-api.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="rest-api"/>
-    </toc-element>
+
     <toc-element id="extending-teamcity.md">
         <toc-element id="build-script-interaction-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="service-messages.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -332,7 +334,6 @@
         </toc-element>
     </toc-element>
     <toc-element toc-title="Reference">
-        <toc-element id="glossary.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="how-to.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>

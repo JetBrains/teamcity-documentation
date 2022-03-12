@@ -757,7 +757,7 @@ In case a build fails on some agent, it is possible to debug it on this very age
 1. Go to the __Agents__ page in the TeamCity web UI and [select the agent](viewing-build-agent-details.md).
 2. [Disable the agent](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) to temporarily remove it from the <emphasis tooltip="build-grid">build grid</emphasis>. Add a comment (optional). To enable the agent automatically after a certain time period, check the corresponding box and specify the time.
 3. [Select the build](working-with-build-results.md) to debug.
-4. Open the [Custom Run](running-custom-build.md#Run+Custom+Build+dialog) dialog and specify the following options: 
+4. Open the [Custom Run](running-custom-build.md) dialog and specify the following options: 
     a. In the __Agent__ drop-down menu, select the disabled agent.
     b. It is recommended to select the __run as [Personal Build](personal-build.md)__ option to avoid intersection with regular builds.
 5. When debugging is complete, enable the agent manually if automatic reenabling has not been configured.
@@ -769,7 +769,7 @@ You can also perform [remote debugging](remote-debug.md) of tests on an agent vi
 If a build containing several steps fails at a certain step, it is possible to debug the step that breaks. Do the following:
 1. Go to the build configuration and disable the build steps up to the one you want to debug.
 2. [Select the build](working-with-build-results.md) to debug.
-3. Open the [Custom Run](running-custom-build.md#Run+Custom+Build+dialog) dialog and select the __put the build to the [queue top](working-with-build-queue.md#Moving+Builds+to+Top)__ to give you build the priority.
+3. Open the [Custom Run](running-custom-build.md) dialog and select the __put the build to the [queue top](working-with-build-queue.md#Moving+Builds+to+Top)__ to give you build the priority.
 4. When debugging is complete, reenable the build steps.
 
 ## Watch Several TeamCity Servers with Windows Tray Notifier

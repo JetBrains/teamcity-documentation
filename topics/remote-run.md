@@ -3,14 +3,14 @@
 
 A _remote run_ is a [personal build](personal-build.md) initiated by a developer from one of the supported IDE plugins to test how the changes will integrate into the project's code base. Unlike [Pre-tested (delayed) commit](pre-tested-delayed-commit.md), no code is checked into the VCS regardless of the state of the personal build initiated via Remote Run.
 
-For a list of version control systems supported by each IDE, see [Supported Platforms and Environments](supported-platforms-and-environments.md).
+For a list of version control systems supported by each IDE, see [Supported Platforms and Environments](supported-platforms-and-environments.md#IDE+Integration).
 
 
 <seealso>
         <category ref="inst_tools">
             <a href="intellij-platform-plugin.md">IntelliJ Platform Plugin</a>
             <a href="eclipse-plugin.md">Eclipse Plugin</a>
-            <a href="visual-studio-addin.md">Visual Studio Addin</a>
+            <a href="visual-studio-addin.md">Visual Studio Add-in</a>
         </category>
         <category ref="concepts">
             <a href="pre-tested-delayed-commit.md">Pre-tested (delayed) commit</a>

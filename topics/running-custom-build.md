@@ -12,9 +12,7 @@ There are several ways of launching a custom build in TeamCity:
 * [Promote a build](#Promoting+Build).
 * [Build triggers](configuring-build-triggers.md) can launch builds with custom parameters.
 
-## Run Custom Build dialog
-
-### General Options
+## General Options
 
 Select an agent you want to run the build on from the drop-down menu. Note that for each agent in the list, TeamCity displays its current state and estimates when the agent will become idle if it is running a build at the moment. Besides the possibility to run a build on a particular agent from the list, you can also use one of the following options:
 * __Fastest idle agent__: _default option_; if selected, TeamCity will automatically choose an agent to run a build on based on calculated estimates.
@@ -41,7 +39,7 @@ If the current build configuration uses a [Perforce](perforce.md) VCS root, you 
 
 >Learn how to automate running builds on shelved files with [Perforce Shelve Trigger](perforce-shelve-trigger.md).
 
-### Dependencies
+## Dependencies
 
 _This tab is available only for builds that have dependencies on other builds_.   
 You can enforce rebuilding of all dependencies and select a particular build whose artifacts will be taken. By default, the last 20 builds are displayed.
@@ -53,7 +51,7 @@ Note that if you re-run a dependent build, TeamCity will try to rebuild all depe
 
 By default, dependency builds in the list are grouped by their branches sorted alphabetically. Builds of the same branch are sorted relatively to each other by date. In some cases, you might need to discard branch-based sorting and sort all dependency builds only by their date, to display the newest builds at the top. To do this, click __Sort dependencies by date__. To return to the default sorting, click __Reset all__.
 
-### Changes
+## Changes
 
 _This tab is available only if you have permissions to access VCS roots for the build configuration._   
 The tab allows you to specify a particular change to be included to the build.
@@ -61,19 +59,19 @@ The tab allows you to specify a particular change to be included to the build.
 The build will use the change's revision to check out the sources. That is, all the changes up to the selected one will be included into the build.   
 Note that TeamCity displays only the changes detected earlier for the current build configuration VCS roots. If the VCS root was detached from the build configuration after the change occurred, there is no ability to run the build on such a change. A limited number of changes is displayed. If there is an earlier change in TeamCity that you need to run a build on, you can locate the change in the Change Log and use the __Run build with this change__ action.
 
-### Include changes
+## Include Changes
 
 The __Include changes__ drop-down menu allows selecting the changes in the VCS roots attached to the configuration to run the build on.
 * __Latest changes at the moment the build is started__: TeamCity will automatically include all changes available at the moment.
 * __Last change to include__: When you select a change in the drop-down menu, TeamCity runs the build with the selected change and all changes that were made before it. The build run with the changes earlier than the latest available is marked as a [history build](history-build.md).
 
-### Build branch
+## Build Branch
 
 The __Build branch__ drop-down menu, available if you have branches in your build configuration (or in snapshot dependencies of this build configuration), allows choosing a branch to be used for the custom build.
 
 <anchor name="TriggeringCustomBuild-UsesettingsfromVCS"/>
 
-### Use settings
+## Use Settings
 
 If your project has [versioned settings](storing-project-settings-in-version-control.md) enabled, you can tell TeamCity to run a build:
 * With the settings defined for the project, either the current settings on the server or the settings from VCS.
@@ -84,7 +82,7 @@ If changes are selected in the [step above](#Include+changes), the revision of t
 
 To define which settings to take, use one of the corresponding options from the _Use settings_ drop-down menu (the option here will override the [project-level setting](storing-project-settings-in-version-control.md#Defining+Settings+to+Apply+to+Builds)).
 
-### Parameters
+## Parameters
 
 <note>
  
@@ -98,7 +96,7 @@ When adding/editing/deleting properties and variables, note the following:
 * Only newly added properties/variables can be deleted. You cannot delete predefined properties.
 * Each parameter value must be no longer than 16,000 characters.
 
-### Comment and Tags
+## Comment and Tags
 
 Add an optional comment as well as one or more [tags](build-actions.md#Add+Tags+to+Build) to the build. You can also add a custom build to [favorites](build-actions.md#Add+Build+to+Favorites) by checking the corresponding box in this section.
 
