@@ -53,7 +53,7 @@ TeamCity projects, build configurations, and VCS roots have a UUID which is an a
             <a href="managing-builds.md">Build Configuration</a>
         </category>
         <category ref="admin-guide">
-            <a href="managing-projects-and-build-configurations.md">Managing Projects and Build Configurations</a>
+            <a href="creating-and-editing-projects.md">Creating and Editing Projects</a>
             <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
             <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>
             <a href="accessing-server-by-http.md">Accessing Server by HTTP</a>

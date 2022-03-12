@@ -58,7 +58,6 @@ The root project is special in the following ways:
             <a href="managing-builds.md">Build Configuration</a>
         </category>
         <category ref="admin-guide">
-            <a href="managing-projects-and-build-configurations.md">Managing Projects and Build Configurations</a>
             <a href="creating-and-editing-projects.md">Creating and Editing Projects</a>
             <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
             <a href="project-export.md">Project Export</a>
