@@ -103,7 +103,6 @@
             <toc-element id="build-time-report.md"/>
             <toc-element id="maven-server-side-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
-        <toc-element id="managing-projects-and-build-configurations.md">
             <toc-element id="creating-and-editing-projects.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="project-export.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="projects-import.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -250,7 +249,7 @@
             <toc-element id="ordering-projects-and-build-configurations.md"/>
             <toc-element id="archiving-projects.md"/>
             <toc-element id="customizing-statistics-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
-        </toc-element>
+
         <toc-element id="configuring-test-reports-and-code-coverage.md">
             <toc-element id="net-testing-frameworks-support.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="java-testing-frameworks-support.md"/>
