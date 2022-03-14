@@ -22,7 +22,7 @@
         <accepts>build-agent-configuration.html</accepts>
     </rule>
     <rule id="upgrade-dsl">
-        <accepts>upgrading-dsl.html</accepts>
+        <accepts>upgrade-dsl.html</accepts>
     </rule>
     <rule id="cleanup">
             <accepts>clean-up.html</accepts>
@@ -78,5 +78,8 @@
     <rule id="rest-api">
         <accepts>rest-api.html</accepts>
         <accepts>rest-api-reference.html</accepts>
+    </rule>
+    <rule id="integrating-teamcity-with-perforce">
+        <accepts>perforce-streams-as-feature-branches.html</accepts>
     </rule>
 </rules>

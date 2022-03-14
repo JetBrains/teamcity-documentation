@@ -31,7 +31,7 @@
         <toc-element id="install-and-start-teamcity-agents.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="install-and-start-agents">
             <toc-element id="system-requirements.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="install-teamcity-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="configure-agent-installation.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="configure-ageconnt-installation"/>
+            <toc-element id="configure-agent-installation.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="configure-agent-installation"/>
             <toc-element id="start-teamcity-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configure-java-for-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="install-multiple-agents-on-one-machine.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -150,9 +150,7 @@
                     </toc-element>
                     <toc-element id="mercurial.md" show-structure-for="chapter" show-structure-depth="4"/>
                     <toc-element id="perforce.md" show-structure-for="chapter" show-structure-depth="4">
-                        <toc-element id="perforce-helix-core-compatibility.md"/>
                         <toc-element id="perforce-workspace-handling-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
-                        <toc-element id="perforce-streams-as-feature-branches.md" show-structure-for="chapter" show-structure-depth="4"/>
                     </toc-element>
                     <toc-element id="subversion.md" show-structure-for="chapter" show-structure-depth="4"/>
                     <toc-element id="azure-devops.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="azure-devops-server"/>
@@ -318,6 +316,7 @@
         <toc-element id="integrating-teamcity-with-other-tools.md" hidden="true"/>
         <toc-element toc-title="Integrating TeamCity with Other Tools">
             <toc-element id="integrating-teamcity-with-vcs-hosting-services.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="integrating-teamcity-with-perforce.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="integrating-teamcity-with-docker.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="docker-wrapper.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>

@@ -10,7 +10,7 @@ When installing multiple TeamCity build agents on the same machine, consider the
 * Depending on the hardware and the builds' specifics, you may experience degraded building performance. Ensure there are no disk, memory, or CPU bottlenecks when several builds are running at the same time.
 
 After having one agent installed, you can install additional agents by following the regular installation procedure (see an exception for the Windows service below), but make sure that:
-* The agents are installed using different OS users so that user-level resources (like Maven/Gradle/NuGet local artifact caches) do not conflict.**
+* The agents are installed using different OS users so that user-level resources (like Maven/Gradle/NuGet local artifact caches) do not conflict.
 * The agents are installed in separate directories.
 * The agents have the distinctive `workDir` and `tempDir` directories in the [`buildAgent.properties`](configure-agent-installation.md) file.
 * Values for the `name` and `ownPort` properties of [`buildAgent.properties`](configure-agent-installation.md) are unique.

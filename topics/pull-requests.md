@@ -397,7 +397,6 @@ Use a personal access token for connection. The token must have the `api` scope.
 By source branch
 
 </td>
-<td></td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor merge requests only on source branches that match the specified criteria. If left empty, no filters apply.
@@ -410,7 +409,6 @@ Define the [branch filter](branch-filter.md) to monitor merge requests only on s
 By target branch
 
 </td>
-<td></td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. If left empty, no filters apply.
@@ -477,7 +475,6 @@ Use a personal access token for connection. The token must have the `Code (read)
 By source branch
 
 </td>
-<td></td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left empty, no filters apply.
@@ -490,7 +487,6 @@ Define the [branch filter](branch-filter.md) to monitor pull requests only on so
 By target branch
 
 </td>
-<td></td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.

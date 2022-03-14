@@ -26,7 +26,7 @@ There are two modes of settings' synchronization: _two-way_ and _one-way_.
 
 The default mode is a _two-way synchronization_, that is when the _Allow editing project settings via UI_ option is enabled. It works as follows:
 * Each administrative change made to the project settings in the TeamCity UI is committed to the version control system; the changes are made noting the TeamCity user as the committer.
-* If the settings change is committed to the VCS, the TeamCity server will detect them and apply them to the project on the fly.   
+* If the settings change is committed to the VCS, the TeamCity server will detect them and apply them to the project on the fly.  
   Before applying the newly checked-in settings, TeamCity validates them. If the validation constraints are not met (that is, the settings are invalid), the current settings are left intact and an error is shown in the UI. Invalid settings are those that cannot be loaded because of constraints: for instance, a build configuration references a non-existing VCS root or has a duplicate ID or name.
 
 If you disable the _Allow editing project settings via UI_ option, the project settings will become read-only in the UI and will only reflect changes made in the VCS. This is convenient if you prefer defining project settings' [as code](kotlin-dsl.md) or load settings from a read-only VCS branch.
@@ -100,7 +100,7 @@ In the __Project Settings__, select _Generate token for a secure value_ in the _
 
 You can also generate new secure tokens on the __Tokens__ tab of the project __Versioned Settings__ section. The tab is available for projects with the enabled "_[Store secure values outside of VCS](#Storing+Secure+Settings)_" option.
 
-The __Tokens__ tab allows viewing all the project tokens, including unused tokens.   
+The __Tokens__ tab allows viewing all the project tokens, including unused tokens.  
 When secure data of a project is stored outside of the version control system, it could potentially be detached from the project: for example, if a project with tokens is moved to another place in the hierarchy or is created from DSL on the new TeamCity server. In such case, you can specify the values for the project tokens on this tab, so the project can continue using them.
 
 Moreover, if the required tokens are available in other projects you are permitted to edit, TeamCity will automatically find them. You can copy the secure values used in any of these projects to your current project.
@@ -109,7 +109,7 @@ Moreover, if the required tokens are available in other projects you are permitt
 
 When there is one or more secure values available for a token, the ![magic-wand.png](magic-wand.png) button appears opposite this token. Click it to review available projects and choose a project to copy a value from, and then click __Copy__ to confirm your choice.
 
-Secure values can be inherited by project hierarchy. If a setting in a project (VCS root, OAuth connection, cloud profile) requires a password, the token generated for this password can be used in this project and in any of its subprojects. To be able to use the inherited password, the subproject must have versioned settings enabled and store settings in the same VCS, as its parent project.   
+Secure values can be inherited by project hierarchy. If a setting in a project (VCS root, OAuth connection, cloud profile) requires a password, the token generated for this password can be used in this project and in any of its subprojects. To be able to use the inherited password, the subproject must have versioned settings enabled and store settings in the same VCS, as its parent project.  
 Alternatively, you can add a [password parameter](typed-parameters.md#Adding+Parameter+Specification) with the secure value and use a [reference](using-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) to the parameter in the nested projects.
 
 ### Implications of Storing Security Data in VCS 
