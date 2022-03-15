@@ -23,6 +23,8 @@ It is possible to upload a different avatar in the TeamCity user profile setting
 
 You can now copy the public part of an uploaded non-encrypted SSH key from the project settings. To do this, go to **Project Settings | SSH keys** and click **Copy the public key** under the key name.
 
+<img src="copy-public-ssh-keys.png" alt="Copying public SSH keys" width="750"/>
+
 This way, project admins no longer need to ask the system administrator for a public SSH key whenever they need it (for example, to integrate their TeamCity projects with a VCS hosting service) — they can just get it via the TeamCity UI.
 
 ## Using TeamCity builds as Bitbucket Merge Checks
@@ -34,12 +36,13 @@ Thanks to more accurate [reporting of build statuses](commit-status-publisher.md
 It is now possible to select multiple builds and apply actions to all of them at once:
 * Pin/unpin
 * Tag/untag
-Add a comment
+* Add a comment
 * Add to favorites
 * Remove
 
 On the **Overview** tab of **Build Configuration Home**, you can select the required builds with checkboxes that appear when hovering over builds. To apply an action to them, use the respective command of the pop-up context menu. If you need to select a range of builds, press **Shift** and click build checkboxes at the edges of the range to be selected.
 
+<img src="select-multiple-builds.png" alt="Selecting multiple builds" width="750"/>
 
 ## Other updates
 
