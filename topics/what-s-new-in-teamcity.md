@@ -1,6 +1,8 @@
 [//]: # (title: What's New in TeamCity 2021.12)
 [//]: # (auxiliary-id: What's New in TeamCity 2021.12;What's New in TeamCity)
 
+__If you are using TeamCity Cloud 2022.02, see [What's New in TeamCity 2022.02](https://www.jetbrains.com/help/teamcity/cloud/2022.02/what-s-new-in-teamcity.html) and [Release Notes for Build 107913](https://www.jetbrains.com/help/teamcity/cloud/2022.02/teamcity-release-notes-build-107913.html)__.
+
 ## Running builds in your own Cloud infrastructure
 {product="tcc"}
 
