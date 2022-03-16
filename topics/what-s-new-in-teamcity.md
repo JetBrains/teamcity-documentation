@@ -1,8 +1,6 @@
 [//]: # (title: What's New in TeamCity 2022.02)
 [//]: # (auxiliary-id: What's New in TeamCity 2022.02;What's New in TeamCity)
 
-TeamCity 2022.02 is still in production!
-
 ## Storing Docker images produced by build to public ECR registry
 
 TeamCity can now store Docker images produced by a build to both private and — since this update — public ECR registries.
