@@ -45,7 +45,6 @@
     <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4">
         <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="agent-pool.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="agent-requirements.md"/>
         <toc-element id="agent-work-directory.md"/>
         <toc-element id="already-fixed-in.md"/>
@@ -129,7 +128,7 @@
                 <toc-element id="configuring-build-agent-startup-properties.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="viewing-agents-workload.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="viewing-build-agent-details.md" show-structure-for="chapter" show-structure-depth="4"/>
-                <toc-element id="configuring-agent-pools.md" show-structure-for="chapter" show-structure-depth="4"/>
+                <toc-element id="configuring-agent-pools.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="configuring-agent-pools"/>
             </toc-element>
             <toc-element id="disk-usage.md"/>
             <toc-element id="server-health.md" show-structure-for="chapter" show-structure-depth="4"/>

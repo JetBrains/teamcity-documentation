@@ -82,4 +82,7 @@
     <rule id="integrating-teamcity-with-perforce">
         <accepts>perforce-streams-as-feature-branches.html</accepts>
     </rule>
+    <rule id="configuring-agent-pools">
+        <accepts>agent-pool.html</accepts>
+    </rule>
 </rules>
