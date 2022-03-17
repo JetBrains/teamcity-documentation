@@ -1,9 +1,79 @@
-[//]: # (title: What's New in TeamCity 2021.12)
-[//]: # (auxiliary-id: What's New in TeamCity 2021.12;What's New in TeamCity)
+[//]: # (title: What's New in TeamCity Cloud)
+[//]: # (auxiliary-id: What's New in TeamCity Cloud;What's New in TeamCity;What's New in TeamCity 2021.12;What's New in TeamCity 2022.02)
 
-__If you are using TeamCity Cloud 2022.02, see [What's New in TeamCity 2022.02](https://www.jetbrains.com/help/teamcity/cloud/2022.02/what-s-new-in-teamcity.html) and [Release Notes for Build 107913](https://www.jetbrains.com/help/teamcity/cloud/2022.02/teamcity-release-notes-build-107913.html)__.
+## TeamCity Cloud 2022.02 Updates
 
-## Running builds in your own Cloud infrastructure
+### Storing Docker images produced by build to public ECR registry
+
+TeamCity can now store Docker images produced by a build to both private and — since this update — public ECR registries.
+
+To be able to use this functionality, you need to add an [Amazon ECR connection](configuring-connections.md#Amazon+ECR) in __Project Settings__ and choose the _ECR Public_ registry type:
+
+<img src="amazon-ecr-public.png" alt="Connecting to public ECR registry" width="750"/>
+
+Remember to also enable [Docker Support](docker-support.md) in your builds.
+
+### Automatic import of user avatars from external systems
+
+When a user signs in to TeamCity [via a third-party account](configuring-authentication-settings.md), like GitHub or Bitbucket, for the first time, TeamCity will automatically fetch their avatar from the external system and attach it to their TeamCity user profile. Note that TeamCity will only be able to access avatars of users with verified emails (if you are using GitLab, check that a _public email_ is set in your account).
+
+It is possible to upload a different avatar in the TeamCity user profile settings afterwards.
+
+### Getting project SSH keys via UI
+
+You can now copy the public part of an uploaded non-encrypted SSH key from the project settings. To do this, go to **Project Settings | SSH keys** and click **Copy the public key** under the key name.
+
+<img src="copy-public-ssh-keys.png" alt="Copying public SSH keys" width="750"/>
+
+This way, project admins no longer need to ask the system administrator for a public SSH key whenever they need it (for example, to integrate their TeamCity projects with a VCS hosting service) — they can just get it via the TeamCity UI.
+
+### Applying action to multiple builds
+
+It is now possible to select multiple builds and apply actions to all of them at once:
+* Pin/unpin
+* Tag
+* Compare with another build
+* Add a comment
+* Add to favorites
+* Remove
+
+On the **Overview** tab of **Build Configuration Home**, you can select the required builds with checkboxes that appear when hovering over builds. To apply an action to them, use the respective command of the pop-up context menu. If you need to select a range of builds, press **Shift** and click build checkboxes at the edges of the range to be selected.
+
+<img src="select-multiple-builds.png" alt="Selecting multiple builds" width="750"/>
+
+### Kotlin DSL update: Import statements include only current DSL version
+
+Since this version, all `import` statements in a [Kotlin DSL](kotlin-dsl.md) code no longer include the DSL version specification. Instead, the version is determined automatically based on the current server's version.  
+This change affects how a DSL code appears in the _View as Code_ mode in TeamCity and removes irrelevant suggestions when writing `import` statements manually in an IDE. It concerns only newly created projects — the syntax of existing projects is supported for compatibility.
+
+### Perforce integration update: Automatic creation of Helix Swarm test runs and status synchronization with builds
+
+[Commit Status Publisher](commit-status-publisher.md) has a new option for sending build status reports to Perforce Helix Swarm — **Create Swarm Test**. If you enable it, TeamCity will [create a test run](https://www.perforce.com/manuals/swarm/Content/Swarm/swarm-apidoc_endpoint_integration_tests.html#Create_a__testrun_for_a_review_version) on the Helix Swarm server and update its status according to the build status in TeamCity.
+
+### Other updates
+{id="other-updates-2022-02"}
+
+* [Composite build configurations](composite-build-configuration.md) no longer appear on the _Compatible Configurations_ tab of a [build agent's details](viewing-build-agent-details.md).  
+  Composite builds are meta-builds designed for aggregating results of builds preceding them in a [chain](build-chain.md). Technically, they do not need a build agent to run and thus cannot be matched as compatible/incompatible with them. This usability update removes composite build configurations from _Compatible_ lists to help avoid any potential confusions.
+
+### Fixed issues
+{product="tcc" id="fixed-issues-2022-02"}
+
+See [TeamCity Build 107913 release notes](teamcity-release-notes-build-107913.md).
+
+### Upgrade notes
+{id="upgrade-notes-2022-02"}
+
+* Versions 2017.1 and 2017.2 of [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) have been unbundled. If you have been using any of these versions in your scripts, consider switching to the latest protocol version as described [here](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#REST+API+Versions). If switching is not an option and this is a breaking change for your setup, please contact us via any convenient [feedback channel](feedback.md).
+* Freemarker, used by TeamCity [notification templates](customizing-notification-templates.md), has been updated to version 2.3.31.  
+  {product="tc"}
+* The [CVS plugin](cvs.md) has been unbundled from TeamCity. If you want to continue using it on your server, please [download it from JetBrains Marketplace](https://plugins.jetbrains.com/plugin/18552-vcs-support-cvs) and install it as described [here](installing-additional-plugins.md).
+  {product="tc"}
+
+## TeamCity Cloud 2021.12 Updates
+{initial-collapse-state="collapsed"}
+
+### Running builds in your own Cloud infrastructure
 {product="tcc"}
 
 TeamCity Cloud can run builds _in a customer's local environment_ or in a _JetBrains-managed cloud_. Usually, the first approach works best for companies who want to have full control over their build processes, while the second one suits teams whose processes rely on IaaS. Since this update, we want to introduce the third approach that stays somewhere in between: **_running builds in a customer's cloud_**.  
@@ -23,7 +93,7 @@ To integrate your TeamCity Cloud project with your cloud infrastructure:
 
 After the cloud profile is configured, TeamCity will be able to launch agents in your cloud and assign builds to them. If given a variety of agent environments (local and cloud), it will always try to choose the least expensive option for each build.
 
-## Prepaid JetBrains-hosted build agents
+### Prepaid JetBrains-hosted build agents
 {product="tcc"}
 
 Another improvement related to build agents is an alternative pricing model: now, JetBrains-hosted agents can be prepaid on a monthly basis. This option is the most convenient if you run a lot of builds on agents of certain types (6 or more hours a workday). As JetBrains-hosted agents are charged per build time, some customers could greatly benefit from paying a fixed amount of credits monthly, without caring about the builds' duration.
@@ -38,7 +108,7 @@ There is no need to wait until the end of the next month: whenever you prepay ag
 
 If you plan to reduce the number of prepaid agents in the next month, you can adjust this number straight away. The setting will only be applied since the next month, and you won't have to worry about forgetting to change it at the end of the current one.
 
-## Single sign-on authentication via SAML 2.0
+### Single sign-on authentication via SAML 2.0
 {product="tcc"}
 
 TeamCity Cloud now supports a new authentication method: Single Sign-On (SSO) via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0). Enabling it in your instance will allow users to authenticate in TeamCity with their account stored in one of the major identity providers: [Okta](https://www.okta.com/), [OneLogin](https://www.onelogin.com/), [AWS SSO](https://aws.amazon.com/single-sign-on/), [AD FS](https://docs.microsoft.com/en-us/windows-server/identity/active-directory-federation-services), and so on.
@@ -68,7 +138,7 @@ As soon as the connection between TeamCity Cloud and your SSO provider is establ
 
 Depending on the module settings, TeamCity can prohibit authentication to accounts whose emails don't match emails of existing TeamCity users, or it can create a new user profile for such an account.
 
-## Running builds on JetBrains Space merge requests
+### Running builds on JetBrains Space merge requests
 
 TeamCity integration with JetBrains Space now includes the [Pull Requests](pull-requests.md) build feature. If you enable this feature in a build configuration, TeamCity will automatically detect changes in merge requests submitted to your Space repository. For a build run on these changes, it will display the merge request details in the build's overview and send the build statuses back to JetBrains Space.
 
@@ -91,7 +161,7 @@ To protect a target branch and ensure that only verified requests are merged int
 
 <img src="space-quality-gates.png" alt="JetBrains Space - Quality Gates" width="706"/>
 
-## New UI: Editing scope of agent pools
+### New UI: Editing scope of agent pools
 
 It is now possible to edit the scope of [agent pools](agent-pool.md) and quickly assign agents and projects to them right in the new Sakura UI — without switching to the classic UI mode.
 
@@ -107,7 +177,8 @@ Note that whenever you select a cloud image, you actually assign all its instanc
 
 Similarly, you can also associate projects with this pool: open the **Projects** tab of the pool's settings and click **Assign projects**. This way, agents assigned to this pool will be allowed to run builds only in the selected projects.
 
-## Other updates
+### Other updates
+{id="other-updates-2021-12"}
 
 **Change the project scope of an investigation or mute**  
   If a build problem occurs in multiple subprojects of the same project, it is convenient to assign its investigation (or mute it) within the whole parent project. However, users often forget to change the project scope in the _Investigation/Mute_ dialog, and TeamCity applies the action only within the current subproject. Now, project administrators can set a parent project as a preferred scope for all its subprojects. [Read how](investigating-and-muting-build-failures.md#Changing+Project+Scope+of+Investigation+or+Mute).
@@ -115,12 +186,13 @@ Similarly, you can also associate projects with this pool: open the **Projects**
 **Build failure conditions: Create a build problem per each matching error**  
   When configuring a _Fail build on specific text in build log_ [failure condition](build-failure-conditions.md), you can now specify whether to create a build problem only for the first text occurrence found in a build log (default) or for each error that matches the specified pattern.
 
-## Fixed issues
-{product="tcc"}
+### Fixed issues
+{product="tcc" id="fixed-issues-2021-12"}
 
 See [TeamCity Build 107109 release notes](teamcity-release-notes-build-107109.md).
 
-## Upgrade notes
+### Upgrade notes
+{id="upgrade-notes-2021-12"}
 
 - To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). After updating to 2021.12, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset.
 - TeamCity stops supporting the [Microsoft Edge Legacy](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224) web browsers.
@@ -137,7 +209,6 @@ See [TeamCity Build 107109 release notes](teamcity-release-notes-build-107109.md
 {product="tcc"}
 - The [Unity Support plugin](https://plugins.jetbrains.com/plugin/11453-unity-support) bundled with TeamCity Cloud has been updated to version SNAPSHOT-20211116104228.
 {product="tcc"}
-
 
 ## Previous releases
 {product="tc"}
