@@ -21,6 +21,8 @@ Besides providing the build information, this page enables you to:
   * Re-run the build: this will restart this build only, omitting other builds in its chain if any, which might be helpful if the build failed due to some infrastructure problems.
 * [Edit the configuration settings](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+Template).
 
+_(Since TeamCity Cloud 2022.02)_ You can also manage multiple builds at once (for example, pin, tag, remove builds, add builds to favorites, or add comments). For this, select the required builds on the __Overview__ tab of the __Build Configuration Home__ page (checkboxes appear when hovering over builds), and use commands of the pop-up context menu.
+
 ## Build Details
 
 The __Build Results__ page can be accessed from the __Build Configuration Home__ page and from various places in the TeamCity web UI where a build number or build status appears as a link. Some data is accessible only after the build is finished, some details like [Changes](#Changes), [Build Parameters](#Parameters), and [Dependencies](#Dependencies) are also applicable to the build while it is waiting in the queue.

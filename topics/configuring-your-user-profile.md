@@ -88,6 +88,9 @@ In __Your Profile | Notification Rules__, you can view what notification rules y
 
 Since version 2021.2, users can upload their avatars in the user profile. The avatars are displayed around the TeamCity UI, next to the changes (commits) of their authors. Only users with the _View all users_ [permission](managing-roles-and-permissions.md) can see them.
 
+_(Since TeamCity Cloud 2022.02)_ When a user signs in to TeamCity [via a third-party account](configuring-authentication-settings.md) for the first time, TeamCity automatically fetches their avatar from the external system. Note that TeamCity will only be able to access avatars of users with verified emails (if you are using GitLab, ensure that a _public email_ is set in your account).  
+It is possible to upload a different avatar in the TeamCity user profile settings afterwards.
+
 <seealso>
         <category ref="concepts">
             <a href="managing-roles-and-permissions.md">Roles and Permissions</a>

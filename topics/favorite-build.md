@@ -9,6 +9,8 @@ To easily access builds you want to monitor, you can mark them as favorite.
 
 To manually add a build to your favorites, use the appropriate option from the __Actions__ menu on the __[Build Results](working-with-build-results.md)__ page. Your favorite build will be marked with a star symbol ![star_filled.png](star_filled.png).
 
+_(Since TeamCity Cloud 2022.02)_ To add multiple builds to favorites at once, open the __Overview__ tab of the __Build Configuration Home__ page, select the required builds (checkboxes appear when hovering over builds), and click __Add to favorites__ in the pop-up context menu. Note that to select a range of builds, you can press `Shift` and click build checkboxes at the edges of the range to be selected.
+
 Any of your manually triggered builds and [personal builds](personal-build.md) can be added to your favorites automatically if you enable the corresponding setting in your [user profile settings](configuring-your-user-profile.md).
 
 You can also add a custom build to favorites by checking the [corresponding box](running-custom-build.md#Comment+and+Tags).

@@ -3,9 +3,11 @@
 
 A build can be _pinned_ to prevent it from being removed when a clean-up procedure is executed, as stipulated by the [clean-up policy](teamcity-data-clean-up.md).
 
-To pin/unpin a build:
-* on the [Build Results page](working-with-build-results.md), select __Pin__ in the _Actions_ drop-down menu, _or_
-* on the __Overview__ tab of the __Build Configuration Home__ page, select the __Pin__ build action
+You can pin/unpin builds as follows:
+* On the [Build Results page](working-with-build-results.md), select __Pin__ in the _Actions_ drop-down menu.
+* On the __Overview__ tab of the __Build Configuration Home__ page:
+    * To pin an individual build, select the __Pin__ action from the context menu of the required build.
+    * _(Since TeamCity Cloud 2022.02)_ To pin multiple builds at once, select the required builds (checkboxes appear when hovering over builds) and click __Pin__ in the pop-up context menu. If you need to select a range of builds, you can press `Shift` and click build checkboxes at the edges of the range to be selected.
 
 The _Pin/Unpin_ build dialog also allows you to tag the build.
 

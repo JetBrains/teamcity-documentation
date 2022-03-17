@@ -48,8 +48,8 @@ To configure an Azure DevOps PAT connection:
    The page that opens provides the parameters to be used when connecting TeamCity to Azure DevOps Services.
 3. Log in to your Azure DevOps Services account to create a personal access token with _All scopes_ as described in the [Microsoft documentation](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
 4. Continue configuring the connection in TeamCity: on the __Add Connection__ page that is open, specify
-   * the server URL in the `https://{account}.visualstudio.com` format or your Azure DevOps Server as `https://{server}:8080/tfs/`
-   * your personal access token
+    * the server URL in the `https://{account}.visualstudio.com` format or your Azure DevOps Server as `https://{server}:8080/tfs/`
+    * your personal access token
 5. Save the connection settings.
 6. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Azure DevOps Server](azure-devops.md) VCS root, create [Azure Board Work Items](azure-board-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all the resources that are available to you.   
    When configuring Commit Status Publisher for Git repositories hosted in TFS/VSTS, the personal access token can be filled out automatically if a VSTS project connection is configured.
@@ -157,7 +157,7 @@ See more information in the [dedicated article](configuring-connections-to-docke
 
 ## Amazon ECR
 
-An Amazon ECR (Elastic Container Registry) connection allows accessing private AWS registries. With its help, the [Docker Support](docker-support.md) build feature can store Docker images produced by a build to a private registry.
+An Amazon ECR (Elastic Container Registry) connection allows accessing AWS registries. With its help, the [Docker Support](docker-support.md) build feature can store Docker images produced by a build to a registry.
 
 Connection settings:
 
@@ -167,12 +167,25 @@ Connection settings:
 <tr>
 <td>
 
+Repository type _(since TeamCity Cloud 2022.02)_
+
+</td>
+<td>
+
+Choose to connect to a [private](https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html) or [public](https://docs.aws.amazon.com/AmazonECR/latest/public/what-is-ecr.html) registry.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
 AWS region
 
 </td>
 <td>
 
-Select an AWS region where the target resources are located.
+(Only for private registries) Select an AWS region where the target resources are located.
 
 </td>
 </tr>
@@ -319,13 +332,13 @@ Before configuring this connection, you need to create a dedicated application i
 2. Enter a convenient name and save the application.
 3. Go to the app's __Authorization__ tab and click __Configure requirements__ under the __In-context Authorization__ section. Enter the name of the Space project you are about to access from TeamCity.
 4. Now, you need to set permissions that will be granted to the app in this project. Click __Configure__ and enable the following permissions:
-   * Required for authentication and Pull Requests:
-      * _Members | View member profile_
-   * Required for Commit Status Publisher:
-      * _Git Repositories | Report external check status_
-   * Required for Pull Requests:
-       * _Code Review | View code reviews_
-   
+    * Required for authentication and Pull Requests:
+        * _Members | View member profile_
+    * Required for Commit Status Publisher:
+        * _Git Repositories | Report external check status_
+    * Required for Pull Requests:
+        * _Code Review | View code reviews_
+
    You can approve project-level permissions right in this **Authorization** tab if you are the project's administrator. Global permissions like viewing a member profile require a server administrator's approval.
 5. Go back to the app's __Overview__ and open the __Authentication__ tab.
 6. Enable _Client Credentials Flow_.

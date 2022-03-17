@@ -29,6 +29,8 @@ The TeamCity web UI provides the following ways to tag a particular build:
     * Go to the __Comments and Tags__ tab and add/modify the build tags.
 * In the _[Pin/Unpin Build](pinned-build.md)_ dialog where you can tag the build in addition to pinning it. For builds with snapshot dependencies, there is an option to pin and tag the build as well as its snapshot dependencies.
 
+_(Since TeamCity Cloud 2022.02)_ To tag multiple builds at once, select the required builds on the __Build Configuration Home__ page (checkboxes appear when hovering over builds) and click __Add tags__ in the pop-up context menu. If you need to select a range of builds, you can press `Shift` and click build checkboxes at the edges of the range to be selected.
+
 Alternatively, you can add and modify build tags using [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Manage+Build+Tags).
 
 [//]: # (Internal note. Do not delete. "Build Tagd46e113.txt")    
