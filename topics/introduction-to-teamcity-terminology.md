@@ -1,5 +1,5 @@
-[//]: # (title: Concepts)
-[//]: # (auxiliary-id: Introduction to TeamCity Terminology;Concepts)
+[//]: # (title: Terms and Concepts)
+[//]: # (auxiliary-id: Terms and Concepts;Introduction to TeamCity Terminology;Concepts)
 
 The following guide explains the main TeamCity terms and concepts. For a quick reference, see also [Basic TeamCity concepts](continuous-integration-with-teamcity.md#Basic+TeamCity+concepts).
 
