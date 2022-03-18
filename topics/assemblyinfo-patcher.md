@@ -3,7 +3,7 @@
 
 The _AssemblyInfo Patcher_ [build feature](adding-build-features.md) allows setting a build number to an assembly automatically, without having to patch the `AssemblyInfo.cs` files manually. When adding this build feature, you only need to specify the version format. You can use TeamCity [parameter references](configuring-build-parameters.md#parameter-reference).
 
-AssemblyInfo Patcher should be used with the [automatic checkout (vcs-checkout-mode.md) only: after this build feature is configured, it will run __before the first build step__. TeamCity will first perform replacement in the files found in the build checkout directory and then run your build.
+AssemblyInfo Patcher should be used with the [automatic checkout](vcs-checkout-mode.md) only: after this build feature is configured, it will run __before the first build step__. TeamCity will first perform replacement in the files found in the build checkout directory and then run your build.
 
 TeamCity searches for all AssemblyInfo (including GlobalAssemblyInfo) files: `.cs`, `.cpp`, `.fs`, `.vb` in their standard locations under the checkout directory and replaces the parameter for the `AssemblyVersion`, `AssemblyFileVersion`, and `AssemblyInformationalVersion` attributes with the build number you have specified in the TeamCity web UI. Read more about these attributes in the [Visual Studio documentation](https://docs.microsoft.com/en-gb/troubleshoot/visualstudio/general/assembly-version-assembly-file-version).
 
