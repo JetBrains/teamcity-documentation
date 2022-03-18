@@ -60,7 +60,6 @@ After you save the settings, TeamCity will only be running builds of these proje
             <a href="agent-requirements.md">Agent Requirements</a>
         </category>
         <category ref="admin-guide">
-            <a href="configuring-agent-pools.md">Configuring Agent Pools</a>
             <a href="viewing-agents-workload.md">Viewing Agents Workload</a>
             <a href="agent-cloud-profile.md" product="tc">Agent Cloud Profile</a>
         </category>
