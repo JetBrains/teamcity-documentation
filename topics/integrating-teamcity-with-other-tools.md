@@ -296,7 +296,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Testing a project with the test engine and automatically importing the test results](net.md#vstest)
+* [Testing a project with the test engine and automatically importing test results](net.md#vstest)
 
 </td><td></td></tr>
 
