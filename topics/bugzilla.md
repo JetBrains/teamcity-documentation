@@ -7,8 +7,8 @@ You can integrate TeamCity with [Bugzilla](https://www.bugzilla.org/) (3.0 or la
 
 When integration with Bugzilla is enabled, TeamCity automatically detects issue IDs mentioned in the comments of VCS commits. It transforms these IDs into links to the corresponding issues in Bugzilla and displays them to TeamCity users in the UI:
 
-* To see the basic details of a issue in the TeamCity UI, open the __[Changes](working-with-build-results.md#Changes)__ tab of the related build’s results and hover over the icon next to the issue ID.
-* Issues fixed in the build can be viewed on the __[Issues](working-with-build-results.md#Related+Issues)__ tab of the build results.
+* To see the basic details of a issue in the TeamCity UI, open the __[Changes](build-results-page.md#Changes+Tab)__ tab of the related build’s results and hover over the icon next to the issue ID.
+* Issues fixed in the build can be viewed on the __[Issues](build-results-page.md#Issues+Tab)__ tab of the build results.
 * To view issues related to a whole build configuration (not only to individual builds), use the __Issue Log__ tab of the __Build Configuration Home__ page. You can filter the list to a particular range of builds and/or enable the _Show only resolved issues_ option to display only issues fixed in the builds.
 
 Follow these recommendations to get the maximum benefit from the Bugzilla integration:

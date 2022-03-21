@@ -90,7 +90,7 @@ You will notice the new button: __From JetBrains Space__. Its name depends on th
    >If you get the _OAuth 2.0 Error_, this might mean that the _Redirect URI_ has not been configured properly in Step 1 of the preliminary setup. Make sure to [revise it](#redirect-uri). Note that Space supports only HTTPS connection.
 3. The project creation wizard will display a list of all Space projects your user has access to. Choose a repository and wait until TeamCity verifies the connection settings.
 4. Now it's time to configure the main settings of the new project and its [VCS root](vcs-root.md). You can always adjust them later.
-   * _Project name_ and the name of its first [build configuration](build-configuration.md).
+   * _Project name_ and the name of its first [build configuration](managing-builds.md).
    * _VCS root_: (read-only) matches the URL of a repository you choose in Step 3.
    * _Default branch_: `refs/heads/main`, or another branch of your choice. Remember to keep `refs/heads` and change only the branch name.
    * _Branch specification_: if you want to run builds on other branches apart from the default one, this setting allows extending the scope of the VCS root to monitor these branches as well. TeamCity uses a [special format or branch specification rules](working-with-feature-branches.md) for this. To monitor the whole repository, use the `refs/heads/*` rule.

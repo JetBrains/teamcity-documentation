@@ -19,7 +19,7 @@ On an attempt to create a new VCS root, TeamCity checks whether there are other 
 
 <anchor name="ConfiguringVCSRoots-CommonVCSRootProps"/>
 
-Once a VCS root is configured, TeamCity regularly queries the version control system for new changes and displays the changes in the [build configurations](build-configuration.md) that have the root attached. You can set up your build configuration to trigger a new build each time TeamCity detects changes in any of the build configuration's VCS roots, which suits most cases. When a build starts, TeamCity gets the changed files from the version control and applies the changes to the [Build Checkout Directory](build-checkout-directory.md).
+Once a VCS root is configured, TeamCity regularly queries the version control system for new changes and displays the changes in the [build configurations](managing-builds.md) that have the root attached. You can set up your build configuration to trigger a new build each time TeamCity detects changes in any of the build configuration's VCS roots, which suits most cases. When a build starts, TeamCity gets the changed files from the version control and applies the changes to the [Build Checkout Directory](build-checkout-directory.md).
 
 </chunk>
  
@@ -27,7 +27,7 @@ Once a VCS root is configured, TeamCity regularly queries the version control sy
 <seealso>
         <category ref="concepts">
             <a href="project.md">Project</a>
-            <a href="build-configuration.md">Build Configuration</a>
+            <a href="managing-builds.md">Build Configuration</a>
             <a href="build-configuration-template.md">Build Configuration Template</a>
         </category>
         <category ref="admin-guide">

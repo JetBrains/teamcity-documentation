@@ -56,7 +56,7 @@ After you save the settings, TeamCity will only be running builds of these proje
 <seealso>
         <category ref="concepts">
             <a href="build-agent.md">Build Agent</a>
-            <a href="build-queue.md">Build Queue</a>
+            <a href="working-with-build-queue.md">Working with Build Queue</a>
             <a href="agent-requirements.md">Agent Requirements</a>
         </category>
         <category ref="admin-guide">

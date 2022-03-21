@@ -42,7 +42,7 @@ Make sure your [Version Control username](creating-and-managing-users.md#VCS+Use
 
 </note>
 
-* __My favorite builds only__ — limit notifications to your [favorite builds](favorite-build.md).
+* __My favorite builds only__ — limit notifications to your [favorite builds](build-actions.md#Add+Build+to+Favorites).
 
 </td></tr><tr>
 

@@ -388,7 +388,9 @@ MSBuild version
 
 <td>
 
-Specify the version of the installed MSBuild engine. See the [Requirements](#Requirements) section for more details.
+Specify the version of the installed MSBuild engine. To ensure that a specific version of native MSBuild is used (for example, in a Docker container), you need to set the path to `MSBuild.exe` in the `PATH` environment variable.
+
+See the [Requirements](#Requirements) section for more details.
 
 </td>
 
