@@ -177,7 +177,7 @@ TeamCity provides a dedicated hook script that should be saved on your Perforce 
 
 ## Label Perforce Sources
 
-TeamCity can assign custom labels to Perforce project sources. The list of applied labels and their status is displayed on the __[Changes](working-with-build-results.md#Changes)__ tab of __Build Results__.
+TeamCity can assign custom labels to Perforce project sources. The list of applied labels and their status is displayed on the __[Changes](build-results-page.md#Changes+Tab)__ tab of __Build Results__.
 
 To configure automatic labeling for a build configuration:
 1. Go to __Build Configuration Settings | Build Features__.

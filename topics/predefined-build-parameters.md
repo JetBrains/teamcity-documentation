@@ -960,7 +960,7 @@ dep.<btID>.<parameter_name>
 
 If there are multiple `dep.<btID>.<parameter_name>` paths to the same build configuration with `btID`, so that different builds are accessible via (direct or indirect) artifact dependencies, the following rules apply:
 * If there is a snapshot dependency between some of the builds, the build from the same chain wins.
-* If there are no snapshot dependencies and multiple builds are accessible only via an artifact dependency, the build with a larger [build ID](working-with-build-results.md#Internal+Build+ID) wins. If there are several artifact dependencies from a single build configuration, only the first one is considered.
+* If there are no snapshot dependencies and multiple builds are accessible only via an artifact dependency, the build with a larger [build ID](build-results-page.md#Internal+Build+ID) wins. If there are several artifact dependencies from a single build configuration, only the first one is considered.
 
 >When using build parameters of the _Password_ type, referencing them from a dependency, such as `%dep.<btID>.password_parameter%`, will not retrieve the actual value. This is done for security reasons: to prevent dependencies from accessing the value, thus restricting the possibility of unauthorized access to it.
 
