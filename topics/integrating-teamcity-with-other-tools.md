@@ -441,6 +441,12 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+* [Creating a project or build configuration from a GitHub repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
+* [Guessing VCS root settings from a GitHub repository URL](guess-settings-from-repository-url.md).
+* [Creating a Git VCS root from a GitHub repository URL](git.md).
+* [Inserting links to GitHub issues when detecting their IDs in commit messages](github.md).
+* [Authenticating with a GitHub account in TeamCity](configuring-authentication-settings.md#GitHub.com).
+
 </td><td></td></tr>
 
 <tr><td>
@@ -448,6 +454,10 @@ The tables below are updated in accordance with the newly introduced integration
 **GitLab.com / GitLab CE/EE**
 
 </td><td>
+
+* [Creating a project or build configuration from a GitLab repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
+* [Guessing VCS root settings from a GitHub repository URL](guess-settings-from-repository-url.md).
+* [Authenticating with a GitLab account in TeamCity](configuring-authentication-settings.md#GitLab.com).
 
 </td><td></td></tr>
 
@@ -457,6 +467,12 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+* [Creating a project or build configuration from a Bitbucket repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
+* [Guessing VCS root settings from a Bitbucket repository URL](guess-settings-from-repository-url.md).
+* [Creating a Mercurial VCS root from a Bitbucket repository URL](mercurial.md).
+* [Inserting links to Bitbucket Cloud issues when detecting their IDs in commit messages](bitbucket-cloud.md).
+* [Authenticating with a Bitbucket Cloud account in TeamCity](configuring-authentication-settings.md#Bitbucket+Cloud).
+
 </td><td></td></tr>
 
 <tr><td>
@@ -465,6 +481,10 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+* [Creating a project or build configuration from an Azure DevOps repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
+* [Guessing VCS root settings from an Azure DevOps repository URL](guess-settings-from-repository-url.md).
+* [Authenticating with an Azure DevOps Services account in TeamCity](configuring-authentication-settings.md#Azure+DevOps+Services).
+
 </td><td></td></tr>
 
 <tr><td>
@@ -472,6 +492,10 @@ The tables below are updated in accordance with the newly introduced integration
 **JetBrains Space**
 
 </td><td>
+
+* [Creating a project or build configuration from a JetBrains Space repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
+* [Guessing VCS root settings from a JetBrains Space repository URL](guess-settings-from-repository-url.md).
+* [Authenticating with a JetBrains Space account in TeamCity](configuring-authentication-settings.md#JetBrains+Space).
 
 </td><td></td></tr></table>
 
