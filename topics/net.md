@@ -390,6 +390,8 @@ MSBuild version
 
 Specify the version of the installed MSBuild engine. See the [Requirements](#Requirements) section for more details.
 
+If you set the version in this field and choose to run the current step using Docker (with [Docker Wrapper](docker-wrapper.md)), make sure to specify the path to `MSBuild.exe` in the `PATH` environment variable. This way, the .NET runner will be able to find the required executable file even within the Docker container.
+
 </td>
 
 </tr>
