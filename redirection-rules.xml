@@ -45,7 +45,7 @@
     </rule>
     <rule id="managing-user-roles-and-permissions">
             <accepts>role-and-permission.html</accepts>
-            <accepts>role-and-permission.html</accepts>
+            <accepts>managing-roles.html</accepts>
     </rule>
     <rule id="adding-notification-rules">
             <accepts>subscribing-to-notifications.html</accepts>
