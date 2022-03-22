@@ -1,18 +1,19 @@
 [//]: # (title: Integrating TeamCity with Other Tools)
 [//]: # (auxiliary-id: Integrating TeamCity with Other Tools)
 
-TeamCity strives to support all the modern software technologies and platforms. We want to ensure our users are able to integrate every component of their CI/CD infrastructure with TeamCity. We do this either by providing smart detection and straightforward UI options on the TeamCity side or by exposing specialized [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) endpoints for easier scripting and integration on a third-party system's side.
+One of the key features of TeamCity is straightforward integration with modern software technologies and platforms. To ensure our users are able to integrate every component of their CI/CD pipeline with TeamCity, we either:
+* provide smart detection and handy UI controls on the TeamCity side, or
+* expose specialized [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) endpoints for easier scripting and integration on a third-party system's side.
 
-There are many places in the TeamCity UI where you can set up or adjust software integrations, depending on their context. [Here](supported-platforms-and-environments.md) you can find a list of platforms and environments (and their versions) currently supported in TeamCity.
-
-This article gives an overview of third-party software and platforms supported in TeamCity out of the box. Remember that you can always extend this scope by [installing additional plugins](installing-additional-plugins.md) or even [writing your own](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).
+There are many places in the TeamCity UI where you can set up or adjust software integrations, depending on their context. This article gives an overview of third-party software and platforms supported in TeamCity out of the box. Remember that you can extend this scope by [installing additional plugins](installing-additional-plugins.md) or even [writing your own ones](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).  
+See also the [list of platforms and environments](supported-platforms-and-environments.md) (and their versions) currently supported in TeamCity.
 
 The tables below are updated in accordance with the newly introduced integrations and whenever we have extra guides to share.
 
 ## Integration with Operating Systems
 
 <table>
-<tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
+<tr><td>Software</td><td>Available Integrations</td></tr>
 
 <tr><td>
 
@@ -20,10 +21,10 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Install TeamCity Server on a Windows machine](install-teamcity-server-on-windows.md)
-* [Install TeamCity Agent on a Windows machine](install-teamcity-agent.md#Install+from+Windows+Executable+File) and run builds on Windows
+* [Installing TeamCity Server on a Windows machine](install-teamcity-server-on-windows.md)
+* [Installing TeamCity Agent on a Windows machine](install-teamcity-agent.md#Install+from+Windows+Executable+File) and running builds on Windows
 
-</td><td></td></tr>
+</td></tr>
 
 <tr><td>
 
@@ -31,10 +32,10 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Install TeamCity Server on a Linux machine](install-teamcity-server-on-linux-or-macos.md)
-* [Install TeamCity Agent on a Linux machine](install-teamcity-agent.md) and run builds on Linux
+* [Installing TeamCity Server on a Linux machine](install-teamcity-server-on-linux-or-macos.md)
+* [Installing TeamCity Agent on a Linux machine](install-teamcity-agent.md) and running builds on Linux
 
-</td><td></td></tr>
+</td></tr>
 
 <tr><td>
 
@@ -42,10 +43,10 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Install TeamCity Server on a macOS machine](install-teamcity-server-on-linux-or-macos.md)
-* [Install TeamCity Agent on a macOS machine](install-teamcity-agent.md) and run builds on macOS
+* [Installing TeamCity Server on a macOS machine](install-teamcity-server-on-linux-or-macos.md)
+* [Installing TeamCity Agent on a macOS machine](install-teamcity-agent.md) and running builds on macOS
 
-</td><td></td></tr>
+</td></tr>
 
 </table>
 
@@ -63,15 +64,17 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+* Automating build tasks with:
+  * [Apache Maven](maven.md), using [special build triggers for Maven](configuring-maven-triggers.md)
+  * [Gradle](gradle.md)
+  * [Ant](ant.md)
+* [Autodiscovery of Maven, Gradle, and Ant build steps in a source project](configuring-build-steps.md#Autodetecting+Build+Steps)
+* Autodetection of Java-related installations on a build agent
+* [Running a Maven, Gradle, or Ant build step inside a Docker container](docker-wrapper.md)
 * [Reporting Java code inspection results for a build](inspections.md)
 * [Detecting Java code duplicates in a build's source](duplicates-finder-java.md)
 * [Detailed test reports for Java frameworks on the fly](java-testing-frameworks-support.md)
 * [Detailed code coverage](configuring-java-code-coverage.md)
-* [Using Apache Maven for build automation](maven.md)
-* [Special build triggers for Maven](configuring-maven-triggers.md)
-* [Running builds on Gradle source projects](gradle.md)
-* [Running Ant's `build.xml`](ant.md) to execute various build tasks, with support for JUnit and TestNG
-* [Running a Java build inside a Docker container](docker-wrapper.md)
 
 </td><td>
 
@@ -102,11 +105,10 @@ The tables below are updated in accordance with the newly introduced integration
 * Cross-platform .NET builds
 * [Running .NET CLI commands](net.md#Build+Runner+Options)
 * [Running MSBuild commands](net.md#msbuild)
-* [Running vstest commands](net.md#vstest)
 * [Running devenv](net.md#devenv-build-action)
 * [Running any custom .NET commands](net.md#Custom+Commands)
-* [Running a .NET build inside a Docker container](net.md#Docker)
-* [Detailed and structured test reports for Java frameworks on the fly](net-testing-frameworks-support.md)
+* [Running a .NET build step inside a Docker container](net.md#Docker)
+* [Detailed and structured test reports for .NET frameworks on the fly](net-testing-frameworks-support.md)
 * [Detailed code coverage](configuring-.net-code-coverage.md)
 * [Reporting .NET code inspection results for a build](inspections-resharper.md)
 * [Detecting .NET code duplicates in a build's source](duplicates-finder-resharper.md)
@@ -149,7 +151,9 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+* [Autodetection of a PowerShell installation on a build agent](net.md#.NET+Version+Detection+Algorithm)
 * [Running PowerShell scripts across platforms](powershell.md) for various build tasks
+* [Running a PowerShell build step inside a Docker container](docker-wrapper.md)
 
 </td><td>
 
@@ -162,9 +166,11 @@ The tables below are updated in accordance with the newly introduced integration
 </td><td>
 
 * [Autodiscovery of Python build steps in a source project](configuring-build-steps.md#Autodetecting+Build+Steps)
+* [Autodetection of a Python installation on a build agent](python.md#pythonVersion)
 * [Cross-platform execution of Python scripts](python.md)
 * Support for Pipenv, Poetry, Venv, and Virtualenv
-* [Running a Python build inside a Docker container](docker-wrapper.md)
+* A structured build log output based on build stages and test reports
+* [Running a Python build step inside a Docker container](docker-wrapper.md)
 
 </td><td>
 
@@ -179,7 +185,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Cross-platform execution of Kotlin scripts](kotlin-script.md)
+* [Cross-platform execution of build scripts written in Kotlin](kotlin-script.md)
 * [Using Kotlin DSL for configuring TeamCity project and build settings as code](kotlin-dsl.md)
 
 </td><td>
@@ -203,6 +209,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 * [Autodiscovery of JavaScript build steps in a source project](nodejs.md#Autodetecting+JavaScript+Steps)
 * [Running npm, yarn, and node commands within a build](nodejs.md)
+* A structured build log output based on build stages and test reports
 * [Running a Node.js script inside a Docker container](docker-wrapper.md)
 * Support for ESlint, Jest, and Mocha
 * [Accessing private NPM registries](nodejs.md#Accessing+Private+NPM+Registries)
@@ -219,7 +226,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Running an Rakefile within a build](rake.md)
+* [Automating build tasks by running a Rakefile within a build](rake.md)
 * Support for Test::Unit, Test-Spec, Shoulda, RSpec, and Cucumber
 
 </td><td>
@@ -233,7 +240,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Using Simple Build Tool's (Scala) commands to build and test sources](simple-build-tool-scala.md)
+* [Building and testing sources with Simple Build Tool's (Scala)](simple-build-tool-scala.md)
 
 </td><td>
 
@@ -245,7 +252,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Running an Xcode scheme](xcode-project.md.md)
+* [Running an Xcode scheme within a build](xcode-project.md)
 * A structured build log output based on Xcode build stages, compilation errors, and test reports
 * Automatically added [agent requirements](agent-requirements.md) to a specific version of Xcode or IDE
 
@@ -265,7 +272,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* Detailed on-the-fly test reporting for the [supported Java testing frameworks](java-testing-frameworks-support.md)
+* Detailed on-the-fly test reporting for [supported Java testing frameworks](java-testing-frameworks-support.md)
 
 </td><td></td></tr>
 
@@ -275,7 +282,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* Detailed on-the-fly test reporting for the [supported Java testing frameworks](java-testing-frameworks-support.md)
+* Detailed on-the-fly test reporting for [supported Java testing frameworks](java-testing-frameworks-support.md)
 
 </td><td></td></tr>
 
@@ -285,7 +292,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Running NUnit tests](nunit.md) and providing detailed test results
+* [Running NUnit tests](nunit.md) and showing detailed test results in the build overview
 * Displaying code coverage with [JetBrains dotCover](jetbrains-dotcover.md)
 
 </td><td></td></tr>
@@ -296,7 +303,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Testing a project with the test engine and automatically importing test results](net.md#vstest)
+* [Testing a project and automatically importing detailed test results](net.md#vstest)
 
 </td><td></td></tr>
 
@@ -306,11 +313,11 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Running MSpec tests and code coverage](mspec.md)
+* [Running MSpec tests and code coverage](mspec.md) and showing detailed test results in the build overview
 
 </td><td></td></tr></table>
 
-## Integration with Version Control Systems
+## Integration with Version Control Systems and Connection Protocols
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
@@ -321,6 +328,13 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+* [Building projects based on Git repositories](git.md)
+* [Remote run](remote-run.md), [remote debug](remote-debug.md), and [pretesting commits](pre-tested-delayed-commit.md) of Git-based projects
+* Multiple checkout modes on [server](git.md#Server+Settings) and [agent](git.md#GitAgentSettings) machines
+* [Git garbage collection](git.md#Git_gc)
+* [Support for Git LFS](git.md#Git+LFS)
+* [Automatic labeling of sources](vcs-labeling.md)
+
 </td><td></td></tr>
 
 <tr><td>
@@ -328,6 +342,10 @@ The tables below are updated in accordance with the newly introduced integration
 **Subversion**
 
 </td><td>
+
+* [Building projects based on SVN repositories](subversion.md)
+* [Remote run](remote-run.md), [remote debug](remote-debug.md), and [pretesting commits](pre-tested-delayed-commit.md) of SVN-based projects
+* [Automatic labeling of sources](vcs-labeling.md#Subversion+Labeling+Rules)
 
 </td><td></td></tr>
 
@@ -337,13 +355,28 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-</td><td></td></tr>
+* [Building projects based on Perforce Helix Core repositories](perforce.md)
+* [Using Perforce streams as feature branches](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) and building their sources independently of each other
+* [Pre-testing and pre-building files in shelved changelists](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files)
+* [Reporting build statuses to code reviews in Perforce Helix Swarm](integrating-teamcity-with-perforce.md#Publishing+Build+Statuses+to+Perforce+Helix+Swarm)
+* [Automatic labeling of sources](vcs-labeling.md#Labeling+in+Perforce)
+* [Using post-commit hooks to avoid background polling](configuring-vcs-post-commit-hooks-for-teamcity.md#Using+post-commit+script+for+Perforce)
+
+</td><td>
+
+* [Integrating TeamCity with Perforce (2022)](integrating-teamcity-with-perforce.md)
+
+</td></tr>
 
 <tr><td>
 
-**TFVC**
+**Azure DevOps (TFVC)**
 
 </td><td>
+
+* [Building projects based on TFVC repositories](perforce.md) across platforms
+* [Automatic labeling of sources](vcs-labeling.md)
+* [Remote run](remote-run.md), [remote debug](remote-debug.md), and [pretesting commits](pre-tested-delayed-commit.md) of TFVC-based projects
 
 </td><td></td></tr>
 
@@ -353,6 +386,10 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+* [Building projects based on CVS repositories](cvs.md) across platforms
+* [Automatic labeling of sources](vcs-labeling.md)
+* [Remote run](remote-run.md), [remote debug](remote-debug.md), and [pretesting commits](pre-tested-delayed-commit.md) of CVS-based projects
+
 </td><td></td></tr>
 
 <tr><td>
@@ -361,15 +398,37 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+* [Building projects based on Mercurial repositories](mercurial.md) across platforms
+* [Automatic labeling of sources](vcs-labeling.md)
+
 </td><td></td></tr>
 
 <tr><td>
 
-**StarTeam**
+**Borland StarTeam**
 
 </td><td>
 
-</td><td></td></tr></table>
+* [Building projects based on StarTeam repositories](starteam.md) across platforms
+* [Automatic labeling of sources](vcs-labeling.md)
+
+</td><td></td></tr>
+
+<tr><td>
+
+**SSH**
+
+</td><td>
+
+</td><td>
+
+* [Storing SSH keys in TeamCity and reusing them in builds](git.md) by means of an [SSH agent](ssh-agent.md)
+* [Executing arbitrary remote commands using SSH](ssh-exec.md)
+* [Uploading files/directories via SSH (using SCP or SFTP protocols)](ssh-upload.md)
+
+</td></tr>
+
+</table>
 
 ## Integration with VCS Hosting Services
 

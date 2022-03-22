@@ -1,7 +1,7 @@
 [//]: # (title: Subversion)
 [//]: # (auxiliary-id: Subversion)
 
-This page contains descriptions of Subversion-specific fields and options available when setting up a VCS root.
+This article contains descriptions of Subversion-specific fields and options available when setting up a VCS root.
 
 Common VCS root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 

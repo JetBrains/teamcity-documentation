@@ -12,6 +12,7 @@ The extension is available for the following [build runners](build-runner.md):
 * [Python](python.md)
 * [PowerShell](powershell.md)
 * [C# Script](c-script.md)
+* [Node.js](nodejs.md)
   
 Each of the supported runners has the dedicated Docker settings section.
 
