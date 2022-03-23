@@ -50,6 +50,20 @@ The tables below are updated in accordance with the newly introduced integration
 
 <tr><td>
 
+**Docker**
+
+</td><td>
+
+* [Launching Docker commands and creating a Docker image during a build](docker.md)
+* [Running some build steps inside a Docker container, across platforms](docker-wrapper.md)
+* [Automatically signing to Docker registry before each build](docker-support.md)
+* [Displaying Docker-related information in build results](docker-support.md)
+* [Starting Docker Compose build services to run multi-container apps](docker-compose.md)
+
+</td></tr>
+
+<tr><td>
+
 **MySQL**
 
 </td><td>
@@ -554,6 +568,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+*[Uploading files to Windows shares during builds via SMB](smb-upload.md)
 
 </td><td></td></tr>
 
@@ -563,6 +578,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+*[Uploading files to an FTP server during builds](ftp-upload.md)
 
 </td><td></td></tr>
 
