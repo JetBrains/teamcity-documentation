@@ -10,7 +10,7 @@ See also [versions of platforms and environments](supported-platforms-and-enviro
 
 The tables below are updated in accordance with the newly introduced integrations and whenever we have extra guides to share.
 
-## Integration with Operating Systems and Databases
+## Operating Systems, Virtualization, and Databases
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td></tr>
@@ -104,7 +104,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </table>
 
-## Integration with Software Development Platforms and Build Tools
+## Software Development Platforms and Build Tools
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
@@ -314,7 +314,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </table>
 
-## Integration with Testing Frameworks and Code Coverage
+## Testing Frameworks and Code Coverage
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td></tr>
@@ -446,7 +446,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </table>
 
-## Integration with Version Control Systems and Connection Protocols
+## Version Control Systems and Connection Protocols
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
@@ -584,7 +584,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </table>
 
-## Integration with VCS Hosting Services
+## VCS Hosting Services
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
@@ -685,7 +685,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td></tr></table>
 
-## Integration with Cloud Hosting and Orchestration Solutions
+## Cloud Hosting and Orchestration Solutions
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td></tr>
@@ -720,7 +720,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td></tr></table>
 
-## Integration with Issue Trackers
+## Issue Trackers
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
@@ -762,7 +762,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 __Integration with issue trackers is also represented in terms of integration with [VCS hosting services](#Integration+with+VCS+Hosting+Services)__.
 
-## Integration with IDEs
+## IDEs
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
@@ -808,7 +808,7 @@ __Integration with issue trackers is also represented in terms of integration wi
 
 </td><td></td></tr></table>
 
-## Integration with Notification Services
+## Notification Services
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
