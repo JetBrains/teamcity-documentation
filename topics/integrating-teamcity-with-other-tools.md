@@ -262,7 +262,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 <tr><td>
 
-**Rake**
+**Ruby**
 
 </td><td>
 
@@ -300,7 +300,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </table>
 
-## Integration with Testing Frameworks
+## Integration with Testing Frameworks and Code Coverage
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td></tr>
@@ -334,7 +334,6 @@ The tables below are updated in accordance with the newly introduced integration
 </td><td>
 
 * [Running NUnit tests](nunit.md) and showing detailed test results in the build overview
-* Displaying code coverage with [JetBrains dotCover](jetbrains-dotcover.md)
 * [Running risk-group tests first](running-risk-group-tests-first.md)
 
 </td></tr>
@@ -357,7 +356,81 @@ The tables below are updated in accordance with the newly introduced integration
 
 * [Running MSpec tests and code coverage](mspec.md) and showing detailed test results in the build overview
 
-</td></tr></table>
+</td></tr>
+
+<tr><td>
+
+**Test::Unit, Test-Spec, Shoulda, RSpec, and Cucumber**
+
+</td><td>
+
+* [Running tests](rake.md) and showing detailed test results in the build overview
+
+</td></tr>
+
+<tr><td>
+
+**JaCoCo**
+
+</td><td>
+
+* [Measuring coverage metrics and code complexity of a Java build's sources](jacoco.md)
+* [Importing JaCoCo coverage](jacoco.md#Importing+JaCoCo+coverage+data+to+TeamCity)
+
+</td></tr>
+
+<tr><td>
+
+**Emma**
+
+</td><td>
+
+* [Measuring coverage metrics and code complexity of a Java build's sources](emma.md)
+
+</td></tr>
+
+<tr><td>
+
+**IntelliJ IDEA coverage**
+
+</td><td>
+
+* [Measuring coverage metrics and code complexity of a Java build's sources](intellij-idea.md)
+
+</td></tr>
+
+<tr><td>
+
+**JetBrains dotCover**
+
+</td><td>
+
+* [Measuring coverage metrics and code complexity of a .NET build's sources](jetbrains-dotcover.md)
+
+</td></tr>
+
+<tr><td>
+
+**NCover**
+
+</td><td>
+
+* [Measuring coverage metrics and code complexity of a .NET build's sources](ncover.md)
+
+</td></tr>
+
+<tr><td>
+
+**PartCover**
+
+</td><td>
+
+* [Measuring coverage metrics and code complexity of a .NET build's sources](partcover.md)
+
+</td></tr>
+
+
+</table>
 
 ## Integration with Version Control Systems and Connection Protocols
 
@@ -472,6 +545,24 @@ The tables below are updated in accordance with the newly introduced integration
 * [Video tutorial: How to use SSH during your builds (2022)](https://www.youtube.com/watch?v=D6JOyGd4pWI)
 
 </tr>
+
+<tr><td>
+
+**SMB**
+
+</td><td>
+
+
+</td><td></td></tr>
+
+<tr><td>
+
+**FTP**
+
+</td><td>
+
+
+</td><td></td></tr>
 
 </table>
 

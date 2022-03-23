@@ -27,9 +27,10 @@ To use the [minitest](https://rubygems.org/gems/minitest) framework, the `minite
 </note>
 
 ## Important Notes
-* Ruby's _pending specs_ are shown as __Ignored Tests__ in the __Overwiew__ tab.
+
+* Ruby's _pending specs_ are shown as __Ignored Tests__ in the __Overview__ tab.
 * Rake Runner uses its own unit tests runner and loads it using the `RUBYLIB` environment variable. You need to ensure your program doesn't clear this environment variable, but you may append your paths to it.
-* If you run RSpec with the `--color` option enabled under Windows OS, RSpec will suggest you install the __win32console__ gem. This warning will appear in your build log, but you can ignore it. TeamCity Rake Runner doesn't support coloured output in the build log and doesn't use this feature.
+* If you run RSpec with the `--color` option enabled under Windows OS, RSpec will suggest you install the __win32console__ gem. This warning will appear in your build log, but you can ignore it. TeamCity Rake Runner doesn't support coloured output in the build log and does not use this feature.
 * Rake Runner runs spec examples with a custom formatter. If you use additional console formatter, your build log will contain redundant information.
 * `Spec::Rake::SpecTask.spec_opts` of your rakefile is affected by `SPEC_OPTS` command line parameter. Rake Runner always uses `SPEC_OPTS` to set up its custom formatter. Thus, you should set up Spec Options in Web UI. The same limitation exists for Cucumber tests options.
 * To include HTML reports into the build results, you can add the corresponding [report tab](including-third-party-reports-in-the-build-results.md) for them.
