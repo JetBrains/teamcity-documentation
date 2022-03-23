@@ -6,7 +6,7 @@ One of the key features of TeamCity is straightforward integration with modern s
 * expose specialized [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) endpoints for easier scripting and integration on a third-party system's side.
 
 There are many places in the TeamCity UI where you can set up or adjust software integrations, depending on their context. This article gives an overview of third-party software and platforms supported in TeamCity out of the box. Remember that you can extend this scope by [installing additional plugins](installing-additional-plugins.md) or even [writing your own ones](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).  
-See also the [list of platforms and environments](supported-platforms-and-environments.md) (and their versions) currently supported in TeamCity.
+See also [versions of platforms and environments](supported-platforms-and-environments.md) currently supported in TeamCity.
 
 The tables below are updated in accordance with the newly introduced integrations and whenever we have extra guides to share.
 
@@ -270,7 +270,6 @@ The tables below are updated in accordance with the newly introduced integration
 * Support for Test::Unit, Test-Spec, Shoulda, RSpec, and Cucumber
 
 </td><td>
-
 
 </td></tr>
 
