@@ -384,6 +384,26 @@ The tables below are updated in accordance with the newly introduced integration
 
 <tr><td>
 
+**Pytest**
+
+</td><td>
+
+* [Running tests](python.md) and showing detailed test results in the build overview
+
+</td></tr>
+
+<tr><td>
+
+**Python Unittest**
+
+</td><td>
+
+* [Running tests](python.md) and showing detailed test results in the build overview
+
+</td></tr>
+
+<tr><td>
+
 **JaCoCo**
 
 </td><td>
@@ -440,6 +460,26 @@ The tables below are updated in accordance with the newly introduced integration
 </td><td>
 
 * [Measuring coverage metrics and code complexity of a .NET build's sources](partcover.md)
+
+</td></tr>
+
+<tr><td>
+
+**Flake8**
+
+</td><td>
+
+* [Parsing Python files and showing coverage reports in build results](partcover.md)
+
+</td></tr>
+
+<tr><td>
+
+**Pylint**
+
+</td><td>
+
+* [Parsing Python files and showing coverage reports in build results](partcover.md)
 
 </td></tr>
 
