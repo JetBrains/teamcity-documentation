@@ -31,7 +31,7 @@ The proxy should be configured with the generic web security in mind. Headers li
 
 Versions 2.4.5 or later are recommended. Earlier versions do not support the WebSocket protocol, so you should use the settings described in the [previous documentation version](https://confluence.jetbrains.com/display/TCD8/How+To...).
 
-When using Apache, make sure to use the [Dedicated "Connector" node approach](#Dedicated+%22Connector%22+Node+Approach) for configuring TeamCity server.
+When using Apache, make sure to use the [Dedicated "Connector" node approach](#TeamCity+Tomcat+Configuration) for configuring TeamCity server.
 
 ```Shell
 
@@ -73,8 +73,6 @@ For example, on Unix, you should switch to [mpm_worker](http://httpd.apache.org/
 On Windows, you may need to increase the [ThreadsPerChild](http://httpd.apache.org/docs/2.4/mod/mpm_common.html#threadsperchild) value as described in the [Apache documentation](http://httpd.apache.org/docs/2.4/platform/windows.html).
 
 ### NGINX
-
-For the NGINX configuration below, use the ["RemoteIpValve" Approach](#Proxy-Tomcat-RemoteIpValve) for configuring the TeamCity server.
 
 Versions 1.3 or later are recommended. Earlier versions do not support the WebSocket protocol, so you should use the settings described in the [previous documentation version](https://confluence.jetbrains.com/display/TCD8/How+To...).
 
@@ -135,58 +133,32 @@ Check that your reverse proxy (or a similar tool) conforms to the following requ
 * Maximum response length / time are not too restrictive (since TeamCity can serve large files to slow clients, the responses can be of Gb in size and hours in time).
 * gzip Content-Encoding is fully supported. For example, certain IIS configurations can result in the "Loading data..." in the UI and 500 HTTP responses (see the related [issue](https://youtrack.jetbrains.com/issue/TW-56218)).
 
+<anchor name="Proxy-Tomcat-Connector"/>
+<anchor name="Proxy-Tomcat-RemoteIpValve"/>
+
 ## TeamCity Tomcat Configuration
 
-For a TeamCity Tomcat configuration, there are two options:
-* Use a __dedicated "Connector" node__ in the server configuration with hard-coded public URL details and make sure the port configured in the connector is used only by the requests to the public URL configured.
-* Configure the proxy to pass due request headers: `Host` or `X-Forwarded-Host` (original request host), `X-Forwarded-Proto` (original request protocol), `X-Forwarded-Port` (original request port) and __configure "RemoteIpValve"__ for the TeamCity Tomcat configuration.
-
-<anchor name="Proxy-Tomcat-Connector"/>
-
-### Dedicated "Connector" Node Approach
+For a TeamCity Tomcat configuration, use the __dedicated "Connector" node__ in the server configuration with hard-coded public URL details and make sure the port configured in the connector is used only by the requests to the public URL configured.
 
 This approach can be used with any proxy configuration, provided the configured port is receiving requests only to the configured public URL.
 
-Set up the proxying server to redirect all requests to `teamcity.public:400` to a dedicated port on the TeamCity server (`8111` in the example below) and change the "Connector" node in `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file as below. Note that the "Connector" port configured this way should only be accessible via the configured proxy's address. If you also want to make TeamCity port accessible directly, use a separate "Connector" node with a dedicated `port` value for that.
+You need to change the "Connector" node in `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file as below.
 
 ```Shell
 
 <Connector port="8111" protocol="org.apache.coyote.http11.Http11NioProtocol"
-               connectionTimeout="60000"
-               useBodyEncodingForURI="true"
-               socket.txBufSize="64000"
-               socket.rxBufSize="64000"
-               tcpNoDelay="1"
-               proxyName="teamcity.public"
-               proxyPort="400"
-               secure="false"
-               scheme="http"
-               />
+connectionTimeout="60000"
+useBodyEncodingForURI="true"
+socket.txBufSize="64000"
+socket.rxBufSize="64000"
+tcpNoDelay="1"
+secure="false"
+scheme="http"
+/>
 ```
 
 When the public server address is __HTTPS__, use the `secure="true"` and `scheme="https"` attributes. If these attributes are missing, TeamCity will show a respective health report.
 
-<anchor name="Proxy-Tomcat-RemoteIpValve"/>
-
-### "RemoteIpValve" Approach
-[//]: # (AltHead: Proxy-Tomcat-RemoteIpValve)
-
-This approach can be used when the proxy server sets `X-Forwarded-Proto`, `X-Forwarded-Port` request headers to the values of the original URL. Also, while not critical for the most setups, this approach can be used to make sure the original client IP is passed to the TeamCity server correctly.
-
-Add the following into the Tomcat main `<Host>` node of the `conf\server.xml` file (see also Tomcat [doc](http://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/valves/RemoteIpValve.html)):
-
-```Shell
-
-<Valve
-   className="org.apache.catalina.valves.RemoteIpValve"
-   remoteIpHeader="x-forwarded-for"
-   protocolHeader="x-forwarded-proto"
-   portHeader="x-forwarded-port"
-   />
-
-```
-
-It is also recommended specifying the `internalProxies` attribute with the regular expression matching only the IP address of the proxy server. For example, `internalProxies="192\.168\.0\.1"`.
 
 [//]: # (Internal note. Do not delete. "How To...d160e1383.txt")
 
