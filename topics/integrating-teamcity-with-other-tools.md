@@ -760,7 +760,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td></td></tr></table>
 
-__Integration with issue trackers is also represented in terms of integration with [VCS hosting services](#Integration+with+VCS+Hosting+Services)__.
+__Integration with issue trackers is also represented in terms of integration with [VCS hosting services](#VCS+Hosting+Services)__.
 
 ## IDEs
 
