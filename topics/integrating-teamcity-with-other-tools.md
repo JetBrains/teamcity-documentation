@@ -147,7 +147,7 @@ The tables below are updated in accordance with the newly introduced integration
 * [Running MSBuild commands](net.md#msbuild)
 * [Running devenv](net.md#devenv-build-action)
 * [Running any custom .NET commands](net.md#Custom+Commands)
-* [Running a .NET build step inside a Docker container](net.md#Docker)
+* [Running a .NET build step inside a Docker container](docker-wrapper.md)
 * [Detailed and structured test reports for .NET frameworks on the fly](net-testing-frameworks-support.md)
 * [Detailed code coverage](configuring-.net-code-coverage.md)
 * [Reporting .NET code inspection results for a build](inspections-resharper.md)
@@ -325,7 +325,7 @@ The tables below are updated in accordance with the newly introduced integration
 * Detailed on-the-fly test reporting for [supported Java testing frameworks](java-testing-frameworks-support.md)
 * [Running risk-group tests first](running-risk-group-tests-first.md)
 
-</td><</tr>
+</td></tr>
 
 <tr><td>
 
@@ -539,10 +539,12 @@ The tables below are updated in accordance with the newly introduced integration
 * [Executing arbitrary remote commands using SSH](ssh-exec.md)
 * [Uploading files/directories via SSH (using SCP or SFTP protocols)](ssh-upload.md)
 
-</td><td></td>
+</td><td>
 
 * [Video tutorial: How to checkout SSH repositories (2022)](https://www.youtube.com/watch?v=nUTb1BjMMoE)
 * [Video tutorial: How to use SSH during your builds (2022)](https://www.youtube.com/watch?v=D6JOyGd4pWI)
+
+</td>
 
 </tr>
 
