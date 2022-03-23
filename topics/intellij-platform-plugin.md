@@ -23,7 +23,7 @@ TeamCity integration provides the following features:
 * work with the results of server-side code duplicates search in the dedicated tool window
 * accessing the server-side code coverage information and visualizing the portions of code covered by unit tests
 * viewing build compilation errors in a separate tab of the build results pane with navigation to source code
-* rerununing failed tests from IntelliJ IDEA plugin using JUnit or TestNG
+* rerunning failed tests from IntelliJ IDEA plugin using JUnit or TestNG
 * opening the patch from the change details web page (for this feature to work you need to have IDEA X installed)
 
 ## Installing TeamCity plugin

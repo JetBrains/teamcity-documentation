@@ -10,7 +10,7 @@ See also the [list of platforms and environments](supported-platforms-and-enviro
 
 The tables below are updated in accordance with the newly introduced integrations and whenever we have extra guides to share.
 
-## Integration with Operating Systems
+## Integration with Operating Systems and Databases
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td></tr>
@@ -47,6 +47,46 @@ The tables below are updated in accordance with the newly introduced integration
 * [Installing TeamCity Agent on a macOS machine](install-teamcity-agent.md) and running builds on macOS
 
 </td></tr>
+
+<tr><td>
+
+**MySQL**
+
+</td><td>
+
+* [Storing build history, users, results, and some runtime data](set-up-external-database.md#MySQL)
+
+</td><td></td></tr>
+
+<tr><td>
+
+**Microsoft SQL Server**
+
+</td><td>
+
+* [Storing build history, users, results, and some runtime data](set-up-external-database.md#Microsoft+SQL+Server)
+
+</td><td></td></tr>
+
+<tr><td>
+
+**PostgreSQL**
+
+</td><td>
+
+* [Storing build history, users, results, and some runtime data](set-up-external-database.md#PostgreSQL)
+
+</td><td></td></tr>
+
+<tr><td>
+
+**Oracle**
+
+</td><td>
+
+* [Storing build history, users, results, and some runtime data](set-up-external-database.md#Oracle)
+
+</td><td></td></tr>
 
 </table>
 
@@ -264,7 +304,7 @@ The tables below are updated in accordance with the newly introduced integration
 ## Integration with Testing Frameworks
 
 <table>
-<tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
+<tr><td>Software</td><td>Available Integrations</td></tr>
 
 <tr><td>
 
@@ -273,8 +313,9 @@ The tables below are updated in accordance with the newly introduced integration
 </td><td>
 
 * Detailed on-the-fly test reporting for [supported Java testing frameworks](java-testing-frameworks-support.md)
+* [Running risk-group tests first](running-risk-group-tests-first.md)
 
-</td><td></td></tr>
+</td></tr>
 
 <tr><td>
 
@@ -283,8 +324,9 @@ The tables below are updated in accordance with the newly introduced integration
 </td><td>
 
 * Detailed on-the-fly test reporting for [supported Java testing frameworks](java-testing-frameworks-support.md)
+* [Running risk-group tests first](running-risk-group-tests-first.md)
 
-</td><td></td></tr>
+</td><</tr>
 
 <tr><td>
 
@@ -294,8 +336,9 @@ The tables below are updated in accordance with the newly introduced integration
 
 * [Running NUnit tests](nunit.md) and showing detailed test results in the build overview
 * Displaying code coverage with [JetBrains dotCover](jetbrains-dotcover.md)
+* [Running risk-group tests first](running-risk-group-tests-first.md)
 
-</td><td></td></tr>
+</td></tr>
 
 <tr><td>
 
@@ -305,7 +348,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 * [Testing a project and automatically importing detailed test results](net.md#vstest)
 
-</td><td></td></tr>
+</td></tr>
 
 <tr><td>
 
@@ -315,7 +358,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 * [Running MSpec tests and code coverage](mspec.md) and showing detailed test results in the build overview
 
-</td><td></td></tr></table>
+</td></tr></table>
 
 ## Integration with Version Control Systems and Connection Protocols
 
@@ -420,13 +463,16 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-</td><td>
-
 * [Storing SSH keys in TeamCity and reusing them in builds](git.md) by means of an [SSH agent](ssh-agent.md)
 * [Executing arbitrary remote commands using SSH](ssh-exec.md)
 * [Uploading files/directories via SSH (using SCP or SFTP protocols)](ssh-upload.md)
 
-</td></tr>
+</td><td></td>
+
+* [Video tutorial: How to checkout SSH repositories (2022)](https://www.youtube.com/watch?v=nUTb1BjMMoE)
+* [Video tutorial: How to use SSH during your builds (2022)](https://www.youtube.com/watch?v=D6JOyGd4pWI)
+
+</tr>
 
 </table>
 
@@ -441,13 +487,22 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Creating a project or build configuration from a GitHub repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
-* [Guessing VCS root settings from a GitHub repository URL](guess-settings-from-repository-url.md).
-* [Creating a Git VCS root from a GitHub repository URL](git.md).
-* [Inserting links to GitHub issues when detecting their IDs in commit messages](github.md).
-* [Authenticating with a GitHub account in TeamCity](configuring-authentication-settings.md#GitHub.com).
+* [Creating a project or build configuration from a GitHub repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* [Guessing VCS root settings from a GitHub repository URL](guess-settings-from-repository-url.md)
+* [Creating a Git VCS root from a GitHub repository URL](git.md)
+* [Inserting links to GitHub issues when detecting their IDs in commit messages](github.md)
+* [Building sources of GitHub pull requests](pull-requests.md#GitHub+Pull+Requests)
+* [Authenticating with a GitHub account in TeamCity](configuring-authentication-settings.md#GitHub.com)
 
-</td><td></td></tr>
+</td><td>
+
+* [Video tutorial: How to integrate TeamCity and GitHub (2022)](https://www.youtube.com/watch?v=hbh7sk5sGTc)
+* [Video tutorial: How to use GitHub commit hooks for faster checkouts (2022)](https://www.youtube.com/watch?v=VzDI2HoiHk4)
+* [Video tutorial: How to send build information to GitHub, Jira etc. (2022)](https://www.youtube.com/watch?v=o0oj7mOcNvc)
+* [Video tutorial: How to work with pull requests (2022)](https://youtu.be/4yFck9PvXI4)
+* [Building GitHub pull requests with TeamCity (2019)](https://blog.jetbrains.com/teamcity/2019/08/building-github-pull-requests-with-teamcity/)
+
+</td></tr>
 
 <tr><td>
 
@@ -455,11 +510,17 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Creating a project or build configuration from a GitLab repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
-* [Guessing VCS root settings from a GitHub repository URL](guess-settings-from-repository-url.md).
-* [Authenticating with a GitLab account in TeamCity](configuring-authentication-settings.md#GitLab.com).
+* [Creating a project or build configuration from a GitLab repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* [Guessing VCS root settings from a GitHub repository URL](guess-settings-from-repository-url.md)
+* [Building sources of GitLab merge requests](pull-requests.md#GitLab+Merge+Requests)
+* [Authenticating with a GitLab account in TeamCity](configuring-authentication-settings.md#GitLab.com)
 
-</td><td></td></tr>
+</td><td>
+
+* [Video tutorial: New in TeamCity 2019.1 — GitLab integration and merge requests support](https://www.youtube.com/watch?v=aE150gCfQyI)
+* [Video tutorial: How to work with pull requests (2022)](https://youtu.be/4yFck9PvXI4)
+
+</td></tr>
 
 <tr><td>
 
@@ -467,13 +528,20 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Creating a project or build configuration from a Bitbucket repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
-* [Guessing VCS root settings from a Bitbucket repository URL](guess-settings-from-repository-url.md).
-* [Creating a Mercurial VCS root from a Bitbucket repository URL](mercurial.md).
-* [Inserting links to Bitbucket Cloud issues when detecting their IDs in commit messages](bitbucket-cloud.md).
-* [Authenticating with a Bitbucket Cloud account in TeamCity](configuring-authentication-settings.md#Bitbucket+Cloud).
+* [Creating a project or build configuration from a Bitbucket repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* [Guessing VCS root settings from a Bitbucket repository URL](guess-settings-from-repository-url.md)
+* [Creating a Mercurial VCS root from a Bitbucket repository URL](mercurial.md)
+* [Building sources of Bitbucket pull requests](pull-requests.md#Bitbucket+Cloud+Pull+Requests)
+* [Inserting links to Bitbucket Cloud issues when detecting their IDs in commit messages](bitbucket-cloud.md)
+* [Authenticating with a Bitbucket Cloud account in TeamCity](configuring-authentication-settings.md#Bitbucket+Cloud)
 
-</td><td></td></tr>
+</td><td>
+
+* [Video tutorial: New in TeamCity 2020.2: Bitbucket Cloud Pull Request Support](https://youtu.be/M2wi6l0pZe4)
+* [Run and view TeamCity builds from Bitbucket](https://blog.jetbrains.com/teamcity/2021/05/run-and-view-teamcity-builds-from-bitbucket/)
+* [Video tutorial: How to work with pull requests (2022)](https://youtu.be/4yFck9PvXI4)
+
+</td></tr>
 
 <tr><td>
 
@@ -481,11 +549,17 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Creating a project or build configuration from an Azure DevOps repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
-* [Guessing VCS root settings from an Azure DevOps repository URL](guess-settings-from-repository-url.md).
-* [Authenticating with an Azure DevOps Services account in TeamCity](configuring-authentication-settings.md#Azure+DevOps+Services).
+* [Creating a project or build configuration from an Azure DevOps repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* [Guessing VCS root settings from an Azure DevOps repository URL](guess-settings-from-repository-url.md)
+* [Building sources of Azure DevOps pull requests](pull-requests.md#Azure+DevOps+Pull+Requests)
+* [Inserting links to Azure Board Work Items issues when detecting their IDs in commit messages](azure-board-work-items.md).
+* [Authenticating with an Azure DevOps Services account in TeamCity](configuring-authentication-settings.md#Azure+DevOps+Services)
 
-</td><td></td></tr>
+</td><td>
+
+* [Video tutorial: How to work with pull requests (2022)](https://youtu.be/4yFck9PvXI4)
+
+</td></tr>
 
 <tr><td>
 
@@ -497,12 +571,16 @@ The tables below are updated in accordance with the newly introduced integration
 * [Guessing VCS root settings from a JetBrains Space repository URL](guess-settings-from-repository-url.md).
 * [Authenticating with a JetBrains Space account in TeamCity](configuring-authentication-settings.md#JetBrains+Space).
 
-</td><td></td></tr></table>
+</td><td>
+
+* [How to configure CI/CD for JetBrains Space](how-to-configure-cicd-for-jetbrains-space.md)
+
+</td></tr></table>
 
 ## Integration with Cloud Hosting and Orchestration Solutions
 
 <table>
-<tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
+<tr><td>Software</td><td>Available Integrations</td></tr>
 
 <tr><td>
 
@@ -510,15 +588,19 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-</td><td></td></tr>
+* [Running builds on cloud agents](setting-up-teamcity-for-amazon-ec2.md)
+
+</td></tr>
 
 <tr><td>
 
-**VMWare vSphere**
+**VMWare vSphere and vCenter**
 
 </td><td>
 
-</td><td></td></tr>
+* [Running builds on cloud agents](setting-up-teamcity-for-vmware-vsphere-and-vcenter.md)
+
+</td></tr>
 
 <tr><td>
 
@@ -526,7 +608,9 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-</td><td></td></tr></table>
+* [Running builds on cloud agents](setting-up-teamcity-for-kubernetes.md)
+
+</td></tr></table>
 
 ## Integration with Issue Trackers
 
@@ -539,6 +623,8 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+* [Providing links to related YouTrack issues from the TeamCity build overview](youtrack.md)
+
 </td><td></td></tr>
 
 <tr><td>
@@ -547,7 +633,14 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-</td><td></td></tr>
+* [Providing links to related Jira issues from the TeamCity build overview](jira.md)
+* [Reporting TeamCity build statuses to Jira Cloud](jira-cloud-integration.md)
+
+</td><td>
+
+* [Video tutorial: How to integrate TeamCity and JIRA (Cloud) (2022)](https://www.youtube.com/watch?v=rK7faWbCh0Q)
+
+</td></tr>
 
 <tr><td>
 
@@ -555,7 +648,11 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+* [Providing links to related Bugzilla issues from the TeamCity build overview](bugzilla.md)
+
 </td><td></td></tr></table>
+
+__Integration with issue trackers is also represented in terms of integration with [VCS hosting services](#Integration+with+VCS+Hosting+Services)__.
 
 ## Integration with IDEs
 
@@ -564,11 +661,20 @@ The tables below are updated in accordance with the newly introduced integration
 
 <tr><td>
 
-**IntelliJ IDEA Platform**
+**IntelliJ Platform**
 
 </td><td>
 
-</td><td></td></tr>
+* [Generating code coverage withing a build](intellij-idea.md)
+* [Building a project created in IntelliJ IDEA](intellij-idea-project.md)
+* [Remote run](remote-run.md), [remote debug](remote-debug.md), and [pretesting commits](pre-tested-delayed-commit.md)
+* [Other numerous features](intellij-platform-plugin.md)
+
+</td><td>
+
+* [TeamCity Integration with IntelliJ-based IDEs (2017)](https://blog.jetbrains.com/teamcity/2017/10/teamcity-integration-with-intellij-based-ides/)
+
+</td></tr>
 
 <tr><td>
 
@@ -576,7 +682,12 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-</td><td></td></tr>
+* [Running Visual Studio in command-line mode within a build](net.md#Visual+Studio+Command-Line+Mode)
+* [Remote run](remote-run.md) and [pretesting commits](pre-tested-delayed-commit.md)
+
+</td><td>
+
+</td></tr>
 
 <tr><td>
 
@@ -584,46 +695,10 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
+* [Remote run](remote-run.md) and [pretesting commits](pre-tested-delayed-commit.md)
+* [Other numerous features](eclipse-plugin.md)
+
 </td><td></td></tr></table>
-
-## Integration with Databases
-
-<table>
-<tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
-
-<tr><td>
-
-**MySQL**
-
-</td><td>
-
-</td><td></td></tr>
-
-<tr><td>
-
-**Microsoft SQL Server**
-
-</td><td>
-
-</td><td></td></tr>
-
-<tr><td>
-
-**PostgreSQL**
-
-</td><td>
-
-</td><td></td></tr>
-
-<tr><td>
-
-**Oracle**
-
-</td><td>
-
-</td><td></td></tr>
-
-</table>
 
 ## Integration with Notification Services
 
@@ -636,15 +711,27 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-</td><td></td></tr>
-
-<tr><td>
-
-**Browser Notifications**
+* [Sending customizable notifications on different events in TeamCity to a Slack channel](notifications.md#Slack+Notifier)
 
 </td><td>
 
-</td><td></td></tr>
+* [Video tutorial: How to integrate TeamCity and Slack (2022)](https://www.youtube.com/watch?v=d_Xuw7kkp4c)
+
+</td></tr>
+
+<tr><td>
+
+**Web browsers**
+
+</td><td>
+
+* [Showing customizable notifications on different TeamCity events in Google Chrome, Microsoft Edge, Opera, and Mozilla Firefox](browser-notifier.md)
+
+</td><td>
+
+* [New TeamCity Notifier browser extension (2020)](https://blog.jetbrains.com/teamcity/2020/05/new-teamcity-notifier-browser-extension/)
+
+</td></tr>
 
 </table>
 
