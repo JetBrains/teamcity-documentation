@@ -568,7 +568,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-*[Uploading files to Windows shares during builds via SMB](smb-upload.md)
+* [Uploading files to Windows shares during builds via SMB](smb-upload.md)
 
 </td><td></td></tr>
 
@@ -578,7 +578,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-*[Uploading files to an FTP server during builds](ftp-upload.md)
+* [Uploading files to an FTP server during builds](ftp-upload.md)
 
 </td><td></td></tr>
 
@@ -773,7 +773,7 @@ __Integration with issue trackers is also represented in terms of integration wi
 
 </td><td>
 
-* [Generating code coverage withing a build](intellij-idea.md)
+* [Generating code coverage within a build](intellij-idea.md)
 * [Building a project created in IntelliJ IDEA](intellij-idea-project.md)
 * [Remote run](remote-run.md), [remote debug](remote-debug.md), and [pretesting commits](pre-tested-delayed-commit.md)
 * [Other numerous features](intellij-platform-plugin.md)
