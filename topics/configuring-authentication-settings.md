@@ -27,8 +27,7 @@ TeamCity provides several preconfigured authentication options (presets) to cove
   * [GitLab CE/EE](#GitLab+CE%2FEE)
   * [JetBrains Space](#JetBrains+Space)
   * [Azure DevOps Services](#Azure+DevOps+Services)
-  * (Since version 2021.12) [HTTP SAML 2.0](#HTTP+SAML+2.0)
-  {product="tcc"}
+  * [HTTP SAML 2.0](#HTTP+SAML+2.0)
 
 >If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure single sign-on (SSO) from the TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).
 >
@@ -515,7 +514,6 @@ To enable the module, in __Administration | Authentication__:
 To sign in, click the Azure DevOps icon above the TeamCity login form and, after the redirect, approve the TeamCity application.
 
 ### HTTP SAML 2.0
-{product="tcc"}
 
 This module enables single sign-on authentication in TeamCity via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0). It is confirmed to support [Okta](https://www.okta.com/), [OneLogin](https://www.onelogin.com/), [AWS SSO](https://aws.amazon.com/single-sign-on/), [AD FS](https://docs.microsoft.com/en-us/windows-server/identity/active-directory-federation-services), and other SSO providers.
 

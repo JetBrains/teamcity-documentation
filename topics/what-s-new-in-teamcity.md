@@ -62,7 +62,7 @@ To protect a target branch and ensure that only verified requests are merged int
 ## New UI: Editing scope of agent pools
 {product="tc"}
 
-It is now possible to edit the scope of [agent pools](agent-pool.md) and quickly assign agents and projects to them right in the new Sakura UI — without switching to the classic UI mode.
+It is now possible to edit the scope of [agent pools](configuring-agent-pools.md) and quickly assign agents and projects to them right in the new Sakura UI — without switching to the classic UI mode.
 
 >We keep reproducing the classic TeamCity features in its experimental UI, and a majority of them have already received a new implementation. If you haven't tried the new UI for a while or at all, we encourage you to give it a try this time. Our goal is to make the experimental UI not only as functional as the classic one but a lot more responsive and enhanced with easier navigation and widgets.
 
