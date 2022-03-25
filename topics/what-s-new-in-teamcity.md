@@ -51,7 +51,7 @@ After the integration is configured, TeamCity will detect merge requests submitt
 
 <img src="pull-request-details.png" alt="Build Overview - Pull Request Details" width="706"/>
 
-TeamCity will also send statuses per build change to timelines of merge requests in JetBrains Space:
+TeamCity will also send statuses per build change to timelines of merge requests in JetBrains Space (and to details of commits, if the [Commit Status Publisher](commit-status-publisher.md) feature is enabled in the build configuration):
 
 <img src="space-timeline.png" alt="JetBrains Space - Merge Request Timeline" width="706"/>
 
