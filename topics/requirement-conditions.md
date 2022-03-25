@@ -100,7 +100,7 @@ Is `true` if the specified property matches / does not match the specified [regu
 
 <td>
 
-Use `teamcity.build.step.name` __matches__ `.*(,|^)foo(,|$).*` to match all occurrences of `foo`, `foo,bar`, `bar,foo`, and `bar,foo,xxx`.
+Use `<custom_parameter>` __matches__ `.*(,|^)foo(,|$).*` to match all occurrences of `foo`, `foo,bar`, `bar,foo`, and `bar,foo,xxx`.
 
 </td>
 
