@@ -45,13 +45,13 @@ To enable this functionality in TeamCity:
 2. In the build configuration settings, add the [Pull Requests](pull-requests.md) build feature with the _JetBrains Space_ VCS hosting type:  
    <img src="pull-requests-feature.png" alt="Pull Requests build feature" width="706"/>  
    You can specify the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. For example, if you set the `+:refs/heads/feature-*` filter, TeamCity will monitor merge requests sent only to branches whose names start with `feature-`.
-3. To allow publishing build statuses in JetBrains Space, you also need to add the [Commit Status Publisher](commit-status-publisher.md) feature to this build configuration.
+3. To allow publishing build statuses to the commit details in JetBrains Space, you also need to add the [Commit Status Publisher](commit-status-publisher.md) feature to this build configuration.
 
 After the integration is configured, TeamCity will detect merge requests submitted to the JetBrains Space target branches. For builds run on the requested changes, it will display the merge request details in the **Overview** tab:
 
 <img src="pull-request-details.png" alt="Build Overview - Pull Request Details" width="706"/>
 
-If the [Commit Status Publisher](commit-status-publisher.md) feature is enabled in the build configuration, TeamCity will also send statuses per build change to timelines of merge requests in JetBrains Space:
+TeamCity will also send statuses per build change to timelines of merge requests in JetBrains Space (and to details of commits, if the [Commit Status Publisher](commit-status-publisher.md) feature is enabled in the build configuration):
 
 <img src="space-timeline.png" alt="JetBrains Space - Merge Request Timeline" width="706"/>
 
