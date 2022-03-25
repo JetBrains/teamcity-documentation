@@ -134,7 +134,7 @@ Set a branch filter to rerun failed builds only in branches that match the speci
 
 <td>
 
-Limit the set of branches to which builds the labels will be applied.
+Limit the set of branches to whose builds the labels will be applied.
 
 </td>
 
