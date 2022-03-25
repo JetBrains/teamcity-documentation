@@ -52,13 +52,13 @@ When the "Use Pre-Signed URLs for upload" option is disabled:
 
 ### Prerequisites
 
-To be able to use CloudFront, you need to create:
+TeamCity can [set up CloudFront integration for you](#Automatic+CloudFront+Setup), or you can set up all the settings [manually](#Manual+CloudFront+Setup).
+
+The CloudFront integration requires configuring:
 * an [OAI](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) user
 * a [CloudFront distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html)
 * a [trusted key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#choosing-key-groups-or-AWS-accounts)
 * an SSH-2 RSA [key pair](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-creating-cloudfront-key-pairs) (public key + private key) in PEM format
-
-TeamCity can [create these for you](#Automatic+CloudFront+Setup), or you can configure all the settings [manually](#Manual+CloudFront+Setup).
 
 ### CloudFront Settings
 
