@@ -3,7 +3,7 @@
 
 ## Changes from 2021.2 to 2022.04
 
-* To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). After updating to 2021.12, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset.
+* To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). On updating to 2022.04, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset.
 * TeamCity stops supporting the [Microsoft Edge Legacy](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224) web browsers.
 * It is now impossible to automatically [trigger builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-build-queue.html#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
 
@@ -27,7 +27,7 @@
 {id="known-issues-202123"}
  
 * After upgrading to 2021.2.3, builds might fail to check out sources from git repositories on Azure DevOps (both Server and Services) via SSH. See the [related issue](https://youtrack.jetbrains.com/issue/TW-75102) for details.  
-  If you face this problem, please apply a workaround from [the issue](https://youtrack.jetbrains.com/issue/TW-73759#focus=Comments-27-5347961.0-0).
+  If you face this problem, please apply a workaround from the [issue](https://youtrack.jetbrains.com/issue/TW-73759#focus=Comments-27-5347961.0-0).
 * Builds might fail to publish artifacts or a build number via commands of an MSBuild script. This problem can be worked around by changing the build log verbosity level to _normal_: to do this, set the `msbuild.logger.params` [configuration parameter](configuring-build-parameters.md) to `verbosity=normal`. Alternatively, you can download the fixed .NET plugin [here](https://youtrack.jetbrains.com/issue/TW-75259#focus=Comments-27-5837867.0-0) and [install it manually](installing-additional-plugins.md) on your server.
 
 ## Changes from 2021.2.1 to 2021.2.2

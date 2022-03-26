@@ -116,13 +116,7 @@ On the **Overview** tab of **Build Configuration Home**, you can select the requ
 
 <img src="select-multiple-builds.png" alt="Selecting multiple builds" width="750"/>
 
-## Kotlin DSL update: Import statements include only current DSL version
-{product="tc"}
-
-Since this version, all `import` statements in a [Kotlin DSL](kotlin-dsl.md) code no longer include the DSL version specification. Instead, the version is determined automatically based on the current server's version.  
-This change affects how a DSL code appears in the _View as Code_ mode in TeamCity and removes irrelevant suggestions when writing `import` statements manually in an IDE. It concerns only newly created projects — the syntax of existing projects is supported for compatibility.
-
-## Perforce integration update: Automatic creation of Helix Swarm test runs and status synchronization with builds
+## Perforce integration: Automatic creation of Helix Swarm test runs and status synchronization with builds
 {product="tc"}
 
 [Commit Status Publisher](commit-status-publisher.md) has a new option for sending build status reports to Perforce Helix Swarm — **Create Swarm Test**. If you enable it, TeamCity will [create a test run](https://www.perforce.com/manuals/swarm/Content/Swarm/swarm-apidoc_endpoint_integration_tests.html#Create_a__testrun_for_a_review_version) on the Helix Swarm server and update its status according to the build status in TeamCity.
@@ -137,6 +131,10 @@ When configuring a _Fail build on specific text in build log_ [failure condition
 * **Composite build configurations are no longer displayed as suitable for agents**  
   [Composite build configurations](composite-build-configuration.md) no longer appear on the _Compatible Configurations_ tab of a [build agent's details](viewing-build-agent-details.md).  
   Composite builds are meta-builds designed for aggregating results of builds preceding them in a [chain](build-chain.md). Technically, they do not need a build agent to run and thus cannot be matched as compatible/incompatible with them. This usability update removes composite build configurations from _Compatible_ lists to help avoid any potential confusions.
+* __Kotlin DSL update: Import statements include only current DSL version__  
+  All `import` statements in a [Kotlin DSL](kotlin-dsl.md) code no longer include the DSL version specification. Instead, the version is determined automatically based on the current server's version.  
+  This change affects how a DSL code appears in the _View as Code_ mode in TeamCity and removes irrelevant suggestions when writing `import` statements manually in an IDE. It concerns only newly created projects — the syntax of existing projects is supported for compatibility.
+  {product="tc"}
 
 ## Other updates
 {product="tcc"}
