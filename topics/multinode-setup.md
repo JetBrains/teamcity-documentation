@@ -120,7 +120,7 @@ frontend http-in
 
     capture cookie X-TeamCity-Node-Id-Cookie= len 100
 
-    http-request add-header X-TeamCity-Proxy "type=haproxy; version=2021.12" 
+    http-request add-header X-TeamCity-Proxy "type=haproxy; version=2022.02" 
     http-request set-header X-Forwarded-Host %[req.hdr(Host)]
 
     acl is_build_agent hdr_beg(User-Agent) -i "TeamCity Agent"
@@ -198,7 +198,7 @@ server {
      proxy_intercept_errors on;
      proxy_set_header Host $host:$server_port;
      proxy_redirect off;
-     proxy_set_header X-TeamCity-Proxy "type=nginx; version=2021.12";
+     proxy_set_header X-TeamCity-Proxy "type=nginx; version=2022.02";
      proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
      proxy_set_header X-Forwarded-Proto $scheme;
      proxy_set_header X-Forwarded-For $remote_addr;
@@ -212,7 +212,7 @@ server {
      proxy_intercept_errors on;
      proxy_set_header Host $host:$server_port;
      proxy_redirect off;
-     proxy_set_header X-TeamCity-Proxy "type=nginx; version=2021.12";
+     proxy_set_header X-TeamCity-Proxy "type=nginx; version=2022.02";
      proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
      proxy_set_header X-Forwarded-Proto $scheme;
      proxy_set_header X-Forwarded-For $remote_addr;
