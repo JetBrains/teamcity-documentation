@@ -10,7 +10,7 @@ See also [versions of platforms and environments](supported-platforms-and-enviro
 
 The tables below are updated in accordance with the newly introduced integrations and whenever we have extra guides to share.
 
-## Operating Systems, Virtualization, and Databases
+## Operating Systems and Databases
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td></tr>
@@ -45,20 +45,6 @@ The tables below are updated in accordance with the newly introduced integration
 
 * [Installing TeamCity Server on a macOS machine](install-teamcity-server-on-linux-or-macos.md)
 * [Installing TeamCity Agent on a macOS machine](install-teamcity-agent.md) and running builds on macOS
-
-</td></tr>
-
-<tr><td>
-
-**Docker**
-
-</td><td>
-
-* [Launching Docker commands and creating a Docker image during a build](docker.md)
-* [Running some build steps inside a Docker container, across platforms](docker-wrapper.md)
-* [Automatically signing to Docker registry before each build](docker-support.md)
-* [Displaying Docker-related information in build results](docker-support.md)
-* [Starting Docker Compose build services to run multi-container apps](docker-compose.md)
 
 </td></tr>
 
@@ -123,11 +109,11 @@ The tables below are updated in accordance with the newly introduced integration
   * [Gradle](gradle.md)
   * [Ant](ant.md)
 * [Autodiscovery of Maven, Gradle, and Ant build steps in a source project](configuring-build-steps.md#Autodetecting+Build+Steps)
-* Autodetection of Java-related installations on a build agent
+* Autodetection of [Maven](maven.md#Maven+runner+settings) and Gradle installations on a build agent
 * [Running a Maven, Gradle, or Ant build step inside a Docker container](docker-wrapper.md)
 * [Reporting Java code inspection results for a build](inspections.md)
 * [Detecting Java code duplicates in a build's source](duplicates-finder-java.md)
-* [Detailed test reports for Java frameworks on the fly](java-testing-frameworks-support.md)
+* [Detailed test reports for JUnit and TestNG frameworks on the fly](java-testing-frameworks-support.md)
 * [Detailed code coverage](configuring-java-code-coverage.md)
 
 </td><td>
@@ -486,7 +472,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </table>
 
-## Version Control Systems and Connection Protocols
+## Version Control Systems
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
@@ -502,7 +488,9 @@ The tables below are updated in accordance with the newly introduced integration
 * Multiple checkout modes on [server](git.md#Server+Settings) and [agent](git.md#GitAgentSettings) machines
 * [Git garbage collection](git.md#Git_gc)
 * [Support for Git LFS](git.md#Git+LFS)
-* [Automatic labeling of sources](vcs-labeling.md)
+* [Automatically tagging build sources](vcs-labeling.md)
+* [Automatically merging build sources after successful builds](automatic-merge.md)
+
 
 </td><td></td></tr>
 
@@ -514,7 +502,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 * [Building projects based on SVN repositories](subversion.md)
 * [Remote run](remote-run.md), [remote debug](remote-debug.md), and [pretesting commits](pre-tested-delayed-commit.md) of SVN-based projects
-* [Automatic labeling of sources](vcs-labeling.md#Subversion+Labeling+Rules)
+* [Automatically tagging build sources](vcs-labeling.md#Subversion+Labeling+Rules)
 
 </td><td></td></tr>
 
@@ -583,6 +571,13 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td></td></tr>
 
+</table>
+
+## Data Transfer Protocols
+
+
+<table>
+<tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
 <tr><td>
 
 **SSH**
@@ -724,6 +719,34 @@ The tables below are updated in accordance with the newly introduced integration
 * [How to configure CI/CD for JetBrains Space](how-to-configure-cicd-for-jetbrains-space.md)
 
 </td></tr></table>
+
+## Virtualization Solutions
+
+<table>
+<tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
+
+<tr><td>
+
+**Docker**
+
+</td><td>
+
+* [Launching Docker commands and creating a Docker image during a build](docker.md)
+* [Running some build steps inside a Docker container, across platforms](docker-wrapper.md)
+* [Automatically signing in to Docker registry before each build](docker-support.md)
+* [Displaying Docker-related information in build results](docker-support.md)
+* [Running multiple containers in a build with Docker Compose](docker-compose.md)
+* [Cleaning obsolete Docker images on build agents](integrating-teamcity-with-docker.md#Docker+Disk+Space+Cleaner)
+
+</td><td>
+
+* [Integrating TeamCity with Docker](integrating-teamcity-with-docker.md)
+
+</td>
+
+</tr>
+
+</table>
 
 ## Cloud Hosting and Orchestration Solutions
 
