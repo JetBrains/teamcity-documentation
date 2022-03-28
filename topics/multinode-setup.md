@@ -13,7 +13,7 @@ As the main use case of a multinode setup is to achieve high availability (HA), 
 
 A TeamCity cluster can have one _main node_ and multiple _secondary nodes_. The main node is the "preferred" one. By default, it receives all incoming HTTP requests. It also performs critical background tasks, such as starting builds. A secondary node mostly serves as a backup server, necessary for the failover. For better load distribution and performance optimization, it can also be granted with [additional responsibilities](#Responsibilities).
 
-<img src="multinode-setup.png" width="702" alt="TeamCity setup with two nodes"/>
+<img src="multinode-setup-2022.png" width="600" alt="TeamCity setup with two nodes"/>
 
 ## High-Availability Setup
 
