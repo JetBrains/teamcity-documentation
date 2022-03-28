@@ -27,7 +27,7 @@ Integration with GitHub allows you to:
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
 * create a [Git VCS root](git.md)
 * integrate with a [GitHub issue tracker](github.md)
-* enable [GitHub.com authentication](configuring-authentication-settings.md#GitHub.com)
+* enable [GitHub authentication](configuring-authentication-settings.md#GitHub.com)
 
 See how to configure a connection to GitHub.com or GitHub Enterprise [here](configuring-connections.md#GitHub).
 
@@ -39,7 +39,7 @@ title="TeamCity tutorial — How to integrate TeamCity and GitHub"/>
 Integration with GitLab allows you to:
 * create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
-* enable [GitLab.com authentication](configuring-authentication-settings.md#GitLab.com)
+* enable [GitLab authentication](configuring-authentication-settings.md#GitLab.com)
 
 See how to configure a connection to GitLab.com or GitLab CE/EE [here](configuring-connections.md#GitLab).
 

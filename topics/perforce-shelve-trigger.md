@@ -11,7 +11,7 @@ The trigger supports Perforce 2018.2 or later.
 
 ## Trigger Settings
 
-The trigger monitors all [Perforce VCS roots](perforce.md) associated with the current [build configuration](build-configuration.md). You can filter monitored changelists by their description. To do this, specify the required keyword to search.
+The trigger monitors all [Perforce VCS roots](perforce.md) associated with the current [build configuration](managing-builds.md). You can filter monitored changelists by their description. To do this, specify the required keyword to search.
 
 >See how to invoke this trigger [via TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/edit-build-configuration-settings.html#Manage+Build+Triggers).
 

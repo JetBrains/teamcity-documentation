@@ -11,11 +11,11 @@ This article describes how TeamCity behaves when integrated with Jira and contai
 
 When integration with Jira is enabled, TeamCity automatically detects Jira [issue keys](https://support.atlassian.com/jira-software-cloud/docs/what-is-an-issue/#Workingwithissues-Issuekeys) mentioned in the comments of VCS commits. It transforms these keys into links to the corresponding issues in Jira and displays them to TeamCity users in the UI.
 
-To see the basic details of an issue in the TeamCity UI, open the __[Changes](working-with-build-results.md#Changes)__ tab of the related build’s results and hover over the icon next to the issue key:
+To see the basic details of an issue in the TeamCity UI, open the __[Changes](build-results-page.md#Changes+Tab)__ tab of the related build’s results and hover over the icon next to the issue key:
 
 <img src="issue-tracker-integration.png" width="706" alt="Issue tracker integration"/>
 
-Issues fixed in the build can be viewed on the __[Issues](working-with-build-results.md#Related+Issues)__ tab of the build results:
+Issues fixed in the build can be viewed on the __[Issues](build-results-page.md#Issues+Tab)__ tab of the build results:
 
 <img src="issue-log.png" width="706" alt="Issues tab"/>
 
