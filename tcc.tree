@@ -53,16 +53,13 @@
         <toc-element id="build-artifact.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-chain.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-checkout-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-configuration-template.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="build-runner.md"/>
         <toc-element id="build-working-directory.md"/>
         <toc-element id="change.md"/>
         <toc-element id="change-state.md"/>
         <toc-element id="clean-checkout.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="composite-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="dependent-build.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="deployment-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="history-build.md"/>
         <toc-element id="notifier.md"/>
         <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -295,6 +292,14 @@
             <toc-element id="jira.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Jira"/>
             <toc-element id="azure-board-work-items.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Team Foundation Work Items"/>
             <toc-element id="youtrack.md" show-structure-for="chapter" show-structure-depth="4" toc-title="YouTrack"/>
+        </toc-element>
+        <toc-element id="installing-tools.md">
+            <toc-element id="intellij-platform-plugin.md" show-structure-for="chapter" show-structure-depth="4">
+                <toc-element id="intellij-platform-plugin-compatibility.md" hidden="true"/>
+            </toc-element>
+            <toc-element id="browser-notifier.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="eclipse-plugin.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="visual-studio-addin.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
     </toc-element>
     <toc-element id="extending-teamcity.md">

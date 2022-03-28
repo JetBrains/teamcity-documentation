@@ -11,6 +11,7 @@ See also [versions of platforms and environments](supported-platforms-and-enviro
 The tables below are updated in accordance with the newly introduced integrations and whenever we have extra guides to share.
 
 ## Operating Systems and Databases
+{product="tc"}
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td></tr>
@@ -486,7 +487,6 @@ The tables below are updated in accordance with the newly introduced integration
 * [Building projects based on Git repositories](git.md)
 * [Remote run](remote-run.md), [remote debug](remote-debug.md), and [pretesting commits](pre-tested-delayed-commit.md) of Git-based projects
 * Multiple checkout modes on [server](git.md#Server+Settings) and [agent](git.md#GitAgentSettings) machines
-* [Git garbage collection](git.md#Git_gc)
 * [Support for Git LFS](git.md#Git+LFS)
 * [Automatically tagging build sources](vcs-labeling.md)
 * [Automatically merging build sources after successful builds](automatic-merge.md)
@@ -537,7 +537,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td></td></tr>
 
-<tr><td>
+<tr product="tc"><td>
 
 **CVS**
 
@@ -560,7 +560,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td></td></tr>
 
-<tr><td>
+<tr product="tc"><td>
 
 **Borland StarTeam**
 
@@ -596,7 +596,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </tr>
 
-<tr><td>
+<tr product="tc"><td>
 
 **Amazon S3 protocols**
 
@@ -758,6 +758,7 @@ The tables below are updated in accordance with the newly introduced integration
 </table>
 
 ## Cloud Hosting and Orchestration Solutions
+{product="tc"}
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td></tr>
