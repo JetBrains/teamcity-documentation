@@ -575,7 +575,6 @@ The tables below are updated in accordance with the newly introduced integration
 
 ## Data Transfer Protocols
 
-
 <table>
 <tr><td>Software</td><td>Available Integrations</td><td>Extra Guides and Tutorials</td></tr>
 <tr><td>
@@ -596,6 +595,16 @@ The tables below are updated in accordance with the newly introduced integration
 </td>
 
 </tr>
+
+<tr><td>
+
+**Amazon S3 protocols**
+
+</td><td>
+
+* [Uploading build artifacts to an Amazon S3 storage](configuring-artifacts-storage.md#Amazon+S3+Support)
+
+</td><td></td></tr>
 
 <tr><td>
 
@@ -781,7 +790,32 @@ The tables below are updated in accordance with the newly introduced integration
 
 * [Running builds on cloud agents](setting-up-teamcity-for-kubernetes.md)
 
-</td></tr></table>
+</td></tr>
+<tr><td>
+
+**Microsoft Azure**  
+(via additional plugin)
+
+</td><td>
+
+* [Running builds on cloud agents](https://plugins.jetbrains.com/plugin/9260-azure-resource-manager-cloud-support)
+
+Read [how to install a plugin in TeamCity](installing-additional-plugins.md).
+
+</td></tr>
+<tr><td>
+
+**Google Cloud**  
+(via additional plugin)
+
+</td><td>
+
+* [Running builds on cloud agents](https://plugins.jetbrains.com/plugin/9704-google-cloud-agents)
+
+Read [how to install a plugin in TeamCity](installing-additional-plugins.md).
+
+</td></tr>
+</table>
 
 ## Issue Trackers
 
@@ -905,5 +939,7 @@ __Integration with issue trackers is also represented in terms of integration wi
 </td></tr>
 
 </table>
+
+__TeamCity can also [send notifications via email](notifications.md#Email+Notifier).__
 
 
