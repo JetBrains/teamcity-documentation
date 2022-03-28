@@ -1,9 +1,9 @@
 [//]: # (title: TeamCity Monitoring and Diagnostics)
 [//]: # (auxiliary-id: TeamCity Monitoring and Diagnostics)
 
-TeamCity provides a variety of diagnostic tools and indicators to monitor and troubleshoot the server, which are accessible from the __Administration | Diagnostics__ page.
+TeamCity provides a variety of diagnostic tools and indicators to monitor and troubleshoot the server. These tools make it easier to identify and investigate problems and, if needed, [report issues](reporting-issues.md) on your server.
 
-The tools make it easier to identify and investigate problems and, if needed, [report issues](reporting-issues.md) on your server.
+This article describes the diagnostics tools available in __Administration | Diagnostics__. You can also find more details in the nested articles of this section.
 
 ## Troubleshooting
 

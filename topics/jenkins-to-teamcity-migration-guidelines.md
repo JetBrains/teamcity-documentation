@@ -88,7 +88,7 @@ Job/Item/Project
 
 <td>
 
-[Build configuration](build-configuration.md)
+[Build configuration](managing-builds.md)
 
 </td></tr><tr>
 
@@ -198,7 +198,7 @@ A Freestyle project is the most common project type in Jenkins so we describe th
 
 There are some conceptual differences in how the build jobs are configured in Jenkins and TeamCity.
 
-[Build Configuration](build-configuration.md) is the TeamCitys counterpart of Jenkins Job/Item/Project. However, a Build Configuration requires a [Project](project.md) instance to be created first. In fact, the notion of Project in TeamCity is the first big difference that a user encounters when migrating from Jenkins. The Project contains a good portion of settings required for the build configurations. All settings that are assigned to a Project in TeamCity are listed [here](project.md).
+[Build Configuration](managing-builds.md) is the TeamCitys counterpart of Jenkins Job/Item/Project. However, a Build Configuration requires a [Project](project.md) instance to be created first. In fact, the notion of Project in TeamCity is the first big difference that a user encounters when migrating from Jenkins. The Project contains a good portion of settings required for the build configurations. All settings that are assigned to a Project in TeamCity are listed [here](project.md).
 
 ### VCS Roots
 

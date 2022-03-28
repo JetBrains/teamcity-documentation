@@ -6,8 +6,8 @@ You can integrate TeamCity with Azure Board Work Items (or Team Foundation Work 
 ## Displaying Links to Work Items in TeamCity UI
 
 When integration with Azure Board Work Items is enabled, TeamCity automatically detects work item IDs mentioned in the comments of VCS commits. It transforms these IDs into links to the corresponding work items and displays them to TeamCity users in the UI:
-* To see the basic details of a work item in the TeamCity UI, open the __[Changes](working-with-build-results.md#Changes)__ tab of the related build’s results and hover over the icon next to the work item ID.
-* Work items fixed in the build can be viewed on the __[Issues](working-with-build-results.md#Related+Issues)__ tab of the build results.
+* To see the basic details of a work item in the TeamCity UI, open the __[Changes](build-results-page.md#Changes+Tab)__ tab of the related build’s results and hover over the icon next to the work item ID.
+* Work items fixed in the build can be viewed on the __[Issues](build-results-page.md#Issues+Tab)__ tab of the build results.
 * To view work items related to a whole build configuration (not only to individual builds), use the __Issue Log__ tab of the __Build Configuration Home__ page. You can filter the list to a particular range of builds and/or enable the _Show only resolved issues_ option to display only issues fixed in the builds.
 
 Additionally, if your changeset has related work items, TeamCity can retrieve information about them and display information in the UI even if no comment is added to the changeset.

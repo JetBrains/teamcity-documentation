@@ -289,7 +289,7 @@ where:
 
 ### Reporting Tests
 
-To use the TeamCity on-the-fly test reporting, a testing framework needs dedicated support for this feature to work (alternatively, [XML Report Processing](xml-report-processing.md) can be used). If TeamCity doesn't support your testing framework natively, it is possible to modify your build script to report test runs to the TeamCity server using service messages. This makes it possible to display test results in real-time, make test information available on the __[Tests](working-with-build-results.md#All+Tests)__ tab of the __Build Results__ page.
+To use the TeamCity on-the-fly test reporting, a testing framework needs dedicated support for this feature to work (alternatively, [XML Report Processing](xml-report-processing.md) can be used). If TeamCity doesn't support your testing framework natively, it is possible to modify your build script to report test runs to the TeamCity server using service messages. This makes it possible to display test results in real-time, make test information available on the __[Tests](build-results-page.md#Tests+Tab)__ tab of the __Build Results__ page.
 
 ### Message Creation Timestamp
 
@@ -325,7 +325,7 @@ will result in
 
 #### Supported Test ServiceMessages
 
-__Test suite messages:__ Test suites are used to group tests. TeamCity displays tests grouped by suites on the __[Tests](working-with-build-results.md#All+Tests)__ tab of the __Build Results__ page and in other places.
+__Test suite messages:__ Test suites are used to group tests. TeamCity displays tests grouped by suites on the __[Tests](build-results-page.md#Tests+Tab)__ tab of the __Build Results__ page and in other places.
 
 ```Shell
 ##teamcity[testSuiteStarted name='suiteName']
@@ -443,7 +443,7 @@ Integration Tests: Backend: org.jetbrains.teamcity.LoginPageController.testBadPa
 // test parameters = ("incorrect password", false)
 ```
 
-The __[Tests](working-with-build-results.md#Tests)__ tab of the __Build Results__ page allows grouping by suites, packages/namespaces, classes, and tests. Usually the attribute values are provides as they are reported by your test framework and TeamCity is able to interpret test names correctly.
+The __[Tests](build-results-page.md#Tests+Tab)__ tab of the __Build Results__ page allows grouping by suites, packages/namespaces, classes, and tests. Usually the attribute values are provides as they are reported by your test framework and TeamCity is able to interpret test names correctly.
 
 If a test cannot be parsed in the form above, TeamCity still tries to extract `<suite name>` from the full test name for the filtering on the Tests tab, and treats everything after the suite a non-parsable test name.
 

@@ -5,7 +5,7 @@ This guide is intended for anyone using TeamCity. Explore TeamCity and learn how
 
 * [Manage your User Account](configuring-your-user-profile.md)
 * [Subscribe to Notifications](adding-notification-rules.md)
-* [View Your Changes](viewing-your-changes.md)
+* [View Your Changes](viewing-user-changes-in-builds.md)
 * [View Tests and Configuration Problems](viewing-tests-and-configuration-problems.md)
 * [Work with Build Results](working-with-build-results.md)
 * [Investigate and Mute Build Problems](investigating-and-muting-build-failures.md)

@@ -48,7 +48,7 @@ Get artifacts from
 Specify the type of build whose artifacts are to be taken:
 
 * Latest successful build: artifacts will be taken from the successful dependency build with the most recent revision (the latest change ID)
-* Latest [pinned build](pinned-build.md): artifacts will be taken from the pinned dependency build with the most recent revision (the latest change ID)
+* Latest [pinned build](build-actions.md#Pin+Build): artifacts will be taken from the pinned dependency build with the most recent revision (the latest change ID)
 * Latest finished build: if a snapshot dependency is also configured in a build configuration, artifacts will be taken from the build with the same sources as the current build
 * Build from the same chain: this option is useful when you have a [snapshot dependency](snapshot-dependencies.md) and want to obtain artifacts from a build with the same sources
 * Build with specified build number
@@ -245,7 +245,7 @@ TeamCity itself acts as an Ivy repository. You can read more about the Ivy depen
 where:
 * `YOUR_ORGANIZATION` replace with the name of your organization.
 * `YOUR_MODULE` replace with the name of your project or module where artifacts will be used.
-* `BUILD_TYPE_EXT_ID` replace with the [external ID](build-configuration.md#Status+Display+for+Set+of+Build+Configurations) of the build configuration whose artifacts are downloaded.
+* `BUILD_TYPE_EXT_ID` replace with the [external ID](changing-build-configuration-status.md#Status+Display+for+Set+of+Build+Configurations) of the build configuration whose artifacts are downloaded.
 * `BUILD_REVISION` can be either a build number or one of the following strings: `* latest.lastFinished`
   * `latest.lastSuccessful`
   * `latest.lastPinned`

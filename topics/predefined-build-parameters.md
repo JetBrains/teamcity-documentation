@@ -960,7 +960,7 @@ dep.<btID>.<parameter_name>
 
 If there are multiple `dep.<btID>.<parameter_name>` paths to the same build configuration with `btID`, so that different builds are accessible via (direct or indirect) artifact dependencies, the following rules apply:
 * If there is a snapshot dependency between some of the builds, the build from the same chain wins.
-* If there are no snapshot dependencies and multiple builds are accessible only via an artifact dependency, the build with a larger [build ID](working-with-build-results.md#Internal+Build+ID) wins. If there are several artifact dependencies from a single build configuration, only the first one is considered.
+* If there are no snapshot dependencies and multiple builds are accessible only via an artifact dependency, the build with a larger [build ID](build-results-page.md#Internal+Build+ID) wins. If there are several artifact dependencies from a single build configuration, only the first one is considered.
 
 >When using build parameters of the _Password_ type, referencing them from a dependency, such as `%dep.<btID>.password_parameter%`, will not retrieve the actual value. This is done for security reasons: to prevent dependencies from accessing the value, thus restricting the possibility of unauthorized access to it.
 
@@ -1004,7 +1004,7 @@ If build configurations A and B are trying to set different values for the same 
   * Medium priority: if a value is redefined in a set of builds via `[prefix]*[suffix]`. Among them, the longer values are considered more specific and thus have higher priority than the shorter ones.
   * Low priority: if a value is redefined in all preceding builds via `*`.
 
-The `reverse.dep.*` parameters are processed on queuing the build where these parameters are defined. As the parameters' values should be known at that stage, they should be defined only either as [build configuration parameters](configuring-build-parameters.md#Custom+Build+Parameters) or in the [custom build dialog](running-custom-build.md#Run+Custom+Build+dialog). Setting the parameter during the build steps has no effect.
+The `reverse.dep.*` parameters are processed on queuing the build where these parameters are defined. As the parameters' values should be known at that stage, they should be defined only either as [build configuration parameters](configuring-build-parameters.md#Custom+Build+Parameters) or in the [custom build dialog](running-custom-build.md). Setting the parameter during the build steps has no effect.
 
 >Pushing a new parameter into a build will override the "_[Do not run new build if there is a suitable one](snapshot-dependencies.md#Suitable+Builds)_" snapshot dependency option and may trigger a new build if the parameter is set to a non-default value.
 

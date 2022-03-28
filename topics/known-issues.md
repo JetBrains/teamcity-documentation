@@ -469,6 +469,7 @@ __Cause__: NuGet caches the server responses, thus pulling does not detect the m
 __Solution__: To send a new request directly to the server instead of the cache, use the `--no-cache` parameter in your request.
 
 ### Packages are not found in NuGet feed
+{product="tc"}
 
 __Problem__: Not all packages are found in a NuGet feed, though artifacts are present on the disk and in the UI and <path>teamcity-nuget.log</path> does not indicate that indexing of packages is in progress.
 
