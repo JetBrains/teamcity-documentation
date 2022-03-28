@@ -19,5 +19,19 @@
     <term name="vcs-root">
         A set of connection parameters that determine how TeamCity communicates with a VCS to monitor changes and get sources for a build.
     </term>
-
-    </terms>
+    <term name="build-number">
+        A string identifier composed according to the pattern specified in the build configuration settings. It is displayed in the UI and passed into the build as a predefined parameter.
+    </term>
+    <term name="build">
+        A process that performs a certain CI/CD job. Builds consists of steps executing granular operations. A build is executed according to the settings specified in its build configuration.
+    </term>
+    <term name="custom-build-run">
+       A standalone build whose settings have been adjusted compared to its build configuration.
+    </term>
+    <term name="build-chain">
+       A pipeline, or sequence, of builds connected by snapshot dependencies. Usually designed to continuously compile, test, and deliver a certain product or component.
+    </term>
+    <term name="build-configuration">
+       A collection of settings of a certain type of builds that determines their steps, features, and other common parameters. It serves as a blueprint for all builds that belong to it.
+    </term>
+</terms>

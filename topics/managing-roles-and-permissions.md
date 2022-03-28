@@ -170,7 +170,7 @@ __Agent manager__
 
 <td>
 
-Can customize and manage [Build Agents](build-agent.md), change the run configuration policy, [enable/disable](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) build agents, and [pause/resume build queue](build-queue.md#Pausing%2FResuming+Build+Queue).
+Can customize and manage [Build Agents](build-agent.md), change the run configuration policy, [enable/disable](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) build agents, and [pause/resume build queue](working-with-build-queue.md#Pausing+and+Resuming+Build+Queue).
 
 
 </td></tr></table>

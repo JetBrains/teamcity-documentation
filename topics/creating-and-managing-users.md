@@ -47,7 +47,7 @@ This tab allows viewing and editing default usernames for different VCSs used by
 Multiple usernames are supported for a VCS root type and for a separate VCS root: several newline-separated values can be used for each VCS username.
 
 The names set here will be used to:
-* show builds with changes committed by a user with such a VCS username on the [Changes](viewing-your-changes.md) page
+* show builds with changes committed by a user with such a VCS username on the [Changes](viewing-user-changes-in-builds.md) page
 * highlight such builds on the Projects page if the appropriate [option is selected](configuring-your-user-profile.md#Customizing+UI),
 * notify the user on such builds when the __Builds affected by my changes__ option is selected in [notifications settings](adding-notification-rules.md#What+Will+Be+Watched).
 

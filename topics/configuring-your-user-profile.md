@@ -49,7 +49,7 @@ By default, TeamCity uses your login name as the VCS username. Click __Edit__ to
 These settings are not used for authentication for the particular VCS, and so on.
 
 These settings enable you to:
-* track your changes status on the [Changes](viewing-your-changes.md),
+* track your changes status on the [Changes](viewing-user-changes-in-builds.md),
 * highlight such builds on the Projects page if the appropriate [option is selected](#Customizing+UI),
 * notify you on such builds when the __Builds affected by my changes__ option is selected in [notifications settings](adding-notification-rules.md#What+Will+Be+Watched).
 
@@ -72,7 +72,7 @@ In __Your Profile | General__, you can customize the following UI settings:
 * Highlight my changes and investigations: Select to highlight builds that include your changes (changes committed by a user with the VCS username provided in the [Version Control Username Settings](#Managing+Version+Control+Username+Settings) section) and problems you were assigned to investigate on the __Projects__ page, __Project Home__ page, __Build Configuration Home__ page.
 * Show date/time in my timezone: Check the option, if you want TeamCity to automatically detect your time zone and show the date and time (for example, build start, VCS change time, and so on) according to it.
 * Show all personal builds
-* Add builds manually triggered by you to your [favorites](favorite-build.md).
+* Add builds manually triggered by you to your [favorites](build-actions.md#Add+Build+to+Favorites).
 
 ## Viewing your Roles and Permissions
 
@@ -96,7 +96,7 @@ It is possible to upload a different avatar in the TeamCity user profile setting
             <a href="managing-roles-and-permissions.md">Roles and Permissions</a>
         </category>
         <category ref="user-guide">
-            <a href="viewing-your-changes.md">Viewing Your Changes</a>
+            <a href="viewing-user-changes-in-builds.md">Viewing Your Changes</a>
             <a href="adding-notification-rules.md">Subscribing to Notifications</a>
         </category>
 </seealso>

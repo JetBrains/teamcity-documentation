@@ -820,7 +820,7 @@ curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>
  
 The most frequently used values for `<buildTypeLocator>` are `id:<buildConfigurationOrTemplate_id>` and `name:<Build%20Configuration%20name>`.
  
-__Since TeamCity 2017.2__, the _experimental_ [type](build-configuration.md#Build+Configuration+Types) locator is supported with one of the values: `regular`, `composite`, or `deployment`.
+__Since TeamCity 2017.2__, the _experimental_ [type](managing-builds.md#Build+Configuration+Types) locator is supported with one of the values: `regular`, `composite`, or `deployment`.
  
 Other supported [dimensions](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#Locator) are (these are in _experimental_ state):
 * `internalId` — internal ID of the build configuration.
@@ -898,7 +898,7 @@ Using a [locator](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api
 For some requests, a default filtering is applied which returns only "normal" builds (finished builds which are not canceled, not failed-to-start, not personal, and on default branch (in branched build configurations)), unless those types of builds are specifically requested via the locator. To turn off this default filter and process all builds, add the `defaultFilter:false` dimension to the build locator. Default filtering varies depending on the specified locator dimensions. For example, when `agent` or `user` dimensions are present, personal, canceled, and failed to start builds are included into the results.
  
 Examples of supported build locators:
-* `id:<internal build id>` — use [internal build ID](working-with-build-results.md#Internal+Build+ID) when you need to refer to a specific build.
+* `id:<internal build id>` — use [internal build ID](build-results-page.md#Internal+Build+ID) when you need to refer to a specific build.
 * `number:<build number>` — to find build by build number, provided build configuration is already specified.
 * `<dimension1>:<value1>,<dimension2>:<value2>` — to find builds by multiple criteria.
  

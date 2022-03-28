@@ -5,7 +5,7 @@ A _build log_ is an enhanced console output of a build. It is represented by a s
 
 ## Viewing Build Log
 
-The log of a specific build is available for browsing on the __[Build Results](working-with-build-results.md#Build+Log)__ page. 
+The log of a specific build is available for browsing on the __[Build Results](build-results-page.md#Build+Log+Tab)__ page. 
 
 The __Tree view__ is the most capable view provided in the web UI. By default, all messages are displayed. Using the _View_ drop-down menu, you can switch from all messages to viewing __errors__ separately, or you can choose __Important messages__ to see the log filtered by "error" and "warning" statuses. You can also use the "Verbose" view level and download a raw build log using the corresponding link.
 

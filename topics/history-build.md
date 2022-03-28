@@ -6,7 +6,7 @@ A _history build_ is a build that starts after a build with more recent changes.
 [//]: # (Internal note. Do not delete. "History Buildd159e7.txt")    
 
 A build may become a history build in the following situations:
-* If you initiate a build on particular changes manually using the _[Run Custom Build ](running-custom-build.md)_ dialog.
+* If you initiate a build on particular changes manually using the _[Run Custom Build](running-custom-build.md)_ dialog.
 * If you have a [VCS trigger](configuring-vcs-triggers.md) with a quiet period set. During this quiet period, a different user can start a build with more recent changes. In this case, your automatically triggered build will have an older source revision when it starts, and will be marked as a history build.
 * If there are several builds of the same configuration in the build queue and they have fixed revisions (for example, they are part of a [build chain](build-chain.md)). If someone manually reorders these builds, the build with fewer changes can be started first.
 
@@ -20,8 +20,7 @@ As the history build does not reflect the current state of the sources, the foll
 
  <seealso>
         <category ref="concepts">
-            <a href="build-history.md">Build History</a>
-            <a href="build-queue.md">Build Queue</a>
+            <a href="working-with-build-queue.md">Working with Build Queue</a>
         </category>
         <category ref="admin-guide">
             <a href="running-custom-build.md">Triggering a Custom Build</a>

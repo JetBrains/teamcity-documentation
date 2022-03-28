@@ -18,7 +18,7 @@ For details on reusing or overriding parameters within a build chain, refer to [
 
 ## Using Build Parameters in VCS Labeling Pattern and Build Number
 
-In the [build number](build-number.md) pattern or [VCS labeling](vcs-labeling.md) pattern, you can use the `%<prefix>.parameter_name%` syntax to reference any parameter known by TeamCity:
+In the <emphasis tooltip="build-number">build number</emphasis> pattern or [VCS labeling](vcs-labeling.md) pattern, you can use the `%<prefix>.parameter_name%` syntax to reference any parameter known by TeamCity:
 * Predefined parameters of a [server](predefined-build-parameters.md#Predefined+Server+Build+Parameters) or [build configuration](predefined-build-parameters.md#Predefined+Configuration+Parameters).
 * Custom build parameters added on the __Build Configuration Settings | Parameters__ page.
 
