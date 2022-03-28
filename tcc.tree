@@ -302,7 +302,7 @@
             <toc-element id="visual-studio-addin.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
     </toc-element>
-    <toc-element id="extending-teamcity.md">
+    <toc-element id="extending-teamcity.md" toc-title="Extending TeamCity and Using REST API for Integration">
         <toc-element id="teamcity-rest-api.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="rest-api"/>
         <toc-element id="build-script-interaction-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="service-messages.md" show-structure-for="chapter" show-structure-depth="4"/>
