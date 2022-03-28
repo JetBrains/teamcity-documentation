@@ -7,6 +7,11 @@ One of the key features of TeamCity is straightforward integration with modern s
 
 There are many places in the TeamCity UI where you can set up or adjust software integrations, depending on their context. This article gives an overview of third-party software and platforms supported in TeamCity out of the box. Remember that you can extend this scope by [installing additional plugins](installing-additional-plugins.md) or even [writing your own ones](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).  
 See also [versions of platforms and environments](supported-platforms-and-environments.md) currently supported in TeamCity.
+{product="tc"}
+
+There are many places in the TeamCity UI where you can set up or adjust software integrations, depending on their context. This article gives an overview of third-party software and platforms supported in TeamCity out of the box.  
+See also [versions of platforms and environments](supported-platforms-and-environments.md) currently supported in TeamCity.
+{product="tcc"}
 
 The tables below are updated in accordance with the newly introduced integrations and whenever we have extra guides to share.
 
