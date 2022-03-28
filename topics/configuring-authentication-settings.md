@@ -116,7 +116,7 @@ Let's imagine that the administrator had the "jsmith" TeamCity username and used
 ### Special User Accounts
 {product="tc"}
 
-By default, TeamCity has a [Super User](super-user.md) account with maximum permissions and a [Guest User](guest-user.md) with minimal permissions. These accounts have no personal settings such as the __[Changes](viewing-your-changes.md)__ page and Profile information as they are not related to any particular person but rather intended for special use cases.
+By default, TeamCity has a [Super User](super-user.md) account with maximum permissions and a [Guest User](guest-user.md) with minimal permissions. These accounts have no personal settings such as the __[Changes](viewing-user-changes-in-builds.md)__ page and Profile information as they are not related to any particular person but rather intended for special use cases.
 
 ## Credentials Authentication Modules
 

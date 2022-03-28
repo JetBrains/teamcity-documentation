@@ -464,7 +464,7 @@ If you are creating a copy (as opposed to moving the server this way), it is imp
 If you are creating a __test server__, you need to ensure that the users and production systems are not affected. Typically, this means you need to:
 * disable the email (in the "Administration &gt; Notifier" sections) and possibly also custom notifiers or change their settings to prevent the new server from sending out notifications;
 * disable email verification (in the "Administration &gt; Authentication" section);
-* be sure not to run any builds which change (for example, deploy to) production environments. This also typically includes Maven builds deploying to non-local repositories. You can prevent any builds from starting by pausing the [build queue](build-queue.md);
+* be sure not to run any builds which change (for example, deploy to) production environments. This also typically includes Maven builds deploying to non-local repositories. You can prevent any builds from starting by pausing the [build queue](working-with-build-queue.md);
 * disable cloud integration (so that it does not interfere with the main server);
 * disable external artifact storage (as otherwise running/deleting builds and server clean-up will affect the storage which might be used by the production server);
 * disable Docker registry clean-up (or just disable clean-up on the server);
@@ -570,7 +570,7 @@ Do the following:
 %dep.<btID>.system.build.number%
 ```
 
-Where `<btID>` is the [ID of the build configuration](build-configuration.md) C. The approach works best when builds reuse is turned off via the [Snapshot Dependencies](snapshot-dependencies.md) snapshot dependency option set to off.
+Where `<btID>` is the [ID of the build configuration](managing-builds.md) C. The approach works best when builds reuse is turned off via the [Snapshot Dependencies](snapshot-dependencies.md) snapshot dependency option set to off.
 
 [Read more](predefined-build-parameters.md#Predefined+Configuration+Parameters) about dependency properties.
 
@@ -757,7 +757,7 @@ In case a build fails on some agent, it is possible to debug it on this very age
 1. Go to the __Agents__ page in the TeamCity web UI and [select the agent](viewing-build-agent-details.md).
 2. [Disable the agent](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) to temporarily remove it from the <emphasis tooltip="build-grid">build grid</emphasis>. Add a comment (optional). To enable the agent automatically after a certain time period, check the corresponding box and specify the time.
 3. [Select the build](working-with-build-results.md) to debug.
-4. Open the [Custom Run](running-custom-build.md#Run+Custom+Build+dialog) dialog and specify the following options: 
+4. Open the [Custom Run](running-custom-build.md) dialog and specify the following options: 
     a. In the __Agent__ drop-down menu, select the disabled agent.
     b. It is recommended to select the __run as [Personal Build](personal-build.md)__ option to avoid intersection with regular builds.
 5. When debugging is complete, enable the agent manually if automatic reenabling has not been configured.
@@ -769,7 +769,7 @@ You can also perform [remote debugging](remote-debug.md) of tests on an agent vi
 If a build containing several steps fails at a certain step, it is possible to debug the step that breaks. Do the following:
 1. Go to the build configuration and disable the build steps up to the one you want to debug.
 2. [Select the build](working-with-build-results.md) to debug.
-3. Open the [Custom Run](running-custom-build.md#Run+Custom+Build+dialog) dialog and select the __put the build to the [queue top](build-queue.md)__ to give you build the priority.
+3. Open the [Custom Run](running-custom-build.md) dialog and select the __put the build to the [queue top](working-with-build-queue.md#Moving+Builds+to+Top)__ to give you build the priority.
 4. When debugging is complete, reenable the build steps.
 
 ## Watch Several TeamCity Servers with Windows Tray Notifier

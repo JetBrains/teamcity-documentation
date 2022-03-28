@@ -19,7 +19,7 @@ By default, this is also the directory [where builds will run](build-working-dir
 ## Checkout Process
 
 For checkout handled by TeamCity (the [server-side](vcs-checkout-mode.md#server-checkout) or [agent-side](vcs-checkout-mode.md#agent-checkout) checkout mode), TeamCity keeps track of the last revision checked out into each checkout directory on the agent and for the new build applies an incremental patch from the last used revision to the revision of the current build.   
-The revisions used can be looked up on the __[Changes](working-with-build-results.md#Changes)__ tab of the build results page.
+The revisions used can be looked up on the __[Changes](build-results-page.md#Changes+Tab)__ tab of the build results page.
 
 Incremental checkouts mean that any files not created or modified by TeamCity (for example, by the previous build scripts) are preserved in their modified state (unless dedicated VCS root-specific reset options are used).   
 That is why it is recommended to:

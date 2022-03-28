@@ -1,6 +1,8 @@
 [//]: # (title: Configuring General Settings)
 [//]: # (auxiliary-id: Configuring General Settings)
 
+## General Build Configuration Settings
+
 When creating a build configuration, specify the following settings:
 
 <table><tr>
@@ -156,7 +158,7 @@ Specify additional options for the builds of this build configuration.
 
 ### Build Number Format
 
-In the _Build number format_ field you can specify a pattern which is resolved and assigned to the [build number](build-number.md) on the build start.
+In the _Build number format_ field you can specify a pattern which is resolved and assigned to the <emphasis tooltip="build-number">build number</emphasis> on the build start.
 
 [//]: # (Internal note. Do not delete. "Configuring General Settingsd79e124.txt")
 
@@ -218,7 +220,7 @@ Though not required, it is still highly recommended ensuring the build numbers a
 
 <anchor name="ConfiguringGeneralSettings-artifactPaths"/>
 
-### Artifact Paths
+## Artifact Paths
 
 [Build artifacts](build-artifact.md) are files produced by the build which are stored on TeamCity server and can be downloaded from the TeamCity UI or used as artifact dependencies by other builds. On the __General Settings__ page of the build configuration, you can specify patterns for the files on the agent which will be uploaded to the server after the build.
 
@@ -259,7 +261,7 @@ The target paths cannot be absolute. Non-relative paths will produce errors duri
 > 
 {type="warning"}
 
-#### Artifacts Paths Examples
+### Artifacts Paths Examples
 
 * `install.zip` — publish a file named `install.zip` in the build artifacts.
 * `dist` — publish the content of the dist directory.
@@ -274,27 +276,27 @@ The target paths cannot be absolute. Non-relative paths will produce errors duri
 
 <anchor name="buildOptions"/>
 
-### Build Options
+## Build Options
 
 The following options are available to build configurations:
 
-#### Hanging Build Detection
+### Hanging Build Detection
 
 Select the _Enable hanging build detection_ option to detect probably "hanging" builds. A build is considered to be "hanging" if its run time significantly exceeds the estimated __average run time__ and if the build has not sent any messages since the estimation was exceeded. To properly detect hanging builds, TeamCity has to estimate the average time builds run based on several builds. Thus, if you have a new build configuration, it may make sense to enable this feature after a couple of builds have run, so that TeamCity would have enough information to estimate the average run time.
 
-#### Allow Triggering Personal Builds
+### Allow Triggering Personal Builds
 
 You can restrict running [personal builds](personal-build.md) by unchecking the __allow triggering personal builds__ option (on by default).
 
 <anchor name="ConfiguringGeneralSettings-EnableStatusWidget"/>
 
-#### Enable Status Widget
+### Enable Status Widget
 
 This option enables retrieving the status and basic details of the last build in the build configuration without requiring any user authentication. Note that this also allows getting the status of any specific build in the build configuration (however, builds cannot be listed and no other information except the build status (`success/failure/internal error/cancelled`) is available).
 
 The status can be retrieved via the HTML status widget described [below](#HTML+Status+Widget), or via a single icon: with the help of [REST API](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html) or via the __Actions__ menu in __Build Configuration Home__.
 
-#### HTML Status Widget
+### HTML Status Widget
 
 This feature allows you to get an overview of the current project status on your company's website, wiki, Confluence or any other web page.  
 When the __Enable status widget__ option is enabled, an HTML snippet can be included into an external web page and will display the current build configuration status.  
@@ -345,12 +347,12 @@ It is also possible to show the status of all projects build configurations by r
 
 You can also download and customize the `externalStatus.css` file (for example, you can disable some columns by using `display: none`; see comments in `externalStatus.css`). However, in this case, you must _not_ include the __withCss=true__ parameter, but provide the CSS styles explicitly, preferably in the `<head>` section, instead.
 
-#### Limit Number of Simultaneously Running Builds
+### Limit Number of Simultaneously Running Builds
 
 Specify the number of builds of the same configuration that can run simultaneously on all agents. This option helps avoid the situation, when all the agents are busy with the builds of a single project. Enter 0 to allow an unlimited number of builds to run simultaneously.
 
 <seealso>
         <category ref="concepts">
-            <a href="build-configuration.md">Build Configuration</a>
+            <a href="managing-builds.md">Build Configuration</a>
         </category>
 </seealso>

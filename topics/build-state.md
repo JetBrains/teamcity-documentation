@@ -117,7 +117,7 @@ A build was cancelled.
 
 ### Canceled/Stopped build
 
-Stopping a running build results in the build status displayed as cancelled. You can stop a running build from the [__Build Results__](working-with-build-results.md), [__Build Configuration Home__](viewing-build-configuration-details.md) or using the __Stop__ option from the __Actions__ drop-down menu.
+Stopping a running build results in the build status displayed as cancelled. You can stop a running build from the [__Build Results__](working-with-build-results.md), [__Build Configuration Home__](build-configuration-home-page.md) or using the __Stop__ option from the __Actions__ drop-down menu.
 
 When a build is started, the build process calls the runner process and listens to its output. The stop command kills the runner process, then the build process stops.
 
@@ -230,7 +230,7 @@ A running build can be marked as _Outdated_ if there is a build which contains m
 
 ## Failed to Start Builds
 
-Builds which failed to start, that is did not get to the point of launching the first build step are marked with the ![redSign.png](redSign.png) icon. It may be caused by a VCS repository being down when the build starts, or the inability to resolve artifact dependencies and so on. Such build status is often an indication of a configuration error and should usually be addressed by a build engineer rather than a developer.   
+Builds which failed to start, that is which did not get to the point of launching the first build step are marked with the ![redSign.png](redSign.png) icon. It may be caused by a VCS repository being down when the build starts, or the inability to resolve artifact dependencies and so on. Such build status is often an indication of a configuration error and should usually be addressed by a build engineer rather than a developer.   
 If such an error occurs, TeamCity:
 * doesn't send build failed notification (unless you have subscribed to "the build fails to start" notification)
 * doesn't associate pending changes with this build, that is the changes will remain pending, because they were not actually tested
@@ -240,11 +240,11 @@ If such an error occurs, TeamCity:
 
 <seealso>
         <category ref="concepts">
-            <a href="build-configuration.md">Build Configuration Status</a>
+            <a href="changing-build-configuration-status.md">Build Configuration Status</a>
             <a href="change.md">Change</a>
             <a href="change-state.md">Change State</a>
         </category>
         <category ref="user-guide">
-            <a href="viewing-your-changes.md">Viewing Your Changes</a>
+            <a href="viewing-user-changes-in-builds.md">Viewing Your Changes</a>
         </category>
 </seealso>
