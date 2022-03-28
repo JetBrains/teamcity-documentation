@@ -41,7 +41,7 @@
             </group>
             <group type="cards">
                 <title>Work with builds</title>
-                <a href="view-build-results.md" description="Explore the detailed reports that TeamCity provide for your builds.">View build results</a>
+                <a href="working-with-build-results.md" description="Explore the detailed reports that TeamCity provide for your builds.">View build results</a>
                 <a href="configuring-notifications.md" description="Be notified about build statuses via email, Slack, or browser.">Set up notifications</a>
                 <a href="investigating-and-muting-build-failures.md" description="Learn how to assign a responsible investigator to resolve a build or test failure, or mute a problem until it is fixed.">Investigate build problems</a>
             </group>
