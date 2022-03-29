@@ -117,3 +117,9 @@ The __[Build Configuration Home](build-configuration-home-page.md)__ page has ow
 * Enforce [clean checkout](clean-checkout.md).
 * [Assign an investigation](investigating-and-muting-build-failures.md).
 * [Clean stream workspaces on a Perforce server](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server).
+
+## Apply Action to Multiple Builds
+
+You can manage multiple builds at once (for example, pin, add tags, compare two builds, remove builds, add builds to favorites, or add comments). For this, select the required builds on the __Overview__ tab of __Build Configuration Home__ (checkboxes appear when hovering over builds), and use commands of the pop-up context menu. If you need to select a range of builds, press __Shift__ and click build checkboxes at the edges of the range to be selected.
+
+<img src="select-multiple-builds.png" alt="Selecting multiple builds" width="750"/>
