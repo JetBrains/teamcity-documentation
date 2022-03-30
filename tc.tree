@@ -211,7 +211,9 @@
       <toc-element id="configuring-cross-server-projects-pop-up-menu.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="archiving-projects.md"/>
       <toc-element id="customizing-statistics-charts.md" show-structure-for="chapter" show-structure-depth="4"/>
-      <toc-element id="configuring-artifacts-storage.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="configuring-artifacts-storage.md" show-structure-for="chapter" show-structure-depth="4">
+         <toc-element id="storing-build-artifacts-in-amazon-s3.md" show-structure-for="chapter" show-structure-depth="4"/>
+      </toc-element>
    </toc-element>
    <toc-element toc-title="Managing Build Configurations">
       <toc-element id="creating-and-editing-build-configurations.md" show-structure-for="chapter" show-structure-depth="4">
