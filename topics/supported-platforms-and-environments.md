@@ -527,7 +527,7 @@ A Perforce Helix Core client installed on the server. See [Perforce compatibilit
 
 <tr product="tc"><td>
 
-[CVS](cvs.md)
+[CVS](cvs.md) (via an external plugin)
 
 </td><td></td><td></td></tr>
 
