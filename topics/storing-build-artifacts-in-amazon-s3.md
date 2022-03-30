@@ -37,7 +37,7 @@ You can enable the virtual host addressing for S3 buckets. Currently, both hoste
 
 ## Permissions
 
-When the "Use Pre-Signed URLs for upload" option is enabled, the provided AWS credentials or IAM role on the TeamCity server should have permissions: `DeleteObject, ListAllMyBuckets, GetBucketLocation, GetObject, ListBucket, PutObject`.
+When the "_Use Pre-Signed URLs for upload_" option is enabled, the provided AWS credentials or IAM role on the TeamCity server should have permissions: `DeleteObject, ListAllMyBuckets, GetBucketLocation, GetObject, ListBucket, PutObject`.
 
 When the "Use Pre-Signed URLs for upload" option is disabled:
 * the provided AWS credentials or IAM role on the TeamCity server should have permissions: `DeleteObject, ListAllMyBuckets, GetBucketLocation, GetObject`
@@ -86,7 +86,7 @@ To configure a distribution in CloudFront:
 1. Generate a key pair in [SSH-2 RSA key format](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-creating-cloudfront-key-pairs).
 2. Upload the public key from the pair to CloudFront.
 3. [Add a new key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-adding-trusted-signers) in CloudFront and add the created public key to this group.
-4. Create a new cache policy with __Cache key settings__ | __Query strings__ set to _All_.
+4. Create a new cache policy with __Cache key settings | Query strings__ set to _All_.
 5. If you use a private bucket, create a new [OAI](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) user.
 6. [Create a distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating.html) and attach your key group to it:
    * Make sure to choose the same S3 bucket as specified in TeamCity.
@@ -141,4 +141,4 @@ For accessing a public bucket:
 }
 ```
 
-<include src="configuring-artifacts-storage.md" include-id="multipartUploadS3/>
+<include src="configuring-artifacts-storage.md" include-id="multipartUploadS3"/>

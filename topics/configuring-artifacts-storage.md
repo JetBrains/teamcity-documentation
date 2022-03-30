@@ -27,7 +27,7 @@ TeamCity can store build artifacts in an Amazon S3 bucket. Read more details in 
 
 ### Google Cloud Artifact Storage
 
- Google Cloud Artifact Storage is implemented as a [plugin](https://plugins.jetbrains.com/plugin/9634-google-artifact-storage) by JetBrains.
+Google Cloud Artifact Storage is implemented as a [plugin](https://plugins.jetbrains.com/plugin/9634-google-artifact-storage) by JetBrains.
 
 <chunk include-id="multipartUploadS3">
 
