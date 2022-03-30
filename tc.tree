@@ -397,6 +397,7 @@
          <toc-element id="eclipse-plugin.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="visual-studio-addin.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="windows-tray-notifier.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+         <toc-element id="artifacts-migration-tool.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
       </toc-element>
    </toc-element>
       <toc-element id="extending-teamcity.md" toc-title="Extending TeamCity and Using REST API for Integration">
