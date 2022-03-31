@@ -502,3 +502,13 @@ If [Artifacts Domain Isolation](teamcity-configuration-and-maintenance.md#artifa
 
   See the [related issue](https://youtrack.jetbrains.com/issue/TW-74379) for more details.
 * The [Pull Requests](pull-requests.md) build feature could post a wrong build step number to the merge request timeline in __JetBrains Space__. See the [related issue](https://youtrack.jetbrains.com/issue/TW-74374).
+
+## Known issues of native Git checkout
+
+These issues concern the use of native [Git](git.md) for checking out sources to the TeamCity server, effective since [version 2022.04](what-s-new-in-teamcity.md#Native+Git+as+Default+Mode).
+
+### SSH DSA keys do not work with native Git
+
+Switching the server to native Git results in builds failing to authorize in repositories via SSH DSA keys. See the related issue [TW-74580](https://youtrack.jetbrains.com/issue/TW-74580).
+
+To work around this issue, please set the `teamcity.git.sshCommandOptions` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `-o "PubkeyAcceptedKeyTypes=+ssh-dss"`.
