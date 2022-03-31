@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity Documentation)
 [//]: # (auxiliary-id: TeamCity Documentation)
 
-Welcome to the documentation for [TeamCity 2021.x](https://www.jetbrains.com/teamcity/)! If you are using an earlier TeamCity version, please refer to the [documentation for your release](documentation-for-previous-versions.md).
+Welcome to the documentation for [TeamCity 2022.x](https://www.jetbrains.com/teamcity/)! If you are using an earlier TeamCity version, please refer to the [documentation for your release](documentation-for-previous-versions.md).
 
 <table>
 <tr>
