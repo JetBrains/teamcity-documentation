@@ -5,6 +5,12 @@
 > 
 {type="warning"}
 
+## Running a build's tests in parallel on multiple agents
+
+TeamCity can now split tests of a build in batches and run each batch on a separate build agent. This way, tests will run in parallel and the build will finish faster. The speed boost ratio depends on the number of test classes in the build and the number of used parallel agents.
+
+Read more details in [this article](tests-split-for-parallel-execution.md).
+
 ## Transferring Build Artifacts through Amazon CloudFront
 {product="tc"}
 

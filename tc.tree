@@ -295,6 +295,7 @@
             <toc-element id="performance-monitor.md"/>
             <toc-element id="pull-requests.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="ruby-environment-configurator.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="tests-split-for-parallel-execution.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="shared-resources.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="ssh-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="vcs-labeling.md" show-structure-for="chapter" show-structure-depth="4"/>
