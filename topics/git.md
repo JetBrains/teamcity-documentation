@@ -21,20 +21,7 @@ __Important notes__:
 * Initial Git [checkout](build-checkout-directory.md#Checkout+Process) may take significant time (sometimes hours), depending on the size of your project history, because the whole project history is downloaded during the initial checkout.
 
 ## Native Git as Default Mode
-{product="tc"}
-
-Since version 2022.04, TeamCity uses native Git as the default option for Git operations. This approach is more predictable than the previously used JGit implementation and allows working with Git and SSH in TeamCity just as you would in your operating system.
-
-On upgrading to 2022.04, users can switch their TeamCity nodes to the new mode.
-
-Before switching, make sure a [native Git client](https://git-scm.com/downloads) version 2.29 or later is installed on your server machine and a path to its executable is specified in the `PATH` environment variable. Alternatively, you can set the full path to the executable via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (no server restart is required). On Windows, remember to use double backslashes in the path.
-
-To switch your TeamCity nodes to native Git, go to __Administration | Diagnostics__ and open the __Git__ tab. Here you can test connection via native Git in any VCS root on your server. If you choose to test all VCS roots, TeamCity will check if they successfully connect via JGit and then test their connection via native Git. This measure helps ensure that none of your pipelines will break after switching to native Git.
-
-If the connection test is successful, you can enable the native Git support on your server(s).
-
-## Native Git as Default Mode
-{id="native-git-default-mode" auxiliary-id="native-git-default-mode"}
+{id="native-git-default-mode" auxiliary-id="native-git-default-mode" product="tc"}
 
 Since version 2022.04, TeamCity uses native Git as the default option for Git operations. This approach is more predictable than the previously used JGit implementation and allows working with Git and SSH in TeamCity just as you would in your operating system.
 
