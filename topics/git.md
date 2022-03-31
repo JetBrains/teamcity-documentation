@@ -21,6 +21,7 @@ __Important notes__:
 * Initial Git [checkout](build-checkout-directory.md#Checkout+Process) may take significant time (sometimes hours), depending on the size of your project history, because the whole project history is downloaded during the initial checkout.
 
 ## Native Git as Default Mode
+{product="tc"}
 
 Since version 2022.04, TeamCity uses native Git as the default option for Git operations. This approach is more predictable than the previously used JGit implementation and allows working with Git and SSH in TeamCity just as you would in your operating system.
 

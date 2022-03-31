@@ -504,6 +504,7 @@ If [Artifacts Domain Isolation](teamcity-configuration-and-maintenance.md#artifa
 * The [Pull Requests](pull-requests.md) build feature could post a wrong build step number to the merge request timeline in __JetBrains Space__. See the [related issue](https://youtrack.jetbrains.com/issue/TW-74374).
 
 ## Known issues of native Git checkout
+{product="tc"}
 
 These issues concern the use of native [Git](git.md) for checking out sources to the TeamCity server, effective since [version 2022.04](what-s-new-in-teamcity.md#Native+Git+as+Default+Mode).
 
