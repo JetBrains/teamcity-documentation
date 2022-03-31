@@ -41,7 +41,7 @@ However, we would appreciate if you post your question in the forums as this all
 We prefer to keep our support efforts as close to the development team as possible, and you will often get answers from the actual developer of the related TeamCity feature.   
 We are ready to offer technical support services in the English language during the business hours of 10:00 - 18:00 CET/CEST (Germany, GMT+1/GMT+2 [timezone](http://timeanddate.com/worldclock/city.html?n=168)).
 
-Our usual response time is 24 hours excluding public holidays in [Germany/Bavaria](https://publicholidays.de/bavaria/) and/or [Russian Federation](http://www.timeanddate.com/holidays/russia/). If you experience an urgent issue, please indicate this in the subject of the email message and detail the nature of the urgency.   
+Our usual response time is 24 hours excluding public holidays in [Germany/Bavaria](https://publicholidays.de/bavaria/). If you experience an urgent issue, please indicate this in the subject of the email message and detail the nature of the urgency.   
 If you own more than 30 agent licenses and have an urgent issue affecting your TeamCity installation (like production server outage without a workaround), you can use the `teamcity-support-urgent` mailbox at the `jetbrains.com` domain — we process these messages before others, if possible. For the same effect, you can also mark an issue as "_Production outage_" when using the online form.   
 If you do not receive a reply within 48 hours, please check your spam filter and feel free to repeat the message referencing the previous one. 
 
