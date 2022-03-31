@@ -33,9 +33,11 @@ To switch your TeamCity nodes to native Git, go to __Administration | Diagnostic
 If the connection test is successful, you can enable the native Git support on your server(s).
 
 ## Native Git as Default Mode
-{product="tc"}
+{id="native-git-default-mode" auxiliary-id="native-git-default-mode"}
 
-TeamCity switches to using native Git as the default option for Git operations. This new approach is more predictable than the previously used JGit implementation and allows working with Git and SSH in TeamCity just as you would in your operating system.
+Since version 2022.04, TeamCity uses native Git as the default option for Git operations. This approach is more predictable than the previously used JGit implementation and allows working with Git and SSH in TeamCity just as you would in your operating system.
+
+On upgrading, users can switch their TeamCity nodes to the new mode.
 
 Before switching, make sure a [native Git client](https://git-scm.com/downloads) version 2.29 or later is installed on your server machine and a path to its executable is specified in the `PATH` environment variable. Alternatively, you can set the full path to the executable via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (no server restart is required). On Windows, remember to use double backslashes in the path.
 
