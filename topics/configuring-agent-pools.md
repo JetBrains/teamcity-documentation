@@ -37,21 +37,20 @@ The _Agents_ sidebar allows navigating between the existing agent pools and show
 To create a new pool, click __+__ in the sidebar and enter its name.  
 By default, a pool contains an unlimited number of agents. You can set a maximum number of agents in the pool (not applicable to the _Default_ pool). If the maximum number of agents is reached, TeamСity will not allow adding any new agents to this pool. This includes moving agents from other pools and automatic authorization of cloud agents. New cloud agents will not start if the target pool is full.
 
-To populate a pool with agents, click __Assign agents__ and select them from the list. Since an agent can belong to one pool only, assigning it to a pool will remove it from its previous pool. If this may cause compatibility problems, TeamCity will give you a warning. Removing an agent from a custom pool will return it to the Default pool. You can also assign cloud agents to a specific pool when adding an image to a cloud profile.
+To see the details of a certain pool or its nested [agent](viewing-build-agent-details.md), click its name in the sidebar.
 
-To assign a pool to a cloud agent, you need to configure it in the cloud image details of the [agent cloud profile](agent-cloud-profile.md). Note that agents from all cloud profiles of the current project are automatically combined into a _[project pool](agent-cloud-profile.md#Adding+Agent+Image)_.
+### Agents Tab
+
+To populate a pool with agents, click __Assign agents__ on the __Agents__ tab and select the required agents from the list. Since an agent can belong to only one pool, assigning it to a pool will remove it from its previous pool. If TeamCity detects that this action might cause compatibility problems, it will show a respective warning. Removing an agent from a custom pool will return it to the _Default_ pool.
+
+To assign a cloud agent to a pool, you need to configure it in the cloud image details of the [agent cloud profile](agent-cloud-profile.md). Note that agents from all cloud profiles of the current project are automatically combined into a _[project pool](agent-cloud-profile.md#Adding+Agent+Image)_.  
+Only cloud agent images configured in the `<Root>` project can be moved using __Assign agents__.
 {product="tc"}
 
-<note product="tc">
+### Projects Tab
 
-Only the cloud agent images configured in the `<Root>` project can be moved using __Assign agents__.
-</note>
-
-When you have configured agent pools, you can:
-* filter the build queue by pools;
-* use grouping by pool on the [Agent Matrix and Agent Statistics](viewing-agents-workload.md) pages.
-
-To see the details of a certain pool or its nested [agent](viewing-build-agent-details.md), click its name in the sidebar.
+To bind certain projects to an agent pool, open the __Projects__ tab, click __Assign projects__, and select the required projects. You can choose to detach them from their previous pools, if necessary.  
+After you save the settings, TeamCity will only be running builds of these projects on the agents from the current pool.
 
 <seealso>
         <category ref="concepts">
