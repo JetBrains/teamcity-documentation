@@ -5,6 +5,13 @@
 > 
 {type="warning"}
 
+## Transferring Build Artifacts through Amazon CloudFront
+{product="tc"}
+
+[Amazon CloudFront](https://aws.amazon.com/cloudfront/) is a content delivery network that offers low latency and high transfer speeds. Enabling its support for an S3 storage will allow TeamCity to transfer build artifacts through the closest CloudFront server. If your S3 bucket is located in a different region than your TeamCity infrastructure, this could significantly speed up the artifacts' upload/download and reduce expenses.
+
+Read more details in [this article](storing-build-artifacts-in-amazon-s3.md#CloudFrontSettings).
+
 ## Single sign-on authentication via SAML 2.0
 {product="tc"}
 
