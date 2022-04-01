@@ -16,7 +16,7 @@ You can learn more details about the listed tools in the dedicated Help articles
 The integration requires [Docker](https://docs.docker.com/engine/installation/) to be installed on the [build agents](build-agent.md). To use the [Docker Compose](docker-compose.md) build runner, you also need to install [Docker Compose](https://docs.docker.com/compose/install/).
 
 TeamCity periodically checks if Docker is available on active build agents. Based on the `docker.server.version` and `docker.version` variables received from the agents, TeamCity distributes builds that use Docker only between agents with the installed Docker engine.   
-If a [build configuration](build-configuration.md) uses the [Docker runner](docker.md) or the [Docker Wrapper extension](docker-wrapper.md), TeamCity automatically adds the `docker.server.version` [agent compatibility requirement](configuring-agent-requirements.md) for this configuration.
+If a [build configuration](managing-builds.md) uses the [Docker runner](docker.md) or the [Docker Wrapper extension](docker-wrapper.md), TeamCity automatically adds the `docker.server.version` [agent compatibility requirement](configuring-agent-requirements.md) for this configuration.
 
 ## Supported Environments
 

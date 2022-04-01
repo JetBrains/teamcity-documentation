@@ -93,9 +93,9 @@ Please make sure that your junit task has the `fork=true` attribute. The recomme
  <seealso>
         <category ref="concepts">
             <a href="build-runner.md">Build Runner</a>
-            <a href="code-coverage.md">Code Coverage</a>
         </category>
         <category ref="admin-guide">
+            <a href="configuring-test-reports-and-code-coverage.md">Configuring Test Reports and Code Coverage</a>
             <a href="configuring-java-code-coverage.md">Configuring Java Code Coverage</a>
             <a href="intellij-idea.md">IntelliJ IDEA</a>
         </category>

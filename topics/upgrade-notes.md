@@ -1,6 +1,29 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2021.2.2 to 2021.2.3
+
+* To avoid false positive reports from some security scanners, TeamCity now uses an instance of the Log4j 1.2 library without vulnerable classes. To achieve this, we've created [our own fork of Log4j 1.2](https://github.com/JetBrains/teamcity-log4j) on GitHub, removed vulnerable packages unused by TeamCity (`net`, `chainsaw`, `jdbc`, and `jmx`), and built the library. 
+
+### Known Issues
+{id="known-issues-202123"}
+ 
+* After upgrading to 2021.2.3, builds might fail to check out sources from git repositories on Azure DevOps (both Server and Services) via SSH. See the [related issue](https://youtrack.jetbrains.com/issue/TW-75102) for details.  
+  If you face this problem, please apply a workaround from [the issue](https://youtrack.jetbrains.com/issue/TW-73759#focus=Comments-27-5347961.0-0).
+* Builds might fail to publish artifacts or a build number via commands of an MSBuild script. This problem can be worked around by changing the build log verbosity level to _normal_: to do this, set the `msbuild.logger.params` [configuration parameter](configuring-build-parameters.md) to `verbosity=normal`. Alternatively, you can download the fixed .NET plugin [here](https://youtrack.jetbrains.com/issue/TW-75259#focus=Comments-27-5837867.0-0) and [install it manually](installing-additional-plugins.md) on your server.
+
+## Changes from 2021.2.1 to 2021.2.2
+
+* __Changed format for .NET assembly names__  
+  To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). On updating to 2021.2.2, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset. The details on the changes to the common identifier format in .NET can be found in the [Microsoft Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.assemblyname.name?view=net-6.0).
+
+### Bundled tools updates
+{id="bundled-tools-updates-202122"}
+
+* Updates in TeamCity Agent Docker images:
+  * The bundled version of .NET Core SDK has been updated to 6.0.100.
+  * Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
+
 ## Changes from 2021.2 to 2021.2.1
 
 * __.NET build runner counts parametrized tests as a single test__  
@@ -50,6 +73,9 @@ TeamCity 2021.2 does not introduce any new data formats compared to version 2021
 * __TeamCity fails to initialize a cloud client when creating an Amazon EC2 spot fleet profile__  
   When creating a [cloud profile](agent-cloud-profile.md) for an Amazon EC2 spot fleet, users might get the "_Failed to initialize cloud client 'amazon'. An exception occurred while parsing config._" error. This error only occurs if the "_Specify instance attributes that match your compute requirements_" option is enabled in the current fleet's _[instance type requirements](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html#abs-create-spot-fleet)_.  
   To work around this issue, please remove the `InstanceRequirements` block from the fleet's JSON configuration file before uploading it to TeamCity. This issue will be fixed in TeamCity 2022.1.
+* __Builds might fail to publish artifacts to Amazon S3 if AWS KMS is used__  
+  After updating to 2021.2, builds might start failing on an attempt to publish artifacts to an Amazon S3 bucket encrypted with an [AWS KMS](https://docs.aws.amazon.com/kms/index.html) key. This issue is caused by the recently added integrity check for build artifacts. To temporarily disable it in a project and workaround the issue, set the `teamcity.internal.storage.s3.upload.enableConsistencyCheck=false` property on a [project level](levels-and-priority-of-build-parameters.md).  
+ This problem will be fixed in TeamCity 2021.2.3.
 
 ### Canceled bidirectional agent-server communication protocol
 
@@ -69,11 +95,13 @@ Previously, builds in an artifact dependency configuration were never [cleaned u
 
 This fix restores the intended behavior, but we recommend that you review your clean-up settings to ensure no builds will be cleaned up unexpectedly after the upgrade.
 
-### Planned deprecation of Java 8 in TeamCity Server 2022.1
+<anchor name="Planned+deprecation+of+Java+8+in+TeamCity+Server+2022.1"/>
 
-TeamCity 2021.2 Server supports Java versions 8 and 11, but __Java 8 support will be discontinued in TeamCity 2022.1__. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 until the 2022.1 release.
+### Planned deprecation of Java 8 in TeamCity Server 2022.04
 
-Note that TeamCity is not compatible with Java 17, which makes Java 11 the only version planned for support in TeamCity Server 2022.1.
+TeamCity 2021.2 Server supports Java versions 8 and 11, but __Java 8 support will be discontinued in TeamCity 2022.04__, in April 2022. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 until the 2022.04 release.
+
+Note that TeamCity is not compatible with Java 17, which makes Java 11 the only version planned for support in TeamCity Server 2022.04.
 
 ### Bundled tools updates
 {id="bundled-tools-updates-20212"}
@@ -283,7 +311,7 @@ On upgrading, this responsibility will be automatically enabled on all your seco
 * The Linux image in TeamCity server Docker containers has been updated to version 20.04 (LTS).
 * Bundled dotCover and ReSharper CLT have been upgraded to version 2020.2.4.
 * The deprecated Visual Studio 2003 build runner is disabled in TeamCity. We recommend using the [.NET](net.md) runner instead.   
-If you were actively using the VS 2003 runner and cannot easily migrate to the .NET runner, please let us know about it via any of our [feedback channels](https://teamcity-support.jetbrains.com/hc/en-us).
+If you were actively using the VS 2003 runner and cannot easily migrate to the .NET runner, please let us know about it via any of our [feedback channels](https://teamcity-support.jetbrains.com/hc/en-us){nullable="true"}.
 * JDBC drivers for external databases, suggested on the fresh TeamCity installation, have been updated to the following versions:
      * MySQL - 8.0.22
      * MSSQL - 8.4.1
@@ -355,7 +383,7 @@ The bundled Jira Cloud plugin will be automatically updated with this fix in our
 To be able to sign in to Slack from TeamCity, you need to specify all the possible URIs of the TeamCity server as _Redirect URLs_ in the [Slack app's](configuring-connections.md#Slack) settings.   
 If you use nginx to set up TeamCity behind a proxy server, you might still get the `bad_redirect_uri` error when trying to establish a connection with Slack. This error is caused by the mismatch between the nginx and Tomcat configuration.
 
-To workaround this issue, download the fixed plugin, attached to the [related issue](https://youtrack.jetbrains.com/issue/TW-66113), and install it as described [here](installing-additional-plugins.md). Alternatively, you can try [updating the Tomcat settings](configuring-proxy-server.md#Proxy-Tomcat-RemoteIpValve).   
+To workaround this issue, download the fixed plugin, attached to the [related issue](https://youtrack.jetbrains.com/issue/TW-66113), and install it as described [here](installing-additional-plugins.md). Alternatively, you can try [updating the Tomcat settings](configuring-proxy-server.md#TeamCity+Tomcat+Configuration).   
 The bundled Slack plugin will be automatically updated with this fix in our next release.
 
 #### Problems with built-in authentication in upgraded 2020.1 EAP1 installations
@@ -645,7 +673,7 @@ Tags are now __mandatory__ for all Amazon instances run by TeamCity, which helps
 
 ### Changed behavior of reversed dependencies properties
 
-Starting with 2019.1, the behavior of [`reverse.dep`](predefined-build-parameters.md#Overriding+Dependencies+Properties) parameters has been changed, and this change can affect your existing builds. In versions prior to 2019.1, when a build chain is triggered, TeamCity only took into account the `reverse.dep` parameters specified in the top-most build of the chain, i.e. in the build which depends on all other builds. If some intermediate builds of the chain had `reverse.dep` parameters, they were ignored.   
+Starting with 2019.1, the behavior of [`reverse.dep`](predefined-build-parameters.md#Overriding+Dependency+Parameters) parameters has been changed, and this change can affect your existing builds. In versions prior to 2019.1, when a build chain is triggered, TeamCity only took into account the `reverse.dep` parameters specified in the top-most build of the chain, i.e. in the build which depends on all other builds. If some intermediate builds of the chain had `reverse.dep` parameters, they were ignored.   
   After [this fix](https://youtrack.jetbrains.com/issue/TW-41341) this is no longer the case. Now, when a build chain is triggered, all `reverse.dep` parameters specified in all nodes of the build chain will be processed.
   
 ### Lazy agent tool loading
@@ -1039,7 +1067,7 @@ TFS Personal support lists all build configurations for TFVC VCS root. See [TW-5
 
 [TW-50148](https://youtrack.jetbrains.com/issue/TW-50148) was fixed and the DSL API documentation was improved. If you need these changes for local development, please update the [maven dependency version](upgrading-dsl.md) to 2017.1.3.
 
-Now TeamCity server runs 'git gc' automatically to improve performance of git operations. This requires a git client to be installed on the server and be  the server via the PATH environment variable. If a native git client cannot be found, then the corresponding health report is shown. For TeamCity to find the git client, the client needs to be installed on the server machine and added to `$PATH` (the server restart is required afterwards). Instead of modifying PATH, the path to the git client can be specified via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md).
+Now TeamCity server runs 'git gc' automatically to improve performance of git operations. This requires a git client to be installed on the server and be accessible the server via the PATH environment variable. If a native git client cannot be found, then the corresponding health report is shown. For TeamCity to find the git client, the client needs to be installed on the server machine and added to `$PATH` (the server restart is required afterwards). Instead of modifying PATH, the path to the git client can be specified via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md).
 
 ## Changes from 2017.1.1 to 2017.1.2
 
@@ -1399,7 +1427,7 @@ JetBrains product icons are updated in accordance with the [new JetBrains brandi
 
 #### Git
 
-Since TeamCity 9.1.5, `git sparse-checkout`  [is disabled](https://youtrack.jetbrains.com/issue/TW-43330#comment=27-1229510) by default. To enable it in a TeamCity project, add the `teamcity.git.useSparseCheckout=true` [parameter ](https://confluence.jetbrains.com/display/TCD9/Project+and+Agent+Level+Build+Parameters#ProjectandAgentLevelBuildParameters-ProjectLevelBuildParameters)to this project.
+Since TeamCity 9.1.5, `git sparse-checkout`  [is disabled](https://youtrack.jetbrains.com/issue/TW-43330#comment=27-1229510) by default. To enable it in a TeamCity project, add the `teamcity.git.useSparseCheckout=true` [parameter](configuring-build-parameters.md) to this project.
 
 #### Gradle: Breaking change compared to 9.1.2
 
@@ -1415,7 +1443,7 @@ The bundled JetBrains IntelliJ IDEA (IDEA inspections and duplicates) has been u
 
 #### .NET tools updates
 
-JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 10.0.2 releaseTeamCity Visual Studio Addin Web installer updated to ReSharper 10.0.2 releaseBundled JetBrains dotCover updated to version 10.0.2
+JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 10.0.2 releaseTeamCity Visual Studio Add-in Web installer updated to ReSharper 10.0.2 releaseBundled JetBrains dotCover updated to version 10.0.2
 
 ## Changes from 9.1.3 to 9.1.4
 
@@ -1442,7 +1470,7 @@ Bundled Oracle JRE (in both Server and Agent.exe installers) has been updated to
 
 JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 10.0 release
 
-TeamCity Visual Studio Addin Web installer updated to ReSharper 10.0 release
+TeamCity Visual Studio Add-in Web installer updated to ReSharper 10.0 release
 
 Bundled JetBrains dotCover updated to version 10.0
 
@@ -1473,11 +1501,11 @@ Build status icons updated to a more "standard" look and are of a bit larger now
 
 JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 9.2 release
 
-TeamCity Visual Studio Addin Web installer updated to ReSharper 9.2 release
+TeamCity Visual Studio Add-in Web installer updated to ReSharper 9.2 release
 
 Bundled JetBrains dotCover updated to version 3.2
 
-Bundled Oracle JRE (in both Server and Agent .exe installers) updated to version 1.8.0\_60 (32\-bit)
+Bundled Oracle JRE (in both Server and Agent .exe installers) updated to version 1.8.0_60 (32-bit)
 
 ## Changes from 9.1 to 9.1.1
 
@@ -1997,7 +2025,7 @@ TeamCity\-related tables should now be located in the database schema which is s
 
 This change may require reconfiguration of the database to set default schema for the user used by TeamCity server to connect to the database.
 
-Please check that all TeamCity\-related tables are located in the default user's schema before performing the upgrade. (e.g. [using](http://blog.sqlauthority.com/2009/06/17/sql-server-list-schema-name-and-table-name-for-database/) the 'sys.tables' view)
+Please check that all TeamCity\-related tables are located in the default user's schema before performing the upgrade.
 
 If the default user's schema is not set right, TeamCity can report "TeamCity database is empty or doesn't exist. If you proceed, a new database will be created." message on the first start of newer TeamCity.
 

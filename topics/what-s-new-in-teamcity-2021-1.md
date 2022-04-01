@@ -37,7 +37,7 @@ There are limitless combinations of how you can use this instrument to autorun d
 
 In a build trigger's settings, you can find the new __Build Customization__ tab with the following options:
 * _General Settings_: choose to delete all files in the [checkout directory](build-checkout-directory.md) if you need to start every triggered build with clean sources.
-* _Build parameters_: customize the value of any [parameter](configuring-build-parameters.md) used in the current build configuration. Or, add a new parameter, and it will be available only in builds started by this trigger. You can even use it to override a parameter of a [dependency build configuration](snapshot-dependencies.md): use the `[reverse.dep.<dependencyBuildID>.<property>](predefined-build-parameters.md#Overriding+Dependencies+Properties)` syntax for this.
+* _Build parameters_: customize the value of any [parameter](configuring-build-parameters.md) used in the current build configuration. Or, add a new parameter, and it will be available only in builds started by this trigger. You can even use it to override a parameter of a [dependency build configuration](snapshot-dependencies.md): use the `[reverse.dep.<dependencyBuildID>.<property>](predefined-build-parameters.md#Overriding+Dependency+Parameters)` syntax for this.
 
 This feature gets even more effective if you combine it with our [build step execution conditions](build-step-execution-conditions.md). You just need to add a parameter-based condition to a step and then configure two triggers: one will run builds with this step (when the condition is satisfied) and one — without it. A popular use case is to run an extra clean-up step when a failed build is restarted with a [retry trigger](configuring-retry-build-trigger.md): this can help solve many build problems even without involving a user.
 
@@ -148,7 +148,7 @@ where `90` is the number of the exact revision of `dir1` and `automaticLabelWith
 
 ### Clean up stream workspaces on Perforce server
 
-TeamCity allows using [Perforce streams as feature branches](perforce-streams-as-feature-branches.md). To optimally process changes in such streams, it needs to create and maintain dedicated workspaces on the Perforce server. Over time, these workspaces might consume a significant amount of resources on the Perforce server's machine. Besides, if you want to close a task stream, you won't be able to do this if there is a workspace associated with it. Both of these problems can be solved by deleting no longer necessary workspaces. Previously, there were no means to clean them up automatically, and any manual cleaning would require involving a Perforce server administrator. With the new _Perforce Administrator Access_ connection, project administrators can clean workspaces right from the TeamCity UI.
+TeamCity allows using [Perforce streams as feature branches](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams). To optimally process changes in such streams, it needs to create and maintain dedicated workspaces on the Perforce server. Over time, these workspaces might consume a significant amount of resources on the Perforce server's machine. Besides, if you want to close a task stream, you won't be able to do this if there is a workspace associated with it. Both of these problems can be solved by deleting no longer necessary workspaces. Previously, there were no means to clean them up automatically, and any manual cleaning would require involving a Perforce server administrator. With the new _Perforce Administrator Access_ connection, project administrators can clean workspaces right from the TeamCity UI.
 
 To configure this, go to your project settings in TeamCity and, under __Connections__, add a new connection with the _Perforce Administrator Access_ type. Enter the host and user credentials for accessing the Perforce server (the user must have the [admin permission](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels)), and TeamCity will connect to it.
 
@@ -178,7 +178,7 @@ Our experimental UI is a work in progress: we introduce its features in the earl
 
 The experimental UI roadmap strongly depends on our users' feedback. In version 2021.1, we've focused on improving the Build Overview page: read below about a [tree mode for tests](#Show+tests+in+tree+mode+in+Build+Overview) and a new [code coverage visualization](#New+code+coverage+preview). We've also [adjusted the design] of the __Project Home__ page(#Refined+Project+Home) based on your requests.
 
->Leave feedback about your experience with the experimental UI via [this form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=360001686659).
+>Leave feedback about your experience with the experimental UI via [this form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=360001686659){nullable="true"}.
 
 ### Show tests in tree mode in Build Overview
 
@@ -194,7 +194,7 @@ If you prefer a keyboard navigation, use __Up__ and __Down__ keys to navigate th
 
 ### New code coverage preview
 
-TeamCity can provide code coverage for [multiple build runners](code-coverage.md). With this release, the code coverage preview in __Build Overview__ gets even more visual.
+TeamCity can provide code coverage for [multiple build runners](configuring-test-reports-and-code-coverage.md#Code+Coverage+in+TeamCity). With this release, the code coverage preview in __Build Overview__ gets even more visual.
 
 If coverage is available for a build configuration, you can quickly preview a visualized statistics of the build's tests and see how it changed compared to the previous build:
 

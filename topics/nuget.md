@@ -83,7 +83,7 @@ API support:
 * __NuGet Installer / NuGet Publish runners__
    * __v3__: requires NuGet 4.8+ (Windows), NuGet 4.9+ on Mono
    * __v1/v2__: NuGet 2.0+ is minimum requirement, NuGet 3.5+ is recommended
-* __.NET CLI__
+* __.NET__
    * __v3__: requires .NET CLI 2.1.500
    * __v1/v2__: not supported
 

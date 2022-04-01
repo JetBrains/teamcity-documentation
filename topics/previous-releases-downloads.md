@@ -12,7 +12,27 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 
 ## Current version
 
-__Current TeamCity Version is 2021.2.1__
+__Current TeamCity Version is 2021.2.3__
+
+Release date: 16 February 2022   
+Build 99711
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2021.2.3.exe)   
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2021.2.3.tar.gz)
+
+[Release notes](teamcity-2021-2-3-release-notes.md)
+
+## TeamCity 2021.2.2
+
+Release date: 11 January 2022   
+Build 99660
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2021.2.2.exe)   
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2021.2.2.tar.gz)
+
+[Release notes](teamcity-2021-2-2-release-notes.md)
+
+## TeamCity 2021.2.1
 
 Release date: 29 November 2021   
 Build 99602
@@ -20,7 +40,7 @@ Build 99602
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2021.2.1.exe)   
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2021.2.1.tar.gz)
 
-[Release notes](teamcity-2021-2-release-notes.md)
+[Release notes](teamcity-2021-2-1-release-notes.md)
  
 ## TeamCity 2021.2
 
@@ -140,7 +160,7 @@ Build 78938
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2020.1.5.exe)  
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2020.1.5.tar.gz)
 
-[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1.5+Release+Notes)
+[Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1.5+%28build+78938%29+Release+Notes)
 
 ## TeamCity 2020.1.4
 

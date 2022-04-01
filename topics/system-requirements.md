@@ -15,7 +15,7 @@ This article contains general recommendations on choosing and configuring the en
 TeamCity Server can run on any recent version of Windows, Linux, or macOS. Requirements for the server's operating system are listed [here](supported-platforms-and-environments.md#TeamCity+Server).
 
 We also recommend that you review the [requirements](supported-platforms-and-environments.md) for the integrations you plan to use. For example, the following functionalities may require or work better when TeamCity Server is installed under Windows:
-* VCS integration with Azure DevOps Server (TFS)
+* VCS integration with Azure DevOps (TFS)
 * VCS integration with VSS
 * Windows domain logins (can work under Linux, but might be less stable), especially NTLM HTTP authentication
 * NuGet feed on the server (can work under Linux, but might be less stable)
@@ -48,6 +48,8 @@ If you plan to store the Data Directory on a network drive, you need to ensure t
 The requirements for free disk space are mainly determined by the number of builds stored on the server and the artifacts / build log size in each of them. When processing Git or Mercurial projects, TeamCity creates mirrors of repositories and puts them under the `system/caches` directory. If the server-side checkout is used by your build configurations, you need to allocate an extra space under `system/caches` to store the repositories’ sources. As a result, the required disk space can be twice as large as the size of the repositories used by all configured VCS roots.
 
 If builds generate large amounts of data (artifacts/build logs/test data), we suggest that you use external storage with fast access for storing the `.BuildServer/system` directory.
+
+See also the example configurations [below](#Example+Server+Configurations).
 
 #### Network
 
@@ -89,6 +91,8 @@ The following hardware configuration is capable of handling up to 100 concurrent
 * Fast and reliable HDD
 * Fast external database access
 
+__Case 1__
+
 Based on our experience, hardware like _Intel 3.2 GHz dual-core CPU, 8 GB memory under Windows, 1 GB network adapter, and single HDD_ can provide acceptable performance for the following setup:
 * 60 projects and 300 build configurations (with one forth being active and running regularly)
 * more than 300 builds a day
@@ -100,6 +104,8 @@ Based on our experience, hardware like _Intel 3.2 GHz dual-core CPU, 8 GB memory
 * Kotlin DSL is not used
 * the database (MySQL) is running on the same machine
 * TeamCity server process has `-Xmx1100m` JVM setting
+
+__Case 2__
 
 The following configuration can provide acceptable performance for a more loaded TeamCity server: _Intel Xeon E5520 2.2 GHz CPU (4 cores, 8 threads), 16 GB memory under Windows Server 2008 R2 x64, 1 GB network adapter, 3 HDD RAID1 disks (one general, one for artifacts, logs, and caches, and one for the database storage)_. Tested for the following setup:
 * 150 projects and 1500 build configurations (with one third being active and running regularly)
@@ -113,6 +119,8 @@ The following configuration can provide acceptable performance for a more loaded
 * TeamCity server process has `-Xmx3700m` x64 JVM setting
 
 However, to ensure the peak load can be handled well, more powerful hardware is recommended.
+
+__If you install TeamCity on a virtual machine__, make sure that you run daily [clean-ups](teamcity-data-clean-up.md) to remove obsolete build logs and artifacts and save disk space. Based on our rough estimations, the **Case 1** installation might require 7 GB of disk space and **Case 2** — 15 GB, given that the space is utilized optimally and all peak loads are taken into consideration.
 
 The general recommendation for deploying a large-scale TeamCity installation is to start with reasonable hardware while considering potential hardware upgrades. You can increase the load on the server gradually (for example, add more projects) while monitoring the performance stats, and then decide on necessary hardware or software improvements. There is also a [benchmark plugin](https://plugins.jetbrains.com/plugin/9127-benchmark) that can be used to estimate the number of simultaneous builds the current server installation can handle.
 
@@ -216,9 +224,9 @@ If you consider cloud deployment for TeamCity agents (for example, on Amazon EC2
 The network traffic mostly depends on your settings as some of them imply transferring binaries between the agent and the server.
 
 The most important flows of traffic between a TeamCity agent and the TeamCity server are:
-* The agent retrieves commands from the server: these are typically build start tasks, including a dump of the build configuration settings and the full set of build parameters. These parameters can be reviewed on the build's [Parameters](working-with-build-results.md#Parameters) tab.
+* The agent retrieves commands from the server: these are typically build start tasks, including a dump of the build configuration settings and the full set of build parameters. These parameters can be reviewed on the build's [Parameters](build-results-page.md#Parameters+Tab) tab.
 * The agent periodically sends current status data to the server (this includes all the agents’ parameters which can be reviewed on the agent's [Agent Parameters](viewing-build-agent-details.md#Agent+Parameters) tab).
-* During the build, the agent sends build log messages and parameters data back to the server. These can be reviewed on the [Build Log](working-with-build-results.md#Build+Log) and [Parameters](working-with-build-results.md#Parameters) tabs of the build.
+* During the build, the agent sends build log messages and parameters data back to the server. These can be reviewed on the [Build Log](build-results-page.md#Build+Log+Tab) and [Parameters](build-results-page.md#Parameters+Tab) tabs of the build.
 * (when the server-side checkout mode is used) The agent downloads the sources before the build (as a full or incremental patch) from the server.
 * (when an [artifact dependency](artifact-dependencies.md) is configured) The agent downloads build artifacts of other builds from the server before starting a build, unless an external artifact storage is used instead.
 * (when artifacts are configured for a build) The agent uploads build artifacts to the server, unless an external artifact storage is used instead.

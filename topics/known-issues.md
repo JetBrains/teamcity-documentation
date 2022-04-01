@@ -175,7 +175,7 @@ Using StarTeam SDK 9.0 instead of StarTeam SDK 9.3 on the TeamCity server can si
 
 ## Perforce 2009.2 Performance on Windows
 
-If you run Perforce 2009.2 on Windows you may experience significant slow down. This is an issue with P4 server running on Windows. Refer to corresponding [section](http://kb.perforce.com/article/1175/20092-server-performance-on-windows) in Perforce documentation.
+If you run Perforce 2009.2 on Windows you may experience significant slow down. This is an issue with P4 server running on Windows. Refer to corresponding [section](https://www.perforce.com/manuals/p4sag/Content/P4SAG/chapter.performance.html) in Perforce documentation.
 
 ## Wrong times for build scheduled triggering (Timezone issues)
 {product="tc"}
@@ -292,37 +292,6 @@ This problem may happen when changing JVM from 1.6 to 1.7 and connecting some in
 The problem and workaround for it are described in [this issue](http://youtrack.jetbrains.com/issue/TW-30210).
 
 [//]: # (Internal note. Do not delete. "Known Issuesd193e619.txt")
- 
-
-## SSL problems connecting MS SQL Server and TeamCity
-{product="tc"}
-
-Since MS SQL Server always establishes an SSL connection between the JDBC client (the TeamCity application) and the server, connection problems may occur (_SQL exception: Connection reset_). 
-
-__Affected  MS SQL versions__ 
-
-Any version _prior to the ones listed below_:
-* SQL Server 2012 Production version and later
-* SQL Server 2008 Service Pack 3 Cumulative Update 4
-* SQL Server 2008R2 Service Pack 1 Cumulative Update 6
-* SQL Server 2008R2 Service Pack 2
-
-__Cause__: The problem is caused by the Java 1.6 update addressing [this security vulnerability](https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3389).
-
-__Solution__: Microsoft SQL Server upgrade is recommended.
-
-__Workarounds:__ If Microsoft SQL Server upgrade is not possible for some reason, TeamCity can be set up to use older Microsoft SQL Server versions with the database connection still SSL- or TLS-encrypted.
-
-<warning>
-
-Any of the workarounds listed below will make the connection between TeamCity and the database server vulnerable. Make sure to take proper security measures before trying them.
-</warning>
-
-* Continue using a block cipher such as `AES_128_CBC` or `3DES_EDE_CBC`, but disable CBC protection via `-Djsse.enableCBCProtection=false` Java command-line option (that can be added to `TEAMCITY_SERVER_OPTS` environment variable, as described [here](server-startup-properties.md#JVM+Options).  
-    The `jsse.enableCBCProtection` Java system property is also available in all _OpenJDK_ 8 versions and _IBM J9_ [8.0.0 SR1](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.security.component.80.doc/security-component/jsse2Docs/beast.html) and later.   
-    Secure connection between _TeamCity_ and _Microsoft SQL Server_ would be stable but still vulnerable to [CVE-2011-3389](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3389) also known as _BEAST_.
-* Fall back to a stream cipher (which is not susceptible to _BEAST_) such as `RC4_128`. This will render the connection vulnerable to [CVE-2015-2808](https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2015-2808).
-* Consider running with the temporarily disabled antivirus software, but ensure this doesn't compromise the security of your setup. For example, see [this issue](http://jetbrains.net/tracker/issue/TW-7138).
 
 ## Distorted Configuration Window During Agent Reinstallation
 
@@ -498,6 +467,15 @@ __Problem__: NuGet can sometimes skip the recent versions of packages when pulli
 __Cause__: NuGet caches the server responses, thus pulling does not detect the most recent changes in the feed.
 
 __Solution__: To send a new request directly to the server instead of the cache, use the `--no-cache` parameter in your request.
+
+### Packages are not found in NuGet feed
+{product="tc"}
+
+__Problem__: Not all packages are found in a NuGet feed, though artifacts are present on the disk and in the UI and <path>teamcity-nuget.log</path> does not indicate that indexing of packages is in progress.
+
+__Cause__: One of the possible causes could be that TeamCity was restored from backup or moved to a new server.
+
+__Solution__: Clear the [buildsMetadata](teamcity-monitoring-and-diagnostics.md#Caches) cache and wait until reindexing of packages is finished on the server. Note that it could take a lot of time for a large server with a long build history.
 
 ## Cannot use multiline parameters in PowerShell
 

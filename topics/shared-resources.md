@@ -3,7 +3,7 @@
 
 The _Shared Resources_ [build feature](adding-build-features.md) allows limiting concurrently running builds using a shared resource, such as an external (to the CI server) resource, _for example, a test database, or a server with a limited number of connections._
 
-Some of such resources may be accessed concurrently but allow only a limited number of connections, others require exclusive access. Adding different locks to shared resources addresses these cases: you can define a resource on the project level, configure its parameters (for example, type and quota), and then use this resource in specific build configurations by adding the Shared Resources build feature to them. The build starts once the lock on the resource is acquired; on the build completion, the lock is released. While the builds using the resource are [running](build-state.md), the resource is unavailable, and the other builds requiring locks will be waiting in the [queue](build-queue.md).
+Some of such resources may be accessed concurrently but allow only a limited number of connections, others require exclusive access. Adding different locks to shared resources addresses these cases: you can define a resource on the project level, configure its parameters (for example, type and quota), and then use this resource in specific build configurations by adding the Shared Resources build feature to them. The build starts once the lock on the resource is acquired; on the build completion, the lock is released. While the builds using the resource are [running](build-state.md), the resource is unavailable, and the other builds requiring locks will be waiting in the [queue](working-with-build-queue.md).
 
 ## Adding and Editing Shared Resources
 
@@ -54,7 +54,7 @@ While read locks enable multiple builds to concurrently access a shared resource
 Resources with custom values support three types of locks:
 * Locks on __any available value__: a build that uses the resource will start if at least one of the values is available. If all values are being used at the moment, the build will wait in the queue.
 * Locks on __all__ values: a build will lock all the values of the resource. No other builds that use this resource will start until the current one is finished.
-* Locks on a __specific__ value: only a specific value of the resource will be passed to the build. If the value is already taken by a running build, the new build will wait in the [queue](build-queue.md) until the value becomes available.
+* Locks on a __specific__ value: only a specific value of the resource will be passed to the build. If the value is already taken by a running build, the new build will wait in the [queue](working-with-build-queue.md) until the value becomes available.
 
 <anchor name="resource-locks"/>
 

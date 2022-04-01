@@ -98,7 +98,7 @@ If you need to build binaries in one build and collect code coverage in another 
 * Build configuration __A__ compiles code with debugging information and creates an artifact with assemblies and `.pdb` files
 * Build configuration __B__ runs tests with dotCover enabled and has a [snapshot dependency](build-dependencies-setup.md#Snapshot+Dependencies) on A.
 
-To display the source code in the [Code Coverage tab](working-with-build-results.md#Code+Coverage+Results) of build results of B, you need to point B to the same [VCS root](configuring-vcs-roots.md) as A to get your source code in an appropriate location (the [checkout root](build-checkout-directory.md)) and add an [artifact dependency](build-dependencies-setup.md#Artifact+Dependencies) on __build from the same chain__ of A (for dotCover to get the paths to the sources from the `.pdb` files).
+To display the source code in the __[Code Coverage](build-results-page.md#Code+Coverage+Tab)__ tab of build results of B, you need to point B to the same [VCS root](configuring-vcs-roots.md) as A to get your source code in an appropriate location (the [checkout root](build-checkout-directory.md)) and add an [artifact dependency](build-dependencies-setup.md#Artifact+Dependencies) on __build from the same chain__ of A (for dotCover to get the paths to the sources from the `.pdb` files).
 
 You also need to tell TeamCity where to find the source code. To do this, perform the following:
 1. Add the `teamcity.dotCover.sourceBase` configuration parameter with the value `%\teamcity.build.checkoutDir%` to the compiling build configuration A.
@@ -236,12 +236,12 @@ The dotCover console tool supports profiling of .NETCore.App 2.0+ since version 
 
 ## Cross-platform dotCover
 
-TeamCity allows collecting coverage for .NET Core projects on Linux and macOS by supporting cross-platform JetBrains dotCover, version 2019.2.3+.
+TeamCity allows collecting coverage for .NET Core projects on Linux and macOS by supporting cross-platform JetBrains dotCover, version 2019.2.3+. Thi
 
-dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, add the [cross-platform dotCover tool](https://www.nuget.org/packages/JetBrains.dotCover.DotNetCliTool) in __[Administration | Tools](installing-agent-tools.md)__ and enable the dotCover coverage in the [.NET CLI](net.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 4.6.1+ installed.
+dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, add the [cross-platform dotCover tool](https://www.nuget.org/packages/JetBrains.dotCover.DotNetCliTool) in __[Administration | Tools](installing-agent-tools.md)__ and enable the dotCover coverage in the [.NET](net.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 4.6.1+ installed.
 {product="tc"}
 
-dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, install the cross-platform dotCover tool on a build engine and enable the dotCover coverage in the [.NET CLI](net.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 4.6.1+ installed.
+dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, install the cross-platform dotCover tool on a build engine and enable the dotCover coverage in the [.NET](net.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 4.6.1+ installed.
 {product="tcc"}
 
 <note>
@@ -250,7 +250,7 @@ For Linux and macOS agents, all [additional dotCover arguments](#additional-argu
 
 </note>
 
-Starting from this version, you can also run dotCover code coverage analysis inside a Docker container, with the [Docker Wrapper](docker-wrapper.md) extension.
+You can also run dotCover code coverage analysis inside a Docker container, with the [Docker Wrapper](docker-wrapper.md) extension.
 
  <seealso>
         <category ref="troubleshooting">

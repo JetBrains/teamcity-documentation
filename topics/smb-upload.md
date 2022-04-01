@@ -41,7 +41,6 @@ Target URL
 
 The URL should point to a host \+ share at least. Subdirectories are allowed here and will be created if missing. Valid examples:
 
-
 ```Shell
 \\host\share_name
 \\host\share_name\some\path
@@ -60,7 +59,7 @@ Name resolution
 
 <td>
 
-The __DNS only name resolution__ allows switching  JCIFS to "DNS-only" mode. May fix performance or out of memory exceptions (see [this bitbucket issue](https://bitbucket.org/nskvortsov/deployer/issue/20/out-of-memory-exception) for details). Is equivalent to following JCIFS settings:
+The __DNS only name resolution__ allows switching  JCIFS to "DNS-only" mode. May fix performance or out of memory exceptions (see [this bitbucket issue](https://confluence.atlassian.com/bitbucketserverkb/how-to-debug-out-of-memory-heap-space-779171691.html) for details). Is equivalent to following JCIFS settings:
 
 ```Shell
 -Djcifs.resolveOrder=DNS
@@ -135,7 +134,7 @@ Path to sources
 
 Specify the deployment sources as a newline- or comma-separated list of paths to files/directories.
 
-The field supports [Ant-style wildcard patterns](wildcards.md#Antlike+Wildcards) (for example, `dir/**/*.zip`).   
+The field supports [Ant-style wildcard patterns](wildcards.md#Antlike+Wildcards) (for example, `dir/**/*.zip`).  
 You can also specify a target directory to be created using the `file => directory` pattern (for example, `*.zip => winFiles,unix/distro.tgz => linuxFiles` will create the `winFiles` and `linuxFiles` directories, and respectively put the declared files inside them).
 
 </td></tr></table>

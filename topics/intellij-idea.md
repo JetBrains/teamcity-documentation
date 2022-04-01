@@ -1,7 +1,7 @@
 [//]: # (title: IntelliJ IDEA)
 [//]: # (auxiliary-id: IntelliJ IDEA)
 
-The IntelliJ IDEA coverage engine in TeamCity is the same engine that is used within IntelliJ IDEA to measure code coverage. This coverage attaches to the JVM as a java agent and instruments classes on the fly when they are loaded by the JVM. In particular, it means that classes are not changed on the disk and can be safely used for distribution packages.
+The IntelliJ IDEA coverage engine in TeamCity is the same engine that is used within IntelliJ IDEA to measure code coverage. This coverage attaches to the JVM as a jJava agent and instruments classes on the fly when they are loaded by the JVM. In particular, it means that classes are not changed on the disk and can be safely used for distribution packages.
 
 The IntelliJ IDEA coverage engine currently supports Class, Method, and Line coverage. There is no Branch/Block coverage yet.
 
@@ -60,9 +60,9 @@ Use newline-separated patterns for fully qualified class names to be excluded fr
 <seealso>
         <category ref="concepts">
             <a href="build-runner.md">Build Runner</a>
-            <a href="code-coverage.md">Code Coverage</a>
         </category>
         <category ref="admin-guide">
+            <a href="configuring-test-reports-and-code-coverage.md">Configuring Test Reports and Code Coverage</a>
             <a href="configuring-java-code-coverage.md">Configuring Java Code Coverage</a>
             <a href="emma.md">EMMA</a>
         </category>

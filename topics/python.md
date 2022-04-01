@@ -124,7 +124,7 @@ Unittest
 
 <td>
 
-Launch the [unittest](https://docs.python.org/3/library/unittest.html) framework. The unit test results will be displayed on the __[Tests](working-with-build-results.md#Tests)__ tab of __Build Results__.
+Launch the [unittest](https://docs.python.org/3/library/unittest.html) framework. The unit test results will be displayed on the __[Tests](build-results-page.md#Tests+Tab)__ tab of __Build Results__.
 
 To filter the scope of processed files, you can specify the path to unit test file(s) in the additional arguments.
 
@@ -148,7 +148,7 @@ Pytest
 
 <td>
 
-Launch the [pytest](https://docs.pytest.org/en/stable/index.html) framework. The test results will be displayed on the __[Tests](working-with-build-results.md#Tests)__ tab of __Build Results__.
+Launch the [pytest](https://docs.pytest.org/en/stable/index.html) framework. The test results will be displayed on the __[Tests](build-results-page.md#Tests+Tab)__ tab of __Build Results__.
 
 To filter the scope of processed files, you can specify the path to pytest file(s) in the additional arguments.
 
@@ -172,7 +172,7 @@ Flake8
 
 <td>
 
-Launch the [Flake8](https://pypi.org/project/flake8/) wrapper. The code inspection results will be displayed on the __[Code Inspection](working-with-build-results.md#Code+Inspection+Results)__ tab of __Build Results__.
+Launch the [Flake8](https://pypi.org/project/flake8/) wrapper. The code inspection results will be displayed on the __[Code Inspection](build-results-page.md#Code+Inspection+Tab)__ tab of __Build Results__.
 
 To filter the scope of processed files, you can specify the path to Python file(s) in the additional arguments.
 
@@ -196,7 +196,7 @@ Pylint
 
 <td>
 
-Launch the [Pylint](https://pypi.org/project/pylint/) tool. The code inspection results will be displayed on the __[Code Inspection](working-with-build-results.md#Code+Inspection+Results)__ tab of __Build Results__.
+Launch the [Pylint](https://pypi.org/project/pylint/) tool. The code inspection results will be displayed on the __[Code Inspection](build-results-page.md#Code+Inspection+Tab)__ tab of __Build Results__.
 
 To filter the scope of processed files, specify the path to Python file(s) in the additional arguments.
 
@@ -317,7 +317,7 @@ Coverage
 
 </td><td>
 
-Enable code coverage collecting via [Coverage.py](https://coverage.readthedocs.io/en/coverage-5.3/). TeamCity displays the produced test report on the __[Code Coverage](working-with-build-results.md#Code+Coverage+Results)__ tab.
+Enable code coverage collecting via [Coverage.py](https://coverage.readthedocs.io/en/coverage-5.3/). TeamCity displays the produced test report on the __[Code Coverage](build-results-page.md#Code+Coverage+Tab)__ tab.
 
 </td></tr>
 
@@ -366,7 +366,7 @@ The `poetry install` command will be run for this environment tool. It will reso
 
 ### Venv and virtualenv settings
 
->If TeamCity finds the `requirements.txt` file when [autodetecting build steps](configuring-build-steps.md#Autodetecting+build+steps) from a project repository, it chooses venv as a tool for these settings by default. You can manually change it to virtualenv if necessary.   
+>If TeamCity finds the `requirements.txt` file when [autodetecting build steps](configuring-build-steps.md#Autodetecting+Build+Steps) from a project repository, it chooses venv as a tool for these settings by default. You can manually change it to virtualenv if necessary.   
 >[Read more](https://docs.python.org/3/installing/index.html#key-terms) about the differences between these tools.
 
 [Venv](https://docs.python.org/3/library/venv.html) and [virtualenv](https://virtualenv.pypa.io/en/latest/) have the following settings:

@@ -1,7 +1,7 @@
 [//]: # (title: Agent Requirements)
 [//]: # (auxiliary-id: Agent Requirements)
 
-_Agent requirements_ are special conditions that define whether a [build configuration](build-configuration.md) can run on a particular [build agent](build-agent.md). Together with grouping by [agent pools](configuring-agent-pools.md), they give you a flexible control over how builds are distributed to agents.
+_Agent requirements_ are special conditions that define whether a [build configuration](managing-builds.md) can run on a particular [build agent](build-agent.md). Together with grouping by [agent pools](configuring-agent-pools.md), they give you a flexible control over how builds are distributed to agents.
 
 To create an explicit agent requirement for a given build configuration, go to __Build Configuration Settings | Agent Requirements__ and click __Add new requirement__. Each requirement represents a conditional rule for a certain parameter. While you are entering a parameter name or value, TeamCity will show you related suggestions.
 
@@ -37,13 +37,18 @@ The priority of the build configuration's value is higher than of the value defi
 
 For example, if you define a build runner parameter as a reference to another property: `%\env.JDK_16%/lib/*.jar`, this will implicitly add an agent requirement for the referenced property: that is, `env.JDK_16` must be defined. To define such properties on the agent, you can:
 * Specify them in the [`buildAgent.properties`](configure-agent-installation.md) file.
-* Set the [environment variable](predefined-build-parameters.md#Agent+Environment+Variables) `JDK_16` on the build agent.
+* Set the [environment variable](predefined-build-parameters.md#Java-Related+Environment+Variables) `JDK_16` on the build agent.
 * Specify the value on the __Parameters__ page of a build configuration (or in the __Project Settings__). The same value of the property will be used for all build agents.
+
+## Agent Requirements Video Guide
+
+<video href="5gaoW8IfNJA"
+title="TeamCity tutorial — Agent Requirements"/>
 
  <seealso>
         <category ref="concepts">
             <a href="build-agent.md">Build Agent</a>
-            <a href="build-configuration.md">Build Configuration</a>
+            <a href="managing-builds.md">Build Configuration</a>
         </category>
         <category ref="admin-guide">
             <a href="assigning-build-configurations-to-specific-build-agents.md">Assigning Build Configurations to Specific Build Agents</a>

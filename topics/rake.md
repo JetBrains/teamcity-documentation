@@ -27,9 +27,10 @@ To use the [minitest](https://rubygems.org/gems/minitest) framework, the `minite
 </note>
 
 ## Important Notes
-* Ruby's _pending specs_ are shown as __Ignored Tests__ in the __Overwiew__ tab.
+
+* Ruby's _pending specs_ are shown as __Ignored Tests__ in the __Overview__ tab.
 * Rake Runner uses its own unit tests runner and loads it using the `RUBYLIB` environment variable. You need to ensure your program doesn't clear this environment variable, but you may append your paths to it.
-* If you run RSpec with the `--color` option enabled under Windows OS, RSpec will suggest you install the __win32console__ gem. This warning will appear in your build log, but you can ignore it. TeamCity Rake Runner doesn't support coloured output in the build log and doesn't use this feature.
+* If you run RSpec with the `--color` option enabled under Windows OS, RSpec will suggest you install the __win32console__ gem. This warning will appear in your build log, but you can ignore it. TeamCity Rake Runner doesn't support coloured output in the build log and does not use this feature.
 * Rake Runner runs spec examples with a custom formatter. If you use additional console formatter, your build log will contain redundant information.
 * `Spec::Rake::SpecTask.spec_opts` of your rakefile is affected by `SPEC_OPTS` command line parameter. Rake Runner always uses `SPEC_OPTS` to set up its custom formatter. Thus, you should set up Spec Options in Web UI. The same limitation exists for Cucumber tests options.
 * To include HTML reports into the build results, you can add the corresponding [report tab](including-third-party-reports-in-the-build-results.md) for them.
@@ -199,7 +200,7 @@ Bundler: bundle exec
 
 <td>
 
-If your project uses the [Bundler requirements](http://gembundler.com) manager and your Rakefile doesn't load the bundler setup script, this option will allow you to launch rake tasks using the `bundle exec` command emulation. If you want to execute `bundle install` command, you need to do it in the [Command Line](command-line.md) step before the _Rake_ step. Also, remember to set up the [Ruby environment configurator](ruby-environment-configurator.md) build feature to automatically pass Ruby interpreter to the command line runner.
+If your project uses the [Bundler requirements](https://bundler.io/) manager and your Rakefile doesn't load the bundler setup script, this option will allow you to launch rake tasks using the `bundle exec` command emulation. If you want to execute `bundle install` command, you need to do it in the [Command Line](command-line.md) step before the _Rake_ step. Also, remember to set up the [Ruby environment configurator](ruby-environment-configurator.md) build feature to automatically pass Ruby interpreter to the command line runner.
 
 </td></tr><tr>
 
@@ -240,7 +241,7 @@ Attached reporters
 
 <td>
 
-If you want TeamCity to display the test results on a dedicated [Tests tab](working-with-build-results.md#All+Tests) of the __Build Results__ page, select here the testing framework you use: Test::Unit, Test-Spec, Shoulda, RSpec or Cucumber.
+If you want TeamCity to display the test results on a dedicated [Tests tab](build-results-page.md#Tests+Tab) of the __Build Results__ page, select here the testing framework you use: Test::Unit, Test-Spec, Shoulda, RSpec or Cucumber.
 
 <note>
 

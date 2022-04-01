@@ -9,7 +9,7 @@ This page gives details on configuring the _.NET_ runner. For a tutorial and dem
 
 Since TeamCity 2019.2.3, the .NET CLI (dotnet) build runner has been refactored and renamed to __.NET__ thus emphasizing that now it supports all .NET-related operations previously implemented in TeamCity as multiple build runners.
 
-Note that we stop providing active support for the [MSBuild](msbuild.md), [Visual Studio (sln)](visual-studio-sln.md), [Visual Studio 2003](visual-studio-2003.md), and [Visual Studio Tests](visual-studio-tests.md) runners. These runners are left for compatibility of existing build configurations with new versions of TeamCity. To receive the following updates and use extra features of our .NET implementation, we suggest that you select the .NET runner instead of any listed runner in all corresponding build steps. This page describes the settings of all supported .NET commands and gives guidelines on migration from the obsolete build runners.
+Note that we stop providing active support for the [MSBuild](msbuild.md), [Visual Studio (sln)](visual-studio-sln.md), [Visual Studio 2003](visual-studio-2003.md), and [Visual Studio Tests](visual-studio-tests.md) runners. These runners are left for compatibility of existing build configurations with new versions of TeamCity. To receive the following updates and use extra features of our .NET implementation, we suggest that you select the .NET runner instead of any listed runner in all corresponding build steps. This page describes the settings of all supported .NET commands and gives [guidelines on migration from the obsolete build runners](#Migrating+from+Deprecated+Runners+to+.NET+Runner).
 
 </note>
 
@@ -388,52 +388,17 @@ MSBuild version
 
 <td>
 
-Specify the version of the installed MSBuild engine. See the [Requirements](#Requirements) section for more details.
+Specify the version of the installed MSBuild engine. To ensure that a specific version of native MSBuild is used (for example, in a Docker container), you need to set the path to `MSBuild.exe` in the `PATH` environment variable.
+
+See the [Requirements](#Requirements) section for more details.
+
+If you set the version in this field and choose to run the current step using Docker (with [Docker Wrapper](docker-wrapper.md)), make sure to specify the path to `MSBuild.exe` in the `PATH` environment variable. This way, the .NET runner will be able to find the required executable file even within the Docker container.
 
 </td>
 
 </tr>
 
 </table>
-
-#### Migrating from MSBuild Runner
-
-Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine. We have included the `msbuild` command to our refactored .NET runner to ensure a long-term support of the .NET platform development strategy.
-
-You can safely switch [MSBuild steps](msbuild.md) in your existing build configurations to the .NET runner. Make sure to copy all additional command-line parameters and other important settings to the new runner. See the [`msbuild`](#msbuild) section for more details on the settings available in the .NET runner.
-
-Additional features you will get in the .NET runner are:
-* Support of cross-platform MSBuild for .NET projects
-* Ability to build a project for a different platform specified in the _Runtime_ field
-* Ability to run the project in a Docker container with our [Docker Wrapper](docker-wrapper.md) extension
-
-Consider the following notes before migrating:
-* The .NET runner uses x86 run platform by default. If the x86 version is not available, it will use x64.
-* The .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md).
-* Mono is not supported with this runner.
-
-If you are actively using either Mono or NCover/PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](feedback.md).
-
-#### Migrating from Visual Studio (sln) Runner
-{id="migrating-to-net-from-sln"}
-
-The [Visual Studio (sln)](visual-studio-sln.md) build runner is using the MSBuild engine under its hood and provides a few tweaks for the VS users to ease their experience with building projects in TeamCity. Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine which makes it a migration option for the users of the Visual Studio (sln) step as well.
-
-In general, to softly switch each existing Visual Studio (sln) build step to the .NET runner you need to:
-1. Remember/copy the values of your Visual Studio (sln) runner's settings and command-line parameters.
-2. Switch the Visual Studio (sln) build step to the .NET runner and select the `msbuild` command.
-3. Fill in the fields according to the [`msbuild`](#msbuild) section.   
-Note that certain fields have different analogs in the .NET runner:
-   * The MSBuild version should be specified instead of the version and platform of Visual Studio. See the [reference on versions](https://en.wikipedia.org/wiki/MSBuild#Versions).
-   * Paths to solutions should be specified in the _Projects_ field.
-   
-Refer to the [respective section](#Migrating+from+MSBuild+Runner) for more information on migration to `msbuild`.
-
-<note>
-
-Note that TeamCity provides a new way to run Visual Studio projects. The .NET runner supports a full-featured implementation of the VS command-line mode with the `devenv` command ([read more](#Visual+Studio+Command-Line+Mode)).
-
-</note>
 
 ### vstest
 
@@ -563,24 +528,6 @@ Set the path to the [`.runsettings`](https://docs.microsoft.com/en-us/visualstud
 </tr>
 
 </table>
-
-#### Migrating from Visual Studio Tests Runner
-
-Since TeamCity 2019.2.3, the .NET runner is the recommended method for testing projects with VSTest instead of the [Visual Studio Tests](visual-studio-tests.md) runner. We have included the `vstest` command to our refactored .NET runner to ensure a long-term support of the .NET platform development strategy.
-
-You can safely migrate existing Visual Studio Tests build steps to the .NET runner with the selected `vstest` command. Make sure to copy all additional command-line parameters and other important settings to the new runner. See the [`vstest`](#vstest) section for more details on the settings available in the .NET runner.
-
-Additional features you will get in the .NET runner are:
-* Support of cross-platform VSTest for .NET projects
-* Real-time test reporting by default
-* Support of ARM platform, along with x86 and x64
-* Ability to run and test the project inside a Docker container with our [Docker Wrapper](docker-wrapper.md) extension
-
-Consider the following notes before migrating:
-* The .NET runner supports the new [`.runsettings`](https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file) format of the VSTest settings file. However, it does not support the obsolete run configuration file format used in the Visual Studio Tests runner.
-* Instead of the framework version, the .NET runner requests to specify the VSTest version.
-* The .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md). If you are actively using NCover or PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](feedback.md).
-* The .NET runner does not support the MSTest tool since all features of its framework are covered by VSTest. If you were using MSTest as the engine of the Visual Studio Tests runner, we suggest that you switch to VSTest when migrating to the .NET runner.
 
 ### nuget delete
 
@@ -895,6 +842,65 @@ The path to .NET CLI executable.
 The .NET SDK version.
 
 </td></tr></table>
+
+### Migrating from Deprecated Runners to .NET Runner
+
+### Migrating from MSBuild Runner
+
+Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine. We have included the `msbuild` command to our refactored .NET runner to ensure long-term support of the .NET platform development strategy.
+
+You can safely switch [MSBuild steps](msbuild.md) in your existing build configurations to the .NET runner. Make sure to copy all additional command-line parameters and other important settings to the new runner. See the [`msbuild`](#msbuild) section for more details on the settings available in the .NET runner.
+
+Additional features you will get in the .NET runner are:
+* Support of cross-platform MSBuild for .NET projects.
+* Ability to build a project for a different platform specified in the _Runtime_ field.
+* Ability to run the project in a Docker container with our [Docker Wrapper](docker-wrapper.md) extension.
+
+Consider the following notes before migrating:
+* The .NET runner uses x86 run platform by default. If the x86 version is not available, it will use x64.
+* The .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md).
+* Mono is not supported with this runner.
+
+If you are actively using either Mono or NCover/PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](feedback.md).
+
+### Migrating from Visual Studio (sln) Runner
+{id="migrating-to-net-from-sln"}
+
+The [Visual Studio (sln)](visual-studio-sln.md) build runner is using the MSBuild engine under its hood and provides a few tweaks for the VS users to ease their experience with building projects in TeamCity. Since TeamCity 2019.2.3, the .NET runner is the recommended method for building projects with the MSBuild engine which makes it a migration option for the users of the Visual Studio (sln) step as well.
+
+In general, to softly switch each existing Visual Studio (sln) build step to the .NET runner you need to:
+1. Remember/copy the values of your Visual Studio (sln) runner's settings and command-line parameters.
+2. Switch the Visual Studio (sln) build step to the .NET runner and select the `msbuild` command.
+3. Fill in the fields according to the [`msbuild`](#msbuild) section.   
+   Note that certain fields have different analogs in the .NET runner:
+    * The MSBuild version should be specified instead of the version and platform of Visual Studio. See the [reference on versions](https://en.wikipedia.org/wiki/MSBuild#Versions).
+    * Paths to solutions should be specified in the _Projects_ field.
+
+Refer to the [respective section](#Migrating+from+MSBuild+Runner) for more information on migration to `msbuild`.
+
+<note>
+
+Note that TeamCity provides a new way to run Visual Studio projects. The .NET runner supports a full-featured implementation of the VS command-line mode with the `devenv` command ([read more](#Visual+Studio+Command-Line+Mode)).
+
+</note>
+
+### Migrating from Visual Studio Tests Runner
+
+Since TeamCity 2019.2.3, the .NET runner is the recommended method for testing projects with VSTest instead of the [Visual Studio Tests](visual-studio-tests.md) runner. We have included the `vstest` command to our refactored .NET runner to ensure a long-term support of the .NET platform development strategy.
+
+You can safely migrate existing Visual Studio Tests build steps to the .NET runner with the selected `vstest` command. Make sure to copy all additional command-line parameters and other important settings to the new runner. See the [`vstest`](#vstest) section for more details on the settings available in the .NET runner.
+
+Additional features you will get in the .NET runner are:
+* Support of cross-platform VSTest for .NET projects.
+* Real-time test reporting by default.
+* Support of ARM platform, along with x86 and x64.
+* Ability to run and test the project inside a Docker container with our [Docker Wrapper](docker-wrapper.md) extension.
+
+Consider the following notes before migrating:
+* The .NET runner supports the new [`.runsettings`](https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file) format of the VSTest settings file. However, it does not support the obsolete run configuration file format used in the Visual Studio Tests runner.
+* Instead of the framework version, the .NET runner requests to specify the VSTest version.
+* The .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md). If you are actively using NCover or PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](feedback.md).
+* The .NET runner does not support the MSTest tool since all features of its framework are covered by VSTest. If you were using MSTest as the engine of the Visual Studio Tests runner, we suggest that you switch to VSTest when migrating to the .NET runner.
 
 ## .NET runner F.A.Q.
 

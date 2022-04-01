@@ -49,8 +49,8 @@ If the "_[Show changes from snapshot dependencies](configuring-vcs-settings.md#s
 A schedule trigger can watch a build in any specified build configuration and trigger a build only if the watched build has changed since the previous triggering. You can select which build to watch:
 * Last finished build
 * Last successful build
-* Last [pinned build](pinned-build.md)
-* Last finished build with a specified [build tag](build-tag.md)
+* Last [pinned build](build-actions.md#Pin+Build)
+* Last finished build with a specified [build tag](build-actions.md#Add+Tags+to+Build)
 
 If the trigger detects a new build that satisfies the selected characteristic in the watched configuration, it queues a new build in own configuration.
  
@@ -76,7 +76,7 @@ Use this option to run a build simultaneously on all agents that are enabled and
 
 ### Build Queue Optimization Settings
 
-By default, TeamCity [optimizes the build queue](build-queue.md#Build+Queue+Optimization+by+TeamCity): already queued build can be replaced with an already started build or a more recent queued build. You can disable this default behavior by unchecking the corresponding box.
+By default, TeamCity [optimizes the build queue](working-with-build-queue.md#Build+Queue+Optimization+by+TeamCity): already queued build can be replaced with an already started build or a more recent queued build. You can disable this default behavior by unchecking the corresponding box.
 </chunk>
 
 ### Branch Filter

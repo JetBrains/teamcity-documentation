@@ -3,6 +3,8 @@
 
 Using the _Command Line_ build runner, you can run any script supported by the OS.
 
+>See our **video guide** on how to [run command-line scripts in TeamCity](https://www.youtube.com/watch?v=oKNdLRrO3mA).
+
 ## General Settings
 
 <table><tr>

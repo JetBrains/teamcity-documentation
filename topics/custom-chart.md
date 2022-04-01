@@ -37,15 +37,17 @@ To manually create custom charts to be displayed in the TeamCity UI, configure t
 Charts can also be configured via [Kotlin DSL](kotlin-dsl.md). Example configuration:
 
 ```Plain Text
-feature {
-  id = "SampleChart"
+features {
+  projectCustomChart {
+    id = "SampleChart"
     title = "Success Rate"
     seriesTitle = "Serie"
     format = CustomChart.Format.PERCENT
     series = listOf(
         Serie(title = "Success Rate", key = SeriesKey.SUCCESS_RATE, sourceBuildTypeId = "testBuild")
-        }
-
+    )
+  }
+}
 ```
 
 See the reference on available parameters [below](#Parameters+Reference).
@@ -1053,15 +1055,12 @@ If the predefined build metrics do not cover your needs, you can report custom m
 Note that custom value keys should be unique and should not interfere with value keys predefined by TeamCity.
 
 <seealso>
-        <category ref="concepts">
-            <a href="code-coverage.md">Code Coverage</a>
-            <a href="code-inspection.md">Code Inspection</a>
-        </category>
         <category ref="user-guide">
             <a href="statistic-charts.md">Statistic Charts</a>
         </category>
         <category ref="admin-guide">
             <a href="build-script-interaction-with-teamcity.md">Build Script Interaction with TeamCity</a>
             <a href="https://plugins.jetbrains.com/docs/teamcity/custom-statistics.html">Custom Statistics</a>
+            <a href="configuring-test-reports-and-code-coverage.md">Configuring Test Reports and Code Coverage</a>
         </category>
 </seealso>

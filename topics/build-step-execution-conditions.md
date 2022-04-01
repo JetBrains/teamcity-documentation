@@ -1,7 +1,7 @@
 [//]: # (title: Build Step Execution Conditions)
 [//]: # (auxiliary-id: Build Step Execution Conditions;Build Step Conditions)
 
-When configuring a build step, you can choose a general [execution policy](configuring-build-steps.md#Execution+policy) and, since TeamCity 2020.1, add a parameter-based _execution condition_.
+When configuring a build step, you can choose a general [execution policy](configuring-build-steps.md#Execution+Policy) and, since TeamCity 2020.1, add a parameter-based _execution condition_.
 
 Execution conditions make builds more flexible and address many common use cases, such as:
 * running the step only in the default branch
@@ -12,7 +12,8 @@ You can quickly select any of the available common options in the build step __A
 
 <img src="execution-conditions.png" alt="Build step execution condition"/>
 
-Alternatively, select the __Other condition__ option to add the _parameter-based execution condition_, which is a [logical condition](requirement-conditions.md) that takes on input any [build parameter](configuring-build-parameters.md) provided by the TeamCity server or agent. For example, select the `teamcity.agent.jvm.os.name` parameter and set the condition to "contains `Windows`" to run the current build step only on agents that run on Windows.
+Alternatively, select the __Other condition__ option to add the _parameter-based execution condition_, which is a logical condition that takes on input any [build parameter](configuring-build-parameters.md) provided by the TeamCity server or agent. For example, select the `teamcity.agent.jvm.os.name` parameter and set the condition to "contains `Windows`" to run the current build step only on agents that run on Windows.  
+**See the reference on available conditions [here](requirement-conditions.md).**
 
 If you declare multiple execution conditions, the build step will be executed only if __all__ of them are satisfied in the current build run.
 

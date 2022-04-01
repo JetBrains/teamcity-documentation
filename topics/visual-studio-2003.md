@@ -5,7 +5,7 @@
 
 Since version 2020.2, the Visual Studio 2003 build runner is discontinued and disabled in TeamCity.
 
-We recommend switching to the [.NET build runner](net.md) instead. If you were actively using the VS 2003 runner and cannot easily migrate to the .NET runner, please let us know about it via any of our [feedback channels](https://teamcity-support.jetbrains.com/hc/en-us).
+We recommend switching to the [.NET build runner](net.md) instead. If you were actively using the VS 2003 runner and cannot easily migrate to the .NET runner, please let us know about it via any of our [feedback channels](https://teamcity-support.jetbrains.com/hc/en-us){nullable="true"}.
 
 </note>
 
@@ -143,7 +143,7 @@ http://localhost:8111=myProjectPath/myProject
 
 where
 
-* [`http://localhost:8111`](http://localhost:8111) is the host where the project will be uploaded
+* [`http://localhost:8111`](http://localhost:8111){nullable="true"} is the host where the project will be uploaded
 * `myProjectPath/myProject` is the project root
 
 
@@ -287,6 +287,6 @@ If checked, in the first place TeamCity will run tests failed in previous finish
 
 <seealso>
         <category ref="admin-guide">
-            <a href="nunit-for-msbuild.md">NUnit for MSBuild</a>
+            <a href="nunit-support.md#Using+NUnit+for+MSBuild">NUnit for MSBuild</a>
         </category>
 </seealso>

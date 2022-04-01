@@ -22,7 +22,7 @@
         <accepts>build-agent-configuration.html</accepts>
     </rule>
     <rule id="upgrade-dsl">
-        <accepts>upgrading-dsl.html</accepts>
+        <accepts>upgrade-dsl.html</accepts>
     </rule>
     <rule id="cleanup">
             <accepts>clean-up.html</accepts>
@@ -45,13 +45,67 @@
     </rule>
     <rule id="managing-user-roles-and-permissions">
             <accepts>role-and-permission.html</accepts>
-            <accepts>role-and-permission.html</accepts>
+            <accepts>managing-roles.html</accepts>
     </rule>
     <rule id="adding-notification-rules">
             <accepts>subscribing-to-notifications.html</accepts>
     </rule>
     <rule id="customizing-notification-templates">
             <accepts>customizing-notifications.html</accepts>
+    </rule>
+    <rule id="levels-and-priority-of-parameters">
+        <accepts>project-and-agent-level-build-parameters.html</accepts>
+    </rule>
+    <rule id="configuring-test-reports-and-code-coverage">
+            <accepts>code-inspection.html</accepts>
+            <accepts>code-coverage.html</accepts>
+            <accepts>configuring-unit-testing-and-code-coverage.html</accepts>
+    </rule>
+    <rule id="nunit-support">
+        <accepts>teamcity-nunit-test-launcher.html</accepts>
+        <accepts>nunit-for-nant-build-runner.html</accepts>
+        <accepts>nunit-for-msbuild.html</accepts>
+        <accepts>msbuild-service-tasks.html</accepts>
+        <accepts>nunit-addins-support.html</accepts>
+        <accepts>teamcity-addin-for-nunit.html</accepts>
+    </rule>
+    <rule id="azure-devops-server">
+        <accepts>team-foundation-server.html</accepts>
+    </rule>
+    <rule id="azure-board-work-items">
+        <accepts>team-foundation-work-items.html</accepts>
+    </rule>
+    <rule id="rest-api">
+        <accepts>rest-api.html</accepts>
+        <accepts>rest-api-reference.html</accepts>
+    </rule>
+    <rule id="integrating-teamcity-with-perforce">
+        <accepts>perforce-streams-as-feature-branches.html</accepts>
+    </rule>
+    <rule id="configuring-agent-pools">
+        <accepts>agent-pool.html</accepts>
+    </rule>
+    <rule id="working-with-build-results">
+        <accepts>viewing-build-configuration-details.html</accepts>
+    </rule>
+    <rule id="working-with-build-queue">
+        <accepts>build-queue.html</accepts>
+        <accepts>ordering-build-queue.html</accepts>
+    </rule>
+    <rule id="build-actions">
+        <accepts>changing-build-status-manually.html</accepts>
+        <accepts>build-tag.html</accepts>
+        <accepts>pinned-build.html</accepts>
+    </rule>
+    <rule id="viewing-tests-and-configuration-problems">
+        <accepts>already-fixed-in.html</accepts>
+        <accepts>first-failure.html</accepts>
+    </rule>
+    <rule id="build-configuration-home-page">
+        <accepts>maven-related-data.html</accepts>
+    </rule>
+    <rule id="build-results-page">
+        <accepts>build-history.html</accepts>
     </rule>
 
 </rules>

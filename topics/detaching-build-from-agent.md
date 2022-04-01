@@ -5,7 +5,7 @@ If a final step of a build triggers some external service and the build does not
 
 ## Releasing build agent
 
-To release its current build agent, a runner needs to send the `##teamcity[buildDetachedFromAgent]` [service message](service-messages.md). After receiving this message, the agent skips all the following steps of the build, unless they have the "_[Always, even if build stop command was issued](configuring-build-steps.md#Execution+policy)_" execution policy enabled. If necessary, you can enable it for mandatory final steps — the agent will be released only after completing them.
+To release its current build agent, a runner needs to send the `##teamcity[buildDetachedFromAgent]` [service message](service-messages.md). After receiving this message, the agent skips all the following steps of the build, unless they have the "_[Always, even if build stop command was issued](configuring-build-steps.md#Execution+Policy)_" execution policy enabled. If necessary, you can enable it for mandatory final steps — the agent will be released only after completing them.
 
 >Alternatively to using service messages, you can write own server-side plugin that will be polling an external service for a build status. Use the `jetbrains.buildServer.serverSide.agentless.DetachedBuildStatusProvider` extension point for this. Read more about developing custom plugins in [TeamCity Plugin Help](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).
 
@@ -23,7 +23,7 @@ To perform a request, it needs to provide:
 * [build-level authentication](artifact-dependencies.md#Build-level+authentication) credentials specified as [build system properties](configuring-build-parameters.md):
    * username: `%\system.teamcity.auth.userId%`
    * password: `%\system.teamcity.auth.password%`
-* [build ID](working-with-build-results.md#Internal+Build+ID): `%\teamcity.build.id%`
+* [build ID](build-results-page.md#Internal+Build+ID): `%\teamcity.build.id%`
 * TeamCity server URL: `%\teamcity.serverUrl%`
 
 An agent should send these parameters to the external software in advance, before being released.
@@ -34,7 +34,7 @@ To log messages, use the following call:
 
 ```shell script
 POST /app/rest/builds/id:<build_id>/log 
-(curl -v --basic --user <username>:<password> --request POST http://<teamcity.url>/app/rest/builds/id:<build_id>/log --data <message> --header "Content-Type: text/plain")
+(curl -v --basic --user <username>:<password> --request POST <teamcity.url>/app/rest/builds/id:<build_id>/log --data <message> --header "Content-Type: text/plain")
 ```
 
 Here, you can send any [service message](service-messages.md) as `<message>`.
@@ -56,14 +56,14 @@ To finish a build, use the following call:
 
 ```shell script
 PUT /app/rest/builds/id:<build_id>/finish
-(curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finish)
+(curl -v --basic --user <username>:<password> --request PUT <teamcity.url>/app/rest/builds/id:<build_id>/finish)
 ```
 
 Alternatively, you can finish it by sending the exact finish date as a non-empty string in the `yyyyMMdd'T'HHmmssZ` format:
 
 ```shell script
 PUT /app/rest/builds/id:<build_id>/finishDate
-(curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finishDate --data "20201231T235959+0000" --header "Content-Type: text/plain")
+(curl -v --basic --user <username>:<password> --request PUT <teamcity.url>/app/rest/builds/id:<build_id>/finishDate --data "20201231T235959+0000" --header "Content-Type: text/plain")
 ```
 
 >If you need to end a build as "Failed", log the `buildProblem` message, as described [here](service-messages.md#Reporting+Build+Problems).

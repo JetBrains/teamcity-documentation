@@ -181,7 +181,7 @@ Agent pool
 
 <td>
 
-Assign the launched instances to a specific [agent pool](agent-pool.md).
+Assign the launched instances to a specific [agent pool](configuring-agent-pools.md).
 
 </td>
 

@@ -17,7 +17,7 @@ For common VCS root properties, see [this section](configuring-vcs-roots.md#Comm
 
 __Important notes__:
 
-* [Remote Run](remote-run.md) and [Pre-Tested Commit](pre-tested-delayed-commit.md) are supported in the [IntelliJ IDEA](intellij-platform-plugin.md) and [Eclipse](eclipse-plugin.md) plugins; with the [Visual Studio Addin](visual-studio-addin.md) use the [Branch Remote Run Trigger](branch-remote-run-trigger.md).
+* [Remote Run](remote-run.md) and [Pre-Tested Commit](pre-tested-delayed-commit.md) are supported in the [IntelliJ IDEA](intellij-platform-plugin.md) and [Eclipse](eclipse-plugin.md) plugins; with the [Visual Studio Add-in](visual-studio-addin.md) use the [Branch Remote Run Trigger](branch-remote-run-trigger.md).
 * Initial Git [checkout](build-checkout-directory.md#Checkout+Process) may take significant time (sometimes hours), depending on the size of your project history, because the whole project history is downloaded during the initial checkout.
 
 ## General Settings
@@ -68,11 +68,11 @@ Default branch
 
 <td id="defaultBranch">
 
-Configures [default branch](working-with-feature-branches.md#Default+branch). Parameter references are supported here. Default value is `refs/heads/master`.
+Configures [default branch](working-with-feature-branches.md#Default+Branch). Parameter references are supported here. Default value is `refs/heads/master`.
 
 <note>
 
-You can configure Git-plugin to fetch all heads by [adding a build configuration parameter](configuring-build-parameters.md#Defining+Build+Parameters+in+Build+Configuration) `teamcity.git.fetchAllHeads=true`.
+You can configure Git-plugin to fetch all heads by [adding a build configuration parameter](configuring-build-parameters.md#Custom+Build+Parameters) `teamcity.git.fetchAllHeads=true`.
 </note>
 
 
@@ -86,7 +86,7 @@ Branch specification
 
 <td>
 
-Lists the patterns for branch names, required for [feature branches](working-with-feature-branches.md#Configuring+branches) support. The matched branches are monitored for changes in addition to the default branch. The syntax is similar to checkout rules: `+|-:branch_name`, where `branch_name` is specific to the VCS, i.e. `refs/heads/` in Git (with the optional `*` placeholder).
+Lists the patterns for branch names, required for [feature branches](working-with-feature-branches.md#Configuring+Branches) support. The matched branches are monitored for changes in addition to the default branch. The syntax is similar to checkout rules: `+|-:branch_name`, where `branch_name` is specific to the VCS, i.e. `refs/heads/` in Git (with the optional `*` placeholder).
 
 <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
@@ -162,7 +162,7 @@ The SCP-like syntax requires a colon after the hostname, while a usual SSH URL d
 </note>
 
 * Git: (for example, [`git://git.kernel.org/pub/scm/git/git.git`](git://git.kernel.org/pub/scm/git/git.git))
-* HTTP: (for example, [`http://git.somewhere.org/projects/test.git`](http://git.somewhere.org/projects/test.git))
+* HTTP: (for example, [`http://git.somewhere.org/projects/test.git`](http://git.somewhere.org/projects/test.git){nullable="true"})
 * file: (for example, [`file:///c:/projects/myproject/.git`](file:///c:/projects/myproject/.git))
 
 <note>
@@ -210,8 +210,7 @@ Specify a valid __username__ (if there is no username in the clone URL; the user
 For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](http://youtrack.jetbrains.com/issue/TW-18711).    
 For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
 
-You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, and Bitbucket.   
-Note that TeamCity does not support token authentication to hosted [Azure DevOps Server](https://azure.microsoft.com/en-in/services/devops/server/) (formerly, Team Foundation Server) installations.
+You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, and Bitbucket. When connecting to Azure DevOps, remember to set the _Code_ access scope to _Code (read) / Code (read and write) for versioned settings_ in the repositories you are about to access from TeamCity.
 
 >Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
 >We highly recommend that you use an access token or SSH key instead of password when configuring a VCS root for a GitHub.com repository.
@@ -248,9 +247,7 @@ For all available options to connect to GitHub, see the [comment](http://youtrac
 
 ## Authenticating to Azure DevOps Services
 
-If you use Git source control with Azure DevOps Services, the following options are available to you:
-
-<include src="team-foundation-server.md" include-id="azure-authentication"/>
+If you use Git source control with Azure DevOps Services, see the available options [here](azure-devops.md#Authentication+in+Azure+DevOps).
 
 ## Server Settings
 
@@ -413,8 +410,8 @@ This way, builds will run significantly faster, with no need to check out the wh
 ## Configuring Git Garbage Collection on Server
 {id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server" product="tc"}
 
-TeamCity server maintains a local clone for every Git repository used in the VCS roots configured on the server. Since the server performs fetch in those clones many times a day, the clone needs regular optimization to maintain predictable performance. If the Git garbage collection for the clone was not run for a long time, the process of collecting changes may slow down or start to report memory-related errors.
-TeamCity can automatically run git gc periodically when native Git client can be found on the server. Inability to run Git GC results in a related health report.
+TeamCity server maintains a local clone for every Git repository used in the VCS roots configured on the server. Since the server performs fetch in those clones many times a day, the clone needs regular optimization to maintain predictable performance. If the Git garbage collection for the clone was not run for a long time, the process of collecting changes may slow down or start to report memory-related errors.  
+TeamCity can automatically run `git gc` periodically when the native Git client can be found on the server. Inability to run Git GC results in a related health report.
 
 To fix the warning / meet automatic git gc requirements, perform the following:
 1. Install a native Git client manually on the TeamCity server.
@@ -425,7 +422,7 @@ To fix the warning / meet automatic git gc requirements, perform the following:
 When TeamCity runs Git garbage collection, the details are logged into the [`teamcity-cleanup.log`](teamcity-server-logs.md). If git garbage collection fails, a corresponding warning is displayed.
 
 TeamCity executes Git garbage collection until the total time doesn't exceed 5 hours quota; the quota can be changed using the `teamcity.server.git.gc.quota.minutes` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).   
-Git garbage collection is executed every night at 2 a.m., this can be changed by specifying the internal property with a cron expression like this: `teamcity.git.cleanupCron=0 0 2 * * ?`. If the `git gc` process works slowly and cannot be completed in the allotted time, check the `git-repack` configuration in the default Git configuration files (for example, you can increase `--window-memory` to improve the `git gc` performance).
+Git garbage collection is executed every night at 2 AM. This can be changed by specifying the internal property with a cron expression like this: `teamcity.git.cleanupCron=0 0 2 * * ?`. If the `git gc` process works slowly and cannot be completed in the allotted time, check the `git-repack` configuration in the default Git configuration files (for example, you can increase `--window-memory` to improve the `git gc` performance).
 
 If the local Git clones need some kind of manual maintenance, you can find them under the `<TeamCity Data Directory>/system/caches/git` directory. The `map` file in the directory contains mapping between the repository URL and the subdirectory storing the bare clone of the repository.
 
@@ -656,7 +653,7 @@ teamcity.git.cleanupCron
 
 <td>
 
-[Cron expression](http://quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger) for the time of a clean-up in git-plugin, by default — daily at 2AM.
+[Cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) for the time of a clean-up in git-plugin, by default — daily at 2AM.
 
 </td></tr><tr>
 
@@ -675,7 +672,6 @@ teamcity.git.stream.file.threshold.mb
 <td>
 
 Threshold in megabytes after which JGit uses streams to inflate objects. Increase it if you have large binary files in the repository and see symptoms described in [TW-14947](http://youtrack.jetbrains.com/issue/TW-14947)
-
 
 </td></tr><tr>
 

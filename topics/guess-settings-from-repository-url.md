@@ -75,7 +75,7 @@ __Azure__
 Recommended URL formats:
 
 * `http[s]://<tfs_server>:<port>/<collection name>$/<project_path>` or `http[s]://<tfs_server>:<port>/tfs/<collection name>/<project_name>`    
-For example: [`http://tfshost:8080/tfs/DefaultCollection$/Project/root`](http://tfshost:8080/tfs/DefaultCollection$/Project/root)
+For example: [`http://tfshost:8080/tfs/DefaultCollection$/Project/root`](http://tfshost:8080/tfs/DefaultCollection$/Project/root){nullable="true"}
 
 * for Azure DevOps Services (or, formerly, Visual Studio Team Services): `https://<url_to_visualstudio.com>/<project_name>` or `https://<url_to_visualstudio.com>/$/<project_path>`    
 For example: [`https://username.visualstudio.com/Project`](https://username.visualstudio.com/Project)

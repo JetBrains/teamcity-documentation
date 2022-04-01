@@ -74,6 +74,5 @@ The tab lists system properties, environment variables, and configuration parame
         </category>
         <category ref="concepts">
             <a href="build-agent.md">Build Agent</a>
-            <a href="run-configuration-policy.md">Run Configuration Policy</a>
         </category>
 </seealso>

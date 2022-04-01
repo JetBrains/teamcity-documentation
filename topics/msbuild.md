@@ -13,17 +13,13 @@ However, we will unbundle this runner after a sufficient transition period. In t
 
 This page contains reference information for the _MSBuild_ build runner fields.
 
-<note>
-
 The MSBuild runner requires .NET Framework or Mono installed on the build agent. [Microsoft Build Tools](https://devblogs.microsoft.com/visualstudio/msbuild-is-now-part-of-visual-studio/) 2013-2019 are supported.
 
 Before setting up a build configuration to use MSBuild as the build runner, make sure you are using an XML build project file with the MSBuild runner.
 
 To build a Microsoft Visual Studio solution file, you can use the [Visual Studio (sln)](visual-studio-sln.md) build runner.
 
-</note>
-
-## General Build Runner Options
+## Settings
 
 <table><tr>
 
@@ -43,8 +39,7 @@ Description
 
 <td>
 
- Build file path
-
+Build file path
 
 </td>
 
@@ -57,7 +52,6 @@ Specify the path to the solution to be built relative to the [build checkout dir
 <td>
 
 Working directory
-
 
 </td>
 
@@ -109,7 +103,7 @@ Run platform
 
 <td>
 
-From the drop\-down list select the desired execution mode on a x64 machine.
+From the drop-down menu, select the desired execution mode on a x64 machine.
 
 
 </td></tr><tr>
@@ -162,10 +156,12 @@ Use this option to instruct TeamCity to run the tests which failed in the previo
 
 To learn about configuring code coverage options, refer to the [Configuring .NET Code Coverage](configuring-.net-code-coverage.md) page.
 
-## Implementation notes
+## Implementation Notes
 {product="tc"}
 
 The MSBuild runner generates an MSBuild script that includes the user's script. This script is used to add TeamCity-provided MSBuild tasks. Your MSBuild script will be included with the &lt;Import&gt; task. If you specified a Visual Studio solution file, it will be called from the &lt;MSBuild&gt; task. To disable it, set the `teamcity.msbuild.generateWrappingScript` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `false`.
+
+As this runner is deprecated, it no longer supports some legacy tools like MSBuildBootstrap. To perform custom tasks within a build, consider using [TeamCity service messages](service-messages.md). For example, use `<Message Text="##teamcity[buildNumber '1.2.3']" Importance="high" />` to print text in the standard output stream of build log.
 
 <seealso>
         <category ref="concepts">
@@ -173,7 +169,7 @@ The MSBuild runner generates an MSBuild script that includes the user's script. 
             <a href="build-checkout-directory.md">Build Checkout Directory</a>
         </category>
         <category ref="admin-guide">
-            <a href="nunit-for-msbuild.md">NUnit for MSBuild</a>
-            <a href="msbuild-service-tasks.md">MSBuild Service Tasks</a>
+            <a href="nunit-support.md#Using+NUnit+for+MSBuild">NUnit for MSBuild</a>
+            <a href="nunit-support.md#MSBuild+Service+Tasks">MSBuild Service Tasks</a>
         </category>
 </seealso>

@@ -7,6 +7,10 @@ To add a connection, go the target project's settings, open the __Connections__ 
 
 When created, a connection can be used in all the nested subprojects of the current project. If you add a connection in the Root project, it will become available on the whole server.
 
+If your TeamCity server is [installed behind a proxy](configuring-proxy-server.md), it is important to ensure that this is reflected in the connection settings, if applicable. When configuring a callback URL for a connection, you need to specify all URLs by which the current server can be accessed.  
+After configuring the proxy, remember to also set the new address as the _Server URL_ in __Global Settings__ of TeamCity.
+{product="tc"}
+
 ## Azure DevOps
 
 <chunk include-id="azure-devops">
@@ -36,7 +40,7 @@ To activate the Azure DevOps Services authentication on your server, proceed to 
 
 #### Azure DevOps PAT Connection
 
-This type of connection uses personal access tokens. It allows creating a [project from a Git or TFVC repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), creating a [TFS VCS root](team-foundation-server.md), or integrating with the [Team Foundation Work Items](team-foundation-work-items.md) tracker.
+This type of connection uses personal access tokens. It allows creating a [project from a Git or TFVC repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), creating an [Azure DevOps VCS root](azure-devops.md), or integrating with the [Azure Board Work Items](azure-board-work-items.md) tracker.
 
 To configure an Azure DevOps PAT connection:
 1. In __Project Administration | Connections__, click __Add Connection__.
@@ -44,10 +48,10 @@ To configure an Azure DevOps PAT connection:
    The page that opens provides the parameters to be used when connecting TeamCity to Azure DevOps Services.
 3. Log in to your Azure DevOps Services account to create a personal access token with _All scopes_ as described in the [Microsoft documentation](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
 4. Continue configuring the connection in TeamCity: on the __Add Connection__ page that is open, specify
-   * the server URL in the `https://{account}.visualstudio.com` format or your Team Foundation Server web portal as `https://{server}:8080/tfs/`
+   * the server URL in the `https://{account}.visualstudio.com` format or your Azure DevOps Server as `https://{server}:8080/tfs/`
    * your personal access token
 5. Save the connection settings.
-6. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [TFS](team-foundation-server.md) VCS root, create [Team Foundation Work Items](team-foundation-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all the resources that are available to you.   
+6. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Azure DevOps Server](azure-devops.md) VCS root, create [Azure Board Work Items](azure-board-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all the resources that are available to you.   
    When configuring Commit Status Publisher for Git repositories hosted in TFS/VSTS, the personal access token can be filled out automatically if a VSTS project connection is configured.
 
 >It is possible to configure several VSTS connections. In this case, the server URL will be displayed next to the VSTS icon to distinguish the server in use.
@@ -302,6 +306,8 @@ Save the connection and proceed with adding a [Notifier](notifications.md#Slack+
 ## JetBrains Space
 {id="connect-to-jetbrains-space" auxiliary-id="Connect to JetBrains Space"}
 
+>If you are looking for how to integrate your JetBrains Space instance with TeamCity, check out this **[full integration guide](how-to-configure-cicd-for-jetbrains-space.md)**!
+
 This type of connection can be used for:
 * publishing build statuses in [JetBrains Space](https://www.jetbrains.com/space/) with the help of [Commit Status Publisher](commit-status-publisher.md)
 * [authenticating in TeamCity](configuring-authentication-settings.md#JetBrains+Space) with a JetBrains Space account
@@ -322,7 +328,7 @@ Before configuring this connection, you need to create a dedicated application i
    To ensure that your TeamCity server can always connect to JetBrains Space, specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
 8. Copy the app's _Client ID_ and _Client secret_.
 
-__Note__: When you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you (or the user who created the application in Step 1) are listed as a member.
+__Note__: When you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you are listed as a member.
 
 Now you can return to TeamCity, add a new JetBrains Space connection, and enter the following connection parameters:
 * URL of the Space server
@@ -385,3 +391,14 @@ Save the connection and proceed with adding an [NPM Registry Connection](nodejs.
 ## Perforce Administrator Access
 
 This type of connection allows [processing task streams on your Perforce server](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server). In the connection settings, enter the host and user credentials for accessing the Perforce server (the user must have the [admin](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels) permission).
+
+ <seealso>
+        <category ref="admin-guide">
+            <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>
+            <a href="creating-and-editing-projects.md">Creating and Editing Projects</a>
+            <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
+        </category>
+        <category ref="examples">
+            <a href="how-to-configure-cicd-for-jetbrains-space.md">How to Configure CI/CD for JetBrains Space</a>
+        </category>
+</seealso>

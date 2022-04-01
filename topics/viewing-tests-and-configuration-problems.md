@@ -1,5 +1,5 @@
 [//]: # (title: Viewing Tests and Configuration Problems)
-[//]: # (auxiliary-id: Viewing Tests and Configuration Problems)
+[//]: # (auxiliary-id: Viewing Tests and Configuration Problems;Already Fixed In;First Failure)
 
 ## Viewing Problems on Project Overview Page
 
@@ -79,7 +79,28 @@ As with any failed test, you can assign investigations for a flaky test (or mult
 
 >Investigation Auto Assigner can [delay automatic assignment of investigations](investigations-auto-assigner.md#delay-auto-assign), which prevents wrong auto assignments in projects with flaky tests.
 
-Note that if [branches](working-with-feature-branches.md#Configuring+branches) are configured for a VCS Root, flaky tests are detected for the default branch only.
+Note that if [branches](working-with-feature-branches.md#Configuring+Branches) are configured for a VCS Root, flaky tests are detected for the default branch only.
+
+## See Where Test is Already Fixed In
+
+For some [test failures](viewing-tests-and-configuration-problems.md), TeamCity can show the "_Already Fixed In_" build. This is the build where this initially failed test was successful and which was run _after_ the build with initial test failure (for the same <emphasis tooltip="build-configuration">build configuration</emphasis>).
+
+Here, _after_ means that:
+* The build with the successful test has newer changes than the build with initial failure.
+* If the changes were the same, the newer build was run after the failed one.
+
+If you run a [history build](history-build.md), TeamCity will not consider it as a candidate for "_Already Fixed In_" for test failures in later builds (in terms of changes).
+
+Tests are considered the same when they have the same name. If there are several tests with the same name within the build, TeamCity counts order number of the test with the same name and considers it as well.
+
+Note that all invocations of the same test within a single build are counted as 1.
+
+## See Where Test First Failed
+
+TeamCity displays the "_First Failure_" build for some tests. This is the build where TeamCity detected the first failure of this test for the same [build configuration](managing-builds.md), which means that starting from the current build, TeamCity goes back throughout the build history to find out when this test failed for the first time. Builds without this test are skipped, and if a successful test run was found, the search stops.  
+Here, _back throughout the history_ means that builds are analyzed with regard to changes as detected by TeamCity; as a result, [history builds](history-build.md) will be processed correctly.
+
+A test which runs several times within a single build is counted as one test (that is all invocations of the same test are counted as one).
 
 <seealso>
         <category ref="concepts">

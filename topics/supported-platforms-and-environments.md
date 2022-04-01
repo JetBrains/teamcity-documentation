@@ -18,6 +18,11 @@ Supported Java versions: __OpenJDK and Oracle Java 8 (8u16 or later) and 11 (32 
 The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 11__.  
 For Apple M1 systems, consider using a different version of Java 11, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
 
+>Java 8 support will be discontinued since TeamCity Server 2022.04 (to be released in April 2022). If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 until this release.  
+>Note that TeamCity is not currently compatible with Java 17, which makes Java 11 the only version planned for support in TeamCity Server 2022.04.
+> 
+{type="warning"}
+
 #### Supported Platforms
 {id="Supported+Platforms+for+TeamCity+Server" auxiliary-id="Supported+Platforms+for+TeamCity+Server"}
 
@@ -504,13 +509,13 @@ For automatic `git gc` support and maintenance of Git clones, requires a Git cli
 
 </td><td></td><td>
 
-A Perforce client installed on the server. See also [Perforce compatibility issues](perforce-helix-core-compatibility.md).
+A Perforce Helix Core client installed on the server. See [Perforce compatibility issues](integrating-teamcity-with-perforce.md#Perforce+Helix+Core+Compatibility).
 
 </td></tr>
 
 <tr><td>
 
-Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
+[Azure DevOps](azure-devops.md)
 
 </td><td>2005, 2008, 2010, 2012, 2013, 2015, 2017</td><td></td></tr>
 
@@ -562,7 +567,7 @@ Other VCSs can be supported in TeamCity via [external plugins](https://plugins.j
 
 <tr><td>
 
-Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
+[Azure DevOps](azure-devops.md)
 
 </td><td>2005-2015, 2017</td><td></td></tr>
 
@@ -585,7 +590,7 @@ Azure DevOps Server, or [Team Foundation Server](team-foundation-server.md)
 * Git
 * Subversion
 * Perforce
-* Azure DevOps Server, Team Foundation Server
+* Azure DevOps
 * Mercurial
 * CVS
 {product="tc"}
@@ -661,7 +666,7 @@ Available as non-bundled plugins:
 
 <tr><td>
 
-[Azure DevOps Server](team-foundation-work-items.md) (formerly Team Foundation Server — supported version 2012 or later), and Azure DevOps Services
+[Azure DevOps Server](azure-board-work-items.md) (formerly Team Foundation Server — supported version 2012 or later), and Azure DevOps Services
 
 </td><td></td></tr>
 
@@ -756,7 +761,7 @@ Supported VCS
 * Subversion
 * Perforce
 * Git (remote run only)
-* Azure DevOps Server, or formerly Team Foundation Server
+* Azure DevOps, or formerly Team Foundation Server
 
 </td></tr><tr>
 
@@ -769,7 +774,7 @@ Supported VCS
 <td>
 
 * Subversion 1.4-1.11 (the command-line client is required); note that 1.10-1.11 is supported since ReSharper 2018.3.
-* Azure DevOps Server (formerly Team Foundation Server — supported version 2005 or later). Installed Team Explorer is required.
+* Azure DevOps (formerly Team Foundation Server — supported version 2005 or later). Installed Team Explorer is required.
 * Perforce 2008.2 or later (the command-line client is required).
 
 </td></tr></table>

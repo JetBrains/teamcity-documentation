@@ -1,10 +1,12 @@
 [//]: # (title: VCS Checkout Rules)
 [//]: # (auxiliary-id: VCS Checkout Rules)
 
-_VCS checkout rules_ allow you to check out a part of the configured VCS root and to map directories from the version control to subdirectories in the [build checkout directory](build-checkout-directory.md) on a build agent. Thus, you can define a VCS root for the entire repository and instruct each build configuration check out only the relevant part of it.
+_VCS checkout rules_ allow you to check out a part of the configured VCS root and to map directories from the version control to subdirectories in the [build checkout directory](build-checkout-directory.md) on a build agent. Thus, you can define a VCS root for the entire repository and instruct each build configuration to check out only the relevant part of it.
 
 The checkout rules affect what build changes are displayed in the UI and what files are checked out for a build on the agent. If a commit does not match any of the checkout rule patterns of the build's VCS root, TeamCity will completely ignore it. Such change will not be displayed as pending and will not be able to trigger any builds in the current configuration.    
 To display changes but not to trigger a build on a commit, use [VCS trigger rules](configuring-vcs-triggers.md#vcs-trigger-rules-1).
+
+>Watch our **video guide** on the [difference between the checkout and trigger rules](https://www.youtube.com/watch?v=nhYOo7Rk4DM).
 
 >If a [dependent build](dependent-build.md) (1) has a [VCS trigger](configuring-vcs-triggers.md) that monitors changes in its [snapshot dependency](snapshot-dependencies.md) build and (2) shares a VCS root with this dependency, its checkout rules' scope should cover the scope of rules of this dependency. That is, each commit relevant for a dependency must be also relevant for the dependent build.
 >
@@ -47,7 +49,7 @@ If no rule is specified, all files are included.
 When you start entering a rule, note that as soon as you enter any `+:` rule, TeamCity will remove the default "include all" setting.   
 To include all the files explicitly, use the `+:.` rule.
 
-Note that exclude checkout rules (in the form of `-:`) will generally only speed up server-side checkouts, unless you use [Perforce](perforce.md) and [TFS](team-foundation-server.md) agent-side checkout, where exclude rules are processed effectively.   
+Note that exclude checkout rules (in the form of `-:`) will generally only speed up server-side checkouts, unless you use [Perforce](perforce.md) and [TFS](azure-devops.md) agent-side checkout, where exclude rules are processed effectively.   
 With other version control systems, agent-side checkouts may emulate the exclude checkout rules by checking out all the root directories mentioned as include rules and deleting the excluded directories. With such systems, exclude checkout rules should generally be avoided for the agent-side checkout. Refer to the [VCS Checkout Mode](vcs-checkout-mode.md) page for more information.   
 With Git agent-side checkout, TeamCity translates some checkout rules to the sparse checkout patterns. See the details in [Git](git.md#Limitations).
 

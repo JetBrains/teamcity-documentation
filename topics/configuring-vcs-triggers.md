@@ -63,7 +63,9 @@ Note that when a build is triggered by a trigger with the VCS quiet period set, 
 
 <chunk include-id="vcs-trigger-rules">
 
-If no trigger rules are specified, a build is triggered upon any change detected for the build configuration. You can control what changes are detected by changing the VCS root settings and specifying [Checkout Rules](vcs-checkout-rules.md).
+If no trigger rules are specified, a build is triggered upon any change detected for the build configuration. You can control what changes are detected by changing the VCS root settings and specifying [checkout rules](vcs-checkout-rules.md).
+
+>Watch our **video guide** on the [difference between the checkout and trigger rules](https://www.youtube.com/watch?v=nhYOo7Rk4DM).
 
 To limit the changes that trigger the build, use the VCS trigger rules. You can add these rules manually in the text area (one per line), or use the __Add new rule__ option to generate them.
 
@@ -158,7 +160,7 @@ Excludes all `.html` files from triggering a build.
  
 <td>
  
-Excludes builds being triggered by `.xml` files checked in by the [VCS user](creating-and-managing-users.md#VCS+Usernames) "techwriter" to the `misc/doc` directory of the VCS root named _Internal SVN_ (as defined in the VCS Settings). Note that the path is absolute (starts with "/"), thus the file path is matched from the VCS root.
+Excludes builds being triggered by `.xml` files checked in by the [VCS user](creating-and-managing-users.md#VCS+Usernames) `techwriter` to the `misc/doc` directory of the VCS root named `Internal SVN` (as defined in the VCS Settings). Note that the path is absolute (starts with `/`), thus the file path is matched from the VCS root.
  
 </td></tr>
  
@@ -181,8 +183,8 @@ Prevents the build from triggering by updates to the `lib` directory of the buil
 
 </td>
 <td>
- 
-Prevents the build from triggering, if the changes check contains the word "minor" in the comment.
+
+Prevents the build from triggering, if the changes check contains the word `minor` in the comment.
 
 </td></tr><tr>
 <td>
@@ -192,7 +194,33 @@ Prevents the build from triggering, if the changes check contains the word "mino
 </td>
 <td>
  
-No triggering if the comment consists of the word "oops" only (according to [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) principles `^` and `$` in pattern stand for string beginning and ending).
+No triggering if the comment consists of the `oops` word only (according to [Java Regular Expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) principles `^` and `$` in the pattern stand for string beginning and ending).
+
+</td></tr><tr>
+<td>
+
++:comment=#teamcity:\*\*
+
+</td>
+<td>
+
+Triggers the build if the comment contains the `#teamcity` keyword.
+
+</td></tr><tr>
+<td>
+
++:comment=(?s)#teamcity.\*#major:\*\*
+
+</td>
+<td>
+
+Triggers the build if the comment contains both `#teamcity` and `#major` keywords. Here, `(?s)` is a [DOTALL pattern](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#DOTALL) that makes the character `.` match any character, including a line terminator, and allows checking multiline comments.  
+
+For example, the following comment will trigger the build: 
+```Shell
+#teamcity the first line
+#major the second line
+```
 
 </td></tr>
 </table>
@@ -225,7 +253,7 @@ When changes are merged / fast-forwarded from one branch to another, strictly sp
 
 The __Build Customization__ tab of a trigger's settings allows configuring custom parameters of builds started by this trigger. Similarly to the [Run Custom Build](running-custom-build.md) dialog, it lets you override values of [build parameters](configuring-build-parameters.md) and choose if the [checkout directory](build-checkout-directory.md) should be cleaned before the build.
 
-On this tab, you can customize the value of any [parameter](configuring-build-parameters.md) used in the current [build configuration](build-configuration.md). Or, you can add a new parameter, and it will be available only in builds started by this trigger. If the current build has [snapshot dependencies](snapshot-dependencies.md) on other builds, such a parameter can also be used to [override a certain property](predefined-build-parameters.md#Overriding+Dependencies+Properties) of a dependency build configuration: use the `reverse.dep.<dependencyBuildID>.<property>` syntax for this.
+On this tab, you can customize the value of any [parameter](configuring-build-parameters.md) used in the current [build configuration](managing-builds.md). Or, you can add a new parameter, and it will be available only in builds started by this trigger. If the current build has [snapshot dependencies](snapshot-dependencies.md) on other builds, such a parameter can also be used to [override a certain property](predefined-build-parameters.md#Overriding+Dependency+Parameters) of a dependency build configuration: use the `reverse.dep.<dependencyBuildID>.<property>` syntax for this.
 
 >This functionality gets more effective if you combine it with the [build step execution conditions](build-step-execution-conditions.md). You just need to add a parameter-based condition to a step and then configure two triggers: one will run builds with this step (when the condition is satisfied) and one — without it. A popular use case is to run a limited number of tests in regular builds but a full set of tests in a nightly build, when the server load is the lowest.
 

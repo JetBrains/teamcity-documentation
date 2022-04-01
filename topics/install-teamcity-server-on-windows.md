@@ -32,7 +32,7 @@ Make sure the user account specified for the service has:
 
 By default, the Windows service is installed under the `SYSTEM` account. To change it, use the Services applet (__Control Panel | Administrative Tools | Services__).
 
-If you do not change the default port (`8111`) during the installation, the TeamCity UI will be accessed via [`http://localhost/`](http://localhost/) in a web browser running on the same machine where the server is installed. Note that port 8111 can be already occupied by other programs. In this case, you can specify another port during the installation and use [`http://localhost:<port>/`](http://localhost:<port>/) address in the browser.
+If you do not change the default port (`8111`) during the installation, the TeamCity UI will be accessed via [`http://localhost/`](http://localhost/){nullable="true"} in a web browser running on the same machine where the server is installed. Note that port 8111 can be already occupied by other programs. In this case, you can specify another port during the installation and use [`http://localhost:<port>/`](http://localhost:<port>/){nullable="true"} address in the browser.
 
 If you want to edit the TeamCity server's service parameters, memory settings, or system properties after the installation, refer to [this article](server-startup-properties.md).
 

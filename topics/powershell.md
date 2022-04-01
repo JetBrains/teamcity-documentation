@@ -14,7 +14,7 @@ The plugin responsible for PowerShell integration has been open-sourced [on GitH
 
 ## Detection of Installed PowerShell on Build Agents
 
-During the startup, a TeamCity agent searches for the PowerShell installation in standard locations, such as `Program Files` and `Windows` directories, or `~/powershell` and `/opt/microsoft/powershell/<version>/` in ARM64 systems. You can specify a custom location in the `teamcity.powershell.detector.search.paths` [agent property](predefined-build-parameters.md#Agent+Properties), so the agent can detect PowerShell in this directory (and its children) as well.   
+During the startup, a TeamCity agent searches for the PowerShell installation in standard locations, such as `Program Files` and `Windows` directories, or `~/powershell` and `/opt/microsoft/powershell/<version>/` in ARM64 systems. You can specify a custom location in the `teamcity.powershell.detector.search.paths` [agent property](predefined-build-parameters.md#Predefined+Agent+Build+Parameters), so the agent can detect PowerShell in this directory (and its children) as well.   
 To list multiple locations, separate their paths with `;`.
 
 ## PowerShell Settings
@@ -119,7 +119,7 @@ Script
 Select whether you want to enter the script right in TeamCity, or specify a path to the script:
 
 * __File__: Enter the path to a PowerShell file. The path has to be relative to the checkout directory.
-* __Source__: Enter the PowerShell script source. Note that TeamCity [parameter references](configuring-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) will be replaced in the code.
+* __Source__: Enter the PowerShell script source. Note that TeamCity [parameter references](using-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) will be replaced in the code.
 
 <note>
 

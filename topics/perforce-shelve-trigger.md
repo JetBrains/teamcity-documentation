@@ -11,7 +11,7 @@ The trigger supports Perforce 2018.2 or later.
 
 ## Trigger Settings
 
-The trigger monitors all [Perforce VCS roots](perforce.md) associated with the current [build configuration](build-configuration.md). You can filter monitored changelists by their description. To do this, specify the required keyword to search.
+The trigger monitors all [Perforce VCS roots](perforce.md) associated with the current [build configuration](managing-builds.md). You can filter monitored changelists by their description. To do this, specify the required keyword to search.
 
 >See how to invoke this trigger [via TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/edit-build-configuration-settings.html#Manage+Build+Triggers).
 
@@ -21,7 +21,7 @@ On any change made in shelved files of a matching changelist, TeamCity will star
 
 If the current build is [composite](composite-build-configuration.md), the whole build chain will be triggered on a change in shelved files.
 
-If [stream support](perforce-streams-as-feature-branches.md) is enabled in the Perforce VCS root settings, this trigger will run builds only on the default stream.
+If [stream support](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) is enabled in the Perforce VCS root settings, this trigger will run builds only on the default stream.
 
 ## Parametrized Shelved Changelist ID
 

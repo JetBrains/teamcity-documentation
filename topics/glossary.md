@@ -23,6 +23,9 @@ Agent pool
 Agent requirement
 : A rule that specifies if a given build configuration can run on a particular agent. Allows managing what agents are used for running each build configuration.
 
+Agent-side checkout
+: A mode when a build agent checks out a build's source files from VCS before starting the build. Could be [set as preferred or forced mode](vcs-checkout-mode.md). Alternative to server-side checkout.
+
 Agent Work Directory
 : A directory on a build agent that contains default checkout directories. By default, it is the same as the Agent Home Directory.
 
@@ -38,7 +41,7 @@ Authentication module
 ## B
 
 Build
-: A process that performs a certain CI/CD job. Most builds comprise multiple sequential steps executing their own granular actions. A build is run based on the settings specified in its build configuration.
+: A process that performs a certain CI/CD job. Most builds comprise multiple sequential steps executing their own granular actions. A build is executed according to the settings specified in its build configuration.
 
 Build agent
 : A piece of software which listens for the commands from the TeamCity server and starts the actual build process. Agents can be installed in the customer's environment or run on-demand in the cloud.
@@ -71,10 +74,18 @@ Build log
 : An enhanced console output of a build. It is represented by a structured list of the events which took place during the build. Generally, it includes entries on TeamCity-performed actions and the output of the processes launched during the build. TeamCity captures the processes output and stores it in an internal format that allows for hierarchical display.
 
 Build number
-: A string identifier composed according to the pattern specified in the build configuration settings. This number is displayed in the UI and passed into the build as a [predefined property](predefined-build-parameters.md). It is often used for passing and downloading artifacts.
+: A string identifier composed according to the pattern specified in the build configuration settings. This number is displayed in the UI and passed into the build as a [predefined parameter](predefined-build-parameters.md). It can be:
+* [used to download artifacts](patterns-for-accessing-build-artifacts.md#Obtaining+Artifacts)
+* [referenced as a property](predefined-build-parameters.md)
+* [shared for builds connected by a dependency](how-to.md#Share+the+Build+number+for+Builds+in+a+Chain+Build)
+* [used in artifact dependencies](artifact-dependencies.md)
+* [set by a service message](service-messages.md#Reporting+Build+Number)
 
 Build queue
 : A list of builds that were [triggered](configuring-build-triggers.md) and are waiting to be started. TeamCity will distribute them to compatible build agents as soon as these agents become idle. A queued build is assigned to an agent at the moment it is started on the agent; no preassignment is made while the build is waiting in the build queue.
+
+Build parameter
+: A name-value pair, defined by a user or provided by TeamCity, which can be used in a build. [Build parameters](configuring-build-parameters.md) help flexibly share settings and pass them to build steps.
 
 Build runner
 : A TeamCity module that allows integration with a specific tool: Command Line, .NET, Kotlin Script, Gradle, and so on. Each build step defines the runner that will be used to execute it.
@@ -111,6 +122,9 @@ Code inspections
 Composite build configuration
 : A special type of build configuration that aggregates results from several other builds combined by snapshot dependencies. A composite build can be viewed as a build which consists of several parts which can be executed in parallel on different agents. All these parts will have a synchronized snapshot of the source code, and the results can be seen in a single place.
 
+Configuration parameter
+: In TeamCity, a type of [build parameter](configuring-build-parameters.md) that is meant to share settings within a build configuration (widely used in templates and meta-runners).
+
 Continuous integration
 : A software engineering term describing a process that frequently rebuilds and tests an application. Generally, it takes the form of a server process or daemon that
 * monitors a file system or version control system for changes;
@@ -118,6 +132,9 @@ Continuous integration
 * runs tests (for example, JUnit or NUnit).  
 Continuous integration is also associated with _Extreme Programming_ and other _agile_ software development practices.  
 Following the principles of _Continuous Integration_, TeamCity allows users to monitor the software development process of the company, while improving communication and facilitating the integration of changes without breaking any established practices.
+
+Custom build run
+* A standalone build whose settings have been adjusted compared to its build configuration. Such a build can be initiated from a context menu next to the __Run__ button.
 
 ## D
 
@@ -129,6 +146,11 @@ Deployment build configuration
 
 Difference viewer
 : A TeamCity component that allows reviewing the differences between two versions of a file modified in the source control and navigating between these differences.
+
+## E
+
+Environment variable
+: In TeamCity, a type of [build parameter](configuring-build-parameters.md) that is passed into a spawned build process as into an environment. Defined by the `env.` prefix.
 
 ## F
 
@@ -162,7 +184,7 @@ Personal build
 : A build that is executed out of the common build sequence. Typically, it uses the changes not yet committed into the version control. This allows developers to run their newly added functionality in a real environment without modifying the project code in the VCS. Personal builds are usually initiated from an IDE via the Remote Run procedure.
 
 Pinned build
-: A build that is prevented from being removed during a [clean-up](teamcity-data-clean-up.md) procedure.
+: A build that is prevented from being removed during a scheduled [clean-up](teamcity-data-clean-up.md).
 
 Pre-tested commits
 : An approach that prevents committing defective code into a build, so the entire team's process is not affected. [These diagrams](http://www.jetbrains.com/teamcity/features/delayed_commit.html) illustrate the TeamCity approach to pre-tested commits.
@@ -184,16 +206,25 @@ Revision
 Role
 : A set of permissions that can be granted to a user in one or all projects thus controlling their access to the projects and various features in the UI.
 
+Root project
+: A default project at the top of the project hierarchy. Its settings are available to all the other projects on the server.
+
 Run configuration policy
-: A policy that allows selecting specific build configurations you want a build agent to run. By default, build agents run all compatible build configurations, and this is not always desirable — in this case, this policy lets you limit the allowed set in each agent's details.
+: A policy that allows selecting specific build configurations you want a build agent to run. By default, build agents run all compatible build configurations, and this is not always desirable — in this case, this policy lets you limit the allowed set in each agent's details. The run configuration policy settings are located in __[Agents Details](viewing-build-agent-details.md) | Compatible configurations__.
 
 ## S
+
+Server-side checkout
+: A mode when TeamCity checks out a build's source files from VCS to the server machine and, before starting each new build, exports them to the build agent machine. Could be [set as preferred or forced mode](vcs-checkout-mode.md). Alternative to agent-side checkout.
 
 Snapshot dependency
 : A dependency between build configurations that allows assigning multiple builds to the same source revision (commit) so the same project files are used on all the building stages.
 
 Super-user
 : The super-user login allows accessing the server UI with the System Administrator permissions. It is useful when the administrator forgot the credentials or needs to fix authentication-related settings. The login is performed using an authentication token that can be found in the server logs.
+
+System property
+: In TeamCity, a type of [build parameter](configuring-build-parameters.md) that can be passed into build scripts of certain runners as a variable specific to a build tool. Defined by the `system.` prefix.
 
 ## T
 

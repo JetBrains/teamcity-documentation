@@ -29,7 +29,7 @@ Type of VCS
 
 <td>
 
-Type of version control system supported by TeamCity, for example, Perforce or Subversion.
+Type of version control system supported by TeamCity: for example, Perforce or Subversion.
 
 </td></tr><tr>
 
@@ -66,6 +66,8 @@ Repository URL
 <td>
 
 URL to VCS repository. Supports URLs in [different formats](guess-settings-from-repository-url.md#VCS+URL+Formats), like: `http(s)://`, `svn://`, `ssh://git@`, `git://` and others as well as URLs in Maven format.
+
+>If you use an SSH repository, watch our **video tutorial** on [how to check out from SSH repositories](https://www.youtube.com/watch?v=nUTb1BjMMoE).
 
 </td></tr><tr>
 

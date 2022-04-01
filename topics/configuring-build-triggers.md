@@ -1,9 +1,9 @@
 [//]: # (title: Configuring Build Triggers)
 [//]: # (auxiliary-id: Configuring Build Triggers)
 
-Once a build configuration is created, builds can be triggered manually by clicking the [Run](running-custom-build.md#Run+Custom+Build+dialog) button or initiated automatically with the help of _triggers_.
+Once a build configuration is created, builds can be triggered manually by clicking the [Run](running-custom-build.md) button or initiated automatically with the help of _triggers_.
 
-A _build trigger_ is a rule which initiates a new build on certain events. The build is put into the [build queue](build-queue.md) and is started when there are agents available to run it.
+A _build trigger_ is a rule which initiates a new build on certain events. The build is put into the [build queue](working-with-build-queue.md) and is started when there are agents available to run it.
 
 While creating/editing a build configuration, you can configure triggers using the __Triggers__ sections of the __Build Configuration Settings__ page: click __Add new trigger__ and specify the trigger settings. For configuration details on each trigger, refer to the corresponding sections. It is possible to disable a configured build trigger temporarily or permanently using the option in the last column of the trigger list.
 
@@ -20,7 +20,7 @@ For each build configuration the following triggers can be configured:
 
 >Note that if you create a build configuration from a template, it inherits build triggers defined in the template, and they cannot be edited or deleted. However, you can specify additional triggers or disable a trigger permanently or temporarily.
 
-In addition to the triggers defined for a build configuration, you can also trigger a build by an [HTTP GET request](accessing-server-by-http.md#Triggering+a+Build+From+Script), or manually by running a custom build.
+You can also manage build triggers using [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/edit-build-configuration-settings.html#Manage+Build+Triggers).
 
 <seealso>
     <category ref="external">

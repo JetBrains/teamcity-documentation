@@ -1,7 +1,7 @@
 [//]: # (title: Entity IDs)
-[//]: # (auxiliary-id: Identifier)
+[//]: # (auxiliary-id: Entity IDs;Identifier)
 
-An _ID_ is an identifier given to TeamCity entities ([projects](project.md), [build configurations](build-configuration.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on).
+An _ID_ is an identifier given to TeamCity entities ([projects](project.md), [build configurations](managing-builds.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on).
 
 Each entity has two identifiers:
 * [external ID](#External+IDs)
@@ -17,7 +17,7 @@ IDs can contain only alphanumeric characters and underscores (`_`) — maximum 8
 
 External IDs are used:
 * in URLs of the web interface (including the [NuGet](nuget.md) feed), for example, [`https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains`](https://teamcity.jetbrains.com/project.html?projectId=TeamCityPluginsByJetBrains);
-* in the [`dep.`](predefined-build-parameters.md#Dependencies+Properties) and [`vcsRoot.`](predefined-build-parameters.md#VCS+Properties) parameter references;
+* in the [`dep.`](predefined-build-parameters.md#Dependency+Parameters) and [`vcsRoot.`](predefined-build-parameters.md#VCS+Parameters) parameter references;
 * in [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) and build scripts used to automate actions with TeamCity (for example, download artifacts via direct URLs or Ivy);
 * in the configuration files storing settings of projects and build configurations under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`;
 * in file and directory names under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` (for example, build artifacts storage).
@@ -50,10 +50,10 @@ TeamCity projects, build configurations, and VCS roots have a UUID which is an a
 <seealso>
         <category ref="concepts">
             <a href="project.md">Project</a>
-            <a href="build-configuration.md">Build Configuration</a>
+            <a href="managing-builds.md">Build Configuration</a>
         </category>
         <category ref="admin-guide">
-            <a href="managing-projects-and-build-configurations.md">Managing Projects and Build Configurations</a>
+            <a href="creating-and-editing-projects.md">Creating and Editing Projects</a>
             <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
             <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>
             <a href="accessing-server-by-http.md">Accessing Server by HTTP</a>

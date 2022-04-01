@@ -38,6 +38,8 @@ Make especially sure to keep your credentials out of:
 
 TeamCity users with administrative permissions should have complex passwords.
 
+To make user password storage safer, TeamCity uses the BCrypt hashing algorithm.
+
 __Store secure data using parameters with the "password" type__.
 
 To store passwords or other secure data in the TeamCity settings, you are strongly advised to use the [typed parameters](typed-parameters.md). This will make sure that sensitive values never appear in the web UI and are masked with asterisks in the build log. Make sure passwords are stored as parameters with the [password type](typed-parameters.md#Adding+Parameter+Specification).
@@ -196,7 +198,7 @@ __Use agent pools for different projects__.
 
 In general, it is recommended to distribute projects among agents, so that one TeamCity agent would not run builds of several projects whose developers and administrators should not get access to each other's projects.
 
-If you run several agents on the same machine and do not [enable clean checkout](clean-checkout.md), beware that compromised agents or untrusted projects could potentially modify source code in the "neighbor" working directories. To mitigate this risk, consider running just one agent per machine and use different [agent pools](agent-pool.md) for different (private/public) projects. Make sure that the "Default" agent pool has no agents as a project can be assigned to the Default pool after a certain reconfiguration (that is when there is no other pool the project is assigned to).
+If you run several agents on the same machine and do not [enable clean checkout](clean-checkout.md), beware that compromised agents or untrusted projects could potentially modify source code in the "neighbor" working directories. To mitigate this risk, consider running just one agent per machine and use different [agent pools](configuring-agent-pools.md) for different (private/public) projects. Make sure that the "Default" agent pool has no agents as a project can be assigned to the Default pool after a certain reconfiguration (that is when there is no other pool the project is assigned to).
 
 __Control permissions of the OS user who runs a TeamCity agent__.
 

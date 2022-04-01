@@ -32,7 +32,7 @@ Welcome to the documentation for [TeamCity 2021.x](https://www.jetbrains.com/tea
 ### Administer  
     
 * [Configure and Maintain TeamCity Server](teamcity-configuration-and-maintenance.md) 
-* [Work with Projects and Build Configurations](managing-projects-and-build-configurations.md) 
+* Work with [Projects](creating-and-editing-projects.md) and [Build Configurations](creating-and-editing-build-configurations.md)
 * [Manage Users and their Permissions](managing-users-and-roles.md) 
 * [Upgrade](upgrading-teamcity-server-and-agents.md)
 

@@ -199,7 +199,7 @@ TeamCity determines __effective settings__ as follows:
 
 ### Version Ranges
 
-For specifying version ranges use the following syntax, as [proposed in the Maven documentation](http://docs.codehaus.org/display/MAVEN/Dependency+Mediation+and+Conflict+Resolution#DependencyMediationandConflictResolution-DependencyVersionRanges).
+For specifying version ranges use the following syntax, as [proposed in the Maven documentation](https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html).
 
 Note that Maven Artifact Dependency Trigger can be used not only for fixed-version artifacts but also for snapshots as a fine-grained alternative to the Maven Snapshots Dependency Trigger.
 

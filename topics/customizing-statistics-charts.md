@@ -100,14 +100,11 @@ To show the code coverage chart related only to a particular build configuration
 where __myConf1__ and __myConf2__ values are [build configuration IDs](configuring-general-settings.md#build-configuration-id). However, note that build configurations specified should contain code coverage data for the charts to be shown. If the data is available, two charts will be shown (one for each specified build configuration).
 
  <seealso>
-        <category ref="concepts">
-            <a href="code-coverage.md">Code Coverage</a>
-            <a href="code-inspection.md">Code Inspection</a>
-        </category>
         <category ref="user-guide">
             <a href="statistic-charts.md">Statistic Charts</a>
         </category>
         <category ref="admin-guide">
             <a href="build-script-interaction-with-teamcity.md">Build Script Interaction with TeamCity</a>
+            <a href="configuring-test-reports-and-code-coverage.md">Configuring Test Reports and Code Coverage</a>
         </category>
 </seealso>

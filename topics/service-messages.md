@@ -39,7 +39,7 @@ Write-Host "##teamcity[<messageName> 'value']"
 
 A single service message cannot contain a newline character inside it, it cannot span across multiple lines.
 
-## Service messages formats
+## Service Messages Formats
 
 Service messages support two formats:
 
@@ -64,12 +64,12 @@ Service messages support two formats:
 where:
  * `messageName` is the name of the message, such as `flowStarted` or `setParameter`.
  * `propertyName` is a name of the message attribute. Must be a valid Java ID.
- * `value` is a value of the attribute. Must be an [escaped value](#Escaped+values).
+ * `value` is a value of the attribute. Must be an [escaped value](#Escaped+Values).
  * `WSP` is a required whitespace(s): space or tab character (`\t`).
  * `OWSP` is an optional whitespace(s).
  * `...` is any number of `WSPpropertyNameOWSP=OWSP'value'` blocks.
  
-## Escaped values
+## Escaped Values
 
 For escaped values, TeamCity uses a vertical bar `|` as an escape character. To have certain special characters properly interpreted by the TeamCity server, they must be preceded by a vertical bar. For example, the following message:
 
@@ -198,41 +198,9 @@ Escape as
 
 </td></tr></table>
 
-## Common Properties
-
-Any message supports the optional attributes `timestamp` and `flowId`. In the following examples, `<messageName>` is the name of the specific service message.
-
-### Message Creation Timestamp
-
-```Shell
-##teamcity[<messageName> timestamp='timestamp' ...]
-
-```
-
-The timestamp format is `yyyy-MM-dd'T'HH:mm:ss.SSSZ` or `yyyy-MM-dd'T'HH:mm:ss.SSS` according to [Java SimpleDateFormat syntax](http://docs.oracle.com/javase/1.5.0/docs/api/java/text/SimpleDateFormat.html). 
-
-Example:
-
-```Shell
-##teamcity[<messageName> timestamp='2008-09-03T14:02:34.487+0400' ...]
-##teamcity[<messageName> timestamp='2008-09-03T14:02:34.487' ...]
-
-```
-
-For .NET [DateTimeOffset](https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx), a code like this
-```JavaScript
-var date = DateTimeOffset.Now;
-var timestamp = $"{date:yyyy-MM-dd'T'HH:mm:ss.fff}{date.Offset.Ticks:+;-;}{date.Offset:hhmm}";
-
-```
-
-will result in
-```Shell
-##teamcity[<messageName> timestamp='2008-09-03T14:02:34.487+0400' ...]
-
-```
-
 ### Message FlowId
+
+Any message supports the optional attribute `flowId`. In the following examples, `<messageName>` is the name of the specific service message.
 
 `flowId` is a unique identifier of the message flow in a build. Flow tracking is necessary, for example, to distinguish separate processes running in parallel. The identifier is a string that must be unique in the scope of an individual build.
 
@@ -258,9 +226,9 @@ To end a subflow, use the `flowFinished` parameter. Ending a parent flow automat
 
 This custom subflow order affects the sequence of reports in a build log and allows reporting results as subtrees.
 
-## Reporting Messages for Build Log
+## Reporting Messages to Build Log
 
-You can report messages for a build log as follows:
+You can report messages to a build log as follows:
 
 ```Shell
 ##teamcity[message text='<message text>' errorDetails='<error details>' status='<status value>']
@@ -321,12 +289,43 @@ where:
 
 ### Reporting Tests
 
-To use the TeamCity on-the-fly test reporting, a testing framework needs dedicated support for this feature to work (alternatively, [XML Report Processing](xml-report-processing.md) can be used). If TeamCity doesn't support your testing framework natively, it is possible to modify your build script to report test runs to the TeamCity server using service messages. This makes it possible to display test results in real-time, make test information available on the __[Tests](working-with-build-results.md#All+Tests)__ tab of the __Build Results__ page.
+To use the TeamCity on-the-fly test reporting, a testing framework needs dedicated support for this feature to work (alternatively, [XML Report Processing](xml-report-processing.md) can be used). If TeamCity doesn't support your testing framework natively, it is possible to modify your build script to report test runs to the TeamCity server using service messages. This makes it possible to display test results in real-time, make test information available on the __[Tests](build-results-page.md#Tests+Tab)__ tab of the __Build Results__ page.
 
-#### Supported test service messages
+### Message Creation Timestamp
 
-__Test suite messages:__ Test suites are used to group tests. TeamCity displays tests grouped by suites on the __[Tests](working-with-build-results.md#All+Tests)__ tab of the __Build Results__ page and in other places.
+Test report messages support the optional attribute `timestamp`. In the following examples, `<messageName>` is the name of the specific service message.
 
+```Shell
+##teamcity[<messageName> timestamp='timestamp' ...]
+
+```
+
+The timestamp format is `yyyy-MM-dd'T'HH:mm:ss.SSSZ` or `yyyy-MM-dd'T'HH:mm:ss.SSS` according to [Java SimpleDateFormat syntax](http://docs.oracle.com/javase/1.5.0/docs/api/java/text/SimpleDateFormat.html).
+
+Example:
+
+```Shell
+##teamcity[<messageName> timestamp='2008-09-03T14:02:34.487+0400' ...]
+##teamcity[<messageName> timestamp='2008-09-03T14:02:34.487' ...]
+
+```
+
+For .NET [DateTimeOffset](https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx), a code like this
+```JavaScript
+var date = DateTimeOffset.Now;
+var timestamp = $"{date:yyyy-MM-dd'T'HH:mm:ss.fff}{date.Offset.Ticks:+;-;}{date.Offset:hhmm}";
+
+```
+
+will result in
+```Shell
+##teamcity[<messageName> timestamp='2008-09-03T14:02:34.487+0400' ...]
+
+```
+
+#### Supported Test ServiceMessages
+
+__Test suite messages:__ Test suites are used to group tests. TeamCity displays tests grouped by suites on the __[Tests](build-results-page.md#Tests+Tab)__ tab of the __Build Results__ page and in other places.
 
 ```Shell
 ##teamcity[testSuiteStarted name='suiteName']
@@ -337,7 +336,7 @@ __Test suite messages:__ Test suites are used to group tests. TeamCity displays 
 
 All the individual test messages are to appear between `testSuiteStarted` and `testSuiteFinished` (in that order) with the same `name` attributes.
 
-#### Nested test reporting
+#### Nested Test Reporting
 
 Starting another test finishes the currently started test in the same _flow_. To still report tests from within other tests, you will need to specify another [`flowId`](#Message+FlowId) in the nested test service messages.
 
@@ -416,7 +415,7 @@ Here is a longer example of test reporting with service messages:
 
 ```
 
-#### Enabling test retry
+#### Enabling Test Retry
 
 You can enable the support of _test retry_ for a build configuration. With this option enabled, the successful run of a test will mute its previous failure, which means that TeamCity will mute a test if it fails and then succeeds within the same build.   
 Such tests will not affect the build status.
@@ -425,7 +424,7 @@ Such tests will not affect the build status.
 ##teamcity[testRetrySupport enabled=’true’]
 ```
 
-#### Interpreting test names
+#### Interpreting Test Names
 
 A full test name can have a form of: `<suite name>: <package/namespace name>.<class name>.<test method>(<test parameters>)`, where `<class name>` and `<test method>` cannot have dots in the names. Only `<test method>` is a mandatory part of a full test name.
 
@@ -444,11 +443,11 @@ Integration Tests: Backend: org.jetbrains.teamcity.LoginPageController.testBadPa
 // test parameters = ("incorrect password", false)
 ```
 
-The __[Tests](working-with-build-results.md#Tests)__ tab of the __Build Results__ page allows grouping by suites, packages/namespaces, classes, and tests. Usually the attribute values are provides as they are reported by your test framework and TeamCity is able to interpret test names correctly.
+The __[Tests](build-results-page.md#Tests+Tab)__ tab of the __Build Results__ page allows grouping by suites, packages/namespaces, classes, and tests. Usually the attribute values are provides as they are reported by your test framework and TeamCity is able to interpret test names correctly.
 
 If a test cannot be parsed in the form above, TeamCity still tries to extract `<suite name>` from the full test name for the filtering on the Tests tab, and treats everything after the suite a non-parsable test name.
 
-#### Reporting additional test data
+#### Reporting Additional Test Data
 
 It is possible to attach extra information to the tests using the `testMetadata` service message. More details are available on a [separate page](reporting-test-metadata.md).
 
@@ -462,7 +461,7 @@ You can report inspections from a custom tool to TeamCity using the service mess
 
 Among other uses, the number of inspections can be used as a build metric to [fail a build on](build-failure-conditions.md#Fail+Build+on+Metric+Change).
 
-#### Inspection type
+#### Inspection Type
 
 Each specific warning or an error in code (inspection instance) has an inspection type — the unique description of the conducted inspection, which can be reported via
 
@@ -496,7 +495,7 @@ where all the attributes are required and can have either numeric or textual val
 
 ```
 
-### Inspection instance
+### Inspection Instance
 
 Reports a specific defect, warning, error message. Includes location, description, and various optional and custom attributes.
 
@@ -506,10 +505,10 @@ Reports a specific defect, warning, error message. Includes location, descriptio
 ```
 
 where all the attributes can have either numeric or textual values:
-* `typeId` — (mandatory), reference to the `inspectionType.id` described [above](#Inspection+type) limited by 255 characters;
-* `message` — (optional) current instance description limited by 4000 characters;
-* `file` — (mandatory) file path limited by 4000 characters. The path can be absolute or relative to the [checkout directory](build-checkout-directory.md);
-* `line` — (optional) line of the file, integer;
+* `typeId` — (mandatory), reference to the `inspectionType.id` described [above](#Inspection+Type) limited by 255 characters.
+* `message` — (optional) current instance description limited by 4000 characters.
+* `file` — (mandatory) file path limited by 4000 characters. The path can be absolute or relative to the [checkout directory](build-checkout-directory.md).
+* `line` — (optional) line of the file, integer.
 * `additional attribute`– can be any attribute, `SEVERITY` is often used here, with one of the following values (mind the upper case): `INFO`, `ERROR`, `WARNING`, `WEAK WARNING`.
 
 Example:
@@ -521,7 +520,7 @@ Example:
 
 ```
 
-### Publishing Artifacts while the Build is Still in Progress
+### Publishing Artifacts While Build is in Progress
 
 You can publish the build artifacts while the build is still running, immediately after the artifacts are built.
 
@@ -550,7 +549,7 @@ The process of publishing artifacts can affect the build, because it consumes ne
 
 Artifacts that are specified in the build configuration setting will be published as usual.
 
-### Passing NuGet Packages between Steps
+### Passing NuGet Packages Between Steps
 
 If you need to publish NuGet packages and then use their contents within one build, you want to guarantee they are published and indexed on time — and not at the build finish.   
 For this, you can use a [NuGet Publish](nuget-publish.md) runner or send the `##teamcity[publishNuGetPackage]` service message in any step instead. This ensures the NuGet packages are published in all configured NuGet feeds right at the end of the current step and are available in the following build steps.
@@ -634,9 +633,9 @@ In the &lt;new build number&gt; value, you can use the `{build.number}` substitu
 
 ```
 
-### Adding or Changing a Build Parameter
+### Adding or Changing Build Parameter
 
-By using a dedicated service message in your build script, you can dynamically update build parameters of the build right from a build step (the parameters need to be defined in the __[Parameters](configuring-build-parameters.md)__ section of the build configuration). The changed build parameters will be available in the build steps following the modifying one. They will also be available as build parameters and can be used in the dependent builds via [` %dep.*% parameter references`](predefined-build-parameters.md#Dependencies+Properties), for example:
+By using a dedicated service message in your build script, you can dynamically update build parameters of the build right from a build step (the parameters need to be defined in the __[Parameters](configuring-build-parameters.md)__ section of the build configuration). The changed build parameters will be available in the build steps following the modifying one. They will also be available as build parameters and can be used in the dependent builds via [` %dep.*% parameter references`](predefined-build-parameters.md#Dependency+Parameters), for example:
 
 ```Shell
 ##teamcity[setParameter name='ddd' value='fff']
@@ -657,7 +656,7 @@ When specifying a build parameter's name, mind the prefix:
 
 In TeamCity, it is possible to configure a build script to report statistical data and then display the charts based on the data. Refer to the [Customizing Statistics Charts](customizing-statistics-charts.md#Modifying+Predefined+Project-level+Charts) page for a guide to displaying the charts on the web UI. This section describes how to report the statistical data from the build script via service messages. You can publish the build statics values in two ways:
 * Using a service message in a build script directly
-* [Providing data using the teamcity-info.xml file](teamcity-info-xml.md#Providing+data+using+the+teamcity-info.xml+file)   
+* [Providing data using the teamcity-info.xml file](teamcity-info-xml.md#Storing+Data+in+teamcity-info.xml)   
 To report build statistics using service messages: Specify a `buildStatisticValue` service message with the following format for each statistics value you want to report:
 
 ```Shell
@@ -682,7 +681,6 @@ If you need for some reason to disable searching for service messages in the out
 Any messages that appear between these two are not parsed as service messages and are effectively ignored. For server-side processing of service messages, enable/disable service messages also supports the `flowId` attribute and will ignore only the messages with the same `flowId`.
 
 [//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1141.txt")    
-
 
 ### Importing XML Reports
 
@@ -1007,7 +1005,7 @@ Only several reports of different types can be included in a build. Processing r
 
 [//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1503.txt")    
 
-## Canceling build via service message
+## Canceling Build via Service Message
 
 If you need to cancel a build from a script, for example, if a build cannot proceed normally due to the environment, or a build should be canceled form a subprocess, you can use the following service message:
 
@@ -1017,7 +1015,7 @@ echo "##teamcity[buildStop comment='canceling comment' readdToQueue='true']"
 
 If required, you can re-add the build to the queue after canceling it.
 
-## Libraries reporting results via TeamCity Service Messages
+## Libraries Reporting Results via TeamCity Service Messages
 
 Several platform-specific libraries from JetBrains and external sources are able to report the results  via TeamCity Service messages.
 * [Service messages .NET library](https://github.com/JetBrains/TeamCity.ServiceMessages) — .NET library for generating (and parsing) TeamCity service messages from .NET applications. See a [related blog post](http://blog.jetbrains.com/teamcity/2011/10/teamcity-service-messages-library-for-net/).

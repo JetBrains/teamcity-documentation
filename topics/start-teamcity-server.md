@@ -3,7 +3,7 @@
 
 ## Start Server
 
-If TeamCity is installed using the `.exe` or `.tar.gz` distributions, it can be started and stopped by the `teamcity-server` scripts located in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory. The scripts accept `run` (run in the same console), `start` (start a new detached process and exit from the script), and `stop` commands.
+If TeamCity is installed using the `.exe` or `.tar.gz` distributions, it can be started and stopped by the `teamcity-server` scripts located in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory. The scripts accept `run` (run in the same console), `start` (start a new detached process and exit from the script), and `stop` commands. To restart TeamCity, send `stop` and then, after it stops, send `start`.
 
 __(evaluation only) To start/stop the TeamCity server and one default agent at the same time__, use the `runAll` script, for example:
 * Use `runAll.bat start` to start the server and default agent.
@@ -23,7 +23,7 @@ You can configure autostart of TeamCity on your machine by the means of the oper
 
 ## Launch TeamCity UI
 
-The TeamCity UI can be accessed via a web browser. The default addresses are [`http://localhost/`](http://localhost/) for the `exe` distribution and [`http://localhost:8111/`](http://localhost:8111/) for the `tar.gz` distribution. See how to [change the server port](configure-server-installation.md#Changing+Server+Port), if necessary.
+The TeamCity UI can be accessed via a web browser. The default addresses are [`http://localhost/`](http://localhost/){nullable="true"} for the `exe` distribution and [`http://localhost:8111/`](http://localhost:8111/){nullable="true"} for the `tar.gz` distribution. See how to [change the server port](configure-server-installation.md#Changing+Server+Port), if necessary.
 
 If you cannot access the TeamCity UI after a successful installation, please refer to the [troubleshooting section](#Troubleshoot+TeamCity+Installation).
 

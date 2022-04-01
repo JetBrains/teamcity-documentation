@@ -12,7 +12,9 @@ Supported systems:
 * JetBrains Upsource
 * Gerrit Code Review tool 2.6+
 * Perforce Helix Swarm
- 
+
+>See our **video guide** on how to [send build information to external systems](https://www.youtube.com/watch?v=o0oj7mOcNvc).
+
 ## Provider-specific Configuration
 
 ### GitHub
@@ -23,23 +25,26 @@ Commit Status Publisher supports the GitHub URL in the following format:
 
 For connection, select one of the available authentication types:
 * _Access Token_   
-Use a personal access token or obtain a token through an OAuth connection. The token must have the following scopes:
-   * for public repositories: `public_repo` and `repo:status`
-   * for private repositories: `repo`
+  Use a personal access token or obtain a token through an OAuth connection. The token must have the following scopes:
+    * for public repositories: `public_repo` and `repo:status`
+    * for private repositories: `repo`
 * _Password_   
-Provide the GitHub username and password.
+  Provide the GitHub username and password.
 
 Note that the password authentication will not work if connecting to a GitHub Enterprise repository or if the user's GitHub account is protected with a two-factor authentication. In these cases, use an access token instead.
 
+>To protect a branch and ensure that only verified pull requests are merged into it, you can create a [branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule) in your GitHub repository settings. If you set a TeamCity build as a required status check, GitHub will not allow a pull request to be merged until the build on requested changes finishes successfully. 
+
+
 ### GitLab
 
-If you use a recent version of GitLab (&gt;= 9.0), it is recommended to use the GitLab URL of the following format: `http[s]://<hostname>[:<port>]/api/v4` as GitLab [stops supporting](https://about.gitlab.com/2018/01/22/gitlab-10-4-released/#api-v3) the v3 API in GitLab 11. If you have `/api/v3` in your current TeamCity configurations, they may stop working with GitLab 11+, so consider changing the server URL to `api/v4`.
+If you use a recent version of GitLab (\<= 9.0), it is recommended to use the GitLab URL of the following format: `http[s]://<hostname>[:<port>]/api/v4` as GitLab [stops supporting](https://about.gitlab.com/2018/01/22/gitlab-10-4-released/#api-v3) the v3 API in GitLab 11. If you have `/api/v3` in your current TeamCity configurations, they may stop working with GitLab 11+, so consider changing the server URL to `api/v4`.
 
 For older versions of GitLab, use the GitLab URL of the format `http[s]://<hostname>[:<port>]/api/v3`.
 
 ### Bitbucket Cloud
 
-To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111). Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111), are rejected by the Bitbucket API.
+To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111){nullable="true"}. Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111){nullable="true"}, are rejected by the Bitbucket API.
 {product="tc"}
 
 In the Commit Status Publisher settings, specify a username and [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) (or token) for authentication. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password.
@@ -48,17 +53,15 @@ In the Commit Status Publisher settings, specify a username and [app password](h
 
 Commit Status Publisher supports the Bitbucket Server URL in the following format: `http[s]://<hostname>:<port>`. Apart from the URL, you need to specify a username and password (or token) for authentication.
 
+To protect a branch and ensure that only verified pull requests are merged into it, you can specify [required builds](https://confluence.atlassian.com/bitbucketserver/checks-for-merging-pull-requests-776640039.html#Checksformergingpullrequests-Requiredbuildsmergecheck) in your Bitbucket repository settings. To set a TeamCity build as a _required build_, open the __Add required builds__ page in Bitbucket and specify a build configuration ID as a build key in the __Add builds__ field. In this case, Bitbucket will not allow a pull request to be merged until the build on requested changes finishes successfully.
+
 >The _TeamCity Integration for Bitbucket_ app made by Stiltsoft provides a more detailed preview of TeamCity builds in the Bitbucket UI and lets you run them without switching to TeamCity. Read more details about the app in [this post](https://blog.jetbrains.com/teamcity/2021/05/run-and-view-teamcity-builds-from-bitbucket/).
 
 ### Azure DevOps
 
-<note>
-
-In 2019, Visual Studio Team Services and Team Foundation Server have been renamed to Azure DevOps Services and Azure DevOps Server.
-
-</note>
-
 Personal access tokens can be used for authentication. If a [VSTS connection](configuring-connections.md#Azure+DevOps+PAT+Connection) is configured, the personal access token can be automatically filled from the project connection.
+
+You can create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account. Set the _Code_ access scope to _Code (status)_ in the repositories you are about to send statuses to from TeamCity.`
 
 ### JetBrains Space
 
@@ -78,7 +81,7 @@ If a build is run on changes in Perforce [shelved files](https://www.perforce.co
 
 In the Commit Status Publisher settings, specify:
 * your Helix Swarm server's URL
-* username and [ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html) for connection
+* username and cross-host [ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html) for connection (use the `p4 login -a -p` command to obtain one)
 
 Note that Helix Swarm usually creates reviews on shelved changelists whose description contains a special keyword, depending on your setup (for example, `#review`). If you want TeamCity to trigger builds on Perforce shelved files automatically, you need to specify the same keyword in the [Perforce Shelve Trigger](perforce-shelve-trigger.md) settings as well.
 

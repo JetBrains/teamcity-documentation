@@ -9,13 +9,13 @@ Enabling integration for the project also enables it for all its subprojects; if
 
 ## Dedicated Support for Issue Trackers
 
-TeamCity supports [Jira](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md), [GitHub](github.md), [Bitbucket Cloud](bitbucket-cloud.md), and Azure DevOps Server (formerly [TFS](team-foundation-work-items.md)) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Trackers) page lists supported versions.
+TeamCity supports [Jira](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md), [GitHub](github.md), [Bitbucket Cloud](bitbucket-cloud.md), and Azure DevOps Server (formerly [TFS](azure-board-work-items.md)) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Trackers) page lists supported versions.
 
-When an integration is configured, TeamCity automatically transforms an issue ID (=issue key in Jira, work item ID in Azure DevOps Server) mentioned in the VCS commit comment into a link to the corresponding issue, and the basic issue details are displayed in the TeamCity web UI when hovering over the icon next to the issue ID (for example, on the __[Changes](working-with-build-results.md#Changes)__ tab of the build results).
+When an integration is configured, TeamCity automatically transforms an issue ID (=issue key in Jira, work item ID in Azure DevOps Server) mentioned in the VCS commit comment into a link to the corresponding issue, and the basic issue details are displayed in the TeamCity web UI when hovering over the icon next to the issue ID (for example, on the __[Changes](build-results-page.md#Changes+Tab)__ tab of Build Results).
 
 <img src="issue-tracker-integration.png" width="661" alt="Issue tracker integration"/>
 
-Issues fixed in the build can also be viewed on the __[Issues](working-with-build-results.md#Related+Issues)__ tab of the build results. You can filter the list to a particular range of builds and view issues mentioned in comments with their states.
+Issues fixed in the build can also be viewed on the __[Issues](build-results-page.md#Issues+Tab)__ tab of the build results. You can filter the list to a particular range of builds and view issues mentioned in comments with their states.
 
 <img src="issue-log.png" width="750" alt="Issue log"/>
 
@@ -111,7 +111,7 @@ Additional authentication information or/and the details on how to specify strin
 * [Bugzilla](bugzilla.md)
 * [GitHub](github.md)
 * [Bitbucket Cloud](bitbucket-cloud.md)
-* [TFS](team-foundation-work-items.md)
+* [TFS](azure-board-work-items.md)
 
 ### Converting Strings into Links to Issues
 
@@ -125,7 +125,7 @@ For example, if a project ID is `TW`, an issue ID like `TW-18802` mentioned in a
  
 For __Bugzilla__, __GitHub__, and __Bitbucket Cloud__, you need to specify the __Issue ID Pattern__: a [Java Regular Expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to find the issue ID in the text. The matched text (or the first group if there are groups defined) is used as the issue number. The most common case is `#(\d+)` — this will extract `1234` as the issue ID from the text `Fix for #1234`.
 
-TeamCity will resolve the issue number mentioned in a VCS comment and will display a link to this issue in the UI (for example, on the __[Changes](working-with-build-results.md#Changes)__ page, or the __[Issues](working-with-build-results.md#Related+Issues)__ tab of __[Build Results](working-with-build-results.md)__).
+TeamCity will resolve the issue number mentioned in a VCS comment and will display a link to this issue in the UI (for example, on the __[Changes](build-results-page.md#Changes+Tab)__ page, or the __[Issues](build-results-page.md#Issues+Tab)__ tab of __[Build Results](working-with-build-results.md)__).
 
 ## Integrating TeamCity with Other Issue Trackers
 {product="tc"}

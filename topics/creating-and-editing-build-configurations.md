@@ -1,11 +1,23 @@
 [//]: # (title: Creating and Editing Build Configurations)
 [//]: # (auxiliary-id: Creating and Editing Build Configurations)
 
-This page details creating build configurations via the TeamCity UI.
+This section contains articles on how to create and configure build configurations via the TeamCity UI.
 
->Build configurations can also be created via [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/get-build-details.html#Get+Specific+Builds) and as a versioned [Kotlin DSL code](storing-project-settings-in-version-control.md).
+A _build configuration_ is a collection of settings used to start a build and group the sequence of the builds in the UI. Examples of build configurations are _distribution_, _integration tests_, _prepare release distribution_, _"nightly" build_.  
+A build configuration belongs to a [project](project.md) and contains builds. You can explore details of a build configuration on its [Home page](build-configuration-home-page.md) and modify its settings on the [Settings page](creating-and-editing-build-configurations.md).
 
 <img src="create-build-configuration-button.png" alt="Create a build configuration" width="750"/>
+
+It is recommended to have a separate build configuration for each sequence of builds (that is performing a specified task in a dedicated environment). This allows for proper features functioning, like detection of new problems/failed tests, first failed in/fixed in tests status, automatically removed investigations, and so on.
+
+To tackle an increased number of build configurations you can use [build configuration templates](build-configuration-template.md) and project-level [parameters](configuring-build-parameters.md).
+
+This video tutorial illustrates how to work with a build configuration in TeamCity and gives a few extra tips:
+
+<video href="fttWwJG7C38"
+title="Improving your first build configuration"/>
+
+>Build configurations can also be created via [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/get-build-details.html#Get+Specific+Builds) and as a versioned [Kotlin DSL code](storing-project-settings-in-version-control.md).
 
 ## Where to Create Build Configuration
 
@@ -51,7 +63,7 @@ In the [build configuration creation wizard](#Where+to+Create+Build+Configuratio
 3. TeamCity will propose the build configuration name. You can change it if needed.  
    For a Git repository, it will also autodetect the default branch. You have an option to change it now or later, in the [VCS root](vcs-root.md) settings. You can also change the branch specification: by default, TeamCity monitors all branches of the repository, but you can choose what exact branches to monitor by entering [custom rules](working-with-feature-branches.md#branch-spec-syntax).  
    Click __Proceed__.
-4. TeamCity will add a VCS build trigger and attempt to [autodetect build steps](configuring-build-steps.md#Autodetecting+build+steps): Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects. On the __Auto-detected Build Steps__ page, select the step(s) to use in your build configuration. Click __Use selected__. You can then always add or edit steps [manually](configuring-build-steps.md).  
+4. TeamCity will add a VCS build trigger and attempt to [autodetect build steps](configuring-build-steps.md#Autodetecting+Build+Steps): Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects. On the __Auto-detected Build Steps__ page, select the step(s) to use in your build configuration. Click __Use selected__. You can then always add or edit steps [manually](configuring-build-steps.md).  
   Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review the suggested settings ![suggestedSettings.PNG](suggestedSettings.PNG) and configure the required ones.
 
 The build configuration is created. Click __Run__ to start its first build.
@@ -63,7 +75,7 @@ In the build configuration creation wizard:
 2. In the _Create Build Configuration_ dialog, specify the name, ID and (optionally) description for the build configuration, click __Create__.
 3. Proceed with creating other settings:
    * [Create/edit VCS roots and specify VCS-specific settings](configuring-vcs-settings.md)
-   * On the __Build Steps__ page, configure build steps discovered by the automatic detection. To create them manually by selecting a desired build runner from the drop-down menu. Click __Save__. You can add as many build steps as you need within one build configuration. Note that they will be executed sequentially. In the end, the build gets the merged status and the output goes into the same build log. If some step fails, the rest is executed or not, depending on their [step execution policy](configuring-build-steps.md#Execution+policy).
+   * On the __Build Steps__ page, configure build steps discovered by the automatic detection. To create them manually by selecting a desired build runner from the drop-down menu. Click __Save__. You can add as many build steps as you need within one build configuration. Note that they will be executed sequentially. In the end, the build gets the merged status and the output goes into the same build log. If some step fails, the rest is executed or not, depending on their [step execution policy](configuring-build-steps.md#Execution+Policy).
    * Additionally, configure [build triggering options](configuring-build-triggers.md), [dependencies](configuring-dependencies.md), [properties and variables](configuring-build-parameters.md), and [agent requirements](configuring-agent-requirements.md).
 
 ## Creating Build Configuration Template
@@ -102,7 +114,27 @@ The settings specified in the template cannot be edited in a configuration creat
 
 You can view all build configurations of a project on the __Project Overview__ page. By default, they are listed in the alphabetical order, but administrators can [customize this order](ordering-projects-and-build-configurations.md).
 
-## Configuring Settings
+## Build Configuration Settings
+
+Build configuration settings include:
+* [General settings](configuring-general-settings.md)
+* [Version control settings](vcs-root.md), defining how the source code is retrieved from VCS, where it is checked out to, and so on
+* [Build steps](configuring-build-steps.md), that are sequentially run actions: for example, running msbuild, a script, or unit tests
+* [Triggers](configuring-build-triggers.md), which are rules defining when to start a new build
+* [Failure conditions](build-failure-conditions.md) specifying when a build will be marked as failed
+* Additional [build features](adding-build-features.md)
+* Dependencies:
+   * for [snapshot dependencies](snapshot-dependencies.md), TeamCity will run all dependent builds on the sources taken at the moment the build they depend on starts
+   * for [artifact dependencies](artifact-dependencies.md), before a build is started, all artifacts this build depends on will be downloaded and placed in their configured target locations and then will be used by the build
+* [Parameters](configuring-build-parameters.md) which allow sharing settings
+* Agent requirements specifying whether a [build configuration](managing-builds.md) can run on a particular [build agent](build-agent.md).
+
+<note>
+
+Build configuration settings and build behavior may vary depending on the type of build configuration.
+</note>
+
+### Configuring Settings
 
 When you select a build configuration from the list of build configurations, TeamCity displays the __Build Configuration Home__ page where you can preview its recent build results. To access the build configuration's settings, click __Edit Configuration Settings__ in the upper right corner of the screen.
 
@@ -124,18 +156,22 @@ We recommend considering this aspect when granting users the permissions mention
 
 ## Actions in Build Configuration Settings
 
-Use the __Actions__ menu, located in the upper right corner of the settings screen, to
-* [pause/activate a build configuration](build-configuration.md#Pausing+Build+Configuration)
-* [copy/move/delete a build configuration](copy-move-delete-build-configuration.md)
-* [attach a build configuration to a template](build-configuration-template.md#Associating+build+configurations+with+templates)
-* [extract a template from a build configuration](build-configuration-template.md#Creating+build+configuration+template)
-* [extract a meta-runner from a build configuration](working-with-meta-runner.md#Extracting+and+Using+Meta-Runner)
-* [attach a history to a build configuration](kotlin-dsl.md#Restoring+Build+History+After+ID+Change)
+Use the __Actions__ menu, located in the upper right corner of the settings screen, to:
+* [Pause/activate a build configuration](changing-build-configuration-status.md).
+* [Copy/move/delete a build configuration](copy-move-delete-build-configuration.md).
+* [Attach a build configuration to a template](build-configuration-template.md#Associating+build+configurations+with+templates).
+* [Extract a template from a build configuration](build-configuration-template.md#Creating+build+configuration+template).
+* [Extract a meta-runner from a build configuration](working-with-meta-runner.md#Extracting+and+Using+Meta-Runner).
+* [Attach a history to a build configuration](kotlin-dsl.md#Restoring+Build+History+After+ID+Change).
+
  
  <seealso>
         <category ref="admin-guide">
             <a href="configuring-dependencies.md">Configuring Dependencies</a>
             <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
             <a href="configuring-vcs-settings.md">Configuring VCS Settings</a>
+        </category>
+        <category ref="examples">
+            <a href="how-to-configure-cicd-for-jetbrains-space.md">How to Configure CI/CD for JetBrains Space</a>
         </category>
 </seealso>

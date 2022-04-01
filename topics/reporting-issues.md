@@ -96,7 +96,7 @@ Then [send](feedback.md) us a detailed description of the issue accompanied with
 
 When an operation on the server is slow, take a set of the server thread dumps (10\+) spread over the time of the slowness. TeamCity automatically saves thread dumps on super slow operations, so there might already be some saved in `logs/threadDumps-<date>` directories. It is recommended to send us an archive of the entire content of server's `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directories for all the recent dates.
 
-It is recommended that you take a thread dump of the TeamCity server from the Web UI if the hanging is local and you can still open the TeamCity __Administration__ pages: go to the __Administration | Server Administration | Diagnostics__ page and click the __Save Thread Dump__ button to save a dump under the `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directory (where you can later download the files from "Server Logs"). If the server is fully started but the web UI is not responsive, try the [direct URL](http://YOUR_TEAMCITY_SERVER_URL/admin/diagnostic.html?actionName=threadDump&amp;save=false) using the actual URL of your TeamCity server.
+It is recommended that you take a thread dump of the TeamCity server from the Web UI if the hanging is local and you can still open the TeamCity __Administration__ pages: go to the __Administration | Server Administration | Diagnostics__ page and click the __Save Thread Dump__ button to save a dump under the `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directory (where you can later download the files from "Server Logs"). If the server is fully started but the web UI is not responsive, try the [direct URL](http://YOUR_TEAMCITY_SERVER_URL/admin/diagnostic.html?actionName=threadDump&amp;save=false){nullable="true"} using the actual URL of your TeamCity server.
 
 If the UI is not accessible (or the server is not yet fully started), you can take a server thread dump manually using the approaches described [below](#Taking+Thread+Dump).
 
@@ -129,16 +129,15 @@ To take a thread dump:
 
 You have several options:
 * To take a server thread dump if the server is run from the console, press __Ctrl\+Break__ (Ctrl\+Pause on some keyboards) in the console window (this will not work for an agent, since its console belongs to the launcher process). If the server is run as a service, try running it from console by logging under the same use as configured in the service and executing `<TeamCity server home>\bin\teamcity-server.bat run` command.
-Another approach is to figure out the process id of the TeamCity server process (it's the topmost "java" process with "org.apache.catalina.startup. Bootstrap  start" at the end og the command line and use of the following approaches:
-* run `jstack <pid_of_java_process>` in the bin directory of the Java installation used to by the process (the Java home can be looked up in the process command line. If the installation does not have jstack utility, you might need to get the java version via java \-version command, download full JDK of the same version and use "jstack" utility form there). You might also need to supply `-F` flag to the command.
-* use TeamCity-bundled agent thread dump tool (can be found in the agent's plugins). Run the command:
-
-```Shell
-
-<TeamCity agent>\plugins\stacktracesPlugin\bin\x86\JetBrains.TeamCity.Injector.exe <pid_of_java_process>
-```
-
-Note that if the hanging process is run as a service, the thread dumping tool must be run from a console with elevated permissions (using Run as Administrator). If the service is run under System account, you might also need to launch the thread dumping tools via [`PsExec.exe`](http://technet.microsoft.com/en-us/sysinternals/bb897553.aspx)` -s <path to the tool>\<tool> <options>`. When the service is run under a regular user, wrapping the tool invocation in ` PsExec.exe -u <user> -p <password> <path to the tool>\<tool> <options>` might also help.
+* Another approach is to figure out the ID of the TeamCity server process (it's the topmost "java" process with "org.apache.catalina.startup. Bootstrap start" at the end of the command line) and use of the following approaches:
+  * Run `jstack <pid_of_java_process>` in the `bin` directory of the Java installation used to by the process (the Java home can be looked up in the process command line. If the installation does not have the `jstack` utility, you might need to get the Java version via the `java -version` command, download full JDK of the same version and use the `jstack` form there). You might also need to supply `-F` flag to the command.
+  * Use TeamCity-bundled agent thread dump tool (can be found in the agent's plugins). Run the command:
+    ```Shell
+    
+    <TeamCity agent>\plugins\stacktracesPlugin\bin\x86\JetBrains.TeamCity.Injector.exe <pid_of_java_process>
+    ```
+    
+    Note that if the hanging process is run as a service, the thread dumping tool must be run from a console with elevated permissions (using Run as Administrator). If the service is run under System account, you might also need to launch the thread dumping tools via [`PsExec.exe`](http://technet.microsoft.com/en-us/sysinternals/bb897553.aspx) `-s <path to the tool>\<tool> <options>`. When the service is run under a regular user, wrapping the tool invocation in `PsExec.exe -u <user> -p <password> <path to the tool>\<tool> <options>` might also help.
 
 If neither of these work for the server running as a service, try [running the server](start-teamcity-server.md) from console and not as a service. This way the first (Ctrl\+Break) option can be used.
 
@@ -175,11 +174,11 @@ The log can also be sent to us for analysis.
 
 If you experience problems with TeamCity consuming too much memory or "OutOfMemoryError"/"Java heap space" errors in the log, do the following:
 * Determine what process encounters the error (the actual building process, the TeamCity server, or the TeamCity agent). You can track memory and CPU usage by TeamCity with the charts on the __Administration | Server Administration | Diagnostics__ page of your TeamCity web UI.
-* If the server is to blame, check you have increased memory settings from the default ones for using the server in production (see the [section](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server)).
-* If the build process is to blame, set "JVM Command Line Parameters" settings in the build runner. Increase the value for the `-Xmx` JVM option: for instance, `-Xmx1200m`. Note that Java Inspections builds may specifically need increasing the `-Xmx` value.
-* If the TeamCity server is to blame and increasing the memory size does not help, please report the case for us to investigate. For this, while the server is high on memory consumption, take several server thread dumps as described [above](#Taking+Thread+Dump), get the memory dump (see below) and all the server logs including `threadDumps-*` sub-directories, archive the results, and [send them](#Uploading+Large+Data+Archives) to us for further analysis. Make sure that the `-Xmx` setting is less than 8Gb before getting the dump:
+* If the problem is on the server's side, check you have increased memory settings from the default ones for using the server in production (see the [section](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server)).
+* If the problem is on the build process' side, set "JVM Command Line Parameters" settings in the build runner. Increase the value for the `-Xmx` JVM option: for instance, `-Xmx1200m`. Note that Java Inspections builds may specifically need increasing the `-Xmx` value.
+* If the problem is on the TeamCity server's side and increasing the memory size does not help, please report the case for us to investigate. For this, while the server is high on memory consumption, take several server thread dumps as described [above](#Taking+Thread+Dump), get the memory dump (see below) and all the server logs including `threadDumps-*` sub-directories, archive the results, and [send them](#Uploading+Large+Data+Archives) to us for further analysis. Make sure that the `-Xmx` setting is less than 8Gb before getting the dump:
   * if a memory dump (`hprof` file) is created automatically, the `java_xxx.hprof` file is created in the process startup directory (`<[TeamCity Home](teamcity-home-directory.md)>/bin` or `<[TeamCity Agent home](agent-home-directory.md)>/bin`);
-  * for the server, you can also take memory dump manually when the memory usage is at its peak. Go to the __Administration | Server Administration | Diagnostics__ page of your TeamCity web UI and click __Dump Memory Snapshot__.
+  * for the server, you can also take memory dump manually when the memory usage is at its peak. Go to the __Administration | Server Administration | Diagnostics__ page of your TeamCity UI and click __Dump Memory Snapshot__.
   * another approach to take a memory dump manually is to use the `jmap` standard JVM command line utility of the full JVM installation of the same version as the Java used by the process. Example command line is:   
     
     ```Shell
@@ -414,9 +413,9 @@ jetbrains.teamcity.core/perfomance/teamcity = true
 
 Read more about Eclipse Debug mode [Gathering Information About Your Plug-in](http://www.eclipse.org/eclipse/platform-core/documents/3.1/debug.html) and built-in Eclipse help.
 
-## TeamCity Visual Studio Addin issues
+## TeamCity Visual Studio Add-in issues
 
-### TeamCity Addin logging
+### TeamCity Add-in logging
 
 To capture logs from the TeamCity [Visual Studio Addin](visual-studio-addin.md):
 
@@ -477,8 +476,8 @@ To help us investigate issues with inspections, do the following:
 
 ## Uploading Large Data Archives
 
-Files under 10 MB in size can be attached right into the [tracker issue](http://youtrack.jetbrains.net/issues/TW) (if you do not want the attachments to be publicly accessible, limit the attachment visibility to "teamcity-developers" user group only).    
-You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrains.com](mailto:teamcity-support@jetbrains.com) or via [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) (up to 20 MB). Please do not forget to mention your TeamCity version and environment and archive the files before attaching.
+Files under 10 MB in size can be attached right into the [tracker issue](http://youtrack.jetbrains.net/issues/TW) (if you do not want the attachments to be publicly accessible, limit the attachment visibility to "teamcity-developers" user group only).  
+You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrains.com](mailto:teamcity-support@jetbrains.com) or via [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} (up to 20 MB). Please do not forget to mention your TeamCity version and environment and archive the files before attaching.
 
 [//]: # (Internal note. Do not delete. "Reporting Issuesd267e1305.txt")    
 

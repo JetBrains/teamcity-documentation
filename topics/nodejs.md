@@ -3,21 +3,23 @@
 
 The Node.js build runner allows running Node.js tools like [`npm`](https://www.npmjs.com/), [`yarn`](https://yarnpkg.com/), and [`node`](https://github.com/nodejs/node).
 
-Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
+Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings.
 
 ## Prerequisites
 
-Currently, Node.js steps can only be run inside a Docker container. TeamCity uses `node:lts` by default, or, if there is an `.nvmrc` file inside your project, it will search for the image specification there.
+Currently, Node.js steps can only be run inside a Docker container. Refer to [Docker Wrapper](docker-wrapper.md) for general information about available Docker settings.
+
+You can define what version of Node.js to use for the current build step. TeamCity uses a `node:lts` image by default, or, if there is an `.nvmrc` file inside your project, it will search for the image specification there.
 
 ## Autodetecting JavaScript Steps
 
-If your repository contains a `package.json` file, TeamCity will [automatically detect](configuring-build-steps.md#Autodetecting+build+steps) used frameworks and propose adding respective build steps.
+If your repository contains a `package.json` file, TeamCity will [automatically detect](configuring-build-steps.md#Autodetecting+Build+Steps) used frameworks and propose adding respective build steps.
 
 >If TeamCity detects a dependency on a test framework, it will propose choosing between two steps: run tests via this framework or with a general `test` command. To display structured test reports in TeamCity, select the step with the framework.
 > 
 {type="note"}
 
-Currently supported frameworks are [ESlint](https://eslint.org/), [Jest](https://jestjs.io/), or [Mocha](https://mochajs.org/).
+Currently supported frameworks are [ESlint](https://eslint.org/), [Jest](https://jestjs.io/), and [Mocha](https://mochajs.org/).
 
 If TeamCity detects an `.nvmrc` file, it will automatically use the node version specified in it.
 

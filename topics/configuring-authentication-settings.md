@@ -114,7 +114,7 @@ Let's imagine that the administrator had the "jsmith" TeamCity username and used
 ### Special User Accounts
 {product="tc"}
 
-By default, TeamCity has a [Super User](super-user.md) account with maximum permissions and a [Guest User](guest-user.md) with minimal permissions. These accounts have no personal settings such as the __[Changes](viewing-your-changes.md)__ page and Profile information as they are not related to any particular person but rather intended for special use cases.
+By default, TeamCity has a [Super User](super-user.md) account with maximum permissions and a [Guest User](guest-user.md) with minimal permissions. These accounts have no personal settings such as the __[Changes](viewing-user-changes-in-builds.md)__ page and Profile information as they are not related to any particular person but rather intended for special use cases.
 
 ## Credentials Authentication Modules
 
@@ -365,7 +365,7 @@ Leave empty to allow all GitHub users to access the TeamCity server.
 
 </table>
 
->If you reconnect a TeamCity server from one GitHub Enterprise server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](https://teamcity-support.jetbrains.com/hc/en-us).
+>If you reconnect a TeamCity server from one GitHub Enterprise server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](feedback.md).
 >
 {type="warning"}
 
@@ -485,7 +485,7 @@ Leave empty to allow all GitLab users to access the TeamCity server.
 
 </table>
 
->If you reconnect a TeamCity server from one GitLab CE/EE server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](https://teamcity-support.jetbrains.com/hc/en-us).
+>If you reconnect a TeamCity server from one GitLab CE/EE server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](feedback.md).
 >
 {type="warning"}
 

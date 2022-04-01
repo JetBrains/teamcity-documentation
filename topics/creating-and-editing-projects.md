@@ -102,7 +102,7 @@ Provide a password or token if access to the repository requires authentication.
 
 3\. Click __Proceed__. TeamCity will configure the rest of settings for you.
  * it will determine the type of the VCS repository, autoconfigure VCS repository settings, and suggest the project and build configuration names.   
-   For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+   For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
  * the project, build configuration and VCS root will be created automatically.
  * TeamCity will add a VCS build trigger.
  * TeamCity will attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.
@@ -115,7 +115,7 @@ Depending on the build configuration settings, TeamCity can suggest some additio
 ### Creating project pointing to GitHub.com repository
 1. On the __Create project__ page, select to create a project __from GitHub.com__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
-3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. TeamCity will autodetect the default Git branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. TeamCity will autodetect the default Git branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
     On the __Auto-detected Build Steps__ page, select the detected step(s) to use in your build configuration. Click __Use selected__.   
     If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
@@ -124,7 +124,7 @@ Depending on the build configuration settings, TeamCity can suggest some additio
 ### Creating project pointing to Bitbucket Cloud
 1. On the __Create project__ page, select to create a project __from Bitbucket Cloud__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
-3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.  
 On the __Auto-detected Build Steps__ page, select the detected step(s) to use in your build configuration. Click __Use selected__.  
 If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
@@ -133,7 +133,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 ### Creating project pointing to GitLab.com
 1. On the __Create project__ page, select to create a project __from GitLab.com__.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
-3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. TeamCity will autodetect the default Git branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. TeamCity will autodetect the default Git branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
 On the __Auto-detected Build Steps__ page, select the detected step(s) to use in your build configuration. Click __Use selected__.   
 If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
@@ -143,7 +143,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 
 1. On the __Create project__ page, select to create a project __from Azure DevOps__. The recommended approach for Git repositories is to use the [connection based on OAuth 2.0 protocol](configuring-connections.md#Connecting+to+Azure+DevOps). If you need to connect to a TFVC repository, use the obsolete [PAT-based connection](configuring-connections.md#Azure+DevOps+PAT+Connection).
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
-3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   
 On the __Auto\-detected Build Steps page__ select the detected step(s) to use in your build configuration. Click __Use selected__.   
 If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
@@ -151,11 +151,13 @@ If no steps found, you will have to [configure build steps manually](configuring
 
 ### Creating project pointing to JetBrains Space
 
+>If you are looking for how to integrate your JetBrains Space instance with TeamCity, check out this **[full integration guide](how-to-configure-cicd-for-jetbrains-space.md)**!
+
 Before creating a project from a JetBrains Space, you need to configure a [dedicated connection to your Space instance](configuring-connections.md#connect-to-jetbrains-space).
 
 1. On the __Create project__ page, select to create a project __from JetBrains Space__. The first time, you will be prompted to sign in to Space and grant TeamCity access to view your user profile and projects. To be able to do this, TeamCity will create a service token for authenticating in your Space instance.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
-3. TeamCity will display the project and build configuration names. If required, modify them and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+branches).
+3. TeamCity will display the project and build configuration names. If required, modify them and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   
    On the __Auto\-detected Build Steps page__ select the detected step(s) to use in your build configuration. Click __Use selected__.   
    If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
@@ -263,7 +265,7 @@ Use the corresponding item from the __Actions__ menu in the upper right corner o
 
 Projects can be copied and moved to another project by project administrators.
 
-A copy duplicates all the settings, [subprojects](project.md#Project+Hierarchy), [build configurations](build-configuration.md), and [templates](build-configuration-template.md) of the original project, but no data related to builds is preserved. The copy is created with the empty [build history](build-history.md) and no [statistics](statistic-charts.md).
+A copy duplicates all the settings, [subprojects](project.md#Project+Hierarchy), [build configurations](managing-builds.md), and [templates](build-configuration-template.md) of the original project, but no data related to builds is preserved. The copy is created with the empty [build history](build-results-page.md#Build+History+in+Classic+UI) and no [statistics](statistic-charts.md).
 
 You can copy a project into the same or another parent.
 
@@ -292,7 +294,7 @@ Before moving the project, consider the following:
 
 To move a project, use the corresponding item from the __Actions__ menu in the upper right corner of the __Project Settings__ page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent __Project Settings__ page.
 
-When moving a project, TeamCity preserves all its settings, [subprojects](project.md#Project+Hierarchy), [build configurations](build-configuration.md)/[templates](build-configuration-template.md), and associated data, as well as the [build history](build-history.md).
+When moving a project, TeamCity preserves all its settings, [subprojects](project.md#Project+Hierarchy), [build configurations](managing-builds.md)/[templates](build-configuration-template.md), and associated data, as well as the [build history](build-results-page.md#Build+History+in+Classic+UI).
 
 ### Archiving Project
 
@@ -311,7 +313,7 @@ Care must be taken when performing this action. Modifying the ID will change all
 
 ### Pausing / Activating Triggers
 
-You can [pause triggers](build-configuration.md#Pausing+Several+Build+Configurations+in+Project) for all or selected build configurations of a project. Use the corresponding item from the __Actions__ menu in the upper right corner of the __Project Settings__ page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent __Project Settings__ page.
+You can [pause triggers](changing-build-configuration-status.md#Pausing+Several+Build+Configurations+in+Project) for all or selected build configurations of a project. Use the corresponding item from the __Actions__ menu in the upper right corner of the __Project Settings__ page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent __Project Settings__ page.
 
 ### Exporting Project 
 
@@ -337,5 +339,8 @@ If you attempt to delete a project with [dependent build configurations](depende
  <seealso>
         <category ref="admin-guide">
             <a href="creating-and-editing-build-configurations.md">Creating and Editing Build Configurations</a>
+        </category>
+        <category ref="examples">
+            <a href="how-to-configure-cicd-for-jetbrains-space.md">How to Configure CI/CD for JetBrains Space</a>
         </category>
 </seealso>

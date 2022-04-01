@@ -26,7 +26,7 @@ If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build con
 >For requests from GitHub and GitLab, you can set up TeamCity to automatically run a build on each request and merge the request if the build is successful.   
 To achieve this, enable and configure the Pull Requests and [Automatic Merge](automatic-merge.md) build features.
 
-See the [example](#Pull+Requests+workflow+example) on how to set up TeamCity to run builds on GitHub pull requests.
+See the [example](#Pull+Requests+workflow+example) on how to set up TeamCity to run builds on GitHub pull requests, or watch our **[video tutorial](https://www.youtube.com/watch?v=4yFck9PvXI4)**.
 
 ## VCS-specific settings
 
@@ -397,7 +397,6 @@ Use a personal access token for connection. The token must have the `api` scope.
 By source branch
 
 </td>
-<td></td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor merge requests only on source branches that match the specified criteria. If left blank, no filters apply.
@@ -410,7 +409,6 @@ Define the [branch filter](branch-filter.md) to monitor merge requests only on s
 By target branch
 
 </td>
-<td></td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. If left blank, no filters apply.
@@ -477,10 +475,9 @@ Use a personal access token for connection. The token must have the `Code (read)
 By source branch
 
 </td>
-<td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left empty, no filters apply.
 
 </td>
 </tr>
@@ -490,10 +487,9 @@ Define the [branch filter](branch-filter.md) to monitor pull requests only on so
 By target branch
 
 </td>
-<td></td>
 <td>
 
-Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left blank, no filters apply.
+Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.
 
 </td>
 </tr>
@@ -506,7 +502,7 @@ Project URL
 
 <td>
 
-Specify a project URL for synchronization with the remote Azure DevOps server. This field is recommended for on-premises Azure DevOps installations. If left blank, the URL will be composed based on the VCS root fetch URL.
+Specify a project URL for synchronization with the remote Azure DevOps server. This field is recommended for on-premises Azure DevOps installations. If left empty, the URL will be composed based on the VCS root fetch URL.
 
 </td>
   </tr>
@@ -555,7 +551,7 @@ To configure the described workflow for the `web-app` build configuration in Tea
         * __Authentication type__: _Use VCS root credentials_, or select _Access token_ to use a GitHub token instead        
         * __Pull Requests filtering__:
            * __By authors__: _Members of the same organization_
-           * __By target branch__: leave blank to apply no filters and monitor all new pull requests in the repository, or explicitly specify the target branch (in this example, _`master`_)
+           * __By target branch__: leave empty to apply no filters and monitor all new pull requests in the repository, or explicitly specify the target branch (in this example, _`master`_)
    * Test the connection and, if successful, click __Save__.
 3. Add a [VCS trigger](configuring-vcs-triggers.md) to the build configuration.
 

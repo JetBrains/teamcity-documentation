@@ -71,6 +71,6 @@ Note that the __[Agent Requirements](agent-requirements.md)__ page also displays
         <category ref="concepts">
             <a href="agent-requirements.md">TeamCity Data Backup</a>
             <a href="build-agent.md">Build Agent</a>
-            <a href="build-configuration.md">Build Configuration</a>
+            <a href="managing-builds.md">Build Configuration</a>
         </category>
 </seealso>

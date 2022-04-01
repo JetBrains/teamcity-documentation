@@ -31,7 +31,16 @@ Agents use unidirectional agent-to-server connection via the polling protocol: a
 
 [//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e376.txt")
 
-## Generating Authentication Token
+<anchor name="SettingupandRunningAdditionalBuildAgents-InstallingAdditionalBuildAgents"/>
+
+## Connecting Local Agents to TeamCity Server
+
+After you [install a build agent locally](install-teamcity-agent.md), it needs to be [configured](configure-agent-installation.md) and connected to your TeamCity server or cloud instance. Watch this video for a quick guide:
+
+<video href="dvyDCzOJJZw"
+title="TeamCity tutorial — How to connect local agents to your TeamCity server"/>
+
+### Generating Authentication Token
 {product="tcc"}
 
 The recommended approach to connecting a self-hosted agent to a TeamCity Cloud instance is to generate a unique authentication token for this agent. To do this, go to __Agents__, open the __Install Build Agents__ menu in the upper right corner of the screen, and click _Use authentication token_. There are two options:
@@ -40,5 +49,3 @@ The recommended approach to connecting a self-hosted agent to a TeamCity Cloud i
 * _Download config_: enter an agent name (`name` attribute in the [build agent config](configure-agent-installation.md)) and download the entire config file. Place it as the `buildAgent.properties` file in the build agent directory.
 
 Please generate own token or configuration file per each self-hosted agent.
-
-<anchor name="SettingupandRunningAdditionalBuildAgents-InstallingAdditionalBuildAgents"/>

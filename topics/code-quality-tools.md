@@ -57,7 +57,7 @@ If your reporting tool is not supported by TeamCity directly, you can make it pr
 
 ### Importing Code Coverage Results
 
-You can also [import code coverage results in TeamCity](how-to.md#Import+coverage+results+in+TeamCity).
+You can also [import code coverage results in TeamCity](importing-arbitrary-coverage-results-to-teamcity.md).
 
 ## Integration with External Tools
 

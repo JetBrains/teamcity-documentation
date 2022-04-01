@@ -124,21 +124,19 @@ If the build is set up to checkout on the agent, by default Swabra ignores all `
 
 ## Installing Handle
 
-You can install `handle.exe` from the __Administration__ | __Tools__ page.   
-Click the __Install Tool__ button and select __Sysinternals handle.exe__ from the list of tools.   
+You can install `handle.exe` from the __Administration__ | __Tools__ page.  
+Click the __Install Tool__ button and select __Sysinternals handle.exe__ from the list of tools.  
 Specify whether you want to download the latest version of `handle.exe` or upload it manually choosing the path on local machine, and click __Add__. TeamCity will download or upload `handle.exe` and send it to Windows agents.
 
 `handle.exe` is present on agents only after the upgrade.
 
-Note that running handle.exe requires some additional permissions for the build agent user. For more details read [this thread](https://social.technet.microsoft.com/Forums/en-US/e8d97be5-8265-418a-9f44-00a399858bcf/handleexe-amp-user-rights-needed?forum=miscutils).
+Note that running `handle.exe` requires some additional permissions for the build agent user. For more details read [this thread](https://social.technet.microsoft.com/Forums/en-US/e8d97be5-8265-418a-9f44-00a399858bcf/handleexe-amp-user-rights-needed?forum=miscutils).
 
 ## Debug options
 
 Generally snapshot file is deleted after files collection. Set the `swabra.preserve.snapshot` system property to preserve snapshots for debugging purposes.
 
-
 [//]: # (Internal note. Do not delete. "Build Files Cleaner Swabra d36e260.txt")    
-
 
 ## Clean Checkout
 

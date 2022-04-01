@@ -9,7 +9,7 @@ A build agent can be configured by adjusting in the `<TeamCity Agent Home>/conf/
 
 ## General Agent Configuration
 
-This [Java properties](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)) configuration file can store properties that will be published on the server as _agent properties_ and can participate in the [Agent Requirements](agent-requirements.md) expressions. All [system and environment properties](predefined-build-parameters.md#Agent+Properties) defined in the file will be passed to every build run on the agent.
+This [Java properties](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)) configuration file can store properties that will be published on the server as _agent properties_ and can participate in the [Agent Requirements](agent-requirements.md) expressions. All [system and environment properties](predefined-build-parameters.md#Predefined+Agent+Build+Parameters) defined in the file will be passed to every build run on the agent.
 
 Syntax reference:
 * Use `property_name=value<newline>` syntax.
@@ -21,7 +21,7 @@ Example agent configuration file:
 
 ```Shell
 ## The address of the TeamCity server. The same as is used to open the TeamCity web interface in the browser.
-## Note that usage of https:// is recommended
+## Must include the protocol specification (https:// is recommended).
 serverUrl=http://localhost:8111/
 
 ## The unique name of the agent used to identify this agent on the TeamCity server
@@ -89,12 +89,12 @@ It is possible to configure a forward proxy server for agent-to-server connectio
 
 <seealso>
         <category ref="concepts">
-            <a href="agent-pool.md">Agent Pool</a>
             <a href="build-agent.md">Build Agent</a>
         </category>
         <category ref="admin-guide">
             <a href="predefined-build-parameters.md">Predefined Build Parameters</a>
             <a href="configuring-agent-requirements.md">Configuring Agent Requirements</a>
+            <a href="configuring-agent-pools.md">Configuring Agent Pools</a>
             <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
         </category>
 </seealso>

@@ -5,17 +5,18 @@ A _build log_ is an enhanced console output of a build. It is represented by a s
 
 ## Viewing Build Log
 
-The log of a specific build is available for browsing on the __[Build Results](working-with-build-results.md#Build+Log)__ page. 
+The log of a specific build is available for browsing on the __[Build Results](build-results-page.md#Build+Log+Tab)__ page. 
 
 The __Tree view__ is the most capable view provided in the web UI. By default, all messages are displayed. Using the _View_ drop-down menu, you can switch from all messages to viewing __errors__ separately, or you can choose __Important messages__ to see the log filtered by "error" and "warning" statuses. You can also use the "Verbose" view level and download a raw build log using the corresponding link.
 
 >To switch to the dark theme in the build log, select the __Use console view__ option.
 
-You can download a full build log in the textual form or as a `.zip` archive  from the Build Results page by clicking the _Download full build log_ link at the upper right corner. Alternatively, you can use the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=<id>`. It is also possible to download the build log as a `.zip` file using the corresponding link in the UI or via the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=&archived=true`. 
+You can download a full build log in the textual form or as a `.zip` archive  from the Build Results page by clicking the _Download full build log_ link in the upper right corner. Alternatively, you can use the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=<id>`. It is also possible to download the build log as a `.zip` file using the corresponding link in the UI or via the following URL: `http://teamcity:8111/httpAuth/downloadBuildLog.html?buildId=&archived=true`.  
+Note that if you authenticate in TeamCity via access token (for example, when sending an API request), you need to omit the `httpAuth` part of the URL and use `http://teamcity:8111/downloadBuildLog.html?buildId=<id>`.
 
 ## Customizing Log Output
 
-You can modify the log output using [service messages](service-messages.md#Reporting+Messages+for+Build+Log). This includes grouping the log entries in blocks, handling parallel message flows, changing the severity of a log message, and so on.
+You can modify the log output using [service messages](service-messages.md#Reporting+Messages+to+Build+Log). This includes grouping the log entries in blocks, handling parallel message flows, changing the severity of a log message, and so on.
 
 <anchor name="BuildLog-LargeBuildLogsInspection"/>
 

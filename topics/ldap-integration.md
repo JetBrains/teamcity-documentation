@@ -29,7 +29,9 @@ LDAP integration settings are configured in the `<TeamCity Data Directory>/confi
 
 Create the file by copying `<TeamCity Data Directory>/config/ldap-config.properties.dist` file and renaming it to the `<TeamCity Data Directory>/config/ldap-config.properties`; follow the comments in the file to edit the default settings as required.
 
-The file uses the standard Java properties file syntax, so all the values in the file must be properly [escaped](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)). The file is reread on any modification so you do not need to restart the server to apply changes in the file.
+The file uses the standard Java properties file syntax, so all the values in the file must be properly [escaped](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)). For example, the following `java.naming.security.principal=DOMAIN\user` parameter should be escaped as `java.naming.security.principal=DOMAIN\\user`.
+
+The file is reread on any modification: there is no need to restart the server to apply the changes.
 
 It is strongly recommended backing up the previous version of the file: if you misconfigure LDAP integration, you may no longer be able to log in into TeamCity. The users who are already logged in are not affected by the modified LDAP integration settings because users are authenticated only on login.
 
