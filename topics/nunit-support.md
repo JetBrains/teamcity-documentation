@@ -805,7 +805,7 @@ Run all tests from category C1, but not C2.
 ```
 
 Explicitly specify the version on NUnit to run tests with.   
-Note, that in this case, the following property should be added __before__ the `nunit2` task call.
+Note that in this case, the following property should be added __before__ the `nunit2` task call.
 
 ```XML
 <property name="teamcity.dotnet.nant.nunit2.version" value="NUnit-2.4.10" />

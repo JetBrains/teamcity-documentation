@@ -97,7 +97,7 @@ To edit an agent pool's scope, click **Assign agents** in its settings. In this 
 Note that whenever you select a cloud image, you actually assign all its instances to the pool. If this pool has a limit of agent slots, each cloud instance will take a single slot, just like any regular agent.
 
 Similarly, you can also associate projects with this pool: open the **Projects** tab of the pool's settings and click **Assign projects**. This way, agents assigned to this pool will be allowed to run builds only in the selected projects.
-
+ 
 ## Storing Docker images produced by build to public ECR registry
 {product="tc"}
 
