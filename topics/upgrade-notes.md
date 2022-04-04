@@ -2490,7 +2490,7 @@ __Working Folders in Use__
 
 Since version 3.1 when checking out files from a StarTeam repository TeamCity builds directory structure on the base of the working folder names, not just folder names as it was in earlier versions. So if you are satisfied with the way TeamCity worked with StarTeam folders in version 3.0, ensure the working folders' names are equal to the corresponding folder names (which is so by default).
 
-Also note, that although StarTeam allows using absolute paths as working folders, TeamCity supports relative paths only and doesn't detect absolute paths presence. So be careful and review your configuration.
+Also note that although StarTeam allows using absolute paths as working folders, TeamCity supports relative paths only and doesn't detect absolute paths' presence. So be careful and review your configuration.
 
 __StarTeam URL Parser Fixed__
 
