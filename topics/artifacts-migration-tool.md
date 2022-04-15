@@ -7,9 +7,9 @@ TeamCity provides a command-line tool dedicated to automatic migration of [build
 
 * The service has to be installed on the same machine where the TeamCity server is installed.
 * The address of the TeamCity server, TeamCity authentication token, and list of artifact directories must be provided in the configuration file.  
-  By default, the service expects it to be located in `config/application.properties`.
-* To use a target S3 storage, the tool needs AWS credentials on the machine.  
-  AWS credentials can be supplied using [any supported method](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html).
+  By default, the service expects them to be located in `config/application.properties`.
+* To use S3 storage as the target, the tool needs AWS credentials on the machine.  
+  The AWS credentials can be supplied using [any supported method](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html).
 
 ## Command Line Options
 
@@ -23,13 +23,13 @@ By default, the service runs in the interactive mode. During the first run, the 
 * Update the migration plan.
 * Show the migration plan.
 * Copy artifacts from the source storage to the target storage.
-* Revert the migration — in case of incomplete or interrupted migration, remove the copied artifacts from the target storage.
+* Revert the migration — in case of incomplete or interrupted migration, the service will remove the copied artifacts from the target storage.
 * Delete artifacts from the source storage.
 * Forget the migration plan — discard the current migration plan.
 
-If the service fails, you can choose to "update the migration plan" to continue the interrupted migration.
+If the service fails, you can choose to update the migration plan to continue the interrupted migration.
 
-If the service finds an existing migration plan, it will request to select the next step right away.
+If the service finds an existing migration plan, it will ask you to select the next step right away.
 
 ## Non-Interactive Mode
 
