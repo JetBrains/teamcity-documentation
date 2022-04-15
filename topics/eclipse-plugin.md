@@ -1,6 +1,8 @@
 [//]: # (title: Eclipse Plugin)
 [//]: # (auxiliary-id: Eclipse Plugin)
 
+>This plugin is unbundled from TeamCity since version 2022.04. If you want to continue using it, please [contact our support](https://teamcity-support.jetbrains.com/hc/en-us).
+
 ## Plugin Features
 
 TeamCity integration with Eclipse provides the following features:
