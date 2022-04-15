@@ -16,9 +16,11 @@
   * Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
 * Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11.
 * The [SBT](http://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.5.5.
-* The [CVS plugin](cvs.md) has been unbundled from TeamCity. If you want to continue using it on your server, please [download it from JetBrains Marketplace](https://plugins.jetbrains.com/plugin/18552-vcs-support-cvs) and install it as described [here](installing-additional-plugins.md).
 * Freemarker, used by TeamCity [notification templates](customizing-notification-templates.md), has been updated to version 2.3.31.
+* The [Qodana plugin](https://www.jetbrains.com/help/qodana/qodana-teamcity-plugin.html) has been bundled with TeamCity.
 
+* The [CVS plugin](cvs.md) has been unbundled from TeamCity. If you want to continue using it on your server, please [download it from JetBrains Marketplace](https://plugins.jetbrains.com/plugin/18552-vcs-support-cvs) and install it as described [here](installing-additional-plugins.md).
+* The [Eclipse plugin](eclipse-plugin.md) has been unbundled from TeamCity. [Contact our support](https://teamcity-support.jetbrains.com/hc/en-us) if you need the plugin.
 ## Changes from 2021.2.2 to 2021.2.3
 
 * To avoid false positive reports from some security scanners, TeamCity now uses an instance of the Log4j 1.2 library without vulnerable classes. To achieve this, we've created [our own fork of Log4j 1.2](https://github.com/JetBrains/teamcity-log4j) on GitHub, removed vulnerable packages unused by TeamCity (`net`, `chainsaw`, `jdbc`, and `jmx`), and built the library.
@@ -2359,7 +2361,7 @@ __Default memory options change__
 We changed the default [memory option](install-and-start-teamcity-server.md) for PermGen memory space and if you had `-Xmx` JVM option changed to about 1.3G and are running on 32-bit JVM, the server may fail to start with a message like: "Error occurred during initialization of VM Could not reserve enough space for object heap Could not create the Java virtual machine".
 
 On this occasion, please consider either:
-* [switching to 64-bit JVM](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server).
+* [switching to 64-bit JVM](configure-server-installation.md#configure-memory-settings-for-teamcity-server).
 * reducing PermGen memory via `-XX:MaxPermSize` [JVM option](server-startup-properties.md) (to previous default 120m)
 * reducing heap memory via `-Xmx` [JVM option](server-startup-properties.md)
 
