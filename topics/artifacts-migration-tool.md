@@ -3,15 +3,12 @@
 
 TeamCity provides a command-line tool dedicated to automatic migration of [build artifacts](build-artifact.md) from one storage to another. Currently, it supports migration from a local storage to Amazon S3.
 
-The tool is a work in progress. The download link will be available on its release.
-
 ## Prerequisites
 
 * The service has to be installed on the same machine where the TeamCity server is installed.
 * The address of the TeamCity server, TeamCity authentication token, and list of artifact directories must be provided in the configuration file.  
   By default, the service expects it to be located in `config/application.properties`.
-* The ID of the source storage must be provided to the service. It can be found in the URL of the storage settings page in TeamCity, in the `storageSettingsId` parameter.
-* If either a source or target storage is an S3 storage, the tool expects to find AWS credentials on the machine.  
+* To use a target S3 storage, the tool needs AWS credentials on the machine.  
   AWS credentials can be supplied using [any supported method](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html).
 
 ## Command Line Options
@@ -22,13 +19,13 @@ The service supports the following command line arguments:
 
 ## Interactive Mode
 
-By default, the service runs in the interactive mode. During the first run, the service creates a migration plan listing all artifacts in the source storage. Then, the service asks to select the next step:
+By default, the service runs in the interactive mode. During the first run, the service creates a migration plan listing all artifacts in the source storage. Then, the service asks you to select the next step:
 * Update the migration plan.
 * Show the migration plan.
 * Copy artifacts from the source storage to the target storage.
 * Revert the migration — in case of incomplete or interrupted migration, remove the copied artifacts from the target storage.
-* Remove artifacts from the source storage.
-* Reset the migration plan — discard the current migration plan.
+* Delete artifacts from the source storage.
+* Forget the migration plan — discard the current migration plan.
 
 If the service fails, you can choose to "update the migration plan" to continue the interrupted migration.
 
