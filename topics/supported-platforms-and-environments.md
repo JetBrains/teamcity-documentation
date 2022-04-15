@@ -205,6 +205,24 @@ Windows (Medium)
 
 </tr>
 
+<tr>
+
+<td>
+
+macOS (Medium)
+
+</td>
+
+<td>
+
+* CPU: 6 vCPU (Intel i7)
+* RAM: 15 GB
+* Storage (for preinstalled software and running builds): 150 GB
+
+</td>
+
+</tr>
+
 </table>
 
 Each JetBrains-hosted agent comes with a set of preinstalled software.
