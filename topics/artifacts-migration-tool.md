@@ -17,7 +17,6 @@ The tool is a work in progress. The download link will be available on its relea
 ## Command Line Options
 
 The service supports the following command line arguments:
-* `--source` (`-s`) — (required) the settings ID of the source storage (the `storageSettingsId` parameter in the URL of the artifact storage settings page in TeamCity).
 * `--project` (`-p`) — (required) the [external ID](https://www.jetbrains.com/help/teamcity/identifier.html#External+IDs) of the project that needs to be migrated.
 * `--recursive` (`-r`) — (optional) indicates whether the service should recursively process all subprojects of the selected project.
 
@@ -61,7 +60,3 @@ If one or more of these steps are provided, the service goes through them withou
 * `teamcity.storage.migration.s3.forceVirtualHostAddressing` — use the virtual hosted style of S3 URL addresses instead of deprecated path style (by default, **true**).
 * `teamcity.storage.migration.s3.upload.numberOfRetries` — the number of attempts the service does when uploading data to S3 if it encounters errors (by default, **5**).
 * `teamcity.storage.migration.s3.upload.retryDelayMs` — the initial delay between attempts in milliseconds (by default, **1000**).
-
-## Build
-
-This project uses Gradle as the build system.
