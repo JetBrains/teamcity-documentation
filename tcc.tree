@@ -222,6 +222,7 @@
             <toc-element id="adding-build-features.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="assemblyinfo-patcher.md"/>
                 <toc-element id="automatic-merge.md" show-structure-for="chapter" show-structure-depth="4"/>
+                <toc-element id="build-approval.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="build-files-cleaner-swabra.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="commit-status-publisher.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="docker-support.md"/>
