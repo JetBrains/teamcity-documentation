@@ -150,6 +150,18 @@ Check this option to receive notifications about a "failing" build as soon as th
 
 <td>
 
+__Queued build requires approval__
+
+</td>
+
+<td>
+
+Check this option to receive notifications about a build requiring your approval. This option overrides the __Builds with my changes only__ option.
+
+</td></tr><tr>
+
+<td>
+
 __Build starts__
 
 </td>
