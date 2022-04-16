@@ -5,11 +5,18 @@ Monitoring the quality of the codebase is essential for a development team: a pr
 
 The __Changes__ page of the TeamCity UI allows you to review the commits made by all TeamCity users and see how they have affected builds. You can filter the results with the user selector on the page.
 
-Changes made by a user are displayed correctly only when appropriate [VCS usernames](creating-and-managing-users.md#VCS+Usernames) are defined.
+Changes made by a user are displayed correctly only when appropriate [VCS usernames](creating-and-managing-users.md#vcs-usernames) are defined.
 
 By default, the page does not show the commits to the build configurations hidden by the current user on the **Projects** page. To remove this filter and view all build configurations, clear the _Hide configurations excluded from my projects_ box.
 
-Each change has a new pie-chart icon with slices showing the relative size of pending, successful, as well as old and new problematic builds affected by the change. Hovering over / clicking the pie-chart icon gives a visual representation of how the user commit has affected different builds. Builds with new/critical problems are listed by default. Expanding the change or clicking the _See builds_ link lists all builds with the change.
+The filters at the top of the page provide flexible search options: 
+- by user who made the change
+- by project 
+- by comment to the change (commit message)
+- by path to the changed file: you can filter changes by entering a part of the path
+- by revision number
+
+Each change has a pie-chart icon with slices showing the relative size of pending, successful, as well as old and new problematic builds affected by the change. Hovering over / clicking the pie-chart icon gives a visual representation of how the user commit has affected different builds. Builds with new/critical problems are listed by default. Expanding the change or clicking the _See builds_ link lists all builds with the change.
 
 From this page you can:
 * View all commits and changes included into personal builds.
