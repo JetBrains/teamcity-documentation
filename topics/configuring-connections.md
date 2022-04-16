@@ -131,6 +131,7 @@ There are two types of GitLab connections: __GitLab CE/EE__ and __GitLab.com__. 
 A connection to GitLab can be used to:
 * Create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
 * Create a [VCS root from URL](guess-settings-from-repository-url.md).
+* Integrate with a [GitLab issue tracker](gitlab.md).
 * Enable [GitLab.com authentication](configuring-authentication-settings.md#GitLab.com).
 
 The GitLab connection form provides multiple parameters. You need to use them to [create a new OAuth application in GitLab](https://docs.gitlab.com/ee/integration/oauth_provider.html).

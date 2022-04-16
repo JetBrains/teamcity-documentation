@@ -39,6 +39,7 @@ title="TeamCity tutorial — How to integrate TeamCity and GitHub"/>
 Integration with GitLab allows you to:
 * create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
+* integrate with a [GitLab issue tracker](gitlab.md)
 * enable [GitLab authentication](configuring-authentication-settings.md#GitLab.com)
 
 See how to configure a connection to GitLab.com or GitLab CE/EE [here](configuring-connections.md#GitLab).

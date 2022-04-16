@@ -9,7 +9,7 @@ Enabling integration for the project also enables it for all its subprojects; if
 
 ## Dedicated Support for Issue Trackers
 
-TeamCity supports [Jira](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md), [GitHub](github.md), [Bitbucket Cloud](bitbucket-cloud.md), and Azure DevOps Server (formerly [TFS](azure-board-work-items.md)) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Trackers) page lists supported versions.
+TeamCity supports [Jira](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md), [GitHub](github.md), [GitLab](gitlab.md), [Bitbucket Cloud](bitbucket-cloud.md), and Azure DevOps Server (formerly [TFS](azure-board-work-items.md)) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Trackers) page lists supported versions.
 
 When an integration is configured, TeamCity automatically transforms an issue ID (=issue key in Jira, work item ID in Azure DevOps Server) mentioned in the VCS commit comment into a link to the corresponding issue, and the basic issue details are displayed in the TeamCity web UI when hovering over the icon next to the issue ID (for example, on the __[Changes](build-results-page.md#Changes+Tab)__ tab of Build Results).
 
@@ -110,6 +110,7 @@ Additional authentication information or/and the details on how to specify strin
 * [Jira](jira.md)
 * [Bugzilla](bugzilla.md)
 * [GitHub](github.md)
+* [GitLab](gitlab.md)
 * [Bitbucket Cloud](bitbucket-cloud.md)
 * [TFS](azure-board-work-items.md)
 
@@ -123,7 +124,7 @@ For example, if a project key is `WEB`, an issue key like `WEB-101`, mentioned i
 For __YouTrack__, you need to provide a [permanent token](https://www.jetbrains.com/help/youtrack/incloud/authentication-with-permanent-token.html) for authentication and a space-separated list of __Project IDs__. You can also load all project IDs automatically: check _Use all YouTrack IDs automatically_ and test the connection to your YouTrack server. If the connection is successful, the __Project IDs__ field will be automatically populated. Newly created projects in YouTrack will be detected by TeamCity, and the project ID list will be automatically synchronized.  
 For example, if a project ID is `TW`, an issue ID like `TW-18802` mentioned in a VCS comment will be resolved to a link to the corresponding issue.
  
-For __Bugzilla__, __GitHub__, and __Bitbucket Cloud__, you need to specify the __Issue ID Pattern__: a [Java Regular Expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to find the issue ID in the text. The matched text (or the first group if there are groups defined) is used as the issue number. The most common case is `#(\d+)` — this will extract `1234` as the issue ID from the text `Fix for #1234`.
+For __Bugzilla__, __GitHub__, __GitLab__, and __Bitbucket Cloud__, you need to specify the __Issue ID Pattern__: a [Java Regular Expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to find the issue ID in the text. The matched text (or the first group if there are groups defined) is used as the issue number. The most common case is `#(\d+)` — this will extract `1234` as the issue ID from the text `Fix for #1234`.
 
 TeamCity will resolve the issue number mentioned in a VCS comment and will display a link to this issue in the UI (for example, on the __[Changes](build-results-page.md#Changes+Tab)__ page, or the __[Issues](build-results-page.md#Issues+Tab)__ tab of __[Build Results](working-with-build-results.md)__).
 
