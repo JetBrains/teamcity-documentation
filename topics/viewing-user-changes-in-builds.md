@@ -12,11 +12,13 @@ By default, the page does not show the commits to the build configurations hidde
 The filters at the top of the page provide flexible search options: 
 - by user who made the change
 - by project 
-- by comment to the change (commit message)
-- by path to the changed file: you can filter changes by entering a part of the path
-- by revision number
+- by comment to the change (commit message) (the experimental UI only)
+- by path to the changed file: you can filter changes by entering a part of the path (the experimental UI only)
+- by revision number (the experimental UI only)
 
-Each change has a pie-chart icon with slices showing the relative size of pending, successful, as well as old and new problematic builds affected by the change. Hovering over / clicking the pie-chart icon gives a visual representation of how the user commit has affected different builds. Builds with new/critical problems are listed by default. Expanding the change or clicking the _See builds_ link lists all builds with the change.
+Each change has a pie-chart icon showing status of builds with slices showing the relative size of pending, successful, as well as old and new problematic builds affected by the change. (The pie-chart icon is not available in the experimental UI). Hovering over / clicking the build status icon gives a visual representation of how the user commit has affected different builds. Builds with new/critical problems are listed by default.
+
+Expanding the change or clicking the _See builds_ link lists all builds with the change. 
 
 From this page you can:
 * View all commits and changes included into personal builds.
