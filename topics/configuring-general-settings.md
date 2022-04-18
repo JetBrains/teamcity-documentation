@@ -349,7 +349,18 @@ You can also download and customize the `externalStatus.css` file (for example, 
 
 ### Limit Number of Simultaneously Running Builds
 
-Specify the number of builds of the same configuration that can run simultaneously on all agents. This option helps avoid the situation, when all the agents are busy with the builds of a single project. Enter 0 to allow an unlimited number of builds to run simultaneously.
+You can limit for the number of builds that can run simultaneously on all agents. 
+This option helps improve allocating resources for your builds and avoid the situation 
+when all agents are busy with the builds of a single project. 
+
+You can limit the total number of builds for a build configuration and configure granular limits per branch using the related fields:
+- for a build configuration, enter the total maximum number of builds. The number is set to 0 by default allowing an unlimited number of builds to run simultaneously.
+- for a build limit per branch, enter the new-line separated list of rules. 
+Each rule must be in form of `branch:number`, where `branch` is either a logical branch name or a pattern containing * 
+and `number` specifies the maximum number of builds which can run simultaneously in each branch matching the pattern. 
+0 allows an unlimited number of builds in the specified branch.
+
+
 
 <seealso>
         <category ref="concepts">
