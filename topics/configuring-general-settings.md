@@ -349,7 +349,7 @@ You can also download and customize the `externalStatus.css` file (for example, 
 
 ### Limit Number of Simultaneously Running Builds
 
-You can limit for the number of builds that can run simultaneously on all agents. 
+You can limit the number of builds that can run simultaneously on all agents. 
 This option helps improve allocating resources for your builds and avoid the situation 
 when all agents are busy with the builds of a single project. 
 
