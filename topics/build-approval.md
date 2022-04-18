@@ -124,9 +124,9 @@ Approval rules
 
 </td><td>
 
-* user-based rules require an approval from a specific [user](creating-and-managing-users.md); they follow the `user:<username>` syntax;
+* user-based rules require an approval from a specific [user](creating-and-managing-users.md); they follow the `user:<username>` syntax. Use the list of users separated by a new-line.
 
-* group-based rules require a certain number of approvals from members of a specific [group](creating-and-managing-user-groups.md); they follow the `group:<groupKey>:<approvalCount>` syntax. **Note that the`<groupKey>` is case-sensitive**.
+* group-based rules require a certain number of approvals from members of a specific [group](creating-and-managing-user-groups.md); they follow the `group:<groupKey>:<approvalCount>` syntax. Use the list of groups separated by a new-line. **Note that the`<groupKey>` is case-sensitive**.
 
 For example, the rules below will allow a build to start only if it is approved by the `teamlead` user and by at least two members of the`QA` group:
 
