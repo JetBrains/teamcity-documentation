@@ -2361,7 +2361,7 @@ __Default memory options change__
 We changed the default [memory option](install-and-start-teamcity-server.md) for PermGen memory space and if you had `-Xmx` JVM option changed to about 1.3G and are running on 32-bit JVM, the server may fail to start with a message like: "Error occurred during initialization of VM Could not reserve enough space for object heap Could not create the Java virtual machine".
 
 On this occasion, please consider either:
-* [switching to 64-bit JVM](configure-server-installation.md#configure-memory-settings-for-teamcity-server).
+* [switching to 64-bit JVM](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server).
 * reducing PermGen memory via `-XX:MaxPermSize` [JVM option](server-startup-properties.md) (to previous default 120m)
 * reducing heap memory via `-Xmx` [JVM option](server-startup-properties.md)
 
