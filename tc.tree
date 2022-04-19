@@ -385,6 +385,7 @@
          <toc-element id="bitbucket-cloud.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Bitbucket Cloud"/>
          <toc-element id="bugzilla.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Bugzilla"/>
          <toc-element id="github.md" show-structure-for="chapter" show-structure-depth="4" toc-title="GitHub"/>
+         <toc-element id="gitlab.md" show-structure-for="chapter" show-structure-depth="4" toc-title="GitLab"/>
          <toc-element id="jira.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Jira"/>
          <toc-element id="azure-board-work-items.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Azure Board Work Items" accepts-web-file-names-ref="azure-board-work-items"/>
          <toc-element id="youtrack.md" show-structure-for="chapter" show-structure-depth="4" toc-title="YouTrack"/>
