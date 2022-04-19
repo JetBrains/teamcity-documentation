@@ -5,7 +5,7 @@ Monitoring the quality of the codebase is essential for a development team: a pr
 
 The __Changes__ page of the TeamCity UI allows you to review the commits made by all TeamCity users and see how they have affected builds. You can filter the results with the user selector on the page.
 
-Changes made by a user are displayed correctly only when appropriate [VCS usernames](creating-and-managing-users.md#vcs-usernames) are defined.
+Changes made by a user are displayed correctly only when appropriate [VCS usernames](creating-and-managing-users.md#VCS+Usernames) are defined.
 
 By default, the page does not show the commits to the build configurations hidden by the current user on the **Projects** page. To remove this filter and view all build configurations, clear the _Hide configurations excluded from my projects_ box.
 
