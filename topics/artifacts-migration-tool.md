@@ -5,31 +5,31 @@ TeamCity provides a command-line tool dedicated to automatic migration of [build
 
 ## Prerequisites
 
-* The service has to be installed on the same machine where the TeamCity server is installed.
-* The address of the TeamCity server, TeamCity authentication token, and list of artifact directories must be provided in the configuration file.  
-  By default, the service expects them to be located in `config/application.properties`.
+* The tool has to be installed on the same machine where the TeamCity server is installed.
+* The address of the TeamCity server, TeamCity authentication token, and the list of artifact directories must be provided in the configuration file.  
+  By default, the tool expects them to be located in `config/application.properties`.
 * To use S3 storage as the target, the tool needs AWS credentials on the machine.  
   The AWS credentials can be supplied using [any supported method](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html).
 
 ## Command Line Options
 
-The service supports the following command line arguments:
+The tool supports the following command line arguments:
 * `--project` (`-p`) — (required) the [external ID](https://www.jetbrains.com/help/teamcity/identifier.html#External+IDs) of the project that needs to be migrated.
-* `--recursive` (`-r`) — (optional) indicates whether the service should recursively process all subprojects of the selected project.
+* `--recursive` (`-r`) — (optional) indicates whether the tool should recursively process all subprojects of the selected project.
 
 ## Interactive Mode
 
-By default, the service runs in the interactive mode. During the first run, the service creates a migration plan listing all artifacts in the source storage. Then, the service asks you to select the next step:
+By default, the tool runs in the interactive mode. During the first run, the tool creates a migration plan listing all artifacts in the source storage. Then, the tool asks you to select the next step:
 * Update the migration plan.
 * Show the migration plan.
 * Copy artifacts from the source storage to the target storage.
-* Revert the migration — in case of incomplete or interrupted migration, the service will remove the copied artifacts from the target storage.
+* Revert the migration — in case of incomplete or interrupted migration, the tool will remove the copied artifacts from the target storage.
 * Delete artifacts from the source storage.
 * Forget the migration plan — discard the current migration plan.
 
-If the service fails, you can choose to update the migration plan to continue the interrupted migration.
+If the tool fails, you can choose to update the migration plan to continue the interrupted migration.
 
-If the service finds an existing migration plan, it will ask you to select the next step right away.
+If the tool finds an existing migration plan, it will ask you to select the next step right away.
 
 ## Non-Interactive Mode
 
@@ -42,7 +42,7 @@ Alternatively to the interactive mode, migration steps can be specified as addit
   >*Note:* `--remove-artifacts-in-source` will not remove artifacts that have not been copied to the target storage.
 * `--reset-migration-plan` — discard the current migration plan.
 
-If one or more of these steps are provided, the service goes through them without asking for confirmation or input.
+If one or more of these steps are provided, the tool goes through them without asking for confirmation or input.
 
 ## Required Properties
 
@@ -52,8 +52,8 @@ If one or more of these steps are provided, the service goes through them withou
 
 ## Additional Properties
 
-* `teamcity.storage.migration.processing.threadCount` — the number of threads that the service should use for processing (by default, **4** threads).
-* `teamcity.storage.migration.s3.threadCount` — the number of threads that the service should use for uploading data to S3 (by default, **4** threads).
+* `teamcity.storage.migration.processing.threadCount` — the number of threads that the tool should use for processing (by default, **4** threads).
+* `teamcity.storage.migration.s3.threadCount` — the number of threads that the tool should use for uploading data to S3 (by default, **4** threads).
 * `teamcity.storage.migration.s3.forceVirtualHostAddressing` — use the virtual hosted style of S3 URL addresses instead of deprecated path style (by default, **true**).
-* `teamcity.storage.migration.s3.upload.numberOfRetries` — the number of attempts the service does when uploading data to S3 if it encounters errors (by default, **5**).
+* `teamcity.storage.migration.s3.upload.numberOfRetries` — the number of attempts the tool does when uploading data to S3 if it encounters errors (by default, **5**).
 * `teamcity.storage.migration.s3.upload.retryDelayMs` — the initial delay between attempts in milliseconds (by default, **1000**).
