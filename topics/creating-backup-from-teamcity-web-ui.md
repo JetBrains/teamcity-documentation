@@ -87,7 +87,7 @@ When you start the backup, TeamCity will display its status and details of the c
 __Important Note__
 
 * Running and queued builds are not included into a backup created during server running. To include these builds, consider using the different [backup](creating-backup-via-maintaindb-command-line-tool.md) approach when the server is not running.
-* The backup process takes time that depends on how many builds there are in the system. During this process the system's state can change, for example, some builds may finish, other builds that were waiting in the build queue may start, new builds may appear in the build queue. Note, that these changes will not influence the backup. TeamCity will back up only the data actual by the time the backup process was started.
+* The backup process takes time that depends on how many builds there are in the system. During this process the system's state can change, for example, some builds may finish, other builds that were waiting in the build queue may start, new builds may appear in the build queue. Note that these changes will not influence the backup. TeamCity will back up only the data actual by the time the backup process was started.
 * The resulting backup file is a `*.zip` archive which has a specific structure that does not depend on the OS or database type you use. Thus, you can use the backup file to restore your data even on a different Operating System, or with a different database. If you change the contents of this file manually, TeamCity will not be able to restore your data.
 
 </note>

@@ -1,4 +1,5 @@
 [//]: # (title: What's New in TeamCity 2022.04)
+[//]: # (title: What's New in TeamCity 2022.04)
 [//]: # (auxiliary-id: What's New in TeamCity 2022.04;What's New in TeamCity)
 
 >This document is a work in progress. Currently, it contains descriptions of features released in TeamCity Cloud versions 2021.12 and 2022.02.
@@ -159,6 +160,24 @@ When configuring a _Fail build on specific text in build log_ [failure condition
   All `import` statements in a [Kotlin DSL](kotlin-dsl.md) code no longer include the DSL version specification. Instead, the version is determined automatically based on the current server's version.  
   This change affects how a DSL code appears in the _View as Code_ mode in TeamCity and removes irrelevant suggestions when writing `import` statements manually in an IDE. It concerns only newly created projects — the syntax of existing projects is supported for compatibility.
   {product="tc"}
+
+[//]: # (Changes from 2022.04)
+
+## Limiting running builds per branch
+
+Starting TeamCity 2022.4, you can [limit the number of simultaneously running builds per branch](configuring-general-settings.md#limit-number-of-simultaneously-running-builds).
+
+## Integration with GitLab issues
+
+Starting from this version, TeamCity supports [GitLab issues](gitlab.md) out of the box.
+
+## User Interface improvements
+
+Version 2022.04 brings the following TeamCity UI improvements:
+
+* **Improvements to the [Changes page](viewing-user-changes-in-builds.md)** in the experimental UI: new filters provide flexible search options allowing to sort changes by comment (commit message), by path to the changed file, and by revision number.
+
+
 
 ## Other updates
 {product="tcc"}
