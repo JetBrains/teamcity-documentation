@@ -105,7 +105,7 @@ Write new-line delimited xslt transformation rules in the following format: `fil
 
 <tip>
 
-Note that default xslt files bundled with PartCover 2.3 are broken, and you need to write your own xslt files to be able to generate reports.
+Note, that default xslt files bundled with PartCover 2.3 are broken and you need to write your own xslt files to be able to generate reports.
 </tip>
 
 </td>
