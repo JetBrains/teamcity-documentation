@@ -43,7 +43,7 @@ You can specify the step execution policy via the __Execute step__ option:
 __Tips:__
 
 * You can copy a build step from one build configuration to another from the original build configuration settings page.
-* You can reorder build steps as needed. Note, that if you have a build configuration inherited from a template, you cannot reorder inherited build steps. However, you can insert custom build steps (not inherited) at any place and in any order, even before or between inherited build steps. Inherited build steps can be reordered in the original template only.
+* You can reorder build steps as needed. Note that if you have a build configuration inherited from a template, you cannot reorder inherited build steps. However, you can insert custom build steps (not inherited) at any place and in any order, even before or between inherited build steps. Inherited build steps can be reordered in the original template only.
 * You can disable a build step temporarily or permanently, even if it is inherited from a build configuration template, using the corresponding option in the last column of the __Build Steps__ list.
 
 </tip>
