@@ -165,7 +165,7 @@ When configuring a _Fail build on specific text in build log_ [failure condition
 
 ## Limiting running builds per branch
 
-Starting TeamCity 2022.4, you can [limit the number of simultaneously running builds per branch](configuring-general-settings.md#limit-number-of-simultaneously-running-builds).
+Starting TeamCity 2022.4, you can [limit the number of simultaneously running builds per branch](configuring-general-settings.md##Limit+Number+of+Simultaneously+Running+Builds).
 
 ## Integration with GitLab issues
 
