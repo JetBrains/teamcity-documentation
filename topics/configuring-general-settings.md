@@ -356,7 +356,7 @@ when all agents are busy with the builds of a single project.
 You can limit the total number of builds for a build configuration and configure granular limits per branch using the related fields:
 - for a build configuration, enter the total maximum number of builds. The number is set to 0 by default allowing an unlimited number of builds to run simultaneously.
 - for a build limit per branch, enter the new-line separated list of rules. 
-Each rule must be in form of `branch:number`, where `branch` is either a [logical branch name](working-with-feature-branches.md#Logical+Branch+Name) or a pattern containing an * 
+Each rule must follow the `branch:number` pattern, where `branch` is either a [logical branch name](working-with-feature-branches.md#Logical+Branch+Name) or a pattern containing an * 
 and `number` specifies the maximum number of builds which can run simultaneously in each branch matching the pattern. 
 0 allows an unlimited number of builds in the specified branch.
 

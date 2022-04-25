@@ -4,6 +4,7 @@
 _Clean Checkout_ (also referred to as _Clean Sources_) is an operation that ensures that the next build will get a copy of the sources fetched all over from the VCS. All the content of the [Build Checkout Directory](build-checkout-directory.md) is deleted, and the sources are refetched from the version control.
 
 ## Enforcing Clean Checkout
+{id="enforcing-clean-checkout"}
 
 Clean checkout is recommended if the checkout directory content was modified by an external process by adding new, modifying or deleting existing files.
 
@@ -18,6 +19,7 @@ The _Clean Sources_ is a single action that, after triggered, is performed only 
 <note>
 
 If you set a specific directory as the Build Checkout Directory (instead of using the default one), remember that all the content of this directory will be deleted during the clean checkout procedure.
+
 </note>
 
 TeamCity maintains an internal cache for the sources to optimize communications with the VCS server. The caches are reset during the [clean-up](teamcity-data-clean-up.md). To resolve problems with sources update, the caches may need to be reset manually using the __[Diagnostics | Caches](teamcity-monitoring-and-diagnostics.md#Caches)__ tab in the UI or by deleting the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/caches` directory.

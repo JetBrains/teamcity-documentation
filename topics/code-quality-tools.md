@@ -19,6 +19,7 @@ These are available when you have an IntelliJ IDEA project (.idea directory or `
 * [Duplicates Finder (Java)](duplicates-finder-java.md) provides a report on the discovered repetitive blocks of code.
 
 #### Code Coverage tools
+{id="code-coverage-tools"}
 
 These are configured in the dedicated sections of the build runners.
 * [IntelliJ IDEA](intellij-idea.md) code coverage is supported for [Ant](ant.md), [IntelliJ IDEA Project](intellij-idea-project.md), [Gradle](gradle.md) or [Maven](maven.md) build runners.

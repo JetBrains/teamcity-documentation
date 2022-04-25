@@ -30,6 +30,7 @@ The number of batches controls the number of virtual build configurations: each 
 * After the build is finished, you can review the results of all tests on the **Tests** tab, as if it were a regular build. The hidden configurations are displayed on the **Dependencies** tab.
 
 ## Known limitations
+{id="known+limitations"}
 
 Currently, this feature has a few limitations. We're working to overcome them.
 

@@ -18,6 +18,7 @@ Note that when an external storage for artifacts is enabled, the TeamCity [inter
 The same applies to the metadata about artifacts mappings, which will be published to the [artifacts directory](teamcity-configuration-and-maintenance.md) of the TeamCity Data Directory. When restoring from a backup, make sure they are restored for the external artifact plugin to work properly.
 
 ### Amazon S3 Support
+{id="amazon-s3-support"}
 
 TeamCity can store build artifacts in an Amazon S3 bucket. Read more details in [this article](storing-build-artifacts-in-amazon-s3.md).
 
@@ -30,16 +31,15 @@ TeamCity can store build artifacts in an Amazon S3 bucket. Read more details in 
 Google Cloud Artifact Storage is implemented as a [plugin](https://plugins.jetbrains.com/plugin/9634-google-artifact-storage) by JetBrains.
 
 <chunk include-id="artifactMigrationToS3">
-
 ## Migrating Artifacts To a Different Storage
 <anchor name="migratingArtifactsToS3"/>
 
 TeamCity provides [a command-line tool](artifacts-migration-tool.md) dedicated to automatic migration of build artifacts from one storage to another.
 Currently, it supports migration from the built-in storage to [Amazon S3](#amazon-s3-support). We're working on supporting other cloud storage options as well.
+
 </chunk>
 
 <chunk include-id="multipartUploadS3">
-
 ## Multipart Upload
 <anchor name="multipartUpload"/>
 
@@ -48,5 +48,7 @@ To optimize the [upload of large files](https://aws.amazon.com/premiumsupport/kn
 Additionally, you can configure the maximum allowed size of each uploaded file part. The minimum value is `5MB`. If left empty, TeamCity will use `8MB` as the default value.
 
 >We recommend that you configure a [bucket lifecycle policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpu-abort-incomplete-mpu-lifecycle-config.html) to prevent incomplete multipart uploads.
+
+</chunk>
 
 
