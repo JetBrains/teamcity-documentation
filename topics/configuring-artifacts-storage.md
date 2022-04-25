@@ -29,6 +29,15 @@ TeamCity can store build artifacts in an Amazon S3 bucket. Read more details in 
 
 Google Cloud Artifact Storage is implemented as a [plugin](https://plugins.jetbrains.com/plugin/9634-google-artifact-storage) by JetBrains.
 
+<chunk include-id="artifactMigrationToS3">
+
+## Migrating Artifacts To a Different Storage
+<anchor name="migratingArtifactsToS3"/>
+
+TeamCity provides [a command-line tool](artifacts-migration-tool.md) dedicated to automatic migration of build artifacts from one storage to another.
+Currently, it supports migration from the built-in storage to [Amazon S3](#amazon-s3-support). We're working on supporting other cloud storage options as well.
+</chunk>
+
 <chunk include-id="multipartUploadS3">
 
 ## Multipart Upload
@@ -40,4 +49,4 @@ Additionally, you can configure the maximum allowed size of each uploaded file p
 
 >We recommend that you configure a [bucket lifecycle policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpu-abort-incomplete-mpu-lifecycle-config.html) to prevent incomplete multipart uploads.
 
-</chunk>
+

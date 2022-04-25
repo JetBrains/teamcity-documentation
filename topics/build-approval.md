@@ -37,14 +37,20 @@ Approval rules
 
 </td><td>
 
-* user-based rules require an approval from a specific [user](creating-and-managing-users.md); they follow the `user:<username>` syntax. Use the list of users separated by a new-line.
+* user-based rules require an approval from a specific [user](creating-and-managing-users.md); each user should be specified via the `user:<username>` syntax. Use the list of users separated by a new-line.
 
-* group-based rules require a certain number of approvals from members of a specific [group](creating-and-managing-user-groups.md); they follow the `group:<groupKey>:<approvalCount>` syntax. Use the list of groups separated by a new-line. **Note that the`<groupKey>` is case-sensitive**.
+* group-based rules require a certain number of approvals from members of a specific [group](creating-and-managing-user-groups.md); each rule should follow the `group:<groupKey>:<approvalCount>` syntax. Use the list of groups separated by a new-line.
+>Note that `<groupKey>` is **case-sensitive**.
 
-For example, the rules below will allow a build to start only if it is approved by the `teamlead` user and by at least two members of the`QA` group:
+
+
+For example, the rules below will allow a build to start only if it is approved by the `teamlead` user, the `projectadmin` user, and by at least two members of the`QA` group:
 
 ```
 user:teamlead
+
+user:projectadmin
+
 group:QA:2
 ```
 
@@ -52,7 +58,7 @@ You can specify multiple rules requiring approval from several users and/or grou
 If a user matches several rules (e.g. a user is a part of multiple groups referenced in the rule), 
 the approval from that user will count towards each rule. 
 In the example above, if the `teamlead` user is a member of the `QA` group, 
-then, when a build is approved by `teamlead`, only one more approval from the `QA` group is needed for the build to start.
+then, when a build is approved by `projectadmin` and `teamlead`, only one more approval from the `QA` group is needed for the build to start.
 
 </td>
 </tr><tr>
@@ -80,7 +86,7 @@ If this option is enabled, and a build is triggered by a user who has the right 
 
 ## Notifications & Audit
 
-All approvers will receive an e-mail notification: it is included in the in the default [notification rules](adding-notification-rules.md) for the [All Users](creating-and-managing-user-groups.md#allusers) group. Consider adding a related Slack notification.This rule overrides the *Builds with my changes only* option in the notification rules.
+All approvers will receive an e-mail notification: it is included in the in the default [notification rules](adding-notification-rules.md) for the [All Users](creating-and-managing-user-groups.md#allusers) group. Consider adding a related Slack notification. Notifications related to build approval will override the *Builds with my changes only* option in the notification rules.
 
 You can also [add notifications for your build configuration](configuring-notifications.md) using the [Notifications](notifications.md) build feature with the **Build requires approval** option enabled. 
 

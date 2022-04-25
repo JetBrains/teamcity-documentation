@@ -5,7 +5,9 @@ TeamCity integration with the GitLab issue tracker can be set up separately or a
 
 Configure connection with GitLab as described [here](configuring-connections.md#GitLab). When setting up integration with GitLab issues (see general information [here](integrating-teamcity-with-issue-tracker.md#Enabling+Issue+Tracker+Integration)), in addition to the repository URL and other general settings, you need to configure authentication and specify the issue ID pattern.
 
+## Authentication
 
+TeamCity allows you to select whether you want to connect to GitLab anonymously (for public projects) or to be authenticated via a personal access token (PAT).
 
 
 <seealso>
