@@ -41,13 +41,12 @@ Currently, it supports migration from the built-in storage to [Amazon S3](#Amazo
 
 </chunk>
 
-<br>
 
-<chunk include-id="multipartUploadS3">
+<chunk id="S3multipartUpload">
 
 ## Multipart Upload
 <anchor name="multipartUpload"/>
-<anchor name="Multipart+Upload"/>
+
 
 To optimize the [upload of large files](https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/) to [Amazon S3](storing-build-artifacts-in-amazon-s3.md), you can initiate [multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html) instead of regular upload. To do this, set the multipart upload threshold in the _Connection Settings_ block. The minimum allowed value is `5MB`. Supported suffixes: `KB`, `MB`, `GB`, `TB`. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (`8MB` is the default value).
 

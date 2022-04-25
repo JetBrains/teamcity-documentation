@@ -143,4 +143,4 @@ For accessing a public bucket:
 }
 ```
 
-<include src="configuring-artifacts-storage.md" include-id="multipartUploadS3"/>
+<include src="configuring-artifacts-storage.md" include-id="S3multipartUpload"/>
