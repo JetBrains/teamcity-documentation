@@ -107,7 +107,7 @@ org.example.tests.TestCase1
 
 > Note: the granularity of tests filtering is per class (or test case) but not per test method.
 
-The build step with custom tests filtering logic should use this file and filter out all the tests that belong to the classes mentioned there. All the other tests should be executed.
+The build step with custom tests execution logic should use this file and filter out all the tests that belong to the classes mentioned there. All the other tests should be executed.
 
 
 ## Known limitations
