@@ -29,7 +29,7 @@ In the future, the changes to the build steps of the original configuration will
 2. The triggered build will be transformed into a [composite build](composite-build-configuration.md) with dependencies on the builds from the generated build configurations.
 3. As soon as the first dependency build starts, the composite build will start too.
 
->The settings of the original build configuration are not affected by the _Parallel_ Tests build feature. 
+>The settings of the original build configuration are not affected by the _Parallel Tests_ build feature. 
 The number and settings of generated build configurations are fully controlled by the _Parallel Tests_ build feature. The configurations are read-only by default.
 They are not intended to be modified manually. 
 The generated build configurations are placed into a subproject that is hidden.
@@ -40,17 +40,79 @@ A build of a generated build configuration will run a batch of tests. Each batch
 and [.NET](net.md) build runners will automatically run the tests of this batch.
 
 If you run tests differently, you can still enable the _Parallel Tests_ build feature for your configuration 
-and benefit from automatic test division: you will obtain the information about the tests to execute from [the build parameters](#build-parameters) that will be provided by the build feature.
+and benefit from automatic test division: you will obtain the information about the tests to execute from [the build parameters](#custom-tests) that will be provided by the build feature.
 
 >If the original build configuration has deployment steps, these steps will be performed the same number of times as the number of batches.
 
-### File format and parameters for other build runners
-{id="build-parameters"}
+### Custom execution of parallelized tests
+{id="custom-tests"}
+
+In some cases the tests are being executed in such a way that TeamCity cannot affect their execution anyhow. For instance, they can be generated on the fly, or they can be reported by a third party build runner, or imported from a file, and so on.
+
+For such cases the _Parallel Tests_ build feature provides a number of build parameters which can be used to by the custom tests execution logic.
+The parameters are:
+
+| Parameter name                                   | Description                                                                                    |
+|--------------------------------------------------|------------------------------------------------------------------------------------------------|
+| teamcity.build.parallelTests.currentBatch        | Contains the current batch number starting with 1                                              |
+| teamcity.build.parallelTests.totalBatches        | Contains the total number of configured batches                                                |
+| system.teamcity.build.parallelTests.excludesFile | Contains a path on the agent to a text file with tests which should be excluded from execution |
+
+Format of the file with excluded tests is as follows:
+```
+#version=1
+#algorithm=<name of the algorithm used to split tests, optional>
+#current_batch=<number of the current batch, same as teamcity.build.parallelTests.currentBatch parameter>
+#total_batches=<total number of batches, same as teamcity.build.parallelTests.totalBatches parameter>
+#suite=<suite name, can be empty>
+<new line separated list of test classes>
+```
+
+Here `version` represents a file format version. It is implied that the custom tests execution logic checks the version and reports an error or fails a build if version has an unexpected value. 
+
+In the future new keywords starting with `#` character can be added to the file. All such unrecognized keywords should be ignored.    
+
+Note: Java and .NET test frameworks usually report tests to TeamCity in the following format:
+
+`[<suite name>: ]<fully qualified test class name>.<test method>[<test arguments>]`
+
+Where `<suite name>` and `<test arguments>` are optional and not always present.
+
+For example the following Java Test class:
+```java
+package org.example.tests;
+
+class TestCase1 {
+
+  public void testMethod1() { ... }
+
+  public void testMethod2() { ... }
+}
+```
+
+will produce the following test names in TeamCity:
+```
+org.example.tests.TestCase1.testMethod1
+org.example.tests.TestCase1.testMethod2
+```
+
+Then the parameter `system.teamcity.build.parallelTests.excludesFile` will point to a text file with the following content:
+```
+#version=1
+#current_batch=1
+#total_batches=3
+#suite=
+org.example.tests.TestCase1
+```
+
+> Note: the granularity of tests filtering is per class (or test case) but not per test method.
+
+The build step with custom tests filtering logic should use this file and filter out all the tests that belong to the classes mentioned there. All the other tests should be executed.
 
 
 ## Known limitations
 
-Currently, this feature has a few limitations. We're working to overcome them.
+Currently, this feature has a number of limitations.
 
 ### General
 
