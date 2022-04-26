@@ -17,7 +17,7 @@ run advanced code inspections, find code duplicates, track code quality progress
 
 For details about the build runner, refer to [Qodana](qodana.md).
 
-If you previously installed the non-bundled Qodana plugin and used DSL, please check our [upgrade notes](upgrade-notes.md#bundled-tools-updates)
+If you previously installed the non-bundled Qodana plugin and used DSL, please check our [upgrade notes](upgrade-notes.md#bundled-tools-updates-2022-04)
 
 ## Enhanced integration with Amazon Web Services
 
@@ -42,6 +42,44 @@ Some procedures in the production environment may require approval of more than 
 TeamCity now allows requiring manual approval from a specified person or a group for a build to run.
 If you need to prevent users from triggering a build accidentally, if you want more control over deployments, 
 resource consuming builds or resource removing operations, configure [the Build Approval](build-approval.md) feature for your build.
+
+
+## Smarter VCS Integrations
+TeamCity improves VCS integrations and provides the following new features.
+
+### Space merge requests
+{product="tc"}
+
+TeamCity integration with JetBrains Space now includes the [Pull Requests](pull-requests.md) build feature. If you enable this feature in a build configuration, TeamCity will automatically detect changes in merge requests submitted to your Space repository. For a build run on these changes, it will display the merge request details in the build's overview and send the build statuses back to JetBrains Space.
+
+To enable this functionality in TeamCity:
+1. In the project settings, configure a [connection to JetBrains Space](configuring-connections.md#connect-to-jetbrains-space) and create a Git [VCS root](configuring-vcs-roots.md) with your Space repository URL and an empty branch specification.
+2. In the build configuration settings, add the [Pull Requests](pull-requests.md) build feature with the _JetBrains Space_ VCS hosting type:  
+   <img src="pull-requests-feature.png" alt="Pull Requests build feature" width="706"/>  
+   You can specify the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. For example, if you set the `+:refs/heads/feature-*` filter, TeamCity will monitor merge requests sent only to branches whose names start with `feature-`.
+3. To allow publishing build statuses to the commit details in JetBrains Space, you also need to add the [Commit Status Publisher](commit-status-publisher.md) feature to this build configuration.
+
+After the integration is configured, TeamCity will detect merge requests submitted to the JetBrains Space target branches. For builds run on the requested changes, it will display the merge request details in the **Overview** tab:
+
+<img src="pull-request-details.png" alt="Build Overview - Pull Request Details" width="706"/>
+
+TeamCity will also send statuses per build change to timelines of merge requests in JetBrains Space (and to details of commits, if the [Commit Status Publisher](commit-status-publisher.md) feature is enabled in the build configuration):
+
+<img src="space-timeline.png" alt="JetBrains Space - Merge Request Timeline" width="706"/>
+
+To protect a target branch and ensure that only verified requests are merged into it, you can set up [Quality Gates](https://www.jetbrains.com/help/space/branch-and-merge-restrictions.html#quality-gates-for-merge-requests) for your Space repository and use a TeamCity build as an external check. If a build on a merge request fails, Space will notify you that the changes have not passed the required quality check.
+
+<img src="space-quality-gates.png" alt="JetBrains Space - Quality Gates" width="706"/>
+
+### Integration with GitLab issues
+
+Starting from this version, TeamCity supports [GitLab issues](gitlab.md) out of the box.
+
+### Queued builds reporting
+
+Now the Commit Status Publisher updates the commit status in the version control system immediately 
+after adding the corresponding build to the queue, providing you with the most up-to-date information. 
+GitHub, GitLab, Space, Bitbucket, and Azure DevOps are all supported.
 
 
 ## Single sign-on authentication via SAML 2.0
@@ -85,29 +123,6 @@ To switch your TeamCity nodes to native Git, go to __Administration | Diagnostic
 
 If the connection test is successful, you can enable the native Git support on your server(s).
 
-## Running builds on JetBrains Space merge requests
-{product="tc"}
-
-TeamCity integration with JetBrains Space now includes the [Pull Requests](pull-requests.md) build feature. If you enable this feature in a build configuration, TeamCity will automatically detect changes in merge requests submitted to your Space repository. For a build run on these changes, it will display the merge request details in the build's overview and send the build statuses back to JetBrains Space.
-
-To enable this functionality in TeamCity:
-1. In the project settings, configure a [connection to JetBrains Space](configuring-connections.md#connect-to-jetbrains-space) and create a Git [VCS root](configuring-vcs-roots.md) with your Space repository URL and an empty branch specification.
-2. In the build configuration settings, add the [Pull Requests](pull-requests.md) build feature with the _JetBrains Space_ VCS hosting type:  
-   <img src="pull-requests-feature.png" alt="Pull Requests build feature" width="706"/>  
-   You can specify the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. For example, if you set the `+:refs/heads/feature-*` filter, TeamCity will monitor merge requests sent only to branches whose names start with `feature-`.
-3. To allow publishing build statuses to the commit details in JetBrains Space, you also need to add the [Commit Status Publisher](commit-status-publisher.md) feature to this build configuration.
-
-After the integration is configured, TeamCity will detect merge requests submitted to the JetBrains Space target branches. For builds run on the requested changes, it will display the merge request details in the **Overview** tab:
-
-<img src="pull-request-details.png" alt="Build Overview - Pull Request Details" width="706"/>
-
-TeamCity will also send statuses per build change to timelines of merge requests in JetBrains Space (and to details of commits, if the [Commit Status Publisher](commit-status-publisher.md) feature is enabled in the build configuration):
-
-<img src="space-timeline.png" alt="JetBrains Space - Merge Request Timeline" width="706"/>
-
-To protect a target branch and ensure that only verified requests are merged into it, you can set up [Quality Gates](https://www.jetbrains.com/help/space/branch-and-merge-restrictions.html#quality-gates-for-merge-requests) for your Space repository and use a TeamCity build as an external check. If a build on a merge request fails, Space will notify you that the changes have not passed the required quality check.
-
-<img src="space-quality-gates.png" alt="JetBrains Space - Quality Gates" width="706"/>
 
 ## New UI: Editing scope of agent pools
 {product="tc"}
@@ -192,9 +207,7 @@ When configuring a _Fail build on specific text in build log_ [failure condition
 
 Starting TeamCity 2022.04, you can [limit the number of simultaneously running builds per branch](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds).
 
-## Integration with GitLab issues
 
-Starting from this version, TeamCity supports [GitLab issues](gitlab.md) out of the box.
 
 ## User Interface improvements
 
