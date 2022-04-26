@@ -8,37 +8,55 @@ This feature addresses a popular use case when a build consequently launches sev
 To emulate such behavior, some users would configure several build configurations and join them in a chain with parallel connections. It worked, but required creating and maintaining a complex meta-structure.
 
 ## Run tests in parallel
+
 Now TeamCity has the _Run tests in parallel_ build feature that solves this task.
-To enable this feature in a build configuration, go to **Build Configuration Settings | Build Features**, click **Add build feature**, and choose the _Run tests in parallel_ type. You will be prompted to set the number of batches, which also means the number of parallel agents to use in a build.
-
-
-## How TeamCity parallelizes tests
+To enable this feature in a build configuration, go to **Build Configuration Settings | Build Features**, click **Add build feature**, and choose the _Parallel Tests_ type. You will be prompted to set the number of batches, which also means the number of parallel agents to use in a build.
 
 Before TeamCity splits tests into batches to run in parallel, it needs to gather test statistics of at least one preceding build. This information helps subdivide tests in semi-equally sized batches so that the total build time is as short as possible.
 If you enable this feature in a freshly added build configuration, its first build will run in the normal mode; when it finishes and produces test reports, TeamCity will be able to split the second one.
 
 TeamCity takes into account not only the latest tests run, but also the history of your tests: the next builds with parallel tests will also contribute to this statistics and allow TeamCity to make smarter decisions.
-If at some point TeamCity finds no builds to get statistics from (for example, all the recent builds failed), it will have to start this flow from the beginning. It will try to run the next build regularly and divide the tests of the following ones only after receiving the test statistics.
+If at some point TeamCity finds no builds to get statistics from (for example, all the recent builds failed), it will have to start this flow from the beginning. 
+It will try to run the next build regularly and divide the tests of the following ones only after receiving the test statistics.
 
-The number of agents used by the build depends on the number of batches specified in the build feature and the number of test classes in the build:
+### Under the hood
 
-* Before starting a build, TeamCity will analyze the history of recent builds and virtually divide the tests of the current build into the number of batches specified in the feature settings. Each batch will run on a separate agent. 
-* Tests of the same class will always run on the same agent. If the configured number of batches is larger than the number of test classes in a build, TeamCity will launch one agent per test class. 
-* When you configure the build feature which runs tests in parallel, TeamCity converts the initial build configuration into a [composite build](composite-build-configuration.md) and generates virtual build configurations; 
-each of them is a read-only copy of the current build configuration with a batch of tests assigned to it. 
-The number of batches controls the number of virtual build configurations: each of them will run on a separate  agent. These build configurations are not visible in the build overview and the list of tests.
-* After the build is finished, you can review the results of all tests on the **Tests** tab, as if it were a regular build. The hidden configurations are displayed on the **Dependencies** tab.
+If the test statistics is available, then the following happens when a new build is triggered:
+
+1. TeamCity generates copies of the current build configuration according to the number of batches specified in the build feature. 
+These build configurations will have the same build steps as the original one.
+In the future, the changes to the build steps of the original configuration will be propagated to the generated ones automatically.
+2. The triggered build will be transformed into a [composite build](composite-build-configuration.md) with dependencies on the builds from the generated build configurations.
+3. As soon as the first dependency build starts, the composite build will start too.
+
+>The settings of the original build configuration are not affected by the _Parallel_ Tests build feature. 
+The number and settings of generated build configurations are fully controlled by the _Parallel Tests_ build feature. The configurations are read-only by default.
+They are not intended to be modified manually. 
+The generated build configurations are placed into a subproject that is hidden.
+If the project has [versioned settings](storing-project-settings-in-version-control.md) enabled, the generated build configurations will not be committed to the VCS repository.
+
+A build of a generated build configuration will run a batch of tests. Each batch gets the tests to execute. 
+[Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), 
+and [.NET](net.md) build runners will automatically run the tests of this batch.
+
+If you run tests differently, you can still enable the _Parallel Tests_ build feature for your configuration 
+and benefit from automatic test division: you will obtain the information about the tests to execute from [the build parameters](#build-parameters) that will be provided by the build feature.
+
+>If the original build configuration has deployment steps, these steps will be performed the same number of times as the number of batches.
+
+### File format and parameters for other build runners
+{id="build-parameters"}
+
 
 ## Known limitations
-
 
 Currently, this feature has a few limitations. We're working to overcome them.
 
 ### General
 
-* [Code coverage](code-quality-tools.md#code-coverage-tools) does not fully work for builds with parallel tests.
-* Using parallel tests reduces the accuracy of the [build counter](configuring-general-settings.md#General+Build+Configuration+Settings) in the current configuration. If you rely on this number in your scripts, be careful when enabling the _Run tests in parallel_ feature.
-* Builds with parallel tests cannot produce [artifacts](build-artifact.md). Best practices imply having a separate build configuration dedicated to tests and another build configuration that produces/deploys artifacts. However, different use cases might require running tests and producing artifacts within the same build. We're working to support this case too.
+* The [Code coverage](code-quality-tools.md#code-coverage-tools) statistics will be inaccurate for builds with parallel tests.
+* Using parallel tests reduces the accuracy of the [build counter](configuring-general-settings.md#General+Build+Configuration+Settings) in the current configuration.
+* After enabling parallel tests in a build configuration, it will stop publishing [artifacts](build-artifact.md). Consider having a separate build configuration that publishes artifacts.
 * The [Enforce Clean Checkout action](clean-checkout.md#Enforcing+Clean+Checkout) does not work for build configurations with parallel tests configured.
 * Virtual build configurations copy the settings from the default branch of the original build configuration ignoring other branch settings.
 * Parallel builds collect the results not only of their its own tests, but transitive dependencies too.
@@ -58,5 +76,5 @@ Currently, this feature has a few limitations. We're working to overcome them.
 ### Test Frameworks
 
 * Test classes should be defined in the build tool filters.
-* Вefinition from code are not supported.
+* Definition from code are not supported.
 * The test name **cannot** contain dots. 
