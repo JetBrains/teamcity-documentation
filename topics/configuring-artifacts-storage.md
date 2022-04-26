@@ -22,6 +22,7 @@ The same applies to the metadata about artifacts mappings, which will be publish
 
 TeamCity can store build artifacts in an Amazon S3 bucket. Read more details in [this article](storing-build-artifacts-in-amazon-s3.md).
 
+
 ### Azure Artifact Storage
 
 [Azure Artifact Storage](https://plugins.jetbrains.com/plugin/9617-azure-artifact-storage) is an experimental plugin by JetBrains which allows replacing the TeamCity built-in artifacts' storage by Azure Blob storage. 
@@ -42,19 +43,5 @@ Currently, it supports migration from the built-in storage to [Amazon S3](config
 
 </chunk>
 
-
-<chunk id="S3multipartUpload">
-
-## Multipart Upload
-<anchor name="multipartUpload"/>
-
-
-To optimize the [upload of large files](https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/) to [Amazon S3](storing-build-artifacts-in-amazon-s3.md), you can initiate [multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html) instead of regular upload. To do this, set the multipart upload threshold in the _Connection Settings_ block. The minimum allowed value is `5MB`. Supported suffixes: `KB`, `MB`, `GB`, `TB`. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (`8MB` is the default value).
-
-Additionally, you can configure the maximum allowed size of each uploaded file part. The minimum value is `5MB`. If left empty, TeamCity will use `8MB` as the default value.
-
->We recommend that you configure a [bucket lifecycle policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpu-abort-incomplete-mpu-lifecycle-config.html) to prevent incomplete multipart uploads.
-
-</chunk>
 
 

@@ -45,6 +45,21 @@ When the "Use Pre-Signed URLs for upload" option is disabled:
 * the provided AWS credentials or IAM role on the TeamCity server should have permissions: `DeleteObject, ListAllMyBuckets, GetBucketLocation, GetObject`
 * either AWS credentials should be specified and have `ListBucket, PutObject` permissions, or IAM role on all the TeamCity agents should have permissions: `ListBucket, PutObject`
 
+
+<chunk id="S3multipartUpload">
+
+## Multipart Upload
+<anchor name="multipartUpload"/>
+
+To optimize the [upload of large files](https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/) to [Amazon S3](storing-build-artifacts-in-amazon-s3.md), you can initiate [multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html) instead of regular upload. To do this, set the multipart upload threshold in the _Connection Settings_ block. The minimum allowed value is `5MB`. Supported suffixes: `KB`, `MB`, `GB`, `TB`. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (`8MB` is the default value).
+
+Additionally, you can configure the maximum allowed size of each uploaded file part. The minimum value is `5MB`. If left empty, TeamCity will use `8MB` as the default value.
+
+>We recommend that you configure a [bucket lifecycle policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpu-abort-incomplete-mpu-lifecycle-config.html) to prevent incomplete multipart uploads.
+
+</chunk>
+
+
 ## Transferring Artifacts via CloudFront
 {id="CloudFrontSettings" auxiliary-id="CloudFrontSettings"}
 
@@ -143,4 +158,4 @@ For accessing a public bucket:
 }
 ```
 
-<include src="configuring-artifacts-storage.md" include-id="S3multipartUpload"/>
+
