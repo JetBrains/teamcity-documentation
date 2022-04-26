@@ -1,23 +1,48 @@
 [//]: # (title: What's New in TeamCity 2022.04)
-[//]: # (title: What's New in TeamCity 2022.04)
 [//]: # (auxiliary-id: What's New in TeamCity 2022.04;What's New in TeamCity)
 
->This document is a work in progress. Currently, it contains descriptions of features released in TeamCity Cloud versions 2021.12 and 2022.02.
-> 
-{type="warning"}
+## Parallel tests on multiple agents
 
-## Running a build's tests in parallel on multiple agents
+TeamCity can now split tests of a build in batches and run each batch on a separate build agent. 
+This way, tests will run in parallel and the build will finish faster. 
+The speed boost ratio depends on the number of test classes in the build and the number of agents used.
 
-TeamCity can now split tests of a build in batches and run each batch on a separate build agent. This way, tests will run in parallel and the build will finish faster. The speed boost ratio depends on the number of test classes in the build and the number of used parallel agents.
+Refer to [this article](parallel-tests.md) for details.
 
-Read more details in [this article](tests-split-for-parallel-execution.md).
+## Advanced code quality inspections with Qodana
 
-## Transferring Build Artifacts through Amazon CloudFront
-{product="tc"}
+The [Qodana plugin](https://www.jetbrains.com/help/qodana/qodana-teamcity-plugin.html) has been bundled with TeamCity. 
+Now you can enable the _Qodana_ build runner and add static analysis to your build chain, 
+run advanced code inspections, find code duplicates, track code quality progress of your code.
 
-[Amazon CloudFront](https://aws.amazon.com/cloudfront/) is a content delivery network that offers low latency and high transfer speeds. Enabling its support for an S3 storage will allow TeamCity to transfer build artifacts through the closest CloudFront server. If your S3 bucket is located in a different region than your TeamCity infrastructure, this could significantly speed up the artifacts' upload/download and reduce expenses.
+For details about the build runner, refer to [Qodana](qodana.md).
 
-Read more details in [this article](storing-build-artifacts-in-amazon-s3.md#CloudFrontSettings).
+If you previously installed the non-bundled Qodana plugin and used DSL, please check our [upgrade notes](upgrade-notes.md#bundled-tools-updates)
+
+## Enhanced integration with Amazon Web Services
+
+TeamCity 2022.04 adds new features to its cloud integrations.
+
+### Migration of build artifacts from the local storage to Amazon S3
+
+Version 2022.04 allows you to not only store new build artifacts in Amazon S3, 
+but also [move existing artifacts from TeamCity’s local storage to Amazon S3](artifacts-migration-tool.md). 
+This is particularly useful for teams who are just starting their migration from a self-hosted setup to a cloud platform.
+
+### Transferring build artifacts via Amazon Cloudfront
+
+The speed of transferring build artifacts stored in Amazon S3 depends on the geographical distance between you and the region where the S3 bucket is located.
+To help you increase the artifacts' upload/download speed and reduce costs, TeamCity 2022.04 adds native support for [Amazon CloudFront](https://aws.amazon.com/cloudfront/), a content delivery network that offers low latency and high transfer speeds.
+
+[Enabling its support for an S3 storage](storing-build-artifacts-in-amazon-s3.md#CloudFrontSettings) will allow TeamCity to transfer build artifacts through the nearest CloudFront server. 
+
+## Requiring Build Approvals
+
+Some procedures in the production environment may require approval of more than one person.
+TeamCity now allows requiring manual approval from a specified person or a group for a build to run.
+If you need to prevent users from triggering a build accidentally, if you want more control over deployments, 
+resource consuming builds or resource removing operations, configure [the Build Approval](build-approval.md) feature for your build.
+
 
 ## Single sign-on authentication via SAML 2.0
 {product="tc"}
@@ -43,7 +68,7 @@ After that, the new **SAML Settings** page will appear in the **Administration**
 
 <img src="saml-settings.png" alt="SAML settings in TeamCity" width="706"/>
 
-See more details about this authentication module in [this article](configuring-authentication-settings.md#HTTP+SAML+2.0).
+For details about this authentication module, refer to [this article](configuring-authentication-settings.md#HTTP+SAML+2.0).
 
 As soon as the connection between TeamCity and your SSO provider is established, users will see a new authentication button on the TeamCity login form. To sign in, they will need to click it and confirm the authentication on the provider's side.
 
@@ -165,7 +190,7 @@ When configuring a _Fail build on specific text in build log_ [failure condition
 
 ## Limiting running builds per branch
 
-Starting TeamCity 2022.4, you can [limit the number of simultaneously running builds per branch](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds).
+Starting TeamCity 2022.04, you can [limit the number of simultaneously running builds per branch](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds).
 
 ## Integration with GitLab issues
 

@@ -12,6 +12,8 @@ You can also configure builds to fail based on the results and view the trends a
 
 ### Java Tools
 
+[Qodana](qodana.md) lets you add static analysis to your build chain, run advanced code inspections, find code duplicates, track code quality progress of your code, and much more.
+
 #### IntelliJ IDEA-powered Code Analysis Tools
 
 These are available when you have an IntelliJ IDEA project (.idea directory or `.ipr` file) or a Maven project file (`pom.xml`) checked into your version control.
