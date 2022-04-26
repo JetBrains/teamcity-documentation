@@ -18,6 +18,7 @@ Note that when an external storage for artifacts is enabled, the TeamCity [inter
 The same applies to the metadata about artifacts mappings, which will be published to the [artifacts directory](teamcity-configuration-and-maintenance.md) of the TeamCity Data Directory. When restoring from a backup, make sure they are restored for the external artifact plugin to work properly.
 
 ### Amazon S3 Support
+<anchor name="Amazon+S3+Support"/>
 
 TeamCity can store build artifacts in an Amazon S3 bucket. Read more details in [this article](storing-build-artifacts-in-amazon-s3.md).
 
@@ -37,7 +38,7 @@ Google Cloud Artifact Storage is implemented as a [plugin](https://plugins.jetbr
 <anchor name="migratingArtifactsToS3"/>
 
 TeamCity provides [a command-line tool](artifacts-migration-tool.md) dedicated to automatic migration of build artifacts from one storage to another.
-Currently, it supports migration from the built-in storage to [Amazon S3](#Amazon+S3+Support). We're working on supporting other cloud storage options as well.
+Currently, it supports migration from the built-in storage to [Amazon S3](configuring-artifacts-storage.md#Amazon+S3+Support). We're working on supporting other cloud storage options as well.
 
 </chunk>
 
