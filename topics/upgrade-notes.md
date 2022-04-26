@@ -6,6 +6,8 @@
 * To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). On updating to 2022.04, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset.
 * TeamCity stops supporting the [Microsoft Edge Legacy](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224) web browsers.
 * It is now impossible to automatically [trigger builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-build-queue.html#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
+* Ant runner is disabled if Ant is started by a Java version below Java 8.
+* Test reporting in Gradle runner is disabled if Gradle is started a Java version below Java 8.
 
 ### Bundled tools updates
 {id="bundled-tools-updates-2022-04"}
@@ -22,6 +24,8 @@
 
 * The [CVS plugin](cvs.md) has been unbundled from TeamCity. If you want to continue using it on your server, please [download it from JetBrains Marketplace](https://plugins.jetbrains.com/plugin/18552-vcs-support-cvs) and install it as described [here](installing-additional-plugins.md).
 * The [Eclipse plugin](eclipse-plugin.md) has been unbundled from TeamCity. [Contact our support](https://teamcity-support.jetbrains.com/hc/en-us) if you need the plugin.
+
+
 ## Changes from 2021.2.2 to 2021.2.3
 
 * To avoid false positive reports from some security scanners, TeamCity now uses an instance of the Log4j 1.2 library without vulnerable classes. To achieve this, we've created [our own fork of Log4j 1.2](https://github.com/JetBrains/teamcity-log4j) on GitHub, removed vulnerable packages unused by TeamCity (`net`, `chainsaw`, `jdbc`, and `jmx`), and built the library.
