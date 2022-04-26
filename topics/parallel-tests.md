@@ -1,5 +1,5 @@
-[//]: # (title: Tests Split for Parallel Execution)
-[//]: # (auxiliary-id: Tests Split for Parallel Execution)
+[//]: # (title: Parallel Tests)
+[//]: # (auxiliary-id: Parallel Tests)
 
 TeamCity is now capable of parallelizing the execution of your tests by distributing them across multiple build agents, thus minimizing the overall duration of tests. The tests of a build can be split into batches, and each batch will run on a separate build agent. The speed boost depends on the number of test classes in the build and the number of agents used in parallel.
 Currently, the feature supports  [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), and [.NET](net.md) build runners with [a few of limitations](#Known+limitations). 
