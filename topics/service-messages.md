@@ -634,6 +634,7 @@ In the &lt;new build number&gt; value, you can use the `{build.number}` substitu
 ```
 
 ### Adding or Changing Build Parameter
+{id='set-parameter'}
 
 By using a dedicated service message in your build script, you can dynamically update build parameters of the build right from a build step (the parameters need to be defined in the __[Parameters](configuring-build-parameters.md)__ section of the build configuration). The changed build parameters will be available in the build steps following the modifying one. They will also be available as build parameters and can be used in the dependent builds via [` %dep.*% parameter references`](predefined-build-parameters.md#Dependency+Parameters), for example:
 

@@ -36,12 +36,28 @@ If the project has [versioned settings](storing-project-settings-in-version-cont
 
 A build of a generated build configuration will run the same set of build steps as defined in the original build configuration. If some of these steps are 
 of [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), 
-or [.NET](net.md) type, and they were executing some tests, then these build runners will automatically run only the fraction of the tests corresponding to the current batch.
+or [.NET](net.md) type, and they were executing some tests, then these build runners will automatically run only the fraction of the tests corresponding to the current batch, provided that [the runner specific requirements are met](#runner-requirements).
 
 >If the original build configuration has deployment steps, these steps will be performed the same number of times as the number of batches.
 
 If you run tests differently, you can still enable the _Parallel tests_ build feature for your configuration
 and benefit from automatic test division: you will obtain the information about the tests to execute from [the build parameters](#custom-tests) that will be provided by the build feature.
+
+### Runner specific requirements
+{id='runner-requirements'}
+
+Automatic execution of a batch of tests instead of the whole set of tests, is only supported if the following requirements are met:
+
+* [Maven](maven.md)
+  * Maven minimal supported version: 3.x.
+  * Maven Surefire plugin minimal supported version: 2.13.
+  * Maven Failsafe Plugin minimal supported version: 2.13.
+
+* [Gradle](gradle.md)
+  * Gradle minimal supported version: 5.0
+
+* [.NET](net.md)
+  * Microsoft.NET.Test.Sdk minimal supported version: 16.0
 
 ### Custom execution of parallelized tests
 {id="custom-tests"}
@@ -118,36 +134,18 @@ org.example.tests.TestCase1
 
 The build step with custom tests' execution logic should use this file and filter out all the tests that belong to the classes mentioned there. All the other tests should be executed.
 
-
 ## Known limitations
-
-Currently, this feature has a number of limitations.
-
-### General
 
 * The [Code coverage](code-quality-tools.md#code-coverage-tools) statistics will be inaccurate for builds with parallel tests because it will be collected for a fraction of tests executed by the current batch.
 * After enabling parallel tests in a build configuration, it will stop publishing [artifacts](build-artifact.md). Consider having a separate build configuration that publishes artifacts.
-* A newly added test will run in each batch during the first run.
+* A newly added test which is not yet known to TeamCity will run in each batch during the first run.
 * When TeamCity divides tests among batches it only takes into account duration of the test itself. The duration of setUp/tearDown or any other preparation methods is not know to TeamCity, because of this the duration of batches may not be equal.
-* Builds with parallel tests triggered in a branch won't use the build steps from this branch, instead build steps from the default branch will be used.
 * An agent selected in the custom build dialog for a build with parallel tests will be ignored because the build will be transformed to a composite one after the triggering.
-
-### Runner specific
-
-* [Maven](maven.md)
-  * Maven minimal supported version: 3.x.
-  * Maven Surefire plugin minimal supported version: 2.13.
-  * Maven Failsafe Plugin minimal supported version: 2.13.
-  * Maven project parameters such as `maven.project.version` will not be present in the composite build with parallel tests.
-  
-* [Gradle](gradle.md)
-  * Gradle minimal supported version: 5.0
-
-* [.NET](net.md)
-  * Microsoft.NET.Test.Sdk minimal supported version: 16.0 
+* Parameters published by the build steps via [setParameter](service-messages.md#set-parameter) service message, as well as runner specific parameters such as `maven.project.version` won't be available in a composite build with parallel tests
 
 ### Known bugs
  
 * The [Enforce Clean Checkout action](clean-checkout.md#Enforcing+Clean+Checkout) does not work for build configurations with parallel tests configured.
 * Subsequent start of a build with parallel tests won't reuse already existing builds in generated build configurations even if there were no new VCS commits
 * A failed test can be executed by a different batch on the next run, showing that the test is newly failed while in fact it was already failing but in some other batch
+* Builds with parallel tests triggered in a branch won't use the build steps from this branch, instead build steps from the default branch will be used.
