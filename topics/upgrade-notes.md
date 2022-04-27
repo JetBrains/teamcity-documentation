@@ -7,7 +7,6 @@
 * TeamCity stops supporting the [Microsoft Edge Legacy](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224) web browsers.
 * It is now impossible to automatically [trigger builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-build-queue.html#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
 * Ant runner is disabled if Ant is started by a Java version below Java 8.
-* Test reporting in Gradle runner is disabled if Gradle is started a Java version below Java 8.
 * Windows docker images based on 2004 will not be published for 2022.04 version.
 
 
@@ -27,6 +26,16 @@
 
 * The [CVS plugin](cvs.md) has been unbundled from TeamCity. If you want to continue using it on your server, please [download it from JetBrains Marketplace](https://plugins.jetbrains.com/plugin/18552-vcs-support-cvs) and install it as described [here](installing-additional-plugins.md).
 * The [Eclipse plugin](eclipse-plugin.md) has been unbundled from TeamCity. [Contact our support](https://teamcity-support.jetbrains.com/hc/en-us) if you need the plugin.
+
+### External tools updates
+
+You'll need to update several of the external plugins, whose older versions are incompatible with TeamCity 2022.04.
+
+- [Gradle Build Scan](https://github.com/etiennestuder/gradle-build-scan-teamcity-plugin) is  currently incompatible. We're waiting for our PR to be accepted by the plugin author.
+
+The latest released versions of the following plugins are compatible with TeamCity 2022.04. Please install them from the JetBrains Marketplace: 
+- [Github Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks)
+- [Hashicorp Vault Support](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support)
 
 
 ## Changes from 2021.2.2 to 2021.2.3

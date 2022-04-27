@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Qodana)
 
 The _Qodana_ build runner lets you add static analysis to your build chain. 
-It is based on the [Qodana](https://www.jetbrains.com/help/qodana/teamcity-plugins.html) code quality monitoring platform.
+It is based on the [Qodana](https://www.jetbrains.com/help/qodana/teamcity.html) code quality monitoring platform.
 
 You can enable advanced code quality inspections and do the following:
 

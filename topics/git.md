@@ -23,7 +23,7 @@ __Important notes__:
 ## Native Git as Default Mode
 {id="native-git-default-mode" auxiliary-id="native-git-default-mode" product="tc"}
 
-Since version 2022.04, TeamCity uses native Git as the default option for Git operations. This approach is more predictable than the previously used JGit implementation and allows working with Git and SSH in TeamCity just as you would in your operating system.
+Since version 2022.04, TeamCity uses native Git as the default option for Git operations. It improves performance of VCS-related operations and makes Git operations more straightforward in comparison with previously used JGit implementation. Native Git allows working with Git and SSH in TeamCity just as you would in your operating system.
 
 On upgrading, users can switch their TeamCity nodes to the new mode.
 

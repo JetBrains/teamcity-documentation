@@ -513,3 +513,15 @@ These issues concern the use of native [Git](git.md) for checking out sources to
 Switching the server to native Git results in builds failing to authorize in repositories via SSH DSA keys. See the related issue [TW-74580](https://youtrack.jetbrains.com/issue/TW-74580).
 
 To work around this issue, please set the `teamcity.git.sshCommandOptions` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `-o "PubkeyAcceptedKeyTypes=+ssh-dss"`.
+
+### Native Git via OpenSSH may fail
+
+Native Git via OpenSSH may fail on Windows if the server/agent installation path contains spaces. See [the related issue](https://youtrack.jetbrains.com/issue/TW-76041/).
+
+### nonProxyHosts option for ssh proxy is not available
+
+TeamCity uses an ssh proxy when connecting via native Git. See [the related issue](https://youtrack.jetbrains.com/issue/TW-27672/Add-a-nonProxyHosts-option-for-ssh-proxy-in-git-plugin)
+
+### Custom ssl certificates are not supported for native Git 
+
+Custom ssl certificates support for native Git on the server is not available.See [the related issue](https://youtrack.jetbrains.com/issue/TW-75507/Custom-ssl-certificate-support-for-native-git-on-server)

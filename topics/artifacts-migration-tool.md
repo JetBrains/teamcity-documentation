@@ -1,7 +1,10 @@
 [//]: # (title: Artifacts Migration Tool)
 [//]: # (auxiliary-id: Artifacts Migration Tool)
 
-TeamCity provides a command-line tool dedicated to automatic migration of [build artifacts](build-artifact.md) from one storage to another. Currently, it supports migration from a local storage to Amazon S3.
+TeamCity provides a command-line tool dedicated to automatic migration of [build artifacts](build-artifact.md) from one storage to another. 
+Currently, the tool supports migration from a local storage to Amazon S3.
+
+To get the tool, go to __Project Settings | Artifacts Storage__ and use the _Download artifacts migration tool_ link in the top right corner of the page.
 
 ## Prerequisites
 

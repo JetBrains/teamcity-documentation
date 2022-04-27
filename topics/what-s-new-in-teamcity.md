@@ -102,20 +102,18 @@ Although TeamCity has not been affected by the Log4Shell vulnerability (CVE-2021
 Similarly to Log4Shell, the Spring4Shell vulnerability (CVE-2022-22965) does not affect TeamCity. However, to avoid false-positive reports from security scanners, we have upgraded the Spring Framework used in TeamCity to the latest version.
 
 
-> The section below is still in progress.
-
-
 ## Native Git as Default Mode
 {product="tc"}
 
-TeamCity switches to using native Git as the default option for Git operations. This new approach is clearer than the previously used JGit implementation and allows working with Git and SSH in TeamCity just as you were in your version control system.
+TeamCity has switched to using native Git as the default option for Git operations.
+This new approach makes Git operations more straightforward than the previously used JGit implementation and allows working with Git and SSH in TeamCity just as you were in your version control system.
 
 Before switching, make sure a [native Git client](https://git-scm.com/downloads) version 2.29 or later is installed on your server machine and the path to its executable is specified in the `PATH` environment variable. Alternatively, you can set the full path to the executable via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (no server restart is required). On Windows, remember to use double backslashes in the path.
 
 To switch your TeamCity nodes to native Git, go to __Administration | Diagnostics__ and open the __Git__ tab. Here you can test the connection via native Git in any VCS root on your server. If you choose to test all VCS roots, TeamCity will check whether they successfully connect via JGit and then test their connection via native Git. This measure helps ensure that none of your pipelines will break after switching to native Git.
 If the connection test is successful, you can enable the native Git support on your server(s).
 
-TeamCity server statistics show that using native git significantly improves the performance of VCS-related operations on the server:
+Our TeamCity server statistics show that using native git significantly improves the performance of VCS-related operations on the server:
 new changes and branches appear much faster. Here's the chart showing the time required by `git fetch` operations:
 - Before 14:30 TeamCity had JGit enabled on the server and the fetch required a lot more time.
 - After 14:30 TeamCity switched to native Git, meaning that the server started launching _git executable_ to perform fetch. As you can see, the time can be decreased up to 10 times in comparison with JGit.
