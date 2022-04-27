@@ -21,8 +21,8 @@ If you have been using any of these versions in your scripts, consider switching
 * Updates in TeamCity Agent Docker images:
   * The bundled .NET Core SDK has been updated to 6.0.100.
   * The two bundled versions of .NET Core Runtime are 3.1.21 and 5.0.12.
-  * Bundled Git has been updated to version 2.36.0
-* The bundled Java was updated to version 11.0.15.9.1
+  * Bundled Git has been updated to version 2.36.0 
+  * The bundled Java was updated to version 11.0.15.9.1
 * Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11.x. Previously added IntelliJ Inspections/Duplicates steps with the bundled version will become incompatible with the agents running Java below version 11.
 * The bundled Kotlin compiler used in [TeamCity DSL](kotlin-dsl.md) has been updated to version 1.6.21
 * The [SBT](http://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.5.5.
