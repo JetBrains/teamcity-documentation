@@ -223,6 +223,13 @@ This way, project admins no longer need to ask the system administrator for a pu
 ## Other updates
 {product="tc"}
 
+* **Queued builds optimization improvements**
+  Before TeamCity 2022.04 a build in the queue could be optimized to an already started or finished build only.
+  For instance if there are two build chains in the queue: `A -> B` and `A -> C` then the queued build `A` in both build chains could be replaced by the build queue optimizer only if there was another running or finished build `A` which has the same settings and revisions.
+
+  Starting with TeamCity 2022.04 this algorithm was improved to allow reusing builds which are still in the queue.
+  So for the example above both build chains will be merged together while they are still in the queue, so both of the build chains will use the same queued build `A`. 
+
 * **Build failure conditions: Creating a build problem per each matching error**  
 When configuring a _Fail build on specific text in build log_ [failure condition](build-failure-conditions.md), you can now specify whether to create a build problem only for the first text occurrence found in a build log (default) or for each error that matches the specified pattern.
 
