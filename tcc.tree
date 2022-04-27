@@ -44,7 +44,6 @@
         <toc-element toc-title="What's New in TeamCity Cloud">
             <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="teamcity-2022-04-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
-            </toc-element>
             <toc-element id="what-s-new-in-teamcity-2022-02.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="teamcity-release-notes-build-107913.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
@@ -188,7 +187,6 @@
                 <toc-element id="duplicates-finder-resharper.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="fxcop.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="gradle.md" show-structure-for="chapter" show-structure-depth="4"/>
-                <toc-element id="qodana.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="inspections.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="inspections-resharper.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="intellij-idea-project.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -240,7 +238,7 @@
                 <toc-element id="pull-requests.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="ruby-environment-configurator.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="shared-resources.md" show-structure-for="chapter" show-structure-depth="4"/>
-                <toc-element id="parallel-tests.md" show-structure-for="chapter" show-structure-depth="4"/>
+                <toc-element id="tests-split-for-parallel-execution.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="ssh-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="vcs-labeling.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="xml-report-processing.md" show-structure-for="chapter" show-structure-depth="4"/>
