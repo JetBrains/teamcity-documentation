@@ -142,6 +142,7 @@ The build step with custom tests' execution logic should use this file and filte
 * When TeamCity divides tests among batches it only takes into account duration of the test itself. The duration of setUp/tearDown or any other preparation methods is not know to TeamCity, because of this the duration of batches may not be equal.
 * An agent selected in the custom build dialog for a build with parallel tests will be ignored because the build will be transformed to a composite one after the triggering.
 * Parameters published by the build steps via [setParameter](service-messages.md#set-parameter) service message, as well as runner specific parameters such as `maven.project.version` won't be available in a composite build with parallel tests
+* When it comes to the build configurations limit in TeamCity Professional version the automatically generated build configurations are counted as normal build configurations 
 
 ### Known bugs
  
