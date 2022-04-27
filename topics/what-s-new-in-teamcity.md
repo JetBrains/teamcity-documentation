@@ -102,15 +102,23 @@ Although TeamCity has not been affected by the Log4Shell vulnerability (CVE-2021
 Similarly to Log4Shell, the Spring4Shell vulnerability (CVE-2022-22965) does not affect TeamCity. However, to avoid false-positive reports from security scanners, we have upgraded the Spring Framework used in TeamCity to the latest version.
 
 
-## Native Git as Default Mode
+## Native Git for VCS-related operations on the server
 {product="tc"}
 
-TeamCity has switched to using native Git as the default option for Git operations.
-This new approach makes Git operations more straightforward than the previously used JGit implementation and allows working with Git and SSH in TeamCity just as you were in your version control system.
+TeamCity can now use native Git as the default option for Git operations on the server. 
+Switching to native Git improves the performance of the checking for changes operations on the server 
+in comparison with the previously used JGit implementation. It also fixes a number of issues related to large Git repositories.
 
-Before switching, make sure a [native Git client](https://git-scm.com/downloads) version 2.29 or later is installed on your server machine and the path to its executable is specified in the `PATH` environment variable. Alternatively, you can set the full path to the executable via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (no server restart is required). On Windows, remember to use double backslashes in the path.
+Before switching, make sure a [native Git client](https://git-scm.com/downloads) version 2.29 or later is installed on your server machine,
+and the path to its executable is specified in the `PATH` environment variable. 
+Alternatively, you can set the full path to the executable 
+via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) 
+(no server restart is required). On Windows, remember to use double backslashes in the path.
 
-To switch your TeamCity nodes to native Git, go to __Administration | Diagnostics__ and open the __Git__ tab. Here you can test the connection via native Git in any VCS root on your server. If you choose to test all VCS roots, TeamCity will check whether they successfully connect via JGit and then test their connection via native Git. This measure helps ensure that none of your pipelines will break after switching to native Git.
+To switch your TeamCity server to native Git, go to __Administration | Diagnostics__ and open the __Git__ tab. 
+Here you can test the connection via native Git in any VCS root on your server. 
+If you choose to test all VCS roots, TeamCity will check whether they successfully connect via JGit and then test their connection via native Git. 
+This measure helps ensure that none of your pipelines will break after switching to native Git.
 If the connection test is successful, you can enable the native Git support on your server(s).
 
 Our TeamCity server statistics show that using native git significantly improves the performance of VCS-related operations on the server:
@@ -118,19 +126,19 @@ new changes and branches appear much faster. Here's the chart showing the time r
 - Before 14:30 TeamCity had JGit enabled on the server and the fetch required a lot more time.
 - After 14:30 TeamCity switched to native Git, meaning that the server started launching _git executable_ to perform fetch. As you can see, the time can be decreased up to 10 times in comparison with JGit.
 
-<img src="improved-git-fetch.png" alt="Git Fetch with JGit and Native Git" width="556"/>
+<img src="improved-git-fetch.png" alt="Git Fetch with JGit and Native Git" width="750"/>
 
 
 ## New UI
 
-### Editing scope of agent pools
+### Editing agent pools
 
 {product="tc"}
 
 >We keep reproducing the classic TeamCity features in its experimental UI, and a majority of them have already received a new implementation. If you haven't tried the new UI for a while or at all, we encourage you to give it a try this time. Our goal is to make the experimental UI not only as functional as the classic one but a lot more responsive and enhanced with easier navigation and widgets.
 
-It is now possible to edit the scope of [agent pools](configuring-agent-pools.md) and quickly assign agents and projects to them right in the new Sakura UI — without switching to the classic UI mode.
-To edit an agent pool's scope, click **Assign agents** in its settings. In this dialog, you can choose what agents you want to assign to the pool:
+It is now possible to edit [agent pools](configuring-agent-pools.md) and quickly assign agents and projects to them right in the new Sakura UI — without switching to the classic UI mode.
+To edit an agent pool, click **Assign agents** in its settings. In this dialog, you can choose what agents you want to assign to the pool:
 
 <img src="edit-agent-pool.png" alt="Edit agent pool in new TeamCity UI" width="460"/>
 
@@ -158,16 +166,8 @@ When a user signs in to TeamCity [via a third-party account](configuring-authent
 
 It is possible to upload a different avatar in the TeamCity user profile settings afterwards.
 
-## Getting project SSH keys via UI
-{product="tc"}
 
-You can now copy the public part of an uploaded non-encrypted SSH key from the project settings. To do this, go to **Project Settings | SSH keys** and click **Copy the public key** under the key name.
-
-<img src="copy-public-ssh-keys.png" alt="Copying public SSH keys" width="750"/>
-
-This way, project admins no longer need to ask the system administrator for a public SSH key whenever they need it (for example, to integrate their TeamCity projects with a VCS hosting service) — they can just get it via the TeamCity UI.
-
-## Applying action to multiple builds
+## Applying actions to multiple builds
 {product="tc"}
 
 It is now possible to select multiple builds and apply actions to all of them at once:
@@ -187,24 +187,28 @@ On the **Overview** tab of **Build Configuration Home**, you can select the requ
 
 [Commit Status Publisher](commit-status-publisher.md) has a new option for sending build status reports to Perforce Helix Swarm — **Create Swarm Test**. If you enable it, TeamCity will [create a test run](https://www.perforce.com/manuals/swarm/Content/Swarm/swarm-apidoc_endpoint_integration_tests.html#Create_a__testrun_for_a_review_version) on the Helix Swarm server and update its status according to the build status in TeamCity.
 
+## Getting the project's public part of SSH keys via the UI
+{product="tc"}
+
+You can now copy the public part of an uploaded non-encrypted SSH key from the project settings. To do this, go to **Project Settings | SSH keys** and click **Copy the public key** under the key name.
+
+<img src="copy-public-ssh-keys.png" alt="Copying public SSH keys" width="750"/>
+
+This way, project admins no longer need to ask the system administrator for a public SSH key whenever they need it (for example, to integrate their TeamCity projects with a VCS hosting service) — they can just get it via the TeamCity UI.
+
+
 ## Other updates
 {product="tc"}
 
-* **Changing the project scope of an investigation or mute**  
-  If a build problem occurs in multiple subprojects of the same project, it is convenient to assign its investigation (or mute it) within the whole parent project. However, users often forget to change the project scope in the _Investigation/Mute_ dialog, and TeamCity applies the action only within the current subproject. Now, project administrators can set a parent project as a preferred scope for all its subprojects. [Read how](investigating-and-muting-build-failures.md#Changing+Project+Scope+of+Investigation+or+Mute).
 * **Build failure conditions: Creating a build problem per each matching error**  
 When configuring a _Fail build on specific text in build log_ [failure condition](build-failure-conditions.md), you can now specify whether to create a build problem only for the first text occurrence found in a build log (default) or for each error that matches the specified pattern.
-* **Composite build configurations are no longer displayed as suitable for agents**  
-  [Composite build configurations](composite-build-configuration.md) no longer appear on the _Compatible Configurations_ tab of a [build agent's details](viewing-build-agent-details.md).  
-  Composite builds are meta-builds designed for aggregating results of builds preceding them in a [chain](build-chain.md). Technically, they do not need a build agent to run and thus cannot be matched as compatible/incompatible with them. This usability update removes composite build configurations from _Compatible_ lists to help avoid any potential confusions.
-* __Kotlin DSL update: Import statements include only current DSL version__  
-  All `import` statements in a [Kotlin DSL](kotlin-dsl.md) code no longer include the DSL version specification. Instead, the version is determined automatically based on the current server's version.  
-  This change affects how a DSL code appears in the _View as Code_ mode in TeamCity and removes irrelevant suggestions when writing `import` statements manually in an IDE. It concerns only newly created projects — the syntax of existing projects is supported for compatibility.
-  {product="tc"}
+
+* **The [Eclipse plugin](eclipse-plugin.md)** has been unbundled from TeamCity. [Contact our support](https://teamcity-support.jetbrains.com/hc/en-us) if you need the plugin.
 
   
 ## Other updates
 {product="tcc"}
+
 
 ## Fixed issues
 {product="tc"}

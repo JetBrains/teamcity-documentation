@@ -3,21 +3,27 @@
 
 ## Changes from 2021.2 to 2022.04
 
-* To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). On updating to 2022.04, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner, but the investigations and history of these tests might be reset.
+* To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). 
+On updating to 2022.04, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner. 
+As a result of this change, the investigations, mutes, and history of these tests may be reset.
 * TeamCity stops supporting the [Microsoft Edge Legacy](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224) web browsers.
-* It is now impossible to automatically [trigger builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-build-queue.html#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
-* Ant runner is disabled if Ant is started by a Java version below Java 8.
+[Triggering builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) will be disabled 
+when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-build-queue.html#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
+* TeamCity reporting of Ant's tasks will be disabled if Ant is started by a Java version below 1.8. 
 * Windows docker images based on 2004 will not be published for 2022.04 version.
 
 
 ### Bundled tools updates
 {id="bundled-tools-updates-2022-04"}
 
-* Versions 2017.1 and 2017.2 of [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) have been unbundled. If you have been using any of these versions in your scripts, consider switching to the latest protocol version as described [here](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#REST+API+Versions). If switching is not an option and this is a breaking change for your setup, please contact us via any convenient [feedback channel](feedback.md).
+*Versions 2017.1 and 2017.2 of [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) have been unbundled. 
+If you have been using any of these versions in your scripts, consider switching to the latest protocol version as described [here](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#REST+API+Versions). If switching is not an option and this is a breaking change for your setup, please contact us via any convenient [feedback channel](feedback.md).
 * Updates in TeamCity Agent Docker images:
-  * Bundled .NET Core SDK has been updated to 6.0.100.
-  * Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
-* Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11. Previously added IntelliJ Inspections/Duplicates steps with the bundled version will become incompatible with the agents running Java below version 11.
+  * The bundled .NET Core SDK has been updated to 6.0.100.
+  * The two bundled versions of .NET Core Runtime are 3.1.21 and 5.0.12.
+  * Bundled Git has been updated to version 2.36.0
+* The bundled Java was updated to version 11.0.15.9.1
+* Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11.x. Previously added IntelliJ Inspections/Duplicates steps with the bundled version will become incompatible with the agents running Java below version 11.
 * The bundled Kotlin compiler used in [TeamCity DSL](kotlin-dsl.md) has been updated to version 1.6.21
 * The [SBT](http://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.5.5.
 * Freemarker, used by TeamCity [notification templates](customizing-notification-templates.md), has been updated to version 2.3.31.
@@ -31,11 +37,11 @@
 
 You'll need to update several of the external plugins, whose older versions are incompatible with TeamCity 2022.04.
 
-- [Gradle Build Scan](https://github.com/etiennestuder/gradle-build-scan-teamcity-plugin) is  currently incompatible. We're waiting for our PR to be accepted by the plugin author.
+* [Gradle Build Scan](https://github.com/etiennestuder/gradle-build-scan-teamcity-plugin) is  currently incompatible. We're waiting for our PR to be accepted by the plugin author.
 
 The latest released versions of the following plugins are compatible with TeamCity 2022.04. Please install them from the JetBrains Marketplace: 
-- [Github Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks)
-- [Hashicorp Vault Support](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support)
+* [Github Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks)
+* [Hashicorp Vault Support](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support)
 
 
 ## Changes from 2021.2.2 to 2021.2.3

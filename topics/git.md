@@ -20,7 +20,7 @@ __Important notes__:
 * [Remote Run](remote-run.md) and [Pre-Tested Commit](pre-tested-delayed-commit.md) are supported in the [IntelliJ IDEA](intellij-platform-plugin.md) and [Eclipse](eclipse-plugin.md) plugins; with the [Visual Studio Add-in](visual-studio-addin.md) use the [Branch Remote Run Trigger](branch-remote-run-trigger.md).
 * Initial Git [checkout](build-checkout-directory.md#Checkout+Process) may take significant time (sometimes hours), depending on the size of your project history, because the whole project history is downloaded during the initial checkout.
 
-## Native Git as Default Mode
+## Native Git for VCS-related operations on the server
 {id="native-git-default-mode" auxiliary-id="native-git-default-mode" product="tc"}
 
 Since version 2022.04, TeamCity uses native Git as the default option for Git operations. It improves performance of VCS-related operations and makes Git operations more straightforward in comparison with previously used JGit implementation. Native Git allows working with Git and SSH in TeamCity just as you would in your operating system.

@@ -97,7 +97,7 @@ It is now possible to edit the scope of [agent pools](configuring-agent-pools.md
 > 
 {product="tc"}
 
-To edit an agent pool's scope, click **Assign agents** in its settings. In this dialog, you can choose what agents you want to assign to the pool:
+To edit an agent pool, click **Assign agents** in its settings. In this dialog, you can choose what agents you want to assign to the pool:
 
 <img src="edit-agent-pool.png" alt="Edit agent pool in new TeamCity UI" width="460"/>
 
