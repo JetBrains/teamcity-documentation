@@ -1,51 +1,32 @@
 [//]: # (title: TeamCity 2022.04 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2022.04 Release Notes)  
 __Build: 108478__  
-__27 April 2022__  
+__27 April 2022__    
 
 ### Feature  
 
-[**TW-5610**](https://youtrack.jetbrains.com/issue/TW-5610/Custom-build:-allow-to-provide-revisions-for-the-VCS-roots) — Custom build: allow to provide revisions for the VCS
-[**TW-10498**](https://youtrack.jetbrains.com/issue/TW-10498/Multiple-equivalent-builds-can-be-present-in-the-queue-on-snapsh) — Multiple equivalent builds can be present in the queue on snapshot builds triggering (no snapshot chains optimizing int he queue) 
+[**TW-5610**](https://youtrack.jetbrains.com/issue/TW-5610/Custom-build:-allow-to-provide-revisions-for-the-VCS-roots) — Custom build: allow to provide revisions for the VCS roots  
+[**TW-10498**](https://youtrack.jetbrains.com/issue/TW-10498/Multiple-equivalent-builds-can-be-present-in-the-queue-on-snapsh) — Multiple equivalent builds can be present in the queue on snapshot builds triggering (no snapshot chains optimizing int he queue)  
 [**TW-22960**](https://youtrack.jetbrains.com/issue/TW-22960/Number-of-simultaneously-running-builds-should-have-option-for-b) — Number of simultaneously running builds should have option for branches  
 [**TW-29273**](https://youtrack.jetbrains.com/issue/TW-29273/Display-templates-in-breadcrumbs-in-administration-pages-for-fas) — Display templates in breadcrumbs in administration pages for fast navigation  
-[**TW-38093**](https://youtrack.jetbrains.com/issue/TW-38093/REST-API.-Allow-to-change-the-status-for-the-finished-build.) — REST API. Allow to change the status for the finished build.  
-[**TW-48863**](https://youtrack.jetbrains.com/issue/TW-48863/Publish-commit-status-on-adding-to-queue) — Publish commit status on adding to queue
-[**TW-52778**](https://youtrack.jetbrains.com/issue/TW-52778/Ability-to-migrate-existing-build-artifacts-from-local-storage-t) — Ability to migrate existing build artifacts from local storage to S3
+[**TW-48863**](https://youtrack.jetbrains.com/issue/TW-48863/Publish-commit-status-on-adding-to-queue) — Publish commit status on adding to queue  
+[**TW-52778**](https://youtrack.jetbrains.com/issue/TW-52778/Ability-to-migrate-existing-build-artifacts-from-local-storage-t) — Ability to migrate existing build artifacts from local storage to S3  
 [**TW-53412**](https://youtrack.jetbrains.com/issue/TW-53412/Batch-operations-with-builds) — Batch operations with builds  
-[**TW-63772**](https://youtrack.jetbrains.com/issue/TW-63772/FlowID-is-ignored-in-the-new-build-log) — FlowID is ignored in the new build log  
 [**TW-64423**](https://youtrack.jetbrains.com/issue/TW-64423/Split-tests-into-groups-and-run-on-multiple-agents-in-parallel) — Split tests into groups and run on multiple agents in parallel  
-[**TW-64974**](https://youtrack.jetbrains.com/issue/TW-64974/Snapshot-dependencies-block-improvements-on-the-build-overview-p) — Snapshot dependencies block improvements on the build overview page  
 [**TW-65906**](https://youtrack.jetbrains.com/issue/TW-65906/Implement-Downloaded-and-delivered-artifacts-view-in-the-new-UI) — Implement Downloaded and delivered artifacts view in the new UI  
-[**TW-68720**](https://youtrack.jetbrains.com/issue/TW-68720/REST:-Add-the-ability-to-get-the-reasons-and-time-to-wait-for-th) — REST: Add the ability to get the reasons and time to wait for the queued build.  
-[**TW-69648**](https://youtrack.jetbrains.com/issue/TW-69648/Add-project-popup-to-Entity-Name-in-Sakura-UI) — Add project popup to Entity Name in Sakura UI  
 [**TW-69740**](https://youtrack.jetbrains.com/issue/TW-69740/Changes-page-in-new-UI) — Changes page in new UI  
-[**TW-73167**](https://youtrack.jetbrains.com/issue/TW-73167/Single-change-page.-No-%22Show-projects-hierarchy%22-option-on-Build) — Single change page. No &quot;Show projects hierarchy&quot; option on Builds tab  
 [**TW-73204**](https://youtrack.jetbrains.com/issue/TW-73204/Support-parallel-tests-in-the-.NET-runner) — Support parallel tests in the .NET runner  
-[**TW-74213**](https://youtrack.jetbrains.com/issue/TW-74213/Expose-counters-required-for-popup-on-a-graph-on-Changes-page) — Expose counters required for popup on a graph on Changes page  
-[**TW-74214**](https://youtrack.jetbrains.com/issue/TW-74214/Add-ability-to-filter-builds-related-to-change) — Add ability to filter builds related to change  
-[**TW-74329**](https://youtrack.jetbrains.com/issue/TW-74329/REST:-allow-getting-full-list-of-ancestors-for-a-project-or-buil) — REST: allow getting full list of ancestors for a project or build type  
-[**TW-74422**](https://youtrack.jetbrains.com/issue/TW-74422/Re-run-ignores-last-chain-structure.) — Re-run ignores last chain structure.
 [**TW-74613**](https://youtrack.jetbrains.com/issue/TW-74613/UI:-Add-the-ability-to-get-the-reasons-and-time-to-wait-for-the-) — UI: Add the ability to get the reasons and time to wait for the queued build.  
-[**TW-74955**](https://youtrack.jetbrains.com/issue/TW-74955/Implement-set-of-features,-related-to-virtual-projects) — Implement set of features, related to virtual projects  
-[**TW-74958**](https://youtrack.jetbrains.com/issue/TW-74958/Parallel-Tests:-Sidebar-improvements) — Parallel Tests: Sidebar improvements  
-[**TW-74959**](https://youtrack.jetbrains.com/issue/TW-74959/Parallel-Tests:-Projects-page-improvements) — Parallel Tests: Projects page improvements  
-[**TW-74960**](https://youtrack.jetbrains.com/issue/TW-74960/Parallel-Tests:-Build-Log-UI-improvements) — Parallel Tests: Build Log UI improvements  
 [**TW-75042**](https://youtrack.jetbrains.com/issue/TW-75042/Add-GitLab-issues-support) — Add GitLab issues support  
-[**TW-75175**](https://youtrack.jetbrains.com/issue/TW-75175/A-Gradle-runner-must-contain-a-hint-if-the-%22parallel-tests%22-plug) — A Gradle runner must contain a hint if the &quot;parallel tests&quot; plugin exists.  
-[**TW-75573**](https://youtrack.jetbrains.com/issue/TW-75573/GraphQL-API:-Hide-virtual-auto-generated-projects-by-default) — GraphQL API: Hide virtual auto-generated projects by default  
 [**TW-75688**](https://youtrack.jetbrains.com/issue/TW-75688/Bundle-Qodana-plugin) — Bundle Qodana plugin  
 [**TW-75736**](https://youtrack.jetbrains.com/issue/TW-75736/Allow-providing-a-fallback-build-configuration-with-tests-statis) — Allow providing a fallback build configuration with tests statistics  
-[**TW-75960**](https://youtrack.jetbrains.com/issue/TW-75960/Improve-search-build-results-according-to-user-expectations) — Improve search build results according to user expectations  
 [**TW-26623**](https://youtrack.jetbrains.com/issue/TW-26623/Approval-for-Run-button-(requiring-sign-off-by-several-users)) — Approval for Run button (requiring sign off by several users)  
 [**TW-40404**](https://youtrack.jetbrains.com/issue/TW-40404/Use-native-git-for-repository-fetching) — Use native git for repository fetching  
 [**TW-48449**](https://youtrack.jetbrains.com/issue/TW-48449/Support-Cloud-profiles-in-Kotlin-DSL-project) — Support Cloud profiles in Kotlin DSL project  
-[**TW-52235**](https://youtrack.jetbrains.com/issue/TW-52235/Upgrade-to-a-newer-version-of-FreeMarker) — Upgrade to a newer version of FreeMarker  
 [**TW-52941**](https://youtrack.jetbrains.com/issue/TW-52941/To-add-ability-to-view-public-part-of-the-uploaded-SSH-key) — To add ability to view public part of the uploaded SSH key  
 [**TW-66588**](https://youtrack.jetbrains.com/issue/TW-66588/Provide-a-way-to-automatically-choose-some-parent-project-as-sco) — Provide a way to automatically choose some parent project as scope when assigning an investigation or muting tests  
 [**TW-68011**](https://youtrack.jetbrains.com/issue/TW-68011/Run-custom-build-dialog:-allow-specifying-an-arbitrary-branch-na) — Run custom build dialog: allow specifying an arbitrary branch name  
 [**TW-70296**](https://youtrack.jetbrains.com/issue/TW-70296/Add-support-for-Space-merge-requests-to-Pull-requests-build-feat) — Add support for Space merge requests to Pull requests build feature  
-[**TW-72261**](https://youtrack.jetbrains.com/issue/TW-72261/Update-language-highlighting-adding-C) — Update language highlighting adding C#  
 [**TW-73101**](https://youtrack.jetbrains.com/issue/TW-73101/Publish-a-build-status-to-the-Merge-request-in-JetBrains-Space) — Publish a build status to the Merge request in JetBrains Space  
 [**TW-73147**](https://youtrack.jetbrains.com/issue/TW-73147/Import-avatars-from-GitHub,-BitBucket-and-other-external-auth-mo) — Import avatars from GitHub, BitBucket and other external auth modules on user creation  
 [**TW-73161**](https://youtrack.jetbrains.com/issue/TW-73161/UI-to-manage-agent-pool-projects) — UI to manage agent pool projects  
@@ -55,14 +36,9 @@ __27 April 2022__
 [**TW-73796**](https://youtrack.jetbrains.com/issue/TW-73796/Allow-to-create-a-build-problem-for-every-match-found-with-%22Fail) — Allow to create a build problem for every match found with &quot;Fail Build on Specific Text&quot; failure condition  
 [**TW-73967**](https://youtrack.jetbrains.com/issue/TW-73967/Report-the-build-status-in-the-head-commit-of-the-Space-Merge-re) — Report the build status in the head commit of the Space Merge request  
 [**TW-74421**](https://youtrack.jetbrains.com/issue/TW-74421/Add-support-(connection-type)-for-public-ECR) — Add support (connection type) for public ECR  
-[**TW-74619**](https://youtrack.jetbrains.com/issue/TW-74619/REST:-Add-commiters-field-to-a-Change-model) — REST: Add commiters field to a Change model  
 [**TW-74651**](https://youtrack.jetbrains.com/issue/TW-74651/Support-the-Gradle-runner-parallel-tests) — Support the Gradle runner parallel tests  
 [**TW-74653**](https://youtrack.jetbrains.com/issue/TW-74653/Support-the-Maven-runner-parallel-tests) — Support the Maven runner parallel tests  
-[**TW-74810**](https://youtrack.jetbrains.com/issue/TW-74810/Ability-to-deduplicate-changes) — Ability to deduplicate changes  
-[**TW-75940**](https://youtrack.jetbrains.com/issue/TW-75940/Simplify-parallelTests&#39;-configuration-name) — Simplify parallelTests&#39; configuration name  
-
-# Usability Problem 
-
+### Usability Problem  
 [**TW-75224**](https://youtrack.jetbrains.com/issue/TW-75224/The-change-status-preview-on-the-bar-graph-looks-ridiculous-when) — The change status preview on the bar graph looks ridiculous when the status is the same  
 [**TW-29414**](https://youtrack.jetbrains.com/issue/TW-29414/Include-name-of-the-deleted-object-into-%22Are-you-sure-you-want-t) — Include name of the deleted object into &quot;Are you sure you want to delete this project&quot; confirmation  
 [**TW-30985**](https://youtrack.jetbrains.com/issue/TW-30985/Improve-browser-page-title-to-differentiate-between-build-config) — Improve browser page title to differentiate between build configurations better  
@@ -103,13 +79,14 @@ __27 April 2022__
 
 ### Bug  
 
-[**TW-42841**](https://youtrack.jetbrains.com/issue/TW-42841/Server-can-hang-on-start-(corrupted-HSQLDB-of-builds-metadata-st) — Server can hang on start (corrupted HSQLDB of builds metadata storage)  
+[**TW-42841**](https://youtrack.jetbrains.com/issue/TW-42841/Server-can-hang-on-start-(corrupted-HSQLDB-of-builds-metadata-st)) — Server can hang on start (corrupted HSQLDB of builds metadata storage)  
 [**TW-73911**](https://youtrack.jetbrains.com/issue/TW-73911/Deadlock-on-attempt-to-store-a-new-metadata-storage-key-id) — Deadlock on attempt to store a new metadata storage key id  
 [**TW-75864**](https://youtrack.jetbrains.com/issue/TW-75864/jetbrains.exodus.ExodusException-on-trying-to-run-the-same-migra) — jetbrains.exodus.ExodusException on trying to run the same migration tool using another command line.  
 [**TW-31663**](https://youtrack.jetbrains.com/issue/TW-31663/Confusing-project-without-parent-on-Overview-and-Configure-visib) — Confusing project without parent on Overview and Configure visible projects dialog  
 [**TW-57117**](https://youtrack.jetbrains.com/issue/TW-57117/Git-downgrades-to-protocol-version-1-when-%22git-config-global-pro) — Git downgrades to protocol version 1 when &quot;git config --global protocol.version 2&quot; is set  
 [**TW-58551**](https://youtrack.jetbrains.com/issue/TW-58551/Can&#39;t-preview-DSL-for-general-build-configuration-settings-witho) — Can&#39;t preview DSL for general build configuration settings without saving configuration  
 [**TW-62530**](https://youtrack.jetbrains.com/issue/TW-62530/Hide-sidebar-automatically-after-search-was-complete-with-the-se) — Hide sidebar automatically after search was complete with the selection of the item  
+[**TW-63772**](https://youtrack.jetbrains.com/issue/TW-63772/FlowID-is-ignored-in-the-new-build-log) — FlowID is ignored in the new build log  
 [**TW-65583**](https://youtrack.jetbrains.com/issue/TW-65583/Expanded-artifact-dependency-changes-shows-wrong-data) — Expanded artifact dependency changes shows wrong data  
 [**TW-68545**](https://youtrack.jetbrains.com/issue/TW-68545/git-ls-remote-process-hanging-on-Windows-agent) — git ls-remote process hanging on Windows agent  
 [**TW-69922**](https://youtrack.jetbrains.com/issue/TW-69922/View-DSL-in-Add-Artifact-Dependency-doesn&#39;t-reflect-unsaved-user) — View DSL in Add Artifact Dependency doesn&#39;t reflect unsaved user&#39;s changes  
@@ -119,6 +96,7 @@ __27 April 2022__
 [**TW-72763**](https://youtrack.jetbrains.com/issue/TW-72763/Azure-DevOps-OAuth-Connection:-Handle-errors-that-happened-durin) — Azure DevOps OAuth Connection: Handle errors that happened during project creation  
 [**TW-73006**](https://youtrack.jetbrains.com/issue/TW-73006/Scrollbars-always-show-on-agents-page-in-new-UI) — Scrollbars always show on agents page in new UI  
 [**TW-73160**](https://youtrack.jetbrains.com/issue/TW-73160/Build-can-be-interrupted-by-an-agent-in-multi-node-setup-if-seco) — Build can be interrupted by an agent in multi node setup if secondary node becomes unavailable for some time  
+[**TW-73167**](https://youtrack.jetbrains.com/issue/TW-73167/Single-change-page.-No-%22Show-projects-hierarchy%22-option-on-Build) — Single change page. No &quot;Show projects hierarchy&quot; option on Builds tab  
 [**TW-73288**](https://youtrack.jetbrains.com/issue/TW-73288/UnPin-clears-existing-tags-on-first-attempt-(Classic-UI)) — UnPin clears existing tags on first attempt (Classic UI)  
 [**TW-73363**](https://youtrack.jetbrains.com/issue/TW-73363/Add-the-ability-to-get-all-the-VCS-roots-related-to-the-commit) — Add the ability to get all the VCS roots related to the commit  
 [**TW-73473**](https://youtrack.jetbrains.com/issue/TW-73473/The-pager-on-the-Build-Changes-tab-disappears-after-switching-be) — The pager on the Build Changes tab disappears after switching between pages in reverse order  
@@ -126,18 +104,19 @@ __27 April 2022__
 [**TW-73912**](https://youtrack.jetbrains.com/issue/TW-73912/Absence-of-an-index-on-test_metadata(key_id)-slows-down-startup-) — Absence of an index on test\_metadata(key\_id) slows down startup and can cause failure to start if connection timeout is configured  
 [**TW-73917**](https://youtrack.jetbrains.com/issue/TW-73917/IDEA&#39;s-remote-run-fails-to-determine-related-run-configurations) — IDEA&#39;s remote run fails to determine related run configurations  
 [**TW-74062**](https://youtrack.jetbrains.com/issue/TW-74062/Remote-debug-is-listening-wrong-host-and-doesn&#39;t-start-build-on-) — Remote debug is listening wrong host and doesn&#39;t start build on TeamCity server  
-[**TW-74111**](https://youtrack.jetbrains.com/issue/TW-74111/Fix-nesting-of-publishing-artifacts-messages-(verbose-logging-le) — Fix nesting of publishing artifacts messages (verbose logging level)  
+[**TW-74111**](https://youtrack.jetbrains.com/issue/TW-74111/Fix-nesting-of-publishing-artifacts-messages-(verbose-logging-le)) — Fix nesting of publishing artifacts messages (verbose logging level)  
 [**TW-74161**](https://youtrack.jetbrains.com/issue/TW-74161/Allow-to-disable-enable-integration-with-Space-merge-requests-wi) — Allow to disable/enable integration with Space merge requests without restart of server  
 [**TW-74181**](https://youtrack.jetbrains.com/issue/TW-74181/Concurrent-publishing-of-artifacts-via-service-messages-sometime) — Concurrent publishing of artifacts via service messages sometimes causes build to fail with FileNotFoundException when there is a large number of artifacts  
 [**TW-74284**](https://youtrack.jetbrains.com/issue/TW-74284/Endless-agent-upgrades-loop) — Endless agent upgrades loop  
+[**TW-74422**](https://youtrack.jetbrains.com/issue/TW-74422/Re-run-ignores-last-chain-structure.) — Re-run ignores last chain structure.  
 [**TW-74430**](https://youtrack.jetbrains.com/issue/TW-74430/Build-duration-(secs)-appears-is-wrong-while-build-is-checking-o) — Build duration (secs) appears is wrong while build is checking out sources  
 [**TW-74458**](https://youtrack.jetbrains.com/issue/TW-74458/%22preferredInvestigationProject%22-parameter-isn&#39;t-taken-into-accou) — &quot;preferredInvestigationProject&quot; parameter isn&#39;t taken into account by &quot;Assign investigation to ...&quot; button  
 [**TW-74549**](https://youtrack.jetbrains.com/issue/TW-74549/Add-build-number-build-configuration-to-build-status-popup) — Add build number/build configuration to build status popup  
 [**TW-74595**](https://youtrack.jetbrains.com/issue/TW-74595/Apply-Ring-UI-like-styles-to-Classic-UI-controls) — Apply Ring UI-like styles to Classic UI controls  
-[**TW-74734**](https://youtrack.jetbrains.com/issue/TW-74734/Builds-list-is-not-updated-when-a-build-is-taken-from-the-queue) — Builds list is not updated when a build is taken from the queue  
-[**TW-74745**](https://youtrack.jetbrains.com/issue/TW-74745/Build-artifact-directory-can-be-removed-by-clean-up-process-if-t) — Build artifact directory can be removed by clean-up process if the build configuration name or the project external id was upper(lower)cased  
-[**TW-74951**](https://youtrack.jetbrains.com/issue/TW-74951/Misplaced-agent-name-in-a-build-line-of-the-deployment-section-() — Misplaced agent name in a build line of the deployment section (Safari)  
-[**TW-75102**](https://youtrack.jetbrains.com/issue/TW-75102/SSH-Auth-fail-to-Devops-Server-(Azure-DevOps-or-local-TFS-server) — SSH Auth fail to Devops Server (Azure DevOps or local TFS server)  
+[**TW-74734**](https://youtrack.jetbrains.com/issue/TW-74734/Builds-list-is-not-updated-when-a-build-is-taken-from-the-queue) — Builds list is not updated when a build is taken from the queue 
+[**TW-74745**](https://youtrack.jetbrains.com/issue/TW-74745/Build-artifact-directory-can-be-removed-by-clean-up-process-if-t) — Build artifact directory can be removed by clean-up process if the build configuration name or the project external id was upper(lower)cased
+[**TW-74951**](https://youtrack.jetbrains.com/issue/TW-74951/Misplaced-agent-name-in-a-build-line-of-the-deployment-section-) — Misplaced agent name in a build line of the deployment section (Safari)
+[**TW-75102**](https://youtrack.jetbrains.com/issue/TW-75102/SSH-Auth-fail-to-Devops-Server-(Azure-DevOps-or-local-TFS-server)) — SSH Auth fail to Devops Server (Azure DevOps or local TFS server)  
 [**TW-75114**](https://youtrack.jetbrains.com/issue/TW-75114/Build-does-not-start-because-of-a-missing-condition-type-for-a-f) — Build does not start because of a missing condition type for a failure condition  
 [**TW-75138**](https://youtrack.jetbrains.com/issue/TW-75138/Remove-windows-new-lines-from-the-SSH-keys-before-passing-them-t) — Remove windows new lines from the SSH keys before passing them to Git executable  
 [**TW-75285**](https://youtrack.jetbrains.com/issue/TW-75285/Empty-auto-generated-virtual-configurations-remain-forever-after) — Empty auto-generated virtual configurations remain forever after deleting &quot;Run tests in parallel&quot; feature  
@@ -178,7 +157,7 @@ __27 April 2022__
 [**TW-72876**](https://youtrack.jetbrains.com/issue/TW-72876/Do-not-display-Perforce-personal-build-section-in-Custom-Run-dia) — Do not display Perforce personal build section in Custom Run dialog for user without &quot;Change build source code with a custom patch&quot; permission.  
 [**TW-72927**](https://youtrack.jetbrains.com/issue/TW-72927/Files-with-special-Perforce-characters-in-names-are-displayed-an) — Files with special Perforce characters in names are displayed and applied incorrectly in perforce patch  
 [**TW-72942**](https://youtrack.jetbrains.com/issue/TW-72942/Add-%22Build-log%22-Icon-to-%22Show-full-log%22-button) — Add &quot;Build log&quot; Icon to &quot;Show full log&quot; button  
-[**TW-72962**](https://youtrack.jetbrains.com/issue/TW-72962/Deadlock-found-when-trying-to-get-lock-(FailedTestsStorageImpl.m) — Deadlock found when trying to get lock (FailedTestsStorageImpl.markTestFailed)  
+[**TW-72962**](https://youtrack.jetbrains.com/issue/TW-72962/Deadlock-found-when-trying-to-get-lock-(FailedTestsStorageImpl.m)) — Deadlock found when trying to get lock (FailedTestsStorageImpl.markTestFailed)  
 [**TW-72990**](https://youtrack.jetbrains.com/issue/TW-72990/Build-Page:-Titles-Should-be-Bigger) — Build Page: Titles Should be Bigger  
 [**TW-73012**](https://youtrack.jetbrains.com/issue/TW-73012/TeamCity-retries-the-deletion-requests-5-times-regardless-of-the) — TeamCity retries the deletion requests 5 times regardless of the numberOfRetries value from internal.properties file  
 [**TW-73103**](https://youtrack.jetbrains.com/issue/TW-73103/A-few-JetBrains-Space-merge-requests-from-one-branch-are-display) — A few JetBrains Space merge requests from one branch are displayed in the information about Pull Request  
@@ -220,7 +199,7 @@ __27 April 2022__
 [**TW-74366**](https://youtrack.jetbrains.com/issue/TW-74366/Class-is-not-shown-for-xunit-tests-with-DisplayName) — Class is not shown for xunit tests with DisplayName  
 [**TW-74372**](https://youtrack.jetbrains.com/issue/TW-74372/Links-to-the-Tabs-for-the-Expanded-Build-UI) — Links to the Tabs for the Expanded Build UI  
 [**TW-74391**](https://youtrack.jetbrains.com/issue/TW-74391/Increase-Block-Headers-on-the-Build-Page) — Increase Block Headers on the Build Page  
-[**TW-74423**](https://youtrack.jetbrains.com/issue/TW-74423/SecurityException-on-a-secondary-(read-only)-node-(update-failed) — SecurityException on a secondary (read-only) node (update failed\_tests table)  
+[**TW-74423**](https://youtrack.jetbrains.com/issue/TW-74423/SecurityException-on-a-secondary-(read-only)-node-(update-failed)) — SecurityException on a secondary (read-only) node (update failed\_tests table)  
 [**TW-74427**](https://youtrack.jetbrains.com/issue/TW-74427/Secure-FTP-uploads-fail-when-using-the-FTP-Upload-build-runner) — Secure FTP uploads fail when using the FTP Upload build runner  
 [**TW-74454**](https://youtrack.jetbrains.com/issue/TW-74454/Artifacts-upload:-retry-OPTIONS-requests) — Artifacts upload: retry OPTIONS requests  
 [**TW-74467**](https://youtrack.jetbrains.com/issue/TW-74467/Health-items-are-not-updated-when-a-user-navigates-through-Sakur) — Health items are not updated when a user navigates through Sakura UI  
@@ -236,7 +215,7 @@ __27 April 2022__
 [**TW-74575**](https://youtrack.jetbrains.com/issue/TW-74575/K8s-plugin:-PVC-created-together-with-Pod-(Custom-Pod-Template)-) — K8s plugin: PVC created together with Pod (Custom Pod Template) might be orphaned if Pod failed to create  
 [**TW-74580**](https://youtrack.jetbrains.com/issue/TW-74580/Make-sure-SSH-DSA-keys-are-supported-if-native-Git-support-is-en) — Make sure SSH DSA keys are supported if native Git support is enabled on the server  
 [**TW-74601**](https://youtrack.jetbrains.com/issue/TW-74601/Parameter-vcsRoot.id.p4client-has-a-different-case-compared-with) — Parameter vcsRoot.id.p4client has a different case compared with other parameters  
-[**TW-74614**](https://youtrack.jetbrains.com/issue/TW-74614/AssertionError-in-HierarchyMessagesProcessor.process(HierarchyMe) — AssertionError in HierarchyMessagesProcessor.process(HierarchyMessagesProcessor.java:70)  
+[**TW-74614**](https://youtrack.jetbrains.com/issue/TW-74614/AssertionError-in-HierarchyMessagesProcessor.process(HierarchyMe)) — AssertionError in HierarchyMessagesProcessor.process(HierarchyMessagesProcessor.java:70)  
 [**TW-74629**](https://youtrack.jetbrains.com/issue/TW-74629/Not-all-of-the-parameters-of-a-composite-build-are-shown-on-the-) — Not all of the parameters of a composite build are shown on the build parameters tab  
 [**TW-74645**](https://youtrack.jetbrains.com/issue/TW-74645/Build-details-dropdown-always-has-horizontal-scrollbar) — Build details dropdown always has horizontal scrollbar  
 [**TW-74666**](https://youtrack.jetbrains.com/issue/TW-74666/Build-cannot-stop-probably-because-it-is-routed-to-incorrect-nod) — Build cannot stop probably because it is routed to incorrect node with id MAIN\_SERVER instead of actual id of the main node  
@@ -297,7 +276,7 @@ __27 April 2022__
 [**TW-64269**](https://youtrack.jetbrains.com/issue/TW-64269/Improve-buttons-presentations-on-hover) — Improve buttons presentations on hover  
 [**TW-71876**](https://youtrack.jetbrains.com/issue/TW-71876/Display-zero-counter-if-Agents-pool-contains-no-agents-in-Experi) — Display zero counter if Agents pool contains no agents in Experimental UI.  
 
-### Performance Problem
+### Performance Problem  
 
 [**TW-75951**](https://youtrack.jetbrains.com/issue/TW-75951/LuceneSearchService.serverStartup-spent-more-than-20-minutes-ini) — LuceneSearchService.serverStartup spent more than 20 minutes initializing on server startup  
 [**TW-72284**](https://youtrack.jetbrains.com/issue/TW-72284/Finish-composite-builds-immediately-when-the-last-dependency-is-) — Finish composite builds immediately when the last dependency is finished  
@@ -307,7 +286,7 @@ __27 April 2022__
 [**TW-75019**](https://youtrack.jetbrains.com/issue/TW-75019/Create-an-index-for-build_type_id,-remove_from_queue_time-column) — Create an index for build\_type\_id, remove\_from\_queue\_time columns to speedup showing builds of a build configuration  
 [**TW-75054**](https://youtrack.jetbrains.com/issue/TW-75054/Create-an-index-to-final_artifact_dependency.source_build_type_i) — Create an index to final\_artifact\_dependency.source\_build\_type\_id  
 [**TW-75348**](https://youtrack.jetbrains.com/issue/TW-75348/The-Change-page-is-very-slow-if-a-commit-is-%22unreachable%22) — The Change page is very slow if a commit is &quot;unreachable&quot;  
-[**TW-75401**](https://youtrack.jetbrains.com/issue/TW-75401/A-lot-of-threads-consume-CPU-on-generating-presign-urls-(cloudfr) — A lot of threads consume CPU on generating presign urls (cloudfront sign URLs)  
+[**TW-75401**](https://youtrack.jetbrains.com/issue/TW-75401/A-lot-of-threads-consume-CPU-on-generating-presign-urls-(cloudfr)) — A lot of threads consume CPU on generating presign urls (cloudfront sign URLs)  
 [**TW-75543**](https://youtrack.jetbrains.com/issue/TW-75543/Lots-of-exclusive-DB-locks-are-taken-by-CloudInstancesDBPersisto) — Lots of exclusive DB locks are taken by CloudInstancesDBPersistor::persistToDB  
 [**TW-75920**](https://youtrack.jetbrains.com/issue/TW-75920/New-Changes-UI;-switching-to-Builds-shows-truncated-tree-for-not) — New Changes UI; switching to Builds shows truncated tree for noticeable time  
 [**TW-53298**](https://youtrack.jetbrains.com/issue/TW-53298/Long-cleanup-BackgroundBuildDataCleanerImpl-stage:-removing-data) — Long cleanup BackgroundBuildDataCleanerImpl stage: removing data from test\_info table takes more than 6 hours  
@@ -333,8 +312,4 @@ __27 April 2022__
 [**TW-75164**](https://youtrack.jetbrains.com/issue/TW-75164/Server-unresponsive-due-to-loading-of-AgentType-caches) — Server unresponsive due to loading of AgentType caches  
 [**TW-75178**](https://youtrack.jetbrains.com/issue/TW-75178/Speedup-check-for-empty-directory-in-.GeneratedSettingsCache.get) — Speedup check for empty directory in .GeneratedSettingsCache.getAndLock  
 [**TW-75265**](https://youtrack.jetbrains.com/issue/TW-75265/Unnecessary-listing-of-all-of-the-files-under-the-directory-fetc) — Unnecessary listing of all of the files under the directory fetched from the versioned settings (versioned settings are enabled on the root project level)  
-[**TW-75654**](https://youtrack.jetbrains.com/issue/TW-75654/High-CPU-load-on-Perforce-server-to-collect-the-latest-changes) — High CPU load on Perforce server to collect the latest changes  
-
-### Question
-
-[**TW-74789**](https://youtrack.jetbrains.com/issue/TW-74789/EC2-plugin-changes-instance-userdata) — EC2 plugin changes instance userdata
+[**TW-75654**](https://youtrack.jetbrains.com/issue/TW-75654/High-CPU-load-on-Perforce-server-to-collect-the-latest-changes) — High CPU load on Perforce server to collect the latest changes
