@@ -36,6 +36,7 @@ The speed of transferring build artifacts stored in Amazon S3 depends on the geo
 To help you increase the artifacts' upload/download speed and reduce costs, TeamCity 2022.04 adds native support for [Amazon CloudFront](https://aws.amazon.com/cloudfront/), a content delivery network that offers low latency and high transfer speeds.
 
 [Enabling its support for an S3 storage](storing-build-artifacts-in-amazon-s3.md#CloudFrontSettings) will allow TeamCity to transfer build artifacts through the nearest CloudFront server. 
+{product="tc"}
 
 ## Requiring Build Approvals
 
@@ -235,13 +236,12 @@ When configuring a _Fail build on specific text in build log_ [failure condition
 ## Fixed issues
 {product="tc"}
 
-## Fixed issues
-{product="tcc"}
 
 ## Upgrade notes
 {product="tc"}
 
 Before upgrading, we highly recommend reading about [important changes in version 2022.04 compared to 2021.2.x](upgrade-notes.md).
+{product="tc"}
 
 ## Previous releases
 {product="tc"}

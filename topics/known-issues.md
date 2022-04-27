@@ -512,6 +512,7 @@ These issues concern the use of native [Git](git.md) for checking out sources to
 Switching the server to native Git results in builds failing to authorize in repositories via SSH DSA keys. See the related issue [TW-74580](https://youtrack.jetbrains.com/issue/TW-74580).
 
 To work around this issue, please set the `teamcity.git.sshCommandOptions` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `-o "PubkeyAcceptedKeyTypes=+ssh-dss"`.
+{product="tc"}
 
 ### Native Git via OpenSSH may fail
 
