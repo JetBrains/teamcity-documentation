@@ -187,6 +187,7 @@
                 <toc-element id="duplicates-finder-resharper.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="fxcop.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="gradle.md" show-structure-for="chapter" show-structure-depth="4"/>
+                <toc-element id="qodana.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="inspections.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="inspections-resharper.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="intellij-idea-project.md" show-structure-for="chapter" show-structure-depth="4"/>
