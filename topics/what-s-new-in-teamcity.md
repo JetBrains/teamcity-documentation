@@ -147,7 +147,7 @@ To edit an agent pool, click **Assign agents** in its settings. In this dialog, 
 
 The new [Changes page](viewing-user-changes-in-builds.md) comes with filters providing flexible search options allowing you to sort changes by comment (commit message), by path to the changed file, and by revision number.
 
-<img src="new-changes-page.png" alt="Changes in new TeamCity UI" width="460
+<img src="new-changes-page.png" alt="Changes in new TeamCity UI" width="460" />
 
 ## Storing Docker images produced by build in a public ECR registry
 {product="tc"}
