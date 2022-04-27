@@ -12,6 +12,16 @@ when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-
 * TeamCity reporting of Ant's tasks will be disabled if Ant is started by a Java version below 1.8. 
 * Windows docker images based on 2004 will not be published for 2022.04 version.
 
+### Incompatible plugins
+
+Some external plugins are not compatible with TeamCity 2022.04 and have to be updated before the upgrade.
+
+* [Gradle Build Scan](https://github.com/etiennestuder/gradle-build-scan-teamcity-plugin) is  currently incompatible. We're waiting for our PR to be accepted by the plugin author.
+
+The latest released versions of the following plugins are compatible with TeamCity 2022.04. Please install them from the JetBrains Marketplace:
+* [Github Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks)
+* [Hashicorp Vault Support](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support)
+
 
 ### Bundled tools updates
 {id="bundled-tools-updates-2022-04"}
@@ -32,17 +42,6 @@ If you have been using any of these versions in your scripts, consider switching
 
 * The [CVS plugin](cvs.md) has been unbundled from TeamCity. If you want to continue using it on your server, please [download it from JetBrains Marketplace](https://plugins.jetbrains.com/plugin/18552-vcs-support-cvs) and install it as described [here](installing-additional-plugins.md).
 * The [Eclipse plugin](eclipse-plugin.md) has been unbundled from TeamCity. [Contact our support](https://teamcity-support.jetbrains.com/hc/en-us) if you need the plugin.
-
-### External tools updates
-
-You'll need to update several of the external plugins, whose older versions are incompatible with TeamCity 2022.04.
-
-* [Gradle Build Scan](https://github.com/etiennestuder/gradle-build-scan-teamcity-plugin) is  currently incompatible. We're waiting for our PR to be accepted by the plugin author.
-
-The latest released versions of the following plugins are compatible with TeamCity 2022.04. Please install them from the JetBrains Marketplace: 
-* [Github Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks)
-* [Hashicorp Vault Support](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support)
-
 
 ## Changes from 2021.2.2 to 2021.2.3
 
