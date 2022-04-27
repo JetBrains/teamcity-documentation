@@ -106,6 +106,24 @@ The page provides a better hierarchical view of agent pools and makes it easier 
 
 The __All Agents__ view gives a quick preview of all agents' statuses and allows managing them side by side, on a single dashboard.
 
+You can edit the scope of [agent pools](configuring-agent-pools.md) and quickly assign agents and projects to them.
+
+To edit an agent pool's scope, click **Assign agents** in its settings. In this dialog, you can choose what agents you want to assign to the pool:
+
+<img src="edit-agent-pool.png" alt="Edit agent pool in new TeamCity UI" width="460"/>
+
+Note that whenever you select a cloud image, you actually assign all its instances to the pool. If this pool has a limit of agent slots, each cloud instance will take a single slot, just like any regular agent.
+
+Similarly, you can also associate projects with this pool: open the **Projects** tab of the pool's settings and click **Assign projects**. This way, agents assigned to this pool will be allowed to run builds only in the selected projects.
+
+
+### Experimental Changes page
+
+The new [Changes page](viewing-user-changes-in-builds.md) comes with filters providing flexible search options allowing you to sort changes by comment (commit message), by path to the changed file, and by revision number.
+
+<img src="new-changes-page.png" alt="Changes in new TeamCity UI" width="460
+
+
 ### Experimental Queue page
 
 Since TeamCity 2020.2.2, the new queue is displayed by default. In earlier versions, you can switch to it by clicking the test-tube icon in the upper right corner of the screen.

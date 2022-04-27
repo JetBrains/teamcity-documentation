@@ -81,6 +81,18 @@ Now the Commit Status Publisher updates the commit status in the version control
 after adding the corresponding build to the queue, providing you with the most up-to-date information. 
 GitHub, GitLab, Space, Bitbucket, and Azure DevOps are all supported.
 
+### Running a custom build with a specific revision
+
+When running a custom build, you can now specify an exact revision that may not necessarily belong to the list of changes known by the build configuration. 
+This gives you a lot more flexibility when you want to reproduce historical builds, 
+deploy older versions, debug new build configurations, and so on.
+
+### Limiting number of running builds per branch
+
+TeamCity 2022.04 helps you improve the allocation of your build agents by [limiting the number of simultaneously running builds per branch](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds).
+For example, your main branch may have an unlimited number of builds that will occupy as many build agents as they need, while you limit your feature branches to running just one build at a time.
+
+
 ## Security
 
 ### Log4J and Log4Shell
@@ -92,64 +104,45 @@ Similarly to Log4Shell, the Spring4Shell vulnerability (CVE-2022-22965) does not
 
 > The section below is still in progress.
 
-## Single sign-on authentication via SAML 2.0
-{product="tc"}
-
-TeamCity now supports a new authentication method: Single Sign-On (SSO) via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0). Enabling it in your instance will allow users to authenticate in TeamCity with their account stored in one of the major identity providers: [Okta](https://www.okta.com/), [OneLogin](https://www.onelogin.com/), [AWS SSO](https://aws.amazon.com/single-sign-on/), [AD FS](https://docs.microsoft.com/en-us/windows-server/identity/active-directory-federation-services), and so on.
-
-With a multitude of services an average software developer uses in their daily work, having one account for authentication in all of them can significantly offload the clutter. More importantly, using SSO identity managers is a good security practice, and TeamCity wants to encourage it by providing easy integration.
-
->The SAML 2.0 support is implemented as a plugin written by a third-party developer and verified by the TeamCity team as safe to use. It was previously available for download and successfully used by some of our customers, but now it's available out of the box.
->
->See the [SAML 2.0 plugin's GitHub page](https://github.com/morincer/teamcity-plugin-saml) for more details about it.
->
->We are eager to see that such quality and high-demanded tools are created by our users. If you are curious to learn how to write custom plugins for TeamCity, visit our dedicated [Help for external plugin writers](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html)!
-
-You can enable SSO in TeamCity as any other authentication module: in **Administration | Authentication**.
-
-<img src="enable-saml.png" alt="Enabling SAML in TeamCity" width="460"/>
-
-After that, the new **SAML Settings** page will appear in the **Administration** section. Use it to customize the module's behavior and to establish the integration on the TeamCity side. On the provider's side, you will need to create a dedicated app for a service connection to TeamCity. Its settings may vary depending on the provider, but the key steps are the same:
-1. Enter the TeamCity single sign-on URL, copied from the **SAML Settings** page, in the app's settings.
-2. Copy the values of the app's SSO URL, issuer URL, and certificate.
-3. Enter them in the **SAML Settings** in TeamCity.
-
-<img src="saml-settings.png" alt="SAML settings in TeamCity" width="706"/>
-
-For details about this authentication module, refer to [this article](configuring-authentication-settings.md#HTTP+SAML+2.0).
-
-As soon as the connection between TeamCity and your SSO provider is established, users will see a new authentication button on the TeamCity login form. To sign in, they will need to click it and confirm the authentication on the provider's side.
-
-Depending on the module settings, TeamCity can prohibit authentication to accounts whose emails don't match emails of existing TeamCity users, or it can create a new user profile for such an account.
 
 ## Native Git as Default Mode
 {product="tc"}
 
-TeamCity switches to using native Git as the default option for Git operations. This new approach is more predictable than the previously used JGit implementation and allows working with Git and SSH in TeamCity just as you would in your operating system.
+TeamCity switches to using native Git as the default option for Git operations. This new approach is clearer than the previously used JGit implementation and allows working with Git and SSH in TeamCity just as you were in your version control system.
 
-Before switching, make sure a [native Git client](https://git-scm.com/downloads) version 2.29 or later is installed on your server machine and a path to its executable is specified in the `PATH` environment variable. Alternatively, you can set the full path to the executable via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (no server restart is required). On Windows, remember to use double backslashes in the path.
+Before switching, make sure a [native Git client](https://git-scm.com/downloads) version 2.29 or later is installed on your server machine and the path to its executable is specified in the `PATH` environment variable. Alternatively, you can set the full path to the executable via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (no server restart is required). On Windows, remember to use double backslashes in the path.
 
-To switch your TeamCity nodes to native Git, go to __Administration | Diagnostics__ and open the __Git__ tab. Here you can test connection via native Git in any VCS root on your server. If you choose to test all VCS roots, TeamCity will check if they successfully connect via JGit and then test their connection via native Git. This measure helps ensure that none of your pipelines will break after switching to native Git.
-
+To switch your TeamCity nodes to native Git, go to __Administration | Diagnostics__ and open the __Git__ tab. Here you can test the connection via native Git in any VCS root on your server. If you choose to test all VCS roots, TeamCity will check whether they successfully connect via JGit and then test their connection via native Git. This measure helps ensure that none of your pipelines will break after switching to native Git.
 If the connection test is successful, you can enable the native Git support on your server(s).
 
+TeamCity server statistics show that using native git significantly improves the performance of VCS-related operations on the server:
+new changes and branches appear much faster. Here's the chart showing the time required by `git fetch` operations:
+- Before 14:30 TeamCity had JGit enabled on the server and the fetch required a lot more time.
+- After 14:30 TeamCity switched to native Git, meaning that the server started launching _git executable_ to perform fetch. As you can see, the time can be decreased up to 10 times in comparison with JGit.
 
-## New UI: Editing scope of agent pools
+<img src="improved-git-fetch.png" alt="Git Fetch with JGit and Native Git" width="556"/>
+
+
+## New UI
+
+### Editing scope of agent pools
+
 {product="tc"}
-
-It is now possible to edit the scope of [agent pools](configuring-agent-pools.md) and quickly assign agents and projects to them right in the new Sakura UI — without switching to the classic UI mode.
 
 >We keep reproducing the classic TeamCity features in its experimental UI, and a majority of them have already received a new implementation. If you haven't tried the new UI for a while or at all, we encourage you to give it a try this time. Our goal is to make the experimental UI not only as functional as the classic one but a lot more responsive and enhanced with easier navigation and widgets.
 
+It is now possible to edit the scope of [agent pools](configuring-agent-pools.md) and quickly assign agents and projects to them right in the new Sakura UI — without switching to the classic UI mode.
 To edit an agent pool's scope, click **Assign agents** in its settings. In this dialog, you can choose what agents you want to assign to the pool:
 
 <img src="edit-agent-pool.png" alt="Edit agent pool in new TeamCity UI" width="460"/>
 
-Note that whenever you select a cloud image, you actually assign all its instances to the pool. If this pool has a limit of agent slots, each cloud instance will take a single slot, just like any regular agent.
+### Changes page
 
-Similarly, you can also associate projects with this pool: open the **Projects** tab of the pool's settings and click **Assign projects**. This way, agents assigned to this pool will be allowed to run builds only in the selected projects.
- 
-## Storing Docker images produced by build to public ECR registry
+The new [Changes page](viewing-user-changes-in-builds.md) comes with filters providing flexible search options allowing you to sort changes by comment (commit message), by path to the changed file, and by revision number.
+
+<img src="new-changes-page.png" alt="Changes in new TeamCity UI" width="460
+
+## Storing Docker images produced by build in a public ECR registry
 {product="tc"}
 
 TeamCity can now store Docker images produced by a build to both private and — since this update — public ECR registries.
@@ -211,22 +204,7 @@ When configuring a _Fail build on specific text in build log_ [failure condition
   This change affects how a DSL code appears in the _View as Code_ mode in TeamCity and removes irrelevant suggestions when writing `import` statements manually in an IDE. It concerns only newly created projects — the syntax of existing projects is supported for compatibility.
   {product="tc"}
 
-[//]: # (Changes from 2022.04)
-
-## Limiting running builds per branch
-
-Starting TeamCity 2022.04, you can [limit the number of simultaneously running builds per branch](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds).
-
-
-
-## User Interface improvements
-
-Version 2022.04 brings the following TeamCity UI improvements:
-
-* **Improvements to the [Changes page](viewing-user-changes-in-builds.md)** in the experimental UI: new filters provide flexible search options allowing to sort changes by comment (commit message), by path to the changed file, and by revision number.
-
-
-
+  
 ## Other updates
 {product="tcc"}
 

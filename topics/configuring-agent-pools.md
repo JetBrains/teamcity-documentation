@@ -30,7 +30,6 @@ See also related [agent management permissions](managing-roles-and-permissions.m
 ## Managing Agent Pools
 
 You can manage build agents on the __Agents__ page, a link to which is located in the UI header. If you are using the classic UI mode, note that it has a different navigation system than described in this article: pools are managed on the __Agents | Pools__ tab.  
-Currently, __agent pools can be edited only in the classic UI interface__: to switch to it, click __Edit pool__ in the upper right corner of a pool's overview in the new UI.
 
 The _Agents_ sidebar allows navigating between the existing agent pools and shows the agent statuses in real time.
 

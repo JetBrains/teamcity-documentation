@@ -8,6 +8,8 @@
 * It is now impossible to automatically [trigger builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-build-queue.html#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
 * Ant runner is disabled if Ant is started by a Java version below Java 8.
 * Test reporting in Gradle runner is disabled if Gradle is started a Java version below Java 8.
+* Windows docker images based on 2004 will not be published for 2022.04 version.
+
 
 ### Bundled tools updates
 {id="bundled-tools-updates-2022-04"}
@@ -16,7 +18,8 @@
 * Updates in TeamCity Agent Docker images:
   * Bundled .NET Core SDK has been updated to 6.0.100.
   * Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
-* Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11.
+* Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11. Previously added IntelliJ Inspections/Duplicates steps with the bundled version will become incompatible with the agents running Java below version 11.
+* The bundled Kotlin compiler used in [TeamCity DSL](kotlin-dsl.md) has been updated to version 1.6.21
 * The [SBT](http://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.5.5.
 * Freemarker, used by TeamCity [notification templates](customizing-notification-templates.md), has been updated to version 2.3.31.
 * The [Qodana plugin](https://www.jetbrains.com/help/qodana/qodana-teamcity-plugin.html) has been bundled with TeamCity. If you previously installed the Qodana plugin and used DSL, you'll need to update your DSL settings. We're providing a special version of the plugin that contains both [old and new Kotlin DSL settings](https://plugins.jetbrains.com/plugin/15498-qodana/versions/stable/169313).

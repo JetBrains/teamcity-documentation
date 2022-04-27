@@ -668,7 +668,8 @@ The tables below are updated in accordance with the newly introduced integration
 </td><td>
 
 * [Creating a project or build configuration from a GitLab repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
-* [Guessing VCS root settings from a GitHub repository URL](guess-settings-from-repository-url.md)
+* [Guessing VCS root settings from a GitLab repository URL](guess-settings-from-repository-url.md)
+* [Inserting links to GitLab issues when detecting their IDs in commit messages](gitlab.md)
 * [Building sources of GitLab merge requests](pull-requests.md#GitLab+Merge+Requests)
 * [Authenticating with a GitLab account in TeamCity](configuring-authentication-settings.md#GitLab.com)
 
