@@ -119,7 +119,7 @@ Similarly, you can also associate projects with this pool: open the **Projects**
 
 ### Experimental Changes page
 
-The new [Changes page](viewing-user-changes-in-builds.md) comes with filters providing flexible search options allowing you to sort changes by comment (commit message), by path to the changed file, and by revision number.
+Since TeamCity 2020.04, the new [Changes page](viewing-user-changes-in-builds.md) is displayed by default. It comes with filters providing flexible search options allowing you to sort changes by comment (commit message), by path to the changed file, and by revision number.
 
 <img src="new-changes-page.png" alt="Changes in new TeamCity UI" width="460
 

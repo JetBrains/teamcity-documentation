@@ -3,9 +3,9 @@
 
 TeamCity is now capable of parallelizing the execution of your tests by distributing them across multiple build agents, thus minimizing the overall duration of tests. The tests of a build can be automatically split into batches, and each batch will run on a separate build agent. 
 This feature addresses a popular use case when a build consequently runs many independent tests on the same agent while they could technically be running in parallel, utilizing resources of multiple agents.
-Previously, to emulate such behavior, some users would configure several build configurations and join them in a chain with parallel connections. This approach works, but requires to implement sometimes non-trivial logic of tests distribution across batches. 
+Previously, to emulate such behavior, some users would configure several build configurations and join them in a chain with parallel connections. This approach works, but requires implementing sometimes non-trivial logic of tests distribution across batches. 
 
-In TeamCity 2022.04 the tests distribution logic is provided by TeamCity itself. In addition, such build runners as [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), and [.NET](net.md) are capable of automatic filtering of the tests on the agent without necessity to change build steps settings.  
+In TeamCity 2022.04, the tests distribution logic is provided by TeamCity itself. In addition, such build runners as [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), and [.NET](net.md) are capable of automatic filtering of the tests on the agent without the need to change build steps settings.  
 
 
 ## Run tests in parallel
@@ -30,13 +30,13 @@ In the future, the changes to the build steps of the original configuration will
 
 >The settings of the original build configuration are not affected by the _Parallel tests_ build feature. 
 >
->On the other hand the number and settings of generated build configurations are fully controlled by the _Parallel tests_ build feature. The generated build configurations are read-only by default and are not intended to be modified manually. 
+>On the other hand, the number and settings of generated build configurations are fully controlled by the _Parallel tests_ build feature. The generated build configurations are read-only by default and are not intended to be modified manually. 
 The generated build configurations are also placed into a subproject that is hidden.
 If the project has [versioned settings](storing-project-settings-in-version-control.md) enabled, the generated build configurations will not be committed to the VCS repository.
 
 A build of a generated build configuration will run the same set of build steps as defined in the original build configuration. If some of these steps are 
-of [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), 
-or [.NET](net.md) type, and they were executing some tests, then these build runners will automatically run only the fraction of the tests corresponding to the current batch, provided that [the runner specific requirements are met](#runner-requirements).
+of the [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), 
+or [.NET](net.md) type, and they were executing some tests, then these build runners will automatically run only the fraction of the tests corresponding to the current batch.
 
 >If the original build configuration has deployment steps, these steps will be performed the same number of times as the number of batches.
 

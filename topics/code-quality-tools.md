@@ -10,9 +10,11 @@ Generally, the tools are configured as [build runners](build-runner.md) and the 
 
 You can also configure builds to fail based on the results and view the trends as statistics charts.
 
-### Java Tools
+### Qodana
 
 [Qodana](qodana.md) lets you add static analysis to your build chain, run advanced code inspections, find code duplicates, track code quality progress of your code, and much more.
+
+### Java Tools
 
 #### IntelliJ IDEA-powered Code Analysis Tools
 

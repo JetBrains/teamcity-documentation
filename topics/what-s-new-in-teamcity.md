@@ -96,7 +96,7 @@ For example, your main branch may have an unlimited number of builds that will o
 ## Security
 
 ### Log4J and Log4Shell
-Although TeamCity has not been affected by the Log4Shell vulnerability (CVE-2021-44228), some security scanners wrongly reported it as vulnerable without checking the exact version number of the Log4J framework used in the product. To avoid false-positive scanner reports, we have upgraded Log4J to the latest version.
+Although TeamCity has not been affected by the Log4Shell vulnerability (CVE-2021-44228), some security scanners wrongly reported it as vulnerable. To avoid false-positive scanner reports, we have upgraded Log4J to the latest version.
 
 ### Spring and Spring4Shell
 Similarly to Log4Shell, the Spring4Shell vulnerability (CVE-2022-22965) does not affect TeamCity. However, to avoid false-positive reports from security scanners, we have upgraded the Spring Framework used in TeamCity to the latest version.
