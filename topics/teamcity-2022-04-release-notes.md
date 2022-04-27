@@ -5,11 +5,13 @@ __27 April 2022__
 
 ### Feature  
 
-[**TW-5610**](https://youtrack.jetbrains.com/issue/TW-5610/Custom-build:-allow-to-provide-revisions-for-the-VCS-roots) — Custom build: allow to provide revisions for the VCS roots[**TW-10498**](https://youtrack.jetbrains.com/issue/TW-10498/Multiple-equivalent-builds-can-be-present-in-the-queue-on-snapsh) — Multiple equivalent builds can be present in the queue on snapshot builds triggering (no snapshot chains optimizing int he queue)  
+[**TW-5610**](https://youtrack.jetbrains.com/issue/TW-5610/Custom-build:-allow-to-provide-revisions-for-the-VCS-roots) — Custom build: allow to provide revisions for the VCS
+[**TW-10498**](https://youtrack.jetbrains.com/issue/TW-10498/Multiple-equivalent-builds-can-be-present-in-the-queue-on-snapsh) — Multiple equivalent builds can be present in the queue on snapshot builds triggering (no snapshot chains optimizing int he queue) 
 [**TW-22960**](https://youtrack.jetbrains.com/issue/TW-22960/Number-of-simultaneously-running-builds-should-have-option-for-b) — Number of simultaneously running builds should have option for branches  
 [**TW-29273**](https://youtrack.jetbrains.com/issue/TW-29273/Display-templates-in-breadcrumbs-in-administration-pages-for-fas) — Display templates in breadcrumbs in administration pages for fast navigation  
 [**TW-38093**](https://youtrack.jetbrains.com/issue/TW-38093/REST-API.-Allow-to-change-the-status-for-the-finished-build.) — REST API. Allow to change the status for the finished build.  
-[**TW-48863**](https://youtrack.jetbrains.com/issue/TW-48863/Publish-commit-status-on-adding-to-queue) — Publish commit status on adding to queue[**TW-52778**](https://youtrack.jetbrains.com/issue/TW-52778/Ability-to-migrate-existing-build-artifacts-from-local-storage-t) — Ability to migrate existing build artifacts from local storage to S3  
+[**TW-48863**](https://youtrack.jetbrains.com/issue/TW-48863/Publish-commit-status-on-adding-to-queue) — Publish commit status on adding to queue
+[**TW-52778**](https://youtrack.jetbrains.com/issue/TW-52778/Ability-to-migrate-existing-build-artifacts-from-local-storage-t) — Ability to migrate existing build artifacts from local storage to S3
 [**TW-53412**](https://youtrack.jetbrains.com/issue/TW-53412/Batch-operations-with-builds) — Batch operations with builds  
 [**TW-63772**](https://youtrack.jetbrains.com/issue/TW-63772/FlowID-is-ignored-in-the-new-build-log) — FlowID is ignored in the new build log  
 [**TW-64423**](https://youtrack.jetbrains.com/issue/TW-64423/Split-tests-into-groups-and-run-on-multiple-agents-in-parallel) — Split tests into groups and run on multiple agents in parallel  
@@ -23,7 +25,7 @@ __27 April 2022__
 [**TW-74213**](https://youtrack.jetbrains.com/issue/TW-74213/Expose-counters-required-for-popup-on-a-graph-on-Changes-page) — Expose counters required for popup on a graph on Changes page  
 [**TW-74214**](https://youtrack.jetbrains.com/issue/TW-74214/Add-ability-to-filter-builds-related-to-change) — Add ability to filter builds related to change  
 [**TW-74329**](https://youtrack.jetbrains.com/issue/TW-74329/REST:-allow-getting-full-list-of-ancestors-for-a-project-or-buil) — REST: allow getting full list of ancestors for a project or build type  
-[**TW-74422**](https://youtrack.jetbrains.com/issue/TW-74422/Re-run-ignores-last-chain-structure.) — Re-run ignores last chain structure.  
+[**TW-74422**](https://youtrack.jetbrains.com/issue/TW-74422/Re-run-ignores-last-chain-structure.) — Re-run ignores last chain structure.
 [**TW-74613**](https://youtrack.jetbrains.com/issue/TW-74613/UI:-Add-the-ability-to-get-the-reasons-and-time-to-wait-for-the-) — UI: Add the ability to get the reasons and time to wait for the queued build.  
 [**TW-74955**](https://youtrack.jetbrains.com/issue/TW-74955/Implement-set-of-features,-related-to-virtual-projects) — Implement set of features, related to virtual projects  
 [**TW-74958**](https://youtrack.jetbrains.com/issue/TW-74958/Parallel-Tests:-Sidebar-improvements) — Parallel Tests: Sidebar improvements  

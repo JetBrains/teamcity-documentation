@@ -1,7 +1,9 @@
 [//]: # (title: Commit Status Publisher)
 [//]: # (auxiliary-id: Commit Status Publisher)
 
-Commit Status Publisher is a [build feature](adding-build-features.md) which allows TeamCity to automatically send build statuses of your commits to an external system. The feature is implemented as an [open-source plugin](https://github.com/JetBrains/commit-status-publisher) bundled with TeamCity.
+Commit Status Publisher is a [build feature](adding-build-features.md) which allows TeamCity 
+to automatically send build statuses of your commits to an external system. 
+The feature is implemented as an [open-source plugin](https://github.com/JetBrains/commit-status-publisher) bundled with TeamCity.
 
 Supported systems:
 * GitHub (the build statuses for pull requests are supported as well)
@@ -12,6 +14,10 @@ Supported systems:
 * JetBrains Upsource
 * Gerrit Code Review tool 2.6+
 * Perforce Helix Swarm
+
+Starting from version 2022.04, Commit Status Publisher updates the commit status in the version control system as soon as 
+the build is added to the queue, providing you with the most up-to-date information.
+GitHub, GitLab, Space, Bitbucket Server and Bitbucket Cloud, Perforce Helix Swarm, and Azure DevOps are supported.
 
 >See our **video guide** on how to [send build information to external systems](https://www.youtube.com/watch?v=o0oj7mOcNvc).
 
