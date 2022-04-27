@@ -125,27 +125,29 @@ Currently, this feature has a number of limitations.
 
 ### General
 
-* The [Code coverage](code-quality-tools.md#code-coverage-tools) statistics will be inaccurate for builds with parallel tests.
-* Using parallel tests reduces the accuracy of the [build counter](configuring-general-settings.md#General+Build+Configuration+Settings) in the current configuration.
+* The [Code coverage](code-quality-tools.md#code-coverage-tools) statistics will be inaccurate for builds with parallel tests because it will be collected for a fraction of tests executed by the current batch.
 * After enabling parallel tests in a build configuration, it will stop publishing [artifacts](build-artifact.md). Consider having a separate build configuration that publishes artifacts.
-* The [Enforce Clean Checkout action](clean-checkout.md#Enforcing+Clean+Checkout) does not work for build configurations with parallel tests configured.
-* Generated build configurations copy the settings from the default branch of the original build configuration ignoring other branch settings.
-* Parallel builds collect the results not only of their its own tests, but transitive dependencies too.
 * A newly added test will run in each batch during the first run.
+* When TeamCity divides tests among batches it only takes into account duration of the test itself. The duration of setUp/tearDown or any other preparation methods is not know to TeamCity, because of this the duration of batches may not be equal.
+* Builds with parallel tests triggered in a branch won't use the build steps from this branch, instead build steps from the default branch will be used.
+* An agent selected in the custom build dialog for a build with parallel tests will be ignored because the build will be transformed to a composite one after the triggering.
 
-### Runners
+### Runner specific
 
 * [Maven](maven.md)
   * Maven minimal supported version: 3.x.
   * Maven Surefire plugin minimal supported version: 2.13.
   * Maven Failsafe Plugin minimal supported version: 2.13.
-  * Maven project parameters do not forward into the main build.
+  * Maven project parameters such as `maven.project.version` will not be present in the composite build with parallel tests.
   
 * [Gradle](gradle.md)
   * Gradle minimal supported version: 5.0
 
-### Test Frameworks
+* [.NET](net.md)
+  * Microsoft.NET.Test.Sdk minimal supported version: 16.0 
 
-* Test classes should be defined in the build tool filters.
-* Definition from code are not supported.
-* The test name **cannot** contain dots. 
+### Known bugs
+ 
+* The [Enforce Clean Checkout action](clean-checkout.md#Enforcing+Clean+Checkout) does not work for build configurations with parallel tests configured.
+* Subsequent start of a build with parallel tests won't reuse already existing builds in generated build configurations even if there were no new VCS commits
+* A failed test can be executed by a different batch on the next run, showing that the test is newly failed while in fact it was already failing but in some other batch
