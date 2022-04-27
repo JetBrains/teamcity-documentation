@@ -86,6 +86,7 @@
          <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2022-04.html"/>
          <toc-element id="what-s-new-in-teamcity-2021-2.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
             <toc-element id="teamcity-2022-04-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
+            </toc-element>
             <toc-element id="teamcity-2021-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
                <toc-element id="teamcity-2021-2-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
                <toc-element id="teamcity-2021-2-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
