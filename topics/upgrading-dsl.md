@@ -118,10 +118,10 @@ can be changed to:
 To remove the DSL API version from the imported package names, the following should be done:
 1. Update `<dependencies/>` section of the pom.xml file
 
-   The artifact id `configs-dsl-kotlin`
-   should be changed to: `configs-dsl-kotlin-latest`
+   The artifactId `configs-dsl-kotlin`
+   should be changed to `configs-dsl-kotlin-latest`
    and `configs-dsl-kotlin-plugins`
-   should be changed to: `configs-dsl-kotlin-plugins-latest`
+   should be changed to `configs-dsl-kotlin-plugins-latest`
 
    In the end `<dependencies/>` section should look like:
 ```XML
