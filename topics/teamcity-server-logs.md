@@ -17,7 +17,7 @@ While the server is running, the logs can be viewed in the web UI on the `Server
 
 ## General Logging Description
 
-TeamCity uses [log4j library](http://logging.apache.org/log4j) for the logging and its settings can be [customized](#Changing+Logging+Configuration).
+TeamCity uses [log4j 2.x library](http://logging.apache.org/log4j/2.x) for the logging and its settings can be [customized](#Changing+Logging+Configuration). Versions prior to TeamCity 2022.04 used Log4j 1.x for the logging.
 
 By default, log files are located under the `<[TeamCity Server home](teamcity-home-directory.md)>/logs` directory.
 
@@ -331,7 +331,7 @@ logs related to communication between TeamCity and configured [issue tracker](in
 
 Other files can also be created on [changing Logging Configuration](#Changing+Logging+Configuration).
 
-Some of the files can have `.N` extensions — that are files with previous logging messages copied on main file rotation. See [`maxBackupIndex`](#Changing+Logging+Settings) for preserving more files.
+Some of the files can have `.N` extensions — that are files with previous logging messages copied on main file rotation. See [`<DefaultRolloverStrategy/>`](#Changing+Logging+Settings) for preserving more files.
 
 ## Logging-related Diagnostics UI
 
@@ -361,25 +361,26 @@ If you change settings in other preset files, like `debug-all.xml` or `debug-vcs
 
 Most useful settings of log4j configuration:
 
-To change the minimum log level to save in the file, tweak the `value` attribute of the `priority` element.
+To change the minimum log level to save in the file, tweak the `level` attribute of the `Logger` element.
 
 ```Plain Text
-<category ...>
-    <priority value="INFO"/>
+<Loggers>
+    <Logger name="jetbrains.buildServer" level="INFO">
 ...
 
 ```
 
-The logs are rotated by default. When debug is enabled, it makes sense to increase the `value` attribute of `maxBackupIndex` element to affect the number of preserved log files. While doing so, ensure there is sufficient free disk space available.
+The logs are rotated by default. When debug is enabled, it makes sense to increase the `max` attribute of `<DefaultRolloverStrategy/>` element to affect the number of preserved log files. While doing so, ensure there is sufficient free disk space available.
 
 ```Plain Text
-<appender ...>
-    <param name="maxBackupIndex" value="10"/>
+<DelegateAppender>
+    ...
+    <DefaultRolloverStrategy max="20" fileIndex="min"/>
 ...
 
 ```
 
-For detailed description of `maxBackupIndex` and other supported attributes, see [Class RollingFileAppender](http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/RollingFileAppender.html) in Apache documentation.
+For detailed description of `<DefaultRolloverStrategy/>` and other supported attributes, see [RollingFileAppender](https://logging.apache.org/log4j/2.x/manual/appenders.html#RollingFileAppender) in Apache documentation.
 
 ## Reading Logs
 
@@ -400,13 +401,13 @@ Example:
 
 By default, TeamCity searches for log4j configuration in the `.../conf/teamcity-server-log4j.xml` file (this resolves to `<[TeamCity Server home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` for TeamCity `.exe` and `.tar.gz` distributions when run from `bin`). If no such file is present, the default log4j configuration is used. The logs are saved to the `../logs` directory by default.
 
-If necessary, you can change the path to the configuration by adding the `log4j.configuration` JVM option or [internal property](server-startup-properties.md). The path to the `logs` directory is configured via the `TEAMCITY_LOGS_PATH` environment variable, or, alternatively, via the `teamcity_logs` JVM option or [internal property](server-startup-properties.md).   
-For example: `log4j.configuration=file:../conf/teamcity-server-log4j.xml` and `teamcity_logs=../logs/`.   
+If necessary, you can change the path to the configuration by adding the `log4j2.configuration` JVM option or [internal property](server-startup-properties.md). The path to the `logs` directory is configured via the `TEAMCITY_LOGS_PATH` environment variable, or, alternatively, via the `teamcity_logs` JVM option or [internal property](server-startup-properties.md).   
+For example: `log4j2.configuration=file:../conf/teamcity-server-log4j.xml` and `teamcity_logs=../logs/`.   
 Default values can be looked up in the `bin/teamcity-server` script available in the `.exe` and `tar.gz` distributions.
 
 If you start TeamCity by the means other than the bundled `teamcity-server` or `runAll` scripts, make sure to pass the above-mentioned options to the server JVM. See also the [recommendations](install-and-start-teamcity-server.md) on installing TeamCity into not bundled web server.
 
-The default `teamcity-server-log4j.xml` file content can be found in the `.exe` and `tar.gz` distributions. The one with debug enabled can be found under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging/debug-general.xml` name after server's first start. See also the sample [`teamcity-server-log4j.xml`](https://confluence.jetbrains.com/download/attachments/113084044/teamcity-server-log4j.xml?version=1&modificationDate=1362486616000&api=v2) file.
+The default `teamcity-server-log4j.xml` file content can be found in the `.exe` and `tar.gz` distributions. The one with debug enabled can be found under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging/debug-general.xml` name after server's first start. 
 
 <seealso>
         <category ref="troubleshooting">
