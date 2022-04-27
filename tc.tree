@@ -1,116 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE product-profile
-  SYSTEM "https://resources.jetbrains.com/stardust/product-profile.dtd">
+        SYSTEM "https://resources.jetbrains.com/stardust/product-profile.dtd">
 <product-profile id="tc" name="TeamCity On-Premises" start-page="teamcity-documentation.xml" status="eap">
-      <toc-element id="teamcity-documentation.xml" toc-title="TeamCity On-Premises Documentation Home"/>
-      <toc-element id="getting-started-with-teamcity.md">
-         <toc-element id="continuous-integration-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="quick-setup-guide.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="configure-and-run-your-first-build.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="create-pipeline.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="deploy-build.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="view-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="solve-build-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="set-up-notifications.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element toc-title="Migrating from Other CI/CD Tool">
-            <toc-element id="mapping-teamcity-concepts-to-other-ci-terms.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="jenkins-to-teamcity-migration-guidelines.md" show-structure-for="chapter" show-structure-depth="4"/>
+   <toc-element id="teamcity-documentation.xml" toc-title="TeamCity On-Premises Documentation Home"/>
+   <toc-element id="getting-started-with-teamcity.md">
+      <toc-element id="continuous-integration-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="quick-setup-guide.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="configure-and-run-your-first-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="create-pipeline.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="deploy-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="view-build-results.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="solve-build-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="set-up-notifications.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element toc-title="Migrating from Other CI/CD Tool">
+         <toc-element id="mapping-teamcity-concepts-to-other-ci-terms.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="jenkins-to-teamcity-migration-guidelines.md" show-structure-for="chapter" show-structure-depth="4"/>
+      </toc-element>
+   </toc-element>
+   <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4">
+      <toc-element id="glossary.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="agent-requirements.md"/>
+      <toc-element id="agent-work-directory.md"/>
+      <toc-element id="authentication-modules.md"/>
+      <toc-element id="build-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="build-artifact.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="build-chain.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="build-checkout-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="build-configuration-template.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="build-runner.md"/>
+      <toc-element id="build-working-directory.md"/>
+      <toc-element id="change.md"/>
+      <toc-element id="clean-checkout.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="dependent-build.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="history-build.md"/>
+      <toc-element id="notifier.md"/>
+      <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="revision.md"/>
+      <toc-element id="teamcity-data-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="teamcity-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="vcs-root.md"/>
+   </toc-element>
+   <toc-element toc-title="Installation and Upgrade">
+      <toc-element id="system-requirements.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="supported-platforms-and-environments.md" show-structure-for="chapter" show-structure-depth="4">
+         <toc-element id="testing-frameworks.md"/>
+         <toc-element id="code-quality-tools.md" show-structure-for="chapter" show-structure-depth="4"/>
+      </toc-element>
+      <toc-element id="install-and-start-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="installation">
+         <toc-element id="install-teamcity-server-on-windows.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="install-teamcity-server-on-linux-or-macos.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="running-teamcity-stack-in-aws.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+         <toc-element id="start-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="configure-server-installation.md" show-structure-for="chapter" show-structure-depth="4">
+            <toc-element id="server-startup-properties.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="server-startup-properties"/>
+         </toc-element>
+         <toc-element id="teamcity-maintenance-mode.md" show-structure-for="chapter" show-structure-depth="4"/>
+      </toc-element>
+      <toc-element id="install-and-start-teamcity-agents.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="install-and-start-agents">
+         <toc-element id="install-teamcity-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="configure-agent-installation.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="configure-agent-installation"/>
+         <toc-element id="start-teamcity-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="configure-java-for-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="install-multiple-agents-on-one-machine.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="teamcity-integration-with-cloud-solutions.md" show-structure-for="chapter" show-structure-depth="4">
+            <toc-element id="setting-up-teamcity-for-amazon-ec2.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="setting-up-teamcity-for-kubernetes.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md" show-structure-for="chapter" show-structure-depth="4"/>
          </toc-element>
       </toc-element>
-      <toc-element id="introduction-to-teamcity-terminology.md" show-structure-for="chapter" show-structure-depth="4">
-         <toc-element id="glossary.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="agent-cloud-profile.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="agentless-build-step.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="agent-requirements.md"/>
-         <toc-element id="agent-work-directory.md"/>
-         <toc-element id="authentication-modules.md"/>
-         <toc-element id="build-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="build-artifact.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="build-chain.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="build-checkout-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="build-configuration-template.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="build-runner.md"/>
-         <toc-element id="build-working-directory.md"/>
-         <toc-element id="change.md"/>
-         <toc-element id="clean-checkout.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="dependent-build.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="history-build.md"/>
-         <toc-element id="notifier.md"/>
-         <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="revision.md"/>
-         <toc-element id="teamcity-data-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="teamcity-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="vcs-root.md"/>
+      <toc-element id="set-up-external-database.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="set-up-external-database">
+         <toc-element id="migrating-to-external-database.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="setting-up-teamcity-with-ms-sql-server.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="configuring-utf8-character-set-for-mysql.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="using-aws-aurora-database-cluster.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
-      <toc-element toc-title="Installation and Upgrade">
-         <toc-element id="system-requirements.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="supported-platforms-and-environments.md" show-structure-for="chapter" show-structure-depth="4">
-            <toc-element id="testing-frameworks.md"/>
-            <toc-element id="code-quality-tools.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="multinode-setup.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="installing-additional-plugins.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="installing-agent-tools.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="upgrading-teamcity-server-and-agents.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="upgrade"/>
+      <toc-element id="upgrading-dsl.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="upgrade-dsl"/>
+      <toc-element id="upgrade-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2022-04.html"/>
+      <toc-element id="teamcity-2022-04-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+      <toc-element id="what-s-new-in-teamcity-2021-2.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
+         <toc-element id="teamcity-2021-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
+            <toc-element id="teamcity-2021-2-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+            <toc-element id="teamcity-2021-2-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+            <toc-element id="teamcity-2021-2-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
          </toc-element>
-         <toc-element id="install-and-start-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="installation">
-            <toc-element id="install-teamcity-server-on-windows.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="install-teamcity-server-on-linux-or-macos.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="running-teamcity-stack-in-aws.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-            <toc-element id="start-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="configure-server-installation.md" show-structure-for="chapter" show-structure-depth="4">
-               <toc-element id="server-startup-properties.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="server-startup-properties"/>
-            </toc-element>
-            <toc-element id="teamcity-maintenance-mode.md" show-structure-for="chapter" show-structure-depth="4"/>
-         </toc-element>
-         <toc-element id="install-and-start-teamcity-agents.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="install-and-start-agents">
-            <toc-element id="install-teamcity-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="configure-agent-installation.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="configure-agent-installation"/>
-            <toc-element id="start-teamcity-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="configure-java-for-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="install-multiple-agents-on-one-machine.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="teamcity-integration-with-cloud-solutions.md" show-structure-for="chapter" show-structure-depth="4">
-               <toc-element id="setting-up-teamcity-for-amazon-ec2.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="setting-up-teamcity-for-kubernetes.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md" show-structure-for="chapter" show-structure-depth="4"/>
-            </toc-element>
-         </toc-element>
-         <toc-element id="set-up-external-database.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="set-up-external-database">
-            <toc-element id="migrating-to-external-database.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="setting-up-teamcity-with-ms-sql-server.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="configuring-utf8-character-set-for-mysql.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="using-aws-aurora-database-cluster.md" show-structure-for="chapter" show-structure-depth="4"/>
-         </toc-element>
-         <toc-element id="multinode-setup.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="installing-additional-plugins.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="installing-agent-tools.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="upgrading-teamcity-server-and-agents.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="upgrade"/>
-         <toc-element id="upgrading-dsl.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="upgrade-dsl"/>
-         <toc-element id="upgrade-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names="what-s-new-in-teamcity-2022-04.html"/>
-            <toc-element id="teamcity-2022-04-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-         </toc-element>
-         <toc-element id="what-s-new-in-teamcity-2021-2.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
-            <toc-element id="teamcity-2021-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
-               <toc-element id="teamcity-2021-2-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-               <toc-element id="teamcity-2021-2-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-               <toc-element id="teamcity-2021-2-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-            </toc-element>
-         </toc-element>
-         <toc-element id="what-s-new-in-teamcity-2020-2.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
-            <toc-element id="teamcity-2020-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-            <toc-element id="teamcity-2020-2-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-            <toc-element id="teamcity-2020-2-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-            <toc-element id="teamcity-2020-2-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-            <toc-element id="teamcity-2020-2-4-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-            <toc-element id="what-s-new-in-teamcity-2021-1.md" hidden="true">
-               <toc-element id="teamcity-2021-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="teamcity-2021-1-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="teamcity-2021-1-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="teamcity-2021-1-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
-               <toc-element id="teamcity-2021-1-4-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
-            </toc-element>
-         </toc-element>
-         <toc-element id="what-s-new-in-teamcity-2019.2.md" hidden="true"/>
-         <toc-element id="what-s-new-in-teamcity-2019.1.md" hidden="true"/>
-         <toc-element id="what-s-new-in-teamcity-2020-1.md" hidden="true"/>
       </toc-element>
+      <toc-element id="what-s-new-in-teamcity-2020-2.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">
+         <toc-element id="teamcity-2020-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+         <toc-element id="teamcity-2020-2-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+         <toc-element id="teamcity-2020-2-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+         <toc-element id="teamcity-2020-2-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+         <toc-element id="teamcity-2020-2-4-release-notes.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+         <toc-element id="what-s-new-in-teamcity-2021-1.md" hidden="true">
+            <toc-element id="teamcity-2021-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="teamcity-2021-1-1-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="teamcity-2021-1-2-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="teamcity-2021-1-3-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="teamcity-2021-1-4-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+         </toc-element>
+      </toc-element>
+      <toc-element id="what-s-new-in-teamcity-2019.2.md" hidden="true"/>
+      <toc-element id="what-s-new-in-teamcity-2019.1.md" hidden="true"/>
+      <toc-element id="what-s-new-in-teamcity-2020-1.md" hidden="true"/>
+   </toc-element>
    <toc-element toc-title="System Administration">
       <toc-element toc-title="Secure TeamCity">
          <toc-element id="security-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
@@ -406,31 +405,31 @@
          <toc-element id="artifacts-migration-tool.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
       </toc-element>
    </toc-element>
-      <toc-element id="extending-teamcity.md" toc-title="Extending TeamCity and Using REST API for Integration">
-         <toc-element id="teamcity-rest-api.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="rest-api"/>
-         <toc-element id="build-script-interaction-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4">
-            <toc-element id="service-messages.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="teamcity-info-xml.md" show-structure-for="chapter" show-structure-depth="4"/>
-         </toc-element>
-         <toc-element id="accessing-server-by-http.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="custom-chart.md" show-structure-for="chapter" show-structure-depth="4">
-            <toc-element id="edit-custom-chart-limitations.md"/>
-         </toc-element>
-         <toc-element toc-title="TeamCity Plugin Development Documentation" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
+   <toc-element id="extending-teamcity.md" toc-title="Extending TeamCity and Using REST API for Integration">
+      <toc-element id="teamcity-rest-api.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="rest-api"/>
+      <toc-element id="build-script-interaction-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4">
+         <toc-element id="service-messages.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="teamcity-info-xml.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
-      <toc-element toc-title="Reference">
-         <toc-element id="how-to.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="change-state.md"/>
-         <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="patterns-for-accessing-build-artifacts.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="requirement-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="search.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="teamcity-specific-directories.md"/>
-         <toc-element id="wildcards.md"/>
-         <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="accessing-server-by-http.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="custom-chart.md" show-structure-for="chapter" show-structure-depth="4">
+         <toc-element id="edit-custom-chart-limitations.md"/>
       </toc-element>
+      <toc-element toc-title="TeamCity Plugin Development Documentation" href="https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html"/>
+   </toc-element>
+   <toc-element toc-title="Reference">
+      <toc-element id="how-to.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="change-state.md"/>
+      <toc-element id="cron-expressions-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="build-state.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="identifier.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="patterns-for-accessing-build-artifacts.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="requirement-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="search.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="teamcity-specific-directories.md"/>
+      <toc-element id="wildcards.md"/>
+      <toc-element id="teamcity-experimental-ui.md" show-structure-for="chapter" show-structure-depth="4"/>
+   </toc-element>
    <toc-element toc-title="Licensing and Release Cycle">
       <toc-element id="licensing-policy.md" show-structure-for="chapter" show-structure-depth="4">
          <toc-element toc-title="Third-Party Software and Licenses" href="https://www.jetbrains.com/legal/third-party-software/?product=TC" accepts-web-file-names="third-party-license-agreements.html"/>
@@ -440,25 +439,25 @@
       <toc-element id="teamcity-release-cycle.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="roadmap-outline.md" show-structure-for="chapter" show-structure-depth="4"/>
    </toc-element>
-      <toc-element id="troubleshooting.md">
-         <toc-element id="common-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="known-issues.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="reporting-issues.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="applying-patches.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="visual-c-build-issues.md"/>
-         <toc-element id="feedback.md" show-structure-for="chapter" show-structure-depth="4"/>
-      </toc-element>
-      <toc-element id="ci-tutorials.md">
-         <toc-element toc-title="CI/CD Guide" href="https://www.jetbrains.com/teamcity/ci-cd-guide/"/>
-         <toc-element id="how-to-configure-cicd-for-jetbrains-space.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element toc-title="Configure, Build, and Test .NET Projects" href="https://www.jetbrains.com/teamcity/tutorials/dotnet-build-configure-test/"/>
-         <toc-element toc-title="Configure, Build, and Test Python Projects" href="https://www.jetbrains.com/teamcity/tutorials/python-build-configure-test/"/>
-         <toc-element toc-title="Configure, Build, and Test Gradle Projects" href="https://www.jetbrains.com/teamcity/tutorials/gradle-build-configure-test/"/>
-         <toc-element toc-title="Configure, Build, and Test Maven Projects" href="https://www.jetbrains.com/teamcity/tutorials/maven-build-configure-test/"/>
-         <toc-element id="getting-started-with-nunit.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="getting-started-with-php.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
-         <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
-      </toc-element>
+   <toc-element id="troubleshooting.md">
+      <toc-element id="common-problems.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="known-issues.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="reporting-issues.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="applying-patches.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="visual-c-build-issues.md"/>
+      <toc-element id="feedback.md" show-structure-for="chapter" show-structure-depth="4"/>
+   </toc-element>
+   <toc-element id="ci-tutorials.md">
+      <toc-element toc-title="CI/CD Guide" href="https://www.jetbrains.com/teamcity/ci-cd-guide/"/>
+      <toc-element id="how-to-configure-cicd-for-jetbrains-space.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element toc-title="Configure, Build, and Test .NET Projects" href="https://www.jetbrains.com/teamcity/tutorials/dotnet-build-configure-test/"/>
+      <toc-element toc-title="Configure, Build, and Test Python Projects" href="https://www.jetbrains.com/teamcity/tutorials/python-build-configure-test/"/>
+      <toc-element toc-title="Configure, Build, and Test Gradle Projects" href="https://www.jetbrains.com/teamcity/tutorials/gradle-build-configure-test/"/>
+      <toc-element toc-title="Configure, Build, and Test Maven Projects" href="https://www.jetbrains.com/teamcity/tutorials/maven-build-configure-test/"/>
+      <toc-element id="getting-started-with-nunit.md" show-structure-for="chapter" show-structure-depth="4"/>
+      <toc-element id="getting-started-with-php.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
+      <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
+   </toc-element>
    <toc-element toc-title="Other resources">
       <toc-element id="teamcity-cloud.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
       <toc-element toc-title="TeamCity Cloud Documentation" href="https://www.jetbrains.com/help/teamcity/cloud/teamcity-cloud-documentation.html"/>
