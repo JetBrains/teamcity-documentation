@@ -92,11 +92,18 @@ then no additional changes to your DSL are required and you can change the confi
 
 You should review these suggestions and apply them to your DSL scripts. The _configs version_ can be changed only after all these suggestions are applied.
 
-### Manual DSL scripts upgrade: remove version from DSL API package names (TeamCity 2022.04+)
+<anchor name="dsl202204"/>
+
+## Update DSL from 2021.2.x to 2022.04.x
+
+* The bundled Kotlin version has been updated to 1.6.21.
+* New DSL API artifacts without version in package names are introduced. See below how to switch to these DSL API artifacts. 
+
+### Removing version from DSL API package names
 {id='packages-without-dsl-api-version'}
 
-If you're upgrading to TeamCity version 2022.04+ then it is recommended to remove the version part of the imports in your DSL code to make the DSL code look simpler and improve code completion suggestions in IntelliJ IDEA. 
-So the imports:   
+Starting with TeamCity 2022.04 it is recommended to remove the version part of the imports in your DSL code to make the DSL code look simpler and improve code completion suggestions in IntelliJ IDEA.
+So the imports:
  ```Kotlin
  import jetbrains.buildServer.configs.kotlin.v2019_2.*
  import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.*
@@ -147,26 +154,20 @@ To remove the DSL API version from the imported package names, the following sho
 ```
 
 2. Change imports in all the Kotlin files.
- 
+
    The version part of the package name should be removed, for instance:
-   
+
    `import jetbrains.buildServer.configs.kotlin.v2019_2.*`
-   
+
    should be replaced with:
- 
+
    `import jetbrains.buildServer.configs.kotlin.*`
 
 4. Compile DSL and generate settings
- 
+
    After the changes to pom.xml and Kotlin files, it is recommended to run `mvn teamcity-configs:generate` task to ensure that the project still compiles.
    If there are no errors, then these changes can be checked into the versioned settings repository.
-
-<anchor name="dsl202204"/>
-
-## Update DSL from 2021.2.x to 2022.04.x
-
-* The bundled Kotlin version has been updated to 1.6.11.
-* New DSL API artifacts without version in package names are introduced, see how to [switch your DSL code to packages without version](#packages-without-dsl-api-version)
+ 
 
 <anchor name="dsl20212"/>
 
