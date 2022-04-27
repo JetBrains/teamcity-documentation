@@ -18,6 +18,7 @@ run advanced code inspections, find code duplicates, track code quality progress
 For details about the build runner, refer to [Qodana](qodana.md).
 
 If you previously installed the non-bundled Qodana plugin and used DSL, please check our [upgrade notes](upgrade-notes.md#bundled-tools-updates-2022-04)
+{product="tc}
 
 ## Enhanced integration with Amazon Web Services
 
@@ -243,12 +244,13 @@ When configuring a _Fail build on specific text in build log_ [failure condition
 ## Fixed issues
 {product="tc"}
 
+<for product="tc">
 
 ## Upgrade notes
-{product="tc"}
 
 Before upgrading, we highly recommend reading about [important changes in version 2022.04 compared to 2021.2.x](upgrade-notes.md).
-{product="tc"}
+
+</for>
 
 ## Previous releases
 {product="tc"}
