@@ -13,12 +13,10 @@ Refer to [this article](parallel-tests.md) for details.
 
 The [Qodana plugin](https://www.jetbrains.com/help/qodana/qodana-teamcity-plugin.html) has been bundled with TeamCity. 
 Now you can enable the _Qodana_ build runner and add static analysis to your build chain, 
-run advanced code inspections, find code duplicates, track code quality progress of your code.
-
-For details about the build runner, refer to [Qodana](qodana.md).
+run advanced code inspections, find code duplicates, track code quality progress of your code. For details about the build runner, refer to [Qodana](qodana.md).
 
 If you previously installed the non-bundled Qodana plugin and used DSL, please check our [upgrade notes](upgrade-notes.md#bundled-tools-updates-2022-04)
-{product="tc}
+{product="tc"}
 
 ## Enhanced integration with Amazon Web Services
 
@@ -142,7 +140,6 @@ in comparison with the previously used JGit implementation. It also fixes a numb
 ## New UI
 
 ### Editing agent pools
-
 {product="tc"}
 
 >We keep reproducing the classic TeamCity features in its experimental UI, and a majority of them have already received a new implementation. If you haven't tried the new UI for a while or at all, we encourage you to give it a try this time. Our goal is to make the experimental UI not only as functional as the classic one but a lot more responsive and enhanced with easier navigation and widgets.
@@ -236,21 +233,16 @@ When configuring a _Fail build on specific text in build log_ [failure condition
 
 * **The [Eclipse plugin](eclipse-plugin.md)** has been unbundled from TeamCity. [Contact our support](https://teamcity-support.jetbrains.com/hc/en-us) if you need the plugin.
 
-  
-## Other updates
-{product="tcc"}
-
 
 ## Fixed issues
-{product="tc"}
 
-
+See [TeamCity 2022.04 release notes](teamcity-2022-04-release-notes.md)
 
 ## Upgrade notes
 {product="tc"}
 
-Before upgrading, we highly recommend reading about [important changes in version 2022.04 compared to 2021.2.x](upgrade-notes.md){product="tc"}.
-{product="tc"}
+Before upgrading, we highly recommend reading about [important changes in version 2022.04 compared to 2021.2.x](upgrade-notes.md).
+
 
 ## Previous releases
 {product="tc"}
