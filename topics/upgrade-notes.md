@@ -16,7 +16,7 @@ when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-
 ### Bundled tools updates
 {id="bundled-tools-updates-2022-04"}
 
-*Versions 2017.1 and 2017.2 of [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) have been unbundled. 
+* Versions 2017.1 and 2017.2 of [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) have been unbundled. 
 If you have been using any of these versions in your scripts, consider switching to the latest protocol version as described [here](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#REST+API+Versions). If switching is not an option and this is a breaking change for your setup, please contact us via any convenient [feedback channel](feedback.md).
 * Updates in TeamCity Agent Docker images:
   * The bundled .NET Core SDK has been updated to 6.0.100.
