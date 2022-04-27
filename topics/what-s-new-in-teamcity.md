@@ -41,8 +41,8 @@ To help you increase the artifacts' upload/download speed and reduce costs, Team
 
 Some procedures in the production environment may require approval of more than one person.
 TeamCity now allows requiring manual approval from a specified person or a group for a build to run.
-If you need to prevent users from triggering a build accidentally, if you want more control over deployments, 
-resource consuming builds or resource removing operations, configure [the Build Approval](build-approval.md) feature for your build.
+To prevent users from triggering a build accidentally and to have more control over deployments,
+resource consuming builds, or resource removing operations, configure [the Build Approval](build-approval.md) feature for your build.
 
 
 ## Smarter VCS Integrations
