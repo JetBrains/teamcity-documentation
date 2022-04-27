@@ -11,7 +11,7 @@ Refer to [this article](parallel-tests.md) for details.
 
 ## Advanced code quality inspections with Qodana
 
-The [Qodana plugin](https://www.jetbrains.com/help/qodana/qodana-teamcity-plugin.html) has been bundled with TeamCity. 
+The [Qodana plugin](https://www.jetbrains.com/help/qodana/teamcity.html) has been bundled with TeamCity. 
 Now you can enable the _Qodana_ build runner and add static analysis to your build chain, 
 run advanced code inspections, find code duplicates, track code quality progress of your code. For details about the build runner, refer to [Qodana](qodana.md).
 
