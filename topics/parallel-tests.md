@@ -1,11 +1,10 @@
 [//]: # (title: Parallel Tests)
 [//]: # (auxiliary-id: Parallel Tests)
 
-TeamCity is now capable of parallelizing the execution of your tests by distributing them across multiple build agents, thus minimizing the overall duration of tests. The tests of a build can be automatically split into batches, and each batch will run on a separate build agent. 
+TeamCity is capable of parallelizing the execution of your tests by distributing them across multiple build agents, thus minimizing the overall duration of tests. The tests of a build can be automatically split into batches, and each batch will run on a separate build agent. 
 This feature addresses a popular use case when a build consequently runs many independent tests on the same agent while they could technically be running in parallel, utilizing resources of multiple agents.
-Previously, to emulate such behavior, some users would configure several build configurations and join them in a chain with parallel connections. This approach works, but requires implementing sometimes non-trivial logic of tests distribution across batches. 
 
-In TeamCity 2022.04, the tests distribution logic is provided by TeamCity itself. In addition, such build runners as [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), and [.NET](net.md) are capable of automatic filtering of the tests on the agent without the need to change build steps settings.  
+Starting from TeamCity 2022.04, the tests distribution logic is provided by TeamCity itself. In addition, such build runners as [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), and [.NET](net.md) are capable of automatic filtering of the tests on the agent without the need to change build steps settings.  
 
 
 ## Run tests in parallel
@@ -74,11 +73,14 @@ These parameters are:
 | system.teamcity.build.parallelTests.excludesFile | Contains a path on the agent to a text file with tests which should be excluded from execution |
 
 The format of the file with excluded tests is as follows:
-```
+```Plain Text
 #version=1
 #algorithm=<name of the algorithm used to split tests, optional>
 #current_batch=<number of the current batch, same as teamcity.build.parallelTests.currentBatch parameter>
 #total_batches=<total number of batches, same as teamcity.build.parallelTests.totalBatches parameter>
+#suite=<suite name, can be empty>
+<new line separated list of test classes>
+...
 #suite=<suite name, can be empty>
 <new line separated list of test classes>
 ```
