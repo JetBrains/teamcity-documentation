@@ -124,7 +124,7 @@ To remove the DSL API version from the imported package names, the following sho
    should be changed to: `configs-dsl-kotlin-plugins-latest`
 
    In the end `<dependencies/>` section should look like:
-```
+```XML
 <dependencies>
     <dependency>
         <groupId>org.jetbrains.teamcity</groupId>
