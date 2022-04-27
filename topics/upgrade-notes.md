@@ -16,7 +16,8 @@ when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-
 
 Some external plugins are not compatible with TeamCity 2022.04 and have to be updated before the upgrade.
 
-* [Gradle Build Scan](https://github.com/etiennestuder/gradle-build-scan-teamcity-plugin) is  currently incompatible. We're waiting for our PR to be accepted by the plugin author.
+* [Gradle Build Scan](https://github.com/etiennestuder/gradle-build-scan-teamcity-plugin) is currently incompatible. 
+Please download and install [fixed version](https://teamcity.jetbrains.com/repository/download/TeamCityThirdPartyPlugins_TeamcityBuildScanPlugin_Build/3847037:id/teamcity-build-scan-plugin-0.22-prerelease.zip) of this plugin. 
 
 The latest released versions of the following plugins are compatible with TeamCity 2022.04. Please install them from the JetBrains Marketplace:
 * [Github Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks)
