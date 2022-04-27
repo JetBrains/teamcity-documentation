@@ -21,6 +21,7 @@ __Important notes__:
 * Initial Git [checkout](build-checkout-directory.md#Checkout+Process) may take significant time (sometimes hours), depending on the size of your project history, because the whole project history is downloaded during the initial checkout.
 
 ## Native Git for VCS-related operations on the server
+{product="tc"}
 
 TeamCity can now use native Git as the default option for Git operations on the server.
 Switching to native Git improves the performance of the checking for changes operations on the server
@@ -41,6 +42,15 @@ If the connection test is successful, you can enable the native Git support on y
 >See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the current native Git implementation in TeamCity.
 > 
 {type="warning"} 
+
+## Native Git for VCS-related operations on the server
+{id="Native+Git" product="tcc"}
+
+TeamCity can now uses native Git for VCS-related operations on the server.
+Using native Git improves the performance of the checking for changes operations on the server
+in comparison with the previously used JGit implementation. It also fixes a number of issues related to large Git repositories.
+
+See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the current native Git implementation in TeamCity.
 
 ## General Settings
 
