@@ -103,7 +103,8 @@ You should review these suggestions and apply them to your DSL scripts. The _con
 {id='packages-without-dsl-api-version'}
 
 Starting with TeamCity 2022.04 it is recommended to remove the version part of the imports in your DSL code to make the DSL code look simpler and improve code completion suggestions in IntelliJ IDEA.
-So the imports:
+
+For example, the imports:
  ```Kotlin
  import jetbrains.buildServer.configs.kotlin.v2019_2.*
  import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.*
@@ -124,38 +125,38 @@ To remove the DSL API version from the imported package names, the following sho
 
    In the end `<dependencies/>` section should look like:
 ```
-   <dependencies>
-     <dependency>
-       <groupId>org.jetbrains.teamcity</groupId>
-       <artifactId>configs-dsl-kotlin-latest</artifactId>
-       <version>${teamcity.dsl.version}</version>
-       <scope>compile</scope>
-     </dependency>
-     <dependency>
-       <groupId>org.jetbrains.teamcity</groupId>
-       <artifactId>configs-dsl-kotlin-plugins-latest</artifactId>
-       <version>1.0-SNAPSHOT</version>
-       <type>pom</type>
-       <scope>compile</scope>
-     </dependency>
-     <dependency>
-       <groupId>org.jetbrains.kotlin</groupId>
-       <artifactId>kotlin-stdlib-jdk8</artifactId>
-       <version>${kotlin.version}</version>
-       <scope>compile</scope>
-     </dependency>
-     <dependency>
-       <groupId>org.jetbrains.kotlin</groupId>
-       <artifactId>kotlin-script-runtime</artifactId>
-       <version>${kotlin.version}</version>
-       <scope>compile</scope>
-     </dependency>
-   </dependencies>
+<dependencies>
+    <dependency>
+        <groupId>org.jetbrains.teamcity</groupId>
+        <artifactId>configs-dsl-kotlin-latest</artifactId>
+        <version>${teamcity.dsl.version}</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.jetbrains.teamcity</groupId>
+        <artifactId>configs-dsl-kotlin-plugins-latest</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <artifactId>kotlin-stdlib-jdk8</artifactId>
+        <version>${kotlin.version}</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <artifactId>kotlin-script-runtime</artifactId>
+        <version>${kotlin.version}</version>
+        <scope>compile</scope>
+    </dependency>
+</dependencies>
 ```
 
 2. Change imports in all the Kotlin files.
 
-   The version part of the package name should be removed, for instance:
+   The version part of the package name should be removed in all the Kotlin files, for instance:
 
    `import jetbrains.buildServer.configs.kotlin.v2019_2.*`
 
@@ -163,7 +164,7 @@ To remove the DSL API version from the imported package names, the following sho
 
    `import jetbrains.buildServer.configs.kotlin.*`
 
-4. Compile DSL and generate settings
+3. Compile DSL and generate settings
 
    After the changes to pom.xml and Kotlin files, it is recommended to run `mvn teamcity-configs:generate` task to ensure that the project still compiles.
    If there are no errors, then these changes can be checked into the versioned settings repository.
