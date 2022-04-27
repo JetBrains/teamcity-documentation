@@ -7,7 +7,7 @@
 On updating to 2022.04, this format will be applied within all the tests launched via the `test` or `vstest` command of the [.NET](net.md) runner. 
 As a result of this change, the investigations, mutes, and history of these tests may be reset.
 * TeamCity stops supporting the [Microsoft Edge Legacy](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224) web browsers.
-[Triggering builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) will be disabled 
+* [Triggering builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) will be disabled 
 when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-build-queue.html#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
 * TeamCity reporting of Ant's tasks will be disabled if Ant is started by a Java version below 1.8. 
 * Windows docker images based on 2004 will not be published for 2022.04 version.
