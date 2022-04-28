@@ -81,7 +81,7 @@ The CloudFront integration requires configuring:
 
 To enable the CloudFront support for the current S3 bucket, activate the _Use CloudFront to transport artifacts_ option in the storage settings.
 
-In each of the dropdowns, _Distribution for uploads_ and _Distribution for downloads_, choose an available distribution, 
+In each of the dropdowns, _Distribution for uploads_ and _Distribution for downloads_, choose an available distribution 
 if it was [manually created](#Manual+CloudFront+Setup) in your Amazon profile, 
 or click ![magic-wand.png](magic-wand.png) to _[configure settings automatically](#Automatic+CloudFront+Setup)_.
 
@@ -101,7 +101,7 @@ TeamCity can configure the settings automatically. This involves:
 
 #### Manual CloudFront Setup
 
-For security reasons, we recommend configuring two separate distributions for artifacts upload and download. For each distribution:
+For security reasons, we recommend configuring two separate distributions for uploading and downloading artifacts. For each distribution:
 1. Generate a key pair in [SSH-2 RSA key format](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-creating-cloudfront-key-pairs).
 2. Upload the public key from the pair to CloudFront.
 3. [Add a new key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-adding-trusted-signers) in CloudFront and add the created public key to this group.
@@ -109,7 +109,7 @@ For security reasons, we recommend configuring two separate distributions for ar
 5. If you use a private bucket, create a new [OAI](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) user.
 6. [Create a distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating.html) and attach your key group to it:
    * Make sure to choose the same S3 bucket as specified in TeamCity.
-   * __Allowed HTTP methods__ for uploading artifacts`GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, `DELETE`; for downloading `GET`, `HEAD`, `OPTIONS` 
+   * __Allowed HTTP methods__ for uploading artifacts `GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, `DELETE`; for downloading `GET`, `HEAD`, `OPTIONS` 
    * __Restrict viewer access__: _yes_
    * __Trusted authorization type__: _trusted key groups_
    * __Cache key and origin requests__: _Cache policy and origin request policy_
