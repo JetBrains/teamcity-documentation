@@ -29,13 +29,14 @@ Version 2022.04 allows you to not only store new build artifacts in Amazon S3,
 but also [move existing artifacts from TeamCity’s local storage to Amazon S3](artifacts-migration-tool.md). 
 This is particularly useful for teams who are just starting their migration from a self-hosted setup to a cloud platform.
 
-### Transferring build artifacts via Amazon Cloudfront
+### Transferring build artifacts via Amazon CloudFront
+{product="tc"}
 
 The speed of transferring build artifacts stored in Amazon S3 depends on the geographical distance between you and the region where the S3 bucket is located.
 To help you increase the artifacts' upload/download speed and reduce costs, TeamCity 2022.04 adds native support for [Amazon CloudFront](https://aws.amazon.com/cloudfront/), a content delivery network that offers low latency and high transfer speeds.
 
 [Enabling its support for an S3 storage](storing-build-artifacts-in-amazon-s3.md#CloudFrontSettings) will allow TeamCity to transfer build artifacts through the nearest CloudFront server. 
-{product="tc"}
+
 
 ## Requiring Build Approvals
 
@@ -44,6 +45,12 @@ TeamCity now allows requiring manual approval from a specified person or a group
 To prevent users from triggering a build accidentally and to have more control over deployments,
 resource consuming builds, or resource removing operations, configure [the Build Approval](build-approval.md) feature for your build.
 
+## Limiting number of running builds per branch
+
+TeamCity 2022.04 helps you improve the allocation of your build agents by [limiting the number of simultaneously running builds per branch](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds).
+For example, your main branch may have an unlimited number of builds that will occupy as many build agents as they need, while you limit your feature branches to running just one build at a time.
+For example, your main branch may have an unlimited number of builds that will occupy as many build agents as they need, while you limit your feature branches to running just one build at a time.
+For example, your main branch may have an unlimited number of builds that will occupy as many build agents as they need, while you limit your feature branches to running just one build at a time.
 
 ## Smarter VCS Integrations
 TeamCity improves VCS integrations and provides the following new features.
@@ -87,11 +94,6 @@ GitHub, GitLab, Space, Bitbucket, and Azure DevOps are all supported.
 When running a custom build, you can now specify an exact revision that may not necessarily belong to the list of changes known by the build configuration. 
 This gives you a lot more flexibility when you want to reproduce historical builds, 
 deploy older versions, debug new build configurations, and so on.
-
-### Limiting number of running builds per branch
-
-TeamCity 2022.04 helps you improve the allocation of your build agents by [limiting the number of simultaneously running builds per branch](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds).
-For example, your main branch may have an unlimited number of builds that will occupy as many build agents as they need, while you limit your feature branches to running just one build at a time.
 
 
 ## Security
