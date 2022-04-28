@@ -23,7 +23,6 @@
         <og-twitter>@teamcity</og-twitter>
         <og-image>https://resources.jetbrains.com/storage/products/teamcity/img/meta/preview.png</og-image>
         <download-page>https://www.jetbrains.com/teamcity/download/</download-page>
-        <config-showDownloadButton>true</config-showDownloadButton>
     </variables>
 
     <build-profile product="tc"/>
