@@ -6,7 +6,7 @@ __28 April 2022__
 ### Feature  
 
 [**TW-5610**](https://youtrack.jetbrains.com/issue/TW-5610/Custom-build:-allow-to-provide-revisions-for-the-VCS-roots) — Custom build: allow to provide revisions for the VCS roots  
-[**TW-10498**](https://youtrack.jetbrains.com/issue/TW-10498/Multiple-equivalent-builds-can-be-present-in-the-queue-on-snapsh) — Multiple equivalent builds can be present in the queue on snapshot builds triggering (no snapshot chains optimizing int he queue)  
+[**TW-10498**](https://youtrack.jetbrains.com/issue/TW-10498/Multiple-equivalent-builds-can-be-present-in-the-queue-on-snapsh) — Multiple equivalent builds can be present in the queue on snapshot builds triggering
 [**TW-22960**](https://youtrack.jetbrains.com/issue/TW-22960/Number-of-simultaneously-running-builds-should-have-option-for-b) — Number of simultaneously running builds should have option for branches  
 [**TW-29273**](https://youtrack.jetbrains.com/issue/TW-29273/Display-templates-in-breadcrumbs-in-administration-pages-for-fas) — Display templates in breadcrumbs in administration pages for fast navigation  
 [**TW-48863**](https://youtrack.jetbrains.com/issue/TW-48863/Publish-commit-status-on-adding-to-queue) — Publish commit status on adding to queue  
@@ -46,14 +46,14 @@ __28 April 2022__
 [**TW-30985**](https://youtrack.jetbrains.com/issue/TW-30985/Improve-browser-page-title-to-differentiate-between-build-config) — Improve browser page title to differentiate between build configurations better  
 [**TW-61639**](https://youtrack.jetbrains.com/issue/TW-61639/Improve-Build-overview-tabs-placement-on-expanded-build-area) — Improve Build overview tabs placement on expanded build area
 [**TW-64933**](https://youtrack.jetbrains.com/issue/TW-64933/Remember-filter-value-in-sidebar) — Remember filter value in sidebar  
-[**TW-68007**](https://youtrack.jetbrains.com/issue/TW-68007/Build-Configuration-Home-Project-Home-links-in-build-configurati) — Build Configuration Home/ Project Home links in build configuration/project settings are unobvious  
+[**TW-68007**](https://youtrack.jetbrains.com/issue/TW-68007/Build-Configuration-Home-Project-Home-links-in-build-configurati) — Build Configuration Home/ Project Home links in build configuration/project settings are not obvious  
 [**TW-68324**](https://youtrack.jetbrains.com/issue/TW-68324/Automatically-remove-%22Fixed%22-mark-from-investigation-on-new-fail) — Automatically remove &quot;Fixed&quot; mark from investigation on new failure  
 [**TW-74149**](https://youtrack.jetbrains.com/issue/TW-74149/Artifacts-publishing-times-are-wrong-in-the-build-log) — Artifacts publishing times are wrong in the build log  
 [**TW-59414**](https://youtrack.jetbrains.com/issue/TW-59414/A-health-report-on-branch-specs-in-VCS-root-overlapping-with-the) — A health report on branch specs in VCS root overlapping with the ones provided by the Pull Requests build feature is required  
 [**TW-59968**](https://youtrack.jetbrains.com/issue/TW-59968/No-need-to-change-projects-list-in-sidebar-if-the-search-field-i) — No need to change projects list in sidebar if the search field is selected and empty. Only after typing the letters  
 [**TW-62550**](https://youtrack.jetbrains.com/issue/TW-62550/Small-circle-on-the-build-log-timeline-is-not-self-descriptive) — Small circle on the build log timeline is not self-descriptive  
-[**TW-67258**](https://youtrack.jetbrains.com/issue/TW-67258/%22No-differences-between-builds-were-found%22-phrase-is-formally-in) — &quot;No differences between builds were found&quot; phrase is formally incorrect  
-[**TW-68156**](https://youtrack.jetbrains.com/issue/TW-68156/&#39;Test-connection&#39;-is-not-available-if-project-settings-are-read-) — &#39;Test connection&#39; is not available if project settings are read-only  
+[**TW-67258**](https://youtrack.jetbrains.com/issue/TW-67258/%22No-differences-between-builds-were-found%22-phrase-is-formally-in) — _No differences between builds were found_ phrase is formally incorrect  
+[**TW-68156**](https://youtrack.jetbrains.com/issue/TW-68156/&#39;Test-connection&#39;-is-not-available-if-project-settings-are-read-) — _Test connection_ is not available if project settings are read-only  
 [**TW-68191**](https://youtrack.jetbrains.com/issue/TW-68191/Kotlin-DSL:-several-versions-of-the-same-class-are-available-for) — Kotlin DSL: several versions of the same class are available for import, one for each version of DSL API  
 [**TW-68366**](https://youtrack.jetbrains.com/issue/TW-68366/Build-log-search:-Next-result-button-is-disabled-when-the-last-r) — Build log search: Next result button is disabled when the last result is reached  
 [**TW-68390**](https://youtrack.jetbrains.com/issue/TW-68390/Build-log-search:-make-Next-button-search-for-new-results-starti) — Build log search: make Next button search for new results starting from the place user has clicked  
@@ -106,22 +106,22 @@ __28 April 2022__
 [**TW-73912**](https://youtrack.jetbrains.com/issue/TW-73912/Absence-of-an-index-on-test_metadata(key_id)-slows-down-startup-) — Absence of an index on test\_metadata(key\_id) slows down startup and can cause failure to start if connection timeout is configured  
 [**TW-73917**](https://youtrack.jetbrains.com/issue/TW-73917/IDEA&#39;s-remote-run-fails-to-determine-related-run-configurations) — IDEA&#39;s remote run fails to determine related run configurations  
 [**TW-74062**](https://youtrack.jetbrains.com/issue/TW-74062/Remote-debug-is-listening-wrong-host-and-doesn&#39;t-start-build-on-) — Remote debug is listening wrong host and doesn&#39;t start build on TeamCity server  
-[**TW-74111**](https://youtrack.jetbrains.com/issue/TW-74111/Fix-nesting-of-publishing-artifacts-messages-(verbose-logging-le)) — Fix nesting of publishing artifacts messages (verbose logging level)  
+[**TW-74111**](https://youtrack.jetbrains.com/issue/TW-74111/Fix-nesting-of-publishing-artifacts-messages-(verbose-logging-le)) — Fix nesting of publishing artifacts messages; verbose logging level  
 [**TW-74161**](https://youtrack.jetbrains.com/issue/TW-74161/Allow-to-disable-enable-integration-with-Space-merge-requests-wi) — Allow to disable/enable integration with Space merge requests without restart of server  
 [**TW-74181**](https://youtrack.jetbrains.com/issue/TW-74181/Concurrent-publishing-of-artifacts-via-service-messages-sometime) — Concurrent publishing of artifacts via service messages sometimes causes build to fail with FileNotFoundException when there is a large number of artifacts  
 [**TW-74284**](https://youtrack.jetbrains.com/issue/TW-74284/Endless-agent-upgrades-loop) — Endless agent upgrades loop  
-[**TW-74422**](https://youtrack.jetbrains.com/issue/TW-74422/Re-run-ignores-last-chain-structure.) — Re-run ignores last chain structure.  
-[**TW-74430**](https://youtrack.jetbrains.com/issue/TW-74430/Build-duration-(secs)-appears-is-wrong-while-build-is-checking-o) — Build duration (secs) appears is wrong while build is checking out sources  
-[**TW-74458**](https://youtrack.jetbrains.com/issue/TW-74458/%22preferredInvestigationProject%22-parameter-isn&#39;t-taken-into-accou) — &quot;preferredInvestigationProject&quot; parameter isn&#39;t taken into account by &quot;Assign investigation to ...&quot; button  
-[**TW-74549**](https://youtrack.jetbrains.com/issue/TW-74549/Add-build-number-build-configuration-to-build-status-popup) — Add build number/build configuration to build status popup  
-[**TW-74595**](https://youtrack.jetbrains.com/issue/TW-74595/Apply-Ring-UI-like-styles-to-Classic-UI-controls) — Apply Ring UI-like styles to Classic UI controls  
+[**TW-74422**](https://youtrack.jetbrains.com/issue/TW-74422/Re-run-ignores-last-chain-structure.) — Re-run ignores last chain structure.
+[**TW-74430**](https://youtrack.jetbrains.com/issue/TW-74430/Build-duration-(secs)-appears-is-wrong-while-build-is-checking-o) — Build duration (secs) appears is wrong while build is checking out sources
+[**TW-74458**](https://youtrack.jetbrains.com/issue/TW-74458/%22preferredInvestigationProject%22-parameter-isn&#39;t-taken-into-accou) — &quot;preferredInvestigationProject&quot; parameter isn&#39;t taken into account by "Assign investigation to ..." button
+[**TW-74549**](https://youtrack.jetbrains.com/issue/TW-74549/Add-build-number-build-configuration-to-build-status-popup) — Add build number/build configuration to build status popup
+[**TW-74595**](https://youtrack.jetbrains.com/issue/TW-74595/Apply-Ring-UI-like-styles-to-Classic-UI-controls) — Apply Ring UI-like styles to Classic UI controls
 [**TW-74734**](https://youtrack.jetbrains.com/issue/TW-74734/Builds-list-is-not-updated-when-a-build-is-taken-from-the-queue) — Builds list is not updated when a build is taken from the queue
-[**TW-74745**](https://youtrack.jetbrains.com/issue/TW-74745) — Build artifact directory can be removed by clean-up process if the build configuration name or the project external id was upper/lower-cased
-[**TW-74951**](https://youtrack.jetbrains.com/issue/TW-74951) — Misplaced agent name in a build line of the deployment section (Safari)
-[**TW-75102**](https://youtrack.jetbrains.com/issue/TW-75102) — SSH Auth fail to Devops Server (Azure DevOps or local TFS server)  
-[**TW-75114**](https://youtrack.jetbrains.com/issue/TW-75114) — Build does not start because of a missing condition type for a failure condition  
-[**TW-75138**](https://youtrack.jetbrains.com/issue/TW-75138/Remove-windows-new-lines-from-the-SSH-keys-before-passing-them-t) — Remove windows new lines from the SSH keys before passing them to Git executable  
-[**TW-75285**](https://youtrack.jetbrains.com/issue/TW-75285/Empty-auto-generated-virtual-configurations-remain-forever-after) — Empty auto-generated virtual configurations remain forever after deleting &quot;Run tests in parallel&quot; feature  
+[**TW-74745**](https://youtrack.jetbrains.com/issue/TW-74745) — Build artifact directory can be removed by clean-up process if the build configuration name or the project external id was upper or lower-cased 
+[**TW-74951**](https://youtrack.jetbrains.com/issue/TW-74951) — Misplaced agent name in a build line of the deployment section in Safari 
+[**TW-75102**](https://youtrack.jetbrains.com/issue/TW-75102) — SSH Auth fail to Devops Server, either Azure DevOps or local TFS server 
+[**TW-75114**](https://youtrack.jetbrains.com/issue/TW-75114) — Build does not start because of a missing condition type for a failure condition
+[**TW-75138**](https://youtrack.jetbrains.com/issue/TW-75138/Remove-windows-new-lines-from-the-SSH-keys-before-passing-them-t) — Remove windows new lines from the SSH keys before passing them to Git executable 
+[**TW-75285**](https://youtrack.jetbrains.com/issue/TW-75285/Empty-auto-generated-virtual-configurations-remain-forever-after) — Empty auto-generated virtual configurations remain forever after deleting "Run tests in parallel" feature 
 [**TW-75322**](https://youtrack.jetbrains.com/issue/TW-75322/Parallel-tests:-Add-option-to-preferably-run-tests-from-one-test) — Parallel tests: Add option to preferably run tests from one test suite on different agents  
 [**TW-75572**](https://youtrack.jetbrains.com/issue/TW-75572/cleanupPoliciesRest.html:-don&#39;t-return-virtual-projects) — cleanupPoliciesRest.html: don&#39;t return virtual projects  
 [**TW-75582**](https://youtrack.jetbrains.com/issue/TW-75582/Jira-Cloud-OAuth-401) — Jira Cloud OAuth 401  
