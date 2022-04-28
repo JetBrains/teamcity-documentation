@@ -73,7 +73,7 @@ TeamCity can [set up CloudFront integration for you](#Automatic+CloudFront+Setup
 
 The CloudFront integration requires configuring:
 * an [OAI](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) user
-* a [CloudFront distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html)
+* two [CloudFront distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html), one for uploading and downloading artifacts.
 * a [trusted key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#choosing-key-groups-or-AWS-accounts)
 * an SSH-2 RSA [key pair](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-creating-cloudfront-key-pairs) (public key + private key) in PEM format
 
@@ -81,25 +81,27 @@ The CloudFront integration requires configuring:
 
 To enable the CloudFront support for the current S3 bucket, activate the _Use CloudFront to transport artifacts_ option in the storage settings.
 
-In the _Distribution_, choose an available distribution, if it has been [manually created](#Manual+CloudFront+Setup) in your Amazon profile, or click ![magic-wand.png](magic-wand.png) to _[configure settings automatically](#Automatic+CloudFront+Setup)_.
+In each of the dropdowns, _Distribution for uploads_ and _Distribution for downloads_, choose an available distribution, 
+if it was [manually created](#Manual+CloudFront+Setup) in your Amazon profile, 
+or click ![magic-wand.png](magic-wand.png) to _[configure settings automatically](#Automatic+CloudFront+Setup)_.
 
 #### Automatic CloudFront Setup
 
 TeamCity can configure the settings automatically. This involves:
 * Generating a key pair and uploading a public key to CloudFront.
 * Creating a new key group in CloudFront.
-* Creating a new distribution with:
-  * the __Use all edge locations__ price class
-  * a new [Origin Access Identity](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) that can access the current bucket
-  * a single default behavior with:
-    * `GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, `DELETE` as allowed HTTP methods
-    * a new [key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-adding-trusted-signers) with the viewer access
-    * a custom [cache policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html) that allows passing all query strings
-* Adding a new policy to an S3 bucket to allow the new distribution accessing it. See the [policy example](#S3+Policy+Example).
+* Creating two new distributions with:
+  * the __Use all edge locations__ price class.
+  * a new [Origin Access Identity](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) that can access the current bucket.
+  * the default behaviour defining
+      * allowed HTTP methods for uploading artifacts: `GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, `DELETE`, for downloading: `GET`, `HEAD`, `OPTIONS`;
+      * a new [key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-adding-trusted-signers) with the viewer access;
+      * a custom [cache policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html) that allows passing all query strings.
+* Adding a new policy to an S3 bucket to allow the new distributions access to it. See the [policy example](#S3+Policy+Example).
 
 #### Manual CloudFront Setup
 
-To configure a distribution in CloudFront:
+For security reasons, we recommend configuring two separate distributions for artifacts upload and download. For each distribution:
 1. Generate a key pair in [SSH-2 RSA key format](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-creating-cloudfront-key-pairs).
 2. Upload the public key from the pair to CloudFront.
 3. [Add a new key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-adding-trusted-signers) in CloudFront and add the created public key to this group.
@@ -107,7 +109,7 @@ To configure a distribution in CloudFront:
 5. If you use a private bucket, create a new [OAI](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) user.
 6. [Create a distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating.html) and attach your key group to it:
    * Make sure to choose the same S3 bucket as specified in TeamCity.
-   * __Allowed HTTP methods__: `GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, `DELETE`
+   * __Allowed HTTP methods__ for uploading artifacts`GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, `DELETE`; for downloading `GET`, `HEAD`, `OPTIONS` 
    * __Restrict viewer access__: _yes_
    * __Trusted authorization type__: _trusted key groups_
    * __Cache key and origin requests__: _Cache policy and origin request policy_
@@ -117,7 +119,7 @@ To configure a distribution in CloudFront:
    * For public buckets, disable the __Block public access__ option.
 7. [Add a new policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/add-bucket-policy.html) to your S3 bucket. See the [policy example](#S3+Policy+Example).
 
-When configured, the distribution should automatically appear in the _CloudFront distribution_ drop-down menu:
+When configured, the distributions should automatically appear in the _Distribution for uploads_  and _Distribution for downloads_ drop-down menus.
 1. Select the target CloudFront distribution.
 2. In _CloudFront public key_, select the public key associated with this distribution.
 3. In _Private SSH key_, upload the private key from the pair.
