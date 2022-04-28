@@ -19,6 +19,7 @@ If you previously installed the non-bundled Qodana plugin and used DSL, please c
 {product="tc"}
 
 ## Enhanced integration with Amazon Web Services
+{product="tc"}
 
 TeamCity 2022.04 adds new features to its cloud integrations.
 
