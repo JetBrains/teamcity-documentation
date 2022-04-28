@@ -1,6 +1,6 @@
 [//]: # (title: TeamCity 2022.04 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2022.04 Release Notes)  
-__Build: 108495__  
+__Build: 108502__  
 __28 April 2022__    
 
 ### Feature  
@@ -110,12 +110,12 @@ __28 April 2022__
 [**TW-74161**](https://youtrack.jetbrains.com/issue/TW-74161/Allow-to-disable-enable-integration-with-Space-merge-requests-wi) — Allow to disable/enable integration with Space merge requests without restart of server  
 [**TW-74181**](https://youtrack.jetbrains.com/issue/TW-74181/Concurrent-publishing-of-artifacts-via-service-messages-sometime) — Concurrent publishing of artifacts via service messages sometimes causes build to fail with FileNotFoundException when there is a large number of artifacts  
 [**TW-74284**](https://youtrack.jetbrains.com/issue/TW-74284/Endless-agent-upgrades-loop) — Endless agent upgrades loop  
-[**TW-74422**](https://youtrack.jetbrains.com/issue/TW-74422/Re-run-ignores-last-chain-structure.) — Re-run ignores last chain structure.
-[**TW-74430**](https://youtrack.jetbrains.com/issue/TW-74430/Build-duration-(secs)-appears-is-wrong-while-build-is-checking-o) — Build duration (secs) appears is wrong while build is checking out sources
-[**TW-74458**](https://youtrack.jetbrains.com/issue/TW-74458/%22preferredInvestigationProject%22-parameter-isn&#39;t-taken-into-accou) — &quot;preferredInvestigationProject&quot; parameter isn&#39;t taken into account by "Assign investigation to ..." button
-[**TW-74549**](https://youtrack.jetbrains.com/issue/TW-74549/Add-build-number-build-configuration-to-build-status-popup) — Add build number/build configuration to build status popup
-[**TW-74595**](https://youtrack.jetbrains.com/issue/TW-74595/Apply-Ring-UI-like-styles-to-Classic-UI-controls) — Apply Ring UI-like styles to Classic UI controls
-[**TW-74734**](https://youtrack.jetbrains.com/issue/TW-74734/Builds-list-is-not-updated-when-a-build-is-taken-from-the-queue) — Builds list is not updated when a build is taken from the queue
+[**TW-74422**](https://youtrack.jetbrains.com/issue/TW-74422) — Re-run ignores last chain structure.
+[**TW-74430**](https://youtrack.jetbrains.com/issue/TW-74430) — Build duration (secs) appears is wrong while build is checking out sources
+[**TW-74458**](https://youtrack.jetbrains.com/issue/TW-74458) — &quot;preferredInvestigationProject&quot; parameter isn&#39;t taken into account by "Assign investigation to ..." button
+[**TW-74549**](https://youtrack.jetbrains.com/issue/TW-74549) — Add build number/build configuration to build status popup
+[**TW-74595**](https://youtrack.jetbrains.com/issue/TW-74595) — Apply Ring UI-like styles to Classic UI controls
+[**TW-74734**](https://youtrack.jetbrains.com/issue/TW-74734) — Builds list is not updated when a build is taken from the queue
 [**TW-74745**](https://youtrack.jetbrains.com/issue/TW-74745) — Build artifact directory can be removed by clean-up process if the build configuration name or the project external id was upper or lower-cased 
 [**TW-74951**](https://youtrack.jetbrains.com/issue/TW-74951) — Misplaced agent name in a build line of the deployment section in Safari 
 [**TW-75102**](https://youtrack.jetbrains.com/issue/TW-75102) — SSH Auth fail to Devops Server, either Azure DevOps or local TFS server 
@@ -123,7 +123,7 @@ __28 April 2022__
 [**TW-75138**](https://youtrack.jetbrains.com/issue/TW-75138/Remove-windows-new-lines-from-the-SSH-keys-before-passing-them-t) — Remove windows new lines from the SSH keys before passing them to Git executable 
 [**TW-75285**](https://youtrack.jetbrains.com/issue/TW-75285/Empty-auto-generated-virtual-configurations-remain-forever-after) — Empty auto-generated virtual configurations remain forever after deleting "Run tests in parallel" feature 
 [**TW-75322**](https://youtrack.jetbrains.com/issue/TW-75322/Parallel-tests:-Add-option-to-preferably-run-tests-from-one-test) — Parallel tests: Add option to preferably run tests from one test suite on different agents  
-[**TW-75572**](https://youtrack.jetbrains.com/issue/TW-75572/cleanupPoliciesRest.html:-don&#39;t-return-virtual-projects) — cleanupPoliciesRest.html: don&#39;t return virtual projects  
+[**TW-75572**](https://youtrack.jetbrains.com/issue/TW-75572) — cleanupPoliciesRest.html: don&#39;t return virtual projects  
 [**TW-75582**](https://youtrack.jetbrains.com/issue/TW-75582/Jira-Cloud-OAuth-401) — Jira Cloud OAuth 401  
 [**TW-75612**](https://youtrack.jetbrains.com/issue/TW-75612/Main-node-can-fail-to-take-an-exclusive-lock-which-is-required-t) — Main node can fail to take an exclusive lock which is required to perform upgrade  
 [**TW-75634**](https://youtrack.jetbrains.com/issue/TW-75634/Exception-occurred-during-finishing-of-the-build-...-java.lang.I) — Exception occurred during finishing of the build #... java.lang.IllegalArgumentException  
