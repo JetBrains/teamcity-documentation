@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity 2022.04 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2022.04 Release Notes)  
-__Build: 108478__  
-__27 April 2022__    
+__Build: 108495__  
+__28 April 2022__    
 
 ### Feature  
 
@@ -38,11 +38,13 @@ __27 April 2022__
 [**TW-74421**](https://youtrack.jetbrains.com/issue/TW-74421/Add-support-(connection-type)-for-public-ECR) — Add support (connection type) for public ECR  
 [**TW-74651**](https://youtrack.jetbrains.com/issue/TW-74651/Support-the-Gradle-runner-parallel-tests) — Support the Gradle runner parallel tests  
 [**TW-74653**](https://youtrack.jetbrains.com/issue/TW-74653/Support-the-Maven-runner-parallel-tests) — Support the Maven runner parallel tests  
-### Usability Problem  
+
+### Usability Problem
+
 [**TW-75224**](https://youtrack.jetbrains.com/issue/TW-75224/The-change-status-preview-on-the-bar-graph-looks-ridiculous-when) — The change status preview on the bar graph looks ridiculous when the status is the same  
 [**TW-29414**](https://youtrack.jetbrains.com/issue/TW-29414/Include-name-of-the-deleted-object-into-%22Are-you-sure-you-want-t) — Include name of the deleted object into &quot;Are you sure you want to delete this project&quot; confirmation  
 [**TW-30985**](https://youtrack.jetbrains.com/issue/TW-30985/Improve-browser-page-title-to-differentiate-between-build-config) — Improve browser page title to differentiate between build configurations better  
-[**TW-61639**](https://youtrack.jetbrains.com/issue/TW-61639/Improve-Build-overview-tabs-placement-on-expanded-build-area) — Improve Build overview tabs placement on expanded build area  
+[**TW-61639**](https://youtrack.jetbrains.com/issue/TW-61639/Improve-Build-overview-tabs-placement-on-expanded-build-area) — Improve Build overview tabs placement on expanded build area
 [**TW-64933**](https://youtrack.jetbrains.com/issue/TW-64933/Remember-filter-value-in-sidebar) — Remember filter value in sidebar  
 [**TW-68007**](https://youtrack.jetbrains.com/issue/TW-68007/Build-Configuration-Home-Project-Home-links-in-build-configurati) — Build Configuration Home/ Project Home links in build configuration/project settings are unobvious  
 [**TW-68324**](https://youtrack.jetbrains.com/issue/TW-68324/Automatically-remove-%22Fixed%22-mark-from-investigation-on-new-fail) — Automatically remove &quot;Fixed&quot; mark from investigation on new failure  
@@ -113,11 +115,11 @@ __27 April 2022__
 [**TW-74458**](https://youtrack.jetbrains.com/issue/TW-74458/%22preferredInvestigationProject%22-parameter-isn&#39;t-taken-into-accou) — &quot;preferredInvestigationProject&quot; parameter isn&#39;t taken into account by &quot;Assign investigation to ...&quot; button  
 [**TW-74549**](https://youtrack.jetbrains.com/issue/TW-74549/Add-build-number-build-configuration-to-build-status-popup) — Add build number/build configuration to build status popup  
 [**TW-74595**](https://youtrack.jetbrains.com/issue/TW-74595/Apply-Ring-UI-like-styles-to-Classic-UI-controls) — Apply Ring UI-like styles to Classic UI controls  
-[**TW-74734**](https://youtrack.jetbrains.com/issue/TW-74734/Builds-list-is-not-updated-when-a-build-is-taken-from-the-queue) — Builds list is not updated when a build is taken from the queue 
-[**TW-74745**](https://youtrack.jetbrains.com/issue/TW-74745/Build-artifact-directory-can-be-removed-by-clean-up-process-if-t) — Build artifact directory can be removed by clean-up process if the build configuration name or the project external id was upper(lower)cased
-[**TW-74951**](https://youtrack.jetbrains.com/issue/TW-74951/Misplaced-agent-name-in-a-build-line-of-the-deployment-section-) — Misplaced agent name in a build line of the deployment section (Safari)
-[**TW-75102**](https://youtrack.jetbrains.com/issue/TW-75102/SSH-Auth-fail-to-Devops-Server-(Azure-DevOps-or-local-TFS-server)) — SSH Auth fail to Devops Server (Azure DevOps or local TFS server)  
-[**TW-75114**](https://youtrack.jetbrains.com/issue/TW-75114/Build-does-not-start-because-of-a-missing-condition-type-for-a-f) — Build does not start because of a missing condition type for a failure condition  
+[**TW-74734**](https://youtrack.jetbrains.com/issue/TW-74734/Builds-list-is-not-updated-when-a-build-is-taken-from-the-queue) — Builds list is not updated when a build is taken from the queue
+[**TW-74745**](https://youtrack.jetbrains.com/issue/TW-74745) — Build artifact directory can be removed by clean-up process if the build configuration name or the project external id was upper/lower-cased
+[**TW-74951**](https://youtrack.jetbrains.com/issue/TW-74951) — Misplaced agent name in a build line of the deployment section (Safari)
+[**TW-75102**](https://youtrack.jetbrains.com/issue/TW-75102) — SSH Auth fail to Devops Server (Azure DevOps or local TFS server)  
+[**TW-75114**](https://youtrack.jetbrains.com/issue/TW-75114) — Build does not start because of a missing condition type for a failure condition  
 [**TW-75138**](https://youtrack.jetbrains.com/issue/TW-75138/Remove-windows-new-lines-from-the-SSH-keys-before-passing-them-t) — Remove windows new lines from the SSH keys before passing them to Git executable  
 [**TW-75285**](https://youtrack.jetbrains.com/issue/TW-75285/Empty-auto-generated-virtual-configurations-remain-forever-after) — Empty auto-generated virtual configurations remain forever after deleting &quot;Run tests in parallel&quot; feature  
 [**TW-75322**](https://youtrack.jetbrains.com/issue/TW-75322/Parallel-tests:-Add-option-to-preferably-run-tests-from-one-test) — Parallel tests: Add option to preferably run tests from one test suite on different agents  
@@ -143,7 +145,7 @@ __27 April 2022__
 [**TW-69555**](https://youtrack.jetbrains.com/issue/TW-69555/Links-to-correct-Team-Foundation-Work-Items-return-404-error) — Links to correct Team Foundation Work Items return 404 error  
 [**TW-70151**](https://youtrack.jetbrains.com/issue/TW-70151/The-option-%22Show-all-personal-builds%22-does-not-affect-the-result) — The option &quot;Show all personal builds&quot; does not affect the result of the test runs list request  
 [**TW-70200**](https://youtrack.jetbrains.com/issue/TW-70200/Per-usage-license:-secondary-node-reports-%22Failed-to-send-server) — Per-usage license: secondary node reports &quot;Failed to send server usage data&quot;  
-[**TW-71108**](https://youtrack.jetbrains.com/issue/TW-71108/IDEA-runner-failes-to-build-project-with-languageLevel-more-than) — IDEA runner failes to build project with languageLevel more than JDK 11  
+[**TW-71108**](https://youtrack.jetbrains.com/issue/TW-71108/IDEA-runner-failes-to-build-project-with-languageLevel-more-than) — IDEA runner fails to build project with languageLevel more than JDK 11  
 [**TW-71862**](https://youtrack.jetbrains.com/issue/TW-71862/Display-the-number-of-projects-that-cannot-be-seen-by-user-due-t) — Display the number of projects that cannot be seen by user due to lack of permissions on GraphQL agent pool projects tab.  
 [**TW-71874**](https://youtrack.jetbrains.com/issue/TW-71874/Renaming-moving-archiving-of-projects-should-be-reflected-in-Gra) — Renaming/moving/archiving of projects should be reflected in GraphQL agent pool projects tab  
 [**TW-71927**](https://youtrack.jetbrains.com/issue/TW-71927/fix-%22-Please-do-not-use-ActionPlaces.UNKNOWN-or-the-empty-place%22) — fix &quot; Please do not use ActionPlaces.UNKNOWN or the empty place&quot;  

@@ -49,8 +49,6 @@ resource consuming builds, or resource removing operations, configure [the Build
 
 TeamCity 2022.04 helps you improve the allocation of your build agents by [limiting the number of simultaneously running builds per branch](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds).
 For example, your main branch may have an unlimited number of builds that will occupy as many build agents as they need, while you limit your feature branches to running just one build at a time.
-For example, your main branch may have an unlimited number of builds that will occupy as many build agents as they need, while you limit your feature branches to running just one build at a time.
-For example, your main branch may have an unlimited number of builds that will occupy as many build agents as they need, while you limit your feature branches to running just one build at a time.
 
 ## Smarter VCS Integrations
 TeamCity improves VCS integrations and provides the following new features.
@@ -124,12 +122,9 @@ If you choose to test all VCS roots, TeamCity will check whether they successful
 This measure helps ensure that none of your pipelines will break after switching to native Git.
 If the connection test is successful, you can enable the native Git support on your server(s).
 
-Our TeamCity server statistics show that using native git significantly improves the performance of VCS-related operations on the server:
-new changes and branches appear much faster. Here's the chart showing the time required by `git fetch` operations:
-- Before 14:30 TeamCity had JGit enabled on the server and the fetch required a lot more time.
-- After 14:30 TeamCity switched to native Git, meaning that the server started launching _git executable_ to perform fetch. As you can see, the time can be decreased up to 10 times in comparison with JGit.
+Our internal TeamCity server statistics show that using native git significantly improves the performance of the VCS-related operations on the server:
+new changes and branches appear several times faster in comparison with JGit.
 
-<img src="improved-git-fetch.png" alt="Git Fetch with JGit and Native Git" width="750"/>
 
 ## Native Git for VCS-related operations on the server
 {id="Native+Git" product="tcc"}
