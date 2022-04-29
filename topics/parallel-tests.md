@@ -74,7 +74,7 @@ These parameters are:
 | system.teamcity.build.parallelTests.excludesFile | Contains a path on the agent to a text file with tests which should be excluded from execution |
 
 The format of the file with excluded tests is as follows:
-```
+```Plain Text
 #version=1
 #algorithm=<name of the algorithm used to split tests, optional>
 #current_batch=<number of the current batch, same as teamcity.build.parallelTests.currentBatch parameter>
@@ -111,7 +111,7 @@ class TestCase1 {
 
 will produce the following test names in TeamCity:
 
-```Shell
+```Plain Text
 
 org.example.tests.TestCase1.testMethod1
 org.example.tests.TestCase1.testMethod2
@@ -120,7 +120,7 @@ org.example.tests.TestCase1.testMethod2
 
 Then the parameter `system.teamcity.build.parallelTests.excludesFile` will point to a text file with the following content:
 
-```Shell
+```Plain Text
 
 #version=1
 #current_batch=1
