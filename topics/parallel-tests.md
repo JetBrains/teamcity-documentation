@@ -3,9 +3,9 @@
 
 TeamCity is now capable of parallelizing the execution of your tests by distributing them across multiple build agents, thus minimizing the overall duration of tests. The tests of a build can be automatically split into batches, and each batch will run on a separate build agent. 
 This feature addresses a popular use case when a build consequently runs many independent tests on the same agent while they could technically be running in parallel, utilizing resources of multiple agents.
-Previously, to emulate such behavior, some users would configure several build configurations and join them in a chain with parallel connections. This approach works, but requires implementing sometimes non-trivial logic of tests distribution across batches. 
+Previously, to emulate such behavior, some users would configure several build configurations and join them in a chain with parallel connections. This approach works, but sometimes requires implementing a non-trivial logic of distributing tests across batches. 
 
-In TeamCity 2022.04, the tests distribution logic is provided by TeamCity itself. In addition, such build runners as [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), and [.NET](net.md) are capable of automatic filtering of the tests on the agent without the need to change build steps settings.  
+In TeamCity 2022.04, the tests' distribution logic is provided by TeamCity itself. In addition, such build runners as [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), and [.NET](net.md) are capable of automatic filtering of the tests on the agent without the need to change the settings of build steps.  
 
 
 ## Run tests in parallel
@@ -30,7 +30,7 @@ In the future, the changes to the build steps of the original configuration will
 
 >The settings of the original build configuration are not affected by the _Parallel tests_ build feature. 
 >
->On the other hand, the number and settings of generated build configurations are fully controlled by the _Parallel tests_ build feature. The generated build configurations are read-only by default and are not intended to be modified manually. 
+>On the other hand, the number and settings of the generated build configurations are fully controlled by the _Parallel tests_ build feature. The generated build configurations are read-only by default and are not intended to be modified manually. 
 The generated build configurations are also placed into a subproject that is hidden.
 If the project has [versioned settings](storing-project-settings-in-version-control.md) enabled, the generated build configurations will not be committed to the VCS repository.
 
@@ -54,10 +54,10 @@ Automatic execution of a batch of tests instead of the whole set of tests, is on
   * Maven Failsafe Plugin minimal supported version: 2.13.
 
 * [Gradle](gradle.md)
-  * Gradle minimal supported version: 5.0
+  * Gradle minimal supported version: 5.0.
 
 * [.NET](net.md)
-  * Microsoft.NET.Test.Sdk minimal supported version: 16.0
+  * Microsoft.NET.Test.Sdk minimal supported version: 16.0.
 
 ### Custom execution of parallelized tests
 {id="custom-tests"}
@@ -139,14 +139,14 @@ The build step with custom tests' execution logic should use this file and filte
 * The [Code coverage](code-quality-tools.md#code-coverage-tools) statistics will be inaccurate for builds with parallel tests because it will be collected for a fraction of tests executed by the current batch.
 * After enabling parallel tests in a build configuration, it will stop publishing [artifacts](build-artifact.md). Consider having a separate build configuration that publishes artifacts.
 * A newly added test which is not yet known to TeamCity will run in each batch during the first run.
-* When TeamCity divides tests among batches it only takes into account duration of the test itself. The duration of setUp/tearDown or any other preparation methods is not know to TeamCity, because of this the duration of batches may not be equal.
-* An agent selected in the custom build dialog for a build with parallel tests will be ignored because the build will be transformed to a composite one after the triggering.
-* Parameters published by the build steps via [setParameter](service-messages.md#set-parameter) service message, as well as runner specific parameters such as `maven.project.version` won't be available in a composite build with parallel tests
-* When it comes to the build configurations limit in TeamCity Professional version the automatically generated build configurations are counted as normal build configurations 
+* When TeamCity divides tests into batches, it only takes into account the duration of the test itself. The duration of setUp/tearDown or any other preparation methods is not know to TeamCity, therefore the duration of batches may not be equal.
+* An agent selected in the custom build dialog for a build with parallel tests will be ignored because the build will be transformed into a composite one after triggering.
+* Parameters published by the build steps via the [setParameter](service-messages.md#set-parameter) service message, as well as runner specific parameters, such as `maven.project.version`, won't be available in a composite build with parallel tests.
+* When it comes to the build configurations limit in the TeamCity Professional version, the automatically generated build configurations are counted as normal build configurations.
 
 ### Known bugs
  
 * The [Enforce Clean Checkout action](clean-checkout.md#Enforcing+Clean+Checkout) does not work for build configurations with parallel tests configured.
-* Subsequent start of a build with parallel tests won't reuse already existing builds in generated build configurations even if there were no new VCS commits
-* A failed test can be executed by a different batch on the next run, showing that the test is newly failed while in fact it was already failing but in some other batch
-* Builds with parallel tests triggered in a branch won't use the build steps from this branch, instead build steps from the default branch will be used.
+* A subsequent start of a build with parallel tests won't reuse already existing builds of the generated build configurations even if there were no new VCS commits.
+* A failed test can be executed by a different batch on the next run, showing that the test is newly failed while in fact it was already failing in some other batch.
+* Builds with parallel tests triggered in a branch won't use the build steps from this branch; the build steps from the default branch will be used instead.
