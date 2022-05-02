@@ -356,7 +356,7 @@ When Docker is starting Windows containers with __process isolation__, it uses a
 To resolve this issue, specify a dedicated volume mapping for the `..\TeamCity\temp` directory in the `docker run` command. We also suggest ensuring that a sufficient amount of resources is allocated to this process.
 
 ```Shell
-docker run -it --memory="6g" --cpus=4 -e TEAMCITY_SERVER_MEM_OPTS="-Xmx3g -XX:MaxPermSize=270m -XX:ReservedCodeCacheSize=450m" --name teamcity-server-instance
+docker run --memory="6g" --cpus=4 -e TEAMCITY_SERVER_MEM_OPTS="-Xmx3g -XX:MaxPermSize=270m -XX:ReservedCodeCacheSize=450m" --name teamcity-server-instance
     -v <path-to-data-directory>:C:/ProgramData/JetBrains/TeamCity 
     -v <path-to-logs-directory>:C:/TeamCity/logs  
     -v <path-to-temp-directory>:C:/TeamCity/temp  
