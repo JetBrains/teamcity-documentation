@@ -154,7 +154,13 @@ To remove the DSL API version from the imported package names, the following sho
 </dependencies>
 ```
 
-2. Change imports in all the Kotlin files.
+2. Make sure TeamCity server is up and running.
+
+   The artifact with id `configs-dsl-kotlin-plugins-latest` is provided by the TeamCity server.
+   This is the same TeamCity server which is specified in the `<repositories/>` section of the pom.xml with id `teamcity-server`.
+   Maven should be able to download the artifact `configs-dsl-kotlin-plugins-latest`, hence this server should be up and running. 
+
+3. Change imports in all the Kotlin files.
 
    The version part of the package name should be removed in all the Kotlin files, for instance:
 
@@ -164,7 +170,7 @@ To remove the DSL API version from the imported package names, the following sho
 
    `import jetbrains.buildServer.configs.kotlin.*`
 
-3. Compile DSL and generate settings
+4. Compile DSL and generate settings.
 
    After the changes to pom.xml and Kotlin files, it is recommended to run `mvn teamcity-configs:generate` task to ensure that the project still compiles.
    If there are no errors, then these changes can be checked into the versioned settings repository.
