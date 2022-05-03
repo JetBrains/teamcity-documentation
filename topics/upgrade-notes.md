@@ -20,7 +20,7 @@ Download newer versions of these plugins from JetBrains Marketplace:
 * [Github Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks)
 * [Hashicorp Vault Support](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support)
 
-The [Gradle Build Scan](https://github.com/etiennestuder/gradle-build-scan-teamcity-plugin) plugin is also incomplatible with 2022.04 but it does not have an updated version on the Marketplace yet. You can download the fixed version of the plugin from [teamcity.jetbrains.com](https://teamcity.jetbrains.com/repository/download/TeamCityThirdPartyPlugins_TeamcityBuildScanPlugin_Build/3847037:id/teamcity-build-scan-plugin-0.22-prerelease.zip).
+The [Gradle Build Scan](https://github.com/etiennestuder/gradle-build-scan-teamcity-plugin) plugin is also incompatible with 2022.04 but it does not have an updated version on the Marketplace yet. You can download the fixed version of the plugin from [teamcity.jetbrains.com](https://teamcity.jetbrains.com/repository/download/TeamCityThirdPartyPlugins_TeamcityBuildScanPlugin_Build/3847037:id/teamcity-build-scan-plugin-0.22-prerelease.zip).
 
 
 ### Bundled tools updates
