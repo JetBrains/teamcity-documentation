@@ -525,3 +525,13 @@ TeamCity uses an ssh proxy when connecting via native Git. See [the related issu
 ### Custom ssl certificates are not supported for native Git 
 
 Custom ssl certificates support for native Git on the server is not available.See [the related issue](https://youtrack.jetbrains.com/issue/TW-75507/Custom-ssl-certificate-support-for-native-git-on-server)
+
+### Publishing artifacts to third party S3-compatibles storages may fail 
+{product="tc"}
+
+TeamCity 2022.04 changes [the ACL setting related to the Amazon S3 artifact storage](https://youtrack.jetbrains.com/issue/TW-75512), 
+which may cause publishing artifacts to third party S3-compatibles storages, such as Backblaze, to fail. 
+
+To fix this problem after updating to TeamCity 2022.04, download the plugin version from [the related issue](https://youtrack.jetbrains.com/issue/TW-76119/Artifact-upload-to-Backblaze-B2-s-S3-compatible-API-fails-with-T#focus=Comments-27-6054071.0-0) 
+and add the `storage.s3.acl` configuration parameter with the required `acl` value. 
+All the values listed [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl) are supported.
