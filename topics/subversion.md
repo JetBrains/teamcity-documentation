@@ -95,7 +95,7 @@ Externals support
 
 Select one of the following options to control the SVN externals processing.
 
-* _Full support (load changes and checkout)_: TeamCity will check out all configuration's sources (including the sources from the externals) and will gather and display information about externals' changes on the __[Changes](viewing-user-changes-in-builds.md)__ tab.
+* _Full support (load changes and checkout)_: TeamCity will check out all the configuration's sources (including the sources from the externals) and will gather and display information about externals' changes on the __[Changes](viewing-user-changes-in-builds.md)__ tab. Note that [versioned settings](storing-project-settings-in-version-control.md) may be affected as enabling this option will cause [timestamps to be added to revisions](https://youtrack.jetbrains.com/issue/TW-75645/).
 * _Checkout, but ignore changes_: TeamCity will check out the sources from externals but any changes in externals' source files will not be gathered and displayed on the __[Changes](viewing-user-changes-in-builds.md)__ tab. You can use this option if you have several SVN externals and do not want to get information about any changes made in the externals' source files.   
     
    <note>
