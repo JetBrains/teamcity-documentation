@@ -16,7 +16,7 @@ You can restore backed up data into the same or a different database; from/to an
 
 A newer version of TeamCity can be used to restore the backup created with any previous TeamCity version (provided that the TeamCity version is later than 6.0).
 
-During restoration of a large database you might want to configure database-specific settings to make the bulk data changes faster (like setting SQL Server "Recovery Model" to "Simple"). Consult your DBA for more details.
+During the restoration of a large database, you might want to configure database-specific settings to make bulk data changes faster (like setting SQL Server "Recovery Model" to "Simple"). Consult your DBA for more details.
 
 A TeamCity [backup file](teamcity-data-backup.md#Backing+up+Data) __does not contain build artifacts__. To back up the build logs and artifacts, copy the contents of the [artifact directory](build-artifact.md#Artifacts+Storage) (`<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` by default) from the old location to the new one manually. The general compatibility rule of the data under `system/artifacts` is that files created by older TeamCity versions can be read by newer versions, but not necessarily vice versa.
 
@@ -24,18 +24,23 @@ When [external artifacts storage](configuring-artifacts-storage.md#External+Arti
 
 See also details on the directories in the [TeamCity Data Directory](teamcity-data-directory.md) description.
 
-Note that it is important to __copy artifacts before the server start__ as reindexing build metadata is launched automatically on starting the server restored from backup. If some artifacts are missing during indexing, this could lead to failures in the work of some parts of the TeamCity server (for example, a NuGet feed). In case you copied artifacts after the server start (or copying of artifacts was not completed before the server start), you might need to [reindex build metadata manually](common-problems.md#Problems+with+TeamCity+NuGet+Feed) and wait until reindexing is finished.
+Note that it is important to __copy artifacts before the server start__ as reindexing build metadata 
+is launched automatically on starting the server restored from backup. 
+If some artifacts are missing during indexing, this could cause some parts of the TeamCity server  to fail
+(for example, a NuGet feed). In case you copied artifacts after the server start (or copying of artifacts was not completed before the server start), 
+you might need to [reindex build metadata manually](common-problems.md#Problems+with+TeamCity+NuGet+Feed) and wait until reindexing is finished.
 
 ## Performing Restore
 
-TeamCity can automatically restore the backed up data. This process relies on the maintainDB utility, but performs all the necessary operations under the hood. To restore the backed up files on the first start of the TeamCity server:
+TeamCity can automatically restore the backed up data to _a new TeamCity installation_ (for example, to create a copy of an existing server). This process relies on the `maintainDB` utility, but performs all the necessary operations under the hood: 
+
 1. Open the TeamCity URL (by default, [`http://localhost/`](http://localhost/){nullable="true"} for `exe` installations and [`http://localhost:8111/`](http://localhost:8111/){nullable="true"} for `tar.gz`) in a browser.
 2. On the _TeamCity First Start_ page, enter the path to the [Data Directory](teamcity-data-directory.md) and click __Restore from backup__.
 3. Enter an absolute path to the backup directory on the TeamCity server or upload a ZIP archive with the backed up data.
 4. Choose the target database. If you use an external database, configure its address and credentials.
 5. Proceed with the restoration.
 
-TeamCity will restore the data and display the maintainDB utility log. If the version of the backed up data format is earlier than the current one, TeamCity will propose to upgrade it.
+TeamCity will restore the data and display the `maintainDB` utility log. If the version of the backed up data format is earlier than the current one, TeamCity will propose to upgrade it.
 
 <note>
 
@@ -44,13 +49,15 @@ __Limitations of automatic restoration__
 * Only builds with both database and configuration present in the backup file can be restored automatically. Some backup files with the [custom scope](creating-backup-from-teamcity-web-ui.md#backup-scope) might not be restored properly.
 * In case automatic restoration faces an error (for example, not enough database memory), you will need to clean the database manually and then try restoring again.
 
-In both cases, we suggest that you restore TeamCity manually via maintainDB, as described below.
+In both cases, we recommend that you restore TeamCity manually via `maintainDB`, as described below.
 
 </note>
 
-Alternatively, you can use the maintainDB utility manually. This section describes __only some__ of the `maintainDB` options. For the complete list of all available options, run `maintainDB` from the command line with no parameters. See also maintainDB [startup options](creating-backup-via-maintaindb-command-line-tool.md#maintainDB+Startup+Options).
+<anchor name="maintaindb_restore"/>
 
-To perform restore from a backup file via maintainDB:
+To restore backed up files to _an existing TeamCity installation_ or to overcome the limitation of the automatic restore, use the `maintainDB` utility manually. This section describes __only some__ of the `maintainDB` options. For the complete list of all available options, run `maintainDB` from the command line with no parameters. See also maintainDB [startup options](creating-backup-via-maintaindb-command-line-tool.md#maintainDB+Startup+Options).
+
+To perform restore from a backup file via `maintainDB`:
 1. Install the TeamCity server from a `tar.gz` or `.exe` installation package. Do not start the TeamCity server.
 2. Create a new empty [TeamCity Data Directory](teamcity-data-directory.md).
 3. Choose one of the options:   
