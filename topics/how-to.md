@@ -159,7 +159,7 @@ The contents of this section have been moved to the [dedicated article](security
 ## Configure Newly Installed MySQL Server
 {product="tc"}
 
-If MySQL server is going to be used with TeamCity in addition to the [basic setup](set-up-external-database.md#MySQL), you should review and probably change some of the MySQL server settings. If MySQL is installed on Windows, the settings are located in `my.ini` file which usually can be found under MySQL installation directory. For Unix-like systems the file is called `my.cnf` and can be placed somewhere under `/etc` directory. Read more about configuration file location in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/option-files.html). Note: you'll need to restart MySQL server after changing settings in `my.ini|my.cnf`.
+If MySQL server is going to be used with TeamCity in addition to the [basic setup](set-up-external-database.md#MySQL), you should review and probably change some of the MySQL server settings. If MySQL is installed on Windows, the settings are located in `my.ini` file which usually can be found under MySQL installation directory. For Unix-like systems the file is called `my.cnf` and can be placed somewhere under `/etc` directory. Read more about configuration file location in [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/option-files.html). Note: you'll need to restart MySQL server after changing settings in `my.ini|my.cnf`.
 
 The following settings should be reviewed and/or changed:
 
@@ -202,7 +202,7 @@ innodb_buffer_pool_size=2000M
 
 ```
 
-We recommend to start with 2Gb and increase it if you experience slowness and have enough memory. After increasing buffer pool size you should also change size of the [`innodb_log_file_size`](http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_log_file_size) setting (its value can be calculated as `innodb_log_file_size/N`, where N is the number of log files in the group (2 by default)):
+We recommend to start with 2Gb and increase it if you experience slowness and have enough memory. After increasing buffer pool size you should also change size of the [`innodb_log_file_size`](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_file_size) setting (its value can be calculated as `innodb_log_file_size/N`, where N is the number of log files in the group (2 by default)):
 
 ```Shell
 innodb_log_file_size=1024M
@@ -211,7 +211,7 @@ innodb_log_file_size=1024M
 
 ### innodb_file_per_table
 
-For better performance you can enable the so-called [per-table tablespaces](http://dev.mysql.com/doc/refman/5.5/en/innodb-multiple-tablespaces.html). Note that once you add `innodb_file_per_table` option new tables will be created and placed in separate files, but tables created before enabling this option will still be in the shared tablespace. You'll need to reimport database for them to be placed in separate files.
+For better performance you can enable the so-called [per-table tablespaces](https://dev.mysql.com/doc/refman/8.0/en/innodb-file-per-table-tablespaces.html). Note that once you add `innodb_file_per_table` option new tables will be created and placed in separate files, but tables created before enabling this option will still be in the shared tablespace. You'll need to reimport database for them to be placed in separate files.
 
 ### innodb_flush_log_at_trx_commit
 
@@ -235,11 +235,11 @@ Note: it is not important for TeamCity that database offers full ACID behavior, 
 
 ### log files on different disk
 
-Placing the MySQL log files on different disk sometimes helps improve performance. You can read about it in [MySQL documentation](http://dev.mysql.com/doc/refman/5.5/en/innodb-configuration.html).
+Placing the MySQL log files on different disk sometimes helps improve performance. You can read about it in [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-configuration.html).
 
 ### Setting The Binary Log Format
 
-If the default MySQL binary logging format is not MIXED (it depends on the [version of MySQL](http://dev.mysql.com/doc/refman/5.1/en/binary-log-setting.html) you are using), then it should be explicitly set to __MIXED__:
+If the default MySQL binary logging format is not MIXED (it depends on the [version of MySQL](https://dev.mysql.com/doc/refman/8.0/en/binary-log-setting.html) you are using), then it should be explicitly set to __MIXED__:
 
 ```Shell
 
