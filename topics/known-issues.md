@@ -535,3 +535,7 @@ which may cause publishing artifacts to third party S3-compatibles storages, suc
 To fix this problem after updating to TeamCity 2022.04, download the plugin version from [the related issue](https://youtrack.jetbrains.com/issue/TW-76119/Artifact-upload-to-Backblaze-B2-s-S3-compatible-API-fails-with-T#focus=Comments-27-6054071.0-0) 
 and add the `storage.s3.acl` configuration parameter with the required `acl` value. 
 All the values listed [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl) are supported.
+
+### Compatibility with Visual Studio Build Tools 17.2.0 and .NET SDK 6.0.300
+
+At the moment, TeamCity 2022.04 does not support the recently released Visual Studio Build Tools 17.2.0 and .NET SDK 6.0.300. To solve the problem, install the plugin from [the related issue](https://youtrack.jetbrains.com/issue/TW-76189/Tests-error-with-The-argument-noconsolelogger-is-invalid-with-NE#focus=Comments-27-6067187.0-0). The fix will be included in TeamCity 2022.04.1.
