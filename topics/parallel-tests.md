@@ -43,10 +43,10 @@ or [.NET](net.md) type, and they were executing some tests, then these build run
 If you run tests differently, you can still enable the _Parallel tests_ build feature for your configuration
 and benefit from automatic test division: you will obtain the information about the tests to execute from [the build parameters](#custom-tests) that will be provided by the build feature.
 
-### Runner specific requirements
+### Runner-specific requirements
 {id='runner-requirements'}
 
-Automatic execution of a batch of tests instead of the whole set of tests, is only supported if the following requirements are met:
+Automatic execution of a batch of tests instead of the whole set of tests is only supported if the following requirements are met:
 
 * [Maven](maven.md)
   * Maven minimal supported version: 3.x.
