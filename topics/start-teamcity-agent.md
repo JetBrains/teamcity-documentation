@@ -53,7 +53,7 @@ Install the service:
 Start the service:
 * Run `<agent home>/bin/service.start.bat` (or use the standard Windows Services applet).
 
-Stop the service:__
+Stop the service:
 * Run `<agent home>/bin/service.stop.bat` (or use the standard Windows Services applet).
 
 You can also use the standard Windows `net.exe` utility to manage the service once it is installed. For example (assuming the default service name):
