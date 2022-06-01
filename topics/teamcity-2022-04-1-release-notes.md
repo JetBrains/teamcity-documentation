@@ -6,7 +6,6 @@ __Build: 108575__
 __1 June 2022__
 
 
-
 ### Feature
 
 **[TW-76346](https://youtrack.jetbrains.com/issue/TW-76346/Include-buildId-of-the-scheduled-personal-build-when-running-Perforce-build-on-shelve-via-REST-API)** — Include buildId of the scheduled personal build when running Perforce build on shelve via REST API
@@ -126,34 +125,5 @@ __1 June 2022__
 **[TW-76052](https://youtrack.jetbrains.com/issue/TW-76052/Build-approval-publish-a-list-of-approvers-as-a-system-build-parameter)** — Build approval: publish a list of approvers as a system build parameter
 
 **[TW-75702](https://youtrack.jetbrains.com/issue/TW-75702/Handle-SBuildServerListenerchangesLoadedSBuildQueued-event-in-Commit-Status-Publisher)** — Handle SBuildServerListener::changesLoaded(SBuildQueued) event in Commit Status Publisher
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
