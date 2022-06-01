@@ -5,7 +5,6 @@ __Build: 108575__
 
 __1 June 2022__
 
-
 ### Feature
 
 **[TW-76346](https://youtrack.jetbrains.com/issue/TW-76346/Include-buildId-of-the-scheduled-personal-build-when-running-Perforce-build-on-shelve-via-REST-API)** — Include buildId of the scheduled personal build when running Perforce build on shelve via REST API
