@@ -18,6 +18,7 @@ As a result of this change, the investigations, mutes, and history of these test
 when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-build-queue.html#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
 * TeamCity reporting of Ant's tasks will be disabled if Ant is started by a Java version below 1.8. 
 * Windows docker images based on 2004 will not be published for 2022.04 version.
+* Replaced log4j v1.2 with log4j v2.17 (see [TW-47084](https://youtrack.jetbrains.com/issue/TW-47084)).
 
 ### External plugins updates
 
