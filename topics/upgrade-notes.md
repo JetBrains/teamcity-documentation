@@ -1,6 +1,13 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2022.04 to 2022.04.1
+
+### Known issues 
+{id="known-issues-2022041"}
+
+* There is [a new performance problem](https://youtrack.jetbrains.com/issue/TW-76397) in the Git plugin which slows down checking for changes operation for some of the Git repositories. For the issue to reproduce, a VCS root should have "Enable to use tags in the branch specification" option enabled and `+:refs/tags/*` should be specified in the VCS root branch specification. The repository should also have many thousands of tags. Please see [TW-76397](https://youtrack.jetbrains.com/issue/TW-76397) for a workaround. 
+
 ## Changes from 2021.2 to 2022.04
 
 * To comply with the common identifier format of .NET tests, TeamCity now uses a different format of names for .NET assemblies (omitting a file extension). 
