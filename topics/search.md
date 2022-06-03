@@ -457,6 +457,54 @@ Find builds with the specified build problem
 
 `buildProblem:Compilation failed`
 
+</td></tr><tr>
+
+<td>
+
+debug
+
+</td>
+
+<td>
+
+
+
+</td>
+
+<td>
+
+Enables showing the hit score (relevance) of each search result. Helps to diagnose problems with Builds Search.
+
+</td>
+
+<td>
+
+`debug:true`
+
+
+</td></tr><tr>
+
+<td>
+
+hitscore
+
+</td>
+
+<td>
+
+
+
+</td>
+
+<td>
+
+Hides the results with hitsocre (relevance) lower than the specified value. Hit scores of the results can be seen after adding the `debug:true` clause to the search query.
+
+</td>
+
+<td>
+
+`hitsocre:322`
 </td></tr></table>
 
 ### Shortcuts
