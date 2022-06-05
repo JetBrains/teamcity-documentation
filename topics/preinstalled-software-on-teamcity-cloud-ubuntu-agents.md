@@ -5,50 +5,50 @@
 
 |Software|Version|
 |---|---|
-|[Git](https://git-scm.com/)|2.35.1|
-|[Git LFS](https://git-lfs.github.com/)|3.1.2|
+|[Git](https://git-scm.com/)|2.36.0|
+|[Git LFS](https://git-lfs.github.com/)|3.1.4|
 |[Zsh](https://www.zsh.org/)|5.8|
-|[Chromium](https://www.chromium.org/)|98.0.4758.102|
+|[Chromium](https://www.chromium.org/)|100.0.4896.127|
 |[Firefox](https://www.mozilla.org/en-US/firefox/)||
-|[Google Chrome](https://www.google.com/chrome/)|98.0.4758.102|
-|[ChromeDriver](https://chromedriver.chromium.org/)|98.0.4758.102|
-|[Docker](https://www.docker.com/)|20.10.12|
-|[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|20.10.12|
+|[Google Chrome](https://www.google.com/chrome/)|100.0.4896.127|
+|[ChromeDriver](https://chromedriver.chromium.org/)|100.0.4896.60|
+|[Docker](https://www.docker.com/)|20.10.14|
+|[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|20.10.14|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
 |[AWS CLI](https://aws.amazon.com/cli/)|1.18.69|
-|[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|v1.23.4|
-|[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.33.1|
-|[Google Cloud SDK](https://cloud.google.com/sdk)|373.0.0|
+|[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|v1.23.6|
+|[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.35.0|
+|[Google Cloud SDK](https://cloud.google.com/sdk)|382.0.0|
 |[JDK 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)|java-1.8.0-amazon-corretto|
 |[JDK 15](https://docs.aws.amazon.com/corretto/latest/corretto-15-ug/downloads-list.html)|java-15-amazon-corretto|
 |[JDK 16](https://docs.aws.amazon.com/corretto/latest/corretto-16-ug/downloads-list.html)|java-16-amazon-corretto|
 |[JDK 17](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)|java-17-amazon-corretto|
 |[JDK 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)|java-11-amazon-corretto|
 |[Android SDK](https://developer.android.com/studio/command-line)|7302050|
-|[Perforce](https://www.perforce.com/)|2021.2 (2220431)|
+|[Perforce](https://www.perforce.com/)|2021.2 (2273812)|
 |[Mercurial](https://www.mercurial-scm.org/)|5.3.1|
 |[SVN](https://subversion.apache.org/)|1.13.0|
-|[Helm](https://helm.sh/)|v3.7.1+g1d11fcb|
+|[Helm](https://helm.sh/)|v3.8.2+g6e3701e|
 |[Yarn](https://yarnpkg.com/)||
 |[Ant](https://ant.apache.org/)|1.10.7|
-|[Gradle](https://gradle.org/)|7.2|
-|[CMake](https://cmake.org/)|3.21.4|
+|[Gradle](https://gradle.org/)|7.4.2|
+|[CMake](https://cmake.org/)|3.23.1|
 |[Apache Maven](https://maven.apache.org/)|3.6.3|
-|[PowerShell](https://docs.microsoft.com/en-us/powershell/)|7.2.0|
+|[PowerShell](https://docs.microsoft.com/en-us/powershell/)|7.2.2|
 |[R](https://www.r-project.org/)|3.6.3|
-|[Groovy](https://groovy-lang.org/)|3.0.9|
+|[Groovy](https://groovy-lang.org/)|4.0.1|
 |[RVM](https://rvm.io/)|1.29.12-next|
 |[rustup](https://rustup.rs/)|1.24.3|
-|[Cargo](https://doc.rust-lang.org/cargo/)|1.58.0|
-|[rustc](https://doc.rust-lang.org/rustc/what-is-rustc.html)|1.58.1|
-|[Go](https://golang.org/)|1.17.3|
+|[Cargo](https://doc.rust-lang.org/cargo/)|1.60.0|
+|[rustc](https://doc.rust-lang.org/rustc/what-is-rustc.html)|1.60.0|
+|[Go](https://golang.org/)|1.18.1|
 |[NVM](https://github.com/nvm-sh/nvm)|0.33.11|
 |[Node.js](https://nodejs.org/en/)|16.13|
 |[Python](https://www.python.org/)|3.8.10|
 |[Python 2](https://www.python.org/downloads/)|2.7.18|
-|[Python 3](https://www.python.org/downloads/)|3.9.10|
-|[pip3](https://pip.pypa.io/en/stable/)|22.0.3|
-|[pip](https://pip.pypa.io/en/stable/)|22.0.3|
+|[Python 3](https://www.python.org/downloads/)|3.9.12|
+|[pip3](https://pip.pypa.io/en/stable/)|22.0.4|
+|[pip](https://pip.pypa.io/en/stable/)|22.0.4|
 |[Ansible](https://www.ansible.com/)|2.9.6|
 
 </chunk> 
