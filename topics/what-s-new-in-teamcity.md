@@ -10,7 +10,10 @@ This is a quality-targeted release which focuses on improving performance. It in
 
 ## Support for non-default streams/feature branches in Perforce Shelve Trigger
 
-If stream support is enabled in a Perforce VCS Root, the [Perforce Shelve Trigger](perforce-shelve-trigger.md) will now detect the target stream from the changed files and trigger the personal build in this stream or multiple streams, if several streams are affected.
+If stream support is enabled in a Perforce VCS Root, the [Perforce Shelve Trigger](perforce-shelve-trigger.md) will now automatically detect the target stream from the changed files and trigger the personal build in this stream.
+* Autodetection of the branch works in the run custom build dialog when the default branch is specified
+* The same applies to the REST endpoint. It is not necessary to specify the stream explicitly there, but can be specified via the ```desiredStream``` HTTP parameter.
+* Autodetection also works in REST API when the desiredBranch parameter is not set in HTTP request.
 
 
 ## Fixed issues
