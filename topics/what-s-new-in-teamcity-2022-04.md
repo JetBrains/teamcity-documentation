@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2022.04)
-[//]: # (auxiliary-id: What's New in TeamCity 2022.04;What's New in TeamCity)
+[//]: # (auxiliary-id: What's New in TeamCity 2022.04)
 
 ## Parallel tests on multiple agents
 
