@@ -12,7 +12,7 @@ Refer to [Configuring Build Steps](configuring-build-steps.md) for a description
 ## Prerequisites
 
 The runner's requirements:
-* .NET runtime 6.0.0-rc.1 or later must be installed on a build agent, or available in a Docker container if this step is run inside Docker.
+* .NET runtime 6.0.0 or later must be installed on a build agent, or available in a Docker container if this step is run inside Docker.
 * The [TeamCity.csi](https://www.nuget.org/packages/TeamCity.csi/) package must be [installed as an agent tool](installing-agent-tools.md).
 {product="tc"}
 
