@@ -24,7 +24,7 @@ Build 108575
 
 ## TeamCity 2022.04
 
-Release date: 28 April 2022   
+Release date: __28 April 2022__   
 Build 108502
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.exe)   
@@ -64,7 +64,7 @@ Build 99602
  
 ## TeamCity 2021.2
 
-Release date: __25 October 2021__   
+Release date: 25 October 2021   
 Build 99542
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2021.2.exe)   
