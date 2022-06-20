@@ -14,7 +14,7 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 
 ## TeamCity Version 2022.04.1
 
-Release date: 1 June 2022
+Release date: 1 June 2022   
 Build 108575
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.1.exe)   
