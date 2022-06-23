@@ -1,4 +1,4 @@
-[//]: # (title: title: TeamCity Release Notes: Build 115080)
+[//]: # (title: TeamCity Release Notes: Build 115080)
 [//]: # (auxiliary-id: TeamCity Release Notes: Build 115080;TeamCity 2022.06 Release Notes)
 
 __Build: 115080__
