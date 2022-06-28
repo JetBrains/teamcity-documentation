@@ -14,7 +14,7 @@ If stream support is enabled in a Perforce VCS Root, the [Perforce Shelve Trigge
 ## Fixed issues
 {product="tcc"}
 
-See [TeamCity Build 115080 release notes](teamcity-release-notes-build-115080.md).
+See [TeamCity Build 115122 release notes](teamcity-release-notes-build-115122.md).
 
 ## Roadmap
 
