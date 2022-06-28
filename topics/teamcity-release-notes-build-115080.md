@@ -1,9 +1,9 @@
-[//]: # (title: TeamCity Release Notes: Build 115080)
-[//]: # (auxiliary-id: TeamCity Release Notes: Build 115080;TeamCity 2022.06 Release Notes)
+[//]: # (title: TeamCity Release Notes: Build 115122)
+[//]: # (auxiliary-id: TeamCity Release Notes: Build 115122;TeamCity 2022.06 Release Notes)
 
-__Build: 115080__
+__Build: 115122__
 
-__24 June 2022__
+__28 June 2022__
 
 ### Feature
 
