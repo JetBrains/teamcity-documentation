@@ -65,8 +65,6 @@ __12 July 2022__
 
 **[TW-76448](https://youtrack.jetbrains.com/issue/TW-76448/Build-log-scroll-to-top-and-scroll-to-bottom-buttons-do-not-work)** — Build log 'scroll to top' and 'scroll to bottom' buttons do not work
 
-**[TW-76394](https://youtrack.jetbrains.com/issue/TW-76394/Build-Feature-Email-Notifier-stopped-working-with-parameter)** — Build Feature - Email Notifier stopped working with parameter
-
 **[TW-63851](https://youtrack.jetbrains.com/issue/TW-63851/Stopping-cloud-agents-Force-stop-link-shown-in-two-lines)** — Stopping cloud agents "Force stop" link shown in two lines
 
 **[TW-76429](https://youtrack.jetbrains.com/issue/TW-76429/System-properties-and-env-variables-look-editable-for-a-user-without-Customize-build-parameters-permission)** — System properties and env variables look editable for a user without Customize build parameters permission
