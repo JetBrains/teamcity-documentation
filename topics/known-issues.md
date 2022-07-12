@@ -546,4 +546,4 @@ Due to the [breaking change](https://github.com/dotnet/command-line-api/pull/171
 - semicolons in the VSTestTestAdapterPath property (set by the internal TeamCity logic)
 - user-defined build configuration parameters (for example, MSBuild properties).
 The issue with semicolons in VSTestTestAdapterPath was fixed in 2022.04.2.
-To fix the issue with special symbols in build configuration parameters, please use [this plugin version](https://teamcity.jetbrains.com/buildConfiguration/TeamCityPluginsByJetBrains_NetPlugin_NetDev/lastSuccessful?buildTab=artifacts&guest=1#%2Fdotnet.zip).
+To fix the issue with special symbols in build configuration parameters, please use [this plugin version](https://teamcity.jetbrains.com/buildConfiguration/TeamCityPluginsByJetBrains_NetPlugin_NetDev/3885688?buildTab=artifacts&guest=1).
