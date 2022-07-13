@@ -1,9 +1,9 @@
 [//]: # (title: TeamCity 2022.04.2 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2022.04.2 Release Notes)
 
-__Build: 108650__
+__Build: 108655__
 
-__12 July 2022__
+__13 July 2022__
 
 ### Usability Problem
 
