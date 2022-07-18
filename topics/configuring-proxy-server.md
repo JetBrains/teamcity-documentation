@@ -230,6 +230,6 @@ Note that the proxy has to be configured not to cache any TeamCity server respon
 
 <seealso>
         <category ref="admin-guide">
-            <a href="multinode-setup.md#Proxy+Configuration">Configure proxy for a multinode setup</a>
+            <a href="multinode-setup.md#Multinode+Proxy+Configuration">Configure proxy for a multinode setup</a>
         </category>
 </seealso>
