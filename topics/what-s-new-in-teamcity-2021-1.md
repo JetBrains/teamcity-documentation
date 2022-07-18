@@ -56,7 +56,7 @@ By default, the new "_Main TeamCity node_" responsibility belongs to the current
 
 <img src="main-node-role.png" width="460" alt="Main node responsibility"/>
 
-The assigned server becomes the main node and automatically receives all its other responsibilities (processing builds, managing agents, and so on). This new main node keeps all its running builds, and the agents reconnect to it automatically if a [proxy is configured in your setup](multinode-setup.md#Multinode+Proxy+Configuration).
+The assigned server becomes the main node and automatically receives all its other responsibilities (processing builds, managing agents, and so on). This new main node keeps all its running builds, and the agents reconnect to it automatically if a [proxy is configured in your setup](multinode-setup.md#Proxy+Configuration).
 
 When the previously main server starts again, it becomes a secondary node, as the "_Main TeamCity node_" responsibility is already occupied by another server. If necessary, you can repeat the procedure above to switch roles between these servers.
 

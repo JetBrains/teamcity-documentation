@@ -80,7 +80,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
     >Make sure the database is configured to accept enough parallel connections to handle requests from both nodes. By default, each node requires 50 connections to the database.
 4. Start both nodes using [regular TeamCity scripts](start-teamcity-server.md) or via the TeamCity service.
 5. Open the TeamCity __Administration | Nodes Configuration__ page on any of the two servers and enable the "_[Main TeamCity node](#Main+Node+Responsibility)_" responsibility for a node you want to make main.
-6. Proceed with [configuring the reverse HTTP proxy](#Multinode+Proxy+Configuration).
+6. Proceed with [configuring the reverse HTTP proxy](#Proxy+Configuration).
 
 ## Proxy Configuration
 {id="Proxy+Configuration" auxiliary-id="Proxy+Configuration" product="tc"}
@@ -251,7 +251,7 @@ In the case of a failover, when the main node is no longer available either beca
 
 Each secondary node tracks the activity of the current main node and, if it is inactive for several minutes (3 by default), shows the corresponding health report. After you see this report, you can assign the "_Main TeamCity Node_" responsibility to another node. However, if this inactivity has not been planned (that is, the main node has crashed), it is important to verify that no TeamCity server processes are left running on the inactive node. If you detect such processes, you need to stop them before reassigning the "_Main TeamCity node_" responsibility.
 
-After switching the responsibility, you also need to update the IDs and hostnames of nodes in the [reverse proxy configuration](#Multinode+Proxy+Configuration) and reload the proxy server configuration. Otherwise, if you decide to start the former main node again, the proxy won’t be able to properly route agents and users.
+After switching the responsibility, you also need to update the IDs and hostnames of nodes in the [reverse proxy configuration](#Proxy+Configuration) and reload the proxy server configuration. Otherwise, if you decide to start the former main node again, the proxy won’t be able to properly route agents and users.
 
 To sum up, on a failover, follow these steps:
 1. Wait for a server health report about the main node unavailability on the secondary node.
@@ -316,7 +316,7 @@ This responsibility is responsible for allowing [user actions on a secondary nod
 
 #### Main Node Responsibility
 
-You can assign a secondary node to the _Main TeamCity node_ responsibility. This responsibility by default belongs to the current main node, but gets vacant if this node becomes unavailable. After you assign any secondary node to this responsibility, it becomes the main node and receives all its other responsibilities (processing builds, managing agents, and so on). All the running builds will continue their operations without interruption. If a [proxy is configured](#Multinode+Proxy+Configuration) in your setup, build agents will seamlessly reconnect to the new main node.  
+You can assign a secondary node to the _Main TeamCity node_ responsibility. This responsibility by default belongs to the current main node, but gets vacant if this node becomes unavailable. After you assign any secondary node to this responsibility, it becomes the main node and receives all its other responsibilities (processing builds, managing agents, and so on). All the running builds will continue their operations without interruption. If a [proxy is configured](#Proxy+Configuration) in your setup, build agents will seamlessly reconnect to the new main node.  
 When the previous main node starts again, it becomes a secondary node, as the _Main TeamCity node_ responsibility is already occupied by another node. If necessary, you can repeat the procedure above to switch roles between these nodes.
 
 ### Internal Properties
