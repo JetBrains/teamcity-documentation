@@ -425,6 +425,18 @@ In rare cases, if an early build of Visual Studio 2017 is installed on your buil
 
 To workaround this problem, you can upgrade Visual Studio 2017 to the latest build or, alternatively, install any later version of .NET Framework.
 
+### Compatibility with Visual Studio Build Tools 17.2.0 and .NET SDK 6.0.300
+
+At the moment, TeamCity 2022.04 does not support the recently released Visual Studio Build Tools 17.2.0 and .NET SDK 6.0.300. To solve the problem, install the plugin from [the related issue](https://youtrack.jetbrains.com/issue/TW-76189/Tests-error-with-The-argument-noconsolelogger-is-invalid-with-NE#focus=Comments-27-6067187.0-0). The fix will be included in TeamCity 2022.04.1.
+
+### Issues with using semicolons and commas in properties values in .rsp files
+
+Due to the [breaking change](https://github.com/dotnet/command-line-api/pull/1714) introduced by Microsoft in the core library `System.CommandLine` in the parsing behaviour for .rsp files, TeamCity users may experience issues with:
+- semicolons in the VSTestTestAdapterPath property (set by the internal TeamCity logic)
+- user-defined build configuration parameters (for example, MSBuild properties).
+  The issue with semicolons in VSTestTestAdapterPath was fixed in 2022.04.2.
+  To fix the issue with special symbols in build configuration parameters, please use [this plugin version](https://download.jetbrains.com/teamcity/plugins/dotnet/2022.04.x/dotnet-115344.zip).
+
 ## NuGet known issues
 
 ### Prerelease packages are not visible in the TeamCity NuGet feed
@@ -536,14 +548,3 @@ To fix this problem after updating to TeamCity 2022.04, download the plugin vers
 and add the `storage.s3.acl` configuration parameter with the required `acl` value. 
 All the values listed [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl) are supported.
 
-### Compatibility with Visual Studio Build Tools 17.2.0 and .NET SDK 6.0.300
-
-At the moment, TeamCity 2022.04 does not support the recently released Visual Studio Build Tools 17.2.0 and .NET SDK 6.0.300. To solve the problem, install the plugin from [the related issue](https://youtrack.jetbrains.com/issue/TW-76189/Tests-error-with-The-argument-noconsolelogger-is-invalid-with-NE#focus=Comments-27-6067187.0-0). The fix will be included in TeamCity 2022.04.1.
-
-### Issues with using semicolons and commas in properties values in .rsp files
-
-Due to the [breaking change](https://github.com/dotnet/command-line-api/pull/1714) introduced by Microsoft in the core library `System.CommandLine` in the parsing behaviour for .rsp files, TeamCity users may experience issues with:
-- semicolons in the VSTestTestAdapterPath property (set by the internal TeamCity logic)
-- user-defined build configuration parameters (for example, MSBuild properties).
-The issue with semicolons in VSTestTestAdapterPath was fixed in 2022.04.2.
-To fix the issue with special symbols in build configuration parameters, please use [this plugin version](https://teamcity.jetbrains.com/buildConfiguration/TeamCityPluginsByJetBrains_NetPlugin_NetDev/3885688?buildTab=artifacts&guest=1).
