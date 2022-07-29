@@ -41,8 +41,7 @@ You can enable the virtual host addressing for S3 buckets. Currently, both hoste
 
 <anchor name="transferAcceleration"/>
 
-You can enable transfer acceleration for uploads and downloads.
-There are some requirements that you need to remember if you want to use it:
+You can enable transfer acceleration for uploads and downloads if the following requirements are met:
 
 * Transfer acceleration can only be enabled together with **virtual host addressing**. It does not work with path-style requests.
 * You need to enable transfer acceleration on your S3 bucket.
