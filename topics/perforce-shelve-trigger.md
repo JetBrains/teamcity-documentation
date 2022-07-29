@@ -21,7 +21,7 @@ On any change made in shelved files of a matching changelist, TeamCity will star
 
 If the current build is [composite](composite-build-configuration.md), the whole build chain will be triggered on a change in shelved files.
 
-If [stream support](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) is enabled in the Perforce VCS root settings, this trigger will run builds only on the default stream.
+If [stream support](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) is enabled in the Perforce VCS root settings, this trigger will detect the target stream from the changed files and run the personal build in this stream even if the default stream is specified.
 
 ## Parametrized Shelved Changelist ID
 

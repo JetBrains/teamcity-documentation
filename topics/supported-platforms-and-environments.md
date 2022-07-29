@@ -320,11 +320,11 @@ Other .NET runners:
 
 </td><td>
 
-.NET 6.0
+.NET 6.0 or later
 
 </td><td>
 
-.NET 6.0 installed on the build agent, or can be run inside a Docker container with .NET 6.0
+.NET 6.0 or later installed on the build agent, or can be run inside a Docker container with .NET 6.0 or later
 
 </td></tr>
 
