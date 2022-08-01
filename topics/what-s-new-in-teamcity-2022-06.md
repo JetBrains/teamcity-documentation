@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2022.06)
-[//]: # (auxiliary-id: What's New in TeamCity 2022.06;What's New in TeamCity)
+[//]: # (auxiliary-id: What's New in TeamCity 2022.06)
 
 This is a quality-targeted release which focuses on improving performance.
 
