@@ -35,8 +35,8 @@ title="New in TeamCity 2020.2: Short-lived Access Tokens"/>
 
 <anchor name="token-scope"/>
 
-You can create tokens with limited permissions for REST API requests. By default, the __Permissions scope__ field value is set to "_Same as current user_", which means that the created token will grant the same permissions as those of the current user. You can use such token both for authentication in the UI and for REST API requests.   
-If you change the value to "_Limit per project_", you will be able to limit the token's access to a certain project and select particular permissions for it. The list of available projects and their permissions depend on your user permissions. Such token can only be used for REST API requests.
+You can create tokens with limited permissions. By default, the __Permissions scope__ field value is set to "_Same as current user_", which means that the created token will grant the same permissions as those of the current user. You can use such token both for authentication in the UI and for REST API requests.   
+If you change the value to "_Limit per project_", you will be able to limit the token's access to a certain project and select particular permissions for it. The list of available projects and their permissions depend on your user permissions.
 
 <img src="create-access-token.png" alt="Create an access token"/>
 
