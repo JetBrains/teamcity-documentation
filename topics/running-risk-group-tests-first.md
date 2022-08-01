@@ -27,7 +27,7 @@ TeamCity operates on test case basis, that is not the individual tests are reord
 
 Tests reordering works the following way:
 
-### JUint
+### JUnit
 
 1. TeamCity provides tests that should be run first (test classes).
 2. When a JUnit task starts, TeamCity checks whether it includes these tests.
