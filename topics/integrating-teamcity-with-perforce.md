@@ -10,6 +10,7 @@ This article describes how to integrate TeamCity with [Perforce Helix Core](http
 
 ## Prerequisites
 
+* TeamCity supports Perforce Helix Core servers/clients starting from Helix Core 2017.1
 * A Perforce Helix Core client must be installed on the TeamCity server machine.
 {product="tc"}
 * The path to the Perforce client must be added to the `PATH` environment variable.  
@@ -17,70 +18,6 @@ This article describes how to integrate TeamCity with [Perforce Helix Core](http
 {product="tc"}
 * If you plan to use the [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout), you need to install a Perforce Helix Core client and add it to `PATH` on build agent machines as well.
 {product="tcc"}
-
-### Perforce Helix Core Compatibility
-{initial-collapse-state="collapsed"}
-
-<table><tr>
-
-<td>
-
-Perforce server version
-
-</td>
-
-<td>
-
-TeamCity version
-
-</td>
-
-<td>
-
-Comment
-
-</td></tr>
-
-<tr>
-
-<td>
-
-2017.1\+
-
-</td>
-
-<td>
-
-2021.2
-
-</td>
-
-<td>
-
-[TW-73075](https://youtrack.jetbrains.com/issue/TW-73075)
-
-</td></tr>
-
-<tr>
-
-<td>
-
-2014.2\+
-
-</td>
-
-<td>
-
-2017.1 — 2021.1
-
-</td>
-
-<td>
-
-
-</td></tr></table>
-
-To see the compatibility matrix for earlier versions, refer to [this page](https://www.jetbrains.com/help/teamcity/2021.1/perforce-helix-core-compatibility.html).
 
 ## Running Builds on Perforce Helix Core Sources
 
