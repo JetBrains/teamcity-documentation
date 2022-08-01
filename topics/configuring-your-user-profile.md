@@ -35,8 +35,12 @@ title="New in TeamCity 2020.2: Short-lived Access Tokens"/>
 
 <anchor name="token-scope"/>
 
-You can create tokens with limited permissions. By default, the __Permissions scope__ field value is set to "_Same as current user_", which means that the created token will grant the same permissions as those of the current user. You can use such token both for authentication in the UI and for REST API requests.   
-If you change the value to "_Limit per project_", you will be able to limit the token's access to a certain project and select particular permissions for it. The list of available projects and their permissions depend on your user permissions.
+You can create tokens with limited permissions. 
+By default, the __Permissions scope__ field value is set to "_Same as current user_", 
+which means that the created token will grant the same permissions as those of the current user. 
+   
+If you change the value to "_Limit per project_", you will be able to limit the token's access to a certain project 
+and select particular permissions for it. The list of available projects and their permissions depend on your user permissions.
 
 <img src="create-access-token.png" alt="Create an access token"/>
 
@@ -86,7 +90,7 @@ In __Your Profile | Notification Rules__, you can view what notification rules y
 
 ## Uploading Avatar
 
-Since version 2021.2, users can upload their avatars in the user profile. The avatars are displayed around the TeamCity UI, next to the changes (commits) of their authors. Only users with the _View all users_ [permission](managing-roles-and-permissions.md) can see them.
+Users can upload their avatars in the user profile. The avatars are displayed around the TeamCity UI, next to the changes (commits) of their authors. Only users with the _View all users_ [permission](managing-roles-and-permissions.md) can see them.
 
 When a user signs in to TeamCity [via a third-party account](configuring-authentication-settings.md) for the first time, TeamCity automatically fetches their avatar from the external system. Note that TeamCity will only be able to access avatars of users with verified emails (if you are using GitLab, ensure that a _public email_ is set in your account).  
 It is possible to upload a different avatar in the TeamCity user profile settings afterwards.
