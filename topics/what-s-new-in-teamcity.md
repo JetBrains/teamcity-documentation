@@ -14,13 +14,13 @@ Starting from TeamCity 2022.08, you can use [access tokens with limited permissi
 
 Now TeamCity supports large artifacts (over 4 GB) out of the box. No additional configuration is needed to publish and download zip archives of large artifacts.
 
-##  Maintenance mode for cloud agents
+##  Maintenance mode for self-hosted cloud agents
 
 Interaction with cloud build agents can be complicated, as they can be stopped or terminated due to a number of reasons,
 even if you just logged in to a build agent to investigate an issue.
 
-Starting from this version, you can disable an agent for maintenance, which means 
-that the agent will not process any new builds, and you can, for example, log in to it and view its log.
+Starting from this version, you can disable [a self-hosted cloud agent](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents) for maintenance, which means 
+that the agents will not process any new builds, and you can, for example, log in to it and view its log.
 
 ## New UI for the list of build runners
 
