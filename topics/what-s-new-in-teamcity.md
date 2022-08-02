@@ -26,7 +26,7 @@ that the agents will not process any new builds, and you can, for example, log i
 
 The New UI is making its way into the Administration area. Creating new build steps is more user-friendly now with the flat list of available build runners.
 
-<img src="flat-list-build-runners.png />
+<img src="flat-list-build-runners.png" />
 
 
 ## Permissions to Change VCS Username in a Project
