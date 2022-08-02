@@ -249,6 +249,9 @@ You can use a personal access token instead of a password to authenticate in Git
 >
 {type="warning"}
 
+When using an existing Bitbucket Cloud or GitLab connection to create a project, build configuration, or a VCS Root, 
+TeamCity will use a refreshable token instead of the password.
+
 </td></tr><tr>
 
 <td>
