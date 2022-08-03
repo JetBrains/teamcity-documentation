@@ -34,7 +34,7 @@ The New UI is making its way into the Administration area. Creating new build st
 Starting from TeamCity 2022.08, Project Administrators get a new permission allowing them to change a user's VCS username in the project without adding the permission to modify user profile and roles. 
 The permission will be present for this role in the new TeamCity installations; for existing installations it has to be added manually.
 
-See [TeamCity Build ???? release notes](teamcity-release-notes-build-.md).
+See [TeamCity Build 115573 release notes](teamcity-release-notes-build-115573.md).
 
 ## Roadmap
 
