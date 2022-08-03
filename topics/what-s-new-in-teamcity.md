@@ -3,8 +3,10 @@
 
 ## Refresh tokens for VCS Roots 
 
-If you have a connection to a Bitbucket Cloud or GitLab VCS Root configured in TeamCity, you no longer need to enter your password when creating new entities (projects, build configurations, or VCS Roots) via this connection.
-Refreshable tokens are now enabled by default for these VCS Roots. Such tokens are refreshed more frequently than passwords or access tokens, therefore providing a more secure connection.
+If you have a connection to a Bitbucket Cloud or GitLab VCS Root configured in TeamCity, you no longer need to enter your password when creating new entities 
+(projects, build configurations, or VCS Roots) via this connection.
+Refresh tokens are now enabled by default for these VCS Roots. Such tokens are short-lived providing more security than passwords or personal access tokens: 
+the TeamCity server refreshes them automatically without sharing any related data with agents.
 
 ## Restricted access token
 
