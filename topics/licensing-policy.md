@@ -208,7 +208,7 @@ Once sufficient valid license keys are entered which cover the server configurat
 
 The following ways to switch your server into the Enterprise mode exist:
 * [buy](http://www.jetbrains.com/teamcity/buy/) an Enterprise Server license;
-* request a 60-days evaluation license on the [download page](http://www.jetbrains.com/teamcity/download/) (see details [above](#Editions));
+* request a 30-day evaluation license on the [download page](http://www.jetbrains.com/teamcity/download/) (see details [above](#Editions));
 * use TeamCity for open-source projects only and [request an open-source license](https://www.jetbrains.com/buy/opensource/?product=teamcity).
 
 ## Upgrading From Previous Versions
