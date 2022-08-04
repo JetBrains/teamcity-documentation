@@ -321,6 +321,10 @@ __28 April 2022__
 * **[TW-75265](https://youtrack.jetbrains.com/issue/TW-75265/Unnecessary-listing-of-all-of-the-files-under-the-directory-fetc)** — Unnecessary listing of all of the files under the directory fetched from the versioned settings (versioned settings are enabled on the root project level)
 * **[TW-75654](https://youtrack.jetbrains.com/issue/TW-75654/High-CPU-load-on-Perforce-server-to-collect-the-latest-changes)** — High CPU load on Perforce server to collect the latest changes
 
+### Task
+* **[TW-47084](https://youtrack.jetbrains.com/issue/TW-47084)** - Update Log4J from 1.2 to 2.x
+
+
 ### Security
 
 11 security problems have been fixed.
