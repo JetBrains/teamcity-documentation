@@ -102,6 +102,16 @@ If the UI is not accessible (or the server is not yet fully started), you can ta
 
 You can also adjust the `teamcity.diagnostics.requestTime.threshold.ms=30000` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to change the timeout after which a thread dump is automatically created in the `threadDumps-<date>` directory under TeamCity logs whenever there is a user-originated web request taking longer than timeout.
 
+#### Taking the server thread dumps automatically
+
+TeamCity server is able to take several thread dumps automatically with some configured interval.
+For this the following [internal properties](server-startup-properties.md#TeamCity+Internal+Properties) should be added:
+`teamcity.diagnostics.periodicThreadDumps.name` - some name to use as a thread dump file name suffix
+`teamcity.diagnostics.periodicThreadDumps.count` - the number of thread dumps to save
+`teamcity.diagnostics.periodicThreadDumps.period.ms` - the time in milliseconds to wait between each thread dump
+
+Once the properties are added, the server will start taking the thread dumps. All the thread dumps will be stored under the `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directory.
+
 ### Collecting CPU Profiling Data on Server
 
 If you experience degraded server performance and the TeamCity server process is producing a large CPU load, take a CPU profiling snapshot and send it to us accompanied with the detailed description of what you were doing and what your system setup is. You can take CPU profiling and memory snapshots by installing the [server profiling plugin](https://plugins.jetbrains.com/plugin/8979-server-profiling) and following the instructions on the plugin page.
