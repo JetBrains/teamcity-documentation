@@ -1,6 +1,14 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2022.04.2 to 2022.04.3
+
+No noteworthy changes.
+
+## Changes from 2022.04.1 to 2022.04.2
+
+No noteworthy changes.
+
 ## Changes from 2022.04 to 2022.04.1
 
 ### Known issues 
