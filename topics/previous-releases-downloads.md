@@ -12,7 +12,7 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 
 ## Current version
 
-__TeamCity Version 2022.04.2__
+__TeamCity Version 2022.04.3__
 
 Release date: 9 August 2022   
 Build ???
