@@ -25,7 +25,7 @@ Build 108706
 ## TeamCity Version 2022.04.2
 
 Release date: 13 July 2022   
-Build 108706
+Build 108502
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.2.exe)   
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.2.tar.gz)
