@@ -1,9 +1,9 @@
 [//]: # (title: TeamCity 2022.04.3 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2022.04.3 Release Notes)
 
-__Build: 108705__
+__Build: 108706__
 
-__9 August 2022__
+__10 August 2022__
 
 
 ### Feature
