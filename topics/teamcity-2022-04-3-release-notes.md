@@ -62,6 +62,8 @@ __10 August 2022__
 
 **[TW-76679](https://youtrack.jetbrains.com/issue/TW-76679/perforce-client-cleanup-errors-on-large-stdout)** — perforce client cleanup errors on large stdout
 
+**[TW-76381](https://youtrack.jetbrains.com/issue/TW-76381/)** — Parallel test error Stack overflow
+
 ### Performance Problem
 
 **[TW-67910](https://youtrack.jetbrains.com/issue/TW-67910/Slowdown-in-TestName2IndexImplgetTestNames-caused-hanging-UI-and-finishing-of-builds)** — Slowdown in TestName2IndexImpl.getTestNames() caused hanging UI and finishing of builds
