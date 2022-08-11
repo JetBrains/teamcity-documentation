@@ -636,6 +636,7 @@ Whether TeamCity should run `git gc` during the server clean-up (native git is u
 </td></tr><tr>
 
 <td>
+{id="git-executable-path"}
 
 teamcity.server.git.executable.path
 
