@@ -29,4 +29,4 @@ TeamCity provides a [configuration parameter](predefined-build-parameters.md) `v
 
 ## Logging Events
 
-This trigger logs events to the `teamcity-trigger.log` file with the `perforceShelveTrigger` logging key.
+This trigger logs events to the `teamcity-triggers.log` file with the `perforceShelveTrigger` logging key.
