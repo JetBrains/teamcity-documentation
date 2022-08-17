@@ -106,9 +106,9 @@ You can also adjust the `teamcity.diagnostics.requestTime.threshold.ms=30000` [i
 
 TeamCity server is able to take several thread dumps automatically with some configured interval.
 For this the following [internal properties](server-startup-properties.md#TeamCity+Internal+Properties) should be added:
-`teamcity.diagnostics.periodicThreadDumps.name` - some name to use as a thread dump file name suffix
-`teamcity.diagnostics.periodicThreadDumps.count` - the number of thread dumps to save
-`teamcity.diagnostics.periodicThreadDumps.period.ms` - the time in milliseconds to wait between each thread dump
+* `teamcity.diagnostics.periodicThreadDumps.name` - some name to use as a thread dump file name suffix
+* `teamcity.diagnostics.periodicThreadDumps.count` - the number of thread dumps to save
+* `teamcity.diagnostics.periodicThreadDumps.period.ms` - the time in milliseconds to wait between each thread dump
 
 Once the properties are added, the server will start taking the thread dumps. All the thread dumps will be stored under the `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directory.
 
