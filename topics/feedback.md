@@ -45,11 +45,6 @@ Our usual response time is 24 hours excluding public holidays in [Germany/Bavari
 If you own more than 30 agent licenses and have an urgent issue affecting your TeamCity installation (like production server outage without a workaround), you can use the `teamcity-support-urgent` mailbox at the `jetbrains.com` domain — we process these messages before others, if possible. For the same effect, you can also mark an issue as "_Production outage_" when using the online form.   
 If you do not receive a reply within 48 hours, please check your spam filter and feel free to repeat the message referencing the previous one. 
 
-### Phone Support
-
-We do not provide regular phone support as technical issues are often better resolved over email where you can send logs, screenshots, and so on.   
-As an experiment to better handle urgent cases, we have a direct access phone line __+49 89 255-596-587__ (usual availability times within working days are 11:00 — 18:00 CET/CEST (Germany, GMT+1/GMT+2 timezone). While we do not guarantee your call will be answered at all times, it is another quick-access alternative for emergency issues, and chances are high you will receive the support. Prior to calling, please send us a detailed email message describing the issue.
-
 Please note that our support is restricted to TeamCity-specific issues and does not cover issues related to third-party TeamCity plugins, inappropriate environment configuration for a server application, and so on.
 
 ## Data Security
