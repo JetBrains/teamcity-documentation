@@ -150,76 +150,82 @@ backend web_endpoint
 <tab title="NGINX">
 
 ```Plain Text
-upstream {main_node_id} {
-    server {main_node_hostname} max_fails=0;
-    server {secondary_node_hostname} backup;
-}
-upstream {secondary_node_id} {
-    server {secondary_node_hostname} max_fails=0;
-    server {main_node_hostname} backup;
+events {
+    worker_connections 10000;
 }
 
-upstream web_requests {
-    server {main_node_hostname} max_fails=0;
-    server {secondary_node_hostname} backup;
-}
-
-map $http_cookie $backend_cookie {
-    default "{main_node_id}";
-    "~*X-TeamCity-Node-Id-Cookie=(?<node_name>[^;]+)" $node_name;
-}
-
-map $http_user_agent $is_agent {
-    default @users;
-    "~*TeamCity Agent*" @agents;
-}
+http {
+   upstream {main_node_id} {
+       server {main_node_hostname};
+       server {secondary_node_hostname} backup;
+   }
+   upstream {secondary_node_id} {
+       server {secondary_node_hostname};
+       server {main_node_hostname} backup;
+   }
    
-map $http_upgrade $connection_upgrade { # WebSocket support
-   default upgrade;
-   '' '';
-}   
-
-proxy_read_timeout     1200;
-proxy_connect_timeout  240;
-client_max_body_size   0;    # maximum size of an HTTP request. 0 allows uploading large artifacts to TeamCity
-
-server {
-  listen        80;
-  server_name   {proxy_server_hostname};
-
-  set $proxy_header_host $host; 
-
-  location / {
-            try_files /dev/null $is_agent;
-  }
-    
-  location @agents {
-     proxy_pass http://$backend_cookie;
-     proxy_next_upstream error timeout http_503 non_idempotent;
-     proxy_intercept_errors on;
-     proxy_set_header Host $host:$server_port;
-     proxy_redirect off;
-     proxy_set_header X-TeamCity-Proxy "type=nginx; version=2022.02";
-     proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
-     proxy_set_header X-Forwarded-Proto $scheme;
-     proxy_set_header X-Forwarded-For $remote_addr;
-     proxy_set_header Upgrade $http_upgrade; # WebSocket support
-     proxy_set_header Connection $connection_upgrade; # WebSocket support
-  }
-
-  location @users {
-     proxy_pass http://web_requests;
-     proxy_next_upstream error timeout http_503 non_idempotent;
-     proxy_intercept_errors on;
-     proxy_set_header Host $host:$server_port;
-     proxy_redirect off;
-     proxy_set_header X-TeamCity-Proxy "type=nginx; version=2022.02";
-     proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
-     proxy_set_header X-Forwarded-Proto $scheme;
-     proxy_set_header X-Forwarded-For $remote_addr;
-     proxy_set_header Upgrade $http_upgrade; # WebSocket support
-     proxy_set_header Connection $connection_upgrade; # WebSocket support
-  }
+   upstream web_requests {
+       server {main_node_hostname};
+       server {secondary_node_hostname} backup;
+   }
+   
+   map $http_cookie $backend_cookie {
+       default "{main_node_id}";
+       "~*X-TeamCity-Node-Id-Cookie=(?<node_name>[^;]+)" $node_name;
+   }
+   
+   map $http_user_agent $is_agent {
+       default @users;
+       "~*TeamCity Agent*" @agents;
+   }
+      
+   map $http_upgrade $connection_upgrade { # WebSocket support
+      default upgrade;
+      '' '';
+   }   
+   
+   proxy_read_timeout     1200;
+   proxy_connect_timeout  240;
+   client_max_body_size   0;    # maximum size of an HTTP request. 0 allows uploading large artifacts to TeamCity
+   
+   server {
+     listen        80;
+     server_name   {proxy_server_hostname};
+   
+     set $proxy_header_host $host; 
+   
+     location / {
+               try_files /dev/null $is_agent;
+     }
+       
+     location @agents {
+        proxy_pass http://$backend_cookie;
+        proxy_next_upstream error timeout http_503 non_idempotent;
+        proxy_intercept_errors on;
+        proxy_set_header Host $host:$server_port;
+        proxy_redirect off;
+        proxy_set_header X-TeamCity-Proxy "type=nginx; version=2022.02";
+        proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Upgrade $http_upgrade; # WebSocket support
+        proxy_set_header Connection $connection_upgrade; # WebSocket support
+     }
+   
+     location @users {
+        proxy_pass http://web_requests;
+        proxy_next_upstream error timeout http_503 non_idempotent;
+        proxy_intercept_errors on;
+        proxy_set_header Host $host:$server_port;
+        proxy_redirect off;
+        proxy_set_header X-TeamCity-Proxy "type=nginx; version=2022.02";
+        proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Upgrade $http_upgrade; # WebSocket support
+        proxy_set_header Connection $connection_upgrade; # WebSocket support
+     }
+   }
 }
 
 ```
