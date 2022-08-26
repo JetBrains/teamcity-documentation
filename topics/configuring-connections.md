@@ -81,7 +81,8 @@ After the consumer is created:
 3. Paste the key and secret.
 4. Save the connection.
 
-A Bitbucket icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your Bitbucket profile. TeamCity will be granted access to your public repositories. For private repositories, you will need to provide Bitbucket credentials to be used for authentication by TeamCity, as Bitbucket Cloud does not provide non-expiring access tokens. See the [related discussion](https://bitbucket.org/site/master/issues/11774/application-specific-passwords-or-tokens). If you configure multiple Bitbucket connections, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
+A Bitbucket icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your Bitbucket profile. TeamCity will be granted access to your repositories. 
+If you configure multiple Bitbucket connections, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
 </chunk>
 

@@ -190,6 +190,25 @@ Linux (XLarge)
 
 <td>
 
+Windows (Small)
+
+</td>
+
+<td>
+
+* CPU: 2 vCPU (Intel Xeon - Cascade Lake)
+* RAM: 8 GB
+* SSD storage (for running builds): 100 GB
+* Root EBS volume: 100 GB
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
 Windows (Medium)
 
 </td>
@@ -200,6 +219,24 @@ Windows (Medium)
 * RAM: 8 GB
 * SSD storage (for running builds): 100 GB
 * Root EBS volume: 100 GB
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+macOS (Medium)
+
+</td>
+
+<td>
+
+* CPU: 6 vCPU (Intel i7)
+* RAM: 15 GB
+* Storage (for preinstalled software and running builds): 150 GB
 
 </td>
 

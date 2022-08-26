@@ -37,6 +37,18 @@ You can set an S3 [path prefix](https://docs.aws.amazon.com/AmazonS3/latest/user
 
 You can enable the virtual host addressing for S3 buckets. Currently, both hosted-style and path-style requests are supported by TeamCity. Note that Amazon [stopped supporting path-style access](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access) for new buckets since September 2020.
 
+## Transfer Acceleration
+
+<anchor name="transferAcceleration"/>
+
+You can enable transfer acceleration for uploads and downloads if the following requirements are met:
+
+* Transfer acceleration can only be enabled together with **virtual host addressing**. It does not work with path-style requests.
+* You need to enable transfer acceleration on your S3 bucket.
+* You bucket name must be DNS-compliant and must not contain periods `.`
+
+For more information see [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html)
+
 ## Permissions
 
 When the "_Use Pre-Signed URLs for upload_" option is enabled, the provided AWS credentials or IAM role on the TeamCity server should have permissions: `DeleteObject, ListAllMyBuckets, GetBucketLocation, GetObject, ListBucket, PutObject`.
@@ -85,6 +97,12 @@ In each of the dropdowns, _Distribution for uploads_ and _Distribution for downl
 if it was [manually created](#Manual+CloudFront+Setup) in your Amazon profile, 
 or click ![magic-wand.png](magic-wand.png) to _[configure settings automatically](#Automatic+CloudFront+Setup)_.
 
+For Cloudfront settings to work properly TeamCity needs new permissions:
+
+* cloudfront:ListDistributions
+* cloudfront:ListKeyGroups
+* cloudfront:ListPublicKeys
+
 #### Automatic CloudFront Setup
 
 TeamCity can configure the settings automatically. This involves:
@@ -98,6 +116,68 @@ TeamCity can configure the settings automatically. This involves:
       * a new [key group](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-adding-trusted-signers) with the viewer access;
       * a custom [cache policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html) that allows passing all query strings.
 * Adding a new policy to an S3 bucket to allow the new distributions access to it. See the [policy example](#S3+Policy+Example).
+
+Automatic setup requires giving Teamcity additional permissions:
+
+* cloudfront:CreateDistribution
+* cloudfront:CreateKeyGroup
+* cloudfront:CreatePublicKey
+* cloudfront:CreateOriginRequestPolicy
+* cloudfront:CreateCloudFrontOriginAccessIdentity
+* cloudfront:CreateCachePolicy
+* cloudfront:DeleteKeyGroup
+* cloudfront:DeletePublicKey
+* cloudfront:ListCloudFrontOriginAccessIdentities
+* cloudfront:ListCachePolicies
+* cloudfront:ListOriginRequestPolicies
+* cloudfront:GetDistribution
+* cloudfront:GetPublicKey
+* s3:GetBucketPolicy
+* s3:PutBucketPolicy
+
+Example policy providing all necessary permissions:
+
+```Plaintext
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "1",
+            "Effect": "Allow",
+            "Action": [
+                "cloudfront:CreatePublicKey",
+                "cloudfront:CreateOriginRequestPolicy",
+                "cloudfront:ListCloudFrontOriginAccessIdentities",
+                "cloudfront:DeleteKeyGroup",
+                "cloudfront:GetPublicKey",
+                "cloudfront:ListCachePolicies",
+                "cloudfront:CreateDistribution",
+                "cloudfront:ListOriginRequestPolicies",
+                "cloudfront:DeletePublicKey",
+                "cloudfront:CreateCloudFrontOriginAccessIdentity",
+                "cloudfront:CreateKeyGroup",
+                "cloudfront:CreateCachePolicy",
+                "cloudfront:GetDistribution",
+                "cloudfront:ListPublicKeys",
+                "s3:ListAllMyBuckets",
+                "cloudfront:ListKeyGroups",
+                "cloudfront:ListDistributions"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "2",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutBucketPolicy",
+                "s3:GetBucketPolicy"
+            ],
+            "Resource": "arn:aws:s3:::<YOUR_BUCKET_NAME>"
+        }
+    ]
+}
+
+```
 
 #### Manual CloudFront Setup
 
