@@ -43,7 +43,10 @@
         </toc-element>
         <toc-element toc-title="What's New in TeamCity Cloud">
             <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
+                <toc-element id="teamcity-release-notes-build-115122.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="what-s-new-in-teamcity-2022-04.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="teamcity-2022-04-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+            </toc-element>
             <toc-element id="what-s-new-in-teamcity-2022-02.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="teamcity-release-notes-build-107913.md" show-structure-for="chapter" show-structure-depth="4"/>
             </toc-element>
