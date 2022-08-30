@@ -13,7 +13,7 @@ In TeamCity 2022.04, the tests' distribution logic is provided by TeamCity itsel
 The new _Parallel tests_ build feature solves the task of parallel tests execution on different agents.
 To enable this feature in an existing build configuration which is already configured to run build steps with tests, go to **Build Configuration Settings | Build Features**, click **Add build feature**, and choose the _Parallel tests_ type. You will be prompted to set the number of batches, which also means the number of parallel agents to use in a build.
 
-> Note: only tests methods from different classes (or test cases) can run in parallel on different agents.
+> Note: Only tests methods from different classes (or test cases) can run in parallel on different agents.
 
 Before TeamCity splits tests into batches to run in parallel, it needs to gather test statistics of at least one preceding build. This information helps subdivide tests in semi-equally sized batches (based on tests duration) so that the total build time is as short as possible.
 If you enable this feature in a freshly added build configuration, its first build will run in the normal mode; when it finishes and produces test reports, TeamCity will be able to split the second one.
@@ -66,7 +66,7 @@ Automatic execution of a batch of tests instead of the whole set of tests is onl
 
 In some cases the tests are executed in such a way that TeamCity cannot affect their execution anyhow. For instance, they can be generated on the fly, or they can be reported by a third-party build runner, or imported from a file, and so on.
 
-In such cases, the user will need to implement custom test execution logic to parallelize the tests. The _Parallel tests_ build feature simplifies the task by providing a number of build parameters.
+In such cases, the user will need to implement custom test execution logic to execute only one batch of tests. The _Parallel tests_ build feature simplifies the task by providing a number of build parameters.
 These parameters are:
 
 | Parameter name                                   | Description                                                                                    |
