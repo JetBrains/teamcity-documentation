@@ -66,7 +66,7 @@ Automatic execution of a batch of tests instead of the whole set of tests is onl
 
 In some cases the tests are executed in such a way that TeamCity cannot affect their execution anyhow. For instance, they can be generated on the fly, or they can be reported by a third-party build runner, or imported from a file, and so on.
 
-For such cases, the _Parallel tests_ build feature provides a number of build parameters which can be used by the custom tests' execution logic.
+In such cases, the user will need to implement custom test execution logic to parallelize the tests. The _Parallel tests_ build feature simplifies the task by providing a number of build parameters.
 These parameters are:
 
 | Parameter name                                   | Description                                                                                    |
