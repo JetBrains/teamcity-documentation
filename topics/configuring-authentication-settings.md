@@ -25,6 +25,7 @@ TeamCity provides several preconfigured authentication options (presets) to cove
   * [GitHub Enterprise](#GitHub+Enterprise)
   * [GitLab.com](#GitLab.com)
   * [GitLab CE/EE](#GitLab+CE%2FEE)
+  * [Google](#Google)
   * [JetBrains Space](#JetBrains+Space)
   * [Azure DevOps Services](#Azure+DevOps+Services)
   * [HTTP SAML 2.0](#HTTP+SAML+2.0)
@@ -489,6 +490,77 @@ Leave empty to allow all GitLab users to access the TeamCity server.
 >If you reconnect a TeamCity server from one GitLab CE/EE server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](feedback.md).
 >
 {type="warning"}
+
+### Google
+
+Since version 2022.10, users can sign in to TeamCity with a Google account.
+Before enabling this module, you need to configure a [Google connection](configuring-connections.md#Google) in the Root project's settings.
+To sign in, click the Google icon above the login form and, after the redirect, approve the TeamCity application. If a user with your Google email is registered and this email is verified [in TeamCity](enabling-email-verification.md), this Google account will be mapped to the respective TeamCity user, and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled*. It is also possible to [map existing TeamCity users](configuring-authentication-settings.md#User+Authentication+Settings) to Google profiles.
+
+<table>
+
+<tr>
+<td>Setting</td>
+<td>Description</td>
+</tr>
+
+<tr>
+
+<td>
+
+\* Allow creating new users on the first login
+
+</td>
+
+<td>
+
+Enabled by default.  
+If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Allow users from all domains to log in, including gmail.com
+
+</td>
+
+<td>
+
+Disabled by default.
+If enabled, all users with different domains could access the TeamCity server. Be careful with granting access — any user could authorize on your TeamCity Server. To limit access, use the Restrictions authentication setting.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Restrict authentication
+
+</td>
+
+<td>
+
+A comma-separated list of [organizations' domains](https://cloud.google.com/resource-manager/docs/creating-managing-organization). For example, `company.com,another.com`.
+
+This list limits a set of users who can register or authenticate in TeamCity with their Google account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+
+To use this restriction, make sure that the Google OAuth application used in the selected Google connection is approved for each specified organization.
+
+>If you delete a user from an organization in Google, remember to restrict their access or delete their user profile in TeamCity.
+
+</td>
+
+</tr>
+
+</table>
 
 ### JetBrains Space
 

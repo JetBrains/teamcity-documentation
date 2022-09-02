@@ -149,6 +149,25 @@ A GitLab icon will become active in several places where a repository URL can be
 
 </chunk>
 
+## Google
+
+This type of connection supports Google Services. It uses the [OAuth 2.0 protocol](https://developers.google.com/identity/protocols/oauth2).
+
+This connection is used for authentication in TeamCity with a Google account.
+
+Before configuring a Google connection, you need to [Create a new Google project](https://cloud.google.com/resource-manager/docs/creating-managing-projects) and [Register your app](https://developers.google.com/workspace/guides/configure-oauth-consent) if you have not done it before.
+
+To configure a Google connection in TeamCity:
+1. In the **Administration** area, select **Root project | Connections**, and click **Add Connection**.
+2. Select _Google_ as the connection type.
+3. TeamCity will display the redirect URLs required for registering an OAuth client, then copy them.
+4. Go to the [Credentials](https://console.cloud.google.com/apis/credentials) page in the Google project and create [OAuth client ID](https://developers.google.com/workspace/guides/create-credentials#oauth-client-id) with the Web application type.
+5. Paste your Callback URLs to the **Authorized redirect URIs** section in Google OAuth client ID. When created, copy the Client ID and Client Secret.
+6. Go back to the connection form in TeamCity, and enter the Client ID and Client secret.
+7. Save the connection.
+
+Now you can enable the [Google authentication module](configuring-authentication-settings.md#Google).
+
 ## Docker Registry
 
 A connection to Docker Registry can be used to:
