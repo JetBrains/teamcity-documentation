@@ -494,7 +494,9 @@ Leave empty to allow all GitLab users to access the TeamCity server.
 ### Google
 
 Since version 2022.10, users can sign in to TeamCity with a Google account.
+
 Before enabling this module, you need to configure a [Google connection](configuring-connections.md#Google) in the Root project's settings.
+
 To sign in, click the Google icon above the login form and, after the redirect, approve the TeamCity application. If a user with your Google email is registered and this email is verified [in TeamCity](enabling-email-verification.md), this Google account will be mapped to the respective TeamCity user, and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled*. It is also possible to [map existing TeamCity users](configuring-authentication-settings.md#User+Authentication+Settings) to Google profiles.
 
 <table>
@@ -514,7 +516,8 @@ To sign in, click the Google icon above the login form and, after the redirect, 
 
 <td>
 
-Enabled by default.  
+Enabled by default.
+
 If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>

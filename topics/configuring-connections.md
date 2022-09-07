@@ -151,7 +151,7 @@ A GitLab icon will become active in several places where a repository URL can be
 
 ## Google
 
-This type of connection supports Google Services. It uses the [OAuth 2.0 protocol](https://developers.google.com/identity/protocols/oauth2).
+This type of connection supports Google Services. It uses the [OAuth 2.0 protocol](https://developers.google.com/identity/protocols/oauth2). 
 
 This connection is used for authentication in TeamCity with a Google account.
 
