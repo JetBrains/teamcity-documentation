@@ -48,8 +48,8 @@
 |[Python](https://www.python.org/)|3.8.10|
 |[Python 2](https://www.python.org/downloads/)|2.7.18|
 |[Python 3](https://www.python.org/downloads/)|3.9.13|
-|[pip3](https://pip.pypa.io/en/stable/)|22.2.1|
-|[pip](https://pip.pypa.io/en/stable/)|22.2.1|
+|[pip3](https://pip.pypa.io/en/stable/)|22.2.2|
+|[pip](https://pip.pypa.io/en/stable/)|22.2.2|
 |[Ansible](https://www.ansible.com/)|2.9.6|
 
 </chunk> 
