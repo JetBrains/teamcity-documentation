@@ -556,13 +556,14 @@ _Solution_: In your existing project in  IntelliJ IDEA:
 
 To keep your settings files neat, it is convenient to store lengthy code instructions in separate files. Such auxiliary scripts can be put in the `.teamcity` directory alongside the settings files. You can refer to them by their relative paths.
 
-For example, this part of `settings.kts` creates a function `readScript` which reads the contents of the file it receives on input:
+For example, this part of `settings.kts` creates an object with a function `readScript` which reads the contents of the file it receives on input:
 
 ```Kotlin
-
-fun readScript(path: String): String {
-    val bufferedReader: BufferedReader = File(path).bufferedReader()
-    return bufferedReader.use { it.readText() }.trimIndent()
+object Util {
+    fun readScript(path: String): String {
+        val bufferedReader: BufferedReader = File(path).bufferedReader()
+        return bufferedReader.use{ it.readText() }.trimIndent()
+    }
 }
 ```
 
@@ -574,10 +575,8 @@ object CommandLineRunnerTest : BuildType({
     steps {
         script {
             name = "Imported from a file"
-            id = "script.from.file.1"
-            scriptContent = readScript("scripts\\test.sh")
+            scriptContent = Util.readScript("scripts\\test.sh")
         }
-        stepsOrder = arrayListOf("script.from.file.1")
     }
 })
 ```
