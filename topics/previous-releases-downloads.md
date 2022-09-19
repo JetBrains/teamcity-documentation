@@ -28,7 +28,7 @@ Build 108763
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.4.exe)   
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.4.tar.gz)
 
-[Release notes](teamcity-2022-04-3-release-notes.md)
+[Release notes](teamcity-2022-04-4-release-notes.md)
 
 ## TeamCity Version 2022.04.3
 
