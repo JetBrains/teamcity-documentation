@@ -66,6 +66,6 @@ __19 September 2022__
 
 ### Security
 
-1 security problems has been fixed.
+1 security issue has been fixed.
 
 
