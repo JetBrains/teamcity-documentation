@@ -12,6 +12,17 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 
 ## Current version
 
+__TeamCity Version 2022.04.4__
+
+Release date: 19 September 2022   
+Build 108763
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.4.exe)   
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.4.tar.gz)
+
+[Release notes](teamcity-2022-04-3-release-notes.md)
+
+## TeamCity Version 2022.04.3
 __TeamCity Version 2022.10__
 
 Release date: _ October 2022   
