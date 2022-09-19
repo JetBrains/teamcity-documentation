@@ -5,7 +5,7 @@
 ## Changes from 2022.04.3 to 2022.04.4
 
 * To prevent code cache overflow, we added ReservedCodeCacheSize=640m default value for all server installations. See the [TW-76238](https://youtrack.jetbrains.com/issue/TW-76238/High-CPU-usage-if-code-cache-is-filled-in) issue.
-* SVNKit has been updated to 1.10.8.
+* SVNKit has been updated to 1.10.8 in TeamCity 2022.04.4.
 
 
 ## Changes from 2022.04.2 to 2022.04.3
