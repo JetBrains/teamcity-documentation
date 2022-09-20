@@ -535,6 +535,7 @@ Allow users from all domains to log in, including gmail.com
 <td>
 
 Disabled by default.
+
 If enabled, all users with different domains could access the TeamCity server. Be careful with granting access — any user could authorize on your TeamCity Server. To limit access, use the Restrictions authentication setting.
 
 </td>
