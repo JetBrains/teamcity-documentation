@@ -260,20 +260,19 @@ where:
 7\. Modify your `build.xml` file and add tasks for downloading artifacts, for example (applicable for Ant 1.6 and later):
 
 ```XML
-<<target name="fetchArtifacts" description="Retrieves artifacts for TeamCity" xmlns:ivy="antlib:org.apache.ivy.ant">
-     <taskdef uri="antlib:org.apache.ivy.ant"  resource="org/apache/ivy/ant/antlib.xml"/>
-       <classpath>
-         <pathelement location="${basedir}/lib/ivy-2.0.jar"/>
-         <pathelement location="${basedir}/lib/commons-httpclient-3.0.1.jar"/>
-         <pathelement location="${basedir}/lib/commons-logging.jar"/>
-         <pathelement location="${basedir}/lib/commons-codec-1.3.jar"/>
-       </classpath>
-     </taskdef>
-     <ivy:configure file="${basedir}/ivyconf.xml" />
-     <!--<ivy:cleancache />-->
-     <ivy:retrieve pattern="${basedir}/[artifact].[ext]"/>
-   </target>
-
+<target name="fetchArtifacts" description="Retrieves artifacts for TeamCity" xmlns:ivy="antlib:org.apache.ivy.ant">
+ <taskdef uri="antlib:org.apache.ivy.ant"  resource="org/apache/ivy/ant/antlib.xml"/>
+   <classpath>
+     <pathelement location="${basedir}/lib/ivy-2.0.jar"/>
+     <pathelement location="${basedir}/lib/commons-httpclient-3.0.1.jar"/>
+     <pathelement location="${basedir}/lib/commons-logging.jar"/>
+     <pathelement location="${basedir}/lib/commons-codec-1.3.jar"/>
+   </classpath>
+ </taskdef>
+ <ivy:configure file="${basedir}/ivyconf.xml" />
+ <!--<ivy:cleancache />-->
+ <ivy:retrieve pattern="${basedir}/[artifact].[ext]"/>
+</target>
 ```
 
 <note>
