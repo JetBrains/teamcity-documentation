@@ -22,7 +22,7 @@ Open SQL Server Configuration Manager and do the following:
 In MS SQL Server Management Studio:
 1. Connect to your database server, right-click the _Databases_ node in the Object Explorer, and select _New database_.
 2. On the _General_ page, specify the database name ("TeamCity" on the screenshot below) and allocate sufficient [transaction log](https://msdn.microsoft.com/en-us/library/ms365418.aspx) space. The recommended minimum is 1 GB (1024 MB). The requirements vary depending on how intensively the server will be used.![createDB_new.png](createDB_new.png)
-3. Specify the primary collation. Go to the _Option_ node in the left pane and select a collation on the right. We recommend a case-sensitive collation (with the collation name ending with `_CS_AS`) corresponding to your locale. Click __Ok__ to save the settings:![collation_new_new.png](collation_new_new.png)
+3. Specify the primary collation. Go to the _Options_ node in the left pane and select a collation on the right. We recommend a case-sensitive collation (with the collation name ending with `_CS_AS`) corresponding to your locale. Click __Ok__ to save the settings:![collation_new_new.png](collation_new_new.png)
 4. Make sure the `no count` setting is disabled as follows: right-click the server instance in Object Explorer, go to _Properties | Connections_. In the _Default Connection Options_ frame, `no count` must be turned off. Save changes if any.![noCount.png](noCount.png)
 
 
