@@ -419,7 +419,7 @@ If you do not want to use the bundled backup functionality or need manual contro
 8. Specify the proper [database](set-up-external-database.md) in `<TeamCity Data Directory>/config/database.properties`. If the database is not copied, an empty external database needs to be [created by the user](set-up-external-database.md).
 9. Perform the necessary [environment transfer](#Environment+transferring).
 
->If you want to do a quick check and do not need to preserve the build history on the new server, you can skip Step 6 (cloning database) and all the optional items of Step 4.
+>If you want to do a quick check and do not need to preserve the build history, user, and roles on the new server, you can skip Step 6 (cloning database) and all the optional items of Step 4.
 
 <anchor name="environment_transfer"/>
 
