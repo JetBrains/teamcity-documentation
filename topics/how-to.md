@@ -406,17 +406,18 @@ If you do not want to use the bundled backup functionality or need manual contro
 2. Ensure the server is not running.
 3. Either perform clean [installation](install-and-start-teamcity-server.md) or copy the TeamCity binaries ([`TeamCity Home Directory`](teamcity-home-directory.md)) into a new place (the `temp` and `work` subdirectories can be omitted during copying). Use exactly the same TeamCity version. If you plan to upgrade after copying, perform the upgrade only after you have the existing version up and running.
 4. Copy `<[TeamCity Data Directory](teamcity-data-directory.md)>`. If you do not need the full copy, refer to the items below for options.
-    * `.BuildServer/config` to preserve projects and build configurations settings
-    * `.BuildServer/lib` and `.BuildServer/plugins` if you have them
-    * files from the root of `.BuildServer/system` if you use an internal database and you do not want to move this database
-    * `.BuildServer/system/artifacts` (optional) if you want build artifacts and build logs (including tests failure details) to be preserved on the new server
-    * `.BuildServer/system/changes` (optional) if you want personal changes to be preserved on the new server
-    * `.BuildServer/system/pluginData` (optional) if you want to preserve the state of various plugins, build triggers, and settings audit diff
-    * `.BuildServer/system/caches` and `.BuildServer/system/caches` (optional) are not necessary to copy to the new server, they will be recreated on startup, but can take some time to be rebuilt (expect some slow down)
+    * `<TeamCity Data Directory>/config` to preserve projects and build configurations settings
+    * `<TeamCity Data Directory>/lib` and `<TeamCity Data Directory>/plugins` if you have them
+    * files from the root of `<TeamCity Data Directory>/system` if you use an internal database and you do not want to move this database
+    * `<TeamCity Data Directory>/system/artifacts` (optional) if you want build artifacts and build logs (including tests failure details) to be preserved on the new server
+    * `<TeamCity Data Directory>/system/changes` (optional) if you want personal changes to be preserved on the new server
+    * `<TeamCity Data Directory>/system/pluginData` (optional) if you want to preserve the state of various plugins, build triggers, and settings audit diff
+    * `<TeamCity Data Directory>/system/caches` (optional) is not necessary to copy to the new server. If not copied, it will be rebuilt on startup, but that can take some time.
 5. Artifacts directory is usually large. If you need to minimize the downtime of the server when moving it, you can use the generic approach for copying the data: use rsync, robocopy or alike tool to copy the data while the original server is running. Repeat the sync run several times until the amount of synced data reduces. Run the final sync after the original server shutdown. Alternative solution for the server move is to make the old data artifacts directory accessible to the new server and configure it as a second [location of artifacts](teamcity-configuration-and-maintenance.md). Then copy the files over from this second location to the main one while the server is running. Restart the server after copying completion.
 6. Create a copy of the [database](set-up-external-database.md), which your TeamCity installation is using, in a new schema or new database server. This can be done with database-specific tools or with the bundled maintainDB tool by [backing up](creating-backup-via-maintaindb-command-line-tool.md) database data and then [restoring](restoring-teamcity-data-from-backup.md) it.
-7. Configure the new TeamCity installation to use proper `<[TeamCity Data Directory](teamcity-data-directory.md)>` and [database](set-up-external-database.md) (`.BuildServer/config/database.properties` points to a copy of the database).
-8. Perform the necessary [environment transfer](#Environment+transferring).
+7. Configure the new TeamCity installation to use proper `<[TeamCity Data Directory](teamcity-data-directory.md)>`.
+8. Specify the proper [database](set-up-external-database.md) in `<TeamCity Data Directory>/config/database.properties`. If the database is not copied, an empty external database needs to be [created by the user](set-up-external-database.md).
+9. Perform the necessary [environment transfer](#Environment+transferring).
 
 >If you want to do a quick check and do not need to preserve the build history on the new server, you can skip Step 6 (cloning database) and all the optional items of Step 4.
 
