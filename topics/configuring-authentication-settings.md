@@ -554,11 +554,11 @@ Restrict authentication
 
 A comma-separated list of [organizations' domains](https://cloud.google.com/resource-manager/docs/creating-managing-organization). For example, `company.com,another.com`.
 
-This list limits a set of users who can register or authenticate in TeamCity with their Google account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+This list limits a set of users who can register or authenticate in TeamCity with their Google account to the users of the specified domains. 
 
-To use this restriction, make sure that the Google OAuth application used in the selected Google connection is approved for each specified organization.
+When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email with one of the specified domains and don't have a user profile in TeamCity.
 
->If you delete a user from an organization in Google, remember to restrict their access or delete their user profile in TeamCity.
+>There is no synchronization of user profiles between Google and TeamCity. If you delete a user from the Google organization, you'll have to manually restrict their access in TeamCity.
 
 </td>
 
