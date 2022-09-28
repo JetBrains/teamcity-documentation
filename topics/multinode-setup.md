@@ -82,6 +82,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
 5. Open the TeamCity __Administration | Nodes Configuration__ page on any of the two servers and enable the "_[Main TeamCity node](#Main+Node+Responsibility)_" responsibility for a node you want to make main.
 6. Proceed with [configuring the reverse HTTP proxy](#Proxy+Configuration).
 
+<anchor name="MultinodeSetup-ProxyConfiguration"/>
 ## Proxy Configuration
 {id="Proxy+Configuration" auxiliary-id="Proxy+Configuration" product="tc"}
 
