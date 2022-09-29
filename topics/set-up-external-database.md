@@ -82,7 +82,7 @@ The schema has to be empty (it must not contain any tables).
 
 #### On TeamCity Server Side (with PostgreSQL)
 
-Download the required [PostgreSQL JDBC42 driver](http://jdbc.postgresql.org/download.html#current) and place it into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any). Proceed with the TeamCity setup.
+Download the required [PostgreSQL JDBC42 driver](https://jdbc.postgresql.org/download) and place it into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any). Proceed with the TeamCity setup.
 
 ### Oracle
 
