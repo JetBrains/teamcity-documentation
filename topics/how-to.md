@@ -277,6 +277,16 @@ shared_buffers=512MB
 
 ```
 
+### synchronous_commit
+
+If TeamCity is the only application using the PostgreSQL database, we recommend disabling the [http://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT](http://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT) parameter:
+
+```Shell
+
+synchronous_commit=off
+
+```
+
 <anchor name="checkpoint_segments"/>
 
 ### checkpoint-related parameters
@@ -299,16 +309,6 @@ For versions __prior to PostgreSQL 9.5__:
 
 checkpoint_segments=32
 checkpoint_completion_target=0.9
-```
-
-### synchronous_commit
-
-If TeamCity is the only application using the PostgreSQL database, we recommend disabling the [http://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT](http://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT) parameter:
-
-```Shell
-
-synchronous_commit=off
-
 ```
 
 <anchor name="HowTo-SetUpTeamCitybehindaProxyServer"/>
