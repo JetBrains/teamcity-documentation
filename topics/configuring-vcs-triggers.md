@@ -28,7 +28,7 @@ See also details at the [Build Dependencies](build-dependencies-setup.md) page.
 When this option is __not__ enabled, several check-ins by different committers can be made; and once they are detected, TeamCity will add only one build to the queue with all of these changes.
 
 If you have fast builds and enough build agents, you can make TeamCity launch a new build __for each check-in__ ensuring that no other changes get into the same build.    
-To do that, select the __Trigger a build on each check-in__ option. If you select the __Include several check-ins in build if they are from the same committer__ option, and TeamCity will detect a number of pending changes, it will group them by user and start builds having single user changes only.
+To do that, select the __Trigger a build on each check-in__ option. If you select the __Include several check-ins in a build if they are from the same committer__ option, and TeamCity will detect a number of pending changes, it will group them by user and start builds having single user changes only.
 
 This helps to figure out whose change broke a build or caused a new test failure, should such issue arise.
 
