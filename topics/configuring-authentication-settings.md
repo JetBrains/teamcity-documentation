@@ -5,7 +5,7 @@ TeamCity can authenticate users via an internal database, or can integrate into 
 
 ## Configuring Authentication
 
-Authentication is configured on the __Administration | Authentication__ page. Currently used authentication modules are also displayed there.
+Authentication is configured on the __Administration | Authentication__ page. The currently used authentication modules are also displayed there.
 
 TeamCity provides several preconfigured authentication options (presets) to cover the most common use cases. The presets are combinations of authentication modules supported by TeamCity:
 
@@ -195,11 +195,11 @@ Please refer to the [dedicated page](ntlm-http-authentication.md).
 
 ### Bitbucket Cloud
 
-Since version 2020.2, users can sign in to TeamCity with a Bitbucket Cloud account.
+Users can sign in to TeamCity with a Bitbucket Cloud account.
 
 Before enabling this module, you need to configure a [Bitbucket Cloud connection](configuring-connections.md#Bitbucket+Cloud) in the Root project's settings and a dedicated application in Bitbucket.
 
-To sign in, click the Bitbucket icon above the login form and, after the redirect, approve the TeamCity application. If a user with your Bitbucket email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in Bitbucket, this Bitbucket account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with Bitbucket Cloud profiles.
+To sign in, click the Bitbucket icon above the login form and, after the redirect, approve the TeamCity application. If a user with your Bitbucket email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in Bitbucket, this Bitbucket account will be mapped to the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with Bitbucket Cloud profiles.
 
 <table>
 
@@ -219,7 +219,7 @@ To sign in, click the Bitbucket icon above the login form and, after the redirec
 <td>
 
 Enabled by default.  
-If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
+If this options is disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>
 
@@ -237,7 +237,7 @@ Restrict authentication
 
 A comma-separated list of [workspaces'](https://support.atlassian.com/bitbucket-cloud/docs/what-is-a-workspace/) IDs.
 
-This list limits a set of users who can register or authenticate in TeamCity with their Bitbucket Cloud account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+This list limits a set of users who can register or authenticate in TeamCity with their Bitbucket Cloud account to the specified workspaces. When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified workspaces and don't have a user profile in TeamCity.
 
 Leave empty to allow all Bitbucket Cloud users to access the TeamCity server.
 
@@ -251,11 +251,11 @@ Leave empty to allow all Bitbucket Cloud users to access the TeamCity server.
 
 ### GitHub.com
 
-Since version 2020.2, users can sign in to TeamCity with a GitHub.com account.
+Users can sign in to TeamCity with a GitHub.com account.
 
 Before enabling this module, you need to configure a [GitHub.com connection](configuring-connections.md#GitHub) in the Root project's settings and a dedicated application in GitHub.
 
-To sign in, click the GitHub icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitHub email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitHub, this GitHub account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitHub.com profiles.
+To sign in, click the GitHub icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitHub email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitHub, this GitHub account will be mapped to the respective TeamCity user, and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitHub.com profiles.
 
 <table>
 
@@ -275,7 +275,7 @@ To sign in, click the GitHub icon above the login form and, after the redirect, 
 <td>
 
 Enabled by default.  
-If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
+If this option is disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>
 
@@ -293,7 +293,7 @@ Restrict authentication
 
 A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams/about-organizations) IDs.
 
-This list limits a set of users who can register or authenticate in TeamCity with their GitHub account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+This list limits a set of users who can register or authenticate in TeamCity with their GitHub account  to the specified organizations. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified organizations and don't have a user profile in TeamCity.
 
 >To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub.com connection](configuring-connections.md#GitHub) is approved for each specified organization.
 {type="note"}
@@ -334,7 +334,7 @@ To sign in, click the GitHub icon above the login form and, after the redirect, 
 <td>
 
 Enabled by default.  
-If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
+If this option is disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>
 
@@ -352,7 +352,7 @@ Restrict authentication
 
 A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams/about-organizations) IDs.
 
-This list limits a set of users who can register or authenticate in TeamCity with their GitHub account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+This list limits a set of users who can register or authenticate in TeamCity with their GitHub account  to the specified organizations. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified organizations and don't have a user profile in TeamCity.
 
 >To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub Enterprise connection](configuring-connections.md#GitHub) is approved for each specified organization.
 {type="note"}
@@ -399,7 +399,7 @@ To sign in, click the GitLab icon above the login form and, after the redirect, 
 <td>
 
 Enabled by default.  
-If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
+If this option is disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>
 
@@ -417,7 +417,7 @@ Restrict authentication
 
 A comma-separated list of [groups'](https://docs.gitlab.com/ee/user/group/) IDs.
 
-This list limits a set of users who can register or authenticate in TeamCity with their GitLab account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+This list limits a set of users who can register or authenticate in TeamCity with their GitLab account  to the specified groups. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified groups and don't have a user profile in TeamCity.
 
 Leave empty to allow all GitLab users to access the TeamCity server.
 
@@ -431,7 +431,7 @@ Leave empty to allow all GitLab users to access the TeamCity server.
 
 ### GitLab CE/EE
 
-Since version 2020.2, users can sign in to TeamCity with a GitLab CE/EE account.
+Users can sign in to TeamCity with a GitLab CE/EE account.
 
 Before enabling this module, you need to configure a [GitLab CE/EE connection](integrating-teamcity-with-vcs-hosting-services.md) in the Root project's settings and a dedicated application in GitLab.
 
@@ -457,7 +457,7 @@ To sign in, click the GitLab icon above the login form and, after the redirect, 
 <td>
 
 Enabled by default.  
-If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
+If this option is disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>
 
@@ -475,7 +475,7 @@ Restrict authentication
 
 A comma-separated list of [groups'](https://docs.gitlab.com/ee/user/group/) IDs.
 
-This list limits a set of users who can register or authenticate in TeamCity with their GitLab account. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+This list limits a set of users who can register or authenticate in TeamCity with their GitLab account  to the specified groups. When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified groups and don't have a user profile in TeamCity.
 
 Leave empty to allow all GitLab users to access the TeamCity server.
 
@@ -518,7 +518,7 @@ To sign in, click the Google icon above the login form and, after the redirect, 
 
 Enabled by default.
 
-If disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
+If this option is disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 
 </td>
 
@@ -536,7 +536,7 @@ Allow users from all domains to log in, including gmail.com
 
 Disabled by default.
 
-If enabled, all users with different domains could access the TeamCity server. Be careful with granting access — any user could authorize on your TeamCity Server. To limit access, use the Restrictions authentication setting.
+If this option is enabled, all users with different domains can access the TeamCity server. Be careful with granting access — any user can authorize on your TeamCity Server. To limit access, use the _Restrict authentication_ setting.
 
 </td>
 
@@ -556,7 +556,7 @@ A comma-separated list of [organizations' domains](https://cloud.google.com/reso
 
 This list limits a set of users who can register or authenticate in TeamCity with their Google account to the users of the specified domains. 
 
-When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email with one of the specified domains and don't have a user profile in TeamCity.
+When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified domains and don't have a user profile in TeamCity.
 
 >There is no synchronization of user profiles between Google and TeamCity. If you delete a user from the Google organization, you'll have to manually restrict their access in TeamCity.
 
@@ -572,7 +572,7 @@ Before enabling this module, you need to create a dedicated application in JetBr
 
 After the connection is configured, go to __Administration | Authentication__ and:
 1. Click __Add module__ and choose the _JetBrains Space_ type.
-2. Choose if you want to allow creating new users on the first login. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
+2. Choose whether you want to allow creating new users on the first login. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 3. Save the module.
 
 To sign in, click the JetBrains Space icon above the TeamCity login form and, after the redirect, approve the TeamCity application.
@@ -583,8 +583,8 @@ Before enabling this module, you need to create a [dedicated connection](configu
 
 To enable the module, in __Administration | Authentication__:
 1. Click __Add module__ and choose the _Azure DevOps OAuth 2.0_ type.
-2. Choose if you want to allow creating new users on the first login. If you disable this option, TeamCity will not create a new TeamCity user when their Azure AD account is not recognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
-3. Choose if you want to restrict the access only to members of specific [Azure DevOps organizations](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/organization-management?view=azure-devops). Specify their IDs separated by comma. Together with the enabled _Allow creating new users on the first login_ option, this leaves an ability to automatically register unknown users but restricts it to those who work on your projects.
+2. Choose whether you want to allow creating new users on the first login. If you disable this option, TeamCity will not create a new TeamCity user when their Azure AD account is not recognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
+3. Choose whether you want to restrict access only to members of specific [Azure DevOps organizations](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/organization-management?view=azure-devops). Specify their IDs separated by a comma. When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified organizations and don't have a user profile in TeamCity.
 4. Save the module.
 
 To sign in, click the Azure DevOps icon above the TeamCity login form and, after the redirect, approve the TeamCity application.
@@ -613,7 +613,7 @@ You can find the detailed how-to for Okta in the [plugin's repository](https://g
 * Ensure that all the required SSO user profiles are associated with the app.
 * Copy the values of the app's SSO URL, issuer URL, and certificate.
 
->Alternatively to the manual app configuration, you can download the [XML metadata file](#saml-metadata) with the TeamCity configuration in __SAML Settings__ and upload it to your SSO profile.
+>Instead of configuring the app manually, you can download the [XML metadata file](#saml-metadata) with the TeamCity configuration in __SAML Settings__ and upload it to your SSO profile.
 
 After the app is created, proceed with configuring __SAML Settings__ in TeamCity:
 
