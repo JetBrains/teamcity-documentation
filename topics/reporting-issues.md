@@ -403,26 +403,6 @@ If the settings are the same and you do not use the manual checkout mode but the
 * In the [TeamCity IntelliJ plugin](intellij-platform-plugin.md), try to start a remote run build
 * Provide us with the debug logs from the TeamCity IntelliJ plugin and from the TeamCity server.
 
-## Logging in TeamCity Eclipse plugin
-
-To enable tracing for the [plugin](eclipse-plugin.md), run Eclipse IDE with the `-debug <filename>` command line parameter. The `<filename>` portion of the argument should be a properties file containing key-value pairs. The name of each property corresponds to the plugin module and the value is either `true` (to enable debug) or `false`. Here is an example of enabling most common tracing options:
-
-```Shell
-
-jetbrains.teamcity.core/debug = true
-jetbrains.teamcity.core/debug/communications = false
-jetbrains.teamcity.core/debug/ui = true
-jetbrains.teamcity.core/debug/vcs = true
-jetbrains.teamcity.core/debug/vcs/detail = true
-jetbrains.teamcity.core/debug/parser = true
-jetbrains.teamcity.core/debug/platform = true
-jetbrains.teamcity.core/debug/teamcity = true
-jetbrains.teamcity.core/perfomance/vcs = true
-jetbrains.teamcity.core/perfomance/teamcity = true
-```
-
-Read more about Eclipse Debug mode [Gathering Information About Your Plug-in](http://www.eclipse.org/eclipse/platform-core/documents/3.1/debug.html) and built-in Eclipse help.
-
 ## TeamCity Visual Studio Add-in issues
 
 ### TeamCity Add-in logging

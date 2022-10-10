@@ -901,16 +901,7 @@ __Integration with issue trackers is also represented in terms of integration wi
 
 </td></tr>
 
-<tr><td>
-
-**Eclipse**
-
-</td><td>
-
-* [Remote run](remote-run.md) and [pretesting commits](pre-tested-delayed-commit.md)
-* [Other numerous features](eclipse-plugin.md)
-
-</td><td></td></tr></table>
+</table>
 
 ## Notification Services
 

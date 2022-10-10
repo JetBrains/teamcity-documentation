@@ -9,7 +9,6 @@ For a list of version control systems supported by each IDE, see [Supported Plat
 <seealso>
         <category ref="inst_tools">
             <a href="intellij-platform-plugin.md">IntelliJ Platform Plugin</a>
-            <a href="eclipse-plugin.md">Eclipse Plugin</a>
             <a href="visual-studio-addin.md">Visual Studio Add-in</a>
         </category>
         <category ref="concepts">

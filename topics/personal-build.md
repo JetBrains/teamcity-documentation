@@ -75,7 +75,6 @@ If the current build configuration has a [Perforce VCS root](perforce.md), you c
  <seealso>
         <category ref="installation">
             <a href="intellij-platform-plugin.md">IntelliJ Platform Plugin</a>
-            <a href="eclipse-plugin.md">Eclipse Plugin</a>
             <a href="visual-studio-addin.md">Visual Studio Add-in</a>
         </category>
         <category ref="concepts">

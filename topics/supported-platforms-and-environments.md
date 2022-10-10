@@ -721,16 +721,6 @@ TeamCity provides productivity plugins for the following IDEs:
 
 <tr><td>
 
-[Eclipse](eclipse-plugin.md)
-
-</td><td>3.8, 4.2-4.6</td><td>
-
-Eclipse must be run under JDK 1.5+
-
-</td></tr>
-
-<tr><td>
-
 [IntelliJ Platform Plugin](intellij-platform-plugin.md)
 
 </td><td>
@@ -762,26 +752,6 @@ IDE
 <td>
 
 Supported VCS
-
-</td></tr><tr>
-
-<td>
-
-[Eclipse](eclipse-plugin.md)
-
-</td>
-
-<td>
-
-* Subversion 1.7-1.8 via Subclipse and Subversive Eclipse integration plugins or SvnKit.
-* Subversion 1.4-1.7 via Subclipse and Subversive Eclipse integration plugins.
-* Perforce (P4WSAD 2009.2 - 2010.1, P4Eclipse 2010.1 - 2015.1)
-* Git (the EGit 2.0+ Eclipse integration plugin)
-* CVS
-{product="tc"}
-* ClearCase (the client software is required), _integrated via an additional plugin_
-
-[Read more details](eclipse-plugin.md).
 
 </td></tr><tr>
 
@@ -831,12 +801,6 @@ IDE
 Supported Coverage Tools
 
 </td></tr><tr>
-
-<td>
-
-[Eclipse](eclipse-plugin.md)
-
-</td>
 
 <td>
 
