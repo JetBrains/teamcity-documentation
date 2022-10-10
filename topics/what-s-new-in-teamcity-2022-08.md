@@ -1,11 +1,11 @@
-[//]: # (title: What's New in TeamCity 2022.10)
-[//]: # (auxiliary-id: What's New in TeamCity 2022.10;What's New in TeamCity)
+[//]: # (title: What's New in TeamCity 2022.08)
+[//]: # (auxiliary-id: What's New in TeamCity 2022.08;What's New in TeamCity)
 
-## Refresh tokens for VCS Roots 
+## Refresh tokens for VCS Roots
 
-If you have a connection to a Bitbucket Cloud or GitLab VCS Root configured in TeamCity, you no longer need to enter your password when creating new entities 
+If you have a connection to a Bitbucket Cloud or GitLab VCS Root configured in TeamCity, you no longer need to enter your password when creating new entities
 (projects, build configurations, or VCS Roots) via this connection.
-Refresh tokens are now enabled by default for these VCS Roots. Such tokens are short-lived providing more security than passwords or personal access tokens: 
+Refresh tokens are now enabled by default for these VCS Roots. Such tokens are short-lived providing more security than passwords or personal access tokens:
 the TeamCity server refreshes them automatically without sharing any related data with agents.
 
 ## Restricted access token
@@ -21,7 +21,7 @@ Now TeamCity supports large artifacts (over 4 GB) out of the box. No additional 
 Interaction with cloud build agents can be complicated, as they can be stopped or terminated due to a number of reasons,
 even if you just logged in to a build agent to investigate an issue.
 
-Starting from this version, you can disable [a self-hosted cloud agent](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents) for maintenance, which means 
+Starting from this version, you can disable [a self-hosted cloud agent](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents) for maintenance, which means
 that the agents will not process any new builds, and you can, for example, log in to it and view its log.
 {product="tcc"}
 
@@ -34,7 +34,7 @@ The New UI is making its way into the Administration area. Creating new build st
 
 ## Permissions to Change VCS Username in a Project
 
-Starting from TeamCity 2022.08, Project Administrators get a new permission allowing them to change a user's VCS username in the project without adding the permission to modify user profile and roles. 
+Starting from TeamCity 2022.08, Project Administrators get a new permission allowing them to change a user's VCS username in the project without adding the permission to modify user profile and roles.
 The permission will be present for this role in the new TeamCity installations; for existing installations it has to be added manually.
 
 See [TeamCity Build 115573 release notes](teamcity-release-notes-build-115573.md).

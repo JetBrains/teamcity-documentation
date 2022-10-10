@@ -18,7 +18,7 @@
         <config-versions-switcher>https://data.services.jetbrains.com/help-versions</config-versions-switcher>
         <config-algloia-product-version>2022.10</config-algloia-product-version>
         <enable-browser-edits>true</enable-browser-edits>
-        <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2022.04/</browser-edits-url>
+        <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2022.10/</browser-edits-url>
         <disable-prev-next-links>true</disable-prev-next-links>
         <disable-variable-interpolation>true</disable-variable-interpolation>
         <web-root>https://www.jetbrains.com/help</web-root>
