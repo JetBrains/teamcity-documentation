@@ -229,7 +229,7 @@ This way, project admins no longer need to ask the system administrator for a pu
 * **Build failure conditions: Creating a build problem per each matching error**  
   When configuring a _Fail build on specific text in build log_ [failure condition](build-failure-conditions.md), you can now specify whether to create a build problem only for the first text occurrence found in a build log (default) or for each error that matches the specified pattern.
 
-* **The [Eclipse plugin](eclipse-plugin.md)** has been unbundled from TeamCity. [Contact our support](https://teamcity-support.jetbrains.com/hc/en-us) if you need the plugin.
+* **The Eclipse plugin** has been unbundled from TeamCity. [Contact our support](https://teamcity-support.jetbrains.com/hc/en-us) if you need the plugin.
 
 
 ## Fixed issues

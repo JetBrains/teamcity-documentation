@@ -1871,10 +1871,6 @@ CCTray\-format XML (`app/rest/cctray/projects.xml`) does not include paused buil
 
 Response to the experimental request `/app/rest/buildTypes/XXX/investigations` has changed the format and got additional fields to cover tests and problem investigations. There is an internal property `rest.beans.buildTypeInvestigationCompatibility` to include removed sub\-items. Please let us know via [support email](feedback.md) if you need to use the internal property.
 
-#### Eclipse plugin
-
-Dropped support of Subversion 1.4\-1.6. Now only Subversion 1.7\-1.8 working copies formats supported.
-
 ## Changes from 8.0.5 to 8.0.6
 
 No noteworthy changes.
@@ -2073,9 +2069,6 @@ Build configurations using Perforce agent\-side checkout will perform clean chec
 
 __SVN revision format__   
 For changes, detected in external repositories, SVN revision got format `NNN_MMM:EXTUUID_CHANGEDATE`, where `NNN` \- revision of the main repository, `MMM` \- revision of externals repository, `EXTUUID` \- UUID of externals repository, `CHANGEDATE` \- change timestamp. This change may affect plugins/REST api clients which use revision of the last build change somehow.
-
-__Eclipse IDE plugin compatibility__   
-Since TeamCity 7.1, Eclipse version 3.3 (Europa) is no longer supported by TeamCity Eclipse plugin.Eclipse 3.8 and Eclipse 4.2 (Juno) are now supported.
 
 __Default schema when Microsoft SQL Server is used as an external database__   
 Starting with version 7.1 TeamCity works only with a single database schema unlike previous versions when it could work with tables in any schemas of the database server.

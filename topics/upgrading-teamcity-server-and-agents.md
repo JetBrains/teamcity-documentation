@@ -152,7 +152,7 @@ If you made no changes to the container, you can just stop the running container
 {product="tc"}
 
 It is recommended for all users to regularly update their IDE plugins to the latest version compatible with the TeamCity server version in use — at least to the version available from the TeamCity server's **Tools** section in the user profile.   
-Generally, versions of the IntelliJ IDEA TeamCity plugin, Eclipse TeamCity plugin, and Visual Studio TeamCity add-in have to be the same as the TeamCity server version. Users with non-matching plugin versions get a message on an attempt to log in to the TeamCity server with a non-matching version.
+Generally, the versions of the IntelliJ IDEA TeamCity plugin and Visual Studio TeamCity add-in have to be the same as the TeamCity server version. Users with non-matching plugin versions get a message on an attempt to log in to the TeamCity server with a non-matching version.
 
 ## Upgrading Build Agents
 {product="tc"}

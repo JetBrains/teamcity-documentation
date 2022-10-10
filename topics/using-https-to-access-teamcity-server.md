@@ -19,7 +19,7 @@ __If your certificate is valid__ (i.e. it was signed by a well known Certificate
 __If your certificate is not valid (is self-signed):__ (i.e. is not signed by a known Certificate Authority and likely to result in "PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target" error message)
 * To enable HTTPS connections from the TeamCity [Visual Studio Add-in](visual-studio-addin.md), point your Internet Explorer to the TeamCity server using `https://` URL and import the server certificate into the browser. After that, the Visual Studio Add-in should be able to connect by HTTPS.
   {product="tc"}
-* To enable HTTPS connections from Java clients (TeamCity Agents, IntelliJ IDEA, Eclipse, and so on), see the [section below](#Configuring+JVM) for configuring the JVM installation used by the connecting application.
+* To enable HTTPS connections from Java clients (TeamCity Agents, IntelliJ IDEA, and so on), see the [section below](#Configuring+JVM) for configuring the JVM installation used by the connecting application.
 
 ## Configuring JVM
 
@@ -49,7 +49,7 @@ If you have implemented a custom authentication based on client certificates in 
 
 __Importing client certificate__
 
-If you need to use a client certificate to access a server via https (for example, from IntelliJ IDEA, Eclipse or the build agents), you will need to add the certificate to the Java keystore and supply the keystore to the JVM used by the connecting process.
+If you need to use a client certificate to access a server via https (for example, from IntelliJ IDEA or the build agents), you will need to add the certificate to the Java keystore and supply the keystore to the JVM used by the connecting process.
 
 1\. If you have your certificate in a __p12__ file, you can use the following command to convert it to a Java keystore. Make sure you use `keytool` from JDK 1.6-1.8: earlier versions may not understand p12 format.
 

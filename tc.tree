@@ -84,7 +84,6 @@
       <toc-element id="upgrading-dsl.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="upgrade-dsl"/>
       <toc-element id="upgrade-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
-      <toc-element id="what-s-new-in-teamcity-2022-10.md" show-structure-for="chapter" show-structure-depth="4">
          <toc-element id="teamcity-2022-10-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
       </toc-element>
       <toc-element id="what-s-new-in-teamcity-2022-04.md" show-structure-for="chapter" show-structure-depth="4" hidden="true">

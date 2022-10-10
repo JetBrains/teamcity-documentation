@@ -384,7 +384,7 @@ After changing this file, restart the IDE. The TeamCity plugin debug logs are sa
 
 ### Open in IDE Functionality Logging
 
-(Applicable to IntelliJ IDEA and Eclipse) Add the following JVM option before starting IDE:   
+Add the following JVM option before starting IntelliJ IDEA:   
 `-Dteamcity.activation.debug=true`   
 
 The logging related to the __open in IDE__ functionality will appear in the IDE _console_.
