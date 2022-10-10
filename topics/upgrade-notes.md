@@ -56,7 +56,7 @@ If you have been using any of these versions in your scripts, consider switching
   All deprecated settings are marked and alternatives are provided. After the migration, you can delete this plugin and use the version bundled with TeamCity.
 
 * The [CVS plugin](cvs.md) has been unbundled from TeamCity. If you want to continue using it on your server, please [download it from JetBrains Marketplace](https://plugins.jetbrains.com/plugin/18552-vcs-support-cvs) and install it as described [here](installing-additional-plugins.md).
-* The [Eclipse plugin](eclipse-plugin.md) has been unbundled from TeamCity. [Contact our support](https://teamcity-support.jetbrains.com/hc/en-us) if you need the plugin.
+* The Eclipse plugin has been unbundled from TeamCity. [Contact our support](https://teamcity-support.jetbrains.com/hc/en-us) if you need the plugin.
 
 ## Changes from 2021.2.2 to 2021.2.3
 
