@@ -322,7 +322,7 @@ Unfortunately, the affected .NET build steps cannot be converted automatically o
 
 ## Changes from 2020.1.x to 2020.2
 
-* For TeamCity databases using a PostgreSQL database, the JDBC driver must be upgraded to 42.x version. Otherwise, a critical performance degradation may occur. 
+* For TeamCity servers using a PostgreSQL database, the JDBC driver must be upgraded to 42.x version. Otherwise, a critical performance degradation may occur. 
 
 ### Known Issues
 {id="known-issues-20202"}
