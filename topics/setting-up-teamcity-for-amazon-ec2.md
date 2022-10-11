@@ -252,13 +252,6 @@ When launching Amazon EC2 instances, TeamCity tags all the resources (for exampl
 
 As mentioned [above](#Tagging+for+TeamCity-launched+instances), TeamCity tags every instance it launches with the `teamcity:TeamcityData` tag that represents a server, cloud profile, and source (AMI or EBS\-instance). So, when several TeamCity servers try to use the same EBS instance, the second one will see the following message "Instance is used by another TeamCity server. Unable to start/stop it". If you are sure that no other TeamCity servers are working with this instance, you can delete the `teamcity:TeamcityData` tag and the instance will become available for all TeamCity servers again.
 
-### New instance types
-
-Since Amazon doesn't provide a robust API method to retrieve all instance types, Amazon integration relies on the periodical update of AWS SDK to make new instance types available.
-
-However, there is a workaround if you are not willing to wait. To register new Instance Types, use the `teamcity.ec2.instance.types` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) with new instance types separated by ",".
-{product="tc"}
-
 ### Proxy settings
 {product="tc"}
 
