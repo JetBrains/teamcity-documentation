@@ -23,7 +23,7 @@ The __Build Results__ page contains several tabs, whose set depends on the curre
 
 The __Overview__ tab displays general information about the build, such as the build duration, the agent used, trigger, and dependencies. The set of tabs depends on the steps and specifics of the current build. If a build is queued, the tab displays the position of the build in the queue, the time the build is supposed to start, and so on.
 
-<img src="exp-build-details.png" alt="Experimental Build Results page"/>
+<img src="exp-build-details.png" alt="Sakura Build Results page"/>
 
 It also shows the diagnostic messages related to the current build's status.
 

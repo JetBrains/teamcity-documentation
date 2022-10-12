@@ -9,7 +9,7 @@ TeamCity offers a comprehensive overview of build results:
 * Changes in sources
 * and many more, including custom graphs
 
-In this article, we give a quick overview of how to explore build results in TeamCity. Note that the examples showcase our new UI, but if you prefer the classic UI, you can find many of these features in it as well. To switch between the UIs, use the toggle in the upper right corner of the screen (![mammoth.png](mammoth.png) for classic, ![tube.png](tube.png) for experimental).
+In this article, we give a quick overview of how to explore build results in TeamCity. Note that the examples showcase the Sakura UI, but if you prefer the classic UI, you can find many of these features in it as well. To switch between the UIs, use the toggle in the upper right corner of the screen (![mammoth.png](mammoth.png) for classic, ![tube.png](tube.png) for experimental).
 
 ## Preview Projects and Build Configurations
 
@@ -19,17 +19,17 @@ Both __Project Home__ and __Build Configuration Home__ allow you to monitor buil
 
 __Build Configuration Home__ shows statuses of the recent builds, per branch or all combined. To preview a build without opening its results, you can just expand it in the list:
 
-<img src="exp-build-home.png" alt="Experimental Build Home page"/>
+<img src="exp-build-home.png" alt="Sakura Build Home page"/>
 
 __Project Home__ gives a more general overview of all the project's subprojects and build configurations. The _Builds_ mode aggregates __Build Configuration Home__ views of the nested configurations. The _Trends_ mode displays configurations as interactive graphs:
 
-<img src="exp-project-home.png" alt="Experimental Project Home page"/>
+<img src="exp-project-home.png" alt="Sakura Project Home page"/>
 
 ## Explore Build Results
 
 If you click a build in the list, its __Build Results__ page will open.
 
-<img src="exp-build-details.png" alt="Experimental Build Results page"/>
+<img src="exp-build-details.png" alt="Sakura Build Results page"/>
 
 The heading part of this page shows:
 * General information like number, date, and statistics.

@@ -12,11 +12,11 @@ By default, the page does not show the commits to the build configurations hidde
 The filters at the top of the page provide flexible search options: 
 - by user who made the change
 - by project 
-- by comment to the change (commit message) (the experimental UI only)
-- by path to the changed file: you can filter changes by entering a part of the path (the experimental UI only)
-- by revision number (the experimental UI only)
+- by comment to the change (commit message) (the Sakura UI only)
+- by path to the changed file: you can filter changes by entering a part of the path (the Sakura UI only)
+- by revision number (the Sakura UI only)
 
-Each change has a pie-chart icon showing status of builds with slices for the relative size of pending, successful, as well as old and new problematic builds affected by the change. (The pie-chart icon is not available in the experimental UI). Hovering over / clicking the build status icon gives a visual representation of how the user commit has affected different builds. Builds with new/critical problems are listed by default.
+Each change has a pie-chart icon showing status of builds with slices for the relative size of pending, successful, as well as old and new problematic builds affected by the change. (The pie-chart icon is not available in the Sakura UI). Hovering over / clicking the build status icon gives a visual representation of how the user commit has affected different builds. Builds with new/critical problems are listed by default.
 
 Expanding the change or clicking the _See builds_ link lists all builds with the change. 
 

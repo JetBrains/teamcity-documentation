@@ -74,7 +74,7 @@ To view the statuses of all chained builds, go to __Build Configuration Home__ o
 
 <img src="simpleBuildChain.png" width="1217" alt="Simple build chain in TeamCity"/>
 
-Our experimental UI offers three modes of representing dependencies: _timeline_, _list_, and _chain_. When you create more advanced chains, try monitoring them with each of these modes and choose the most convenient one for your tasks.
+The Sakura UI offers three modes of representing dependencies: _timeline_, _list_, and _chain_. When you create more advanced chains, try monitoring them with each of these modes and choose the most convenient one for your tasks.
 
 ## Configure Trigger and Checkout Rules
 
