@@ -122,18 +122,6 @@ Has no restrictions in permissions, and has all of the [Project Administrator's]
 
 </td></tr><tr>
 
-<td id="project-viewer">
-
-__Project Viewer__
-
-</td>
-
-<td>
-
-Has read-only access to projects and can only _view_ the project, its parent, and subprojects. Does not have permissions to [view agent details](build-agents-configuration-and-maintenance.md#Viewing+TeamCity+Agents+Details).
-
-</td></tr><tr>
-
 <td id="project-administrator">
 
 __Project Administrator__
@@ -142,7 +130,8 @@ __Project Administrator__
 
 <td>
 
-Can customize general settings of a project and settings of build configurations, assign roles to the project users, create subprojects. Has all the [Project Developer's](#project-developer) permissions.
+Can customize general settings of a project and settings of build configurations, assign roles to the project users, create subprojects, change a user's VCS username in the project without adding the permission to modify user profile and roles.
+Has all the [Project Developer's](#project-developer) permissions.
 
 With the enabled "_Change user / group notification rules in project_" permission, can edit notification rules for users and user groups assigned to their projects.
 
@@ -161,6 +150,19 @@ Usually commits changes to a project. Can start/stop builds, reorder builds in t
 Note that by default this role has the _Customize build parameters_ and _Change build source code with a custom patch_ permissions. This could give indirect access to altering a configuration/environment per build (see [more details](creating-and-editing-build-configurations.md#Permissions+to+Edit+Build+Configuration)).
 
 </td></tr><tr>
+
+<td id="project-viewer">
+
+__Project Viewer__
+
+</td>
+
+<td>
+
+Has read-only access to projects and can only _view_ the project, its parent, and subprojects. Does not have permissions to [view agent details](build-agents-configuration-and-maintenance.md#Viewing+TeamCity+Agents+Details).
+
+</td></tr><tr>
+
 
 <td id="agent-manager">
 
