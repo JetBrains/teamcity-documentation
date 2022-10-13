@@ -347,6 +347,7 @@ It is also possible to show the status of all projects build configurations by r
 
 You can also download and customize the `externalStatus.css` file (for example, you can disable some columns by using `display: none`; see comments in `externalStatus.css`). However, in this case, you must _not_ include the __withCss=true__ parameter, but provide the CSS styles explicitly, preferably in the `<head>` section, instead.
 
+<anchor name="ConfiguringGeneralSettings-runningBuildsLimit"/>
 ### Limit Number of Simultaneously Running Builds
 
 You can limit the number of builds that can run simultaneously on all agents. 
