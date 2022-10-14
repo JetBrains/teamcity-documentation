@@ -189,7 +189,7 @@ TeamCity has the following project-level permissions to perform a task on an age
 * Remove project agent
 * Authorize project agent
 
->With the _"Authorize project agent"_ permission and the [maximum number of agents](configuring-agent-pools.md#Managing+Agent+Pools) setting for an agent pool, you can set up the system in a way which allows project administrators to run new agents and authorize/add them to their pools without involving the global system administrator.
+>With the _"Authorize project agent"_ permission and the [maximum number of agents](configuring-agent-pools.md#Managing+Agent+Pools) setting for an agent pool, you can set up the system in a way that allows project administrators to run new agents and authorize/add them to their pools without involving the global system administrator.
 
 All project-level agent management permissions are by default added to the [Project Administrator](#project-administrator) role.
 

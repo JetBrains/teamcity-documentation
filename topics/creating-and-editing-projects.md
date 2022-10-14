@@ -20,7 +20,6 @@ Note that only two options are available by default: _From a repository URL_ and
 If a [connection](integrating-teamcity-with-vcs-hosting-services.md) to some VCS hosting service is configured in the Root project (or a parent project of the project to be created), the corresponding option becomes available, so you can create a project using an existing VCS connection specification.
 
 >After you create a project from a URL or VCS, you can edit the project description. To add a link to your project description, use the Markdown format: `[My Project](https://www.example.com)`.
-> 
 
 To create a subproject, go to the __Project Settings__ page of the parent project and use one of the available options, similarly to creating a project.
 

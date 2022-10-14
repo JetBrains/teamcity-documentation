@@ -18,8 +18,8 @@ Supported Java versions: __OpenJDK and Oracle Java 8 (8u16 or later) and 11 (32 
 The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 11__.  
 For Apple M1 systems, consider using a different version of Java 11, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
 
->Java 8 support will be discontinued since TeamCity Server 2023.04 (to be released in April 2023). If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 until this release.  
->Note that TeamCity is not currently compatible with Java 17, which makes Java 11 the only version planned for support in TeamCity Server 2023.04.
+>Java 8 support will be discontinued starting from TeamCity 2023.04 (to be released in April 2023). If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 before this TeamCity release.  
+>Note that TeamCity is not currently compatible with Java 17, which makes Java 11 the only version that will be supported in TeamCity 2023.04.
 > 
 {type="warning"}
 
