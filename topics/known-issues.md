@@ -312,7 +312,7 @@ Problems common to TeamCity Docker container images.
 * On Windows 10, the memory allocated per container is 1GB by default. To increase this value, use the following memory options:
 
     ```Shell
-        docker run ... -m 6GB --cpus=4 -e TEAMCITY_SERVER_MEM_OPTS="-Xmx3g -XX:ReservedCodeCacheSize=450m"
+        docker run ... -m 6GB --cpus=4 -e TEAMCITY_SERVER_MEM_OPTS="-Xmx3g -XX:ReservedCodeCacheSize=640m"
         
     ```
 
@@ -356,7 +356,7 @@ When Docker is starting Windows containers with __process isolation__, it uses a
 To resolve this issue, specify a dedicated volume mapping for the `..\TeamCity\temp` directory in the `docker run` command. We also suggest ensuring that a sufficient amount of resources is allocated to this process.
 
 ```Shell
-docker run --memory="6g" --cpus=4 -e TEAMCITY_SERVER_MEM_OPTS="-Xmx3g -XX:MaxPermSize=270m -XX:ReservedCodeCacheSize=450m" --name teamcity-server-instance
+docker run --memory="6g" --cpus=4 -e TEAMCITY_SERVER_MEM_OPTS="-Xmx3g -XX:MaxPermSize=270m -XX:ReservedCodeCacheSize=640m" --name teamcity-server-instance
     -v <path-to-data-directory>:C:/ProgramData/JetBrains/TeamCity 
     -v <path-to-logs-directory>:C:/TeamCity/logs  
     -v <path-to-temp-directory>:C:/TeamCity/temp  
