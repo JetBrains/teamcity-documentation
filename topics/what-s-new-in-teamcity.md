@@ -3,14 +3,14 @@
 
 ## Refresh tokens for VCS Roots 
 
-If you have a connection to a Bitbucket Cloud or GitLab VCS Root configured in TeamCity, you no longer need to enter your password when creating new entities 
+If you have a connection to a Bitbucket Cloud, GitLab, and Azure DevOps VCS Root configured in TeamCity, you no longer need to enter your password when creating new entities 
 (projects, build configurations, or VCS Roots) via this connection.
 Refresh tokens are now enabled by default for these VCS Roots. Such tokens are short-lived providing more security than passwords or personal access tokens: 
 the TeamCity server refreshes them automatically without sharing any related data with agents.
 
 ## Restricted access token
 
-Starting from TeamCity 2022.08, you can use [access tokens with limited permissions](configuring-your-user-profile.md#token-scope) not only for REST API requests, but also for basic authentication and for logging in via the UI.
+You can now use [access tokens with limited permissions](configuring-your-user-profile.md#token-scope) not only for REST API requests, but also for basic authentication and for logging in via the UI.
 
 ## Support for artifacts over 4GB
 
@@ -34,11 +34,8 @@ The New UI is making its way into the Administration area. Creating new build st
 
 ## Permissions to Change VCS Username in a Project
 
-Starting from TeamCity 2022.08, Project Administrators get a new permission allowing them to change a user's VCS username in the project without adding the permission to modify user profile and roles. 
+Project Administrators now have a new permission allowing them to change a user's VCS username in the project without adding the permission to modify user profile and roles. 
 The permission will be present for this role in the new TeamCity installations; for existing installations it has to be added manually.
-
-See [TeamCity Build 115573 release notes](teamcity-release-notes-build-115573.md).
-{product="tcc"}
 
 ## Roadmap
 
