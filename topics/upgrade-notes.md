@@ -341,7 +341,7 @@ Unfortunately, the affected .NET build steps cannot be converted automatically o
 
 ### New Header by Default
 
-The new header is enabled in both classic and experimental UIs. Some plugins developed for the previous header might not work in the new one. With [our new API](https://blog.jetbrains.com/teamcity/2020/09/teamcity-2020-2-updated-plugin-development/), you can make your custom plugins compatible with the new header or write new ones using modern web technologies.
+The new header is enabled in both the classic and Sakura UIs. Some plugins developed for the previous header might not work in the new one. With [our new API](https://blog.jetbrains.com/teamcity/2020/09/teamcity-2020-2-updated-plugin-development/), you can make your custom plugins compatible with the new header or write new ones using modern web technologies.
 
 If you have troubles displaying valuable information or actions in this header and updating plugins is not a convenient option, you can set the `teamcity.ui.useClassicHeader=true` internal property — this will switch your TeamCity header to the previous view. Please note that this is not a recommended solution as we might disable the obsolete header in the future versions.
 

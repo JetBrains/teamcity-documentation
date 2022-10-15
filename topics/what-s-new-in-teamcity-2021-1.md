@@ -170,7 +170,7 @@ To see a hint for a certain element, hover over its name in the assistant menu. 
 
 <img src="show-hints.png" width="460" alt="Onboarding UI assistant"/>
 
-Hints are available for [experimental](teamcity-experimental-ui.md) __Project Home__, __Build Configuration Home__, and __Build Overview__, as well as for some of the __Settings__ pages.
+Hints are available for [experimental](teamcity-sakura-ui.md) __Project Home__, __Build Configuration Home__, and __Build Overview__, as well as for some of the __Settings__ pages.
 
 ## Experimental UI improvements
 

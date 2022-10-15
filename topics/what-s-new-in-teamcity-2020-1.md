@@ -127,7 +127,7 @@ You can now monitor cloud agents right on a secondary node.
 
 <note>
 
-Our [experimental UI](teamcity-experimental-ui.md) is a work in progress: we introduce the changes in the early stages of development so you can already benefit from the new features. Based on your feedback, we will make sure to optimize the experimental pages and migrate all the important classic features in the future releases.   
+Our [experimental UI](teamcity-sakura-ui.md) is a work in progress: we introduce the changes in the early stages of development so you can already benefit from the new features. Based on your feedback, we will make sure to optimize the experimental pages and migrate all the important classic features in the future releases.   
 For now, if any of the familiar features are missing, you can switch an experimental page to the classic UI with the ![mammoth.png](mammoth.png) button, or turn off the experimental UI on the server completely in __My Settings & Tools__.
 
 __Try out the TeamCity experimental UI and leave your feedback via our [UI survey](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2020.1)!__
