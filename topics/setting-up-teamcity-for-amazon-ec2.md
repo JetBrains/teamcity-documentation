@@ -205,7 +205,6 @@ To run the image, TeamCity will launch spot instances matching the allocation st
 <note>
 
 TeamCity uses own values instead of the following parameters of the JSON config file:
-* `TargetCapacity`: TeamCity sets it to `1` and runs instances in accordance with the _Max instances_ number instead
 * `TerminateInstancesWithExpiration`: `false`
 * `ValidFrom`: the time when the image is created
 * `ValidUntil`: the `ValidFrom` value plus 5 minutes
