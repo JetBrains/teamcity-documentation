@@ -15,7 +15,7 @@
 |[Docker](https://www.docker.com/)|20.10.18|
 |[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|20.10.18|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
-|[AWS CLI](https://aws.amazon.com/cli/)|2.8.1|
+|[AWS CLI](https://aws.amazon.com/cli/)|2.8.2|
 |[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|v1.25.2|
 |[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.40.0|
 |[Google Cloud SDK](https://cloud.google.com/sdk)|405.0.0|
