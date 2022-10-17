@@ -48,7 +48,7 @@ Possible values:
 * __Recommended setting for large server__ (64-bit Java should be used): `-Xmx4g -XX:ReservedCodeCacheSize=640m`. These settings should be suitable for an installation with up to two hundreds of agents and thousands of build configurations. Custom plugins might require increasing the value defined via the `Xmx` parameter.
 * __Maximum settings for large-scale server__ (64-bit Java should be used): `-Xmx10g -XX:ReservedCodeCacheSize=640m`. Greater values can be used for larger TeamCity installations. However, generally it is not recommended to use values greater than `10g` without consulting TeamCity support.
 
-Starting from TeamCity 2022.04.4, the `ReservedCodeCacheSize` attribute has the `640m` default value for all server installations.
+The `ReservedCodeCacheSize` attribute has the `640m` default value for all server installations.
 
 If an `OutOfMemory` errors occur or you consistently see a memory-related warning in the TeamCity UI, it means you need to increase the setting to the next level.
 
