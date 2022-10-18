@@ -11,7 +11,7 @@ Specify a new value for disk space in the build feature settings.
 Note that the **Free Disk Space** build feature keeps track of the size of artifacts and automatically calculates the disk space required for resolving artifact dependencies. You do not have to take into account the size of the artifacts downloaded during the build when specifying the required disk space.
 {id="artifacts-automatic-space"}
 
-## Free Disk Space Requirements
+## How it works
 
 Before the build and before each build preparation stage (updating sources), the agent will check the currently available free disk space in three locations: 
 * agent's system
@@ -96,7 +96,7 @@ Here is how TeamCity will choose a free disk space value:
 3. If (1-2) are not defined, use the custom value defined in the build feature.
 4. If no custom values are defined, use the default value of 3 GB.
 
-### Disabling Artifacts Cache
+## Disabling Artifacts Cache
 
 A TeamCity build agent maintains a cache of published and downloaded build artifacts to reduce network transfers to the same agent. The cache is stored in the `<Build Agent Home>\system\.artifacts_cache` directory and is deleted automatically provided the Free disk space build feature is configured correctly. While downloading artifact dependencies, TeamCity automatically disables caching if there is insufficient space to store the cache.
 
