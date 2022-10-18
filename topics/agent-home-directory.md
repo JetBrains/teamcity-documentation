@@ -58,7 +58,7 @@ The content of directories storing agent auxiliary data can be deleted (but only
     * `teamcity-vcs.log` — agent-side checkout logs.
 
 * __/system__ 
-    * `.artifacts_cache` — cache for all build's artifacts; can be [configured](free-disk-space.md#Configuring+Artifacts+Cache).
+    * `.artifacts_cache` — cache for all build's artifacts; can be [configured](free-disk-space.md#Disabling+Artifacts+Cache).
 
 <anchor name="temp-dir"/>
 

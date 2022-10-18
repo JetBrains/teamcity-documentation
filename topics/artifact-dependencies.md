@@ -183,6 +183,10 @@ Example of accessing hidden artifacts:
 
 By default, downloading artifact dependencies to the [agent work directory](agent-work-directory.md) is allowed, the [agent home directory](agent-home-directory.md) is prohibited. To override the defaults, set custom rules to download artifacts by specifying the comma-separated paths in the [`buildAgent.properties`](configure-agent-installation.md): `teamcity.artifactDependenciesResolution.blackList` and `teamcity.artifactDependenciesResolution.whiteList`. Blacklisting a path forbids artifacts download to the directory unless it is whitelisted.
 
+### Automatic allocation of space for artifact dependencies
+
+TeamCity [automatically frees disk space](free-disk-space.md#artifacts-automatic-space) for resolving artifact dependencies based on the artifacts' size. You don't need to configure it manually.
+
 ## Configuring Artifact Dependencies Using Ant Build Script
 
 This section describes how to download TeamCity build artifacts inside the build script. These instructions can also be used to download artifacts from outside of TeamCity.

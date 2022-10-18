@@ -3,14 +3,24 @@
 
 >This page is about the _Free disk space_ build feature. If you want to learn how to automatically clean up the TeamCity data, see [this section](teamcity-data-clean-up.md). To learn where and how TeamCity stores its configuration settings, see [this section](teamcity-data-directory.md).
 
-The _Free disk space_ [build feature](adding-build-features.md) allows ensuring certain free disk space __on the agent__ before the build by deleting files managed by the TeamCity agent (other build's checkout directories and various caches).   
-When the feature is not configured, the default free space for a build is 3 GB.
+TeamCity needs disk space on agents for the builds and allocates 3 GB for it by default. 
 
-## Free Disk Space Requirements
+If you need more space for your builds, use the **Free Disk Space** [build feature](https://www.jetbrains.com/help/teamcity/adding-build-features.html). It allows ensuring certain free disk space **on the agent** before the build by cleaning up old build data, such as build's checkout directories and various caches.
+Specify a new value for disk space in the build feature settings.
 
-Before the build and before each build preparation stage, the agent will check the currently available free disk space in three locations: the agent's system, the agent's temp directory, and the build checkout directory. All these locations have to meet the same specified requirement. If the failure condition is specified, the build will fail if either of the locations does not meet the requirement.
+Note that the **Free Disk Space** build feature keeps track of the size of artifacts and automatically calculates the disk space required for resolving artifact dependencies. You do not have to take into account the size of the artifacts downloaded during the build when specifying the required disk space.
+{id="artifacts-automatic-space"}
 
-If the amount is less than required, the agent will try to delete the data of other builds before proceeding.
+## How it works
+
+Before the build and before each build preparation stage (updating sources), the agent will check the currently available free disk space in three locations: 
+* agent's system
+* agent's temp directory
+* build checkout directory 
+
+All these locations have to meet the same specified requirement. If the [failure condition](build-failure-conditions.md) is specified, the build will fail if either of the locations does not meet the requirement.
+
+If the amount of disk space is less than required, the agent will try to delete the old data of other builds before proceeding.
 
 The data cleaned includes:
 * the checkout directories that were marked for [deletion](build-checkout-directory.md#Automatic+Checkout+Directory+Cleaning)
@@ -86,11 +96,11 @@ Here is how TeamCity will choose a free disk space value:
 3. If (1-2) are not defined, use the custom value defined in the build feature.
 4. If no custom values are defined, use the default value of 3 GB.
 
-### Configuring Artifacts Cache
+## Disabling Artifacts Cache
 
-A TeamCity build agent maintains a cache of published and downloaded build artifacts to reduce network transfers to the same agent. The cache is stored in the `<[Build Agent Home](agent-home-directory.md)>\system\.artifacts_cache` directory and is cleaned automatically provided the _Free disk space_ build feature is configured correctly.
+A TeamCity build agent maintains a cache of published and downloaded build artifacts to reduce network transfers to the same agent. The cache is stored in the `<Build Agent Home>\system\.artifacts_cache` directory and is deleted automatically provided the Free disk space build feature is configured correctly. While downloading artifact dependencies, TeamCity automatically disables caching if there is insufficient space to store the cache.
 
-If caching artifacts is undesirable (for example, when the artifacts are large and not used within TeamCity, or if the artifacts cache directory is located not on the same disk as the build checkout directory, or if the builds do not define the _Free disk space_ build feature and the default 3Gb is not sufficient for a build), caching artifacts on the agent can be __turned off__ by adding the `teamcity.agent.filecache.publishing.disabled=true` configuration parameter to a project or one of the build configurations of a project. However, the agent will still cache artifacts downloaded as artifact dependencies.
+If caching artifacts is not required, it can be turned off by adding the `teamcity.agent.filecache.publishing.disabled=true` configuration parameter to a project or one of its build configurations. It can be helpful when the artifacts are large and not used within TeamCity, or if the artifacts cache directory is located not on the same disk as the build checkout directory. However, the agent will still cache artifacts downloaded as artifact dependencies if there is enough space to store the cache.
 
 [//]: # (Internal note. Do not delete. "Free disk spaced145e166.txt")
 
