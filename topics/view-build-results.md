@@ -9,7 +9,7 @@ TeamCity offers a comprehensive overview of build results:
 * Changes in sources
 * and many more, including custom graphs
 
-In this article, we give a quick overview of how to explore build results in TeamCity. Note that the examples showcase the Sakura UI, but if you prefer the classic UI, you can find many of these features in it as well. To switch between the UIs, use the toggle in the upper right corner of the screen (![mammoth.png](mammoth.png) for classic, ![tube.png](tube.png) for experimental).
+In this article, we give a quick overview of how to explore build results in TeamCity. Note that the examples showcase the Sakura UI, but if you prefer the classic UI, you can find many of these features in it as well. To switch between the UIs, use the toggle in the upper right corner of the screen (![mammoth.png](mammoth.png) for the classic UI and ![magic_wand.png](magic_wand.png) for the Sakura UI).
 
 ## Preview Projects and Build Configurations
 

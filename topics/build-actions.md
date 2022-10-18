@@ -76,7 +76,7 @@ To view your favorites, click your avatar in the upper right corner of the scree
 
 ### Compare Two Builds
 
-The _Select for comparison_ action of the build's __Actions__ menu (in __[Build Results](build-results-page.md)__) is available only in the new TeamCity UI. You can switch to it from a classic UI mode by clicking the test-tube icon in the upper right corner of the screen.
+The _Select for comparison_ action of the build's __Actions__ menu (in __[Build Results](build-results-page.md)__) is available only in the new TeamCity UI. You can switch to it from a classic UI mode by clicking the magic wand icon in the upper right corner of the screen.
 
 This action allows comparing the settings and results of the current build with any other build from this build configuration, side-by-side. It shows the statistics and differences of their [parameters](configuring-build-parameters.md), revisions, statistics, and tests.
 
