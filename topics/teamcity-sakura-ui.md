@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity Sakura UI)
 [//]: # (auxiliary-id: TeamCity Sakura UI)
 
-> The Sakura UI is the default UI for new TeamCity users starting from version 2022.10
+> The Sakura UI is now the default UI for new TeamCity users.
 
 The Sakura UI, first introduced in TeamCity 2019.1 as an alternative to the classic UI, is now the default TeamCity UI. While the classic UI is still available and is maintained, the new product features will be supported in the Sakura UI only.
 
@@ -17,7 +17,7 @@ You can change the default UI in __Your Profile | UI settings__ via the _Use Sak
 
 All pages supporting the Sakura UI have a toggle to quickly access the classic UI: ![mammoth.png](mammoth.png). 
 
-To return to the Sakura UI, click the magic wand icon:![magic-wand-ui.png](magic-wand-ui.png).
+To return to the Sakura UI, click the magic wand icon:![magic-wand.png](magic-wand.png).
 
 
 The section below provides an overview of the differences between the Sakura UI and the classic TeamCity UI.
@@ -28,7 +28,7 @@ The Sakura UI comes with a handy __[sidebar](#Sakura+sidebar)__ that serves for 
 
 Currently, the Sakura UI is available for the following pages:
 * __[Project Home](#Sakura+Project+Home+page)__ and __[Build Configuration Home](#Sakura+Build+Configuration+Home+page)__ pages: redesigned __Overview__ tab
-* __[Build Results](#Sakura+Build+Results+page)__ page: redesigned __Overview__, __Tests__ (and __Test History__, __Changes__, __Build Log__, and __Dependencies__ tabs
+* __[Build Results](#Sakura+Build+Results+page)__ page: redesigned __Overview__, __Tests__ and __Test History__, __Changes__, __Build Log__, and __Dependencies__ tabs
 * __[Agents](#Sakura+Agents+page)__ page
 * __[Queue](#Sakura+Queue+page)__ page
 
@@ -45,11 +45,14 @@ To customize a sidebar, click ![wn-pencil.png](wn-pencil.png) in its upper-right
 
 #### Projects sidebar
 
-The _Projects_ sidebar lists all the projects available to the current TeamCity user and allows searching them by name. You can expand any project to see its nested subprojects / build configurations and quickly switch between them. The status icons and counters for all its nested objects are also displayed in the sidebar.
-![sidebar_search.gif](sidebar_search.gif)
+The _Projects_ sidebar lists all the projects available to the current TeamCity user and allows searching them by name. 
+You can expand any project to see its nested subprojects / build configurations and quickly switch between them. 
+The status icons and counters for all its nested objects are also displayed in the sidebar.
+<img src="sidebar_search.gif" alt="Sakura projects sidefar" width="300"/>
+
 
 The sidebar allows accessing the __Favorite projects__ and __Favorite builds__ views with the lists of your favorite projects and favorite build configurations respectively.  
-You can also toggle the display of archived projects.![projects_sidebar.png](projects_sidebar.png)
+You can also toggle the display of archived projects.
 
 You can use the __Q__ keyboard shortcut to focus on the projects' search field. When focused, use __↑__ and __↓__ keyboard arrows to navigate between search results. To remove the focus, press __Esc__.
 
@@ -98,8 +101,7 @@ The __Actions__ menu offers several handy options: ![build-actions.png](build-ac
 <tip>
 
 Choose __Select for comparison__ to compare the parameters and results of the current build with any other selected build side-by-side. 
-This option is also available from the build's context menu in the build list. 
-
+This option is also available from the build's context menu in the build list.
 </tip>
 
 #### The Overview tab
@@ -117,7 +119,7 @@ Click any stage to open the corresponding line of the build log. The long logs c
 #### The  Changes tab
 
 The __Changes__ tab displays more information about the changes in the build, separately for user commits and artifact changes. 
-You can filter changes by their author and display changes made in the build configuration settings.![build_changes.png](build_changes.png)
+You can filter changes by their author and display changes made in the build configuration settings.![build-changes.png](build-changes.png)
 
 #### The Tests tab
 
