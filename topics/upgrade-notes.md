@@ -1,6 +1,21 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2022.04.4 to 2022.10
+
+### Planned deprecation of Java 8 in TeamCity Server 2023.04
+
+TeamCity 2022.10 Server supports Java versions 8 and 11, but __Java 8 support will be discontinued in the next version, TeamCity 2023.04__, to be released in April 2023. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 before TeamCity 2023.04.
+
+Note that TeamCity is not compatible with Java 17, which makes Java 11 the only version planned for support in TeamCity Server 2023.04.
+
+### Bundled tools updates
+{id="bundled-tools-updates-2022-10"}
+
+* The bundled Amazon Corretto Java has been updated to version 11.0.16.9.1 in the TeamCity server and agent Docker images for Windows and Linux.
+* The bundled Tomcat has been updated to version 8.5.82.
+* The bundled Kotlin compiler used in [TeamCity DSL](kotlin-dsl.md) has been updated to version 1.7.10.
+
 
 ## Changes from 2022.04.3 to 2022.04.4
 
