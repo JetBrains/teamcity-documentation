@@ -5,7 +5,7 @@
 
 The Sakura UI, first introduced in TeamCity 2019.1 as an alternative to the classic UI, is now the default TeamCity UI. While the classic UI is still available and is maintained, the new product features will be supported in the Sakura UI only.
 
-We recommend that you use the Sakura UI and benefit from a fresh, modern interface created with accessibility in mind. The Sakura UI is actively developed, and your [feedback is welcome](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2020.10).
+We recommend that you use the Sakura UI and benefit from a fresh, modern interface created with accessibility in mind. This new UI is actively developed, and your [feedback is welcome](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2020.10).
 
 ## Enabling and disabling Sakura UI
 
@@ -15,7 +15,7 @@ If you were using the classic UI, after upgrading TeamCity will offer you to swi
 
 You can change the default UI in __Your Profile | UI settings__ via the _Use Sakura UI_ checkbox.
 
-All pages supporting the Sakura UI have a toggle to quickly access the classic UI: <img src="mammoth.png" alt="Switch to the classic UI" height="20" width="20"/>.
+All pages supporting the new UI have a toggle to quickly access the classic UI: <img src="mammoth.png" alt="Switch to the classic UI" height="20" width="20"/>.
 
 To return to the Sakura UI, click the magic wand icon: <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/>.
 
@@ -24,7 +24,7 @@ The section below provides an overview of the differences between the Sakura UI 
 
 ## Features of Sakura UI
 
-The Sakura UI comes with a handy __[sidebar](#Sakura+sidebar)__ that serves for quick navigation.
+The new UI comes with a handy __[sidebar](#Sakura+sidebar)__ that serves for quick navigation.
 
 Currently, the Sakura UI is available for the following pages:
 * __[Project Home](#Sakura+Project+Home+page)__ and __[Build Configuration Home](#Sakura+Build+Configuration+Home+page)__ pages: redesigned __Overview__ tab
@@ -37,7 +37,7 @@ Below, you’ll find a recap of these features.
 
 ### Sakura sidebar
 
-The Sakura sidebar displays the project hierarchy and, for the Agents page, shows agent hierarchy and serves for better navigation between projects, build configurations, or build agents.
+This improved sidebar displays the project hierarchy and, for the Agents page, shows agent hierarchy and serves for better navigation between projects, build configurations, or build agents.
 
 You can change the sidebar width by dragging its frame border and hide/show it anytime by clicking the corresponding button at its bottom.
 
@@ -50,7 +50,6 @@ You can expand any project to see its nested subprojects / build configurations 
 The status icons and counters for all its nested objects are also displayed in the sidebar.
 <img src="sidebar_search.gif" alt="Sakura projects sidefar" width="300"/>
 
-
 The sidebar allows accessing the __Favorite projects__ and __Favorite builds__ views with the lists of your favorite projects and favorite build configurations respectively.  
 You can also toggle the display of archived projects.
 
@@ -58,7 +57,7 @@ You can use the __Q__ keyboard shortcut to focus on the projects' search field. 
 
 ### Sakura Project Home page
 
-The __Overview__ tab of the Sakura __Project Home__ page provides more visibility of the project's subprojects and build configurations. The page has two main views: __Builds__ and __Trends__.
+The __Overview__ tab of the __Project Home__ page provides more visibility of the project's subprojects and build configurations. The page has two main views: __Builds__ and __Trends__.
 
 The __Trends__ view comprises cards that represent build configurations of the selected project.
 
@@ -104,7 +103,7 @@ Choose __Select for comparison__ to compare the parameters and results of the cu
 This option is also available from the build's context menu in the build list.
 </tip>
 
-#### The Overview tab
+#### Overview tab
 
 In the upper right corner, you can see the trends for the previous builds of the current build configuration. Hovering over a bar brings up a pop-up with the build details.
 
@@ -116,12 +115,12 @@ The interactive graphic timeline reflects the duration of each build stage and i
 
 Click any stage to open the corresponding line of the build log. The long logs can also be displayed directly in the preview, without downloading.
 
-#### The  Changes tab
+#### Changes tab
 
 The __Changes__ tab displays more information about the changes in the build, separately for user commits and artifact changes. 
 You can filter changes by their author and display changes made in the build configuration settings.![build-changes.png](build-changes.png)
 
-#### The Tests tab
+#### Tests tab
 
 The __Tests__ tab allows switching between failed, ignored, and succeeded tests. Click a test to quickly view its details or, for example, to assign an investigation. You can also view its history on the new __Test History__ page.
 
@@ -130,7 +129,7 @@ The __Test History__ page has better performance now. It also has an adjustable 
 The list of builds that ran this test has improved usability now: on clicking a build, the stacktrace is displayed.
 
 
-#### The Dependencies tab
+#### Dependencies tab
 
 The __Dependencies__ tab boasts of a new more user-friendly design.
 
@@ -170,7 +169,7 @@ The __Overview__ view provides statistics about all the agents on the server.![a
 
 The Sakura [Changes page](viewing-user-changes-in-builds.md) comes with filters providing flexible search options allowing you to sort changes by comment (commit message), by path to the changed file, and by revision number.
 
-<img src="changes-page.png" alt="Changes in new TeamCity UI" width="460" />
+![changes-page.png](changes-page.png)
 
 
 ### Sakura Queue page
