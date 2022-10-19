@@ -11,7 +11,7 @@ Specify a new value for disk space in the build feature settings.
 Note that the **Free Disk Space** build feature keeps track of the size of artifacts and automatically calculates the disk space required for resolving artifact dependencies. You do not have to take into account the size of the artifacts downloaded during the build when specifying the required disk space.
 {id="artifacts-automatic-space"}
 
-## How it works
+## How it Works
 
 Before the build and before each build preparation stage (updating sources), the agent will check the currently available free disk space in three locations: 
 * agent's system
