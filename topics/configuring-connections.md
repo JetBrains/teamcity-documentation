@@ -195,7 +195,8 @@ To configure an AWS connection in TeamCity:
    Access keys
    : 
    If you selected access keys as the credentials type, get the keys from the AWS console's [Identity and Access Management section](https://console.aws.amazon.com/iam) and provide them to TeamCity. See how to get these keys [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey).
-   In the Access keys section in the TeamCity UI, do the following:
+   
+     In the Access keys section in the TeamCity UI, do the following:
      1. Specify permanent **Access keys**:
           * **Access key ID**. Enter the access key ID.
           * **Secret access Key**. Enter the secret access key.
@@ -214,7 +215,8 @@ To configure an AWS connection in TeamCity:
    IAM Role
    :
    Using [IAM roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html), you can delegate access to your AWS resources to users, applications, or services that usually don't have these permissions. These entities will [assume this role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html) to get such access.
-   You can use the IAM Role as the credentials type only if you already have at least one AWS connection with access keys or default credential provider chain configured in this TeamCity project.
+   
+     You can use the IAM Role as the credentials type only if you already have at least one AWS connection with access keys or default credential provider chain configured in this TeamCity project.
      1. Specify **IAM Role**:
           * **AWS Connection**. Select the AWS connection that will [grant the specified IAM Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html).
           * **Role ARN**. Specify the [ARN](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns) of the role to assume by the connection you are creating.
@@ -229,8 +231,9 @@ To configure an AWS connection in TeamCity:
 
    Default credential provider chain
    :
-   Select this type to provide access credentials according to the [default chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
-   This approach is recommended if you do not want to store the credentials on the TeamCity server.
+   Select this type to provide access credentials according to the [default chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default). 
+   
+     This approach is recommended if you do not want to store the credentials on the TeamCity server.
 
 7. Test and save the connection.
 
