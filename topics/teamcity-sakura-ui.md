@@ -15,9 +15,9 @@ If you were using the classic UI, after upgrading TeamCity will offer you to swi
 
 You can change the default UI in __Your Profile | UI settings__ via the _Use Sakura UI_ checkbox.
 
-All pages supporting the Sakura UI have a toggle to quickly access the classic UI: ![mammoth.png](mammoth.png). 
+All pages supporting the Sakura UI have a toggle to quickly access the classic UI: <img src="mammoth.png" alt="Switch to the classic UI" height="20" width="20"/>.
 
-To return to the Sakura UI, click the magic wand icon:![magic-wand.png](magic-wand.png).
+To return to the Sakura UI, click the magic wand icon: <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/>.
 
 
 The section below provides an overview of the differences between the Sakura UI and the classic TeamCity UI.
