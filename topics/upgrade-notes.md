@@ -15,6 +15,11 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 * The bundled Amazon Corretto Java has been updated to version 11.0.16.9.1 in the TeamCity server and agent Docker images for Windows and Linux.
 * The bundled Tomcat has been updated to version 8.5.82.
 * The bundled Kotlin compiler used in [TeamCity DSL](kotlin-dsl.md) has been updated to version 1.7.10.
+* The bundled Maven has been updated to version 3.8.6.
+
+### Other updates
+
+* The [Apache Maven](https://maven.apache.org/) library for [Maven triggers](configuring-maven-triggers.md) has been updated to version 3.8.6.
 
 
 ## Changes from 2022.04.3 to 2022.04.4

@@ -12,7 +12,7 @@ The following types of tools can be managed up via the __Administration | Tools_
 * __IntelliJ Inspections and Duplicates Engine__ with the bundled version of IntelliJ IDEA set as default.
 * __JetBrains dotCover Command Line Tools__ with the bundled version set as default. Used to collect code coverage for your .NET project.
 * __JetBrains ReSharper Command Line Tools__: by default the tools are bundled with TeamCity and are used by Inspections (.NET), Duplicates Finder (.NET) build runners to run code analysis.
-* __Maven__: several bundled versions are displayed, with 3.2.5 set as default.
+* __Maven__: several bundled versions are displayed, with 3.6.3 set as default.
 * __NuGet.exe__ used in NuGet specific build steps and NuGet Dependency Trigger. NuGet packages (`.nupkg` files) with the `tools/NuGet.exe` file inside are supported.
 * __NUnit 3__: different versions can be installed and the default version set/changed.
 * __Sysinternals handle.exe__ used to determine processes which hold files in the checkout directory on Windows agents.

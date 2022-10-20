@@ -313,7 +313,7 @@ The TeamCity web interface is mostly W3C-compliant, so any modern browser should
 
 [Maven](maven.md)
 
-</td><td>2.0.x, 2.x, 3.x</td><td>2.2.1, 3.0.5, 3.1.1, 3.2.5, 3.3.9, 3.5.4, 3.6.3</td></tr>
+</td><td>2.0.x, 2.x, 3.x</td><td>2.2.1, 3.0.5, 3.1.1, 3.2.5, 3.3.9, 3.5.4, 3.6.3, 3.8.6</td></tr>
 
 <tr><td>
 
