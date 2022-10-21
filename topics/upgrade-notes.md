@@ -19,7 +19,7 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 
 ## Changes from 2022.04.3 to 2022.04.4
 
-* To prevent code cache overflow, we added ReservedCodeCacheSize=640m default value for all server installations. See the [TW-76238](https://youtrack.jetbrains.com/issue/TW-76238/High-CPU-usage-if-code-cache-is-filled-in) issue.
+* The value of the `ReservedCodeCacheSize` attribute is set to `640m` by default for all new server installations. In earlier versions, the value of this attribute should be updated manually. See the [TW-76238](https://youtrack.jetbrains.com/issue/TW-76238/High-CPU-usage-if-code-cache-is-filled-in) issue.
 * SVNKit has been updated to 1.10.8.
 
 
