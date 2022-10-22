@@ -9,7 +9,7 @@ This document describes how to configure Java applications to use HTTPS for comm
 If you need to connect a TeamCity agent to the TeamCity server using the self-signed certificate, use [trusted certificates configuration](uploading-ssl-certificates.md).
 {product="tcc"}
 
-We assume that you have [already configured HTTPS](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) in your TeamCity web server. The most common and recommended approach for this is to set up a reverse proxy server like Nginx or Apache that provides HTTPS access for HTTP-only TeamCity server's Tomcat port. In the setup, make sure that the reverse proxy has correct configuration as per [Set Up TeamCity behind a Proxy Server](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) section.
+We assume that you have [already configured HTTPS](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) in your TeamCity web server. You can do it using the [TeamCity HTTPS settings](https-server-settings.md) or to set up a reverse proxy server like Nginx or Apache that provides HTTPS access for HTTP-only TeamCity server's Tomcat port. In the setup, make sure that the reverse proxy has correct configuration as per [Set Up TeamCity behind a Proxy Server](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) section.
 {product="tc"}
 
 ## Accessing the server via HTTPS

@@ -326,7 +326,11 @@ If a user with access to your TeamCity server submits an invalid cross-site scri
 ## Configure HTTPS for TeamCity Web UI
 {product="tc"}
 
-TeamCity does not provide out-of-the-box support for HTTPS access (see [TW-12976](http://youtrack.jetbrains.com/issue/TW-12976#comment=27-348823)). It is highly recommended to set up a reverse proxy like NGINX or Apache in front of TeamCity that would handle HTTPS and use HTTP TeamCity server port as the upstream. HTTPS-related configuration of the proxy is not specific for TeamCity and is generic as for any web application. Make sure to configure the reverse proxy per [our recommendations](#Set+Up+TeamCity+behind+a+Proxy+Server). Generic web application best practices apply (like disabling http access to TeamCity at all).
+TeamCity now allows [configuring HTTPS access](https-server-settings.md) easily. However, for large public facing TeamCity installations, it is still recommended that you set up a reverse proxy like NGINX or Apache in front of TeamCity that would handle HTTPS and use HTTP TeamCity server port as the upstream. 
+
+HTTPS-related configuration of the proxy is not specific for TeamCity and is generic as for any web application. 
+Make sure to configure the reverse proxy per [our recommendations](#Set+Up+TeamCity+behind+a+Proxy+Server). 
+Generic web application best practices apply (like disabling http access to TeamCity at all).
 
 For small servers, you can set up HTTPS via the internal [Tomcat means](https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html), but this is not recommended as it may significantly increase the CPU load.
 

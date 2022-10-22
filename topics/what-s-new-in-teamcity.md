@@ -1,7 +1,19 @@
 [//]: # (title: What's New in TeamCity 2022.10)
 [//]: # (auxiliary-id: What's New in TeamCity 2022.10;What's New in TeamCity)
 
-## Refresh tokens for VCS Roots 
+
+## Easy HTTPS Access Setup on TeamCity Server
+
+Before this version, setting up HTTPS on a TeamCity server has been one of the challenging tasks for a server administrator. 
+It required the knowledge of the TeamCity server configuration and experience in configuring proxy servers. 
+Now enabling HTTPS access to TeamCity is easy: after you launch your TeamCity server, 
+all you need to do is upload an HTTPS certificate, or a certificate chain in the PEM format to the server, 
+and TeamCity will do the rest.
+
+[Read this article](https-server-settings.md) for details.
+
+
+## Refresh tokens for VCS Roots
 
 If you have a connection to a Bitbucket Cloud, GitLab, and Azure DevOps VCS Root configured in TeamCity, you no longer need to enter your password when creating new entities 
 (projects, build configurations, or VCS Roots) via this connection.
@@ -27,7 +39,7 @@ that the agents will not process any new builds, and you can, for example, log i
 
 ## New UI for the list of build runners
 
-The New UI is making its way into the Administration area. Creating new build steps is more user-friendly now with the flat list of available build runners.
+The Sakura UI is making its way into the Administration area. Creating new build steps is more user-friendly now with the flat list of available build runners.
 
 <img src="flat-list-build-runners.png" />
 

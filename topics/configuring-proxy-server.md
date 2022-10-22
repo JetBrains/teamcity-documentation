@@ -8,7 +8,9 @@ This article gives general recommendations on configuring the following proxy ty
 
 ## Set Up TeamCity Server Behind Proxy
 
->We strongly recommend that you configure HTTPS on the proxy level. Refer to your proxy server documentation for more details.
+>TeamCity now allows [configuring HTTPS access](https-server-settings.md) easily. 
+> However, for large public facing TeamCity installations, it is still recommended that you set up TeamCity behind a proxy.
+
 
 Consider the example:   
 TeamCity server is installed at a _local_ URL [`http://teamcity.local:8111/tc`](http://teamcity.local:8111/tc){nullable="true"}.   
