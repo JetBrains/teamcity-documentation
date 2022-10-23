@@ -122,6 +122,7 @@
       <toc-element toc-title="Secure TeamCity">
          <toc-element id="security-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="csrf-protection.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="https-server-settings.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="using-https-to-access-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="uploading-ssl-certificates.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="content-security-policy-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
