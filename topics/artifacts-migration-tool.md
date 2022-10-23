@@ -65,3 +65,16 @@ If one or more of these steps are provided, the tool goes through them without a
 * `teamcity.storage.migration.s3.forceVirtualHostAddressing` — use the virtual hosted style of S3 URL addresses instead of deprecated path style (by default, **true**).
 * `teamcity.storage.migration.s3.upload.numberOfRetries` — the number of attempts the tool does when uploading data to S3 if it encounters errors (by default, **5**).
 * `teamcity.storage.migration.s3.upload.retryDelayMs` — the initial delay between attempts in milliseconds (by default, **1000**).
+
+### Custom credentials for S3 storage
+
+If a project has multiple S3-compatible storages that need to be migrated, and they require different credentials, 
+these credentials can be provided via [Custom AWS profiles](https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials_profiles.html)
+
+To associate a specific profile in the credentials file with a specific storage, use the following property:
+
+`teamcity.storage.migration.s3.custom.profile.<FEATURE_ID>=<PROFILE_NAME>`, where
+`<FEATURE_ID>` should be replaced with the storage ID available in the URL of the storage settings page as the value of the **storageSettingsId** parameter.
+`<PROFILE_NAME>` should be replaced with the profile name from the AWS credentials file.
+
+>The target storage needs to be made active in TeamCity.
