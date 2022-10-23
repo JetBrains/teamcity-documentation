@@ -49,7 +49,7 @@ Note that the content of the checkout directory can be deleted by TeamCity under
 
 With the [server-side](vcs-checkout-mode.md#server-checkout) and [agent-side checkout](vcs-checkout-mode.md#agent-checkout) modes, checkout directories are automatically deleted from the disk if not used (no builds were run on the agent using the directory as the checkout directory) for a specified period of time (8 days by default) or when another build requires more free disk space than available. With the [manual checkout](vcs-checkout-mode.md#do-not-checkout-files-automatically) mode, automatic directory cleaning is not performed unless the directory expiration period is configured.
 
-It is recommended to use the [Free Disk Space](free-disk-space.md) build feature to ensure the build gets enough disk free space on the build agent.
+It is recommended to use the [Free disk space](free-disk-space.md) build feature to ensure that the build gets enough disk free space on the build agent.
 
 [//]: # (Internal note. Do not delete. "Build Checkout Directoryd30e211.txt")
 

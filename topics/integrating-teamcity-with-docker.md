@@ -100,7 +100,7 @@ The Docker Engine OS platform. Supported values: `linux` or `windows`.
 
 ## Docker Disk Space Cleaner
 
-Docker Disk Space Cleaner is an extension to the [Free Disk Space](free-disk-space.md) build feature ensuring a necessary amount of disk space for a build.
+Docker Disk Space Cleaner is an extension to the [Free disk space](free-disk-space.md) build feature ensuring a necessary amount of disk space for a build.
 
 TeamCity regularly cleans up its related Docker images which were tagged/pulled:
 * in a build with the [Docker Support](docker-support.md) build feature, __or__
@@ -146,7 +146,7 @@ A regular TeamCity agent stores a once pulled image in its cache. This allows ru
 However, there are few cases to consider:
 * If you are using cloud agents, all required images will be downloaded every time a new cloud agent is launched.
 * If the _Pull image explicitly_ option is enabled in the build step settings, the image will be downloaded in every new build run, even on a local agent. We recommend that you disable this option to prevent reaching the rate limit.
-* During the [Free Disk Space](free-disk-space.md) stage of the build, TeamCity may clean up old unused Docker images from the local cache.
+* While [freeing disk space](free-disk-space.md) for the build, TeamCity may clean up old unused Docker images from the local cache.
 
 If previously your builds were accessing Docker Hub anonymously, you can double the number of allowed pulls by creating a Free Docker user profile and configuring a [Docker connection](configuring-connections-to-docker.md) in your TeamCity project. TeamCity agents will be able to use this connection to authenticate in Docker Hub before each build.
 

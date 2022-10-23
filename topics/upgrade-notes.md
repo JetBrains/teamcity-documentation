@@ -17,6 +17,12 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 * The bundled Kotlin compiler used in [TeamCity DSL](kotlin-dsl.md) has been updated to version 1.7.10.
 
 
+## Free disk space for artifacts is calculated automatically
+
+The **Free disk space** build now feature keeps track of the size of artifacts and automatically calculates the disk space required for resolving artifact dependencies. 
+You do not have to take into account the size of the artifacts downloaded during the build when specifying the required disk space.
+
+
 ## Changes from 2022.04.3 to 2022.04.4
 
 * To prevent code cache overflow, we added ReservedCodeCacheSize=640m default value for all server installations. See the [TW-76238](https://youtrack.jetbrains.com/issue/TW-76238/High-CPU-usage-if-code-cache-is-filled-in) issue.
