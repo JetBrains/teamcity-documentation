@@ -11,7 +11,7 @@ all you need to do is upload an HTTPS certificate, or a certificate chain in the
 and TeamCity will do the rest.
 
 [Read this article](https-server-settings.md) for details.
-
+{product="tc"}
 
 ## Refresh tokens for VCS Roots
 
