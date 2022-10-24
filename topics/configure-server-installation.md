@@ -45,12 +45,13 @@ Once you start [using TeamCity for production purposes](#Configuring+Server+for+
 Possible values:
 * __Minimum setting__: for 64-bit Java (bundled) `-Xmx1024m`, for 32-bit Java `-Xmx750m`.
 * __Recommended setting for medium server__: for 64-bit Java `-Xmx2048m`, for 32-bit Java `-Xmx1024m`. Greater settings with the 32-bit Java can cause `OutOfMemoryError` with "_Native memory allocation (malloc) failed_" JVM crashes or "Unable to create new native thread" messages.
-* __Recommended setting for large server__ (64-bit Java should be used): `-Xmx4g -XX:ReservedCodeCacheSize=640m`. These settings should be suitable for an installation with up to two hundreds of agents and thousands of build configurations. Custom plugins might require increasing the value defined via the `Xmx` parameter.
+* __Recommended setting for large server__ (64-bit Java should be used): `-Xmx4g -XX:ReservedCodeCacheSize=640m`. These settings should be suitable for an installation with up to two hundred agents and thousands of build configurations. Custom plugins might require increasing the value defined via the `Xmx` parameter.
 * __Maximum settings for large-scale server__ (64-bit Java should be used): `-Xmx10g -XX:ReservedCodeCacheSize=640m`. Greater values can be used for larger TeamCity installations. However, generally it is not recommended to use values greater than `10g` without consulting TeamCity support.
 
-Starting from TeamCity 2022.04.4, the value of the `ReservedCodeCacheSize` attribute is set to `640m` by default for all **new** server installations. In earlier versions, the value of this attribute should be updated manually.
+>Starting from 2022.04.4, the `ReservedCodeCacheSize=640m` attribute is set by default for new server installations.
+If the attribute was specified in an earlier TeamCity version, you'll have to update it manually after upgrading.
 
-If an `OutOfMemory` errors occur or you consistently see a memory-related warning in the TeamCity UI, it means you need to increase the setting to the next level.
+If an `OutOfMemory` errors occurs, or you consistently see a memory-related warning in the TeamCity UI, it means you need to increase the setting to the next level.
 
 >__Tips__:
 >* A rule of thumb is that the 64-bit JVM should be assigned twice as much memory as the 32-bit for the same application. If you [switch to the 64-bit JVM](how-to.md#Update+from+32-bit+to+64-bit+Java) (for example, on upgrading TeamCity), make sure to adjust the memory setting (`-Xmx`) accordingly. It does not make sense to switch to 64-bit if you dedicate less than the double amount of memory to the application.

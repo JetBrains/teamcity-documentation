@@ -30,6 +30,10 @@ To update to 64-bit Java, either use the bundled version of Java or:
 1.Update Java to be used by the server.
 2. [Set JVM memory options](server-startup-properties.md). It is recommended to set the following options for 64-bit JVM: `-Xmx4g -XX:ReservedCodeCacheSize=640m`.
 
+>Starting from 2022.04.4, the `ReservedCodeCacheSize=640m` attribute is set by default for new server installations.
+If the attribute was specified in an earlier TeamCity version, you'll have to update it manually after upgrading.
+
+
 ## Install Non-Bundled Version of Tomcat
 
 The TeamCity Server distributions include a Tomcat version tested to work fine with the current version. You can use an alternative Tomcat version, but note that other combinations are not guaranteed to work correctly.

@@ -4,7 +4,8 @@
 
 ## Changes from 2022.04.3 to 2022.04.4
 
-* The value of the `ReservedCodeCacheSize` attribute is set to `640m` by default for all new server installations. In earlier versions, the value of this attribute should be updated manually. See the [TW-76238](https://youtrack.jetbrains.com/issue/TW-76238/High-CPU-usage-if-code-cache-is-filled-in) issue.
+* Starting from 2022.04.4, the `ReservedCodeCacheSize=640m` attribute is set by default for new server installations.
+If the attribute was specified in an earlier TeamCity version, you'll have to update it manually after upgrading.
 * SVNKit has been updated to 1.10.8.
 
 ## Changes from 2022.04.2 to 2022.04.3
