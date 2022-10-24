@@ -87,6 +87,8 @@ Terminate instance idle time
 Instruct TeamCity to stop a cloud agent machine using this setting and the _Additional terminate conditions_ options. Specify the period (in minutes) for TeamCity to wait before stopping an idle build agent.   
 Leave empty for no timeout.
 
+When a cloud agent is in [maintenance mode](build-agents-configuration-and-maintenance.md#disable-for-maintenance), terminate conditions will not work. When you enable the cloud agent again, the settings will be applied.
+
 </td></tr><tr>
 
 <td id="agent-terminate-condition">
