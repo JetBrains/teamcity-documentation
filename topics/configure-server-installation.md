@@ -45,8 +45,8 @@ Once you start [using TeamCity for production purposes](#Configuring+Server+for+
 Possible values:
 * __Minimum setting__: for 64-bit Java (bundled) `-Xmx1024m`, for 32-bit Java `-Xmx750m`.
 * __Recommended setting for medium server__: for 64-bit Java `-Xmx2048m`, for 32-bit Java `-Xmx1024m`. Greater settings with the 32-bit Java can cause `OutOfMemoryError` with "_Native memory allocation (malloc) failed_" JVM crashes or "Unable to create new native thread" messages.
-* __Recommended setting for large server__ (64-bit Java should be used): `-Xmx4g`. These settings should be suitable for an installation with up to two hundreds of agents and thousands of build configurations. Custom plugins might require increasing the value defined via the `Xmx` parameter.
-* __Maximum settings for large-scale server__ (64-bit Java should be used): `-Xmx10g`. Greater values can be used for larger TeamCity installations. However, generally it is not recommended to use values greater than `10g` without consulting TeamCity support.
+* __Recommended setting for large server__ (64-bit Java should be used): `-Xmx4g`. This setting should be suitable for an installation with up to two hundreds of agents and thousands of build configurations. Custom plugins might require increasing the value defined via the `Xmx` parameter.
+* __Maximum setting for large-scale server__ (64-bit Java should be used): `-Xmx10g`. Greater values can be used for larger TeamCity installations. However, generally it is not recommended to use values greater than `10g` without consulting TeamCity support.
 
 The value of the `ReservedCodeCacheSize` attribute is set to `640m` by default for all new server installations. In earlier versions, the value of this attribute should be updated manually.
 
