@@ -276,6 +276,20 @@ If left empty, the URL will be extracted from the VCS root fetch URL.
 
 </td>
   </tr>
+<tr>
+<td>
+
+Use pull request branches
+
+</td>
+<td></td>
+<td>
+
+**This option is intended for backward compatibility only.** Enables detection of officially unsupported pull request branches (pull-requests/*) instead of source branches. 
+Be careful: new builds might be triggered for changes committed within the last hour after switching.
+
+</td>
+  </tr>
 </table>
 
 ### Bitbucket Cloud Pull Requests

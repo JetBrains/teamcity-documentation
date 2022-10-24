@@ -17,10 +17,17 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 * The bundled Kotlin compiler used in [TeamCity DSL](kotlin-dsl.md) has been updated to version 1.7.10.
 
 
-## Free disk space for artifacts is calculated automatically
+### Free disk space for artifacts is calculated automatically
 
 The **Free disk space** build now feature keeps track of the size of artifacts and automatically calculates the disk space required for resolving artifact dependencies. 
 You do not have to take into account the size of the artifacts downloaded during the build when specifying the required disk space.
+
+### Backward compatibility for Bitbucket refs/pull-requests/<number>/from branches
+
+TeamCity provides backward compatibility with Bitbucket Server pull-request specific branches `refs/pull-requests/<number>/from`,
+which are [not officially supported by Atlassian](https://community.atlassian.com/t5/Bitbucket-questions/Current-Atlassian-position-regarding-refs-pull-requests-from/qaq-p/1376356#M54578). 
+The [Pull Requests](pull-requests.md) build feature has the **Use pull request branches* option that enables detection of pull request branches (pull-requests/*) instead of source branches.
+After the upgrade, this option will be enabled for existing build configurations using such branches. It is disabled in new TeamCity installations. We do not recommend using this option. 
 
 
 ## Changes from 2022.04.3 to 2022.04.4
