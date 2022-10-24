@@ -14,6 +14,8 @@ To get the tool, go to __Project Settings | Artifacts Storage__ and use the _Dow
 * To use S3 storage as the target, the tool needs AWS credentials on the machine.  
   The AWS credentials can be supplied using [any supported method](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html).
 
+>The target storage needs to be made active in TeamCity.
+
 ## Command Line Options
 
 The tool supports the following command line arguments:
@@ -74,7 +76,6 @@ these credentials can be provided via [Custom AWS profiles](https://docs.aws.ama
 To associate a specific profile in the credentials file with a specific storage, use the following property:
 
 `teamcity.storage.migration.s3.custom.profile.<FEATURE_ID>=<PROFILE_NAME>`, where
-`<FEATURE_ID>` should be replaced with the storage ID available in the URL of the storage settings page as the value of the **storageSettingsId** parameter.
+`<FEATURE_ID>` should be replaced with the storage ID from [the storage settings](storing-build-artifacts-in-amazon-s3.md#configuring-amazon-s3-artifacts-storage) page.
 `<PROFILE_NAME>` should be replaced with the profile name from the AWS credentials file.
 
->The target storage needs to be made active in TeamCity.
