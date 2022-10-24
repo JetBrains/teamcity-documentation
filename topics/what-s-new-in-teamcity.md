@@ -35,6 +35,12 @@ Before this version, investigating issues on cloud agents was difficult, as the 
 Starting from 2022.10, you can disable a cloud agent for maintenance. In maintenance mode, you can log in to the agent, view its log, and perform other operations. 
 The cloud agent will not be stopped according to the termination conditions and will be unavailable for builds unless assigned to a build explicitly.
 
+## Connecting to an agent's EC2 instance via AWS SSM 
+
+Starting from this version, you can launch an interactive browser-based shell directly from the TeamCity UI. The shell helps you investigate agent-related issues and works for EC2 agents with preinstalled [AWS Systems Manager Agent](https://docs.aws.amazon.com/systems-manager/latest/userguide/prereqs-ssm-agent.html)(SSM Agent).
+
+To learn more about this feature, see the Debugging and Maintenance section.
+
 ## New UI for the list of build runners
 
 The Sakura UI is making its way into the Administration area. Creating new build steps is more user-friendly now with the flat list of available build runners.
