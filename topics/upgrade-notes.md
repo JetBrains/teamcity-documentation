@@ -21,19 +21,21 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
   * MSSQL to 9.4.1
   
 
-
 ### Free disk space for artifacts is calculated automatically
 
 The **Free disk space** build now feature keeps track of the size of artifacts and automatically calculates the disk space required for resolving artifact dependencies. 
 You do not have to take into account the size of the artifacts downloaded during the build when specifying the required disk space.
 
-### Backward compatibility for Bitbucket refs/pull-requests/<number>/from branches
+### Backward compatibility for Bitbucket Server pull request branches
 
-TeamCity provides backward compatibility with Bitbucket Server pull-request specific branches `refs/pull-requests/<number>/from`,
-which are [not officially supported by Atlassian](https://community.atlassian.com/t5/Bitbucket-questions/Current-Atlassian-position-regarding-refs-pull-requests-from/qaq-p/1376356#M54578). 
-The [Pull Requests](pull-requests.md) build feature has the **Use pull request branches* option that enables detection of pull request branches (pull-requests/*) instead of source branches.
-After the upgrade, this option will be enabled for existing build configurations using such branches. It is disabled in new TeamCity installations. We do not recommend using this option. 
+TeamCity provides backward compatibility with Bitbucket Server pull request branches 
+that are [not officially supported by Atlassian](https://community.atlassian.com/t5/Bitbucket-questions/Current-Atlassian-position-regarding-refs-pull-requests-from/qaq-p/1376356#M54578). 
+The [Pull Requests](pull-requests.md) build feature has the **Use pull request branches** option that enables detection of such branches `(pull-requests/*)` instead of source branches.
+After the upgrade, this option will be enabled for existing build configurations using such branches. We do not recommend using this option. 
 
+### Performance Monitor
+
+The [Performance Monitor](performance-monitor.md) build feature is now enabled by default for [build configurations created from a URL](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL).
 
 ## Changes from 2022.04.3 to 2022.04.4
 

@@ -178,8 +178,6 @@ If left empty, the URL will be extracted from the VCS root fetch URL.
 
 ### Bitbucket Server Pull Requests
 
-This feature monitors builds only on the `refs/pull-requests/*/from` branch.
-
 The following parameters are available for the [Bitbucket Server](https://www.atlassian.com/software/bitbucket/enterprise/data-center) hosting type:
 
 <table>
@@ -285,7 +283,7 @@ Use pull request branches
 <td></td>
 <td>
 
-**This option is intended for backward compatibility only.** Enables detection of officially unsupported pull request branches (pull-requests/*) instead of source branches. 
+**This option is intended for backward compatibility only.** Enables detection of [officially unsupported Bitbucket](https://community.atlassian.com/t5/Bitbucket-questions/Current-Atlassian-position-regarding-refs-pull-requests-from/qaq-p/1376356#M54578) pull request branches (pull-requests/*) instead of source branches. 
 Be careful: new builds might be triggered for changes committed within the last hour after switching.
 
 </td>
