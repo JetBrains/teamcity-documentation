@@ -20,7 +20,7 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 ### Other updates
 {id="other-updates-2022-10"}
 
-* The [Apache Maven](https://maven.apache.org/) library for [Maven triggers](configuring-maven-triggers.md) has been updated to version 3.8.6.
+* The embedded Maven library has been updated to version 3.8.6.
 
 
 ## Changes from 2022.04.3 to 2022.04.4
