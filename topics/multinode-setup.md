@@ -57,6 +57,7 @@ This section relies on the following assumptions:
 * All the [system requirements](system-requirements.md) are met.
 * [TeamCity is installed](install-and-start-teamcity-server.md) on both nodes.
 * [TeamCity Data Directory](teamcity-data-directory.md) and database are already initialized.
+* [An external storage](configuring-artifacts-storage.md#external-artifacts-storage) is used for build artifacts.
 
 Now, we can proceed with the transition from a single server setup to a high-availability cluster setup.
 
