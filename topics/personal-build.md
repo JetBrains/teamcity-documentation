@@ -66,6 +66,17 @@ To upload a patch and run a personal build via REST API:
    ```   
    The agent will receive the patch and apply it before running the build. After the build, it will revert the patch, so the checkout directory can be reused by subsequent builds. Unused patches are automatically cleaned up by a 15-minutes timeout.
 
+## Promoting Personal Build
+
+You can promote a personal build in the [same way as a non-personal build](running-custom-build.md#Promoting+Build). After promotion, the dependent build will be run as a personal one and use the same patch.
+
+## Triggering Personal Build Chain
+
+When a personal build chain is triggered, TeamCity will make all builds of the build chain personal and try to apply the personal patch to all of them. 
+However, TeamСity will not apply the patch if the changes do not match checkout rules. 
+For example, if a patch changes `src/File.java` but the _VCS Checkout Rules_ configuration excludes the `src` folder, then the patch will not be applied, and the source code on the agent will not be changed. 
+In this case, this build can be optimized to a non-personal build that checks out the same revision.
+
 ## Run Build on Perforce Shelved Files
 
 If the current build configuration has a [Perforce VCS root](perforce.md), you can run a personal build based on changes in [shelved Perforce files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html). For this, enable the _run as a personal build_ option and enter the target changelist ID in the _Shelved changelist ID_ field.

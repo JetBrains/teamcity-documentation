@@ -30,8 +30,8 @@ Now TeamCity supports large artifacts (over 4 GB) out of the box. No additional 
 
 ## Support for Amazon Web Services (AWS)
 
-This TeamCity version supports [Amazon Web Services (AWS) connection](configuring-connections.md#AmazonWebServices). 
-It allows defining AWS credentials in one place and using them in the [AWS Credentials build feature](aws-credentials.md). You can use different AWS credential types: access keys, IAM Role, and the Default credential provider chain.
+This TeamCity version supports [Amazon Web Services (AWS) connection](configuring-connections.md#AmazonWebServices).
+It allows defining AWS credentials once and using them in builds via the [AWS Credentials build feature](aws-credentials.md). You can use different AWS credential types: access keys, IAM Role, and the Default credential provider chain.
 
 ## Maintenance mode for cloud agents
 
@@ -57,6 +57,11 @@ The Sakura UI is making its way into the Administration area. Creating new build
 
 Project Administrators now have a new permission allowing them to change a user's VCS username in the project without adding the permission to modify user profile and roles. 
 The permission will be present for this role in the new TeamCity installations; for existing installations it has to be added manually.
+
+## Promoting personal build
+
+Starting from TeamCity 2022.10, you can [promote](running-custom-build.md#Promoting+Build) a personal build. 
+After promotion, TeamCity will try to run the promoted build and all its dependencies as [personal builds](personal-build.md#Triggering+Personal+Build+Chain) unless the check out settings for any of the dependencies differ.
 
 ## Roadmap
 
