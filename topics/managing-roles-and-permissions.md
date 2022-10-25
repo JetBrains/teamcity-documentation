@@ -117,7 +117,7 @@ __System Administrator__
 
 <td>
 
-Has no restrictions in permissions, and has all of the [Project Administrator's](#project-administrator) permissions. Сan create and manage user accounts, authorize build agents, set up projects and build configurations, edit the TeamCity server settings, manage TeamCity licenses, configure server data clean-up rules, change VCS roots, and so on.
+Has no restrictions in permissions, and has all of the [Project Administrator's](#project-administrator) permissions. Сan create and manage user accounts, change HTTPS settings, authorize build agents, set up projects and build configurations, edit the TeamCity server settings, manage TeamCity licenses, configure server data clean-up rules, change VCS roots, and so on.
 
 
 </td></tr><tr>

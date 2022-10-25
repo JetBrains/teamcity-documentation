@@ -12,20 +12,41 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 ### Bundled tools updates
 {id="bundled-tools-updates-2022-10"}
 
-* The bundled Amazon Corretto Java has been updated to version 11.0.16.9.1 in the TeamCity server and agent Docker images for Windows and Linux.
+* The bundled Amazon Corretto Java has been updated to version 11.0.16.9.1.
 * The bundled Tomcat has been updated to version 8.5.82.
-* The bundled Kotlin compiler used in [TeamCity DSL](kotlin-dsl.md) has been updated to version 1.7.10.
+* The bundled Kotlin compiler used in the [Kotlin Script runner](kotlin-script.md) has been updated to version 1.7.10.
 * The bundled Maven has been updated to version 3.8.6.
+* JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
+  * MySQL to 8.0.30 
+  * PSQL to 42.5.0
+  * MSSQL to 9.4.1
 
 ### Other updates
 {id="other-updates-2022-10"}
 
 * The embedded Maven library has been updated to version 3.8.6.
 
+### Free disk space for artifacts is calculated automatically
+
+The **Free disk space** build now feature keeps track of the size of artifacts and automatically calculates the disk space required for resolving artifact dependencies. 
+You do not have to take into account the size of the artifacts downloaded during the build when specifying the required disk space.
+
+### Backward compatibility for Bitbucket Server pull request branches
+
+TeamCity provides backward compatibility with Bitbucket Server pull request branches 
+that are [not officially supported by Atlassian](https://community.atlassian.com/t5/Bitbucket-questions/Current-Atlassian-position-regarding-refs-pull-requests-from/qaq-p/1376356#M54578). 
+The [Pull Requests](pull-requests.md) build feature has the **Use pull request branches** option that enables detection of such branches `(pull-requests/*)` instead of source branches.
+After the upgrade, this option will be enabled for existing build configurations using such branches. We do not recommend using this option. 
+
+### Performance Monitor
+
+The [Performance Monitor](performance-monitor.md) build feature is now enabled by default for [build configurations created from a URL](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL).
 
 ## Changes from 2022.04.3 to 2022.04.4
 
-* To prevent code cache overflow, we added ReservedCodeCacheSize=640m default value for all server installations. See the [TW-76238](https://youtrack.jetbrains.com/issue/TW-76238/High-CPU-usage-if-code-cache-is-filled-in) issue.
+* The `ReservedCodeCacheSize=640m` attribute is set by default for new server installations.
+If the attribute was specified in an earlier TeamCity version, you'll have to update it manually after upgrading.
+See the [TW-76238](https://youtrack.jetbrains.com/issue/TW-76238/High-CPU-usage-if-code-cache-is-filled-in) issue.
 * SVNKit has been updated to 1.10.8.
 
 

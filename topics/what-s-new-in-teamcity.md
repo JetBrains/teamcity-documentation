@@ -1,7 +1,19 @@
 [//]: # (title: What's New in TeamCity 2022.10)
 [//]: # (auxiliary-id: What's New in TeamCity 2022.10;What's New in TeamCity)
 
-## Refresh tokens for VCS Roots 
+
+## Easy HTTPS Access Setup on TeamCity Server
+
+Before this version, setting up HTTPS on a TeamCity server has been one of the challenging tasks for a server administrator. 
+It required the knowledge of the TeamCity server configuration and experience in configuring proxy servers. 
+Now enabling HTTPS access to TeamCity is easy: after you launch your TeamCity server, 
+all you need to do is upload an HTTPS certificate, or a certificate chain in the PEM format to the server, 
+and TeamCity will do the rest.
+
+[Read this article](https-server-settings.md) for details.
+{product="tc"}
+
+## Refresh tokens for VCS Roots
 
 If you have a connection to a Bitbucket Cloud, GitLab, and Azure DevOps VCS Root configured in TeamCity, you no longer need to enter your password when creating new entities 
 (projects, build configurations, or VCS Roots) via this connection.
@@ -16,18 +28,27 @@ You can now use [access tokens with limited permissions](configuring-your-user-p
 
 Now TeamCity supports large artifacts (over 4 GB) out of the box. No additional configuration is needed to publish and download zip archives of large artifacts.
 
-##  Maintenance mode for self-hosted cloud agents
+## Support for Amazon Web Services (AWS)
 
-Interaction with cloud build agents can be complicated, as they can be stopped or terminated due to a number of reasons,
-even if you just logged in to a build agent to investigate an issue.
+This TeamCity version supports [Amazon Web Services (AWS) connection](configuring-connections.md#AmazonWebServices).
+It allows defining AWS credentials once and using them in builds via the [AWS Credentials build feature](aws-credentials.md). You can use different AWS credential types: access keys, IAM Role, and the Default credential provider chain.
 
-Starting from this version, you can disable [a self-hosted cloud agent](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents) for maintenance, which means 
-that the agents will not process any new builds, and you can, for example, log in to it and view its log.
-{product="tcc"}
+## Maintenance mode for cloud agents
+
+Before this version, investigating issues on cloud agents was difficult, as the agent could become unavailable in the middle of the investigation process when its termination condition was met. 
+
+Starting from 2022.10, you can disable a cloud agent for maintenance. In maintenance mode, you can log in to the agent, view its log, and perform other operations. 
+The cloud agent will not be stopped according to the termination conditions and will be unavailable for builds unless assigned to a build explicitly.
+
+## Connecting to an agent's EC2 instance via AWS SSM 
+
+Starting from this version, you can launch an interactive browser-based shell directly from the TeamCity UI. The shell helps you investigate agent-related issues and works for EC2 agents with preinstalled [AWS Systems Manager Agent](https://docs.aws.amazon.com/systems-manager/latest/userguide/prereqs-ssm-agent.html) (SSM Agent).
+
+To learn more about this feature, see the Debugging and Maintenance section.
 
 ## New UI for the list of build runners
 
-The New UI is making its way into the Administration area. Creating new build steps is more user-friendly now with the flat list of available build runners.
+The Sakura UI is making its way into the Administration area. Creating new build steps is more user-friendly now with the flat list of available build runners.
 
 <img src="flat-list-build-runners.png" />
 
@@ -36,6 +57,11 @@ The New UI is making its way into the Administration area. Creating new build st
 
 Project Administrators now have a new permission allowing them to change a user's VCS username in the project without adding the permission to modify user profile and roles. 
 The permission will be present for this role in the new TeamCity installations; for existing installations it has to be added manually.
+
+## Promoting personal build
+
+Starting from TeamCity 2022.10, you can [promote](running-custom-build.md#Promoting+Build) a personal build. 
+After promotion, TeamCity will try to run the promoted build and all its dependencies as [personal builds](personal-build.md#Triggering+Personal+Build+Chain) unless the check out settings for any of the dependencies differ.
 
 ## Roadmap
 

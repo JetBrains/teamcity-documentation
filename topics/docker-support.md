@@ -1,4 +1,5 @@
 [//]: # (title: Docker Support)
+[//]: # (title: Docker Support)
 [//]: # (auxiliary-id: Docker Support)
 
 The _Docker Support_ [build feature](adding-build-features.md) allows automatically signing in to a Docker registry before the build start.
@@ -26,13 +27,13 @@ It works as follows: when an image is published, TeamCity stores the information
 
 ### Clean-up of Images on Build Agent
                                    
-As a part of [Free Disk Space](free-disk-space.md) build feature, Docker plugin cleans up images which were created by TeamCity builds on this build agent. The docker plugin assumes, that docker images are stored under
+As part of [Free disk space](free-disk-space.md) build feature, Docker Support cleans up images which were created by TeamCity builds on this build agent. The Docker Support assumes, that docker images are stored under
 
  - `/var/lib/docker` on Linux
  - `%\ProgramData%` directory on Windows
  - `$HOME` directory on other systems
 
-The location is important, as the [Free Disk Space](free-disk-space.md) feature analyzes which disk volumes should be cleaned for the build. If your docker daemon uses a non-standard location for the images/containers, the location can be specified using `teamcity.docker.data.path` configuration parameter, preferably in [`buildAgent.properties`](configure-agent-installation.md) file.
+The location is important, as the [Free disk space](free-disk-space.md) feature analyzes which disk volumes should be cleaned for the build. If your docker daemon uses a non-standard location for the images/containers, the location can be specified using `teamcity.docker.data.path` configuration parameter, preferably in [`buildAgent.properties`](configure-agent-installation.md) file.
 <!-- We're going to avoid the need to configure manually this with https://youtrack.jetbrains.com/issue/TW-72569 -->
 
 ## Docker Registry Automatic Login/Logout

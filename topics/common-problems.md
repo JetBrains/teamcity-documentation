@@ -56,7 +56,7 @@ If the command line runner works but the dedicated runner does not while the opt
 
 If you experience slow builds, the first thing to do is to check the build log to see if there are some long operations or the time is just spread over the entire process. You can compare build logs of slower and faster builds to figure out what the difference is. You can also run the build from the console on the same machine as detailed [above](#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) to see if there is any difference between the build run from the console and the build in TeamCity.
 
-If the slowness is spread over all the operations, the agent machine resources (CPU, disk, memory, network) are to be analyzed during the build to see if there is a bottleneck in any of those. You can enable [Performance Monitor](performance-monitor.md) build feature in the build configuration to see how much CPU, memory and disk I/O is used by the build and at what stage.
+If the slowness is spread over all the operations, the agent machine resources (CPU, disk, memory, network) are to be analyzed during the build to see if there is a bottleneck in any of those. The [Performance Monitor](performance-monitor.md) build feature lets you see how much CPU, memory and disk I/O is used by the build and at which stage.
 
 If build process is hanging, then "View thread dump" link on the running build results page can help with understanding why it happens.
 

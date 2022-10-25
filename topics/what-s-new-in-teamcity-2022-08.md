@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2022.08)
-[//]: # (auxiliary-id: What's New in TeamCity 2022.08;What's New in TeamCity)
+[//]: # (auxiliary-id: What's New in TeamCity 2022.08)
 
 ## Refresh tokens for VCS Roots
 

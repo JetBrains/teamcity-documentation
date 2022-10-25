@@ -71,7 +71,7 @@ If a build agent is installed and running on the same computer as the TeamCity b
 
 <td id="enable-agent">
 
-__Enabled/ Disabled__
+__Enabled/ Disabled (Disabled for maintenance for cloud agents)__
 
 </td>
 

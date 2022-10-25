@@ -16,6 +16,11 @@ TeamCity distributes builds only among the enabled agents. Agents can be manuall
 
 <img src="agent-enable-disable.png" width="483" alt="Enable/disable an agent"/>
 
+When you click **Disable for maintenance**, a cloud agent switches to maintenance mode. In this mode, the agent will not be terminated, and you can log in to the agent, view its log, and perform other operations. Also, the agent will not be available for new builds by default.
+{id="disable-for-maintenance"}
+
+<img src="disable-for-maintenance.png" width="483" alt="Enable/disable an agent"/>
+
 ### Pools 
 
 Refer to a [separate page](configuring-agent-pools.md) for information on configuring agent pools in TeamCity.
