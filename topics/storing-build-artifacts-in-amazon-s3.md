@@ -16,7 +16,7 @@ It is possible to replace the TeamCity built-in artifacts' storage with [Amazon 
 To enable an external artifact storage in an AWS S3 bucket:
 1. Open __Project Settings | Artifacts Storage__. The built-in TeamCity artifacts storage is displayed by default and marked as active.
 2. Click __Add new storage__. Select _S3 Storage_ as the storage type. 
-3. [__Connection ID__](identifier.md) is filled out automatically. You can modify it with your own unique ID.
+3. [__Storage ID__](identifier.md) is filled out automatically. You can modify it with your own unique ID.
 4. Enter an optional name for your storage.
 5. Select the AWS environment and provide the required settings.
 6. Provide your AWS security credentials.

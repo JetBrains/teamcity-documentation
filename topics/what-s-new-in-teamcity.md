@@ -28,6 +28,11 @@ You can now use [access tokens with limited permissions](configuring-your-user-p
 
 Now TeamCity supports large artifacts (over 4 GB) out of the box. No additional configuration is needed to publish and download zip archives of large artifacts.
 
+## Support for Amazon Web Services (AWS)
+
+This TeamCity version supports [Amazon Web Services (AWS) connection](configuring-connections.md#AmazonWebServices). 
+It allows defining AWS credentials in one place and using them in the [AWS Credentials build feature](aws-credentials.md). You can use different AWS credential types: access keys, IAM Role, and the Default credential provider chain.
+
 ## Maintenance mode for cloud agents
 
 Before this version, investigating issues on cloud agents was difficult, as the agent could become unavailable in the middle of the investigation process when its termination condition was met. 
@@ -37,7 +42,7 @@ The cloud agent will not be stopped according to the termination conditions and 
 
 ## Connecting to an agent's EC2 instance via AWS SSM 
 
-Starting from this version, you can launch an interactive browser-based shell directly from the TeamCity UI. The shell helps you investigate agent-related issues and works for EC2 agents with preinstalled [AWS Systems Manager Agent](https://docs.aws.amazon.com/systems-manager/latest/userguide/prereqs-ssm-agent.html)(SSM Agent).
+Starting from this version, you can launch an interactive browser-based shell directly from the TeamCity UI. The shell helps you investigate agent-related issues and works for EC2 agents with preinstalled [AWS Systems Manager Agent](https://docs.aws.amazon.com/systems-manager/latest/userguide/prereqs-ssm-agent.html) (SSM Agent).
 
 To learn more about this feature, see the Debugging and Maintenance section.
 
