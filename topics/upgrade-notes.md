@@ -15,11 +15,16 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 * The bundled Amazon Corretto Java has been updated to version 11.0.16.9.1.
 * The bundled Tomcat has been updated to version 8.5.82.
 * The bundled Kotlin compiler used in the [Kotlin Script runner](kotlin-script.md) has been updated to version 1.7.10.
+* The bundled Maven has been updated to version 3.8.6.
 * JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
   * MySQL to 8.0.30 
   * PSQL to 42.5.0
   * MSSQL to 9.4.1
-  
+
+### Other updates
+{id="other-updates-2022-10"}
+
+* The embedded Maven library has been updated to version 3.8.6.
 
 ### Free disk space for artifacts is calculated automatically
 
