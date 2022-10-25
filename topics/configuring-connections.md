@@ -180,7 +180,7 @@ See more information in the [dedicated article](configuring-connections-to-docke
 ## Amazon Web Services (AWS)
 {id="AmazonWebServices"}
 
-The Amazon Web Services (AWS) connection allows defining AWS credentials in one place and using them in the AWS Credentials build feature. You can use different AWS credential types: access keys, IAM Role, and the Default credential provider chain.
+The Amazon Web Services (AWS) connection allows defining AWS credentials once and using them in builds via the AWS Credentials build feature. You can use different AWS credential types: access keys, IAM Role, and the Default credential provider chain.
 
 To configure an AWS connection in TeamCity:
 
