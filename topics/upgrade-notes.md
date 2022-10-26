@@ -28,7 +28,7 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 
 ### Free disk space for artifacts is calculated automatically
 
-The **Free disk space** build now feature keeps track of the size of artifacts and automatically calculates the disk space required for resolving artifact dependencies. 
+The **Free disk space** build feature keeps track of the size of artifacts and automatically calculates the disk space required for resolving artifact dependencies. 
 You do not have to take into account the size of the artifacts downloaded during the build when specifying the required disk space.
 
 ### Backward compatibility for Bitbucket Server pull request branches
