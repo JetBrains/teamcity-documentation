@@ -16,7 +16,7 @@ After configuring the proxy, remember to also set the new address as the _Server
 <chunk include-id="azure-devops">
 
 There are two types of Azure DevOps connections in TeamCity:
-* __Azure DevOps OAuth 2.0__ allows signing in to TeamCity via an Azure DevOps Services account.
+* __Azure DevOps OAuth 2.0__ allows signing in to TeamCity via an Azure DevOps Services account and creating TeamCity projects from Azure Git and TFVC repositories.
 * __Azure DevOps PAT__ allows creating TeamCity projects from Azure Git and TFVC repositories.
 
 <anchor name="azure-devops-connection"/>
@@ -26,7 +26,7 @@ There are two types of Azure DevOps connections in TeamCity:
 
 This type of connection supports only Azure DevOps Services. It uses the [OAuth 2.0 protocol](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops) based on JWT tokens and requires creating a dedicated app in your Azure profile.
 
-This connection can be used for enabling [user authentication via Azure DevOps](configuring-authentication-settings.md#Azure+DevOps+Services).
+This connection can be used for [authenticating users via Azure DevOps](configuring-authentication-settings.md#Azure+DevOps+Services) as well as creating projects and build configurations.
 
 To configure an Azure DevOps OAuth 2.0 connection:
 1. In __Project Administration | Connections__, click __Add Connection__.
