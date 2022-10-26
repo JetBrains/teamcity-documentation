@@ -1520,6 +1520,7 @@ Bundled IntelliJ IDEA updated to version # 143.1945 (roughly equivalent to 15.0.
 Bundled version of Maven 3.2.x updated to 3.2.5.
 
 #### Performance Monitor  
+{id="performance-monitor"}
 
 Note on permissions: to [monitor performance](performance-monitor.md) of a build agent run as a Windows [service](https://confluence.jetbrains.com/display/TCD9/Setting+up+and+Running+Additional+Build+Agents#SettingupandRunningAdditionalBuildAgents-BuildAgentasaWindowsService), make sure the user starting the agent is member of the Performance Monitor Users group.
 
