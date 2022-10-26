@@ -20,7 +20,7 @@ During the restoration of a large database, you might want to configure database
 
 A TeamCity [backup file](teamcity-data-backup.md#Backing+up+Data) __does not contain build artifacts__. To back up the build logs and artifacts, copy the contents of the [artifact directory](build-artifact.md#Artifacts+Storage) (`<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` by default) from the old location to the new one manually. The general compatibility rule of the data under `system/artifacts` is that files created by older TeamCity versions can be read by newer versions, but not necessarily vice versa.
 
-When [external artifacts storage](configuring-artifacts-storage.md#External+Artifacts+Storage) is enabled, the [artifacts directory](teamcity-configuration-and-maintenance.md#artifact-directories) of the TeamCity Data Directory contains metadata about artifacts mappings, so make sure they are restored. 
+When [external artifacts storage](configuring-artifacts-storage.md#external-artifacts-storage) is enabled, the [artifacts directory](teamcity-configuration-and-maintenance.md#artifact-directories) of the TeamCity Data Directory contains metadata about artifacts mappings, so make sure they are restored. 
 
 See also details on the directories in the [TeamCity Data Directory](teamcity-data-directory.md) description.
 

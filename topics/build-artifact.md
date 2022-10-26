@@ -5,7 +5,7 @@ _Build artifacts_ are files produced by a build. Typically, these include distri
 
 ## Artifacts Storage
 
-TeamCity contains an integrated lightweight builds artifact repository. The artifacts are stored either on the [server-accessible file system](configuring-artifacts-storage.md#Built-in+Artifacts+Storage) or on an [external storage](configuring-artifacts-storage.md#External+Artifacts+Storage).
+TeamCity contains an integrated lightweight builds artifact repository. The artifacts are stored either on the [server-accessible file system](configuring-artifacts-storage.md#Built-in+Artifacts+Storage) or on an [external storage](configuring-artifacts-storage.md#external-artifacts-storage).
 {product="tc"}
 
 TeamCity contains an integrated lightweight builds artifact repository.
@@ -23,7 +23,7 @@ To download artifacts of a build, go to the [Artifacts](build-results-page.md#Ar
 {id="artifacts-as-archive" auxiliary-id="artifacts-as-archive"}
 
 In case of the built-in storage, TeamCity keeps artifacts on the disk in a directory structure that can be accessed directly (for example, by configuring the operating system to share the directory over the network). The storage format is described in [TeamCity Data Directory](teamcity-data-directory.md#artifacts). The artifacts are stored on the server "as is" without additional compression. By default, the artifacts are stored under the `<[TeamCity Data Directory](teamcity-data-directory.md)\>/system/artifacts` directory which [can be changed](teamcity-configuration-and-maintenance.md).   
-You can [configure an external artifacts](configuring-artifacts-storage.md#External+Artifacts+Storage) storage to replace the built-in one.
+You can [configure an external artifacts](configuring-artifacts-storage.md#external-artifacts-storage) storage to replace the built-in one.
 {product="tc"}
 
 Build artifacts can also be uploaded to the server while the build is still running. To instruct TeamCity to upload the artifacts, the build script should be modified to send [service messages](service-messages.md#Publishing+Artifacts+While+Build+is+in+Progress).
