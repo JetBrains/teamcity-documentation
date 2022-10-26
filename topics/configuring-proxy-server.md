@@ -8,8 +8,10 @@ This article gives general recommendations on configuring the following proxy ty
 
 ## Set Up TeamCity Server Behind Proxy
 
->TeamCity now allows [configuring HTTPS access](https-server-settings.md) easily. 
-> However, for large public facing TeamCity installations, it is still recommended that you set up TeamCity behind a proxy.
+>TeamCity now allows [configuring HTTPS access](https-server-settings.md) easily. These settings affect the built-in Tomcat server configuration and may break your existing proxy configuration.
+>
+>For large public facing TeamCity installations, it is still recommended that you set up TeamCity behind a proxy.
+
 
 
 Consider the example:   

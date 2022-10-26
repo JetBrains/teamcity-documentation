@@ -10,6 +10,8 @@ Now enabling HTTPS access to TeamCity is easy: after you launch your TeamCity se
 all you need to do is upload an HTTPS certificate, or a certificate chain in the PEM format to the server, 
 and TeamCity will do the rest.
 
+These settings will affect the built-in Tomcat server configuration. If your TeamCity server is [behind a proxy](configuring-proxy-server.md#Set+Up+TeamCity+Server+Behind+Proxy), configure HTTPS on the proxy side.
+
 [Read this article](https-server-settings.md) for details.
 {product="tc"}
 

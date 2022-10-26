@@ -11,13 +11,21 @@ TeamCity supports `.pem` certificates and RSA keys of the `PKCS#8` format.
 If you do not have a certificate, there are a couple of options available to you: 
 
 - For a public facing server, you can generate a new trusted certificate. One of the possibilities is [Certbot](https://certbot.eff.org/pages/about). 
-Please follow [these instructions](https://certbot.eff.org/instructions).
+You can follow [these instructions](https://certbot.eff.org/instructions).
 
-- For a non-public facing server, you can use an existing certificate or generate a new one following these instructions (TODO). 
+- For a non-public facing server, you can use an existing certificate or generate a new one locally. You can follow [these instructions](https://www.ssl.com/how-to/manually-generate-a-certificate-signing-request-csr-using-openssl). 
  
 If you use a self-signed certificate, make sure your clients are [configured to trust it](using-https-to-access-teamcity-server.md#Accessing+the+server+via+HTTPS).
 
 When a certificate is available, configure HTTPS settings on your TeamCity server.
+
+<warning>
+
+These settings affect the built-in Tomcat server configuration.
+
+If your TeamCity server is [behind a proxy](configuring-proxy-server.md#Set+Up+TeamCity+Server+Behind+Proxy), configure HTTPS on the proxy side.
+Enabling the settings on this page may break your existing proxy configuration.
+</warning>
 
 1. Go to **Administration | Server Administration | HTTPS Settings**. The settings can be configured via the UI or a script.
 2. Upload the certificate.
@@ -54,7 +62,12 @@ The `TOKEN` here is your [personal token](configuring-your-user-profile.md#Manag
 * It is also useful for a transition period, when you can [configure your agents](how-to.md#Configure+TeamCity+Agent+to+Use+Proxy+To+Connect+to+TeamCity+Server) to connect to TeamCity via HTTPS.
 * **Enable for all requests**. All TeamCity clients will be redirected to HTTPS. 
 
- > **Before enabling this option, make sure that all agents and custom scripts support redirection**. If any of TeamCity clients do not support redirects, their setting must be updated. All agents as well as the images for cloud agents must be updated to version 2022.10 or later. The agents launched from an earlier version may not be able to connect to the server after the redirection.
+  > Before enabling this option, **make sure that you have updated the URL to HTTPS on all agents**; 
+  > otherwise the agents using HTTP may not be able to connect to the server. 
+ 
+  You can view the URLs used by the agents to connect to the TeamCity server on **Agents | Overview | Parameters** report page using `teamcity.serverUrl` in the filter.
+
+
 
 After HTTPS settings are saved, the page will display the **Remove** button below the certificate information.
 
