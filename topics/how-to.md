@@ -28,7 +28,7 @@ If you need to update 32-bit Java to 64-bit JVM, note that the memory usage is a
 
 To update to 64-bit Java, either use the bundled version of Java or:
 1.Update Java to be used by the server.
-2. [Set JVM memory options](server-startup-properties.md). It is recommended to set the following options for 64-bit JVM: `-Xmx4g` and `-XX:ReservedCodeCacheSize=640m` (set by default since TeamCity 2022.04.4).
+2. [Set JVM memory options](server-startup-properties.md). It is recommended to set the `-Xmx4g` option for 64-bit JVM.
 
 ## Install Non-Bundled Version of Tomcat
 
