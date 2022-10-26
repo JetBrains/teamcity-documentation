@@ -8,7 +8,10 @@ Refer to [Configuring Build Steps](configuring-build-steps.md) for a description
 ## Prerequisites
 {product="tc"}
 
-A [Kotlin](https://kotlinlang.org/) compiler of version 1.3.70 or later must be [installed as an agent tool](installing-agent-tools.md) to run this step. Kotlin 1.7.10 is bundled with TeamCity.
+A [Kotlin](https://kotlinlang.org/) compiler of version 1.3.70 or later must be [installed as an agent tool](installing-agent-tools.md) to run this step. 
+
+>Kotlin compiler 1.7.10 is bundled with TeamCity. The new version **may require changes to your scripts**. 
+> See [upgrade notes](upgrade-notes.md#bundled-tools-updates-2022-10) for details.
 
 ## Kotlin Script Settings
 

@@ -14,7 +14,17 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 
 * The bundled Amazon Corretto Java has been updated to version 11.0.16.9.1.
 * The bundled Tomcat has been updated to version 8.5.82.
-* The bundled Kotlin compiler used in the [Kotlin Script runner](kotlin-script.md) has been updated to version 1.7.10.
+* The bundled Kotlin compiler in the [Kotlin Script runner](kotlin-script.md) has been updated to version 1.7.10.
+  <note>
+  
+  Kotlin compiler 1.7.10 changes its behavior in respect to the`@file:Repository` annotations supported by the `.main.kts` extension
+  (used in build steps with custom scripts by default). In Kotlin 1.5, when such annotations were used in the script
+  and a dependency was not found in any of the mentioned repositories, the dependency resolver would also look in the Maven Central
+  even if it was not mentioned explicitly.
+  In Kotlin 1.7 this behavior changes. Maven Central is only checked if no `@file:Repository` annotations are used in the script.
+  If you use such annotations in your code, you’ll need to mention Maven Central explicitly 
+  if you want the dependency resolver to look in it.
+  </note>
 * Maven 3.8.6 has been added to bundled versions.
 * JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
   * MySQL to 8.0.30 
