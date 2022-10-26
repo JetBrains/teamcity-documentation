@@ -27,7 +27,7 @@ TeamCity server is bundled with the 64-bit JVM but can run under both 32- and 64
 If you need to update 32-bit Java to 64-bit JVM, note that the memory usage is almost doubled when switching from 32- to 64-bit. Make sure to specify at least twice as much memory as for 32-bit JVM. Read how to [change memory settings](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server).
 
 To update to 64-bit Java, either use the bundled version of Java or:
-1.Update Java to be used by the server.
+1. Update Java to be used by the server.
 2. [Set JVM memory options](server-startup-properties.md). It is recommended to set the `-Xmx4g` option for 64-bit JVM.
 
 ## Install Non-Bundled Version of Tomcat
