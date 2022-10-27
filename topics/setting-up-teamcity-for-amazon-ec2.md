@@ -68,6 +68,10 @@ To use [encrypted EBS volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGui
 * `kms:GenerateDataKeyWithoutPlainText`
 * `kms:ReEncrypt`
 
+To [connect to an agent via SSM](#debugging-and-maintenance), the following additional permissions are required:
+* `sts:GetFederationToken`
+* `ssm:*Session`
+
 An example of custom IAM policy definition (allows all EC2 operations from a specified IP address):
 
 ```Shell
@@ -267,6 +271,36 @@ For proxy server authentication:
 For NTML authentication: 
 * `teamcity.http.proxy.domain.ec2` — proxy user domain for NTLM authentication 
 * `teamcity.http.proxy.workstation.ec2` — proxy access workstation for NTLM authentication
+
+### Debugging and Maintenance
+{id="debugging-and-maintenance"}
+
+You can investigate issues on the EC2 agent by launching an interactive browser-based shell directly from the TeamCity UI. It works only for EC2 agents with preinstalled [AWS Systems Manager Agent (SSM Agent)](https://docs.aws.amazon.com/systems-manager/latest/userguide/prereqs-ssm-agent.html). TeamCity provides authorization for the browser-based shell, so you don't have to manage it manually.
+
+>By default, **the authorized** SSM **user will have sudo privileges**. For security reasons, it is recommended to change the default user permissions and launch the browser-based shell under the same OS user of your EC2 instance as the TeamCity build agent. You can find more information on how to do it below.
+>
+{type="warning"}
+
+
+To configure this feature:
+
+1. In TeamCity, check your EC2 [cloud profile](https://www.jetbrains.com/help/teamcity/setting-up-teamcity-for-amazon-ec2.html#Configuration):
+   * Ensure that the credentials in the cloud profile have the following permissions:
+     * `sts:GetFederationToken`
+     * `ssm:*Session`
+   * The agents launched from the cloud profile have an IAM role with the attached `AmazonSSMManagedInstanceCore` permission policy. This policy grants instances the permissions needed for core AWS Systems Manager functionality.
+2. Check whether SSM Agent has been installed and is running on the instance. Most EC2 base images have [preinstalled SSM Agent](https://docs.aws.amazon.com/systems-manager/latest/userguide/ami-preinstalled-agent.html). If you need to install SSM Agent manually, read the [documentation](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-manual-agent-install.html).
+3. Configure the privileges of the SSM user. By default, the user has sudo permissions, **which is not secure**. We strongly recommend launching a browser-based shell under the same OS user as the TeamCity build agent. In the AWS IAM role, specify the `SM Session Run As = OS user account name` tag. For more information, see the [documentation](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-preferences-run-as.html).
+
+   Additionally, to monitor session activity, set up a [logging policy](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-logging.html) for your EC2 instance in the AWS SSM service.
+
+   > To use the feature, you need the _Open an interactive session to the agent_ permission.
+
+4. In the TeamCity UI, open the Agent page, Miscellaneous section, and click **Connect via SSM**. The browser-based shell will open in a separate browser tab.
+
+>To prevent the agent instance from terminating, you can [disable the agent for maintenance](). In maintenance mode, the agent will not be terminated automatically and not be available for new builds.
+>
+{type="tip"}
 
 ### Custom script
 
