@@ -25,30 +25,37 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
   If you use such annotations in your code, you’ll need to mention Maven Central explicitly 
   if you want the dependency resolver to look in it.
   </note>
-* Maven 3.8.6 has been added to bundled versions.
+* Maven 3.8.6 has been added as one of the bundled versions of the tool.
+* The embedded Maven library has been updated to version 3.8.6.
 * JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
   * MySQL to 8.0.30 
   * PSQL to 42.5.0
   * MSSQL to 9.4.1
+  
 
 ### Other updates
 {id="other-updates-2022-10"}
 
-* The embedded Maven library has been updated to version 3.8.6.
+#### Permission to connect to an agent's EC2 instance via AWS SSM
 
-### Free disk space for artifacts is calculated automatically
+TeamCity system administrators are now granted the new role, _Open an interactive session to the agent_, 
+which lets them use an interactive browser-based shell on an EC2 agent from the TeamCity UI without providing Amazon credentials. 
+It is possible to connect to agents if they are configured as described [here](viewing-build-agent-details.md#debug-and-maintenance).
+
+
+#### Free disk space for artifacts is calculated automatically
 
 The **Free disk space** build feature keeps track of the size of artifacts and automatically calculates the disk space required for resolving artifact dependencies. 
 You do not have to take into account the size of the artifacts downloaded during the build when specifying the required disk space.
 
-### Backward compatibility for Bitbucket Server pull request branches
+#### Backward compatibility for Bitbucket Server pull request branches
 
 TeamCity provides backward compatibility with Bitbucket Server pull request branches 
 that are [not officially supported by Atlassian](https://community.atlassian.com/t5/Bitbucket-questions/Current-Atlassian-position-regarding-refs-pull-requests-from/qaq-p/1376356#M54578). 
 The [Pull Requests](pull-requests.md) build feature has the **Use pull request branches** option that enables detection of such branches `(pull-requests/*)` instead of source branches.
 After the upgrade, this option will be enabled for existing build configurations using such branches. We do not recommend using this option. 
 
-### Performance Monitor
+#### Performance Monitor
 
 The [Performance Monitor](performance-monitor.md) build feature is now enabled by default for [build configurations created from a URL](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL).
 
