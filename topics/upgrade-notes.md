@@ -40,7 +40,7 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 
 TeamCity system administrators are now granted the new role, _Open an interactive session to the agent_, 
 which lets them use an interactive browser-based shell on an EC2 agent from the TeamCity UI without providing Amazon credentials. 
-It is possible to connect to agents if they are configured as described [here](viewing-build-agent-details.md#debug-and-maintenance).
+It is possible to connect to agents if they are configured as described [here](setting-up-teamcity-for-amazon-ec2.md#debug-and-maintenance).
 
 
 #### Free disk space for artifacts is calculated automatically
