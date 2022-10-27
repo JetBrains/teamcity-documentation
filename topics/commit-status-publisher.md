@@ -94,9 +94,20 @@ In the Commit Status Publisher settings, specify:
 * Username and cross-host [ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html) for connection (use the `p4 login -a -p` command to obtain one)
 * Whether you want TeamCity to create a test run on the Swarm server and update its status according to the build status in TeamCity. To be able to use this mode, make sure the provided credentials grant administrative access.
 
+When you add more than one Commit Status Publisher build feature in a build configuration, specify a unique VCS Root per build feature instead of the _All attached VCS roots_ default option. By doing so, each Swarm Server will use its own VCS root.
+
 Note that Helix Swarm usually creates reviews on shelved changelists whose description contains a special keyword, depending on your setup (for example, `#review`). If you want TeamCity to trigger builds on Perforce shelved files automatically, you need to specify the same keyword in the [Perforce Shelve Trigger](perforce-shelve-trigger.md) settings as well.
 
 >To get notified about the events, make sure to [configure Swarm triggers](https://www.perforce.com/manuals/swarm-admin/Content/Swarm/setup.perforce.html).
+
+When the Commit Status Publisher build feature is added and a changelist has a review in Helix Swarm, TeamCity shows the _Swarm Reviews_ section on the build overview page.
+This section provides navigation to:
+* Helix Swarm change page.
+* Helix Swarm reviews for:
+    * TeamCity personal builds on shelved changelists.
+    * Builds on post-commit reviews. Swarm integration finds reviews associated with the final revision of the build.
+
+From each change in the build with the configured Commit Status Publisher feature, you can navigate to the change page on the Helix Swarm by clicking _Open in Helix Swarm_.
 
 ### Gerrit
 
