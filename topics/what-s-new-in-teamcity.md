@@ -74,11 +74,6 @@ TeamCity provides an option to [promote](running-custom-build.md#Promoting+Build
 After promotion, TeamCity will try to run the promoted build and all its dependencies as [personal builds](personal-build.md#Triggering+Personal+Build+Chain) unless the check out settings for any of the dependencies differ.
 
 
-
-
-
-
-
 ## Roadmap
 
 See the [TeamCity roadmap](https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap) to learn about future updates.
