@@ -3,6 +3,7 @@
 
 
 ## Easy HTTPS Access Setup on TeamCity Server
+{product="tc"}
 
 Before this version, setting up HTTPS on a TeamCity server has been one of the challenging tasks for a server administrator. 
 It required the knowledge of the TeamCity server configuration and experience in configuring proxy servers. 
@@ -15,7 +16,7 @@ If your TeamCity server is [behind a proxy](configuring-proxy-server.md#Set+Up+T
 configure HTTPS on the proxy side.
 
 [Read this article](https-server-settings.md) for details.
-{product="tc"}
+
 
 ## Refresh tokens for VCS Roots
 
