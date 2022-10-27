@@ -517,7 +517,7 @@ If [Artifacts Domain Isolation](teamcity-configuration-and-maintenance.md#artifa
 
 ## Known issues of native Git checkout
 
-These issues concern the use of native [Git](git.md) for checking out sources to the TeamCity server, effective since [version 2022.04](what-s-new-in-teamcity-2022-04.md#Native+Git).
+These issues concern the use of native [Git](git.md) for checking out sources to the TeamCity server, effective since [version 2022.04](https://www.jetbrains.com/help/teamcity/2022.04/what-s-new-in-teamcity.html#Native+Git).
 
 ### SSH DSA keys do not work with native Git
 
