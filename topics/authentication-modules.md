@@ -28,6 +28,7 @@ On an attempt to sign in via the login form, TeamCity asks all the available _cr
 * __Bitbucket Cloud__: Allows authenticating with an existing Bitbucket Cloud account.
 * __JetBrains Space__: Allows authenticating with an existing [JetBrains Space](https://www.jetbrains.com/space/) account.
 * __Azure DevOps__: Allows authenticating with an existing Azure AD account via OAuth 2.0.
+* __Google__: Allows authenticating with an existing Google account via OAuth 2.0 protocol.
 * __HTTP SAML 2.0__: Allows authenticating with an existing [Okta](https://www.okta.com/) or [OneLogin](https://www.onelogin.com/) account via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0).
 {product="tcc"}
 

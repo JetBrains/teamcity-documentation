@@ -49,8 +49,6 @@ __27 October 2022__
 
 **[TW-77506](https://youtrack.jetbrains.com/issue/TW-77506/Add-server-metrics-with-timestamps-for-server-cleanup)** — Add server metrics with timestamps for server cleanup
 
-**[TW-76789](https://youtrack.jetbrains.com/issue/TW-76789/ImageBuilder-should-support-remote-artifacts)** — ImageBuilder should support remote artifacts
-
 **[TW-76848](https://youtrack.jetbrains.com/issue/TW-76848/Add-metrics-for-the-versioned-settings-application-on-the-server)** — Add metrics for the versioned settings application on the server
 
 ### Bug
