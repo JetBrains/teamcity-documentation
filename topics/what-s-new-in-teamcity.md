@@ -12,11 +12,11 @@ all you need to do is upload an HTTPS certificate, or a certificate chain in the
 and TeamCity will do the rest.
 
 These settings will affect the built-in Tomcat server configuration. 
-If your TeamCity server is [behind a proxy](configuring-proxy-server.md#Set+Up+TeamCity+Server+Behind+Proxy), 
+If your TeamCity server is [behind a proxy](configuring-proxy-server.md), 
 configure HTTPS on the proxy side.
 
 [Read this article](https-server-settings.md) for details.
-
+{product="tc"}
 
 ## Refresh tokens for VCS Roots
 
@@ -71,7 +71,7 @@ The permission will be present for this role in the new TeamCity installations; 
 
 ## Promoting personal build
 
-TeamCity provides an option to [promote](running-custom-build.md#Promoting+Build) a personal build. 
+You can now [promote](running-custom-build.md#Promoting+Build) a personal build. 
 After promotion, TeamCity will try to run the promoted build and all its dependencies as [personal builds](personal-build.md#Triggering+Personal+Build+Chain) unless the check out settings for any of the dependencies differ.
 
 
