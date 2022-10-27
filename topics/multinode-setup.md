@@ -256,7 +256,8 @@ The [domain isolation](teamcity-configuration-and-maintenance.md#artifacts-domai
 
 In the case of a failover, when the main node is no longer available either because of a crash or during maintenance, a secondary node can be granted with the "_Main TeamCity node_" responsibility and act as a main node temporarily or permanently.
 
-Each secondary node tracks the activity of the current main node and, if it is inactive for several minutes (3 by default), shows the corresponding health report. After you see this report, you can assign the "_Main TeamCity Node_" responsibility to another node. However, if this inactivity has not been planned (that is, the main node has crashed), it is important to verify that no TeamCity server processes are left running on the inactive node. If you detect such processes, you need to stop them before reassigning the "_Main TeamCity node_" responsibility.
+Each secondary node tracks the activity of the current main node and, if the main node is inactive for several (3 by default) minutes, shows the corresponding health report.
+The "_Main TeamCity Node_" responsibility can be reassigned to another node via the TeamCity UI or REST API. However, if this inactivity has not been planned (that is, the main node has crashed), it is important to verify that no TeamCity server processes are left running on the inactive node. If you detect such processes, you need to stop them before reassigning the "_Main TeamCity node_" responsibility.
 
 After switching the responsibility, you also need to update the IDs and hostnames of nodes in the [reverse proxy configuration](#Proxy+Configuration) and reload the proxy server configuration. Otherwise, if you decide to start the former main node again, the proxy won’t be able to properly route agents and users.
 
@@ -265,6 +266,41 @@ To sum up, on a failover, follow these steps:
 2. Make sure the main node is stopped.
 3. Switch the "Main node" responsibility on the secondary node.
 4. Update the main node ID in the reverse proxy configuration and reload the config.
+
+### Monitoring and Managing Nodes via REST API
+
+Starting from TeamCity 2022.10, you can use REST API to check the node status and reassign node responsibilities.
+
+To get the list of all online nodes, use:
+
+```Shell
+GET /app/rest/server/nodes?locator=state:online
+```
+
+To assign the _Main node_ responsibility to a secondary node, use:
+
+```Shell
+PUT /app/rest/server/nodes/id:<node id>/enabledResponsibilities/MAIN_NODE
+```
+
+The same example with curl:
+
+```Shell
+curl \
+   -X PUT \
+   -H "Content-Type: text/plain" \
+   -H "Origin: <host>:<port>" \
+   --data-raw "true" \
+   --header “Authorization: Bearer <token-value>” \
+   "https://<host>:<port>/app/rest/server/nodes/id:<node id>/enabledResponsibilities/MAIN_NODE"
+```
+
+> The MAIN_NODE responsibility can be reassigned only if the current main node is offline. Otherwise the request will fail. Note that the responsibility change will not be immediate. To get effective responsibilities of the node, use the following REST API call:
+
+```Shell
+GET /app/rest/server/nodes/id:<node id>/effectiveResponsibilities
+```
+
 
 ## Nodes Configuration and Usage
 
