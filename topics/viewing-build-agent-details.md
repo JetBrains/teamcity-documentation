@@ -24,6 +24,7 @@ For each connected agent TeamCity provides the following information:
   * Reboot Agent Machine: available to users with _Reboot build agent machines_ permissions. Click the link and confirm the reboot action. By default, the TeamCity agent will wait until the current build finishes. Deselect the checkbox and click Reboot to restart the agent immediately.    
   Additional configuration of the reboot command is possible. See [Agent Reboot](#Agent+Reboot).
   * Dump threads on agent
+  * [Connect via SSM](setting-up-teamcity-for-amazon-ec2.md#debugging-and-maintenance): available to users with the Open an interactive session to the agent permission. Click the link to open an interactive browser-based shell.
 
 ### Agent Reboot
 [//]: # (AltHead: Configuring Agent Reboot Command)
@@ -67,11 +68,6 @@ The page allows viewing and downloading the logs.
 ## Agent Parameters
 
 The tab lists system properties, environment variables, and configuration parameters. Refer to the [Configuring Build Parameters](configuring-build-parameters.md) page for more information on different types of parameters.
-
-## Debugging and Maintenance
-{id="debug-and-maintenance"}
-
-
 
 
 <seealso>

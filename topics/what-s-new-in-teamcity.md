@@ -52,7 +52,7 @@ You can launch an interactive browser-based shell directly from the TeamCity UI.
 The shell helps you investigate agent-related issues and works for EC2 agents 
 with preinstalled [AWS Systems Manager Agent](https://docs.aws.amazon.com/systems-manager/latest/userguide/prereqs-ssm-agent.html) (SSM Agent).
 
-[Read this article](viewing-build-agent-details.md#debug-and-maintenance) for details.
+[Read this article](setting-up-teamcity-for-amazon-ec2.md#debugging-and-maintenance) for details.
 {product="tc"}
 
 ## New UI for the list of build runners
