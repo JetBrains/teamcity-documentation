@@ -88,10 +88,23 @@ The permission will be present for this role in the new TeamCity installations; 
 You can now [promote](running-custom-build.md#Promoting+Build) a personal build. 
 After promotion, TeamCity will try to run the promoted build and all its dependencies as [personal builds](personal-build.md#Triggering+Personal+Build+Chain) unless the check out settings for any of the dependencies differ.
 
-## Check build status in the Swarm review
 
-When the Commit Status Publisher build feature is added and a changelist has a review in Helix Swarm, 
-TeamCity shows the _Swarm Reviews_ section on the build overview page.
+## Improvements in Perforce support
+
+### Support for non-default streams/feature branches in Perforce Shelve Trigger﻿
+
+If stream support is enabled in a Perforce VCS Root, the [Perforce Shelve Trigger](http://perforce-shelve-trigger.md) will now automatically detect the target stream from the changed files and trigger a personal build in this stream.
+
+- Autodetection of the branch works in the run custom build dialog even if the default branch is specified.
+- The same applies to the [REST API endpoint](https://www.jetbrains.com/help/teamcity/rest/edit-build-configuration-settings.html#Manage+Build+Triggers). You do not have to specify the stream explicitly there, but can be specified via the desiredStream HTTP parameter.
+- Autodetection also works in the REST API when the `desiredBranch parameter` is not set in an HTTP request.
+
+### Check TeamCity build status in Swarm
+
+After you run a build with [Commit Status Publisher](commit-status-publisher.md#perforce-helix-swarm) 
+on a changelist that has a review in Helix Swarm,
+TeamCity shows the _Swarm Reviews_ section on the build overview page. From each change,
+you can navigate to the change page on the Helix Swarm using `Open in Helix Swarm`.
 
 ## Roadmap
 
