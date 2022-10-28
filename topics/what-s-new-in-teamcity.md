@@ -60,11 +60,11 @@ The cloud agent will not be stopped according to the termination conditions and 
 
 ## Updated Kotlin DSL documentation
 
-We have updated the [Kotlin DSL](kotlin-dsl.md) documentation. The changed layout allows for the better readability of the documentation. 
-We have also provided meaningful examples to improve the experience for developers who want to create projects and build configurations 
+We have made changes to the [Kotlin DSL](kotlin-dsl.md) documentation: altered the design and adjusted the layout for better readability.
+Most importantly, we provided meaningful examples to improve the experience for developers who want to create projects and build configurations 
 in TeamCity programmatically.
 
-<img src="new-kotlin-dsl-doc.png" alt="Regular build" width="750" />
+<img src="new-kotlin-dsl-doc.png" alt="New Kotlin DSL Documentation"/>
 
 
 ## Google Account
