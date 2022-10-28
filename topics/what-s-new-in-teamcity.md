@@ -33,7 +33,7 @@ Creating new build steps is more user-friendly now with the flat list of availab
 
 <img src="flat-list-build-runners.png" />
 
-Refer to [this article](teamcity-sakura-ui) for details.
+Refer to [this article](teamcity-sakura-ui.md) for details.
 
 ## Support for Amazon Web Services (AWS)
 
@@ -59,7 +59,7 @@ The cloud agent will not be stopped according to the termination conditions and 
 
 ## Google Account
 
-You can sign in to TeamCity with a [Google account](authentication-modules.md#goog). Before enabling this module, 
+You can sign in to TeamCity with a [Google account](authentication-modules.md). Before enabling this module, 
 you need to configure a [Google connection](configuring-connections.md#Google) in the Root project's settings.
 
 ## Refresh tokens for VCS Roots
