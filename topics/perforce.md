@@ -333,7 +333,9 @@ P4 trust
 
 If a VCS root of your project connects to Perforce via SSL, TeamCity will automatically establish a trusted connection to it. The `p4 trust` command is sent every time you test a Perforce connection, or a build agent checks out sources from Perforce.
 
-If the SSL certificate on the Perforce server is renewed, the agents need to be configured to trust this new certificate with the help of a special parameter. For security reasons, this parameter needs to be  removed after each agent has checked out the sources.
+If the SSL certificate on the Perforce server is renewed, the agents need to be configured to trust this new certificate 
+with the help of a special parameter. For security reasons, this parameter needs to be removed 
+after all agents have checked out the sources.
 Set the `teamcity.internal.perforce.forceTrust=true` configuration parameter to the related project or build configuration.
 
 </td></tr></table>
