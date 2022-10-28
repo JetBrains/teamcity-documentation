@@ -360,6 +360,7 @@
         <toc-element id="requirement-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="teamcity-specific-directories.md"/>
         <toc-element id="wildcards.md"/>
+        <toc-element id="teamcity-sakura-ui.md" accepts-web-file-names="teamcity-experimental-ui.html" show-structure-for="chapter" show-structure-depth="4"/>
     </toc-element>
     <toc-element id="troubleshooting.md">
         <toc-element id="common-problems.md" show-structure-for="chapter" show-structure-depth="4"/>

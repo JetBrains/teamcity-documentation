@@ -18,7 +18,6 @@ configure HTTPS on the proxy side.
 {product="tc"}
 
 ## The Sakura UI is now default
-{product="tc"}
 
 The Sakura UI is now enabled by default for all new TeamCity users.
 This fresh, modern interface created with web accessibility in mind is constantly evolving:
@@ -117,7 +116,7 @@ If stream support is enabled in a Perforce VCS Root, the [Perforce Shelve Trigge
 
 ### Check TeamCity build status in Swarm
 
-After you run a build with [Commit Status Publisher](commit-status-publisher.md#perforce-helix-swarm) 
+After you run a build with [Commit Status Publisher](commit-status-publisher.md#Perforce+Helix+Swarm)
 on a changelist that has a review in Helix Swarm,
 TeamCity shows the _Swarm Reviews_ section on the build overview page. From each change,
 you can navigate to the change page on the Helix Swarm using `Open in Helix Swarm`.

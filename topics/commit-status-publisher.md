@@ -84,6 +84,7 @@ Then, in the build configuration's settings:
 Now, whenever you run a build in this configuration, TeamCity will report the build status to JetBrains Space.
 
 ### Perforce Helix Swarm
+{id="perforce-helix-swarm"}
 
 If a build is run on changes in Perforce [shelved files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html), TeamCity can report its statuses as comments to the respective code review in Perforce Helix Swarm.
 
