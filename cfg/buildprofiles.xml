@@ -17,6 +17,7 @@
         <config-feedback-support>https://teamcity-support.jetbrains.com/</config-feedback-support>
         <config-sideblocks>true</config-sideblocks>
         <config-search-scopes-provider>https://data.services.jetbrains.com/search/</config-search-scopes-provider>
+        <config-versions-switcher>https://data.services.jetbrains.com/help-versions</config-versions-switcher>
         <enable-browser-edits>true</enable-browser-edits>
         <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2020.2/</browser-edits-url>
         <disable-prev-next-links>true</disable-prev-next-links>
