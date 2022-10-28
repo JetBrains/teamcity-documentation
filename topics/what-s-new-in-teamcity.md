@@ -100,6 +100,7 @@ You can now [promote](running-custom-build.md#Promoting+Build) a personal build.
 After promotion, TeamCity will try to run the promoted build and all its dependencies as [personal builds](personal-build.md#Triggering+Personal+Build+Chain) unless the check out settings for any of the dependencies differ.
 
 ## New REST API Requests to monitor and manage server nodes
+{product="tc"}
 
 In TeamCity 2022.10, you can use new REST API requests to check the status of your nodes in the high availability setup 
 and reassign node responsibilities. See [this section for details](multinode-setup.md#Monitoring+and+Managing+Nodes+via+REST+API).
