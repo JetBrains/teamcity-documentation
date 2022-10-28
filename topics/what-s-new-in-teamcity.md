@@ -18,6 +18,7 @@ configure HTTPS on the proxy side.
 {product="tc"}
 
 ## The Sakura UI is now default
+{product="tc"}
 
 The Sakura UI is now enabled by default for all new TeamCity users.
 This fresh, modern interface created with web accessibility in mind is constantly evolving:
