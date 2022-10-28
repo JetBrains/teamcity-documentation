@@ -17,7 +17,7 @@ configure HTTPS on the proxy side.
 [Read this article](https-server-settings.md) for details.
 {product="tc"}
 
-## The Sakura UI is now the default UI
+## The Sakura UI is now default
 
 The Sakura UI is now enabled by default for all new TeamCity users.
 This fresh, modern interface created with web accessibility in mind is constantly evolving:
@@ -88,6 +88,11 @@ The permission will be present for this role in the new TeamCity installations; 
 You can now [promote](running-custom-build.md#Promoting+Build) a personal build. 
 After promotion, TeamCity will try to run the promoted build and all its dependencies as [personal builds](personal-build.md#Triggering+Personal+Build+Chain) unless the check out settings for any of the dependencies differ.
 
+## New REST API Requests to monitor and manage server nodes
+
+In TeamCity 2022.10, you can use new REST API requests to check the status of your nodes in the high availability setup 
+and reassign node responsibilities. See [this section for details](multinode-setup.md#Monitoring+and+Managing+Nodes+via+REST+API).
+
 
 ## Improvements in Perforce support
 
@@ -105,6 +110,8 @@ After you run a build with [Commit Status Publisher](commit-status-publisher.md#
 on a changelist that has a review in Helix Swarm,
 TeamCity shows the _Swarm Reviews_ section on the build overview page. From each change,
 you can navigate to the change page on the Helix Swarm using `Open in Helix Swarm`.
+
+
 
 ## Roadmap
 
