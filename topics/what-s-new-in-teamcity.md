@@ -57,6 +57,16 @@ when its termination condition was met.
 Now you can [disable a cloud agent for maintenance](build-agents-configuration-and-maintenance.md#disable-for-maintenance). In maintenance mode, you can log in to the agent, view its log, and perform other operations.
 The cloud agent will not be stopped according to the termination conditions and will be unavailable for builds unless assigned to a build explicitly.
 
+
+## Updated Kotlin DSL documentation
+
+We have updated the [Kotlin DSL](kotlin-dsl.md) documentation. The changed layout allows for the better readability of the documentation. 
+We have also provided meaningful examples to improve the experience for developers who want to create projects and build configurations 
+in TeamCity programmatically.
+
+<img src="new-kotlin-dsl-doc.png" alt="Regular build" width="750" />
+
+
 ## Google Account
 
 You can sign in to TeamCity with a [Google account](authentication-modules.md). Before enabling this module, 
@@ -93,10 +103,9 @@ After promotion, TeamCity will try to run the promoted build and all its depende
 In TeamCity 2022.10, you can use new REST API requests to check the status of your nodes in the high availability setup 
 and reassign node responsibilities. See [this section for details](multinode-setup.md#Monitoring+and+Managing+Nodes+via+REST+API).
 
-
 ## Improvements in Perforce support
 
-### Support for non-default streams/feature branches in Perforce Shelve Trigger﻿
+### Support for non-default streams/feature branches in Perforce Shelve Trigger
 
 If stream support is enabled in a Perforce VCS Root, the [Perforce Shelve Trigger](http://perforce-shelve-trigger.md) will now automatically detect the target stream from the changed files and trigger a personal build in this stream.
 
@@ -110,7 +119,6 @@ After you run a build with [Commit Status Publisher](commit-status-publisher.md#
 on a changelist that has a review in Helix Swarm,
 TeamCity shows the _Swarm Reviews_ section on the build overview page. From each change,
 you can navigate to the change page on the Helix Swarm using `Open in Helix Swarm`.
-
 
 
 ## Roadmap
