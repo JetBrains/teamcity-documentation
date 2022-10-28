@@ -37,6 +37,7 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 {id="other-updates-2022-10"}
 
 #### Permission to connect to an agent's EC2 instance via AWS SSM
+{product="tc"}
 
 TeamCity system administrators are now granted the new role, _Open an interactive session to the agent_, 
 which lets them use an interactive browser-based shell on an EC2 agent from the TeamCity UI without providing Amazon credentials. 

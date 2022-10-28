@@ -71,6 +71,7 @@ To use [encrypted EBS volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGui
 To [connect to an agent via SSM](#debugging-and-maintenance), the following additional permissions are required:
 * `sts:GetFederationToken`
 * `ssm:*Session`
+{product="tc"}
 
 An example of custom IAM policy definition (allows all EC2 operations from a specified IP address):
 
@@ -274,6 +275,7 @@ For NTML authentication:
 
 ### Debugging and Maintenance
 {id="debugging-and-maintenance"}
+{product="tc"}
 
 You can investigate issues on the EC2 agent by launching an interactive browser-based shell directly from the TeamCity UI. It works only for EC2 agents with preinstalled [AWS Systems Manager Agent (SSM Agent)](https://docs.aws.amazon.com/systems-manager/latest/userguide/prereqs-ssm-agent.html). TeamCity provides authorization for the browser-based shell, so you don't have to manage it manually.
 
