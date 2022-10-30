@@ -108,7 +108,7 @@ and reassign node responsibilities. See [this section for details](multinode-set
 
 ### Support for non-default streams/feature branches in Perforce Shelve Trigger
 
-If stream support is enabled in a Perforce VCS Root, the [Perforce Shelve Trigger](http://perforce-shelve-trigger.md) will now automatically detect the target stream from the changed files and trigger a personal build in this stream.
+If stream support is enabled in a Perforce VCS Root, the [Perforce Shelve Trigger](perforce-shelve-trigger.md) will now automatically detect the target stream from the changed files and trigger a personal build in this stream.
 
 - Autodetection of the branch works in the run custom build dialog even if the default branch is specified.
 - The same applies to the [REST API endpoint](https://www.jetbrains.com/help/teamcity/rest/edit-build-configuration-settings.html#Manage+Build+Triggers). You do not have to specify the stream explicitly there, but can be specified via the desiredStream HTTP parameter.
