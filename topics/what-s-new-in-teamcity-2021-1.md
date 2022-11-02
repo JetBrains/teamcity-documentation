@@ -176,7 +176,7 @@ Hints are available for [experimental](teamcity-sakura-ui.md) __Project Home__, 
 
 Our experimental UI is a work in progress: we introduce its features in the early stages of development so you can already benefit from them. In each release, we polish already existing pages and reproduce all the important classic features in the new UI.
 
-The experimental UI roadmap strongly depends on our users' feedback. In version 2021.1, we've focused on improving the Build Overview page: read below about a [tree mode for tests](#Show+tests+in+tree+mode+in+Build+Overview) and a new [code coverage visualization](#New+code+coverage+preview). We've also [adjusted the design] of the __Project Home__ page(#Refined+Project+Home) based on your requests.
+The experimental UI roadmap strongly depends on our users' feedback. In version 2021.1, we've focused on improving the Build Overview page: read below about a [tree mode for tests](#Show+tests+in+tree+mode+in+Build+Overview) and a new [code coverage visualization](#New+code+coverage+preview). We've also [adjusted the design](#Refined+Project+Home) of the __Project Home__ page based on your requests.
 
 >Leave feedback about your experience with the experimental UI via [this form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=360001686659){nullable="true"}.
 
