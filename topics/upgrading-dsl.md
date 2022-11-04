@@ -1876,7 +1876,7 @@ To update your settings with the cloud profile information, perform the followin
 
 Due to the fix of [issue TW-48609](https://youtrack.jetbrains.com/issue/TW-48609), if your settings contain nameless entities, TeamCity will report corresponding VCS settings errors. You need to manually set a name parameter to such entities to resolve the errors.
 
-### Updating Kotlin DSL configs version to 10.0 to 2017.1
+### Updating Kotlin DSL configs version from 10.0 to 2017.1
 
 The changes in this section should be done to Kotlin scripts on changing the [scripts config version](#Configs+version) from 10.0 to 2017.1
 
