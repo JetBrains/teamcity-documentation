@@ -58,8 +58,8 @@ The `TOKEN` here is your [personal token](configuring-your-user-profile.md#Manag
 6. After the settings are saved, you’ll be presented with a list of HTTPS redirect options. Select one of the radio buttons:
 * **Disabled** (default). HTTPS redirection is not enforced and all clients can use both HTTP and HTTPS. This is the least secure option.
 * **Only browser requests**. Use this option to force all users connecting via a browser to use HTTPS. Requests from agents and custom scripts will not be redirected. 
-* This option can be suitable if you have a secure isolated infrastructure, or if you only have local agents connecting to the TeamCity server. 
-* It is also useful for a transition period, when you can [configure your agents](how-to.md#Configure+TeamCity+Agent+to+Use+Proxy+To+Connect+to+TeamCity+Server) to connect to TeamCity via HTTPS.
+  * This option can be suitable if you have a secure isolated infrastructure, or if you only have local agents connecting to the TeamCity server. 
+  * It is also useful for a transition period, when you can [configure your agents](how-to.md#Configure+TeamCity+Agent+to+Use+Proxy+To+Connect+to+TeamCity+Server) to connect to TeamCity via HTTPS.
 * **Enable for all requests**. All TeamCity clients will be redirected to HTTPS. 
 
   > Before enabling this option, **make sure that you have updated the URL to HTTPS on all agents**; 
