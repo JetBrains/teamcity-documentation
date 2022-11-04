@@ -221,7 +221,7 @@ See [TeamCity 2021.2 release notes](teamcity-2021-2-release-notes.md).
 ## Upgrade notes
 {product="tc"}
 
-Before upgrading, we highly recommend reading about [important changes in version 2021.2 compared to 2021.1.x](upgrade-notes.md#changes-from-20211-to-20212).
+Before upgrading, we highly recommend reading about [important changes in version 2021.2 compared to 2021.1.x](upgrade-notes.md#Changes+from+2021.1+to+2021.2).
 
 ## Previous releases
 {product="tc"}
