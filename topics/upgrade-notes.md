@@ -1,7 +1,7 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
-## Changes from 2022.04.4 to 2022.10
+## Changes from 2022.04 to 2022.10
 
 ### Planned deprecation of Java 8 in TeamCity Server 2023.04
 

@@ -239,7 +239,7 @@ See [TeamCity 2022.04 release notes](teamcity-2022-04-release-notes.md)
 ## Upgrade notes
 {product="tc"}
 
-Before upgrading, we highly recommend reading about [important changes in version 2022.04 compared to 2021.2.x](upgrade-notes.md).
+Before upgrading, we highly recommend reading about [important changes in version 2022.04 compared to 2021.2.x](upgrade-notes.md#Changes+from+2021.2+to+2022.04).
 
 
 ## Previous releases

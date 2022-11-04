@@ -121,6 +121,26 @@ on a changelist that has a review in Helix Swarm,
 TeamCity shows the _Swarm Reviews_ section on the build overview page. From each change,
 you can navigate to the change page on the Helix Swarm using `Open in Helix Swarm`.
 
+## Fixed issues
+
+See [TeamCity 2022.10 release notes](teamcity-2022-10-release-notes.md)
+
+## Upgrade notes
+{product="tc"}
+
+Before upgrading, we highly recommend reading about [important changes in version 2022.10 compared to 2022.04.x](upgrade-notes.md#Changes+from+2022.04+to+2022.10).
+
+
+## Previous releases
+{product="tc"}
+
+* [What's New in TeamCity 2022.04](https://www.jetbrains.com/help/teamcity/2022.04/what-s-new-in-teamcity.html)
+* [What's New in TeamCity 2021.2](https://www.jetbrains.com/help/teamcity/2021.2/what-s-new-in-teamcity.html)
+* [What's New in TeamCity 2021.1](https://www.jetbrains.com/help/teamcity/2021.1/what-s-new-in-teamcity.html)
+* [What's New in TeamCity 2020.2](https://www.jetbrains.com/help/teamcity/2020.2/what-s-new-in-teamcity.html)
+* [What's New in TeamCity 2020.1](https://www.jetbrains.com/help/teamcity/2020.1/what-s-new-in-teamcity.html)
+* [What's New in TeamCity 2019.2](https://www.jetbrains.com/help/teamcity/2019.2/what-s-new-in-teamcity-2019-2.html)
+* [What's New in TeamCity 2019.1](https://www.jetbrains.com/help/teamcity/2019.1/what-s-new-in-teamcity-2019-1.html)
 
 ## Roadmap
 
