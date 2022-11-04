@@ -83,7 +83,7 @@ When a new version of TeamCity is detected, the server displays the correspondin
 The automatic update procedure is as follows:
 1. The TeamCity server is stopped.
 2. The update script is run to do the following:
-    1. Create a backup of the current installation in the `<[TeamCity Home Directory](teamcity-home-directory.md)>.old` directory.
+    1. Create a backup of the current installation in the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory.
     2. Update the stopped server to the new version.
 3. Next, the updated server starts.  
    The update progress is logged to the `<[TeamCity Home Directory](teamcity-home-directory.md)>/logs/teamcity-update.log` file.
