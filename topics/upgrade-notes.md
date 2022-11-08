@@ -59,13 +59,24 @@ After the upgrade, this option will be enabled for existing build configurations
 
 The [Performance Monitor](performance-monitor.md) build feature is now enabled by default for [build configurations created from a URL](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL).
 
+### Known issues
+{id="known-issues-202210"}
+
+The Kotlin DSL plugin may fail [to resolve DSL dependencies](https://youtrack.jetbrains.com/issue/TW-78351/Kotlin-DSL-fails-to-generateget-DSL-dependencies-since-upgrading-to-202210) after upgrading to 2022.10, 
+if a project's Kotlin DSL settings use third-party libraries.
+
+If you face this problem, please use the following workaround:
+
+1. Download [this version of the Kotlin DSL plugin](https://uploads.jetbrains.com/files/2022_11_05_Kbfk6dc751LkfZtzLKwrea_JBS/configs-dsl.zip?secret=3aQYCYDCvptvgh13EYD8Yoo8NhguVrzp).
+2. Install the plugin on your TeamCity Server via the **[Administration | Plugins](installing-additional-plugins.md)** page.
+3. Restart your TeamCity server.
+
 ## Changes from 2022.04.3 to 2022.04.4
 
 * The `ReservedCodeCacheSize=640m` attribute is set by default for new server installations.
 If the attribute was specified in an earlier TeamCity version, you'll have to update it manually after upgrading.
 See the [TW-76238](https://youtrack.jetbrains.com/issue/TW-76238/High-CPU-usage-if-code-cache-is-filled-in) issue.
 * SVNKit has been updated to 1.10.8.
-
 
 ## Changes from 2022.04.2 to 2022.04.3
 
