@@ -60,12 +60,12 @@ maintainDB.cmd backup --backup-file <backup file custom name>
 
 Executing the command above will create a new ZIP file with the specified name in the default backup directory.
 
-__To add a timestamp suffix to a custom filename__, add `-M` or `--timestamp` option:
+__To add a timestamp suffix to a custom filename__, add `-M` or `--timestamp-suffix` option:
 
 ```Plain Text
 maintainDB.cmd backup -F <backup file custom name> -M
 or
-maintainDB.cmd backup -F <backup file custom name> --timestamp
+maintainDB.cmd backup -F <backup file custom name> --timestamp-suffix
 
 ```
 
