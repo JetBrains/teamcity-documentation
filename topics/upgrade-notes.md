@@ -65,7 +65,7 @@ The [Performance Monitor](performance-monitor.md) build feature is now enabled b
 #### Security risks of AWS connection
 
 If your TeamCity server is hosted on an AWS instance that has an associated IAM role granting access to sensitive resources, 
-using an [Amazon Web Services (AWS) connection](configuring-connections.mdl#AmazonWebServices) 
+using an [Amazon Web Services (AWS) connection](configuring-connections.md#AmazonWebServices) 
 with the **Default Provider Chain** credentials may present a security risk.
 In this case TeamCity project administrators who configured this type of connection can access all AWS resources permitted by the role.
 
