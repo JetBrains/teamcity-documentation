@@ -62,6 +62,22 @@ The [Performance Monitor](performance-monitor.md) build feature is now enabled b
 ### Known issues
 {id="known-issues-202210"}
 
+#### Security risks of AWS connection
+
+If your TeamCity server is hosted on an AWS instance that has an associated IAM role granting access to sensitive resources, 
+using an [Amazon Web Services (AWS) connection](configuring-connections.mdl#AmazonWebServices) 
+with the **Default Provider Chain** credentials may present a security risk.
+In this case TeamCity project administrators who configured this type of connection can access all AWS resources permitted by the role.
+
+To work around this security issue, we **strongly recommend that TeamCity server administrators disable the use of the
+Default Provider Chain** credentials type in AWS connections 
+by setting the [internal property](server-startup-properties.md#TeamCity+Internal+Properties)`teamcity.internal.aws.connection.defaultCredentialsProviderEnabled=false` (The default value is `true`.)
+No server restart is required after the property is set.
+
+We will disable this type of credentials by default in the next bugfix update.
+
+#### Kotlins DSL plugin may fail to resolve dependencies
+
 The Kotlin DSL plugin may fail [to resolve DSL dependencies](https://youtrack.jetbrains.com/issue/TW-78351/Kotlin-DSL-fails-to-generateget-DSL-dependencies-since-upgrading-to-202210) after upgrading to 2022.10, 
 if a project's Kotlin DSL settings use third-party libraries.
 
