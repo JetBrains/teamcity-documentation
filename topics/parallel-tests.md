@@ -150,5 +150,4 @@ The build step with custom tests' execution logic should use this file and filte
  
 * The [Enforce Clean Checkout action](clean-checkout.md#Enforcing+Clean+Checkout) does not work for build configurations with parallel tests configured.
 * A subsequent start of a build with parallel tests won't reuse already existing builds of the generated build configurations even if there were no new VCS commits.
-* A failed test can be executed by a different batch on the next run, showing that the test is newly failed while in fact it was already failing in some other batch.
-* Builds with parallel tests triggered in a branch won't use the build steps from this branch; the build steps from the default branch will be used instead.
+
