@@ -231,10 +231,11 @@ To configure an AWS connection in TeamCity:
 
    Default credential provider chain
    :
+   {product="tc"}
    Select this type to provide access credentials according to the [default chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default). 
    
      Note the [security risks](upgrade-notes.md#known-issues-202210).This approach is recommended if you do not want to store the credentials on the TeamCity server.
-     {product="tc"}
+     
 
 7. Test and save the connection.
 
