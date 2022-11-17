@@ -229,12 +229,10 @@ To configure an AWS connection in TeamCity:
 
      After the connection is created, you can view and copy the automatically generated external connection ID. We strongly recommend that you always add it to the [trust policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html) in AWS to prevent the [confused deputy problem](https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html). This ensures that only authorized TeamCity AWS connections will be able to use the specified IAM Role.
 
-   Default credential provider chain
+   Default credential provider chain {product="tc"}
    :
-   {product="tc"}
-   Select this type to provide access credentials according to the [default chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default). 
-   
-     Note the [security risks](upgrade-notes.md#known-issues-202210).This approach is recommended if you do not want to store the credentials on the TeamCity server.
+   Select this type to provide access credentials according to the [default chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
+     Note the [security risks](upgrade-notes.md#known-issues-202210). This approach is recommended if you do not want to store the credentials on the TeamCity server.
      
 
 7. Test and save the connection.
