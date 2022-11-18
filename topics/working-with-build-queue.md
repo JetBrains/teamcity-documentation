@@ -62,6 +62,7 @@ To move a build to the top spot in the queue, do one of the following:
 For a [composite build](composite-build-configuration.md), the whole build chain will be moved to the top of the queue. If a running composite build has dependency builds that have not yet started, click the build number or build status link anywhere in the UI, and, on the **[Build Results](working-with-build-results.md)** page of the running build, click the __Actions__ menu in the upper right corner. Select the __Move queued dependencies to top__ action. All queued dependencies of this build will be moved to the top of the queue.
 
 ## Managing Build Priorities
+{product="tc"}
 
 By default, builds are placed in the build queue in the order they are triggered: the most recently triggered build is added to the bottom of the queue. It is possible to change the build's priorities so that builds are inserted into the build queue at a position depending on their defined priority and the wait time of the currently queued builds.
 
