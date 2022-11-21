@@ -139,8 +139,7 @@ If your TeamCity builds use [Docker Wrapper](docker-wrapper.md) or [Docker Compo
 
 * Anonymous Docker users: 100 pulls per 6 hours
 * Docker users with the Free plan: 200 pulls per 6 hours
-
-If you have a Team or Pro Docker account, the number of pulls stays unlimited.
+* Paid Docker subscription users: 5000 pulls per 24 hours
 
 A regular TeamCity agent stores a once pulled image in its cache. This allows running an indefinite number of builds using the same pulled image on a regular basis.   
 However, there are few cases to consider:
