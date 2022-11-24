@@ -31,18 +31,19 @@ Connecting TeamCity to JetBrains Space involves two steps: (1) creating a servic
 ### Step 1: Create Application in JetBrains Space
 
 In your JetBrains Space instance:
-1. Go to __Administration | Applications__ and click __New application__.
-2. Enter a convenient name (for example, `Space-to-TeamCity`), save the application, and click __Go to application settings__.
-3. Configure _In-context Authorization_:
+1. On the navigation bar, click __Extensions__ and choose __Installed to organization__.
+2. Click __New application__.
+3. Enter a convenient name (for example, `Space-to-TeamCity`), save the application, and click __Go to application settings__.
+4. Configure _In-context Authorization_:
    1. On the __Authorization__ tab, click __Authorize in new context__.
    2. Enter the name of the Space project you are about to access from TeamCity and click __Authorize__.
    >When you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you are listed as a member.
    3. (_Optional_) If you want TeamCity to be able to publish commit statuses to Space, you will need to add a respective permission.  
       Click __Configure__ and enable _Git Repositories | Report external check status_. This request has to be accepted by the project administrator.
-4. Configure _Global Authorization_:
+5. Configure _Global Authorization_:
    1. On the __Authorization__ tab, click __Configure__.
    2. To establish general access from TeamCity to Space, enable the _Members | View member profile_ permission and click __Save__. This request has to be accepted by the server administrator.
-5. Configure _Authentication Mode_:
+6. Configure _Authentication Mode_:
    1. Go back to the app's __Overview__ and open the __Authentication__ tab.
    2. Enable _Client Credentials Flow_.
       <anchor name="redirect-uri"/>
