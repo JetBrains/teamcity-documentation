@@ -9,6 +9,11 @@ The **[Default Provider Chain](configuring-connections.md#AmazonWebServices)** c
 To enable this option, set [the internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.internal.aws.connection.defaultCredentialsProviderEnabled=true` (The default value is `false`.)
 No server restart is required after the property is set.
 
+### Internal properties related to artifact dependencies resolution were renamed
+
+The`teamcity.artifactDependenciesResolution.blackList` and `teamcity.artifactDependenciesResolution.whiteList` [properties](artifact-dependencies.md#Artifacts+Rules) were renamed to `teamcity.artifactDependenciesResolution.bannedList` and `teamcity.artifactDependenciesResolution.allowedList`. 
+The old names for these properties are supported for compatibility reasons.
+
 
 ## Changes from 2022.04 to 2022.10
 
