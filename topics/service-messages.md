@@ -649,7 +649,7 @@ When specifying a build parameter's name, mind the prefix:
 
 [Read more](configuring-build-parameters.md) about build parameters and their prefixes.
 
->Since the `setParameter` mechanism does not publish anything to the server until the build is finished, it is not possible to get updated parameters during the build via REST API.
+>Since the `setParameter` mechanism does not publish anything to the server until the build is finished, it is not possible to get updated parameters during the build via the REST API.
 >
 {type="note"}
 

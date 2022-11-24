@@ -40,7 +40,7 @@ After you [install a build agent locally](install-teamcity-agent.md), it needs t
 <video href="dvyDCzOJJZw"
 title="TeamCity tutorial — How to connect local agents to your TeamCity server"/>
 
->Please mind that _Use authentication token..._ option referenced in the video is currently available only for TeamCity Cloud instances.
+>Please note that the _Use authentication token..._ option referenced in the video is currently available only for TeamCity Cloud instances.
 >
 {type="warning" product="tc"}
 

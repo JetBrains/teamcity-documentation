@@ -9,7 +9,7 @@ Refer to [Configuring Build Steps](configuring-build-steps.md) for a description
 
 Currently, Node.js steps can only be run inside a Docker container. Refer to [Docker Wrapper](docker-wrapper.md) for general information about available Docker settings.
 
-You can define what version of Node.js to use for the current build step. TeamCity uses a `node:lts` image by default, or, if there is a `.nvmrc` file inside your project, TeamCity automatically detects the image specification from there while creating a build step.
+You can define which version of Node.js to use for the current build step. TeamCity uses a `node:lts` image by default, or, if there is a `.nvmrc` file inside your project, TeamCity automatically detects the image specification from there while creating a build step.
 
 ## Autodetecting JavaScript Steps
 
