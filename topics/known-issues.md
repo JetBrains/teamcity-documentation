@@ -535,8 +535,11 @@ Native Git via OpenSSH may fail on Windows if the server/agent installation path
 TeamCity uses an ssh proxy when connecting via native Git. See [the related issue](https://youtrack.jetbrains.com/issue/TW-27672/Add-a-nonProxyHosts-option-for-ssh-proxy-in-git-plugin)
 
 ### Custom ssl certificates are not supported for native Git 
+{product="tc"}
 
-Custom ssl certificates support for native Git on the server is not available.See [the related issue](https://youtrack.jetbrains.com/issue/TW-75507/Custom-ssl-certificate-support-for-native-git-on-server)
+Custom ssl certificates support for native Git on the server is not available. See [the related issue](https://youtrack.jetbrains.com/issue/TW-75507/Custom-ssl-certificate-support-for-native-git-on-server)
+
+__This issue was fixed in TeamCity 2022.10.1__.
 
 ### Publishing artifacts to third party S3-compatibles storages may fail 
 {product="tc"}
