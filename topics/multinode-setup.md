@@ -43,6 +43,7 @@ Here are main recommendations on setting up the shared Data Directory:
 * The I/O operations count or I/O volume limits should not be restricted by the storage or mounting option.
 * Make sure to review performance guidelines for your storage solution. For example, increasing MTU for the network connection between the server and the storage usually increases the artifact transfer speed.
 
+<anchor name="Disable-Network-Client-Caches-on-Data-Directory-Mounts"/>
 #### Disable Network Client Caches on Data Directory Mounts
 
 It is important that all the nodes "see" the current state of the shared Data Directory without delay. If this is not the case, it is likely to result in unstable behavior and frequent build log corruptions.
