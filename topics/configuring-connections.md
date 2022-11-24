@@ -180,7 +180,7 @@ See more information in the [dedicated article](configuring-connections-to-docke
 ## Amazon Web Services (AWS)
 {id="AmazonWebServices"}
 
-The Amazon Web Services (AWS) connection allows defining AWS credentials once and using them in builds via the AWS Credentials build feature. You can use different AWS credential types: access keys, IAM Role, and the Default credential provider chain.
+The Amazon Web Services (AWS) connection allows defining AWS credentials once and using them in builds via the [AWS Credentials](aws-credentials.md) build feature. You can use different AWS credential types: access keys, IAM Role, and the Default credential provider chain.
 
 To configure an AWS connection in TeamCity:
 
@@ -232,8 +232,15 @@ To configure an AWS connection in TeamCity:
    Default credential provider chain {product="tc"}
    :
    Select this type to provide access credentials according to the [default chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
-     Note the [security risks](upgrade-notes.md#known-issues-202210). This approach is recommended if you do not want to store the credentials on the TeamCity server.
-   {product="tc"}
+     Note the [security risks](upgrade-notes.md#known-issues-202210). This approach provides an alternatives to storing credentials in plain text.
+
+     When this option is used, TeamCity searches for credentials in the following order:
+     1. Java System Properties: `aws.accessKeyId` and `aws.secretAccessKey`.
+     2. Environment Variables: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
+     3. Web Identity Token credentials from system properties or environment variables.
+     4. Credential profiles file in the default location (`~/.aws/credentials`) shared by all AWS SDKs and the AWS CLI. The default location can be overridden via the [`AWS_SHARED_CREDENTIALS_FILE`](aws-credentials.md) environment variable.
+     5. Credentials delivered via the Amazon EC2 container service if the `AWS_CONTAINER_CREDENTIALS_RELATIVE_URI` environment variable is set and the security manager has access to it.
+     6. Instance profile credentials delivered through the Amazon EC2 metadata service. {product="tc"}
 
 7. Test and save the connection.
 
