@@ -1,6 +1,15 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2022.10 to 2022.10.1
+
+### AWS Connection: Default Provider Chain credentials type is disabled by default
+
+The **[Default Provider Chain](configuring-connections.md#AmazonWebServices)** credentials type in AWS connections is now disabled by default to prevent [associated security risks](upgrade-notes.md#known-issues-202210). 
+To enable this option, set [the internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.internal.aws.connection.defaultCredentialsProviderEnabled=true` (The default value is `false`.)
+No server restart is required after the property is set.
+
+
 ## Changes from 2022.04 to 2022.10
 
 ### Planned deprecation of Java 8 in TeamCity Server 2023.04
@@ -127,7 +136,7 @@ when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-
 Some popular external plugins are not compatible with TeamCity 2022.04 and have to be updated before the upgrade.
 
 Download newer versions of these plugins from JetBrains Marketplace:
-* [Github Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks)
+* [GitHub Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks)
 * [Hashicorp Vault Support](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support)
 * [Gradle Build Scan](https://plugins.jetbrains.com/plugin/9326-integration-for-gradle-and-maven-build-scans)
 
@@ -294,7 +303,7 @@ No noteworthy changes.
 ### Other Updates
 {id="other-updates-202111"}
 
-* If you have added the `teamcity.nuget.feed.async.request.enabled` internal property to workaround [this issue](#ki-202121) in 2021.1, remember to remove it on upgrading to 2021.1.1.
+* If you have added the `teamcity.nuget.feed.async.request.enabled` internal property to work around [this issue](#ki-202121) in 2021.1, remember to remove it on upgrading to 2021.1.1.
 * VCS roots of archived subprojects are now hidden by default on the __Project Settings | VCS Roots__ page. You can display them by enabling the _including archived_ filter option.
 
 ## Changes from 2020.2.x to 2021.1
@@ -304,7 +313,7 @@ No noteworthy changes.
 ### Known Issues
 {id="known-issues-202121"}
 
-* When trying to load a NuGet package which name contains the `.` (dot) character, users get the "Could not find acceptable representation" exception in the build log. This is caused by the issue in the new performance optimization algorithm: it truncates the file name to the part preceding the first dot. To workaround this issue, please download the fixed NuGet Support plugin [here](https://youtrack.jetbrains.com/issue/TW-71659#focus=Comments-27-4916989.0-0) and upload it in __Administration | Plugins__. Alternatively, you can temporarily disable the new optimization mode by setting the `teamcity.nuget.feed.async.request.enabled` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `false` — note that this property has to be removed after upgrading to TeamCity 2021.1.1.
+* When trying to load a NuGet package which name contains the `.` (dot) character, users get the "Could not find acceptable representation" exception in the build log. This is caused by the issue in the new performance optimization algorithm: it truncates the filename to the part preceding the first dot. To work around this issue, please download the fixed NuGet Support plugin [here](https://youtrack.jetbrains.com/issue/TW-71659#focus=Comments-27-4916989.0-0) and upload it in __Administration | Plugins__. Alternatively, you can temporarily disable the new optimization mode by setting the `teamcity.nuget.feed.async.request.enabled` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `false` — note that this property has to be removed after upgrading to TeamCity 2021.1.1.
 
 ### Git Use Mirrors is deprecated in favor of Checkout Policy
 
@@ -489,13 +498,13 @@ No noteworthy changes.
 
 ## Changes from 2020.1.2 to 2020.1.3
 
-* The [.NET](net.md) build runner now supports earlier versions of Visual Studio and MSBuild. Currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.
+* The [.NET](net.md) build runner now supports earlier versions of Visual Studio and MSBuild. The currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.
 
 ### Known Issues
 {id="known-issues-202013"}
 
 * If you try to re-run a build that has an artifact dependency but not snapshot dependency on another build, the _Re-run build_ dialog will not load.   
-This issue will be fixed in TeamCity 2020.1.4. To workaround it in version 2020.1.3, follow [this instruction](https://youtrack.jetbrains.com/issue/TW-67351#focus=Comments-27-4355962.0-0).
+This issue will be fixed in TeamCity 2020.1.4. To work around it in version 2020.1.3, follow [this instruction](https://youtrack.jetbrains.com/issue/TW-67351#focus=Comments-27-4355962.0-0).
 
 ## Changes from 2020.1.1 to 2020.1.2
 
@@ -510,7 +519,7 @@ This issue will be fixed in TeamCity 2020.1.4. To workaround it in version 2020.
 {id="known-issues-202011"}
 
 * In the TeamCity classic UI, the _Projects_ link in the header is missing the expand button.  
-To workaround this issue, please follow the instruction described [here](https://youtrack.jetbrains.com/issue/TW-66577#focus=streamItem-27-4216533.0-0).
+ To work around this issue, please follow the instruction described [here](https://youtrack.jetbrains.com/issue/TW-66577#focus=streamItem-27-4216533.0-0).
 
 ## Changes from 2019.2.x to 2020.1
 
@@ -536,14 +545,14 @@ The bundled Jira Cloud plugin will be automatically updated with this fix in our
 To be able to sign in to Slack from TeamCity, you need to specify all the possible URIs of the TeamCity server as _Redirect URLs_ in the [Slack app's](configuring-connections.md#Slack) settings.   
 If you use nginx to set up TeamCity behind a proxy server, you might still get the `bad_redirect_uri` error when trying to establish a connection with Slack. This error is caused by the mismatch between the nginx and Tomcat configuration.
 
-To workaround this issue, download the fixed plugin, attached to the [related issue](https://youtrack.jetbrains.com/issue/TW-66113), and install it as described [here](installing-additional-plugins.md). Alternatively, you can try [updating the Tomcat settings](configuring-proxy-server.md#TeamCity+Tomcat+Configuration).   
+ To work around this issue, download the fixed plugin, attached to the [related issue](https://youtrack.jetbrains.com/issue/TW-66113), and install it as described [here](installing-additional-plugins.md). Alternatively, you can try [updating the Tomcat settings](configuring-proxy-server.md#TeamCity+Tomcat+Configuration).   
 The bundled Slack plugin will be automatically updated with this fix in our next release.
 
 #### Problems with built-in authentication in upgraded 2020.1 EAP1 installations
 
 If you had installed the 2020.1 EAP1 build in terms of our Early Access Program, you might experience problems with signing in to TeamCity via the [built-in authentication](configuring-authentication-settings.md#Built-in+Authentication). This issue might occur after upgrading from any 2020.1 EAP version (EAP1 or any later version to which it was upgraded) to the release 2020.1 build.
 
-To workaround this problem, please send the following query to the TeamCity database:
+ To work around this problem, please send the following query to the TeamCity database:
 
 ```Console
 
@@ -592,7 +601,7 @@ This change might affect the following use cases:
 
 TeamCity Windows Tray Notifier has been deprecated in favor of the new [Browser Notifier extension](browser-notifier.md).
 
-Windows Tray Notifier will continue working with the new version of TeamCity but we recommend you trying the new extension instead. Note that since version 2020.1, the __My Settings & Tools | Notification Rules | Windows Tray Notifier__ tab in TeamCity has been renamed to __Browser Notifier__.
+Windows Tray Notifier will continue working with the new version of TeamCity, but we recommend you trying the new extension instead. Note that since version 2020.1, the __My Settings & Tools | Notification Rules | Windows Tray Notifier__ tab in TeamCity has been renamed to __Browser Notifier__.
 
 ### Bundled Kubernetes Support plugin does not contain Helm runner
 
@@ -683,7 +692,7 @@ The bundled version of Java in Windows installers of TeamCity Server and Agent a
 ### Caching Git submodules
 
 To improve performance on agent checkout, TeamCity caches regular Git repositories on agents. Since this version, it also caches Git submodules.   
-If your custom scripts or settings depend on the main alternates source for submodules and it causes Git to operate with errors, consider one of the following workarounds:
+If your custom scripts or settings depend on the main alternates source for submodules, and it causes Git to operate with errors, consider one of the following workarounds:
 * Disable the new mirroring mechanism by setting the [build parameter](configuring-build-parameters.md) `teamcity.internal.git.agent.submodules.useMirrors` to `false`.
 * Modify your custom settings to point at the parent `git` directory instead of the exact source directory.
 
@@ -776,7 +785,7 @@ Due to recent changes in our Docker Support plugin, the "[Default credential pro
 
 If this option was previously enabled in some ECR connection and you make any changes to this connection, the state of this option will be automatically set to `false`. When any build will try to use this connection, it will fail to start with the "_Access key cannot be null_" error.
 
-To workaround this problem without upgrading to 2019.1.5, download the fixed Docker Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62595#focus=streamItem-27-3749459.0-0) and upload it on the __Server Administration | Plugins List__ page.
+ To work around this problem without upgrading to 2019.1.5, download the fixed Docker Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62595#focus=streamItem-27-3749459.0-0) and upload it on the __Server Administration | Plugins List__ page.
 
 #### Missing packages in NuGet feed
 
@@ -784,7 +793,7 @@ _This issue has been fixed in TeamCity 2019.1.5._
 
 In certain cases, when a build is supposed to create and publish several NuGet packages to a NuGet feed, and the package indexing is enabled, some packages might not be published to the feed. This problem is caused by recent changes in [NuGet Packages Indexer](nuget-packages-indexer.md).
 
-To workaround this problem without upgrading to 2019.1.5, download the fixed NuGet Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62545#focus=streamItem-27-3754398.0-0) and upload it on the __Server Administration | Plugins List__ page.
+ To work around this problem without upgrading to 2019.1.5, download the fixed NuGet Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62545#focus=streamItem-27-3754398.0-0) and upload it on the __Server Administration | Plugins List__ page.
 
 ## Changes from 2019.1.2 to 2019.1.3
 
@@ -883,7 +892,7 @@ TeamCity now ships Windows Docker images for 1803/1809 platforms.
 ### Known issues
 {id="known-issues-1"}
 
-Running builds are not shown on the build configuration page if there are no finished builds. To workaround the issue, stop the TeamCity server, replace the `TEAMCITY_DIRECTORY/webapps/ROOT/js/ring/bundle.js` with the `bundle.js` file  attached to [this issue](https://youtrack.jetbrains.com/issue/TW-59529#focus=streamItem-27-3327362.0-0) and start the server. 
+Running builds are not shown on the build configuration page if there are no finished builds.  To work around the issue, stop the TeamCity server, replace the `TEAMCITY_DIRECTORY/webapps/ROOT/js/ring/bundle.js` with the `bundle.js` file  attached to [this issue](https://youtrack.jetbrains.com/issue/TW-59529#focus=streamItem-27-3327362.0-0) and start the server. 
 
 ## Changes from 2018.2.1 to 2018.2.2
 * The bundled Tomcat has been updated to version 8.5.3
@@ -1608,7 +1617,7 @@ Certain roles/permissions configurations can result in error loading roles and n
 
 __Git agent\-side checkout__ may malfunction (details at [TW-43202](https://youtrack.jetbrains.com/issue/TW-43202) ) when the `teamcity.git.use.native.ssh=true` parameter is specified in a build configuration or in the agent config. To fix that, install the [#snapshot-34](https://teamcity.jetbrains.com/viewType.html?buildTypeId=TeamCityPluginsByJetBrains_Git_JetBrainsGitPluginTeamCity91x) build of the Git\-plugin.
 
-__Git agent\-side checkout__ works incorrectly with git client versions 1.7.0\-1.7.4: the checkout directory contains files only, all directories are missing (details at [TW-43330](https://youtrack.jetbrains.com/issue/TW-43330)). To workaround the problem, add the `teamcity.git.useSparseCheckout=false` parameter in the Root TeamCity project.
+__Git agent\-side checkout__ works incorrectly with git client versions 1.7.0\-1.7.4: the checkout directory contains files only, all directories are missing (details at [TW-43330](https://youtrack.jetbrains.com/issue/TW-43330)).  To work around the problem, add the `teamcity.git.useSparseCheckout=false` parameter in the Root TeamCity project.
 
 #### TeamCity Windows binaries signatures
 
@@ -2350,7 +2359,7 @@ Please check email sending settings are working correctly after upgrade (via Tes
 
 __XML Report Processing__   
 Tests from Ant JUnit XML reports can be reported twice (see [TW-19058](http://youtrack.jetbrains.net/issue/TW-19058)), as we no longer automatically ignore TESTS\-xxx.xml report.   
-To workaround this avoid using \*.xml mask and specify more concrete rules like TEST\-\*.xml or alike that will not match report with name starting with "TESTS\-"
+ To work around this, avoid using \*.xml mask and specify more concrete rules like TEST\-\*.xml or alike that will not match report with name starting with "TESTS\-"
 
 __Open API Changes__   
 Several return types have changes in TeamCity open API, so plugins might need recompilation against new TeamCity version to continue working.  

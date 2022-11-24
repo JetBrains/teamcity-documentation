@@ -232,15 +232,21 @@ To configure an AWS connection in TeamCity:
    Default credential provider chain {product="tc"}
    :
    Select this type to provide access credentials according to the [default chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
-     Note the [security risks](upgrade-notes.md#known-issues-202210). This approach provides an alternatives to storing credentials in plain text.
+     This approach provides an alternatives to storing credentials in plain text.
+     >Note that if your TeamCity server is hosted on an AWS instance that has an associated IAM role granting access to sensitive resources,
+      using the **Default Provider Chain** credentials may present a security risk: 
+      in this case the TeamCity project administrators who configured this type of connection can access all AWS resources permitted by the role.    
+   
+     To mitigate this risk, the **Default credential provider chain** credentials type is disabled by default. To enable it, set [the internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.internal.aws.connection.defaultCredentialsProviderEnabled=true`. (The default value is `false`.)
+     No server restart is required after the property is set.
 
-     When this option is used, TeamCity searches for credentials in the following order:
-     1. Java System Properties: `aws.accessKeyId` and `aws.secretAccessKey`.
-     2. Environment Variables: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
-     3. Web Identity Token credentials from system properties or environment variables.
-     4. Credential profiles file in the default location (`~/.aws/credentials`) shared by all AWS SDKs and the AWS CLI. The default location can be overridden via the [`AWS_SHARED_CREDENTIALS_FILE`](aws-credentials.md) environment variable.
-     5. Credentials delivered via the Amazon EC2 container service if the `AWS_CONTAINER_CREDENTIALS_RELATIVE_URI` environment variable is set and the security manager has access to it.
-     6. Instance profile credentials delivered through the Amazon EC2 metadata service. {product="tc"}
+     When this credentials type is used, TeamCity searches for credentials in the following order:
+        1. Java System Properties: `aws.accessKeyId` and `aws.secretAccessKey`.
+        2. Environment Variables: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
+        3. Web Identity Token credentials from system properties or environment variables.
+        4. Credential profiles file in the default location (`~/.aws/credentials`) shared by all AWS SDKs and the AWS CLI. The default location can be overridden via the [`AWS_SHARED_CREDENTIALS_FILE`](aws-credentials.md) environment variable.
+        5. Credentials delivered via the Amazon EC2 container service if the `AWS_CONTAINER_CREDENTIALS_RELATIVE_URI` environment variable is set and the security manager has access to it.
+        6. Instance profile credentials delivered through the Amazon EC2 metadata service. {product="tc"}
 
 7. Test and save the connection.
 
