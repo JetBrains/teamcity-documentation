@@ -299,7 +299,7 @@ When installing a TeamCity agent via a [Windows agent installer](install-teamcit
 
 __This issue has been fixed in TeamCity 2019.1.5__.
 
-To workaround this issue without upgrading to 2019.1.5, uninstall the previously installed agent version before installing a new agent into the same directory.   
+To work around this issue without upgrading to 2019.1.5, uninstall the previously installed agent version before installing a new agent into the same directory.   
 To uninstall the agent, invoke `Uninstall.exe` in the [Agent Home Directory](agent-home-directory.md), clear all the "_Remove..._" checkboxes to keep the agent logs and configuration, and click __Uninstall__. After the successful uninstallation, you can proceed with installing the new agent version via the agent installer.
 
 ## Windows Docker Containers
@@ -391,14 +391,14 @@ This is caused by the following Xcode 10 known issue:
 When performing `xcodebuild clean` on a project that uses a customized build location outside the derived data directory, and that has older build products produced prior to Xcode 10, Xcode might report an error indicating that it won't delete directories not created by the new build system. (40427159)   
 See [Xcode documentation](https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes/build_system_release_notes_for_xcode_10) for details.
 
-To resolve this issue, we suggest that you use Xcode 11 instead. To workaround this issue in Xcode 10, you can either clean the output directory manually or try using the previous build system by passing `-UseNewBuildSystem=NO` to command line parameters.
+To resolve this issue, we suggest that you use Xcode 11 instead. To work around this issue in Xcode 10, you can either clean the output directory manually or try using the previous build system by passing `-UseNewBuildSystem=NO` to command line parameters.
 
 ## Cross-server Projects pop-up menu may not work in latest browsers
 {product="tc"}
 
 Due to the recent updates in the [SameSite cookie](https://web.dev/samesite-cookies-explained/) support, the __Projects__ pop-up menu may not display [cross-server projects](configuring-cross-server-projects-pop-up-menu.md) in some latest web browsers (see [more details](https://www.chromestatus.com/feature/5088147346030592) for Chrome Platform).
  
-If you cannot access the cross-server __Projects__ menu, you can try to temporarily workaround this issue by changing your browser settings:
+If you cannot access the cross-server __Projects__ menu, you can try to temporarily work around this issue by changing your browser settings:
 
 * In Google Chrome, open the `chrome://flags` page and disable the "_SameSite by default cookies_" option.
 * In Mozilla Firefox, open the `about:config` page and disable the `network.cookie.sameSite.laxByDefault` option.
@@ -423,7 +423,7 @@ Note that all the existing .NET CLI Support build steps are automatically switch
 
 In rare cases, if an early build of Visual Studio 2017 is installed on your build agent, you might get the "Cannot create an instance of the logger" error when running the .NET build step. This might be caused by the logger's incompatibility with the framework version being used.
 
-To workaround this problem, you can upgrade Visual Studio 2017 to the latest build or, alternatively, install any later version of .NET Framework.
+To work around this problem, you can upgrade Visual Studio 2017 to the latest build or, alternatively, install any later version of .NET Framework.
 
 ### Compatibility with Visual Studio Build Tools 17.2.0 and .NET SDK 6.0.300
 

@@ -9,12 +9,6 @@ The **[Default Provider Chain](configuring-connections.md#AmazonWebServices)** c
 To enable this option, set [the internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.internal.aws.connection.defaultCredentialsProviderEnabled=true` (The default value is `false`.)
 No server restart is required after the property is set.
 
-### Internal properties related to artifact dependencies resolution were renamed
-
-The`teamcity.artifactDependenciesResolution.blackList` and `teamcity.artifactDependenciesResolution.whiteList` [properties](artifact-dependencies.md#Artifacts+Rules) were renamed to `teamcity.artifactDependenciesResolution.bannedList` and `teamcity.artifactDependenciesResolution.allowedList`. 
-The old names for these properties are supported for compatibility reasons.
-
-
 ## Changes from 2022.04 to 2022.10
 
 ### Planned deprecation of Java 8 in TeamCity Server 2023.04
@@ -912,7 +906,7 @@ No noteworthy changes
 ### Known issues
 {id="known-issues-2"}
 
-* If upgrade fails with an error in MoveCustomDataStorageToDatabaseConverter or MoveRepositoryStateToCustomDataStorageConverter, apply workaround from [the issue](https://youtrack.jetbrains.com/issue/TW-58289#focus=streamItem-27-3207962-0-0).
+* If upgrade fails with an error in MoveCustomDataStorageToDatabaseConverter or MoveRepositoryStateToCustomDataStorageConverter, apply the workaround from [the issue](https://youtrack.jetbrains.com/issue/TW-58289#focus=streamItem-27-3207962-0-0).
 * If you're using Subversion externals from the same repository, you may face an issue with incorrect revision detection. A workaround for the problem is described in [this issue](https://youtrack.jetbrains.com/issue/TW-58336).
 * If you see OutOfMemoryError during TeamCity startup with `org.jetbrains.dokka` in stack trace, set the internal property `teamcity.kotlinConfigsDsl.docsGenerationXmx=768m` (as described in [this issue](https://youtrack.jetbrains.com/issue/TW-56408))
 
@@ -1303,7 +1297,7 @@ REST API has only minor changes, so the same API is exposed under the `app/rest/
 
 ### Visual Studio Add-in fails to install from TeamCity UI
 
-As a workaround could be used [ReSharper web installer](https://www.jetbrains.com/resharper/download/#section=web-installer). See [TW-51680](https://youtrack.jetbrains.com/issue/TW-51680) for details.
+As a workaround, [ReSharper web installer](https://www.jetbrains.com/resharper/download/#section=web-installer) could be used. See [TW-51680](https://youtrack.jetbrains.com/issue/TW-51680) for details.
 
 ## Changes from 10.0.4 to 10.0.5
 

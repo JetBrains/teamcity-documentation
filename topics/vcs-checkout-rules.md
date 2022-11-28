@@ -59,7 +59,7 @@ If there are multiple VCS roots with intersecting checkout rules (for example, t
  The paths specified in the checkout rules of one VCS root conflict (intersect) with checkout rules of another VCS root. This may cause problems in "checkout on agent" mode.
  ```
  
-To workaround this issue, resolve the conflicts between the checkout rules or change the checkout mode to "[server-side](vcs-checkout-mode.md#server-checkout)".
+To work around this issue, resolve the conflicts between the checkout rules or change the checkout mode to "[server-side](vcs-checkout-mode.md#server-checkout)".
 
 When entering rules, note the following:
 * To enter multiple rules, each rule should be entered on a separate line.

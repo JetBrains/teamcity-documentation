@@ -123,7 +123,7 @@ Select whether you want to enter the script right in TeamCity, or specify a path
 
 <note>
 
-If your PowerShell script source is defined via a [Kotlin DSL](kotlin-dsl.md) configuration stored in VCS, note that PowerShell variable references are treated in Kotlin as [string templates](https://kotlinlang.org/docs/reference/basic-types.html#string-templates). To workaround this issue, TeamCity automatically escapes all references entered in the _Source_ field and updates the source code in VCS. However, if you modify the script source directly in the VCS, we suggest that you manually escape variable references as `${'$'}reference_name`.   
+If your PowerShell script source is defined via a [Kotlin DSL](kotlin-dsl.md) configuration stored in VCS, note that PowerShell variable references are treated in Kotlin as [string templates](https://kotlinlang.org/docs/reference/basic-types.html#string-templates). To work around this issue, TeamCity automatically escapes all references entered in the _Source_ field and updates the source code in VCS. However, if you modify the script source directly in the VCS, we suggest that you manually escape variable references as `${'$'}reference_name`.   
 Alternatively, you can store your script in a separate file and reference it in the _File_ field. This way, TeamCity will also properly process references on importing the file.
 
 </note>
@@ -203,7 +203,7 @@ In this section, you can specify the Docker image which will be [used to run the
 ### Known Issues
 
 * If the `docker-compose` command is run via PowerShell Desktop version 5.1.17763 or later, the PowerShell script could potentially fail with an error despite having only false positive warnings in the build log.   
-To workaround this problem, we suggest using PowerShell Core instead. Alternatively, you can limit the logging level for the `docker-compose` command by adding the `--log-level ERROR` attribute to it.
+To work around this problem, we suggest using PowerShell Core instead. Alternatively, you can limit the logging level for the `docker-compose` command by adding the `--log-level ERROR` attribute to it.
 
 ## Interaction with TeamCity
 
