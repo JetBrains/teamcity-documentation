@@ -10,7 +10,17 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 
 See also: [Documentation for Previous Versions](documentation-for-previous-versions.md) and [Roadmap Outline](roadmap-outline.md).
 
-__TeamCity Version 2022.10__
+__TeamCity Version 2022.10.1__
+
+Release date: 1 December 2022   
+Build ???
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.1.exe)   
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.1.tar.gz)
+
+[Release notes](teamcity-2022-10-1-release-notes.md)
+
+## TeamCity Version 2022.10
 
 Release date: 27 October 2022   
 Build 116751
