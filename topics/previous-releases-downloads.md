@@ -10,6 +10,8 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 
 See also: [Documentation for Previous Versions](documentation-for-previous-versions.md) and [Roadmap Outline](roadmap-outline.md).
 
+## Current version
+
 __TeamCity Version 2022.10.1__
 
 Release date: 1 December 2022   
