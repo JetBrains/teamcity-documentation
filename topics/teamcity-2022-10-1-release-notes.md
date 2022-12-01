@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity 2022.10.1 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2022.10.1 Release Notes)
 
-__Build: ???__
+__Build: 116934__
 
 __1 December 2022__
 

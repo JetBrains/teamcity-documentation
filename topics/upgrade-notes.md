@@ -3,11 +3,19 @@
 
 ## Changes from 2022.10 to 2022.10.1
 
-### AWS Connection: Default Provider Chain credentials type is disabled by default
+### AWS Connection 
+
+#### Default Provider Chain credentials type is disabled by default
 
 The **[Default Provider Chain](configuring-connections.md#AmazonWebServices)** credentials type in AWS connections is now disabled by default to prevent [associated security risks](upgrade-notes.md#known-issues-202210). 
 To enable this option, set [the internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.internal.aws.connection.defaultCredentialsProviderEnabled=true` (The default value is `false`.)
 No server restart is required after the property is set.
+
+#### Custom STS endpoint is disabled by default
+
+Only [the global or regional AWS STS endpoints](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html) 
+can be used as STS Endpoints in [the AWS connection configuration](configuring-connections.md#AmazonWebServices). 
+To use a custom endpoint for Amazon alternatives like [MinIO](https://min.io/), [contact the TeamCity support team](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?).
 
 ## Changes from 2022.04 to 2022.10
 

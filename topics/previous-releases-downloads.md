@@ -13,7 +13,7 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 __TeamCity Version 2022.10.1__
 
 Release date: 1 December 2022   
-Build ???
+Build 116934
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.1.exe)   
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.1.tar.gz)

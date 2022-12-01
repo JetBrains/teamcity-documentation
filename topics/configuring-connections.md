@@ -210,7 +210,7 @@ To configure an AWS connection in TeamCity:
           * **STS endpoint**.
             * TeamCity generates this field automatically when changing the AWS region. The regional endpoint is [recommended](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html) because it is faster and has lower latency. In addition, all calls to the regional endpoint are logged in AWS Cloud Trail as any regional service call.
             * Use the [global endpoint](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html) if the selected regional endpoint is [disabled](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable) on the Amazon account and you do not want to enable it.
-            * Specify a custom endpoint for Amazon alternatives like [MinIO](https://min.io/).
+            * [Contact the TeamCity support team ](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?) if you need to specify a custom endpoint for Amazon alternatives like [MinIO](https://min.io/).
 
    IAM Role
    :
@@ -225,7 +225,7 @@ To configure an AWS connection in TeamCity:
           * **STS endpoint**.
             * TeamCity generates this field automatically when changing the AWS region. The regional endpoint is [recommended](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html) because it is faster and has lower latency. In addition, all calls to the regional endpoint are logged in AWS Cloud Trail as any regional service call.
             * Use the [global endpoint](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html) if the selected regional endpoint is [disabled](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable) on the Amazon account and you do not want to enable it.
-            * Specify a custom endpoint for Amazon alternatives like [MinIO](https://min.io/).
+            * [Contact the TeamCity support team ](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?) if you need to specify a custom endpoint for Amazon alternatives like [MinIO](https://min.io/).
 
      After the connection is created, you can view and copy the automatically generated external connection ID. We strongly recommend that you always add it to the [trust policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html) in AWS to prevent the [confused deputy problem](https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html). This ensures that only authorized TeamCity AWS connections will be able to use the specified IAM Role.
 
