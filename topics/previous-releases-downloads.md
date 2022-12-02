@@ -20,7 +20,7 @@ Build 116934
 
 [Release notes](teamcity-2022-10-1-release-notes.md)
 
-## TeamCity Version 2022.10
+## TeamCity 2022.10
 
 Release date: __27 October 2022__   
 Build 116751
