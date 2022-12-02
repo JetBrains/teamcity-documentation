@@ -10,9 +10,7 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 
 See also: [Documentation for Previous Versions](documentation-for-previous-versions.md) and [Roadmap Outline](roadmap-outline.md).
 
-## Current version
-
-__TeamCity Version 2022.10.1__
+## Current version: TeamCity 2022.10.1
 
 Release date: 1 December 2022   
 Build 116934
@@ -24,7 +22,7 @@ Build 116934
 
 ## TeamCity Version 2022.10
 
-Release date: 27 October 2022   
+Release date: __27 October 2022__   
 Build 116751
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.exe)   
@@ -32,7 +30,7 @@ Build 116751
 
 [Release notes](teamcity-2022-10-release-notes.md)
 
-## TeamCity Version 2022.04.4
+## TeamCity 2022.04.4
 
 Release date: 19 September 2022   
 Build 108763
@@ -42,7 +40,7 @@ Build 108763
 
 [Release notes](teamcity-2022-04-4-release-notes.md)
 
-## TeamCity Version 2022.04.3
+## TeamCity 2022.04.3
 
 Release date: 10 August 2022   
 Build 108706
@@ -52,7 +50,7 @@ Build 108706
 
 [Release notes](teamcity-2022-04-3-release-notes.md)
 
-## TeamCity Version 2022.04.2
+## TeamCity 2022.04.2
 
 Release date: 13 July 2022   
 Build 108502
@@ -62,7 +60,7 @@ Build 108502
 
 [Release notes](teamcity-2022-04-2-release-notes.md)
 
-## TeamCity Version 2022.04.1
+## TeamCity 2022.04.1
 
 Release date: 1 June 2022   
 Build 108575
