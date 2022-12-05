@@ -6,7 +6,7 @@ TeamCity lets you easily configure HTTPS access to the server.
 ## Configuring HTTPS Settings
 
 To enable HTTPS access to your server, you need an SSL certificate and a private key. 
-TeamCity supports `.pem` certificates and RSA keys of the `PKCS#8` format. 
+TeamCity supports `.pem` certificates and RSA keys of the `PKCS#1` or `PKCS#8` format. 
 
 If you do not have a certificate, there are a couple of options available to you: 
 
