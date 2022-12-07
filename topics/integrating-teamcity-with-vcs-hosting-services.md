@@ -5,7 +5,7 @@ You can create presets of connections to the following hosting services:
 * [GitHub.com](https://github.com/) and [GitHub Enterprise](https://enterprise.github.com/)
 * [GitLab.com](https://about.gitlab.com/) and [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/)
 * [Bitbucket Cloud](https://bitbucket.org/)
-* [Azure DevOps](https://azure.microsoft.com/ru-ru/services/devops/)
+* [Azure DevOps](https://azure.microsoft.com/services/devops/)
 * [JetBrains Space](https://www.jetbrains.com/space/)
 
 Once created, such a connection can serve as a base for different operations: creating projects from URL, creating VCS roots, integrating with issue trackers, and authenticating users in TeamCity using their external profiles.
