@@ -638,7 +638,7 @@ Depending on the entered settings, the .NET runner will transparently treat each
 <tr>
 <td>
 
-[Install](https://docs.microsoft.com/ru-ru/dotnet/core/tools/dotnet-tool-install) the specified .NET Core tool on your machine
+[Install](https://docs.microsoft.com/dotnet/core/tools/dotnet-tool-install) the specified .NET Core tool on your machine
 
 </td>
 <td>
