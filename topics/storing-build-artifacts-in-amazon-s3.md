@@ -39,6 +39,7 @@ You can set an S3 [path prefix](https://docs.aws.amazon.com/AmazonS3/latest/user
 
 You can enable the virtual host addressing for S3 buckets. Currently, both hosted-style and path-style requests are supported by TeamCity. Note that Amazon [stopped supporting path-style access](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access) for new buckets since September 2020.
 
+<!-- 
 ## Transfer Acceleration
 
 <anchor name="transferAcceleration"/>
@@ -49,7 +50,10 @@ You can enable transfer acceleration for uploads and downloads if the following 
 * You need to enable transfer acceleration on your S3 bucket.
 * You bucket name must be DNS-compliant and must not contain periods `.`
 
+When the "_Transfer Acceleration_" option is enabled, the provided AWS credentials or IAM role on the TeamCity server should have the `GetAccelerateConfiguration` permission. 
+
 For more information see [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html)
+-->
 
 ## Permissions
 
