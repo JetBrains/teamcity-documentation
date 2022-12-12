@@ -25,7 +25,9 @@ If [stream support](integrating-teamcity-with-perforce.md#Running+Builds+on+Perf
 
 ## Parametrized Shelved Changelist ID
 
-TeamCity provides a [configuration parameter](predefined-build-parameters.md) `vcsRoot.rootExternalId.shelvedChangelist` with the ID of the changelist whose changes triggered this build.
+TeamCity provides a [configuration parameter](predefined-build-parameters.md) `vcsRoot.rootExternalId.shelvedChangelist` with the ID of the changelist whose changes triggered this build. 
+
+If the VCS Root ID is unavailable/unnecessary, use the `vcsRoot.1.shelvedChangelist` [configuration parameter](predefined-build-parameters.md).
 
 ## Logging Events
 
