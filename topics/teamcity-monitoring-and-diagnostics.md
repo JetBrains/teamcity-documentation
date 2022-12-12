@@ -62,7 +62,10 @@ The `<TeamCity_server_URL>/app/metrics` endpoint provides the metrics in a [Prom
 
 > Make sure to also read [the blog post](https://blog.jetbrains.com/teamcity/2022/06/monitoring-teamcity-server-health/) about metrics which can be used to monitor TeamCity server health. 
 
-Some metrics are marked as `experimental` which means that we do not provide support for them, and they will likely change in the future TeamCity versions. To get experimental metrics in the Prometheus format, add the `?experimental=true` parameter to the URL. If you find any of the experimental metrics useful and would want them to be graduated to the supported metrics, let us know via our [support channel](feedback.md).
+The `experimental` tag for metrics is not reported starting TeamCity 2022.12. 
+The `?experimental=true` URL parameter for metrics in the Prometheus format still works, and some of the metrics still have the experimental status. 
+If you find any of the experimental metrics useful and would want them to be graduated to the supported metrics, 
+let us know via our [support channel](feedback.md).
 
 ## Server Logs
 

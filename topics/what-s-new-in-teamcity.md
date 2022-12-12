@@ -36,7 +36,7 @@ sum(increase(vcs_changes_checking_milliseconds_total{ type="COLLECT_CHANGES"}[1m
 
 ### Removal of the "experimental" tag
 
-TeamCity will not report the `experimental` tag for metrics anymore. The `?experimental=true` URL parameter for metrics endpoints will still work, and some of the metrics will still have the experimental status.
+TeamCity will no longer report the `experimental` tag for metrics. The `?experimental=true` URL parameter for metrics endpoints will still work, and some of the metrics will still have the experimental status.
 
 ## Fixed issues
 {product="tcc"}
