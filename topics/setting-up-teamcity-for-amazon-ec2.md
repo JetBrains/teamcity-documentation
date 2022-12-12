@@ -57,7 +57,7 @@ To use [spot fleets](#Amazon+EC2+Spot+Fleet+support), the following additional p
 * `ec2:DescribeSpotFleetRequests`
 * `ec2:CancelSpotFleetRequests`
 
-To launch an [instance with the IAM Role](#Configuring+an+Amazon+EC2+cloud+profile) (applicable to instances cloned from AMI-s only), the following additional permissions are required:
+To launch an [instance with the IAM Role](#Configuring+an+Amazon+EC2+cloud+profile) (applicable to instances cloned from AMIs and launch templates), the following additional permissions are required:
 * `iam:ListInstanceProfiles`
 * `iam:PassRole`
 
@@ -218,10 +218,12 @@ TeamCity uses own values instead of the following parameters of the JSON config 
 
 #### Amazon EC2 Launch Templates support
 
-TeamCity supports [Amazon EC2 launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html) for cloud instances. Launch templates allow reusing a once defined launch specification for all new instances, which eliminates the need to describe the launch settings every time new instances are requested.
+TeamCity supports [Amazon EC2 launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html) for cloud instances. 
+Launch templates allow reusing a once defined launch specification for all new instances, which eliminates the need to describe the launch settings every time new instances are requested.
 
 If your cloud profile is connected to the Amazon server, TeamCity will automatically detect launch templates available on this server. 
 When adding an image, select a required template as the _Source_ and specify its version, and TeamCity will request instances based on the template parameters. 
+You can use the same launch template to run various instances that differ in some parameters only. Check the **Customize Launch Template** box and modify the launch templates values as required.
 
 Optionally, you can also limit the number of launched instances and assign them to a certain [agent pool](configuring-agent-pools.md).
 
@@ -304,7 +306,7 @@ To configure this feature:
 
 ### Custom script
 
-It is possible to run a custom script on the instance start (applicable to instances cloned from AMI's only).   
+It is possible to run a custom script on the instance start (applicable to instances cloned from AMIs and launch templates).   
 The Amazon website details the script format for [Linux](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) and [Windows](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#user-data-execution).
 
 ### Estimating EC2 Costs
