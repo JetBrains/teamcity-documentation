@@ -5,12 +5,12 @@
 
 You can now manually reorder builds in the build queue by dragging them to the desired position in the Sakura UI.
 
-## Amazon EC2 Launch Templates customization
+## Amazon EC2 launch templates customization
 
 Starting from this version, TeamCity allows customizing [Amazon EC2 launch templates](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Launch+Templates+support). You can now use the same launch template to run various instances that differ in some parameters only.
 Check the **Customize Launch Template** box and modify the launch template's values as required.
 
-## New parameter for Perforce Shelved Changelist ID 
+## New parameter for Perforce shelved changelist ID 
 
 Our users requested a parameter for [the shelved changelist ID](https://youtrack.jetbrains.com/issue/TW-78722/) regardless of the VCS Root ID. TeamCity now provides the `vcsRoot.1.shelvedChangelist` [configuration parameter](predefined-build-parameters.md) with the ID of the changelist whose changes triggered this build.
 
@@ -37,7 +37,6 @@ sum(increase(vcs_changes_checking_milliseconds_total{ type="COLLECT_CHANGES"}[1m
 ### Removal of the "experimental" tag
 
 TeamCity will not report the `experimental` tag for metrics anymore. The `?experimental=true` URL parameter for metrics endpoints will still work, and some of the metrics will still have the experimental status.
-
 
 ## Fixed issues
 {product="tcc"}
