@@ -943,10 +943,11 @@ The idle timeout for the `git fetch` operation when the agent-side checkout is u
 
 </td></tr></table>
 
-## Limitations
+## Agent-side checkout rules limitations
 {id="Limitations"}
 
-The Git plugin uses [`git sparse-checkout`](https://git-scm.com/docs/git-sparse-checkout#_sparse_checkout) to check out Git files on an agent. The plugin is able to perform only simple file mapping operations which limits the set of supported [VCS checkout rules](vcs-checkout-rules.md) for Git.
+The Git plugin uses [`git sparse-checkout`](https://git-scm.com/docs/git-sparse-checkout#_sparse_checkout) to check out Git files on an agent. 
+The plugin is able to perform only simple file mapping operations which limits the set of supported [VCS checkout rules](vcs-checkout-rules.md) for Git.
 
 The following rules are supported:
 
@@ -964,17 +965,21 @@ The following rules are supported:
 +:dirA/dirB/dirC => dirD/dirE/dirA/dirB/dirC
 
 ```
+Note that rules must not remap files. That is, the following rule **is not supported**: `+:dirA/dirA1 => dirA/dirA2`.
 
-If you specify multiple checkout rules for one root, make sure their checkout directories (the right part of the rule) have a common parent directory. For example:
+If you specify multiple checkout rules for one root, make sure their checkout directories (the right part of the rule) have a common parent directory (`[prefix/]`).
+Only the rules `+:dirA => [prefix/]dirA` are supported for agent-side checkout, and the `[prefix/]` must be the same for all rules.
+
+For example:
 
 ```Text
 
-+:dirA/dirB/dirC => dirG/dirH/dirA/dirB/dirC
-+:dirD/dirE/dirF => dirG/dirH/dirD/dirE/dirF
++:dirA/dirB/dirC => [prefix/]dirA/dirB/dirC
++:dirD/dirE/dirF => [prefix/]dirD/dirE/dirF
 
 ```
 
-Note that rules should not remap files. That is, the following rule is not supported: `+:dirA/dirA1 => dirA/dirA2`.
+Note that the following rule **is not supported**: `+:dirA=>[prefix/]dirA/postfix`
 
 ## Known Issues
 {product="tc"}

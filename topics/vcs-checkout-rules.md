@@ -51,7 +51,7 @@ To include all the files explicitly, use the `+:.` rule.
 
 Note that exclude checkout rules (in the form of `-:`) will generally only speed up server-side checkouts, unless you use [Perforce](perforce.md) and [TFS](azure-devops.md) agent-side checkout, where exclude rules are processed effectively.   
 With other version control systems, agent-side checkouts may emulate the exclude checkout rules by checking out all the root directories mentioned as include rules and deleting the excluded directories. With such systems, exclude checkout rules should generally be avoided for the agent-side checkout. Refer to the [VCS Checkout Mode](vcs-checkout-mode.md) page for more information.   
-With Git agent-side checkout, TeamCity translates some checkout rules to the sparse checkout patterns. See the details in [Git](git.md#Limitations).
+With Git agent-side checkout, TeamCity translates some checkout rules to the sparse checkout patterns, which [limits the set of supported VCS checkout rules](git.md#Limitations).
 
 If there are multiple VCS roots with intersecting checkout rules (for example, two VCS roots have the checkout rule `+: foo => bar`) attached to a build configuration and the files are checked out on the [agent](vcs-checkout-mode.md#agent-checkout), some files might be skipped during the checkout. The following warning will be shown in the UI:
  
@@ -156,5 +156,6 @@ In the above example, the first rule excludes the `src/help` directory and its c
  <seealso>
         <category ref="admin-guide">
             <a href="vcs-checkout-mode.md">VCS Checkout Mode</a>
+            <a href="git.md#Limitations>Agent-side checkout rules limitations</a>
         </category>
 </seealso>
