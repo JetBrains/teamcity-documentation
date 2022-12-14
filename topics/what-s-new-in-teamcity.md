@@ -18,7 +18,7 @@ Our users requested a parameter for [the shelved changelist ID](https://youtrack
 ## Fixed issues
 {product="tcc"}
 
-See [TeamCity Build ??? release notes](teamcity-release-notes-build-???.md).
+See [TeamCity Build 124079 release notes](teamcity-release-notes-build-124079.md).
 
 ## Roadmap
 
