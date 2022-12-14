@@ -156,6 +156,6 @@ In the above example, the first rule excludes the `src/help` directory and its c
  <seealso>
         <category ref="admin-guide">
             <a href="vcs-checkout-mode.md">VCS Checkout Mode</a>
-            <a href="git.md#Limitations>Agent-side checkout rules limitations</a>
+            <a href="git.md#Limitations">Agent-side checkout rules limitations</a>
         </category>
 </seealso>
