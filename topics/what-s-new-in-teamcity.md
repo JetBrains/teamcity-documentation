@@ -10,10 +10,10 @@ TeamCity will ignore draft pull requests until their status changes.
 By default, the Pull Requests build feature loads the GitHub draft pull request information and runs builds on draft pull requests. 
 The build page displays the "Draft" status and icon next to the pull request number:
 
-<img src="draft_pr.png" alt="Draft PR" width="556"
+<img src="draft_pr.png" alt="Draft PR" width="556"/>
 
 When the status of the draft pull request changes to "Ready for review" in GitHub, the build page reflects the change:
-<img src="draft_pr_changed.png" alt="Ready for review PR" width="556"
+<img src="draft_pr_changed.png" alt="Ready for review PR" width="556"/>
 
 ## Build reordering is supported by the Sakura UI
 
