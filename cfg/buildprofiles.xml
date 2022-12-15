@@ -15,7 +15,6 @@
         <config-feedback-support>https://teamcity-support.jetbrains.com/</config-feedback-support>
         <config-sideblocks>true</config-sideblocks>
         <config-search-scopes-provider>https://data.services.jetbrains.com/search/</config-search-scopes-provider>
-        <config-versions-switcher>https://data.services.jetbrains.com/help-versions</config-versions-switcher>
         <config-algloia-product-version>2022.12</config-algloia-product-version>
         <enable-browser-edits>true</enable-browser-edits>
         <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2022.12/</browser-edits-url>
