@@ -162,6 +162,22 @@ Define the [branch filter](branch-filter.md) to monitor pull requests only on ta
 <tr>
 <td>
 
+Ignore Drafts
+
+</td>
+<td></td>
+<td>
+
+By default, the Pull Requests build feature loads the [GitHub draft pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests)
+information and runs builds on draft pull requests. The build page displays the "Draft" status and icon next to the pull request number.
+
+Check the box to ignore GitHub draft pull requests. TeamCity will not load the draft pull request information until its status changes.
+
+</td>
+</tr>
+<tr>
+<td>
+
 Server URL
 
 </td>
@@ -173,7 +189,7 @@ Specify a GitHub URL for connection.
 If left empty, the URL will be extracted from the VCS root fetch URL.
 
 </td>
-  </tr>
+</tr>
 </table>
 
 ### Bitbucket Server Pull Requests
@@ -256,22 +272,6 @@ By target branch
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.
-
-</td>
-</tr>
-<tr>
-<td>
-
-Ignore Drafts
-
-</td>
-<td></td>
-<td>
-
-By default, the Pull Requests build feature loads the [GitHub draft pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests) 
-information and runs builds on draft pull requests. The build page displays the "Draft" status and icon next to the pull request number.
-
-Check the box to ignore GitHub draft pull requests. TeamCity will not load the draft pull request information until its status changes.
 
 </td>
 </tr>
