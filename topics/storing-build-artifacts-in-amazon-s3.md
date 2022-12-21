@@ -199,7 +199,6 @@ For security reasons, we recommend configuring two separate distributions for up
    * __Restrict viewer access__: _yes_
    * __Trusted authorization type__: _trusted key groups_
    * __Cache key and origin requests__: _Cache policy and origin request policy_
-   * __Cache key settings | Query strings__: All
    * For private buckets, enable the _use OAI_ option and configure OAI with the following setting:
      * __Bucket policy__: _No, I will update the bucket policy_
    * For public buckets, disable the __Block public access__ option.
