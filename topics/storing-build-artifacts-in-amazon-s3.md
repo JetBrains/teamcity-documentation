@@ -139,7 +139,7 @@ Automatic setup requires giving Teamcity additional permissions:
 
 Example policy providing all necessary permissions:
 
-```Plaintext
+```Plain Text
 {
     "Version": "2012-10-17",
     "Statement": [
