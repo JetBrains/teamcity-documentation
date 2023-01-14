@@ -10,15 +10,15 @@
 |[Zsh](https://www.zsh.org/)|5.8|
 |[Chromium](https://www.chromium.org/)|107.0.5304.87|
 |[Firefox](https://www.mozilla.org/en-US/firefox/)||
-|[Google Chrome](https://www.google.com/chrome/)|107.0.5304.110|
+|[Google Chrome](https://www.google.com/chrome/)|107.0.5304.87|
 |[ChromeDriver](https://chromedriver.chromium.org/)|107.0.5304.62|
 |[Docker](https://www.docker.com/)|20.10.21|
 |[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|20.10.21|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
-|[AWS CLI](https://aws.amazon.com/cli/)|2.8.11|
-|[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|v1.25.4|
+|[AWS CLI](https://aws.amazon.com/cli/)|2.8.8|
+|[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|v1.25.3|
 |[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.42.0|
-|[Google Cloud SDK](https://cloud.google.com/sdk)|409.0.0|
+|[Google Cloud SDK](https://cloud.google.com/sdk)|408.0.1|
 |[JDK 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)|java-1.8.0-amazon-corretto|
 |[JDK 17](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)|java-17-amazon-corretto|
 |[JDK 19](https://docs.aws.amazon.com/corretto/latest/corretto-19-ug/downloads-list.html)|java-19-amazon-corretto|
@@ -36,14 +36,14 @@
 |[Python](https://www.python.org/)|3.8.10|
 |[Python 2](https://www.python.org/downloads/)|2.7.18|
 |[Python 3](https://www.python.org/downloads/)|3.9.15|
-|[pip3](https://pip.pypa.io/en/stable/)|22.3.1|
-|[pip](https://pip.pypa.io/en/stable/)|22.3.1|
+|[pip3](https://pip.pypa.io/en/stable/)|22.3|
+|[pip](https://pip.pypa.io/en/stable/)|22.3|
 |[PowerShell](https://docs.microsoft.com/en-us/powershell/)|7.2.6|
 |[R](https://www.r-project.org/)|3.6.3|
 |[Groovy](https://groovy-lang.org/)|4.0.5|
 |[RVM](https://rvm.io/)|1.29.12-next|
 |[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.16.6|
-|[Python Pipenv](https://pipenv.pypa.io/en/latest/)|2022.11.11|
+|[Python Pipenv](https://pipenv.pypa.io/en/latest/)|2022.10.25|
 |[Python Poetry](https://python-poetry.org/)|1.2.2)|
 |[rustup](https://rustup.rs/)|1.25.1|
 |[Cargo](https://doc.rust-lang.org/cargo/)|1.65.0|
