@@ -20,7 +20,7 @@
 |[Mercurial](https://www.mercurial-scm.org/)|1.0.0.1|
 |[SVN](https://subversion.apache.org/)|1.14.2.64502|
 |[RTools](https://cran.r-project.org/bin/windows/Rtools/)||
-|[Node.js](https://nodejs.org/en/)|v18.12.1|
+|[Node.js](https://nodejs.org/en/)|v16.18.0|
 |[Yarn](https://yarnpkg.com/)|1.22.19|
 |[Docker](https://www.docker.com/)|20.10.9|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
