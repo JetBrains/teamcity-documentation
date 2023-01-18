@@ -52,7 +52,7 @@ Path to POM file
 
 <td>
 
-Specify the path to the POM file relative to the [build working directory](build-working-directory.md).   
+Specify the path to the POM file relative to the [build checkout directory](build-checkout-directory.md).   
 By default, the property contains a `pom.xml` file. If you leave this field empty, the same value is put in this field. The path may also point to a subdirectory, and as such `<subdirectory>/pom.xml` is used.
 
 </td></tr><tr>
