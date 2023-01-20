@@ -8,7 +8,7 @@ TeamCity lets you easily configure HTTPS access to the server.
 To enable HTTPS access to your server, you need an SSL certificate and a private key. 
 TeamCity supports `.pem` certificates and RSA keys of the `PKCS#1` or `PKCS#8` format.
 
-> TeamCity currently does not support encrypted keys. You can utilize OpenSSL to remove a key password:
+> TeamCity currently does not support encrypted keys. You can utilize OpenSSL to remove a key password, for example:
 >   
 > ```Plain Text
 > openssl pkcs8 -topk8 -nocrypt -in [original.key] -out [new.key]
