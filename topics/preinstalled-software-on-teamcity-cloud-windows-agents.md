@@ -7,7 +7,7 @@
 |---|---|
 |[7-Zip](https://www.7-zip.org/)|22.1|
 |[Ruby](https://www.ruby-lang.org/en/)|3.1.1.1|
-|[Unity Hub](https://unity.com/unity-hub)|3.3.0.0|
+|[Unity Hub](https://unity.com/unity-hub)|3.4.1.0|
 |[Unity](https://unity.com/)|2021.3.4.17913|
 |[JDK](https://aws.amazon.com/corretto/)|11.0.16.9.1|
 |[.NET](https://dotnet.microsoft.com/)|6.0.402|
@@ -16,11 +16,11 @@
 |[NUnit](https://nunit.org/)|3.15.2|
 |[WiX Toolset](https://wixtoolset.org/)|3.11.2|
 |[Perforce](https://www.perforce.com/)|2022.1|
-|[Git](https://git-scm.com/)|2.38.0.1|
+|[Git](https://git-scm.com/)|2.39.1.1|
 |[Mercurial](https://www.mercurial-scm.org/)|1.0.0.1|
 |[SVN](https://subversion.apache.org/)|1.14.2.64502|
 |[RTools](https://cran.r-project.org/bin/windows/Rtools/)||
-|[Node.js](https://nodejs.org/en/)|v16.18.0|
+|[Node.js](https://nodejs.org/en/)|v18.13.0|
 |[Yarn](https://yarnpkg.com/)|1.22.19|
 |[Docker](https://www.docker.com/)|20.10.9|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
