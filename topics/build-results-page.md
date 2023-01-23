@@ -67,6 +67,8 @@ If the build produced [artifacts](build-artifact.md), they all are displayed on 
 
 All system properties and environmental variables which were used by a particular build are listed on the __Parameters__ tab. [Learn more about build parameters](configuring-build-parameters.md).
 
+<img src="dk-tc-parametersBuildTab.png" width="704" alt="Parameters Tab of a Build"/>
+
 The __Reported statistic values__ page shows [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported for the build and displays a statistics chart for each of the values on clicking the _View Trend_ icon ![ViewTrend.PNG](ViewTrend.PNG).
 
 ## Dependencies Tab

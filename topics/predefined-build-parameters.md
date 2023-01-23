@@ -942,7 +942,10 @@ $JDK_1_6/bin/javac
 
 Configuration parameters can be referenced by other parameters (only if defined on the __Parameters__ page), but they are not passed to the build.
 
-To get the full list of such server parameters, add the `system.teamcity.debug.dump.parameters` parameter [to a build configuration](configuring-build-parameters.md#Custom+Build+Parameters) and then view the "_Available server properties_" section in the build log.
+To view a complete list of these server parameters, inspect the [Parameters tab](build-results-page.md#Parameters+Tab) of any build or download the internal _teamcity/properties/build.start.properties.gz_ artifact.
+
+
+
 
 ### Dependency Parameters
 
