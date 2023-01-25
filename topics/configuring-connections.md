@@ -5,6 +5,8 @@ TeamCity allows storing presets of connections to external services. You can reu
 
 To add a connection, go the target project's settings, open the __Connections__ page, and click __Add Connection__. Select the connection type, set its _Display name_ to distinguish it from the others, and configure it as described below.
 
+<img src="dk-bbconnection-createConnection.png" alt="Create a new TeamCity connection" width="706"/>
+
 When created, a connection can be used in all the nested subprojects of the current project. If you add a connection in the Root project, it will become available on the whole server.
 
 If your TeamCity server is [installed behind a proxy](configuring-proxy-server.md), it is important to ensure that this is reflected in the connection settings, if applicable. When configuring a callback URL for a connection, you need to specify all URLs by which the current server can be accessed.  
@@ -86,6 +88,31 @@ A Bitbucket icon will become active in several places where a repository URL can
 If you configure multiple Bitbucket connections, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
 </chunk>
+
+## Bitbucket Server and Data Center
+
+Integration with Bitbucket Server and Data Center currently allows you to:
+
+* create a [project from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [VCS root from URL](guess-settings-from-repository-url.md)
+
+To allow TeamCity to access Bitbucket data, you need to create an incoming application link in Bitbucket to grant TeamCity required permissions.
+
+* Create a new connection and choose the **"Bitbucket Server / Data Center"** option.
+
+* In a separate browser tab, go to the Bitbucket **"Administration | Application Links"** page.
+
+* Create a new [application link](https://confluence.atlassian.com/bitbucketserver/link-to-other-applications-1018764620.html) with the following parameters:
+
+  * Application type: _External application_
+  * Direction: _Incoming_
+  * Redirect URL: _&lt;copy URL from the TeamCity new connection tab&gt;_
+  * Application permissions: *tick "Write" under "Repositories"*
+
+* Once the application link is ready, Bitbucket will generate the _"Client ID"_ and _"Client Secret"_ values. Copy these values and paste them into corresponding fields on the TeamCity new connection page.
+
+* Save the connection.
+
 
 ## GitHub
 

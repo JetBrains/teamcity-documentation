@@ -10,7 +10,7 @@ To create a project, use the __Administration__ link in the upper right corner a
 There are several options to create a project from:
 * [from a repository URL](#Creating+project+pointing+to+repository+URL)
 * [from GitHub.com](#Creating+project+pointing+to+GitHub.com+repository)
-* [from Bitbucket Cloud](#Creating+project+pointing+to+Bitbucket+Cloud)
+* [from Bitbucket (Cloud, Server, Data Center)](#Creating+project+pointing+to+Bitbucket)
 * [from GitLab](#Creating+project+pointing+to+GitLab.com)
 * [from Azure DevOps](#Creating+project+pointing+to+Azure+DevOps+Services)
 * [from JetBrains Space](#Creating+project+pointing+to+JetBrains+Space)
@@ -123,8 +123,9 @@ Depending on the build configuration settings, TeamCity can suggest some additio
     If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
 
-### Creating project pointing to Bitbucket Cloud
-1. On the __Create project__ page, select to create a project __from Bitbucket Cloud__.
+### Creating project pointing to Bitbucket
+
+1. On the __Create project__ page, click a corresponding Bitbucket tile to create a project from an existing connection to Bitbucket Cloud, Server, or Data Center. See this help article to learn how to set up new connections: [Bitbucket Cloud](configuring-connections.md#Bitbucket+Cloud) | [Bitbucket Server and Data Center](configuring-connections.md#Bitbucket+Server+and+Data+Center).
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.  
@@ -339,6 +340,7 @@ The \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/ dir
 <tip>
 
 If you attempt to delete a project with [dependent build configurations](dependent-build.md) from other projects, TeamCity will warn you about it. If you proceed with the deletion, the dependencies will no longer function.
+
 </tip>
 
  <seealso>

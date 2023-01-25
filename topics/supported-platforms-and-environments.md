@@ -648,7 +648,7 @@ Other VCSs can be supported in TeamCity via [external plugins](https://plugins.j
 
 * [GitHub.com / GitHub Enterprise](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+GitHub)
 * [GitLab.com / GitLab CE/EE](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+GitLab)
-* [Bitbucket Cloud](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+Bitbucket+Cloud)
+* [Bitbucket (Cloud, Server, Data Center)](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+Bitbucket)
 * [Azure DevOps Services](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+Azure+DevOps), or formerly Visual Studio Team Services
 * [JetBrains Space](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+JetBrains+Space)
 
