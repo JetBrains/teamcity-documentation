@@ -39,4 +39,3 @@ To update Java on agents, do one of the following:
 * Install a required Java on the agent and configure the agent to use it.
 
 >In a rare case of updating Java for the process that launches the TeamCity agent, use one of the options for the agent Java upgrade. Another way for an agent started as a Windows service, is to stop the service, change the `wrapper.java.command` variable in `buildAgent\launcher\conf\wrapper.conf` to point to the new `java.exe` binary, and restart the service.
-
