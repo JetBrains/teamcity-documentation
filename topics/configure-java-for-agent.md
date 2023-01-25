@@ -29,9 +29,13 @@ If a build agent uses a Java version earlier than Java 8, you will see the corre
 Information on Java versions currently supported by TeamCity Agent is available [here](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent).
 
 To update Java on agents, do one of the following:
-* If the agent details page in the TeamCity UI displays a Java version note with the corresponding action, you can switch to using newer Java: if the appropriate Java version of the same bitness as the current one, the agent page provides an action to switch to using that Java automatically. The agent process will restart automatically (once the agent becomes idle, that is finishes the current builds) using the new Java.
+
+* If an agent detects a newer Java version of the same bitness installed, the agent details page in the TeamCity UI displays the automatic update action. Click this action to restart an agent with a newer Java employed. Agents restart after they finish with their current builds and become idle.
+
 * (Windows) Since the build agent Windows installer comes bundled with the required Java, you can just manually reinstall the agent using the Windows installer (`.exe`) obtained from the TeamCity server __Agents__ page. See [installation instructions](install-teamcity-agent.md#Install+from+Windows+Executable+File). It is important to uninstall the previous version of the agent before installing the updated agent: invoke `Uninstall.exe` in the [Agent Home Directory](agent-home-directory.md), clear all the "_Remove_" checkboxes, and click __Uninstall__.
+
 * Install a required Java version on the agent into one of the [standard locations](#Path+to+Java+on+Agent+Machine), and restart the agent — the agent should then detect it and provide an action to use a newer Java in the UI.
+
 * Install a required Java on the agent and configure the agent to use it.
 
 >In a rare case of updating Java for the process that launches the TeamCity agent, use one of the options for the agent Java upgrade. Another way for an agent started as a Windows service, is to stop the service, change the `wrapper.java.command` variable in `buildAgent\launcher\conf\wrapper.conf` to point to the new `java.exe` binary, and restart the service.
