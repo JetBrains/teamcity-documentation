@@ -9,7 +9,7 @@ Enabling integration for the project also enables it for all its subprojects; if
 
 ## Dedicated Support for Issue Trackers
 
-TeamCity supports [Jira](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md), [GitHub](github.md), [GitLab](gitlab.md), [Bitbucket Cloud](bitbucket-cloud.md), and Azure DevOps Server (formerly [TFS](azure-board-work-items.md)) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Trackers) page lists supported versions.
+TeamCity supports [Jira](jira.md), [Bugzilla](bugzilla.md), [YouTrack](youtrack.md), [GitHub](github.md), [GitLab](gitlab.md), [Bitbucket (Cloud, Server, Data Center)](bitbucket-cloud.md), and Azure DevOps Server (formerly [TFS](azure-board-work-items.md)) trackers out of the box. The [Supported Platforms and Environments](supported-platforms-and-environments.md#Issue+Trackers) page lists supported versions.
 
 When an integration is configured, TeamCity automatically transforms an issue ID (=issue key in Jira, work item ID in Azure DevOps Server) mentioned in the VCS commit comment into a link to the corresponding issue, and the basic issue details are displayed in the TeamCity web UI when hovering over the icon next to the issue ID (for example, on the __[Changes](build-results-page.md#Changes+Tab)__ tab of Build Results).
 
@@ -111,7 +111,7 @@ Additional authentication information or/and the details on how to specify strin
 * [Bugzilla](bugzilla.md)
 * [GitHub](github.md)
 * [GitLab](gitlab.md)
-* [Bitbucket Cloud](bitbucket-cloud.md)
+* [Bitbucket](bitbucket-cloud.md)
 * [TFS](azure-board-work-items.md)
 
 ### Converting Strings into Links to Issues
