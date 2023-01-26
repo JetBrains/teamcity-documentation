@@ -86,6 +86,21 @@ This tab shows you the caches of the TeamCity processes stored in `<[TeamCity Da
 * `git` — contains the bare clone of the remote [Git](git.md) repository used by TeamCity.
 * `buildsMetadata` — resetting this cache is required to [reindex the TeamCity NuGet feed](common-problems.md#Problems+with+TeamCity+NuGet+Feed).
 
+### Versioned Settings Caches
+
+The following caches are utilized when you keep settings of a TeamCity project in a version control system. See this article for more information: [Storing Project Settings in Version Control](storing-project-settings-in-version-control.md)
+
+* `dslDependenciesMaven` — contains downloaded Maven dependencies specified 
+by users in the *pom.xml* file for a [Kotlin DSL configuration](kotlin-dsl.md) configurations. 
+* `generatedVersionedSettings` — stores generated configs cache to prevent excessive DSL runs.
+* `kotlinDslData` — stores internal data related to configurations and results of [Kotlin DSL](kotlin-dsl.md) runs. 
+This cache is used by TeamCity to maintain Kotlin DSL configurations, for example support UI patches. 
+* `pluginsDslCache` — contains [Kotlin DSL](kotlin-dsl.md) extensions from plugins such as sources, 
+compiled JARs, and documentation. 
+Additionally, this cache stores Maven repository that provides Maven dependencies.
+* `versionedSettings` — contains downloaded [versioned settings](storing-project-settings-in-version-control.md) (the content of the `.teamcity` folder). 
+* `versionedSettingsIncrementalMode` — supports incremental compilation for [Kotlin DSL](kotlin-dsl.md). 
+
 ## Search
 
 Displays information on the TeamCity data index related to the [search](search.md).
