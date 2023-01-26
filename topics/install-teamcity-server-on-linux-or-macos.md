@@ -26,3 +26,83 @@ To install the TeamCity server, unpack the `TeamCity<version number>.tar.gz` arc
 >\* We advise using GNU tar or the `gtar xfz` command for unpacking. For example, Solaris 10 tar is reported to truncate long file names and may cause `ClassNotFoundException` when using the server after unpacking.
 
 Ensure that JRE or JDK are installed and the `JAVA_HOME` environment variable is pointing to the Java installation directory (see [recommended Java versions](supported-platforms-and-environments.md#TeamCity+Server)).
+
+## Example Installation using Ubuntu Linux
+
+1. Create a dedicated user account called, `teamcity`, to run TeamCity
+
+```
+root@ubuntu:/# adduser teamcity
+```
+
+2. Install wget, to use to download the tar.gz
+
+```
+root@ubuntu:/# apt update && apt install wget -y
+```
+
+3. Download the Linux tar.gz file from the [TeamCity Downloads Page](https://www.jetbrains.com/teamcity/download/other.html) using wget
+```
+# Switch to the /opt directory, where TeamCity will be unpacked
+root@ubuntu:/# cd /opt
+
+# Download the tar.gz file using wget
+root@ubuntu:/opt# wget https://download.jetbrains.com/teamcity/TeamCity-2022.10.1.tar.gz
+```
+
+4. Unpack the tar.gz file
+
+```
+root@ubuntu:/opt# tar xfz TeamCity-2022.10.1.tar.gz
+```
+
+5. Ensure a compatible Java is installed or the JAVA_HOME environment variable is set to the path to Java
+
+```
+root@ubuntu:/opt# java -version
+root@ubuntu:/opt# echo $JAVA_HOME
+```
+
+If a compatible Java is not installed, it will need to be installed before attempting to start TeamCity.
+
+[Amazon Corretto 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html) will be installed from a .deb package in this example:
+```
+root@ubuntu:/opt# apt install java-common -y
+root@ubuntu:/opt# wget https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.deb
+root@ubuntu:/opt# dpkg --install amazon-corretto-11-x64-linux-jdk.deb
+
+# verify the installation
+root@ubuntu:/opt# java -version
+openjdk version "11.0.18" 2023-01-17 LTS
+OpenJDK Runtime Environment Corretto-11.0.18.10.1 (build 11.0.18+10-LTS)
+OpenJDK 64-Bit Server VM Corretto-11.0.18.10.1 (build 11.0.18+10-LTS, mixed mode)
+```
+
+6. Change the owner of the /opt/TeamCity directory to the `teamcity` user created in step 1
+
+```
+root@ubuntu:/opt# chown -R teamcity:teamcity TeamCity
+```
+
+7. Switch to the `teamcity` user
+
+```
+root@ubuntu:/opt# su teamcity
+teamcity@ubuntu:/opt$
+```
+
+8. Start TeamCity server and bundled build agent
+
+```
+teamcity@ubuntu:/opt$ TeamCity/bin/runAll.sh start
+
+Spawning TeamCity restarter in separate process
+TeamCity restarter running with PID 2817
+Starting TeamCity build agent...
+Java executable is found: '/usr/lib/jvm/java-11-amazon-corretto/bin/java'
+Starting TeamCity Build Agent Launcher...
+Agent home directory is /opt/TeamCity/buildAgent
+Done [3230], see log at /opt/TeamCity/buildAgent/logs/teamcity-agent.log
+```
+
+9. Navigate to `<ip address>:8111` in a web browser to complete the installation (see [TeamCity First Start](quick-setup-guide.md#TeamCity+First+Start)).
