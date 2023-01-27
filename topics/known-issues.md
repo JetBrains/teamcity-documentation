@@ -61,6 +61,7 @@ The one listed as `rdp-tcp#*` is the remote desktop connection which can be redi
 <note>
 
 An unsupervised computer with a running desktop permanently logged into a user session might be considered a network security threat, as access to it can be difficult to trace. Therefore, it is recommended to run automated GUI and browser tests on a virtual machine isolated from sensitive corporate network resources, e.g. on a machine not included in a Windows domain.
+
 </note>
 
 #### Issues with .NET Selenium 
@@ -429,13 +430,13 @@ To work around this problem, you can upgrade Visual Studio 2017 to the latest bu
 
 At the moment, TeamCity 2022.04 does not support the recently released Visual Studio Build Tools 17.2.0 and .NET SDK 6.0.300. To solve the problem, install the plugin from [the related issue](https://youtrack.jetbrains.com/issue/TW-76189/Tests-error-with-The-argument-noconsolelogger-is-invalid-with-NE#focus=Comments-27-6067187.0-0). The fix will be included in TeamCity 2022.04.1.
 
-### Issues with using semicolons and commas in properties values in .rsp files
+### Parsing .rsp files (Error MSB1006: Property is not valid)
 
-Due to the [breaking change](https://github.com/dotnet/command-line-api/pull/1714) introduced by Microsoft in the core library `System.CommandLine` in the parsing behaviour for .rsp files, TeamCity users may experience issues with:
-- semicolons in the VSTestTestAdapterPath property (set by the internal TeamCity logic)
-- user-defined build configuration parameters (for example, MSBuild properties).
-  The issue with semicolons in VSTestTestAdapterPath was fixed in 2022.04.2.
-  To fix the issue with special symbols in build configuration parameters, please use [this plugin version](https://download.jetbrains.com/teamcity/plugins/dotnet/2022.04.x/dotnet-115344.zip).
+Due to the [breaking change](https://github.com/dotnet/command-line-api/pull/1714) introduced by Microsoft in the core `System.CommandLine` library, .rsp files with commas and (or) semicolons in property values are parsed incorrectly. For that reason, TeamCity users may encounter issues with the following:
+- semicolons in the VSTestTestAdapterPath property (set by the internal TeamCity logic). This issue was fixed in v2022.04.02.
+- user-defined build configuration parameters (for example, MSBuild properties). Use [this version of a .NET plugin](https://download.jetbrains.com/teamcity/plugins/dotnet/2022.04.x/dotnet-115344.zip) to resolve this issue.
+
+As a general workaround, store values that contain semicolons or commas as [system properties](configuring-build-parameters.md#System+Properties) and add the `teamcity.internal.dotnet.msbuild.parameters.escape` configuration parameter with the _true_ value. With this parameter enabled, TeamCity wraps values of system properties in quotes (for example, the _das,213@;asd123_ value is stored as _"-p:MyCustomParameter="das%2C213%40%3Basd123"_ in a .rsp file), which prevents the issues mentioned above from happening.
 
 ## NuGet known issues
 
