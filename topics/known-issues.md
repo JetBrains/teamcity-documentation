@@ -432,11 +432,7 @@ At the moment, TeamCity 2022.04 does not support the recently released Visual St
 
 ### Parsing .rsp files (Error MSB1006: Property is not valid)
 
-Due to the [breaking change](https://github.com/dotnet/command-line-api/pull/1714) introduced by Microsoft in the core `System.CommandLine` library, .rsp files with commas and (or) semicolons in property values are parsed incorrectly. For that reason, TeamCity users may encounter issues with the following:
-- semicolons in the VSTestTestAdapterPath property (set by the internal TeamCity logic). This issue was fixed in v2022.04.02.
-- user-defined build configuration parameters (for example, MSBuild properties). Use [this version of a .NET plugin](https://download.jetbrains.com/teamcity/plugins/dotnet/2022.04.x/dotnet-115344.zip) to resolve this issue.
-
-As a general workaround, store values that contain semicolons or commas as [system properties](configuring-build-parameters.md#System+Properties) and add the `teamcity.internal.dotnet.msbuild.parameters.escape` configuration parameter with the _true_ value. With this parameter enabled, TeamCity wraps values of system properties in quotes (for example, the _das,213@;asd123_ value is stored as _"-p:MyCustomParameter="das%2C213%40%3Basd123"_ in a .rsp file), which prevents the issues mentioned above from happening.
+Due to the [breaking change](https://github.com/dotnet/command-line-api/pull/1714) introduced by Microsoft in the core `System.CommandLine` library, .rsp files with commas and (or) semicolons in property values are parsed incorrectly. To ensure this issue does not occur, enclose values of [system properties](configuring-build-parameters.md#System+Properties) in quotes. If this solution is not applicable to your project, add the `teamcity.internal.dotnet.msbuild.parameters.escape` configuration parameter and set its value to _"true"_. This setting allows TeamCity to automatically wrap values of user-defined properties in quotes.
 
 ## NuGet known issues
 
