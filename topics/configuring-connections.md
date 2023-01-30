@@ -72,7 +72,7 @@ A connection to Bitbucket Cloud can be used to:
 * Create a [VCS root from URL](guess-settings-from-repository-url.md).
 * Create a [Mercurial VCS root](mercurial.md).
 * Integrate with a [Bitbucket Cloud issue tracker](bitbucket-cloud.md).
-* Enable [BitBucket Cloud authentication](configuring-authentication-settings.md#Bitbucket+Cloud).
+* Enable [Bitbucket Cloud authentication](configuring-authentication-settings.md#Bitbucket+Cloud).
 
 The Bitbucket Cloud connection form provides multiple parameters. You need to use them for [creating a new OAuth consumer in Bitbucket](https://confluence.atlassian.com/bitbucket/oauth-on-bitbucket-cloud-238027431.html#OAuthonBitbucketCloud-Createaconsumer).
 
