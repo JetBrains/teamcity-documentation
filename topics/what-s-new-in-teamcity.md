@@ -1,9 +1,14 @@
 [//]: # (title: What's New in TeamCity 2023.03)
 [//]: # (auxiliary-id: What's New in TeamCity 2023.03;What's New in TeamCity)
 
-## 2023.03 Feature 1
+## Integration with Bitbucket Server and Data Center
 
-Feature 1
+In addition to Bitbucket Cloud, TeamCity now supports Bitbucket Server and Data Center. The corresponding option is available in the connection types list, and on the **Create Project** page.
+
+<img src="dk-whatsnew202303-bbserver.png" width="708" alt="TeamCity integration with Bitbucket Server and Data Center"/>
+
+See the following links for more information: [Configuring Connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) | [Creating and Editing Projects](creating-and-editing-projects.md#Creating+project+pointing+to+Bitbucket)
+
 
 ## 2023.03 Feature 2
 
