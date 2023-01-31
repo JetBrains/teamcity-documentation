@@ -60,12 +60,9 @@ The __Metrics__ tab displays all supported metrics, their `tag` parameters, and 
 
 The `<TeamCity_server_URL>/app/metrics` endpoint provides the metrics in a [Prometheus](https://prometheus.io/) format, ready for importing to monitoring solutions with a Prometheus support (for example, to [Grafana](https://grafana.com/)). Note that server metrics can be obtained only by a user with the "_View usage statistics_" permission.
 
-> Make sure to also read [the blog post](https://blog.jetbrains.com/teamcity/2022/06/monitoring-teamcity-server-health/) about metrics which can be used to monitor TeamCity server health. 
+> Make sure to also read [the blog post](https://blog.jetbrains.com/teamcity/2022/06/monitoring-teamcity-server-health/) about metrics which can be used to monitor TeamCity server health 
 
-The `experimental` tag for metrics is not reported starting TeamCity 2022.12. 
-The `?experimental=true` URL parameter for metrics in the Prometheus format still works, and some of the metrics still have the experimental status. 
-If you find any of the experimental metrics useful and would want them to be graduated to the supported metrics, 
-let us know via our [support channel](feedback.md).
+Some metrics are marked as experimental which means that we do not provide support for them and they will likely change in the future TeamCity versions. To get experimental metrics in the Prometheus format, add the `?experimental=true` parameter to the URL. If you find any of the experimental metrics useful and would want them to be graduated to the supported metrics, let us know via our [support channel](feedback.md).
 
 ## Server Logs
 
@@ -93,16 +90,16 @@ This tab shows you the caches of the TeamCity processes stored in `<[TeamCity Da
 
 The following caches are utilized when you keep settings of a TeamCity project in a version control system. See this article for more information: [Storing Project Settings in Version Control](storing-project-settings-in-version-control.md)
 
-* `dslDependenciesMaven` — contains downloaded Maven dependencies specified
-  by users in the *pom.xml* file of a [Kotlin DSL configuration](kotlin-dsl.md).
-* `generatedVersionedSettings` — stores generated configs cache to prevent excessive DSL runs.
-* `kotlinDslData` — stores internal data related to configurations and results of [Kotlin DSL](kotlin-dsl.md) runs.
-  This cache is used by TeamCity to maintain Kotlin DSL configurations, for example support UI patches.
-* `pluginsDslCache` — contains [Kotlin DSL](kotlin-dsl.md) extensions from plugins such as sources,
-  compiled JARs, and documentation.
-  Additionally, this cache stores Maven repository that provides Maven dependencies.
-* `versionedSettings` — contains downloaded [versioned settings](storing-project-settings-in-version-control.md) (the content of the `.teamcity` folder).
-* `versionedSettingsIncrementalMode` — supports incremental compilation for [Kotlin DSL](kotlin-dsl.md).
+* `dslDependenciesMaven` contains downloaded Maven dependencies specified 
+by users in the *pom.xml* file of a [Kotlin DSL configuration](kotlin-dsl.md). 
+* `generatedVersionedSettings` stores generated configs cache to prevent excessive DSL runs.
+* `kotlinDslData` stores internal data related to configurations and results of [Kotlin DSL](kotlin-dsl.md) runs. 
+This cache is used by TeamCity to maintain Kotlin DSL configurations, for example support UI patches. 
+* `pluginsDslCache` contains [Kotlin DSL](kotlin-dsl.md) extensions from plugins such as sources, 
+compiled JARs, and documentation. 
+Additionally, this cache stores Maven repository that provides Maven dependencies.
+* `versionedSettings` contains downloaded [versioned settings](storing-project-settings-in-version-control.md) (the content of the `.teamcity` folder). 
+* `versionedSettingsIncrementalMode` supports incremental compilation for [Kotlin DSL](kotlin-dsl.md). 
 
 ## Search
 
