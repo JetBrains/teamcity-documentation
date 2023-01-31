@@ -6,15 +6,14 @@
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2022-10-2"}
 
-* Updates in TeamCity Agent Docker images:
-  * The bundled Git was updated to version 2.39.1.
-  * The Perforce Helix Core client (p4) was updated to version 22022.2-2369846.
+* The bundled Git was updated to version 2.39.1 in both Server and Agent Docker images.
+* The Perforce Helix Core client (p4) was updated to version 22022.2-2369846 in Agent Docker images.
 * The bundled Apache Tomcat was updated to version 8.5.84.
 
 
 ### Upcoming REST API Updates
 
-The Web Application Description Language (WADL) generator will be removed in version 2023.05 since we now utilize Swagger to generate  documentation [REST API](teamcity-rest-api.md) and client code.
+The Web Application Description Language (WADL) generator will be removed in version 2023.05 since we now utilize Swagger to generate documentation [REST API](teamcity-rest-api.md) and client code.
 
 If you rely on this generator tool, [contact us](feedback.md) to share your business requirements.
 
