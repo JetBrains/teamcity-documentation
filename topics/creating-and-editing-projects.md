@@ -25,7 +25,7 @@ To create a subproject, go to the __Project Settings__ page of the parent projec
 
 ### Creating project pointing to repository URL
 
-1\. On the __Create project__ page, select to create a project __from a repository URL__.
+1\. On the __Create project__ page, click the "From a repository URL" tile.
 
 2\. Specify the project settings:
 
@@ -115,7 +115,7 @@ Provide a password or token if access to the repository requires authentication.
 Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review Suggestions at the end of the settings list and configure required ones.
 
 ### Creating project pointing to GitHub.com repository
-1. On the __Create project__ page, select to create a project __from GitHub.com__.
+1. On the __Create project__ page, click a "From GitHub" tile to create a project from an [existing connection](configuring-connections.md#GitHub)
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. TeamCity will autodetect the default Git branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
@@ -125,7 +125,7 @@ Depending on the build configuration settings, TeamCity can suggest some additio
 
 ### Creating project pointing to Bitbucket
 
-1. On the __Create project__ page, click a corresponding Bitbucket tile to create a project from an existing connection to Bitbucket Cloud, Server, or Data Center. See this help article to learn how to set up new connections: [Bitbucket Cloud](configuring-connections.md#Bitbucket+Cloud) | [Bitbucket Server and Data Center](configuring-connections.md#Bitbucket+Server+and+Data+Center).
+1. On the __Create project__ page, click a corresponding "From Bitbucket" tile to create a project from an existing connection to Bitbucket Cloud, Server, or Data Center. See this help article to learn how to set up new connections: [Bitbucket Cloud](configuring-connections.md#Bitbucket+Cloud) | [Bitbucket Server and Data Center](configuring-connections.md#Bitbucket+Server+and+Data+Center).
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.  
@@ -134,7 +134,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
 
 ### Creating project pointing to GitLab.com
-1. On the __Create project__ page, select to create a project __from GitLab.com__.
+1. On the __Create project__ page, click a "From GitLab" tile to create a project from an [existing connection](configuring-connections.md#GitLab).
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. TeamCity will autodetect the default Git branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.   
@@ -144,7 +144,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 
 ### Creating project pointing to Azure DevOps Services
 
-1. On the __Create project__ page, select to create a project __from Azure DevOps__. The recommended approach for Git repositories is to use the [connection based on OAuth 2.0 protocol](configuring-connections.md#Connecting+to+Azure+DevOps). If you need to connect to a TFVC repository, use the obsolete [PAT-based connection](configuring-connections.md#Azure+DevOps+PAT+Connection).
+1. On the __Create project__ page, click a "From Azure DevOps" tile to create a project from an [existing connection](configuring-connections.md#Azure+DevOps). The recommended approach for Git repositories is to use the [connection based on OAuth 2.0 protocol](configuring-connections.md#Connecting+to+Azure+DevOps). If you need to connect to a TFVC repository, use the obsolete [PAT-based connection](configuring-connections.md#Azure+DevOps+PAT+Connection).
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   
@@ -158,7 +158,7 @@ If no steps found, you will have to [configure build steps manually](configuring
 
 Before creating a project from a JetBrains Space, you need to configure a [dedicated connection to your Space instance](configuring-connections.md#connect-to-jetbrains-space).
 
-1. On the __Create project__ page, select to create a project __from JetBrains Space__. The first time, you will be prompted to sign in to Space and grant TeamCity access to view your user profile and projects. To be able to do this, TeamCity will create a service token for authenticating in your Space instance.
+1. On the __Create project__ page, click a "From JetBrains Space" tile to create a project from an [existing connection](configuring-connections.md#connect-to-jetbrains-space). The first time, you will be prompted to sign in to Space and grant TeamCity access to view your user profile and projects. To be able to do this, TeamCity will create a service token for authenticating in your Space instance.
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration names. If required, modify them and click __Proceed__. For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
 4. TeamCity will add a VCS build trigger and attempt to autodetect build steps.   

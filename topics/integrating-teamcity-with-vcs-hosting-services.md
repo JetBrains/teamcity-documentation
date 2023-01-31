@@ -47,18 +47,18 @@ See how to configure a connection to GitLab.com or GitLab CE/EE [here](configuri
 
 ## Integrating TeamCity with Bitbucket
 
-Integration with hosted cloud-based (Cloud) and self-hosted (Server and Data Center) Bitbucket products allows you to:
+Integration with hosted (Cloud) and self-hosted (Server and Data Center) Bitbucket products allows you to:
 
-* create a [project from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [project and build configuration from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
 
 With Bitbucket Cloud you can also:
 
 * create a [Mercurial VCS root](mercurial.md)
 * integrate with a [Bitbucket Cloud issue tracker](bitbucket-cloud.md)
-* enable [BitBucket Cloud authentication](configuring-authentication-settings.md#Bitbucket+Cloud)
+* enable [Bitbucket Cloud authentication](configuring-authentication-settings.md#Bitbucket+Cloud)
 
-See the following documentation articles learn how to configure connections to Bitbucket: [Bitbucket Cloud](configuring-connections.md#Bitbucket+Cloud) | [Bitbucket Server and Data Center](configuring-connections.md#Bitbucket+Server+and+Data+Center).
+See the following documentation articles to learn how to configure connections to Bitbucket: [Bitbucket Cloud](configuring-connections.md#Bitbucket+Cloud) | [Bitbucket Server and Data Center](configuring-connections.md#Bitbucket+Server+and+Data+Center).
 
 ## Integrating TeamCity with Azure DevOps
 
