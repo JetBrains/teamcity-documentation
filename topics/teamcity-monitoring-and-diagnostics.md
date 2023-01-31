@@ -93,16 +93,16 @@ This tab shows you the caches of the TeamCity processes stored in `<[TeamCity Da
 
 The following caches are utilized when you keep settings of a TeamCity project in a version control system. See this article for more information: [Storing Project Settings in Version Control](storing-project-settings-in-version-control.md)
 
-* `dslDependenciesMaven` — contains downloaded Maven dependencies specified
-  by users in the *pom.xml* file of a [Kotlin DSL configuration](kotlin-dsl.md).
-* `generatedVersionedSettings` — stores generated configs cache to prevent excessive DSL runs.
-* `kotlinDslData` — stores internal data related to configurations and results of [Kotlin DSL](kotlin-dsl.md) runs.
-  This cache is used by TeamCity to maintain Kotlin DSL configurations, for example support UI patches.
-* `pluginsDslCache` — contains [Kotlin DSL](kotlin-dsl.md) extensions from plugins such as sources,
-  compiled JARs, and documentation.
-  Additionally, this cache stores Maven repository that provides Maven dependencies.
-* `versionedSettings` — contains downloaded [versioned settings](storing-project-settings-in-version-control.md) (the content of the `.teamcity` folder).
-* `versionedSettingsIncrementalMode` — supports incremental compilation for [Kotlin DSL](kotlin-dsl.md).
+* `dslDependenciesMaven` contains downloaded Maven dependencies specified 
+by users in the *pom.xml* file of a [Kotlin DSL configuration](kotlin-dsl.md). 
+* `generatedVersionedSettings` stores generated configs cache to prevent excessive DSL runs.
+* `kotlinDslData` stores internal data related to configurations and results of [Kotlin DSL](kotlin-dsl.md) runs. 
+This cache is used by TeamCity to maintain Kotlin DSL configurations, for example support UI patches. 
+* `pluginsDslCache` contains [Kotlin DSL](kotlin-dsl.md) extensions from plugins such as sources, 
+compiled JARs, and documentation. 
+Additionally, this cache stores Maven repository that provides Maven dependencies.
+* `versionedSettings` contains downloaded [versioned settings](storing-project-settings-in-version-control.md) (the content of the `.teamcity` folder). 
+* `versionedSettingsIncrementalMode` supports incremental compilation for [Kotlin DSL](kotlin-dsl.md). 
 
 ## Search
 
