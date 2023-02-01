@@ -942,7 +942,7 @@ $JDK_1_6/bin/javac
 
 Configuration parameters can be referenced by other parameters (only if defined on the __Parameters__ page), but they are not passed to the build.
 
-To view a complete list of these server parameters, inspect the [Parameters tab](build-results-page.md#Parameters+Tab) of any build or download the internal _teamcity/properties/build.start.properties.gz_ artifact.
+To view the complete list of these server parameters, open the [Parameters tab](build-results-page.md#Parameters+Tab) of any build or download the internal _teamcity/properties/build.start.properties.gz_ artifact.
 
 
 
