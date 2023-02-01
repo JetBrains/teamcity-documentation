@@ -30,6 +30,7 @@
             <a href="what-s-new-in-teamcity.md" description="See the recently introduced features.">What's New in TeamCity 2022.10</a>
             <a href="https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap" description="Learn about our plans for the future releases.">TeamCity Roadmap</a>
             <a href="http://blogs.jetbrains.com/teamcity/" description="Follow our blog to get the freshest updates and tutorials.">TeamCity Blog</a>
+            <a href="https://teamcity.jetbrains.com/app/dsl-documentation/index.html" description="Use Kotlin DSL to define TeamCity settings programmatically.">TeamCity Kotlin DSL</a>
         </highlighted-group>
 
         <custom-groups>

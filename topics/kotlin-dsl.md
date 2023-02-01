@@ -32,7 +32,7 @@ DSL is also good in case when you need to have a big amount of similar build con
 
 ## Getting Started with Kotlin DSL
 
-This [Kotlin tutorial](https://play.kotlinlang.org/koans/overview) helps quickly learn most Kotlin features. The Kotlin DSL API documentation is available at `<teamcityserver:port>/app/dsl-documentation/index.html`.
+This [Kotlin tutorial](https://play.kotlinlang.org/koans/overview) helps quickly learn most Kotlin features. The Kotlin DSL API documentation is available at `<teamcityserver:port>/app/dsl-documentation/index.html`. For example, see the [Kotlin DSL API documentation for the public TeamCity server](https://teamcity.jetbrains.com/app/dsl-documentation/index.html).
 
 To start working with Kotlin DSL in TeamCity, create an empty sandbox project on your server and follow these steps:
 1. [Enable versioned settings](storing-project-settings-in-version-control.md#SynchronizingSettingswithVCS) for your project.
