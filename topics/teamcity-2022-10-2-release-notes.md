@@ -1,9 +1,9 @@
 [//]: # (title: TeamCity 2022.10.2 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2022.10.2 Release Notes)
 
-__Build: ???__
+__Build: 117025__
 
-__1 February 2023__
+__3 February 2023__
 
 ### Feature
 
@@ -13,6 +13,14 @@ __1 February 2023__
 
 ### Bug
 
+**[TW-77893](https://youtrack.jetbrains.com/issue/TW-77893/Commit-Status-publisher-posting-status-links-to-parent-project-instead-of-build)** — Commit Status publisher posting status/links to parent project instead of build
+
+**[TW-78710](https://youtrack.jetbrains.com/issue/TW-78710/Updating-the-HTTPS-Redirect-setting-can-lead-to-updating-the-Server-URL-with-incorrect-IP-dns)** — Updating the "HTTPS Redirect" setting can lead to updating the Server URL with incorrect IP/dns
+
+**[TW-78250](https://youtrack.jetbrains.com/issue/TW-78250/Passwords-and-tokens-starting-with-a-hyphen-do-not-work-for-a-git-VCS-root-authentication)** — Passwords and tokens starting with a hyphen do not work for a git VCS root authentication
+
+**[TW-79513](https://youtrack.jetbrains.com/issue/TW-79513/VCS-labels-arent-displayed-on-Changes-page)** — VCS labels aren't displayed on Changes page
+
 **[TW-79411](https://youtrack.jetbrains.com/issue/TW-79411/Update-Perforce-Packages-TeamCity-Docker-Images)** — Update Perforce Packages @ TeamCity Docker Images
 
 **[TW-76085](https://youtrack.jetbrains.com/issue/TW-76085/add-internal-retry-for-git-fetch-if-branch-is-no-longer-in-the-remote)** — add internal retry for git fetch if branch is no longer in the remote
@@ -20,8 +28,6 @@ __1 February 2023__
 **[TW-56868](https://youtrack.jetbrains.com/issue/TW-56868/ClientProtocolException-Occuring-in-Commit-Status-Publisher-when-the-repository-was-renamed)** — ClientProtocolException Occuring in Commit Status Publisher when the repository was renamed
 
 **[TW-78582](https://youtrack.jetbrains.com/issue/TW-78582/Build-status-for-Bitbucket-Server-Data-Center-does-not-contain-build-number-even-for-started-failed-succeeded-statuses)** — Build status for Bitbucket Server / Data Center does not contain build number even for started/failed/succeeded statuses
-
-**[TW-78095](https://youtrack.jetbrains.com/issue/TW-78095/Return-the-field-compatibleCloudImages)** — Return the field 'compatibleCloudImages'
 
 **[TW-77282](https://youtrack.jetbrains.com/issue/TW-77282/Changing-DSL-Context-Parameter-in-one-project-causes-Versioned-Settings-to-reload-for-other-projects-using-the-same-VCS-root-for)** — Changing DSL Context Parameter in one project causes Versioned Settings to reload for other projects using the same VCS root for settings
 
@@ -33,21 +39,15 @@ __1 February 2023__
 
 **[TW-79412](https://youtrack.jetbrains.com/issue/TW-79412/Update-Git-version-TeamCity-Docker-Images)** — Update Git version @ TeamCity Docker Images
 
-**[TW-78710](https://youtrack.jetbrains.com/issue/TW-78710/Updating-the-HTTPS-Redirect-setting-can-lead-to-updating-the-Server-URL-with-incorrect-IP-dns)** — Updating the "HTTPS Redirect" setting can lead to updating the Server URL with incorrect IP/dns
-
 **[TW-79083](https://youtrack.jetbrains.com/issue/TW-79083/Cant-open-the-custom-plugin-tab-on-the-Build-Configuration-level-if-the-brach-is-selected-in-the-branch-selector)** — Can't open the custom/plugin tab on the Build Configuration level if the brach is selected in the branch selector
 
 **[TW-77644](https://youtrack.jetbrains.com/issue/TW-77644/Click-on-a-checkbox-near-the-test-name-shifts-the-page-to-the-top)** — Click on a checkbox near the test name shifts the page to the top
 
 **[TW-77790](https://youtrack.jetbrains.com/issue/TW-77790/JS-error-on-Agents-page)** — JS error on Agents page
 
-**[TW-77893](https://youtrack.jetbrains.com/issue/TW-77893/Commit-Status-publisher-posting-status-links-to-parent-project-instead-of-build)** — Commit Status publisher posting status/links to parent project instead of build
-
 **[TW-79175](https://youtrack.jetbrains.com/issue/TW-79175/S3-Storage-S3-artifact-storage-hanging-timing-out-with-large-artifacts-after-upgrade-to-2022.10)** — [S3 Storage] S3 artifact storage hanging/timing out with large artifacts after upgrade to 2022.10
 
 **[TW-78858](https://youtrack.jetbrains.com/issue/TW-78858/Lots-of-logs-Failed-to-find-agent-type-for-agent-...-in-teamcity-server.log-after-removal-of-a-non-cloud-agent)** — Lots of logs "Failed to find agent type for agent ..." in teamcity-server.log after removal of a non cloud agent
-
-**[TW-78250](https://youtrack.jetbrains.com/issue/TW-78250/Passwords-and-tokens-starting-with-a-hyphen-do-not-work-for-a-git-VCS-root-authentication)** — Passwords and tokens starting with a hyphen do not work for a git VCS root authentication
 
 **[TW-78959](https://youtrack.jetbrains.com/issue/TW-78959/Secondary-node-agents-page-does-not-show-newly-registered-non-cloud-agents)** — Secondary node agents page does not show newly registered non cloud agents
 
@@ -98,14 +98,6 @@ __1 February 2023__
 **[TW-79024](https://youtrack.jetbrains.com/issue/TW-79024/Expensive-requests-for-all-branches-on-test-history-page)** — Expensive requests for all branches on test history page
 
 **[TW-79247](https://youtrack.jetbrains.com/issue/TW-79247/Slow-loading-of-data-from-vcschangeattrs-table-on-Oracle-database)** — Slow loading of data from vcs_change_attrs table on Oracle database
-
-### Task
-
-**[TW-79312](https://youtrack.jetbrains.com/issue/TW-79312/AWS-Connection-Add-an-easy-way-to-allow-all-AWS-STS-endpoints-via-internal-property)** — AWS Connection: Add an easy way to allow all AWS STS endpoints via internal property
-
-**[TW-78341](https://youtrack.jetbrains.com/issue/TW-78341/Increase-Perforce-communication-timeouts-for-perforce-commands-executed-on-the-agent)** — Increase Perforce communication timeouts for perforce commands executed on the agent
-
-**[TW-77879](https://youtrack.jetbrains.com/issue/TW-77879/New-UI-for-Perforce-Jobs-details-popup)** — New UI for Perforce Jobs details popup
 
 
 ### Security
