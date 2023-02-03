@@ -68,7 +68,7 @@ __Build credits__
 
 <td>
 
-Build credits in TeamCity Cloud can be redeemed for build minutes on [JetBrains-hosted agents](#cloud-jb-hosted-agents), exchanged at a flat rate for concurrent builds on [self-hosted agents](#cloud-self-hosted-agents) or [prepaid agents](#cloud-prepaid-agents). You can also exchange build credits for additional [storage](#cloud-storage), [data transfer](#cloud-data-transfer), and committer slots.
+Build credits in TeamCity Cloud can be redeemed for build time on [JetBrains-hosted agents](#cloud-jb-hosted-agents), exchanged at a flat rate for concurrent builds on [self-hosted agents](#cloud-self-hosted-agents) or [prepaid agents](#cloud-prepaid-agents). You can also exchange build credits for additional [storage](#cloud-storage), [data transfer](#cloud-data-transfer), and committer slots.
 
 Build credits are granted per every committer slot in a subscription and can be purchased on demand.
 
