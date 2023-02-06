@@ -11,7 +11,8 @@ TeamCity supports keys in the PEM and OpenSSH formats. If your private key uses 
 
 Before you can start using an SSH key, you need to upload it to a server.
 
-### Upload Keys via Teamcity UI
+### TeamCity UI
+{id="upload-via-ui"}
 
 1. In __[Project Settings](creating-and-editing-projects.md#Managing+Project)__, click __SSH Keys__. 
 2. On the __SSH Keys__ page, click __Upload SSH Key__.
@@ -29,7 +30,8 @@ Uploaded SSH keys are stored in the `<[TeamCity Data Directory](teamcity-data-di
 Once the key is uploaded, a VCS root can be configured to use this uploaded key.
 
 
-### Upload Keys via REST API
+### REST API
+{id="upload-via-rest"}
 
 [TeamCity REST API](teamcity-rest-api.md) allows external applications and scripts to access TeamCity resources via URLs.
 
@@ -58,6 +60,7 @@ Once required SSH keys are uploaded, assign them to corresponding projects. To d
 
 
 ### TeamCity UI
+{id="configure-vcs-via-ui"}
 
 1. Go to the **Project Settings | VCS Roots** page and click the required root.
 2. In the **Authentication Settings** section, click a required "Private Key" option:
@@ -67,6 +70,7 @@ Once required SSH keys are uploaded, assign them to corresponding projects. To d
 
 
 ### REST API
+{id="configure-vcs-via-rest"}
 
 Send the following requests to choose which of uploaded SSH should be used.
 
