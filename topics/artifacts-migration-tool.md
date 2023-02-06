@@ -1,81 +1,114 @@
 [//]: # (title: Artifacts Migration Tool)
 [//]: # (auxiliary-id: Artifacts Migration Tool)
 
-TeamCity provides a command-line tool dedicated to automatic migration of [build artifacts](build-artifact.md) from one storage to another. 
-Currently, the tool supports migration from a local storage to Amazon S3.
+The **artifacts migration tool** is a command-line tool that allows you to transfer [build artifacts](build-artifact.md) from one storage to another.
 
-To get the tool, go to __Project Settings | Artifacts Storage__ and use the _Download artifacts migration tool_ link in the top right corner of the page.
+<img src="dk-baMigrationTool-overview.png" width="708" alt="TeamCity Artifacts Migration Tool"/>
 
-## Prerequisites
 
-* The tool has to be installed on the same machine where the TeamCity server is installed.
-* The address of the TeamCity server, TeamCity authentication token, and the list of artifact directories must be provided in the configuration file.  
-  By default, the tool expects them to be located in `config/application.properties`.
-* To use S3 storage as the target, the tool needs AWS credentials on the machine.  
-  The AWS credentials can be supplied using [any supported method](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html).
+## Download the Artifacts Migration Tool
 
->The target storage needs to be made active in TeamCity.
+You can download this tool from the **Project Settings | Artifacts Storage** page.
 
-## Command Line Options
+<img src="dk-downloadAMTool.png" width="708" alt="Download artifacts migration tool"/>
 
-The tool supports the following command line arguments:
-* `--project` (`-p`) — (required) the [external ID](https://www.jetbrains.com/help/teamcity/identifier.html#External+IDs) of the project that needs to be migrated.
-* `--recursive` (`-r`) — (optional) indicates whether the tool should recursively process all subprojects of the selected project.
+Note that you need to install the tool on the same machine where the TeamCity server is installed.
 
-## Interactive Mode
+## Configuration File
 
-By default, the tool runs in the interactive mode. During the first run, the tool creates a migration plan listing all artifacts in the source storage. Then, the tool asks you to select the next step:
+Before you can run the artifacts migration tool, you need to specify the following settings in the `config/application.properties` file.
+
+* `teamcity.storage.migration.host` — the TeamCity server's address (protocol, host, and port).
+
+* `teamcity.storage.migration.artifact.directories` — the path to the local TeamCity artifact storage. If your TeamCity server uses multiple directories as artifacts storages, use a semicolon character (;) as a separator.
+
+* `teamcity.storage.migration.access.token` — the TeamCity [authentication token](configuring-your-user-profile.md#Managing+Access+Tokens). Navigate to **Your Profile | Access Tokens** to create a new token.
+
+The server URL and artifact storage paths can be found on the **Administration | Global Settings** page.
+
+<img src="dk-artifactstoragepaths.png" width="708" alt="Obtain server URL and storage paths"/>
+
+The snippet below demonstrates the contents of a sample `application.properties` file.
+
+```Plain Text
+teamcity.storage.migration.access.token=aBcEfgHIjkLMnoPQRsTUVwxyz
+teamcity.storage.migration.artifact.directories=C:\\ProgramData\\JetBrains\\TeamCity\\system\\artifacts
+teamcity.storage.migration.host=http://localhost:8111
+```
+
+## AWS-Specific Settings
+
+To migrate artifacts to or from [Amazon S3 buckets](storing-build-artifacts-in-amazon-s3.md), the artifacts migration tool needs to use AWS credentials stored on the server machine. See this documentation article for more information: [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html).
+
+If a project has multiple S3-compatible storages that need to be migrated and require different credentials, use [Custom AWS profiles](https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials_profiles.html) to provide these credentials. To associate a specific profile in the credentials file with the particular storage, add the following property to the tool's `config/application.properties` file:
+
+```Plain Text
+teamcity.storage.migration.s3.custom.profile.<FEATURE_ID>=<PROFILE_NAME>
+```
+
+* `<FEATURE_ID>` is the storage ID from [the storage settings](storing-build-artifacts-in-amazon-s3.md#configuring-amazon-s3-artifacts-storage) page.
+* `<PROFILE_NAME>` is the profile name from the AWS credentials file.
+
+
+## Target Storage Settings
+
+The migration tool copies or moves artifacts to the currently active storage. Before you run the migration process, go to the **Project Settings | Artifacts Storage** page and activate the target storage.
+
+<img src="dk-makeArtifactsStorageActive.png" width="708" alt="Activate target project storage"/>
+
+## Run the Migration Tool
+
+Open the terminal at the _&lt;artifacts_migration_tool&gt;/bin_ folder and run the "migrate" (Linux, macOS) or "migrate.bat" (Windows) file with the `--project` (`-p`) parameter. This parameter accepts [external project IDs](identifier.md#External+IDs) as values.
+
+```Shell
+./migrate --project="NetFrameworkProject3"
+```
+
+You can add the `--recursive` (`-r`) parameter to specify whether the tool should recursively process all subprojects of the selected project.
+
+> If the migration tool cannot access a subproject's storage, it will skip this project. Add the `failWhenCannotAccessStorageSettings=true` property to the tool's [configuration file](#Configuration+File) to force the tool to fail in these scenarios.
+
+If you need to migrate artifacts from cloud storage rather than a local directory, specify the additional `--source` (`-s`) parameter and pass a storage ID as a value.
+
+<img src="dk-getCloudStorageID.png" width="708" alt="Obtain cloud storage ID"/>
+
+```Shell
+migrate.bat -p "NetFrameworkProject3" --source="PROJECT_EXT_2"
+```
+
+> Currently, the tool accepts only Amazon S3 buckets as sources.
+
+The first time you run the migration tool in this mode, it detects artifacts that should be copied, saves the migration plan, and asks you for the next step.
+
 * Update the migration plan.
 * Show the migration plan.
 * Copy artifacts from the source storage to the target storage.
-> If the source project has a subproject with a custom artifact storage that the tool cannot access,
-> it will skip the subproject by default and continue migrating the remaining projects. You can configure the migration to fail in this case using the corresponding [additional property](artifacts-migration-tool.md#additional-properties).
-
-* Revert the migration — in case of incomplete or interrupted migration, the tool will remove the copied artifacts from the target storage.
+* Revert the migration. This option removes copied artifacts from the target storage. You can select this option in case of an incomplete or interrupted migration.
 * Delete artifacts from the source storage.
-* Forget the migration plan — discard the current migration plan.
+* Forget the migration plan. Use this option to discard the saved migration plan if you specified incorrect migration parameters.
 
-If the tool fails, you can choose to update the migration plan to continue the interrupted migration.
+To migrate artifacts in one go (without the tool asking you for confirmation or input), specify the required migration steps by adding the following commands.
 
-If the tool finds an existing migration plan, it will ask you to select the next step right away.
-
-## Non-Interactive Mode
-
-Alternatively to the interactive mode, migration steps can be specified as additional command line arguments:
-* `--create-migration-plan` — creating or updating the migration plan.
-* `--show-migration-plan` — showing the migration plan.
-* `--start-migration` — copying artifacts from the source storage to the target storage.
-* `--revert-migration` — in case of incomplete or interrupted migration, removing copied artifacts from the target storage.
-* `--remove-artifacts-in-source` — deleting artifacts from the source storage.
-  >*Note:* `--remove-artifacts-in-source` will not remove artifacts that have not been copied to the target storage.
+* `--create-migration-plan` — create or update the migration plan.
+* `--show-migration-plan` — show the migration plan.
+* `--start-migration` — copy artifacts from the source storage to the target storage.
+* `--revert-migration` — remove copied artifacts from the target storage in case of an incomplete or interrupted migration.
+* `--remove-artifacts-in-source` — delete copied artifacts from the source storage. Artifacts that were not copied will not be removed.
 * `--reset-migration-plan` — discard the current migration plan.
 
-If one or more of these steps are provided, the tool goes through them without asking for confirmation or input.
+For example, the following command moves artifacts from the target Amazon S3 storage.
 
-## Required Properties
+```Shell
+migrate.bat --project="SampleProject" --source="PROJECT_EXT_2" --remove-artifacts-in-source
+```
 
-* `teamcity.storage.migration.host` — the address (protocol, host, and port) of the TeamCity server.
-* `teamcity.storage.migration.access.token` — the TeamCity [authentication token](https://www.jetbrains.com/help/teamcity/configuring-your-user-profile.html#Managing+Access+Tokens).
-* `teamcity.storage.migration.artifact.directories` — the list of TeamCity artifact directories separated with `;`.
+## Additional Configuration Properties
 
-## Additional Properties
-{id="additional-properties"}
+You can add the following properties to the [configuration file](#Configuration+File).
 
-* `teamcity.storage.migration.processing.threadCount` — the number of threads that the tool should use for processing (by default, **4** threads).
-* `teamcity.storage.migration.failWhenCannotAccessStorageSettings` — controls whether the migration should fail if the tool cannot fetch the storage settings from the TeamCity server. It may happen due to the lack of permissions. (by default **false**). 
-* `teamcity.storage.migration.s3.threadCount` — the number of threads that the tool should use for uploading data to S3 (by default, **4** threads).
-* `teamcity.storage.migration.s3.forceVirtualHostAddressing` — use the virtual hosted style of S3 URL addresses instead of deprecated path style (by default, **true**).
-* `teamcity.storage.migration.s3.upload.numberOfRetries` — the number of attempts the tool does when uploading data to S3 if it encounters errors (by default, **5**).
-* `teamcity.storage.migration.s3.upload.retryDelayMs` — the initial delay between attempts in milliseconds (by default, **1000**).
-
-### Custom credentials for S3 storage
-
-If a project has multiple S3-compatible storages that need to be migrated, and they require different credentials, 
-these credentials can be provided via [Custom AWS profiles](https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials_profiles.html)
-
-To associate a specific profile in the credentials file with a specific storage, use the following property:
-
-`teamcity.storage.migration.s3.custom.profile.<FEATURE_ID>=<PROFILE_NAME>`, where
-`<FEATURE_ID>` should be replaced with the storage ID from [the storage settings](storing-build-artifacts-in-amazon-s3.md#configuring-amazon-s3-artifacts-storage) page.
-`<PROFILE_NAME>` should be replaced with the profile name from the AWS credentials file.
-
+* `teamcity.storage.migration.processing.threadCount` — the number of threads that the tool should use for processing. The default value is **4**.
+* `teamcity.storage.migration.failWhenCannotAccessStorageSettings` — controls whether the migration should fail if the tool cannot fetch the storage settings from the TeamCity server. It may happen due to the lack of permissions. The default value is **false**.
+* `teamcity.storage.migration.s3.threadCount` — the number of threads that the tool should use to upload data to S3. The default value is **4**.
+* `teamcity.storage.migration.s3.forceVirtualHostAddressing` — specifies whether the tool should use the virtual hosted style of S3 URL addresses instead of the deprecated path style. The default value is **true**.
+* `teamcity.storage.migration.s3.upload.numberOfRetries` — the number of attempts the tool makes when uploading data to S3 if it encounters errors. The default value is **5**.
+* `teamcity.storage.migration.s3.upload.retryDelayMs` — the initial delay between attempts in milliseconds. The default value is **1000**.
