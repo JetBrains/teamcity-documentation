@@ -470,7 +470,7 @@
       <toc-element id="continuous-delivery-to-windows-azure-web-sites-or-iis.md" show-structure-for="chapter" show-structure-depth="4"/>
    </toc-element>
    <toc-element toc-title="Other resources">
-      <toc-element toc-title="Kotlin DSL API Documentation" href="https://teamcity.jetbrains.com/app/dsl-documentation/index.html"/>
+      <toc-element toc-title="Kotlin DSL API Documentation" href="https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/index.html"/>
       <toc-element id="teamcity-cloud.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
       <toc-element toc-title="TeamCity Cloud Documentation" href="https://www.jetbrains.com/help/teamcity/cloud/teamcity-cloud-documentation.html"/>
       <toc-element toc-title="TeamCity Plugin for IntelliJ Platform Documentation" href="https://www.jetbrains.com/help/teamcity/ij-addin/tc-welcome.html"/>
