@@ -60,7 +60,7 @@ The migration tool copies or moves artifacts to the currently active storage. Be
 
 Open the terminal at the _&lt;artifacts_migration_tool&gt;/bin_ folder and run the "migrate" (Linux, macOS) or "migrate.bat" (Windows) file with the `--project` (`-p`) parameter. This parameter accepts [external project IDs](identifier.md#External+IDs) as values.
 
-```Plain Text
+```Shell
 ./migrate --project="NetFrameworkProject3"
 ```
 
@@ -72,7 +72,7 @@ If you need to migrate artifacts from cloud storage rather than a local director
 
 <img src="dk-getCloudStorageID.png" width="708" alt="Obtain cloud storage ID"/>
 
-```Plain Text
+```Shell
 migrate.bat -p "NetFrameworkProject3" --source="PROJECT_EXT_2"
 ```
 
@@ -98,7 +98,7 @@ To migrate artifacts in one go (without the tool asking you for confirmation or 
 
 For example, the following command moves artifacts from the target Amazon S3 storage.
 
-```Plain Text
+```Shell
 migrate.bat --project="SampleProject" --source="PROJECT_EXT_2" --remove-artifacts-in-source
 ```
 

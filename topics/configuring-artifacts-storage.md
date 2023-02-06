@@ -39,8 +39,16 @@ Google Cloud Artifact Storage is implemented as a [plugin](https://plugins.jetbr
 ## Migrating Artifacts To a Different Storage
 <anchor name="migratingArtifactsToS3"/>
 
-TeamCity provides [a command-line tool](artifacts-migration-tool.md) dedicated to automatic migration of build artifacts from one storage to another. To get the tool, go to __Project Settings | Artifacts Storage__ and use the _Download artifacts migration tool_ link in the top right corner of the page.
-Currently, the tool supports migration from the built-in storage to [Amazon S3](configuring-artifacts-storage.md#Amazon+S3+Support). We're working on supporting other cloud storage options as well.
+TeamCity server ships with [a command-line tool](artifacts-migration-tool.md) that transfers build artifacts from one storage to another. You can download this tool on the __Project Settings | Artifacts Storage__ page.
+
+<img src="dk-downloadAMTool.png" width="708" alt="Download artifacts migration tool"/>
+
+Currently, the tool supports the following migration routes:
+
+* From a local directory to an Amazon S3 bucket and vice versa
+* From one Amazon S3 bucket to another
+
+We're working on supporting other cloud storage options as well.
 
 </chunk>
 
