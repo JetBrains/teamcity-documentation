@@ -5,6 +5,8 @@ The **artifacts migration tool** is a command-line tool that allows you to trans
 
 <img src="dk-baMigrationTool-overview.png" width="708" alt="TeamCity Artifacts Migration Tool"/>
 
+Currently, the tool accepts only Amazon S3 as a migration target.
+
 
 ## Download the Artifacts Migration Tool
 
@@ -12,7 +14,7 @@ You can download this tool from the **Project Settings | Artifacts Storage** pag
 
 <img src="dk-downloadAMTool.png" width="708" alt="Download artifacts migration tool"/>
 
-Note that you need to install the tool on the same machine where the TeamCity server is installed.
+Note that you need this tool to be on the same machine where the TeamCity server is installed.
 
 ## Configuration File
 
@@ -20,11 +22,11 @@ Before you can run the artifacts migration tool, you need to specify the followi
 
 * `teamcity.storage.migration.host` — the TeamCity server's address (protocol, host, and port).
 
-* `teamcity.storage.migration.artifact.directories` — the path to the local TeamCity artifact storage. If your TeamCity server uses multiple directories as artifacts storages, use a semicolon character (;) as a separator.
+* `teamcity.storage.migration.artifact.directories` — the absolute path to the local TeamCity artifact storage. If your TeamCity server uses multiple directories as artifacts storages, use a semicolon character (;) as a separator.
 
-* `teamcity.storage.migration.access.token` — the TeamCity [authentication token](configuring-your-user-profile.md#Managing+Access+Tokens). Navigate to **Your Profile | Access Tokens** to create a new token.
+* `teamcity.storage.migration.access.token` — the TeamCity [authentication token](configuring-your-user-profile.md#Managing+Access+Tokens). Tokens must have permissions sufficient to access artifact storages. Navigate to **Your Profile | Access Tokens** to create a new token.
 
-The server URL and artifact storage paths can be found on the **Administration | Global Settings** page.
+The server URL and default artifact storage paths can be found on the **Administration | Global Settings** page.
 
 <img src="dk-artifactstoragepaths.png" width="708" alt="Obtain server URL and storage paths"/>
 
@@ -52,7 +54,7 @@ teamcity.storage.migration.s3.custom.profile.<FEATURE_ID>=<PROFILE_NAME>
 
 ## Target Storage Settings
 
-The migration tool copies or moves artifacts to the currently active storage. Before you run the migration process, go to the **Project Settings | Artifacts Storage** page and activate the target storage.
+The migration tool copies or moves artifacts to the currently active storage. Before you run the migration process, go to the **Project Settings | Artifacts Storage** page of a project whose artifacts you want to migrate, and activate the target storage.
 
 <img src="dk-makeArtifactsStorageActive.png" width="708" alt="Activate target project storage"/>
 
@@ -96,7 +98,7 @@ To migrate artifacts in one go (without the tool asking you for confirmation or 
 * `--remove-artifacts-in-source` — delete copied artifacts from the source storage. Artifacts that were not copied will not be removed.
 * `--reset-migration-plan` — discard the current migration plan.
 
-For example, the following command moves artifacts from the target Amazon S3 storage.
+For example, the following command moves artifacts from the given Amazon S3 storage to a currently active storage.
 
 ```Shell
 migrate.bat --project="SampleProject" --source="PROJECT_EXT_2" --remove-artifacts-in-source

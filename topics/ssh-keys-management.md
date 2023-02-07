@@ -74,7 +74,7 @@ Once required SSH keys are uploaded, assign them to corresponding projects. To d
 
 Send the following REST API requests to set up VCS authentication settings.
 
-* Send the PUT request with the "TEAMCITY_SSH_KEY" body to `/properties/authMethod`. This request switches the "Authentication method" to "Upload Key".
+* Send the PUT request with the "TEAMCITY_SSH_KEY" body to `/properties/authMethod`. This request switches the "Authentication method" to "Uploaded Key".
    
    ```Plain Text
    PUT <server_URL>/app/rest/vcs-roots/<locator>/properties/authMethod
@@ -101,7 +101,7 @@ Send the following REST API requests to set up VCS authentication settings.
 
 ## SSH Key Usage
 
-For the information on using SSH keys from within the build scripts, see the following documentation article: [SSH Agent](ssh-agent.md).
+For information on using SSH keys from within the build scripts, see the following documentation article: [SSH Agent](ssh-agent.md).
 
 If you configure the [agent-side checkout](vcs-checkout-mode.md#agent-checkout), the server passes SSH keys to agents. During a build, the Git plugin downloads the key from the server to the agent, and removes this key after `git fetch/clone` is complete.
 
