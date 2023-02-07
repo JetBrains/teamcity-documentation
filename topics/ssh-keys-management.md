@@ -5,11 +5,11 @@ You can upload an SSH private key into a project via the TeamCity web interface 
 
 ## Supported Key Format
 
-TeamCity supports keys in the PEM and OpenSSH formats. If your private key uses a different format, it has to be converted. For example, the Putty private key format (`*.ppk`), not supported by TeamCity, can be converted to the PEM format using [PuTTY Key Generator](https://www.puttygen.com/): use the menu  __Conversions | Export OpenSSH key__.
+TeamCity supports keys in the PEM and OpenSSH formats. Keys that use different formats need to be converted. For example, you can use the [PuTTY Key Generator](https://www.puttygen.com/) to convert unsupported Putty private keys (`*.ppk`) to the PEM format. To do this, navigate to the **Conversions | Export OpenSSH key** menu.
 
 ## Upload SSH Keys to TeamCity Server
 
-Before you can start using an SSH key, you need to upload it to a server.
+You can use TeamCity web UI or send REST API requests to upload SSH keys.
 
 ### TeamCity UI
 {id="upload-via-ui"}
@@ -20,10 +20,10 @@ Before you can start using an SSH key, you need to upload it to a server.
 
 <img src="ssh-keys.png" width="706" alt="Add SSH Keys to TeamCity"/>
 
-Uploaded SSH keys are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<project>/pluginData/ssh_keys` directory. TeamCity tracks this directory and uploaded keys become available in the current project and its subprojects without the need to restart a server.
+Uploaded SSH keys are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<project>/pluginData/ssh_keys` directory. TeamCity tracks this directory so uploaded keys become available in the current project and its subprojects without the need to restart a server.
 
 
-> The access to the [TeamCity Data Directory](teamcity-data-directory.md) must be kept secure, as the keys are stored in an unmodified/unencrypted form on the file system.
+> Keep the access to the [TeamCity Data Directory](teamcity-data-directory.md) secure, as a server stores SSH keys in an unmodified/unencrypted form on the file system.
 >
 {type="note"}
 
@@ -63,7 +63,7 @@ Once required SSH keys are uploaded, assign them to corresponding projects. To d
 {id="configure-vcs-via-ui"}
 
 1. Go to the **Project Settings | VCS Roots** page and click the required root.
-2. In the **Authentication Settings** section, click a required "Private Key" option:
+2. In the **Authentication Settings** section, click the required "Private Key" option:
    <include src="git.md" include-id="ssh-key-options"/>
 
 <img src="dk-selectSshKeyOptions.png" width="706" alt="Select an SSH key"/>
@@ -72,28 +72,26 @@ Once required SSH keys are uploaded, assign them to corresponding projects. To d
 ### REST API
 {id="configure-vcs-via-rest"}
 
-Send the following requests to choose which of uploaded SSH should be used.
+Send the following REST API requests to set up VCS authentication settings.
 
-```Plain Text
-  PUT <server_URL>/app/rest/vcs-roots/<locator>/properties/authMethod
-  ```
+* Send the PUT request with the "TEAMCITY_SSH_KEY" body to `/properties/authMethod`. This request switches the "Authentication method" to "Upload Key".
+   
+   ```Plain Text
+   PUT <server_URL>/app/rest/vcs-roots/<locator>/properties/authMethod
+   ```
 
-* Request body: TEAMCITY_SSH_KEY
-* Sets the "Authentication method" to "Uploaded Key"
+* To select a particular SSH key, send another PUT request with the name of this key as the request body to `/properties/teamcitySshKey`.
+   
+   ```Plain Text
+   PUT <server_URL>/app/rest/vcs-roots/<locator>/properties/teamcitySshKey
+   ```
 
-```Plain Text
-PUT <server_URL>/app/rest/vcs-roots/<locator>/properties/teamcitySshKey
-```
+* For password-encrypted private keys, send a passphrase as the body of the `/properties/secure:passphrase` request.
+   
+   ```Plain Text
+   PUT <server_URL>/app/rest/vcs-roots/<locator>/properties/secure:passphrase
+   ```
 
-* Request body: the name of an uploaded SSH key
-* Selects the particular uploaded key
-
-```Plain Text
-PUT <server_URL>/app/rest/vcs-roots/<locator>/properties/secure:passphrase
-```
-
-* Request body: key passphrase
-* A password for encrypted private keys.
 
 
 
@@ -103,15 +101,13 @@ PUT <server_URL>/app/rest/vcs-roots/<locator>/properties/secure:passphrase
 
 ## SSH Key Usage
 
-See [SSH Agent](ssh-agent.md) for usage from within the build scripts.
+For the information on using SSH keys from within the build scripts, see the following documentation article: [SSH Agent](ssh-agent.md).
 
-The uploaded key can be used in a VCS root. SSH key is used on the server and is also passed to the agent in case [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is configured.
-
-During the build with agent-side checkout, the Git plugin downloads the key from the server to the agent. It temporarily saves the key on the agent's file system and removes it after `git fetch/clone` is completed.
+If you configure the [agent-side checkout](vcs-checkout-mode.md#agent-checkout), the server passes SSH keys to agents. During a build, the Git plugin downloads the key from the server to the agent, and removes this key after `git fetch/clone` is complete.
 
 
 
-> The key is removed for security reasons: for example, the tests executed by the build can leave some malicious code that will access the build agent file system and acquire the key. However, tests cannot get the key directly since it is removed by the time they are running. It makes it harder but not impossible to steal the key. Therefore, the agent must also be secure.
+> Keys are removed from agents for security reasons. For example, the tests executed by the build can leave some malicious code that will access the build agent file system and acquire the key. However, tests cannot get the key directly since it is removed by the time they are running. It makes it harder but not impossible to steal the key. Therefore, the agent must also be secure.
 > 
 {type="note"}
 
