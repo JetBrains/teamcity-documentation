@@ -3,68 +3,82 @@
 
 This page explains conditions used in [agent requirements](agent-requirements.md) or [build step execution requirements](build-step-execution-conditions.md).
 
+
+
 <table>
 <tr><td>Condition</td><td>Description</td><td>Example</td></tr>
 
-<tr><td>
+<tr>
+<td>
 
-__equals__
+**exists**
 
 </td><td>
 
-Is `true` if:
-* A value is empty and the specified property exists and its value is an empty string.  
-  _or_
-* A value is specified and the property exists with the specified value.
+Returns `true` if the specified property exists.
+
+</td><td>
+
+`DotNetCLI_Path` **exists**
+
+`(DotNetCoreSDK7\.[\.\d]*_Path)` **exists**
 
 </td>
+</tr>
 
+
+<tr>
 <td>
+
+**does not exist**
+
+</td><td>
+
+Returns `true` if the specified property does not exist.
+
+</td><td>
+
+`env.TEAMCITY_GIT_PATH` **does not exist**
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+**equals**
+
+</td><td>
+
+Returns `true` if the specified property exists and equals the given value.
+
+You can leave the "value" field empty to check whether the specified property exists but is empty.
+
+</td><td>
 
 `docker.server.osType` __equals__ `Linux`
 
 </td>
-
 </tr>
 
 <tr><td>
 
-__does not equal__
+**does not equal**
 
 </td><td>
 
-Is `true` if:
-* A value is empty and the specified property exists and its value is __NOT__ empty.  
-  _or_
-* A value is specified and either the property does not exist, or the property exists and its value does not equal the specified value.
+Returns `true` if a value of the specified property differs from the given value, or if this property does not exist.
 
-</td>
+You can leave the "value" field empty to check whether the specified property exists and is not empty (has a value).
 
-<td>
+</td><td>
 
 `system.teamcity.buildType.id` __does not equal__ `Tests`
 
 </td>
-
 </tr>
 
-<tr><td>
 
-__does not contain__
-
-</td><td>
-
-Is `true` if the specified property either does not exist, or exists and does not contain the specified string.
-
-</td>
-
-<td>
-
-`system.agent.name` __does not contain__ `_local`
-
-</td>
-
-</tr>
 
 <tr><td>
 
@@ -75,17 +89,96 @@ Is `true` if the specified property either does not exist, or exists and does no
 
 </td><td>
 
-Work only with numeric values.
+Return `true` if a value of the target numeric property meets the corresponding condition.
+
+</td><td>
+
+`build.number` __is more than__ `256`
+
+`teamcity.agent.hardware.cpuCount` __is less than__ `10`
+
+</td>
+
+</tr>
+
+
+<tr><td>
+
+* __version is more than__
+* __version is not more than__
+* __version is less than__
+* __version is not less than__
+
+</td><td>
+
+Compare software versions with the given value. Supports multiple value formats, including dot (`.`) delimiters, leading zeroes, common suffixes like "beta", "EAP". If the version number contains alphabetic characters, they are compared as well, for instance, 1.1e &lt; 1.1g.
 
 </td>
 
 <td>
 
-`build.number` __is more than__ `256`
+`maven` __version is more than__ `3.0`
 
 </td>
 
 </tr>
+
+
+<tr><td>
+
+**contains**
+
+</td><td>
+
+Returns `true` if a value of the specified property includes the given value.
+
+</td><td>
+
+`teamcity.serverUrl` __contains__ `localhost`
+
+</td>
+</tr>
+
+
+<tr><td>
+
+**does not contain**
+
+</td><td>
+
+Returns `true` if a value of the specified property does not include the given value, or if this property does not exist.
+
+</td>
+
+<td>
+
+`system.agent.name` **does not contain** `_local`
+
+</td></tr>
+
+
+<tr><td>
+
+* **starts with**
+* **ends with**
+
+</td><td>
+
+Returns `true` if a value of the specified property starts (ends) with the given value.
+
+</td>
+
+<td>
+
+`teamcity.agent.jvm.os.name` **starts with** `Mac`
+
+`teamcity.agent.work.dir` **ends with** `/work`
+
+</td>
+</tr>
+
+
+
 
 <tr><td>
 
@@ -94,7 +187,7 @@ Work only with numeric values.
 
 </td><td>
 
-Is `true` if the specified property matches / does not match the specified [regular expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern.
+Returns `true` if the specified property matches (does not match) the given [regular expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern.
 
 </td>
 
@@ -106,25 +199,6 @@ Use `<custom_parameter>` __matches__ `.*(,|^)foo(,|$).*` to match all occurrence
 
 </tr>
 
-<tr><td>
 
-* __version is more than__
-* __version is not more than__
-* __version is less than__
-* __version is not less than__
-
-</td><td>
-
-Compares versions of a software. Multiple formats are supported including `.`-delimited, leading zeroes, common suffixes like "beta", "EAP". If the version number contains alphabetic characters, they are compared as well, for instance, 1.1e &lt; 1.1g.
-
-</td>
-
-<td>
-
-`maven` __version is more than__ `3.0`
-
-</td>
-
-</tr>
 
 </table>
