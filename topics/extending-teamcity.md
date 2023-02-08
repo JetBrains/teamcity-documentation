@@ -18,4 +18,4 @@ If you cannot find relevant information here, have questions or want to share yo
 
 ## Publicly Available Plugins
 * [TeamCity Plugins](https://plugins.jetbrains.com/teamcity)
-* [Open-source Bundled Plugins](https://confluence.jetbrains.com/display/TW/Open-source+Bundled+Plugins)
+* [Bundled Open-Source Plugins](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html#Bundled+Open-Source+Plugins)

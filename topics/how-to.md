@@ -714,7 +714,7 @@ To present the results for a generic report, the approach might be to generate H
 
 A metrics value can be published as TeamCity statistics via [service message](service-messages.md#Reporting+Build+Statistics) and then displayed in a [custom chart](customizing-statistics-charts.md#Showing+Charts+Only+for+Specific+Build+Configurations+on+Project+Level). You can also configure [build failure condition](build-failure-conditions.md#Fail+Build+on+Metric+Change) based on the metric.
 
-If the tool reports code-attributing information like Inspections or Duplicates, TeamCity-bundled report can be used to display the results. A custom plugin will be necessary to process the tool-specific report into TeamCity-specific data model. Example of this can be found in [XML Test Reporting](xml-report-processing.md) plugin and FXCop plugin (see a link on [Open-source Bundled Plugins](https://confluence.jetbrains.com/display/TW/Open-source+Bundled+Plugins)).
+If the tool reports code-attributing information like Inspections or Duplicates, TeamCity-bundled report can be used to display the results. A custom plugin will be necessary to process the tool-specific report into TeamCity-specific data model. Example of this can be found in [XML Test Reporting](xml-report-processing.md) plugin and FXCop plugin (see a link on the [Bundled Open-Source Plugins](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html#Bundled+Open-Source+Plugins) page).
 
 See also [Import coverage results in TeamCity](importing-arbitrary-coverage-results-to-teamcity.md).
 
