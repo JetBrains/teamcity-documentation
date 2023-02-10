@@ -1,11 +1,17 @@
 [//]: # (title: Continuous Integration with TeamCity)
 [//]: # (auxiliary-id: Continuous Integration with TeamCity)
 
-## What is Continuous Integration?
+TeamCity is a continuous integration/continuous delivery (CI/CD) server.
 
-Continuous Integration is a software development practice in which developers commit code changes into a shared repository several times a day. Each commit is followed by an automated build to ensure that new changes integrate well into the existing code base and to detect problems early.    
+Continuous Integration is a software development practice in which developers 
+commit code changes into a shared repository several times a day. 
+Each commit is followed by an automated build
+to ensure that the new changes integrate well into the existing code base and to detect problems early.
 
->To learn about the basics of continuous integration, refer to our [CI/CD Guide](https://www.jetbrains.com/teamcity/ci-cd-guide/).
+To learn about the basics of continuous integration,
+refer to [our website](https://www.jetbrains.com/teamcity/ci-cd-guide/continuous-integration/).
+
+>[TeamCity CI/CD Guide](https://www.jetbrains.com/teamcity/ci-cd-guide/) provides detailed information about continuous integration/continuous delivery with TeamCity.
 
 ## What is TeamCity?
 
@@ -30,16 +36,17 @@ This video gives a general overview of the main TeamCity features:
 * Optimize the code integration cycle and be sure you never get broken code in the repository
 * Review on-the-fly test results reporting with intelligent tests reordering
 * Run code coverage and duplicates finder for Java and .NET
-* Customize statistics on build duration, success rate, code quality, and custom metrics
+* Customize statistics on the build's duration, success rate, code quality, and custom metrics
 * and much more
 
 To learn more about major TeamCity features, refer to the [official JetBrains website](http://www.jetbrains.com/teamcity/features/index.html).
 
-TeamCity works great not only for admins and build engineers, but also for developers. Watch this video to see some of the signature features it provides:
+TeamCity works well not only for administrators and build engineers, but also for developers. 
+Watch this video to learn about some of its signature features:
 <video href="icuhBgEFtVM"
        title="TeamCity for developers"/>
 
-The complete list of supported platforms and environments can be found [here](supported-platforms-and-environments.md).
+The complete list of supported platforms and environments is available [here](supported-platforms-and-environments.md).
 
 ## Basic TeamCity concepts
 
@@ -69,16 +76,26 @@ __Build agent__
 
 <td>
 
-A piece of software that actually executes a build process. It is installed and configured separately from the TeamCity server, that is the agent can be installed on a separate machine (physical or virtual, and it can run the same operating system (OS) as the server or a different OS.  
-Build agents in TeamCity can have different platforms, operating systems, and preconfigured environments that you may want to test your software on. Different types of tests can be run under different platforms simultaneously so the developers get faster feedback and more reliable testing results.
+A piece of software that actually executes the build process. 
+It is installed and configured separately from the TeamCity server. 
+The agent can be installed on a separate machine (physical or virtual, 
+and it can run the same operating system (OS) as the server or a different OS.  
+Build agents in TeamCity can have different platforms, operating systems, and preconfigured environments. 
+Different types of tests can be run on different platforms simultaneously, 
+so the developers get faster feedback and more reliable testing results.
 {product="tc"}
 
 >It is possible for the server and an agent to coexist on the same computer, but for production purposes, we recommend installing them on different machines for a number of reasons, the server performance being the most important.
 >
 {type="note" product="tc"}
 
-A piece of software that actually executes a build process. It is installed and configured separately from the TeamCity server. You get access to Cloud agents with your TeamCity Cloud subscription, but you can also host agents on a physical machine.  
-Build agents in TeamCity can have different platforms, operating systems, and preconfigured environments that you may want to test your software on. Different types of tests can be run under different platforms simultaneously so the developers get faster feedback and more reliable testing results.
+A piece of software that actually executes the build process. 
+It is installed and configured separately from the TeamCity server. 
+You get access to Cloud agents with your TeamCity Cloud subscription, 
+but you can also host agents on a physical machine.  
+Build agents in TeamCity can have different platforms, operating systems, and preconfigured environments. 
+Different types of tests can be run on different platforms simultaneously, 
+so the developers get faster feedback and more reliable testing results.
 {product="tcc"}
 
 </td></tr><tr>
@@ -180,9 +197,14 @@ __Build__
 
 <td>
 
-A CI/CD job executed on an agent. Consists of one or more steps that can do any service task: compile, test, deploy, produce reports, and so on.
+A CI/CD job executed on an agent. 
+It consists of one or more steps that can do any service task: compile, test, deploy, produce reports, and so on.
 
-The term _build_ can refer to both the actual process of building and the result of building. After the build process is triggered, it is put into the _[build queue](working-with-build-queue.md)_ and is started when there are agents available to run it. After the build is finished, the build agent sends _[build artifacts](build-artifact.md)_ to the server. 
+The term _build_ can refer to both the actual process of building and the result of building. 
+After a build is triggered, 
+it is placed into the _[build queue](working-with-build-queue.md)_ 
+and is started when a compatible agent becomes available. 
+After the build is finished, the build agent sends _[build artifacts](build-artifact.md)_ to the server. 
 
 </td></tr><tr>
 
@@ -194,7 +216,7 @@ __Build queue__
 
 <td>
 
-A list of builds that were triggered and are waiting to be started. TeamCity will distribute them to _[compatible](agent-requirements.md)_ build agents as soon as the agents become idle. A queued build is assigned to an agent at the moment when it is started on the agent; no preassignment is made while the build is waiting in the build queue.
+A list of builds that were triggered and are waiting to be started. TeamCity will distribute them to _[compatible](agent-requirements.md)_ build agents as soon as the agents become idle. A queued build is assigned to an agent at the moment when it is started on the agent; no pre-assignment is made while the build is waiting in the build queue.
 
 
 </td></tr><tr>
@@ -214,14 +236,15 @@ Files produced by a build, for example, installers, WAR files, reports, log file
 
 ### Basic CI Workflow in TeamCity
 
-To understand the data flow between the server and the agents, what is passed to the agents, how and when TeamCity gets the results, let's take a look at a simple build lifecycle.
+To understand the data flow between the server and the agents, 
+what is passed to the agents, how and when TeamCity gets the results, let us take a look at a simple build lifecycle.
 
 <img src="cicd-flow.png" width="711" alt="Basic CI flow with TeamCity"/>
 
 1. The TeamCity server detects a change in your VCS root (repository).
 2. The server stores this change in the database.
-3. The trigger, attached to the build configuration, detects the relevant change in the database and initiates the build.
-4. The triggered build gets to the build queue.
-5. The build is assigned to a free and compatible build agent.
-6. The agent executes build steps, described in the build configuration. While executing the steps, the agent reports the build progress to the TeamCity server. It is sending all the log messages, test reports, code coverage results on the fly, so you can monitor the build process in real time.
+3. The trigger, attached to the build configuration, detects the relevant change in the database and initiates a build.
+4. The triggered build appears in the build queue.
+5. The build is assigned to a free compatible build agent.
+6. The agent executes the build steps, described in the build configuration. While executing the steps, the agent reports the build progress to the TeamCity server. It sends all the log messages, test reports, code coverage results on the fly, so you can monitor the build process in real time.
 7. After finishing the build, the agent sends build artifacts to the server.
