@@ -108,7 +108,13 @@ __TeamCity Server__
 
 <td>
 
-The __server__ itself __does not run either builds or tests:__ the server's job is to monitor all the connected build agents, distribute [queued builds](working-with-build-queue.md) to the agents based on compatibility requirements, and report the results. All information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, and so on, are stored in a database.
+The __server__ itself __does not run either builds or tests:__ 
+the server's job is to monitor all the connected build agents, 
+distribute [queued builds](working-with-build-queue.md) to the agents based on compatibility requirements, 
+and report the results. 
+All information on the build results 
+(build history and all the build-associated data except for artifacts and build logs), VCS changes, 
+agents, build queue, user accounts, user permissions, and so on, are stored in a database.
 
 >It is possible for the server and an agent to coexist on the same computer, but for production purposes, we recommend installing them on different machines for a number of reasons, the server performance being the most important.
 >
@@ -137,7 +143,9 @@ __Build configuration__
 
 <td>
 
-A combination of settings defining a build procedure. The settings include _[VCS roots](vcs-root.md)_, _[build steps](configuring-build-steps.md)_, _[build triggers](configuring-build-triggers.md)_ described below.
+A combination of settings defining a build procedure. 
+The settings include _[VCS roots](vcs-root.md)_, _[build steps](configuring-build-steps.md)_, 
+and _[build triggers](configuring-build-triggers.md)_ described below.
 
 </td></tr><tr>
 
@@ -149,7 +157,10 @@ __VCS root__
 
 <td>
 
-A collection of version control settings (paths to sources, username, password, _[checkout mode](vcs-checkout-mode.md)_ and other settings) that defines how TeamCity communicates with a version control (SCM) system to monitor changes and get sources for a build.
+A collection of version control settings 
+(paths to sources, username, password, _[checkout mode](vcs-checkout-mode.md)_, and other settings) 
+that defines how TeamCity communicates with a version control system (VCS)
+to monitor changes and get sources for a build.
 
 </td></tr><tr>
 
