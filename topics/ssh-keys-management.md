@@ -3,17 +3,20 @@
 
 You can upload private SSH keys into TeamCity projects. Uploaded keys can be used for VCS Root configurations, and in the [SSH Agent](ssh-agent.md) build feature.
 
+
+
 ## Supported Key Format
 
 TeamCity supports keys in the PEM and OpenSSH formats. Keys that use different formats need to be converted. For example, you can use the [PuTTY Key Generator](https://www.puttygen.com/) to convert unsupported Putty private keys (`*.ppk`) to the PEM format. To do this, navigate to the **Conversions | Export OpenSSH key** menu.
 
 ## Upload SSH Keys to TeamCity Server
 
-To allow your projects to access remote repositories via SSH keys, you first need to upload these keys to your TeamCity server.
+To allow your projects to access remote repositories via SSH keys, you first need to upload these keys to your server.
 
 1. In __[Project Settings](creating-and-editing-projects.md#Managing+Project)__, click __SSH Keys__.
 2. On the __SSH Keys__ page, click __Upload SSH Key__.
-3. In the "_Upload SSH Key_" dialog, browse for a private key file and specify a name for this uploaded key.
+3. In the "_Upload SSH Key_" dialog, browse for a private key file and specify a name for this key.
+4. Click **Save** to save the uploaded key.
 
 <img src="ssh-keys.png" width="706" alt="Add SSH Keys to TeamCity"/>
 
@@ -25,10 +28,14 @@ Uploaded SSH keys are stored in the `<[TeamCity Data Directory](teamcity-data-di
 
 ## Configure VCS Root Settings
 
-Once required SSH keys are uploaded, modify VCS Root settings to select a key that your project should use.
+Once required SSH keys are uploaded, modify the VCS Root settings to select a key that your project should use.
+
+
+> Private SSH keys are employed only when your VCS root is configured to work with a remote repository via an SSH URL (for instance, `git@github.com:...`). If your "Fetch URL" / "Push URL" in **Project Settings** are set to HTTPS (for instance, `https://github.com/...`), authorization with SSH keys is disabled.
+> 
+{type="note"}
 
 > Watch our **video tutorial** on [how to check out from SSH repositories](https://www.youtube.com/watch?v=nUTb1BjMMoE) with SSH keys.
-
 
 1. Go to the **Project Settings | VCS Roots** page and click the required root.
 2. In the **Authentication Settings** section, click the required "Private Key" option:

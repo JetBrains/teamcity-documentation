@@ -62,9 +62,26 @@ The migration tool copies or moves artifacts to the currently active storage. Be
 
 Open the terminal at the _&lt;artifacts_migration_tool&gt;/bin_ folder and run the "migrate" (Linux, macOS) or "migrate.bat" (Windows) file with the `--project` (`-p`) parameter. This parameter accepts [external project IDs](identifier.md#External+IDs) as values.
 
+<tabs>
+
+<tab title="Linux / macOS">
+
 ```Shell
 ./migrate --project="NetFrameworkProject3"
-```
+``` 
+</tab>
+
+<tab title="Windows">
+
+```Shell
+migrate.bat --project="NetFrameworkProject3"
+``` 
+</tab>
+
+</tabs>
+
+
+
 
 You can add the `--recursive` (`-r`) parameter to specify whether the tool should recursively process all subprojects of the selected project.
 
@@ -74,11 +91,28 @@ If you need to migrate artifacts from cloud storage rather than a local director
 
 <img src="dk-getCloudStorageID.png" width="708" alt="Obtain cloud storage ID"/>
 
+
+<tabs>
+
+<tab title="Linux / macOS">
+
+```Shell
+./migrate -p "NetFrameworkProject3" --source="PROJECT_EXT_2"
+``` 
+</tab>
+
+<tab title="Windows">
+
 ```Shell
 migrate.bat -p "NetFrameworkProject3" --source="PROJECT_EXT_2"
-```
+``` 
+</tab>
 
-> Currently, the tool accepts only Amazon S3 buckets as sources.
+</tabs>
+
+
+
+> Currently, the tool accepts only Amazon S3 bucket IDs as the "source" parameter values.
 
 The first time you run the migration tool in this mode, it detects artifacts that should be copied, saves the migration plan, and asks you for the next step.
 
@@ -100,9 +134,26 @@ To migrate artifacts in one go (without the tool asking you for confirmation or 
 
 For example, the following command moves artifacts from the given Amazon S3 storage to a currently active storage.
 
+<tabs>
+
+<tab title="Linux / macOS">
+
 ```Shell
-migrate.bat --project="SampleProject" --source="PROJECT_EXT_2" --remove-artifacts-in-source
-```
+./migrate --project="SampleProject" --source="PROJECT_EXT_2" --start-migration --remove-artifacts-in-source
+``` 
+</tab>
+
+<tab title="Windows">
+
+```Shell
+migrate.bat --project="SampleProject" --source="PROJECT_EXT_2" --start-migration --remove-artifacts-in-source
+``` 
+</tab>
+
+</tabs>
+
+
+
 
 ## Additional Configuration Properties
 
