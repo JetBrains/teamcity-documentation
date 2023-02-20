@@ -10,9 +10,14 @@ In addition to Bitbucket Cloud, TeamCity now supports Bitbucket Server and Data 
 See the following links for more information: [Configuring Connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) | [Creating and Editing Projects](creating-and-editing-projects.md#Creating+project+pointing+to+Bitbucket)
 
 
-## 2023.03 Feature 2
+## Run Steps only for Failed Builds
 
-Feature 2
+You can now choose the "Only if build status is failed" [execution policy](configuring-build-steps.md#Execution+Policy) for individual steps. This policy allows you to create steps that will be ignored when your build finishes successfully, and employed only when it fails.
+
+
+<img src="dk-whatsnew2303-onlywhenfails.png" width="708" alt="Run the build step only when the build fails"/>
+
+
 
 ## 2023.03 Feature 3
 
