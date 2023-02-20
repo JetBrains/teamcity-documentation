@@ -48,8 +48,16 @@ Only cloud agent images configured in the `<Root>` project can be moved using __
 
 ### Projects Tab
 
-To bind certain projects to an agent pool, open the __Projects__ tab, click __Assign projects__, and select the required projects. You can choose to detach them from their previous pools, if necessary.  
-After you save the settings, TeamCity will only be running builds of these projects on the agents from the current pool.
+The "Projects" tab lets you specify which agent pools your projects can utilize.
+
+
+* Check the list of projects to check which projects can run their build steps on agents that belong to the currently selected pool.
+* Click the **Assign projects** button to allow required projects to utilize this pool.
+* Click the **Dissociate** button to prevent the target project from using this pool.
+
+<img src="dk-AgentPool-Projects.png" width="708" alt="The Projects tab of the agent pool settings page"/> 
+
+Note that if you unbind a project from all existing agent pools, you can no longer run this project (unless it consists entirely from [agentless build steps](agentless-build-step.md)).
 
 <seealso>
         <category ref="concepts">
