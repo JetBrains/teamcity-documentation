@@ -30,12 +30,14 @@ Commit Status Publisher supports the GitHub URL in the following format:
 * For GitHub Enterprise: `http[s]://<host>[:<port>]/api/v3`
 
 For connection, select one of the available authentication types:
-* _Access Token_   
-  Use a personal access token or obtain a token through an OAuth connection. The token must have the following scopes:
+* **Access Token** — use a personal access token or obtain a token through an OAuth connection. The token must have the following scopes:
     * for public repositories: `public_repo` and `repo:status`
     * for private repositories: `repo`
-* _Password_   
-  Provide the GitHub username and password.
+  
+  If you have a [configured OAuth connection](configuring-connections.md#GitHub) to GitHub, you can click the magic wand button to let TeamCity automatically retrieve the corresponding access token.
+  
+  <img src="dk-CSP-GitHubToken.png" width="708" alt="Acquire access token for GitHub"/>
+* **Password** — Provide the GitHub username and password.
 
 Note that the password authentication will not work if connecting to a GitHub Enterprise repository or if the user's GitHub account is protected with a two-factor authentication. In these cases, use an access token instead.
 
@@ -55,11 +57,19 @@ The GitLab credentials for Commit Status Publisher must belong to a user with a 
 To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111){nullable="true"}. Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111){nullable="true"}, are rejected by the Bitbucket API.
 {product="tc"}
 
-In the Commit Status Publisher settings, specify a username and [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) (or token) for authentication. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password.
+In the Commit Status Publisher settings, specify a username and [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) for authentication. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password.
+
+If you switch the **Authentication Type** to "Access Token", TeamCity will display a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Cloud) to Bitbucket Cloud. Click the **Acquire** button next to a required connection to obtain an access token.
+
+<img src="dk-CSP-BBCloudToken.png" width="708" alt="Acquire access token for Bitbucket Cloud"/>
 
 ### Bitbucket Server
 
-Commit Status Publisher supports the Bitbucket Server URL in the following format: `http[s]://<hostname>:<port>`. Apart from the URL, you need to specify a username and password (or token) for authentication.
+Commit Status Publisher supports the Bitbucket Server URL in the following format: `http[s]://<hostname>:<port>`. Apart from the URL, you need to specify a username and password for authentication.
+
+If you switch the **Authentication Type** to "Access Token", TeamCity will display a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) to Bitbucket Server / Data Center. Click the **Acquire** button next to a required connection to obtain an access token.
+
+<img src="dk-CSP-BBServerToken.png" width="708" alt="Acquire access token for Bitbucket Server"/>
 
 To protect a branch and ensure that only verified pull requests are merged into it, you can specify [required builds](https://confluence.atlassian.com/bitbucketserver/checks-for-merging-pull-requests-776640039.html#Checksformergingpullrequests-Requiredbuildsmergecheck) in your Bitbucket repository settings. To set a TeamCity build as a _required build_, open the __Add required builds__ page in Bitbucket and specify a build configuration ID as a build key in the __Add builds__ field. In this case, Bitbucket will not allow a pull request to be merged until the build on requested changes finishes successfully.
 
