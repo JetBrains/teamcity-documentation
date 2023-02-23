@@ -19,9 +19,12 @@ You can now choose the "Only if build status is failed" [execution policy](confi
 
 
 
-## 2023.03 Feature 3
+## Server Health Reports for Archived Projects
 
-Feature 3
+You can now generate [Server Health reports](server-health.md) for archived projects. To do this, select the *&lt;Archived Projects&gt;* scope.
+
+<img src="dk-serverHealthArhived.png" width="708" alt="Server Health Reports for Archived Projects"/>
+
 
 
 ## Fixed issues

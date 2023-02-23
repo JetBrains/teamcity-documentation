@@ -7,7 +7,7 @@ The Project Administrator [permissions](managing-roles-and-permissions.md) at le
 
 ## Scope and Severity
 
-The report enables you to define the analysis __scope__: you can select to analyze the global configuration or report on project-related items. The scope available to you depends on the level of the __View Project__ permission granted to you. _Note that the report is not available for archived projects._
+The report enables you to define the analysis __scope__: you can select to analyze the global configuration or report on project-related items. The scope available to you depends on the level of the __View Project__ permission granted to you.
 
 The Server Health analysis also employs the __severity__ rating, depending on the issue impact on the configuration of the system on the whole or an individual project.
 
