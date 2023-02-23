@@ -68,7 +68,7 @@ TeamCity Agent is tested under the following operating systems:
 * macOS
 * Windows 7/7x64
 * Windows 10
-* Windows Server 2003/2008, 2012, 2016, 2019
+* Windows Server 2003/2008, 2012, 2016, 2019, 2022
 * Server Core installation of Windows Server 2016
 
 Reportedly works on:
@@ -275,7 +275,7 @@ TeamCity Agent is tested under the following operating systems:
 * macOS
 * Windows 7/7x64
 * Windows 10
-* Windows Server 2003/2008, 2012, 2016, 2019
+* Windows Server 2003/2008, 2012, 2016, 2019, 2022
 * Server Core installation of Windows Server 2016
 
 Reportedly works on:
