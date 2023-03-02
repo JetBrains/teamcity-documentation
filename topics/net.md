@@ -502,11 +502,10 @@ Test filtration
 <td>
 
 Select the test filtration mode:
-* _Test names_: Of all tests discovered in the included assemblies, only the tests with the names matching the provided values will be run. For multiple values, separate them with a new line. If the field is empty, all tests will be run.   
-See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/jj155800.aspx).
-* _Test case filter_: Run tests that match the given expression.   
-See details in the [Microsoft documentation](https://msdn.microsoft.com/en-us/library/jj155800.aspx).
+* _Test names_: Of all tests discovered in the included assemblies, only the tests with the names matching the provided values will be run. For multiple values, separate them with a new line. If the field is empty, all tests will be run. See details in the [Microsoft documentation](https://learn.microsoft.com/en-us/visualstudio/test/vstest-console-options?view=vs-2022#general-command-line-options).
+* _Test case filter_: Run tests that match the given expression. See details in the [Microsoft documentation](https://learn.microsoft.com/en-us/visualstudio/test/vstest-console-options?view=vs-2022#general-command-line-options).
 
+See also: [Run selected unit tests](https://learn.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests?pivots=mstest)
 </td>
 
 </tr>
