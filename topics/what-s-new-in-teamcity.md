@@ -12,7 +12,7 @@ See the following links for more information: [Configuring Connections](configur
 
 ## Run Steps only for Failed Builds
 
-You can now choose the "Only if build status is failed" [execution policy](configuring-build-steps.md#Execution+Policy) for individual steps. This policy allows you to create steps that will be ignored when your build finishes successfully, and employed only when it fails.
+You can now choose the "Only if build status is failed" [execution policy](configuring-build-steps.md#Execution+Policy) for individual steps. This policy allows you to create steps that will be ignored when your build finishes successfully and executed only when it fails.
 
 
 <img src="dk-whatsnew2303-onlywhenfails.png" width="708" alt="Run the build step only when the build fails"/>

@@ -34,7 +34,7 @@ For the details on configuring individual build steps, refer to the respective p
 
 You can specify the step execution policy via the __Execute step__ option:
 
-* __Only if build status is successful__ — before starting the step, the build agent requests the build status from the server, and skips the step if the status is "failed". This considers the failure conditions processed by the server, like failure on test failures or on metric change. Note that this still can be not exact as some failure conditions are processed on the server asynchronously ([TW-17015](https://youtrack.jetbrains.com/issue/TW-17015)).
+* __Only if build status is successful__ — before starting the step, the build agent requests the build status from the server, and skips the step if the status is "failed". This considers the failure conditions processed by the server, like failure on test failures or on metric change. Note that this still may be not exact as some failure conditions are processed on the server asynchronously ([TW-17015](https://youtrack.jetbrains.com/issue/TW-17015)).
 
 * **Only if build status is failed** — same as above, but the agent skips the step if the build status is "success". This condition allows you to add steps that are executed only when a build fails. For example, you can run tasks that rollback the latest changes to the remote repository that introduced the issue.
 

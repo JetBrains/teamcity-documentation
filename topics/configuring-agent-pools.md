@@ -51,13 +51,13 @@ Only cloud agent images configured in the `<Root>` project can be moved using __
 The "Projects" tab lets you specify which agent pools your projects can utilize.
 
 
-* Browse the list of projects to check which projects can run their build steps on agents that belong to the currently selected pool.
+* Browse the list of projects to check which projects can run their builds on agents that belong to the currently selected pool.
 * Click the **Assign projects** button to allow required projects to utilize this pool.
 * Click the **Dissociate** button to prevent the target project from using this pool.
 
 <img src="dk-AgentPool-Projects.png" width="708" alt="The Projects tab of the agent pool settings page"/> 
 
-Note that if you unbind a project from all existing agent pools, you can no longer run build configurations of this project (unless they consist entirely from [agentless build steps](agentless-build-step.md)).
+Note that if you unbind a project from all existing agent pools, you can no longer run the build configurations of this project (unless they consist entirely of [agentless build steps](agentless-build-step.md)).
 
 <seealso>
         <category ref="concepts">
