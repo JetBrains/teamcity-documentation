@@ -29,6 +29,25 @@ sum(increase(vcs_changes_checking_milliseconds_total{ type="COLLECT_CHANGES"}[1m
 TeamCity will not report the `experimental` tag for metrics anymore. The `?experimental=true` URL parameter for metrics endpoints will still work, and some of the metrics will still have the experimental status.
 
 
+
+## Changes from 2022.10.1 to 2022.10.2
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2022-10-2"}
+
+* The bundled Git was updated to version 2.39.1 in both Server and Agent Docker images.
+* The Perforce Helix Core client (p4) was updated to version 22022.2-2369846 in Agent Docker images.
+* The bundled Apache Tomcat was updated to version 8.5.84.
+
+
+### Upcoming REST API Updates
+
+The Web Application Description Language (WADL) generator will be removed in version 2023.05 since we now utilize Swagger to generate documentation [REST API](teamcity-rest-api.md) and client code.
+
+If you rely on this generator tool, [contact us](feedback.md) to share your business requirements.
+
+
+
 ## Changes from 2022.10 to 2022.10.1
 
 ### AWS Connection 
