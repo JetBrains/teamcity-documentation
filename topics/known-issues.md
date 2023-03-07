@@ -512,6 +512,15 @@ If [Artifacts Domain Isolation](teamcity-configuration-and-maintenance.md#artifa
   See the [related issue](https://youtrack.jetbrains.com/issue/TW-74379) for more details.
 * The [Pull Requests](pull-requests.md) build feature could post a wrong build step number to the merge request timeline in __JetBrains Space__. See the [related issue](https://youtrack.jetbrains.com/issue/TW-74374).
 
+## Issues related to Git Repository Ownership Checks
+
+Due to [more strict repository ownership checks](https://github.blog/2022-04-18-highlights-from-git-2-36/#stricter-repository-ownership-checks) introduced in Git 2.35.2, updating the TeamCity server's Git to this or a newer version may result in malfunctions (for instance, the _"fatal: could not read from remote repository"_ message). Try the following workarounds as temporary solutions:
+
+* If your TeamCity server runs on Linux, ensure the volume with the &lt;TeamCity data dir&gt;/system/caches/git directory is mounted under the same user that TeamCity utilizes to access this directory.
+
+* If you experience related issues on a TeamCity Server installed or updated via a Windows Docker image, disable the [native Git](https://www.jetbrains.com/help/teamcity/git.html#Native+Git+for+VCS-related+operations+on+the+server) to force the TeamCity server to use JGit instead.
+
+
 ## Known issues of native Git checkout
 
 These issues concern the use of native [Git](git.md) for checking out sources to the TeamCity server, effective since [version 2022.04](https://www.jetbrains.com/help/teamcity/2022.04/what-s-new-in-teamcity.html#Native+Git).

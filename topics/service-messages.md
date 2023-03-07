@@ -1014,7 +1014,7 @@ If you need to cancel a build from a script, for example, if a build cannot proc
 echo "##teamcity[buildStop comment='canceling comment' readdToQueue='true']"
 ```
 
-If required, you can re-add the build to the queue after canceling it.
+If required, you can re-add the build to the queue after canceling it. By default, TeamCity will do 3 attempts to re-add the build into the queue. 
 
 ## Libraries Reporting Results via TeamCity Service Messages
 

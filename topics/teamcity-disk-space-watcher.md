@@ -76,7 +76,7 @@ You can use [Disk Usage](disk-usage.md) report to evaluate what projects use the
 <seealso>
         <category ref="admin-guide">
             <a href="free-disk-space.md">Free disk space on agent</a>
-            <a href="disk-usage.md">[Disk Usage</a>
+            <a href="disk-usage.md">Disk Usage</a>
             <a href="teamcity-data-clean-up.md">Clean-up</a>
         </category>
 </seealso>
