@@ -16,7 +16,7 @@ To select the required 2FA authentication mode, navigate to the **Administration
 | Disabled  | Users cannot set up 2FA.                                                                                                                                                                        |
 
 
-## Enable 2FA for Individual User Groups
+## Force 2FA for Individual User Groups
 {product="tc"}
 
 If the global two-factor authentication mode is "Optional", you can force individual [user groups](creating-and-managing-user-groups.md) to use 2FA. To do so, add the `teamcity.2fa.mandatoryUserGroupKey` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set its value to the required group key.
@@ -25,7 +25,7 @@ If the global two-factor authentication mode is "Optional", you can force indivi
 teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
 ```
 
-User groups with mandatory 2FA mode share this requirement with their child user groups. This means you can create a new user group, assign its key to the `mandatoryUserGroupKey` internal property, and set this group as a parent for all existing groups whose users are required to use 2FA. 
+User groups with mandatory 2FA mode share this requirement with their child user groups. You can use this behavior to force 2FA for multiple groups at once. To do this, create a new user group, assign its key to the `mandatoryUserGroupKey` internal property, and set this group as a parent for all existing groups whose users are required to use 2FA. 
 
 <img src="dk-2FAGroups.png" width="708" alt="Parent user group with enforced 2FA"/>
 
