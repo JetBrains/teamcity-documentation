@@ -20,7 +20,7 @@ You can now choose the "Only if build status is failed" [execution policy](confi
 
 ## New Build Cache Feature
 
-We're expanding the list of [build features](adding-build-features.md) with **Build Cache** — the feature that allows you to cache files used by a build configuration (for example, Maven dependencies or NodeJS packages). Cached files can be reused by the same build configuration during subsequent runs, or shared with other configurations that belong to the same project. When a build starts, a TeamCity agent downloads the latest cache version to the project's working directory, thus optimizing the build process and eliminating redundant operations.
+We're expanding the list of [build features](adding-build-features.md) with **Build Cache** — the feature that allows you to cache files used by a build configuration (for example, Maven dependencies or NodeJS packages). Cached files can be reused by the same build configuration during subsequent runs, or shared with other configurations that belong to the same project. When a build starts, a TeamCity agent downloads the latest cache version to the project's working directory, thus optimizing and accelerating the build process.
 
 <img src="dk-buildCache-split.png" width="706" alt="Reuse caches published by other configurations"/> 
 
