@@ -7,11 +7,17 @@ __01 January 2023__
 
 ### Bug
 
+**[TW-80094](https://youtrack.jetbrains.com/issue/TW-80094/Warning-Could-not-delete-build-artifacts-upload-directory-in-teamcity-server.log)** — Warning "Could not delete build artifacts upload directory" in teamcity-server.log
+
+**[TW-79966](https://youtrack.jetbrains.com/issue/TW-79966/UnsupportedOperationException-getProject-should-not-be-called-for-class)** — UnsupportedOperationException: 'getProject()' should not be called for class jetbrains.buildServer.serverSide.impl.persisting.projects.PersistTaskSerializer$1
+
+**[TW-79563](https://youtrack.jetbrains.com/issue/TW-79563/Slack-notification-sign-in-doesnt-work-on-secondary-nodes)** — Slack notification: sign in doesn't work on secondary nodes
+
+**[TW-77920](https://youtrack.jetbrains.com/issue/TW-77920/SQLIntegrityConstraintViolationException-on-attempt-to-change-project-visibility-on-the-secondary-node)** — SQLIntegrityConstraintViolationException on attempt to change project visibility on the secondary node
+
+**[TW-79311](https://youtrack.jetbrains.com/issue/TW-79311/Could-not-generate-new-internal-id-for-external-id-error-on-an-attempt-to-copy-a-build-configuration-on-a-secondary-node)** — "Could not generate new internal id for external id" error on an attempt to copy a build configuration on a secondary node
+
 **[TW-77324](https://youtrack.jetbrains.com/issue/TW-77324/Incorrect-error-message-when-specifying-an-unsupported-number-of-batches)** — Incorrect error message when specifying an unsupported number of batches
-
-**[TW-79711](https://youtrack.jetbrains.com/issue/TW-79711/Use-common-threadpool-for-all-cloud-profiles)** — Use common threadpool for all cloud profiles
-
-**[TW-79513](https://youtrack.jetbrains.com/issue/TW-79513/VCS-labels-arent-displayed-on-Changes-page)** — VCS labels aren't displayed on Changes page
 
 **[TW-78095](https://youtrack.jetbrains.com/issue/TW-78095/Return-the-field-BuildType.compatibleCloudImages)** — Return the field 'BuildType.compatibleCloudImages'
 
@@ -23,17 +29,9 @@ __01 January 2023__
 
 **[TW-78839](https://youtrack.jetbrains.com/issue/TW-78839/Consider-changing-order-of-build-problems-and-changes-in-default-notification-template-for-failed-builds)** — Consider changing order of build problems and changes in default notification template for failed builds
 
-**[TW-78857](https://youtrack.jetbrains.com/issue/TW-78857/Hide-but-not-delete-project-pools-for-non-existing-projects)** — Hide (but not delete) project pools for non-existing projects
-
-**[TW-79137](https://youtrack.jetbrains.com/issue/TW-79137/Permission-problem-in-attempt-to-docker-compose-up-TeamCity-server-with-agents-from-teamcity-docker-samples)** — Permission problem in attempt to docker-compose up TeamCity server with agents from teamcity-docker-samples
-
 **[TW-66824](https://youtrack.jetbrains.com/issue/TW-66824/Typo-in-Cloud-profile.-No-images-were-found-due-to-a-error.)** — Typo in Cloud profile. No images were found due to a error.
 
-**[TW-79923](https://youtrack.jetbrains.com/issue/TW-79923/VCS-trigger-with-quiet-period-triggers-build-immediately-in-case-of-fast-forward-merge)** — VCS trigger with quiet period triggers build immediately in case of fast-forward merge
-
 **[TW-78965](https://youtrack.jetbrains.com/issue/TW-78965/NoSuchElementException-in-TokenAuthenticationModelImpl)** — NoSuchElementException in TokenAuthenticationModelImpl
-
-**[TW-79848](https://youtrack.jetbrains.com/issue/TW-79848/Test-metadata-is-not-reported-for-finished-tests-in-different-flow-id-with-test-batching-enabled)** — Test metadata is not reported for finished tests in different flow id with test batching enabled
 
 **[TW-74322](https://youtrack.jetbrains.com/issue/TW-74322/Agent-sidebar-is-scrolled-to-the-selected-item-when-I-expand-a-pool-or-in-image)** — Agent sidebar is scrolled to the selected item when I expand a pool or in image
 
@@ -48,8 +46,6 @@ __01 January 2023__
 **[TW-77341](https://youtrack.jetbrains.com/issue/TW-77341/Build-status-is-not-being-refreshed-on-the-Tests-tab)** — Build status is not being refreshed on the Tests tab
 
 **[TW-78502](https://youtrack.jetbrains.com/issue/TW-78502/Navigating-to-changes-or-agents-page-adds-two-Browser-history-entries)** — Navigating to /changes or /agents page adds two Browser history entries
-
-**[TW-79094](https://youtrack.jetbrains.com/issue/TW-79094/Infinite-loading-of-a-build-from-an-archive-project-and-an-automatically-generated-project-for-parallel-tests)** — Infinite loading of a build from an archive project and an automatically generated project (for parallel tests)
 
 **[TW-79092](https://youtrack.jetbrains.com/issue/TW-79092/Build-page-belonging-to-removed-build-configuration-hangs-in-infinite-loading-build-buildID)** — Build page belonging to removed build configuration hangs in infinite loading (/build/buildID)
 
@@ -71,13 +67,7 @@ __01 January 2023__
 
 **[TW-79396](https://youtrack.jetbrains.com/issue/TW-79396/Infinite-loading-in-the-build-type-overview-tab-after-pagination)** — Infinite loading in the build type overview tab after pagination
 
-**[TW-79083](https://youtrack.jetbrains.com/issue/TW-79083/Cant-open-the-custom-plugin-tab-on-the-Build-Configuration-level-if-the-brach-is-selected-in-the-branch-selector)** — Can't open the custom/plugin tab on the Build Configuration level if the brach is selected in the branch selector
-
 **[TW-79479](https://youtrack.jetbrains.com/issue/TW-79479/JS-Plugins-are-crashing-if-content-is-an-empty-string)** — JS Plugins are crashing if content is an empty string
-
-**[TW-78849](https://youtrack.jetbrains.com/issue/TW-78849/Allow-disabling-Sakura-UI-banner-on-a-per-user-basis)** — Allow disabling Sakura UI banner on a per-user basis
-
-**[TW-78661](https://youtrack.jetbrains.com/issue/TW-78661/Clicking-on-the-build-status-on-the-Dependencies-List-tab-resets-filters-before-redirect)** — Clicking on the build status on the Dependencies -> List tab resets filters before redirect
 
 **[TW-78952](https://youtrack.jetbrains.com/issue/TW-78952/Confusing-message-Reused-N-build-from-previous-build-chains.-can-be-shown-for-the-first-chain)** — Confusing message "Reused N build from previous build chains." can be shown for the first chain
 
@@ -88,8 +78,6 @@ __01 January 2023__
 **[TW-79336](https://youtrack.jetbrains.com/issue/TW-79336/Infinite-loader-on-build-page-in-an-archived-project)** — Infinite loader on build page in an archived project
 
 **[TW-79304](https://youtrack.jetbrains.com/issue/TW-79304/Build-card-on-a-dependencies-timeline-has-weird-height-when-opened)** — Build 'card' on a dependencies timeline has weird height when opened
-
-**[TW-79710](https://youtrack.jetbrains.com/issue/TW-79710/Build-can-fail-to-download-another-build-artifacts-in-case-of-multi-node-setup-and-external-artifacts-storage)** — Build can fail to download another build artifacts in case of multi-node setup and external artifacts storage
 
 **[TW-79773](https://youtrack.jetbrains.com/issue/TW-79773/Build-is-marked-as-failed-when-TC-is-fail-to-login-to-an-optional-registry)** — Build is marked as failed when TC is fail to login to an optional registry
 
@@ -117,8 +105,6 @@ __01 January 2023__
 
 **[TW-79400](https://youtrack.jetbrains.com/issue/TW-79400/Build-hangs-for-12-hours-with-Error-downloading-patch-into-temporary-file...-Read-timed-out-error)** — Build hangs for 12 hours with 'Error downloading patch into temporary file:... Read timed out' error
 
-**[TW-79368](https://youtrack.jetbrains.com/issue/TW-79368/Wrong-maximum-number-of-batches-in-parallel-tests)** — Wrong maximum number of batches in parallel tests
-
 **[TW-74177](https://youtrack.jetbrains.com/issue/TW-74177/Critical-error-in-configuration-of-archived-project-report-should-show-the-list-of-affected-projects)** — Critical error in configuration of archived project: report should show the list of affected projects
 
 **[TW-79562](https://youtrack.jetbrains.com/issue/TW-79562/Confusing-error-Could-not-find-the-version-file-metadata-metadata-version.dat-in-the-backup-archive-when-structure-of-archive)** — Confusing error "Could not find the version file (metadata/metadata-version.dat) in the backup archive" when structure of archive with the backup is wrong
@@ -131,21 +117,9 @@ __01 January 2023__
 
 **[TW-79110](https://youtrack.jetbrains.com/issue/TW-79110/Set-English-language-for-native-git-explicitly)** — Set English language for native git explicitly
 
-**[TW-78250](https://youtrack.jetbrains.com/issue/TW-78250/Passwords-and-tokens-starting-with-a-hyphen-do-not-work-for-a-git-VCS-root-authentication)** — Passwords and tokens starting with a hyphen do not work for a git VCS root authentication
-
-**[TW-78919](https://youtrack.jetbrains.com/issue/TW-78919/Perforce-Shelve-trigger-does-not-work-on-secondary-node)** — Perforce Shelve trigger does not work on secondary node
-
-**[TW-78594](https://youtrack.jetbrains.com/issue/TW-78594/Patches-are-upload-according-to-default-stream-and-not-building-stream-with-remapping)** — Patches are upload according to default stream and not building stream with remapping
-
 **[TW-78931](https://youtrack.jetbrains.com/issue/TW-78931/Ensure-agent-does-not-execute-beforeBuildFinish)** — Ensure agent does not execute `beforeBuildFinish`
 
-**[TW-79298](https://youtrack.jetbrains.com/issue/TW-79298/Troubles-when-creating-AWS-Credentials-on-cn-north-1-AWS-China)** — Troubles when creating AWS Credentials on cn-north-1 AWS China
-
 **[TW-70985](https://youtrack.jetbrains.com/issue/TW-70985/Commit-Status-Publisher-cannot-parse-Git-Url-it-being-a-parameter)** — Commit Status Publisher : cannot parse Git Url (it being a parameter)
-
-**[TW-79025](https://youtrack.jetbrains.com/issue/TW-79025/Build-with-refreshable-token-can-fail-with-error-could-not-read-Password-for-repo)** — Build with refreshable token can fail with error "could not read Password for repo"
-
-**[TW-78864](https://youtrack.jetbrains.com/issue/TW-78864/The-Ignore-Drafts-option-behaves-differently-for-GitHub.com-and-GitHub-Enterprise-repos)** — The "Ignore Drafts" option behaves differently for GitHub.com and GitHub Enterprise repos
 
 **[TW-79100](https://youtrack.jetbrains.com/issue/TW-79100/Token-popup-callback-doesnt-work-if-token-was-revoked)** — Token popup callback doesn't work if token was revoked
 
@@ -159,11 +133,7 @@ __01 January 2023__
 
 **[TW-79365](https://youtrack.jetbrains.com/issue/TW-79365/Commit-Status-Publisher-fails-to-publish-status-to-Azure-DevOps-pull-requests)** — Commit Status Publisher fails to publish status to Azure DevOps pull requests
 
-**[TW-78582](https://youtrack.jetbrains.com/issue/TW-78582/Build-status-for-Bitbucket-Server-Data-Center-does-not-contain-build-number-even-for-started-failed-succeeded-statuses)** — Build status for Bitbucket Server / Data Center does not contain build number even for started/failed/succeeded statuses
-
 **[TW-79229](https://youtrack.jetbrains.com/issue/TW-79229/Set-unique-Display-name-for-connection-in-Add-connection-Popup-by-default)** — Set unique Display name for connection in Add connection Popup by default
-
-**[TW-78680](https://youtrack.jetbrains.com/issue/TW-78680/Slack-Notifier-doesnt-send-changes-from-snapshot-dependencies)** — Slack Notifier doesn't send changes from snapshot dependencies
 
 **[TW-79463](https://youtrack.jetbrains.com/issue/TW-79463/S3-interrupt-parallelized-multipart-upload-on-error)** — [S3] interrupt parallelized multipart upload on error
 
@@ -182,13 +152,15 @@ __01 January 2023__
 
 ### Feature
 
-**[TW-64644](https://youtrack.jetbrains.com/issue/TW-64644/Ability-to-share-build-caches-between-agents)** — Ability to share build caches between agents
+**[TW-74127](https://youtrack.jetbrains.com/issue/TW-74127/Sakura-implement-Agent-Parameters-tab)** — Sakura: implement Agent Parameters tab
+
+**[TW-74071](https://youtrack.jetbrains.com/issue/TW-74071/Build-parameters-tab-for-new-UI)** — Build parameters tab for new UI
+
+**[TW-78596](https://youtrack.jetbrains.com/issue/TW-78596/Allow-detaching-project-from-all-pools.-Do-not-add-project-without-pools-to-Default)** — Allow detaching project from all pools. Do not add project without pools to Default
 
 **[TW-76713](https://youtrack.jetbrains.com/issue/TW-76713/Implement-acquire-new-token-button-on-the-edit-VCS-root-settings-form-for-refreshable-token-authentication)** — Implement "acquire new token" button on the edit VCS root settings form for refreshable token authentication
 
 **[TW-37456](https://youtrack.jetbrains.com/issue/TW-37456/Allow-OAuth-authentication-against-Stash-in-preference-to-storing-user-password-in-Commit-Status-Publisher)** — Allow OAuth authentication against Stash in preference to storing user/password in Commit Status Publisher
-
-**[TW-77196](https://youtrack.jetbrains.com/issue/TW-77196/Flattened-lists-toggle-to-switch-between-list-grid-views)** — Flattened lists: toggle to switch between list / grid views
 
 **[TW-24782](https://youtrack.jetbrains.com/issue/TW-24782/Execute-step-Only-if-build-status-is-failed)** — Execute step: Only if build status is failed
 
@@ -206,8 +178,6 @@ __01 January 2023__
 
 **[TW-74122](https://youtrack.jetbrains.com/issue/TW-74122/Sakura-implement-Change-Log-tab-on-project-level)** — Sakura: implement "Change Log" tab on project level
 
-**[TW-78596](https://youtrack.jetbrains.com/issue/TW-78596/Allow-detaching-project-from-all-pools.-Do-not-add-project-without-pools-to-Default)** — Allow detaching project from all pools. Do not add project without pools to Default
-
 **[TW-74706](https://youtrack.jetbrains.com/issue/TW-74706/S3-Parallelise-multipart-upload)** — [S3] Parallelise multipart upload
 
 **[TW-60821](https://youtrack.jetbrains.com/issue/TW-60821/Add-support-for-Bitbucket-Server-in-Project-Settings-Connections)** — Add support for Bitbucket Server in Project Settings -> Connections
@@ -220,8 +190,6 @@ __01 January 2023__
 
 **[TW-74019](https://youtrack.jetbrains.com/issue/TW-74019/Builds-history-can-be-lost-if-a-DSL-commit-changes-the-id-of-corresponding-build-configuration)** — Builds history can be lost if a DSL commit changes the id of corresponding build configuration
 
-**[TW-78984](https://youtrack.jetbrains.com/issue/TW-78984/REST-API-to-support-roles)** — REST API to support roles
-
 **[TW-70087](https://youtrack.jetbrains.com/issue/TW-70087/Make-it-possible-to-to-leave-the-project-in-the-Project-pool-only)** — Make it possible to to leave the project in the Project pool only
 
 **[TW-77943](https://youtrack.jetbrains.com/issue/TW-77943/Report-image-pulling-as-separate-block-in-docker-wrapper)** — Report image pulling as separate block in docker wrapper
@@ -231,13 +199,13 @@ __01 January 2023__
 
 ### Performance Problem
 
+**[TW-79599](https://youtrack.jetbrains.com/issue/TW-79599/Many-artefactUpload.html-requests-can-occupy-all-http-threads-and-make-server-appear-as-hanging)** — Many artefactUpload.html requests can occupy all http threads and make server appear as hanging
+
+**[TW-45828](https://youtrack.jetbrains.com/issue/TW-45828/Slow-build-parameters-page-loading-30-seconds-rendering)** — Slow build parameters page loading (>30 seconds rendering)
+
 **[TW-77040](https://youtrack.jetbrains.com/issue/TW-77040/Expanding-a-build-line-is-slow-in-the-recent-builds)** — Expanding a build line is slow in the recent builds
 
-**[TW-79703](https://youtrack.jetbrains.com/issue/TW-79703/A-lot-of-memory-is-consumed-by-FlowAwareIndexFileOptimizedBuilder)** — A lot of memory is consumed by FlowAwareIndexFileOptimizedBuilder
-
 **[TW-79567](https://youtrack.jetbrains.com/issue/TW-79567/Performance-problem-during-startup-in-the-ProjectModelWrapper.putProjectInNewModel)** — Performance problem during startup in the ProjectModelWrapper.putProjectInNewModel
-
-**[TW-78800](https://youtrack.jetbrains.com/issue/TW-78800/Contention-on-storing-newly-loaded-VCS-commits-from-the-database-can-slow-down-startup-of-the-server)** — Contention on storing newly loaded VCS commits from the database can slow down startup of the server
 
 **[TW-79634](https://youtrack.jetbrains.com/issue/TW-79634/Collecting-changes-is-stuck-and-builds-are-not-starting-due-to-requests-to-Run-Custom-Build-dialog-runCustomBuild.html)** — Collecting changes is stuck and builds are not starting due to requests to Run Custom Build dialog (runCustomBuild.html)
 
@@ -248,70 +216,3 @@ __01 January 2023__
 **[TW-79451](https://youtrack.jetbrains.com/issue/TW-79451/Memory-leak-in-agent-part-of-Telemetry-plugin)** — Memory leak in agent part of Telemetry plugin
 
 **[TW-59444](https://youtrack.jetbrains.com/issue/TW-59444/Slow-commit-hook-processing-slow-filtering-of-VCS-root-instances-due-to-parameters-resolution)** — Slow commit hook processing (slow filtering of VCS root instances due to parameters resolution)
-
-
-### Task
-
-**[TW-78838](https://youtrack.jetbrains.com/issue/TW-78838/UI-UX-to-enable-configuration-of-access-token-in-Bitbucket-Cloud-commit-status-publisher-settings.)** — UI / UX to enable configuration of access token in Bitbucket Cloud commit status publisher settings.
-
-**[TW-79069](https://youtrack.jetbrains.com/issue/TW-79069/Space-commit-status-publisher-provide-build-ID)** — Space commit status publisher: provide build ID
-
-**[TW-79959](https://youtrack.jetbrains.com/issue/TW-79959/Provide-a-link-to-Install-non-bundled-Java...-from-Configure-Java-for-agents-article)** — Provide a link to "Install non-bundled Java..." from "Configure Java for agents" article
-
-**[TW-79909](https://youtrack.jetbrains.com/issue/TW-79909/Add-a-link-to-the-TeamCity-Kotlin-DSL-documentation-to-https-www.jetbrains.com-help-teamcity-kotlin-dsl.html)** — Add a link to the TeamCity Kotlin DSL documentation to https://www.jetbrains.com/help/teamcity/kotlin-dsl.html
-
-**[TW-67501](https://youtrack.jetbrains.com/issue/TW-67501/Integrate-Plugin-as-a-tab)** — Integrate Plugin as a tab
-
-**[TW-78158](https://youtrack.jetbrains.com/issue/TW-78158/Clean-the-Experimental-Old-UI-occurrences-in-the-Code)** — Clean the Experimental / Old UI occurrences in the Code
-
-**[TW-74129](https://youtrack.jetbrains.com/issue/TW-74129/REST-expose-overridden-build-parameters-for-User-Defined-Parameters)** — REST: expose overridden build parameters for User-Defined Parameters
-
-**[TW-79731](https://youtrack.jetbrains.com/issue/TW-79731/Consider-all-plugins-as-reloadable-in-runtime-by-default)** — Consider all plugins as reloadable in runtime by default
-
-**[TW-79327](https://youtrack.jetbrains.com/issue/TW-79327/REST-API-Remove-WADL-generator.)** — REST-API: Remove WADL generator.
-
-**[TW-77553](https://youtrack.jetbrains.com/issue/TW-77553/Update-Kotlin-in-DSL-to-1.7.x)** — Update Kotlin in DSL to 1.7.x
-
-**[TW-78290](https://youtrack.jetbrains.com/issue/TW-78290/Add-context-for-DSL-examples)** — Add context for DSL examples
-
-**[TW-79257](https://youtrack.jetbrains.com/issue/TW-79257/Enable-HashiCorp-Vault-plugin-on-secondary-nodes)** — Enable HashiCorp Vault plugin on secondary nodes
-
-**[TW-78284](https://youtrack.jetbrains.com/issue/TW-78284/Switch-the-S3-plugin-UI-to-React)** — Switch the S3 plugin UI to React
-
-**[TW-78827](https://youtrack.jetbrains.com/issue/TW-78827/Allow-add-custom-information-to-the-agent-started-event)** — Allow add custom information to the "agent started" event
-
-**[TW-79312](https://youtrack.jetbrains.com/issue/TW-79312/AWS-Connection-Add-an-easy-way-to-allow-all-AWS-STS-endpoints-via-internal-property)** — AWS Connection: Add an easy way to allow all AWS STS endpoints via internal property
-
-**[TW-78683](https://youtrack.jetbrains.com/issue/TW-78683/Refresh-able-token-support-for-Space-merge-requests)** — Refresh-able token support for Space merge requests
-
-**[TW-78793](https://youtrack.jetbrains.com/issue/TW-78793/Show-connection-name-for-Bitbucket-server-connections-on-create-project-controls)** — Show connection name for Bitbucket server connections on "create project" controls
-
-**[TW-78094](https://youtrack.jetbrains.com/issue/TW-78094/Enable-creation-of-projects-build-configurations-and-vcs-roots-for-BitBucket-Server-connections)** — Enable creation of projects, build configurations and vcs roots for BitBucket Server connections
-
-**[TW-79371](https://youtrack.jetbrains.com/issue/TW-79371/make-the-Bitbucket-Server-Connection-plugin-bundled)** — make the «Bitbucket Server Connection» plugin bundled
-
-**[TW-79429](https://youtrack.jetbrains.com/issue/TW-79429/Investigation-create-Space-on-demand-connection-including-user-access-token)** — Investigation: create Space on demand connection including user access token
-
-**[TW-78417](https://youtrack.jetbrains.com/issue/TW-78417/Allow-specifying-multiple-subnets-and-instance-types-via-DSL)** — Allow specifying multiple subnets and instance types via DSL
-
-**[TW-79440](https://youtrack.jetbrains.com/issue/TW-79440/Add-detailed-statistics-for-artifact-upload)** — Add detailed statistics for artifact upload
-
-**[TW-78913](https://youtrack.jetbrains.com/issue/TW-78913/Introduce-for-selection-of-dedicated-hosts-with-EC2-Mac)** — Introduce for selection of dedicated hosts with EC2 Mac
-
-**[TW-79063](https://youtrack.jetbrains.com/issue/TW-79063/Introduce-kotlin-dsl-for-dedicated-hosts)** — Introduce kotlin-dsl for dedicated hosts
-
-**[TW-79282](https://youtrack.jetbrains.com/issue/TW-79282/Add-access-to-the-project-from-parameters-form)** — Add access to the project from parameters form
-
-**[TW-79280](https://youtrack.jetbrains.com/issue/TW-79280/Introduce-new-parameter-type-for-HashiCorp-Vault)** — Introduce new parameter type for HashiCorp Vault
-
-**[TW-71521](https://youtrack.jetbrains.com/issue/TW-71521/testScopes-tree-dont-apply-maxChildren-to-project-build-configuration-nodes)** — /testScopes/tree: don't apply `maxChildren` to project & build configuration nodes
-
-**[TW-78993](https://youtrack.jetbrains.com/issue/TW-78993/Support-search-by-project-and-affectedProject-in-app-rest-builds-when-looking-for-a-build-with-specific-build-number)** — Support search by project and affectedProject in /app/rest/builds when looking for a build with specific build number
-
-**[TW-79261](https://youtrack.jetbrains.com/issue/TW-79261/REST-API-Get-rid-of-Jersey-Provider-class-per-bean.)** — REST-API: Get rid of Jersey @Provider class per bean.
-
-**[TW-77712](https://youtrack.jetbrains.com/issue/TW-77712/Provide-Rest-API-for-build-configuration-compatible-cloud-images)** — Provide Rest API for build configuration compatible cloud images
-
-**[TW-79527](https://youtrack.jetbrains.com/issue/TW-79527/REST-API-Simplify-ItemHolder)** — REST-API: Simplify ItemHolder
-
-**[TW-78966](https://youtrack.jetbrains.com/issue/TW-78966/Improve-DSL-documentation-simplify-URLs)** — Improve DSL documentation: simplify URLs

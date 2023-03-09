@@ -15,15 +15,22 @@ See the following links for more information: [Configuring Connections](configur
 You can now choose the "Only if build status is failed" [execution policy](configuring-build-steps.md#Execution+Policy) for individual steps. This policy allows you to create steps that will be ignored when your build finishes successfully and executed only when it fails.
 
 
-<img src="dk-whatsnew2303-onlywhenfails.png" width="708" alt="Run the build step only when the build fails"/>
+<img src="dk-whatsnew2303-onlywhenfails.png" width="706" alt="Run the build step only when the build fails"/>
 
 
+## New Build Cache Feature
+
+We're expanding the list of [build features](adding-build-features.md) with **Build Cache** — the feature that allows you to cache files used by a build configuration (for example, Maven dependencies or NodeJS packages). Cached files can be reused by the same build configuration during subsequent runs, or shared with other configurations that belong to the same project. When a build starts, a TeamCity agent downloads the latest cache version to the project's working directory, thus optimizing the build process and eliminating redundant operations.
+
+<img src="dk-buildCache-split.png" width="706" alt="Reuse caches published by other configurations"/> 
+
+Build Cache is currently available as a community technology preview (CTP). Navigate to **Administration | Experimental Features** and tick a corresponding checkbox to enable this build feature.
 
 ## Server Health Reports for Archived Projects
 
 You can now generate [Server Health reports](server-health.md) for archived projects. To do this, select the *&lt;Archived Projects&gt;* scope.
 
-<img src="dk-serverHealthArhived.png" width="708" alt="Server Health Reports for Archived Projects"/>
+<img src="dk-serverHealthArhived.png" width="706" alt="Server Health Reports for Archived Projects"/>
 
 
 
