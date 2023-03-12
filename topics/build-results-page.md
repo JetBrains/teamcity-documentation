@@ -29,7 +29,25 @@ It also shows the diagnostic messages related to the current build's status.
 
 ## Changes Tab
 
-The __Changes__ tab displays information about changes in the build, separately for user commits and artifact changes. You can filter changes by their author and display changes made in the build configuration settings.
+The __Changes__ tab displays information about changes in the build and provides advanced filtering capabilities for the list of changes. 
+You can filter changes by their author, comment, path, and revision.
+
+To view changes from dependencies, check the corresponding box.
+
+You can view modified files by checking the __Show files__ box. Clicking a filename opens the diff viewer.
+
+Enabling __Show graph__ displays the changes as a graph of commits to the VCS roots related to this build.
+
+The graph appears on the left of the list and allows you to get the view of the changes with a variable level of detailing. You can:
+
+* Navigate to a graph node to display the VCS root revision number.
+
+We are working on Sakura implementation of the following features, that you can use in the classic UI:
+* View the VCS roots which were changed in this build, each of the roots being represented as a bar.
+* Click a bar to select a single VCS root. The changes not pertaining to this root are grayed out.
+* If there have been merges between the branches of the repository, the graph displays them. To collapse a bar, navigate to its darker area and click it to hide history of merges. The dotted line will indicate that the bar is expandable.
+* If your VCS root has subrepositories (marked S in the list of changes), navigate to a node in the parent to see which commits in subrepositories are referenced by this revision in the parent.
+
 
 From the __Changes__ tab, you can:
 * Review all changes included in the build with their corresponding [revisions](revision.md) in version control.
@@ -46,8 +64,6 @@ For each change on this page, you can:
 * Download the patch to your IDE.
 * Review the change in an [external change viewer](external-changes-viewer.md), if configured by the administrator.
   {product="tc"}
-
-You can select to view the modified files by checking the __Show files__ box. Clicking a filename opens the diff viewer.
 
 ## Build Log Tab
 
@@ -162,13 +178,4 @@ The __History__ tab:
 
 The __Tests__ tab of the classic UI differs from the new version and contains a few unique features, such as the ability to download all tests in CSV and pop-up duration graph images. You can temporarily switch to it whenever you need its capabilities.
 
-### Changes in Classic UI
 
-The __Changes__ tab of the classic UI provides advanced filtering capabilities for the list of changes. Enabling __Show graph__ displays the changes as a graph of commits to the VCS roots related to this build.
-
-The graph appears on the left of the list and allows you to get the view of the changes with a variable level of detailing. You can:
-* View the VCS roots which were changed in this build, each of the roots being represented as a bar.
-* Navigate to a graph node to display the VCS root revision number.
-* Click a bar to select a single VCS root. The changes not pertaining to this root are grayed out.
-* If there have been merges between the branches of the repository, the graph displays them. To collapse a bar, navigate to its darker area and click it to hide history of merges. The dotted line will indicate that the bar is expandable.
-* If your VCS root has subrepositories (marked S in the list of changes), navigate to a node in the parent to see which commits in subrepositories are referenced by this revision in the parent.
