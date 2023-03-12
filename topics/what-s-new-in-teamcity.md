@@ -20,11 +20,11 @@ You can now choose the "Only if build status is failed" [execution policy](confi
 
 ## New Build Cache Feature
 
-We're expanding the list of [build features](adding-build-features.md) with **Build Cache** — the feature that allows you to cache files used by a build configuration (for example, Maven dependencies or NodeJS packages). Cached files can be reused by the same build configuration during subsequent runs, or shared with other configurations that belong to the same project. When a build starts, a TeamCity agent downloads the latest cache version to the project's working directory, thus optimizing and accelerating the build process.
+We're expanding the list of [build features](adding-build-features.md) with **Build Cache**, the feature that allows you to cache files used by a build configuration (for example, Maven dependencies or NodeJS packages). Cached files can be reused by the same build configuration during subsequent runs or shared with other configurations that belong to the same project. When a build starts, a TeamCity agent downloads the latest cache version to the project's working directory, optimizing and accelerating the build process.
 
 <img src="dk-buildCache-split.png" width="706" alt="Reuse caches published by other configurations"/> 
 
-Build Cache is currently available as a community technology preview (CTP). Navigate to **Administration | Experimental Features** and tick a corresponding checkbox to enable this build feature.
+Build Cache is currently available as a community technology preview (CTP). Navigate to **Administration | Experimental Features** and tick the corresponding checkbox to enable this build feature.
 
 ## Server Health Reports for Archived Projects
 
@@ -32,7 +32,14 @@ You can now generate [Server Health reports](server-health.md) for archived proj
 
 <img src="dk-serverHealthArhived.png" width="706" alt="Server Health Reports for Archived Projects"/>
 
+## The Sakura UI Improvements
 
+We continue actively developing the Sakura UI to provide feature parity with the classic UI 
+and to support the new features. 
+In this version, we improved the visibility of changes.
+- The **Change Log** tab is now available for projects and build configurations. 
+- The **Show graph** option has been implemented for the **Pending Changes** tab of the build configuration home page and the **Changes** tabs of the build results page. 
+With the option enabled, the changes are displayed as a graph of commits to the related VCS roots.
 
 ## Fixed issues
 {product="tcc"}
