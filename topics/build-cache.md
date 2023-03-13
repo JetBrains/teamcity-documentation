@@ -10,9 +10,9 @@ To enable this build feature, navigate to the **Administration | Experimental Fe
 
 ## Common Concepts
 
-Build Cache feature can work in one- or two-way mode. In one-way mode it either publishes its cache or downloads cache published by another feature. This mode allows you to set up "publisher" and "consumer" features to exchange caches between different build configurations **of the same project**.
+Build Cache feature can work in one- or two-way mode. In two-way mode it downloads caches published by the same feature during a previous build. When you add a new Build Cache feature, it is configured to operate in this mode.
 
-In two-way mode the feature downloads caches published by the same feature during a previous build. When you add a new Build Cache feature, it is configured to operate in this mode.
+In one-way mode one build configuration with the "Build Cache" feature publishes cache, and another build configuration downloads it. This mode allows you to set up "publisher" and "consumer" features to exchange caches between different build configurations **of the same project**.
 
 
 ## Publish and Use Cache Within the Same Build Configuration
@@ -70,7 +70,7 @@ You can set up as many publisher and consumer features as required as long as yo
 
 If a build configuration is configured to upload caches, it arranges its build stages in the following order:
 
-1. Download artifacts
+1. Resolve artifact dependencies
 2. Download caches
 3. Checkout the sources
 4. Start the build
