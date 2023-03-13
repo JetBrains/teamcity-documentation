@@ -32,12 +32,19 @@ You can now generate [Server Health reports](server-health.md) for archived proj
 
 <img src="dk-serverHealthArhived.png" width="706" alt="Server Health Reports for Archived Projects"/>
 
+## Accelerated Artifact Upload
+
+Starting with version 2023.03, TeamCity breaks down large artifact files into chunks and uploads these chunks in parallel. As a result, compared to previous TeamCity versions, the artifacts are faster uploaded to the server and become available sooner.
+
 ## The Sakura UI Improvements
 
 We continue actively developing the Sakura UI to provide feature parity with the classic UI 
 and to support the new features. 
 In this version, we improved the visibility of changes.
-- The **Change Log** tab is now available for projects and build configurations. 
+
+<img src="dk-sakura-graph.png" width="706" alt="Change Log tab with changes graph"/>
+
+- The **Change Log** tab is now available for projects and build configurations.
 - The **Show graph** option has been implemented for the **Pending Changes** tab of the build configuration home page and the **Changes** tabs of the build results page. 
 With the option enabled, the changes are displayed as a graph of commits to the related VCS roots.
 
