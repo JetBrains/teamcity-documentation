@@ -41,11 +41,6 @@ In this version, we improved the visibility of changes.
 - The **Show graph** option has been implemented for the **Pending Changes** tab of the build configuration home page and the **Changes** tabs of the build results page. 
 With the option enabled, the changes are displayed as a graph of commits to the related VCS roots.
 
-## Fixed issues
-{product="tcc"}
-
-See [TeamCity Build 130000 release notes](teamcity-release-notes-build-130000.md).
-
 ## Roadmap
 
 See the [TeamCity roadmap](https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap) to learn about future updates.

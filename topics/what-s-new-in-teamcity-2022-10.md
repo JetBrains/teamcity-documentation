@@ -121,9 +121,6 @@ on a changelist that has a review in Helix Swarm,
 TeamCity shows the _Swarm Reviews_ section on the build overview page. From each change,
 you can navigate to the change page on the Helix Swarm using `Open in Helix Swarm`.
 
-## Fixed issues
-
-See [TeamCity 2022.10 release notes](teamcity-2022-10-release-notes.md)
 
 ## Upgrade notes
 {product="tc"}
