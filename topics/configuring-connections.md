@@ -204,6 +204,8 @@ To configure an AWS connection in TeamCity:
         It is [recommended](https://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/) to change access keys regularly for security reasons. You will be able to do this after the connection is created via the **Rotate key** button.
 
         TeamCity will not revoke old keys immediately. After a new key is generated, TeamCity will preserve the old inactive key for 24 hours and then remove it. The lifetime of old keys can be changed via the following properties: `teamcity.internal.cloud.aws.keyRotation.old.key.preserve.time.min` or `teamcity.internal.cloud.aws.keyRotation.old.key.preserve.time.days`.
+        
+        To be able to successfully rotate access keys, TeamCity requires the `iam:GetUser`, `iam:CreateAccessKey`, and `iam:DeleteAccessKey` permissions. 
      
      2. Configure temporary **Session Settings**:
           * **Use session credentials**. Check the box to use an endpoint that provides [temporary access](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) keys via AWS STS. Such credentials are short-term (the default session duration is 60 minutes). You can override the default session duration in the [AWS Credentials build feature](https://docs.google.com/document/d/1Y1eJCpErG8NJ9RHPvPOnfZUZZrVRkP8I85BXXSuNYEg/edit#). These credentials do not belong to a specific user and can be provided on demand to grant temporary access to specific resources. We recommend using temporary credentials since they provide better security.
