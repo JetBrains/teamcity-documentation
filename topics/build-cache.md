@@ -79,6 +79,10 @@ If a build configuration is configured to upload caches, it arranges its build s
 
 Caches are automatically compressed into archives when published, and unpacked into the configuration's checkout directory when downloaded. You do not need to manually specify expressions (as you do with [regular artifacts](build-artifact.md)).
 
+## Tell Us What You Think
+
+The **Build Cache** feature is still under development, and we'd love to hear your early thoughts and suggestions. See this document for the information on how to send feedback to the TeamCity team: [Feedback](feedback.md).
+
 
 ## See Also
 
