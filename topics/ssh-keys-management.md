@@ -1,7 +1,7 @@
 [//]: # (title: SSH Keys Management)
 [//]: # (auxiliary-id: SSH Keys Management)
 
-You can upload private SSH keys into TeamCity projects. Uploaded keys can be used for VCS Root configurations, and in the [SSH Agent](ssh-agent.md) build feature.
+You can upload private SSH keys into TeamCity projects. Uploaded keys can be used when configuring VCS roots, and in the [SSH Agent](ssh-agent.md) build feature.
 
 
 
@@ -11,7 +11,7 @@ TeamCity supports keys in the PEM and OpenSSH formats. Keys that use different f
 
 ## Upload SSH Keys to TeamCity Server
 
-To allow your projects to access remote repositories via SSH keys, you first need to upload these keys to your server.
+To allow TeamCity projects to access remote repositories via SSH keys, you first need to upload your keys to these projects.
 
 1. In __[Project Settings](creating-and-editing-projects.md#Managing+Project)__, click __SSH Keys__.
 2. On the __SSH Keys__ page, click __Upload SSH Key__.
@@ -32,7 +32,7 @@ Once required SSH keys are uploaded, modify the VCS Root settings to select a ke
 
 
 > Private SSH keys are employed only when your VCS root is configured to work with a remote repository via an SSH URL (for instance, `git@github.com:...`). If your "Fetch URL" / "Push URL" in **Project Settings** are set to HTTPS (for instance, `https://github.com/...`), authorization with SSH keys is disabled.
-> 
+>
 {type="note"}
 
 > Watch our **video tutorial** on [how to check out from SSH repositories](https://www.youtube.com/watch?v=nUTb1BjMMoE) with SSH keys.
@@ -45,9 +45,10 @@ Once required SSH keys are uploaded, modify the VCS Root settings to select a ke
 
 
 
-## REST API 
+## REST API
 
 [TeamCity REST API](teamcity-rest-api.md) allows external applications and scripts to access TeamCity resources via URLs. You can utilize this feature to upload SSH keys and customize VCS Root settings.
+
 
 ### View Uploaded Keys
 {initial-collapse-state="collapsed"}
@@ -73,19 +74,19 @@ POST <server_URL>/app/rest/projects/<project_locator>/sshKeys?fileName=<Key_Name
 {initial-collapse-state="collapsed"}
 
 * Switch the "Authentication method" to "Uploaded Key". Request body: "TEAMCITY_SSH_KEY".
-    
+
     ```Plain Text
     PUT <server_URL>/app/rest/vcs-roots/<locator>/properties/authMethod
     ```
 
 * Select a particular SSH key. Request body: SSH key name.
-    
+
     ```Plain Text
     PUT <server_URL>/app/rest/vcs-roots/<locator>/properties/teamcitySshKey
     ```
 
 * Specify a passphrase required by password-encrypted SSH keys. Request body: plain password string.
-    
+
     ```Plain Text
     PUT <server_URL>/app/rest/vcs-roots/<locator>/properties/secure:passphrase
     ```
@@ -98,9 +99,9 @@ If you configure the [agent-side checkout](vcs-checkout-mode.md#agent-checkout),
 
 
 > Keys are removed from agents for security reasons. For example, the tests executed by the build can leave some malicious code that will access the build agent file system and acquire the key. However, tests cannot get the key directly since it is removed by the time they are running. It makes it harder but not impossible to steal the key. Therefore, the agent must also be secure.
-> 
+>
 {type="note"}
 
 To transfer the key from the server to the agent, TeamCity encrypts it with a DES symmetric cipher. For a more secure way, configure an [HTTPS connection between agents and the server](using-https-to-access-teamcity-server.md).
 
-For more information on how keys are distributed, see this documentation article: [SSH Agent](ssh-agent.md).
+In addition to VCS roots, uploaded SSH keys can be used in **SSH Agent** build features. See this link for more information: [SSH Agent](ssh-agent.md).
