@@ -25,7 +25,8 @@ To establish a Build Agent's run configuration policy:
 	
 1. Click the __Agents__ and select the desired build agent.
 2. Click the __Compatible Configurations__ tab.
-3. Select __Run selected configurations only__ and tick the desired build configurations names to run on the build agent.
+3. Select __Run assigned configurations only__.
+4. Click the **Assign configurations** button and tick the desired build configurations names to run on the build agent.
 
 ## Making Build Agent Name and Property a Build Configuration Requirement
 
@@ -39,6 +40,7 @@ To make a build configuration run the builds on a build agent with the specified
 <tip>
 
 You can also use the condition __contains__, however, it may include more than one specific build agent (for example, a build configuration with a requirement `agent.name` __contains__ `Agent10`, will run on agents named __Agent10__, __Agent10a__, and __Agent10b__).
+
 </tip>
 
 [//]: # (Internal note. Do not delete. "Assigning Build Configurations to Specific Build Agentsd17e193.txt")    
