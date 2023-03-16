@@ -97,7 +97,7 @@ To enable the CloudFront support for the current S3 bucket, activate the _Use Cl
 
 In each of the dropdowns, _Distribution for uploads_ and _Distribution for downloads_, choose an available distribution 
 if it was [manually created](#Manual+CloudFront+Setup) in your Amazon profile, 
-or click ![magic-wand.png](magic-wand.png) to _[configure settings automatically](#Automatic+CloudFront+Setup)_.
+or click <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/> to _[configure settings automatically](#Automatic+CloudFront+Setup)_.
 
 For Cloudfront settings to work properly TeamCity needs new permissions:
 

@@ -237,7 +237,7 @@ Runtime
 
 Target runtime.
 
-Parameter references are supported. If the specified [project file](#projects) mentions any [runtime ID](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog), you can quickly select this runtime by clicking the ![magic-wand.png](magic-wand.png) button.
+Parameter references are supported. If the specified [project file](#projects) mentions any [runtime ID](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog), you can quickly select this runtime by clicking the <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/> button.
 
 </td>
 
