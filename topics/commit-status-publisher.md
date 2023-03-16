@@ -65,9 +65,15 @@ If you switch the **Authentication Type** to "Access Token", TeamCity will displ
 
 ### Bitbucket Server
 
-Commit Status Publisher supports the Bitbucket Server URL in the following format: `http[s]://<hostname>:<port>`. Apart from the URL, you need to specify a username and password for authentication.
+Commit Status Publisher supports the Bitbucket Server URL in the following format: `http[s]://<hostname>:<port>`. 
+Apart from the URL, you need to specify a username and password or an access token for authentication.
 
-If you switch the **Authentication Type** to "Access Token", TeamCity will display a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) to Bitbucket Server / Data Center. Click the **Acquire** button next to a required connection to obtain an access token.
+To get a token for the **Access Token** authentication type, сlick the **Acquire** button.
+If you are not signed in to your Bitbucket Server / Data Center account, TeamCity will ask for access to it.
+After you sign in, TeamCity will display a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) 
+to Bitbucket Server / Data Center. 
+Click the **Acquire** button next to a required connection to obtain an access token. 
+TeamCity will the information about the user that obtained the token and the connection that provided it.
 
 <img src="dk-CSP-BBServerToken.png" width="708" alt="Acquire access token for Bitbucket Server"/>
 

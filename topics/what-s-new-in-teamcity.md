@@ -29,7 +29,7 @@ In this version, we improved the visibility of changes.
 Starting with version 2023.03, TeamCity breaks down large artifact files into chunks and uploads these chunks in parallel. As a result, compared to previous TeamCity versions, the artifacts are faster uploaded to the server and become available sooner.
 
 
-## Run Steps only for Failed Builds
+## Run Steps Only for Failed Builds
 
 You can now choose the "Only if build status is failed" [execution policy](configuring-build-steps.md#Execution+Policy) for individual steps. This policy allows you to create steps that will be ignored when your build finishes successfully and executed only when it fails.
 
@@ -46,6 +46,17 @@ In addition to Bitbucket Cloud, TeamCity now supports Bitbucket Server and Data 
 
 See the following articles for more information: [Configuring Connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) | [Creating and Editing Projects](creating-and-editing-projects.md#Creating+project+pointing+to+Bitbucket)
 
+# Improved Bitbucket Server Authentication in Commit Status Publisher
+
+Commit Status Publisher now supports access tokens for authentication to Bitbucket Server. 
+To use the **Access Token** authentication type, сlick the **Acquire** button to obtain the token.
+If you are not signed in to your Bitbucket Server / Data Center account, TeamCity will ask for access to it.
+After you sign in, TeamCity will display a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Server+and+Data+Center)
+to Bitbucket Server / Data Center. 
+Click the **Acquire** button next to a required connection. 
+TeamCity will the information about the user that obtained the token and the connection that provided the token.
+
+<img src="dk-CSP-BBServerToken.png" width="708" alt="Acquire access token for Bitbucket Server"/>
 
 # Reissuing Refresh Tokens for VCS Roots
 
@@ -58,8 +69,6 @@ by clicking the *Acquire new* button. For details, see [this section](git.md#ref
 You can now generate [Server Health reports](server-health.md) for archived projects. To do this, select the *&lt;Archived Projects&gt;* scope.
 
 <img src="dk-serverHealthArhived.png" width="706" alt="Server Health Reports for Archived Projects"/>
-
-
 
 
 
