@@ -47,7 +47,7 @@ In addition to Bitbucket Cloud, TeamCity now supports Bitbucket Server and Data 
 See the following articles for more information: [Configuring Connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) | [Creating and Editing Projects](creating-and-editing-projects.md#Creating+project+pointing+to+Bitbucket)
 
 
-# Reissuing refresh tokens for VCS Roots
+# Reissuing Refresh Tokens for VCS Roots
 
 For Bitbucket Server, Bitbucket Cloud, and GitLab VCS Roots, you can easily reissue the refresh token used by the VCS root with a token issued for the current user 
 by clicking the *Acquire new* button. For details, see [this section](git.md#refresh-token).
