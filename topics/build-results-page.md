@@ -37,15 +37,12 @@ To view changes from dependencies, check the corresponding box.
 You can view modified files by checking the __Show files__ box. Clicking a filename opens the diff viewer.
 
 Enabling __Show graph__ displays the changes as a graph of commits to the VCS roots related to this build.
-
-The graph appears on the left of the list and allows you to get the view of the changes with a variable level of detailing. You can:
+The graph appears on the left of the list and presents the changes with a variable level of detailing, allowing you to:
 
 * Navigate to a graph node to display the VCS root revision number.
-
-We are working on Sakura implementation of the following features, that you can use in the classic UI:
-* View the VCS roots which were changed in this build, each of the roots being represented as a bar.
-* Click a bar to select a single VCS root. The changes not pertaining to this root are grayed out.
-* If there have been merges between the branches of the repository, the graph displays them. To collapse a bar, navigate to its darker area and click it to hide history of merges. The dotted line will indicate that the bar is expandable.
+* View the VCS roots which were changed in this build: on hovering over the area on the left of the changes list, each of the roots is highlighted as a bar.
+* Click a bar to select a single VCS root. Only the changes pertaining to this root are visible, others are grayed out.
+* If there have been merges between the branches of the repository, the graph displays them. 
 * If your VCS root has subrepositories (marked S in the list of changes), navigate to a node in the parent to see which commits in subrepositories are referenced by this revision in the parent.
 
 

@@ -209,14 +209,18 @@ We recommend keeping this ID constant, so the changes made in the DSL code are c
 However, if you modify the build configuration ID in the DSL,
 note that for TeamCity this modification will look as if the configuration with the previous ID was deleted
 and a new configuration with the new ID was created with a single commit.
-In this case, TeamCity will automatically attach the builds' history to the build configuration with the new ID 
-and will create an entry for this action in [the server log](teamcity-monitoring-and-diagnostics.md#Server+Logs). 
+In this case, TeamCity will automatically attach the builds' history to the build configuration with the new ID. 
+This also applies to the case when IDs of several build configurations are changed within one commit:
+TeamCity uses the logic that assigns build histories to the configurations most similar to the deleted ones. 
+An entry for this action will appear in [the server log](teamcity-monitoring-and-diagnostics.md#Server+Logs). 
 {product="tc"}
 
 However, if you modify the build configuration ID in the DSL,
 note that for TeamCity this modification will look as if the configuration with the previous ID was deleted
 and a new configuration with the new ID was created with a single commit.
 In this case, TeamCity will automatically attach the builds' history to the build configuration with the new ID.
+This also applies to the case when IDs of several build configurations are changed within one commit:
+TeamCity uses the logic that assigns build histories to the configurations most similar to the deleted ones.
 {product="tcc"}
 
 If you use two commits to modify the build configuration ID — 

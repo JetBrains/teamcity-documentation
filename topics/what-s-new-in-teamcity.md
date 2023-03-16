@@ -20,8 +20,8 @@ In this version, we improved the visibility of changes.
 <img src="dk-sakura-graph.png" width="706" alt="Change Log tab with changes graph"/>
 
 - The **Change Log** tab is now available for projects and build configurations.
-- The **Show graph** option has been implemented for the **Pending Changes** tab of the build configuration home page and the **Changes** tabs of the build results page.
-  With the option enabled, the changes are displayed as a graph of commits to the related VCS roots.
+- The **Show graph** option has been implemented on all pages and tabs related to changes.
+  With this option enabled, the changes are displayed as a graph of commits to the related VCS roots.
 
 
 ## Accelerated Artifact Upload
