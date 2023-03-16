@@ -46,7 +46,7 @@ If the connection test is successful, you can enable the native Git support on y
 ## Native Git for VCS-related operations on the server
 {id="Native+Git" product="tcc"}
 
-TeamCity can now uses native Git for VCS-related operations on the server.
+TeamCity can now use native Git for VCS-related operations on the server.
 Using native Git improves the performance of the checking for changes operations on the server
 in comparison with the previously used JGit implementation. It also fixes a number of issues related to large Git repositories.
 
@@ -103,7 +103,6 @@ Default branch
 Configures [default branch](working-with-feature-branches.md#Default+Branch). Parameter references are supported here. Default value is `refs/heads/master`.
 
 <note>
-
 You can configure Git-plugin to fetch all heads by [adding a build configuration parameter](configuring-build-parameters.md#Custom+Build+Parameters) `teamcity.git.fetchAllHeads=true`.
 </note>
 
@@ -249,7 +248,7 @@ You can use a personal access token instead of a password to authenticate in Git
 >
 {type="warning"}
 
-When using an existing Bitbucket Cloud, GitLab, or Azure DevOps Services connection to create a VCS Root, 
+When using an existing Bitbucket Cloud, Bitbucket Server, GitLab, or Azure DevOps Services connection to create a VCS Root, 
 TeamCity will use a refreshable token instead of the password.
 
 </td></tr><tr>
@@ -269,7 +268,7 @@ The **Token** field displays information about the user who obtained the token a
 
 You can specify a **username** here if there is no username in the clone URL (the username specified here overrides the username from the URL).
 
-For Bitbucket Server, Bitbucket Cloud, and GitLab you can easily reissue the token used by the VCS root with a token issued for the current user by clicking the *Acquire new* button
+For Bitbucket Server, Bitbucket Cloud, and GitLab you can easily reissue the token used by the VCS root with a token issued for the current user by clicking the *Acquire new* button.
 
 </td></tr><tr>
 
