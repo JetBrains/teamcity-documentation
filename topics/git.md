@@ -232,7 +232,7 @@ Select this option to clone a repository with anonymous read access.
 
 <td>
 
-Password
+Password / personal access token
 
 </td>
 
@@ -249,8 +249,27 @@ You can use a personal access token instead of a password to authenticate in Git
 >
 {type="warning"}
 
-When using an existing Bitbucket Cloud, GitLab, or Azure DevOps Services connection to create a project, build configuration, or a VCS Root, 
+When using an existing Bitbucket Cloud, GitLab, or Azure DevOps Services connection to create a VCS Root, 
 TeamCity will use a refreshable token instead of the password.
+
+</td></tr><tr>
+
+<td>
+
+Refreshable token
+
+</td>
+<td id="refresh-token">
+
+If you have a connection to a Bitbucket Server, Bitbucket Cloud, GitLab, and Azure DevOps configured in TeamCity,
+refreshable tokens are enabled by default for these VCS Roots. Such tokens are short-lived providing more security than passwords or personal access tokens:
+the TeamCity server refreshes them automatically without sharing any related data with agents.
+
+The **Token** field displays information about the user who obtained the token and the connection that provided the token.
+
+You can specify a **username** here if there is no username in the clone URL (the username specified here overrides the username from the URL).
+
+For Bitbucket Server, Bitbucket Cloud, and GitLab you can easily reissue the token used by the VCS root with a token issued for the current user by clicking the *Acquire new* button
 
 </td></tr><tr>
 
