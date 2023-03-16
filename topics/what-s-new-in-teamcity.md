@@ -36,6 +36,25 @@ You can now choose the "Only if build status is failed" [execution policy](confi
 
 <img src="dk-whatsnew2303-onlywhenfails.png" width="706" alt="Run the build step only when the build fails"/>
 
+## DSL Configuration for Build Failure Conditions on Custom Statistics Values
+
+You can now use Kotlin DSL to configure a build failure condition [on a custom statistic value](build-failure-conditions.md#Adding+Custom+Build+Metric) 
+reported by the build. 
+You do not need to edit the main-config.xml file for this, 
+which means that configuring a build failure condition on a custom metric no longer requires system administrator privileges.
+
+The sample Kotlin DSL code is as follows:
+
+```Kotlin
+  failureConditions {
+  failOnMetricChange {
+    param("metricKey", "myReportedCustomStatisticValue")
+    ....
+  }
+}
+```
+
+We are working on improving the web UI representation of the build failure condition on custom metrics added via DSL.
 
 
 ## Integration with Bitbucket Server and Data Center

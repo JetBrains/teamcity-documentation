@@ -58,7 +58,7 @@ To add such failure condition, click __Add build failure condition__ and select 
 
 When your build uses code examining tools like code coverage, duplicates finders, or inspections, it generates various numeric metrics. For these metrics, you can specify a threshold which, when exceeded, will fail a build.
 
-In general, there are two ways to configure this build fail condition:
+In general, there are two ways to configure this build failure condition:
 * A _build metric_ exceeds or is less than the specified constant value (threshold).   
 For example, _Fail build if_ its "_build duration (secs)_", compared to the constant value, is "_more_" than "_300_".   
 In this case, a build will fail if it runs more than 300 seconds. 
@@ -99,14 +99,32 @@ By default, TeamCity provides the wide range of _build metrics_:
 
 ### Adding Custom Build Metric
 
-You can add your own build metric. To do so, you need to modify the TeamCity configuration file `<[TeamCity_Data_Directory](teamcity-data-directory.md)>/config/main-config.xml` and add the following section under the `server` node there:
+You can add your own build metric. There are two ways to do it:
 
-```XML
-<build-metrics>
-  <statisticValue key="myMetric" description="build metric for number of files"/>
-</build-metrics>
+- Use Kotlin DSL to configure a build failure condition [on a custom statistic value](build-failure-conditions.md#Adding+Custom+Build+Metric)
+reported by the build.
 
-```
+   The sample Kotlin DSL code is as follows:
+
+   ```Kotlin
+     failureConditions {
+     failOnMetricChange {
+       param("metricKey", "myReportedCustomStatisticValue")
+       ....
+     }
+   }
+   ```
+
+- Modify the TeamCity configuration file `<[TeamCity_Data_Directory](teamcity-data-directory.md)>/config/main-config.xml`, 
+which requires system administrator privileges. 
+   Add the following section to your `main-config.xml` under the `server` node:
+
+   ```XML
+   <build-metrics>
+     <statisticValue key="myMetric" description="build metric for number of files"/>
+   </build-metrics>
+
+   ```
 
 If your build publishes the `myMetric` value, you can use it as a criterion for a build failure.
 
