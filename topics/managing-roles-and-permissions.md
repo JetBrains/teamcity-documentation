@@ -208,6 +208,30 @@ Note that role settings are global.
 
 >You can also configure roles and permissions using the `roles-config.xml` file stored in `<[TeamCity Data Directory](teamcity-data-directory.md)>/config` directory.
 
+
+## Permission Inheritance
+
+User permissions are shared from a parent project to its subprojects, and from a parent user group to child groups.
+
+### Project Inheritance
+
+Suppose a project "Main" has two subprojects: "Project A" and "Project B". Each project has a corresponding user group:
+
+* The "Main Project Users" group grants its users the "Project administrator" role for project "Main".
+* "Group A" and "Group B" give their users the "Project viewer" role for corresponding child projects.
+
+A user added to "Main Project Users" and "Group A" will have the "Project administrator" role in both child projects because this role is inherited from the "Main Project Users" group.
+
+<img src="dk-share-permissions-to-subprojects.png" width="706" alt="Permissions shared to subprojects"/>
+
+### Group Inheritance
+
+When you assign a role to a user group, all child groups of this group get the same permissions. On the **Administration | Groups** page, groups with inherited roles display the "N/M" counter under the "Roles" column. "N" is the number of roles assigned to this group directly, and "M" is the number of roles inherited from parent groups.
+
+In the figure below, the "Tier 3" group has two roles inherited from its parent "Tier 1" and "Tier 2" groups. Since this group has no directly assigned roles, its counter is "0/2".
+
+<img src="dk-groups-inheritance.png" width="706" alt="Roles inheritance in user groups"/>
+
 <seealso>
         <category ref="admin-guide">
             <a href="enabling-guest-login.md">Enabling Guest Login</a>
