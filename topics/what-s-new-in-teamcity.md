@@ -36,7 +36,7 @@ You can now choose the "Only if build status is failed" [execution policy](confi
 
 <img src="dk-whatsnew2303-onlywhenfails.png" width="706" alt="Run the build step only when the build fails"/>
 
-## DSL Configuration for Build Failure Conditions on Custom Statistics Values
+## Kotlin DSL: Build Failure Conditions on Custom Metrics
 
 You can now use Kotlin DSL to configure a build failure condition [on a custom statistic value](build-failure-conditions.md#Adding+Custom+Build+Metric) 
 reported by the build. 
@@ -65,15 +65,16 @@ In addition to Bitbucket Cloud, TeamCity now supports Bitbucket Server and Data 
 
 See the following articles for more information: [Configuring Connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) | [Creating and Editing Projects](creating-and-editing-projects.md#Creating+project+pointing+to+Bitbucket)
 
-# Improved Bitbucket Server Authentication in Commit Status Publisher
+# Commit Status Publisher: Access Token Authentication to Bitbucket Server
 
-Commit Status Publisher now supports access tokens for authentication to Bitbucket Server. 
-To use the **Access Token** authentication type, сlick the **Acquire** button to obtain the token.
+Commit Status Publisher now supports access tokens for authentication to Bitbucket Server.
+When you select the **Access Token** authentication type, TeamCity will display
+a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Server+and+Data+Center)
+to Bitbucket Server / Data Center configured in the project and available to all project users.
+Click the **Acquire** button to obtain the token for the current user.
 If you are not signed in to your Bitbucket Server / Data Center account, TeamCity will ask for access to it.
-After you sign in, TeamCity will display a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Server+and+Data+Center)
-to Bitbucket Server / Data Center. 
-Click the **Acquire** button next to a required connection. 
-TeamCity will the information about the user that obtained the token and the connection that provided the token.
+After you sign in, you will be able to acquire a token for the required connection.
+TeamCity will display the information about the user that obtained the token and the connection that provided the token.
 
 <img src="dk-CSP-BBServerToken.png" width="708" alt="Acquire access token for Bitbucket Server"/>
 

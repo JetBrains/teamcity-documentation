@@ -66,16 +66,20 @@ If you switch the **Authentication Type** to "Access Token", TeamCity will displ
 ### Bitbucket Server
 
 Commit Status Publisher supports the Bitbucket Server URL in the following format: `http[s]://<hostname>:<port>`. 
-Apart from the URL, you need to specify a username and password or an access token for authentication.
+Besides the URL, you need to specify a username and password or an access token for authentication.
 
-To get a token for the **Access Token** authentication type, сlick the **Acquire** button.
+When you select the **Access Token** authentication type, TeamCity will display
+a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Server+and+Data+Center)
+to Bitbucket Server / Data Center configured in the project and available to all project users.
+If a token is already configured, TeamCity will display the information about the user that obtained the token and the connection that provided the token.
+
+To obtain the token for the current user, click the **Acquire** button. 
 If you are not signed in to your Bitbucket Server / Data Center account, TeamCity will ask for access to it.
-After you sign in, TeamCity will display a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) 
-to Bitbucket Server / Data Center. 
-Click the **Acquire** button next to a required connection to obtain an access token. 
-TeamCity will the information about the user that obtained the token and the connection that provided it.
+After you sign in, you will be able to acquire a token for the required connection. 
+TeamCity will update the token information for the connection.
 
 <img src="dk-CSP-BBServerToken.png" width="708" alt="Acquire access token for Bitbucket Server"/>
+
 
 To protect a branch and ensure that only verified pull requests are merged into it, you can specify [required builds](https://confluence.atlassian.com/bitbucketserver/checks-for-merging-pull-requests-776640039.html#Checksformergingpullrequests-Requiredbuildsmergecheck) in your Bitbucket repository settings. To set a TeamCity build as a _required build_, open the __Add required builds__ page in Bitbucket and specify a build configuration ID as a build key in the __Add builds__ field. In this case, Bitbucket will not allow a pull request to be merged until the build on requested changes finishes successfully.
 
