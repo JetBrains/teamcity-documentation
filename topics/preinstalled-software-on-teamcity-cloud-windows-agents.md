@@ -9,7 +9,7 @@
 |[Ruby](https://www.ruby-lang.org/en/)|3.1.1.1|
 |[Unity Hub](https://unity.com/unity-hub)|3.4.1.0|
 |[Unity](https://unity.com/)|2021.3.4.17913|
-|[JDK](https://aws.amazon.com/corretto/)|11.0.16.9.1|
+|[JDK](https://aws.amazon.com/corretto/)|11|
 |[.NET](https://dotnet.microsoft.com/)|7.0.102|
 |[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|1.25.3|
 |[AWS CLI](https://aws.amazon.com/cli/)|2.8.3|
@@ -20,7 +20,7 @@
 |[Mercurial](https://www.mercurial-scm.org/)|1.0.0.1|
 |[SVN](https://subversion.apache.org/)|1.14.2.64502|
 |[RTools](https://cran.r-project.org/bin/windows/Rtools/)||
-|[Node.js](https://nodejs.org/en/)|v18.14.0|
+|[Node.js](https://nodejs.org/en/)|v18.15.0|
 |[Yarn](https://yarnpkg.com/)|1.22.19|
 |[Docker](https://www.docker.com/)|20.10.9|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
