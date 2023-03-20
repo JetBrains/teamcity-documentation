@@ -1,34 +1,14 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2022.10.2 to 2022.10.3
 
-## Changes from 2022.10.1 to 2023.05 
+### Bundled Tools Updates
+{id="bundled-tools-updates-2022-10-3"}
 
-## Changes in metrics reporting
-
-### OpenMetrics compliance
-
-The reported [Prometheus metrics](teamcity-monitoring-and-diagnostics.md#Metrics) of types _"summary"_ and _"histogram"_ are now compliant with [the OpenMetrics specification](https://openmetrics.io/).
-
-As a part of this change, the summary metrics that had `_total` suffixes earlier have `_sum` suffixes now.
-For instance, the `build_queue_optimization_time_milliseconds_total` metric is now named `build_queue_optimization_time_milliseconds_sum`.
-
-To preserve the history in Grafana, use of the options below:
-
-* _Recommended_. Use the `or` operator in graph specifications to use data  with both `_total` and `_sum` suffixes:
-
-```Text
-sum(increase(vcs_changes_checking_milliseconds_sum{type="COLLECT_CHANGES"}[1m])) or
-sum(increase(vcs_changes_checking_milliseconds_total{ type="COLLECT_CHANGES"}[1m]))
-```
-
-* Use the Prometheus relabeling configuration to rename the metrics on the fly, before they are sent to the Prometheus database. This will convert the new `_sum` metrics to the previous `_total` metrics.
-
-### Removal of the "experimental" tag
-
-TeamCity will not report the `experimental` tag for metrics anymore. The `?experimental=true` URL parameter for metrics endpoints will still work, and some of the metrics will still have the experimental status.
-
-
+* The bundled Git was updated to version 2.40 in both Server and Agent Docker images.
+* The bundled Tomcat was updated to version 9.0.71.
+* The Perforce Helix Core client (p4) was updated to version 2022.2-2407422 in Agent and Server Docker images.
 
 ## Changes from 2022.10.1 to 2022.10.2
 
@@ -36,7 +16,7 @@ TeamCity will not report the `experimental` tag for metrics anymore. The `?exper
 {id="bundled-tools-updates-2022-10-2"}
 
 * The bundled Git was updated to version 2.39.1 in both Server and Agent Docker images.
-* The Perforce Helix Core client (p4) was updated to version 22022.2-2369846 in Agent Docker images.
+* The Perforce Helix Core client (p4) was updated to version 2022.2-2369846 in Agent Docker images.
 * The bundled Apache Tomcat was updated to version 8.5.84.
 
 
@@ -45,8 +25,6 @@ TeamCity will not report the `experimental` tag for metrics anymore. The `?exper
 The Web Application Description Language (WADL) generator will be removed in version 2023.05 since we now utilize Swagger to generate documentation [REST API](teamcity-rest-api.md) and client code.
 
 If you rely on this generator tool, [contact us](feedback.md) to share your business requirements.
-
-
 
 ## Changes from 2022.10 to 2022.10.1
 
