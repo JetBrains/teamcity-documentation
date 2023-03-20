@@ -1,13 +1,22 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2022.10.2 to 2022.10.3
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2022-10-3"}
+
+* The bundled Git was updated to version 2.40 in both Server and Agent Docker images.
+* The bundled Tomcat was updated to version 9.0.71.
+* The Perforce Helix Core client (p4) was updated to version 2022.2-2407422 in Agent and Server Docker images.
+
 ## Changes from 2022.10.1 to 2022.10.2
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2022-10-2"}
 
 * The bundled Git was updated to version 2.39.1 in both Server and Agent Docker images.
-* The Perforce Helix Core client (p4) was updated to version 22022.2-2369846 in Agent Docker images.
+* The Perforce Helix Core client (p4) was updated to version 2022.2-2369846 in Agent Docker images.
 * The bundled Apache Tomcat was updated to version 8.5.84.
 
 
