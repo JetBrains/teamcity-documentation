@@ -56,16 +56,17 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 * The bundled Amazon Corretto Java has been updated to version 11.0.16.9.1.
 * The bundled Tomcat has been updated to version 8.5.82.
 * The bundled Kotlin compiler in the [Kotlin Script runner](kotlin-script.md) has been updated to version 1.7.10.
-  <note>
+
   
-  Kotlin compiler 1.7.10 changes its behavior in respect to the`@file:Repository` annotations supported by the `.main.kts` extension
+  > Kotlin compiler 1.7.10 changes its behavior in respect to the`@file:Repository` annotations supported by the `.main.kts` extension
   (used in build steps with custom scripts by default). In Kotlin 1.5, when such annotations were used in the script
   and a dependency was not found in any of the mentioned repositories, the dependency resolver would also look in the Maven Central
   even if it was not mentioned explicitly.
   In Kotlin 1.7 this behavior changes. Maven Central is only checked if no `@file:Repository` annotations are used in the script.
   If you use such annotations in your code, you’ll need to mention Maven Central explicitly 
   if you want the dependency resolver to look in it.
-  </note>
+  >
+  {type="note"}
 * Maven 3.8.6 has been added as one of the bundled versions of the tool.
 * The embedded Maven library has been updated to version 3.8.6.
 * JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
@@ -686,11 +687,10 @@ We stop providing active support for the [MSBuild](msbuild.md), [Visual Studio (
 
 See the [.NET description](net.md) for more information about the new .NET step and migration notes.
 
-<note>
-  
-Since the reworked .NET runner introduces new options and features, you might not be able to use them if downgrading to the earlier versions of TeamCity. In such case, you will have to return to using the obsolete runners after downgrading. To prevent any issues, you can [back up your TeamCity data](creating-backup-from-teamcity-web-ui.md) before upgrading to version 2019.2.3.
-  
-</note>
+
+> Since the reworked .NET runner introduces new options and features, you might not be able to use them if downgrading to the earlier versions of TeamCity. In such case, you will have to return to using the obsolete runners after downgrading. To prevent any issues, you can [back up your TeamCity data](creating-backup-from-teamcity-web-ui.md) before upgrading to version 2019.2.3.
+>
+{type="note"}
 
 If you face any problems with migration to the .NET runner or encounter other related issues, do not hesitate to contact us via any convenient [feedback channel](feedback.md).
 
@@ -735,13 +735,11 @@ If your custom scripts or settings depend on the main alternates source for subm
 
 ## Changes from 2019.2 to 2019.2.1
 
-<note>
-
-__Java 8 update 242+ incompatibility__
-
-For versions 2019.2.1 and earlier, please __[do not use](known-issues.md#jdk8_240) Java 8 newer than [update 232](https://github.com/corretto/corretto-8/releases/tag/8.232.09.1)__ for the TeamCity server.
-
-</note>
+> __Java 8 update 242+ incompatibility__
+> 
+> For versions 2019.2.1 and earlier, please __[do not use](known-issues.md#jdk8_240) Java 8 newer than [update 232](https://github.com/corretto/corretto-8/releases/tag/8.232.09.1)__ for the TeamCity server.
+>
+{type="tip"}
 
 No noteworthy changes.
 
@@ -1721,11 +1719,11 @@ Bundled Ant distribution has been upgraded form 1.8.4 to 1.9.6. Note that Ant bu
 
 MSTest runner is merged with [VSTest console runner](https://confluence.jetbrains.com/display/TW/VSTest.Console+Runner) (previously provided as a separate plugin) into the [Visual Studio Tests](visual-studio-tests.md) runner. Note that after upgrade to TeamCity 9.1, MSTest build steps are automatically converted to the Visual Studio Tests runner steps, while VSTest steps remain unchanged.
 
-<note>
 
-If you have used [VSTest.Console runner plugin](https://confluence.jetbrains.com/display/TW/VSTest.Console+Runner), make sure that you have latest version (build __32407__) installed. The plugin version can be viewed on __Administration | Plugins List__ page. Earlier versions of this plugin are __not compatible__ with TeamCity 9.1 and may cause malfunction of .NET related build runners which can manifest with `java.lang.NoSuchMethodError: jetbrains.buildServer.runner.NUnit.NUnitVersion.parse(Ljava/lang/String;)` build errors. The plugin can be downloaded from [its page](https://confluence.jetbrains.com/display/TW/VSTest.Console+Runner).
+> If you have used [VSTest.Console runner plugin](https://confluence.jetbrains.com/display/TW/VSTest.Console+Runner), make sure that you have latest version (build __32407__) installed. The plugin version can be viewed on __Administration | Plugins List__ page. Earlier versions of this plugin are __not compatible__ with TeamCity 9.1 and may cause malfunction of .NET related build runners which can manifest with `java.lang.NoSuchMethodError: jetbrains.buildServer.runner.NUnit.NUnitVersion.parse(Ljava/lang/String;)` build errors. The plugin can be downloaded from [its page](https://confluence.jetbrains.com/display/TW/VSTest.Console+Runner).
 Consider migrating your vstest.console execution steps to the bundled Visual Studio Tests runner.
-</note>
+>
+{type="note"}
 
 #### MSTest installation agent properties
 
@@ -1951,7 +1949,7 @@ PowerShell runner plugin is broken in 8.1. Fix is available, please follow instr
 
 #### Known issue with Command Line Runner
 
-Command line runner using "Executable with parameters" option can process quotes (") and percentage signs (%) in a bit different way then in previous TeamCity versions (see details in the [issue](http://youtrack.jetbrains.com/issue/TW-35087)). To switch back to the previous (8.0) behavior you may specify command.line.run.as.script=false configuration parameter in a build configuration or in a project. The issue is fixed in 8.1.1.   
+Command line runner using "Executable with parameters" option can process quotes (") and percentage signs (%\) in a bit different way then in previous TeamCity versions (see details in the [issue](http://youtrack.jetbrains.com/issue/TW-35087)). To switch back to the previous (8.0) behavior you may specify command.line.run.as.script=false configuration parameter in a build configuration or in a project. The issue is fixed in 8.1.1.   
 The recommended approach is to switch to "Custom script" option instead of "Executable with parameters" in command line runner.
 
 #### Memory Settings
@@ -2252,10 +2250,10 @@ Starting with this version Ant runner requires minimum of JDK 1.4 in __runtime__
 * TeamCity __server__ should be run with JRE 1.6 or above (was 1.5 previously). TeamCity .exe distribution is already bundled with appropriate Java. For .tar.gz or .war TeamCity distributions you might need to install and configure server [manualy](install-and-start-teamcity-server.md).
 * TeamCity __agent__ should be run with JRE 1.6 or above (was 1.5 previously). Agent .exe distribution is already bundled with appropriate Java. If you used .zip agent distribution or installed the TeamCity agent with TeamCity version 5.0 or earlier, you might need [manual steps](install-and-start-teamcity-agents.md). If you run TeamCity 6.5.x, please check "Agents" page of your existing TeamCity server: the page will have a yellow warning in case any of the connected agents are running JDK less than 1.6.
 
-<note>
 
-If any of your agents are running under JDK version less than 1.6, the agents will fail to upgrade and will stop running on the server upgrade. You will need to recover them manually by installing JDK 1.6 and making sure the agents will [use it](install-and-start-teamcity-agents.md).
-</note>
+> If any of your agents are running under JDK version less than 1.6, the agents will fail to upgrade and will stop running on the server upgrade. You will need to recover them manually by installing JDK 1.6 and making sure the agents will [use it](install-and-start-teamcity-agents.md).
+>
+{type="note"}
 
 __Project/Template parameters override__   
 In TeamCity 7.0 project parameters have higher priority than parameters defined in template, i.e. if there is a parameter with some name and value in the project and there is parameter with the same name and different value in template of the same project, value from the project will be used. This was not so in TeamCity 6.5 and was [changed](http://youtrack.jetbrains.com/issue/TW-17247) to be more flexible when template belongs to anohter project.Build configuration parameters have the highest priority, as usual.
@@ -2450,10 +2448,12 @@ If you had NUnit or MSTest tests configured in TeamCity UI (sln and MSBuild runn
 
 Please note that implementation of tests launching has changed and this affected relative paths usage: in TeamCity 6.0 the working directory and all the UI\-specified wildcards are resolved based on the build's [checkout directory](build-checkout-directory.md), while they used to be based on the directory containing .sln file. Simple settings are converted on TeamCity upgrade, but you might need to verify the runners contain appropriate settings.
 
-__"%" Escaping in the Build Configuration Properties__   
-Now, two percentage signs (%%) in values defined in Build Configuration settings are treated as escape for a single percentage sign. Your existing settings are converted on upgrade to preserve functioning like in previous versions. However, you might need to review the settings for unexpected "%" sign\-related issues.
+__"%\" Escaping in the Build Configuration Properties__  
 
-__.Net Framework Properties are Reported as Configuration Parameters__   
+Now, two percentage signs (%\%\) in values defined in Build Configuration settings are treated as escape for a single percentage sign. Your existing settings are converted on upgrade to preserve functioning like in previous versions. However, you might need to review the settings for unexpected "%\" sign\-related issues.
+
+__.Net Framework Properties are Reported as Configuration Parameters__  
+
 In previous TeamCity versions, installed .Net Frameworks, Visual Studios and Mono were reported as System Properties of the build agents.   
 This made the properties available in the build script.In order to reduce number of TeamCity\-specific properties pushed into the build scripts, the values are now reported via Configuration Parameters (that is, without "system." prefix) and are not available in the build script by default. They still be used in the Build Configuration settings via %\-references by their previous names, just without "system." prefix.
 
@@ -2500,15 +2500,16 @@ The [bug](http://youtrack.jetbrains.net/issue/TW-11854) was fixed. The behavior 
 
 ## Changes from 5.0.3 to 5.1
 
-<tip>
 
-If you plan to upgrade from version 3.1.x to 5.1, you will need to modify some dtd files in `<TeamCity Data Directory>/config` before upgrade, read more in the issue: [TW-11813](http://youtrack.jetbrains.net/issue/TW-11813#comment=27-148589)
-</tip>
 
-<tip>
+> If you plan to upgrade from version 3.1.x to 5.1, you will need to modify some dtd files in `<TeamCity Data Directory>/config` before upgrade, read more in the issue: [TW-11813](http://youtrack.jetbrains.net/issue/TW-11813#comment=27-148589)
+>
+{type="tip"}
 
-NCover 3 support may not work. See [TW-11680](http://youtrack.jetbrains.net/issue/TW-11680#comment=27-148573)
-</tip>
+
+> NCover 3 support may not work. See [TW-11680](http://youtrack.jetbrains.net/issue/TW-11680#comment=27-148573)
+>
+{type="tip"}
 
 __Notification templates change__   
 Since 5.1, TeamCity uses [new template engine](customizing-notification-templates.md) (Freemarker) to generate notification messages. New default templates are supplied and customizations to the templates made prior to upgrading are no longer effective.
@@ -2548,11 +2549,11 @@ See [Open API Changes](https://confluence.jetbrains.com/display/TCD18/Open+API+C
 
 No noteworthy changes.
 
-<tip>
 
-There is a known issue with .NET duplicates finder: [TW-11320](http://youtrack.jetbrains.net/issue/TW-11320)   
+> There is a known issue with .NET duplicates finder: [TW-11320](http://youtrack.jetbrains.net/issue/TW-11320)   
 Please use the patch attached to the issue.
-</tip>
+> 
+{type="tip"}
 
 ## Changes from 5.0.1 to 5.0.2
 
@@ -2721,10 +2722,10 @@ Move your database settings from the `<TeamCity installation folder>/ROOT/WEB-IN
 
  
 
-<tip>
 
-If you were using the TeamCity\-GitHub [third-party plugin](https://github.com/milgner/TeamCityGithub) prior to TeamCity 10.0, you can safely [remove](installing-additional-plugins.md) it: the built\-in TeamCity integration will detect the existing connection to GitHub issue tracker and pick up your settings automatically.
-</tip>
+> If you were using the TeamCity\-GitHub [third-party plugin](https://github.com/milgner/TeamCityGithub) prior to TeamCity 10.0, you can safely [remove](installing-additional-plugins.md) it: the built\-in TeamCity integration will detect the existing connection to GitHub issue tracker and pick up your settings automatically.
+>
+{type=tip}
 
  
 `teamcity.TruncateIgnoreReasonConverter.copyReasons`:
