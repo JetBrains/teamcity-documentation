@@ -1,9 +1,9 @@
 [//]: # (title: TeamCity 2022.10.3 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2022.10.3 Release Notes)
 
-__Build: ???__
+__Build: 117072__
 
-__??? March 2023__
+__21 March 2023__
 
 <!---
 project: TeamCity Fix versions: 2022.10.3 visible to: {All Users} State: Fixed -{Trunk issue}
