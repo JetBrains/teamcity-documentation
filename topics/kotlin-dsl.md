@@ -607,7 +607,7 @@ object CommandLineRunnerTest : BuildType({
 })
 ```
 
-As a result, your Command Line build step will run a custom script with the body specified in `scripts\simple.sh`.
+As a result, your Command Line build step will run a custom script with the body specified in `scripts\test.sh`.
 
 ### New URL of Settings VCS Root (Non portable format)
 
