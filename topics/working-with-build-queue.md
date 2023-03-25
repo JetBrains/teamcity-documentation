@@ -79,7 +79,32 @@ To create a new priority class:
 2. Specify its name, priority (in the range `-100..100`), and additional description. Click __Create__.
 3. Click __Add configurations__ and specify which build configurations should have priority defined in this class.
 
-This setting is taken into account only when a build is added to the queue. To ensure that builds with lower priority always have a chance to run, TeamCity also considers how long each build is staying in the queue. This allows running a long awaiting build with lower priority before the recently added builds with higher priority. For a detailed explanation of this behavior, refer to the [algorithm description](https://confluence.jetbrains.com/display/TW/Build+Queue+Priorities#BuildQueuePriorities-Algorithmdetails).
+This setting is taken into account only when a build is added to the queue. To ensure that builds with lower priority always have a chance to run, TeamCity also considers how long each build is staying in the queue. 
+This allows running a build that has been waiting a long time with a lower priority before the recently added builds with higher priority. 
+See the detailed explanation of the algorithm below.
+
+### Build priority algorithm 
+
+Every time a new build is added to the queue, the priorities of all the builds are recalculated,
+and the new build is placed in the position `i`, such that
+`priority of build at position i-1` \>= `priority of new build` \> `priority of build at position i+1` (`i = 0` at the top of the queue).
+
+We use the following formula to recalculate priorities of builds in the queue:
+
+`buildPriority = a * timeSpentInTheQueue / estimatedBuildDuration + b * buildConfigurationPriority`
+
+where `a` and `b` are configurable coefficients ([internal properties](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.buildqueue.waitWeight` and `teamcity.buildqueue.priorityWeight` respectively) 
+with the default values of `1.0`. Changing internal properties requires the server restart.
+
+So when the build waits in the queue for the amount of time that equals to the estimated build duration, 
+its priority is increased by one. 
+This helps the builds with low priority to start eventually.
+
+If you want the higher priority builds to be always placed closer to the top of the queue, set `a = 0`, 
+but keep in mind that lower priority builds may starve if there are always some higher priority builds to run.
+
+If you want to run more of the faster builds, you can set `b = 0`. 
+In this case, the faster build is, the faster its priority grows, so faster builds are likely to start sooner, while slower builds may starve.
 
 ## Pausing and Resuming Build Queue
 

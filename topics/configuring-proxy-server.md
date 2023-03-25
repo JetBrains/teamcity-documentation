@@ -33,7 +33,7 @@ The proxy should be configured with the generic web security in mind. Headers li
 
 ### Apache
 
-Versions 2.4.5 or later are recommended. Earlier versions do not support the WebSocket protocol, so you should use the settings described in the [previous documentation version](https://confluence.jetbrains.com/display/TCD8/How+To...).
+Versions 2.4.5 or later are recommended. Earlier versions do not support the WebSocket protocol.
 
 When using Apache, make sure to use the [Dedicated "Connector" node approach](#TeamCity+Tomcat+Configuration) for configuring TeamCity server.
 
@@ -78,7 +78,7 @@ On Windows, you may need to increase the [ThreadsPerChild](http://httpd.apache.o
 
 ### NGINX
 
-Versions 1.3 or later are recommended. Earlier versions do not support the WebSocket protocol, so you should use the settings described in the [previous documentation version](https://confluence.jetbrains.com/display/TCD8/How+To...).
+Versions 1.3 or later are recommended. Earlier versions do not support the WebSocket protocol.
 
 
 ```Java

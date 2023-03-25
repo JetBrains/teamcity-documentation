@@ -144,6 +144,3 @@ Note that Swabra may sometimes cause [clean checkout](clean-checkout.md) to rest
 To avoid unnecessary frequent clean checkouts, always set up identical Swabra build features for build configurations working in the same checkout directory.   
 Build configurations work in the same checkout directory if either the same custom checkout directory path or same VCS settings configured for them.
 
-## Development links
-
-See plugin page at [Swabra](https://confluence.jetbrains.com/display/TW/Swabra).

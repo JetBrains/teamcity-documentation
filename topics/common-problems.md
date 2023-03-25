@@ -494,8 +494,6 @@ If you are experiencing issues with partial TeamCity NuGet Feed (for example, mi
 
 To force TeamCity to reindex all available packages and reset the NuGet package list, navigate to the server __Administration | Diagnostics | Caches__ and use the [buildsMetadata Reset](teamcity-monitoring-and-diagnostics.md#Caches) link.
 
-For earlier versions, refer to [this section](https://confluence.jetbrains.com/display/TCD8/Common+Problems).
-
 ## Problems with .NET-related TeamCity Tools
 
 ### Startup performance issues
