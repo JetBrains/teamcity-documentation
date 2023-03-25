@@ -36,4 +36,4 @@ In case none of the listed steps help to resolve your problem, please contact ou
 ## Troubleshooting
 {product="tcc"}
 
-If you face problems regarding CSRF protection in TeamCity, please contact our [support](https://confluence.jetbrains.com/display/TW/Feedback).
+If you face problems regarding CSRF protection in TeamCity, please contact our [support](feedback.md).

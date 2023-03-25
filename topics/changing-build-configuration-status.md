@@ -130,7 +130,7 @@ It is possible to filter out the build configurations whose status you want to b
 
 To display the status of selected build configurations in __TeamCity__:
 * configure visible projects on the __Projects__ page to display the status of build configurations belonging to these projects only
-* implement a [custom Java plugin](https://confluence.jetbrains.com/display/TCD18/Developing+TeamCity+Plugins) for TeamCity to make the page available as a part of  the TeamCity web application
+* implement a [custom Java plugin](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html) for TeamCity to make the page available as a part of  the TeamCity web application
 
 To display the status for a set of build configurations __externally__ (on your company's website, wiki, Confluence, or any other web page), you can:
 * use the [external status widget](configuring-general-settings.md#HTML+Status+Widget)

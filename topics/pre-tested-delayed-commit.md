@@ -7,7 +7,8 @@ The submitted code changes go through testing first. If the code passes all the 
 
 Developers test their changes by performing a [Remote Run](remote-run.md). A pre-tested commit is enabled when the __commit changes if successful__ option is selected.
 
-The pre-tested commit is initiated via a plugin to one of [supported IDEs](supported-platforms-and-environments.md#IDE+Integration). For remote run a command-line tool is also [available](https://confluence.jetbrains.com/display/TW/Command+Line+Remote+Run+Tool).
+The pre-tested commit is initiated via a plugin to one of [the supported IDEs](supported-platforms-and-environments.md#IDE+Integration). 
+For a remote run a command-line tool is also [available](https://plugins.jetbrains.com/plugin/9101-command-line-remote-run-tool).
 
 For Git and Mercurial the recommended way to use [Branch Remote Run Trigger](branch-remote-run-trigger.md) approach to run personal builds off branches.
 
