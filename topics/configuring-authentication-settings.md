@@ -30,7 +30,7 @@ TeamCity provides several preconfigured authentication options (presets) to cove
   * [Azure DevOps Services](#Azure+DevOps+Services)
   * [HTTP SAML 2.0](#HTTP+SAML+2.0)
 
->If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure single sign-on (SSO) from the TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).
+>If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure the single sign-on setting (SSO) from the TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).
 >
 {product="tc"}
 
@@ -43,7 +43,28 @@ To switch to a different preconfigured scheme, use the __Load preset__ button.
 
 <tip product="tc">
 
-Any changes made to authentication in the UI are reflected in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml` file. If using the UI is not possible (for example, the server is not started yet), you can configure authentication settings in this file. The detailed instructions are available in the [previous version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings) of this document.
+Any changes made to authentication in the UI are reflected in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml>` file. 
+If using the UI is not possible (for example, you need to change the authentication settings before the server is started), 
+you can configure authentication settings in the <TeamCity data directory>/config/auth-config.xml file on the server machine as follows:
+
+ 1. Add the `<auth-module>` tag inside the `<auth-modules>` tag inside the `<auth-config>` tag.
+ 2. Specify the type attribute for the newly created `<auth-module>` tag.
+
+The following values are supported for the type attribute (the values are case-insensitive):
+
+* For credentials authentication modules:
+  ** Default for Default Authentication
+  ** NT-Domain for Windows Domain Authentication
+  ** LDAP for LDAP Authentication
+
+* For HTTP authentication modules:
+  ** HTTP-Basic for Basic HTTP Authentication
+  ** HTTP-NTLM for NTLM HTTP Authentication
+  
+You can also provide some properties for each authentication module depending on the module type. Each property is specified as the <property> tag inside the corresponding <auth-module> tag. Each <property> tag must contain the key attribute with a property key. The property value is specified as the text inside the <property> tag.
+
+Also, TeamCity plugins can provide additional authentication modules. The server restart is NOT needed after editing this file. The changes will be reflected in the Web UI.
+
 </tip>
 
 ### Using Presets
@@ -63,7 +84,8 @@ When a user attempts to sign in, modules will be tried one by one. If one of the
 
 <warning>
 
-If System Administrator creates users without a password with several authentication modes enabled on the server including the [Built-in](#Built-in+Authentication) one, and later changes authentication from mixed one to the build-in one, users with no password will be unable to sign in to TeamCity.
+If the System Administrator creates users without a password while several authentication modes are enabled on the server including [Built-in authentication](#Built-in+Authentication) 
+and later changes authentication from mixed to built-in, the users with no password will be unable to sign in to TeamCity.
 </warning>
 
 It is possible to use a combination of internal and external authentication. The recommended approach is to configure [LDAP Integration](ldap-integration.md) for your internal employees first and then to add [Built-in](#Built-in+Authentication) authentication for external users. Since TeamCity 2020.2, you can also enable authentication via OAuth services.
@@ -103,14 +125,19 @@ Handling of the user mapping by the bundled authentication modules:
 * Built-in authentication stores a TeamCity-maintained password for each user.
 * Windows Domain authentication allows specifying the default domain and assumes the domain account name is equal to the TeamCity user. The domain account can be edited on the user profile page.
 * LDAP Integration allows setting LDAP property to get TeamCity username from user's LDAP entry.
-* Modules, corresponding to Git hosting providers, allow admins mapping users with their external accounts by usernames. Each user can connect own profile to an external Git hosting account in __Your Profile | General | Authentication Settings__.
+* The modules corresponding to Git hosting providers allow admins to map users with to their external accounts by usernames. Each user can connect their own profile to an external Git hosting account in __Your Profile | General | Authentication Settings__.
 
 Be cautious when modifying authentication settings: there can be a case when the administrator cannot sign in after changing authentication modules.   
-Let's imagine that the administrator had the "jsmith" TeamCity username and used the default authentication. Then, the authentication module was changed to Windows domain authentication (i.e. Windows domain authentication module was added and the default one was removed). If, for example, the Windows domain username of that administrator is "john.smith", they will not able to sign in anymore: not via the default authentication since it is disabled nor via Windows domain authentication since their Windows domain username is not equal to the TeamCity username. The solution nevertheless is quite simple: the administrator can sign in using the [superuser account](super-user.md) and change their TeamCity username or specify their Windows domain username on their own profile page.
+Let's imagine that the administrator had the "jsmith" TeamCity username and used the default authentication. 
+Then, the authentication module was changed to Windows domain authentication (i.e. Windows domain authentication module was added and the default one was removed). 
+If, for example, the Windows domain username of that administrator is "john.smith", they will not be able to sign in anymore: 
+not via the default authentication since it is disabled, nor via Windows domain authentication since their Windows domain username is not equal to the TeamCity username. 
+The solution, nevertheless, is quite simple: the administrator can sign in using the [superuser account](super-user.md) 
+and change their TeamCity username or specify their Windows domain username on their own profile page.
 {product="tc"}
 
 Be cautious when modifying authentication settings: there can be a case when the administrator cannot sign in after changing authentication modules.   
-Let's imagine that the administrator had the "jsmith" TeamCity username and used the default authentication. Then, the authentication module was changed to Windows domain authentication (i.e. Windows domain authentication module was added and the default one was removed). If, for example, the Windows domain username of that administrator is "john.smith", they will not able to sign in anymore: not via the default authentication since it is disabled nor via Windows domain authentication since their Windows domain username is not equal to the TeamCity username.
+Let's imagine that the administrator had the "jsmith" TeamCity username and used the default authentication. Then, the authentication module was changed to Windows domain authentication (i.e. Windows domain authentication module was added and the default one was removed). If, for example, the Windows domain username of that administrator is "john.smith", they will not be able to sign in anymore: not via the default authentication since it is disabled nor via Windows domain authentication since their Windows domain username is not equal to the TeamCity username.
 {product="tcc"}
 
 ### Special User Accounts
@@ -124,7 +151,9 @@ By default, TeamCity has a [Super User](super-user.md) account with maximum perm
 
 By default, TeamCity uses the built-in authentication and maintains users and their passwords by itself.
 
-When signing in to TeamCity for the first time, the user will be prompted to create the TeamCity username and password which will be stored in TeamCity and used for authentication. If you installed TeamCity and signed in to it, it means that built-in authentication is enabled and all user data is stored in TeamCity.
+When signing in to TeamCity for the first time, the user will be prompted to create the TeamCity username and password,
+that will be stored in TeamCity and used for authentication. 
+If you installed TeamCity and signed in to it, it means that built-in authentication is enabled, and all user data is stored in TeamCity.
 
 In the beginning, the user database is empty. New users are either [added by the TeamCity administrator](creating-and-managing-users.md), or users register themselves if the corresponding option is enabled in the authentication module settings. All newly created users belong to the [All Users](creating-and-managing-user-groups.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](managing-roles-and-permissions.md) are needed for the newly registered users, these roles should [be granted](managing-roles-and-permissions.md#Managing+Roles) via the __All Users__ group.
 
@@ -237,7 +266,7 @@ Restrict authentication
 
 A comma-separated list of [workspaces'](https://support.atlassian.com/bitbucket-cloud/docs/what-is-a-workspace/) IDs.
 
-This list limits a set of users who can register or authenticate in TeamCity with their Bitbucket Cloud account to the specified workspaces. When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified workspaces and don't have a user profile in TeamCity.
+This list limits a set of users who can register or authenticate in TeamCity with their Bitbucket Cloud account to the specified workspaces. When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified workspaces and do not have a user profile in TeamCity.
 
 Leave empty to allow all Bitbucket Cloud users to access the TeamCity server.
 
@@ -293,7 +322,7 @@ Restrict authentication
 
 A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams/about-organizations) IDs.
 
-This list limits a set of users who can register or authenticate in TeamCity with their GitHub account  to the specified organizations. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified organizations and don't have a user profile in TeamCity.
+This list limits a set of users who can register or authenticate in TeamCity with their GitHub account  to the specified organizations. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified organizations and do not have a user profile in TeamCity.
 
 >To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub.com connection](configuring-connections.md#GitHub) is approved for each specified organization.
 {type="note"}
@@ -352,7 +381,7 @@ Restrict authentication
 
 A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams/about-organizations) IDs.
 
-This list limits a set of users who can register or authenticate in TeamCity with their GitHub account  to the specified organizations. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified organizations and don't have a user profile in TeamCity.
+This list limits a set of users who can register or authenticate in TeamCity with their GitHub account  to the specified organizations. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified organizations and do not have a user profile in TeamCity.
 
 >To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub Enterprise connection](configuring-connections.md#GitHub) is approved for each specified organization.
 {type="note"}
@@ -417,7 +446,7 @@ Restrict authentication
 
 A comma-separated list of [groups'](https://docs.gitlab.com/ee/user/group/) IDs.
 
-This list limits a set of users who can register or authenticate in TeamCity with their GitLab account  to the specified groups. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified groups and don't have a user profile in TeamCity.
+This list limits a set of users who can register or authenticate in TeamCity with their GitLab account  to the specified groups. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified groups and do not have a user profile in TeamCity.
 
 Leave empty to allow all GitLab users to access the TeamCity server.
 
@@ -475,7 +504,7 @@ Restrict authentication
 
 A comma-separated list of [groups'](https://docs.gitlab.com/ee/user/group/) IDs.
 
-This list limits a set of users who can register or authenticate in TeamCity with their GitLab account  to the specified groups. When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified groups and don't have a user profile in TeamCity.
+This list limits a set of users who can register or authenticate in TeamCity with their GitLab account  to the specified groups. When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified groups and do not have a user profile in TeamCity.
 
 Leave empty to allow all GitLab users to access the TeamCity server.
 
@@ -556,7 +585,7 @@ A comma-separated list of [organizations' domains](https://cloud.google.com/reso
 
 This list limits a set of users who can register or authenticate in TeamCity with their Google account to the users of the specified domains. 
 
-When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified domains and don't have a user profile in TeamCity.
+When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified domains and do not have a user profile in TeamCity.
 
 >There is no synchronization of user profiles between Google and TeamCity. If you delete a user from the Google organization, you'll have to manually restrict their access in TeamCity.
 
@@ -584,7 +613,7 @@ Before enabling this module, you need to create a [dedicated connection](configu
 To enable the module, in __Administration | Authentication__:
 1. Click __Add module__ and choose the _Azure DevOps OAuth 2.0_ type.
 2. Choose whether you want to allow creating new users on the first login. If you disable this option, TeamCity will not create a new TeamCity user when their Azure AD account is not recognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
-3. Choose whether you want to restrict access only to members of specific [Azure DevOps organizations](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/organization-management?view=azure-devops). Specify their IDs separated by a comma. When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified organizations and don't have a user profile in TeamCity.
+3. Choose whether you want to restrict access only to members of specific [Azure DevOps organizations](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/organization-management?view=azure-devops). Specify their IDs separated by a comma. When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified organizations and do not have a user profile in TeamCity.
 4. Save the module.
 
 To sign in, click the Azure DevOps icon above the TeamCity login form and, after the redirect, approve the TeamCity application.
@@ -661,7 +690,7 @@ Create users automatically
 
 If TeamCity detects that the email of a user who is signing in via SAML already belongs to some TeamCity user profile, it will authenticate them as this user.
 
-If it doesn't recognize the email, the behavior depends on the value of this option:
+If it does not recognize the email, the behavior depends on the value of this option:
 * If enabled, it will create a new user profile with this email.
 * If disabled, it will refuse to authorize this user.
 
