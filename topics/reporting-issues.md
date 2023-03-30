@@ -112,17 +112,6 @@ For this the following [internal properties](server-startup-properties.md#TeamCi
 
 Once the properties are added, the server will start taking the thread dumps. All the thread dumps will be stored under the `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directory.
 
-### Collecting CPU Profiling Data on Server
-
-If you experience degraded server performance and the TeamCity server process is producing a large CPU load, take a CPU profiling snapshot and send it to us accompanied with the detailed description of what you were doing and what your system setup is. You can take CPU profiling and memory snapshots by installing the [server profiling plugin](https://plugins.jetbrains.com/plugin/8979-server-profiling) and following the instructions on the plugin page.
-
-Here are some hints to get the best results from CPU profiling:
-* after starting the server, wait for some time to allow it to "warm up". This can take from 5 to 20 minutes depending on the data volume that TeamCity stores.
-* when a CPU usage increase is found on the server, try to indicate what actions cause the load.
-* start CPU profiling and repeat the action several times (5 — 10).
-* capture a snapshot.
-* archive the snapshot and send it to us including the description of the actions that cause the CPU load.
-
 ### Agent Thread Dump
 
 It is recommended that you take an agent thread dump from the Web UI: go to the Agent page, __Agent Summary__ tab, and use the __Dump threads on agent__ action.
