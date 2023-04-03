@@ -11,7 +11,7 @@ This tab provides a number of indicators helping you to detect and address issue
 
 ### CPU &amp; Memory Usage
 
-This section displays the data provided by the [TeamCity Memory Monitor](teamcity-memory-monitor.md), which regularly checks available memory and submits a warning if the [memory](reporting-issues.md#OutOfMemory+Problems) or [CPU usage](reporting-issues.md#Collecting+CPU+Profiling+Data+on+Server) grows too high. See also information on configuring [memory settings](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) for the TeamCity server.
+This section displays the data provided by the [TeamCity Memory Monitor](teamcity-memory-monitor.md), which regularly checks available memory and submits a warning if the [memory consumption](reporting-issues.md#OutOfMemory+Problems) grows too high. See also information on configuring [memory settings](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) for the TeamCity server.
 
 Depending on your operating system and Java settings, the list of displayed properties below may vary.
 
