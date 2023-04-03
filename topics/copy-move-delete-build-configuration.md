@@ -1,7 +1,9 @@
 [//]: # (title: Copy, Move, Delete Build Configuration)
 [//]: # (auxiliary-id: Copy, Move, Delete Build Configuration)
 
-To copy, move or delete a build configuration, use the __Actions__ menu in the upper right corner of __[Build Configuration Settings](creating-and-editing-build-configurations.md#Configuring+Settings)__.
+To copy, move or delete a build configuration, use the __Actions__ menu in the upper right corner of __[Build Configuration Settings](creating-and-editing-build-configurations.md#Configuring+Settings)__, or the similar menu on the main Build Settings page.
+
+<img src="dk-buildConfActionsMenu.png" width="706" alt="Build Configuration Actions Menu"/>
 
 ## Copy and Move Build Configuration
 
@@ -16,6 +18,7 @@ If the build configuration uses VCS roots or is associated with a template, whic
 <note product="tc">
 
 When running TeamCity in the [Professional mode](licensing-policy.md#Licensing+Overview) with the maximum allowed number of build configurations (100), unless you purchased additional build agent licenses), the __Copy__ option will not be displayed for build configurations.
+
 </note>
 
 ## Delete Build Configuration
