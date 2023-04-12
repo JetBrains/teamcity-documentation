@@ -184,7 +184,7 @@ show table status like '%';
 
 You should ensure `max_connections` parameter has a bigger value than the one specified in TeamCity `<[TeamCity Home Directory](teamcity-home-directory.md)>/config/database.properties` file.
 
-### innodb_buffer_pool_size and innodb_log_file_size
+### innodb_buffer_pool_size and innodb_redo_log_capacity
 
 Specifying a too small value in `innodb_buffer_pool_size` may significantly affect performance:
 
@@ -202,12 +202,19 @@ innodb_buffer_pool_size=2000M
 
 ```
 
-We recommend to start with 2Gb and increase it if you experience slowness and have enough memory. After increasing buffer pool size you should also change size of the [`innodb_log_file_size`](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_file_size) setting (its value can be calculated as `innodb_log_file_size/N`, where N is the number of log files in the group (2 by default)):
+We recommend to start with 2Gb and increase it if you experience slowness and have enough memory. After increasing buffer pool size you should also change size of the [`innodb_redo_log_capacity`](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity) setting.
 
 ```Shell
-innodb_log_file_size=1024M
-
+innodb_redo_log_capacity=2048M
 ```
+
+For MySQL versions [prior to 8.0.30](https://dev.mysql.com/doc/refman/8.0/en/innodb-redo-log.html#innodb-redo-log-file-reconfigure), use the `innodb_log_file_size` and `innodb_log_files_in_group` parameters instead of `innodb_redo_log_capacity`. 
+
+```Shell
+# innodb_log_files_in_group=2 is set by default
+innodb_log_file_size=1024M
+```
+
 
 ### innodb_file_per_table
 
@@ -570,7 +577,6 @@ Do the following:
 2. Set the [Build number format](configuring-general-settings.md#Build+Number+Format) in A and B to:
 
 ```Shell
-
 %dep.<btID>.system.build.number%
 ```
 
