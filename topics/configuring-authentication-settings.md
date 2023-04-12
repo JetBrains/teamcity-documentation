@@ -45,7 +45,7 @@ To switch to a different preconfigured scheme, use the __Load preset__ button.
 
 Any changes made to authentication in the UI are reflected in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml>` file. 
 If using the UI is not possible (for example, you need to change the authentication settings before the server is started), 
-you can configure authentication settings in the <TeamCity data directory>/config/auth-config.xml file on the server machine as follows:
+you can configure authentication settings in the &lt;TeamCity data directory&gt;/config/auth-config.xml file on the server machine as follows:
 
  1. Add the `<auth-module>` tag inside the `<auth-modules>` tag inside the `<auth-config>` tag.
  2. Specify the type attribute for the newly created `<auth-module>` tag.
@@ -61,7 +61,7 @@ The following values are supported for the type attribute (the values are case-i
   ** HTTP-Basic for Basic HTTP Authentication
   ** HTTP-NTLM for NTLM HTTP Authentication
   
-You can also provide some properties for each authentication module depending on the module type. Each property is specified as the <property> tag inside the corresponding <auth-module> tag. Each <property> tag must contain the key attribute with a property key. The property value is specified as the text inside the <property> tag.
+You can also provide some properties for each authentication module depending on the module type. Each property is specified as the &lt;property&gt; tag inside the corresponding &lt;auth-module&gt; tag. Each &lt;property&gt; tag must contain the key attribute with a property key. The property value is specified as the text inside the &lt;property&gt; tag.
 
 Also, TeamCity plugins can provide additional authentication modules. The server restart is NOT needed after editing this file. The changes will be reflected in the Web UI.
 
