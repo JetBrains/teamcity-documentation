@@ -61,7 +61,8 @@ grant process on *.* to <user-name>;
 
 JDBC driver installation:
 1. Download the MySQL [JDBC driver](http://dev.mysql.com/downloads/connector/j/). Make sure to use a version compatible with your server. If the MySQL server version is 5.5 or later, the JDBC driver version should be at least 5.1.23. For versions above 8, driver version 8 should be used.
-2. Place `mysql-connector-java-*-bin.jar` from the downloaded archive into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any). Proceed with the TeamCity setup.
+2. For Windows, run the installer in "Custom" mode and select "MySQL Connectors | Connector/J" to install a standalone connector.
+3. Copy `mysql-connector-java-*-bin.jar` from the downloaded archive (Linux) or the installation folder (Windows) into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any). Proceed with the TeamCity setup.
 
 ### PostgreSQL
 
