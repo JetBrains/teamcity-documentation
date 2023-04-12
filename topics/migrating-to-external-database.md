@@ -53,13 +53,21 @@ To migrate all your existing data to a new external database:
 3\. Create a temporary properties file with a custom name (for example, `database.<database_type>.properties`) for the target database using the corresponding template (`<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.<database_type>.properties.dist`). Configure the properties and place the file into any temporary directory. __Do not modify the original `database.<database_type>.properties` file__.
 
 4\. Run the `maintainDB` tool with the `migrate` command and specify the absolute path to the newly created target database properties file with the `-T` option:
- ```Shell
- maintainDB.[cmd|sh] migrate [-A <path to TeamCity Data Directory>] -T <path to database.properties file>
 
+ ```Shell
+ maintainDB.[cmd|sh] migrate -T <path to database.properties file>
  ```
+
+If you don't have the `TEAMCITY_DATA_PATH` environment that points to the [TeamCity Data Directory](teamcity-data-directory.md), add the `-A` parameter to the command call:
+
+ ```Shell
+ maintainDB.[cmd|sh] migrate -A <path to TeamCity Data Directory> -T <path to database.properties file>
+ ```
+
+
 Upon the successful completion of the database migration, the temporary file will be copied to the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file which will be used by TeamCity. The temporary file can be safely deleted. If you are migrating between external databases, the original `database.properties` file for the source database will be replaced with the file specified via the `-T` option. The original `database.properties` file will be automatically renamed to `database.properties.before.<timestamp>`.
 
->If you have the `TEAMCITY_DATA_PATH` environment set (pointing to the [TeamCity Data Directory](teamcity-data-directory.md)), you do not need the `-A <path to TeamCity Data Directory>` parameter of the tool.
+
 
 5\. Start the TeamCity server. This must be the same TeamCity version that was run last time (TeamCity [upgrade](upgrading-teamcity-server-and-agents.md) must be performed as a separate procedure).
 
