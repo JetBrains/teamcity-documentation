@@ -36,7 +36,7 @@ The TeamCity Server distributions include a Tomcat version tested to work fine w
 
 To use another version of the Tomcat web server instead of the bundled one, you need to perform the Tomcat upgrade/patch.
 
-When using an `.exe` distribution of TeamCity, we suggest that you:
+When upgrading the version of Tomcat to be used by TeamCity, we suggest that you:
 * Back up the current [TeamCity Home](teamcity-home-directory.md).
 * Delete/move from the TeamCity Home directories that are also present in the Tomcat distribution.
 * Unpack the Tomcat distribution to the TeamCity Home directory.
