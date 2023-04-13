@@ -299,7 +299,7 @@
             <toc-element id="aws-credentials.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-approval.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-files-cleaner-swabra.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="build-cache.md"/>
+            <toc-element id="build-cache.md" hidden="true"/>
             <toc-element id="commit-status-publisher.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="docker-support.md"/>
             <toc-element id="file-content-replacer.md" show-structure-for="chapter" show-structure-depth="4"/>
