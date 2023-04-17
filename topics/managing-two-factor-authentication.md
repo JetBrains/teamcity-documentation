@@ -16,6 +16,22 @@ To select the required 2FA authentication mode, navigate to the **Administration
 | Disabled  | Users cannot set up 2FA.                                                                                                                                                                        |
 
 
+## Critical Settings Protection
+{product="tc"}
+
+If 2FA is enabled, users who pass the 2FA checkup have one hour to perform actions that affect TeamCity security (disable 2FA, change user passwords, set up external OAuth accounts, generate access tokens, and so on). Once this period expires, users must pass a new 2FA verification before they can proceed with these edits. This behavior adds an extra layer of protection that prevents attackers from modifying crucial server settings.
+
+You can modify the duration of this interval via the `teamcity.2fa.sensitive.settings.access.duration` [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
+
+```Plain Text
+teamcity.2fa.sensitive.settings.access.duration.seconds=45
+# or
+teamcity.2fa.sensitive.settings.access.duration.minutes=5
+# or
+teamcity.2fa.sensitive.settings.access.duration.hours=3
+```
+
+
 ## Force 2FA for Individual User Groups
 {product="tc"}
 
