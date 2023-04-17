@@ -64,7 +64,8 @@ To define which settings to take __when a build starts__, open the __Project Set
   TeamCity will try to use settings from the current build's branch whenever possible. However, some of the build features and settings might require using the default configuration (the one stored in TeamCity Data Directory). In general,
 * changes in the following settings coming from the build's branch will be ignored and __will not affect__ the build:
     * VCS roots and checkout rules
-    * snapshot dependencies
+    * snapshot dependencies 
+    * artifact dependency rules
     * build triggers
     * build configuration level options, like hanging builds detection, enabling/disabling of triggering of personal builds, or build configuration type
     * clean-up rules
@@ -77,7 +78,7 @@ To define which settings to take __when a build starts__, open the __Project Set
     * some build features (for example, [Commit Status Publisher](commit-status-publisher.md) will use settings from the build's branch, while [Pull Requests](pull-requests.md) will always use the default settings)
     * failure conditions
     * artifact publishing rules
-    * artifact dependencies
+    * artifact dependencies (add/remove only, editing existing rules is ignored)
 
 ## Storing Secure Settings 
 
@@ -139,6 +140,7 @@ TeamCity stores project settings:
 <note>
 
 To test Kotlin-based settings in a sandbox project, you can download the settings as a ZIP archive without disabling the UI: on the __Project Settings__ page, click the __Actions__ menu and select __Download settings in Kotlin format.__ A ZIP archive will be downloaded.
+
 </note>
 
 <anchor name="ForcingSynch"/>
@@ -149,6 +151,7 @@ To test Kotlin-based settings in a sandbox project, you can download the setting
 <warning>
 
 Before committing settings to the VCS, consider the recommended approach to storing security settings [described above](#Storing+Secure+Settings).
+
 </warning>
 
 If you want to commit the current configuration to the VCS (for example, earlier you committed misconfigured settings to the repository and TeamCity was unable to load it displaying errors and warnings), you can use the _Commit current project settings_ option on the __Versioned Settings | Configuration__ page.
