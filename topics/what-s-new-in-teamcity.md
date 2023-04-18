@@ -31,7 +31,7 @@ Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+Us
 
 ## Specify the Required Encryption Protocol for HTTPS Connection
 
-If your TeamCity server has the HTTPS access configured, it uses the TLS Version 1.2 protocol to communicate with clients. Starting with version 2023.05, you can specify the list of available encryption protocols or force TeamCity to use one specific protocol.
+If your TeamCity server allows access via HTTPS, the server's default protocol for communicating with clients is TLS Version 1.2. Starting with version 2023.05, you can specify the list of available encryption protocols or force TeamCity to use one specific protocol.
 
 <img src="dk-tls-protocols.png" width="706" alt="TeamCity using the TLS 1.3 Protocol"/>
 

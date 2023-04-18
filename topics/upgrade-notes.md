@@ -1,6 +1,20 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2022.10.3 to 2023.05
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2023-5"}
+
+* The bundled Kotlin compiler (used in [TeamCity DSL](kotlin-dsl.md)) and Dokka (the documentation engine for Kotlin) were updated to version 1.7.10.
+
+### REST API Update
+
+The Web Application Description Language (WADL) generator is now removed. See the [initial announcement](#Upcoming+REST+API+Updates) for more information.
+
+
+
+
 ## Changes from 2022.10.2 to 2022.10.3
 
 ### Bundled Tools Updates
