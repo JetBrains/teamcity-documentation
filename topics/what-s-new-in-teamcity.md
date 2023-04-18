@@ -1,11 +1,17 @@
 [//]: # (title: What's New in TeamCity 2023.05)
 [//]: # (auxiliary-id: What's New in TeamCity 2023.05;What's New in TeamCity)
 
+## Manage SSH Keys via REST API
+
+Starting with version 2023.05, you can perform the full range of operations on projects' SSH keys via [REST API](teamcity-rest-api.md): upload new keys, modify VCS authentication settings, set passphrases for encrypted keys, and browse and remove uploaded keys. To do this, send required requests to the `/app/rest/projects/<project_locator>/sshKeys` endpoint.
+
+Learn more: [SSH Keys Management](ssh-keys-management.md#REST+API).
+
 ## Two-Factor Authentication Enhancements
 
 ### Additional Verification for Critical Edits
 
-Starting with version 2023.05, users who pass the two-factor authentication have one hour to perform security-related actions (disable 2FA, change user passwords, set up external OAuth accounts, generate access tokens, and so on). Once this period expires, users must re-confirm their identities and pass a new 2FA checkup before they can proceed with these edits.
+Starting with version 2023.05, users who pass the two-factor authentication have one hour to perform security-related actions (disable 2FA, change user passwords, generate access tokens, and so on). Once this period expires, users must re-confirm their identities and pass a new 2FA checkup before they can proceed with these edits.
 
 This new behavior adds an extra layer of protection for your TeamCity server, and is another reason why you should always opt for enabling 2FA for users with elevated access permissions.
 
