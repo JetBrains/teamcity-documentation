@@ -21,6 +21,20 @@ teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
 
 Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+User+Groups).
 
+
+
+## Specify the Required Encryption Protocol for HTTPS Connection
+
+If your TeamCity server has the HTTPS access configured, it uses the TLS Version 1.2 protocol to communicate with clients. Starting with version 2023.05, you can specify the list of available encryption protocols or force TeamCity to use one specific protocol.
+
+<img src="dk-tls-protocols.png" width="706" alt="TeamCity using the TLS 1.3 Protocol"/>
+
+Learn more: [](https-server-settings.md#Specify+Available+Encryption+Protocols).
+
+
+
+
+
 ## Roadmap
 
 See the [TeamCity roadmap](https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap) to learn about future updates.

@@ -93,7 +93,7 @@ After HTTPS settings are saved, the page will display the **Remove** button belo
 
 The default protocol TeamCity uses to communicate with clients is **TLS Version 1.2**.
 
-To set a list of available protocols or to force TeamCity to use one specific protocol, add the `teamcity.https.use.protocols` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set it to a required value. See this page's "protocols" attribute description to view available values: [The HTTP Connector](https://tomcat.apache.org/tomcat-8.5-doc/config/http.html#SSL_Support_-_SSLHostConfig).
+To set a list of available protocols or to force TeamCity to use one specific protocol, add the `teamcity.https.use.protocols` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set it to a required value using the common Tomcat syntax. See this page's "protocols" attribute description to view available values: [The HTTP Connector](https://tomcat.apache.org/tomcat-8.5-doc/config/http.html#SSL_Support_-_SSLHostConfig).
 
 ```Plain Text
 teamcity.https.use.protocols=TLSv1.3
