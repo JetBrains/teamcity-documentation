@@ -423,7 +423,7 @@ Enter your [account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console
 
 ## Slack
 
-This type of connection is used to enable notifications via [Slack](https://slack.com/).
+This type of connection is used to send notifications via [Slack](https://slack.com/).
 
 Before configuring a Slack connection, you need to create a [Slack app](https://api.slack.com/apps) with the following [bot token scopes](https://api.slack.com/scopes): `channels:read`, `chat:write`, `im:read`, `im:write`, `users:read`, `team:read`, `groups:read`. You can add these in __Features | OAuth & Permissions | Scopes__ of your Slack app.
 
@@ -439,7 +439,7 @@ Now you can return to TeamCity, add a new Slack connection, and enter the follow
 * Client ID and secret from the app's __Basic Information__ page
 * A [bot user token](https://api.slack.com/docs/token-types#bot) of your app
 
-Save the connection and proceed with adding a [Notifier](notifications.md#Slack+Notifier) build feature.
+Configured Slack connections are used by [Notifier](notifications.md#Slack+Notifier) build features and [Service Messages](service-messages.md#Sending+Custom+Slack+Messages).
 
 <anchor name="jetbrains-space-connection"/>
 

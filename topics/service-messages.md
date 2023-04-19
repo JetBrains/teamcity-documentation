@@ -353,12 +353,13 @@ Indicates that `testName` was run. If the `testFailed` message is not present, t
 * `duration` (optional numeric integer attribute) sets the test duration in milliseconds to be reported in TeamCity UI. If omitted, the test duration will be calculated from the messages timestamps. If the timestamps are missing — from the actual time the messages were received on the server.
 * `captureStandardOutput` (optional boolean attribute) — if `true`, all the standard output and standard error messages received between `testStarted` and `testFinished` messages will be considered test output. The default value is `false`: assumes usage of `testStdOut` and `testStdErr` service messages to report the test output.
 
-<note>
 
-All the other test messages (except for `testIgnored`) with the same `name` attribute must appear between the `testStarted` and `testFinished` messages (in that order).   
 
-If using Ant's `echo` task to output the messages, make sure to include the `flowId` attribute with the same value in all the messages related to the same test / test suite as otherwise they [will not be processed correctly](http://jetbrains.net/tracker/issue/TW-5059).
-</note>
+> All the other test messages (except for `testIgnored`) with the same `name` attribute must appear between the `testStarted` and `testFinished` messages (in that order).   
+> 
+> If using Ant's `echo` task to output the messages, make sure to include the `flowId` attribute with the same value in all the messages related to the same test / test suite as otherwise they [will not be processed correctly](http://jetbrains.net/tracker/issue/TW-5059).
+> 
+{type="note"}
 
 It is highly recommended that you ensure that the pair of `test suite` + `test name` is unique within the build. For advanced TeamCity test-related features to work, test names must not deviate from one build to another (a single test must be reported under the same name in every build). Include absolute paths in the reported test names is __strongly discouraged__.
 
@@ -541,11 +542,11 @@ The message should be printed after all the files are ready and no file is locke
 
 Artifacts are uploaded in the background, which can take time. Make sure the matching files are not deleted till the end of the build (for example, you can put them in a directory that is cleaned on the next build start, in a [temp directory](how-to.md#Make+Temporary+Build+Files+Erased+between+the+Builds), or use [Swabra](build-files-cleaner-swabra.md) to clean them after the build).
 
-<note>
 
-The process of publishing artifacts can affect the build, because it consumes network traffic, and some disk/CPU resources (should be pretty negligible for not large files/directories).
 
-</note>
+> The process of publishing artifacts can affect the build, because it consumes network traffic, and some disk/CPU resources (should be pretty negligible for not large files/directories).
+>
+{type="note"}
 
 Artifacts that are specified in the build configuration setting will be published as usual.
 
@@ -576,10 +577,9 @@ If you wish to show a progress message for a part of a build only, use:
 
 ```
 
-<note>
-
-The same message should be used for both `progressStart` and `progressFinish`. This allows nesting progress blocks. Note that in case of Ant builds, progress messages will be replaced if an Ant target starts.
-</note>
+> The same message should be used for both `progressStart` and `progressFinish`. This allows nesting progress blocks. Note that in case of Ant builds, progress messages will be replaced if an Ant target starts.
+>
+{type="note"}
 
 ### Reporting Build Problems
 
@@ -694,11 +694,9 @@ The service message format is:
 
 ```
 
-<note>
-
-To be processed, report XML files (or a directory) must be located in the [checkout directory](build-checkout-directory.md), and the path must be relative to this directory.
-
-</note>
+> To be processed, report XML files (or a directory) must be located in the [checkout directory](build-checkout-directory.md), and the path must be relative to this directory.
+>
+{type="note"}
 
 where `typeID` can be one of the following (see also [XML Report Processing](xml-report-processing.md)):
 
@@ -988,23 +986,80 @@ If not specially noted, the report types support Ant-like wildcards in the `path
 * (__deprecated, use [Build Failure Conditions](build-failure-conditions.md) instead__)   
   `findBugs`, `pmd` or `checkstyle` importData messages also take optional `errorLimit` and `warningLimit` attributes specifying errors and warnings limits, exceeding which will cause the build failure.
 
-<note>
 
-After the `importData` message is received, TeamCity agent starts to monitor the specified paths on the disk and imports matching report files in the background as soon as the files appear on disk.   
+
+> After the `importData` message is received, TeamCity agent starts to monitor the specified paths on the disk and imports matching report files in the background as soon as the files appear on disk.   
 The parsing only occurs within the build step in which the messages were received. On the step finish, the agent ensures all the present reports are processed before beginning the next step. This behavior is different from that of [XML Report Processing](xml-report-processing.md) build feature, which completes files parsing only at the end of the build.   
 Ensure the report files are available after the generation process ends (the files are not deleted, nor overwritten by the build script)
-
-</note>
+>
+{type="note"}
 
 To initiate monitoring of several directories or parse several types of the report, send the corresponding service messages one after another.
 
-<note>
 
-Only several reports of different types can be included in a build. Processing reports of several inspections or duplicates tools in a single build is not supported. See the [related feature request](http://youtrack.jetbrains.com/issue/TW-14260).
 
-</note>
+> Only several reports of different types can be included in a build. Processing reports of several inspections or duplicates tools in a single build is not supported. See the [related feature request](http://youtrack.jetbrains.com/issue/TW-14260).
+>
+{type="note"}
 
-[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1503.txt")    
+[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1503.txt")
+
+
+## Sending Custom Slack Messages
+
+You can use TeamCity service messages to send Slack direct messages and post updates in Slack channels.
+
+<img src="dk-slack-service-message.png" width="706" alt="Custom TeamCity messages in Slack"/>
+
+TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send Slack messages. If you do not already have a Slack connection, go to **Administration | Project Settings | Connections** and create one.
+
+1. Open settings of a Slack connection and set the **Notifications limit** setting to any positive number. This value specifies the maximum number of messages that build configurations are allowed to send per each run.
+
+2. For security reasons, only links to the same TeamCity server are allowed in messages. Messages with URLs to external web resources are automatically blocked.
+    
+    <img src="dk-servicemessage-externalURL.png" width="706" alt="Blocked service message"/>
+    
+    If you need to include links to external resources, enter their hostnames in the **Allowed hostnames** field. Use the asterisk (\*) as a wildcard for any string (for example, \*.test.co.uk).
+
+3. Once a Slack connection is configured, you can add service messages to a build script in the following format:
+
+    ```Shell
+    ##teamcity[notification notifier='slack' message='Line 1 |rLine2 |rLine3' sendTo='U1234567' connectionId='PROJECT_EXT_2']"
+    ```
+
+   * `notifier` — always equals "slack".
+   * `message` — the message to show. Supports [Markdown](https://api.slack.com/reference/surfaces/formatting) syntax (apart from "\n" for line breaks, use "|n" [instead](#Escaped+Values)).
+     <img src="dk-slackMessages-markdown.png" width="706" alt="Markdown-formatted service messages"/>
+   * `sendTo` — specifies who should receive the message. Accepts a single Slack channel name, channel ID (starts with "C", for instance "C052UHDRZU7"), or user ID (starts with "U", for instance "U02K2UVKJP7") as value. If you need to send the same message to multiple recipients, create multiple service messages with different `sendTo` values.
+   * `connectionID` — the optional parameter that allows you to choose a specific Slack connection that should be used to send messages. Accepts connection IDs as values. If this parameter is not specified, TeamCity will retrieve all Slack connections available for the current project and choose the one whose **Notifications limit** is not zero.
+
+      > Currently, you cannot retrieve Slack connection IDs from the TeamCity 
+        UI.
+      > 
+      > As a workaround, use the [REST API](teamcity-rest-api.md) to send the 
+        GET request to the `/app/rest/projects/<locator>/projectFeatures` 
+          endpoint and find a &lt;projectFeature&gt; element that fits your 
+            connection. For instance:
+      >
+      > 
+      > ```XML
+      > <projectFeature id="PROJECT_EXT_4" type="OAuthProvider">
+      >     <properties count="7" href="/app/rest/projects/id:_Root/projectFeatures/id:PROJECT_EXT_4/properties">
+      >         <property name="adHocAllowedDomainNames" value="stackoverflow.com"/>
+      >         <property name="adHocMaxNotificationsPerBuild" value="20"/>
+      >         <property name="clientId" value="1234.56789"/>
+      >         <property name="displayName" value="Slack"/>
+      >         <property name="providerType" value="slackConnection"/>
+      >         <property name="secure:clientSecret"/>
+      >         <property name="secure:token"/>
+      >     </properties>
+      > </projectFeature>
+      > ```
+      > The connection ID is the value of the "id" field, typically in the "PROJECT_EXT_INT" format.
+      > 
+      {type="tip"}
+
+4. Run the build to ensure all Slack messages are delivered.
 
 ## Canceling Build via Service Message
 
