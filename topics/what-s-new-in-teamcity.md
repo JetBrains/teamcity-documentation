@@ -9,9 +9,9 @@ Learn more: [SSH Keys Management](ssh-keys-management.md#REST+API).
 
 ## Two-Factor Authentication Enhancements
 
-### Additional Verification for Critical Edits
+### Additional Verification for Critical Settings
 
-Starting with version 2023.05, users who pass the two-factor authentication have one hour to perform security-related actions: disable 2FA, change user password and/or email, and generate access tokens. Once this period expires, users must re-confirm their identities and pass a new 2FA verification before proceeding with these edits.
+Starting with version 2023.05, users who pass the two-factor authentication have one hour to perform security-related actions: disable 2FA, change user password and/or email, and generate access tokens. Once this period expires, users must re-confirm their identities and pass a new 2FA verification before proceeding with these actions.
 
 This new behavior adds an extra layer of protection for your TeamCity server.
 

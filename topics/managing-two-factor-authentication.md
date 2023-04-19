@@ -21,13 +21,13 @@ To select the required 2FA authentication mode, navigate to the **Administration
 
 If the two-factor authentication is enabled, users who pass the 2FA checkup have one hour to modify critical user settings. Once this period expires, users must pass a new 2FA verification before they can proceed with these edits.
 
-Edits that are blocked until a user passes another verification include:
+Actions that are blocked until a user passes another verification include:
 
 * Disabling 2FA in user profile settings
 * Changing user password and email
 * Generating access tokens
 
-> These edits are blocked only if an attacker makes them in the TeamCity web UI. TeamCity server still accepts modification requests sent via [REST API](teamcity-rest-api.md).
+> These actions are blocked only if an attacker makes them in the TeamCity UI. TeamCity server still accepts modification requests sent via [REST API](teamcity-rest-api.md).
 > 
 {type="note"}
 
