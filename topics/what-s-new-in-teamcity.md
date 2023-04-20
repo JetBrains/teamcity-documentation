@@ -1,6 +1,16 @@
 [//]: # (title: What's New in TeamCity 2023.05)
 [//]: # (auxiliary-id: What's New in TeamCity 2023.05;What's New in TeamCity)
 
+## Send Slack Messages and Emails via Service Messages
+
+TeamCity [](service-messages.md) allow you to report various information about the build by adding special messages to your build scripts. The list of available service messages now includes the `##teamcity[notification ...]` message that sends emails, Slack direct messages, and posts updates to Slack channels.
+
+<img src="dk-serviceMessages-whatsNew.png" width="706" alt="Custom TeamCity messages in Slack and Email boxes"/>
+
+Built-in security features ensure messages cannot be sent to wrong recipients and cannot include links to external web resources that are not configured as trusted.
+
+Learn more: [Slack Messages](service-messages.md#Sending+Custom+Slack+Messages) | [Emails](service-messages.md#Sending+Custom+Email+Messages).
+
 ## Manage SSH Keys via REST API
 
 Starting with version 2023.05, you can perform the full range of operations on projects' SSH keys via [REST API](teamcity-rest-api.md): upload new keys, modify VCS authentication settings, set passphrases for encrypted keys, and browse and remove uploaded keys. To do this, send required requests to the `/app/rest/projects/<project_locator>/sshKeys` endpoint.
@@ -19,7 +29,7 @@ Learn more: [](managing-two-factor-authentication.md#Critical+Settings+Protectio
 
 ### Force 2FA for Specific User Groups
 
-If the global two-factor authentication mode is "Optional", you can force individual [user groups](creating-and-managing-user-groups.md) to use 2FA. To do so, add the `teamcity.2fa.mandatoryUserGroupKey` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set its value to the required group key.
+If the global two-factor authentication mode is "Optional", you can now force individual [user groups](creating-and-managing-user-groups.md) to use 2FA. To do so, add the `teamcity.2fa.mandatoryUserGroupKey` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set its value to the required group key.
 
 ```Plain Text
 teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
@@ -31,7 +41,7 @@ Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+Us
 
 ## Specify the Required Encryption Protocol for HTTPS Connection
 
-If your TeamCity server allows access via HTTPS, the server's default protocol for communicating with clients is TLS Version 1.2. Starting with version 2023.05, you can specify the list of available encryption protocols or force TeamCity to use one specific protocol.
+If your TeamCity server allows access via HTTPS, the server's default protocol for communicating with clients is currently TLS Version 1.2. Starting with version 2023.05, you can specify the list of available encryption protocols or force TeamCity to use one specific protocol.
 
 <img src="dk-tls-protocols.png" width="706" alt="TeamCity using the TLS 1.3 Protocol"/>
 

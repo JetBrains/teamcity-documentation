@@ -1013,25 +1013,25 @@ You can use TeamCity service messages to send Slack direct messages and post upd
 
 TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send Slack messages. If you do not already have a Slack connection, go to **Administration | Project Settings | Connections** and create one.
 
-1. Open settings of a Slack connection and set the **Notifications limit** setting to any positive number. This value specifies the maximum number of messages that build configurations are allowed to send per each run.
+1. Open the settings of a Slack connection and set the **Notifications limit** to any positive number. This value specifies the maximum number of messages that build configurations can send per run.
 
 2. For security reasons, only links to the same TeamCity server are allowed in messages. Messages with URLs to external web resources are automatically blocked.
     
     <img src="dk-servicemessage-externalURL.png" width="706" alt="Blocked service message"/>
     
-    If you need to include links to external resources, enter their hostnames in the **Allowed hostnames** field. Use the asterisk (\*) as a wildcard for any string (for example, \*.test.co.uk).
+    If you need to include links to external resources, enter their hostnames in the **Allowed hostnames** field. Use comma (,) as a separator to enter multiple values and asterisk (\*) as a wildcard for any string (for example, \*.test.co.uk).
 
 3. Once a Slack connection is configured, you can add service messages to a build script in the following format:
 
     ```Shell
-    ##teamcity[notification notifier='slack' message='Line 1 |rLine2 |rLine3' sendTo='U1234567' connectionId='PROJECT_EXT_2']"
+    ##teamcity[notification notifier='slack' message='Line 1 |rLine2 |rLine3' sendTo='build_farm_alerts' connectionId='PROJECT_EXT_2']"
     ```
 
    * `notifier` — always equals "slack".
-   * `message` — the message to show. Supports [Markdown](https://api.slack.com/reference/surfaces/formatting) syntax (apart from "\n" for line breaks, use "|n" [instead](#Escaped+Values)).
+   * `message` — the message to show. Supports [Markdown](https://api.slack.com/reference/surfaces/formatting) syntax (apart from "\n" for line breaks, use "|n" or "|r" [instead](#Escaped+Values)).
      <img src="dk-slackMessages-markdown.png" width="706" alt="Markdown-formatted service messages"/>
-   * `sendTo` — specifies who should receive the message. Accepts a single Slack channel name, channel ID (starts with "C", for instance "C052UHDRZU7"), or user ID (starts with "U", for instance "U02K2UVKJP7") as value. If you need to send the same message to multiple recipients, create multiple service messages with different `sendTo` values.
-   * `connectionID` — the optional parameter that allows you to choose a specific Slack connection that should be used to send messages. Accepts connection IDs as values. If this parameter is not specified, TeamCity will retrieve all Slack connections available for the current project and choose the one whose **Notifications limit** is not zero.
+   * `sendTo` — specifies who should receive the message. Accepts a single Slack channel name, channel ID (starts with "C", for instance, "C052UHDRZU7"), or user ID (starts with "U", for instance, "U02K2UVKJP7") as value. If you need to send the same message to multiple recipients, create multiple service messages with different `sendTo` values.
+   * `connectionID` — the optional parameter that allows you to choose a specific Slack connection that TeamCity should use to send this message. Accepts connection IDs as values. If this parameter is not specified, TeamCity will retrieve all Slack connections available for the current project and choose the one whose **Notifications limit** is not zero.
 
       > Currently, you cannot retrieve Slack connection IDs from the TeamCity 
         UI.
@@ -1060,6 +1060,38 @@ TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send 
       {type="tip"}
 
 4. Run the build to ensure all Slack messages are delivered.
+
+
+## Sending Custom Email Messages
+
+You can use TeamCity service messages to send emails from inside build scripts.
+
+<img src="dk-serviceMessagesEmail-delivered.png" width="706" alt="Email delivered by a service message"/>
+
+1. Navigate to **Administration | Email Notifier** and set up common [Notifier](set-up-notifications.md#Email+Notifier) settings: the sender's email, SMTP login and password, connection security protocol, and others. See this link for an example: [](setting-up-google-mail-as-notification-server.md).
+
+2. Set the **Notifications limit** setting to any positive number. This value specifies the maximum number of messages that build configurations can send per run.
+
+3. Enter the list of recipients to the **Allowed addresses**. Messages sent to recipients outside this list are automatically blocked. Use comma (,) as a separator to enter multiple addresses and asterisk (\*) as a wildcard for any string (for example, \*@gmail.com).
+
+4. For security reasons, only links to the same TeamCity server are allowed in messages. Messages with URLs to external web resources are automatically blocked.
+
+    <img src="dk-serviceMessagesEmail-failed.png" width="706" alt="Blocked email in build logs"/>
+
+   If you need to include links to external resources, enter their hostnames in the **Allowed hostnames** field. Use comma (,) as a separator to enter multiple values and asterisk (\*) as a wildcard for any string (for example, \*.test.co.uk).
+
+5. Once an Email Notifier is set up, you can add service messages to a build script in the following format:
+
+    ```Shell
+    ##teamcity[notification notifier='email' message='Message body' subject='Email subject' address='user1@gmail.com,user2@yourcompany.com']
+    ```
+   
+   * `notifier` — always equals "email".
+   * `message` — the message body in plain text format.
+   * `subject` — the email subject.
+   * `address` — one or multiple addresses from the **Allowed addresses** list of the Email Notifier.
+
+6. Run the build to ensure all emails are delivered.
 
 ## Canceling Build via Service Message
 

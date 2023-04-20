@@ -73,7 +73,7 @@ SMTP password
 
 <td>
 
-User's GMail password
+User's GMail password. If you get the "Username and Password not accepted" error when testing your connection, try replacing the user password with an [App Password](https://support.google.com/accounts/answer/185833?sjid=7857815404877033739-EU&authuser=2).
 
 </td></tr><tr>
 
@@ -89,4 +89,4 @@ SSL
 
 </td></tr></table>
 
-(see also [Google help](https://mail.google.com/support/bin/answer.py?answer=13287))
+See also: [Google help](https://mail.google.com/support/bin/answer.py?answer=13287) | [](notifications.md#Email+Notifier) | [Sending emails via Service Messages](service-messages.md#Sending+Custom+Email+Messages).
