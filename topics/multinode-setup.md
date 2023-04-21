@@ -338,6 +338,18 @@ In general, you do not need a separate node for running builds unless you have m
 Once you assign a secondary node to the _Processing data produced by builds_ responsibility for the first time, all\* newly started builds will be routed to this node. The existing running builds will continue being executed on the main node. When you disable the responsibility, only the newly started builds will be switched to the main node. The builds that were already running on the secondary node will continue running there.  
 If you assign more than one secondary nodes to this responsibility, builds will be distributed equally between these nodes.
 
+> If a main TeamCity node is down, agents automatically reconnect to a secondary node. However, to avoid excessive configuration updates when the main node is only temporarily unavailable (for instance, due to the node restart or a rare network issue), builds assigned to this main node are not immediately relayed to a secondary node. A secondary node waits for 10 minutes before taking over these builds.
+> 
+> You can override this default timeout via the `teamcity.multiNode.cookies.short.lifetime.<unit>` [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
+> 
+> ```Plain Text
+> # 10,000 milliseconds interval
+> teamcity.multiNode.cookies.short.lifetime.millis=10000
+> # One minute interval
+> teamcity.multiNode.cookies.short.lifetime.minutes=1
+> 
+{type="tip"}
+
 \* You can control how many builds can be run by each node.  
 To do this, find the required node in the list of available nodes and click __Edit__  next to its _Processing data produced by running builds_ responsibility. The _Limit builds_ dialog will open. Here, you can enter a relative limit of builds allowed to run on this node. We suggest that you choose this limit depending on the node's hardware capabilities.  
 If the maximum limit of allowed running builds is reached on all secondary nodes, TeamCity will be running new builds on the main node until some secondary node finishes its build.
