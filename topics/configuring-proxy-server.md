@@ -232,6 +232,11 @@ Note that the proxy has to be configured not to cache any TeamCity server respon
 
 </chunk>
 
+
+## Proxy Server for Multinode Setup
+
+The TeamCity server can be configured to use multiple nodes (or servers) for high availability and flexible load distribution. Refer to this article for the examples of NGINX and HAProxy configurations: [Multinode Setup for High Availability](multinode-setup.md#Proxy+Configuration).
+
 <seealso>
         <category ref="admin-guide">
             <a href="multinode-setup.md#Proxy+Configuration">Configure proxy for a multinode setup</a>
