@@ -10,6 +10,11 @@
 * The bundled Tomcat was updated to version 9.0.71.
 * The Perforce Helix Core client (p4) was updated to version 2022.2-2407422 in Agent and Server Docker images.
 
+### Known Issues
+{id="known-issues-2022-10-3"}
+
+Using the "Default Credentials Provider" as a principal AWS connection may cause the "Default Credentials Provider Chain: The security token included in the request is expired" error when the session expires. This issue is already fixed in the latest AWS Core plugin that will be bundled with TeamCity in the upcoming 2022.10.4 bugfix version. To manually install this plugin version, download the corresponding attachment from the [TW-80253](https://youtrack.jetbrains.com/issue/TW-80253/) ticket.
+
 ## Changes from 2022.10.1 to 2022.10.2
 
 ### Bundled Tools Updates
