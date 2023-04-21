@@ -208,6 +208,13 @@ teamcity.https.proxyPassword=password
 
 ```
 
+> For external Git repositories, the aforementioned settings resolve connection issues only if TeamCity uses the bundled JGit. If you switch to the [native Git](git.md#Native+Git+for+VCS-related+operations+on+the+server) instead, you need to manually setup proxy settings in your Git configuration. See the following articles for more information:
+> 
+> * [Configure Git to use a proxy](https://gist.github.com/evantoli/f8c23a37eb3558ab8765)
+> * [The `git config` reference](https://git-scm.com/docs/git-config)
+> 
+{type="warning"}
+
 ## Use Proxy to Connect Agents to TeamCity Server
 
 This section covers the configuration of a proxy server for TeamCity agent-to-server connections.
