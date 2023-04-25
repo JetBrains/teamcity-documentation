@@ -7,8 +7,17 @@ The [multinode setup](multinode-setup.md) allows you to choose which duties each
 
 Prior to version 2023.05, the "VCS repositories polling" responsibility (allows nodes to poll repositories for new commits and detect changes) was available for a single node in the entire cluster. Starting with this version, you can assign this responsibility to multiple nodes. This enhancement allows you to evenly distribute the load across nodes and reduce the delay before triggering new builds.
 
-
 Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node).
+
+## Reissuing Refreshable Tokens for VCS Roots
+
+If a VCS root is configured to access Git repositories hosted in Bitbucket Cloud, Bitbucket Server, GitLab or JetBrains Space, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
+
+<img src="dk-refreshTokenButton.png" width="706" alt="Reissue Token" />
+
+Short-lived refreshable tokens provide more security compared to passwords or personal access tokens since the TeamCity server refreshes them automatically without sharing any related data with agents.
+
+Learn more: [Refreshable tokens](git.md#refresh-token).
 
 ## Send Slack Messages and Emails via Service Messages
 

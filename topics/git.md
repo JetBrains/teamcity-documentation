@@ -241,14 +241,14 @@ Specify a valid __username__ (if there is no username in the clone URL; the user
 For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](http://youtrack.jetbrains.com/issue/TW-18711).    
 For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
 
-You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, and Bitbucket. When connecting to Azure DevOps, remember to set the _Code_ access scope to _Code (read) / Code (read and write) for versioned settings_ in the repositories you are about to access from TeamCity.
+You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, JetBrains Space, and Bitbucket. When connecting to Azure DevOps, remember to set the _Code_ access scope to _Code (read) / Code (read and write) for versioned settings_ in the repositories you are about to access from TeamCity.
 
 >Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
 >We highly recommend that you use an access token or SSH key instead of password when configuring a VCS root for a GitHub.com repository.
 >
 {type="warning"}
 
-When using an existing Bitbucket Cloud, Bitbucket Server, GitLab, or Azure DevOps Services connection to create a VCS Root, 
+When using an existing Bitbucket Cloud, Bitbucket Server, GitLab, JetBrains Space or Azure DevOps Services connection to create a VCS Root, 
 TeamCity will use a refreshable token instead of the password.
 
 </td></tr><tr>
@@ -260,15 +260,17 @@ Refreshable token
 </td>
 <td id="refresh-token">
 
-If you have a connection to a Bitbucket Server, Bitbucket Cloud, GitLab, and Azure DevOps configured in TeamCity,
-refreshable tokens are enabled by default for these VCS Roots. Such tokens are short-lived providing more security than passwords or personal access tokens:
+If you have a connection to a Bitbucket Server, Bitbucket Cloud, GitLab, JetBrains Space or Azure DevOps configured in TeamCity,
+refreshable tokens are enabled by default for these VCS roots. Such tokens are short-lived providing more security than passwords or personal access tokens:
 the TeamCity server refreshes them automatically without sharing any related data with agents.
 
 The **Token** field displays information about the user who obtained the token and the connection that provided the token.
 
 You can specify a **username** here if there is no username in the clone URL (the username specified here overrides the username from the URL).
 
-For Bitbucket Server, Bitbucket Cloud, and GitLab you can easily reissue the token used by the VCS root with a token issued for the current user by clicking the *Acquire new* button.
+For Bitbucket Server, Bitbucket Cloud, GitLab and Space you can click the *Acquire new* button to instantly reissue the token used by the VCS root with a token issued for the current user.
+
+<img src="dk-refreshTokenButton.png" width="706" alt="Reissue Token" />
 
 </td></tr><tr>
 
