@@ -356,11 +356,14 @@ If the maximum limit of allowed running builds is reached on all secondary nodes
 
 #### VCS Repositories Polling on Secondary Node
 
-Usually, the main TeamCity node polls the VCS repositories for changes to detect new commits. You can delegate VCS polling to the secondary node thus improving the performance of the main node. Only one secondary node can be assigned to this responsibility.
+Initially, only the main TeamCity node polls VCS repositories for new commits. The "VCS Repositories Polling" responsibility allows you to:
 
-Once you assign the _VCS repositories polling_ responsibility to a node, it may take some time for the main node to finish the polling activities in progress, and then the secondary node will pick up this task. When you disable the responsibility, the main node will start polling VCS repositories. This responsibility can be assigned only to one node in a cluster.
+* Delegate these potentially slow operations to another dedicated node. Once you shift this responsibility to another node, it may take some time for the main node to finish its ongoing polling activities before this new node can pick up the task.
+* Select multiple nodes that can poll repositories. This setup distributes the load across multiple nodes and reduces the latency for starting new builds.
 
-If you have commit hooks configured on the main node, no changes in hooks are required: the hooks will continue working if the VCS polling is delegated to the secondary node.
+If you disable this responsibility for all nodes, polling duties are returned to the main node.
+
+Commit hooks configured on your main node do not require any changes and remain functional after you delegate the VCS polling to secondary node(s).
 
 #### Processing Triggers on Secondary Node
 
