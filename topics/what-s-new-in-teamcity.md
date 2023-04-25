@@ -1,6 +1,15 @@
 [//]: # (title: What's New in TeamCity 2023.05)
 [//]: # (auxiliary-id: What's New in TeamCity 2023.05;What's New in TeamCity)
 
+## Assign the VCS Polling Responsibility to Multiple Nodes
+
+The [multinode setup](multinode-setup.md) allows you to choose which duties each node has. To do so, check the required responsibilities on the **Administration | Nodes Configuration** page. 
+
+Prior to version 2023.05, the "VCS repositories polling" responsibility (allows nodes to poll repositories for new commits and detect changes) was available for a single node in the entire cluster. Starting with this version, you can assign this responsibility to multiple nodes. This enhancement allows you to evenly distribute the load across nodes and reduce the delay before triggering new builds.
+
+
+Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node).
+
 ## Send Slack Messages and Emails via Service Messages
 
 TeamCity [](service-messages.md) allow you to report various information about the build by adding special messages to your build scripts. The list of available service messages now includes the `##teamcity[notification ...]` message that sends emails, Slack direct messages, and posts updates to Slack channels.
