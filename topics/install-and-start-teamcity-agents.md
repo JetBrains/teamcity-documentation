@@ -53,3 +53,26 @@ The recommended approach to connecting a self-hosted agent to a TeamCity Cloud i
 * _Download config_: enter an agent name (`name` attribute in the [build agent config](configure-agent-installation.md)) and download the entire config file. Place it as the `buildAgent.properties` file in the build agent directory.
 
 Please generate own token or configuration file per each self-hosted agent.
+
+
+
+## Debug Agents Remotely
+{product="tc"}
+
+<chunk id="agents-terminal">
+
+When agents are installed and authorized, you can invoke a terminal for an agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
+
+<img src="dk-agentTerminal-cat.png" width="706" alt="Agent Terminal Window"/>
+
+To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open interactive terminal**.
+
+<img src="dk-openterminalLink.png" width="706" alt="Open Terminal Link"/>
+
+> The "Open interactive terminal" link opens in the `<server-URL>/plugins/teamcity-agent-terminal/agentTerminal.html?agentId:<ID>` URL in a new browser tab. If your server is [behind a proxy](multinode-setup.md#Proxy+Configuration), ensure your proxy configuration allows websocket connections to this page.
+> 
+{type="note"}
+
+Since the terminal allows users to access agent machines and make significant changes to these systems, the **Open interactive terminal** link is visible only to users whose [role permissions](managing-roles-and-permissions.md) include the *"Open an interactive session to the agent"* permission. By default, this permission is granted only to system administrators.
+
+</chunk>

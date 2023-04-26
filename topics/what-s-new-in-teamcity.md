@@ -1,6 +1,14 @@
 [//]: # (title: What's New in TeamCity 2023.05)
 [//]: # (auxiliary-id: What's New in TeamCity 2023.05;What's New in TeamCity)
 
+## Interactive Agent Terminals
+
+With this update you can open remote terminals to agent machines directly from the TeamCity UI. These terminals allow system administrators to maintain local and cloud agents and troubleshoot issues.
+
+<img src="dk-agentTerminal-cat.png" width="706" alt="Agent Terminal Window"/>
+
+Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
+
 ## Assign the VCS Polling Responsibility to Multiple Nodes
 
 The [multinode setup](multinode-setup.md) allows you to choose which duties each node has. To do so, check the required responsibilities on the **Administration | Nodes Configuration** page. 
