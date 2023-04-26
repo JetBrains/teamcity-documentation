@@ -61,13 +61,15 @@ Please generate own token or configuration file per each self-hosted agent.
 
 <chunk id="agents-terminal">
 
-When agents are installed and authorized, you can invoke a terminal for an agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
+After an agent was installed and connected, you can invoke a terminal for this agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
 
 <img src="dk-agentTerminal-cat.png" width="706" alt="Agent Terminal Window"/>
 
 To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open interactive terminal**.
 
 <img src="dk-openterminalLink.png" width="706" alt="Open Terminal Link"/>
+
+For cloud agents that are automatically terminated after idling for a certain period of time, click the ["Disable for maintenance..."](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) button to keep the agent's machine running.
 
 > The "Open interactive terminal" link opens in the `<server-URL>/plugins/teamcity-agent-terminal/agentTerminal.html?agentId:<ID>` URL in a new browser tab. If your server is [behind a proxy](multinode-setup.md#Proxy+Configuration), ensure your proxy configuration allows websocket connections to this page.
 > 

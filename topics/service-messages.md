@@ -1024,7 +1024,7 @@ TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send 
 3. Once a Slack connection is configured, you can add service messages to a build script in the following format:
 
     ```Shell
-    ##teamcity[notification notifier='slack' message='Line 1 |rLine2 |rLine3' sendTo='build_farm_alerts' connectionId='PROJECT_EXT_2']"
+    ##teamcity[notification notifier='slack' message='Line 1 |rLine2 |rLine3' sendTo='build_farm_alerts' connectionId='PROJECT_EXT_2']
     ```
 
    * `notifier` — always equals "slack".

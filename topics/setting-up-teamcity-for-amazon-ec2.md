@@ -281,7 +281,17 @@ For NTML authentication:
 ### Debugging and Maintenance
 {id="debugging-and-maintenance"}
 
-You can investigate issues on the EC2 agent by launching an interactive browser-based shell directly from the TeamCity UI. It works only for EC2 agents with preinstalled [AWS Systems Manager Agent (SSM Agent)](https://docs.aws.amazon.com/systems-manager/latest/userguide/prereqs-ssm-agent.html). TeamCity provides authorization for the browser-based shell, so you don't have to manage it manually.
+You can investigate issues on the EC2 agent by launching an interactive browser-based shell directly from the TeamCity UI.
+
+#### Interactive Terminal
+
+This method is supported for all local and cloud agents. Navigate to the required agent and click **Open interactive terminal** to invoke this terminal.
+
+Learn more: [](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
+
+#### SSM Terminal
+
+This method works only for EC2 agents with preinstalled [AWS Systems Manager Agent (SSM Agent)](https://docs.aws.amazon.com/systems-manager/latest/userguide/prereqs-ssm-agent.html). TeamCity provides authorization for the browser-based shell, so you don't have to manage it manually.
 
 >By default, **the authorized** SSM **user will have sudo privileges**. For security reasons, it is recommended to change the default user permissions and launch the browser-based shell under the same OS user of your EC2 instance as the TeamCity build agent. You can find more information on how to do it below.
 >
