@@ -9,6 +9,15 @@ With this update you can open remote terminals to agent machines directly from t
 
 Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
 
+
+## Utilize Amazon Spot Placement Scores
+
+[Spot instances](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Spot+Instances+support) enable you to request unused AWS EC2 instances at steep discounts (compared to On-Demand prices). As a result, you can significantly lower costs for Amazon-hosted TeamCity agents.
+
+Starting with version 2023.05, you can allow TeamCity to request [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html) and automatically choose AWS Regions or Availability zones in which (according to these scores) your spot requests are most likely to succeed. As a result, you can expect more stable and frequently available spot instance agents.
+
+Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
+
 ## Assign the VCS Polling Responsibility to Multiple Nodes
 
 The [multinode setup](multinode-setup.md) allows you to choose which duties each node has. To do so, check the required responsibilities on the **Administration | Nodes Configuration** page. 
@@ -17,7 +26,7 @@ Prior to version 2023.05, the "VCS repositories polling" responsibility (allows 
 
 Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node).
 
-## Reissuing Refreshable Tokens for VCS Roots
+## Reissue Refreshable Tokens for VCS Roots
 
 If a VCS root is configured to access Git repositories hosted in Bitbucket Cloud, Bitbucket Server, GitLab or JetBrains Space, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
 
