@@ -250,6 +250,7 @@ http {
       status_zone   status_page;
       
       set $proxy_header_host $host;
+      set $proxy_descr "type=nginx_plus; version=2023.05";
       
       location / {
          try_files /dev/null $backend;
@@ -265,7 +266,7 @@ http {
          proxy_intercept_errors on;
          proxy_set_header Host $host:$server_port;
          proxy_redirect off;
-         proxy_set_header X-TeamCity-Proxy "type=nginx_plus; version=2023.05";
+         proxy_set_header X-TeamCity-Proxy $proxy_descr;
          proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
          proxy_set_header X-Forwarded-Proto $scheme;
          proxy_set_header X-Forwarded-For $remote_addr;
@@ -283,7 +284,7 @@ http {
          proxy_intercept_errors on;
          proxy_set_header Host $host:$server_port;
          proxy_redirect off;
-         proxy_set_header X-TeamCity-Proxy "type=nginx_plus; version=2023.05";
+         proxy_set_header X-TeamCity-Proxy $proxy_descr;
          proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
          proxy_set_header X-Forwarded-Proto $scheme;
          proxy_set_header X-Forwarded-For $remote_addr;
@@ -301,7 +302,7 @@ http {
          proxy_intercept_errors on;
          proxy_set_header Host $host:$server_port;
          proxy_redirect off;
-         proxy_set_header X-TeamCity-Proxy "type=nginx_plus; version=2023.05";
+         proxy_set_header X-TeamCity-Proxy $proxy_descr;
          proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
          proxy_set_header X-Forwarded-Proto $scheme;
          proxy_set_header X-Forwarded-For $remote_addr;
@@ -359,9 +360,10 @@ http {
      server_name   {proxy_server_hostname};
    
      set $proxy_header_host $host; 
-   
+     set $proxy_descr "type=nginx; version=2023.05";
+
      location / {
-               try_files /dev/null $is_agent;
+        try_files /dev/null $is_agent;
      }
        
      location @agents {
@@ -370,7 +372,7 @@ http {
         proxy_intercept_errors on;
         proxy_set_header Host $host:$server_port;
         proxy_redirect off;
-        proxy_set_header X-TeamCity-Proxy "type=nginx; version=2022.02";
+        proxy_set_header X-TeamCity-Proxy $proxy_descr;
         proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header X-Forwarded-For $remote_addr;
@@ -384,7 +386,7 @@ http {
         proxy_intercept_errors on;
         proxy_set_header Host $host:$server_port;
         proxy_redirect off;
-        proxy_set_header X-TeamCity-Proxy "type=nginx; version=2022.02";
+        proxy_set_header X-TeamCity-Proxy $proxy_descr;
         proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header X-Forwarded-For $remote_addr;
