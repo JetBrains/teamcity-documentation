@@ -186,8 +186,7 @@ The [typed Kotlin DSL](kotlin-dsl.md) is now supported for numerous settings of 
 ### Pause and resume build queue on secondary nodes
 {product="tc"}
 
-In a [multinode setup](multinode-setup.md), a secondary node has limited functionality compared to the main one, but we strive to eventually make it equally functional. This release makes it possible to pause and resume the build queue on secondary nodes.  
-See the [full list of actions](multinode-setup.md#User-level+Actions+on+Secondary+Node) currently supported on secondary nodes.
+In a [multinode setup](multinode-setup.md), a secondary node has limited functionality compared to the main one, but we strive to eventually make it equally functional. This release makes it possible to pause and resume the build queue on secondary nodes.
 
 ### Pass parameters to selected dependency builds
 
