@@ -89,7 +89,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
 
 The reverse HTTP proxy serves as a single endpoint for TeamCity users and for [build agents](build-agent.md). This is also a good place to configure HTTPS connection settings for the entire cluster.
 
-In case with TeamCity, the proxy server also acts as a load balancer for incoming requests. It can determine where the request should be sent and route it to the corresponding upstream server. In this article, we provide examples of the proxy configuration for two most popular proxy servers: NGINX and HAProxy.
+In case with TeamCity, the proxy server also acts as a load balancer for incoming requests. It can determine where the request should be sent and route it to the corresponding upstream server. In this article, we provide examples of the proxy configuration for the most popular proxy servers: NGINX, NGINX Plus and HAProxy.
 
 <tabs>
 
@@ -123,29 +123,193 @@ frontend http-in
 
     capture cookie X-TeamCity-Node-Id-Cookie= len 100
 
-    http-request add-header X-TeamCity-Proxy "type=haproxy; version=2022.02" 
+    http-request add-header X-TeamCity-Proxy "type=haproxy; version=2023.05"
     http-request set-header X-Forwarded-Host %[req.hdr(Host)]
 
-    acl is_build_agent hdr_beg(User-Agent) -i "TeamCity Agent"
+    acl node_id_cookie_found req.cook(X-TeamCity-Node-Id-Cookie) -m found
+    acl browser req.hdr(User-Agent) -m sub Mozilla
 
-    use_backend agents_endpoint if is_build_agent
-    use_backend web_endpoint unless is_build_agent
+    default_backend clients_not_supporting_cookies
+    use_backend client_with_cookie if node_id_cookie_found
+    use_backend clients_supporting_cookies if browser
 
-backend agents_endpoint
-    acl cookie_found req.cook(X-TeamCity-Node-Id-Cookie) -m found
-    use-server MAIN_NODE unless cookie_found
+backend client_with_cookie
+    # this backend handles the clients which provided the cookie with name "X-TeamCity-Node-Id-Cookie"
+    # such clients are TeamCity agents and browsers handling HTTP requests asking to switch to a specific node 
     cookie X-TeamCity-Node-Id-Cookie
-    
-    option httpchk GET /app/rest/version
-    server MAIN_NODE {main_node_hostname} check inter 30s downinter 15s fall 4 rise 4 cookie {main_node_id}
-    server SECONDARY_NODE {secondary_node_hostname} check inter 30s downinter 15s fall 4 rise 4 cookie {secondary_node_id}
+  
+    http-request disable-l7-retry if METH_POST METH_PUT METH_DELETE
+    retry-on empty-response conn-failure response-timeout 502 503 504
+    retries 5
+   
+    option httpchk GET /healthCheck/ready
+  
+    default-server check fall 6 inter 10000 downinter 5000
+   
+    server NODE1 {node1_hostname} cookie {node1_id}
+    server NODE2 {node2_hostname} cookie {node2_id}
 
-backend web_endpoint
-    balance first # choose first available server
-    option httpchk GET /app/rest/version
-    server WEB_MAIN_NODE {main_node_hostname} check inter 30s downinter 15s fall 4 rise 4 
-    server WEB_SECONDARY_NODE {secondary_node_hostname} check inter 30s downinter 15s fall 4 rise 4 
+backend clients_supporting_cookies
+    # this backend is for the browsers without "X-TeamCity-Node-Id-Cookie"
+    # these requests will be served in a round-robin manner to a healthy server
+    balance roundrobin
+    option redispatch
+    cookie TCSESSIONID prefix nocache
+    option httpchk
 
+    http-check connect
+    http-check send meth GET uri /healthCheck/preferredNodeStatus
+    http-check expect status 200
+
+    default-server check fall 6 inter 10000 downinter 5000
+
+    server NODE1 {node1_hostname} cookie n1 weight 50
+    server NODE2 {node1_hostname} cookie n2 weight 50
+
+backend clients_not_supporting_cookies
+    # for compatibiity reasons requests from non browser clients are always 
+    # routed to a single node (the first healthy) 
+    balance first
+    option redispatch
+    option httpchk
+
+    http-check connect
+    http-check send meth GET uri /healthCheck/preferredNodeStatus
+    http-check expect status 200
+
+    default-server check fall 6 inter 10000 downinter 5000
+
+    server NODE1 {node1_hostname} 
+    server NODE2 {node2_hostname} 
+```
+</tab>
+
+<tab title="NGINX Plus">
+
+```Plain Text
+events {
+    worker_connections 10000;
+}
+
+http {
+
+   upstream round_robin {
+       zone round_robin 1m;
+       server {node1_hostname};
+       server {node2_hostname};
+       sticky cookie X-TeamCity-RoundRobin-Cookie;
+   }
+   
+   upstream first_available {
+       zone first_available 1m;
+       server {node1_hostname} weight=100;
+       server {node2_hostname} weight=1;
+   }
+   
+   upstream sticky_route {
+       zone sticky_route 1m;
+       server {node1_hostname} route={node1_id};
+       server {node2_hostname} route={node2_id};
+       sticky route $node_id;
+   }
+   
+   map $http_user_agent $browser {
+       default 0;
+       "~*Mozilla*" 1;
+   }
+   
+   map $http_cookie $node_id_cookie {
+       default 0;
+       "~*X-TeamCity-Node-Id-Cookie" 1;
+   }
+   
+   map "$browser$node_id_cookie" $backend {
+       00 @client_does_not_support_cookies;
+       10 @client_supports_cookies;
+       01 @client_with_node_id_cookie;
+       11 @client_with_node_id_cookie;
+   }
+   
+   map $http_cookie $node_id {
+       default '';
+       "~*X-TeamCity-Node-Id-Cookie=(?<node_name>[^;]+)" $node_name;
+   }
+   
+   map $http_upgrade $connection_upgrade { # WebSocket support
+       default upgrade;
+       '' '';
+   }
+
+   proxy_read_timeout     1200;
+   proxy_connect_timeout  240;
+   client_max_body_size   0;    # maximum size of an HTTP request. 0 allows uploading large artifacts to TeamCity
+
+   server {
+      listen        80;
+      server_name   {proxy_server_hostname};
+      status_zone   status_page;
+      
+      set $proxy_header_host $host;
+      
+      location / {
+         try_files /dev/null $backend;
+      }
+      
+      location @client_with_node_id_cookie {
+         # this backend handles the clients which provided the cookie with name "X-TeamCity-Node-Id-Cookie"
+         # such clients are TeamCity agents and browsers handling HTTP requests asking to switch to a specific node 
+         proxy_pass http://sticky_route;
+         health_check uri=/healthCheck/ready;
+         
+         proxy_next_upstream error timeout http_503 http_502 non_idempotent;
+         proxy_intercept_errors on;
+         proxy_set_header Host $host:$server_port;
+         proxy_redirect off;
+         proxy_set_header X-TeamCity-Proxy "type=nginx_plus; version=2023.05";
+         proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
+         proxy_set_header X-Forwarded-Proto $scheme;
+         proxy_set_header X-Forwarded-For $remote_addr;
+         proxy_set_header Upgrade $http_upgrade; # WebSocket support
+         proxy_set_header Connection $connection_upgrade; # WebSocket support
+      }
+      
+      location @client_supports_cookies {
+         # this backend is for the browsers without "X-TeamCity-Node-Id-Cookie"
+         # these requests will be served in a round-robin manner to a healthy server
+         proxy_pass http://round_robin;
+         health_check uri=/healthCheck/preferredNodeStatus;
+         
+         proxy_next_upstream error timeout http_503 http_502 non_idempotent;
+         proxy_intercept_errors on;
+         proxy_set_header Host $host:$server_port;
+         proxy_redirect off;
+         proxy_set_header X-TeamCity-Proxy "type=nginx_plus; version=2023.05";
+         proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
+         proxy_set_header X-Forwarded-Proto $scheme;
+         proxy_set_header X-Forwarded-For $remote_addr;
+         proxy_set_header Upgrade $http_upgrade; # WebSocket support
+         proxy_set_header Connection $connection_upgrade; # WebSocket support
+      }
+      
+      location @client_does_not_support_cookies {
+         # for compatibiity reasons requests from non browser clients are always 
+         # routed to a single node (the first healthy) 
+         proxy_pass http://first_available;
+         health_check uri=/healthCheck/preferredNodeStatus;
+         
+         proxy_next_upstream error timeout http_503 http_502 non_idempotent;
+         proxy_intercept_errors on;
+         proxy_set_header Host $host:$server_port;
+         proxy_redirect off;
+         proxy_set_header X-TeamCity-Proxy "type=nginx_plus; version=2023.05";
+         proxy_set_header X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
+         proxy_set_header X-Forwarded-Proto $scheme;
+         proxy_set_header X-Forwarded-For $remote_addr;
+         proxy_set_header Upgrade $http_upgrade; # WebSocket support
+         proxy_set_header Connection $connection_upgrade; # WebSocket support
+      }
+   }
+}
 ```
 </tab>
 
@@ -234,20 +398,43 @@ http {
 </tab>
 </tabs>
 
-In the examples above, the following values should be replaced:
-* `{main_node_hostname}` — a hostname of the main node. If the UI of the main node operates on a port different from the proxy server port, this value should be specified in the form `hostname:port`.
-* `{secondary_node_hostname}` — a hostname of the secondary node. If the secondary node operates on a port different from the proxy server port, this value should be specified in the form `hostname:port`.
-* `{main_node_id}` — the ID of the main node.
-* `{secondary_node_id}` — the ID of the secondary node.
-* `{proxy_server_hostname}` — proxy server name (NGINX only).
+> The configs above are for the case when there are two TeamCity nodes, but more nodes can be added if necessary.
+> The configs have a number of placeholders, such as `{node1_hostname}` which should be replaced with the actual values.
 
-On a failover, if a former secondary node is assigned with the _Main TeamCity node_ responsibility, the configuration of the main and secondary nodes in the proxy config should be updated: `{main_node_hostname}` and `{main_node_id}` should be replaced with the hostname and ID of the new main node; `{secondary_node_hostname}` and `{secondary_node_id}` — with the hostname and ID of the former main node.
+> The proxy config sets a special header `X-TeamCity-Proxy`. It tells TeamCity that a request comes through a properly configured proxy. The header also defines a version of the proxy config: it helps ensure that the TeamCity server is compatible with the proxy configuration.
 
 >Since users will be using the URL of the proxy server for accessing the TeamCity UI, this URL should be specified as a "Server URL" on the __Administration | Global Settings__ page. Likewise, as build agents will be using it for accessing the nodes, it should be set as `serverUrl` in the [build agents' configs](configure-agent-installation.md).
-> 
-{type="note"}
+>
 
-The proxy config sets a special header `X-TeamCity-Proxy`. It tells TeamCity that a request comes through a properly configured proxy. The header also defines a version of the proxy config: it helps ensure that the TeamCity server is compatible with the proxy configuration.
+#### Which proxy server to choose
+
+While TeamCity is able to work with different types of proxy servers, HAProxy or NGINX Plus are more preferable.
+This is because both of these proxies support active health checks and sticky sessions. 
+These features are essential for the [round-robin](#Round-robin) of user requests among different nodes (supported by TeamCity 2023.05+).
+For instance, regular NGINX proxy with standard modules does not have any of these features
+which makes it impossible to enable round-robin with this kind of proxy. For the same reason for the regular NGINX it is important 
+to keep a distinction between a main and a secondary node in the configuration file (main node should be first in the list). 
+As a result in case of a failover and a transfer of a main node responsibility to another node, the configuration of the 
+regular NGINX should be changed to reflect the new roles of the nodes, while there is no need to change the configuration 
+of HAProxy and NGINX Plus servers.   
+
+In general, maintenance of the configuration of HAProxy and NGINX Plus proxy servers is simpler, especially when new nodes are being added to the cluster. 
+
+### Round-robin
+
+Since TeamCity 2023.05 in case of HAProxy and NGINX Plus reverse proxy servers every node with [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility as well as the main node participate in a round-robin.
+In this case the first request of a browser is routed by the proxy randomly to any of such nodes.
+All subsequent HTTP requests are sent to the same node (a so-called sticky session).
+To add or remove a node to/from the round-robin list it is enough to change the state of the
+[Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility. 
+No changes in the proxy configuration are required.
+
+Round-robin not only distributes the load produced by user requests among different nodes, thus potentially allowing to serve 
+more simultaneous HTTP requests, but it also improves user experience in case of [failover](#Failover) or planned 
+nodes restarts. For instance, in case when a single node should be restarted, it will affect only the users assigned to this node.
+And as soon as the proxy server detects that the node is no longer available, all these users will be distributed among other nodes.
+
+With round-robin in place, sometimes it is necessary to be landed on a specific node. For this purpose TeamCity shows a special selector in the footer where a node can be selected. Alternatively, a special request parameter can be added to the request query string: `__nodeId=<id of a node>`.
 
 ### Domain Isolation Proxy Configuration
 
@@ -260,13 +447,13 @@ In the case of a failover, when the main node is no longer available either beca
 Each secondary node tracks the activity of the current main node and, if the main node is inactive for several (3 by default) minutes, shows the corresponding health report.
 The "_Main TeamCity Node_" responsibility can be reassigned to another node via the TeamCity UI or REST API. However, if this inactivity has not been planned (that is, the main node has crashed), it is important to verify that no TeamCity server processes are left running on the inactive node. If you detect such processes, you need to stop them before reassigning the "_Main TeamCity node_" responsibility.
 
-After switching the responsibility, you also need to update the IDs and hostnames of nodes in the [reverse proxy configuration](#Proxy+Configuration) and reload the proxy server configuration. Otherwise, if you decide to start the former main node again, the proxy won’t be able to properly route agents and users.
+If you are using NGINX proxy server, then after switching the responsibility, you also need to update the IDs and hostnames of nodes in the [reverse proxy configuration](#Proxy+Configuration) and reload the proxy server configuration. There is no need to perform this step in case of a HAProxy or NGINX Plus proxy servers.
 
 To sum up, on a failover, follow these steps:
 1. Wait for a server health report about the main node unavailability on the secondary node.
 2. Make sure the main node is stopped.
 3. Switch the "Main node" responsibility on the secondary node.
-4. Update the main node ID in the reverse proxy configuration and reload the config.
+4. (optionally, only in case of NGINX) Update the main node ID in the reverse proxy configuration and reload the config.
 
 ### Monitoring and Managing Nodes via REST API
 
@@ -340,14 +527,6 @@ If you assign more than one secondary nodes to this responsibility, builds will 
 
 > If a main TeamCity node is down, agents automatically reconnect to a secondary node. However, to avoid excessive configuration updates when the main node is only temporarily unavailable (for instance, due to the node restart or a rare network issue), builds assigned to this main node are not immediately relayed to a secondary node. A secondary node waits for 10 minutes before taking over these builds.
 > 
-> You can override this default timeout via the `teamcity.multiNode.cookies.short.lifetime.<unit>` [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
-> 
-> ```Plain Text
-> # 10,000 milliseconds interval
-> teamcity.multiNode.cookies.short.lifetime.millis=10000
-> # One minute interval
-> teamcity.multiNode.cookies.short.lifetime.minutes=1
-> 
 {type="tip"}
 
 \* You can control how many builds can be run by each node.  
@@ -356,12 +535,12 @@ If the maximum limit of allowed running builds is reached on all secondary nodes
 
 #### VCS Repositories Polling on Secondary Node
 
-Initially, only the main TeamCity node polls VCS repositories for new commits. The "VCS Repositories Polling" responsibility allows you to:
-
-* Delegate these potentially slow operations to another dedicated node. Once you shift this responsibility to another node, it may take some time for the main node to finish its ongoing polling activities before this new node can pick up the task.
-* Select multiple nodes that can poll repositories. This setup distributes the load across multiple nodes and reduces the latency for starting new builds.
+Initially, only the main TeamCity node polls VCS repositories for new commits. 
+Enabling of the "VCS Repositories Polling" responsibility on the secondary nodes allows you to distribute this potentially slow activity across multiple nodes and reduces the latency for starting new builds.
 
 Commit hooks configured on your main node do not require any changes and remain functional after you delegate the VCS polling to secondary node(s).
+
+> Before TeamCity 2023.05 there could be only one node with "VCS Repositories Polling" responsibility enabled. TeamCity 2023.05 allows to enable it for multiple nodes.
 
 #### Processing Triggers on Secondary Node
 
@@ -370,6 +549,8 @@ In setups with many build agents, a significant amount of the main node's CPU is
 #### Processing User Requests to Modify Data on Secondary Node
 
 This responsibility is responsible for allowing [user actions on a secondary node](#User-level+Actions+on+Secondary+Node). It is especially useful when the main node is down or goes through maintenance.
+
+Enabling of this responsibility also adds the node to the list of the nodes participating in [round-robin](#Round-robin). 
 
 #### Main Node Responsibility
 
@@ -390,23 +571,21 @@ The secondary node requires the same memory settings as the main node. If you ha
 
 You can import projects to the main node only. Secondary nodes will detect the imported data in the runtime, without restarting.
 
+### Backup
+
+Backup process can be started on any node, provided that it has [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility.
+
+### Clean-up
+
+The TeamCity clean-up task can be scheduled on any TeamCity node, but it executes on the main node only. In a multi-node configuration, as well as in a single node configuration, the task can run while the secondary nodes are handling their operations.
+
 ### Using Plugins
 
 A secondary node has access to all plugins enabled on the main node. It also watches for the newly uploaded plugins. If a secondary node detects that a plugin has been uploaded to the main node, it will show the respective notification on its __Administration | Plugins__ page. If the plugin supports it, it can be reloaded in runtime with no need to restart the secondary node — the respective hint will be displayed in the UI.
 
-A number of bundled plugins can be used on the main node only:
-* Jira Cloud integration
-* Kubernetes support
-* Install Agent on a remote host (agent push)
-* WebHooks support
-
 >Secondary nodes can load an external/non-bundled plugin if this plugin supports secondary nodes. See the [Plugins F.A.Q.](https://plugins.jetbrains.com/docs/teamcity/plugin-development-faq.html#How+to+adapt+plugin+for+secondary+node) for details.
 >
 {type="note"}
-
-### Clean-up
-
-The TeamCity clean-up task runs on the main node only. In a multinode configuration, as well as in a single node configuration, the task can run while the secondary nodes are handling their operations.
 
 ### Installing Additional Secondary Node
 
@@ -421,7 +600,7 @@ To install a secondary node, follow these steps on the secondary node machine:
     ```
    where
    * `<node_ID>` is the ID of the node that will be displayed on the __Administration | Nodes Configuration__ page.
-   * `<path_to_node_data_directory>` is the path to the node Data Directory.
+   * `<path_to_node_data_directory>` is the path to the `<Node-specific Data Directory>`.
    * `<node_URL>` is the secondary node root URL. It should be accessible from the main node and agents.
 
 ### Upgrade/Downgrade
@@ -468,27 +647,6 @@ The restore operation can be done on either of the nodes, but only if all nodes 
 >Currently, the contents of the `<Node-specific data directory>` are not included in the backup.
 >
 {type="note"}
-
-### User-level Actions on Secondary Node
-
-If the "_[Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node)_" responsibility is enabled on a secondary node, it will allow performing the most common user-level actions:
-* Triggering a build, including a custom or personal one
-* Stopping/deleting and pinning/tagging/commenting builds
-* Pausing/resuming the build queue
-* Assigning investigations and muting build problems and tests
-* Marking a build as successful/failed
-* Editing build changes\' descriptions
-* Merging sources and labeling sources actions
-* Adding builds to favorites
-* Changing settings of user profiles, including general settings, groups and roles, access tokens, VCS usernames, and notification rules
-* Reordering and hiding projects and build configurations
-* Checking for pending changes
-* Agent-related actions (see the [list of actions](https://youtrack.jetbrains.com/issue/TW-65199))
-* Editing projects and build configurations
-
-See the related tasks in our issue tracker for the full list of available actions: [TW-62749](https://youtrack.jetbrains.com/issue/TW-62749), [TW-63346](https://youtrack.jetbrains.com/issue/TW-63346).
-
-Administrator-level actions are not yet available on secondary nodes. Use the main node if you need to change the node configuration.
 
 ## Multinode Setup Health Reports
 
