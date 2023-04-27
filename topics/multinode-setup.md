@@ -9,7 +9,7 @@ As the main use case of a multinode setup is to achieve high availability (HA), 
 >
 {type="note"}
 
-## Main vs. secondary node
+## Main vs. Secondary Node
 
 A TeamCity cluster can have one _main node_ and multiple _secondary nodes_. The main node is the "preferred" one. By default, it receives all incoming HTTP requests. It also performs critical background tasks, such as starting builds. A secondary node mostly serves as a backup server, necessary for the failover. For better load distribution and performance optimization, it can also be granted with [additional responsibilities](#Responsibilities).
 
@@ -89,7 +89,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
 
 The reverse HTTP proxy serves as a single endpoint for TeamCity users and for [build agents](build-agent.md). This is also a good place to configure HTTPS connection settings for the entire cluster.
 
-In case with TeamCity, the proxy server also acts as a load balancer for incoming requests. It can determine where the request should be sent and route it to the corresponding upstream server. In this article, we provide examples of the proxy configuration for the most popular proxy servers: NGINX, NGINX Plus and HAProxy.
+When used with TeamCity, a proxy server also acts as a load balancer for incoming requests. It can determine where the request should be sent and route it to the corresponding upstream server. In this article, we provide examples of the proxy configuration for the most popular proxy servers: NGINX, NGINX Plus and HAProxy.
 
 <tabs>
 
@@ -134,8 +134,8 @@ frontend http-in
     use_backend clients_supporting_cookies if browser
 
 backend client_with_cookie
-    # this backend handles the clients which provided the cookie with name "X-TeamCity-Node-Id-Cookie"
-    # such clients are TeamCity agents and browsers handling HTTP requests asking to switch to a specific node 
+    # this backend handles the clients that provided the "X-TeamCity-Node-Id-Cookie" cookie
+    # clients that do so are TeamCity agents and browsers handling HTTP requests asking to switch to a specific node 
     cookie X-TeamCity-Node-Id-Cookie
   
     http-request disable-l7-retry if METH_POST METH_PUT METH_DELETE
@@ -400,43 +400,46 @@ http {
 </tab>
 </tabs>
 
-> The configs above are for the case when there are two TeamCity nodes, but more nodes can be added if necessary.
-> The configs have a number of placeholders, such as `{node1_hostname}` which should be replaced with the actual values.
-
-> The proxy config sets a special header `X-TeamCity-Proxy`. It tells TeamCity that a request comes through a properly configured proxy. The header also defines a version of the proxy config: it helps ensure that the TeamCity server is compatible with the proxy configuration.
-
->Since users will be using the URL of the proxy server for accessing the TeamCity UI, this URL should be specified as a "Server URL" on the __Administration | Global Settings__ page. Likewise, as build agents will be using it for accessing the nodes, it should be set as `serverUrl` in the [build agents' configs](configure-agent-installation.md).
+> The sample configs above have multiple placeholders (for instance, `{node1_hostname}`). These placeholders must be replaced with your actual values.
 >
+{type="warning"}
 
-#### Which proxy server to choose
 
-While TeamCity is able to work with different types of proxy servers, HAProxy or NGINX Plus are more preferable.
-This is because both of these proxies support active health checks and sticky sessions. 
-These features are essential for the [round-robin](#Round-robin) of user requests among different nodes (supported by TeamCity 2023.05+).
-For instance, regular NGINX proxy with standard modules does not have any of these features
-which makes it impossible to enable round-robin with this kind of proxy. For the same reason for the regular NGINX it is important 
-to keep a distinction between a main and a secondary node in the configuration file (main node should be first in the list). 
-As a result in case of a failover and a transfer of a main node responsibility to another node, the configuration of the 
-regular NGINX should be changed to reflect the new roles of the nodes, while there is no need to change the configuration 
-of HAProxy and NGINX Plus servers.   
+> * Since users will use the proxy server URL to access the TeamCity UI, this URL must be set as the "Server URL" on the __Administration | Global Settings__ page and inside [build agents' configs](configure-agent-installation.md).
+> * The `X-TeamCity-Proxy` header tells TeamCity that a request came through a properly configured proxy. The header also defines a version of the proxy config to ensure that the TeamCity server is compatible with the proxy configuration.
+> * The configs above are designed for the two-node TeamCity setup. You can add more nodes if necessary.
+>
+{type="note"}
 
-In general, maintenance of the configuration of HAProxy and NGINX Plus proxy servers is simpler, especially when new nodes are being added to the cluster. 
 
-### Round-robin
+#### Choosing the Right Proxy Server
 
-Since TeamCity 2023.05 in case of HAProxy and NGINX Plus reverse proxy servers every node with [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility as well as the main node participate in a round-robin.
-In this case the first request of a browser is routed by the proxy randomly to any of such nodes.
-All subsequent HTTP requests are sent to the same node (a so-called sticky session).
-To add or remove a node to/from the round-robin list it is enough to change the state of the
-[Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility. 
-No changes in the proxy configuration are required.
+TeamCity can work with different types of proxy servers. However, **HAProxy** and **NGINX Plus** are preferable since these servers support active health checks and sticky sessions. These features are essential for the [round-robin](#Round-Robin) of user requests among different nodes (supported by TeamCity 2023.05+).
 
-Round-robin not only distributes the load produced by user requests among different nodes, thus potentially allowing to serve 
-more simultaneous HTTP requests, but it also improves user experience in case of [failover](#Failover) or planned 
-nodes restarts. For instance, in case when a single node should be restarted, it will affect only the users assigned to this node.
-And as soon as the proxy server detects that the node is no longer available, all these users will be distributed among other nodes.
+In comparison, the regular **NGINX** proxy with standard modules lacks these features and cannot be used to configure the round-robin.
 
-With round-robin in place, sometimes it is necessary to be landed on a specific node. For this purpose TeamCity shows a special selector in the footer where a node can be selected. Alternatively, a special request parameter can be added to the request query string: `__nodeId=<id of a node>`.
+Additionally, the regular NGINX requires you to explicitly distinguish main and secondary nodes in the configuration file (the main node should be first in the list). This requirement forces you to manually update node roles when a main node transfers its responsibilities to a secondary node (for example, in case of a failover). HAProxy and NGINX Plus servers do not require you to update configuration files in the same scenario manually.
+
+Finally, configuration files of **HAProxy** and **NGINX Plus** proxy servers are easier to maintain, especially when adding new nodes to the cluster. 
+
+### Round-Robin
+
+Starting with version 2023.05, the main TeamCity node and every secondary node with the [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility participate in a round-robin. 
+
+
+The proxy randomly routes the first browser request to any of participating nodes. Subsequent HTTP requests are sent to the same node (the "sticky session"). This behavior distributes the load produced by user requests among different nodes, potentially allowing TeamCity to handle more simultaneous HTTP requests. In addition, round-robins improve user experience in case of a [failover](#Failover) or a planned node restart. For instance, if a single node should be restarted, only users assigned to this node will be affected. And as soon as the proxy server detects that the node is no longer available, all these users will be distributed among other nodes.
+
+
+If a request must be handled by one specific node rather than randomly assigned to any node, use the node selector in the TeamCity UI footer or add the `__nodeId=<id of a node>` request parameter to the request query string.
+
+To add or remove a node to/from the round-robin list, change the state of the
+[Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility. No changes in the proxy configuration are required.
+
+> Since the round-robin distribution logic utilizes sticky sessions, we recommend HAProxy and NGINX Plus reverse proxy servers that support this feature. See this section to learn more: [](#Choosing+the+Right+Proxy+Server).
+> 
+{type="note"}
+
+
 
 ### Domain Isolation Proxy Configuration
 
@@ -449,13 +452,13 @@ In the case of a failover, when the main node is no longer available either beca
 Each secondary node tracks the activity of the current main node and, if the main node is inactive for several (3 by default) minutes, shows the corresponding health report.
 The "_Main TeamCity Node_" responsibility can be reassigned to another node via the TeamCity UI or REST API. However, if this inactivity has not been planned (that is, the main node has crashed), it is important to verify that no TeamCity server processes are left running on the inactive node. If you detect such processes, you need to stop them before reassigning the "_Main TeamCity node_" responsibility.
 
-If you are using NGINX proxy server, then after switching the responsibility, you also need to update the IDs and hostnames of nodes in the [reverse proxy configuration](#Proxy+Configuration) and reload the proxy server configuration. There is no need to perform this step in case of a HAProxy or NGINX Plus proxy servers.
+If you use the standard NGINX proxy server, update node IDs and hostnames in the [reverse proxy configuration](#Proxy+Configuration) and reload the proxy server configuration after switching the "_Main TeamCity Node_" responsibility. HAProxy and NGINX Plus proxy servers do not require manual configuration updates.
 
-To sum up, on a failover, follow these steps:
+To sum up, follow these steps in case of a failover:
 1. Wait for a server health report about the main node unavailability on the secondary node.
 2. Make sure the main node is stopped.
 3. Switch the "Main node" responsibility on the secondary node.
-4. (optionally, only in case of NGINX) Update the main node ID in the reverse proxy configuration and reload the config.
+4. (if regular NGINX is used) Update the main node ID in the reverse proxy configuration and reload the config.
 
 ### Monitoring and Managing Nodes via REST API
 
@@ -514,7 +517,7 @@ By default, a newly started secondary node provides a read-only user interface a
 * [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node)
 * [Main TeamCity node](#Main+Node+Responsibility)
 
-A node assigned to any responsibility will allow users to perform the [most common actions](#User-level+Actions+on+Secondary+Node) on builds.
+A node assigned to any responsibility will allow users to perform the most common actions on builds.
 
 You can enable and disable responsibilities for nodes at any moment.
 
@@ -537,12 +540,10 @@ If the maximum limit of allowed running builds is reached on all secondary nodes
 
 #### VCS Repositories Polling on Secondary Node
 
-Initially, only the main TeamCity node polls VCS repositories for new commits. 
-Enabling of the "VCS Repositories Polling" responsibility on the secondary nodes allows you to distribute this potentially slow activity across multiple nodes and reduces the latency for starting new builds.
+Initially, only the main TeamCity node polls VCS repositories for new commits. Enabling the "VCS Repositories Polling" responsibility on multiple nodes allows you to distribute this potentially slow activity and reduce the latency for starting new builds.
 
 Commit hooks configured on your main node do not require any changes and remain functional after you delegate the VCS polling to secondary node(s).
 
-> Before TeamCity 2023.05 there could be only one node with "VCS Repositories Polling" responsibility enabled. TeamCity 2023.05 allows to enable it for multiple nodes.
 
 #### Processing Triggers on Secondary Node
 
@@ -550,9 +551,9 @@ In setups with many build agents, a significant amount of the main node's CPU is
 
 #### Processing User Requests to Modify Data on Secondary Node
 
-This responsibility is responsible for allowing [user actions on a secondary node](#User-level+Actions+on+Secondary+Node). It is especially useful when the main node is down or goes through maintenance.
+This responsibility is responsible for allowing user actions on a secondary node. It is especially useful when the main node is down or goes through maintenance.
 
-Enabling of this responsibility also adds the node to the list of the nodes participating in [round-robin](#Round-robin). 
+Enabling of this responsibility also adds the node to the list of the nodes participating in [round-robin](#Round-Robin). 
 
 #### Main Node Responsibility
 
@@ -579,7 +580,7 @@ Backup process can be started on any node, provided that it has [Processing user
 
 ### Clean-up
 
-The TeamCity clean-up task can be scheduled on any TeamCity node, but it executes on the main node only. In a multi-node configuration, as well as in a single node configuration, the task can run while the secondary nodes are handling their operations.
+The TeamCity clean-up task can be scheduled on any TeamCity node, but it executes on the main node only. In a multi-node configuration, as well as in a single node configuration, the task can run while secondary nodes are handling their operations.
 
 ### Using Plugins
 
