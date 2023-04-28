@@ -1,6 +1,15 @@
 [//]: # (title: What's New in TeamCity 2023.05)
 [//]: # (auxiliary-id: What's New in TeamCity 2023.05;What's New in TeamCity)
 
+## Dark Theme
+
+The wait is finally over: meet the TeamCity Dark Theme — the beta implementation of one of the most popular requests with more than 150 upvoters.
+
+<img src="dk-TCDark.png" width="706" alt="TeamCity Dark Theme"/>
+
+UI Toggle vs Internal Properties
+
+
 ## Interactive Agent Terminals
 
 With this update you can open remote terminals to agent machines directly from the TeamCity UI. These terminals allow system administrators to maintain local and cloud agents and troubleshoot issues.
@@ -18,9 +27,19 @@ Starting with version 2023.05, you can allow TeamCity to request [spot placement
 
 Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
 
-## Assign the VCS Polling Responsibility to Multiple Nodes
+## Multinode Setup Enhancements
 
-The [multinode setup](multinode-setup.md) allows you to choose which duties each node has. To do so, check the required responsibilities on the **Administration | Nodes Configuration** page. 
+### Round-Robin
+
+Version 2023.05 introduces a new requests distribution logic that spreads the load more effectively between TeamCity nodes and minimizes the number of negatively affected users when a node is down due to a planned maintenance or an unexpected failover.
+
+This new logic is based on sending new requests to a random node that has the [Processing user requests to modify data](multinode-setup.md#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility. After this initial draw, TeamCity memorizes which node was selected and relegates subsequent requests to the same node.
+
+Learn more: [](multinode-setup.md#Round-Robin).
+
+### Assign the VCS Polling Responsibility to Multiple Nodes
+
+The [multinode setup](multinode-setup.md) allows you to assign different sets of duties to TeamCity nodes. To do so, check the required responsibilities on the **Administration | Nodes Configuration** page. 
 
 Prior to version 2023.05, the "VCS repositories polling" responsibility (allows nodes to poll repositories for new commits and detect changes) was available for a single node in the entire cluster. Starting with this version, you can assign this responsibility to multiple nodes. This enhancement allows you to evenly distribute the load across nodes and reduce the delay before triggering new builds.
 
