@@ -1103,6 +1103,19 @@ echo "##teamcity[buildStop comment='canceling comment' readdToQueue='true']"
 
 If required, you can re-add the build to the queue after canceling it. By default, TeamCity will do 3 attempts to re-add the build into the queue. 
 
+## Adding and Removing Build Tags
+
+Service messages allow you to add and remove [build tags](build-actions.md#Add+Tags+to+Build).
+
+* `##teamcity[addBuildTag 'your-custom-tag']` — adds a new tag to the current build.
+* `##teamcity[removeBuildTag 'tag-to-remove']` — removes a tag from the current build.
+
+Both messages allow you to pass values of [configuration parameters](configuring-build-parameters.md#Configuration+Parameters) instead of plain strings. For example, the `##teamcity[addBuildTag '%teamcity.agent.jvm.os.name%']` message tags builds with names of operating systems installed on agent machines.
+
+<img src="dk-servicemessage-tags.png" width="706" alt="Tagging builds with OS names"/>
+
+One service message can add or remove a single tag. To add or remove multiple tags, send multiple service messages.
+
 ## Libraries Reporting Results via TeamCity Service Messages
 
 Several platform-specific libraries from JetBrains and external sources are able to report the results  via TeamCity Service messages.
@@ -1112,4 +1125,4 @@ Several platform-specific libraries from JetBrains and external sources are able
 * [PHPUnit 5.0](https://github.com/sebastianbergmann/phpunit/blob/9e86c85be3302eb125f15037ae6f496f62750a93/ChangeLog-5.0.md#500---2015-10-02) — supports TeamCity service messages for tests. For earlier PHPUnit versions, the following external libraries can be used: [PHPUnit Listener 1](https://github.com/realweb-team/deploytools), [PHPUnit Listener 2](https://github.com/maartenba/phpunit-runner-teamcity) — listeners which can be plugged via PHPUnit's` suite.xml` to produce TeamCity service messages for tests.
 * [Python Unit Test Reporting to TeamCity](https://pypi.python.org/pypi/teamcity-messages) — the package that automatically reports unit tests to the TeamCity server via service messages (when run under TeamCity and provided the testing code is adapted to use it).
 * [Mocha](https://github.com/visionmedia/mocha) — on-the-fly reporting via service messages for Mocha JavaScript testing framework. See the related [post](http://richarddingwall.name/2012/06/17/running-mocha-browser-tests-in-teamcity/) with instructions.
-* [Karma](https://github.com/karma-runner/karma) — support in the JavaScript testing tool to report tests progress into TeamCity using TeamCity service messages
+* [Karma](https://github.com/karma-runner/karma) — support in the JavaScript testing tool to report tests progress into TeamCity using TeamCity service messages.

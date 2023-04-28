@@ -7,7 +7,7 @@ The wait is finally over: meet the TeamCity Dark Theme — the beta implementati
 
 <img src="dk-TCDark.png" width="706" alt="TeamCity Dark Theme"/>
 
-UI Toggle vs Internal Properties
+Along with "Light" and "Dark" options, the theme selector allows you to choose "System theme" to automatically apply a skin that fits your current OS settings.
 
 
 ## Interactive Agent Terminals
@@ -102,7 +102,20 @@ If your TeamCity server allows access via HTTPS, the server's default protocol f
 Learn more: [](https-server-settings.md#Specify+Available+Encryption+Protocols).
 
 
+## Add and Remove Build Tags via Service Messages
 
+You can now send TeamCity [service messages](service-messages.md) to add and remove [build tags](build-actions.md#Add+Tags+to+Build).
+
+<img src="dk-servicemessage-tags.png" width="706" alt="Tagging builds with OS names"/>
+
+To add and remove tags this, send the following messages:
+
+```Plain Text
+##teamcity[addBuildTag 'your-custom-tag']
+##teamcity[removeBuildTag 'tag-to-remove']
+```
+
+Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tags).
 
 
 ## Roadmap

@@ -58,7 +58,7 @@ If you click a certain tag when viewing a build list, this will filter out other
 
 Apart from the __Actions__ menu, you can tag a build in the _[Run Custom Build](running-custom-build.md)_ dialog and in the _Pin Build_ dialog.
 
-You can also add and modify build tags using [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Manage+Build+Tags).
+You can also add and modify build tags using [service messages](service-messages.md#Adding+and+Removing+Build+Tags) and [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Manage+Build+Tags).
 
 [//]: # (Internal note. Do not delete. "Build Tagd46e113.txt")
 
