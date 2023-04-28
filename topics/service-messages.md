@@ -1110,7 +1110,7 @@ Service messages allow you to add and remove [build tags](build-actions.md#Add+T
 * `##teamcity[addBuildTag 'your-custom-tag']` — adds a new tag to the current build.
 * `##teamcity[removeBuildTag 'tag-to-remove']` — removes a tag from the current build.
 
-Both messages allow you to pass values of [configuration parameters](configuring-build-parameters.md#Configuration+Parameters) instead of plain strings. For example, the `##teamcity[addBuildTag '%teamcity.agent.jvm.os.name%']` message tags builds with names of operating systems installed on agent machines.
+Both messages allow you to pass values of [configuration parameters](configuring-build-parameters.md#Configuration+Parameters) instead of plain strings. For example, the `##teamcity[addBuildTag '%\teamcity.agent.jvm.os.name%']` message tags builds with names of operating systems installed on agent machines.
 
 <img src="dk-servicemessage-tags.png" width="706" alt="Tagging builds with OS names"/>
 
