@@ -65,7 +65,7 @@ After an agent was installed and connected, you can invoke a terminal for this a
 
 <img src="dk-agentTerminal-cat.png" width="706" alt="Agent Terminal Window"/>
 
-To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open interactive terminal**.
+To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open interactive terminal**. This action is available for all types of agent machines (Linux, Windows, and macOS) and invokes terminals under the same user identity who starts TeamCity agents.
 
 <img src="dk-openterminalLink.png" width="706" alt="Open Terminal Link"/>
 
@@ -75,6 +75,6 @@ For cloud agents that are automatically terminated after idling for a certain pe
 > 
 {type="note"}
 
-Since the terminal allows users to access agent machines and make significant changes to these systems, the **Open interactive terminal** link is visible only to users whose [role permissions](managing-roles-and-permissions.md) include the *"Open an interactive session to the agent"* permission. By default, this permission is granted only to system administrators.
+Since the terminal allows users to access agent machines and make significant changes to these systems, the **Open interactive terminal** link is visible only to users whose [role permissions](managing-roles-and-permissions.md) include the *"Open an interactive session to the agent"* permission. By default, this permission is granted only to system administrators. Additionally, each request to open a terminal is written as a new "Agent actions | Connect to agent" activity in the [audit log](tracking-user-actions.md).
 
 </chunk>
