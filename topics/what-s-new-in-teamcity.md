@@ -13,7 +13,7 @@ Along with "Light" and "Dark" options, the theme selector allows you to choose "
 ## Fetch HTTPS Certificates via Let's Encrypt
 {id="fetch-certificates-via-lets-encrypt"}
 
-[Let's Encrypt](https://letsencrypt.org) is a non-profit Certificate Authority (CA) that provides TLS certificates trusted by all modern browsers. Starting with version 2020.05, can contact this CA to automatically issue and set up a valid certificate.
+[Let's Encrypt](https://letsencrypt.org) is a non-profit Certificate Authority (CA) that provides TLS certificates trusted by all modern browsers. Starting with version 2020.05, TeamCity can contact this CA to automatically issue and set up a valid certificate.
 
 <img src="dk-https-letsencrypt.png" width="706" alt="Obtain certificate via Lets Encrypt"/>
 
