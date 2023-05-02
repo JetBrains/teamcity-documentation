@@ -326,6 +326,7 @@ http {
        server {main_node_hostname};
        server {secondary_node_hostname} backup;
    }
+   
    upstream {secondary_node_id} {
        server {secondary_node_hostname};
        server {main_node_hostname} backup;
@@ -404,6 +405,9 @@ http {
 >
 {type="warning"}
 
+<anchor name="Matching+Proxy+Version+with+Server"/>
+
+> The proxy config sets a special header `X-TeamCity-Proxy`. It tells TeamCity that a request comes through a properly configured proxy. The header also defines a version of the proxy config: it helps ensure that the TeamCity server is compatible with the proxy configuration.
 
 > * Since users will use the proxy server URL to access the TeamCity UI, this URL must be set as the "Server URL" on the __Administration | Global Settings__ page and inside [build agents' configs](configure-agent-installation.md).
 > * The `X-TeamCity-Proxy` header tells TeamCity that a request came through a properly configured proxy. The header also defines a version of the proxy config to ensure that the TeamCity server is compatible with the proxy configuration.
@@ -574,10 +578,6 @@ The secondary node requires the same memory settings as the main node. If you ha
 
 You can import projects to the main node only. Secondary nodes will detect the imported data in the runtime, without restarting.
 
-### Backup
-
-Backup process can be started on any node, provided that it has [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility.
-
 ### Clean-up
 
 The TeamCity clean-up task can be scheduled on any TeamCity node, but it executes on the main node only. In a multi-node configuration, as well as in a single node configuration, the task can run while secondary nodes are handling their operations.
@@ -643,9 +643,9 @@ A secondary node, as well as the main node, can be stopped or restarted while th
 
 ### Backup/Restore
 
-You can back up the main node right [from the TeamCity UI](creating-backup-from-teamcity-web-ui.md). [From a command line](creating-backup-via-maintaindb-command-line-tool.md), you can back up both the main node and secondary nodes.
+You can start backup on any node [from the TeamCity UI](creating-backup-from-teamcity-web-ui.md) provided that the node has [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility. You can also start backup on any node [from a command line](creating-backup-via-maintaindb-command-line-tool.md).
 
-The restore operation can be done on either of the nodes, but only if all nodes using the TeamCity database and data directory are stopped.
+The [restore operation](restoring-teamcity-data-from-backup.md) can be done on either of the nodes, but only if all nodes using the TeamCity database and data directory are stopped.
 
 >Currently, the contents of the `<Node-specific data directory>` are not included in the backup.
 >
