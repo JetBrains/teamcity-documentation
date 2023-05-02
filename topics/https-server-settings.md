@@ -1,90 +1,142 @@
 [//]: # (title: Configuring HTTPS Access to TeamCity Server)
 [//]: # (auxiliary-id: Configuring HTTPS Access to TeamCity Server)
 
-TeamCity lets you easily configure HTTPS access to the server.
+The HTTPS protocol uses encryption for secure server-client communication over computer networks. If your TeamCity server is available by a public internet address, it is strongly recommended that you configure the HTTPS connection to significantly enhance the security.
 
-## Configuring HTTPS Settings
+To configure secure HTTPS access, you need a certificate. You can obtain and load it manually, or let TeamCity automatically issue a valid certificate via **Let's Encrypt**.
 
-To enable HTTPS access to your server, you need an SSL certificate and a private key.
-TeamCity supports `.pem` certificates and RSA keys of the `PKCS#1` or `PKCS#8` format.
-
-> TeamCity currently does not support encrypted keys. You can utilize OpenSSL to remove a key password, for example:
->
-> ```Plain Text
-> openssl pkcs8 -topk8 -nocrypt -in [original.key] -out [new.key]
-> ```
->
-{type="note"}
-
-If you do not have a certificate, there are a couple of options available to you:
-
-- For a public facing server, you can generate a new trusted certificate. One of the possibilities is [Certbot](https://certbot.eff.org/pages/about).
-  You can follow [these instructions](https://certbot.eff.org/instructions).
-
-- For a non-public facing server, you can use an existing certificate or generate a new one locally. You can follow [these instructions](https://www.ssl.com/how-to/manually-generate-a-certificate-signing-request-csr-using-openssl).
-
-If you use a self-signed certificate, make sure your clients are [configured to trust it](using-https-to-access-teamcity-server.md#Accessing+the+server+via+HTTPS).
-
-When a certificate is available, configure HTTPS settings on your TeamCity server.
-
-
-
-> These settings affect the built-in Tomcat server configuration.
+> HTTPS settings made via TeamCity UI affect the built-in Tomcat server configuration.
 >
 > If your TeamCity server is [behind a proxy](configuring-proxy-server.md#Set+Up+TeamCity+Server+Behind+Proxy), configure HTTPS on the proxy side.
-Enabling the settings on this page may break your existing proxy configuration.
+Modifying the settings via a web UI may break your existing proxy configuration.
 >
 {type="warning"}
 
-1. Go to **Administration | Server Administration | HTTPS Settings**. The settings can be configured via the UI or a script.
-2. Upload the certificate.
-3. Upload the RSA key.
-4. Now you can specify the port for HTTPS connections. By default, TeamCity suggests port 443. You may need to change the port number.
 
 
 
-> Make sure that the specified port is not already occupied and the TeamCity server process has access to it. For example, if you’re running the TeamCity server on Unix under an unprivileged account for security reasons, Unix allows access to ports below 1024 to the root user only.
->
-{type="tip"}
+
+## Fetch Certificates from Let's Encrypt
+{id="fetch-certificates-from-lets-encrypt"}
+
+[Let's Encrypt](https://letsencrypt.org) is a non-profit Certificate Authority (CA) that provides TLS certificates trusted by all modern browsers. TeamCity can contact this CA to automatically issue a certificate for both your TeamCity server domain and if configured, the [artifacts isolation domain](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation).
+
+Refer to this article to learn how Let's Encrypt validates your domain ownership and issues certificates: [How it Works](https://letsencrypt.org/how-it-works/).
+
+### Technical Information
+
+*Certificate type:*&emsp;Multi-Domain SAN certificate<br/>
+*Certificate shelf life:*&emsp;90 days<br/>
+*Automatic renewal:*&emsp;30 days before expiration<br/>
+*Challenge type:*&emsp;[HTTP-01](https://letsencrypt.org/docs/challenge-types/)
+
+### Automatic Fetch
+
+1. Navigate to **Administration | HTTPS Settings** and select the **Fetch from Let's Encrypt** option. Since Let's Encrypt needs to access specific endpoints to verify that you own the server and artifact isolation domains, these domains must be accessible over the internet. If your [server URL](configuring-server-url.md) points to a "localhost" address, you will see a corresponding error message.
+
+2. Click the corresponding link to read Let's Encrypt Terms of Service, and click **Agree and fetch**.
+    
+    <img src="dk-https-letsencrypt.png" width="706" alt="Obtain certificate via Lets Encrypt"/>
+    
+    After CA verifies your identity, valid certificates will be issued and installed automatically.
+
+3. Choose the required [redirect mode](#HTTPS+Redirect+Modes).
+
+### Troubleshooting
+
+If Let's Encrypt cannot verify the domain ownership and issue a certificate (for example, if a server has no access to the domain root or the 80 port used to serve challenge files is closed), TeamCity displays the list of challenge files. A domain administrator/owner should manually ensure such files exist at `http://<domain_name>:80/.well-known/acme-challenge` and are reachable over the internet. Then you can return to the **Administration | HTTPS Settings** page and retry the **Fetch from Let's Encrypt** button.
+
+### Automatic Certificate Renewal
+
+Certificates issued by Let's Encrypt are valid for 90 days. TeamCity attempts to renew certificates 30 days before they expire automatically. You can set a different threshold via the `teamcity.https.close.expiration.threshold.<units>=value` [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
+
+```Plain Text
+teamcity.https.close.expiration.threshold.minutes=60
+teamcity.https.close.expiration.threshold.days=40
+```
+
+If TeamCity is unable to re-issue a certificate, a corresponding message is shown in the [health report](server-health.md).
 
 
-Before saving the specified settings, TeamCity will check access. If access is denied, TeamCity will show an error and will not save the invalid settings.
 
+## Generate and Load Certificates Manually
+
+If you do not wish to let TeamCity request certificates from Let's Encrypt, obtain and manually upload an SSL certificate and a private RSA key.
+
+* A certificate must be a `.pem` file.
+* A private key must be in `PKCS#1` or `PKCS#8` format and non-encrypted.
+
+  > If your key has a password, you can utilize OpenSSL to remove it:
+  >
+  > ```Plain Text
+  > openssl pkcs8 -topk8 -nocrypt -in [original.key] -out [new.key]
+  > ```
+  >
+  {type="tip"}
+
+
+### How to Obtain a Certificate
+
+* For a public-facing server, manually generate a free certificate from a trusted authority ([Let's Encrypt](https://letsencrypt.org), [ZeroSSL](https://zerossl.com), and others). For example, you can use [Certbot](https://certbot.eff.org/pages/about). Another option is to purchase a certificate from a commercial CA such as [DigiCert](https://www.digicert.com/tls-ssl/tls-ssl-certificates) or [GoDaddy](https://www.godaddy.com/web-security/ssl-certificate).
+* For a non-public-facing server, you can use an existing certificate or generate a new one locally. For example, you can follow [these instructions](https://www.ssl.com/how-to/manually-generate-a-certificate-signing-request-csr-using-openssl). Note that if you use a self-signed certificate, make sure your clients are [configured to trust it](using-https-to-access-teamcity-server.md#Accessing+the+server+via+HTTPS).
+
+### Upload Files
+
+Once you obtain a certificate and a private key:
+
+1. Go to **Administration | HTTPS Settings**.
+2. Select the **Upload** option.
+3. Upload both files.
+4. Choose the port for HTTPS connections. By default, TeamCity suggests port 443. You may need to change the port number.
+  
+    > Ensure that the specified port is not already occupied and the TeamCity server process has access to it. For example, if you’re running the TeamCity server on Unix under an unprivileged account for security reasons, Unix allows access to ports below 1024 to the root user only.
+    >
+    {type="tip"}
+
+5. Click **Apply files** to let TeamCity check if the server URL is accessible. If access is denied, TeamCity shows an error and ignores the invalid settings.
+  
+6. Save your settings.
+   
+7. Choose the required [redirect mode](#HTTPS+Redirect+Modes).
+
+> * In a multi-node server configuration, each node’s settings are independent. Upload a certificate to each of the nodes individually.
+> * TeamCity tracks the validity of your certificate and starts showing a warning 30 days before the expiration date. After the certificate expires, an error will be displayed.
+> 
+{type="note"}
+
+
+### Configure HTTPS Settings via a Script
 
 You can also automate configuring these HTTPS settings using a script, which should contain the following:
 
 ```Shell
-curl '&lt;TeamCity_URL>/app/https/settings/uploadCertificate' -X POST -H 'Accept: application/json' -H 'Authorization: Bearer TOKEN' -F certificate=@PATH_CERT -F key=@PATH_KEY -F port=XXXX'`
+curl '<TeamCity_URL>/app/https/settings/uploadCertificate' -X POST -H 'Accept: application/json' -H 'Authorization: Bearer TOKEN' -F certificate=@PATH_CERT -F key=@PATH_KEY -F port=XXXX'`
 ```
 
 The `TOKEN` here is your [personal token](configuring-your-user-profile.md#Managing+Access+Tokens) with the `Change HTTPS settings` permission.
 
-5. Save your settings.
-   TeamCity will track the validity of your certificate and will start displaying a warning 30 days before expiration. After the certificate expires, an error will be displayed.
 
->In a multi-node server configuration, each node’s settings are independent and you’ll need to upload a certificate to each of the nodes.
+## HTTPS Redirect Modes
+
+After you have correctly configured the HTTPS access, TeamCity allows you to select one of the following redirect options:
+
+<img src="dk-https-redirects.png" width="706" alt="Available HTTPS Redirect Options"/>
+
+* **Disabled** (default). All clients can use both HTTP and HTTPS requests. This is the least secure option.
+* **Only browser requests**. All users connecting via a browser must use HTTPS. Requests from agents and custom scripts can use HTTP.
+  * This option can be suitable if you have a secure, isolated infrastructure, or if you only have local agents connecting to the TeamCity server.
+  * It is also helpful for a transition period, when you can [configure your agents](how-to.md#Configure+TeamCity+Agent+to+Use+Proxy+To+Connect+to+TeamCity+Server) to connect to TeamCity via HTTPS.
+* **Enable for all requests**. All TeamCity clients are redirected to HTTPS.
+
+  > Before enabling this option, **ensure that you have updated the URL to HTTPS on all agents**. Otherwise, the agents that use HTTP may not be able to connect to the server.
+  > 
+  > You can view the URLs used by the agents to connect to the TeamCity server on **Agents | Overview | Parameters Report** page using `teamcity.serverUrl` in the filter.
+
+  > This option may lead to the complete inability to access your TeamCity server after you remove an uploaded certificate.
+  >
+  {type="warning"} 
 
 
-6. After the settings are saved, you’ll be presented with a list of HTTPS redirect options. Select one of the radio buttons:
-* **Disabled** (default). HTTPS redirection is not enforced and all clients can use both HTTP and HTTPS. This is the least secure option.
-* **Only browser requests**. Use this option to force all users connecting via a browser to use HTTPS. Requests from agents and custom scripts will not be redirected.
-  * This option can be suitable if you have a secure isolated infrastructure, or if you only have local agents connecting to the TeamCity server.
-  * It is also useful for a transition period, when you can [configure your agents](how-to.md#Configure+TeamCity+Agent+to+Use+Proxy+To+Connect+to+TeamCity+Server) to connect to TeamCity via HTTPS.
-* **Enable for all requests**. All TeamCity clients will be redirected to HTTPS.
-
-  > Before enabling this option, **make sure that you have updated the URL to HTTPS on all agents**;
-  > otherwise the agents using HTTP may not be able to connect to the server.
-
-  You can view the URLs used by the agents to connect to the TeamCity server on **Agents | Overview | Parameters** report page using `teamcity.serverUrl` in the filter.
-
-
-
-After HTTPS settings are saved, the page will display the **Remove** button below the certificate information.
-
-
-> If you have HTTPS redirects configured, removing the certificate may lead to the complete inability to access your server.
->
-{type="warning"}
 
 
 

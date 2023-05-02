@@ -10,6 +10,17 @@ The wait is finally over: meet the TeamCity Dark Theme — the beta implementati
 Along with "Light" and "Dark" options, the theme selector allows you to choose "System theme" to automatically apply a skin that fits your current OS settings.
 
 
+## Fetch HTTPS Certificates via Let's Encrypt
+{id="fetch-certificates-via-lets-encrypt"}
+
+[Let's Encrypt](https://letsencrypt.org) is a non-profit Certificate Authority (CA) that provides TLS certificates trusted by all modern browsers. Starting with version 2020.05, can contact this CA to automatically issue and set up a valid certificate.
+
+<img src="dk-https-letsencrypt.png" width="706" alt="Obtain certificate via Lets Encrypt"/>
+
+Certificates issued by Let's Encrypt are automatically renewed 30 days before expiration, and cover both your TeamCity server domain and if configured, the [artifacts isolation domain](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation).
+
+Learn more: [HTTPS Server Settings](https-server-settings.md).
+
 ## Interactive Agent Terminals
 
 With this update you can open remote terminals to agent machines directly from the TeamCity UI. These terminals allow system administrators to maintain local and cloud agents and troubleshoot issues.
