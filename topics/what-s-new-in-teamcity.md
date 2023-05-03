@@ -10,6 +10,12 @@ The wait is finally over: meet the TeamCity Dark Theme — the beta implementati
 Along with "Light" and "Dark" options, the theme selector allows you to choose "System theme" to automatically apply a skin that fits your current OS settings.
 
 
+## Connect to GitHub via GitHub Apps
+
+Starting with this release, TeamCity can work with GitHub and GitHub Enterprise instances via connections that utilize [GitHub Apps](https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps). GitHub Apps is the superior way to provide access to your personal and organization repositories. It boasts fine-grained permissions, grants you more control over which repositories the app can access, and does not require keeping a dedicated "service" user to produce OAuth access tokens.
+
+Learn more: [Configuring Connections](configuring-connections.md#GitHub).
+
 ## Fetch HTTPS Certificates via Let's Encrypt
 {id="fetch-certificates-via-lets-encrypt"}
 

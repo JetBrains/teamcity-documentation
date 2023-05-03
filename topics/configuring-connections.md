@@ -122,7 +122,7 @@ To allow TeamCity to access Bitbucket data, you need to create an incoming appli
 >
 {product="tcc"}
 
-There are two types of GitHub connections: __GitHub Enterprise__ and __GitHub.com__. Choose it depending on your GitHub account type.
+TeamCity allows you to create connections to both regular **GitHub.com** instances and **GitHub Enterprise**.
 
 A connection to GitHub can be used to:
 * Create a [project from GitHub URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
@@ -131,19 +131,67 @@ A connection to GitHub can be used to:
 * Integrate with a [GitHub issue tracker](github.md).
 * Enable [GitHub.com authentication](configuring-authentication-settings.md#GitHub.com).
 
-The GitHub connection form provides multiple parameters. You need to use them to [create a new OAuth application in GitHub](https://docs.github.com/en/developers/apps/authorizing-oauth-apps).
+Depending on your needs, you can create connections to GitHub that operate via GitHub Apps or GitHub OAuth Applications.
 
-After the app is created:
-1. Copy its client ID and secret.
-2. Go back to the connection form in TeamCity.
-3. Paste the GitHub server URL (only for Enterprise) and the app ID and secret.
-4. Save the connection.
+<dl>
 
-If you use a GitHub Enterprise server with HTTPS, you need to also upload its HTTPS certificate as described [here](uploading-ssl-certificates.md).
+<dt>GitHub App</dt>
+<dd>A <a href="https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps">GitHub App</a> is an integration that allows third-party services such as TeamCity to connect to GitHub repositories without the necessity to keep a "service" user account. Compared to GitHub OAuth applications, GitHub Apps boast fine-grained permissions and grant you more control over which repositories the app can access. See this article for more information: <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps">Differences between GitHub Apps and OAuth Apps</a>.
 
->If you enable the [GitHub.com authentication](configuring-authentication-settings.md#GitHub.com) module and want to restrict access to TeamCity to users of specific GitHub organizations, you need to ensure that your OAuth app is allowed by all these organizations. By default, GitHub does not allow OAuth apps to access the organizations. You can either disable this restriction for all apps or approve only the TeamCity app in each of the required organizations. Please refer to the [GitHub documentation](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-oauth-app-access-restrictions) for more details.
+To create a TeamCity connection that utilizes a GitHub App:
 
-A GitHub icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitHub profile. TeamCity will be granted full control of your private repositories and get the _Write repository hooks_ permission. If you configure multiple GitHub integrations, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
+<ol>
+
+<li>Go to <b>Project Settings | Connections</b> and click <b>Add Connection</b>.</li>
+
+<li>Choose <b>GitHub App</b> from the drop-down menu (regardless of whether you need to connect to regular GitHub or GitHub Enterprise).</li>
+
+<li>If you do not already have a GitHub App, follow TeamCity instructions to create and install a new App with required permissions. Note that GitHub will generate a private key in the process — save this <code>.private-key.pem</code> file in the secure location.</li>
+
+<li>Open the general settings of your GitHub App. Copy required values (App ID, client ID, cient secret, and webhook secret) and paste them to the TeamCity dialog.</li>
+
+<li>Enter the Owner URL — the link to a personal account or organization where this GitHub App is installed.</li>
+
+<li>Upload the private key sent by GitHub.</li>
+
+<li>Click <b>Save</b> to save your new connection.</li>
+</ol>
+
+</dd>
+
+<dt>GitHub OAuth Application</dt>
+<dd>OAuth Applications generate user access tokens and allow third-party services like TeamCity to perform actions on behalf of a user who authorized these services.<br/>
+
+
+To create a TeamCity connection that utilizes a GitHub OAuth Application:
+
+<ol>
+
+<li>Go to <b>Project Settings | Connections</b> and click <b>Add Connection</b>.</li>
+
+<li>Choose <b>GitHub.com</b> or <b>GitHub Enterprise</b> depending on which version you utilize.</li>
+
+<li>If you do not already have a GitHub OAuth Application, follow TeamCity instructions to <a href="https://docs.github.com/en/developers/apps/authorizing-oauth-apps">create a new one</a>.</li>
+
+<li>Copy the client ID and secret from OAuth Application's settings and paste them to the TeamCity dialog. For GitHub Enterprise you additionally need to paste the GitHub server URL.</li>
+
+<li>Click <b>Save</b> to save your new connection.</li>
+</ol>
+
+If you use a GitHub Enterprise server with HTTPS, you need to also upload its HTTPS certificate as described <a href="uploading-ssl-certificates.md">here</a>.
+
+<note>
+
+If you enable the <a href="configuring-authentication-settings.md#GitHub.com">GitHub.com authentication</a> module and want to restrict access to TeamCity to users of specific GitHub organizations, you need to ensure that your OAuth app is allowed by all these organizations. By default, GitHub does not allow OAuth apps to access the organizations. You can either disable this restriction for all apps or approve only the TeamCity app in each of the required organizations. Refer to the <a href="https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-oauth-app-access-restrictions">GitHub documentation</a> for more details.
+
+</note>
+
+</dd>
+
+</dl>
+
+
+Once a connection is successfully configured, the GitHub icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitHub profile. TeamCity will be granted full control of your private repositories and get the _Write repository hooks_ permission. If you configure multiple GitHub integrations, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
 </chunk>
 
