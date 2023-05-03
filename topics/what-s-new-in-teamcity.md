@@ -10,13 +10,31 @@ The wait is finally over: meet the TeamCity Dark Theme — the beta implementati
 Along with "Light" and "Dark" options, the theme selector allows you to choose "System theme" to automatically apply a skin that fits your current OS settings.
 
 
-## Connect to GitHub via GitHub Apps
+
+
+## VCS Integrations Enhancements
+
+### Connect to GitHub via GitHub Apps
 
 Starting with this release, TeamCity can work with GitHub and GitHub Enterprise instances via connections that utilize [GitHub Apps](https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps). GitHub Apps is the superior way to provide access to your personal and organization repositories. It boasts fine-grained permissions, grants you more control over which repositories the app can access, and does not require keeping a dedicated "service" user to produce OAuth access tokens.
 
 Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 
-## Fetch HTTPS Certificates via Let's Encrypt
+### Reissue Refreshable Tokens for VCS Roots
+
+If a VCS root is configured via TeamCity [connections](configuring-connections.md) to access Git repositories hosted in Azure DevOps, Bitbucket Server, Bitbucket Cloud, GitHub, GitLab or JetBrains Space, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
+
+<img src="dk-refreshTokenButton.png" width="706" alt="Reissue Token" />
+
+Short-lived refreshable tokens provide more security compared to passwords or personal access tokens since the TeamCity server refreshes them automatically without sharing any related data with agents.
+
+Learn more: [Refreshable tokens](git.md#refresh-token).
+
+
+
+## HTTPS Access Enhancements
+
+### Fetch HTTPS Certificates via Let's Encrypt
 {id="fetch-certificates-via-lets-encrypt"}
 
 [Let's Encrypt](https://letsencrypt.org) is a non-profit Certificate Authority (CA) that provides TLS certificates trusted by all modern browsers. Starting with version 2020.05, TeamCity can contact this CA to automatically issue and set up a valid certificate.
@@ -26,6 +44,18 @@ Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 Certificates issued by Let's Encrypt are automatically renewed 30 days before expiration, and cover both your TeamCity server domain and if configured, the [artifacts isolation domain](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation).
 
 Learn more: [HTTPS Server Settings](https-server-settings.md).
+
+### Specify the Required Encryption Protocol for HTTPS Connection
+
+If your TeamCity server allows access via HTTPS, the server's default protocol for communicating with clients is currently TLS Version 1.2. Starting with version 2023.05, you can specify the list of available encryption protocols or force TeamCity to use one specific protocol.
+
+<img src="dk-tls-protocols.png" width="706" alt="TeamCity using the TLS 1.3 Protocol"/>
+
+Learn more: [](https-server-settings.md#Specify+Available+Encryption+Protocols).
+
+
+
+
 
 ## Interactive Agent Terminals
 
@@ -43,6 +73,9 @@ Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agent
 Starting with version 2023.05, you can allow TeamCity to request [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html) and automatically choose AWS Regions or Availability zones in which (according to these scores) your spot requests are most likely to succeed. As a result, you can expect more stable and frequently available spot instance agents.
 
 Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
+
+
+
 
 ## Multinode Setup Enhancements
 
@@ -62,17 +95,10 @@ Prior to version 2023.05, the "VCS repositories polling" responsibility (allows 
 
 Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node).
 
-## Reissue Refreshable Tokens for VCS Roots
 
-If a VCS root is configured via TeamCity [connections](configuring-connections.md) to access Git repositories hosted in Azure DevOps, Bitbucket Server, Bitbucket Cloud, GitHub, GitLab or JetBrains Space, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
+## New Service Messages
 
-<img src="dk-refreshTokenButton.png" width="706" alt="Reissue Token" />
-
-Short-lived refreshable tokens provide more security compared to passwords or personal access tokens since the TeamCity server refreshes them automatically without sharing any related data with agents.
-
-Learn more: [Refreshable tokens](git.md#refresh-token).
-
-## Send Slack Messages and Emails via Service Messages
+### Send Slack Messages and Emails via Service Messages
 
 TeamCity [](service-messages.md) allow you to report various information about the build by adding special messages to your build scripts. The list of available service messages now includes the `##teamcity[notification ...]` message that sends emails, Slack direct messages, and posts updates to Slack channels.
 
@@ -82,11 +108,39 @@ Built-in security features ensure messages cannot be sent to wrong recipients an
 
 Learn more: [Slack Messages](service-messages.md#Sending+Custom+Slack+Messages) | [Emails](service-messages.md#Sending+Custom+Email+Messages).
 
-## Manage SSH Keys via REST API
+### Add and Remove Build Tags via Service Messages
+
+You can now send TeamCity [service messages](service-messages.md) to add and remove [build tags](build-actions.md#Add+Tags+to+Build).
+
+<img src="dk-servicemessage-tags.png" width="706" alt="Tagging builds with OS names"/>
+
+To add and remove tags, send the following messages:
+
+```Plain Text
+##teamcity[addBuildTag 'your-custom-tag']
+##teamcity[removeBuildTag 'tag-to-remove']
+```
+
+Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tags).
+
+
+
+
+## REST API Updates
+
+### Manage SSH Keys via REST API
 
 Starting with version 2023.05, you can perform the full range of operations on projects' SSH keys via [REST API](teamcity-rest-api.md): upload new keys, modify VCS authentication settings, set passphrases for encrypted keys, and browse and remove uploaded keys. To do this, send required requests to the `/app/rest/projects/<project_locator>/sshKeys` endpoint.
 
 Learn more: [SSH Keys Management](ssh-keys-management.md#REST+API).
+
+
+
+
+## .NET 8 Support
+
+TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) framework by Microsoft. This means TeamCity agents correctly recognize the corresponding SDK installed on agent machines and the [.NET build runner](net.md) successfully builds projects that target .NET 8.0.
+
 
 ## Two-Factor Authentication Enhancements
 
@@ -110,29 +164,10 @@ Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+Us
 
 
 
-## Specify the Required Encryption Protocol for HTTPS Connection
-
-If your TeamCity server allows access via HTTPS, the server's default protocol for communicating with clients is currently TLS Version 1.2. Starting with version 2023.05, you can specify the list of available encryption protocols or force TeamCity to use one specific protocol.
-
-<img src="dk-tls-protocols.png" width="706" alt="TeamCity using the TLS 1.3 Protocol"/>
-
-Learn more: [](https-server-settings.md#Specify+Available+Encryption+Protocols).
 
 
-## Add and Remove Build Tags via Service Messages
 
-You can now send TeamCity [service messages](service-messages.md) to add and remove [build tags](build-actions.md#Add+Tags+to+Build).
 
-<img src="dk-servicemessage-tags.png" width="706" alt="Tagging builds with OS names"/>
-
-To add and remove tags this, send the following messages:
-
-```Plain Text
-##teamcity[addBuildTag 'your-custom-tag']
-##teamcity[removeBuildTag 'tag-to-remove']
-```
-
-Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tags).
 
 
 ## Roadmap
