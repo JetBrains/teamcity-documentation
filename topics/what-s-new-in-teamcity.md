@@ -64,7 +64,7 @@ Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polli
 
 ## Reissue Refreshable Tokens for VCS Roots
 
-If a VCS root is configured to access Git repositories hosted in Bitbucket Cloud, Bitbucket Server, GitLab or JetBrains Space, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
+If a VCS root is configured via TeamCity [connections](configuring-connections.md) to access Git repositories hosted in Azure DevOps, Bitbucket Server, Bitbucket Cloud, GitHub, GitLab or JetBrains Space, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
 
 <img src="dk-refreshTokenButton.png" width="706" alt="Reissue Token" />
 
