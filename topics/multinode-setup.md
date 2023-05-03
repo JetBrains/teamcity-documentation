@@ -155,13 +155,16 @@ backend clients_supporting_cookies
     balance roundrobin
     option redispatch
     cookie TCSESSIONID prefix nocache
+
+    http-request disable-l7-retry if METH_POST METH_PUT METH_DELETE
+    
     option httpchk
 
     http-check connect
     http-check send meth GET uri /healthCheck/preferredNodeStatus
     http-check expect status 200
 
-    default-server check fall 6 inter 10000 downinter 5000
+    default-server check fall 6 inter 10000 downinter 5000 on-marked-down shutdown-sessions
 
     server NODE1 {node1_hostname} cookie n1 weight 50
     server NODE2 {node1_hostname} cookie n2 weight 50
@@ -171,13 +174,16 @@ backend clients_not_supporting_cookies
     # routed to a single node (the first healthy) 
     balance first
     option redispatch
+
+    http-request disable-l7-retry if METH_POST METH_PUT METH_DELETE
+
     option httpchk
 
     http-check connect
     http-check send meth GET uri /healthCheck/preferredNodeStatus
     http-check expect status 200
 
-    default-server check fall 6 inter 10000 downinter 5000
+    default-server check fall 6 inter 10000 downinter 5000 on-marked-down shutdown-sessions
 
     server NODE1 {node1_hostname} 
     server NODE2 {node2_hostname} 
