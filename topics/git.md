@@ -248,7 +248,7 @@ You can use a personal access token instead of a password to authenticate in Git
 >
 {type="warning"}
 
-When using an existing Bitbucket Cloud, Bitbucket Server, GitLab, JetBrains Space or Azure DevOps Services connection to create a VCS Root, 
+When using an existing Bitbucket Cloud, Bitbucket Server, GitLab or Azure DevOps Services connection to create a VCS Root, 
 TeamCity will use a refreshable token instead of the password.
 
 </td></tr><tr>
@@ -268,9 +268,9 @@ The **Token** field displays information about the user who obtained the token a
 
 You can specify a **username** here if there is no username in the clone URL (the username specified here overrides the username from the URL).
 
-For Bitbucket Server, Bitbucket Cloud, GitLab and Space you can click the *Acquire new* button to instantly reissue the token used by the VCS root with a token issued for the current user.
+For Bitbucket Server, Bitbucket Cloud, GitHub and GitLab you can click the *Acquire new* button to instantly reissue the token used by the VCS root with a token issued for the current user.
 
-<img src="dk-refreshTokenButton.png" width="706" alt="Reissue Token" />
+<img src="dk-refreshableGitToken.png" width="706" alt="Reissue Token" />
 
 </td></tr><tr>
 
