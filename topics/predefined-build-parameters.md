@@ -168,6 +168,24 @@ The build number assigned to the build by TeamCity. The parameter uses the speci
 
 <td>
 
+none
+
+</td>
+
+<td>
+
+`BUILD_URL`
+
+</td>
+
+<td>
+
+The link to the currently processed build.
+
+</td></tr><tr>
+
+<td>
+
 `teamcity.build.id`
 
 </td>

@@ -149,6 +149,7 @@ You can now send GET requests to two new endpoints to identify the current serve
 ## Miscellaneous
 
 * The [Notifications build feature](notifications.md) now allows you to enter multiple recipient addresses.
+* Added `env.BUILD_URL` to the list of [predefined environment variables](predefined-build-parameters.md#Predefined+Server+Build+Parameters). This variable returns a link to the currently processed build.
 
 
 ## Two-Factor Authentication Enhancements
