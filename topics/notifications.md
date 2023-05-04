@@ -11,7 +11,7 @@ This feature adds to the functionality of [user-level notifications](configuring
 
 To configure email notifications for a build configuration:
 
-1. Enter the target email. For example, you can specify an email list address, and all its subscribers will be receiving build notifications automatically.
+1. Enter a recipient email address. If you need to specify multiple addresses, enter each following address on a new line.
 2. Configure a [branch filter](branch-filter.md). If it is not configured, you will receive notifications about the default branch only.
 3. Select [events to watch](adding-notification-rules.md#Which+Events+Will+Trigger+Notifications).
 

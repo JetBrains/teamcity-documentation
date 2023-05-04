@@ -12,6 +12,10 @@ Along with "Light" and "Dark" options, the theme selector allows you to choose "
 Since TeamCity is a true powerhouse with hundreds of UI pages and dialogs, the new theme may contain deficiencies. We encourage you to report all issues and visual artifacts via the following channels: [Feedback](feedback.md).
 
 
+## .NET 8 Support
+
+TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) framework by Microsoft. This means TeamCity agents correctly recognize the corresponding SDK installed on agent machines and the [.NET build runner](net.md) successfully builds projects that target .NET 8.0.
+
 
 ## VCS Integrations Enhancements
 
@@ -30,7 +34,6 @@ If a VCS root is configured via TeamCity [connections](configuring-connections.m
 Short-lived refreshable tokens provide more security compared to passwords or personal access tokens since the TeamCity server refreshes them automatically without sharing any related data with agents.
 
 Learn more: [Refreshable tokens](git.md#refresh-token).
-
 
 
 ## HTTPS Access Enhancements
@@ -55,9 +58,6 @@ If your TeamCity server allows access via HTTPS, the server's default protocol f
 Learn more: [](https-server-settings.md#Specify+Available+Encryption+Protocols).
 
 
-
-
-
 ## Interactive Agent Terminals
 
 With this update you can open remote terminals to agent machines directly from the TeamCity UI. These terminals allow system administrators to maintain local and cloud agents and troubleshoot issues.
@@ -74,8 +74,6 @@ Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agent
 Starting with version 2023.05, you can allow TeamCity to request [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html) and automatically choose AWS Regions or Availability zones in which (according to these scores) your spot requests are most likely to succeed. As a result, you can expect more stable and frequently available spot instance agents.
 
 Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
-
-
 
 
 ## Multinode Setup Enhancements
@@ -125,8 +123,6 @@ To add and remove tags, send the following messages:
 Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tags).
 
 
-
-
 ## REST API Updates
 
 ### Manage SSH Keys via REST API
@@ -136,11 +132,9 @@ Starting with version 2023.05, you can perform the full range of operations on p
 Learn more: [SSH Keys Management](ssh-keys-management.md#REST+API).
 
 
+## Miscellaneous
 
-
-## .NET 8 Support
-
-TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) framework by Microsoft. This means TeamCity agents correctly recognize the corresponding SDK installed on agent machines and the [.NET build runner](net.md) successfully builds projects that target .NET 8.0.
+* The [Notifications build feature](notifications.md) now allows you to enter multiple recipient addresses.
 
 
 ## Two-Factor Authentication Enhancements
@@ -162,14 +156,6 @@ teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
 ```
 
 Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+User+Groups).
-
-
-
-
-
-
-
-
 
 ## Roadmap
 
