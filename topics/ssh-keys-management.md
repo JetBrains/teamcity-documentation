@@ -26,6 +26,31 @@ Uploaded SSH keys are stored in the `<[TeamCity Data Directory](teamcity-data-di
 >
 {type="note"}
 
+
+## Generated SSH Keys
+
+If you use [GitHub Deploy Keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys#deploy-keys) or similar authentication workflows, you can let TeamCity generate SSH keys instead of generating them manually. This approach is more secure (since generated keys are not stored on your local machine) and significantly faster. The latter is especially helpful if you re-generate and rotate SSH keys every once in a while.
+
+1. In __[Project Settings](creating-and-editing-projects.md#Managing+Project)__, click __SSH Keys__.
+2. Click the **Generate SSH Key** button.
+    
+    <img src="dk-generateSshKeys.png" width="706" alt="Generate SSH Key"/>
+
+3. Enter the key name, select the key type, and click **Generate**.
+4. Click the **Copy the public key** link under the key name and paste on the required VCS settings page (for GitHub: "Repository settings | Deploy Keys | Add deploy key").
+    
+    > Note that public keys are copied with a comment line that contains the key name and the name of its parent TeamCity project.
+    > ```Plain Text
+    > # Public key from "Gradle-Repo-GH" in project "Banana v2"
+    > ssh-rsa ABCdefghiJKLm....
+    > ```
+    > Remember to remove this first line when adding a public key to your VCS.
+    > 
+    {type="tip"}
+5. Select the generated key in the [](git.md#Authentication+Settings) of your TeamCity VCS root. For your convenience, keys generated in TeamCity are placed in a separate category.
+    
+    <img src="dk-generatedKeysInVcs.png" width="706" alt="Choose Generated Keys in VCS Auth Settings"/>
+
 ## Configure VCS Root Settings
 
 Once required SSH keys are uploaded, modify the VCS Root settings to select a key that your project should use.
