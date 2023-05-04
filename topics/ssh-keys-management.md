@@ -85,6 +85,15 @@ In addition to VCS roots, uploaded SSH keys can be used in **SSH Agent** build f
 * Content-Type header: "text/plain"
 
 
+### Generate a New Key
+
+```Plain Text
+/app/rest/projects/<project_locator>/sshKeys/generated?keyName=NewKey&keyType=RSA
+```
+{prompt="POST"}
+
+* `keyName` — any valid string that is your new key's name.
+* `keyType` — either "RSA" or "ED25519".
 
 ### Set up VCS Authentication Settings
 
@@ -115,3 +124,4 @@ In addition to VCS roots, uploaded SSH keys can be used in **SSH Agent** build f
 /app/rest/projects/<project_locator>/sshKeys?fileName=<Key_Name>
 ```
 {prompt="DELETE"}
+

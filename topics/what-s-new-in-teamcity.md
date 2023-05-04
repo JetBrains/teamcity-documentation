@@ -125,12 +125,19 @@ Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tag
 
 ## REST API Updates
 
-### Manage SSH Keys via REST API
+### Manage SSH Keys
 
-Starting with version 2023.05, you can perform the full range of operations on projects' SSH keys via [REST API](teamcity-rest-api.md): upload new keys, modify VCS authentication settings, set passphrases for encrypted keys, and browse and remove uploaded keys. To do this, send required requests to the `/app/rest/projects/<project_locator>/sshKeys` endpoint.
+Starting with version 2023.05, you can perform the full range of operations on projects' SSH keys via [REST API](teamcity-rest-api.md): upload and generate new keys, modify VCS authentication settings, set passphrases for encrypted keys, and browse and remove uploaded keys. To do this, send required requests to the `/app/rest/projects/<project_locator>/sshKeys` endpoint.
 
 Learn more: [SSH Keys Management](ssh-keys-management.md#REST+API).
 
+### Manage Versioned Settings
+
+Our REST API now allows you to manage settings related to [storing project settings in VCS](storing-project-settings-in-version-control.md). New API allows you to modify these settings, check for changes, and load/commit changes from/to the related VCS. Explore the `/app/rest/projects/{locator}/versionedSettings/` endpoint to view available requests.
+
+### Manage User Roles
+
+The new `/app/rest/roles` endpoint allows you to obtain, modify, and remove existing [roles](managing-roles-and-permissions.md#Managing+Roles), as well as create new ones.
 
 ## Miscellaneous
 
