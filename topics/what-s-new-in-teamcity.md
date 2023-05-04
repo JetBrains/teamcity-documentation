@@ -139,6 +139,13 @@ Our REST API now allows you to manage settings related to [storing project setti
 
 The new `/app/rest/roles` endpoint allows you to obtain, modify, and remove existing [roles](managing-roles-and-permissions.md#Managing+Roles), as well as create new ones.
 
+### Server Health Endpoints
+
+You can now send GET requests to two new endpoints to identify the current server status:
+
+* the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing and/or requires the administrator permission to start the [data upgrade process](super-user.md).
+* the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests; otherwise, returns "503".
+
 ## Miscellaneous
 
 * The [Notifications build feature](notifications.md) now allows you to enter multiple recipient addresses.
