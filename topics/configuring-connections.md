@@ -129,7 +129,7 @@ A connection to GitHub can be used to:
 * Create a [VCS root from URL](guess-settings-from-repository-url.md).
 * Create a [Git VCS root](git.md).
 * Integrate with a [GitHub issue tracker](github.md).
-* Enable [GitHub.com](configuring-authentication-settings.md#GitHub.com) and [GitHub Enterprise](configuring-authentication-settings.md#GitHub+Enterprise) authentication.
+* Enable [GitHub.com](configuring-authentication-settings.md#GitHub) and [GitHub Enterprise](configuring-authentication-settings.md#GitHub) authentication.
 * Provide access tokens for the [Commit Status Publiser](commit-status-publisher.md) and [Pull Requests](pull-requests.md) build features.
 * Connections via GitHub Apps can be used to configure [webhooks](https://docs.github.com/en/rest/apps/webhooks?apiVersion=2022-11-28) that notify the TeamCity server about changes.
 
@@ -186,7 +186,7 @@ To create a TeamCity connection that utilizes a GitHub OAuth Application:
 
 <note>
 
-If you enable the <a href="configuring-authentication-settings.md#GitHub.com">GitHub.com authentication</a> module and want to restrict access to TeamCity to users of specific GitHub organizations, you need to ensure that your OAuth app is allowed by all these organizations. By default, GitHub does not allow OAuth apps to access the organizations. You can either disable this restriction for all apps or approve only the TeamCity app in each of the required organizations. Refer to the <a href="https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-oauth-app-access-restrictions">GitHub documentation</a> for more details.
+If you enable the <a href="configuring-authentication-settings.md#GitHub">GitHub.com authentication</a> module and want to restrict access to TeamCity to users of specific GitHub organizations, you need to ensure that your OAuth app is allowed by all these organizations. By default, GitHub does not allow OAuth apps to access the organizations. You can either disable this restriction for all apps or approve only the TeamCity app in each of the required organizations. Refer to the <a href="https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-oauth-app-access-restrictions">GitHub documentation</a> for more details.
 
 </note>
 

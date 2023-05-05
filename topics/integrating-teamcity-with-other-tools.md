@@ -649,7 +649,7 @@ The tables below are updated in accordance with the newly introduced integration
 * [Creating a Git VCS root from a GitHub repository URL](git.md)
 * [Inserting links to GitHub issues when detecting their IDs in commit messages](github.md)
 * [Building sources of GitHub pull requests](pull-requests.md#GitHub+Pull+Requests)
-* [Authenticating with a GitHub account in TeamCity](configuring-authentication-settings.md#GitHub.com)
+* [Authenticating with a GitHub account in TeamCity](configuring-authentication-settings.md#GitHub)
 
 </td><td>
 
