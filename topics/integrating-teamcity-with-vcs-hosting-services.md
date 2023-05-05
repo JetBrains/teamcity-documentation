@@ -28,7 +28,7 @@ Integration with GitHub allows you to:
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
 * create a [Git VCS root](git.md)
 * integrate with a [GitHub issue tracker](github.md)
-* enable [GitHub authentication](configuring-authentication-settings.md#GitHub.com)
+* enable [GitHub authentication](configuring-authentication-settings.md#GitHub)
 
 See how to configure a connection to GitHub.com or GitHub Enterprise [here](configuring-connections.md#GitHub).
 
