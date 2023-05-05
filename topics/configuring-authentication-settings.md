@@ -21,8 +21,9 @@ TeamCity provides several preconfigured authentication options (presets) to cove
   * [NTLM HTTP Authentication](ntlm-http-authentication.md)
     {product="tc"}
   * [Bitbucket Cloud](#Bitbucket+Cloud)
-  * [GitHub.com](#GitHub.com)
-  * [GitHub Enterprise](#GitHub+Enterprise)
+  * [GitHub App](#GitHub)
+  * [GitHub.com](#GitHub)
+  * [GitHub Enterprise](#GitHub)
   * [GitLab.com](#GitLab.com)
   * [GitLab CE/EE](#GitLab+CE%2FEE)
   * [Google](#Google)
@@ -86,6 +87,7 @@ When a user attempts to sign in, modules will be tried one by one. If one of the
 
 If the System Administrator creates users without a password while several authentication modes are enabled on the server including [Built-in authentication](#Built-in+Authentication) 
 and later changes authentication from mixed to built-in, the users with no password will be unable to sign in to TeamCity.
+
 </warning>
 
 It is possible to use a combination of internal and external authentication. The recommended approach is to configure [LDAP Integration](ldap-integration.md) for your internal employees first and then to add [Built-in](#Built-in+Authentication) authentication for external users. Since TeamCity 2020.2, you can also enable authentication via OAuth services.
@@ -278,13 +280,19 @@ Leave empty to allow all Bitbucket Cloud users to access the TeamCity server.
 
 </table>
 
-### GitHub.com
+### GitHub
 
-Users can sign in to TeamCity with a GitHub.com account.
+Users can sign in to TeamCity with their GitHub.com and GitHub Enterprise accounts. TeamCity provides three independent modules for this task.
 
-Before enabling this module, you need to configure a [GitHub.com connection](configuring-connections.md#GitHub) in the Root project's settings and a dedicated application in GitHub.
+* The **GitHub.com** module requires that you create an [OAuth GitHub.com connection](configuring-connections.md#GitHub) for the Root project.
+* The **GitHub Enterprise** module requires that you create an [OAuth GitHub Enterprise connection](configuring-connections.md#GitHub) for the Root project.
+* The **GitHub App** module requires that you create a [GitHub App](configuring-connections.md#GitHub) for the Root project. This connection type is available for both GitHub.com and GitHub Enterprise users.
 
-To sign in, click the GitHub icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitHub email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitHub, this GitHub account will be mapped to the respective TeamCity user, and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitHub.com profiles.
+To sign in, users must click the GitHub icon above the Username field. If a user with this GitHub email is already registered and the email is verified both [in TeamCity](enabling-email-verification.md) and in GitHub, the user's GitHub account will be mapped to the respective TeamCity user, and this user will be signed in.
+
+Otherwise, TeamCity creates a new user profile. You can disable this behavior via the corresponding authentication module setting. In this case, only users who are already registered will be able to sign in. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitHub.com profiles.
+
+All three modules have identical settings:
 
 <table>
 
@@ -297,7 +305,7 @@ To sign in, click the GitHub icon above the login form and, after the redirect, 
 
 <td>
 
-\* Allow creating new users on the first login
+Allow creating new users on the first login
 
 </td>
 
@@ -314,7 +322,7 @@ If this option is disabled, TeamCity will not create a new user when the provide
 
 <td>
 
-Restrict authentication
+Restrict authentication to users from the specified organizations
 
 </td>
 
@@ -322,9 +330,9 @@ Restrict authentication
 
 A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams/about-organizations) IDs.
 
-This list limits a set of users who can register or authenticate in TeamCity with their GitHub account  to the specified organizations. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified organizations and do not have a user profile in TeamCity.
+This list limits a set of users who can register or authenticate in TeamCity with their GitHub account to the specified organizations. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified organizations and do not have a user profile in TeamCity.
 
->To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub.com connection](configuring-connections.md#GitHub) is approved for each specified organization.
+>To use this restriction, make sure that the GitHub OAuth application or GitHub App used in the Root project's [GitHub connection](configuring-connections.md#GitHub) is approved/installed in each specified organization.
 {type="note"}
 
 Leave empty to allow all GitHub users to access the TeamCity server.
@@ -337,66 +345,8 @@ Leave empty to allow all GitHub users to access the TeamCity server.
 
 </table>
 
-### GitHub Enterprise
 
-Since version 2020.2, users can sign in to TeamCity with a GitHub Enterprise account.
-
-Before enabling this module, you need to configure a [GitHub Enterprise connection](configuring-connections.md#GitHub) in the Root project's settings and a dedicated application in GitHub.
-
-To sign in, click the GitHub icon above the login form and, after the redirect, approve the TeamCity application. If a user with your GitHub email is registered and this email is verified both [in TeamCity](enabling-email-verification.md) and in GitHub, this GitHub account will be mapped with the respective TeamCity user and you will be signed in. Otherwise, TeamCity will create a new user profile, unless this option is disabled\*. It is also possible to [map existing TeamCity users](#User+Authentication+Settings) with GitHub Enterprise profiles.
-
-<table>
-
-<tr>
-<td>Setting</td>
-<td>Description</td>
-</tr>
-
-<tr>
-
-<td>
-
-\* Allow creating new users on the first login
-
-</td>
-
-<td>
-
-Enabled by default.  
-If this option is disabled, TeamCity will not create a new user when the provided external email is unrecognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-
-Restrict authentication
-
-</td>
-
-<td>
-
-A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams/about-organizations) IDs.
-
-This list limits a set of users who can register or authenticate in TeamCity with their GitHub account  to the specified organizations. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified organizations and do not have a user profile in TeamCity.
-
->To use this restriction, make sure that the GitHub OAuth application used in the selected [GitHub Enterprise connection](configuring-connections.md#GitHub) is approved for each specified organization.
-{type="note"}
-
-Leave empty to allow all GitHub users to access the TeamCity server.
-
->Once registered on the TeamCity server, a user can create a password or token which will allow them to sign in to this server directly, bypassing the GitHub verification. If you delete a user from an organization in GitHub, remember to restrict their access or delete their user profile in TeamCity.
-
-</td>
-
-</tr>
-
-</table>
-
->If you reconnect a TeamCity server from one GitHub Enterprise server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](feedback.md).
+>If you reconnect a TeamCity server from one GitHub Enterprise server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, [contact our support](feedback.md).
 >
 {type="warning"}
 

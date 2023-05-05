@@ -23,6 +23,10 @@ TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/down
 
 Starting with this release, TeamCity can work with GitHub and GitHub Enterprise instances via connections that utilize [GitHub Apps](https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps). GitHub Apps is the superior way to provide access to your personal and organization repositories. It boasts fine-grained permissions, grants you more control over which repositories the app can access, and does not require keeping a dedicated "service" user to produce OAuth access tokens.
 
+<img src="dk-add-GHApp-connection.png" alt="Create a GitHub App Connection" width="706"/>
+
+GitHub App connections allow you to check out GitHub.com and GitHub Enterprise repositories, share access tokens with [Commit Status Publisher](commit-status-publisher.md#GitHub) and [](pull-requests.md) build features, set up webhooks that GitHub uses to notify TeamCity about a repository change, and enable the related [authentication module](configuring-authentication-settings.md#GitHub).
+
 Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 
 ### Reissue Refreshable Tokens for VCS Roots
