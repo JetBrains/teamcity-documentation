@@ -5,20 +5,20 @@
 
 |Software|Version|
 |---|---|
-|[Git](https://git-scm.com/)|2.40.0|
+|[Git](https://git-scm.com/)|2.40.1|
 |[Git LFS](https://git-lfs.github.com/)|3.3.0|
 |[Zsh](https://www.zsh.org/)|5.8|
-|[Chromium](https://www.chromium.org/)|111.0.5563.146|
+|[Chromium](https://www.chromium.org/)|112.0.5615.49|
 |[Firefox](https://www.mozilla.org/en-US/firefox/)||
-|[Google Chrome](https://www.google.com/chrome/)|112.0.5615.49|
+|[Google Chrome](https://www.google.com/chrome/)|112.0.5615.165|
 |[ChromeDriver](https://chromedriver.chromium.org/)|112.0.5615.49|
-|[Docker](https://www.docker.com/)|23.0.3|
-|[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|23.0.3|
+|[Docker](https://www.docker.com/)|23.0.4|
+|[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|23.0.4|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
-|[AWS CLI](https://aws.amazon.com/cli/)|2.11.11|
-|[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|v1.26.3|
-|[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.47.0|
-|[Google Cloud SDK](https://cloud.google.com/sdk)|425.0.0|
+|[AWS CLI](https://aws.amazon.com/cli/)|2.11.15|
+|[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|v1.27.1|
+|[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.48.1|
+|[Google Cloud SDK](https://cloud.google.com/sdk)|428.0.0|
 |[JDK 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)|java-1.8.0-amazon-corretto|
 |[JDK 17](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)|java-17-amazon-corretto|
 |[JDK 19](https://docs.aws.amazon.com/corretto/latest/corretto-19-ug/downloads-list.html)|java-19-amazon-corretto|
@@ -36,18 +36,18 @@
 |[Python](https://www.python.org/)|3.8.10|
 |[Python 2](https://www.python.org/downloads/)|2.7.18|
 |[Python 3](https://www.python.org/downloads/)|3.9.16|
-|[pip3](https://pip.pypa.io/en/stable/)|23.0.1|
-|[pip](https://pip.pypa.io/en/stable/)|23.0.1|
+|[pip3](https://pip.pypa.io/en/stable/)|23.1.2|
+|[pip](https://pip.pypa.io/en/stable/)|23.1.2|
 |[PowerShell](https://docs.microsoft.com/en-us/powershell/)|7.2.6|
 |[R](https://www.r-project.org/)|3.6.3|
 |[Groovy](https://groovy-lang.org/)|4.0.5|
 |[RVM](https://rvm.io/)|1.29.12-next|
-|[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.21.0|
-|[Python Pipenv](https://pipenv.pypa.io/en/latest/)|2023.3.20|
+|[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.21.1|
+|[Python Pipenv](https://pipenv.pypa.io/en/latest/)|2023.4.20|
 |[Python Poetry](https://python-poetry.org/)|1.4.2)|
-|[rustup](https://rustup.rs/)|1.25.2|
-|[Cargo](https://doc.rust-lang.org/cargo/)|1.68.2|
-|[rustc](https://doc.rust-lang.org/rustc/what-is-rustc.html)|1.68.2|
+|[rustup](https://rustup.rs/)|1.26.0|
+|[Cargo](https://doc.rust-lang.org/cargo/)|1.69.0|
+|[rustc](https://doc.rust-lang.org/rustc/what-is-rustc.html)|1.69.0|
 |[Go](https://golang.org/)|1.19.1|
 |[NVM](https://github.com/nvm-sh/nvm)|0.39.2|
 |[Node.js](https://nodejs.org/en/)|16.18|
