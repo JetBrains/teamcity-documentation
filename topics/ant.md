@@ -186,6 +186,7 @@ In this section, you can specify a Docker image which will be [used to run the b
 To learn about configuring code coverage options, refer to the [Configuring Java Code Coverage](configuring-java-code-coverage.md) page.
  
 
+
 ## JUnit 5 Support
 
 TeamCity Ant runner does not currently display tests under the "Tests" build result tab if these tests are declared in `<junitlauncher>` tasks. Use `<junit>` tasks instead or migrate your project to Gradle (the TeamCity [Gradle runner](gradle.md) fully supports JUnit 5).
