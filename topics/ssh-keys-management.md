@@ -37,16 +37,20 @@ If you use [GitHub Deploy Keys](https://docs.github.com/en/authentication/connec
     <img src="dk-generateSshKeys.png" width="706" alt="Generate SSH Key"/>
 
 3. Enter the key name, select the key type, and click **Generate**.
-4. Click the **Copy the public key** link under the key name and paste on the required VCS settings page (for GitHub: "Repository settings | Deploy Keys | Add deploy key").
-    
-    > Note that public keys are copied with a comment line that contains the key name and the name of its parent TeamCity project.
-    > ```Plain Text
-    > # Public key from "Gradle-Repo-GH" in project "Banana v2"
-    > ssh-rsa ABCdefghiJKLm....
-    > ```
-    > Remember to remove this first line when adding a public key to your VCS.
-    > 
-    {type="tip"}
+4. If you need a private or a public key for your new generated key:
+
+   * A private key is stored in the `[Data Directory](teamcity-data-directory.md)/config/projects/<parent project>/pluginData/ssh_keys` directory.
+   * A public key is accessible from the main **SSH Keys** page (click the **Copy the public key** link under a required key). Paste this key to your version control service (for example, in GitHub: "Repository settings | Deploy Keys | Add deploy key").
+        
+        > Note that public keys are copied with a comment line that contains the key name and the name of its parent TeamCity project.
+        > ```Plain Text
+        > # Public key from "Gradle-Repo-GH" in project "Banana v2"
+        > ssh-rsa ABCdefghiJKLm....
+        > ```
+        > Remember to remove this first line when adding a public key to your VCS.
+        > 
+        {type="tip"}
+
 5. Select the generated key in the [](git.md#Authentication+Settings) of your TeamCity VCS root. For your convenience, keys generated in TeamCity are placed in a separate category.
     
     <img src="dk-generatedKeysInVcs.png" width="706" alt="Choose Generated Keys in VCS Auth Settings"/>
