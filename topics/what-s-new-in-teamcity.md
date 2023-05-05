@@ -133,7 +133,7 @@ Learn more: [SSH Keys Management](ssh-keys-management.md#REST+API).
 
 ### Manage Versioned Settings
 
-Our REST API now allows you to manage settings related to [storing project settings in VCS](storing-project-settings-in-version-control.md). New API allows you to modify these settings, check for changes, and load/commit changes from/to the related VCS. Explore the `/app/rest/projects/{locator}/versionedSettings/` endpoint to view available requests.
+Our REST API now allows you to manage settings related to [storing project settings in VCS](storing-project-settings-in-version-control.md). You can use this new API to modify these settings, check for changes, and load/commit changes from/to the related VCS. Explore the `/app/rest/projects/{locator}/versionedSettings/` endpoint to view available requests.
 
 ### Manage User Roles
 
