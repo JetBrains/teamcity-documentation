@@ -139,18 +139,15 @@ Our REST API now allows you to manage settings related to [storing project setti
 
 The new `/app/rest/roles` endpoint allows you to obtain, modify, and remove existing [roles](managing-roles-and-permissions.md#Managing+Roles), as well as create new ones.
 
-### Server Health Endpoints
-
-You can now send GET requests to two new endpoints to identify the current server status:
-
-* the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing and/or requires the administrator permission to start the [data upgrade process](super-user.md).
-* the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests; otherwise, returns "503".
 
 ## Miscellaneous
 
 * The [Notifications build feature](notifications.md) now allows you to enter multiple recipient addresses.
 * Added `env.BUILD_URL` to the list of [predefined environment variables](predefined-build-parameters.md#Predefined+Server+Build+Parameters). This variable returns a link to the current build.
 * The [SSH Keys](ssh-keys-management.md) page now displays the button that allows you to generate a new key. Generating keys on TeamCity server is faster and more secure (compared to running `ssh-keygen` locally and manually uploading the keys).
+* Added two new endpoints that you can check by sending GET requests to obtain the current server status:
+  * the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing or in [maintenance mode](teamcity-maintenance-mode.md).
+  * the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
 
 
 ## Two-Factor Authentication Enhancements

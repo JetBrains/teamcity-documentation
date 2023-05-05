@@ -5,6 +5,12 @@ TeamCity provides a variety of diagnostic tools and indicators to monitor and tr
 
 This article describes the diagnostics tools available in __Administration | Diagnostics__. You can also find more details in the nested articles of this section.
 
+> If you need to identify whether the server is up and running, send GET requests to the following endpoints:
+> * the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing or in [maintenance mode](teamcity-maintenance-mode.md).
+> * the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
+>
+{type="tip"}
+
 ## Troubleshooting
 
 This tab provides a number of indicators helping you to detect and address issues with the TeamCity server performance.
