@@ -149,7 +149,7 @@ You can now send GET requests to two new endpoints to identify the current serve
 ## Miscellaneous
 
 * The [Notifications build feature](notifications.md) now allows you to enter multiple recipient addresses.
-* Added `env.BUILD_URL` to the list of [predefined environment variables](predefined-build-parameters.md#Predefined+Server+Build+Parameters). This variable returns a link to the currently processed build.
+* Added `env.BUILD_URL` to the list of [predefined environment variables](predefined-build-parameters.md#Predefined+Server+Build+Parameters). This variable returns a link to the current build.
 * The [SSH Keys](ssh-keys-management.md) page now displays the button that allows you to generate a new key. Generating keys on TeamCity server is faster and more secure (compared to running `ssh-keygen` locally and manually uploading the keys).
 
 

@@ -180,7 +180,7 @@ none
 
 <td>
 
-The link to the currently processed build.
+The link to the current build.
 
 </td></tr><tr>
 
