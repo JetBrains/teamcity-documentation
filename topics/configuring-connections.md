@@ -129,7 +129,9 @@ A connection to GitHub can be used to:
 * Create a [VCS root from URL](guess-settings-from-repository-url.md).
 * Create a [Git VCS root](git.md).
 * Integrate with a [GitHub issue tracker](github.md).
-* Enable [GitHub.com authentication](configuring-authentication-settings.md#GitHub.com).
+* Enable [GitHub.com](configuring-authentication-settings.md#GitHub.com) and [GitHub Enterprise](configuring-authentication-settings.md#GitHub+Enterprise) authentication.
+* Provide access tokens for the [Commit Status Publiser](commit-status-publisher.md) and [Pull Requests](pull-requests.md) build features.
+* Connections via GitHub Apps can be used to configure [webhooks](https://docs.github.com/en/rest/apps/webhooks?apiVersion=2022-11-28) that notify the TeamCity server about changes.
 
 Depending on your needs, you can create connections to GitHub that operate via GitHub Apps or GitHub OAuth Applications.
 
@@ -148,7 +150,9 @@ To create a TeamCity connection that utilizes a GitHub App:
 
 <li>If you do not already have a GitHub App, follow TeamCity instructions to create and install a new App with required permissions. Note that GitHub will generate a private key in the process — save this <code>.private-key.pem</code> file in the secure location.</li>
 
-<li>Open the general settings of your GitHub App. Copy required values (App ID, client ID, cient secret, and webhook secret) and paste them to the TeamCity dialog.</li>
+<li>Open the general settings of your GitHub App. Copy required values (App ID, client ID, cient secret) and paste them to the TeamCity dialog.</li>
+
+<li>If you have a <a href="https://docs.github.com/en/rest/apps/webhooks?apiVersion=2022-11-28">GitHub App webhook</a> configured, you can enter its secret to the <b>Webhook secret</b> field. GitHub can use this webhook to notify the TeamCity server it should scan a repository for changes when they occur, instead of letting the server to constantly poll GitHub for changes. See also: <a href="configuring-vcs-post-commit-hooks-for-teamcity.md">Configuring VCS Post-Commit Hooks</a>.</li>
 
 <li>Enter the Owner URL — the link to a personal account or organization where this GitHub App is installed.</li>
 
@@ -178,7 +182,7 @@ To create a TeamCity connection that utilizes a GitHub OAuth Application:
 <li>Click <b>Save</b> to save your new connection.</li>
 </ol>
 
-If you use a GitHub Enterprise server with HTTPS, you need to also upload its HTTPS certificate as described <a href="uploading-ssl-certificates.md">here</a>.
+
 
 <note>
 
@@ -190,6 +194,9 @@ If you enable the <a href="configuring-authentication-settings.md#GitHub.com">Gi
 
 </dl>
 
+> If you use a GitHub Enterprise server with HTTPS, you need to also upload its HTTPS certificate as described [in this article](uploading-ssl-certificates.md).
+> 
+{type="note"}
 
 Once a connection is successfully configured, the GitHub icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitHub profile. TeamCity will be granted full control of your private repositories and get the _Write repository hooks_ permission. If you configure multiple GitHub integrations, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 

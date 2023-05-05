@@ -7,7 +7,11 @@ When setting up integration with GitHub (see general information [here](integrat
 
 ## Authentication
 
-TeamCity allows you to select whether you want to connect to GitHub anonymously or to be authenticated via a personal access token (PAT).
+TeamCity allows you to select the preferred connection mode to GitHub or GitHub Enterprise:
+* anonymous connection;
+* via a login/PAT (personal access token) pair;
+* via refreshable access token (if a [GitHub App connection](configuring-connections.md#GitHub) is used);
+* via uploaded [SSH keys](ssh-keys-management.md) (when a VCS root is configured to fetch repository data through an SSH link).
 
 >Authentication via login/password is [deprecated](https://developer.github.com/changes/2020-02-14-deprecating-password-auth/) by GitHub.
 >We highly recommend that you authenticate with access tokens instead.

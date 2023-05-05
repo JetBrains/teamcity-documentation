@@ -69,6 +69,8 @@ If your TeamCity server uses a custom SSL certificate, you need to pass the `-k`
 
 ## Setting up post-receive hook on Git server
 
+### Common approach
+
 1\. Locate the Git repository root on the target VCS server. It should contain the `.git/hooks` directory with some templates.
 
 2\. Create the `.git/hooks/post-receive` file with a line:
@@ -87,7 +89,20 @@ chmod 755 /path/to/teamcity-trigger.sh /path/to/git_root/.git/hooks/post-receive
 
 ```
 
->If you are a GitHub user, watch our **video tutorial** on how to [use GitHub commit hooks for faster checkouts](https://www.youtube.com/watch?v=VzDI2HoiHk4).
+### GitHub and GitHub Enterprise
+
+If you are a GitHub user, watch our **video tutorial** on how to [use GitHub commit hooks for faster checkouts](https://www.youtube.com/watch?v=VzDI2HoiHk4).
+
+If your connection to GitHub or GitHub Enterprise is configured via [GitHub Apps](configuring-connections.md#GitHub), you can set up a post-commit hook directly in the connection properties.
+
+1. When configuring a GitHub App connection, follow TeamCity instructions to create a [GitHub App webhook](https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/using-webhooks-with-github-apps) with the given URL.
+2. If you set up a webhook secret on the GitHub App configuration page, paste the same value to the TeamCity connection settings dialog.
+3. Push a test commit to a GitHub repository to check TeamCity receives an update notification. You can check sent update notifications and TeamCity responses on the "GitHub App | Settings | Advanced" page.
+
+<img src="dk-webhook-deliveries.png" width="706" alt="Webhook deliveries"/>
+
+
+
 
 ## Setting up hook on Mercurial server
 
