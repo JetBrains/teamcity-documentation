@@ -37,9 +37,12 @@ For connection, select one of the available authentication types:
   If you have a [configured OAuth connection](configuring-connections.md#GitHub) to GitHub, you can click the magic wand button to let TeamCity automatically retrieve the corresponding access token.
   
   <img src="dk-CSP-GitHubToken.png" width="708" alt="Acquire access token for GitHub"/>
-* **Password** — Provide the GitHub username and password.
+  
+* **GitHub App access token** — if this project or any of the parent projects have a valid [GitHub App connection](configuring-connections.md#GitHub), the Commit Status Publisher can use tokens issued through this connection. The **Acquire new** button allows you to instantly re-issue the access token.
 
-Note that the password authentication will not work if connecting to a GitHub Enterprise repository or if the user's GitHub account is protected with a two-factor authentication. In these cases, use an access token instead.
+* **Use VCS root(s) credentials** — choose this option to parent VCS root(s) share access tokens with the Commit Status Publisher. Note that credentials sharing is not available if a VCS root uses anonymous authentication, fetches data via an SSH URL, or authenticates using a regular user password.
+
+* **Password** — Provide the GitHub username and password. Note that the password authentication will not work if connecting to a GitHub Enterprise repository or if the user's GitHub account is protected with a two-factor authentication. In these cases, use an access token instead.
 
 >To protect a branch and ensure that only verified pull requests are merged into it, you can create a [branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule) in your GitHub repository settings. If you set a TeamCity build as a required status check, GitHub will not allow a pull request to be merged until the build on requested changes finishes successfully. 
 
