@@ -27,7 +27,7 @@ Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 
 ### Reissue Refreshable Tokens for VCS Roots
 
-If a VCS root is configured via TeamCity [connections](configuring-connections.md) to access Git repositories hosted in Azure DevOps, Bitbucket Server, Bitbucket Cloud, GitHub or GitLab, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
+If a VCS root is configured via TeamCity [connections](configuring-connections.md) to access Git repositories hosted in Bitbucket Server, Bitbucket Cloud, GitHub (via [GitHub Apps](#Connect+to+GitHub+via+GitHub+Apps) connection) or GitLab, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
 
 <img src="dk-refreshableGitToken.png" width="706" alt="Reissue Token" />
 
