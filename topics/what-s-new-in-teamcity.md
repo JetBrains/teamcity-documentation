@@ -12,7 +12,6 @@ Along with "Light" and "Dark" options, the theme selector allows you to choose "
 Since TeamCity is a true powerhouse with hundreds of UI pages and dialogs, the new theme may contain deficiencies. We encourage you to report all issues and visual artifacts via the following channels: [Feedback](feedback.md).
 
 
-
 ## .NET 8 Support
 
 TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) framework by Microsoft. This means TeamCity agents correctly recognize the corresponding SDK installed on agent machines and the [.NET build runner](net.md) successfully builds projects that target .NET 8.0.
@@ -39,6 +38,40 @@ If a VCS root is configured via TeamCity [connections](configuring-connections.m
 Short-lived refreshable tokens provide more security compared to passwords or personal access tokens since the TeamCity server refreshes them automatically without sharing any related data with agents.
 
 Learn more: [Refreshable tokens](git.md#refresh-token).
+
+
+## AWS-Related Updated
+
+### Share AWS Connections with Child Projects
+
+The [](aws-credentials.md) build feature can now utilize AWS connections owned by a parent TeamCity project. Previously, you had to configure a connection and a build feature within the same project.
+
+### Utilize Amazon Spot Placement Scores
+
+[Spot instances](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Spot+Instances+support) enable you to request unused AWS EC2 instances at steep discounts (compared to On-Demand prices). As a result, you can significantly lower costs for Amazon-hosted TeamCity agents.
+
+Starting with version 2023.05, you can allow TeamCity to request [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html) and automatically choose AWS Regions or Availability zones in which (according to these scores) your spot requests are most likely to succeed. As a result, you can expect more stable and frequently available spot instance agents.
+
+Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
+
+
+## Multinode Setup Enhancements
+
+### Round-Robin
+
+Version 2023.05 introduces a new requests distribution logic that spreads the load more effectively between TeamCity nodes and minimizes the number of negatively affected users when a node is down due to a planned maintenance or an unexpected failover.
+
+This new logic is based on sending new requests to a random node that has the [Processing user requests to modify data](multinode-setup.md#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility. After this initial draw, TeamCity memorizes which node was selected and relegates subsequent requests to the same node.
+
+Learn more: [](multinode-setup.md#Round-Robin).
+
+### Assign the VCS Polling Responsibility to Multiple Nodes
+
+The [multinode setup](multinode-setup.md) allows you to assign different sets of duties to TeamCity nodes. To do so, check the required responsibilities on the **Administration | Nodes Configuration** page.
+
+Prior to version 2023.05, the "VCS repositories polling" responsibility (allows nodes to poll repositories for new commits and detect changes) was available for a single node in the entire cluster. Starting with this version, you can assign this responsibility to multiple nodes. This enhancement allows you to evenly distribute the load across nodes and reduce the delay before triggering new builds.
+
+Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node).
 
 
 ## HTTPS Access Enhancements
@@ -70,34 +103,6 @@ With this update you can open remote terminals to agent machines directly from t
 <img src="dk-agentTerminal-cat.png" width="706" alt="Agent Terminal Window"/>
 
 Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
-
-
-## Utilize Amazon Spot Placement Scores
-
-[Spot instances](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Spot+Instances+support) enable you to request unused AWS EC2 instances at steep discounts (compared to On-Demand prices). As a result, you can significantly lower costs for Amazon-hosted TeamCity agents.
-
-Starting with version 2023.05, you can allow TeamCity to request [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html) and automatically choose AWS Regions or Availability zones in which (according to these scores) your spot requests are most likely to succeed. As a result, you can expect more stable and frequently available spot instance agents.
-
-Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
-
-
-## Multinode Setup Enhancements
-
-### Round-Robin
-
-Version 2023.05 introduces a new requests distribution logic that spreads the load more effectively between TeamCity nodes and minimizes the number of negatively affected users when a node is down due to a planned maintenance or an unexpected failover.
-
-This new logic is based on sending new requests to a random node that has the [Processing user requests to modify data](multinode-setup.md#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility. After this initial draw, TeamCity memorizes which node was selected and relegates subsequent requests to the same node.
-
-Learn more: [](multinode-setup.md#Round-Robin).
-
-### Assign the VCS Polling Responsibility to Multiple Nodes
-
-The [multinode setup](multinode-setup.md) allows you to assign different sets of duties to TeamCity nodes. To do so, check the required responsibilities on the **Administration | Nodes Configuration** page. 
-
-Prior to version 2023.05, the "VCS repositories polling" responsibility (allows nodes to poll repositories for new commits and detect changes) was available for a single node in the entire cluster. Starting with this version, you can assign this responsibility to multiple nodes. This enhancement allows you to evenly distribute the load across nodes and reduce the delay before triggering new builds.
-
-Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node).
 
 
 ## New Service Messages
@@ -145,16 +150,6 @@ Our REST API now allows you to manage settings related to [storing project setti
 The new `/app/rest/roles` endpoint allows you to obtain, modify, and remove existing [roles](managing-roles-and-permissions.md#Managing+Roles), as well as create new ones.
 
 
-## Miscellaneous
-
-* The [Notifications build feature](notifications.md) now allows you to enter multiple recipient addresses.
-* Added `env.BUILD_URL` to the list of [predefined environment variables](predefined-build-parameters.md#Predefined+Server+Build+Parameters). This variable returns a link to the current build.
-* The [SSH Keys](ssh-keys-management.md) page now displays the button that allows you to generate a new key. Generating keys on TeamCity server is faster and more secure (compared to running `ssh-keygen` locally and manually uploading the keys).
-* Added two new endpoints that you can check by sending GET requests to obtain the current server status:
-  * the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing or in [maintenance mode](teamcity-maintenance-mode.md).
-  * the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
-
-
 ## Two-Factor Authentication Enhancements
 
 ### Additional Verification for Critical Settings
@@ -174,6 +169,17 @@ teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
 ```
 
 Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+User+Groups).
+
+
+## Miscellaneous
+
+* The [Notifications build feature](notifications.md) now allows you to enter multiple recipient addresses.
+* Added `env.BUILD_URL` to the list of [predefined environment variables](predefined-build-parameters.md#Predefined+Server+Build+Parameters). This variable returns a link to the current build.
+* The [SSH Keys](ssh-keys-management.md) page now displays the button that allows you to generate a new key. Generating keys on TeamCity server is faster and more secure (compared to running `ssh-keygen` locally and manually uploading the keys).
+* Added two new endpoints that you can check by sending GET requests to obtain the current server status:
+  * the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing or in [maintenance mode](teamcity-maintenance-mode.md).
+  * the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
+
 
 ## Roadmap
 
