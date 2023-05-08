@@ -9,11 +9,21 @@ This runner is a part of the TeamCity-Docker integration toolset. Refer to [this
 
 Available step execution policies are described [here](configuring-build-steps.md#Execution+Policy).
 
+## Docker Compose Installation Options
+
+There are two options to install Docker Compose on TeamCity agents:
+
+* as a [standalone binary](https://docs.docker.com/compose/install/other/);
+* as the [Compose plugin or part of the Docker Desktop installation](https://docs.docker.com/compose/install/).
+
+For better backward compatibility, TeamCity first checks whether the standalone Compose binary is installed. If yes, the runner uses the outdated Compose V1 syntax to run commands (for example, `docker-compose up`). Otherwise, the runner looks for the installed plugin and switches to the modern Compose V2 syntax (for example, `docker compose up`).
+
 ## Docker Compose Settings
 
 The Docker Compose runner supports one or multiple [Docker Compose YAML file(s)](https://docs.docker.com/compose/compose-file/compose-file-v2/) with a description of the services to be used during the build. The path to the `docker-compose.yml` file(s) should be relative to the [build checkout directory](build-checkout-directory.md). When specifying multiple files, separate them with a space.
 
 A [build agent](build-agent.md) will execute the following `docker-compose` commands during the build:
+
 
 ```Shell
 
@@ -22,8 +32,12 @@ docker-compose -f <docker-compose.yml> [-f <docker-compose2.yml>] up -d
 
 # At the end of the build, for each Docker Compose build step the build agent will run:
 docker-compose -f <docker-compose.yml> [-f <docker-compose2.yml>] down -v
-
 ```
+
+> If a standalone Docker [installation](#Docker+Compose+Installation+Options) is not found, the Compose V2 syntax is used (for example, `docker compose down` instead of `docker-compose down`).
+>
+{type="note"}
+
 
 If the __pull image explicitly__ option is enabled, `docker-compose pull` will be run before the `docker-compose up` command.
 
