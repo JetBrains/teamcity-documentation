@@ -577,7 +577,7 @@ The module relies on the verified third-party [SAML Authentication plugin](https
 To enable the module, in __Administration | Authentication__:
 1. Click __Add module__ and choose the _HTTP-SAML.v2_ type.
 2. Save the settings and go to __Administration | SAML Settings__.
-3. Copy the _Single Sign-On URL_ value under the _Service Provider Configuration_ section. It should be entered in the settings of your SSO application, as described below.
+3. Copy the _Single Sign-On URL (Recipient)_ value under the _Service Provider Configuration_ section. It should be entered in the settings of your SSO application, as described below.
 
 Before configuring SAML settings in TeamCity, you need to create a dedicated application on your SSO provider's side. Here is an example quick instruction for Okta:
 1. In the Okta dashboard, open __Applications__.
