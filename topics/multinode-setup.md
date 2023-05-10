@@ -649,7 +649,7 @@ A secondary node, as well as the main node, can be stopped or restarted while th
 
 ### Backup/Restore
 
-You can start backup on any node [from the TeamCity UI](creating-backup-from-teamcity-web-ui.md) provided that the node has [Handling UI actions and load balancing user requests](#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility. You can also start backup on any node [from a command line](creating-backup-via-maintaindb-command-line-tool.md).
+You can start backup on any node [from the TeamCity UI](creating-backup-from-teamcity-web-ui.md) that has the [Handling UI actions and load balancing user requests](#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility. You can also start backup on any node [from a command line](creating-backup-via-maintaindb-command-line-tool.md). While a backup runs, all other nodes do not allow scheduling cleanup, importing projects, or starting another backup process.
 
 The [restore operation](restoring-teamcity-data-from-backup.md) can be done on either of the nodes, but only if all nodes using the TeamCity database and data directory are stopped.
 

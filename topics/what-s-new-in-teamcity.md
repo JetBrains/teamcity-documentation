@@ -83,6 +83,9 @@ Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polli
 
 In TeamCity 2023.05, you can disable unwanted [main node ](multinode-setup.md) responsibilities on the **Administration | Nodes Configuration** page to reduce the load and CPU/memory consumption. The only main node responsibilities you cannot disable in TeamCity UI are "Main TeamCity node" (you can clear this checkbox only by enabling this responsibility on another node) and "Handling UI actions and load balancing user requests".
 
+### Run TeamCity Backup on Any Node
+
+You can now [create backups](creating-backup-from-teamcity-web-ui.md) on any node with the [Handling UI actions and load balancing user requests](multinode-setup.md#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility.
 
 ## HTTPS Access Enhancements
 
