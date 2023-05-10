@@ -69,7 +69,7 @@ TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with bo
 
 Version 2023.05 introduces a new requests distribution logic that spreads the load more effectively between TeamCity nodes and minimizes the number of negatively affected users when a node is down due to a planned maintenance or an unexpected failover.
 
-This new logic is based on sending new requests to a random node that has the [Processing user requests to modify data](multinode-setup.md#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility. After this initial draw, TeamCity memorizes which node was selected and relegates subsequent requests to the same node.
+This new logic is based on sending new requests to a random node that has the [Handling UI actions and load balancing user requests](multinode-setup.md#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility. After this initial draw, TeamCity memorizes which node was selected and relegates subsequent requests to the same node.
 
 Learn more: [](multinode-setup.md#Round-Robin).
 

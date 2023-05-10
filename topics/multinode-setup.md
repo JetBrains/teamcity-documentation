@@ -434,7 +434,7 @@ Finally, configuration files of **HAProxy** and **NGINX Plus** proxy servers are
 
 ### Round-Robin
 
-Starting with version 2023.05, the main TeamCity node and every secondary node with the [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility participate in a round-robin. 
+Starting with version 2023.05, the main TeamCity node and every secondary node with the [Handling UI actions and load balancing user requests](#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility participate in a round-robin. 
 
 
 The proxy randomly routes the first browser request to any of participating nodes. Subsequent HTTP requests are sent to the same node (the "sticky session"). This behavior distributes the load produced by user requests among different nodes, potentially allowing TeamCity to handle more simultaneous HTTP requests. In addition, round-robins improve user experience in case of a [failover](#Failover) or a planned node restart. For instance, if a single node should be restarted, only users assigned to this node will be affected. And as soon as the proxy server detects that the node is no longer available, all these users will be distributed among other nodes.
@@ -443,7 +443,7 @@ The proxy randomly routes the first browser request to any of participating node
 If a request must be handled by one specific node rather than randomly assigned to any node, use the node selector in the TeamCity UI footer or add the `__nodeId=<id of a node>` request parameter to the request query string.
 
 To add or remove a node to/from the round-robin list, change the state of the
-[Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility. No changes in the proxy configuration are required.
+[Handling UI actions and load balancing user requests](#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility. No changes in the proxy configuration are required.
 
 > Since the round-robin distribution logic utilizes sticky sessions, we recommend HAProxy and NGINX Plus reverse proxy servers that support this feature. See this section to learn more: [](#Choosing+the+Right+Proxy+Server).
 > 
@@ -524,7 +524,7 @@ By default, a newly started secondary node provides a read-only user interface a
 * [Processing data produced by builds](#Processing+Data+Produced+by+Builds+on+Secondary+Node)
 * [VCS repositories polling](#VCS+Repositories+Polling+on+Secondary+Node)
 * [Processing build triggers](#Processing+Triggers+on+Secondary+Node)
-* [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node)
+* [Handling UI actions and load balancing user requests](#Handling+UI+Actions+and+Load+Balancing+User+Requests)
 * [Main TeamCity node](#Main+Node+Responsibility)
 
 A node assigned to any responsibility will allow users to perform the most common actions on builds.
@@ -559,7 +559,7 @@ Commit hooks configured on your main node do not require any changes and remain 
 
 In setups with many build agents, a significant amount of the main node's CPU is allocated to constant processing of build triggers. By enabling the _Processing build trigger_ responsibility for one or more secondary nodes, you can distribute the trigger processing tasks and CPU load between the main node and the responsible secondary ones. TeamCity distributes the triggers automatically but you can see what triggers are currently assigned to each node.
 
-#### Processing User Requests to Modify Data on Secondary Node
+#### Handling UI Actions and Load Balancing User Requests
 
 This responsibility is responsible for allowing user actions on a secondary node. It is especially useful when the main node is down or goes through maintenance.
 
@@ -649,7 +649,7 @@ A secondary node, as well as the main node, can be stopped or restarted while th
 
 ### Backup/Restore
 
-You can start backup on any node [from the TeamCity UI](creating-backup-from-teamcity-web-ui.md) provided that the node has [Processing user requests to modify data](#Processing+User+Requests+to+Modify+Data+on+Secondary+Node) responsibility. You can also start backup on any node [from a command line](creating-backup-via-maintaindb-command-line-tool.md).
+You can start backup on any node [from the TeamCity UI](creating-backup-from-teamcity-web-ui.md) provided that the node has [Handling UI actions and load balancing user requests](#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility. You can also start backup on any node [from a command line](creating-backup-via-maintaindb-command-line-tool.md).
 
 The [restore operation](restoring-teamcity-data-from-backup.md) can be done on either of the nodes, but only if all nodes using the TeamCity database and data directory are stopped.
 

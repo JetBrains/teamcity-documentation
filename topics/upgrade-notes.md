@@ -12,7 +12,9 @@
 
 The Web Application Description Language (WADL) generator is now removed. See the [initial announcement](#Upcoming+REST+API+Updates) for more information.
 
+### Multinode Setup Updates
 
+The "Processing user requests to modify data" responsibility was renamed to "Handling UI actions and load balancing user requests". See the What's New page for more responsibility-related changes: [](what-s-new-in-teamcity.md#Multinode+Setup+Enhancements).
 
 
 ## Changes from 2022.10.2 to 2022.10.3
@@ -508,7 +510,7 @@ If `build.gradle` was selected as a build file in your Gradle steps, this settin
 
 ### New responsibility for secondary nodes
 
-Since version 2019.2, a secondary node allows user actions if at least one responsibility is assigned to it. In 2020.2, we have added a new responsibility — "Processing user requests to modify data". Nodes with this responsibility can process all currently supported user actions and allow changing project settings. Without it, a node will provide a read-only interface.   
+Since version 2019.2, a secondary node allows user actions if at least one responsibility is assigned to it. In 2020.2, we have added a new responsibility — "Processing user requests to modify data" (version 2023.05 update — this responsibility was renamed to "Handling UI actions and load balancing user requests"). Nodes with this responsibility can process all currently supported user actions and allow changing project settings. Without it, a node will provide a read-only interface.   
 On upgrading, this responsibility will be automatically enabled on all your secondary nodes that have at least one other responsibility. This will ensure no current functionality of these nodes is affected. To allow user actions on new secondary nodes, you have to manually enable the new responsibility in __Administration | Server Configuration__.
  
 ### Bundled tools updates
