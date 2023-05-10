@@ -23,6 +23,10 @@ Modifying the settings via a web UI may break your existing proxy configuration.
 
 Refer to this article to learn how Let's Encrypt validates your domain ownership and issues certificates: [How it Works](https://letsencrypt.org/how-it-works/).
 
+> This option is not available for [multinode setups](multinode-setup.md).
+> 
+{type="note"}
+
 ### Technical Information
 
 *Certificate type:*&emsp;Multi-Domain SAN certificate<br/>
