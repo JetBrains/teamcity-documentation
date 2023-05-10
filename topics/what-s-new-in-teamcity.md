@@ -75,11 +75,13 @@ Learn more: [](multinode-setup.md#Round-Robin).
 
 ### Assign the VCS Polling Responsibility to Multiple Nodes
 
-The [multinode setup](multinode-setup.md) allows you to assign different sets of duties to TeamCity nodes. To do so, check the required responsibilities on the **Administration | Nodes Configuration** page.
-
-Prior to version 2023.05, the "VCS repositories polling" responsibility (allows nodes to poll repositories for new commits and detect changes) was available for a single node in the entire cluster. Starting with this version, you can assign this responsibility to multiple nodes. This enhancement allows you to evenly distribute the load across nodes and reduce the delay before triggering new builds.
+Prior to version 2023.05, the "VCS repositories polling" [responsibility](multinode-setup.md) (allows nodes to poll repositories for new commits and detect changes) was available for a single node in the entire cluster. Starting with this version, you can assign this responsibility to multiple nodes. This enhancement allows you to evenly distribute the load across nodes and reduce the delay before triggering new builds.
 
 Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node).
+
+### Disable Main Node Responsibilities
+
+In TeamCity 2023.05, you can disable unwanted [main node ](multinode-setup.md) responsibilities on the **Administration | Nodes Configuration** page to reduce the load and CPU/memory consumption. The only main node responsibilities you cannot disable in TeamCity UI are "Main TeamCity node" (you can clear this checkbox only by enabling this responsibility on another node) and "Handling UI actions and load balancing user requests".
 
 
 ## HTTPS Access Enhancements

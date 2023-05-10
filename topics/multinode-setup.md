@@ -546,7 +546,7 @@ If you assign more than one secondary nodes to this responsibility, builds will 
 
 \* You can control how many builds can be run by each node.  
 To do this, find the required node in the list of available nodes and click __Edit__  next to its _Processing data produced by running builds_ responsibility. The _Limit builds_ dialog will open. Here, you can enter a relative limit of builds allowed to run on this node. We suggest that you choose this limit depending on the node's hardware capabilities.  
-If the maximum limit of allowed running builds is reached on all secondary nodes, TeamCity will be running new builds on the main node until some secondary node finishes its build.
+
 
 #### VCS Repositories Polling on Secondary Node
 
@@ -567,7 +567,7 @@ Enabling of this responsibility also adds the node to the list of the nodes part
 
 #### Main Node Responsibility
 
-You can assign a secondary node to the _Main TeamCity node_ responsibility. This responsibility by default belongs to the current main node, but gets vacant if this node becomes unavailable. After you assign any secondary node to this responsibility, it becomes the main node and receives all its other responsibilities (processing builds, managing agents, and so on). All the running builds will continue their operations without interruption. If a [proxy is configured](#Proxy+Configuration) in your setup, build agents will seamlessly reconnect to the new main node.  
+You can assign a secondary node to the _Main TeamCity node_ responsibility. This responsibility by default belongs to the current main node, but gets vacant if this node becomes unavailable. After you assign any secondary node to this responsibility, it becomes the main node and in addition receives the "Handling UI Actions and Load Balancing User Requests" responsibility. All the running builds will continue their operations without interruption. If a [proxy is configured](#Proxy+Configuration) in your setup, build agents will seamlessly reconnect to the new main node.  
 When the previous main node starts again, it becomes a secondary node, as the _Main TeamCity node_ responsibility is already occupied by another node. If necessary, you can repeat the procedure above to switch roles between these nodes.
 
 ### Internal Properties
