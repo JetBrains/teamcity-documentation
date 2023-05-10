@@ -8,7 +8,7 @@
 TeamCity is developed with security concerns in mind. We make reasonable efforts to ensure the system is invulnerable to different types of attacks. We work with third parties on assessing TeamCity security using security scanners and penetration tests. Newly discovered security issues are promptly addressed in the nearest bugfix releases ([read more](teamcity-release-cycle.md) about our release cycle). It is recommended to [upgrade to newly released TeamCity versions](https://www.jetbrains.com/teamcity/download/) as soon as they become available.  
 However, the general assumption and __recommended setup is to deploy TeamCity in a trusted environment__, with no possibility for it to be accessed by malicious users.
 
-Along with these guidelines, please review [notes](configure-server-installation.md#Configuring+Server+for+Production+Use) on configuring the TeamCity server for production use. For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/?s=security+bulletin) and the "Security" section in the release notes.
+Along with these guidelines, please review [notes](configure-server-installation.md#Configuring+Server+for+Production+Use) on configuring the TeamCity server for production use. For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/blog/tag/security-bulletin/) and the "Security" section in the release notes.
 {product="tc"}
 
 For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/?s=security+bulletin) and the "Security" section in the release notes.
