@@ -44,7 +44,11 @@ Refer to this article to learn how Let's Encrypt validates your domain ownership
 
 ### Troubleshooting
 
-If Let's Encrypt cannot verify the domain ownership and issue a certificate (for example, if a server has no access to the domain root or the 80 port used to serve challenge files is closed), TeamCity displays the list of challenge files. A domain administrator/owner should manually ensure such files exist at `http://<domain_name>:80/.well-known/acme-challenge` and are reachable over the internet. Then you can return to the **Administration | HTTPS Settings** page and retry the **Fetch from Let's Encrypt** button.
+If Let's Encrypt cannot verify the domain ownership and issue a certificate (for example, if a server has no access to the domain root or the 80 port used to serve challenge files is closed), TeamCity puts the process on hold and displays a text file content and a path.
+
+<img src="dk-letsencrypt-noaccess.png" width="706" alt="Certificate instructions for system administrators"/>
+
+A domain administrator/owner should manually place this file under the given location and ensure it is reachable over the internet. Then you can return to the **Administration | HTTPS Settings** page and click the **Proceed** button.
 
 ### Automatic Certificate Renewal
 
