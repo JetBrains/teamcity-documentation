@@ -7,7 +7,7 @@ When setting up integration with GitHub (see general information [here](integrat
 
 ## Authentication
 
-TeamCity allows you to select the preferred GitHub or GitHub Enterprise authorization mode in the VCS root settings:
+TeamCity allows you to select the preferred GitHub or GitHub Enterprise authentication mode in the VCS root settings:
 
 * anonymous connection;
 * via a login/PAT (personal access token) pair;
