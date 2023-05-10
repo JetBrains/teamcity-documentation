@@ -65,6 +65,10 @@ To set up a high-availability TeamCity installation, you need to [configure a re
 
 <anchor name="ServerHealth-WebSocketconnectionissues"/>
 
+#### Unassigned Responsibilities
+
+TeamCity notifies you if none of the cluster nodes have a certain responsibility specific. For instance, if the "VCS repositories polling" responsibility is unchecked for all nodes, TeamCity cannot check repositories for changes and start new builds. Navigate to **Administration | Node Settings** and ensure each responsibility is assigned to at least one node.
+
 ### WebSocket connection issues
 {product="tc"}
 
