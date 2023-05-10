@@ -40,19 +40,19 @@ Short-lived refreshable tokens provide more security compared to passwords or pe
 Learn more: [Refreshable tokens](git.md#refresh-token).
 
 
-## AWS-Related Updated
+## AWS-Related Updates
 
 ### Share AWS Connections with Child Projects
 
 The [](aws-credentials.md) build feature can now utilize AWS connections owned by a parent TeamCity project. Previously, you had to configure a connection and a build feature within the same project.
 
-### Utilize Amazon Spot Placement Scores
+<!--### Utilize Amazon Spot Placement Scores
 
 [Spot instances](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Spot+Instances+support) enable you to request unused AWS EC2 instances at steep discounts (compared to On-Demand prices). As a result, you can significantly lower costs for Amazon-hosted TeamCity agents.
 
 Starting with version 2023.05, you can allow TeamCity to request [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html) and automatically choose AWS Regions or Availability zones in which (according to these scores) your spot requests are most likely to succeed. As a result, you can expect more stable and frequently available spot instance agents.
 
-Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
+Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).-->
 
 ### IMDSv2 Support
 

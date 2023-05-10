@@ -50,9 +50,9 @@ TeamCity requires the following permissions for Amazon EC2 Resources:
 
 To use [spot instances](#Amazon+EC2+Spot+Instances+support), grant the following permissions in addition to those listed above:
 
-* `ec2:RequestSpotInstances` (required)
-* `ec2:CancelSpotInstanceRequests` (required)
-* `ec2:GetSpotPlacementScores` (optional, allows TeamCity to choose AWS Regions or Availability Zones based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs)).
+* `ec2:RequestSpotInstances`
+* `ec2:CancelSpotInstanceRequests`
+<!--* `ec2:GetSpotPlacementScores` (optional, allows TeamCity to choose AWS Regions or Availability Zones based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs)).-->
 
 To use [spot fleets](#Amazon+EC2+Spot+Fleet+support), the following additional permissions are required:
 * `ec2:RequestSpotFleet`
@@ -178,7 +178,7 @@ TeamCity launches a spot instance as soon as the cloud profile is saved. If it i
 
 If a spot instance is terminated, TeamCity will fail the build with a corresponding build problem, and will re-add this build to the build queue.
 
-TeamCity can automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](#Required+IAM+permissions).
+<!--TeamCity can automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](#Required+IAM+permissions).-->
 
 <note>
 
