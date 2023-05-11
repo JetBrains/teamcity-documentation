@@ -184,6 +184,15 @@ teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
 Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+User+Groups).
 
 
+
+## Sakura UI
+
+Build configuration pages now display the "Chains" tab. The page allows you to browse Sankey-like diagram of builds linked into a [](build-chain.md).
+
+<img src="dk-sakura-chains.png" width="706" alt="Build Chains in Sakura"/>
+
+Previously, this page was available only in Classic UI.
+
 ## Miscellaneous
 
 * The [Notifications build feature](notifications.md) now allows you to enter multiple recipient addresses.
