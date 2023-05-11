@@ -96,7 +96,7 @@ If you are a GitHub user, watch our **video tutorial** on how to [use GitHub com
 If your connection to GitHub or GitHub Enterprise is configured via [GitHub Apps](configuring-connections.md#GitHub), you can set up a post-commit hook directly in the connection properties.
 
 1. When configuring a GitHub App connection, follow TeamCity instructions to create a [GitHub App webhook](https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/using-webhooks-with-github-apps) with the given URL.
-2. If you set up a webhook secret on the GitHub App configuration page, paste the same value to the TeamCity connection settings dialog.
+2. Set up a webhook secret on the GitHub App configuration page and paste the same value to the TeamCity connection settings dialog.
 3. Push a test commit to a GitHub repository to check TeamCity receives an update notification. You can check sent update notifications and TeamCity responses on the "GitHub App | Settings | Advanced" page.
 
 <img src="dk-webhook-deliveries.png" width="706" alt="Webhook deliveries"/>
