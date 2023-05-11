@@ -1015,7 +1015,7 @@ TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send 
 
 1. Open the settings of a Slack connection and set the **Notifications limit** to any positive number. This value specifies the maximum number of messages that build configurations can send per run.
 
-2. For security reasons, only links to the same TeamCity server are allowed in messages. Messages with URLs to external web resources are automatically blocked.
+2. For security reasons, only links to the same TeamCity server are allowed in messages. Messages with URLs to external web resources are automatically blocked with a corresponding message written to the "teamcity-notifications.log" file (**Administration | Diagnostics | Server Logs**).
     
     <img src="dk-servicemessage-externalURL.png" width="706" alt="Blocked service message"/>
     
@@ -1074,9 +1074,9 @@ You can use TeamCity service messages to send emails from inside build scripts.
 
 3. Enter the list of recipients to the **Allowed addresses**. Messages sent to recipients outside this list are automatically blocked. Use comma (,) as a separator to enter multiple addresses and asterisk (\*) as a wildcard for any string (for example, \*@gmail.com).
 
-4. For security reasons, only links to the same TeamCity server are allowed in messages. Messages with URLs to external web resources are automatically blocked.
+4. For security reasons, only links to the same TeamCity server are allowed in messages. Messages with URLs to external web resources are automatically blocked with a corresponding message written to the "teamcity-notifications.log" file (**Administration | Diagnostics | Server Logs**).
 
-    <img src="dk-serviceMessagesEmail-failed.png" width="706" alt="Blocked email in build logs"/>
+    <img src="dk-servicemessage-externalURL.png" width="706" alt="Blocked service message"/>
 
    If you need to include links to external resources, enter their hostnames in the **Allowed hostnames** field. Use comma (,) as a separator to enter multiple values and asterisk (\*) as a wildcard for any string (for example, \*.test.co.uk).
 
