@@ -192,6 +192,7 @@ Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+Us
 * Added two new endpoints that you can check by sending GET requests to obtain the current server status:
   * the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing or in [maintenance mode](teamcity-maintenance-mode.md).
   * the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
+* Added new `teamcity-commit-status.log` and `teamcity-pull-requests.log` [log files](teamcity-server-logs.md) that contain information related to the [](commit-status-publisher.md) and [](pull-requests.md) build features. Each log has a corresponding preset that allows TeamCity to write DEBUG-level events.
 
 
 ## Roadmap

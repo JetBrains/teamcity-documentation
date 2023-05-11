@@ -79,6 +79,18 @@ Contains [clean-up](teamcity-data-clean-up.md)-related log
 
 <td>
 
+`teamcity-commit-status.log`
+
+</td>
+
+<td>
+
+Contains [](commit-status-publisher.md)-related log. Apply the `debug-commit-status` preset to write DEBUG-level messages to this log. 
+
+</td></tr><tr>
+
+<td>
+
 `teamcity-notifications.log`
 
 </td>
@@ -86,6 +98,18 @@ Contains [clean-up](teamcity-data-clean-up.md)-related log
 <td>
 
 [Notifications](adding-notification-rules.md)-related log
+
+</td></tr><tr>
+
+<td>
+
+`teamcity-pull-requests.log`
+
+</td>
+
+<td>
+
+[](pull-requests.md)-related log. Apply the `debug-pull-requests` preset to include DEBUG-level messages to this log.
 
 </td></tr><tr>
 

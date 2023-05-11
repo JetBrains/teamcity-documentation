@@ -168,3 +168,8 @@ If you need to display the build status next to the last commit of the build (fo
 3. In the composite build, configure a [snapshot dependency](snapshot-dependencies.md) on the main build.
 
 In the scope of such a chain, Commit Status Publisher will not be bound by the checkout rules and the build status will be displayed next to the very last commit.
+
+
+## Troubleshooting
+
+TeamCity [writes events](teamcity-server-logs.md) related to the Commit Status Publisher build feature to the `teamcity-commit-status.log` file. Apply the "debug-commit-status" preset to include DEBUG-level events to this log.
