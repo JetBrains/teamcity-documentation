@@ -19,6 +19,10 @@ The Web Application Description Language (WADL) generator is now removed. See th
 
 See the What's New page for more responsibility-related changes: [](what-s-new-in-teamcity.md#Multinode+Setup+Enhancements).
 
+### Miscellaneous Updates
+
+* Users with the "Project Developer" [role](managing-roles-and-permissions.md) can now download and view the `.teamcity/settings/buildSettings.xml` [hidden artifact](build-artifact.md#Hidden+Artifacts). Previously, this action required the "Edit project" permission that is enabled for "Project Administrator" and higher roles.
+
 
 ## Changes from 2022.10.2 to 2022.10.3
 
