@@ -7,6 +7,7 @@
 {id="bundled-tools-updates-2023-5"}
 
 * The bundled Kotlin compiler (used in [TeamCity DSL](kotlin-dsl.md)) and Dokka (the documentation engine for Kotlin) were updated to version 1.7.10.
+* The bundled Tomcat was updated to version 9.0.75.
 
 ### REST API Update
 
