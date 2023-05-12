@@ -203,7 +203,10 @@ Previously, this page was available only in Classic UI.
   * the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
 
 * Added new `teamcity-commit-status.log` and `teamcity-pull-requests.log` [log files](teamcity-server-logs.md) that contain information related to the [](commit-status-publisher.md) and [](pull-requests.md) build features. Each log has a corresponding preset that allows TeamCity to write DEBUG-level events.
-* The drop-down menu of the help button (<img src="btn-help.png" width="24" alt="Help button"/> in the TeamCity header) now displays a new "Support" option for [TeamCity Enterprise](https://www.jetbrains.com/teamcity/buy/#on-premises?licence=enterprise) users. This link allows you to quickly submit a new request at [teamcity-support.jetbrains.com](https://teamcity-support.jetbrains.com). 
+* [TeamCity Enterprise](https://www.jetbrains.com/teamcity/buy/#on-premises?licence=enterprise) users can now click **Help | Support** to quickly navigate to the new request form at [teamcity-support.jetbrains.com](https://teamcity-support.jetbrains.com).
+
+  <img src="dk-helpbtn-support.png" width="460" alt="Support link"/>
+
 
 
 ## Roadmap

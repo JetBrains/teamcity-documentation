@@ -12,7 +12,9 @@ Contact us about:
 * __technical question or idea__ — [community forum](http://jb.gg/teamcity-forum), "New Post" action (public)
 * __bug or feature request__ — [issue tracker](https://youtrack.jetbrains.com/issues/TW) (public, with an option of private comments/attachments)
 * __license/purchase question__ — [TeamCity sales department](https://www.jetbrains.com/teamcity/get-in-touch/) (private)
-* __private report (only for TeamCity Enterprise server license)__ — [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) (private, faster response times)
+* __private report (only for TeamCity Enterprise server license)__ — [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) (private, faster response times). TeamCity Enterprise users can click **Help | Support** to quickly navigate to the new request form.
+
+  <img src="dk-helpbtn-support.png" width="460" alt="Support link"/>
 
 </td></tr>
 <tr><td></td></tr>
