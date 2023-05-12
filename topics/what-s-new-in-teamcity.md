@@ -3,13 +3,13 @@
 
 ## Dark Theme
 
-In this release cycle we implemented one of the most upvoted requests: TeamCity Dark Theme.
+In this release cycle we implemented one of the most upvoted requests: TeamCity Dark Theme. In addition, you can select the "System theme" option that automatically applies either Light or Dark theme depending on your current OS settings.
 
 <img src="dk-TCDark.png" width="706" alt="TeamCity Dark Theme"/>
 
-Along with "Light" and "Dark" options, the theme selector allows you to choose "System theme" to automatically apply a skin that fits your current OS settings.
-
-Since TeamCity is a true powerhouse with hundreds of UI pages and dialogs, the new theme may contain deficiencies. We encourage you to report all issues and visual artifacts via the following channels: [Feedback](feedback.md).
+> The Dark theme is still under development and may contain deficiencies. We encourage you to report all issues and visual artifacts via YouTrack: [New Dark Theme issue report](https://youtrack.jetbrains.com/newIssue?project=TW&c=subtask%20of%20TW-53113&c=Team%20UI&c=tag%20Star&c=tag%20Star&c=tag%20Star).
+> 
+{type="note"}
 
 
 ## .NET 8 Support
