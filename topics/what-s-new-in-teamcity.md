@@ -7,10 +7,6 @@ In this release cycle we implemented one of the most upvoted requests: TeamCity 
 
 <img src="dk-TCDark.png" width="706" alt="TeamCity Dark Theme"/>
 
-> The Dark theme is still under development and may contain deficiencies. We encourage you to report all issues and visual artifacts via YouTrack: [New Dark Theme issue report](https://youtrack.jetbrains.com/newIssue?project=TW&c=subtask%20of%20TW-53113&c=Team%20UI&c=tag%20Star&c=tag%20Star&c=tag%20Star).
-> 
-{type="note"}
-
 
 ## .NET 8 Support
 

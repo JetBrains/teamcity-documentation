@@ -1,9 +1,9 @@
 [//]: # (title: TeamCity 2023.05 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2023.05 Release Notes)
 
-__Build: ???__
+__Build: 129069__
 
-__??? May 2023__
+__12 May 2023__
 
 ### Feature
 
