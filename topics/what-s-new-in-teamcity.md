@@ -39,6 +39,29 @@ Short-lived refreshable tokens provide more security compared to passwords or pe
 
 Learn more: [Refreshable tokens](git.md#refresh-token).
 
+### Ignore GitHub Draft Pull Requests
+
+Starting from this version, you can configure the [Pull Requests build feature](pull-requests.md)
+to ignore [GitHub draft pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests) by checking the **Ignore Drafts** box in the build feature settings.
+TeamCity will ignore draft pull requests until their status changes.
+
+By default, the Pull Requests build feature loads the GitHub draft pull request information and runs builds on draft pull requests.
+The build page displays the "Draft" status and grayed-out icon next to the pull request number:
+
+<img src="dk-pullrequests-Draft1.png" alt="Draft PR" width="706"/>
+
+When the status of the draft pull request changes to "Ready for review" in GitHub, the build page reflects the change:
+
+<img src="dk-pullrequests-Draft2.png" alt="Ready for review PR" width="706"/>
+
+### Integration with Bitbucket Server and Data Center
+
+In addition to Bitbucket Cloud, TeamCity now supports Bitbucket Server and Data Center. The corresponding option is available in the connection types list, and on the **Create Project** page.
+
+<img src="dk-whatsnew202303-bbserver.png" width="708" alt="TeamCity integration with Bitbucket Server and Data Center"/>
+
+Learn more: [Configuring Connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) | [Creating and Editing Projects](creating-and-editing-projects.md#Creating+project+pointing+to+Bitbucket)
+
 
 ## AWS-Related Updates
 
@@ -59,6 +82,15 @@ Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).-
 IMDSv2 is the new version of the Instance Metadata Service by Amazon that [addresses a number of IMDSv1 vulnerabilities](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/).
 
 TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with both "Optional" and "Required" IMDSv2 settings. If the selected IMDSv2 mode is "Optional", TeamCity attempts to use v2 first.
+
+### EC2 Launch Templates Customization
+
+Starting from this version, TeamCity allows customizing [Amazon EC2 launch templates](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Launch+Templates+support). You can now use the same launch template to run various instances that differ in some parameters only.
+Check the **Customize Launch Template** box and modify the launch template's values as required.
+
+<img src="dk-whatsnew-CustomizeLaunchTemplates.png" width="706" alt="Customize Launch Templates for AWS EC2"/>
+
+Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Launch+Templates+support).
 
 
 ## Multinode Setup Enhancements
@@ -183,7 +215,11 @@ Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+Us
 
 
 
-## Sakura UI
+
+
+## The Sakura UI Improvements
+
+### The "Chains" Tab for Build Configurations
 
 Build configuration pages now display the "Chains" tab. The page allows you to browse Sankey-like diagram of builds linked into a [](build-chain.md).
 
@@ -191,14 +227,74 @@ Build configuration pages now display the "Chains" tab. The page allows you to b
 
 Previously, this page was available only in Classic UI.
 
+### Reorder Builds
+
+You can now manually reorder builds in the build queue by dragging them to the desired position in the Sakura UI.
+
+### Improved Changes Visibility
+
+- The **Change Log** tab is now available for projects and build configurations.
+- The **Show graph** option has been implemented on all pages and tabs related to changes. With this option enabled, the changes are displayed as a graph of commits to the related VCS roots.
+
+<img src="dk-sakura-changelog.png" width="706" alt="Change Log tab with changes graph"/>
+
+
+## Accelerated Artifact Upload
+
+Starting with version 2023.05, TeamCity breaks down large artifact files into chunks and uploads these chunks in parallel. As a result, compared to previous TeamCity versions, the artifacts are faster uploaded to the server and become available sooner.
+
+
+## Run Steps Only for Failed Builds
+
+You can now choose the "Only if build status is failed" [execution policy](configuring-build-steps.md#Execution+Policy) for individual steps. This policy allows you to create steps that will be ignored when your build finishes successfully and executed only when it fails.
+
+<img src="dk-whatsnew2303-onlywhenfails.png" width="706" alt="Run the build step only when the build fails"/>
+
+
+## Kotlin DSL: Build Failure Conditions on Custom Metrics
+
+You can now use Kotlin DSL to configure a build failure condition [on a custom statistic value](build-failure-conditions.md#Adding+Custom+Build+Metric)
+reported by the build.
+You do not need to edit the main-config.xml file for this,
+which means that configuring a build failure condition on a custom metric no longer requires system administrator privileges.
+
+The sample Kotlin DSL code is as follows:
+
+```Kotlin
+  failureConditions {
+  failOnMetricChange {
+    param("metricKey", "myReportedCustomStatisticValue")
+    // ...
+  }
+}
+```
+
+We are working on improving the web UI representation of the build failure condition on custom metrics added via DSL.
+
+
+
+## Server Health
+
+### Health Reports for Archived Projects
+
+You can now generate [Server Health reports](server-health.md) for archived projects. To do this, select the *&lt;Archived Projects&gt;* scope.
+
+<img src="dk-serverHealthArhived.png" width="706" alt="Server Health Reports for Archived Projects"/>
+
+### New Endpoints to Check the Server Status
+
+Added two new endpoints that you can check by sending GET requests to obtain the current server status:
+
+* the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing or in [maintenance mode](teamcity-maintenance-mode.md).
+* the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
+
+
+
 ## Miscellaneous
 
 * The [Notifications build feature](notifications.md) now allows you to enter multiple recipient addresses.
 * Added `env.BUILD_URL` to the list of [predefined environment variables](predefined-build-parameters.md#Predefined+Server+Build+Parameters). This variable returns a link to the current build.
 * The [SSH Keys](ssh-keys-management.md) page now displays the button that allows you to generate a new key. Generating keys on TeamCity server is faster and more secure (compared to running `ssh-keygen` locally and manually uploading the keys).
-* Added two new endpoints that you can check by sending GET requests to obtain the current server status:
-  * the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing or in [maintenance mode](teamcity-maintenance-mode.md).
-  * the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
 
 * Added new `teamcity-commit-status.log` and `teamcity-pull-requests.log` [log files](teamcity-server-logs.md) that contain information related to the [](commit-status-publisher.md) and [](pull-requests.md) build features. Each log has a corresponding preset that allows TeamCity to write DEBUG-level events.
 * [TeamCity Enterprise](https://www.jetbrains.com/teamcity/buy/#on-premises?licence=enterprise) users can now click **Help | Support** to quickly navigate to the new request form at [teamcity-support.jetbrains.com](https://teamcity-support.jetbrains.com).
