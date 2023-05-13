@@ -107,7 +107,13 @@ Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polli
 
 ### Disable Main Node Responsibilities
 
-In TeamCity 2023.05, you can disable unwanted [main node ](multinode-setup.md) responsibilities on the **Administration | Nodes Configuration** page to reduce the load and CPU/memory consumption. The only main node responsibilities you cannot disable in TeamCity UI are "Main TeamCity node" (you can clear this checkbox only by enabling this responsibility on another node) and "Handling UI actions and load balancing user requests".
+
+Previously, the [main TeamCity node](multinode-setup.md) automatically re-gained the *"Processing data produced by running builds"*, *"VCS repositories polling"*, and *"Processing build triggers"* responsibilities when a TeamCity cluster had no nodes with such responsibilities. In addition, when you switched the *"Main TeamCity node"* responsibility to another node, this new node automatically inherited all other responsibilities.
+
+Starting with version 2023.05, main nodes do not automatically accept "missing" responsibilities. This change grants you more control over main nodes and allows you to reduce their load and CPU/memory consumption. The only main node responsibilities you cannot disable in TeamCity UI are "Main TeamCity node" (you can clear this checkbox only by enabling this responsibility on another node) and "Handling UI actions and load balancing user requests".
+
+
+
 
 ### Run TeamCity Backup on Any Node
 

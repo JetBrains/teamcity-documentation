@@ -16,7 +16,7 @@ The Web Application Description Language (WADL) generator is now removed. See th
 ### Multinode Setup Updates
 
 * The "Processing user requests to modify data" responsibility was renamed to "Handling UI actions and load balancing user requests".
-* Main TeamCity nodes have all responsibilities enabled by default. Starting with version 2023.05, you can manually disable most of them. Due to this change, the `[data_directory](teamcity-data-directory.md)/config/nodes-config.xml` file now lists all responsibilities assigned to a main node. Previously, this file listed only the "MAIN_NODE" responsibility for main nodes.
+* The `[data_directory](teamcity-data-directory.md)/config/nodes-config.xml` file listed only "MAIN_NODE" responsibility for main nodes. In version 2023.05, this configuration file lists all responsibilities enabled on a main node.
 
 See the What's New page for more responsibility-related changes: [](what-s-new-in-teamcity.md#Multinode+Setup+Enhancements).
 

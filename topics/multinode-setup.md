@@ -527,7 +527,7 @@ By default, a newly started secondary node provides a read-only user interface a
 * [Handling UI actions and load balancing user requests](#Handling+UI+Actions+and+Load+Balancing+User+Requests)
 * [Main TeamCity node](#Main+Node+Responsibility)
 
-A node assigned to any responsibility will allow users to perform the most common actions on builds.
+To allow users perform the most common actions on builds and agents, enable the [Handling UI actions and load balancing user requests](#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility.
 
 You can enable and disable responsibilities for nodes at any moment.
 
