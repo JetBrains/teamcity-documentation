@@ -221,7 +221,22 @@ Extra sync options
 
 <td>
 
-Specify additional `p4 sync` options. If you need to pass options that should be placed before `sync` in the `p4 sync` command, include `sync` parameter, like `-r3 sync` or `-r4 sync --parallel=threads=5`. See the `[command reference](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_sync.html)`.
+Specify additional `p4 sync` options.
+
+If you need to specify the list of options that should be declared after the `sync` command, omit the name of this command. For example:
+
+<ul>
+<li>Enter <code>--parallel=threads=5</code> to run the <code>p4 sync --parallel=threads=5</code> command.</li>
+</ul>
+
+To specify options that should be declared both before and after the `sync` command, include the command name in this list of extra options. For example:
+
+<ul>
+<li>Enter <code>-r3 sync</code> to run the <code>p4 -r3 sync</code> command.</li>
+<li>Enter <code>-r4 sync --parallel=threads=5</code> to run the <code>p4 -r4 sync --parallel=threads=5</code> command.</li>
+</ul>
+
+See the `[command reference](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_sync.html)` for more information.
 
 </td></tr></table>
 
