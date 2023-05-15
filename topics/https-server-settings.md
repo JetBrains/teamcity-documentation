@@ -7,8 +7,8 @@ To configure secure HTTPS access, you need a certificate. You can obtain and loa
 
 > HTTPS settings made via TeamCity UI affect the built-in Tomcat server configuration.
 >
-> If your TeamCity server is [behind a proxy](configuring-proxy-server.md#Set+Up+TeamCity+Server+Behind+Proxy), configure HTTPS on the proxy side.
-Modifying the settings via a web UI may break your existing proxy configuration.
+> If your TeamCity server is [behind a proxy](configuring-proxy-server.md#Set+Up+TeamCity+Server+Behind+Proxy) (for example, in [multi-node setups](multinode-setup.md)), configure HTTPS on the proxy side.
+Modifying the settings via a web UI may break your existing proxy configuration. Refer to your proxy server documentation to learn how to set up HTTPS certificates.
 >
 {type="warning"}
 
@@ -23,13 +23,13 @@ Modifying the settings via a web UI may break your existing proxy configuration.
 
 Refer to this article to learn how Let's Encrypt validates your domain ownership and issues certificates: [How it Works](https://letsencrypt.org/how-it-works/).
 
-> This option is not available for [multinode setups](multinode-setup.md).
+> This option is not available for [multinode setups](multinode-setup.md). Configure certificates on the proxy side instead. Refer to your proxy server documentation for more information.
 > 
 {type="note"}
 
 ### Technical Information
 
-*Certificate type:*&emsp;Multi-Domain SAN certificate<br/>
+*Certificate type:*&emsp;Single- or Multi-Domain SAN certificate<br/>
 *Certificate shelf life:*&emsp;90 days<br/>
 *Automatic renewal:*&emsp;30 days before expiration<br/>
 *Challenge type:*&emsp;[HTTP-01](https://letsencrypt.org/docs/challenge-types/)
@@ -43,16 +43,30 @@ Refer to this article to learn how Let's Encrypt validates your domain ownership
     <img src="dk-https-letsencrypt.png" width="706" alt="Obtain certificate via Lets Encrypt"/>
     
     After CA verifies your identity, valid certificates will be issued and installed automatically.
+    
+    <img src="dk-https-letsencrypt2.png" width="706" alt="Installed Let's Encrypt Certificate"/>
 
 3. Choose the required [redirect mode](#HTTPS+Redirect+Modes).
+4. Update your [artifacts isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) URL from "http://..." to "https://..." in TeamCity settings. It is also recommended to manually update the [server URL](configuring-server-url.md) as well.
 
-### Troubleshooting
+### Port Requirements and Manual Fetch
 
-If Let's Encrypt cannot verify the domain ownership and issue a certificate (for example, if a server has no access to the domain root or the 80 port used to serve challenge files is closed), TeamCity puts the process on hold and displays a text file content and a path.
+Let's Encrypt expects to locate challenge files at `http://<your_domain>:80/.well-known/acme-challenge`. To serve these files, TeamCity needs access to port 80.
+
+* If your server runs on a different port (for instance, 8111), TeamCity attempts to open a custom socket on port 80. This socket closes after the challenge verification is over (regardless of the result).
+* If your server runs on port 80, TeamCity attempts to serve challenge files directly. You do not need to stop or reconfigure your TeamCity server.
+
+Since TeamCity serves challenges and opens sockets under the same user who launched the server, both approaches may fail if this user has [no access to port 80](https://www.w3.org/Daemon/User/Installation/PrivilegedPorts.html).
+
+If Let's Encrypt cannot verify the domain ownership and issue a certificate, TeamCity puts the process on hold and displays text file content and a path.
 
 <img src="dk-letsencrypt-noaccess.png" width="706" alt="Certificate instructions for system administrators"/>
 
-A domain administrator/owner should manually place this file under the given location and ensure it is reachable over the internet. Then you can return to the **Administration | HTTPS Settings** page and click the **Proceed** button.
+To issue the certificate, try the following:
+
+* Click **Cancel**, ensure port 80 is available and accessible by the current user, then retry the [automatic fetch](#Automatic+Fetch).
+
+* Do not click **Cancel** and manually place the required challenge files under the given location. When it is done, return to the **Administration | HTTPS Settings** page and click **Proceed**.
 
 ### Automatic Certificate Renewal
 
@@ -63,7 +77,7 @@ teamcity.https.close.expiration.threshold.minutes=60
 teamcity.https.close.expiration.threshold.days=40
 ```
 
-If TeamCity is unable to re-issue a certificate, a corresponding message is shown in the [health report](server-health.md).
+If TeamCity is unable to re-issue a certificate, a corresponding message is shown in the [health report](server-health.md). Renew a certificate manually if TeamCity is unable to do this in automatic mode.
 
 
 
@@ -113,9 +127,9 @@ Once you obtain a certificate and a private key:
 {type="note"}
 
 
-### Configure HTTPS Settings via a Script
+### Upload Certificates via a Script
 
-You can also automate configuring these HTTPS settings using a script, which should contain the following:
+You can also automate configuring HTTPS settings using a script, which should contain the following:
 
 ```Shell
 curl '<TeamCity_URL>/app/https/settings/uploadCertificate' -X POST -H 'Accept: application/json' -H 'Authorization: Bearer TOKEN' -F certificate=@PATH_CERT -F key=@PATH_KEY -F port=XXXX'`
@@ -123,6 +137,9 @@ curl '<TeamCity_URL>/app/https/settings/uploadCertificate' -X POST -H 'Accept: a
 
 The `TOKEN` here is your [personal token](configuring-your-user-profile.md#Managing+Access+Tokens) with the `Change HTTPS settings` permission.
 
+## Setting Up HTTPS in Docker Containers
+
+If your TeamCity server runs in a [Linux Docker container](https://hub.docker.com/r/jetbrains/teamcity-server), add `-p 443:8443` parameter to the `docker run` command. This parameter allows TeamCity to redirect requests from port 443 (a privileged port unavailable to non-root users) to port 8443.
 
 ## HTTPS Redirect Modes
 
