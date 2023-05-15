@@ -101,9 +101,9 @@ Learn more: [Configuring Connections](configuring-connections.md#Bitbucket+Serve
 
 ## AWS-Related Updates
 
-### Share AWS Connections with Child Projects
+<!--### Share AWS Connections with Child Projects
 
-The [](aws-credentials.md) build feature can now utilize AWS connections owned by a parent TeamCity project. Previously, you had to configure a connection and a build feature within the same project.
+The [](aws-credentials.md) build feature can now utilize AWS connections owned by a parent TeamCity project. Previously, you had to configure a connection and a build feature within the same project.-->
 
 <!--### Utilize Amazon Spot Placement Scores
 
