@@ -133,7 +133,7 @@ frontend http-in
     use_backend client_with_cookie if node_id_cookie_found
     use_backend clients_supporting_cookies if browser
 
-backend client_with_cookie
+backend clients_with_node_id_cookie
     # this backend handles the clients that provided the "X-TeamCity-Node-Id-Cookie" cookie
     # clients that do so are TeamCity agents and browsers handling HTTP requests asking to switch to a specific node 
     cookie X-TeamCity-Node-Id-Cookie
@@ -230,10 +230,10 @@ http {
    }
    
    map "$browser$node_id_cookie" $backend {
-       00 @client_does_not_support_cookies;
-       10 @client_supports_cookies;
-       01 @client_with_node_id_cookie;
-       11 @client_with_node_id_cookie;
+       00 @clients_not_supporting_cookies;
+       10 @clients_supporting_cookies;
+       01 @clients_with_node_id_cookie;
+       11 @clients_with_node_id_cookie;
    }
    
    map $http_cookie $node_id {
@@ -262,7 +262,7 @@ http {
          try_files /dev/null $backend;
       }
       
-      location @client_with_node_id_cookie {
+      location @clients_with_node_id_cookie {
          # this backend handles the clients which provided the cookie with name "X-TeamCity-Node-Id-Cookie"
          # such clients are TeamCity agents and browsers handling HTTP requests asking to switch to a specific node 
          proxy_pass http://sticky_route;
@@ -280,7 +280,7 @@ http {
          proxy_set_header Connection $connection_upgrade; # WebSocket support
       }
       
-      location @client_supports_cookies {
+      location @clients_supporting_cookies {
          # this backend is for the browsers without "X-TeamCity-Node-Id-Cookie"
          # these requests will be served in a round-robin manner to a healthy server
          proxy_pass http://round_robin;
@@ -298,7 +298,7 @@ http {
          proxy_set_header Connection $connection_upgrade; # WebSocket support
       }
       
-      location @client_does_not_support_cookies {
+      location @clients_not_supporting_cookies {
          # for compatibiity reasons requests from non browser clients are always 
          # routed to a single node (the first healthy) 
          proxy_pass http://first_available;
