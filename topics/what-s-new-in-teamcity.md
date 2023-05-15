@@ -8,9 +8,48 @@ In this release cycle we implemented one of the most upvoted requests: TeamCity 
 <img src="dk-TCDark.png" width="706" alt="TeamCity Dark Theme"/>
 
 
-## .NET 8 Support
+## Multinode Setup Enhancements
 
-TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) framework by Microsoft. This means TeamCity agents correctly recognize the corresponding SDK installed on agent machines and the [.NET build runner](net.md) successfully builds projects that target .NET 8.0.
+### Round-Robin
+
+Version 2023.05 introduces a new requests distribution logic that spreads the load more effectively between TeamCity nodes and minimizes the number of negatively affected users when a node is down due to a planned maintenance or an unexpected failover.
+
+This new logic is based on sending new requests to a random node that has the [Handling UI actions and load balancing user requests](multinode-setup.md#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility. After this initial draw, TeamCity memorizes which node was selected and relegates subsequent requests to the same node.
+
+Learn more: [](multinode-setup.md#Round-Robin).
+
+### Assign the VCS Polling Responsibility to Multiple Nodes
+
+Prior to version 2023.05, the "VCS repositories polling" [responsibility](multinode-setup.md) (allows nodes to poll repositories for new commits and detect changes) was available for a single node in the entire cluster. Starting with this version, you can assign this responsibility to multiple nodes. This enhancement allows you to evenly distribute the load across nodes and reduce the delay before triggering new builds.
+
+<img src="dk-multinode-overview.png" alt="Multinode Setup" width="706"/>
+
+To specify which node should handle your current requests (for instance, adding a new build to the build queue), use the node selector in the bottom right corner of the TeamCity UI. The currently selected node is marked with the star icon on the **Nodes Configuration** page.
+
+
+
+Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node).
+
+### Disable Main Node Responsibilities
+
+
+Previously, the [main TeamCity node](multinode-setup.md) automatically re-gained the *"Processing data produced by running builds"*, *"VCS repositories polling"*, and *"Processing build triggers"* responsibilities when a TeamCity cluster had no nodes with such responsibilities. In addition, when you switched the *"Main TeamCity node"* responsibility to another node, this new node automatically inherited all other responsibilities.
+
+Starting with version 2023.05, main nodes do not automatically accept "missing" responsibilities. This change grants you more control over main nodes and allows you to reduce their load and CPU/memory consumption. The only main node responsibilities you cannot disable in TeamCity UI are "Main TeamCity node" (you can clear this checkbox only by enabling this responsibility on another node) and "Handling UI actions and load balancing user requests".
+
+
+### Run TeamCity Backup on Any Node
+
+You can now [create backups](creating-backup-from-teamcity-web-ui.md) on any node with the [Handling UI actions and load balancing user requests](multinode-setup.md#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility.
+
+
+## Interactive Agent Terminals
+
+With this update you can open remote terminals to agent machines directly from the TeamCity UI. These terminals allow system administrators to maintain local and cloud agents and troubleshoot issues.
+
+<img src="dk-agentTerminal-cat.png" width="706" alt="Agent Terminal Window"/>
+
+Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
 
 
 ## VCS Integrations Enhancements
@@ -89,35 +128,10 @@ Check the **Customize Launch Template** box and modify the launch template's val
 Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Launch+Templates+support).
 
 
-## Multinode Setup Enhancements
+## .NET 8 Support
 
-### Round-Robin
+TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) framework by Microsoft. This means TeamCity agents correctly recognize the corresponding SDK installed on agent machines and the [.NET build runner](net.md) successfully builds projects that target .NET 8.0.
 
-Version 2023.05 introduces a new requests distribution logic that spreads the load more effectively between TeamCity nodes and minimizes the number of negatively affected users when a node is down due to a planned maintenance or an unexpected failover.
-
-This new logic is based on sending new requests to a random node that has the [Handling UI actions and load balancing user requests](multinode-setup.md#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility. After this initial draw, TeamCity memorizes which node was selected and relegates subsequent requests to the same node.
-
-Learn more: [](multinode-setup.md#Round-Robin).
-
-### Assign the VCS Polling Responsibility to Multiple Nodes
-
-Prior to version 2023.05, the "VCS repositories polling" [responsibility](multinode-setup.md) (allows nodes to poll repositories for new commits and detect changes) was available for a single node in the entire cluster. Starting with this version, you can assign this responsibility to multiple nodes. This enhancement allows you to evenly distribute the load across nodes and reduce the delay before triggering new builds.
-
-Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node).
-
-### Disable Main Node Responsibilities
-
-
-Previously, the [main TeamCity node](multinode-setup.md) automatically re-gained the *"Processing data produced by running builds"*, *"VCS repositories polling"*, and *"Processing build triggers"* responsibilities when a TeamCity cluster had no nodes with such responsibilities. In addition, when you switched the *"Main TeamCity node"* responsibility to another node, this new node automatically inherited all other responsibilities.
-
-Starting with version 2023.05, main nodes do not automatically accept "missing" responsibilities. This change grants you more control over main nodes and allows you to reduce their load and CPU/memory consumption. The only main node responsibilities you cannot disable in TeamCity UI are "Main TeamCity node" (you can clear this checkbox only by enabling this responsibility on another node) and "Handling UI actions and load balancing user requests".
-
-
-
-
-### Run TeamCity Backup on Any Node
-
-You can now [create backups](creating-backup-from-teamcity-web-ui.md) on any node with the [Handling UI actions and load balancing user requests](multinode-setup.md#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility.
 
 ## HTTPS Access Enhancements
 
@@ -139,15 +153,6 @@ If your TeamCity server allows access via HTTPS, the server's default protocol f
 <img src="dk-tls-protocols.png" width="706" alt="TeamCity using the TLS 1.3 Protocol"/>
 
 Learn more: [](https-server-settings.md#Specify+Available+Encryption+Protocols).
-
-
-## Interactive Agent Terminals
-
-With this update you can open remote terminals to agent machines directly from the TeamCity UI. These terminals allow system administrators to maintain local and cloud agents and troubleshoot issues.
-
-<img src="dk-agentTerminal-cat.png" width="706" alt="Agent Terminal Window"/>
-
-Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
 
 
 ## New Service Messages
@@ -216,9 +221,6 @@ teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
 Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+User+Groups).
 
 
-
-
-
 ## The Sakura UI Improvements
 
 ### The "Chains" Tab for Build Configurations
@@ -239,11 +241,6 @@ You can now manually reorder builds in the build queue by dragging them to the d
 - The **Show graph** option has been implemented on all pages and tabs related to changes. With this option enabled, the changes are displayed as a graph of commits to the related VCS roots.
 
 <img src="dk-sakura-changelog.png" width="706" alt="Change Log tab with changes graph"/>
-
-
-## Accelerated Artifact Upload
-
-Starting with version 2023.05, TeamCity breaks down large artifact files into chunks and uploads these chunks in parallel. As a result, compared to previous TeamCity versions, the artifacts are faster uploaded to the server and become available sooner.
 
 
 ## Run Steps Only for Failed Builds
@@ -274,7 +271,6 @@ The sample Kotlin DSL code is as follows:
 We are working on improving the web UI representation of the build failure condition on custom metrics added via DSL.
 
 
-
 ## Server Health
 
 ### Health Reports for Archived Projects
@@ -289,7 +285,6 @@ Added two new endpoints that you can check by sending GET requests to obtain the
 
 * the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing or in [maintenance mode](teamcity-maintenance-mode.md).
 * the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
-
 
 
 ## Miscellaneous
