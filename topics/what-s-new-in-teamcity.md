@@ -38,10 +38,11 @@ Previously, the [main TeamCity node](multinode-setup.md) automatically re-gained
 Starting with version 2023.05, main nodes do not automatically accept "missing" responsibilities. This change grants you more control over main nodes and allows you to reduce their load and CPU/memory consumption. The only main node responsibilities you cannot disable in TeamCity UI are "Main TeamCity node" (you can clear this checkbox only by enabling this responsibility on another node) and "Handling UI actions and load balancing user requests".
 
 
-### Run TeamCity Backup on Any Node
+### Launch TeamCity Backup and Clean-Up from Any Node
 
 You can now [create backups](creating-backup-from-teamcity-web-ui.md) on any node with the [Handling UI actions and load balancing user requests](multinode-setup.md#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility.
 
+Clean-ups can now also be scheduled from any node with this responsibility. However, clean-ups are always executed on main nodes. This task can be performed while secondary nodes perform their regular tasks. 
 
 ## Interactive Agent Terminals
 
