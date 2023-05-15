@@ -221,7 +221,7 @@ Extra sync options
 
 <td>
 
-Specify additional `p4 sync` options, like `--parallel`. See the `[command reference](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_sync.html)`.
+Specify additional `p4 sync` options. If you need to pass options that should be placed before `sync` in the `p4 sync` command, include `sync` parameter, like `-r3 sync` or `-r4 sync --parallel=threads=5`. See the `[command reference](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_sync.html)`.
 
 </td></tr></table>
 
