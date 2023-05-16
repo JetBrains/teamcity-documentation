@@ -9,6 +9,7 @@ In this release cycle we implemented one of the most upvoted requests: TeamCity 
 
 
 ## Multinode Setup Enhancements
+{product="tc"}
 
 ### Round-Robin
 
@@ -137,6 +138,7 @@ TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/down
 
 
 ## HTTPS Access Enhancements
+{product="tc"}
 
 ### Fetch HTTPS Certificates via Let's Encrypt
 {id="fetch-certificates-via-lets-encrypt"}
