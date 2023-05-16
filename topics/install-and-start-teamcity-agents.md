@@ -72,7 +72,7 @@ For cloud agents that are automatically terminated after idling for a certain pe
 
 > The "Open interactive terminal" link opens in the `<server-URL>/plugins/teamcity-agent-terminal/agentTerminal.html?agentId:<ID>` URL in a new browser tab. If your server is [behind a proxy](multinode-setup.md#Proxy+Configuration), ensure your proxy configuration allows websocket connections to this page.
 > 
-{type="note"}
+{type="note" product="tc"}
 
 The **Open terminal** link is visible only to users whose [role permissions](managing-roles-and-permissions.md) include the *"Open an interactive session to the agent"* permission. This permission is initially granted to users with the "Project Administrator" and "System Administrator" roles. As an additional precaution, each request to open a terminal is written as a new "Agent actions | Connect to agent" activity in the [audit log](tracking-user-actions.md).
 

@@ -212,8 +212,10 @@ The new `/app/rest/roles` endpoint allows you to obtain, modify, and remove exis
 
 
 ## Two-Factor Authentication Enhancements
+{product="tc"}
 
 ### Additional Verification for Critical Settings
+{product="tc"}
 
 Starting with version 2023.05, users who pass the two-factor authentication have one hour to perform security-related actions: disable 2FA, change user password and/or email, and generate access tokens. Once this period expires, users must re-confirm their identities and pass a new 2FA verification before proceeding with these actions.
 
@@ -222,6 +224,7 @@ This new behavior adds an extra layer of protection for your TeamCity server.
 Learn more: [](managing-two-factor-authentication.md#Critical+Settings+Protection).
 
 ### Force 2FA for Specific User Groups
+{product="tc"}
 
 If the global two-factor authentication mode is "Optional", you can now force individual [user groups](creating-and-managing-user-groups.md) to use 2FA. To do so, add the `teamcity.2fa.mandatoryUserGroupKey` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set its value to the required group key.
 
@@ -312,6 +315,7 @@ Added two new endpoints that you can check by sending GET requests to obtain the
 * The [SSH Keys](ssh-keys-management.md) page now displays the button that allows you to generate a new key. Generating keys on TeamCity server is faster and more secure (compared to running `ssh-keygen` locally and manually uploading the keys).
 
 * Added new `teamcity-commit-status.log` and `teamcity-pull-requests.log` [log files](teamcity-server-logs.md) that contain information related to the [](commit-status-publisher.md) and [](pull-requests.md) build features. Each log has a corresponding preset that allows TeamCity to write DEBUG-level events.
+{product="tc"}
 * [TeamCity Enterprise](https://www.jetbrains.com/teamcity/buy/#on-premises?licence=enterprise) users can now click **Help | Support** to quickly navigate to the new request form at [teamcity-support.jetbrains.com](https://teamcity-support.jetbrains.com).
 
   <img src="dk-helpbtn-support.png" width="460" alt="Support link"/>

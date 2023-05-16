@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2023.03)
-[//]: # (auxiliary-id: What's New in TeamCity 2023.03;What's New in TeamCity)
+[//]: # (auxiliary-id: What's New in TeamCity 2023.03)
 
 ## New Build Cache Feature
 
