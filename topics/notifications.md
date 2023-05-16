@@ -23,7 +23,7 @@ Note that TeamCity Email Notifier relies on the SMTP server settings configured 
 
 > Starting with version 2023.05, you can also utilize [Service Messages](service-messages.md#Sending+Custom+Email+Messages) to send custom email messages from inside build steps.
 > 
-{type="tip"}
+{type="tip" product="tc"}
 
 ## Slack Notifier
 
@@ -35,6 +35,9 @@ After configuring the connection, go to the settings of the build configuration 
 3. Enter the ID of a channel or user who will be receiving notifications.   
    > Start typing the user ID, and TeamCity will autocomplete it. Alternatively, you can copy this ID from your Slack user profile options (__Profile | More | Copy member ID__).
 4. Select the message format. Slack Notifier does not currently support custom notification templates. You can select the verbose format to choose what information to display in notifications, or utilize [Service Messages](service-messages.md#Sending+Custom+Slack+Messages) to send completely custom strings.
+{product="tc"}
+4. Select the message format. Slack Notifier does not currently support custom notification templates. You can select the verbose format to choose what information to display in notifications.
+{product="tcc"}
 5. Configure a [branch filter](branch-filter.md). If it is not configured, you will receive notifications about the default branch only.
 6. Select [events to watch](adding-notification-rules.md#Which+Events+Will+Trigger+Notifications).
 

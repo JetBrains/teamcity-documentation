@@ -495,6 +495,10 @@ Now you can return to TeamCity, add a new Slack connection, and enter the follow
 * A [bot user token](https://api.slack.com/docs/token-types#bot) of your app
 
 Configured Slack connections are used by [Notifier](notifications.md#Slack+Notifier) build features and [Service Messages](service-messages.md#Sending+Custom+Slack+Messages).
+{product="tc"}
+
+Configured Slack connections are used by [Notifier](notifications.md#Slack+Notifier) build features.
+{product="tcc"}
 
 <anchor name="jetbrains-space-connection"/>
 
