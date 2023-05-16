@@ -27,7 +27,7 @@ Description
 
 <td>
 
-![running_green_transparent.gif](running_green_transparent.gif)
+![build running animation](dk-build-running.gif)
 
 </td>
 
@@ -45,7 +45,7 @@ A build is running successfully.
 
 <td>
 
-![buildSuccessful.png](buildSuccessful.png)
+<img src="buildSuccessful.png" width="16" alt="Build successful"/>
 
 </td>
 
@@ -63,7 +63,7 @@ A build finished successfully in all specified build configurations.
 
 <td>
 
-![running_red_transparent.gif](running_red_transparent.gif)
+![running and failing.gif](dk-build-failing.gif)
 
 </td>
 
@@ -81,7 +81,7 @@ A build is failing.
 
 <td>
 
-![buildFailed.png](buildFailed.png)
+<img src="buildFailed.png" width="16" alt="Build failed"/>
 
 </td>
 
@@ -99,7 +99,7 @@ A build failed at least in one specified build configuration.
 
 <td>
 
-![cancelled.png](cancelled.png)
+<img src="cancelled.png" width="16" alt="Build cancelled"/>
 
 </td>
 
@@ -169,7 +169,7 @@ A personal build is running successfully.
 
 <td>
 
-![personalFinished.png](personalFinished.png)
+<img src="personalFinished.png" width="20" alt="Personal build successful"/>
 
 </td>
 
@@ -205,7 +205,7 @@ A personal build is running with errors.
 
 <td>
 
-![personalFinishedFailed.png](personalFinishedFailed.png)
+<img src="personalFinishedFailed.png" width="20" alt="Personal build failed"/>
 
 </td>
 
