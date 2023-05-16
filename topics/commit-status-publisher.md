@@ -171,5 +171,6 @@ In the scope of such a chain, Commit Status Publisher will not be bound by the c
 
 
 ## Troubleshooting
+{product="tc"}
 
 TeamCity [writes events](teamcity-server-logs.md) related to the Commit Status Publisher build feature to the `teamcity-commit-status.log` file. Apply the "debug-commit-status" preset to include DEBUG-level events to this log.

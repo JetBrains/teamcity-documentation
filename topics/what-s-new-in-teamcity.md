@@ -109,6 +109,7 @@ Learn more: [Configuring Connections](configuring-connections.md#Bitbucket+Serve
 
 
 ## AWS-Related Updates
+{product="tc"}
 
 <!--### Share AWS Connections with Child Projects
 
@@ -136,6 +137,14 @@ Check the **Customize Launch Template** box and modify the launch template's val
 <img src="dk-whatsnew-CustomizeLaunchTemplates.png" width="706" alt="Customize Launch Templates for AWS EC2"/>
 
 Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Launch+Templates+support).
+
+
+## IMDSv2 Support for Amazon Machine Images
+{product="tcc"}
+
+IMDSv2 is the new version of the Instance Metadata Service by Amazon that [addresses a number of IMDSv1 vulnerabilities](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/).
+
+TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with both "Optional" and "Required" IMDSv2 settings. TeamCity always attempts to use IMDSv2 first, but supports older AMIs as well.
 
 
 ## .NET 8 Support
@@ -167,8 +176,10 @@ Learn more: [](https-server-settings.md#Specify+Available+Encryption+Protocols).
 
 
 ## New Service Messages
+{product="tc"}
 
 ### Send Slack Messages and Emails via Service Messages
+{product="tc"}
 
 TeamCity [](service-messages.md) allow you to report various information about the build by adding special messages to your build scripts. The list of available service messages now includes the `##teamcity[notification ...]` message that sends emails, Slack direct messages, and posts updates to Slack channels.
 
@@ -179,6 +190,7 @@ Built-in security features ensure messages cannot be sent to wrong recipients an
 Learn more: [Slack Messages](service-messages.md#Sending+Custom+Slack+Messages) | [Emails](service-messages.md#Sending+Custom+Email+Messages).
 
 ### Add and Remove Build Tags via Service Messages
+{product="tc"}
 
 You can now send TeamCity [service messages](service-messages.md) to add and remove [build tags](build-actions.md#Add+Tags+to+Build).
 
@@ -193,6 +205,21 @@ To add and remove tags, send the following messages:
 
 Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tags).
 
+## Add and Remove Build Tags via Service Messages
+{product="tcc"}
+
+You can now send TeamCity [service messages](service-messages.md) to add and remove [build tags](build-actions.md#Add+Tags+to+Build).
+
+<img src="dk-servicemessage-tags.png" width="706" alt="Tagging builds with OS names"/>
+
+To add and remove tags, send the following messages:
+
+```Plain Text
+##teamcity[addBuildTag 'your-custom-tag']
+##teamcity[removeBuildTag 'tag-to-remove']
+```
+
+Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tags).
 
 ## REST API Updates
 
@@ -236,6 +263,7 @@ Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+Us
 
 
 ## The Sakura UI Improvements
+{product="tc"}
 
 ### The "Chains" Tab for Build Configurations
 
@@ -246,17 +274,25 @@ Build configuration pages now display the "Chains" tab. The page allows you to b
 Previously, this page was available only in Classic UI.
 
 ### Reorder Builds
-{product="tc"}
 
 You can now manually reorder builds in the build queue by dragging them to the desired position in the Sakura UI.
 
 ### Improved Changes Visibility
-{product="tc"}
 
 - The **Change Log** tab is now available for projects and build configurations.
 - The **Show graph** option has been implemented on all pages and tabs related to changes. With this option enabled, the changes are displayed as a graph of commits to the related VCS roots.
 
 <img src="dk-sakura-changelog.png" width="706" alt="Change Log tab with changes graph"/>
+
+
+## Sakura UI: The "Chains" Tab for Build Configurations
+{product="tcc"}
+
+Build configuration pages now display the "Chains" tab. The page allows you to browse Sankey-like diagram of builds linked into a [](build-chain.md).
+
+<img src="dk-sakura-chains.png" width="706" alt="Build Chains in Sakura"/>
+
+Previously, this page was available only in Classic UI.
 
 
 ## Run Steps Only for Failed Builds

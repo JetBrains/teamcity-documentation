@@ -1006,6 +1006,7 @@ To initiate monitoring of several directories or parse several types of the repo
 
 
 ## Sending Custom Slack Messages
+{product="tc"}
 
 You can use TeamCity service messages to send Slack direct messages and post updates in Slack channels.
 
@@ -1063,6 +1064,7 @@ TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send 
 
 
 ## Sending Custom Email Messages
+{product="tc"}
 
 You can use TeamCity service messages to send emails from inside build scripts.
 
