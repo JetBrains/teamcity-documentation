@@ -12,6 +12,7 @@ In this release cycle we implemented one of the most upvoted requests: TeamCity 
 {product="tc"}
 
 ### Round-Robin
+{product="tc"}
 
 Version 2023.05 introduces a new requests distribution logic that spreads the load more effectively between TeamCity nodes and minimizes the number of negatively affected users when a node is down due to a planned maintenance or an unexpected failover.
 
@@ -20,6 +21,7 @@ This new logic is based on sending new requests to a random node that has the [H
 Learn more: [](multinode-setup.md#Round-Robin).
 
 ### Assign the VCS Polling Responsibility to Multiple Nodes
+{product="tc"}
 
 Prior to version 2023.05, the "VCS repositories polling" [responsibility](multinode-setup.md) (allows nodes to poll repositories for new commits and detect changes) was available for a single node in the entire cluster. Starting with this version, you can assign this responsibility to multiple nodes. This enhancement allows you to evenly distribute the load across nodes and reduce the delay before triggering new builds.
 
@@ -32,7 +34,7 @@ To specify which node should handle your current requests (for instance, adding 
 Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node).
 
 ### Disable Main Node Responsibilities
-
+{product="tc"}
 
 Previously, the [main TeamCity node](multinode-setup.md) automatically re-gained the *"Processing data produced by running builds"*, *"VCS repositories polling"*, and *"Processing build triggers"* responsibilities when a TeamCity cluster had no nodes with such responsibilities. In addition, when you switched the *"Main TeamCity node"* responsibility to another node, this new node automatically inherited all other responsibilities.
 
@@ -40,18 +42,20 @@ Starting with version 2023.05, main nodes do not automatically accept "missing" 
 
 
 ### Launch TeamCity Backup and Clean-Up from Any Node
+{product="tc"}
 
 You can now [create backups](creating-backup-from-teamcity-web-ui.md) on any node with the [Handling UI actions and load balancing user requests](multinode-setup.md#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility.
 
 Clean-ups can now also be scheduled from any node with this responsibility. However, clean-ups are always executed on main nodes. This task can be performed while secondary nodes perform their regular tasks. 
 
+
 ## Interactive Agent Terminals
 
-With this update you can open remote terminals to agent machines directly from the TeamCity UI. These terminals allow system administrators to maintain local and cloud agents and troubleshoot issues.
+With this update you can open remote terminals to agent machines directly from the TeamCity UI. These terminals allow project administrators to maintain local and cloud agents and troubleshoot issues.
 
 <img src="dk-openInteractiveTerminal.gif" width="706" alt="Agent Terminal Window"/>
 
-With this new terminal in place, we removed the **Open SSM Terminal** action link from agent pages.
+With this new terminal in place, we removed the older **Open SSM Terminal** action link from agent pages.
 
 Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
 
@@ -79,6 +83,7 @@ Short-lived refreshable tokens provide more security compared to passwords or pe
 Learn more: [Refreshable tokens](git.md#refresh-token).
 
 ### Ignore GitHub Draft Pull Requests
+{product="tc"}
 
 Starting from this version, you can configure the [Pull Requests build feature](pull-requests.md)
 to ignore [GitHub draft pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests) by checking the **Ignore Drafts** box in the build feature settings.
@@ -94,6 +99,7 @@ When the status of the draft pull request changes to "Ready for review" in GitHu
 <img src="dk-pullrequests-Draft2.png" alt="Ready for review PR" width="706"/>
 
 ### Integration with Bitbucket Server and Data Center
+{product="tc"}
 
 In addition to Bitbucket Cloud, TeamCity now supports Bitbucket Server and Data Center. The corresponding option is available in the connection types list, and on the **Create Project** page.
 
@@ -120,7 +126,7 @@ Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).-
 
 IMDSv2 is the new version of the Instance Metadata Service by Amazon that [addresses a number of IMDSv1 vulnerabilities](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/).
 
-TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with both "Optional" and "Required" IMDSv2 settings. If the selected IMDSv2 mode is "Optional", TeamCity attempts to use v2 first.
+TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with both "Optional" and "Required" IMDSv2 settings. TeamCity always attempts to use IMDSv2 first, but supports older AMIs as well.
 
 ### EC2 Launch Templates Customization
 
@@ -237,10 +243,12 @@ Build configuration pages now display the "Chains" tab. The page allows you to b
 Previously, this page was available only in Classic UI.
 
 ### Reorder Builds
+{product="tc"}
 
 You can now manually reorder builds in the build queue by dragging them to the desired position in the Sakura UI.
 
 ### Improved Changes Visibility
+{product="tc"}
 
 - The **Change Log** tab is now available for projects and build configurations.
 - The **Show graph** option has been implemented on all pages and tabs related to changes. With this option enabled, the changes are displayed as a graph of commits to the related VCS roots.
@@ -249,6 +257,7 @@ You can now manually reorder builds in the build queue by dragging them to the d
 
 
 ## Run Steps Only for Failed Builds
+{product="tc"}
 
 You can now choose the "Only if build status is failed" [execution policy](configuring-build-steps.md#Execution+Policy) for individual steps. This policy allows you to create steps that will be ignored when your build finishes successfully and executed only when it fails.
 
@@ -256,6 +265,7 @@ You can now choose the "Only if build status is failed" [execution policy](confi
 
 
 ## Kotlin DSL: Build Failure Conditions on Custom Metrics
+{product="tc"}
 
 You can now use Kotlin DSL to configure a build failure condition [on a custom statistic value](build-failure-conditions.md#Adding+Custom+Build+Metric)
 reported by the build.
@@ -289,6 +299,9 @@ You can now generate [Server Health reports](server-health.md) for archived proj
 Added two new endpoints that you can check by sending GET requests to obtain the current server status:
 
 * the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing or in [maintenance mode](teamcity-maintenance-mode.md).
+  {product="tc"}
+* the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing.
+  {product="tcc"}
 * the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
 
 
