@@ -176,7 +176,7 @@ Learn more: [](https-server-settings.md#Specify+Available+Encryption+Protocols).
 
 
 ## New Service Messages
-{product="tc"}
+
 
 ### Send Slack Messages and Emails via Service Messages
 {product="tc"}
@@ -189,25 +189,20 @@ Built-in security features ensure messages cannot be sent to wrong recipients an
 
 Learn more: [Slack Messages](service-messages.md#Sending+Custom+Slack+Messages) | [Emails](service-messages.md#Sending+Custom+Email+Messages).
 
-### Add and Remove Build Tags via Service Messages
-{product="tc"}
-
-You can now send TeamCity [service messages](service-messages.md) to add and remove [build tags](build-actions.md#Add+Tags+to+Build).
-
-<img src="dk-servicemessage-tags.png" width="706" alt="Tagging builds with OS names"/>
-
-To add and remove tags, send the following messages:
-
-```Plain Text
-##teamcity[addBuildTag 'your-custom-tag']
-##teamcity[removeBuildTag 'tag-to-remove']
-```
-
-Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tags).
-
-## Add and Remove Build Tags via Service Messages
+### Send Slack Messages via Service Messages
 {product="tcc"}
 
+TeamCity [](service-messages.md) allow you to report various information about the build by adding special messages to your build scripts. The list of available service messages now includes the `##teamcity[notification ...]` message that Slack direct messages and posts updates to Slack channels.
+
+<img src="dk-slack-service-message.png" width="706" alt="Custom TeamCity messages in Slack"/>
+
+Built-in security features ensure messages cannot be sent to wrong recipients and cannot include links to external web resources that are not configured as trusted.
+
+Learn more: [Slack Messages](service-messages.md#Sending+Custom+Slack+Messages) 
+
+### Add and Remove Build Tags via Service Messages
+
+
 You can now send TeamCity [service messages](service-messages.md) to add and remove [build tags](build-actions.md#Add+Tags+to+Build).
 
 <img src="dk-servicemessage-tags.png" width="706" alt="Tagging builds with OS names"/>
@@ -220,6 +215,8 @@ To add and remove tags, send the following messages:
 ```
 
 Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tags).
+
+
 
 ## REST API Updates
 
