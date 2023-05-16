@@ -70,9 +70,9 @@ To use [encrypted EBS volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGui
 * `kms:GenerateDataKeyWithoutPlainText`
 * `kms:ReEncrypt`
 
-To [connect to an agent via SSM](#debugging-and-maintenance), the following additional permissions are required:
+<!--To [connect to an agent via SSM](#debugging-and-maintenance), the following additional permissions are required:
 * `sts:GetFederationToken`
-* `ssm:*Session`
+* `ssm:*Session`-->
 
 An example of custom IAM policy definition (allows all EC2 operations from a specified IP address):
 
@@ -281,15 +281,11 @@ For NTML authentication:
 ### Debugging and Maintenance
 {id="debugging-and-maintenance"}
 
-You can investigate issues on the EC2 agent by launching an interactive browser-based shell directly from the TeamCity UI.
-
-#### Interactive Terminal
-
-This method is supported for all local and cloud agents. Navigate to the required agent and click **Open interactive terminal** to invoke this terminal.
+You can investigate issues on the EC2 agent by launching an interactive browser-based shell directly from the TeamCity UI. Navigate to the required agent and click the **Open terminal** button to invoke this terminal. This method is supported for all local and cloud agents.
 
 Learn more: [](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
 
-#### SSM Terminal
+<!--#### SSM Terminal
 
 This method works only for EC2 agents with preinstalled [AWS Systems Manager Agent (SSM Agent)](https://docs.aws.amazon.com/systems-manager/latest/userguide/prereqs-ssm-agent.html). TeamCity provides authorization for the browser-based shell, so you don't have to manage it manually.
 
@@ -316,7 +312,7 @@ To configure this feature:
 
 >To prevent the agent instance from terminating, you can [disable the agent for maintenance](). In maintenance mode, the agent will not be terminated automatically and not be available for new builds.
 >
-{type="tip"}
+{type="tip"}-->
 
 ### Custom script
 

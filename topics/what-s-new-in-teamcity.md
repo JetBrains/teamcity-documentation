@@ -48,7 +48,9 @@ Clean-ups can now also be scheduled from any node with this responsibility. Howe
 
 With this update you can open remote terminals to agent machines directly from the TeamCity UI. These terminals allow system administrators to maintain local and cloud agents and troubleshoot issues.
 
-<img src="dk-agentTerminal-cat.png" width="706" alt="Agent Terminal Window"/>
+<img src="dk-openInteractiveTerminal.gif" width="706" alt="Agent Terminal Window"/>
+
+With this new terminal in place, we removed the **Open SSM Terminal** action link from agent pages.
 
 Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
 

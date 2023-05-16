@@ -23,6 +23,7 @@ See the What's New page for more responsibility-related changes: [](what-s-new-i
 ### Miscellaneous Updates
 
 * Users with the "Project Developer" [role](managing-roles-and-permissions.md) can now download and view the `.teamcity/settings/buildSettings.xml` [hidden artifact](build-artifact.md#Hidden+Artifacts). Previously, this action required the "Edit project" permission that is enabled for "Project Administrator" and higher roles.
+* Agent pages no longer display the **Open SSM Terminal** action link. This functionality was deprecated in favor of more generic **Open Terminal** button. See [](what-s-new-in-teamcity.md#Interactive+Agent+Terminals) for more details.
 
 
 ## Changes from 2022.10.2 to 2022.10.3

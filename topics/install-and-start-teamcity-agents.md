@@ -57,17 +57,16 @@ Please generate own token or configuration file per each self-hosted agent.
 
 
 ## Debug Agents Remotely
-{product="tc"}
 
 <chunk id="agents-terminal">
 
 After an agent was installed and connected, you can invoke a terminal for this agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
 
-<img src="dk-agentTerminal-cat.png" width="706" alt="Agent Terminal Window"/>
+To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open terminal**.
 
-To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open interactive terminal**. This action is available for all types of agent machines (Linux, Windows, and macOS) and invokes terminals under the same user identity who starts TeamCity agents.
+<img src="dk-openInteractiveTerminal.gif" width="706" alt="Agent Terminal Window"/>
 
-<img src="dk-openterminalLink.png" width="706" alt="Open Terminal Link"/>
+The **Open terminal** button is available for all types of agent machines (Linux, Windows, and macOS) and invokes terminals under the same user identity who starts TeamCity agents.
 
 For cloud agents that are automatically terminated after idling for a certain period of time, click the ["Disable for maintenance..."](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) button to keep the agent's machine running.
 
@@ -75,6 +74,6 @@ For cloud agents that are automatically terminated after idling for a certain pe
 > 
 {type="note"}
 
-Since the terminal allows users to access agent machines and make significant changes to these systems, the **Open interactive terminal** link is visible only to users whose [role permissions](managing-roles-and-permissions.md) include the *"Open an interactive session to the agent"* permission. By default, this permission is granted only to system administrators. Additionally, each request to open a terminal is written as a new "Agent actions | Connect to agent" activity in the [audit log](tracking-user-actions.md).
+The **Open terminal** link is visible only to users whose [role permissions](managing-roles-and-permissions.md) include the *"Open an interactive session to the agent"* permission. This permission is initially granted to users with the "Project Administrator" and "System Administrator" roles. As an additional precaution, each request to open a terminal is written as a new "Agent actions | Connect to agent" activity in the [audit log](tracking-user-actions.md).
 
 </chunk>
