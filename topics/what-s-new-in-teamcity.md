@@ -123,9 +123,9 @@ Starting with version 2023.05, you can allow TeamCity to request [spot placement
 
 Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).-->
 
-### IMDSv2 Support
+### EC2 Instance Metadata Service v2 Support
 
-IMDSv2 is the new version of the Instance Metadata Service by Amazon that [addresses a number of IMDSv1 vulnerabilities](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/).
+IMDSv2 is the new version of the Amazon EC2 Instance Metadata Service that [addresses a number of IMDSv1 vulnerabilities](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/).
 
 TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with both "Optional" and "Required" IMDSv2 settings. TeamCity always attempts to use IMDSv2 first, but supports older AMIs as well.
 
