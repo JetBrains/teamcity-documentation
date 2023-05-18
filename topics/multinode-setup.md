@@ -203,7 +203,7 @@ http {
        zone round_robin 1m;
        server {node1_hostname};
        server {node2_hostname};
-       sticky cookie X-TeamCity-RoundRobin-Cookie;
+       sticky cookie X-TeamCity-RoundRobin-Cookie path=/;
    }
    
    upstream first_available {
