@@ -442,7 +442,7 @@ If you used Kotlin DSL with TeamCity 2017.1 for Docker plugin configurations, yo
 * rename the build runner step with the __Docker Compose__ runType to __DockerCompose__
 * rename the `docker-compose.file` build parameter to `dockerCompose.file`
 
-Starting from TeamCity 2017.2, the Docker plugin has its own typed DSL for the [Docker build feature](docker-support.md), [Docker Wrapper](docker-wrapper.md), [Docker](docker.md), and [Docker Compose](docker-compose.md) runners.
+Starting from TeamCity 2017.2, the Docker plugin has its own typed DSL for the [](container-support.md) build feature, [](container-wrapper.md), [Docker](docker.md), and [Docker Compose](docker-compose.md) runners.
 
 __Docker Compose and Docker Build__
 
@@ -494,7 +494,7 @@ features {
 
 ```
 
-__Command Line runner with Docker Wrapper__
+__Command Line runner with Container Wrapper__
 
 
 ```Kotlin

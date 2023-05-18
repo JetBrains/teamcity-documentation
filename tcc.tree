@@ -226,7 +226,7 @@
                 <toc-element id="build-files-cleaner-swabra.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="build-cache.md"/>
                 <toc-element id="commit-status-publisher.md" show-structure-for="chapter" show-structure-depth="4"/>
-                <toc-element id="docker-support.md"/>
+                <toc-element id="container-support.md" accepts-web-file-names="docker-support.html"/>
                 <toc-element id="file-content-replacer.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="free-disk-space.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="golang.md" show-structure-for="chapter"/>
@@ -295,8 +295,10 @@
     <toc-element id="integrating-teamcity-with-other-tools.md" show-structure-for="chapter" show-structure-depth="4">
         <toc-element id="integrating-teamcity-with-vcs-hosting-services.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="integrating-teamcity-with-perforce.md" show-structure-for="chapter" show-structure-depth="4"/>
-        <toc-element id="integrating-teamcity-with-docker.md" show-structure-for="chapter" show-structure-depth="4">
-            <toc-element id="docker-wrapper.md" show-structure-for="chapter" show-structure-depth="4"/>
+        <toc-element id="integrating-teamcity-with-container-managers.md" show-structure-for="chapter" show-structure-depth="4"
+                     accepts-web-file-names="integrating-teamcity-with-docker.html">
+            <toc-element id="container-wrapper.md" show-structure-for="chapter" show-structure-depth="4"
+                         accepts-web-file-names="docker-wrapper.html"/>
         </toc-element>
         <toc-element id="integrating-teamcity-with-issue-tracker.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="bitbucket-cloud.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Bitbucket Cloud"/>

@@ -192,7 +192,7 @@ __01 January 2023__
 
 **[TW-70087](https://youtrack.jetbrains.com/issue/TW-70087/Make-it-possible-to-to-leave-the-project-in-the-Project-pool-only)** — Make it possible to to leave the project in the Project pool only
 
-**[TW-77943](https://youtrack.jetbrains.com/issue/TW-77943/Report-image-pulling-as-separate-block-in-docker-wrapper)** — Report image pulling as separate block in docker wrapper
+**[TW-77943](https://youtrack.jetbrains.com/issue/TW-77943/Report-image-pulling-as-separate-block-in-docker-wrapper)** — Report image pulling as separate block in Container Wrapper
 
 **[TW-42311](https://youtrack.jetbrains.com/issue/TW-42311/Add-ability-to-upload-per-project-SSH-keys-via-REST-API)** — Add ability to upload per-project SSH keys via REST API
 

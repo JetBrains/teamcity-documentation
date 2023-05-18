@@ -209,7 +209,7 @@ tasks.register("printProperty") {
 
 ### Docker Settings
 
-In this section, you can specify a Docker image which will be [used to run the build step](docker-wrapper.md).
+In this section, you can specify a Docker image which will be [used to run the build step](container-wrapper.md).
 
 <anchor name="coverage"/>
 

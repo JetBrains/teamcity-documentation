@@ -3,13 +3,13 @@
 
 The _Docker_ [build runner](build-runner.md) allows launching the `build`, `push`, and `tag` [Docker](https://www.docker.com/) commands inside your build.
 
->For the `run` command, use [Docker Wrapper](docker-wrapper.md).
+>For the `run` command, use [](container-wrapper.md).
 
 If a [Dockerfile](https://docs.docker.com/engine/reference/builder/) is present in your VCS repository and you create a TeamCity project based on this repository, TeamCity will [autodetect it](configuring-build-steps.md#Autodetecting+Build+Steps) and offer creating a build step using this runner.
 
 ## Common Settings
 
-This runner is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
+This runner is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md).
 
 Available step execution policies are described [here](configuring-build-steps.md#Execution+Policy).
 
@@ -193,7 +193,7 @@ Command name
 
 <td>
 
-Docker sub-command, like `push` or `tag`. For the `run` command, use [Docker Wrapper](docker-wrapper.md).
+Docker sub-command, like `push` or `tag`. For the `run` command, use [](container-wrapper.md).
 
 </td></tr><tr>
 
@@ -236,10 +236,10 @@ We recommend removing (or commenting out) the `Defaults requiretty` line from th
  
 <seealso>
         <category ref="admin-guide">
-            <a href="integrating-teamcity-with-docker.md">Integrating TeamCity with Docker</a>
+            <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>
             <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
-            <a href="docker-support.md">Docker Support feature</a>
+            <a href="container-support.md">Container Support feature</a>
             <a href="docker-compose.md">Docker Compose runner</a>
-            <a href="docker-wrapper.md">Docker Wrapper extension</a>
+            <a href="container-wrapper.md">Container Wrapper extension</a>
         </category>
 </seealso>

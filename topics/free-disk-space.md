@@ -26,7 +26,7 @@ The data cleaned includes:
 * the checkout directories that were marked for [deletion](build-checkout-directory.md#Automatic+Checkout+Directory+Cleaning)
 * contents of other build's checkout directories in the reversed most recently used order
 * the cache of previously downloaded artifacts (that were downloaded to the agent via TeamCity artifact dependencies)
-* cleaning the local [Docker caches](integrating-teamcity-with-docker.md#Docker+Disk+Space+Cleaner) 
+* cleaning the local [Docker caches](integrating-teamcity-with-container-managers.md#Docker+Disk+Space+Cleaner) 
 * cleaning the local [NuGet packages caches](nuget.md#NuGet+Packages+Cache+Clean-up+on+Agents)
 
 If you need to make sure a checkout directory is never deleted while freeing disk space, set the `system.teamcity.build.checkoutDir.expireHours` property to `never`.

@@ -108,7 +108,7 @@ Specify how the error output is handled by the runner:
 
 ## Docker Settings
 
-In this section, you can specify a Docker image which will be [used to run this build step](docker-wrapper.md).
+In this section, you can specify a Docker image which will be [used to run this build step](container-wrapper.md).
 
 ## Code Coverage
 

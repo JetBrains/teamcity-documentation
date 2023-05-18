@@ -226,7 +226,7 @@ __25 October 2021__
 [**TW-67321**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67321) — Provide better DSL for AssemblyInfo patcher build feature  
 [**TW-72563**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72563) — Unable to edit Space Connection if it&#39;s settings were corrupted in the xml file  
 [**TW-72504**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72504) — Failed to start builds with SSH Upload or SSH exec runners with SSH-Agent authentication method  
-[**TW-72320**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72320) — C# script: missing DSL for docker wrapper fields  
+[**TW-72320**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72320) — C# script: missing DSL for Contrainer Wrapper fields  
 [**TW-72535**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72535) — Error calling method BuildServerListener.beforeBuildFinish for listener org.jetbrains.teamcity.testDuration.FinishBuildListener: jetbrains.buildServer.serverSide.auth.AccessDeniedException: Cannot locate this build project  
 [**TW-72542**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72542) — Don&#39;t show hint about creation a Space application for the existing connections  
 [**TW-72454**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-72454) — Fix C# position in the server tools list  

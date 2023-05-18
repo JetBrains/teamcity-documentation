@@ -5,7 +5,7 @@ The Python build runner automatically detects Python on agents and allows runnin
 
 >Since TeamCity 2020.2, this bundled runner replaces the obsolete [Python Runner plugin](https://plugins.jetbrains.com/plugin/9042-python-runner). The new runner offers support for virtual environments, Docker, Kotlin DSL, and provides extra features like full test coverage.
 
-Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
+Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [](container-wrapper.md) to learn how you can run this step inside a Docker container.
 
 <video href="DOLY1K5e8hQ"
 title="New in TeamCity 2020.2: Python Build Runner"/>
@@ -428,6 +428,6 @@ Additional venv / virtualenv arguments to create a new `env` command.
 <seealso>
         <category ref="admin-guide">
             <a href="configuring-build-steps.md">Configuring Build Steps</a>
-            <a href="docker-wrapper.md">Docker Wrapper</a>
+            <a href="container-wrapper.md">Container Wrapper</a>
         </category>
 </seealso>

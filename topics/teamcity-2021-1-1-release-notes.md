@@ -20,7 +20,7 @@ __18 June 2021__
 [**TW-68081**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68081) — Do not auto-detect &quot;IntelliJ IDEA Project&quot; build steps if project does not contain JVM-based modules  
 [**TW-69432**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69432) — Build log: new line characters between time and message when copying part of the log  
 [**TW-71373**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71373) — Move &quot;Save anyway&quot; button from main settings form to &quot;Save&quot; dialog  
-[**TW-71408**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71408) — Docker wrapper can hit the rate limit on dockerhub when pulling busybox in a large enough installation  
+[**TW-71408**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71408) — Container Wrapper can hit the rate limit on dockerhub when pulling busybox in a large enough installation  
 [**TW-63117**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-63117) — There is no information on the pool page that project also relates to other pools  
 [**TW-71715**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-71715) — Agent pool page: move &quot;archived projects&quot; counter to the checkbox  
 [**TW-62151**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-62151) — Consider expanding Inspections/PR/... section by default on a build page in the experimental UI  

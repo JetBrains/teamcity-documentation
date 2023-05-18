@@ -303,7 +303,7 @@ Also, check the related [blog post](http://blogs.jetbrains.com/teamcity/2012/03/
 
 ### Docker Settings
 
-In this section, you can specify a Docker image which will be [used to run the build step](docker-wrapper.md).
+In this section, you can specify a Docker image which will be [used to run the build step](container-wrapper.md).
 
 ### Code Coverage
 

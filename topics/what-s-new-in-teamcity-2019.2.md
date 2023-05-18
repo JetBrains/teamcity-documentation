@@ -101,7 +101,7 @@ TeamCity now allows collecting code coverage for .NET Core projects on Linux and
 
 dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, add the cross-platform dotCover tool under __Administration | Tools__ and enable the dotCover coverage in the [.NET CLI](net.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 4.6.1+ installed.
 
-Now you can also run code coverage analysis with dotCover inside a Docker container, with the [Docker Wrapper](docker-wrapper.md) extension.
+Now you can also run code coverage analysis with dotCover inside a Docker container, with the [](container-wrapper.md) extension.
 
 ## Updates for multinode setup
 

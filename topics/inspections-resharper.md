@@ -21,7 +21,7 @@ You can also refer to the [ReSharper documentation](https://www.jetbrains.com/he
 To run inspections for your project, you must have a ReSharper inspection profile for .NET projects.
 </note>
 
-Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
+Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [](container-wrapper.md) to learn how you can run this step inside a Docker container.
 
 ## Sources to Analyze
 

@@ -28,7 +28,7 @@ __29 January 2021__
 [**TW-69730**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69730) — Conflicting advice when setting up PR decoration (Azure)   
 [**TW-69003**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69003) — Add a note near branch specification fields explaining what is a logical branch name and how it can be controlled   
 [**TW-69651**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69651) — Add a link to documentation to the build steps conditions   
-[**TW-69649**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69649) — Add description to &#39;Docker image platform&#39; field in Docker wrapper and Docker build runners   
+[**TW-69649**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-69649) — Add description to &#39;Docker image platform&#39; field in Container Wrapper and Docker build runners   
 [**TW-68078**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68078) — Edit Configuration should be View Configuration when UI editing is disabled.   
 [**TW-67010**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67010) — Build overview page: &#39;Edit Configuration&#39; button jumps left while the page is loaded   
 [**TW-68893**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68893) — Archived build configurations are shown in Dependencies Chain by default   

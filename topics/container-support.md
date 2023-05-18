@@ -1,33 +1,39 @@
-[//]: # (title: Docker Support)
-[//]: # (title: Docker Support)
-[//]: # (auxiliary-id: Docker Support)
+[//]: # (title: Container Support)
+[//]: # (auxiliary-id: Container Support)
 
-The _Docker Support_ [build feature](adding-build-features.md) allows automatically signing in to a Docker registry before the build start.
+The _Container Support_ [build feature](adding-build-features.md) allows automatically signing in to a DockerHub or other container registry before the build start.
 
-Adding this feature:
-* enables the Docker events' monitoring: such operations as `docker pull` and `docker run` will be detected by TeamCity;
-* adds the __Docker Info__ tab to the _[Build Results](working-with-build-results.md)_ page. The tab provides information on Docker-related operations.
+Add this feature to:
 
-The feature also allows:
-* cleaning up the Docker images;
-* automatically log in to an authenticated registry before the build and log out of it after the build.
+* Allow TeamCity monitor and detect Docker/Podman operations (for instance, `docker pull` and `podman run`);
 
-These two options require configuring a [connection to a Docker registry](configuring-connections-to-docker.md):
+* Automatically log in to an authenticated registry before the build and log out of it after the build.
 
-<img src="docker-support.png" width="750" alt="Docker Support build feature"/>
+* Clean up images (currently supported only for Docker);
 
->_Docker Support_ is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
+* Add the __Container Info__ tab to the _[Build Results](working-with-build-results.md)_ page. The tab provides information on operations related to the container manager used.
+  
+  <img src="dk-containerInfoTab.png" width="706" alt="Container Info tab"/>
+
+Logging in and out of repositories and cleaning up images require a configured [connection to a Docker registry](configuring-connections-to-docker.md):
+
+<img src="docker-support.png" width="750" alt="Container Support build feature"/>
+
+>_Container Support_ is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md).
 
 ## Docker Images Clean-up
 
 ### Clean-up of the Pushed Images
 
-If you have a build configuration which publishes images, you need to remove them at some point. You can select the corresponding option and instruct TeamCity to remove the images published by a certain build when the build itself is [cleaned up](teamcity-data-clean-up.md).  
+If you have a build configuration which publishes images, you need to remove them at some point. You can select the corresponding option and instruct TeamCity to remove the images published by a certain build when the build itself is [cleaned up](teamcity-data-clean-up.md).
+
 It works as follows: when an image is published, TeamCity stores the information about the registry of the images published by the build. When the [server clean-up](teamcity-data-clean-up.md) is run and it deletes the build, all the configured connections are searched for the address of this registry, and the images published by the build are cleaned up using the credentials specified in the found connection.
+
+Clean-up is not currently available for Podman registries.
 
 ### Clean-up of Images on Build Agent
                                    
-As part of [Free disk space](free-disk-space.md) build feature, Docker Support cleans up images which were created by TeamCity builds on this build agent. The Docker Support assumes, that docker images are stored under
+As part of [Free disk space](free-disk-space.md) build feature, Container Support cleans up images which were created by TeamCity builds on this build agent. The Container Support assumes, that docker images are stored under
 
  - `/var/lib/docker` on Linux
  - `%\ProgramData%` directory on Windows
@@ -40,11 +46,12 @@ The location is important, as the [Free disk space](free-disk-space.md) feature 
 
 If you need to log in to a registry requiring authentication before a build, select the corresponding option and a connection to Docker configured in the __Project Settings__. Automatic logout will be performed after the build finishes.
 
->[See also](integrating-teamcity-with-docker.md#Conforming+with+Docker+download+rate+limits) how to use this functionality to double the number of pulls allowed to a Free Docker Hub user profile.
+>[See also](integrating-teamcity-with-container-managers.md#Conforming+with+Docker+Download+Rate+Limits) how to use this functionality to double the number of pulls allowed to a Free Docker Hub user profile.
 
 ## Amazon ECR
 
-A connection to Amazon Elastic Container Registry (ECR) allows storing Docker images in private AWS registries. For this, such a connection needs to be selected when adding a [Docker Support](docker-support.md) feature to a build configuration.
+A connection to Amazon Elastic Container Registry (ECR) allows storing Docker/Linux
+images in private AWS registries. For this, such a connection needs to be selected when adding a [Container Support](container-support.md) feature to a build configuration.
 
 Connection settings:
 
@@ -180,10 +187,10 @@ Enter an ID of your registry or AWS account.
 
 <seealso>
         <category ref="admin-guide">
-            <a href="integrating-teamcity-with-docker.md">Integrating TeamCity with Docker</a>
+            <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>
             <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
             <a href="docker-compose.md">Docker Compose runner</a>
             <a href="docker.md">Docker runner</a>
-            <a href="docker-wrapper.md">Docker Wrapper extension</a>
+            <a href="container-wrapper.md">Container Wrapper extension</a>
         </category>
 </seealso>

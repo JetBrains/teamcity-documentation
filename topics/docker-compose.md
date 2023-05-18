@@ -5,7 +5,7 @@ The _Docker Compose_ [build runner](build-runner.md) allows starting [Docker Com
 
 ## Common Settings
 
-This runner is a part of the TeamCity-Docker integration toolset. Refer to [this page](integrating-teamcity-with-docker.md) for information on software requirements, supported environments, and other common aspects of this integration.
+This runner is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md).
 
 Available step execution policies are described [here](configuring-build-steps.md#Execution+Policy).
 
@@ -43,14 +43,14 @@ If the __pull image explicitly__ option is enabled, `docker-compose pull` will b
 
 When using Docker Compose with images which support [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck), TeamCity will wait for the `healthy` status of all containers that support this parameter.
 
-If the start of Docker Compose was successful, the TeamCity agent will register the `TEAMCITY_DOCKER_NETWORK` environment variable containing the name of the Docker Compose default network. This network will be passed transparently to the [Docker Wrapper](docker-wrapper.md) when it is used in some build runners.
+If the start of Docker Compose was successful, the TeamCity agent will register the `TEAMCITY_DOCKER_NETWORK` environment variable containing the name of the Docker Compose default network. This network will be passed transparently to the [](container-wrapper.md) when it is used in some build runners.
 
 <seealso>
         <category ref="admin-guide">
-            <a href="integrating-teamcity-with-docker.md">Integrating TeamCity with Docker</a>
+            <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>
             <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
-            <a href="docker-support.md">Docker Support feature</a>
+            <a href="container-support.md">Container Support feature</a>
             <a href="docker.md">Docker runner</a>
-            <a href="docker-wrapper.md">Docker Wrapper extension</a>
+            <a href="container-wrapper.md">Container Wrapper extension</a>
         </category>
 </seealso>

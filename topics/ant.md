@@ -179,7 +179,7 @@ If both options are enabled at the same time, the tests of the __new and modifie
 
 ### Docker Settings
 
-In this section, you can specify a Docker image which will be [used to run the build step](docker-wrapper.md).
+In this section, you can specify a Docker image which will be [used to run the build step](container-wrapper.md).
 
 ### Code Coverage
 

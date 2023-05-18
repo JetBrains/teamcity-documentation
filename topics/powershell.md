@@ -189,7 +189,7 @@ Specify parameters to be passed to the PowerShell executable.
 ## Docker Settings
 {product="tc"}
 
-In this section, you can specify the Docker image which will be [used to run the build step](docker-wrapper.md).
+In this section, you can specify the Docker image which will be [used to run the build step](container-wrapper.md).
 
 ### Current Limitations
 
@@ -198,7 +198,7 @@ In this section, you can specify the Docker image which will be [used to run the
 * Selection of Edition in PowerShell build step affects the executable being used (`powershell.exe` for Desktop, `pwsh` for Core).
 * &lt;Auto&gt; defaults to `pwsh` (Core).
 * To specify a custom PowerShell executable, the `teamcity.powershell.virtual.executable` configuration parameter must be set to the full path of this executable inside the provided image.
-* Current limitations of the Docker wrapper do not allow Linux containers running under Windows systems.
+* Current limitations of the Container Wrapper do not allow Linux containers running under Windows systems.
 
 ### Known Issues
 

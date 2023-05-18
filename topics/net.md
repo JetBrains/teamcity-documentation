@@ -392,7 +392,7 @@ Specify the version of the installed MSBuild engine. To ensure that a specific v
 
 See the [Requirements](#Requirements) section for more details.
 
-If you set the version in this field and choose to run the current step using Docker (with [Docker Wrapper](docker-wrapper.md)), make sure to specify the path to `MSBuild.exe` in the `PATH` environment variable. This way, the .NET runner will be able to find the required executable file even within the Docker container.
+If you set the version in this field and choose to run the current step using Docker (with [](container-wrapper.md)), make sure to specify the path to `MSBuild.exe` in the `PATH` environment variable. This way, the .NET runner will be able to find the required executable file even within the Docker container.
 
 </td>
 
@@ -778,7 +778,7 @@ Uses `/bin/sh` to run both specified `.sh` scripts with the same parameters `-c 
 
 ## Docker Settings
 
-The .NET CLI build step can be run in a specified [Docker container](docker-wrapper.md).
+The .NET CLI build step can be run in a specified [Docker container](container-wrapper.md).
 
 ## Code Coverage
 
@@ -853,7 +853,7 @@ You can safely switch [MSBuild steps](msbuild.md) in your existing build configu
 Additional features you will get in the .NET runner are:
 * Support of cross-platform MSBuild for .NET projects.
 * Ability to build a project for a different platform specified in the _Runtime_ field.
-* Ability to run the project in a Docker container with our [Docker Wrapper](docker-wrapper.md) extension.
+* Ability to run the project in a Docker container with our [](container-wrapper.md) extension.
 
 Consider the following notes before migrating:
 * The .NET runner uses x86 run platform by default. If the x86 version is not available, it will use x64.
@@ -893,7 +893,7 @@ Additional features you will get in the .NET runner are:
 * Support of cross-platform VSTest for .NET projects.
 * Real-time test reporting by default.
 * Support of ARM platform, along with x86 and x64.
-* Ability to run and test the project inside a Docker container with our [Docker Wrapper](docker-wrapper.md) extension.
+* Ability to run and test the project inside a Docker container with our [](container-wrapper.md) extension.
 
 Consider the following notes before migrating:
 * The .NET runner supports the new [`.runsettings`](https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file) format of the VSTest settings file. However, it does not support the obsolete run configuration file format used in the Visual Studio Tests runner.

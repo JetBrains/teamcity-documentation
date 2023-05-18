@@ -116,7 +116,7 @@ The tables below are updated in accordance with the newly introduced integration
   * [Ant](ant.md)
 * [Autodiscovery of Maven, Gradle, and Ant build steps in a source project](configuring-build-steps.md#Autodetecting+Build+Steps)
 * Autodetection of [Maven](maven.md#Maven+runner+settings) and Gradle installations on a build agent
-* [Running a Maven, Gradle, or Ant build step inside a Docker container](docker-wrapper.md)
+* [Running a Maven, Gradle, or Ant build step inside a Docker container](container-wrapper.md)
 * [Reporting Java code inspection results for a build](inspections.md)
 * [Detecting Java code duplicates in a build's source](duplicates-finder-java.md)
 * [Detailed test reports for JUnit and TestNG frameworks on the fly](java-testing-frameworks-support.md)
@@ -153,7 +153,7 @@ The tables below are updated in accordance with the newly introduced integration
 * [Running MSBuild commands](net.md#msbuild)
 * [Running devenv](net.md#devenv-build-action)
 * [Running any custom .NET commands](net.md#Custom+Commands)
-* [Running a .NET build step inside a Docker container](docker-wrapper.md)
+* [Running a .NET build step inside a Docker container](container-wrapper.md)
 * [Detailed and structured test reports for .NET frameworks on the fly](net-testing-frameworks-support.md)
 * [Detailed code coverage](configuring-.net-code-coverage.md)
 * [Reporting .NET code inspection results for a build](inspections-resharper.md)
@@ -199,7 +199,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 * [Autodetection of a PowerShell installation on a build agent](net.md#.NET+Version+Detection+Algorithm)
 * [Running PowerShell scripts across platforms](powershell.md) for various build tasks
-* [Running a PowerShell build step inside a Docker container](docker-wrapper.md)
+* [Running a PowerShell build step inside a Docker container](container-wrapper.md)
 
 </td><td>
 
@@ -216,7 +216,7 @@ The tables below are updated in accordance with the newly introduced integration
 * [Cross-platform execution of Python scripts](python.md)
 * Support for Pipenv, Poetry, Venv, and Virtualenv
 * A structured build log output based on build stages and test reports
-* [Running a Python build step inside a Docker container](docker-wrapper.md)
+* [Running a Python build step inside a Docker container](container-wrapper.md)
 
 </td><td>
 
@@ -256,7 +256,7 @@ The tables below are updated in accordance with the newly introduced integration
 * [Autodiscovery of JavaScript build steps in a source project](nodejs.md#Autodetecting+JavaScript+Steps)
 * [Running npm, yarn, and node commands within a build](nodejs.md)
 * A structured build log output based on build stages and test reports
-* [Running a Node.js script inside a Docker container](docker-wrapper.md)
+* [Running a Node.js script inside a Docker container](container-wrapper.md)
 * Support for ESlint, Jest, and Mocha
 * [Accessing private NPM registries](nodejs.md#Accessing+Private+NPM+Registries)
 
@@ -747,15 +747,15 @@ The tables below are updated in accordance with the newly introduced integration
 </td><td>
 
 * [Launching Docker commands and creating a Docker image during a build](docker.md)
-* [Running some build steps inside a Docker container, across platforms](docker-wrapper.md)
-* [Automatically signing in to Docker registry before each build](docker-support.md)
-* [Displaying Docker-related information in build results](docker-support.md)
+* [Running some build steps inside a Docker container, across platforms](container-wrapper.md)
+* [Automatically signing in to Docker registry before each build](container-support.md)
+* [Displaying Docker-related information in build results](container-support.md)
 * [Running multiple containers in a build with Docker Compose](docker-compose.md)
-* [Cleaning obsolete Docker images on build agents](integrating-teamcity-with-docker.md#Docker+Disk+Space+Cleaner)
+* [Cleaning obsolete Docker images on build agents](integrating-teamcity-with-container-managers.md#Docker+Disk+Space+Cleaner)
 
 </td><td>
 
-* [Integrating TeamCity with Docker](integrating-teamcity-with-docker.md)
+* [Integrating TeamCity with Docker](integrating-teamcity-with-container-managers.md)
 
 </td>
 

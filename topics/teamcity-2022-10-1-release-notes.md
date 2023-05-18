@@ -19,7 +19,7 @@ __1 December 2022__
 
 **[TW-78773](https://youtrack.jetbrains.com/issue/TW-78773/Update-of-the-running-builds-state-is-blocked-because-of-the-thread-which-cannot-send-log-messages-to-another-node)** — Update of the running builds state is blocked because of the thread which cannot send log messages to another node
 
-**[TW-78718](https://youtrack.jetbrains.com/issue/TW-78718/Empty-.NET-coverage-report-for-dotnet-msbuild-command-in-docker-wrapper)** — Empty .NET coverage report for dotnet msbuild command in docker wrapper
+**[TW-78718](https://youtrack.jetbrains.com/issue/TW-78718/Empty-.NET-coverage-report-for-dotnet-msbuild-command-in-docker-wrapper)** — Empty .NET coverage report for dotnet msbuild command in Container Wrapper
 
 **[TW-52354](https://youtrack.jetbrains.com/issue/TW-52354/Kubernetes-Plugin-Cloud-instance-has-gone-is-not-reported-by-cloud-profile-for-instances-started-by-K8S-plugin)** — [Kubernetes Plugin] Cloud instance has gone (is not reported by cloud profile) for instances started by K8S plugin
 

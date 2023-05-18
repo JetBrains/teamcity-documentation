@@ -147,7 +147,20 @@ IMDSv2 is the new version of the Instance Metadata Service by Amazon that [addre
 TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with both "Optional" and "Required" IMDSv2 settings. TeamCity always attempts to use IMDSv2 first, but supports older AMIs as well.
 
 
+## Podman Support
+
+Starting with version 2023.05, you can connect to image registries, push/pull images, and run build steps inside containers using both [Docker](https://www.docker.com) and [Podman](https://podman.io).
+
+<img src="dk-podman-wn.png" width="706" alt="Podman support in TeamCity 2023.05"/>
+
+* The [](container-wrapper.md) extension (previously known as "Docker Wrapper") now pulls images via either `docker pull` or `podman pull`, depending on which Container Manager is installed on the build agent.
+* The [](container-support.md) build feature (previously known as "Docker Support") can now log in to Podman repositories.
+* If you use the [](command-line.md) runner to execute `podman ...` commands, utilize new `container.engine`, `podman.version`, and `podman.osType` [parameters](configuring-build-parameters.md) to specify [agent requirements](agent-requirements.md) that ensure your builds run only on build agents with installed Podman.
+
+Learn more: [](integrating-teamcity-with-container-managers.md).
+
 ## .NET 8 Support
+{product="tc"}
 
 TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) framework by Microsoft. This means TeamCity agents correctly recognize the corresponding SDK installed on agent machines and the [.NET build runner](net.md) successfully builds projects that target .NET 8.0.
 
@@ -219,6 +232,7 @@ Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tag
 
 
 ## REST API Updates
+{product="tc"}
 
 ### Manage SSH Keys
 

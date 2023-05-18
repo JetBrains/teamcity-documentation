@@ -120,7 +120,7 @@ __15 March 2022__
 [**TW-73610**](https://youtrack.jetbrains.com/issue/TW-73610) — Consider placing &quot;Copy to clipboard&quot; link at the bottom of the stacktrace  
 [**TW-74501**](https://youtrack.jetbrains.com/issue/TW-74501) — Background is not uniform for expanded build in queue  
 [**TW-68851**](https://youtrack.jetbrains.com/issue/TW-68851) — &quot;Failed to process &#39;buckets&#39; request: Connection to &quot;s3.amazonaws.com&quot; is prohibited by TeamCity node restrictions&quot; on the secondary node  
-[**TW-72581**](https://youtrack.jetbrains.com/issue/TW-72581) — Docker Wrapper doesn&#39;t escape ampersand when passing environment variables into containers  
+[**TW-72581**](https://youtrack.jetbrains.com/issue/TW-72581) — Container Wrapper doesn&#39;t escape ampersand when passing environment variables into containers  
 [**TW-72565**](https://youtrack.jetbrains.com/issue/TW-72565) — Add a note about the usage of permissions in information about connections  
 [**TW-74289**](https://youtrack.jetbrains.com/issue/TW-74289) — Canceled build status is not published to Space Merge Request  
 [**TW-72927**](https://youtrack.jetbrains.com/issue/TW-72927) — Files with special Perforce characters in names are displayed and applied incorrectly in perforce patch  

@@ -48,7 +48,7 @@ Below the heading, there are multiple tabs you can explore for more details. The
 * __Artifacts__: browse and download the build artifacts.
 * __Parameters__: see what parameters' values were passed into this build.
 
-The set of displayed tabs depends on the build's specifics (see [more information](working-with-build-results.md) on the default tabs). Some of them are displayed only if a certain feature is enabled. For example, if you add the [Docker Support](docker-support.md) feature to a build, the __Docker Info__ tab will appear in its results.
+The set of displayed tabs depends on the build's specifics (see [more information](working-with-build-results.md) on the default tabs). Some of them are displayed only if a certain feature is enabled. For example, if you add the [](container-support.md) feature to a build, the __Docker Info__ tab will appear in its results.
 
 You can also add a tab with [custom charts](custom-chart.md) based on XML.
 

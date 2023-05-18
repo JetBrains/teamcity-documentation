@@ -162,7 +162,7 @@ To be able to use this functionality, you need to add an [Amazon ECR connection]
 
 <img src="amazon-ecr-public.png" alt="Connecting to public ECR registry" width="750"/>
 
-Remember to also enable [Docker Support](docker-support.md) in your builds.
+Remember to also enable [](container-support.md) in your builds.
 
 ## Automatic import of user avatars from external systems
 {product="tc"}

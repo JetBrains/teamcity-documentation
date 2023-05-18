@@ -8,7 +8,7 @@ The _Duplicates finder (ReSharper)_ build runner, based on [ReSharper Command Li
 This runner requires .NET Framework 4.6.1 (or higher) to be installed on the agent where builds will run.
 </note>
 
-Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container).
+Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [](container-wrapper.md) to learn how you can run this step inside a Docker container).
 
 ## Sources
 

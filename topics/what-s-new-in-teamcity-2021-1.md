@@ -240,7 +240,7 @@ The default policy is AUTO, which means the decision is always up to TeamCity. B
 
 ## Viewing thread dump of process running inside Docker container
 
-TeamCity allows viewing a thread dump of processes running on a build agent machine right in the Build Results. Now, you can view it even if the process runs inside a Docker container (for example, with our [Docker Wrapper](docker-wrapper.md) or [Docker Compose](docker-compose.md) functionality). For Windows containers, TeamCity shows Java processes and their thread dumps. For Linux containers, it shows all running processes and thread dumps for Java processes.
+TeamCity allows viewing a thread dump of processes running on a build agent machine right in the Build Results. Now, you can view it even if the process runs inside a Docker container (for example, with our [](container-wrapper.md) or [](docker-compose.md) functionality). For Windows containers, TeamCity shows Java processes and their thread dumps. For Linux containers, it shows all running processes and thread dumps for Java processes.
 
 While the build is running, click __View thread dump__ in its __Overview__.
 
