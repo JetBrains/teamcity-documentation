@@ -102,7 +102,7 @@ If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment va
                                      
 ## Restoring File Ownership on Linux
 
-At the end of each build step performed inside a Container Wrapper, a build agent runs the `chown` command to restore the access of the `buildAgent` user to the checkout directory. This is done to prevent a potential problem when the files from a container are created with the `root` ownership and cannot be removed by the build agent later.
+Build agents that use Docker execute the `chown` command at the end of each step running inside a container to restore the `buildAgent` user's permissions to access the checkout directory. This action prevents potential issues related to build agents being unable to remove no longer needed container files that were created with the `root` ownership. Agents using Podman do not perform this step.
 
 By default, a TeamCity agent uses the `busybox` image from Docker Hub to run the `chown` command. You can specify an alternative image name with the `teamcity.internal.docker.busybox` parameter, either in the [`buildAgent.properties`](configure-agent-installation.md) file or in the [build configuration parameters](configuring-build-parameters.md).
 
