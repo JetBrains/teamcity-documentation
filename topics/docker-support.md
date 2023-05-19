@@ -51,7 +51,7 @@ If you need to log in to a registry requiring authentication before a build, sel
 ## Amazon ECR
 
 A connection to Amazon Elastic Container Registry (ECR) allows storing Docker/LXC
-images in private AWS registries. For this, such a connection needs to be selected when adding a [](docker-support.md) feature to a build configuration.
+images in private AWS registries. For this, such a connection needs to be selected when adding a Docker Support feature to a build configuration.
 
 Connection settings:
 
