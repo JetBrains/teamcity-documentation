@@ -79,7 +79,7 @@ When a build finishes, open the **Parameters** tab on the [](build-results-page.
 This page has two tabs:
 
 * **Parameters** — lists values for all configuration parameters, system properties, and environment variables. Highlights parameters that were added/modified in [custom builds](running-custom-build.md).
-* **Statistic values** — lists all [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported for the build (for example, build success rate or time required to check out a remote repository). The *View Chart* button (<img src="ViewTrend.png" width="12" alt="View Chart"/>) allows you to check how these values trend throughout build runs.
+* **Statistic values** — lists all [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported for the build (for example, build success rate or time required to check out a remote repository). The *View Chart* button (<img src="dk-viewChart.png" width="12" alt="View Chart"/>) allows you to check how these values trend throughout build runs.
 
 </chunk>
 

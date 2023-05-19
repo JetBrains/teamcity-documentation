@@ -389,7 +389,7 @@ The table below lists the predefined value providers that can be used to configu
 
 <anchor name="reportedStatValues"/>
 
-You can view all statistic values reported by the build on the __Build Results | Parameters | Reported statistic values__ tab. For each of the values, a statistics chart is available on clicking the _View Trend_ icon ![ViewTrend.PNG](ViewTrend.PNG).
+You can view all statistic values reported by the build on the __Build Results | Parameters | Reported statistic values__ tab. For each of the values, a statistics chart is available on clicking the _View Chart_ icon ![ViewTrend.PNG](dk-viewChart.png).
 
 <table><tr>
 
