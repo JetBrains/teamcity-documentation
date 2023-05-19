@@ -159,6 +159,7 @@ Starting with version 2023.05, you can connect to image registries, run build st
 
 Learn more: [](integrating-teamcity-with-container-managers.md).
 
+
 ## .NET 8 Support
 {product="tc"}
 
@@ -230,7 +231,6 @@ To add and remove tags, send the following messages:
 Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tags).
 
 
-
 ## REST API Updates
 
 
@@ -244,9 +244,13 @@ Learn more: [SSH Keys Management](ssh-keys-management.md#REST+API).
 
 Our REST API now allows you to manage settings related to [storing project settings in VCS](storing-project-settings-in-version-control.md). You can use this new API to modify these settings, check for changes, and load/commit changes from/to the related VCS. Explore the `/app/rest/projects/{locator}/versionedSettings/` endpoint to view available requests.
 
+Learn more: [Manage VCS Settings](https://www.jetbrains.com/help/teamcity/rest/2023.05/manage-vcs-settings.html).
+
 ### Manage User Roles
 
 The new `/app/rest/roles` endpoint allows you to obtain, modify, and remove existing [roles](managing-roles-and-permissions.md#Managing+Roles), as well as create new ones.
+
+Learn more: [Manage Roles and Permissions](https://www.jetbrains.com/help/teamcity/rest/2023.05/manage-roles-and-permissions.html).
 
 
 ## Two-Factor Authentication Enhancements
