@@ -5,7 +5,7 @@
 
 Since TeamCity 2020.1.1, we have stopped providing active support for the .NET Process runner.
 
-To run any .NET process in your build, it is recommended to use the [.NET runner](net.md) with the \<custom\> command instead. This runner is actively supported and provides more benefits comparing to the .NET Process runner (such as code coverage and ability to run a process inside a Docker container).
+To run any .NET process in your build, it is recommended to use the [.NET runner](net.md) with the \<custom\> command instead. This runner is actively supported and provides more benefits comparing to the .NET Process runner (such as code coverage and ability to run a process inside a Docker/LXC container).
 
 </note>
 

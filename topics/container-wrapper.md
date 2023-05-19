@@ -1,7 +1,7 @@
 [//]: # (title: Container Wrapper)
 [//]: # (auxiliary-id: Container Wrapper)
 
-The _Container Wrapper_ extension allows running a build step inside the specified Docker/Linux image. Images are pulled via `docker pull` or `podman pull` commands, depending on which container manager is installed on the agent that runs the build.
+The _Container Wrapper_ extension allows running a build step inside the specified Docker/LXC image. Images are pulled via `docker pull` or `podman pull` commands, depending on which container manager is installed on the agent that runs the build.
 
 The extension is available for the following [build runners](build-runner.md):
 
@@ -20,7 +20,7 @@ The extension is available for the following [build runners](build-runner.md):
 
 ## Container Settings
 
-In the _Container Settings_ section of the build step settings, you can specify a Docker/Linux image which will be used to run the build step. Once the image is specified, the following options become available.
+In the _Container Settings_ section of the build step settings, you can specify an image which will be used to run the build step. Once the image is specified, the following options become available.
 
 <table><tr>
 
@@ -86,7 +86,7 @@ Additional run arguments
 
 Allows specifying additional options for the `docker run` and `podman run` commands. The default argument is `--rm`, but you can provide more, for instance, add an additional volume mapping.
 
->In this field, you cannot reference environment variables using the `%\env.FOO_BAR%` syntax because TeamCity does not pass environment variables from a build agent into a Docker container.  
+>In this field, you cannot reference environment variables using the `%\env.FOO_BAR%` syntax because TeamCity does not pass environment variables from a build agent into a container.  
 If you need to reference an environment variable on an agent, define the configuration parameter `system.FOO_BAR=env_var_value` in [`buildAgent.properties`](configure-agent-installation.md) and reference it via `%\system.FOO_BAR%`.
 
 </td></tr></table>
@@ -94,7 +94,7 @@ If you need to reference an environment variable on an agent, define the configu
 ## How Container Wrapper Works
 {id="how-it-works-1"}
 
-Technically, the command of the build runner is wrapped in a shell script, and this script is executed inside a Docker container with the `docker run` or `podman run` command. To view the details about the started process, text of the script, and so on, check the build log in [Verbose mode](build-log.md#Viewing+Build+Log).
+Technically, the command of the build runner is wrapped in a shell script, and this script is executed inside a container with the `docker run` or `podman run` command. To view the details about the started process, text of the script, and so on, check the build log in [Verbose mode](build-log.md#Viewing+Build+Log).
 
 The Container Wrapper maps paths to the [build checkout directory](build-checkout-directory.md) and other agent directories like <path>[buildAgent/work](agent-work-directory.md)</path>, so that all these directories have the same location on a build agent and inside a [](container-wrapper.md).
 
@@ -102,7 +102,7 @@ If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment va
                                      
 ## Restoring File Ownership on Linux
 
-At the end of each build step performed inside a Container Wrapper, a build agent runs the `chown` command to restore the access of the `buildAgent` user to the checkout directory. This is done to prevent a potential problem when the files from a Docker container are created with the `root` ownership and cannot be removed by the build agent later.
+At the end of each build step performed inside a Container Wrapper, a build agent runs the `chown` command to restore the access of the `buildAgent` user to the checkout directory. This is done to prevent a potential problem when the files from a container are created with the `root` ownership and cannot be removed by the build agent later.
 
 By default, a TeamCity agent uses the `busybox` image from Docker Hub to run the `chown` command. You can specify an alternative image name with the `teamcity.internal.docker.busybox` parameter, either in the [`buildAgent.properties`](configure-agent-installation.md) file or in the [build configuration parameters](configuring-build-parameters.md).
 
@@ -110,15 +110,15 @@ By default, a TeamCity agent uses the `busybox` image from Docker Hub to run the
 
 ## Environment Variables Handling
 
-TeamCity passes environment variables from the [build configuration](managing-builds.md) into the Docker or Podman process, but it does not pass environment variables from the [build agent](build-agent.md), as they may not be relevant to the Docker/Linux container environment. The list of the passed environment variables can be seen in the [Verbose mode](build-log.md#Viewing+Build+Log) in the build log.
+TeamCity passes environment variables from the [build configuration](managing-builds.md) into the Docker or Podman process, but it does not pass environment variables from the [build agent](build-agent.md), as they may not be relevant to the container environment. The list of the passed environment variables can be seen in the [Verbose mode](build-log.md#Viewing+Build+Log) in the build log.
 
 ## Setting Image Entrypoint
 
 If a Docker image does not define an [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint), you can use still run a container with an `ENTRYPOINT` from the command line:
 1. Add a [Command Line](command-line.md) build step.
 2. Set the _Run_ mode to _Executable with parameters_.
-3. In the _Command executable_ field, specify the full path to the `ENTRYPOINT` in the target Docker container.
-4. In _Docker Settings_, specify the name of the Docker container.
+3. In the _Command executable_ field, specify the full path to the `ENTRYPOINT` in the target container.
+4. In _Docker Settings_, specify the name of the container.
 
 TeamCity will start the specified Docker image with the defined `ENTRYPOINT`.
 
@@ -128,6 +128,6 @@ TeamCity will start the specified Docker image with the defined `ENTRYPOINT`.
             <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
             <a href="docker-compose.md">Docker Compose runner</a>
             <a href="docker.md">Docker runner</a>
-            <a href="container-support.md">Container Support feature</a>
+            <a href="docker-support.md">Docker Support feature</a>
         </category>
 </seealso>

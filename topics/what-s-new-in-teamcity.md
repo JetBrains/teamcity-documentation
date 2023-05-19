@@ -149,12 +149,12 @@ TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with bo
 
 ## Podman Support
 
-Starting with version 2023.05, you can connect to image registries, push/pull images, and run build steps inside containers using both [Docker](https://www.docker.com) and [Podman](https://podman.io).
+Starting with version 2023.05, you can connect to image registries, run build steps inside containers, and push/pull images (via the [](command-line.md) runner) using [Podman](https://podman.io) instead of [Docker](https://www.docker.com).
 
 <img src="dk-podman-wn.png" width="706" alt="Podman support in TeamCity 2023.05"/>
 
 * The [](container-wrapper.md) extension (previously known as "Docker Wrapper") now pulls images via either `docker pull` or `podman pull`, depending on which Container Manager is installed on the build agent.
-* The [](container-support.md) build feature (previously known as "Docker Support") can now log in to Podman repositories.
+* The [](docker-support.md) build feature (previously known as "Docker Support") can now use Podman to log in to container registries.
 * If you use the [](command-line.md) runner to execute `podman ...` commands, utilize new `container.engine`, `podman.version`, and `podman.osType` [parameters](configuring-build-parameters.md) to specify [agent requirements](agent-requirements.md) that ensure your builds run only on build agents with installed Podman.
 
 Learn more: [](integrating-teamcity-with-container-managers.md).

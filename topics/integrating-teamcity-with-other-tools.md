@@ -748,8 +748,8 @@ The tables below are updated in accordance with the newly introduced integration
 
 * [Launching Docker commands and creating a Docker image during a build](docker.md)
 * [Running some build steps inside a Docker container, across platforms](container-wrapper.md)
-* [Automatically signing in to Docker registry before each build](container-support.md)
-* [Displaying Docker-related information in build results](container-support.md)
+* [Automatically signing in to Docker registry before each build](docker-support.md)
+* [Displaying Docker-related information in build results](docker-support.md)
 * [Running multiple containers in a build with Docker Compose](docker-compose.md)
 * [Cleaning obsolete Docker images on build agents](integrating-teamcity-with-container-managers.md#Docker+Disk+Space+Cleaner)
 

@@ -6,7 +6,7 @@ Before installing a TeamCity build agent, make sure to read the [system requirem
 Choose a convenient installation option:
 * using an [installer](#Install+from+Windows+Executable+File) on Windows
 * [installing manually from a ZIP file](#Install+from+ZIP+File) on any platform
-* preparing a Docker container based on the [official TeamCity Agent image](https://hub.docker.com/r/jetbrains/teamcity-agent/)
+* preparing a container based on the [official TeamCity Agent image](https://hub.docker.com/r/jetbrains/teamcity-agent/)
 
 ## Install from Windows Executable File
 

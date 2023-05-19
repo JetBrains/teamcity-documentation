@@ -339,7 +339,7 @@ Now you can use the credentials provided by this connection in your builds. To d
 
 ## Amazon ECR
 
-An Amazon ECR (Elastic Container Registry) connection allows accessing private and public AWS registries. With its help, the [](container-support.md) build feature can store Docker/Linux images produced by a build to AWS.
+An Amazon ECR (Elastic Container Registry) connection allows accessing private and public AWS registries. With its help, the [](docker-support.md) build feature can store Docker/LXC images produced by a build to AWS.
 
 Connection settings:
 

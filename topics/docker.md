@@ -238,7 +238,7 @@ We recommend removing (or commenting out) the `Defaults requiretty` line from th
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>
             <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
-            <a href="container-support.md">Container Support feature</a>
+            <a href="docker-support.md">Docker Support feature</a>
             <a href="docker-compose.md">Docker Compose runner</a>
             <a href="container-wrapper.md">Container Wrapper extension</a>
         </category>

@@ -25,9 +25,8 @@ See the What's New page for more responsibility-related changes: [](what-s-new-i
 Due to the implementation of [](what-s-new-in-teamcity.md#Podman+Support), the following changes were made:
 
 * The "Docker Wrapper" extension was renamed to [](container-wrapper.md).
-* The "Docker Support" build feature was renamed to [](container-support.md).
 * The "Docker Info" tab on the [](build-results-page.md) was renamed to "Container Info".
-* Adding the [](container-wrapper.md) build feature to a build configuration no longer applies the `docker.server.version exists` agent requirement.
+* Adding the [](container-wrapper.md) build feature to a build configuration no longer applies the `docker.server.version exists` agent requirement. Instead, TeamCity now defines the `docker.server.osType exists` condition. This property is synchronized with `podman.osType` so that agents with Podman installed instead of Docker are compatible with this new requirement.
 
 ### Miscellaneous Updates
 
@@ -850,11 +849,11 @@ The VCS Support plugins for [ClearCase](https://plugins.jetbrains.com/plugin/132
 
 _This issue has been fixed in TeamCity 2019.1.5._
 
-Due to recent changes in our Container Support plugin, the "[Default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default)" option becomes unavailable in the Amazon ECR connection settings.
+Due to recent changes in our Docker Support plugin, the "[Default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default)" option becomes unavailable in the Amazon ECR connection settings.
 
 If this option was previously enabled in some ECR connection and you make any changes to this connection, the state of this option will be automatically set to `false`. When any build will try to use this connection, it will fail to start with the "_Access key cannot be null_" error.
 
- To work around this problem without upgrading to 2019.1.5, download the fixed Container Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62595#focus=streamItem-27-3749459.0-0) and upload it on the __Server Administration | Plugins List__ page.
+ To work around this problem without upgrading to 2019.1.5, download the fixed Docker Support plugin from the [related issue](https://youtrack.jetbrains.com/issue/TW-62595#focus=streamItem-27-3749459.0-0) and upload it on the __Server Administration | Plugins List__ page.
 
 #### Missing packages in NuGet feed
 

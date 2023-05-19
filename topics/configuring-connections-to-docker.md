@@ -9,7 +9,7 @@ A preconfigured Docker connection allows you to:
 
 You can configure a _Docker Registry_ connection on the __Project Settings | Connections__ page. TeamCity supports connections to [docker.io](http://docker.io/) (default) or private Docker registries. More than one connection can be added to a project. The connection will be available in all the subprojects and build configurations of the current project.
 
->After configuring the Docker Registry connection for a TeamCity project, you need to select it when adding a [](container-support.md) feature to the respective build configuration.
+>After configuring the Docker Registry connection for a TeamCity project, you need to select it when adding a [](docker-support.md) feature to the respective build configuration.
 > 
 {type="note"}
 
@@ -25,7 +25,7 @@ If the protocol is not specified, the connection over `https` is used by default
 
 ## Connecting to Private Cloud Registry
 
-TeamCity supports the Azure container registry storing Docker/Linux images. You can authenticate using the [Service principal](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication#service-principal) (the principal ID and password are used as the connection credentials) or [Admin account](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication#admin-account).
+TeamCity supports the Azure container registry storing Docker and traditional LXC images. You can authenticate using the [Service principal](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication#service-principal) (the principal ID and password are used as the connection credentials) or [Admin account](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication#admin-account).
 
 Amazon Elastic Container Registry (AWS ECR) is supported: specify the AWS region and your AWS Security Credentials when configuring the connection.
 
@@ -45,7 +45,7 @@ To configure it, you need to specify locations of each agent's `.docker` directo
             <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>
             <a href="docker.md">Docker runner</a>
             <a href="docker-compose.md">Docker Compose runner</a>
-            <a href="container-support.md">Container Support feature</a>
+            <a href="docker-support.md">Docker Support feature</a>
             <a href="container-wrapper.md">Container Wrapper extension</a>
         </category>
 </seealso>

@@ -5,7 +5,7 @@ The _C# Script_ runner allows executing a [C#](https://docs.microsoft.com/en-us/
 
 With this runner, you can perform various service tasks, such as preparing a build environment, creating an OS user, or reporting to different messengers.
 
-Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [](container-wrapper.md) to learn how you can run this step inside a Docker container.
+Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [](container-wrapper.md) to learn how you can run this step inside a container.
 
 >This [blog post](https://blog.jetbrains.com/teamcity/2021/11/how-to-automate-ci-cd-tasks-with-c-scripting-in-teamcity/) describes this runner and contains two tutorials: basic "Hello World" and more advanced Telegram bot integration. It also shows an example C# Script step configuration in [Kotlin DSL](kotlin-dsl.md). 
 

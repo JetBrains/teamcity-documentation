@@ -49,7 +49,7 @@ If the start of Docker Compose was successful, the TeamCity agent will register 
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>
             <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
-            <a href="container-support.md">Container Support feature</a>
+            <a href="docker-support.md">Docker Support feature</a>
             <a href="docker.md">Docker runner</a>
             <a href="container-wrapper.md">Container Wrapper extension</a>
         </category>

@@ -137,9 +137,9 @@ curl '<TeamCity_URL>/app/https/settings/uploadCertificate' -X POST -H 'Accept: a
 
 The `TOKEN` here is your [personal token](configuring-your-user-profile.md#Managing+Access+Tokens) with the `Change HTTPS settings` permission.
 
-## Setting Up HTTPS in Docker Containers
+## Setting Up HTTPS in Containers
 
-If your TeamCity server runs in a [Linux Docker container](https://hub.docker.com/r/jetbrains/teamcity-server), add `-p 443:8443` parameter to the `docker run` command. This parameter allows TeamCity to map the non-privileged port 8443 inside a docker container to the default HTTPS port 443. As a result, TeamCity will be accessible without running the server under the root user (which is otherwise required for accessing the privileged port 443).
+If your TeamCity server runs in a [Linux container](https://hub.docker.com/r/jetbrains/teamcity-server), add `-p 443:8443` parameter to the `docker run`/`podman run` command. This parameter allows TeamCity to map the non-privileged port 8443 inside a container to the default HTTPS port 443. As a result, TeamCity will be accessible without running the server under the root user (which is otherwise required for accessing the privileged port 443).
 
 ## HTTPS Redirect Modes
 

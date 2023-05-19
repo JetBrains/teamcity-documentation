@@ -25,7 +25,7 @@ To configure a Node.js build step, just enter a script with necessary Shell comm
 
 <img src="nodejs-step.png" width="706" alt="Node.js build step"/>
 
-Currently, all Node.js steps are run inside a Docker container, which means [Docker](https://www.docker.com/) needs to be installed on build agents. TeamCity uses the `node:lts` version by default; but if there is an `.nvmrc` file inside your project, it will search for the image specification there.
+Currently, all Node.js steps are run inside a Docker/LXC container, which means [Docker](https://www.docker.com/) or [Podman](https://podman.io) needs to be installed on build agents. TeamCity uses the `node:lts` version by default; but if there is an `.nvmrc` file inside your project, it will search for the image specification there.
 
 [Read this article](nodejs.md) for more details.
 
@@ -238,9 +238,9 @@ The default policy is AUTO, which means the decision is always up to TeamCity. B
 
 [Read this article](git.md#git-checkout-policy) for more details.
 
-## Viewing thread dump of process running inside Docker container
+## Viewing thread dump of process running inside a container
 
-TeamCity allows viewing a thread dump of processes running on a build agent machine right in the Build Results. Now, you can view it even if the process runs inside a Docker container (for example, with our [](container-wrapper.md) or [](docker-compose.md) functionality). For Windows containers, TeamCity shows Java processes and their thread dumps. For Linux containers, it shows all running processes and thread dumps for Java processes.
+TeamCity allows viewing a thread dump of processes running on a build agent machine right in the Build Results. Now, you can view it even if the process runs inside a container (for example, with our [](container-wrapper.md) or [](docker-compose.md) functionality). For Windows containers, TeamCity shows Java processes and their thread dumps. For Linux containers, it shows all running processes and thread dumps for Java processes.
 
 While the build is running, click __View thread dump__ in its __Overview__.
 

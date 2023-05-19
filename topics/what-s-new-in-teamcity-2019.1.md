@@ -238,7 +238,7 @@ Use the default Maven repository location. The repository is shared between all 
 ## Other improvements
 {id="other-improvements-1"}
 
-* If the '_Container Support_' feature is added to a build configuration, the TeamCity server will automatically add an agent requirement for an installed Docker, so the builds will run on compatible agents only. 
+* If the '_Docker Support_' feature is added to a build configuration, the TeamCity server will automatically add an agent requirement for an installed Docker, so the builds will run on compatible agents only. 
 * Starting from this version, TeamCity supports Visual Studio 2019 in the related runners: [Visual Studio(sln)](visual-studio-sln.md), [MSBuild](msbuild.md), [Visual Studio Test](visual-studio-tests.md), [Inspections(ReSharper)](inspections-resharper.md), [Duplicates Finder(ReSharper)](duplicates-finder-resharper.md).
 * Investigations Auto Assigner has got a new option, '_On second failure_', which prevents user assignment for the flaky tests/problems. A user is assigned to investigate a failure only when the failure repeats itself the second time in a row.
 * New API for setting agent requirements based on build features.
@@ -256,11 +256,13 @@ Use the default Maven repository location. The repository is shared between all 
     "_A plugin was not found at path \<path\> if only dotnet version 3.0 is installed on an agent._"
     
     To fix any of these problems, we recommend installing .NET Core SDK 1.x and/or 2.1.400 or later additionally to your current SDK version.
-* If you use Docker images and Windows Server 2019 with process isolation, build agents may fail to start. To work around the issue, use the `hyper-v` isolation for Docker containers:
+* If you use Docker images and Windows Server 2019 with process isolation, build agents may fail to start. To work around the issue, use the `hyper-v` isolation for Docker/LXC containers:
 
     ```Shell 
     
-    docker run --isolation=hyperv …
+    docker run --isolation=hyperv ...
+    # or
+    podman run --isolation=hyperv ...
     ```
 
 

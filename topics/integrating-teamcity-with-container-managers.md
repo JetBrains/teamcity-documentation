@@ -4,9 +4,9 @@
 TeamCity integrates with container managers (Docker, Podman) on multiple levels.
 
 * The [Docker](docker.md) _build runner_ launches Docker commands and creates Docker images during a build.
-* The [Docker Compose](docker-compose.md) _build runner_ starts services with the help of the [Docker Compose tool](https://docs.docker.com/compose/) during a build.
-* The [Container Wrapper](container-wrapper.md) _extension_ executes build steps inside Docker/Linux containers. Supports Docker and Podman. Available for multiple runners.
-* The [Container Support](container-support.md) _build feature_ automatically signs in to Docker or Podman container registries before starting a build. This feature also adds the __Container Info__ tab of __Build Results__ with the information about the images published to a registry during the build.
+* The [](docker-compose.md) _build runner_ starts services with the help of the [Docker Compose tool](https://docs.docker.com/compose/) during a build.
+* The [](container-wrapper.md) _extension_ executes build steps inside containers. Supports Docker and Podman. Available for multiple runners.
+* The [](docker-support.md) _build feature_ automatically signs in to container registries using Docker or Podman before starting a build. This feature also adds the __Container Info__ tab of __Build Results__ with the information about the images published to a registry during the build.
 
     <img src="dk-containerInfoTab.png" width="706" alt="Container Info tab"/>
 
@@ -22,7 +22,7 @@ To run a Docker- or Podman-related operation, a build agent must be able to use 
 
 Docker can be installed on Linux, Windows, and macOS build agents.
 
-* On Linux, the Container Support integration will run if the installed Docker is detected.
+* On Linux, the Docker Support integration will run if the installed Docker is detected.
 * On Windows, the integration works for Linux and Windows container modes.
 * On macOS, the official [Docker support for Mac](https://docs.docker.com/docker-for-mac/install/) should be installed for the user running the build agent.
 
@@ -31,7 +31,7 @@ Podman is a tool designed primarily for Linux. To run on Windows and macOS, Podm
 * Specify container registry domains in the `registries.conf` file on your build agent machine. For example: `unqualified-search-registries = ["docker.io"]`. Podman and TeamCity require this list of registries to:
 
   * Resolve full container addresses when a `podman ...` command uses a short image name (for example, `podman pull ubi8` instead of `podman pull registry.access.redhat.com/ubi8:latest`).
-  * Successfully log in to a registry if your build configuration has the [](container-support.md) build feature.
+  * Successfully log in to a registry if your build configuration has the [](docker-support.md) build feature.
   
   See the following article to learn more about the `registries.conf` file: [How to manage Linux container registries](https://www.redhat.com/sysadmin/manage-container-registries).
 
@@ -49,7 +49,7 @@ Podman is a tool designed primarily for Linux. To run on Windows and macOS, Podm
 
 TeamCity checks the following [parameters](configuring-build-parameters.md) to identify the available agent software:
 
-* `container.engine` — returns "docker" or "podman", depending on the installed container manager.
+* `container.engine` — returns "docker", "podman" or "docker,podman", depending on which container manager is installed on the agent machine. If both Docker and Podman are installed, TeamCity uses Docker by default.
 
 * `docker.server.version`, `docker.version` — return versions of installed [Docker Engine](https://docs.docker.com/engine/reference/commandline/dockerd/)  and [Docker CLI](https://docs.docker.com/engine/reference/commandline/docker/), respectively.
 
@@ -74,7 +74,7 @@ Depending on the exact Docker/Podman integration you utilize, TeamCity specifies
 Docker Disk Space Cleaner is an extension to the [Free disk space](free-disk-space.md) build feature ensuring a necessary amount of disk space for a build.
 
 TeamCity regularly cleans up its related Docker images which were tagged/pulled:
-* in a build with the [](container-support.md) build feature, __or__
+* in a build with the [](docker-support.md) build feature, __or__
 * in a [Docker](docker.md) or [](docker-compose.md) build step, __or__
 * in a build step with the enabled [](container-wrapper.md) extension.
 
@@ -83,7 +83,7 @@ For such builds,
 * A TeamCity agent tracks Docker images tagged or pulled during the builds (the list of images is stored in the `buildAgent/system/docker-used-images.dat` file).
 * During clean-up / freeing disk space, the TeamCity agent tries to remove these images if they have not been used within 3 days (or 1 or 0 days, on subsequent attempts to free the disk space).
 
-Besides, TeamCity cleans local Docker Caches using the `docker system prune --volumes` command. Works for Docker v.17.06.1 or later.
+Besides, TeamCity cleans local сaches using the `docker/podman system prune --volumes` command. For Docker installations, this clean-up works for v.17.06.1 or later.
 
 ## Service Message to Report Pushed Image
 
@@ -126,7 +126,7 @@ If previously your builds were accessing Docker Hub anonymously, you can double 
             <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
             <a href="docker-compose.md">Docker Compose runner</a>
             <a href="docker.md">Docker runner</a>
-            <a href="container-support.md">Container Support feature</a>
+            <a href="docker-support.md">Docker Support feature</a>
             <a href="container-wrapper.md">Container Wrapper extension</a>
         </category>
 </seealso>

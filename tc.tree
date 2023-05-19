@@ -304,7 +304,7 @@
             <toc-element id="build-files-cleaner-swabra.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="build-cache.md" hidden="true"/>
             <toc-element id="commit-status-publisher.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="container-support.md" accepts-web-file-names="docker-support.html"/>
+            <toc-element id="docker-support.md" accepts-web-file-names="docker-support.html,container-support.html"/>
             <toc-element id="file-content-replacer.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="free-disk-space.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="golang.md" show-structure-for="chapter"/>

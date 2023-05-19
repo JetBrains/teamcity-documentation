@@ -1,7 +1,7 @@
-[//]: # (title: Container Support)
-[//]: # (auxiliary-id: Container Support)
+[//]: # (title: Docker Support)
+[//]: # (auxiliary-id: Docker Support)
 
-The _Container Support_ [build feature](adding-build-features.md) allows automatically signing in to a DockerHub or other container registry before the build start.
+The _Docker Support_ [build feature](adding-build-features.md) allows automatically signing in to a DockerHub or other container registry before the build start.
 
 Add this feature to:
 
@@ -9,7 +9,7 @@ Add this feature to:
 
 * Automatically log in to an authenticated registry before the build and log out of it after the build.
 
-* Clean up images (currently supported only for Docker);
+* Clean up local (for both Docker and Podman) and pushed to a registry (only for Docker) images;
 
 * Add the __Container Info__ tab to the _[Build Results](working-with-build-results.md)_ page. The tab provides information on operations related to the container manager used.
   
@@ -17,9 +17,9 @@ Add this feature to:
 
 Logging in and out of repositories and cleaning up images require a configured [connection to a Docker registry](configuring-connections-to-docker.md):
 
-<img src="docker-support.png" width="750" alt="Container Support build feature"/>
+<img src="docker-support.png" width="750" alt="Docker Support build feature"/>
 
->_Container Support_ is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md).
+>_Docker Support_ is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md).
 
 ## Docker Images Clean-up
 
@@ -29,11 +29,11 @@ If you have a build configuration which publishes images, you need to remove the
 
 It works as follows: when an image is published, TeamCity stores the information about the registry of the images published by the build. When the [server clean-up](teamcity-data-clean-up.md) is run and it deletes the build, all the configured connections are searched for the address of this registry, and the images published by the build are cleaned up using the credentials specified in the found connection.
 
-Clean-up is not currently available for Podman registries.
+Clean-up is not currently available for build agents using Podman.
 
 ### Clean-up of Images on Build Agent
                                    
-As part of [Free disk space](free-disk-space.md) build feature, Container Support cleans up images which were created by TeamCity builds on this build agent. The Container Support assumes, that docker images are stored under
+As part of [Free disk space](free-disk-space.md) build feature, Docker Support cleans up images which were created by TeamCity builds on this build agent. The Docker Support assumes, that docker images are stored under
 
  - `/var/lib/docker` on Linux
  - `%\ProgramData%` directory on Windows
@@ -50,8 +50,8 @@ If you need to log in to a registry requiring authentication before a build, sel
 
 ## Amazon ECR
 
-A connection to Amazon Elastic Container Registry (ECR) allows storing Docker/Linux
-images in private AWS registries. For this, such a connection needs to be selected when adding a [Container Support](container-support.md) feature to a build configuration.
+A connection to Amazon Elastic Container Registry (ECR) allows storing Docker/LXC
+images in private AWS registries. For this, such a connection needs to be selected when adding a [](docker-support.md) feature to a build configuration.
 
 Connection settings:
 
