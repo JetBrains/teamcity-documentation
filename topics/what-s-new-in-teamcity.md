@@ -232,7 +232,7 @@ Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tag
 
 
 ## REST API Updates
-{product="tc"}
+
 
 ### Manage SSH Keys
 
@@ -273,8 +273,19 @@ teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
 Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+User+Groups).
 
 
+## Additional Verification for Critical Settings
+{product="tcc"}
+
+Starting with version 2023.05, users who pass the two-factor authentication have one hour to perform security-related actions: disable 2FA, change user password and/or email, and generate access tokens. Once this period expires, users must re-confirm their identities and pass a new 2FA verification before proceeding with these actions.
+
+This new behavior adds an extra layer of protection for your TeamCity server.
+
+Learn more: [](managing-two-factor-authentication.md#Critical+Settings+Protection).
+
+
+
 ## The Sakura UI Improvements
-{product="tc"}
+
 
 ### The "Chains" Tab for Build Configurations
 
@@ -285,10 +296,12 @@ Build configuration pages now display the "Chains" tab. The page allows you to b
 Previously, this page was available only in Classic UI.
 
 ### Reorder Builds
+{product="tc"}
 
 You can now manually reorder builds in the build queue by dragging them to the desired position in the Sakura UI.
 
 ### Improved Changes Visibility
+{product="tc"}
 
 - The **Change Log** tab is now available for projects and build configurations.
 - The **Show graph** option has been implemented on all pages and tabs related to changes. With this option enabled, the changes are displayed as a graph of commits to the related VCS roots.
@@ -296,14 +309,11 @@ You can now manually reorder builds in the build queue by dragging them to the d
 <img src="dk-sakura-changelog.png" width="706" alt="Change Log tab with changes graph"/>
 
 
-## Sakura UI: The "Chains" Tab for Build Configurations
-{product="tcc"}
+### Updated Parameters Tab on the Build Results Page
 
-Build configuration pages now display the "Chains" tab. The page allows you to browse Sankey-like diagram of builds linked into a [](build-chain.md).
+We have overhauled the **Parameters** tab on the [](build-results-page.md). You can now use a search box to find required parameters, view only those parameters that were added/modified during a [custom build](running-custom-build.md), and hide parameters reported by [dependent builds](build-chain.md).
 
-<img src="dk-sakura-chains.png" width="706" alt="Build Chains in Sakura"/>
-
-Previously, this page was available only in Classic UI.
+Learn more: [](build-results-page.md#Parameters+Tab).
 
 
 ## Run Steps Only for Failed Builds

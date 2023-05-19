@@ -17,7 +17,6 @@ To select the required 2FA authentication mode, navigate to the **Administration
 
 
 ## Critical Settings Protection
-{product="tc"}
 
 If the two-factor authentication is enabled, users who pass the 2FA checkup have one hour to modify critical user settings. Once this period expires, users must pass a new 2FA verification before they can proceed with these edits.
 
@@ -27,13 +26,14 @@ Actions that are blocked until a user passes another verification include:
 * Changing user password and email
 * Generating access tokens
 
-> These actions are blocked only if an attacker makes them in the TeamCity UI. TeamCity server still accepts modification requests sent via [REST API](teamcity-rest-api.md).
+> These actions are blocked only if a user makes them in the TeamCity UI. TeamCity server still accepts modification requests sent via [REST API](teamcity-rest-api.md).
 > 
 {type="note"}
 
 This behavior adds an extra layer of protection that prevents attackers who gain access to a user's account from modifying user settings and inflicting more damage.
 
 You can modify the duration of this interval via the `teamcity.2fa.sensitive.settings.access.duration` [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
+{product="tc"}
 
 ```Plain Text
 teamcity.2fa.sensitive.settings.access.duration.seconds=45
@@ -42,7 +42,7 @@ teamcity.2fa.sensitive.settings.access.duration.minutes=5
 # or
 teamcity.2fa.sensitive.settings.access.duration.hours=3
 ```
-
+{product="tc"}
 
 ## Force 2FA for Individual User Groups
 {product="tc"}
