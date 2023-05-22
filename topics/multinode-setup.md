@@ -411,12 +411,9 @@ http {
 >
 {type="warning"}
 
-<anchor name="Matching+Proxy+Version+with+Server"/>
 
-> The proxy config sets a special header `X-TeamCity-Proxy`. It tells TeamCity that a request comes through a properly configured proxy. The header also defines a version of the proxy config: it helps ensure that the TeamCity server is compatible with the proxy configuration.
 
 > * Since users will use the proxy server URL to access the TeamCity UI, this URL must be set as the "Server URL" on the __Administration | Global Settings__ page and inside [build agents' configs](configure-agent-installation.md).
-> * The `X-TeamCity-Proxy` header tells TeamCity that a request came through a properly configured proxy. The header also defines a version of the proxy config to ensure that the TeamCity server is compatible with the proxy configuration.
 > * The configs above are designed for the two-node TeamCity setup. You can add more nodes if necessary.
 >
 {type="note"}
@@ -431,6 +428,12 @@ In comparison, the regular **NGINX** proxy with standard modules lacks these fea
 Additionally, the regular NGINX requires you to explicitly distinguish main and secondary nodes in the configuration file (the main node should be first in the list). This requirement forces you to manually update node roles when a main node transfers its responsibilities to a secondary node (for example, in case of a failover). HAProxy and NGINX Plus servers do not require you to update configuration files in the same scenario manually.
 
 Finally, configuration files of **HAProxy** and **NGINX Plus** proxy servers are easier to maintain, especially when adding new nodes to the cluster. 
+
+#### Matching Proxy Version with Server
+
+Sample [proxy configurations](#Proxy+Configuration) above set a special `X-TeamCity-Proxy` header. This header notifies TeamCity that a request comes through a properly configured proxy.
+
+The `X-TeamCity-Proxy` header also defines a version of the proxy config. If this version is incompatible with the current TeamCity version, TeamCity shows the _"Proxy configuration version mismatch"_ [health report](server-health.md). Check your proxy settings and ensure they are similar to the configuration illustrated in the [](#Proxy+Configuration) section.
 
 ### Round-Robin
 

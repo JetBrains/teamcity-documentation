@@ -69,6 +69,12 @@ To set up a high-availability TeamCity installation, you need to [configure a re
 
 TeamCity notifies you if none of the cluster nodes have a certain responsibility specific. For instance, if the "VCS repositories polling" responsibility is unchecked for all nodes, TeamCity cannot check repositories for changes and start new builds. Navigate to **Administration | Node Settings** and ensure each responsibility is assigned to at least one node.
 
+
+#### Proxy Configuration Version Mismatch
+
+TeamCity shows this warning when the value of the `X-TeamCity-Proxy` header declared in your proxy configuration indicates that the configuration is not fully compatible with your TeamCity server. Switch this documentation to the version that matches your TeamCity server and ensure your proxy settings are similar to these sample configurations: [](multinode-setup.md#Proxy+Configuration).
+
+
 ### WebSocket connection issues
 {product="tc"}
 
