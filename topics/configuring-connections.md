@@ -159,8 +159,8 @@ To create a TeamCity connection that utilizes a GitHub App:
 <li>Upload the private key sent by GitHub.</li>
 
 <li>Click <b>Save</b> to save your new connection.</li>
+</ol>
 
-<br/>
 
 <note>
 
@@ -169,7 +169,6 @@ TeamCity asks you to sign in to your GitHub account before you can use features 
 For example, if your GitHub user has no write permissions, the access token will be issued with read-only permissions. As a result, the <a href="commit-status-publisher.md">Commit Status Publisher</a> feature you configure will not be able to successfully post build statuses.
 
 </note>
-</ol>
 
 </dd>
 
