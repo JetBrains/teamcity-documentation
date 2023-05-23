@@ -16,7 +16,8 @@
         <config-sideblocks>true</config-sideblocks>
         <config-search-scopes-provider>https://data.services.jetbrains.com/search/</config-search-scopes-provider>
         <config-algloia-product-version>2023.05</config-algloia-product-version>
-        <config-versions-switcher>https://data.services.jetbrains.com/help-versions</config-versions-switcher>
+        <!--version switcher for TeamCity OnPremises-->
+        <!--<config-versions-switcher>https://data.services.jetbrains.com/help-versions</config-versions-switcher>-->
         <enable-browser-edits>true</enable-browser-edits>
         <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2023.05/</browser-edits-url>
         <disable-prev-next-links>true</disable-prev-next-links>
