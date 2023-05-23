@@ -5,6 +5,7 @@
 
 |Software|Version|
 |---|---|
+|[PowerShell](https://docs.microsoft.com/en-us/powershell/)|7.3.4|
 |[7-Zip](https://www.7-zip.org/)|22.1|
 |[Ruby](https://www.ruby-lang.org/en/)|3.1.1.1|
 |[Unity Hub](https://unity.com/unity-hub)|3.4.1.0|
