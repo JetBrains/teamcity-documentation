@@ -17,7 +17,7 @@ TeamCity 2023.05 supports Java versions 8, 11 and 17, but __Java 8 support will 
 
 * The bundled Kotlin compiler (used in [TeamCity DSL](kotlin-dsl.md)) and Dokka (the documentation engine for Kotlin) were updated to version 1.7.10.
 * The bundled Tomcat was updated to version 9.0.75.
-* Amazon Corretto Java bundled with TeamCity Windows installer and TeamCity Docker images was updated to version 17.0.7.7.1. In addition, our Docker images no longer utilize Java 8. If you relied on this version, use the `:2022.10.3` tag to pull the previous Docker image version.
+* Amazon Corretto Java bundled with TeamCity Windows installer and TeamCity Docker images was updated to version 17.0.7.7.1.
 
 ### REST API Update
 
