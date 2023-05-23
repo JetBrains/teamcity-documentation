@@ -159,6 +159,14 @@ To create a TeamCity connection that utilizes a GitHub App:
 <li>Upload the private key sent by GitHub.</li>
 
 <li>Click <b>Save</b> to save your new connection.</li>
+
+<br/>
+
+<note>
+
+TeamCity asks you to log in to GitHub before you can create a project from a GitHub App connection. Refreshable access tokens issued via this connection have the same permissions as your GitHub user. In case you have insufficient permissions, certain TeamCity functionality can be unavailable. For instance, if you have only repository "read" permissions for the given repository, you won't be able to set up the <a href="commit-status-publisher.md">Commit Status Publisher</a> feature with "Use VCS settings" authorization mode.
+
+</note>
 </ol>
 
 </dd>

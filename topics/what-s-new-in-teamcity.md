@@ -68,13 +68,13 @@ Starting with this release, TeamCity can work with GitHub and GitHub Enterprise 
 
 <img src="dk-add-GHApp-connection.png" alt="Create a GitHub App Connection" width="706"/>
 
-GitHub App connections allow you to check out GitHub.com and GitHub Enterprise repositories, share access tokens with [Commit Status Publisher](commit-status-publisher.md#GitHub) and [](pull-requests.md) build features, set up webhooks that GitHub uses to notify TeamCity about a repository change, and enable the related [authentication module](configuring-authentication-settings.md#GitHub).
+GitHub App connections allow you to check out GitHub.com and GitHub Enterprise repositories,<!--share access tokens with [Commit Status Publisher](commit-status-publisher.md#GitHub) and [](pull-requests.md) build features,--> set up webhooks that GitHub uses to notify TeamCity about a repository change, and enable the related [authentication module](configuring-authentication-settings.md#GitHub).
 
 Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 
 ### Reissue Refreshable Tokens for VCS Roots
 
-If a VCS root is configured via TeamCity [connections](configuring-connections.md) to access Git repositories hosted in Bitbucket Server, Bitbucket Cloud, GitHub (via [GitHub Apps](#Connect+to+GitHub+via+GitHub+Apps) connection) or GitLab, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
+If a VCS root is configured via TeamCity [connections](configuring-connections.md) to access Git repositories hosted in Bitbucket Server, Bitbucket Cloud or GitLab, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
 
 <img src="dk-refreshableGitToken.png" width="706" alt="Reissue Token" />
 

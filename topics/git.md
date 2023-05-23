@@ -268,7 +268,7 @@ The **Token** field displays information about the user who obtained the token a
 
 You can specify a **username** here if there is no username in the clone URL (the username specified here overrides the username from the URL).
 
-For Bitbucket Server, Bitbucket Cloud, GitHub (when configured via [GitHub Apps](configuring-connections.md#GitHub)) and GitLab you can click the *Acquire new* button to instantly reissue the token used by the VCS root with a token issued for the current user.
+For Bitbucket Server, Bitbucket Cloud and GitLab you can click the *Acquire new* button to instantly reissue the token used by the VCS root with a token issued for the current user.
 
 <img src="dk-refreshableGitToken.png" width="706" alt="Reissue Token" />
 
