@@ -13,8 +13,6 @@ TeamCity 2023.05 supports Java versions 8, 11 and 17, but __Java 8 support will 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2023-5"}
 
-
-
 * The bundled Kotlin compiler (used in [TeamCity DSL](kotlin-dsl.md)) and Dokka (the documentation engine for Kotlin) were updated to version 1.7.10.
 * The bundled Tomcat was updated to version 9.0.75.
 * Amazon Corretto Java bundled with TeamCity Windows installer and TeamCity Docker images was updated to version 17.0.7.7.1.
@@ -37,6 +35,22 @@ Due to the implementation of [](what-s-new-in-teamcity.md#Podman+Support), the f
 * The "Docker Wrapper" extension was renamed to [](container-wrapper.md).
 * The "Docker Info" tab on the [](build-results-page.md) was renamed to "Container Info".
 * Adding the [](container-wrapper.md) build feature to a build configuration no longer applies the `docker.server.version exists` agent requirement. Instead, TeamCity now defines the `docker.server.osType exists` condition. This property is synchronized with `podman.osType` so that agents with Podman installed instead of Docker are compatible with this new requirement.
+
+
+### TeamCity Metrics Updates
+
+Starting with version 2023.05, [TeamCity metrics](teamcity-monitoring-and-diagnostics.md#Metrics) accessible via the `<TeamCity_server_URL>/app/metrics` endpoint comply with the [OpenMetrics](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) specification. Due to this enhancement, "summary" metrics changed their suffixes from `_total` to `_sum`. For example, TeamCity now reports `build_queue_optimization_time_milliseconds_sum` instead of `build_queue_optimization_time_milliseconds_total`.
+
+To preserve previously collected metrics and use them along with updated data, do one of the following in your metric monitoring solution (such as [Grafana](https://grafana.com)):
+
+* (recommended) Use the `or` operator in graph settings to merge metrics with new and old suffixes. For instance:
+  ```Plain Text
+  sum(increase(vcs_changes_checking_milliseconds_sum{type="COLLECT_CHANGES"}[1m])) or 
+  sum(increase(vcs_changes_checking_milliseconds_total{type="COLLECT_CHANGES"}[1m])) 
+  ```
+* Use the Prometheus [relabeling configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config) to rename `..._sum` metrics back to `..._total` before they are written to a Prometheus database.
+
+In addition to this change, TeamCity no longer reports the "experimental" tag for metrics. Note that some metrics are still considered experimental and accessible via the `<TeamCity_server_URL>/app/metrics?experimental=true` endpoint.
 
 ### Miscellaneous Updates
 
