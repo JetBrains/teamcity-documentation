@@ -14,14 +14,13 @@ TeamCity Server is a web application that runs within a capable J2EE servlet con
 #### Supported Java Versions
 {id="Supported+Java+Versions+for+TeamCity+Server" auxiliary-id="Supported+Java+Versions+for+TeamCity+Server"}
 
-Supported Java versions: __OpenJDK and Oracle Java 8 (8u16 or later) and 11 (32 or 64 bit)__. Using 64-bit Java is recommended.
+Supported Java versions: __OpenJDK and Oracle Java 8 (8u16 or later), 11, and 17 (32 or 64 bit)__. Using 64-bit Java is recommended.
 
-The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 11__.
+The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 17__.
 
-For Apple M1 systems, consider using a different version of Java 11, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
+For Apple ARM systems (for example, Apple M1 or M2), consider using a different version of Java, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
 
->Java 8 support will be discontinued in TeamCity Server 2023.04 (to be released in April 2023). If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 before this TeamCity release.  
->Note that TeamCity is not currently compatible with Java 17, which makes Java 11 the only version that will be supported in TeamCity Server 2023.04.
+>Java 8 support will be discontinued in one of the future TeamCity Server versions. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 or 17.
 > 
 {type="warning"}
 
@@ -58,13 +57,13 @@ TeamCity Agent is a standalone Java application. It requires a Java SE JRE insta
 #### Supported Java Versions
 {id="Supported+Java+Versions+for+TeamCity+Agent" auxiliary-id="Supported+Java+Versions+for+TeamCity+Agent"}
 
-Supported Java versions: __OpenJDK and Oracle Java 8-11__. We recommend using the latest available version of JDK.
+Supported Java versions: __OpenJDK and Oracle Java 8-17__. We recommend using the latest available version of JDK.
 
-The TeamCity agent Windows installer comes __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 11__.
+The TeamCity agent Windows installer and agent Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 17__.
 
-For Apple M1 systems, consider using a different version of Java 11, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
+For Apple ARM systems (for example, Apple M1 or M2), consider using a different version of Java 17, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
 
-> Note that Java versions specified in this section are requirements to run the agent itself. Builds can utilize [other versions](predefined-build-parameters.md#Detecting+Java+on+Agent) installed on agent machines (for example, JDK 17 or JDK 19).
+> Note that Java versions specified in this section are requirements to run the agent itself. Builds can utilize [other versions](predefined-build-parameters.md#Detecting+Java+on+Agent) installed on agent machines (for example, JDK 19).
 > 
 {type="note"}
 
@@ -273,9 +272,9 @@ You can install a build agent locally on your machine, similarly to how you woul
 
 Since agents are Java applications, you need to install Java SE JRE on machines that will run self-hosted agents.
 
-Supported Java versions: OpenJDK and Oracle Java 8 - 11. We recommend using the latest available version of JDK. See this article for more information: [Configure Java for Agent](configure-java-for-agent.md).
+Supported Java versions: OpenJDK and Oracle Java 8 - 17. We recommend using the latest available version of JDK. See this article for more information: [Configure Java for Agent](configure-java-for-agent.md).
 
-> Note that Java versions specified in this section are requirements to run the agent itself. Builds can utilize [other versions](predefined-build-parameters.md#Detecting+Java+on+Agent) installed on agent machines (for example, JDK 17 or JDK 19).
+> Note that Java versions specified in this section are requirements to run the agent itself. Builds can utilize [other versions](predefined-build-parameters.md#Detecting+Java+on+Agent) installed on agent machines (for example, JDK 19).
 > 
 {type="note"}
 
