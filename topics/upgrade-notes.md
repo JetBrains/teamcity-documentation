@@ -39,18 +39,21 @@ Due to the implementation of [](what-s-new-in-teamcity.md#Podman+Support), the f
 
 ### TeamCity Metrics Updates
 
-Starting with version 2023.05, [TeamCity metrics](teamcity-monitoring-and-diagnostics.md#Metrics) accessible via the `<TeamCity_server_URL>/app/metrics` endpoint comply with the [OpenMetrics](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) specification. Due to this enhancement, "summary" metrics changed their suffixes from `_total` to `_sum`. For example, TeamCity now reports `build_queue_optimization_time_milliseconds_sum` instead of `build_queue_optimization_time_milliseconds_total`.
+Starting with version 2023.05, [TeamCity metrics](teamcity-monitoring-and-diagnostics.md#Metrics) accessible via the `<TeamCity_server_URL>/app/metrics` endpoint comply with the [OpenMetrics](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) specification. Due to this enhancement, the following changes were implemented:
+
+* "summary" metrics changed their suffixes from `_total` to `_sum`. For example, TeamCity now reports `build_queue_optimization_time_milliseconds_sum` instead of `build_queue_optimization_time_milliseconds_total`.
+* metrics that previously had the `_number` suffix no longer have it. For example, the `agents_connected_authorized_number` metric is now called `agents_connected_authorized`.
 
 To preserve previously collected metrics and use them along with updated data, do one of the following in your metric monitoring solution (such as [Grafana](https://grafana.com)):
 
-* (recommended) Use the `or` operator in graph settings to merge metrics with new and old suffixes. For instance:
+* (recommended) Use the `or` operator in graph settings to merge metrics with new and old names. For instance:
   ```Plain Text
   sum(increase(vcs_changes_checking_milliseconds_sum{type="COLLECT_CHANGES"}[1m])) or 
   sum(increase(vcs_changes_checking_milliseconds_total{type="COLLECT_CHANGES"}[1m])) 
   ```
-* Use the Prometheus [relabeling configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config) to rename `..._sum` metrics back to `..._total` before they are written to a Prometheus database.
+* Use the Prometheus [relabeling configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config) to rename metrics back to their old names before they are written to a Prometheus database.
 
-In addition to this change, TeamCity no longer reports the "experimental" tag for metrics. Note that some metrics are still considered experimental and accessible via the `<TeamCity_server_URL>/app/metrics?experimental=true` endpoint.
+In addition to these changes, TeamCity no longer reports the "experimental" tag for metrics. Note that some metrics are still considered experimental and accessible via the `<TeamCity_server_URL>/app/metrics?experimental=true` endpoint.
 
 ### Miscellaneous Updates
 
