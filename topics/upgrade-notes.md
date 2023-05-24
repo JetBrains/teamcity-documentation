@@ -56,6 +56,7 @@ In addition to this change, TeamCity no longer reports the "experimental" tag fo
 
 * Users with the "Project Developer" [role](managing-roles-and-permissions.md) can now download and view the `.teamcity/settings/buildSettings.xml` [hidden artifact](build-artifact.md#Hidden+Artifacts). Previously, this action required the "Edit project" permission that is enabled for "Project Administrator" and higher roles.
 * Agent pages no longer display the **Open SSM Terminal** action link. This functionality was deprecated in favor of more generic **Open Terminal** button. See [](what-s-new-in-teamcity.md#Interactive+Agent+Terminals) for more details.
+* Configurations with [agent-side checkout](vcs-checkout-mode.md) mode do not support postixes in checkout directory paths (for instance, `+:src/main => src/main/postfixDirectory`). If you specified a postfix in checkout rules, previous TeamCity versions silently swallowed this error and ran builds that ignored your postfixes. Starting with version 2023.05, TeamCity shows the corresponding error message and does not allow new builds to start. See this section for more information: [](git.md#Limitations).
 
 
 

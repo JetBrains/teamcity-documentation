@@ -1002,7 +1002,9 @@ For example:
 
 ```
 
-Note that the following rule **is not supported**: `+:dirA=>[prefix/]dirA/postfix`
+Note that the following rule **is not supported**: `+:dirA=>[prefix/]dirA/postfix`. If you append `[/postfix]` to the checkout directory path and the configuration's  **VCS checkout mode** is set to "Always checkout files on agent", new builds will be unable to start.
+
+<img src="dk-postfixCheckoutError.png" width="706" alt="Checkout directory path error"/>
 
 ## Known Issues
 {product="tc"}
