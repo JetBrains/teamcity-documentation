@@ -254,7 +254,7 @@ Learn more: [Manage Roles and Permissions](https://www.jetbrains.com/help/teamci
 
 ### Manage Server Authentication Settings
 
-You can now send `GET` and `PUT` requests to the `/app/rest/server/authSettings` to manage [server authentication settings](configuring-authentication-settings.md).
+You can now send `GET` and `PUT` requests to the `/app/rest/server/authSettings` endpoint to manage [server authentication settings](configuring-authentication-settings.md).
 
 Learn more: [Manage Server Authentication Settings](https://www.jetbrains.com/help/teamcity/rest/2023.05/manage-auth-settings.html#Example+1%3A+Enable+Guest+User+Access).
 
