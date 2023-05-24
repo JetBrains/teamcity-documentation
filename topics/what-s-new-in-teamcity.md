@@ -252,6 +252,12 @@ The new `/app/rest/roles` endpoint allows you to obtain, modify, and remove exis
 
 Learn more: [Manage Roles and Permissions](https://www.jetbrains.com/help/teamcity/rest/2023.05/manage-roles-and-permissions.html).
 
+### Manage Server Authentication Settings
+
+You can now send `GET` and `PUT` requests to the `/app/rest/server/authSettings` to manage [server authentication settings](configuring-authentication-settings.md).
+
+Learn more: [Manage Server Authentication Settings](https://www.jetbrains.com/help/teamcity/rest/2023.05/manage-auth-settings.html#Example+1%3A+Enable+Guest+User+Access).
+
 
 ## Two-Factor Authentication Enhancements
 {product="tc"}
