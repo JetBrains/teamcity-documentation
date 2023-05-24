@@ -62,6 +62,10 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 * Configurations with [agent-side checkout](vcs-checkout-mode.md) mode do not support postixes in checkout directory paths (for instance, `+:src/main => src/main/postfixDirectory`). If you specified a postfix in checkout rules, previous TeamCity versions silently swallowed this error and ran builds that ignored your postfixes. Starting with version 2023.05, TeamCity shows the corresponding error message and does not allow new builds to start. See this section for more information: [](git.md#Limitations).
 
 
+### Known Issues
+{id="known-issues-2023-5"}
+
+* TeamCity shows the "Docker rate limit warning" for build agents that use Podman to [pull containers](container-wrapper.md), even if the Podman client successfully authorizes before pulling an image. For agents using Docker, this warning is showed only if agents pull images without authentication, which may cause reaching the [download rate limit](integrating-teamcity-with-container-managers.md#Conforming+with+Docker+Download+Rate+Limits).
 
 
 ## Changes from 2022.10.2 to 2022.10.3
