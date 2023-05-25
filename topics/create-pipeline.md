@@ -27,6 +27,13 @@ To import the sample project:
 1. Go to __Administration | Projects__ and click __Create project__.
 2. In the _Repository URL_ field, enter the [sample repo URL](https://github.com/mkjetbrains/TodoApp-NoChain-KTS) and click __Proceed__.
 3. TeamCity will detect the `.teamcity/settings.kts` file, which corresponds to a TeamCity project's settings saved in [Kotlin format](kotlin-dsl.md). Leave the default settings and proceed.
+
+   > Choose import without synchronization when prompted. Otherwise, your project can become [non-editable via TeamCity UI](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS).
+   > 
+   > <img src="dk-import-wo-sync.png" width="706" alt="Import with no sync"/>
+   >
+   {type="note"}
+
 4. TeamCity will import the sample project's settings and redirect you to its __General Settings__ page. Here, you can scroll a bit and see the _TodoBackend_ subproject. Click it to view all the created build configurations.
 
 Now we can start chaining them!
