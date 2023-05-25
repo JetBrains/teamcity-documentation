@@ -74,6 +74,19 @@ TeamCity notifies you if none of the cluster nodes have a certain responsibility
 
 TeamCity shows this warning when the value of the `X-TeamCity-Proxy` header declared in your proxy configuration indicates that the configuration is not fully compatible with your TeamCity server. Switch this documentation to the version that matches your TeamCity server and ensure your proxy settings are similar to these sample configurations: [](multinode-setup.md#Proxy+Configuration).
 
+### HTTPS Configuration Issues
+{product="tc"}
+
+The following reports notify you about issues related to the [HTTPS Access Setup](https-server-settings.md).
+
+#### Server Root URL Uses HTTP
+
+This report is shown when you configured the HTTPS access to TeamCity, but your [server URL](configuring-server-url.md) is still set to an "http://..." address. Update your server URL to dismiss this warning.
+
+#### Domain Isolation Artifacts URL Uses HTTP
+
+This report is shown when you configured the HTTPS access to TeamCity, but your [artifacts isolation URL](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) is still set to an "http://..." address. Update your artifacts isolation URL to dismiss this warning.
+
 
 ### WebSocket connection issues
 {product="tc"}

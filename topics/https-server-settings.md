@@ -47,7 +47,7 @@ Refer to this article to learn how Let's Encrypt validates your domain ownership
     <img src="dk-https-letsencrypt2.png" width="706" alt="Installed Let's Encrypt Certificate"/>
 
 3. Choose the required [redirect mode](#HTTPS+Redirect+Modes).
-4. Update your [artifacts isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) URL from "http://..." to "https://..." in TeamCity settings. It is also recommended to manually update the [server URL](configuring-server-url.md) as well.
+4. Update your [artifacts isolation URL](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) and [server URL](configuring-server-url.md) from "http://..." to "https://..." in TeamCity settings. TeamCity shows the _"Domain isolation artifacts URL uses HTTP"_ and _"Server root URL uses HTTP"_ [health reports](server-health.md) as reminders for this step.
 
 ### Port Requirements and Manual Fetch
 
