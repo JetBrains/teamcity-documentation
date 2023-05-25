@@ -8,6 +8,17 @@ In this release cycle we implemented one of the most upvoted requests: TeamCity 
 <img src="dk-TCDark.png" width="706" alt="TeamCity Dark Theme"/>
 
 
+## Interactive Agent Terminals
+
+With this update you can open remote terminals to agent machines directly from the TeamCity UI. These terminals allow project administrators to maintain local and cloud agents and troubleshoot issues.
+
+<img src="dk-openInteractiveTerminal.gif" width="706" alt="Agent Terminal Window"/>
+
+With this new terminal in place, we removed the older **Open SSM Terminal** action link from agent pages.
+
+Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
+
+
 ## Multinode Setup Enhancements
 {product="tc"}
 
@@ -49,17 +60,6 @@ You can now [create backups](creating-backup-from-teamcity-web-ui.md) on any nod
 Clean-ups can now also be scheduled from any node with this responsibility. However, clean-ups are always executed on main nodes. This task can be performed while secondary nodes perform their regular tasks. 
 
 
-## Interactive Agent Terminals
-
-With this update you can open remote terminals to agent machines directly from the TeamCity UI. These terminals allow project administrators to maintain local and cloud agents and troubleshoot issues.
-
-<img src="dk-openInteractiveTerminal.gif" width="706" alt="Agent Terminal Window"/>
-
-With this new terminal in place, we removed the older **Open SSM Terminal** action link from agent pages.
-
-Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
-
-
 ## VCS Integrations Enhancements
 
 ### Connect to GitHub via GitHub Apps
@@ -71,16 +71,6 @@ Starting with this release, TeamCity can work with GitHub and GitHub Enterprise 
 GitHub App connections allow you to check out GitHub.com and GitHub Enterprise repositories,<!--share access tokens with [Commit Status Publisher](commit-status-publisher.md#GitHub) and [](pull-requests.md) build features,--> set up webhooks that GitHub uses to notify TeamCity about a repository change, and enable the related [authentication module](configuring-authentication-settings.md#GitHub).
 
 Learn more: [Configuring Connections](configuring-connections.md#GitHub).
-
-### Reissue Refreshable Tokens for VCS Roots
-
-If a VCS root is configured via TeamCity [connections](configuring-connections.md) to access Git repositories hosted in Bitbucket Server, Bitbucket Cloud or GitLab, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
-
-<img src="dk-refreshableGitToken.png" width="706" alt="Reissue Token" />
-
-Short-lived refreshable tokens provide more security compared to passwords or personal access tokens since the TeamCity server refreshes them automatically without sharing any related data with agents.
-
-Learn more: [Refreshable tokens](git.md#refresh-token).
 
 ### Ignore GitHub Draft Pull Requests
 {product="tc"}
@@ -98,6 +88,16 @@ When the status of the draft pull request changes to "Ready for review" in GitHu
 
 <img src="dk-pullrequests-Draft2.png" alt="Ready for review PR" width="706"/>
 
+### Reissue Refreshable Tokens for VCS Roots
+
+If a VCS root is configured via TeamCity [connections](configuring-connections.md) to access Git repositories hosted in Bitbucket Server, Bitbucket Cloud or GitLab, the "Authentication Settings" section of this root's settings now displays the **Acquire new** button. This button allows you to instantly replace the refreshable token used by the VCS Root with a new token issued for the current user.
+
+<img src="dk-refreshableGitToken.png" width="706" alt="Reissue Token" />
+
+Short-lived refreshable tokens provide more security compared to passwords or personal access tokens since the TeamCity server refreshes them automatically without sharing any related data with agents.
+
+Learn more: [Refreshable tokens](git.md#refresh-token).
+
 ### Integration with Bitbucket Server and Data Center
 {product="tc"}
 
@@ -106,45 +106,6 @@ In addition to Bitbucket Cloud, TeamCity now supports Bitbucket Server and Data 
 <img src="dk-whatsnew202303-bbserver.png" width="708" alt="TeamCity integration with Bitbucket Server and Data Center"/>
 
 Learn more: [Configuring Connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) | [Creating and Editing Projects](creating-and-editing-projects.md#Creating+project+pointing+to+Bitbucket)
-
-
-## AWS-Related Updates
-{product="tc"}
-
-<!--### Share AWS Connections with Child Projects
-
-The [](aws-credentials.md) build feature can now utilize AWS connections owned by a parent TeamCity project. Previously, you had to configure a connection and a build feature within the same project.-->
-
-<!--### Utilize Amazon Spot Placement Scores
-
-[Spot instances](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Spot+Instances+support) enable you to request unused AWS EC2 instances at steep discounts (compared to On-Demand prices). As a result, you can significantly lower costs for Amazon-hosted TeamCity agents.
-
-Starting with version 2023.05, you can allow TeamCity to request [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html) and automatically choose AWS Regions or Availability zones in which (according to these scores) your spot requests are most likely to succeed. As a result, you can expect more stable and frequently available spot instance agents.
-
-Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).-->
-
-### EC2 Instance Metadata Service v2 Support
-
-IMDSv2 is the new version of the Amazon EC2 Instance Metadata Service that [addresses a number of IMDSv1 vulnerabilities](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/).
-
-TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with both "Optional" and "Required" IMDSv2 settings. TeamCity always attempts to use IMDSv2 first, but supports older AMIs as well.
-
-### EC2 Launch Templates Customization
-
-Starting from this version, TeamCity allows customizing [Amazon EC2 launch templates](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Launch+Templates+support). You can now use the same launch template to run various instances that differ in some parameters only.
-Check the **Customize Launch Template** box and modify the launch template's values as required.
-
-<img src="dk-whatsnew-CustomizeLaunchTemplates.png" width="706" alt="Customize Launch Templates for AWS EC2"/>
-
-Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Launch+Templates+support).
-
-
-## IMDSv2 Support for Amazon Machine Images
-{product="tcc"}
-
-IMDSv2 is the new version of the Instance Metadata Service by Amazon that [addresses a number of IMDSv1 vulnerabilities](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/).
-
-TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with both "Optional" and "Required" IMDSv2 settings. TeamCity always attempts to use IMDSv2 first, but supports older AMIs as well.
 
 
 ## Podman Support
@@ -158,12 +119,6 @@ Starting with version 2023.05, you can connect to image registries, run build st
 * If you use the [](command-line.md) runner to execute `podman ...` commands, utilize new `container.engine`, `podman.version`, and `podman.osType` [parameters](configuring-build-parameters.md) to specify [agent requirements](agent-requirements.md) that ensure your builds run only on build agents with installed Podman.
 
 Learn more: [](integrating-teamcity-with-container-managers.md).
-
-
-## .NET 8 Support
-{product="tc"}
-
-TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) framework by Microsoft. This means TeamCity agents correctly recognize the corresponding SDK installed on agent machines and the [.NET build runner](net.md) successfully builds projects that target .NET 8.0.
 
 
 ## HTTPS Access Enhancements
@@ -212,7 +167,7 @@ TeamCity [](service-messages.md) allow you to report various information about t
 
 Built-in security features ensure messages cannot be sent to wrong recipients and cannot include links to external web resources that are not configured as trusted.
 
-Learn more: [Slack Messages](service-messages.md#Sending+Custom+Slack+Messages) 
+Learn more: [Slack Messages](service-messages.md#Sending+Custom+Slack+Messages)
 
 ### Add and Remove Build Tags via Service Messages
 
@@ -229,6 +184,69 @@ To add and remove tags, send the following messages:
 ```
 
 Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tags).
+
+
+## AWS-Related Updates
+{product="tc"}
+
+<!--### Share AWS Connections with Child Projects
+
+The [](aws-credentials.md) build feature can now utilize AWS connections owned by a parent TeamCity project. Previously, you had to configure a connection and a build feature within the same project.-->
+
+<!--### Utilize Amazon Spot Placement Scores
+
+[Spot instances](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Spot+Instances+support) enable you to request unused AWS EC2 instances at steep discounts (compared to On-Demand prices). As a result, you can significantly lower costs for Amazon-hosted TeamCity agents.
+
+Starting with version 2023.05, you can allow TeamCity to request [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html) and automatically choose AWS Regions or Availability zones in which (according to these scores) your spot requests are most likely to succeed. As a result, you can expect more stable and frequently available spot instance agents.
+
+Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).-->
+
+### EC2 Instance Metadata Service v2 Support
+
+IMDSv2 is the new version of the Amazon EC2 Instance Metadata Service that [addresses a number of IMDSv1 vulnerabilities](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/).
+
+TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with both "Optional" and "Required" IMDSv2 settings. TeamCity always attempts to use IMDSv2 first, but supports older AMIs as well.
+
+### EC2 Launch Templates Customization
+
+Starting from this version, TeamCity allows customizing [Amazon EC2 launch templates](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Launch+Templates+support). You can now use the same launch template to run various instances that differ in some parameters only.
+Check the **Customize Launch Template** box and modify the launch template's values as required.
+
+<img src="dk-whatsnew-CustomizeLaunchTemplates.png" width="706" alt="Customize Launch Templates for AWS EC2"/>
+
+Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Launch+Templates+support).
+
+
+## IMDSv2 Support for Amazon Machine Images
+{product="tcc"}
+
+IMDSv2 is the new version of the Instance Metadata Service by Amazon that [addresses a number of IMDSv1 vulnerabilities](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/).
+
+TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with both "Optional" and "Required" IMDSv2 settings. TeamCity always attempts to use IMDSv2 first, but supports older AMIs as well.
+
+
+## Two-Factor Authentication Enhancements
+{product="tc"}
+
+### Additional Verification for Critical Settings
+{product="tc"}
+
+Starting with version 2023.05, users who pass the two-factor authentication have one hour to perform security-related actions: disable 2FA, change user password and/or email, and generate access tokens. Once this period expires, users must re-confirm their identities and pass a new 2FA verification before proceeding with these actions.
+
+This new behavior adds an extra layer of protection for your TeamCity server.
+
+Learn more: [](managing-two-factor-authentication.md#Critical+Settings+Protection).
+
+### Force 2FA for Specific User Groups
+{product="tc"}
+
+If the global two-factor authentication mode is "Optional", you can now force individual [user groups](creating-and-managing-user-groups.md) to use 2FA. To do so, add the `teamcity.2fa.mandatoryUserGroupKey` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set its value to the required group key.
+
+```Plain Text
+teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
+```
+
+Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+User+Groups).
 
 
 ## REST API Updates
@@ -259,28 +277,10 @@ You can now send `GET` and `PUT` requests to the `/app/rest/server/authSettings`
 Learn more: [Manage Server Authentication Settings](https://www.jetbrains.com/help/teamcity/rest/2023.05/manage-auth-settings.html#Example+1%3A+Enable+Guest+User+Access).
 
 
-## Two-Factor Authentication Enhancements
+## .NET 8 Support
 {product="tc"}
 
-### Additional Verification for Critical Settings
-{product="tc"}
-
-Starting with version 2023.05, users who pass the two-factor authentication have one hour to perform security-related actions: disable 2FA, change user password and/or email, and generate access tokens. Once this period expires, users must re-confirm their identities and pass a new 2FA verification before proceeding with these actions.
-
-This new behavior adds an extra layer of protection for your TeamCity server.
-
-Learn more: [](managing-two-factor-authentication.md#Critical+Settings+Protection).
-
-### Force 2FA for Specific User Groups
-{product="tc"}
-
-If the global two-factor authentication mode is "Optional", you can now force individual [user groups](creating-and-managing-user-groups.md) to use 2FA. To do so, add the `teamcity.2fa.mandatoryUserGroupKey` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set its value to the required group key.
-
-```Plain Text
-teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
-```
-
-Learn more: [](managing-two-factor-authentication.md#Force+2FA+for+Individual+User+Groups).
+TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) framework by Microsoft. This means TeamCity agents correctly recognize the corresponding SDK installed on agent machines and the [.NET build runner](net.md) successfully builds projects that target .NET 8.0.
 
 
 ## Additional Verification for Critical Settings
@@ -291,7 +291,6 @@ Starting with version 2023.05, users who pass the two-factor authentication have
 This new behavior adds an extra layer of protection for your TeamCity server.
 
 Learn more: [](managing-two-factor-authentication.md#Critical+Settings+Protection).
-
 
 
 ## The Sakura UI Improvements
