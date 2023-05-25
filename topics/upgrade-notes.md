@@ -66,6 +66,7 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 {id="known-issues-2023-5"}
 
 * TeamCity shows the "Docker rate limit warning" for build agents that use Podman to [pull containers](container-wrapper.md), even if the Podman client successfully authorizes before pulling an image. For agents using Docker, this warning is showed only if agents pull images without authentication, which may cause reaching the [download rate limit](integrating-teamcity-with-container-managers.md#Conforming+with+Docker+Download+Rate+Limits).
+* If you have multiple projects with [GitHub App connections](configuring-connections.md#GitHub) to the same GitHub App, a [webhook](configuring-vcs-post-commit-hooks-for-teamcity.md) for only the first connection detected by TeamCity is functional. Projects with other connections keep polling their corresponding repositories for changes.
 
 
 ## Changes from 2022.10.2 to 2022.10.3
