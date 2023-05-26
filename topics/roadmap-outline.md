@@ -7,10 +7,10 @@ __Current TeamCity Version is 2023.05__
 
 ### Next Major Release
 
-TeamCity 2023.04 feature release does not yet have dates planned, but it is likely to happen in the second half of April 2023.
+We expect to release the next major TeamCity version (TeamCity 2023.11) in the second half of November 2023.
 
 ### Next BugFix Release
 
-No specific dates. Bugfix updates will be released with version 2022.10.x, as soon as we address critical issues discovered in existing releases. Typically, once a month.
+No specific dates. Bugfix updates are released as soon as we address critical issues discovered in existing releases (typically, once a month). Bugfix updates for TeamCity 2023.05 will be released as versions 2023.05.x.
 
-Read about [TeamCity Release Cycle](teamcity-release-cycle.md).
+See also: [TeamCity Release Cycle](teamcity-release-cycle.md).
