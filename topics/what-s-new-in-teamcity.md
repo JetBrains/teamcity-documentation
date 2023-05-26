@@ -388,6 +388,19 @@ Added two new endpoints that you can check by sending GET requests to obtain the
 
 
 
+
+## Upgrade Notes
+{product="tc"}
+
+Before upgrading, we highly recommend reading about important changes in version [2023.05 compared to 2022.10.x](upgrade-notes.md#Changes+from+2022.10.3+to+2023.05).
+
+## Fixed Issues
+{product="tc"}
+
+See [TeamCity 2023.05 release notes](teamcity-2023-05-release-notes.md).
+
+
+
 ## Roadmap
 
 See the [TeamCity roadmap](https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap) to learn about future updates.
