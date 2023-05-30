@@ -22,8 +22,6 @@ __26 May 2023__
 
 **[TW-66716](https://youtrack.jetbrains.com/issue/TW-66716/Implement-GitHub-App-connection)** — Implement GitHub App connection
 
-**[TW-79967](https://youtrack.jetbrains.com/issue/TW-79967/Support-for-preserving-the-file-path-when-publishing-an-archived-artifact)** — Support for preserving the file path when publishing an archived artifact
-
 **[TW-76748](https://youtrack.jetbrains.com/issue/TW-76748/Terminal-session-to-agents-in-one-click)** — Terminal session to agents in one click
 
 **[TW-74397](https://youtrack.jetbrains.com/issue/TW-74397/Allow-to-generate-a-new-SSH-key-from-the-TeamCity-web-UI)** — Allow to generate a new SSH key from the TeamCity web UI
