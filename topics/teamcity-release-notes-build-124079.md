@@ -25,7 +25,7 @@ __14 December 2022__
 
 ### Bug
 
-**[TW-78291](https://youtrack.jetbrains.com/issue/TW-78291/number-suffix-contradicts-to-metric-name-Prometheus-convention)** — _number suffix contradicts to metric name Prometheus convention
+**[TW-78291](https://youtrack.jetbrains.com/issue/TW-78291/number-suffix-contradicts-to-metric-name-Prometheus-convention)** — number suffix contradicts to metric name Prometheus convention
 
 **[TW-62983](https://youtrack.jetbrains.com/issue/TW-62983/Reason-of-build-failure-is-collapsed-in-build-log-in-the-experimental-UI)** — Reason of build failure is collapsed in build log in the experimental UI
 

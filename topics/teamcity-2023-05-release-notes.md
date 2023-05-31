@@ -522,7 +522,7 @@ __26 May 2023__
 
 **[TW-78802](https://youtrack.jetbrains.com/issue/TW-78802/Wait-reasons-for-a-build-sitting-in-the-queue-are-not-available-on-the-secondary-node)** — Wait reasons for a build sitting in the queue are not available on the secondary node
 
-**[TW-78291](https://youtrack.jetbrains.com/issue/TW-78291/number-suffix-contradicts-to-metric-name-Prometheus-convention)** — _number suffix contradicts to metric name Prometheus convention
+**[TW-78291](https://youtrack.jetbrains.com/issue/TW-78291/number-suffix-contradicts-to-metric-name-Prometheus-convention)** — number suffix contradicts to metric name Prometheus convention
 
 **[TW-78690](https://youtrack.jetbrains.com/issue/TW-78690/Avoid-removing-data-from-buildproject-table-in-parallel)** — Avoid removing data from build_project table in parallel
 
