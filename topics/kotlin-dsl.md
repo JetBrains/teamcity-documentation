@@ -77,12 +77,13 @@ When creating an empty project, that's what you see in `settings.kts` in your ID
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.*
 /* some comment text */
-version = "2022.04"
+version = "%product-version%"
 
 project {
 }
 
 ```
+{interpolate-variables="true"}
 
 Here, `project {}` represents the current project whose settings you'll define in the DSL (in DSL code it is sometimes referenced as `_Self`). This is the same project where you enabled versioned settings on the previous step. This project ID and name can be accessed via a special `DslContext` object but cannot be changed via the DSL code.
 
@@ -94,7 +95,7 @@ The following examples shows how to add a build configuration with a command lin
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.script 
 
-version = "2022.04"
+version = "%product-version%"
 
 project {
   buildType {
@@ -108,6 +109,7 @@ project {
   }
 }
 ```
+{interpolate-variables="true"}
 
 <anchor name="id-or-name"/>
 
@@ -119,7 +121,7 @@ There is also another way to define the same build configuration:
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.script 
 
-version = "2022.04"
+version = "%product-version%"
 
 project {
   buildType(HelloWorld)
@@ -134,6 +136,7 @@ object HelloWorld: BuildType({
     }
 })
 ```
+{interpolate-variables="true"}
 
 In this case the usage of the `id()` function call is optional because TeamCity will generate the id based on the class name (`HelloWorld` in our case).
 
@@ -472,11 +475,12 @@ In the non-portable format each project has the following `settings.kts` file:
 package MyProject
 import jetbrains.buildServer.configs.kotlin.*
 /* ... */
-version = "2022.04"
+version = "%product-version%"
 
 project(MyProjectId.Project)
 
 ```
+{interpolate-variables="true"}
 
 This is the entry point for project settings generation. Basically, it represents a Project instance which generates project settings.
 
