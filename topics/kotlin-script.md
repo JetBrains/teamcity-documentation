@@ -190,13 +190,14 @@ JVM command line parameters
 
 <td>
 
-Specify JVM command line parameters: for example, _maximum heap size_ or parameters enabling _remote debugging_. These values are passed by the JVM used to run your build.
+Additional JVM command line parameters allow you to set initial and maximum heap sizes, enable additional logging, select the required bytecode verifier mode, and more.
 
-Example:
+You can specify both standard (begin with `-`, for instance `-verbose:[class|module|gc|jni]` or `--dry-run`) and non-standard (begin with `-X`, for instance `-Xmx<size>` or `-XstartOnFirstThread`) JVM options.
+
+To specify multiple command line parameters, use space as a separator. For example:
 
 ```Shell
--Xmx512m -Xms256m
-
+-verbose:gc -Xdiag -Xcomp -Xmx512m -Xms256m
 ```
 
 </td>
