@@ -412,6 +412,7 @@
          <toc-element id="azure-board-work-items.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Azure Board Work Items" accepts-web-file-names-ref="azure-board-work-items"/>
          <toc-element id="youtrack.md" show-structure-for="chapter" show-structure-depth="4" toc-title="YouTrack"/>
       </toc-element>
+      <toc-element id="teamcity-webhooks.md"/>
       <toc-element id="mapping-external-links-in-comments.md"/>
       <toc-element id="external-changes-viewer.md"/>
       <toc-element id="installing-tools.md">
@@ -423,7 +424,7 @@
          <toc-element id="windows-tray-notifier.md" show-structure-for="chapter" show-structure-depth="4" hidden="true"/>
       </toc-element>
    </toc-element>
-   <toc-element id="extending-teamcity.md" toc-title="Extending TeamCity and Using REST API for Integration">
+    <toc-element id="extending-teamcity.md" toc-title="Extending TeamCity and Using REST API for Integration">
       <toc-element id="teamcity-rest-api.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="rest-api"/>
       <toc-element id="build-script-interaction-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4">
          <toc-element id="service-messages.md" show-structure-for="chapter" show-structure-depth="4"/>
