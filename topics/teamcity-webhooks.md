@@ -19,81 +19,73 @@ TeamCity can send payloads to the target URL when a new build starts, an agent u
    
 3. Specify the list of events that should trigger sending POST requests. To do this, create the `teamcity.internal.webhooks.events` configuration parameter for those TeamCity projects whose events you need to track.
 
-   The table below enumerates available `teamcity.internal.webhooks.events` parameter values. Use a semicolon (`;`) as a separator for multiple values.
+   The list below enumerates available `teamcity.internal.webhooks.events` parameter values. Use a semicolon (`;`) as a separator for multiple values.
+
+   <dl>
+   <dt>AGENT_REGISTRED</dt>
+   <dd>
+   <b>Tracked Event:</b> A new build agent connected to the TeamCity server and obtained an <a href="configure-agent-installation.md#General+Agent+Configuration">authorization token</a>.<br/>
+   <b>Parent Project:</b> &lt;Root project&gt; only<br/>
+   <b>REST API Payload Schema:</b> <a href="https://www.jetbrains.com/help/teamcity/rest/agent.html#Schema">#/definitions/agent</a>
+   </dd>
    
-   <table header-style="top">
+   <dt>AGENT_UNREGISTERED</dt>
+   <dd>
+   <b>Tracked Event:</b> A build agent stopped and disconnected from the server. This can happen when an agent software needs an upgrade or when you manually stop the agent service.<br/>
+   <b>Parent Project:</b> &lt;Root project&gt; only<br/>
+   <b>REST API Payload Schema:</b> <a href="https://www.jetbrains.com/help/teamcity/rest/agent.html#Schema">#/definitions/agent</a>
+   </dd>
    
-   <tr>
-   <td>Value</td>
-   <td>Tracked Event</td>
-   <td>Parent Project</td>
-   <td>Payload Schema</td>
-   </tr>
+   <dt>AGENT_REMOVED</dt>
+   <dd>
+   <b>Tracked Event:</b> A build agent was removed.<br/>
+   <b>Parent Project:</b> &lt;Root project&gt; only<br/>
+   <b>REST API Payload Schema:</b> <a href="https://www.jetbrains.com/help/teamcity/rest/agent.html#Schema">#/definitions/agent</a>
+   </dd>
    
-   <tr>
-   <td><code>AGENT_REGISTERED</code></td>
-   <td>A new build agent connected to the TeamCity server and obtained an <a href="configure-agent-installation.md#General+Agent+Configuration">authorization token</a>.</td>
-   <td>&lt;Root&gt; project only</td>
-   <td><a href="https://www.jetbrains.com/help/teamcity/rest/agent.html#Schema">Agent</a></td>
-   </tr>
+   <dt>BUILD_STARTED</dt>
+   <dd>
+   <b>Tracked Event:</b> A build started. Follows the <code>BUILD_TYPE_ADDED_TO_QUEUE</code> and <code>CHANGES_LOADED</code> events.<br/>
+   <b>Parent Project:</b> Any project.<br/>
+   <b>REST API Payload Schema:</b> <a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">#/definitions/build</a>
+   </dd>
    
-   <tr>
-   <td><code>AGENT_UNREGISTERED</code></td>
-   <td>A build agent stopped and disconnected from the server. This can happen when an agent software needs an upgrade or when you manually stop the agent service.</td>
-   <td>&lt;Root&gt; project only</td>
-   <td><a href="https://www.jetbrains.com/help/teamcity/rest/agent.html#Schema">Agent</a></td>
-   </tr>
+   <dt>BUILD_FINISHED</dt>
+   <dd>
+   <b>Tracked Event:</b> A build finishes, regardless of whether it failed or was successful.<br/>
+   <b>Parent Project:</b> Any project.<br/>
+   <b>REST API Payload Schema:</b> <a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">#/definitions/build</a>
+   </dd>
    
-   <tr>
-   <td><code>AGENT_REMOVED</code></td>
-   <td>A build agent was removed.</td>
-   <td>&lt;Root&gt; project only</td>
-   <td><a href="https://www.jetbrains.com/help/teamcity/rest/agent.html#Schema">Agent</a></td>
-   </tr>
+   <dt>BUILD_INTERRUPTED</dt>
+   <dd>
+   <b>Tracked Event:</b> A running build was canceled. Canceled builds do not trigger the <code>BUILD_FINISHED</code> event.<br/>
+   <b>Parent Project:</b> Any project.<br/>
+   <b>REST API Payload Schema:</b> <a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">#/definitions/build</a>
+   </dd>
    
-   <tr>
-   <td><code>BUILD_STARTED</code></td>
-   <td>A build started. Follows the <code>BUILD_TYPE_ADDED_TO_QUEUE</code> and <code>CHANGES_LOADED</code> events.</td>
-   <td>Any project</td>
-   <td><a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">Build</a></td>
-   </tr>
+   <dt>CHANGES_LOADED</dt>
+   <dd>
+   <b>Tracked Event:</b> TeamCity successfully collected changes from a remote repository (or ensured no new changes are present) and is ready to execute build steps.<br/>
+   <b>Parent Project:</b> Any project.<br/>
+   <b>REST API Payload Schema:</b> <a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">#/definitions/build</a>
+   </dd>
    
-   <tr>
-   <td><code>BUILD_FINISHED</code></td>
-   <td>A build finishes, regardless of whether it failed or was successful.</td>
-   <td>Any project</td>
-   <td><a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">Build</a></td>
-   </tr>
+   <dt>BUILD_TYPE_ADDED_TO_QUEUE</dt>
+   <dd>
+   <b>Tracked Event:</b> A build was initiated and placed in the build queue.<br/>
+   <b>Parent Project:</b> Any project.<br/>
+   <b>REST API Payload Schema:</b> <a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">#/definitions/build</a>
+   </dd>
    
-   <tr>
-   <td><code>BUILD_INTERRUPTED</code></td>
-   <td>A running build was canceled. Canceled builds do not trigger the <code>BUILD_FINISHED</code> event.</td>
-   <td>Any project</td>
-   <td><a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">Build</a></td>
-   </tr>
-   
-   <tr>
-   <td><code>CHANGES_LOADED</code></td>
-   <td>TeamCity successfully collected changes from a remote repository (or ensured no new changes are present) and is ready to execute build steps.</td>
-   <td>Any project</td>
-   <td><a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">Build</a></td>
-   </tr>
-   
-   <tr>
-   <td><code>BUILD_TYPE_ADDED_TO_QUEUE</code></td>
-   <td>A build was initiated and placed in the build queue.</td>
-   <td>Any project</td>
-   <td><a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">Build</a></td>
-   </tr>
-   
-   <tr>
-   <td><code>BUILD_PROBLEMS_CHANGED</code></td>
-   <td>The list of build problems changed (compared to the previous run of the same build configuration).</td>
-   <td>Any project</td>
-   <td><a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">Build</a></td>
-   </tr>
-   
-   </table>
+   <dt>BUILD_PROBLEMS_CHANGED</dt>
+   <dd>
+   <b>Tracked Event:</b> The list of build problems changed (compared to the previous run of the same build configuration).<br/>
+   <b>Parent Project:</b> Any project.<br/>
+   <b>REST API Payload Schema:</b> <a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">#/definitions/build</a>
+   </dd>
+   </dl>
+
 
 4. Perform an action that triggers tracked events (for instance, run a new build to trigger the `BUILD_TYPE_ADDED_TO_QUEUE` &gt; `CHANGES_LOADED` &gt; `BUILD_STARTED` &gt; `BUILD_FINISHED` chain) and ensure your target URL receives corresponding POST requests.
 
