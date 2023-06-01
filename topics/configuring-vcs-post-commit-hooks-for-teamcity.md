@@ -7,6 +7,10 @@ To avoid background polling, it is possible to set up a post-commit hook on the 
 
 >If you are using GitHub, try the external [TeamCity Commit Hooks plugin](https://github.com/JetBrains/teamcity-commit-hooks)
 
+> This article explains how to configure VCS webhooks that notify TeamCity about new repository changes. To read about TeamCity webhooks that notify third-party services about specific TeamCity events (starting and canceling builds, registering new agents, and so on), refer to the following article instead: [](teamcity-webhooks.md).
+>
+{type="note"}
+
 ## Overview
 
 Even with commit hooks configured and working properly, TeamCity still makes requests for changes on the server start and on each build queuing (or starting) to ensure the latest changes are used even if commit hooks stopped to function.

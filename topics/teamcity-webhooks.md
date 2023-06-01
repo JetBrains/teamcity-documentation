@@ -1,10 +1,12 @@
 [//]: # (title: TeamCity Webhooks)
 
-
-
 Webhooks are automated HTTP-based messages sent from apps or services when a certain event occurs. Using webhooks, you can set up an event-driven communication between two APIs.
 
 TeamCity can send payloads to the target URL when a new build starts, an agent unregisters, the server collects changes from a remote repository, and more.
+
+> This article explains how to configure webhooks that notify third-party services about specific TeamCity events. To read about VCS webhooks that notify TeamCity about new repository changes, refer to this article instead: [](configuring-vcs-post-commit-hooks-for-teamcity.md).
+> 
+{type="note"}
 
 ## Enable Webhooks
 
