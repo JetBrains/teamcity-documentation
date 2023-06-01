@@ -307,6 +307,7 @@
             <toc-element id="azure-board-work-items.md" show-structure-for="chapter" show-structure-depth="4" toc-title="Team Foundation Work Items"/>
             <toc-element id="youtrack.md" show-structure-for="chapter" show-structure-depth="4" toc-title="YouTrack"/>
         </toc-element>
+        <toc-element id="teamcity-webhooks.md"/>
         <toc-element id="installing-tools.md">
             <toc-element id="intellij-platform-plugin.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="intellij-platform-plugin-compatibility.md" hidden="true"/>
