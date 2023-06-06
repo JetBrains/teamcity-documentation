@@ -23,7 +23,7 @@ In this walkthrough, you will create multiple build configurations, bind them in
 >
 {type="note"}
 
-### Prerequisite: Create a Sample Project
+### Create a Sample Project
 
 In this step, you will create a project with an empty build configuration and a subproject with five build configurations that build, test, and publish .NET/.NET Framework projects under different platforms.
 
@@ -307,7 +307,7 @@ object Building_BuildConsoleWebLinuxX64 : BuildType({
 </tabs>
 
 
-### Prerequisite: Set Up a Build Chain
+### Set Up a Build Chain
 
 In this step you will create [snapshot dependencies](snapshot-dependencies.md) to bind build configurations in a single chain.
 
@@ -433,7 +433,7 @@ object Building_BuildConsoleWebLinuxX64 : BuildType({
 
 </tabs>
 
-### Composite Configurations
+### Create a Composite Configuration
 
 You can choose a build configuration type in the **General** tab of configuration settings. In this sample chain, you can change the *"Build All"* configuration type to "Composite".
 
@@ -508,7 +508,7 @@ The **Tests** tab of a composite build aggregates tests and shows all passed, fa
 
 #### Artifacts
 
-Neither regular nor composite builds aggregate artifacts from builds in their chains. To show artifacts produced by regular builds in the composite build's **Artifacts** tab, add corresponding artifact dependencies and set up required artifacts rules (see steps 4 and 5 in the [](#Prerequisite%3A+Set+Up+a+Build+Chain) section).
+Neither regular nor composite builds aggregate artifacts from builds in their chains. To show artifacts produced by regular builds in the composite build's **Artifacts** tab, add corresponding artifact dependencies and set up required artifacts rules (see steps 4 and 5 in the [](#Set+Up+a+Build+Chain) section).
 
 <img src="dk-compositeConf-artifacts.png" width="706" alt="Artifacts of a composite build"/>
 
