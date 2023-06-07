@@ -28,6 +28,7 @@ Before upgrading TeamCity:
 * Carefully review the __[Upgrade Notes](upgrade-notes.md)__.
 * Consider probing the upgrade on a [test server](how-to.md#Test-drive+Newer+TeamCity+Version+before+Upgrade).
 * If you have non-bundled plugins installed, check plugin pages for compatibility with the new version and upgrade/uninstall the plugins if necessary.
+* Make sure that TeamCity is running under a user account that has read and write permissions for both the installation and [TeamCity data](teamcity-data-directory.md) directories.
 
 To upgrade the server:
 1. [Back up the current TeamCity data](teamcity-data-backup.md) including settings, database, and supplementary data. You will need the backup to roll back to the previous version in the unlikely event of the upgrade failure.
@@ -213,6 +214,7 @@ To upgrade the service wrapper manually, do the following:
 <note>
 
 This procedure is applicable ONLY to an agent running with _new_ service wrapper. Make sure you are not running the __agentd__ service.
+
 </note>
 
 <seealso product="tc">
