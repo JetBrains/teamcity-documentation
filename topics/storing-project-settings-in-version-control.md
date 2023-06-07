@@ -97,7 +97,17 @@ If this option is disabled, the [security implications](#Implications+of+Storing
 [//]: # (AltHead: tokensGen)
 
 If you need to add a password (or other secure value) to the versioned settings not via the TeamCity UI (for example, via Kotlin DSL), you can generate a token to be used in the settings instead of this password.   
-In the __Project Settings__, select _Generate token for a secure value_ in the __Actions__ drop-down menu. Enter the password and click __Generate Token__. The generated token will be stored on the server. You can copy and use it in the project configuration files instead of the password.
+In the __Project Settings__, select _Generate token for a secure value_ in the __Actions__ drop-down menu. Enter the password and click __Generate Token__. The generated token will be stored on the server. You can copy and [use it in the project configuration files](kotlin-dsl.md#Working+with+secure+values+in+DSL) instead of the password.
+
+```Kotlin
+params {
+    password("<parameter_name>", "credentialsJSON:<token>")
+}
+```
+
+> You can use tokens to reference secure values only in configuration files. If you insert "credentialsJSON:&lt;token&gt;" as a value of a [password parameter](typed-parameters.md#Password+Type) in TeamCity UI, TeamCity will not retrieve the token's underlying secure value. Instead, the "credentialsJSON:&lt;token&gt;" string itself will be used as an actual password value.
+>
+{type="note"}
 
 You can also generate new secure tokens on the __Tokens__ tab of the project __Versioned Settings__ section. The tab is available for projects with the enabled "_[Store secure values outside of VCS](#Storing+Secure+Settings)_" option.
 
