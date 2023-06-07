@@ -18,7 +18,7 @@ After configuring the proxy, remember to also set the new address as the _Server
 <chunk include-id="azure-devops">
 
 There are two types of Azure DevOps connections in TeamCity:
-* __Azure DevOps OAuth 2.0__ allows signing in to TeamCity via an Azure DevOps Services account and creating TeamCity projects from Azure Git and TFVC repositories.
+* __Azure DevOps OAuth 2.0__ allows signing in to TeamCity via an Azure DevOps Services account and creating TeamCity projects from Azure Git repositories.
 * __Azure DevOps PAT__ allows creating TeamCity projects from Azure Git and TFVC repositories.
 
 <anchor name="azure-devops-connection"/>
