@@ -91,10 +91,14 @@ and the new build is placed in the position `i`, such that
 
 We use the following formula to recalculate priorities of builds in the queue:
 
+<!--
 `buildPriority = a * timeSpentInTheQueue / estimatedBuildDuration + b * buildConfigurationPriority`
 
 where `a` and `b` are configurable coefficients ([internal properties](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.buildqueue.waitWeight` and `teamcity.buildqueue.priorityWeight` respectively) 
 with the default values of `1.0`. Changing internal properties requires the server restart.
+-->
+
+`buildPriority = (timeSpentInTheQueue / estimatedBuildDuration) + buildConfigurationPriority`
 
 So when the build waits in the queue for the amount of time that equals to the estimated build duration, 
 its priority is increased by one. 
