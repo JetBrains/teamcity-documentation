@@ -31,6 +31,7 @@ To update to 64-bit Java, either use the bundled version of Java or:
 2. [Set JVM memory options](server-startup-properties.md). It is recommended to set the `-Xmx4g` option for 64-bit JVM.
 
 ## Install Non-Bundled Version of Tomcat
+{product="tc"}
 
 The TeamCity Server distributions include a Tomcat version tested to work fine with the current version. You can use an alternative Tomcat version, but note that other combinations are not guaranteed to work correctly.
 
@@ -46,6 +47,7 @@ When upgrading the version of Tomcat to be used by TeamCity, we suggest that you
     * delete the default Tomcat `webapps/ROOT` directory and replace it with the one provided by TeamCity
 
 ## Autostart TeamCity Server on macOS
+{product="tc"}
 
 Starting up the TeamCity server on macOS is quite similar to starting Tomcat on macOS.
 1. Install TeamCity and make sure it works if started from the command line with `bin/teamcity-server.sh start`. This instruction assumes that TeamCity is installed to `/Library/TeamCity`.
@@ -148,9 +150,9 @@ You might want to increase the number of agents when you see:
 
 We've seen patterns of having an agent per each 20 build configurations (types of builds). Or a build agent per 1-2 developers.
 
-## TeamCity Security Notes
+<!--## TeamCity Security Notes
 
-The contents of this section have been moved to the [dedicated article](security-notes.md).
+The contents of this section have been moved to the [dedicated article](security-notes.md).-->
 
 <anchor name="HowTo...-ConfigureNewlyInstalledMySQLServer"/>
 
@@ -598,9 +600,13 @@ Also there is an ability to delete many builds from the build queue in a single 
 ## Automatically create or change TeamCity build configuration settings
 
 If you need a level of automation and web administration UI does not suite your needs, there several possibilities:
+
 * use [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
 * change configuration files directly on disk (see more at `<[TeamCity Data Directory](teamcity-data-directory.md)>`)
+  {product="tc"}
 * write a TeamCity Java plugin that will perform the tasks using [open API](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).
+
+
 
 ## Attach Cucumber Reporter to Ant Build
 
@@ -653,22 +659,24 @@ This functionality is provided by [REST API](https://www.jetbrains.com/help/team
 
 ## Set up Deployment for My Application in TeamCity
 
-TeamCity has enough features to handle orchestration part of the deployments with the actual deployment logic configured in the build script / build runner. TeamCity supports a variety of generic build tools, so any specific tool can be run from within TeamCity. To ease specific tool usage, it is possible to wrap it into a meta-runner or write a custom plugin for that.
+TeamCity has multiple features to handle orchestration part of the deployments with the actual deployment logic configured in the build script / build runner. TeamCity supports a variety of generic build tools, so any specific tool can be run from within TeamCity. To ease specific tool usage, it is possible to wrap it into a meta-runner or write a custom plugin for that.
+
+See the following articles for more information: [](deploy-build.md), [](deployment-build-configuration.md).
 
 In general, setup steps for configuring deployments are:
 1. Write a build script that will perform the deployment task for the binary files available on the disk. (e.g. use Ant or MSBuild for this. For typical deployment transports use [Deployer](deployers.md) runners). See also [Integrate with Build and Reporting Tools](#Integrate+with+Build+and+Reporting+Tools). You can use [Meta-Runner](working-with-meta-runner.md) to reuse a script with convenient UI.
 2. Create a build configuration in TeamCity that will execute the build script and perform the actual deployment. If the deployment is to be visible or startable only by the limited set of users, place the build configuration in a separate TeamCity project and make sure the users have appropriate permissions in the project.
 3. In this build configuration configure [artifact dependency](dependent-build.md#Artifact+Dependency) on a build configuration that produces binaries that need to be deployed.
-4. Configure one of the available triggers in the deploying build configuration if you need the deployment to be triggered automatically (e.g. to deploy last successful of last pinned build), or use "Promote" action in the build that produced the binaries to be deployed.
+4. Configure one of the available triggers in the deploying build configuration if you need the deployment to be triggered automatically (e.g. to deploy last successful of last pinned build), or use "Deploy" action in the build that produced the binaries to be deployed.
 5. Consider using [snapshot dependencies](dependent-build.md#Snapshot+Dependency) in addition to artifact ones and check [Build Chains](build-chain.md) tab to get the overview of the builds. In this case artifact dependency should use "Build from the same chain" option.
 6. If you need to parametrize the deployment (e.g. specify different target machines in different runs), pass parameters to the build script using [custom build run dialog](running-custom-build.md). Consider using [Typed Parameters](typed-parameters.md) to make the custom run dialog easier to use or handle passwords.
-7. If the deploying build is triggered manually consider also adding commands in the build script to pin and tag the build being deployed (via sending a [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Manage+Build+Tags) request). You can also [use a build number](#Share+the+Build+number+for+Builds+in+a+Chain+Build) from the build that generated the artifact.
+7. If the deploying build is triggered manually consider also adding commands in the build script to pin and tag the build being deployed (via sending a [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Manage+Build+Tags) request or a [Service Message](service-messages.md#Adding+and+Removing+Build+Tags)). You can also [use a build number](#Share+the+Build+number+for+Builds+in+a+Chain+Build) from the build that generated the artifact.
 
 Further recommendations:
 * Setup a separate build configurations for each target environment
 * Use build's Dependencies tab for navigation between build producing the binaries and deploying builds/tasks
 * If necessary, use parameter with "prompt" display mode to ask for "[confirmation](https://youtrack.jetbrains.com/issue/TW-8284#comment=27-290611)" on running a build
-* [Change title](https://youtrack.jetbrains.com/issue/TW-20617#comment=27-527943) of the build configuration "Run" button
+* [Change title](https://youtrack.jetbrains.com/issue/TW-20617#comment=27-527943) of the build configuration "Run" button. Buttons of [Deployment configurations](deployment-build-configuration.md) automatically change their titles to "Deploy".
 
 
 [//]: # (Internal note. Do not delete. "How To...d160e2430.txt")
