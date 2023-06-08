@@ -36,16 +36,16 @@ The project configuration schema accommodates for default templates.
 
 ```Shell
 object Project : Project({
-    uuid = "2b241ffb-9019-4e60-9a3a-d5475ab1f312"
-    extId = "ExampleProject"
-    parentId = "_Root"
-    name = "Example Project"
-    defaultTemplate = "ExampleProject_MyDefaultTemplate"
-    ...
-    features {
-        ...
-    }
-    ...
+    uuid = "2b241ffb-9019-4e60-9a3a-d5475ab1f312"
+    extId = "ExampleProject"
+    parentId = "_Root"
+    name = "Example Project"
+    defaultTemplate = "ExampleProject_MyDefaultTemplate"
+    ...
+    features {
+        ...
+    }
+    ...
 })
 ```
 
@@ -77,7 +77,7 @@ When a build configuration is detached from some of its templates, all the effec
 
 * XML: If a build configuration is attached to a single template, the resulting config XML format stays the same as it was before (`ref` attribute of the `settings` element). If it is attached to a number of templates, then references to them are stored in a separate element under the `settings` node, as follows:
 
-```Shelll
+```Shell
 
 <inherits>
 <ref id="Template1_ExternalId" />
