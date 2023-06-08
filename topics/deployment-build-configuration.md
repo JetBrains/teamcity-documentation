@@ -81,7 +81,7 @@ object DeploymentConfigsProject : Project({
 6. Since we need to upload generated containers, add the [](docker-support.md) build feature that uses a Docker connection created in the [](#Create+a+Deployment+Subproject) section.
 7. Add three build steps to your configuration:
 
-   * Step #1 — the [Docker](docker.md) runner that pulls (or updates, if already pulled) a required [Windows Nano Server](https://mcr.microsoft.com/en-us/product/windows/nanoserver/about) image.
+   * Step #1 — the [Docker](docker.md) runner that pulls (or updates, if already pulled) a required [.NET Runtime container](https://mcr.microsoft.com/product/dotnet/runtime/about) image.
    * Step #2 — the [Docker](docker.md) runner that builds an image using instructions in `context/console.windows.dockerfile`.
    * Step #3 — another Docker runner step that publishes a newly built image.
 
@@ -101,10 +101,10 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
 
   steps {
     dockerCommand {
-      name = "Pull nanoserver"
+      name = "Pull container"
       commandType = other {
         subCommand = "pull"
-        commandArgs = "mcr.microsoft.com/windows/nanoserver:ltsc2022"
+        commandArgs = "mcr.microsoft.com/dotnet/runtime:7.0"
       }
     }
     dockerCommand {
@@ -115,14 +115,14 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
         }
         contextDir = "context"
         platform = DockerCommandStep.ImagePlatform.Windows
-        namesAndTags = "username/clock-console:nanoserver.ltsc2022"
-        commandArgs = "--build-arg baseImage=mcr.microsoft.com/windows/nanoserver:ltsc2022"
+        namesAndTags = "username/clock-console:windows"
+        commandArgs = "--build-arg baseImage=mcr.microsoft.com/dotnet/runtime:7.0"
       }
     }
     dockerCommand {
       name = "Push container"
       commandType = push {
-        namesAndTags = "username/clock-console:nanoserver.ltsc2022"
+        namesAndTags = "username/clock-console:windows"
       }
     }
   }
@@ -173,7 +173,7 @@ Other unique features of deployment build configurations include:
     
     <img src="dk-deploymentConf-redeploy.png" width="706" alt="Redeploy Delivery tasks"/>
 
-    If a build configuration's artifact are already deployed, earlier builds warn users that triggering a deployment configuration will override newer deliveries.
+    If a build configuration's artifacts are already deployed, earlier builds warn users that triggering a deployment configuration will override newer deliveries.
     
     <img src="dk-deploymentConf-rollback.png" width="706" alt="Rollback deployment"/>
 
@@ -247,10 +247,10 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
 
     steps {
         dockerCommand {
-            name = "Pull nanoserver"
+            name = "Pull container"
             commandType = other {
                 subCommand = "pull"
-                commandArgs = "mcr.microsoft.com/windows/nanoserver:ltsc2022"
+                commandArgs = "mcr.microsoft.com/dotnet/runtime:7.0"
             }
         }
         dockerCommand {
@@ -261,14 +261,14 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
                 }
                 contextDir = "context"
                 platform = DockerCommandStep.ImagePlatform.Windows
-                namesAndTags = "username/clock-console:nanoserver.ltsc2022"
-                commandArgs = "--build-arg baseImage=mcr.microsoft.com/windows/nanoserver:ltsc2022"
+                namesAndTags = "username/clock-console:windows"
+                commandArgs = "--build-arg baseImage=mcr.microsoft.com/dotnet/runtime:7.0"
             }
         }
         dockerCommand {
             name = "Push container"
             commandType = push {
-                namesAndTags = "username/clock-console:nanoserver.ltsc2022"
+                namesAndTags = "username/clock-console:windows"
             }
         }
     }
@@ -384,10 +384,10 @@ object DeploymentConfigsProject_DeployWebWindows : BuildType({
 
     steps {
         dockerCommand {
-            name = "Pull nanoserver"
+            name = "Pull container"
             commandType = other {
                 subCommand = "pull"
-                commandArgs = "mcr.microsoft.com/windows/nanoserver:ltsc2022"
+                commandArgs = "mcr.microsoft.com/dotnet/runtime:7.0"
             }
         }
         dockerCommand {
@@ -398,14 +398,14 @@ object DeploymentConfigsProject_DeployWebWindows : BuildType({
                 }
                 contextDir = "context"
                 platform = DockerCommandStep.ImagePlatform.Windows
-                namesAndTags = "username/clock-web:nanoserver.ltsc2022"
-                commandArgs = "--build-arg baseImage=mcr.microsoft.com/windows/nanoserver:ltsc2022"
+                namesAndTags = "username/clock-web:windows"
+                commandArgs = "--build-arg baseImage=mcr.microsoft.com/dotnet/runtime:7.0"
             }
         }
         dockerCommand {
             name = "Push container"
             commandType = push {
-                namesAndTags = "username/clock-web:nanoserver.ltsc2022"
+                namesAndTags = "username/clock-web:windows"
             }
         }
     }
