@@ -63,7 +63,7 @@ Build 116751
 ## TeamCity 2022.04.5
 
 Release date: 8 June 2023<br/>
-Build 108896
+Build 108886
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.5.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.5.tar.gz)
