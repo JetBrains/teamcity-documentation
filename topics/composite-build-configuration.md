@@ -1,7 +1,7 @@
 [//]: # (title: Composite Build Configuration)
 [//]: # (auxiliary-id: Composite Build Configuration)
 
-*Composite build configurations* are "step-less" configurations designed to run an entire build chain and track the results in a single place.
+*Composite build configurations* are "step-less" configurations designed to trigger multiple regular build configurations and track the results in a single place.
 
 ## Key Takeaways
 
@@ -12,7 +12,7 @@
 
 ## Example
 
-In this walkthrough, you will create multiple build configurations, bind them in a single build chain, and learn how you can benefit from turning the topmost build configuration of a chain into a composite configuration.
+In this tutorial, you will create multiple build configurations, bind them in a single build chain, and learn how you can benefit from turning the topmost build configuration of a chain into a composite configuration.
 
 > This example aims to illustrate the benefits of using composite build configurations. It does not dive into the specifics of creating projects and build chains. If you experience issues, refer to the following help articles:
 >
@@ -33,7 +33,7 @@ In this step, you will create a project with an empty build configuration and a 
 
 2. Set the build configuration name to *"Build All"*.
 
-3. Do not select any steps suggested by TeamCity after it scans the repository. All building tasks will be performed in separate configurations.
+3. Do not select any steps suggested by TeamCity after it scans the repository. We will perform actual building tasks in separate configurations, and this initially created configuration will be used later to trigger all of them at once.
 
 4. Go to **Administration | &lt;Your Project&gt;** and click **Create Subproject**. This subproject should target the same GitHub repository as in Step 1.
 
@@ -60,6 +60,8 @@ In this step, you will create a project with an empty build configuration and a 
 7. Since these build configurations will be parts of a single [build chain](build-chain.md), you do not need automatically added [build triggers](configuring-build-triggers.md) to start all five build configurations independently whenever TeamCity detects changes in the remote repository. Go to **Build configuration settings | Triggers** and disable or delete triggers for all configurations (except for the *"Build All"* configuration owned by the topmost project).
     
     <img src="dk-compositeConf-removeTriggers.png" width="706" alt="Remove or disable triggers"/>
+
+8. Both *"Build console &amp; web"* configurations should publish their "bin" folders. To do that, specify the `bin => bin` [artifact paths](configuring-general-settings.md#Artifact+Paths) in these configurations. Published artifacts will be later used by [deployment configurations](deployment-build-configuration.md).
 
 You should end up with five independent build configurations that perform build steps and an empty *"Build All"* configuration. Run each configuration to ensure they finish successfully. The [Kotlin](kotlin-dsl.md) code below illustrates settings for all five build configurations and their parent TeamCity projects.
 
@@ -512,7 +514,7 @@ Neither regular nor composite builds aggregate artifacts from builds in their ch
 
 <img src="dk-compositeConf-artifacts.png" width="706" alt="Artifacts of a composite build"/>
 
-To enforce a specific clean-up policy for artifacts of a composite build, you need to have the same clean-up rules for all its parts.
+Since a composite configuration does not have its own artifacts, artifact clean-up policies need to be set in dependency configurations.
 
 
 #### Composite Build Grouping

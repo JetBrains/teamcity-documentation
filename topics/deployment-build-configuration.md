@@ -1,23 +1,24 @@
 [//]: # (title: Deployment Build Configuration)
 [//]: # (auxiliary-id: Deployment Build Configuration)
 
-When your project is built and tested, you often need to deploy it to its final infrastructure. For example, upload a package to the NuGet Gallery, deliver a container to a DockerHub repository, or update your documentation website sources. Different CI/CD solutions use different terms for this last step of a pipeline: "deploy" stage, delivery target, production, and so on.
+When your project is built and tested, you often need to deploy it to its final infrastructure. For example, upload a package to the NuGet Gallery, deliver a container to a DockerHub repository, or update your documentation website sources. Different CI/CD solutions use different terms for this last step of a pipeline: "deploy" stage, delivery target, release, production, and so on.
 
 
 
- In TeamCity, delivery tasks are performed by the same "build configuration" objects that encapsulate regular building routines. However, since building and delivery are different tasks triggered by different team members, a configuration that deploys a product can be explicitly marked as a **Deployment Configuration**.
+ In TeamCity, delivery tasks are performed by the same "build configuration" objects that carry out regular building routines. However, since building and delivery are different tasks triggered by different team members, a configuration that deploys a product can be explicitly marked as a **Deployment Configuration**.
 
 ## Key Takeaways
 
-* Delivery configurations are designed to differentiate configurations that perform regular building routines from configurations that deliver apps to external infrastructures.
-* Delivery configurations do not differ from regular configurations in terms of functionality. They can utilize the same build features, employ same build runners, and so on.
-* If deployment configuration follows a regular building/testing configuration within the same chain, TeamCity users with sufficient permissions can trigger deployment directly from regular configurations.
+* Deployment configurations are designed to differentiate configurations that perform regular building routines from configurations that deliver apps to external infrastructures.
+* Deployment configurations do not differ from regular configurations in terms of functionality. They can utilize the same build features, employ same build runners, and so on.
+* If a deployment configuration follows a regular building/testing configuration within the same chain, TeamCity users with sufficient permissions can trigger deployment directly from regular configurations.
+* Deployment configurations do not allow running personal builds. Also, you cannot simultaneously run two builds that belong to the one deployment configuration.
 * Splitting deployment and building/testing configurations into different subprojects is recommended to set up fine-grained user permissions.
 * To switch a build configuration type, navigate to the **Configuration settings | General** tab.
 
 ## Example
 
-In this walkthrough, you will create deployment configurations to supplement a pipeline developed in the [](composite-build-configuration.md) article.
+In this tutorial, you will create deployment configurations to supplement a pipeline developed in the [](composite-build-configuration.md) article.
 
 <img src="dk-deploymentConf-finalChainWide.png" width="706" alt="Complete Delivery Chain"/>
 
@@ -35,7 +36,9 @@ Regular project developers who can edit and run building configurations should n
 1. Go to **Administration | &lt;Your project&gt;** and click **Create subproject**.
 2. Choose the **Manually** tile to create a blank project unrelated to any specific VCS repository.
 3. Set the subproject name to *"Deployment Configurations"*.
-4. Since in this sample we need to publish Docker containers to a registry, navigate to the subproject's **Connections** tab and add a new [Docker connection](configuring-connections.md#Docker+Registry).
+4. Depending on the type of your project and delivery target, deployment configurations can include different steps. For example, your configuration can employ the [](net.md) runner that executes the `nuget push` command to upload a package to a NuGet Gallery, or one of [](deployers.md) that upload files to an FTP server or Windows shares.
+    
+    In this sample, deployment configurations upload Docker images to a DockerHub registry. For that reason, you need to create a [Docker connection](configuring-connections.md#Docker+Registry) that specifies the registry address and your login credentials. This connection will be available for all configurations in this subproject. To create a connection, navigate to the subproject's **Connections** tab.
 
 The [Kotlin](kotlin-dsl.md) code below illustrates the final setup.
 
@@ -162,13 +165,17 @@ Other unique features of deployment build configurations include:
     
     <img src="dk-deploymentConf-button.png" width="706" alt="Deployment button"/>
 
-* You can start deployment tasks directly from dependent building configurations. Open the details of a finished regular build and click **Deploy** under the "Deployments" section.
+* You can deploy artifacts directly from configurations that produced them. Open the details of a finished regular build and click **Deploy** under the "Deployments" section.
     
     <img src="dk-deploymentConf-DeployFromBuild.png" width="706" alt="Run deployment from regular builds"/>
     
     When a deployment build starts, you can track its progress from the "Deployments" section. When it finishes, the **Redeploy** button appears. This button allows you to re-run the delivery routine.
     
     <img src="dk-deploymentConf-redeploy.png" width="706" alt="Redeploy Delivery tasks"/>
+
+    If a build configuration's artifact are already deployed, earlier builds warn users that triggering a deployment configuration will override newer deliveries.
+    
+    <img src="dk-deploymentConf-rollback.png" width="706" alt="Rollback deployment"/>
 
 * The **Changes** and **Change Log** tabs of TeamCity projects, configurations, and individual builds allow you to click revision numbers to view detailed information about each change. If your pipeline has delivery configurations, this change details page displays the **Deployments** tab that allows you to quickly identify when this change was delivered for the first time.
     
