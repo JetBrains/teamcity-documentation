@@ -46,9 +46,9 @@ __8 June 2023__
 
 **[TW-80963](https://youtrack.jetbrains.com/issue/TW-80963/Build-status-recalculation-queue-can-become-overflown-if-many-builds-are-finishing-in-the-same-configuration)** — Build status recalculation queue can become overflown if many builds are finishing in the same configuration
 
-**[TW-80602](https://youtrack.jetbrains.com/issue/TW-80602/Speedup-calculation-of-revision-affected-by-checkout-rules-if-checkout-rules-do-not-filter-files-inside-submodule-mountpoints)** — Speedup calculation of revision affected by checkout rules if checkout rules do not filter files inside submodule mountpoints
+**[TW-80602](https://youtrack.jetbrains.com/issue/TW-80602/Speedup-calculation-of-revision-affected-by-checkout-rules-if-checkout-rules-do-not-filter-files-inside-submodule-mountpoints)** — Speedup calculation of revision affected by checkout rules if checkout rules do not filter files inside submodule mount points
 
 
 ### Security
 
-Fixed 5 security problems.
+**6** security problems were fixed.
