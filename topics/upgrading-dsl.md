@@ -1,9 +1,7 @@
 [//]: # (title: Upgrading DSL)
 [//]: # (auxiliary-id: Upgrading DSL)
 
-The TeamCity XML settings format is usually [changed](storing-project-settings-in-version-control.md#Enabling+Versioned+Settings+after+TeamCity+Upgrade) in the major releases.   
-During the first start after the server update, TeamCity converts XML settings files in the TeamCity Data Directory to the new format.      
-When settings are stored in Kotlin DSL, the Kotlin code might need to be changed to be still functional. It is also recommended to update the Kotlin code to the latest [config version](#configsVersion).
+The TeamCity XML settings format is usually [changed](storing-project-settings-in-version-control.md#Enabling+Versioned+Settings+after+TeamCity+Upgrade) in the major releases. During the first start after the server update, TeamCity converts XML settings files in the TeamCity Data Directory to the new format. When settings are stored in Kotlin DSL, the Kotlin code might need to be changed to remain functional. It is also recommended to update the Kotlin code to the latest [config version](#configsVersion).
          
 These recommendations are displayed as server health reports on the corresponding pages of the server administration UI.
 
@@ -54,9 +52,12 @@ The new DSL API version is introduced when there are significant incompatible ch
 
 ## Enabling versioned settings after the upgrade
 
-After a TeamCity upgrade, the versioned settings are disabled globally on the whole TeamCity server, and a corresponding health report is shown in the administration UI. This is done to prevent TeamCity from changing the settings in the version control if you upgrade a non-production copy of the TeamCity server.
+If your versioned settings are stored in the Kotlin format, upgrading a TeamCity server to a newer version employs converters that automatically update your DSL code so that it remains functional.
 
-If the server is a production installation, enable versioned settings using the action in the health report. This will make TeamCity commit converted XML configuration files to the VCS. If there were any changes to projects configuration via the web interface while versioned settings were disabled, these changes will be committed to the VCS repository too when settings are enabled.
+However, TeamCity may turn off versioned settings for projects that store these settings in the XML format. This behavior occurs if a server upgrade leads to changes in settings XML files and is designed to prevent unwanted configuration updates when upgrading to a non-production version of the TeamCity server.
+
+If your new TeamCity version is stable and you wish to proceed with the XML files' update, click the corresponding health report action. TeamCity will commit updated XML configuration files to the VCS. This commit will also include all project configuration updates made via TeamCity UI while the versioned settings were disabled.
+
 
 ## Kotlin DSL upgrade procedure
 
