@@ -81,14 +81,14 @@ But before doing so, you should first review the health reports produced by your
 
 If you see a message like:
   ```text
-   Please change the configs version to "2022.04" in projects:
+   Please change the configs version to "%product-version%" in projects:
    <the list of projects> 
   ```
 
-then no additional changes to your DSL are required and you can change the config's `version` to `2022.04`. Otherwise, you will receive the following message:
+then no additional changes to your DSL are required and you can change the config's `version` to `%product-version%`. Otherwise, you will receive the following message:
 
   ```text
-  DSL scripts should be updated to produce settings for version 2022.04:
+  DSL scripts should be updated to produce settings for version %product-version%:
   change DSL for build configurations:
   <affected build configurations>
   to update DSL, do the following:
