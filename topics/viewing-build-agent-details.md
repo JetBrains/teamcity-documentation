@@ -17,6 +17,7 @@ For each connected agent TeamCity provides the following information:
   * CPU rank: the result of the bundled CPU benchmark. Note that the benchmark results can depend on the JVM version and options used by the agent. For example, `-server` JVM option has a significant influence on the results. CPU benchmark also affects the way how the server distributes builds among agents. If a build duration estimate cannot be calculated for an agent (there were no builds in the history ran on this agent), TeamCity chooses the fastest agent basing on the CPU benchmark value.
   * the [pool](configuring-agent-pools.md) the agent belongs to
   * the agent launcher version
+  * the [Open Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) button. Opens an interactive browser-based shell. Available to users with the *"Invoke interactive agent terminals"* permission (by default, this permission is granted to System and Project Administrators). See this help article to learn more: [](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
 * If there is a __running build__ on the agent, the page displays information on the build with the link to the [build results](working-with-build-results.md).
 * __Miscellaneous__: this section provides the options to
   * [Clean sources on the agent](clean-checkout.md)
@@ -24,7 +25,7 @@ For each connected agent TeamCity provides the following information:
   * Reboot Agent Machine: available to users with _Reboot build agent machines_ permissions. Click the link and confirm the reboot action. By default, the TeamCity agent will wait until the current build finishes. Deselect the checkbox and click Reboot to restart the agent immediately.    
   Additional configuration of the reboot command is possible. See [Agent Reboot](#Agent+Reboot).
   * Dump threads on agent
-  * [Connect via SSM](setting-up-teamcity-for-amazon-ec2.md#debugging-and-maintenance): available to users with the Open an interactive session to the agent permission. Click the link to open an interactive browser-based shell.
+
 
 ### Agent Reboot
 [//]: # (AltHead: Configuring Agent Reboot Command)
