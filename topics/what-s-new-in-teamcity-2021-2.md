@@ -153,13 +153,13 @@ You can upload the avatar in your user profile settings.
 
 ### Experimental UI for displaying changes
 
-The **Pending Changes** tab and single **Change** page have been fully reproduced in the new UI. They have a familiar layout of the classic pages, but offer a better look&feel. The new UI also makes these pages more interactive. For example, when viewing pending commits, you can expand each test and build problem to see their details.
+The **Pending Changes** tab and single **Change** page have been fully reproduced in the new UI. They have a familiar layout of the classic pages, but offer a better look&feel.
 
-**Pending Changes**:
+The **Pending Changes** page displays the list of changes committed to the remote repository since the last successful build.
 
 <img src="new-pending-changes.png" alt="New Pending Changes tab" width="706"/>
 
-Single **Change**:
+The individual **Change** page allows you to view detailed information about each change and displays the list of failed tests and build problems that emerged when this change was introduced.
 
 <img src="changes-page.png" alt="New Change page" width="706"/>
 
