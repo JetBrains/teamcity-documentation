@@ -75,6 +75,7 @@ To handle this, consider using the __Automatic (Delayed Start)__ option of the s
 
  For more investigation steps, see the [Common Problems](common-problems.md#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) page.
 
+
 ## java.lang.OutOfMemoryError: unable to create new native thread error
 
 If your TeamCity server is running on SUSE® Linux Enterprise (or using systemd Daemon), the __java.lang.OutOfMemoryError: unable to create new native thread error__ may be caused by the [cgroup process number controller](https://www.kernel.org/doc/Documentation/cgroup-v1/pids.txt) feature limiting the number of processes and the amount of threads in a cgroup to 512 by default.
@@ -245,7 +246,9 @@ and restart TeamCity server.
 
 If this does not help with the download speed, to investigate the case, you might need to find an administrator with appropriate network\-related issues investigation skills to look into the case.
 
-## Failure to publish artifacts to server behind IIS reverse proxy
+## IIS-Related Issues
+
+### Failure to publish artifacts to server behind IIS reverse proxy
 
 This problem is only relevant to configurations that involve an IIS reverse proxy between the build server and agents. Sometimes a build agent can be found in infinite loop trying to publish build artifacts to the server. The build log looks like this:
 
@@ -286,6 +289,24 @@ The most common cause for this is `maxAllowedContentLength` setting (in IIS) is 
 
 So any artifact larger than `maxAllowedContentLength` is discarded by IISCheck the settings value and try to rerun your build
 
+### Artifacts Domain Isolation in setups with IIS causes authorization error on accessing artifacts
+{product="tc"}
+
+If [Artifacts Domain Isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) is enabled on your TeamCity server, trying to access build artifacts might result in the 401 Unauthorized error. This issue is most likely caused by the default behavior of your IIS web server: it rewrites the response headers targeting them back from the artifacts' domain to the main server domain. To disable this behavior, go to __Application Request Routing | Server Proxy Settings__ in the IIS interface and disable the "_Reverse rewrite host in response headers_" option.
+
+
+### Content Missing from TeamCity UI
+
+When loading a TeamCity page, you might notice some content missing. Most commonly, build configurations that have finished builds do not display their build histories and appear empty. At the same time, a web browser logs multiple 404 (Not Found) errors.
+
+If this happens for a TeamCity instance running on an IIS server, check the values of the IIS `maxQueryStringLength` and/or `maxQueryString` values. These settings limit the maximum length of query strings. If these limits are too low, some of REST requests TeamCity sends to the `<server-url>/app/rest/...` endpoints may fail.
+
+To resolve this issue, increase these limits in the `web.config` file of your IIS server.
+
+See also: [Request Limits](https://learn.microsoft.com/en-us/iis/configuration/system.webServer/security/requestFiltering/requestLimits/) | [httpRuntime Element](https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)?redirectedfrom=MSDN)
+
+
+
 ## SSL problems when connecting to HTTPS from TeamCity (handshake alert: unrecognized_name)
 {product="tc"}
 
@@ -302,6 +323,8 @@ __This issue has been fixed in TeamCity 2019.1.5__.
 
 To work around this issue without upgrading to 2019.1.5, uninstall the previously installed agent version before installing a new agent into the same directory.   
 To uninstall the agent, invoke `Uninstall.exe` in the [Agent Home Directory](agent-home-directory.md), clear all the "_Remove..._" checkboxes to keep the agent logs and configuration, and click __Uninstall__. After the successful uninstallation, you can proceed with installing the new agent version via the agent installer.
+
+
 
 ## Windows Docker Containers
 {product="tc"}
@@ -495,10 +518,7 @@ Earlier versions of the [PowerShell](powershell.md) runner don't support passing
 _Error while loading VCS changes_ on the TeamCity server startup might be associated with the enabled cursor-based streaming in MySQL. To prevent this error, try setting the `connectionProperties.useCursorFetch` property to `false` in `database.properties` and restart the server.  
 See [this issue](https://youtrack.jetbrains.com/issue/TW-71781) for more details.
 
-## Artifacts Domain Isolation in setups with IIS causes authorization error on accessing artifacts
-{product="tc"}
 
-If [Artifacts Domain Isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) is enabled on your TeamCity server, trying to access build artifacts might result in the 401 Unauthorized error. This issue is most likely caused by the default behavior of your IIS web server: it rewrites the response headers targeting them back from the artifacts' domain to the main server domain. To disable this behavior, go to __Application Request Routing | Server Proxy Settings__ in the IIS interface and disable the "_Reverse rewrite host in response headers_" option.
 
 ## Known issues of Pull Requests build feature
 
