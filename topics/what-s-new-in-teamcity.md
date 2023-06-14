@@ -7,7 +7,7 @@ When you run a build configurations that employs the [](parallel-tests.md) build
 
 <img src="dk-artifacts-parallelTestsMain.png" width="706" alt="Artifacts in parallel testing"/>
 
-When viewing completed configuration builds, you could switch to the **Dependencies** tab to download and view artifacts.
+When viewing completed configuration builds, you could switch to the **Dependencies** tab to access these artifacts.
 
 <img src="dk-artifacts-parallelTests.png" width="706" alt="Artifacts in parallel testing 2"/>
 
