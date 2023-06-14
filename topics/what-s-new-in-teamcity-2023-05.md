@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2023.05)
-[//]: # (auxiliary-id: What's New in TeamCity 2023.05;What's New in TeamCity)
+[//]: # (auxiliary-id: What's New in TeamCity 2023.05)
 
 ## Dark Theme
 
