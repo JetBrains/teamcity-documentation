@@ -136,10 +136,32 @@ org.example.tests.TestCase1
 
 The build step with custom tests' execution logic should use this file and filter out all the tests that belong to the classes mentioned there. All the other tests should be executed.
 
+## Publish Artifacts Produced By Batch Builds
+
+Since parallel tests run inside independent batch builds, [artifacts](build-artifact.md) are produced by these batch builds that perform actual building routines, not by a parent configuration's builds.
+
+However, TeamCity aggregates artifacts produced by batch builds in parent configuration builds to make them easily accessible from a single place.
+
+<img src="dk-artifacts-parallelBuildAggregateDiagram.png" width="706" alt="Aggregated artifacts diagram"/>
+
+When batch builds produce identical artifacts, only the latest batch build's artifacts are shown in the **Artifacts** tab of a parent configuration. This behavior is suitable for configurations with artifacts produced by building steps, but not for parallel tasks generating similar file sets.
+
+To access all parallel task artifacts (for example, when each of your tests generates the "report.log" file), use the `teamcity.build.parallelTests.currentBatch` [parameter](configuring-build-parameters.md) when defining artifact paths for a parent build configuration. This parameter enables organizing artifacts from different batch builds into separate directories. For instance:
+
+```Plain Text
+bin => batch-build-%teamcity.build.parallelTests.currentBatch%/bin
+```
+{interpolate-variables="false"}
+
+<img src="dk-artifacts-parallelBuildAggregate.png" width="706" alt="Aggregated artifacts"/>
+
+> This behavior requires TeamCity of version 2023.05.1 or newer. In version 2023.05 (without installed bugfix updates), batch build artifacts are not aggregated in parent configuration builds.
+> 
+{type="warning"}
+
 ## Known limitations
 
 * The [Code coverage](code-quality-tools.md#code-coverage-tools) statistics will be inaccurate for builds with parallel tests because it will be collected for a fraction of tests executed by the current batch.
-* After enabling parallel tests in a build configuration, it will stop publishing [artifacts](build-artifact.md). Consider having a separate build configuration that publishes artifacts.
 * A newly added test which is not yet known to TeamCity will run in each batch during the first run.
 * When TeamCity divides tests into batches, it only takes into account the duration of the test itself. The duration of setUp/tearDown or any other preparation methods is not know to TeamCity, therefore the duration of batches may not be equal.
 * An agent selected in the custom build dialog for a build with parallel tests will be ignored because the build will be transformed into a composite one after triggering.
