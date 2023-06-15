@@ -840,6 +840,22 @@ The path to .NET CLI executable.
 
 The .NET SDK version.
 
+</td></tr><tr>
+
+<td>
+
+`DotNetInstalledWorkloads_<version>`
+
+</td>
+
+<td>
+
+Lists all [.NET workloads](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install) installed on the agent machine.
+
+The `<suffix>` is the version of an installed .NET SDK. For instance, if version 7.0.300 is installed, the agent will report the `DotNetInstalledWorkloads_7.0.300` parameter.
+
+The parameter value is a string of comma-separated workload names, according to folders in the *&lt;dotnet_dir&gt;/metadata/workloads/&lt;sdk_version&gt;/InstalledWorkloads* directory. For instance, "android,maui-ios,wasm-tools".
+
 </td></tr></table>
 
 ### Migrating from Deprecated Runners to .NET Runner
