@@ -134,7 +134,7 @@ Select a proper approach from the section below and configure the proxy accordin
 Check that your reverse proxy (or a similar tool) conforms to the following requirements:
 * URLs with paths starting with a dot (`.`) are supported (path to hidden artifacts start contain the `.teamcity` directory).
 * URLs with a colon (`:`) are supported (many TeamCity resources use the colon). Related [IIS setting](https://docs.microsoft.com/en-us/dotnet/api/system.web.configuration.httpruntimesection.requestpathinvalidcharacters?view=netframework-4.7.2). Symptom: build has no artifacts with the "_No user-defined artifacts in this build_" text even if there are artifacts.
-* Maximum response length / time are not too restrictive (since TeamCity can serve large files to slow clients, the responses can be of Gb in size and hours in time).
+* Settings that limit the maximum request name, response length, and response time are not too restrictive. See this article for more information: [](known-issues.md#IIS-Related+Issues).
 * gzip Content-Encoding is fully supported. For example, certain IIS configurations can result in the "Loading data..." in the UI and 500 HTTP responses (see the related [issue](https://youtrack.jetbrains.com/issue/TW-56218)).
 
 <anchor name="Proxy-Tomcat-Connector"/>
