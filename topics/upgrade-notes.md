@@ -2,11 +2,11 @@
 [//]: # (auxiliary-id: Upgrade Notes)
 
 
-## Changes from 2023.05 to 2023.05.01
+<!--## Changes from 2023.05 to 2023.05.01
 
 ### Miscellaneous Changes
 
-* The *"Open an interactive session to the agent"* [permission](managing-roles-and-permissions.md) was renamed to *"Invoke interactive agent terminals"*. The new name highlights the recent behavior change: this permission now specifies whether users can open [agent terminal tabs](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 and is no longer related to deprecated SSM terminals.
+* The *"Open an interactive session to the agent"* [permission](managing-roles-and-permissions.md) was renamed to *"Invoke interactive agent terminals"*. The new name highlights the recent behavior change: this permission now specifies whether users can open [agent terminal tabs](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 and is no longer related to deprecated SSM terminals.-->
 
 
 
@@ -74,6 +74,7 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 
 * TeamCity shows the "Docker rate limit warning" for build agents that use rootful Podman (that is, containers run as root on agent machines) to [pull containers](container-wrapper.md), even if the Podman client successfully authorizes before pulling an image. For agents using Docker, this warning is showed only if agents pull images without authentication, which may cause reaching the [download rate limit](integrating-teamcity-with-container-managers.md#Conforming+with+Docker+Download+Rate+Limits).
 * If you have multiple projects with [GitHub App connections](configuring-connections.md#GitHub) to the same GitHub App, a [webhook](configuring-vcs-post-commit-hooks-for-teamcity.md) for only the first connection detected by TeamCity is functional. Projects with other connections keep polling their corresponding repositories for changes.
+* Uploading artifacts to [S3 buckets](storing-build-artifacts-in-amazon-s3.md) may fail for larger files. We expect to fix this issue in the next bugfix update (2023.05.1). In the meantime, download and [install](installing-additional-plugins.md#Installing+Plugin+Manually) a custom build of the S3 Plugin from this YouTrack issue: [TW-81866](https://youtrack.jetbrains.com/issue/TW-81866/Failed-to-publish-artifacts-in-AWS-s3-after-updating-TeamCity-to-v2023.05).
 
 
 ## Changes from 2022.10.2 to 2022.10.3
