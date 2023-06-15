@@ -11,7 +11,7 @@ When viewing completed configuration builds, you could switch to the **Dependenc
 
 <img src="dk-artifacts-parallelTests.png" width="706" alt="Artifacts in parallel testing 2"/>
 
-Starting with this version, artifacts produced by batch builds are aggregated in the **Artifacts** tab of a main build. You can also use the new `teamcity.build.parallelTests.currentBatch` [parameter](configuring-build-parameters.md) to arrange artifacts produced by batch builds into different directories.
+Starting with this version, artifacts produced by batch builds are aggregated in the **Artifacts** tab of a main build. You can also use the `teamcity.build.parallelTests.currentBatch` [parameter](configuring-build-parameters.md) to arrange artifacts produced by batch builds into different directories.
 
 <img src="dk-artifacts-parallelBuildAggregate.png" width="706" alt="Aggregated artifacts"/>
 

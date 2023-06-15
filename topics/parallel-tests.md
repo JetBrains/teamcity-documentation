@@ -146,7 +146,7 @@ However, TeamCity aggregates artifacts produced by batch builds in parent config
 
 When batch builds produce identical artifacts, only the latest batch build's artifacts are shown in the **Artifacts** tab of a parent configuration. This behavior is suitable for configurations with artifacts produced by building steps, but not for parallel tasks generating similar file sets.
 
-To access all parallel task artifacts (for example, when each of your tests generates the "report.log" file), use the `teamcity.build.parallelTests.currentBatch` [parameter](configuring-build-parameters.md) when defining artifact paths for a parent build configuration. This parameter enables organizing artifacts from different batch builds into separate directories. For instance:
+To access all parallel task artifacts (for example, when each of your tests generates the "report.log" file), use the `teamcity.build.parallelTests.currentBatch` [parameter](configuring-build-parameters.md) when defining artifact paths for a parent build configuration. Since this parameter references the batch build number, it allows builds to organize their artifacts into subdirectories with unique names. For instance:
 
 ```Plain Text
 bin => batch-build-%teamcity.build.parallelTests.currentBatch%/bin
