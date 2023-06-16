@@ -40,6 +40,15 @@ TeamCity users with administrative permissions should have complex passwords.
 
 To make user password storage safer, TeamCity uses the BCrypt hashing algorithm.
 
+__Consider disabling the super user access.__
+{product="tc"}
+
+The [](super-user.md) feature in TeamCity enables users to log in as system administrators using a token found in the [&lt;TeamCity_server_home&gt;/logs/teamcity-server.log](teamcity-server-logs.md) file.
+{product="tc"}
+
+If you publish TeamCity logs to an external source, add the `teamcity.superUser.disable=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to disable this authorization option and prevent unwanted administrator access. Restart the TeamCity server after modifying the `teamcity.superUser.disable` property for the change to apply.
+{product="tc"}
+
 __Store secure data using parameters with the "password" type__.
 
 To store passwords or other secure data in the TeamCity settings, you are strongly advised to use the [typed parameters](typed-parameters.md). This will make sure that sensitive values never appear in the web UI and are masked with asterisks in the build log. Make sure passwords are stored as parameters with the [password type](typed-parameters.md#Adding+Parameter+Specification).
