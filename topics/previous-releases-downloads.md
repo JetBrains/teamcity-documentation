@@ -20,6 +20,16 @@ Build 129203
 
 [Release notes](teamcity-2023-05-release-notes.md)
 
+## TeamCity 2022.10.4
+
+Release date: 8 June 2023  
+Build 117134
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.4.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.4.tar.gz)
+
+[Release notes](teamcity-2022-10-2-release-notes.md)
+
 ## TeamCity 2022.10.3
 
 Release date: 21 March 2023   
@@ -59,6 +69,16 @@ Build 116751
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.tar.gz)
 
 [Release notes](teamcity-2022-10-release-notes.md)
+
+## TeamCity 2022.04.5
+
+Release date: 8 June 2023 
+Build 108886
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.5.exe)   
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.5.tar.gz)
+
+[Release notes](teamcity-2022-04-4-release-notes.md)
 
 ## TeamCity 2022.04.4
 
