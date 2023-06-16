@@ -231,9 +231,11 @@ If you face this problem, please use the following workaround:
 
 ## Changes from 2022.04.1 to 2022.04.2
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 2022.04 to 2022.04.1
+
+No potential breaking changes.
 
 ### Known issues
 {id="known-issues-2022041"}
@@ -406,7 +408,7 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 
 ## Changes from 2021.1.2 to 2021.1.3
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 2021.1.1 to 2021.1.2
 
@@ -414,6 +416,8 @@ No noteworthy changes.
   However, if you enable the [reuse of suitable builds](snapshot-dependencies.md#Suitable+Builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
 
 ## Changes from 2021.1 to 2021.1.1
+
+No potential breaking changes.
 
 ### Known Issues
 {id="known-issues-2021211"}
@@ -428,6 +432,8 @@ No noteworthy changes.
 * VCS roots of archived subprojects are now hidden by default on the __Project Settings | VCS Roots__ page. You can display them by enabling the _including archived_ filter option.
 
 ## Changes from 2020.2.x to 2021.1
+
+No potential breaking changes.
 
 <anchor name="ki-202121"/>
 
@@ -522,6 +528,8 @@ IntelliJ IDEA version 2019.2 and earlier, as well as other IntelliJ-based produc
 
 ## Changes from 2020.2 to 2020.2.1
 
+No potential breaking changes.
+
 ### Known Issues
 {id="known-issues-202021"}
 
@@ -607,7 +615,7 @@ On upgrading, this responsibility will be automatically enabled on all your seco
 
 ## Changes from 2020.1.4 to 2020.1.5
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 2020.1.3 to 2020.1.4
 
@@ -643,6 +651,8 @@ No noteworthy changes.
   To work around this issue, please follow the instruction described [here](https://youtrack.jetbrains.com/issue/TW-66577#focus=streamItem-27-4216533.0-0).
 
 ## Changes from 2019.2.x to 2020.1
+
+No potential breaking changes.
 
 ### Known Issues
 {id="known-issues-20201"}
@@ -761,7 +771,7 @@ Filtering test occurrences by a branch (`.../app/rest/testOccurrences?locator=br
 
 ## Changes from 2019.2.3 to 2019.2.4
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 2019.2.2 to 2019.2.3
 
@@ -829,9 +839,11 @@ If your custom scripts or settings depend on the main alternates source for subm
 >
 {type="tip"}
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 2019.1.x to 2019.2
+
+No potential breaking changes.
 
 ### Known Issues
 {id="known-issues-20192"}
@@ -1018,7 +1030,7 @@ Running builds are not shown on the build configuration page if there are no fin
 
 ## Changes from 2018.2 to 2018.2.1
 
-No noteworthy changes
+No potential breaking changes.
 
 ## Changes from 2018.1.x to 2018.2
 
@@ -1094,7 +1106,7 @@ teamcity.nuget.feed.httpAuth.\_Root.default.v2
 
 ## Changes from 2018.1.4 to 2018.1.5
 
-No noteworthy changes
+No potential breaking changes.
 
 ## Changes from 2018.1.3 to 2018.1.4
 
@@ -1351,7 +1363,7 @@ Now TeamCity server runs 'git gc' automatically to improve performance of git op
 
 ## Changes from 2017.1.1 to 2017.1.2
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 2017.1 to 2017.1.1
 
@@ -1662,7 +1674,7 @@ When querying for compatible agents, only the agents which can actually run the 
 
 ## Changes from 9.1.6 to 9.1.7
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 9.1.5 to 9.1.6
 
@@ -1883,19 +1895,19 @@ Due to API changes, third party issue trackers integration plugins might not be 
 
 ## Changes from 9.0.4 to 9.0.5
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 9.0.3 to 9.0.4
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 9.0.2 to 9.0.3
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 9.0.1 to 9.0.2
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 9.0 to 9.0.1
 
@@ -1997,7 +2009,7 @@ TeamCity agent installation via the Java web start installation package is no lo
 
 ## Changes from 8.1.1 to 8.1.4
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 8.1 to 8.1.1
 
@@ -2095,11 +2107,11 @@ Response to the experimental request `/app/rest/buildTypes/XXX/investigations` h
 
 ## Changes from 8.0.5 to 8.0.6
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 8.0.4 to 8.0.5
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 8.0.3 to 8.0.4
 
@@ -2109,7 +2121,7 @@ First Clean-up after server upgrade might take a bit more time then regularly if
 
 ## Changes from 8.0 to 8.0.3
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 7.1.x to 8.0
 
@@ -2239,14 +2251,14 @@ __teamcity.build.branch__ parameter semantics has changed, see [http://youtrack.
 
 ## Changes from 7.1.3 to 7.1.4
 
-No noteworthy changes.
+No potential breaking changes.
 
 
 [//]: # (Internal note. Do not delete. "Upgrade Notesd333e2962.txt")
 
 ## Changes from 7.1.2 to 7.1.3
 
-No noteworthy changes.
+No potential breaking changes.
 
 Please check up\-to\-date list of [known regressions](http://youtrack.jetbrains.com/issues/TW?q=Affected+versions%3A+%7BFaradi+7.1.3+%2824266%29%7D+tag%3Aregression) for the version in our issue tracker.
 
@@ -2260,7 +2272,7 @@ Please also check a list of [known regressions](http://youtrack.jetbrains.com/is
 
 ## Changes from 7.1 to 7.1.1
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 7.0.x to 7.1
 
@@ -2310,7 +2322,7 @@ See [details](https://confluence.jetbrains.com/display/TCD18/Open+API+Changes)
 
 ## Changes from 7.0.1 to 7.0.4
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 7.0 to 7.0.1
 
@@ -2387,7 +2399,7 @@ See also [Open API Changes](https://confluence.jetbrains.com/display/TCD18/Open+
 
 ## Changes from 6.5.4 to 6.5.6
 
-No noteworthy changes
+No potential breaking changes.
 
 ## Changes from 6.5.4 to 6.5.5
 
@@ -2395,11 +2407,11 @@ No noteworthy changes
 
 ## Changes from 6.5.3 to 6.5.4
 
-No noteworthy changes
+No potential breaking changes.
 
 ## Changes from 6.5.2 to 6.5.3
 
-No noteworthy changes
+No potential breaking changes.
 
 ## Changes from 6.5.1 to 6.5.2
 
@@ -2484,7 +2496,7 @@ See also [Open API Changes](https://confluence.jetbrains.com/display/TCD18/Open+
 
 ## Changes from 6.0.2 to 6.0.3
 
-No noteworthy changes
+No potential breaking changes.
 
 ## Changes from 6.0.1 to 6.0.2
 
@@ -2493,7 +2505,7 @@ If you use Maven or XML test reporter and your build is CPU\-intensive, you migh
 
 ## Changes from 6.0 to 6.0.1
 
-No noteworthy changes
+No potential breaking changes.
 
 ## Changes from 5.1.x to 6.0
 
@@ -2633,7 +2645,7 @@ See [Open API Changes](https://confluence.jetbrains.com/display/TCD18/Open+API+C
 
 ## Changes from 5.0.2 to 5.0.3
 
-No noteworthy changes.
+No potential breaking changes.
 
 
 > There is a known issue with .NET duplicates finder: [TW-11320](http://youtrack.jetbrains.net/issue/TW-11320)   
@@ -2648,7 +2660,7 @@ The `relativePath` variable is now replaced with relative path of a file _withou
 
 ## Changes from 5.0 to 5.0.1
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 4.5.6 to 5.0
 
@@ -2686,7 +2698,7 @@ __Open API Changes__ See [Open API Changes](https://confluence.jetbrains.com/dis
 
 ## Changes from 4.5.2 to 4.5.6
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 4.5.1 to 4.5.2
 
@@ -2694,7 +2706,7 @@ Here is a critical issue with Rake runner in 4.5.2 release. Please see [TW-8485]
 
 ## Changes from 4.5.0 to 4.5.1
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 4.0.2 to 4.5
 
@@ -2748,11 +2760,11 @@ To force Internet Explorer to use updated icons (i.e. for the Run button) you ma
 
 ## Changes from 3.1.1 to 3.1.2
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 3.1 to 3.1.1
 
-No noteworthy changes.
+No potential breaking changes.
 
 ## Changes from 3.0.1 to 3.1
 
