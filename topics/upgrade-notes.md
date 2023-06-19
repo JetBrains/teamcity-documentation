@@ -2,11 +2,20 @@
 [//]: # (auxiliary-id: Upgrade Notes)
 
 
-<!--## Changes from 2023.05 to 2023.05.01
+## Changes from 2023.05 to 2023.05.01
+
+### Publishing Artifacts of Batch Builds in Parent Configuration Builds
+
+With this bugfix update, automatically created [batch builds](parallel-tests.md) aggregate their artifacts under the **Artifacts** tab of parent configuration builds. See this article for more information: [](parallel-tests.md#Publish+Artifacts+Produced+By+Batch+Builds).
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2023-5-1"}
+
+* The bundled Git was updated to version 2.41 in both Server and Agent Docker images.
 
 ### Miscellaneous Changes
 
-* The *"Open an interactive session to the agent"* [permission](managing-roles-and-permissions.md) was renamed to *"Invoke interactive agent terminals"*. The new name highlights the recent behavior change: this permission now specifies whether users can open [agent terminal tabs](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 and is no longer related to deprecated SSM terminals.-->
+* The *"Open an interactive session to the agent"* [permission](managing-roles-and-permissions.md) was renamed to *"Invoke interactive agent terminals"*. The new name highlights the recent behavior change: this permission now specifies whether users can open [agent terminal tabs](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 and is no longer related to deprecated SSM terminals.
 
 
 
