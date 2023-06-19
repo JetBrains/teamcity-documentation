@@ -170,6 +170,12 @@ For example, if your GitHub user has no write permissions, the access token will
 
 </note>
 
+<warning>
+
+TeamCity currently issues single-repository access tokens for GitHub App connections. As a result, if your GitHub repository contains [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules), TeamCity is unable to access these external repositories.
+
+</warning>
+
 </dd>
 
 <dt>GitHub OAuth Application</dt>
