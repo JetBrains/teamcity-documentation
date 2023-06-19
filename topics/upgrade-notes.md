@@ -13,6 +13,10 @@ With this bugfix update, automatically created [batch builds](parallel-tests.md)
 
 * The bundled Git was updated to version 2.41 in both Server and Agent Docker images.
 
+### Miscellaneous Changes
+
+* The *"Open an interactive session to the agent"* [permission](managing-roles-and-permissions.md) was renamed to *"Invoke interactive agent terminals"*. The new name highlights the recent behavior change: this permission now specifies whether users can open [agent terminal tabs](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 and is no longer related to deprecated SSM terminals.
+
 
 ## Changes from 2022.10.3 to 2023.05
 
