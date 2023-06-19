@@ -2,6 +2,14 @@
 [//]: # (auxiliary-id: Upgrade Notes)
 
 
+## Changes from 2023.05 to 2023.05.01
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2023-5-1"}
+
+* The bundled Git was updated to version 2.41 in both Server and Agent Docker images.
+
+
 ## Changes from 2022.10.3 to 2023.05
 
 ### Planned deprecation of Java 8 in TeamCity Server
