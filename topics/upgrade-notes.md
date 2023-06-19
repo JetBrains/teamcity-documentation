@@ -4,6 +4,10 @@
 
 ## Changes from 2023.05 to 2023.05.01
 
+### Publishing Artifacts of Batch Builds in Parent Configuration Builds
+
+With this bugfix update, automatically created [batch builds](parallel-tests.md) aggregate their artifacts under the **Artifacts** tab of parent configuration builds. See this article for more information: [](parallel-tests.md#Publish+Artifacts+Produced+By+Batch+Builds).
+
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2023-5-1"}
 
