@@ -567,7 +567,7 @@ Connection settings:
 <td>Scope</td>
 <td>
 
-Specify an npm user/organization's [scope](https://docs.npmjs.com/cli/v7/using-npm/scope) to [associate](https://docs.npmjs.com/cli/v7/using-npm/scope#associating-a-scope-with-a-registry) with the connected registry. If you want to use multiple registries per project, you need to specify a scope for each of them.
+Specify an npm user/organization's [scope](https://docs.npmjs.com/cli/v7/using-npm/scope) (with or without the `@` character) to [associate](https://docs.npmjs.com/cli/v7/using-npm/scope#associating-a-scope-with-a-registry) with the connected registry. If you want to use multiple registries per project, you need to specify a scope for each of them.
 
 Leave empty if you want to use only one registry in this project. It will be used by `npm`/`yarn` commands by default.
 
