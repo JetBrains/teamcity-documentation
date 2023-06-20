@@ -301,7 +301,7 @@ When loading a TeamCity page, you might notice some content missing. Most common
 
 If this happens for a TeamCity instance running on an IIS server, check the values of the IIS `maxQueryStringLength` and/or `maxQueryString` values. These settings limit the maximum length of query strings. If these limits are too low, some of REST requests TeamCity sends to the `<server-url>/app/rest/...` endpoints may fail.
 
-To resolve this issue, increase these limits in the `web.config` file of your IIS server.
+To resolve this issue, increase these limits in the `web.config` file of your IIS server. The exact value should depend on your current configuration and the length of your project/configuration IDs. As a general recommendation, set this limit to 4000 characters and gradually raise it if the issue persists.
 
 See also: [Request Limits](https://learn.microsoft.com/en-us/iis/configuration/system.webServer/security/requestFiltering/requestLimits/) | [httpRuntime Element](https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)?redirectedfrom=MSDN)
 
