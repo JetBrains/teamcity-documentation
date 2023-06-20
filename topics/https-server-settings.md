@@ -83,10 +83,10 @@ If TeamCity is unable to re-issue a certificate, a corresponding message is show
 
 ## Generate and Load Certificates Manually
 
-If you do not wish to let TeamCity request certificates from Let's Encrypt, obtain and manually upload an SSL certificate and a private RSA key.
+If you do not wish to let TeamCity request certificates from Let's Encrypt, obtain and manually upload an SSL certificate and a private RSA or ECC key.
 
 * A certificate must be a `.pem` file.
-* A private key must be in `PKCS#1` or `PKCS#8` format and non-encrypted.
+* A private key must be in `PKCS#1` (only for RSA keys) or `PKCS#8` (RSA and ECC keys) format and non-encrypted.
 
   > If your key has a password, you can utilize OpenSSL to remove it:
   >
@@ -101,6 +101,28 @@ If you do not wish to let TeamCity request certificates from Let's Encrypt, obta
 
 * For a public-facing server, manually generate a free certificate from a trusted authority ([Let's Encrypt](https://letsencrypt.org), [ZeroSSL](https://zerossl.com), and others). For example, you can use [Certbot](https://certbot.eff.org/pages/about). Another option is to purchase a certificate from a commercial CA such as [DigiCert](https://www.digicert.com/tls-ssl/tls-ssl-certificates) or [GoDaddy](https://www.godaddy.com/web-security/ssl-certificate).
 * For a non-public-facing server, you can use an existing certificate or generate a new one locally. For example, you can follow [these instructions](https://www.ssl.com/how-to/manually-generate-a-certificate-signing-request-csr-using-openssl). Note that if you use a self-signed certificate, make sure your clients are [configured to trust it](using-https-to-access-teamcity-server.md#Accessing+the+server+via+HTTPS).
+
+### Example: Generate Required Files
+
+The following example illustrates how to use [OpenSSL](https://www.openssl.org) terminal commands to generate the following files:
+
+* Public key in PEM format
+* Private elliptic curve (EC) key in PKCS#8 format
+* Self-signed certificate with a predefined expiration date
+
+```Shell
+# Generate a private EC key
+openssl ecparam -name prime256v1 -genkey -noout -out private-eckey.pem
+
+# Generate a corresponding public key
+openssl ec -in private-eckey.pem -pubout -out public-key.pem
+
+# Create a self-signed certificate
+openssl req -new -x509 -key private-eckey.pem -out cert.pem -days 360
+
+# Convert your EC private key to the PKCS#8 format
+openssl pkcs8 -topk8 -nocrypt -in private-eckey.pem -out private-ec-pkcs8.key
+```
 
 ### Upload Files
 
@@ -133,6 +155,18 @@ You can also automate configuring HTTPS settings using a script, which should co
 
 ```Shell
 curl '<TeamCity_URL>/app/https/settings/uploadCertificate' -X POST -H 'Accept: application/json' -H 'Authorization: Bearer TOKEN' -F certificate=@PATH_CERT -F key=@PATH_KEY -F port=XXXX'`
+```
+
+For example:
+
+```Shell
+curl -X POST '
+  http://localhost:8111/app/https/settings/uploadCertificate' -H '
+  Accept:application/json' -H '
+  Authorization: Bearer aBcDeF.gHiGKLm.NOpQRsTUvWXyZ' -F "
+  certificate=@./cert.pem" -F "
+  key=@./private-15-days.key" -F "
+  port=6942"
 ```
 
 The `TOKEN` here is your [personal token](configuring-your-user-profile.md#Managing+Access+Tokens) with the `Change HTTPS settings` permission.
