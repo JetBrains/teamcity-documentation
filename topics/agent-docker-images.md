@@ -10,7 +10,7 @@ Instead of manually installing TeamCity agents and setting up required build sof
 > 
 {type="tip"}
 
-> Since not every 3rd-party tool vendor provides binaries for ARM processors, images for ARM devices have fewer installed components (when compared to images for the AMD x64 architecture). For instance, ARM-based images do not include Perforce CLI (p4).
+> Since 3rd-party tool vendors may not provide binaries for every OS/architecture, some images may include fewer installed components compared to the others. For instance, ARM-based images do not include Perforce CLI (p4) and Windows images ship without Mercurial.
 > 
 {type="note"}
 
