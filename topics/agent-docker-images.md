@@ -4,7 +4,13 @@ Instead of manually installing TeamCity agents and setting up required build sof
 
 * Pull a required JetBrains "TeamCity Agent" Docker image. You can choose between a "minimal" (the basic agent image without any 3rd-party tools) and regular/full (bundled with multiple tools such as Git and .NET Runtime) Docker images.
 
-* Execute the `docker run` command to start a container with a TeamCity agent running within.
+* Execute the `docker run ...` command to start a container with a TeamCity agent running within.
+
+    ```Shell
+    docker run -e SERVER_URL="<url to TeamCity server>"  \ 
+        -v <path to agent config folder>:/data/teamcity_agent/conf  \      
+        jetbrains/teamcity-agent
+    ```
 
 > You can also start a TeamCity server inside a container. See instructions on this page for more information: [jetbrains/teamcity-server](https://hub.docker.com/r/jetbrains/teamcity-server).
 > 
