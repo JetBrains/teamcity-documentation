@@ -18,14 +18,6 @@ Starting with this version, artifacts produced by batch builds are aggregated in
 
 Learn more: [](parallel-tests.md#Publish+Artifacts+Produced+By+Batch+Builds).
 
-## ARM Docker Images
-
-TeamCity Server and Agent images now include options for ARM-based devices. See the following Docker Hub registries for the list of available image tags:
-
-* [Server image](https://hub.docker.com/r/jetbrains/teamcity-server/tags)
-* [Agent image](https://hub.docker.com/r/jetbrains/teamcity-agent/tags)
-* [Minimal agent image](https://hub.docker.com/r/jetbrains/teamcity-minimal-agent/tags)
-
 ## Upgrade Notes
 {product="tc"}
 
