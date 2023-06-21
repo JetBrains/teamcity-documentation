@@ -35,6 +35,7 @@
             <toc-element id="start-teamcity-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="configure-java-for-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="install-multiple-agents-on-one-machine.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="agent-docker-images.md"/>
             <toc-element id="teamcity-integration-with-cloud-solutions.md" show-structure-for="chapter" show-structure-depth="4">
                 <toc-element id="setting-up-teamcity-for-amazon-ec2.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="setting-up-teamcity-for-kubernetes.md" show-structure-for="chapter" show-structure-depth="4"/>

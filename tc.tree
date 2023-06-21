@@ -65,13 +65,14 @@
          <toc-element id="start-teamcity-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="configure-java-for-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="install-multiple-agents-on-one-machine.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="agent-docker-images.md"/>
          <toc-element id="teamcity-integration-with-cloud-solutions.md" show-structure-for="chapter" show-structure-depth="4">
             <toc-element id="setting-up-teamcity-for-amazon-ec2.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="setting-up-teamcity-for-kubernetes.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md" show-structure-for="chapter" show-structure-depth="4"/>
          </toc-element>
       </toc-element>
-      <toc-element id="set-up-external-database.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="set-up-external-database">
+       <toc-element id="set-up-external-database.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="set-up-external-database">
          <toc-element id="migrating-to-external-database.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="setting-up-teamcity-with-ms-sql-server.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="configuring-utf8-character-set-for-mysql.md" show-structure-for="chapter" show-structure-depth="4"/>
