@@ -169,4 +169,5 @@ bin => batch-build-%teamcity.build.parallelTests.currentBatch%/bin
  
 * The [Enforce Clean Checkout action](clean-checkout.md#Enforcing+Clean+Checkout) does not work for build configurations with parallel tests configured.
 * A subsequent start of a build with parallel tests won't reuse already existing builds of the generated build configurations even if there were no new VCS commits.
+* One of the batch builds spawned to run [TestNG](https://testng.org/doc/) tests from an [XML suite](https://testng.org/doc/documentation-main.html#testng-xml) runs all tests instead of a specified subset of tests.
 
