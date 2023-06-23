@@ -1,7 +1,13 @@
 [//]: # (title: Agent Cloud Profile)
 [//]: # (auxiliary-id: Agent Cloud Profile)
 
-A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand while distributing a build queue. Configuring a cloud provider profile is one of the steps required to [enable agent cloud integration](teamcity-integration-with-cloud-solutions.md) between TeamCity and a cloud provider. The settings of profiles slightly vary depending on the cloud type.
+A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand while distributing a build queue. Profiles allow TeamCity to automatically scale the number of active build agents depending on the current workload.
+
+<!--autoscale-->
+<!--auto-scale-->
+
+
+Configuring a cloud provider profile is one of the steps required to [enable agent cloud integration](teamcity-integration-with-cloud-solutions.md) between TeamCity and a cloud provider. The settings of profiles slightly vary depending on the cloud type.
 
 >If you use Kotlin DSL for your TeamCity project settings, you need to update your DSL after upgrading as described [here](upgrading-dsl.md).
 
