@@ -92,8 +92,8 @@ The automatic update procedure is as follows:
 In case of an automatic update failure, perform the following to restore your TeamCity to the state prior to the update:
 
 1. Stop your TeamCity server if it is running.
-2. In your [TeamCity Home Directory](teamcity-home-directory.md) directory, remove the folders with the same name as the ones in the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory.
-3. Copy the contents of the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory to the `<TeamCity server home>` directory.
+2. For each folder that exists in the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory, remove the corresponding folder in the [TeamCity Home Directory](teamcity-home-directory.md).
+3. Copy the contents of the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` folder and paste it to `<TeamCity Home Directory>`.
 4. Start the TeamCity server.
 
 >Note that the bundled version of Java is not updated automatically. Learn [how to install the required Java version manually](how-to.md#Install+Non-Bundled+Version+of+Java).  
@@ -149,11 +149,20 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 
 If you made no changes to the container, you can just stop the running container, pull the new version of the [official TeamCity image](https://hub.docker.com/r/jetbrains/teamcity-server/) and the server in it via the usual command. If you changed the image, you will need to replicate the changes to the new TeamCity server image.
 
+
 ## IDE Plugins
 {product="tc"}
 
 It is recommended for all users to regularly update their IDE plugins to the latest version compatible with the TeamCity server version in use — at least to the version available from the TeamCity server's **Tools** section in the user profile.   
 Generally, the versions of the IntelliJ IDEA TeamCity plugin and Visual Studio TeamCity add-in have to be the same as the TeamCity server version. Users with non-matching plugin versions get a message on an attempt to log in to the TeamCity server with a non-matching version.
+
+## Server Rollback
+{product="tc"}
+
+In a rare scenario of an automatic or manual server upgrade failing, you can restore TeamCity to its previous state. See the following articles for more information:
+
+* [](restoring-teamcity-data-from-backup.md)
+* [](manual-backup-and-restore.md)
 
 ## Upgrading Build Agents
 {product="tc"}
