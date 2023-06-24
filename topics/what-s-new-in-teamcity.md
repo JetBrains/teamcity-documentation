@@ -96,6 +96,8 @@ If a VCS root is configured via TeamCity [connections](configuring-connections.m
 
 Short-lived refreshable tokens provide more security compared to passwords or personal access tokens since the TeamCity server refreshes them automatically without sharing any related data with agents.
 
+> Strating with the 2023.05.1 bugfix update, the **Acquire new** button is also available for VCS roots configured using an [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps).
+
 Learn more: [Refreshable tokens](git.md#refresh-token).
 
 ### Integration with Bitbucket Server and Data Center
