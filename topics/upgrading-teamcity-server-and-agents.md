@@ -92,8 +92,8 @@ The automatic update procedure is as follows:
 In case of an automatic update failure, perform the following to restore your TeamCity to the state prior to the update:
 
 1. Stop your TeamCity server if it is running.
-2. For each folder that exists in the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory, remove the corresponding folder in the [TeamCity Home Directory](teamcity-home-directory.md).
-3. Copy the contents of the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` folder and paste it to `<TeamCity Home Directory>`.
+2. For each folder that exists in the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory, remove the corresponding folder in the `<[TeamCity Home Directory](teamcity-home-directory.md)>`. Do not remove the "bin" folder as some of its files are not backed up to the `TC_home/.old` directory.
+3. Copy everything from the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` folder and paste it to `<TeamCity Home Directory>`, replacing all duplicate files.
 4. Start the TeamCity server.
 
 >Note that the bundled version of Java is not updated automatically. Learn [how to install the required Java version manually](how-to.md#Install+Non-Bundled+Version+of+Java).  
