@@ -106,8 +106,8 @@ If you do not wish to let TeamCity request certificates from Let's Encrypt, obta
 
 The following example illustrates how to use [OpenSSL](https://www.openssl.org) terminal commands to generate the following files:
 
-* Public key in PEM format
 * Private elliptic curve (EC) key in PKCS#8 format
+* Public key in PEM format
 * Self-signed certificate with a predefined expiration date
 
 ```Shell
