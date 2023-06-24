@@ -78,8 +78,6 @@ Specify a user to access Azure DevOps Server. This can be a username or `DOMAIN\
 
 Leave this field empty to let Azure DevOps select a user account that is used to run the TeamCity Server (or Agent, for the agent-side checkout).
 
-The "password" field is not available if a repository fetch URL was set via a configured [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps). In this case a refreshable access token is used instead of a static password. When a token expires, go to VCS settings and click **Acquire new** to issue a new token.
-
 </td></tr><tr>
 
 <td>
