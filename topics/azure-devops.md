@@ -74,8 +74,11 @@ Username
 
 <td>
 
-Specify a user to access Azure DevOps Server. This can be a username or `DOMAIN\UserName` string.   
-Leave empty to let Azure DevOps select a user account that is used to run the TeamCity Server (or Agent, for the agent-side checkout).
+Specify a user to access Azure DevOps Server. This can be a username or `DOMAIN\UserName` string.
+
+Leave this field empty to let Azure DevOps select a user account that is used to run the TeamCity Server (or Agent, for the agent-side checkout).
+
+The "password" field is not available if a repository fetch URL was set via a configured [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps). In this case a refreshable access token is used instead of a static password. When a token expires, go to VCS settings and click **Acquire new** to issue a new token.
 
 </td></tr><tr>
 
@@ -151,9 +154,13 @@ The following authentication options are available in Azure DevOps.
 
 When connecting to a TFVC repository, leave the _Username_ field in the VCS root settings empty and specify your access token as _Password_.
 
-You can create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account.
+You can create a [personal access token (PAT)](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account.
 
 Set the _Code_ access scope to _All scopes_ in the repositories you are about to access from TeamCity.
+
+### Refreshable Access Tokens
+
+This option is available if the VCS root was configured using an [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps). In this case TeamCity uses an OAuth application to issue short-lived tokens instead of passwords or PATs. See this help article for more information: [](git.md#Authentication+Settings).
 
 ### Alternate Authentication Credentials
 
