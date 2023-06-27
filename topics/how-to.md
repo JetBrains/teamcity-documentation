@@ -462,48 +462,51 @@ A single TeamCity license __cannot be used on two running servers__ at the same 
 ### Copied Server Checklist
 {product="tc"}
 
-If you are creating a copy (as opposed to moving the server this way), it is important to go through the checklist below:
-* ensure the new server is configured to use another Data Directory and another database than the original server; check also "Artifact directories" setting on server's Global Settings;
-* change server unique id by removing "uuid" attribute from XML of `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/main-config.xml` file before the first start;
-* ensure the same license keys are not used on several servers ([more on licensing](#Licensing+issues));
-* update [Server URL](configuring-server-url.md) on the __Administration | Global Settings__ page to the actual URL of the server;
-* check that you can successfully authenticate on the new server, use [super user](super-user.md) access if necessary;
-* check that VCS servers, issue tracker servers, email server, and other server-accessed systems are accessible;
-* check that any systems configured to push events to TeamCity server (like VCS hooks, automated build triggering, monitors, etc.) are updated to know about the new server;
-* review the list of installed plugins to determine if their settings need changes;
-* install new agents (or select some from the existing ones) and configure them to connect to the new server (using the new server URL);
-* check that clients reading from the server (downloading artifact, using server's REST API, NuGet feed, etc.) are reconfigured, if necessary.
+If you need to create a copy of a server (rather than move your server to a new location), follow the checklist below:
 
-If you are creating a __test server__, you need to ensure that the users and production systems are not affected.
+* Ensure the original and copied servers use different [Data Directories](teamcity-data-directory.md), databases, and artifact directories.
+* Change the unique server ID by removing "uuid" attribute from XML of `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/main-config.xml` file before the first start.
+* Ensure the same license keys are not used on several servers ([more on licensing](#Licensing+issues)).
+* Update [Server URL](configuring-server-url.md) on the __Administration | Global Settings__ page to the actual URL of the server.
+* Check that you can successfully authenticate on the new server, use [super user](super-user.md) access if necessary.
+* Check that VCS servers, issue tracker servers, email server, and other server-accessed systems are accessible.
+* Check that any systems configured to push events to TeamCity server (like VCS hooks, automated build triggering, monitors, etc.) are updated to know about the new server.
+* Review the list of installed plugins to determine if their settings need changes.
+* Install new agents (or select some from the existing ones) and configure them to connect to the new server (using the new server URL).
+* Check that clients reading from the server (downloading artifact, using server's REST API, NuGet feed, etc.) are reconfigured, if necessary.
 
-Below is the list of settings which should be changed __before__ the test server started:
-* disable cleanup process (to avoid cleanup of files in external storages, such as S3 or Docker Registry); for this find the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/main-config.xml` file and change the line: 
-`<db-compact enabled="true">`
-to
-`<db-compact enabled="false">`
+If you copy a production server to create a __test server__, you need to ensure that the users and production systems are not affected.
 
-* disable cloud integration (the test server should not start new cloud agents): set:
-`teamcity.cloud.integration.enabled=false` internal property in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/internal.properties` file; create the file if it does not exist
+Below is the list of settings which should be changed __before__ the test server is first started:
 
-* disable the plugins which can modify state in the external systems, such as commit status publisher; for this create the file `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/disabled-plugins.xml`:
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<disabled-plugins>
-  <disabled-plugin name="commit-status-publisher" />
-  <disabled-plugin name="slackNotifier" />
-  <disabled-plugin name="email" />
-  <disabled-plugin name="webhooks" />
-  <disabled-plugin name="searchBuildByNumber" />
-</disabled-plugins>
-```
-Consider adding to this list any other third party plugins which push data into other non-copied systems based on the TeamCity events
+* Disable cleanup process to avoid cleanup of files in external storages, such as S3 buckets or Docker Registry. To do this, locate the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/main-config.xml` file and change the `<db-compact enabled="true">` line to `<db-compact enabled="false">`.
 
-* disable functionality to [store project settings in VCS](storing-project-settings-in-version-control.md): set `teamcity.versionedSettings.enabled=false` internal property;
 
-After the test server start:
-* disable email verification (in the "Administration &gt; Authentication" section);
-* be sure not to run any builds which change (for example, deploy to) production environments. This also typically includes Maven builds deploying to non-local repositories. You can prevent any builds from starting by pausing the [build queue](working-with-build-queue.md);
-* consider significantly increasing [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (server-wide default and overridden in the VCS roots) or changing settings of the VCS roots to prevent them from contacting production servers. See also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
+* Disable cloud integrations: the test server should not be able to start new cloud agents. Set the
+`teamcity.cloud.integration.enabled=false` internal property in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/internal.properties` file (create this file if it does not already exist).
+
+* Disable plugins that can modify external systems' states, such as commit status publisher. Create the file `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/disabled-plugins.xml` with the following content:
+
+    ```XML
+    <?xml version="1.0" encoding="UTF-8"?>
+    <disabled-plugins>
+      <disabled-plugin name="commit-status-publisher" />
+      <disabled-plugin name="slackNotifier" />
+      <disabled-plugin name="email" />
+      <disabled-plugin name="webhooks" />
+      <disabled-plugin name="searchBuildByNumber" />
+    </disabled-plugins>
+    ```
+  
+    Consider adding to this list any third-party plugins that push data to other non-copied systems based on the TeamCity events.
+
+* Set the `teamcity.versionedSettings.enabled=false` internal property to turn off to prevent projects from [storing their settings in VCS](storing-project-settings-in-version-control.md).
+
+After the test server starts:
+
+* Navigate to **Administration | Authentication** and disable email verification.
+* Ensure your test server does not run any builds that change (for example, deploy to) production environments. This also typically includes Maven builds deploying to non-local repositories. You can prevent any builds from starting by pausing the [build queue](working-with-build-queue.md).
+* You may also want to significantly increase the [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (both server-wide default and overridden values in the VCS roots) or change VCS roots' settings to prevent them from contacting production servers. See also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
 
 See also the section below on [moving the server](#Move+TeamCity+Installation+to+a+New+Machine) from one machine to another.
 {product="tc"}
