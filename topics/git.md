@@ -260,7 +260,7 @@ Refreshable token
 </td>
 <td id="refresh-token">
 
-If a VCS root that fetches data from a GitHub, Bitbucket Server, Bitbucket Cloud Azure DevOps, or GitLab was configured using a TeamCity [connection](configuring-connections.md),
+If a VCS root that fetches data from a GitHub, Bitbucket Server, Bitbucket Cloud, Azure DevOps, or GitLab was configured using a TeamCity [connection](configuring-connections.md),
 refreshable tokens are enabled by default. Such tokens are short-lived providing more security than passwords or personal access tokens:
 the TeamCity server refreshes them automatically without sharing any related data with agents.
 
