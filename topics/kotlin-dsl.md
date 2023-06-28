@@ -121,9 +121,7 @@ project {
 
 Here, `project {}` represents the current project whose settings you'll define in the DSL (in DSL code it is sometimes referenced as `_Self`). This is the same project where you enabled versioned settings on the previous step. This project ID and name can be accessed via a special `DslContext` object but cannot be changed via the DSL code.
 
-You can create different entities in this project by calling `vcsRoot()`, `buildType()`, `template()`, or `subProject()` methods.
-
-The following examples shows how to add a build configuration with a command line script:
+The following example shows how to add a build configuration with a command line script:
 
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.*
