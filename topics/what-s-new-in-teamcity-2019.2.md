@@ -131,7 +131,7 @@ Server-side patches are mostly used when an agent cannot find a VCS client execu
 
 TeamCity Kotlin DSL receives the following updates:
 * DSL offers an alternative way to configure a [build chain](build-chain.md) in a pipeline style ([read more](kotlin-dsl.md#Build+Chain+DSL+Extension)).
-* You can now customize the DSL generation behavior using context parameters configured in the TeamCity UI ([read more](kotlin-dsl.md#Using+Context+Parameters+in+DSL)).
+* You can now customize the DSL generation behavior using context parameters configured in the TeamCity UI ([read more](kotlin-dsl.md#Use+Context+Parameters+in+DSL)).
 * If the "_Store secure values outside of VCS_" option is enabled for a project, TeamCity allows you to see all the project tokens and generate new ones on the __Version Settings | Tokens__ tab ([read more](storing-project-settings-in-version-control.md#Managing+Tokens)).
 
 ## New features of experimental UI
