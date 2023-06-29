@@ -1,6 +1,10 @@
 [//]: # (title: Duplicates Finder \(ReSharper\))
 [//]: # (auxiliary-id: viewpage.actionpageId113084077;Duplicates Finder \(ReSharper\))
 
+> Due to the ReSharper team sunsetting the [dupFinder Command-Line Tool](https://blog.jetbrains.com/dotnet/2021/08/12/sunsetting-dupfinder-command-line-tool/), this runner is now deprecated. This means its underlying tool will no longer be updated to work with newer language features. However, you can continue using this runner in your build configurations. To do so, install [JetBrains ReSharper Command Line Tools 2021.2.0](https://www.jetbrains.com/resharper/download/other.html) and specify a path to this tool in the runner's advanced settings (the **R# CLT Home Directory** field).
+> 
+{type="warning"}
+
 The _Duplicates finder (ReSharper)_ build runner, based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html), is intended to catch similar code fragments and provide a report on the discovered repetitive blocks of C# and Visual Basic .NET code in Visual Studio 2003, 2005, 2008, 2010, 2012, 2013, and 2015 solutions.
 
 <note>
