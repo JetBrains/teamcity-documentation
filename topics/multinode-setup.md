@@ -621,16 +621,13 @@ It is recommended that the main TeamCity node and all secondary nodes have the s
 
 When __upgrading to a minor version__ (a bugfix release), the main and the secondary nodes should be running without issues as the TeamCity data format stays the same. You can upgrade the main TeamCity node and then the secondary nodes [manually](upgrading-teamcity-server-and-agents.md), or with the [automatic update](upgrading-teamcity-server-and-agents.md#Automatic+Update).
 
-When __upgrading the main node to a major version__, its TeamCity data format will change. We recommend stopping all the secondary nodes before starting the upgrade of the main node to avoid any possible data format errors.   
-To be able to process tasks, all secondary nodes must be upgraded after the main node major upgrade.
+When __upgrading the main node to a major version__, its TeamCity data format will change. Because of that, as soon as the main node of a new version  starts, the secondary nodes will detect it and will switch to the read-only mode. It can take some time for the secondary nodes to become read-only. During this time the main node will wait until it ensures that all the other nodes do not change data anymore. 
 
 To __upgrade__ nodes in a multinode setup to a major version of TeamCity, follow these steps:
-1. Stop all secondary nodes.
-2. Start the [upgrade](upgrading-teamcity-server-and-agents.md) on the main TeamCity node as usual.
-3. Proceed with the upgrade.
-4. Verify that everything works properly and agents are connecting to the main node (the agents will reroute the data that was supposed to be routed to the secondary nodes to the main node).
-5. Upgrade TeamCity on the secondary nodes to the same version.
-6. Start the secondary nodes and verify that they are connected on the __Administration | Server Administration | Nodes Configuration__ page on the main node.
+1. Start the [upgrade](upgrading-teamcity-server-and-agents.md) on the main TeamCity node as usual.
+2. Proceed with the upgrade.
+3. Verify that everything works properly and agents are connecting to the main node (the agents will reroute the data that was supposed to be routed to the secondary nodes to the main node).
+4. Perform upgrade of TeamCity on the secondary nodes to the same version.
 
 To __downgrade__ nodes in a multinode setup, follow these steps:
 1. Shutdown the main node and the secondary nodes.
