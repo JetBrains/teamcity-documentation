@@ -59,6 +59,8 @@ After the commit to the repository, you will get the `.teamcity` settings direct
 
 ## Edit Kotlin Projects in IntelliJ IDEA
 
+You can create, edit, and debug TeamCity Kotlin DSL projects in IntelliJ IDEA (both Ultimate and Community versions are supported).
+
 ### Create New Project
 
 To add the `.teamcity` settings directory as a new module to an existing project in IntelliJ IDEA, follow the step below:
