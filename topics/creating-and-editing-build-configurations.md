@@ -93,17 +93,38 @@ Alternatively, you can create a build configuration template from an existing bu
 
 ## Creating Build Configuration from Template
 
-To create a build configuration based on a template:
-1. On the __Administration | Projects__ page, select the target project in the list.  
-   Alternatively, open the project using the __Projects__ pop-up menu and click __Edit Project Settings__.  
-   The __Project Settings__ page opens.
-2. On the __Project Settings__ page, click the required template in the __Build Configuration Templates__ section.
-3. Click __Actions__ in the upper right corner of the screen and then click __Create Build Configuration__.
-4. Specify the required settings for the new configuration.
+> When you create a template from scratch or extract it from an existing build configuration, this template is owned by the current project and is available only within this project (or its subprojects). This means you cannot create new configurations in "&lt;Root project&gt;/ProjectA" using the "&lt;Root project&gt;/ProjectB/BuildConfTemplate" template.
+> 
+{type="tip"}
 
-Alternatively to steps 2-4, you can:
-1. On the __Project Settings__ page, click __Create build configuration__ under the __Build Configurations__ section.
-2. In the configuration settings, open the __Based on template__ drop-down menu and select the required template.
+You can create a templated build configuration in two ways: from the template settings page, or by creating a regular configuration and choosing a template it should utilize.
+
+Option #1:
+
+1. Navigate to **Administration | Project** and select a project that owns a template.
+
+2. Click a required template under the **Build configuration templates** section.
+    
+    <img src="dk-buildConfTemplates.png" width="706" alt="Choose the required template"/>
+
+3. Click **Actions | Create build configuration from this template...**.
+
+    <img src="dk-createConfFromTemplate.png" width="706" alt="Create new configuration from a template"/>
+
+4. Specify the required settings for the new configuration. Do not click any tiles other than **Manually**; otherwise, you will create a new configuration where the selected template is not used.
+
+Option #2:
+
+1. Navigate to **Administration | Project** and select a project that owns a template.
+2. Click __Create build configuration__ under the __Build Configurations__ section.
+    
+    <img src="dk-createNewBuildConf.png" width="706" alt="Create a regular configuration"/>
+   
+3. Click the **Manually** tile and choose the required template in the __Based on template__ drop-down menu.
+
+    <img src="dk-confBasedOnTemplate.png" width="706" alt="Create a regular configuration"/>
+
+Option #2 is helpful when the **Build configuration templates** section does not show the required template since it is owned by another (sub)project.
 
 <note>
 
