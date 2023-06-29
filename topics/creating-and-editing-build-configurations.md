@@ -93,7 +93,7 @@ Alternatively, you can create a build configuration template from an existing bu
 
 ## Creating Build Configuration from Template
 
-> When you create a template from scratch or extract it from an existing build configuration, this template is owned by the current project and is available only within this project (or its subprojects). This means you cannot create new configurations in "&lt;Root project&gt;/ProjectA" using the "&lt;Root project&gt;/ProjectB/BuildConfTemplate" template.
+> When you create a template from scratch or extract it from an existing build configuration, this template is available only for this project (and its subprojects). This means you cannot create new configurations in "&lt;Root project&gt;/ProjectA" using the "&lt;Root project&gt;/ProjectB/BuildConfTemplate" template.
 > 
 {type="tip"}
 
