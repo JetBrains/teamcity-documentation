@@ -32,6 +32,7 @@ Basic TeamCity EC2 setup involves:
 <note>
 
 Note that the number of EC2 agents is limited by the total number of agent licenses you have in TeamCity.
+
 </note>
 
 Make sure the server URL specified on the __Administration | Global Settings__ page is correct since agents will use it to connect to the server, if a custom server URL is not specified in the [cloud profile settings](agent-cloud-profile.md#Specifying+Profile+Settings).
@@ -58,6 +59,7 @@ To use [spot fleets](#Amazon+EC2+Spot+Fleet+support), the following additional p
 * `ec2:RequestSpotFleet`
 * `ec2:DescribeSpotFleetRequests`
 * `ec2:CancelSpotFleetRequests`
+* `iam:CreateServiceLinkedRole` (if you are getting _"The provided credentials do not have permission to create the service-linked role for EC2 Spot Fleet"_ error; you can safely revoke this permission once the service role is created)
 
 To launch an [instance with the IAM Role](#Configuring+an+Amazon+EC2+cloud+profile) (applicable to instances cloned from AMIs and launch templates), the following additional permissions are required:
 * `iam:ListInstanceProfiles`
