@@ -43,7 +43,7 @@ Make sure to renumber all lines after the inserted ones.
 
 ### Build Agent is Run by Launchd (macOS)
 
-If a TeamCity agent process is started by a [launchd](start-teamcity-agent.md#Automatic+Agent+Start+Under+macOS) script, you need to modify the corresponding `.plist` file to modify environment variables. The following `.plist` file entry sets JVM `XMX` parameter to increase the maximum memory allocation pool for a build agent to 512 MB.
+If a TeamCity agent process is started by a [launchd](start-teamcity-agent.md#Automatic+Agent+Start+Under+macOS) script, you need to modify the corresponding `.plist` file to set up environment variables. The following `.plist` file entry sets JVM `XMX` parameter to increase the maximum memory allocation pool for a build agent to 512 MB.
 
 ```XML
 <key>EnvironmentVariables</key>
