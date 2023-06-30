@@ -41,6 +41,18 @@ You should add these extra lines _before_ the following line in the `wrapper.con
 Make sure to renumber all lines after the inserted ones.
 </note>
 
+### Build Agent is Run by Launchd (macOS)
+
+If a TeamCity agent process is started by a [launchd](start-teamcity-agent.md#Automatic+Agent+Start+Under+macOS) script, you need to modify the corresponding `.plist` file to modify environment variables. The following `.plist` file entry sets JVM `XMX` parameter to increase the maximum memory allocation pool for a build agent to 512 MB.
+
+```XML
+<key>EnvironmentVariables</key>
+    <dict>
+        <key>TEAMCITY_AGENT_MEM_OPTS</key>
+        <string>-Xmx512m</string>
+    </dict>
+```
+
 ## Agent Launcher Properties
 
 Only rare cases might require changing agent launcher properties. Before modifying these, make sure your problem cannot be solved by changing the main agent process properties described [above](#Agent+Properties).
@@ -64,6 +76,8 @@ wrapper.java.additional.<N>
 
 Make sure to renumber all lines after the inserted ones.
 </note>
+
+
 
 [//]: # (Internal note. Do not delete. "Configuring Build Agent Startup Propertiesd71e106.txt")    
 
