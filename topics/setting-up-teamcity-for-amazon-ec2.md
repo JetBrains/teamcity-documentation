@@ -1,19 +1,19 @@
 [//]: # (title: Setting Up TeamCity for Amazon EC2)
 [//]: # (auxiliary-id: Setting Up TeamCity for Amazon EC2)
 
-TeamCity Amazon EC2 integration allows TeamCity auto-scale its building resources by automaically starting and stopping cloud-hosted agents on-demand, depending on the current build queue workload.
+TeamCity Amazon EC2 integration allows TeamCity auto-scale its building resources by automatically starting and stopping cloud-hosted agents on-demand, depending on the current build queue workload.
 
 
 ## Prerequisites
 
-This section describes steps that you need to perform in your AWS account before setting up a cloud profile in TeamCity UI.
+This section describes the steps that you must perform in your AWS account before setting up a cloud profile in TeamCity UI.
 
 ### Create and Setup an EC2 Instance
 
 1. Open the [Amazon EC2 console](https://console.aws.amazon.com/ec2/).
-2. Create the required instance. Follow these Amazon tutorials if you experience issues: [Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html), [Windows](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2_GetStarted.html), [macOS](https://aws.amazon.com/getting-started/hands-on/launch-connect-to-amazon-ec2-mac-instance/).
+2. Create the required instance. Refer to these Amazon tutorials for more information: [Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html), [Windows](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2_GetStarted.html), [macOS](https://aws.amazon.com/getting-started/hands-on/launch-connect-to-amazon-ec2-mac-instance/).
    
-   > If you intend to create an Amazon Machine Image (AMI) based on this instance and use this AMI as a template for TeamCity to dynamically spawn and terminate cloud agents, the exact instance type you choose on this step (for instance, `t2.small` or `x1e.xlarge`) is irrelevant. You will be able to specify the instance type later in TeamCity settings.
+   > If you will create an Amazon Machine Image (AMI) from this instance and use this AMI to spawn identical build agents, the exact instance type you choose in this step (for instance, `t2.small` or `x1e.xlarge`) is irrelevant. You will be able to specify the instance type later in TeamCity settings.
    > 
    {type="tip"}
    
@@ -22,9 +22,9 @@ This section describes steps that you need to perform in your AWS account before
    * [](install-teamcity-agent.md)
    * [](configure-agent-installation.md)
 
-4. Install any additional software that is required to run builds and the TeamCity agent itself: JDKs and JREs, SDKs, runtime frameworks, building tools such as Git and Docker, and so on.
+4. Install any additional software required to run build steps and the TeamCity agent itself: JDKs and JREs, SDKs, runtime frameworks, building tools such as Git and Docker, and so on.
    
-   > When using EC2-hosted agents, you occasionally need to update software installed on corresponding instances and re-build AMIs. Otherwise, outdated cloud agents that connect to your TeamCity server will instantly disconnect and spend some time upgrading their tools.
+   > When using EC2-hosted agents, you occasionally need to update software installed on corresponding instances and rebuild AMIs. Otherwise, outdated cloud agents that connect to your TeamCity server will instantly disconnect and spend some time upgrading their tools.
    > 
    > To minimize the number of software that needs regular updates, consider opting for container orchestration solutions instead. This approach allows TeamCity to dynamically create pods that pull the [Agent Docker images](https://hub.docker.com/r/jetbrains/teamcity-agent/tags) with the latest building tools.
    > 
@@ -35,22 +35,22 @@ This section describes steps that you need to perform in your AWS account before
    > 
    {type="tip"}
 
-5. Run the agent and ensure it successfully connects to you TeamCity server and is compatible with all required configurations.
-6. Configure the system to [automatically run a TeamCity agent](start-teamcity-agent.md#Automatic+Start) whenever an instance starts.
-7. For Windows instances, see also [Additional configuration for Windows agents](#Additional+Configuration+for+Windows+Agents).
-8. Restart your instance to ensure the build agent starts automatically and is able to connect to the server.
+5. Run the agent and ensure it successfully connects to your TeamCity server and is compatible with all required configurations.
+6. Configure the system to [automatically run a TeamCity agent](start-teamcity-agent.md#Automatic+Start) when an instance starts.
+7. For Windows instances, follow these steps: [Additional configuration for Windows agents](#Additional+Configuration+for+Windows+Agents).
+8. Restart your instance to ensure the build agent starts automatically and can connect to the server.
 
 ### Create an AMI
 
-If you only need one single instance of a machine created in the previous step (for example, if you create a dedicated instance for one specific configuration that rarely runs), you can skip this step. Otherwise, if you want TeamCity to automatically scale the number of active cloud agents based on the current workload, follow the steps below.
+You can skip this step if you only need one single instance of a machine created in the previous step (for example, if you create a dedicated instance for one specific configuration that rarely runs). Otherwise, if you want TeamCity to automatically scale the number of active cloud agents based on the current workload, follow the steps below.
 
 1. Remove all temporary and excess data from your instance: installation wizards, downloaded archives, build logs, and so on.
-2. Stop the build agent. For Windows instances, stop the agent service but leave its startup type as _Automatic_.
+2. Stop the build agent. For Windows instances, stop the agent service but leave its startup type _Automatic_.
 3. Optional: Delete the `<agent_home>/logs` and `<agent_home>/temp` directories.
 4. Optional: Delete the `<agent_home>/conf/amazon-*` file.
 5. Remove the following properties from the `<agent_home>/conf/buildAgent.properties` file:
    * `name` — TeamCity will automatically assign unique names to your instances.
-   * `serverUrl` — for the EC2 integraion plugin, this property is safe to remove since you will provide a server URL for all instances later, when setting up a cloud profile. Other plugins may require this property is present and set to a correct value.
+   * `serverUrl` — for the EC2 integration plugin, this property is safe to remove since you will provide a server URL for all instances when setting up a cloud profile. Other plugins may require this property to be present and set to a correct value.
    * (optional) `authorizationToken` — new cloud agents are authorized automatically.
 6. Stop the instance.
 7. On the overview page of your instance, click **Actions | Image and Templates | Create Image**.
@@ -63,9 +63,9 @@ After you have created a required instance or AMI, you can set up cloud profiles
 
 ### Create a Cloud Profile
 
-A **cloud profile** is a collection of common settings for TeamCity to start virtual machines.
+A **cloud profile** is a collection of general settings for TeamCity to start virtual machines.
 
-1. Navigate to **Administration | &lt;Required Project&gt; | Cloud Profiles**. If you want cloud agents set up in this profile to be available globally, choose the **&lt;Root project&gt;**. Profiles owned by individual projects can be used to spawn agents that can be used only in these projects.
+1. Navigate to **Administration | &lt;Required Project&gt; | Cloud Profiles**. If you want cloud agents in this profile to be available globally, choose the **&lt;Root project&gt;**. Profiles owned by individual projects can be used to spawn agents that can be used only in these projects.
 
 2. Click **Create new profile**.
 
@@ -73,18 +73,18 @@ A **cloud profile** is a collection of common settings for TeamCity to start vir
 
 4. Enter your profile name and optional description.
 
-5. Choose between authentication via access key/secret pair, or via credentials stored locally on the server machine. Regardless of the selected mode, an IAM role used by TeamCity should have all permissions listed in this section: [Required IAM Permissions](#Required+IAM+permissions).
+5. Choose between authentication via access key/secret pair or credentials stored locally on the server machine. Regardless of the selected mode, an IAM role used by TeamCity should have all permissions listed in this section: [Required IAM Permissions](#Required+IAM+permissions).
 
    <tabs>
    
    <tab title="Access Keys">
 
-   This option allows you to specify credentials that TeamCity will use to access your AWS resources.
+   This option lets you specify credentials that TeamCity will use to access your AWS resources.
    
    1. Go to the [AWS Identity and Access Management](https://console.aws.amazon.com/iam/) (IAM) dashboard.
    2. Switch to the **Users** tab and find a user whose credentials can be used by TeamCity to access your EC2 instances and AMIs.
-   3. Switch to the **Security Credentials** tab and scroll down to the **Access keys** section.
-   4. Create a new key. Paste its ID an secret to the related fields in TeamCity UI.
+   3. Switch to the **Security Credentials** tab and scroll to the **Access keys** section.
+   4. Create a new key. Paste its ID and secret to the related fields in TeamCity UI.
    
    </tab>
    
@@ -99,19 +99,19 @@ A **cloud profile** is a collection of common settings for TeamCity to start vir
    </tabs>
 
 6. Choose an AWS region in which your instances are hosted.
-7. Set up the agents limit. This number specifies the overall limit for agents created from all cloud images of this profile.
-8. Specify the TeamCity server URL. This value will be automatically passed to agents' `buildAgent.properties` files. If not specified, agents will use the same value as set on the __Administration | Global Settings__ page.
+7. Set up the agent limit. This number specifies the overall limit for agents created from all cloud images of this profile.
+8. Specify the TeamCity server URL. This value will be automatically passed to agents' `buildAgent.properties` files. If not specified, agents will use the same value as on the __Administration | Global Settings__ page.
 9. Specify the set of criteria for winding down active cloud agents.
 10. Click **Apply changes** to save the profile and exit the profile settings page.
 
 
 ### Add a Cloud Image
 
-Cloud profiles specify global settings, such as authorization credentials and instance regions. Each profile has at least one **image** that stores settings related to the specific type of cloud instance that should be started. You can add as many images to a single profile as your needs dictate. However, note that the total number of agents started by all images cannot exceed the limit set in the profile settings (and the number of agents permitted by your license).
+Cloud profiles specify global settings, such as authorization credentials and instance regions. Each profile has at least one **image** that stores settings related to the specific type of cloud instance that should be started. You can add as many images to a profile as your needs dictate. However, note that the total number of agents started by all images cannot exceed the limit set in the profile settings (and the number of agents permitted by your license).
 
 
 1. Click the **Add image** button.
-2. Specify the image name. Agents started from this image will use this value as a prefix for their names. All images in a cloud profile must have unique names.
+2. Specify the image name. Agents starting from this image will use this value as a name prefix. All images in a cloud profile must have unique names.
 
    <anchor name="Amazon+EC2+Spot+Fleet+Support"/>
    <anchor name="Amazon+EC2+Spot+Instances+Support"/>
@@ -121,39 +121,39 @@ Cloud profiles specify global settings, such as authorization credentials and in
    <tabs>
    
    <tab title="AMI">
+
+   With this image type, you can configure agent settings starting from the specific AMI.
    
-   With this image type you can configure settings for agents started from the specific AMI.
-   
-   1. Check **Use launch template** if you want TeamCity to import and use a specific [launch template](https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html). When the default/latest version of the template is updated on the server, TeamCity detects these changes and updates the running instances.
+   1. Check the **Use launch template** option if you want TeamCity to import and use a specific [launch template](https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html). When the default/latest version of the template updates on the server, TeamCity detects these changes and updates the running instances.
    2. Choose a required AMI.
    
       * **Own AMI** — TeamCity scans a collection of AMIs available under credentials specified in the cloud profile settings. You can browse all found AMIs and choose a required image.
       * **AMI by ID** — Allows you to utilize a [shared AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharing-amis.html).
-      * **AMI by tags** — Specify a comma-separated list of [AWS tags](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html), for example `Owner=Mike,Project=Glacier,Subnet=Public`. If the specified tags point to multiple AMIs, the last used AMI with matching tags will be used. If no AMIs were found, the image name under the **Agents** section will be "Image name (no data)" instead of "Image name (ami-xxxxxxxxx)".
+      * **AMI by tags** — Specify a comma-separated list of [AWS tags](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html), for example, `Owner=Mike,Project=Glacier,Subnet=Public`. If the specified tags point to multiple AMIs, TeamCity will use the last used AMI. If no AMIs were found, the image name under the **Agents** section will be "Image name (no data)" instead of "Image name (ami-xxxxxxxxx)".
       
          <img src="dk-ec2-invalidTags.png" width="460" alt="Invalid AMI tags"/>
    
    3. Specify one or multiple [instance types](https://aws.amazon.com/ec2/instance-types/).
       
-      If you need to invoke new on-demand instances, create multiple identical images with different types. For example, you may have three images that utilize the same Linux AMI: the type of image #1 is `t2.small`, image #2 is `t2.medium`, and image #3 is `t2.large`. This approach allows you to control how many instances of each type are allowed to boot up, and to manually start instances of specific types.
+      If you need to invoke new on-demand instances, create multiple identical images with different types. For example, you may have three images that utilize the same Linux AMI: the type of image #1 is `t2.small`, image #2 is `t2.medium`, and image #3 is `t2.large`. This approach allows you to control how many instances of each type are allowed to boot, and to start instances of specific types manually.
       
-      If you intend to order spot instances (see below), you may specify multiple instance types in the same image. This increases your chances to have a spot instance assigned.
+      If you intend to order spot instances (see below), you may specify multiple instance types in the same image. This approach increases your chances of having a spot instance assigned.
       
       > Mac instances support only `mac1.metal` and `mac2.metal` types and are available only as bare metal instances on [Dedicated Hosts](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html), with a minimum allocation period of 24 hours before you can release the Dedicated Host. Learn more: [Amazon EC2 Mac instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html).
       > 
       {type="note"}
    
    4. Optional: Specify additional image settings.
-      * **IAM Role** — The IAM role that all launched instances will assume. This role specifies the set of permissions that will be [granted to applications](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html) running on your EC2 instances. The AWS account used by TeamCity must have `iam:ListInstanceProfiles` and `iam:PassRole` permissions to utilize IAM roles.
+      * **IAM Role** — The IAM role that all launched instances will assume. This role specifies the permissions [granted to applications](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html) running on your EC2 instances. The AWS account used by TeamCity must have `iam:ListInstanceProfiles` and `iam:PassRole` permissions to utilize IAM roles.
       * **Key pair** — Required if you may need to connect to your EC2 instances [using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
       * **User data** — Allows you to specify a script that will be run when an instance launches. Learn more: [Windows](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html), [Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html).
-      * **Tags** — The list of comma-separated instance tags. For example: `LaunchedBy=TeamCity,TeamCityCloudProfileName=MyProfile1`. Tagging requires the `ec2:*Tags` permission. See the following section for more information: [](#Tagging).
+      * **Tags** — The list of comma-separated instance tags. For example `LaunchedBy=TeamCity,TeamCityCloudProfileName=MyProfile1`. Tagging requires the `ec2:*Tags` permission. See the following section for more information: [](#Tagging).
    
-   5. Check **Use spot instances** if you prefer to use cheaper [spot instances](https://aws.amazon.com/ec2/spot/) rather than reguar On-Demand instances. The **Max price** field allows you to specify your maximum bid price for spot instances (in US dollars). If the bid price is not specified, the default On-Demand price will be used.
+   5. Check **Use spot instances** if you prefer cheaper [spot instances](https://aws.amazon.com/ec2/spot/) to On-Demand ones. The **Max price** field lets you to specify your maximum bid price for spot instances (in US dollars). The default On-Demand price will be used if the bid price is not specified.
 
-      TeamCity can automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](#Required+IAM+permissions).
+      TeamCity can automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity to request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](#Required+IAM+permissions).
    
-      > It is not recommended to use spot instances for production-critical builds due to the possibility of an [unexpected spot instance termination by Amazon](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#using-spot-instances-managing-interruptions). If a spot instance is terminated, TeamCity will fail the build with a corresponding build problem, and will re-add this build to the build queue.
+      > It is not recommended to use spot instances for production-critical builds due to the possibility of an [unexpected spot instance termination by Amazon](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#using-spot-instances-managing-interruptions). If a spot instance is terminated, TeamCity will fail the build with a corresponding build problem and re-add this build to the build queue.
       >
       {type="note"}
    6. Specify networking settings for your EC2 instances.
@@ -190,20 +190,20 @@ Cloud profiles specify global settings, such as authorization credentials and in
    
    </tabs>
 
-4. Set up the maximum number of active cloud agents started from this image. Note that the total number of agents started from all images added to a profile cannot exceed the limit set on the settings page of this profile.
+4. Set up the maximum number of active cloud agents starting from this image. Note that the total number of agents started from all images added to a profile cannot exceed the limit set on the settings page of this profile.
 5. Specify the [agent pool](configuring-agent-pools.md) to which newly created instances will belong.
 6. Click **Save** to exit the image settings page.
 
-After you have configured an image, TeamCity winds up one test agent for this image to test whether it is able to start and connect to the server. When an agent is connected and authorized, TeamCity saves its parameters to be able to correctly assign builds to compatible agents.
+After you have configured an image, TeamCity winds up one test agent for this image to test whether it can start and connect to the server. When an agent is connected and authorized, TeamCity saves its parameters to correctly assign builds to compatible agents.
    
-If your image has the **Use spot instances** setting checked and a test instance cannot be launched at the moment (for instance, if there is no available capacity or your bid price is too low), TeamCity will repeat attempts to launch a spot instance once a minute, as long as there are queued builds which can run on this agent.
+If your image has the **Use spot instances** setting checked and a test instance cannot be launched at the moment (for example, if there is no available capacity or your bid price is too low), TeamCity will repeat attempts to launch a spot instance once a minute, as long as there are queued builds which can run on this agent.
 
 
 ## Manage Cloud Agents
 
 When a build is queued, TeamCity attempts to run queued builds on regular (non-cloud) agents first. If none are currently available, TeamCity finds a compatible cloud image and (if the limit of simultaneously running instances is not yet reached) starts a new instance.
 
-You can manually start and stop cloud agents from the **Agents** tab. Note that the **Start** button is disabled if the number of active cloud agents reached the limit specified in profile or image settings.
+You can manually start and stop cloud agents from the **Agents** tab. Note that the **Start** button is disabled if the number of active cloud agents reaches the limit specified in the profile or image settings.
 
 <img src="dk-ec2-startAndStopAgents.png" width="706" alt="Start and stop cloud agents"/>
 
@@ -244,7 +244,7 @@ To use [Spot Fleets](#Amazon+EC2+Spot+Fleet+Support), the following additional p
 * `ec2:CancelSpotFleetRequests`
 * `iam:CreateServiceLinkedRole` (if you are getting _"The provided credentials do not have permission to create the service-linked role for EC2 Spot Fleet"_ error; you can safely revoke this permission once the service role is created)
 
-To launch an instance with an IAM Role (applicable to instances cloned from AMIs and launch templates), the following additional permissions are required:
+To launch an instance under an assumed IAM Role (applicable to instances cloned from AMIs and launch templates), the following additional permissions are required:
 * `iam:ListInstanceProfiles`
 * `iam:PassRole`
 
@@ -300,9 +300,9 @@ Alternatively, you can use the "Automatic (delayed start)" service starting mode
 
 ### Amazon EBS-Optimized Instances
 
-The behavior of [EBS optimization](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html) in TeamCity is similar to that offered by EC2 console. When configuring an image of the Amazon [cloud profile](agent-cloud-profile.md), the optimization can be set using the corresponding box of the Instance Type. Note that
-* EBS optimization is turned on by default for `c4.*`, `d2.*`, and `m4.*` (non-configurable)
-* EBS optimization is turned off by default for any other instance types and  can be turned on for instances that support it (such as `c3.xlarge`, and so on)
+The behavior of [EBS optimization](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html) in TeamCity is similar to that offered by EC2 console. When configuring an image of the Amazon [cloud profile](agent-cloud-profile.md), the optimization can be set using the corresponding box of the Instance Type. Note that:
+* EBS optimization is turned on by default for `c4.*`, `d2.*`, and `m4.*` (non-configurable);
+* EBS optimization is turned off by default for any other instance types and  can be turned on for instances that support it (such as `c3.xlarge`).
 
 
 ### Tagging
@@ -310,10 +310,10 @@ The behavior of [EBS optimization](http://docs.aws.amazon.com/AWSEC2/latest/User
 #### Tagging Instances Launched by TeamCity
 
 The following requirements must be met for tagging instances launched by TeamCity:
-* you have the `ec2:*Tags` permissions
-* the [maximum number of tags (50)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions) for your Amazon EC2 resource is not reached
+* You have all `ec2:*Tags` permissions;
+* The [maximum number of tags (50)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions) for your Amazon EC2 resource is not reached.
 
-In the absence of tagging permissions, TeamCity will still launch Amazon AMI and EBS images with no tags applied; Amazon EC2 spot instances will not be launched.
+Without tagging permissions, TeamCity can still launch Amazon AMI and EBS images with no tags applied but is unable to launch Amazon EC2 spot instances
 
 TeamCity enables users to get instance launch information by marking the created instances with the `teamcity:TeamcityData` tag containing `<server UUID>:-<cloud profile ID>:-<image reference>`. __This tag is necessary for TeamCity integration with EC2 and must not be deleted.__
 
@@ -325,9 +325,9 @@ When using the equal(=) sign in the tag value, no escaping is needed. For instan
 
 When launching Amazon EC2 instances, TeamCity tags all the resources (for example, volumes and network adapters) associated with the created instances, which is important when evaluating the overall cost of an instance (taking into account the storage drive type and size, I/O operations (for standard drives), network (transfers out), and so on.
 
-#### Sharing a EBS Instance Between Multiple TeamCity Servers
+#### Sharing an EBS Instance Between Multiple TeamCity Servers
 
-As mentioned [above](#Tagging+Instances+Launched+by+TeamCity), TeamCity tags every instance it launches with the `teamcity:TeamcityData` tag that represents a server, cloud profile, and source (AMI or EBS\-instance). So, when several TeamCity servers try to use the same EBS instance, the second one will see the following message "Instance is used by another TeamCity server. Unable to start/stop it". If you are sure that no other TeamCity servers are working with this instance, you can delete the `teamcity:TeamcityData` tag and the instance will become available for all TeamCity servers again.
+As mentioned [above](#Tagging+Instances+Launched+by+TeamCity), TeamCity tags every instance it launches with the `teamcity:TeamcityData` tag that stores information about a server, cloud profile, and source (AMI or EBS-instance). So, when several TeamCity servers try to use the same EBS instance, the second one will see the following message "Instance is used by another TeamCity server. Unable to start/stop it". If you are sure that no other TeamCity servers are working with this instance, you can delete the `teamcity:TeamcityData` tag and the instance will become available for all TeamCity servers again.
 
 ### Proxy settings
 {product="tc"}
@@ -348,7 +348,7 @@ For NTML authentication:
 
 ### Estimating EC2 Costs
 
-Usual Amazon EC2 pricing applies. Note that Amazon charges can depend on the specific configuration implemented to deploy TeamCity. We advise you to check your configuration and Amazon account data regularly in order to discover and prevent unexpected charges as early as possible.
+Standard Amazon EC2 pricing applies. Amazon charges can depend on the specific configuration implemented to deploy TeamCity. We advise you to regularly check your configuration and Amazon account data to discover and prevent unexpected expenses as soon as possible.
 
 Note that traffic volumes and necessary server and agent machines characteristics depend a big deal on the TeamCity setup and nature of the builds run. See also [Estimate Hardware Requirements for TeamCity](system-requirements.md#Estimating+External+Database+Capacity).
 {product="tc"}
@@ -360,25 +360,25 @@ Here are some points to help you estimate TeamCity-related traffic:
 * If TeamCity server is not located within the same EC2 region or availability zone that is configured in TeamCity EC2 settings for agents, traffic between the server and agent is subject to usual Amazon EC2 external traffic charges.
 * When estimating traffic, bear in mind that there are lots types of traffic related to TeamCity (see a non-complete list below).
 
-__External connections originated by server__:
+__External connections originated by a server__:
 
 * VCS servers
 * Email servers
 * Maven repositories
 
-__Internal connections originated by server__:
+__Internal connections originated by a server__:
 
 * TeamCity agents (checking status, sending commands, retrieving information like thread dumps, and so on)
 
-__External connections originated by agent__:
+__External connections originated by a agent__:
 * VCS servers (in case of agent-side checkout)
 * Maven repositories
 * Any connections performed from the build process itself
 
-__Internal connections originated by agent__:
+__Internal connections originated by an agent__:
 * TeamCity server (retrieving build sources in case of server-side checkout or personal builds, downloading artifacts, and so on)
 
-__Usual connections served by the server__:
+__Usual connections served by a server__:
 * Web browsers
 * IDE plugins
 
