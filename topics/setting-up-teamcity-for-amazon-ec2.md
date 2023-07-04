@@ -100,7 +100,7 @@ A **cloud profile** is a collection of common settings for TeamCity to start vir
 
 6. Choose an AWS region in which your instances are hosted.
 7. Set up the agents limit. This number specifies the overall limit for agents created from all cloud images of this profile.
-8. Specify the [TeamCity server URL](configuring-server-url.md). This value will be automatically passed to agents' `buildAgent.properties` files. If not specified, agents will use the same value as set on the __Administration | Global Settings__ page.
+8. Specify the TeamCity server URL. This value will be automatically passed to agents' `buildAgent.properties` files. If not specified, agents will use the same value as set on the __Administration | Global Settings__ page.
 9. Specify the set of criteria for winding down active cloud agents.
 10. Click **Apply changes** to save the profile and exit the profile settings page.
 
