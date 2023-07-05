@@ -18,6 +18,13 @@ Starting with this version, artifacts produced by batch builds are aggregated in
 
 Learn more: [](parallel-tests.md#Publish+Artifacts+Produced+By+Batch+Builds).
 
+
+## .NET
+
+Build agents now report the `DotNetWorkloads_<version>` parameter that returns all [.NET workloads](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install) installed on the agent machine.
+
+Learn more: [](net.md#Parameters+Reported+by+Agent).
+
 ## Miscellaneous
 
 * The [DslContext](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/root/dsl-context/index.html?query=DslContext) object now exposes a string `serverUrl` property that allows you to get the URL of a TeamCity server in Kotlin DSL code.
