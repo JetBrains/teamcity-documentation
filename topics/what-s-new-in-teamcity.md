@@ -1,6 +1,18 @@
 [//]: # (title: What's New in TeamCity 2023.07)
 [//]: # (auxiliary-id: What's New in TeamCity 2023.07;What's New in TeamCity)
 
+
+## EC2 Plugin Update
+
+In version 2023.07, we have overhauled the Amazon EC2 integration plugin. Apart from a refreshed user interface, the updated plugin features the following enhancements:
+
+* Support for Mac AMIs. Note that these machine images can be run only on dedicated Mac Mini hosts that should be booked for at least one day.
+* You can now specify multiple instance types for a cloud image, which increases your chances to book a spot instance.
+* The **Subnets** field now accepts multiple values, meaning you can specify different sets of incoming and outgoing traffic rules.
+* TeamCity can now automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
+
+Learn more: [](setting-up-teamcity-for-amazon-ec2.md).
+
 ## Aggregate Batch Build Artifacts
 
 When you run a build configurations that employs the [](parallel-tests.md) build feature, TeamCity splits a build into batches interconnected in an automatically generated [chain](build-chain.md). In previous version, [artifacts](build-artifact.md) produced during such builds were published in these individual batch builds, while a parent build had none.
