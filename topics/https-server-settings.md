@@ -85,6 +85,10 @@ If TeamCity is unable to re-issue a certificate, a corresponding message is show
 
 If you do not wish to let TeamCity request certificates from Let's Encrypt, obtain and manually upload an SSL certificate and a private RSA or ECC key.
 
+> ECC keys are supported starting with the 2023.05.1 bug-fix update.
+> 
+{type="note"}
+
 * A certificate must be a `.pem` file.
 * A private key must be in `PKCS#1` (only for RSA keys) or `PKCS#8` (RSA and ECC keys) format and non-encrypted.
 
