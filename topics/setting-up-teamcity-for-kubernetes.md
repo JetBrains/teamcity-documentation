@@ -63,7 +63,7 @@ subjects:
 
 To establish the integration with Kubernetes, you need to create a dedicated cloud profile in TeamCity. Open the settings of the required project and, under the __Cloud Profiles__ section, click __Create new profile__.
 
-For general cloud profile options, refer to the [Agent Cloud Profile](agent-cloud-profile.md#Specifying+Profile+Settings) article. To configure options available only for the _Kubernetes_ cloud type, refer to the table below:
+The table below lists options specific for Kubernetes cloud profiles.
 
 <table>
 
@@ -144,7 +144,7 @@ Depending on the selected strategy, the set of extra options will vary. Refer to
 
 ## Adding Kubernetes Cloud Image
 
-After configuring the general Kubernetes settings, you can proceed with [adding a new build agent image](agent-cloud-profile.md#Adding+Agent+Image).
+After configuring the general Kubernetes settings, you can proceed with adding a new build agent image.
 
 Click __Add image__ and configure its options:
 
