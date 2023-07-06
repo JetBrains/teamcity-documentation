@@ -245,7 +245,7 @@ The **Running instances** block shows all agents started from this specific imag
 
 You can open an [interactive terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) to any active agent instance via the **Open Terminal** button. The terminal allows you to debug and maintain your cloud agent machines.
 
-## Additional Information and Advanced Concepts
+## Additional Setup
 
 ### Required IAM permissions
 
@@ -374,14 +374,14 @@ For NTML authentication:
 * `teamcity.http.proxy.domain.ec2` — proxy user domain for NTLM authentication 
 * `teamcity.http.proxy.workstation.ec2` — proxy access workstation for NTLM authentication
 
-### Estimating EC2 Costs
+## Estimating EC2 Costs
 
 Standard Amazon EC2 pricing applies. Amazon charges can depend on the specific configuration implemented to deploy TeamCity. We advise you to regularly check your configuration and Amazon account data to discover and prevent unexpected expenses as soon as possible.
 
 Note that traffic volumes and necessary server and agent machines characteristics depend a big deal on the TeamCity setup and nature of the builds run. See also [Estimate Hardware Requirements for TeamCity](system-requirements.md#Estimating+External+Database+Capacity).
 {product="tc"}
 
-#### Estimating Traffic
+### Estimating Traffic
 
 Here are some points to help you estimate TeamCity-related traffic:
 
@@ -410,7 +410,7 @@ __Usual connections served by a server__:
 * Web browsers
 * IDE plugins
 
-#### Uptime Costs
+### Uptime Costs
 
 As Amazon rounds machine uptime to the full hour for some configurations (more at [How are Amazon EC2 instance hours billed?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-hour-billing/)), adjust timeout setting on the EC2 image setting on TeamCity cloud integration settings according to your usual builds length.
 
