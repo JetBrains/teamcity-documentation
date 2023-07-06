@@ -3,6 +3,14 @@
 
 TeamCity Amazon EC2 integration allows TeamCity auto-scale its building resources by automatically starting and stopping cloud-hosted agents on-demand, depending on the current build queue workload.
 
+## Supported Instance Types
+
+You can set up various types of EC2 integrations in TeamCity. Depending on the settings and the source you use, cloud AWS-hosted agents can run on:
+
+* Multiple identical instances cloned from the same Amazon Machine Image (AMI). Can be launched as On-Demand or spot instances.
+* A single permanent EC2 instance managed by TeamCity. Can be shared between multiple TeamCity servers.
+* A set of spot instances requested from AWS ([Spot Fleet](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html)).
+
 
 ## Prerequisites
 
@@ -13,7 +21,7 @@ This section describes the steps that you must perform in your AWS account befor
 1. Open the [Amazon EC2 console](https://console.aws.amazon.com/ec2/).
 2. Create the required instance. Refer to these Amazon tutorials for more information: [Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html), [Windows](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2_GetStarted.html), [macOS](https://aws.amazon.com/getting-started/hands-on/launch-connect-to-amazon-ec2-mac-instance/).
    
-   > If you will create an Amazon Machine Image (AMI) from this instance and use this AMI to spawn identical build agents, the exact instance type you choose in this step (for instance, `t2.small` or `x1e.xlarge`) is irrelevant. You will be able to specify the instance type later in TeamCity settings.
+   > The exact instance type (for example, `t2.small` or `x1e.xlarge`) matters only if you plan to use this instance as is. Otherwise, if you intend to create an AMI to spawn multiple identical instances, the type of this parent instance is irrelevant: you can set the required type in TeamCity settings (see the [](#Add+a+Cloud+Image) section).
    > 
    {type="tip"}
    
@@ -42,10 +50,10 @@ This section describes the steps that you must perform in your AWS account befor
 
 ### Create an AMI
 
-You can skip this step if you only need one single instance of a machine created in the previous step (for example, if you create a dedicated instance for one specific configuration that rarely runs). Otherwise, if you want TeamCity to automatically scale the number of active cloud agents based on the current workload, follow the steps below.
+Skip this section if you want the instance created in the previous step to directly connect to a TeamCity server and serve as a stand-alone agent machine. Otherwise, if you want TeamCity to automatically scale the number of active cloud agents based on the current workload, create an AMI from this instance.
 
-1. Remove all temporary and excess data from your instance: installation wizards, downloaded archives, build logs, and so on.
-2. Stop the build agent. For Windows instances, stop the agent service but leave its startup type _Automatic_.
+1. Stop the build agent. For Windows instances, stop the agent service but leave its startup type _Automatic_.
+2. Remove all temporary and excess data from your instance: installation wizards, downloaded archives, build logs, and so on.
 3. Optional: Delete the `<agent_home>/logs` and `<agent_home>/temp` directories.
 4. Optional: Delete the `<agent_home>/conf/amazon-*` file.
 5. Remove the following properties from the `<agent_home>/conf/buildAgent.properties` file:
@@ -73,13 +81,13 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
 
 4. Enter your profile name and optional description.
 
-5. Choose between authentication via access key/secret pair or credentials stored locally on the server machine. Regardless of the selected mode, an IAM role used by TeamCity should have all permissions listed in this section: [Required IAM Permissions](#Required+IAM+permissions).
+5. Choose between authentication via access key/secret pair or credentials stored locally on the server machine. Regardless of the selected mode, a user or IAM role used by TeamCity to access AWS resources must have all permissions listed in this section: [Required IAM Permissions](#Required+IAM+permissions).
 
    <tabs>
    
    <tab title="Access Keys">
 
-   This option lets you specify credentials that TeamCity will use to access your AWS resources.
+   This option lets you specify credentials that TeamCity will use to access your AWS resources. Using static credentials is the least secure approach, we recommend the **Use default credential provider chain** option instead.
    
    1. Go to the [AWS Identity and Access Management](https://console.aws.amazon.com/iam/) (IAM) dashboard.
    2. Switch to the **Users** tab and find a user whose credentials can be used by TeamCity to access your EC2 instances and AMIs.
@@ -90,7 +98,7 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
    
    <tab title="Local Credentials">
 
-   The **Use default credential provider chain** option allows TeamCity to look for AWS credentials stored on the server machine. Typically, the `config` file with your AWS credentials is located at `~/.aws/config` on Linux or macOS, or at `C:\Users\USERNAME\.aws\config` on Windows.
+   The **Use default credential provider chain** option allows TeamCity to look for AWS credentials stored on the server machine. Typically, the `config` file with your AWS credentials is located at `~/.aws/config` on Linux or macOS, or at `C:\Users\USERNAME\.aws\config` on Windows. This approach is more stable and secure compared to using static access keys.
    
    See the following article for more information about locally stored AWS credentials: [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
 
@@ -101,7 +109,9 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
 6. Choose an AWS region in which your instances are hosted.
 7. Set up the agent limit. This number specifies the overall limit for agents created from all cloud images of this profile.
 8. Specify the TeamCity server URL. This value will be automatically passed to agents' `buildAgent.properties` files. If not specified, agents will use the same value as on the __Administration | Global Settings__ page.
-9. Specify the set of criteria for winding down active cloud agents.
+9. Specify the set of criteria for winding down active cloud agents. You can choose how long agents can remain idle and (or) how long they can perform actual building routines.
+   
+   <img src="dk-ec2-terminateConditions.png" width="460" alt="Agents terminate conditions"/>
 10. Click **Apply changes** to save the profile and exit the profile settings page.
 
 
