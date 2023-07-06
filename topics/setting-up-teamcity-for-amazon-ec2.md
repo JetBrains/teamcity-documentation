@@ -91,10 +91,13 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
 
    This option lets you specify credentials that TeamCity will use to access your AWS resources. Using static credentials is the least secure approach, we recommend the **Use default credential provider chain** option instead.
    
-   1. Go to the [AWS Identity and Access Management](https://console.aws.amazon.com/iam/) (IAM) dashboard.
-   2. Switch to the **Users** tab and find a user whose credentials can be used by TeamCity to access your EC2 instances and AMIs.
-   3. Switch to the **Security Credentials** tab and scroll to the **Access keys** section.
-   4. Create a new key. Paste its ID and secret to the related fields in TeamCity UI.
+   5.1.&ensp;Go to the [AWS Identity and Access Management](https://console.aws.amazon.com/iam/) (IAM) dashboard.
+
+   5.2.&ensp;Switch to the **Users** tab and find a user whose credentials can be used by TeamCity to access your EC2 instances and AMIs.
+
+   5.3.&ensp;Switch to the **Security Credentials** tab and scroll to the **Access keys** section. 
+
+   5.4.&ensp;Create a new key. Paste its ID and secret to the related fields in TeamCity UI.
    
    </tab>
    
@@ -135,17 +138,18 @@ Cloud profiles specify global settings, such as authorization credentials and in
    <tab title="AMI">
 
    Choose an AMI that TeamCity will use to spawn identical instances.
-   
-   1. Check the **Use launch template** option if you want TeamCity to import and use a specific [launch template](https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html). When the default/latest version of the template updates on the server, TeamCity detects these changes and updates the running instances.
-   2. Choose a required AMI.
+
+   3.1.&ensp;Check the **Use launch template** option if you want TeamCity to import and use a specific [launch template](https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html). When the default/latest version of the template updates on the server, TeamCity detects these changes and updates the running instances.
+
+   3.2.&ensp;Choose a required AMI.
    
       * **Own AMI** — TeamCity scans a collection of AMIs available under credentials specified in the cloud profile settings. You can browse all found AMIs and choose a required image.
       * **AMI by ID** — Allows you to utilize a [shared AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharing-amis.html).
       * **AMI by tags** — Specify a comma-separated list of [AWS tags](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html), for example, `Owner=Mike,Project=Glacier,Subnet=Public`. If the specified tags point to multiple AMIs, TeamCity will use the most recently created AMI. If no AMIs were found, the image name under the **Agents** section will be "Image name (no data)" instead of "Image name (ami-xxxxxxxxx)".
       
          <img src="dk-ec2-invalidTags.png" width="460" alt="Invalid AMI tags"/>
-   
-   3. Specify one or multiple [instance types](https://aws.amazon.com/ec2/instance-types/).
+
+   3.3.&ensp;Specify one or multiple [instance types](https://aws.amazon.com/ec2/instance-types/).
       
       * Specify one type (for example, `t2.medium`) if you need to launch On-Demand or spot instances of this specific type only. You can add multiple images that target the same AMI with different instance type values. By doing so you can set different active instance limits for each type, and manually start instances of a specific type.
       * Set multiple types (for instance, `t2.small`, `t2.medium`, and `t2.large`) if you plan to order spot instances. This approach increases your chances of having a spot instance assigned.
@@ -153,21 +157,21 @@ Cloud profiles specify global settings, such as authorization credentials and in
       > Mac instances support only `mac1.metal` and `mac2.metal` types and are available only as bare metal instances on [Dedicated Hosts](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html), with a minimum allocation period of 24 hours before you can release the Dedicated Host. Learn more: [Amazon EC2 Mac instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html).
       > 
       {type="note"}
-   
-   4. Optional: Specify additional image settings.
+
+   3.4.&ensp;Optional: Specify additional image settings.
       * **IAM Role** — The IAM role that all launched instances will assume. This role specifies the permissions [granted to applications](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html) running on your EC2 instances. The AWS account used by TeamCity must have `iam:ListInstanceProfiles` and `iam:PassRole` permissions to utilize IAM roles.
       * **Key pair** — Required if you may need to connect to your EC2 instances [using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
       * **User data** — Allows you to specify a script that will be run when an instance launches. Learn more: [Windows](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html), [Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html).
       * **Tags** — The list of comma-separated instance tags. For example `LaunchedBy=TeamCity,TeamCityCloudProfileName=MyProfile1`. Tagging requires the `ec2:*Tags` permission. See the following section for more information: [](#Tagging).
-   
-   5. Check **Use spot instances** if you prefer cheaper [spot instances](https://aws.amazon.com/ec2/spot/) to On-Demand ones. The **Max price** field lets you to specify your maximum bid price for spot instances (in US dollars). The default On-Demand price will be used if the bid price is not specified.
+
+   3.5.&ensp;Check **Use spot instances** if you prefer cheaper [spot instances](https://aws.amazon.com/ec2/spot/) to On-Demand ones. The **Max price** field lets you to specify your maximum bid price for spot instances (in US dollars). The default On-Demand price will be used if the bid price is not specified.
 
       TeamCity can automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity to request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](#Required+IAM+permissions).
    
       > It is not recommended to use spot instances for production-critical builds due to the possibility of an [unexpected spot instance termination by Amazon](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#using-spot-instances-managing-interruptions). If a spot instance is terminated, TeamCity will fail the build with a corresponding build problem and re-add this build to the build queue.
       >
       {type="note"}
-   6. Specify networking settings for your EC2 instances.
+   3.6.&ensp;Specify networking settings for your EC2 instances.
       * **VPC** — The [virtual private cloud](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html) to which new instances will belong.
       * **Subnets** — The [IP addresses range](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) for your VPS.
       * **Security groups** — Specify [rules for incoming and outgoing connections](https://docs.aws.amazon.com/vpc/latest/userguide/security-groups.html) to (from) your EC2 instance.
@@ -178,8 +182,9 @@ Cloud profiles specify global settings, such as authorization credentials and in
    
    This option allows you to add the specific instance to TeamCity. Compared to AMIs that allow TeamCity to start multiple identical instances, this type implies you have a static virtual machine that TeamCity can start and stop.
 
-   1. Specify the desired [instance type](https://aws.amazon.com/ec2/instance-types/). Since there can be only one active instance, you can select only one type.
-   2. Choose a **Key pair** if you may need to connect to your EC2 instance [using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
+   3.1.&ensp;Specify the desired [instance type](https://aws.amazon.com/ec2/instance-types/). Since there can be only one active instance, you can select only one type.
+
+   3.2.&ensp;Choose a **Key pair** if you may need to connect to your EC2 instance [using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
    
    
    </tab>
@@ -189,13 +194,15 @@ Cloud profiles specify global settings, such as authorization credentials and in
    
    Amazon [Spot Fleet](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html) allows you to book a combination of regular (On-Demand) and [spot]((https://aws.amazon.com/ec2/spot/)) instances based on the given criteria. See the following AWS documentation article for sample requests: [Spot Fleet example configurations](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-examples.html).
 
-   1. In [AWS Management Console](https://aws.amazon.com/console/), Go to __Instances | Spot Requests | Request Spot Instances__.
-   2. Specify the required AMI, minimum compute unit, availability zones, and other request details.
-   3. Click __JSON config__ to download a JSON file with the spot fleet configuration parameters. Note that only fields from the [`SpotFleetRequestConfigData`](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html) class are supported.
+   3.1.&ensp;In [AWS Management Console](https://aws.amazon.com/console/), Go to __Instances | Spot Requests | Request Spot Instances__.
+
+   3.2.&ensp;Specify the required AMI, minimum compute unit, availability zones, and other request details.
+
+   3.3.&ensp;Click __JSON config__ to download a JSON file with the spot fleet configuration parameters. Note that only fields from the [`SpotFleetRequestConfigData`](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html) class are supported.
    
       <img src="SpotFleetConfigButton.png" width="600" alt="Spot fleet config generation button in Amazon"/>
-   
-   4. Paste the generated JSON configuration file in the **Spot Fleet Request** field in TeamCity.
+
+   3.4.&ensp;Paste the generated JSON configuration file in the **Spot Fleet Request** field in TeamCity.
 
       To run the image, TeamCity will launch spot instances matching the allocation strategy specified in the spot fleet configuration.
 
@@ -236,7 +243,7 @@ The **Running instances** block shows all agents started from this specific imag
    
    <img src="dk-ec2-outdatedAgent.png" width="706" alt="Outdated agent image"/>
 
-You can open an [interactive terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) to any active agent instance via the **Open Terminal** button. The terminal allows you to debug and maintain your EC2 instances.
+You can open an [interactive terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) to any active agent instance via the **Open Terminal** button. The terminal allows you to debug and maintain your cloud agent machines.
 
 ## Additional Information and Advanced Concepts
 
