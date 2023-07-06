@@ -3,9 +3,11 @@
 
 TeamCity Amazon EC2 integration allows TeamCity auto-scale its building resources by automatically starting and stopping cloud-hosted agents on-demand, depending on the current build queue workload.
 
-## Supported Instance Types
+## Common Information
 
 You can set up various types of EC2 integrations in TeamCity. Depending on the settings and the source you use, cloud AWS-hosted agents can run on:
+
+<img src="dk-ec2-overview.png" width="706" alt="Overview image"/>
 
 * Multiple identical instances cloned from the same Amazon Machine Image (AMI). Can be launched as On-Demand or spot instances.
 * A single permanent EC2 instance managed by TeamCity. Can be shared between multiple TeamCity servers.
@@ -21,7 +23,7 @@ This section describes the steps that you must perform in your AWS account befor
 1. Open the [Amazon EC2 console](https://console.aws.amazon.com/ec2/).
 2. Create the required instance. Refer to these Amazon tutorials for more information: [Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html), [Windows](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2_GetStarted.html), [macOS](https://aws.amazon.com/getting-started/hands-on/launch-connect-to-amazon-ec2-mac-instance/).
    
-   > The exact instance type (for example, `t2.small` or `x1e.xlarge`) matters only if you plan to use this instance as is. Otherwise, if you intend to create an AMI to spawn multiple identical instances, the type of this parent instance is irrelevant: you can set the required type in TeamCity settings (see the [](#Add+a+Cloud+Image) section).
+   > The exact instance type (for example, `t2.small` or `x1e.xlarge`) is irrelevant: you can set the required type in TeamCity settings (see the [](#Add+a+Cloud+Image) section).
    > 
    {type="tip"}
    
@@ -117,37 +119,36 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
 
 ### Add a Cloud Image
 
-Cloud profiles specify global settings, such as authorization credentials and instance regions. Each profile has at least one **image** that stores settings related to the specific type of cloud instance that should be started. You can add as many images to a profile as your needs dictate. However, note that the total number of agents started by all images cannot exceed the limit set in the profile settings (and the number of agents permitted by your license).
+Cloud profiles specify global settings, such as authorization credentials and instance regions. Each profile can have one or multiple **images** that store settings related to the specific type of cloud instance that should be started. You can add as many images to a profile as your needs dictate. However, note that the total number of agents started by all images cannot exceed the limit set in the profile settings (and the number of agents permitted by your license).
 
 
 1. Click the **Add image** button.
-2. Specify the image name. Agents starting from this image will use this value as a name prefix. All images in a cloud profile must have unique names.
+2. Specify the image name. All images in a cloud profile must have unique names.
 
    <anchor name="Amazon+EC2+Spot+Fleet+Support"/>
    <anchor name="Amazon+EC2+Spot+Instances+Support"/>
 
 3. Choose the required image type.
-
+   
    <tabs>
    
    <tab title="AMI">
 
-   With this image type, you can configure agent settings starting from the specific AMI.
+   Choose an AMI that TeamCity will use to spawn identical instances.
    
    1. Check the **Use launch template** option if you want TeamCity to import and use a specific [launch template](https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html). When the default/latest version of the template updates on the server, TeamCity detects these changes and updates the running instances.
    2. Choose a required AMI.
    
       * **Own AMI** — TeamCity scans a collection of AMIs available under credentials specified in the cloud profile settings. You can browse all found AMIs and choose a required image.
       * **AMI by ID** — Allows you to utilize a [shared AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharing-amis.html).
-      * **AMI by tags** — Specify a comma-separated list of [AWS tags](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html), for example, `Owner=Mike,Project=Glacier,Subnet=Public`. If the specified tags point to multiple AMIs, TeamCity will use the last used AMI. If no AMIs were found, the image name under the **Agents** section will be "Image name (no data)" instead of "Image name (ami-xxxxxxxxx)".
+      * **AMI by tags** — Specify a comma-separated list of [AWS tags](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html), for example, `Owner=Mike,Project=Glacier,Subnet=Public`. If the specified tags point to multiple AMIs, TeamCity will use the most recently created AMI. If no AMIs were found, the image name under the **Agents** section will be "Image name (no data)" instead of "Image name (ami-xxxxxxxxx)".
       
          <img src="dk-ec2-invalidTags.png" width="460" alt="Invalid AMI tags"/>
    
    3. Specify one or multiple [instance types](https://aws.amazon.com/ec2/instance-types/).
       
-      If you need to invoke new on-demand instances, create multiple identical images with different types. For example, you may have three images that utilize the same Linux AMI: the type of image #1 is `t2.small`, image #2 is `t2.medium`, and image #3 is `t2.large`. This approach allows you to control how many instances of each type are allowed to boot, and to start instances of specific types manually.
-      
-      If you intend to order spot instances (see below), you may specify multiple instance types in the same image. This approach increases your chances of having a spot instance assigned.
+      * Specify one type (for example, `t2.medium`) if you need to launch On-Demand or spot instances of this specific type only. You can add multiple images that target the same AMI with different instance type values. By doing so you can set different active instance limits for each type, and manually start instances of a specific type.
+      * Set multiple types (for instance, `t2.small`, `t2.medium`, and `t2.large`) if you plan to order spot instances. This approach increases your chances of having a spot instance assigned.
       
       > Mac instances support only `mac1.metal` and `mac2.metal` types and are available only as bare metal instances on [Dedicated Hosts](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html), with a minimum allocation period of 24 hours before you can release the Dedicated Host. Learn more: [Amazon EC2 Mac instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html).
       > 
@@ -173,6 +174,16 @@ Cloud profiles specify global settings, such as authorization credentials and in
    
    </tab>
 
+   <tab title="Instance">
+   
+   This option allows you to add the specific instance to TeamCity. Compared to AMIs that allow TeamCity to start multiple identical instances, this type implies you have a static virtual machine that TeamCity can start and stop.
+
+   1. Specify the desired [instance type](https://aws.amazon.com/ec2/instance-types/). Since there can be only one active instance, you can select only one type.
+   2. Choose a **Key pair** if you may need to connect to your EC2 instance [using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
+   
+   
+   </tab>
+
    
    <tab title="Spot Fleet Request">
    
@@ -188,18 +199,18 @@ Cloud profiles specify global settings, such as authorization credentials and in
 
       To run the image, TeamCity will launch spot instances matching the allocation strategy specified in the spot fleet configuration.
 
-   > TeamCity uses own values instead of the following parameters of the JSON config file:
-   > * `TerminateInstancesWithExpiration`: `false`
-   > * `ValidFrom`: the time when the image is created
-   > * `ValidUntil`: the `ValidFrom` value plus 5 minutes
-   > * `Type`: `request`
-   >
-   {type="note"}
+      > TeamCity uses own values instead of the following parameters of the JSON config file:
+      > * `TerminateInstancesWithExpiration`: `false`
+      > * `ValidFrom`: the time when the image is created
+      > * `ValidUntil`: the `ValidFrom` value plus 5 minutes
+      > * `Type`: `request`
+      >
+      {type="note"}
 
    </tab>
    
    </tabs>
-
+   
 4. Set up the maximum number of active cloud agents starting from this image. Note that the total number of agents started from all images added to a profile cannot exceed the limit set on the settings page of this profile.
 5. Specify the [agent pool](configuring-agent-pools.md) to which newly created instances will belong.
 6. Click **Save** to exit the image settings page.
