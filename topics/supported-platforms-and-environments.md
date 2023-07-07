@@ -49,6 +49,16 @@ Reportedly works without known issues on:
    
 Windows XP/XP x64 are not supported.
 
+Regarding architectural compatibility, TeamCity is not limited to any specific list. The verified and thoroughly tested architectures include:
+
+* Intel x86
+* AMD64 (x86_64)
+* Apple Silicon (M chips)
+* Amazon ARM (Graviton)
+
+If you are using a different architecture that is not explicitly mentioned above, you may expect the TeamCity server to support it, provided that your operating system is supported and a suitable Java Virtual Machine (JVM) option exists.
+
+
 ### TeamCity Agent
 {product="tc"}
 
@@ -85,6 +95,15 @@ Reportedly works on:
 * FreeBSD
 * IBM z/OS
 * HP-UX
+
+Regarding architectural compatibility, TeamCity is not limited to any specific list. The verified and thoroughly tested architectures include:
+
+* Intel x86
+* AMD64 (x86_64)
+* Apple Silicon (M chips)
+* Amazon ARM (Graviton)
+
+If you are using a different architecture that is not explicitly mentioned above, you may expect the TeamCity Agent to run on it, provided that your operating system is supported and a suitable Java Virtual Machine (JVM) option exists.
 
 ### TeamCity Agent
 {product="tcc"}
