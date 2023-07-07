@@ -159,15 +159,15 @@ bin => batch-build-%teamcity.build.parallelTests.currentBatch%/bin
 ## Known limitations
 
 * The [Code coverage](code-quality-tools.md#code-coverage-tools) statistics will be inaccurate for builds with parallel tests because it will be collected for a fraction of tests executed by the current batch.
-* A newly added test which is not yet known to TeamCity will run in each batch during the first run.
+* A newly added test which is not yet known to TeamCity will run in each batch during the first run. Related YouTrack ticket: [TW-75913](https://youtrack.jetbrains.com/issue/TW-75913/Newly-added-tests-run-in-all-parallel-auto-generated-dependencies).
 * When TeamCity divides tests into batches, it only takes into account the duration of the test itself. The duration of setUp/tearDown or any other preparation methods is not know to TeamCity, therefore the duration of batches may not be equal.
-* An agent selected in the custom build dialog for a build with parallel tests will be ignored because the build will be transformed into a composite one after triggering.
-* Parameters published by the build steps via the [setParameter](service-messages.md#set-parameter) service message, as well as runner specific parameters, such as `maven.project.version`, won't be available in a composite build with parallel tests.
+* An agent selected in the custom build dialog for a build with parallel tests will be ignored because the build will be transformed into a composite one after triggering. Related YouTrack ticket: [TW-74905](https://youtrack.jetbrains.com/issue/TW-74905/Select-agent-in-Custom-run-dialog-for-Parallel-Tests-build-has-no-effect).
+* Parameters published by the build steps via the [setParameter](service-messages.md#set-parameter) service message, as well as runner specific parameters, such as `maven.project.version`, won't be available in a composite build with parallel tests. Related YouTrack ticket: [TW-75249](https://youtrack.jetbrains.com/issue/TW-75249/Updating-parameter-from-service-message-has-no-effect-for-parallel-tests-builds).
 * When it comes to the build configurations limit in the TeamCity Professional version, the automatically generated build configurations are counted as normal build configurations.
 
 ### Known bugs
  
-* The [Enforce Clean Checkout action](clean-checkout.md#Enforcing+Clean+Checkout) does not work for build configurations with parallel tests configured.
+* The [Enforce Clean Checkout action](clean-checkout.md#Enforcing+Clean+Checkout) does not work for build configurations with parallel tests configured. Related YouTrack ticket: [TW-75337](https://youtrack.jetbrains.com/issue/TW-75337/Parallel-tests-Enforce-clean-checkout-Action-does-not-affect-auto-generated-configurations).
 * A subsequent start of a build with parallel tests won't reuse already existing builds of the generated build configurations even if there were no new VCS commits.
-* One of the batch builds spawned to run [TestNG](https://testng.org/doc/) tests from an [XML suite](https://testng.org/doc/documentation-main.html#testng-xml) runs all tests instead of a specified subset of tests.
+* Batch builds spawned to run [TestNG](https://testng.org/doc/) tests from an [XML suite](https://testng.org/doc/documentation-main.html#testng-xml) run all tests instead of a specified subset of tests. Related YouTrack ticket: [TW-75849](https://youtrack.jetbrains.com/issue/TW-75849/Parallel-tests-All-batches-run-all-tests-from-TestNG-xml-suite).
 
