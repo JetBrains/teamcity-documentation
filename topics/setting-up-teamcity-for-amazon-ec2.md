@@ -245,6 +245,120 @@ The **Running instances** block shows all agents started from this specific imag
 
 You can open an [interactive terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) to any active agent instance via the **Open Terminal** button. The terminal allows you to debug and maintain your cloud agent machines.
 
+## DSL Configuration
+
+The following Kotlin snippet illustrates a sample [DSL configuration](kotlin-dsl.md) for a cloud profile that uses locally stored credentials and includes three images with different settings.
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.amazonEC2CloudImage
+import jetbrains.buildServer.configs.kotlin.amazonEC2CloudProfile
+// ...
+
+version = "%product-version%"
+
+project {
+
+    vcsRoot(MyRoot)
+
+    buildType(Build)
+
+    features {
+        // Image 1: On-Demand Instances for a Specific AMI
+        amazonEC2CloudImage {
+            id = "PROJECT_EXT_14"
+            profileId = "amazon-4"
+            name = "Ubuntu-22.04-Large(AMI)"
+            vpcSubnetId = "mySubnet123"
+            iamProfile = "john-doe-ec2-role"
+            keyPairName = "john-doe-u2204-key"
+            instanceType = "t2.large"
+            securityGroups = listOf("security-group-1")
+            instanceTags = mapOf(
+                "LaunchedBy" to "TeamCity"
+            )
+            maxInstancesCount = 4
+            source = Source("ami-1234567890")
+        }
+        // Image 2: Spot Instances for an AMI Located by Tags
+        amazonEC2CloudImage {
+            id = "PROJECT_EXT_20"
+            profileId = "amazon-4"
+            name = "Ubuntu-22.04-Medium-Spot(Tags)"
+            vpcSubnetId = "mySubnet123"
+            instanceType = "t3a.medium,t3a.small"
+            securityGroups = listOf("security-group-1,security-group-2")
+            useSpotInstances = true
+            spotInstanceBidPrice = 1.0
+            instanceTags = mapOf(
+                "LaunchedBy" to "TeamCity"
+            )
+            maxInstancesCount = 4
+            source = Source("tags")
+            param("source-tags", "OS=Ubuntu, OSVersion=22.04")
+        }
+        // Image 3: A Single EC2 Instance
+        amazonEC2CloudImage {
+            id = "PROJECT_EXT_22"
+            profileId = "amazon-4"
+            agentPoolId = "-2"
+            name = "Windows-Server2022(Instance)"
+            vpcSubnetId = "mySubnet123"
+            keyPairName = "john-doe-w2022s-keys"
+            instanceType = "m2.xlarge"
+            securityGroups = listOf("security-group-1")
+            source = Source("i-1234567890")
+        }
+        // Parent Profile for All Images
+        amazonEC2CloudProfile {
+            id = "amazon-4"
+            name = "AWS EC2 Profile"
+            description = "A sample Amazon EC2 profile with AMI and Instance images"
+            serverURL = "https://MyTeamCityBuildFarm.dev.gg"
+            terminateIdleMinutes = 30
+            region = AmazonEC2CloudProfile.Regions.EU_WEST_DUBLIN
+            maxInstancesCount = 20
+            authType = instanceIAMRole()
+            param("terminate-after-build", "false")
+            param("terminateTimeOut_checkbox", "true")
+        }
+    }
+}
+
+object Build : BuildType({
+    name = "Build"
+    allowExternalStatus = true
+
+    vcs {
+        root(MyRoot)
+    }
+
+    steps {
+        // Build Steps
+    }
+
+    triggers {
+        vcs {}
+    }
+
+    features {
+        // Build Features
+    }
+})
+
+object MyRoot : GitVcsRoot({
+    name = "https://github.com/...#refs/heads/main"
+    url = "https://github.com/..."
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
+    authMethod = password {
+        userName = "JohnDoe"
+        password = "..."
+    }
+    param("oauthProviderId", "PROJECT_EXT_8")
+})
+```
+
 ## Additional Setup
 
 ### Required IAM permissions
