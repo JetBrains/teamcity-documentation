@@ -261,6 +261,32 @@ The target paths cannot be absolute. Non-relative paths will produce errors duri
 > 
 {type="warning"}
 
+### Publishing Symlinks
+
+A symbolic link (symlink or soft link) is a Linux file that points to other files or directories and represents their absolute or relative path. If a directory that you need to publish as a build artifact contains symlinks, you can do one of the following:
+
+* Publish the directory with symlinks included as symlinks. This is the default behavior. You can explicitly decorate an artifact path with the `teamcity:symbolicLinks` attribute to force this behavior.
+
+  ```Plain Text
+  #teamcity:symbolicLinks=as-is
+  %teamcity.build.checkoutDir%/build=>build.zip
+  ```
+
+* Copy files and folders referenced by symlinks and copy this data to the published archive. To enable this behavior, decorate an artifact rule with the `teamcity:symbolicLinks` attribute as follows. 
+
+  ```Plain Text
+  #teamcity:symbolicLinks=inline
+  %teamcity.build.checkoutDir%/build=>build.zip
+  ```
+  
+Note that attributes affect only artifact publishing rules declared directly beneath them. For example, in the sample below only **Archive_A** will contain files and folders referenced by symlinks. **Archive_B** will employ the default behavior and include symlinks as files.
+
+```Plain Text
+#teamcity:symbolicLinks=inline
+Dir_A=>Archive_A.zip
+Dir_B=>Archive_B.zip
+```
+
 ### Artifacts Paths Examples
 
 * `install.zip` — publish a file named `install.zip` in the build artifacts.

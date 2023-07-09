@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Upgrade Notes)
 
 
-<!--## Changes from 2023.05 to 2023.05.01
+## Changes from 2023.05 to 2023.05.01
 
 ### Publishing Artifacts of Batch Builds in Parent Configuration Builds
 
@@ -15,7 +15,10 @@ With this bugfix update, automatically created [batch builds](parallel-tests.md)
 
 ### Miscellaneous Changes
 
-* The *"Open an interactive session to the agent"* [permission](managing-roles-and-permissions.md) was renamed to *"Invoke interactive agent terminals"*. The new name highlights the recent behavior change: this permission now specifies whether users can open [agent terminal tabs](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 and is no longer related to deprecated SSM terminals.-->
+* The *"Open an interactive session to the agent"* [permission](managing-roles-and-permissions.md) was renamed to *"Invoke interactive agent terminals"*. The new name highlights the recent behavior change: this permission now specifies whether users can open [agent terminal tabs](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 and is no longer related to deprecated SSM terminals.
+* You can now decorate artifact publishing rules with the `#teamcity:symbolicLinks=...` attribute to choose whether symlinks present in published directories should be included as is, or TeamCity should include files and folders referenced by these symlinks in the published archive. See this article for more information: [](configuring-general-settings.md#Publishing+Symlinks).
+
+
 
 
 
@@ -85,6 +88,7 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 * If you have multiple projects with [GitHub App connections](configuring-connections.md#GitHub) to the same GitHub App, a [webhook](configuring-vcs-post-commit-hooks-for-teamcity.md) for only the first connection detected by TeamCity is functional. Projects with other connections keep polling their corresponding repositories for changes.
 * Uploading artifacts to [S3 buckets](storing-build-artifacts-in-amazon-s3.md) may fail for larger files. We expect to fix this issue in the next bugfix update (2023.05.1). In the meantime, download and [install](installing-additional-plugins.md#Installing+Plugin+Manually) a custom build of the S3 Plugin from this YouTrack issue: [TW-81866](https://youtrack.jetbrains.com/issue/TW-81866/Failed-to-publish-artifacts-in-AWS-s3-after-updating-TeamCity-to-v2023.05).
 * Settings of EC2-based [cloud profiles](setting-up-teamcity-for-amazon-ec2.md) may not show the checkbox that allows you to utilize locally stored IAM Roles, leaving authorization by Access ID/Secret Key as the only option. We expect to fix this issue in the next 2023.05.1 bugfix update.
+* If a directory published as a build artifacts contains a symbolic link, files and folderes referenced by these symlinks are no longer included in the produced artifact archive.
 
 
 ## Changes from 2022.10.2 to 2022.10.3
