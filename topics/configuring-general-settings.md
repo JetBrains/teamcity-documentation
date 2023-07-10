@@ -263,9 +263,9 @@ The target paths cannot be absolute. Non-relative paths will produce errors duri
 
 ### Publishing Symlinks
 
-A symbolic link (symlink or soft link) is a Linux file that points to other files or directories and represents their absolute or relative path. If a directory that you need to publish as a build artifact contains symlinks, you can do one of the following:
+A symbolic link (symlink or soft link) is a Linux file that points to other files or directories and represents their absolute or relative path. If a directory that you need to publish as a build artifact contains symlinks, you can choose one of two possible modes:
 
-* Publish the directory with symlinks included as symlinks. This is the default behavior. You can explicitly decorate an artifact path with the `teamcity:symbolicLinks` attribute to force this behavior.
+* Published archives include symlinks as symlinks. This is the default behavior. You can explicitly decorate an artifact path with the `teamcity:symbolicLinks` attribute to force this behavior.
 
   ```Plain Text
   #teamcity:symbolicLinks=as-is
@@ -273,7 +273,7 @@ A symbolic link (symlink or soft link) is a Linux file that points to other file
   ```
   {interpolate-variables="false"}
 
-* Copy files and folders referenced by symlinks and copy this data to the published archive. To enable this behavior, decorate an artifact rule with the `teamcity:symbolicLinks` attribute as follows. 
+* Published archives include files and folders referenced by symlinks. To enable this behavior, decorate an artifact rule with the `teamcity:symbolicLinks` attribute as follows. 
 
   ```Plain Text
   #teamcity:symbolicLinks=inline
