@@ -10,7 +10,17 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 
 See also: [Documentation for Previous Versions](documentation-for-previous-versions.md) and [Roadmap Outline](roadmap-outline.md).
 
-## Current version: TeamCity 2023.05
+## Current version: TeamCity 2023.05.1
+
+Release date: 10 July 2023<br/>
+Build 129321
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2023.05.1.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2023.05.1.tar.gz)
+
+[Release notes](teamcity-2023-05-1-release-notes.md)
+
+## TeamCity 2023.05
 
 Release date: 26 May 2023<br/>
 Build 129203
