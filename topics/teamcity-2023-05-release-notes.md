@@ -6,9 +6,11 @@ __Build: 129203__
 __26 May 2023__
 
 
+
+
 ### Feature
 
-**[TW-74706](https://youtrack.jetbrains.com/issue/TW-74706/S3-Parallelise-multipart-upload)** — [S3] Parallelise multipart upload
+**[TW-74706](https://youtrack.jetbrains.com/issue/TW-74706/S3-Parallelise-multipart-upload)** — S3 Parallelise multipart upload
 
 **[TW-75239](https://youtrack.jetbrains.com/issue/TW-75239/Prefer-IMDSv2-in-EC2-plugin)** — Prefer IMDSv2 in EC2 plugin
 
@@ -596,7 +598,6 @@ __26 May 2023__
 **[TW-75156](https://youtrack.jetbrains.com/issue/TW-75156/Add-ability-to-sanely-sort-test-runs-by-test-name)** — Add ability to sanely sort test runs by test name
 
 
-
 ### Performance Problem
 
 **[TW-79675](https://youtrack.jetbrains.com/issue/TW-79675/TeamCity-REST-API-computes-pending-changes-without-any-limits)** — TeamCity REST API computes pending changes without any limits
@@ -634,8 +635,6 @@ __26 May 2023__
 **[TW-79451](https://youtrack.jetbrains.com/issue/TW-79451/Memory-leak-in-agent-part-of-Telemetry-plugin)** — Memory leak in agent part of Telemetry plugin
 
 **[TW-59444](https://youtrack.jetbrains.com/issue/TW-59444/Slow-commit-hook-processing-slow-filtering-of-VCS-root-instances-due-to-parameters-resolution)** — Slow commit hook processing (slow filtering of VCS root instances due to parameters resolution)
-
-
 
 
 ### Security
