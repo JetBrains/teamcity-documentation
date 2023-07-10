@@ -6,13 +6,49 @@ __Build: 129203__
 __26 May 2023__
 
 
+
+
 ### Feature
+
+**[TW-74706](https://youtrack.jetbrains.com/issue/TW-74706/S3-Parallelise-multipart-upload)** — [S3] Parallelise multipart upload
+
+**[TW-75239](https://youtrack.jetbrains.com/issue/TW-75239/Prefer-IMDSv2-in-EC2-plugin)** — Prefer IMDSv2 in EC2 plugin
+
+**[TW-37456](https://youtrack.jetbrains.com/issue/TW-37456/Allow-OAuth-authentication-against-Stash-in-preference-to-storing-user-password-in-Commit-Status-Publisher)** — Allow OAuth authentication against Stash in preference to storing user/password in Commit Status Publisher
+
+**[TW-78972](https://youtrack.jetbrains.com/issue/TW-78972/Implement-GitHub-App-connection-support-for-Commit-Status-Publisher)** — Implement GitHub App connection support for Commit Status Publisher
+
+**[TW-48656](https://youtrack.jetbrains.com/issue/TW-48656/Use-OAuth-for-Build-Commit-Status-Publisher-Bitbucket-cloud)** — Use OAuth for Build Commit Status Publisher (Bitbucket cloud)
+
+**[TW-79530](https://youtrack.jetbrains.com/issue/TW-79530/Implement-GitHub-App-connection-support-for-Pull-Request-Build-Feature)** — Implement GitHub App connection support for Pull Request Build Feature
+
+**[TW-66716](https://youtrack.jetbrains.com/issue/TW-66716/Implement-GitHub-App-connection)** — Implement GitHub App connection
+
+**[TW-61963](https://youtrack.jetbrains.com/issue/TW-61963/Podman-support-for-TeamCity-Docker-wrapper)** — Podman support for TeamCity Docker wrapper
+
+**[TW-64920](https://youtrack.jetbrains.com/issue/TW-64920/Notifications-from-service-messages)** — Notifications from service messages
+
+**[TW-75551](https://youtrack.jetbrains.com/issue/TW-75551/Launch-Template-as-a-source-of-params-value-instead-of-separate-launch-type)** — Launch Template as a source of params value instead of separate launch type
+
+**[TW-77546](https://youtrack.jetbrains.com/issue/TW-77546/Free-Space-Requirement-duration-statistic)** — Free Space Requirement duration statistic
+
+**[TW-11382](https://youtrack.jetbrains.com/issue/TW-11382/Include-empty-directories-into-packed-artifacts)** — Include empty directories into packed artifacts
+
+**[TW-79960](https://youtrack.jetbrains.com/issue/TW-79960/Support-.NET-8)** — Support .NET 8
 
 **[TW-79398](https://youtrack.jetbrains.com/issue/TW-79398/Make-it-possible-to-enable-VCS-repositories-polling-responsibility-on-multiple-nodes)** — Make it possible to enable "VCS repositories polling" responsibility on multiple nodes
 
-**[TW-12976](https://youtrack.jetbrains.com/issue/TW-12976/Out-of-the-box-support-for-HTTPS-for-the-server)** — Out of the box support for HTTPS for the server
+**[TW-76748](https://youtrack.jetbrains.com/issue/TW-76748/Terminal-session-to-agents-in-one-click)** — Terminal session to agents in one click
 
-**[TW-64920](https://youtrack.jetbrains.com/issue/TW-64920/Notifications-from-service-messages)** — Notifications from service messages
+**[TW-53113](https://youtrack.jetbrains.com/issue/TW-53113/Dark-theme)** — Dark theme
+
+**[TW-79359](https://youtrack.jetbrains.com/issue/TW-79359/Provision-to-send-email-notifications-to-multiple-users-through-Notifications-build-feature)** — Provision to send email notifications to multiple users through Notifications build feature
+
+**[TW-14363](https://youtrack.jetbrains.com/issue/TW-14363/Modify-build-tags-using-service-messages)** — Modify build tags using service messages
+
+**[TW-37581](https://youtrack.jetbrains.com/issue/TW-37581/An-API-to-manage-all-roles)** — An API to manage all roles
+
+**[TW-12976](https://youtrack.jetbrains.com/issue/TW-12976/Out-of-the-box-support-for-HTTPS-for-the-server)** — Out of the box support for HTTPS for the server
 
 **[TW-70203](https://youtrack.jetbrains.com/issue/TW-70203/Add-an-ability-to-show-health-reports-for-archived-projects)** — Add an ability to show health reports for archived projects
 
@@ -20,13 +56,7 @@ __26 May 2023__
 
 **[TW-80129](https://youtrack.jetbrains.com/issue/TW-80129/Allow-to-generate-a-new-SSH-key-using-the-TeamCity-REST-API)** — Allow to generate a new SSH key using the TeamCity REST API
 
-**[TW-66716](https://youtrack.jetbrains.com/issue/TW-66716/Implement-GitHub-App-connection)** — Implement GitHub App connection
-
-**[TW-76748](https://youtrack.jetbrains.com/issue/TW-76748/Terminal-session-to-agents-in-one-click)** — Terminal session to agents in one click
-
 **[TW-74397](https://youtrack.jetbrains.com/issue/TW-74397/Allow-to-generate-a-new-SSH-key-from-the-TeamCity-web-UI)** — Allow to generate a new SSH key from the TeamCity web UI
-
-**[TW-61963](https://youtrack.jetbrains.com/issue/TW-61963/Podman-support-for-TeamCity-Docker-wrapper)** — Podman support for TeamCity Docker wrapper
 
 **[TW-58754](https://youtrack.jetbrains.com/issue/TW-58754/REST-expose-Versioned-settings-specific-operations)** — REST: expose Versioned settings-specific operations
 
@@ -38,10 +68,6 @@ __26 May 2023__
 
 **[TW-62714](https://youtrack.jetbrains.com/issue/TW-62714/Support-for-global-opts-on-p4-sync)** — Support for global opts on p4 sync
 
-**[TW-77546](https://youtrack.jetbrains.com/issue/TW-77546/Free-Space-Requirement-duration-statistic)** — Free Space Requirement duration statistic
-
-**[TW-53113](https://youtrack.jetbrains.com/issue/TW-53113/Dark-theme)** — Dark theme
-
 **[TW-74122](https://youtrack.jetbrains.com/issue/TW-74122/Sakura-implement-Change-Log-tab-on-project-level)** — Sakura: implement "Change Log" tab on project level
 
 **[TW-72327](https://youtrack.jetbrains.com/issue/TW-72327/Support-showing-Graph-on-Pending-changes-and-Changes-tabs)** — Support showing Graph on Pending changes and Changes tabs
@@ -50,15 +76,11 @@ __26 May 2023__
 
 **[TW-79482](https://youtrack.jetbrains.com/issue/TW-79482/Allow-to-specify-which-TLS-versions-are-used-in-the-HTTPS-Settings-menu)** — Allow to specify which TLS versions are used in the HTTPS Settings menu
 
-**[TW-79960](https://youtrack.jetbrains.com/issue/TW-79960/Support-.NET-8)** — Support .NET 8
-
 **[TW-80573](https://youtrack.jetbrains.com/issue/TW-80573/Allow-editing-of-the-main-node-responsibilities)** — Allow editing of the main node responsibilities
 
 **[TW-79937](https://youtrack.jetbrains.com/issue/TW-79937/Implement-GitHub-App-connection-support-for-GitHub-issue-tracker)** — Implement GitHub App connection support for GitHub issue tracker
 
 **[TW-79673](https://youtrack.jetbrains.com/issue/TW-79673/Add-Use-VCS-Root-credentials-authentication-type-in-Commit-Status-Publisher-settings-for-GitHub)** — Add "Use VCS Root credentials" authentication type in Commit Status Publisher settings for GitHub
-
-**[TW-75239](https://youtrack.jetbrains.com/issue/TW-75239/Prefer-IMDSv2-in-EC2-plugin)** — Prefer IMDSv2 in EC2 plugin
 
 **[TW-74071](https://youtrack.jetbrains.com/issue/TW-74071/Build-parameters-tab-for-new-UI)** — Build parameters tab for new UI
 
@@ -66,19 +88,13 @@ __26 May 2023__
 
 **[TW-62355](https://youtrack.jetbrains.com/issue/TW-62355/Predefined-environment-variable-containing-link-to-the-build)** — Predefined environment variable containing link to the build
 
-**[TW-37581](https://youtrack.jetbrains.com/issue/TW-37581/An-API-to-manage-all-roles)** — An API to manage all roles
-
 **[TW-68788](https://youtrack.jetbrains.com/issue/TW-68788/Allow-to-schedule-clean-up-on-the-secondary-node-with-process-user-requests-responsibility)** — Allow to schedule clean-up on the secondary node with "process user requests" responsibility
 
 **[TW-72975](https://youtrack.jetbrains.com/issue/TW-72975/Allow-routing-users-to-secondary-nodes-load-balancing-of-user-requests)** — Allow routing users to secondary nodes (load balancing of user requests)
 
-**[TW-79530](https://youtrack.jetbrains.com/issue/TW-79530/Implement-GitHub-App-connection-support-for-Pull-Request-Build-Feature)** — Implement GitHub App connection support for Pull Request Build Feature
-
 **[TW-80334](https://youtrack.jetbrains.com/issue/TW-80334/Add-nodes-information-to-thread-dumps-taken-by-teamcity)** — Add node(s) information to thread dumps taken by teamcity
 
 **[TW-78596](https://youtrack.jetbrains.com/issue/TW-78596/Allow-detaching-project-from-all-pools.-Do-not-add-project-without-pools-to-Default)** — Allow detaching project from all pools. Do not add project without pools to Default
-
-**[TW-78972](https://youtrack.jetbrains.com/issue/TW-78972/Implement-GitHub-App-connection-support-for-Commit-Status-Publisher)** — Implement GitHub App connection support for Commit Status Publisher
 
 **[TW-62305](https://youtrack.jetbrains.com/issue/TW-62305/A-health-check-endpoint-is-needed-to-run-TeamCity-reliably-in-Kubernetes-Nomad)** — A health check endpoint is needed to run TeamCity reliably in Kubernetes/Nomad
 
@@ -88,25 +104,11 @@ __26 May 2023__
 
 **[TW-77597](https://youtrack.jetbrains.com/issue/TW-77597/Use-the-Sakura-Chains-component-on-the-Build-Configuration-Page-Build-Chains-Tab)** — Use the Sakura Chains component on the Build Configuration Page -> Build Chains Tab
 
-**[TW-14363](https://youtrack.jetbrains.com/issue/TW-14363/Modify-build-tags-using-service-messages)** — Modify build tags using service messages
-
 **[TW-76714](https://youtrack.jetbrains.com/issue/TW-76714/Display-refreshable-token-information-in-the-VCS-root-settings)** — Display refreshable token information in the VCS root settings
 
 **[TW-80388](https://youtrack.jetbrains.com/issue/TW-80388/Allow-Project-Developer-role-to-view-buildSettings.xml-artifact)** — Allow Project Developer role to view buildSettings.xml artifact
 
-**[TW-79359](https://youtrack.jetbrains.com/issue/TW-79359/Provision-to-send-email-notifications-to-multiple-users-through-Notifications-build-feature)** — Provision to send email notifications to multiple users through Notifications build feature
-
-**[TW-11382](https://youtrack.jetbrains.com/issue/TW-11382/Include-empty-directories-into-packed-artifacts)** — Include empty directories into packed artifacts
-
 **[TW-78069](https://youtrack.jetbrains.com/issue/TW-78069/Indicate-draft-pull-requests-on-the-build-page)** — Indicate draft pull requests on the build page
-
-**[TW-74706](https://youtrack.jetbrains.com/issue/TW-74706/S3-Parallelise-multipart-upload)** — [S3] Parallelise multipart upload
-
-**[TW-75551](https://youtrack.jetbrains.com/issue/TW-75551/Launch-Template-as-a-source-of-params-value-instead-of-separate-launch-type)** — Launch Template as a source of params value instead of separate launch type
-
-**[TW-48656](https://youtrack.jetbrains.com/issue/TW-48656/Use-OAuth-for-Build-Commit-Status-Publisher-Bitbucket-cloud)** — Use OAuth for Build Commit Status Publisher (Bitbucket cloud)
-
-**[TW-37456](https://youtrack.jetbrains.com/issue/TW-37456/Allow-OAuth-authentication-against-Stash-in-preference-to-storing-user-password-in-Commit-Status-Publisher)** — Allow OAuth authentication against Stash in preference to storing user/password in Commit Status Publisher
 
 **[TW-78723](https://youtrack.jetbrains.com/issue/TW-78723/Allow-to-configure-build-failure-conditions-on-custom-statistics-values-in-DSL)** — Allow to configure build failure conditions on custom statistics values in DSL
 
@@ -135,10 +137,61 @@ __26 May 2023__
 **[TW-70087](https://youtrack.jetbrains.com/issue/TW-70087/Make-it-possible-to-to-leave-the-project-in-the-Project-pool-only)** — Make it possible to to leave the project in the Project pool only
 
 
-
 ### Bug
 
+**[TW-78241](https://youtrack.jetbrains.com/issue/TW-78241/TeamCity-Commit-Status-Publisher-failed-with-GitHub-fine-grained-token)** — TeamCity Commit Status Publisher failed with GitHub fine-grained token
+
+**[TW-80949](https://youtrack.jetbrains.com/issue/TW-80949/Update-Git-version-within-TeamCity-Docker-Images-2.40.0-2.40.1)** — Update Git version within TeamCity Docker Images: 2.40.0 -> 2.40.1
+
+**[TW-72723](https://youtrack.jetbrains.com/issue/TW-72723/Commit-Status-Publisher-fails-to-publish-statuses-to-Pull-Requests-iterations-in-Azure-DevOps)** — Commit Status Publisher fails to publish statuses to Pull Requests iterations in Azure DevOps
+
+**[TW-80747](https://youtrack.jetbrains.com/issue/TW-80747/Overriding-settings-coming-from-project-template-may-not-work-if-Kotlin-DSL-is-used)** — Overriding settings coming from project template may not work if Kotlin DSL is used
+
+**[TW-55923](https://youtrack.jetbrains.com/issue/TW-55923/reverse.dep.-parameter-with-type-password-does-not-push-parameter-to-downstream-builds-properly)** — reverse.dep. parameter with type password does not push parameter to downstream builds properly
+
+**[TW-80404](https://youtrack.jetbrains.com/issue/TW-80404/S3-Artifact-upload-Request-for-pre-signed-URLs-time-out-after-60-seconds)** — S3 Artifact upload - Request for pre-signed URLs time-out after 60 seconds
+
+**[TW-79023](https://youtrack.jetbrains.com/issue/TW-79023/No-Disk-Space-Watcher-health-report-on-a-secondary-node-without-Processing-user-requests-responsibility)** — No Disk Space Watcher health report on a secondary node without "Processing user requests" responsibility
+
+**[TW-78221](https://youtrack.jetbrains.com/issue/TW-78221/Projects-export-doesnt-work-on-secondary-nodes)** — Projects export doesn't work on secondary nodes
+
+**[TW-80029](https://youtrack.jetbrains.com/issue/TW-80029/Build-can-fail-with-Unable-to-collect-changes-error-if-VCS-generic-executor-pool-queue-is-full)** — Build can fail with "Unable to collect changes" error if VCS generic executor pool queue is full
+
+**[TW-79819](https://youtrack.jetbrains.com/issue/TW-79819/User-created-using-GitHub-authentication-module-has-no-avatar)** — User created using GitHub authentication module has no avatar
+
+**[TW-71777](https://youtrack.jetbrains.com/issue/TW-71777/Add-a-description-for-Uploaded-key-and-Custom-private-key-for-Git-VCS-root)** — Add a description for "Uploaded key" and "Custom private key" for Git VCS root
+
+**[TW-80514](https://youtrack.jetbrains.com/issue/TW-80514/Builds-generated-by-Parallel-tests-feature-dont-have-a-thread-dump-when-terminated-forcefully)** — Builds generated by `Parallel tests` feature don't have a thread dump when terminated forcefully
+
+**[TW-80698](https://youtrack.jetbrains.com/issue/TW-80698/How-to-set-timeout-for-auto-generated-build-configs-with-Parallel-tests-build-feature)** — How to set timeout for auto-generated build configs with Parallel tests build feature?
+
+**[TW-79354](https://youtrack.jetbrains.com/issue/TW-79354/Mark-Bazel-plugin-as-secondary-node-aware)** — Mark Bazel plugin as secondary node aware
+
+**[TW-77814](https://youtrack.jetbrains.com/issue/TW-77814/Trailing-space-is-ReSharper-Inspections-runner-fails-the-step)** — Trailing space is ReSharper Inspections runner fails the step
+
+**[TW-74933](https://youtrack.jetbrains.com/issue/TW-74933/Unobvious-InspectCode-Platform-option-names-in-ReSharper-Inspections-runner-settings)** — Unobvious InspectCode Platform option names in ReSharper Inspections runner settings
+
+**[TW-74139](https://youtrack.jetbrains.com/issue/TW-74139/.NET-custom-step-exiting-with-1-doesnt-fail-the-build)** — .NET custom step exiting with 1 doesn't fail the build
+
+**[TW-76085](https://youtrack.jetbrains.com/issue/TW-76085/add-internal-retry-for-git-fetch-if-branch-is-no-longer-in-the-remote)** — add internal retry for git fetch if branch is no longer in the remote
+
+**[TW-78497](https://youtrack.jetbrains.com/issue/TW-78497/Confusing-message-in-build-queue-if-all-agents-are-occupied)** — Confusing message in build queue if all agents are occupied
+
+**[TW-80399](https://youtrack.jetbrains.com/issue/TW-80399/Build-Configuration-Triggers-do-not-retain-custom-parameter-values-if-the-default-value-is-set)** — Build Configuration Triggers do not retain custom parameter values if the default value is set
+
+**[TW-81035](https://youtrack.jetbrains.com/issue/TW-81035/TeamCity-should-provide-P4CLIENT-P4HOST-P4USER-environment-variables-in-bootstrap-steps-of-builds-with-Perforce-VCS)** — TeamCity should provide P4CLIENT, P4HOST, P4USER environment variables in bootstrap steps of builds with Perforce VCS
+
+**[TW-78849](https://youtrack.jetbrains.com/issue/TW-78849/Allow-disabling-Sakura-UI-banner-on-a-per-user-basis)** — Allow disabling Sakura UI banner on a per-user basis
+
 **[TW-79103](https://youtrack.jetbrains.com/issue/TW-79103/teamcity-server-Docker-image-requires-the-container-user-to-have-root-privileges-for-the-HTTPS-feature-to-work)** — teamcity-server Docker image requires the container user to have root privileges for the HTTPS feature to work
+
+**[TW-77540](https://youtrack.jetbrains.com/issue/TW-77540/Restore-from-backup-may-hang-if-database-connection-is-lost)** — Restore from backup may hang if database connection is lost
+
+**[TW-79365](https://youtrack.jetbrains.com/issue/TW-79365/Commit-Status-Publisher-fails-to-publish-status-to-Azure-DevOps-pull-requests)** — Commit Status Publisher fails to publish status to Azure DevOps pull requests
+
+**[TW-79782](https://youtrack.jetbrains.com/issue/TW-79782/Exception-in-pluginsLoaded-event-handler-of-static-UI-extensions-plugin-on-secondary-node)** — Exception in pluginsLoaded event handler of static UI extensions plugin on secondary node
+
+**[TW-80021](https://youtrack.jetbrains.com/issue/TW-80021/Gradle-compilation-error-is-not-reported-as-a-build-problem-for-Kotlin-projects)** — Gradle compilation error is not reported as a build problem for Kotlin projects
 
 **[TW-79435](https://youtrack.jetbrains.com/issue/TW-79435/Do-not-publish-queue-related-status-for-builds-that-already-have-status-from-the-same-build-configuration)** — Do not publish queue-related status for builds that already have status from the same build configuration
 
@@ -155,10 +208,6 @@ __26 May 2023__
 **[TW-80591](https://youtrack.jetbrains.com/issue/TW-80591/Show-all-build-problems-button-on-page-Build-overview-doesnt-work)** — "Show all" build problems button on page Build overview doesn't work
 
 **[TW-81385](https://youtrack.jetbrains.com/issue/TW-81385/Show-a-hidden-folder-in-the-nested-artifact-tree)** — Show a hidden folder in the nested artifact tree
-
-**[TW-80698](https://youtrack.jetbrains.com/issue/TW-80698/How-to-set-timeout-for-auto-generated-build-configs-with-Parallel-tests-build-feature)** — How to set timeout for auto-generated build configs with Parallel tests build feature?
-
-**[TW-78497](https://youtrack.jetbrains.com/issue/TW-78497/Confusing-message-in-build-queue-if-all-agents-are-occupied)** — Confusing message in build queue if all agents are occupied
 
 **[TW-81530](https://youtrack.jetbrains.com/issue/TW-81530/Azure-Devops-icon-is-always-active)** — Azure Devops icon is always active
 
@@ -186,31 +235,9 @@ __26 May 2023__
 
 **[TW-81297](https://youtrack.jetbrains.com/issue/TW-81297/Build-sometimes-fails-to-publish-internal-artifacts-in-the-multi-node-setup)** — Build sometimes fails to publish internal artifacts in the multi-node setup
 
-**[TW-79023](https://youtrack.jetbrains.com/issue/TW-79023/No-Disk-Space-Watcher-health-report-on-a-secondary-node-without-Processing-user-requests-responsibility)** — No Disk Space Watcher health report on a secondary node without "Processing user requests" responsibility
-
-**[TW-55923](https://youtrack.jetbrains.com/issue/TW-55923/reverse.dep.-parameter-with-type-password-does-not-push-parameter-to-downstream-builds-properly)** — reverse.dep. parameter with type password does not push parameter to downstream builds properly
-
-**[TW-80021](https://youtrack.jetbrains.com/issue/TW-80021/Gradle-compilation-error-is-not-reported-as-a-build-problem-for-Kotlin-projects)** — Gradle compilation error is not reported as a build problem for Kotlin projects
-
-**[TW-79782](https://youtrack.jetbrains.com/issue/TW-79782/Exception-in-pluginsLoaded-event-handler-of-static-UI-extensions-plugin-on-secondary-node)** — Exception in pluginsLoaded event handler of static UI extensions plugin on secondary node
-
-**[TW-78221](https://youtrack.jetbrains.com/issue/TW-78221/Projects-export-doesnt-work-on-secondary-nodes)** — Projects export doesn't work on secondary nodes
-
-**[TW-79365](https://youtrack.jetbrains.com/issue/TW-79365/Commit-Status-Publisher-fails-to-publish-status-to-Azure-DevOps-pull-requests)** — Commit Status Publisher fails to publish status to Azure DevOps pull requests
-
-**[TW-80399](https://youtrack.jetbrains.com/issue/TW-80399/Build-Configuration-Triggers-do-not-retain-custom-parameter-values-if-the-default-value-is-set)** — Build Configuration Triggers do not retain custom parameter values if the default value is set
-
-**[TW-77540](https://youtrack.jetbrains.com/issue/TW-77540/Restore-from-backup-may-hang-if-database-connection-is-lost)** — Restore from backup may hang if database connection is lost
-
-**[TW-80029](https://youtrack.jetbrains.com/issue/TW-80029/Build-can-fail-with-Unable-to-collect-changes-error-if-VCS-generic-executor-pool-queue-is-full)** — Build can fail with "Unable to collect changes" error if VCS generic executor pool queue is full
-
 **[TW-71214](https://youtrack.jetbrains.com/issue/TW-71214/CommitStatusPublisher-suggests-to-create-a-connection-for-a-user-without-Edit-project-permission)** — CommitStatusPublisher suggests to create a connection for a user without Edit project permission
 
 **[TW-79148](https://youtrack.jetbrains.com/issue/TW-79148/Button-Acquire-an-access-token-in-Commit-Status-Publisher-and-Pull-Request-features-is-available-for-user-with-read-only)** — Button "Acquire an access token" in Commit Status Publisher and Pull Request features is available for user with read-only permissions
-
-**[TW-80374](https://youtrack.jetbrains.com/issue/TW-80374/IdeaRunner-unable-to-use-JRT-protocol-with-JDK-Jar-Files-Patterns)** — IdeaRunner: unable to use JRT protocol with "JDK Jar Files Patterns"
-
-**[TW-79819](https://youtrack.jetbrains.com/issue/TW-79819/User-created-using-GitHub-authentication-module-has-no-avatar)** — User created using GitHub authentication module has no avatar
 
 **[TW-79863](https://youtrack.jetbrains.com/issue/TW-79863/Acquire-Token-on-VCS-root-edit-page-the-authorization-popup-window-leads-to-the-page-scrolling-up.)** — 'Acquire Token' on VCS root edit page, the authorization popup window leads to the page scrolling up.
 
@@ -238,13 +265,9 @@ __26 May 2023__
 
 **[TW-81076](https://youtrack.jetbrains.com/issue/TW-81076/Bitbucket-Cloud-connections-arent-shown-in-commit-status-publisher-settings)** — Bitbucket Cloud connections aren't shown in commit status publisher settings
 
-**[TW-80949](https://youtrack.jetbrains.com/issue/TW-80949/Update-Git-version-within-TeamCity-Docker-Images-2.40.0-2.40.1)** — Update Git version within TeamCity Docker Images: 2.40.0 -> 2.40.1
-
 **[TW-75155](https://youtrack.jetbrains.com/issue/TW-75155/Concurrency-issue-on-attempt-to-manually-remove-a-build-from-the-queue-which-is-already-optimized-to-some-other-build)** — Concurrency issue on attempt to manually remove a build from the queue which is already optimized to some other build
 
 **[TW-81117](https://youtrack.jetbrains.com/issue/TW-81117/Versioned-Settings-Import-decision-parameter-is-not-set-with-REST)** — Versioned Settings Import decision parameter is not set with REST
-
-**[TW-81035](https://youtrack.jetbrains.com/issue/TW-81035/TeamCity-should-provide-P4CLIENT-P4HOST-P4USER-environment-variables-in-bootstrap-steps-of-builds-with-Perforce-VCS)** — TeamCity should provide P4CLIENT, P4HOST, P4USER environment variables in bootstrap steps of builds with Perforce VCS
 
 **[TW-78095](https://youtrack.jetbrains.com/issue/TW-78095/Return-the-field-BuildType.compatibleCloudImages)** — Return the field 'BuildType.compatibleCloudImages'
 
@@ -268,23 +291,15 @@ __26 May 2023__
 
 **[TW-75567](https://youtrack.jetbrains.com/issue/TW-75567/Builds-no-longer-run-after-recent-DST-time-change-Fail-to-peek-column-10-with-type-java.sql.Timestamp)** — Builds no longer run after recent DST time change (Fail to peek column 10 with type java.sql.Timestamp)
 
-**[TW-80404](https://youtrack.jetbrains.com/issue/TW-80404/S3-Artifact-upload-Request-for-pre-signed-URLs-time-out-after-60-seconds)** — S3 Artifact upload - Request for pre-signed URLs time-out after 60 seconds
-
 **[TW-78756](https://youtrack.jetbrains.com/issue/TW-78756/NullPointerException-in-InvestigationWrapper)** — NullPointerException in InvestigationWrapper
 
 **[TW-44987](https://youtrack.jetbrains.com/issue/TW-44987/Support-create-project-build-configuration-VCS-root-from-URL-for-Perforce-address-including-sslhostport-URLs)** — Support create project/build configuration/VCS root from URL for Perforce address, including ssl:host:port URLs
-
-**[TW-80747](https://youtrack.jetbrains.com/issue/TW-80747/Overriding-settings-coming-from-project-template-may-not-work-if-Kotlin-DSL-is-used)** — Overriding settings coming from project template may not work if Kotlin DSL is used
 
 **[TW-80391](https://youtrack.jetbrains.com/issue/TW-80391/AdHoc-notifications-what-are-the-default-value-for-Allowed-hostnames-setting)** — AdHoc notifications: what are the default value for "Allowed hostnames" setting?
 
 **[TW-80757](https://youtrack.jetbrains.com/issue/TW-80757/Exception-on-the-buildserver-removed-build-configuration-not-expected-in-parallels-test-code)** — Exception on the buildserver (removed build configuration not expected in parallels test code)
 
 **[TW-80508](https://youtrack.jetbrains.com/issue/TW-80508/Cloud-agents-are-terminated-despite-Maintenance-mode-after-idle-time-10-minutes)** — Cloud agents are terminated despite Maintenance mode after idle time + 10 minutes
-
-**[TW-72723](https://youtrack.jetbrains.com/issue/TW-72723/Commit-Status-Publisher-fails-to-publish-statuses-to-Pull-Requests-iterations-in-Azure-DevOps)** — Commit Status Publisher fails to publish statuses to Pull Requests iterations in Azure DevOps
-
-**[TW-71777](https://youtrack.jetbrains.com/issue/TW-71777/Add-a-description-for-Uploaded-key-and-Custom-private-key-for-Git-VCS-root)** — Add a description for "Uploaded key" and "Custom private key" for Git VCS root
 
 **[TW-70985](https://youtrack.jetbrains.com/issue/TW-70985/Commit-Status-Publisher-cannot-parse-Git-Url-it-being-a-parameter)** — Commit Status Publisher : cannot parse Git Url (it being a parameter)
 
@@ -380,8 +395,6 @@ __26 May 2023__
 
 **[TW-80168](https://youtrack.jetbrains.com/issue/TW-80168/Rename-button-Diassociate-to-Dissociate-on-Agents-pool-page)** — Rename button Diassociate to Dissociate on Agent's pool page
 
-**[TW-74139](https://youtrack.jetbrains.com/issue/TW-74139/.NET-custom-step-exiting-with-1-doesnt-fail-the-build)** — .NET custom step exiting with 1 doesn't fail the build
-
 **[TW-79589](https://youtrack.jetbrains.com/issue/TW-79589/Parameters-references-in-Docker-container-name-are-not-resolved)** — Parameters references in Docker container name are not resolved
 
 **[TW-78111](https://youtrack.jetbrains.com/issue/TW-78111/Add-Show-changes-from-dependencies-checkbox-to-builds-Changes-tab)** — Add "Show changes from dependencies" checkbox to build's Changes tab
@@ -470,8 +483,6 @@ __26 May 2023__
 
 **[TW-79479](https://youtrack.jetbrains.com/issue/TW-79479/JS-Plugins-are-crashing-if-content-is-an-empty-string)** — JS Plugins are crashing if content is an empty string
 
-**[TW-78849](https://youtrack.jetbrains.com/issue/TW-78849/Allow-disabling-Sakura-UI-banner-on-a-per-user-basis)** — Allow disabling Sakura UI banner on a per-user basis
-
 **[TW-77991](https://youtrack.jetbrains.com/issue/TW-77991/No-information-about-reusing-builds-shown-on-the-Chains-tab)** — No information about reusing builds shown on the Chains tab
 
 **[TW-78004](https://youtrack.jetbrains.com/issue/TW-78004/No-checkboxes-Show-details-and-Group-by-project-on-Chains-tab)** — No checkboxes "Show details" and "Group by project" on Chains tab
@@ -522,7 +533,7 @@ __26 May 2023__
 
 **[TW-78802](https://youtrack.jetbrains.com/issue/TW-78802/Wait-reasons-for-a-build-sitting-in-the-queue-are-not-available-on-the-secondary-node)** — Wait reasons for a build sitting in the queue are not available on the secondary node
 
-**[TW-78291](https://youtrack.jetbrains.com/issue/TW-78291/number-suffix-contradicts-to-metric-name-Prometheus-convention)** — number suffix contradicts to metric name Prometheus convention
+**[TW-78291](https://youtrack.jetbrains.com/issue/TW-78291/number-suffix-contradicts-to-metric-name-Prometheus-convention)** — _number suffix contradicts to metric name Prometheus convention
 
 **[TW-78690](https://youtrack.jetbrains.com/issue/TW-78690/Avoid-removing-data-from-buildproject-table-in-parallel)** — Avoid removing data from build_project table in parallel
 
@@ -550,8 +561,6 @@ __26 May 2023__
 
 **[TW-71547](https://youtrack.jetbrains.com/issue/TW-71547/Allow-loading-webhooks-plugin-on-secondary-nodes)** — Allow loading webhooks plugin on secondary nodes
 
-**[TW-79354](https://youtrack.jetbrains.com/issue/TW-79354/Mark-Bazel-plugin-as-secondary-node-aware)** — Mark Bazel plugin as secondary node aware
-
 **[TW-79099](https://youtrack.jetbrains.com/issue/TW-79099/Remote-run-with-pending-file-marked-for-add-leaves-the-file-writable-on-the-agent)** — Remote run with pending file marked for add leaves the file writable on the agent
 
 **[TW-78250](https://youtrack.jetbrains.com/issue/TW-78250/Passwords-and-tokens-starting-with-a-hyphen-do-not-work-for-a-git-VCS-root-authentication)** — Passwords and tokens starting with a hyphen do not work for a git VCS root authentication
@@ -572,13 +581,9 @@ __26 May 2023__
 
 **[TW-78582](https://youtrack.jetbrains.com/issue/TW-78582/Build-status-for-Bitbucket-Server-Data-Center-does-not-contain-build-number-even-for-started-failed-succeeded-statuses)** — Build status for Bitbucket Server / Data Center does not contain build number even for started/failed/succeeded statuses
 
-**[TW-74933](https://youtrack.jetbrains.com/issue/TW-74933/Unobvious-InspectCode-Platform-option-names-in-ReSharper-Inspections-runner-settings)** — Unobvious InspectCode Platform option names in ReSharper Inspections runner settings
-
 **[TW-67037](https://youtrack.jetbrains.com/issue/TW-67037/Slack-Notifier-checkmark-in-successful-build-notification-is-gray-in-dark-theme-Slack)** — Slack Notifier - checkmark in successful build notification is gray in dark theme Slack
 
 **[TW-78680](https://youtrack.jetbrains.com/issue/TW-78680/Slack-Notifier-doesnt-send-changes-from-snapshot-dependencies)** — Slack Notifier doesn't send changes from snapshot dependencies
-
-**[TW-77814](https://youtrack.jetbrains.com/issue/TW-77814/Trailing-space-is-ReSharper-Inspections-runner-fails-the-step)** — Trailing space is ReSharper Inspections runner fails the step
 
 **[TW-79175](https://youtrack.jetbrains.com/issue/TW-79175/S3-Storage-S3-artifact-storage-hanging-timing-out-with-large-artifacts-after-upgrade-to-2022.10)** — [S3 Storage] S3 artifact storage hanging/timing out with large artifacts after upgrade to 2022.10
 
@@ -591,9 +596,6 @@ __26 May 2023__
 **[TW-78458](https://youtrack.jetbrains.com/issue/TW-78458/Usage-of-branchpolicyXXXX-locator-dimensions-causes-HTTP-400)** — Usage of branch:(policy:XXXX) locator dimensions causes HTTP 400
 
 **[TW-75156](https://youtrack.jetbrains.com/issue/TW-75156/Add-ability-to-sanely-sort-test-runs-by-test-name)** — Add ability to sanely sort test runs by test name
-
-**[TW-78241](https://youtrack.jetbrains.com/issue/TW-78241/TeamCity-Commit-Status-Publisher-failed-with-GitHub-fine-grained-token)** — TeamCity Commit Status Publisher failed with GitHub fine-grained token
-
 
 
 ### Performance Problem
@@ -633,7 +635,6 @@ __26 May 2023__
 **[TW-79451](https://youtrack.jetbrains.com/issue/TW-79451/Memory-leak-in-agent-part-of-Telemetry-plugin)** — Memory leak in agent part of Telemetry plugin
 
 **[TW-59444](https://youtrack.jetbrains.com/issue/TW-59444/Slow-commit-hook-processing-slow-filtering-of-VCS-root-instances-due-to-parameters-resolution)** — Slow commit hook processing (slow filtering of VCS root instances due to parameters resolution)
-
 
 
 ### Security
