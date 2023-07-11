@@ -62,6 +62,7 @@ To define which settings to take __when a build starts__, open the __Project Set
 * __use current settings by default__: a build uses the latest project settings from the TeamCity server. Users can run a build with older project settings via the [custom build dialog](build-results-page.md#Changes+Tab).
 * __use settings from VCS__: builds in branches and history builds, which use settings from VCS, load settings from the versioned settings' revision calculated for the build. Users can change configuration settings in [personal builds from IDE](remote-run.md) or can run a build with project settings current on the TeamCity server via the [custom build dialog](build-results-page.md#Changes+Tab).  
   TeamCity will try to use settings from the current build's branch whenever possible. However, some of the build features and settings might require using the default configuration (the one stored in TeamCity Data Directory). In general,
+<anchor name="general-rules"/>
 * changes in the following settings coming from the build's branch will be ignored and __will not affect__ the build:
     * VCS roots and checkout rules
     * snapshot dependencies 
