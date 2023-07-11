@@ -14,6 +14,8 @@ __11 July 2023__
 
 ### Bug
 
+**[TW-81866](https://youtrack.jetbrains.com/issue/TW-81866)** — Failed to publish artifacts in AWS s3 after updating TeamCity to v2023.05
+
 **[TW-82293](https://youtrack.jetbrains.com/issue/TW-82293/bean-currentUser-not-found-within-scope-error-in-the-logs-when-an-unauthorized-user-opens-a-non-existing-page)** — "bean currentUser not found within scope" error in the logs when an unauthorized user opens a non existing page
 
 **[TW-82115](https://youtrack.jetbrains.com/issue/TW-82115/Symbolic-link-folders-no-longer-present-in-build-artifact-paths-since-2023.05-upgrade)** — Symbolic link folders no longer present in build artifact paths since 2023.05 upgrade
