@@ -12,6 +12,8 @@ __11 July 2023__
 
 **[TW-81199](https://youtrack.jetbrains.com/issue/TW-81199/REST-Expose-global-server-settings)** — REST: Expose global server settings
 
+**[TW-81590](https://youtrack.jetbrains.com/issue/TW-81590)** — HTTPS settings: support ECC keys
+
 ### Bug
 
 **[TW-81866](https://youtrack.jetbrains.com/issue/TW-81866)** — Failed to publish artifacts in AWS s3 after updating TeamCity to v2023.05
