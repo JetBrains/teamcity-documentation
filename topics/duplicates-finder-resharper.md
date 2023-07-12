@@ -1,7 +1,7 @@
 [//]: # (title: Duplicates Finder \(ReSharper\))
 [//]: # (auxiliary-id: viewpage.actionpageId113084077;Duplicates Finder \(ReSharper\))
 
-> Due to the ReSharper team sunsetting the [dupFinder Command-Line Tool](https://blog.jetbrains.com/dotnet/2021/08/12/sunsetting-dupfinder-command-line-tool/), this runner is now deprecated. This means its underlying tool will no longer be updated to work with newer language features. However, you can continue using this runner in your build configurations. To do so, install [JetBrains ReSharper Command Line Tools 2021.2.0](https://www.jetbrains.com/resharper/download/other.html) and specify a path to this tool in the runner's advanced settings (the **R# CLT Home Directory** field).
+> Due to the ReSharper team sunsetting the [dupFinder Command-Line Tool](https://blog.jetbrains.com/dotnet/2021/08/12/sunsetting-dupfinder-command-line-tool/), this runner is now deprecated. This means its underlying tool will no longer be updated to work with newer language features. However, you can continue using this runner in your build configurations. To do so, install [JetBrains ReSharper Command Line Tools 2021.2.3](https://www.jetbrains.com/resharper/download/other.html) and specify a path to this tool in the runner's advanced settings (the **R# CLT Home Directory** field).
 > 
 {type="warning"}
 
