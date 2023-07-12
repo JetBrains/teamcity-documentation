@@ -32,6 +32,7 @@ These problems include errors running tests headless, issues with the interactio
 <tip>
 
 Note that there is a Windows limitation to accessing a remote computer via mstsc: the desktop of the remote machine will be locked on RDP disconnect, which will cause issues running tests. The VNC protocol allows you to remote control another machine without locking it.To run GUI tests and be able to use RDP, see the [workaround](#Running+automated+GUI+tests+and+using+RDP) below.
+
 </tip>
 
 To resolve / avoid these:
@@ -577,3 +578,13 @@ To fix this problem after updating to TeamCity 2022.04, download the plugin vers
 and add the `storage.s3.acl` configuration parameter with the required `acl` value. 
 All the values listed [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl) are supported.
 
+## Artifact Decompression Issues
+
+The regular ZIP format supports archives up to 2^32 bytes (4 GB) in size. Since builds can produce artifacts that exceed this value, TeamCity compresses artifacts with the ZIP64 format that supports archives as large as 2^64 bytes (16 exabytes).
+
+If tools that you utilize to unzip TeamCity build artifacts do not support ZIP64 (for example, you may observe header error warnings), add the following [configuration parameters](configuring-build-parameters.md#Configuration+Parameters) to a project (either a &lt;Root project&gt; or a specific project that produces unsupported archives):
+
+```Plain Text
+teamcity.internal.artifacts.useZip64=Never
+teamcity.internal.artifacts.useByteChannelForZip=false
+```
