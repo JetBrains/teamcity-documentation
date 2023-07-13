@@ -81,39 +81,114 @@ On Windows, you may need to increase the [ThreadsPerChild](http://httpd.apache.o
 Versions 1.3 or later are recommended. Earlier versions do not support the WebSocket protocol.
 
 
-```Java
+```Plain Text
 
 http {
-    # ... default settings here
-    proxy_read_timeout     1200;
-    proxy_connect_timeout  240;
-    client_max_body_size   0;    # maximum size of an HTTP request. 0 allows uploading large artifacts to TeamCity
- 
-    map $http_upgrade $connection_upgrade { # WebSocket support
-        default upgrade;
-        '' '';
-    }
-     
-    server {
-        listen       400; # public server port
-        server_name  teamcity.public; # public server host name
-     
-        location / { # public context (should be the same as internal context)
-            proxy_pass http://teamcity.local:8111; # full internal address
-            proxy_http_version  1.1;
-            proxy_set_header    Host $server_name:$server_port;
-            proxy_set_header    X-Forwarded-Host $http_host;    # necessary for proper absolute redirects and TeamCity CSRF check
-            proxy_set_header    X-Forwarded-Proto $scheme;
-            proxy_set_header    X-Forwarded-For $remote_addr;
-            proxy_set_header    Upgrade $http_upgrade; # WebSocket support
-            proxy_set_header    Connection $connection_upgrade; # WebSocket support
-        }
-    }
+    ... default settings here
+    proxy_read_timeout      1200;
+    proxy_connect_timeout   240;
+    client_max_body_size    0; # maximum size of an HTTP request. 0 allows uploading large artifacts to TeamCity
+
+    map $http_upgrade $connection_upgrade { # WebSocket support
+        default upgrade;
+        '' '';
+    }
+
+    server {
+        listen      400; # public server port
+        server_name teamcity.public; # public server host name
+
+        location / { # public context (should be the same as internal context)
+            proxy_pass          http://teamcity.local:8111; # full internal address
+            proxy_http_version  1.1;
+            proxy_set_header    Host $server_name:$server_port;
+            proxy_set_header    X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
+            proxy_set_header    X-Forwarded-Proto $scheme;
+            proxy_set_header    X-Forwarded-For $remote_addr;
+            proxy_set_header    pgrade $http_upgrade; # WebSocket support
+            proxy_set_header    Connection $connection_upgrade; # WebSocket support
+        }
+    }
 }
 
 ```
 
 [//]: # (Internal note. Do not delete. "How To...d160e1234.txt")
+
+### IIS
+
+To configure a TeamCity server behind an IIS reverse proxy:
+
+1. Create a canonical name (CNAME) record for your TeamCity server.
+
+2. Issue a certificate that will ensure a secure connection between the TeamCity server and external users. If the certificate was issued not by well-known certificate authority, you may need to manually add it to the Java Certificate Store on every machine that connects to TeamCity:
+
+    ```Shell
+    keytool -importcert -file <cert file> -keystore <path to JRE installation>/lib/security/cacerts
+    ```
+    
+3. Change the [server URL](configuring-server-url.md) to the proxy URL.
+
+4. Edit the *&lt;TeamCity_Home_Directory&gt;/conf/server.xml* file to set up required TeamCity Tomcat server properties as described in the [](#TeamCity+Tomcat+Configuration) section.
+
+5. Steps 5 to 8 are perfomed in Powershell. Use the [Get-IISConfigSection](https://learn.microsoft.com/en-us/powershell/module/iisadministration/get-iisconfigsection?view=windowsserver2022-ps) and [Set-IISConfigAttributeValue](https://learn.microsoft.com/en-us/powershell/module/iisadministration/set-iisconfigattributevalue?view=windowsserver2022-ps) cmdlets to enable SSL flags:
+
+    ```Shell
+    $ConfigSectionTC = Get-IISConfigSection -SectionPath "system.webServer/security/access" -Location "TCProxy";
+    Set-IISConfigAttributeValue -AttributeName sslFlags -AttributeValue Ssl -ConfigElement $ConfigSectionTC;
+    ``` 
+
+6. Use the [Set-WebConfigurationProperty](https://learn.microsoft.com/en-us/powershell/module/webadministration/set-webconfigurationproperty?view=windowsserver2022-ps) cmdlet to add a server variable that allows the HTTP forwarded IP to be passed from the web requests:
+
+    ```Shell
+    Set-WebConfigurationProperty -pspath "IIS:/" -Location "TCProxy" -filter "system.webServer/rewrite/allowedServerVariables" -name "." -value @{name="HTTP_FORWARDED"} -FORCE
+    ```
+
+7. Enable proxy setting:
+
+    ```Shell
+    Set-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/proxy" -name "." -value @{   enabled="true" } -FORCE
+    ```
+
+8. Disable the `reverseRewriteHostInResponseHeaders` parameter if you're using an external storage for TeamCity artifacts:
+
+    ```Shell
+    Set-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/proxy" -name "." -value @{   reverseRewriteHostInResponseHeaders="false" } -FORCE
+    ``` 
+
+9. Modify the IIS *web.config* file as follows:
+
+    ```XML
+    <?xml version="1.0" encoding="UTF-8"?>
+    <configuration>
+        <system.web>
+            <httpRuntime requestPathInvalidCharacters="" />
+        </system.web>
+        <system.webServer>
+            <rewrite>
+                <rules useOriginalURLEncoding="true">
+                    <rule name="teamcity" enabled="true" patternSyntax="Wildcard" stopProcessing="true">
+                        <match url="*" />
+                        <action type="Rewrite" url=http://localhost:80/{R:0} />
+                        <serverVariables>
+                            <set name="HTTP_FORWARDED" value="for={REMOTE_ADDR};by={LOCAL_ADDR};host=&quot;{HTTP_HOST}&quot;;proto=&quot;https&quot;" />
+                        </serverVariables>
+                    </rule>
+                </rules>
+            </rewrite>
+            <security>
+                <requestFiltering allowDoubleEscaping="true">
+                    <fileExtensions>
+                        <remove fileExtension=".config" />
+                    </fileExtensions>
+                    <hiddenSegments>
+                        <remove segment="bin" />
+                    </hiddenSegments>
+                </requestFiltering>
+            </security>
+        </system.webServer>
+    </configuration>
+    ```
 
 <anchor name="OtherServers"/>
 
@@ -137,6 +212,13 @@ Check that your reverse proxy (or a similar tool) conforms to the following requ
 * Settings that limit the maximum request name, response length, and response time are not too restrictive. See this article for more information: [](known-issues.md#IIS-Related+Issues).
 * gzip Content-Encoding is fully supported. For example, certain IIS configurations can result in the "Loading data..." in the UI and 500 HTTP responses (see the related [issue](https://youtrack.jetbrains.com/issue/TW-56218)).
 
+IIS-related issues:
+
+* If the "PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target" error occurs, add your certificate to the same Java keystore TeamCity is using.
+
+* If an incorrect server name is returned in HTTP 404 or 50x errors, check your redirect rules and the forwarded header.
+
+
 <anchor name="Proxy-Tomcat-Connector"/>
 <anchor name="Proxy-Tomcat-RemoteIpValve"/>
 
@@ -148,20 +230,45 @@ This approach can be used with any proxy configuration, provided the configured 
 
 You need to change the "Connector" node in `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file as below.
 
-```Shell
-
+```XML
 <Connector port="8111" protocol="org.apache.coyote.http11.Http11NioProtocol"
-connectionTimeout="60000"
-useBodyEncodingForURI="true"
-socket.txBufSize="64000"
-socket.rxBufSize="64000"
-tcpNoDelay="1"
-secure="false"
-scheme="http"
+    connectionTimeout="60000"
+    useBodyEncodingForURI="true"
+    socket.txBufSize="64000"
+    socket.rxBufSize="64000"
+    tcpNoDelay="1"
+    secure="false"
+    scheme="http"
 />
 ```
 
 When the public server address is __HTTPS__, use the `secure="true"` and `scheme="https"` attributes. If these attributes are missing, TeamCity will show a respective health report.
+
+If a TeamCity server is configured behind an IIS reverse proxy:
+
+
+```XML
+<Connector port="80" protocol="org.apache.coyote.http11.Http11NioProtocol"
+  connectionTimeout="60000"
+  redirectPort="8543"
+  useBodyEncodingForURI="true"
+  socket.txBufSize="64000"
+  socket.rxBufSize="64000"
+  tcpNoDelay="1"
+  proxyName="<your_CNAME_value>"
+  proxyPort="443"
+  secure="true"
+  scheme="https"
+/>
+
+<Valve
+  className="org.apache.catalina.valves.RemoteIpValve"
+  remoteIpHeader="x-forwarded-for"
+  protocolHeader="x-forwarded-proto"
+  portHeader="x-forwarded-port"
+  internalProxies="<internal_proxy_ip>"  
+/>
+```
 
 
 [//]: # (Internal note. Do not delete. "How To...d160e1383.txt")
