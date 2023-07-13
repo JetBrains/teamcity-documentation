@@ -169,7 +169,7 @@ To configure a TeamCity server behind an IIS reverse proxy:
                 <rules useOriginalURLEncoding="true">
                     <rule name="teamcity" enabled="true" patternSyntax="Wildcard" stopProcessing="true">
                         <match url="*" />
-                        <action type="Rewrite" url=http://localhost:80/{R:0} />
+                        <action type="Rewrite" url="http://localhost:80/{R:0}" />
                         <serverVariables>
                             <set name="HTTP_FORWARDED" value="for={REMOTE_ADDR};by={LOCAL_ADDR};host=&quot;{HTTP_HOST}&quot;;proto=&quot;https&quot;" />
                         </serverVariables>
