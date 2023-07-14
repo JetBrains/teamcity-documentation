@@ -25,6 +25,22 @@ Build agents now report the `DotNetWorkloads_<version>` parameter that returns a
 
 Learn more: [](net.md#Parameters+Reported+by+Agent).
 
+## REST API
+
+You can now send a `POST` request to the following endpoint to move a build configuration to another project:
+
+```Shell
+/app/rest/buildTypes/<BuildTypeLocator>/copy?<Target_ProjectLocator>
+```
+{prompt="POST"}
+
+For example, the following request finds a build configuration with the "SourceProject_MyBuildConfig" ID and moves it to "MyProject2":
+
+```Shell
+http://localhost:8111/app/rest/buildTypes/id:SourceProject_MyBuildConfig/copy?targetProjectId=MyProject2
+```
+{prompt="POST"}
+
 ## Miscellaneous
 
 * The [DslContext](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/root/dsl-context/index.html?query=DslContext) object now exposes a string `serverUrl` property that allows you to get the URL of a TeamCity server in Kotlin DSL code.
