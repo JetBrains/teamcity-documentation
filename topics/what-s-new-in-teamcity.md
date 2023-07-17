@@ -74,7 +74,7 @@ You can now send a `POST` request to the following endpoint to move a build conf
 For example, the following request finds a build configuration with the "SourceProject_MyBuildConfig" ID and moves it to "MyProject2":
 
 ```Shell
-http://localhost:8111/app/rest/buildTypes/id:SourceProject_MyBuildConfig/copy?targetProjectId=MyProject2
+http://localhost:8111/app/rest/buildTypes/id:SourceProject_MyBuildConfig/move?targetProjectId=MyProject2
 ```
 {prompt="POST"}
 
