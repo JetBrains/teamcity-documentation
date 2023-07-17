@@ -401,24 +401,72 @@ To use [encrypted EBS volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGui
 * `sts:GetFederationToken`
 * `ssm:*Session`-->
 
-The snippet below illustrates a custom IAM policy definition that allows all EC2 operations from a specified IP address:
+The snippet below illustrates a custom IAM policy definition that allows all EC2 operations initiated by TeamCity from the specific IP address:
 
-```Shell
+
+```JSON
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "1",
-            "Effect": "Allow",
-            "Action": "ec2:*",
-            "Condition": {
-                "IpAddress": {
-                    "aws:SourceIp": "<TeamCity server IP address>"
-                }
-            },
-            "Resource": "*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "1",
+      "Action": [
+        "ec2:Describe*",
+        "ec2:StartInstances",
+        "ec2:StopInstances",
+        "ec2:TerminateInstances",
+        "ec2:RebootInstances",
+        "ec2:RunInstances",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:*Tags",
+        "ec2:RequestSpotInstances",
+        "ec2:CancelSpotInstanceRequests",
+        "ec2:GetSpotPlacementScores",
+        "ec2:RequestSpotFleet",
+        "ec2:DescribeSpotFleetRequests",
+        "ec2:CancelSpotFleetRequests"
+      ],
+      "Effect": "Allow",
+      "Condition": {
+      	"IpAddress": {
+          "aws:SourceIp": "<TeamCity server IP address>"
+      	}
+      },
+      "Resource": "*"
+    },
+    {
+      "Sid": "2",
+      "Action": [
+        "kms:CreateGrant",
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:GenerateDataKeyWithoutPlainText",
+        "kms:ReEncrypt"
+      ],
+      "Effect": "Allow",
+      "Condition": {
+      	"IpAddress": {
+          "aws:SourceIp": "<TeamCity server IP address>"
+      	}
+      },
+      "Resource": "*"
+    },
+    {
+      "Sid": "3",
+      "Action": [
+        "iam:CreateServiceLinkedRole",
+        "iam:ListInstanceProfiles",
+        "iam:PassRole"
+      ],
+      "Effect": "Allow",
+      "Condition": {
+      	"IpAddress": {
+          "aws:SourceIp": "<TeamCity server IP address>"
+      	}
+      },
+      "Resource": "*"
+    }
+  ]
 }
 ```
 
