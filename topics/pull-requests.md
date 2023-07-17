@@ -88,6 +88,22 @@ Use a personal access token or obtain a token through an OAuth connection. It mu
 
 </td>
 </tr>
+
+
+<tr>
+<td></td>
+<td>
+
+GitHub App access token
+
+</td>
+<td>
+
+A [short-lived token](git.md#refresh-token) issued for the current user. This option is available only when the <b>VCS Root</b> setting points to the specific VCS root, and this root is configured using a [GitHub App connection](configuring-connections.md#GitHub).
+
+</td>
+</tr>
+
 <tr>
 <td>
 

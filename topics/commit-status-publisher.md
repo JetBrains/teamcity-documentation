@@ -38,7 +38,7 @@ For connection, select one of the available authentication types:
   
   <img src="dk-CSP-GitHubToken.png" width="708" alt="Acquire access token for GitHub"/>
   
-<!--* **GitHub App access token** — if this project or any of the parent projects have a valid [GitHub App connection](configuring-connections.md#GitHub), the Commit Status Publisher can use tokens issued through this connection. The **Acquire new** button allows you to instantly re-issue the access token.-->
+* **GitHub App access token** — if this project or any of the parent projects have a valid [GitHub App connection](configuring-connections.md#GitHub), the Commit Status Publisher can use tokens issued through this connection. The **Acquire new** button allows you to instantly re-issue the access token. This option is available only if the **VCS Root** setting points to the specific VCS root configured via a GitHub App connection.
 
 * **Use VCS root(s) credentials** — choose this option to parent VCS root(s) share access tokens with the Commit Status Publisher. Note that credentials sharing is not available if a VCS root uses anonymous authentication, fetches data via an SSH URL, or authenticates using a regular user password.
 
