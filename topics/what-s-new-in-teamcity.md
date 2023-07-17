@@ -31,6 +31,31 @@ Starting with this version, artifacts produced by batch builds are aggregated in
 Learn more: [](parallel-tests.md#Publish+Artifacts+Produced+By+Batch+Builds).
 
 
+## VCS Integration Enhancements
+
+### Automated Space Connections
+
+With this release we introduce the updated hassle-free way to set up integrations between TeamCity and JetBrains Space projects. Instead of manually creating, setting up, and installing Space applications that grant TeamCity all required permissions, you can now delegate this routine to TeamCity. All you need to do is to point TeamCity to the right Space organization, and it will do the rest for you.
+
+<img src="dk-space-newProjectConnection.png" alt="New Space Project Connection" width="706"/>
+
+The updated integration utilizes two types of connections:
+
+* Organization connection — creates a basic Space application that allows TeamCity to retrieve the list of projects in your organization and create new Space applications.
+* Project connections — use the parent organization connection to create applications that allow TeamCity to access individual Space projects.
+
+Learn more: [](configuring-connections.md#jetbrains-space-connection).
+
+### Refreshable Tokens
+
+We keep expanding the number of VCS provider connections that support [refreshable tokens](git.md#refresh-token). Refreshable tokens allow you to ditch traditional authentication methods using username/password and static PATs (personal access tokens) in favor of short-lived tokens issued for the current user.
+
+<img src="dk-2023.07-refreshTokens.png" width="706" alt="Refreshable Access Tokens"/>
+
+In version 2023.07 refreshable tokens can be issued for [GitHub App](configuring-connections.md#GitHub) and [JetBrains Space](configuring-connections.md#jetbrains-space-connection) connections.
+
+Learn more: [Refreshable tokens](git.md#refresh-token).
+
 ## .NET
 
 Build agents now report the `DotNetWorkloads_<version>` parameter that returns all [.NET workloads](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install) installed on the agent machine.
