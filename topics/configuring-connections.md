@@ -524,7 +524,71 @@ This type of connection can be used for:
 * Creating [projects](creating-and-editing-projects.md), [build configurations](creating-and-editing-build-configurations.md), and [VCS roots](configuring-vcs-roots.md) from a JetBrains Space repository.
 * Starting builds on [merge requests](pull-requests.md#JetBrains+Space+Merge+Requests) created in a JetBrains Space repository.
 
-Before configuring this connection, you need to create a dedicated application in JetBrains Space:
+You can employ two types of Space connections:
+
+* Automatic connections — TeamCity configures read-only Space [applications](https://www.jetbrains.com/space/extensibility/external/#applications) with all required permissions and installs them to your Space instance.
+* Manual connections — requires you to manually create and install Space applications, and set up connection properties in TeamCity.
+
+### Automatic Connections
+
+To configure a TeamCity project that builds and deploys a repository stored in JetBrains Space, you need two separate connections:
+
+* Organization connection — an entry point that stores common connection settings, which allow TeamCity to access your Space instance.
+* Project connection — allows TeamCity to access one specific project and its repositories.
+
+You only need a single organization connection configured in a parent TeamCity project. However, to access separate Space projects, you will require separate project connections.
+
+To configure an organization connection:
+
+1. Navigate to **Administration | &lt;Your Project&gt; | Connections**.
+2. Click **Add Connection** and choose **JetBrains Space** from the drop-down menu.
+3. Choose **Automatic: Organization Connection** under **Creation mode**.
+4. Enter the name for your new connection and click **Create Space Application**.
+5. TeamCity will open a separate browser window that allows you to choose the required Space instance:
+    
+    <img src="dk-space-chooseInstance.png" width="706" alt="Choose Space Instance"/>
+
+   * Space Cloud — click **Install** next to the required Space Cloud instance, or click **Try another email** if you are currently logged in using a different user account.
+   * Space On-Premises — enter Space organization URL and click **Install**.
+   
+6. Enter the Space application's name and optional description, and click **Install**.
+    
+    <img src="dk-installSpaceApp.png" width="706" alt="Install Space App"/>
+    
+    > Note that TeamCity retrieves the server URL from **Administration | General settings** and passes this URL as the endpoint for the newly created Space application. You will not be able to update this endpoint after the application is installed, so verify TeamCity uses the correct URL.
+    >
+    {type="note"}
+
+7. Click **Approve all and go back to TeamCity** to grant the newly installed Space application required permissions.
+
+With the organization connection configured and installed, TeamCity has permissions to install other applications and scan for the list of projects. Add a new build configuration or create a new VCS root choosing organization connection as a source to view this list (you will need to authorize TeamCity at the first attempt):
+
+<img src="dk-space-projectlist.png" width="706" alt="Space Projects"/>
+
+Note that all projects initially have grayed-out Space icons. This means TeamCity cannot access repositories in these projects yet. To grant TeamCity required permissions:
+
+1. Click a required project.
+2. Click **Proceed**. TeamCity will create and install a new pre-configured application with all permissions required to access this specific project.
+3. Follow instructions on the screen to navigate to Space administration dashboard and approve these permission requests.
+
+You should now see all repositories added to this project. Space projects with installed applications that grant TeamCity access to their repositories show colored Space icons.
+
+<img src="dk-space-projectConnection.png" width="706" alt="Space Project Connection"/>
+
+You can add more project connections to allow TeamCity to access additional Space projects within the same organization. To do this, navigate to **Administration | &lt;Your Project&gt; | Connections** and create new Space connections with the **Automatic: Project Connection** creation type. This option becomes available once you add an organization connection to this project (or its parent).
+
+<img src="dk-space-newProjectConnection.png" alt="New Space Project Connection" width="706"/>
+
+Individual project connections are also used by [](commit-status-publisher.md) and [](pull-requests.md) build features to interact with project repositories. Space organization connections in turn allow your users to log in TeamCity [using their Space credentials](authentication-modules.md).
+
+
+
+### Manual Connections
+
+Configuring manual connections to JetBrains Space includes two steps: create a Space application with required permissions, and set up connection settings in TeamCity UI.
+
+#### Create Space Application
+
 1. Go to __Administration | Applications__ and click __New application__.
 2. Enter a convenient name and save the application.
 3. Go to the app's __Authorization__ tab and click __Configure requirements__ under the __In-context Authorization__ section. Enter the name of the Space project you are about to access from TeamCity.
@@ -545,7 +609,10 @@ Before configuring this connection, you need to create a dedicated application i
 
 __Note__: When you create a project in JetBrains Space, it does not automatically add you to this project as a member — this needs to be done manually. TeamCity will be able to see only those projects where you are listed as a member.
 
-Now you can return to TeamCity, add a new JetBrains Space connection, and enter the following connection parameters:
+
+#### Configure Connection in TeamCity UI
+
+When your Space connection is configured and installed, return to TeamCity and add a new JetBrains Space connection. In connection settings, enter the following connection parameters:
 * URL of the Space server
 * Client ID and secret of your Space application
 

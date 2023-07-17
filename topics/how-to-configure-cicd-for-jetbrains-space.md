@@ -26,7 +26,19 @@ To perform all the steps described in this guide, you need to have:
 
 ## Preliminary Setup
 
-Connecting TeamCity to JetBrains Space involves two steps: (1) creating a service application for TeamCity authentication in your Space instance and (2) creating a preset of connection to Space.
+You can connect TeamCity to JetBrains Space using two different techniques. The traditional approach includes two steps:
+
+1. creating a service application for TeamCity authentication in your Space instance;
+2. creating a preset of connection to Space.
+
+Starting with version 2023.07, you can utilize semi-automatic Space connections that allow you to skip setting up Space applications manually. Instead, specify the organization URL (for Space On-Premises) or choose the required Cloud instance (for Space Cloud) and TeamCity will automatically create and install Space applications with all required permissions.
+{product="tcc"}
+
+Starting with version 2023.11, you can utilize semi-automatic Space connections that allow you to skip setting up Space applications manually. Instead, specify the organization URL (for Space On-Premises) or choose the required Cloud instance (for Space Cloud) and TeamCity will automatically create and install Space applications with all required permissions.
+{product="tc"}
+
+
+This tutorial explains how to manually setup the TeamCity-Space integration. For the detailed instructions on how to implement the Space integration using the newer semi-automatic approach, see this section instead: [Configuring Connections, JetBrains Space](configuring-connections.md#jetbrains-space-connection).
 
 ### Step 1: Create Application in JetBrains Space
 
