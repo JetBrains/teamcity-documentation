@@ -6,16 +6,100 @@ A _cloud profile_ is a collection of settings for TeamCity to start virtual mach
 <!--autoscale-->
 <!--auto-scale-->
 
-
 Configuring a cloud provider profile is one of the steps required to [enable agent cloud integration](teamcity-integration-with-cloud-solutions.md) between TeamCity and a cloud provider. The settings of profiles slightly vary depending on the cloud type.
+
+
+
 
 >If you use Kotlin DSL for your TeamCity project settings, you need to update your DSL after upgrading as described [here](upgrading-dsl.md).
 
-## Configuring Cloud Profile
+## Profiles and Images
 
-Cloud profiles are configured in the __Cloud Profiles__ section of the __Project Settings__.
+To configure a cloud profile, go to **Administration | Project | Cloud Profiles**. A cloud profile stores such settings as:
 
-### Specifying Profile Settings
+* Credentials required to connect to a cloud provider.
+* The maximum number of simultaneously active cloud agents.
+* Conditions that specify when active agents should be terminated or stopped.
+* TeamCity server URL that should be passed to new cloud agents when they start.
+
+For each cloud profile, create one or more cloud image. Images store such settings as:
+
+* An ID of a cloud instance to start or instance image to use.
+* The container image to pull when an instance/node starts.
+* Post-launch scripts.
+* An [agent pool](configuring-agent-pools.md) that should own cloud agents spawned from this image.
+
+<img src="dk-cloudProfileOverview.png" width="706" alt="TeamCity Cloud Profile"/>
+
+When a build is queued, TeamCity attempts to run queued builds on regular (non-cloud) agents first. If none are currently available, TeamCity finds a compatible cloud image and (if the limit of simultaneously running instances is not yet reached) starts a new cloud instance.
+
+
+## Supported Integrations
+
+TeamCity supports integration with the following cloud providers:
+
+<dl>
+
+<dt>Amazon EC2</dt>
+<dd>
+
+TeamCity can manage static EC2 instances, start and terminate instances from a machine image (AMI), and request Spot Fleet instances.<br/>
+
+[](setting-up-teamcity-for-amazon-ec2.md).
+</dd>
+
+
+<dt>Kubernetes</dt>
+
+<dd>
+TeamCity supports all types of Kubernetes clusters: hosting service (such as GKE from Google Cloud or Amazon EKS), self-hosted cloud clusters, and bare metal servers.<br/>
+
+[Common Information](https://www.jetbrains.com/teamcity/integrations/cloud/kubernetes/)&emsp;|&emsp;[](setting-up-teamcity-for-kubernetes.md).
+</dd>
+
+<dt>VMware vSphere and vCenter</dt>
+
+<dd>
+TeamCity can start and stop TeamCity agents installed on VMware virtual machines.<br/>
+
+[Common Information](https://blog.jetbrains.com/teamcity/2014/12/teamcity-vmware-vsphere-plugin/)&emsp;|&emsp;[](setting-up-teamcity-for-vmware-vsphere-and-vcenter.md)
+</dd>
+
+<dt>Microsoft Azure</dt>
+
+<dd>
+
+TeamCity supports both Azure Classic and Azure Resource Manager deployment models via external plugins.<br/>
+
+[Common Information](https://blog.jetbrains.com/teamcity/2016/04/teamcity-azure-resource-manager/)&emsp;|&emsp;[Azure Cloud Plugin](https://github.com/JetBrains/teamcity-azure-agent)
+
+</dd>
+
+<dt>Google Cloud</dt>
+
+<dd>
+The <b>Google Cloud Agents</b> plugin allows using Google Compute Engine to start cloud instances on demand to scale the pool of cloud build agents and also supports using cost-efficient preemptible virtual machines.<br/>
+
+[Common Information](https://blog.jetbrains.com/teamcity/2017/06/run-teamcity-ci-builds-in-google-cloud/)&emsp;|&emsp;[Google Cloud Agents plugin](https://github.com/JetBrains/teamcity-google-agent)
+
+</dd>
+
+</dl>
+
+
+## Shared Profiles
+
+A cloud profile configured in a project is available for all subprojects as well. That is, if you configure a profile in the *&lt;Root project&gt;*, all TeamCity projects will be able to start new cloud agents.
+
+You can prevent all or individual subprojects from using cloud profiles inherited from a parent project. To do this, go to **Administration | Project | Cloud profiles** and click **Change cloud integration status**.
+
+* For a parent project: uncheck **Enable cloud integration in subprojects**.
+* For a child a subproject: uncheck **Enable cloud integration in this project**.
+
+
+
+
+<!--### Specifying Profile Settings
 
 The following profile settings have to be provided:
 
@@ -137,4 +221,4 @@ The agents' information is displayed on the __Agents | Cloud__ page under the __
 
 ## Enabling/disabling Cloud Integration in Project
 
-You can enable or disable integration for a project and/or its subprojects via the TeamCity web UI using the _Change cloud integration status_ option on the __Cloud Profiles__ page.
+You can enable or disable integration for a project and/or its subprojects via the TeamCity web UI using the _Change cloud integration status_ option on the __Cloud Profiles__ page.-->
