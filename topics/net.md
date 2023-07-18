@@ -436,7 +436,25 @@ Test assemblies
 
 <td>
 
-Specify the new-line separated list of paths to assemblies to run tests on. [Wildcards](wildcards.md) are supported.   
+Specify the new-line separated list of paths to assemblies to run tests on. [Wildcards](wildcards.md) are supported.<br/><br/>
+Paths to the assemblies must be relative to the [build checkout directory](build-checkout-directory.md).
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+
+Excluded test assemblies
+
+</td>
+
+<td>
+
+The new-line separated list of paths to assemblies that the `vstest` command should ignore. [Wildcards](wildcards.md) are supported.<br/><br/>
 Paths to the assemblies must be relative to the [build checkout directory](build-checkout-directory.md).
 
 </td>
@@ -921,6 +939,8 @@ Consider the following notes before migrating:
 
 ### How to pass parameters containing spaces
 
-The best way to pass a parameter value containing space characters is to use [system properties](configuring-build-parameters.md#Types+of+Build+Parameters). For example, you can add the `system.Platform` parameter with the `Any CPU` value in __Build Configuration Settings | Parameters__ and then refer to this value as `%\system.Platform%` inside the .NET step.   
+The best way to pass a parameter value containing space characters is to use [system properties](configuring-build-parameters.md#Types+of+Build+Parameters). For example, you can add the `system.Platform` parameter with the `Any CPU` value in __Build Configuration Settings | Parameters__ and then refer to this value as `%system.Platform%` inside the .NET step.
+{interpolate-variables="false"}
+
 An alternative approach is to wrap the command-line parameter as follows: `"/p:Platform=Any CPU"`.
 

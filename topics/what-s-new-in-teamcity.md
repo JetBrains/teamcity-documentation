@@ -81,6 +81,9 @@ http://localhost:8111/app/rest/buildTypes/id:SourceProject_MyBuildConfig/move?ta
 ## Miscellaneous
 
 * The [DslContext](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/root/dsl-context/index.html?query=DslContext) object now exposes a string `serverUrl` property that allows you to get the URL of a TeamCity server in Kotlin DSL code.
+* The [](net.md) runner now provides the **Excluded test assemblies** setting for the `vstest` command. This field allows you to specify paths to files the command should ignore.
+    
+    <img src="dk-dotnet-vstestExclide.png" width="706" alt="Excluded assemblies for vstest"/>
 
 ## Upgrade Notes
 {product="tc"}
