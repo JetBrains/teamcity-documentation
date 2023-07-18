@@ -280,6 +280,10 @@ A symbolic link (symlink or soft link) is a Linux file that points to other file
   %teamcity.build.checkoutDir%/build=>build.zip
   ```
   {interpolate-variables="false"}
+
+> The `teamcity:symbolicLinks` attribute is available in versions 2023.05.1 and newer.
+> 
+{type="note"}
   
 Note that attributes affect only artifact publishing rules declared directly beneath them. For example, in the sample below only **Archive_A** will contain files and folders referenced by symlinks. **Archive_B** will employ the default behavior and include symlinks as files.
 
