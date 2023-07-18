@@ -524,10 +524,10 @@ This type of connection can be used for:
 * Creating [projects](creating-and-editing-projects.md), [build configurations](creating-and-editing-build-configurations.md), and [VCS roots](configuring-vcs-roots.md) from a JetBrains Space repository.
 * Starting builds on [merge requests](pull-requests.md#JetBrains+Space+Merge+Requests) created in a JetBrains Space repository.
 
-You can employ two types of Space connections:
+There are two ways to configure Space connections:
 
-* Automatic connections — TeamCity configures read-only Space [applications](https://www.jetbrains.com/space/extensibility/external/#applications) with all required permissions and installs them to your Space instance.
-* Manual connections — requires you to manually create and install Space applications, and set up connection properties in TeamCity.
+* Automatically — TeamCity configures read-only Space [applications](https://www.jetbrains.com/space/extensibility/external/#applications) with all required permissions and installs them to your Space instance.
+* Manually — requires you to manually create and install Space applications, then set up connection settings in TeamCity.
 
 ### Automatic Connections
 
@@ -579,7 +579,13 @@ You can add more project connections to allow TeamCity to access additional Spac
 
 <img src="dk-space-newProjectConnection.png" alt="New Space Project Connection" width="706"/>
 
-Individual project connections are also used by [](commit-status-publisher.md) and [](pull-requests.md) build features to interact with project repositories. Space organization connections in turn allow your users to log in TeamCity [using their Space credentials](authentication-modules.md).
+Individual Space project connections can also be employed by [](commit-status-publisher.md) and [](pull-requests.md) build features to interact with project repositories. Space organization connections in turn allow your users to log in TeamCity [using their Space credentials](authentication-modules.md).
+
+Space applications configured by project-level automatic connections issue access tokens that VCS roots and build features utilize to access project repositories. These access tokens are non-personal, which means if a user who initially set up TeamCity projects and issued tokens leaves your organization, these projects remain functional and do not require an update. In case you need to reissue a Space token, click the **Acquire New** button under the "Authentication Settings" section of a VCS root.
+
+<img src="dk-2023.07-refreshTokens.png" width="706" alt="Refreshable Access Tokens"/>
+
+
 
 
 
@@ -597,6 +603,7 @@ Configuring manual connections to JetBrains Space includes two steps: create a S
       * _Members | View member profile_
    * Required for Commit Status Publisher:
       * _Git Repositories | Report external check status_
+      * _Code Review Comments | Post comments to code reviews_
    * Required for Pull Requests:
        * _Code Review | View code reviews_
    
