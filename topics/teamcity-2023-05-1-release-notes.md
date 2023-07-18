@@ -16,6 +16,8 @@ __11 July 2023__
 
 ### Bug
 
+**[TW-82234](https://youtrack.jetbrains.com/issue/TW-82234)** — S3 Upload: Multipart upload fails with java.net.SocketException
+
 **[TW-81866](https://youtrack.jetbrains.com/issue/TW-81866)** — Failed to publish artifacts in AWS s3 after updating TeamCity to v2023.05
 
 **[TW-82293](https://youtrack.jetbrains.com/issue/TW-82293/bean-currentUser-not-found-within-scope-error-in-the-logs-when-an-unauthorized-user-opens-a-non-existing-page)** — "bean currentUser not found within scope" error in the logs when an unauthorized user opens a non existing page
