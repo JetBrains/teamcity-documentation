@@ -522,7 +522,7 @@ The tables below are updated in accordance with the newly introduced integration
 * [Pre-testing and pre-building files in shelved changelists](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files)
 * [Reporting build statuses to code reviews in Perforce Helix Swarm](integrating-teamcity-with-perforce.md#Publishing+Build+Statuses+to+Perforce+Helix+Swarm)
 * [Automatic labeling of sources](vcs-labeling.md#Labeling+in+Perforce)
-* [Using post-commit hooks to avoid background polling](configuring-vcs-post-commit-hooks-for-teamcity.md#Using+post-commit+script+for+Perforce)
+* [Using post-commit hooks to avoid background polling](configuring-vcs-post-commit-hooks-for-teamcity.md#Perforce+Server)
 
 </td><td>
 
