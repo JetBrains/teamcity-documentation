@@ -110,7 +110,7 @@ Learn how TeamCity creates workspaces in Perforce and works with them in [this a
 
 By default, TeamCity uses a polling approach to detect changes in a VCS repository. It periodically sends requests to the Perforce server to detect new revisions. For large installations with hundreds of VCS roots, this may create a noticeable load on both Perforce server and TeamCity. To avoid background polling, you can set up a post-commit hook on your Perforce server. This hook will notify TeamCity to start checking for changes only when they are available.
 
-TeamCity provides a dedicated hook script that should be saved on your Perforce server. You can find the detailed instruction [here](configuring-vcs-post-commit-hooks-for-teamcity.md#Using+post-commit+script+for+Perforce).
+TeamCity provides a dedicated hook script that should be saved on your Perforce server. You can find the detailed instruction [here](configuring-vcs-post-commit-hooks-for-teamcity.md#Perforce+Server).
 
 ## Label Perforce Sources
 
