@@ -217,7 +217,7 @@ You can utilize this approach in Bitbucket Cloud, Bitbucket Server, and Bitbucke
 > 
 {type="tip"}
 
-## Azure DevOps Server
+### Azure DevOps Server
 
 The latest Azure DevOps Server (formerly Team Foundation Server) and Azure DevOps Services provide service hooks for code-commit events. To create a hook, perform the following steps:
 
@@ -294,10 +294,10 @@ For Perforce, you can use this [dedicated script](#Perforce+Server).
 
 Set the  variables according to your TeamCity server. The user must have the "_View build configuration settings_" permission for projects where the VCS root is defined. This permission is included in the Project Developer role by default.
 
-<note>
 
-If your TeamCity server uses a custom SSL certificate, you need to pass the `-k` or `--cacert /path/to/correct/internal/CACertificate` parameter to the `curl` command above.
-</note>
+> If your TeamCity server uses a custom SSL certificate, you need to pass the `-k` or `--cacert /path/to/correct/internal/CACertificate` parameter to the `curl` command above.
+>
+{type="note"}
 
 ### Git Server
 
