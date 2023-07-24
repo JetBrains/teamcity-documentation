@@ -872,6 +872,8 @@ Lists all [.NET workloads](https://learn.microsoft.com/en-us/dotnet/core/tools/d
 
 The `<suffix>` is the version of an installed .NET SDK. For instance, if version 7.0.300 is installed, the agent will report the `DotNetWorkloads_7.0.300` parameter.
 
+In addition to these full SDK versions, agents also report workload parameters with shortened `major.minor` suffixes. For example, if an agent machine has 7.0.100, 7.0.200, and 7.0.300 .NET SDKs installed, the `DotNetWorkloads_7.0` parameter that refers to the highest 7.0.300 version will be reported.
+
 The parameter value is a string of comma-separated workload names, according to folders in the *&lt;dotnet_dir&gt;/metadata/workloads/&lt;sdk_version&gt;/InstalledWorkloads* directory. For instance, "android,maui-ios,wasm-tools".
 
 </td></tr></table>
