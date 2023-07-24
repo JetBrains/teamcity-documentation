@@ -14,7 +14,7 @@ You can set up post-commit hooks to decrease this load and speed up detecting ne
 
 ### Common Commit Hook Information
 
-Commit hooks utilizes [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/quick-start.html) to issue commands for the TeamCity server. The recommended approach for post-commit hooks is to issue a command to check for new commits pushed to a remote repository. To do this, a webhook should send the `POST` request to the [/app/rest/vcs-root-instances](https://www.jetbrains.com/help/teamcity/rest/manage-vcs-roots.html) endpoint:
+Commit hooks utilize [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/quick-start.html) to issue commands for the TeamCity server. The recommended approach for post-commit hooks is to issue a command to check for new commits pushed to a remote repository. To do this, a webhook should send the `POST` request to the [/app/rest/vcs-root-instances](https://www.jetbrains.com/help/teamcity/rest/manage-vcs-roots.html) endpoint:
 
 ```Shell
 <TeamCityServerURL>/app/rest/vcs-root-instances/commitHookNotification?locator=<vcsRootInstancesLocator>
@@ -34,14 +34,14 @@ The `vcsRootInstancesLocator` is a filter expression that finds all VCS root ins
 
 You can look for a required VCS root instance by its name, unique ID, the name of a parent VCS root, project, or build configuration, and other fields. See this article for the complete list of dimensions you can specify in this locator: [VcsRootInstanceLocator](https://www.jetbrains.com/help/teamcity/rest/vcsrootinstancelocator.html).
 
-The most reliable locator is a repository URL since it normally never changes. A URL is not a default instances locator dimension, you need to use it as a nested locator of the `property` locator. In addition, colons and slashes should be escaped.
+The most reliable locator is one that uses a repository URL (since it normally never changes). A VCS root instances locator does not include URL as an available dimension. Instead, you need to utilize a nested locator to check instance properties. Note that URL's colons and slashes should be escaped.
 
 ```Shell
 /app/rest/vcs-root-instances?locator=property:(name:url,value:https%3A%2F%2Fgitlab.com%2Fusername%2Fsample-java-app-maven.git,matchType:contains,ignoreCase:true)
 ```
 {prompt="POST"}
 
-To check all VCS root instance properties and their values, request an instance using a path locator with the default ID dimension (`/value` instead of `?locator=value`).
+To view all VCS root instance properties and their values, request an instance using a path locator (`endpoint/value` instead of `endpoint?locator=value`) and the default "ID" dimension.
 
 ```Shell
 /app/rest/vcs-root-instances/88
@@ -181,7 +181,7 @@ To get the internal instance ID:
     In the sample response above, the unique ID of the VCS root instance used by a build configuration is "87".
 
 
-A locator can include multiple dimensions. For example:
+A locator can include multiple dimensions, which allows you to specify multiple filter conditions. For example:
 
 ```Shell
 vcsRoot:(type:<TYPE>,count:99999),property:(name:<URL_PROPERTY_NAME>,value:<VCS_REPOSITORY_URL_PART>,matchType:contains,ignoreCase:true),count:9999
