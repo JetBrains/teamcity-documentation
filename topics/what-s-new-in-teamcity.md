@@ -48,7 +48,7 @@ Learn more: [](configuring-connections.md#jetbrains-space-connection).
 
 ### Refreshable Tokens
 
-We keep expanding the number of VCS provider connections that support [refreshable tokens](git.md#refresh-token). Refreshable tokens allow you to ditch traditional authentication methods using username/password and static PATs (personal access tokens) in favor of short-lived tokens issued for the current user.
+We keep expanding the number of VCS provider connections that support [refreshable tokens](git.md#refresh-token). Refreshable tokens allow you to ditch traditional authentication methods using username/password and static PATs (personal access tokens) in favor of short-lived tokens (non-personal or issued for the current user).
 
 <img src="dk-2023.07-refreshTokens.png" width="706" alt="Refreshable Access Tokens"/>
 
