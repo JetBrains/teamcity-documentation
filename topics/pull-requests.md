@@ -99,7 +99,7 @@ GitHub App access token
 </td>
 <td>
 
-A [short-lived token](git.md#refresh-token) issued for the current user. This option is available only when the <b>VCS Root</b> setting points to the specific VCS root, and this root is configured using a [GitHub App connection](configuring-connections.md#GitHub).
+A non-personal [short-lived token](git.md#refresh-token) issued via the GitHub App. This option is available only when the <b>VCS Root</b> setting points to the specific VCS root, and this root is configured using a [GitHub App connection](configuring-connections.md#GitHub).
 
 </td>
 </tr>
