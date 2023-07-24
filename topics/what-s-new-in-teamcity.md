@@ -6,9 +6,9 @@
 
 In version 2023.07, we have overhauled the Amazon EC2 integration plugin. Apart from a refreshed user interface, the updated plugin features the following enhancements:
 
-* Support for Mac AMIs. Note that these machine images can be run only on dedicated Mac Mini hosts that should be booked for at least one day.
+* Support for Mac AMIs. Mac VMs can be run only on dedicated Mac Mini hosts that should be booked for at least one day. Using the updated TeamCity EC2 plugin UI, you can now specify tags to locate a suitable host.
 * You can now specify multiple instance types for a cloud image, which increases your chances to book a spot instance.
-* The **Subnets** field now accepts multiple values, meaning you can specify different sets of incoming and outgoing traffic rules.
+* The **Subnets** field now accepts multiple values, which allows you to specify different sets of incoming and outgoing traffic rules.
 * TeamCity can now automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
 
 Learn more: [](setting-up-teamcity-for-amazon-ec2.md).
@@ -77,6 +77,15 @@ For example, the following request finds a build configuration with the "SourceP
 http://localhost:8111/app/rest/buildTypes/id:SourceProject_MyBuildConfig/move?targetProjectId=MyProject2
 ```
 {prompt="POST"}
+
+
+## Sakura UI
+
+We have reworked the **Agent Parameters** tab. You can navigate to this tab when viewing any TeamCity agent to instantly check this agent's configuration and environment paramters and system properties. 
+
+<img src="dk-sakura-agentParameters.png" width="706" alt="New Agent Parameters tab"/>
+
+Learn more: [](configuring-build-parameters.md).
 
 ## Miscellaneous
 

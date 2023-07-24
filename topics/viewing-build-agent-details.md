@@ -62,13 +62,15 @@ Displays compatible and incompatible build configurations with the reason of inc
 
 Lists build runners supported by build agent.
 
-## Agent logs
+## Logs
 
 The page allows viewing and downloading the logs.
 
-## Agent Parameters
+## Parameters
 
 The tab lists system properties, environment variables, and configuration parameters. Refer to the [Configuring Build Parameters](configuring-build-parameters.md) page for more information on different types of parameters.
+
+<img src="dk-sakura-agentParameters.png" width="706" alt="New Agent Parameters tab"/>
 
 
 <seealso>
