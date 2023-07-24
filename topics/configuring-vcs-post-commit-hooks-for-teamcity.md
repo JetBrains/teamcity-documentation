@@ -5,16 +5,16 @@ TeamCity periodically polls remote repositories targeted by each active [VCS roo
 
 You can set up post-commit hooks to decrease this load and speed up detecting new changes. In this case, whenever a new commit is pushed to the remote repository, a VCS provider will instantly send TeamCity a request to check for recent changes.
 
-> This article explains how to configure VCS webhooks that notify TeamCity about new repository changes. To read about TeamCity webhooks that notify third-party services about specific TeamCity events (starting and canceling builds, registering new agents, and so on), refer to the following article instead: [](teamcity-webhooks.md).
+> This article explains how to configure VCS commit hooks that notify TeamCity about new repository changes. To read about TeamCity webhooks that notify third-party services about specific TeamCity events (starting and canceling builds, registering new agents, and so on), refer to the following article instead: [](teamcity-webhooks.md).
 >
 {type="note"}
 
 
 ## Overview
 
-### Common Webhook Information
+### Common Commit Hook Information
 
-A webhook utilizes [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/quick-start.html) to issue commands for the TeamCity server. The recommended approach for post-commit hooks is to issue a command to check for new commits pushed to a remote repository. To do this, a webhook should send the `POST` request to the [/app/rest/vcs-root-instances](https://www.jetbrains.com/help/teamcity/rest/manage-vcs-roots.html) endpoint:
+Commit hooks utilizes [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/quick-start.html) to issue commands for the TeamCity server. The recommended approach for post-commit hooks is to issue a command to check for new commits pushed to a remote repository. To do this, a webhook should send the `POST` request to the [/app/rest/vcs-root-instances](https://www.jetbrains.com/help/teamcity/rest/manage-vcs-roots.html) endpoint:
 
 ```Shell
 <TeamCityServerURL>/app/rest/vcs-root-instances/commitHookNotification?locator=<vcsRootInstancesLocator>
@@ -34,14 +34,107 @@ The `vcsRootInstancesLocator` is a filter expression that finds all VCS root ins
 
 You can look for a required VCS root instance by its name, unique ID, the name of a parent VCS root, project, or build configuration, and other fields. See this article for the complete list of dimensions you can specify in this locator: [VcsRootInstanceLocator](https://www.jetbrains.com/help/teamcity/rest/vcsrootinstancelocator.html).
 
-If you need to obtain a single VCS root instance, use an internal ID as the shortest and most reliable dimension for any TeamCity REST API locator. For example, if the target VCS root instance has the ID of "54", the REST API request should look like the following:
+The most reliable locator is a repository URL since it normally never changes. A URL is not a default instances locator dimension, you need to use it as a nested locator of the `property` locator. In addition, colons and slashes should be escaped.
 
 ```Shell
-/app/rest/vcs-root-instances/commitHookNotification?locator=id:54
+/app/rest/vcs-root-instances?locator=property:(name:url,value:https%3A%2F%2Fgitlab.com%2Fusername%2Fsample-java-app-maven.git,matchType:contains,ignoreCase:true)
 ```
 {prompt="POST"}
 
-To get the internal ID of a VCS root instance used by a configuration, do the following:
+To check all VCS root instance properties and their values, request an instance using a path locator with the default ID dimension (`/value` instead of `?locator=value`).
+
+```Shell
+/app/rest/vcs-root-instances/88
+```
+{prompt="GET"}
+
+This request will return a payload similar to the following:
+
+
+<tabs><tab title="XML">
+
+```XML
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<vcs-root-instance id="88">
+   <!--...-->
+   <properties count="11">
+      <property name="agentCleanFilesPolicy" value="ALL_UNTRACKED"/>
+      <property name="agentCleanPolicy" value="ON_BRANCH_CHANGE"/>
+      <property name="authMethod" value="ACCESS_TOKEN"/>
+      <property name="branch" value="refs/heads/main"/>
+      <property name="ignoreKnownHosts" value="true"/>
+      <property name="submoduleCheckout" value="CHECKOUT"/>
+      <property name="tokenId" value="..."/>
+      <property name="url" value="https://gitlab.com/user/sample-java-app-maven.git"/>
+      <property name="useAlternates" value="AUTO"/>
+      <property name="username" value="oauth2"/>
+      <property name="usernameStyle" value="USERID"/>
+   </properties>
+</vcs-root-instance>
+```
+ 
+</tab><tab title="JSON">
+ 
+```JSON
+{
+   "id": "88",
+   "...": "...",
+   "properties": {
+      "count": 11,
+      "property": [
+         {
+            "name": "agentCleanFilesPolicy",
+            "value": "ALL_UNTRACKED"
+         },
+         {
+            "name": "agentCleanPolicy",
+            "value": "ON_BRANCH_CHANGE"
+         },
+         {
+            "name": "authMethod",
+            "value": "ACCESS_TOKEN"
+         },
+         {
+            "name": "branch",
+            "value": "refs/heads/main"
+         },
+         {
+            "name": "ignoreKnownHosts",
+            "value": "true"
+         },
+         {
+            "name": "submoduleCheckout",
+            "value": "CHECKOUT"
+         },
+         {
+            "name": "tokenId",
+            "value": "..."
+         },
+         {
+            "name": "url",
+            "value": "https://gitlab.com/user/sample-java-app-maven.git"
+         },
+         {
+            "name": "useAlternates",
+            "value": "AUTO"
+         },
+         {
+            "name": "username",
+            "value": "oauth2"
+         },
+         {
+            "name": "usernameStyle",
+            "value": "USERID"
+         }
+      ]
+   }
+}
+```
+
+</tab></tabs>
+
+
+To get the internal instance ID:
 
 1. Go to your build configuration and open the **Settings** tab.
 2. Copy the **ID** property value.
@@ -88,7 +181,7 @@ To get the internal ID of a VCS root instance used by a configuration, do the fo
     In the sample response above, the unique ID of the VCS root instance used by a build configuration is "87".
 
 
-If you need to trigger updates for multiple VCS root instances, combine multiple other locator dimensions. For example:
+A locator can include multiple dimensions. For example:
 
 ```Shell
 vcsRoot:(type:<TYPE>,count:99999),property:(name:<URL_PROPERTY_NAME>,value:<VCS_REPOSITORY_URL_PART>,matchType:contains,ignoreCase:true),count:9999
@@ -122,11 +215,11 @@ In case of authentication issues, navigate to **Administration | Diagnostics** a
 {product="tc"}
 
 
-### Repository Polling with Configured Webhooks
+### Repository Polling with Configured Hooks
 
-Projects that have configured webhooks still poll their remote repositories as a backup mechanism for cases when webhooks stop working. However, with each successful webhook communication, the polling interval automatically doubles. The maximum value to which TeamCity increases this interval is 4 hours, and the minimum interval is 15 minutes. Should scheduled polling reveal a change that did not trigger a webhook, TeamCity will reset the polling interval to its default value.
+Projects that have configured commit hooks still poll their remote repositories as a backup mechanism for cases when hooks stop working. However, with each successful hook communication, the polling interval automatically doubles. The maximum value to which TeamCity increases this interval is 4 hours, and the minimum interval is 15 minutes. Should scheduled polling reveal a change that did not trigger a commit hook, TeamCity will reset the polling interval to its default value.
 
-To check the current polling interval and the webhook status, navigate to **Administration | &lt;Your_Project&gt; | &lt;Your_Build_Configuration&gt; | Vesrion Control Settings**.
+To check the current polling interval and the commit hook status, navigate to **Administration | &lt;Your_Project&gt; | &lt;Your_Build_Configuration&gt; | Vesrion Control Settings**.
 
 <img src="dk-vcs-root-hooks.png" width="706" alt="Polling and hook information"/>
 
