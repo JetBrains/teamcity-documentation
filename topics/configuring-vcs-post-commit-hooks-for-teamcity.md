@@ -260,7 +260,7 @@ If your connection to GitHub or GitHub Enterprise is configured via [GitHub Apps
 4. Specify the URL to which the webhook should send `POST` requests. Include username and password/PAT as described in the [](#Authentication) section. For example:
     
     ```Plain Text
-    http://valravn:myteamcityfarm.build.gg/app/rest/vcs-root-instances/commitHookNotification?locator=87
+    http://valravn:querty@myteamcityfarm.build.gg/app/rest/vcs-root-instances/commitHookNotification?locator=87
     ```
 
 5. Tick **Push events** under the "Triggers" section.
