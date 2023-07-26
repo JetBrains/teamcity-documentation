@@ -4,7 +4,11 @@
 
 ## Changes from 2023.05.1 to 2023.05.2
 
-No potential breaking changes. See this article for the complete list of fixed issues: [](teamcity-2023-05-2-release-notes.md).
+See this article for the complete list of fixed issues: [](teamcity-2023-05-2-release-notes.md).
+
+### Known Issues
+
+* Builds that pull TFS repositories fail with the `java.lang.NoClassDefFoundError` message if the checkout mode is "Always checkout files on agent". See this YouTrack issue for more information: [TW-82824](https://youtrack.jetbrains.com/issue/TW-82824).
 
 ## Changes from 2023.05 to 2023.05.2
 
