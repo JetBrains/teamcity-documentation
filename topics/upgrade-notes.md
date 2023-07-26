@@ -2,7 +2,11 @@
 [//]: # (auxiliary-id: Upgrade Notes)
 
 
-## Changes from 2023.05 to 2023.05.01
+## Changes from 2023.05.1 to 2023.05.2
+
+No potential breaking changes. See this article for the complete list of fixed issues: [](teamcity-2023-05-2-release-notes.md).
+
+## Changes from 2023.05 to 2023.05.2
 
 ### Publishing Artifacts of Batch Builds in Parent Configuration Builds
 
