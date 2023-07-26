@@ -397,7 +397,7 @@ TeamCity allows your project to access required AWS resources using connections 
     
 9. Save your new connection and reopen it. You should now see the **External ID** value of the connection.
     
-    <img src="dk-AWS-externalID.png" width="706" alt="External ID of an AWS Connection/>
+    <img src="dk-AWS-externalID.png" width="706" alt="External ID of an AWS Connection"/>
     
 10. Go back to the **Trust relationships** of Role B and add the extra condition:
     ```JSON
