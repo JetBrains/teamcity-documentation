@@ -352,6 +352,84 @@ To configure an AWS connection in TeamCity:
 
 Now you can use the credentials provided by this connection in your builds. To do that, configure the [AWS Credentials build feature](aws-credentials.md).
 
+### Access AWS Resources Using IAM Roles
+
+Amazon [key management guidelines](https://docs.aws.amazon.com/accounts/latest/reference/credentials-access-keys-best-practices.html) recommend using IAM Roles instead of access keys and static IAM user credentials. Since IAM Roles issue short-lived credentials, this approach minimizes potential damage should your credentials get exposed (accidentally or as a result of a security breach).
+
+TeamCity allows your project to access required AWS resources using connections that 
+In TeamCity, you can daisy-chain AWS connections that assume required IAM Roles to gain access to AWS resources.
+
+1. In AWS Management Console, go to the [IAM dashboard](https://console.aws.amazon.com/iam/) and navigate to the **Roles** tab.
+2. Create a new IAM Role without any permissions. We will reference this role as "Role A".
+3. Configure your TeamCity server machine to use this role to access AWS resources without locally stored credentials. You can pass role credentials via environment variables, EC2 instance metadata, web identities, or attached ECS containers. See this AWS help article for more information: [Use an IAM role in the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html).
+4. In TeamCity, create a new AWS connection of the **Default Credentials Provider Chain** type. Press **Test Connection** to ensure TeamCity uses your empty "Role A".
+5. Create a second IAM Role ("Role B") with permissions required to access AWS resources (for example, EC2 instances or S3 buckets).
+6. Modify the **Trust relationships** of this new Role B to allow Role A to assume it.
+    ```JSON
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "your-Role-A-ARN"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    }
+    ```
+7. In a TeamCity project that needs access to AWS resources, create another AWS connection.
+
+   * **Type** — "IAM Role".
+   * **AWS Connection** — the connection created in step 4.
+   * **Role ARN** — the ARN of "Role B".
+
+8. Click **Test connection** to ensure TeamCity can assume **Role B**.
+    
+    ```Plain Text
+    Running STS get-caller-identity...
+    Caller Identity:
+     Account ID: <your account ID>
+     User ID: <user ID:session>
+     ARN: <Role B ARN>
+    ```
+    
+9. Save your new connection and reopen it. You should now see the **External ID** value of the connection.
+    
+    <img src="dk-AWS-externalID.png" width="706" alt="External ID of an AWS Connection/>
+    
+10. Go back to the **Trust relationships** of Role B and add the extra condition:
+    ```JSON
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "your-Role-A-ARN"
+          },
+          "Condition": {
+            "StringEquals": {
+            "sts:ExternalId": "External-ID-copied-from-TeamCity"
+            }
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    }
+    ```
+
+    
+As a result, you now have a following setup:
+
+* The primary **Default credentials provider chain** connection does not require locally stored credentials.
+* This shared primary connection has no permissions to access anything. To access AWS resources, it needs to assume other IAM roles.
+* Roles with actual access permissions can be assumed only by configured "IAM Role" TeamCity connections. TeamCity administrators cannot create more connections that utilize these roles unless your AWS administrator whitelists external IDs of these new connections.
+  <img src="dk-aws-cannotassumeRole.png" width="706" alt="Incorrect External ID"/>
+
+
+
 ## Amazon ECR
 
 An Amazon ECR (Elastic Container Registry) connection allows accessing private and public AWS registries. With its help, the [](docker-support.md) build feature can store Docker/LXC images produced by a build to AWS.
