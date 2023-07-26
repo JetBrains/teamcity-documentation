@@ -353,6 +353,7 @@ To configure an AWS connection in TeamCity:
 Now you can use the credentials provided by this connection in your builds. To do that, configure the [AWS Credentials build feature](aws-credentials.md).
 
 ### Access AWS Resources Using IAM Roles
+{product="tc"}
 
 Amazon [key management guidelines](https://docs.aws.amazon.com/accounts/latest/reference/credentials-access-keys-best-practices.html) recommend using IAM Roles instead of access keys and static IAM user credentials. Since IAM Roles issue short-lived credentials, this approach minimizes potential damage should your credentials get exposed (accidentally or as a result of a security breach).
 
