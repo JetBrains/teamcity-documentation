@@ -357,8 +357,7 @@ Now you can use the credentials provided by this connection in your builds. To d
 
 Amazon [key management guidelines](https://docs.aws.amazon.com/accounts/latest/reference/credentials-access-keys-best-practices.html) recommend using IAM Roles instead of access keys and static IAM user credentials. Since IAM Roles issue short-lived credentials, this approach minimizes potential damage should your credentials get exposed (accidentally or as a result of a security breach).
 
-TeamCity allows your project to access required AWS resources using connections that 
-In TeamCity, you can daisy-chain AWS connections that assume required IAM Roles to gain access to AWS resources.
+TeamCity allows your project to access required AWS resources using connections that assume IAM Roles and do not rely on locally stored credentials.
 
 1. In AWS Management Console, go to the [IAM dashboard](https://console.aws.amazon.com/iam/) and navigate to the **Roles** tab.
 2. Create a new IAM Role without any permissions. We will reference this role as "Role A".
