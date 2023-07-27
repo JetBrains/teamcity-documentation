@@ -6,6 +6,10 @@
 
 See this article for the complete list of fixed issues: [](teamcity-2023-05-2-release-notes.md).
 
+### Upcoming DupFinder Runner Deprecation
+
+Starting with the next TeamCity version, the [](duplicates-finder-resharper.md) runner will be unable to operate since it relies on a tool that is no longer shipped with ReSharper Command Line Tools. See the corresponding [server health report](server-health.md#Duplicates+Finder+Runner) for more information.
+
 ### Known Issues
 
 * Builds that pull TFS repositories fail with the `java.lang.NoClassDefFoundError` message if the checkout mode is "Always checkout files on agent". See this YouTrack issue for more information: [TW-82824](https://youtrack.jetbrains.com/issue/TW-82824).
