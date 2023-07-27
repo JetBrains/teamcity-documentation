@@ -352,7 +352,7 @@ To configure an AWS connection in TeamCity:
 
 Now you can use the credentials provided by this connection in your builds. To do that, configure the [AWS Credentials build feature](aws-credentials.md).
 
-### Access AWS Resources Using IAM Roles
+### Recommended Setup
 {product="tc"}
 
 Amazon [key management guidelines](https://docs.aws.amazon.com/accounts/latest/reference/credentials-access-keys-best-practices.html) recommend using IAM Roles instead of access keys and static IAM user credentials. Since IAM Roles issue short-lived credentials, this approach minimizes potential damage should your credentials get exposed (accidentally or as a result of a security breach).
@@ -360,8 +360,12 @@ Amazon [key management guidelines](https://docs.aws.amazon.com/accounts/latest/r
 TeamCity allows your project to access required AWS resources using connections that assume IAM Roles and do not rely on locally stored credentials.
 
 1. In AWS Management Console, go to the [IAM dashboard](https://console.aws.amazon.com/iam/) and navigate to the **Roles** tab.
-2. Create a new IAM Role without any permissions. We will reference this role as "Role A".
-3. Configure your TeamCity server machine to use this role to access AWS resources without locally stored credentials. You can pass role credentials via environment variables, EC2 instance metadata, web identities, or attached ECS containers. See this AWS help article for more information: [Use an IAM role in the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html).
+2. Create a new IAM Role <i>without any permissions</i>. We will reference this role as "Role A".
+3. Configure your TeamCity server machine to access AWS using this role instead of locally stored credentials. Required steps may vary depending on the exact type your machine.
+   * [Server running on an EC2 instance](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html)
+   * [Server running in an ECS container](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html)
+   * Server running on a local machine: [Web Identity](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html), [SAML](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)
+    
 4. In TeamCity, create a new AWS connection of the **Default Credentials Provider Chain** type. Press **Test Connection** to ensure TeamCity uses your empty "Role A".
 5. Create a second IAM Role ("Role B") with permissions required to access AWS resources (for example, EC2 instances or S3 buckets).
 6. Modify the **Trust relationships** of this new Role B to allow Role A to assume it.
@@ -425,8 +429,11 @@ As a result, you now have a following setup:
 
 * The primary **Default credentials provider chain** connection does not require locally stored credentials.
 * This shared primary connection has no permissions to access anything. To access AWS resources, it needs to assume other IAM roles.
-* Roles with actual access permissions can be assumed only by configured "IAM Role" TeamCity connections. TeamCity administrators cannot create more connections that utilize these roles unless your AWS administrator whitelists external IDs of these new connections.
-  <img src="dk-aws-cannotassumeRole.png" width="706" alt="Incorrect External ID"/>
+* Because of a condition configured in step 10, roles with actual access permissions can be assumed only by configured "IAM Role" TeamCity connections. TeamCity administrators cannot create more connections that utilize these roles.
+    
+    <img src="dk-aws-cannotassumeRole.png" width="706" alt="Incorrect External ID"/>
+    
+    To create more connections that can access Amazon resources, your AWS administrator must add additional conditions to whitelist external IDs of these new connections.
 
 
 
