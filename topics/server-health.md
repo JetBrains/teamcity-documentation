@@ -145,6 +145,13 @@ The build script can be tuned to print less output if this inspection fails freq
 
 TeamCity detects a build publishing many small artifact files and suggests publishing them as a single `.zip` archive to optimize the upload/download operations. See more information [here](build-artifact.md#artifacts-as-archive).
 
+
+#### Duplicates Finder Runner
+
+ReSharper Command Line Tools of version 2021.3 and newer no longer include the DupFinder tool. As a result, the [](duplicates-finder-resharper.md) runner that relies on this tool cannot operate with CLT versions bundled with newest TeamCity installations.
+
+To continue using this runner, install [R# CLT](https://www.jetbrains.com/resharper/download/other.html) of version 2021.2.3 or older, and choose this version under the runner's Advanced Settings.
+
 ### VCS Root Related Problems
 
 #### Unused VCS Roots
