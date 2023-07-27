@@ -73,7 +73,7 @@ __25 July 2023__
 
 3 security problems have been fixed.
 
-> We do not share the details of security-related issues to avoid compromising clients that keep using previous bugfix and/or major versions of TeamCity. Check out our [Security Bulletin](https://blog.jetbrains.com/blog/tag/security-bulletin/) for the list of disclosed vulnerability fixes.
+> We do not share the details of security-related issues to avoid compromising clients that keep using previous bugfix and/or major versions of TeamCity. Check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2023.05.2) for the list of disclosed vulnerability fixes.
 >
 {type="note"}
 
