@@ -10,6 +10,10 @@ With meta-runners, you can:
 
 Basically, a meta-runner is a set of build steps from one build configuration that you can reuse in another; it is an XML definition, containing build steps, requirements, and parameters, that you can utilize in XML definitions of other build configurations.
 
+> Note that [VCS roots](configuring-vcs-roots.md) are not baked into meta-runners. If build steps of your meta-runner perform operations on repository files and folders, root-less configurations that reuse these meta-runner steps will fail. You can reuse a VCS root the meta-runner's origin configuration utilizes to fix this issue.
+> 
+{type="note"}
+
 TeamCity allows extracting meta-runners using the web UI.
 
 All meta-runners are stored on a project level, so they are available within this project and its subprojects only, and are not visible outside. If a meta-runner is stored on the Root project level, it is available globally (in all projects).
@@ -55,7 +59,7 @@ Usually artifacts configured in a build configuration are published when the bui
 
 ### Preparing Build Configuration
 
-The first step is to prepare a build configuration which will work the same way as the meta-runner we would like to produce. Let us use the configuration with a single Ant build step: Ant can be executed on any platform where the TeamCity agent runs; besides, Ant runner in TeamCity supports `build.xml` specified right in the runner settings. This is important because our build configuration must be self-contained — it cannot take `build.xml` from the version control repository. In our case, the Ant step settings will look like this:
+The first step is to prepare a build configuration which will work the same way as the meta-runner we would like to produce. Let us use the configuration with a single Ant build step: Ant can be executed on any platform where the TeamCity agent runs; besides, Ant runner in TeamCity supports `build.xml` specified right in the runner settings. This is important because our build configuration must be self-contained — since meta-runners do not include VCS roots of their origin configurations, a target configuration cannot take `build.xml` from the version control repository. In our case, the Ant step settings will look like this:
 
 <img src="ant-build-step.png" width="750" alt="Adding Ant build step"/>
 
@@ -64,6 +68,14 @@ where `artifact.paths` is a system property. We need to add it on the __Paramete
 <img src="paths-to-artifacts-parameter.png" width="750" alt="Paths to artifacts in Build Parameters"/>
 
 Note that each parameter can have a specification where we can provide the label, description, type of control, and specify validation conditions.
+
+If your meta-runner contains steps that need to access files and folders of a remote repository, do the following:
+
+1. Go the settings of a build configuration that imports a meta-runner.
+2. Switch to the **Version Control Settings** tab.
+3. Click the **Attach VCS root** button.
+4. In the **Attach existing VCS root** choose the same root your origin configuration uses.
+5. Click **Save** at the bottom of the page and run your build configuration. Since it now has a connection to a VCS repository, build steps can access required files and are able to finish successfully.
 
 >Here the Ant build step is used just as an example. In the initial build configuration, you can use any of the available build runners (for example, MSBuild or .NET process), and configure the settings and define the parameters for this build step. When you extract a meta-runner from this build configuration, all the settings defined in the build step, and all the build parameters will be added to the meta-runner.
 
