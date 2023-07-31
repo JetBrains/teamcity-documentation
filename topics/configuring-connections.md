@@ -361,10 +361,10 @@ TeamCity allows your project to access required AWS resources using connections 
 
 1. In AWS Management Console, go to the [IAM dashboard](https://console.aws.amazon.com/iam/) and navigate to the **Roles** tab.
 2. Create a new IAM Role <i>without any permissions</i>. We will reference this role as "Role A".
-3. Configure your TeamCity server machine to access AWS using this role instead of locally stored credentials. Required steps may vary depending on the exact type your machine.
+3. Configure your TeamCity server machine to access AWS using this role instead of locally stored credentials. Required steps may vary depending on the exact type of your machine.
    * [Server running on an EC2 instance](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html)
    * [Server running in an ECS container](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html)
-   * Server running on a local machine: [Web Identity](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html), [SAML](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)
+   * Other configurations: [Web Identity](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html), [SAML](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)
     
 4. In TeamCity, create a new AWS connection of the **Default Credentials Provider Chain** type. Press **Test Connection** to ensure TeamCity uses your empty "Role A".
 5. Create a second IAM Role ("Role B") with permissions required to access AWS resources (for example, EC2 instances or S3 buckets).
