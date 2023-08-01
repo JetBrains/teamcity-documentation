@@ -37,7 +37,7 @@ You can look for a required VCS root instance by its name, unique ID, the name o
 The most reliable locator is one that uses a repository URL (since it normally never changes). A VCS root instances locator does not include URL as an available dimension. Instead, you need to utilize a nested locator to check instance properties. Note that URL's colons and slashes should be escaped.
 
 ```Shell
-/app/rest/vcs-root-instances?locator=property:(name:url,value:https%3A%2F%2Fgitlab.com%2Fusername%2Fsample-java-app-maven.git,matchType:contains,ignoreCase:true)
+/app/rest/vcs-root-instances?locator=property:(name:url,value:https%3A%2F%2Fgitlab.com%2Fusername%2Fsample-java-app-maven.git,matchType:equals,ignoreCase:true)
 ```
 {prompt="POST"}
 
@@ -184,7 +184,7 @@ To get the internal instance ID:
 A locator can include multiple dimensions, which allows you to specify multiple filter conditions. For example:
 
 ```Shell
-vcsRoot:(type:<TYPE>,count:99999),property:(name:<URL_PROPERTY_NAME>,value:<VCS_REPOSITORY_URL_PART>,matchType:contains,ignoreCase:true),count:9999
+vcsRoot:(type:<TYPE>,count:99999),property:(name:<URL_PROPERTY_NAME>,value:<VCS_REPOSITORY_URL_PART>,matchType:equals,ignoreCase:true),count:9999
 ```
 
 This locator finds all instances of the specific VCS root. The `count` dimension raises the maximum number of returned instances to the given value (the default limit is 100 entries).
@@ -192,7 +192,7 @@ This locator finds all instances of the specific VCS root. The `count` dimension
 For VCS roots without the `*-references` parameter, you can use the following option with a better performance:
 
 ```Shell
-vcsRoot:(type:<TYPE>,property:(name:<URL_PROPERTY_NAME>,value:<VCS_REPOSITORY_URL_PART>,matchType:contains,ignoreCase:true),count:99999),count:99999
+vcsRoot:(type:<TYPE>,property:(name:<URL_PROPERTY_NAME>,value:<VCS_REPOSITORY_URL_PART>,matchType:equals,ignoreCase:true),count:99999),count:99999
 ```
 
 ### Authentication
@@ -328,26 +328,26 @@ The latest Azure DevOps Server (formerly Team Foundation Server) and Azure DevOp
    <tabs><tab title="TFVC Repository">
    
    ```Shell
-   vcsRoot:(type:tfs,count:99999),property:(name:tfs-url,value:<TFS server url>,matchType:contains,ignoreCase:true),property:(name:tfs-root,value:<TFS project>,matchType:contains,ignoreCase:true),count:99999
+   vcsRoot:(type:tfs,count:99999),property:(name:tfs-url,value:<TFS server url>,matchType:equals,ignoreCase:true),property:(name:tfs-root,value:<TFS project>,matchType:contains,ignoreCase:true),count:99999
    ```
    
    where `<TFS server url>` must be replaced with the value specified in the Azure DevOps VCS root URL and path properties. For example:
    
    ```Shell
-   http://teamcity/app/rest/vcs-root-instances/commitHookNotification?locator=vcsRoot:(type:tfs,count:99999),property:(name:tfs-url,value:http%3A%2F%2Ftfs%3Aport%2Ftfs%2Fcollection,matchType:contains,ignoreCase:true),property:(name:tfs-root,value:Project,matchType:contains,ignoreCase:true),count:99999
+   http://teamcity/app/rest/vcs-root-instances/commitHookNotification?locator=vcsRoot:(type:tfs,count:99999),property:(name:tfs-url,value:http%3A%2F%2Ftfs%3Aport%2Ftfs%2Fcollection,matchType:equals,ignoreCase:true),property:(name:tfs-root,value:Project,matchType:contains,ignoreCase:true),count:99999
    ```
    {interpolate-variables="false"}
    
    </tab><tab title="Git Repository">
    
    ```Shell
-   vcsRoot:(type:jetbrains.git,count:99999),property:(name:url,value:<VCS root repository URL>,matchType:contains,ignoreCase:true),count:99999
+   vcsRoot:(type:jetbrains.git,count:99999),property:(name:url,value:<VCS root repository URL>,matchType:equals,ignoreCase:true),count:99999
    ```
    
    where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped. Example:
    
    ```Shell
-   http://teamcity/app/rest/vcs-root-instances/commitHookNotification?locator=vcsRoot:(type:jetbrains.git,count:99999),property:(name:url,value:https%3A%2F%2Faccount.visualstudio.com%2FDefaultCollection%2FProject%2F_git%2FRepository,matchType:contains,ignoreCase:true),count:99999
+   http://teamcity/app/rest/vcs-root-instances/commitHookNotification?locator=vcsRoot:(type:jetbrains.git,count:99999),property:(name:url,value:https%3A%2F%2Faccount.visualstudio.com%2FDefaultCollection%2FProject%2F_git%2FRepository,matchType:equals,ignoreCase:true),count:99999
    ```
    {interpolate-variables="false"}
    
@@ -399,10 +399,10 @@ Set the  variables according to your TeamCity server. The user must have the "_V
 2. Create the `.git/hooks/post-receive` file with a line:
 
    ```Shell
-   /path/to/teamcity-trigger.sh 'vcsRoot:(type:jetbrains.git,count:99999),property:(name:url,value:<VCS root repository URL>,matchType:contains,ignoreCase:true),count:99999'
+   /path/to/teamcity-trigger.sh 'vcsRoot:(type:jetbrains.git,count:99999),property:(name:url,value:<VCS root repository URL>,matchType:equals,ignoreCase:true),count:99999'
    ```
    
-   where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped. Note that locator has `matchType:contains` in it, which means you can specify some part of URL `too.file`.
+   where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped.
 
 3. Make sure that both `teamcity-trigger.sh` and `hooks/post-receive` scripts can be read and executed by Git user(s). You may need to execute the following command:
     
@@ -419,10 +419,10 @@ Set the  variables according to your TeamCity server. The user must have the "_V
 
    ```Shell
    [hooks]
-   changegroup = /path/to/teamcity-trigger.sh 'vcsRoot:(type:mercurial,count:99999),property:(name:repositoryPath,value:<VCS root repository url>,matchType:contains,ignoreCase:true),count:99999'
+   changegroup = /path/to/teamcity-trigger.sh 'vcsRoot:(type:mercurial,count:99999),property:(name:repositoryPath,value:<VCS root repository url>,matchType:equals,ignoreCase:true),count:99999'
    ```
    
-   where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped. Note that the locator has `matchType:contains` in it, which means you can specify some part of the URL too.
+   where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped.
 
 3. Make sure that `teamcity-trigger.sh` is executable. You may need to execute the following command:
 
@@ -437,10 +437,10 @@ Set the  variables according to your TeamCity server. The user must have the "_V
 2. Create the `hooks/post-commit` file with a line:
 
    ```Shell
-   /path/to/teamcity-trigger.sh 'vcsRoot:(type:svn,count:99999),property:(name:url,value:<VCS root repository url>,matchType:contains,ignoreCase:true),count:99999'
+   /path/to/teamcity-trigger.sh 'vcsRoot:(type:svn,count:99999),property:(name:url,value:<VCS root repository url>,matchType:equals,ignoreCase:true),count:99999'
    ```
    
-   where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped. Note that the locator has `matchType:contains` in it, which means you can specify some part of URL too.
+   where `<VCS root repository URL>` must be replaced with the repository URL specified in the corresponding TeamCity VCS root and the value should be URL-escaped.
 
 3. Make sure that both `teamcity-trigger.sh` and `hooks/post-commit` script can be read and executed by the process of the Subversion server. You may need to execute the following command:
 
@@ -512,17 +512,17 @@ where `<VCS Root locator>` can be one of the following:
 
 * for Stream-based VCS roots:
     ```Shell
-    vcsRoot:(type:perforce,count:99999),property:(name:stream,value://streamdepot/streamname,matchType:contains,ignoreCase:true),count:99999
+    vcsRoot:(type:perforce,count:99999),property:(name:stream,value://streamdepot/streamname,matchType:equals,ignoreCase:true),count:99999
     ```
 
 * for Client-based VCS roots:
     ```Shell
-    vcsRoot:(type:perforce,count:99999),property:(name:client,value:<client name>,matchType:contains,ignoreCase:true),count:99999
+    vcsRoot:(type:perforce,count:99999),property:(name:client,value:<client name>,matchType:equals,ignoreCase:true),count:99999
     ```
 
 * for Client-mapping VCS roots:
     ```Shell
-    vcsRoot:(type:perforce,count:99999),property:(name:client-mapping,value:<unique client mapping>,matchType:contains,ignoreCase:true),count:99999
+    vcsRoot:(type:perforce,count:99999),property:(name:client-mapping,value:<unique client mapping>,matchType:equals,ignoreCase:true),count:99999
     ```
     where `<unique client mapping>` should match the Perforce depot path in the TeamCity VCS root after all parameters' resolution. For the rule `check-for-changes-teamcity change-commit //depot/project1/...` it would be `//depot/project1/`.  
 
