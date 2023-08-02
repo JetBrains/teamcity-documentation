@@ -110,21 +110,9 @@ Now, whenever you run a build in this configuration, TeamCity will report the bu
 
 If a build is run on changes in Perforce [shelved files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html), TeamCity can report its statuses as comments to the respective code review in Perforce Helix Swarm.
 
-In the Commit Status Publisher settings, specify:
-* A repository to use for publishing a build status. Choose the default **All attached VCS roots** option if you wish to publish statuses for commits in all attached VCS roots handled by a single Swarm server.
->When multiple Swarm servers are used in the scope of a single build configuration, the option "All attached VCS roots" cannot be used. The VCS Root must be specified explicitly for each Swarm configuration.
-* Your Helix Swarm server's URL.
-* Username and cross-host [ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html) for connection (use the `p4 login -a -p` command to obtain one)
-* Whether you want TeamCity to create a test run on the Swarm server and update its status according to the build status in TeamCity. To be able to use this mode, make sure the provided credentials grant administrative access.
+<img src="dk-swarm-personalbuild.png" width="706" alt="Personal build in TeamCity"/>
 
-Note that Helix Swarm usually creates reviews on shelved changelists whose description contains a special keyword, depending on your setup (for example, `#review`). If you want TeamCity to trigger builds on Perforce shelved files automatically, you need to specify the same keyword in the [Perforce Shelve Trigger](perforce-shelve-trigger.md) settings as well.
-
->To get notified about the events, make sure to [configure Swarm triggers](https://www.perforce.com/manuals/swarm-admin/Content/Swarm/setup.perforce.html).
-
-After running a build with Commit Status Publisher on a changelist that has a review in Helix Swarm, 
-TeamCity shows the Swarm Reviews section on the build overview page. From each change, 
-you can navigate to the change page on the Helix Swarm using `Open in Helix Swarm`.
-This works for personal builds on shelved changelists, as well as builds on post-commit reviews: the Swarm integration finds reviews associated with the final revision of the build.
+See this help article for more information: [](integrating-with-helix-swarm.md). 
 
 ### Gerrit
 

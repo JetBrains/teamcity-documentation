@@ -76,6 +76,11 @@ Helix Swarm [Workflows](https://www.perforce.com/manuals/swarm/Content/Swarm/wor
 2. Create a new workflow or edit the **Global Workflow**.
 3. In the workflow settings, click **Add Test** and choose the test you created in the previous step.
 4. Choose the **On Update** trigger type.
+   
+   >To get notified about the events, make sure to [configure Swarm triggers](https://www.perforce.com/manuals/swarm-admin/Content/Swarm/setup.perforce.html).
+   >
+   {type="tip"}
+
 5. Leave the **Blocks** value as "Nothing".
 6. Click **Save** to exit workflow settings.
 
