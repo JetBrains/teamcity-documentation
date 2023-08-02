@@ -2,6 +2,13 @@
 [//]: # (auxiliary-id: What's New in TeamCity 2023.09;What's New in TeamCity)
 
 
+## Enhanced Integration with Perforce Helix Swarm
+
+In version 2023.09, we have overhauled the "Perforce Helix Swarm" publisher of the [](commit-status-publisher.md) build feature. TeamCity can now utilize workflows and tests that already exist in your Swarm setup (instead of creating its own tests). In addition, the Publisher no longer requires credentials of a user with administrator access.
+
+<img src="dk-swarm-personalbuild.png" width="706" alt="Personal build in TeamCity"/>
+
+Learn more: [](integrating-with-helix-swarm.md).
 
 
 ## Upgrade Notes

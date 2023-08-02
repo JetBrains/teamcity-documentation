@@ -80,22 +80,9 @@ To **configure automatic triggering** for a Perforce shelved changelist:
 
 ### Publishing Build Statuses to Perforce Helix Swarm
 
-If you use [Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm) for code review of shelved files, you can configure TeamCity to posts build statuses as comments to your reviews:
-1. Go to __Build Configuration Settings | Build Features__.
-2. Add a new feature of the _Commit Status Publisher_ type.
-3. Choose _Perforce Helix Swarm_ as the feature type.
-4. Enter the settings:
-   * Your Helix Swarm server's URL.
-   * A username and cross-host [ticket](https://www.perforce.com/manuals/swarm/Content/Swarm/setup.swarm.html) for connection (use the `p4 login -a -p` command to obtain one).
-   <img src="csp-helix-swarm.png" alt="Configure Commit Status Publisher for P4 Helix Swarm" width="460"/>
+If you use [Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm) for code review of shelved files, you can configure TeamCity to posts build statuses as comments to your reviews.
 
-After this feature is configured, TeamCity will be publishing the build statuses' updates as comments to the respective code reviews in Helix Swarm:
-
-<img src="helixswarm.png" alt="Displaying TeamCity build statuses in Helix Swarm" width="706"/>
-
-Note that Helix Swarm usually creates reviews on shelved changelists whose description contains a special keyword, depending on your setup (for example, `#review`). If you want TeamCity to trigger builds on Perforce shelved files automatically, you need to specify the same keyword in the [Perforce Shelve Trigger](perforce-shelve-trigger.md) settings as well.
-
->To get notified about the events, make sure to [configure Swarm triggers](https://www.perforce.com/manuals/swarm-admin/Content/Swarm/setup.perforce.html).
+See this help article for more information: [](integrating-with-helix-swarm.md).
 
 ## TeamCity Workspaces in Perforce
 
