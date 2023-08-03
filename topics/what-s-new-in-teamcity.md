@@ -10,6 +10,9 @@ In version 2023.09, we have overhauled the "Perforce Helix Swarm" publisher of t
 
 Learn more: [](integrating-with-helix-swarm.md).
 
+## Miscellaneous
+
+* Dependent builds whose ["On failed dependency" condition](snapshot-dependencies.md) is set to "Make build failed to start" no longer wait for an available agent when their dependencies fail or are cancelled. Instead, the dependent build's status changes to "Failed to start" as soon as possible, and TeamCity proceeds to the next build in chain.
 
 ## Upgrade Notes
 {product="tc"}
