@@ -45,17 +45,18 @@ Helix Swarm [Tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_
 7. Enter the following string in the **Body** field:
    
    ```Plain Text
-   buildTypeId=<X>&vcsRootId=<Y>&shelvedChangelist={change}
+   buildTypeId=<X>&vcsRootId=<Y>&shelvedChangelist={change}&swarmUpdateUrl={update}
    ```
 
    * `X` — same value as the test name. Copy from the **Build Configuration ID** in TeamCity.
    * `Y` — in TeamCity, go to **Administration | &lt;Your_Build_Configuration&gt; | Version Control Settings | &lt;Your_VCS_Root&gt;** and copy the **VCS Root ID** value.
-   * `{change}` — a [placeholder](https://www.perforce.com/manuals/swarm/Content/Swarm/test-add.html) for a change number.
+   * `{change}` — the [change number](https://www.perforce.com/manuals/swarm/Content/Swarm/test-add.html).
+   * `{update}` — the [update callback URL](https://www.perforce.com/manuals/swarm/Content/Swarm/test-add.html).
      
    This string allows Helix Swarm tests to locate a specific TeamCity configuration and schedule a new build for it. For example:
    
    ```Plain Text
-   buildTypeId=P4-Remote_MyBuildConfig&vcsRootId=MainP4Root&shelvedChangelist={change}
+   buildTypeId=P4-Remote_MyBuildConfig&vcsRootId=MainP4Root&shelvedChangelist={change}&swarmUpdateUrl={update}
    ```
 
 8. To authorize Swarm's requests to TeamCity, click **Add header** and specify the following values:
@@ -63,7 +64,9 @@ Helix Swarm [Tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_
    * **Header** — "Authorization"
    * **Value** — "Bearer ABC", where ABC is a [TeamCity user access token](configuring-your-user-profile.md#Managing+Access+Tokens).
 
-9. Click **Save** to save your new test.
+9. Set the **Timeout** setting to 10 seconds.
+
+10. Click **Save** to save your new test.
 
 
 ### Set Up a Workflow
