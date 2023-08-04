@@ -86,8 +86,11 @@ Additional run arguments
 
 Allows specifying additional options for the `docker run` and `podman run` commands. The default argument is `--rm`, but you can provide more, for instance, add an additional volume mapping.
 
->In this field, you cannot reference environment variables using the `%\env.FOO_BAR%` syntax because TeamCity does not pass environment variables from a build agent into a container.  
-If you need to reference an environment variable on an agent, define the configuration parameter `system.FOO_BAR=env_var_value` in [`buildAgent.properties`](configure-agent-installation.md) and reference it via `%\system.FOO_BAR%`.
+>If you intend to utilize [environment variables](configuring-build-parameters.md#Environment+Variables) in this field (for example, `%\env.FOO_BAR%`), note that these variables should be explicitly declared in the build configuration. Agent-specific variables declared in ["buildAgent.properties"](configure-agent-installation.md) files are not passed to containers.
+> 
+> If you need a parameter declared in this file, define the configuration parameter (`system.FOO_BAR=env_var_value`) instead . You can then reference it as `%\system.FOO_BAR%` in the "Additional run arguments" field.
+>
+{type="note"}
 
 </td></tr></table>
 
