@@ -16,6 +16,17 @@ When a new option is added, TeamCity will start building your custom agent distr
 
 Learn more: [](install-teamcity-agent.md).
 
+## Seamless GitHub App Registration
+
+In version 2023.05, we introduced the [new type](configuring-connections.md#GitHub) of connections to GitHub and GitHub Enterprise. These connections utilize [GitHub Apps](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps), instead of the traditional OAuth-based access to repositories.
+
+Starting with version 2023.09, you will be able to create these connections much faster, without manually setting up and registering new apps in GitHub. Click the corresponding button in the connection description, and TeamCity will set everything up for you.
+
+<img src="dk-GhAppManifestButton.png" width="706" alt="GitHub Manifest App Button"/>
+
+Learn more: [Configuring Connections](configuring-connections.md#GitHub).
+
+
 ## Enhanced Integration with Perforce Helix Swarm
 
 In version 2023.09, we have overhauled the "Perforce Helix Swarm" publisher of the [](commit-status-publisher.md) build feature. TeamCity can now utilize workflows and tests that already exist in your Swarm setup (instead of creating its own tests). In addition, the Publisher no longer requires credentials of a user with administrator access.

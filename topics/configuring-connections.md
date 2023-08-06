@@ -140,7 +140,33 @@ Depending on your needs, you can create connections to GitHub that operate via G
 <dt>GitHub App</dt>
 <dd>A <a href="https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps">GitHub App</a> is an integration that allows third-party services such as TeamCity to connect to GitHub repositories without the necessity to keep a "service" user account. Compared to GitHub OAuth applications, GitHub Apps boast fine-grained permissions and grant you more control over which repositories the app can access. See this article for more information: <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps">Differences between GitHub Apps and OAuth Apps</a>.
 
-To create a TeamCity connection that utilizes a GitHub App:
+If you do not already have a suitable GitHub App, you can allow TeamCity to register it and create a connection that employs this new app in one go. TeamCity uses <a href="https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest">manifests</a> to register new GitHub Apps.
+
+<ol>
+
+<li>
+Go to <b>Project Settings | Connections</b> and click <b>Add Connection</b>.
+</li>
+
+<li>
+Choose <b>GitHub App</b> from the drop-down menu (regardless of whether you need to connect to regular GitHub or GitHub Enterprise).
+</li>
+
+<li>
+Click the <b>Create GitHub App and connection</b> button to allow TeamCity to <a href="https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest">register a GitHub App from a manifest</a>.
+
+<img src="dk-GhAppManifestButton.png" width="706" alt="GitHub Manifest App Button"/>
+
+You will need to specify the URL of your GitHub server (without "/username") and choose whether you want this app to send <a href="configuring-vcs-post-commit-hooks-for-teamcity.md">post-commit hooks</a> and/or have access to your organization.
+</li>
+
+<li>
+Follow instructions on your screen to log into your GitHub account, authorize TeamCity to register an app, and install it to your personal and/or organization account.
+</li>
+
+</ol>
+
+To manually create a new GitHub App and configure a TeamCity connection that uses this app:
 
 <ol>
 
@@ -148,7 +174,7 @@ To create a TeamCity connection that utilizes a GitHub App:
 
 <li>Choose <b>GitHub App</b> from the drop-down menu (regardless of whether you need to connect to regular GitHub or GitHub Enterprise).</li>
 
-<li>If you do not already have a GitHub App, follow TeamCity instructions to create and install a new App with required permissions. Note that GitHub will generate a private key in the process — save this <code>.private-key.pem</code> file in the secure location.</li>
+<li>In a separate browser tab, navigate to your GitHub account and follow instructions from the TeamCity connection description to create a new app. Note that GitHub will generate a private key in the process — save this <code>.private-key.pem</code> file in the secure location.</li>
 
 <li>Open the general settings of your GitHub App. Copy required values (App ID, client ID, cient secret) and paste them to the TeamCity dialog.</li>
 
