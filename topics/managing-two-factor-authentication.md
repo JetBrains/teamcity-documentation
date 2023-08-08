@@ -57,6 +57,31 @@ User groups with mandatory 2FA mode share this requirement with their child user
 
 <img src="dk-2FAGroups.png" width="708" alt="Parent user group with enforced 2FA"/>
 
+
+
+## Reduce Excessive Authorization Requests
+
+If your TeamCity users can log in using accounts of external services and your organization's policy requires 2FA to log into these services, you can skip additional verification when logging into TeamCity.
+
+For example, if a user is already logged into their 2FA-protected GitHub account, they should be able to log into TeamCity using their GitHub credentials without any additional verification.
+
+TeamCity automatically avoids sending redundant authorization requests for the following providers:
+
+* [](configuring-authentication-settings.md#Bitbucket+Cloud)
+* [](configuring-authentication-settings.md#GitHub)
+* [GitLab](configuring-authentication-settings.md#GitLab.com)
+
+For providers that do not report whether 2FA is currently enabled, you can manually specify whether TeamCity should send 2FA requests. To do so, specify the **Skip two-factor authentication** option in auth module settings.
+
+<img src="dk-skip2FA.png" width="706" alt="Skip additional 2FA requests"/>
+
+This setting is available for the following modules:
+
+* [](configuring-authentication-settings.md#Azure+DevOps+Services)
+* [](configuring-authentication-settings.md#Google)
+* [](configuring-authentication-settings.md#JetBrains+Space)
+
+
 ## See Also
 
 * [How to configure 2FA for your user account](configuring-your-user-profile.md#Configuring+Two-Factor+Authentication)

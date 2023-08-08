@@ -39,6 +39,7 @@ Learn more: [](integrating-with-helix-swarm.md).
 
 * Dependent builds whose ["On failed dependency" condition](snapshot-dependencies.md) is set to "Make build failed to start" no longer wait for an available agent when their dependencies fail or are cancelled. Instead, the dependent build's status changes to "Failed to start" as soon as possible, and TeamCity proceeds to the next build in chain.
 * Added the [new service message](service-messages.md#Writing+the+File+into+the+Build+Log) that allows you to track the contents of given file(s) and echo new lines to the build log.
+* If users log into TeamCity using credentials of an external 2FA-protected service, TeamCity does not send additional 2FA requests. Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
 
 ## Upgrade Notes
 {product="tc"}
