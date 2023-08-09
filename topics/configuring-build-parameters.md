@@ -104,8 +104,9 @@ object MyBuildConfig : BuildType({
 
 
 ```Shell
-echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %teamcity.agent.name%']"
+echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.agent.name%']"
 ```
+{interpolate-variables="false"}
 
 Example: ??? Need a good use case here
 
@@ -124,12 +125,14 @@ docker build -f Dockerfile --tag your.registry/MyApp:${TAG}
 docker push your.registry/MyApp:v1
 echo "##teamcity[setParameter name='DockerImageName' value='MyApp:${TAG}']"
 ```
+{interpolate-variables="false"}
 
 Dependent build (has a snapshot dependency to the first build):
 
 ```Shell
-docker run -d your.registry/%dep.ConfigA.DockerImageName%
+docker run -d your.registry/%\dep.ConfigA.DockerImageName%
 ```
+{interpolate-variables="false"}
 
 Example 2:
 
@@ -152,17 +155,20 @@ Using env variables:
 Console.WriteLine("Predefined variable value = " + System.Environment.GetEnvironmentVariable("TEAMCITY_VERSION"));
 Console.WriteLine("Custom variable value = " + System.Environment.GetEnvironmentVariable("My.Custom.Env.Variable"));
 ```
+{interpolate-variables="false"}
 
 Using configuration parameters:
 
 ```C#
-string fullPath = Path.Combine("%teamcity.build.checkoutDir%", "myFolder/bin");
+string fullPath = Path.Combine("%\teamcity.build.checkoutDir%", "myFolder/bin");
 Console.WriteLine(fullPath);
 ```
+{interpolate-variables="false"}
 
-Passing parameter valus to the global `Args` array: add parameter references in the `%parameter_name%` format to the "Script parameters" field of the runner.
+Passing parameter values to the global `Args` array: add parameter references in the `%\parameter_name%` format to the "Script parameters" field of the runner.
 
 Example: the `%\nuget.package.name%` is added to "Script parameters". Restore NuGet package, get its version, and calculate the next version number. This value can later be used for building and pushing a package.
+{interpolate-variables="false"}
 
 ```C#
 using System.Linq
@@ -177,22 +183,24 @@ Props["version"] =
     .ToString();
 Console.WriteLine($"Version number: {Props["version"]}", Success)
 ```
+{interpolate-variables="false"}
 
 ### Command Line Runner
 
 Report values of a checkout directory (config parameter) and TeamCity server version (env variable)
 
 ```Shell
-echo "Checkout directory: %teamcity.build.checkoutDir%"
+echo "Checkout directory: %\teamcity.build.checkoutDir%"
 echo "Server version: '$TEAMCITY_VERSION'"
 ```
+{interpolate-variables="false"}
 
 Copy a file
 
 ```Shell
 set -e -x
 
-FILE=%teamcity.build.branch%/fileToCopy.xml
+FILE=%\teamcity.build.branch%/fileToCopy.xml
 if test -f "$FILE"; then
     cp "$FILE" folderA/folderB
 fi
@@ -201,7 +209,7 @@ fi
 Download an "libraries.tar.gz" archive from the server whose URL is stored as the `serverURL` config parameter, and save it to the checkout directory with the build number in its name (for example, the archive's name for build #54 will be "libraries_54.tar.gz"):
 
 ```Shell
-curl -o libraries_%build.number%.tar.gz %serverUrlBase%libraries.tar.gz
+curl -o libraries_%\build.number%.tar.gz %\serverUrlBase%libraries.tar.gz
 ```
 
 
@@ -212,13 +220,13 @@ curl -o libraries_%build.number%.tar.gz %serverUrlBase%libraries.tar.gz
 Config parameter:
 
 ```Python
-print(f'Current checkout directory is: %teamcity.build.checkoutDir%')
+print(f'Current checkout directory is: %\teamcity.build.checkoutDir%')
 ```
 
 Env variable:
 
 ```Python
-print(f'TeamCity version is: %env.TEAMCITY_VERSION%')
+print(f'TeamCity version is: %\env.TEAMCITY_VERSION%')
 # or
 print(f"TeamCity version is: {os.environ['TEAMCITY_VERSION']}")
 ```
@@ -311,7 +319,7 @@ object MyBuildConfig : BuildType({
 
     steps {
         dotnetBuild {
-            args = "-p:OutputType=%DotNetOutputType%"
+            args = "-p:OutputType=%\DotNetOutputType%"
         }
     }
 })
@@ -322,7 +330,7 @@ Define two Maven variables
 ```Kotlin
 steps {
     maven {
-        goals = "-nsu -e -Pbuildserver -DBUILD_NUMBER=%build.number% -DskipTests=%mvn.skip.tests% generate-resources"
+        goals = "-nsu -e -Pbuildserver -DBUILD_NUMBER=%\build.number% -DskipTests=%\mvn.skip.tests% generate-resources"
         pomLocation = "build-version/pom.xml"
     }
 }
@@ -335,7 +343,7 @@ steps {
     gradle {
         name = "Gradle step"
         tasks = "build-dist"
-        jdkHome = "%env.JDK_19_0_ARM64%"
+        jdkHome = "%\env.JDK_19_0_ARM64%"
     }
 }
 ```
@@ -360,7 +368,7 @@ Kotlin:
 
 ```Kotlin
 object MyBuildConf : BuildType({
-    buildNumberPattern = "%build.counter%-%env.TEAMCITY_BUILDCONF_NAME%"
+    buildNumberPattern = "%\build.counter%-%env.TEAMCITY_BUILDCONF_NAME%"
 })
 ```
 
@@ -393,7 +401,7 @@ Example: Custom Path to git in VCS Root settings
 
 UI: Screenshot
 
-`Path to git = %CustomMyGitPath%`
+`Path to git = %\CustomMyGitPath%`
 
 Kotlin:
 
@@ -422,7 +430,7 @@ object GoalInBuildScripts : BuildType({
     }
 
     vcs {
-        root(HttpsGithubComValrravnGradleSampleAppRefsHeadsMaster, "+:%branch.default%", "-:%branch.ignored%")
+        root(HttpsGithubComValrravnGradleSampleAppRefsHeadsMaster, "+:%\branch.default%", "-:%\branch.ignored%")
     }
 })
 ```
@@ -436,7 +444,7 @@ Kotlin:
 
 ```Kotlin
 object GoalInBuildScripts : BuildType({
-    artifactRules = "testfile1.txt => %master.artifact.name%"
+    artifactRules = "testfile1.txt => %\master.artifact.name%"
     params {
         param("master.artifact.name", "master_artifact.tar.gz")
     }
