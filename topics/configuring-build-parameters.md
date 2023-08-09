@@ -368,7 +368,7 @@ Kotlin:
 
 ```Kotlin
 object MyBuildConf : BuildType({
-    buildNumberPattern = "%\build.counter%-%env.TEAMCITY_BUILDCONF_NAME%"
+    buildNumberPattern = "%\build.counter%-%\env.TEAMCITY_BUILDCONF_NAME%"
 })
 ```
 
@@ -385,7 +385,7 @@ object MyBuildConf : BuildType({
     features {
         vcsLabeling {
             vcsRootId = "${UrlRefsHeadMaster.id}"
-            labelingPattern = "TC-build-%build.number%"
+            labelingPattern = "TC-build-%\build.number%"
         }
     }
 })
@@ -395,7 +395,7 @@ object MyBuildConf : BuildType({
 ## VCS Root and Checkout Rule Settings
 
 VCS root settings - tried creating the new "branch.default" parameter that equals "refs/heads/master" and referencing this parameter in the "Default branch". Fires the "Test connection failed in Parameters Test / Gradle
-Cannot find revision of the default branch '%branch.default%'" error.
+Cannot find revision of the default branch '%\branch.default%'" error.
 
 Example: Custom Path to git in VCS Root settings
 
