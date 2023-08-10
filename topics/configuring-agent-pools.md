@@ -59,6 +59,19 @@ The "Projects" tab lets you specify which agent pools your projects can utilize.
 
 Note that if you unbind a project from all existing agent pools, you can no longer run the build configurations of this project (unless they consist entirely of [agentless build steps](agentless-build-step.md)).
 
+
+## Favorite Pools
+
+You can click a star icon next to the pool's name to bookmark it.
+
+<img src="dk-favAgentPool.png" width="706" alt="Favorite pools"/>
+
+Favorite pools are pinned to the top of the side navigation pane. You can also view all agents and cloud images from all favorite pools in the "FAVORITES" section.
+
+<img src="dk-favAgentPool2.png" width="706" alt="Favorite pools details"/>
+
+Favorite pools are user-specific, meaning that each TeamCity user can have their own set of favorite agent pools.
+
 <seealso>
         <category ref="concepts">
             <a href="build-agent.md">Build Agent</a>
