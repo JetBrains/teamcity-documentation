@@ -255,6 +255,7 @@ Options
 
 The "_Do not build the projects_" checkbox declares whether to build the projects before packing or testing or not.
 
+If you list multiple test assemblies as targets for a `test` or `vstest` command, use the "**Run tests in a single session**" checkbox to specify whether TeamCity should invoke a separate testing command for each target.
 </td>
 
 </tr>
