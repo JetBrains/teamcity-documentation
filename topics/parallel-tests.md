@@ -136,6 +136,20 @@ org.example.tests.TestCase1
 
 The build step with custom tests' execution logic should use this file and filter out all the tests that belong to the classes mentioned there. All the other tests should be executed.
 
+<!--
+## Test Suppressor for .NET
+
+If [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse for test engines like NUnit. In this case, set the `teamcity.internal.dotnet.test.suppressing=true` option (via a [configuration parameter](configuring-build-parameters.md) or an [internal property](server-startup-properties.md#TeamCity+Internal+Properties)).
+
+In this mode, the `dotnet test <TARGET>` command for each batch is split into four separate commands (if `<TARGET>` is a .NET project):
+
+1. The `dotnet build <TARGET> -bl:LogFile=<PATH>` command builds the target project and writes a binary log file consumed by the following steps.
+2. Tests that should not be run are suppressed.
+3. The `dotnet test <TARGET> --no-build` command is executed.
+4. Original builds are restored using data collected in step #2.
+
+-->
+
 ## Publish Artifacts Produced By Batch Builds
 
 Since parallel tests run inside independent batch builds, [artifacts](build-artifact.md) are produced by these batch builds that perform actual building routines, not by a parent configuration's builds.
