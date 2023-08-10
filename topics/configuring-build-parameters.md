@@ -107,7 +107,6 @@ object MyBuildConfig : BuildType({
 ```Shell
 echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.agent.name%']"
 ```
-{interpolate-variables="false"}
 
 Example: ??? Need a good use case here
 
@@ -161,7 +160,6 @@ Dependent build (has a snapshot dependency to the first build):
 ```Shell
 docker run -d your.registry/%\dep.ConfigA.DockerImageName%
 ```
-{interpolate-variables="false"}
 
 Example 2:
 
@@ -184,7 +182,6 @@ Using env variables:
 Console.WriteLine("Predefined variable value = " + System.Environment.GetEnvironmentVariable("TEAMCITY_VERSION"));
 Console.WriteLine("Custom variable value = " + System.Environment.GetEnvironmentVariable("My.Custom.Env.Variable"));
 ```
-{interpolate-variables="false"}
 
 Using configuration parameters:
 
@@ -192,7 +189,7 @@ Using configuration parameters:
 string fullPath = Path.Combine("%\teamcity.build.checkoutDir%", "myFolder/bin");
 Console.WriteLine(fullPath);
 ```
-{interpolate-variables="false"}
+
 
 Passing parameter values to the global `Args` array: add parameter references in the `%\parameter_name%` format to the "Script parameters" field of the runner.
 
@@ -212,7 +209,7 @@ Props["version"] =
     .ToString();
 Console.WriteLine($"Version number: {Props["version"]}", Success)
 ```
-{interpolate-variables="false"}
+
 
 ### Command Line Runner
 
@@ -222,7 +219,7 @@ Report values of a checkout directory (config parameter) and TeamCity server ver
 echo "Checkout directory: %\teamcity.build.checkoutDir%"
 echo "Server version: '$TEAMCITY_VERSION'"
 ```
-{interpolate-variables="false"}
+
 
 Copy a file
 
