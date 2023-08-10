@@ -111,6 +111,36 @@ echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.a
 
 Example: ??? Need a good use case here
 
+Check the current day of week - modify parameter if needed - use the updated value in the following step
+
+```Kotlin
+object MyBuildConf : BuildType({
+    params {
+        param("day.of.week", "Monday")
+    }
+    steps {
+        csharpScript {
+            name = "Check the current day"
+            content = """
+                string today = DateTime.Today.DayOfWeek.ToString();
+                
+                if (today != "%\day.of.week%") {
+                  Console.WriteLine("Setting a new value for the day.of.week parameter...");
+                  string TCServiceMessage = "##teamcity[setParameter name='day.of.week' value='" + today + "']";
+                  Console.WriteLine(TCServiceMessage);
+                }
+            """.trimIndent()
+        }
+        python {
+            name = "Welcome message"
+            command = script {
+                content = "print('Hello %\teamcity.build.triggeredBy.username%, today is %\day.of.week%!')"
+            }
+        }
+    }
+})
+```
+
 ## Passing Data Between Builds in a Build Chain
 
 
