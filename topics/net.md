@@ -938,12 +938,18 @@ Consider the following notes before migrating:
 * The .NET runner provides code coverage only for [dotCover](jetbrains-dotcover.md). If you are actively using NCover or PartCover in your MSBuild steps, please let us know about it via any of the [feedback channels](feedback.md).
 * The .NET runner does not support the MSTest tool since all features of its framework are covered by VSTest. If you were using MSTest as the engine of the Visual Studio Tests runner, we suggest that you switch to VSTest when migrating to the .NET runner.
 
+
+## Parallel Testing
+
+If the .NET runner executes `test` or `vstest` commands, TeamCity can split the workload into several batches. In this case testing is carried out in separate automatically generated builds (on separate build agents). To enable this behavior, add the [](parallel-tests.md) build feature to the TeamCity build configuration.
+
+For large sets of .NET tests that can impair the performance, try switching to the [alternative filtering mode](parallel-tests.md#Alternative+Test+Filtering+for+.NET).
+
 ## .NET runner F.A.Q.
 
 ### How to pass parameters containing spaces
 
-The best way to pass a parameter value containing space characters is to use [system properties](configuring-build-parameters.md#Types+of+Build+Parameters). For example, you can add the `system.Platform` parameter with the `Any CPU` value in __Build Configuration Settings | Parameters__ and then refer to this value as `%system.Platform%` inside the .NET step.
-{interpolate-variables="false"}
+The best way to pass a parameter value containing space characters is to use [system properties](configuring-build-parameters.md#Types+of+Build+Parameters). For example, you can add the `system.Platform` parameter with the `Any CPU` value in __Build Configuration Settings | Parameters__ and then refer to this value as `%\system.Platform%` inside the .NET step.
 
 An alternative approach is to wrap the command-line parameter as follows: `"/p:Platform=Any CPU"`.
 

@@ -41,6 +41,8 @@ Learn more: [](integrating-with-helix-swarm.md).
 * Added the [new service message](service-messages.md#Writing+the+File+into+the+Build+Log) that allows you to track the contents of given file(s) and echo new lines to the build log.
 * If users log into TeamCity using credentials of an external 2FA-protected service, TeamCity does not send additional 2FA requests. Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
 * You can now bookmark required agent pools to easily access them from the top of the agents and pools list. Learn more: [](configuring-agent-pools.md#Favorite+Pools).
+* <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tcc"/>
+
 
 ## Upgrade Notes
 {product="tc"}
