@@ -42,7 +42,7 @@ To see the details of a certain pool or its nested [agent](viewing-build-agent-d
 
 To populate a pool with agents, click __Assign agents__ on the __Agents__ tab and select the required agents from the list. Since an agent can belong to only one pool, assigning it to a pool will remove it from its previous pool. If TeamCity detects that this action might cause compatibility problems, it will show a respective warning. Removing an agent from a custom pool will return it to the _Default_ pool.
 
-To assign a cloud agent to a pool, you need to configure it in the cloud image details of the [agent cloud profile](agent-cloud-profile.md). Note that agents from all cloud profiles of the current project are automatically combined into a _[project pool](agent-cloud-profile.md#Adding+Agent+Image)_.  
+To assign a cloud agent to a pool, you need to configure it in the cloud image details of the [agent cloud profile](agent-cloud-profile.md). Note that agents from all cloud profiles of the current project are automatically combined into a _project pool_.  
 Only cloud agent images configured in the `<Root>` project can be moved using __Assign agents__.
 {product="tc"}
 

@@ -56,11 +56,11 @@ The Web Application Description Language (WADL) generator is now removed. See th
 * The "Processing user requests to modify data" responsibility was renamed to "Handling UI actions and load balancing user requests".
 * The `[data_directory](teamcity-data-directory.md)/config/nodes-config.xml` file listed only "MAIN_NODE" responsibility for main nodes. In version 2023.05, this configuration file lists all responsibilities enabled on a main node.
 
-See the What's New page for more responsibility-related changes: [](what-s-new-in-teamcity.md#Multinode+Setup+Enhancements).
+See the What's New page for more responsibility-related changes.
 
 ### Podman Support
 
-Due to the implementation of [](what-s-new-in-teamcity.md#Podman+Support), the following changes were made:
+Due to the implementation of Podman support, the following changes were made:
 
 * The "Docker Wrapper" extension was renamed to [](container-wrapper.md).
 * The "Docker Info" tab on the [](build-results-page.md) was renamed to "Container Info".
@@ -88,7 +88,7 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 ### Miscellaneous Updates
 
 * Users with the "Project Developer" [role](managing-roles-and-permissions.md) can now download and view the `.teamcity/settings/buildSettings.xml` [hidden artifact](build-artifact.md#Hidden+Artifacts). Previously, this action required the "Edit project" permission that is enabled for "Project Administrator" and higher roles.
-* Agent pages no longer display the **Open SSM Terminal** action link. This functionality was deprecated in favor of more generic **Open Terminal** button. See [](what-s-new-in-teamcity.md#Interactive+Agent+Terminals) for more details.
+* Agent pages no longer display the **Open SSM Terminal** action link. This functionality was deprecated in favor of more generic **Open Terminal** button. See [](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
 * Configurations with [agent-side checkout](vcs-checkout-mode.md) mode do not support postfixes in checkout directory paths (for instance, `+:src/main => src/main/postfixDirectory`). If you specified a postfix in checkout rules, previous TeamCity versions silently swallowed this error and ran builds that ignored your postfixes. Starting with version 2023.05, TeamCity shows the corresponding error message and does not allow new builds to start. See this section for more information: [](git.md#Limitations).
 
 
@@ -195,7 +195,7 @@ if you want the dependency resolver to look in it.
 
 TeamCity system administrators are now granted the new role, _Open an interactive session to the agent_,
 which lets them use an interactive browser-based shell on an EC2 agent from the TeamCity UI without providing Amazon credentials.
-It is possible to connect to agents if they are configured as described [here](setting-up-teamcity-for-amazon-ec2.md#debugging-and-maintenance).
+It is possible to connect to agents if they are configured as described [here](setting-up-teamcity-for-amazon-ec2.md).
 
 
 #### Free disk space for artifacts is calculated automatically

@@ -61,7 +61,7 @@ TeamCity now supports [Amazon EC2 launch templates](https://docs.aws.amazon.com/
 
 If your cloud profile is connected to the Amazon server, TeamCity will automatically detect launch templates available on this server. Simply select a template as an image _Source_ and specify its version, and TeamCity will request instances based on the template parameters.
 
-Read more in [Setting Up TeamCity for Amazon EC2](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Launch+Templates+support).
+Read more in [Setting Up TeamCity for Amazon EC2](setting-up-teamcity-for-amazon-ec2.md).
 
 ## Restoring backup on TeamCity startup
 

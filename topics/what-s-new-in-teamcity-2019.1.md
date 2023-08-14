@@ -78,7 +78,7 @@ You can monitor the state of all running instances on the __Agents | Cloud__ tab
 
 ### Other improvements
 
-In accordance with how EC2 services manage instances, we have made the 'Max price' value optional for [spot instances](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Spot+Instances+support) so they can be launched exactly like the on-demand ones. 
+In accordance with how EC2 services manage instances, we have made the 'Max price' value optional for [spot instances](setting-up-teamcity-for-amazon-ec2.md) so they can be launched exactly like the on-demand ones. 
 
 
 ## Build artifacts publishing options

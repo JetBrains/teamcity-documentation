@@ -37,7 +37,7 @@ On Windows, you may want to launch a TeamCity agent as a service to allow runnin
 To run builds, the build agent must be started under a user with sufficient permissions for performing a build and managing the service. By default, a Windows service is started under the _SYSTEM_ account which is not recommended for production use due to extended permissions this account has. To change it, use the standard Windows Services applet (__Control Panel | Administrative Tools | Services__) and change the user for the _TeamCity Build Agent_ service.
 </warning>
 
->If you start an Amazon EC2 cloud agent as a Windows service, check the [related notes](setting-up-teamcity-for-amazon-ec2.md#Preparing+Image+with+Installed+TeamCity+Agent).
+>If you start an Amazon EC2 cloud agent as a Windows service, check the [related notes](setting-up-teamcity-for-amazon-ec2).
 >
 {type="tip" product="tc"}
 
