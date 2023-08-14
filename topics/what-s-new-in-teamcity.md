@@ -27,6 +27,17 @@ Starting with version 2023.09, you will be able to create these connections much
 Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 
 
+## AWS Connection Improvements
+
+Starting with this version, you can enable or disable the **Available for sub-projects** and **Available for build steps** settings in AWS connection settings. These options allow you to ensure the configured connections are not used by unauthorized TeamCity projects and their [](aws-credentials.md) build features.
+
+<img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
+
+In addition, you can now refer to the new section of our "Configuring Connections" documentation article to learn how to configure secure AWS connections that follow Amazon guidelines and do not require permanent user credentials: [](configuring-connections.md#Recommended+Setup).
+{product="tc"}
+
+Learn more: [](configuring-connections.md#AmazonWebServices).
+
 ## Enhanced Integration with Perforce Helix Swarm
 
 In version 2023.09, we have overhauled the "Perforce Helix Swarm" publisher of the [](commit-status-publisher.md) build feature. TeamCity can now utilize workflows and tests that already exist in your Swarm setup (instead of creating its own tests). In addition, the Publisher no longer requires credentials of a user with administrator access.
