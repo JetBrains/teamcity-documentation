@@ -636,7 +636,7 @@ In the &lt;new build number&gt; value, you can use the `{build.number}` substitu
 ### Adding or Changing Build Parameter
 {id='set-parameter'}
 
-By using a dedicated service message in your build script, you can dynamically update build parameters of the build right from a build step (the parameters need to be defined in the __[Parameters](configuring-build-parameters.md)__ section of the build configuration). The changed build parameters will be available in the build steps following the modifying one. They will also be available as build parameters and can be used in the dependent builds via [` %dep.*% parameter references`](predefined-build-parameters.md#Dependency+Parameters), for example:
+By using a dedicated service message in your build script, you can dynamically update build parameters of the build right from a build step (the parameters need to be defined in the __[Parameters](configuring-build-parameters.md)__ section of the build configuration). The changed build parameters will be available in the build steps following the modifying one. They will also be available as build parameters and can be used in the dependent builds via [` %\dep.*% parameter references`](predefined-build-parameters.md#Dependency+Parameters), for example:
 
 ```Shell
 ##teamcity[setParameter name='ddd' value='fff']
@@ -1009,12 +1009,14 @@ To initiate monitoring of several directories or parse several types of the repo
 
 Send the following service message to start tracking the contents of one or multiple files and write their new lines to the build log.
 
+<img src="dk-streamFiletoLog.png" width="706" alt="Stream file to log"/>
+
 ```Shell
 ##teamcity[importData type='streamToBuildLog' filePath='path-to-file' filePattern='pattern' wrapFileContentInBlock='false' charset='UTF-8']
 ```
 
-* `type` — always equals 'streamToBuildLog'
-* `filePath` — the path (relative to the current working directory) to a file that needs to be monitored. If the specified file does not exist or cannot be opened, TeamCity will periodically retry it attempts to access this file (for as long as the runner that sent this service message is still running).
+* `type` — always equals 'streamToBuildLog'.
+* `filePath` — the path to a file that needs to be monitored. The path can be absolute (`filePath=’%\teamcity.build.checkoutDir%/temp.txt'`) or relative (`filePath='./myFolder/temp.txt'`). Relative paths are resolved under the current working directory of the agent that runs the build (the directory returned by the `teamcity.agent.work.dir` [parameter](configuring-build-parameters.md)). If the specified file does not exist or cannot be opened, TeamCity will periodically retry it attempts to access this file (for as long as the runner that sent this service message is still running).
 * `filePattern` — the Ant-style file pattern. TeamCity will monitor every file that matches this pattern. If the pattern includes a path, it is resolved under the current working directory. While the runner that sent this service message is still running, TeamCity will periodically look for new files that match this pattern.
 * `wrapFileContentInBlock` (optional) — specifies whether or not the output should be formatted as code in the build log. The default value is "true".
 * `charset` (optional) — a canonical name or an alias of an encoding supported by Java. If the argument is absent or the encoding cannot be resolved, UTF-8 is used.
