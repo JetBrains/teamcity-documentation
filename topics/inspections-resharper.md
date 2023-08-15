@@ -140,11 +140,46 @@ R# CLT Home Directory
 
 Select the ReSharper Command Line Tools version.
 
-You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Administration | Tools](installing-agent-tools.md)__ page. If you want to run ReSharper duplicates using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can use this page to install another version of the tools and change the default version to be used.
+You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Administration | Tools](installing-agent-tools.md)__ page.
+
+<img src="dk-tools.png" width="706" alt="Check the version of installed Resharper toools"/>
+
+If you want to run ReSharper duplicates using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can use this page to install another version of the tools and change the default version to be used.
 {product="tc"}
 
 
-</td></tr><tr>
+</td></tr>
+
+
+<tr>
+
+<td>R# CLT Plugins</td>
+
+<td>
+
+The list of additional [ReSharper plugins](https://plugins.jetbrains.com/resharper) to install.
+
+Depending on the version of installed ReSharper Command Line Tools, this field can accept values in the following formats:
+
+* `Download <pluginId>/<version>` — downloads the required plugin from JetBrains Marketplace using its ID. Plugin IDs are displayed on main plugin pages in Marketplace, under the "Additional Information" section. Example: `Download ReSharperPlugin.CognitiveComplexity/2023.2.0`.
+
+* `File <file_path>` and `Folder <folder_path>` — allow you to load required plugin(s) from the local storage. These options are not available for ReSharper CLT versions 2021.3.0 and newer.
+
+> * Some of ReSharper plugins may not work for C# CLT.
+> * We recommend using the "R# CLT Plugins" option for ReSharper CLT 2023.1.0 and newer. Older versions may incorrectly interpret values from this field.
+>
+{type="note"}
+
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
 
 <td>
 

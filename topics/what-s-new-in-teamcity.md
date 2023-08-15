@@ -46,11 +46,27 @@ In version 2023.09, we have overhauled the "Perforce Helix Swarm" publisher of t
 
 Learn more: [](integrating-with-helix-swarm.md).
 
+
+## Additional ReSharper Plugins for the Inspections Runner
+
+The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to enter a list of required [ReSharper plugins](https://plugins.jetbrains.com/resharper).
+
+<img src="dk-inspections-plugins.png" width="706" alt="ReSharper plugins list"/>
+
+Learn more: [](inspections-resharper.md#JetBrains+ReSharper+Command+Line+Tools+Settings).
+
+## Service Messages
+
+Added the [new service message](service-messages.md#Writing+the+File+into+the+Build+Log) that allows you to track the contents of given file(s) and echo new lines to the build log.
+
+<img src="dk-streamFiletoLog.png" width="706" alt="Stream file to log"/>
+
+Learn more: [](service-messages.md#Writing+the+File+into+the+Build+Log).
+
+
 ## Miscellaneous
 
 * Dependent builds whose ["On failed dependency" condition](snapshot-dependencies.md) is set to "Make build failed to start" no longer wait for an available agent when their dependencies fail or are cancelled. Instead, the dependent build's status changes to "Failed to start" as soon as possible, and TeamCity proceeds to the next build in chain.
-* Added the [new service message](service-messages.md#Writing+the+File+into+the+Build+Log) that allows you to track the contents of given file(s) and echo new lines to the build log.
-    <img src="dk-streamFiletoLog.png" width="706" alt="Stream file to log"/>
 * If users log into TeamCity using credentials of an external 2FA-protected service, TeamCity does not send additional 2FA requests. Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
 * You can now bookmark required agent pools to easily access them from the top of the agents and pools list. Learn more: [](configuring-agent-pools.md#Favorite+Pools).
 * <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tcc"/>
