@@ -8,17 +8,17 @@
 |[Git](https://git-scm.com/)|2.41.0|
 |[Git LFS](https://git-lfs.github.com/)|3.4.0|
 |[Zsh](https://www.zsh.org/)|5.8|
-|[Chromium](https://www.chromium.org/)|115.0.5790.110|
+|[Chromium](https://www.chromium.org/)|115.0.5790.170|
 |[Firefox](https://www.mozilla.org/en-US/firefox/)||
 |[Google Chrome](https://www.google.com/chrome/)|115.0.5790.170|
 |[ChromeDriver](https://chromedriver.chromium.org/)|114.0.5735.90|
 |[Docker](https://www.docker.com/)|24.0.5|
 |[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|24.0.5|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
-|[AWS CLI](https://aws.amazon.com/cli/)|2.13.5|
+|[AWS CLI](https://aws.amazon.com/cli/)|2.13.9|
 |[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|v1.27.4|
 |[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.51.0|
-|[Google Cloud SDK](https://cloud.google.com/sdk)|441.0.0|
+|[Google Cloud SDK](https://cloud.google.com/sdk)|442.0.0|
 |[JDK 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)|java-1.8.0-amazon-corretto|
 |[JDK 17](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)|java-17-amazon-corretto|
 |[JDK 19](https://docs.aws.amazon.com/corretto/latest/corretto-19-ug/downloads-list.html)|java-19-amazon-corretto|
@@ -29,8 +29,8 @@
 |[SVN](https://subversion.apache.org/)|1.13.0|
 |[Helm](https://helm.sh/)|v3.10.0+gce66412|
 |[Yarn](https://yarnpkg.com/)||
-|[Bazelisk](https://github.com/bazelbuild/bazelisk)|6.3.1|
-|[Bazel](https://bazel.build/)|6.3.1|
+|[Bazelisk](https://github.com/bazelbuild/bazelisk)|6.3.2|
+|[Bazel](https://bazel.build/)|6.3.2|
 |[Ant](https://ant.apache.org/)|1.10.7|
 |[Gradle](https://gradle.org/)|7.5.1|
 |[CMake](https://cmake.org/)|3.25.2|
@@ -44,12 +44,12 @@
 |[R](https://www.r-project.org/)|3.6.3|
 |[Groovy](https://groovy-lang.org/)|4.0.5|
 |[RVM](https://rvm.io/)|1.29.12-next|
-|[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.24.2|
+|[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.24.3|
 |[Python Pipenv](https://pipenv.pypa.io/en/latest/)|2023.7.23|
 |[Python Poetry](https://python-poetry.org/)|1.5.1)|
 |[rustup](https://rustup.rs/)|1.26.0|
-|[Cargo](https://doc.rust-lang.org/cargo/)|1.71.0|
-|[rustc](https://doc.rust-lang.org/rustc/what-is-rustc.html)|1.71.0|
+|[Cargo](https://doc.rust-lang.org/cargo/)|1.71.1|
+|[rustc](https://doc.rust-lang.org/rustc/what-is-rustc.html)|1.71.1|
 |[Go](https://golang.org/)|1.19.1|
 |[NVM](https://github.com/nvm-sh/nvm)|0.39.2|
 |[Node.js](https://nodejs.org/en/)|16.18|
