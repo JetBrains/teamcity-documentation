@@ -114,6 +114,8 @@ __Restrict deployment build permissions__.
 
 Make sure that your deployment build chains do not allow [personal builds](personal-build.md). [Limit the number of developers](managing-roles-and-permissions.md) who can trigger those builds, and use a separate pool of clean agents for those builds.
 
+<anchor name="manage-permissions"/>
+
 __Thoroughly manage permissions granted to users and user groups__.
 
 Note the following nuances:
