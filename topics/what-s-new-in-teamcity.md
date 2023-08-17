@@ -59,7 +59,7 @@ TeamCity uses these IDs to generate new `teamcity.build.step.status.<step_ID>` p
 
 You can use these values to perform custom actions depending on the statuses of previous steps. For example, you can craft custom step execution conditions.
 
-Learn more: [](build-step-execution-conditions.md#Custom+Conditions+Based+on+Step+Statuses).
+Learn more: [](configuring-build-steps.md#Step+Status+Parameters).
 
 
 ## Additional ReSharper Plugins for the Inspections Runner

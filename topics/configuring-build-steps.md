@@ -71,11 +71,33 @@ When scanning the repository, TeamCity progressively searches for project files 
 If the detected steps have already been added to this configuration manually, TeamCity will skip those.
 
 
-## Step Exit Statuses
+## Step Status Parameters
 
-<include src="build-step-execution-conditions.md" include-id="step-status-parameters"/>
 
-These parameters allow you to set up custom step execution conditions based on previous step statuses. See this link for the example: [](build-step-execution-conditions.md#Custom+Conditions+Based+on+Step+Statuses).
+TeamCity provides `teamcity.build.step.status.<step_ID>` parameters that report the status of the step with the given ID. Step IDs are shown below their names, and are editable only when you create them.
+
+<img src="dk-stepID.png" width="706" alt="Step ID"/>
+
+The available values of the `teamcity.build.step.status.<step_ID>` parameters are:
+
+* `success` — when a step finishes with no errors.
+* `failure` — when a step failed. This status is reported even when all build problems were [muted](investigating-and-muting-build-failures.md#Muting+Build+Problems).
+* `cancelled` — when a build was cancelled while this step was running.
+
+The `teamcity.build.step.status.<step_ID>` parameters appear only after their corresponding steps finish, and are not available right from the moment a build starts. This means neither steps that are still running, nor skipped steps have their `teamcity.build.step.status.<step_ID>` parameters available.
+
+You can check all step statuses in the [](build-results-page.md#Parameters+Tab) of the build results page...
+
+<img src="dk-parametersTab-statuses.png" width="706" alt="Step statuses"/>
+
+...or via [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).
+
+```Shell
+http://<SERVER_URL>/app/rest/builds/<BUILD_ID>/resulting-properties
+```
+{prompt="GET"}
+
+You can utilize these parameters to create custom [](build-step-execution-conditions.md).
 
 
  <seealso>
