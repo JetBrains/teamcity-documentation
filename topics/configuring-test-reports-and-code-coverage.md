@@ -19,7 +19,7 @@ The following inspections tools are bundled with TeamCity:
 * [Inspections (IntelliJ IDEA)](inspections.md): runs code analysis based on [IntelliJ IDEA inspections](http://www.jetbrains.com/idea/documentation/inspections.jsp). More than 600 Java, HTML, CSS, JavaScript inspections are performed by this runner.
 * [Inspections (ReSharper)](inspections-resharper.md): gathers results of [JetBrains ReSharper](http://www.jetbrains.com/resharper) [Code Analysis](http://www.jetbrains.com/resharper/webhelp/Code_Analysis__Index.html) in your C#, VB.NET, XAML, XML, ASP.NET, JavaScript, CSS, and HTML code.  
   Inspection results are reported in the __[Code Inspection](build-results-page.md#Code+Inspection+Tab)__ tab of the __Build Results__ page.
-* [](qodana.md): runs static analysis checks, finds duplicates in your code, tracks how the code quality changes over time, and much more. See the following Qodana help article for the detailed setup instructions: [Integration with TeamCity](https://www.jetbrains.com/help/qodana/teamcity.html).
+* [](qodana.md): runs static analysis checks, tracks how the code quality changes over time, detects incompatible dependency licenses, and much more. See the following Qodana help article for the detailed setup instructions: [Integration with TeamCity](https://www.jetbrains.com/help/qodana/teamcity.html).
 
 TeamCity can also be [integrated with external reporting tools](how-to.md#Integrate+with+Build+and+Reporting+Tools).
 
