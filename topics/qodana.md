@@ -11,6 +11,10 @@ The Qodana runner requires TeamCity agents to have Linux OS with a Docker server
 
 </warning>
 
+> See the following Qodana help article for the detailed setup instructions: [Integration with TeamCity](https://www.jetbrains.com/help/qodana/teamcity.html).
+> 
+{type="note"}
+
 You can enable advanced code quality inspections and do the following:
 
 - Run static analysis checks.
