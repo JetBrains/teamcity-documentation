@@ -85,6 +85,7 @@ Learn more: [](service-messages.md#Writing+the+File+into+the+Build+Log).
 * If users log into TeamCity using credentials of an external 2FA-protected service, TeamCity does not send additional 2FA requests. Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
 * You can now bookmark required agent pools to easily access them from the top of the agents and pools list. Learn more: [](configuring-agent-pools.md#Favorite+Pools).
 * <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tcc"/>
+* [](performance-monitor.md) now shows absolute values of the consumed/total agent memory.
 
 
 ## Upgrade Notes

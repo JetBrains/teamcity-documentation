@@ -14,6 +14,6 @@ If you run a build agent [as a Windows service](start-teamcity-agent.md#Build+Ag
 
 After you enable the Performance Monitor [build feature](adding-build-features.md) for a build configuration, the __Build Results__ page of each newly run build in this configuration will contain the __PerfMon__ tab with a graph of performance statistics. The _CPU_ value reflects the average CPU load during the build. The _Disk I/O_ shows how much of the CPU time is spent on disk input-output operations. The available _Memory_ value is calculated relatively to the physical memory of the agent machine.
 
-Clicking on a point in the graph displays the corresponding value (CPU on a screenshot below) as well as the build log with the highlighted fragment for the selected time:
+Click any point on the graph to view the corresponding value (CPU on a screenshot below) and view the portion of the build log that corresponds to this timeframe.
 
 <img src="performance-monitor.png" width="750" alt="Performance monitor"/>
