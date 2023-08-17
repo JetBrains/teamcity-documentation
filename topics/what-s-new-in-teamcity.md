@@ -47,6 +47,21 @@ In version 2023.09, we have overhauled the "Perforce Helix Swarm" publisher of t
 Learn more: [](integrating-with-helix-swarm.md).
 
 
+## Step Statuses and IDs
+
+Starting with version 2023.09, you can specify IDs for your steps (similarly to project and configuration IDs).
+
+<img src="dk-stepID.png" width="706" alt="Step ID"/>
+
+TeamCity uses these IDs to generate new `teamcity.build.step.status.<step_ID>` parameters that report the step exit statuses ("success", "failure", or "cancelled").
+
+<img src="dk-parametersTab-statuses.png" width="706" alt="Step statuses"/>
+
+You can use these values to perform custom actions depending on the statuses of previous steps. For example, you can craft custom step execution conditions.
+
+Learn more: [](build-step-execution-conditions.md#Custom+Conditions+Based+on+Step+Statuses).
+
+
 ## Additional ReSharper Plugins for the Inspections Runner
 
 The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to enter a list of required [ReSharper plugins](https://plugins.jetbrains.com/resharper).

@@ -27,3 +27,62 @@ In this demo, we explore a use case when you need to run a given step only if th
 title="New in TeamCity 2020.2: Bitbucket Cloud Pull Request Support"/>
 
 You can also read a recap of this tutorial in [this blog post](https://blog.jetbrains.com/teamcity/2020/07/new-in-2020-1-conditional-build-steps/).
+
+
+## Custom Conditions Based on Step Statuses
+
+<chunk include-id="step-status-parameters">
+
+TeamCity provides `teamcity.build.step.status.<step_ID>` parameters that report the status of the step with the given ID. Step IDs are shown below their names, and are editable only when you create them.
+
+<img src="dk-stepID.png" width="706" alt="Step ID"/>
+
+The available values of the `teamcity.build.step.status.<step_ID>` parameters are:
+
+* `success` — when a step finishes with no errors.
+* `failure` — when a step failed. This status is reported even when all build problems were [muted](investigating-and-muting-build-failures.md#Muting+Build+Problems).
+* `cancelled` — when a build was cancelled while this step was running.
+
+The `teamcity.build.step.status.<step_ID>` parameters appear only after their corresponding steps finish, and are not available right from the moment a build starts. This means neither steps that are still running, nor skipped steps have their `teamcity.build.step.status.<step_ID>` parameters available.
+
+You can check all step statuses in the [](build-results-page.md#Parameters+Tab) of the build results page...
+
+<img src="dk-parametersTab-statuses.png" width="706" alt="Step statuses"/>
+
+...or via [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).
+
+```Shell
+http://<SERVER_URL>/app/rest/builds/<BUILD_ID>/resulting-properties
+```
+{prompt="GET"}
+
+</chunk>
+
+The `teamcity.build.step.status.<step_ID>` parameters allow you to set up custom execution conditions based on statuses of previous steps. For example, in the sample config below step #3 runs only when step #2 fails **and** step #1 is successful.
+
+```Kotlin
+package _Self.buildTypes
+
+import jetbrains.buildServer.configs.kotlin.*
+
+object MyBuildConf : BuildType({
+    steps {
+        python {
+            id = "Step1"
+            // ...
+        }
+        python {
+            id = "Step2"
+            // ...
+        }
+        python {
+            name = "Step3"
+            conditions {
+                equals("teamcity.build.step.status.Step1", "success")
+                equals("teamcity.build.step.status.Step2", "failure")
+            }
+            // ...
+        }
+    }
+})
+```

@@ -70,6 +70,14 @@ When scanning the repository, TeamCity progressively searches for project files 
 
 If the detected steps have already been added to this configuration manually, TeamCity will skip those.
 
+
+## Step Exit Statuses
+
+<include src="build-step-execution-conditions.md" include-id="step-status-parameters"/>
+
+These parameters allow you to set up custom step execution conditions based on previous step statuses. See this link for the example: [](build-step-execution-conditions.md#Custom+Conditions+Based+on+Step+Statuses).
+
+
  <seealso>
         <category ref="concepts">
             <a href="build-runner.md">Build Runner</a>
