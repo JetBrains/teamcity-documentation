@@ -167,8 +167,8 @@ Depending on the version of installed ReSharper Command Line Tools, this field c
 
 * `File <file_path>` and `Folder <folder_path>` — allow you to load required plugin(s) from the local storage. These options are not available for ReSharper CLT versions 2021.3.0 and newer.
 
-> * Some of ReSharper plugins may not work for C# CLT.
-> * We recommend using the "R# CLT Plugins" option for ReSharper CLT 2023.1.0 and newer. Older versions may incorrectly interpret values from this field.
+> * Some of ReSharper plugins may not work for R# CLT.
+> * We recommend using the "R# CLT Plugins" option for ReSharper CLT 2021.3.0 and newer. Older versions may incorrectly interpret values from this field.
 >
 {type="note"}
 
