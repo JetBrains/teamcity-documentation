@@ -8,17 +8,17 @@
 |[Git](https://git-scm.com/)|2.41.0|
 |[Git LFS](https://git-lfs.github.com/)|3.4.0|
 |[Zsh](https://www.zsh.org/)|5.8|
-|[Chromium](https://www.chromium.org/)|115.0.5790.170|
+|[Chromium](https://www.chromium.org/)|116.0.5845.96|
 |[Firefox](https://www.mozilla.org/en-US/firefox/)||
-|[Google Chrome](https://www.google.com/chrome/)|115.0.5790.170|
+|[Google Chrome](https://www.google.com/chrome/)|116.0.5845.96|
 |[ChromeDriver](https://chromedriver.chromium.org/)|114.0.5735.90|
 |[Docker](https://www.docker.com/)|24.0.5|
 |[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|24.0.5|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
-|[AWS CLI](https://aws.amazon.com/cli/)|2.13.9|
-|[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|v1.27.4|
+|[AWS CLI](https://aws.amazon.com/cli/)|2.13.10|
+|[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)||
 |[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.51.0|
-|[Google Cloud SDK](https://cloud.google.com/sdk)|442.0.0|
+|[Google Cloud SDK](https://cloud.google.com/sdk)|443.0.0|
 |[JDK 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)|java-1.8.0-amazon-corretto|
 |[JDK 17](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)|java-17-amazon-corretto|
 |[JDK 19](https://docs.aws.amazon.com/corretto/latest/corretto-19-ug/downloads-list.html)|java-19-amazon-corretto|
