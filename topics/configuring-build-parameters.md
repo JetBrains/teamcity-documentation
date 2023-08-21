@@ -2,28 +2,34 @@
 [//]: # (auxiliary-id: Configuring Build Parameters)
 [//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")
 
-Intro - briefly explain difference between config parameters and env variables:
+In TeamCity, you can utilize predefined and custom build parameters. Parameters are `name=value` pairs that can be referenced throughout TeamCity to avoid using plain values.
 
-* Conf Parameters — store settings of the TeamCity build configuration
-* Env variables — passed to the process of a build runner similarly to default env variables of a system.
+There are two major parameter types in TeamCity:
 
-Show people how they can use parameters to better illustrate the difference (if there's any)
+* **Configuration Parameters** — store settings of the TeamCity server, projects, build configurations, and agents.
+* **Environment Variables** — parameters that start with the `env.` prefix that are passed to the process of a build runner similarly to default env variables of a system.
 
-Where in TeamCity can you use parameters:
+See the following sections to better understand where you can use parameters.
 
-## Specify Agent Requirements
+## Main Use Cases
 
+### Specify Agent Requirements
 
-* Purpose: specify which agents can build this configuration
-* Only predefined parameters
-* Cannot use user-defined parameters (why?)
-* Accepted parameter types: configuration params only.
+[](agent-requirements.md) allow you to specify `parameter-operator-value` conditions. Only those agents that meet these conditions are allowed to build this build configuration.
 
-UI:
+You can define agent requirements using only those parameters whose values can be reported by agents before the build starts. These parameters are:
 
-Screenshot here
+* Predefined configuration parameters available for all agents (for example, `teamcity.agent.name`).
+* Environment variables reported by agents (for example, `env.DOTNET_SDK_VERSION`).
+* Custom configuration parameters that are present in agents' [buildAgent.properties](configure-agent-installation.md) files (for example, create a `custom.agent.parameter` in TeamCity UI and add the `custom.agent.parameter=SomeValue` line to agents' properties files).
 
-Kotlin:
+TeamCity automatically adds agent requirements depending on the configured build steps. For example, if a build step should be executed inside a Linux container, TeamCity adds requirements that specify an agent must have [either Docker or Podman](integrating-teamcity-with-container-managers.md) running on Linux machine.
+
+To define custom agent requirements, navigate to the **Administration | &lt;Build Configuration&gt; | Agent Requirements** tab.
+
+<img src="dk-params-AgentRequirements.png" width="706" alt="Set agent requirements in TeamCity UI"/>
+
+To define agent requirements in [](kotlin-dsl.md), use the `requirements` block of you build configuration.
 
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.*
@@ -41,76 +47,186 @@ object BuildConfig : BuildType({
 })
 ```
 
-Examples:
-
-Allows builds to run only on Linux agents (TCC only!)
+For example, the following condition allows only Mac agents to run builds for the parent build configuration.
 
 ```Kotlin
-matches("teamcity.agent.jvm.os.family", "Linux")
+matches("teamcity.agent.jvm.os.family", "Mac OS")
 ```
-
-Allows builds to run on Mac agents only (On-Prem)
+{product="tcc"}
 
 ```Kotlin
 startsWith("teamcity.agent.jvm.os.name", "Mac")
 ```
+{product="tc"}
 
-Allows builds to run only on machines with "Android" workload installed for .NET 7 SDK:
+The sample condition below allows builds to run only on machines with "Android" workload installed for .NET 7 SDK:
 
 ```Kotlin
 contains("DotNetWorkloads_7.0", "android")
 ```
 
-Allows builds to run only on agents with installed Docker or Podman:
+The following condition requires that an agent running builds has either Docker or Podman:
 
 ```Kotlin
 exists("container.engine")
 ```
 
 
-## Specify Step Execution Conditions
+### Specify Step Execution Conditions
 
+You can define [step execution conditions](build-step-execution-conditions.md) to specify whether individual steps should be run. You can use any parameters for these conditions (configuration parameters and environment variables, both custom and predefined).
 
-* Purpose: specify whether or not this step should be executed
-* Accepted parameter types: configuration parameters (predefined &amp; custom)
-
-UI:
-
-Screenshot here
-
-Kotlin:
+For example, create a build configuration with two steps and the Boolean `skip.optional.step` parameter. Step #2 will or will not be executed depending on this parameter value.
 
 ```Kotlin
-object MyBuildConfig : BuildType({
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 
+object SourceConfig : BuildType({
+    name = "SourceConfig"
+
+    params {
+        param("skip.optional.step", "false")
+    }
     steps {
         script {
-            name = "CLI Script Runner"
-    
+            name = "Mandatory Step"
+            scriptContent = """echo "Mandatory step #1 is running...""""
+        }
+        script {
+            name = "Optional Step"
+            scriptContent = """echo "Optional step #2 is running...""""
             conditions {
-                // Parameter-based condidion in the following format:
-                // Operator("ParameterName", "ParameterValue")
-                // For example: equals("container.engine", "podman")
+                equals("skip.optional.step", "false")
             }
         }
-    }
-})
+    }})
 ```
 
-## Sharing Simple Data Between Steps
+If now you extract a [template](build-configuration-template.md) from this configuration, you can duplicate this configuration and override the `skip.optional.step` parameter for those instances that do not need this optional step #2.
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+
+object ConfigFromTemplate : BuildType({
+    templates(SourceConfigTemplate)
+    name = "Build Config Based on Template"
+
+    params {
+        param("skip.optional.step", "true")
+    }
+})
+
+```
+
+To set up step execution conditions in TeamCity UI, go to step settings and click **Add condition | Other condition...**.
+
+<img src="dk-params-StepExecutionCondition.png" width="706" alt="Step execution condition"/>
 
 
-* Purpose: pass a value obtained during one step to the next step
-* Accepted parameter types: ??? can use env here?
+### Pass Values to Simple Script Runners
 
+You can insert references to parameters as `%\parameter_name%` when writing scripts for [](command-line.md), [](c-script.md), and [](python.md) runners.
+
+> Note that this technique works when you define scripts in runner settings. If you include parameter references in external script files executed by these runners, these references are not replaced with parameter values.
+> 
+{type="note"}
+
+
+<table><tr><td>
+
+<tabs>
+
+<tab title="CLI Runner">
+
+The following script prints the [checkout directory](build-checkout-directory.md) path (configuration parameter) and TeamCity server version (environment variable) to the build log.<br/><br/>
+
+```Shell
+echo "Checkout directory: %\teamcity.build.checkoutDir%"
+echo "Server version: '$TEAMCITY_VERSION'"
+```
+
+The script below uses a reference to the build branch to obtain a file that should be copied to the target directory.<br/><br/>
+
+```Shell
+set -e -x
+
+FILE=%\teamcity.build.branch%/fileToCopy.xml
+if test -f "$FILE"; then
+    cp "$FILE" folderA/folderB
+fi
+```
+
+This sample script sends the REST API request to download the "libraries.tar.gz" archive from the server (whose URL is stored as the `serverURL` config parameter), add a build number to its name, and save it to the checkout directory. For example, the name of the archive from build #54 will be "libraries_54.tar.gz".<br/><br/>
+
+```Shell
+curl -o libraries_%\build.number%.tar.gz %\serverUrlBase%libraries.tar.gz
+```
+
+</tab>
+
+
+<tab title="Python Runner">
+
+
+The following script prints the [checkout directory](build-checkout-directory.md) path (configuration parameter) and TeamCity server version (environment variable) to the build log.<br/><br/>
+
+```Python
+print(f'Current checkout directory is: %\teamcity.build.checkoutDir%')
+print(f'TeamCity version is: %\env.TEAMCITY_VERSION%')
+# or
+print(f"TeamCity version is: {os.environ['TEAMCITY_VERSION']}")
+```
+
+</tab>
+
+<tab title="C# Script Runner">
+
+The following script obtains the [checkout directory](build-checkout-directory.md) path and appends an additional path to it:<br/><br/>
+
+```C#
+string fullPath = Path.Combine("%\teamcity.build.checkoutDir%", "myFolder/bin");
+Console.WriteLine(fullPath);
+```
+
+To get values of environment variables, use the [Environment.GetEnvironmentVariable](https://learn.microsoft.com/en-us/dotnet/api/system.environment.getenvironmentvariable?view=net-7.0) method:<br/><br/>
+
+```C#
+Console.WriteLine("Predefined variable value = " + System.Environment.GetEnvironmentVariable("TEAMCITY_VERSION"));
+Console.WriteLine("Custom variable value = " + System.Environment.GetEnvironmentVariable("My.Custom.Env.Variable"));
+```
+
+You can also add parameter references in the `%\parameter_name%` format to the **Script parameters** field of the runner. These parameters will then be available from the global `Args` array.
+
+
+For example, the runner that executes the script below has the `%\nuget.package.name%` parameter added to its **Script parameters**. The C# script retrieves the NuGet package name and calculates the number of the next package version.<br/><br/>
+
+```C#
+using System.Linq
+Props["version"] =
+    GetService<INuGet>()
+    .Restore(Args[0], "*", "net6.0"
+    .Where(i => i.Name == Args[0])
+    .Select(i => i.Version)
+    .Select(i => new Version(i.Major,i.Minor,i.Build+1))
+    .DefaultIfEmpty(new Version[1,0,0])
+    .Max()
+    .ToString();
+Console.WriteLine($"Version number: {Props["version"]}", Success)
+```
+</tab>
+
+</tabs>
+
+</td></tr></table>
+
+You can use parameters to pass simple data from one step/script to another. To do this, send the `setParameter` [service message](service-messages.md) from a script that calculates new parameter values.
 
 ```Shell
 echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.agent.name%']"
 ```
 
-Example: ??? Need a good use case here
-
-Check the current day of week - modify parameter if needed - use the updated value in the following step
+In the following configuration a C# script checks the current day of week and sets a corresponding value to the `day.of.week` parameter. The updated parameter value is then used by a subsequent Python runner.
 
 ```Kotlin
 object MyBuildConf : BuildType({
@@ -137,157 +253,36 @@ object MyBuildConf : BuildType({
 })
 ```
 
-## Sharing Simple Data Between Builds in a Chain
+### Pass Values to Builders
+
+[Maven](maven.md), [](gradle.md), [](ant.md), [](nant.md), and [](net.md) runners allow you to reference TeamCity parameters in build configuration files. This allows you to pass required values to the build process.
+
+> ???? Current docs say parameters are passed without "env." prefix, but I can actually find these in our space repo build files:
+>
+> ```XML
+> <properties>
+>     <test.property>${env.MY_TEST_VAR}</test.property>
+>     <testProperty>${test.property}</testProperty>
+> </properties>
+> ```
+> <br/>
+> ```XML
+> <echo message="${env.ENV_PARAM}" level="info"/>
+> <echo message="${SYSTEM_PARAM}" level="info"/>
+> ```
+> <br/>
+> ```XML
+> <condition property="javadocPath" value="${env.JDK_11}/bin/javadoc" >
+> ```
+>
+{type="warning"}
 
 
-* Purpose: pass data generated by one build so that it can be used by a next (dependent) build
-* Accepted parameter types: ???
+For Maven, Ant, and NAnt runners, use the `${parameterName}` syntax inside build script files to reference a parameter.
 
-Example:
+<tabs>
 
-First build (build configuration ID is "ConfigA"):
-
-```Shell
-TAG=v1
-docker build -f Dockerfile --tag your.registry/MyApp:${TAG}
-docker push your.registry/MyApp:v1
-echo "##teamcity[setParameter name='DockerImageName' value='MyApp:${TAG}']"
-```
-{interpolate-variables="false"}
-
-Dependent build (has a snapshot dependency to the first build):
-
-```Shell
-docker run -d your.registry/%\dep.ConfigA.DockerImageName%
-```
-
-Example 2:
-
-TBD -- artifact dependencies, need a nice use case
-
-
-
-## Inside Build Scripts
-
-* Purpose: pass a specific value to the build process, and use this value inside commands
-* Accepted parameter types: both config and env ?????
-
-Examples
-
-### C# Script Runner
-
-Using env variables:
-
-```C#
-Console.WriteLine("Predefined variable value = " + System.Environment.GetEnvironmentVariable("TEAMCITY_VERSION"));
-Console.WriteLine("Custom variable value = " + System.Environment.GetEnvironmentVariable("My.Custom.Env.Variable"));
-```
-
-Using configuration parameters:
-
-```C#
-string fullPath = Path.Combine("%\teamcity.build.checkoutDir%", "myFolder/bin");
-Console.WriteLine(fullPath);
-```
-
-
-Passing parameter values to the global `Args` array: add parameter references in the `%\parameter_name%` format to the "Script parameters" field of the runner.
-
-Example: the `%\nuget.package.name%` is added to "Script parameters" and can be retrieved in the script via `Args[0]`. Restore NuGet package, get its version, and calculate the next version number. This value can later be used for building and pushing a package.
-{interpolate-variables="false"}
-
-```C#
-using System.Linq
-Props["version"] =
-    GetService<INuGet>()
-    .Restore(Args[0], "*", "net6.0"
-    .Where(i => i.Name == Args[0])
-    .Select(i => i.Version)
-    .Select(i => new Version(i.Major,i.Minor,i.Build+1))
-    .DefaultIfEmpty(new Version[1,0,0])
-    .Max()
-    .ToString();
-Console.WriteLine($"Version number: {Props["version"]}", Success)
-```
-
-
-### Command Line Runner
-
-Report values of a checkout directory (config parameter) and TeamCity server version (env variable)
-
-```Shell
-echo "Checkout directory: %\teamcity.build.checkoutDir%"
-echo "Server version: '$TEAMCITY_VERSION'"
-```
-
-
-Copy a file
-
-```Shell
-set -e -x
-
-FILE=%\teamcity.build.branch%/fileToCopy.xml
-if test -f "$FILE"; then
-    cp "$FILE" folderA/folderB
-fi
-```
-
-Download an "libraries.tar.gz" archive from the server whose URL is stored as the `serverURL` config parameter, and save it to the checkout directory with the build number in its name (for example, the archive's name for build #54 will be "libraries_54.tar.gz"):
-
-```Shell
-curl -o libraries_%\build.number%.tar.gz %\serverUrlBase%libraries.tar.gz
-```
-
-
-
-
-### Python Runner
-
-Config parameter:
-
-```Python
-print(f'Current checkout directory is: %\teamcity.build.checkoutDir%')
-```
-
-Env variable:
-
-```Python
-print(f'TeamCity version is: %\env.TEAMCITY_VERSION%')
-# or
-print(f"TeamCity version is: {os.environ['TEAMCITY_VERSION']}")
-```
-
-
-
-### Ant, Maven, NAnt Runners
-
-Use `${parameterName}` inside build script files
-
-???? Current docs say parameters are passed without "env." prefix, but I can actually find these in our space repo build files:
-
-```XML
-<properties>
-    <test.property>${env.MY_TEST_VAR}</test.property>
-    <testProperty>${test.property}</testProperty>
-</properties>
-
-<echo message="${env.ENV_PARAM}" level="info"/>
-<echo message="${SYSTEM_PARAM}" level="info"/>
-
-<condition property="javadocPath" value="${env.JDK_11}/bin/javadoc" >
-```
-
-Examples:
-
-Ant
-
-```XML
-<target name="buildmain">
-    <ant dir="${teamcity.build.checkoutDir}" antfile="${teamcity.build.checkoutDir}/build-test.xml" target="masterbuild_main"/>
-</target>
-```
-
-Maven
+<tab title="Maven">
 
 ```XML
 <!--pom.xml file-->
@@ -318,40 +313,75 @@ Maven
 </build>
 ```
 
+</tab>
 
-### .NET Runner
+<tab title="Ant">
 
-???
+```XML
+<target name="buildmain">
+    <ant dir="${teamcity.build.checkoutDir}" antfile="${teamcity.build.checkoutDir}/build-test.xml" target="masterbuild_main"/>
+</target>
+```
+
+</tab>
+
+</tabs>
+
+For .NET, use the `$(<parameter_name>)` syntax.
+
+> * MSBuild does not support names with dots (.), so you need to replace dots with underscores ("_") when using the parameter inside a build script.
+> * The `nuget push` and `nuget delete` commands do not support parameters.
+>
+{type="note"}
+
+```XML
+???????????????
+```
+
+> Gradle -- only SYSTEM properties???
+> 
+{type="warning"}
+
+For [Gradle](gradle.md) runner, TeamCity properties can be accessed as Gradle properties (similar to the ones defined in the `gradle.properties` file). If the property name is allowed as a Groovy identifier (does not contain dots), use the following syntax:
+
+```Shell
+println "Custom user property value is $\{customUserProperty\}"
+```
+
+Otherwise, if the property has dots in its name (for example, `build.vcs.number.1`), use the `project.ext["build.vcs.number.1"]` syntax instead.
 
 
-## Additional Runner Arguments and Settings
 
-* Purpose: specify additional runner settings, such as command arguments. For example, additional arguments for "mvn build" command that a Maven build executes.
-* Accepted properties: all (?????) env.JDK_VER_PATH variables seems legit
 
-UI:
+### Share Values Between Chain Builds
 
-Use corresponding fields in the TeamCity UI.
+TeamCity parameters allow you to exchange values between configurations of a [build chain](build-chain.md). See this help article for more information: [](use-parameters-in-build-chains.md).
 
-Examples:
 
-Specify the additional "OutputType" property for the .NET `build` command.
+
+### Set Runner Arguments and Settings
+
+You can use references to parameters instead of plain values when specifying additional runner settings, such as command-line arguments.
+
+For example, you can reference a parameter that stores the value of the "OutputType" parameter for the [](net.md) runner.
+
+<img src="dk-params-additionalSettings.png" width="706" alt="Additional parameters"/>
 
 ```Kotlin
 object MyBuildConfig : BuildType({
     params {
-        param("DotNetOutputType", "WinExe")
+        param("dotnet.output.type", "WinExe")
     }
 
     steps {
         dotnetBuild {
-            args = "-p:OutputType=%\DotNetOutputType%"
+            args = "-p:OutputType=%\dotnet.output.type%"
         }
     }
 })
 ```
 
-Define two Maven variables
+The following [](maven.md) step defines two new variables.
 
 ```Kotlin
 steps {
@@ -362,7 +392,7 @@ steps {
 }
 ```
 
-Specify the specific JDK version the Gradle runner should use
+The code below forces the [](gradle.md) runner to use the specific version of agent JDK instead of the default one.
 
 ```Kotlin
 steps {
@@ -374,11 +404,7 @@ steps {
 }
 ```
 
-
-
-
-
-## Custom Build Numbers and Tags
+### Custom Build Numbers and Tags
 
 Custom build number: Conf Settings | General Settings | Build Number format
 
@@ -418,7 +444,7 @@ object MyBuildConf : BuildType({
 ```
 
 
-## VCS Root and Checkout Rule Settings
+### VCS Root and Checkout Rule Settings
 
 VCS root settings - tried creating the new "branch.default" parameter that equals "refs/heads/master" and referencing this parameter in the "Default branch". Fires the "Test connection failed in Parameters Test / Gradle
 Cannot find revision of the default branch '%\branch.default%'" error.
@@ -462,7 +488,7 @@ object GoalInBuildScripts : BuildType({
 ```
 
 
-## Artifact Rules
+### Artifact Rules
 
 UI: Build Conf Settings | General Settings | Artifact paths
 
