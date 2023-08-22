@@ -421,13 +421,13 @@ Other .NET runners:
 
 <tr><td>
 
-[Duplicates Finder for C# and VB.NET code](duplicates-finder-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html)
+[Duplicates Finder for C# and VB.NET code](duplicates-finder-resharper.md) based on [ReSharper Command Line Tools](https://www.jetbrains.com/resharper/features/command-line.html)
 
 </td><td>Supported languages are C# up to version 4.0 and VB.NET version 8.0 - 10.0</td><td>.NET Framework 4.6.1 or later installed on the build agent</td></tr>
 
 <tr><td>
 
-[Inspections for .NET](inspections-resharper.md) based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html)
+[Inspections for .NET](inspections-resharper.md) based on [ReSharper Command Line Tools](https://www.jetbrains.com/resharper/features/command-line.html)
 
 </td><td></td><td>.NET Framework 4.6.1 or later installed on the build agent</td></tr>
 
@@ -858,7 +858,7 @@ Supported Coverage Tools
 
 <td>
 
-JetBrains dotCover coverage. Requires [JetBrains dotCover](http://www.jetbrains.com/dotcover/) installed in Microsoft Visual Studio.
+JetBrains dotCover coverage. Requires [JetBrains dotCover](https://www.jetbrains.com/dotcover/) installed in Microsoft Visual Studio.
 
 </td></tr></table>
 

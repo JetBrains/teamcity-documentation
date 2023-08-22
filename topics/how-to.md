@@ -54,7 +54,7 @@ Starting up the TeamCity server on macOS is quite similar to starting Tomcat on 
 2. Create the `/Library/LaunchDaemons/jetbrains.teamcity.server.plist` file with the following content:
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
     <dict>
         <key>WorkingDirectory</key>
@@ -277,7 +277,7 @@ The parameters below can be changed in the `postgresql.conf` file located in the
 
 ### shared_buffers
 
-The default value of [http://www.postgresql.org/docs/current/static/runtime-config-resource.html#GUC-SHARED-BUFFERS](http://www.postgresql.org/docs/current/static/runtime-config-resource.html#GUC-SHARED-BUFFERS) parameter is too small and should be increased:
+The default value of [https://www.postgresql.org/docs/current/static/runtime-config-resource.html#GUC-SHARED-BUFFERS](https://www.postgresql.org/docs/current/static/runtime-config-resource.html#GUC-SHARED-BUFFERS) parameter is too small and should be increased:
 
 
 ```Shell
@@ -288,7 +288,7 @@ shared_buffers=512MB
 
 ### synchronous_commit
 
-If TeamCity is the only application using the PostgreSQL database, we recommend disabling the [http://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT](http://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT) parameter:
+If TeamCity is the only application using the PostgreSQL database, we recommend disabling the [https://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT](https://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT) parameter:
 
 ```Shell
 
@@ -301,7 +301,7 @@ synchronous_commit=off
 ### checkpoint-related parameters
 [//]: # (AltHead: checkpoint_segments)
 
-For write-intensive applications such as TeamCity, it is recommended to change some of the [checkpoint-related parameters](http://www.postgresql.org/docs/current/static/runtime-config-wal.html#RUNTIME-CONFIG-WAL-CHECKPOINTS):
+For write-intensive applications such as TeamCity, it is recommended to change some of the [checkpoint-related parameters](https://www.postgresql.org/docs/current/static/runtime-config-wal.html#RUNTIME-CONFIG-WAL-CHECKPOINTS):
 
 For __PostgreSQL 9.5 and later__:
 
@@ -456,7 +456,7 @@ Consider transferring the relevant environment if it was specially modified for 
 
 A single TeamCity license __cannot be used on two running servers__ at the same time.
 * A copy of the server created for redundancy/backup purposes can use the same license as only one of the servers will be running at a time.
-* A copy of the server created for testing purposes requires an additional license. You can get the time-limited TeamCity [evaluation license](licensing-policy.md) once from the official TeamCity [download page](http://www.jetbrains.com/teamcity/download/). If you need an extension of the license or you have already evaluated the same TeamCity version, please [contact our sales department](http://www.jetbrains.com/company/contacts/index.html#Contacts_?TeamCity).
+* A copy of the server created for testing purposes requires an additional license. You can get the time-limited TeamCity [evaluation license](licensing-policy.md) once from the official TeamCity [download page](https://www.jetbrains.com/teamcity/download/). If you need an extension of the license or you have already evaluated the same TeamCity version, please [contact our sales department](https://www.jetbrains.com/company/contacts/index.html#Contacts_?TeamCity).
 * A copy of the server intended to run at the same time as the main one regularly/for production purposes requires a separate license.
 
 ### Copied Server Checklist

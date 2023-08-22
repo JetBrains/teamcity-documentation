@@ -20,7 +20,7 @@ Before installing the server, make sure to:
 
 TeamCity installation package is identical for both Professional and Enterprise Editions.
 
-The [TeamCity download](http://www.jetbrains.com/teamcity/download/) page on the official JetBrains website provides the following installation options:
+The [TeamCity download](https://www.jetbrains.com/teamcity/download/) page on the official JetBrains website provides the following installation options:
 
 <table><tr>
 

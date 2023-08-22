@@ -117,7 +117,7 @@ To promote a build, open the build results page of the dependency build and clic
 For example, your build configuration A is configured to take artifacts from the last successful build of configuration B, but you want to run a build of configuration A using artifacts of a different build of configuration B (not the last successful build), so you promote an earlier build of B.   
 Build promotion affects only a single run of the dependent build. Once you click __Promote__, a build of the dependent build configuration which uses the artifacts of the specified build is queued. Any further runs of the dependent build configuration will use artifacts as configured (last successful, last pinned, and so on), unless you use another promotion.
 
-More details are available in the [related blog post](http://blog.jetbrains.com/teamcity/2012/04/teamcity-build-dependencies-2/).
+More details are available in the [related blog post](https://blog.jetbrains.com/teamcity/2012/04/teamcity-build-dependencies-2/).
 
  <seealso>
         <category ref="installation">

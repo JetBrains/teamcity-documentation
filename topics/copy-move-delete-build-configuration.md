@@ -13,7 +13,7 @@ Build configurations can be copied and moved to another project by project admin
 
 On copying, TeamCity automatically assigns a new [ID](configuring-general-settings.md#build-configuration-id) to the copy. It is also possible to change the ID manually. Selecting the __Copy associated user, agent and other settings__ option makes sure that all the settings like notification rules or agent's compatibility are exactly the same for the copied and original build configurations for all the users and agents affected.
 
-If the build configuration uses VCS roots or is associated with a template, which is not accessible in the target project (does not belong to the target project or one of its parent projects), the copies of these VCS roots and the template will be created in the target project (also see the related issue [TW-28550](http://youtrack.jetbrains.com/issue/TW-28550)).
+If the build configuration uses VCS roots or is associated with a template, which is not accessible in the target project (does not belong to the target project or one of its parent projects), the copies of these VCS roots and the template will be created in the target project (also see the related issue [TW-28550](https://youtrack.jetbrains.com/issue/TW-28550)).
 
 <note product="tc">
 

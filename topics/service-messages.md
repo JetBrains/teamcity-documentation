@@ -998,7 +998,7 @@ To initiate monitoring of several directories or parse several types of the repo
 
 
 
-> Only several reports of different types can be included in a build. Processing reports of several inspections or duplicates tools in a single build is not supported. See the [related feature request](http://youtrack.jetbrains.com/issue/TW-14260).
+> Only several reports of different types can be included in a build. Processing reports of several inspections or duplicates tools in a single build is not supported. See the [related feature request](https://youtrack.jetbrains.com/issue/TW-14260).
 >
 {type="note"}
 

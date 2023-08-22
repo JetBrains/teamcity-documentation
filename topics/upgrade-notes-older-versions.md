@@ -1338,7 +1338,7 @@ All known issues mentioned for 10.0 are fixed.
 ### Known Issues
 {id="known-issues-12"}
 
-(fixed in 10.0.2) TeamCity server temp folder can fill up if an [agent tool](installing-agent-tools.md) is installed as a directory in \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/plugins\/.tools. [Details and workaround](http://youtrack.jetbrains.net/issue/TW-46648).
+(fixed in 10.0.2) TeamCity server temp folder can fill up if an [agent tool](installing-agent-tools.md) is installed as a directory in \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/plugins\/.tools. [Details and workaround](https://youtrack.jetbrains.com/issue/TW-46648).
 
 ## Changes from 9.1.x to 10.0
 
@@ -1800,7 +1800,7 @@ __Since TeamCity 9.0__, disk\-stored XML settings definitions of projects, build
 
 The location of the build logs in the internal format stored under [TeamCity Data Directory](teamcity-data-directory.md) has changed. The build log files in internal format are now stored under hidden build artifacts.Namely, the location has changed from `system/messages/CHyy/xxyy.*` to `system/artifacts/<PROJECT EXTERNAL ID>/<BUILD CONFIGURATION NAME>/xxyy/.teamcity/logs/buildLog.*`.
 
-Old build logs are migrated to the new location on TeamCity server startup ([TW-37362](http://youtrack.jetbrains.com/issue/TW-37362)). To avoid this migration, `teamcity.skip.logs.migration` internal property should be set __before__ server startup.
+Old build logs are migrated to the new location on TeamCity server startup ([TW-37362](https://youtrack.jetbrains.com/issue/TW-37362)). To avoid this migration, `teamcity.skip.logs.migration` internal property should be set __before__ server startup.
 
 
 [//]: # (Internal note. Do not delete. "Upgrade Notesd333e2251.txt")    
@@ -1824,7 +1824,7 @@ If the proxy is misconfigured or does not support the WebSocket protocol, a serv
 {id="rest-api-5"}
 
 REST API uses version 9.0. Previous versions of API are still available under `/app/rest/8.1`, `/app/rest/7.0`, `/app/rest/6.0` URLs.
-* Change bean: the `webLink` attribute is renamed to `webUrl` to match other beans ([TW-34398](http://youtrack.jetbrains.com/issue/TW-34398)).
+* Change bean: the `webLink` attribute is renamed to `webUrl` to match other beans ([TW-34398](https://youtrack.jetbrains.com/issue/TW-34398)).
 * Sub\-elements representing empty collections in some of the beans are no longer included into responses (used to be included as an empty tag in XML).
 * the builds `changes` element does not include the "count" attribute by default (for performance reasons), count can still be included by providing fields parameter like: "fields=$long,changes(count,href)"
 * The `/app/rest/agents` request now returns all the authorized agents by default (used to include unauthorized connected agents as well)
@@ -1907,11 +1907,11 @@ A new "VSTest.Console" runner which first appeared in TeamCity 8.1 is in experim
 
 #### Known issue with PowerShell runner
 
-PowerShell runner plugin is broken in 8.1. Fix is available, please follow instructions in [issue comment](http://youtrack.jetbrains.com/issue/TW-21554#comment=27-676676).
+PowerShell runner plugin is broken in 8.1. Fix is available, please follow instructions in [issue comment](https://youtrack.jetbrains.com/issue/TW-21554#comment=27-676676).
 
 #### Known issue with Command Line Runner
 
-Command line runner using "Executable with parameters" option can process quotes (") and percentage signs (%\) in a bit different way then in previous TeamCity versions (see details in the [issue](http://youtrack.jetbrains.com/issue/TW-35087)). To switch back to the previous (8.0) behavior you may specify command.line.run.as.script=false configuration parameter in a build configuration or in a project. The issue is fixed in 8.1.1.   
+Command line runner using "Executable with parameters" option can process quotes (") and percentage signs (%\) in a bit different way then in previous TeamCity versions (see details in the [issue](https://youtrack.jetbrains.com/issue/TW-35087)). To switch back to the previous (8.0) behavior you may specify command.line.run.as.script=false configuration parameter in a build configuration or in a project. The issue is fixed in 8.1.1.   
 The recommended approach is to switch to "Custom script" option instead of "Executable with parameters" in command line runner.
 
 #### Memory Settings
@@ -1935,7 +1935,7 @@ The `build.triggeredBy` and `build.triggeredBy.username` configuration parameter
 
 #### Shared Resources build feature
 
-If the build takes lock on all values of a resource with custom values, these values are provided as lock values in build parameters. Corresponding issue: [TW-29779](http://youtrack.jetbrains.com/issue/TW-29779)
+If the build takes lock on all values of a resource with custom values, these values are provided as lock values in build parameters. Corresponding issue: [TW-29779](https://youtrack.jetbrains.com/issue/TW-29779)
 
 #### TeamCity Disk Space Watcher
 
@@ -1946,18 +1946,18 @@ The `teamcity.diskSpaceWatcher.softThreshold` property is removed.
 
 #### PowerShell
 
-The PowerShell plugin now uses the version that was specified in the UI as the `-Version` command line argument when executing scripts. Corresponding issue: [TW-33472](http://youtrack.jetbrains.com/issue/TW-33472)
+The PowerShell plugin now uses the version that was specified in the UI as the `-Version` command line argument when executing scripts. Corresponding issue: [TW-33472](https://youtrack.jetbrains.com/issue/TW-33472)
 
 #### REST API
 {id="rest-api-6"}
 
-The latest version of the API has not changed, it is still "8.0" while there are changes in the API detailed below. If you find this inconvenient for your REST API usages, please comment in the corresponding [issue](http://youtrack.jetbrains.com/issue/TW-35227).
+The latest version of the API has not changed, it is still "8.0" while there are changes in the API detailed below. If you find this inconvenient for your REST API usages, please comment in the corresponding [issue](https://youtrack.jetbrains.com/issue/TW-35227).
 
 Entities returned in the response of REST API requests might now exclude attributes/elements with empty/default values. This is relevant for boolean fields with "false" value and empty collections. The recommended approach is to make sure the client code assumes "false" as a value for not present boolean attributes/elements.
 
 "projectName" of buildType node now contains full project name (with the names of the parent projects) instead of the short name of the project.
 
-In the lists of builds, "startDate" attribute is not longer included in the "build" node. It has become an element instead of attribute to match the full build data representation. If your REST API usage is affected, check [a way](http://youtrack.jetbrains.com/issue/TW-35032#comment=27-704059) to get that element in a request for the list of builds.
+In the lists of builds, "startDate" attribute is not longer included in the "build" node. It has become an element instead of attribute to match the full build data representation. If your REST API usage is affected, check [a way](https://youtrack.jetbrains.com/issue/TW-35032#comment=27-704059) to get that element in a request for the list of builds.
 
 Requests /app/rest/buildTypes/XXX/parameters/YYY and /app/rest/projects/XXX/parameters/YYY now support "text/plain" and "application/xml" responses. To get plain text response (which was the only supported way before 8.1) you will need to supply "Accept: text/plain" header to the request.
 
@@ -2061,7 +2061,7 @@ __Other Changes__
 Requests for builds ".../builds/&lt;locator&gt;/..." and ".../builds?locator=&lt;locator&gt;" no longer return personal and canceled builds by default. To include those, make sure you add ",personal:any,canceled:any" to the locators.
 
 The "relatedIssues" element of the build entity no longer contains a full list of related issues. It has only the "href" attribute whose value can be used to get the related issues via a separate request.   
-There is also an internal property "rest.beans.build.inlineRelatedIssues" which can be set to `true` to return the "relatedIssues" node back for compatibility. See [TW-20025](http://youtrack.jetbrains.com/issue/TW-20025) for details. Also, the ".../builds/xxx/related\-issues" URL is renamed to ".../builds/xxx/relatedIssues".
+There is also an internal property "rest.beans.build.inlineRelatedIssues" which can be set to `true` to return the "relatedIssues" node back for compatibility. See [TW-20025](https://youtrack.jetbrains.com/issue/TW-20025) for details. Also, the ".../builds/xxx/related\-issues" URL is renamed to ".../builds/xxx/relatedIssues".
 
 The "source\_buildTypeId" property is dropped from snapshot and artifact dependency nodes. Instead, the "source\-buildType" sub\-element is added with a reference to the build type.   
 Creating dependencies is still supported with the "source\_buildTypeId" property, but is deprecated. There is an internal property "rest.compatibility.includeSourceBuildTypeInDependencyProperties" which can be set to `true` to include the "source\_buildTypeId" property back.
@@ -2105,10 +2105,10 @@ The issue only manifests when the server runs under Java 1.7.
 
 See also:
 * [http://mail-archives.apache.org/mod_mbox/tomcat-users/201302.mbox/%3C512559F7.4080001@gmail.com%3E](http://mail-archives.apache.org/mod_mbox/tomcat-users/201302.mbox/%3C512559F7.4080001@gmail.com%3E)
-* [http://youtrack.jetbrains.com/issue/TW-30221#comment=27-561843](http://youtrack.jetbrains.com/issue/TW-30221#comment=27-561843)
+* [https://youtrack.jetbrains.com/issue/TW-30221#comment=27-561843](https://youtrack.jetbrains.com/issue/TW-30221#comment=27-561843)
 ## Changes from 7.1.4 to 7.1.5
 
-__teamcity.build.branch__ parameter semantics has changed, see [http://youtrack.jetbrains.com/issue/TW-23699#comment=27-448002](http://youtrack.jetbrains.com/issue/TW-23699#comment=27-448002)
+__teamcity.build.branch__ parameter semantics has changed, see [https://youtrack.jetbrains.com/issue/TW-23699#comment=27-448002](https://youtrack.jetbrains.com/issue/TW-23699#comment=27-448002)
 
 ## Changes from 7.1.3 to 7.1.4
 
@@ -2124,15 +2124,15 @@ No noteworthy changes.
 
 No noteworthy changes.
 
-Please check up\-to\-date list of [known regressions](http://youtrack.jetbrains.com/issues/TW?q=Affected+versions%3A+%7BFaradi+7.1.3+%2824266%29%7D+tag%3Aregression) for the version in our issue tracker.
+Please check up\-to\-date list of [known regressions](https://youtrack.jetbrains.com/issues/TW?q=Affected+versions%3A+%7BFaradi+7.1.3+%2824266%29%7D+tag%3Aregression) for the version in our issue tracker.
 
 ## Changes from 7.1.1 to 7.1.2
 
 __Possible issues with hg server\-side checkout__   
-There is a known issue with 7.1.2 release: [TW-24405](http://youtrack.jetbrains.com/issue/TW-24405) which can reproduce when server\-side checkout, labeling or file content viewing are used for Mercurial repository.If you experience the error with message "abort: destination 'hg1' is not empty", please install the patch attached to the issue.
+There is a known issue with 7.1.2 release: [TW-24405](https://youtrack.jetbrains.com/issue/TW-24405) which can reproduce when server\-side checkout, labeling or file content viewing are used for Mercurial repository.If you experience the error with message "abort: destination 'hg1' is not empty", please install the patch attached to the issue.
 
 __Other known issues__   
-Please also check a list of [known regressions](http://youtrack.jetbrains.com/issues/TW?q=Affected+versions%3A+%7BFaradi+7.1.2+%2824170%29%7D+tag%3Aregression) for the version in our issue tracker.
+Please also check a list of [known regressions](https://youtrack.jetbrains.com/issues/TW?q=Affected+versions%3A+%7BFaradi+7.1.2+%2824170%29%7D+tag%3Aregression) for the version in our issue tracker.
 
 ## Changes from 7.1 to 7.1.1
 
@@ -2191,7 +2191,7 @@ No noteworthy changes.
 ## Changes from 7.0 to 7.0.1
 
 __HTML report tabs URLs Change__   
-If you use direct links for build\-level or project\-level [report tabs](including-third-party-reports-in-the-build-results.md), please update the links as they will [change](http://youtrack.jetbrains.com/issue/TW-20462#comment=27-302397) after upgrade. The change is necessary to make the feature more reliable.
+If you use direct links for build\-level or project\-level [report tabs](including-third-party-reports-in-the-build-results.md), please update the links as they will [change](https://youtrack.jetbrains.com/issue/TW-20462#comment=27-302397) after upgrade. The change is necessary to make the feature more reliable.
 
 ## Changes from 6.5.x to 7.0
 
@@ -2201,8 +2201,8 @@ Reproduces when path to test assemblies has several deep paths without wildcards
 
 Visible outcome: build hangs or fails with OutOfMemoryException error after "Starting ...JetBrains.BuildServer.NUnitLauncher.exe" link in the build log.
 
-The issue ([TW-20482](http://youtrack.jetbrains.com/issue/TW-20482)) is fixed and the fix will be included in the next release.   
-Patch with a fix is [available](http://youtrack.jetbrains.com/issue/TW-20482#comment=27-302393).
+The issue ([TW-20482](https://youtrack.jetbrains.com/issue/TW-20482)) is fixed and the fix will be included in the next release.   
+Patch with a fix is [available](https://youtrack.jetbrains.com/issue/TW-20482#comment=27-302393).
 
 __Minimum Supported Project JDK for Ant Runner__   
 Starting with this version Ant runner requires minimum of JDK 1.4 in __runtime__ build part (was 1.3 previously). This means that you will not be able to use TeamCity Ant runner if your project uses JDK 1.3 for compilation or tests running.For projects that require JDK 1.3 you can use command\-line runner instead and configure "XML report processing" build feature to parse test reports.
@@ -2218,7 +2218,7 @@ Starting with this version Ant runner requires minimum of JDK 1.4 in __runtime__
 {type="note"}
 
 __Project/Template parameters override__   
-In TeamCity 7.0 project parameters have higher priority than parameters defined in template, i.e. if there is a parameter with some name and value in the project and there is parameter with the same name and different value in template of the same project, value from the project will be used. This was not so in TeamCity 6.5 and was [changed](http://youtrack.jetbrains.com/issue/TW-17247) to be more flexible when template belongs to anohter project.Build configuration parameters have the highest priority, as usual.
+In TeamCity 7.0 project parameters have higher priority than parameters defined in template, i.e. if there is a parameter with some name and value in the project and there is parameter with the same name and different value in template of the same project, value from the project will be used. This was not so in TeamCity 6.5 and was [changed](https://youtrack.jetbrains.com/issue/TW-17247) to be more flexible when template belongs to anohter project.Build configuration parameters have the highest priority, as usual.
 
 <anchor name="no-sybase-support"/>
 
@@ -2230,7 +2230,7 @@ __Support for Sybase is discontinued__
 
 __REST API Changes__
 * Several objects got additional attributes and sub\-elements (e.g. BuildType, VcsRoot). Please check that your parsing code still works. _/buildTypes/_ path: BuildType object dropped runParameters field (as well as _/&lt;locator&gt;/runParameters_ path is dropped) in favor of _steps_ collection and _/&lt;locator&gt;/steps/_ path.
-* A [bug](http://youtrack.jetbrains.net/issue/TW-17478) fixed which resulted in non\-array JSON representation of single element arrays for some resources. Please check if your code is affected.
+* A [bug](https://youtrack.jetbrains.com/issue/TW-17478) fixed which resulted in non\-array JSON representation of single element arrays for some resources. Please check if your code is affected.
 * in build object, "dependency\-build" element is renamed to "snapshot\-dependencies", revisions/revision/vcs\-root is renamed to revisions/revision/vcs\-root\-intance (and it points to resolved VCS root instance now), revisions/revision/display\-version is renamed to "version".
 * in buildType object, "vcs\-root" element is renamed to "vcs\-root\-entries"
 
@@ -2267,7 +2267,7 @@ No noteworthy changes
 
 ## Changes from 6.5.4 to 6.5.5
 
-(Known issue infex in 6.5.6) .NET Duplicates finder may stop working, the patch is available, please see this comment: [http://youtrack.jetbrains.net/issue/TW-18784#comment=27-261174](http://youtrack.jetbrains.net/issue/TW-18784#comment=27-261174)
+(Known issue infex in 6.5.6) .NET Duplicates finder may stop working, the patch is available, please see this comment: [https://youtrack.jetbrains.com/issue/TW-18784#comment=27-261174](https://youtrack.jetbrains.com/issue/TW-18784#comment=27-261174)
 
 ## Changes from 6.5.3 to 6.5.4
 
@@ -2280,7 +2280,7 @@ No noteworthy changes
 ## Changes from 6.5.1 to 6.5.2
 
 __Maven runner__   
-Working with MAVEN\_OPTS has changed again. Hopefully for the last time within the 6.5.x iteration. (see [http://youtrack.jetbrains.net/issue/TW-17393](http://youtrack.jetbrains.net/issue/TW-17393))   
+Working with MAVEN\_OPTS has changed again. Hopefully for the last time within the 6.5.x iteration. (see [https://youtrack.jetbrains.com/issue/TW-17393](https://youtrack.jetbrains.com/issue/TW-17393))   
 Now TeamCity acts as follows:
 1. If MAVEN\_OPTS is set TeamCity takes JVM arguments from MAVEN\_OPTS
 2. If "JVM command line parameters" are provided in the runner settings, they are taken instead of MAVEN\_OPTS and __MAVEN\_OPTS is overwritten with this value to propagate it to nested Maven executions__.
@@ -2294,7 +2294,7 @@ __(Fixed known issue) Long upgrade time and slow clean-up under Oracle__
 ## Changes from 6.0.x to 6.5
 
 __(Known issue) Long upgrade time and slow clean-up under Oracle__   
-On first upgraded server start the database structures are converted and this can take a long time (hours on a large database) if you use Oracle external database ([TW-17094](http://youtrack.jetbrains.net/issue/TW-17094)). This is already fixed in 6.5.1.
+On first upgraded server start the database structures are converted and this can take a long time (hours on a large database) if you use Oracle external database ([TW-17094](https://youtrack.jetbrains.com/issue/TW-17094)). This is already fixed in 6.5.1.
 
 __Agent JVM upgrade__   
   With this version of TeamCity we added semi\-automatic upgrade of JVM used by the agents. If there is a Java 1.6 installed on the agent, and the agent itself is still running under the Java 1.5, TeamCity will ask to switch agent to Java 1.6. All you need is to review that detected path to Java is correct and confirm this switch, the rest should be done automatically. The operation is per\-agent, you'll have to make it for each agent separately. Note that we recommend to switch to Java 1.6, as at some point TeamCity will not be compatible with Java 1.5. Make sure newly selected java process has same firewall rules (i.e. port 9090 is opened to accept connections from server)
@@ -2306,7 +2306,7 @@ __IntelliJ IDEA 8 is not supported__
 Plugin for IntelliJ IDEA no longer supports IntelliJ IDEA 8.
 
 __Unsupported MySQL versions__   
-Due to [bugs](http://youtrack.jetbrains.net/issue/TW-16508#comment=27-219601) in MySQL 5.1.x TeamCity no longer supports MySQL versions in range 5.1 \- 5.1.48. TeamCity won't start with appropriate message if unsupported MySQL version is detected. Please upgrade your MySQL server to version 5.1.49 or later.
+Due to [bugs](https://youtrack.jetbrains.com/issue/TW-16508#comment=27-219601) in MySQL 5.1.x TeamCity no longer supports MySQL versions in range 5.1 \- 5.1.48. TeamCity won't start with appropriate message if unsupported MySQL version is detected. Please upgrade your MySQL server to version 5.1.49 or later.
 
 __Finish build properties are displayed__   
 Finished builds now display all their properties used in the build on "Parameters" tab. This can potentially expose names and values of parameters from other builds (those that the given build uses as artifact or snapshot dependency). Please make sure this is acceptable in your environment. You can also manage users who see the tab with "View build runtime parameters and data" permissions which is assigned "Project Developers" role by default.
@@ -2350,7 +2350,7 @@ __Email sending settings__
 Please check email sending settings are working correctly after upgrade (via Test connection on Administration &gt; Server Configuration &gt; EMail Notifier). If no authentication is needed, make sure login and password fields are blank. Non\-blank fields may cause email sending errors if SMTP server is not expecting authentication requests.
 
 __XML Report Processing__   
-Tests from Ant JUnit XML reports can be reported twice (see [TW-19058](http://youtrack.jetbrains.net/issue/TW-19058)), as we no longer automatically ignore TESTS\-xxx.xml report.   
+Tests from Ant JUnit XML reports can be reported twice (see [TW-19058](https://youtrack.jetbrains.com/issue/TW-19058)), as we no longer automatically ignore TESTS\-xxx.xml report.   
  To work around this, avoid using \*.xml mask and specify more concrete rules like TEST\-\*.xml or alike that will not match report with name starting with "TESTS\-"
 
 __Open API Changes__   
@@ -2365,7 +2365,7 @@ No noteworthy changes
 ## Changes from 6.0.1 to 6.0.2
 
 __Maven and XML Test Reporting Load CPU on Agent__   
-If you use Maven or XML test reporter and your build is CPU\-intensive, you might find important the [known issue](http://youtrack.jetbrains.net/issue/TW-15335). Patch is available, fixed in the following updates.
+If you use Maven or XML test reporter and your build is CPU\-intensive, you might find important the [known issue](https://youtrack.jetbrains.com/issue/TW-15335). Patch is available, fixed in the following updates.
 
 ## Changes from 6.0 to 6.0.1
 
@@ -2374,13 +2374,13 @@ No noteworthy changes
 ## Changes from 5.1.x to 6.0
 
 __Visual Studio Add\-in and Perforce__   
-There is critical bug in TeamCity 6.0 VS Add\-in when Perforce is enabled. This can cause Visual Studio hangs and crashes. The fixed add\-in version is [available](ftp://ftp.intellij.net/pub/.teamcity/TW-14765/vsAddinInstaller.zip). (related [issue](http://youtrack.jetbrains.net/issue/TW-14765)). The issue is fixed in TeamCity 6.0.1.
+There is critical bug in TeamCity 6.0 VS Add\-in when Perforce is enabled. This can cause Visual Studio hangs and crashes. The fixed add\-in version is [available](ftp://ftp.intellij.net/pub/.teamcity/TW-14765/vsAddinInstaller.zip). (related [issue](https://youtrack.jetbrains.com/issue/TW-14765)). The issue is fixed in TeamCity 6.0.1.
 
 __TFS checkout on agent__   
-TFS checkout on agent might refuse to work with errors. Patch is available, see the [comment](http://youtrack.jetbrains.net/issue/TW-14804#comment=27-185725). Related [issue](http://youtrack.jetbrains.net/issue/TW-14804). The issue is fixed in TeamCity 6.0.1.
+TFS checkout on agent might refuse to work with errors. Patch is available, see the [comment](https://youtrack.jetbrains.com/issue/TW-14804#comment=27-185725). Related [issue](https://youtrack.jetbrains.com/issue/TW-14804). The issue is fixed in TeamCity 6.0.1.
 
 __Error Changing Priority class__   
-You may encounter a browser error while changing priority number of a priority class. A patch is available in a related [issue](http://youtrack.jetbrains.net/issue/TW-14816). The issue is fixed in TeamCity 6.0.1.
+You may encounter a browser error while changing priority number of a priority class. A patch is available in a related [issue](https://youtrack.jetbrains.com/issue/TW-14816). The issue is fixed in TeamCity 6.0.1.
 
  
 
@@ -2430,7 +2430,7 @@ __Inspection and Duplicates runners require Java 1.6__
 "Inspections" and "Duplicates (Java)" runners now require Java JDK 1.6. Please ensure Java 1.6 is installed on relevant agents and check it is specified in the "JDK home path" setting of the runners.
 
 __XML Report Validation__   
-If you had invalid settings of "XML Report Processing" section of the build runners, you might find the Build Configurations reporting "Report paths must be specified" messages upon upgrade. In this case, please go to the runner settings and correct the configuration. (related [issue](http://youtrack.jetbrains.net/issue/TW-14821))
+If you had invalid settings of "XML Report Processing" section of the build runners, you might find the Build Configurations reporting "Report paths must be specified" messages upon upgrade. In this case, please go to the runner settings and correct the configuration. (related [issue](https://youtrack.jetbrains.com/issue/TW-14821))
 
 __Open API Changes__   
 See [Open API Changes](https://confluence.jetbrains.com/display/TCD18/Open+API+Changes) Several jars in `devPackage` were reordered, some moved under `runtime` subdirectory. Please update your plugin projects to accommodate for these changes.
@@ -2446,7 +2446,7 @@ All builds using Perforce checkout will do a clean checkout after server upgrade
 ## Changes from 5.1.2 to 5.1.3
 
 __Path to executable in Command line runner__   
-The [bug](http://youtrack.jetbrains.net/issue/TW-11840) was fully fixed. The behavior is the same as in pre\-5.1 builds.
+The [bug](https://youtrack.jetbrains.com/issue/TW-11840) was fully fixed. The behavior is the same as in pre\-5.1 builds.
 
 ## Changes from 5.1.1 to 5.1.2
 
@@ -2455,21 +2455,21 @@ Jabber notification sending errors are displayed in web UI for administrators ag
 ## Changes from 5.1 to 5.1.1
 
 __Path to executable in Command line runner__   
-The [bug](http://youtrack.jetbrains.net/issue/TW-11840) was partly fixed. The behavior is the same as in pre\-5.1 builds except for the case when you have the working directory specified and have the script in both checkout and working directory. The script from the working directory is used.
+The [bug](https://youtrack.jetbrains.com/issue/TW-11840) was partly fixed. The behavior is the same as in pre\-5.1 builds except for the case when you have the working directory specified and have the script in both checkout and working directory. The script from the working directory is used.
 
 __Path to script file in Solution runner and MSBuild runner__   
-The [bug](http://youtrack.jetbrains.net/issue/TW-11854) was fixed. The behavior is the same as in pre\-5.1 builds.
+The [bug](https://youtrack.jetbrains.com/issue/TW-11854) was fixed. The behavior is the same as in pre\-5.1 builds.
 
 ## Changes from 5.0.3 to 5.1
 
 
 
-> If you plan to upgrade from version 3.1.x to 5.1, you will need to modify some dtd files in `<TeamCity Data Directory>/config` before upgrade, read more in the issue: [TW-11813](http://youtrack.jetbrains.net/issue/TW-11813#comment=27-148589)
+> If you plan to upgrade from version 3.1.x to 5.1, you will need to modify some dtd files in `<TeamCity Data Directory>/config` before upgrade, read more in the issue: [TW-11813](https://youtrack.jetbrains.com/issue/TW-11813#comment=27-148589)
 >
 {type="tip"}
 
 
-> NCover 3 support may not work. See [TW-11680](http://youtrack.jetbrains.net/issue/TW-11680#comment=27-148573)
+> NCover 3 support may not work. See [TW-11680](https://youtrack.jetbrains.com/issue/TW-11680#comment=27-148573)
 >
 {type="tip"}
 
@@ -2499,10 +2499,10 @@ On this occasion, please consider either:
 __Vault Plugin is bundled__   
 In this version we bundled [SourceGear Vault VCS plugin](https://confluence.jetbrains.com/display/TW/Vault) (with experimental status). Please make sure to uninstall the plugin from `.BuildServer/plugins` (just delete the plugin's ZIP) if you installed it previously.
 
-__Path to executable in Command line runner__ A [bug](http://youtrack.jetbrains.net/issue/TW-11840) was introduced that requires changing the path to executable if working directory is specified in the runner.The bug is partly fixed in 5.1.1 and fully fixed in 5.1.3.
+__Path to executable in Command line runner__ A [bug](https://youtrack.jetbrains.com/issue/TW-11840) was introduced that requires changing the path to executable if working directory is specified in the runner.The bug is partly fixed in 5.1.1 and fully fixed in 5.1.3.
 
 __Path to script file in Solution runner and MSBuild runner__   
-A [bug](http://youtrack.jetbrains.net/issue/TW-11854) was introduced that requires changing the path to script if working directory is specified in the runner. The bug is fixed in 5.1.1.
+A [bug](https://youtrack.jetbrains.com/issue/TW-11854) was introduced that requires changing the path to script if working directory is specified in the runner. The bug is fixed in 5.1.1.
 
 __Open API Changes__   
 See [Open API Changes](https://confluence.jetbrains.com/display/TCD18/Open+API+Changes)
@@ -2512,7 +2512,7 @@ See [Open API Changes](https://confluence.jetbrains.com/display/TCD18/Open+API+C
 No noteworthy changes.
 
 
-> There is a known issue with .NET duplicates finder: [TW-11320](http://youtrack.jetbrains.net/issue/TW-11320)   
+> There is a known issue with .NET duplicates finder: [TW-11320](https://youtrack.jetbrains.com/issue/TW-11320)   
 Please use the patch attached to the issue.
 > 
 {type="tip"}
@@ -2529,7 +2529,7 @@ No noteworthy changes.
 ## Changes from 4.5.6 to 5.0
 
 __Pre\-5.0 Enterprise Server Licenses and Agent Licenses need upgrade__   
-With the version 5.0, we announce changes to the upgrade policy: Upgrade to 5.0 is not free. Every license (server and agent) bought since 5.0 will work with any TeamCity version released within one year since the license purchase. Please review the detailed information at [Licensing and Upgrade](http://www.jetbrains.com/teamcity/buy/index.jsp) section of the official site.
+With the version 5.0, we announce changes to the upgrade policy: Upgrade to 5.0 is not free. Every license (server and agent) bought since 5.0 will work with any TeamCity version released within one year since the license purchase. Please review the detailed information at [Licensing and Upgrade](https://www.jetbrains.com/teamcity/buy/index.jsp) section of the official site.
 
 __Bundled plugins__   
 If you used standalone plugins that are now bundled in 5.0, do not forget to remove the plugins from the `.BuildServer/plugins` directory.The newly bundled plugins are:

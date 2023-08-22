@@ -299,7 +299,7 @@ The first Maven execution called preparation phase is intended for building the 
 
 The second Maven execution called main phase executes the main goal (for example, `test`), thus performing only those tests affected by the change.
 
-Also, check the related [blog post](http://blogs.jetbrains.com/teamcity/2012/03/14/incremental-building-with-maven-and-teamcity/) on the topic.
+Also, check the related [blog post](https://blog.jetbrains.com/teamcity/2012/03/incremental-building-with-maven-and-teamcity/) on the topic.
 
 ### Docker Settings
 

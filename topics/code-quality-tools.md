@@ -19,7 +19,7 @@ You can also configure builds to fail based on the results and view the trends a
 #### IntelliJ IDEA-powered Code Analysis Tools
 
 These are available when you have an IntelliJ IDEA project (.idea directory or `.ipr` file) or a Maven project file (`pom.xml`) checked into your version control.
-* [Inspections (IntelliJ IDEA)](inspections.md) runs [IntelliJ IDEA inspections](http://www.jetbrains.com/idea/documentation/inspections.jsp) in TeamCity. These include more than 600 Java, HTML, CSS, JavaScript inspections.
+* [Inspections (IntelliJ IDEA)](inspections.md) runs [IntelliJ IDEA inspections](https://www.jetbrains.com/idea/documentation/inspections.jsp) in TeamCity. These include more than 600 Java, HTML, CSS, JavaScript inspections.
 * [Duplicates Finder (Java)](duplicates-finder-java.md) provides a report on the discovered repetitive blocks of code.
 
 #### Code Coverage tools
@@ -35,7 +35,7 @@ These are configured in the dedicated sections of the build runners.
 #### ReSharper-powered Tools
 
 These are available if you use Visual Studio.
-* [Inspections (ReSharper)](inspections-resharper.md) gathers results of [JetBrains ReSharper Code Inspections](http://www.jetbrains.com/resharper/webhelp/Code_Analysis__Code_Inspections.html) in your C#, VB.NET, XAML, XML, ASP.NET, JavaScript, CSS and HTML code.
+* [Inspections (ReSharper)](inspections-resharper.md) gathers results of [JetBrains ReSharper Code Inspections](https://www.jetbrains.com/resharper/webhelp/Code_Analysis__Code_Inspections.html) in your C#, VB.NET, XAML, XML, ASP.NET, JavaScript, CSS and HTML code.
 * [Duplicates Finder (ReSharper)](duplicates-finder-resharper.md) provides a report on the discovered repetitive blocks of C# and VB.NET code.
 * [FxCop](fxcop.md) uses [Microsoft FxCop](http://msdn.microsoft.com/en-us/library/bb429476(VS.80).aspx) preinstalled on a build agent.
 

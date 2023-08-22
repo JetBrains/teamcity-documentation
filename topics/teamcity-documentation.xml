@@ -29,7 +29,7 @@
             <a href="https://www.jetbrains.com/teamcity/features/" description="Learn what are the most powerful features of TeamCity and why it can be used in any area, for a product of any scale.">Key features</a>
             <a href="what-s-new-in-teamcity.md" description="See the recently introduced features.">What's New in TeamCity 2023.09</a>
             <a href="https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap" description="Learn about our plans for the future releases.">TeamCity Roadmap</a>
-            <a href="http://blogs.jetbrains.com/teamcity/" description="Follow our blog to get the freshest updates and tutorials.">TeamCity Blog</a>
+            <a href="https://blog.jetbrains.com/teamcity/" description="Follow our blog to get the freshest updates and tutorials.">TeamCity Blog</a>
             <a href="https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/index.html" description="Use Kotlin DSL to define TeamCity settings programmatically.">TeamCity Kotlin DSL</a>
         </highlighted-group>
 
@@ -66,8 +66,8 @@
                 <link-collection>
                     <title>Give feedback</title>
                     <a href="feedback.md" description="General recommendations on contacting us.">Feedback guide</a>
-                    <a href="http://youtrack.jetbrains.net/issues/TW" description="Report a problem here.">Issue Tracker</a>
-                    <a href="http://jb.gg/teamcity-forum" description="Contact us for a feedback or advice.">Forum</a>
+                    <a href="https://youtrack.jetbrains.com/issues/TW" description="Report a problem here.">Issue Tracker</a>
+                    <a href="https://jb.gg/teamcity-forum" description="Contact us for a feedback or advice.">Forum</a>
                     <a href="https://twitter.com/teamcity" description="Official TeamCity Twitter">Follow TeamCity on Twitter</a>
                 </link-collection>
             </group>

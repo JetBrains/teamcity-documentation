@@ -185,7 +185,7 @@ Pinned build
 : A build that is prevented from being removed during a scheduled [clean-up](teamcity-data-clean-up.md).
 
 Pre-tested commits
-: An approach that prevents committing defective code into a build, so the entire team's process is not affected. [These diagrams](http://www.jetbrains.com/teamcity/features/delayed_commit.html) illustrate the TeamCity approach to pre-tested commits.
+: An approach that prevents committing defective code into a build, so the entire team's process is not affected. [These diagrams](https://www.jetbrains.com/teamcity/features/delayed_commit.html) illustrate the TeamCity approach to pre-tested commits.
 
 Project
 : A collection of build configurations. A project can correspond to a software project, a specific version/release of a project or any other logical group of the build configurations. A project defines common settings for all its build configurations.

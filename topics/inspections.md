@@ -14,7 +14,7 @@ IntelliJ IDEA's code analysis engine is capable of inspecting your Java, JavaScr
 * improve the code structure and maintainability;
 * ensure the code conforms to guidelines, standards, and specifications.
 
-Refer to [IntelliJ IDEA documentation](http://www.jetbrains.com/idea/documentation/inspections.jsp) for more details.
+Refer to [IntelliJ IDEA documentation](https://www.jetbrains.com/idea/documentation/inspections.jsp) for more details.
 
 <note>
 
@@ -263,7 +263,7 @@ You can use references to external properties when defining the values, like `%\
 
 ## Inspection Parameters
 
-In IntelliJ IDEA-based IDEs, the code inspections reported are configured by an [inspection profile](http://www.jetbrains.com/idea/webhelp/code-inspection.html#d559109e437).    
+In IntelliJ IDEA-based IDEs, the code inspections reported are configured by an [inspection profile](https://www.jetbrains.com/idea/webhelp/code-inspection.html#d559109e437).    
 When running the inspections in TeamCity, you can specify the inspection profile to use: first you need to configure the inspection profile in IntelliJ IDEA-based IDE and then specify it in TeamCity.
 
 Follow these rules when preparing inspection profiles:
