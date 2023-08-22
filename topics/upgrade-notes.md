@@ -1486,7 +1486,7 @@ AWS SDK has been updated to 1.11.66 to support new instance types (r4.4xlarge, f
 
 ### Amazon EBS-Optimizied Instances
 
-The behavior of [EBS optimization](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html), enabled by default since TeamCity 10.0, is changed similarly to what EC2 console offers:
+The behavior of [EBS optimization](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html), enabled by default since TeamCity 10.0, is changed similarly to what EC2 console offers:
 
 1. EBS optimization is turned on by default for `c4.*`, `m4.*`, and `d2.*` (non-configurable).
 2. EBS optimization is turned off by default for any other instance types.

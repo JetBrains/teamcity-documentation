@@ -14,7 +14,7 @@ gem install <gem_name>
 
 You can refer to the [Ruby Gems Manuals](https://guides.rubygems.org/) for more information.
 
-Instead of the `gem` command, you can install gems using the [Bundler gem](http://bundler.io/).
+Instead of the `gem` command, you can install gems using the [Bundler gem](https://bundler.io/).
 
 <note>
 
