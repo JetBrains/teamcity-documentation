@@ -46,7 +46,7 @@ A test is not considered flaky if multiple builds of different configurations ar
 There is a known issue with parameterized test invocations with TestNG: TeamCity relies on the Surefire and Failsafe Maven plugins for the purposes of test result reporting, and these plugins ignore test parameters in their XML output. As a result, parameterized test invocations within the same build are erroneously treated as multiple identical test invocations, and, if some of the invocations fail, the test is marked as flaky with the _Flaky Failure_ reason. See the [related issue](https://youtrack.jetbrains.com/issue/TW-48097).
 </note>
 
-For [http://junit.org/](http://junit.org/) tests, a 3rd party [tempus-fugit](http://tempusfugitlibrary.org/) library can be used together with _JUnit_. It is sufficient to annotate a test with `@Intermittent` and use the `IntermittentTestRunner` test runner, as in the minimal example below:
+For [JUnit](https://junit.org/) tests, a 3rd party [tempus-fugit](http://tempusfugitlibrary.org/) library can be used together with _JUnit_. It is sufficient to annotate a test with `@Intermittent` and use the `IntermittentTestRunner` test runner, as in the minimal example below:
 
 
 ```JavaScript

@@ -608,7 +608,7 @@ Where `<btID>` is the [ID of the build configuration](managing-builds.md) C. The
 
 [Read more](predefined-build-parameters.md#Predefined+Configuration+Parameters) about dependency properties.
 
-Please watch/comment the issue related to sharing a build number [TW-7745](http://www.jetbrains.net/tracker/issue/TW-7745).
+Please watch/comment the issue related to sharing a build number [TW-7745](https://youtrack.jetbrains.com/issue/TW-7745).
 
 ## Make Temporary Build Files Erased between the Builds
 
@@ -831,7 +831,7 @@ Optionally, for each of the Tray Notifier instances you can explicitly specify t
 JetBrains.TrayNotifier.exe /allowMultiple /server:http://myTeamCityServer
 ```
 
-See also [details](http://jetbrains.net/tracker/issue/TW-4230#comment=27-14194) in the issue tracker.
+See also [details](https://youtrack.jetbrains.com/issue/TW-4230#comment=27-14194) in the issue tracker.
 
 ## Personal User Data Processing
 {product="tc"}

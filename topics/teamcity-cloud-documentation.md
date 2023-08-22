@@ -44,7 +44,7 @@ Welcome to the documentation for [TeamCity Cloud](https://www.jetbrains.com/team
 * [Known Issues](known-issues.md)
 * [Public Issue Tracker](https://youtrack.jetbrains.com/issues/TW)
 * [Community Forum](https://jb.gg/teamcity-forum)
-* [Video User Guide](http://blog.jetbrains.com/teamcity/2013/05/teamcity-user-guide-courseware/)
+* [Video User Guide](https://blog.jetbrains.com/teamcity/2013/05/teamcity-user-guide-courseware/)
 
 </td>
 

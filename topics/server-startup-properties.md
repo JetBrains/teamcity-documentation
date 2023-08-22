@@ -18,7 +18,7 @@ __Please do not change internal properties unless asked by the TeamCity support 
 Server administrators can review and edit internal properties in the TeamCity UI. To do this, go to __Administration | Server Administration | Diagnostics | Internal Properties__ and click __Edit internal properties__.   
 Many properties do not require the server restart, but some do. When the restart is required, it is usually specifically noted.
 
-The properties are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/internal.properties` file. This is a Java [properties file](http://en.wikipedia.org/wiki/.properties). You can edit the file manually and add each `<property_name>=<property_value>` on a separate line.
+The properties are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/internal.properties` file. This is a Java [properties file](https://en.wikipedia.org/wiki/.properties). You can edit the file manually and add each `<property_name>=<property_value>` on a separate line.
 
 An alternative but obsolete method of adding an internal property is to pass it as a `-D<name>=<value>` JVM option (see the [section below](#JVM+Options)).
 
@@ -30,7 +30,7 @@ If you need to pass additional JVM options to a TeamCity server (for example, `-
 
 >For general notes on the memory settings, refer to [this article](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server).
 
-If you run the server using the `runAll` or `teamcity-server` scripts or as a Windows service, you need to set the options via the OS [environment variables](http://en.wikipedia.org/wiki/Environment_variable) passed to the TeamCity server process:
+If you run the server using the `runAll` or `teamcity-server` scripts or as a Windows service, you need to set the options via the OS [environment variables](https://en.wikipedia.org/wiki/Environment_variable) passed to the TeamCity server process:
 * `TEAMCITY_SERVER_MEM_OPTS` — server JVM memory options (for example, `-Xmx750m`).
 * `TEAMCITY_SERVER_OPTS` — additional server JVM options (for example, `-Dteamcity.git.fetch.separate.process=false`).
 

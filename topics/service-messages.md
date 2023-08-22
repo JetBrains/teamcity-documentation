@@ -357,7 +357,7 @@ Indicates that `testName` was run. If the `testFailed` message is not present, t
 
 > All the other test messages (except for `testIgnored`) with the same `name` attribute must appear between the `testStarted` and `testFinished` messages (in that order).   
 > 
-> If using Ant's `echo` task to output the messages, make sure to include the `flowId` attribute with the same value in all the messages related to the same test / test suite as otherwise they [will not be processed correctly](http://jetbrains.net/tracker/issue/TW-5059).
+> If using Ant's `echo` task to output the messages, make sure to include the `flowId` attribute with the same value in all the messages related to the same test / test suite as otherwise they [will not be processed correctly](https://youtrack.jetbrains.com/issue/TW-5059).
 > 
 {type="note"}
 
@@ -1121,9 +1121,9 @@ One service message can add or remove a single tag. To add or remove multiple ta
 ## Libraries Reporting Results via TeamCity Service Messages
 
 Several platform-specific libraries from JetBrains and external sources are able to report the results  via TeamCity Service messages.
-* [Service messages .NET library](https://github.com/JetBrains/TeamCity.ServiceMessages) — .NET library for generating (and parsing) TeamCity service messages from .NET applications. See a [related blog post](http://blog.jetbrains.com/teamcity/2011/10/teamcity-service-messages-library-for-net/).
+* [Service messages .NET library](https://github.com/JetBrains/TeamCity.ServiceMessages) — .NET library for generating (and parsing) TeamCity service messages from .NET applications. See a [related blog post](https://blog.jetbrains.com/teamcity/2011/10/teamcity-service-messages-library-for-net/).
 * [Jasmine 2.0 TeamCity reporter](https://github.com/WilliamDoman/Jasmine2.0TeamCityReporter) — support for emitting TeamCity service messages from Jasmine 2.0 reporter
-* [Perl TAP Formatter](http://search.cpan.org/~thaljef/TAP-Formatter-TeamCity-0.04/) — formatter for Perl to transform TAP messages to TeamCity service messages
+* [Perl TAP Formatter](https://metacpan.org/release/THALJEF/TAP-Formatter-TeamCity-0.04) — formatter for Perl to transform TAP messages to TeamCity service messages
 * [PHPUnit 5.0](https://github.com/sebastianbergmann/phpunit/blob/9e86c85be3302eb125f15037ae6f496f62750a93/ChangeLog-5.0.md#500---2015-10-02) — supports TeamCity service messages for tests. For earlier PHPUnit versions, the following external libraries can be used: [PHPUnit Listener 1](https://github.com/realweb-team/deploytools), [PHPUnit Listener 2](https://github.com/maartenba/phpunit-runner-teamcity) — listeners which can be plugged via PHPUnit's` suite.xml` to produce TeamCity service messages for tests.
 * [Python Unit Test Reporting to TeamCity](https://pypi.python.org/pypi/teamcity-messages) — the package that automatically reports unit tests to the TeamCity server via service messages (when run under TeamCity and provided the testing code is adapted to use it).
 * [Mocha](https://github.com/visionmedia/mocha) — on-the-fly reporting via service messages for Mocha JavaScript testing framework. See the related [post](http://richarddingwall.name/2012/06/17/running-mocha-browser-tests-in-teamcity/) with instructions.

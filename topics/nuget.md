@@ -6,7 +6,7 @@
 TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager and, when NuGet is installed on agents, provides the following capabilities:
 * [Private NuGet feeds](using-teamcity-as-nuget-feed.md) based on the builds' published artifacts.
 {product="tc"}
-* A set of NuGet runners to be used in builds on Windows OS, as well as on Linux and macOS when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent. 
+* A set of NuGet runners to be used in builds on Windows OS, as well as on Linux and macOS when [Mono](https://www.mono-project.com/docs/getting-started/install/) is installed on the agent. 
     * [NuGet Installer](nuget-installer.md) build runner, which installs and updates NuGet packages.
     * [NuGet Pack](nuget-pack.md) build runner, which builds NuGet packages.
     * [NuGet Publish](nuget-publish.md) build runner, which publishes packages to a feed of your choice.
@@ -19,7 +19,7 @@ TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager 
 <chunk include-id="nuget-OS">
 
 __Supported Operating Systems__:   
-NuGet build runners are supported on build agents running Windows OS by default. Linux and macOS are supported when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent (only NuGet 3.3+ on Mono 4.4.2+ is supported).
+NuGet build runners are supported on build agents running Windows OS by default. Linux and macOS are supported when [Mono](https://www.mono-project.com/docs/getting-started/install/) is installed on the agent (only NuGet 3.3+ on Mono 4.4.2+ is supported).
 
 </chunk>
 

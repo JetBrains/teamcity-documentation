@@ -87,7 +87,7 @@ See also this [external posting](https://www.elastic.co/blog/we-are-out-of-memor
 
 ## Clearing Browser Caches
 
-There is a web UI-related issue which some users have encountered (and it cannot be reproduced on other computers) which is tied to the cached versions of content. If you have come across such problem, make sure your browser does not use cached versions of content by [clearing browser caches](http://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache).
+There is a web UI-related issue which some users have encountered (and it cannot be reproduced on other computers) which is tied to the cached versions of content. If you have come across such problem, make sure your browser does not use cached versions of content by [clearing browser caches](https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache).
 
 ## Logging with Log4j in Your Tests
 
@@ -131,7 +131,7 @@ set ERROR_CODE=1
 
 Most common indicators of conflicting software are errors like "Access is denied", "Permission denied" or _java.io.FileNotFoundException_ mentioning the file that is present and is writable by the user the agent/build runs under. Also, certain software running in the background (like antivirus) can significantly slow down such build agent operations as sources checkout, artifact publishing or even build running.
 
-Certain antivirus software like Kaspersky Internet Security can result in Java process crashes or other misbehavior like inability to access files. For example, see [this issue](http://jetbrains.net/tracker/issue/TW-7138).
+Certain antivirus software like Kaspersky Internet Security can result in Java process crashes or other misbehavior like inability to access files. For example, see [this issue](https://youtrack.jetbrains.com/issue/TW-7138).
 
 ESET antivirus can also slow down Ant/IntelliJ IDEA project builds a great deal (slowing down TCP connections to localhost on an agent).
 
@@ -163,13 +163,13 @@ If you use checkout on agent, add this property [on build agent](configuring-bui
 If JVM crashes while executing SVN-related code (e.g. under org.tmatesoft.svn package), you can try to disable it using one of the options:
 * Passing `-Dsvnkit.useJNA=false` JVM option to the crashing process (server or agent)
 * Making NTLM support less prioritative by passing the `-Dsvnkit.http.methods=Basic,Digest,NTLM` JVM option.  
-Anyway, upgrading the JVM used to the [latest available version](http://java.sun.com/javase/downloads) is recommended.
+Anyway, upgrading the JVM used to the [latest available version](https://java.sun.com/javase/downloads) is recommended.
 
 
 ## NUnit 2.4.6 Performance
 {product="tc"}
 
-Due to an issue in NUnit 2.4.6, its performance may be slower than NUnit 2.4.1. For additional information, refer to the corresponding issue in our issue tracker: [TW-4709](http://www.jetbrains.net/tracker/issue/TW-4709)
+Due to an issue in NUnit 2.4.6, its performance may be slower than NUnit 2.4.1. For additional information, refer to the corresponding issue in our issue tracker: [TW-4709](https://youtrack.jetbrains.com/issue/TW-4709)
 
 ## StarTeam Performance
 {product="tc"}

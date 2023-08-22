@@ -13,7 +13,7 @@ The _Visual Studio 2003_ build runner supports building Microsoft Visual Studio 
 
 <note>
 
-The Visual Studio 2003 build runner uses NAnt instead of MS Visual Studio 2003 to perform the build. As a result the agent is required to have .NET Framework 1.1 installed, however under certain conditions .NET Framework SDK 1.1 might be required. This NAnt solution task may behave differently than MS Visual Studio 2003. See [NAnt documentation](http://nant.sourceforge.net/release/latest/help/tasks/solution.html) for details.   
+The Visual Studio 2003 build runner uses NAnt instead of MS Visual Studio 2003 to perform the build. As a result the agent is required to have .NET Framework 1.1 installed, however under certain conditions .NET Framework SDK 1.1 might be required. This NAnt solution task may behave differently than MS Visual Studio 2003. See [NAnt documentation](https://nant.sourceforge.net/release/latest/help/tasks/solution.html) for details.   
 To use this runner you need to configure the [NAnt runner](nant.md).
 
 </note>

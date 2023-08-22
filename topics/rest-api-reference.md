@@ -3026,7 +3026,7 @@ The CCTray-format XML does not include paused build configurations by default. T
 
 [//]: # (AltHead: Request Sending Tool)
 
-You can use [curl](http://en.wikipedia.org/wiki/CURL) command line tool to interact with the TeamCity REST API.
+You can use [curl](https://en.wikipedia.org/wiki/CURL) command line tool to interact with the TeamCity REST API.
  
 Example command:
 ```Shell
@@ -3051,7 +3051,7 @@ curl -v -u USER:PASSWORD http://teamcity:8111/app/rest/projects --header "Conten
  
 1. Get [super user](super-user.md) token.
 2. Issue the request.
-3. Get [curl](http://en.wikipedia.org/wiki/CURL) command line tool and use a command line:
+3. Get [curl](https://en.wikipedia.org/wiki/CURL) command line tool and use a command line:
  
 ```Shell
 curl -v -u :SUPERUSER_TOKEN --request PUT http://teamcity:8111/app/rest/users/username:USERNAME/roles/SYSTEM_ADMIN/g/

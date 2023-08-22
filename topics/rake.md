@@ -1,11 +1,11 @@
 [//]: # (title: Rake)
 [//]: # (auxiliary-id: Rake)
 
-The _Rake_ build runner supports the Test::Unit, Test-Spec, [Shoulda](http://github.com/thoughtbot/shoulda), [RSpec](http://rspec.info/), [Cucumber](http://cukes.info/) test frameworks. It is compatible with Ruby interpreters installed using Ruby Version Manager (MRI Ruby, JRuby, IronRuby, REE, MacRuby, and so on) with Rake 0.7.3 gem or later.
+The _Rake_ build runner supports the Test::Unit, Test-Spec, [Shoulda](https://github.com/thoughtbot/shoulda), [RSpec](http://rspec.info/), [Cucumber](http://cukes.info/) test frameworks. It is compatible with Ruby interpreters installed using Ruby Version Manager (MRI Ruby, JRuby, IronRuby, REE, MacRuby, and so on) with Rake 0.7.3 gem or later.
 
 ## Prerequisites
 
-Make sure to have Ruby interpreter (MRI Ruby, JRuby, IronRuby, REE, MacRuby, and so on) with rake 0.7.3 gem or higher (mandatory) and all necessary gems for your Ruby (or ROR) projects and testing frameworks installed on at least one build agent. You can install several Ruby interpreters in different directories. On Linux/macOS it is easier to configure using [RVM](http://rvm.io/) or [rbenv](http://github.com/sstephenson/rbenv). It is possible to install Ruby interpreter and necessary Ruby gems using the [Command Line](command-line.md) build runner step. If you want to automatically configure agent requirements for these interpreters, you need to register its paths in the build agent configuration properties and then refer to such property name in the [Rake build runner configuration](#Rake+Runner+Settings). To install a gem, execute:
+Make sure to have Ruby interpreter (MRI Ruby, JRuby, IronRuby, REE, MacRuby, and so on) with rake 0.7.3 gem or higher (mandatory) and all necessary gems for your Ruby (or ROR) projects and testing frameworks installed on at least one build agent. You can install several Ruby interpreters in different directories. On Linux/macOS it is easier to configure using [RVM](https://rvm.io/) or [rbenv](https://github.com/sstephenson/rbenv). It is possible to install Ruby interpreter and necessary Ruby gems using the [Command Line](command-line.md) build runner step. If you want to automatically configure agent requirements for these interpreters, you need to register its paths in the build agent configuration properties and then refer to such property name in the [Rake build runner configuration](#Rake+Runner+Settings). To install a gem, execute:
 
 ```Shell
 gem install <gem_name>

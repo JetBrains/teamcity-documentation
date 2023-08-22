@@ -327,7 +327,7 @@ If you have several build agents installed on the same machine, by default they 
 
 ## Maven Release with Different VCSs
 
-To run the `release:prepare` Maven task with different VCSs supported by TeamCity, make sure you are using at least 2.0 version of the [Maven Release plugin](http://maven.apache.org/maven-release/maven-release-plugin/).
+To run the `release:prepare` Maven task with different VCSs supported by TeamCity, make sure you are using at least 2.0 version of the [Maven Release plugin](https://maven.apache.org/maven-release/maven-release-plugin/).
 
 ### Using Maven Release with Perforce
 

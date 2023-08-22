@@ -199,7 +199,7 @@ To configure dependencies via Ant build script:
 
 <tip>
 
-TeamCity itself acts as an Ivy repository. You can read more about the Ivy dependency manager [here](http://ant.apache.org/ivy/).
+TeamCity itself acts as an Ivy repository. You can read more about the Ivy dependency manager [here](https://ant.apache.org/ivy/).
 </tip>
 
 2\. Add Ivy to the classpath of your build.

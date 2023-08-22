@@ -21,7 +21,7 @@ For both processes mentioned above, you can customize the final agent behavior b
 
 ### Build Agent is Run via Script
 
-Before you run the `[<Agent_Home>](agent-home-directory.md)\bin\agent.bat|sh` script, set the following [environment variables](http://en.wikipedia.org/wiki/Environment_variable) in your OS:
+Before you run the `[<Agent_Home>](agent-home-directory.md)\bin\agent.bat|sh` script, set the following [environment variables](https://en.wikipedia.org/wiki/Environment_variable) in your OS:
 * `TEAMCITY_AGENT_MEM_OPTS` — set agent memory JVM options (for 64-bit agents, consider setting `-Xmx` to 512 MB)
 * `TEAMCITY_AGENT_OPTS` — additional agent JVM options
 

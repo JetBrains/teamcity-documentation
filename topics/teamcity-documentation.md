@@ -62,7 +62,7 @@ Welcome to the documentation for [TeamCity 2022.x](https://www.jetbrains.com/tea
 * [Public Issue Tracker](https://youtrack.jetbrains.com/issues/TW)
 * [Community Forum](https://jb.gg/teamcity-forum)
 * [CI/CD Guide](https://www.jetbrains.com/teamcity/ci-cd-guide/)
-* [Video User Guide](http://blog.jetbrains.com/teamcity/2013/05/teamcity-user-guide-courseware/)
+* [Video User Guide](https://blog.jetbrains.com/teamcity/2013/05/teamcity-user-guide-courseware/)
     
 </td>
 

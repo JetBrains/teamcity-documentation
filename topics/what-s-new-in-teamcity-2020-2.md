@@ -39,7 +39,7 @@ If the limit is exceeded, a build won't be able to detach from its agent until s
 ## Authentication with GitHub.com, GitHub Enterprise, GitLab.com, GitLab CE/EE, Bitbucket Cloud
 
 Now, users can authenticate in TeamCity with their external accounts in:
-* [GitHub.com](http://github.com/) / [GitHub Enterprise](https://github.com/enterprise)
+* [GitHub.com](https://github.com/) / [GitHub Enterprise](https://github.com/enterprise)
 * [GitLab.com](https://about.gitlab.com/) / [GitLab CE/EE](https://about.gitlab.com/install/ce-or-ee/)
 * [Bitbucket Cloud](https://bitbucket.org/product/)
 

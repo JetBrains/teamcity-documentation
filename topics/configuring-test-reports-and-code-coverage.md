@@ -29,7 +29,7 @@ Code coverage is a number of metrics that measure how your code is covered by un
 * __Java,__ see [Configuring Java Code Coverage](configuring-java-code-coverage.md)
   * [IntelliJ IDEA](intellij-idea.md) coverage (bundled)
   * [EMMA](http://emma.sourceforge.net/) open-source toolkit (bundled)
-  * [JaCoCo](http://www.eclemma.org/jacoco/) open-source (bundled)
+  * [JaCoCo](https://www.eclemma.org/jacoco/) open-source (bundled)
 
 * __.NET__: see [Configuring .NET Code Coverage](configuring-.net-code-coverage.md)
   * [JetBrains dotCover](jetbrains-dotcover.md) (bundled)

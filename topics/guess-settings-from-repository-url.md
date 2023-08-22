@@ -31,7 +31,7 @@ __Git__
 
 * `http(s)` URLs
 * `git://`
-* Maven-like URLs: [`http://maven.apache.org/scm/git.html`](http://maven.apache.org/scm/git.html)
+* Maven-like URLs: [`https://maven.apache.org/scm/git.html`](https://maven.apache.org/scm/git.html)
 
 For SSH authentication, create a VCS Root from a URL first and then open its settings to [specify the SSH key](ssh-keys-management.md) to be used. Alternatively, create a Git VCS Root manually.
 
@@ -46,7 +46,7 @@ __Mercurial__
 <td>
 
 * `http(s)` URLs
-* Maven-like URLs: [`http://maven.apache.org/scm/mercurial.html`](http://maven.apache.org/scm/mercurial.html)
+* Maven-like URLs: [`https://maven.apache.org/scm/mercurial.html`](https://maven.apache.org/scm/mercurial.html)
 
 </td></tr><tr>
 
@@ -59,7 +59,7 @@ __Subversion__
 <td>
 
 * `http(s)` URLs
-* \+Maven-like URLs: [`http://maven.apache.org/scm/subversion.html`](http://maven.apache.org/scm/subversion.html)
+* \+Maven-like URLs: [`https://maven.apache.org/scm/subversion.html`](https://maven.apache.org/scm/subversion.html)
 * `svn://`
 
 </td></tr><tr>
@@ -80,7 +80,7 @@ For example: [`http://tfshost:8080/tfs/DefaultCollection$/Project/root`](http://
 * for Azure DevOps Services (or, formerly, Visual Studio Team Services): `https://<url_to_visualstudio.com>/<project_name>` or `https://<url_to_visualstudio.com>/$/<project_path>`    
 For example: [`https://username.visualstudio.com/Project`](https://username.visualstudio.com/Project)
 
-See the [related blog post](http://blog.jetbrains.com/teamcity/2014/09/teamcity-and-visual-studio-online-source-control).
+See the [related blog post](https://blog.jetbrains.com/teamcity/2014/09/teamcity-and-visual-studio-online-source-control).
 
 </td></tr><tr>
 
@@ -92,7 +92,7 @@ __Perforce__
 
 <td>
 
-* Maven-like URLs: [`http://maven.apache.org/scm/perforce.html`](http://maven.apache.org/scm/perforce.html)
+* Maven-like URLs: [`https://maven.apache.org/scm/perforce.html`](https://maven.apache.org/scm/perforce.html)
 * same as Maven but without the `scm` prefix, for example: `perforce://servername:1666/depot/main`
 
 </td></tr><tr>

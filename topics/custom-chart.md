@@ -285,7 +285,7 @@ This field allows you to explicitly specify a build configuration to use the dat
 
 <td>
 
-The color of a series to be used in the chart. Standard web color formats can be used - "#RRGGBB", color names, and so on. For more information see [HTML Colors reference](http://www.w3schools.com/html/html_colors.asp) and [HTML Color Names reference](http://www.w3schools.com/html/html_colornames.asp). If not specified, an automatic color will be assigned based on the series title.
+The color of a series to be used in the chart. Standard web color formats can be used - "#RRGGBB", color names, and so on. For more information see [HTML Colors reference](https://www.w3schools.com/html/html_colors.asp) and [HTML Color Names reference](https://www.w3schools.com/html/html_colornames.asp). If not specified, an automatic color will be assigned based on the series title.
 
 </td></tr><tr>
 

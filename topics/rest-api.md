@@ -135,7 +135,7 @@ To get details about each processed request, turn on debug logging (for example,
 ## CORS Support
 {id="CORS-support" auxiliary-id="CORS Support"}
  
-The TeamCity REST API can be configured to allow [cross-origin requests](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) using the `rest.cors.origins` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+The TeamCity REST API can be configured to allow [cross-origin requests](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) using the `rest.cors.origins` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
  
 To allow requests from a page loaded from a specific domain, add the page address (including the __protocol and port__, __wildcards are not supported__) to the comma-separated [internal property](server-startup-properties.md#TeamCity+Internal+Properties) `rest.cors.origins`. For example, `rest.cors.origins=http://myinternalwebpage.org.com:8080,https://myinternalwebpage.org.com`.
 

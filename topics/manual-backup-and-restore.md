@@ -34,7 +34,7 @@ The `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.
 ### Database Data
 
 The database stores all information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, and so on.
-* If you use the HSQLDB, the internal database (default setting, not recommended for production), the database is stored in the files residing directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` directory. All files from the directory can be backed up. You may also refer to the [HSQLDB backup notes](http://www.hsqldb.org/doc/1.8/guide/apc.html).
+* If you use the HSQLDB, the internal database (default setting, not recommended for production), the database is stored in the files residing directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` directory. All files from the directory can be backed up. You may also refer to the [HSQLDB backup notes](https://www.hsqldb.org/doc/1.8/guide/apc.html).
 * If you use an external database, back up your database schema used by TeamCity with database-specific tools. For the external database connection settings used by TeamCity, refer to the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file. You can also see the [corresponding installation section](set-up-external-database.md).
 
 ### Application Files

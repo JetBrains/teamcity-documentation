@@ -62,7 +62,7 @@ http://<server address>/httpAuth/action.html?add2Queue=<build configuration ID>
 
 
 
-Some tools (for example, [Wget](http://www.gnu.org/software/wget/)) support the following syntax for the basic HTTP authentication:
+Some tools (for example, [Wget](https://www.gnu.org/software/wget/)) support the following syntax for the basic HTTP authentication:
 
 
 ```Shell

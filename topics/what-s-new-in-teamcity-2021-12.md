@@ -130,7 +130,7 @@ See [TeamCity Build 107109 release notes](teamcity-release-notes-build-107109.md
     - Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
 {product="tс"}
 - Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11.
-- The [SBT](http://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](https://www.jetbrains.com/help/teamcity/2021.12/simple-build-tool-scala.html) plugin, has been updated to version 1.5.5.
+- The [SBT](https://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](https://www.jetbrains.com/help/teamcity/2021.12/simple-build-tool-scala.html) plugin, has been updated to version 1.5.5.
 - The [Octopus Deploy integration plugin](https://plugins.jetbrains.com/plugin/9038-octopus-deploy-integration) bundled with TeamCity Cloud has been updated to version 6.1.8.
 {product="tcc"}
 - The [Unity Support plugin](https://plugins.jetbrains.com/plugin/11453-unity-support) bundled with TeamCity Cloud has been updated to version SNAPSHOT-20211116104228.

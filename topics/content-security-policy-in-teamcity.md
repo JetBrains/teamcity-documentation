@@ -8,7 +8,7 @@ The header prohibits TeamCity pages from downloading external resources, with so
 In some setups, you may need to allow downloading external resources. For example, when using analytics tools or when integrating TeamCity with external services via a plugin.
 {product="tc"}
 
-As a plugin developer, you can provide CSP directives via the [`ContentSecurityPolicyConfig`](http://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) OpenAPI interface.
+As a plugin developer, you can provide CSP directives via the [`ContentSecurityPolicyConfig`](https://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) OpenAPI interface.
 {product="tc"}
 
 ## Changing CSP Header Value
