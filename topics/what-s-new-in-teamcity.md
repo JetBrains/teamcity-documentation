@@ -78,6 +78,16 @@ Added the [new service message](service-messages.md#Writing+the+File+into+the+Bu
 
 Learn more: [](service-messages.md#Writing+the+File+into+the+Build+Log).
 
+## Token-Based Authentication
+
+We continue updating TeamCity connections, build features, and VCS Root objects to support authentication via short-lived OAuth tokens, which are more secure than traditional static PATs (personal access tokens).
+
+Starting with version 2023.09, authorization via OAuth tokens is also available for the [](commit-status-publisher.md)s that target GitLab repositories.
+
+<img src="dk-csp-GitLabToken.png" width="708" alt="Acquire access token for GitLab"/>
+
+Learn more: [](commit-status-publisher.md#GitLab).
+
 
 ## Miscellaneous
 
