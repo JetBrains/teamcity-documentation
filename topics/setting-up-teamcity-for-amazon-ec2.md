@@ -532,7 +532,7 @@ For proxy server authentication:
 * `teamcity.http.proxy.user.ec2` — proxy access username 
 * `teamcity.http.proxy.password.ec2` — proxy access user password
 
-For NTML authentication: 
+For NTLM authentication: 
 * `teamcity.http.proxy.domain.ec2` — proxy user domain for NTLM authentication 
 * `teamcity.http.proxy.workstation.ec2` — proxy access workstation for NTLM authentication
 
