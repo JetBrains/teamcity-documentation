@@ -696,6 +696,12 @@ _Problem_:
 
 _Solution_: set the [internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.kotlinConfigsDsl.docsGenerationXmx=1500m` and restart the server.
 
+### OutOfMemory Error
+{product="tc"}
+
+_Problem_: Synchronizing Kotlin DSL setting fails with the "Compilation error: java.lang.OutOfMemoryError: Java heap space" error written to the [teamcity-versioned-settings.log](teamcity-server-logs.md) file.
+
+_Solution_: set the `teamcity.versionedSettings.configsGeneratorXmx` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `1g` (one gigabyte) or more and restart the server. The default property value is `512m`. 
 
 <seealso>
         <category ref="blog">
