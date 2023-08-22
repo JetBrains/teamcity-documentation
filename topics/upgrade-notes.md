@@ -11,11 +11,17 @@
 
 ## Changes from 2019.1.2 to 2019.1.3
 
+
+
 ### Known issues
+{id="2019.1.3-kn"}
 
 * When using versioned settings, build history can be lost on importing settings from VCS. [Details](https://youtrack.jetbrains.com/issue/TW-62106).
 
+
+
 ### Bundled Tools Updates
+{id="2019.1.3-bundled-updates"}
 
 * The bundled ReSharper Command Line Tools (Inspections and Duplicates Finder) have been upgraded to version 2019.2.1.
 
@@ -25,7 +31,10 @@
 
 * The [Running Builds Node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node) is deprecated and will be discontinued in TeamCity 2019.2. In a [multinode setup](multinode-setup.md), you can instead [configure a secondary node](configuring-secondary-node.md) with the _"Processing data produced by running builds"_ responsibility.
 
+
+
 ### Known issues
+{id="2019.1.2-kn"}
 
 * When using versioned settings, build history can be lost on importing settings from VCS. [Details](https://youtrack.jetbrains.com/issue/TW-62106).
 * If you use the .NET Core ("dotnet") steps on Windows agents, you can get the _".NET SDK was not found"_ error if you have .NET Core runtime (not SDK) installed on the agent in the location like `C:\Program Files (x86)\dotnet`. As a workaround, set the `env.DOTNET_HOME` parameter to the location of .NET Core SDK.   
@@ -33,7 +42,10 @@ See the related [issue](https://youtrack.jetbrains.com/issue/TW-61413) for detai
 
 ## Changes from 2019.1 to 2019.1.1
 
+
+
 ### Bundled Tools Updates
+{id="2019.1.1-bundled-updates"}
 
 * The bundled IntelliJ IDEA has been updated to 2019.1.3.
 * The bundled ReSharper tools (Inspections and Duplicates Finder) have been upgraded to 2019.1.0-eap08d version.
@@ -46,14 +58,14 @@ Tags are now __mandatory__ for all Amazon instances run by TeamCity, which helps
 
 ### Changed behavior of reversed dependencies properties
 
-Starting with 2019.1, the behavior of [`reverse.dep`](predefined-build-parameters.md#Overriding+Dependencies+Properties) parameters has been changed, and this change can affect your existing builds. In versions prior to 2019.1, when a build chain is triggered, TeamCity only took into account the `reverse.dep` parameters specified in the top-most build of the chain, i.e. in the build which depends on all other builds. If some intermediate builds of the chain had `reverse.dep` parameters, they were ignored.   
+Starting with 2019.1, the behavior of [`reverse.dep`](predefined-build-parameters.md) parameters has been changed, and this change can affect your existing builds. In versions prior to 2019.1, when a build chain is triggered, TeamCity only took into account the `reverse.dep` parameters specified in the top-most build of the chain, i.e. in the build which depends on all other builds. If some intermediate builds of the chain had `reverse.dep` parameters, they were ignored.   
   After [this fix](https://youtrack.jetbrains.com/issue/TW-41341) this is no longer the case. Now, when a build chain is triggered, all `reverse.dep` parameters specified in all nodes of the build chain will be processed.
   
 ### Lazy agent tool loading
 
 [Agent tools](installing-agent-tools.md) (located under the `<agent_installation>/tools` directory on agents) are now transferred to an agent not on the agent upgrade, but right before the first build that uses the respective tool. You might need to update the build configuration settings so TeamCity knows which tools are required by the builds.   
 Before starting a build on an agent, TeamCity checks for the references to `teamcity.tool.<tool_ID>` configuration parameters to collect the set of tools used by the build. If some tool is referenced via this parameter, TeamCity will make sure this tool is present on the agent before the build logic starts executing.   
-If some of your builds use tools on agent assuming their locations under the `<agent installation>/tools` directory, such references should be changed to a TeamCity-provided parameter reference. Paths like `<agent_installation>/tools/<tool_ID>` used in TeamCity settings should be changed to the `%teamcity.tool.<tool_ID>%` parameter reference. For example, `../tools/maven3.4.5/bin/mvn` should be replaced with `%teamcity.tool.maven3.4.5%/bin/mvn`.
+If some of your builds use tools on agent assuming their locations under the `<agent installation>/tools` directory, such references should be changed to a TeamCity-provided parameter reference. Paths like `<agent_installation>/tools/<tool_ID>` used in TeamCity settings should be changed to the `%\teamcity.tool.<tool_ID>%` parameter reference. For example, `../tools/maven3.4.5/bin/mvn` should be replaced with `%\teamcity.tool.maven3.4.5%/bin/mvn`.
 
 ### Changed .NET build requirements in ReSharper tools
 
@@ -61,20 +73,22 @@ The requirements for the .NET Framework version used by ReSharper tools have cha
 
 ### Token-based authentication enabled by default
 
-On upgrading to 2019.1, the Token-Based Authentication module will be enabled by default, so you can generate [access tokens](managing-your-user-account.md#Managing+Access+Tokens) and start using them right away.
+On upgrading to 2019.1, the Token-Based Authentication module will be enabled by default, so you can generate [access tokens](managing-your-user-account.md#managing-access-tokens) and start using them right away.
 
 ### New CSP header value
 
 Now TeamCity web UI uses more restrictive value for the [`Content-Security-Policy`](https://content-security-policy.com/) HTTP header. This provides extra security at the expense of prohibiting usage of the web resources not hosted on the TeamCity server.   
-If you rely on external resources (for example, in the build report tabs content or by using not yet updated plugins), you can specify new header value in the `teamcity.web.header.Content-Security-Policy.protectedValue=<full_header_value>` [internal property](configuring-teamcity-server-startup-properties.md#TeamCity+internal+properties) (and `teamcity.web.header.Content-Security-Policy.adminUI.protectedValue` property for the web pages in Administration area). Plugins can use [`ContentSecurityPolicyConfig`](http://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) open API interface to add to the value configured.
+If you rely on external resources (for example, in the build report tabs content or by using not yet updated plugins), you can specify new header value in the `teamcity.web.header.Content-Security-Policy.protectedValue=<full_header_value>` [internal property](configuring-teamcity-server-startup-properties.md#teamcity-internal-properties) (and `teamcity.web.header.Content-Security-Policy.adminUI.protectedValue` property for the web pages in Administration area). Plugins can use [`ContentSecurityPolicyConfig`](http://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) open API interface to add to the value configured.
 
 ### Change in dotCover artifacts
 
 The `dotCover.dcvr` hidden artifact is no longer published by default. It is now created in the build temporary folder and removed when the build finishes.   
-If you use dotCover and rely on this artifact, specify the path to the `%system.teamcity.build.tempDir%\\..\agentTmp\dotNetCoverageResults\dotCover.dcvr` file explicitly in the [Artifact paths](configuring-general-settings.md#Artifact+Paths).
+If you use dotCover and rely on this artifact, specify the path to the `%\system.teamcity.build.tempDir%\\..\agentTmp\dotNetCoverageResults\dotCover.dcvr` file explicitly in the [Artifact paths](configuring-general-settings.md#artifact-paths).
+
 
 
 ### Bundled Tools Updates
+{id="2019.1-bundled-updates"}
 
 * The latest JaCoCo version (0.8.4) has been added to TeamCity.
 * The bundled .NET tools (dotCover and ReSharper CLT) have been upgraded to the latest released version, 2019.1.1.
@@ -89,7 +103,7 @@ If you have been using beta versions of PowerShell, make sure to remove all beta
 
 ### Note on using Docker and Windows Server with process isolation
 
-If you use Docker images and Windows Server 2019 with process isolation, build agents may fail to start (read more in [Known Issues](known-issues.md#%22Access+is+denied%22+or+%22Access+to+the+path+is+denied%22+problem+on+container+start)). To work around the issue, grant the "Full control" access to the "Authenticated Users" group.
+If you use Docker images and Windows Server 2019 with process isolation, build agents may fail to start (read more in [Known Issues](known-issues.md#access-is-denied-or-access-to-the-path-is-denied-problem-on-container-start)). To work around the issue, grant the "Full control" access to the "Authenticated Users" group.
 
 ## Changes from 2018.2.3 to 2018.2.4
 There is a regression in TeamCity 2018.2.4 related to the data displayed on the unauthorized agents' page: the data on agent authorization, enabling/disabling comments, and the latest activity time has been removed from the page. This data is displayed on the agent details page.
@@ -100,6 +114,7 @@ When the performance is improved, we will return the data to the unauthorized ag
 TeamCity now ships Windows Docker images for 1803/1809 platforms.
 
 ### Known issues
+{id="2018.2.3-kn"}
 
 Running builds are not shown on the build configuration page if there are no finished builds. To workaround the issue, stop the TeamCity server, replace the `TEAMCITY_DIRECTORY/webapps/ROOT/js/ring/bundle.js` with the `bundle.js` file  attached to [this issue](https://youtrack.jetbrains.com/issue/TW-59529#focus=streamItem-27-3327362.0-0) and start the server. 
 
@@ -113,17 +128,26 @@ No noteworthy changes
 
 ## Changes from 2018.1.x to 2018.2
 
+
+
 ### Known issues
+{id="2018.2-kn"}
+
 * If upgrade fails with an error in MoveCustomDataStorageToDatabaseConverter or MoveRepositoryStateToCustomDataStorageConverter, apply workaround from [the issue](https://youtrack.jetbrains.com/issue/TW-58289#focus=streamItem-27-3207962-0-0).
 * If you're using Subversion externals from the same repository, you may face an issue with incorrect revision detection. A workaround for the problem is described in [this issue](https://youtrack.jetbrains.com/issue/TW-58336).
 * If you see OutOfMemoryError during TeamCity startup with `org.jetbrains.dokka` in stack trace, set the internal property `teamcity.kotlinConfigsDsl.docsGenerationXmx=768m` (as described in [this issue](https://youtrack.jetbrains.com/issue/TW-56408))
 
+
+
 ### Bundled Tools Updates
+{id="2018.2-bundled-updates"}
+
 * The bundled .NET Tools (dotCover and ReSharper CLT) have been upgraded to the latest released version, 2018.1.4
 * TeamCity 2018.2 comes bundled with IntelliJ IDEA 2018.3.1. The IntelliJ IDEA Project Runner uses JPS 2018.3.1 
 * OpenJDK is bundled in the Windows `.exe` TeamCity distribution instead of Oracle Java. 
 
 ### NuGet feed
+{id="2018.2-nuget-feed"}
 
 The parameters that were previously used to reference the global NuGet feed are removed. After upgrading, all of them will be converted to [the parameters referencing the default NuGet feed in Root project](using-teamcity-as-nuget-feed.md).
 
@@ -185,7 +209,11 @@ No noteworthy changes
 
 ## Changes from 2018.1.3 to 2018.1.4
 
+
+
 ### Known issues
+{id="2018.1.4-kn"}
+
 * Builds which are running while the server upgrades to 2018.1.4 can get their build log and status truncated, not duly reporting build failure. The build log gets warning with "\_\_tc\_longResponseMarker" text ([details](https://youtrack.jetbrains.com/issue/TW-58266)). It is recommended to wait till there are not running builds when upgrading to this version.
 ### Misc
 
@@ -193,29 +221,42 @@ Support for Microsoft Internet Explorer 10 is discontinued in TeamCity 2018.1.4.
 
 ## Changes from 2018.1.2 to 2018.1.3
 
+
+
 ### Bundled Tools Updates
+{id="2018.1.3-bundled-updates"}
 
 The latest JaCoCo version (0.8.2) has been added to TeamCity.
 
+
+
 ### Known issues
+{id="2018.1.3-kn"}
 
 If you use JaCoCo coverage and you decide to downgrade from TeamCity 2018.1.3\+ to TeamCity versions 2018.1 \- 2018.1.2,  you may experience issues requiring manual fixes to make the affected configurations work again.
 
 ## Changes from 2018.1.1 to 2018.1.2
 
 ### Known issues
+{id="2018.1.2-kn"}
 
 If you are using [tcWebHooks](https://plugins.jetbrains.com/plugin/8948-web-hooks-tcwebhooks-) third\-party TeamCity plugin, update it to the latest version before upgrading ([details](https://youtrack.jetbrains.com/issue/TW-56626)). 
 
 We increased accuracy for recognizing similar TeamCity exit code build problems. The existing investigations and mutes for these build problems will be reset.
 
+
+
 ### Bundled Tools Updates
+{id="2018.1.2-bundled-updates"}
 
 The bundled Tomcat has been updated to version 8.5.32.
 
 ## Changes from 2018.1 to 2018.1.1
 
+
+
 ### Known issues
+{id="2018.1.1-kn"}
 
 If you're upgrading from 2018.1 to 2018.1.1 and you want to see the NuGet packages missing due to issues [TW-55703](https://youtrack.jetbrains.com/issue/TW-55703) and [TW-55833](https://youtrack.jetbrains.com/issue/TW-55833), do the following:
 * Cleanup `.teamcity/nuget/packages.json` files in the build artifacts. Consider using this PowerShell script:
@@ -223,7 +264,7 @@ If you're upgrading from 2018.1 to 2018.1.1 and you want to see the NuGet packag
 
 ```Shell
 
-> cd "%TeamCityDataDir%\system\artifacts\"
+> cd "%\TeamCityDataDir%\system\artifacts\"
 > Get-ChildItem -Recurse | Where-Object { $_.FullName -match '\.teamcity\\nuget\\packages\.json' } | Remove-Item
 ```
 
@@ -235,7 +276,10 @@ Since 2018.1.1 TeamCity has multi\-platform docker images marked by the "latest"
 
 ## Changes from 2017.2.x to 2018.1
 
+
+
 ### Known issues
+{id="2018.1-kn"}
 
 While publishing NuGet packages into the TeamCity NuGet feed in multiple build steps, only the packages published by the first build step will be visible. See [TW-55703](https://youtrack.jetbrains.com/issue/TW-55703) for details. If you experience problems with download of NuGet packages published within archives see [TW-55833](https://youtrack.jetbrains.com/issue/TW-55833).
 
@@ -247,11 +291,17 @@ Names of the Build Configuration parameters are now validated in more strict man
 
 If you have Built\-in authentication enabled with the "Allow user registration from the login page" setting on, the setting will be disabled on upgrade. If you need the registration, make sure the server is not open to unauthorized users access (e.g. not accessible from Internet) and enable the setting via the health item displayed at the top of the administration pages or in the "Administration | Authentication" under the "Built\-in" module settings.
 
+
+
 ### Bundled Tools Update
+{id="2018.1-bundled-updates"}
+
 * The IntelliJ IDEA Project Runner uses JPS 2017.3.4 requiring Java 1.8 as the minimal version.
 * The bundled ReSharper CLT and dotCover have been updated to version 2018.1.2
 
 ### NuGet feed
+{id="2018.1-nuget-feed"}
+
 * Configuration of the NuGet feed was moved from the server level to the project level: now each project can have its own feed. The "NuGet packages indexer" build feature can be added to build configurations whose artifacts should be indexed.
 * The following NuGet feed\-related build parameters are deprecated:
   * `teamcity.nuget.feed.auth.server`
@@ -262,7 +312,9 @@ If you have Built\-in authentication enabled with the "Allow user registration f
   
 * The enabled default NuGet feed with all published packages accessed by URL `/app/nuget/v1/FeedService.svc/` is now moved to the Root project feed `/app/nuget/feed/_Root/default/v2/`. It is recommended to switch to new URL in your projects.
 * .nupkg files are now indexed on the agent side instead of the server which could slightly increase the time of builds for projects with the NuGet Feed feature and the automatic package indexing enabled or for builds with NuGet Packages Indexer build feature.
+
 ### REST API
+{id="2018.1-rest"}
 
 REST API uses version 2018.1. The previous versions of the API are still available under /app/rest/2017.2, /app/rest/2017.1 (/app/rest/10.0), app/rest/9.1, /app/rest/9.0, /app/rest/8.1, /app/rest/7.0, /app/rest/6.0 URLs. It is recommended to stop using previous APIs URLs as we are going to remove them in the following releases.
 
@@ -279,6 +331,8 @@ Requests which used "value:&lt;text&gt;" locators (e.g. for matching properties)
 The Visual SourceSafe plugin is no longer bundled with TeamCity but is available as a [separate download](https://plugins.jetbrains.com/plugin/10902-vcs-support-vss). Please contact our [support](https://confluence.jetbrains.com/display/TW/Feedback), if you still use this VSS for your builds.
 
 ### Other
+{id="2018.1-other-changes"}
+
 * Commit Status Publisher supports Gerrit 2.6\+ versions. For support for older Gerrit versions, please turn to our [support](https://confluence.jetbrains.com/display/TW/Feedback).
 * When upgrading from TeamCity versions before 9.1, if TeamCity 2018.1 starts and agents are upgraded, but then you decide to roll back the server to the previous TeamCity version, the agents will not be able to connect back to the old server and will need to be reinstalled manually.
 * Make sure that no HTTP requests from the agents to the server are blocked (e.g. requests to .../app/agents/... URLs)
@@ -300,9 +354,10 @@ When upgrading to 2017.2.x versions (please ignore when upgrading to 2018.1 and 
 
 ## Changes from 2017.2.1 to 2017.2.2
 
-<anchor name="knownIssues_2017_2_2"/>
+
 
 ### Known issues
+{id="knownIssues_2017_2_2"}
 
 (Fixed 2017.2.3) If you use the Artifactory plugin and get the "Invalid RSA public key" browser message on opening build step settings, please apply the [workaround](https://youtrack.jetbrains.com/issue/TW-53562#comment=27-2698895).
 
@@ -341,9 +396,10 @@ The bundled Java used in Docker images has been updated to 8u151.
 
 ## Changes from 2017.1.x to 2017.2
 
-<anchor name="knownIssues_2017_2"/>
+
 
 ### Known issues
+{id="knownIssues_2017_2"}
 
 (Fixed 2017.2.1) TFS in Java working mode (when Team Explorer is not installed on the machine) report "TFS subsystem was destroyed" errors. See [TW-52685](https://youtrack.jetbrains.com/issue/TW-52685) for details.
 
@@ -378,6 +434,7 @@ During upgrade all existing .NET Core build steps will be converted into .NET CL
 __Note__: The `DotNetCore` and `DotNetCore_Path` agent configuration parameters will be changed to  `DotNetCLI` and `DotNetCLI_Path`; please consider updating your agent requirements which depend on these parameters.
 
 ### REST API
+{id="2017.2-rest"}
 
 REST API uses version 2017.2. The previous versions of the API are still available under /app/rest/2017.1 (/app/rest/10.0), app/rest/9.1, /app/rest/9.0, /app/rest/8.1, /app/rest/7.0, /app/rest/6.0 URLs.
 
@@ -396,6 +453,8 @@ Windows XP and Vista are no longer the supported versions of Windows for the Tea
 J2EE Servlet container version 2.5 is not supported since TeamCity 2017.2. TeamCity does not guarantee support for Tomcat 6.x and Jetty 7.x implementing Servlet 2.5. For .war distribution (not recommended, .tar.gz distribution is recommended), TeamCity supports Apache Tomcat 7\+, J2EE Servlet 3.0\+ and JSP 2.2\+.
 
 ### Other
+{id="2017.2-other-changes"}
+
 * The bundled Tomcat 8.5. restricted usage of special characters in the URL including curly bracket symbols (\{ \}). [Details](https://youtrack.jetbrains.com/issue/TW-51052).
 * TeamCity integration with Intellij\-based IDEs no longer supports StarTeam and Visual Source Safe version controls.
 ## Changes from 2017.1.4 to 2017.1.5
@@ -406,7 +465,10 @@ The SSH Agent build feature started to report a build problem if it fails to sta
 
 ## Changes from 2017.1.3 to 2017.1.4
 
+
+
 ### Known issues
+{id="2017.1.4-kn"}
 
 TFS Personal support lists all build configurations for TFVC VCS root. See [TW-51497](https://youtrack.jetbrains.com/issue/TW-51497) for details.
 
@@ -426,7 +488,10 @@ The bundled IntelliJ IDEA has been updated to 2017.1.2
 
 ## Changes from 10.0.x to 2017.1
 
+
+
 ### Known issues
+{id="2017.1-kn"}
 
 Editing cloud profile cancels all builds on profile agents. See [TW-49616](https://youtrack.jetbrains.com/issue/TW-49616) for details.
 
@@ -476,6 +541,7 @@ INFO - .index.BuildIndexer (metadata) - Enqueued next 100 builds for indexing, b
 To increase the metadata indexing speed you could use the [following tip](known-issues.md).
 
 ### REST API
+{id="2017.1-rest"}
 
 REST API has only minor changes, so the same API is exposed under the `app/rest/10.0` and `/app/rest/2017.1` URLs. API version has been updated to 2017.1 though to reflect the changes.The build's node "triggeredBy" now has more correct values of "type" attribute for the builds started after 2017.1 upgrade. In particular, the "buildType" value is not used anymore, the"finishBuild", "snapshot", etc. values are used instead.
 
@@ -489,9 +555,9 @@ If you are using TFS with agent\-side checkout, note that due to the fix of  [TW
 
 ## Changes from 10.0.3 to 10.0.4
 
-### Precedence of %dep.ID.NAME% parameter references
+### Precedence of %\dep.ID.NAME% parameter references
 
-When `%dep.ID.NAME%` parameter reference is used and there are several dependency paths to the same build configuration with id "ID" so that different builds are accessible via (direct or indirect) artifact dependencies, the result of the reference resolution could have used any of the builds without any guaranteed precedence.
+When `%\dep.ID.NAME%` parameter reference is used and there are several dependency paths to the same build configuration with id "ID" so that different builds are accessible via (direct or indirect) artifact dependencies, the result of the reference resolution could have used any of the builds without any guaranteed precedence.
 
 Since 10.0.4 `dep.` parameter resolution works as follows:
 1. if there is a snapshot dependency, the build from the same chain wins.
@@ -511,6 +577,7 @@ The behavior of [EBS optimization](http://docs.aws.amazon.com/AWSEC2/latest/User
 3. EBS optimization can be turned on for instances that support it (such as `c3.xlarge`) by checking the appropriate box when configuring the image of the Amazon cloud profile.
 
 ### Bundled tools updates
+{id="10.0.3-bundled-updates"}
 
 The bundled dotCover has been updated to version 2016.2.2
 
@@ -523,13 +590,19 @@ The bundled dotCover has been updated to version 2016.2.2
 
 All known issues mentioned for 10.0 are fixed.
 
+
+
 ### Known Issues
+{id="10.0.1-kn"}
 
 (fixed in 10.0.2) TeamCity server temp folder can fill up if an [agent tool](installing-agent-tools.md) is installed as a directory in \<[TeamCity Data Directory](teamcity-data-directory.md)\>\/plugins\/.tools. [Details and workaround](http://youtrack.jetbrains.net/issue/TW-46648).
 
 ## Changes from 9.1.x to 10.0
 
+
+
 ### Known Issues
+{id="10.0-kn"}
 
 (These known issues are fixed in 10.0.1)
 
@@ -563,7 +636,7 @@ Some third\-party plugins are known to be affected. On the upgrade, make sure to
 
 ### Ignored tests table optimization
 
-During upgrade TeamCity will optimize data in the ignored\_tests table (we do that in order to speedup the TeamCity built\-in backup / restore process). In some rare cases, when this table contains millions of rows, the process of table optimization may take significant time \- possibly a few hours. Among other data, the table contains the reasons why a particular test in a build was marked as ignored. If this information for old builds is not very important for you, you can start TeamCity server with the additional [JVM option](configuring-teamcity-server-startup-properties.md#JVM+Options): `-Dteamcity.truncateIgnoreReasonConverter.copyReasons=false`
+During upgrade TeamCity will optimize data in the ignored\_tests table (we do that in order to speedup the TeamCity built\-in backup / restore process). In some rare cases, when this table contains millions of rows, the process of table optimization may take significant time \- possibly a few hours. Among other data, the table contains the reasons why a particular test in a build was marked as ignored. If this information for old builds is not very important for you, you can start TeamCity server with the additional [JVM option](configuring-teamcity-server-startup-properties.md#jvm-options): `-Dteamcity.truncateIgnoreReasonConverter.copyReasons=false`
 
 In this case TeamCity will not copy the ignore reasons into the new, optimized table, and this particular step of the upgrade process will run much faster.
 
@@ -595,7 +668,7 @@ The default setting for the VCS checkout mode on creating new build configuratio
 
 ### Project-based Agent Management Permissions
 
-New TeamCity installations now have different agent management permissions assignments: Project Administrator role does not include (global) Agent Manager role. Instead, Project administrator role has [agent-project permissions](role-and-permission.md#Project-level+Agent+Management+Permissions) which allow managing agents from the agent pools with only projects where user has Project Administrator role.
+New TeamCity installations now have different agent management permissions assignments: Project Administrator role does not include (global) Agent Manager role. Instead, Project administrator role has [agent-project permissions](role-and-permission.md#project-level-agent-management-permissions) which allow managing agents from the agent pools with only projects where user has Project Administrator role.
 
 Existing installations are not affected by this change in order not to change the user permissions. However, it is recommended to review the Project Administrator role and consider excluding "Agent Manager" role and adding the following permissions:
 * Enable / disable agents associated with project
@@ -649,6 +722,7 @@ Clean checkout will be enforced in builds with Stream\-based and Client\-based P
 Starting from TeamCity 10, TeamCity does not accept by default connections to SVN servers accessed by https:// protocol with non\-trusted server SSL certificate. To enable access with such certificates, you should either import the certificate to server JVM keychain, or enable VCS Root option "__Accept non\-trusted SSL certificate__" (Enable non\-trusted SSL certificate in 10.0)  ([issue](https://youtrack.jetbrains.com/issue/TW-45592)).
 
 ### Bundled tools updates
+{id="10.0-bundled-updates"}
 
 Ant runner: the bundled Ant distribution has been upgraded from 1.9.6 to 1.9.7
 
@@ -664,9 +738,9 @@ If you were using the TeamCity\-GitHub  [third-party plugin](https://github.com/
 
 ### NuGet Support
 
-Configuration parameters `teamcity.tool.NuGet.CommandLine.%NUGET_VERSION%.nupkg` are not reported anymore. The `teamcity.tool.NuGet.CommandLine.%NUGET_VERSION%` parameters should be referenced instead.
+Configuration parameters `teamcity.tool.NuGet.CommandLine.%\NUGET_VERSION%.nupkg` are not reported anymore. The `teamcity.tool.NuGet.CommandLine.%\NUGET_VERSION%` parameters should be referenced instead.
 
-For example, instead of using `%teamcity.tool.NuGet.CommandLine.DEFAULT.nupkg%` parameter reference `%teamcity.tool.NuGet.CommandLine.DEFAULT%` should be used.
+For example, instead of using `%\teamcity.tool.NuGet.CommandLine.DEFAULT.nupkg%` parameter reference `%\teamcity.tool.NuGet.CommandLine.DEFAULT%` should be used.
 
 ### Build Statistics
 
@@ -678,6 +752,7 @@ Several statistic values (metrics) has been reworked and renamed:
 Old keys are still supported in charts definitions.
 
 ### REST API
+{id="10.0-rest"}
 
 REST API uses version 10.0.  The previous versions of the API are still available under `/app/rest/9.1`,` /app/rest/9.0`,` /app/rest/8.1`, `/app/rest/7.0`,` /app/rest/6.0` URLs.
 
@@ -724,11 +799,14 @@ No noteworthy changes.
 
 ## Changes from 9.1.5 to 9.1.6
 
+
+
 #### Known Issues
+{id="9.1.6-kn"}
 
 There is a [known issue](https://youtrack.jetbrains.com/issue/TW-43731) in the bundled dotCover run on Windows XP and Vista. You can use the [hotfix](https://youtrack.jetbrains.com/issue/TW-43731#comment=27-1286417) or the [workaround ](https://youtrack.jetbrains.com/issue/TW-43731#comment=27-1286522)provided. The issue will be fixed in the next dotCover release.
 
-There is a [known issue](https://youtrack.jetbrains.com/issue/TW-44479) with [NuGet Credentials](https://confluence.jetbrains.com/display/TCD9/NuGet+Feed+Credentials) not working for the Authenticated Feed URL of the internal TeamCity NuCet server on the local agents. As a workaround, instead of using `%teamcity.nuget.feed.auth.server%`, please specify the external server URL in the build step and the build feature.
+There is a [known issue](https://youtrack.jetbrains.com/issue/TW-44479) with [NuGet Credentials](https://confluence.jetbrains.com/display/TCD9/NuGet+Feed+Credentials) not working for the Authenticated Feed URL of the internal TeamCity NuCet server on the local agents. As a workaround, instead of using `%\teamcity.nuget.feed.auth.server%`, please specify the external server URL in the build step and the build feature.
 
 #### NuGet
 
@@ -741,6 +819,7 @@ Since version 9.1.6, TeamCity does not support NUnit 3 beta versions (released b
 The "Run a process per assembly" option of the [NUnit runner](nunit.md) has been removed from NUnit 3 settings. Configure the desired behavior using the required [command line options](https://github.com/nunit/nunit/wiki/Console-Command-Line) in the [corresponding field](nunit.md).
 
 #### Bundled tools updates
+{id="9.1.6-bundled-updates"}
 
 Bundled IntelliJ IDEA updated to version # 143.1945 (roughly equivalent to 15.0.3 with a few additional fixes).
 
@@ -754,7 +833,10 @@ Bundled IntelliJ IDEA updated to version # 143.1945 (roughly equivalent to 15.0.
 
 ## Changes from 9.1.4 to 9.1.5
 
+
+
 #### Known Issues
+{id="9.1.5-kn"}
 
 There is a [known issue](https://youtrack.jetbrains.com/issue/TW-43731) in the bundled dotCover run on Windows XP and Vista. You can use the [hotfix](https://youtrack.jetbrains.com/issue/TW-43731#comment=27-1286417) or the [workaround](https://youtrack.jetbrains.com/issue/TW-43731#comment=27-1286522) provided. The issue will be fixed in the next dotCover release.
 
@@ -774,16 +856,21 @@ a) name allowed as a Groovy identifier (the property name does not contain dots)
 b) name not allowed as a Groovy identifier (the property name contains dots, e.g. `build.vcs.number.1`): `project.ext["build.vcs.number.1"]`
 
 #### Bundled tools updates
+{id="9.1.5-bundled-updates"}
 
 The bundled JetBrains IntelliJ IDEA (IDEA inspections and duplicates) has been updated to version 15.0.2
 
 #### .Net tools updates
+{id="9.1.5-net-updates"}
 
 JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 10.0.2 releaseTeamCity Visual Studio Addin Web installer updated to ReSharper 10.0.2 releaseBundled JetBrains dotCover updated to version 10.0.2
 
 ## Changes from 9.1.3 to 9.1.4
 
+
+
 #### Known Issues
+{id="9.1.4-kn"}
 
 Certain roles/permissions configurations can result in error loading roles and no ability for regular users to view projects. In such cases the  "__Circular reference is detected between roles__" critical server error is displayed on the server administration pages for those logged in as server administrator. Please check the [workaround](https://youtrack.jetbrains.com/issue/TW-43186#comment=27-1211556) for the issue.
 
@@ -796,10 +883,12 @@ __Git agent\-side checkout__ works incorrectly with git client versions 1.7.0\-1
 Since 9.1.4  the TeamCity Windows binaries are signed with SHA\-2 code\-signing certificate following the [Microsoft SHA-2 policies](http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx). This means that on systems prior to Windows XP SP3, the executables will not pass code signing verification; newer Windows systems require the corresponding security update from Microsoft.  
 
 #### Bundled tools updates
+{id="9.1.4-bundled-updates"}
 
 Bundled Oracle JRE (in both Server and Agent.exe installers) has been updated to version  1.8.0\_66 (32\-bit)
 
 #### .Net tools updates
+{id="9.1.4-net-updates"}
 
 JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 10.0 release
 
@@ -809,7 +898,10 @@ Bundled JetBrains dotCover updated to version 10.0
 
 ## Changes from 9.1.2 to 9.1.3
 
+
+
 #### Known Issues
+{id="9.1.3-kn"}
 
 There is a [known issue](https://youtrack.jetbrains.com/issue/DCVR-7708) in the bundled dotCover 3.2 which could cause a build's failure with the following exception: "System.Security.VerificationException: System.Security.VerificationException: Operation could destabilize the runtime". The issue is fixed in dotCover 10.0 bundled with TeamCity 9.1.4 release.
 
@@ -817,7 +909,10 @@ Bundled JVM (Server Windows installer and Agent Windows installer) is updated wh
 
 Changes from 9.1.1 to 9.1.2
 
+
+
 #### Known issues
+{id="9.1.2-kn"}
 
 The Command line runner can fail to execute a custom script if it has a non\-default hashbang specified at the beginning of the script: [TW-42498](https://youtrack.jetbrains.com/issue/TW-42498)
 
@@ -828,6 +923,7 @@ When using Amazon EC2 cloud integration, an AMI\-image, containing build agent v
 Build status icons updated to a more "standard" look and are of a bit larger now.
 
 #### Bundled tools updates
+{id="9.1.2-bundled-updates"}
 
 JetBrains ReSharper command line tools (.NET inspection and duplicates) have been updated to match ReSharper 9.2 release
 
@@ -873,6 +969,7 @@ __Since TeamCity 9.1__, the locations are exposed via `teamcity.dotnet.mstest.N.
 Previously TeamCity supported a case when one test could have been reported from within another test using [service messages](build-script-interaction-with-teamcity.md). Now, after the fix of [TW-40319](https://youtrack.jetbrains.com/issue/TW-40319), starting another test finishes the currently started test in the same "flow". To still report tests from within other tests, you will need to specify another [flowId](build-script-interaction-with-teamcity.md) in the nested test service messages.
 
 #### REST API
+{id="9.1-rest"}
 
 REST API uses version 9.1. Previous versions of API are still available under `/app/rest/9.0`, `/app/rest/8.1`, `/app/rest/7.0`, `/app/rest/6.0` URLs.
 
@@ -947,7 +1044,10 @@ No noteworthy changes.
 
 ## Changes from 9.0 to 9.0.1
 
+
+
 #### Known Issues
+{id="9.0.1-kn"}
 
 If you have enabled versioned settings for projects which use meta\-runners in TeamCity 9.0, on upgrade and following commit into the settings VCS root, the meta runners will be deleted from the server. Workaround is to commit the meta\-runners definitions into the settings repository manually. Related issue: [TW-39519](https://youtrack.jetbrains.com/issue/TW-39519).
 
@@ -957,7 +1057,11 @@ Due to missing support for national character sets (nvarchar) in Oracle 10.x JDB
 
 ## Changes from 8.1.x to 9.0
 
+
+
 #### Known Issues
+{id="9.0-kn"}
+
 * If you have custom artifact cleanup rules configured which mention ".teamcity" directory, build logs can be deleted by the cleanup procedure. Make sure you have build logs backup before upgrade and remove all the custom artifacts cleanup rules with ".teamcity". Related issue: [TW-40042](https://youtrack.jetbrains.com/issue/TW-40042). This issue is fixed in 9.0.3 release.
 * If you use Microsoft SQL Server database with TeamCity, after the scheduled cleanup background run, TeamCity UI pages can lock until the server restart. See [TW-39549](https://youtrack.jetbrains.com/issue/TW-39549) for details. This issue is fixed in 9.0.2 release.
 * If you use LDAP authentication on the server and there are lots of login attempts on the server (e.g. there is an active REST\-using script), OutOfMemory errors can occur and require server restart. Consider installing an LDAP plugin with a fix from the [issue](https://youtrack.jetbrains.com/issue/TW-39316). This issue is fixed in 9.0.1 release.
@@ -987,11 +1091,12 @@ __Since TeamCity 9.0__, the issue trackers are configured on the project level i
 
 #### WebSocket connections and proxy servers
 
-__Since 9.0__, TeamCity tries to establish WebSocket connections between the browser and the server for the UI updates. If you have a proxy server (like nginx) in front of the TeamCity web UI, make sure that the proxy is [configured](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) properly to support WebSocket connections.
+__Since 9.0__, TeamCity tries to establish WebSocket connections between the browser and the server for the UI updates. If you have a proxy server (like nginx) in front of the TeamCity web UI, make sure that the proxy is [configured](how-to.md#set-up-teamcity-behind-a-proxy-server) properly to support WebSocket connections.
 
 If the proxy is misconfigured or does not support the WebSocket protocol, a server health item will be shown for TeamCity system administrators. In this case TeamCity will use plain old polling for the UI updates as before.
 
 #### REST API
+{id="9.0-rest"}
 
 REST API uses version 9.0. Previous versions of API are still available under `/app/rest/8.1`, `/app/rest/7.0`, `/app/rest/6.0` URLs.
 * Change bean: the `webLink` attribute is renamed to `webUrl` to match other beans ([TW-34398](http://youtrack.jetbrains.com/issue/TW-34398)).
@@ -1035,6 +1140,7 @@ The TeamCity Add\-in installed as a part of [ReSharper Ultimate ](https://www.je
 Besides, it will not use the settings provided by the 8.1 version. The traditional add\-in downloaded from TeamCity server can still use settings from previous version.
 
 #### Other
+{id="9.0-other-changes"}
 
 TeamCity agent installation via the Java web start installation package is no longer available.
 
@@ -1046,7 +1152,7 @@ No noteworthy changes.
 
 #### Command Line Runner
 
-The change in behavior introduced in 8.1 (see [below](#Known+issue+with+Command+Line+Runner)) has been fixed. Command line runners using "Executable with parameters" option which were created/changed with TeamCity 8.1can expose a change in behavior with the upgrade. The recommended approach is to switch to "Custom script" option instead of "Executable with parameters" in command line runner.
+The change in behavior introduced in 8.1 (see [below](#known-issue-with-command-line-runner)) has been fixed. Command line runners using "Executable with parameters" option which were created/changed with TeamCity 8.1can expose a change in behavior with the upgrade. The recommended approach is to switch to "Custom script" option instead of "Executable with parameters" in command line runner.
 
 #### Separate download for VSTest.Console runner
 
@@ -1118,6 +1224,7 @@ The `teamcity.diskSpaceWatcher.softThreshold` property is removed.
 The PowerShell plugin now uses the version that was specified in the UI as the `-Version` command line argument when executing scripts. Corresponding issue: [TW-33472](http://youtrack.jetbrains.com/issue/TW-33472)
 
 #### REST API
+{id="8.1-rest"}
 
 The latest version of the API has not changed, it is still "8.0" while there are changes in the API detailed below. If you find this inconvenient for your REST API usages, please comment in the corresponding [issue](http://youtrack.jetbrains.com/issue/TW-35227).
 
@@ -1219,6 +1326,7 @@ If you need earlier YouTrack versions to work with TeamCity 8.0, please [let us 
 
 
 #### REST API
+{id="8.0-rest"}
 
 __External ids__ There are changes in the API related to the new external ids for project/build types/templates as well as other changes.   
 The old API compatible with TeamCity 7.1 is still provided under "/app/rest/7.0" URL.
@@ -1321,7 +1429,7 @@ Agent windows service started to use OS\-provided environment variables. Once Ag
 
 __Default location for TeamCity Data Directory when installed with Windows installer__   
 This is only relevant for fresh TeamCity installations with Windows installer. Existing settings are preserved if you upgrade an existing installation.   
-Windows installer now uses `%ALLUSERSPROFILE%\JetBrains\TeamCity` location as default one for [TeamCity Data Directory](teamcity-data-directory.md). In TeamCity 7.0 and previous versions that used to be `%USERPROFILE%\.BuildServer`.
+Windows installer now uses `%\ALLUSERSPROFILE%\JetBrains\TeamCity` location as default one for [TeamCity Data Directory](teamcity-data-directory.md). In TeamCity 7.0 and previous versions that used to be `%\USERPROFILE%\.BuildServer`.
 
 __Windows domain login module__   
 When TeamCity server runs under Windows and Windows domain user authentication is used, TeamCity now uses another library (Waffle) to talk to the Windows domain.Under Linux the behavior is unchanged: jCIFS library is used as it were.
@@ -1449,10 +1557,6 @@ No noteworthy changes
 
 No noteworthy changes
 
-## Changes from 6.5.3 to 6.5.4
-
-No noteworthy changes
-
 ## Changes from 6.5.2 to 6.5.3
 
 No noteworthy changes
@@ -1523,7 +1627,7 @@ __Windows Tray Notifier__
 You will need to upgrade windows tray notifier by uninstalling it and installing it again. Unfortunately, auto\-upgrade will not work due to issues in old version of Windows Tray Notifier.
 
 __Maven runner__
-* In earlier TeamCity versions Maven was executed by invoking the 'mvn' shell script. You could specify some parameters in MAVEN\_OPTS and some in UI. Maven build runner created its own MAVEN\_OPT by concatenating these two (`%MAVEN\_OPTS%\+jvmArgs`). In this case, if some parameter was specified twice \- in MAVEN\_OPTS and in UI, only the one specified in MAVEN\_OPTS was effective. Starting with TeamCity 6.5 Maven runner forms direct java command. While this approach solves many different problems, it also means that MAVEN\_OPTS isn't effective anymore and all JVM command line parameters should be specified in build runner settings instead of MAVEN\_OPTS.
+* In earlier TeamCity versions Maven was executed by invoking the 'mvn' shell script. You could specify some parameters in MAVEN\_OPTS and some in UI. Maven build runner created its own MAVEN\_OPT by concatenating these two (`%\MAVEN\_OPTS%\+jvmArgs`). In this case, if some parameter was specified twice \- in MAVEN\_OPTS and in UI, only the one specified in MAVEN\_OPTS was effective. Starting with TeamCity 6.5 Maven runner forms direct java command. While this approach solves many different problems, it also means that MAVEN\_OPTS isn't effective anymore and all JVM command line parameters should be specified in build runner settings instead of MAVEN\_OPTS.
 * Those who had to manually setup surefire XML reporting for Maven release builds in TeamCity 6.0.x because otherwise tests weren't reported, now can forget about that. Since TeamCity 6.5 surefire tests run by release:prepare or release:perform goals are automatically detected. So don't forget to switch surefire XML reporting off in the build configuration settings to avoid double\-reporting!
 
 __Email sending settings__   
@@ -1718,7 +1822,7 @@ __Other plugins__
 If you use any plugins that are not bundled with TeamCity, please make sure you are using the latest version and it is compatible with the 5.0 release. e.g. You will need the latest version of [Groovy plug](https://confluence.jetbrains.com/display/TW/Groovy+plug) and other properties\-providing extensions.Pre\-5.0 notifier plugins may lack support for per\-test and assignment responsibility notifications.
 
 __Obsolete Properties__   
-The system property "build.number.format" and environment variable "BUILD\_NUMBER\_FORMAT" are removed. If you need to use build number format in your build (let us know why), you can define build number format as `%system.<property name>%` and define &lt;property name&gt; system property in the build configuration (it will be passed to the build then).
+The system property "build.number.format" and environment variable "BUILD\_NUMBER\_FORMAT" are removed. If you need to use build number format in your build (let us know why), you can define build number format as `%\system.<property name>%` and define &lt;property name&gt; system property in the build configuration (it will be passed to the build then).
 
 __Oracle database__   
 If you use TeamCity with Oracle database, you should add an addition privilege to the TeamCity Oracle user. In order to do it, log in to Oracle as user SYS and perform
