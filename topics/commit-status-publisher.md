@@ -57,7 +57,7 @@ The GitLab credentials for Commit Status Publisher must belong to a user with a 
 
 If you switch the **Authentication Type** to "GitLab Application Token", TeamCity will display a list of [configured OAuth connections](configuring-connections.md#GitLab) to GitLab. Click the **Acquire** button next to a required connection to obtain an access token.
 
-<img src="dk-CSP-BBCloudToken.png" width="708" alt="Acquire access token for Bitbucket Cloud"/>
+<img src="dk-csp-GitLabToken.png" width="708" alt="Acquire access token for GitLab"/>
 
 ### Bitbucket Cloud
 
@@ -85,7 +85,8 @@ If you are not signed in to your Bitbucket Server / Data Center account, TeamCit
 After you sign in, you will be able to acquire a token for the required connection. 
 TeamCity will update the token information for the connection.
 
-<img src="dk-csp-GitLabToken.png" width="708" alt="Acquire access token for GitLab"/>
+<img src="dk-CSP-BBCloudToken.png" width="708" alt="Acquire access token for Bitbucket Cloud"/>
+
 
 
 To protect a branch and ensure that only verified pull requests are merged into it, you can specify [required builds](https://confluence.atlassian.com/bitbucketserver/checks-for-merging-pull-requests-776640039.html#Checksformergingpullrequests-Requiredbuildsmergecheck) in your Bitbucket repository settings. To set a TeamCity build as a _required build_, open the __Add required builds__ page in Bitbucket and specify a build configuration ID as a build key in the __Add builds__ field. In this case, Bitbucket will not allow a pull request to be merged until the build on requested changes finishes successfully.

@@ -86,7 +86,7 @@ Starting with version 2023.09, authorization via OAuth tokens is also available 
 
 <img src="dk-csp-GitLabToken.png" width="708" alt="Acquire access token for GitLab"/>
 
-Learn more: [Commit Status Publisher](commit-status-publisher.md#GitLab) | [Pull Requests](pull-requests.md).
+Learn more: [Commit Status Publisher](commit-status-publisher.md#GitLab) | [Pull Requests](pull-requests.md#GitLab+Merge+Requests).
 
 
 ## Miscellaneous
