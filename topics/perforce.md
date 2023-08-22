@@ -169,7 +169,7 @@ Workspace options
 
 <td>
 
-Optionally, set the following options for the `[p4 client](http://www.perforce.com/perforce/doc.092/manuals/cmdref/client.html#1040665)` command: `Options`, `SubmitOptions`, and `LineEnd`.
+Optionally, set the following options for the `[p4 client](https://www.perforce.com/perforce/doc.092/manuals/cmdref/client.html#1040665)` command: `Options`, `SubmitOptions`, and `LineEnd`.
 
 For specific environments, define `P4Host` (supported for any type of checkout). See the details on workspace parameters [below](#Perforce+Workspace+Parameters).
 

@@ -20,13 +20,13 @@ The output values defined by the template are then used by the notifier to send 
 
 ### Notification Templates Location
 
-Each of the bundled [notifiers](notifier.md) has a directory in `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_notifications/`, which stores [FreeMarker](http://freemarker.sourceforge.net/) (`.ftl`) templates. There are also [`.dist`](teamcity-data-directory.md#.dist+Template+Configuration+Files) files that store the default templates. Each notification type evaluates a template file with a corresponding name. The template files can be modified while the server is running.
+Each of the bundled [notifiers](notifier.md) has a directory in `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_notifications/`, which stores [FreeMarker](https://freemarker.sourceforge.io/) (`.ftl`) templates. There are also [`.dist`](teamcity-data-directory.md#.dist+Template+Configuration+Files) files that store the default templates. Each notification type evaluates a template file with a corresponding name. The template files can be modified while the server is running.
 
 By default, the server checks for changes in the files every 60 seconds, but this can be changed by setting the `teamcity.notification.template.update.interval` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to the desired number of seconds.
 
 If an error occurs during the template evaluation, TeamCity logs the error details to `teamcity-notifications.log`. There can be non-critical errors that result in ignoring part of the template or critical errors that result in the inability to send notification at all. Whenever you make changes to the notification templates ensure the notification can still be sent.
 
-This document doesn't describe the FreeMarker template language, so if you need guidance on the FreeMarker syntax, refer to the corresponding [template manual](http://freemarker.org/docs/dgui.html).
+This document doesn't describe the FreeMarker template language, so if you need guidance on the FreeMarker syntax, refer to the corresponding [template manual](https://freemarker.apache.org/docs/dgui.html).
 
 ### Supported Output Values
 

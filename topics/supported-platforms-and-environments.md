@@ -446,7 +446,7 @@ Other .NET runners:
 Required on the build agent:
 * NuGet.exe command-line tool
 * on Windows: NuGet versions prior to 2.8.6 — .NET Framework 4.0 or later; NuGet 2.8.6 or later — .NET Framework 4.5
-* on Linux and macOS: [Mono](http://www.mono-project.com/docs/getting-started/install/) 4.4.2 or later and NuGet CLI 3.2 or later
+* on Linux and macOS: [Mono](https://www.mono-project.com/docs/getting-started/install/) 4.4.2 or later and NuGet CLI 3.2 or later
 
 </td></tr>
 
@@ -893,7 +893,7 @@ Oracle
 
 </td><td>
 
-10g or later (tested with the [driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1
+10g or later (tested with the [driver](https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1
 
 </td></tr>
 

@@ -149,7 +149,7 @@ NuGet package sources
 
 If you [refer to a package](#Commands+and+Arguments+Supported+in+Scripts) from a script, TeamCity will automatically download it from the feed specified in this field. The runner can automatically parse commands like `#r "nuget:System.Text.Json"` and `#r "nuget:System.Text.Json,4.7.2"`.
 
-By default, TeamCity restores NuGet packages from their sources published on [NuGet.org](http://nuget.org). In this field, you can specify paths to other NuGet repositories, and TeamCity will search for packages there, by the order of declaration. If a package source cannot be found in any of the specified repositories, TeamCity will search for it on NuGet.org.
+By default, TeamCity restores NuGet packages from their sources published on [NuGet.org](https://nuget.org). In this field, you can specify paths to other NuGet repositories, and TeamCity will search for packages there, by the order of declaration. If a package source cannot be found in any of the specified repositories, TeamCity will search for it on NuGet.org.
 
 To be able to access private repositories, configure [NuGet feed credentials](nuget-feed-credentials.md).
 {product="tc"}

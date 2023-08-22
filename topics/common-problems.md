@@ -100,7 +100,7 @@ Read more on [clean-up settings](teamcity-data-clean-up.md#Base+Rule+Behavior+fo
 
 If during the TeamCity server start-up you encounter errors like: _"error in script file line: ... out of memory"_, _"java.sql.SQLException: out of memory"_, perform the following:
 
-* try [increasing server memory](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server). If this does not help, most probably this means that you have encountered __internal database corruption__. You can try to deal with this corruption using the [notes](http://www.hsqldb.org/doc/1.8/guide/apc.html) based on the HSQLDB documentation.
+* try [increasing server memory](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server). If this does not help, most probably this means that you have encountered __internal database corruption__. You can try to deal with this corruption using the [notes](https://www.hsqldb.org/doc/1.8/guide/apc.html) based on the HSQLDB documentation.
 
 Here is a way to attempt a manual database restore:
 * stop the TeamCity server
@@ -458,7 +458,7 @@ See also this related [external posting](http://www.mikeobrien.net/blog/teamcity
 
 This error can occur when the Oracle JDBC driver is not compatible with the Oracle server. For example, Oracle JDBC driver version 11.1 is not compatible with Oracle server version 10.2.
 
-In order to resolve the problem, use the Oracle JDBC driver from your Oracle server installation, or [download the driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) of the same version as the Oracle server.
+In order to resolve the problem, use the Oracle JDBC driver from your Oracle server installation, or [download the driver](https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) of the same version as the Oracle server.
 
 ## Common Maven issues
 

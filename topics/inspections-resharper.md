@@ -102,7 +102,7 @@ Target Frameworks
 
 <td>
 
-This option allows you to handle the [Visual Studio Multi-Targeting](http://msdn.microsoft.com/en-us/library/bb398197.aspx) feature.   
+This option allows you to handle the [Visual Studio Multi-Targeting](https://msdn.microsoft.com/en-us/library/bb398197.aspx) feature.   
 Agent requirement will be created for every checked item.
 
 .NET Framework versions 2.0–4.8.1 are supported.

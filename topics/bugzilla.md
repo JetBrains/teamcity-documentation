@@ -107,7 +107,7 @@ Issue ID Pattern
 
 <td>
 
-Specify a [Java Regular Expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to recognize an issue ID in the comment text. The matched text (or the first group if there are groups defined) is used as the issue number. The most common case is `#(\d+)` — this will extract `1234` as the issue ID from the text `Fix for #1234`.
+Specify a [Java Regular Expression](https://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to recognize an issue ID in the comment text. The matched text (or the first group if there are groups defined) is used as the issue number. The most common case is `#(\d+)` — this will extract `1234` as the issue ID from the text `Fix for #1234`.
 
 
 </td></tr></table>

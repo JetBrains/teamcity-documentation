@@ -665,7 +665,7 @@ Run tests from assemblies:
 
 This section assumes, that you already have a NAnt build script with the configured `nunit2` task in it, and want TeamCity to track test reports without making any changes to the existing build script. Otherwise, consider adding the [NUnit build runner](nunit.md) as one of the steps for your build configuration.
 
-To track tests defined in a NAnt build via the standard `nunt2` task, TeamCity provides a custom [task](http://nant.sourceforge.net/nightly/latest/help/tasks/nunit2.html) implementation and automatically replaces the original `<nunit2>` task with its own task. When the build is triggered, TeamCity starts TeamCity NUnit Test Launcher using own implementation of `<nunit2>`. This allows you to leave your the build script without changes and receive on-the-fly test reports in TeamCity.
+To track tests defined in a NAnt build via the standard `nunt2` task, TeamCity provides a custom [task](https://nant.sourceforge.net/nightly/latest/help/tasks/nunit2.html) implementation and automatically replaces the original `<nunit2>` task with its own task. When the build is triggered, TeamCity starts TeamCity NUnit Test Launcher using own implementation of `<nunit2>`. This allows you to leave your the build script without changes and receive on-the-fly test reports in TeamCity.
 
 If you don't want TeamCity to replace the original `nunit2` task, consider the following options:
 * Use the NUnit console with TeamCity Add-in for NUnit.
@@ -1097,7 +1097,7 @@ It is possible to use `{build.number}` as a placeholder for older build number.
 ### NUnit Add-ins Support
 {initial-collapse-state="collapsed"}
 
-NUnit Add-in is an extension that plugs in to the NUnit core and changes the way it operates. Refer to the [NUnit add-ins page](http://www.nunit.org/index.php?p=nunitAddins&amp;r=2.6.3) for more information. This section covers description of the NUnit add-ins support for NAnt, MSBuild, and NUnit Console Launcher.
+NUnit Add-in is an extension that plugs in to the NUnit core and changes the way it operates. Refer to the [NUnit add-ins page](https://www.nunit.org/index.php?p=nunitAddins&amp;r=2.6.3) for more information. This section covers description of the NUnit add-ins support for NAnt, MSBuild, and NUnit Console Launcher.
 
 #### Using Add-ins in NAnt Build Runner
 
@@ -1160,7 +1160,7 @@ For example:
 
 TeamCity NUnit Add-in supports __NUnit prior to version 3.0__. For later versions, refer to the [this section](#Using+NUnit+for+MSBuild).
 
-If you run NUnit tests via the [NUnit console](http://www.nunit.org/index.php?p=nunit-console&amp;r=2.2.10) and want TeamCity to track the test results without having to launch the TeamCity test runner, the best solution is to use TeamCity Add-in for NUnit. You can plug this add-in into NUnit, and the tests will be automatically reported to the TeamCity server.
+If you run NUnit tests via the [NUnit console](https://www.nunit.org/index.php?p=nunit-console&amp;r=2.2.10) and want TeamCity to track the test results without having to launch the TeamCity test runner, the best solution is to use TeamCity Add-in for NUnit. You can plug this add-in into NUnit, and the tests will be automatically reported to the TeamCity server.
 
 Alternatively, you can opt to use the [XML Report Processing](xml-report-processing.md) build feature, or manually configure test reporting by means of [service messages](service-messages.md).
 

@@ -1,7 +1,7 @@
 [//]: # (title: Getting Started with NUnit)
 [//]: # (auxiliary-id: Getting Started with NUnit)
 
-This tutorial aims at describing the basic practices of using [NUnit 3](http://www.nunit.org/) in TeamCity. The test project and script samples can be found [here](https://github.com/JetBrains/teamcity-nunit-samples). The order of use cases is based on the number of the TeamCity features involved: the first case is the most basic, more complex cases that follow utilize a larger number of features. We recommend you familiarizing yourself with all features, finding their advantages and disadvantages, and then decide in favor of one or another.
+This tutorial aims at describing the basic practices of using [NUnit 3](https://www.nunit.org/) in TeamCity. The test project and script samples can be found [here](https://github.com/JetBrains/teamcity-nunit-samples). The order of use cases is based on the number of the TeamCity features involved: the first case is the most basic, more complex cases that follow utilize a larger number of features. We recommend you familiarizing yourself with all features, finding their advantages and disadvantages, and then decide in favor of one or another.
 
 ## Installing NUnit
 {id="installing-nunit-1"}
@@ -100,7 +100,7 @@ The _NUnit runner_ field defines the NUnit version used to run tests. When confi
 
 In all the examples the NuGet package manager provides the NUnit infrastructure. Using NuGet enables the user to conveniently manage the test environment, update NUnit, and run test locally as they will be run by TeamCity.
 
-The NUnit build step is a straightforward and user-friendly way to run NUnit tests in TeamCity. It provides the maximum range of options simultaneously concealing the specifics of running tests on different OSs by using [Mono](http://www.mono-project.com/).
+The NUnit build step is a straightforward and user-friendly way to run NUnit tests in TeamCity. It provides the maximum range of options simultaneously concealing the specifics of running tests on different OSs by using [Mono](https://www.mono-project.com/).
 
 ## Case 4. NUnit Build Step, options
 
@@ -136,7 +136,7 @@ Note that when the _Reduce test failure feedback time_ option is enabled, the `E
 2\. During this step the priority tests are run.    
 3\. The remaining tests follow.
 
-Another great feature of the NUnit build step is the fact that it executes tests on different OSs the same way, without changing the configuration. This is true if the agents, where the full-blown .NET is unavailable, have [Mono](http://www.mono-project.com/). It allows the build configurations to be OS-independent.
+Another great feature of the NUnit build step is the fact that it executes tests on different OSs the same way, without changing the configuration. This is true if the agents, where the full-blown .NET is unavailable, have [Mono](https://www.mono-project.com/). It allows the build configurations to be OS-independent.
 
 ## Debugging NUnit tests
 

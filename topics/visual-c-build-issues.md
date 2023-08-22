@@ -20,8 +20,8 @@ If none of the steps is helpful for your case, please contact us via any [feedba
 
 * Ensure that the Build Agent service runs under the user with local administrative privileges.
 * Check that Microsoft Visual Studio is installed on the build agent.
-* Note that you have to start Visual Studio 2005 or Visual Studio 2008 under the build user [at least once](http://www.jetbrains.net/devnet/message/5233781#5233781).
-* If __"Error spawning cmd.exe"__ appears, put the [following lines](http://www.jetbrains.net/devnet/message/5217957#5217957) exactly into the list in __Tools | Options | Projects and Solutions | VC++ Directories__:
+* Note that you have to start Visual Studio 2005 or Visual Studio 2008 under the build user [at least once](https://devnet.jetbrains.net/message/5233781#5233781).
+* If __"Error spawning cmd.exe"__ appears, put the [following lines](https://devnet.jetbrains.net/message/5217957#5217957) exactly into the list in __Tools | Options | Projects and Solutions | VC++ Directories__:
 
     ```Shell
     --$(SystemRoot)\System32

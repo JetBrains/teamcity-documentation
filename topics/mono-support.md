@@ -2,13 +2,13 @@
 [//]: # (auxiliary-id: Mono Support)
 
 Mono framework is an alternative framework for running .NET applications on both Windows and Unix-based platforms.   
-For more information refer to the [Mono official site](http://www.mono-project.com).
+For more information refer to the [Mono official site](https://www.mono-project.com/).
 
 ## Supported Build Runners
 
 TeamCity supports running .NET builds using [NAnt](nant.md) and [MSBuild](msbuild.md) runners under Mono framework as well as under .NET Frameworks. (MSBuild as xbuild in Mono). 
 
-[NuGet](nuget.md) runners support Linux and macOS when [Mono](http://www.mono-project.com/docs/getting-started/install/) is installed on the agent. Note that only NuGet CLI 3.2\+ on Mono 4.4.2\+ is supported. 
+[NuGet](nuget.md) runners support Linux and macOS when [Mono](https://www.mono-project.com/docs/getting-started/install/) is installed on the agent. Note that only NuGet CLI 3.2\+ on Mono 4.4.2\+ is supported. 
 
 [Tests reporting tasks](net-testing-frameworks-support.md) are also supported under Mono.
 

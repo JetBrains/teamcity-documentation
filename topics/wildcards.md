@@ -68,7 +68,7 @@ Matches any symbols including the directory separator.
 </tr>
 </table>
 
-You can read more on Ant wildcards in the corresponding [section](http://ant.apache.org/manual/dirtasks.html#patterns) of the Ant documentation.
+You can read more on Ant wildcards in the corresponding [section](https://ant.apache.org/manual/dirtasks.html#patterns) of the Ant documentation.
 
 ### Examples
 

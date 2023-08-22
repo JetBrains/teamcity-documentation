@@ -37,7 +37,7 @@ These are configured in the dedicated sections of the build runners.
 These are available if you use Visual Studio.
 * [Inspections (ReSharper)](inspections-resharper.md) gathers results of [JetBrains ReSharper Code Inspections](https://www.jetbrains.com/resharper/webhelp/Code_Analysis__Code_Inspections.html) in your C#, VB.NET, XAML, XML, ASP.NET, JavaScript, CSS and HTML code.
 * [Duplicates Finder (ReSharper)](duplicates-finder-resharper.md) provides a report on the discovered repetitive blocks of C# and VB.NET code.
-* [FxCop](fxcop.md) uses [Microsoft FxCop](http://msdn.microsoft.com/en-us/library/bb429476(VS.80).aspx) preinstalled on a build agent.
+* [FxCop](fxcop.md) uses [Microsoft FxCop](https://msdn.microsoft.com/en-us/library/bb429476(VS.80).aspx) preinstalled on a build agent.
 
 #### Code Coverage
 

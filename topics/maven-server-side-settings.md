@@ -78,7 +78,7 @@ The settings are available in the current project and its subprojects. To overri
 
 </td></tr></table>
 
-For the logic of Maven settings, refer to the related Maven [documentation](http://maven.apache.org/settings.html).
+For the logic of Maven settings, refer to the related Maven [documentation](https://maven.apache.org/settings.html).
 
 User-level settings can be configured in the [Maven Artifact Dependency Trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger).
 

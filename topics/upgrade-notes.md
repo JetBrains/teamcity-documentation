@@ -310,7 +310,7 @@ Download newer versions of these plugins from JetBrains Marketplace:
     * The bundled Java was updated to version 11.0.15.9.1
 * Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11.x. Previously added IntelliJ Inspections/Duplicates steps with the bundled version will become incompatible with the agents running Java below version 11.
 * The bundled Kotlin compiler used in [TeamCity DSL](kotlin-dsl.md) has been updated to version 1.6.21
-* The [SBT](http://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.5.5.
+* The [SBT](https://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.5.5.
 * Freemarker, used by TeamCity [notification templates](customizing-notification-templates.md), has been updated to version 2.3.31.
 * The [Qodana plugin](https://www.jetbrains.com/help/qodana/qodana-teamcity-plugin.html) has been bundled with TeamCity. If you previously installed the Qodana plugin and used DSL, you'll need to update your DSL settings. We're providing a special version of the plugin that contains both [old and new Kotlin DSL settings](https://plugins.jetbrains.com/plugin/15498-qodana/versions/stable/169313).
   All deprecated settings are marked and alternatives are provided. After the migration, you can delete this plugin and use the version bundled with TeamCity.
@@ -541,7 +541,7 @@ If you have previously configured an SSH username directly inside build steps an
 {id="bundled-tools-updates-202023"}
 
 * In the [TeamCity agent Docker image](https://hub.docker.com/r/jetbrains/teamcity-agent/), Docker has been updated to version 19.03.14 and Docker Compose has been updated to version 1.28.5.
-* [SBT](http://www.scala-sbt.org/), used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.4.7.
+* [SBT](https://www.scala-sbt.org/), used in the [Simple Build Tool (Scala)](simple-build-tool-scala.md) plugin, has been updated to version 1.4.7.
 
 ## Changes from 2020.2.1 to 2020.2.2
 
@@ -1019,7 +1019,7 @@ On upgrading to 2019.1, the Token-Based Authentication module will be enabled by
 ### New CSP header value
 
 Now TeamCity web UI uses more restrictive value for the [`Content-Security-Policy`](https://content-security-policy.com/) HTTP header. This provides extra security at the expense of prohibiting usage of the web resources not hosted on the TeamCity server.   
-If you rely on external resources (for example, in the build report tabs content or by using not yet updated plugins), you can specify new header value in the `teamcity.web.header.Content-Security-Policy.protectedValue=<full_header_value>` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (and `teamcity.web.header.Content-Security-Policy.adminUI.protectedValue` property for the web pages in Administration area). Plugins can use [`ContentSecurityPolicyConfig`](http://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) open API interface to add to the value configured.
+If you rely on external resources (for example, in the build report tabs content or by using not yet updated plugins), you can specify new header value in the `teamcity.web.header.Content-Security-Policy.protectedValue=<full_header_value>` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (and `teamcity.web.header.Content-Security-Policy.adminUI.protectedValue` property for the web pages in Administration area). Plugins can use [`ContentSecurityPolicyConfig`](https://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) open API interface to add to the value configured.
 
 ### Change in dotCover artifacts
 
@@ -1561,7 +1561,7 @@ __TeamCity agents__ currently require Java 1.6\+, but starting from the next Tea
 
 __Java memory options change__
 
-It is recommended to remove the " `-XX:MaxPermSize=..."`  [JVM option](server-startup-properties.md) from `TEAMCITY_SERVER_MEM_OPTS` environment variable, if previously configured. (This is due to the fact that Java 8 [does not use](http://javaeesupportpatterns.blogspot.ru/2013/02/java-8-from-permgen-to-metaspace.html) permanent generation (PermGen) anymore)
+It is recommended to remove the " `-XX:MaxPermSize=..."`  [JVM option](server-startup-properties.md) from `TEAMCITY_SERVER_MEM_OPTS` environment variable, if previously configured. (This is due to the fact that Java 8 [does not use](https://javaeesupportpatterns.blogspot.com/2013/02/java-8-from-permgen-to-metaspace.html) permanent generation (PermGen) anymore)
 
 ### Agent requirements and artifact dependencies disabling
 
@@ -1750,7 +1750,7 @@ There is a [known issue](https://youtrack.jetbrains.com/issue/TW-43731) in the b
 
 #### Product icons
 
-JetBrains product icons are updated in accordance with the [new JetBrains branding](http://blog.jetbrains.com/blog/2015/12/10/the-drive-to-develop/).
+JetBrains product icons are updated in accordance with the [new JetBrains branding](https://blog.jetbrains.com/blog/2015/12/10/the-drive-to-develop/).
 
 #### Git
 
@@ -2347,9 +2347,9 @@ Please check that all TeamCity\-related tables are located in the default user's
 
 If the default user's schema is not set right, TeamCity can report "TeamCity database is empty or doesn't exist. If you proceed, a new database will be created." message on the first start of newer TeamCity.
 
-To change user's default schema, use the '[alter user](http://msdn.microsoft.com/en-us/library/ms176060.aspx)' SQL command.
+To change user's default schema, use the '[alter user](https://msdn.microsoft.com/en-us/library/ms176060.aspx)' SQL command.
 
-For the default schema description, see the "Default Schemas" section in the [corresponding documentation ](http://msdn.microsoft.com/en-us/library/ms190387.aspx).
+For the default schema description, see the "Default Schemas" section in the [corresponding documentation ](https://msdn.microsoft.com/en-us/library/ms190387.aspx).
 
 __Open API changes__   
 See [details](https://confluence.jetbrains.com/display/TCD18/Open+API+Changes)
@@ -2690,7 +2690,7 @@ Please use the patch attached to the issue.
 ## Changes from 5.0.1 to 5.0.2
 
 __External change viewers__   
-The `relativePath` variable is now replaced with relative path of a file _without_ checkout rules. The previous value can be accessed via `relativeAgentPath`. More information at [TW-10801](http://jetbrains.net/tracker/issue/TW-10801).
+The `relativePath` variable is now replaced with relative path of a file _without_ checkout rules. The previous value can be accessed via `relativeAgentPath`. More information at [TW-10801](https://youtrack.jetbrains.com/issue/TW-10801).
 
 ## Changes from 5.0 to 5.0.1
 
@@ -2736,7 +2736,7 @@ No potential breaking changes.
 
 ## Changes from 4.5.1 to 4.5.2
 
-Here is a critical issue with Rake runner in 4.5.2 release. Please see [TW-8485](http://jetbrains.net/tracker/issue2/TW-8485) for details and a fixing patch.
+Here is a critical issue with Rake runner in 4.5.2 release. Please see [TW-8485](https://youtrack.jetbrains.com/issue/TW-8485) for details and a fixing patch.
 
 ## Changes from 4.5.0 to 4.5.1
 
@@ -2748,7 +2748,7 @@ __Default User Roles__
 The roles assigned as default for new users will be moved to "All Users" groups and will be effectively granted to all users already registered in TeamCity.
 
 __Running builds during server restart__   
-Please ensure there are no running builds during server upgrade.If there are builds that run during server restart and these builds have test, the builds will be canceled and re\-added to build queue ([TW-7476](http://jetbrains.net/tracker/issue/TW-7476)).
+Please ensure there are no running builds during server upgrade.If there are builds that run during server restart and these builds have test, the builds will be canceled and re\-added to build queue ([TW-7476](https://youtrack.jetbrains.com/issue/TW-7476)).
 
 __LDAP settings rename__   
 If you had LDAP integration configured, several settings will be automatically converted on first start of the new server. The renamed settings are:
@@ -2787,7 +2787,7 @@ If you relied on `""` pattern to match directory names, please adjust your patte
 If you relied on the `""` pattern to download only the files without extension, please update your pattern to use `"."` for that.
 
 __Downloading of artifacts with help of Ivy__   
-If you downloaded artifacts from the build scripts (like Ant build.xml) with help of Ivy tasks you should modify your ivyconf.xml file and remove all statuses from there except "integration". You can take the ivyconf.xml file from the following page as reference: [http://www.jetbrains.net/confluence/display/TCD4/Configuring+Dependencies](http://www.jetbrains.net/confluence/display/TCD4/Configuring+Dependencies)
+If you downloaded artifacts from the build scripts (like Ant build.xml) with help of Ivy tasks you should modify your ivyconf.xml file and remove all statuses from there except "integration". You can take the ivyconf.xml file from the following page as reference: [https://www.jetbrains.com/help/teamcity/4.0/configuring-dependencies.html](https://www.jetbrains.com/help/teamcity/4.0/configuring-dependencies.html)
 
 __Browser caches (IE)__   
 To force Internet Explorer to use updated icons (i.e. for the Run button) you may need to force page reload (Ctrl\+Shift\+R) or delete "Temporary Internet Files".
