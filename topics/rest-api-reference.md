@@ -2219,7 +2219,7 @@ PUT http://teamcity:8111/app/rest/agents/<agentLocator>/enabled
  
 ```
 
-Put `true` or `false` text as text/plain. See an [example](http://devnet.jetbrains.net/message/5462246#5462246).
+Put `true` or `false` text as text/plain. See an [example](https://devnet.jetbrains.net/message/5462246#5462246).
 
 </td></tr>
 

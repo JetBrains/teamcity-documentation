@@ -8,7 +8,7 @@ JaCoCo is available for the following build runners: [Ant](ant.md), [IntelliJ ID
 <tip>
 
 To ensure the coverage data is collected properly, make sure your tests run in (one or more) separate JVMs.
-* Ant and Intellij Idea Project runners: this is the default setting for [TestNG](http://testng.org/doc/ant.html), for [Junit test task](https://ant.apache.org/manual/Tasks/junit.html), set `fork=true`.
+* Ant and Intellij Idea Project runners: this is the default setting for [TestNG](https://testng.org/doc/ant.html), for [Junit test task](https://ant.apache.org/manual/Tasks/junit.html), set `fork=true`.
 * Maven runner: set `forkCount` to a value [higher than 0](https://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html).
 * Gradle runner: this is the default setting for [Gradle tests](https://gradle.org/docs/current/dsl/org.gradle.api.tasks.testing.Test.html).
 

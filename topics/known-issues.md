@@ -103,7 +103,7 @@ If you use Log4j logging in your tests, in some cases you may miss the Log4j out
 
 ## Agent Service Can Exit on User Logout under Windows x64
 
-The used version of [Java Service Wrapper](http://wrapper.tanukisoftware.org/) does not fully support Windows 64 and this causes agent launcher process to be killed on user logout. The agent itself will be function until the next restart (server upgrade or agent properties change).
+The used version of [Java Service Wrapper](https://wrapper.tanukisoftware.com/) does not fully support Windows 64 and this causes agent launcher process to be killed on user logout. The agent itself will be function until the next restart (server upgrade or agent properties change).
 
 
 ## Failed Build Can be Reported as a Successful One With Maven 2.0.7

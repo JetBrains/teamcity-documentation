@@ -307,7 +307,7 @@ TeamCity distributions provided by JetBrains do not contain software/libraries a
 
 ### POODLE
 
-If you have configured an HTTPS access to the TeamCity server, inspect the solution used for HTTPS as that might be affected (for example, Tomcat seems to be [affected](http://wiki.apache.org/tomcat/Security/POODLE)). At this point, none of the TeamCity distributions include HTTPS access by default and investigating/eliminating HTTPS-related vulnerability is out of scope of TeamCity.
+If you have configured an HTTPS access to the TeamCity server, inspect the solution used for HTTPS as that might be affected (for example, Tomcat seems to be [affected](https://cwiki.apache.org/tomcat/Security/POODLE)). At this point, none of the TeamCity distributions include HTTPS access by default and investigating/eliminating HTTPS-related vulnerability is out of scope of TeamCity.
 
 Depending on the settings used, TeamCity server (and agent) can establish HTTPS connections to other servers (for example, Subversion). Depending on the server settings, those connections might fall back to using SSL 3.0 protocol. The recommended solution is not TeamCity-specific and it is to disable SSLv3 on the target SSL-server side.
 
