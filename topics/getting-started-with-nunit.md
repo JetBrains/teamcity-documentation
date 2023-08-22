@@ -42,7 +42,7 @@ The [project file](https://github.com/JetBrains/teamcity-nunit-samples/blob/mast
 ```Shell
 
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="RunTests" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="RunTests" xmlns="https://schemas.microsoft.com/developer/msbuild/2003">
  <Target Name="RunTests">
   <Exec IgnoreExitCode="True" Command="nunit3-console.exe Tests.dll">
  <Output TaskParameter="ExitCode" ItemName="exitCode" />

@@ -48,7 +48,7 @@ If the build succeeds from the console but still fails in TeamCity, use a comman
 
 If it still behaves differently in TeamCity, most probably this is an environment or a tool issue. 
 
-If the command line runner works but the dedicated runner does not while the options are all the same, create a new issue in our [tracker](http://youtrack.jetbrains.net/issues/TW) detailing the case. Please attach all the build step settings, the build log, all agent logs covering the build, the command you used in the console to run the build and the full console output of the build.
+If the command line runner works but the dedicated runner does not while the options are all the same, create a new issue in our [tracker](https://youtrack.jetbrains.com/issues/TW) detailing the case. Please attach all the build step settings, the build log, all agent logs covering the build, the command you used in the console to run the build and the full console output of the build.
 
 [//]: # (Internal note. Do not delete. "Common Problemsd63e112.txt")
 
@@ -187,7 +187,7 @@ If the source character set is Unicode or UTF, the destination one must also be 
 To fix a problem, perform the following steps:
 
 1. Create a new database with the appropriate character set and collation. We recommend using a __unicode case-sensitive__ collation: see instructions for [PostgreSQL](set-up-external-database.md#On+PostgreSQL+Server+Side) and [MySQL](set-up-external-database.md#On+MySQL+Server+Side). For MySQL, `utf8_bin` or `utf8mb4_bin` is preferred.  
-    See also [PostgreSQL](http://www.postgresql.org/docs/9.3/static/multibyte.html), [MySQL](http://dev.mysql.com/doc/refman/5.0/en/charset-mysql.html), [MS SQL](http://technet.microsoft.com/en-us/library/ms180175(v=sql.105).aspx) documentation for details on character set.
+    See also [PostgreSQL](https://www.postgresql.org/docs/9.3/static/multibyte.html), [MySQL](http://dev.mysql.com/doc/refman/5.0/en/charset-mysql.html), [MS SQL](http://technet.microsoft.com/en-us/library/ms180175(v=sql.105).aspx) documentation for details on character set.
     
 2. Copy the current `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file, and change the database references in the copy to the newly created database.
 3. Stop the TeamCity server.

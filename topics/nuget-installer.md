@@ -149,13 +149,13 @@ Update Options
 
 >To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View as code__ in the sidebar.
 
-See the [NuGet documentation](http://docs.nuget.org/docs/reference/command-line-reference) for the complete `NuGet.exe` command line reference.
+See the [NuGet documentation](https://docs.nuget.org/docs/reference/command-line-reference) for the complete `NuGet.exe` command line reference.
 
 When you add the NuGet Installer runner to your build configuration, each finished build will have the __NuGet Packages__ tab listing the packages used.
 
  <seealso>
         <category ref="blog">
-            <a href="http://blog.jetbrains.com/teamcity/2013/08/nuget-package-restore-with-teamcity/">NuGet Package Restore with TeamCity</a>
+            <a href="https://blog.jetbrains.com/teamcity/2013/08/nuget-package-restore-with-teamcity/">NuGet Package Restore with TeamCity</a>
         </category>
         <category ref="admin-guide">
             <a href="nuget-pack.md">NuGet Pack</a>

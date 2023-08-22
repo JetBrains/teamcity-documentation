@@ -972,7 +972,7 @@ If you need the TeamCity test runner to support third-party NUnit add-ins, refer
 Example (part of the MSBuild build script):
 
 ```XML
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project xmlns="https://schemas.microsoft.com/developer/msbuild/2003">
   <UsingTask TaskName="NUnitTeamCity" AssemblyFile="$(teamcity_dotnet_nunitlauncher_msbuild_task)"/>
  
   <Target Name="SayHello">
@@ -1144,7 +1144,7 @@ where `<list>` is the list of add-ins separated by `;` or `,`.
 For example:
 
 ```XML
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="build">
+<Project xmlns="https://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="build">
   <ItemGroup>
     <TestAssembly Include="$(MSBuildProjectDirectory)/MyTests.dll" />
   </ItemGroup>

@@ -72,7 +72,7 @@ When a TeamCity agent is started as a Windows service and automated tests for .N
 
 ### Early start of the service before other resources are initialized
 
-To handle this, consider using the __Automatic (Delayed Start)__ option of the service settings or configure [service dependencies](http://youtrack.jetbrains.com/issue/TW-32987#comment=27-608269).
+To handle this, consider using the __Automatic (Delayed Start)__ option of the service settings or configure [service dependencies](https://youtrack.jetbrains.com/issue/TW-32987#comment=27-608269).
 
  For more investigation steps, see the [Common Problems](common-problems.md#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) page.
 
@@ -144,11 +144,11 @@ If you run antivirus on the TeamCity agent machines and get disk access errors o
 It is recommended to exclude entire TeamCity server home and [TeamCity Data Directory](teamcity-data-directory.md) from the background checks and perform periodical checks there in the well-known maintenance window so that those do not affect server performance much. On TeamCity agent, it is recommended to exclude TeamCity agent home from the background checks.
 {product="tc"}
 
-There might be problems with the Windows Indexing Service, so disable various indexing services. See [the related issue](http://youtrack.jetbrains.net/issue/TW-10033#comment=27-82484) for more details. Windows System Restore Feature might also need disabling.
+There might be problems with the Windows Indexing Service, so disable various indexing services. See [the related issue](https://youtrack.jetbrains.com/issue/TW-10033#comment=27-82484) for more details. Windows System Restore Feature might also need disabling.
 
 Do not install software with background indexing like WinCVS, TortoiseCVS, TortoiseSVN, and other Tortoise\* products. This applies to server and also to agents if you use agent-side checkout.
 
-Skype software is known to corrupt layout of pages displayed in Internet Explorer. ([TW-13052](http://youtrack.jetbrains.net/issue/TW-13052)).
+Skype software is known to corrupt layout of pages displayed in Internet Explorer. ([TW-13052](https://youtrack.jetbrains.com/issue/TW-13052)).
 
 ## Subversion issues
 
@@ -193,7 +193,7 @@ Before you upgrade to IntelliJ IDEA X (or other IntelliJ X platform products), m
 ## Other Java Applications Running on the Same Server
 {product="tc"}
 
-If other web applications are available via the same hostname, a session cookie conflict can occur. This usually is visible via random user logouts or losing session-level data. (e.g. [TW-12654](http://youtrack.jetbrains.net/issue/TW-12654)). To resolve this, you can use different host names when accessing the applications.
+If other web applications are available via the same hostname, a session cookie conflict can occur. This usually is visible via random user logouts or losing session-level data. (e.g. [TW-12654](https://youtrack.jetbrains.com/issue/TW-12654)). To resolve this, you can use different host names when accessing the applications.
 
 ## The Server Does Not Start Claiming the Database is in Use
 {product="tc"}
@@ -312,7 +312,7 @@ See also: [Request Limits](https://learn.microsoft.com/en-us/iis/configuration/s
 {product="tc"}
 
 This problem may happen when changing JVM from 1.6 to 1.7 and connecting some incorrectly configured HTTPS servers. 
-The problem and workaround for it are described in [this issue](http://youtrack.jetbrains.com/issue/TW-30210).
+The problem and workaround for it are described in [this issue](https://youtrack.jetbrains.com/issue/TW-30210).
 
 [//]: # (Internal note. Do not delete. "Known Issuesd193e619.txt")
 

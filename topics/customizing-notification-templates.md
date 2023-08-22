@@ -72,7 +72,7 @@ This section provides Freemarker code snippets that can be used for customizatio
 The example below shows the snippet included into the `build_failed.ftl` template: the errors will be listed in both the plain text and the html part of the email:
 
 ```XML
-<#-- Uses FreeMarker template syntax, template guide can be found at http://freemarker.org/docs/dgui.html -->
+<#-- Uses FreeMarker template syntax, template guide can be found at https://freemarker.org/docs/dgui.html -->
  
 <#import "common.ftl" as common>
  

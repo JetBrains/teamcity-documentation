@@ -72,7 +72,7 @@ This feature is useful when some tests fail for a known reason, but it is not cu
 
 When a test is muted, it is __still run__ in the future builds, but its failure does not affect the build status.
 
-Your build script might need adjustment to make the build successful when there are failing but muted tests. Make sure the build does not fail because of other build failure conditions (for example, _"Fail if build process exit code is not zero"_) in case the only errors encountered were tests failures. See the related issue [TW-16784](http://youtrack.jetbrains.net/issue/TW-16784) for more details.
+Your build script might need adjustment to make the build successful when there are failing but muted tests. Make sure the build does not fail because of other build failure conditions (for example, _"Fail if build process exit code is not zero"_) in case the only errors encountered were tests failures. See the related issue [TW-16784](https://youtrack.jetbrains.com/issue/TW-16784) for more details.
 
 ## Changing Project Scope of Investigation or Mute
 

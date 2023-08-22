@@ -273,7 +273,7 @@ The redo log (or a similar entity) naming for different RDBMS:
 * PostgreSQL: WAL (write-ahead log)
 * MySQL + InnoDB and Percona: Redo Log
 
-PostgreSQL: it is recommended to use version 9.2+, which has a lot of query optimization features. See the information on the write-ahead-log (WAL) in the [PostgreSQL documentation](http://www.postgresql.org/docs/9.2/static/wal-internals.html).
+PostgreSQL: it is recommended to use version 9.2+, which has a lot of query optimization features. See the information on the write-ahead-log (WAL) in the [PostgreSQL documentation](https://www.postgresql.org/docs/9.2/static/wal-internals.html).
 
 Oracle: it is recommended to keep statistics on — all automatically gathered statistics should be enabled (since Oracle 10.0, this is the default setup). See the information on redo log files in the [Oracle documentation](https://docs.oracle.com/cd/B14117_01/server.101/b10752/iodesign.htm#26022).
 

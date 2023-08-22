@@ -17,7 +17,7 @@ To configure mapping:
      <transformation-pattern
        search="(>|\(|\s|^)([A-Z]+-\d+)(\b|$)"
        replace="$1&lt;a target=&quot;_blank&quot; title=&quot;Click to open this issue a new window&quot; href=&quot;
-       http://www.jetbrains.net/jira/browse/$2&quot;&gt;$2&lt;/a&gt;$3"
+       https://www.jetbrains.net/jira/browse/$2&quot;&gt;$2&lt;/a&gt;$3"
        description="JetBrains Jira issue link" />
    </comment-transformation>
 ...

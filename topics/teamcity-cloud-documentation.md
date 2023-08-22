@@ -42,8 +42,8 @@ Welcome to the documentation for [TeamCity Cloud](https://www.jetbrains.com/team
 * [Troubleshooting](troubleshooting.md)
 * [Common Problems](common-problems.md)
 * [Known Issues](known-issues.md)
-* [Public Issue Tracker](http://youtrack.jetbrains.net/issues/TW)
-* [Community Forum](http://jb.gg/teamcity-forum)
+* [Public Issue Tracker](https://youtrack.jetbrains.com/issues/TW)
+* [Community Forum](https://jb.gg/teamcity-forum)
 * [Video User Guide](http://blog.jetbrains.com/teamcity/2013/05/teamcity-user-guide-courseware/)
 
 </td>
@@ -53,8 +53,8 @@ Welcome to the documentation for [TeamCity Cloud](https://www.jetbrains.com/team
 
 ### Learn More and Contact Us
 
-* [Official TeamCity Website](http://www.jetbrains.com/teamcity)
-* [Official TeamCity Blog](http://blogs.jetbrains.com/teamcity/)
+* [Official TeamCity Website](https://www.jetbrains.com/teamcity)
+* [Official TeamCity Blog](https://blog.jetbrains.com/teamcity/)
 * [Feedback](feedback.md)
 
 </td></tr>

@@ -547,7 +547,7 @@ Run configurations to execute
 
 <td>
 
-Specify here names of IntelliJ IDEA run configurations configured in the project to execute inside TeamCity build. Supported configuration types are: JUnit, TestNG, and Application. Note that run configurations specified here should be _shared_ (via "Share" checkbox in IntelliJ IDEA [Run/Debug Configurations dialog](http://www.jetbrains.com/idea/webhelp/run-debug-configuration-application.html#common)) and checked in to the version control.
+Specify here names of IntelliJ IDEA run configurations configured in the project to execute inside TeamCity build. Supported configuration types are: JUnit, TestNG, and Application. Note that run configurations specified here should be _shared_ (via "Share" checkbox in IntelliJ IDEA [Run/Debug Configurations dialog](https://www.jetbrains.com/idea/webhelp/run-debug-configuration-application.html#common)) and checked in to the version control.
 
 Ant and Build Artifacts tasks specified in the [Before launch](https://www.jetbrains.com/help/idea/run-debug-configuration-application.html#common) list of IDEA run configurations are supported.
 
