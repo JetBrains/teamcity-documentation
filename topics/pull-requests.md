@@ -431,13 +431,18 @@ Description
 <tr>
 <td>
 
-Access token
+Authentication Type
 
 </td>
 
 <td>
 
-Use a personal access token for connection. The token must have the `api` scope.
+* **Use VCS root credentials** — TeamCity will try to extract login credentials or access token from the VCS root settings if the VCS root uses HTTP(S) fetch URL. This option will not work if the VCS root employs anonymous authentication.
+
+* **Personal Access Token** — Use a personal access token issued in GitLab. It must have either the `api` scope.
+
+* **GitLab Application Token** — Displays a list of configured [OAuth connections](configuring-connections.md#GitLab). Click the **Acquire** button next to the connection that should be used to usue a short-lived OAuth token.
+<img src="dk-pullrequests-GitLabToken.png" width="706" alt="PR Token for GitLab"/>
 
 </td>
 </tr>
