@@ -15,7 +15,7 @@ In the __Common Failure Conditions__ block, you can specify how exactly TeamCity
 
 The _if it runs longer than ... minutes_ condition allows defining an execution timeout for a build, in minutes. If the specified amount of time is exceeded, the build is automatically canceled. This option helps deal with hanging builds and maintains agent efficiency.
 
-The default value of 0 means that no limit is set by the build configuration. Otherwise, this build configuration setting overrides the [server-wide](teamcity-configuration-and-maintenance.md#Build+Settings) default execution timeout specified in __Administration | Global Settings__.
+If the configuration's timeout is 0 (the default value), the global [server-wide](teamcity-configuration-and-maintenance.md#Build+Settings) timeout applies. Otherwise, the timeout specified in this configuration overrides the global value specified in __Administration | Global Settings__.
 
 ### Fail Build if Exit Code is not Zero
 
