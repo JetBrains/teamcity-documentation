@@ -342,61 +342,26 @@ The following parameters are available for the [Bitbucket Cloud](https://bitbuck
 
 <table>
 <tr>
-<td width="150">
+<td>Setting</td>
+<td>Description</td>
+</tr>
 
-Parameter
+<tr>
 
-</td>
-<td width="150">
-
-Options
-    
-</td>
+<td>Authentication Type</td>
 <td>
 
-Description
+* **Use VCS root credentials** — TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL. This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
 
+* **Username/password** — Specify a username and password for connection to Bitbucket Cloud. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the _Pull Requests | Read_ scope.
+
+* **Refreshable access token** — Displays a list of configured [OAuth connections](configuring-connections.md#Bitbucket+Cloud). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
+  <img src="dk-pullrequests-BBC-tokens.png" width="706" alt="PR Token for Bitbucket Cloud"/>
 </td>
 </tr>
+
 <tr>
-<td>
-
-Authentication Type
-
-</td>
-<td>
-
-Use VCS root credentials
-
-</td>
-<td>
-
-TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL.
-
-This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
-
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-
-Username/password
-
-</td>
-<td>
-
-Specify a username and password for connection to Bitbucket Cloud. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the _Pull Requests | Read_ scope.
-
-</td>
-</tr>
-<tr>
-<td>
-
-By target branch
-
-</td>
-<td></td>
+<td>By target branch</td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left empty, no filters apply.
@@ -441,7 +406,7 @@ Authentication Type
 
 * **Personal Access Token** — Use a personal access token issued in GitLab. It must have either the `api` scope.
 
-* **GitLab Application Token** — Displays a list of configured [OAuth connections](configuring-connections.md#GitLab). Click the **Acquire** button next to the connection that should be used to usue a short-lived OAuth token.
+* **GitLab Application Token** — Displays a list of configured [OAuth connections](configuring-connections.md#GitLab). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
 <img src="dk-pullrequests-GitLabToken.png" width="706" alt="PR Token for GitLab"/>
 
 </td>
