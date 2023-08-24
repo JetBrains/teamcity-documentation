@@ -103,7 +103,9 @@ Default branch
 Configures [default branch](working-with-feature-branches.md#Default+Branch). Parameter references are supported here. Default value is `refs/heads/master`.
 
 <note>
+
 You can configure Git-plugin to fetch all heads by [adding a build configuration parameter](configuring-build-parameters.md#Custom+Build+Parameters) `teamcity.git.fetchAllHeads=true`.
+
 </note>
 
 
