@@ -1,6 +1,15 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2023.05.2 to 2023.05.3
+
+See this article for the complete list of fixed issues: [](teamcity-2023-05-3-release-notes.md).
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2023-5-3"}
+
+* The bundled Git was updated to version 2.42 in both Server and Agent Docker images.
+
 
 ## Changes from 2023.05.1 to 2023.05.2
 
