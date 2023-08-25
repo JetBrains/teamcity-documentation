@@ -101,15 +101,30 @@ You can create a [personal access token](https://www.visualstudio.com/en-us/docs
 
 ### JetBrains Space
 
-To establish integration with [JetBrains Space](https://www.jetbrains.com/space/), you need to create a predefined connection to it, as described [here](configuring-connections.md#jetbrains-space-connection).
+Starting with version 2023.09, TeamCity build configurations set up via predefined [Space connections](configuring-connections.md#jetbrains-space-connection) do not require a configured Commit Status Publisher to post build statuses.
+{product="tcc"}
+
+Starting with version 2023.11, TeamCity build configurations set up via predefined [Space connections](configuring-connections.md#jetbrains-space-connection) do not require a configured Commit Status Publisher to post build statuses.
+{product="tc"}
+
+Set up a project using Space connections and TeamCity will automatically post build-related comments under the **Automation** section of Space **Commits** and **Branches** tabs.
+
+<img src="dk-csp-space.png" width="706" alt="Publish Space build statuses"/>
+
+It is also possible to manually set up the Commit Status Publisher feature. You may opt a manual setup if:
+
+* you want to set up a custom publisher name and/or Space project key;
+* TeamCity is unable to publish build statuses automatically (for example, this may happen if you utilize an on-premises instance of JetBrains Space with a custom configuration).
+
+To manually set up the Commit Status Publisher, you will need a predefined [Space connection](configuring-connections.md#jetbrains-space-connection). If you do not have a suitable connection and your project was created manually or from the repository URL, go to **Project Settings | Connections** and create a new one.
 
 Then, in the build configuration's settings:
+
 1. Open __Build Features__ and add the _Commit status publisher_ build feature.
 2. Select the _JetBrains Space_ publisher and the created connection.
 3. Specify the name that will be displayed for this service in Space.
 4. Save the settings.
 
-Now, whenever you run a build in this configuration, TeamCity will report the build status to JetBrains Space.
 
 ### Perforce Helix Swarm
 

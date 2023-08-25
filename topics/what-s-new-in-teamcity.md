@@ -93,6 +93,15 @@ In version 2023.09, authorization via OAuth tokens was added for:
 
 Learn more: [Commit Status Publisher](commit-status-publisher.md#GitLab) | [Pull Requests](pull-requests.md).
 
+## JetBrains Space Integration
+
+Starting with this version, TeamCity build configurations that target [JetBrains Space](https://www.jetbrains.com/space/) repositories do not require a configured **Commit Status Publisher** build feature to post build-related updates. Set up a TeamCity project via a predefined [Space connection](configuring-connections.md#jetbrains-space-connection) and build statuses will be posted automatically.
+
+<img src="dk-csp-space.png" width="706" alt="Publish Space build statuses"/>
+
+The option to manually set up the Commit Status Publisher feature is still available for those who wish full control over the process, as well as for custom setups where TeamCity is unable to publish build statuses automatically.
+
+Learn more: [](commit-status-publisher.md#JetBrains+Space).
 
 ## Miscellaneous
 
