@@ -110,6 +110,7 @@ Learn more: [](commit-status-publisher.md#JetBrains+Space).
 * You can now bookmark required agent pools to easily access them from the top of the agents and pools list. Learn more: [](configuring-agent-pools.md#Favorite+Pools).
 <!--* <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tcc"/>-->
 * [](performance-monitor.md) now shows absolute values of the consumed/total agent memory.
+* The [](build-results-page.md#Dependencies+Tab) now displays a find panel that allows you to search for specific dependent builds by configuration names.
 
 
 ## Upgrade Notes

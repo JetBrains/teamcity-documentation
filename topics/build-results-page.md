@@ -91,6 +91,10 @@ The __Dependencies__ tab provides three modes of displaying the build dependenci
 
 <img src="exp-dependencies-tab.png" alt="Dependencies Tab of Build Results" width="706"/>
 
+The "Timeline" and "List" view modes allow you to search for specific builds by their names.
+
+<img src="dk-searchDependencies.png" alt="Find Panel in dependencies" width="706"/>
+
 ## Issues Tab
 
 If you have [integration with an issue tracker](integrating-teamcity-with-issue-tracker.md) configured and if there is at least one issue mentioned in the comments for the included changes or in the comments for the build itself, you will see the list of issues related to the current build in the __Issues__ tab.
