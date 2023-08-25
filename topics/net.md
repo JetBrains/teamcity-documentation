@@ -943,7 +943,7 @@ Consider the following notes before migrating:
 
 If the .NET runner executes `test` or `vstest` commands, TeamCity can split the workload into several batches. In this case testing is carried out in separate automatically generated builds (on separate build agents). To enable this behavior, add the [](parallel-tests.md) build feature to the TeamCity build configuration.
 
-For large sets of .NET tests that can impair the performance, try switching to the [alternative filtering mode](parallel-tests.md#Alternative+Test+Filtering+for+.NET).
+<!--For large sets of .NET tests that can impair the performance, try switching to the [alternative filtering mode](parallel-tests.md#Alternative+Test+Filtering+for+.NET).-->
 
 ## .NET runner F.A.Q.
 
