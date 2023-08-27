@@ -1,7 +1,7 @@
 [//]: # (title: Integration with Perforce Helix Swarm)
 
 
-[Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm) is a code review tool for Helix Core. When a developer shelves a file and asks for a review, TeamCity can run a build for this change and post the result in the comments section of a Helix Swarm review.
+[Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm) is a code review tool for Helix Core. When a developer shelves a file and asks for a review, TeamCity can run a build for this change and post the result as a [Swarm tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_tests.html)  as well as in the comments section of a Helix Swarm review.
 
 ## Prerequisites
 
@@ -10,7 +10,12 @@ An integration between TeamCity and Helix Swarm is based on the [](commit-status
 * track whenever a Helix Swarm review is created or edited, and send TeamCity a request to start a new build when this happens;
 * post statuses of TeamCity builds back to Helix Swarm reviews.
 
-Depending on whether your Helix warm setup already has tests that launch TeamCity builds when users create or edit reviews, you can choose one of the two options:
+In addition to that, the Publisher provides navigation from TeamCity UI into Swarm server UI. Corresponding links are available for
+
+* build result page in TeamCity (it allows to navigate to a review and to Swarm change page)
+* change page in TeamCity, via "Open in Swarm" control 
+
+Depending on whether your Helix Swarm setup already has tests that launch TeamCity builds when users create or edit reviews, you can choose one of the two options:
 
 * Allow TeamCity to create new Swarm tests. Use this approach when you don't have existing Helix Swarm workflows and tests. This option is available only when you pass admin user credentials to the Commit Status Publisher. If you intend to opt for this option, skip to the [](#Set+Up+a+Commit+Status+Publisher) section as you do not need any additional setup on the Swarm side.
 
