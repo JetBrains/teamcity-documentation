@@ -3,17 +3,13 @@
 
 [Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm) is a code review tool for Helix Core. When a developer shelves a file and asks for a review, TeamCity can run a build for this change and post the result as a [Swarm tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_tests.html)  as well as in the comments section of a Helix Swarm review.
 
+
 ## Prerequisites
 
 An integration between TeamCity and Helix Swarm is based on the [](commit-status-publisher.md) build feature. The Publisher utilizes [Swarm tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_tests.html) that solve two tasks:
 
 * track whenever a Helix Swarm review is created or edited, and send TeamCity a request to start a new build when this happens;
 * post statuses of TeamCity builds back to Helix Swarm reviews.
-
-In addition to that, the Publisher provides navigation from TeamCity UI into Swarm server UI. Corresponding links are available for
-
-* build result page in TeamCity (it allows to navigate to a review and to Swarm change page)
-* change page in TeamCity, via "Open in Swarm" control 
 
 Depending on whether your Helix Swarm setup already has tests that launch TeamCity builds when users create or edit reviews, you can choose one of the two options:
 
@@ -128,6 +124,10 @@ After you have set up the Commit Status Publisher, modify and shelve any depot f
 TeamCity attempts to find a user with the same username as a person who requested a review in Helix Swarm, and starts a new personal build for this user. You can click links in the build's **Swarm Reviews** section to open the shelved change and review in Swarm.
 
 <img src="dk-swarm-personalbuild.png" width="706" alt="Personal build in TeamCity"/>
+
+You can also view the related change from the build's **Changes** tab:
+
+<img src="dk-swarm-changes-tab.png" width="706" alt="Open Swarm changes from TeamCity"/>
 
 As the TeamCity builds goes through scheduled-started-finished stages, the Commit Status Publisher posts updates in the **Comments** section of a Helix Swarm review.
 
