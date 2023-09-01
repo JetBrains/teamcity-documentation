@@ -27,6 +27,7 @@ Starting with version 2023.09, you will be able to create these connections much
 Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 
 
+<!--
 ## AWS Connection Improvements
 
 Starting with this version, you can enable or disable the **Available for sub-projects** and **Available for build steps** settings in AWS connection settings. These options allow you to ensure the configured connections are not used by unauthorized TeamCity projects and their [](aws-credentials.md) build features.
@@ -37,6 +38,8 @@ In addition, you can now refer to the new section of our "Configuring Connection
 {product="tc"}
 
 Learn more: [](configuring-connections.md#AmazonWebServices).
+
+-->
 
 ## Enhanced Integration with Perforce Helix Swarm
 
