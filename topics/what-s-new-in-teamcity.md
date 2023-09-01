@@ -17,6 +17,7 @@ When a new option is added, TeamCity will start building your custom agent distr
 Learn more: [](install-teamcity-agent.md).
 -->
 
+<!--
 ## Seamless GitHub App Registration
 
 In version 2023.05, we introduced the [new type](configuring-connections.md#GitHub) of connections to GitHub and GitHub Enterprise. These connections utilize [GitHub Apps](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps), instead of the traditional OAuth-based access to repositories.
@@ -27,6 +28,7 @@ Starting with version 2023.09, you will be able to create these connections much
 
 Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 
+-->
 
 <!--
 ## AWS Connection Improvements
