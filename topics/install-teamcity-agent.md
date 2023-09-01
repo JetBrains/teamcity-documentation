@@ -34,6 +34,7 @@ Full agents are preferable if you use scripts for creating agent images (for exa
 Full agents are preferable if you use scripts for creating agent images. All cloud instances with full agents are synchronized with the server from the moment they start, and can run builds right away.
 {product="tcc"}
 
+<!--
 Full agent distributions are also available in two variations:
 
 * Regular agent distributions without Java Development Kits. If you download and install this variation, make sure that the agent machine has the required JDK version installed and the `JRE_HOME` or `JAVA_HOME` environment variables point to the correct installation.
@@ -42,6 +43,8 @@ Full agent distributions are also available in two variations:
     <img src="dk-addAgentJDK.png" alt="Add Agent JDK" width="706"/>
     
     Visit the [Supported Platforms and Environments](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent) documentation article for the information on which Java versions are supported by TeamCity agents.
+
+-->
 
 ### How to Install Agents from ZIP Files
 

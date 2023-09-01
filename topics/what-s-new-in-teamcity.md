@@ -1,7 +1,7 @@
 [//]: # (title: What's New in TeamCity 2023.09)
 [//]: # (auxiliary-id: What's New in TeamCity 2023.09;What's New in TeamCity)
 
-
+<!--
 ## Agents with Bundled JDKs
 
 Starting with version 2023.09, you can build distributions of TeamCity agents bundled with custom JDKs. These distributions allow you to install both an agent and a JDK it requires to operate in one go.
@@ -15,6 +15,7 @@ To create a custom agent distribution, navigate to **Administration | Agent JDKs
 When a new option is added, TeamCity will start building your custom agent distribution. You can download custom agent+JDK bundles by clicking **Install agent | Full distributions** on the **Agents | Overview** page.
 
 Learn more: [](install-teamcity-agent.md).
+-->
 
 ## Seamless GitHub App Registration
 
