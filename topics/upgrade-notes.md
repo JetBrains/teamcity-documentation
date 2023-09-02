@@ -110,7 +110,7 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 * Settings of EC2-based [cloud profiles](setting-up-teamcity-for-amazon-ec2.md) may not show the checkbox that allows you to utilize locally stored IAM Roles, leaving authorization by Access ID/Secret Key as the only option. We expect to fix this issue in the next 2023.05.1 bugfix update.
 * If a directory published as a build artifacts contains symbolic links, files and folderes referenced by these symlinks are no longer included in the produced artifact archive. This issue will be resolved in the 2023.05.1 bugfix update, see this article for more information: [](configuring-general-settings.md#Publishing+Symlinks).
 * Some TeamCity pages are missing their `html` and `body` tags. See this ticket for more information: [TW-82749](https://youtrack.jetbrains.com/issue/TW-82749).
-
+* Agents spawned from AWS machine images that utilize the first version of Amazon Metadata (IMDSv1) fail to retrieve property values from metadata and pass automatic [authorization](configure-agent-installation.md). See this ticket for more information: [TW-82176](https://youtrack.jetbrains.com/issue/TW-82176).
 
 ## Changes from 2022.10.2 to 2022.10.3
 
