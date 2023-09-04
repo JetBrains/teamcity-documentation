@@ -55,7 +55,7 @@ For older versions of GitLab, use the GitLab URL of the format `http[s]://<hostn
 
 The GitLab credentials for Commit Status Publisher must belong to a user with a Developer, Maintainer, or Owner role for the project. In addition, to change a commit status for a protected branch, the GitLab user must be included in the **Allowed to push** list.
 
-If you switch the **Authentication Type** to "GitLab Application Token", TeamCity will display a list of [configured OAuth connections](configuring-connections.md#GitLab) to GitLab. Click the **Acquire** button next to a required connection to obtain an access token.
+If you switch the **Authentication Type** to "GitLab Application Token", TeamCity will display a list of configured [GitHub OAuth connections](configuring-connections.md#GitLab). Click the **Acquire** button next to a required connection to obtain an access token.
 
 <img src="dk-csp-GitLabToken.png" width="708" alt="Acquire access token for GitLab"/>
 
