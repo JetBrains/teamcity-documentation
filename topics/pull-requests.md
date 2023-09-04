@@ -406,7 +406,7 @@ Authentication Type
 
 * **Personal Access Token** — Use a personal access token issued in GitLab. It must have either the `api` scope.
 
-* **GitLab Application Token** — Displays a list of configured [OAuth connections](configuring-connections.md#GitLab). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
+* **GitLab Application Token** — Displays a list of configured [GitLab OAuth connections](configuring-connections.md#GitLab). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
 <img src="dk-pullrequests-GitLabToken.png" width="706" alt="PR Token for GitLab"/>
 
 </td>
