@@ -118,6 +118,7 @@ Learn more: [](commit-status-publisher.md#JetBrains+Space).
 <!--* <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tcc"/>-->
 * [](performance-monitor.md) now shows absolute values of the consumed/total agent memory.
 * The [](build-results-page.md#Dependencies+Tab) now displays a find panel that allows you to search for specific dependent builds by configuration names.
+* You can now add the `dateFormat=<value>` parameter to URLs used by your log analysis tools to retrieve build logs. Learn more: [](build-log.md#Modify+the+DateTime+Pattern).
 
 
 ## Upgrade Notes
