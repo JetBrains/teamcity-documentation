@@ -111,7 +111,7 @@ Learn more: [](commit-status-publisher.md#JetBrains+Space).
 
 ## Miscellaneous
 
-* Dependent builds whose ["On failed dependency" condition](snapshot-dependencies.md) is set to "Make build failed to start" no longer wait for an available agent when their dependencies fail or are cancelled. Instead, the dependent build's status changes to "Failed to start" as soon as possible, and TeamCity proceeds to the next build in chain.
+* TeamCity distributes agents more effectively and processes large build chains with failing builds faster. Starting with version 2023.09, dependent builds whose ["On failed dependency" condition](snapshot-dependencies.md) is "Make build failed to start" no longer wait for an available agent when their dependencies fail or are canceled. Instead, the dependent build's status changes to "Failed to start" as soon as possible, and TeamCity proceeds to the next build in the chain.
 * The [](commit-status-publisher.md) build feature now correctly publishes build statuses for configurations that target `refs/(merge-requests/*)/head` branches of GitLab repositories (the "merge result" branches). Previously, running TeamCity builds for merge result revisions caused the Publisher to encounter HTTP 404 errors.
 * If users log into TeamCity using credentials of an external 2FA-protected service, TeamCity does not send additional 2FA requests. Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
 <!--* You can now bookmark required agent pools to easily access them from the top of the agents and pools list. Learn more: [](configuring-agent-pools.md#Favorite+Pools).-->
