@@ -7,7 +7,7 @@ It is based on the [Qodana](https://www.jetbrains.com/help/qodana/teamcity.html)
 <warning>
 
 *Current limitations*
-The Qodana runner requires TeamCity agents to have a Docker server installed and the TeamCity agents must not be deployed on a Windows OS.
+The Qodana runner requires a TeamCity agent to be deployed on a non-Windows OS with a Docker server installed.
 
 </warning>
 
