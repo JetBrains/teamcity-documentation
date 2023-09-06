@@ -72,7 +72,7 @@ To ensure your build agent is idle while you perform maintenance, disable it but
 
 For cloud agents that are automatically terminated after idling for a certain period of time, click the ["Disable for maintenance..."](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) button to keep the agent's machine running.
 
-> The "Open interactive terminal" link opens in the `<server-URL>/plugins/teamcity-agent-terminal/agentTerminal.html?agentId:<ID>` URL in a new browser tab. If your server is [behind a proxy](multinode-setup.md#Proxy+Configuration), ensure your proxy configuration allows websocket connections to this page.
+> The "Open interactive terminal" link opens in the `<SERVER-URL>/plugins/teamcity-agent-terminal/agentTerminal.html?agentId:<ID>` URL in a new browser tab. If your server is [behind a proxy](multinode-setup.md#Proxy+Configuration), ensure your proxy configuration allows websocket connections to this page.
 > 
 {type="note" product="tc"}
 
