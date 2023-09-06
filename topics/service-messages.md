@@ -1018,7 +1018,7 @@ Send the following service message to start tracking the contents of a file and 
 
 
 * `type` — always equals 'streamToBuildLog'.
-* `filePath` or `filePattern` — the path to the specific file. This path can be absolute (`filePath='%\teamcity.build.checkoutDir%/temp.txt'`) or relative (`filePath='./myFolder/temp.txt'`). Relative paths are resolved under the current working directory of the agent that runs the build (the directory returned by the `teamcity.agent.work.dir` [parameter](configuring-build-parameters.md)). If the specified file does not exist or cannot be opened, TeamCity will periodically retry to access this file (for as long as the runner that sent this service message is still running).
+* `filePath` — the path to the specific file. This path can be absolute (`filePath='%\teamcity.build.checkoutDir%/temp.txt'`) or relative (`filePath='./myFolder/temp.txt'`). Relative paths are resolved under the current working directory of the agent that runs the build (the directory returned by the `teamcity.agent.work.dir` [parameter](configuring-build-parameters.md)). If the specified file does not exist or cannot be opened, TeamCity will periodically retry to access this file (for as long as the runner that sent this service message is still running).
 
 <!--* Use `filePattern` to specify the Ant-style file pattern and monitor every file that matches it. If the pattern includes a path, it is resolved under the current working directory. While the runner that sent this service message is still running, TeamCity will periodically look for new files that match this pattern.-->
 
