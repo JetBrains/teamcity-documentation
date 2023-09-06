@@ -78,7 +78,7 @@ Learn more: [](inspections-resharper.md#JetBrains+ReSharper+Command+Line+Tools+S
 
 ## Service Messages
 
-Added the [new service message](service-messages.md#Writing+the+File+into+the+Build+Log) that allows you to track the contents of given file(s) and echo new lines to the build log.
+Added the [new service message](service-messages.md#Writing+the+File+into+the+Build+Log) that allows you to track the contents of the given file and echo new lines to the build log.
 
 <img src="dk-streamFiletoLog.png" width="706" alt="Stream file to log"/>
 

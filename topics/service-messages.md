@@ -1007,7 +1007,7 @@ To initiate monitoring of several directories or parse several types of the repo
 
 ## Writing the File into the Build Log
 
-Send the following service message to start tracking the contents of one or multiple files and write their new lines to the build log.
+Send the following service message to start tracking the contents of a file and write its new lines to the build log.
 
 ```Shell
 ##teamcity[importData type='streamToBuildLog' filePath='path-to-file' filePattern='pattern' wrapFileContentInBlock='false' charset='UTF-8']
@@ -1018,18 +1018,17 @@ Send the following service message to start tracking the contents of one or mult
 
 
 * `type` — always equals 'streamToBuildLog'.
-* `filePath` or `filePattern` — specify the file(s) to monitor.
+* `filePath` or `filePattern` — the path to the specific file. This path can be absolute (`filePath='%\teamcity.build.checkoutDir%/temp.txt'`) or relative (`filePath='./myFolder/temp.txt'`). Relative paths are resolved under the current working directory of the agent that runs the build (the directory returned by the `teamcity.agent.work.dir` [parameter](configuring-build-parameters.md)). If the specified file does not exist or cannot be opened, TeamCity will periodically retry to access this file (for as long as the runner that sent this service message is still running).
 
-  * Use `filePath` to specify the path to the specific file. The path can be absolute (`filePath='%\teamcity.build.checkoutDir%/temp.txt'`) or relative (`filePath='./myFolder/temp.txt'`). Relative paths are resolved under the current working directory of the agent that runs the build (the directory returned by the `teamcity.agent.work.dir` [parameter](configuring-build-parameters.md)). If the specified file does not exist or cannot be opened, TeamCity will periodically retry to access this file (for as long as the runner that sent this service message is still running).
-  * Use `filePattern` to specify the Ant-style file pattern and monitor every file that matches it. If the pattern includes a path, it is resolved under the current working directory. While the runner that sent this service message is still running, TeamCity will periodically look for new files that match this pattern.
+<!--* Use `filePattern` to specify the Ant-style file pattern and monitor every file that matches it. If the pattern includes a path, it is resolved under the current working directory. While the runner that sent this service message is still running, TeamCity will periodically look for new files that match this pattern.-->
 
-* `wrapFileContentInBlock` (optional) — specifies whether or not the output of this message should be placed in a collapsible "Streaming file..." block. The default value is "true".
+* `wrapFileContentInBlock` (optional) — specifies whether the output of this message should be placed in a collapsible "Streaming file..." block. The default value is "true".
 
     <img src="dk-wrapInBlock.png" width="706" alt="Wrap in block"/>
 
 * `charset` (optional) — a canonical name or an alias of an encoding supported by Java. If the argument is absent or the encoding cannot be resolved, UTF-8 is used.
 
-TeamCity monitors the given file(s) for as long as the parent runner is active. When the runner stops, the file is streamed to its end and closed. 
+TeamCity monitors the given file for as long as the parent runner is active. When the runner stops, the file is streamed to its end and closed. 
 
 ## Sending Custom Slack Messages
 
